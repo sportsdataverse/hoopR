@@ -1,6 +1,8 @@
 
 ## kenpomR(oy)
 
+[![Build
+Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 ![kenpomR-tile2.png](https://i.imgur.com/OKnqlLp.png)
