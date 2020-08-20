@@ -1,0 +1,702 @@
+#' Get KenPom Ratings
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Ratings
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_pomeroy_ratings <- function(browser, min_year, max_year){
+  assert_that(min_year>=2002, msg="Data only goes back to 2002")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/index.php?y=", year)
+    page <- jump_to(browser, url)
+    header_cols <- c("Rk", "Team", "Conf", "W-L",
+                     "AdjEM", "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk",
+                     "AdjT", "AdjT.Rk", "Luck", "Luck.Rk",
+                     "SOS.AdjEM", "SOS.AdjEM.Rk", "SOS.OppO", "SOS.OppO.Rk",
+                     "SOS.OppD", "SOS.OppD.Rk", "NCSOS.AdjEM", "NCSOS.AdjEM.Rk")
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$SOS.OppO)))
+
+    x <- mutate(x,
+                "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+\\*", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+
+#' Get KenPom Efficiency and Tempo Summary
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Efficiency
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_efficiency(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_efficiency <- function(browser, min_year, max_year){
+  assert_that(min_year>=2002, msg="Data only goes back to 2002")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/summary.php?y=", year)
+    page <- jump_to(browser, url)
+    if(year<2010){
+
+      header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
+                       "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+                       "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")
+      x <- page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes("table") %>%
+        .data$.[[1]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+
+      x <- x[,1:14]
+      colnames(x) <- header_cols
+
+      x <- x %>%
+        filter(!is.na(as.numeric(.data$AdjO))) %>%
+        mutate(
+          AvgPossLengthOff = 0.0,
+          AvgPossLengthOff.Rk = 0,
+          AvgPossLengthDef = 0.0,
+          AvgPossLengthDef.Rk = 0)
+      x <- x[,c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
+                "AvgPossLengthOff","AvgPossLengthOff.Rk",
+                "AvgPossLengthDef","AvgPossLengthDef.Rk",
+                "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+                "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")]
+
+      x <- mutate(x,
+                  "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                  "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                  "Year" = year)
+    }else{
+
+      header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
+                       "AvgPossLengthOff","AvgPossLengthOff.Rk",
+                       "AvgPossLengthDef","AvgPossLengthDef.Rk",
+                       "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+                       "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")
+      x <- (page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes("table"))[[1]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+
+      x <- x[,1:18]
+
+      colnames(x) <- header_cols
+
+      x <- x %>%
+        filter(!is.na(as.numeric(.data$AdjO)))
+
+      x <- mutate(x,
+                  "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                  "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                  "Year" = year)
+    }
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+#' Get Four Factors Data
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Four Factors
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_fourfactors(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_fourfactors <- function(browser, min_year, max_year){
+  assert_that(min_year>=2002, msg="Data only goes back to 2002")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/stats.php?",
+                  "y=", year)
+    page <- jump_to(browser, url)
+    header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk",
+                     "AdjO", "AdjO.Rk", "eFGpctO", "eFGpctO.Rk",
+                     "TOpctO", "TOpctO.Rk", "ORpctO", "ORpctO.Rk",
+                     "FTRateO", "FTRateO.Rk",
+                     "AdjD", "AdjD.Rk", "eFGpctD", "eFGpctD.Rk",
+                     "TOpctD", "TOpctD.Rk", "ORpctD", "ORpctD.Rk",
+                     "FTRateD", "FTRateD.Rk")
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+    x <- x[,1:24]
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$AdjO)))
+
+    x <- mutate(x,
+                "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+#' Get Team Points Distribution
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Points
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_pointdist(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_pointdist <- function(browser, min_year, max_year){
+
+  assert_that(min_year>=2002, msg="Data only goes back to 2002")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/pointdist.php?",
+                  "y=", year)
+
+    page <- jump_to(browser, url)
+    header_cols <- c("Team", "Conf",
+                     "FTpctO", "FTpctO.Rk",
+                     "FG2pctO", "FG2pctO.Rk",
+                     "FG3pctO", "FG3pctO.Rk",
+                     "FTpctD", "FTpctD.Rk",
+                     "FG2pctD", "FG2pctD.Rk",
+                     "FG3pctD", "FG3pctD.Rk")
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+    x <- x[,1:14]
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$FTpctO)))
+
+    x <- mutate(x,
+                "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+#' Get Heights, Experience, Bench and Continuity Data
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Roster
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'  get_height(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_height <- function(browser, min_year,max_year){
+  assert_that(min_year>=2007, msg="Data only goes back to 2007")
+  years <- min_year:max_year
+
+  for(year in years) {
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/height.php?",
+                  "y=", year)
+
+    page <- jump_to(browser, url)
+    if(year<2008){
+      header_cols <- c("Team", "Conf",
+                       "AvgHgt", "AvgHgt.Rk",
+                       "EffHgt", "EffHgt.Rk",
+                       "CHgt", "CHgt.Rk",
+                       "PFHgt", "PFHgt.Rk",
+                       "SFHgt", "SFHgt.Rk",
+                       "SGHgt", "SGHgt.Rk",
+                       "PGHgt", "PGHgt.Rk",
+                       "Experience", "Experience.Rk",
+                       "Bench", "Bench.Rk")
+
+      x <- (page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes("table"))[[1]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+      x <- x[,1:20]
+      colnames(x) <- header_cols
+      x <- x %>%
+        mutate(
+          Continuity = 0.0,
+          Continuity.Rk = 0
+        )
+    }else{
+      header_cols <- c("Team", "Conf",
+                       "AvgHgt", "AvgHgt.Rk",
+                       "EffHgt", "EffHgt.Rk",
+                       "CHgt", "CHgt.Rk",
+                       "PFHgt", "PFHgt.Rk",
+                       "SFHgt", "SFHgt.Rk",
+                       "SGHgt", "SGHgt.Rk",
+                       "PGHgt", "PGHgt.Rk",
+                       "Experience", "Experience.Rk",
+                       "Bench", "Bench.Rk",
+                       "Continuity", "Continuity.Rk")
+
+      x <- (page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes("table"))[[1]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+      x <- x[,1:22]
+      colnames(x) <- header_cols
+    }
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$AvgHgt)))
+
+    x <- mutate(x,
+                "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+#' Get Team Stats
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
+#' @param browser User login session
+#' @keywords Team
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'  get_teamstats(browser, min_year = 2020, max_year = 2020, defense = FALSE)
+#' }
+
+get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
+  assert_that(min_year>=2002, msg="Data only goes back to 2002")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    if(!defense){
+      cat("Getting", year,"- Offense\n")
+      ### Pull Data
+      url <- paste0("https://kenpom.com/teamstats.php?",
+                    "y=", year, "&od=o")
+
+      page <- jump_to(browser, url)
+      header_cols <- c("Team", "Conf",
+                       "FG3pct", "FG3pct.Rk",
+                       "FG2pct", "FG2pct.Rk",
+                       "FTpct", "FTpct.Rk",
+                       "Blkpct", "Blkpct.Rk",
+                       "Stlpct", "Stlpct.Rk",
+                       "NonStlpct", "NonStlpct.Rk",
+                       "Apct", "Apct.Rk",
+                       "FG3Apct", "FG3Apct.Rk",
+                       "AdjO","AdjO.Rk")
+
+    }else{
+      cat("Getting", year,"- Defense\n")
+      ### Pull Data
+      url <- paste0("https://kenpom.com/teamstats.php?",
+                    "y=", year, "&od=d")
+
+      page <- jump_to(browser, url)
+      header_cols <- c("Team", "Conf",
+                       "FG3pct", "FG3pct.Rk",
+                       "FG2pct", "FG2pct.Rk",
+                       "FTpct", "FTpct.Rk",
+                       "Blkpct", 'Blkpct.Rk',
+                       "Stlpct", "Stlpct.Rk",
+                       "NonStlpct", "NonStlpct.Rk",
+                       "Apct", "Apct.Rk",
+                       "FG3Apct", "FG3Apct.Rk",
+                       "AdjD","AdjD.Rk")
+    }
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+    x <- x[,1:20]
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$FG3pct)))
+
+    x <- mutate(x,
+                "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- rbind(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+
+#' Get Player Stats Leaders by Metric
+#'
+#' @param metric Used to get leaders for different metrics. Available values are: \cr
+#' 'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', \cr
+#' 'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. \cr
+#' Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: \cr
+#' players that used >28\% of possessions, >24\% of possessions, >20\% of possessions, and with no possession restriction.\cr
+#' @param conf Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
+#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
+#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
+#' 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
+#' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
+#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
+#' No filter applied by default.\cr
+#' @param conf_only Used to define whether stats should reflect conference games only.\cr
+#' Only available if specific conference is defined. Only available for season after 2013, FALSE by default.\cr
+#' @param year Year of data to pull (earliest year of data available: 2004)\cr
+#' @param browser User login session
+#' @keywords Player
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
+#' }
+
+get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FALSE, year){
+
+  m_list <- c('ORtg', 'Min', 'eFG', 'Poss', 'Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', 'FTRate', 'Stl',
+                    'TS', 'FC40', 'FD40', '2P', '3P', 'FT')
+
+  url_ext <- c('ORtg','PctMin', 'eFG', 'PctPoss','PctShots', 'ORPct', 'DRPct','TORate', 'ARate', 'PctBlocks', 'FTRate',
+               'PctStls', 'TS',  'FCper40', 'FDper40', 'FG2Pct', 'FG3Pct', 'FTPct')
+
+  metrics_data <- data.frame(m_list, url_ext)
+
+  conf_list <- c('A10', 'ACC', 'AE', 'AMER', 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW',
+                 'CAA', 'CUSA', 'HORZ', 'IND', 'IVY', 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC',
+                 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', 'SUM', 'SWAC', 'WAC', 'WCC')
+
+  metric_url <- metrics_data$url_ext[m_list == metric]
+
+  assert_that(year >= 2004, msg="Data only goes back to 2004")
+
+
+  if(metric=="ORtg"){
+    cat("Getting", year," ", metric," metric\n")
+
+    ### Pull Data
+    url <- paste0("https://kenpom.com/playerstats.php?",
+                  "y=", year,
+                  "&s=", metric_url,
+                  "&f=", conf,
+                  "&c=", conf_only)
+
+    page <- jump_to(browser, url)
+
+    header_cols <- c("Rk","Player","Team", metric,
+                     "Hgt","Wgt","Yr")
+    y <- list()
+    for(i in 1:4){
+
+      groups <- c("At least 28% of possessions used", "At least 24% of possessions used",
+                  "At least 20% of possessions used", "All players")
+
+      x <- (page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes("table"))[[i]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+
+      x <- x[,1:7]
+      colnames(x) <- header_cols
+
+      x <- x %>%
+        filter(!is.na(as.numeric(.data$Wgt)))
+
+      x <- mutate(x,
+                  "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                  "Year" = year,
+                  "group" = groups[i])
+      y <- c(y,list(x))
+    }
+    ### Store Data
+
+    kenpom <- y
+  }else{
+    cat("Getting", year," ", metric," metric\n")
+
+    ### Pull Data
+    url <- paste0("https://kenpom.com/playerstats.php?",
+                  "y=", year,
+                  "&s=", metric_url,
+                  "&f=", conf,
+                  "&c=", conf_only)
+
+    page <- jump_to(browser, url)
+
+    header_cols <- c("Rk","Player","Team", metric,
+                     "Hgt","Wgt","Yr")
+
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+
+    x <- x[,1:7]
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      filter(!is.na(as.numeric(.data$Wgt)))
+
+    x <- mutate(x,
+                "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }),
+                "Year" = year)
+
+    ### Store Data
+
+    kenpom <- x
+  }
+  return(kenpom)
+}
+
+#' Get KPoY Leaders Tables
+#'
+#' @param year Year of data to pull (earliest year of data available: 2011)
+#' @param browser User login session
+#' @keywords Leaders
+#' @importFrom assertthat "assert_that"
+#' @import dplyr
+#' @import tidyr
+#' @import rvest
+#' @import xml2
+#' @import stringr
+#' @import stringi
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_kpoy(browser, year=2020)
+#' }
+#'
+get_kpoy <- function(browser, year){
+
+  assert_that(year >= 2011, msg="Data only goes back to 2011")
+
+  cat("Getting", year,"\n")
+
+  ### Pull Data
+  url <- paste0("https://kenpom.com/kpoy.php?",
+                "y=", year)
+
+  page <- jump_to(browser, url)
+
+
+  y <- list()
+  for(i in 1:2){
+
+    groups <- c("kPoY Rating", "Game MVP Leaders")
+
+    x <- (page %>%
+      xml2::read_html() %>%
+      rvest::html_nodes("table"))[[i]] %>%
+      rvest::html_table() %>%
+      as.data.frame()
+
+    if(i == 1){
+      header_cols <- c("Rk","Player","kpoyRating")}
+    else{
+      header_cols <- c("Rk","Player","GameMVPs")
+    }
+
+
+    colnames(x) <- header_cols
+
+    x <- x %>%
+      tidyr::separate(.data$Player,
+                      into = c("Player","col"),
+                      sep = ",",
+                      extra = "merge")
+
+    x <- x %>%
+      mutate(
+        Team = stringr::str_extract(
+          stringr::str_extract(.data$col,'[^\\d-\\d{1,}]+'),".+"),
+        Hgt = stringr::str_extract(
+          stringi::stri_extract_first_regex(.data$col, '[^,]+'),"\\d{1,}-\\d{1,}+"),
+        Wgt =
+          stringr::str_extract(.data$col,'\\d{3}'),
+        Exp = stringr::str_extract(.data$col, "Fr|So|Jr|Sr|r-Fr|r-So|r-Jr|r-Sr"),
+        HomeTown = stringr::str_extract(
+          stringi::stri_extract_last_regex(.data$col, '[^\U00B7]+'),".*")
+      )
+
+    x <- mutate(x,
+                "Year" = year,
+                "group" = groups[i])
+    x <- x %>%
+      select(-.data$col)
+    if(i == 2) {
+      replace_na_with_last<-function(x,p=is.na,d=0){c(d,x)[cummax(seq_along(x)*(!p(x)))+1]}
+      x$Rk <- replace_na_with_last(x$Rk)
+    }
+    y <- c(y,list(x))
+  }
+  ### Store Data
+
+  kenpom <- y
+
+  return(kenpom)
+}
+
+
+

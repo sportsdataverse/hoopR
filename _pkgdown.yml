@@ -1,0 +1,52 @@
+template:
+  params:
+    bootswatch: flatly
+title: kenpomR
+url: http://saiemgilani.github.io/kenpomR
+authors:
+  Saiem Gilani:
+   href: https://twitter.com/saiemgilani
+home:
+navbar:
+  html:  <img src="https://github.com/saiemgilani/kenpomR/data-raw/kenpomR-tile.png" height="24">
+  title: "KenPomR"
+  left:
+    - icon: fa-home
+      href: index.html
+    - icon: fa-question-circle-o
+      text: "Tutorials"
+      menu:
+      - text: Vignettes
+        href: articles/index.html
+    - icon: fa-file-code-o
+      text: "Functions"
+      href: reference/index.html
+    - icon: fa-newspaper-o
+      text: "News"
+      href: news/index.html
+  right:
+    - icon: fab fa-twitter fa-lg
+      href: https://twitter.com/saiemgilani
+    - icon: fa-github fa-lg
+      text: "GitHub"
+      href: https://github.com/saiemgilani/kenpomR/
+reference:
+  - subtitle: Exported Functions
+    desc: Functions exported by kenpomR
+    contents:
+      - '`get_efficiency`'
+      - '`get_fourfactors`'
+      - '`get_pomeroy_ratings`'
+      - '`get_teamstats`'
+      - '`get_pointdist`'
+      - '`get_height`'
+      - '`get_playerstats`'
+      - '`get_kpoy`'
+      - '`get_trends`'
+      - '`get_hca`'
+      - '`get_game_attrs`'
+      - '`get_fanmatch`'
+      - '`get_officials`'
+      - '`get_arenas`'
+      - '`login`'
+      - '`clean_team_names_NCAA_merge`'
