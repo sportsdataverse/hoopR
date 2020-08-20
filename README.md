@@ -3,7 +3,7 @@
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-![KenPomR](https://github.com/saiemgilani/kenpomR/data-raw/kenpomR-tile.png)
+![kenpomR-tile2.png](https://i.imgur.com/OKnqlLp.png)
 
 A Scraping and Aggregating Interface for Ken Pomeroy’s College
 Basketball Statistics Website

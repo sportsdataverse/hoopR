@@ -2,14 +2,14 @@ Package: kenpomR
 Title: A Scraping and Aggregating Interface for Ken Pomeroy's College Basketball Statistics Website
 Version: 0.0.0.9
 Authors@R:
-    c(person(given = "Jo", family = "Doe", email = "jodoe@dom.ain",
+    c(person(given = "Saiem", family = "Gilani", email = "saiem.gilani@gmail.com",
       role = c("aut", "cre")))
 Maintainer: Saiem Gilani <saiem.gilani@gmail.com>
 Description: The R package kenpomRoy is for working with KenPom's college basketball data. A Scraping and Aggregating interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
 License: MIT + file LICENSE
 LazyData: true
-URL: http://www.github.com/saiemgilani/kenpomR
-BugReports: http://www.github.com/saiemgilani/kenpomR/issues
+URL: https://github.com/saiemgilani/kenpomR
+BugReports: https://github.com/saiemgilani/kenpomR/issues
 Encoding: UTF-8
 Author@R: person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))
 Imports: 

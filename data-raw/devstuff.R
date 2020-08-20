@@ -51,3 +51,4 @@ use_package("assertthat")
 # Clean your description
 use_tidy_description()
 use_news_md()
+use_github_links()
