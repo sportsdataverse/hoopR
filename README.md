@@ -3,8 +3,6 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/saiemgilani/kenpomR/workflows/R-CMD-check/badge.svg)](https://github.com/saiemgilani/kenpomR/actions)
 [![Build
 Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
