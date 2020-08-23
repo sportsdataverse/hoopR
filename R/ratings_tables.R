@@ -34,9 +34,10 @@ get_pomeroy_ratings <- function(browser, min_year, max_year){
                      "SOS.AdjEM", "SOS.AdjEM.Rk", "SOS.OppO", "SOS.OppO.Rk",
                      "SOS.OppD", "SOS.OppD.Rk", "NCSOS.AdjEM", "NCSOS.AdjEM.Rk")
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
 
@@ -130,9 +131,10 @@ get_efficiency <- function(browser, min_year, max_year){
                        "AvgPossLengthDef","AvgPossLengthDef.Rk",
                        "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
                        "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")
-      x <- (page %>%
+      x <- page %>%
         xml2::read_html() %>%
-        rvest::html_nodes("table"))[[1]] %>%
+        rvest::html_nodes("table") %>%
+        .data$.[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -198,9 +200,10 @@ get_fourfactors <- function(browser, min_year, max_year){
                      "TOpctD", "TOpctD.Rk", "ORpctD", "ORpctD.Rk",
                      "FTRateD", "FTRateD.Rk")
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
     x <- x[,1:24]
@@ -265,9 +268,10 @@ get_pointdist <- function(browser, min_year, max_year){
                      "FG2pctD", "FG2pctD.Rk",
                      "FG3pctD", "FG3pctD.Rk")
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
     x <- x[,1:14]
@@ -359,9 +363,10 @@ get_height <- function(browser, min_year,max_year){
                        "Bench", "Bench.Rk",
                        "Continuity", "Continuity.Rk")
 
-      x <- (page %>%
+      x <- page %>%
         xml2::read_html() %>%
-        rvest::html_nodes("table"))[[1]] %>%
+        rvest::html_nodes("table") %>%
+        .data$.[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
       x <- x[,1:22]
@@ -450,9 +455,10 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
                        "AdjD","AdjD.Rk")
     }
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
     x <- x[,1:20]
@@ -549,9 +555,10 @@ get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FA
       groups <- c("At least 28% of possessions used", "At least 24% of possessions used",
                   "At least 20% of possessions used", "All players")
 
-      x <- (page %>%
+      x <- page %>%
         xml2::read_html() %>%
-        rvest::html_nodes("table"))[[i]] %>%
+        rvest::html_nodes("table") %>%
+        .data$.[[i]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -586,9 +593,10 @@ get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FA
                      "Hgt","Wgt","Yr")
 
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[1]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
 
@@ -646,9 +654,10 @@ get_kpoy <- function(browser, year){
 
     groups <- c("kPoY Rating", "Game MVP Leaders")
 
-    x <- (page %>%
+    x <- page %>%
       xml2::read_html() %>%
-      rvest::html_nodes("table"))[[i]] %>%
+      rvest::html_nodes("table") %>%
+      .data$.[[1]] %>%
       rvest::html_table() %>%
       as.data.frame()
 
