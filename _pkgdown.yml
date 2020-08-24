@@ -66,4 +66,6 @@ reference:
       - '`get_confhistory`'
       - '`get_conf`'
       - '`login`'
+      - '`check_internet`'
+      - '`check_status`'
       - '`clean_team_names_NCAA_merge`'

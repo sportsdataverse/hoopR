@@ -112,7 +112,9 @@ check_internet <- function(){
   stop_if_not(.x = has_internet(), msg = "Please check your internet connexion")
 }
 
-#'
+#' Check Status function
+#' @param res Response from API
+#' @keywords Internal
 #' @importFrom httr "status_code"
 #'
 

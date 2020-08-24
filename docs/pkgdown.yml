@@ -2,7 +2,7 @@ pandoc: 2.9.2.1
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles: []
-last_built: 2020-08-24T00:08Z
+last_built: 2020-08-24T02:40Z
 urls:
   reference: http://saiemgilani.github.io/kenpomR/reference
   article: http://saiemgilani.github.io/kenpomR/articles

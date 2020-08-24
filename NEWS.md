@@ -1,3 +1,6 @@
 # kenpomR 0.0.0.9
 
-* Added a `NEWS.md` file to track changes to the package.
+## Initial Commits, remaining tasks:
+  - Player Career Tables
+  - Game Box Scores
+  - Argument assertions
