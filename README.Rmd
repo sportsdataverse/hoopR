@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
   [![Build Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR) 
   [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->  
-![logo.png](https://i.imgur.com/kz5hSgU.png)
+![logo.png](https://i.imgur.com/444lyf3.png)
 
 A Scraping and Aggregating Interface for Ken Pomeroy's College Basketball Statistics Website
 
