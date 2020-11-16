@@ -1,0 +1,53 @@
+---
+title: "Intro to kenpomR"
+author: "Saiem Gilani"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro to kenpomR}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+old <- options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+We will be acquiring data from [kenpom.com](https://kenpom.com), using the ```kenpomR``` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
+
+## R & RStudio
+This tutorial will require the use of R and RStudio. You can [follow the instructions at R Studio on how to get started](https://rstudio.com/products/rstudio/download/). 
+
+## First, save your login information privately
+You can use .Renviron to save your `kp_user` and `kp_pw` variables like so: 
+```{r eval = FALSE}
+file.edit("~/.Renviron")
+```
+Then save that information in a format like this:
+
+```
+kp_user = "your email here"
+kp_pw = "your password here"
+
+```
+Then we can reference these in our scripts with `Sys.env("kp_user")` or `Sys.env("kp_pw")`.
+
+## Import libraries and set browser login
+```{r, warning=FALSE,  message = FALSE}
+library(dplyr)
+library(kenpomR)
+browser <- login(Sys.getenv("kp_user"), Sys.getenv("kp_pw"))
+
+```
+
+```{r message = FALSE, results='hide'}
+rtgs <- get_pomeroy_ratings(browser, min_year = 2006, max_year = 2020)
+
+```
+```{r}
+glimpse(rtgs)
+```
+
+
+

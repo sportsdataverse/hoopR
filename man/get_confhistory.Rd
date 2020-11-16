@@ -14,8 +14,8 @@ get_confhistory(browser, conf)
 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-No filter applied by default.\cr}
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+No filter applied by default.}
 }
 \description{
 Get Conference Historical Ratings

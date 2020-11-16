@@ -1,0 +1,14 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^LICENSE\.md$
+^CODE_OF_CONDUCT\.md$
+^\.github
+^.travis.yml
+^README.Rmd
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^logo.png
+^kenpomR_*
+^\.github$

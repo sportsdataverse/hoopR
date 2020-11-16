@@ -18,7 +18,7 @@ Get Four Factors Data
 }
 \examples{
 \dontrun{
-get_fourfactors(browser, min_year = 2020, max_year = 2020)
+ get_fourfactors(browser, min_year = 2020, max_year = 2020)
 }
 }
 \keyword{Factors}

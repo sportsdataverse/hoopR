@@ -7,7 +7,7 @@
 get_pomeroy_archive_ratings(browser, date)
 }
 \arguments{
-\item{browser}{User login session}
+\item{browser}{Userlogin session}
 
 \item{date}{Date (YYYY-MM-DD)}
 }

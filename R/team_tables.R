@@ -5,12 +5,10 @@
 #' @param year Year of data to pull
 #'
 #' @keywords Team Schedule
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter mutate select
 #' @export
 #'
 #' @examples
@@ -19,27 +17,27 @@
 #' }
 
 get_team_schedule <- function(browser, team, year= 2020){
-  assert_that(year>=2002, msg="Data only goes back to 2002")
+  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c("Date","Team.Rk","Opponent.Rk","Opponent","Result",
                   "Poss","OT","Location","Record","Conference")
 
-  x<- page %>%
+  x <- page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#schedule-table') %>%
-    html_table(fill=TRUE)  %>%
+    rvest::html_table(fill=TRUE)  %>%
     .data$.[[1]] %>%
     as.data.frame() %>%
     .data$.[,-11]
 
-  ## TO-DO: Add the tiers of joy column back to data frame
+  ## TODO: Add the tiers of joy column back to data frame
   # y <- page %>%
   #   xml2::read_html() %>%
   #   rvest::html_nodes(css='#schedule-table') %>%
@@ -47,14 +45,16 @@ get_team_schedule <- function(browser, team, year= 2020){
   #
   colnames(x) <- header_cols
   team_name <- gsub("\\+"," ",team)
-
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Team.Rk)))
+  )
   x <- x %>%
-    filter(!is.na(as.numeric(.data$Team.Rk))) %>%
-    mutate(Team = team_name,
-           Year = year) %>%
-    select(.data$Date, .data$Team.Rk, .data$Team, .data$Opponent.Rk, .data$Opponent,
-           .data$Result, .data$Poss, .data$OT, .data$Location,
-           .data$Record, .data$Conference, .data$Year)
+    dplyr::mutate(Team = team_name,
+                  Year = year) %>%
+    dplyr::select(.data$Date, .data$Team.Rk, .data$Team, .data$Opponent.Rk, .data$Opponent,
+                  .data$Result, .data$Poss, .data$OT, .data$Location,
+                  .data$Record, .data$Conference, .data$Year)
 
   ### Store Data
   kenpom <- x
@@ -69,28 +69,25 @@ get_team_schedule <- function(browser, team, year= 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Game Plan
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter
 #' @export
-#'
 #' @examples
 #' \dontrun{
 #'   get_gameplan(browser, team='Florida St.', year=2020)
 #' }
 
 get_gameplan <- function(browser, team, year=2020){
-  assert_that(year>=2002, msg="Data only goes back to 2002")
+  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/gameplan.php?",
                 "team=", team_name,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
   header_cols <- c(
     'Date','Opponent.Rk',	'Opponent','Result','Location','Pace',
     'Off.Eff', 'Off.Eff.Rk', 'Off.eFGpct',	'Off.TOpct',	'Off.ORpct', 'Off.FTR',
@@ -100,20 +97,22 @@ get_gameplan <- function(browser, team, year=2020){
   )
 
 
-  x<- page %>%
+  x <- page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#schedule-table')  %>%
     .data$.[[1]] %>%
-    html_table(fill=TRUE) %>%
+    rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
 
   colnames(x) <- header_cols
 
   team_name <- gsub("\\+"," ",team)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Off.Eff)))
+  )
 
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$Off.Eff)))
   ### Store Data
   kenpom <- x
 
@@ -127,12 +126,10 @@ get_gameplan <- function(browser, team, year=2020){
 #' @param year Year of data to pull
 #' @param defense TRUE/FALSE variable for whether to gather the defense data, default FALSE
 #' @keywords Opponent Tracker
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter
 #' @export
 #'
 #' @examples
@@ -142,7 +139,7 @@ get_gameplan <- function(browser, team, year=2020){
 
 get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 
-  assert_that(year>=2002, msg="Data only goes back to 2002")
+  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
 
   team_name <- gsub(" ","\\+",team)
 
@@ -169,23 +166,25 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
                 "&y=", year,
                 "&t=", def)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
 
 
-  x<- page %>%
+  x <- page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#conf-table') %>%
     .data$.[[1]] %>%
-    html_table(fill=TRUE) %>%
+    rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
   colnames(x) <- header_cols
 
   team_name <- gsub("\\+"," ",team)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$eFGpct)))
+  )
 
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$eFGpct)))
   ### Store Data
   kenpom <- x
 
@@ -199,28 +198,27 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 #' @param year Year of data to pull
 #'
 #' @keywords Team Player Stats
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_remove
+#' @importFrom dplyr select mutate filter case_when
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_team_players(browser, team = 'Florida St.', year= 2020)
-#' }
+#'   \dontrun{
+#'     get_team_players(browser, team = 'Florida St.', year= 2020)
+#'   }
+#'
 
 get_team_players <- function(browser, team, year= 2020){
-  assert_that(year>=2002, msg="Data only goes back to 2002")
+  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c("Number", "Player", "Ht", "Wt", "Yr", "G", "S",
                   "Minpct", "ORtg", "Posspct","Shotspct",
@@ -235,37 +233,43 @@ get_team_players <- function(browser, team, year= 2020){
     .data$.[[1]]
 
   ## removing Player national rankings for easier manipulation
-  ## TO-DO: Add these rankings back as columns
+  ## TODO: Add these rankings back as columns
   plrank <- x %>%
     rvest::html_nodes(".plrank")
-  xml_remove(plrank)
+
+  xml2::xml_remove(plrank)
 
   x <- x %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame()
 
 
   colnames(x) <- header_cols
 
   team_name <- gsub("\\+"," ",team)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Wt)))
+  )
 
   x <- x %>%
-    filter(!is.na(as.numeric(.data$Wt))) %>%
-    mutate(Team = team_name,
-           Year = year,
-           Role = case_when(.data$Minpct < 10.0 ~ "Benchwarmer",
-                            .data$Posspct < 12.0 ~ "Nearly Invisible",
-                            .data$Posspct >=12.0 & .data$Posspct < 16.0 ~ "Limited Role",
-                            .data$Posspct >=16.0 & .data$Posspct < 20.0 ~ "Role Player",
-                            .data$Posspct >=20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
-                            .data$Posspct >=24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
-                            .data$Posspct >=28.0 ~ "Go-to Guys")) %>%
-    select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr, .data$G,
-           .data$S, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
-           .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
-           .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
-           .data$FTRate, .data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
-           .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
+    dplyr::mutate(Team = team_name,
+                  Year = year,
+                  Role = dplyr::case_when(.data$Minpct < 10.0 ~ "Benchwarmer",
+                                          .data$Posspct < 12.0 ~ "Nearly Invisible",
+                                          .data$Posspct >= 12.0 & .data$Posspct < 16.0 ~ "Limited Role",
+                                          .data$Posspct >= 16.0 & .data$Posspct < 20.0 ~ "Role Player",
+                                          .data$Posspct >= 20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
+                                          .data$Posspct >= 24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
+                                          .data$Posspct >= 28.0 ~ "Go-to Guys")) %>%
+    dplyr::select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr, .data$G,
+                  .data$S, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
+                  .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
+                  .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
+                  .data$FTRate, .data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
+                  .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
+
+
 
   ### Store Data
   kenpom <- x
@@ -280,36 +284,36 @@ get_team_players <- function(browser, team, year= 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Minutes Matrix
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr mutate filter
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
-#' }
+#'   \dontrun{
+#'     get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
+#'   }
+#'
+#'
 
 get_minutes_matrix <- function(browser, team, year = 2020){
-  assert_that(year >= 2014, msg="Data only goes back to 2014")
+  assertthat::assert_that(year >= 2014, msg="Data only goes back to 2014")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/player-expanded.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c("Date","Opponent.Rk","Opponent","Result")
 
-  x<- page %>%
+  x <- page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#minutes-table')  %>%
     .data$.[[1]] %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame()
 
 
@@ -317,11 +321,14 @@ get_minutes_matrix <- function(browser, team, year = 2020){
   colnames(x)[1:4] <- header_cols
 
   team_name <- gsub("\\+"," ",team)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Opponent.Rk)))
+  )
 
   x <- x %>%
-    filter(!is.na(as.numeric(.data$Opponent.Rk))) %>%
-    mutate(Team = team_name,
-           Year = year)
+    dplyr::mutate(Team = team_name,
+                  Year = year)
 
   ### Store Data
   kenpom <- x
@@ -337,28 +344,25 @@ get_minutes_matrix <- function(browser, team, year = 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Minutes Matrix
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_remove
+#' @importFrom dplyr filter mutate select
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_team_player_stats(browser, team = 'Florida St.', year = 2020)
-#' }
-
+#'   \dontrun{
+#'     get_team_player_stats(browser, team = 'Florida St.', year = 2020)
+#'   }
 get_team_player_stats <- function(browser, team, year = 2020){
-  assert_that(year>=2014, msg="Data only goes back to 2014")
+  assertthat::assert_that(year>=2014, msg="Data only goes back to 2014")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/player-expanded.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
 
   y <- list()
@@ -367,45 +371,47 @@ get_team_player_stats <- function(browser, team, year = 2020){
                     "TSpct","ORpct", "DRpct","ARate","TORate","Blkpct","Stlpct","FCper40","FDper40","FTRate",
                     "FTM-A",  "FTpct", "2PM-A", "FG2pct", "3PM-A", "FG3pct")
 
-    x<- page %>%
+    x <- page %>%
       xml2::read_html() %>%
       rvest::html_nodes(css='#player-table')  %>%
       .data$.[[i]]
 
     ## removing Player national rankings for easier manipulation
-    ## TO-DO: Add these rankings back as columns
+    ## TODO: Add these rankings back as columns
     plrank <- x %>%
       rvest::html_nodes(".plrank")
-    xml_remove(plrank)
+    xml2::xml_remove(plrank)
 
     x <- x %>%
-      html_table(fill=FALSE) %>%
+      rvest::html_table(fill=FALSE) %>%
       as.data.frame()
 
 
     colnames(x) <- header_cols
 
     team_name <- gsub("\\+"," ",team)
-
+  suppressWarnings(
     x <- x %>%
-      filter(!is.na(as.numeric(.data$Wt))) %>%
-      mutate(Team = team_name,
-             Year = year,
-             Role = case_when(.data$Minpct < 10.0 ~ "Benchwarmer",
-                              .data$Posspct < 12.0 ~ "Nearly Invisible",
-                              .data$Posspct >=12.0 & .data$Posspct < 16.0 ~ "Limited Role",
-                              .data$Posspct >=16.0 & .data$Posspct < 20.0 ~ "Role Player",
-                              .data$Posspct >=20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
-                              .data$Posspct >=24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
-                              .data$Posspct >=28.0 ~ "Go-to Guys")) %>%
-      select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr,
-             .data$G, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
-             .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
-             .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
-             .data$FTRate,.data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
-             .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
+      dplyr::filter(!is.na(as.numeric(.data$Wt)))
+  )
+  x <- x %>%
+    dplyr::mutate(Team = team_name,
+                  Year = year,
+                  Role = dplyr::case_when(.data$Minpct < 10.0 ~ "Benchwarmer",
+                                          .data$Posspct < 12.0 ~ "Nearly Invisible",
+                                          .data$Posspct >= 12.0 & .data$Posspct < 16.0 ~ "Limited Role",
+                                          .data$Posspct >= 16.0 & .data$Posspct < 20.0 ~ "Role Player",
+                                          .data$Posspct >= 20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
+                                          .data$Posspct >= 24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
+                                          .data$Posspct >= 28.0 ~ "Go-to Guys")) %>%
+    dplyr::select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr,
+                  .data$G, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
+                  .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
+                  .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
+                  .data$FTRate,.data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
+                  .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
 
-    y <- c(y,list(x))
+    y <- c(y, list(x))
   }
   ### Store Data
   kenpom <- y
@@ -421,28 +427,28 @@ get_team_player_stats <- function(browser, team, year = 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Depth Chart
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr select mutate
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
-#' }
+#'   \dontrun{
+#'     get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
+#'   }
+#'
+#'
 
 get_team_depth_chart <- function(browser, team, year= 2020){
-  assert_that(year>=2010, msg="Data only goes back to 2010")
+  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c("PG", "PG.Minpct", "SG", "SG.Minpct", "SF", "SF.Minpct",
                   "PF", "PF.Minpct", "C", "C.Minpct")
@@ -451,7 +457,7 @@ get_team_depth_chart <- function(browser, team, year= 2020){
     xml2::read_html() %>%
     rvest::html_nodes(css='#dc-table')%>%
     .data$.[[1]] %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame() %>%
     .data$.[-1,]
 
@@ -461,12 +467,11 @@ get_team_depth_chart <- function(browser, team, year= 2020){
   team_name <- gsub("\\+"," ",team)
 
   x <- x %>%
-
-    mutate(Team = team_name,
-           Year = year) %>%
-    select(.data$PG, .data$PG.Minpct, .data$SG,.data$SG.Minpct,
-           .data$SF, .data$SF.Minpct, .data$PF, .data$PF.Minpct,
-           .data$C, .data$C.Minpct, .data$Team, .data$Year)
+    dplyr::mutate(Team = team_name,
+                  Year = year) %>%
+    dplyr::select(.data$PG, .data$PG.Minpct, .data$SG,.data$SG.Minpct,
+                  .data$SF, .data$SF.Minpct, .data$PF, .data$PF.Minpct,
+                  .data$C, .data$C.Minpct, .data$Team, .data$Year)
 
   ### Store Data
   kenpom <- x
@@ -481,28 +486,27 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Depth Chart
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr select mutate filter
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_team_lineups(browser, team = 'Florida St.', year= 2020)
-#' }
+#'   \dontrun{
+#'     get_team_lineups(browser, team = 'Florida St.', year= 2020)
+#'   }
+#'
 
 get_team_lineups <- function(browser, team, year= 2020){
-  assert_that(year>=2010, msg="Data only goes back to 2010")
+  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   team_name <- gsub(" ","\\+",team)
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
                 "team=",team,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c("Rk","PG", "SG", "SF",
                   "PF", "C", "Minpct")
@@ -511,21 +515,22 @@ get_team_lineups <- function(browser, team, year= 2020){
     xml2::read_html() %>%
     rvest::html_nodes(css='#dc-table2')  %>%
     .data$.[[1]] %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame() %>%
     .data$.[-1,]
 
-
   colnames(x) <- header_cols
-
   team_name <- gsub("\\+"," ",team)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Minpct)))
+  )
 
   x <- x %>%
-    filter(!is.na(as.numeric(.data$Minpct))) %>%
-    mutate(Team = team_name,
-           Year = year) %>%
-    select(.data$Rk, .data$PG, .data$SG, .data$SF, .data$PF, .data$C,
-           .data$Minpct, .data$Team, .data$Year)
+    dplyr::mutate(Team = team_name,
+                  Year = year) %>%
+    dplyr::select(.data$Rk, .data$PG, .data$SG, .data$SF, .data$PF, .data$C,
+                  .data$Minpct, .data$Team, .data$Year)
 
   ### Store Data
   kenpom <- x

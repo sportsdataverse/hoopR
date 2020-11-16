@@ -8,7 +8,7 @@ authors:
    href: https://twitter.com/saiemgilani
 home:
 navbar:
-  html:  <img src="https://github.com/saiemgilani/kenpomR/data-raw/kenpomR-tile.png" height="24">
+  icon: https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.ico
   title: "KenPomR"
   left:
     - icon: fa-home
@@ -18,6 +18,9 @@ navbar:
       menu:
       - text: Vignettes
         href: articles/index.html
+      - text: "Introductory"
+      - text: "Intro to kenpomR"
+        href: articles/Intro-to-kenpomR.html
     - icon: fa-file-code-o
       text: "Functions"
       href: reference/index.html

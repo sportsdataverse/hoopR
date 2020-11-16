@@ -1,0 +1,45 @@
+@import url("https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css");
+@import url('https://fonts.googleapis.com/css2?family=Chivo');
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+body {
+  font-family: "Lato";
+  /*color: #1f1f1f;*/
+  color: #0f0f0f;
+  font-size: 18px;
+}
+
+h1, h2, .h1, .h2{
+  font-family: "Chivo";
+  letter-spacing: 1px;
+  line-height: 0.7rem; /* increases, so wrapping headers don't overlap */ 
+  color: #0f0f0f;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+h3, h4, h5, h6, .h3, .h4{
+  font-family: "Chivo";
+  letter-spacing: 1px;
+  line-height: 0.5rem; /* increases, so wrapping headers don't overlap */ 
+  color: #0f0f0f;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+pre, code {
+  font-family: "Fira Mono", Consolas, Inconsolata, monospace;
+}
+.figure {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.navbar-default {
+    border-color: #eee;
+}
+
+#tocnav ul ul {
+    margin-left: 25px;
+}

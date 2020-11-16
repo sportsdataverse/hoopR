@@ -4,18 +4,18 @@
 #' @param team Team filter to select.
 #'
 #' @keywords Team History
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_remove
+#' @importFrom dplyr filter mutate
+#' @importFrom stringr str_remove
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_team_history(browser, team = 'Florida St.', year= 2020)
-#' }
+#'   \dontrun{
+#'     get_team_history(browser, team = 'Florida St.', year= 2020)
+#'   }
+#'
 
 get_team_history <- function(browser, team){
 
@@ -24,7 +24,7 @@ get_team_history <- function(browser, team){
   url <- paste0("https://kenpom.com/history.php?",
                 "t=",team)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c('Year','Team.Rk','Coach',	'Conf','W-L',	'AdjT', 'AdjO',	'AdjD',
                   'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
@@ -44,10 +44,10 @@ get_team_history <- function(browser, team){
   ## TO-DO: Add these rankings back as columns
   tmrank <- x %>%
     rvest::html_nodes(".tmrank")
-  xml_remove(tmrank)
+  xml2::xml_remove(tmrank)
 
   x <- x %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame() %>%
     .data$.[-1,]
 
@@ -55,10 +55,12 @@ get_team_history <- function(browser, team){
   colnames(x) <- header_cols
 
   team_name <- gsub("\\+"," ",team)
-
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$AdjT)))
+  )
   x <- x %>%
-    filter(!is.na(as.numeric(.data$AdjT))) %>%
-    mutate(Team = team_name)
+    dplyr::mutate(Team = team_name)
   ### Store Data
   kenpom <- x
 
@@ -71,18 +73,19 @@ get_team_history <- function(browser, team){
 #' @param coach Coach filter to select.
 #'
 #' @keywords Coach History
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_remove
+#' @importFrom dplyr filter mutate
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   get_coach_history(browser, coach = 'Leonard Hamilton')
-#' }
+#'   \dontrun{
+#'    get_coach_history(browser, coach = 'Leonard Hamilton')
+#'   }
+#'
+#'
 
 get_coach_history <- function(browser, coach){
   coach_name <- gsub(" ","\\+",coach)
@@ -90,7 +93,7 @@ get_coach_history <- function(browser, coach){
   url <- paste0("https://kenpom.com/history.php?",
                 "c=",coach_name)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c('Year','Team.Rk','Team',	'Conf','W-L',	'AdjT', 'AdjO',	'AdjD',
                   'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
@@ -101,7 +104,7 @@ get_coach_history <- function(browser, coach){
                   'Blkpct.Def',	'FG3Apct.Def',	'Apct.Def',
                   'AP.Def',	'Foul2Particpct')
 
-  x<- page %>%
+  x <- page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#player-table') %>%
     .data$.[[1]]
@@ -110,10 +113,10 @@ get_coach_history <- function(browser, coach){
   ## TO-DO: Add these rankings back as columns
   tmrank <- x %>%
     rvest::html_nodes(".tmrank")
-  xml_remove(tmrank)
+  xml2::xml_remove(tmrank)
 
   x <- x %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame() %>%
     .data$.[-1,]
 
@@ -121,10 +124,12 @@ get_coach_history <- function(browser, coach){
   colnames(x) <- header_cols
 
   coach_name <- gsub("\\+"," ",coach)
-
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$AdjT)))
+  )
   x <- x %>%
-    filter(!is.na(as.numeric(.data$AdjT))) %>%
-    mutate(Coach = coach_name)
+    dplyr::mutate(Coach = coach_name)
   ### Store Data
   kenpom <- x
 
@@ -136,12 +141,11 @@ get_coach_history <- function(browser, coach){
 #' @param browser User login session
 #'
 #' @keywords Program Ratings
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes
+#' @importFrom xml2 read_html xml_remove
+#' @importFrom dplyr filter
 #' @export
 #' @examples
 #' \dontrun{
@@ -153,7 +157,7 @@ get_program_ratings <- function(browser){
   ### Pull Data
   url <- "https://kenpom.com/programs.php?"
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols<- c('Rk',	'Team',	'Conf','Rtg',
                   'Best.Rk','Best.Yr',
@@ -170,17 +174,17 @@ get_program_ratings <- function(browser){
   tmrank <- x %>%
     rvest::html_nodes(".tmrank")
 
-  xml_remove(tmrank)
+  xml2::xml_remove(tmrank)
 
   x <- x %>%
-    html_table(fill=FALSE) %>%
+    rvest::html_table(fill=FALSE) %>%
     as.data.frame()
 
-
   colnames(x) <- header_cols
-
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$Rtg)))
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Rtg)))
+  )
   ### Store Data
   kenpom <- x
 
@@ -193,14 +197,11 @@ get_program_ratings <- function(browser){
 #' @param team Team filter to select.
 #' @param conference_only Filter records to only conference games, default: FALSE
 #' @keywords Single-Game Team Records
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @importFrom utils "URLencode"
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter mutate
 #' @export
-#'
 #' @examples
 #' \dontrun{
 #'   get_records_team(browser, team = 'Florida St.')
@@ -216,7 +217,7 @@ get_records_team <- function(browser, team, conference_only = FALSE){
     url <- paste0("https://kenpom.com/records.php?",
                   "team=", team_name)
   }
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   y <- list()
 
@@ -235,15 +236,11 @@ get_records_team <- function(browser, team, conference_only = FALSE){
                     'Regulation',
                     Metric[i])
 
-
-
-
-
     x <- page %>%
       xml2::read_html() %>%
       rvest::html_nodes(css='.stattable') %>%
       .data$.[[i]] %>%
-      html_table(fill=TRUE) %>%
+      rvest::html_table(fill=TRUE) %>%
       as.data.frame()
 
     colnames(x) <- header_cols
@@ -261,11 +258,11 @@ get_records_team <- function(browser, team, conference_only = FALSE){
       x$Rk <- rev(replace_na_with_first(rev(x$Rk)))
     }
     if(conference_only){
-    x <- x %>%
-      mutate(
-        Team = team_name,
-        Conference_Only = conference_only
-      )
+      x <- x %>%
+        dplyr::mutate(
+          Team = team_name,
+          Conference_Only = conference_only
+        )
     }
     y <- c(y, list(x))
   }
@@ -278,19 +275,15 @@ get_records_team <- function(browser, team, conference_only = FALSE){
 
 #' Get KenPom Ratings Archive
 #'
-#' @param browser User login session
+#' @param browser Userlogin session
 #' @param date Date (YYYY-MM-DD)
-#'
 #' @keywords Ratings Archive
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringr
-#' @import stringi
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter mutate
+#' @importFrom stringr str_remove
 #' @export
-#'
 #' @examples
 #' \dontrun{
 #'   get_pomeroy_archive_ratings(browser, date='2018-11-22')
@@ -306,7 +299,7 @@ get_pomeroy_archive_ratings <- function(browser, date){
 
   ### Pull Data
   url <- paste0("https://kenpom.com/archive.php?d=", date)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
 
   x <- page %>%
@@ -317,13 +310,15 @@ get_pomeroy_archive_ratings <- function(browser, date){
     as.data.frame()
 
   colnames(x) <- header_cols
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$AdjEM.Rk)))
+  )
 
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$AdjEM.Rk)))
-
-  x <- mutate(x,
-              "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-              "Team" = sapply(.data$Team, function(arg) { gsub("\\s[0-9]+", "", arg) }))
+  x <- dplyr::mutate(x,
+                     "NCAA_Seed" = NA_integer_,
+                     "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                     "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+") }))
 
 
   kenpom <- x
@@ -340,17 +335,14 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 #' 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 #' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-#' No filter applied by default.\cr
-#'
+#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+#' No filter applied by default.
 #' @keywords Conference Stats
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringr
-#' @import stringi
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr mutate
 #' @export
 #' @examples
 #' \dontrun{
@@ -382,7 +374,7 @@ get_conf <- function(browser, year, conf){
                 "c=", conf,
                 "&y=", year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   y <- list()
   for(i in 1:7){
@@ -409,14 +401,14 @@ get_conf <- function(browser, year, conf){
       colnames(x) <- header_cols6
     }else if(i == 7){
       colnames(x) <- header_cols7
-      w<-x[1:3]
-      v<-x[4:6]
-      colnames(v)<-colnames(w)
-      x<-rbind(w,v)
+      w <- x[1:3]
+      v <- x[4:6]
+      colnames(v) <- colnames(w)
+      x <- rbind(w,v)
     }
 
-    x <- mutate(x,
-                "Year" = year)
+    x <- dplyr::mutate(x,
+                       "Year" = year)
 
     y <- c(y, list(x))
   }
@@ -433,13 +425,11 @@ get_conf <- function(browser, year, conf){
 #' @param year Year (YYYY)
 #'
 #' @keywords Conference Comparison
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringr
-#' @import stringi
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr mutate filter
 #' @export
 #'
 #' @examples
@@ -457,7 +447,7 @@ get_confstats <- function(browser, year){
 
   ### Pull Data
   url <- paste0("https://kenpom.com/confstats.php?y=", year)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   x <- page %>%
     xml2::read_html() %>%
@@ -467,12 +457,13 @@ get_confstats <- function(browser, year){
     as.data.frame()
 
   colnames(x) <- header_cols
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Eff)))
+  )
 
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$Eff)))
-
-  x <- mutate(x,
-              "Year" = year)
+  x <- dplyr::mutate(x,
+                     "Year" = year)
 
   kenpom <- x
 
@@ -487,17 +478,12 @@ get_confstats <- function(browser, year){
 #' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 #' 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 #' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-#' No filter applied by default.\cr
-#'
+#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+#' No filter applied by default.
 #' @keywords Conference History
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringr
-#' @import stringi
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_remove
 #' @export
 #'
 #' @examples
@@ -517,7 +503,7 @@ get_confhistory <- function(browser, conf){
   ### Pull Data
   url <- paste0("https://kenpom.com/confhistory.php?",
                 "c=", conf)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   x <- page %>%
     xml2::read_html() %>%
@@ -527,7 +513,7 @@ get_confhistory <- function(browser, conf){
   ## TO-DO: Add these rankings back as columns
   tmrank <- x %>%
     rvest::html_nodes(".tmrank")
-  xml_remove(tmrank)
+  xml2::xml_remove(tmrank)
   x <- x %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()

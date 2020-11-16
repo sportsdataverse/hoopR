@@ -13,27 +13,27 @@ get_playerstats(browser, metric = "eFG", conf = NULL, conf_only = FALSE, year)
 'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', \cr
 'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. \cr
 Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: \cr
-players that used >28\% of possessions, >24\% of possessions, >20\% of possessions, and with no possession restriction.\cr}
+players that used more than 28 percent of possessions, more than 24 percent of possessions, more than 20 percent of possessions, and with no possession restriction.}
 
 \item{conf}{Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-No filter applied by default.\cr}
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+No filter applied by default.}
 
 \item{conf_only}{Used to define whether stats should reflect conference games only.\cr
-Only available if specific conference is defined. Only available for season after 2013, FALSE by default.\cr}
+Only available if specific conference is defined. Only available for season after 2013, FALSE by default.}
 
-\item{year}{Year of data to pull (earliest year of data available: 2004)\cr}
+\item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
 \description{
 Get Player Stats Leaders by Metric
 }
 \examples{
 \dontrun{
-get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
+ get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
 }
 }
 \keyword{Player}

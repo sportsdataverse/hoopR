@@ -16,7 +16,7 @@ Get Home Court Arenas
 }
 \examples{
 \dontrun{
-get_arenas(browser, year=2020)
+ get_arenas(browser, year=2020)
 }
 }
 \keyword{Arenas}

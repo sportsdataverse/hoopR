@@ -20,7 +20,7 @@ Get Game Attributes
 }
 \examples{
 \dontrun{
-get_game_attrs(browser,year=2020, attr = "Excitement")
+  get_game_attrs(browser,year=2020, attr = "Excitement")
 }
 }
 \keyword{Game}

@@ -17,9 +17,11 @@ get_minutes_matrix(browser, team, year = 2020)
 Get Minutes Matrix from Expanded Player Page
 }
 \examples{
-\dontrun{
-  get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
-}
+  \dontrun{
+    get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
+  }
+
+
 }
 \keyword{Matrix}
 \keyword{Minutes}

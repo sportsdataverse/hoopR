@@ -17,9 +17,11 @@ get_team_depth_chart(browser, team, year = 2020)
 Get Depth Chart Last 5 Games from Team Page
 }
 \examples{
-\dontrun{
-  get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
-}
+  \dontrun{
+    get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
+  }
+
+
 }
 \keyword{Chart}
 \keyword{Depth}

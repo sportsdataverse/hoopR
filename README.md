@@ -1,19 +1,17 @@
 
-## `kenpomR`
+# kenpomR <a href='http://saiemgilani.github.io/kenpomR'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
+![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
 [![Build
 Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-<!-- badges: end -->  
-![logo.png](https://i.imgur.com/444lyf3.png)
-
-A Scraping and Aggregating Interface for Ken Pomeroy’s College
-Basketball Statistics Website
+[![Twitter
+Follow](https://img.shields.io/twitter/follow/saiemgilani?style=social)](https://twitter.com/saiemgilani)
+<!-- badges: end -->
 
 `kenpomR` is an R package for working with college basketball data. A
-Scraping and Aggregating interface for Ken Pomeroy’s college basketball
+scraping and aggregating interface for Ken Pomeroy’s college basketball
 statistics website, [kenpom.com](https://kenpom.com). It provides users
 with an active subscription the capability to scrape the website tables
 and analyze the data for themselves.
@@ -24,9 +22,14 @@ You can install `kenpomR` from
 [GitHub](https://github.com/saiemgilani/kenpomR) with:
 
 ``` r
-# Then can install using the devtools package from either of the following:
+# Install via devtools package using the following:
 devtools::install_github(repo = "saiemgilani/kenpomR")
 ```
+
+## Documentation
+
+For more information on the package and function reference, please see
+the `kenpomR` [documentation](https://saiemgilani.github.io/kenpomR/).
 
 ## Code of Conduct
 

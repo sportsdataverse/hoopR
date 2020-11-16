@@ -16,7 +16,7 @@ Get FanMatch by date
 }
 \examples{
 \dontrun{
-get_fanmatch(browser, date="2020-03-10")
+  get_fanmatch(browser, date="2020-03-10")
 }
 }
 \keyword{FanMatch}

@@ -45,6 +45,8 @@
 
 
 
+  <link href="../extra.css" rel="stylesheet">
+  
 
 <meta property="og:title" content="Get Player Stats Leaders by Metric — get_playerstats" />
 <meta property="og:description" content="Get Player Stats Leaders by Metric" />
@@ -104,6 +106,10 @@
     <li>
       <a href="../articles/index.html">Vignettes</a>
     </li>
+    <li class="dropdown-header">Introductory</li>
+    <li>
+      <a href="../articles/Intro-to-kenpomR.html">Intro to kenpomR</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -157,7 +163,7 @@
     <p>Get Player Stats Leaders by Metric</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_playerstats</span>(<span class='no'>browser</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"eFG"</span>, <span class='kw'>conf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>conf_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>year</span>)</pre>
+    <pre class="usage"><span class='fu'>get_playerstats</span><span class='op'>(</span><span class='va'>browser</span>, metric <span class='op'>=</span> <span class='st'>"eFG"</span>, conf <span class='op'>=</span> <span class='cn'>NULL</span>, conf_only <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>year</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,7 +178,7 @@
 'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', <br />
 'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. <br />
 Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: <br />
-players that used &gt;28% of possessions, &gt;24% of possessions, &gt;20% of possessions, and with no possession restriction.<br /></p></td>
+players that used more than 28 percent of possessions, more than 24 percent of possessions, more than 20 percent of possessions, and with no possession restriction.</p></td>
     </tr>
     <tr>
       <th>conf</th>
@@ -181,25 +187,26 @@ players that used &gt;28% of possessions, &gt;24% of possessions, &gt;20% of pos
 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', <br />
 'SUM', 'SWAC', 'WAC', 'WCC'. <br />
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', <br />
-you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-No filter applied by default.<br /></p></td>
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.<br />
+No filter applied by default.</p></td>
     </tr>
     <tr>
       <th>conf_only</th>
       <td><p>Used to define whether stats should reflect conference games only.<br />
-Only available if specific conference is defined. Only available for season after 2013, FALSE by default.<br /></p></td>
+Only available if specific conference is defined. Only available for season after 2013, FALSE by default.</p></td>
     </tr>
     <tr>
       <th>year</th>
-      <td><p>Year of data to pull (earliest year of data available: 2004)<br /></p></td>
+      <td><p>Year of data to pull (earliest year of data available: 2004)</p></td>
     </tr>
     </table>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>get_playerstats</span>(<span class='no'>browser</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>'eFG'</span>, <span class='kw'>conf_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>year</span><span class='kw'>=</span><span class='fl'>2020</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='fu'>get_playerstats</span><span class='op'>(</span><span class='va'>browser</span>, metric <span class='op'>=</span> <span class='st'>'eFG'</span>, conf_only <span class='op'>=</span> <span class='cn'>FALSE</span>, year<span class='op'>=</span><span class='fl'>2020</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -215,7 +222,7 @@ Only available if specific conference is defined. Only available for season afte
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

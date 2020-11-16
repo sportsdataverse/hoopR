@@ -15,9 +15,11 @@ get_coach_history(browser, coach)
 Get Coaching Resume
 }
 \examples{
-\dontrun{
-  get_coach_history(browser, coach = 'Leonard Hamilton')
-}
+  \dontrun{
+   get_coach_history(browser, coach = 'Leonard Hamilton')
+  }
+
+
 }
 \keyword{Coach}
 \keyword{History}

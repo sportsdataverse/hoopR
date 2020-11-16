@@ -2,11 +2,11 @@
 #'
 #' @param browser User login session
 #' @keywords Trends
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter
 #' @export
 #'
 #' @examples
@@ -17,7 +17,7 @@
 get_trends <- function(browser){
     ### Pull Data
     url <- "https://kenpom.com/trends.php"
-    page <- jump_to(browser, url)
+    page <- rvest::jump_to(browser, url)
     header_cols <- c("Season","Efficiency","Tempo","eFGpct","TOpct",
                      "ORpct","FTRate","FG2pct","FG3pct","FG3Apct",'FTpct',
                      "Apct","Blkpct","Stlpct","NonStlpct","AvgHgt",
@@ -30,10 +30,10 @@ get_trends <- function(browser){
       as.data.frame()
 
     colnames(x) <- header_cols
-
-    x <- x %>%
-      filter(!is.na(as.numeric(.data$eFGpct)))
-
+    suppressWarnings(
+      x <- x %>%
+        dplyr::filter(!is.na(as.numeric(.data$eFGpct)))
+    )
     ### Store Data
     kenpom <- x
 
@@ -45,11 +45,11 @@ get_trends <- function(browser){
 #' @param year Year of data to pull
 #' @param browser User login session
 #' @keywords Refs
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom dplyr select filter mutate
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
 #' @export
 #'
 #' @examples
@@ -61,7 +61,7 @@ get_officials <- function(browser, year= 2020){
   assert_that(year>=2016, msg="Data only goes back to 2016")
   ### Pull Data
   url <- paste0("https://kenpom.com/officials.php?y=",year)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
   header_cols <- c("Rk","OfficialName","RefRating","Gms","Last.Game",
                    "Last.Game.1","Last.Game.2")
 
@@ -73,10 +73,10 @@ get_officials <- function(browser, year= 2020){
 
   colnames(x) <- header_cols
   x <- x %>%
-    select(-.data$Last.Game.2) %>%
-    filter(!is.na(as.numeric(.data$RefRating)))
-  x <- mutate(x,
-              "Year" = year)
+    dplyr::select(-.data$Last.Game.2) %>%
+    dplyr::filter(!is.na(as.numeric(.data$RefRating)))
+  x <- dplyr::mutate(x,
+                     "Year" = year)
   ### Store Data
   kenpom <- x
 
@@ -87,11 +87,11 @@ get_officials <- function(browser, year= 2020){
 #'
 #' @param browser User login session
 #' @keywords HCA
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr filter
 #' @export
 #'
 #' @examples
@@ -102,7 +102,7 @@ get_officials <- function(browser, year= 2020){
 get_hca <- function(browser){
 
   url <- paste0("https://kenpom.com/hca.php")
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
   header_cols <- c("Team",	"Conf",	"HCA","HCA.Rk",	"PF","PF.Rk",	"Pts","Pts.Rk",	"NST","NST.Rk",
                    "Blk","Blk.Rk",	"Elev","Elev.Rk")
 
@@ -113,9 +113,10 @@ get_hca <- function(browser){
     as.data.frame()
 
   colnames(x) <- header_cols
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$HCA)))
-
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$HCA)))
+  )
   ### Store Data
   kenpom <- x
 
@@ -127,16 +128,15 @@ get_hca <- function(browser){
 #' @param browser User login session
 #' @param year Year of data to pull
 #' @keywords Arenas
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr mutate
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' get_arenas(browser, year=2020)
+#'  get_arenas(browser, year=2020)
 #' }
 
 get_arenas <- function(browser, year=2020){
@@ -145,7 +145,7 @@ get_arenas <- function(browser, year=2020){
 
   url <- paste0("https://kenpom.com/arenas.php?y=",year)
 
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
 
   header_cols <- c("Rk","Team",	"Conf",	"Arena",
                    "Alternate")
@@ -158,8 +158,8 @@ get_arenas <- function(browser, year=2020){
 
   colnames(x) <- header_cols
 
-  x <- mutate(x,
-              "Year" = year)
+  x <- dplyr::mutate(x,
+                     "Year" = year)
   ### Store Data
   kenpom <- x
 
@@ -174,24 +174,24 @@ get_arenas <- function(browser, year=2020){
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 #' 'Upsets','Busts','Comeback','Window'
 #' @keywords Game
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr select mutate
 #' @export
 #'
 #' @examples
-#'\dontrun{
-#' get_game_attrs(browser,year=2020, attr = "Excitement")
+#' \dontrun{
+#'   get_game_attrs(browser,year=2020, attr = "Excitement")
 #' }
 
 get_game_attrs <- function(browser, year=2020, attr = "Excitement"){
-  assert_that(year>=2010, msg="Data only goes back to 2010")
+  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   url <- paste0("https://kenpom.com/game_attrs.php?",
                 "y=", year,
                 "&s=", attr)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
   header_cols <- c("Rk","Data","Game",
                    "col","Location","Conf",
                    attr)
@@ -205,10 +205,10 @@ get_game_attrs <- function(browser, year=2020, attr = "Excitement"){
 
   colnames(x) <- header_cols
 
-  x <- mutate(x,
-              "Year" = year)
+  x <- dplyr::mutate(x,
+                     "Year" = year)
   ### Store Data
-  kenpom <- x %>% select(-.data$col)
+  kenpom <- x %>% dplyr::select(-.data$col)
 
   return(kenpom)
 }
@@ -220,25 +220,26 @@ get_game_attrs <- function(browser, year=2020, attr = "Excitement"){
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'
 #' @keywords FanMatch
-#' @importFrom assertthat "assert_that"
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringr
-#' @import stringi
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr select filter mutate
+#' @importFrom tidyr separate
+#' @importFrom stringr str_extract str_match
+#' @importFrom stringi stri_extract_last_regex
 #' @export
 #'
 #' @examples
-#'\dontrun{
-#' get_fanmatch(browser, date="2020-03-10")
-#'}
+#' \dontrun{
+#'   get_fanmatch(browser, date="2020-03-10")
+#' }
 
 get_fanmatch <- function(browser, date="2020-02-12"){
 
   url <- paste0("https://kenpom.com/fanmatch.php?",
                 "d=", date)
-  page <- jump_to(browser, url)
+  page <- rvest::jump_to(browser, url)
   header_cols <- c("Game","Prediction","Time(ET)",
                    "Location","ThrillScore","Comeback","Excitement")
 
@@ -256,7 +257,7 @@ get_fanmatch <- function(browser, date="2020-02-12"){
                     extra = "merge")
 
   x <- x %>%
-    mutate(
+    dplyr::mutate(
       WinRk = stringr::str_extract(
         stringr::str_extract(.data$Winner,"[\\w]+"),"\\d{1,3}+"),
       WinTeam = stringr::str_extract(
@@ -271,23 +272,25 @@ get_fanmatch <- function(browser, date="2020-02-12"){
         stringr::str_match(.data$Loser,'\\d{1,3}\\s(.*?)\\s\\d{1,3}')[,2],
       LossScore = stringr::str_extract(
         stringi::stri_extract_last_regex(.data$Loser,'[\\d]+'),"\\d{1,3}+"),
-      Poss =
-        stringr::str_match(.data$col,'\\[(.*?)\\]')[,2],
+      Poss = stringr::str_match(.data$col,'\\[(.*?)\\]')[,2],
       MVP = stringr::str_match(.data$col,'MVP\\:(.*)')[,2],
       Event = stringr::str_match(.data$col,'\\](.*)')[,2]
     )
 
-  x <- mutate(x,
-              "Date" = date)
-  x <- x %>%
-    filter(!is.na(as.numeric(.data$Poss)))
+  x <- dplyr::mutate(x,
+                     "Date" = date)
+  suppressWarnings(
+    x <- x %>%
+      dplyr::filter(!is.na(as.numeric(.data$Poss)))
+  )
   ### Store Data
-  kenpom <- x %>% select(-.data$col,-.data$Winner,-.data$Loser,
-                         .data$WinRk, .data$WinTeam, .data$WinScore,
-                         .data$LossRk, .data$LossTeam, .data$LossScore,
-                         .data$Poss, .data$Prediction, .data$ThrillScore,
-                         .data$Comback, .data$Excitement, .data$MVP,
-                         .data$Location, .data$"Time(ET)", .data$Event, .data$Date)
+  kenpom <- x %>%
+    dplyr::select(-.data$col,-.data$Winner,-.data$Loser,
+                  .data$WinRk, .data$WinTeam, .data$WinScore,
+                  .data$LossRk, .data$LossTeam, .data$LossScore,
+                  .data$Poss, .data$Prediction, .data$ThrillScore,
+                  .data$Comback, .data$Excitement, .data$MVP,
+                  .data$Location, .data$"Time(ET)", .data$Event, .data$Date)
 
   return(kenpom)
 }

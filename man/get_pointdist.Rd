@@ -18,7 +18,7 @@ Get Team Points Distribution
 }
 \examples{
 \dontrun{
-get_pointdist(browser, min_year = 2020, max_year = 2020)
+  get_pointdist(browser, min_year = 2020, max_year = 2020)
 }
 }
 \keyword{Points}

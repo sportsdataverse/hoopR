@@ -15,9 +15,10 @@ get_team_history(browser, team)
 Get Team Efficiency History
 }
 \examples{
-\dontrun{
-  get_team_history(browser, team = 'Florida St.', year= 2020)
-}
+  \dontrun{
+    get_team_history(browser, team = 'Florida St.', year= 2020)
+  }
+
 }
 \keyword{History}
 \keyword{Team}

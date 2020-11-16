@@ -17,8 +17,9 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website">
-<meta property="og:description" content="The R package kenpomR(oy) is for working with KenPoms college basketball data. A Scraping interface for Ken Pomeroys college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.">
+<script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
+<meta property="og:title" content="A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website">
+<meta property="og:description" content="The R package kenpomR(oy) is for working with KenPoms college basketball data. A scraping interface for Ken Pomeroys college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.">
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -61,6 +62,10 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="articles/index.html">Vignettes</a>
+    </li>
+    <li class="dropdown-header">Introductory</li>
+    <li>
+      <a href="articles/Intro-to-kenpomR.html">Intro to kenpomR</a>
     </li>
   </ul>
 </li>
@@ -105,29 +110,32 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
-<div id="kenpomr" class="section level2">
-<h2 class="hasAnchor">
-<a href="#kenpomr" class="anchor"></a><code>kenpomR</code>
-</h2>
+<div id="kenpomr-" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#kenpomr-" class="anchor"></a>kenpomR <a href="http://saiemgilani.github.io/kenpomR"><img src="reference/figures/logo.png" align="right" height="139"></a>
+</h1></div>
 <!-- badges: start -->
 
-<p>A Scraping and Aggregating Interface for Ken Pomeroy’s College Basketball Statistics Website</p>
-<p><code>kenpomR</code> is an R package for working with college basketball data. A Scraping and Aggregating interface for Ken Pomeroy’s college basketball statistics website, <a href="https://kenpom.com">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
-</div>
+<p><code>kenpomR</code> is an R package for working with college basketball data. A scraping and aggregating interface for Ken Pomeroy’s college basketball statistics website, <a href="https://kenpom.com">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install <code>kenpomR</code> from <a href="https://github.com/saiemgilani/kenpomR">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Then can install using the devtools package from either of the following:</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="kw">repo</span> <span class="kw">=</span> <span class="st">"saiemgilani/kenpomR"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Install via devtools package using the following:</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"saiemgilani/kenpomR"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation" class="anchor"></a>Documentation</h2>
+<p>For more information on the package and function reference, please see the <code>kenpomR</code> <a href="https://saiemgilani.github.io/kenpomR/">documentation</a>.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
 <p>Please note that the <code>kenpomR</code> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
-
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -163,7 +171,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.com/saiemgilani/kenpomR"><img src="https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
+<li><a href="https://twitter.com/saiemgilani"><img src="https://img.shields.io/twitter/follow/saiemgilani?style=social" alt="Twitter Follow"></a></li>
 </ul>
 </div>
 </div>
@@ -175,7 +183,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

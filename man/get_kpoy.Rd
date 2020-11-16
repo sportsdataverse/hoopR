@@ -16,7 +16,7 @@ Get KPoY Leaders Tables
 }
 \examples{
 \dontrun{
-get_kpoy(browser, year=2020)
+ get_kpoy(browser, year=2020)
 }
 
 }

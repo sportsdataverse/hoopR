@@ -17,9 +17,10 @@ get_team_lineups(browser, team, year = 2020)
 Get Lineups Last 5 Games from Team Page
 }
 \examples{
-\dontrun{
-  get_team_lineups(browser, team = 'Florida St.', year= 2020)
-}
+  \dontrun{
+    get_team_lineups(browser, team = 'Florida St.', year= 2020)
+  }
+
 }
 \keyword{Chart}
 \keyword{Depth}

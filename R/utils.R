@@ -4,23 +4,17 @@
 #' @param user_email User subscription e-mail
 #' @param user_pw  User subscription password
 #' @keywords Login
-#' @import dplyr
-#' @import tidyr
-#' @import rvest
-#' @import xml2
-#' @import stringi
+#' @importFrom rvest html_session html_form set_values submit_form
 #' @export
-#'
-
 login <- function(user_email, user_pw){
 
   url <- "https://kenpom.com/index.php"
   #create a web session with the desired login address
-  my_session <- html_session(url)
-  login_form <- html_form(my_session)[[1]]
+  my_session <- rvest::html_session(url)
+  login_form <- rvest::html_form(my_session)[[1]]
   #in this case the submit is the 2nd form
-  filled_form <- set_values(login_form, email = user_email, password = user_pw)
-  submit_form(my_session, filled_form)
+  filled_form <- rvest::set_values(login_form, email = user_email, password = user_pw)
+  rvest::submit_form(my_session, filled_form)
 
   return(my_session)
 }
@@ -28,21 +22,12 @@ login <- function(user_email, user_pw){
 #' Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging
 #' @keywords Util
 #' @param df KenPom dataframe
-#' @import tidyr
-#' @import dplyr
-#' @import stringr
-#' @import stringi
-#' @importFrom rlang :=
-#' @importFrom data.table "setDT"
+#' @importFrom rlang := .data
+#' @importFrom data.table setDT
 #'
-#' @export
-#'
-#'
-
 clean_team_names_NCAA_merge <- function(df){
-  setDT(df)
-
-  ####Clean Team Names so that they can be merged to NCAA data
+  data.table::setDT(df)
+  #### Clean Team Names so that they can be merged to NCAA data
   # Replacing Southern with Southen Univ forces recorrecting TX Southern & Miss Southern
   df[,.data$TeamName:=gsub("\\.","",.data$Team)]
   df[,.data$TeamName:=gsub("Cal St","CS",.data$TeamName)]
@@ -102,25 +87,22 @@ clean_team_names_NCAA_merge <- function(df){
   return(df)
 }
 
-
 #' Utilities and Helpers for package
 #' @keywords Internal
-#' @importFrom attempt "stop_if_not"
-#' @importFrom curl "has_internet"
-#'
+#' @importFrom attempt stop_if_not
+#' @importFrom curl has_internet
 check_internet <- function(){
-  stop_if_not(.x = has_internet(), msg = "Please check your internet connexion")
+  attempt::stop_if_not(.x = curl::has_internet(), msg = "Please check your internet connexion")
 }
 
 #' Check Status function
 #' @param res Response from API
 #' @keywords Internal
-#' @importFrom httr "status_code"
-#'
-
+#' @importFrom attempt stop_if_not
+#' @importFrom httr status_code
 check_status <- function(res){
-  stop_if_not(.x = status_code(res),
-              .p = ~ .x == 200,
-              msg = "The API returned an error")
+  attempt::stop_if_not(.x = httr::status_code(res),
+                       .p = ~ .x == 200,
+                       msg = "The API returned an error")
 }
 

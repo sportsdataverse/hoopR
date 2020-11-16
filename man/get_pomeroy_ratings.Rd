@@ -18,7 +18,7 @@ Get KenPom Ratings
 }
 \examples{
 \dontrun{
-get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
+  get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
 }
 }
 \keyword{Ratings}

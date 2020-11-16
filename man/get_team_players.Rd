@@ -17,9 +17,10 @@ get_team_players(browser, team, year = 2020)
 Get Player Stats from Team Page
 }
 \examples{
-\dontrun{
-  get_team_players(browser, team = 'Florida St.', year= 2020)
-}
+  \dontrun{
+    get_team_players(browser, team = 'Florida St.', year= 2020)
+  }
+
 }
 \keyword{Player}
 \keyword{Stats}
