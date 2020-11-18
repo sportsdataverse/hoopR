@@ -11,6 +11,7 @@ Encoding: UTF-8
 Depends: R (>= 2.10)
 Imports: 
     dplyr,
+    plyr,
     xml2,
     rlang,
     rvest,
@@ -22,7 +23,13 @@ Imports:
     httr,
     curl,
     attempt,
-    magrittr
+    magrittr,
+    ggplot2,
+    gganimate,
+    ggimage,
+    extrafont,
+    gifski,
+    png
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Suggests: knitr, rmarkdown
