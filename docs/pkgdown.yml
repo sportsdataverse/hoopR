@@ -2,8 +2,8 @@ pandoc: 2.9.2.1
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  Intro-to-kenpomR: Intro-to-kenpomR.html
-last_built: 2020-11-16T23:16Z
+  intro-to-kenpomR: intro-to-kenpomR.html
+last_built: 2020-11-18T20:14Z
 urls:
   reference: http://saiemgilani.github.io/kenpomR/reference
   article: http://saiemgilani.github.io/kenpomR/articles
