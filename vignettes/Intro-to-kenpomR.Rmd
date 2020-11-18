@@ -49,7 +49,7 @@ Let's first just try to get our hands on the Pomeroy ratings for the last 15 yea
 -   `min_year` - First year of data to pull
 -   `max_year` - Last year of data to pull
 
-```{r message = FALSE}
+```{r message = FALSE, cache=TRUE}
 rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
 
 ```
@@ -57,15 +57,21 @@ rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
 ```{r}
 glimpse(rtgs)
 ```
+So in this vignette, we're going to plot something simple first to get a sense of how we would compare different metrics and groups. In this example, we are going to compare Florida State's adjusted efficiency margin (__AdjEM__) over the past ten years and the ACC conference average. 
 
+### Pre-processing
+First, to keep things a bit simpler, we will first create a second and third `rtgs` dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with.
+  - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use dplyr's summarize function, which we use to compute the mean of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
+  - ```Florida State```: It appears that since there was no tournament, kenpom.com has inserted asterisks for the 2020 data, to indicate which teams __would__ have made the tournament had it occurred according to the consensus on [BracketMatrix.com](BracketMatrix.com), so we use the ```stringr::str_remove()``` and ```stringr::str_trim()``` functions to remove the asterisk, so that all of our `Team` values match. 
 ```{r}
 library(stringr)
 rtgs_acc <- rtgs %>% 
   dplyr::filter(.data$Conf=="ACC") %>% 
-  group_by(.data$Year,.data$Conf) %>% 
+  dplyr::group_by(.data$Year,.data$Conf) %>% 
   dplyr::summarize(
     AdjEM = mean(.data$AdjEM)
-  ) %>% ungroup() %>% dplyr::rename(Team = .data$Conf)
+  ) %>% ungroup() %>% 
+  dplyr::rename(Team = .data$Conf)
 
 rtgs_fsu <- rtgs %>% 
   mutate(
@@ -73,19 +79,18 @@ rtgs_fsu <- rtgs %>%
     Team = str_trim(.data$Team, side="both")) %>%  
   filter(Team == "Florida St.") %>% 
   arrange(-.data$Year, .data$Rk) %>% 
-  mutate(
-    Team = str_extract(.data$Team, "(\\w.+)")
-  ) %>% select(Year, Team, AdjEM)
+  select(Year, Team, AdjEM)
+
+# combine the two datasets using rbind
 rtgs_plot_data <-rbind(rtgs_fsu, rtgs_acc)
 ```
 
 
-
+### Plotting a simple animation
 ```{r}
 library(ggplot2)
 library(gganimate)
-library(extrafont)
-extrafont::loadfonts(device = "win", quiet = TRUE)
+
 library(gifski)
 library(ggimage)
 library(png)
@@ -119,14 +124,14 @@ p1 <-
   annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=5, ymax=-20) +
   transition_reveal(.data$Year)+
   theme(
-    axis.title.x = element_text(size = 28, margin = margin(1,0,5,0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    axis.title.x = element_text(size = 28, margin = margin(1,0,5,0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
     panel.grid.major = element_line(color = "black",linetype = "dashed"),
-    axis.text.x = element_text(size = 24, margin = margin(1,0,5,0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
-    axis.title.y = element_text(size = 28, margin=margin(4,4,4,4,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
-    axis.text.y = element_text(size = 24, margin=margin(3,3,3,3,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
-    plot.title = element_text(size = 28, margin=margin(t=5,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
-    plot.subtitle = element_text(size = 22, margin = margin(t=0,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
-    plot.caption = element_text(size = 16, margin = margin(t=4,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    axis.text.x = element_text(size = 24, margin = margin(1,0,5,0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
+    axis.title.y = element_text(size = 28, margin=margin(4,4,4,4,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
+    axis.text.y = element_text(size = 24, margin=margin(3,3,3,3,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
+    plot.title = element_text(size = 28, margin=margin(t=5,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
+    plot.subtitle = element_text(size = 22, margin = margin(t=0,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
+    plot.caption = element_text(size = 16, margin = margin(t=4,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
     panel.background = element_rect(fill = "grey99"),
     plot.background = element_rect(fill = "#00AFDC"),
     plot.margin=unit(c(1,10,1,1),"mm"))
@@ -184,4 +189,113 @@ glimpse(plyrstats[[1]])
 
 glimpse(plyrstats[[2]])
 ```
+
+
+![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
+
+## Ratings Table Function examples
+```{r eval = FALSE}
+#---- login ---------------------------
+browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+#---- ratings_tables.R ----------------
+pomeroy_ratings <- get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
+
+efficiency <- get_efficiency(browser, min_year = 2020, max_year = 2020)
+
+fourfactors <- get_fourfactors(browser, min_year = 2020, max_year = 2020)
+
+pointdist <- get_pointdist(browser, min_year = 2020, max_year = 2020)
+
+height <- get_height(browser, min_year = 2020, max_year = 2020)
+
+teamstats <- get_teamstats(browser, min_year = 2020, max_year = 2020, defense = FALSE)
+
+playerstats <- get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
+
+kpoy <- get_kpoy(browser, year=2020)
+
+```
+
+
+## Team Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+#---- team_tables.R -------------------
+team_sched <- get_team_schedule(browser, team = 'Florida St.', year= 2020)
+
+gameplan <- get_gameplan(browser, team='Florida St.', year=2020)
+
+opptracker <- get_opptracker(browser, team = 'Florida St.', year=2020)
+
+team_players <- get_team_players(browser, team = 'Florida St.', year= 2020)
+
+minutes_matrix <- get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
+
+team_player_stats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
+team_player_stats1 <- team_player_stats[[1]]
+
+
+team_player_stats2 <- team_player_stats[[2]]
+
+team_depth_chart <- get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
+
+team_lineups <- get_team_lineups(browser, team = 'Florida St.', year= 2020)
+
+```
+
+
+## Historical Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+#---- historical_tables.R ------------
+team_history <- get_team_history(browser, team = 'Florida St.')
+
+coach_history <- get_coach_history(browser, coach = 'Leonard Hamilton')
+
+program_ratings <- get_program_ratings(browser)
+
+# records_team appears to be working but there isn't anything
+# there anymore at the moment for all years
+# records_team <- get_records_team(browser, team = 'Florida St.')
+
+pomeroy_archive_ratings <- get_pomeroy_archive_ratings(browser, date='2018-11-22')
+
+conf <- get_conf(browser, year='2020',conf='ACC')
+
+conf_stats <- get_confstats(browser, year='2020')
+
+conf_history <- get_confhistory(browser, conf='ACC')
+
+```
+
+
+## Miscellaneous Stats Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+#---- misc_stats.R ------------------
+trends <- get_trends(browser)
+
+
+officials <- get_officials(browser, year= 2020)
+
+hca <- get_hca(browser)
+
+
+arenas <- get_arenas(browser, year=2020)
+
+# game_attrs appears to be working but there isn't anything
+# there anymore at the moment for all years
+game_attrs <- get_game_attrs(browser,year=2020, attr = "Excitement")
+
+fanmatch <- get_fanmatch(browser, date="2020-03-10")
+
+
+```
+
 
