@@ -1,7 +1,6 @@
 ---
 title: "Intro to kenpomR"
 author: "Saiem Gilani"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Intro to kenpomR}
@@ -14,26 +13,29 @@ knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
-We will be acquiring data from [kenpom.com](https://kenpom.com), using the ```kenpomR``` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
+We will be acquiring data from [kenpom.com](https://kenpom.com), using the `kenpomR` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
 
-## R & RStudio
-This tutorial will require the use of R and RStudio. You can [follow the instructions at R Studio on how to get started](https://rstudio.com/products/rstudio/download/). 
+### R & RStudio
 
-## First, save your login information privately
-You can use .Renviron to save your `kp_user` and `kp_pw` variables like so: 
+This tutorial will require the use of R and RStudio. You can [follow the instructions at R Studio on how to get started](https://rstudio.com/products/rstudio/download/).
+
+### First, save your login information privately
+
+You can use .Renviron to save your `kp_user` and `kp_pw` variables like so:
+
 ```{r eval = FALSE}
 file.edit("~/.Renviron")
 ```
+
 Then save that information in a format like this:
 
-```
-kp_user = "your email here"
-kp_pw = "your password here"
+    kp_user = "your email here"
+    kp_pw = "your password here"
 
-```
 Then we can reference these in our scripts with `Sys.env("kp_user")` or `Sys.env("kp_pw")`.
 
-## Import libraries and set browser login
+### Import libraries and set browser login
+
 ```{r, warning=FALSE,  message = FALSE}
 library(dplyr)
 library(kenpomR)
@@ -41,13 +43,145 @@ browser <- login(Sys.getenv("kp_user"), Sys.getenv("kp_pw"))
 
 ```
 
-```{r message = FALSE, results='hide'}
-rtgs <- get_pomeroy_ratings(browser, min_year = 2006, max_year = 2020)
+Let's first just try to get our hands on the Pomeroy ratings for the last 15 years by using the ```kenpomR::get_pomeroy_ratings()``` function, which takes the following arguments:
+
+-   `browser` - User login session
+-   `min_year` - First year of data to pull
+-   `max_year` - Last year of data to pull
+
+```{r message = FALSE}
+rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
 
 ```
+
 ```{r}
 glimpse(rtgs)
 ```
 
+```{r}
+library(stringr)
+rtgs_acc <- rtgs %>% 
+  dplyr::filter(.data$Conf=="ACC") %>% 
+  group_by(.data$Year,.data$Conf) %>% 
+  dplyr::summarize(
+    AdjEM = mean(.data$AdjEM)
+  ) %>% ungroup() %>% dplyr::rename(Team = .data$Conf)
 
+rtgs_fsu <- rtgs %>% 
+  mutate(
+    Team = stringr::str_remove(.data$Team, "\\*"),
+    Team = str_trim(.data$Team, side="both")) %>%  
+  filter(Team == "Florida St.") %>% 
+  arrange(-.data$Year, .data$Rk) %>% 
+  mutate(
+    Team = str_extract(.data$Team, "(\\w.+)")
+  ) %>% select(Year, Team, AdjEM)
+rtgs_plot_data <-rbind(rtgs_fsu, rtgs_acc)
+```
+
+
+
+```{r}
+library(ggplot2)
+library(gganimate)
+library(extrafont)
+extrafont::loadfonts(device = "win", quiet = TRUE)
+library(gifski)
+library(ggimage)
+library(png)
+logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
+z <- tempfile()
+download.file(logo_url,z,mode="wb")
+m <- png::readPNG(z)
+img <- matrix(rgb(m[,,1],m[,,2],m[,,3], m[,,4] ), nrow=dim(m)[1]) #0.2 is alpha
+rast <- grid::rasterGrob(img, interpolate = T)
+
+rtgs_plot_data <- rtgs_plot_data %>% 
+  mutate(
+    logo = ifelse(.data$Team == 'Florida St.',
+                  "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
+                  "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35"
+                  ))
+
+p1 <- 
+  ggplot(rtgs_plot_data,aes(x = .data$Year, y = .data$AdjEM,   group=.data$Team))+
+  geom_line(size=1.5,aes(color=factor(.data$Team))) +  
+  geom_image(aes(x = .data$Year, y = .data$AdjEM), image = rtgs_plot_data$logo, size = .07, by = "height")+
+  scale_color_manual(labels = c('ACC','Florida St.'),
+                     values = c("navyblue",'#782F40'),
+                     guide = FALSE)  +
+  scale_x_continuous(breaks = seq(2009, 2021, 1)) +
+  scale_y_continuous(breaks = seq(-20, 35, 5),
+                     limits = c(-21, 36)) +
+  labs(title="Florida State KenPom Efficiency Margin (2010-2020)",
+       subtitle="Figure: @SaiemGilani | Data: kenpom.com via kenpomR") +
+  ylab("Adjusted Efficiency Margin")+ xlab("Year")+
+  annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=5, ymax=-20) +
+  transition_reveal(.data$Year)+
+  theme(
+    axis.title.x = element_text(size = 28, margin = margin(1,0,5,0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    panel.grid.major = element_line(color = "black",linetype = "dashed"),
+    axis.text.x = element_text(size = 24, margin = margin(1,0,5,0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    axis.title.y = element_text(size = 28, margin=margin(4,4,4,4,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    axis.text.y = element_text(size = 24, margin=margin(3,3,3,3,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    plot.title = element_text(size = 28, margin=margin(t=5,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    plot.subtitle = element_text(size = 22, margin = margin(t=0,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    plot.caption = element_text(size = 16, margin = margin(t=4,r=0,b=4,l=0,unit=c("mm")), family = "Gill Sans MT", face = 'bold', color = "#3D1A22"),
+    panel.background = element_rect(fill = "grey99"),
+    plot.background = element_rect(fill = "#00AFDC"),
+    plot.margin=unit(c(1,10,1,1),"mm"))
+
+  Sys.sleep(1)
+animate(p1, fps = 10,start_pause = 5,end_pause = 5,  width = 1300, height = 700, renderer = gifski_renderer())
+
+anim_save("fsu_adjEM.gif")
+file.remove(z)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r message = FALSE}
+effs <- get_efficiency(browser, min_year = 2020, max_year = 2020)
+glimpse(effs)
+```
+
+```{r message = FALSE}
+ff <-  get_fourfactors(browser, min_year = 2020, max_year = 2020)
+glimpse(ff)
+```
+
+
+```{r message = FALSE}
+ hgts <-  get_height(browser, min_year = 2020, max_year = 2020)
+
+glimpse(hgts)
+```
+#### All Games Player stats
+```{r message = FALSE}
+plyrstats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
+
+
+glimpse(plyrstats[[1]])
+
+```
+#### Conference only Player stats
+```{r}
+
+glimpse(plyrstats[[2]])
+```
 
