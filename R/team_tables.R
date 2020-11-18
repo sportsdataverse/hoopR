@@ -19,9 +19,11 @@
 get_team_schedule <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -29,20 +31,15 @@ get_team_schedule <- function(browser, team, year= 2020){
   header_cols<- c("Date","Team.Rk","Opponent.Rk","Opponent","Result",
                   "Poss","OT","Location","Record","Conference")
 
-  x <- page %>%
+  x <- (page %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#schedule-table') %>%
-    rvest::html_table(fill=TRUE)  %>%
-    .data$.[[1]] %>%
-    as.data.frame() %>%
-    .data$.[,-11]
+    rvest::html_table(fill=TRUE))[[1]] %>%
+    as.data.frame()
+  x <- x[,1:(length(x)-1)]
 
   ## TODO: Add the tiers of joy column back to data frame
-  # y <- page %>%
-  #   xml2::read_html() %>%
-  #   rvest::html_nodes(css='#schedule-table') %>%
-  #   .[[1]]
-  #
+
   colnames(x) <- header_cols
   team_name <- gsub("\\+"," ",team)
   suppressWarnings(
@@ -82,6 +79,8 @@ get_team_schedule <- function(browser, team, year= 2020){
 get_gameplan <- function(browser, team, year=2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/gameplan.php?",
                 "team=", team_name,
@@ -97,10 +96,9 @@ get_gameplan <- function(browser, team, year=2020){
   )
 
 
-  x <- page %>%
+  x <- (page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(css='#schedule-table')  %>%
-    .data$.[[1]] %>%
+    rvest::html_nodes(css='#schedule-table'))[[1]] %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
@@ -160,6 +158,8 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
                     'FTpct','FTpct.Rk','FG3Apct','FG3Apct.Rk',
                     'APL','APL.Rk')
   }
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/opptracker.php?",
                 "team=", team_name,
@@ -170,10 +170,9 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 
 
 
-  x <- page %>%
+  x <- (page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(css='#conf-table') %>%
-    .data$.[[1]] %>%
+    rvest::html_nodes(css='#conf-table'))[[1]] %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
@@ -202,6 +201,7 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr select mutate filter case_when
+#' @importFrom tidyr everything
 #' @export
 #'
 #' @examples
@@ -213,9 +213,11 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 get_team_players <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -227,10 +229,9 @@ get_team_players <- function(browser, team, year= 2020){
                   "FTRate", "FTM-A", "FTpct",
                   "2PM-A", "FG2pct", "3PM-A", "FG3pct")
 
-  x<- page %>%
-    xml2::read_html() %>%
-    rvest::html_nodes(css='#player-table')  %>%
-    .data$.[[1]]
+  x<- (page %>%
+         xml2::read_html() %>%
+         rvest::html_nodes(css='#player-table'))[[1]]
 
   ## removing Player national rankings for easier manipulation
   ## TODO: Add these rankings back as columns
@@ -262,14 +263,7 @@ get_team_players <- function(browser, team, year= 2020){
                                           .data$Posspct >= 20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
                                           .data$Posspct >= 24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
                                           .data$Posspct >= 28.0 ~ "Go-to Guys")) %>%
-    dplyr::select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr, .data$G,
-                  .data$S, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
-                  .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
-                  .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
-                  .data$FTRate, .data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
-                  .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
-
-
+    dplyr::select(.data$Role, tidyr::everything())
 
   ### Store Data
   kenpom <- x
@@ -300,19 +294,20 @@ get_team_players <- function(browser, team, year= 2020){
 get_minutes_matrix <- function(browser, team, year = 2020){
   assertthat::assert_that(year >= 2014, msg="Data only goes back to 2014")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/player-expanded.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
 
   header_cols<- c("Date","Opponent.Rk","Opponent","Result")
 
-  x <- page %>%
+  x <- (page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(css='#minutes-table')  %>%
-    .data$.[[1]] %>%
+    rvest::html_nodes(css='#minutes-table'))[[1]] %>%
     rvest::html_table(fill=FALSE) %>%
     as.data.frame()
 
@@ -348,6 +343,7 @@ get_minutes_matrix <- function(browser, team, year = 2020){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr filter mutate select
+#' @importFrom tidyr everything
 #' @export
 #'
 #' @examples
@@ -357,9 +353,11 @@ get_minutes_matrix <- function(browser, team, year = 2020){
 get_team_player_stats <- function(browser, team, year = 2020){
   assertthat::assert_that(year>=2014, msg="Data only goes back to 2014")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/player-expanded.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -371,10 +369,9 @@ get_team_player_stats <- function(browser, team, year = 2020){
                     "TSpct","ORpct", "DRpct","ARate","TORate","Blkpct","Stlpct","FCper40","FDper40","FTRate",
                     "FTM-A",  "FTpct", "2PM-A", "FG2pct", "3PM-A", "FG3pct")
 
-    x <- page %>%
+    x <- (page %>%
       xml2::read_html() %>%
-      rvest::html_nodes(css='#player-table')  %>%
-      .data$.[[i]]
+      rvest::html_nodes(css='#player-table'))[[i]]
 
     ## removing Player national rankings for easier manipulation
     ## TODO: Add these rankings back as columns
@@ -404,12 +401,7 @@ get_team_player_stats <- function(browser, team, year = 2020){
                                           .data$Posspct >= 20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
                                           .data$Posspct >= 24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
                                           .data$Posspct >= 28.0 ~ "Go-to Guys")) %>%
-    dplyr::select(.data$Role, .data$Number, .data$Player, .data$Ht, .data$Wt, .data$Yr,
-                  .data$G, .data$Minpct, .data$ORtg, .data$Posspct, .data$Shotspct,
-                  .data$eFGpct, .data$TSpct, .data$ORpct, .data$DRpct,.data$ARate,
-                  .data$TORate, .data$Blkpct, .data$Stlpct, .data$FCper40, .data$FDper40,
-                  .data$FTRate,.data$"FTM-A",  .data$FTpct, .data$"2PM-A", .data$FG2pct,
-                  .data$"3PM-A", .data$FG3pct, .data$Team, .data$Year)
+    dplyr::select(.data$Role,tidyr::everything())
 
     y <- c(y, list(x))
   }
@@ -425,7 +417,21 @@ get_team_player_stats <- function(browser, team, year = 2020){
 #' @param browser User login session
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#'
+#' @return A data frame with 12 columns:
+#' \describe{
+#'   \item{\code{PG}}{character. DESCRIPTION.}
+#'   \item{\code{PG.Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{SG}}{character. DESCRIPTION.}
+#'   \item{\code{SG.Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{SF}}{character. DESCRIPTION.}
+#'   \item{\code{SF.Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{PF}}{character. DESCRIPTION.}
+#'   \item{\code{PF.Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{C}}{character. DESCRIPTION.}
+#'   \item{\code{C.Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{Team}}{character. DESCRIPTION.}
+#'   \item{\code{Year}}{double. DESCRIPTION.}
+#' }
 #' @keywords Depth Chart
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
@@ -443,9 +449,11 @@ get_team_player_stats <- function(browser, team, year = 2020){
 get_team_depth_chart <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -453,13 +461,11 @@ get_team_depth_chart <- function(browser, team, year= 2020){
   header_cols<- c("PG", "PG.Minpct", "SG", "SG.Minpct", "SF", "SF.Minpct",
                   "PF", "PF.Minpct", "C", "C.Minpct")
 
-  x<- page %>%
+  x<- (page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(css='#dc-table')%>%
-    .data$.[[1]] %>%
+    rvest::html_nodes(css='#dc-table'))[[1]] %>%
     rvest::html_table(fill=FALSE) %>%
-    as.data.frame() %>%
-    .data$.[-1,]
+    as.data.frame()
 
 
   colnames(x) <- header_cols
@@ -484,7 +490,18 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 #' @param browser User login session
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#'
+#' @return A data frame with 9 columns:
+#' \describe{
+#'   \item{\code{Rk}}{character. DESCRIPTION.}
+#'   \item{\code{PG}}{character. DESCRIPTION.}
+#'   \item{\code{SG}}{character. DESCRIPTION.}
+#'   \item{\code{SF}}{character. DESCRIPTION.}
+#'   \item{\code{PF}}{character. DESCRIPTION.}
+#'   \item{\code{C}}{character. DESCRIPTION.}
+#'   \item{\code{Minpct}}{character. DESCRIPTION.}
+#'   \item{\code{Team}}{character. DESCRIPTION.}
+#'   \item{\code{Year}}{double. DESCRIPTION.}
+#' }
 #' @keywords Depth Chart
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
@@ -501,9 +518,11 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 get_team_lineups <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   team_name <- gsub(" ","\\+",team)
+  # check for internet
+  check_internet()
   ### Pull Data
   url <- paste0("https://kenpom.com/team.php?",
-                "team=",team,
+                "team=",team_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -511,13 +530,11 @@ get_team_lineups <- function(browser, team, year= 2020){
   header_cols<- c("Rk","PG", "SG", "SF",
                   "PF", "C", "Minpct")
 
-  x<- page %>%
+  x<- (page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(css='#dc-table2')  %>%
-    .data$.[[1]] %>%
+    rvest::html_nodes(css='#dc-table2'))[[1]] %>%
     rvest::html_table(fill=FALSE) %>%
-    as.data.frame() %>%
-    .data$.[-1,]
+    as.data.frame()
 
   colnames(x) <- header_cols
   team_name <- gsub("\\+"," ",team)
