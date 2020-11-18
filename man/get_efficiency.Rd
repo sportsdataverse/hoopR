@@ -18,7 +18,7 @@ Get KenPom Efficiency and Tempo Summary
 }
 \examples{
 \dontrun{
-get_efficiency(browser, min_year = 2020, max_year = 2020)
+ get_efficiency(browser, min_year = 2020, max_year = 2020)
 }
 }
 \keyword{Efficiency}

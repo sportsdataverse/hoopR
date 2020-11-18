@@ -13,6 +13,23 @@ get_team_depth_chart(browser, team, year = 2020)
 
 \item{year}{Year of data to pull}
 }
+\value{
+A data frame with 12 columns:
+\describe{
+  \item{\code{PG}}{character. DESCRIPTION.}
+  \item{\code{PG.Minpct}}{character. DESCRIPTION.}
+  \item{\code{SG}}{character. DESCRIPTION.}
+  \item{\code{SG.Minpct}}{character. DESCRIPTION.}
+  \item{\code{SF}}{character. DESCRIPTION.}
+  \item{\code{SF.Minpct}}{character. DESCRIPTION.}
+  \item{\code{PF}}{character. DESCRIPTION.}
+  \item{\code{PF.Minpct}}{character. DESCRIPTION.}
+  \item{\code{C}}{character. DESCRIPTION.}
+  \item{\code{C.Minpct}}{character. DESCRIPTION.}
+  \item{\code{Team}}{character. DESCRIPTION.}
+  \item{\code{Year}}{double. DESCRIPTION.}
+}
+}
 \description{
 Get Depth Chart Last 5 Games from Team Page
 }

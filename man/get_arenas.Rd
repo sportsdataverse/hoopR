@@ -11,6 +11,17 @@ get_arenas(browser, year = 2020)
 
 \item{year}{Year of data to pull}
 }
+\value{
+A data frame with 6 columns:
+\describe{
+  \item{\code{Rk}}{double.}
+  \item{\code{Team}}{character.}
+  \item{\code{Conf}}{character.}
+  \item{\code{Arena}}{character.}
+  \item{\code{Alternate}}{character.}
+  \item{\code{Year}}{double.}
+}
+}
 \description{
 Get Home Court Arenas
 }

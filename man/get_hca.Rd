@@ -9,6 +9,25 @@ get_hca(browser)
 \arguments{
 \item{browser}{User login session}
 }
+\value{
+A data frame with 14 columns:
+\describe{
+  \item{\code{Team}}{character.}
+  \item{\code{Conf}}{character.}
+  \item{\code{HCA}}{double.}
+  \item{\code{HCA.Rk}}{double.}
+  \item{\code{PF}}{double.}
+  \item{\code{PF.Rk}}{double.}
+  \item{\code{Pts}}{double.}
+  \item{\code{Pts.Rk}}{double.}
+  \item{\code{NST}}{double.}
+  \item{\code{NST.Rk}}{double.}
+  \item{\code{Blk}}{double.}
+  \item{\code{Blk.Rk}}{double.}
+  \item{\code{Elev}}{double.}
+  \item{\code{Elev.Rk}}{double.}
+}
+}
 \description{
 Get Home Court Advantage Estimates
 }

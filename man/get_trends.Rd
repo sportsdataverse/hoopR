@@ -9,6 +9,30 @@ get_trends(browser)
 \arguments{
 \item{browser}{User login session}
 }
+\value{
+A data frame with 19 columns:
+\describe{
+  \item{\code{Season}}{double.}
+  \item{\code{Efficiency}}{double.}
+  \item{\code{Tempo}}{double.}
+  \item{\code{eFGpct}}{double.}
+  \item{\code{TOpct}}{double.}
+  \item{\code{ORpct}}{double.}
+  \item{\code{FTRate}}{double.}
+  \item{\code{FG2pct}}{double.}
+  \item{\code{FG3pct}}{double.}
+  \item{\code{FG3Apct}}{double.}
+  \item{\code{FTpct}}{double.}
+  \item{\code{Apct}}{double.}
+  \item{\code{Blkpct}}{double.}
+  \item{\code{Stlpct}}{double.}
+  \item{\code{NonStlpct}}{double.}
+  \item{\code{AvgHgt}}{double.}
+  \item{\code{Continuity}}{double.}
+  \item{\code{HomeWinpct}}{double.}
+  \item{\code{PPG}}{double.}
+}
+}
 \description{
 Get Division-I statistical trends
 }

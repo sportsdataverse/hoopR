@@ -9,6 +9,28 @@ get_program_ratings(browser)
 \arguments{
 \item{browser}{User login session}
 }
+\value{
+A data frame with 17 columns:
+\describe{
+  \item{\code{Rk}}{double.}
+  \item{\code{Team}}{character.}
+  \item{\code{Conf}}{character.}
+  \item{\code{Rtg}}{double.}
+  \item{\code{Best.Rk}}{double.}
+  \item{\code{Best.Yr}}{double.}
+  \item{\code{Worst.Rk}}{double.}
+  \item{\code{Worst.Yr}}{double.}
+  \item{\code{KP.Median}}{double.}
+  \item{\code{Top10}}{double.}
+  \item{\code{Top25}}{double.}
+  \item{\code{Top50}}{double.}
+  \item{\code{CH}}{double.}
+  \item{\code{F4}}{double.}
+  \item{\code{S16}}{double.}
+  \item{\code{R1}}{double.}
+  \item{\code{Chg}}{double.}
+}
+}
 \description{
 Get Program Ratings
 }

@@ -11,6 +11,46 @@ get_confstats(browser, year)
 
 \item{year}{Year (YYYY)}
 }
+\value{
+A data frame with 35 columns:
+\describe{
+  \item{\code{Conf}}{character.}
+  \item{\code{Eff}}{double.}
+  \item{\code{Eff.Rk}}{double.}
+  \item{\code{Tempo}}{double.}
+  \item{\code{Tempo.Rk}}{double.}
+  \item{\code{eFGpct}}{double.}
+  \item{\code{eFGpct.Rk}}{double.}
+  \item{\code{TOpct}}{double.}
+  \item{\code{TOpct.Rk}}{double.}
+  \item{\code{ORpct}}{double.}
+  \item{\code{ORpct.Rk}}{double.}
+  \item{\code{FTR}}{double.}
+  \item{\code{FTR.Rk}}{double.}
+  \item{\code{Blkpct}}{double.}
+  \item{\code{Blkpct.Rk}}{double.}
+  \item{\code{Stlpct}}{double.}
+  \item{\code{Stlpct.Rk}}{double.}
+  \item{\code{FG2pct}}{double.}
+  \item{\code{FG2pct.Rk}}{double.}
+  \item{\code{FG3pct}}{double.}
+  \item{\code{FG3pct.Rk}}{double.}
+  \item{\code{FTpct}}{double.}
+  \item{\code{FTpct.Rk}}{double.}
+  \item{\code{FG3Apct}}{double.}
+  \item{\code{FG3Apct.Rk}}{double.}
+  \item{\code{Apct}}{double.}
+  \item{\code{Apct.Rk}}{double.}
+  \item{\code{HomeW-L}}{character.}
+  \item{\code{HomeW-Lpct}}{double.}
+  \item{\code{HomeW-L.Rk}}{double.}
+  \item{\code{Close}}{double.}
+  \item{\code{Close.Rk}}{double.}
+  \item{\code{Blowouts}}{double.}
+  \item{\code{Blowouts.Rk}}{double.}
+  \item{\code{Year}}{character.}
+}
+}
 \description{
 Get Conference Comparison Stats
 }

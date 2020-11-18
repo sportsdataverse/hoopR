@@ -19,6 +19,109 @@ If you try to use a conference that doesn't exist for a given season, like 'IND'
 you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
 No filter applied by default.}
 }
+\value{
+A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
+\describe{
+  First data frame, accessible via [[1]]
+  A data frame with 15 columns:
+  \item{\code{Team}}{character.}
+  \item{\code{Overall}}{character.}
+  \item{\code{Conf}}{character.}
+  \item{\code{AdjEM}}{double.}
+  \item{\code{AdjEM.Rk}}{double.}
+  \item{\code{AdjO}}{double.}
+  \item{\code{AdjO.Rk}}{double.}
+  \item{\code{AdjD}}{double.}
+  \item{\code{AdjD.Rk}}{double.}
+  \item{\code{AdjT}}{double.}
+  \item{\code{AdjT.Rk}}{double.}
+  \item{\code{ConfSOS}}{double.}
+  \item{\code{ConfSOS.Rk}}{double.}
+  \item{\code{NextGame}}{character.}
+  \item{\code{Year}}{character.}
+}
+\describe{
+  Second data frame, accessible via [[2]]
+  A data frame with 20 columns:
+  \item{\code{Team}}{character.}
+  \item{\code{OE}}{double.}
+  \item{\code{OE.Rk}}{double.}
+  \item{\code{eFGpct}}{double.}
+  \item{\code{eFGpct.Rk}}{double.}
+  \item{\code{TOpct}}{double.}
+  \item{\code{TOpct.Rk}}{double.}
+  \item{\code{ORpct}}{double.}
+  \item{\code{ORpct.Rk}}{double.}
+  \item{\code{FTR}}{double.}
+  \item{\code{FTR.Rk}}{double.}
+  \item{\code{FG2pct}}{double.}
+  \item{\code{FG2pct.Rk}}{double.}
+  \item{\code{FG3pct}}{double.}
+  \item{\code{FG3pct.Rk}}{double.}
+  \item{\code{FTpct}}{double.}
+  \item{\code{FTpct.Rk}}{double.}
+  \item{\code{Tempo}}{double.}
+  \item{\code{Tempo.Rk}}{double.}
+  \item{\code{Year}}{character.}
+}
+\describe{
+  Third data frame, accessible via [[3]]
+  A data frame with 20 columns:
+  \item{\code{Team}}{character.}
+  \item{\code{DE}}{double.}
+  \item{\code{DE.Rk}}{double.}
+  \item{\code{eFGpct}}{double.}
+  \item{\code{eFGpct.Rk}}{double.}
+  \item{\code{TOpct}}{double.}
+  \item{\code{TOpct.Rk}}{double.}
+  \item{\code{ORpct}}{double.}
+  \item{\code{ORpct.Rk}}{double.}
+  \item{\code{FTR}}{double.}
+  \item{\code{FTR.Rk}}{double.}
+  \item{\code{FG2pct}}{double.}
+  \item{\code{FG2pct.Rk}}{double.}
+  \item{\code{FG3pct}}{double.}
+  \item{\code{FG3pct.Rk}}{double.}
+  \item{\code{Blkpct}}{double.}
+  \item{\code{Blkpct.Rk}}{double.}
+  \item{\code{Stlpct}}{double.}
+  \item{\code{Stlpct.Rk}}{double.}
+  \item{\code{Year}}{character.}
+}
+\describe{
+  Fourth data frame, accessible via [[4]]
+  A data frame with 3 columns:
+  \item{\code{Rk}}{integer.}
+  \item{\code{Player}}{character.}
+  \item{\code{Year}}{character.}
+}
+\describe{
+  Fifth data frame, accessible via [[5]]
+  A data frame with 4 columns:
+  \item{\code{Stat}}{character.}
+  \item{\code{Value}}{double.}
+  \item{\code{Rk}}{double.}
+  \item{\code{Year}}{character.}
+}
+\describe{
+  Sixth data frame, accessible via [[6]]
+  A data frame with 5 columns:
+  \item{\code{Stat}}{character.}
+  \item{\code{Count}}{character.}
+  \item{\code{Value}}{double.}
+  \item{\code{Rk}}{double.}
+  \item{\code{Year}}{character.}
+}
+
+\describe{
+  Seventh data frame, accessible via [[7]]
+  A data frame 4 columns:
+  \item{\code{Rk}}{double.}
+  \item{\code{Conference}}{character.}
+  \item{\code{Rating}}{double.}
+  \item{\code{Year}}{character.}
+}
+}
 \description{
 Get Conference-wide Stats
 }

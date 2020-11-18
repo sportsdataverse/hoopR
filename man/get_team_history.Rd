@@ -11,6 +11,41 @@ get_team_history(browser, team)
 
 \item{team}{Team filter to select.}
 }
+\value{
+A data frame with 30 columns:
+\describe{
+  \item{\code{Year}}{double.}
+  \item{\code{Team.Rk}}{double.}
+  \item{\code{Team}}{character.}
+  \item{\code{Coach}}{character.}
+  \item{\code{Conf}}{character.}
+  \item{\code{W-L}}{character.}
+  \item{\code{AdjT}}{double.}
+  \item{\code{AdjO}}{double.}
+  \item{\code{AdjD}}{double.}
+  \item{\code{eFGpct.Off}}{double.}
+  \item{\code{TOpct.Off}}{double.}
+  \item{\code{ORpct.Off}}{double.}
+  \item{\code{FTR.Off}}{double.}
+  \item{\code{FG2pct.Off}}{double.}
+  \item{\code{FG3pct.Off}}{double.}
+  \item{\code{FTpct.Off}}{double.}
+  \item{\code{FG3Apct.Off}}{double.}
+  \item{\code{Apct.Off}}{double.}
+  \item{\code{APL.Off}}{double.}
+  \item{\code{eFGpct.Def}}{double.}
+  \item{\code{TOpct.Def}}{double.}
+  \item{\code{ORpct.Def}}{double.}
+  \item{\code{FTR.Def}}{double.}
+  \item{\code{FG2pct.Def}}{double.}
+  \item{\code{FG3pct.Def}}{double.}
+  \item{\code{Blkpct.Def}}{double.}
+  \item{\code{FG3Apct.Def}}{double.}
+  \item{\code{Apct.Def}}{double.}
+  \item{\code{AP.Def}}{double.}
+  \item{\code{Foul2Particpct}}{double.}
+}
+}
 \description{
 Get Team Efficiency History
 }

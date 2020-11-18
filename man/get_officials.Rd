@@ -11,6 +11,18 @@ get_officials(browser, year = 2020)
 
 \item{year}{Year of data to pull}
 }
+\value{
+A data frame with 7 columns:
+\describe{
+  \item{\code{Rk}}{integer.}
+  \item{\code{OfficialName}}{character.}
+  \item{\code{RefRating}}{double.}
+  \item{\code{Gms}}{double.}
+  \item{\code{Last.Game}}{character.}
+  \item{\code{Last.Game.1}}{character.}
+  \item{\code{Year}}{double.}
+}
+}
 \description{
 Get officials rankings
 }

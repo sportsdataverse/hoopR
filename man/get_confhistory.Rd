@@ -17,6 +17,34 @@ If you try to use a conference that doesn't exist for a given season, like 'IND'
 you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
 No filter applied by default.}
 }
+\value{
+A data frame with 23 columns:
+\describe{
+  \item{\code{Year}}{integer.}
+  \item{\code{Rank}}{character.}
+  \item{\code{Tempo}}{double.}
+  \item{\code{Efficiency}}{double.}
+  \item{\code{eFGpct}}{double.}
+  \item{\code{TOpct}}{double.}
+  \item{\code{ORpct}}{double.}
+  \item{\code{FTR}}{double.}
+  \item{\code{FG2pct}}{double.}
+  \item{\code{FG3pct}}{double.}
+  \item{\code{FTpct}}{double.}
+  \item{\code{FG3Apct}}{double.}
+  \item{\code{Apct}}{double.}
+  \item{\code{Blkpct}}{double.}
+  \item{\code{Stlpct}}{double.}
+  \item{\code{HomeRecord}}{character.}
+  \item{\code{Bids}}{character.}
+  \item{\code{S16}}{character.}
+  \item{\code{F4}}{character.}
+  \item{\code{CH}}{character.}
+  \item{\code{RegSeasonChamp}}{character.}
+  \item{\code{TourneyChamp}}{character.}
+  \item{\code{BestTeam}}{character.}
+}
+}
 \description{
 Get Conference Historical Ratings
 }
