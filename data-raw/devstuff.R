@@ -9,8 +9,6 @@ my_desc <- description$new("!new")
 
 # Set your package name
 my_desc$set("Package", "kenpomR")
-#Set your name
-my_desc$set("Author", "Saiem Gilani <saiem.gilani@gmail.com>")
 
 #Set your name
 my_desc$set("Authors@R", "person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))")
@@ -51,7 +49,8 @@ use_package("assertthat")
 use_package("httr")
 use_package("curl")
 use_package("attempt")
-
+use_package("magrittr")
+usethis::use_vignette("intro-to-kenpomR")
 
 # Clean your description
 use_tidy_description()
