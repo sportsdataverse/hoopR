@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- badges: start -->
 ![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
 [![Build Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR) 
+![R-CMD-check](https://github.com/saiemgilani/kenpomR/workflows/R-CMD-check/badge.svg)
 [![Twitter Follow](https://img.shields.io/twitter/follow/saiemgilani?style=social)](https://twitter.com/saiemgilani) 
 <!-- badges: end -->  
 
