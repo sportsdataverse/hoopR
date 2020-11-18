@@ -27,7 +27,6 @@ Imports:
     ggplot2,
     gganimate,
     ggimage,
-    extrafont,
     gifski,
     png
 RoxygenNote: 7.1.1
