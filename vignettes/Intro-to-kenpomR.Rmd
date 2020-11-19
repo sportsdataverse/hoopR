@@ -259,7 +259,7 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
         ani.width = 800, ani.height = 500, ani.res = 110)
 
 ```
-![Result](https://github.com/saiemgilani/kenpomR/blob/master/man/figures/animated_wp.gif?raw=true)
+![Result](https://github.com/saiemgilani/kenpomR/blob/master/man/figures/animated_AdjEM.gif?raw=true)
 
 
 ![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
