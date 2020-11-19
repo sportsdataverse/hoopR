@@ -49,9 +49,12 @@ Let's first just try to get our hands on the Pomeroy ratings for the last 15 yea
 -   `min_year` - First year of data to pull
 -   `max_year` - Last year of data to pull
 
-```{r message = FALSE, cache=TRUE}
+```{r message = FALSE}
 rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
-
+library(stringr)
+rtgs <- rtgs %>% 
+  mutate(Team = stringr::str_remove(.data$Team, "\\*"),
+         Team = str_trim(.data$Team, side="both")) 
 ```
 
 ```{r}
@@ -64,36 +67,56 @@ First, to keep things a bit simpler, we will first create a second and third `rt
   - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use dplyr's summarize function, which we use to compute the mean of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
   - ```Florida State```: It appears that since there was no tournament, kenpom.com has inserted asterisks for the 2020 data, to indicate which teams __would__ have made the tournament had it occurred according to the consensus on [BracketMatrix.com](BracketMatrix.com), so we use the ```stringr::str_remove()``` and ```stringr::str_trim()``` functions to remove the asterisk, so that all of our `Team` values match. 
 ```{r}
-library(stringr)
+
+team1 = "Florida St."
+team2 = "ACC"
+metric <- "AdjEM" 
+full_metric <- "Adjusted Efficiency Margin"
+Color1 = '#782F40'
+Color2 = 'navyblue'
+
+rtgs$Metric = rtgs[, metric]
+
+
 rtgs_acc <- rtgs %>% 
-  dplyr::filter(.data$Conf=="ACC") %>% 
+  dplyr::filter(.data$Conf == team2) %>% 
   dplyr::group_by(.data$Year,.data$Conf) %>% 
-  dplyr::summarize(
-    AdjEM = mean(.data$AdjEM)
-  ) %>% ungroup() %>% 
+  dplyr::summarize(Metric = mean(Metric)) %>% 
+  dplyr::ungroup() %>% 
   dplyr::rename(Team = .data$Conf)
 
 rtgs_fsu <- rtgs %>% 
-  mutate(
-    Team = stringr::str_remove(.data$Team, "\\*"),
-    Team = str_trim(.data$Team, side="both")) %>%  
-  filter(Team == "Florida St.") %>% 
+  filter(Team == team1) %>% 
   arrange(-.data$Year, .data$Rk) %>% 
-  select(Year, Team, AdjEM)
+  select(Year, Team, Metric)
 
 # combine the two datasets using rbind
-rtgs_plot_data <-rbind(rtgs_fsu, rtgs_acc)
+plot_data <- rbind(rtgs_fsu, rtgs_acc)
+
+plot_data <- rtgs_fsu %>% 
+  mutate(Metric_1 = Metric) %>% 
+  left_join(rtgs_acc %>% 
+              select(.data$Year, .data$Metric),
+            by=c("Year"),suffix=c("","_2"))  
+plot_data <- plot_data %>% 
+  mutate(
+    Metric = round(Metric,1),
+    Metric_1 = round(Metric_1,1),
+    Metric_2 = round(Metric_2,1)
+  ) %>% 
+  arrange(.data$Year)
+
+plot_data$Color_1 = Color1
+plot_data$Color_2 = Color2
 ```
 
-
-### Plotting a simple animation
 ```{r}
 library(ggplot2)
-library(gganimate)
-
-library(gifski)
+library(animation)
 library(ggimage)
 library(png)
+library(glue)
+
 logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
 z <- tempfile()
 download.file(logo_url,z,mode="wb")
@@ -101,63 +124,139 @@ m <- png::readPNG(z)
 img <- matrix(rgb(m[,,1],m[,,2],m[,,3], m[,,4] ), nrow=dim(m)[1]) #0.2 is alpha
 rast <- grid::rasterGrob(img, interpolate = T)
 
-rtgs_plot_data <- rtgs_plot_data %>% 
-  mutate(
-    logo = ifelse(.data$Team == 'Florida St.',
-                  "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
-                  "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35"
-                  ))
+plot_data <- plot_data %>% 
+  mutate(logo_1 = "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
+         logo_2 = "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35")
+# points for plotting
+x_max <- 2020
+x_lab_min <- 2010 - 3
+x_lab_max <- x_max + 2
+x_score <- 2 + x_max
 
-p1 <- 
-  ggplot(rtgs_plot_data,aes(x = .data$Year, y = .data$AdjEM,   group=.data$Team))+
-  geom_line(size=1.5,aes(color=factor(.data$Team))) +  
-  geom_image(aes(x = .data$Year, y = .data$AdjEM), image = rtgs_plot_data$logo, size = .07, by = "height")+
-  scale_color_manual(labels = c('ACC','Florida St.'),
-                     values = c("navyblue",'#782F40'),
-                     guide = FALSE)  +
-  scale_x_continuous(breaks = seq(2009, 2021, 1)) +
-  scale_y_continuous(breaks = seq(-20, 35, 5),
-                     limits = c(-21, 36)) +
-  labs(title="Florida State KenPom Efficiency Margin (2010-2020)",
-       subtitle="Figure: @SaiemGilani | Data: kenpom.com via kenpomR") +
-  ylab("Adjusted Efficiency Margin")+ xlab("Year")+
-  annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=5, ymax=-20) +
-  transition_reveal(.data$Year)+
-  theme(
-    axis.title.x = element_text(size = 28, margin = margin(1,0,5,0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    panel.grid.major = element_line(color = "black",linetype = "dashed"),
-    axis.text.x = element_text(size = 24, margin = margin(1,0,5,0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    axis.title.y = element_text(size = 28, margin=margin(4,4,4,4,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    axis.text.y = element_text(size = 24, margin=margin(3,3,3,3,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    plot.title = element_text(size = 28, margin=margin(t=5,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    plot.subtitle = element_text(size = 22, margin = margin(t=0,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    plot.caption = element_text(size = 16, margin = margin(t=4,r=0,b=4,l=0,unit=c("mm")), family = "sans", face = 'bold', color = "#3D1A22"),
-    panel.background = element_rect(fill = "grey99"),
-    plot.background = element_rect(fill = "#00AFDC"),
-    plot.margin=unit(c(1,10,1,1),"mm"))
-
-  Sys.sleep(1)
-animate(p1, fps = 10,start_pause = 5,end_pause = 5,  width = 1300, height = 700, renderer = gifski_renderer())
-
-anim_save("fsu_adjEM.gif")
-file.remove(z)
 ```
 
 
+### Plotting a simple animation
+```{r}
+
+draw_frame <- function(year)
+{
+  
+  # frame data
+  frm_data <- plot_data %>% 
+    filter(Year <= year)
+  
+  # output quarter changes
+  if (nrow(frm_data %>% filter(Year == max(Year))) == 1)
+  {
+    print(glue::glue("Plotting AdjEM in Year: {max(frm_data$Year)}"))
+  }
+  
+  # plot
+  frm_plot <- frm_data %>% 
+    ggplot(aes(x = Year, y = Metric, group=Team))+
+    theme_minimal()+
+    geom_vline(xintercept = c(2010, x_max), color = "#5555AA")+
+    geom_segment(x = 2010, xend = 2020, y = 0, yend = 0, size = 0.75)+
+    geom_image(x = x_score-1, y = 24, image = frm_data$logo_1, size = 0.09, asp = 1.5)+
+    geom_image(x = x_score-1, y = 2, image = frm_data$logo_2, size = 0.12, asp = 1.5)+
+    geom_image(aes(x = Year, y = Metric_1, image = frm_data$logo_1),  size = .03, asp = 1.5)+
+    geom_image(aes(x = Year, y = Metric_2, image = frm_data$logo_2),  size = .06, asp = 1.5)+
+    annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=-2, ymax=-20)+
+    geom_line(aes(color = Color1, x = Year, y = Metric_1), size = 1)+
+    geom_line(aes(color = Color2, x = Year, y = Metric_2), size = 1)+
+    scale_color_manual(values = c(Color1, Color2))+
+    scale_x_continuous(breaks = seq(2010, 2020, 1),
+                       minor_breaks = NULL,
+                       limits = c(2009.5, x_max + 2)) +
+    scale_y_continuous(breaks = seq(-20, 35, 5),
+                       minor_breaks = NULL,
+                       limits = c(-21, 36)) +
+    coord_cartesian(clip = "off",expand = FALSE) +
+    xlab("") +
+    ylab("") +
+    labs(title = glue::glue("{team1} and {team2} \n{full_metric} Chart - {min(plot_data$Year)}-{max(plot_data$Year)}"),
+         caption = "Data from kenpom.com | Visualization by @SaiemGilani") +
+    theme(legend.position = "none",
+          axis.title.x = element_text(size = 18, family = "sans", face = 'bold', color = "#3D1A22"),
+          axis.text.x = element_text(size = 12, family = "sans", face = 'bold', color = "#3D1A22"),
+          axis.title.y = element_text(size = 18, family = "sans", face = 'bold', color = "#3D1A22"),
+          axis.text.y = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22"),
+          plot.title = element_text(size = 16, family = "sans", face = 'bold', color = "#3D1A22"),
+          plot.subtitle = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22"),
+          plot.caption = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22",hjust=0.5),
+          panel.background = element_rect(fill = "snow"),
+          plot.background = element_rect(fill = "#00AFDC"))
+  
+  # score display 
+  Metric1 <- tail(frm_data$Metric_1, n=1)
+  Metric2 <- tail(frm_data$Metric_2, n=1)
+  
+  # clock display
+  Year <- case_when(
+    max(frm_data$Year) == 2010 ~ "2010" ,
+    max(frm_data$Year) == 2011 ~ "2011" ,
+    max(frm_data$Year) == 2012 ~ "2012" ,
+    max(frm_data$Year) == 2013 ~ "2013" ,
+    max(frm_data$Year) == 2014 ~ "2014" ,
+    max(frm_data$Year) == 2015 ~ "2015" ,
+    max(frm_data$Year) == 2016 ~ "2016" ,
+    max(frm_data$Year) == 2017 ~ "2017" ,
+    max(frm_data$Year) == 2018 ~ "2018" ,
+    max(frm_data$Year) == 2019 ~ "2019" ,
+    max(frm_data$Year) == 2020 ~ "2020" ,
+    TRUE ~ as.character(max(frm_data$Year))
+  )
+  
+  # add score and clock to plot
+  frm_plot <- frm_plot + 
+    annotate("text", x = x_score-1, y = 16, label = Metric1, color = Color1, size = 8) +
+    annotate("text", x = x_score-1, y = -4, label = Metric2, color = Color2, size = 8) +
+    annotate("text", x = x_score-1, y = 8, label = Year, color = "#000000", size = 7)
+  
+  # label key moments
+  # frm_labels <- frm_data %>% 
+  #   filter(text != "")
+  # frm_plot <- frm_plot +
+  #   geom_point(frm_labels, mapping = aes(x = Year, y = AdjEM),
+  #              color = "#000000", size = 2, show.legend = FALSE) +
+  #   geom_segment(frm_labels, mapping = aes(x = x_text, xend = s, y = y_text, yend = wp),
+  #                linetype = "dashed", color = "#000000", na.rm=TRUE) +
+  #   geom_label(frm_labels, mapping = aes(x = x_text, y = y_text, label = text),
+  #              size = 3, color = "#000000", na.rm = TRUE, alpha = 0.8)
+  
+  # plot the frame
+  plot(frm_plot, width = 12.5, height = 6.47, dpi = 500)
+}
 
 
+```
 
+```{r draw_test, message=FALSE, warning=FALSE}
+draw_frame(2014)
+```
 
+```{r}
 
+draw_gif <- function()
+{
+  lapply(plot_data$Year, function(year)
+  { 
+    draw_frame(year)
+  })
+  print("Plotting frames for pause")
+  replicate(3, draw_frame(max(plot_data$Year)))
+  print("Assembling plots into a GIF")
+}
 
+```
 
+```{r}
 
+saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif"),
+        ani.width = 800, ani.height = 500, ani.res = 110)
 
-
-
-
-
-
+```
 
 
 ```{r message = FALSE}

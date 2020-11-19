@@ -25,9 +25,9 @@ Imports:
     attempt,
     magrittr,
     ggplot2,
-    gganimate,
+    animation,
+    glue,
     ggimage,
-    gifski,
     png
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
