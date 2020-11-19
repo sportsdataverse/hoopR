@@ -37,8 +37,9 @@ Then we can reference these in our scripts with `Sys.env("kp_user")` or `Sys.env
 ### Import libraries and set browser login
 
 ```{r, warning=FALSE,  message = FALSE}
-library(dplyr)
 library(kenpomR)
+library(dplyr)
+
 browser <- login(Sys.getenv("kp_user"), Sys.getenv("kp_pw"))
 
 ```
@@ -110,12 +111,13 @@ plot_data$Color_1 = Color1
 plot_data$Color_2 = Color2
 ```
 
-```{r}
+```{r, message=FALSE}
 library(ggplot2)
 library(animation)
 library(ggimage)
 library(png)
 library(glue)
+library(dplyr)
 
 logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
 z <- tempfile()
@@ -160,11 +162,11 @@ draw_frame <- function(year)
     geom_segment(x = 2010, xend = 2020, y = 0, yend = 0, size = 0.75)+
     geom_image(x = x_score-1, y = 24, image = frm_data$logo_1, size = 0.09, asp = 1.5)+
     geom_image(x = x_score-1, y = 2, image = frm_data$logo_2, size = 0.12, asp = 1.5)+
-    geom_image(aes(x = Year, y = Metric_1, image = frm_data$logo_1),  size = .03, asp = 1.5)+
-    geom_image(aes(x = Year, y = Metric_2, image = frm_data$logo_2),  size = .06, asp = 1.5)+
+    geom_image(aes(x = Year, y = Metric_1, image = logo_1),  size = .03, asp = 1.5)+
+    geom_image(aes(x = Year, y = Metric_2, image = logo_2),  size = .06, asp = 1.5)+
     annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=-2, ymax=-20)+
-    geom_line(aes(color = Color1, x = Year, y = Metric_1), size = 1)+
-    geom_line(aes(color = Color2, x = Year, y = Metric_2), size = 1)+
+    geom_line(aes(x = Year, y = Metric_1, color = Color1), size = 1)+
+    geom_line(aes(x = Year, y = Metric_2, color = Color2), size = 1)+
     scale_color_manual(values = c(Color1, Color2))+
     scale_x_continuous(breaks = seq(2010, 2020, 1),
                        minor_breaks = NULL,
@@ -257,26 +259,29 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
         ani.width = 800, ani.height = 500, ani.res = 110)
 
 ```
+![Result](https://github.com/saiemgilani/kenpomR/blob/master/man/figures/animated_wp.gif?raw=true)
 
 
-```{r message = FALSE}
+![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
+
+```{r efficiency, message = FALSE}
 effs <- get_efficiency(browser, min_year = 2020, max_year = 2020)
 glimpse(effs)
 ```
 
-```{r message = FALSE}
+```{r fourfactors, message = FALSE}
 ff <-  get_fourfactors(browser, min_year = 2020, max_year = 2020)
 glimpse(ff)
 ```
 
 
-```{r message = FALSE}
+```{r hgts, message = FALSE}
  hgts <-  get_height(browser, min_year = 2020, max_year = 2020)
 
 glimpse(hgts)
 ```
 #### All Games Player stats
-```{r message = FALSE}
+```{r plyrstats, message = FALSE}
 plyrstats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
 
 
@@ -285,12 +290,9 @@ glimpse(plyrstats[[1]])
 ```
 #### Conference only Player stats
 ```{r}
-
 glimpse(plyrstats[[2]])
 ```
 
-
-![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
 
 ## Ratings Table Function examples
 ```{r eval = FALSE}
