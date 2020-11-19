@@ -1,11 +1,7 @@
 ---
 title: "Intro to kenpomR"
 author: "Saiem Gilani"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Intro to kenpomR}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
