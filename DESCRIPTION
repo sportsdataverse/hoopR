@@ -28,7 +28,6 @@ Imports:
     animation,
     glue,
     ggimage,
-    magick,
     png
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
