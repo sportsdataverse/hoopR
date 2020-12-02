@@ -621,7 +621,7 @@ get_conf <- function(browser, year, conf){
   # Check conf parameter in teams_list$Conf names
   assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
                           msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
-  conf_name = kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf]
+  conf_name = unique(kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf])
 
   ### Pull Data
   url <- paste0("https://kenpom.com/conf.php?",
@@ -871,7 +871,7 @@ get_confhistory <- function(browser, conf){
   # Check conf parameter in teams_list$Conf names
   assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
                           msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
-  conf_name = kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf]
+  conf_name = unique(kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf])
 
   ### Pull Data
   url <- paste0("https://kenpom.com/confhistory.php?",
