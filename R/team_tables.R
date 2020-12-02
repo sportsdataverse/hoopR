@@ -18,7 +18,10 @@
 
 get_team_schedule <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -78,7 +81,10 @@ get_team_schedule <- function(browser, team, year= 2020){
 
 get_gameplan <- function(browser, team, year=2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -101,7 +107,6 @@ get_gameplan <- function(browser, team, year=2020){
     rvest::html_nodes(css='#schedule-table'))[[1]] %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()
-
 
   colnames(x) <- header_cols
 
@@ -136,10 +141,11 @@ get_gameplan <- function(browser, team, year=2020){
 #' }
 
 get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
-
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
 
   if(!defense){
     def = 'd'
@@ -212,7 +218,10 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
 
 get_team_players <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -293,7 +302,10 @@ get_team_players <- function(browser, team, year= 2020){
 
 get_minutes_matrix <- function(browser, team, year = 2020){
   assertthat::assert_that(year >= 2014, msg="Data only goes back to 2014")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -352,7 +364,10 @@ get_minutes_matrix <- function(browser, team, year = 2020){
 #'   }
 get_team_player_stats <- function(browser, team, year = 2020){
   assertthat::assert_that(year>=2014, msg="Data only goes back to 2014")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -448,7 +463,10 @@ get_team_player_stats <- function(browser, team, year = 2020){
 
 get_team_depth_chart <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -517,7 +535,10 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 
 get_team_lineups <- function(browser, team, year= 2020){
   assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
