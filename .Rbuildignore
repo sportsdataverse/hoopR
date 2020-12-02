@@ -12,3 +12,5 @@
 ^logo.png
 ^kenpomR_*
 ^\.github$
+^inst*
+^vignette*
