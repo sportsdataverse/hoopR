@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Team Efficiency History — get_team_history • kenpomR</title>
+<title>Get Game Box Score — get_box_tables • kenpomR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get Team Efficiency History — get_team_history" />
-<meta property="og:description" content="Get Team Efficiency History" />
+<meta property="og:title" content="Get Game Box Score — get_box_tables" />
+<meta property="og:description" content="Get Game Box Score" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -154,16 +154,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Team Efficiency History</h1>
+    <h1>Get Game Box Score</h1>
     
-    <div class="hidden name"><code>get_team_history.Rd</code></div>
+    <div class="hidden name"><code>get_box_tables.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Team Efficiency History</p>
+    <p>Get Game Box Score</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_team_history</span><span class='op'>(</span><span class='va'>browser</span>, <span class='va'>team</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_box_tables</span><span class='op'>(</span><span class='va'>browser</span>, <span class='va'>game_id</span>, <span class='va'>year</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -173,53 +173,20 @@
       <td><p>User login session</p></td>
     </tr>
     <tr>
-      <th>team</th>
-      <td><p>Team filter to select.</p></td>
+      <th>game_id</th>
+      <td><p>Game id of game to pull</p></td>
+    </tr>
+    <tr>
+      <th>year</th>
+      <td><p>Year of game to pull</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A data frame with 30 columns:</p><dl>
-  <dt><code>Year</code></dt><dd><p>double.</p></dd>
-  <dt><code>Team.Rk</code></dt><dd><p>double.</p></dd>
-  <dt><code>Team</code></dt><dd><p>character.</p></dd>
-  <dt><code>Coach</code></dt><dd><p>character.</p></dd>
-  <dt><code>Conf</code></dt><dd><p>character.</p></dd>
-  <dt><code>W-L</code></dt><dd><p>character.</p></dd>
-  <dt><code>AdjT</code></dt><dd><p>double.</p></dd>
-  <dt><code>AdjO</code></dt><dd><p>double.</p></dd>
-  <dt><code>AdjD</code></dt><dd><p>double.</p></dd>
-  <dt><code>eFGpct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>TOpct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>ORpct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>FTR.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG2pct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG3pct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>FTpct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG3Apct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>Apct.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>APL.Off</code></dt><dd><p>double.</p></dd>
-  <dt><code>eFGpct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>TOpct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>ORpct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>FTR.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG2pct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG3pct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>Blkpct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG3Apct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>Apct.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>AP.Def</code></dt><dd><p>double.</p></dd>
-  <dt><code>Foul2Particpct</code></dt><dd><p>double.</p></dd>
-
-</dl>
-
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'>get_team_history</span><span class='op'>(</span><span class='va'>browser</span>, team <span class='op'>=</span> <span class='st'>'Florida St.'</span><span class='op'>)</span>
-  <span class='op'>}</span>
-
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='fu'>get_box_tables</span><span class='op'>(</span><span class='va'>browser</span>, game_id <span class='op'>=</span> <span class='fl'>1238</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

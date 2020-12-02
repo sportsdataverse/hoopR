@@ -73,6 +73,5 @@ reference:
       - '`check_internet`'
       - '`check_status`'
       - '`clean_team_names_NCAA_merge`'
-  - subtitle: Team Data Dictionary
-    desc: Teams lookup for kenpomR function arguments
       - '`teams_links`'
+
