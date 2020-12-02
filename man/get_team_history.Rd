@@ -51,7 +51,7 @@ Get Team Efficiency History
 }
 \examples{
   \dontrun{
-    get_team_history(browser, team = 'Florida St.', year= 2020)
+    get_team_history(browser, team = 'Florida St.')
   }
 
 }
