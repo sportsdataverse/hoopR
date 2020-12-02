@@ -7,7 +7,6 @@ License: MIT + file LICENSE
 LazyData: true
 URL: https://saiemgilani.github.io/kenpomR (website) https://www.github.com/saiemgilani/kenpomR (devel)
 BugReports: https://www.github.com/saiemgilani/kenpomR/issues
-SystemRequirements: ImageMagick++: ImageMagick-c++-devel (rpm) or libmagick++-dev (deb)
 Encoding: UTF-8
 Depends: R (>= 2.10)
 Imports: 
@@ -24,25 +23,8 @@ Imports:
     httr,
     curl,
     attempt,
-    magrittr,
-    glue,
-    ggplot2,
-    animation,
-    magick,
-    ggimage,
-    png
+    magrittr
 RoxygenNote: 7.1.1
 Suggests:
-    av (>= 0.3),
-    spelling,
-    jsonlite,
-    methods,
     knitr,
-    rmarkdown,
-    rsvg,
-    webp,
-    pdftools,
-    gapminder,
-    IRdisplay,
-    tesseract (>= 2.0),
-    gifski
+    rmarkdown
