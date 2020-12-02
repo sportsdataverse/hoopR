@@ -2,11 +2,12 @@ Package: kenpomR
 Title: A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website
 Version: 0.0.0.9
 Authors@R: person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))
-Description: The R package kenpomR(oy) is for working with KenPom's college basketball data. A scraping interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
+Description: The R package kenpomR is for working with Ken Pomeroy's college basketball data. A scraping interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
 License: MIT + file LICENSE
 LazyData: true
-URL: http://www.github.com/saiemgilani/kenpomR
-BugReports: http://www.github.com/saiemgilani/kenpomR/issues
+URL: https://saiemgilani.github.io/kenpomR (website) https://www.github.com/saiemgilani/kenpomR (devel)
+BugReports: https://www.github.com/saiemgilani/kenpomR/issues
+SystemRequirements: ImageMagick++: ImageMagick-c++-devel (rpm) or libmagick++-dev (deb)
 Encoding: UTF-8
 Depends: R (>= 2.10)
 Imports: 
@@ -24,11 +25,24 @@ Imports:
     curl,
     attempt,
     magrittr,
+    glue,
     ggplot2,
     animation,
-    glue,
+    magick,
     ggimage,
     png
 RoxygenNote: 7.1.1
-VignetteBuilder: knitr
-Suggests: knitr, rmarkdown
+Suggests:
+    av (>= 0.3),
+    spelling,
+    jsonlite,
+    methods,
+    knitr,
+    rmarkdown,
+    rsvg,
+    webp,
+    pdftools,
+    gapminder,
+    IRdisplay,
+    tesseract (>= 2.0),
+    gifski
