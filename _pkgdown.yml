@@ -20,7 +20,7 @@ navbar:
         href: articles/index.html
       - text: "Introductory"
       - text: "Intro to kenpomR"
-        href: articles/Intro-to-kenpomR.html
+        href: articles/intro-to-kenpomR.html
     - icon: fa-file-code-o
       text: "Functions"
       href: reference/index.html
