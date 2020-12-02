@@ -20,7 +20,7 @@
 
 get_box_tables <- function(browser, game_id, year){
 
-  assertthat::assert_that(max_year>=2013, msg="Data only goes back to 2013")
+  assertthat::assert_that(year>=2013, msg="Data only goes back to 2013")
 
 
 
