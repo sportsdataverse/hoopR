@@ -47,6 +47,7 @@ reference:
       - '`get_minutes_matrix`'
       - '`get_team_schedule`'
       - '`get_team_player_stats`'
+      - '`get_box_tables`'
       - '`get_gameplan`'
       - '`get_opptracker`'
       - '`get_teamstats`'
@@ -72,3 +73,6 @@ reference:
       - '`check_internet`'
       - '`check_status`'
       - '`clean_team_names_NCAA_merge`'
+  - subtitle: Team Data Dictionary
+    desc: Teams lookup for kenpomR function arguments
+      - '`teams_links`'
