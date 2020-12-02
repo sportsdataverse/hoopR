@@ -8,10 +8,9 @@
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr select filter mutate arrange
+#' @importFrom dplyr select filter mutate arrange bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove
-#' @importFrom plyr rbind.fill
 #' @export
 #'
 #' @examples
@@ -68,7 +67,7 @@ get_pomeroy_ratings <- function(browser, min_year, max_year){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   kenpom <- kenpom %>%
@@ -87,8 +86,7 @@ get_pomeroy_ratings <- function(browser, min_year, max_year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr filter mutate mutate_at
-#' @importFrom plyr rbind.fill
+#' @importFrom dplyr filter mutate mutate_at bind_rows
 #' @importFrom stringr str_remove
 #' @export
 #'
@@ -197,7 +195,7 @@ get_efficiency <- function(browser, min_year, max_year){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   kenpom <- kenpom %>%
@@ -215,8 +213,7 @@ get_efficiency <- function(browser, min_year, max_year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr select mutate filter
-#' @importFrom plyr rbind.fill
+#' @importFrom dplyr select mutate filter bind_rows
 #' @importFrom stringr str_remove
 #' @export
 #'
@@ -277,7 +274,7 @@ get_fourfactors <- function(browser, min_year, max_year){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   kenpom <- kenpom %>%
@@ -295,8 +292,7 @@ get_fourfactors <- function(browser, min_year, max_year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr mutate filter
-#' @importFrom plyr rbind.fill
+#' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove
 #' @export
 #'
@@ -360,7 +356,7 @@ get_pointdist <- function(browser, min_year, max_year){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   return(kenpom)
@@ -376,8 +372,7 @@ get_pointdist <- function(browser, min_year, max_year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr filter mutate
-#' @importFrom plyr rbind.fill
+#' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove
 #' @export
 #'
@@ -487,7 +482,7 @@ get_height <- function(browser, min_year,max_year){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   return(kenpom)
@@ -504,8 +499,7 @@ get_height <- function(browser, min_year,max_year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr filter mutate
-#' @importFrom plyr rbind.fill
+#' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove
 #' @export
 #'
@@ -604,7 +598,7 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
     if(year == min_year) {
       kenpom <- x
     }else {
-      kenpom <- rbind.fill(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
   return(kenpom)
