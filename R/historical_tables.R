@@ -47,13 +47,19 @@
 #'
 #' @examples
 #'   \dontrun{
-#'     get_team_history(browser, team = 'Florida St.', year= 2020)
+#'     get_team_history(browser, team = 'Florida St.')
 #'   }
 #'
 
 get_team_history <- function(browser, team){
 
-  team_name <- gsub(" ","\\+",team)
+
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+              msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+
+
   ### Pull Data
   url <- paste0("https://kenpom.com/history.php?",
                 "t=",team_name)
@@ -313,7 +319,11 @@ get_program_ratings <- function(browser){
 #' }
 
 get_records_team <- function(browser, team, conference_only = FALSE){
-  team_name <- gsub(" ","\\+",team)
+  # Check teams parameter in teams list names
+  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+
 
   if(conference_only){
     url <- paste0("https://kenpom.com/records.php?",
@@ -608,9 +618,14 @@ get_conf <- function(browser, year, conf){
 
   # check for internet
   check_internet()
+  # Check conf parameter in teams_list$Conf names
+  assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
+                          msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
+  conf_name = kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf]
+
   ### Pull Data
   url <- paste0("https://kenpom.com/conf.php?",
-                "c=", conf,
+                "c=", conf_name,
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
@@ -853,9 +868,14 @@ get_confhistory <- function(browser, conf){
 
   # check for internet
   check_internet()
+  # Check conf parameter in teams_list$Conf names
+  assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
+                          msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
+  conf_name = kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf]
+
   ### Pull Data
   url <- paste0("https://kenpom.com/confhistory.php?",
-                "c=", conf)
+                "c=", conf_name)
   page <- rvest::jump_to(browser, url)
 
   x <- page %>%
