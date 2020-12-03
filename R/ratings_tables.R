@@ -488,6 +488,82 @@ get_height <- function(browser, min_year,max_year){
   return(kenpom)
 }
 
+#' Get 2-Foul Participation Stats
+#'
+#' @param min_year First year of data to pull
+#' @param max_year Last year of data to pull
+#' @param browser User login session
+#' @keywords Foul Trouble
+#' @importFrom rlang .data
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html
+#' @importFrom dplyr mutate filter bind_rows
+#' @importFrom stringr str_remove
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'   get_foul_trouble(browser, min_year = 2020, max_year = 2020)
+#' }
+
+get_foul_trouble <- function(browser, min_year, max_year){
+
+  assertthat::assert_that(min_year>=2010, msg="Data only goes back to 2010")
+
+  years <- min_year:max_year
+
+  for(year in years) {
+    # check for internet
+    check_internet()
+    cat("Getting", year,"\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/foul_trouble.php?",
+                  "y=", year)
+
+    page <- rvest::jump_to(browser, url)
+
+    header_cols <- c("Team", "Conf", "TwoFoulParticpationPct",
+                     "TwoFoulParticpationPct.Rk",	"Adj2FP", "Adj2FP.Rk",
+                     "TwoFoulTotalTime","TwoFoulTotalTime.Rk",
+                     "TwoFoulTimeOn","TwoFoulTimeOn.Rk",
+                     "BenchPct","BenchPct.Rk")
+    x <- (page %>%
+            xml2::read_html() %>%
+            rvest::html_nodes(css='#ratings-table'))[[1]] %>%
+      rvest::html_table(fill=TRUE)
+
+    x <- x[,1:12]
+
+    colnames(x) <- header_cols
+
+    suppressWarnings(
+      x <- x %>%
+        dplyr::filter(!is.na(as.numeric(.data$TwoFoulParticpationPct)))
+    )
+
+    x <- dplyr::mutate(x,
+                       "NCAA_Seed" = NA_integer_,
+                       "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Year" = year) %>%
+      dplyr:: mutate_at(
+        c("TwoFoulParticpationPct",
+          "TwoFoulParticpationPct.Rk",	"Adj2FP", "Adj2FP.Rk",
+          "BenchPct","BenchPct.Rk"), as.numeric) %>%
+      as.data.frame()
+
+    ### Store Data
+    if(year == min_year) {
+      kenpom <- x
+    }else {
+      kenpom <- dplyr::bind_rows(kenpom, x)
+    }
+  }
+  return(kenpom)
+}
+
+
 #' Get Team Stats
 #'
 #' @param min_year First year of data to pull
