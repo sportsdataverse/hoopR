@@ -487,8 +487,8 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
 #' No filter applied by default.
 #'
-#' @return A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
-#'   First data frame, accessible via [[1]]
+#' @return A list of 7 dataframes accessible via \code{[[1]]},\code{[[2]]},...,,\code{[[7]]}\cr
+#'   First data frame, accessible via \code{[[1]]}\cr
 #'   A data frame with 15 columns:
 #' \describe{
 #'   \item{\code{Team}}{character.}
@@ -507,10 +507,9 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{NextGame}}{character.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' Second data frame, accessible via [[2]]
+#' Second data frame, accessible via \code{[[2]]}\cr
 #'   A data frame with 20 columns:
 #' \describe{
-#'
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{OE}}{double.}
 #'   \item{\code{OE.Rk}}{double.}
@@ -532,10 +531,9 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Tempo.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' Third data frame, accessible via [[3]]
+#' Third data frame, accessible via \code{[[3]]}\cr
 #'   A data frame with 20 columns:
 #' \describe{
-#'
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{DE}}{double.}
 #'   \item{\code{DE.Rk}}{double.}
@@ -557,16 +555,14 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Stlpct.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#'
-#'   Fourth data frame, accessible via [[4]]
+#'   Fourth data frame, accessible via \code{[[4]]}\cr
 #'   A data frame with 3 columns:
 #' \describe{
 #'   \item{\code{Rk}}{integer.}
 #'   \item{\code{Player}}{character.}
 #'   \item{\code{Year}}{character.}
 #' }
-#'
-#'   Fifth data frame, accessible via [[5]]
+#'   Fifth data frame, accessible via \code{[[5]]}\cr
 #'   A data frame with 4 columns:
 #' \describe{
 #'   \item{\code{Stat}}{character.}
@@ -574,17 +570,16 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' \describe{
-#'   Sixth data frame, accessible via [[6]]
+#'   Sixth data frame, accessible via \code{[[6]]}\cr
 #'   A data frame with 5 columns:
+#' \describe{
 #'   \item{\code{Stat}}{character.}
 #'   \item{\code{Count}}{character.}
 #'   \item{\code{Value}}{double.}
 #'   \item{\code{Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#'
-#'   Seventh data frame, accessible via [[7]]
+#'   Seventh data frame, accessible via \code{[[7]]}\cr
 #'   A data frame 4 columns:
 #' \describe{
 #'   \item{\code{Rk}}{double.}
