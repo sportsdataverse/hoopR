@@ -2,7 +2,7 @@
 % Please edit documentation in R/team_tables.R
 \name{get_team_player_stats}
 \alias{get_team_player_stats}
-\title{Get Minutes Matrix from Expanded Player Page}
+\title{Get Team Player Stats}
 \usage{
 get_team_player_stats(browser, team, year = 2020)
 }
@@ -14,12 +14,13 @@ get_team_player_stats(browser, team, year = 2020)
 \item{year}{Year of data to pull}
 }
 \description{
-Get Minutes Matrix from Expanded Player Page
+Get Team Player Stats
 }
 \examples{
   \dontrun{
     get_team_player_stats(browser, team = 'Florida St.', year = 2020)
   }
 }
-\keyword{Matrix}
-\keyword{Minutes}
+\keyword{Player}
+\keyword{Stats}
+\keyword{Team}
