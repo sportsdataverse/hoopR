@@ -769,7 +769,7 @@ get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FA
       x <- dplyr::mutate(x,
                          "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
                          "Year" = year,
-                         "group" = groups[i]) %>%
+                         "Group" = groups[i]) %>%
         as.data.frame()
       y <- c(y,list(x))
     }
@@ -888,10 +888,13 @@ get_kpoy <- function(browser, year){
         HomeTown = stringr::str_extract(
           stringi::stri_extract_last_regex(.data$col, '[^\u00b7]+'),".*")
       )
-
+    suppressWarnings(
+      if(i == 1){x <- x %>% dplyr::mutate_at(c("kpoyRating","Wgt"), as.numeric)
+      }else{x <- x %>% dplyr::mutate_at(c("GameMVPs","Wgt"), as.numeric)}
+    )
     x <- dplyr::mutate(x,
                        "Year" = year,
-                       "group" = groups[i]) %>%
+                       "Group" = groups[i]) %>%
       as.data.frame()
     x <- x %>%
       dplyr::select(-.data$col)
