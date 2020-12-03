@@ -10,8 +10,10 @@ get_confhistory(browser, conf)
 \item{browser}{User login session}
 
 \item{conf}{Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
-'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
-'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
+'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',\cr
+'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
+'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', \cr
+'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
 you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr

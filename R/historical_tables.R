@@ -488,9 +488,9 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #' No filter applied by default.
 #'
 #' @return A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
-#' \describe{
 #'   First data frame, accessible via [[1]]
 #'   A data frame with 15 columns:
+#' \describe{
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{Overall}}{character.}
 #'   \item{\code{Conf}}{character.}
@@ -507,9 +507,10 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{NextGame}}{character.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' \describe{
-#'   Second data frame, accessible via [[2]]
+#' Second data frame, accessible via [[2]]
 #'   A data frame with 20 columns:
+#' \describe{
+#'
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{OE}}{double.}
 #'   \item{\code{OE.Rk}}{double.}
@@ -531,9 +532,10 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Tempo.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' \describe{
-#'   Third data frame, accessible via [[3]]
+#' Third data frame, accessible via [[3]]
 #'   A data frame with 20 columns:
+#' \describe{
+#'
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{DE}}{double.}
 #'   \item{\code{DE.Rk}}{double.}
@@ -555,16 +557,18 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Stlpct.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' \describe{
+#'
 #'   Fourth data frame, accessible via [[4]]
 #'   A data frame with 3 columns:
+#' \describe{
 #'   \item{\code{Rk}}{integer.}
 #'   \item{\code{Player}}{character.}
 #'   \item{\code{Year}}{character.}
 #' }
-#' \describe{
+#'
 #'   Fifth data frame, accessible via [[5]]
 #'   A data frame with 4 columns:
+#' \describe{
 #'   \item{\code{Stat}}{character.}
 #'   \item{\code{Value}}{double.}
 #'   \item{\code{Rk}}{double.}
@@ -580,9 +584,9 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Year}}{character.}
 #' }
 #'
-#' \describe{
 #'   Seventh data frame, accessible via [[7]]
 #'   A data frame 4 columns:
+#' \describe{
 #'   \item{\code{Rk}}{double.}
 #'   \item{\code{Conference}}{character.}
 #'   \item{\code{Rating}}{double.}
@@ -742,9 +746,9 @@ get_conf <- function(browser, year, conf){
 #'   \item{\code{FG3Apct.Rk}}{double.}
 #'   \item{\code{Apct}}{double.}
 #'   \item{\code{Apct.Rk}}{double.}
-#'   \item{\code{HomeW-L}}{character.}
-#'   \item{\code{HomeW-Lpct}}{double.}
-#'   \item{\code{HomeW-L.Rk}}{double.}
+#'   \item{\code{HomeWL}}{character.}
+#'   \item{\code{HomeWLpct}}{double.}
+#'   \item{\code{HomeWL.Rk}}{double.}
 #'   \item{\code{Close}}{double.}
 #'   \item{\code{Close.Rk}}{double.}
 #'   \item{\code{Blowouts}}{double.}
@@ -813,8 +817,10 @@ get_confstats <- function(browser, year){
 #'
 #' @param browser User login session
 #' @param conf Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
-#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
-#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
+#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',\cr
+#' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
+#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', \cr
+#' 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
 #' 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
 #' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
 #' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr

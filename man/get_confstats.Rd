@@ -41,9 +41,9 @@ A data frame with 35 columns:
   \item{\code{FG3Apct.Rk}}{double.}
   \item{\code{Apct}}{double.}
   \item{\code{Apct.Rk}}{double.}
-  \item{\code{HomeW-L}}{character.}
-  \item{\code{HomeW-Lpct}}{double.}
-  \item{\code{HomeW-L.Rk}}{double.}
+  \item{\code{HomeWL}}{character.}
+  \item{\code{HomeWLpct}}{double.}
+  \item{\code{HomeWL.Rk}}{double.}
   \item{\code{Close}}{double.}
   \item{\code{Close.Rk}}{double.}
   \item{\code{Blowouts}}{double.}

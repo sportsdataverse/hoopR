@@ -21,9 +21,9 @@ No filter applied by default.}
 }
 \value{
 A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
-\describe{
   First data frame, accessible via [[1]]
   A data frame with 15 columns:
+\describe{
   \item{\code{Team}}{character.}
   \item{\code{Overall}}{character.}
   \item{\code{Conf}}{character.}
@@ -40,9 +40,10 @@ A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
   \item{\code{NextGame}}{character.}
   \item{\code{Year}}{character.}
 }
-\describe{
-  Second data frame, accessible via [[2]]
+Second data frame, accessible via [[2]]
   A data frame with 20 columns:
+\describe{
+
   \item{\code{Team}}{character.}
   \item{\code{OE}}{double.}
   \item{\code{OE.Rk}}{double.}
@@ -64,9 +65,10 @@ A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
   \item{\code{Tempo.Rk}}{double.}
   \item{\code{Year}}{character.}
 }
-\describe{
-  Third data frame, accessible via [[3]]
+Third data frame, accessible via [[3]]
   A data frame with 20 columns:
+\describe{
+
   \item{\code{Team}}{character.}
   \item{\code{DE}}{double.}
   \item{\code{DE.Rk}}{double.}
@@ -88,16 +90,18 @@ A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
   \item{\code{Stlpct.Rk}}{double.}
   \item{\code{Year}}{character.}
 }
-\describe{
+
   Fourth data frame, accessible via [[4]]
   A data frame with 3 columns:
+\describe{
   \item{\code{Rk}}{integer.}
   \item{\code{Player}}{character.}
   \item{\code{Year}}{character.}
 }
-\describe{
+
   Fifth data frame, accessible via [[5]]
   A data frame with 4 columns:
+\describe{
   \item{\code{Stat}}{character.}
   \item{\code{Value}}{double.}
   \item{\code{Rk}}{double.}
@@ -113,9 +117,9 @@ A list of 7 dataframes accessible via [[1]],[[2]],...,,[[7]]
   \item{\code{Year}}{character.}
 }
 
-\describe{
   Seventh data frame, accessible via [[7]]
   A data frame 4 columns:
+\describe{
   \item{\code{Rk}}{double.}
   \item{\code{Conference}}{character.}
   \item{\code{Rating}}{double.}
