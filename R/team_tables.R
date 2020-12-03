@@ -39,16 +39,18 @@ get_team_schedule <- function(browser, team, year= 2020){
     rvest::html_nodes(css='#schedule-table') %>%
     rvest::html_table(fill=TRUE))[[1]] %>%
     as.data.frame()
-  x <- x[,1:(length(x)-1)]
 
   ## TODO: Add the tiers of joy column back to data frame
+  x <- x[,1:(length(x)-1)]
 
   colnames(x) <- header_cols
   team_name <- gsub("\\+"," ",team)
   suppressWarnings(
     x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$Team.Rk)))
+      dplyr::filter(!is.na(as.numeric(.data$Team.Rk))) %>%
+      dplyr::mutate_at(c("Team.Rk","Opponent.Rk","Poss"), as.numeric)
   )
+
   x <- x %>%
     dplyr::mutate(Team = team_name,
                   Year = year) %>%
@@ -113,7 +115,12 @@ get_gameplan <- function(browser, team, year=2020){
   team_name <- gsub("\\+"," ",team)
   suppressWarnings(
     x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$Off.Eff)))
+      dplyr::filter(!is.na(as.numeric(.data$Off.Eff))) %>%
+      dplyr::mutate_at(c("Opponent.Rk","Pace","Off.Eff","Off.Eff.Rk","Off.eFGpct",
+                         "Off.TOpct","Off.ORpct","Off.FTR","Off.FG2pct","Off.FG3pct",
+                         "Off.FG3Apct","Def.Eff","Def.Eff.Rk","Def.eFGpct",
+                         "Def.TOpct",	"Def.ORpct", "Def.FTR",
+                         "Def.FG2pct","Def.FG3pct",	"Def.FG3Apct"))
   )
 
   ### Store Data
