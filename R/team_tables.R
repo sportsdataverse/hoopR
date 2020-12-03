@@ -344,13 +344,13 @@ get_minutes_matrix <- function(browser, team, year = 2020){
 }
 
 
-#' Get Minutes Matrix from Expanded Player Page
+#' Get Team Player Stats
 #'
 #' @param browser User login session
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
-#' @keywords Minutes Matrix
+#' @keywords Team Player Stats
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html xml_remove
@@ -493,7 +493,7 @@ get_team_depth_chart <- function(browser, team, year= 2020){
   x <- x %>%
     dplyr::mutate(Team = team_name,
                   Year = year) %>%
-    dplyr::select(.data$PG, .data$PG.Minpct, .data$SG,.data$SG.Minpct,
+    dplyr::select(.data$PG, .data$PG.Minpct, .data$SG, .data$SG.Minpct,
                   .data$SF, .data$SF.Minpct, .data$PF, .data$PF.Minpct,
                   .data$C, .data$C.Minpct, .data$Team, .data$Year)
 
