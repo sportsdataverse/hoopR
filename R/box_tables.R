@@ -21,10 +21,6 @@
 
 get_box <- function(browser, game_id, year){
 
-  assertthat::assert_that(year>=2013, msg="Data only goes back to 2013")
-
-
-
   # check for internet
   check_internet()
 
@@ -76,6 +72,13 @@ get_box <- function(browser, game_id, year){
   ref_table$GameId <- game_id
   ref_table$Year <- year
 
+  linescore <- ((page %>%
+                   xml2::read_html() %>%
+                   rvest::html_nodes("#linescore-table2"))[[1]]) %>%
+    rvest::html_table(fill=FALSE)
+
+  names(linescore)[1] <- "Team"
+
   y <- list()
   for(i in 1:2){
     x <- (page %>%
@@ -113,7 +116,7 @@ get_box <- function(browser, game_id, year){
     y <- c(y,list(x))
   }
   ### Store Data
-  kenpom <- c(y,list(ref_table))
+  kenpom <- c(y,list(linescore),list(ref_table))
 
   return(kenpom)
 }
@@ -282,3 +285,5 @@ get_winprob <- function(browser, game_id, year){
 
   return(kenpom)
 }
+
+

@@ -22,7 +22,8 @@ Imports:
     httr,
     curl,
     attempt,
-    magrittr
+    magrittr,
+    glue
 RoxygenNote: 7.1.1
 Suggests:
     knitr,

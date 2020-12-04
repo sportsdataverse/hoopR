@@ -17,10 +17,11 @@ This tutorial will require the use of R and RStudio. You can [follow the instruc
 
 ### First, save your login information privately
 
-You can use .Renviron to save your `kp_user` and `kp_pw` variables like so:
+You can use your .Renviron to save your `kp_user` and `kp_pw` variables, or you can simply set them using `Sys.setenv()` like so:
 
 ```{r eval = FALSE}
-file.edit("~/.Renviron")
+Sys.setenv(kp_user = "Your Username Here")
+Sys.setenv(kp_pw = "Your Password Here")
 ```
 
 Then save that information in a format like this:

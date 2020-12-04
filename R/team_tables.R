@@ -21,7 +21,8 @@ get_team_schedule <- function(browser, team, year= 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -86,7 +87,8 @@ get_gameplan <- function(browser, team, year=2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -152,8 +154,8 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
-
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   if(!defense){
     def = 'd'
     header_cols<- c('Date','Team','Result','AdjDE','AdjDE.Rk',
@@ -228,7 +230,8 @@ get_team_players <- function(browser, team, year= 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -238,39 +241,69 @@ get_team_players <- function(browser, team, year= 2020){
 
   page <- rvest::jump_to(browser, url)
 
-  header_cols<- c("Number", "Player", "Ht", "Wt", "Yr", "G", "S",
-                  "Minpct", "ORtg", "Posspct","Shotspct",
-                  "eFGpct", "TSpct", "ORpct", "DRpct",
-                  "ARate", "TORate", "Blkpct","Stlpct","FCper40","FDper40",
-                  "FTRate", "FTM-A", "FTpct",
-                  "2PM-A", "FG2pct", "3PM-A", "FG3pct")
+  player_links <- page %>%
+    xml2::read_html() %>%
+    rvest::html_nodes(css='#player-table') %>%
+    rvest::html_nodes("td > a")
 
-  x<- (page %>%
-         xml2::read_html() %>%
-         rvest::html_nodes(css='#player-table'))[[1]]
+  pid <- dplyr::bind_rows(lapply(xml2::xml_attrs(player_links),
+                                 function(x){
+                                   if(!stringr::str_detect(x,"kpoy")){
+                                     data.frame(as.list(x), stringsAsFactors=FALSE)
+                                   }
+                                 }))
+
+  pid <- pid %>%
+    dplyr::mutate(PlayerId = stringr::str_remove(stringr::str_extract(.data$href,"=(.+)"),"=")) %>%
+    dplyr::select(.data$PlayerId)
+
+  if(year>= 2013){ # "S" - starts only available from 2013 onwards
+    players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G", "S",
+                             "Minpct", "ORtg", "Posspct","Shotspct",
+                             "eFGpct", "TSpct", "ORpct", "DRpct",
+                             "ARate", "TORate", "Blkpct","Stlpct","FCper40","FDper40",
+                             "FTRate", "FTM-A", "FTpct",
+                             "2PM-A", "FG2pct", "3PM-A", "FG3pct")
+  }else{
+    players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G",
+                             "Minpct", "ORtg", "Posspct","Shotspct",
+                             "eFGpct", "TSpct", "ORpct", "DRpct",
+                             "ARate", "TORate", "Blkpct","Stlpct","FCper40","FDper40",
+                             "FTRate", "FTM-A", "FTpct",
+                             "2PM-A", "FG2pct", "3PM-A", "FG3pct")
+  }
+
+  players <- (page %>%
+                xml2::read_html() %>%
+                rvest::html_nodes(css='#player-table'))[[1]]
 
   ## removing Player national rankings for easier manipulation
   ## TODO: Add these rankings back as columns
-  plrank <- x %>%
-    rvest::html_nodes(".plrank")
+  plrank <- players %>% rvest::html_nodes(".plrank")
+  # pl_rank <- dplyr::bind_rows(lapply(html_text(plrank),
+  #                                   function(x){
+  #                                     if(x==""){
+  #                                       x <-NA_real_
+  #                                     }
+  #                                     data.frame(x, stringsAsFactors = FALSE)
+  #                                   }))
 
   xml2::xml_remove(plrank)
 
-  x <- x %>%
+  players <- players %>%
     rvest::html_table(fill=FALSE) %>%
     as.data.frame()
 
 
-  colnames(x) <- header_cols
+  colnames(players) <- players_header_cols
 
-  team_name <- gsub("\\+"," ",team)
   suppressWarnings(
-    x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$Wt)))
+    players <- players %>%
+      dplyr::filter(.data$Yr!="")
   )
 
-  x <- x %>%
-    dplyr::mutate(Team = team_name,
+  players <- players %>%
+    dplyr::mutate(Team = team,
                   Year = year,
                   Role = dplyr::case_when(.data$Minpct < 10.0 ~ "Benchwarmer",
                                           .data$Posspct < 12.0 ~ "Nearly Invisible",
@@ -279,10 +312,10 @@ get_team_players <- function(browser, team, year= 2020){
                                           .data$Posspct >= 20.0 & .data$Posspct < 24.0 ~ "Significant Contributor",
                                           .data$Posspct >= 24.0 & .data$Posspct < 28.0 ~ "Major Contributor",
                                           .data$Posspct >= 28.0 ~ "Go-to Guys")) %>%
-    dplyr::select(.data$Role, tidyr::everything())
-
+    dplyr::select(.data$Role, tidyr::everything()) %>%
+    dplyr::bind_cols(pid)
   ### Store Data
-  kenpom <- x
+  kenpom <- players
 
   return(kenpom)
 }
@@ -312,7 +345,8 @@ get_minutes_matrix <- function(browser, team, year = 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -374,7 +408,9 @@ get_team_player_stats <- function(browser, team, year = 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
+
   # check for internet
   check_internet()
   ### Pull Data
@@ -459,6 +495,7 @@ get_team_player_stats <- function(browser, team, year = 2020){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate
+#' @importFrom glue glue
 #' @export
 #'
 #' @examples
@@ -473,7 +510,8 @@ get_team_depth_chart <- function(browser, team, year= 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -483,30 +521,44 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 
   page <- rvest::jump_to(browser, url)
 
-  header_cols<- c("PG", "PG.Minpct", "SG", "SG.Minpct", "SF", "SF.Minpct",
-                  "PF", "PF.Minpct", "C", "C.Minpct")
+  tryCatch(
+    expr = {
+      depth1_header_cols<- c("PG", "PG.Minpct", "SG", "SG.Minpct", "SF", "SF.Minpct",
+                             "PF", "PF.Minpct", "C", "C.Minpct")
 
-  x<- (page %>%
-    xml2::read_html() %>%
-    rvest::html_nodes(css='#dc-table'))[[1]] %>%
-    rvest::html_table(fill=FALSE) %>%
-    as.data.frame()
+      depth1 <- (page %>%
+                   xml2::read_html() %>%
+                   rvest::html_nodes(css='#dc-table'))[[1]] %>%
+        rvest::html_table(fill=FALSE) %>%
+        as.data.frame()
+
+      colnames(depth1) <- depth1_header_cols
+      suppressWarnings(
+        depth1 <- depth1 %>%
+          dplyr::filter(.data$PG != "PG")
+      )
 
 
-  colnames(x) <- header_cols
+      depth1 <- depth1 %>%
+        dplyr::mutate(Team = team,
+                      Year = year) %>%
+        dplyr::select(.data$PG, .data$PG.Minpct, .data$SG, .data$SG.Minpct,
+                      .data$SF, .data$SF.Minpct, .data$PF, .data$PF.Minpct,
+                      .data$C, .data$C.Minpct, .data$Team, .data$Year)
 
-  team_name <- gsub("\\+"," ",team)
+      ### Store Data
+      kenpom <- depth1
+    },
+    error = function(e){
+      message(glue::glue("{Sys.time()} - {team} - {year} Team Depth Chart is missing"))
+    },
+    warning = function(w){
 
-  x <- x %>%
-    dplyr::mutate(Team = team_name,
-                  Year = year) %>%
-    dplyr::select(.data$PG, .data$PG.Minpct, .data$SG, .data$SG.Minpct,
-                  .data$SF, .data$SF.Minpct, .data$PF, .data$PF.Minpct,
-                  .data$C, .data$C.Minpct, .data$Team, .data$Year)
+    },
+    finally = {
 
-  ### Store Data
-  kenpom <- x
-
+    }
+  )
   return(kenpom)
 }
 
@@ -532,6 +584,7 @@ get_team_depth_chart <- function(browser, team, year= 2020){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate filter
+#' @importFrom glue glue
 #' @export
 #'
 #' @examples
@@ -545,7 +598,8 @@ get_team_lineups <- function(browser, team, year= 2020){
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
                           msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
   # check for internet
   check_internet()
   ### Pull Data
@@ -555,31 +609,44 @@ get_team_lineups <- function(browser, team, year= 2020){
 
   page <- rvest::jump_to(browser, url)
 
-  header_cols<- c("Rk","PG", "SG", "SF",
-                  "PF", "C", "Minpct")
+  tryCatch(
+    expr = {
+      depth2_header_cols<- c("Rk","PG", "SG", "SF",
+                             "PF", "C", "Minpct")
 
-  x<- (page %>%
-    xml2::read_html() %>%
-    rvest::html_nodes(css='#dc-table2'))[[1]] %>%
-    rvest::html_table(fill=FALSE) %>%
-    as.data.frame()
+      depth2<- (page %>%
+                  xml2::read_html() %>%
+                  rvest::html_nodes(css='#dc-table2'))[[1]] %>%
+        rvest::html_table(fill=FALSE) %>%
+        as.data.frame()
 
-  colnames(x) <- header_cols
-  team_name <- gsub("\\+"," ",team)
-  suppressWarnings(
-    x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$Minpct)))
+      colnames(depth2) <- depth2_header_cols
+
+      suppressWarnings(
+        depth2 <- depth2 %>%
+          dplyr::filter(!is.na(as.numeric(.data$Minpct)))
+      )
+
+      depth2 <- depth2 %>%
+        dplyr::mutate(Team = team,
+                      Year = year) %>%
+        dplyr::select(.data$Rk, .data$PG, .data$SG, .data$SF, .data$PF, .data$C,
+                      .data$Minpct, .data$Team, .data$Year)
+
+      ### Store Data
+      kenpom <- depth2
+
+    },
+    error = function(e){
+      message(glue::glue("{Sys.time()} - {team} - {year} Team Lineups is missing"))
+    },
+    warning = function(w){
+
+    },
+    finally = {
+
+    }
   )
-
-  x <- x %>%
-    dplyr::mutate(Team = team_name,
-                  Year = year) %>%
-    dplyr::select(.data$Rk, .data$PG, .data$SG, .data$SF, .data$PF, .data$C,
-                  .data$Minpct, .data$Team, .data$Year)
-
-  ### Store Data
-  kenpom <- x
-
   return(kenpom)
 }
 
