@@ -426,7 +426,7 @@ get_records_team <- function(browser, team, conference_only = FALSE){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_remove str_trim
 #' @export
 #' @examples
 #' \dontrun{
@@ -467,7 +467,8 @@ get_pomeroy_archive_ratings <- function(browser, date){
   x <- dplyr::mutate(x,
                      "NCAA_Seed" = NA_integer_,
                      "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                     "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }))
+                     "Team" = sapply(.data$Team, function(arg) {
+                       stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
 
 
   kenpom <- x

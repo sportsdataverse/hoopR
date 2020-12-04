@@ -10,7 +10,7 @@
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate arrange bind_rows
 #' @importFrom tidyr everything
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -52,7 +52,8 @@ get_pomeroy_ratings <- function(browser, min_year, max_year){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       as.data.frame()
 
@@ -87,7 +88,7 @@ get_pomeroy_ratings <- function(browser, min_year, max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate mutate_at bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_remove str_trim
 #' @export
 #'
 #' @examples
@@ -143,7 +144,8 @@ get_efficiency <- function(browser, min_year, max_year){
       x <- dplyr::mutate(x,
                          "NCAA_Seed" = NA_integer_,
                          "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                         "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                         "Team" = sapply(.data$Team, function(arg) {
+                           stringr::str_trim(str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year) %>%
         dplyr::mutate_at(
           c("AdjT", "AdjT.Rk","RawT", "RawT.Rk",
@@ -179,7 +181,8 @@ get_efficiency <- function(browser, min_year, max_year){
       x <- dplyr::mutate(x,
                          "NCAA_Seed" = NA_integer_,
                          "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                         "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                         "Team" = sapply(.data$Team, function(arg) {
+                           stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year) %>%
         dplyr::mutate_at(
           c("AdjT", "AdjT.Rk","RawT", "RawT.Rk",
@@ -214,7 +217,7 @@ get_efficiency <- function(browser, min_year, max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate filter bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -259,7 +262,8 @@ get_fourfactors <- function(browser, min_year, max_year){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
     dplyr::mutate_at(
       c("AdjT", "AdjT.Rk", "AdjO", "AdjO.Rk", "eFGpctO", "eFGpctO.Rk",
@@ -293,7 +297,7 @@ get_fourfactors <- function(browser, min_year, max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -341,7 +345,8 @@ get_pointdist <- function(browser, min_year, max_year){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
         c("FTpctO", "FTpctO.Rk",
@@ -373,7 +378,7 @@ get_pointdist <- function(browser, min_year, max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -420,7 +425,8 @@ get_height <- function(browser, min_year,max_year){
       x <- dplyr::mutate(x,
                          "NCAA_Seed" = NA_integer_,
                          "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                         "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                         "Team" = sapply(.data$Team, function(arg) {
+                           stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year) %>%
         dplyr:: mutate_at(
           c("AvgHgt", "AvgHgt.Rk",
@@ -464,7 +470,8 @@ get_height <- function(browser, min_year,max_year){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
         c("AvgHgt", "AvgHgt.Rk",
@@ -499,7 +506,7 @@ get_height <- function(browser, min_year,max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -545,7 +552,8 @@ get_foul_trouble <- function(browser, min_year, max_year){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
         c("TwoFoulParticpationPct",
@@ -576,7 +584,7 @@ get_foul_trouble <- function(browser, min_year, max_year){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate bind_rows
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -648,7 +656,8 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
     x <- dplyr::mutate(x,
                        "NCAA_Seed" = NA_integer_,
                        "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr::mutate_at(
         c("FG3pct", "FG3pct.Rk",
@@ -705,7 +714,7 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_trim
 #' @export
 #'
 #' @examples
@@ -767,7 +776,8 @@ get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FA
       )
 
       x <- dplyr::mutate(x,
-                         "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                         "Team" = sapply(.data$Team, function(arg) {
+                           stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year,
                          "Group" = groups[i]) %>%
         as.data.frame()
@@ -806,7 +816,8 @@ get_playerstats <- function(browser, metric = 'eFG', conf = NULL, conf_only = FA
         dplyr::filter(!is.na(as.numeric(.data$Wgt)))
     )
     x <- dplyr::mutate(x,
-                       "Team" = sapply(.data$Team, function(arg) { stringr::str_remove(arg,"\\d+|\\*") }),
+                       "Team" = sapply(.data$Team, function(arg) {
+                         stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year)%>%
       as.data.frame()
 

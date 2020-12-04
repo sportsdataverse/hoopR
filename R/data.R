@@ -5,6 +5,7 @@
 #' \item{\code{Team}}{character.}
 #' \item{\code{Team.link}}{character.}
 #' \item{\code{team.link.ref}}{character.}
+#' \item{\code{Year}}{double.}
 #' \item{\code{Conf}}{character.}
 #' \item{\code{Conf.link}}{character.}
 #' \item{\code{conf.link.ref}}{character.}
