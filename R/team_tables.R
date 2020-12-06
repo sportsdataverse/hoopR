@@ -293,7 +293,7 @@ get_team_schedule <- function(browser, team, year){
   # if(year==2010){
   #   fm_links <- fm_links[1:length(fm_links)-1]
   # }
-  rvest::html_text(fm_links[[1]])
+
 
   day = dplyr::bind_rows(lapply(fm_links,
                                  function(x){
