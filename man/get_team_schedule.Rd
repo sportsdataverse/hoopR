@@ -4,7 +4,7 @@
 \alias{get_team_schedule}
 \title{Get Team Schedule Results}
 \usage{
-get_team_schedule(browser, team, year = 2020)
+get_team_schedule(browser, team, year)
 }
 \arguments{
 \item{browser}{User login session}
