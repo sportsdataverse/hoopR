@@ -22,7 +22,7 @@ h1, h2, .h1, .h2{
 h3, h4, h5, h6, .h3, .h4{
   font-family: "Chivo";
   letter-spacing: 1px;
-  line-height: 2.2rem; /* increases, so wrapping headers don't overlap */
+  line-height: 1.8rem; /* increases, so wrapping headers don't overlap */
   color: #0f0f0f;
   font-weight: 500;
   font-size: 18px;
