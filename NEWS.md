@@ -2,5 +2,5 @@
 
 ## Initial Commits, remaining tasks:
   - Player Career Tables
-  - Game Box Scores
-  - Argument assertions
+  - ~~Game Box Scores~~
+  - ~~Argument assertions~~
