@@ -19,30 +19,30 @@ A data frame with 35 columns:
   \item{\code{Eff.Rk}}{double.}
   \item{\code{Tempo}}{double.}
   \item{\code{Tempo.Rk}}{double.}
-  \item{\code{eFGpct}}{double.}
-  \item{\code{eFGpct.Rk}}{double.}
-  \item{\code{TOpct}}{double.}
-  \item{\code{TOpct.Rk}}{double.}
-  \item{\code{ORpct}}{double.}
-  \item{\code{ORpct.Rk}}{double.}
-  \item{\code{FTR}}{double.}
-  \item{\code{FTR.Rk}}{double.}
-  \item{\code{Blkpct}}{double.}
-  \item{\code{Blkpct.Rk}}{double.}
-  \item{\code{Stlpct}}{double.}
-  \item{\code{Stlpct.Rk}}{double.}
-  \item{\code{FG2pct}}{double.}
-  \item{\code{FG2pct.Rk}}{double.}
-  \item{\code{FG3pct}}{double.}
-  \item{\code{FG3pct.Rk}}{double.}
-  \item{\code{FTpct}}{double.}
-  \item{\code{FTpct.Rk}}{double.}
-  \item{\code{FG3Apct}}{double.}
-  \item{\code{FG3Apct.Rk}}{double.}
-  \item{\code{Apct}}{double.}
-  \item{\code{Apct.Rk}}{double.}
+  \item{\code{eFG.Pct}}{double.}
+  \item{\code{eFG.Pct.Rk}}{double.}
+  \item{\code{TO.Pct}}{double.}
+  \item{\code{TO.Pct.Rk}}{double.}
+  \item{\code{OR.Pct}}{double.}
+  \item{\code{OR.Pct.Rk}}{double.}
+  \item{\code{FTRate}}{double.}
+  \item{\code{FTRate.Rk}}{double.}
+  \item{\code{Blk.Pct}}{double.}
+  \item{\code{Blk.Pct.Rk}}{double.}
+  \item{\code{Stl.Pct}}{double.}
+  \item{\code{Stl.Pct.Rk}}{double.}
+  \item{\code{FG_2.Pct}}{double.}
+  \item{\code{FG_2.Pct.Rk}}{double.}
+  \item{\code{FG_3.Pct}}{double.}
+  \item{\code{FG_3.Pct.Rk}}{double.}
+  \item{\code{FT.Pct}}{double.}
+  \item{\code{FT.Pct.Rk}}{double.}
+  \item{\code{FG_3A.Pct}}{double.}
+  \item{\code{FG_3A.Pct.Rk}}{double.}
+  \item{\code{A.Pct}}{double.}
+  \item{\code{A.Pct.Rk}}{double.}
   \item{\code{HomeWL}}{character.}
-  \item{\code{HomeWLpct}}{double.}
+  \item{\code{HomeWL.Pct}}{double.}
   \item{\code{HomeWL.Rk}}{double.}
   \item{\code{Close}}{double.}
   \item{\code{Close.Rk}}{double.}

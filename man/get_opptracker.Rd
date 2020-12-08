@@ -4,7 +4,7 @@
 \alias{get_opptracker}
 \title{Get Opponent Tracker for Team}
 \usage{
-get_opptracker(browser, team, year = 2020, defense = FALSE)
+get_opptracker(browser, team, year = as.integer(format(Sys.Date(), "\%Y")))
 }
 \arguments{
 \item{browser}{User login session}
@@ -12,8 +12,6 @@ get_opptracker(browser, team, year = 2020, defense = FALSE)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{defense}{TRUE/FALSE variable for whether to gather the defense data, default FALSE}
 }
 \description{
 Get Opponent Tracker for Team

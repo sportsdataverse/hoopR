@@ -306,7 +306,7 @@ pointdist <- get_pointdist(browser, min_year = 2020, max_year = 2020)
 
 height <- get_height(browser, min_year = 2020, max_year = 2020)
 
-teamstats <- get_teamstats(browser, min_year = 2020, max_year = 2020, defense = FALSE)
+teamstats <- get_teamstats(browser, min_year = 2020, max_year = 2020)
 
 playerstats <- get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
 

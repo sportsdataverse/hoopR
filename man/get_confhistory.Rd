@@ -26,17 +26,17 @@ A data frame with 23 columns:
   \item{\code{Rank}}{character.}
   \item{\code{Tempo}}{double.}
   \item{\code{Efficiency}}{double.}
-  \item{\code{eFGpct}}{double.}
-  \item{\code{TOpct}}{double.}
-  \item{\code{ORpct}}{double.}
+  \item{\code{eFG.Pct}}{double.}
+  \item{\code{TO.Pct}}{double.}
+  \item{\code{OR.Pct}}{double.}
   \item{\code{FTR}}{double.}
-  \item{\code{FG2pct}}{double.}
-  \item{\code{FG3pct}}{double.}
-  \item{\code{FTpct}}{double.}
-  \item{\code{FG3Apct}}{double.}
-  \item{\code{Apct}}{double.}
-  \item{\code{Blkpct}}{double.}
-  \item{\code{Stlpct}}{double.}
+  \item{\code{FG2.Pct}}{double.}
+  \item{\code{FG3.Pct}}{double.}
+  \item{\code{FT.Pct}}{double.}
+  \item{\code{FG3A.Pct}}{double.}
+  \item{\code{A.Pct}}{double.}
+  \item{\code{Blk.Pct}}{double.}
+  \item{\code{Stl.Pct}}{double.}
   \item{\code{HomeRecord}}{character.}
   \item{\code{Bids}}{character.}
   \item{\code{S16}}{character.}

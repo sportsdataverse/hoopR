@@ -46,20 +46,20 @@ Second data frame, accessible via \code{[[2]]}\cr
   \item{\code{Team}}{character.}
   \item{\code{OE}}{double.}
   \item{\code{OE.Rk}}{double.}
-  \item{\code{eFGpct}}{double.}
-  \item{\code{eFGpct.Rk}}{double.}
-  \item{\code{TOpct}}{double.}
-  \item{\code{TOpct.Rk}}{double.}
-  \item{\code{ORpct}}{double.}
-  \item{\code{ORpct.Rk}}{double.}
+  \item{\code{eFG.Pct}}{double.}
+  \item{\code{eFG.Pct.Rk}}{double.}
+  \item{\code{TO.Pct}}{double.}
+  \item{\code{TO.Pct.Rk}}{double.}
+  \item{\code{OR.Pct}}{double.}
+  \item{\code{OR.Pct.Rk}}{double.}
   \item{\code{FTR}}{double.}
   \item{\code{FTR.Rk}}{double.}
-  \item{\code{FG2pct}}{double.}
-  \item{\code{FG2pct.Rk}}{double.}
-  \item{\code{FG3pct}}{double.}
-  \item{\code{FG3pct.Rk}}{double.}
-  \item{\code{FTpct}}{double.}
-  \item{\code{FTpct.Rk}}{double.}
+  \item{\code{FG2.Pct}}{double.}
+  \item{\code{FG2.Pct.Rk}}{double.}
+  \item{\code{FG3.Pct}}{double.}
+  \item{\code{FG3.Pct.Rk}}{double.}
+  \item{\code{FT.Pct}}{double.}
+  \item{\code{FT.Pct.Rk}}{double.}
   \item{\code{Tempo}}{double.}
   \item{\code{Tempo.Rk}}{double.}
   \item{\code{Year}}{character.}
@@ -70,22 +70,22 @@ Third data frame, accessible via \code{[[3]]}\cr
   \item{\code{Team}}{character.}
   \item{\code{DE}}{double.}
   \item{\code{DE.Rk}}{double.}
-  \item{\code{eFGpct}}{double.}
-  \item{\code{eFGpct.Rk}}{double.}
-  \item{\code{TOpct}}{double.}
-  \item{\code{TOpct.Rk}}{double.}
-  \item{\code{ORpct}}{double.}
-  \item{\code{ORpct.Rk}}{double.}
+  \item{\code{eFG.Pct}}{double.}
+  \item{\code{eFG.Pct.Rk}}{double.}
+  \item{\code{TO.Pct}}{double.}
+  \item{\code{TO.Pct.Rk}}{double.}
+  \item{\code{OR.Pct}}{double.}
+  \item{\code{OR.Pct.Rk}}{double.}
   \item{\code{FTR}}{double.}
   \item{\code{FTR.Rk}}{double.}
-  \item{\code{FG2pct}}{double.}
-  \item{\code{FG2pct.Rk}}{double.}
-  \item{\code{FG3pct}}{double.}
-  \item{\code{FG3pct.Rk}}{double.}
-  \item{\code{Blkpct}}{double.}
-  \item{\code{Blkpct.Rk}}{double.}
-  \item{\code{Stlpct}}{double.}
-  \item{\code{Stlpct.Rk}}{double.}
+  \item{\code{FG2.Pct}}{double.}
+  \item{\code{FG2.Pct.Rk}}{double.}
+  \item{\code{FG3.Pct}}{double.}
+  \item{\code{FG3.Pct.Rk}}{double.}
+  \item{\code{Blk.Pct}}{double.}
+  \item{\code{Blk.Pct.Rk}}{double.}
+  \item{\code{Stl.Pct}}{double.}
+  \item{\code{Stl.Pct.Rk}}{double.}
   \item{\code{Year}}{character.}
 }
   Fourth data frame, accessible via \code{[[4]]}\cr
