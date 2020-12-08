@@ -20,7 +20,7 @@ Get Team Stats
 }
 \examples{
 \dontrun{
- get_teamstats(browser, min_year = 2020, max_year = 2020, defense = FALSE)
+ get_teamstats(browser, min_year = 2010, max_year = 2020, defense = FALSE)
 }
 }
 \keyword{Team}

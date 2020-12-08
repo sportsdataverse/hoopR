@@ -5,5 +5,5 @@
 .Ruserdata
 ..Rcheck/00check.log
 data-raw*
-inst/doc
+inst/doc*
 kenpomR.Rcheck*

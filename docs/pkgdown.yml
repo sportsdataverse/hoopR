@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   intro-to-kenpomR: intro-to-kenpomR.html
-last_built: 2020-12-06T04:03Z
+last_built: 2020-12-08T14:32Z
 urls:
   reference: http://saiemgilani.github.io/kenpomR/reference
   article: http://saiemgilani.github.io/kenpomR/articles

@@ -23,27 +23,27 @@ A data frame with 30 columns:
   \item{\code{AdjT}}{double.}
   \item{\code{AdjO}}{double.}
   \item{\code{AdjD}}{double.}
-  \item{\code{eFGpct.Off}}{double.}
-  \item{\code{TOpct.Off}}{double.}
-  \item{\code{ORpct.Off}}{double.}
-  \item{\code{FTR.Off}}{double.}
-  \item{\code{FG2pct.Off}}{double.}
-  \item{\code{FG3pct.Off}}{double.}
-  \item{\code{FTpct.Off}}{double.}
-  \item{\code{FG3Apct.Off}}{double.}
-  \item{\code{Apct.Off}}{double.}
-  \item{\code{APL.Off}}{double.}
-  \item{\code{eFGpct.Def}}{double.}
-  \item{\code{TOpct.Def}}{double.}
-  \item{\code{ORpct.Def}}{double.}
-  \item{\code{FTR.Def}}{double.}
-  \item{\code{FG2pct.Def}}{double.}
-  \item{\code{FG3pct.Def}}{double.}
-  \item{\code{Blkpct.Def}}{double.}
-  \item{\code{FG3Apct.Def}}{double.}
-  \item{\code{Apct.Def}}{double.}
-  \item{\code{AP.Def}}{double.}
-  \item{\code{Foul2Particpct}}{double.}
+  \item{\code{Off.eFG.Pct}}{double.}
+  \item{\code{Off.TO.Pct}}{double.}
+  \item{\code{Off.OR.Pct}}{double.}
+  \item{\code{Off.FTRate}}{double.}
+  \item{\code{Off.FG_2.Pct}}{double.}
+  \item{\code{Off.FG_3.Pct}}{double.}
+  \item{\code{Off.FT.Pct}}{double.}
+  \item{\code{Off.FG_3A.Pct}}{double.}
+  \item{\code{Off.A.Pct}}{double.}
+  \item{\code{Off.APL}}{double.}
+  \item{\code{Def.eFG.Pct}}{double.}
+  \item{\code{Def.TO.Pct}}{double.}
+  \item{\code{Def.OR.Pct}}{double.}
+  \item{\code{Def.FTRate}}{double.}
+  \item{\code{Def.FG_2.Pct}}{double.}
+  \item{\code{Def.FG_3.Pct}}{double.}
+  \item{\code{Def.Blk.Pct}}{double.}
+  \item{\code{Def.FG_3A.Pct}}{double.}
+  \item{\code{Def.A.Pct}}{double.}
+  \item{\code{Def.AP}}{double.}
+  \item{\code{Foul2Partic.Pct}}{double.}
 }
 }
 \description{
