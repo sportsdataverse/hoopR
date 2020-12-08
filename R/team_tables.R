@@ -110,7 +110,7 @@ get_team_schedule <- function(browser, team, year){
       tidyr::separate(.data$Conference,
                       into = c("W.Conference","L.Conference"), sep = "-") %>%
       dplyr::mutate(
-        W.Conference = ifelse((.data$W.Conference == "\u00d7")|(.data$W.Conference == ""), NA_real_,.data$W.Conference)
+        W.Conference = ifelse((.data$W.Conference == "\u00d7")|(.data$W.Conference == ""), NA_real_, .data$W.Conference)
       )
   )
   if(year>=2011){
@@ -145,8 +145,7 @@ get_team_schedule <- function(browser, team, year){
         stringr::str_detect(.data$Day.Date,regex("Jan",ignore_case=TRUE)) ~ stringr::str_pad(1, 2, pad="0"),
         stringr::str_detect(.data$Day.Date,regex("Feb",ignore_case=TRUE)) ~ stringr::str_pad(2, 2, pad="0"),
         stringr::str_detect(.data$Day.Date,regex("Mar",ignore_case=TRUE)) ~ stringr::str_pad(3, 2, pad="0"),
-        stringr::str_detect(.data$Day.Date,regex("Apr",ignore_case=TRUE)) ~ stringr::str_pad(4, 2, pad="0")
-      ),
+        stringr::str_detect(.data$Day.Date,regex("Apr",ignore_case=TRUE)) ~ stringr::str_pad(4, 2, pad="0")),
       Date.YR = dplyr::case_when(
         stringr::str_detect(.data$Day.Date,regex("Oct",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
         stringr::str_detect(.data$Day.Date,regex("Nov",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
@@ -154,8 +153,7 @@ get_team_schedule <- function(browser, team, year){
         stringr::str_detect(.data$Day.Date,regex("Jan",ignore_case=TRUE)) ~ glue::glue("{year}"),
         stringr::str_detect(.data$Day.Date,regex("Feb",ignore_case=TRUE)) ~ glue::glue("{year}"),
         stringr::str_detect(.data$Day.Date,regex("Mar",ignore_case=TRUE)) ~ glue::glue("{year}"),
-        stringr::str_detect(.data$Day.Date,regex("Apr",ignore_case=TRUE)) ~ glue::glue("{year}")
-      ),
+        stringr::str_detect(.data$Day.Date,regex("Apr",ignore_case=TRUE)) ~ glue::glue("{year}")),
       GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD)),
       W.Proj = round(cummax(ifelse(is.na(.data$W), 0, .data$W)) +
         cumsum(ifelse(is.na(.data$PreWP), 0, .data$PreWP))),
@@ -261,10 +259,12 @@ get_team_schedule <- function(browser, team, year){
       xml2::read_html() %>%
       rvest::html_nodes(css="#schedule-table") %>%
       rvest::html_nodes("tr.w > td:not(.label):nth-child(4)")
+
     l_box <- page %>%
       xml2::read_html() %>%
       rvest::html_nodes(css="#schedule-table") %>%
       rvest::html_nodes("tr.l > td:not(.label):nth-child(4)")
+
     un_box <- page %>%
       xml2::read_html() %>%
       rvest::html_nodes(css="#schedule-table") %>%
@@ -289,11 +289,6 @@ get_team_schedule <- function(browser, team, year){
 
     tiers <- c(w_tier, l_tier, un_tier)
   }
-
-  # if(year==2010){
-  #   fm_links <- fm_links[1:length(fm_links)-1]
-  # }
-
 
   day = dplyr::bind_rows(lapply(fm_links,
                                  function(x){
@@ -339,8 +334,8 @@ get_team_schedule <- function(browser, team, year){
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html
-#' @importFrom dplyr filter select rename mutate case_when mutate_at
-#' @importFrom tidyr separate
+#' @importFrom dplyr filter select rename mutate case_when mutate_at bind_rows
+#' @importFrom tidyr separate everything
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect
 #' @export
 #' @examples
@@ -372,17 +367,18 @@ get_gameplan <- function(browser, team, year=2020){
   )
 
 
-  x <- (page %>%
-    xml2::read_html() %>%
-    rvest::html_nodes(css='#schedule-table'))[[1]] %>%
+  gp <- (page %>%
+           xml2::read_html() %>%
+           rvest::html_nodes(css='#schedule-table'))[[1]] %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
-  colnames(x) <- header_cols
-  x <- x %>%
+  colnames(gp) <- header_cols
+
+  gp <- gp %>%
     dplyr::filter(.data$Location!="")
   suppressWarnings(
-    x <- x %>%
+    gp <- gp %>%
       dplyr::mutate(
         WL = stringr::str_replace(stringr::str_extract(.data$Result,'W|L'),",",""),
         Score = stringr::str_replace(stringr::str_extract(.data$Result,'\\d{1,3}-\\d{1,3}'),",","")) %>%
@@ -395,17 +391,41 @@ get_gameplan <- function(browser, team, year=2020){
         OpponentScore = dplyr::case_when(
           .data$WL == "L" ~ as.numeric(.data$WinnerScore),
           .data$WL == "W" ~ as.numeric(.data$LoserScore),
-          .data$WL == "" ~ NA_real_))
+          .data$WL == "" ~ NA_real_),
+        Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad="0"),
+        Date.MO = NA_character_,
+        Date.MO = dplyr::case_when(
+          stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ "10",
+          stringr::str_detect(.data$Date,regex("Nov",ignore_case=TRUE)) ~ "11",
+          stringr::str_detect(.data$Date,regex("Dec",ignore_case=TRUE)) ~ "12",
+          stringr::str_detect(.data$Date,regex("Jan",ignore_case=TRUE)) ~ stringr::str_pad(1, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Feb",ignore_case=TRUE)) ~ stringr::str_pad(2, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Mar",ignore_case=TRUE)) ~ stringr::str_pad(3, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Apr",ignore_case=TRUE)) ~ stringr::str_pad(4, 2, pad="0")
+        ),
+        Date.YR = dplyr::case_when(
+          stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Nov",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Dec",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Jan",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Feb",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Mar",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Apr",ignore_case=TRUE)) ~ glue::glue("{year}")
+        ),
+        Day.Date = .data$Date,
+        Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
+        GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
+      dplyr::select(-.data$Date.DD,-.data$Date.MO,-.data$Date.YR)
   )
-  y <- x[(nrow(x)-2):nrow(x),]
-  y <- y %>%
+  cor <- gp[(nrow(gp)-2):nrow(gp),]
+  cor <- cor %>%
     dplyr::select(.data$Location, .data$Pace,
                   .data$Off.eFG.Pct,.data$Off.TO.Pct,.data$Off.OR.Pct,.data$Off.FTR,
                   .data$Def.eFG.Pct,.data$Def.TO.Pct,.data$Def.OR.Pct,.data$Def.FTR) %>%
     dplyr::rename("Correlations (R x 100)" = .data$Location)
-  y <- y[2:3,]
+  cor <- cor[2:3,]
   suppressWarnings(
-    x <- x %>%
+    gp <- gp %>%
       dplyr::filter(!is.na(as.numeric(.data$Off.Eff))) %>%
       tidyr::separate(.data$"Off.FGM_2-A", into = c("Off.FGM_2","Off.FGA_2")) %>%
       tidyr::separate(.data$"Off.FGM_3-A", into = c("Off.FGM_3","Off.FGA_3")) %>%
@@ -418,13 +438,79 @@ get_gameplan <- function(browser, team, year=2020){
                          'Def.Eff', 'Def.Eff.Rk', 'Def.eFG.Pct',	'Def.TO.Pct',
                          'Def.OR.Pct', 'Def.FTR', 'Def.FGM_2', 'Def.FGA_2',
                          'Def.FG_2.Pct',	'Def.FGM_3', "Def.FGA_3",
-                         'Def.FG_3.Pct',	'Def.FG_3A.Pct'), as.numeric)
+                         'Def.FG_3.Pct',	'Def.FG_3A.Pct', 'TeamScore','OpponentScore'), as.numeric)
+  )
+  ### Store Data
+  gp <- gp %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore)
+
+  z <- data.frame()
+  tryCatch(
+    expr = {
+      y <- page %>%
+        xml2::read_html() %>%
+        rvest::html_nodes(css='.dist-table')
+      if(length(y)>0){
+        for(i in 1:length(y)){
+          header_cols <- c("Team","C.Pct","PF.Pct","SF.Pct","SG.Pct","PG.Pct")
+          d <- (page %>%
+                  xml2::read_html() %>%
+                  rvest::html_nodes(css='.dist-table'))[[i]] %>%
+            rvest::html_table(fill=TRUE) %>%
+            as.data.frame()
+          category <- colnames(d)[1]
+          colnames(d) <- header_cols
+
+          d$Category <- category
+
+          d$C.Pct.Rk <- NA_real_
+          d$PF.Pct.Rk <- NA_real_
+          d$SF.Pct.Rk <- NA_real_
+          d$SG.Pct.Rk <- NA_real_
+          d$PG.Pct.Rk <- NA_real_
+          suppressWarnings(
+            d <- d %>%
+              dplyr::mutate(
+                C.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$C.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+                PF.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$PF.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+                SF.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$SF.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+                SG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$SG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+                PG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$PG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+                C.Pct = as.numeric(substr(sprintf("%.*f", 4, as.numeric(.data$C.Pct)), 1,
+                               nchar(sprintf("%.*f", 4, as.numeric(.data$C.Pct))) - 3)),
+                PF.Pct = as.numeric(substr(sprintf("%.*f", 4, as.numeric(.data$PF.Pct)), 1,
+                                nchar(sprintf("%.*f", 4, as.numeric(.data$PF.Pct))) - 3)),
+                SF.Pct = as.numeric(substr(sprintf("%.*f", 4, as.numeric(.data$SF.Pct)), 1,
+                                nchar(sprintf("%.*f",4, as.numeric(.data$SF.Pct))) - 3)),
+                SG.Pct = as.numeric(substr(sprintf("%.*f",4, as.numeric(.data$SG.Pct)), 1,
+                                nchar(sprintf("%.*f",4, as.numeric(.data$SG.Pct))) - 3)),
+                PG.Pct = as.numeric(substr(sprintf("%.*f",4, as.numeric(.data$PG.Pct)), 1,
+                                nchar(sprintf("%.*f",4, as.numeric(.data$PG.Pct))) - 3)))
+          )
+          d$C.Pct.D1.Avg = as.numeric(d[3,"C.Pct"])
+          d$PF.Pct.D1.Avg = as.numeric(d[3,"PF.Pct"])
+          d$SF.Pct.D1.Avg = as.numeric(d[3,"SF.Pct"])
+          d$SG.Pct.D1.Avg = as.numeric(d[3,"SG.Pct"])
+          d$PG.Pct.D1.Avg = as.numeric(d[3, "PG.Pct"])
+          d <- d %>%
+            dplyr::filter(!is.na(.data$C.Pct.Rk)) %>%
+            dplyr::select(.data$Team, .data$Category, tidyr::everything())
+
+          z <- dplyr::bind_rows(z, d)
+        }
+      }
+    },
+    error = function(e){
+      message(glue::glue("{Sys.date()} - No Game Plan Points distribution tables available for {team} - {year}"))
+    },
+    warning = function(w){
+    },
+    finally = function(f){
+
+    }
   )
 
-  ### Store Data
-  x <- x %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore)
+  kenpom <- c(list(gp),list(cor),list(z))
 
-  kenpom <- c(list(x),list(y))
   return(kenpom)
 }
 
@@ -433,7 +519,6 @@ get_gameplan <- function(browser, team, year=2020){
 #' @param browser User login session
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#' @param defense TRUE/FALSE variable for whether to gather the defense data, default FALSE
 #' @keywords Opponent Tracker
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
@@ -446,7 +531,7 @@ get_gameplan <- function(browser, team, year=2020){
 #'   get_opptracker(browser, team='Florida St.', year=2020)
 #' }
 
-get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
+get_opptracker <- function(browser, team, year=as.integer(format(Sys.Date(), "%Y"))){
 
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
 
@@ -456,50 +541,117 @@ get_opptracker <- function(browser, team, year = 2020, defense = FALSE){
   teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
-  if(!defense){
-    def = 'd'
-    header_cols<- c('Date','Team','Result','AdjDE','AdjDE.Rk',
-                    'eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-                    'ORpct','ORpct.Rk','FTR','FTR.Rk',
-                    'FG2pct','FG2pct.Rk','FG3pct','FG3pct.Rk',
-                    'Blkpct','Blkpct.Rk','FG3Apct','FG3Apct.Rk',
-                    'APL','APL.Rk')
-  }else{
-    def = 'o'
-    header_cols<- c('Date','Team','Result','AdjOE','AdjOE.Rk',
-                    'eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-                    'ORpct','ORpct.Rk','FTR','FTR.Rk',
-                    'FG2pct','FG2pct.Rk','FG3pct','FG3pct.Rk',
-                    'FTpct','FTpct.Rk','FG3Apct','FG3Apct.Rk',
-                    'APL','APL.Rk')
-  }
   # check for internet
   check_internet()
+
   ### Pull Data
   url <- paste0("https://kenpom.com/opptracker.php?",
                 "team=", team_name,
                 "&y=", year,
-                "&t=", def)
+                "&t=o")
 
-  page <- rvest::jump_to(browser, url)
+  page_o <- rvest::jump_to(browser, url)
 
-  x <- (page %>%
+  header_cols<- c('Date','Opponent','Result','AdjOE','AdjOE.Rk',
+                  'Off.eFG.Pct','Off.eFG.Pct.Rk','Off.TO.Pct','Off.TO.Pct.Rk',
+                  'Off.OR.Pct','Off.OR.Pct.Rk','Off.FTRate','Off.FTRate.Rk',
+                  'Off.FG_2.Pct','Off.FG_2.Pct.Rk','Off.FG_3.Pct','Off.FG_3.Pct.Rk',
+                  'Off.Blk.Pct','Off.Blk.Pct.Rk','Off.FG_3A.Pct','Off.FG_3A.Pct.Rk')
+  if(year>=2010){
+    header_cols <- c(header_cols, "Off.APL","Off.APL.Rk")
+  }
+
+  opptracker_o <- (page_o %>%
     xml2::read_html() %>%
     rvest::html_nodes(css='#conf-table'))[[1]] %>%
     rvest::html_table(fill=TRUE) %>%
     as.data.frame()
 
-  colnames(x) <- header_cols
+  colnames(opptracker_o) <- header_cols
 
-  team_name <- gsub("\\+"," ",team)
+
   suppressWarnings(
-    x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$eFGpct)))
+    opptracker_o <- opptracker_o %>%
+      dplyr::filter(!is.na(as.numeric(.data$Off.eFG.Pct)))
+  )
+  suppressWarnings(
+    opptracker_o <- opptracker_o %>%
+      dplyr::mutate(
+        Team = team,
+        WL = stringr::str_replace(stringr::str_extract(.data$Result,'W|L'),",",""),
+        Score = stringr::str_replace(stringr::str_extract(.data$Result,'\\d{1,3}-\\d{1,3}'),",","")) %>%
+      tidyr::separate(.data$Score, into = c("WinnerScore", "LoserScore"), sep = "-") %>%
+      dplyr::mutate(
+        TeamScore = dplyr::case_when(
+          .data$WL == "W"  ~ as.numeric(.data$WinnerScore),
+          .data$WL == "L"  ~ as.numeric(.data$LoserScore),
+          .data$WL == "" ~ NA_real_),
+        OpponentScore = dplyr::case_when(
+          .data$WL == "L" ~ as.numeric(.data$WinnerScore),
+          .data$WL == "W" ~ as.numeric(.data$LoserScore),
+          .data$WL == "" ~ NA_real_),
+        Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad="0"),
+        Date.MO = NA_character_,
+        Date.MO = dplyr::case_when(
+          stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ "10",
+          stringr::str_detect(.data$Date,regex("Nov",ignore_case=TRUE)) ~ "11",
+          stringr::str_detect(.data$Date,regex("Dec",ignore_case=TRUE)) ~ "12",
+          stringr::str_detect(.data$Date,regex("Jan",ignore_case=TRUE)) ~ stringr::str_pad(1, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Feb",ignore_case=TRUE)) ~ stringr::str_pad(2, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Mar",ignore_case=TRUE)) ~ stringr::str_pad(3, 2, pad="0"),
+          stringr::str_detect(.data$Date,regex("Apr",ignore_case=TRUE)) ~ stringr::str_pad(4, 2, pad="0")
+        ),
+        Date.YR = dplyr::case_when(
+          stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Nov",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Dec",ignore_case=TRUE)) ~ glue::glue("{year-1}"),
+          stringr::str_detect(.data$Date,regex("Jan",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Feb",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Mar",ignore_case=TRUE)) ~ glue::glue("{year}"),
+          stringr::str_detect(.data$Date,regex("Apr",ignore_case=TRUE)) ~ glue::glue("{year}")
+        ),
+        Day.Date = .data$Date,
+        Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
+        GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
+      dplyr::select(-.data$Date.DD, -.data$Date.MO, -.data$Date.YR, -.data$WinnerScore, -.data$LoserScore)
   )
 
-  ### Store Data
-  kenpom <- x
+  header_cols<- c('Date','Opponent','Result','AdjDE','AdjDE.Rk',
+                  'Def.eFG.Pct','Def.eFG.Pct.Rk','Def.TO.Pct','Def.TO.Pct.Rk',
+                  'Def.OR.Pct','Def.OR.Pct.Rk','Def.FTRate','Def.FTRate.Rk',
+                  'Def.FG_2.Pct','Def.FG_2.Pct.Rk','Def.FG_3.Pct','Def.FG_3.Pct.Rk',
+                  'Def.Blk.Pct','Def.Blk.Pct.Rk','Def.FG_3A.Pct','Def.FG_3A.Pct.Rk')
 
+  if(year>=2010){
+    header_cols <- c(header_cols, "Def.APL","Def.APL.Rk")
+  }
+
+  ### Pull Data
+  url <- paste0("https://kenpom.com/opptracker.php?",
+                "team=", team_name,
+                "&y=", year,
+                "&t=d")
+
+  page_d <- rvest::jump_to(browser, url)
+  opptracker_d <- (page_d %>%
+                     xml2::read_html() %>%
+                     rvest::html_nodes(css='#conf-table'))[[1]] %>%
+    rvest::html_table(fill=TRUE) %>%
+    as.data.frame()
+
+  colnames(opptracker_d) <- header_cols
+
+  suppressWarnings(
+    opptracker_d <- opptracker_d %>%
+      dplyr::filter(!is.na(as.numeric(.data$Def.eFG.Pct)))
+  )
+  opptracker <- dplyr::bind_cols(opptracker_o, opptracker_d[,4:ncol(opptracker_d)])
+  ### Store Data
+  kenpom <- opptracker %>%
+    dplyr::select(.data$Date, .data$GameDate, .data$Day.Date,
+                  .data$WL, .data$Team, .data$TeamScore,
+                  .data$Opponent, .data$OpponentScore,
+                  tidyr::everything())
   return(kenpom)
 }
 
@@ -554,7 +706,6 @@ get_team_players <- function(browser, team, year= 2020){
                                          data.frame(as.list(x), stringsAsFactors=FALSE)
                                        }
                                      }))
-      # pid <- dplyr::bind_rows(lapply(player_links, extractor))
 
       pid <- pid %>%
         dplyr::mutate(PlayerId = stringr::str_remove(stringr::str_extract(.data$href,"=(.+)"),"=")) %>%
@@ -868,11 +1019,9 @@ get_team_player_stats <- function(browser, team, year = 2020){
                              "FTRate", "FTM-A", "FT.Pct",
                              "FGM_2-A", "FG_2.Pct", "FGM_3-A", "FG_3.Pct")
 
-
     players <- (page %>%
                   xml2::read_html() %>%
                   rvest::html_nodes(css='#player-table'))[[i]]
-
 
     players <- players %>%
       rvest::html_table(fill=FALSE)
@@ -882,6 +1031,11 @@ get_team_player_stats <- function(browser, team, year = 2020){
       players <- players %>%
         dplyr::filter(!is.na(as.numeric(.data$G)))
     )
+    if(i==1){
+      players$Category <- "All Games"
+    }else{
+      players$Category <- "Conference Games"
+    }
     players$Min.Pct.Rk <- NA_real_
     players$ORtg.Rk <- NA_real_
     players$Poss.Pct.Rk <- NA_real_
@@ -921,8 +1075,8 @@ get_team_player_stats <- function(browser, team, year = 2020){
         FT.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$FT.Pct, '\\.\\d{3}(.+)'), '\\.\\d{3}', "")),
         FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$FG_2.Pct, '\\.\\d{3}(.+)'), '\\.\\d{3}', "")),
         FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$FG_3.Pct, '\\.\\d{3}(.+)'), '\\.\\d{3}', "")),
-        NationalRank = stringr::str_extract(.data$Player, "National Rank"),
-        Player = stringr::str_replace(.data$Player, "National Rank",""),
+        GroupRank = stringr::str_extract(.data$Player, "National Rank|Conference Rank"),
+        Player = stringr::str_replace(.data$Player, "National Rank|Conference Rank",""),
         Min.Pct = substr(sprintf("%.*f", 4, as.numeric(.data$Min.Pct)), 1,
                          nchar(sprintf("%.*f", 4, as.numeric(.data$Min.Pct))) - 3),
         ORtg = substr(sprintf("%.*f", 4, as.numeric(.data$ORtg)), 1,
@@ -960,7 +1114,6 @@ get_team_player_stats <- function(browser, team, year = 2020){
         FG_3.Pct = substr(sprintf("%.*f", 6, as.numeric(.data$FG_3.Pct)), 1,
                           nchar(sprintf("%.*f", 6, as.numeric(.data$FG_3.Pct))) - 3))
 
-
       suppressWarnings(
         players <- players %>%
           tidyr::separate(.data$"FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
@@ -991,7 +1144,7 @@ get_team_player_stats <- function(browser, team, year = 2020){
       dplyr::select(.data$Role, tidyr::everything()) %>%
       dplyr::bind_cols(lapply(pid, as.numeric))
 
-    y <- c(y, list(players))
+    y <- dplyr::bind_rows(y, players)
   }
   ### Store Data
   kenpom <- y
@@ -1075,33 +1228,33 @@ get_team_depth_chart <- function(browser, team, year= 2020){
         dplyr::mutate(
           PG.Yr = substr(.data$PG, nchar(.data$PG) - 2, nchar(.data$PG)),
           PG = substr(.data$PG, 1, nchar(.data$PG) - 3),
-          PG.Wt = stringr::str_extract(.data$PG, '\\d{3}'),
+          PG.Wgt = stringr::str_extract(.data$PG, '\\d{3}'),
           PG = stringr::str_trim(stringr::str_remove(.data$PG, '\\d{3}')),
-          PG.Ht = stringr::str_extract(.data$PG, '\\d{1}-\\d{0,2}'),
+          PG.Hgt = stringr::str_extract(.data$PG, '\\d{1}-\\d{0,2}'),
           PG = stringr::str_remove(.data$PG, '\\d{1}-\\d{0,2}'),
           SG.Yr = substr(.data$SG, nchar(.data$SG) - 2, nchar(.data$SG)),
           SG = substr(.data$SG, 1, nchar(.data$SG) - 3),
-          SG.Wt = stringr::str_extract(.data$SG, '\\d{3}'),
+          SG.Wgt = stringr::str_extract(.data$SG, '\\d{3}'),
           SG = stringr::str_trim(stringr::str_remove(.data$SG, '\\d{3}')),
-          SG.Ht = stringr::str_extract(.data$SG, '\\d{1}-\\d{0,2}'),
+          SG.Hgt = stringr::str_extract(.data$SG, '\\d{1}-\\d{0,2}'),
           SG = stringr::str_remove(.data$SG, '\\d{1}-\\d{0,2}'),
           SF.Yr = substr(.data$SF, nchar(.data$SF) - 2, nchar(.data$SF)),
           SF = substr(.data$SF, 1, nchar(.data$SF) - 3),
-          SF.Wt = stringr::str_extract(.data$SF, '\\d{3}'),
+          SF.Wgt = stringr::str_extract(.data$SF, '\\d{3}'),
           SF = stringr::str_trim(stringr::str_remove(.data$SF, '\\d{3}')),
-          SF.Ht = stringr::str_extract(.data$SF, '\\d{1}-\\d{0,2}'),
+          SF.Hgt = stringr::str_extract(.data$SF, '\\d{1}-\\d{0,2}'),
           SF = stringr::str_remove(.data$SF, '\\d{1}-\\d{0,2}'),
           PF.Yr = substr(.data$PF, nchar(.data$PF) - 2, nchar(.data$PF)),
           PF = substr(.data$PF, 1, nchar(.data$PF) - 3),
-          PF.Wt = stringr::str_extract(.data$PF,'\\d{3}'),
+          PF.Wgt = stringr::str_extract(.data$PF,'\\d{3}'),
           PF = stringr::str_trim(stringr::str_remove(.data$PF,'\\d{3}')),
-          PF.Ht = stringr::str_extract(.data$PF, '\\d{1}-\\d{0,2}'),
+          PF.Hgt = stringr::str_extract(.data$PF, '\\d{1}-\\d{0,2}'),
           PF = stringr::str_remove(.data$PF, '\\d{1}-\\d{0,2}'),
           C.Yr = substr(.data$C, nchar(.data$C) - 2, nchar(.data$C)),
           C = substr(.data$C, 1, nchar(.data$C) - 3),
-          C.Wt = stringr::str_extract(.data$C, '\\d{3}'),
+          C.Wgt = stringr::str_extract(.data$C, '\\d{3}'),
           C = stringr::str_trim(stringr::str_remove(.data$C, '\\d{3}')),
-          C.Ht = stringr::str_extract(.data$C, '\\d{1}-\\d{0,2}'),
+          C.Hgt = stringr::str_extract(.data$C, '\\d{1}-\\d{0,2}'),
           C = stringr::str_remove(.data$C, '\\d{1}-\\d{0,2}')
         )
       suppressWarnings(
@@ -1136,15 +1289,15 @@ get_team_depth_chart <- function(browser, team, year= 2020){
       depth1 <- depth1 %>%
         dplyr::select(
           .data$PG.Number, .data$PG.PlayerFirstName,
-          .data$PG.PlayerLastName, .data$PG.Ht, .data$PG.Wt, .data$PG.Yr, .data$PG.Min.Pct,
+          .data$PG.PlayerLastName, .data$PG.Hgt, .data$PG.Wgt, .data$PG.Yr, .data$PG.Min.Pct,
           .data$SG.Number, .data$SG.PlayerFirstName,
-          .data$SG.PlayerLastName, .data$SG.Ht, .data$SG.Wt, .data$SG.Yr, .data$SG.Min.Pct,
+          .data$SG.PlayerLastName, .data$SG.Hgt, .data$SG.Wgt, .data$SG.Yr, .data$SG.Min.Pct,
           .data$SF.Number, .data$SF.PlayerFirstName,
-          .data$SF.PlayerLastName, .data$SF.Ht, .data$SF.Wt, .data$SF.Yr, .data$SF.Min.Pct,
+          .data$SF.PlayerLastName, .data$SF.Hgt, .data$SF.Wgt, .data$SF.Yr, .data$SF.Min.Pct,
           .data$PF.Number, .data$PF.PlayerFirstName,
-          .data$PF.PlayerLastName, .data$PF.Ht, .data$PF.Wt, .data$PF.Yr, .data$PF.Min.Pct,
+          .data$PF.PlayerLastName, .data$PF.Hgt, .data$PF.Wgt, .data$PF.Yr, .data$PF.Min.Pct,
           .data$C.Number, .data$C.PlayerFirstName,
-          .data$C.PlayerLastName, .data$C.Ht, .data$C.Wt, .data$C.Yr, .data$C.Min.Pct,
+          .data$C.PlayerLastName, .data$C.Hgt, .data$C.Wgt, .data$C.Yr, .data$C.Min.Pct,
           .data$Team, .data$Year)
       ### Store Data
       kenpom <- depth1
@@ -1232,33 +1385,33 @@ get_team_lineups <- function(browser, team, year= 2020){
         dplyr::mutate(
           PG.Yr = substr(.data$PG, nchar(.data$PG)-2, nchar(.data$PG)),
           PG = substr(.data$PG, 1, nchar(.data$PG) - 3),
-          PG.Wt = stringr::str_extract(.data$PG, '\\d{3}'),
+          PG.Wgt = stringr::str_extract(.data$PG, '\\d{3}'),
           PG = stringr::str_trim(stringr::str_remove(.data$PG, '\\d{3}')),
-          PG.Ht = stringr::str_extract(.data$PG, '\\d{1}-\\d{0,2}'),
+          PG.Hgt = stringr::str_extract(.data$PG, '\\d{1}-\\d{0,2}'),
           PG = stringr::str_remove(.data$PG, '\\d{1}-\\d{0,2}'),
           SG.Yr = substr(.data$SG, nchar(.data$SG) - 2, nchar(.data$SG)),
           SG = substr(.data$SG, 1, nchar(.data$SG) - 3),
-          SG.Wt = stringr::str_extract(.data$SG, '\\d{3}'),
+          SG.Wgt = stringr::str_extract(.data$SG, '\\d{3}'),
           SG = stringr::str_trim(stringr::str_remove(.data$SG, '\\d{3}')),
-          SG.Ht = stringr::str_extract(.data$SG, '\\d{1}-\\d{0,2}'),
+          SG.Hgt = stringr::str_extract(.data$SG, '\\d{1}-\\d{0,2}'),
           SG = stringr::str_remove(.data$SG, '\\d{1}-\\d{0,2}'),
           SF.Yr = substr(.data$SF, nchar(.data$SF) - 2, nchar(.data$SF)),
           SF = substr(.data$SF, 1, nchar(.data$SF) - 3),
-          SF.Wt = stringr::str_extract(.data$SF, '\\d{3}'),
+          SF.Wgt = stringr::str_extract(.data$SF, '\\d{3}'),
           SF = stringr::str_trim(stringr::str_remove(.data$SF, '\\d{3}')),
-          SF.Ht = stringr::str_extract(.data$SF, '\\d{1}-\\d{0,2}'),
+          SF.Hgt = stringr::str_extract(.data$SF, '\\d{1}-\\d{0,2}'),
           SF = stringr::str_remove(.data$SF, '\\d{1}-\\d{0,2}'),
           PF.Yr = substr(.data$PF, nchar(.data$PF) - 2, nchar(.data$PF)),
           PF = substr(.data$PF, 1, nchar(.data$PF) - 3),
-          PF.Wt = stringr::str_extract(.data$PF, '\\d{3}'),
+          PF.Wgt = stringr::str_extract(.data$PF, '\\d{3}'),
           PF = stringr::str_trim(stringr::str_remove(.data$PF, '\\d{3}')),
-          PF.Ht = stringr::str_extract(.data$PF, '\\d{1}-\\d{0,2}'),
+          PF.Hgt = stringr::str_extract(.data$PF, '\\d{1}-\\d{0,2}'),
           PF = stringr::str_remove(.data$PF, '\\d{1}-\\d{0,2}'),
           C.Yr = substr(.data$C, nchar(.data$C) - 2, nchar(.data$C)),
           C = substr(.data$C, 1, nchar(.data$C) - 3),
-          C.Wt = stringr::str_extract(.data$C, '\\d{3}'),
+          C.Wgt = stringr::str_extract(.data$C, '\\d{3}'),
           C = stringr::str_trim(stringr::str_remove(.data$C, '\\d{3}')),
-          C.Ht = stringr::str_extract(.data$C, '\\d{1}-\\d{0,2}'),
+          C.Hgt = stringr::str_extract(.data$C, '\\d{1}-\\d{0,2}'),
           C = stringr::str_remove(.data$C, '\\d{1}-\\d{0,2}')
         )
       suppressWarnings(
@@ -1278,11 +1431,11 @@ get_team_lineups <- function(browser, team, year= 2020){
             SF.Number = as.numeric(.data$SF.Number),
             PF.Number = as.numeric(.data$PF.Number),
             C.Number = as.numeric(.data$C.Number),
-            PG.Wt = as.numeric(.data$PG.Wt),
-            SG.Wt = as.numeric(.data$SG.Wt),
-            SF.Wt = as.numeric(.data$SF.Wt),
-            PF.Wt = as.numeric(.data$PF.Wt),
-            C.Wt = as.numeric(.data$C.Wt))
+            PG.Wgt = as.numeric(.data$PG.Wgt),
+            SG.Wgt = as.numeric(.data$SG.Wgt),
+            SF.Wgt = as.numeric(.data$SF.Wgt),
+            PF.Wgt = as.numeric(.data$PF.Wgt),
+            C.Wgt = as.numeric(.data$C.Wgt))
       )
       depth2 <- depth2 %>%
         dplyr::mutate(Team = team,
@@ -1290,15 +1443,15 @@ get_team_lineups <- function(browser, team, year= 2020){
         dplyr::select(
           .data$Year, .data$Team, .data$Min.Pct,
           .data$PG.Number, .data$PG.PlayerFirstName,
-          .data$PG.PlayerLastName, .data$PG.Ht, .data$PG.Wt, .data$PG.Yr,
+          .data$PG.PlayerLastName, .data$PG.Hgt, .data$PG.Wgt, .data$PG.Yr,
           .data$SG.Number, .data$SG.PlayerFirstName,
-          .data$SG.PlayerLastName, .data$SG.Ht, .data$SG.Wt, .data$SG.Yr,
+          .data$SG.PlayerLastName, .data$SG.Hgt, .data$SG.Wgt, .data$SG.Yr,
           .data$SF.Number, .data$SF.PlayerFirstName,
-          .data$SF.PlayerLastName, .data$SF.Ht, .data$SF.Wt, .data$SF.Yr,
+          .data$SF.PlayerLastName, .data$SF.Hgt, .data$SF.Wgt, .data$SF.Yr,
           .data$PF.Number, .data$PF.PlayerFirstName,
-          .data$PF.PlayerLastName, .data$PF.Ht, .data$PF.Wt, .data$PF.Yr,
+          .data$PF.PlayerLastName, .data$PF.Hgt, .data$PF.Wgt, .data$PF.Yr,
           .data$C.Number, .data$C.PlayerFirstName,
-          .data$C.PlayerLastName, .data$C.Ht, .data$C.Wt, .data$C.Yr)
+          .data$C.PlayerLastName, .data$C.Hgt, .data$C.Wgt, .data$C.Yr)
 
       ### Store Data
       depth2[nrow(depth2),"PG.PlayerFirstName"]<- "UNKNOWN"

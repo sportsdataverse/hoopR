@@ -13,36 +13,36 @@
 #'   \item{\code{AdjT}}{double.}
 #'   \item{\code{AdjO}}{double.}
 #'   \item{\code{AdjD}}{double.}
-#'   \item{\code{eFGpct.Off}}{double.}
-#'   \item{\code{TOpct.Off}}{double.}
-#'   \item{\code{ORpct.Off}}{double.}
-#'   \item{\code{FTR.Off}}{double.}
-#'   \item{\code{FG2pct.Off}}{double.}
-#'   \item{\code{FG3pct.Off}}{double.}
-#'   \item{\code{FTpct.Off}}{double.}
-#'   \item{\code{FG3Apct.Off}}{double.}
-#'   \item{\code{Apct.Off}}{double.}
-#'   \item{\code{APL.Off}}{double.}
-#'   \item{\code{eFGpct.Def}}{double.}
-#'   \item{\code{TOpct.Def}}{double.}
-#'   \item{\code{ORpct.Def}}{double.}
-#'   \item{\code{FTR.Def}}{double.}
-#'   \item{\code{FG2pct.Def}}{double.}
-#'   \item{\code{FG3pct.Def}}{double.}
-#'   \item{\code{Blkpct.Def}}{double.}
-#'   \item{\code{FG3Apct.Def}}{double.}
-#'   \item{\code{Apct.Def}}{double.}
-#'   \item{\code{AP.Def}}{double.}
-#'   \item{\code{Foul2Particpct}}{double.}
+#'   \item{\code{Off.eFG.Pct}}{double.}
+#'   \item{\code{Off.TO.Pct}}{double.}
+#'   \item{\code{Off.OR.Pct}}{double.}
+#'   \item{\code{Off.FTRate}}{double.}
+#'   \item{\code{Off.FG_2.Pct}}{double.}
+#'   \item{\code{Off.FG_3.Pct}}{double.}
+#'   \item{\code{Off.FT.Pct}}{double.}
+#'   \item{\code{Off.FG_3A.Pct}}{double.}
+#'   \item{\code{Off.A.Pct}}{double.}
+#'   \item{\code{Off.APL}}{double.}
+#'   \item{\code{Def.eFG.Pct}}{double.}
+#'   \item{\code{Def.TO.Pct}}{double.}
+#'   \item{\code{Def.OR.Pct}}{double.}
+#'   \item{\code{Def.FTRate}}{double.}
+#'   \item{\code{Def.FG_2.Pct}}{double.}
+#'   \item{\code{Def.FG_3.Pct}}{double.}
+#'   \item{\code{Def.Blk.Pct}}{double.}
+#'   \item{\code{Def.FG_3A.Pct}}{double.}
+#'   \item{\code{Def.A.Pct}}{double.}
+#'   \item{\code{Def.AP}}{double.}
+#'   \item{\code{Foul2Partic.Pct}}{double.}
 #' }
 #'
 #' @keywords Team History
 #' @importFrom assertthat assert_that
 #' @importFrom rvest jump_to html_nodes html_table
 #' @importFrom xml2 read_html xml_remove
-#' @importFrom dplyr filter mutate select mutate_at
+#' @importFrom dplyr filter mutate select mutate_at rename bind_cols bind_rows
 #' @importFrom tidyr everything
-#' @importFrom stringr str_remove
+#' @importFrom stringr str_remove str_replace str_extract regex
 #' @export
 #'
 #' @examples
@@ -56,9 +56,9 @@ get_team_history <- function(browser, team){
 
   # Check teams parameter in teams list names
   assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-              msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  team_name = kenpomR::teams_links$team.link.ref[kenpomR::teams_links$Team == team]
-
+                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
+  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
+  team_name = teams_links$team.link.ref[teams_links$Team == team]
 
   ### Pull Data
   url <- paste0("https://kenpom.com/history.php?",
@@ -66,14 +66,14 @@ get_team_history <- function(browser, team){
 
   page <- rvest::jump_to(browser, url)
 
-  header_cols<- c('Year','Team.Rk','Coach',	'Conf','W-L',	'AdjT', 'AdjO',	'AdjD',
-                  'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
-                  'FG2pct.Off',	'FG3pct.Off',	'FTpct.Off',	'FG3Apct.Off',
-                  'Apct.Off',	'APL.Off',
-                  'eFGpct.Def', 'TOpct.Def',	'ORpct.Def',	'FTR.Def',
-                  'FG2pct.Def',	'FG3pct.Def',
-                  'Blkpct.Def',	'FG3Apct.Def',	'Apct.Def',
-                  'AP.Def',	'Foul2Particpct')
+  header_cols<- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
+                  'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                  'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                  'Off.A.Pct',	'Off.APL',
+                  'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                  'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                  'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                  'Def.APL',	'Foul2Partic.Pct')
 
   x<- (page %>%
     xml2::read_html() %>%
@@ -81,13 +81,27 @@ get_team_history <- function(browser, team){
 
   ## removing national rankings for easier manipulation
   ## TODO: Add these rankings back as columns
-  tmrank <- x %>%
-    rvest::html_nodes(".tmrank")
+  conf <- (page %>%
+             xml2::read_html() %>%
+             rvest::html_nodes(css='#player-table'))[[1]]
+
+  conf_record <- (page %>%
+                    xml2::read_html() %>%
+                    rvest::html_nodes("td:nth-child(5) > span"))
+  conf_record <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
+                        function(x){
+                          data.frame(x, stringsAsFactors=FALSE)
+                  }))
+  conf_record <- conf_record %>% dplyr::rename(WL.Conf = .data$x)
+  tmrank <- conf %>% rvest::html_nodes(".tmrank")
+
   xml2::xml_remove(tmrank)
 
-  x <- x %>%
-    rvest::html_table(fill=TRUE)
+  conf <- conf %>% rvest::html_table(fill=TRUE)
 
+  colnames(conf) <- header_cols
+
+  x <- x %>% rvest::html_table(fill=TRUE)
 
   colnames(x) <- header_cols
 
@@ -96,14 +110,114 @@ get_team_history <- function(browser, team){
     x <- x %>%
       dplyr::filter(!is.na(as.numeric(.data$AdjT))) %>%
       dplyr::mutate_at(c('Year','Team.Rk','AdjT', 'AdjO',	'AdjD',
-                         'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
-                         'FG2pct.Off',	'FG3pct.Off',	'FTpct.Off',	'FG3Apct.Off',
-                         'Apct.Off',	'APL.Off',
-                         'eFGpct.Def', 'TOpct.Def',	'ORpct.Def',	'FTR.Def',
-                         'FG2pct.Def',	'FG3pct.Def',
-                         'Blkpct.Def',	'FG3Apct.Def',	'Apct.Def',
-                         'AP.Def',	'Foul2Particpct'), as.numeric)
+                         'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                         'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                         'Off.A.Pct',	'Off.APL',
+                         'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                         'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                         'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                         'Def.APL',	'Foul2Partic.Pct'
+                         # 'Off.eFG.Pct.Rk',	'Off.TO.Pct.Rk',	'Off.OR.Pct.Rk','Off.FTRate.Rk',
+                         # 'Off.FG_2.Pct.Rk',	'Off.FG_3.Pct.Rk',	'Off.FT.Pct.Rk',	'Off.FG_3A.Pct.Rk',
+                         # 'Off.A.Pct.Rk',	'Off.APL.Rk',
+                         # 'Def.eFG.Pct.Rk', 'Def.TO.Pct.Rk',	'Def.OR.Pct.Rk',	'Def.FTRate.Rk',
+                         # 'Def.FG_2.Pct.Rk',	'Def.FG_3.Pct.Rk',
+                         # 'Def.Blk.Pct.Rk',	'Def.FG_3A.Pct.Rk',	'Def.A.Pct.Rk',
+                         # 'Def.APL.Rk',	'Foul2Partic.Pct.Rk'
+                         ), as.numeric)
   )
+  suppressWarnings(
+    conf <- conf %>% dplyr::filter(!is.na(as.numeric(.data$AdjT)))
+  )
+  x <- x %>% dplyr::select(-.data$WL)
+  x <- dplyr::bind_cols(x, WL = conf$WL, WL.Conf = conf_record$WL.Conf)
+  x <- x %>%
+    dplyr::filter(!is.na(.data$Year)) %>%
+    dplyr::mutate(
+      AdjT.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjT, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      AdjO.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjO, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      AdjD.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjD, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.eFG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.eFG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.TO.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.TO.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.OR.Pct.Rk = stringr::str_replace(stringr::str_extract(.data$Off.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', ""),
+      Off.FTRate.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FTRate, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_2.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_3.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FT.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FT.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_3A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_3A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.APL.Rk =  as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.APL, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.eFG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.eFG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.TO.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.TO.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.OR.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FTRate.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FTRate, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_2.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_3.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.Blk.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.Blk.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_3A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_3A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.APL.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.APL, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Foul2Partic.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Foul2Partic.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+
+      AdjT = substr(sprintf("%.*f",2, as.numeric(.data$AdjT)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$AdjT))) - 1),
+      AdjO = substr(sprintf("%.*f",2, as.numeric(.data$AdjO)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$AdjO))) - 1),
+      AdjD = substr(sprintf("%.*f",2, as.numeric(.data$AdjD)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$AdjD))) - 1),
+      Off.eFG.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.eFG.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Off.eFG.Pct))) - 1),
+      Off.TO.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.TO.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.TO.Pct))) - 1),
+      Off.OR.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.OR.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.OR.Pct))) - 1),
+
+      Off.FTRate = substr(sprintf("%.*f",2, as.numeric(.data$Off.FTRate)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.FTRate))) - 1),
+      Off.FG_2.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_2.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_2.Pct))) - 1),
+      Off.FG_3.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_3.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_3.Pct))) - 1),
+      Off.FT.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FT.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.FT.Pct))) - 1),
+      Off.FG_3A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_3A.Pct)), 1,
+                             nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_3A.Pct))) - 1),
+      Off.A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.A.Pct)), 1,
+                         nchar(sprintf("%.*f",2, as.numeric(.data$Off.A.Pct))) - 1),
+      Off.APL = substr(sprintf("%.*f",2, as.numeric(.data$Off.APL)), 1,
+                       nchar(sprintf("%.*f",2, as.numeric(.data$Off.APL))) - 1),
+
+      Def.eFG.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.eFG.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Def.eFG.Pct))) - 1),
+      Def.TO.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.TO.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.TO.Pct))) - 1),
+      Def.OR.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.OR.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.OR.Pct))) - 1),
+      Def.FTRate = substr(sprintf("%.*f",2, as.numeric(.data$Def.FTRate)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.FTRate))) - 1),
+      Def.FG_2.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_2.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_2.Pct))) - 1),
+      Def.FG_3.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_3.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_3.Pct))) - 1),
+      Def.Blk.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.Blk.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Def.Blk.Pct))) - 1),
+
+      Def.FG_3A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_3A.Pct)), 1,
+                             nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_3A.Pct))) - 1),
+      Def.A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.A.Pct)), 1,
+                         nchar(sprintf("%.*f",2, as.numeric(.data$Def.A.Pct))) - 1),
+      Def.APL = substr(sprintf("%.*f",2, as.numeric(.data$Def.APL)), 1,
+                       nchar(sprintf("%.*f",2, as.numeric(.data$Def.APL))) - 1),
+      Foul2Partic.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct)), 1,
+                               nchar(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct))) - 1),
+
+      Team.Finish = stringr::str_extract(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE)),
+      Coach = stringr::str_replace(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE),""),
+      NCAA_Seed = NA_integer_)
+  x <- dplyr::mutate(x,
+                     "NCAA_Seed" = sapply(.data$Coach, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                     "Coach" = sapply(.data$Coach, function(arg) {
+                       stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
   x <- x %>%
     dplyr::mutate(Team = team_name) %>%
     dplyr::select(.data$Year, .data$Team.Rk,.data$Team,tidyr::everything())
@@ -129,27 +243,27 @@ get_team_history <- function(browser, team){
 #'   \item{\code{AdjT}}{double.}
 #'   \item{\code{AdjO}}{double.}
 #'   \item{\code{AdjD}}{double.}
-#'   \item{\code{eFGpct.Off}}{double.}
-#'   \item{\code{TOpct.Off}}{double.}
-#'   \item{\code{ORpct.Off}}{double.}
-#'   \item{\code{FTR.Off}}{double.}
-#'   \item{\code{FG2pct.Off}}{double.}
-#'   \item{\code{FG3pct.Off}}{double.}
-#'   \item{\code{FTpct.Off}}{double.}
-#'   \item{\code{FG3Apct.Off}}{double.}
-#'   \item{\code{Apct.Off}}{double.}
-#'   \item{\code{APL.Off}}{double.}
-#'   \item{\code{eFGpct.Def}}{double.}
-#'   \item{\code{TOpct.Def}}{double.}
-#'   \item{\code{ORpct.Def}}{double.}
-#'   \item{\code{FTR.Def}}{double.}
-#'   \item{\code{FG2pct.Def}}{double.}
-#'   \item{\code{FG3pct.Def}}{double.}
-#'   \item{\code{Blkpct.Def}}{double.}
-#'   \item{\code{FG3Apct.Def}}{double.}
-#'   \item{\code{Apct.Def}}{double.}
-#'   \item{\code{AP.Def}}{double.}
-#'   \item{\code{Foul2Particpct}}{double.}
+#'   \item{\code{Off.eFG.Pct}}{double.}
+#'   \item{\code{Off.TO.Pct}}{double.}
+#'   \item{\code{Off.OR.Pct}}{double.}
+#'   \item{\code{Off.FTRate}}{double.}
+#'   \item{\code{Off.FG_2.Pct}}{double.}
+#'   \item{\code{Off.FG_3.Pct}}{double.}
+#'   \item{\code{Off.FT.Pct}}{double.}
+#'   \item{\code{Off.FG_3A.Pct}}{double.}
+#'   \item{\code{Off.A.Pct}}{double.}
+#'   \item{\code{Off.APL}}{double.}
+#'   \item{\code{Def.eFG.Pct}}{double.}
+#'   \item{\code{Def.TO.Pct}}{double.}
+#'   \item{\code{Def.OR.Pct}}{double.}
+#'   \item{\code{Def.FTRate}}{double.}
+#'   \item{\code{Def.FG_2.Pct}}{double.}
+#'   \item{\code{Def.FG_3.Pct}}{double.}
+#'   \item{\code{Def.Blk.Pct}}{double.}
+#'   \item{\code{Def.FG_3A.Pct}}{double.}
+#'   \item{\code{Def.A.Pct}}{double.}
+#'   \item{\code{Def.AP}}{double.}
+#'   \item{\code{Foul2Partic.Pct}}{double.}
 #' }
 #'
 #' @keywords Coach History
@@ -177,45 +291,160 @@ get_coach_history <- function(browser, coach){
 
   page <- rvest::jump_to(browser, url)
 
-  header_cols<- c('Year','Team.Rk','Team',	'Conf','W-L',	'AdjT', 'AdjO',	'AdjD',
-                  'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
-                  'FG2pct.Off',	'FG3pct.Off',	'FTpct.Off',	'FG3Apct.Off',
-                  'Apct.Off',	'APL.Off',
-                  'eFGpct.Def', 'TOpct.Def',	'ORpct.Def',	'FTR.Def',
-                  'FG2pct.Def',	'FG3pct.Def',
-                  'Blkpct.Def',	'FG3Apct.Def',	'Apct.Def',
-                  'AP.Def',	'Foul2Particpct')
+  header_cols<- c('Year','Team.Rk','Team',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
+                  'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                  'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                  'Off.A.Pct',	'Off.APL',
+                  'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                  'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                  'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                  'Def.APL',	'Foul2Partic.Pct')
 
-  x <- (page %>%
-    xml2::read_html() %>%
-    rvest::html_nodes(css='#player-table'))[[1]]
+  x<- (page %>%
+         xml2::read_html() %>%
+         rvest::html_nodes(css='#player-table'))[[1]]
 
   ## removing national rankings for easier manipulation
   ## TODO: Add these rankings back as columns
-  tmrank <- x %>%
-    rvest::html_nodes(".tmrank")
+  conf <- (page %>%
+             xml2::read_html() %>%
+             rvest::html_nodes(css='#player-table'))[[1]]
+
+  conf_record <- (page %>%
+                    xml2::read_html() %>%
+                    rvest::html_nodes("td:nth-child(5) > span"))
+  conf_record <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
+                                         function(x){
+                                           data.frame(x, stringsAsFactors=FALSE)
+                                         }))
+  conf_record <- conf_record %>% dplyr::rename(WL.Conf = .data$x)
+  tmrank <- conf %>% rvest::html_nodes(".tmrank")
+
   xml2::xml_remove(tmrank)
 
-  x <- x %>%
-    rvest::html_table()
+  conf <- conf %>% rvest::html_table(fill=TRUE)
+
+  colnames(conf) <- header_cols
+
+  x <- x %>% rvest::html_table(fill=TRUE)
 
   colnames(x) <- header_cols
 
-  coach_name <- gsub("\\+"," ",coach)
   suppressWarnings(
     x <- x %>%
       dplyr::filter(!is.na(as.numeric(.data$AdjT))) %>%
       dplyr::mutate_at(c('Year','Team.Rk','AdjT', 'AdjO',	'AdjD',
-                         'eFGpct.Off',	'TOpct.Off',	'ORpct.Off','FTR.Off',
-                         'FG2pct.Off',	'FG3pct.Off',	'FTpct.Off',	'FG3Apct.Off',
-                         'Apct.Off',	'APL.Off',
-                         'eFGpct.Def', 'TOpct.Def',	'ORpct.Def',	'FTR.Def',
-                         'FG2pct.Def',	'FG3pct.Def',
-                         'Blkpct.Def',	'FG3Apct.Def',	'Apct.Def',
-                         'AP.Def',	'Foul2Particpct'), as.numeric)
+                         'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                         'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                         'Off.A.Pct',	'Off.APL',
+                         'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                         'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                         'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                         'Def.APL',	'Foul2Partic.Pct'
+                         # 'Off.eFG.Pct.Rk',	'Off.TO.Pct.Rk',	'Off.OR.Pct.Rk','Off.FTRate.Rk',
+                         # 'Off.FG_2.Pct.Rk',	'Off.FG_3.Pct.Rk',	'Off.FT.Pct.Rk',	'Off.FG_3A.Pct.Rk',
+                         # 'Off.A.Pct.Rk',	'Off.APL.Rk',
+                         # 'Def.eFG.Pct.Rk', 'Def.TO.Pct.Rk',	'Def.OR.Pct.Rk',	'Def.FTRate.Rk',
+                         # 'Def.FG_2.Pct.Rk',	'Def.FG_3.Pct.Rk',
+                         # 'Def.Blk.Pct.Rk',	'Def.FG_3A.Pct.Rk',	'Def.A.Pct.Rk',
+                         # 'Def.APL.Rk',	'Foul2Partic.Pct.Rk'
+      ), as.numeric)
   )
+  suppressWarnings(
+    conf <- conf %>% dplyr::filter(!is.na(as.numeric(.data$AdjT)))
+  )
+  x <- x %>% dplyr::select(-.data$WL)
+  x <- dplyr::bind_cols(x, WL = conf$WL, WL.Conf = conf_record$WL.Conf)
   x <- x %>%
-    dplyr::mutate(Coach = coach_name) %>%
+    dplyr::filter(!is.na(.data$Year)) %>%
+    dplyr::mutate(
+      AdjT.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjT, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      AdjO.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjO, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      AdjD.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjD, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.eFG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.eFG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.TO.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.TO.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.OR.Pct.Rk = stringr::str_replace(stringr::str_extract(.data$Off.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', ""),
+      Off.FTRate.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FTRate, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_2.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_3.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FT.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FT.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.FG_3A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_3A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Off.APL.Rk =  as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.APL, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.eFG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.eFG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.TO.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.TO.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.OR.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FTRate.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FTRate, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_2.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_3.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.Blk.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.Blk.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.FG_3A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.FG_3A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.A.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.A.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Def.APL.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Def.APL, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+      Foul2Partic.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Foul2Partic.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
+
+      AdjT = substr(sprintf("%.*f",2, as.numeric(.data$AdjT)), 1,
+                    nchar(sprintf("%.*f",2, as.numeric(.data$AdjT))) - 1),
+      AdjO = substr(sprintf("%.*f",2, as.numeric(.data$AdjO)), 1,
+                    nchar(sprintf("%.*f",2, as.numeric(.data$AdjO))) - 1),
+      AdjD = substr(sprintf("%.*f",2, as.numeric(.data$AdjD)), 1,
+                    nchar(sprintf("%.*f",2, as.numeric(.data$AdjD))) - 1),
+      Off.eFG.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.eFG.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Off.eFG.Pct))) - 1),
+      Off.TO.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.TO.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.TO.Pct))) - 1),
+      Off.OR.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.OR.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.OR.Pct))) - 1),
+
+      Off.FTRate = substr(sprintf("%.*f",2, as.numeric(.data$Off.FTRate)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.FTRate))) - 1),
+      Off.FG_2.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_2.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_2.Pct))) - 1),
+      Off.FG_3.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_3.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_3.Pct))) - 1),
+      Off.FT.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FT.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Off.FT.Pct))) - 1),
+      Off.FG_3A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.FG_3A.Pct)), 1,
+                             nchar(sprintf("%.*f",2, as.numeric(.data$Off.FG_3A.Pct))) - 1),
+      Off.A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Off.A.Pct)), 1,
+                         nchar(sprintf("%.*f",2, as.numeric(.data$Off.A.Pct))) - 1),
+      Off.APL = substr(sprintf("%.*f",2, as.numeric(.data$Off.APL)), 1,
+                       nchar(sprintf("%.*f",2, as.numeric(.data$Off.APL))) - 1),
+
+      Def.eFG.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.eFG.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Def.eFG.Pct))) - 1),
+      Def.TO.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.TO.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.TO.Pct))) - 1),
+      Def.OR.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.OR.Pct)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.OR.Pct))) - 1),
+      Def.FTRate = substr(sprintf("%.*f",2, as.numeric(.data$Def.FTRate)), 1,
+                          nchar(sprintf("%.*f",2, as.numeric(.data$Def.FTRate))) - 1),
+      Def.FG_2.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_2.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_2.Pct))) - 1),
+      Def.FG_3.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_3.Pct)), 1,
+                            nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_3.Pct))) - 1),
+      Def.Blk.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.Blk.Pct)), 1,
+                           nchar(sprintf("%.*f",2, as.numeric(.data$Def.Blk.Pct))) - 1),
+
+      Def.FG_3A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.FG_3A.Pct)), 1,
+                             nchar(sprintf("%.*f",2, as.numeric(.data$Def.FG_3A.Pct))) - 1),
+      Def.A.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Def.A.Pct)), 1,
+                         nchar(sprintf("%.*f",2, as.numeric(.data$Def.A.Pct))) - 1),
+      Def.APL = substr(sprintf("%.*f",2, as.numeric(.data$Def.APL)), 1,
+                       nchar(sprintf("%.*f",2, as.numeric(.data$Def.APL))) - 1),
+      Foul2Partic.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct)), 1,
+                               nchar(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct))) - 1),
+
+      Team.Finish = stringr::str_extract(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE)),
+      Team = stringr::str_replace(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE),""),
+      NCAA_Seed = NA_integer_)
+  x <- dplyr::mutate(x,
+                     "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
+                     "Team" = sapply(.data$Team, function(arg) {
+                       stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
+
+  x <- x %>%
+    dplyr::mutate(Coach = coach) %>%
     dplyr::select(.data$Year, .data$Team.Rk,.data$Team, .data$Coach,tidyr::everything())
   ### Store Data
   kenpom <- x
@@ -338,14 +567,14 @@ get_records_team <- function(browser, team, conference_only = FALSE){
   y <- list()
 
   for(i in 1:42){
-    Metric <- c('OE','OE','eFGpct','eFGpct',
-                'TOpct','TOpct','ORpct','ORpct',
-                'FTR','FTR','FG2pct','FG2pct',
-                'FG3pct','FG3pct','FG3Apct','FG3Apct','FTpct','FTpct',
-                'OE','OE','eFGpct','eFGpct',
-                'TOpct','TOpct','ORpct','ORpct',
-                'FTR','FTR','FG2pct','FG2pct',
-                'FG3pct','FG3pct','FG3Apct','FG3Apct','FTpct','FTpct',
+    Metric <- c('OE','OE','eFG.Pct','eFG.Pct',
+                'TO.Pct','TO.Pct','OR.Pct','OR.Pct',
+                'FTR','FTR','FG2.Pct','FG2.Pct',
+                'FG3.Pct','FG3.Pct','FG3A.Pct','FG3A.Pct','FT.Pct','FT.Pct',
+                'OE','OE','eFG.Pct','eFG.Pct',
+                'TO.Pct','TO.Pct','OR.Pct','OR.Pct',
+                'FTR','FTR','FG2.Pct','FG2.Pct',
+                'FG3.Pct','FG3.Pct','FG3A.Pct','FG3A.Pct','FT.Pct','FT.Pct',
                 'Pace','Pace','Pts','Pts','Pts','Pts')
 
     header_cols<- c('Rk','Date','Opponent','Location','Result',
@@ -514,20 +743,20 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{OE}}{double.}
 #'   \item{\code{OE.Rk}}{double.}
-#'   \item{\code{eFGpct}}{double.}
-#'   \item{\code{eFGpct.Rk}}{double.}
-#'   \item{\code{TOpct}}{double.}
-#'   \item{\code{TOpct.Rk}}{double.}
-#'   \item{\code{ORpct}}{double.}
-#'   \item{\code{ORpct.Rk}}{double.}
+#'   \item{\code{eFG.Pct}}{double.}
+#'   \item{\code{eFG.Pct.Rk}}{double.}
+#'   \item{\code{TO.Pct}}{double.}
+#'   \item{\code{TO.Pct.Rk}}{double.}
+#'   \item{\code{OR.Pct}}{double.}
+#'   \item{\code{OR.Pct.Rk}}{double.}
 #'   \item{\code{FTR}}{double.}
 #'   \item{\code{FTR.Rk}}{double.}
-#'   \item{\code{FG2pct}}{double.}
-#'   \item{\code{FG2pct.Rk}}{double.}
-#'   \item{\code{FG3pct}}{double.}
-#'   \item{\code{FG3pct.Rk}}{double.}
-#'   \item{\code{FTpct}}{double.}
-#'   \item{\code{FTpct.Rk}}{double.}
+#'   \item{\code{FG2.Pct}}{double.}
+#'   \item{\code{FG2.Pct.Rk}}{double.}
+#'   \item{\code{FG3.Pct}}{double.}
+#'   \item{\code{FG3.Pct.Rk}}{double.}
+#'   \item{\code{FT.Pct}}{double.}
+#'   \item{\code{FT.Pct.Rk}}{double.}
 #'   \item{\code{Tempo}}{double.}
 #'   \item{\code{Tempo.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
@@ -538,22 +767,22 @@ get_pomeroy_archive_ratings <- function(browser, date){
 #'   \item{\code{Team}}{character.}
 #'   \item{\code{DE}}{double.}
 #'   \item{\code{DE.Rk}}{double.}
-#'   \item{\code{eFGpct}}{double.}
-#'   \item{\code{eFGpct.Rk}}{double.}
-#'   \item{\code{TOpct}}{double.}
-#'   \item{\code{TOpct.Rk}}{double.}
-#'   \item{\code{ORpct}}{double.}
-#'   \item{\code{ORpct.Rk}}{double.}
+#'   \item{\code{eFG.Pct}}{double.}
+#'   \item{\code{eFG.Pct.Rk}}{double.}
+#'   \item{\code{TO.Pct}}{double.}
+#'   \item{\code{TO.Pct.Rk}}{double.}
+#'   \item{\code{OR.Pct}}{double.}
+#'   \item{\code{OR.Pct.Rk}}{double.}
 #'   \item{\code{FTR}}{double.}
 #'   \item{\code{FTR.Rk}}{double.}
-#'   \item{\code{FG2pct}}{double.}
-#'   \item{\code{FG2pct.Rk}}{double.}
-#'   \item{\code{FG3pct}}{double.}
-#'   \item{\code{FG3pct.Rk}}{double.}
-#'   \item{\code{Blkpct}}{double.}
-#'   \item{\code{Blkpct.Rk}}{double.}
-#'   \item{\code{Stlpct}}{double.}
-#'   \item{\code{Stlpct.Rk}}{double.}
+#'   \item{\code{FG2.Pct}}{double.}
+#'   \item{\code{FG2.Pct.Rk}}{double.}
+#'   \item{\code{FG3.Pct}}{double.}
+#'   \item{\code{FG3.Pct.Rk}}{double.}
+#'   \item{\code{Blk.Pct}}{double.}
+#'   \item{\code{Blk.Pct.Rk}}{double.}
+#'   \item{\code{Stl.Pct}}{double.}
+#'   \item{\code{Stl.Pct.Rk}}{double.}
 #'   \item{\code{Year}}{character.}
 #' }
 #'   Fourth data frame, accessible via \code{[[4]]}\cr
@@ -605,12 +834,12 @@ get_conf <- function(browser, year, conf){
   header_cols <- c('Team',	'Overall',	'Conf','AdjEM','AdjEM.Rk',
                    'AdjO','AdjO.Rk',	'AdjD','AdjD.Rk',	'AdjT','AdjT.Rk',
                    'ConfSOS','ConfSOS.Rk','NextGame')
-  header_cols2<- c('Team',	'OE','OE.Rk','eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-                   'ORpct','ORpct.Rk','FTR', 'FTR.Rk',	'FG2pct', 'FG2pct.Rk',
-                   'FG3pct', 'FG3pct.Rk', 'FTpct','FTpct.Rk','Tempo','Tempo.Rk')
-  header_cols3<- c('Team',	'DE','DE.Rk','eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-                   'ORpct','ORpct.Rk','FTR', 'FTR.Rk',	'FG2pct', 'FG2pct.Rk',
-                   'FG3pct', 'FG3pct.Rk', 'Blkpct','Blkpct.Rk','Stlpct','Stlpct.Rk')
+  header_cols2<- c('Team',	'OE','OE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                   'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+                   'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct','FT.Pct.Rk','Tempo','Tempo.Rk')
+  header_cols3<- c('Team',	'DE','DE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                   'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+                   'FG_3.Pct', 'FG_3.Pct.Rk', 'Blk.Pct','Blk.Pct.Rk','Stl.Pct','Stl.Pct.Rk')
   header_cols4<- c('Rk','Player')
   header_cols5<- c('Stat','Value','Rk')
   header_cols6<- c('Stat','Count','Value','Rk')
@@ -653,9 +882,9 @@ get_conf <- function(browser, year, conf){
       suppressWarnings(
         x <- x %>%
           dplyr::mutate_at(
-            c('OE','OE.Rk','eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-              'ORpct','ORpct.Rk','FTR', 'FTR.Rk',	'FG2pct', 'FG2pct.Rk',
-              'FG3pct', 'FG3pct.Rk', 'FTpct','FTpct.Rk','Tempo','Tempo.Rk'),
+            c('OE','OE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+              'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+              'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct','FT.Pct.Rk','Tempo','Tempo.Rk'),
             as.numeric
           )
       )
@@ -664,9 +893,9 @@ get_conf <- function(browser, year, conf){
       suppressWarnings(
         x <- x %>%
           dplyr::mutate_at(
-            c('DE','DE.Rk','eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-              'ORpct','ORpct.Rk','FTR', 'FTR.Rk',	'FG2pct', 'FG2pct.Rk',
-              'FG3pct', 'FG3pct.Rk', 'Blkpct','Blkpct.Rk','Stlpct','Stlpct.Rk'),
+            c('DE','DE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+              'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+              'FG_3.Pct', 'FG_3.Pct.Rk', 'Blk.Pct','Blk.Pct.Rk','Stl.Pct','Stl.Pct.Rk'),
             as.numeric)
       )
 
@@ -720,30 +949,30 @@ get_conf <- function(browser, year, conf){
 #'   \item{\code{Eff.Rk}}{double.}
 #'   \item{\code{Tempo}}{double.}
 #'   \item{\code{Tempo.Rk}}{double.}
-#'   \item{\code{eFGpct}}{double.}
-#'   \item{\code{eFGpct.Rk}}{double.}
-#'   \item{\code{TOpct}}{double.}
-#'   \item{\code{TOpct.Rk}}{double.}
-#'   \item{\code{ORpct}}{double.}
-#'   \item{\code{ORpct.Rk}}{double.}
-#'   \item{\code{FTR}}{double.}
-#'   \item{\code{FTR.Rk}}{double.}
-#'   \item{\code{Blkpct}}{double.}
-#'   \item{\code{Blkpct.Rk}}{double.}
-#'   \item{\code{Stlpct}}{double.}
-#'   \item{\code{Stlpct.Rk}}{double.}
-#'   \item{\code{FG2pct}}{double.}
-#'   \item{\code{FG2pct.Rk}}{double.}
-#'   \item{\code{FG3pct}}{double.}
-#'   \item{\code{FG3pct.Rk}}{double.}
-#'   \item{\code{FTpct}}{double.}
-#'   \item{\code{FTpct.Rk}}{double.}
-#'   \item{\code{FG3Apct}}{double.}
-#'   \item{\code{FG3Apct.Rk}}{double.}
-#'   \item{\code{Apct}}{double.}
-#'   \item{\code{Apct.Rk}}{double.}
+#'   \item{\code{eFG.Pct}}{double.}
+#'   \item{\code{eFG.Pct.Rk}}{double.}
+#'   \item{\code{TO.Pct}}{double.}
+#'   \item{\code{TO.Pct.Rk}}{double.}
+#'   \item{\code{OR.Pct}}{double.}
+#'   \item{\code{OR.Pct.Rk}}{double.}
+#'   \item{\code{FTRate}}{double.}
+#'   \item{\code{FTRate.Rk}}{double.}
+#'   \item{\code{Blk.Pct}}{double.}
+#'   \item{\code{Blk.Pct.Rk}}{double.}
+#'   \item{\code{Stl.Pct}}{double.}
+#'   \item{\code{Stl.Pct.Rk}}{double.}
+#'   \item{\code{FG_2.Pct}}{double.}
+#'   \item{\code{FG_2.Pct.Rk}}{double.}
+#'   \item{\code{FG_3.Pct}}{double.}
+#'   \item{\code{FG_3.Pct.Rk}}{double.}
+#'   \item{\code{FT.Pct}}{double.}
+#'   \item{\code{FT.Pct.Rk}}{double.}
+#'   \item{\code{FG_3A.Pct}}{double.}
+#'   \item{\code{FG_3A.Pct.Rk}}{double.}
+#'   \item{\code{A.Pct}}{double.}
+#'   \item{\code{A.Pct.Rk}}{double.}
 #'   \item{\code{HomeWL}}{character.}
-#'   \item{\code{HomeWLpct}}{double.}
+#'   \item{\code{HomeWL.Pct}}{double.}
 #'   \item{\code{HomeWL.Rk}}{double.}
 #'   \item{\code{Close}}{double.}
 #'   \item{\code{Close.Rk}}{double.}
@@ -767,11 +996,11 @@ get_conf <- function(browser, year, conf){
 
 get_confstats <- function(browser, year){
 
-  header_cols <- c('Conf', 'Eff','Eff.Rk','Tempo','Tempo.Rk','eFGpct','eFGpct.Rk','TOpct','TOpct.Rk',
-                   'ORpct','ORpct.Rk','FTR',	'FTR.Rk', 'Blkpct', 'Blkpct.Rk', 'Stlpct', 'Stlpct.Rk',
-                   'FG2pct', 'FG2pct.Rk',	'FG3pct', 'FG3pct.Rk',	'FTpct', 'FTpct.Rk',
-                   'FG3Apct', 'FG3Apct.Rk', 'Apct', 'Apct.Rk',
-                   'HomeW-L','HomeW-Lpct', 'HomeW-L.Rk',	'Close', 'Close.Rk', 'Blowouts', 'Blowouts.Rk')
+  header_cols <- c('Conf', 'Eff','Eff.Rk','Tempo','Tempo.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                   'OR.Pct','OR.Pct.Rk','FTRate',	'FTRate.Rk', 'Blk.Pct', 'Blk.Pct.Rk', 'Stl.Pct', 'Stl.Pct.Rk',
+                   'FG_2.Pct', 'FG_2.Pct.Rk',	'FG_3.Pct', 'FG_3.Pct.Rk',	'FT.Pct', 'FT.Pct.Rk',
+                   'FG_3A.Pct', 'FG_3A.Pct.Rk', 'A.Pct', 'A.Pct.Rk',
+                   'HomeW-L','HomeW-L.Pct', 'HomeW-L.Rk',	'Close', 'Close.Rk', 'Blowouts', 'Blowouts.Rk')
   # check for internet
   check_internet()
   ### Pull Data
@@ -794,13 +1023,13 @@ get_confstats <- function(browser, year){
                      "Year" = year)
   suppressWarnings(
     x <- x %>%
-      dplyr::mutate_at(c('Eff','Eff.Rk','Tempo','Tempo.Rk','eFGpct',
-                         'eFGpct.Rk','TOpct','TOpct.Rk',
-                         'ORpct','ORpct.Rk','FTR',	'FTR.Rk',
-                         'Blkpct', 'Blkpct.Rk', 'Stlpct', 'Stlpct.Rk',
-                         'FG2pct', 'FG2pct.Rk',	'FG3pct', 'FG3pct.Rk',
-                         'FTpct', 'FTpct.Rk', 'FG3Apct', 'FG3Apct.Rk',
-                         'Apct', 'Apct.Rk', 'HomeW-Lpct', 'HomeW-L.Rk',
+      dplyr::mutate_at(c('Eff','Eff.Rk','Tempo','Tempo.Rk','eFG.Pct',
+                         'eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                         'OR.Pct','OR.Pct.Rk','FTRate',	'FTRate.Rk',
+                         'Blk.Pct', 'Blk.Pct.Rk', 'Stl.Pct', 'Stl.Pct.Rk',
+                         'FG_2.Pct', 'FG_2.Pct.Rk',	'FG_3.Pct', 'FG_3.Pct.Rk',
+                         'FT.Pct', 'FT.Pct.Rk', 'FG_3A.Pct', 'FG_3A.Pct.Rk',
+                         'A.Pct', 'A.Pct.Rk', 'HomeW-L.Pct', 'HomeW-L.Rk',
                          'Close', 'Close.Rk', 'Blowouts', 'Blowouts.Rk'),
                        as.numeric)
   )
@@ -828,17 +1057,17 @@ get_confstats <- function(browser, year){
 #'   \item{\code{Rank}}{character.}
 #'   \item{\code{Tempo}}{double.}
 #'   \item{\code{Efficiency}}{double.}
-#'   \item{\code{eFGpct}}{double.}
-#'   \item{\code{TOpct}}{double.}
-#'   \item{\code{ORpct}}{double.}
+#'   \item{\code{eFG.Pct}}{double.}
+#'   \item{\code{TO.Pct}}{double.}
+#'   \item{\code{OR.Pct}}{double.}
 #'   \item{\code{FTR}}{double.}
-#'   \item{\code{FG2pct}}{double.}
-#'   \item{\code{FG3pct}}{double.}
-#'   \item{\code{FTpct}}{double.}
-#'   \item{\code{FG3Apct}}{double.}
-#'   \item{\code{Apct}}{double.}
-#'   \item{\code{Blkpct}}{double.}
-#'   \item{\code{Stlpct}}{double.}
+#'   \item{\code{FG2.Pct}}{double.}
+#'   \item{\code{FG3.Pct}}{double.}
+#'   \item{\code{FT.Pct}}{double.}
+#'   \item{\code{FG3A.Pct}}{double.}
+#'   \item{\code{A.Pct}}{double.}
+#'   \item{\code{Blk.Pct}}{double.}
+#'   \item{\code{Stl.Pct}}{double.}
 #'   \item{\code{HomeRecord}}{character.}
 #'   \item{\code{Bids}}{character.}
 #'   \item{\code{S16}}{character.}
@@ -863,8 +1092,8 @@ get_confstats <- function(browser, year){
 get_confhistory <- function(browser, conf){
 
   header_cols <- c('Year',	'Rank',	'Tempo',	'Efficiency',
-                   'eFGpct',	'TOpct',	'ORpct','FTR',	'FG2pct',	'FG3pct',
-                   'FTpct',	'FG3Apct', 'Apct', 'Blkpct',	'Stlpct',
+                   'eFG.Pct',	'TO.Pct',	'OR.Pct','FTRate',	'FG_2.Pct',	'FG_3.Pct',
+                   'FT.Pct',	'FG_3A.Pct', 'A.Pct', 'Blk.Pct',	'Stl.Pct',
                    'HomeRecord', 'Bids',	'S16',	'F4',	'CH',
                    'RegSeasonChamp', 'TourneyChamp',	'BestTeam')
 
@@ -898,8 +1127,8 @@ get_confhistory <- function(browser, conf){
   suppressWarnings(
     x <- x %>%
       dplyr::mutate_at(c('Tempo',	'Efficiency',
-                         'eFGpct',	'TOpct',	'ORpct','FTR',	'FG2pct',	'FG3pct',
-                         'FTpct',	'FG3Apct', 'Apct', 'Blkpct',	'Stlpct'),
+                         'eFG.Pct',	'TO.Pct',	'OR.Pct','FTRate',	'FG_2.Pct',	'FG_3.Pct',
+                         'FT.Pct',	'FG_3A.Pct', 'A.Pct', 'Blk.Pct',	'Stl.Pct'),
                        as.numeric)
   )
   kenpom <- x
