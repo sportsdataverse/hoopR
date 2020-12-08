@@ -6,21 +6,21 @@
 #'   \item{\code{Season}}{double.}
 #'   \item{\code{Efficiency}}{double.}
 #'   \item{\code{Tempo}}{double.}
-#'   \item{\code{eFGpct}}{double.}
-#'   \item{\code{TOpct}}{double.}
-#'   \item{\code{ORpct}}{double.}
+#'   \item{\code{eFG.Pct}}{double.}
+#'   \item{\code{TO.Pct}}{double.}
+#'   \item{\code{OR.Pct}}{double.}
 #'   \item{\code{FTRate}}{double.}
-#'   \item{\code{FG2pct}}{double.}
-#'   \item{\code{FG3pct}}{double.}
-#'   \item{\code{FG3Apct}}{double.}
-#'   \item{\code{FTpct}}{double.}
-#'   \item{\code{Apct}}{double.}
-#'   \item{\code{Blkpct}}{double.}
-#'   \item{\code{Stlpct}}{double.}
-#'   \item{\code{NonStlpct}}{double.}
+#'   \item{\code{FG_2.Pct}}{double.}
+#'   \item{\code{FG_3.Pct}}{double.}
+#'   \item{\code{FG_3A.Pct}}{double.}
+#'   \item{\code{FT.Pct}}{double.}
+#'   \item{\code{A.Pct}}{double.}
+#'   \item{\code{Blk.Pct}}{double.}
+#'   \item{\code{Stl.Pct}}{double.}
+#'   \item{\code{NonStl.Pct}}{double.}
 #'   \item{\code{AvgHgt}}{double.}
 #'   \item{\code{Continuity}}{double.}
-#'   \item{\code{HomeWinpct}}{double.}
+#'   \item{\code{HomeWin.Pct}}{double.}
 #'   \item{\code{PPG}}{double.}
 #' }
 #' @keywords Trends
@@ -42,10 +42,10 @@ get_trends <- function(browser){
   ### Pull Data
   url <- "https://kenpom.com/trends.php"
   page <- rvest::jump_to(browser, url)
-  header_cols <- c("Season","Efficiency","Tempo","eFGpct","TOpct",
-                   "ORpct","FTRate","FG2pct","FG3pct","FG3Apct",'FTpct',
-                   "Apct","Blkpct","Stlpct","NonStlpct","AvgHgt",
-                   "Continuity","HomeWinpct","PPG")
+  header_cols <- c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
+                   "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
+                   "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
+                   "Continuity","HomeWin.Pct","PPG")
 
   x <- (page %>%
     xml2::read_html() %>%
@@ -56,14 +56,14 @@ get_trends <- function(browser){
   colnames(x) <- header_cols
   suppressWarnings(
     x <- x %>%
-      dplyr::filter(!is.na(as.numeric(.data$eFGpct)))
+      dplyr::filter(!is.na(as.numeric(.data$eFG.Pct)))
   )
   ### Store Data
   kenpom <- x %>%
-    dplyr::mutate_at(c("Season","Efficiency","Tempo","eFGpct","TOpct",
-                       "ORpct","FTRate","FG2pct","FG3pct","FG3Apct",'FTpct',
-                       "Apct","Blkpct","Stlpct","NonStlpct","AvgHgt",
-                       "Continuity","HomeWinpct","PPG"), as.numeric)
+    dplyr::mutate_at(c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
+                       "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
+                       "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
+                       "Continuity","HomeWin.Pct","PPG"), as.numeric)
 
   return(kenpom)
 }

@@ -239,12 +239,12 @@ get_fourfactors <- function(browser, min_year, max_year){
                   "y=", year)
     page <- rvest::jump_to(browser, url)
     header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk",
-                     "AdjO", "AdjO.Rk", "eFGpctO", "eFGpctO.Rk",
-                     "TOpctO", "TOpctO.Rk", "ORpctO", "ORpctO.Rk",
-                     "FTRateO", "FTRateO.Rk",
-                     "AdjD", "AdjD.Rk", "eFGpctD", "eFGpctD.Rk",
-                     "TOpctD", "TOpctD.Rk", "ORpctD", "ORpctD.Rk",
-                     "FTRateD", "FTRateD.Rk")
+                     "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
+                     "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
+                     "Off.FTRate", "Off.FTRate.Rk",
+                     "AdjD", "AdjD.Rk", "Def.eFG.Pct", "Def.eFG.Pct.Rk",
+                     "Def.TO.Pct", "Def.TO.Pct.Rk", "Def.OR.Pct", "Def.OR.Pct.Rk",
+                     "Def.FTRate", "Def.FTRate.Rk")
 
     x <- (page %>%
       xml2::read_html() %>%
@@ -266,12 +266,12 @@ get_fourfactors <- function(browser, min_year, max_year){
                          stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
     dplyr::mutate_at(
-      c("AdjT", "AdjT.Rk", "AdjO", "AdjO.Rk", "eFGpctO", "eFGpctO.Rk",
-        "TOpctO", "TOpctO.Rk", "ORpctO", "ORpctO.Rk",
-        "FTRateO", "FTRateO.Rk",
-        "AdjD", "AdjD.Rk", "eFGpctD", "eFGpctD.Rk",
-        "TOpctD", "TOpctD.Rk", "ORpctD", "ORpctD.Rk",
-        "FTRateD", "FTRateD.Rk", "Year"), as.numeric) %>%
+      c("AdjT", "AdjT.Rk", "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
+        "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
+        "Off.FTRate", "Off.FTRate.Rk",
+        "AdjD", "AdjD.Rk", "Def.eFG.Pct", "Def.eFG.Pct.Rk",
+        "Def.TO.Pct", "Def.TO.Pct.Rk", "Def.OR.Pct", "Def.OR.Pct.Rk",
+        "Def.FTRate", "Def.FTRate.Rk", "Year"), as.numeric) %>%
       as.data.frame()
 
     ### Store Data
@@ -321,12 +321,12 @@ get_pointdist <- function(browser, min_year, max_year){
 
     page <- rvest::jump_to(browser, url)
     header_cols <- c("Team", "Conf",
-                     "FTpctO", "FTpctO.Rk",
-                     "FG2pctO", "FG2pctO.Rk",
-                     "FG3pctO", "FG3pctO.Rk",
-                     "FTpctD", "FTpctD.Rk",
-                     "FG2pctD", "FG2pctD.Rk",
-                     "FG3pctD", "FG3pctD.Rk")
+                     "Off.FT.Pct", "Off.FT.Pct.Rk",
+                     "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+                     "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+                     "Def.FT.Pct", "Def.FT.Pct.Rk",
+                     "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+                     "Def.FG_3.Pct", "Def.FG_3.Pct.Rk")
 
     x <- (page %>%
       xml2::read_html() %>%
@@ -339,7 +339,7 @@ get_pointdist <- function(browser, min_year, max_year){
 
     suppressWarnings(
       x <- x %>%
-        dplyr::filter(!is.na(as.numeric(.data$FTpctO)))
+        dplyr::filter(!is.na(as.numeric(.data$Off.FT.Pct)))
     )
 
     x <- dplyr::mutate(x,
@@ -349,12 +349,12 @@ get_pointdist <- function(browser, min_year, max_year){
                          stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
-        c("FTpctO", "FTpctO.Rk",
-          "FG2pctO", "FG2pctO.Rk",
-          "FG3pctO", "FG3pctO.Rk",
-          "FTpctD", "FTpctD.Rk",
-          "FG2pctD", "FG2pctD.Rk",
-          "FG3pctD", "FG3pctD.Rk","Year"), as.numeric) %>%
+        c("Off.FT.Pct", "Off.FT.Pct.Rk",
+          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+          "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+          "Def.FT.Pct", "Def.FT.Pct.Rk",
+          "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+          "Def.FG_3.Pct", "Def.FG_3.Pct.Rk","Year"), as.numeric) %>%
       as.data.frame()
 
     ### Store Data
@@ -402,13 +402,13 @@ get_height <- function(browser, min_year,max_year){
     page <- rvest::jump_to(browser, url)
     if(year<2008){
       header_cols <- c("Team", "Conf",
-                       "AvgHgt", "AvgHgt.Rk",
-                       "EffHgt", "EffHgt.Rk",
-                       "CHgt", "CHgt.Rk",
-                       "PFHgt", "PFHgt.Rk",
-                       "SFHgt", "SFHgt.Rk",
-                       "SGHgt", "SGHgt.Rk",
-                       "PGHgt", "PGHgt.Rk",
+                       "Avg.Hgt", "Avg.Hgt.Rk",
+                       "Eff.Hgt", "Eff.Hgt.Rk",
+                       "C.Hgt", "C.Hgt.Rk",
+                       "PF.Hgt", "PF.Hgt.Rk",
+                       "SF.Hgt", "SF.Hgt.Rk",
+                       "SG.Hgt", "SG.Hgt.Rk",
+                       "PG.Hgt", "PG.Hgt.Rk",
                        "Experience", "Experience.Rk",
                        "Bench", "Bench.Rk")
 
@@ -429,25 +429,25 @@ get_height <- function(browser, min_year,max_year){
                            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year) %>%
         dplyr:: mutate_at(
-          c("AvgHgt", "AvgHgt.Rk",
-            "EffHgt", "EffHgt.Rk",
-            "CHgt", "CHgt.Rk",
-            "PFHgt", "PFHgt.Rk",
-            "SFHgt", "SFHgt.Rk",
-            "SGHgt", "SGHgt.Rk",
-            "PGHgt", "PGHgt.Rk",
+          c("Avg.Hgt", "Avg.Hgt.Rk",
+            "Eff.Hgt", "Eff.Hgt.Rk",
+            "C.Hgt", "C.Hgt.Rk",
+            "PF.Hgt", "PF.Hgt.Rk",
+            "SF.Hgt", "SF.Hgt.Rk",
+            "SG.Hgt", "SG.Hgt.Rk",
+            "PG.Hgt", "PG.Hgt.Rk",
             "Experience", "Experience.Rk",
             "Bench", "Bench.Rk","Continuity","Continuity.Rk"), as.numeric) %>%
         as.data.frame()
     }else{
       header_cols <- c("Team", "Conf",
-                       "AvgHgt", "AvgHgt.Rk",
-                       "EffHgt", "EffHgt.Rk",
-                       "CHgt", "CHgt.Rk",
-                       "PFHgt", "PFHgt.Rk",
-                       "SFHgt", "SFHgt.Rk",
-                       "SGHgt", "SGHgt.Rk",
-                       "PGHgt", "PGHgt.Rk",
+                       "Avg.Hgt", "Avg.Hgt.Rk",
+                       "Eff.Hgt", "Eff.Hgt.Rk",
+                       "C.Hgt", "C.Hgt.Rk",
+                       "PF.Hgt", "PF.Hgt.Rk",
+                       "SF.Hgt", "SF.Hgt.Rk",
+                       "SG.Hgt", "SG.Hgt.Rk",
+                       "PG.Hgt", "PG.Hgt.Rk",
                        "Experience", "Experience.Rk",
                        "Bench", "Bench.Rk",
                        "Continuity", "Continuity.Rk")
@@ -474,13 +474,13 @@ get_height <- function(browser, min_year,max_year){
                          stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
-        c("AvgHgt", "AvgHgt.Rk",
-          "EffHgt", "EffHgt.Rk",
-          "CHgt", "CHgt.Rk",
-          "PFHgt", "PFHgt.Rk",
-          "SFHgt", "SFHgt.Rk",
-          "SGHgt", "SGHgt.Rk",
-          "PGHgt", "PGHgt.Rk",
+        c("Avg.Hgt", "Avg.Hgt.Rk",
+          "Eff.Hgt", "Eff.Hgt.Rk",
+          "C.Hgt", "C.Hgt.Rk",
+          "PF.Hgt", "PF.Hgt.Rk",
+          "SF.Hgt", "SF.Hgt.Rk",
+          "SG.Hgt", "SG.Hgt.Rk",
+          "PG.Hgt", "PG.Hgt.Rk",
           "Experience", "Experience.Rk",
           "Bench", "Bench.Rk","Continuity","Continuity.Rk"), as.numeric) %>%
       as.data.frame()
@@ -530,11 +530,11 @@ get_foul_trouble <- function(browser, min_year, max_year){
 
     page <- rvest::jump_to(browser, url)
 
-    header_cols <- c("Team", "Conf", "TwoFoulParticpationPct",
-                     "TwoFoulParticpationPct.Rk",	"Adj2FP", "Adj2FP.Rk",
+    header_cols <- c("Team", "Conf", "TwoFoulParticpation.Pct",
+                     "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
                      "TwoFoulTotalTime","TwoFoulTotalTime.Rk",
                      "TwoFoulTimeOn","TwoFoulTimeOn.Rk",
-                     "BenchPct","BenchPct.Rk")
+                     "Bench.Pct","Bench.Pct.Rk")
     x <- (page %>%
             xml2::read_html() %>%
             rvest::html_nodes(css='#ratings-table'))[[1]] %>%
@@ -556,9 +556,9 @@ get_foul_trouble <- function(browser, min_year, max_year){
                          stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr:: mutate_at(
-        c("TwoFoulParticpationPct",
-          "TwoFoulParticpationPct.Rk",	"Adj2FP", "Adj2FP.Rk",
-          "BenchPct","BenchPct.Rk"), as.numeric) %>%
+        c("TwoFoulParticpation.Pct",
+          "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
+          "Bench.Pct","BenchPct.Rk"), as.numeric) %>%
       as.data.frame()
 
     ### Store Data
@@ -589,7 +589,7 @@ get_foul_trouble <- function(browser, min_year, max_year){
 #'
 #' @examples
 #' \dontrun{
-#'  get_teamstats(browser, min_year = 2020, max_year = 2020, defense = FALSE)
+#'  get_teamstats(browser, min_year = 2010, max_year = 2020, defense = FALSE)
 #' }
 
 get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
@@ -598,7 +598,7 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
   years <- min_year:max_year
 
   for(year in years) {
-    if(!defense){
+
       # check for internet
       check_internet()
       cat("Getting", year,"- Offense\n")
@@ -607,37 +607,17 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
                     "y=", year, "&od=o")
 
       page <- rvest::jump_to(browser, url)
+
       header_cols <- c("Team", "Conf",
-                       "FG3pct", "FG3pct.Rk",
-                       "FG2pct", "FG2pct.Rk",
-                       "FTpct", "FTpct.Rk",
-                       "Blkpct", "Blkpct.Rk",
-                       "Stlpct", "Stlpct.Rk",
-                       "NonStlpct", "NonStlpct.Rk",
-                       "Apct", "Apct.Rk",
-                       "FG3Apct", "FG3Apct.Rk",
+                       "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+                       "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+                       "Off.FT.Pct", "Off.FT.Pct.Rk",
+                       "Off.Blk.Pct", "Off.Blk.Pct.Rk",
+                       "Off.Stl.Pct", "Off.Stl.Pct.Rk",
+                       "Off.NonStl.Pct", "Off.NonStl.Pct.Rk",
+                       "Off.A.Pct", "Off.A.Pct.Rk",
+                       "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk",
                        "AdjO","AdjO.Rk")
-
-    }else{
-      # check for internet
-      check_internet()
-      cat("Getting", year,"- Defense\n")
-      ### Pull Data
-      url <- paste0("https://kenpom.com/teamstats.php?",
-                    "y=", year, "&od=d")
-
-      page <- rvest::jump_to(browser, url)
-      header_cols <- c("Team", "Conf",
-                       "FG3pct", "FG3pct.Rk",
-                       "FG2pct", "FG2pct.Rk",
-                       "FTpct", "FTpct.Rk",
-                       "Blkpct", 'Blkpct.Rk',
-                       "Stlpct", "Stlpct.Rk",
-                       "NonStlpct", "NonStlpct.Rk",
-                       "Apct", "Apct.Rk",
-                       "FG3Apct", "FG3Apct.Rk",
-                       "AdjD","AdjD.Rk")
-    }
 
     x <- (page %>%
       xml2::read_html() %>%
@@ -650,7 +630,7 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
 
     suppressWarnings(
       x <- x %>%
-        dplyr::filter(!is.na(as.numeric(.data$FG3pct)))
+        dplyr::filter(!is.na(as.numeric(.data$Off.FG_3.Pct)))
     )
 
     x <- dplyr::mutate(x,
@@ -660,30 +640,69 @@ get_teamstats <- function(browser, min_year, max_year, defense = FALSE){
                          stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                        "Year" = year) %>%
       dplyr::mutate_at(
-        c("FG3pct", "FG3pct.Rk",
-          "FG2pct", "FG2pct.Rk",
-          "FTpct", "FTpct.Rk",
-          "Blkpct", 'Blkpct.Rk',
-          "Stlpct", "Stlpct.Rk",
-          "NonStlpct", "NonStlpct.Rk",
-          "Apct", "Apct.Rk",
-          "FG3Apct", "FG3Apct.Rk","Year"), as.numeric) %>%
+        c("Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+          "Off.FT.Pct", "Off.FT.Pct.Rk",
+          "Off.Blk.Pct", 'Off.Blk.Pct.Rk',
+          "Off.Stl.Pct", "Off.Stl.Pct.Rk",
+          "Off.NonStl.Pct", "Off.NonStl.Pct.Rk",
+          "Off.A.Pct", "Off.A.Pct.Rk",
+          "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk", "AdjO", "AdjO.Rk", "Year"), as.numeric) %>%
       as.data.frame()
-    if(defense){
-      x <- x %>%
-        dplyr::mutate_at(
-          c("AdjD","AdjD.Rk"),as.numeric)
-    }else{
-      x <- x %>%
-        dplyr::mutate_at(
-          c("AdjO","AdjO.Rk"),as.numeric)
-    }
+
+
+    cat("Getting", year,"- Defense\n")
+    ### Pull Data
+    url <- paste0("https://kenpom.com/teamstats.php?",
+                  "y=", year, "&od=d")
+
+    page <- rvest::jump_to(browser, url)
+    d_header_cols <- c("Team", "Conf",
+                     "Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
+                     "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+                     "Def.FT.Pct", "Def.FT.Pct.Rk",
+                     "Def.Blk.Pct", 'Def.Blk.Pct.Rk',
+                     "Def.Stl.Pct", "Def.Stl.Pct.Rk",
+                     "Def.NonStl.Pct", "Def.NonStl.Pct.Rk",
+                     "Def.A.Pct", "Def.A.Pct.Rk",
+                     "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
+                     "AdjD","AdjD.Rk")
+
+    y <- (page %>%
+            xml2::read_html() %>%
+            rvest::html_nodes(css='#ratings-table'))[[1]] %>%
+      rvest::html_table(fill=TRUE)
+
+    y <- y[,1:20]
+
+    colnames(y) <- d_header_cols
+
+    suppressWarnings(
+      y <- y %>%
+        dplyr::filter(!is.na(as.numeric(.data$Def.FG_3.Pct)))
+    )
+
+    y <- y %>%
+      dplyr::mutate_at(
+        c("Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
+          "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+          "Def.FT.Pct", "Def.FT.Pct.Rk",
+          "Def.Blk.Pct", 'Def.Blk.Pct.Rk',
+          "Def.Stl.Pct", "Def.Stl.Pct.Rk",
+          "Def.NonStl.Pct", "Def.NonStl.Pct.Rk",
+          "Def.A.Pct", "Def.A.Pct.Rk",
+          "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
+          "AdjD", "AdjD.Rk"), as.numeric) %>%
+      as.data.frame()
+
+    y <- y %>% dplyr::select(-.data$Team, -.data$Conf)
+    z <- dplyr::bind_cols(x, y)
 
     ### Store Data
     if(year == min_year) {
-      kenpom <- x
+      kenpom <- z
     }else {
-      kenpom <- dplyr::bind_rows(kenpom, x)
+      kenpom <- dplyr::bind_rows(kenpom, z)
     }
   }
   return(kenpom)
