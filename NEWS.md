@@ -1,6 +1,7 @@
 # kenpomR 0.0.0.9
 
 ## Initial Commits, remaining tasks:
-  - Player Career Tables
+  - Game Prep Tables
+  - ~~Player Career Tables~~
   - ~~Game Box Scores~~
   - ~~Argument assertions~~

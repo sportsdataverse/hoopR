@@ -15,21 +15,21 @@ A data frame with 19 columns:
   \item{\code{Season}}{double.}
   \item{\code{Efficiency}}{double.}
   \item{\code{Tempo}}{double.}
-  \item{\code{eFGpct}}{double.}
-  \item{\code{TOpct}}{double.}
-  \item{\code{ORpct}}{double.}
+  \item{\code{eFG.Pct}}{double.}
+  \item{\code{TO.Pct}}{double.}
+  \item{\code{OR.Pct}}{double.}
   \item{\code{FTRate}}{double.}
-  \item{\code{FG2pct}}{double.}
-  \item{\code{FG3pct}}{double.}
-  \item{\code{FG3Apct}}{double.}
-  \item{\code{FTpct}}{double.}
-  \item{\code{Apct}}{double.}
-  \item{\code{Blkpct}}{double.}
-  \item{\code{Stlpct}}{double.}
-  \item{\code{NonStlpct}}{double.}
+  \item{\code{FG_2.Pct}}{double.}
+  \item{\code{FG_3.Pct}}{double.}
+  \item{\code{FG_3A.Pct}}{double.}
+  \item{\code{FT.Pct}}{double.}
+  \item{\code{A.Pct}}{double.}
+  \item{\code{Blk.Pct}}{double.}
+  \item{\code{Stl.Pct}}{double.}
+  \item{\code{NonStl.Pct}}{double.}
   \item{\code{AvgHgt}}{double.}
   \item{\code{Continuity}}{double.}
-  \item{\code{HomeWinpct}}{double.}
+  \item{\code{HomeWin.Pct}}{double.}
   \item{\code{PPG}}{double.}
 }
 }
