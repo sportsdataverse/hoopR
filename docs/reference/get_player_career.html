@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Division-I statistical trends — get_trends • kenpomR</title>
+<title>Get Player Career Stats from Player Page — get_player_career • kenpomR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get Division-I statistical trends — get_trends" />
-<meta property="og:description" content="Get Division-I statistical trends" />
+<meta property="og:title" content="Get Player Career Stats from Player Page — get_player_career" />
+<meta property="og:description" content="Get Player Career Stats from Player Page" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -154,16 +154,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Division-I statistical trends</h1>
+    <h1>Get Player Career Stats from Player Page</h1>
     
-    <div class="hidden name"><code>get_trends.Rd</code></div>
+    <div class="hidden name"><code>get_player_career.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Division-I statistical trends</p>
+    <p>Get Player Career Stats from Player Page</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_trends</span><span class='op'>(</span><span class='va'>browser</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_player_career</span><span class='op'>(</span><span class='va'>browser</span>, <span class='va'>player_id</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,38 +172,18 @@
       <th>browser</th>
       <td><p>User login session</p></td>
     </tr>
+    <tr>
+      <th>player_id</th>
+      <td><p>Player Id filter to select.</p></td>
+    </tr>
     </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A data frame with 19 columns:</p><dl>
-  <dt><code>Season</code></dt><dd><p>double.</p></dd>
-  <dt><code>Efficiency</code></dt><dd><p>double.</p></dd>
-  <dt><code>Tempo</code></dt><dd><p>double.</p></dd>
-  <dt><code>eFG.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>TO.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>OR.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>FTRate</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG_2.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG_3.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>FG_3A.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>FT.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>A.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>Blk.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>Stl.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>NonStl.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>AvgHgt</code></dt><dd><p>double.</p></dd>
-  <dt><code>Continuity</code></dt><dd><p>double.</p></dd>
-  <dt><code>HomeWin.Pct</code></dt><dd><p>double.</p></dd>
-  <dt><code>PPG</code></dt><dd><p>double.</p></dd>
-
-</dl>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
- <span class='fu'>get_trends</span><span class='op'>(</span><span class='va'>browser</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='fu'>get_player_career</span><span class='op'>(</span><span class='va'>browser</span>, player_id <span class='op'>=</span> <span class='st'>'41180'</span><span class='op'>)</span>
+  <span class='op'>}</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

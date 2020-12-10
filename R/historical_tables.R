@@ -211,8 +211,8 @@ get_team_history <- function(browser, team){
       Foul2Partic.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct)), 1,
                                nchar(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct))) - 1),
 
-      Team.Finish = stringr::str_extract(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE)),
-      Coach = stringr::str_replace(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE),""),
+      Team.Finish = stringr::str_extract(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = FALSE)),
+      Coach = stringr::str_replace(.data$Coach, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = FALSE),""),
       NCAA_Seed = NA_integer_)
   x <- dplyr::mutate(x,
                      "NCAA_Seed" = sapply(.data$Coach, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
@@ -435,9 +435,10 @@ get_coach_history <- function(browser, coach){
       Foul2Partic.Pct = substr(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct)), 1,
                                nchar(sprintf("%.*f",2, as.numeric(.data$Foul2Partic.Pct))) - 1),
 
-      Team.Finish = stringr::str_extract(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE)),
-      Team = stringr::str_replace(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = TRUE),""),
+      Team.Finish = stringr::str_extract(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = FALSE)),
+      Team = stringr::str_replace(.data$Team, stringr::regex("R1|R2|S16|E8|F4|2nd|CH",ignore_case = FALSE),""),
       NCAA_Seed = NA_integer_)
+
   x <- dplyr::mutate(x,
                      "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
                      "Team" = sapply(.data$Team, function(arg) {

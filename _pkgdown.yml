@@ -44,6 +44,7 @@ reference:
       - '`get_height`'
       - '`get_foul_trouble`'
       - '`get_playerstats`'
+      - '`get_player_career`'
       - '`get_team_players`'
       - '`get_minutes_matrix`'
       - '`get_team_schedule`'

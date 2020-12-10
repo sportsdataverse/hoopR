@@ -463,7 +463,7 @@ get_height <- function(browser, min_year,max_year){
 
     suppressWarnings(
       x <- x %>%
-        dplyr::filter(!is.na(as.numeric(.data$AvgHgt)))
+        dplyr::filter(!is.na(as.numeric(.data$Avg.Hgt)))
     )
 
 

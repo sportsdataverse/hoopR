@@ -886,6 +886,228 @@ get_team_players <- function(browser, team, year= 2020){
   return(kenpom)
 }
 
+#' Get Player Career Stats from Player Page
+#'
+#' @param browser User login session
+#' @param player_id Player Id filter to select.
+#'
+#' @keywords Player Career Stats
+#' @importFrom assertthat assert_that
+#' @importFrom rvest jump_to html_nodes html_table
+#' @importFrom xml2 read_html xml_attrs
+#' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
+#' @importFrom stringr str_extract str_remove str_replace str_detect
+#' @importFrom tidyr everything separate
+#' @export
+#'
+#' @examples
+#'   \dontrun{
+#'     get_player_career(browser, player_id = '41180')
+#'   }
+#'
+get_player_career <- function(browser, player_id){
+
+  # check for internet
+  check_internet()
+  ### Pull Data
+  url <- paste0("https://kenpom.com/player.php?",
+                "p=",player_id)
+
+  page <- rvest::jump_to(browser, url)
+
+  tryCatch(
+    expr = {
+      #--- Player Info ----
+      player_info <- (page %>%
+                        xml2::read_html() %>%
+                        rvest::html_nodes(css = 'span.name')) %>%
+        rvest::html_text() %>%
+        as.data.frame()
+      colnames(player_info) <- "Player"
+      player_town <- (page %>%
+                        xml2::read_html() %>%
+                        rvest::html_nodes(css = 'span.town')) %>%
+        rvest::html_text() %>%
+        as.data.frame()
+      colnames(player_town) <- "Num"
+      player_town <- player_town %>%
+        tidyr::separate(.data$Num, into = c("Number", "Town", "DateOfBirth"), sep = "\u00b7")
+      player_info <- dplyr::bind_cols(player_info, player_town)
+
+      #--- Player Career Average Stats ----
+      players_header_cols <- c("Year","Team","Hgt","Wgt","Yr","G","Min.Pct","ORtg",
+                               "Poss.Pct","Shots.Pct","eFG.Pct","TS.Pct","OR.Pct",
+                               "DR.Pct","ARate","TORate","Blk.Pct",
+                               "Stl.Pct","FCper40","FDper40","FTRate",
+                               "FTM-A","FT.Pct","FG_2M-A","FG_2.Pct","FG_3M-A",
+                               "FG_3.Pct")
+      players <- (page %>%
+                    xml2::read_html() %>%
+                    rvest::html_nodes(css='#player-table'))[[1]] %>%
+        rvest::html_table(fill=FALSE)
+
+      colnames(players) <- players_header_cols
+
+      players <- players %>%
+        dplyr::mutate(
+          Position = gsub('[0-9]','',.data$Year),
+          Year = gsub('[^0-9]','',.data$Year),
+          GroupRank = stringr::str_extract(.data$Team,"National Rank|Conference Rank"),
+          Team = stringr::str_trim(stringr::str_replace(.data$Team,"National Rank|Conference Rank", "")),
+          Team.Finish = stringr::str_extract(.data$Team, stringr::regex('R1|R2|S16|E8|F4|2nd|CH',ignore_case = FALSE)),
+          Team = stringr::str_replace(.data$Team, stringr::regex(' R1| R2| S16| E8| F4| 2nd| CH',ignore_case = FALSE),""),
+          Team.Rk = gsub("[^0-9]", "",stringr::str_extract(.data$Team, stringr::regex('\\d{1,3}')))
+        )
+
+      # separating the career totals so as to not fill those columns (they're empty in the table)
+      players_career <- players[(nrow(players)-2):nrow(players),]
+      players <- players[1:(nrow(players)-3),]
+      # Now need to fill year to create a join column for the age and player comps columns
+      players <- players %>%
+        dplyr::mutate(Year = ifelse(.data$Year == "", NA_real_, .data$Year)) %>%
+        tidyr::fill(.data$Year, .direction = c("down"))
+
+      player_age <- players %>%
+        dplyr::filter(stringr::str_detect(.data$Team,'Age:')) %>%
+        dplyr::select(.data$Year, .data$Team, .data$Min.Pct) %>%
+        dplyr::rename(Age = .data$Team, Comparisons = .data$Min.Pct) %>%
+        dplyr::mutate(
+          Age = stringr::str_replace(.data$Age, "Age: ", ""),
+          Comparisons = stringr::str_replace(.data$Comparisons, "Similar: ", "")
+        )
+
+      players <- players %>%
+        dplyr::filter(!(stringr::str_detect(.data$Team,'Age:')),
+                      !(stringr::str_detect(.data$Min.Pct,'Similar'))) %>%
+        dplyr::mutate(
+          NCAASeed = stringr::str_extract(.data$Team, stringr::regex(' \\d{1,2}')))
+
+      players <- dplyr::mutate(players,
+                               "Team" = sapply(.data$Team, function(arg) {
+                                 stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\d+|\\*+','')) }))
+
+
+      players <- players %>%
+        dplyr::mutate(
+          Hgt = ifelse(.data$Hgt == "", NA_character_, .data$Hgt),
+          Yr = ifelse(.data$Yr == "", NA_character_, .data$Yr),
+          Position = ifelse(.data$Position == "", NA_character_, .data$Position),
+          Name = player_info$Player,
+          Number = player_info$Number,
+          Hometown = player_info$Town,
+          DateOfBirth = player_info$DateOfBirth) %>%
+        tidyr::fill(.data$Hgt, .direction = c("down")) %>%
+        tidyr::fill(.data$Wgt, .direction = c("down")) %>%
+        tidyr::fill(.data$Yr, .direction = c("down")) %>%
+        tidyr::fill(.data$Position, .direction = c("down")) %>%
+        tidyr::fill(.data$Team.Rk, .direction = c("down")) %>%
+        dplyr::group_by(.data$Year) %>%
+        tidyr::fill(.data$Team.Finish, .direction = c("down")) %>%
+        tidyr::fill(.data$NCAASeed, .direction = c("down")) %>%
+        dplyr::ungroup() %>%
+        dplyr::bind_rows(players_career) %>%
+        dplyr::left_join(player_age, by = c("Year"))
+
+      suppressWarnings(
+        players <- players %>%
+          tidyr::separate(.data$"FTM-A",into=c("FTM", "FTA")) %>%
+          tidyr::separate(.data$"FG_2M-A",into=c("FGM_2", "FGA_2")) %>%
+          tidyr::separate(.data$"FG_3M-A",into=c("FGM_3", "FGA_3")) %>%
+          dplyr::mutate_at(c("Year", "Wgt", "G", "Min.Pct",
+                             "ORtg", "Poss.Pct", "Shots.Pct", "eFG.Pct",
+                             "TS.Pct", "OR.Pct", "DR.Pct", "ARate",
+                             "TORate", "Blk.Pct", "Stl.Pct", "FCper40",
+                             "FDper40", "FTRate","FTM", "FTA", "FT.Pct",
+                             "FGM_2", "FGA_2", "FG_2.Pct",
+                             "FGM_3", "FGA_3", "FG_3.Pct",
+                             "Team.Rk", "NCAASeed", "Number"), as.numeric)
+      )
+
+      players_team_name <- players %>%
+        dplyr::filter(!(stringr::str_detect(.data$Team ,"Tier A|Conference|Career"))) %>%
+        dplyr::select(.data$Year, .data$Team, .data$Name, .data$Position)
+
+      img_extractor <- function(x){
+        data.frame(
+          ifelse(
+            is.null(rvest::html_node(x, css = "a > img")),
+            NA_character_,
+            toupper(stringr::str_trim(
+              stringr::str_replace(
+                stringr::str_extract(rvest::html_node(x, css = "a > img") %>%
+                                       xml2::xml_attr("src"), "a.gif|b.gif"),
+                ".gif","")))),
+          stringsAsFactors = FALSE)
+      }
+      players <- players %>%
+        dplyr::select(
+          .data$Year, .data$Team.Rk,.data$Team, .data$Number,
+          .data$Name, .data$Position, tidyr::everything())
+      s <- (page %>%
+              xml2::read_html() %>%
+              rvest::html_nodes(css='#schedule-table'))
+      schedule_games <- data.frame()
+      for(i in 1:length(s)){
+
+        header <- (page %>%
+                     xml2::read_html() %>%
+                     rvest::html_nodes(css='div.gamelogdiv > h3'))[[i]] %>%
+          rvest::html_text()
+        sched_header_cols <- c("Opponent.Tier", "Date", "Opponent.Rk", "Opponent",
+                               "Result","OT", "Location", "GameType",
+                               "MVP", "Start", "MinutesPlayed", "ORtg", "Poss.Pct",
+                               "Pts", "FG_2M-A", "FG_3M-A", "FTM-A",
+                               "OR", "DR", "A", "TO", "Blk", "Stl", "PF")
+
+        sched <-  ((page %>%
+                      xml2::read_html() %>%
+                      rvest::html_nodes(css='#schedule-table'))[[i]] %>%
+                     rvest::html_table(fill=TRUE))[,1:24]
+
+        colnames(sched) <- sched_header_cols
+        rownames(sched) <- NULL
+        sched <- sched %>% dplyr::filter(.data$Date != "")
+        sched$GameData <- header
+        sched <- sched %>%
+          dplyr::mutate(Year = as.numeric(stringr::str_replace(.data$GameData," Game Data",""))) %>%
+          dplyr::select(-.data$GameData)
+        sched <- sched %>%
+          dplyr::left_join(players_team_name, by="Year")
+
+        suppressWarnings(
+          sched <- sched %>%
+            tidyr::separate(.data$"FTM-A",into=c("FTM", "FTA")) %>%
+            tidyr::separate(.data$"FG_2M-A",into=c("FGM_2", "FGA_2")) %>%
+            tidyr::separate(.data$"FG_3M-A",into=c("FGM_3", "FGA_3")) %>%
+            dplyr::mutate_at(c("Opponent.Rk","MinutesPlayed","ORtg","Poss.Pct",
+                               "Pts","OR","DR","A","TO",
+                               "FTM", "FTA","FGM_2", "FGA_2",
+                               "FGM_3", "FGA_3",
+                               "Blk","Stl","PF"), as.numeric)
+        )
+        sched <- sched %>%
+          dplyr::select(
+            .data$Year, .data$Team,.data$Name,.data$Position,
+            tidyr::everything()
+          )
+        schedule_games <- dplyr::bind_rows(schedule_games,sched)
+      }
+
+      ### Store Data
+      kenpom <- c(list(players),list(schedule_games))
+    },
+    error = function(e){
+      message(glue::glue("{Sys.time()} - No Player Data available for {team} in {year}"))
+    },
+    warning = function(w){
+
+    },
+    finally = {
+
+    }
+  )
+  return(kenpom)
+}
 #' Get Minutes Matrix from Expanded Player Page
 #'
 #' @param browser User login session
