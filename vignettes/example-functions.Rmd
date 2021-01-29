@@ -1,0 +1,111 @@
+---
+title: "Example Functions"
+author: "Saiem Gilani"
+output: html_document
+---
+
+## Ratings Table Function examples
+```{r eval = FALSE}
+#---- login ---------------------------
+browser <- login(Sys.getenv("KP_USER"),Sys.getenv("KP_PW"))
+#---- ratings_tables.R ----------------
+pomeroy_ratings <- get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
+
+efficiency <- get_efficiency(browser, min_year = 2020, max_year = 2020)
+
+fourfactors <- get_fourfactors(browser, min_year = 2020, max_year = 2020)
+
+pointdist <- get_pointdist(browser, min_year = 2020, max_year = 2020)
+
+height <- get_height(browser, min_year = 2020, max_year = 2020)
+
+teamstats <- get_teamstats(browser, min_year = 2020, max_year = 2020)
+
+playerstats <- get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
+
+kpoy <- get_kpoy(browser, year=2020)
+
+```
+
+
+## Team Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("KP_USER"),Sys.getenv("KP_PW"))
+#---- team_tables.R -------------------
+team_sched <- get_team_schedule(browser, team = 'Florida St.', year= 2020)
+
+gameplan <- get_gameplan(browser, team='Florida St.', year=2020)
+
+opptracker <- get_opptracker(browser, team = 'Florida St.', year=2020)
+
+team_players <- get_team_players(browser, team = 'Florida St.', year= 2020)
+
+minutes_matrix <- get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
+
+team_player_stats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
+
+team_player_stats1 <- team_player_stats[[1]]
+
+team_player_stats2 <- team_player_stats[[2]]
+
+team_depth_chart <- get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
+
+team_lineups <- get_team_lineups(browser, team = 'Florida St.', year= 2020)
+
+```
+
+
+## Historical Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("KP_USER"),Sys.getenv("KP_PW"))
+#---- historical_tables.R ------------
+team_history <- get_team_history(browser, team = 'Florida St.')
+
+coach_history <- get_coach_history(browser, coach = 'Leonard Hamilton')
+
+program_ratings <- get_program_ratings(browser)
+
+# records_team appears to be working but there isn't anything
+# there anymore at the moment for all years
+# records_team <- get_records_team(browser, team = 'Florida St.')
+
+pomeroy_archive_ratings <- get_pomeroy_archive_ratings(browser, date='2018-11-22')
+
+conf <- get_conf(browser, year='2020',conf='ACC')
+
+conf_stats <- get_confstats(browser, year='2020')
+
+conf_history <- get_confhistory(browser, conf='ACC')
+
+```
+
+
+## Miscellaneous Stats Tables
+```{r eval = FALSE}
+
+#---- login ---------------------------
+browser <- login(Sys.getenv("KP_USER"),Sys.getenv("KP_PW"))
+#---- misc_stats.R ------------------
+trends <- get_trends(browser)
+
+
+officials <- get_officials(browser, year= 2020)
+
+hca <- get_hca(browser)
+
+
+arenas <- get_arenas(browser, year=2020)
+
+# game_attrs appears to be working but there isn't anything
+# there anymore at the moment for all years
+game_attrs <- get_game_attrs(browser,year=2020, attr = "Excitement")
+
+fanmatch <- get_fanmatch(browser, date="2020-03-10")
+
+
+```
+

@@ -17,19 +17,19 @@ This tutorial will require the use of R and RStudio. You can [follow the instruc
 
 ### First, save your login information privately
 
-You can use your .Renviron to save your `kp_user` and `kp_pw` variables, or you can simply set them using `Sys.setenv()` like so:
+You can use your .Renviron to save your `KP_USER` and `KP_PW` variables, or you can simply set them using `Sys.setenv()` like so:
 
 ```{r eval = FALSE}
-Sys.setenv(kp_user = "Your Username Here")
-Sys.setenv(kp_pw = "Your Password Here")
+Sys.setenv(KP_USER = "Your Username Here")
+Sys.setenv(KP_PW = "Your Password Here")
 ```
 
-Then save that information in a format like this:
+For .Renviron, save that information in a format like this:
 
-    kp_user = "your email here"
-    kp_pw = "your password here"
+    KP_USER = "your email here"
+    KP_PW = "your password here"
 
-Then we can reference these in our scripts with `Sys.env("kp_user")` or `Sys.env("kp_pw")`.
+Then we can reference these in our scripts with `Sys.env("KP_USER")` or `Sys.env("KP_PW")`.
 
 ### Import libraries and set browser login
 
@@ -37,15 +37,15 @@ Then we can reference these in our scripts with `Sys.env("kp_user")` or `Sys.env
 library(kenpomR)
 library(dplyr)
 
-browser <- login(Sys.getenv("kp_user"), Sys.getenv("kp_pw"))
+browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 
 ```
 
-Let's first just try to get our hands on the Pomeroy ratings for the last 15 years by using the ```kenpomR::get_pomeroy_ratings()``` function, which takes the following arguments:
+Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the ```kenpomR::get_pomeroy_ratings()``` function, which takes the following arguments:
 
--   `browser` - User login session
--   `min_year` - First year of data to pull
--   `max_year` - Last year of data to pull
+-   ```browser``` - User login session
+-   ```min_year``` - First year of data to pull
+-   ```max_year``` - Last year of data to pull
 
 ```{r message = FALSE}
 rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
@@ -62,8 +62,8 @@ So in this vignette, we're going to plot something simple first to get a sense o
 
 ### Pre-processing
 First, to keep things a bit simpler, we will first create a second and third `rtgs` dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with.
-  - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use dplyr's summarize function, which we use to compute the mean of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
-  - ```Florida State```: It appears that since there was no tournament, kenpom.com has inserted asterisks for the 2020 data, to indicate which teams __would__ have made the tournament had it occurred according to the consensus on [BracketMatrix.com](BracketMatrix.com), so we use the ```stringr::str_remove()``` and ```stringr::str_trim()``` functions to remove the asterisk, so that all of our `Team` values match. 
+  - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use ```dplyr```'s ```dplyr::summarize()``` function, which we use to compute the ````mean()``` of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
+
 ```{r}
 
 team1 = "Florida St."
@@ -262,18 +262,21 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 ![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
 
 ```{r efficiency, message = FALSE}
+browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 effs <- get_efficiency(browser, min_year = 2020, max_year = 2020)
 glimpse(effs)
 ```
 
 ```{r fourfactors, message = FALSE}
+browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 ff <-  get_fourfactors(browser, min_year = 2020, max_year = 2020)
 glimpse(ff)
 ```
 
 
 ```{r hgts, message = FALSE}
- hgts <-  get_height(browser, min_year = 2020, max_year = 2020)
+browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
+hgts <-  get_height(browser, min_year = 2020, max_year = 2020)
 
 glimpse(hgts)
 ```
@@ -290,110 +293,5 @@ glimpse(plyrstats[[1]])
 glimpse(plyrstats[[2]])
 ```
 
-
-## Ratings Table Function examples
-```{r eval = FALSE}
-#---- login ---------------------------
-browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
-#---- ratings_tables.R ----------------
-pomeroy_ratings <- get_pomeroy_ratings(browser, min_year = 2020, max_year = 2020)
-
-efficiency <- get_efficiency(browser, min_year = 2020, max_year = 2020)
-
-fourfactors <- get_fourfactors(browser, min_year = 2020, max_year = 2020)
-
-pointdist <- get_pointdist(browser, min_year = 2020, max_year = 2020)
-
-height <- get_height(browser, min_year = 2020, max_year = 2020)
-
-teamstats <- get_teamstats(browser, min_year = 2020, max_year = 2020)
-
-playerstats <- get_playerstats(browser, metric = 'eFG', conf_only = FALSE, year=2020)
-
-kpoy <- get_kpoy(browser, year=2020)
-
-```
-
-
-## Team Tables
-```{r eval = FALSE}
-
-#---- login ---------------------------
-browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
-#---- team_tables.R -------------------
-team_sched <- get_team_schedule(browser, team = 'Florida St.', year= 2020)
-
-gameplan <- get_gameplan(browser, team='Florida St.', year=2020)
-
-opptracker <- get_opptracker(browser, team = 'Florida St.', year=2020)
-
-team_players <- get_team_players(browser, team = 'Florida St.', year= 2020)
-
-minutes_matrix <- get_minutes_matrix(browser, team = 'Florida St.', year = 2020)
-
-team_player_stats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
-team_player_stats1 <- team_player_stats[[1]]
-
-
-team_player_stats2 <- team_player_stats[[2]]
-
-team_depth_chart <- get_team_depth_chart(browser, team = 'Florida St.', year= 2020)
-
-team_lineups <- get_team_lineups(browser, team = 'Florida St.', year= 2020)
-
-```
-
-
-## Historical Tables
-```{r eval = FALSE}
-
-#---- login ---------------------------
-browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
-#---- historical_tables.R ------------
-team_history <- get_team_history(browser, team = 'Florida St.')
-
-coach_history <- get_coach_history(browser, coach = 'Leonard Hamilton')
-
-program_ratings <- get_program_ratings(browser)
-
-# records_team appears to be working but there isn't anything
-# there anymore at the moment for all years
-# records_team <- get_records_team(browser, team = 'Florida St.')
-
-pomeroy_archive_ratings <- get_pomeroy_archive_ratings(browser, date='2018-11-22')
-
-conf <- get_conf(browser, year='2020',conf='ACC')
-
-conf_stats <- get_confstats(browser, year='2020')
-
-conf_history <- get_confhistory(browser, conf='ACC')
-
-```
-
-
-## Miscellaneous Stats Tables
-```{r eval = FALSE}
-
-#---- login ---------------------------
-browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
-#---- misc_stats.R ------------------
-trends <- get_trends(browser)
-
-
-officials <- get_officials(browser, year= 2020)
-
-hca <- get_hca(browser)
-
-
-arenas <- get_arenas(browser, year=2020)
-
-# game_attrs appears to be working but there isn't anything
-# there anymore at the moment for all years
-game_attrs <- get_game_attrs(browser,year=2020, attr = "Excitement")
-
-fanmatch <- get_fanmatch(browser, date="2020-03-10")
-
-
-```
 
 

@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -47,13 +47,13 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-question-circle-o"></span>
+    <span class="fas fa-question-circle-o"></span>
      
     Tutorials
      
@@ -65,20 +65,23 @@
     </li>
     <li class="dropdown-header">Introductory</li>
     <li>
-      <a href="../articles/Intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+    </li>
+    <li>
+      <a href="../articles/example-functions.html">Example Functions</a>
     </li>
   </ul>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-file-code-o"></span>
+    <span class="fas fa-file-code-o"></span>
      
     Functions
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -87,13 +90,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://twitter.com/saiemgilani">
-    <span class="fab fa fab fa-twitter fa-lg"></span>
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/saiemgilani/kenpomR/">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
     GitHub
   </a>
@@ -108,8 +111,7 @@
 
       
 
-      </header><script src="intro-to-kenpomR_files/header-attrs-2.5/header-attrs.js"></script><script src="intro-to-kenpomR_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="intro-to-kenpomR_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="intro-to-kenpomR_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="intro-to-kenpomR_files/header-attrs-2.6/header-attrs.js"></script><script src="intro-to-kenpomR_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Intro to kenpomR</h1>
@@ -132,14 +134,14 @@
 <div id="first-save-your-login-information-privately" class="section level3">
 <h3 class="hasAnchor">
 <a href="#first-save-your-login-information-privately" class="anchor"></a>First, save your login information privately</h3>
-<p>You can use your .Renviron to save your <code>kp_user</code> and <code>kp_pw</code> variables, or you can simply set them using <code><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv()</a></code> like so:</p>
+<p>You can use your .Renviron to save your <code>KP_USER</code> and <code>KP_PW</code> variables, or you can simply set them using <code><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv()</a></code> like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>kp_user <span class="op">=</span> <span class="st">"Your Username Here"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>kp_pw <span class="op">=</span> <span class="st">"Your Password Here"</span><span class="op">)</span></code></pre></div>
-<p>Then save that information in a format like this:</p>
-<pre><code>kp_user = "your email here"
-kp_pw = "your password here"</code></pre>
-<p>Then we can reference these in our scripts with <code>Sys.env("kp_user")</code> or <code>Sys.env("kp_pw")</code>.</p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_USER <span class="op">=</span> <span class="st">"Your Username Here"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_PW <span class="op">=</span> <span class="st">"Your Password Here"</span><span class="op">)</span></code></pre></div>
+<p>For .Renviron, save that information in a format like this:</p>
+<pre><code>KP_USER = "your email here"
+KP_PW = "your password here"</code></pre>
+<p>Then we can reference these in our scripts with <code>Sys.env("KP_USER")</code> or <code>Sys.env("KP_PW")</code>.</p>
 </div>
 <div id="import-libraries-and-set-browser-login" class="section level3">
 <h3 class="hasAnchor">
@@ -148,8 +150,8 @@ kp_pw = "your password here"</code></pre>
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://saiemgilani.github.io/kenpomR">kenpomR</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_user"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_pw"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p>Let’s first just try to get our hands on the Pomeroy ratings for the last 15 years by using the <code><a href="../reference/get_pomeroy_ratings.html">kenpomR::get_pomeroy_ratings()</a></code> function, which takes the following arguments:</p>
+<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>Let’s first just try to get our hands on the Pomeroy ratings for the last 10 years by using the <code><a href="../reference/get_pomeroy_ratings.html">kenpomR::get_pomeroy_ratings()</a></code> function, which takes the following arguments:</p>
 <ul>
 <li>
 <code>browser</code> - User login session</li>
@@ -208,7 +210,7 @@ kp_pw = "your password here"</code></pre>
 <div id="pre-processing" class="section level3">
 <h3 class="hasAnchor">
 <a href="#pre-processing" class="anchor"></a>Pre-processing</h3>
-<p>First, to keep things a bit simpler, we will first create a second and third <code>rtgs</code> dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with. - <code>ACC</code>: filter by conference = ‘ACC’, group by the year and conference, then use dplyr’s summarize function, which we use to compute the mean of each of the <code>Year</code>-<code>Conf</code> combinations. However, in this case, since there is only one conference, it is essentially just a <code>Year</code> grouping for the ACC. - <code>Florida State</code>: It appears that since there was no tournament, kenpom.com has inserted asterisks for the 2020 data, to indicate which teams <strong>would</strong> have made the tournament had it occurred according to the consensus on <a href="BracketMatrix.com">BracketMatrix.com</a>, so we use the <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">stringr::str_remove()</a></code> and <code><a href="https://stringr.tidyverse.org/reference/str_trim.html">stringr::str_trim()</a></code> functions to remove the asterisk, so that all of our <code>Team</code> values match.</p>
+<p>First, to keep things a bit simpler, we will first create a second and third <code>rtgs</code> dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with. - <code>ACC</code>: filter by conference = ‘ACC’, group by the year and conference, then use <code>dplyr</code>’s <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">dplyr::summarize()</a></code> function, which we use to compute the `<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> of each of the <code>Year</code>-<code>Conf</code> combinations. However, in this case, since there is only one conference, it is essentially just a <code>Year</code> grouping for the ACC.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">team1</span> <span class="op">=</span> <span class="st">"Florida St."</span>
 <span class="va">team2</span> <span class="op">=</span> <span class="st">"ACC"</span>
@@ -252,7 +254,7 @@ kp_pw = "your password here"</code></pre>
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_1</span> <span class="op">=</span> <span class="va">Color1</span>
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_2</span> <span class="op">=</span> <span class="va">Color2</span></code></pre></div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.name/animation">animation</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/ggimage">ggimage</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.rforge.net/png/">png</a></span><span class="op">)</span>
@@ -415,7 +417,8 @@ kp_pw = "your password here"</code></pre>
 <img src="http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png" alt=""><p class="caption">site_navigation</p>
 </div>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">effs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_efficiency.html">get_efficiency</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">effs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_efficiency.html">get_efficiency</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">effs</span><span class="op">)</span></code></pre></div>
@@ -442,7 +445,8 @@ kp_pw = "your password here"</code></pre>
 ## $ NCAA_Seed           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
 ## $ Year                &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020,...</code></pre>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">ff</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/get_fourfactors.html">get_fourfactors</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">ff</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/get_fourfactors.html">get_fourfactors</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">ff</span><span class="op">)</span></code></pre></div>
@@ -475,7 +479,8 @@ kp_pw = "your password here"</code></pre>
 ## $ NCAA_Seed      &lt;dbl&gt; 1, 1, 2, 8, 6, 4, 5, 1, 3, 3, 2, 4, 5, 9, 2, 8, 1, 3...
 ## $ Year           &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020...</code></pre>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
-<code class="sourceCode R"> <span class="va">hgts</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/get_height.html">get_height</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">hgts</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/get_height.html">get_height</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://tibble.tidyverse.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">hgts</span><span class="op">)</span></code></pre></div>
@@ -523,111 +528,11 @@ kp_pw = "your password here"</code></pre>
 <pre><code>##  num [1:24] 3 23 4 1 24 2 0 15 5 31 ...</code></pre>
 </div>
 </div>
-<div id="ratings-table-function-examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ratings-table-function-examples" class="anchor"></a>Ratings Table Function examples</h2>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#---- login ---------------------------</span>
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_user"</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_pw"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#---- ratings_tables.R ----------------</span>
-<span class="va">pomeroy_ratings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_pomeroy_ratings.html">get_pomeroy_ratings</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">efficiency</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_efficiency.html">get_efficiency</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">fourfactors</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_fourfactors.html">get_fourfactors</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">pointdist</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_pointdist.html">get_pointdist</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">height</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_height.html">get_height</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">teamstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_teamstats.html">get_teamstats</a></span><span class="op">(</span><span class="va">browser</span>, min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">playerstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_playerstats.html">get_playerstats</a></span><span class="op">(</span><span class="va">browser</span>, metric <span class="op">=</span> <span class="st">'eFG'</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">kpoy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_kpoy.html">get_kpoy</a></span><span class="op">(</span><span class="va">browser</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="team-tables" class="section level2">
-<h2 class="hasAnchor">
-<a href="#team-tables" class="anchor"></a>Team Tables</h2>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#---- login ---------------------------</span>
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_user"</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_pw"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#---- team_tables.R -------------------</span>
-<span class="va">team_sched</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_schedule.html">get_team_schedule</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">gameplan</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_gameplan.html">get_gameplan</a></span><span class="op">(</span><span class="va">browser</span>, team<span class="op">=</span><span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">opptracker</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_opptracker.html">get_opptracker</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">team_players</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_players.html">get_team_players</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">minutes_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_minutes_matrix.html">get_minutes_matrix</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">team_player_stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_player_stats.html">get_team_player_stats</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-<span class="va">team_player_stats1</span> <span class="op">&lt;-</span> <span class="va">team_player_stats</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
-
-
-<span class="va">team_player_stats2</span> <span class="op">&lt;-</span> <span class="va">team_player_stats</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>
-
-<span class="va">team_depth_chart</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_depth_chart.html">get_team_depth_chart</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">team_lineups</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_lineups.html">get_team_lineups</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="historical-tables" class="section level2">
-<h2 class="hasAnchor">
-<a href="#historical-tables" class="anchor"></a>Historical Tables</h2>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#---- login ---------------------------</span>
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_user"</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_pw"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#---- historical_tables.R ------------</span>
-<span class="va">team_history</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_team_history.html">get_team_history</a></span><span class="op">(</span><span class="va">browser</span>, team <span class="op">=</span> <span class="st">'Florida St.'</span><span class="op">)</span>
-
-<span class="va">coach_history</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_coach_history.html">get_coach_history</a></span><span class="op">(</span><span class="va">browser</span>, coach <span class="op">=</span> <span class="st">'Leonard Hamilton'</span><span class="op">)</span>
-
-<span class="va">program_ratings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_program_ratings.html">get_program_ratings</a></span><span class="op">(</span><span class="va">browser</span><span class="op">)</span>
-
-<span class="co"># records_team appears to be working but there isn't anything</span>
-<span class="co"># there anymore at the moment for all years</span>
-<span class="co"># records_team &lt;- get_records_team(browser, team = 'Florida St.')</span>
-
-<span class="va">pomeroy_archive_ratings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_pomeroy_archive_ratings.html">get_pomeroy_archive_ratings</a></span><span class="op">(</span><span class="va">browser</span>, date<span class="op">=</span><span class="st">'2018-11-22'</span><span class="op">)</span>
-
-<span class="va">conf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_conf.html">get_conf</a></span><span class="op">(</span><span class="va">browser</span>, year<span class="op">=</span><span class="st">'2020'</span>,conf<span class="op">=</span><span class="st">'ACC'</span><span class="op">)</span>
-
-<span class="va">conf_stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_confstats.html">get_confstats</a></span><span class="op">(</span><span class="va">browser</span>, year<span class="op">=</span><span class="st">'2020'</span><span class="op">)</span>
-
-<span class="va">conf_history</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_confhistory.html">get_confhistory</a></span><span class="op">(</span><span class="va">browser</span>, conf<span class="op">=</span><span class="st">'ACC'</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="miscellaneous-stats-tables" class="section level2">
-<h2 class="hasAnchor">
-<a href="#miscellaneous-stats-tables" class="anchor"></a>Miscellaneous Stats Tables</h2>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#---- login ---------------------------</span>
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/login.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_user"</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"kp_pw"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#---- misc_stats.R ------------------</span>
-<span class="va">trends</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_trends.html">get_trends</a></span><span class="op">(</span><span class="va">browser</span><span class="op">)</span>
-
-
-<span class="va">officials</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_officials.html">get_officials</a></span><span class="op">(</span><span class="va">browser</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
-
-<span class="va">hca</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_hca.html">get_hca</a></span><span class="op">(</span><span class="va">browser</span><span class="op">)</span>
-
-
-<span class="va">arenas</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_arenas.html">get_arenas</a></span><span class="op">(</span><span class="va">browser</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span>
-
-<span class="co"># game_attrs appears to be working but there isn't anything</span>
-<span class="co"># there anymore at the moment for all years</span>
-<span class="va">game_attrs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_game_attrs.html">get_game_attrs</a></span><span class="op">(</span><span class="va">browser</span>,year<span class="op">=</span><span class="fl">2020</span>, attr <span class="op">=</span> <span class="st">"Excitement"</span><span class="op">)</span>
-
-<span class="va">fanmatch</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_fanmatch.html">get_fanmatch</a></span><span class="op">(</span><span class="va">browser</span>, date<span class="op">=</span><span class="st">"2020-03-10"</span><span class="op">)</span></code></pre></div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
