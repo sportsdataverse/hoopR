@@ -1,6 +1,0 @@
-language: r
-cache: packages
-latex: false
-env:
-  - _R_CHECK_FORCE_SUGGESTS_=false
- 
