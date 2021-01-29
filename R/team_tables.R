@@ -358,13 +358,11 @@ get_gameplan <- function(browser, team, year=2020){
                 "&y=", year)
 
   page <- rvest::jump_to(browser, url)
-  header_cols <- c(
-    'Date','Opponent.Rk',	'Opponent','Result','Location','Pace',
-    'Off.Eff', 'Off.Eff.Rk', 'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct', 'Off.FTR',
-    'Off.FGM_2-A', 'Off.FG_2.Pct', 'Off.FGM_3-A',	'Off.FG_3.Pct',	'Off.FG_3A.Pct',
-    'Def.Eff', 'Def.Eff.Rk', 'Def.eFG.Pct',	'Def.TO.Pct',	'Def.OR.Pct', 'Def.FTR',
-    'Def.FGM_2-A',	'Def.FG_2.Pct',	'Def.FGM_3-A', 'Def.FG_3.Pct',	'Def.FG_3A.Pct'
-  )
+  header_cols <- c("Date","Opponent.Rk",	"Opponent","Result","Location","Pace",
+                   "Off.Eff", "Off.Eff.Rk", "Off.eFG.Pct",	"Off.TO.Pct",	"Off.OR.Pct", "Off.FTR",
+                   "Off.FGM_2-A", "Off.FG_2.Pct", "Off.FGM_3-A",	"Off.FG_3.Pct",	"Off.FG_3A.Pct",
+                   "Def.Eff", "Def.Eff.Rk", "Def.eFG.Pct",	"Def.TO.Pct",	"Def.OR.Pct", "Def.FTR",
+                   "Def.FGM_2-A",	"Def.FG_2.Pct",	"Def.FGM_3-A", "Def.FG_3.Pct",	"Def.FG_3A.Pct")
 
 
   gp <- (page %>%
@@ -431,14 +429,14 @@ get_gameplan <- function(browser, team, year=2020){
       tidyr::separate(.data$"Off.FGM_3-A", into = c("Off.FGM_3","Off.FGA_3")) %>%
       tidyr::separate(.data$"Def.FGM_2-A", into = c("Def.FGM_2","Def.FGA_2")) %>%
       tidyr::separate(.data$"Def.FGM_3-A", into = c("Def.FGM_3","Def.FGA_3")) %>%
-      dplyr::mutate_at(c("Opponent.Rk", 'Pace', 'Off.Eff', 'Off.Eff.Rk',
-                         'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct', 'Off.FTR',
-                         'Off.FGM_2', 'Off.FGA_2', 'Off.FG_2.Pct',
-                         'Off.FGM_3', "Off.FGA_3",'Off.FG_3.Pct',	'Off.FG_3A.Pct',
-                         'Def.Eff', 'Def.Eff.Rk', 'Def.eFG.Pct',	'Def.TO.Pct',
-                         'Def.OR.Pct', 'Def.FTR', 'Def.FGM_2', 'Def.FGA_2',
-                         'Def.FG_2.Pct',	'Def.FGM_3', "Def.FGA_3",
-                         'Def.FG_3.Pct',	'Def.FG_3A.Pct', 'TeamScore','OpponentScore'), as.numeric)
+      dplyr::mutate_at(c("Opponent.Rk", "Pace", "Off.Eff", "Off.Eff.Rk",
+                         "Off.eFG.Pct",	"Off.TO.Pct",	"Off.OR.Pct", "Off.FTR",
+                         "Off.FGM_2", "Off.FGA_2", "Off.FG_2.Pct",
+                         "Off.FGM_3", "Off.FGA_3","Off.FG_3.Pct",	"Off.FG_3A.Pct",
+                         "Def.Eff", "Def.Eff.Rk", "Def.eFG.Pct",	"Def.TO.Pct",
+                         "Def.OR.Pct", "Def.FTR", "Def.FGM_2", "Def.FGA_2",
+                         "Def.FG_2.Pct",	"Def.FGM_3", "Def.FGA_3",
+                         "Def.FG_3.Pct",	"Def.FG_3A.Pct", "TeamScore","OpponentScore"), as.numeric)
   )
   ### Store Data
   gp <- gp %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore)
@@ -552,11 +550,11 @@ get_opptracker <- function(browser, team, year=as.integer(format(Sys.Date(), "%Y
 
   page_o <- rvest::jump_to(browser, url)
 
-  header_cols<- c('Date','Opponent','Result','AdjOE','AdjOE.Rk',
-                  'Off.eFG.Pct','Off.eFG.Pct.Rk','Off.TO.Pct','Off.TO.Pct.Rk',
-                  'Off.OR.Pct','Off.OR.Pct.Rk','Off.FTRate','Off.FTRate.Rk',
-                  'Off.FG_2.Pct','Off.FG_2.Pct.Rk','Off.FG_3.Pct','Off.FG_3.Pct.Rk',
-                  'Off.Blk.Pct','Off.Blk.Pct.Rk','Off.FG_3A.Pct','Off.FG_3A.Pct.Rk')
+  header_cols<- c("Date","Opponent","Result","AdjOE","AdjOE.Rk",
+                  "Off.eFG.Pct","Off.eFG.Pct.Rk","Off.TO.Pct","Off.TO.Pct.Rk",
+                  "Off.OR.Pct","Off.OR.Pct.Rk","Off.FTRate","Off.FTRate.Rk",
+                  "Off.FG_2.Pct","Off.FG_2.Pct.Rk","Off.FG_3.Pct","Off.FG_3.Pct.Rk",
+                  "Off.Blk.Pct","Off.Blk.Pct.Rk","Off.FG_3A.Pct","Off.FG_3A.Pct.Rk")
   if(year>=2010){
     header_cols <- c(header_cols, "Off.APL","Off.APL.Rk")
   }
@@ -616,11 +614,11 @@ get_opptracker <- function(browser, team, year=as.integer(format(Sys.Date(), "%Y
       dplyr::select(-.data$Date.DD, -.data$Date.MO, -.data$Date.YR, -.data$WinnerScore, -.data$LoserScore)
   )
 
-  header_cols<- c('Date','Opponent','Result','AdjDE','AdjDE.Rk',
-                  'Def.eFG.Pct','Def.eFG.Pct.Rk','Def.TO.Pct','Def.TO.Pct.Rk',
-                  'Def.OR.Pct','Def.OR.Pct.Rk','Def.FTRate','Def.FTRate.Rk',
-                  'Def.FG_2.Pct','Def.FG_2.Pct.Rk','Def.FG_3.Pct','Def.FG_3.Pct.Rk',
-                  'Def.Blk.Pct','Def.Blk.Pct.Rk','Def.FG_3A.Pct','Def.FG_3A.Pct.Rk')
+  header_cols<- c("Date","Opponent","Result","AdjDE","AdjDE.Rk",
+                  "Def.eFG.Pct","Def.eFG.Pct.Rk","Def.TO.Pct","Def.TO.Pct.Rk",
+                  "Def.OR.Pct","Def.OR.Pct.Rk","Def.FTRate","Def.FTRate.Rk",
+                  "Def.FG_2.Pct","Def.FG_2.Pct.Rk","Def.FG_3.Pct","Def.FG_3.Pct.Rk",
+                  "Def.Blk.Pct","Def.Blk.Pct.Rk","Def.FG_3A.Pct","Def.FG_3A.Pct.Rk")
 
   if(year>=2010){
     header_cols <- c(header_cols, "Def.APL","Def.APL.Rk")
@@ -1086,10 +1084,7 @@ get_player_career <- function(browser, player_id){
                                "Blk","Stl","PF"), as.numeric)
         )
         sched <- sched %>%
-          dplyr::select(
-            .data$Year, .data$Team,.data$Name,.data$Position,
-            tidyr::everything()
-          )
+          dplyr::select(.data$Year, .data$Team, .data$Name, .data$Position, tidyr::everything())
         schedule_games <- dplyr::bind_rows(schedule_games,sched)
       }
 
