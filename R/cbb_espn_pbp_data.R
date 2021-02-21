@@ -213,3 +213,84 @@ cbb_espn_player_box <- function(game_id){
   return(player_box)
 }
 
+
+#' Get ESPN Conference Names and Ids
+#' @author Saiem Gilani
+#' @keywords CBB Conferences
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @export
+#'
+#' @examples
+#'
+#'  cbb_espn_conferences()
+#'
+cbb_espn_conferences <- function(){
+  options(stringsAsFactors = FALSE)
+  options(scipen = 999)
+  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences"
+
+  ## Inputs
+  ## game_id
+
+  conferences <- jsonlite::fromJSON(play_base_url)[["conferences"]] %>% dplyr::select(-.data$subGroups)
+
+  return(conferences)
+}
+
+#' Get ESPN Team Names and Ids
+#' @author Saiem Gilani
+#' @keywords CBB Teams
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
+#' @importFrom tidyr unnest unnest_wider everything pivot_wider
+#' @importFrom tibble tibble
+#' @importFrom purrr map_if
+#' @export
+#'
+#' @examples
+#'
+#'  cbb_espn_teams()
+#'
+
+cbb_espn_teams <- function(){
+  options(stringsAsFactors = FALSE)
+  options(scipen = 999)
+  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?groups=50&limit=1000"
+
+  ## Inputs
+  ## game_id
+  leagues <- jsonlite::fromJSON(play_base_url)[["sports"]][["leagues"]][[1]][['teams']][[1]][['team']] %>%
+    dplyr::group_by(.data$id) %>%
+    tidyr::unnest_wider(unlist(.data$logos, use.names=FALSE),names_sep = "_") %>%
+    tidyr::unnest_wider(.data$logos_href,names_sep = "_") %>%
+    dplyr::select(-.data$logos_width,-.data$logos_height,
+                  -.data$logos_alt, -.data$logos_rel) %>%
+    dplyr::ungroup()
+
+  records <- leagues$record
+  records<- records %>% tidyr::unnest_wider(.data$items) %>%
+    tidyr::unnest_wider(.data$stats,names_sep = "_") %>%
+    dplyr::mutate(row = dplyr::row_number())
+  stat <- records %>%
+    dplyr::group_by(.data$row) %>%
+    purrr::map_if(is.data.frame, list)
+  stat <- lapply(stat$stats_1,function(x) x %>%
+                      purrr::map_if(is.data.frame,list) %>%
+                      dplyr::as_tibble() )
+
+  s <- lapply(stat, function(x) {
+    tidyr::pivot_wider(x)
+  })
+
+  s <- tibble::tibble(g = s)
+  stats <- s %>% unnest_wider(.data$g)
+
+  records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
+  leagues <- leagues %>% dplyr::select(-.data$record,-.data$links)
+  teams <- dplyr::bind_cols(leagues, records)
+  return(teams)
+}
