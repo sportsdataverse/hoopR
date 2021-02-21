@@ -29,6 +29,10 @@ See the following four functions:
 
   - [`kenpomR::cbb_espn_player_box()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_player_box.html)
 
+  - [`kenpomR::cbb_espn_teams()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_teams.html)
+
+  - [`kenpomR::cbb_espn_conferences()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_conferences.html)
+
 ## Installation
 
 You can install `kenpomR` from

@@ -1,6 +1,6 @@
 Package: kenpomR
 Title: A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))
 Description: The R package kenpomR is for working with Ken Pomeroy's college basketball data. A scraping interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
 License: MIT + file LICENSE
@@ -24,7 +24,9 @@ Imports:
     attempt,
     magrittr,
     glue,
-    jsonlite
+    jsonlite,
+    purrr,
+    tibble
 RoxygenNote: 7.1.1
 Suggests:
     knitr,
