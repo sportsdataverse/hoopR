@@ -24,7 +24,9 @@ Imports:
     attempt,
     magrittr,
     glue,
-    jsonlite
+    jsonlite,
+    purrr,
+    tibble
 RoxygenNote: 7.1.1
 Suggests:
     knitr,
