@@ -1,5 +1,5 @@
 
-# kenpomR <a href='http://saiemgilani.github.io/kenpomR'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# kenpomR <a href='http://saiemgilani.github.io/kenpomR'><img src="man/figures/logo.png" align="right" height="139"/></a>
 
 <!-- badges: start -->
 
@@ -16,6 +16,18 @@ scraping and aggregating interface for Ken Pomeroy’s college basketball
 statistics website, [kenpom.com](https://kenpom.com). It provides users
 with an active subscription the capability to scrape the website tables
 and analyze the data for themselves.
+
+#### New in v0.2.0: Support for ESPN’s college basketball game data
+
+See the following four functions:
+
+  - [`kenpomR::cbb_espn_game_all()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_game_all.html)
+
+  - [`kenpomR::cbb_espn_pbp()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_pbp.html)
+
+  - [`kenpomR::cbb_espn_team_box()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_team_box.html)
+
+  - [`kenpomR::cbb_espn_player_box()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_player_box.html)
 
 ## Installation
 
