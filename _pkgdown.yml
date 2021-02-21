@@ -39,6 +39,10 @@ reference:
   - subtitle: Exported Functions
     desc: Functions exported by kenpomR
     contents:
+      - '`cbb_espn_game_all`'
+      - '`cbb_espn_pbp`'
+      - '`cbb_espn_team_box`'
+      - '`cbb_espn_player_box`'
       - '`get_efficiency`'
       - '`get_fourfactors`'
       - '`get_pomeroy_ratings`'
