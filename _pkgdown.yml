@@ -43,6 +43,8 @@ reference:
       - '`cbb_espn_pbp`'
       - '`cbb_espn_team_box`'
       - '`cbb_espn_player_box`'
+      - '`cbb_espn_conferences`'
+      - '`cbb_espn_teams`'
       - '`get_efficiency`'
       - '`get_fourfactors`'
       - '`get_pomeroy_ratings`'

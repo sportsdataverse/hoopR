@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 `kenpomR` is an R package for working with college basketball data. A scraping and aggregating interface for Ken Pomeroy's college basketball statistics website, [kenpom.com](https://kenpom.com). It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.
 
-#### New in v0.2.0: Support for ESPN's college basketball game data
+#### New in v0.2.1: Support for ESPN's college basketball game data
 
 See the following four functions:
 
@@ -23,6 +23,10 @@ See the following four functions:
 - [```kenpomR::cbb_espn_team_box()```](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_team_box.html)
 
 - [```kenpomR::cbb_espn_player_box()```](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_player_box.html)
+
+- [```kenpomR::cbb_espn_teams()```](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_teams.html) (bumps to v0.2.1)
+
+- [```kenpomR::cbb_espn_conferences()```](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_conferences.html) (bumps to v0.2.1)
 
 ## Installation
 
