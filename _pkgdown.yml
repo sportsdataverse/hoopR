@@ -29,10 +29,13 @@ navbar:
     - icon: fa-newspaper-o
       text: "News"
       href: news/index.html
+    - icon: fa-database
+      text: "Data"
+      href: https://github.com/saiemgilani/kenpomR-data
   right:
     - icon: fab fa-twitter fa-lg
       href: https://twitter.com/saiemgilani
-    - icon: fa-github fa-lg
+    - icon: fab fa-github fa-lg
       text: "GitHub"
       href: https://github.com/saiemgilani/kenpomR/
 reference:
@@ -45,6 +48,7 @@ reference:
       - '`cbb_espn_player_box`'
       - '`cbb_espn_conferences`'
       - '`cbb_espn_teams`'
+      - '`cbb_espn_scoreboard`'
       - '`get_efficiency`'
       - '`get_fourfactors`'
       - '`get_pomeroy_ratings`'
