@@ -82,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -129,6 +129,13 @@
     News
   </a>
 </li>
+<li>
+  <a href="https://github.com/saiemgilani/kenpomR-data">
+    <span class="fas fa-database"></span>
+     
+    Data
+  </a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -139,7 +146,7 @@
 </li>
 <li>
   <a href="https://github.com/saiemgilani/kenpomR/">
-    <span class="fas fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
     GitHub
   </a>
@@ -184,23 +191,23 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
  <span class='fu'>cbb_espn_pbp</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401256760</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 353 x 17</span><span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 353 x 17</span><span>
 #&gt;    shootingPlay sequenceNumber homeScore scoringPlay awayScore id    text 
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> TRUE         101805901              0 FALSE               0 4012~ M.J.~
-#&gt; </span><span style='color: #555555;'> 2</span><span> FALSE        101806301              0 FALSE               0 4012~ RaiQ~
-#&gt; </span><span style='color: #555555;'> 3</span><span> TRUE         101806302              2 TRUE                0 4012~ RaiQ~
-#&gt; </span><span style='color: #555555;'> 4</span><span> TRUE         101808801              2 FALSE               0 4012~ Scot~
-#&gt; </span><span style='color: #555555;'> 5</span><span> FALSE        101809001              2 FALSE               0 4012~ Bals~
-#&gt; </span><span style='color: #555555;'> 6</span><span> TRUE         101814501              2 FALSE               0 4012~ Bals~
-#&gt; </span><span style='color: #555555;'> 7</span><span> FALSE        101814502              2 FALSE               0 4012~ Flor~
-#&gt; </span><span style='color: #555555;'> 8</span><span> TRUE         101817001              2 TRUE                3 4012~ Tre ~
-#&gt; </span><span style='color: #555555;'> 9</span><span> FALSE        101818201              2 FALSE               3 4012~ RaiQ~
-#&gt; </span><span style='color: #555555;'>10</span><span> FALSE        101818202              2 FALSE               3 4012~ Tre ~
-#&gt; </span><span style='color: #555555;'># ... with 343 more rows, and 10 more variables: scoreValue </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   period.displayValue </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, period.number </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, clock.displayValue </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   team.id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, type.id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, type.text </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, play.id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   athlete1.id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, athlete2.id </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> TRUE         101805901              0 FALSE               0 4012~ M.J.~
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> FALSE        101806301              0 FALSE               0 4012~ RaiQ~
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> TRUE         101806302              2 TRUE                0 4012~ RaiQ~
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> TRUE         101808801              2 FALSE               0 4012~ Scot~
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> FALSE        101809001              2 FALSE               0 4012~ Bals~
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> TRUE         101814501              2 FALSE               0 4012~ Bals~
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> FALSE        101814502              2 FALSE               0 4012~ Flor~
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> TRUE         101817001              2 TRUE                3 4012~ Tre ~
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> FALSE        101818201              2 FALSE               3 4012~ RaiQ~
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE        101818202              2 FALSE               3 4012~ Tre ~
+#&gt; </span><span style='color: #949494;'># ... with 343 more rows, and 10 more variables: scoreValue </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span style='color: #949494;'>,</span><span>
+#&gt; </span><span style='color: #949494;'>#   period.displayValue </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, period.number </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span style='color: #949494;'>, clock.displayValue </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,</span><span>
+#&gt; </span><span style='color: #949494;'>#   team.id </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, type.id </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, type.text </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, play.id </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,</span><span>
+#&gt; </span><span style='color: #949494;'>#   athlete1.id </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, athlete2.id </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
