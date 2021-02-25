@@ -17,8 +17,8 @@ Get College Basketball schedule for a specific year from ESPN's API
 }
 \examples{
 # Get schedule from 2018 season (returns 1000 results, max allowable.)
-# Must iterate through dates to get full year's schedule
-cbb_espn_scoreboard (season = "2018")
+# Must iterate through dates to get full year's schedule, as below:
+cbb_espn_scoreboard (season = "201801")
 # Get schedule from date 2021-02-15
 cbb_espn_scoreboard (season = "20210215")
 }

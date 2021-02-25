@@ -310,8 +310,8 @@ cbb_espn_teams <- function(){
 #' @export
 #' @examples
 #' # Get schedule from 2018 season (returns 1000 results, max allowable.)
-#' # Must iterate through dates to get full year's schedule
-#' cbb_espn_scoreboard (season = "2018")
+#' # Must iterate through dates to get full year's schedule, as below:
+#' cbb_espn_scoreboard (season = "201801")
 #' # Get schedule from date 2021-02-15
 #' cbb_espn_scoreboard (season = "20210215")
 
@@ -425,3 +425,63 @@ cbb_espn_scoreboard <- function(season){
 
 #' @import utils
 utils::globalVariables(c("where"))
+
+#' Get College Basketball NET Rankings for the current date from the NCAA website
+#'
+#' @author Saiem Gilani
+#' @return Returns a tibble
+#' @importFrom dplyr %>% as_tibble
+#' @importFrom rvest html_nodes html_table
+#' @importFrom xml2 read_html
+#' @export
+#' @examples
+#' # Get current NCAA NET rankings
+#' cbb_ncaa_NET_rankings()
+
+cbb_ncaa_NET_rankings <- function(){
+
+
+  NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
+  x <- (NET_url %>%
+          xml2::read_html() %>%
+          rvest::html_nodes("table"))[[1]] %>%
+    rvest::html_table(fill=TRUE) %>%
+    dplyr::as_tibble()
+
+  return(x)
+}
+
+
+#' Get College Basketball AP and Coaches Poll Rankings
+#'
+#' @author Saiem Gilani
+#' @return Returns a tibble
+#' @importFrom dplyr %>%  bind_rows arrange
+#' @importFrom jsonlite fromJSON
+#' @importFrom tidyr unnest
+#' @export
+#' @examples
+#' # Get current AP and Coaches Poll rankings
+#' cbb_rankings()
+
+cbb_rankings <- function(){
+  options(stringsAsFactors = FALSE)
+  options(scipen = 999)
+
+  ranks_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings?groups=50"
+
+  ## Inputs
+  ## game_id
+
+
+  ranks_df <- jsonlite::fromJSON(ranks_url,flatten = TRUE)[['rankings']]
+  ranks_top25 <- ranks_df %>%
+    tidyr::unnest(.data$ranks)
+  ranks_others <- ranks_df %>%
+    tidyr::unnest(.data$others)
+
+  ranks <- dplyr::bind_rows(ranks_top25, ranks_others)
+  ranks <- ranks %>% dplyr::arrange(.data$name,-.data$points)
+  return(ranks)
+}
+

@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teams Dictionary
-Team link reference lookup for the package — teams_links • kenpomR</title>
+<title>Get College Basketball NET Rankings for the current date from the NCAA website — cbb_ncaa_NET_rankings • kenpomR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,10 +48,8 @@ Team link reference lookup for the package — teams_links • kenpomR</title>
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Teams Dictionary
-Team link reference lookup for the package — teams_links" />
-<meta property="og:description" content="Teams Dictionary
-Team link reference lookup for the package" />
+<meta property="og:title" content="Get College Basketball NET Rankings for the current date from the NCAA website — cbb_ncaa_NET_rankings" />
+<meta property="og:description" content="Get College Basketball NET Rankings for the current date from the NCAA website" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -167,34 +164,42 @@ Team link reference lookup for the package" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Teams Dictionary
-Team link reference lookup for the package</h1>
+    <h1>Get College Basketball NET Rankings for the current date from the NCAA website</h1>
     
-    <div class="hidden name"><code>teams_links.Rd</code></div>
+    <div class="hidden name"><code>cbb_ncaa_NET_rankings.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Teams Dictionary
-Team link reference lookup for the package</p>
+    <p>Get College Basketball NET Rankings for the current date from the NCAA website</p>
     </div>
 
-    <pre class="usage"><span class='va'>teams_links</span></pre>
+    <pre class="usage"><span class='fu'>cbb_ncaa_NET_rankings</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame with 357 rows and 6 variables:\</p><dl>
-<dt><code>Team</code></dt><dd><p>character.</p></dd>
-<dt><code>Team.link</code></dt><dd><p>character.</p></dd>
-<dt><code>team.link.ref</code></dt><dd><p>character.</p></dd>
-<dt><code>Year</code></dt><dd><p>double.</p></dd>
-<dt><code>Conf</code></dt><dd><p>character.</p></dd>
-<dt><code>Conf.link</code></dt><dd><p>character.</p></dd>
-<dt><code>conf.link.ref</code></dt><dd><p>character.</p></dd>
+    <p>Returns a tibble</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-</dl>
+    <p>Saiem Gilani</p>
 
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Get current NCAA NET rankings</span>
+<span class='fu'>cbb_ncaa_NET_rankings</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 347 x 12</span><span>
+#&gt;     Rank Previous School Conference Record Road  Neutral Home  `Quad 1` `Quad 2`
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span>     1        1 Gonza~ WCC        22-0   7-0   5-0     10-0  7-0      5-0     
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span>     2        2 Baylor Big 12     18-0   6-0   3-0     9-0   6-0      1-0     
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span>     3        3 Michi~ Big Ten    16-1   5-1   0-0     11-0  6-1      4-0     
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span>     4        4 Illin~ Big Ten    16-6   6-3   0-1     10-2  7-6      4-0     
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span>     5        5 Iowa   Big Ten    17-6   5-3   0-1     12-2  5-5      6-1     
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span>     6        6 Houst~ AAC        17-3   5-3   1-0     11-0  2-1      4-1     
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span>     7        7 Ohio ~ Big Ten    18-5   7-3   1-0     10-2  8-4      4-1     
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span>     8        8 Alaba~ SEC        18-5   5-2   2-2     11-1  6-3      6-2     
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span>     9        9 Virgi~ ACC        15-5   5-3   1-2     9-0   3-4      5-0     
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span>    10       10 Villa~ Big East   15-3   4-2   3-1     8-0   2-2      4-1     
+#&gt; </span><span style='color: #949494;'># ... with 337 more rows, and 2 more variables: `Quad 3` </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, `Quad 4` </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

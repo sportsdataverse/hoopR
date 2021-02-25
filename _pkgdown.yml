@@ -49,6 +49,8 @@ reference:
       - '`cbb_espn_conferences`'
       - '`cbb_espn_teams`'
       - '`cbb_espn_scoreboard`'
+      - '`cbb_ncaa_NET_rankings`'
+      - '`cbb_rankings`'
       - '`get_efficiency`'
       - '`get_fourfactors`'
       - '`get_pomeroy_ratings`'
