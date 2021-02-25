@@ -17,9 +17,9 @@ statistics website, [kenpom.com](https://kenpom.com). It provides users
 with an active subscription the capability to scrape the website tables
 and analyze the data for themselves.
 
-#### New in v0.2.0-2: Support for ESPN’s college basketball game data
+#### New in v0.2.0-3: Support for ESPN’s college basketball game data and NCAA NET Rankings
 
-See the following ~~four~~ seven functions:
+See the following ~~four~~ eight functions:
 
   - [`kenpomR::cbb_espn_game_all()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_game_all.html)
 
@@ -37,6 +37,12 @@ See the following ~~four~~ seven functions:
 
   - [`kenpomR::cbb_espn_scoreboard()`](https://saiemgilani.github.io/kenpomR/reference/cbb_espn_scoreboard.html)
     (bumps to v0.2.2)
+
+  - [`kenpomR::cbb_ncaa_NET_rankings()`](https://saiemgilani.github.io/kenpomR/reference/cbb_ncaa_NET_rankings.html)
+    (bumps to v0.2.3)
+
+  - [`kenpomR::cbb_rankings()`](https://saiemgilani.github.io/kenpomR/reference/cbb_rankings.html)
+    (bumps to v0.2.3)
 
 ## Installation
 
