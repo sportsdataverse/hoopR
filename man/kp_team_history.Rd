@@ -8,8 +8,6 @@ kp_team_history(team)
 }
 \arguments{
 \item{team}{Team filter to select.}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 30 columns:

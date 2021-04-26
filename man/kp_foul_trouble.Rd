@@ -10,8 +10,6 @@ kp_foul_trouble(min_year, max_year)
 \item{min_year}{First year of data to pull}
 
 \item{max_year}{Last year of data to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get 2-Foul Participation Stats

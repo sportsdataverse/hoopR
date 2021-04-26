@@ -12,8 +12,6 @@ kp_teamstats(min_year, max_year, defense = FALSE)
 \item{max_year}{Last year of data to pull}
 
 \item{defense}{Choose whether to pull offense(default) with FALSE or defense with TRUE}
-
-\item{browser}{User login session}
 }
 \description{
 Get Team Stats

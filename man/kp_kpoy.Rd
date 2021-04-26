@@ -8,8 +8,6 @@ kp_kpoy(year)
 }
 \arguments{
 \item{year}{Year of data to pull (earliest year of data available: 2011)}
-
-\item{browser}{User login session}
 }
 \description{
 Get KPoY Leaders Tables

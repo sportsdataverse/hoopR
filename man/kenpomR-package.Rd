@@ -13,7 +13,8 @@ The R package kenpomR is for working with Ken Pomeroy's college basketball data.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://saiemgilani.github.io/kenpomR (website) https://www.github.com/saiemgilani/kenpomR (devel)}
+  \item \url{https://saiemgilani.github.io/kenpomR}
+  \item \url{https://www.github.com/saiemgilani/kenpomR}
   \item Report bugs at \url{https://www.github.com/saiemgilani/kenpomR/issues}
 }
 

@@ -25,8 +25,6 @@ No filter applied by default.}
 Only available if specific conference is defined. Only available for season after 2013, FALSE by default.}
 
 \item{year}{Year of data to pull (earliest year of data available: 2004)}
-
-\item{browser}{User login session}
 }
 \description{
 Get Player Stats Leaders by Metric

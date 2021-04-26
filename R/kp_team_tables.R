@@ -1,6 +1,6 @@
 #' Get team schedule results
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
@@ -328,7 +328,7 @@ kp_team_schedule <- function(team, year){
 
 #' Get KenPom's team game plan page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
@@ -518,7 +518,7 @@ kp_gameplan <- function(team, year=2020){
 
 #' Get KenPom's team opponent tracker page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #' @keywords Opponent Tracker
@@ -661,7 +661,7 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
 
 #' Get KenPom's player stats from the team page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
@@ -893,7 +893,7 @@ kp_team_players <- function(team, year= 2020){
 
 #' Get KenPom's player career stats from the player page
 #'
-#' @param browser User login session
+#'
 #' @param player_id Player Id filter to select.
 #'
 #' @keywords Player Career Stats
@@ -1113,7 +1113,7 @@ kp_player_career <- function(player_id){
 }
 #' Get Minutes Matrix from Expanded Player Page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
@@ -1181,7 +1181,7 @@ kp_minutes_matrix <- function(team, year = 2020){
 
 #' Get Team Player Stats
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
@@ -1386,7 +1386,7 @@ kp_team_player_stats <- function(team, year = 2020){
 
 #' Get Depth Chart Last 5 Games from Team Page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #' @return A data frame with 12 columns:
@@ -1551,7 +1551,7 @@ kp_team_depth_chart <- function(team, year= 2020){
 
 #' Get Lineups Last 5 Games from Team Page
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #' @return A data frame with 9 columns:

@@ -8,8 +8,6 @@ kp_arenas(year = 2020)
 }
 \arguments{
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 6 columns:

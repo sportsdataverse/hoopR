@@ -2,7 +2,7 @@
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Ratings
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -82,7 +82,7 @@ kp_pomeroy_ratings <- function(min_year, max_year){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Efficiency
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -213,7 +213,7 @@ kp_efficiency <- function(min_year, max_year){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Four Factors
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -295,7 +295,7 @@ kp_fourfactors <- function(min_year, max_year){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Points
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -377,7 +377,7 @@ kp_pointdist <- function(min_year, max_year){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Roster
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -507,7 +507,7 @@ kp_height <- function(min_year,max_year){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param browser User login session
+#'
 #' @keywords Foul Trouble
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -586,7 +586,7 @@ kp_foul_trouble <- function(min_year, max_year){
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
-#' @param browser User login session
+#'
 #' @keywords Team
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -737,7 +737,7 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
 #' @param conf_only Used to define whether stats should reflect conference games only.\cr
 #' Only available if specific conference is defined. Only available for season after 2013, FALSE by default.
 #' @param year Year of data to pull (earliest year of data available: 2004)
-#' @param browser User login session
+#'
 #' @keywords Player
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -863,7 +863,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 #' Get KPoY Leaders Tables
 #'
 #' @param year Year of data to pull (earliest year of data available: 2011)
-#' @param browser User login session
+#'
 #' @keywords Leaders
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that

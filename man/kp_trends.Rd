@@ -6,9 +6,6 @@
 \usage{
 kp_trends()
 }
-\arguments{
-\item{browser}{User login session}
-}
 \value{
 A data frame with 19 columns:
 \describe{
