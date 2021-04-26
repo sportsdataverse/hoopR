@@ -1,6 +1,6 @@
 Package: kenpomR
 Title: A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website
-Version: 0.2.3
+Version: 0.3.0
 Authors@R: person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))
 Description: The R package kenpomR is for working with Ken Pomeroy's college basketball data. A scraping interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
 License: MIT + file LICENSE
@@ -8,15 +8,14 @@ LazyData: true
 URL: https://saiemgilani.github.io/kenpomR (website) https://www.github.com/saiemgilani/kenpomR (devel)
 BugReports: https://www.github.com/saiemgilani/kenpomR/issues
 Encoding: UTF-8
-Depends: R (>= 2.10)
+Depends: R (>= 3.5.0)
 Imports: 
     dplyr,
     xml2,
     rlang,
-    rvest,
+    rvest (>= 1.0.0),
     stringi,
-    stringr,
-    tidyr,
+    stringr (>= 1.3.0),
     data.table,
     assertthat,
     httr,
@@ -25,9 +24,22 @@ Imports:
     magrittr,
     glue,
     jsonlite,
-    purrr,
-    tibble
+    purrr (>= 0.3.0),
+    rlang,
+    tibble (>= 3.0),
+    tidyr (>= 1.0.0),
+    usethis (>= 1.6.0)
+Suggests: 
+    cli (>= 1.1.0),
+    crayon (>= 1.3.4),
+    curl,
+    DBI,
+    ggplot2,
+    ggrepel,
+    qs (>= 0.23.5),
+    rmarkdown,
+    RSQLite,
+    stats,
+    testthat
 RoxygenNote: 7.1.1
-Suggests:
-    knitr,
-    rmarkdown
+Roxygen: list(markdown = TRUE)
