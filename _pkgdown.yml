@@ -1,91 +1,128 @@
+url: http://saiemgilani.github.io/kenpomR
+title: kenpomR
 template:
   params:
     bootswatch: flatly
-title: kenpomR
-url: http://saiemgilani.github.io/kenpomR
+    ganalytics: G-600N1Z38KJ
 authors:
   Saiem Gilani:
    href: https://twitter.com/saiemgilani
 home:
+  title: An R package to quickly obtain clean and tidy men's basketball play by play data
+  description: Functions to Access Men's Basketball Play by Play Data
+  icon: fa-home
+  href: index.html
+  links:
+  - text: kenpomR beginner's guide
+    href: articles/intro-to-kenpomR.html
 navbar:
+  structure:
+    left:  [home, intro, reference, articles, news, games, network, data, repo]
+    right: [twitter, github]
   icon: https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.ico
   title: "KenPomR"
-  left:
-    - icon: fa-home
-      href: index.html
-    - icon: fa-question-circle-o
-      text: "Tutorials"
+  components:
+    twitter:
+      icon: "fab fa-twitter fa-lg"
+      href: http://twitter.com/saiemgilani
+    news:
+      icon: "fas fa-newspaper"
+      text: " News"
+      href: news/index.html
+    data:
+      icon: "fas fa-database"
+      text: " Data"
+      menu:
+      - text: "Data Repository"
+        href: https://github.com/saiemgilani/kenpomR-data
+    reference:
+      icon: "fas fa-code"
+      text: " Funcs"
+      href: reference/index.html
+      menu:
+      - text: "Function Index"
+        href: reference/index.html
+    articles:
+      icon: "fas fa-book-reader"
+      text: " Articles"
       menu:
       - text: Vignettes
         href: articles/index.html
-      - text: "Introductory"
       - text: "Intro to kenpomR"
         href: articles/intro-to-kenpomR.html
       - text: "Example Functions"
         href: articles/example-functions.html
-    - icon: fa-file-code-o
-      text: "Functions"
-      href: reference/index.html
-    - icon: fa-newspaper-o
-      text: "News"
-      href: news/index.html
-    - icon: fa-database
-      text: "Data"
-      href: https://github.com/saiemgilani/kenpomR-data
-  right:
-    - icon: fab fa-twitter fa-lg
-      href: https://twitter.com/saiemgilani
-    - icon: fab fa-github fa-lg
-      text: "GitHub"
+    network:
+      icon: "fas fa-project-diagram"
+      text: " SDV"
+      menu:
+      - text: SportsDataverse
+        href: https://sportsdataverse.org/
+      - text: cfbfastR
+        href: https://saiemgilani.github.io/cfbfastR/
+      - text: wehoop
+        href: https://saiemgilani.github.io/wehoop/
+      - text: cfbrecruitR
+        href: https://saiemgilani.github.io/cfbrecruitR/
+    github:
+      icon: "fab fa-github fa-lg"
       href: https://github.com/saiemgilani/kenpomR/
+    repo:
+      url:
+      home: https://github.com/saiemgilani/kenpomR/
+      source: https://github.com/saiemgilani/kenpomR/blob/master/
+      issue: https://github.com/saiemgilani/kenpomR/issues/issues/
+      user: https://github.com/saiemgilani/
+
 reference:
-  - subtitle: Exported Functions
+  - title: ESPN Data
+  - subtitle: Men's College Basketball Data Functions
+    desc: Functions exported by kenpomR to access ESPN Men's College Basketball Data
+    contents:
+      - starts_with("espn_")
+  - title: NCAA Data
+  - subtitle: NCAA Data Functions
+    desc: Functions exported by kenpomR to access NCAA Men's College Basketball Data
+    contents:
+      - starts_with("ncaa_")
+  - title: KenPom Data
+  - subtitle: KenPom Data Functions
     desc: Functions exported by kenpomR
     contents:
-      - '`cbb_espn_game_all`'
-      - '`cbb_espn_pbp`'
-      - '`cbb_espn_team_box`'
-      - '`cbb_espn_player_box`'
-      - '`cbb_espn_conferences`'
-      - '`cbb_espn_teams`'
-      - '`cbb_espn_scoreboard`'
-      - '`cbb_ncaa_NET_rankings`'
-      - '`cbb_rankings`'
-      - '`get_efficiency`'
-      - '`get_fourfactors`'
-      - '`get_pomeroy_ratings`'
-      - '`get_pointdist`'
-      - '`get_height`'
-      - '`get_foul_trouble`'
-      - '`get_playerstats`'
-      - '`get_player_career`'
-      - '`get_team_players`'
-      - '`get_minutes_matrix`'
-      - '`get_team_schedule`'
-      - '`get_team_player_stats`'
-      - '`get_box`'
-      - '`get_winprob`'
-      - '`get_gameplan`'
-      - '`get_opptracker`'
-      - '`get_teamstats`'
-      - '`get_team_depth_chart`'
-      - '`get_team_lineups`'
-      - '`get_team_history`'
-      - '`get_records_team`'
-      - '`get_program_ratings`'
-      - '`get_kpoy`'
-      - '`get_trends`'
-      - '`get_hca`'
-      - '`get_game_attrs`'
-      - '`get_fanmatch`'
-      - '`get_officials`'
-      - '`get_arenas`'
-      - '`get_coach_history`'
-      - '`get_pomeroy_archive_ratings`'
-      - '`get_conf`'
-      - '`get_confstats`'
-      - '`get_confhistory`'
-      - '`get_conf`'
+      - '`kp_efficiency`'
+      - '`kp_fourfactors`'
+      - '`kp_pomeroy_ratings`'
+      - '`kp_pointdist`'
+      - '`kp_height`'
+      - '`kp_foul_trouble`'
+      - '`kp_playerstats`'
+      - '`kp_player_career`'
+      - '`kp_team_players`'
+      - '`kp_minutes_matrix`'
+      - '`kp_team_schedule`'
+      - '`kp_team_player_stats`'
+      - '`kp_box`'
+      - '`kp_winprob`'
+      - '`kp_gameplan`'
+      - '`kp_opptracker`'
+      - '`kp_teamstats`'
+      - '`kp_team_depth_chart`'
+      - '`kp_team_lineups`'
+      - '`kp_team_history`'
+      - '`kp_program_ratings`'
+      - '`kp_kpoy`'
+      - '`kp_trends`'
+      - '`kp_hca`'
+      - '`kp_game_attrs`'
+      - '`kp_fanmatch`'
+      - '`kp_officials`'
+      - '`kp_arenas`'
+      - '`kp_coach_history`'
+      - '`kp_pomeroy_archive_ratings`'
+      - '`kp_conf`'
+      - '`kp_confstats`'
+      - '`kp_confhistory`'
+      - '`kp_conf`'
       - '`login`'
       - '`check_internet`'
       - '`check_status`'
