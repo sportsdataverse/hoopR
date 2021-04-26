@@ -3,19 +3,77 @@
 
 <!-- badges: start -->
 
-![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
-[![Build
-Status](https://travis-ci.com/saiemgilani/kenpomR.svg?branch=master)](https://travis-ci.com/saiemgilani/kenpomR)
-![R-CMD-check](https://github.com/saiemgilani/kenpomR/workflows/R-CMD-check/badge.svg)
+![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)
+![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/cfbfastr/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)
+![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)
 [![Twitter
-Follow](https://img.shields.io/twitter/follow/saiemgilani?style=social)](https://twitter.com/saiemgilani)
+Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
 <!-- badges: end -->
 
-`kenpomR` is an R package for working with college basketball data. A
-scraping and aggregating interface for Ken Pomeroy’s college basketball
-statistics website, [kenpom.com](https://kenpom.com). It provides users
-with an active subscription the capability to scrape the website tables
-and analyze the data for themselves.
+[**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package
+for working with men’s college basketball data.
+
+The package has functions to access **live play by play and box score**
+data from ESPN with shot locations when available.
+
+It is additionally a scraping and aggregating interface for Ken
+Pomeroy’s men’s college basketball statistics website,
+[kenpom.com](https://kenpom.com). It provides users with an active
+subscription the capability to scrape the website tables and analyze the
+data for themselves.
+
+## Installation
+
+You can install the released version of
+[**`kenpomR`**](https://github.com/saiemgilani/kenpomR/) from
+[GitHub](https://github.com/saiemgilani/kenpomR) with:
+
+``` r
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/kenpomR")
+```
+
+``` r
+# if you would prefer devtools installation
+if (!requireNamespace('devtools', quietly = TRUE)){
+  install.packages('devtools')
+}
+# Alternatively, using the devtools package:
+devtools::install_github(repo = "saiemgilani/kenpomR")
+```
+
+## Documentation
+
+For more information on the package and function reference, please see
+the [**`kenpomR`** documentation
+website](https://saiemgilani.github.io/kenpomR/).
+
+## **Breaking Changes**
+
+[**Full News on
+Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
+
+# **kenpomR 0.3.0**
+
+  - `R` version 3.5.0 or greater dependency added
+  - `purrr` version 0.3.0 or greater dependency added
+  - `rvest` version 1.0.0 or greater dependency added
+  - `progressr` version 0.6.0 or greater dependency added
+  - `usethis` version 1.6.0 or greater dependency added
+  - `xgboost` version 1.1.0 or greater dependency added
+  - `tidyr` version 1.0.0 or greater dependency added
+  - `stringr` version 1.3.0 or greater dependency added
+  - `tibble` version 3.0.0 or greater dependency added
+  - `furrr` dependency added
+  - `future` dependency added
+
+<details>
+
+<summary>View more version news</summary>
 
 #### New in v0.2.0-3: Support for ESPN’s college basketball game data and NCAA NET Rankings
 
@@ -44,24 +102,28 @@ See the following ~~four~~ eight functions:
   - [`kenpomR::cbb_rankings()`](https://saiemgilani.github.io/kenpomR/reference/cbb_rankings.html)
     (bumps to v0.2.3)
 
-## Installation
+</details>
 
-You can install `kenpomR` from
-[GitHub](https://github.com/saiemgilani/kenpomR) with:
+## Current Issues
 
-``` r
-# Install via devtools package using the following:
-devtools::install_github(repo = "saiemgilani/kenpomR")
-```
+| issue | icon | title | labels | opened\_by | date | closed |
+| :---- | :--- | :---- | :----- | :--------- | :--- | :----- |
+| NA    | NA   | NA    | NA     | NA         | NA   | NA     |
 
-## Documentation
+<details>
 
-For more information on the package and function reference, please see
-the `kenpomR` [documentation](https://saiemgilani.github.io/kenpomR/).
+<summary>View More</summary>
 
-## Code of Conduct
+| issue | icon                                                                                                                           | title                                                                                                                   | labels | opened\_by                                      | date       | closed              |
+| :---- | :----------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
+| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span> | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/kenpomR/issues/1)</span> | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
 
-Please note that the `kenpomR` project is released with a [Contributor
-Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+</details>
+
+<br>
+
+## **Our Authors**
+
+  - [Saiem Gilani](https://twitter.com/saiemgilani)  
+    <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
+    <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>

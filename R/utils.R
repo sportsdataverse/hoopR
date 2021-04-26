@@ -1,23 +1,77 @@
-#' User Login Function
-#' Requires a subscription to KenPom.com
+#' @title
+#' **KenPom Login and Password credentials**
+#' @description Save your KenPom login e-mail and password as the system environment variables `KP_USER` and `KP_PW`
+#' @details
+#' **Using your KenPom subscription with the package:** \cr
+#'
+#' Run [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html) and THEN paste the following in the new script that pops up (with**out** quotations)\cr
+#' ```r
+#' KP_USER = YOUR-EMAIL@DOMAIN.COM
+#' KP_PW = XXX-YOUR-PASSWORD-XXX
+#' ```
+#' You can save the login information for consistent usage by adding \cr
+#' ```
+#' KP_USER = YOUR-EMAIL@DOMAIN.COM
+#' KP_PW = XXX-YOUR-PASSWORD-XXX
+#' ``` \cr
+#' to your .REnviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)).\cr
+#' \cr
+#'
+#' For less consistent usage:\cr
+#' At the beginning of every session or within an R environment, save your login e-mail and password as the environment variables `KP_USER` and `KP_PW` (with quotations) using a command like the following.\cr
+#' ```{r}
+#' Sys.setenv(KP_USER = "YOUR-EMAIL@DOMAIN.COM")
+#' Sys.setenv(KP_PW = "XXX-YOUR-PASSWORD-XXX")
+#' ```
+#' @name kp_user_pw
+NULL
+#' @rdname kp_user_pw
+#' @title User Login Function
+#' @description Requires a subscription to KenPom.com
 #'
 #' @param user_email User subscription e-mail
 #' @param user_pw  User subscription password
 #' @keywords Login
 #' @importFrom rvest html_session html_form set_values submit_form
 #' @export
-login <- function(user_email, user_pw){
+login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW")){
 
   url <- "https://kenpom.com/index.php"
   #create a web session with the desired login address
-  my_session <- rvest::html_session(url)
+  my_session <- rvest::session(url)
   login_form <- rvest::html_form(my_session)[[1]]
   #in this case the submit is the 2nd form
-  filled_form <- rvest::set_values(login_form, email = user_email, password = user_pw)
-  rvest::submit_form(my_session, filled_form)
+  filled_form <- rvest::html_form_set(login_form, email = user_email, password = user_pw)
+  rvest::session_submit(my_session, filled_form)
 
   return(my_session)
 }
+#' @rdname kp_user_pw
+#' @export
+kp_user_email <- function() {
+  kp_user <- Sys.getenv("KP_USER")
+
+  if (kp_user == "") {
+    return(NA_character_)
+  } else {
+    return(kp_user)
+  }
+}
+#' @rdname kp_user_pw
+#' @export
+kp_password <- function() {
+  kp_pw <- Sys.getenv("KP_PW")
+
+  if (kp_pw == "") {
+    return(NA_character_)
+  } else {
+    return(kp_pw)
+  }
+}
+
+#' @rdname kp_user_pw
+#' @export
+has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
 
 #' Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging
 #' @keywords Util
