@@ -10,8 +10,6 @@ kp_team_schedule(team, year)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get team schedule results

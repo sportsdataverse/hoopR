@@ -8,8 +8,6 @@ kp_pomeroy_archive_ratings(date)
 }
 \arguments{
 \item{date}{Date (YYYY-MM-DD)}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 22 columns:

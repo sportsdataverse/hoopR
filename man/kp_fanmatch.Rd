@@ -8,8 +8,6 @@ kp_fanmatch(date = "2020-02-12")
 }
 \arguments{
 \item{date}{Date of games to pull (YYYY-MM-DD)}
-
-\item{browser}{User_login session}
 }
 \value{
 A data frame 16 columns:

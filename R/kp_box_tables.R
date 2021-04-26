@@ -2,7 +2,7 @@
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#' @param browser User login session
+#'
 #' @keywords Game Box Score
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
@@ -126,7 +126,7 @@ kp_box <- function(game_id, year){
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#' @param browser User login session
+#'
 #' @keywords Win Probability
 #' @importFrom rlang .data
 #' @importFrom assertthat assert_that
