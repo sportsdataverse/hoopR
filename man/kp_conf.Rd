@@ -16,8 +16,6 @@ kp_conf(year, conf)
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
 you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
 No filter applied by default.}
-
-\item{browser}{User login session}
 }
 \value{
 A list of 7 dataframes accessible via \code{[[1]]},\code{[[2]]},...,,\code{[[7]]}\cr

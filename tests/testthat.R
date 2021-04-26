@@ -1,5 +1,5 @@
 library(testthat)
-library(cfbfastR)
+library(kenpomR)
 
-test_check("cfbfastR")
+test_check("kenpomR")
 

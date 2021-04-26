@@ -12,8 +12,6 @@ kp_game_attrs(year = 2020, attr = "Excitement")
 \item{attr}{Game Attribute, valid values include: \cr
 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 'Upsets','Busts','Comeback','Window'}
-
-\item{browser}{User login session}
 }
 \description{
 Get Game Attributes

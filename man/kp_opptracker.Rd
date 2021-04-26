@@ -10,8 +10,6 @@ kp_opptracker(team, year = as.integer(format(Sys.Date(), "\%Y")))
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get KenPom's team opponent tracker page

@@ -6,9 +6,6 @@
 \usage{
 kp_hca()
 }
-\arguments{
-\item{browser}{User login session}
-}
 \value{
 A data frame with 14 columns:
 \describe{
