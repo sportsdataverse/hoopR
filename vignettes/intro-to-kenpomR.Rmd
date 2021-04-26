@@ -41,14 +41,14 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 
 ```
 
-Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the ```kenpomR::get_pomeroy_ratings()``` function, which takes the following arguments:
+Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the ```kenpomR::kp_pomeroy_ratings()``` function, which takes the following arguments:
 
 -   ```browser``` - User login session
 -   ```min_year``` - First year of data to pull
 -   ```max_year``` - Last year of data to pull
 
 ```{r message = FALSE}
-rtgs <- get_pomeroy_ratings(browser, min_year = 2010, max_year = 2020)
+rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2020)
 library(stringr)
 rtgs <- rtgs %>% 
   mutate(Team = stringr::str_remove(.data$Team, "\\*"),
@@ -262,27 +262,27 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 ![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
 
 ```{r efficiency, message = FALSE}
-browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
-effs <- get_efficiency(browser, min_year = 2020, max_year = 2020)
+
+effs <- kp_efficiency(min_year = 2020, max_year = 2020)
 glimpse(effs)
 ```
 
 ```{r fourfactors, message = FALSE}
-browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
-ff <-  get_fourfactors(browser, min_year = 2020, max_year = 2020)
+
+ff <-  kp_fourfactors(min_year = 2020, max_year = 2020)
 glimpse(ff)
 ```
 
 
 ```{r hgts, message = FALSE}
-browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
-hgts <-  get_height(browser, min_year = 2020, max_year = 2020)
+
+hgts <-  kp_height(min_year = 2020, max_year = 2020)
 
 glimpse(hgts)
 ```
 #### All Games Player stats
 ```{r plyrstats, message = FALSE}
-plyrstats <- get_team_player_stats(browser, team = 'Florida St.', year = 2020)
+plyrstats <- kp_team_player_stats(team = 'Florida St.', year = 2020)
 
 
 glimpse(plyrstats[[1]])
