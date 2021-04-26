@@ -64,6 +64,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-600N1Z38KJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-600N1Z38KJ');
+</script>
+
 
   </head>
 
@@ -81,7 +91,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -89,15 +99,29 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa-home"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-question-circle-o"></span>
+    <span class="fas fa-code"></span>
      
-    Tutorials
+     Funcs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../reference/index.html">Function Index</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-book-reader"></span>
+     
+     Articles
      
     <span class="caret"></span>
   </a>
@@ -105,7 +129,6 @@
     <li>
       <a href="../articles/index.html">Vignettes</a>
     </li>
-    <li class="dropdown-header">Introductory</li>
     <li>
       <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
     </li>
@@ -115,30 +138,56 @@
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">
-    <span class="fas fa-file-code-o"></span>
-     
-    Functions
-  </a>
-</li>
-<li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="fas fa-newspaper"></span>
      
-    News
+     News
   </a>
 </li>
-<li>
-  <a href="https://github.com/saiemgilani/kenpomR-data">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-project-diagram"></span>
+     
+     SDV
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://sportsdataverse.org/">SportsDataverse</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/cfbfastR/">cfbfastR</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/wehoop/">wehoop</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/cfbrecruitR/">cfbrecruitR</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fas fa-database"></span>
      
-    Data
+     Data
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a></a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://twitter.com/saiemgilani">
+  <a href="http://twitter.com/saiemgilani">
     <span class="fab fa-twitter fa-lg"></span>
      
   </a>
@@ -147,7 +196,6 @@
   <a href="https://github.com/saiemgilani/kenpomR/">
     <span class="fab fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>

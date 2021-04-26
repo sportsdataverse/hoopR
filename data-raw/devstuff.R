@@ -8,7 +8,7 @@ unlink("DESCRIPTION")
 my_desc <- description$new("!new")
 
 # Set your package name
-my_desc$set("Package", "kenpomR")
+my_desc$set("Package", "hoopRs")
 
 #Set your name
 my_desc$set("Authors@R", "person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))")
@@ -20,12 +20,12 @@ my_desc$set("Maintainer","Saiem Gilani <saiem.gilani@gmail.com>")
 my_desc$set_version("0.0.0.9")
 
 # The title of your package
-my_desc$set(Title = "A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website")
+my_desc$set(Title = "A Scraping Interface for NBA Statistics Website")
 # The description of your package
-my_desc$set(Description = "The R package kenpomR is for working with Ken Pomeroy's college basketball data. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.")
+my_desc$set(Description = "The R package hoopRs is for working with NBA.com to scrape the website tables and analyze the data for themselves.")
 # The urls
-my_desc$set("URL", "https://saiemgilani.github.io/kenpomR (website) https://www.github.com/saiemgilani/kenpomR (devel)")
-my_desc$set("BugReports", "http://www.github.com/saiemgilani/kenpomR/issues")
+my_desc$set("URL", "https://saiemgilani.github.io/hoopRs, https://www.github.com/saiemgilani/hoopRs")
+my_desc$set("BugReports", "http://www.github.com/saiemgilani/hoopRs/issues")
 my_desc$set("SystemRequirements","ImageMagick++: ImageMagick-c++-devel (rpm) or libmagick++-dev (deb)")
 my_desc$set("LinkingTo", "Rcpp")
 
@@ -33,25 +33,32 @@ my_desc$set("LinkingTo", "Rcpp")
 my_desc$write(file = "DESCRIPTION")
 
 # If you want to use the MIT licence, code of conduct, and lifecycle badge
-use_mit_license(name = "Saiem Gilani")
-use_code_of_conduct()
-use_lifecycle_badge("Experimental")
+usethis::use_mit_license(copyright_holder = "Saiem Gilani")
+usethis::use_lifecycle_badge("Experimental")
 
 # Get the dependencies
-use_package("dplyr")
-use_package("tidyr")
-use_package("stringr")
-use_package("stringi")
-use_package("rvest")
-use_package("rlang")
-use_package("xml2")
-use_package("data.table")
-use_package("assertthat")
-use_package("httr")
-use_package("curl")
-use_package("attempt")
-use_package("magrittr")
-use_package("glue")
+usethis::use_package("dplyr")
+usethis::use_package("tidyr", min_version = "1.0.0")
+usethis::use_package("stringr", min_version = "1.3.0")
+usethis::use_package("stringi")
+usethis::use_package("rvest", min_version = "1.0.0")
+usethis::use_package("rlang")
+usethis::use_package("xml2")
+usethis::use_package("data.table")
+usethis::use_package("httr")
+usethis::use_package("glue")
+usethis::use_package("jsonlite")
+usethis::use_package("furrr")
+usethis::use_package("future")
+usethis::use_package("purrr", min_version = "0.3.0")
+usethis::use_package("R",type = "Depends","3.5")
+usethis::use_package("progressr", min_version = "0.6.0")
+usethis::use_package("tibble", min_version = "3.0")
+usethis::use_package("usethis", min_version = "1.6.0")
+
+use_package("lubridate")
+use_package("memoise")
+use_package("readr")
 # currently not included because of the animation packages delicate dependencies
 # use_package("animation")
 # use_package("magick")
@@ -75,6 +82,8 @@ use_package("glue")
 # usethis::use_vignette("intro-to-kenpomR")
 
 # Clean your description
-use_tidy_description()
-use_news_md()
-use_github_links()
+usethis::use_tidy_description()
+usethis::use_news_md()
+usethis::use_github_links()
+usethis::use_readme_rmd()
+usethis::use_github_action_check_release()

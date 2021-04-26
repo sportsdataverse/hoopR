@@ -64,6 +64,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-600N1Z38KJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-600N1Z38KJ');
+</script>
+
 
   </head>
 
@@ -81,7 +91,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -89,15 +99,29 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa-home"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-question-circle-o"></span>
+    <span class="fas fa-code"></span>
      
-    Tutorials
+     Funcs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../reference/index.html">Function Index</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-book-reader"></span>
+     
+     Articles
      
     <span class="caret"></span>
   </a>
@@ -105,7 +129,6 @@
     <li>
       <a href="../articles/index.html">Vignettes</a>
     </li>
-    <li class="dropdown-header">Introductory</li>
     <li>
       <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
     </li>
@@ -115,30 +138,56 @@
   </ul>
 </li>
 <li>
-  <a href="../reference/index.html">
-    <span class="fas fa-file-code-o"></span>
-     
-    Functions
-  </a>
-</li>
-<li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="fas fa-newspaper"></span>
      
-    News
+     News
   </a>
 </li>
-<li>
-  <a href="https://github.com/saiemgilani/kenpomR-data">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-project-diagram"></span>
+     
+     SDV
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://sportsdataverse.org/">SportsDataverse</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/cfbfastR/">cfbfastR</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/wehoop/">wehoop</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/cfbrecruitR/">cfbrecruitR</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fas fa-database"></span>
      
-    Data
+     Data
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a></a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://twitter.com/saiemgilani">
+  <a href="http://twitter.com/saiemgilani">
     <span class="fab fa-twitter fa-lg"></span>
      
   </a>
@@ -147,7 +196,6 @@
   <a href="https://github.com/saiemgilani/kenpomR/">
     <span class="fab fa-github fa-lg"></span>
      
-    GitHub
   </a>
 </li>
       </ul>
@@ -175,10 +223,117 @@
     </colgroup>
 
     <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-espn-data" class="hasAnchor"><a href="#section-espn-data" class="anchor"></a>ESPN Data</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
       
       <tr>
         <th colspan="2">
-          <h3 id="section-exported-functions" class="hasAnchor"><a href="#section-exported-functions" class="anchor"></a>Exported Functions</h3>
+          <h3 id="section-men-s-college-basketball-data-functions" class="hasAnchor"><a href="#section-men-s-college-basketball-data-functions" class="anchor"></a>Men's College Basketball Data Functions</h3>
+          <p class="section-desc"><p>Functions exported by kenpomR to access ESPN Men’s College Basketball Data</p></p>
+        </th>
+      </tr>
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code> <code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code> </p>
+        </td>
+        <td><p>Get ESPN conference names and ids</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code> <code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball data (Pbp, Team and Player Box)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_pbp.html">espn_mbb_pbp()</a></code> <code><a href="espn_mbb_pbp.html">espn_mbb_pbp()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball PBP data</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code> <code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball player box scores</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code> <code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code> </p>
+        </td>
+        <td><p>Get men's college basketball AP and Coaches Poll rankings from ESPN</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code> <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball schedule for a specific year</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code> <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball team names and ids</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="espn_mbb_team_box.html">espn_mbb_team_box()</a></code> <code><a href="espn_mbb_team_box.html">espn_mbb_team_box()</a></code> </p>
+        </td>
+        <td><p>Get ESPN men's college basketball team box scores</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-ncaa-data" class="hasAnchor"><a href="#section-ncaa-data" class="anchor"></a>NCAA Data</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      <tr>
+        <th colspan="2">
+          <h3 id="section-ncaa-data-functions" class="hasAnchor"><a href="#section-ncaa-data-functions" class="anchor"></a>NCAA Data Functions</h3>
+          <p class="section-desc"><p>Functions exported by kenpomR to access NCAA Men’s College Basketball Data</p></p>
+        </th>
+      </tr>
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="ncaa_mbb_NET_rankings.html">ncaa_mbb_NET_rankings()</a></code> <code><a href="ncaa_mbb_NET_rankings.html">ncaa_mbb_NET_rankings()</a></code> </p>
+        </td>
+        <td><p>Get men's college basketball NET rankings for the current date from the NCAA website</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-kenpom-data" class="hasAnchor"><a href="#section-kenpom-data" class="anchor"></a>KenPom Data</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      <tr>
+        <th colspan="2">
+          <h3 id="section-kenpom-data-functions" class="hasAnchor"><a href="#section-kenpom-data-functions" class="anchor"></a>KenPom Data Functions</h3>
           <p class="section-desc"><p>Functions exported by kenpomR</p></p>
         </th>
       </tr>
@@ -189,268 +344,207 @@
       <tr>
         
         <td>
-          <p><code><a href="cbb_espn_game_all.html">cbb_espn_game_all()</a></code> </p>
-        </td>
-        <td><p>Get ESPN Data (Pbp, Team and Player Box)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_pbp.html">cbb_espn_pbp()</a></code> </p>
-        </td>
-        <td><p>Get ESPN PBP</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_team_box.html">cbb_espn_team_box()</a></code> </p>
-        </td>
-        <td><p>Get ESPN Team Box</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_player_box.html">cbb_espn_player_box()</a></code> </p>
-        </td>
-        <td><p>Get ESPN Player Box</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_conferences.html">cbb_espn_conferences()</a></code> </p>
-        </td>
-        <td><p>Get ESPN Conference Names and Ids</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_teams.html">cbb_espn_teams()</a></code> </p>
-        </td>
-        <td><p>Get ESPN Team Names and Ids</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_espn_scoreboard.html">cbb_espn_scoreboard()</a></code> </p>
-        </td>
-        <td><p>Get College Basketball schedule for a specific year from ESPN's API</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_ncaa_NET_rankings.html">cbb_ncaa_NET_rankings()</a></code> </p>
-        </td>
-        <td><p>Get College Basketball NET Rankings for the current date from the NCAA website</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cbb_rankings.html">cbb_rankings()</a></code> </p>
-        </td>
-        <td><p>Get College Basketball AP and Coaches Poll Rankings</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_efficiency.html">get_efficiency()</a></code> </p>
+          <p><code><a href="kp_efficiency.html">kp_efficiency()</a></code> </p>
         </td>
         <td><p>Get KenPom Efficiency and Tempo Summary</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_fourfactors.html">get_fourfactors()</a></code> </p>
+          <p><code><a href="kp_fourfactors.html">kp_fourfactors()</a></code> </p>
         </td>
         <td><p>Get Four Factors Data</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_pomeroy_ratings.html">get_pomeroy_ratings()</a></code> </p>
+          <p><code><a href="kp_pomeroy_ratings.html">kp_pomeroy_ratings()</a></code> </p>
         </td>
         <td><p>Get KenPom Ratings</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_pointdist.html">get_pointdist()</a></code> </p>
+          <p><code><a href="kp_pointdist.html">kp_pointdist()</a></code> </p>
         </td>
         <td><p>Get Team Points Distribution</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_height.html">get_height()</a></code> </p>
+          <p><code><a href="kp_height.html">kp_height()</a></code> </p>
         </td>
         <td><p>Get Heights, Experience, Bench and Continuity Data</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_foul_trouble.html">get_foul_trouble()</a></code> </p>
+          <p><code><a href="kp_foul_trouble.html">kp_foul_trouble()</a></code> </p>
         </td>
         <td><p>Get 2-Foul Participation Stats</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_playerstats.html">get_playerstats()</a></code> </p>
+          <p><code><a href="kp_playerstats.html">kp_playerstats()</a></code> </p>
         </td>
         <td><p>Get Player Stats Leaders by Metric</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_player_career.html">get_player_career()</a></code> </p>
+          <p><code><a href="kp_player_career.html">kp_player_career()</a></code> </p>
         </td>
-        <td><p>Get Player Career Stats from Player Page</p></td>
+        <td><p>Get KenPom's player career stats from the player page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_players.html">get_team_players()</a></code> </p>
+          <p><code><a href="kp_team_players.html">kp_team_players()</a></code> </p>
         </td>
-        <td><p>Get Player Stats from Team Page</p></td>
+        <td><p>Get KenPom's player stats from the team page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_minutes_matrix.html">get_minutes_matrix()</a></code> </p>
+          <p><code><a href="kp_minutes_matrix.html">kp_minutes_matrix()</a></code> </p>
         </td>
         <td><p>Get Minutes Matrix from Expanded Player Page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_schedule.html">get_team_schedule()</a></code> </p>
+          <p><code><a href="kp_team_schedule.html">kp_team_schedule()</a></code> </p>
         </td>
-        <td><p>Get Team Schedule Results</p></td>
+        <td><p>Get team schedule results</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_player_stats.html">get_team_player_stats()</a></code> </p>
+          <p><code><a href="kp_team_player_stats.html">kp_team_player_stats()</a></code> </p>
         </td>
         <td><p>Get Team Player Stats</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_box.html">get_box()</a></code> </p>
+          <p><code><a href="kp_box.html">kp_box()</a></code> </p>
         </td>
         <td><p>Get Game Box Score</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_winprob.html">get_winprob()</a></code> </p>
+          <p><code><a href="kp_winprob.html">kp_winprob()</a></code> </p>
         </td>
         <td><p>Get Win Probability</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_gameplan.html">get_gameplan()</a></code> </p>
+          <p><code><a href="kp_gameplan.html">kp_gameplan()</a></code> </p>
         </td>
-        <td><p>Get Game Plan for Team</p></td>
+        <td><p>Get KenPom's team game plan page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_opptracker.html">get_opptracker()</a></code> </p>
+          <p><code><a href="kp_opptracker.html">kp_opptracker()</a></code> </p>
         </td>
-        <td><p>Get Opponent Tracker for Team</p></td>
+        <td><p>Get KenPom's team opponent tracker page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_teamstats.html">get_teamstats()</a></code> </p>
+          <p><code><a href="kp_teamstats.html">kp_teamstats()</a></code> </p>
         </td>
         <td><p>Get Team Stats</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_depth_chart.html">get_team_depth_chart()</a></code> </p>
+          <p><code><a href="kp_team_depth_chart.html">kp_team_depth_chart()</a></code> </p>
         </td>
         <td><p>Get Depth Chart Last 5 Games from Team Page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_lineups.html">get_team_lineups()</a></code> </p>
+          <p><code><a href="kp_team_lineups.html">kp_team_lineups()</a></code> </p>
         </td>
         <td><p>Get Lineups Last 5 Games from Team Page</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_team_history.html">get_team_history()</a></code> </p>
+          <p><code><a href="kp_team_history.html">kp_team_history()</a></code> </p>
         </td>
-        <td><p>Get Team Efficiency History</p></td>
+        <td><p>Get KenPom's team efficiency history</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_records_team.html">get_records_team()</a></code> </p>
+          <p><code><a href="kp_program_ratings.html">kp_program_ratings()</a></code> </p>
         </td>
-        <td><p>Get Single-Game Records for Team</p></td>
+        <td><p>Get KenPom's program ratings</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_program_ratings.html">get_program_ratings()</a></code> </p>
-        </td>
-        <td><p>Get Program Ratings</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_kpoy.html">get_kpoy()</a></code> </p>
+          <p><code><a href="kp_kpoy.html">kp_kpoy()</a></code> </p>
         </td>
         <td><p>Get KPoY Leaders Tables</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_trends.html">get_trends()</a></code> </p>
+          <p><code><a href="kp_trends.html">kp_trends()</a></code> </p>
         </td>
         <td><p>Get Division-I statistical trends</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_hca.html">get_hca()</a></code> </p>
+          <p><code><a href="kp_hca.html">kp_hca()</a></code> </p>
         </td>
         <td><p>Get Home Court Advantage Estimates</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_game_attrs.html">get_game_attrs()</a></code> </p>
+          <p><code><a href="kp_game_attrs.html">kp_game_attrs()</a></code> </p>
         </td>
         <td><p>Get Game Attributes</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_fanmatch.html">get_fanmatch()</a></code> </p>
+          <p><code><a href="kp_fanmatch.html">kp_fanmatch()</a></code> </p>
         </td>
         <td><p>Get FanMatch by date</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_officials.html">get_officials()</a></code> </p>
+          <p><code><a href="kp_officials.html">kp_officials()</a></code> </p>
         </td>
         <td><p>Get officials rankings</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_arenas.html">get_arenas()</a></code> </p>
+          <p><code><a href="kp_arenas.html">kp_arenas()</a></code> </p>
         </td>
         <td><p>Get Home Court Arenas</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_coach_history.html">get_coach_history()</a></code> </p>
+          <p><code><a href="kp_coach_history.html">kp_coach_history()</a></code> </p>
         </td>
-        <td><p>Get Coaching Resume</p></td>
+        <td><p>Get KenPom's coaching resume data</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_pomeroy_archive_ratings.html">get_pomeroy_archive_ratings()</a></code> </p>
+          <p><code><a href="kp_pomeroy_archive_ratings.html">kp_pomeroy_archive_ratings()</a></code> </p>
         </td>
-        <td><p>Get KenPom Ratings Archive</p></td>
+        <td><p>Get KenPom's ratings archive pages</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_conf.html">get_conf()</a></code> </p>
+          <p><code><a href="kp_conf.html">kp_conf()</a></code> </p>
         </td>
-        <td><p>Get Conference-wide Stats</p></td>
+        <td><p>Get KenPom's conference-wide stats</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_confstats.html">get_confstats()</a></code> </p>
+          <p><code><a href="kp_confstats.html">kp_confstats()</a></code> </p>
         </td>
-        <td><p>Get Conference Comparison Stats</p></td>
+        <td><p>Get KenPom's conference comparison stats</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_confhistory.html">get_confhistory()</a></code> </p>
+          <p><code><a href="kp_confhistory.html">kp_confhistory()</a></code> </p>
         </td>
-        <td><p>Get Conference Historical Ratings</p></td>
+        <td><p>Get KenPom's historical conference ratings</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="login.html">login()</a></code> </p>
+          <p><code><a href="kp_user_pw.html">login()</a></code> <code><a href="kp_user_pw.html">kp_user_email()</a></code> <code><a href="kp_user_pw.html">kp_password()</a></code> <code><a href="kp_user_pw.html">has_kp_user_and_pw()</a></code> </p>
         </td>
-        <td><p>User Login Function
-Requires a subscription to KenPom.com</p></td>
+        <td><p><strong>KenPom Login and Password credentials</strong></p></td>
       </tr><tr>
         
         <td>
