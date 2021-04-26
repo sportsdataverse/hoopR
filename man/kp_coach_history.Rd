@@ -8,8 +8,6 @@ kp_coach_history(coach)
 }
 \arguments{
 \item{coach}{Coach filter to select.}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 30 columns:

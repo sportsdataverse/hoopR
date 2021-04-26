@@ -10,8 +10,6 @@ kp_gameplan(team, year = 2020)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get KenPom's team game plan page

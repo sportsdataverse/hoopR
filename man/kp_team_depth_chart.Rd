@@ -10,8 +10,6 @@ kp_team_depth_chart(team, year = 2020)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 12 columns:

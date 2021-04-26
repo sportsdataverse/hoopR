@@ -6,9 +6,6 @@
 \usage{
 kp_program_ratings()
 }
-\arguments{
-\item{browser}{User login session}
-}
 \value{
 A data frame with 17 columns:
 \describe{

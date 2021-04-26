@@ -8,8 +8,6 @@ kp_confstats(year)
 }
 \arguments{
 \item{year}{Year (YYYY)}
-
-\item{browser}{User login session}
 }
 \value{
 A data frame with 35 columns:

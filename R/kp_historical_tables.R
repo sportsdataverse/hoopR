@@ -1,6 +1,6 @@
 #' Get KenPom's team efficiency history
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @return A data frame with 30 columns:
 #' \describe{
@@ -230,7 +230,7 @@ kp_team_history <- function(team){
 
 #' Get KenPom's coaching resume data
 #'
-#' @param browser User login session
+#'
 #' @param coach Coach filter to select.
 #'
 #' @return A data frame with 30 columns:
@@ -470,7 +470,7 @@ kp_coach_history <- function(coach){
 
 #' Get KenPom's program ratings
 #'
-#' @param browser User login session
+#'
 #'
 #' @return A data frame with 17 columns:
 #' \describe{
@@ -546,7 +546,7 @@ kp_program_ratings <- function(){
 
 #' Get KenPom's ratings archive pages
 #'
-#' @param browser User login session
+#'
 #' @param date Date (YYYY-MM-DD)
 #'
 #' @return A data frame with 22 columns:
@@ -632,7 +632,7 @@ kp_pomeroy_archive_ratings <- function(date){
 
 #' Get KenPom's conference-wide stats
 #'
-#' @param browser User login session
+#'
 #' @param year Year (YYYY)
 #' @param conf Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
 #' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
@@ -865,7 +865,7 @@ kp_conf <- function(year, conf){
 
 #' Get KenPom's conference comparison stats
 #'
-#' @param browser User login session
+#'
 #' @param year Year (YYYY)
 #'
 #' @return A data frame with 35 columns:
@@ -967,7 +967,7 @@ kp_confstats <- function(year){
 
 #' Get KenPom's historical conference ratings
 #'
-#' @param browser User login session
+#'
 #' @param conf Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
 #' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',\cr
 #' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr

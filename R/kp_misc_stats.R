@@ -1,6 +1,6 @@
 #' Get Division-I statistical trends
 #'
-#' @param browser User login session
+#'
 #' @return A data frame with 19 columns:
 #' \describe{
 #'   \item{\code{Season}}{double.}
@@ -73,7 +73,7 @@ kp_trends <- function(){
 #' Get officials rankings
 #'
 #' @param year Year of data to pull
-#' @param browser User login session
+#'
 #' @return A data frame with 7 columns:
 #' \describe{
 #'   \item{\code{Rk}}{integer.}
@@ -138,7 +138,7 @@ kp_officials <- function(year= 2020){
 
 #' Get Home Court Advantage Estimates
 #'
-#' @param browser User login session
+#'
 #' @return A data frame with 14 columns:
 #' \describe{
 #'   \item{\code{Team}}{character.}
@@ -201,7 +201,7 @@ kp_hca <- function(){
 
 
 #' Get Home Court Arenas
-#' @param browser User login session
+#'
 #' @param year Year of data to pull
 #' @return A data frame with 6 columns:
 #' \describe{
@@ -256,7 +256,7 @@ kp_arenas <- function(year=2020){
 
 #' Get Game Attributes
 #'
-#' @param browser User login session
+#'
 #' @param year Year of data to pull
 #' @param attr Game Attribute, valid values include: \cr
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
@@ -307,7 +307,6 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
 
 #' Get FanMatch by date
 #'
-#' @param browser User_login session
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'
 #' @return A data frame 16 columns:

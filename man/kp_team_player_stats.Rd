@@ -10,8 +10,6 @@ kp_team_player_stats(team, year = 2020)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get Team Player Stats

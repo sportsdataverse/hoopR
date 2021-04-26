@@ -1,7 +1,7 @@
 
 #' Get KenPom's single-game records for a team
 #'
-#' @param browser User login session
+#'
 #' @param team Team filter to select.
 #' @param conference_only Filter records to only conference games, default: FALSE
 #' @keywords Single-Game Team Records

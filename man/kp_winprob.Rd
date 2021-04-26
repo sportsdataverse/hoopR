@@ -10,8 +10,6 @@ kp_winprob(game_id, year)
 \item{game_id}{Game id of game to pull}
 
 \item{year}{Year of game to pull}
-
-\item{browser}{User login session}
 }
 \description{
 Get Win Probability
