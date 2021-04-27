@@ -15,44 +15,48 @@ We will be acquiring data from [kenpom.com](https://kenpom.com), using the `kenp
 
 This tutorial will require the use of R and RStudio. You can [follow the instructions at R Studio on how to get started](https://rstudio.com/products/rstudio/download/).
 
-### First, save your login information privately
+### **Using the Your KenPom Subscription**
 
-You can use your .Renviron to save your `KP_USER` and `KP_PW` variables, or you can simply set them using `Sys.setenv()` like so:
+You can save your user email and password for consistent usage by adding `KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM` and `KP_PW = XX-YOUR-PASSWORD-XX` to your .Renviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)). Run [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html), a new script will pop open named `.Renviron`, **THEN** paste the following in the new script that pops up (with**out** quotations)
 
-```{r eval = FALSE}
-Sys.setenv(KP_USER = "Your Username Here")
-Sys.setenv(KP_PW = "Your Password Here")
+``` {.r}
+KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM
+KP_PW = XX-YOUR-PASSWORD-XX
 ```
 
-For .Renviron, save that information in a format like this:
+Save the script and restart your RStudio session, by clicking `Session` (in between `Plots` and `Build`) and click `Restart R` (n.b. there also exists the shortcut `Ctrl + Shift + F10` to restart your session). If set correctly, from then on you should be able to use any of the `kp_` functions without any other changes.
 
-    KP_USER = "your email here"
-    KP_PW = "your password here"
+For less consistent usage, save your user email and password as the environment variables `KP_USER` and `KP_PW` (**with** quotations) at the beginning of every session, using a command like the following.
 
-Then we can reference these in our scripts with `Sys.env("KP_USER")` or `Sys.env("KP_PW")`.
+```{r, eval = FALSE}
+Sys.setenv(KP_USER = "XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM")
+Sys.setenv(KP_PW = "XX-YOUR-PASSWORD-XX")
+```
+#### **How the browser login is set**
 
-### Import libraries and set browser login
-
-```{r, warning=FALSE,  message = FALSE}
-library(kenpomR)
-library(dplyr)
-
+This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function. 
+```{r, warning = FALSE, eval=FALSE}
 browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
+```
+
+### **Import libraries**
+```{r, warning=FALSE,  message = FALSE}
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/kenpomR")
+pacman::p_load(dplyr, ggplot2,animation,ggimage,png, glue)
 
 ```
 
 Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the ```kenpomR::kp_pomeroy_ratings()``` function, which takes the following arguments:
 
--   ```browser``` - User login session
 -   ```min_year``` - First year of data to pull
 -   ```max_year``` - Last year of data to pull
 
 ```{r message = FALSE}
 rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2020)
-library(stringr)
-rtgs <- rtgs %>% 
-  mutate(Team = stringr::str_remove(.data$Team, "\\*"),
-         Team = str_trim(.data$Team, side="both")) 
 ```
 
 ```{r}
@@ -60,7 +64,8 @@ glimpse(rtgs)
 ```
 So in this vignette, we're going to plot something simple first to get a sense of how we would compare different metrics and groups. In this example, we are going to compare Florida State's adjusted efficiency margin (__AdjEM__) over the past ten years and the ACC conference average. 
 
-### Pre-processing
+### **Pre-processing**
+
 First, to keep things a bit simpler, we will first create a second and third `rtgs` dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with.
   - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use ```dplyr```'s ```dplyr::summarize()``` function, which we use to compute the ````mean()``` of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
 
@@ -109,12 +114,6 @@ plot_data$Color_2 = Color2
 ```
 
 ```{r, message=FALSE}
-library(ggplot2)
-library(animation)
-library(ggimage)
-library(png)
-library(glue)
-library(dplyr)
 
 logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
 z <- tempfile()
@@ -135,7 +134,7 @@ x_score <- 2 + x_max
 ```
 
 
-### Plotting a simple animation
+### **Plotting a simple animation**
 ```{r}
 
 draw_frame <- function(year)
@@ -235,7 +234,7 @@ draw_frame <- function(year)
 draw_frame(2014)
 ```
 
-```{r}
+```{r draw_gif}
 
 draw_gif <- function()
 {
@@ -250,7 +249,7 @@ draw_gif <- function()
 
 ```
 
-```{r}
+```{r save_gif}
 
 saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif"),
         ani.width = 900, ani.height = 560, ani.res = 110)
@@ -261,35 +260,37 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ![site_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
 
-```{r efficiency, message = FALSE}
+```{r kp_efficiency_ex, message = FALSE}
 
 effs <- kp_efficiency(min_year = 2020, max_year = 2020)
 glimpse(effs)
 ```
 
-```{r fourfactors, message = FALSE}
+```{r kp_fourfactors_ex, message = FALSE}
 
 ff <-  kp_fourfactors(min_year = 2020, max_year = 2020)
 glimpse(ff)
 ```
 
 
-```{r hgts, message = FALSE}
+```{r kp_hgts, message = FALSE}
 
 hgts <-  kp_height(min_year = 2020, max_year = 2020)
 
 glimpse(hgts)
 ```
-#### All Games Player stats
-```{r plyrstats, message = FALSE}
+
+#### **All Games Player stats**
+```{r kp_plyrstats, message = FALSE}
 plyrstats <- kp_team_player_stats(team = 'Florida St.', year = 2020)
 
 
 glimpse(plyrstats[[1]])
 
 ```
-#### Conference only Player stats
-```{r}
+
+#### **Conference only Player stats**
+```{r kp_plyrstats_glimpse}
 glimpse(plyrstats[[2]])
 ```
 
