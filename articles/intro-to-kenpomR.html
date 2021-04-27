@@ -182,36 +182,74 @@
 <a href="#r-rstudio" class="anchor"></a>R &amp; RStudio</h3>
 <p>This tutorial will require the use of R and RStudio. You can <a href="https://rstudio.com/products/rstudio/download/">follow the instructions at R Studio on how to get started</a>.</p>
 </div>
-<div id="first-save-your-login-information-privately" class="section level3">
+<div id="using-the-your-kenpom-subscription" class="section level3">
 <h3 class="hasAnchor">
-<a href="#first-save-your-login-information-privately" class="anchor"></a>First, save your login information privately</h3>
-<p>You can use your .Renviron to save your <code>KP_USER</code> and <code>KP_PW</code> variables, or you can simply set them using <code><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv()</a></code> like so:</p>
+<a href="#using-the-your-kenpom-subscription" class="anchor"></a><strong>Using the Your KenPom Subscription</strong>
+</h3>
+<p>You can save your user email and password for consistent usage by adding <code>KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM</code> and <code>KP_PW = XX-YOUR-PASSWORD-XX</code> to your .Renviron file (easily accessed via <a href="https://usethis.r-lib.org/reference/edit.html"><strong><code>usethis::edit_r_environ()</code></strong></a>). Run <a href="https://usethis.r-lib.org/reference/edit.html"><strong><code>usethis::edit_r_environ()</code></strong></a>, a new script will pop open named <code>.Renviron</code>, <strong>THEN</strong> paste the following in the new script that pops up (with<strong>out</strong> quotations)</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_USER <span class="op">=</span> <span class="st">"Your Username Here"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_PW <span class="op">=</span> <span class="st">"Your Password Here"</span><span class="op">)</span></code></pre></div>
-<p>For .Renviron, save that information in a format like this:</p>
-<pre><code>KP_USER = "your email here"
-KP_PW = "your password here"</code></pre>
-<p>Then we can reference these in our scripts with <code>Sys.env("KP_USER")</code> or <code>Sys.env("KP_PW")</code>.</p>
-</div>
-<div id="import-libraries-and-set-browser-login" class="section level3">
-<h3 class="hasAnchor">
-<a href="#import-libraries-and-set-browser-login" class="anchor"></a>Import libraries and set browser login</h3>
+<code class="sourceCode R"><span class="va">KP_USER</span> <span class="op">=</span> <span class="va">XX</span><span class="op">-</span><span class="va">YOUR</span><span class="op">-</span><span class="va">EMAIL</span><span class="op">-</span><span class="va">XX</span><span class="op">@</span><span class="va">YOUR</span><span class="op">-</span><span class="va">DOMAIN.COM</span>
+<span class="va">KP_PW</span> <span class="op">=</span> <span class="va">XX</span><span class="op">-</span><span class="va">YOUR</span><span class="op">-</span><span class="va">PASSWORD</span><span class="op">-</span><span class="va">XX</span></code></pre></div>
+<p>Save the script and restart your RStudio session, by clicking <code>Session</code> (in between <code>Plots</code> and <code>Build</code>) and click <code>Restart R</code> (n.b. there also exists the shortcut <code>Ctrl + Shift + F10</code> to restart your session). If set correctly, from then on you should be able to use any of the <code>kp_</code> functions without any other changes.</p>
+<p>For less consistent usage, save your user email and password as the environment variables <code>KP_USER</code> and <code>KP_PW</code> (<strong>with</strong> quotations) at the beginning of every session, using a command like the following.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_USER <span class="op">=</span> <span class="st">"XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>KP_PW <span class="op">=</span> <span class="st">"XX-YOUR-PASSWORD-XX"</span><span class="op">)</span></code></pre></div>
+<div id="how-the-browser-login-is-set" class="section level4">
+<h4 class="hasAnchor">
+<a href="#how-the-browser-login-is-set" class="anchor"></a><strong>How the browser login is set</strong>
+</h4>
+<p>This is the function that is evaluated to log you in to <a href="kenpom.com">kenpom.com</a> to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (<code>kp_</code>) function.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://saiemgilani.github.io/kenpomR">kenpomR</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-
-<span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_user_pw.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">browser</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_user_pw.html">login</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_USER"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"KP_PW"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+</div>
+</div>
+<div id="import-libraries" class="section level3">
+<h3 class="hasAnchor">
+<a href="#import-libraries" class="anchor"></a><strong>Import libraries</strong>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># You can install using the pacman package using the following code:</span>
+<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'pacman'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'pacman'</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_current_gh.html">p_load_current_gh</a></span><span class="op">(</span><span class="st">"saiemgilani/kenpomR"</span><span class="op">)</span></code></pre></div>
+<pre><code>## 
+##   
+   checking for file ‘/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/RtmpKHy6g7/remotes1be831494855/saiemgilani-kenpomR-ae63f0e/DESCRIPTION’ ...
+  
+✔  checking for file ‘/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/RtmpKHy6g7/remotes1be831494855/saiemgilani-kenpomR-ae63f0e/DESCRIPTION’
+## 
+  
+─  preparing ‘kenpomR’:
+## 
+  
+   checking DESCRIPTION meta-information ...
+  
+✔  checking DESCRIPTION meta-information
+## 
+  
+─  checking for LF line-endings in source and make files and shell scripts
+## 
+  
+─  checking for empty or unneeded directories
+## 
+  
+─  building ‘kenpomR_0.3.0.tar.gz’
+## 
+  
+   
+## </code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span><span class="va">dplyr</span>, <span class="va">ggplot2</span>,<span class="va">animation</span>,<span class="va">ggimage</span>,<span class="va">png</span>, <span class="va">glue</span><span class="op">)</span></code></pre></div>
 <p>Let’s first just try to get our hands on the Pomeroy ratings for the last 10 years by using the <code><a href="../reference/kp_pomeroy_ratings.html">kenpomR::kp_pomeroy_ratings()</a></code> function, which takes the following arguments:</p>
 <ul>
-<li>
-<code>browser</code> - User login session</li>
 <li>
 <code>min_year</code> - First year of data to pull</li>
 <li>
 <code>max_year</code> - Last year of data to pull</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rtgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2010</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2010 
 ## Getting 2011 
@@ -224,13 +262,8 @@ KP_PW = "your password here"</code></pre>
 ## Getting 2018 
 ## Getting 2019 
 ## Getting 2020</code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://stringr.tidyverse.org">stringr</a></span><span class="op">)</span>
-<span class="va">rtgs</span> <span class="op">&lt;-</span> <span class="va">rtgs</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Team <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Team</span>, <span class="st">"\\*"</span><span class="op">)</span>,
-         Team <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trim.html">str_trim</a></span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Team</span>, side<span class="op">=</span><span class="st">"both"</span><span class="op">)</span><span class="op">)</span> </code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">rtgs</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">rtgs</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 3,845
 ## Columns: 23
 ## $ Year           &lt;int&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2…
@@ -260,9 +293,10 @@ KP_PW = "your password here"</code></pre>
 </div>
 <div id="pre-processing" class="section level3">
 <h3 class="hasAnchor">
-<a href="#pre-processing" class="anchor"></a>Pre-processing</h3>
+<a href="#pre-processing" class="anchor"></a><strong>Pre-processing</strong>
+</h3>
 <p>First, to keep things a bit simpler, we will first create a second and third <code>rtgs</code> dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with. - <code>ACC</code>: filter by conference = ‘ACC’, group by the year and conference, then use <code>dplyr</code>’s <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">dplyr::summarize()</a></code> function, which we use to compute the `<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> of each of the <code>Year</code>-<code>Conf</code> combinations. However, in this case, since there is only one conference, it is essentially just a <code>Year</code> grouping for the ACC.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">team1</span> <span class="op">=</span> <span class="st">"Florida St."</span>
 <span class="va">team2</span> <span class="op">=</span> <span class="st">"ACC"</span>
 <span class="va">metric</span> <span class="op">&lt;-</span> <span class="st">"AdjEM"</span> 
@@ -280,39 +314,32 @@ KP_PW = "your password here"</code></pre>
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>Team <span class="op">=</span> <span class="va">.data</span><span class="op">$</span><span class="va">Conf</span><span class="op">)</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by 'Year'. You can override using the `.groups` argument.</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rtgs_fsu</span> <span class="op">&lt;-</span> <span class="va">rtgs</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Team</span> <span class="op">==</span> <span class="va">team1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="op">-</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span>, <span class="va">.data</span><span class="op">$</span><span class="va">Rk</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Year</span>, <span class="va">Team</span>, <span class="va">Metric</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">Team</span> <span class="op">==</span> <span class="va">team1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">arrange</span><span class="op">(</span><span class="op">-</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span>, <span class="va">.data</span><span class="op">$</span><span class="va">Rk</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">select</span><span class="op">(</span><span class="va">Year</span>, <span class="va">Team</span>, <span class="va">Metric</span><span class="op">)</span>
 
 <span class="co"># combine the two datasets using rbind</span>
 <span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">rtgs_fsu</span>, <span class="va">rtgs_acc</span><span class="op">)</span>
 
 <span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="va">rtgs_fsu</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Metric_1 <span class="op">=</span> <span class="va">Metric</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">rtgs_acc</span> <span class="op">%&gt;%</span> 
-              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span>, <span class="va">.data</span><span class="op">$</span><span class="va">Metric</span><span class="op">)</span>,
+  <span class="fu">mutate</span><span class="op">(</span>Metric_1 <span class="op">=</span> <span class="va">Metric</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">rtgs_acc</span> <span class="op">%&gt;%</span> 
+              <span class="fu">select</span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span>, <span class="va">.data</span><span class="op">$</span><span class="va">Metric</span><span class="op">)</span>,
             by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Year"</span><span class="op">)</span>,suffix<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">""</span>,<span class="st">"_2"</span><span class="op">)</span><span class="op">)</span>  
 <span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="va">plot_data</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>
+  <span class="fu">mutate</span><span class="op">(</span>
     Metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Metric</span>,<span class="fl">1</span><span class="op">)</span>,
     Metric_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Metric_1</span>,<span class="fl">1</span><span class="op">)</span>,
     Metric_2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Metric_2</span>,<span class="fl">1</span><span class="op">)</span>
   <span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span>
+  <span class="fu">arrange</span><span class="op">(</span><span class="va">.data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span>
 
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_1</span> <span class="op">=</span> <span class="va">Color1</span>
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_2</span> <span class="op">=</span> <span class="va">Color2</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.name/animation">animation</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/ggimage">ggimage</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.rforge.net/png/">png</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidyverse/glue">glue</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
-
-<span class="va">logo_url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"</span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">logo_url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"</span>
 <span class="va">z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">logo_url</span>,<span class="va">z</span>,mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span>
 <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu">png</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/png/man/readPNG.html">readPNG</a></span><span class="op">(</span><span class="va">z</span><span class="op">)</span>
@@ -320,7 +347,7 @@ KP_PW = "your password here"</code></pre>
 <span class="va">rast</span> <span class="op">&lt;-</span> <span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/grid.raster.html">rasterGrob</a></span><span class="op">(</span><span class="va">img</span>, interpolate <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>
 
 <span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="va">plot_data</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>logo_1 <span class="op">=</span> <span class="st">"https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&amp;w=35&amp;h=35"</span>,
+  <span class="fu">mutate</span><span class="op">(</span>logo_1 <span class="op">=</span> <span class="st">"https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&amp;w=35&amp;h=35"</span>,
          logo_2 <span class="op">=</span> <span class="st">"https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&amp;w=35&amp;h=35"</span><span class="op">)</span>
 <span class="co"># points for plotting</span>
 <span class="va">x_max</span> <span class="op">&lt;-</span> <span class="fl">2020</span>
@@ -330,63 +357,64 @@ KP_PW = "your password here"</code></pre>
 </div>
 <div id="plotting-a-simple-animation" class="section level3">
 <h3 class="hasAnchor">
-<a href="#plotting-a-simple-animation" class="anchor"></a>Plotting a simple animation</h3>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<a href="#plotting-a-simple-animation" class="anchor"></a><strong>Plotting a simple animation</strong>
+</h3>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draw_frame</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">year</span><span class="op">)</span>
 <span class="op">{</span>
   
   <span class="co"># frame data</span>
   <span class="va">frm_data</span> <span class="op">&lt;-</span> <span class="va">plot_data</span> <span class="op">%&gt;%</span> 
-    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">&lt;=</span> <span class="va">year</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">&lt;=</span> <span class="va">year</span><span class="op">)</span>
   
   <span class="co"># output quarter changes</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">frm_data</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">frm_data</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span>
   <span class="op">{</span>
     <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"Plotting AdjEM in Year: {max(frm_data$Year)}"</span><span class="op">)</span><span class="op">)</span>
   <span class="op">}</span>
   
   <span class="co"># plot</span>
   <span class="va">frm_plot</span> <span class="op">&lt;-</span> <span class="va">frm_data</span> <span class="op">%&gt;%</span> 
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric</span>, group<span class="op">=</span><span class="va">Team</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="va">x_max</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"#5555AA"</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">2010</span>, xend <span class="op">=</span> <span class="fl">2020</span>, y <span class="op">=</span> <span class="fl">0</span>, yend <span class="op">=</span> <span class="fl">0</span>, size <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">24</span>, image <span class="op">=</span> <span class="va">frm_data</span><span class="op">$</span><span class="va">logo_1</span>, size <span class="op">=</span> <span class="fl">0.09</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">2</span>, image <span class="op">=</span> <span class="va">frm_data</span><span class="op">$</span><span class="va">logo_2</span>, size <span class="op">=</span> <span class="fl">0.12</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_1</span>, image <span class="op">=</span> <span class="va">logo_1</span><span class="op">)</span>,  size <span class="op">=</span> <span class="fl">.03</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_2</span>, image <span class="op">=</span> <span class="va">logo_2</span><span class="op">)</span>,  size <span class="op">=</span> <span class="fl">.06</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotation_custom.html">annotation_custom</a></span><span class="op">(</span>grob <span class="op">=</span> <span class="va">rast</span>, xmin<span class="op">=</span><span class="fl">2017</span>, xmax<span class="op">=</span><span class="fl">2020</span>, ymin<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, ymax<span class="op">=</span><span class="op">-</span><span class="fl">20</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_1</span>, color <span class="op">=</span> <span class="va">Color1</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_2</span>, color <span class="op">=</span> <span class="va">Color2</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Color1</span>, <span class="va">Color2</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">2020</span>, <span class="fl">1</span><span class="op">)</span>,
+    <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric</span>, group<span class="op">=</span><span class="va">Team</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_vline</span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="va">x_max</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"#5555AA"</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_segment</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">2010</span>, xend <span class="op">=</span> <span class="fl">2020</span>, y <span class="op">=</span> <span class="fl">0</span>, yend <span class="op">=</span> <span class="fl">0</span>, size <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_image</span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">24</span>, image <span class="op">=</span> <span class="va">frm_data</span><span class="op">$</span><span class="va">logo_1</span>, size <span class="op">=</span> <span class="fl">0.09</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_image</span><span class="op">(</span>x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">2</span>, image <span class="op">=</span> <span class="va">frm_data</span><span class="op">$</span><span class="va">logo_2</span>, size <span class="op">=</span> <span class="fl">0.12</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_image</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_1</span>, image <span class="op">=</span> <span class="va">logo_1</span><span class="op">)</span>,  size <span class="op">=</span> <span class="fl">.03</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_image</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_2</span>, image <span class="op">=</span> <span class="va">logo_2</span><span class="op">)</span>,  size <span class="op">=</span> <span class="fl">.06</span>, asp <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">annotation_custom</span><span class="op">(</span>grob <span class="op">=</span> <span class="va">rast</span>, xmin<span class="op">=</span><span class="fl">2017</span>, xmax<span class="op">=</span><span class="fl">2020</span>, ymin<span class="op">=</span><span class="op">-</span><span class="fl">2</span>, ymax<span class="op">=</span><span class="op">-</span><span class="fl">20</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_1</span>, color <span class="op">=</span> <span class="va">Color1</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">Year</span>, y <span class="op">=</span> <span class="va">Metric_2</span>, color <span class="op">=</span> <span class="va">Color2</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">scale_color_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Color1</span>, <span class="va">Color2</span><span class="op">)</span><span class="op">)</span><span class="op">+</span>
+    <span class="fu">scale_x_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">2020</span>, <span class="fl">1</span><span class="op">)</span>,
                        minor_breaks <span class="op">=</span> <span class="cn">NULL</span>,
                        limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2009.5</span>, <span class="va">x_max</span> <span class="op">+</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">20</span>, <span class="fl">35</span>, <span class="fl">5</span><span class="op">)</span>,
+    <span class="fu">scale_y_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">20</span>, <span class="fl">35</span>, <span class="fl">5</span><span class="op">)</span>,
                        minor_breaks <span class="op">=</span> <span class="cn">NULL</span>,
                        limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">21</span>, <span class="fl">36</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian</a></span><span class="op">(</span>clip <span class="op">=</span> <span class="st">"off"</span>,expand <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"{team1} and {team2} \n{full_metric} Chart - {min(plot_data$Year)}-{max(plot_data$Year)}"</span><span class="op">)</span>,
+    <span class="fu">coord_cartesian</span><span class="op">(</span>clip <span class="op">=</span> <span class="st">"off"</span>,expand <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">xlab</span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">ylab</span><span class="op">(</span><span class="st">""</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"{team1} and {team2} \n{full_metric} Chart - {min(plot_data$Year)}-{max(plot_data$Year)}"</span><span class="op">)</span>,
          caption <span class="op">=</span> <span class="st">"Data from kenpom.com | Visualization by @SaiemGilani"</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,
-          axis.title.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          axis.text.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">16</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          plot.subtitle <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
-          plot.caption <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span>,hjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span>,
-          panel.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"snow"</span><span class="op">)</span>,
-          plot.background <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#00AFDC"</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,
+          axis.title.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          axis.text.x <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          axis.title.y <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          axis.text.y <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">16</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          plot.subtitle <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span><span class="op">)</span>,
+          plot.caption <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">14</span>, family <span class="op">=</span> <span class="st">"sans"</span>, face <span class="op">=</span> <span class="st">'bold'</span>, color <span class="op">=</span> <span class="st">"#3D1A22"</span>,hjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span>,
+          panel.background <span class="op">=</span> <span class="fu">element_rect</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"snow"</span><span class="op">)</span>,
+          plot.background <span class="op">=</span> <span class="fu">element_rect</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#00AFDC"</span><span class="op">)</span><span class="op">)</span>
   
   <span class="co"># score display </span>
   <span class="va">Metric1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">frm_data</span><span class="op">$</span><span class="va">Metric_1</span>, n<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
   <span class="va">Metric2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">frm_data</span><span class="op">$</span><span class="va">Metric_2</span>, n<span class="op">=</span><span class="fl">1</span><span class="op">)</span>
   
   <span class="co"># clock display</span>
-  <span class="va">Year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span>
+  <span class="va">Year</span> <span class="op">&lt;-</span> <span class="fu">case_when</span><span class="op">(</span>
     <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">frm_data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2010</span> <span class="op">~</span> <span class="st">"2010"</span> ,
     <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">frm_data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2011</span> <span class="op">~</span> <span class="st">"2011"</span> ,
     <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">frm_data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2012</span> <span class="op">~</span> <span class="st">"2012"</span> ,
@@ -403,9 +431,9 @@ KP_PW = "your password here"</code></pre>
   
   <span class="co"># add score and clock to plot</span>
   <span class="va">frm_plot</span> <span class="op">&lt;-</span> <span class="va">frm_plot</span> <span class="op">+</span> 
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">16</span>, label <span class="op">=</span> <span class="va">Metric1</span>, color <span class="op">=</span> <span class="va">Color1</span>, size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="op">-</span><span class="fl">4</span>, label <span class="op">=</span> <span class="va">Metric2</span>, color <span class="op">=</span> <span class="va">Color2</span>, size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">8</span>, label <span class="op">=</span> <span class="va">Year</span>, color <span class="op">=</span> <span class="st">"#000000"</span>, size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>
+    <span class="fu">annotate</span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">16</span>, label <span class="op">=</span> <span class="va">Metric1</span>, color <span class="op">=</span> <span class="va">Color1</span>, size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">annotate</span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="op">-</span><span class="fl">4</span>, label <span class="op">=</span> <span class="va">Metric2</span>, color <span class="op">=</span> <span class="va">Color2</span>, size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">annotate</span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="va">x_score</span><span class="op">-</span><span class="fl">1</span>, y <span class="op">=</span> <span class="fl">8</span>, label <span class="op">=</span> <span class="va">Year</span>, color <span class="op">=</span> <span class="st">"#000000"</span>, size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>
   
   <span class="co"># label key moments</span>
   <span class="co"># frm_labels &lt;- frm_data %&gt;% </span>
@@ -421,11 +449,11 @@ KP_PW = "your password here"</code></pre>
   <span class="co"># plot the frame</span>
   <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">frm_plot</span>, width <span class="op">=</span> <span class="fl">12.5</span>, height <span class="op">=</span> <span class="fl">6.47</span>, dpi <span class="op">=</span> <span class="fl">500</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">draw_frame</span><span class="op">(</span><span class="fl">2014</span><span class="op">)</span></code></pre></div>
 <pre><code>## Plotting AdjEM in Year: 2014</code></pre>
 <p><img src="intro-to-kenpomR_files/figure-html/draw_test-1.png" width="700"></p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draw_gif</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span>
 <span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">$</span><span class="va">Year</span>, <span class="kw">function</span><span class="op">(</span><span class="va">year</span><span class="op">)</span>
@@ -436,8 +464,8 @@ KP_PW = "your password here"</code></pre>
   <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fu">draw_frame</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">$</span><span class="va">Year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Assembling plots into a GIF"</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/animation/man/saveGIF.html">saveGIF</a></span><span class="op">(</span><span class="fu">draw_gif</span><span class="op">(</span><span class="op">)</span>, interval <span class="op">=</span> <span class="fl">1</span>, movie.name <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"animated_{metric}.gif"</span><span class="op">)</span>,
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">saveGIF</span><span class="op">(</span><span class="fu">draw_gif</span><span class="op">(</span><span class="op">)</span>, interval <span class="op">=</span> <span class="fl">1</span>, movie.name <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"animated_{metric}.gif"</span><span class="op">)</span>,
         ani.width <span class="op">=</span> <span class="fl">900</span>, ani.height <span class="op">=</span> <span class="fl">560</span>, ani.res <span class="op">=</span> <span class="fl">110</span><span class="op">)</span></code></pre></div>
 <pre><code>## Plotting AdjEM in Year: 2010</code></pre>
 <pre><code>## geom_path: Each group consists of only one observation. Do you need to adjust
@@ -467,11 +495,11 @@ KP_PW = "your password here"</code></pre>
 <div class="figure">
 <img src="http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png" alt=""><p class="caption">site_navigation</p>
 </div>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">effs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_efficiency.html">kp_efficiency</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">effs</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">effs</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 353
 ## Columns: 20
 ## $ Team                &lt;chr&gt; "Mississippi Valley St.", "Houston Baptist", "Mars…
@@ -494,11 +522,11 @@ KP_PW = "your password here"</code></pre>
 ## $ RawD.Rk             &lt;dbl&gt; 343, 352, 107, 221, 329, 202, 317, 187, 83, 340, 2…
 ## $ NCAA_Seed           &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
 ## $ Year                &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 20…</code></pre>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ff</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/kp_fourfactors.html">kp_fourfactors</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">ff</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">ff</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 353
 ## Columns: 26
 ## $ Team           &lt;chr&gt; "Gonzaga", "Dayton", "Creighton", "LSU", "Iowa", "Orego…
@@ -527,11 +555,11 @@ KP_PW = "your password here"</code></pre>
 ## $ Def.FTRate.Rk  &lt;dbl&gt; 7, 149, 13, 42, 49, 109, 65, 12, 145, 100, 140, 91, 101…
 ## $ NCAA_Seed      &lt;dbl&gt; 1, 1, 2, 8, 6, 4, 5, 1, 3, 3, 2, 4, 5, 9, 2, 8, 1, 3, N…
 ## $ Year           &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2…</code></pre>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hgts</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/kp_height.html">kp_height</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
 <pre><code>## Getting 2020</code></pre>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">hgts</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">hgts</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 353
 ## Columns: 24
 ## $ Team          &lt;chr&gt; "Florida St.", "Eastern Michigan", "Gonzaga", "Washingto…
@@ -560,19 +588,21 @@ KP_PW = "your password here"</code></pre>
 ## $ Year          &lt;int&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 20…</code></pre>
 <div id="all-games-player-stats" class="section level4">
 <h4 class="hasAnchor">
-<a href="#all-games-player-stats" class="anchor"></a>All Games Player stats</h4>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<a href="#all-games-player-stats" class="anchor"></a><strong>All Games Player stats</strong>
+</h4>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">plyrstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_player_stats.html">kp_team_player_stats</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 
 
-<span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">plyrstats</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">plyrstats</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>##  chr [1:24] "Significant Contributor" "Significant Contributor" ...</code></pre>
 </div>
 <div id="conference-only-player-stats" class="section level4">
 <h4 class="hasAnchor">
-<a href="#conference-only-player-stats" class="anchor"></a>Conference only Player stats</h4>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">plyrstats</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<a href="#conference-only-player-stats" class="anchor"></a><strong>Conference only Player stats</strong>
+</h4>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">plyrstats</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>##  num [1:24] 3 23 4 1 24 2 0 15 5 31 ...</code></pre>
 </div>
 </div>
