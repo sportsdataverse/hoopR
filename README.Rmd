@@ -53,7 +53,7 @@ x2 <- closed_tbl %>%
 ![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)
 ![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge) [![Twitter Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani) <!-- badges: end -->
 
-[**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package for working with men's college basketball data. 
+[**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package for working with men's basketball data. 
 
 The package has functions to access **live play by play and box score** data from ESPN with shot locations when available.
 
@@ -88,6 +88,16 @@ For more information on the package and function reference, please see the  [**`
 
 [**Full News on Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
 
+# **kenpomR 0.4**
+
+- Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
+- ```kenpomR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
+- ```kenpomR::espn_nba_team_box()```
+- ```kenpomR::espn_nba_player_box()```
+- ```kenpomR::espn_nba_pbp()```
+- ```kenpomR::espn_nba_teams()``` 
+- ```kenpomR::espn_nba_scoreboard()``` 
+
 # **kenpomR 0.3.0**
 
 - ```R``` version 3.5.0 or greater dependency added
@@ -117,7 +127,7 @@ For more information on the package and function reference, please see the  [**`
 
 <details><summary>View more version news</summary>
 
-#### New in v0.2.0-3: Support for ESPN's college basketball game data and NCAA NET Rankings
+#### New in v0.2.0-3: Support for ESPN's men's college basketball game data and NCAA NET Rankings
 
 See the following ~~four~~ eight functions:
 
@@ -147,7 +157,7 @@ x[c(1:(min(nrow(x),5))),] %>%
 <details><summary>View More</summary>
 
 ```{r,results='asis',echo=FALSE}
-x2[c(1:(min(nrow(x),5))),] %>%
+x2[c(1:(min(nrow(closed_tbl),5))),] %>%
   knitr::kable()
 ```
 
