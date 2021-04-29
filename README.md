@@ -13,7 +13,7 @@ Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40sa
 <!-- badges: end -->
 
 [**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package
-for working with men’s college basketball data.
+for working with men’s basketball data.
 
 The package has functions to access **live play by play and box score**
 data from ESPN with shot locations when available.
@@ -58,6 +58,19 @@ website](https://saiemgilani.github.io/kenpomR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
 
+# **kenpomR 0.4**
+
+  - Added support for ESPN’s NBA play-by-play endpoints with the
+    addition of the following functions:
+  - `kenpomR::espn_nba_game_all()` - a convenience wrapper function
+    around the following three functions (returns the results as a list
+    of three data frames)
+  - `kenpomR::espn_nba_team_box()`
+  - `kenpomR::espn_nba_player_box()`
+  - `kenpomR::espn_nba_pbp()`
+  - `kenpomR::espn_nba_teams()`
+  - `kenpomR::espn_nba_scoreboard()`
+
 # **kenpomR 0.3.0**
 
   - `R` version 3.5.0 or greater dependency added
@@ -92,7 +105,7 @@ Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
 
 <summary>View more version news</summary>
 
-#### New in v0.2.0-3: Support for ESPN’s college basketball game data and NCAA NET Rankings
+#### New in v0.2.0-3: Support for ESPN’s men’s college basketball game data and NCAA NET Rankings
 
 See the following ~~four~~ eight functions:
 
@@ -131,9 +144,13 @@ See the following ~~four~~ eight functions:
 
 <summary>View More</summary>
 
-| issue | icon                                                                                                                           | title                                                                                                                   | labels | opened\_by                                      | date       | closed              |
-| :---- | :----------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
-| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span> | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/kenpomR/issues/1)</span> | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
+| issue | icon                                                                                                                                         | title                                                                                                                                                             | labels | opened\_by                                      | date       | closed              |
+| :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
+| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/kenpomR/issues/1)</span>                                           | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
+| 10    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="continue updating docs to reflect MBB">[Add support for nba data from espn (including tests)](https://github.com/saiemgilani/kenpomR/pull/10)</span> |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-04-29 | 2021-04-29 10:26:44 |
+| 9     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="# **kenpomR 0.3.0**...">[v0.3.0](https://github.com/saiemgilani/kenpomR/pull/9)</span>                                                               |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-04-26 | 2021-04-26 21:59:14 |
+| 8     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add cbb\_espn\_scoreboard function()](https://github.com/saiemgilani/kenpomR/pull/8)</span>                                                       |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-02-24 | 2021-02-24 20:43:38 |
+| 7     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="Adding teams and conference lookup">[Espn](https://github.com/saiemgilani/kenpomR/pull/7)</span>                                                     |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-02-21 | 2021-02-21 17:08:14 |
 
 </details>
 
