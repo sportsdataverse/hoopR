@@ -1,10 +1,10 @@
-context("ESPN - Get MBB play by play all")
+context("ESPN - Get NBA play by play all")
 
 
 
-test_that("ESPN - Get MBB play by play all", {
+test_that("ESPN - Get NBA play by play all", {
   skip_on_cran()
-  x <- espn_mbb_game_all(game_id = 401256760)
+  x <- espn_nba_game_all(game_id = 401283399)
   x1 <- x[[1]]
   x2 <- x[[2]]
   x3 <- x[[3]]
@@ -14,9 +14,10 @@ test_that("ESPN - Get MBB play by play all", {
     'homeScore', 'scoringPlay', 'awayScore',
     'id', 'text', 'scoreValue',
     'period.displayValue', 'period.number',
+    'coordinate.x','coordinate.y',
     'clock.displayValue', 'team.id',
     'type.id', 'type.text', 'play.id',
-    'athlete1.id', 'athlete2.id'
+    'athlete1.id', 'athlete2.id', 'athlete3.id'
   )
   cols_x2 <- c(
     'Home', 'label', 'Away'
@@ -24,7 +25,7 @@ test_that("ESPN - Get MBB play by play all", {
   cols_x3 <- c(
     'athlete.displayName', 'team.shortDisplayName',
     'MIN', 'FG', '3PT', 'FT', 'OREB', 'DREB',
-    'REB', 'AST', 'STL', 'BLK', 'TO', 'PF',
+    'REB', 'AST', 'STL', 'BLK', 'TO', 'PF', '+/-',
     'PTS', 'starter', 'ejected', 'didNotPlay',
     'active', 'athlete.jersey', 'athlete.id',
     'athlete.shortName', 'athlete.headshot.href',

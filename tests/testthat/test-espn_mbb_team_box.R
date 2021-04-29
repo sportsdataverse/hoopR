@@ -1,8 +1,8 @@
-context("ESPN - Get team box score only")
+context("ESPN - Get MBB team box score only")
 
 
 
-test_that("ESPN - Get team box score only", {
+test_that("ESPN - Get MBB team box score only", {
   skip_on_cran()
   x <- espn_mbb_team_box(game_id = 401256760)
 
