@@ -79,7 +79,11 @@ reference:
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by kenpomR to access ESPN Men's College Basketball Data
     contents:
-      - starts_with("espn_")
+      - starts_with("espn_mbb_")
+  - subtitle: NBA Data Functions
+    desc: Functions exported by kenpomR to access ESPN's NBA Data
+    contents:
+      - starts_with("espn_nba_")
   - title: NCAA Data
   - subtitle: NCAA Data Functions
     desc: Functions exported by kenpomR to access NCAA Men's College Basketball Data

@@ -1,3 +1,13 @@
+# **kenpomR 0.4**
+
+- Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
+- ```kenpomR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
+- ```kenpomR::espn_nba_team_box()```
+- ```kenpomR::espn_nba_player_box()```
+- ```kenpomR::espn_nba_pbp()```
+- ```kenpomR::espn_nba_teams()``` 
+- ```kenpomR::espn_nba_scoreboard()``` 
+
 # **kenpomR 0.3.0**
 
 ## Dependencies
@@ -28,7 +38,7 @@
 
 # **kenpomR 0.2.0-3**
 
-- Added support for ESPN's play-by-play endpoints with the addition of the following functions:
+- Added support for ESPN's men's college basketball play-by-play endpoints with the addition of the following functions:
 - ```kenpomR::espn_mbb_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
 - ```kenpomR::espn_mbb_team_box()```
 - ```kenpomR::espn_mbb_player_box()```
