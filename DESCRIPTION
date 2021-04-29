@@ -1,33 +1,44 @@
 Package: kenpomR
-Title: A Scraping Interface for Ken Pomeroy's College Basketball Statistics Website
-Version: 0.3.0
-Authors@R: person('Saiem', 'Gilani', email = 'saiem.gilani@gmail.com',role = c('aut','cre'))
-Description: The R package kenpomR is for working with Ken Pomeroy's college basketball data. A scraping interface for Ken Pomeroy's college basketball statistics website, kenpom.com. It provides users with an active subscription and login the capability to scrape the website tables and analyze the data for themselves.
+Title: Functions to Access Men's Basketball Play by Play Data
+Version: 0.4.0
+Authors@R: 
+    person(given = "Saiem",
+           family = "Gilani",
+           role = c("aut", "cre"),
+           email = "saiem.gilani@gmail.com")
+Description: An R package to quickly obtain clean and tidy men's
+    basketball play by play data. The package has functions to access
+    **live play by play and box score** data from ESPN with shot locations
+    when available. It is also a scraping and aggregating
+    interface for Ken Pomeroy's men's college basketball statistics
+    website, [kenpom.com](https://kenpom.com). It provides users with an
+    active subscription the capability to scrape the website tables and
+    analyze the data for themselves.
 License: MIT + file LICENSE
-LazyData: true
-URL: https://saiemgilani.github.io/kenpomR, https://www.github.com/saiemgilani/kenpomR
+URL: https://saiemgilani.github.io/kenpomR,
+    https://www.github.com/saiemgilani/kenpomR
 BugReports: https://www.github.com/saiemgilani/kenpomR/issues
-Encoding: UTF-8
-Depends: R (>= 3.5.0)
+Depends: 
+    R (>= 3.5.0)
 Imports: 
-    dplyr,
-    xml2,
-    rlang,
+    assertthat,
+    attempt,
     curl,
+    data.table,
+    dplyr,
+    glue,
+    httr,
+    jsonlite,
+    magrittr,
+    purrr (>= 0.3.0),
+    rlang,
     rvest (>= 1.0.0),
     stringi,
     stringr (>= 1.3.0),
-    data.table,
-    assertthat,
-    httr,
-    attempt,
-    magrittr,
-    glue,
-    jsonlite,
-    purrr (>= 0.3.0),
     tibble (>= 3.0),
     tidyr (>= 1.0.0),
-    usethis (>= 1.6.0)
+    usethis (>= 1.6.0),
+    xml2
 Suggests: 
     cli (>= 1.1.0),
     crayon (>= 1.3.4),
@@ -39,5 +50,7 @@ Suggests:
     RSQLite,
     stats,
     testthat
-RoxygenNote: 7.1.1
+Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
