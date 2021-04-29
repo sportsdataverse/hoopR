@@ -8,10 +8,10 @@ Authors@R:
            email = "saiem.gilani@gmail.com")
 Description: An R package to quickly obtain clean and tidy men's
     basketball play by play data. The package has functions to access
-    **live play by play and box score** data from ESPN with shot locations
+    live play by play and box score data from ESPN with shot locations
     when available. It is also a scraping and aggregating
     interface for Ken Pomeroy's men's college basketball statistics
-    website, [kenpom.com](https://kenpom.com). It provides users with an
+    website, kenpom.com. It provides users with an
     active subscription the capability to scrape the website tables and
     analyze the data for themselves.
 License: MIT + file LICENSE
