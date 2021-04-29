@@ -48,8 +48,7 @@ jobs:
       - name: Commit (amend) results of README
         run: |
           git add README.md
-          git commit --amend --no-edit || echo "No changes to commit"
-          git pull || echo "No changes to commit"
+          git commit -m "Rebuild README.md" || echo "No changes to commit"
           git push origin || echo "No changes to commit"
       - name: Deploy package
         run: |
