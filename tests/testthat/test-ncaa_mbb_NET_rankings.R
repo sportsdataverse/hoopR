@@ -1,8 +1,8 @@
-context("NCAA - Get NET rankings")
+context("NCAA - Get MBB NET rankings")
 
 
 
-test_that("NCAA - Get NET rankings", {
+test_that("NCAA - Get MBB NET rankings", {
   skip_on_cran()
   x <- ncaa_mbb_NET_rankings()
 
