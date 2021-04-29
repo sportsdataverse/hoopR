@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get KenPom's ratings archive pages — kp_pomeroy_archive_ratings • kenpomR</title>
+<title>Get ESPN men's NBA schedule for a specific year — espn_nba_scoreboard • kenpomR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get KenPom's ratings archive pages — kp_pomeroy_archive_ratings" />
-<meta property="og:description" content="Get KenPom's ratings archive pages" />
+<meta property="og:title" content="Get ESPN men's NBA schedule for a specific year — espn_nba_scoreboard" />
+<meta property="og:description" content="Get ESPN men's NBA schedule for a specific year" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -212,60 +212,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get KenPom's ratings archive pages</h1>
+    <h1>Get ESPN men's NBA schedule for a specific year</h1>
     
-    <div class="hidden name"><code>kp_pomeroy_archive_ratings.Rd</code></div>
+    <div class="hidden name"><code>espn_nba_scoreboard.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get KenPom's ratings archive pages</p>
+    <p>Get ESPN men's NBA schedule for a specific year</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_pomeroy_archive_ratings</span><span class='op'>(</span><span class='va'>date</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>espn_nba_scoreboard</span><span class='op'>(</span><span class='va'>season</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>date</th>
-      <td><p>Date (YYYY-MM-DD)</p></td>
+      <th>season</th>
+      <td><p>Either numeric or character (YYYYMMDD)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame with 22 columns:</p><dl>
-<dt><code>AdjEM.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Team</code></dt><dd><p>character.</p></dd>
-<dt><code>Conf</code></dt><dd><p>character.</p></dd>
-<dt><code>AdjEM</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjO</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjO.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjD</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjD.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjEM</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjO</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjO.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjD</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjD.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjT</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjT.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Rk.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>EM.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>NCAA_Seed</code></dt><dd><p>double.</p></dd>
+    <p>Returns a tibble</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-</dl>
-
+    <p>Thomas Mock, you a genius for this one.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>kp_pomeroy_archive_ratings</span><span class='op'>(</span>date<span class='op'>=</span><span class='st'>'2018-11-22'</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><div class='input'>
+<span class='co'># Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)</span>
+<span class='fu'>espn_nba_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7 x 31</span><span>
+#&gt;   matchup matchup_short season  type slug  game_id game_uid game_date attendance
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> Chicag… CHI @ IND       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> Housto… HOU @ WSH       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> Atlant… ATL @ NY        </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> Philad… PHI @ UTAH      </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…       </span><span style='text-decoration: underline;'>3</span><span>902
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> Clevel… CLE @ GS        </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> Miami … MIA @ LAC       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> Brookl… BKN @ SAC       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; </span><span style='color: #949494;'># … with 22 more variables: home_team_name &lt;chr&gt;, home_team_logo &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   home_team_abb &lt;chr&gt;, home_team_id &lt;chr&gt;, home_team_location &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   home_team_full &lt;chr&gt;, home_team_color &lt;chr&gt;, home_score &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;, away_team_color &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   startDate &lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

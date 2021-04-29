@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get KenPom's ratings archive pages — kp_pomeroy_archive_ratings • kenpomR</title>
+<title>Get ESPN NBA team names and ids — espn_nba_teams • kenpomR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get KenPom's ratings archive pages — kp_pomeroy_archive_ratings" />
-<meta property="og:description" content="Get KenPom's ratings archive pages" />
+<meta property="og:title" content="Get ESPN NBA team names and ids — espn_nba_teams" />
+<meta property="og:description" content="Get ESPN NBA team names and ids" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -212,60 +212,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get KenPom's ratings archive pages</h1>
+    <h1>Get ESPN NBA team names and ids</h1>
     
-    <div class="hidden name"><code>kp_pomeroy_archive_ratings.Rd</code></div>
+    <div class="hidden name"><code>espn_nba_teams.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get KenPom's ratings archive pages</p>
+    <p>Get ESPN NBA team names and ids</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_pomeroy_archive_ratings</span><span class='op'>(</span><span class='va'>date</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>espn_nba_teams</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>date</th>
-      <td><p>Date (YYYY-MM-DD)</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-    <p>A data frame with 22 columns:</p><dl>
-<dt><code>AdjEM.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Team</code></dt><dd><p>character.</p></dd>
-<dt><code>Conf</code></dt><dd><p>character.</p></dd>
-<dt><code>AdjEM</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjO</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjO.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjD</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjD.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjEM</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjO</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjO.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjD</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjD.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjT</code></dt><dd><p>double.</p></dd>
-<dt><code>Final.AdjT.Rk</code></dt><dd><p>double.</p></dd>
-<dt><code>Rk.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>EM.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>AdjT.Chg</code></dt><dd><p>double.</p></dd>
-<dt><code>NCAA_Seed</code></dt><dd><p>double.</p></dd>
-
-</dl>
-
+    <p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>kp_pomeroy_archive_ratings</span><span class='op'>(</span>date<span class='op'>=</span><span class='st'>'2018-11-22'</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><div class='input'>
+ <span class='fu'>espn_nba_teams</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 30 x 36</span><span>
+#&gt;    id    uid    slug    location name  abbreviation displayName shortDisplayName
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 1     s:40~… atlant… Atlanta  Hawks ATL          Atlanta Ha… Hawks           
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2     s:40~… boston… Boston   Celt… BOS          Boston Cel… Celtics         
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 17    s:40~… brookl… Brooklyn Nets  BKN          Brooklyn N… Nets            
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 30    s:40~… charlo… Charlot… Horn… CHA          Charlotte … Hornets         
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 4     s:40~… chicag… Chicago  Bulls CHI          Chicago Bu… Bulls           
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 5     s:40~… clevel… Clevela… Cava… CLE          Cleveland … Cavaliers       
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 6     s:40~… dallas… Dallas   Mave… DAL          Dallas Mav… Mavericks       
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 7     s:40~… denver… Denver   Nugg… DEN          Denver Nug… Nuggets         
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 8     s:40~… detroi… Detroit  Pist… DET          Detroit Pi… Pistons         
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 9     s:40~… golden… Golden … Warr… GS           Golden Sta… Warriors        
+#&gt; </span><span style='color: #949494;'># … with 20 more rows, and 28 more variables: color &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   alternateColor &lt;chr&gt;, isActive &lt;lgl&gt;, isAllStar &lt;lgl&gt;, logos_href_1 &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   logos_href_2 &lt;chr&gt;, logos_href_3 &lt;chr&gt;, logos_href_4 &lt;chr&gt;, summary &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   playoffSeed &lt;dbl&gt;, wins &lt;dbl&gt;, losses &lt;dbl&gt;, winPercent &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   gamesBehind &lt;dbl&gt;, ties &lt;dbl&gt;, OTWins &lt;dbl&gt;, OTLosses &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   gamesPlayed &lt;dbl&gt;, pointsFor &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   avgPointsFor &lt;dbl&gt;, avgPointsAgainst &lt;dbl&gt;, points &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   differential &lt;dbl&gt;, streak &lt;dbl&gt;, divisionWinPercent &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   leagueWinPercent &lt;dbl&gt;, clincher &lt;dbl&gt;</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -49,8 +49,7 @@
   
 
 <meta property="og:title" content="Get ESPN men's college basketball schedule for a specific year — espn_mbb_scoreboard" />
-<meta property="og:description" content="Get ESPN men's college basketball schedule for a specific year
-Get ESPN men's college basketball schedule for a specific year" />
+<meta property="og:description" content="Get ESPN men's college basketball schedule for a specific year" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -93,7 +92,7 @@ Get ESPN men's college basketball schedule for a specific year" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -220,12 +219,9 @@ Get ESPN men's college basketball schedule for a specific year" />
 
     <div class="ref-description">
     <p>Get ESPN men's college basketball schedule for a specific year</p>
-<p>Get ESPN men's college basketball schedule for a specific year</p>
     </div>
 
-    <pre class="usage"><span class='fu'>espn_mbb_scoreboard</span><span class='op'>(</span><span class='va'>season</span><span class='op'>)</span>
-
-<span class='fu'>espn_mbb_scoreboard</span><span class='op'>(</span><span class='va'>season</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>espn_mbb_scoreboard</span><span class='op'>(</span><span class='va'>season</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -239,11 +235,9 @@ Get ESPN men's college basketball schedule for a specific year" />
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a tibble</p>
-<p>Returns a tibble</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Thomas Mock, you a genius for this one.</p>
-<p>Thomas Mock, you a genius for this one.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get schedule from 2018 season (returns 1000 results, max allowable.)</span>
@@ -251,33 +245,6 @@ Get ESPN men's college basketball schedule for a specific year" />
 <span class='co'># Get schedule from date 2021-02-15</span>
 <span class='fu'>espn_mbb_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 13 x 31</span><span>
-#&gt;    matchup       matchup_short season  type slug   game_id  game_uid   game_date
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Virginia Cav… UVA @ FSU       </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012602… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Stephen F. A… SFA @ UNO       </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012863… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> George Fox  … GFX @ IDST      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012967… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Eastern Kent… EKU @ TNTC      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012818… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Murray State… MUR @ SIUE      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012861… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Hampton Pira… HAMP @ LONG     </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012880… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> South Caroli… SCUP @ PRES     </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012844… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> East Tenness… ETSU @ UTC      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012824… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Washington H… WASH @ WSU      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012866… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Baylor Bears… BAY @ WVU       </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012538… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'>11</span><span> Houston Bapt… HBU @ AMCC      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012837… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'>12</span><span> Nevada Wolf … NEV @ SJSU      </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012626… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #BCBCBC;'>13</span><span> Prairie View… PV @ GRAM       </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012536… s:40~l:41… 2021-02-…
-#&gt; </span><span style='color: #949494;'># … with 23 more variables: attendance &lt;int&gt;, home_team_name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_team_logo &lt;chr&gt;, home_team_abb &lt;chr&gt;, home_team_id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_team_location &lt;chr&gt;, home_team_full &lt;chr&gt;, home_team_color &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_score &lt;int&gt;, home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;, away_team_color &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   startDate &lt;chr&gt;</span><span></div><div class='input'><span class='co'># Get schedule from 2018 season (returns 1000 results, max allowable.)</span>
-
-<span class='co'># Get schedule from date 2021-02-15</span>
-<span class='fu'>espn_mbb_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 13 x 31</span><span>
 #&gt;    matchup       matchup_short season  type slug   game_id  game_uid   game_date
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Virginia Cav… UVA @ FSU       </span><span style='text-decoration: underline;'>2</span><span>021     2 regul… 4012602… s:40~l:41… 2021-02-…

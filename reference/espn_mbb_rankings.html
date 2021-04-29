@@ -49,8 +49,7 @@
   
 
 <meta property="og:title" content="Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings" />
-<meta property="og:description" content="Get men's college basketball AP and Coaches Poll rankings from ESPN
-Get men's college basketball AP and Coaches Poll rankings from ESPN" />
+<meta property="og:description" content="Get men's college basketball AP and Coaches Poll rankings from ESPN" />
 <meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
 
 
@@ -93,7 +92,7 @@ Get men's college basketball AP and Coaches Poll rankings from ESPN" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -220,51 +219,22 @@ Get men's college basketball AP and Coaches Poll rankings from ESPN" />
 
     <div class="ref-description">
     <p>Get men's college basketball AP and Coaches Poll rankings from ESPN</p>
-<p>Get men's college basketball AP and Coaches Poll rankings from ESPN</p>
     </div>
 
-    <pre class="usage"><span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a tibble</p>
-<p>Returns a tibble</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Saiem Gilani</p>
-<p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get current AP and Coaches Poll rankings</span>
 <span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 46 x 34</span><span>
-#&gt;    id    name   shortName type  headline   shortHeadline current previous points
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       1        3    800
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       2        1    768
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       3        6    714
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       4        4    655
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       5        5    623
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       6       10    599
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       7        0    590
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       8        2    527
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       9       23    467
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2      10       14    451
-#&gt; </span><span style='color: #949494;'># … with 36 more rows, and 25 more variables: firstPlaceVotes &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   trend &lt;chr&gt;, recordSummary &lt;chr&gt;, team.id &lt;chr&gt;, team.uid &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team.location &lt;chr&gt;, team.name &lt;chr&gt;, team.nickname &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team.abbreviation &lt;chr&gt;, team.color &lt;chr&gt;, team.logo &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   occurrence.number &lt;int&gt;, occurrence.type &lt;chr&gt;, occurrence.last &lt;lgl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   occurrence.value &lt;chr&gt;, occurrence.displayValue &lt;chr&gt;, season.year &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.startDate &lt;chr&gt;, season.endDate &lt;chr&gt;, season.displayName &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.type.type &lt;int&gt;, season.type.name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.type.abbreviation &lt;chr&gt;, firstOccurrence.type &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   firstOccurrence.value &lt;chr&gt;</span><span></div><div class='input'><span class='co'># Get current AP and Coaches Poll rankings</span>
-<span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 46 x 34</span><span>
 #&gt;    id    name   shortName type  headline   shortHeadline current previous points
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       1        3    800

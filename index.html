@@ -45,7 +45,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -171,7 +171,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><a href="https://saiemgilani.github.io/kenpomR/"><strong><code>kenpomR</code></strong></a> is an R package for working with men’s college basketball data.</p>
+<p><a href="https://saiemgilani.github.io/kenpomR/"><strong><code>kenpomR</code></strong></a> is an R package for working with men’s basketball data.</p>
 <p>The package has functions to access <strong>live play by play and box score</strong> data from ESPN with shot locations when available.</p>
 <p>It is additionally a scraping and aggregating interface for Ken Pomeroy’s men’s college basketball statistics website, <a href="https://kenpom.com">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
 <div id="installation" class="section level2">
@@ -203,6 +203,21 @@
 </h2>
 <p><a href="https://saiemgilani.github.io/kenpomR/news/index.html"><strong>Full News on Releases</strong></a></p>
 </div>
+</div>
+<div id="kenpomr-04" class="section level1">
+<h1 class="hasAnchor">
+<a href="#kenpomr-04" class="anchor"></a><strong>kenpomR 0.4</strong>
+</h1>
+<ul>
+<li>Added support for ESPN’s NBA play-by-play endpoints with the addition of the following functions:</li>
+<li>
+<code><a href="reference/espn_nba_game_all.html">kenpomR::espn_nba_game_all()</a></code> - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)</li>
+<li><code><a href="reference/espn_nba_team_box.html">kenpomR::espn_nba_team_box()</a></code></li>
+<li><code><a href="reference/espn_nba_player_box.html">kenpomR::espn_nba_player_box()</a></code></li>
+<li><code><a href="reference/espn_nba_pbp.html">kenpomR::espn_nba_pbp()</a></code></li>
+<li><code><a href="reference/espn_nba_teams.html">kenpomR::espn_nba_teams()</a></code></li>
+<li><code><a href="reference/espn_nba_scoreboard.html">kenpomR::espn_nba_scoreboard()</a></code></li>
+</ul>
 </div>
 <div id="kenpomr-030" class="section level1">
 <h1 class="hasAnchor">
@@ -251,9 +266,9 @@
 <details><p><summary>View more version news</summary></p>
 </details>
 </div>
-<div id="new-in-v020-3-support-for-espns-college-basketball-game-data-and-ncaa-net-rankings" class="section level4">
+<div id="new-in-v020-3-support-for-espns-mens-college-basketball-game-data-and-ncaa-net-rankings" class="section level4">
 <h4 class="hasAnchor">
-<a href="#new-in-v020-3-support-for-espns-college-basketball-game-data-and-ncaa-net-rankings" class="anchor"></a>New in v0.2.0-3: Support for ESPN’s college basketball game data and NCAA NET Rankings</h4>
+<a href="#new-in-v020-3-support-for-espns-mens-college-basketball-game-data-and-ncaa-net-rankings" class="anchor"></a>New in v0.2.0-3: Support for ESPN’s men’s college basketball game data and NCAA NET Rankings</h4>
 <p>See the following <del>four</del> eight functions:</p>
 <ul>
 <li><p><a href="https://saiemgilani.github.io/kenpomR/reference/espn_mbb_game_all.html"><code>kenpomR::espn_mbb_game_all()</code></a></p></li>
@@ -293,6 +308,15 @@
 </table>
 <details><p><summary>View More</summary></p>
 <table class="table">
+<colgroup>
+<col width="1%">
+<col width="36%">
+<col width="41%">
+<col width="1%">
+<col width="12%">
+<col width="2%">
+<col width="4%">
+</colgroup>
 <thead><tr class="header">
 <th align="left">issue</th>
 <th align="left">icon</th>
@@ -302,7 +326,8 @@
 <th align="left">date</th>
 <th align="left">closed</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody>
+<tr class="odd">
 <td align="left">1</td>
 <td align="left"><span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span></td>
 <td align="left"><span title="**Describe the bug**..."><a href="https://github.com/saiemgilani/kenpomR/issues/1">gameplan function error</a></span></td>
@@ -310,7 +335,44 @@
 <td align="left"><a href="https://github.com/mcoleman9221">mcoleman9221</a></td>
 <td align="left">2021-01-28</td>
 <td align="left">2021-01-28 03:31:48</td>
-</tr></tbody>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left"><span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span></td>
+<td align="left"><span title="continue updating docs to reflect MBB"><a href="https://github.com/saiemgilani/kenpomR/pull/10">Add support for nba data from espn (including tests)</a></span></td>
+<td align="left"></td>
+<td align="left"><a href="https://github.com/saiemgilani">saiemgilani</a></td>
+<td align="left">2021-04-29</td>
+<td align="left">2021-04-29 10:26:44</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left"><span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span></td>
+<td align="left"><span title="# **kenpomR 0.3.0**..."><a href="https://github.com/saiemgilani/kenpomR/pull/9">v0.3.0</a></span></td>
+<td align="left"></td>
+<td align="left"><a href="https://github.com/saiemgilani">saiemgilani</a></td>
+<td align="left">2021-04-26</td>
+<td align="left">2021-04-26 21:59:14</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left"><span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span></td>
+<td align="left"><span title=""><a href="https://github.com/saiemgilani/kenpomR/pull/8">add cbb_espn_scoreboard function()</a></span></td>
+<td align="left"></td>
+<td align="left"><a href="https://github.com/saiemgilani">saiemgilani</a></td>
+<td align="left">2021-02-24</td>
+<td align="left">2021-02-24 20:43:38</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left"><span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span></td>
+<td align="left"><span title="Adding teams and conference lookup"><a href="https://github.com/saiemgilani/kenpomR/pull/7">Espn</a></span></td>
+<td align="left"></td>
+<td align="left"><a href="https://github.com/saiemgilani">saiemgilani</a></td>
+<td align="left">2021-02-21</td>
+<td align="left">2021-02-21 17:08:14</td>
+</tr>
+</tbody>
 </table></details><p><br></p>
 </div>
 <div id="our-authors" class="section level2">
