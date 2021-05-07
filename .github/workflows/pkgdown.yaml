@@ -49,7 +49,7 @@ jobs:
         run: |
           git add README.md
           git commit -m "Rebuild README.md" || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          git push origin --force || echo "No changes to commit"
       - name: Deploy package
         run: |
           git config --local user.email "actions@github.com"
