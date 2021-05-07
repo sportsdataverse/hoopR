@@ -3,12 +3,12 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/kenpomR/)
-[![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
 [![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/)
-[![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)](https://github.com/saiemgilani/kenpomR/graphs/contributors)
+[![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/kenpomR/)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
+[![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)](https://github.com/saiemgilani/kenpomR/graphs/contributors)
 <!-- badges: end -->
 
 [**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package
@@ -70,6 +70,10 @@ Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
   - `kenpomR::espn_nba_teams()`
   - `kenpomR::espn_nba_scoreboard()`
 
+<details>
+
+<summary>View more version news</summary>
+
 # **kenpomR 0.3.0**
 
   - `R` version 3.5.0 or greater dependency added
@@ -99,10 +103,6 @@ Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
 
   - Data sourced directly from the NCAA website will start the function
     with `ncaa_`
-
-<details>
-
-<summary>View more version news</summary>
 
 #### New in v0.2.0-3: Support for ESPN’s men’s college basketball game data and NCAA NET Rankings
 

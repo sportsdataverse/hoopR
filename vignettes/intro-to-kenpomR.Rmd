@@ -19,7 +19,7 @@ This tutorial will require the use of R and RStudio. You can [follow the instruc
 
 You can save your user email and password for consistent usage by adding `KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM` and `KP_PW = XX-YOUR-PASSWORD-XX` to your .Renviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)). Run [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html), a new script will pop open named `.Renviron`, **THEN** paste the following in the new script that pops up (with**out** quotations)
 
-``` {r, eval = FALSE}
+``` {r renvi, eval = FALSE}
 KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM
 KP_PW = XX-YOUR-PASSWORD-XX
 ```
@@ -28,20 +28,21 @@ Save the script and restart your RStudio session, by clicking `Session` (in betw
 
 For less consistent usage, save your user email and password as the environment variables `KP_USER` and `KP_PW` (**with** quotations) at the beginning of every session, using a command like the following.
 
-```{r, eval = FALSE}
+```{r sysenv, eval = FALSE}
 Sys.setenv(KP_USER = "XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM")
 Sys.setenv(KP_PW = "XX-YOUR-PASSWORD-XX")
 ```
 
 #### **How the browser login is set**
 
-This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function. 
-```{r, warning = FALSE, eval=FALSE}
+This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function.
+
+```{r browser_old, warning = FALSE, eval=FALSE}
 browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 ```
 
 ### **Import libraries**
-```{r, warning=FALSE,  message = FALSE}
+```{r load_import, warning=FALSE,  message = FALSE}
 # You can install using the pacman package using the following code:
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
@@ -56,11 +57,11 @@ Let's first just try to get our hands on the Pomeroy ratings for the last 10 yea
 -   ```min_year``` - First year of data to pull
 -   ```max_year``` - Last year of data to pull
 
-```{r message = FALSE}
+```{r kp_ratings, message = FALSE}
 rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2020)
 ```
 
-```{r}
+```{r kp_ratings_glimpse}
 glimpse(rtgs)
 ```
 So in this vignette, we're going to plot something simple first to get a sense of how we would compare different metrics and groups. In this example, we are going to compare Florida State's adjusted efficiency margin (__AdjEM__) over the past ten years and the ACC conference average. 
@@ -70,7 +71,7 @@ So in this vignette, we're going to plot something simple first to get a sense o
 First, to keep things a bit simpler, we will first create a second and third `rtgs` dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with.
   - ```ACC```: filter by conference = 'ACC', group by the year and conference, then use ```dplyr```'s ```dplyr::summarize()``` function, which we use to compute the ````mean()``` of each of the `Year`-`Conf` combinations. However, in this case, since there is only one conference, it is essentially just a `Year` grouping for the ACC.
 
-```{r}
+```{r preprocess_ratings}
 
 team1 = "Florida St."
 team2 = "ACC"
@@ -114,7 +115,7 @@ plot_data$Color_1 = Color1
 plot_data$Color_2 = Color2
 ```
 
-```{r, message=FALSE}
+```{r anim_presets, message=FALSE}
 
 logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
 z <- tempfile()
@@ -136,7 +137,7 @@ x_score <- 2 + x_max
 
 
 ### **Plotting a simple animation**
-```{r}
+```{r draw_frame_function}
 
 draw_frame <- function(year)
 {
