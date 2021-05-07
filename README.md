@@ -3,11 +3,10 @@
 
 <!-- badges: start -->
 
-![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)
-![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)
-[![R-CMD-check](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
-![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)
-![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)
+[![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/kenpomR/)
+[![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
+[![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/)
+[![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)](https://github.com/saiemgilani/kenpomR/graphs/contributors)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
 <!-- badges: end -->
