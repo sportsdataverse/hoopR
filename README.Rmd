@@ -96,9 +96,10 @@ For more information on the package and function reference, please see the  [**`
 - ```kenpomR::espn_nba_teams()``` 
 - ```kenpomR::espn_nba_scoreboard()``` 
 
-<details><summary>View more version news</summary>
+<details>
+<summary>View more version news</summary>
 
-# **kenpomR 0.3.0**
+### **kenpomR 0.3.0**
 
 - ```R``` version 3.5.0 or greater dependency added
 - ```purrr``` version 0.3.0 or greater dependency added
@@ -112,7 +113,7 @@ For more information on the package and function reference, please see the  [**`
 - ```furrr``` dependency added
 - ```future``` dependency added
 
-## **Test coverage**
+### **Test coverage**
 
 * Added tests for all KP and ESPN functions
 
@@ -144,7 +145,7 @@ See the following ~~four~~ eight functions:
 
 </details>
 
-## Current Issues
+# Current Issues
 
 ```{r,results='asis',echo=FALSE}
 x[c(1:(min(nrow(x),5))),] %>%
@@ -162,7 +163,7 @@ x2[c(1:(min(nrow(closed_tbl),5))),] %>%
 <br>
 
 
-## **Our Authors**
+# **Our Authors**
 
 -   [Saiem Gilani](https://twitter.com/saiemgilani)       
 <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>

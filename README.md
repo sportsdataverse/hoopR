@@ -74,7 +74,7 @@ Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
 
 <summary>View more version news</summary>
 
-# **kenpomR 0.3.0**
+### **kenpomR 0.3.0**
 
   - `R` version 3.5.0 or greater dependency added
   - `purrr` version 0.3.0 or greater dependency added
@@ -88,7 +88,7 @@ Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
   - `furrr` dependency added
   - `future` dependency added
 
-## **Test coverage**
+### **Test coverage**
 
   - Added tests for all KP and ESPN functions
 
@@ -133,7 +133,7 @@ See the following ~~four~~ eight functions:
 
 </details>
 
-## Current Issues
+# Current Issues
 
 | issue | icon | title | labels | opened\_by | date | closed |
 | :---- | :--- | :---- | :----- | :--------- | :--- | :----- |
@@ -155,7 +155,7 @@ See the following ~~four~~ eight functions:
 
 <br>
 
-## **Our Authors**
+# **Our Authors**
 
   - [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
