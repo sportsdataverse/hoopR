@@ -4,7 +4,7 @@
 <!-- badges: start -->
 
 ![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)
-[![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
+![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)
 [![R-CMD-check](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml)
 ![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)
 ![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)
