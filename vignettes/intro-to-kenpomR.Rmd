@@ -19,7 +19,7 @@ This tutorial will require the use of R and RStudio. You can [follow the instruc
 
 You can save your user email and password for consistent usage by adding `KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM` and `KP_PW = XX-YOUR-PASSWORD-XX` to your .Renviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)). Run [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html), a new script will pop open named `.Renviron`, **THEN** paste the following in the new script that pops up (with**out** quotations)
 
-``` {.r}
+``` {r, eval = FALSE}
 KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM
 KP_PW = XX-YOUR-PASSWORD-XX
 ```
@@ -32,6 +32,7 @@ For less consistent usage, save your user email and password as the environment 
 Sys.setenv(KP_USER = "XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM")
 Sys.setenv(KP_PW = "XX-YOUR-PASSWORD-XX")
 ```
+
 #### **How the browser login is set**
 
 This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function. 
