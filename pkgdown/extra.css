@@ -41,6 +41,28 @@ pre, code {
     border-color: #eee;
 }
 
+.label-default{
+    border-color: #ecdddd;
+    background-color: #658e9d;
+}
+.navbar-default {
+    border-color: #ecdddd;
+
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+
+    background-color: #3e577b;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+
+    background-color: #3e577b;
+}
+.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+    background-color: #3e577b;
+}
+.navbar-nav>.open>a, .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus {
+    background-color: #3e577b;
+}
 #tocnav ul ul {
     margin-left: 25px;
 }
@@ -59,7 +81,7 @@ pre, code {
 }
 .dropdown-menu {
   box-shadow: 0 6px 12px rgba(5, 5, 5, 0.18);
-  background-color: #222222;
+  background-color: #3e577b;
 }
 #navbar ul ul{
   font-family: "Fira Mono";
@@ -80,7 +102,10 @@ pre, code {
 .pkgdown {
   display: none;
 }
-
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  
+  background-color: #587193;
+}
 
 @-webkit-keyframes glow {
   from {
