@@ -1,6 +1,6 @@
 Package: kenpomR
 Title: Functions to Access Men's Basketball Play by Play Data
-Version: 0.4.0
+Version: 0.9.0
 Authors@R: 
     person(given = "Saiem",
            family = "Gilani",
