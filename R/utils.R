@@ -73,6 +73,21 @@ kp_password <- function() {
 #' @export
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
 
+most_recent_mbb_season <- function() {
+  dplyr::if_else(
+    as.double(substr(Sys.Date(), 6, 7)) >= 10,
+    as.double(substr(Sys.Date(), 1, 4))+1,
+    as.double(substr(Sys.Date(), 1, 4))
+  )
+}
+most_recent_nba_season <- function() {
+  dplyr::if_else(
+    as.double(substr(Sys.Date(), 6, 7)) >= 10,
+    as.double(substr(Sys.Date(), 1, 4))+1,
+    as.double(substr(Sys.Date(), 1, 4))
+  )
+}
+
 #' Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging
 #' @keywords Util
 #' @param df KenPom dataframe
