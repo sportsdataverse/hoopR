@@ -18,7 +18,7 @@ Get Team Stats
 }
 \examples{
 \dontrun{
- kp_teamstats(min_year = 2010, max_year = 2020, defense = FALSE)
+ kp_teamstats(min_year = 2019, max_year = 2020, defense = FALSE)
 }
 }
 \keyword{Team}

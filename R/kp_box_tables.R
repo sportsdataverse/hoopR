@@ -72,14 +72,16 @@ kp_box <- function(game_id, year){
   ref_table <- data.frame(ref_ids,ref_names,ref_ranks, stringsAsFactors = FALSE)
   ref_table$GameId <- game_id
   ref_table$Year <- year
-
+  ref_table <- ref_table %>%
+    janitor::clean_names()
   linescore <- ((page %>%
                    xml2::read_html() %>%
                    rvest::html_elements("#linescore-table2"))[[1]]) %>%
     rvest::html_table()
 
   names(linescore)[1] <- "Team"
-
+  linescore <- linescore %>%
+    janitor::clean_names()
   y <- list()
   for(i in 1:2){
     x <- (page %>%
@@ -98,7 +100,7 @@ kp_box <- function(game_id, year){
     x$WP.Note <- x[nrow(x),1]
     x <- x[1:(nrow(x)-1),]
     header_cols <- c("Hgt-Wgt-Yr", "Number", "Player", "Min",
-                     "ORtg", "%Ps", "Pts", "2PM-A", "3PM-A",
+                     "ORtg", "%Ps", "Pts", "FGM2-A", "FGM3-A",
                      "FTM-A", "OR", "DR", "A",
                      "TO", "Blk", "Stl", "PF", "Team", "WP.Note")
 
@@ -113,7 +115,8 @@ kp_box <- function(game_id, year){
                            "OR","DR","A","TO","Blk","Stl","PF"),as.numeric)
     )
     x <- x %>% dplyr::mutate(GameId = game_id,
-                             Year = year)
+                             Year = year) %>%
+      janitor::clean_names()
     y <- c(y,list(x))
   }
   ### Store Data
@@ -191,7 +194,8 @@ kp_winprob <- function(game_id, year){
                   VisitorScoring = .data$vsc,
                   HomeScoring = .data$hsc,
                   PossessionTeam = .data$p,
-                  PossessionNumber = .data$pn)
+                  PossessionNumber = .data$pn) %>%
+    janitor::clean_names()
   #---- game_data --------
   tm1 <- data.frame(tm1 = t(stringr::str_extract_all(r,pattern="team1:\'(.+)\'",simplify=TRUE)))
   tm2 <- data.frame(tm2 = t(stringr::str_extract_all(r,pattern="team2:\'(.+)\'",simplify=TRUE)))
@@ -282,7 +286,8 @@ kp_winprob <- function(game_id, year){
                   Tension.Rk = .data$rank_tns,
                   Excitement.Rk = .data$rank_exct,
                   LeadChanges.Rk  = .data$rank_favchg,
-                  MinimumWP.Rk = .data$rank_minwp)
+                  MinimumWP.Rk = .data$rank_minwp) %>%
+    janitor::clean_names()
   kenpom <- list(wp_dataset, game_data)
 
   return(kenpom)

@@ -7,8 +7,8 @@ test_that("KP - Get officials", {
   x <- kp_officials(year= 2020)
 
   cols <- c(
-    'Rk', 'OfficialName', 'RefRating', 'Gms',
-    'Last.Game', 'Last.Game.1', 'Year'
+    "rk", "official_name", "ref_rating",
+    "gms", "last_game", "last_game_1", "year"
   )
 
 

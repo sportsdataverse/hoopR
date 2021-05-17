@@ -7,13 +7,10 @@ test_that("KP - Get heights", {
   x <- kp_height(min_year = 2020, max_year = 2020)
 
   cols <- c(
-    'Team', 'Conf', 'Avg.Hgt', 'Avg.Hgt.Rk',
-    'Eff.Hgt', 'Eff.Hgt.Rk', 'C.Hgt', 'C.Hgt.Rk',
-    'PF.Hgt', 'PF.Hgt.Rk', 'SF.Hgt', 'SF.Hgt.Rk',
-    'SG.Hgt', 'SG.Hgt.Rk', 'PG.Hgt', 'PG.Hgt.Rk',
-    'Experience', 'Experience.Rk', 'Bench',
-    'Bench.Rk', 'Continuity',
-    'Continuity.Rk', 'NCAA_Seed', 'Year'
+  "team", "conf", "avg_hgt", "avg_hgt_rk", "eff_hgt",
+  "eff_hgt_rk", "c_hgt", "c_hgt_rk", "pf_hgt", "pf_hgt_rk", "sf_hgt",
+  "sf_hgt_rk", "sg_hgt", "sg_hgt_rk", "pg_hgt", "pg_hgt_rk", "experience", "experience_rk",
+  "bench", "bench_rk", "continuity", "continuity_rk", "ncaa_seed", "year"
   )
 
   expect_equal(colnames(x), cols)

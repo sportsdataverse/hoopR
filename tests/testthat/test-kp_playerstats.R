@@ -7,11 +7,11 @@ test_that("KP - Get player stats", {
   x <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
 
   cols_x1 <- c(
-    'Rk', 'Player', 'Team'
+    "rk", "player", "team"
   )
 
   cols_x2 <- c(
-    'Hgt', 'Wgt', 'Yr', 'Year'
+    "hgt", "wgt", "yr", "year"
   )
   expect_equal(colnames(x[1:3]), cols_x1)
   expect_equal(colnames(x[5:8]), cols_x2)

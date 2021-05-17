@@ -8,14 +8,11 @@ test_that("KP - Get conference history", {
 
 
   cols <- c(
-    'Year', 'Rank', 'Tempo',
-    'Efficiency', 'eFG.Pct', 'TO.Pct',
-    'OR.Pct', 'FTRate', 'FG_2.Pct',
-    'FG_3.Pct', 'FT.Pct', 'FG_3A.Pct',
-    'A.Pct', 'Blk.Pct', 'Stl.Pct',
-    'HomeRecord', 'Bids', 'S16', 'F4',
-    'CH', 'RegSeasonChamp', 'TourneyChamp',
-    'BestTeam')
+    "year", "rank", "tempo", "efficiency", "e_fg_pct", "to_pct",
+    "or_pct", "ft_rate", "fg_2_pct", "fg_3_pct", "ft_pct",
+    "fg_3a_pct", "a_pct", "blk_pct", "stl_pct",
+    "home_record", "bids", "s16", "f4", "ch", "reg_season_champ",
+    "tourney_champ", "best_team")
 
   expect_equal(colnames(x), cols)
   expect_s3_class(x,'data.frame')

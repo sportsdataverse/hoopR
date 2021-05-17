@@ -7,20 +7,20 @@ test_that("ESPN - Get MBB rankings", {
   x <- espn_mbb_rankings()
 
   cols <- c(
-    'id', 'name', 'shortName', 'type',
-    'headline', 'shortHeadline', 'current',
-    'previous', 'points', 'firstPlaceVotes',
-    'trend', 'recordSummary', 'team.id',
-    'team.uid', 'team.location', 'team.name',
-    'team.nickname', 'team.abbreviation',
-    'team.color', 'team.logo',
-    'occurrence.number', 'occurrence.type',
-    'occurrence.last', 'occurrence.value',
-    'occurrence.displayValue', 'season.year',
-    'season.startDate', 'season.endDate',
-    'season.displayName', 'season.type.type',
-    'season.type.name', 'season.type.abbreviation',
-    'firstOccurrence.type', 'firstOccurrence.value'
+    'id', 'name', 'short_name', 'type',
+    'headline', 'short_headline', 'current',
+    'previous', 'points', 'first_place_votes',
+    'trend', 'record_summary', 'team_id',
+    'team_uid', 'team_location', 'team_name',
+    'team_nickname', 'team_abbreviation',
+    'team_color', 'team_logo',
+    'occurrence_number', 'occurrence_type',
+    'occurrence_last', 'occurrence_value',
+    'occurrence_display_value', 'season_year',
+    'season_start_date', 'season_end_date',
+    'season_display_name', 'season_type_type',
+    'season_type_name', 'season_type_abbreviation',
+    'first_occurrence_type', 'first_occurrence_value'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')

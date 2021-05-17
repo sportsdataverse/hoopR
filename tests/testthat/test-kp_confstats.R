@@ -7,17 +7,13 @@ test_that("KP - Get conference statistics", {
   x <- kp_confstats(year='2020')
 
   cols <- c(
-    'Conf', 'Eff', 'Eff.Rk', 'Tempo',
-    'Tempo.Rk', 'eFG.Pct', 'eFG.Pct.Rk',
-    'TO.Pct', 'TO.Pct.Rk', 'OR.Pct',
-    'OR.Pct.Rk', 'FTRate', 'FTRate.Rk',
-    'Blk.Pct', 'Blk.Pct.Rk', 'Stl.Pct',
-    'Stl.Pct.Rk', 'FG_2.Pct', 'FG_2.Pct.Rk',
-    'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct', 'FT.Pct.Rk',
-    'FG_3A.Pct', 'FG_3A.Pct.Rk', 'A.Pct',
-    'A.Pct.Rk', 'HomeW-L', 'HomeW-L.Pct',
-    'HomeW-L.Rk', 'Close', 'Close.Rk',
-    'Blowouts', 'Blowouts.Rk', 'Year')
+    "conf", "eff", "eff_rk", "tempo", "tempo_rk", "e_fg_pct",
+    "e_fg_pct_rk", "to_pct", "to_pct_rk", "or_pct", "or_pct_rk",
+    "ft_rate", "ft_rate_rk", "blk_pct", "blk_pct_rk", "stl_pct",
+    "stl_pct_rk", "fg_2_pct", "fg_2_pct_rk", "fg_3_pct", "fg_3_pct_rk",
+    "ft_pct", "ft_pct_rk", "fg_3a_pct", "fg_3a_pct_rk", "a_pct", "a_pct_rk",
+    "home_w_l", "home_w_l_pct", "home_w_l_rk",
+    "close", "close_rk", "blowouts", "blowouts_rk", "year")
 
   expect_equal(colnames(x), cols)
   expect_s3_class(x,'data.frame')

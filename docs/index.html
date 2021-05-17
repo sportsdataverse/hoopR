@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An R package to quickly obtain clean and tidy men's basketball play by play data • kenpomR</title>
+<title>An R package to quickly obtain clean and tidy men's basketball play by play data • hoopR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -20,7 +20,7 @@
 <script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="An R package to quickly obtain clean and tidy men's basketball play by play data">
 <meta property="og:description" content="Functions to Access Men's Basketball Play by Play Data">
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png">
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -44,7 +44,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">kenpomR</a>
+        <a class="navbar-link" href="index.html">hoopR</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
@@ -84,7 +84,7 @@
       <a href="articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
       <a href="articles/example-functions.html">Example Functions</a>
@@ -131,7 +131,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -147,7 +147,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -165,48 +165,48 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="kenpomr-" class="section level1">
+<div id="hoopR-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#kenpomr-" class="anchor"></a>kenpomR <a href="http://saiemgilani.github.io/kenpomR"><img src="reference/figures/logo.png" align="right" height="139"></a>
+<a href="#hoopR-" class="anchor"></a>hoopR <a href="http://saiemgilani.github.io/hoopR"><img src="reference/figures/logo.png" align="right" height="139"></a>
 </h1></div>
 <!-- badges: start -->
 
-<p><a href="https://saiemgilani.github.io/kenpomR/"><strong><code>kenpomR</code></strong></a> is an R package for working with men’s college basketball data.</p>
+<p><a href="https://saiemgilani.github.io/hoopR/"><strong><code>hoopR</code></strong></a> is an R package for working with men’s college basketball data.</p>
 <p>The package has functions to access <strong>live play by play and box score</strong> data from ESPN with shot locations when available.</p>
 <p>It is additionally a scraping and aggregating interface for Ken Pomeroy’s men’s college basketball statistics website, <a href="https://kenpom.com">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of <a href="https://github.com/saiemgilani/kenpomR/"><strong><code>kenpomR</code></strong></a> from <a href="https://github.com/saiemgilani/kenpomR">GitHub</a> with:</p>
+<p>You can install the released version of <a href="https://github.com/saiemgilani/hoopR/"><strong><code>hoopR</code></strong></a> from <a href="https://github.com/saiemgilani/hoopR">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># You can install using the pacman package using the following code:</span>
 <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'pacman'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'pacman'</span><span class="op">)</span>
 <span class="op">}</span>
-<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_current_gh.html">p_load_current_gh</a></span><span class="op">(</span><span class="st">"saiemgilani/kenpomR"</span><span class="op">)</span></code></pre></div>
+<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_current_gh.html">p_load_current_gh</a></span><span class="op">(</span><span class="st">"saiemgilani/hoopR"</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># if you would prefer devtools installation</span>
 <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'devtools'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'devtools'</span><span class="op">)</span>
 <span class="op">}</span>
 <span class="co"># Alternatively, using the devtools package:</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"saiemgilani/kenpomR"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">"saiemgilani/hoopR"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h2>
-<p>For more information on the package and function reference, please see the <a href="https://saiemgilani.github.io/kenpomR/"><strong><code>kenpomR</code></strong> documentation website</a>.</p>
+<p>For more information on the package and function reference, please see the <a href="https://saiemgilani.github.io/hoopR/"><strong><code>hoopR</code></strong> documentation website</a>.</p>
 </div>
 <div id="breaking-changes" class="section level2">
 <h2 class="hasAnchor">
 <a href="#breaking-changes" class="anchor"></a><strong>Breaking Changes</strong>
 </h2>
-<p><a href="https://saiemgilani.github.io/kenpomR/news/index.html"><strong>Full News on Releases</strong></a></p>
+<p><a href="https://saiemgilani.github.io/hoopR/news/index.html"><strong>Full News on Releases</strong></a></p>
 </div>
 </div>
-<div id="kenpomr-030" class="section level1">
+<div id="hoopR-030" class="section level1">
 <h1 class="hasAnchor">
-<a href="#kenpomr-030" class="anchor"></a><strong>kenpomR 0.3.0</strong>
+<a href="#hoopR-030" class="anchor"></a><strong>hoopR 0.3.0</strong>
 </h1>
 <ul>
 <li>
@@ -238,15 +238,15 @@
 <a href="#new-in-v020-3-support-for-espns-college-basketball-game-data-and-ncaa-net-rankings" class="anchor"></a>New in v0.2.0-3: Support for ESPN’s college basketball game data and NCAA NET Rankings</h4>
 <p>See the following <del>four</del> eight functions:</p>
 <ul>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_game_all.html"><code>kenpomR::cbb_espn_game_all()</code></a></p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_pbp.html"><code>kenpomR::cbb_espn_pbp()</code></a></p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_team_box.html"><code>kenpomR::cbb_espn_team_box()</code></a></p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_player_box.html"><code>kenpomR::cbb_espn_player_box()</code></a></p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_teams.html"><code>kenpomR::cbb_espn_teams()</code></a> (bumps to v0.2.1)</p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_conferences.html"><code>kenpomR::cbb_espn_conferences()</code></a> (bumps to v0.2.1)</p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_espn_scoreboard.html"><code>kenpomR::cbb_espn_scoreboard()</code></a> (bumps to v0.2.2)</p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_ncaa_NET_rankings.html"><code>kenpomR::cbb_ncaa_NET_rankings()</code></a> (bumps to v0.2.3)</p></li>
-<li><p><a href="https://saiemgilani.github.io/kenpomR/reference/cbb_rankings.html"><code>kenpomR::cbb_rankings()</code></a> (bumps to v0.2.3)</p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_game_all.html"><code>hoopR::cbb_espn_game_all()</code></a></p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_pbp.html"><code>hoopR::cbb_espn_pbp()</code></a></p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_team_box.html"><code>hoopR::cbb_espn_team_box()</code></a></p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_player_box.html"><code>hoopR::cbb_espn_player_box()</code></a></p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_teams.html"><code>hoopR::cbb_espn_teams()</code></a> (bumps to v0.2.1)</p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_conferences.html"><code>hoopR::cbb_espn_conferences()</code></a> (bumps to v0.2.1)</p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_espn_scoreboard.html"><code>hoopR::cbb_espn_scoreboard()</code></a> (bumps to v0.2.2)</p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_ncaa_NET_rankings.html"><code>hoopR::cbb_ncaa_NET_rankings()</code></a> (bumps to v0.2.3)</p></li>
+<li><p><a href="https://saiemgilani.github.io/hoopR/reference/cbb_rankings.html"><code>hoopR::cbb_rankings()</code></a> (bumps to v0.2.3)</p></li>
 </ul>
 </div>
 <div id="current-issues" class="section level2">
@@ -286,7 +286,7 @@
 <tbody><tr class="odd">
 <td align="left">1</td>
 <td align="left"><span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span></td>
-<td align="left"><span title="**Describe the bug**..."><a href="https://github.com/saiemgilani/kenpomR/issues/1">gameplan function error</a></span></td>
+<td align="left"><span title="**Describe the bug**..."><a href="https://github.com/saiemgilani/hoopR/issues/1">gameplan function error</a></span></td>
 <td align="left">bug</td>
 <td align="left"><a href="https://github.com/mcoleman9221">mcoleman9221</a></td>
 <td align="left">2021-01-28</td>
@@ -313,9 +313,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Report a bug at <br><a href="https://www.github.com/saiemgilani/kenpomR/issues">https://​www.github.com/​saiemgilani/​kenpomR/​issues</a>
+<li>Report a bug at <br><a href="https://www.github.com/saiemgilani/hoopR/issues">https://​www.github.com/​saiemgilani/​hoopR/​issues</a>
 </li>
-<li>kenpomR beginner's guide at <br><a href="articles/intro-to-kenpomR.html">articles/​intro-to-kenpomR.html</a>
+<li>hoopR beginner's guide at <br><a href="articles/intro-to-hoopR.html">articles/​intro-to-hoopR.html</a>
 </li>
 </ul>
 </div>

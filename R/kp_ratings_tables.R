@@ -73,7 +73,8 @@ kp_pomeroy_ratings <- function(min_year, max_year){
     }
   }
   kenpom <- kenpom %>%
-    dplyr::arrange(-.data$Year, .data$Rk)
+    dplyr::arrange(-.data$Year, .data$Rk) %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -205,7 +206,8 @@ kp_efficiency <- function(min_year, max_year){
     }
   }
   kenpom <- kenpom %>%
-    dplyr::arrange(-.data$Year, .data$AdjT.Rk)
+    dplyr::arrange(-.data$Year, .data$AdjT.Rk) %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -287,7 +289,8 @@ kp_fourfactors <- function(min_year, max_year){
     }
   }
   kenpom <- kenpom %>%
-    dplyr::arrange(-.data$Year,.data$AdjO.Rk)
+    dplyr::arrange(-.data$Year,.data$AdjO.Rk) %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -370,6 +373,8 @@ kp_pointdist <- function(min_year, max_year){
       kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
+  kenpom <- kenpom %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -500,6 +505,8 @@ kp_height <- function(min_year,max_year){
       kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
+  kenpom <- kenpom %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -577,6 +584,8 @@ kp_foul_trouble <- function(min_year, max_year){
       kenpom <- dplyr::bind_rows(kenpom, x)
     }
   }
+  kenpom <- kenpom %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -598,7 +607,7 @@ kp_foul_trouble <- function(min_year, max_year){
 #'
 #' @examples
 #' \dontrun{
-#'  kp_teamstats(min_year = 2010, max_year = 2020, defense = FALSE)
+#'  kp_teamstats(min_year = 2019, max_year = 2020, defense = FALSE)
 #' }
 
 kp_teamstats <- function(min_year, max_year, defense = FALSE){
@@ -716,6 +725,8 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
       kenpom <- dplyr::bind_rows(kenpom, z)
     }
   }
+  kenpom <- kenpom %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -812,7 +823,8 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
                            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                          "Year" = year,
                          "Group" = groups[i]) %>%
-        as.data.frame()
+        as.data.frame() %>%
+        janitor::clean_names()
       y <- c(y,list(x))
     }
     ### Store Data
@@ -855,7 +867,8 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 
     ### Store Data
 
-    kenpom <- x
+    kenpom <- x %>%
+      janitor::clean_names()
   }
   return(kenpom)
 }
@@ -948,6 +961,8 @@ kp_kpoy <- function(year){
       replace_na_with_last <- function(x, p = is.na, d = 0){c(d, x)[cummax(seq_along(x)*(!p(x))) + 1]}
       x$Rk <- replace_na_with_last(x$Rk)
     }
+    x <- x %>%
+      janitor::clean_names()
     y <- c(y,list(x))
   }
   ### Store Data
