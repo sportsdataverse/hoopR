@@ -7,13 +7,10 @@ test_that("KP - Get trends", {
   x <- kp_trends()
 
   cols <- c(
-    'Season', 'Efficiency', 'Tempo',
-    'eFG.Pct', 'TO.Pct', 'OR.Pct',
-    'FTRate', 'FG_2.Pct', 'FG_3.Pct',
-    'FG_3A.Pct', 'FT.Pct', 'A.Pct',
-    'Blk.Pct', 'Stl.Pct',
-    'NonStl.Pct', 'Avg.Hgt',
-    'Continuity', 'HomeWin.Pct', 'PPG'
+    "season", "efficiency", "tempo", "e_fg_pct", "to_pct",
+    "or_pct", "ft_rate", "fg_2_pct", "fg_3_pct", "fg_3a_pct",
+    "ft_pct", "a_pct", "blk_pct", "stl_pct",
+    "non_stl_pct", "avg_hgt", "continuity", "home_win_pct", "ppg"
   )
 
 

@@ -7,8 +7,8 @@ test_that("KP - Get game attributes", {
   x <- kp_game_attrs(year=2020, attr = "Excitement")
 
   cols <- c(
-    'Rk', 'Data', 'Game', 'Location', 'Conf',
-    'Excitement', 'Year'
+    "rk", "data", "game", "location", "conf",
+    "excitement", "year"
   )
 
 

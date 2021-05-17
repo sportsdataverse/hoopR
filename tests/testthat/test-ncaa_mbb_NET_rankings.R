@@ -7,9 +7,9 @@ test_that("NCAA - Get MBB NET rankings", {
   x <- ncaa_mbb_NET_rankings()
 
   cols <- c(
-    'Rank', 'Previous', 'School', 'Conference',
-    'Record', 'Road', 'Neutral', 'Home',
-    'Quad_1', 'Quad_2', 'Quad_3', 'Quad_4'
+    'rank', 'previous', 'school', 'conference',
+    'record', 'road', 'neutral', 'home',
+    'quad_1', 'quad_2', 'quad_3', 'quad_4'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')

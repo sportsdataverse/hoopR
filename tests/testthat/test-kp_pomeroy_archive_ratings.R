@@ -8,12 +8,12 @@ test_that("KP - Get pomeroy archive ratings", {
 
 
   cols <- c(
-    "AdjEM.Rk", "Team", "Conf", "AdjEM",
-    "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk",
-    "AdjT", "AdjT.Rk", "Final.Rk", "Final.AdjEM",
-    "Final.AdjO", "Final.AdjO.Rk", "Final.AdjD",
-    "Final.AdjD.Rk", "Final.AdjT", "Final.AdjT.Rk",
-    "Rk.Chg", "EM.Chg", "AdjT.Chg", "NCAA_Seed"
+    "adj_em_rk", "team", "conf", "adj_em", "adj_o",
+    "adj_o_rk", "adj_d", "adj_d_rk", "adj_t",
+    "adj_t_rk", "final_rk", "final_adj_em",
+    "final_adj_o", "final_adj_o_rk", "final_adj_d",
+    "final_adj_d_rk", "final_adj_t", "final_adj_t_rk", "rk_chg",
+    "em_chg", "adj_t_chg", "ncaa_seed"
   )
 
   expect_equal(colnames(x), cols)

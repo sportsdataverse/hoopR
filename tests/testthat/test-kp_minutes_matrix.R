@@ -8,10 +8,10 @@ test_that("KP - Get minutes matrix", {
 
 
   cols_x1 <- c(
-    'Date', 'Opponent.Rk', 'Opponent', 'Result'
+    'date', 'opponent_rk', 'opponent', 'result'
   )
   cols_x2 <- c(
-    'Starting Lineup #', 'Team', 'Year'
+    'starting_lineup_number', 'team', 'year'
   )
   expect_equal(colnames(x[1:4]), cols_x1)
   expect_equal(colnames(x[(ncol(x)-2):ncol(x)]), cols_x2)

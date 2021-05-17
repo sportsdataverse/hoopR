@@ -22,9 +22,9 @@ kp_team_schedule <- function(team, year){
   browser <- login()
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -321,7 +321,8 @@ kp_team_schedule <- function(team, year){
   ### Store Data
   kenpom <- sched %>%
     dplyr::arrange(.data$GameDate) %>%
-    dplyr::mutate(Postseason = ifelse(is.na(.data$Postseason), "Regular", .data$Postseason))
+    dplyr::mutate(Postseason = ifelse(is.na(.data$Postseason), "Regular", .data$Postseason)) %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -350,9 +351,9 @@ kp_gameplan <- function(team, year=2020){
   browser <- login()
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -425,7 +426,8 @@ kp_gameplan <- function(team, year=2020){
                   .data$Off.eFG.Pct,.data$Off.TO.Pct,.data$Off.OR.Pct,.data$Off.FTR,
                   .data$Def.eFG.Pct,.data$Def.TO.Pct,.data$Def.OR.Pct,.data$Def.FTR) %>%
     dplyr::rename("Correlations (R x 100)" = .data$Location)
-  cor <- cor[2:3,]
+  cor <- cor[2:3,] %>%
+    janitor::clean_names()
   suppressWarnings(
     gp <- gp %>%
       dplyr::filter(!is.na(as.numeric(.data$Off.Eff))) %>%
@@ -443,7 +445,8 @@ kp_gameplan <- function(team, year=2020){
                          "Def.FG_3.Pct",	"Def.FG_3A.Pct", "TeamScore","OpponentScore"), as.numeric)
   )
   ### Store Data
-  gp <- gp %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore)
+  gp <- gp %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore) %>%
+    janitor::clean_names()
 
   z <- data.frame()
   tryCatch(
@@ -498,6 +501,7 @@ kp_gameplan <- function(team, year=2020){
             dplyr::select(.data$Team, .data$Category, tidyr::everything())
 
           z <- dplyr::bind_rows(z, d)
+
         }
       }
     },
@@ -510,7 +514,8 @@ kp_gameplan <- function(team, year=2020){
 
     }
   )
-
+  z <- z %>%
+    janitor::clean_names()
   kenpom <- c(list(gp),list(cor),list(z))
 
   return(kenpom)
@@ -540,9 +545,9 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
 
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -655,7 +660,8 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
     dplyr::select(.data$Date, .data$GameDate, .data$Day.Date,
                   .data$WL, .data$Team, .data$TeamScore,
                   .data$Opponent, .data$OpponentScore,
-                  tidyr::everything())
+                  tidyr::everything()) %>%
+    janitor::clean_names()
   return(kenpom)
 }
 
@@ -684,9 +690,9 @@ kp_team_players <- function(team, year= 2020){
   browser <- login()
   assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -874,7 +880,8 @@ kp_team_players <- function(team, year= 2020){
         dplyr::bind_cols(lapply(pid, as.numeric))
 
       ### Store Data
-      kenpom <- players
+      kenpom <- players %>%
+        janitor::clean_names()
     },
     error = function(e){
       message(glue::glue("{Sys.time()} - No Player Data available for {team} in {year}"))
@@ -1048,7 +1055,8 @@ kp_player_career <- function(player_id){
       players <- players %>%
         dplyr::select(
           .data$Year, .data$Team.Rk,.data$Team, .data$Number,
-          .data$Name, .data$Position, tidyr::everything())
+          .data$Name, .data$Position, tidyr::everything()) %>%
+        janitor::clean_names()
       s <- (page %>%
               xml2::read_html() %>%
               rvest::html_elements(css='#schedule-table'))
@@ -1095,7 +1103,8 @@ kp_player_career <- function(player_id){
           dplyr::select(.data$Year, .data$Team, .data$Name, .data$Position, tidyr::everything())
         schedule_games <- dplyr::bind_rows(schedule_games,sched)
       }
-
+      schedule_games <- schedule_games %>%
+        janitor::clean_names()
       ### Store Data
       kenpom <- c(list(players),list(schedule_games))
     },
@@ -1136,9 +1145,9 @@ kp_minutes_matrix <- function(team, year = 2020){
 
   assertthat::assert_that(year >= 2014, msg="Data only goes back to 2014")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -1173,7 +1182,8 @@ kp_minutes_matrix <- function(team, year = 2020){
                   Year = year)
 
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -1204,9 +1214,9 @@ kp_team_player_stats <- function(team, year = 2020){
 
   assertthat::assert_that(year>=2014, msg="Data only goes back to 2014")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -1378,7 +1388,8 @@ kp_team_player_stats <- function(team, year = 2020){
     y <- dplyr::bind_rows(y, players)
   }
   ### Store Data
-  kenpom <- y
+  kenpom <- y %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -1427,9 +1438,9 @@ kp_team_depth_chart <- function(team, year= 2020){
 
   assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -1534,7 +1545,8 @@ kp_team_depth_chart <- function(team, year= 2020){
           .data$C.PlayerLastName, .data$C.Hgt, .data$C.Wgt, .data$C.Yr, .data$C.Min.Pct,
           .data$Team, .data$Year)
       ### Store Data
-      kenpom <- depth1
+      kenpom <- depth1 %>%
+        janitor::clean_names()
     },
     error = function(e){
       message(glue::glue("{Sys.time()} - {team} - {year} Team Depth Chart is missing"))
@@ -1577,7 +1589,7 @@ kp_team_depth_chart <- function(team, year= 2020){
 #'
 #' @examples
 #'   \dontrun{
-#'     kp_team_lineups(team = 'Florida St.', year= 2020)
+#'    kp_team_lineups(team = 'Florida St.', year= 2020)
 #'   }
 #'
 
@@ -1587,9 +1599,9 @@ kp_team_lineups <- function(team, year= 2020){
 
   assertthat::assert_that(year >= 2010, msg = "Data only goes back to 2010")
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == year,]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
 
@@ -1694,7 +1706,8 @@ kp_team_lineups <- function(team, year= 2020){
       depth2[nrow(depth2),"PG.PlayerFirstName"]<- "UNKNOWN"
       depth2[nrow(depth2),"C.Number"] <- NA_real_
       depth2[nrow(depth2),"C.Yr"] <- NA_real_
-      kenpom <- depth2
+      kenpom <- depth2 %>%
+        janitor::clean_names()
 
     },
     error = function(e){

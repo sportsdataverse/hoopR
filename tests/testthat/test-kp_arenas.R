@@ -7,8 +7,8 @@ test_that("KP - Get arenas", {
   x <- kp_arenas(year=2020)
 
   cols <- c(
-    'Rk', 'Team', 'Conf',
-    'Arena', 'Alternate', 'Year'
+    'rk', 'team', 'conf',
+    'arena', 'alternate', 'year'
   )
 
 

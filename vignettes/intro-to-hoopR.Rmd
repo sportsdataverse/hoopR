@@ -1,5 +1,5 @@
 ---
-title: "Intro to kenpomR"
+title: "Intro to hoopR"
 author: "Saiem Gilani"
 output: html_document
 ---
@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
-We will be acquiring data from [kenpom.com](https://kenpom.com), using the `kenpomR` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
+We will be acquiring data from [kenpom.com](https://kenpom.com), using the `hoopR` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
 
 ### R & RStudio
 
@@ -48,12 +48,12 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/kenpomR")
+pacman::p_load_current_gh("saiemgilani/hoopR")
 pacman::p_load(dplyr, ggplot2,animation,ggimage,png, glue)
 
 ```
 
-Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the `kenpomR::kp_pomeroy_ratings()` function, which takes the following arguments:
+Let's first just try to get our hands on the Pomeroy ratings for the last 10 years by using the `hoopR::kp_pomeroy_ratings()` function, which takes the following arguments:
 
 -   `min_year` - First year of data to pull
 -   `max_year` - Last year of data to pull
@@ -118,7 +118,7 @@ plot_data$Color_2 = Color2
 
 ```{r anim_presets, message=FALSE}
 
-logo_url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.png"
+logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.png"
 z <- tempfile()
 download.file(logo_url,z,mode="wb")
 m <- png::readPNG(z)
@@ -259,9 +259,9 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ```
 
-![Result](https://github.com/saiemgilani/kenpomR/blob/master/man/figures/animated_AdjEM.gif?raw=true)
+![Result](https://github.com/saiemgilani/hoopR/blob/master/man/figures/animated_AdjEM.gif?raw=true)
 
-![site\_navigation](http://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/site_navigation.png)
+![site\_navigation](http://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/site_navigation.png)
 
 ```{r kp_efficiency_ex, message = FALSE}
 

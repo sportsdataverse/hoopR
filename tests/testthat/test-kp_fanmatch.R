@@ -7,11 +7,10 @@ test_that("KP - Get FanMatch", {
   x <- kp_fanmatch(date="2020-03-10")
 
   cols <- c(
-    'Prediction', 'Time(ET)', 'Location',
-    'ThrillScore', 'Comeback', 'Excitement',
-    'WinRk', 'WinTeam', 'WinScore',
-    'LossRk', 'LossTeam',
-    'LossScore', 'Poss', 'MVP', 'Event', 'Date'
+    "prediction", "time_et", "location",
+    "thrill_score", "comeback", "excitement", "win_rk",
+    "win_team", "win_score", "loss_rk", "loss_team",
+    "loss_score", "poss", "mvp", "event", "date"
   )
 
 
