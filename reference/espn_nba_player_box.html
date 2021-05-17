@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ESPN NBA player box scores — espn_nba_player_box • kenpomR</title>
+<title>Get ESPN NBA player box scores — espn_nba_player_box • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get ESPN NBA player box scores — espn_nba_player_box" />
 <meta property="og:description" content="Get ESPN NBA player box scores" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -239,49 +239,49 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_nba_player_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        athlete.displayName team.shortDisplayName MIN   FG  3PT  FT OREB DREB
-#&gt; 1            Darius Bazley               Thunder  32 7-14  4-8 0-0    0    7
-#&gt; 2            Luguentz Dort               Thunder  29 2-10  1-7 6-7    1    1
-#&gt; 3              Isaiah Roby               Thunder  23  4-9  1-3 1-2    2    6
-#&gt; 4             Theo Maledon               Thunder  34  4-7  4-5 2-2    0    5
-#&gt; 5  Shai Gilgeous-Alexander               Thunder  33 6-14  2-5 8-8    1    2
-#&gt; 6            Darius Miller               Thunder   9  1-1  1-1 0-0    0    1
-#&gt; 7         Kenrich Williams               Thunder  24  1-1  0-0 0-0    1    4
-#&gt; 8           Justin Jackson               Thunder  10  1-2  1-2 1-2    1    1
-#&gt; 9             Mike Muscala               Thunder  26 7-11  5-9 2-2    0    3
-#&gt; 10          Hamidou Diallo               Thunder  20  2-9  0-1 4-5    0    3
-#&gt; 11           Kyle Anderson             Grizzlies  26 7-11  2-3 4-6    0    5
-#&gt; 12           Dillon Brooks             Grizzlies  30 5-13  0-3 7-7    0    1
-#&gt; 13       Jonas Valanciunas             Grizzlies  28 9-12  0-0 4-6    5    7
-#&gt; 14               Ja Morant             Grizzlies  35 4-14  0-3 7-8    1   10
-#&gt; 15           Grayson Allen             Grizzlies  32 7-13 6-10 2-2    0    4
-#&gt; 16          Brandon Clarke             Grizzlies  25  5-8  2-2 0-2    0    6
-#&gt; 17          Xavier Tillman             Grizzlies  19  3-4  1-1 0-0    0    2
-#&gt; 18              Tyus Jones             Grizzlies  22  0-4  0-1 0-0    1    1
-#&gt; 19            John Konchar             Grizzlies   6  1-2  0-1 0-0    0    0
-#&gt; 20          Sean McDermott             Grizzlies  17  1-2  1-2 2-2    0    1
-#&gt;    REB AST STL BLK TO PF +/- PTS starter ejected didNotPlay active
-#&gt; 1    7   2   0   0  2  0 -10  18    TRUE   FALSE      FALSE   TRUE
-#&gt; 2    2   1   0   1  2  3 -15  11    TRUE   FALSE      FALSE  FALSE
-#&gt; 3    8   4   2   0  2  6  -6  10    TRUE   FALSE      FALSE  FALSE
-#&gt; 4    5   2   2   0  3  3  -1  14    TRUE   FALSE      FALSE   TRUE
-#&gt; 5    3   6   0   0  1  2  -2  22    TRUE   FALSE      FALSE  FALSE
-#&gt; 6    1   2   0   1  1  1  -4   3   FALSE   FALSE      FALSE   TRUE
-#&gt; 7    5   3   1   0  0  2  +6   2   FALSE   FALSE      FALSE   TRUE
-#&gt; 8    2   1   0   1  4  1  -3   4   FALSE   FALSE      FALSE  FALSE
-#&gt; 9    3   0   0   0  1  5  -4  21   FALSE   FALSE      FALSE  FALSE
-#&gt; 10   3   4   0   0  2  2  -6   8   FALSE   FALSE      FALSE   TRUE
-#&gt; 11   5   5   5   1  1  2 +15  20    TRUE   FALSE      FALSE  FALSE
-#&gt; 12   1   1   1   0  2  5 +14  17    TRUE   FALSE      FALSE   TRUE
-#&gt; 13  12   2   0   1  2  4 +17  22    TRUE   FALSE      FALSE   TRUE
-#&gt; 14  11  12   1   0  3  0  +5  15    TRUE   FALSE      FALSE   TRUE
-#&gt; 15   4   3   1   0  0  2  +0  22    TRUE   FALSE      FALSE   TRUE
-#&gt; 16   6   2   2   2  2  1  -9  12   FALSE   FALSE      FALSE   TRUE
-#&gt; 17   2   2   1   0  1  1  -5   7   FALSE   FALSE      FALSE  FALSE
-#&gt; 18   2   4   1   0  0  0 +13   0   FALSE   FALSE      FALSE  FALSE
-#&gt; 19   0   0   1   0  1  1 -13   2   FALSE   FALSE      FALSE  FALSE
-#&gt; 20   1   0   1   0  0  2  +8   5   FALSE   FALSE      FALSE  FALSE
-#&gt;    athlete.jersey athlete.id     athlete.shortName
+</div><div class='output co'>#&gt;       athlete_display_name team_short_display_name min   fg  fg3  ft oreb dreb
+#&gt; 1            Darius Bazley                 Thunder  32 7-14  4-8 0-0    0    7
+#&gt; 2            Luguentz Dort                 Thunder  29 2-10  1-7 6-7    1    1
+#&gt; 3              Isaiah Roby                 Thunder  23  4-9  1-3 1-2    2    6
+#&gt; 4             Theo Maledon                 Thunder  34  4-7  4-5 2-2    0    5
+#&gt; 5  Shai Gilgeous-Alexander                 Thunder  33 6-14  2-5 8-8    1    2
+#&gt; 6            Darius Miller                 Thunder   9  1-1  1-1 0-0    0    1
+#&gt; 7         Kenrich Williams                 Thunder  24  1-1  0-0 0-0    1    4
+#&gt; 8           Justin Jackson                 Thunder  10  1-2  1-2 1-2    1    1
+#&gt; 9             Mike Muscala                 Thunder  26 7-11  5-9 2-2    0    3
+#&gt; 10          Hamidou Diallo                 Thunder  20  2-9  0-1 4-5    0    3
+#&gt; 11           Kyle Anderson               Grizzlies  26 7-11  2-3 4-6    0    5
+#&gt; 12           Dillon Brooks               Grizzlies  30 5-13  0-3 7-7    0    1
+#&gt; 13       Jonas Valanciunas               Grizzlies  28 9-12  0-0 4-6    5    7
+#&gt; 14               Ja Morant               Grizzlies  35 4-14  0-3 7-8    1   10
+#&gt; 15           Grayson Allen               Grizzlies  32 7-13 6-10 2-2    0    4
+#&gt; 16          Brandon Clarke               Grizzlies  25  5-8  2-2 0-2    0    6
+#&gt; 17          Xavier Tillman               Grizzlies  19  3-4  1-1 0-0    0    2
+#&gt; 18              Tyus Jones               Grizzlies  22  0-4  0-1 0-0    1    1
+#&gt; 19            John Konchar               Grizzlies   6  1-2  0-1 0-0    0    0
+#&gt; 20          Sean McDermott               Grizzlies  17  1-2  1-2 2-2    0    1
+#&gt;    reb ast stl blk to pf +/- pts starter ejected did_not_play active
+#&gt; 1    7   2   0   0  2  0 -10  18    TRUE   FALSE        FALSE   TRUE
+#&gt; 2    2   1   0   1  2  3 -15  11    TRUE   FALSE        FALSE  FALSE
+#&gt; 3    8   4   2   0  2  6  -6  10    TRUE   FALSE        FALSE  FALSE
+#&gt; 4    5   2   2   0  3  3  -1  14    TRUE   FALSE        FALSE   TRUE
+#&gt; 5    3   6   0   0  1  2  -2  22    TRUE   FALSE        FALSE  FALSE
+#&gt; 6    1   2   0   1  1  1  -4   3   FALSE   FALSE        FALSE   TRUE
+#&gt; 7    5   3   1   0  0  2  +6   2   FALSE   FALSE        FALSE   TRUE
+#&gt; 8    2   1   0   1  4  1  -3   4   FALSE   FALSE        FALSE  FALSE
+#&gt; 9    3   0   0   0  1  5  -4  21   FALSE   FALSE        FALSE  FALSE
+#&gt; 10   3   4   0   0  2  2  -6   8   FALSE   FALSE        FALSE   TRUE
+#&gt; 11   5   5   5   1  1  2 +15  20    TRUE   FALSE        FALSE  FALSE
+#&gt; 12   1   1   1   0  2  5 +14  17    TRUE   FALSE        FALSE   TRUE
+#&gt; 13  12   2   0   1  2  4 +17  22    TRUE   FALSE        FALSE   TRUE
+#&gt; 14  11  12   1   0  3  0  +5  15    TRUE   FALSE        FALSE   TRUE
+#&gt; 15   4   3   1   0  0  2  +0  22    TRUE   FALSE        FALSE   TRUE
+#&gt; 16   6   2   2   2  2  1  -9  12   FALSE   FALSE        FALSE   TRUE
+#&gt; 17   2   2   1   0  1  1  -5   7   FALSE   FALSE        FALSE  FALSE
+#&gt; 18   2   4   1   0  0  0 +13   0   FALSE   FALSE        FALSE  FALSE
+#&gt; 19   0   0   1   0  1  1 -13   2   FALSE   FALSE        FALSE  FALSE
+#&gt; 20   1   0   1   0  0  2  +8   5   FALSE   FALSE        FALSE  FALSE
+#&gt;    athlete_jersey athlete_id    athlete_short_name
 #&gt; 1               7    4423545             D. Bazley
 #&gt; 2               5    4397020               L. Dort
 #&gt; 3              22    4066392               I. Roby
@@ -302,7 +302,7 @@
 #&gt; 18             21    3135046              T. Jones
 #&gt; 19             46    3134932            J. Konchar
 #&gt; 20             30    3908903          S. McDermott
-#&gt;                                             athlete.headshot.href
+#&gt;                                             athlete_headshot_href
 #&gt; 1  https://a.espncdn.com/i/headshots/nba/players/full/4423545.png
 #&gt; 2  https://a.espncdn.com/i/headshots/nba/players/full/4397020.png
 #&gt; 3  https://a.espncdn.com/i/headshots/nba/players/full/4066392.png
@@ -323,7 +323,7 @@
 #&gt; 18 https://a.espncdn.com/i/headshots/nba/players/full/3135046.png
 #&gt; 19 https://a.espncdn.com/i/headshots/nba/players/full/3134932.png
 #&gt; 20 https://a.espncdn.com/i/headshots/nba/players/full/3908903.png
-#&gt;    athlete.position.name athlete.position.abbreviation team.name
+#&gt;    athlete_position_name athlete_position_abbreviation team_name
 #&gt; 1          Power Forward                            PF   Thunder
 #&gt; 2          Small Forward                            SF   Thunder
 #&gt; 3                 Center                             C   Thunder
@@ -344,7 +344,7 @@
 #&gt; 18           Point Guard                            PG Grizzlies
 #&gt; 19        Shooting Guard                            SG Grizzlies
 #&gt; 20        Shooting Guard                            SG Grizzlies
-#&gt;                                            team.logo team.id team.abbreviation
+#&gt;                                            team_logo team_id team_abbreviation
 #&gt; 1  https://a.espncdn.com/i/teamlogos/nba/500/okc.png      25               OKC
 #&gt; 2  https://a.espncdn.com/i/teamlogos/nba/500/okc.png      25               OKC
 #&gt; 3  https://a.espncdn.com/i/teamlogos/nba/500/okc.png      25               OKC
@@ -365,27 +365,27 @@
 #&gt; 18 https://a.espncdn.com/i/teamlogos/nba/500/mem.png      29               MEM
 #&gt; 19 https://a.espncdn.com/i/teamlogos/nba/500/mem.png      29               MEM
 #&gt; 20 https://a.espncdn.com/i/teamlogos/nba/500/mem.png      29               MEM
-#&gt;    team.color team.alternateColor
-#&gt; 1      C67C03              f05133
-#&gt; 2      C67C03              f05133
-#&gt; 3      C67C03              f05133
-#&gt; 4      C67C03              f05133
-#&gt; 5      C67C03              f05133
-#&gt; 6      C67C03              f05133
-#&gt; 7      C67C03              f05133
-#&gt; 8      C67C03              f05133
-#&gt; 9      C67C03              f05133
-#&gt; 10     C67C03              f05133
-#&gt; 11     5D76A8              7399c6
-#&gt; 12     5D76A8              7399c6
-#&gt; 13     5D76A8              7399c6
-#&gt; 14     5D76A8              7399c6
-#&gt; 15     5D76A8              7399c6
-#&gt; 16     5D76A8              7399c6
-#&gt; 17     5D76A8              7399c6
-#&gt; 18     5D76A8              7399c6
-#&gt; 19     5D76A8              7399c6
-#&gt; 20     5D76A8              7399c6</div><div class='input'>
+#&gt;    team_color team_alternate_color
+#&gt; 1      C67C03               f05133
+#&gt; 2      C67C03               f05133
+#&gt; 3      C67C03               f05133
+#&gt; 4      C67C03               f05133
+#&gt; 5      C67C03               f05133
+#&gt; 6      C67C03               f05133
+#&gt; 7      C67C03               f05133
+#&gt; 8      C67C03               f05133
+#&gt; 9      C67C03               f05133
+#&gt; 10     C67C03               f05133
+#&gt; 11     5D76A8               7399c6
+#&gt; 12     5D76A8               7399c6
+#&gt; 13     5D76A8               7399c6
+#&gt; 14     5D76A8               7399c6
+#&gt; 15     5D76A8               7399c6
+#&gt; 16     5D76A8               7399c6
+#&gt; 17     5D76A8               7399c6
+#&gt; 18     5D76A8               7399c6
+#&gt; 19     5D76A8               7399c6
+#&gt; 20     5D76A8               7399c6</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

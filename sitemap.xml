@@ -1,177 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/index.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/index.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/check_internet.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/check_status.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/check_status.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/clean_team_names_NCAA_merge.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/clean_team_names_NCAA_merge.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_conferences.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_conferences.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_game_all.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_game_all.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_pbp.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_pbp.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_player_box.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_player_box.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_rankings.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_rankings.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_scoreboard.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_scoreboard.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_team_box.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_team_box.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_mbb_teams.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_game_all.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_game_all.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_pbp.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_pbp.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_player_box.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_player_box.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_scoreboard.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_scoreboard.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_team_box.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_team_box.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/espn_nba_teams.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hoopR-package.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kenpomR-package.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_arenas.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_arenas.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_box.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_box.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_coach_history.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_coach_history.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_conf.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_conf.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_confhistory.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_confhistory.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_confstats.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_confstats.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_efficiency.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_efficiency.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_fanmatch.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_fanmatch.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_foul_trouble.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_foul_trouble.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_fourfactors.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_fourfactors.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_game_attrs.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_game_attrs.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_gameplan.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_gameplan.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_hca.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_hca.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_height.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_height.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_kpoy.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_kpoy.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_minutes_matrix.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_minutes_matrix.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_officials.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_officials.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_opptracker.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_opptracker.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_player_career.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_player_career.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_playerstats.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_playerstats.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_pointdist.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_pointdist.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_pomeroy_archive_ratings.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_pomeroy_archive_ratings.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_pomeroy_ratings.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_pomeroy_ratings.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_program_ratings.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_program_ratings.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_depth_chart.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_depth_chart.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_history.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_history.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_lineups.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_lineups.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_player_stats.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_player_stats.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_players.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_players.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_team_schedule.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_team_schedule.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_teamstats.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_teamstats.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_trends.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_trends.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_user_pw.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_user_pw.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/kp_winprob.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/kp_winprob.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/ncaa_mbb_NET_rankings.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/pipe.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ncaa_mbb_NET_rankings.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/reference/teams_links.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/articles/example-functions.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/teams_links.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/kenpomR/articles/intro-to-kenpomR.html</loc>
+    <loc>http://saiemgilani.github.io/hoopR/reference/update_mbb_db.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/update_nba_db.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/intro-to-hoopR.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/kenpom-example-functions.html</loc>
   </url>
 </urlset>

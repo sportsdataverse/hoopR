@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings • kenpomR</title>
+<title>Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings" />
 <meta property="og:description" content="Get men's college basketball AP and Coaches Poll rankings from ESPN" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -235,28 +235,28 @@
     <pre class="examples"><div class='input'><span class='co'># Get current AP and Coaches Poll rankings</span>
 <span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 46 x 34</span><span>
-#&gt;    id    name   shortName type  headline   shortHeadline current previous points
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       1        3    800
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       2        1    768
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       3        6    714
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       4        4    655
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       5        5    623
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       6       10    599
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       7        0    590
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       8        2    527
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2       9       23    467
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2     Coach… Coaches … usa   2021 NCAA… 2021 : Week 2      10       14    451
-#&gt; </span><span style='color: #949494;'># … with 36 more rows, and 25 more variables: firstPlaceVotes &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   trend &lt;chr&gt;, recordSummary &lt;chr&gt;, team.id &lt;chr&gt;, team.uid &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team.location &lt;chr&gt;, team.name &lt;chr&gt;, team.nickname &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team.abbreviation &lt;chr&gt;, team.color &lt;chr&gt;, team.logo &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   occurrence.number &lt;int&gt;, occurrence.type &lt;chr&gt;, occurrence.last &lt;lgl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   occurrence.value &lt;chr&gt;, occurrence.displayValue &lt;chr&gt;, season.year &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.startDate &lt;chr&gt;, season.endDate &lt;chr&gt;, season.displayName &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.type.type &lt;int&gt;, season.type.name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   season.type.abbreviation &lt;chr&gt;, firstOccurrence.type &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   firstOccurrence.value &lt;chr&gt;</span><span></div></span></pre>
+#&gt;    id    name   short_name type  headline short_headline current previous points
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        1        3    800
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        2        1    768
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        3        6    714
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        4        4    655
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        5        5    623
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        6       10    599
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        7        0    590
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        8        2    527
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        9       23    467
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2       10       14    451
+#&gt; </span><span style='color: #949494;'># … with 36 more rows, and 25 more variables: first_place_votes &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   trend &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   occurrence_number &lt;int&gt;, occurrence_type &lt;chr&gt;, occurrence_last &lt;lgl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   occurrence_value &lt;chr&gt;, occurrence_display_value &lt;chr&gt;, season_year &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   season_start_date &lt;chr&gt;, season_end_date &lt;chr&gt;, season_display_name &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   season_type_type &lt;int&gt;, season_type_name &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   season_type_abbreviation &lt;chr&gt;, first_occurrence_type &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   first_occurrence_value &lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

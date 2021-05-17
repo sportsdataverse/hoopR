@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • kenpomR</title>
+<title>Changelog • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,7 +49,7 @@
   
 
 <meta property="og:title" content="Changelog" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -90,8 +90,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -130,10 +130,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -177,7 +177,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -193,7 +193,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -215,24 +215,59 @@
       
     </div>
 
-    <div id="kenpomr-04" class="section level1">
+    <div id="hoopr-100" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.0">
+<a href="#hoopr-100" class="anchor"></a><strong>hoopR 1.0.0</strong>
+</h1>
+<div id="package-renamed-to-hoopr" class="section level3">
+<h3 class="hasAnchor">
+<a href="#package-renamed-to-hoopr" class="anchor"></a><strong>Package renamed to hoopR</strong>
+</h3>
+<p>To reflect that the package is no longer just a men’s college basketball and KenPom package, but also an NBA package.</p>
+</div>
+<div id="clean-names-and-team-returns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#clean-names-and-team-returns" class="anchor"></a><strong>Clean names and team returns</strong>
+</h3>
+<ul>
+<li>All functions have now been given the <a href="https://rdrr.io/cran/janitor/man/clean_names.html"><code>janitor::clean_names()</code></a> treatment</li>
+<li>
+<a href="https://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html"><code>hoopR::espn_mbb_teams()</code></a> has updated the returns to be more identity information related only</li>
+<li>
+<a href="https://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html"><code>hoopR::espn_nba_teams()</code></a> to be more identity information related only</li>
+<li>All tests were updated</li>
+</ul>
+</div>
+<div id="loading-capabilities-added-to-the-package" class="section level3">
+<h3 class="hasAnchor">
+<a href="#loading-capabilities-added-to-the-package" class="anchor"></a><strong>Loading capabilities added to the package</strong>
+</h3>
+<ul>
+<li>
+<a href="https://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html"><code>hoopR::load_mbb_pbp()</code></a> and <a href="https://saiemgilani.github.io/hoopR/reference/update_mbb_db.html"><code>hoopR::update_mbb_db()</code></a> functions added</li>
+<li>
+<a href="https://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html"><code>hoopR::load_nba_pbp()</code></a> and <a href="https://saiemgilani.github.io/hoopR/reference/update_nba_db.html"><code>hoopR::update_nba_db()</code></a> functions added</li>
+</ul>
+</div>
+</div>
+    <div id="hoopr-04" class="section level1">
 <h1 class="page-header" data-toc-text="0.4">
-<a href="#kenpomr-04" class="anchor"></a><strong>kenpomR 0.4</strong>
+<a href="#hoopr-04" class="anchor"></a><strong>hoopR 0.4</strong>
 </h1>
 <ul>
 <li>Added support for ESPN’s NBA play-by-play endpoints with the addition of the following functions:</li>
 <li>
-<code><a href="../reference/espn_nba_game_all.html">kenpomR::espn_nba_game_all()</a></code> - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)</li>
-<li><code><a href="../reference/espn_nba_team_box.html">kenpomR::espn_nba_team_box()</a></code></li>
-<li><code><a href="../reference/espn_nba_player_box.html">kenpomR::espn_nba_player_box()</a></code></li>
-<li><code><a href="../reference/espn_nba_pbp.html">kenpomR::espn_nba_pbp()</a></code></li>
-<li><code><a href="../reference/espn_nba_teams.html">kenpomR::espn_nba_teams()</a></code></li>
-<li><code><a href="../reference/espn_nba_scoreboard.html">kenpomR::espn_nba_scoreboard()</a></code></li>
+<code><a href="../reference/espn_nba_game_all.html">hoopR::espn_nba_game_all()</a></code> - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)</li>
+<li><code><a href="../reference/espn_nba_team_box.html">hoopR::espn_nba_team_box()</a></code></li>
+<li><code><a href="../reference/espn_nba_player_box.html">hoopR::espn_nba_player_box()</a></code></li>
+<li><code><a href="../reference/espn_nba_pbp.html">hoopR::espn_nba_pbp()</a></code></li>
+<li><code><a href="../reference/espn_nba_teams.html">hoopR::espn_nba_teams()</a></code></li>
+<li><code><a href="../reference/espn_nba_scoreboard.html">hoopR::espn_nba_scoreboard()</a></code></li>
 </ul>
 </div>
-    <div id="kenpomr-030" class="section level1">
+    <div id="hoopr-030" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.0">
-<a href="#kenpomr-030" class="anchor"></a><strong>kenpomR 0.3.0</strong>
+<a href="#hoopr-030" class="anchor"></a><strong>hoopR 0.3.0</strong>
 </h1>
 <div id="dependencies" class="section level2">
 <h2 class="hasAnchor">
@@ -281,40 +316,40 @@
 </div>
 </div>
 </div>
-    <div id="kenpomr-020-3" class="section level1">
+    <div id="hoopr-020-3" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0-3">
-<a href="#kenpomr-020-3" class="anchor"></a><strong>kenpomR 0.2.0-3</strong>
+<a href="#hoopr-020-3" class="anchor"></a><strong>hoopR 0.2.0-3</strong>
 </h1>
 <ul>
 <li>Added support for ESPN’s men’s college basketball play-by-play endpoints with the addition of the following functions:</li>
 <li>
-<code><a href="../reference/espn_mbb_game_all.html">kenpomR::espn_mbb_game_all()</a></code> - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)</li>
-<li><code><a href="../reference/espn_mbb_team_box.html">kenpomR::espn_mbb_team_box()</a></code></li>
-<li><code><a href="../reference/espn_mbb_player_box.html">kenpomR::espn_mbb_player_box()</a></code></li>
-<li><code><a href="../reference/espn_mbb_pbp.html">kenpomR::espn_mbb_pbp()</a></code></li>
+<code><a href="../reference/espn_mbb_game_all.html">hoopR::espn_mbb_game_all()</a></code> - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)</li>
+<li><code><a href="../reference/espn_mbb_team_box.html">hoopR::espn_mbb_team_box()</a></code></li>
+<li><code><a href="../reference/espn_mbb_player_box.html">hoopR::espn_mbb_player_box()</a></code></li>
+<li><code><a href="../reference/espn_mbb_pbp.html">hoopR::espn_mbb_pbp()</a></code></li>
 <li>
-<code><a href="../reference/espn_mbb_teams.html">kenpomR::espn_mbb_teams()</a></code> (bumps to v0.2.1)</li>
+<code><a href="../reference/espn_mbb_teams.html">hoopR::espn_mbb_teams()</a></code> (bumps to v0.2.1)</li>
 <li>
-<code><a href="../reference/espn_mbb_conferences.html">kenpomR::espn_mbb_conferences()</a></code> (bumps to v0.2.1)</li>
+<code><a href="../reference/espn_mbb_conferences.html">hoopR::espn_mbb_conferences()</a></code> (bumps to v0.2.1)</li>
 <li>
-<code><a href="../reference/espn_mbb_scoreboard.html">kenpomR::espn_mbb_scoreboard()</a></code> (bumps to v0.2.2)</li>
+<code><a href="../reference/espn_mbb_scoreboard.html">hoopR::espn_mbb_scoreboard()</a></code> (bumps to v0.2.2)</li>
 <li>
-<code><a href="../reference/ncaa_mbb_NET_rankings.html">kenpomR::ncaa_mbb_NET_rankings()</a></code> (bumps to v0.2.3)</li>
+<code><a href="../reference/ncaa_mbb_NET_rankings.html">hoopR::ncaa_mbb_NET_rankings()</a></code> (bumps to v0.2.3)</li>
 <li>
-<code><a href="../reference/espn_mbb_rankings.html">kenpomR::espn_mbb_rankings()</a></code> (bumps to v0.2.3)</li>
+<code><a href="../reference/espn_mbb_rankings.html">hoopR::espn_mbb_rankings()</a></code> (bumps to v0.2.3)</li>
 </ul>
 </div>
-    <div id="kenpomr-010" class="section level1">
+    <div id="hoopr-010" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.0">
-<a href="#kenpomr-010" class="anchor"></a><strong>kenpomR 0.1.0</strong>
+<a href="#hoopr-010" class="anchor"></a><strong>hoopR 0.1.0</strong>
 </h1>
 <ul>
 <li>Minor fixes</li>
 </ul>
 </div>
-    <div id="kenpomr-0009" class="section level1">
+    <div id="hoopr-0009" class="section level1">
 <h1 class="page-header" data-toc-text="0.0.0.9">
-<a href="#kenpomr-0009" class="anchor"></a><strong>kenpomR 0.0.0.9</strong>
+<a href="#hoopr-0009" class="anchor"></a><strong>hoopR 0.0.0.9</strong>
 </h1>
 <p>Initial Commits, remaining tasks:</p>
 <ul>

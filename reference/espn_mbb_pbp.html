@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ESPN men's college basketball PBP data — espn_mbb_pbp • kenpomR</title>
+<title>Get ESPN men's college basketball PBP data — espn_mbb_pbp • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get ESPN men's college basketball PBP data — espn_mbb_pbp" />
 <meta property="og:description" content="Get ESPN men's college basketball PBP data" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -240,22 +240,22 @@
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_mbb_pbp</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401256760</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 353 x 17</span><span>
-#&gt;    shootingPlay sequenceNumber homeScore scoringPlay awayScore id      text     
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> TRUE         101805901              0 FALSE               0 401256… M.J. Wal…
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> FALSE        101806301              0 FALSE               0 401256… RaiQuan …
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> TRUE         101806302              2 TRUE                0 401256… RaiQuan …
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> TRUE         101808801              2 FALSE               0 401256… Scottie …
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> FALSE        101809001              2 FALSE               0 401256… Balsa Ko…
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> TRUE         101814501              2 FALSE               0 401256… Balsa Ko…
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> FALSE        101814502              2 FALSE               0 401256… Florida …
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> TRUE         101817001              2 TRUE                3 401256… Tre Mann…
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> FALSE        101818201              2 FALSE               3 401256… RaiQuan …
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE        101818202              2 FALSE               3 401256… Tre Mann…
-#&gt; </span><span style='color: #949494;'># … with 343 more rows, and 10 more variables: scoreValue &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   period.displayValue &lt;chr&gt;, period.number &lt;int&gt;, clock.displayValue &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team.id &lt;chr&gt;, type.id &lt;chr&gt;, type.text &lt;chr&gt;, play.id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   athlete1.id &lt;chr&gt;, athlete2.id &lt;chr&gt;</span><span></div><div class='input'>
+#&gt;    shooting_play sequence_number home_score scoring_play away_score id     text 
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> TRUE          101805901                0 FALSE                 0 40125… M.J.…
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> FALSE         101806301                0 FALSE                 0 40125… RaiQ…
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> TRUE          101806302                2 TRUE                  0 40125… RaiQ…
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> TRUE          101808801                2 FALSE                 0 40125… Scot…
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> FALSE         101809001                2 FALSE                 0 40125… Bals…
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> TRUE          101814501                2 FALSE                 0 40125… Bals…
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> FALSE         101814502                2 FALSE                 0 40125… Flor…
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> TRUE          101817001                2 TRUE                  3 40125… Tre …
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> FALSE         101818201                2 FALSE                 3 40125… RaiQ…
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE         101818202                2 FALSE                 3 40125… Tre …
+#&gt; </span><span style='color: #949494;'># … with 343 more rows, and 10 more variables: score_value &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   period_display_value &lt;chr&gt;, period_number &lt;int&gt;, clock_display_value &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;, play_id &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   athlete1_id &lt;chr&gt;, athlete2_id &lt;chr&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

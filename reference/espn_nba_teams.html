@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ESPN NBA team names and ids — espn_nba_teams • kenpomR</title>
+<title>Get ESPN NBA team names and ids — espn_nba_teams • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get ESPN NBA team names and ids — espn_nba_teams" />
 <meta property="og:description" content="Get ESPN NBA team names and ids" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -231,28 +231,21 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_nba_teams</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 30 x 36</span><span>
-#&gt;    id    uid    slug    location name  abbreviation displayName shortDisplayName
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>           
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 1     s:40~… atlant… Atlanta  Hawks ATL          Atlanta Ha… Hawks           
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2     s:40~… boston… Boston   Celt… BOS          Boston Cel… Celtics         
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 17    s:40~… brookl… Brooklyn Nets  BKN          Brooklyn N… Nets            
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 30    s:40~… charlo… Charlot… Horn… CHA          Charlotte … Hornets         
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 4     s:40~… chicag… Chicago  Bulls CHI          Chicago Bu… Bulls           
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 5     s:40~… clevel… Clevela… Cava… CLE          Cleveland … Cavaliers       
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 6     s:40~… dallas… Dallas   Mave… DAL          Dallas Mav… Mavericks       
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 7     s:40~… denver… Denver   Nugg… DEN          Denver Nug… Nuggets         
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 8     s:40~… detroi… Detroit  Pist… DET          Detroit Pi… Pistons         
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 9     s:40~… golden… Golden … Warr… GS           Golden Sta… Warriors        
-#&gt; </span><span style='color: #949494;'># … with 20 more rows, and 28 more variables: color &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   alternateColor &lt;chr&gt;, isActive &lt;lgl&gt;, isAllStar &lt;lgl&gt;, logos_href_1 &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   logos_href_2 &lt;chr&gt;, logos_href_3 &lt;chr&gt;, logos_href_4 &lt;chr&gt;, summary &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   playoffSeed &lt;dbl&gt;, wins &lt;dbl&gt;, losses &lt;dbl&gt;, winPercent &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   gamesBehind &lt;dbl&gt;, ties &lt;dbl&gt;, OTWins &lt;dbl&gt;, OTLosses &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   gamesPlayed &lt;dbl&gt;, pointsFor &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   avgPointsFor &lt;dbl&gt;, avgPointsAgainst &lt;dbl&gt;, points &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   differential &lt;dbl&gt;, streak &lt;dbl&gt;, divisionWinPercent &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   leagueWinPercent &lt;dbl&gt;, clincher &lt;dbl&gt;</span><span></div><div class='input'>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 30 x 12</span><span>
+#&gt;    team_id team       mascot    abbreviation display_name       short_name color
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 1       Atlanta    Hawks     ATL          Atlanta Hawks      Hawks      002B…
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2       Boston     Celtics   BOS          Boston Celtics     Celtics    0065…
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 17      Brooklyn   Nets      BKN          Brooklyn Nets      Nets       0000…
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 30      Charlotte  Hornets   CHA          Charlotte Hornets  Hornets    1D10…
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 4       Chicago    Bulls     CHI          Chicago Bulls      Bulls      0000…
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 5       Cleveland  Cavaliers CLE          Cleveland Cavalie… Cavaliers  0616…
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 6       Dallas     Mavericks DAL          Dallas Mavericks   Mavericks  0C47…
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 7       Denver     Nuggets   DEN          Denver Nuggets     Nuggets    0860…
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 8       Detroit    Pistons   DET          Detroit Pistons    Pistons    FA00…
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 9       Golden St… Warriors  GS           Golden State Warr… Warriors   003d…
+#&gt; </span><span style='color: #949494;'># … with 20 more rows, and 5 more variables: alternate_color &lt;chr&gt;, logo &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   logo_dark &lt;chr&gt;, logos_href_3 &lt;chr&gt;, logos_href_4 &lt;chr&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

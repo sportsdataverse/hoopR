@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ESPN NBA PBP data — espn_nba_pbp • kenpomR</title>
+<title>Get ESPN NBA PBP data — espn_nba_pbp • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get ESPN NBA PBP data — espn_nba_pbp" />
 <meta property="og:description" content="Get ESPN NBA PBP data" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -240,23 +240,23 @@
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_nba_pbp</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 472 x 20</span><span>
-#&gt;    shootingPlay sequenceNumber homeScore scoringPlay awayScore id     text      
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> FALSE        4                      0 FALSE               0 40128… Isaiah Ro…
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> TRUE         7                      0 FALSE               0 40128… Jonas Val…
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> FALSE        8                      0 FALSE               0 40128… Darius Ba…
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> FALSE        9                      0 FALSE               0 40128… Dillon Br…
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> TRUE         11                     0 FALSE               0 40128… Darius Ba…
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> FALSE        12                     0 FALSE               0 40128… Ja Morant…
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> TRUE         13                     0 FALSE               0 40128… Grayson A…
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> FALSE        14                     0 FALSE               0 40128… Isaiah Ro…
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> TRUE         15                     0 TRUE                3 40128… Shai Gilg…
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE        16                     0 FALSE               3 40128… Theo Male…
-#&gt; </span><span style='color: #949494;'># … with 462 more rows, and 13 more variables: scoreValue &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   period.displayValue &lt;chr&gt;, period.number &lt;int&gt;, coordinate.x &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   coordinate.y &lt;int&gt;, clock.displayValue &lt;chr&gt;, team.id &lt;chr&gt;, type.id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   type.text &lt;chr&gt;, play.id &lt;chr&gt;, athlete1.id &lt;chr&gt;, athlete2.id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   athlete3.id &lt;chr&gt;</span><span></div><div class='input'>
+#&gt;    shooting_play sequence_number home_score scoring_play away_score id     text 
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> FALSE         4                        0 FALSE                 0 40128… Isai…
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> TRUE          7                        0 FALSE                 0 40128… Jona…
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> FALSE         8                        0 FALSE                 0 40128… Dari…
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> FALSE         9                        0 FALSE                 0 40128… Dill…
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> TRUE          11                       0 FALSE                 0 40128… Dari…
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> FALSE         12                       0 FALSE                 0 40128… Ja M…
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> TRUE          13                       0 FALSE                 0 40128… Gray…
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> FALSE         14                       0 FALSE                 0 40128… Isai…
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> TRUE          15                       0 TRUE                  3 40128… Shai…
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE         16                       0 FALSE                 3 40128… Theo…
+#&gt; </span><span style='color: #949494;'># … with 462 more rows, and 13 more variables: score_value &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   period_display_value &lt;chr&gt;, period_number &lt;int&gt;, coordinate_x &lt;int&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   coordinate_y &lt;int&gt;, clock_display_value &lt;chr&gt;, team_id &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   type_id &lt;chr&gt;, type_text &lt;chr&gt;, play_id &lt;chr&gt;, athlete1_id &lt;chr&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   athlete2_id &lt;chr&gt;, athlete3_id &lt;chr&gt;</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

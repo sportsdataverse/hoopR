@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get ESPN conference names and ids — espn_mbb_conferences • kenpomR</title>
+<title>Get ESPN conference names and ids — espn_mbb_conferences • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -50,7 +50,7 @@
 
 <meta property="og:title" content="Get ESPN conference names and ids — espn_mbb_conferences" />
 <meta property="og:description" content="Get ESPN conference names and ids" />
-<meta property="og:image" content="http://saiemgilani.github.io/kenpomR/logo.png" />
+<meta property="og:image" content="http://saiemgilani.github.io/hoopR/logo.png" />
 
 
 
@@ -91,8 +91,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">kenpomR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <a class="navbar-link" href="../index.html">hoopR</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -131,10 +131,10 @@
       <a href="../articles/index.html">Vignettes</a>
     </li>
     <li>
-      <a href="../articles/intro-to-kenpomR.html">Intro to kenpomR</a>
+      <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
     </li>
     <li>
-      <a href="../articles/example-functions.html">Example Functions</a>
+      <a href="../articles/kenpom-example-functions.html">KenPom Example Functions</a>
     </li>
   </ul>
 </li>
@@ -178,7 +178,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://github.com/saiemgilani/kenpomR-data">Data Repository</a>
+      <a href="https://github.com/saiemgilani/hoopR-data">Data Repository</a>
     </li>
   </ul>
 </li>
@@ -194,7 +194,7 @@
   </a>
 </li>
 <li>
-  <a href="https://github.com/saiemgilani/kenpomR/">
+  <a href="https://github.com/saiemgilani/hoopR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -231,41 +231,41 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_mbb_conferences</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    groupId     shortName            uid                               name
-#&gt; 1        0        Top 25           &lt;NA&gt;                               &lt;NA&gt;
-#&gt; 2       50           ALL s:40~l:41~g:50                    NCAA Division I
-#&gt; 3        3          A 10  s:40~l:41~g:3             Atlantic 10 Conference
-#&gt; 4        2           ACC  s:40~l:41~g:2          Atlantic Coast Conference
-#&gt; 5       46          ASUN s:40~l:41~g:46                    ASUN Conference
-#&gt; 6        1      Am. East  s:40~l:41~g:1            America East Conference
-#&gt; 7       62      American s:40~l:41~g:62       American Athletic Conference
-#&gt; 8        8        Big 12  s:40~l:41~g:8                  Big 12 Conference
-#&gt; 9        4      Big East  s:40~l:41~g:4                Big East Conference
-#&gt; 10       5       Big Sky  s:40~l:41~g:5                 Big Sky Conference
-#&gt; 11       6     Big South  s:40~l:41~g:6               Big South Conference
-#&gt; 12       7       Big Ten  s:40~l:41~g:7                 Big Ten Conference
-#&gt; 13       9      Big West  s:40~l:41~g:9                Big West Conference
-#&gt; 14      11         C-USA s:40~l:41~g:11                     Conference USA
-#&gt; 15      10           CAA s:40~l:41~g:10      Colonial Athletic Association
-#&gt; 16      45       Horizon s:40~l:41~g:45                     Horizon League
-#&gt; 17      12           Ivy s:40~l:41~g:12                         Ivy League
-#&gt; 18      13          MAAC s:40~l:41~g:13 Metro Atlantic Athletic Conference
-#&gt; 19      14           MAC s:40~l:41~g:14            Mid-American Conference
-#&gt; 20      16          MEAC s:40~l:41~g:16    Mid-Eastern Athletic Conference
-#&gt; 21      18           MVC s:40~l:41~g:18         Missouri Valley Conference
-#&gt; 22      44 Mountain West s:40~l:41~g:44           Mountain West Conference
-#&gt; 23      19           NEC s:40~l:41~g:19               Northeast Conference
-#&gt; 24      20           OVC s:40~l:41~g:20             Ohio Valley Conference
-#&gt; 25      21        Pac-12 s:40~l:41~g:21                  Pac-12 Conference
-#&gt; 26      22       Patriot s:40~l:41~g:22                     Patriot League
-#&gt; 27      23           SEC s:40~l:41~g:23            Southeastern Conference
-#&gt; 28      26          SWAC s:40~l:41~g:26   Southwestern Athletic Conference
-#&gt; 29      24      Southern s:40~l:41~g:24                Southern Conference
-#&gt; 30      25     Southland s:40~l:41~g:25               Southland Conference
-#&gt; 31      49        Summit s:40~l:41~g:49                      Summit League
-#&gt; 32      27      Sun Belt s:40~l:41~g:27                Sun Belt Conference
-#&gt; 33      30           WAC s:40~l:41~g:30        Western Athletic Conference
-#&gt; 34      29           WCC s:40~l:41~g:29              West Coast Conference
+</div><div class='output co'>#&gt;    group_id    short_name            uid                               name
+#&gt; 1         0        Top 25           &lt;NA&gt;                               &lt;NA&gt;
+#&gt; 2        50           ALL s:40~l:41~g:50                    NCAA Division I
+#&gt; 3         3          A 10  s:40~l:41~g:3             Atlantic 10 Conference
+#&gt; 4         2           ACC  s:40~l:41~g:2          Atlantic Coast Conference
+#&gt; 5        46          ASUN s:40~l:41~g:46                    ASUN Conference
+#&gt; 6         1      Am. East  s:40~l:41~g:1            America East Conference
+#&gt; 7        62      American s:40~l:41~g:62       American Athletic Conference
+#&gt; 8         8        Big 12  s:40~l:41~g:8                  Big 12 Conference
+#&gt; 9         4      Big East  s:40~l:41~g:4                Big East Conference
+#&gt; 10        5       Big Sky  s:40~l:41~g:5                 Big Sky Conference
+#&gt; 11        6     Big South  s:40~l:41~g:6               Big South Conference
+#&gt; 12        7       Big Ten  s:40~l:41~g:7                 Big Ten Conference
+#&gt; 13        9      Big West  s:40~l:41~g:9                Big West Conference
+#&gt; 14       11         C-USA s:40~l:41~g:11                     Conference USA
+#&gt; 15       10           CAA s:40~l:41~g:10      Colonial Athletic Association
+#&gt; 16       45       Horizon s:40~l:41~g:45                     Horizon League
+#&gt; 17       12           Ivy s:40~l:41~g:12                         Ivy League
+#&gt; 18       13          MAAC s:40~l:41~g:13 Metro Atlantic Athletic Conference
+#&gt; 19       14           MAC s:40~l:41~g:14            Mid-American Conference
+#&gt; 20       16          MEAC s:40~l:41~g:16    Mid-Eastern Athletic Conference
+#&gt; 21       18           MVC s:40~l:41~g:18         Missouri Valley Conference
+#&gt; 22       44 Mountain West s:40~l:41~g:44           Mountain West Conference
+#&gt; 23       19           NEC s:40~l:41~g:19               Northeast Conference
+#&gt; 24       20           OVC s:40~l:41~g:20             Ohio Valley Conference
+#&gt; 25       21        Pac-12 s:40~l:41~g:21                  Pac-12 Conference
+#&gt; 26       22       Patriot s:40~l:41~g:22                     Patriot League
+#&gt; 27       23           SEC s:40~l:41~g:23            Southeastern Conference
+#&gt; 28       26          SWAC s:40~l:41~g:26   Southwestern Athletic Conference
+#&gt; 29       24      Southern s:40~l:41~g:24                Southern Conference
+#&gt; 30       25     Southland s:40~l:41~g:25               Southland Conference
+#&gt; 31       49        Summit s:40~l:41~g:49                      Summit League
+#&gt; 32       27      Sun Belt s:40~l:41~g:27                Sun Belt Conference
+#&gt; 33       30           WAC s:40~l:41~g:30        Western Athletic Conference
+#&gt; 34       29           WCC s:40~l:41~g:29              West Coast Conference
 #&gt;                                                                   logo
 #&gt; 1                                                                 &lt;NA&gt;
 #&gt; 2                                                                 &lt;NA&gt;
@@ -301,41 +301,41 @@
 #&gt; 32        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/sun_belt.png
 #&gt; 33             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/wac.png
 #&gt; 34      https://a.espncdn.com/i/teamlogos/ncaa_conf/500/west_coast.png
-#&gt;    parentGroupId
-#&gt; 1           &lt;NA&gt;
-#&gt; 2           &lt;NA&gt;
-#&gt; 3             50
-#&gt; 4             50
-#&gt; 5             50
-#&gt; 6             50
-#&gt; 7             50
-#&gt; 8             50
-#&gt; 9             50
-#&gt; 10            50
-#&gt; 11            50
-#&gt; 12            50
-#&gt; 13            50
-#&gt; 14            50
-#&gt; 15            50
-#&gt; 16            50
-#&gt; 17            50
-#&gt; 18            50
-#&gt; 19            50
-#&gt; 20            50
-#&gt; 21            50
-#&gt; 22            50
-#&gt; 23            50
-#&gt; 24            50
-#&gt; 25            50
-#&gt; 26            50
-#&gt; 27            50
-#&gt; 28            50
-#&gt; 29            50
-#&gt; 30            50
-#&gt; 31            50
-#&gt; 32            50
-#&gt; 33            50
-#&gt; 34            50</div><div class='input'>
+#&gt;    parent_group_id
+#&gt; 1             &lt;NA&gt;
+#&gt; 2             &lt;NA&gt;
+#&gt; 3               50
+#&gt; 4               50
+#&gt; 5               50
+#&gt; 6               50
+#&gt; 7               50
+#&gt; 8               50
+#&gt; 9               50
+#&gt; 10              50
+#&gt; 11              50
+#&gt; 12              50
+#&gt; 13              50
+#&gt; 14              50
+#&gt; 15              50
+#&gt; 16              50
+#&gt; 17              50
+#&gt; 18              50
+#&gt; 19              50
+#&gt; 20              50
+#&gt; 21              50
+#&gt; 22              50
+#&gt; 23              50
+#&gt; 24              50
+#&gt; 25              50
+#&gt; 26              50
+#&gt; 27              50
+#&gt; 28              50
+#&gt; 29              50
+#&gt; 30              50
+#&gt; 31              50
+#&gt; 32              50
+#&gt; 33              50
+#&gt; 34              50</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
