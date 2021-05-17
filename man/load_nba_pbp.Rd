@@ -2,7 +2,7 @@
 % Please edit documentation in R/nba_pbp.R
 \name{load_nba_pbp}
 \alias{load_nba_pbp}
-\title{\strong{Load kenpomR NBA play-by-play}}
+\title{\strong{Load hoopR NBA play-by-play}}
 \usage{
 load_nba_pbp(seasons, ..., qs = FALSE)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/mbb_pbp.R
 \name{load_mbb_pbp}
 \alias{load_mbb_pbp}
-\title{\strong{Load kenpomR men's college basketball play-by-play}}
+\title{\strong{Load hoopR men's college basketball play-by-play}}
 \usage{
 load_mbb_pbp(seasons, ..., qs = FALSE)
 }

@@ -1,5 +1,5 @@
 library(testthat)
-library(kenpomR)
+library(hoopR)
 
-test_check("kenpomR")
+test_check("hoopR")
 

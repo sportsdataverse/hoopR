@@ -5,12 +5,12 @@
 \alias{nba_db}
 \alias{nba}
 \alias{nba_pbp_db}
-\title{\strong{Update or create a kenpomR play-by-play database}}
+\title{\strong{Update or create a hoopR play-by-play database}}
 \usage{
 update_nba_db(
   dbdir = ".",
   dbname = "nba_pbp_db",
-  tblname = "kenpomR_nba_pbp",
+  tblname = "hoopR_nba_pbp",
   force_rebuild = FALSE,
   db_connection = NULL
 )
@@ -29,7 +29,7 @@ of or the complete play by play data table within the database (please see detai
 \code{\link[DBI:dbConnect]{DBI::dbConnect()}} (please see details for further information)}
 }
 \description{
-\code{update_nba_db()} updates or creates a database with \code{kenpomR}
+\code{update_nba_db()} updates or creates a database with \code{hoopR}
 play by play data of all completed and available games since 2002.
 }
 \details{
@@ -38,10 +38,10 @@ within a SQLite database (other drivers via \code{db_connection}) located in
 \code{dbdir} and named \code{dbname}.
 The data table combines all play by play data for every available game back
 to the 2002 season and adds the most recent completed games as soon as they
-are available for \code{kenpomR}.
+are available for \code{hoopR}.
 
 The argument \code{force_rebuild} is of hybrid type. It can rebuild the play
-by play data table either for the whole kenpomR era (with \code{force_rebuild = TRUE})
+by play data table either for the whole hoopR era (with \code{force_rebuild = TRUE})
 or just for specified seasons (e.g. \code{force_rebuild = c(2019, 2020)}).
 Please note the following behavior:
 \itemize{

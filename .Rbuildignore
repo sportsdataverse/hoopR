@@ -10,7 +10,7 @@
 ^docs$
 ^pkgdown$
 ^logo.png
-^kenpomR_*
+^hoopR_*
 ^\.github$
 ^inst*
 ^vignette*

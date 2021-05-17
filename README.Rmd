@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# kenpomR <a href='http://saiemgilani.github.io/kenpomR'><img src="man/figures/logo.png" align="right" height="139"/></a>
+# hoopR <a href='http://saiemgilani.github.io/hoopR'><img src="man/figures/logo.png" align="right" height="139"/></a>
 ```{r, include = FALSE}
 require(knitr)
 if (!requireNamespace('issue') & !requireNamespace('pacman')){
@@ -22,7 +22,7 @@ token <- tryCatch(
   error = function(e) NULL
 )
 raw_data <- issue::get_issues(
-  repo = 'saiemgilani/kenpomR',
+  repo = 'saiemgilani/hoopR',
   last = 20,
   PAT  = token$password
 )
@@ -48,10 +48,10 @@ x2 <- closed_tbl %>%
 
 <!-- badges: start -->
 
-[![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/kenpomr?label=kenpomR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/)  [![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/kenpomR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/kenpomR/actions/workflows/R-CMD-check.yaml) [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/kenpomR/) [![Twitter Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)  [![Contributors](https://img.shields.io/github/contributors/saiemgilani/kenpomr?style=for-the-badge)](https://github.com/saiemgilani/kenpomR/graphs/contributors)
+[![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR/)  [![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/hoopR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=blue&style=for-the-badge)](https://github.com/saiemgilani/hoopR/actions/workflows/R-CMD-check.yaml) [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/hoopR/) [![Twitter Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)  [![Contributors](https://img.shields.io/github/contributors/saiemgilani/hoopR?style=for-the-badge)](https://github.com/saiemgilani/hoopR/graphs/contributors)
 <!-- badges: end -->
 
-[**`kenpomR`**](https://saiemgilani.github.io/kenpomR/) is an R package for working with men's basketball data. 
+[**`hoopR`**](https://saiemgilani.github.io/hoopR/) is an R package for working with men's basketball data. 
 
 The package has functions to access **live play by play and box score** data from ESPN with shot locations when available.
 
@@ -59,14 +59,14 @@ It is additionally a scraping and aggregating interface for Ken Pomeroy's men's 
 
 ## Installation
 
-You can install the released version of [**`kenpomR`**](https://github.com/saiemgilani/kenpomR/) from [GitHub](https://github.com/saiemgilani/kenpomR) with:
+You can install the released version of [**`hoopR`**](https://github.com/saiemgilani/hoopR/) from [GitHub](https://github.com/saiemgilani/hoopR) with:
 
 ``` r
 # You can install using the pacman package using the following code:
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/kenpomR")
+pacman::p_load_current_gh("saiemgilani/hoopR")
 ```
 
 ``` r
@@ -75,31 +75,38 @@ if (!requireNamespace('devtools', quietly = TRUE)){
   install.packages('devtools')
 }
 # Alternatively, using the devtools package:
-devtools::install_github(repo = "saiemgilani/kenpomR")
+devtools::install_github(repo = "saiemgilani/hoopR")
 ```
 
 ## Documentation
 
-For more information on the package and function reference, please see the  [**`kenpomR`** documentation website](https://saiemgilani.github.io/kenpomR/).
+For more information on the package and function reference, please see the  [**`hoopR`** documentation website](https://saiemgilani.github.io/hoopR/).
 
 ## **Breaking Changes**
 
-[**Full News on Releases**](https://saiemgilani.github.io/kenpomR/news/index.html)
+[**Full News on Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **kenpomR 0.4**
+# **hoopR 0.9.0**
 
-- Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
-- ```kenpomR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
-- ```kenpomR::espn_nba_team_box()```
-- ```kenpomR::espn_nba_player_box()```
-- ```kenpomR::espn_nba_pbp()```
-- ```kenpomR::espn_nba_teams()``` 
-- ```kenpomR::espn_nba_scoreboard()``` 
+### **Loading capabilities added to the package**
+- [```hoopR::load_mbb_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html) and [```hoopR::update_mbb_db()```](https://saiemgilani.github.io/hoopR/reference/update_mbb_db.html) functions added
+- [```hoopR::load_nba_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html) and [```hoopR::update_nba_db()```](https://saiemgilani.github.io/hoopR/reference/update_nba_db.html) functions added 
 
+#
 <details>
 <summary>View more version news</summary>
 
-### **kenpomR 0.3.0**
+### **hoopR 0.4**
+
+- Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
+- ```hoopR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
+- ```hoopR::espn_nba_team_box()```
+- ```hoopR::espn_nba_player_box()```
+- ```hoopR::espn_nba_pbp()```
+- ```hoopR::espn_nba_teams()``` 
+- ```hoopR::espn_nba_scoreboard()```
+
+### **hoopR 0.3.0**
 
 - ```R``` version 3.5.0 or greater dependency added
 - ```purrr``` version 0.3.0 or greater dependency added
@@ -129,19 +136,19 @@ For more information on the package and function reference, please see the  [**`
 
 See the following ~~four~~ eight functions:
 
-- [```kenpomR::espn_mbb_game_all()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_game_all.html)
-- [```kenpomR::espn_mbb_pbp()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_pbp.html)
-- [```kenpomR::espn_mbb_team_box()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_team_box.html)
+- [```hoopR::espn_mbb_game_all()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_game_all.html)
+- [```hoopR::espn_mbb_pbp()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_pbp.html)
+- [```hoopR::espn_mbb_team_box()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_team_box.html)
 
-- [```kenpomR::espn_mbb_player_box()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_player_box.html)
+- [```hoopR::espn_mbb_player_box()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_player_box.html)
 
-- [```kenpomR::espn_mbb_teams()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_teams.html) (bumps to v0.2.1)
+- [```hoopR::espn_mbb_teams()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html) (bumps to v0.2.1)
 
-- [```kenpomR::espn_mbb_conferences()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_conferences.html) (bumps to v0.2.1)
+- [```hoopR::espn_mbb_conferences()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_conferences.html) (bumps to v0.2.1)
 
-- [```kenpomR::espn_mbb_scoreboard()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_scoreboard.html) (bumps to v0.2.2)
-- [```kenpomR::ncaa_mbb_NET_rankings()```](https://saiemgilani.github.io/kenpomR/reference/ncaa_mbb_NET_rankings.html) (bumps to v0.2.3)
-- [```kenpomR::espn_mbb_rankings()```](https://saiemgilani.github.io/kenpomR/reference/espn_mbb_rankings.html) (bumps to v0.2.3)
+- [```hoopR::espn_mbb_scoreboard()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_scoreboard.html) (bumps to v0.2.2)
+- [```hoopR::ncaa_mbb_NET_rankings()```](https://saiemgilani.github.io/hoopR/reference/ncaa_mbb_NET_rankings.html) (bumps to v0.2.3)
+- [```hoopR::espn_mbb_rankings()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_rankings.html) (bumps to v0.2.3)
 
 </details>
 

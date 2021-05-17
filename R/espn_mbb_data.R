@@ -74,7 +74,15 @@ espn_mbb_game_all <- function(game_id){
 
   player_box <- dplyr::bind_cols(stats_df,players_df) %>%
     dplyr::select(.data$athlete.displayName,.data$team.shortDisplayName, tidyr::everything())
-
+  plays_df <- plays_df %>%
+    janitor::clean_names()
+  team_box_score <- team_box_score %>%
+    janitor::clean_names()
+  player_box <- player_box %>%
+    janitor::clean_names() %>%
+    dplyr::rename(
+      fg3 = .data$x3pt
+    )
   pbp <- c(list(plays_df), list(team_box_score),list(player_box))
   names(pbp) <- c("Plays","Team","Player")
   return(pbp)
@@ -118,7 +126,8 @@ espn_mbb_pbp <- function(game_id){
   names(aths)<-c("play.id","athlete1.id","athlete2.id")
   plays_df <- dplyr::bind_cols(plays, aths) %>%
     select(-.data$athlete.id)
-
+  plays_df <- plays_df %>%
+    janitor::clean_names()
 
   return(plays_df)
 }
@@ -160,6 +169,8 @@ espn_mbb_team_box <- function(game_id){
   tm <- c(teams_box_score_df[2,"team.shortDisplayName"], "Team", teams_box_score_df[1,"team.shortDisplayName"])
   names(tm) <- c("Home","label","Away")
   team_box_score = dplyr::bind_rows(tm, team_box_score)
+  team_box_score <- team_box_score %>%
+    janitor::clean_names()
   return(team_box_score)
 }
 #' Get ESPN men's college basketball player box scores
@@ -210,6 +221,12 @@ espn_mbb_player_box <- function(game_id){
 
   player_box <- dplyr::bind_cols(stats_df,players_df) %>%
     dplyr::select(.data$athlete.displayName,.data$team.shortDisplayName, tidyr::everything())
+
+  player_box <- player_box %>%
+    janitor::clean_names() %>%
+    dplyr::rename(
+      fg3 = .data$x3pt
+    )
   return(player_box)
 }
 
@@ -235,7 +252,9 @@ espn_mbb_conferences <- function(){
   ## Inputs
   ## game_id
 
-  conferences <- jsonlite::fromJSON(play_base_url)[["conferences"]] %>% dplyr::select(-.data$subGroups)
+  conferences <- jsonlite::fromJSON(play_base_url)[["conferences"]] %>%
+    dplyr::select(-.data$subGroups) %>%
+    janitor::clean_names()
 
   return(conferences)
 }
@@ -290,8 +309,24 @@ espn_mbb_teams <- function(){
   stats <- s %>% unnest_wider(.data$g)
 
   records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
-  leagues <- leagues %>% dplyr::select(-.data$record,-.data$links)
-  teams <- dplyr::bind_cols(leagues, records)
+  leagues <- leagues %>% dplyr::select(
+    -.data$record,
+    -.data$links,
+    -.data$isActive,
+    -.data$isAllStar,
+    -.data$uid,
+    -.data$slug)
+  teams <- leagues %>%
+    dplyr::rename(
+      logo = .data$logos_href_1,
+      logo_dark = .data$logos_href_2,
+      mascot = .data$name,
+      team = .data$location,
+      team_id = .data$id,
+      short_name = .data$shortDisplayName,
+      alternate_color = .data$alternateColor,
+      display_name = .data$displayName
+    )
   return(teams)
 }
 
@@ -412,12 +447,15 @@ espn_mbb_scoreboard <- function(season){
           broadcast_market = list(1, "market"),
           broadcast_name = list(1, "names", 1)
         ) %>%
-        dplyr::select(!where(is.list))
+        dplyr::select(!where(is.list)) %>%
+        janitor::clean_names()
     } else {
-      schedule_out
+      schedule_out %>%
+        janitor::clean_names()
     }
   } else {
-    cbb_data %>% dplyr::select(!where(is.list))
+    cbb_data %>% dplyr::select(!where(is.list)) %>%
+      janitor::clean_names()
   }
 
 }
@@ -451,7 +489,8 @@ ncaa_mbb_NET_rankings <- function(){
       Quad_2 = .data$`Quad 2`,
       Quad_3 = .data$`Quad 3`,
       Quad_4 = .data$`Quad 4`
-    )
+    ) %>%
+    janitor::clean_names()
 
   return(x)
 }
@@ -499,7 +538,9 @@ espn_mbb_rankings <- function(){
   )
   ranks <- ranks  %>%
     dplyr::select(-dplyr::any_of(drop_cols))
-  ranks <- ranks %>% dplyr::arrange(.data$name,-.data$points)
+  ranks <- ranks %>% dplyr::arrange(.data$name,-.data$points) %>%
+    janitor::clean_names() %>%
+    janitor::clean_names()
   return(ranks)
 }
 

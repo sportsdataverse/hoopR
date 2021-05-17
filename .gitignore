@@ -6,4 +6,4 @@
 ..Rcheck/00check.log
 data-raw*
 inst/doc*
-kenpomR.Rcheck*
+hoopR.Rcheck*

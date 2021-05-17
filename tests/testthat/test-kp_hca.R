@@ -7,10 +7,9 @@ test_that("KP - Get home court advantage", {
   x <- kp_hca()
 
   cols <- c(
-    'Team', 'Conf', 'HCA', 'HCA.Rk',
-    'PF', 'PF.Rk', 'Pts', 'Pts.Rk',
-    'NST', 'NST.Rk',
-    'Blk', 'Blk.Rk', 'Elev', 'Elev.Rk'
+    "team", "conf", "hca", "hca_rk", "pf", "pf_rk",
+    "pts", "pts_rk", "nst", "nst_rk",
+    "blk", "blk_rk", "elev", "elev_rk"
   )
 
 

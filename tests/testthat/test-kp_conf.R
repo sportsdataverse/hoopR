@@ -15,37 +15,33 @@ test_that("KP - Get conference (leaderboard)", {
   x7 <- x[[7]]
 
   cols_x1 <- c(
-    'Team', 'Overall', 'Conf', 'AdjEM',
-    'AdjEM.Rk', 'AdjO', 'AdjO.Rk', 'AdjD',
-    'AdjD.Rk', 'AdjT', 'AdjT.Rk', 'ConfSOS',
-    'ConfSOS.Rk', 'NextGame', 'Year')
+    "team", "overall", "conf", "adj_em", "adj_em_rk", "adj_o",
+    "adj_o_rk", "adj_d", "adj_d_rk", "adj_t", "adj_t_rk",
+    "conf_sos", "conf_sos_rk", "next_game", "year"
+  )
   cols_x2 <- c(
-    'Team', 'OE', 'OE.Rk', 'eFG.Pct',
-    'eFG.Pct.Rk', 'TO.Pct', 'TO.Pct.Rk',
-    'OR.Pct', 'OR.Pct.Rk', 'FTRate',
-    'FTRate.Rk', 'FG_2.Pct', 'FG_2.Pct.Rk',
-    'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct',
-    'FT.Pct.Rk', 'Tempo', 'Tempo.Rk', 'Year')
-
+    "team", "oe", "oe_rk", "e_fg_pct", "e_fg_pct_rk", "to_pct",
+    "to_pct_rk", "or_pct", "or_pct_rk", "ft_rate", "ft_rate_rk", "fg_2_pct",
+    "fg_2_pct_rk", "fg_3_pct", "fg_3_pct_rk",
+    "ft_pct", "ft_pct_rk", "tempo", "tempo_rk", "year"
+  )
   cols_x3 <- c(
-    'Team', 'DE', 'DE.Rk', 'eFG.Pct',
-    'eFG.Pct.Rk', 'TO.Pct', 'TO.Pct.Rk',
-    'OR.Pct', 'OR.Pct.Rk', 'FTRate',
-    'FTRate.Rk', 'FG_2.Pct', 'FG_2.Pct.Rk',
-    'FG_3.Pct', 'FG_3.Pct.Rk', 'Blk.Pct', 'Blk.Pct.Rk',
-    'Stl.Pct', 'Stl.Pct.Rk', 'Year'
+    "team", "de", "de_rk", "e_fg_pct", "e_fg_pct_rk", "to_pct",
+    "to_pct_rk", "or_pct", "or_pct_rk", "ft_rate", "ft_rate_rk",
+    "fg_2_pct", "fg_2_pct_rk", "fg_3_pct", "fg_3_pct_rk", "blk_pct",
+    "blk_pct_rk", "stl_pct", "stl_pct_rk", "year"
   )
   cols_x4 <- c(
-    'Rk', 'Player', 'Year'
+    'rk', 'player', 'year'
   )
   cols_x5 <- c(
-    'Stat', 'Value', 'Rk', 'Year'
+    'stat', 'value', 'rk', 'year'
   )
   cols_x6 <- c(
-    'Stat', 'Count', 'Value', 'Rk', 'Year'
+    'stat', 'count', 'value', 'rk', 'year'
   )
   cols_x7 <- c(
-    'Rk', 'Conference', 'Rating', 'Year'
+    'rk', 'conference', 'rating', 'year'
   )
 
   expect_equal(colnames(x1), cols_x1)

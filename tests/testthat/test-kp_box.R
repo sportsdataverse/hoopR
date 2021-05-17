@@ -11,18 +11,18 @@ test_that("KP - Get box score", {
   x4 <- x[[4]]
 
   cols_x1 <- c(
-    'Hgt', 'Wgt', 'Yr', 'Number', 'Player',
-    'Min', 'ORtg', '%Ps', 'Pts', '2PM-A',
-    '3PM-A', 'FTM-A', 'OR', 'DR', 'A',
-    'TO', 'Blk', 'Stl',
-    'PF', 'Team', 'WP.Note', 'GameId', 'Year'
+    'hgt', 'wgt', 'yr', 'number', 'player',
+    'min', 'o_rtg', 'percent_ps', 'pts', 'fgm2_a',
+    'fgm3_a', 'ftm_a', 'or', 'dr', 'a',
+    'to', 'blk', 'stl',
+    'pf', 'team', 'wp_note', 'game_id', 'year'
   )
   cols_x3 <- c(
-    'Team', 'Q1', 'Q2', 'Q3', 'Q4', 'T'
+    'team', 'q1', 'q2', 'q3', 'q4', 't'
   )
   cols_x4 <- c(
-    'OfficialId', 'OfficialName',
-    'Official.Rk', 'GameId', 'Year'
+    'official_id', 'official_name',
+    'official_rk', 'game_id', 'year'
   )
   expect_equal(colnames(x1), cols_x1)
   expect_s3_class(x1, 'data.frame')

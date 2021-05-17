@@ -1,5 +1,5 @@
-url: http://saiemgilani.github.io/kenpomR
-title: kenpomR
+url: http://saiemgilani.github.io/hoopR
+title: hoopR
 template:
   params:
     bootswatch: flatly
@@ -13,14 +13,14 @@ home:
   icon: fa-home
   href: index.html
   links:
-  - text: kenpomR beginner's guide
-    href: articles/intro-to-kenpomR.html
+  - text: hoopR beginner's guide
+    href: articles/intro-to-hoopR.html
 navbar:
   structure:
     left:  [home, intro, reference, articles, news, games, network, data, repo]
     right: [twitter, github]
-  icon: https://raw.githubusercontent.com/saiemgilani/kenpomR/master/man/figures/logo.ico
-  title: "KenPomR"
+  icon: https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.ico
+  title: "hoopR"
   components:
     twitter:
       icon: "fab fa-twitter fa-lg"
@@ -34,7 +34,7 @@ navbar:
       text: " Data"
       menu:
       - text: "Data Repository"
-        href: https://github.com/saiemgilani/kenpomR-data
+        href: https://github.com/saiemgilani/hoopR-data
     reference:
       icon: "fas fa-code"
       text: " Funcs"
@@ -48,10 +48,10 @@ navbar:
       menu:
       - text: Vignettes
         href: articles/index.html
-      - text: "Intro to kenpomR"
-        href: articles/intro-to-kenpomR.html
-      - text: "Example Functions"
-        href: articles/example-functions.html
+      - text: "Intro to hoopR"
+        href: articles/intro-to-hoopR.html
+      - text: "KenPom Example Functions"
+        href: articles/kenpom-example-functions.html
     network:
       icon: "fas fa-project-diagram"
       text: " SDV"
@@ -66,32 +66,32 @@ navbar:
         href: https://saiemgilani.github.io/cfbrecruitR/
     github:
       icon: "fab fa-github fa-lg"
-      href: https://github.com/saiemgilani/kenpomR/
+      href: https://github.com/saiemgilani/hoopR/
     repo:
       url:
-      home: https://github.com/saiemgilani/kenpomR/
-      source: https://github.com/saiemgilani/kenpomR/blob/master/
-      issue: https://github.com/saiemgilani/kenpomR/issues/issues/
+      home: https://github.com/saiemgilani/hoopR/
+      source: https://github.com/saiemgilani/hoopR/blob/master/
+      issue: https://github.com/saiemgilani/hoopR/issues/issues/
       user: https://github.com/saiemgilani/
 
 reference:
   - title: ESPN Data
   - subtitle: Men's College Basketball Data Functions
-    desc: Functions exported by kenpomR to access ESPN Men's College Basketball Data
+    desc: Functions exported by hoopR to access ESPN Men's College Basketball Data
     contents:
       - starts_with("espn_mbb_")
   - subtitle: NBA Data Functions
-    desc: Functions exported by kenpomR to access ESPN's NBA Data
+    desc: Functions exported by hoopR to access ESPN's NBA Data
     contents:
       - starts_with("espn_nba_")
   - title: NCAA Data
   - subtitle: NCAA Data Functions
-    desc: Functions exported by kenpomR to access NCAA Men's College Basketball Data
+    desc: Functions exported by hoopR to access NCAA Men's College Basketball Data
     contents:
       - starts_with("ncaa_")
   - title: KenPom Data
   - subtitle: KenPom Data Functions
-    desc: Functions exported by kenpomR
+    desc: Functions exported by hoopR
     contents:
       - '`kp_efficiency`'
       - '`kp_fourfactors`'

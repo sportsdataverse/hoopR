@@ -1,4 +1,4 @@
-#' **Load kenpomR men's college basketball play-by-play**
+#' **Load hoopR men's college basketball play-by-play**
 #' @name load_mbb_pbp
 NULL
 #' @title 
@@ -54,12 +54,12 @@ load_mbb_pbp <- function(seasons, ..., qs = FALSE) {
 mbb_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, qs = FALSE) {
   if (isTRUE(qs)) {
     
-    .url <- glue::glue("https://github.com/saiemgilani/kenpomR-data/blob/master/mbb/pbp/rds/play_by_play_{season}.qs")
+    .url <- glue::glue("https://github.com/saiemgilani/hoopR-data/blob/master/mbb/pbp/rds/play_by_play_{season}.qs")
     pbp <- qs_from_url(.url)
     
   }
   if (isFALSE(qs)) {
-    .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/kenpomR-data/master/mbb/pbp/rds/play_by_play_{season}.rds")
+    .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/pbp/rds/play_by_play_{season}.rds")
     con <- url(.url)
     pbp <- readRDS(con)
     close(con)
@@ -76,7 +76,7 @@ mbb_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, 
 
 # load games file
 load_mbb_games <- function(){
-  .url <- "https://raw.githubusercontent.com/saiemgilani/kenpomR-data/master/mbb/mbb_games_in_data_repo.csv"
+  .url <- "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/mbb_games_in_data_repo.csv"
   con <- url(.url)
   dat <- utils::read.csv(con)
   # close(con)
@@ -86,8 +86,8 @@ load_mbb_games <- function(){
 #' @name update_mbb_db
 #' @aliases update_mbb_db mbb_db mbb mbb_pbp_db
 #' @title 
-#' **Update or create a kenpomR play-by-play database**
-#' @description `update_mbb_db()` updates or creates a database with `kenpomR`
+#' **Update or create a hoopR play-by-play database**
+#' @description `update_mbb_db()` updates or creates a database with `hoopR`
 #' play by play data of all completed and available games since 2002.
 #'
 #' @details This function creates and updates a data table with the name `tblname`
@@ -95,10 +95,10 @@ load_mbb_games <- function(){
 #' `dbdir` and named `dbname`.
 #' The data table combines all play by play data for every available game back
 #' to the 2002 season and adds the most recent completed games as soon as they
-#' are available for `kenpomR`.
+#' are available for `hoopR`.
 #'
 #' The argument `force_rebuild` is of hybrid type. It can rebuild the play
-#' by play data table either for the whole kenpomR era (with `force_rebuild = TRUE`)
+#' by play data table either for the whole hoopR era (with `force_rebuild = TRUE`)
 #' or just for specified seasons (e.g. `force_rebuild = c(2019, 2020)`).
 #' Please note the following behavior:
 #' \itemize{
@@ -127,11 +127,11 @@ load_mbb_games <- function(){
 #' @export
 update_mbb_db <- function(dbdir = ".",
                           dbname = "mbb_pbp_db",
-                          tblname = "kenpomR_mbb_pbp",
+                          tblname = "hoopR_mbb_pbp",
                           force_rebuild = FALSE,
                           db_connection = NULL) {
   
-  # rule_header("Update kenpomR Play-by-Play Database")
+  # rule_header("Update hoopR Play-by-Play Database")
   
   if (!is_installed("DBI") | !is_installed("purrr") |
       (!is_installed("RSQLite") & is.null(db_connection))) {
@@ -184,7 +184,7 @@ update_mbb_db <- function(dbdir = ".",
   
   # # if there's missing games, scrape and write to db
   # if (length(missing) > 0) {
-  #   new_pbp <- build_kenpomR_pbp(missing, rules = FALSE)
+  #   new_pbp <- build_hoopR_pbp(missing, rules = FALSE)
   #   
   #   if (nrow(new_pbp) == 0) {
   #     user_message("Raw data of new games are not yet ready. Please try again in about 10 minutes.", "oops")
@@ -200,8 +200,8 @@ update_mbb_db <- function(dbdir = ".",
   # rule_footer("DONE")
 }
 
-# this is a helper function to build kenpomR database from Scratch
-build_mbb_db <- function(tblname = "kenpomR_mbb_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
+# this is a helper function to build hoopR database from Scratch
+build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
   
   valid_seasons <- load_mbb_games() %>%
     dplyr::filter(.data$season >= 2002) %>%

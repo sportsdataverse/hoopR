@@ -1,14 +1,23 @@
-# **kenpomR 0.4**
+# **hoopR 0.9.0**
+
+### **Package renamed to hoopR**
+To reflect that the package is no longer just men's college basketball and kenpomR package, but also an NBA package. 
+
+### **Loading capabilities added to the package**
+- [```hoopR::load_mbb_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html) and [```hoopR::update_mbb_db()```](https://saiemgilani.github.io/hoopR/reference/update_mbb_db.html) functions added
+- [```hoopR::load_nba_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html) and [```hoopR::update_nba_db()```](https://saiemgilani.github.io/hoopR/reference/update_nba_db.html) functions added
+
+# **hoopR 0.4**
 
 - Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
-- ```kenpomR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
-- ```kenpomR::espn_nba_team_box()```
-- ```kenpomR::espn_nba_player_box()```
-- ```kenpomR::espn_nba_pbp()```
-- ```kenpomR::espn_nba_teams()``` 
-- ```kenpomR::espn_nba_scoreboard()``` 
+- ```hoopR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
+- ```hoopR::espn_nba_team_box()```
+- ```hoopR::espn_nba_player_box()```
+- ```hoopR::espn_nba_pbp()```
+- ```hoopR::espn_nba_teams()``` 
+- ```hoopR::espn_nba_scoreboard()``` 
 
-# **kenpomR 0.3.0**
+# **hoopR 0.3.0**
 
 ## Dependencies
 - ```R``` version 3.5.0 or greater dependency added
@@ -36,24 +45,24 @@
 * Data sourced directly from the NCAA website will start the function with `ncaa_`
 
 
-# **kenpomR 0.2.0-3**
+# **hoopR 0.2.0-3**
 
 - Added support for ESPN's men's college basketball play-by-play endpoints with the addition of the following functions:
-- ```kenpomR::espn_mbb_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
-- ```kenpomR::espn_mbb_team_box()```
-- ```kenpomR::espn_mbb_player_box()```
-- ```kenpomR::espn_mbb_pbp()```
-- ```kenpomR::espn_mbb_teams()``` (bumps to v0.2.1)
-- ```kenpomR::espn_mbb_conferences()``` (bumps to v0.2.1)
-- ```kenpomR::espn_mbb_scoreboard()``` (bumps to v0.2.2)
-- ```kenpomR::ncaa_mbb_NET_rankings()``` (bumps to v0.2.3)
-- ```kenpomR::espn_mbb_rankings()``` (bumps to v0.2.3)
+- ```hoopR::espn_mbb_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
+- ```hoopR::espn_mbb_team_box()```
+- ```hoopR::espn_mbb_player_box()```
+- ```hoopR::espn_mbb_pbp()```
+- ```hoopR::espn_mbb_teams()``` (bumps to v0.2.1)
+- ```hoopR::espn_mbb_conferences()``` (bumps to v0.2.1)
+- ```hoopR::espn_mbb_scoreboard()``` (bumps to v0.2.2)
+- ```hoopR::ncaa_mbb_NET_rankings()``` (bumps to v0.2.3)
+- ```hoopR::espn_mbb_rankings()``` (bumps to v0.2.3)
 
-# **kenpomR 0.1.0** 
+# **hoopR 0.1.0** 
 
 -    Minor fixes
 
-# **kenpomR 0.0.0.9**
+# **hoopR 0.0.0.9**
 
 Initial Commits, remaining tasks:
 
