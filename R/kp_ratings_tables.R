@@ -607,7 +607,7 @@ kp_foul_trouble <- function(min_year, max_year){
 #'
 #' @examples
 #' \dontrun{
-#'  kp_teamstats(min_year = 2010, max_year = 2020, defense = FALSE)
+#'  kp_teamstats(min_year = 2019, max_year = 2020, defense = FALSE)
 #' }
 
 kp_teamstats <- function(min_year, max_year, defense = FALSE){

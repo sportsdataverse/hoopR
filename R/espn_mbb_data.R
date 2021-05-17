@@ -270,10 +270,6 @@ espn_mbb_conferences <- function(){
 #' @importFrom purrr map_if
 #' @export
 #'
-#' @examples
-#'
-#'  espn_mbb_teams()
-#'
 
 espn_mbb_teams <- function(){
   options(stringsAsFactors = FALSE)
