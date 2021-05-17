@@ -30,7 +30,7 @@ Get Lineups Last 5 Games from Team Page
 }
 \examples{
   \dontrun{
-    kp_team_lineups(team = 'Florida St.', year= 2020)
+   kp_team_lineups(team = 'Florida St.', year= 2020)
   }
 
 }

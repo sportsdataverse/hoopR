@@ -50,7 +50,7 @@ Get KenPom's historical conference ratings
 }
 \examples{
 \dontrun{
-    kp_confhistory(conf='ACC')
+ kp_confhistory(conf='ACC')
 }
 }
 \keyword{Conference}
