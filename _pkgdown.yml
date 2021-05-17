@@ -75,6 +75,17 @@ navbar:
       user: https://github.com/saiemgilani/
 
 reference:
+  - title: hoopR Data
+  - subtitle: Full Seasons PBP Data
+    desc: Functions exported by hoopR which load full seasons of hoopR data
+    contents:
+      - '`load_nba_pbp`'
+      - '`load_mbb_pbp`'
+  - subtitle: Update or Create Database
+    desc: Functions exported by hoopR which update and create a database of hoopR play-by-play data
+    contents:
+      - '`update_nba_db`'
+      - '`update_mbb_db`'
   - title: ESPN Data
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access ESPN Men's College Basketball Data
@@ -93,42 +104,8 @@ reference:
   - subtitle: KenPom Data Functions
     desc: Functions exported by hoopR
     contents:
-      - '`kp_efficiency`'
-      - '`kp_fourfactors`'
-      - '`kp_pomeroy_ratings`'
-      - '`kp_pointdist`'
-      - '`kp_height`'
-      - '`kp_foul_trouble`'
-      - '`kp_playerstats`'
-      - '`kp_player_career`'
-      - '`kp_team_players`'
-      - '`kp_minutes_matrix`'
-      - '`kp_team_schedule`'
-      - '`kp_team_player_stats`'
-      - '`kp_box`'
-      - '`kp_winprob`'
-      - '`kp_gameplan`'
-      - '`kp_opptracker`'
-      - '`kp_teamstats`'
-      - '`kp_team_depth_chart`'
-      - '`kp_team_lineups`'
-      - '`kp_team_history`'
-      - '`kp_program_ratings`'
-      - '`kp_kpoy`'
-      - '`kp_trends`'
-      - '`kp_hca`'
-      - '`kp_game_attrs`'
-      - '`kp_fanmatch`'
-      - '`kp_officials`'
-      - '`kp_arenas`'
-      - '`kp_coach_history`'
-      - '`kp_pomeroy_archive_ratings`'
-      - '`kp_conf`'
-      - '`kp_confstats`'
-      - '`kp_confhistory`'
-      - '`kp_conf`'
+      - starts_with("kp_")
       - '`login`'
-      - '`check_internet`'
       - '`check_status`'
       - '`clean_team_names_NCAA_merge`'
       - '`teams_links`'
