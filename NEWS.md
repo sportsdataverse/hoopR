@@ -1,7 +1,13 @@
 # **hoopR 0.9.0**
 
 ### **Package renamed to hoopR**
-To reflect that the package is no longer just men's college basketball and kenpomR package, but also an NBA package. 
+To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 
+
+### **Clean names and team returns**
+- All functions have now been given the [```janitor::clean_names()```](https://rdrr.io/cran/janitor/man/clean_names.html) treatment
+- [```hoopR::espn_mbb_teams()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html) has updated the returns to be more identity information related only
+- [```hoopR::espn_nba_teams()```](https://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html) to be more identity information related only
+- All tests were updated
 
 ### **Loading capabilities added to the package**
 - [```hoopR::load_mbb_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html) and [```hoopR::update_mbb_db()```](https://saiemgilani.github.io/hoopR/reference/update_mbb_db.html) functions added
