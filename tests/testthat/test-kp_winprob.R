@@ -10,23 +10,23 @@ test_that("KP - Get win probability", {
 
 
   cols_x1 <- c(
-    'Period', 'wp', 'TimeLeft',
-    'VisitorScore', 'HomeScore',
-    'VisitorScoring', 'HomeScoring',
-    'PossessionTeam',
-    'PossessionNumber', 'GameId', 'Year'
+    'period', 'wp', 'time_left',
+    'visitor_score', 'home_score',
+    'visitor_scoring', 'home_scoring',
+    'possession_team',
+    'possession_number', 'game_id', 'year'
   )
   cols_x2 <- c(
-    'GameId', 'Year', 'Full.Date', 'Date',
-    'GameTime', 'Venue', 'City',
-    'Team1', 'Team1Score', 'Team1.Rk',
-    'Team2', 'Team2Score', 'Team2.Rk',
-    'Dominance.Season.Rk', 'Tension.Season.Rk',
-    'Excitement.Season.Rk',
-    'LeadChanges.Season.Rk',
-    'MinimumWP.Season.Rk', 'Dominance.Rk',
-    'Tension.Rk', 'Excitement.Rk',
-    'LeadChanges.Rk', 'MinimumWP.Rk'
+    'game_id', 'year', 'full_date', 'date',
+    'game_time', 'venue', 'city',
+    'team1', 'team1score', 'team1_rk',
+    'team2', 'team2score', 'team2_rk',
+    'dominance_season_rk', 'tension_season_rk',
+    'excitement_season_rk',
+    'lead_changes_season_rk',
+    'minimum_wp_season_rk', 'dominance_rk',
+    'tension_rk', 'excitement_rk',
+    'lead_changes_rk', 'minimum_wp_rk'
   )
   expect_equal(colnames(x1), cols_x1)
   expect_s3_class(x1, 'data.frame')

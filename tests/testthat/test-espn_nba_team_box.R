@@ -7,7 +7,7 @@ test_that("ESPN - Get NBA team box score only", {
   x <- espn_nba_team_box(game_id = 401283399)
 
   cols <- c(
-    'Home', 'label', 'Away'
+    'home', 'label', 'away'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')

@@ -6,18 +6,15 @@ test_that("KP - Get team depth chart", {
   skip_on_cran()
   x <- kp_team_depth_chart(team = 'Florida St.', year= 2020)
   cols <- c(
-    'PG.Number', 'PG.PlayerFirstName',
-    'PG.PlayerLastName', 'PG.Hgt', 'PG.Wgt',
-    'PG.Yr', 'PG.Min.Pct', 'SG.Number',
-    'SG.PlayerFirstName', 'SG.PlayerLastName',
-    'SG.Hgt', 'SG.Wgt', 'SG.Yr', 'SG.Min.Pct',
-    'SF.Number', 'SF.PlayerFirstName',
-    'SF.PlayerLastName', 'SF.Hgt', 'SF.Wgt',
-    'SF.Yr', 'SF.Min.Pct', 'PF.Number',
-    'PF.PlayerFirstName', 'PF.PlayerLastName',
-    'PF.Hgt', 'PF.Wgt', 'PF.Yr',
-    'PF.Min.Pct', 'C.Number', 'C.PlayerFirstName', 'C.PlayerLastName', 'C.Hgt',
-    'C.Wgt', 'C.Yr', 'C.Min.Pct', 'Team', 'Year'
+    "pg_number", "pg_player_first_name", "pg_player_last_name",
+    "pg_hgt", "pg_wgt", "pg_yr", "pg_min_pct", "sg_number",
+    "sg_player_first_name", "sg_player_last_name", "sg_hgt",
+    "sg_wgt", "sg_yr", "sg_min_pct", "sf_number", "sf_player_first_name",
+    "sf_player_last_name", "sf_hgt", "sf_wgt", "sf_yr", "sf_min_pct",
+    "pf_number", "pf_player_first_name", "pf_player_last_name",
+    "pf_hgt", "pf_wgt", "pf_yr", "pf_min_pct", "c_number",
+    "c_player_first_name", "c_player_last_name",
+    "c_hgt", "c_wgt", "c_yr", "c_min_pct", "team", "year"
   )
 
   expect_equal(colnames(x), cols)

@@ -7,14 +7,11 @@ test_that("KP - Get Pomeroy ratings", {
   x <- kp_pomeroy_ratings(min_year = 2020, max_year = 2020)
 
   cols <- c(
-    'Year', 'Rk', 'Team', 'Conf', 'W-L',
-    'AdjEM', 'AdjO', 'AdjO.Rk', 'AdjD',
-    'AdjD.Rk', 'AdjT', 'AdjT.Rk',
-    'Luck', 'Luck.Rk', 'SOS.AdjEM',
-    'SOS.AdjEM.Rk', 'SOS.OppO',
-    'SOS.OppO.Rk', 'SOS.OppD',
-    'SOS.OppD.Rk', 'NCSOS.AdjEM',
-    'NCSOS.AdjEM.Rk', 'NCAA_Seed'
+    "year", "rk", "team", "conf", "w_l", "adj_em", "adj_o",
+    "adj_o_rk", "adj_d", "adj_d_rk", "adj_t", "adj_t_rk",
+    "luck", "luck_rk", "sos_adj_em", "sos_adj_em_rk",
+    "sos_opp_o", "sos_opp_o_rk", "sos_opp_d",
+    "sos_opp_d_rk", "ncsos_adj_em", "ncsos_adj_em_rk", "ncaa_seed"
   )
 
   expect_equal(colnames(x), cols)

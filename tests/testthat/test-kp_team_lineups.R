@@ -7,17 +7,12 @@ test_that("KP - Get team lineups", {
   x <- kp_team_lineups(team = 'Florida St.', year= 2020)
 
   cols <- c(
-    'Year', 'Team', 'Min.Pct', 'PG.Number',
-    'PG.PlayerFirstName', 'PG.PlayerLastName',
-    'PG.Hgt', 'PG.Wgt', 'PG.Yr', 'SG.Number',
-    'SG.PlayerFirstName', 'SG.PlayerLastName',
-    'SG.Hgt', 'SG.Wgt', 'SG.Yr', 'SF.Number',
-    'SF.PlayerFirstName', 'SF.PlayerLastName',
-    'SF.Hgt', 'SF.Wgt', 'SF.Yr', 'PF.Number',
-    'PF.PlayerFirstName', 'PF.PlayerLastName',
-    'PF.Hgt', 'PF.Wgt', 'PF.Yr', 'C.Number',
-    'C.PlayerFirstName',
-    'C.PlayerLastName', 'C.Hgt', 'C.Wgt', 'C.Yr'
+    "year", "team", "min_pct", "pg_number", "pg_player_first_name",
+    "pg_player_last_name", "pg_hgt", "pg_wgt", "pg_yr", "sg_number", "sg_player_first_name",
+    "sg_player_last_name", "sg_hgt", "sg_wgt", "sg_yr", "sf_number", "sf_player_first_name",
+    "sf_player_last_name", "sf_hgt", "sf_wgt", "sf_yr", "pf_number", "pf_player_first_name",
+    "pf_player_last_name", "pf_hgt", "pf_wgt", "pf_yr", "c_number",
+    "c_player_first_name", "c_player_last_name", "c_hgt", "c_wgt", "c_yr"
   )
 
   expect_equal(colnames(x), cols)

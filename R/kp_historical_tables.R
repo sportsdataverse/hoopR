@@ -57,9 +57,9 @@ kp_team_history <- function(team){
   browser <- login()
 
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% kenpomR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see kenpomR::teams_links for team name parameter specifications.")
-  teams_links <- kenpomR::teams_links[kenpomR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
+  assertthat::assert_that(team %in% hoopR::teams_links$Team,
+                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  teams_links <- hoopR::teams_links[hoopR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
   ### Pull Data
@@ -223,7 +223,8 @@ kp_team_history <- function(team){
     dplyr::mutate(Team = team_name) %>%
     dplyr::select(.data$Year, .data$Team.Rk,.data$Team,tidyr::everything())
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -463,7 +464,8 @@ kp_coach_history <- function(coach){
     dplyr::mutate(Coach = coach) %>%
     dplyr::select(.data$Year, .data$Team.Rk,.data$Team, .data$Coach,tidyr::everything())
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -539,7 +541,8 @@ kp_program_ratings <- function(){
                          'F4',	'S16',	'R1',	'Chg'), as.numeric)
   )
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -625,7 +628,8 @@ kp_pomeroy_archive_ratings <- function(date){
                        stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
 
 
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -774,9 +778,9 @@ kp_conf <- function(year, conf){
 
 
   # Check conf parameter in teams_list$Conf names
-  assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
-                          msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
-  conf_name = unique(kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf])
+  assertthat::assert_that(conf %in% hoopR::teams_links$Conf,
+                          msg = "Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  conf_name = unique(hoopR::teams_links$conf.link.ref[hoopR::teams_links$Conf == conf])
 
   ### Pull Data
   url <- paste0("https://kenpom.com/conf.php?",
@@ -853,7 +857,8 @@ kp_conf <- function(year, conf){
 
     x <- dplyr::mutate(x,
                        "Year" = year)
-
+    x <- x %>%
+      janitor::clean_names()
     y <- c(y, list(x))
   }
 
@@ -960,7 +965,8 @@ kp_confstats <- function(year){
                          'Close', 'Close.Rk', 'Blowouts', 'Blowouts.Rk'),
                        as.numeric)
   )
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -1013,7 +1019,7 @@ kp_confstats <- function(year){
 #'
 #' @examples
 #' \dontrun{
-#'     kp_confhistory(conf='ACC')
+#'  kp_confhistory(conf='ACC')
 #' }
 
 kp_confhistory <- function(conf){
@@ -1028,9 +1034,9 @@ kp_confhistory <- function(conf){
 
 
   # Check conf parameter in teams_list$Conf names
-  assertthat::assert_that(conf %in% kenpomR::teams_links$Conf,
-                          msg = "Incorrect conference name as compared to the website, see kenpomR::teams_links for conference name parameter specifications.")
-  conf_name = unique(kenpomR::teams_links$conf.link.ref[kenpomR::teams_links$Conf == conf])
+  assertthat::assert_that(conf %in% hoopR::teams_links$Conf,
+                          msg = "Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  conf_name = unique(hoopR::teams_links$conf.link.ref[hoopR::teams_links$Conf == conf])
 
   ### Pull Data
   url <- paste0("https://kenpom.com/confhistory.php?",
@@ -1059,7 +1065,8 @@ kp_confhistory <- function(conf){
                          'FT.Pct',	'FG_3A.Pct', 'A.Pct', 'Blk.Pct',	'Stl.Pct'),
                        as.numeric)
   )
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
   return(kenpom)
 }
 

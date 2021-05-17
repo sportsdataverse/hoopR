@@ -13,23 +13,19 @@ test_that("KP - Get team history", {
   )
 
   cols <- c(
-    "Year", "Team.Rk", "Team", "Coach",
-    "Conf",  "AdjT", "AdjO",
-    "AdjD", "Off.eFG.Pct", "Off.TO.Pct",
-    "Off.OR.Pct", "Off.FTRate", "Off.FG_2.Pct", "Off.FG_3.Pct",
-    "Off.FT.Pct","Off.FG_3A.Pct", "Off.A.Pct", "Off.APL",
-    "Def.eFG.Pct", "Def.TO.Pct", "Def.OR.Pct",
-    "Def.FTRate", "Def.FG_2.Pct", "Def.FG_3.Pct",
-    "Def.Blk.Pct", "Def.FG_3A.Pct", "Def.A.Pct",
-    "Def.APL", "Foul2Partic.Pct",
-    'WL','WL.Conf','AdjT.Rk','AdjO.Rk','AdjD.Rk',
-    'Off.eFG.Pct.Rk',	'Off.TO.Pct.Rk',	'Off.OR.Pct.Rk','Off.FTRate.Rk',
-    'Off.FG_2.Pct.Rk',	'Off.FG_3.Pct.Rk',	'Off.FT.Pct.Rk',	'Off.FG_3A.Pct.Rk',
-    'Off.A.Pct.Rk',	'Off.APL.Rk',
-    'Def.eFG.Pct.Rk', 'Def.TO.Pct.Rk',	'Def.OR.Pct.Rk',	'Def.FTRate.Rk',
-    'Def.FG_2.Pct.Rk',	'Def.FG_3.Pct.Rk',
-    'Def.Blk.Pct.Rk',	'Def.FG_3A.Pct.Rk',	'Def.A.Pct.Rk',
-    'Def.APL.Rk',	'Foul2Partic.Pct.Rk','Team.Finish','NCAA_Seed'
+    "year", "team_rk", "team", "coach", "conf", "adj_t",
+    "adj_o", "adj_d", "off_e_fg_pct", "off_to_pct", "off_or_pct",
+    "off_ft_rate", "off_fg_2_pct", "off_fg_3_pct", "off_ft_pct",
+    "off_fg_3a_pct", "off_a_pct", "off_apl", "def_e_fg_pct",
+    "def_to_pct", "def_or_pct", "def_ft_rate", "def_fg_2_pct",
+    "def_fg_3_pct", "def_blk_pct", "def_fg_3a_pct", "def_a_pct",
+    "def_apl", "foul2partic_pct", "wl", "wl_conf", "adj_t_rk", "adj_o_rk",
+    "adj_d_rk", "off_e_fg_pct_rk", "off_to_pct_rk", "off_or_pct_rk",
+    "off_ft_rate_rk", "off_fg_2_pct_rk", "off_fg_3_pct_rk", "off_ft_pct_rk",
+    "off_fg_3a_pct_rk", "off_a_pct_rk", "off_apl_rk", "def_e_fg_pct_rk",
+    "def_to_pct_rk", "def_or_pct_rk", "def_ft_rate_rk", "def_fg_2_pct_rk",
+    "def_fg_3_pct_rk", "def_blk_pct_rk", "def_fg_3a_pct_rk", "def_a_pct_rk",
+    "def_apl_rk", "foul2partic_pct_rk", "team_finish", "ncaa_seed"
   )
 
   expect_equal(colnames(x), cols)

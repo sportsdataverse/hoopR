@@ -1,6 +1,6 @@
-Package: kenpomR
+Package: hoopR
 Title: Functions to Access Men's Basketball Play by Play Data
-Version: 0.4.0
+Version: 1.0.0
 Authors@R: 
     person(given = "Saiem",
            family = "Gilani",
@@ -11,25 +11,27 @@ Description: An R package to quickly obtain clean and tidy men's
     live play by play and box score data from ESPN with shot locations
     when available. It is also a scraping and aggregating
     interface for Ken Pomeroy's men's college basketball statistics
-    website, kenpom.com. It provides users with an
-    active subscription the capability to scrape the website tables and
+    website. It provides users with an
+    active subscription to kenpom.com the capability to scrape the website tables and
     analyze the data for themselves.
 License: MIT + file LICENSE
-URL: https://saiemgilani.github.io/kenpomR,
-    https://www.github.com/saiemgilani/kenpomR
-BugReports: https://www.github.com/saiemgilani/kenpomR/issues
+URL: https://saiemgilani.github.io/hoopR,
+    https://www.github.com/saiemgilani/hoopR
+BugReports: https://www.github.com/saiemgilani/hoopR/issues
 Depends: 
     R (>= 3.5.0)
 Imports: 
     assertthat,
-    attempt,
-    curl,
     data.table,
     dplyr,
+    furrr,
+    future,
     glue,
-    httr,
+    janitor,
     jsonlite,
+    httr,
     magrittr,
+    progressr (>= 0.6.0),
     purrr (>= 0.3.0),
     rlang,
     rvest (>= 1.0.0),
@@ -42,6 +44,7 @@ Imports:
 Suggests: 
     cli (>= 1.1.0),
     crayon (>= 1.3.4),
+    curl,
     DBI,
     ggplot2,
     ggrepel,

@@ -65,7 +65,8 @@ kp_trends <- function(){
     dplyr::mutate_at(c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
                        "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
                        "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
-                       "Continuity","HomeWin.Pct","PPG"), as.numeric)
+                       "Continuity","HomeWin.Pct","PPG"), as.numeric) %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -131,7 +132,8 @@ kp_officials <- function(year= 2020){
     as.data.frame()
   )
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -194,7 +196,8 @@ kp_hca <- function(){
   kenpom <- x %>%
     dplyr::mutate_at(c("HCA","HCA.Rk",	"PF","PF.Rk",	"Pts","Pts.Rk",
                        "NST","NST.Rk", "Blk","Blk.Rk",	"Elev","Elev.Rk"),
-                     as.numeric)
+                     as.numeric) %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -249,7 +252,8 @@ kp_arenas <- function(year=2020){
                      "Rk" = as.numeric(.data$Rk),
                      "Year" = as.numeric(year))
   ### Store Data
-  kenpom <- x
+  kenpom <- x %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -299,7 +303,8 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
                      "Year" = year)%>%
     as.data.frame()
   ### Store Data
-  kenpom <- x %>% dplyr::select(-.data$col)
+  kenpom <- x %>% dplyr::select(-.data$col) %>%
+    janitor::clean_names()
 
   return(kenpom)
 }
@@ -404,9 +409,11 @@ kp_fanmatch <- function(date="2020-02-12"){
                   .data$Comeback, .data$Excitement, .data$MVP,
                   .data$Location, "Time(ET)", .data$Event, .data$Date)
   suppressWarnings(
-  kenpom <- x %>%
-    dplyr::mutate_at(c("WinScore","LossScore","Poss","ThrillScore","Comeback",
-                       "Excitement"), as.numeric))
+    kenpom <- x %>%
+      dplyr::mutate_at(c("WinScore","LossScore","Poss","ThrillScore","Comeback",
+                         "Excitement"), as.numeric) %>%
+      janitor::clean_names()
+  )
 
   return(kenpom)
 }

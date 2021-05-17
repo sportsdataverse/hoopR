@@ -10,29 +10,26 @@ test_that("ESPN - Get MBB play by play all", {
   x3 <- x[[3]]
 
   cols_x1 <- c(
-    'shootingPlay', 'sequenceNumber',
-    'homeScore', 'scoringPlay', 'awayScore',
-    'id', 'text', 'scoreValue',
-    'period.displayValue', 'period.number',
-    'clock.displayValue', 'team.id',
-    'type.id', 'type.text', 'play.id',
-    'athlete1.id', 'athlete2.id'
+    'shooting_play', 'sequence_number',
+    'home_score', 'scoring_play', 'away_score',
+    'id', 'text', 'score_value',
+    'period_display_value', 'period_number',
+    'clock_display_value', 'team_id',
+    'type_id', 'type_text', 'play_id',
+    'athlete1_id', 'athlete2_id'
   )
   cols_x2 <- c(
-    'Home', 'label', 'Away'
+    'home', 'label', 'away'
   )
   cols_x3 <- c(
-    'athlete.displayName', 'team.shortDisplayName',
-    'MIN', 'FG', '3PT', 'FT', 'OREB', 'DREB',
-    'REB', 'AST', 'STL', 'BLK', 'TO', 'PF',
-    'PTS', 'starter', 'ejected', 'didNotPlay',
-    'active', 'athlete.jersey', 'athlete.id',
-    'athlete.shortName', 'athlete.headshot.href',
-    'athlete.position.name',
-    'athlete.position.abbreviation',
-    'team.name', 'team.logo', 'team.id',
-    'team.abbreviation',
-    'team.color', 'team.alternateColor'
+    "athlete_display_name", "team_short_display_name",
+    "min", "fg", "fg3", "ft", "oreb", "dreb", "reb",
+    "ast", "stl", "blk", "to", "pf", "pts",
+    "starter", "ejected", "did_not_play", "active",
+    "athlete_jersey", "athlete_id", "athlete_short_name",
+    "athlete_headshot_href", "athlete_position_name",
+    "athlete_position_abbreviation", "team_name", "team_logo",
+    "team_id", "team_abbreviation", "team_color", "team_alternate_color"
   )
   expect_equal(colnames(x1), cols_x1)
   expect_s3_class(x1, 'data.frame')
