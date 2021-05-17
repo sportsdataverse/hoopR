@@ -11,8 +11,8 @@ Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40sa
 [![Contributors](https://img.shields.io/github/contributors/saiemgilani/hoopR?style=for-the-badge)](https://github.com/saiemgilani/hoopR/graphs/contributors)
 <!-- badges: end -->
 
-[**`hoopR`**](https://saiemgilani.github.io/hoopR/) is an R package
-for working with men’s basketball data.
+[**`hoopR`**](https://saiemgilani.github.io/hoopR/) is an R package for
+working with men’s basketball data.
 
 The package has functions to access **live play by play and box score**
 data from ESPN with shot locations when available.
@@ -57,7 +57,23 @@ website](https://saiemgilani.github.io/hoopR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 0.9.0**
+# **hoopR 1.0.0**
+
+### **Package renamed to hoopR**
+
+To reflect that the package is no longer just a men’s college basketball
+and KenPom package, but also an NBA package.
+
+### **Clean names and team returns**
+
+  - All functions have now been given the
+    [`janitor::clean_names()`](https://rdrr.io/cran/janitor/man/clean_names.html)
+    treatment
+  - [`hoopR::espn_mbb_teams()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html)
+    has updated the returns to be more identity information related only
+  - [`hoopR::espn_nba_teams()`](https://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html)
+    to be more identity information related only
+  - All tests were updated
 
 ### **Loading capabilities added to the package**
 
@@ -80,9 +96,9 @@ Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
   - Added support for ESPN’s NBA play-by-play endpoints with the
     addition of the following functions:
-  - `hoopR::espn_nba_game_all()` - a convenience wrapper function
-    around the following three functions (returns the results as a list
-    of three data frames)
+  - `hoopR::espn_nba_game_all()` - a convenience wrapper function around
+    the following three functions (returns the results as a list of
+    three data frames)
   - `hoopR::espn_nba_team_box()`
   - `hoopR::espn_nba_player_box()`
   - `hoopR::espn_nba_pbp()`
@@ -158,13 +174,13 @@ See the following ~~four~~ eight functions:
 
 <summary>View More</summary>
 
-| issue | icon                                                                                                                                         | title                                                                                                                                                             | labels | opened\_by                                      | date       | closed              |
-| :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
-| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/hoopR/issues/1)</span>                                           | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
-| 4     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[Fix gameplan maybe](https://github.com/saiemgilani/hoopR/pull/4)</span>                                                                         |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-01-29 | 2021-01-29 03:26:00 |
-| 8     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add cbb\_espn\_scoreboard function()](https://github.com/saiemgilani/hoopR/pull/8)</span>                                                       |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-02-24 | 2021-02-24 20:43:38 |
-| 9     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="# **hoopR 0.3.0**...">[v0.3.0](https://github.com/saiemgilani/hoopR/pull/9)</span>                                                               |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-04-26 | 2021-04-26 21:59:14 |
-| 10    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="continue updating docs to reflect MBB">[Add support for nba data from espn (including tests)](https://github.com/saiemgilani/hoopR/pull/10)</span> |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-04-29 | 2021-04-29 10:26:44 |
+| issue | icon                                                                                                                                         | title                                                                                                                     | labels | opened\_by                                      | date       | closed              |
+| :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :----- | :---------------------------------------------- | :--------- | :------------------ |
+| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/hoopR/issues/1)</span>     | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
+| 11    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add `load_mbb_pbp()` and `load_nba_pbp()` functions](https://github.com/saiemgilani/hoopR/pull/11)</span> |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-12 | 2021-05-17 23:35:12 |
+| 4     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[Fix gameplan maybe](https://github.com/saiemgilani/hoopR/pull/4)</span>                                   |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-01-29 | 2021-01-29 03:26:00 |
+| 8     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add cbb\_espn\_scoreboard function()](https://github.com/saiemgilani/hoopR/pull/8)</span>                 |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-02-24 | 2021-02-24 20:43:38 |
+| 9     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="# **kenpomR 0.3.0**...">[v0.3.0](https://github.com/saiemgilani/hoopR/pull/9)</span>                         |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-04-26 | 2021-04-26 21:59:14 |
 
 </details>
 
