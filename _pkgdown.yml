@@ -4,6 +4,16 @@ template:
   params:
     bootswatch: flatly
     ganalytics: G-600N1Z38KJ
+  opengraph:
+    image:
+      src: "https://github.com/saiemgilani/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+    twitter:
+      site: "@saiemgilani"
+      card: summary_large_image
+
+toc:
+  depth: 3
+
 authors:
   Saiem Gilani:
    href: https://twitter.com/saiemgilani
@@ -76,12 +86,12 @@ navbar:
 
 reference:
   - title: hoopR Data
-  - subtitle: Full Seasons PBP Data
-    desc: Functions exported by hoopR which load full seasons of hoopR data
+  - subtitle: Full Seasons of NBA and Men's College Basketball PBP Data
+    desc: Functions exported by hoopR which load full seasons from the hoopR-data repository
     contents:
       - '`load_nba_pbp`'
       - '`load_mbb_pbp`'
-  - subtitle: Update or Create Database
+  - subtitle: Update or Create NBA and Men's College Basketball PBP Database
     desc: Functions exported by hoopR which update and create a database of hoopR play-by-play data
     contents:
       - '`update_nba_db`'
@@ -105,8 +115,15 @@ reference:
     desc: Functions exported by hoopR
     contents:
       - starts_with("kp_")
+  - title: Helper Functions and Data
+  - subtitle: Included data
+    desc: Data included within the package
+    contents:
+      - '`teams_links`'
+  - subtitle: hoopR Helper Functions
+    desc: Internal functions used by hoopR
+    contents:
       - '`login`'
       - '`check_status`'
       - '`clean_team_names_NCAA_merge`'
-      - '`teams_links`'
 
