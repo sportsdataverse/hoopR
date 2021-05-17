@@ -28,6 +28,7 @@ Imports:
     dplyr,
     glue,
     httr,
+    janitor,
     jsonlite,
     magrittr,
     purrr (>= 0.3.0),

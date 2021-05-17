@@ -1019,7 +1019,7 @@ kp_confstats <- function(year){
 #'
 #' @examples
 #' \dontrun{
-#'    kp_confhistory(conf='ACC')
+#'  kp_confhistory(conf='ACC')
 #' }
 
 kp_confhistory <- function(conf){
