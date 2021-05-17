@@ -1,4 +1,4 @@
-# **hoopR 0.9.0**
+# **hoopR 1.0.0**
 
 ### **Package renamed to hoopR**
 To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 

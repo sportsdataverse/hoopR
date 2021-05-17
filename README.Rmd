@@ -86,7 +86,7 @@ For more information on the package and function reference, please see the  [**`
 
 [**Full News on Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 0.9.0**
+# **hoopR 1.0.0**
 
 ### **Package renamed to hoopR**
 To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 
