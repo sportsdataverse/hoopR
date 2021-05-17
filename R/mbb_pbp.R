@@ -1,7 +1,7 @@
 #' **Load hoopR men's college basketball play-by-play**
 #' @name load_mbb_pbp
 NULL
-#' @title 
+#' @title
 #' **Load cleaned men's college basketball play-by-play from the data repo**
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
@@ -15,19 +15,19 @@ load_mbb_pbp <- function(seasons, ..., qs = FALSE) {
   options(stringsAsFactors = FALSE)
   options(scipen = 999)
   dots <- rlang::dots_list(...)
-  
+
   if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
-  
+
   if (isTRUE(qs) && !is_installed("qs")) {
     usethis::ui_stop("Package {usethis::ui_value('qs')} required for argument {usethis::ui_value('qs = TRUE')}. Please install it.")
   }
-  
+
   most_recent <- most_recent_mbb_season()
-  
+
   if (!all(seasons %in% 2002:most_recent)) {
     usethis::ui_stop("Please pass valid seasons between 2002 and {most_recent}")
   }
-  
+
   if (length(seasons) > 1 && is_sequential() && isFALSE(in_db)) {
     usethis::ui_info(c(
       "It is recommended to use parallel processing when trying to load multiple seasons.",
@@ -35,28 +35,28 @@ load_mbb_pbp <- function(seasons, ..., qs = FALSE) {
       "Will go on sequentially..."
     ))
   }
-  
-  
+
+
   p <- progressr::progressor(along = seasons)
-  
+
   if (isFALSE(in_db)) {
     out <- furrr::future_map_dfr(seasons, mbb_single_season, p = p, qs = qs)
   }
-  
+
   if (isTRUE(in_db)) {
     purrr::walk(seasons, mbb_single_season, p, ..., qs = qs)
     out <- NULL
   }
-  
+
   return(out)
 }
 
 mbb_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, qs = FALSE) {
   if (isTRUE(qs)) {
-    
+
     .url <- glue::glue("https://github.com/saiemgilani/hoopR-data/blob/master/mbb/pbp/rds/play_by_play_{season}.qs")
     pbp <- qs_from_url(.url)
-    
+
   }
   if (isFALSE(qs)) {
     .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/pbp/rds/play_by_play_{season}.rds")
@@ -85,7 +85,7 @@ load_mbb_games <- function(){
 
 #' @name update_mbb_db
 #' @aliases update_mbb_db mbb_db mbb mbb_pbp_db
-#' @title 
+#' @title
 #' **Update or create a hoopR play-by-play database**
 #' @description `update_mbb_db()` updates or creates a database with `hoopR`
 #' play by play data of all completed and available games since 2002.
@@ -130,40 +130,40 @@ update_mbb_db <- function(dbdir = ".",
                           tblname = "hoopR_mbb_pbp",
                           force_rebuild = FALSE,
                           db_connection = NULL) {
-  
+
   # rule_header("Update hoopR Play-by-Play Database")
-  
+
   if (!is_installed("DBI") | !is_installed("purrr") |
       (!is_installed("RSQLite") & is.null(db_connection))) {
     usethis::ui_stop("{my_time()} | Packages {usethis::ui_value('DBI')}, {usethis::ui_value('RSQLite')} and {usethis::ui_value('purrr')} required for database communication. Please install them.")
   }
-  
+
   if (any(force_rebuild == "NEW")) {
     usethis::ui_stop("{my_time()} | The argument {usethis::ui_value('force_rebuild = NEW')} is only for internal usage!")
   }
-  
+
   if (!(is.logical(force_rebuild) | is.numeric(force_rebuild))) {
     usethis::ui_stop("{my_time()} | The argument {usethis::ui_value('force_rebuild')} has to be either logical or numeric!")
   }
-  
+
   if (!dir.exists(dbdir) & is.null(db_connection)) {
     usethis::ui_oops("{my_time()} | Directory {usethis::ui_path(dbdir)} doesn't exist yet. Try creating...")
     dir.create(dbdir)
   }
-  
+
   if (is.null(db_connection)) {
     connection <- DBI::dbConnect(RSQLite::SQLite(), glue::glue("{dbdir}/{dbname}"))
   } else {
     connection <- db_connection
   }
-  
+
   # create db if it doesn't exist or user forces rebuild
   if (!DBI::dbExistsTable(connection, tblname)) {
     build_mbb_db(tblname, connection, rebuild = "NEW")
   } else if (DBI::dbExistsTable(connection, tblname) & all(force_rebuild != FALSE)) {
     build_mbb_db(tblname, connection, rebuild = force_rebuild)
   }
-  
+
   # get completed games using Lee's file (thanks Lee!)
   user_message("Checking for missing completed games...", "todo")
   completed_games <- load_mbb_games() %>%
@@ -171,21 +171,21 @@ update_mbb_db <- function(dbdir = ".",
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::arrange(.data$week) %>%
     dplyr::pull(.data$game_id)
-  
+
   # function below
   missing <- get_missing_mbb_games(completed_games, connection, tblname)
-  
+
   # rebuild db if number of missing games is too large
   if(length(missing) > 16) {# limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
     # message("The number of missing games is so large that rebuilding the database is more efficient.")
     build_mbb_db(tblname, connection, show_message = FALSE, rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4))))
     missing <- get_missing_mbb_games(completed_games, connection, tblname)
   }
-  
+
   # # if there's missing games, scrape and write to db
   # if (length(missing) > 0) {
   #   new_pbp <- build_hoopR_pbp(missing, rules = FALSE)
-  #   
+  #
   #   if (nrow(new_pbp) == 0) {
   #     user_message("Raw data of new games are not yet ready. Please try again in about 10 minutes.", "oops")
   #   } else {
@@ -193,7 +193,7 @@ update_mbb_db <- function(dbdir = ".",
   #     DBI::dbWriteTable(connection, tblname, new_pbp, append = TRUE)
   #   }
   # }
-  
+
   message_completed("Database update completed", in_builder = TRUE)
   usethis::ui_info("{my_time()} | Path to your db: {usethis::ui_path(DBI::dbGetInfo(connection)$dbname)}")
   if (is.null(db_connection)) DBI::dbDisconnect(connection)
@@ -202,13 +202,13 @@ update_mbb_db <- function(dbdir = ".",
 
 # this is a helper function to build hoopR database from Scratch
 build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
-  
+
   valid_seasons <- load_mbb_games() %>%
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::group_by(.data$season) %>%
     dplyr::summarise() %>%
     dplyr::ungroup()
-  
+
   if (all(rebuild == TRUE)) {
     usethis::ui_todo("{my_time()} | Purging the complete data table {usethis::ui_value(tblname)} in your connected database...")
     DBI::dbRemoveTable(db_conn, tblname)
@@ -228,7 +228,7 @@ build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, sh
     seasons <- NULL
     usethis::ui_oops("{my_time()} | At least one invalid value passed to argument {usethis::ui_code('force_rebuild')}. Please try again with valid input.")
   }
-  
+
   if (!is.null(seasons)) {
     # this function lives in R/utils.R
     load_mbb_pbp(seasons, dbConnection = db_conn, tablename = tblname, qs = FALSE)
@@ -243,9 +243,9 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
     dplyr::distinct() %>%
     dplyr::collect() %>%
     dplyr::pull("game_id")
-  
+
   need_scrape <- completed_games[!completed_games %in% db_ids]
-  
+
   usethis::ui_info("{my_time()} | You have {length(db_ids)} games and are missing {length(need_scrape)}.")
   return(need_scrape)
 }
