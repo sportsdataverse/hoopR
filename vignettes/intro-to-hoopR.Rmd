@@ -7,6 +7,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
+library(hoopR)
 ```
 
 We will be acquiring data from [kenpom.com](https://kenpom.com), using the `hoopR` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
@@ -48,7 +49,7 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
+#pacman::p_load_current_gh("saiemgilani/hoopR")
 pacman::p_load(dplyr, ggplot2,animation,ggimage,png, glue)
 
 ```
@@ -76,41 +77,41 @@ First, to keep things a bit simpler, we will first create a second and third `rt
 
 team1 = "Florida St."
 team2 = "ACC"
-metric <- "AdjEM" 
+metric <- "adj_em" 
 full_metric <- "Adjusted Efficiency Margin"
 Color1 = '#782F40'
 Color2 = 'navyblue'
 
-rtgs$Metric = rtgs[, metric]
+rtgs$metric = rtgs[, metric]
 
 
 rtgs_acc <- rtgs %>% 
-  dplyr::filter(.data$Conf == team2) %>% 
-  dplyr::group_by(.data$Year,.data$Conf) %>% 
-  dplyr::summarize(Metric = mean(Metric)) %>% 
+  dplyr::filter(.data$conf == team2) %>% 
+  dplyr::group_by(.data$year,.data$conf) %>% 
+  dplyr::summarize(metric = mean(metric)) %>% 
   dplyr::ungroup() %>% 
-  dplyr::rename(Team = .data$Conf)
+  dplyr::rename(team = .data$conf)
 
 rtgs_fsu <- rtgs %>% 
-  filter(Team == team1) %>% 
-  arrange(-.data$Year, .data$Rk) %>% 
-  select(Year, Team, Metric)
+  filter(team == team1) %>% 
+  arrange(-.data$year, .data$rk) %>% 
+  select(year, team, metric)
 
 # combine the two datasets using rbind
 plot_data <- rbind(rtgs_fsu, rtgs_acc)
 
 plot_data <- rtgs_fsu %>% 
-  mutate(Metric_1 = Metric) %>% 
+  mutate(metric_1 = metric) %>% 
   left_join(rtgs_acc %>% 
-              select(.data$Year, .data$Metric),
-            by=c("Year"),suffix=c("","_2"))  
+              select(.data$year, .data$metric),
+            by=c("year"),suffix=c("","_2"))  
 plot_data <- plot_data %>% 
   mutate(
-    Metric = round(Metric,1),
-    Metric_1 = round(Metric_1,1),
-    Metric_2 = round(Metric_2,1)
+    metric = round(metric,1),
+    metric_1 = round(metric_1,1),
+    metric_2 = round(metric_2,1)
   ) %>% 
-  arrange(.data$Year)
+  arrange(.data$year)
 
 plot_data$Color_1 = Color1
 plot_data$Color_2 = Color2
@@ -118,7 +119,7 @@ plot_data$Color_2 = Color2
 
 ```{r anim_presets, message=FALSE}
 
-logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.png"
+logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/loaders/man/figures/logo.png"
 z <- tempfile()
 download.file(logo_url,z,mode="wb")
 m <- png::readPNG(z)
@@ -127,7 +128,7 @@ rast <- grid::rasterGrob(img, interpolate = T)
 
 plot_data <- plot_data %>% 
   mutate(logo_1 = "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
-         logo_2 = "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35")
+         logo_2 = "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35") %>% arrange(year)
 # points for plotting
 x_max <- 2020
 x_lab_min <- 2010 - 3
@@ -142,30 +143,30 @@ x_score <- 2 + x_max
 
 draw_frame <- function(year)
 {
-  
+  yr <- year
   # frame data
   frm_data <- plot_data %>% 
-    filter(Year <= year)
+    filter(.data$year <= yr)
   
   # output quarter changes
-  if (nrow(frm_data %>% filter(Year == max(Year))) == 1)
+  if (nrow(frm_data %>% filter(year == max(.data$year))) == 1)
   {
-    print(glue::glue("Plotting AdjEM in Year: {max(frm_data$Year)}"))
+    print(glue::glue("Plotting AdjEM in Year: {max(frm_data$year)}"))
   }
   
   # plot
   frm_plot <- frm_data %>% 
-    ggplot(aes(x = Year, y = Metric, group=Team))+
+    ggplot(aes(x = year, y = metric, group=team))+
     theme_minimal()+
     geom_vline(xintercept = c(2010, x_max), color = "#5555AA")+
     geom_segment(x = 2010, xend = 2020, y = 0, yend = 0, size = 0.75)+
     geom_image(x = x_score-1, y = 24, image = frm_data$logo_1, size = 0.09, asp = 1.5)+
     geom_image(x = x_score-1, y = 2, image = frm_data$logo_2, size = 0.12, asp = 1.5)+
-    geom_image(aes(x = Year, y = Metric_1, image = logo_1),  size = .03, asp = 1.5)+
-    geom_image(aes(x = Year, y = Metric_2, image = logo_2),  size = .06, asp = 1.5)+
+    geom_image(aes(x = year, y = metric_1, image = logo_1),  size = .03, asp = 1.5)+
+    geom_image(aes(x = year, y = metric_2, image = logo_2),  size = .06, asp = 1.5)+
     annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=-2, ymax=-20)+
-    geom_line(aes(x = Year, y = Metric_1, color = Color1), size = 1)+
-    geom_line(aes(x = Year, y = Metric_2, color = Color2), size = 1)+
+    geom_line(aes(x = year, y = metric_1, color = Color1), size = 1)+
+    geom_line(aes(x = year, y = metric_2, color = Color2), size = 1)+
     scale_color_manual(values = c(Color1, Color2))+
     scale_x_continuous(breaks = seq(2010, 2020, 1),
                        minor_breaks = NULL,
@@ -176,7 +177,7 @@ draw_frame <- function(year)
     coord_cartesian(clip = "off",expand = FALSE) +
     xlab("") +
     ylab("") +
-    labs(title = glue::glue("{team1} and {team2} \n{full_metric} Chart - {min(plot_data$Year)}-{max(plot_data$Year)}"),
+    labs(title = glue::glue("{team1} and {team2} \n{full_metric} Chart - {min(plot_data$year)}-{max(plot_data$year)}"),
          caption = "Data from kenpom.com | Visualization by @SaiemGilani") +
     theme(legend.position = "none",
           axis.title.x = element_text(size = 18, family = "sans", face = 'bold', color = "#3D1A22"),
@@ -190,29 +191,29 @@ draw_frame <- function(year)
           plot.background = element_rect(fill = "#00AFDC"))
   
   # score display 
-  Metric1 <- tail(frm_data$Metric_1, n=1)
-  Metric2 <- tail(frm_data$Metric_2, n=1)
+  metric1 <- tail(frm_data$metric_1, n=1)
+  metric2 <- tail(frm_data$metric_2, n=1)
   
   # clock display
   Year <- case_when(
-    max(frm_data$Year) == 2010 ~ "2010" ,
-    max(frm_data$Year) == 2011 ~ "2011" ,
-    max(frm_data$Year) == 2012 ~ "2012" ,
-    max(frm_data$Year) == 2013 ~ "2013" ,
-    max(frm_data$Year) == 2014 ~ "2014" ,
-    max(frm_data$Year) == 2015 ~ "2015" ,
-    max(frm_data$Year) == 2016 ~ "2016" ,
-    max(frm_data$Year) == 2017 ~ "2017" ,
-    max(frm_data$Year) == 2018 ~ "2018" ,
-    max(frm_data$Year) == 2019 ~ "2019" ,
-    max(frm_data$Year) == 2020 ~ "2020" ,
-    TRUE ~ as.character(max(frm_data$Year))
+    max(frm_data$year) == 2010 ~ "2010" ,
+    max(frm_data$year) == 2011 ~ "2011" ,
+    max(frm_data$year) == 2012 ~ "2012" ,
+    max(frm_data$year) == 2013 ~ "2013" ,
+    max(frm_data$year) == 2014 ~ "2014" ,
+    max(frm_data$year) == 2015 ~ "2015" ,
+    max(frm_data$year) == 2016 ~ "2016" ,
+    max(frm_data$year) == 2017 ~ "2017" ,
+    max(frm_data$year) == 2018 ~ "2018" ,
+    max(frm_data$year) == 2019 ~ "2019" ,
+    max(frm_data$year) == 2020 ~ "2020" ,
+    TRUE ~ as.character(max(frm_data$year))
   )
   
   # add score and clock to plot
   frm_plot <- frm_plot + 
-    annotate("text", x = x_score-1, y = 16, label = Metric1, color = Color1, size = 8) +
-    annotate("text", x = x_score-1, y = -4, label = Metric2, color = Color2, size = 8) +
+    annotate("text", x = x_score-1, y = 16, label = metric1, color = Color1, size = 8) +
+    annotate("text", x = x_score-1, y = -4, label = metric2, color = Color2, size = 8) +
     annotate("text", x = x_score-1, y = 8, label = Year, color = "#000000", size = 7)
   
   # label key moments
@@ -241,12 +242,12 @@ draw_frame(2014)
 
 draw_gif <- function()
 {
-  lapply(plot_data$Year, function(year)
+  lapply(plot_data$year, function(year)
   { 
     draw_frame(year)
   })
   print("Plotting frames for pause")
-  replicate(3, draw_frame(max(plot_data$Year)))
+  replicate(3, draw_frame(max(plot_data$year)))
   print("Assembling plots into a GIF")
 }
 
@@ -255,7 +256,7 @@ draw_gif <- function()
 ```{r save_gif}
 
 saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif"),
-        ani.width = 900, ani.height = 560, ani.res = 110)
+        ani.width = 960, ani.height = 540, ani.res = 110)
 
 ```
 
