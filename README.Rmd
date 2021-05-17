@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+#
+
 # hoopR <a href='http://saiemgilani.github.io/hoopR'><img src="man/figures/logo.png" align="right" height="139"/></a>
 ```{r, include = FALSE}
 require(knitr)
