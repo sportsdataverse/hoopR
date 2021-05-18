@@ -59,7 +59,7 @@ kp_box <- function(game_id, year){
   ref_ids <- ref_ids %>%
     dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
     dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
-      stringr::str_extract_all(.data$href,"=(.+)")[,1],"="),"&(.+)")) %>%
+      stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
     dplyr::select(.data$ref_id) %>%
     dplyr::rename(OfficialId=.data$ref_id)
 
