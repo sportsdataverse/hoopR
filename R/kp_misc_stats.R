@@ -341,8 +341,7 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
-#' @importFrom stringr str_extract str_match
-#' @importFrom stringi stri_extract_last_regex
+#' @import stringr
 #' @export
 #'
 #' @examples

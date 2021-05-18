@@ -859,8 +859,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 #' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
-#' @importFrom stringr str_extract str_match
-#' @importFrom stringi stri_extract_first_regex stri_extract_last_regex
+#' @import stringr
 #' @export
 #'
 #' @examples
