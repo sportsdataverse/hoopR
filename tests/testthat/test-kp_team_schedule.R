@@ -4,6 +4,7 @@ context("KP - Get team schedule")
 
 test_that("KP - Get team schedule", {
   skip_on_cran()
+  skip_on_ci()
   x <- kp_team_schedule(team = 'Florida St.', year= 2020)
 
   cols <- c(

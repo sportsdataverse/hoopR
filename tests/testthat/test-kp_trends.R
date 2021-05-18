@@ -4,6 +4,7 @@ context("KP - Get trends")
 
 test_that("KP - Get trends", {
   skip_on_cran()
+  skip_on_ci()
   x <- kp_trends()
 
   cols <- c(
