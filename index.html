@@ -219,14 +219,34 @@
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html">toc</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">## 66.99 sec elapsed</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">pbp</span><span class="op">$</span><span class="va">game_id</span><span class="op">)</span><span class="op">)</span>
-<span class="co">## 27,479 games</span>
-<span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pbp</span><span class="op">)</span>
-<span class="co">## 11,720,688 rows</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pbp</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="mens-college-basketball-full-play-by-play-seasons-2002-2021--2-3-minutes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#mens-college-basketball-full-play-by-play-seasons-2002-2021--2-3-minutes" class="anchor"></a><strong>Men’s college basketball full play-by-play seasons (2002-2021) ~ 2-3 minutes</strong>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># You can install using the pacman package using the following code:</span>
+<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'pacman'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'pacman'</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_current_gh.html">p_load_current_gh</a></span><span class="op">(</span><span class="st">"saiemgilani/hoopR"</span><span class="op">)</span>
+<span class="fu">future</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/future/man/plan.html">plan</a></span><span class="op">(</span><span class="st">"multisession"</span><span class="op">)</span>
+<span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html">tic</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/progressr/man/with_progress.html">with_progress</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">pbp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2002</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span>
+<span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html">toc</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">## 135.87 sec elapsed</span>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">pbp</span><span class="op">$</span><span class="va">game_id</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pbp</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
+<a href="#documentation" class="anchor"></a><strong>Documentation</strong>
+</h2>
 <p>For more information on the package and function reference, please see the <a href="https://saiemgilani.github.io/hoopR/"><strong><code>hoopR</code></strong> documentation website</a>.</p>
 </div>
 <div id="breaking-changes" class="section level2">
