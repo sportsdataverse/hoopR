@@ -66,12 +66,30 @@ progressr::with_progress({
 tictoc::toc()
 ## 66.99 sec elapsed
 length(unique(pbp$game_id))
-## 27,479 games
 nrow(pbp)
-## 11,720,688 rows
 ```
 
-## Documentation
+### **Men’s college basketball full play-by-play seasons (2002-2021) \~ 2-3 minutes**
+
+``` r
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/hoopR")
+future::plan("multisession")
+tictoc::tic()
+progressr::with_progress({
+  pbp <- load_mbb_pbp(2002:2021)
+})
+tictoc::toc()
+
+## 135.87 sec elapsed
+length(unique(pbp$game_id))
+nrow(pbp)
+```
+
+## **Documentation**
 
 For more information on the package and function reference, please see
 the [**`hoopR`** documentation
