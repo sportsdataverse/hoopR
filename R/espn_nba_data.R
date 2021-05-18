@@ -392,7 +392,7 @@ espn_nba_scoreboard <- function(season){
       tidyr::hoist(
         .data$leaders,
         # points
-        points_leader_yards = list(1, "leaders", 1, "value"),
+        points_leader_points = list(1, "leaders", 1, "value"),
         points_leader_stat = list(1, "leaders", 1, "displayValue"),
         points_leader_name = list(1, "leaders", 1, "athlete", "displayName"),
         points_leader_shortname = list(1, "leaders", 1, "athlete", "shortName"),
@@ -400,7 +400,7 @@ espn_nba_scoreboard <- function(season){
         points_leader_team_id = list(1, "leaders", 1, "team", "id"),
         points_leader_pos = list(1, "leaders", 1, "athlete", "position", "abbreviation"),
         # rebounds
-        rebounds_leader_yards = list(2, "leaders", 1, "value"),
+        rebounds_leader_rebounds = list(2, "leaders", 1, "value"),
         rebounds_leader_stat = list(2, "leaders", 1, "displayValue"),
         rebounds_leader_name = list(2, "leaders", 1, "athlete", "displayName"),
         rebounds_leader_shortname = list(2, "leaders", 1, "athlete", "shortName"),
@@ -408,7 +408,7 @@ espn_nba_scoreboard <- function(season){
         rebounds_leader_team_id = list(2, "leaders", 1, "team", "id"),
         rebounds_leader_pos = list(2, "leaders", 1, "athlete", "position", "abbreviation"),
         # assists
-        assists_leader_yards = list(3, "leaders", 1, "value"),
+        assists_leader_assists = list(3, "leaders", 1, "value"),
         assists_leader_stat = list(3, "leaders", 1, "displayValue"),
         assists_leader_name = list(3, "leaders", 1, "athlete", "displayName"),
         assists_leader_shortname = list(3, "leaders", 1, "athlete", "shortName"),
