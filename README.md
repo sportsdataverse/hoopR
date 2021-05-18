@@ -48,6 +48,29 @@ if (!requireNamespace('devtools', quietly = TRUE)){
 devtools::install_github(repo = "saiemgilani/hoopR")
 ```
 
+## Quick Start
+
+### **NBA full play-by-play seasons (2002-2021) \~ 1-2 minutes**
+
+``` r
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/hoopR")
+future::plan("multisession")
+tictoc::tic()
+progressr::with_progress({
+  pbp <- load_nba_pbp(2002:2021)
+})
+tictoc::toc()
+## 66.99 sec elapsed
+length(unique(pbp$game_id))
+## 27,479 games
+nrow(pbp)
+## 11,720,688 rows
+```
+
 ## Documentation
 
 For more information on the package and function reference, please see
