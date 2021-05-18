@@ -3,7 +3,7 @@ title: hoopR
 template:
   params:
     bootswatch: flatly
-    ganalytics: G-600N1Z38KJ
+    ganalytics: G-FN028W4QW6
   opengraph:
     image:
       src: "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/themes/hoopR_gh.png"

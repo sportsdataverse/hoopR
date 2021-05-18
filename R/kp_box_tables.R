@@ -10,8 +10,7 @@
 #' @importFrom xml2 read_html xml_remove xml_attrs
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
 #' @importFrom tidyr everything separate
-#' @importFrom stringr str_remove str_detect
-#' @importFrom stringi stri_extract_first_regex
+#' @import stringr
 #' @export
 #'
 #' @examples
@@ -60,7 +59,7 @@ kp_box <- function(game_id, year){
   ref_ids <- ref_ids %>%
     dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
     dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
-      stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
+      stringr::str_extract_all(.data$href,"=(.+)")[,1],"="),"&(.+)")) %>%
     dplyr::select(.data$ref_id) %>%
     dplyr::rename(OfficialId=.data$ref_id)
 
