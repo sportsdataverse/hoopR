@@ -28,8 +28,6 @@ kp_pomeroy_ratings <- function(min_year, max_year){
   for(year in years) {
 
 
-
-    cat("Getting", year,"\n")
     ### Pull Data
     url <- paste0("https://kenpom.com/index.php?y=", year)
     page <- rvest::session_jump_to(browser, url)
@@ -106,10 +104,6 @@ kp_efficiency <- function(min_year, max_year){
   years <- min_year:max_year
 
   for(year in years) {
-
-
-
-    cat("Getting", year,"\n")
 
     ### Pull Data
     url <- paste0("https://kenpom.com/summary.php?y=", year)
@@ -240,7 +234,6 @@ kp_fourfactors <- function(min_year, max_year){
   for(year in years) {
 
 
-    cat("Getting", year,"\n")
     ### Pull Data
     url <- paste0("https://kenpom.com/stats.php?",
                   "y=", year)
@@ -323,7 +316,6 @@ kp_pointdist <- function(min_year, max_year){
   for(year in years) {
 
 
-    cat("Getting", year,"\n")
     ### Pull Data
     url <- paste0("https://kenpom.com/pointdist.php?",
                   "y=", year)
@@ -404,9 +396,6 @@ kp_height <- function(min_year,max_year){
   years <- min_year:max_year
 
   for(year in years) {
-
-
-    cat("Getting", year,"\n")
 
     ### Pull Data
     url <- paste0("https://kenpom.com/height.php?",
@@ -538,8 +527,6 @@ kp_foul_trouble <- function(min_year, max_year){
 
   for(year in years) {
 
-
-    cat("Getting", year,"\n")
     ### Pull Data
     url <- paste0("https://kenpom.com/foul_trouble.php?",
                   "y=", year)
@@ -619,9 +606,6 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
 
   for(year in years) {
 
-
-
-      cat("Getting", year,"- Offense\n")
       ### Pull Data
       url <- paste0("https://kenpom.com/teamstats.php?",
                     "y=", year, "&od=o")
@@ -669,9 +653,6 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
           "Off.A.Pct", "Off.A.Pct.Rk",
           "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk", "AdjO", "AdjO.Rk", "Year"), as.numeric) %>%
       as.data.frame()
-
-
-    cat("Getting", year,"- Defense\n")
     ### Pull Data
     url <- paste0("https://kenpom.com/teamstats.php?",
                   "y=", year, "&od=d")
@@ -786,9 +767,6 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 
   if(metric=="ORtg"){
 
-
-    cat("Getting", year," ", metric," metric\n")
-
     ### Pull Data
     url <- paste0("https://kenpom.com/playerstats.php?",
                   "y=", year,
@@ -831,9 +809,6 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 
     kenpom <- y
   }else{
-
-
-    cat("Getting", year," ", metric," metric\n")
 
     ### Pull Data
     url <- paste0("https://kenpom.com/playerstats.php?",
@@ -899,8 +874,6 @@ kp_kpoy <- function(year){
 
   assertthat::assert_that(year >= 2011, msg="Data only goes back to 2011")
 
-
-  cat("Getting", year,"\n")
 
   ### Pull Data
   url <- paste0("https://kenpom.com/kpoy.php?",
