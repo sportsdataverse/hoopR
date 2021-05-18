@@ -4,6 +4,7 @@ context("KP - Get officials")
 
 test_that("KP - Get officials", {
   skip_on_cran()
+  skip_on_ci()
   x <- kp_officials(year= 2020)
 
   cols <- c(

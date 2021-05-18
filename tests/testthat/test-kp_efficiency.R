@@ -4,6 +4,7 @@ context("KP - Get efficiency")
 
 test_that("KP - Get efficiency", {
   skip_on_cran()
+  skip_on_ci()
   x <- kp_efficiency(min_year = 2020, max_year = 2020)
   cols <- c(
     "team", "conf", "adj_t", "adj_t_rk", "raw_t",

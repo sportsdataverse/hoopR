@@ -4,6 +4,7 @@ context("KP - Get team players (roster)")
 
 test_that("KP - Get team players (roster)", {
   skip_on_cran()
+  skip_on_ci()
   x <- kp_team_players(team = 'Florida St.', year= 2020)
 
 
