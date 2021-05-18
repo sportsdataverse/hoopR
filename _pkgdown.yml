@@ -6,9 +6,9 @@ template:
     ganalytics: G-600N1Z38KJ
   opengraph:
     image:
-      src: "https://raw.githubusercontent.com/saiemgilani/hoopR-data/main/themes/hoopR_gh.png"
+      src: "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/themes/hoopR_gh.png"
     twitter:
-      site: "@saiemgilani"
+      creator: "@saiemgilani"
       card: summary_large_image
 
 toc:
