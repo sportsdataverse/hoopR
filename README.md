@@ -100,7 +100,7 @@ website](https://saiemgilani.github.io/hoopR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 1.0.2-3**
+# **hoopR 1.0.2**
 
 ### Quick fix for update db functions
 
