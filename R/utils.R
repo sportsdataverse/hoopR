@@ -192,6 +192,7 @@ clean_team_names_NCAA_merge <- function(df){
   return(df)
 }
 
+my_time <- function() strftime(Sys.time(), format = "%H:%M:%S")
 
 #' Check Status function
 #' @param res Response from API
