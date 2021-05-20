@@ -100,6 +100,10 @@ website](https://saiemgilani.github.io/hoopR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
+# **hoopR 1.0.2**
+
+### Quick fix for update db functions
+
 # **hoopR 1.0.1**
 
 ### **Dependency pruning**
@@ -224,13 +228,13 @@ See the following ~~four~~ eight functions:
 
 <summary>View More</summary>
 
-| issue | icon                                                                                                                                         | title                                                                                                                                                 | labels | opened\_by                                      | date       | closed              |
-| :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
-| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/hoopR/issues/1)</span>                                 | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
-| 13    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="Packages moved from `Imports` to `Suggests`:...">[dependency pruning the functions](https://github.com/saiemgilani/hoopR/pull/13)</span> |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-20 | 2021-05-20 13:52:01 |
-| 12    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[oversight](https://github.com/saiemgilani/hoopR/pull/12)</span>                                                                       |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-18 | 2021-05-18 12:55:24 |
-| 11    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add `load_mbb_pbp()` and `load_nba_pbp()` functions](https://github.com/saiemgilani/hoopR/pull/11)</span>                             |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-12 | 2021-05-17 23:35:12 |
-| 4     | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[Fix gameplan maybe](https://github.com/saiemgilani/hoopR/pull/4)</span>                                                               |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-01-29 | 2021-01-29 03:26:00 |
+| issue | icon                                                                                                                                         | title                                                                                                                                                       | labels | opened\_by                                      | date       | closed              |
+| :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
+| 14    | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="    library(hoopR)...">[Error in “update\_nba\_db”: could not find function “my\_time”](https://github.com/saiemgilani/hoopR/issues/14)</span> |        | [jedwards757](https://github.com/jedwards757)   | 2021-05-20 | 2021-05-20 19:32:19 |
+| 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/hoopR/issues/1)</span>                                       | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
+| 15    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="closes #14 ">[my\_time](https://github.com/saiemgilani/hoopR/pull/15)</span>                                                                   | bug    | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-20 | 2021-05-20 19:32:20 |
+| 13    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="Packages moved from `Imports` to `Suggests`:...">[dependency pruning the functions](https://github.com/saiemgilani/hoopR/pull/13)</span>       |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-20 | 2021-05-20 13:52:01 |
+| 12    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[oversight](https://github.com/saiemgilani/hoopR/pull/12)</span>                                                                             |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-18 | 2021-05-18 12:55:24 |
 
 </details>
 
