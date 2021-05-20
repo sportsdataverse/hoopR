@@ -171,7 +171,6 @@ update_mbb_db <- function(dbdir = ".",
   completed_games <- load_mbb_games() %>%
     # completed games since 2002, excluding the broken games
     dplyr::filter(.data$season >= 2002) %>%
-    dplyr::arrange(.data$week) %>%
     dplyr::pull(.data$game_id)
 
   # function below
