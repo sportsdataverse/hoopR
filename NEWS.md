@@ -1,3 +1,7 @@
+# **hoopR 1.0.2** 
+
+### Quick fix for update db functions
+
 # **hoopR 1.0.1**
 
 ### **Dependency pruning**
