@@ -1,4 +1,4 @@
-# **hoopR 1.0.2** 
+# **hoopR 1.0.2-3** 
 
 ### Quick fix for update db functions
 
