@@ -10,6 +10,7 @@ NULL
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by \code{\link[=update_mbb_db]{update_mbb_db()}}).
 #' @param qs Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @import furrr
 #' @export
 load_mbb_pbp <- function(seasons, ..., qs = FALSE) {
   options(stringsAsFactors = FALSE)
@@ -124,6 +125,7 @@ load_mbb_games <- function(){
 #' of or the complete play by play data table within the database (please see details for further information)
 #' @param db_connection A `DBIConnection` object, as returned by
 #' [DBI::dbConnect()] (please see details for further information)
+#' @import furrr
 #' @export
 update_mbb_db <- function(dbdir = ".",
                           dbname = "mbb_pbp_db",

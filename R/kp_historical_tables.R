@@ -38,11 +38,10 @@
 #'
 #' @keywords Team History
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr filter mutate select mutate_at rename bind_cols bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_replace str_extract regex
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -269,12 +268,10 @@ kp_team_history <- function(team){
 #' }
 #'
 #' @keywords Coach History
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr filter mutate select mutate_at
 #' @importFrom tidyr everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -496,11 +493,9 @@ kp_coach_history <- function(coach){
 #' }
 #'
 #' @keywords Program Ratings
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements
-#' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr filter
+#' @import rvest
 #' @export
 #' @examples
 #' \dontrun{
@@ -579,11 +574,9 @@ kp_program_ratings <- function(){
 #' }
 #'
 #' @keywords Ratings Archive
-#' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_remove str_trim
+#' @import rvest
 #' @export
 #' @examples
 #' \dontrun{
@@ -747,11 +740,9 @@ kp_pomeroy_archive_ratings <- function(date){
 #'   \item{\code{Year}}{character.}
 #' }
 #' @keywords Conference Stats
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate
+#' @import rvest
 #' @export
 #' @examples
 #' \dontrun{
@@ -913,11 +904,9 @@ kp_conf <- function(year, conf){
 #' }
 #'
 #' @keywords Conference Comparison
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter mutate_at
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -1012,9 +1001,8 @@ kp_confstats <- function(year){
 #' }
 #' @keywords Conference History
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_remove
 #' @importFrom dplyr mutate_at
+#' @import rvest
 #' @export
 #'
 #' @examples

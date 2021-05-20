@@ -24,11 +24,9 @@
 #'   \item{\code{PPG}}{double.}
 #' }
 #' @keywords Trends
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate_at
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -86,11 +84,9 @@ kp_trends <- function(){
 #'   \item{\code{Year}}{double.}
 #' }
 #' @keywords Refs
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
 #' @importFrom dplyr select filter mutate mutate_at
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -159,11 +155,9 @@ kp_officials <- function(year= 2020){
 #'   \item{\code{Elev.Rk}}{double.}
 #' }
 #' @keywords HCA
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate_at
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -217,9 +211,8 @@ kp_hca <- function(){
 #' }
 #' @keywords Arenas
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -266,11 +259,9 @@ kp_arenas <- function(year=2020){
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 #' 'Upsets','Busts','Comeback','Window'
 #' @keywords Game
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -335,12 +326,10 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
 #' }
 #'
 #' @keywords FanMatch
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
+#' @import rvest
 #' @import stringr
 #' @export
 #'

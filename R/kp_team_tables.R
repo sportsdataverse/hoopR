@@ -6,10 +6,9 @@
 #'
 #' @keywords Team Schedule
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate select
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect str_pad
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -335,11 +334,10 @@ kp_team_schedule <- function(team, year){
 #'
 #' @keywords Game Plan
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter select rename mutate case_when mutate_at bind_rows
 #' @importFrom tidyr separate everything
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect
+#' @import rvest
 #' @export
 #' @examples
 #' \dontrun{
@@ -528,9 +526,8 @@ kp_gameplan <- function(team, year=2020){
 #' @param year Year of data to pull
 #' @keywords Opponent Tracker
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -673,11 +670,10 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
 #'
 #' @keywords Team Player Stats
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_attrs
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -905,11 +901,10 @@ kp_team_players <- function(team, year= 2020){
 #'
 #' @keywords Player Career Stats
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_attrs
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -1128,9 +1123,8 @@ kp_player_career <- function(player_id){
 #'
 #' @keywords Minutes Matrix
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -1197,11 +1191,10 @@ kp_minutes_matrix <- function(team, year = 2020){
 #'
 #' @keywords Team Player Stats
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_attrs
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -1417,12 +1410,11 @@ kp_team_player_stats <- function(team, year = 2020){
 #' }
 #' @keywords Depth Chart
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate filter  bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect str_trim
 #' @importFrom tidyr separate
 #' @importFrom glue glue
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -1580,11 +1572,10 @@ kp_team_depth_chart <- function(team, year= 2020){
 #' }
 #' @keywords Depth Chart
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate filter
 #' @importFrom glue glue
 #' @importFrom stringr str_remove str_replace str_extract
+#' @import rvest
 #' @export
 #'
 #' @examples

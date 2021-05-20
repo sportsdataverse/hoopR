@@ -4,12 +4,10 @@
 #' @param year Year of game to pull
 #'
 #' @keywords Game Box Score
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html xml_remove xml_attrs
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
 #' @importFrom tidyr everything separate
+#' @import rvest
 #' @import stringr
 #' @export
 #'
@@ -130,13 +128,11 @@ kp_box <- function(game_id, year){
 #' @param year Year of game to pull
 #'
 #' @keywords Win Probability
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table html_text
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_extract_all
+#' @import rvest
 #' @export
 #'
 #' @examples
