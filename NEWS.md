@@ -1,3 +1,8 @@
+# **hoopR 1.0.1**
+
+### **Dependency pruning**
+This update is a non-user facing change to package dependencies to shrink the list of dependencies.
+
 # **hoopR 1.0.0**
 
 ### **Package renamed to hoopR**
