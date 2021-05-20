@@ -2,10 +2,10 @@
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords NBA Game
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -93,10 +93,10 @@ espn_nba_game_all <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords NBA PBP
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -137,10 +137,10 @@ espn_nba_pbp <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords NBA Team Box
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -180,10 +180,10 @@ espn_nba_team_box <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords NBA Player Box
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -237,12 +237,11 @@ espn_nba_player_box <- function(game_id){
 #' Get ESPN NBA team names and ids
 #' @author Saiem Gilani
 #' @keywords NBA Teams
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
 #' @importFrom tidyr unnest unnest_wider everything pivot_wider
-#' @importFrom tibble tibble
-#' @importFrom purrr map_if
+#' @import furrr
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -317,9 +316,9 @@ espn_nba_teams <- function(){
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
-#' @importFrom tibble tibble
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
+#' @import rvest
 #' @export
 #' @examples
 #'

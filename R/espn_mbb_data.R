@@ -2,10 +2,10 @@
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords CBB Game
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -92,10 +92,10 @@ espn_mbb_game_all <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords CBB PBP
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -135,10 +135,10 @@ espn_mbb_pbp <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords CBB Team Box
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -177,10 +177,10 @@ espn_mbb_team_box <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @keywords CBB Player Box
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -234,10 +234,10 @@ espn_mbb_player_box <- function(game_id){
 #' Get ESPN conference names and ids
 #' @author Saiem Gilani
 #' @keywords CBB Conferences
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -262,12 +262,11 @@ espn_mbb_conferences <- function(){
 #' Get ESPN men's college basketball team names and ids
 #' @author Saiem Gilani
 #' @keywords MBB Teams
-#' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
 #' @importFrom tidyr unnest unnest_wider everything pivot_wider
-#' @importFrom tibble tibble
-#' @importFrom purrr map_if
+#' @import furrr
+#' @import rvest
 #' @export
 #'
 
@@ -335,9 +334,9 @@ espn_mbb_teams <- function(){
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
-#' @importFrom tibble tibble
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
+#' @import rvest
 #' @export
 #' @examples
 #' # Get schedule from 2018 season (returns 1000 results, max allowable.)
@@ -464,8 +463,7 @@ utils::globalVariables(c("where"))
 #' @author Saiem Gilani
 #' @return Returns a tibble
 #' @importFrom dplyr as_tibble
-#' @importFrom rvest html_elements html_table
-#' @importFrom xml2 read_html
+#' @import rvest
 #' @export
 #' @examples
 #' # Get current NCAA NET rankings
