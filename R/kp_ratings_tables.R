@@ -4,13 +4,11 @@
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Ratings
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate arrange bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -83,12 +81,10 @@ kp_pomeroy_ratings <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Efficiency
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate mutate_at bind_rows
 #' @importFrom stringr str_remove str_remove str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -211,12 +207,10 @@ kp_efficiency <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Four Factors
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -293,12 +287,10 @@ kp_fourfactors <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Points
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -376,12 +368,10 @@ kp_pointdist <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Roster
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -505,12 +495,10 @@ kp_height <- function(min_year,max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Foul Trouble
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -584,12 +572,10 @@ kp_foul_trouble <- function(min_year, max_year){
 #' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
 #'
 #' @keywords Team
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -731,12 +717,10 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
 #' @param year Year of data to pull (earliest year of data available: 2004)
 #'
 #' @keywords Player
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_replace str_trim
+#' @import rvest
 #' @export
 #'
 #' @examples
@@ -853,13 +837,11 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 #' @param year Year of data to pull (earliest year of data available: 2011)
 #'
 #' @keywords Leaders
-#' @importFrom rlang .data
 #' @importFrom assertthat assert_that
-#' @importFrom rvest session_jump_to html_elements html_table
-#' @importFrom xml2 read_html
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
 #' @import stringr
+#' @import rvest
 #' @export
 #'
 #' @examples
