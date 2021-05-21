@@ -206,3 +206,8 @@ check_status <- function(res) {
   if(x != 200) stop("The API returned an error", call. = FALSE)
 
 }
+
+
+#' @import utils
+utils::globalVariables(c("where"))
+

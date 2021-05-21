@@ -23,7 +23,18 @@ espn_nba_game_all <- function(game_id){
   ## game_id
   full_url <- paste0(play_base_url,
                      "gameId=", game_id)
-  raw_play_df <- jsonlite::fromJSON(full_url)[["gamepackageJSON"]]
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+
+  resp <- res %>%
+    httr::content(as = "text", encoding = "UTF-8")
+
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
 
   #---- Play-by-Play ------
@@ -38,6 +49,19 @@ espn_nba_game_all <- function(game_id){
   names(aths)<-c("play.id","athlete1.id","athlete2.id","athlete3.id")
   plays_df <- dplyr::bind_cols(plays, aths) %>%
     select(-.data$athlete.id)
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
+  #---- Team Box ------
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   #---- Team Box ------
   teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
   teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
@@ -51,7 +75,19 @@ espn_nba_game_all <- function(game_id){
   tm <- c(teams_box_score_df[2,"team.shortDisplayName"], "Team", teams_box_score_df[1,"team.shortDisplayName"])
   names(tm) <- c("Home","label","Away")
   team_box_score = dplyr::bind_rows(tm, team_box_score)
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
   #---- Player Box ------
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   players_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["players"]]), flatten=TRUE) %>%
     tidyr::unnest(.data$statistics) %>%
     tidyr::unnest(.data$athletes)
@@ -84,6 +120,15 @@ espn_nba_game_all <- function(game_id){
       '+/-'=.data$x,
       fg3 = .data$x3pt
     )
+  },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
   pbp <- c(list(plays_df), list(team_box_score),list(player_box))
   names(pbp) <- c("Plays","Team","Player")
   return(pbp)
@@ -113,7 +158,18 @@ espn_nba_pbp <- function(game_id){
   ## game_id
   full_url <- paste0(play_base_url,
                      "gameId=", game_id)
-  raw_play_df <- jsonlite::fromJSON(full_url)[["gamepackageJSON"]]
+
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+
+  resp <- res %>%
+    httr::content(as = "text", encoding = "UTF-8")
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
   #---- Play-by-Play ------
   plays <- raw_play_df[["plays"]] %>%
@@ -130,6 +186,16 @@ espn_nba_pbp <- function(game_id){
 
   plays_df <- plays_df %>%
     janitor::clean_names()
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
+
 
   return(plays_df)
 }
@@ -156,7 +222,19 @@ espn_nba_team_box <- function(game_id){
   ## game_id
   full_url <- paste0(play_base_url,
                      "gameId=", game_id)
-  raw_play_df <- jsonlite::fromJSON(full_url)[["gamepackageJSON"]]
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+
+  resp <- res %>%
+    httr::content(as = "text", encoding = "UTF-8")
+
+  #---- Team Box ------
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
   #---- Team Box ------
   teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
@@ -173,7 +251,15 @@ espn_nba_team_box <- function(game_id){
   team_box_score = dplyr::bind_rows(tm, team_box_score)
   team_box_score <- team_box_score %>%
     janitor::clean_names()
-
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
   return(team_box_score)
 }
 #' Get ESPN NBA player box scores
@@ -199,7 +285,19 @@ espn_nba_player_box <- function(game_id){
   ## game_id
   full_url <- paste0(play_base_url,
                      "gameId=", game_id)
-  raw_play_df <- jsonlite::fromJSON(full_url)[["gamepackageJSON"]]
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+
+  resp <- res %>%
+    httr::content(as = "text", encoding = "UTF-8")
+
+  #---- Player Box ------
+  tryCatch(
+    expr = {
+      raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
   raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
   #---- Player Box ------
   players_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["players"]]), flatten=TRUE) %>%
@@ -230,6 +328,15 @@ espn_nba_player_box <- function(game_id){
       '+/-'=.data$x,
       fg3 = .data$x3pt
     )
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
   return(player_box)
 }
 
@@ -254,9 +361,19 @@ espn_nba_teams <- function(){
   options(scipen = 999)
   play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
-  ## Inputs
-  ## game_id
-  leagues <- jsonlite::fromJSON(play_base_url)[["sports"]][["leagues"]][[1]][['teams']][[1]][['team']] %>%
+
+  res <- httr::RETRY("GET", play_base_url)
+
+  # Check the result
+  check_status(res)
+
+  resp <- res %>%
+    httr::content(as = "text", encoding = "UTF-8")
+
+  tryCatch(
+    expr = {
+
+      leagues <- jsonlite::fromJSON(resp)[["sports"]][["leagues"]][[1]][['teams']][[1]][['team']] %>%
     dplyr::group_by(.data$id) %>%
     tidyr::unnest_wider(unlist(.data$logos, use.names=FALSE),names_sep = "_") %>%
     tidyr::unnest_wider(.data$logos_href,names_sep = "_") %>%
@@ -304,6 +421,15 @@ espn_nba_teams <- function(){
       display_name = .data$displayName
     ) %>%
     janitor::clean_names()
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no teams data available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
   return(teams)
 }
 
@@ -342,7 +468,16 @@ espn_nba_scoreboard <- function(season){
 
   schedule_api <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?limit=1000&dates={season_dates}")
 
-  raw_sched <- jsonlite::fromJSON(schedule_api, simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
+  res <- httr::RETRY("GET", schedule_api)
+
+  # Check the result
+  check_status(res)
+
+  tryCatch(
+    expr = {
+      raw_sched <- res %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
+        jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
   nba_data <- raw_sched[["events"]] %>%
     tibble::tibble(data = .data$.) %>%
@@ -433,7 +568,16 @@ espn_nba_scoreboard <- function(season){
     nba_data %>% dplyr::select(!where(is.list)) %>%
       janitor::clean_names()
   }
-
+    },
+  error = function(e) {
+    message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_id} available!"))
+  },
+  warning = function(w) {
+  },
+  finally = {
+  }
+  )
 }
+
 
 
