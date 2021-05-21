@@ -128,17 +128,18 @@ For more information on the package and function reference, please see the  [**`
 
 [**Full News on Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 1.0.2** 
+# **hoopR 1.0.4**
+### **Add retry**
+- Adding [```httr::retry()```](https://httr.r-lib.org/reference/RETRY.html) to all function calls to more naturally navigate rejected/failed requests from the API.
 
-### Quick fix for update db functions
+# **hoopR 1.0.2-3** 
+### **Quick fix for update db functions**
 
 # **hoopR 1.0.1**
-
 ### **Dependency pruning**
 This update is a non-user facing change to package dependencies to shrink the list of dependencies.
 
 # **hoopR 1.0.0**
-
 ### **Package renamed to hoopR**
 To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 
 
