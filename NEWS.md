@@ -1,14 +1,15 @@
+# **hoopR 1.0.4**
+### **Add retry**
+- Adding [```httr::retry()```](https://httr.r-lib.org/reference/RETRY.html) to all function calls to more naturally navigate rejected/failed requests from the API.
+
 # **hoopR 1.0.2-3** 
+### **Quick fix for update db functions**
 
-### Quick fix for update db functions
-
-# **hoopR 1.0.1**
-
+# **hoopR 1.0.1-4**
 ### **Dependency pruning**
 This update is a non-user facing change to package dependencies to shrink the list of dependencies.
 
 # **hoopR 1.0.0**
-
 ### **Package renamed to hoopR**
 To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 
 
@@ -23,7 +24,6 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - [```hoopR::load_nba_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html) and [```hoopR::update_nba_db()```](https://saiemgilani.github.io/hoopR/reference/update_nba_db.html) functions added
 
 # **hoopR 0.4**
-
 - Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
 - ```hoopR::espn_nba_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
 - ```hoopR::espn_nba_team_box()```
@@ -33,8 +33,7 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - ```hoopR::espn_nba_scoreboard()``` 
 
 # **hoopR 0.3.0**
-
-## Dependencies
+### **Dependencies**
 - ```R``` version 3.5.0 or greater dependency added
 - ```purrr``` version 0.3.0 or greater dependency added
 - ```rvest``` version 1.0.0 or greater dependency added
@@ -47,21 +46,16 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - ```furrr``` dependency added
 - ```future``` dependency added
 
-## **Test coverage**
-
+### **Test coverage**
 * Added tests for all KP and ESPN functions
 
 #### **Function Naming Convention Change**
-
 * All functions sourced from [kenpom.com](https://www.kenpom.com/) will start with `kp_` as opposed to `get_` 
-
 * Similarly, data and metrics sourced from ESPN will begin with `espn_` as opposed to `cbb_`. Moreover, all references to `cbb_` have been changed to `mbb_` as appropriate.
-
 * Data sourced directly from the NCAA website will start the function with `ncaa_`
 
 
 # **hoopR 0.2.0-3**
-
 - Added support for ESPN's men's college basketball play-by-play endpoints with the addition of the following functions:
 - ```hoopR::espn_mbb_game_all()``` - a convenience wrapper function around the following three functions (returns the results as a list of three data frames)
 - ```hoopR::espn_mbb_team_box()```
@@ -74,11 +68,9 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - ```hoopR::espn_mbb_rankings()``` (bumps to v0.2.3)
 
 # **hoopR 0.1.0** 
-
 -    Minor fixes
 
 # **hoopR 0.0.0.9**
-
 Initial Commits, remaining tasks:
 
 -   Game Prep Tables
