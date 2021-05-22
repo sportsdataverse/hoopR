@@ -767,7 +767,6 @@ espn_mbb_standings <- function(year){
 
       standings_data <- standings_data %>%
         dplyr::select(.data$.id, .data$type, .data$value)
-        dplyr::select(.id, type, value)
 
       #Use pivot_wider to transpose the dataframe so that we now have a standings row for each team
 
