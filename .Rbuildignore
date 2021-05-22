@@ -14,3 +14,5 @@
 ^\.github$
 ^inst*
 ^vignette*
+nba_pbp_db
+mbb_pbp_db
