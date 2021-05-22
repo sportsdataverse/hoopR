@@ -624,6 +624,13 @@ espn_nba_standings <- function(year){
 
       #creating a dataframe of the WNBA raw standings table from ESPN
 
+      teams <- teams %>%
+        dplyr::select(.data$id, .data$displayName) %>%
+        dplyr::rename(team_id = .data$id,
+                      team = .data$displayName)
+
+      #creating a dataframe of the WNBA raw standings table from ESPN
+
       standings_df <- raw_standings[["entries"]][["stats"]]
 
       standings_data <- data.table::rbindlist(standings_df, fill = TRUE, idcol = T)
