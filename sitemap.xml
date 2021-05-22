@@ -28,6 +28,9 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_scoreboard.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_standings.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_team_box.html</loc>
   </url>
   <url>
@@ -44,6 +47,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_scoreboard.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_team_box.html</loc>
