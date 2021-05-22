@@ -1,3 +1,8 @@
+# **hoopR 1.0.5**
+### **Standings functions**
+- [```hoopR::espn_nba_standings()```](https://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html)
+- [```hoopR::espn_mbb_standings()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_standings.html)
+
 # **hoopR 1.0.4**
 ### **Add retry**
 - Adding [```httr::retry()```](https://httr.r-lib.org/reference/RETRY.html) to all function calls to more naturally navigate rejected/failed requests from the API.
