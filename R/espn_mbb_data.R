@@ -609,7 +609,7 @@ espn_mbb_scoreboard <- function(season){
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data available!"))
     },
     warning = function(w) {
     },
@@ -703,7 +703,7 @@ espn_mbb_rankings <- function(){
         janitor::clean_names()
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no rankings data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no rankings data available!"))
     },
     warning = function(w) {
     },
@@ -714,3 +714,78 @@ espn_mbb_rankings <- function(){
   return(ranks)
 }
 
+
+#' Get ESPN men's college basketball standings
+#' @keywords MBB Standings
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr select rename
+#' @importFrom tidyr pivot_wider
+#' @export
+#' @examples
+#' espn_mbb_standings(2021)
+espn_mbb_standings <- function(year){
+
+  standings_url <- "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
+
+  ## Inputs
+  ## year
+  full_url <- paste0(standings_url,
+                     "season=", year)
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+  tryCatch(
+    expr = {
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      raw_standings <- jsonlite::fromJSON(resp)[["standings"]]
+
+      #Create a dataframe of all NBA teams by extracting from the raw_standings file
+
+      teams <- raw_standings[["entries"]][["team"]]
+
+      teams <- teams %>%
+        dplyr::select(.data$id, .data$displayName) %>%
+        dplyr::rename(team_id = .data$id,
+                      team = .data$displayName)
+
+      #creating a dataframe of the WNBA raw standings table from ESPN
+
+      standings_df <- raw_standings[["entries"]][["stats"]]
+
+      standings_data <- data.table::rbindlist(standings_df, fill = TRUE, idcol = T)
+
+      #Use the following code to replace NA's in the dataframe with the correct corresponding values and removing all unnecessary columns
+
+      standings_data$value <- ifelse(is.na(standings_data$value) & !is.na(standings_data$summary), standings_data$summary, standings_data$value)
+
+      standings_data <- standings_data %>%
+        dplyr::select(.id, type, value)
+
+      #Use pivot_wider to transpose the dataframe so that we now have a standings row for each team
+
+      standings_data <- standings_data %>%
+        tidyr::pivot_wider(names_from = type, values_from = value)
+
+      standings_data <- standings_data %>%
+        dplyr::select(-.data$.id)
+
+      #joining the 2 dataframes together to create a standings table
+
+      standings <- cbind(teams, standings_data)
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no standings data available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+
+  )
+  return(standings)
+}
