@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Functions to Access Men's Basketball Play by Play Data
-Version: 1.0.4
+Version: 1.0.5
 Authors@R: 
     person(given = "Saiem",
            family = "Gilani",

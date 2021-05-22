@@ -126,7 +126,7 @@ plot_data$Color_2 = Color2
 
 ```{r anim_presets, message=FALSE}
 
-logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/loaders/man/figures/logo.png"
+logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.png"
 z <- tempfile()
 download.file(logo_url,z,mode="wb")
 m <- png::readPNG(z)
