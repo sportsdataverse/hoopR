@@ -1,3 +1,12 @@
+# **hoopR 1.1.0** 
+### **Add team box score loaders**
+- [```hoopR::load_mbb_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html) function added
+- [```hoopR::load_nba_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html) function added
+
+### **Add player box score loaders**
+- [```hoopR::load_mbb_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_player_box.html) function added
+- [```hoopR::load_nba_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html) function added
+
 # **hoopR 1.0.5**
 ### **Standings functions**
 - [```hoopR::espn_nba_standings()```](https://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html)

@@ -7,42 +7,46 @@
 kp_confhistory(conf)
 }
 \arguments{
-\item{conf}{Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
-'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',\cr
-'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
-'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', \cr
-'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
-'SUM', 'SWAC', 'WAC', 'WCC'. \cr
-If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+\item{conf}{Used to limit to players in a specific conference.
+
+Allowed values are:
+'A10', 'ACC', 'AE', 'AMER',
+'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',
+'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY',
+'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC',
+'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND',
+'SUM', 'SWAC', 'WAC', 'WCC'.
+
+If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018',
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
 No filter applied by default.}
 }
 \value{
 A data frame with 23 columns:
-\describe{
-\item{\code{Year}}{integer.}
-\item{\code{Rank}}{character.}
-\item{\code{Tempo}}{double.}
-\item{\code{Efficiency}}{double.}
-\item{\code{eFG.Pct}}{double.}
-\item{\code{TO.Pct}}{double.}
-\item{\code{OR.Pct}}{double.}
-\item{\code{FTR}}{double.}
-\item{\code{FG2.Pct}}{double.}
-\item{\code{FG3.Pct}}{double.}
-\item{\code{FT.Pct}}{double.}
-\item{\code{FG3A.Pct}}{double.}
-\item{\code{A.Pct}}{double.}
-\item{\code{Blk.Pct}}{double.}
-\item{\code{Stl.Pct}}{double.}
-\item{\code{HomeRecord}}{character.}
-\item{\code{Bids}}{character.}
-\item{\code{S16}}{character.}
-\item{\code{F4}}{character.}
-\item{\code{CH}}{character.}
-\item{\code{RegSeasonChamp}}{character.}
-\item{\code{TourneyChamp}}{character.}
-\item{\code{BestTeam}}{character.}
+\itemize{
+\item \code{Year}- \emph{integer}
+\item \code{Rank}- \emph{character}
+\item \code{Tempo}- \emph{double}
+\item \code{Efficiency}- \emph{double}
+\item \code{eFG.Pct}- \emph{double}
+\item \code{TO.Pct}- \emph{double}
+\item \code{OR.Pct}- \emph{double}
+\item \code{FTR}- \emph{double}
+\item \code{FG2.Pct}- \emph{double}
+\item \code{FG3.Pct}- \emph{double}
+\item \code{FT.Pct}- \emph{double}
+\item \code{FG3A.Pct}- \emph{double}
+\item \code{A.Pct}- \emph{double}
+\item \code{Blk.Pct}- \emph{double}
+\item \code{Stl.Pct}- \emph{double}
+\item \code{HomeRecord}- \emph{character}
+\item \code{Bids}- \emph{character}
+\item \code{S16}- \emph{character}
+\item \code{F4}- \emph{character}
+\item \code{CH}- \emph{character}
+\item \code{RegSeasonChamp}- \emph{character}
+\item \code{TourneyChamp}- \emph{character}
+\item \code{BestTeam}- \emph{character}
 }
 }
 \description{

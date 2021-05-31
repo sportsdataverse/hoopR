@@ -865,7 +865,7 @@ kp_conf <- function(year, conf){
 #' @param year Year (YYYY)
 #'
 #' @return A data frame with 35 columns:
-#' \describe{
+#' \itemize{
 #'   \item{\code{Conf}}{character.}
 #'   \item{\code{Eff}}{double.}
 #'   \item{\code{Eff.Rk}}{double.}
@@ -963,42 +963,45 @@ kp_confstats <- function(year){
 #' Get KenPom's historical conference ratings
 #'
 #'
-#' @param conf Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
-#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',\cr
-#' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
-#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', \cr
-#' 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
-#' 'SUM', 'SWAC', 'WAC', 'WCC'. \cr
-#' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
-#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+#' @param conf Used to limit to players in a specific conference.
+#'
+#' Allowed values are:
+#' 'A10', 'ACC', 'AE', 'AMER',
+#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',
+#' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY',
+#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC',
+#' 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND',
+#' 'SUM', 'SWAC', 'WAC', 'WCC'.
+#'
+#' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018',
+#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
 #' No filter applied by default.
 #'
 #' @return A data frame with 23 columns:
-#' \describe{
-#'   \item{\code{Year}}{integer.}
-#'   \item{\code{Rank}}{character.}
-#'   \item{\code{Tempo}}{double.}
-#'   \item{\code{Efficiency}}{double.}
-#'   \item{\code{eFG.Pct}}{double.}
-#'   \item{\code{TO.Pct}}{double.}
-#'   \item{\code{OR.Pct}}{double.}
-#'   \item{\code{FTR}}{double.}
-#'   \item{\code{FG2.Pct}}{double.}
-#'   \item{\code{FG3.Pct}}{double.}
-#'   \item{\code{FT.Pct}}{double.}
-#'   \item{\code{FG3A.Pct}}{double.}
-#'   \item{\code{A.Pct}}{double.}
-#'   \item{\code{Blk.Pct}}{double.}
-#'   \item{\code{Stl.Pct}}{double.}
-#'   \item{\code{HomeRecord}}{character.}
-#'   \item{\code{Bids}}{character.}
-#'   \item{\code{S16}}{character.}
-#'   \item{\code{F4}}{character.}
-#'   \item{\code{CH}}{character.}
-#'   \item{\code{RegSeasonChamp}}{character.}
-#'   \item{\code{TourneyChamp}}{character.}
-#'   \item{\code{BestTeam}}{character.}
-#' }
+#'   - `Year`- *integer*
+#'   - `Rank`- *character*
+#'   - `Tempo`- *double*
+#'   - `Efficiency`- *double*
+#'   - `eFG.Pct`- *double*
+#'   - `TO.Pct`- *double*
+#'   - `OR.Pct`- *double*
+#'   - `FTR`- *double*
+#'   - `FG2.Pct`- *double*
+#'   - `FG3.Pct`- *double*
+#'   - `FT.Pct`- *double*
+#'   - `FG3A.Pct`- *double*
+#'   - `A.Pct`- *double*
+#'   - `Blk.Pct`- *double*
+#'   - `Stl.Pct`- *double*
+#'   - `HomeRecord`- *character*
+#'   - `Bids`- *character*
+#'   - `S16`- *character*
+#'   - `F4`- *character*
+#'   - `CH`- *character*
+#'   - `RegSeasonChamp`- *character*
+#'   - `TourneyChamp`- *character*
+#'   - `BestTeam`- *character*
+#'
 #' @keywords Conference History
 #' @importFrom assertthat assert_that
 #' @importFrom dplyr mutate_at
