@@ -207,6 +207,9 @@ check_status <- function(res) {
 
 }
 
+#' @importFrom magrittr %>%
+#' @usage lhs \%>\% rhs
+NULL
 
 #' @import utils
 utils::globalVariables(c("where"))

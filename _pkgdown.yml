@@ -86,15 +86,19 @@ navbar:
 
 reference:
   - title: hoopR Data
-  - subtitle: Full Seasons of NBA and Men's College Basketball PBP Data
-    desc: Functions exported by hoopR which load full seasons from the hoopR-data repository
+  - subtitle: NBA Data Functions
+    desc: Functions exported by hoopR to access the hoopR-data repository's NBA Data
     contents:
       - '`load_nba_pbp`'
-      - '`load_mbb_pbp`'
-  - subtitle: Update or Create NBA and Men's College Basketball PBP Database
-    desc: Functions exported by hoopR which update and create a database of hoopR play-by-play data
-    contents:
+      - '`load_nba_team_box`'
+      - '`load_nba_player_box`'
       - '`update_nba_db`'
+  - subtitle: Men's College Basketball Data Functions
+    desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
+    contents:
+      - '`load_mbb_pbp`'
+      - '`load_mbb_team_box`'
+      - '`load_mbb_player_box`'
       - '`update_mbb_db`'
   - title: ESPN Data
   - subtitle: Men's College Basketball Data Functions

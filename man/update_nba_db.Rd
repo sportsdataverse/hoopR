@@ -9,7 +9,7 @@
 \usage{
 update_nba_db(
   dbdir = ".",
-  dbname = "nba_pbp_db",
+  dbname = "hoopR_db",
   tblname = "hoopR_nba_pbp",
   force_rebuild = FALSE,
   db_connection = NULL
