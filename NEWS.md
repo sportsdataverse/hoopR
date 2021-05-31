@@ -1,4 +1,4 @@
-# **hoopR 1.0.0** 
+# **hoopR 1.1.0** 
 ### **Add team box score loaders**
 - [```hoopR::load_mbb_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html) function added
 - [```hoopR::load_nba_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html) function added
