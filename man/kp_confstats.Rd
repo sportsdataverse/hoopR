@@ -11,7 +11,7 @@ kp_confstats(year)
 }
 \value{
 A data frame with 35 columns:
-\describe{
+\itemize{
 \item{\code{Conf}}{character.}
 \item{\code{Eff}}{double.}
 \item{\code{Eff.Rk}}{double.}

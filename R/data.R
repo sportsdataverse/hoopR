@@ -11,16 +11,3 @@
 #' \item{\code{conf.link.ref}}{character.}
 #' }
 "teams_links"
-
-
-
-
-
-
-
-
-
-
-
-
-
