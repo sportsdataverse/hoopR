@@ -64,19 +64,63 @@ espn_mbb_game_all <- function(game_id){
   tryCatch(
     expr = {
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
+      season <- raw_play_df[['header']][['season']][['year']]
+      season_type <- raw_play_df[['header']][['season']][['type']]
+      homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
+      awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
+      homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
+      awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
+      homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
+      awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
 
+      homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
+      awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
+      game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
+      #---- Team Box ------
       teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
+
       teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
-        dplyr::select(.data$displayValue, .data$label) %>%
+        dplyr::select(.data$displayValue, .data$name) %>%
         dplyr::rename(Home = .data$displayValue)
       teams_box_score_df_1 <- teams_box_score_df[[1]][[1]] %>%
-        dplyr::select(.data$displayValue) %>%
+        dplyr::select(.data$displayValue, .data$name) %>%
         dplyr::rename(Away = .data$displayValue)
+      teams2 <- data.frame(t(teams_box_score_df_2$Home))
+      colnames(teams2) <- t(teams_box_score_df_2$name)
+      teams2$Team <- "Home"
+      teams2$OpponentId <- as.integer(awayTeamId)
+      teams2$OpponentName <- awayTeamName
+      teams2$OpponentMascot <- awayTeamMascot
+      teams2$OpponentAbbrev <- awayTeamAbbrev
 
-      team_box_score = dplyr::bind_cols(teams_box_score_df_2, teams_box_score_df_1)
-      tm <- c(teams_box_score_df[2,"team.shortDisplayName"], "Team", teams_box_score_df[1,"team.shortDisplayName"])
-      names(tm) <- c("Home","label","Away")
-      team_box_score = dplyr::bind_rows(tm, team_box_score)
+      teams1 <- data.frame(t(teams_box_score_df_1$Away))
+      colnames(teams1) <- t(teams_box_score_df_1$name)
+      teams1$Team <- "Away"
+      teams1$OpponentId <- as.integer(homeTeamId)
+      teams1$OpponentName <- homeTeamName
+      teams1$OpponentMascot <- homeTeamMascot
+      teams1$OpponentAbbrev <- homeTeamAbbrev
+      teams <- dplyr::bind_rows(teams1,teams2)
+
+      team_box_score <- teams_box_score_df %>%
+        dplyr::select(-.data$statistics) %>%
+        dplyr::bind_cols(teams)
+
+      team_box_score <- team_box_score %>%
+        dplyr::mutate(
+          game_id = game_id,
+          season = season,
+          season_type = season_type,
+          game_date = game_date
+        ) %>%
+        janitor::clean_names() %>%
+        dplyr::select(
+          .data$game_id,
+          .data$season,
+          .data$season_type,
+          .data$game_date,
+          tidyr::everything()
+        )
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -234,22 +278,63 @@ espn_mbb_team_box <- function(game_id){
   tryCatch(
     expr = {
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
-      raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
+      season <- raw_play_df[['header']][['season']][['year']]
+      season_type <- raw_play_df[['header']][['season']][['type']]
+      homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
+      awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
+      homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
+      awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
+      homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
+      awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
+
+      homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
+      awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
+      game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
       #---- Team Box ------
       teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
+
       teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
-        dplyr::select(.data$displayValue, .data$label) %>%
+        dplyr::select(.data$displayValue, .data$name) %>%
         dplyr::rename(Home = .data$displayValue)
       teams_box_score_df_1 <- teams_box_score_df[[1]][[1]] %>%
-        dplyr::select(.data$displayValue) %>%
+        dplyr::select(.data$displayValue, .data$name) %>%
         dplyr::rename(Away = .data$displayValue)
+      teams2 <- data.frame(t(teams_box_score_df_2$Home))
+      colnames(teams2) <- t(teams_box_score_df_2$name)
+      teams2$Team <- "Home"
+      teams2$OpponentId <- as.integer(awayTeamId)
+      teams2$OpponentName <- awayTeamName
+      teams2$OpponentMascot <- awayTeamMascot
+      teams2$OpponentAbbrev <- awayTeamAbbrev
 
-      team_box_score = dplyr::bind_cols(teams_box_score_df_2, teams_box_score_df_1)
-      tm <- c(teams_box_score_df[2,"team.shortDisplayName"], "Team", teams_box_score_df[1,"team.shortDisplayName"])
-      names(tm) <- c("Home","label","Away")
-      team_box_score = dplyr::bind_rows(tm, team_box_score)
+      teams1 <- data.frame(t(teams_box_score_df_1$Away))
+      colnames(teams1) <- t(teams_box_score_df_1$name)
+      teams1$Team <- "Away"
+      teams1$OpponentId <- as.integer(homeTeamId)
+      teams1$OpponentName <- homeTeamName
+      teams1$OpponentMascot <- homeTeamMascot
+      teams1$OpponentAbbrev <- homeTeamAbbrev
+      teams <- dplyr::bind_rows(teams1,teams2)
+
+      team_box_score <- teams_box_score_df %>%
+        dplyr::select(-.data$statistics) %>%
+        dplyr::bind_cols(teams)
+
       team_box_score <- team_box_score %>%
-        janitor::clean_names()
+        dplyr::mutate(
+          game_id = game_id,
+          season = season,
+          season_type = season_type,
+          game_date = game_date
+        ) %>%
+        janitor::clean_names() %>%
+        dplyr::select(
+          .data$game_id,
+          .data$season,
+          .data$season_type,
+          .data$game_date,
+          tidyr::everything()
+        )
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -395,7 +480,6 @@ espn_mbb_conferences <- function(){
 #' @import rvest
 #' @export
 #'
-
 espn_mbb_teams <- function(){
   options(stringsAsFactors = FALSE)
   options(scipen = 999)

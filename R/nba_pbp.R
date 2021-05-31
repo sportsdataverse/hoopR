@@ -12,6 +12,11 @@ NULL
 #' @param qs Wheter to use the function [qs::qdeserialize()] for more efficient loading.
 #' @import furrr
 #' @export
+#' @examples
+#' \dontrun{
+#' future::plan("multisession")
+#' load_nba_pbp(2002:2021)
+#' }
 load_nba_pbp <- function(seasons, ..., qs = FALSE) {
   options(stringsAsFactors = FALSE)
   options(scipen = 999)
@@ -61,6 +66,169 @@ nba_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, 
   }
   if (isFALSE(qs)) {
     .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/pbp/rds/play_by_play_{season}.rds")
+    con <- url(.url)
+    pbp <- readRDS(con)
+    close(con)
+  }
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    DBI::dbWriteTable(dbConnection, tablename, pbp, append = TRUE)
+    out <- NULL
+  } else {
+    out <- pbp
+  }
+  p(sprintf("season=%g", season))
+  return(out)
+}
+#' **Load hoopR NBA team box scores**
+#' @name load_nba_team_box
+NULL
+#' @title
+#' **Load cleaned NBA team box scores from the data repo**
+#' @rdname load_nba_team_box
+#' @description helper that loads multiple seasons from the data repo either into memory
+#' or writes it into a db using some forwarded arguments in the dots
+#' @param seasons A vector of 4-digit years associated with given NBA seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by \code{\link[=update_nba_db]{update_nba_db()}}).
+#' @param qs Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @import furrr
+#' @export
+#' @examples
+#' \dontrun{
+#' future::plan("multisession")
+#' load_nba_team_box(2002:2021)
+#' }
+load_nba_team_box <- function(seasons, ..., qs = FALSE) {
+  options(stringsAsFactors = FALSE)
+  options(scipen = 999)
+  dots <- rlang::dots_list(...)
+
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(qs) && !is_installed("qs")) {
+    usethis::ui_stop("Package {usethis::ui_value('qs')} required for argument {usethis::ui_value('qs = TRUE')}. Please install it.")
+  }
+
+  most_recent <- most_recent_nba_season()
+
+  if (!all(seasons %in% 2002:most_recent)) {
+    usethis::ui_stop("Please pass valid seasons between 2002 and {most_recent}")
+  }
+
+  if (length(seasons) > 1 && is_sequential() && isFALSE(in_db)) {
+    usethis::ui_info(c(
+      "It is recommended to use parallel processing when trying to load multiple seasons.",
+      "Please consider running {usethis::ui_code('future::plan(\"multisession\")')}!",
+      "Will go on sequentially..."
+    ))
+  }
+
+
+  p <- progressr::progressor(along = seasons)
+
+  if (isFALSE(in_db)) {
+    out <- furrr::future_map_dfr(seasons, nba_team_box_single_season, p = p, qs = qs)
+  }
+
+  if (isTRUE(in_db)) {
+    purrr::walk(seasons, nba_team_box_single_season, p, ..., qs = qs)
+    out <- NULL
+  }
+
+  return(out)
+}
+
+nba_team_box_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, qs = FALSE) {
+  if (isTRUE(qs)) {
+
+    .url <- glue::glue("https://github.com/saiemgilani/hoopR-data/blob/master/nba/team_box/rds/team_box_{season}.qs")
+    pbp <- qs_from_url(.url)
+
+  }
+  if (isFALSE(qs)) {
+    .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/team_box/rds/team_box_{season}.rds")
+    con <- url(.url)
+    pbp <- readRDS(con)
+    close(con)
+  }
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    DBI::dbWriteTable(dbConnection, tablename, pbp, append = TRUE)
+    out <- NULL
+  } else {
+    out <- pbp
+  }
+  p(sprintf("season=%g", season))
+  return(out)
+}
+
+#' **Load hoopR NBA player box scores**
+#' @name load_nba_player_box
+NULL
+#' @title
+#' **Load cleaned NBA player box scores from the data repo**
+#' @rdname load_nba_player_box
+#' @description helper that loads multiple seasons from the data repo either into memory
+#' or writes it into a db using some forwarded arguments in the dots
+#' @param seasons A vector of 4-digit years associated with given NBA seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by \code{\link[=update_nba_db]{update_nba_db()}}).
+#' @param qs Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @import furrr
+#' @export
+#' @examples
+#' \dontrun{
+#' future::plan("multisession")
+#' load_nba_player_box(2002:2021)
+#' }
+load_nba_player_box <- function(seasons, ..., qs = FALSE) {
+  options(stringsAsFactors = FALSE)
+  options(scipen = 999)
+  dots <- rlang::dots_list(...)
+
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(qs) && !is_installed("qs")) {
+    usethis::ui_stop("Package {usethis::ui_value('qs')} required for argument {usethis::ui_value('qs = TRUE')}. Please install it.")
+  }
+
+  most_recent <- most_recent_nba_season()
+
+  if (!all(seasons %in% 2002:most_recent)) {
+    usethis::ui_stop("Please pass valid seasons between 2002 and {most_recent}")
+  }
+
+  if (length(seasons) > 1 && is_sequential() && isFALSE(in_db)) {
+    usethis::ui_info(c(
+      "It is recommended to use parallel processing when trying to load multiple seasons.",
+      "Please consider running {usethis::ui_code('future::plan(\"multisession\")')}!",
+      "Will go on sequentially..."
+    ))
+  }
+
+
+  p <- progressr::progressor(along = seasons)
+
+  if (isFALSE(in_db)) {
+    out <- furrr::future_map_dfr(seasons, nba_player_box_single_season, p = p, qs = qs)
+  }
+
+  if (isTRUE(in_db)) {
+    purrr::walk(seasons, nba_player_box_single_season, p, ..., qs = qs)
+    out <- NULL
+  }
+
+  return(out)
+}
+
+nba_player_box_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, qs = FALSE) {
+  if (isTRUE(qs)) {
+
+    .url <- glue::glue("https://github.com/saiemgilani/hoopR-data/blob/master/nba/player_box/rds/player_box_{season}.qs")
+    pbp <- qs_from_url(.url)
+
+  }
+  if (isFALSE(qs)) {
+    .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/player_box/rds/player_box_{season}.rds")
     con <- url(.url)
     pbp <- readRDS(con)
     close(con)
@@ -128,7 +296,7 @@ load_nba_games <- function(){
 #' @import furrr
 #' @export
 update_nba_db <- function(dbdir = ".",
-                          dbname = "nba_pbp_db",
+                          dbname = "hoopR_db",
                           tblname = "hoopR_nba_pbp",
                           force_rebuild = FALSE,
                           db_connection = NULL) {

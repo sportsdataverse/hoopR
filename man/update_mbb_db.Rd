@@ -9,7 +9,7 @@
 \usage{
 update_mbb_db(
   dbdir = ".",
-  dbname = "mbb_pbp_db",
+  dbname = "hoopR_db",
   tblname = "hoopR_mbb_pbp",
   force_rebuild = FALSE,
   db_connection = NULL
