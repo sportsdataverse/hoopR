@@ -95,7 +95,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -242,21 +242,43 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_nba_team_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 24 x 3</span><span>
-#&gt;    home      label              away   
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Grizzlies Team               Thunder
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 42-83     FG                 35-78  
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 50.6      Field Goal %       44.9   
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 12-26     3PT                19-41  
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 46.2      Three Point %      46.3   
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 26-33     FT                 24-28  
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 78.8      Free Throw %       85.7   
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 52        Rebounds           43     
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 7         Offensive Rebounds 6      
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 37        Defensive Rebounds 33     
-#&gt; </span><span style='color: #949494;'># … with 14 more rows</span><span></div><div class='input'>
-</div></span></pre>
+</div><div class='output co'>#&gt;     game_id season season_type  game_date team_short_display_name
+#&gt; 1 401283399   2021           2 2021-02-18                 Thunder
+#&gt; 2 401283399   2021           2 2021-02-18               Grizzlies
+#&gt;         team_uid team_alternate_color team_color     team_display_name
+#&gt; 1 s:40~l:46~t:25               f05133     C67C03 Oklahoma City Thunder
+#&gt; 2 s:40~l:46~t:29               7399c6     5D76A8     Memphis Grizzlies
+#&gt;   team_name                                         team_logo team_location
+#&gt; 1   Thunder https://a.espncdn.com/i/teamlogos/nba/500/okc.png Oklahoma City
+#&gt; 2 Grizzlies https://a.espncdn.com/i/teamlogos/nba/500/mem.png       Memphis
+#&gt;   team_id team_abbreviation             team_slug
+#&gt; 1      25               OKC oklahoma-city-thunder
+#&gt; 2      29               MEM     memphis-grizzlies
+#&gt;   field_goals_made_field_goals_attempted field_goal_pct
+#&gt; 1                                  35-78           44.9
+#&gt; 2                                  42-83           50.6
+#&gt;   three_point_field_goals_made_three_point_field_goals_attempted
+#&gt; 1                                                          19-41
+#&gt; 2                                                          12-26
+#&gt;   three_point_field_goal_pct free_throws_made_free_throws_attempted
+#&gt; 1                       46.3                                  24-28
+#&gt; 2                       46.2                                  26-33
+#&gt;   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds assists
+#&gt; 1           85.7             43                  6                 33      25
+#&gt; 2           78.8             52                  7                 37      31
+#&gt;   steals blocks turnovers team_turnovers total_turnovers technical_fouls
+#&gt; 1      5      3        18              0              18               0
+#&gt; 2     14      4        12              1              13               3
+#&gt;   total_technical_fouls flagrant_fouls turnover_points fast_break_points
+#&gt; 1                     0              0              23                 5
+#&gt; 2                     3              0              17                16
+#&gt;   points_in_paint fouls largest_lead team opponent_id opponent_name
+#&gt; 1              24    25            4 Away          29       Memphis
+#&gt; 2              52    18           15 Home          25 Oklahoma City
+#&gt;   opponent_mascot opponent_abbrev
+#&gt; 1       Grizzlies             MEM
+#&gt; 2         Thunder             OKC</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

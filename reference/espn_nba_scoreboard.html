@@ -95,7 +95,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -246,24 +246,24 @@
     <pre class="examples"><div class='input'>
 <span class='co'># Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)</span>
 <span class='fu'>espn_nba_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7 x 31</span><span>
+</div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7 x 31</span>
 #&gt;   matchup matchup_short season  type slug  game_id game_uid game_date attendance
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> Chicag… CHI @ IND       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> Housto… HOU @ WSH       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> Atlant… ATL @ NY        </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> Philad… PHI @ UTAH      </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…       </span><span style='text-decoration: underline;'>3</span><span>902
-#&gt; </span><span style='color: #BCBCBC;'>5</span><span> Clevel… CLE @ GS        </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #BCBCBC;'>6</span><span> Miami … MIA @ LAC       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #BCBCBC;'>7</span><span> Brookl… BKN @ SAC       </span><span style='text-decoration: underline;'>2</span><span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
-#&gt; </span><span style='color: #949494;'># … with 22 more variables: home_team_name &lt;chr&gt;, home_team_logo &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_team_abb &lt;chr&gt;, home_team_id &lt;chr&gt;, home_team_location &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_team_full &lt;chr&gt;, home_team_color &lt;chr&gt;, home_score &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;, away_team_color &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   start_date &lt;chr&gt;</span><span></div></span></pre>
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>1</span> Chicag… CHI @ IND       <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #BCBCBC;'>2</span> Housto… HOU @ WSH       <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #BCBCBC;'>3</span> Atlant… ATL @ NY        <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #BCBCBC;'>4</span> Philad… PHI @ UTAH      <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…       <span style='text-decoration: underline;'>3</span>902
+#&gt; <span style='color: #BCBCBC;'>5</span> Clevel… CLE @ GS        <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #BCBCBC;'>6</span> Miami … MIA @ LAC       <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #BCBCBC;'>7</span> Brookl… BKN @ SAC       <span style='text-decoration: underline;'>2</span>021     2 regu… 401267… s:40~l:… 2021-02-…          0
+#&gt; <span style='color: #949494;'># … with 22 more variables: home_team_name &lt;chr&gt;, home_team_logo &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   home_team_abb &lt;chr&gt;, home_team_id &lt;chr&gt;, home_team_location &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   home_team_full &lt;chr&gt;, home_team_color &lt;chr&gt;, home_score &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;, away_team_color &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   start_date &lt;chr&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

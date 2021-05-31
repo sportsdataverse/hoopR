@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings • hoopR</title>
+<title>Load hoopR NBA team box scores — load_nba_team_box • hoopR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +48,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get men's college basketball AP and Coaches Poll rankings from ESPN — espn_mbb_rankings" />
-<meta property="og:description" content="Get men's college basketball AP and Coaches Poll rankings from ESPN" />
+<meta property="og:title" content="Load hoopR NBA team box scores — load_nba_team_box" />
+<meta property="og:description" content="helper that loads multiple seasons from the data repo either into memory
+or writes it into a db using some forwarded arguments in the dots" />
 <meta property="og:image" content="https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/themes/hoopR_gh.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@saiemgilani" />
@@ -215,51 +216,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get men's college basketball AP and Coaches Poll rankings from ESPN</h1>
+    <h1><strong>Load hoopR NBA team box scores</strong></h1>
     
-    <div class="hidden name"><code>espn_mbb_rankings.Rd</code></div>
+    <div class="hidden name"><code>load_nba_team_box.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get men's college basketball AP and Coaches Poll rankings from ESPN</p>
+    <p>helper that loads multiple seasons from the data repo either into memory
+or writes it into a db using some forwarded arguments in the dots</p>
     </div>
 
-    <pre class="usage"><span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>load_nba_team_box</span><span class='op'>(</span><span class='va'>seasons</span>, <span class='va'>...</span>, qs <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>seasons</th>
+      <td><p>A vector of 4-digit years associated with given NBA seasons.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments passed to an underlying function that writes
+the season data into a database (used by <code><a href='update_nba_db.html'>update_nba_db()</a></code>).</p></td>
+    </tr>
+    <tr>
+      <th>qs</th>
+      <td><p>Wheter to use the function <code><a href='https://rdrr.io/pkg/qs/man/qdeserialize.html'>qs::qdeserialize()</a></code> for more efficient loading.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Returns a tibble</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Get current AP and Coaches Poll rankings</span>
-<span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 46 x 34</span>
-#&gt;    id    name   short_name type  headline short_headline current previous points
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        1        3    800
-#&gt; <span style='color: #BCBCBC;'> 2</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        2        1    768
-#&gt; <span style='color: #BCBCBC;'> 3</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        3        6    714
-#&gt; <span style='color: #BCBCBC;'> 4</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        4        4    655
-#&gt; <span style='color: #BCBCBC;'> 5</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        5        5    623
-#&gt; <span style='color: #BCBCBC;'> 6</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        6       10    599
-#&gt; <span style='color: #BCBCBC;'> 7</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        7        0    590
-#&gt; <span style='color: #BCBCBC;'> 8</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        8        2    527
-#&gt; <span style='color: #BCBCBC;'> 9</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2        9       23    467
-#&gt; <span style='color: #BCBCBC;'>10</span> 2     Coach… Coaches P… usa   2021 NC… 2021 : Week 2       10       14    451
-#&gt; <span style='color: #949494;'># … with 36 more rows, and 25 more variables: first_place_votes &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   trend &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   occurrence_number &lt;int&gt;, occurrence_type &lt;chr&gt;, occurrence_last &lt;lgl&gt;,</span>
-#&gt; <span style='color: #949494;'>#   occurrence_value &lt;chr&gt;, occurrence_display_value &lt;chr&gt;, season_year &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   season_start_date &lt;chr&gt;, season_end_date &lt;chr&gt;, season_display_name &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   season_type_type &lt;int&gt;, season_type_name &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   season_type_abbreviation &lt;chr&gt;, first_occurrence_type &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   first_occurrence_value &lt;chr&gt;</span></div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>future</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/future/man/plan.html'>plan</a></span><span class='op'>(</span><span class='st'>"multisession"</span><span class='op'>)</span>
+<span class='fu'>load_nba_team_box</span><span class='op'>(</span><span class='fl'>2002</span><span class='op'>:</span><span class='fl'>2021</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

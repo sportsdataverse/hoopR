@@ -95,7 +95,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -243,39 +243,58 @@
     <pre class="examples"><div class='input'>
  <span class='fu'>espn_mbb_game_all</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401256760</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $Plays
-#&gt; <span style='color: #949494;'># A tibble: 353 x 17</span><span>
+#&gt; <span style='color: #949494;'># A tibble: 353 x 17</span>
 #&gt;    shooting_play sequence_number home_score scoring_play away_score id     text 
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> TRUE          101805901                0 FALSE                 0 40125… M.J.…
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> FALSE         101806301                0 FALSE                 0 40125… RaiQ…
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> TRUE          101806302                2 TRUE                  0 40125… RaiQ…
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> TRUE          101808801                2 FALSE                 0 40125… Scot…
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> FALSE         101809001                2 FALSE                 0 40125… Bals…
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> TRUE          101814501                2 FALSE                 0 40125… Bals…
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> FALSE         101814502                2 FALSE                 0 40125… Flor…
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> TRUE          101817001                2 TRUE                  3 40125… Tre …
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> FALSE         101818201                2 FALSE                 3 40125… RaiQ…
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FALSE         101818202                2 FALSE                 3 40125… Tre …
-#&gt; </span><span style='color: #949494;'># … with 343 more rows, and 10 more variables: score_value &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   period_display_value &lt;chr&gt;, period_number &lt;int&gt;, clock_display_value &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;, play_id &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   athlete1_id &lt;chr&gt;, athlete2_id &lt;chr&gt;</span><span>
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> TRUE          101805901                0 FALSE                 0 40125… M.J.…
+#&gt; <span style='color: #BCBCBC;'> 2</span> FALSE         101806301                0 FALSE                 0 40125… RaiQ…
+#&gt; <span style='color: #BCBCBC;'> 3</span> TRUE          101806302                2 TRUE                  0 40125… RaiQ…
+#&gt; <span style='color: #BCBCBC;'> 4</span> TRUE          101808801                2 FALSE                 0 40125… Scot…
+#&gt; <span style='color: #BCBCBC;'> 5</span> FALSE         101809001                2 FALSE                 0 40125… Bals…
+#&gt; <span style='color: #BCBCBC;'> 6</span> TRUE          101814501                2 FALSE                 0 40125… Bals…
+#&gt; <span style='color: #BCBCBC;'> 7</span> FALSE         101814502                2 FALSE                 0 40125… Flor…
+#&gt; <span style='color: #BCBCBC;'> 8</span> TRUE          101817001                2 TRUE                  3 40125… Tre …
+#&gt; <span style='color: #BCBCBC;'> 9</span> FALSE         101818201                2 FALSE                 3 40125… RaiQ…
+#&gt; <span style='color: #BCBCBC;'>10</span> FALSE         101818202                2 FALSE                 3 40125… Tre …
+#&gt; <span style='color: #949494;'># … with 343 more rows, and 10 more variables: score_value &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   period_display_value &lt;chr&gt;, period_number &lt;int&gt;, clock_display_value &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;, play_id &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   athlete1_id &lt;chr&gt;, athlete2_id &lt;chr&gt;</span>
 #&gt; 
 #&gt; $Team
-#&gt; </span><span style='color: #949494;'># A tibble: 22 x 3</span><span>
-#&gt;    home          label              away   
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Florida State Team               Florida
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 26-54         FG                 25-59  
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 48.1          Field Goal %       42.4   
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 8-16          3PT                10-23  
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 50.0          Three Point %      43.5   
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 23-30         FT                 11-16  
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 76.7          Free Throw %       68.8   
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 33            Rebounds           34     
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 8             Offensive Rebounds 10     
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 25            Defensive Rebounds 24     
-#&gt; </span><span style='color: #949494;'># … with 12 more rows</span><span>
+#&gt;     game_id season season_type  game_date team_short_display_name
+#&gt; 1 401256760   2021           2 2020-12-12                 Florida
+#&gt; 2 401256760   2021           2 2020-12-12           Florida State
+#&gt;         team_uid team_alternate_color team_color       team_display_name
+#&gt; 1 s:40~l:41~t:57               0021a5     0021A5          Florida Gators
+#&gt; 2 s:40~l:41~t:52               ceb888     782F40 Florida State Seminoles
+#&gt;   team_name                                         team_logo team_location
+#&gt; 1    Gators https://a.espncdn.com/i/teamlogos/ncaa/500/57.png       Florida
+#&gt; 2 Seminoles https://a.espncdn.com/i/teamlogos/ncaa/500/52.png Florida State
+#&gt;   team_id team_abbreviation               team_slug
+#&gt; 1      57               FLA          florida-gators
+#&gt; 2      52               FSU florida-state-seminoles
+#&gt;   field_goals_made_field_goals_attempted field_goal_pct
+#&gt; 1                                  25-59           42.4
+#&gt; 2                                  26-54           48.1
+#&gt;   three_point_field_goals_made_three_point_field_goals_attempted
+#&gt; 1                                                          10-23
+#&gt; 2                                                           8-16
+#&gt;   three_point_field_goal_pct free_throws_made_free_throws_attempted
+#&gt; 1                       43.5                                  11-16
+#&gt; 2                       50.0                                  23-30
+#&gt;   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds
+#&gt; 1           68.8             34                 10                 24
+#&gt; 2           76.7             33                  8                 25
+#&gt;   team_rebounds assists steals blocks turnovers team_turnovers total_turnovers
+#&gt; 1             0      14      6      8        20              0              20
+#&gt; 2             0      17      8      4        16              0              16
+#&gt;   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead team
+#&gt; 1               0                     0              0    24            9 Away
+#&gt; 2               0                     0              0    18           18 Home
+#&gt;   opponent_id opponent_name opponent_mascot opponent_abbrev
+#&gt; 1          52 Florida State       Seminoles             FSU
+#&gt; 2          57       Florida          Gators             FLA
 #&gt; 
 #&gt; $Player
 #&gt;    athlete_display_name team_short_display_name min   fg fg3    ft oreb dreb
@@ -447,7 +466,7 @@
 #&gt; 22     782F40               ceb888
 #&gt; 23     782F40               ceb888
 #&gt; </div><div class='input'>
-</div></span></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

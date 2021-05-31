@@ -95,7 +95,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -231,46 +231,47 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>conf</th>
-      <td><p>Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', <br />
-'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',<br />
-'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', <br />
-'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', <br />
-'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', <br />
-'SUM', 'SWAC', 'WAC', 'WCC'. <br />
-If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', <br />
-you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.<br />
+      <td><p>Used to limit to players in a specific conference.</p>
+<p>Allowed values are:
+'A10', 'ACC', 'AE', 'AMER',
+'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',
+'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY',
+'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC',
+'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND',
+'SUM', 'SWAC', 'WAC', 'WCC'.</p>
+<p>If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018',
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
 No filter applied by default.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame with 23 columns:</p><dl>
-<dt><code>Year</code></dt><dd><p>integer.</p></dd>
-<dt><code>Rank</code></dt><dd><p>character.</p></dd>
-<dt><code>Tempo</code></dt><dd><p>double.</p></dd>
-<dt><code>Efficiency</code></dt><dd><p>double.</p></dd>
-<dt><code>eFG.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>TO.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>OR.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>FTR</code></dt><dd><p>double.</p></dd>
-<dt><code>FG2.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>FG3.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>FT.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>FG3A.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>A.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>Blk.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>Stl.Pct</code></dt><dd><p>double.</p></dd>
-<dt><code>HomeRecord</code></dt><dd><p>character.</p></dd>
-<dt><code>Bids</code></dt><dd><p>character.</p></dd>
-<dt><code>S16</code></dt><dd><p>character.</p></dd>
-<dt><code>F4</code></dt><dd><p>character.</p></dd>
-<dt><code>CH</code></dt><dd><p>character.</p></dd>
-<dt><code>RegSeasonChamp</code></dt><dd><p>character.</p></dd>
-<dt><code>TourneyChamp</code></dt><dd><p>character.</p></dd>
-<dt><code>BestTeam</code></dt><dd><p>character.</p></dd>
-
-</dl>
+    <p>A data frame with 23 columns:</p><ul>
+<li><p><code>Year</code>- <em>integer</em></p></li>
+<li><p><code>Rank</code>- <em>character</em></p></li>
+<li><p><code>Tempo</code>- <em>double</em></p></li>
+<li><p><code>Efficiency</code>- <em>double</em></p></li>
+<li><p><code>eFG.Pct</code>- <em>double</em></p></li>
+<li><p><code>TO.Pct</code>- <em>double</em></p></li>
+<li><p><code>OR.Pct</code>- <em>double</em></p></li>
+<li><p><code>FTR</code>- <em>double</em></p></li>
+<li><p><code>FG2.Pct</code>- <em>double</em></p></li>
+<li><p><code>FG3.Pct</code>- <em>double</em></p></li>
+<li><p><code>FT.Pct</code>- <em>double</em></p></li>
+<li><p><code>FG3A.Pct</code>- <em>double</em></p></li>
+<li><p><code>A.Pct</code>- <em>double</em></p></li>
+<li><p><code>Blk.Pct</code>- <em>double</em></p></li>
+<li><p><code>Stl.Pct</code>- <em>double</em></p></li>
+<li><p><code>HomeRecord</code>- <em>character</em></p></li>
+<li><p><code>Bids</code>- <em>character</em></p></li>
+<li><p><code>S16</code>- <em>character</em></p></li>
+<li><p><code>F4</code>- <em>character</em></p></li>
+<li><p><code>CH</code>- <em>character</em></p></li>
+<li><p><code>RegSeasonChamp</code>- <em>character</em></p></li>
+<li><p><code>TourneyChamp</code>- <em>character</em></p></li>
+<li><p><code>BestTeam</code>- <em>character</em></p></li>
+</ul>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
