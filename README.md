@@ -100,12 +100,21 @@ website](https://saiemgilani.github.io/hoopR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 1.0.5**
+# **hoopR 1.1.0**
 
-### **Standings functions**
+### **Add team box score loaders**
 
-  - [`hoopR::espn_nba_standings()`](https://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html)
-  - [`hoopR::espn_mbb_standings()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_standings.html)
+  - [`hoopR::load_mbb_team_box()`](https://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html)
+    function added
+  - [`hoopR::load_nba_team_box()`](https://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html)
+    function added
+
+### **Add player box score loaders**
+
+  - [`hoopR::load_mbb_player_box()`](https://saiemgilani.github.io/hoopR/reference/load_mbb_player_box.html)
+    function added
+  - [`hoopR::load_nba_player_box()`](https://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html)
+    function added
 
 # 
 
@@ -113,7 +122,14 @@ Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
 <summary>View more version news</summary>
 
-# **hoopR 1.0.4**
+## **hoopR 1.0.5**
+
+### **Standings functions**
+
+  - [`hoopR::espn_nba_standings()`](https://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html)
+  - [`hoopR::espn_mbb_standings()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_standings.html)
+
+## **hoopR 1.0.4**
 
 ### **Add retry**
 
@@ -122,18 +138,18 @@ Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
     all function calls to more naturally navigate rejected/failed
     requests from the API.
 
-# **hoopR 1.0.2-3**
+## **hoopR 1.0.2-3**
 
 ### **Quick fix for update db functions**
 
-# **hoopR 1.0.1**
+## **hoopR 1.0.1**
 
 ### **Dependency pruning**
 
 This update is a non-user facing change to package dependencies to
 shrink the list of dependencies.
 
-# **hoopR 1.0.0**
+## **hoopR 1.0.0**
 
 ### **Package renamed to hoopR**
 
@@ -161,12 +177,6 @@ and KenPom package, but also an NBA package.
     and
     [`hoopR::update_nba_db()`](https://saiemgilani.github.io/hoopR/reference/update_nba_db.html)
     functions added
-
-# 
-
-<details>
-
-<summary>View more version news</summary>
 
 ### **hoopR 0.4**
 
