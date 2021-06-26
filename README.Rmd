@@ -128,7 +128,19 @@ For more information on the package and function reference, please see the  [**`
 
 [**Full News on Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 1.1.0** 
+
+# **hoopR 1.2.0**
+
+### **Add schedule loaders**
+
+  - [`hoopR::load_mbb_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_mbb_schedule.html) function added
+  - [`hoopR::load_nba_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_nba_schedule.html) function added
+
+#
+<details>
+<summary>View more version news</summary>
+    
+## **hoopR 1.1.0** 
 ### **Add team box score loaders**
 - [```hoopR::load_mbb_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html) function added
 - [```hoopR::load_nba_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html) function added
@@ -136,10 +148,6 @@ For more information on the package and function reference, please see the  [**`
 ### **Add player box score loaders**
 - [```hoopR::load_mbb_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_player_box.html) function added
 - [```hoopR::load_nba_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html) function added
-
-#
-<details>
-<summary>View more version news</summary>
 
 ## **hoopR 1.0.5**
 ### **Standings functions**
