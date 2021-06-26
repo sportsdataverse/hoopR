@@ -92,6 +92,7 @@ reference:
       - '`load_nba_pbp`'
       - '`load_nba_team_box`'
       - '`load_nba_player_box`'
+      - '`load_nba_schedule`'
       - '`update_nba_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -99,6 +100,7 @@ reference:
       - '`load_mbb_pbp`'
       - '`load_mbb_team_box`'
       - '`load_mbb_player_box`'
+      - '`load_mbb_schedule`'
       - '`update_mbb_db`'
   - title: ESPN Data
   - subtitle: Men's College Basketball Data Functions
