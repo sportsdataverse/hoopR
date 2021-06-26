@@ -100,7 +100,22 @@ website](https://saiemgilani.github.io/hoopR/).
 [**Full News on
 Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
 
-# **hoopR 1.1.0**
+# **hoopR 1.2.0**
+
+### **Add schedule loaders**
+
+  - [`hoopR::load_mbb_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_mbb_schedule.html)
+    function added
+  - [`hoopR::load_nba_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_nba_schedule.html)
+    function added
+
+# 
+
+<details>
+
+<summary>View more version news</summary>
+
+## **hoopR 1.1.0**
 
 ### **Add team box score loaders**
 
@@ -115,12 +130,6 @@ Releases**](https://saiemgilani.github.io/hoopR/news/index.html)
     function added
   - [`hoopR::load_nba_player_box()`](https://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html)
     function added
-
-# 
-
-<details>
-
-<summary>View more version news</summary>
 
 ## **hoopR 1.0.5**
 
@@ -264,9 +273,9 @@ See the following ~~four~~ eight functions:
 | :---- | :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :---------------------------------------------- | :--------- | :------------------ |
 | 14    | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="    library(hoopR)...">[Error in “update\_nba\_db”: could not find function “my\_time”](https://github.com/saiemgilani/hoopR/issues/14)</span> |        | [jedwards757](https://github.com/jedwards757)   | 2021-05-20 | 2021-05-20 22:53:32 |
 | 1     | <span title="Closed Issue"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/issue-closed.png?raw=true"></span>               | <span title="**Describe the bug**...">[gameplan function error](https://github.com/saiemgilani/hoopR/issues/1)</span>                                       | bug    | [mcoleman9221](https://github.com/mcoleman9221) | 2021-01-28 | 2021-01-28 03:31:48 |
+| 19    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="# **hoopR 1.2.0**...">[schedule loaders](https://github.com/saiemgilani/hoopR/pull/19)</span>                                                  |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-06-26 | 2021-06-26 04:10:53 |
 | 18    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="# **hoopR 1.1.0** ...">[team/player boxes](https://github.com/saiemgilani/hoopR/pull/18)</span>                                                |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-31 | 2021-05-31 07:34:30 |
 | 17    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[standings](https://github.com/saiemgilani/hoopR/pull/17)</span>                                                                             |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-22 | 2021-05-22 11:11:07 |
-| 11    | <span title="Merged Pull Request"><img src="https://github.com/yonicd/issue/blob/master/inst/icons/pull-request-merged.png?raw=true"></span> | <span title="">[add `load_mbb_pbp()` and `load_nba_pbp()` functions](https://github.com/saiemgilani/hoopR/pull/11)</span>                                   |        | [saiemgilani](https://github.com/saiemgilani)   | 2021-05-12 | 2021-05-17 23:35:12 |
 
 </details>
 
