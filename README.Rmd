@@ -269,7 +269,7 @@ BibTex Citation
 ```bibtex
 @misc{saiemgilani2021hoopR,
   author = {Gilani, Saiem},
-  title = {hoopR: the SportsDataverse R package for men's basketball play by play data.},
+  title = {hoopR: The SportsDataverse's R package for men's basketball data.},
   url = {https://saiemgilani.github.io/hoopR/},
   year = {2021}
 }
