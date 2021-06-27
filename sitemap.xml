@@ -169,6 +169,9 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/load_mbb_player_box.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/load_mbb_schedule.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html</loc>
   </url>
   <url>
@@ -176,6 +179,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/load_nba_schedule.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html</loc>
