@@ -18,6 +18,7 @@ License: MIT + file LICENSE
 URL: https://saiemgilani.github.io/hoopR,
     https://www.github.com/saiemgilani/hoopR
 BugReports: https://www.github.com/saiemgilani/hoopR/issues
+SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
 Depends: 
     R (>= 3.5.0)
 Imports: 
