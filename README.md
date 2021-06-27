@@ -286,3 +286,19 @@ See the following ~~four~~ eight functions:
   - [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
     <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+
+## **Citations**
+
+To cite the [**`hoopR`**](https://saiemgilani.github.io/hoopR/) R
+package in publications, use:
+
+BibTex Citation
+
+``` bibtex
+@misc{saiemgilani2021hoopR,
+  author = {Gilani, Saiem},
+  title = {hoopR: the SportsDataverse R package for men's basketball play by play data.},
+  url = {https://saiemgilani.github.io/hoopR/},
+  year = {2021}
+}
+```

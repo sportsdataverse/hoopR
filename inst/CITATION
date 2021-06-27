@@ -1,0 +1,16 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+citHeader("To cite the hoopR R package in publications, use:")
+
+citEntry(entry = "Misc",
+         author = personList(as.person("Saiem Gilani")),
+         title = "hoopR: The SportsDataverse's R package for men's basketball data.",
+         url = c("saiemgilani.github.io/hoopr/"),
+         year = year,
+         note = note,
+         textVersion = paste(
+    "Saiem Gilani. hoopR: The SportsDataverse's R package for men's basketball data.",
+    "Retrieved from https://saiemgilani.github.io/hoopR/"
+  )
+)
