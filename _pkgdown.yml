@@ -4,6 +4,9 @@ template:
   params:
     bootswatch: flatly
     ganalytics: G-FN028W4QW6
+    docsearch:
+      api_key: 95d5bfdfd37b4b14e513f2c8d59322d3
+      index_name: hoopR
   opengraph:
     image:
       src: "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/themes/hoopR_gh.png"
@@ -74,6 +77,12 @@ navbar:
         href: https://saiemgilani.github.io/wehoop/
       - text: cfbrecruitR
         href: https://saiemgilani.github.io/cfbrecruitR/
+      - text: puntr
+        href: https://puntalytics.github.io/puntr
+      - text: gamezoneR
+        href: https://jacklich10.github.io/gamezoneR/
+      # - text: baseballr
+      #   href: https://saiemgilani.github.io/baseballr/
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/saiemgilani/hoopR/
