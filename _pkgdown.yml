@@ -71,6 +71,8 @@ navbar:
       menu:
       - text: SportsDataverse
         href: https://sportsdataverse.org/
+      - text: --------------------------------
+      - text: R Packages
       - text: cfbfastR
         href: https://saiemgilani.github.io/cfbfastR/
       - text: wehoop
@@ -83,6 +85,18 @@ navbar:
         href: https://jacklich10.github.io/gamezoneR/
       # - text: baseballr
       #   href: https://saiemgilani.github.io/baseballr/
+      - text: --------------------------------
+      - text: Python Packages
+      - text: cfbfastR-py
+        href: https://cfbfastR-py.sportsdataverse.org/
+      - text: hoopR-py
+        href: https://hoopR-py.sportsdataverse.org/
+      - text: wehoop-py
+        href: https://wehoop-py.sportsdataverse.org/
+      - text: --------------------------------
+      - text: Node.js Packages
+      - text: sportsdataverse.js
+        href: https://saiemgilani.github.io/sportsdataverse/
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/saiemgilani/hoopR/
