@@ -9,6 +9,10 @@ espn_mbb_teams()
 \description{
 Get ESPN men's college basketball team names and ids
 }
+\examples{
+espn_mbb_teams()
+
+}
 \author{
 Saiem Gilani
 }
