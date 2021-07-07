@@ -1,0 +1,37 @@
+.text-content {
+    width: 900px;
+    max-width: 95%;
+    margin:auto;
+}
+
+.image {
+    width: 900px;
+    max-width: 90%;
+    margin: 0;
+    padding: 0;
+    height: 498px;
+}
+
+.info {
+    width: 900px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 90%;
+}
+
+.post-container {
+    width: 900px;
+    overflow-x: hidden;
+    max-width: 100%;
+    margin:auto;
+    font-size: 112%;
+    line-height: 1.6;
+}
+
+.image-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

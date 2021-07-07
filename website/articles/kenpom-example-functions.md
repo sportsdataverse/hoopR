@@ -1,0 +1,108 @@
+---
+title: "KenPom Example Functions"
+description: "Some examples to get started with using hoopR and KenPom's men's college basketball website."
+author: "Saiem Gilani"
+opengraph:
+  image: 
+    src: "https://github.com/saiemgilani/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+<a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>
+
+## Ratings Table Function examples
+
+```r
+#---- kp_ratings_tables.R ----------------
+pomeroy_ratings <- kp_pomeroy_ratings(min_year = 2020, max_year = 2020)
+
+efficiency <- kp_efficiency(min_year = 2020, max_year = 2020)
+
+fourfactors <- kp_fourfactors(min_year = 2020, max_year = 2020)
+
+pointdist <- kp_pointdist(min_year = 2020, max_year = 2020)
+
+height <- kp_height(min_year = 2020, max_year = 2020)
+
+teamstats <- kp_teamstats(min_year = 2020, max_year = 2020)
+
+playerstats <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
+
+kpoy <- kp_kpoy(year=2020)
+```
+
+
+## Team Tables
+
+```r
+#---- kp_team_tables.R -------------------
+team_sched <- kp_team_schedule(team = 'Florida St.', year= 2020)
+
+gameplan <- kp_gameplan(team='Florida St.', year=2020)
+
+opptracker <- kp_opptracker(team = 'Florida St.', year=2020)
+
+team_players <- kp_team_players(team = 'Florida St.', year= 2020)
+
+minutes_matrix <- kp_minutes_matrix(team = 'Florida St.', year = 2020)
+
+team_player_stats <- kp_team_player_stats(team = 'Florida St.', year = 2020)
+
+team_player_stats1 <- team_player_stats[[1]]
+
+team_player_stats2 <- team_player_stats[[2]]
+
+team_depth_chart <- kp_team_depth_chart(team = 'Florida St.', year= 2020)
+
+team_lineups <- kp_team_lineups(team = 'Florida St.', year= 2020)
+```
+
+
+## Historical Tables
+
+```r
+#---- kp_historical_tables.R ------------
+team_history <- kp_team_history(team = 'Florida St.')
+
+coach_history <- kp_coach_history(coach = 'Leonard Hamilton')
+
+program_ratings <- kp_program_ratings()
+
+# records_team appears to be working but there isn't anything
+# there anymore at the moment for all years
+# records_team <- get_records_team(browser, team = 'Florida St.')
+
+pomeroy_archive_ratings <- kp_pomeroy_archive_ratings( date='2018-11-22')
+
+conf <- kp_conf(year='2020',conf='ACC')
+
+conf_stats <- kp_confstats(year='2020')
+
+conf_history <- kp_confhistory(conf='ACC')
+```
+
+
+## Miscellaneous Stats Tables
+
+```r
+#---- kp_misc_stats.R ------------------
+trends <- kp_trends()
+
+
+officials <- kp_officials(year= 2020)
+
+hca <- kp_hca()
+
+
+arenas <- kp_arenas(year=2020)
+
+
+
+game_attrs <- kp_game_attrs(year=2020, attr = "Excitement")
+
+fanmatch <- kp_fanmatch(date="2020-03-10")
+```
+
