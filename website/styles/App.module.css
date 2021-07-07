@@ -1,0 +1,8 @@
+.app-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-container {
+    padding-bottom: 25px;
+}
