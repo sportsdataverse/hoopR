@@ -41,7 +41,7 @@ Sys.setenv(KP_PW = "XX-YOUR-PASSWORD-XX")
 
 #### **How the browser login is set**
 
-This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function.
+This is the function that is evaluated to log you in to [kenpom.com](https://kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function.
 
 
 ```r
