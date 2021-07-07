@@ -1,0 +1,117 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2C3E50;
+  --ifm-color-primary-dark: hsl(210, 63%, 54%);
+  --ifm-color-primary-darker: hsl(210, 29%, 60%);
+  --ifm-color-primary-darkest: hsl(210, 37%, 48%);
+  --ifm-color-primary-light: hsl(210, 50%, 40%);
+  --ifm-color-primary-lighter: hsl(210, 29%, 40%);
+  --ifm-color-primary-lightest: hsl(210, 29%, 55%);
+  --ifm-code-font-size: 95%;
+  --ifm-link-color: var(--ifm-color-primary-dark);
+  --ifm-menu-color-active: var(--ifm-link-color);
+  --ifm-navbar-link-hover-color: var(--ifm-link-color);
+}
+html[data-theme='dark'] .dropdown__menu {
+  background-color: hsl(210, 47%, 38%);
+}
+
+html[data-theme='dark'] code {
+  background-color: hsla(211, 45%, 25%, 0.685);
+}
+.docusaurus-highlight-code-line {
+  background-color: #5983ad;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: #96c7f8;
+}
+/* nav */
+html[data-theme='dark'] nav {
+  background-color: #1b2936;
+}
+/* footer */
+html[data-theme='dark'] footer {
+  background-color: #1b2936;
+}
+html[data-theme='light'] footer {
+  background-color: #2C3E50;
+}
+html[data-theme='dark'] {
+  background-color: #2C3E50;
+  --ifm-color-primary: hsl(210, 59%, 60%);
+  --ifm-link-color: #96c7f8;
+}
+
+html[data-theme='dark'] .navbar-sidebar {
+  background-color: #2C3E50;
+  --ifm-color-primary: #3b76b1;
+  --ifm-link-color: #96c7f8;
+}
+html[data-theme='light'] .navbar-sidebar {
+  background-color: #2C3E50;
+  --ifm-color-primary: #3b76b1;
+  --ifm-link-color: #96c7f8;
+}
+html[data-theme='dark'].navbar__link:hover, .navbar__link--active {
+  color: #96c7f8;
+  text-decoration: none;
+}
+html[data-theme='dark'] .menu__link--active {
+  color: #96c7f8;
+}
+
+html[data-theme='dark'] .navbar__link:hover{
+  --ifm-link-color: #96c7f8;
+}
+html[data-theme='light'].navbar__link:hover, .navbar__link--active {
+  color: #3b76b1;
+  text-decoration: none;
+}
+html[data-theme='light'] .menu__link--active {
+  color: #3b76b1;
+}
+
+html[data-theme='light'] .navbar__link:hover{
+  --ifm-link-color: #3b76b1;
+}
+.docusaurus-highlight-code-line {
+  background-color: hsl(228, 50%, 5%);
+
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.monaco-editor .contents {
+  font-size: inherit;
+  margin-bottom: inherit;
+  padding-top: inherit;
+  padding-bottom: inherit;
+}
+
+.code-table {
+  --ifm-table-cell-padding: 2px;
+  font-size: 0.875rem;
+  display: table;
+}
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.limited-code-block > div {
+  max-height: 35vh;
+  overflow: auto;
+  border-radius: 5px;
+  font-size: var(--ifm-code-font-size);
+
+}
