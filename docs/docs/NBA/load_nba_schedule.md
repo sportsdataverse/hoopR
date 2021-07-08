@@ -2,7 +2,6 @@
 title: load_nba_schedule
 sidebar_label: load_nba_schedule
 ---
-# `load_nba_schedule`
 
 Load hoopR NBA schedules
 

@@ -2,7 +2,6 @@
 title: espn_nba_game_all
 sidebar_label: espn_nba_game_all
 ---
-# `espn_nba_game_all`
 
 ## Description
 

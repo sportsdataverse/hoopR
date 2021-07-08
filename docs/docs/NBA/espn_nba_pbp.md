@@ -2,7 +2,6 @@
 title: espn_nba_pbp
 sidebar_label: espn_nba_pbp
 ---
-# `espn_nba_pbp`
 
 ## Description
 

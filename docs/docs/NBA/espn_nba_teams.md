@@ -2,7 +2,6 @@
 title: espn_nba_teams
 sidebar_label: espn_nba_teams
 ---
-# `espn_nba_teams`
 
 ## Description
 

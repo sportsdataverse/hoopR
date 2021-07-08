@@ -2,8 +2,6 @@
 title: espn_nba_scoreboard
 sidebar_label: espn_nba_scoreboard
 ---
-# `espn_nba_scoreboard`
-
 ## Description
 
 Get ESPN men's NBA schedule for a specific year
