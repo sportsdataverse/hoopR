@@ -6,6 +6,48 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css");
+@import url('https://fonts.googleapis.com/css2?family=Chivo');
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #427FD4, 0 0 12px #39F8FF;
+  }
+
+  to {
+    text-shadow: 0 0 12px #427FD4, 0 0 13px #39F8FF;
+  }
+}
+
+@keyframes glow {
+    to {
+     text-shadow: 0 0 12px #427FD4, 0 0 13px #39F8FF;
+    }
+  }
+
+html[data-theme='dark'] .navbar__title {
+  font-family: "Bungee";
+  letter-spacing: 0.1px;
+  line-height: 1.3rem;
+  color: #FDFDFD;
+  font-weight: 500;
+  font-size: 20px;
+  animation: glow 4s ease-in-out infinite alternate;
+}
+html[data-theme='light'] .navbar__title {
+  font-family: "Bungee";
+  letter-spacing: 0.1px;
+  line-height: 1.3rem;
+  font-weight: 500;
+  font-size: 20px;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+
+
 :root {
   --ifm-color-primary: #2C3E50;
   --ifm-color-primary-dark: hsl(210, 63%, 54%);
@@ -22,7 +64,49 @@
 html[data-theme='dark'] .dropdown__menu {
   background-color: hsl(210, 47%, 38%);
 }
+body {
+  font-family: "Lato";
+  /*color: #1f1f1f;*/
+  font-size: 16px;
+}
+.menu__link{
+  font-family: "Fira Mono";
+  letter-spacing: 0.6px;
+  line-height: 1.2rem; /* increases, so wrapping headers don't overlap */
+  font-weight: 500;
+  font-size: 14px;
+}
+.code{
+  font-family: "Fira Mono";
+  line-height: 1.8rem; /* increases, so wrapping headers don't overlap */
+  font-weight: 500;
+  font-size: 11px;
+}
+h1, h2, .h1, .h2 {
+  font-family: "Chivo";
+  letter-spacing: 0.6px;
+  line-height: 1.2rem; /* increases, so wrapping headers don't overlap */
+  font-weight: 500;
+  font-size: 16px;
+}
 
+h3, h4, h5, h6, .h3, .h4{
+  font-family: "Chivo";
+  letter-spacing: 0.6px;
+  line-height: 1.8rem; /* increases, so wrapping headers don't overlap */
+  font-weight: 500;
+  font-size: 16px;
+}
+.navbar__item.navbar__link,.navbar__link.navbar__link--active.navbar__link--active{
+  font-family: "Fira Mono";
+  letter-spacing: 0.6px;
+  line-height: 1.8rem; /* increases, so wrapping headers don't overlap */
+  font-weight: 500;
+  font-size: 16px;
+}
+pre, code {
+  font-family: "Fira Mono", Consolas, Inconsolata, monospace;
+}
 html[data-theme='dark'] code {
   background-color: hsla(211, 45%, 25%, 0.685);
 }

@@ -2,7 +2,6 @@
 title: load_nba_team_box
 sidebar_label:  load_nba_team_box
 ---
-# `load_nba_team_box`
 
 Load hoopR NBA team box scores
 

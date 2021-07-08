@@ -1,6 +1,6 @@
 ---
 title: hoopR
-sidebar_label: hoopR
+sidebar_label: Getting Started
 sidebar_position: 1
 ---
 

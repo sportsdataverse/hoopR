@@ -2,7 +2,6 @@
 title: update_nba_db
 sidebar_label: update_nba_db
 ---
-# `update_nba_db`
 
 Update or create a hoopR play-by-play database
 

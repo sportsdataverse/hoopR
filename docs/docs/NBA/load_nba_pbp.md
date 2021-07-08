@@ -2,7 +2,6 @@
 title: load_nba_pbp
 sidebar_label: load_nba_pbp
 ---
-# `load_nba_pbp`
 
 Load hoopR NBA play-by-play
 

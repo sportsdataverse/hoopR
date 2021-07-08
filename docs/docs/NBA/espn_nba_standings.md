@@ -2,7 +2,6 @@
 title: espn_nba_standings
 sidebar_label: espn_nba_standings
 ---
-# `espn_nba_standings`
 
 ## Description
 
