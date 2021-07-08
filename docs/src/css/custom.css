@@ -46,24 +46,6 @@ html[data-theme='light'] .navbar__title {
   animation: glow 2.5s ease-in-out infinite alternate;
 }
 
-
-
-:root {
-  --ifm-color-primary: #2C3E50;
-  --ifm-color-primary-dark: hsl(210, 63%, 54%);
-  --ifm-color-primary-darker: hsl(210, 29%, 60%);
-  --ifm-color-primary-darkest: hsl(210, 37%, 48%);
-  --ifm-color-primary-light: hsl(210, 50%, 40%);
-  --ifm-color-primary-lighter: hsl(210, 29%, 40%);
-  --ifm-color-primary-lightest: hsl(210, 29%, 55%);
-  --ifm-code-font-size: 95%;
-  --ifm-link-color: var(--ifm-color-primary-dark);
-  --ifm-menu-color-active: var(--ifm-link-color);
-  --ifm-navbar-link-hover-color: var(--ifm-link-color);
-}
-html[data-theme='dark'] .dropdown__menu {
-  background-color: hsl(210, 47%, 38%);
-}
 body {
   font-family: "Lato";
   /*color: #1f1f1f;*/
@@ -104,6 +86,24 @@ h3, h4, h5, h6, .h3, .h4{
   font-weight: 500;
   font-size: 16px;
 }
+
+:root {
+  --ifm-color-primary: #2C3E50;
+  --ifm-color-primary-dark: hsl(210, 63%, 54%);
+  --ifm-color-primary-darker: hsl(210, 29%, 60%);
+  --ifm-color-primary-darkest: hsl(210, 37%, 48%);
+  --ifm-color-primary-light: hsl(210, 50%, 40%);
+  --ifm-color-primary-lighter: hsl(210, 29%, 40%);
+  --ifm-color-primary-lightest: hsl(210, 29%, 55%);
+  --ifm-code-font-size: 95%;
+  --ifm-link-color: var(--ifm-color-primary-dark);
+  --ifm-menu-color-active: var(--ifm-link-color);
+  --ifm-navbar-link-hover-color: var(--ifm-link-color);
+}
+html[data-theme='dark'] .dropdown__menu {
+  background-color: hsl(210, 47%, 38%);
+}
+
 pre, code {
   font-family: "Fira Mono", Consolas, Inconsolata, monospace;
 }
