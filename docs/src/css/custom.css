@@ -144,7 +144,6 @@ html[data-theme='dark'] .navbar-sidebar {
   --ifm-link-color: #96c7f8;
 }
 html[data-theme='light'] .navbar-sidebar {
-  background-color: #2C3E50;
   --ifm-color-primary: #3b76b1;
   --ifm-link-color: #96c7f8;
 }
