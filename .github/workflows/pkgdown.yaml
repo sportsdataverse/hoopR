@@ -43,13 +43,7 @@ jobs:
 
       - name: Install package
         run: R CMD INSTALL .
-      - name: Render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd")'
-      - name: Commit (amend) results of README
-        run: |
-          git add README.md
-          git commit -m "Rebuild README.md" || echo "No changes to commit"
-          git push origin --force || echo "No changes to commit"
+
       - name: Deploy package
         run: |
           git config --local user.email "actions@github.com"
