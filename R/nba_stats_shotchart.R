@@ -5,9 +5,27 @@ NULL
 #' **Get NBA Stats API Shot Chart Detail**
 #' @rdname sc
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '01','02','03'
-#' @param game_date Game Date
-#' @param day_offset Day Offset (integer 0,-1)
+#' @param context_measure context_measure
+#' @param date_from date_from
+#' @param date_to date_to
+#' @param game_id game_id
+#' @param game_segment game_segment
+#' @param last_n_games last_n_games
+#' @param league_id league_id
+#' @param location location
+#' @param month month
+#' @param opponent_team_id opponent_team_id
+#' @param outcome outcome
+#' @param period period
+#' @param player_id player_id
+#' @param player_position player_position
+#' @param rookie_year rookie_year
+#' @param season season
+#' @param season_segment season_segment
+#' @param season_type season_type
+#' @param team_id team_id
+#' @param vs_conference vs_conference
+#' @param vs_division vs_division
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

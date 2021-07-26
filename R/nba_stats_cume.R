@@ -10,6 +10,7 @@ NULL
 #' @param player_id player_id
 #' @param season season
 #' @param season_type season_type
+#' @param team_id team_id
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -21,7 +22,8 @@ nba_cumestatsplayer <- function(
   league_id='00',
   player_id='1629611',
   season='2020-21',
-  season_type){
+  season_type='Regular Season',
+  team_id = ''){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayer"
   endpoint <- nba_endpoint(version)

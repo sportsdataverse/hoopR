@@ -71,8 +71,6 @@ nba_leaguedashptteamdefend(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
-
-\item{starter_bench}{starter_bench}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Team Defense}

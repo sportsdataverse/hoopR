@@ -182,6 +182,7 @@ NULL
 #' @rdname pfantasy
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param measure_type measure_type
 #' @param player_id Player ID
 #' @param per_mode Per Mode - PerGame, Totals
 #' @param pace_adjust Pace Adjustment - Y/N

@@ -15,9 +15,6 @@ nba_hustlestatsboxscore(game_id)
 
 \strong{Get NBA Stats API Hustle Stats Boxscore}
 }
-\examples{
-nba_hustlestatsboxscore(game_id = 21601112)
-}
 \author{
 Saiem Gilani
 }

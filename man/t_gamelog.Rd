@@ -25,7 +25,7 @@ nba_teamgamelog(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 
-\item{player_id}{Player ID}
+\item{team_id}{Team ID}
 }
 \description{
 \strong{Get NBA Stats API Team Game Log}

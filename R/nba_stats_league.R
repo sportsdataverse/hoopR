@@ -280,7 +280,6 @@ NULL
 #' @param lt_stl lt_stl
 #' @param lt_td lt_td
 #' @param lt_tov lt_tov
-#' @param min_games min_games
 #' @param outcome outcome
 #' @param po_round po_round
 #' @param player_or_team player_or_team

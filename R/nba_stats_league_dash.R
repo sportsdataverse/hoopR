@@ -15,7 +15,6 @@ NULL
 #' @param dribble_range dribble_range
 #' @param game_segment game_segment
 #' @param general_range general_range
-#' @param height height
 #' @param last_n_games last_n_games
 #' @param league_id league_id
 #' @param location location
@@ -38,7 +37,6 @@ NULL
 #' @param touch_time_range touch_time_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
-#' @param weight weight
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1145,7 +1143,6 @@ NULL
 #' @param season season
 #' @param season_segment season_segment
 #' @param season_type season_type
-#' @param starter_bench starter_bench
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
@@ -1491,8 +1488,6 @@ NULL
 #' @param po_round po_round
 #' @param per_mode per_mode
 #' @param period period
-#' @param player_experience player_experience
-#' @param player_position player_position
 #' @param plus_minus plus_minus
 #' @param rank rank
 #' @param season season
@@ -1614,6 +1609,8 @@ NULL
 #' @param pace_adjust pace_adjust
 #' @param per_mode per_mode
 #' @param period period
+#' @param player_experience player_experience
+#' @param player_position player_position
 #' @param plus_minus plus_minus
 #' @param rank rank
 #' @param season season

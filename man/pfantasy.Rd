@@ -20,6 +20,8 @@ nba_playerfantasyprofile(
 \arguments{
 \item{league_id}{League - default: '00'. Other options include '01','02','03'}
 
+\item{measure_type}{measure_type}
+
 \item{pace_adjust}{Pace Adjustment - Y/N}
 
 \item{per_mode}{Per Mode - PerGame, Totals}

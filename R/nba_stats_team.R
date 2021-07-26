@@ -91,9 +91,9 @@ NULL
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param league_id League - default: '00'. Other options include '01','02','03'
-#' @param player_id Player ID
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @param team_id Team ID
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -286,7 +286,7 @@ NULL
 #' @rdname teaminfo
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '01','02','03'
-#' @param player_id Player ID
+#' @param team_id Team ID
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @importFrom jsonlite fromJSON toJSON
@@ -726,6 +726,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param vs_player_id vs_player_id
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

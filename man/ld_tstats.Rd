@@ -92,10 +92,6 @@ nba_leaguedashteamstats(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
-
-\item{player_experience}{player_experience}
-
-\item{player_position}{player_position}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Team Stats}
