@@ -1,4 +1,4 @@
-# AllTimeLeadersGrids
+# nba_alltimeleadersgrids
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/alltimeleadersgrids](https://stats.nba.com/stats/alltimeleadersgrids)
