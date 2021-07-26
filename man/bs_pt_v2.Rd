@@ -15,9 +15,6 @@ nba_boxscoreplayertrackv2(game_id)
 
 \strong{Get NBA Stats API Boxscore Player Tracking V2}
 }
-\examples{
-nba_boxscoreplayertrackv2(game_id = 21601112)
-}
 \author{
 Saiem Gilani
 }

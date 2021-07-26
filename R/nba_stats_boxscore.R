@@ -39,7 +39,7 @@ nba_boxscoretraditionalv2 <- function(game_id){
     return(data)
   })
   names(df_list) <- resp$resultSets$name
-  return(returndata)
+  return(df_list)
 }
 
 #' **Get NBA Stats API Boxscore Advanced V2**
@@ -98,8 +98,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoredefensive(game_id = 21601112)
 nba_boxscoredefensive <- function(game_id){
 
   version <- "boxscoredefensive"
@@ -111,13 +109,15 @@ nba_boxscoredefensive <- function(game_id){
     .nba_headers()
 
 
-  data <- resp$resultSets$rowSet[[1]] %>%
-    data.frame(stringsAsFactors = F) %>%
-    as_tibble()
+  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+    data <- resp$resultSets$rowSet[[x]] %>%
+      data.frame(stringsAsFactors = F) %>%
+      as_tibble()
 
-  json_names <- resp$resultSets$headers[[1]]
-  colnames(data) <- json_names
-
+    json_names <- resp$resultSets$headers[[x]]
+    colnames(data) <- json_names
+    return(data)
+  })
   names(df_list) <- resp$resultSets$name
   return(df_list)
 }
@@ -135,8 +135,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscorefourfactorsv2(game_id = 21601112)
 nba_boxscorefourfactorsv2 <- function(game_id){
 
   version <- "boxscorefourfactorsv2"
@@ -178,8 +176,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoremiscv2(game_id = 21601112)
 nba_boxscoremiscv2 <- function(game_id){
 
   version <- "boxscoremiscv2"
@@ -221,8 +217,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscorescoringv2(game_id = 21601112)
 nba_boxscorescoringv2 <- function(game_id){
 
   version <- "boxscorescoringv2"
@@ -264,8 +258,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoreusagev2(game_id = 21601112)
 nba_boxscoreusagev2 <- function(game_id){
 
   version <- "boxscoreusagev2"
@@ -308,8 +300,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoresummaryv2(game_id = 21601112)
 nba_boxscoresummaryv2 <- function(game_id){
 
   version <- "boxscoresummaryv2"
@@ -384,8 +374,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoreplayertrackv2(game_id = 21601112)
 nba_boxscoreplayertrackv2 <- function(game_id){
 
   version <- "boxscoreplayertrackv2"
@@ -525,8 +513,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_hustlestatsboxscore(game_id = 21601112)
 nba_hustlestatsboxscore <- function(game_id){
 
   version <- "hustlestatsboxscore"

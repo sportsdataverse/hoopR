@@ -75,6 +75,10 @@ nba_leaguedashteamshotlocations(
 
 \item{period}{period}
 
+\item{player_experience}{player_experience}
+
+\item{player_position}{player_position}
+
 \item{plus_minus}{plus_minus}
 
 \item{rank}{rank}

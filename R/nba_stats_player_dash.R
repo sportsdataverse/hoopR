@@ -858,7 +858,6 @@ NULL
 #' @param opponent_team_id opponent_team_id
 #' @param outcome outcome
 #' @param per_mode per_mode
-#' @param period period
 #' @param player_id player_id
 #' @param season season
 #' @param season_segment season_segment

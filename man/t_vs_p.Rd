@@ -81,6 +81,8 @@ nba_teamvsplayer(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{vs_player_id}{vs_player_id}
 }
 \description{
 \strong{Get NBA Stats API Team vs Player}

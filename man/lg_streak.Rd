@@ -272,8 +272,6 @@ nba_leaguegamefinder(
 \item{vs_team_id}{vs_team_id}
 
 \item{years_experience}{years_experience}
-
-\item{min_games}{min_games}
 }
 \description{
 \strong{Get NBA Stats API League Game Streak Finder}

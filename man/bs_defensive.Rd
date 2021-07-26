@@ -15,9 +15,6 @@ nba_boxscoredefensive(game_id)
 
 \strong{Get NBA Stats API Boxscore Defensive}
 }
-\examples{
-nba_boxscoredefensive(game_id = 21601112)
-}
 \author{
 Saiem Gilani
 }

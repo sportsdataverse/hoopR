@@ -98,10 +98,6 @@ nba_leaguedashoppptshot(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
-
-\item{height}{height}
-
-\item{weight}{weight}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Opponent Shots}

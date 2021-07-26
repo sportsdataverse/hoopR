@@ -56,8 +56,6 @@ nba_playerdashptpass(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
-
-\item{period}{period}
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Passing}

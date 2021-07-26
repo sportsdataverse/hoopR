@@ -30,11 +30,47 @@ nba_shotchartdetail(
 )
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{context_measure}{context_measure}
 
-\item{game_date}{Game Date}
+\item{date_from}{date_from}
 
-\item{day_offset}{Day Offset (integer 0,-1)}
+\item{date_to}{date_to}
+
+\item{game_id}{game_id}
+
+\item{game_segment}{game_segment}
+
+\item{last_n_games}{last_n_games}
+
+\item{league_id}{league_id}
+
+\item{location}{location}
+
+\item{month}{month}
+
+\item{opponent_team_id}{opponent_team_id}
+
+\item{outcome}{outcome}
+
+\item{period}{period}
+
+\item{player_id}{player_id}
+
+\item{player_position}{player_position}
+
+\item{rookie_year}{rookie_year}
+
+\item{season}{season}
+
+\item{season_segment}{season_segment}
+
+\item{season_type}{season_type}
+
+\item{team_id}{team_id}
+
+\item{vs_conference}{vs_conference}
+
+\item{vs_division}{vs_division}
 }
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}

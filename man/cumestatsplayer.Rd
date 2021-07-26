@@ -10,7 +10,8 @@ nba_cumestatsplayer(
   league_id = "00",
   player_id = "1629611",
   season = "2020-21",
-  season_type
+  season_type = "Regular Season",
+  team_id = ""
 )
 }
 \arguments{
@@ -23,6 +24,8 @@ nba_cumestatsplayer(
 \item{season}{season}
 
 \item{season_type}{season_type}
+
+\item{team_id}{team_id}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Player Stats}
