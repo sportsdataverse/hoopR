@@ -76,7 +76,7 @@ espn_mbb_game_all <- function(game_id){
       homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
       awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
       game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
-      #---- Team Box ------
+
       teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
 
       teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%

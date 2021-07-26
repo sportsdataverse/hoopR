@@ -134,6 +134,11 @@ reference:
     desc: Functions exported by hoopR to access ESPN's NBA Data
     contents:
       - starts_with("espn_nba_")
+  - title: NBA Data
+  - subtitle: NBA Stats API
+    desc: Functions exported by hoopR to access the NBA Stats API
+    contents:
+      - starts_with("nba_")
   - title: NCAA Data
   - subtitle: NCAA Data Functions
     desc: Functions exported by hoopR to access NCAA Men's College Basketball Data
