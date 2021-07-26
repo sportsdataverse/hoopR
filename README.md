@@ -17,7 +17,9 @@ Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40sa
 working with men’s basketball data.
 
 The package has functions to access **live play by play and box score**
-data from ESPN with shot locations when available.
+data from ESPN with shot locations when available. As of version 1.3.0,
+[**`hoopR`**](https://hoopR.sportsdataverse.org) is also a full NBA
+Stats API wrapper with 127 functions added in this release.
 
 It is additionally a scraping and aggregating interface for Ken
 Pomeroy’s men’s college basketball statistics website,
