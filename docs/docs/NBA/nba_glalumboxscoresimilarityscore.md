@@ -1,5 +1,4 @@
-# GLAlumBoxScoreSimilarityScore
-##### [nba_api/stats/endpoints/glalumboxscoresimilarityscore.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/glalumboxscoresimilarityscore.py)
+# nba_glalumboxscoresimilarityscore
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/glalumboxscoresimilarityscore](https://stats.nba.com/stats/glalumboxscoresimilarityscore)

@@ -1,5 +1,4 @@
-# VideoStatus
-##### [nba_api/stats/endpoints/videostatus.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/videostatus.py)
+# nba_videostatus
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/videostatus](https://stats.nba.com/stats/videostatus)
@@ -10,8 +9,8 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**GameDate**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GameDate) | game_date |  | `Y` |  | 
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
+[_**GameDate**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GameDate) | game_date |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
 
 ## Data Sets
 #### VideoStatus `video_status`

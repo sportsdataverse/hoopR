@@ -1,5 +1,4 @@
-# AssistLeaders
-##### [nba_api/stats/endpoints/assistleaders.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/assistleaders.py)
+# nba_assistleaders
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/assistleaders](https://stats.nba.com/stats/assistleaders)

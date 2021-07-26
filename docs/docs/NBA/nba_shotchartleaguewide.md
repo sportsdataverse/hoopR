@@ -1,5 +1,4 @@
-# ShotChartLeagueWide
-##### [nba_api/stats/endpoints/shotchartleaguewide.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/shotchartleaguewide.py)
+# nba_shotchartleaguewide
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/shotchartleaguewide](https://stats.nba.com/stats/shotchartleaguewide)
@@ -10,8 +9,8 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id |  | `Y` |  | 
-[_**Season**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#Season) | season |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id |  | `Y` |  | 
+[_**Season**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Season) | season |  | `Y` |  | 
 
 ## Data Sets
 #### League_Wide `league_wide`

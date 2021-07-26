@@ -1,5 +1,4 @@
-# PlayerCareerStats
-##### [nba_api/stats/endpoints/playercareerstats.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/playercareerstats.py)
+# nba_playercareerstats
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/playercareerstats](https://stats.nba.com/stats/playercareerstats)

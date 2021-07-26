@@ -1,5 +1,4 @@
-# PlayerAwards
-##### [nba_api/stats/endpoints/playerawards.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/playerawards.py)
+# nba_playerawards
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/playerawards](https://stats.nba.com/stats/playerawards)

@@ -1,5 +1,4 @@
-# BoxScoreDefensive
-##### [nba_api/stats/endpoints/boxscoredefensive.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/boxscoredefensive.py)
+# nba_boxscoredefensive
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/boxscoredefensive](https://stats.nba.com/stats/boxscoredefensive)

@@ -1,5 +1,4 @@
-# WinProbabilityPBP
-##### [nba_api/stats/endpoints/winprobabilitypbp.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/winprobabilitypbp.py)
+# nba_winprobabilitypbp
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/winprobabilitypbp](https://stats.nba.com/stats/winprobabilitypbp)
@@ -10,8 +9,8 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**GameID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GameID) | game_id |  | `Y` |  | 
-[_**RunType**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#RunType) | run_type |  | `Y` |  | 
+[_**GameID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GameID) | game_id |  | `Y` |  | 
+[_**RunType**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#RunType) | run_type |  | `Y` |  | 
 
 ## Data Sets
 #### GameInfo `game_info`

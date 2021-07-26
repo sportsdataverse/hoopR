@@ -1,5 +1,4 @@
-# CommonPlayoffSeries
-##### [nba_api/stats/endpoints/commonplayoffseries.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/commonplayoffseries.py)
+# nba_commonplayoffseries
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/commonplayoffseries](https://stats.nba.com/stats/commonplayoffseries)

@@ -1,5 +1,4 @@
-# TeamHistoricalLeaders
-##### [nba_api/stats/endpoints/teamhistoricalleaders.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/teamhistoricalleaders.py)
+# nba_teamhistoricalleaders
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/teamhistoricalleaders](https://stats.nba.com/stats/teamhistoricalleaders)
@@ -10,9 +9,9 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
-[_**SeasonID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#SeasonID) | season_id | `^\d{5}$` | `Y` |  | 
-[_**TeamID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#TeamID) | team_id |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
+[_**SeasonID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#SeasonID) | season_id | `^\d{5}$` | `Y` |  | 
+[_**TeamID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#TeamID) | team_id |  | `Y` |  | 
 
 ## Data Sets
 #### CareerLeadersByTeam `career_leaders_by_team`

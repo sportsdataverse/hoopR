@@ -1,5 +1,4 @@
-# MatchupsRollup
-##### [nba_api/stats/endpoints/matchupsrollup.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/matchupsrollup.py)
+# nba_matchupsrollup
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/matchupsrollup](https://stats.nba.com/stats/matchupsrollup)

@@ -1,5 +1,4 @@
-# PlayoffPicture
-##### [nba_api/stats/endpoints/playoffpicture.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/playoffpicture.py)
+# nba_playoffpicture
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/playoffpicture](https://stats.nba.com/stats/playoffpicture)
@@ -10,8 +9,8 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
-[_**SeasonID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#SeasonID) | season_id |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
+[_**SeasonID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#SeasonID) | season_id |  | `Y` |  | 
 
 ## Data Sets
 #### EastConfPlayoffPicture `east_conf_playoff_picture`

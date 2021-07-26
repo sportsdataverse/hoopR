@@ -1,5 +1,4 @@
-# LeagueGameFinder
-##### [nba_api/stats/endpoints/leaguegamefinder.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguegamefinder.py)
+# nba_leaguegamefinder
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguegamefinder](https://stats.nba.com/stats/leaguegamefinder)
@@ -10,48 +9,48 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**PlayerOrTeam**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#PlayerOrTeam) | player_or_team_abbreviation | `^(P)\|(T)$` | `Y` |  | 
-[_**YearsExperience**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#YearsExperience) | years_experience_nullable |  |  | `Y` | 
-[_**VsTeamID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#VsTeamID) | vs_team_id_nullable |  |  | `Y` | 
-[_**VsDivision**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#VsDivision) | vs_division_nullable |  |  | `Y` | 
-[_**VsConference**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#VsConference) | vs_conference_nullable |  |  | `Y` | 
-[_**TeamID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#TeamID) | team_id_nullable |  |  | `Y` | 
-[_**StarterBench**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#StarterBench) | starter_bench_nullable |  |  | `Y` | 
-[_**SeasonType**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#SeasonType) | season_type_nullable |  |  | `Y` | 
-[_**SeasonSegment**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#SeasonSegment) | season_segment_nullable |  |  | `Y` | 
-[_**Season**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#Season) | season_nullable |  |  | `Y` | 
-[_**RookieYear**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#RookieYear) | rookie_year_nullable |  |  | `Y` | 
-[_**PlayerID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#PlayerID) | player_id_nullable |  |  | `Y` | 
-[_**PORound**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#PORound) | po_round_nullable |  |  | `Y` | 
-[_**Outcome**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#Outcome) | outcome_nullable |  |  | `Y` | 
-[_**LtTOV**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtTOV) | lt_tov_nullable |  |  | `Y` | 
-[_**LtTD**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtTD) | lt_td_nullable |  |  | `Y` | 
-[_**LtSTL**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtSTL) | lt_stl_nullable |  |  | `Y` | 
-[_**LtREB**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtREB) | lt_reb_nullable |  |  | `Y` | 
-[_**LtPTS**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtPTS) | lt_pts_nullable |  |  | `Y` | 
-[_**LtPF**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtPF) | lt_pf_nullable |  |  | `Y` | 
-[_**LtOREB**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtOREB) | lt_oreb_nullable |  |  | `Y` | 
-[_**LtMINUTES**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtMINUTES) | lt_minutes_nullable |  |  | `Y` | 
-[_**LtFT_PCT**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFT_PCT) | lt_ft_pct_nullable |  |  | `Y` | 
-[_**LtFTM**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFTM) | lt_ftm_nullable |  |  | `Y` | 
-[_**LtFTA**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFTA) | lt_fta_nullable |  |  | `Y` | 
-[_**LtFG_PCT**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFG_PCT) | lt_fg_pct_nullable |  |  | `Y` | 
-[_**LtFGM**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFGM) | lt_fgm_nullable |  |  | `Y` | 
-[_**LtFGA**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFGA) | lt_fga_nullable |  |  | `Y` | 
-[_**LtFG3_PCT**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFG3_PCT) | lt_fg3_pct_nullable |  |  | `Y` | 
-[_**LtFG3M**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFG3M) | lt_fg3m_nullable |  |  | `Y` | 
-[_**LtFG3A**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtFG3A) | lt_fg3a_nullable |  |  | `Y` | 
-[_**LtDREB**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtDREB) | lt_dreb_nullable |  |  | `Y` | 
-[_**LtDD**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtDD) | lt_dd_nullable |  |  | `Y` | 
-[_**LtBLK**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtBLK) | lt_blk_nullable |  |  | `Y` | 
-[_**LtAST**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LtAST) | lt_ast_nullable |  |  | `Y` | 
-[_**Location**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#Location) | location_nullable |  |  | `Y` | 
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id_nullable |  |  | `Y` | 
-[_**GtTOV**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GtTOV) | gt_tov_nullable |  |  | `Y` | 
-[_**GtTD**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GtTD) | gt_td_nullable |  |  | `Y` | 
-[_**GtSTL**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GtSTL) | gt_stl_nullable |  |  | `Y` | 
-[_**GtREB**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GtREB) | gt_reb_nullable |  |  | `Y` | 
-[_**GtPTS**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GtPTS) | gt_pts_nullable |  |  | `Y` | 
+[_**PlayerOrTeam**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#PlayerOrTeam) | player_or_team_abbreviation | `^(P)\|(T)$` | `Y` |  | 
+[_**YearsExperience**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#YearsExperience) | years_experience_nullable |  |  | `Y` | 
+[_**VsTeamID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#VsTeamID) | vs_team_id_nullable |  |  | `Y` | 
+[_**VsDivision**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#VsDivision) | vs_division_nullable |  |  | `Y` | 
+[_**VsConference**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#VsConference) | vs_conference_nullable |  |  | `Y` | 
+[_**TeamID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#TeamID) | team_id_nullable |  |  | `Y` | 
+[_**StarterBench**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#StarterBench) | starter_bench_nullable |  |  | `Y` | 
+[_**SeasonType**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#SeasonType) | season_type_nullable |  |  | `Y` | 
+[_**SeasonSegment**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#SeasonSegment) | season_segment_nullable |  |  | `Y` | 
+[_**Season**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Season) | season_nullable |  |  | `Y` | 
+[_**RookieYear**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#RookieYear) | rookie_year_nullable |  |  | `Y` | 
+[_**PlayerID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#PlayerID) | player_id_nullable |  |  | `Y` | 
+[_**PORound**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#PORound) | po_round_nullable |  |  | `Y` | 
+[_**Outcome**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Outcome) | outcome_nullable |  |  | `Y` | 
+[_**LtTOV**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtTOV) | lt_tov_nullable |  |  | `Y` | 
+[_**LtTD**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtTD) | lt_td_nullable |  |  | `Y` | 
+[_**LtSTL**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtSTL) | lt_stl_nullable |  |  | `Y` | 
+[_**LtREB**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtREB) | lt_reb_nullable |  |  | `Y` | 
+[_**LtPTS**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtPTS) | lt_pts_nullable |  |  | `Y` | 
+[_**LtPF**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtPF) | lt_pf_nullable |  |  | `Y` | 
+[_**LtOREB**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtOREB) | lt_oreb_nullable |  |  | `Y` | 
+[_**LtMINUTES**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtMINUTES) | lt_minutes_nullable |  |  | `Y` | 
+[_**LtFT_PCT**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFT_PCT) | lt_ft_pct_nullable |  |  | `Y` | 
+[_**LtFTM**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFTM) | lt_ftm_nullable |  |  | `Y` | 
+[_**LtFTA**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFTA) | lt_fta_nullable |  |  | `Y` | 
+[_**LtFG_PCT**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFG_PCT) | lt_fg_pct_nullable |  |  | `Y` | 
+[_**LtFGM**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFGM) | lt_fgm_nullable |  |  | `Y` | 
+[_**LtFGA**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFGA) | lt_fga_nullable |  |  | `Y` | 
+[_**LtFG3_PCT**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFG3_PCT) | lt_fg3_pct_nullable |  |  | `Y` | 
+[_**LtFG3M**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFG3M) | lt_fg3m_nullable |  |  | `Y` | 
+[_**LtFG3A**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtFG3A) | lt_fg3a_nullable |  |  | `Y` | 
+[_**LtDREB**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtDREB) | lt_dreb_nullable |  |  | `Y` | 
+[_**LtDD**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtDD) | lt_dd_nullable |  |  | `Y` | 
+[_**LtBLK**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtBLK) | lt_blk_nullable |  |  | `Y` | 
+[_**LtAST**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LtAST) | lt_ast_nullable |  |  | `Y` | 
+[_**Location**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Location) | location_nullable |  |  | `Y` | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id_nullable |  |  | `Y` | 
+[_**GtTOV**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtTOV) | gt_tov_nullable |  |  | `Y` | 
+[_**GtTD**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtTD) | gt_td_nullable |  |  | `Y` | 
+[_**GtSTL**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtSTL) | gt_stl_nullable |  |  | `Y` | 
+[_**GtREB**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtREB) | gt_reb_nullable |  |  | `Y` | 
+[_**GtPTS**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtPTS) | gt_pts_nullable |  |  | `Y` | 
 [_**GtPF**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtPF) | gt_pf_nullable |  |  | `Y` | 
 [_**GtOREB**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtOREB) | gt_oreb_nullable |  |  | `Y` | 
 [_**GtMINUTES**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GtMINUTES) | gt_minutes_nullable |  |  | `Y` | 

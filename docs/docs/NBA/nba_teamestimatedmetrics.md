@@ -1,5 +1,4 @@
-# TeamEstimatedMetrics
-##### [nba_api/stats/endpoints/teamestimatedmetrics.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/teamestimatedmetrics.py)
+# nba_teamestimatedmetrics
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/teamestimatedmetrics](https://stats.nba.com/stats/teamestimatedmetrics)
@@ -10,9 +9,9 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id |  | `Y` |  | 
-[_**Season**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#Season) | season |  | `Y` |  | 
-[_**SeasonType**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#SeasonType) | season_type |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id |  | `Y` |  | 
+[_**Season**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Season) | season |  | `Y` |  | 
+[_**SeasonType**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#SeasonType) | season_type |  | `Y` |  | 
 
 ## Data Sets
 #### TeamEstimatedMetrics `team_estimated_metrics`

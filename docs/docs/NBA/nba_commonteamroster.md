@@ -1,5 +1,4 @@
-# CommonTeamRoster
-##### [nba_api/stats/endpoints/commonteamroster.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/commonteamroster.py)
+# nba_commonteamroster
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/commonteamroster](https://stats.nba.com/stats/commonteamroster)

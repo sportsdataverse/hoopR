@@ -1,5 +1,4 @@
-# DraftHistory
-##### [nba_api/stats/endpoints/drafthistory.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/drafthistory.py)
+# nba_drafthistory
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/drafthistory](https://stats.nba.com/stats/drafthistory)

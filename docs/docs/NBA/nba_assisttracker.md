@@ -1,5 +1,4 @@
-# AssistTracker
-##### [nba_api/stats/endpoints/assisttracker.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/assisttracker.py)
+# nba_assisttracker
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/assisttracker](https://stats.nba.com/stats/assisttracker)

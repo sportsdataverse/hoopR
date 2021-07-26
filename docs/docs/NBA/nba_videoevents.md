@@ -1,5 +1,4 @@
-# VideoEvents
-##### [nba_api/stats/endpoints/videoevents.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/videoevents.py)
+# nba_videoevents
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/videoevents](https://stats.nba.com/stats/videoevents)
@@ -10,8 +9,8 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**GameEventID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GameEventID) | game_event_id |  | `Y` |  | 
-[_**GameID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GameID) | game_id | `^(\d{10})?$` | `Y` |  | 
+[_**GameEventID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GameEventID) | game_event_id |  | `Y` |  | 
+[_**GameID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GameID) | game_id | `^(\d{10})?$` | `Y` |  | 
 
 ## Data Sets
 

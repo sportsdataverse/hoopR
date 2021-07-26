@@ -1,5 +1,4 @@
-# LeagueDashPlayerBioStats
-##### [nba_api/stats/endpoints/leaguedashplayerbiostats.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguedashplayerbiostats.py)
+# nba_leaguedashplayerbiostats
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguedashplayerbiostats](https://stats.nba.com/stats/leaguedashplayerbiostats)
