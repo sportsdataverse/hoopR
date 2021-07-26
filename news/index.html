@@ -100,7 +100,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0</span>
       </span>
     </div>
 
@@ -254,6 +254,533 @@
       
     </div>
 
+    <div id="hoopr-130" class="section level1">
+<h1 class="page-header" data-toc-text="1.3.0">
+<a href="#hoopr-130" class="anchor"></a><strong>hoopR 1.3.0</strong>
+</h1>
+<div id="add-full-coverage-for-nba-stats-api" class="section level3">
+<h3 class="hasAnchor">
+<a href="#add-full-coverage-for-nba-stats-api" class="anchor"></a><strong>Add Full Coverage for NBA Stats API</strong>
+</h3>
+<p>Adding roughly 127 functions</p>
+<table>
+<thead><tr class="header">
+<th>Function</th>
+<th>File Location</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>nba_alltimeleadersgrids</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="even">
+<td>nba_assistleaders</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="odd">
+<td>nba_assisttracker</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscoreadvancedv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_boxscoredefensive</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscorefourfactorsv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_boxscorematchups</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscoremiscv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_boxscoreplayertrackv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscorescoringv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_boxscoresimilarityscore</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscoresummaryv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_boxscoretraditionalv2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_boxscoreusagev2</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_commonallplayers</td>
+<td>R/nba_stats_roster.R</td>
+</tr>
+<tr class="even">
+<td>nba_commonplayerinfo</td>
+<td>R/nba_stats_roster.R</td>
+</tr>
+<tr class="odd">
+<td>nba_commonplayoffseries</td>
+<td>R/nba_stats_roster.R</td>
+</tr>
+<tr class="even">
+<td>nba_commonteamroster</td>
+<td>R/nba_stats_roster.R</td>
+</tr>
+<tr class="odd">
+<td>nba_commonteamyears</td>
+<td>R/nba_stats_roster.R</td>
+</tr>
+<tr class="even">
+<td>nba_cumestatsplayer</td>
+<td>R/nba_stats_cume.R</td>
+</tr>
+<tr class="odd">
+<td>nba_cumestatsplayergames</td>
+<td>R/nba_stats_cume.R</td>
+</tr>
+<tr class="even">
+<td>nba_cumestatsteam</td>
+<td>R/nba_stats_cume.R</td>
+</tr>
+<tr class="odd">
+<td>nba_cumestatsteamgames</td>
+<td>R/nba_stats_cume.R</td>
+</tr>
+<tr class="even">
+<td>nba_defensehub</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="odd">
+<td>nba_draftboard</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="even">
+<td>nba_draftcombinedrillresults</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="odd">
+<td>nba_draftcombinenonstationaryshooting</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="even">
+<td>nba_draftcombineplayeranthro</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="odd">
+<td>nba_draftcombinespotshooting</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="even">
+<td>nba_draftcombinestats</td>
+<td>R/nba_stats_draft.R</td>
+</tr>
+<tr class="odd">
+<td>nba_fantasywidget</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="even">
+<td>nba_franchisehistory</td>
+<td>R/nba_stats_franchise.R</td>
+</tr>
+<tr class="odd">
+<td>nba_franchiseleaders</td>
+<td>R/nba_stats_franchise.R</td>
+</tr>
+<tr class="even">
+<td>nba_franchiseplayers</td>
+<td>R/nba_stats_franchise.R</td>
+</tr>
+<tr class="odd">
+<td>nba_glalumboxscoresimilarityscore</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="even">
+<td>nba_homepageleaders</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="odd">
+<td>nba_homepagev2</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="even">
+<td>nba_hustlestatsboxscore</td>
+<td>R/nba_stats_boxscore.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaderstiles</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashlineups</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashoppptshot</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashplayerbiostats</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashplayerclutch</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashplayerptshot</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashplayershotlocations</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashplayerstats</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashptdefend</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashptstats</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashptteamdefend</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashteamclutch</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashteamptshot</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguedashteamshotlocations</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguedashteamstats</td>
+<td>R/nba_stats_league_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguegamefinder</td>
+<td>R/nba_stats_league.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguegamelog</td>
+<td>R/nba_stats_league.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguehustlestatsplayer</td>
+<td>R/nba_stats_hustle.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguehustlestatsplayerleaders</td>
+<td>R/nba_stats_hustle.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguehustlestatsteam</td>
+<td>R/nba_stats_hustle.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguehustlestatsteamleaders</td>
+<td>R/nba_stats_hustle.R</td>
+</tr>
+<tr class="even">
+<td>nba_leagueleaders</td>
+<td>R/nba_stats_leaders.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguelineupviz</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="even">
+<td>nba_leagueplayerondetails</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leagueseasonmatchups</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="even">
+<td>nba_leaguestandings</td>
+<td>R/nba_stats_league.R</td>
+</tr>
+<tr class="odd">
+<td>nba_leaguestandingsv3</td>
+<td>R/nba_stats_league.R</td>
+</tr>
+<tr class="even">
+<td>nba_matchupsrollup</td>
+<td>R/nba_stats_lineups.R</td>
+</tr>
+<tr class="odd">
+<td>nba_pbp</td>
+<td>R/nba_stats_pbp.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerawards</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playercareerbycollege</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playercareerbycollegerollup</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playercareerstats</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playercompare</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashboardbyclutch</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashboardbygamesplits</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashboardbygeneralsplits</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashboardbylastngames</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashboardbyopponent</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashboardbyshootingsplits</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashboardbyteamperformance</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashboardbyyearoveryear</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashptpass</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashptreb</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerdashptshotdefend</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerdashptshots</td>
+<td>R/nba_stats_player_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerestimatedmetrics</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerfantasyprofile</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playerfantasyprofilebargraph</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playergamelog</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playergamelogs</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playergamestreakfinder</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playernextngames</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playerprofilev2</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="odd">
+<td>nba_playervsplayer</td>
+<td>R/nba_stats_player.R</td>
+</tr>
+<tr class="even">
+<td>nba_playoffpicture</td>
+<td>R/nba_stats_league.R</td>
+</tr>
+<tr class="odd">
+<td>nba_schedule</td>
+<td>R/nba_stats_pbp.R</td>
+</tr>
+<tr class="even">
+<td>nba_scoreboard</td>
+<td>R/nba_stats_scoreboard.R</td>
+</tr>
+<tr class="odd">
+<td>nba_scoreboardv2</td>
+<td>R/nba_stats_scoreboard.R</td>
+</tr>
+<tr class="even">
+<td>nba_shotchartdetail</td>
+<td>R/nba_stats_shotchart.R</td>
+</tr>
+<tr class="odd">
+<td>nba_shotchartleaguewide</td>
+<td>R/nba_stats_shotchart.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashboardbyclutch</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashboardbygamesplits</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashboardbygeneralsplits</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashboardbylastngames</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashboardbyopponent</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashboardbyshootingsplits</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashboardbyteamperformance</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashboardbyyearoveryear</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashlineups</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashptpass</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdashptreb</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamdashptshots</td>
+<td>R/nba_stats_team_dash.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamdetails</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamestimatedmetrics</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamgamelog</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamgamelogs</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamgamestreakfinder</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamhistoricalleaders</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_teaminfocommon</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamplayerdashboard</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamplayeronoffdetails</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamplayeronoffsummary</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_teamvsplayer</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="odd">
+<td>nba_teamyearbyyearstats</td>
+<td>R/nba_stats_team.R</td>
+</tr>
+<tr class="even">
+<td>nba_videodetails</td>
+<td>R/nba_stats_video.R</td>
+</tr>
+<tr class="odd">
+<td>nba_videoevents</td>
+<td>R/nba_stats_video.R</td>
+</tr>
+<tr class="even">
+<td>nba_videostatus</td>
+<td>R/nba_stats_video.R</td>
+</tr>
+<tr class="odd">
+<td>nba_winprobabilitypbp</td>
+<td>R/nba_stats_scoreboard.R</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
     <div id="hoopr-120" class="section level1">
 <h1 class="page-header" data-toc-text="1.2.0">
 <a href="#hoopr-120" class="anchor"></a><strong>hoopR 1.2.0</strong>

@@ -4,10 +4,100 @@
     <loc>http://saiemgilani.github.io/hoopR/index.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/allplayers.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/alltime.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/assist_tracker.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/assists.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_advv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_defensive.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_ffv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_match.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_miscv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_pt_v2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_scoringv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_similarity.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_summaryv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_tradv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/bs_usagev2.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/check_status.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/clean_team_names_NCAA_merge.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/commonplayerinfo.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/commonplayoffseries.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/commonteamroster.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/commonteamyears.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/cumestatsplayer.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/cumestatsplayergames.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/cumestatsteam.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/cumestatsteamgames.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dboard.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dcombine_anthro.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dcombine_drill.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dcombine_nsshooting.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dcombine_sshooting.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/dcombine_stats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/defensehub.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_conferences.html</loc>
@@ -58,7 +148,43 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/fantasywidget.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/franchisehistory.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/franchiseleaders.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/franchiseplayers.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/gl_bs_similarity.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/homepageleaders.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/homepagev2.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/hoopR-package.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hustle_bs.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hustle_p.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hustle_pl.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hustle_t.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/hustle_tl.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/kp_arenas.html</loc>
@@ -163,6 +289,75 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/kp_winprob.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/l_gamelog.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/l_standings.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/l_standingsv3.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_oppptshot.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_pbiostats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_pclutch.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_pptshot.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_pshotloc.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_pstats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_ptdefend.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_ptstats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_ptteamdefend.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_tclutch.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_tptshot.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_tshotloc.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/ld_tstats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leaderstiles.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leaguedashlineups.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leagueleaders.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leaguelineupviz.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leagueplayerondetails.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/leagueseasonmatchups.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/lg_streak.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html</loc>
   </url>
   <url>
@@ -187,16 +382,199 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/matchupsrollup.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/nba_stats_videodetails.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/nba_stats_videoevents.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/ncaa_mbb_NET_rankings.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/p_est_metr.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/p_gamelog.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/p_gamelogs.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/p_n_g.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbp.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbyclutch.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbygamesplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbygeneralsplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbylastngames.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbyopponent.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbyshootingsplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbyteamperformance.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pbyyearoveryear.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pcareerbycollege.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pcareerbycollege_ru.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pfantasy.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pfantasy_bg.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pg_streak.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/playerawards.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/playercareerstats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/playercompare.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/playerprofilev2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/playervsplayer.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/po_picture.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pptpass.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pptreb.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pptshotdefend.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/pptshots.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/sc.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/sc_lw.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/schedule.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/scoreboard.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/scoreboardv2.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_details.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_est_metr.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_gamelog.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_gamelogs.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_ptpass.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_ptreb.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_ptshots.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_vs_p.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/t_yby_stats.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbyclutch.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbygamesplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbygeneralsplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbylastngames.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbyopponent.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbyshootingsplits.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbyteamperformance.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tbyyearoveryear.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/teamdashlineups.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/teaminfo.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/teams_links.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tg_streak.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/thist_leaders.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tp.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tp_onoff_det.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/tp_onoffsummary.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/update_mbb_db.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/update_nba_db.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/winprobabilitypbp.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/articles/intro-to-hoopR.html</loc>
