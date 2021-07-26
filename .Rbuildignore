@@ -19,3 +19,5 @@ mbb_pbp_db
 ^md$
 ^website$
 ^website/*
+^docs$
+^docs/*

@@ -1,5 +1,17 @@
-
-
+#' **Get NBA Stats API Franchise Leaders**
+#' @name franchiseleaders
+NULL
+#' @title
+#' **Get NBA Stats API Franchise Leaders**
+#' @rdname franchiseleaders
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param team_id team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_franchiseleaders <- function(league_id='00',
                                  team_id = '1610612739'){
   season_type <- gsub(' ','+',season_type)
@@ -26,6 +38,23 @@ nba_franchiseleaders <- function(league_id='00',
   return(df_list)
 }
 
+
+#' **Get NBA Stats API Franchise Players**
+#' @name franchiseplayers
+NULL
+#' @title
+#' **Get NBA Stats API Franchise Players**
+#' @rdname franchiseplayers
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param per_mode per_mode
+#' @param season_type season_type
+#' @param team_id team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_franchiseplayers <- function(league_id='00',
                                  per_mode = 'Totals',
                                  season_type = 'Regular Season',
@@ -56,6 +85,20 @@ nba_franchiseplayers <- function(league_id='00',
   return(df_list)
 }
 
+
+#' **Get NBA Stats API Franchise History**
+#' @name franchisehistory
+NULL
+#' @title
+#' **Get NBA Stats API Franchise History**
+#' @rdname franchisehistory
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_franchisehistory <- function(league_id='00'){
 
   version <- "franchisehistory"

@@ -1,3 +1,18 @@
+#' **Get NBA Stats API All Players**
+#' @name allplayers
+NULL
+#' @title
+#' **Get NBA Stats API All Players**
+#' @rdname allplayers
+#' @author Saiem Gilani
+#' @param is_only_current_season is_only_current_season
+#' @param league_id league_id
+#' @param season season
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_commonallplayers <- function(
   is_only_current_season=0,
   league_id='00',
@@ -25,7 +40,20 @@ nba_commonallplayers <- function(
   names(df_list) <- resp$resultSets$name
   return(df_list)
 }
-
+#' **Get NBA Stats API Player Info**
+#' @name commonplayerinfo
+NULL
+#' @title
+#' **Get NBA Stats API Player Info**
+#' @rdname commonplayerinfo
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param player_id player_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_commonplayerinfo <- function(
   league_id='00',
   player_id='2544'){
@@ -52,7 +80,21 @@ nba_commonplayerinfo <- function(
   return(df_list)
 }
 
-
+#' **Get NBA Stats API Playoff Series**
+#' @name commonplayoffseries
+NULL
+#' @title
+#' **Get NBA Stats API Playoff Series**
+#' @rdname commonplayoffseries
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param season season
+#' @param series_id series_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_commonplayoffseries <- function(
   league_id='00',
   season = '2020-21',
@@ -83,6 +125,21 @@ nba_commonplayoffseries <- function(
 }
 
 
+#' **Get NBA Stats API Team Roster**
+#' @name commonteamroster
+NULL
+#' @title
+#' **Get NBA Stats API Team Roster**
+#' @rdname commonteamroster
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param season season
+#' @param team_id team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_commonteamroster <- function(
   league_id='00',
   season = '2020-21',
@@ -113,6 +170,19 @@ nba_commonteamroster <- function(
 }
 
 
+#' **Get NBA Stats API Team Years**
+#' @name commonteamyears
+NULL
+#' @title
+#' **Get NBA Stats API Team Years**
+#' @rdname commonteamyears
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_commonteamyears <- function(league_id='00'){
 
   version <- "commonteamyears"

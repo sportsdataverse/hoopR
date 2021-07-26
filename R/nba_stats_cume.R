@@ -1,4 +1,20 @@
-
+#' **Get NBA Stats API Cumulative Player Stats**
+#' @name cumestatsplayer
+NULL
+#' @title
+#' **Get NBA Stats API Cumulative Player Stats**
+#' @rdname cumestatsplayer
+#' @author Saiem Gilani
+#' @param game_ids game_ids
+#' @param league_id league_id
+#' @param player_id player_id
+#' @param season season
+#' @param season_type season_type
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 
 nba_cumestatsplayer <- function(
   game_ids='0022000756',
@@ -34,6 +50,27 @@ nba_cumestatsplayer <- function(
   return(df_list)
 }
 
+#' **Get NBA Stats API Cumulative Player Game Stats**
+#' @name cumestatsplayergames
+NULL
+#' @title
+#' **Get NBA Stats API Cumulative Player Game Stats**
+#' @rdname cumestatsplayergames
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param location location
+#' @param outcome outcome
+#' @param player_id player_id
+#' @param season season
+#' @param season_type season_type
+#' @param vs_conference vs_conference
+#' @param vs_division vs_division
+#' @param vs_team_id vs_team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_cumestatsplayergames <- function(
   league_id='00',
   location = '',
@@ -75,7 +112,23 @@ nba_cumestatsplayergames <- function(
   return(df_list)
 }
 
-
+#' **Get NBA Stats API Cumulative Team Stats**
+#' @name cumestatsteam
+NULL
+#' @title
+#' **Get NBA Stats API Cumulative Team Stats**
+#' @rdname cumestatsteam
+#' @author Saiem Gilani
+#' @param game_ids game_ids
+#' @param league_id league_id
+#' @param season season
+#' @param season_type season_type
+#' @param team_id team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_cumestatsteam <- function(
   game_ids='0022000756',
   league_id='00',
@@ -109,7 +162,28 @@ nba_cumestatsteam <- function(
   names(df_list) <- resp$resultSets$name
   return(df_list)
 }
-
+#' **Get NBA Stats API Cumulative Team Game Stats**
+#' @name cumestatsteamgames
+NULL
+#' @title
+#' **Get NBA Stats API Cumulative Team Game Stats**
+#' @rdname cumestatsteamgames
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param location location
+#' @param outcome outcome
+#' @param season season
+#' @param season_id season_id
+#' @param season_type season_type
+#' @param team_id team_id
+#' @param vs_conference vs_conference
+#' @param vs_division vs_division
+#' @param vs_team_id vs_team_id
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
 nba_cumestatsteamgames <- function(
   league_id='00',
   location = '',

@@ -1,10 +1,10 @@
 
 #' **Get NBA Stats API play-by-play**
-#' @name nba_stats_pbp
+#' @name pbp
 NULL
 #' @title
 #' **Get NBA Stats API play-by-play**
-#' @rdname nba_stats_pbp
+#' @rdname pbp
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
@@ -13,9 +13,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_pbp(game_id = 21601112, version = "v2")
-
 nba_pbp <- function(game_id, version = "v2"){
 
   if(version=="v2"){
@@ -43,11 +40,11 @@ nba_pbp <- function(game_id, version = "v2"){
 }
 
 #' **Get NBA Stats API Schedule**
-#' @name nba_stats_schedule
+#' @name schedule
 NULL
 #' @title
 #' **Get NBA Stats API Schedule**
-#' @rdname nba_stats_schedule
+#' @rdname schedule
 #' @author Saiem Gilani
 #' @param season Season - 4 digit integer corresponding to the first year in the season format 2020-21
 #' @param league League - default: 'NBA'. Other options include 'all'
@@ -56,8 +53,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_schedule(season = 2020)
 nba_schedule <- function(season = 2020, league = 'NBA'){
 
   full_url <- glue::glue("https://data.nba.com/prod/v1/{season}/schedule.json")
