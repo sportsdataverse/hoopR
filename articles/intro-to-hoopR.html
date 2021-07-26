@@ -248,12 +248,8 @@
 <code class="sourceCode R"><span class="co"># You can install using the pacman package using the following code:</span>
 <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">'pacman'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'pacman'</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//Rtmpve3v2T/downloaded_packages</code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">#pacman::p_load_current_gh("saiemgilani/hoopR")</span>
+<span class="op">}</span>
+<span class="co">#pacman::p_load_current_gh("saiemgilani/hoopR")</span>
 <span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span><span class="va">dplyr</span>, <span class="va">ggplot2</span>,<span class="va">animation</span>,<span class="va">ggimage</span>,<span class="va">png</span>, <span class="va">glue</span><span class="op">)</span></code></pre></div>
 <p>Let’s first just try to get our hands on the Pomeroy ratings for the last 10 years by using the <code><a href="../reference/kp_pomeroy_ratings.html">hoopR::kp_pomeroy_ratings()</a></code> function, which takes the following arguments:</p>
 <ul>
@@ -262,9 +258,9 @@
 <li>
 <code>max_year</code> - Last year of data to pull</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rtgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2010</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">rtgs</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 3,845
 ## Columns: 23
@@ -298,7 +294,7 @@
 <a href="#pre-processing" class="anchor"></a><strong>Pre-processing</strong>
 </h3>
 <p>First, to keep things a bit simpler, we will first create a second and third <code>rtgs</code> dataset, one for the the filtered ACC data, and the other for Florida State. We will then combine these two to plot our data with. - <code>ACC</code>: filter by conference = ‘ACC’, group by the year and conference, then use <code>dplyr</code>’s <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">dplyr::summarize()</a></code> function, which we use to compute the `<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> of each of the <code>Year</code>-<code>Conf</code> combinations. However, in this case, since there is only one conference, it is essentially just a <code>Year</code> grouping for the ACC.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">team1</span> <span class="op">=</span> <span class="st">"Florida St."</span>
 <span class="va">team2</span> <span class="op">=</span> <span class="st">"ACC"</span>
 <span class="va">metric</span> <span class="op">&lt;-</span> <span class="st">"adj_em"</span> 
@@ -316,7 +312,7 @@
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>team <span class="op">=</span> <span class="va">.data</span><span class="op">$</span><span class="va">conf</span><span class="op">)</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.</code></pre>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rtgs_fsu</span> <span class="op">&lt;-</span> <span class="va">rtgs</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">team</span> <span class="op">==</span> <span class="va">team1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">arrange</span><span class="op">(</span><span class="op">-</span><span class="va">.data</span><span class="op">$</span><span class="va">year</span>, <span class="va">.data</span><span class="op">$</span><span class="va">rk</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -340,7 +336,7 @@
 
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_1</span> <span class="op">=</span> <span class="va">Color1</span>
 <span class="va">plot_data</span><span class="op">$</span><span class="va">Color_2</span> <span class="op">=</span> <span class="va">Color2</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">logo_url</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.png"</span>
 <span class="va">z</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">logo_url</span>,<span class="va">z</span>,mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span>
@@ -361,7 +357,7 @@
 <h3 class="hasAnchor">
 <a href="#plotting-a-simple-animation" class="anchor"></a><strong>Plotting a simple animation</strong>
 </h3>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draw_frame</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">year</span><span class="op">)</span>
 <span class="op">{</span>
   <span class="va">yr</span> <span class="op">&lt;-</span> <span class="va">year</span>
@@ -451,11 +447,11 @@
   <span class="co"># plot the frame</span>
   <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">frm_plot</span>, width <span class="op">=</span> <span class="fl">12.5</span>, height <span class="op">=</span> <span class="fl">6.47</span>, dpi <span class="op">=</span> <span class="fl">500</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">draw_frame</span><span class="op">(</span><span class="fl">2014</span><span class="op">)</span></code></pre></div>
 <pre><code>## Plotting AdjEM in Year: 2014</code></pre>
 <p><img src="intro-to-hoopR_files/figure-html/draw_test-1.png" width="700"></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draw_gif</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span>
 <span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">$</span><span class="va">year</span>, <span class="kw">function</span><span class="op">(</span><span class="va">year</span><span class="op">)</span>
@@ -466,7 +462,7 @@
   <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fu">draw_frame</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">$</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Assembling plots into a GIF"</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">saveGIF</span><span class="op">(</span><span class="fu">draw_gif</span><span class="op">(</span><span class="op">)</span>, interval <span class="op">=</span> <span class="fl">1</span>, movie.name <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"animated_{metric}.gif"</span><span class="op">)</span>,
         ani.width <span class="op">=</span> <span class="fl">960</span>, ani.height <span class="op">=</span> <span class="fl">540</span>, ani.res <span class="op">=</span> <span class="fl">110</span><span class="op">)</span></code></pre></div>
 <pre><code>## Plotting AdjEM in Year: 2010</code></pre>
@@ -497,7 +493,7 @@
 <div class="figure">
 <img src="http://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/site_navigation.png" alt=""><p class="caption">site_navigation</p>
 </div>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">effs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_efficiency.html">kp_efficiency</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">effs</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 353
@@ -522,7 +518,7 @@
 ## $ raw_d_rk               &lt;dbl&gt; 343, 352, 107, 221, 329, 202, 317, 187, 83, 340…
 ## $ ncaa_seed              &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
 ## $ year                   &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020,…</code></pre>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ff</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/kp_fourfactors.html">kp_fourfactors</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">ff</span><span class="op">)</span></code></pre></div>
 <pre><code>## Rows: 353
@@ -553,7 +549,7 @@
 ## $ def_ft_rate_rk  &lt;dbl&gt; 7, 149, 13, 42, 49, 109, 65, 12, 145, 100, 140, 91, 10…
 ## $ ncaa_seed       &lt;dbl&gt; 1, 1, 2, 8, 6, 4, 5, 1, 3, 3, 2, 4, 5, 9, 2, 8, 1, 3, …
 ## $ year            &lt;dbl&gt; 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020, …</code></pre>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hgts</span> <span class="op">&lt;-</span>  <span class="fu"><a href="../reference/kp_height.html">kp_height</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 
 <span class="fu">glimpse</span><span class="op">(</span><span class="va">hgts</span><span class="op">)</span></code></pre></div>
@@ -587,7 +583,7 @@
 <h4 class="hasAnchor">
 <a href="#all-games-player-stats" class="anchor"></a><strong>All Games Player stats</strong>
 </h4>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">plyrstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_player_stats.html">kp_team_player_stats</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span>
 
 
@@ -598,7 +594,7 @@
 <h4 class="hasAnchor">
 <a href="#conference-only-player-stats" class="anchor"></a><strong>Conference only Player stats</strong>
 </h4>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glimpse</span><span class="op">(</span><span class="va">plyrstats</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 <pre><code>##  num [1:24] 3 23 4 1 24 2 0 15 5 31 ...</code></pre>
 </div>
