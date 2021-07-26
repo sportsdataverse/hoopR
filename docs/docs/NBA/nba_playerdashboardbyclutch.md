@@ -1,5 +1,4 @@
-# PlayerDashboardByClutch
-##### [nba_api/stats/endpoints/playerdashboardbyclutch.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/playerdashboardbyclutch.py)
+# nba_playerdashboardbyclutch
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/playerdashboardbyclutch](https://stats.nba.com/stats/playerdashboardbyclutch)

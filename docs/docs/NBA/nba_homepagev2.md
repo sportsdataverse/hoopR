@@ -1,5 +1,4 @@
-# HomePageV2
-##### [nba_api/stats/endpoints/homepagev2.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/homepagev2.py)
+# nba_homepagev2
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/homepagev2](https://stats.nba.com/stats/homepagev2)

@@ -1,5 +1,4 @@
-# Scoreboard
-##### [nba_api/stats/endpoints/scoreboard.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/scoreboard.py)
+# nba_scoreboard
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/scoreboard](https://stats.nba.com/stats/scoreboard)
@@ -10,9 +9,9 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**DayOffset**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#DayOffset) | day_offset | `^-{0,1}\d+$` | `Y` |  | 
-[_**GameDate**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#GameDate) | game_date |  | `Y` |  | 
-[_**LeagueID**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
+[_**DayOffset**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#DayOffset) | day_offset | `^-{0,1}\d+$` | `Y` |  | 
+[_**GameDate**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#GameDate) | game_date |  | `Y` |  | 
+[_**LeagueID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LeagueID) | league_id | `^\d{2}$` | `Y` |  | 
 
 ## Data Sets
 #### Available `available`

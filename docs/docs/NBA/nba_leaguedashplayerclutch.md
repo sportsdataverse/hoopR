@@ -1,5 +1,4 @@
-# LeagueDashPlayerClutch
-##### [nba_api/stats/endpoints/leaguedashplayerclutch.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguedashplayerclutch.py)
+# nba_leaguedashplayerclutch
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguedashplayerclutch](https://stats.nba.com/stats/leaguedashplayerclutch)
@@ -10,9 +9,9 @@
 ## Parameters
 API Parameter Name | Parameter | Pattern | Required | Nullable
 ------------ | ------------ | :-----------: | :---: | :---:
-[_**AheadBehind**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#AheadBehind) | ahead_behind | `^((Ahead or Behind)\|(Behind or Tied)\|(Ahead or Tied))?$` | `Y` |  | 
-[_**ClutchTime**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#ClutchTime) | clutch_time | `^((Last 5 Minutes)\|(Last 4 Minutes)\|(Last 3 Minutes)\|(Last 2 Minutes)\|(Last 1 Minute)\|(Last 30 Seconds)\|(Last 10 Seconds))?$` | `Y` |  | 
-[_**LastNGames**_](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/library/parameters.md#LastNGames) | last_n_games |  | `Y` |  | 
+[_**AheadBehind**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#AheadBehind) | ahead_behind | `^((Ahead or Behind)\|(Behind or Tied)\|(Ahead or Tied))?$` | `Y` |  | 
+[_**ClutchTime**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#ClutchTime) | clutch_time | `^((Last 5 Minutes)\|(Last 4 Minutes)\|(Last 3 Minutes)\|(Last 2 Minutes)\|(Last 1 Minute)\|(Last 30 Seconds)\|(Last 10 Seconds))?$` | `Y` |  | 
+[_**LastNGames**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#LastNGames) | last_n_games |  | `Y` |  | 
 [_**MeasureType**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#MeasureType) | measure_type_detailed_defense | `^(Base)\|(Advanced)\|(Misc)\|(Four Factors)\|(Scoring)\|(Opponent)\|(Usage)\|(Defense)$` | `Y` |  | 
 [_**Month**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#Month) | month |  | `Y` |  | 
 [_**OpponentTeamID**_](https://hoopR.sportsdataverse.org/docs/NBA/parameters#OpponentTeamID) | opponent_team_id |  | `Y` |  | 

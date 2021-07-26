@@ -1,5 +1,4 @@
-# PlayerCompare
-##### [nba_api/stats/endpoints/playercompare.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/playercompare.py)
+# nba_playercompare
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/playercompare](https://stats.nba.com/stats/playercompare)

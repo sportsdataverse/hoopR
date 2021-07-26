@@ -1,5 +1,4 @@
-# LeagueSeasonMatchups
-##### [nba_api/stats/endpoints/leagueseasonmatchups.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leagueseasonmatchups.py)
+# nba_leagueseasonmatchups
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leagueseasonmatchups](https://stats.nba.com/stats/leagueseasonmatchups)

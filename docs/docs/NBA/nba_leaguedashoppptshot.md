@@ -1,5 +1,4 @@
-# LeagueDashOppPtShot
-##### [nba_api/stats/endpoints/leaguedashoppptshot.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguedashoppptshot.py)
+# nba_leaguedashoppptshot
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguedashoppptshot](https://stats.nba.com/stats/leaguedashoppptshot)

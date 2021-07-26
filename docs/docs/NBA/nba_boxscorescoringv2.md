@@ -1,5 +1,4 @@
-# BoxScoreScoringV2
-##### [nba_api/stats/endpoints/boxscorescoringv2.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/boxscorescoringv2.py)
+# nba_boxscorescoringv2
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/boxscorescoringv2](https://stats.nba.com/stats/boxscorescoringv2)

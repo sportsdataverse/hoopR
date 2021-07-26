@@ -1,5 +1,4 @@
-# LeagueDashPlayerShotLocations
-##### [nba_api/stats/endpoints/leaguedashplayershotlocations.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguedashplayershotlocations.py)
+# nba_leaguedashplayershotlocations
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguedashplayershotlocations](https://stats.nba.com/stats/leaguedashplayershotlocations)

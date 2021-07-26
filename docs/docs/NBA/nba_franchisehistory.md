@@ -1,5 +1,4 @@
-# FranchiseHistory
-##### [nba_api/stats/endpoints/franchisehistory.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/franchisehistory.py)
+# nba_franchisehistory
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/franchisehistory](https://stats.nba.com/stats/franchisehistory)

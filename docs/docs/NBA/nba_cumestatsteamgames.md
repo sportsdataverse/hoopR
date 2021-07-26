@@ -1,5 +1,4 @@
-# CumeStatsTeamGames
-##### [nba_api/stats/endpoints/cumestatsteamgames.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/cumestatsteamgames.py)
+# nba_cumestatsteamgames
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/cumestatsteamgames](https://stats.nba.com/stats/cumestatsteamgames)

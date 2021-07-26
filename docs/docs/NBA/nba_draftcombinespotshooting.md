@@ -1,5 +1,4 @@
-# DraftCombineSpotShooting
-##### [nba_api/stats/endpoints/draftcombinespotshooting.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/draftcombinespotshooting.py)
+# nba_draftcombinespotshooting
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/draftcombinespotshooting](https://stats.nba.com/stats/draftcombinespotshooting)

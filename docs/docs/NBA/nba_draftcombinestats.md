@@ -1,5 +1,4 @@
-# DraftCombineStats
-##### [nba_api/stats/endpoints/draftcombinestats.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/draftcombinestats.py)
+# nba_draftcombinestats
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/draftcombinestats](https://stats.nba.com/stats/draftcombinestats)

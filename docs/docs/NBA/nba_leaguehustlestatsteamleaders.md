@@ -1,5 +1,4 @@
-# LeagueHustleStatsTeamLeaders
-##### [nba_api/stats/endpoints/leaguehustlestatsteamleaders.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/leaguehustlestatsteamleaders.py)
+# nba_leaguehustlestatsteamleaders
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/leaguehustlestatsteamleaders](https://stats.nba.com/stats/leaguehustlestatsteamleaders)

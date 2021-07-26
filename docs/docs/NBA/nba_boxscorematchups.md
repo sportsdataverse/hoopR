@@ -1,5 +1,4 @@
-# BoxScoreMatchups
-##### [nba_api/stats/endpoints/boxscorematchups.py](https://github.com/swar/nba_api/blob/master/nba_api/stats/endpoints/boxscorematchups.py)
+# nba_boxscorematchups
 
 ##### Endpoint URL
 >[https://stats.nba.com/stats/boxscorematchups](https://stats.nba.com/stats/boxscorematchups)
