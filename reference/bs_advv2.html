@@ -281,18 +281,18 @@ Get NBA Stats API Boxscore Advanced V2" />
     <pre class="examples"><div class='input'><span class='fu'>nba_boxscoreadvancedv2</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>21601112</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; $PlayerStats
 #&gt; <span style='color: #949494;'># A tibble: 26 × 32</span>
-#&gt;    GAME_ID  TEAM_ID  TEAM_ABBREVIATION TEAM_CITY PLAYER_ID PLAYER_NAME  NICKNAME
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
-#&gt; <span style='color: #BCBCBC;'> 1</span> 0021601… 1610612… OKC               Oklahoma… 203460    Andre Rober… Andre   
-#&gt; <span style='color: #BCBCBC;'> 2</span> 0021601… 1610612… OKC               Oklahoma… 201959    Taj Gibson   Taj     
-#&gt; <span style='color: #BCBCBC;'> 3</span> 0021601… 1610612… OKC               Oklahoma… 203500    Steven Adams Steven  
-#&gt; <span style='color: #BCBCBC;'> 4</span> 0021601… 1610612… OKC               Oklahoma… 203506    Victor Olad… Victor  
-#&gt; <span style='color: #BCBCBC;'> 5</span> 0021601… 1610612… OKC               Oklahoma… 201566    Russell Wes… Russell 
-#&gt; <span style='color: #BCBCBC;'> 6</span> 0021601… 1610612… OKC               Oklahoma… 203518    Alex Abrines Alex    
-#&gt; <span style='color: #BCBCBC;'> 7</span> 0021601… 1610612… OKC               Oklahoma… 1627734   Domantas Sa… Domantas
-#&gt; <span style='color: #BCBCBC;'> 8</span> 0021601… 1610612… OKC               Oklahoma… 203902    Semaj Chris… Semaj   
-#&gt; <span style='color: #BCBCBC;'> 9</span> 0021601… 1610612… OKC               Oklahoma… 202683    Enes Kanter  Enes    
-#&gt; <span style='color: #BCBCBC;'>10</span> 0021601… 1610612… OKC               Oklahoma… 203926    Doug McDerm… Doug    
+#&gt;    GAME_ID    TEAM_ID  TEAM_ABBREVIATI… TEAM_CITY PLAYER_ID PLAYER_NAME NICKNAME
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
+#&gt; <span style='color: #BCBCBC;'> 1</span> 0021601112 1610612… OKC              Oklahoma… 203460    Andre Robe… Andre   
+#&gt; <span style='color: #BCBCBC;'> 2</span> 0021601112 1610612… OKC              Oklahoma… 201959    Taj Gibson  Taj     
+#&gt; <span style='color: #BCBCBC;'> 3</span> 0021601112 1610612… OKC              Oklahoma… 203500    Steven Ada… Steven  
+#&gt; <span style='color: #BCBCBC;'> 4</span> 0021601112 1610612… OKC              Oklahoma… 203506    Victor Ola… Victor  
+#&gt; <span style='color: #BCBCBC;'> 5</span> 0021601112 1610612… OKC              Oklahoma… 201566    Russell We… Russell 
+#&gt; <span style='color: #BCBCBC;'> 6</span> 0021601112 1610612… OKC              Oklahoma… 203518    Alex Abrin… Alex    
+#&gt; <span style='color: #BCBCBC;'> 7</span> 0021601112 1610612… OKC              Oklahoma… 1627734   Domantas S… Domantas
+#&gt; <span style='color: #BCBCBC;'> 8</span> 0021601112 1610612… OKC              Oklahoma… 203902    Semaj Chri… Semaj   
+#&gt; <span style='color: #BCBCBC;'> 9</span> 0021601112 1610612… OKC              Oklahoma… 202683    Enes Kanter Enes    
+#&gt; <span style='color: #BCBCBC;'>10</span> 0021601112 1610612… OKC              Oklahoma… 203926    Doug McDer… Doug    
 #&gt; <span style='color: #949494;'># … with 16 more rows, and 25 more variables: START_POSITION &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   COMMENT &lt;chr&gt;, MIN &lt;chr&gt;, E_OFF_RATING &lt;chr&gt;, OFF_RATING &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   E_DEF_RATING &lt;chr&gt;, DEF_RATING &lt;chr&gt;, E_NET_RATING &lt;chr&gt;, NET_RATING &lt;chr&gt;,</span>
@@ -303,10 +303,10 @@ Get NBA Stats API Boxscore Advanced V2" />
 #&gt; 
 #&gt; $TeamStats
 #&gt; <span style='color: #949494;'># A tibble: 2 × 29</span>
-#&gt;   GAME_ID   TEAM_ID   TEAM_NAME TEAM_ABBREVIATION TEAM_CITY   MIN   E_OFF_RATING
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       
-#&gt; <span style='color: #BCBCBC;'>1</span> 00216011… 16106127… Magic     ORL               Orlando     265:… 94.7        
-#&gt; <span style='color: #BCBCBC;'>2</span> 00216011… 16106127… Thunder   OKC               Oklahoma C… 265:… 98.9        
+#&gt;   GAME_ID    TEAM_ID    TEAM_NAME TEAM_ABBREVIATION TEAM_CITY     MIN    E_OFF_RATING
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       
+#&gt; <span style='color: #BCBCBC;'>1</span> 0021601112 1610612753 Magic     ORL               Orlando       265:00 94.7        
+#&gt; <span style='color: #BCBCBC;'>2</span> 0021601112 1610612760 Thunder   OKC               Oklahoma City 265:00 98.9        
 #&gt; <span style='color: #949494;'># … with 22 more variables: OFF_RATING &lt;chr&gt;, E_DEF_RATING &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   DEF_RATING &lt;chr&gt;, E_NET_RATING &lt;chr&gt;, NET_RATING &lt;chr&gt;, AST_PCT &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   AST_TOV &lt;chr&gt;, AST_RATIO &lt;chr&gt;, OREB_PCT &lt;chr&gt;, DREB_PCT &lt;chr&gt;,</span>
