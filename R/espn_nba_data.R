@@ -467,34 +467,37 @@ espn_nba_teams <- function(){
                       -.data$logos_alt, -.data$logos_rel) %>%
         dplyr::ungroup()
 
-      records <- leagues$record
-      records<- records %>% tidyr::unnest_wider(.data$items) %>%
-        tidyr::unnest_wider(.data$stats,names_sep = "_") %>%
-        dplyr::mutate(row = dplyr::row_number())
-      stat <- records %>%
-        dplyr::group_by(.data$row) %>%
-        purrr::map_if(is.data.frame, list)
-      stat <- lapply(stat$stats_1,function(x) x %>%
-                       purrr::map_if(is.data.frame,list) %>%
-                       dplyr::as_tibble() )
+      if("records" %in% colnames(leagues)){
+        records <- leagues$record
+        records<- records %>% tidyr::unnest_wider(.data$items) %>%
+          tidyr::unnest_wider(.data$stats,names_sep = "_") %>%
+          dplyr::mutate(row = dplyr::row_number())
+        stat <- records %>%
+          dplyr::group_by(.data$row) %>%
+          purrr::map_if(is.data.frame, list)
+        stat <- lapply(stat$stats_1,function(x) x %>%
+                         purrr::map_if(is.data.frame,list) %>%
+                         dplyr::as_tibble())
 
-      s <- lapply(stat, function(x) {
-        tidyr::pivot_wider(x)
-      })
+        s <- lapply(stat, function(x) {
+          tidyr::pivot_wider(x)
+        })
 
-      s <- tibble::tibble(g = s)
-      stats <- s %>% unnest_wider(.data$g)
+        s <- tibble::tibble(g = s)
+        stats <- s %>% unnest_wider(.data$g)
 
-      records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
-      teams <- dplyr::bind_cols(leagues, records)
-      records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
+        records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
+        leagues <- leagues %>% dplyr::select(
+          -.data$record
+        )
+      }
       leagues <- leagues %>% dplyr::select(
-        -.data$record,
         -.data$links,
         -.data$isActive,
         -.data$isAllStar,
         -.data$uid,
-        -.data$slug)
+        -.data$slug,
+        -.data$record)
       teams <- leagues %>%
         dplyr::rename(
           logo = .data$logos_href_1,
