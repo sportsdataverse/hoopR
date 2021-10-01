@@ -111,6 +111,34 @@ module.exports = {
               href: 'https://jacklich10.github.io/gamezoneR/',
               target: '_self',
             },
+            {
+              label: 'cfbplotR',
+              href: 'https://kazink36.github.io/cfbplotR/',
+              target: '_self',
+            },
+            {
+              label: 'worldfootballR',
+              href: 'https://jaseziv.github.io/worldfootballR/',
+              target: '_self',
+            },
+            {
+              label: 'hockeyR',
+              href: 'https://hockeyr.netlify.app/',
+              target: '_self',
+            },
+            {
+              label: 'Node.js Packages',
+            },
+            {
+              label: 'sportsdataverse.js',
+              href: 'https://saiemgilani.github.io/sportsdataverse/',
+              target: '_self',
+            },
+            {
+              label: 'nfl-nerd',
+              href: 'https://github.com/nntrn/nfl-nerd/',
+              target: '_self',
+            },
           ]
         },
         {
