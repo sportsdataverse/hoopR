@@ -67,7 +67,7 @@ Let's first just try to get our hands on the Pomeroy ratings for the last 10 yea
 -   `max_year` - Last year of data to pull
 
 ```{r kp_ratings, message = FALSE}
-rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2020)
+rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2021)
 ```
 
 ```{r kp_ratings_glimpse}
@@ -137,7 +137,7 @@ plot_data <- plot_data %>%
   mutate(logo_1 = "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
          logo_2 = "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35") %>% arrange(year)
 # points for plotting
-x_max <- 2020
+x_max <- 2021
 x_lab_min <- 2010 - 3
 x_lab_max <- x_max + 2
 x_score <- 2 + x_max
@@ -166,16 +166,16 @@ draw_frame <- function(year)
     ggplot(aes(x = year, y = metric, group=team))+
     theme_minimal()+
     geom_vline(xintercept = c(2010, x_max), color = "#5555AA")+
-    geom_segment(x = 2010, xend = 2020, y = 0, yend = 0, size = 0.75)+
+    geom_segment(x = 2010, xend = 2021, y = 0, yend = 0, size = 0.75)+
     geom_image(x = x_score-1, y = 24, image = frm_data$logo_1, size = 0.09, asp = 1.5)+
     geom_image(x = x_score-1, y = 2, image = frm_data$logo_2, size = 0.12, asp = 1.5)+
     geom_image(aes(x = year, y = metric_1, image = logo_1),  size = .03, asp = 1.5)+
     geom_image(aes(x = year, y = metric_2, image = logo_2),  size = .06, asp = 1.5)+
-    annotation_custom(grob = rast, xmin=2017, xmax=2020, ymin=-2, ymax=-20)+
+    annotation_custom(grob = rast, xmin=2017, xmax=2021, ymin=-2, ymax=-20)+
     geom_line(aes(x = year, y = metric_1, color = Color1), size = 1)+
     geom_line(aes(x = year, y = metric_2, color = Color2), size = 1)+
     scale_color_manual(values = c(Color1, Color2))+
-    scale_x_continuous(breaks = seq(2010, 2020, 1),
+    scale_x_continuous(breaks = seq(2010, 2021, 1),
                        minor_breaks = NULL,
                        limits = c(2009.5, x_max + 2)) +
     scale_y_continuous(breaks = seq(-20, 35, 5),
@@ -195,7 +195,7 @@ draw_frame <- function(year)
           plot.subtitle = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22"),
           plot.caption = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22",hjust=0.5),
           panel.background = element_rect(fill = "snow"),
-          plot.background = element_rect(fill = "#00AFDC"))
+          plot.background = element_rect(fill = "#DCF2F5"))
   
   # score display 
   metric1 <- tail(frm_data$metric_1, n=1)
@@ -213,7 +213,8 @@ draw_frame <- function(year)
     max(frm_data$year) == 2017 ~ "2017" ,
     max(frm_data$year) == 2018 ~ "2018" ,
     max(frm_data$year) == 2019 ~ "2019" ,
-    max(frm_data$year) == 2020 ~ "2020" ,
+    max(frm_data$year) == 2021 ~ "2020" ,
+    max(frm_data$year) == 2020 ~ "2021" ,
     TRUE ~ as.character(max(frm_data$year))
   )
   
@@ -273,19 +274,19 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ```{r kp_efficiency_ex, message = FALSE}
 
-effs <- kp_efficiency(min_year = 2020, max_year = 2020)
+effs <- kp_efficiency(min_year = 2021, max_year = 2021)
 glimpse(effs)
 ```
 
 ```{r kp_fourfactors_ex, message = FALSE}
 
-ff <-  kp_fourfactors(min_year = 2020, max_year = 2020)
+ff <-  kp_fourfactors(min_year = 2021, max_year = 2021)
 glimpse(ff)
 ```
 
 ```{r kp_hgts, message = FALSE}
 
-hgts <-  kp_height(min_year = 2020, max_year = 2020)
+hgts <-  kp_height(min_year = 2021, max_year = 2021)
 
 glimpse(hgts)
 ```
@@ -293,7 +294,7 @@ glimpse(hgts)
 #### **All Games Player stats**
 
 ```{r kp_plyrstats, message = FALSE}
-plyrstats <- kp_team_player_stats(team = 'Florida St.', year = 2020)
+plyrstats <- kp_team_player_stats(team = 'Florida St.', year = 2021)
 
 
 glimpse(plyrstats[[1]])
