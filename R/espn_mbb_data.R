@@ -535,7 +535,8 @@ espn_mbb_teams <- function(){
         -.data$isAllStar,
         -.data$uid,
         -.data$slug,
-        -.data$record)
+        -.data$record,
+        -.data$logos_lastUpdated)
       teams <- leagues %>%
         dplyr::rename(
           logo = .data$logos_href_1,
