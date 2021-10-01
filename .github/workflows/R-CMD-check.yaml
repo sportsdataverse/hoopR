@@ -10,6 +10,8 @@ on:
   #   branches:
   #     - main
   #     - master
+  schedule:
+    - cron: '30 12 * * Fri'
 
 name: R-CMD-check
 
