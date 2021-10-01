@@ -103,6 +103,8 @@ navbar:
       - text: Node.js Packages
       - text: sportsdataverse.js
         href: https://saiemgilani.github.io/sportsdataverse/
+      - text: nfl-nerd
+        href: https://github.com/nntrn/nfl-nerd/
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/saiemgilani/hoopR/
