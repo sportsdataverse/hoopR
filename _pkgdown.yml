@@ -109,7 +109,7 @@ navbar:
       icon: "fab fa-github fa-lg"
       href: https://github.com/saiemgilani/hoopR/
     repo:
-      url:
+      url: https://github.com/saiemgilani/hoopR/
       home: https://github.com/saiemgilani/hoopR/
       source: https://github.com/saiemgilani/hoopR/blob/master/
       issue: https://github.com/saiemgilani/hoopR/issues/issues/

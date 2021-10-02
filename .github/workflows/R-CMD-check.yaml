@@ -6,10 +6,9 @@ on:
       - main
       - master
   workflow_dispatch:
-  # pull_request:
-  #   branches:
-  #     - main
-  #     - master
+  pull_request:
+    branches:
+      - master
   schedule:
     - cron: '30 12 * * Fri'
 
