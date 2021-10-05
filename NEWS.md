@@ -1,3 +1,6 @@
+# **hoopR 1.3.1**
+- Fix [```kp_winprob```](https://saiemgilani.github.io/hoopR/reference/kp_winprob.html) function, adding runs as third output
+
 # **hoopR 1.3.0**
 
 ### **Add Full Coverage for NBA Stats API**
