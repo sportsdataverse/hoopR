@@ -154,136 +154,92 @@ kp_winprob <- function(game_id, year){
           xml2::read_html() %>%
           rvest::html_elements("#content-header") %>%
           rvest::html_elements("script")) %>%
-    rvest::html_text()
+    rvest::html_text2()
 
-  r <-  stringr::str_remove(stringr::str_remove(q, "var dataset="),"\\n")
-  #---- wp_dataset --------
-  PD <- data.frame(pd = t(stringr::str_extract_all(r,pattern="\'Pd\':\\d",simplify=TRUE)))
-  WP <- data.frame(wp = t(stringr::str_extract_all(r,pattern="\'WP\':\\d.\\d{0,4}+",simplify=TRUE)))
-  TL <- data.frame(tl = t(stringr::str_extract_all(r,pattern="\'TL\':\\d{0,2}.\\d{0,4}+",simplify=TRUE)))
-  VS <- data.frame(vs = t(stringr::str_extract_all(r,pattern="\'VS\':\\d{0,3}",simplify=TRUE)))
-  HS <- data.frame(hs = t(stringr::str_extract_all(r,pattern="\'HS\':\\d{0,3}",simplify=TRUE)))
-  VSc <- data.frame(vsc = t(stringr::str_extract_all(r,pattern="\'VSc\':\\d{0,1}",simplify=TRUE)))
-  HSc <- data.frame(hsc = t(stringr::str_extract_all(r,pattern="\'HSc\':\\d{0,1}",simplify=TRUE)))
-  P <- data.frame(p = t(stringr::str_extract_all(r,pattern="\'P\':\'(.{0,1})\',",simplify=TRUE)))
-  PN <- data.frame(pn = t(stringr::str_extract_all(r,pattern="\'PN\':\'\\d{0,3}\'",simplify=TRUE)))
-  PD <- PD %>% dplyr::mutate(pd = stringr::str_remove(.data$pd,"'Pd':"))
-  WP <- WP %>% dplyr::mutate(wp = stringr::str_remove(.data$wp,"'WP':"))
-  TL <- TL %>% dplyr::mutate(tl = stringr::str_remove(.data$tl,"'TL':"))
-  VS <- VS %>% dplyr::mutate(vs = stringr::str_remove(.data$vs,"'VS':"))
-  HS <- HS %>% dplyr::mutate(hs = stringr::str_remove(.data$hs,"'HS':"))
-  VSc <- VSc %>% dplyr::mutate(vsc = stringr::str_remove(.data$vsc,"'VSc':"))
-  HSc <- HSc %>% dplyr::mutate(hsc = stringr::str_remove(.data$hsc,"'HSc':"))
-  P <- P %>% dplyr::mutate(p = as.character(stringr::str_remove(stringr::str_remove(.data$p,"'P':'"),"',")))
-  PN <- PN %>% dplyr::mutate(pn = stringr::str_remove(stringr::str_remove(.data$pn,"'PN':'"),"'"))
+  r <-  stringr::str_extract(stringr::str_remove(q[2], "var dataset="),"(.+?)(?=; var runs=)")
+  r <- gsub("'",'"', r)
+  wp_dataset <- purrr::map_dfr(c(r), jsonlite::fromJSON)
 
-  wp_dataset <- data.frame()
-  wp_dataset <- dplyr::bind_cols(PD, WP, TL, VS, HS, VSc, HSc, P, PN)
   wp_dataset$GameId = game_id
   wp_dataset$Year = year
   wp_dataset <- wp_dataset %>%
+    janitor::clean_names() %>%
     dplyr::rename(Period = .data$pd,
                   TimeLeft = .data$tl,
                   VisitorScore = .data$vs,
                   HomeScore = .data$hs,
-                  VisitorScoring = .data$vsc,
-                  HomeScoring = .data$hsc,
+                  VisitorScoring = .data$v_sc,
+                  HomeScoring = .data$h_sc,
                   PossessionTeam = .data$p,
                   PossessionNumber = .data$pn) %>%
     janitor::clean_names()
+  run_str <- stringr::str_extract(stringr::str_remove(q[2], "(.+)var runs="),"(.+?)(?=; var data=)")
+  run_str <- gsub("'",'"', run_str)
+  runs <- purrr::map_dfr(c(run_str), jsonlite::fromJSON)
+  runs <- runs %>%
+    dplyr::rename(
+      visitor = .data$V,
+      home = .data$H,
+      start = .data$Start,
+      end = .data$End
+    )
   #---- game_data --------
-  tm1 <- data.frame(tm1 = t(stringr::str_extract_all(r,pattern="team1:\'(.+)\'",simplify=TRUE)))
-  tm2 <- data.frame(tm2 = t(stringr::str_extract_all(r,pattern="team2:\'(.+)\'",simplify=TRUE)))
-  sc1 <- data.frame(sc1 = t(stringr::str_extract_all(r,pattern="score1:\\d{0,3}",simplify=TRUE)))
-  sc2 <- data.frame(sc2 = t(stringr::str_extract_all(r,pattern="score2:\\d{0,3}",simplify=TRUE)))
-  rk1 <- data.frame(rk1 = t(stringr::str_extract_all(r,pattern="rank1:\'(.+)\'",simplify=TRUE)))
-  rk2 <- data.frame(rk2 = t(stringr::str_extract_all(r,pattern="rank2:\'(.+)\'",simplify=TRUE)))
-  vn <- data.frame(vn = t(stringr::str_extract_all(r,pattern="venue:\'(.+)\'",simplify=TRUE)))
-  cty <- data.frame(cty = t(stringr::str_extract_all(r,pattern="city:\'(.+)\'",simplify=TRUE)))
-  gmtm <- data.frame(gmtm = t(stringr::str_extract_all(r,pattern="gameTime:\'(.+)\'", simplify=TRUE)))
-  domin <- data.frame(domin = t(stringr::str_extract_all(r,pattern="dominance:\'(.+)\'", simplify=TRUE)))
-  tns <- data.frame(tns = t(stringr::str_extract_all(r,pattern="tension:\'(.+)\'", simplify=TRUE)))
-  exct <- data.frame(exct = t(stringr::str_extract_all(r,pattern="excitement:\'(.+)\'", simplify=TRUE)))
-  favchg <- data.frame(favchg = t(stringr::str_extract_all(r,pattern="favchg:\'(.+)\'", simplify=TRUE)))
-  minwp <- data.frame(minwp = t(stringr::str_extract_all(r,pattern="minWP:\'(.+)\'", simplify=TRUE)))
-  rank_domin <- data.frame(rank_domin = t(stringr::str_extract_all(r,pattern="rank_dominance:\'(.+)\'", simplify=TRUE)[,1]))
-  rank_tns <- data.frame(rank_tns = t(stringr::str_extract_all(r,pattern="rank_tension:\'(.+)\'", simplify=TRUE)[,1]))
-  rank_exct <- data.frame(rank_exct = t(stringr::str_extract_all(r,pattern="rank_excitement:\'(.+)\'", simplify=TRUE)[,1]))
-  rank_favchg <- data.frame(rank_favchg = t(stringr::str_extract_all(r,pattern="rank_favchg:\'(.+)\'", simplify=TRUE)[,1]))
-  rank_minwp <- data.frame(rank_minwp = t(stringr::str_extract_all(r,pattern="rank_minWP:\'(.+)\'", simplify=TRUE)[,1]))
-  srank_domin <- data.frame(srank_domin = t(stringr::str_extract_all(r,pattern="srank_dominance:\'(.+)\'", simplify=TRUE)))
-  srank_tns <- data.frame(srank_tns = t(stringr::str_extract_all(r,pattern="srank_tension:\'(.+)\'", simplify=TRUE)))
-  srank_exct <- data.frame(srank_exct = t(stringr::str_extract_all(r,pattern="srank_excitement:\'(.+)\'", simplify=TRUE)))
-  srank_favchg <- data.frame(srank_favchg = t(stringr::str_extract_all(r,pattern="srank_favchg:\'(.+)\'", simplify=TRUE)))
-  srank_minwp <- data.frame(srank_minwp = t(stringr::str_extract_all(r,pattern="srank_minWP:\'(.+)\'", simplify=TRUE)))
-  gid <- data.frame(gid = t(stringr::str_extract_all(r,pattern="gid:\'(.+)\'", simplify=TRUE)))
-  yr <- data.frame(yr = t(stringr::str_extract_all(r,pattern="year:\\d{0,4}",simplify=TRUE)))
-  dateofgame <- data.frame(dateofgame = t(stringr::str_extract_all(r,pattern="dateOfGame:\'(.+)\'", simplify=TRUE)))
-  ymd <- data.frame(ymd = t(stringr::str_extract_all(r,pattern="ymd:\'(.+)\'", simplify=TRUE)))
-
-  tm1 <- tm1 %>% dplyr::mutate(tm1 = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$tm1,"team1:'"),","),"'"))
-  tm2 <- tm2 %>% dplyr::mutate(tm2 = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$tm2,"team2:'"),","),"'"))
-  sc1 <- sc1 %>% dplyr::mutate(sc1 = stringr::str_remove(stringr::str_remove(.data$sc1,"score1:"),","))
-  sc2 <- sc2 %>% dplyr::mutate(sc2 = stringr::str_remove(stringr::str_remove(.data$sc2,"score2:"),","))
-  rk1 <- rk1 %>% dplyr::mutate(rk1 = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rk1,"rank1:'"),","),"'"))
-  rk2 <- rk2 %>% dplyr::mutate(rk2 = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rk2,"rank2:'"),","),"'"))
-  vn <- vn %>% dplyr::mutate(vn = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$vn,"venue:'"),","),"'"))
-  cty <- cty %>% dplyr::mutate(cty = stringr::str_remove(.data$cty,"city:'"),
-                               cty = substr(.data$cty,1,nchar(.data$cty)-1))
-  gmtm <- gmtm %>% dplyr::mutate(gmtm = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$gmtm,"gameTime:'"),","),"'"))
-  domin <- domin %>% dplyr::mutate(domin = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$domin,"dominance:'"),","),"'"))
-  tns <- tns %>% dplyr::mutate(tns = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$tns,"tension:'"),","),"'"))
-  exct <- exct %>% dplyr::mutate(exct = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$exct,"excitement:'"),","),"'"))
-  favchg <- favchg %>% dplyr::mutate(favchg = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$favchg,"favchg:'"),","),"'"))
-  minwp <- minwp %>% dplyr::mutate(minwp = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$minwp,"minWP:'"),","),"'"))
-  rank_domin <- rank_domin %>% dplyr::mutate(rank_domin = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rank_domin,"rank_dominance:'"),","),"'"))
-  rank_tns <- rank_tns %>% dplyr::mutate(rank_tns = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rank_tns,"rank_tension:'"),","),"'"))
-  rank_exct <- rank_exct %>% dplyr::mutate(rank_exct = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rank_exct,"rank_excitement:'"),","),"'"))
-  rank_favchg <- rank_favchg %>% dplyr::mutate(rank_favchg = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rank_favchg,"rank_favchg:'"),","),"'"))
-  rank_minwp <- rank_minwp %>% dplyr::mutate(rank_minwp = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$rank_minwp,"rank_minWP:'"),","),"'"))
-  srank_domin <- srank_domin %>% dplyr::mutate(srank_domin = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$srank_domin,"srank_dominance:'"),","),"'"))
-  srank_tns <- srank_tns %>% dplyr::mutate(srank_tns = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$srank_tns,"srank_tension:'"),","),"'"))
-  srank_exct <- srank_exct %>% dplyr::mutate(srank_exct = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$srank_exct,"srank_excitement:'"),","),"'"))
-  srank_favchg <- srank_favchg %>% dplyr::mutate(srank_favchg = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$srank_favchg,"srank_favchg:'"),","),"'"))
-  srank_minwp <- srank_minwp %>% dplyr::mutate(srank_minwp = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$srank_minwp,"srank_minWP:'"),","),"'"))
-  gid <- gid %>% dplyr::mutate(gid = stringr::str_remove(stringr::str_remove(stringr::str_remove(.data$gid,"gid:'"),","),"'"))
-  yr <- yr %>% dplyr::mutate(yr = stringr::str_remove(stringr::str_remove(.data$yr,"year:"),","))
-  dateofgame <- dateofgame %>% dplyr::mutate(dateofgame = stringr::str_remove(stringr::str_remove(.data$dateofgame,"dateOfGame:'"),"'"))
-  ymd <- ymd %>% dplyr::mutate(ymd = stringr::str_remove(stringr::str_remove(.data$ymd,"ymd:'"),"'"))
-
-
-
-  game_data <- data.frame()
-  game_data <- dplyr::bind_cols(gid, yr, dateofgame, ymd, gmtm, vn, cty, tm1,sc1, rk1, tm2, sc2, rk2,
-                                srank_domin, srank_tns, srank_exct, srank_favchg, srank_minwp,
-                                rank_domin, rank_tns, rank_exct, rank_favchg, rank_minwp)
-
+  game_data_str <- stringr::str_remove(stringr::str_remove(q[2], "(.+)var data="),"makeWP\\(data\\);")
+  vn <- data.frame(vn = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="venue:\'(.+)\', city:"),pattern=", city:"),pattern="venue:"))))
+  cty <- data.frame(cty = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern="city:\'(.+)\', gameTime:"),pattern=", gameTime:"),pattern="city:"))))
+  gmtm <- data.frame(gmtm = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="gameTime:\'(.+)\', dominance:"),pattern=", dominance:"),pattern="gameTime:"))))
+  dateofgame <- data.frame(dateofgame = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="dateOfGame:\'(.+)\', ymd:"),pattern=", ymd:"),pattern="dateOfGame:"))))
+  game_data_str <- stringr::str_remove(game_data_str,pattern="venue:\'(.+)\',(?= city:)")
+  game_data_str <- stringr::str_remove(game_data_str,pattern="city:\'(.+)\',(?= gameTime:)")
+  game_data_str <- stringr::str_remove(game_data_str,pattern="gameTime:\'(.+)\',(?= dominance:)")
+  game_data_str <- stringr::str_remove(game_data_str,pattern="dateOfGame:\'(.+)\',(?= ymd:)")
+  game_data_str <- stringr::str_remove(game_data_str,pattern=", input:(.+)(?=\\})")
+  game_data_str <- gsub("\\{ ",'\\{ "', game_data_str)
+  game_data_str <- gsub(", ",', "', game_data_str)
+  game_data_str <- gsub(":",'":', game_data_str)
+  game_data_str <- gsub("'",'"', game_data_str)
+  game_data_str <- glue::glue('[{game_data_str}]')
+  game_data <- purrr::map_dfr(c(game_data_str), jsonlite::fromJSON)
+  game_data <- dplyr::bind_cols(game_data, vn, cty, gmtm, dateofgame)
+  colnames(game_data) <- gsub(' ','',colnames(game_data))
   game_data <- game_data %>%
     dplyr::rename(GameId = .data$gid,
-                  Year = .data$yr,
                   Full.Date = .data$dateofgame,
                   Date = .data$ymd,
                   GameTime = .data$gmtm,
                   Venue = .data$vn,
                   City = .data$cty,
-                  Team1.Rk = .data$rk1,
-                  Team1 = .data$tm1,
-                  Team1Score = .data$sc1,
-                  Team2.Rk = .data$rk2,
-                  Team2 = .data$tm2,
-                  Team2Score = .data$sc2,
-                  Dominance.Season.Rk = .data$srank_domin,
-                  Tension.Season.Rk = .data$srank_tns,
-                  Excitement.Season.Rk = .data$srank_exct,
+                  Team1.Rk = .data$rank1,
+                  Team1 = .data$team1,
+                  Team1Score = .data$score1,
+                  Team2.Rk = .data$rank2,
+                  Team2 = .data$team2,
+                  Team2Score = .data$score2,
+                  Dominance.Season.Rk = .data$srank_dominance,
+                  Tension.Season.Rk = .data$srank_tension,
+                  Excitement.Season.Rk = .data$srank_excitement,
                   LeadChanges.Season.Rk  = .data$srank_favchg,
-                  MinimumWP.Season.Rk = .data$srank_minwp,
-                  Dominance.Rk = .data$rank_domin,
-                  Tension.Rk = .data$rank_tns,
-                  Excitement.Rk = .data$rank_exct,
+                  MinimumWP.Season.Rk = .data$srank_minWP,
+                  Dominance.Rk = .data$rank_dominance,
+                  Tension.Rk = .data$rank_tension,
+                  Excitement.Rk = .data$rank_excitement,
                   LeadChanges.Rk  = .data$rank_favchg,
-                  MinimumWP.Rk = .data$rank_minwp) %>%
+                  MinimumWP.Rk = .data$rank_minWP) %>%
     janitor::clean_names()
-  kenpom <- list(wp_dataset, game_data)
+  game_data <- game_data %>% dplyr::select(
+    c(
+    'game_id', 'year', 'full_date', 'date',
+    'game_time', 'venue', 'city',
+    'team1', 'team1score', 'team1_rk',
+    'team2', 'team2score', 'team2_rk',
+    'dominance_season_rk', 'tension_season_rk',
+    'excitement_season_rk',
+    'lead_changes_season_rk',
+    'minimum_wp_season_rk', 'dominance_rk',
+    'tension_rk', 'excitement_rk',
+    'lead_changes_rk', 'minimum_wp_rk'),dplyr::everything()
+  )
+  kenpom <- list(wp_dataset, game_data, runs)
 
   return(kenpom)
 }
