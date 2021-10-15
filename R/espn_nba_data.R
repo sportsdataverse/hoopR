@@ -748,3 +748,76 @@ espn_nba_standings <- function(year){
   )
   return(standings)
 }
+
+
+#' Get ESPN NBA's Betting information
+#'
+#' @param game_id  Game ID
+#' @keywords NBA Betting
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr select rename
+#' @export
+#' @examples
+#' \dontrun{
+#' espn_nba_betting(game_id = 401256760)
+#' }
+espn_nba_betting <- function(game_id){
+
+  summary_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?"
+
+  ## Inputs
+  ## year
+  full_url <- paste0(summary_url,
+                     "event=", game_id)
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+  pickcenter <- data.frame()
+  againstTheSpread <- data.frame()
+  predictor_df <- data.frame()
+  tryCatch(
+    expr = {
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      raw_summary <- jsonlite::fromJSON(resp)
+      if("pickcenter" %in% names(raw_summary)){
+        pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
+          janitor::clean_names() %>%
+          dplyr::select(-.data$links)
+      }
+      if("againstTheSpread" %in% names(raw_summary)){
+        againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
+          janitor::clean_names()
+        teams <- againstTheSpread$team %>%
+          dplyr::select(-.data$links) %>%
+          janitor::clean_names()
+        records <- againstTheSpread$records
+
+        teams$records <- records
+        againstTheSpread <- teams
+      }
+      if("predictor" %in% names(raw_summary)){
+        predictor_df <- data.frame(
+          home_team_id =  raw_summary$predictor$homeTeam$id,
+          away_team_id =  raw_summary$predictor$awayTeam$id,
+          away_team_game_projection = raw_summary$predictor$awayTeam$gameProjection,
+          away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
+        )
+      }
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no betting data available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+
+  )
+  betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
+  return(betting)
+}
