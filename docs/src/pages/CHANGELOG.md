@@ -1,3 +1,12 @@
+# **hoopR 1.4.0**
+- [`hoopR::espn_mbb_betting()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_betting.html)
+    function added
+- [`hoopR::espn_nba_betting()`](https://saiemgilani.github.io/hoopR/reference/espn_nba_betting.html)
+    function added
+
+# **hoopR 1.3.1**
+- Fix [```kp_winprob```](https://saiemgilani.github.io/hoopR/reference/kp_winprob.html) function, adding runs as third output
+
 # **hoopR 1.3.0**
 
 ### **Add Full Coverage for NBA Stats API**
