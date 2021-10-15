@@ -66,9 +66,7 @@ nba_single_season <- function(season, p, dbConnection = NULL, tablename = NULL, 
   }
   if (isFALSE(qs)) {
     .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/pbp/rds/play_by_play_{season}.rds")
-    con <- url(.url)
-    pbp <- readRDS(con)
-    close(con)
+    pbp <- rds_from_url(.url)
   }
   if (!is.null(dbConnection) && !is.null(tablename)) {
     DBI::dbWriteTable(dbConnection, tablename, pbp, append = TRUE)
@@ -147,9 +145,7 @@ nba_team_box_single_season <- function(season, p, dbConnection = NULL, tablename
   }
   if (isFALSE(qs)) {
     .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/team_box/rds/team_box_{season}.rds")
-    con <- url(.url)
-    pbp <- readRDS(con)
-    close(con)
+    pbp <- rds_from_url(.url)
   }
   if (!is.null(dbConnection) && !is.null(tablename)) {
     DBI::dbWriteTable(dbConnection, tablename, pbp, append = TRUE)
@@ -229,9 +225,7 @@ nba_player_box_single_season <- function(season, p, dbConnection = NULL, tablena
   }
   if (isFALSE(qs)) {
     .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/player_box/rds/player_box_{season}.rds")
-    con <- url(.url)
-    pbp <- readRDS(con)
-    close(con)
+    pbp <- rds_from_url(.url)
   }
   if (!is.null(dbConnection) && !is.null(tablename)) {
     DBI::dbWriteTable(dbConnection, tablename, pbp, append = TRUE)
@@ -306,8 +300,7 @@ nba_schedule_single_season <- function(season, p, dbConnection = NULL, tablename
 
 
   .url <- glue::glue("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/schedules/nba_schedule_{season}.csv")
-  con <- url(.url)
-  pbp <- utils::read.csv(con)
+  pbp <- csv_from_url(.url)
   pbp <- pbp %>%
     dplyr::mutate(
       status.displayClock = as.character(.data$status.displayClock)
@@ -326,9 +319,7 @@ nba_schedule_single_season <- function(season, p, dbConnection = NULL, tablename
 # load games file
 load_nba_games <- function(){
   .url <- "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/nba_games_in_data_repo.csv"
-  con <- url(.url)
-  dat <- utils::read.csv(con)
-  # close(con)
+  dat <- csv_from_url(.url)
   return (dat)
 }
 

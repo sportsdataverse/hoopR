@@ -73,9 +73,72 @@ kp_password <- function() {
 #' @export
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
 
-# read qs files form an url
-qs_from_url <- function(url) qs::qdeserialize(curl::curl_fetch_memory(url)$content)
+#' Load .qs file from a remote connection
+#'
+#' @param url a character url
+#'
+#' @return a dataframe as parsed by [`qs::qdeserialize()`]
+#'
+#' @examples
+#' \donttest{
+#' qs_from_url(
+#' "https://github.com/nflverse/nflfastR-data/raw/master/data/play_by_play_2020.qs"
+#' )
+#' }
+qs_from_url <- function(url){
+  load <- try(curl::curl_fetch_memory(url), silent = TRUE)
 
+
+  if (inherits(load, "try-error")) {
+    warning(paste0("Failed to retrieve data from <",url,">"), call. = FALSE)
+    return(data.table::data.table())
+  }
+
+  content <- try(qs::qdeserialize(load$content), silent = TRUE)
+
+  if (inherits(content, "try-error")) {
+    warning(paste0("Failed to parse file with qs::qdeserialize() from <",url,">"), call. = FALSE)
+    return(data.table::data.table())
+  }
+
+  data.table::setDT(content)
+  return(content)
+}
+
+#' Load .csv / .csv.gz file from a remote connection
+#' This is a thin wrapper on data.table::fread
+#' @param ... passed to data.table::fread
+#' @inheritDotParams data.table::fread
+#' @return a dataframe as created by [`data.table::fread()`]
+#'
+#' @examples
+#' \donttest{
+#' csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
+#' }
+csv_from_url <- function(...){
+  data.table::fread(...)
+}
+
+#' Load .rds file from a remote connection
+#' @param url a character url
+#' @return a dataframe as created by [`readRDS()`]
+#' @examples
+#' \donttest{
+#' rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")
+#' }
+rds_from_url <- function(url) {
+  con <- url(url)
+  on.exit(close(con))
+  load <- try(readRDS(con), silent = TRUE)
+
+  if (inherits(load, "try-error")) {
+    warning(paste0("Failed to readRDS from <", url, ">"), call. = FALSE)
+    return(data.table::data.table())
+  }
+
+  data.table::setDT(load)
+  load
+}
 # The function `message_completed` to create the green "...completed" message
 # only exists to hide the option `in_builder` in dots
 message_completed <- function(x, in_builder = FALSE) {
