@@ -4,7 +4,7 @@
 \alias{kp_gameplan}
 \title{Get KenPom's team game plan page}
 \usage{
-kp_gameplan(team, year = 2020)
+kp_gameplan(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -16,7 +16,7 @@ Get KenPom's team game plan page
 }
 \examples{
 \dontrun{
-  kp_gameplan(team='Florida St.', year=2020)
+  kp_gameplan(team='Florida St.', year=2021)
 }
 }
 \keyword{Game}

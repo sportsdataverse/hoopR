@@ -119,7 +119,7 @@ progressively <- function(f, p = NULL){
 #' @return a dataframe as parsed by [`qs::qdeserialize()`]
 #' @importFrom data.table data.table setDT
 #' @importFrom qs qdeserialize
-#' @importFrom curl curl_fetch_memory
+#' @import rvest
 #' @export
 #' @examples
 #' \donttest{
@@ -173,7 +173,7 @@ csv_from_url <- function(...){
 #' @return a dataframe as created by [`readRDS()`]
 #' @importFrom data.table data.table setDT
 #' @importFrom qs qdeserialize
-#' @importFrom curl curl_fetch_memory
+#' @import rvest
 #' @examples
 #' \donttest{
 #' hoopR:::rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")

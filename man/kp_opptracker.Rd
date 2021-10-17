@@ -4,7 +4,7 @@
 \alias{kp_opptracker}
 \title{Get KenPom's team opponent tracker page}
 \usage{
-kp_opptracker(team, year = as.integer(format(Sys.Date(), "\%Y")))
+kp_opptracker(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -16,7 +16,7 @@ Get KenPom's team opponent tracker page
 }
 \examples{
 \dontrun{
-  kp_opptracker(team='Florida St.', year=2020)
+  kp_opptracker(team = 'Florida St.', year = 2021)
 }
 }
 \keyword{Opponent}

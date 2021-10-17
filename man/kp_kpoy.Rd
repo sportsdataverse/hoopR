@@ -4,7 +4,7 @@
 \alias{kp_kpoy}
 \title{Get KPoY Leaders Tables}
 \usage{
-kp_kpoy(year)
+kp_kpoy(year = most_recent_mbb_season())
 }
 \arguments{
 \item{year}{Year of data to pull (earliest year of data available: 2011)}
@@ -14,7 +14,7 @@ Get KPoY Leaders Tables
 }
 \examples{
 \dontrun{
- kp_kpoy(year=2020)
+ kp_kpoy(year=most_recent_mbb_season())
 }
 
 }

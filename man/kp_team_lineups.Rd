@@ -4,7 +4,7 @@
 \alias{kp_team_lineups}
 \title{Get Lineups Last 5 Games from Team Page}
 \usage{
-kp_team_lineups(team, year = 2020)
+kp_team_lineups(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -30,7 +30,7 @@ Get Lineups Last 5 Games from Team Page
 }
 \examples{
   \dontrun{
-   kp_team_lineups(team = 'Florida St.', year= 2020)
+   kp_team_lineups(team = 'Florida St.', year = 2021)
   }
 
 }

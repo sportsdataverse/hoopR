@@ -37,7 +37,7 @@
 #' }
 #'
 #' @keywords Team History
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select mutate_at rename bind_cols bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_replace str_extract regex
@@ -56,8 +56,9 @@ kp_team_history <- function(team){
   browser <- login()
 
   # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort( "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -268,7 +269,7 @@ kp_team_history <- function(team){
 #' }
 #'
 #' @keywords Coach History
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select mutate_at
 #' @importFrom tidyr everything
 #' @import rvest
@@ -493,7 +494,7 @@ kp_coach_history <- function(coach){
 #' }
 #'
 #' @keywords Program Ratings
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter
 #' @import rvest
 #' @export
@@ -740,13 +741,13 @@ kp_pomeroy_archive_ratings <- function(date){
 #'   \item{\code{Year}}{character.}
 #' }
 #' @keywords Conference Stats
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
 #' @import rvest
 #' @export
 #' @examples
 #' \dontrun{
-#'     kp_conf(year='2020',conf='ACC')
+#'     kp_conf(year = 2021, conf = 'ACC')
 #' }
 
 kp_conf <- function(year, conf){
@@ -769,8 +770,10 @@ kp_conf <- function(year, conf){
 
 
   # Check conf parameter in teams_list$Conf names
-  assertthat::assert_that(conf %in% hoopR::teams_links$Conf,
-                          msg = "Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  if(!(conf %in% hoopR::teams_links$Conf)){
+    cli::cli_abort("Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  }
+
   conf_name = unique(hoopR::teams_links$conf.link.ref[hoopR::teams_links$Conf == conf])
 
   ### Pull Data
@@ -791,7 +794,11 @@ kp_conf <- function(year, conf){
 
     if(i == 1){
       x<-x[1:(length(x)-2)]
-      colnames(x) <- header_cols
+      if(length(colnames(x)) == length(header_cols)){
+        colnames(x) <- header_cols
+      }else{
+        colnames(x) <- header_cols[-length(header_cols)]
+      }
       suppressWarnings(
         x <- x %>%
           mutate_at(c('AdjEM','AdjEM.Rk',
@@ -904,17 +911,17 @@ kp_conf <- function(year, conf){
 #' }
 #'
 #' @keywords Conference Comparison
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter mutate_at
 #' @import rvest
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#'   kp_confstats(year='2020')
+#'   kp_confstats(year=most_recent_mbb_season())
 #' }
 
-kp_confstats <- function(year){
+kp_confstats <- function(year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
   header_cols <- c('Conf', 'Eff','Eff.Rk','Tempo','Tempo.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
@@ -1003,14 +1010,14 @@ kp_confstats <- function(year){
 #'   - `BestTeam`- *character*
 #'
 #' @keywords Conference History
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate_at
 #' @import rvest
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#'  kp_confhistory(conf='ACC')
+#'  kp_confhistory(conf = 'ACC')
 #' }
 
 kp_confhistory <- function(conf){
@@ -1025,8 +1032,9 @@ kp_confhistory <- function(conf){
 
 
   # Check conf parameter in teams_list$Conf names
-  assertthat::assert_that(conf %in% hoopR::teams_links$Conf,
-                          msg = "Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  if(!(conf %in% hoopR::teams_links$Conf)){
+    cli::cli_abort("Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
+  }
   conf_name = unique(hoopR::teams_links$conf.link.ref[hoopR::teams_links$Conf == conf])
 
   ### Pull Data

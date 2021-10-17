@@ -4,7 +4,7 @@
 \alias{kp_fourfactors}
 \title{Get Four Factors Data}
 \usage{
-kp_fourfactors(min_year, max_year)
+kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 }
 \arguments{
 \item{min_year}{First year of data to pull}
@@ -16,7 +16,7 @@ Get Four Factors Data
 }
 \examples{
 \dontrun{
- kp_fourfactors(min_year = 2020, max_year = 2020)
+ kp_fourfactors(min_year = 2020, max_year = most_recent_mbb_season())
 }
 }
 \keyword{Factors}

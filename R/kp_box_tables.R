@@ -4,7 +4,7 @@
 #' @param year Year of game to pull
 #'
 #' @keywords Game Box Score
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
 #' @importFrom tidyr everything separate
 #' @import rvest
@@ -18,12 +18,13 @@
 
 kp_box <- function(game_id, year){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
+
   browser <- login()
 
-
-
-  ### Pull Data
-  assertthat::assert_that(year>=2013, msg="Data only goes back to 2013")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2013)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2013")
+  }
   ### Pull Data
   url <- paste0("https://kenpom.com/box.php?",
                 "g=",game_id,
@@ -128,7 +129,7 @@ kp_box <- function(game_id, year){
 #' @param year Year of game to pull
 #'
 #' @keywords Win Probability
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_extract_all
@@ -143,7 +144,10 @@ kp_box <- function(game_id, year){
 kp_winprob <- function(game_id, year){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(year >= 2010, msg = "Data only goes back to 2010")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
+  }
   url <- paste0("https://kenpom.com/winprob.php?",
                 "g=", game_id,
                 "&y=", year)
