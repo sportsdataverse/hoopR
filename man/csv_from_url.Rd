@@ -2,8 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{csv_from_url}
 \alias{csv_from_url}
-\title{Load .csv / .csv.gz file from a remote connection
-This is a thin wrapper on data.table::fread}
+\title{\strong{Load .csv / .csv.gz file from a remote connection}}
 \usage{
 csv_from_url(...)
 }
@@ -54,11 +53,10 @@ csv_from_url(...)
 a dataframe as created by \code{\link[data.table:fread]{data.table::fread()}}
 }
 \description{
-Load .csv / .csv.gz file from a remote connection
 This is a thin wrapper on data.table::fread
 }
 \examples{
 \donttest{
-csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
+hoopR:::csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
 }
 }

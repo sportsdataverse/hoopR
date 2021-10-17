@@ -4,15 +4,15 @@
 \alias{load_mbb_pbp}
 \title{\strong{Load hoopR men's college basketball play-by-play}}
 \usage{
-load_mbb_pbp(seasons, ..., qs = FALSE)
+load_mbb_pbp(
+  seasons = most_recent_mbb_season(),
+  file_type = getOption("hoopR.prefer", default = "rds")
+)
 }
 \arguments{
 \item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons.}
 
-\item{...}{Additional arguments passed to an underlying function that writes
-the season data into a database (used by \code{\link[=update_mbb_db]{update_mbb_db()}}).}
-
-\item{qs}{Wheter to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
+\item{file_type}{Wheter to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory
@@ -20,7 +20,6 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \dontrun{
-future::plan("multisession")
 load_mbb_pbp(2002:2021)
 }
 }

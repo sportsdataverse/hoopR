@@ -73,15 +73,57 @@ kp_password <- function() {
 #' @export
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
 
-#' Load .qs file from a remote connection
+
+#' Progressively
 #'
-#' @param url a character url
+#' This function helps add progress-reporting to any function - given function `f()` and progressor `p()`, it will return a new function that calls `f()` and then (on-exiting) will call `p()` after every iteration.
 #'
-#' @return a dataframe as parsed by [`qs::qdeserialize()`]
+#' This is inspired by purrr's `safely`, `quietly`, and `possibly` function decorators.
+#'
+#' @param f a function to add progressr functionality to.
+#' @param p a progressor function as created by `progressr::progressor()`
 #'
 #' @examples
+#'
 #' \donttest{
-#' qs_from_url(
+#' read_player_boxes <- function(){
+#'   urls <- c("https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2020.csv",
+#'             "https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2021.csv")
+#'
+#'   p <- progressr::progressor(along = urls)
+#'   lapply(urls, progressively(read.csv, p))
+#' }
+#'
+#' progressr::with_progress(read_player_boxes())
+#' }
+#'
+#' @return a function that does the same as `f` but it calls `p()` after iteration.
+#'
+#' @export
+progressively <- function(f, p = NULL){
+  if(!is.null(p) && !inherits(p, "progressor")) stop("`p` must be a progressor function!")
+  if(is.null(p)) p <- function(...) NULL
+  force(f)
+
+  function(...){
+    on.exit(p("loading..."))
+    f(...)
+  }
+
+}
+
+#' @title
+#' **Load .qs file from a remote connection**
+#'
+#' @param url a character url
+#' @return a dataframe as parsed by [`qs::qdeserialize()`]
+#' @importFrom data.table data.table setDT
+#' @importFrom qs qdeserialize
+#' @importFrom curl curl_fetch_memory
+#' @export
+#' @examples
+#' \donttest{
+#' hoopR:::qs_from_url(
 #' "https://github.com/nflverse/nflfastR-data/raw/master/data/play_by_play_2020.qs"
 #' )
 #' }
@@ -105,27 +147,38 @@ qs_from_url <- function(url){
   return(content)
 }
 
-#' Load .csv / .csv.gz file from a remote connection
+#' @title
+#' **Load .csv / .csv.gz file from a remote connection**
+#' @description
 #' This is a thin wrapper on data.table::fread
 #' @param ... passed to data.table::fread
 #' @inheritDotParams data.table::fread
+#' @importFrom data.table fread
 #' @return a dataframe as created by [`data.table::fread()`]
-#'
+#' @export
 #' @examples
 #' \donttest{
-#' csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
+#' hoopR:::csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
 #' }
 csv_from_url <- function(...){
   data.table::fread(...)
 }
 
-#' Load .rds file from a remote connection
+.datatable.aware <- TRUE
+
+
+#' @title
+#' **Load .rds file from a remote connection**
 #' @param url a character url
 #' @return a dataframe as created by [`readRDS()`]
+#' @importFrom data.table data.table setDT
+#' @importFrom qs qdeserialize
+#' @importFrom curl curl_fetch_memory
 #' @examples
 #' \donttest{
-#' rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")
+#' hoopR:::rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")
 #' }
+
 rds_from_url <- function(url) {
   con <- url(url)
   on.exit(close(con))
@@ -137,8 +190,9 @@ rds_from_url <- function(url) {
   }
 
   data.table::setDT(load)
-  load
+  return(load)
 }
+
 # The function `message_completed` to create the green "...completed" message
 # only exists to hide the option `in_builder` in dots
 message_completed <- function(x, in_builder = FALSE) {
@@ -172,6 +226,7 @@ custom_mode <- function(x, na.rm = TRUE) {
   return(ux[which.max(tabulate(match(x, ux)))])
 }
 
+#' @export
 most_recent_mbb_season <- function() {
   dplyr::if_else(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
@@ -179,6 +234,7 @@ most_recent_mbb_season <- function() {
     as.double(substr(Sys.Date(), 1, 4))
   )
 }
+#' @export
 most_recent_nba_season <- function() {
   dplyr::if_else(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
@@ -277,3 +333,24 @@ NULL
 #' @import utils
 utils::globalVariables(c("where"))
 
+# check if a package is installed
+is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
+
+choose_loader <- function(type) {
+
+  switch(type,
+         "rds" = rds_from_url,
+         "qs" = qs_from_url
+  )
+}
+
+#' @keywords internal
+"_PACKAGE"
+
+#' @importFrom Rcpp getRcppVersion
+#' @importFrom RcppParallel defaultNumThreads
+NULL
+
+`%c%` <- function(x,y){
+  ifelse(!is.na(x),x,y)
+}
