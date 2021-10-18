@@ -15,7 +15,7 @@ kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 Get KenPom Ratings
 }
 \examples{
-\dontrun{
+\donttest{
   kp_pomeroy_ratings(min_year = 2020, max_year = most_recent_mbb_season())
 }
 }

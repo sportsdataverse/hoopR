@@ -48,7 +48,7 @@ A data frame with 30 columns:
 Get KenPom's coaching resume data
 }
 \examples{
-  \dontrun{
+  \donttest{
    kp_coach_history(coach = 'Leonard Hamilton')
   }
 

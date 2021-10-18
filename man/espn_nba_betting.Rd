@@ -13,7 +13,7 @@ espn_nba_betting(game_id)
 Get ESPN NBA's Betting information
 }
 \examples{
-\dontrun{
+\donttest{
 espn_nba_betting(game_id = 401256760)
 }
 }

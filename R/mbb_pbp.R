@@ -7,22 +7,26 @@ NULL
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
 #' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
 #' @import furrr
 #' @export
 #' @examples
-#' \dontrun{
-#' load_mbb_pbp(2002:2021)
+#' \donttest{
+#' load_mbb_pbp(2006:2021)
 #' }
-load_mbb_pbp <- function(seasons = most_recent_mbb_season(), file_type = getOption("hoopR.prefer", default = "rds")) {
+load_mbb_pbp <- function(seasons = most_recent_mbb_season(),..., file_type = getOption("hoopR.prefer", default = "rds")) {
 
+  dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+  if(isTRUE(seasons)) seasons <- 2006:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
-            seasons >= 2002,
+            seasons >= 2006,
             seasons <= most_recent_mbb_season())
 
   urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/pbp/",file_type,"/play_by_play_",seasons,".",file_type)
@@ -32,8 +36,13 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(), file_type = getOpti
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
-  out
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    out
+  }
 }
 
 #' **Load hoopR men's college basketball team box scores**
@@ -45,17 +54,21 @@ NULL
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
 #' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
 #' @import furrr
 #' @export
-#' @examples \dontrun{
-#' load_mbb_team_box(2002:2021)
+#' @examples \donttest{
+#' load_mbb_team_box(2003:2021)
 #' }
-load_mbb_team_box <- function(seasons = most_recent_mbb_season(), file_type = getOption("hoopR.prefer", default = "rds")) {
+load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
 
+  dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
 
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
@@ -69,8 +82,13 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), file_type = ge
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
-  out
+  if(in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    out
+  }
 }
 
 
@@ -83,21 +101,25 @@ NULL
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
 #' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
 #' @import furrr
 #' @export
-#' @examples \dontrun{
-#' load_mbb_player_box(2002:2021)
+#' @examples \donttest{
+#' load_mbb_player_box(2003:2021)
 #' }
-load_mbb_player_box <- function(seasons = most_recent_mbb_season(), file_type = getOption("hoopR.prefer", default = "rds")) {
+load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
 
+  dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
+  if(isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
-            seasons >= 2002,
+            seasons >= 2003,
             seasons <= most_recent_mbb_season())
 
   urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/player_box/",file_type,"/player_box_",seasons,".",file_type)
@@ -107,8 +129,13 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), file_type = 
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
-  out
+  if(in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    out
+  }
 }
 
 #' **Load hoopR men's college basketball schedule**
@@ -120,17 +147,21 @@ NULL
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
 #' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
 #' @import furrr
 #' @export
-#' @examples \dontrun{
+#' @examples \donttest{
 #' load_mbb_schedule(2002:2021)
 #' }
-load_mbb_schedule <- function(seasons = most_recent_mbb_season(), file_type = getOption("hoopR.prefer", default = "rds")) {
+load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
 
+  dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
 
+  if (all(c("dbConnection", "tablename") %in% names(dots))) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
@@ -144,8 +175,13 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), file_type = ge
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
-  out
+  if(in_db){
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    out
+  }
 }
 
 # load games file

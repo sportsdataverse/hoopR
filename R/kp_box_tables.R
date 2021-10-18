@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_box(game_id = 1238, year = 2020)
 #' }
 
@@ -137,7 +137,7 @@ kp_box <- function(game_id, year){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_winprob(game_id = 1238, year = 2020)
 #' }
 

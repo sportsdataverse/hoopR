@@ -13,7 +13,7 @@ espn_mbb_betting(game_id)
 Get ESPN MBB's Betting information
 }
 \examples{
-\dontrun{
+\donttest{
 espn_mbb_betting(game_id = 401256760)
 }
 }

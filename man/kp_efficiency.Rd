@@ -15,7 +15,7 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 Get KenPom Efficiency and Tempo Summary
 }
 \examples{
-\dontrun{
+\donttest{
  kp_efficiency(min_year = 2020, max_year = most_recent_mbb_season())
 }
 }

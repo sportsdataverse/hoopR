@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_pomeroy_ratings(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -91,7 +91,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_efficiency(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -221,7 +221,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_fourfactors(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -305,7 +305,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_pointdist(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -390,7 +390,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_height(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -521,7 +521,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
@@ -601,7 +601,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_teamstats(min_year = 2019, max_year = most_recent_mbb_season(), defense = FALSE)
 #' }
 
@@ -750,7 +750,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = 
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
 #' }
 
@@ -873,7 +873,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_kpoy(year=most_recent_mbb_season())
 #' }
 #'

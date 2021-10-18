@@ -53,7 +53,7 @@ A data frame with 35 columns:
 Get KenPom's conference comparison stats
 }
 \examples{
-\dontrun{
+\donttest{
   kp_confstats(year=most_recent_mbb_season())
 }
 }

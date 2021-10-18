@@ -6,11 +6,15 @@
 \usage{
 load_mbb_player_box(
   seasons = most_recent_mbb_season(),
+  ...,
   file_type = getOption("hoopR.prefer", default = "rds")
 )
 }
 \arguments{
 \item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons.}
+
+\item{...}{Additional arguments passed to an underlying function that writes
+the season data into a database (used by \code{update_mbb_db()}).}
 
 \item{file_type}{Wheter to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 }
@@ -19,7 +23,7 @@ helper that loads multiple seasons from the data repo either into memory
 or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
-\dontrun{
-load_mbb_player_box(2002:2021)
+\donttest{
+load_mbb_player_box(2003:2021)
 }
 }

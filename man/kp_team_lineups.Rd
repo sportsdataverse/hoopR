@@ -29,7 +29,7 @@ A data frame with 9 columns:
 Get Lineups Last 5 Games from Team Page
 }
 \examples{
-  \dontrun{
+  \donttest{
    kp_team_lineups(team = 'Florida St.', year = 2021)
   }
 

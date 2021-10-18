@@ -15,7 +15,7 @@ kp_team_player_stats(team, year = 2021)
 Get Team Player Stats
 }
 \examples{
-  \dontrun{
+  \donttest{
     kp_team_player_stats(team = 'Florida St.', year = 2021)
   }
 }

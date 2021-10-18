@@ -15,7 +15,7 @@ kp_gameplan(team, year = 2021)
 Get KenPom's team game plan page
 }
 \examples{
-\dontrun{
+\donttest{
   kp_gameplan(team='Florida St.', year=2021)
 }
 }

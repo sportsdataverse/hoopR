@@ -20,18 +20,3 @@ This function helps add progress-reporting to any function - given function \cod
 \details{
 This is inspired by purrr's \code{safely}, \code{quietly}, and \code{possibly} function decorators.
 }
-\examples{
-
-\donttest{
-read_player_boxes <- function(){
-  urls <- c("https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2020.csv",
-            "https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2021.csv")
-
-  p <- progressr::progressor(along = urls)
-  lapply(urls, progressively(read.csv, p))
-}
-
-progressr::with_progress(read_player_boxes())
-}
-
-}

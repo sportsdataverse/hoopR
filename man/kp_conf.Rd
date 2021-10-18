@@ -123,7 +123,7 @@ A data frame 4 columns:
 Get KenPom's conference-wide stats
 }
 \examples{
-\dontrun{
+\donttest{
     kp_conf(year = 2021, conf = 'ACC')
 }
 }

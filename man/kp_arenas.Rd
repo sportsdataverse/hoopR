@@ -24,7 +24,7 @@ A data frame with 6 columns:
 Get Home Court Arenas
 }
 \examples{
-\dontrun{
+\donttest{
  kp_arenas(year=most_recent_mbb_season())
 }
 }

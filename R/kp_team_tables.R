@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_team_schedule(team = 'Florida St.', year = 2021)
 #' }
 
@@ -344,7 +344,7 @@ kp_team_schedule <- function(team, year = 2021){
 #' @import rvest
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_gameplan(team='Florida St.', year=2021)
 #' }
 
@@ -539,7 +539,7 @@ kp_gameplan <- function(team, year=2021){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_opptracker(team = 'Florida St.', year = 2021)
 #' }
 
@@ -688,7 +688,7 @@ kp_opptracker <- function(team, year = 2021){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_team_players(team = 'Florida St.', year = 2021)
 #'   }
 #'
@@ -923,7 +923,7 @@ kp_team_players <- function(team, year = 2021){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_player_career(player_id = '41180')
 #'   }
 #'
@@ -1143,7 +1143,7 @@ kp_player_career <- function(player_id){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_minutes_matrix(team = 'Florida St.', year = 2021)
 #'   }
 #'
@@ -1217,7 +1217,7 @@ kp_minutes_matrix <- function(team, year = 2021){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_team_player_stats(team = 'Florida St.', year = 2021)
 #'   }
 kp_team_player_stats <- function(team, year = 2021){
@@ -1441,7 +1441,7 @@ kp_team_player_stats <- function(team, year = 2021){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_team_depth_chart(team = 'Florida St.', year= 2021)
 #'   }
 #'
@@ -1606,7 +1606,7 @@ kp_team_depth_chart <- function(team, year= 2021){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'    kp_team_lineups(team = 'Florida St.', year = 2021)
 #'   }
 #'

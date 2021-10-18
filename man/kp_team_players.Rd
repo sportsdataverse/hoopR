@@ -15,7 +15,7 @@ kp_team_players(team, year = 2021)
 Get KenPom's player stats from the team page
 }
 \examples{
-  \dontrun{
+  \donttest{
     kp_team_players(team = 'Florida St.', year = 2021)
   }
 

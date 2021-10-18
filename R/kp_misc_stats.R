@@ -30,7 +30,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_trends()
 #' }
 
@@ -90,7 +90,7 @@ kp_trends <- function(){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_officials(year = most_recent_mbb_season())
 #' }
 
@@ -164,7 +164,7 @@ kp_officials <- function(year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_hca()
 #' }
 
@@ -219,7 +219,7 @@ kp_hca <- function(){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_arenas(year=most_recent_mbb_season())
 #' }
 
@@ -271,7 +271,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
 #' }
 
@@ -343,7 +343,7 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_fanmatch(date="2020-03-10")
 #' }
 

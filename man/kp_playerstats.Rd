@@ -35,7 +35,7 @@ Only available if specific conference is defined. Only available for season afte
 Get Player Stats Leaders by Metric
 }
 \examples{
-\dontrun{
+\donttest{
  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
 }
 }

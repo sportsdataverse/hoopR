@@ -83,20 +83,6 @@ has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password()
 #' @param f a function to add progressr functionality to.
 #' @param p a progressor function as created by `progressr::progressor()`
 #'
-#' @examples
-#'
-#' \donttest{
-#' read_player_boxes <- function(){
-#'   urls <- c("https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2020.csv",
-#'             "https://github.com/saiemgilani/hoopR-data/raw/master/nba/player_box/csv/player_box_2021.csv")
-#'
-#'   p <- progressr::progressor(along = urls)
-#'   lapply(urls, progressively(read.csv, p))
-#' }
-#'
-#' progressr::with_progress(read_player_boxes())
-#' }
-#'
 #' @return a function that does the same as `f` but it calls `p()` after iteration.
 #'
 #' @export
@@ -226,6 +212,8 @@ custom_mode <- function(x, na.rm = TRUE) {
   return(ux[which.max(tabulate(match(x, ux)))])
 }
 
+#' @title
+#' **Most Recent Men's College Basketball Season**
 #' @export
 most_recent_mbb_season <- function() {
   dplyr::if_else(
@@ -234,6 +222,9 @@ most_recent_mbb_season <- function() {
     as.double(substr(Sys.Date(), 1, 4))
   )
 }
+
+#' @title
+#' **Most Recent NBA Season**
 #' @export
 most_recent_nba_season <- function() {
   dplyr::if_else(

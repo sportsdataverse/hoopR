@@ -45,7 +45,7 @@
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_team_history(team = 'Florida St.')
 #'   }
 #'
@@ -276,7 +276,7 @@ kp_team_history <- function(team){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'    kp_coach_history(coach = 'Leonard Hamilton')
 #'   }
 #'
@@ -499,7 +499,7 @@ kp_coach_history <- function(coach){
 #' @import rvest
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_program_ratings()
 #' }
 
@@ -580,7 +580,7 @@ kp_program_ratings <- function(){
 #' @import rvest
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_pomeroy_archive_ratings(date='2018-11-22')
 #' }
 kp_pomeroy_archive_ratings <- function(date){
@@ -746,7 +746,7 @@ kp_pomeroy_archive_ratings <- function(date){
 #' @import rvest
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'     kp_conf(year = 2021, conf = 'ACC')
 #' }
 
@@ -917,7 +917,7 @@ kp_conf <- function(year, conf){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_confstats(year=most_recent_mbb_season())
 #' }
 
@@ -1016,7 +1016,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_confhistory(conf = 'ACC')
 #' }
 

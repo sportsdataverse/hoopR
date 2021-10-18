@@ -15,7 +15,7 @@ kp_box(game_id, year)
 Get Game Box Score
 }
 \examples{
-\dontrun{
+\donttest{
   kp_box(game_id = 1238, year = 2020)
 }
 }

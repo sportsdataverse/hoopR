@@ -15,7 +15,7 @@ kp_team_schedule(team, year = 2021)
 Get team schedule results
 }
 \examples{
-\dontrun{
+\donttest{
   kp_team_schedule(team = 'Florida St.', year = 2021)
 }
 }

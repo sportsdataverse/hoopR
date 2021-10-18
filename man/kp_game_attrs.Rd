@@ -17,7 +17,7 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 Get Game Attributes
 }
 \examples{
-\dontrun{
+\donttest{
   kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
 }
 }

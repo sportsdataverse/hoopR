@@ -25,7 +25,7 @@ A data frame with 7 columns:
 Get officials rankings
 }
 \examples{
-\dontrun{
+\donttest{
   kp_officials(year = most_recent_mbb_season())
 }
 }

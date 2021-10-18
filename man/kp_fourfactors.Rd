@@ -15,7 +15,7 @@ kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 Get Four Factors Data
 }
 \examples{
-\dontrun{
+\donttest{
  kp_fourfactors(min_year = 2020, max_year = most_recent_mbb_season())
 }
 }

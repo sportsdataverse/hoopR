@@ -6,11 +6,15 @@
 \usage{
 load_nba_schedule(
   seasons = most_recent_nba_season(),
+  ...,
   file_type = getOption("hoopR.prefer", default = "rds")
 )
 }
 \arguments{
 \item{seasons}{A vector of 4-digit years associated with given NBA seasons.}
+
+\item{...}{Additional arguments passed to an underlying function that writes
+the season data into a database (used by \code{update_nba_db()}).}
 
 \item{file_type}{Wheter to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 }
@@ -19,7 +23,7 @@ helper that loads multiple seasons from the data repo either into memory
 or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
-\dontrun{
+\donttest{
 load_nba_schedule(seasons=2002:2021)
 }
 }

@@ -15,7 +15,7 @@ kp_opptracker(team, year = 2021)
 Get KenPom's team opponent tracker page
 }
 \examples{
-\dontrun{
+\donttest{
   kp_opptracker(team = 'Florida St.', year = 2021)
 }
 }

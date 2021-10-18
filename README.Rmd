@@ -38,15 +38,15 @@ It is additionally a scraping and aggregating interface for Ken Pomeroy's men's 
 
 You can install the released version of [**`hoopR`**](https://github.com/saiemgilani/hoopR/) from [GitHub](https://github.com/saiemgilani/hoopR) with:
 
-``` r
+```r
 # You can install using the pacman package using the following code:
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
+pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 ```
 
-``` r
+```r
 # if you would prefer devtools installation
 if (!requireNamespace('devtools', quietly = TRUE)){
   install.packages('devtools')
@@ -63,8 +63,7 @@ devtools::install_github(repo = "saiemgilani/hoopR")
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
-future::plan("multisession")
+pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 tictoc::tic()
 progressr::with_progress({
   pbp <- load_nba_pbp(2002:2021)
@@ -78,19 +77,13 @@ nrow(pbp)
 
 ### **Men's college basketball full play-by-play seasons (2002-2021) ~ 2-3 minutes**
 ```r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("saiemgilani/hoopR")
-future::plan("multisession")
+
 tictoc::tic()
 progressr::with_progress({
   pbp <- load_mbb_pbp(2002:2021)
 })
 tictoc::toc()
 
-## 135.87 sec elapsed
 length(unique(pbp$game_id))
 nrow(pbp)
 ```

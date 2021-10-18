@@ -15,7 +15,7 @@ kp_winprob(game_id, year)
 Get Win Probability
 }
 \examples{
-\dontrun{
+\donttest{
   kp_winprob(game_id = 1238, year = 2020)
 }
 }

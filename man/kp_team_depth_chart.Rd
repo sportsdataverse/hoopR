@@ -32,7 +32,7 @@ A data frame with 12 columns:
 Get Depth Chart Last 5 Games from Team Page
 }
 \examples{
-  \dontrun{
+  \donttest{
     kp_team_depth_chart(team = 'Florida St.', year= 2021)
   }
 
