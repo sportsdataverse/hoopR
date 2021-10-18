@@ -69,6 +69,8 @@ kp_password <- function() {
   }
 }
 
+.datatable.aware <- TRUE
+
 #' @rdname kp_user_pw
 #' @export
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
@@ -338,6 +340,9 @@ choose_loader <- function(type) {
 #' @keywords internal
 "_PACKAGE"
 
+#' @importFrom Rcpp getRcppVersion
+#' @importFrom RcppParallel defaultNumThreads
+NULL
 
 `%c%` <- function(x,y){
   ifelse(!is.na(x),x,y)

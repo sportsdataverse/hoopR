@@ -543,8 +543,6 @@ espn_nba_teams <- function(){
 
 espn_nba_scoreboard <- function(season){
 
-  message(glue::glue("Returning data for {season}!"))
-
   max_year <- substr(Sys.Date(), 1,4)
 
   if(!(as.integer(substr(season, 1, 4)) %in% c(2001:max_year))){

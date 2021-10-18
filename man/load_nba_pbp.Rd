@@ -5,9 +5,11 @@
 \title{\strong{Load hoopR NBA play-by-play}}
 \usage{
 load_nba_pbp(
-  seasons = most_recent_season(),
+  seasons = most_recent_nba_season(),
   ...,
-  file_type = getOption("hoopR.prefer", default = "rds")
+  file_type = getOption("hoopR.prefer", default = "rds"),
+  dbConnection = NULL,
+  tablename = NULL
 )
 }
 \arguments{
@@ -16,7 +18,11 @@ load_nba_pbp(
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_nba_db()}).}
 
-\item{file_type}{Wheter to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
+\item{file_type}{whether to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
+
+\item{dbConnection}{A \code{DBIConnection} object, as returned by}
+
+\item{tablename}{The name of the play by play data table within the database}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory

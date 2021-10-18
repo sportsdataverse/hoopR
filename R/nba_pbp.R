@@ -9,18 +9,23 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given women's college basketball seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param dbConnection A `DBIConnection` object, as returned by
+#' @param tablename The name of the play by play data table within the database
 #' @import furrr
 #' @export
 #' @examples
 #' \donttest{
 #' load_nba_pbp(2002:2021)
 #' }
-load_nba_pbp <- function(seasons = most_recent_season(),..., file_type = getOption("hoopR.prefer", default = "rds")) {
+load_nba_pbp <- function(seasons = most_recent_nba_season(),..., file_type = getOption("hoopR.prefer", default = "rds"),
+                         dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
+
+  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -35,7 +40,13 @@ load_nba_pbp <- function(seasons = most_recent_season(),..., file_type = getOpti
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+
+  }
   out
 }
 
@@ -50,18 +61,22 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given NBA seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param dbConnection A `DBIConnection` object, as returned by
+#' @param tablename The name of the play by play data table within the database
 #' @import furrr
 #' @export
 #' @examples
 #' \donttest{
 #' load_nba_team_box(2002:2021)
 #' }
-load_nba_team_box <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
+load_nba_team_box <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+                              dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
+  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -92,18 +107,22 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given NBA seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param dbConnection A `DBIConnection` object, as returned by
+#' @param tablename The name of the play by play data table within the database
 #' @import furrr
 #' @export
 #' @examples
 #' \donttest{
 #' load_nba_player_box(2002:2021)
 #' }
-load_nba_player_box <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
+load_nba_player_box <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+                                dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
+  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -118,7 +137,12 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ..., file_ty
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  }
   out
 }
 
@@ -133,18 +157,22 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given NBA seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param file_type Wheter to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
+#' @param dbConnection A `DBIConnection` object, as returned by
+#' @param tablename The name of the play by play data table within the database
 #' @import furrr
 #' @export
 #' @examples
 #' \donttest{
 #' load_nba_schedule(seasons=2002:2021)
 #' }
-load_nba_schedule <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds")) {
+load_nba_schedule <- function(seasons = most_recent_nba_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+                              dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
   loader <- choose_loader(file_type)
+  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -159,7 +187,12 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ..., file_type
 
   out <- lapply(urls, progressively(loader, p))
   out <- data.table::rbindlist(out, use.names = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  }
   out
 }
 
