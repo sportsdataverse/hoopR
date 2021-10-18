@@ -100,40 +100,6 @@ progressively <- function(f, p = NULL){
 
 }
 
-#' @title
-#' **Load .qs file from a remote connection**
-#'
-#' @param url a character url
-#' @return a dataframe as parsed by [`qs::qdeserialize()`]
-#' @importFrom data.table data.table setDT
-#' @importFrom qs qdeserialize
-#' @import rvest
-#' @export
-#' @examples
-#' \donttest{
-#' hoopR:::qs_from_url(
-#' "https://github.com/nflverse/nflfastR-data/raw/master/data/play_by_play_2020.qs"
-#' )
-#' }
-qs_from_url <- function(url){
-  load <- try(curl::curl_fetch_memory(url), silent = TRUE)
-
-
-  if (inherits(load, "try-error")) {
-    warning(paste0("Failed to retrieve data from <",url,">"), call. = FALSE)
-    return(data.table::data.table())
-  }
-
-  content <- try(qs::qdeserialize(load$content), silent = TRUE)
-
-  if (inherits(content, "try-error")) {
-    warning(paste0("Failed to parse file with qs::qdeserialize() from <",url,">"), call. = FALSE)
-    return(data.table::data.table())
-  }
-
-  data.table::setDT(content)
-  return(content)
-}
 
 #' @title
 #' **Load .csv / .csv.gz file from a remote connection**
