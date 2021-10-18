@@ -9,7 +9,6 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @import furrr
@@ -18,12 +17,12 @@ NULL
 #' \donttest{
 #' load_mbb_pbp(2006:2021)
 #' }
-load_mbb_pbp <- function(seasons = most_recent_mbb_season(),..., file_type = getOption("hoopR.prefer", default = "rds"),
+load_mbb_pbp <- function(seasons = most_recent_mbb_season(),...,
                          dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- choose_loader(file_type)
+  loader <- rds_from_url()
   if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2006:most_recent_mbb_season()
@@ -32,7 +31,7 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(),..., file_type = get
             seasons >= 2006,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/pbp/",file_type,"/play_by_play_",seasons,".",file_type)
+  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/pbp/rds/play_by_play_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -59,7 +58,6 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @import furrr
@@ -67,12 +65,12 @@ NULL
 #' @examples \donttest{
 #' load_mbb_team_box(2003:2021)
 #' }
-load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- choose_loader(file_type)
+  loader <- rds_from_url()
 
   if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
@@ -81,7 +79,7 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ..., file_type
             seasons >= 2003,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/team_box/",file_type,"/team_box_",seasons,".",file_type)
+  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/team_box/rds/team_box_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -109,7 +107,6 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @import furrr
@@ -117,12 +114,12 @@ NULL
 #' @examples \donttest{
 #' load_mbb_player_box(2003:2021)
 #' }
-load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
   file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- choose_loader(file_type)
+  loader <- rds_from_url()
 
   if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
@@ -131,7 +128,7 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ..., file_ty
             seasons >= 2003,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/player_box/",file_type,"/player_box_",seasons,".",file_type)
+  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/player_box/rds/player_box_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -158,7 +155,6 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @import furrr
@@ -166,12 +162,12 @@ NULL
 #' @examples \donttest{
 #' load_mbb_schedule(2002:2021)
 #' }
-load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ..., file_type = getOption("hoopR.prefer", default = "rds"),
+load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
-  file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- choose_loader(file_type)
+
+  loader <- rds_from_url()
 
   if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
@@ -180,7 +176,7 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ..., file_type
             seasons >= 2002,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/schedules/",file_type,"/mbb_schedule_",seasons,".",file_type)
+  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/mbb/schedules/rds/mbb_schedule_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)

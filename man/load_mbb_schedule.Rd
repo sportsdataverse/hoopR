@@ -7,7 +7,6 @@
 load_mbb_schedule(
   seasons = most_recent_mbb_season(),
   ...,
-  file_type = getOption("hoopR.prefer", default = "rds"),
   dbConnection = NULL,
   tablename = NULL
 )
@@ -17,8 +16,6 @@ load_mbb_schedule(
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}
-
-\item{file_type}{whether to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 
 \item{dbConnection}{A \code{DBIConnection} object, as returned by}
 

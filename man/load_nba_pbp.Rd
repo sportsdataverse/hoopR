@@ -7,7 +7,6 @@
 load_nba_pbp(
   seasons = most_recent_nba_season(),
   ...,
-  file_type = getOption("hoopR.prefer", default = "rds"),
   dbConnection = NULL,
   tablename = NULL
 )
@@ -17,8 +16,6 @@ load_nba_pbp(
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_nba_db()}).}
-
-\item{file_type}{whether to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 
 \item{dbConnection}{A \code{DBIConnection} object, as returned by}
 
