@@ -20,8 +20,6 @@ the season data into a database (used by \code{update_nba_db()}).}
 \item{dbConnection}{A \code{DBIConnection} object, as returned by}
 
 \item{tablename}{The name of the play by play data table within the database}
-
-\item{file_type}{whether to use the function \code{\link[qs:qdeserialize]{qs::qdeserialize()}} for more efficient loading.}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory

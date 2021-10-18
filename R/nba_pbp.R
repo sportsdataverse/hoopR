@@ -60,7 +60,6 @@ NULL
 #' @param seasons A vector of 4-digit years associated with given NBA seasons.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param file_type whether to use the function [qs::qdeserialize()] for more efficient loading.
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @import furrr

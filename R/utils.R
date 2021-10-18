@@ -126,7 +126,6 @@ csv_from_url <- function(...){
 #' @param url a character url
 #' @return a dataframe as created by [`readRDS()`]
 #' @importFrom data.table data.table setDT
-#' @importFrom qs qdeserialize
 #' @import rvest
 #' @examples
 #' \donttest{
