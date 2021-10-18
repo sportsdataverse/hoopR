@@ -17,6 +17,11 @@ nba_schedule(season = 2020, league = "NBA")
 
 \strong{Get NBA Stats API Schedule}
 }
+\examples{
+\donttest{
+  nba_schedule(season=2021, league = 'NBA')
+}
+}
 \author{
 Saiem Gilani
 }

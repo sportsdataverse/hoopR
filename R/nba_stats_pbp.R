@@ -53,6 +53,10 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
+#' @examples
+#' \donttest{
+#'   nba_schedule(season=2021, league = 'NBA')
+#' }
 nba_schedule <- function(season = 2020, league = 'NBA'){
 
   full_url <- glue::glue("https://data.nba.com/prod/v1/{season}/schedule.json")
