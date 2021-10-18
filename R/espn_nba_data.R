@@ -85,7 +85,7 @@ espn_nba_game_all <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- "Home"
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -93,7 +93,7 @@ espn_nba_game_all <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- "Away"
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -303,7 +303,7 @@ espn_nba_team_box <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- "Home"
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -311,7 +311,7 @@ espn_nba_team_box <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- "Away"
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -680,7 +680,7 @@ espn_nba_scoreboard <- function(season){
 #' @importFrom data.table rbindlist
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' espn_nba_standings(year = 2021)
 #' }
 espn_nba_standings <- function(year){
@@ -759,7 +759,7 @@ espn_nba_standings <- function(year){
 #' @importFrom dplyr select rename
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' espn_nba_betting(game_id = 401256760)
 #' }
 espn_nba_betting <- function(game_id){

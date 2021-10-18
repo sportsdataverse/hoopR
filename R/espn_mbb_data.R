@@ -66,6 +66,8 @@ espn_mbb_game_all <- function(game_id){
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       season <- raw_play_df[['header']][['season']][['year']]
       season_type <- raw_play_df[['header']][['season']][['type']]
+      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
+      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
       homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
       awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
       homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
@@ -87,7 +89,7 @@ espn_mbb_game_all <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- homeAwayTeam2
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -95,7 +97,7 @@ espn_mbb_game_all <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- homeAwayTeam1
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -280,6 +282,8 @@ espn_mbb_team_box <- function(game_id){
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       season <- raw_play_df[['header']][['season']][['year']]
       season_type <- raw_play_df[['header']][['season']][['type']]
+      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
+      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
       homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
       awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
       homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
@@ -290,7 +294,7 @@ espn_mbb_team_box <- function(game_id){
       homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
       awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
       game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
-      #---- Team Box ------
+
       teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
 
       teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
@@ -301,7 +305,7 @@ espn_mbb_team_box <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- homeAwayTeam2
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -309,7 +313,7 @@ espn_mbb_team_box <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- homeAwayTeam1
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -896,7 +900,7 @@ espn_mbb_standings <- function(year){
 #' @importFrom data.table rbindlist
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' espn_mbb_betting(game_id = 401256760)
 #' }
 espn_mbb_betting <- function(game_id){
