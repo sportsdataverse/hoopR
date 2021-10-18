@@ -27,7 +27,7 @@ home:
   href: index.html
   links:
   - text: hoopR beginner's guide
-    href: articles/intro-to-hoopR.html
+    href: articles/getting-started-hoopR.html
 navbar:
   structure:
     left:  [home, intro, reference, articles, news, games, network, data, repo]
@@ -61,6 +61,8 @@ navbar:
       menu:
       - text: Vignettes
         href: articles/index.html
+      - text: "Getting Started with hoopR"
+        href: articles/getting-started-hoopR.html
       - text: "Intro to hoopR"
         href: articles/intro-to-hoopR.html
       - text: "KenPom Example Functions"
