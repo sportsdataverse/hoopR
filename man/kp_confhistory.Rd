@@ -53,8 +53,8 @@ A data frame with 23 columns:
 Get KenPom's historical conference ratings
 }
 \examples{
-\dontrun{
- kp_confhistory(conf='ACC')
+\donttest{
+ kp_confhistory(conf = 'ACC')
 }
 }
 \keyword{Conference}

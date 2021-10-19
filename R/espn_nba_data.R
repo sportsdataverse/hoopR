@@ -85,7 +85,7 @@ espn_nba_game_all <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- "Home"
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -93,7 +93,7 @@ espn_nba_game_all <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- "Away"
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -303,7 +303,7 @@ espn_nba_team_box <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- "Home"
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -311,7 +311,7 @@ espn_nba_team_box <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- "Away"
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -543,8 +543,6 @@ espn_nba_teams <- function(){
 
 espn_nba_scoreboard <- function(season){
 
-  message(glue::glue("Returning data for {season}!"))
-
   max_year <- substr(Sys.Date(), 1,4)
 
   if(!(as.integer(substr(season, 1, 4)) %in% c(2001:max_year))){
@@ -680,7 +678,7 @@ espn_nba_scoreboard <- function(season){
 #' @importFrom data.table rbindlist
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' espn_nba_standings(year = 2021)
 #' }
 espn_nba_standings <- function(year){
@@ -747,4 +745,77 @@ espn_nba_standings <- function(year){
 
   )
   return(standings)
+}
+
+
+#' Get ESPN NBA's Betting information
+#'
+#' @param game_id  Game ID
+#' @keywords NBA Betting
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr select rename
+#' @export
+#' @examples
+#' \donttest{
+#' espn_nba_betting(game_id = 401283399)
+#' }
+espn_nba_betting <- function(game_id){
+
+  summary_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?"
+
+  ## Inputs
+  ## year
+  full_url <- paste0(summary_url,
+                     "event=", game_id)
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+  pickcenter <- data.frame()
+  againstTheSpread <- data.frame()
+  predictor_df <- data.frame()
+  tryCatch(
+    expr = {
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      raw_summary <- jsonlite::fromJSON(resp)
+      if("pickcenter" %in% names(raw_summary)){
+        pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
+          janitor::clean_names() %>%
+          dplyr::select(-.data$links)
+      }
+      if("againstTheSpread" %in% names(raw_summary)){
+        againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
+          janitor::clean_names()
+        teams <- againstTheSpread$team %>%
+          dplyr::select(-.data$links) %>%
+          janitor::clean_names()
+        records <- againstTheSpread$records
+
+        teams$records <- records
+        againstTheSpread <- teams
+      }
+      if("predictor" %in% names(raw_summary)){
+        predictor_df <- data.frame(
+          home_team_id =  raw_summary$predictor$homeTeam$id,
+          away_team_id =  raw_summary$predictor$awayTeam$id,
+          away_team_game_projection = raw_summary$predictor$awayTeam$gameProjection,
+          away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
+        )
+      }
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no betting data available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+
+  )
+  betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
+  return(betting)
 }

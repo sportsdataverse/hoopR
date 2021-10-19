@@ -34,7 +34,7 @@ A data frame 16 columns:
 Get FanMatch by date
 }
 \examples{
-\dontrun{
+\donttest{
   kp_fanmatch(date="2020-03-10")
 }
 }

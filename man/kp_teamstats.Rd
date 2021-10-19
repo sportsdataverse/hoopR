@@ -4,7 +4,7 @@
 \alias{kp_teamstats}
 \title{Get Team Stats}
 \usage{
-kp_teamstats(min_year, max_year, defense = FALSE)
+kp_teamstats(min_year, max_year = most_recent_mbb_season(), defense = FALSE)
 }
 \arguments{
 \item{min_year}{First year of data to pull}
@@ -17,8 +17,8 @@ kp_teamstats(min_year, max_year, defense = FALSE)
 Get Team Stats
 }
 \examples{
-\dontrun{
- kp_teamstats(min_year = 2019, max_year = 2020, defense = FALSE)
+\donttest{
+ kp_teamstats(min_year = 2019, max_year = most_recent_mbb_season(), defense = FALSE)
 }
 }
 \keyword{Team}

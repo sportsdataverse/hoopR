@@ -4,7 +4,7 @@
 \alias{kp_arenas}
 \title{Get Home Court Arenas}
 \usage{
-kp_arenas(year = 2020)
+kp_arenas(year = most_recent_mbb_season())
 }
 \arguments{
 \item{year}{Year of data to pull}
@@ -24,8 +24,8 @@ A data frame with 6 columns:
 Get Home Court Arenas
 }
 \examples{
-\dontrun{
- kp_arenas(year=2020)
+\donttest{
+ kp_arenas(year=most_recent_mbb_season())
 }
 }
 \keyword{Arenas}

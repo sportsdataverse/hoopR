@@ -38,7 +38,7 @@ You can install the released version of
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
+pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 ```
 
 ``` r
@@ -59,8 +59,7 @@ devtools::install_github(repo = "saiemgilani/hoopR")
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
-future::plan("multisession")
+pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 tictoc::tic()
 progressr::with_progress({
   pbp <- load_nba_pbp(2002:2021)
@@ -74,19 +73,12 @@ nrow(pbp)
 ### **Men’s college basketball full play-by-play seasons (2002-2021) \~ 2-3 minutes**
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("saiemgilani/hoopR")
-future::plan("multisession")
 tictoc::tic()
 progressr::with_progress({
   pbp <- load_mbb_pbp(2002:2021)
 })
 tictoc::toc()
 
-## 135.87 sec elapsed
 length(unique(pbp$game_id))
 nrow(pbp)
 ```
@@ -103,7 +95,7 @@ website](https://saiemgilani.github.io/hoopR/).
 
 # **Our Authors**
 
-  - [Saiem Gilani](https://twitter.com/saiemgilani)  
+-   [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
     <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 

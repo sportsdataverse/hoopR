@@ -40,7 +40,7 @@ A data frame with 22 columns:
 Get KenPom's ratings archive pages
 }
 \examples{
-\dontrun{
+\donttest{
   kp_pomeroy_archive_ratings(date='2018-11-22')
 }
 }

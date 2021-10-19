@@ -34,7 +34,7 @@ A data frame with 19 columns:
 Get Division-I statistical trends
 }
 \examples{
-\dontrun{
+\donttest{
  kp_trends()
 }
 }

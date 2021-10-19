@@ -4,7 +4,7 @@
 \alias{kp_game_attrs}
 \title{Get Game Attributes}
 \usage{
-kp_game_attrs(year = 2020, attr = "Excitement")
+kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 }
 \arguments{
 \item{year}{Year of data to pull}
@@ -17,8 +17,8 @@ kp_game_attrs(year = 2020, attr = "Excitement")
 Get Game Attributes
 }
 \examples{
-\dontrun{
-  kp_game_attrs(year=2020, attr = "Excitement")
+\donttest{
+  kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
 }
 }
 \keyword{Game}

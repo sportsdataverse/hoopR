@@ -4,7 +4,7 @@
 \alias{kp_confstats}
 \title{Get KenPom's conference comparison stats}
 \usage{
-kp_confstats(year)
+kp_confstats(year = most_recent_mbb_season())
 }
 \arguments{
 \item{year}{Year (YYYY)}
@@ -53,8 +53,8 @@ A data frame with 35 columns:
 Get KenPom's conference comparison stats
 }
 \examples{
-\dontrun{
-  kp_confstats(year='2020')
+\donttest{
+  kp_confstats(year=most_recent_mbb_season())
 }
 }
 \keyword{Comparison}

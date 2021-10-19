@@ -15,9 +15,6 @@ nba_boxscorematchups(game_id)
 
 \strong{Get NBA Stats API Boxscore Matchups}
 }
-\examples{
-nba_boxscorematchups(game_id = 21601112)
-}
 \author{
 Saiem Gilani
 }
