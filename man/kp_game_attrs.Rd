@@ -18,7 +18,7 @@ Get Game Attributes
 }
 \examples{
 \donttest{
-  kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
+  kp_game_attrs(year=2021, attr = "Excitement")
 }
 }
 \keyword{Game}

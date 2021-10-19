@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' \donttest{
-#'   kp_pomeroy_ratings(min_year = 2020, max_year = most_recent_mbb_season())
+#'   kp_pomeroy_ratings(min_year = 2020, max_year = 2021)
 #' }
 
 kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
@@ -92,7 +92,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'  kp_efficiency(min_year = 2020, max_year = most_recent_mbb_season())
+#'  kp_efficiency(min_year = 2020, max_year = 2021)
 #' }
 
 kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
@@ -222,7 +222,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'  kp_fourfactors(min_year = 2020, max_year = most_recent_mbb_season())
+#'  kp_fourfactors(min_year = 2020, max_year = 2021)
 #' }
 
 kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
@@ -306,7 +306,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   kp_pointdist(min_year = 2020, max_year = most_recent_mbb_season())
+#'   kp_pointdist(min_year = 2020, max_year = 2021)
 #' }
 
 kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
@@ -391,7 +391,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'  kp_height(min_year = 2020, max_year = most_recent_mbb_season())
+#'  kp_height(min_year = 2020, max_year = 2021)
 #' }
 
 kp_height <- function(min_year,max_year = most_recent_mbb_season()){
@@ -602,7 +602,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'  kp_teamstats(min_year = 2019, max_year = most_recent_mbb_season(), defense = FALSE)
+#'  kp_teamstats(min_year = 2019, max_year =2021, defense = FALSE)
 #' }
 
 kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = FALSE){
@@ -751,7 +751,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = 
 #'
 #' @examples
 #' \donttest{
-#'  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
+#'  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021)
 #' }
 
 kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=most_recent_mbb_season()){
@@ -874,7 +874,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 #'
 #' @examples
 #' \donttest{
-#'  kp_kpoy(year=most_recent_mbb_season())
+#'  kp_kpoy(year=2021)
 #' }
 #'
 kp_kpoy <- function(year=most_recent_mbb_season()){

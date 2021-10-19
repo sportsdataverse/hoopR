@@ -14,7 +14,7 @@ Get KPoY Leaders Tables
 }
 \examples{
 \donttest{
- kp_kpoy(year=most_recent_mbb_season())
+ kp_kpoy(year=2021)
 }
 
 }

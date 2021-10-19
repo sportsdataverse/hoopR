@@ -18,7 +18,7 @@ Get Team Stats
 }
 \examples{
 \donttest{
- kp_teamstats(min_year = 2019, max_year = most_recent_mbb_season(), defense = FALSE)
+ kp_teamstats(min_year = 2019, max_year =2021, defense = FALSE)
 }
 }
 \keyword{Team}
