@@ -38,7 +38,7 @@ jobs:
         run: |
           options(install.packages.check.source = "no")
           remotes::install_deps(dependencies = TRUE, type = "binary")
-          install.packages(c("pkgdown", "png","tidyverse", "ggrepel", "ggimage", "knitr", "tictoc", "ragg","animation","zoo"), type = "binary")
+          install.packages(c("pkgdown", "png","tidyverse", "ggrepel", "ggimage", "knitr", "tictoc", "ragg","animation","zoo", "rlang","xfun"), type = "binary")
         shell: Rscript {0}
 
       - name: Install package
