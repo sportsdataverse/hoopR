@@ -24,7 +24,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
 
   loader <- rds_from_url
 
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -38,7 +38,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
@@ -74,7 +74,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -88,7 +88,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   class(out) <- c("tbl_df","tbl","data.table","data.frame")
   out
 }
@@ -118,7 +118,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
 
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -132,7 +132,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
@@ -167,7 +167,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
@@ -181,7 +181,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL

@@ -21,9 +21,8 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(),...,
                          dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
-  file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- rds_from_url()
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if(isTRUE(seasons)) seasons <- 2006:most_recent_mbb_season()
 
@@ -37,7 +36,7 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(),...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
@@ -69,10 +68,9 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
-  file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- rds_from_url()
+  loader <- rds_from_url
 
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
@@ -85,7 +83,7 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
@@ -118,10 +116,9 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
-  file_type <- rlang::arg_match0(file_type, c("rds", "qs"))
-  loader <- rds_from_url()
+  loader <- rds_from_url
 
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
@@ -134,7 +131,7 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
@@ -167,9 +164,9 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
 
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url()
+  loader <- rds_from_url
 
-  if (!is.null(all(c("dbConnection", "tablename")))) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if(isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
 
   stopifnot(is.numeric(seasons),
@@ -182,7 +179,7 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE)
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
