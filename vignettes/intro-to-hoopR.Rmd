@@ -72,7 +72,7 @@ Let's first just try to get our hands on the Pomeroy ratings for the last 10 yea
 -   `max_year` - Last year of data to pull
 
 ```{r kp_ratings, message = FALSE}
-rtgs <- kp_pomeroy_ratings(min_year = 2010, max_year = 2021)
+rtgs <- hoopR::kp_pomeroy_ratings(min_year = 2010, max_year = 2021)
 ```
 
 ```{r kp_ratings_glimpse}
@@ -279,19 +279,19 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ```{r kp_efficiency_ex, message = FALSE}
 
-effs <- kp_efficiency(min_year = 2021, max_year = 2021)
+effs <- hoopR::kp_efficiency(min_year = 2021, max_year = 2021)
 glimpse(effs)
 ```
 
 ```{r kp_fourfactors_ex, message = FALSE}
 
-ff <-  kp_fourfactors(min_year = 2021, max_year = 2021)
+ff <-  hoopR::kp_fourfactors(min_year = 2021, max_year = 2021)
 glimpse(ff)
 ```
 
 ```{r kp_hgts, message = FALSE}
 
-hgts <-  kp_height(min_year = 2021, max_year = 2021)
+hgts <-  hoopR::kp_height(min_year = 2021, max_year = 2021)
 
 glimpse(hgts)
 ```
@@ -299,7 +299,7 @@ glimpse(hgts)
 #### **All Games Player stats**
 
 ```{r kp_plyrstats, message = FALSE}
-plyrstats <- kp_team_player_stats(team = 'Florida St.', year = 2021)
+plyrstats <- hoopR::kp_team_player_stats(team = 'Florida St.', year = 2021)
 
 
 glimpse(plyrstats[[1]])
