@@ -127,11 +127,6 @@ csv_from_url <- function(...){
 #' @return a dataframe as created by [`readRDS()`]
 #' @importFrom data.table data.table setDT
 #' @import rvest
-#' @examples
-#' \donttest{
-#' hoopR:::rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")
-#' }
-
 rds_from_url <- function(url) {
   con <- url(url)
   on.exit(close(con))
@@ -294,13 +289,7 @@ utils::globalVariables(c("where"))
 # check if a package is installed
 is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
 
-choose_loader <- function(type) {
 
-  switch(type,
-         "rds" = rds_from_url,
-         "qs" = qs_from_url
-  )
-}
 
 #' @keywords internal
 "_PACKAGE"
