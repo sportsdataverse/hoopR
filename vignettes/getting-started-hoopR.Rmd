@@ -73,11 +73,12 @@ There are generally speaking **five** men's basketball data sources accessed fro
 
 ## **Quick Start**
 
-### **NBA play-by-plays (2002-2021) ~ 30-60 seconds**
+For the sake of your R session, we will only look at the previous 5 years of data, but I have indicated the years to which the data goes back to. 
+### **NBA play-by-plays (2002-2021) ~ 60-120 seconds**
 ```{r load_nba_pbp_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
+  nba_pbp <- hoopR::load_nba_pbp(2016:2021)
 })
 tictoc::toc()
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
@@ -88,7 +89,7 @@ dplyr::glimpse(nba_pbp)
 ```{r load_nba_team_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  nba_team_box <- hoopR::load_nba_team_box(2002:2021)
+  nba_team_box <- hoopR::load_nba_team_box(2016:2021)
 })
 
 tictoc::toc()
@@ -101,7 +102,7 @@ dplyr::glimpse(nba_team_box)
 ```{r load_nba_player_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  nba_player_box <- hoopR::load_nba_player_box(2002:2021)
+  nba_player_box <- hoopR::load_nba_player_box(2016:2021)
 })
 tictoc::toc()
 
@@ -109,12 +110,13 @@ glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length
 dplyr::glimpse(nba_player_box)
 ```
 
-### **Men's college basketball play-by-plays (2006-2021) ~ 45-90 seconds**
+
+### **Men's college basketball play-by-plays (2006-2021) ~ 120-180 seconds**
 
 ```{r load_mbb_pbp_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  mbb_pbp <- hoopR::load_mbb_pbp(2006:2021)
+  mbb_pbp <- hoopR::load_mbb_pbp(2016:2021)
 })
 tictoc::toc()
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
@@ -126,7 +128,7 @@ dplyr::glimpse(mbb_pbp)
 ```{r load_mbb_team_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  mbb_team_box <- hoopR::load_mbb_team_box(2003:2021)
+  mbb_team_box <- hoopR::load_mbb_team_box(2016:2021)
 })
 tictoc::toc()
 glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
@@ -138,7 +140,7 @@ dplyr::glimpse(mbb_team_box)
 ```{r load_mbb_player_gs, warning = FALSE}
 tictoc::tic()
 progressr::with_progress({
-  mbb_player_box <- hoopR::load_mbb_player_box(2003:2021)
+  mbb_player_box <- hoopR::load_mbb_player_box(2016:2021)
 })
 tictoc::toc()
 
