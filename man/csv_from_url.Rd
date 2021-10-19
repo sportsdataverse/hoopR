@@ -55,8 +55,3 @@ a dataframe as created by \code{\link[data.table:fread]{data.table::fread()}}
 \description{
 This is a thin wrapper on data.table::fread
 }
-\examples{
-\donttest{
-hoopR:::csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
-}
-}

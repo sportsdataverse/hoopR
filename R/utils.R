@@ -110,10 +110,6 @@ progressively <- function(f, p = NULL){
 #' @importFrom data.table fread
 #' @return a dataframe as created by [`data.table::fread()`]
 #' @export
-#' @examples
-#' \donttest{
-#' hoopR:::csv_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.csv")
-#' }
 csv_from_url <- function(...){
   data.table::fread(...)
 }
