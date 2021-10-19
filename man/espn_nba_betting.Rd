@@ -14,7 +14,7 @@ Get ESPN NBA's Betting information
 }
 \examples{
 \donttest{
-espn_nba_betting(game_id = 401256760)
+espn_nba_betting(game_id = 401283399)
 }
 }
 \keyword{Betting}

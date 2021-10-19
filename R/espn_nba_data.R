@@ -758,7 +758,7 @@ espn_nba_standings <- function(year){
 #' @export
 #' @examples
 #' \donttest{
-#' espn_nba_betting(game_id = 401256760)
+#' espn_nba_betting(game_id = 401283399)
 #' }
 espn_nba_betting <- function(game_id){
 
