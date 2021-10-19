@@ -266,7 +266,7 @@ draw_gif <- function()
 
 ```
 
-```{r save_gif}
+```{r save_gif, eval = FALSE}
 
 saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif"),
         ani.width = 960, ani.height = 540, ani.res = 110)
