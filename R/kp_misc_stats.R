@@ -91,7 +91,7 @@ kp_trends <- function(){
 #'
 #' @examples
 #' \donttest{
-#'   kp_officials(year = most_recent_mbb_season())
+#'   kp_officials(year = 2021)
 #' }
 
 kp_officials <- function(year = most_recent_mbb_season()){
@@ -220,7 +220,7 @@ kp_hca <- function(){
 #'
 #' @examples
 #' \donttest{
-#'  kp_arenas(year=most_recent_mbb_season())
+#'  kp_arenas(year=2021)
 #' }
 
 kp_arenas <- function(year=most_recent_mbb_season()){
@@ -272,7 +272,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
+#'   kp_game_attrs(year=2021, attr = "Excitement")
 #' }
 
 kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){

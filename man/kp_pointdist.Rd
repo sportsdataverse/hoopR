@@ -16,7 +16,7 @@ Get Team Points Distribution
 }
 \examples{
 \donttest{
-  kp_pointdist(min_year = 2020, max_year = most_recent_mbb_season())
+  kp_pointdist(min_year = 2020, max_year = 2021)
 }
 }
 \keyword{Points}

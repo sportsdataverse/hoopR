@@ -26,7 +26,7 @@ Get officials rankings
 }
 \examples{
 \donttest{
-  kp_officials(year = most_recent_mbb_season())
+  kp_officials(year = 2021)
 }
 }
 \keyword{Refs}

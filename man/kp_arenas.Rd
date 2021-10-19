@@ -25,7 +25,7 @@ Get Home Court Arenas
 }
 \examples{
 \donttest{
- kp_arenas(year=most_recent_mbb_season())
+ kp_arenas(year=2021)
 }
 }
 \keyword{Arenas}

@@ -36,7 +36,7 @@ Get Player Stats Leaders by Metric
 }
 \examples{
 \donttest{
- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
+ kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021)
 }
 }
 \keyword{Player}
