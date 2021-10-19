@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get KenPom's conference comparison stats</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_confstats</span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_confstats</span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='most_recent_mbb_season.html'>most_recent_mbb_season</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -325,9 +328,16 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>kp_confstats</span><span class='op'>(</span>year<span class='op'>=</span><span class='st'>'2020'</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+  <span class='fu'>kp_confstats</span><span class='op'>(</span>year<span class='op'>=</span><span class='fu'><a href='most_recent_mbb_season.html'>most_recent_mbb_season</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] conf         eff          eff_rk       tempo        tempo_rk    
+#&gt;  [6] e_fg_pct     e_fg_pct_rk  to_pct       to_pct_rk    or_pct      
+#&gt; [11] or_pct_rk    ft_rate      ft_rate_rk   blk_pct      blk_pct_rk  
+#&gt; [16] stl_pct      stl_pct_rk   fg_2_pct     fg_2_pct_rk  fg_3_pct    
+#&gt; [21] fg_3_pct_rk  ft_pct       ft_pct_rk    fg_3a_pct    fg_3a_pct_rk
+#&gt; [26] a_pct        a_pct_rk     home_w_l     home_w_l_pct home_w_l_rk 
+#&gt; [31] close        close_rk     blowouts     blowouts_rk  year        
+#&gt; &lt;0 rows&gt; (or 0-length row.names)</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

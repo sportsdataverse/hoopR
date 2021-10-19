@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get Team Player Stats</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_team_player_stats</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_team_player_stats</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -289,9 +292,28 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'>kp_team_player_stats</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span>
-  <span class='op'>}</span>
+    <pre class="examples"><div class='input'>  <span class='co'># \donttest{</span>
+    <span class='fu'>kp_team_player_stats</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 24 × 54</span>
+#&gt;    role   number player ht       wt yr        g min_pct o_rtg poss_pct shots_pct
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> Major…      4 Scott… 6-9     227 Fr       24    58.7 108.      25.4      22.7
+#&gt; <span style='color: #BCBCBC;'> 2</span> Signi…     23 MJ Wa… 6-5     213 Sr       24    69   106.      21.9      21.6
+#&gt; <span style='color: #BCBCBC;'> 3</span> Signi…      1 RaiQu… 6-8     260 Jr       25    65   110.      23.6      22.2
+#&gt; <span style='color: #BCBCBC;'> 4</span> Signi…      5 Balsa… 7-1     240 So       24    46.4 117.      22        21.7
+#&gt; <span style='color: #BCBCBC;'> 5</span> Signi…     11 Natha… 6-5     195 Sr       19    14.4 109.      21.1      26.7
+#&gt; <span style='color: #BCBCBC;'> 6</span> Role …      2 Antho… 6-6     215 Jr       21    55.1 122.      17.1      18.6
+#&gt; <span style='color: #BCBCBC;'> 7</span> Role …      0 RayQu… 6-4     210 Sr       24    45.5  97.5     16.7      15.2
+#&gt; <span style='color: #BCBCBC;'> 8</span> Role …     24 Sarda… 6-6     220 Jr       25    35.5 106.      17.8      22.4
+#&gt; <span style='color: #BCBCBC;'> 9</span> Role …     34 Tanor… 7-2     236 Sr       23    14.8  98.2     19        15.3
+#&gt; <span style='color: #BCBCBC;'>10</span> Limit…     10 Malik… 6-9     225 Jr       24    47.8 115.      14.3      15.6
+#&gt; <span style='color: #949494;'># … with 14 more rows, and 43 more variables: e_fg_pct &lt;dbl&gt;, ts_pct &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   or_pct &lt;dbl&gt;, dr_pct &lt;dbl&gt;, a_rate &lt;dbl&gt;, to_rate &lt;dbl&gt;, blk_pct &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   stl_pct &lt;dbl&gt;, f_cper40 &lt;dbl&gt;, f_dper40 &lt;dbl&gt;, ft_rate &lt;dbl&gt;, ftm &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fta &lt;dbl&gt;, ft_pct &lt;dbl&gt;, fgm_2 &lt;dbl&gt;, fga_2 &lt;dbl&gt;, fg_2_pct &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fgm_3 &lt;dbl&gt;, fga_3 &lt;dbl&gt;, fg_3_pct &lt;dbl&gt;, category &lt;chr&gt;, min_pct_rk &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   o_rtg_rk &lt;dbl&gt;, poss_pct_rk &lt;dbl&gt;, shots_pct_rk &lt;dbl&gt;, e_fg_pct_rk &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   ts_pct_rk &lt;dbl&gt;, or_pct_rk &lt;dbl&gt;, dr_pct_rk &lt;dbl&gt;, a_rate_rk &lt;dbl&gt;, …</span></div><div class='input'>  <span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

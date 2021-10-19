@@ -67,6 +67,9 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/commonteamyears.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/csv_from_url.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/cumestatsplayer.html</loc>
   </url>
   <url>
@@ -100,6 +103,9 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/defensehub.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_betting.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_conferences.html</loc>
   </url>
   <url>
@@ -125,6 +131,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_betting.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/espn_nba_game_all.html</loc>
@@ -385,6 +394,12 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/matchupsrollup.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/most_recent_mbb_season.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/most_recent_nba_season.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/nba_stats_videodetails.html</loc>
   </url>
   <url>
@@ -476,6 +491,12 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/pptshots.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/progressively.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/rds_from_url.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/sc.html</loc>
@@ -575,6 +596,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/winprobabilitypbp.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/getting-started-hoopR.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/articles/intro-to-hoopR.html</loc>

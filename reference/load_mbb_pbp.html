@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -139,6 +139,9 @@ or writes it into a db using some forwarded arguments in the dots" />
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -274,14 +277,19 @@ or writes it into a db using some forwarded arguments in the dots" />
 or writes it into a db using some forwarded arguments in the dots</p>
     </div>
 
-    <pre class="usage"><span class='fu'>load_mbb_pbp</span><span class='op'>(</span><span class='va'>seasons</span>, <span class='va'>...</span>, qs <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>load_mbb_pbp</span><span class='op'>(</span>
+  seasons <span class='op'>=</span> <span class='fu'><a href='most_recent_mbb_season.html'>most_recent_mbb_season</a></span><span class='op'>(</span><span class='op'>)</span>,
+  <span class='va'>...</span>,
+  dbConnection <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tablename <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>seasons</th>
-      <td><p>A vector of 4-digit years associated with given men's college basketball seasons.</p></td>
+      <td><p>A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2006)</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -289,17 +297,39 @@ or writes it into a db using some forwarded arguments in the dots</p>
 the season data into a database (used by <code><a href='update_mbb_db.html'>update_mbb_db()</a></code>).</p></td>
     </tr>
     <tr>
-      <th>qs</th>
-      <td><p>Wheter to use the function <code><a href='https://rdrr.io/pkg/qs/man/qdeserialize.html'>qs::qdeserialize()</a></code> for more efficient loading.</p></td>
+      <th>dbConnection</th>
+      <td><p>A <code>DBIConnection</code> object, as returned by</p></td>
+    </tr>
+    <tr>
+      <th>tablename</th>
+      <td><p>The name of the play by play data table within the database</p></td>
     </tr>
     </table>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>future</span><span class='fu'>::</span><span class='fu'><a href='https://future.futureverse.org/reference/plan.html'>plan</a></span><span class='op'>(</span><span class='st'>"multisession"</span><span class='op'>)</span>
-<span class='fu'>load_mbb_pbp</span><span class='op'>(</span><span class='fl'>2002</span><span class='op'>:</span><span class='fl'>2021</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+<span class='fu'>load_mbb_pbp</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1,273,763 × 53</span>
+#&gt;    shooting_play sequence_number period_display_value period_number home_score
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> TRUE          101805201       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 2</span> FALSE         101805501       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 3</span> TRUE          101805701       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 4</span> FALSE         101807701       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 5</span> FALSE         101807702       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 6</span> FALSE         101807901       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 7</span> TRUE          101809101       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 8</span> FALSE         101809601       1st Half                         1          0
+#&gt; <span style='color: #BCBCBC;'> 9</span> TRUE          101809801       1st Half                         1          2
+#&gt; <span style='color: #BCBCBC;'>10</span> TRUE          101815401       1st Half                         1          2
+#&gt; <span style='color: #949494;'># … with 1,273,753 more rows, and 48 more variables: scoring_play &lt;lgl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   clock_display_value &lt;chr&gt;, team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   away_score &lt;int&gt;, id &lt;dbl&gt;, text &lt;chr&gt;, score_value &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   participants_0_athlete_id &lt;chr&gt;, participants_1_athlete_id &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;, away_team_name_alt &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, home_team_mascot &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

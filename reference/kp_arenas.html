@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get Home Court Arenas</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_arenas</span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_arenas</span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='most_recent_mbb_season.html'>most_recent_mbb_season</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -297,9 +300,1085 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
- <span class='fu'>kp_arenas</span><span class='op'>(</span>year<span class='op'>=</span><span class='fl'>2020</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+ <span class='fu'>kp_arenas</span><span class='op'>(</span>year<span class='op'>=</span><span class='fu'><a href='most_recent_mbb_season.html'>most_recent_mbb_season</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;      rk                   team conf
+#&gt; 1     1               Syracuse  ACC
+#&gt; 2     2             Louisville  ACC
+#&gt; 3     3         North Carolina  ACC
+#&gt; 4     4              Tennessee  SEC
+#&gt; 5     5             Georgetown   BE
+#&gt; 6     6               Kentucky  SEC
+#&gt; 7     7             N.C. State  ACC
+#&gt; 8     8               Arkansas  SEC
+#&gt; 9     9               Ohio St.  B10
+#&gt; 10   10                    BYU  WCC
+#&gt; 11   11                Memphis Amer
+#&gt; 12   12             Bellarmine ASun
+#&gt; 13   13         South Carolina  SEC
+#&gt; 14   13                   UNLV  MWC
+#&gt; 15   15               Maryland  B10
+#&gt; 16   16              Marquette   BE
+#&gt; 17   17                Indiana  B10
+#&gt; 18   18              Creighton   BE
+#&gt; 19   19              Wisconsin  B10
+#&gt; 20   20                  Texas  B12
+#&gt; 21   21                 Kansas  B12
+#&gt; 22   22             Fresno St.  MWC
+#&gt; 23   23               Illinois  B10
+#&gt; 24   24             New Mexico  MWC
+#&gt; 25   25                Alabama  SEC
+#&gt; 26   26               Penn St.  B10
+#&gt; 27   27             Texas Tech  B12
+#&gt; 28   28               Missouri  SEC
+#&gt; 29   29                   Iowa  B10
+#&gt; 30   30               Nebraska  B10
+#&gt; 31   30                   Utah  P12
+#&gt; 32   32                 Purdue  B10
+#&gt; 33   33           Michigan St.  B10
+#&gt; 34   34            Wake Forest  ACC
+#&gt; 35   35                Arizona  P12
+#&gt; 36   36              Minnesota  B10
+#&gt; 37   37               Virginia  ACC
+#&gt; 38   38               Iowa St.  B12
+#&gt; 39   39             Vanderbilt  SEC
+#&gt; 40   40          West Virginia  B12
+#&gt; 41   41                   UCLA  P12
+#&gt; 42   42           Oklahoma St.  B12
+#&gt; 43   43                 Dayton  A10
+#&gt; 44   44                    LSU  SEC
+#&gt; 45   45                   Ohio  MAC
+#&gt; 46   46              Texas A&amp;M  SEC
+#&gt; 47   47               Michigan  B10
+#&gt; 48   48                 Oregon  P12
+#&gt; 49   49             Kansas St.  B12
+#&gt; 50   50             Pittsburgh  ACC
+#&gt; 51   51         New Mexico St.  WAC
+#&gt; 52   52              Boise St.  MWC
+#&gt; 53   53          San Diego St.  MWC
+#&gt; 54   54             Providence   BE
+#&gt; 55   55              Louisiana   SB
+#&gt; 56   56            Florida St.  ACC
+#&gt; 57   57             Cincinnati Amer
+#&gt; 58   58      Purdue Fort Wayne Horz
+#&gt; 59   59                   UTEP CUSA
+#&gt; 60   60             California  P12
+#&gt; 61   61         Washington St.  P12
+#&gt; 62   62               Oklahoma  B12
+#&gt; 63   63                 Nevada  MWC
+#&gt; 64   64       Middle Tennessee CUSA
+#&gt; 65   65               Ball St.  MAC
+#&gt; 66   65              Weber St. BSky
+#&gt; 67   67                Wyoming  MWC
+#&gt; 68   68               Colorado  P12
+#&gt; 69   69                Bradley  MVC
+#&gt; 70   70           Missouri St.  MVC
+#&gt; 71   71            Chattanooga   SC
+#&gt; 72   72              Milwaukee Horz
+#&gt; 73   73            Arizona St.  P12
+#&gt; 74   74            Saint Louis  A10
+#&gt; 75   75        Mississippi St.  SEC
+#&gt; 76   75           Oral Roberts  Sum
+#&gt; 77   77                Georgia  SEC
+#&gt; 78   78            Wichita St. Amer
+#&gt; 79   79            North Texas CUSA
+#&gt; 80   79          Tennessee St.  OVC
+#&gt; 81   81             Seton Hall   BE
+#&gt; 82   82             Wright St. Horz
+#&gt; 83   83          South Florida Amer
+#&gt; 84   84                 DePaul   BE
+#&gt; 85   85                 Hawaii   BW
+#&gt; 86   86                 Baylor  B12
+#&gt; 87   87               Utah St.  MWC
+#&gt; 88   88                    USC  P12
+#&gt; 89   89                 Xavier   BE
+#&gt; 90   90                 Temple Amer
+#&gt; 91   91           Illinois St.  MVC
+#&gt; 92   91            Indiana St.  MVC
+#&gt; 93   93            Connecticut   BE
+#&gt; 94   94         Tennessee Tech  OVC
+#&gt; 95   95                Florida  SEC
+#&gt; 96   96                  Lamar  WAC
+#&gt; 97   97           Arkansas St.   SB
+#&gt; 98   98              Fairfield MAAC
+#&gt; 99   98          South Alabama   SB
+#&gt; 100  98                    UCF Amer
+#&gt; 101 101              Green Bay Horz
+#&gt; 102 102             Oregon St.  P12
+#&gt; 103 103            Mississippi  SEC
+#&gt; 104 104          Massachusetts  A10
+#&gt; 105 105      Northern Kentucky Horz
+#&gt; 106 106                   Duke  ACC
+#&gt; 107 107          Virginia Tech  ACC
+#&gt; 108 108             Washington  P12
+#&gt; 109 109             Notre Dame  ACC
+#&gt; 110 110                 Auburn  SEC
+#&gt; 111 111              Charlotte CUSA
+#&gt; 112 112                 Butler   BE
+#&gt; 113 112      Northern Illinois  MAC
+#&gt; 114 114               Marshall CUSA
+#&gt; 115 115                Clemson  ACC
+#&gt; 116 115            Florida A&amp;M SWAC
+#&gt; 117 117                    SMU Amer
+#&gt; 118 118             Evansville  MVC
+#&gt; 119 119       Eastern Michigan  MAC
+#&gt; 120 120            New Orleans Slnd
+#&gt; 121 121           Colorado St.  MWC
+#&gt; 122 122                   Penn  Ivy
+#&gt; 123 123         Boston College  ACC
+#&gt; 124 124           Georgia Tech  ACC
+#&gt; 125 124             Murray St.  OVC
+#&gt; 126 124         William &amp; Mary  CAA
+#&gt; 127 127          Cleveland St. Horz
+#&gt; 128 127          James Madison  CAA
+#&gt; 129 127 Texas A&amp;M Corpus Chris Slnd
+#&gt; 130 127                    UAB CUSA
+#&gt; 131 127            Utah Valley  WAC
+#&gt; 132 132           Old Dominion CUSA
+#&gt; 133 133                  Tulsa Amer
+#&gt; 134 134      Southern Illinois  MVC
+#&gt; 135 135        Appalachian St.   SB
+#&gt; 136 136          Detroit Mercy Horz
+#&gt; 137 137         Texas Southern SWAC
+#&gt; 138 138          Southern Miss CUSA
+#&gt; 139 139                  Siena MAAC
+#&gt; 140 140          East Carolina Amer
+#&gt; 141 140              Idaho St. BSky
+#&gt; 142 140       Illinois Chicago Horz
+#&gt; 143 140            Jackson St. SWAC
+#&gt; 144 140         Louisiana Tech CUSA
+#&gt; 145 140                Rutgers  B10
+#&gt; 146 146               Miami FL  ACC
+#&gt; 147 147         Nebraska Omaha  Sum
+#&gt; 148 148           George Mason  A10
+#&gt; 149 149       Western Carolina   SC
+#&gt; 150 150           Rhode Island  A10
+#&gt; 151 151                    VCU  A10
+#&gt; 152 152         UNC Greensboro   SC
+#&gt; 153 153       Western Kentucky CUSA
+#&gt; 154 154 Southeastern Louisiana Slnd
+#&gt; 155 154               Southern SWAC
+#&gt; 156 156            Alabama St. SWAC
+#&gt; 157 157               Stanford  P12
+#&gt; 158 158                Montana BSky
+#&gt; 159 159       Northern Arizona BSky
+#&gt; 160 159                 Toledo  MAC
+#&gt; 161 161          Northern Iowa  MVC
+#&gt; 162 162            Austin Peay  OVC
+#&gt; 163 163      Stephen F. Austin  WAC
+#&gt; 164 164               Richmond  A10
+#&gt; 165 165                 Denver  Sum
+#&gt; 166 165                Hampton BSth
+#&gt; 167 165              Texas St.   SB
+#&gt; 168 168                  Drake  MVC
+#&gt; 169 169               UC Davis   BW
+#&gt; 170 170           Northwestern  B10
+#&gt; 171 171                Houston Amer
+#&gt; 172 172             Alcorn St. SWAC
+#&gt; 173 172           Grand Canyon  WAC
+#&gt; 174 172       Louisiana Monroe   SB
+#&gt; 175 172 Southeast Missouri St.  OVC
+#&gt; 176 172           UT Arlington   SB
+#&gt; 177 177              Princeton  Ivy
+#&gt; 178 178                  IUPUI Horz
+#&gt; 179 178                    TCU  B12
+#&gt; 180 180     North Carolina A&amp;T BSth
+#&gt; 181 181     East Tennessee St.   SC
+#&gt; 182 181       Eastern Kentucky ASun
+#&gt; 183 181           Morehead St.  OVC
+#&gt; 184 181       South Dakota St.  Sum
+#&gt; 185 181              Villanova   BE
+#&gt; 186 186               Miami OH  MAC
+#&gt; 187 186         Youngstown St. Horz
+#&gt; 188 188               Kent St.  MAC
+#&gt; 189 189            Norfolk St. MEAC
+#&gt; 190 190                Pacific  WCC
+#&gt; 191 191        Sam Houston St.  WAC
+#&gt; 192 192                Buffalo  MAC
+#&gt; 193 192         UNC Wilmington  CAA
+#&gt; 194 192               Winthrop BSth
+#&gt; 195 195            Alabama A&amp;M SWAC
+#&gt; 196 195                Gonzaga  WCC
+#&gt; 197 195           South Dakota  Sum
+#&gt; 198 195            The Citadel   SC
+#&gt; 199 195       UC Santa Barbara   BW
+#&gt; 200 200              Air Force  MWC
+#&gt; 201 201                  Maine   AE
+#&gt; 202 201          North Florida ASun
+#&gt; 203 203        St. Bonaventure  A10
+#&gt; 204 204                   Navy  Pat
+#&gt; 205 205       North Dakota St.  Sum
+#&gt; 206 206             St. John's   BE
+#&gt; 207 207                 Lehigh  Pat
+#&gt; 208 207            Little Rock   SB
+#&gt; 209 209                  Akron  MAC
+#&gt; 210 209       Central Arkansas ASun
+#&gt; 211 209 Maryland Eastern Shore MEAC
+#&gt; 212 209                   Troy   SB
+#&gt; 213 213       Western Michigan  MAC
+#&gt; 214 214       Central Michigan  MAC
+#&gt; 215 214       Eastern Illinois  OVC
+#&gt; 216 214          Southern Utah BSky
+#&gt; 217 217               Davidson  A10
+#&gt; 218 218                   Rice CUSA
+#&gt; 219 219                 Towson  CAA
+#&gt; 220 220             Binghamton   AE
+#&gt; 221 221       Western Illinois  Sum
+#&gt; 222 222             Charleston  CAA
+#&gt; 223 222                   Elon  CAA
+#&gt; 224 222              San Diego  WCC
+#&gt; 225 225           Northeastern  CAA
+#&gt; 226 226            Cal Baptist  WAC
+#&gt; 227 227                Hofstra  CAA
+#&gt; 228 228                   Army  Pat
+#&gt; 229 229                    VMI   SC
+#&gt; 230 230               Lipscomb ASun
+#&gt; 231 231                Belmont  OVC
+#&gt; 232 231            Chicago St.  WAC
+#&gt; 233 231               Delaware  CAA
+#&gt; 234 231     Eastern Washington BSky
+#&gt; 235 231                    FIU CUSA
+#&gt; 236 231       Florida Atlantic CUSA
+#&gt; 237 231                 Furman   SC
+#&gt; 238 231                Samford   SC
+#&gt; 239 231           San Jose St.  MWC
+#&gt; 240 231              UC Irvine   BW
+#&gt; 241 231             Valparaiso  MVC
+#&gt; 242 242               Portland  WCC
+#&gt; 243 243              Dixie St.  WAC
+#&gt; 244 244                   UMBC   AE
+#&gt; 245 245           Kennesaw St. ASun
+#&gt; 246 246                 Albany   AE
+#&gt; 247 247    Arkansas Pine Bluff SWAC
+#&gt; 248 247     Florida Gulf Coast ASun
+#&gt; 249 247            Montana St. BSky
+#&gt; 250 247             Morgan St. MEAC
+#&gt; 251 247            Santa Clara  WCC
+#&gt; 252 252         Loyola Chicago  MVC
+#&gt; 253 253                Cornell  Ivy
+#&gt; 254 254       Georgia Southern   SB
+#&gt; 255 255          Bowling Green  MAC
+#&gt; 256 256      George Washington  A10
+#&gt; 257 257       Tennessee Martin  OVC
+#&gt; 258 258             High Point BSth
+#&gt; 259 258                  Idaho BSky
+#&gt; 260 258         Long Beach St.   BW
+#&gt; 261 258            McNeese St. Slnd
+#&gt; 262 258         Saint Joseph's  A10
+#&gt; 263 258          San Francisco  WCC
+#&gt; 264 264       Loyola Marymount  WCC
+#&gt; 265 265             Coppin St. MEAC
+#&gt; 266 265               Monmouth MAAC
+#&gt; 267 267                   UTSA CUSA
+#&gt; 268 268               Bucknell  Pat
+#&gt; 269 268      Cal St. Fullerton   BW
+#&gt; 270 268               La Salle  A10
+#&gt; 271 268                Liberty ASun
+#&gt; 272 268          North Alabama ASun
+#&gt; 273 268          Robert Morris Horz
+#&gt; 274 268       SIU Edwardsville  OVC
+#&gt; 275 268                Stetson ASun
+#&gt; 276 268            Stony Brook   AE
+#&gt; 277 268           UC San Diego   BW
+#&gt; 278 268   UT Rio Grande Valley  WAC
+#&gt; 279 279    Cal St. Bakersfield   BW
+#&gt; 280 280           Nicholls St. Slnd
+#&gt; 281 281       Coastal Carolina   SB
+#&gt; 282 281             Holy Cross  Pat
+#&gt; 283 281       Northwestern St. Slnd
+#&gt; 284 281                 Tulane Amer
+#&gt; 285 285               Hartford   AE
+#&gt; 286 286               Duquesne  A10
+#&gt; 287 286           Gardner Webb BSth
+#&gt; 288 286       Jacksonville St. ASun
+#&gt; 289 286              Lafayette  Pat
+#&gt; 290 286                   NJIT   AE
+#&gt; 291 286       Prairie View A&amp;M SWAC
+#&gt; 292 286           Saint Mary's  WCC
+#&gt; 293 286         St. Francis PA  NEC
+#&gt; 294 294            Georgia St.   SB
+#&gt; 295 294                Wofford   SC
+#&gt; 296 296                Vermont   AE
+#&gt; 297 297             Quinnipiac MAAC
+#&gt; 298 298    Central Connecticut  NEC
+#&gt; 299 298                Fordham  A10
+#&gt; 300 298                 Marist MAAC
+#&gt; 301 298                 Mercer   SC
+#&gt; 302 298                Radford BSth
+#&gt; 303 298          Saint Peter's MAAC
+#&gt; 304 298     South Carolina St. MEAC
+#&gt; 305 298          UNC Asheville BSth
+#&gt; 306 306       Mount St. Mary's  NEC
+#&gt; 307 307 North Carolina Central MEAC
+#&gt; 308 308             Pepperdine  WCC
+#&gt; 309 309               Campbell BSth
+#&gt; 310 310           Portland St. BSky
+#&gt; 311 311           North Dakota  Sum
+#&gt; 312 312               Cal Poly   BW
+#&gt; 313 313        Bethune Cookman SWAC
+#&gt; 314 313          Grambling St. SWAC
+#&gt; 315 313          New Hampshire   AE
+#&gt; 316 313                Oakland Horz
+#&gt; 317 313           Tarleton St.  WAC
+#&gt; 318 318      Northern Colorado BSky
+#&gt; 319 319               American  Pat
+#&gt; 320 320                  Brown  Ivy
+#&gt; 321 321           UC Riverside   BW
+#&gt; 322 322               Columbia  Ivy
+#&gt; 323 322                 Howard MEAC
+#&gt; 324 322 Mississippi Valley St. SWAC
+#&gt; 325 325                   Iona MAAC
+#&gt; 326 326                 Bryant  NEC
+#&gt; 327 327                 Drexel  CAA
+#&gt; 328 327                   Yale  Ivy
+#&gt; 329 329              Manhattan MAAC
+#&gt; 330 330                Niagara MAAC
+#&gt; 331 331           Presbyterian BSth
+#&gt; 332 332                Harvard  Ivy
+#&gt; 333 333               Canisius MAAC
+#&gt; 334 334              Dartmouth  Ivy
+#&gt; 335 334              Loyola MD  Pat
+#&gt; 336 334           Sacred Heart  NEC
+#&gt; 337 334           UMass Lowell   AE
+#&gt; 338 334                 Wagner  NEC
+#&gt; 339 339           Delaware St. MEAC
+#&gt; 340 339    Fairleigh Dickinson  NEC
+#&gt; 341 339         Incarnate Word Slnd
+#&gt; 342 339                    LIU  NEC
+#&gt; 343 343               Longwood BSth
+#&gt; 344 344      Boston University  Pat
+#&gt; 345 344             St. Thomas  Sum
+#&gt; 346 346                Colgate  Pat
+#&gt; 347 347                  Rider MAAC
+#&gt; 348 348     Cal St. Northridge   BW
+#&gt; 349 348                   UMKC  Sum
+#&gt; 350 350           Jacksonville ASun
+#&gt; 351 351              Merrimack  NEC
+#&gt; 352 351         St. Francis NY  NEC
+#&gt; 353 353         Sacramento St. BSky
+#&gt; 354 354      Abilene Christian  WAC
+#&gt; 355 354        Houston Baptist Slnd
+#&gt; 356 356                Seattle  WAC
+#&gt; 357 357    Charleston Southern BSth
+#&gt; 358 358            USC Upstate BSth
+#&gt;                                              arena
+#&gt; 1                            Carrier Dome (35,642)
+#&gt; 2                         KFC Yum! Center (22,090)
+#&gt; 3                    Dean E. Smith Center (21,750)
+#&gt; 4                   Thompson Boling Arena (21,678)
+#&gt; 5                       Capital One Arena (20,600)
+#&gt; 6                              Rupp Arena (20,500)
+#&gt; 7                               PNC Arena (19,700)
+#&gt; 8                        Bud Walton Arena (19,200)
+#&gt; 9                        Value City Arena (19,049)
+#&gt; 10                        Marriott Center (18,987)
+#&gt; 11                             FedExForum (18,400)
+#&gt; 12                           Freedom Hall (18,252)
+#&gt; 13                    Colonial Life Arena (18,000)
+#&gt; 14                   Thomas &amp; Mack Center (18,000)
+#&gt; 15                         Xfinity Center (17,950)
+#&gt; 16                           Fiserv Forum (17,600)
+#&gt; 17                          Assembly Hall (17,472)
+#&gt; 18                CHI Health Center Omaha (17,352)
+#&gt; 19                            Kohl Center (17,287)
+#&gt; 20                           Erwin Center (16,540)
+#&gt; 21                       Allen Fieldhouse (16,300)
+#&gt; 22                       Save Mart Center (15,596)
+#&gt; 23                      State Farm Center (15,544)
+#&gt; 24                       Dreamstyle Arena (15,411)
+#&gt; 25                       Coleman Coliseum (15,316)
+#&gt; 26                    Bryce Jordan Center (15,261)
+#&gt; 27              United Supermarkets Arena (15,098)
+#&gt; 28                           Mizzou Arena (15,061)
+#&gt; 29                   Carver Hawkeye Arena (15,056)
+#&gt; 30                    Pinnacle Bank Arena (15,000)
+#&gt; 31                        Huntsman Center (15,000)
+#&gt; 32                           Mackey Arena (14,804)
+#&gt; 33                         Breslin Center (14,797)
+#&gt; 34                          Joel Coliseum (14,665)
+#&gt; 35                 McKale Memorial Center (14,655)
+#&gt; 36                         Williams Arena (14,625)
+#&gt; 37                  John Paul Jones Arena (14,623)
+#&gt; 38                        Hilton Coliseum (14,384)
+#&gt; 39                           Memorial Gym (14,316)
+#&gt; 40                           WVU Coliseum (14,000)
+#&gt; 41                        Pauley Pavilion (13,800)
+#&gt; 42                    Gallagher Iba Arena (13,611)
+#&gt; 43             University of Dayton Arena (13,455)
+#&gt; 44               Maravich Assembly Center (13,215)
+#&gt; 45                     Convocation Center (13,080)
+#&gt; 46                             Reed Arena (12,989)
+#&gt; 47                         Crisler Center (12,707)
+#&gt; 48                           Knight Arena (12,541)
+#&gt; 49                      Bramlage Coliseum (12,528)
+#&gt; 50                 Petersen Events Center (12,508)
+#&gt; 51                    Pan American Center (12,482)
+#&gt; 52                        ExtraMile Arena (12,480)
+#&gt; 53                           Viejas Arena (12,414)
+#&gt; 54                  Dunkin' Donuts Center (12,410)
+#&gt; 55                              Cajundome (12,362)
+#&gt; 56                Donald L. Tucker Center (12,100)
+#&gt; 57                      Fifth Third Arena (12,012)
+#&gt; 58     Allen County War Memorial Coliseum (12,000)
+#&gt; 59                     Don Haskins Center (11,892)
+#&gt; 60                          Haas Pavilion (11,877)
+#&gt; 61                            Friel Court (11,671)
+#&gt; 62                     Lloyd Noble Center (11,562)
+#&gt; 63                   Lawlor Events Center (11,536)
+#&gt; 64                          Murphy Center (11,520)
+#&gt; 65                          Worthen Arena (11,500)
+#&gt; 66                      Dee Events Center (11,500)
+#&gt; 67                       Arena Auditorium (11,445)
+#&gt; 68                       CU Events Center (11,064)
+#&gt; 69                           Carver Arena (11,060)
+#&gt; 70                              JQH Arena (11,000)
+#&gt; 71                         McKenzie Arena (10,995)
+#&gt; 72                      UWM Panther Arena (10,783)
+#&gt; 73                 Desert Financial Arena (10,754)
+#&gt; 74                         Chaifetz Arena (10,600)
+#&gt; 75                      Humphrey Coliseum (10,575)
+#&gt; 76                           Mabee Center (10,575)
+#&gt; 77                      Stegeman Coliseum (10,523)
+#&gt; 78                     Charles Koch Arena (10,506)
+#&gt; 79                          The Super Pit (10,500)
+#&gt; 80                          Gentry Center (10,500)
+#&gt; 81                      Prudential Center (10,481)
+#&gt; 82                          Nutter Center (10,449)
+#&gt; 83                       Yuengling Center (10,411)
+#&gt; 84                         Wintrust Arena (10,387)
+#&gt; 85                    Stan Sheriff Center (10,300)
+#&gt; 86                         Ferrell Center (10,284)
+#&gt; 87                Dee Glen Smith Spectrum (10,270)
+#&gt; 88                           Galen Center (10,258)
+#&gt; 89                          Cintas Center (10,224)
+#&gt; 90                   The Liacouras Center (10,206)
+#&gt; 91                          Redbird Arena (10,200)
+#&gt; 92                          Hulman Center (10,200)
+#&gt; 93                        Gampel Pavilion (10,167)
+#&gt; 94                           Eblen Center (10,152)
+#&gt; 95                         Exactech Arena (10,151)
+#&gt; 96                        Montagne Center (10,080)
+#&gt; 97              First National Bank Arena (10,038)
+#&gt; 98                     Webster Bank Arena (10,000)
+#&gt; 99                        Mitchell Center (10,000)
+#&gt; 100              Addition Financial Arena (10,000)
+#&gt; 101                           Resch Center (9,729)
+#&gt; 102                          Gill Coliseum (9,604)
+#&gt; 103               The Pavilion at Ole Miss (9,500)
+#&gt; 104                         Mullins Center (9,493)
+#&gt; 105                             BB&amp;T Arena (9,400)
+#&gt; 106                 Cameron Indoor Stadium (9,314)
+#&gt; 107                       Cassell Coliseum (9,275)
+#&gt; 108                  Alaska Airlines Arena (9,268)
+#&gt; 109                           Joyce Center (9,149)
+#&gt; 110                           Auburn Arena (9,121)
+#&gt; 111                           Halton Arena (9,105)
+#&gt; 112                      Hinkle Fieldhouse (9,100)
+#&gt; 113                     Convocation Center (9,100)
+#&gt; 114                       Henderson Center (9,043)
+#&gt; 115                    Littlejohn Coliseum (9,000)
+#&gt; 116                          Lawson Center (9,000)
+#&gt; 117                         Moody Coliseum (8,998)
+#&gt; 118                            Ford Center (8,930)
+#&gt; 119                     Convocation Center (8,800)
+#&gt; 120                        Lakefront Arena (8,785)
+#&gt; 121                             Moby Arena (8,745)
+#&gt; 122                           The Palestra (8,722)
+#&gt; 123                            Conte Forum (8,606)
+#&gt; 124                      McCamish Pavilion (8,600)
+#&gt; 125                            CFSB Center (8,600)
+#&gt; 126                           Kaplan Arena (8,600)
+#&gt; 127                        Wolstein Center (8,500)
+#&gt; 128             Atlantic Union Bank Center (8,500)
+#&gt; 129                   American Bank Center (8,500)
+#&gt; 130                           Bartow Arena (8,500)
+#&gt; 131                            UCCU Center (8,500)
+#&gt; 132                         Chartway Arena (8,472)
+#&gt; 133                        Reynolds Center (8,355)
+#&gt; 134                        Banterra Center (8,339)
+#&gt; 135                          Holmes Center (8,325)
+#&gt; 136                           Calihan Hall (8,295)
+#&gt; 137                      Health &amp; PE Arena (8,100)
+#&gt; 138                    Reed Green Coliseum (8,095)
+#&gt; 139                     Times Union Center (8,065)
+#&gt; 140      Williams Arena at Minges Coliseum (8,000)
+#&gt; 141                             Holt Arena (8,000)
+#&gt; 142                   Credit Union 1 Arena (8,000)
+#&gt; 143                        Williams Center (8,000)
+#&gt; 144                 Thomas Assembly Center (8,000)
+#&gt; 145                Rutgers Athletic Center (8,000)
+#&gt; 146                          Watsco Center (7,972)
+#&gt; 147                           Baxter Arena (7,898)
+#&gt; 148                        EagleBank Arena (7,860)
+#&gt; 149                          Ramsey Center (7,826)
+#&gt; 150                            Ryan Center (7,657)
+#&gt; 151                          Siegel Center (7,637)
+#&gt; 152                    Greensboro Coliseum (7,617)
+#&gt; 153                      E.A. Diddle Arena (7,523)
+#&gt; 154                      University Center (7,500)
+#&gt; 155                  Clark Activity Center (7,500)
+#&gt; 156                    Dunn-Oliver Acadome (7,400)
+#&gt; 157                        Maples Pavilion (7,329)
+#&gt; 158                         Dahlberg Arena (7,322)
+#&gt; 159                         Walkup Skydome (7,300)
+#&gt; 160                           Savage Arena (7,300)
+#&gt; 161                          McLeod Center (7,293)
+#&gt; 162                   Winfield Dunn Center (7,275)
+#&gt; 163                       Johnson Coliseum (7,203)
+#&gt; 164                          Robins Center (7,201)
+#&gt; 165                          Magness Arena (7,200)
+#&gt; 166             Hampton Convocation Center (7,200)
+#&gt; 167                       Strahan Coliseum (7,200)
+#&gt; 168                           Knapp Center (7,152)
+#&gt; 169                           The Pavilion (7,100)
+#&gt; 170                       Welsh-Ryan Arena (7,039)
+#&gt; 171                        Fertitta Center (7,035)
+#&gt; 172                        Whitney Complex (7,000)
+#&gt; 173                              GCU Arena (7,000)
+#&gt; 174                    Fant-Ewing Coliseum (7,000)
+#&gt; 175                         Show Me Center (7,000)
+#&gt; 176                    College Park Center (7,000)
+#&gt; 177                       Jadwin Gymnasium (6,854)
+#&gt; 178               Indiana Farmers Coliseum (6,800)
+#&gt; 179                      Schollmaier Arena (6,800)
+#&gt; 180                  Corbett Sports Center (6,700)
+#&gt; 181              Freedom Hall Civic Center (6,500)
+#&gt; 182                         McBrayer Arena (6,500)
+#&gt; 183                          Johnson Arena (6,500)
+#&gt; 184                            Frost Arena (6,500)
+#&gt; 185                      Finneran Pavilion (6,500)
+#&gt; 186                           Millett Hall (6,400)
+#&gt; 187                         Beeghly Center (6,400)
+#&gt; 188 Memorial Athletic &amp; Convocation Center (6,327)
+#&gt; 189                            Echols Hall (6,191)
+#&gt; 190                          Spanos Center (6,150)
+#&gt; 191                       Johnson Coliseum (6,110)
+#&gt; 192                           Alumni Arena (6,100)
+#&gt; 193                         Trask Coliseum (6,100)
+#&gt; 194                      Winthrop Coliseum (6,100)
+#&gt; 195                       Elmore Gymnasium (6,000)
+#&gt; 196              McCarthey Athletic Center (6,000)
+#&gt; 197           Sanford Coyote Sports Center (6,000)
+#&gt; 198                  McAlister Field House (6,000)
+#&gt; 199                            Thunderdome (6,000)
+#&gt; 200                            Clune Arena (5,843)
+#&gt; 201                 Cross Insurance Center (5,800)
+#&gt; 202                              UNF Arena (5,800)
+#&gt; 203                          Reilly Center (5,780)
+#&gt; 204                            Alumni Hall (5,710)
+#&gt; 205                         Scheels Center (5,644)
+#&gt; 206                       Carnesecca Arena (5,602)
+#&gt; 207                          Stabler Arena (5,600)
+#&gt; 208                        Stephens Center (5,600)
+#&gt; 209                           Rhodes Arena (5,500)
+#&gt; 210                          Farris Center (5,500)
+#&gt; 211                 Hytche Athletic Center (5,500)
+#&gt; 212                           Trojan Arena (5,500)
+#&gt; 213                       University Arena (5,421)
+#&gt; 214                          McGuirk Arena (5,300)
+#&gt; 215                            Lantz Arena (5,300)
+#&gt; 216             America First Event Center (5,300)
+#&gt; 217                             Belk Arena (5,223)
+#&gt; 218                       Tudor Fieldhouse (5,208)
+#&gt; 219                             SECU Arena (5,200)
+#&gt; 220                          Events Center (5,142)
+#&gt; 221                           Western Hall (5,139)
+#&gt; 222                               TD Arena (5,100)
+#&gt; 223                           Schar Center (5,100)
+#&gt; 224                   Jenny Craig Pavilion (5,100)
+#&gt; 225                         Matthews Arena (5,065)
+#&gt; 226                      CBU Events Center (5,050)
+#&gt; 227                    Mack Sports Complex (5,045)
+#&gt; 228                          Christl Arena (5,043)
+#&gt; 229                           Cameron Hall (5,029)
+#&gt; 230                            Allen Arena (5,028)
+#&gt; 231                      Curb Event Center (5,000)
+#&gt; 232               Jones Convocation Center (5,000)
+#&gt; 233                   Bob Carpenter Center (5,000)
+#&gt; 234                            Reese Court (5,000)
+#&gt; 235          Ocean Bank Convocation Center (5,000)
+#&gt; 236                          FAU Gymnasium (5,000)
+#&gt; 237                          Timmons Arena (5,000)
+#&gt; 238                           Hanna Center (5,000)
+#&gt; 239    Provident Credit Union Event Center (5,000)
+#&gt; 240                     Bren Events Center (5,000)
+#&gt; 241            Athletics Recreation Center (5,000)
+#&gt; 242                          Chiles Center (4,854)
+#&gt; 243                            Burns Arena (4,779)
+#&gt; 244                      UMBC Event Center (4,753)
+#&gt; 245                 KSU Convocation Center (4,600)
+#&gt; 246                            SEFCU Arena (4,538)
+#&gt; 247                         Clemmons Arena (4,500)
+#&gt; 248                            Alico Arena (4,500)
+#&gt; 249                      Worthington Arena (4,500)
+#&gt; 250                       Hill Field House (4,500)
+#&gt; 251                          Leavey Center (4,500)
+#&gt; 252                          Gentile Arena (4,486)
+#&gt; 253                           Newman Arena (4,473)
+#&gt; 254                      Hanner Fieldhouse (4,358)
+#&gt; 255                           Stroh Center (4,347)
+#&gt; 256                Charles E. Smith Center (4,338)
+#&gt; 257                            Elam Center (4,300)
+#&gt; 258                          Qubein Center (4,200)
+#&gt; 259                             ICCU Arena (4,200)
+#&gt; 260                     The Walter Pyramid (4,200)
+#&gt; 261                           H&amp;HP Complex (4,200)
+#&gt; 262                            Hagan Arena (4,200)
+#&gt; 263     War Memorial at the Sobrato Center (4,200)
+#&gt; 264                       Gersten Pavilion (4,156)
+#&gt; 265             Physical Education Complex (4,100)
+#&gt; 266                 OceanFirst Bank Center (4,100)
+#&gt; 267                UTSA Convocation Center (4,080)
+#&gt; 268                         Sojka Pavilion (4,000)
+#&gt; 269                              Titan Gym (4,000)
+#&gt; 270                         Tom Gola Arena (4,000)
+#&gt; 271                          Liberty Arena (4,000)
+#&gt; 272                           Flowers Hall (4,000)
+#&gt; 273                     UPMC Events Center (4,000)
+#&gt; 274                      Vadalabene Center (4,000)
+#&gt; 275                         Edmunds Center (4,000)
+#&gt; 276      Island Federal Credit Union Arena (4,000)
+#&gt; 277                            Rimac Arena (4,000)
+#&gt; 278                       UTRGV Fieldhouse (4,000)
+#&gt; 279                          Icardo Center (3,880)
+#&gt; 280                            Stopher Gym (3,800)
+#&gt; 281                             HTC Center (3,600)
+#&gt; 282                            Hart Center (3,600)
+#&gt; 283                       Prather Coliseum (3,600)
+#&gt; 284                         Fogelman Arena (3,600)
+#&gt; 285                            Chase Arena (3,508)
+#&gt; 286                 UPMC Cooper Fieldhouse (3,500)
+#&gt; 287                      Paul Porter Arena (3,500)
+#&gt; 288                       Mathews Coliseum (3,500)
+#&gt; 289                    Kirby Sports Center (3,500)
+#&gt; 290             Wellness and Events Center (3,500)
+#&gt; 291                 William Nicks Building (3,500)
+#&gt; 292       University Credit Union Pavilion (3,500)
+#&gt; 293                            DeGol Arena (3,500)
+#&gt; 294                       GSU Sports Arena (3,400)
+#&gt; 295              Richardson Indoor Stadium (3,400)
+#&gt; 296                      Patrick Gymnasium (3,266)
+#&gt; 297                 People's United Center (3,254)
+#&gt; 298                      Detrick Gymnasium (3,200)
+#&gt; 299                          Rose Hill Gym (3,200)
+#&gt; 300                          McCann Center (3,200)
+#&gt; 301                          Hawkins Arena (3,200)
+#&gt; 302                          Dedmon Center (3,200)
+#&gt; 303                       Yanitelli Center (3,200)
+#&gt; 304         Smith Hammond Middleton Center (3,200)
+#&gt; 305                           Kimmel Arena (3,200)
+#&gt; 306                            Knott Arena (3,121)
+#&gt; 307           McLendon-McDougald Gymnasium (3,116)
+#&gt; 308                   Firestone Fieldhouse (3,104)
+#&gt; 309                Pope Convocation Center (3,095)
+#&gt; 310                        Viking Pavilion (3,094)
+#&gt; 311           Betty Engelstad Sioux Center (3,064)
+#&gt; 312                         Mott Gymnasium (3,032)
+#&gt; 313                              Moore Gym (3,000)
+#&gt; 314                        Assembly Center (3,000)
+#&gt; 315                     Lundholm Gymnasium (3,000)
+#&gt; 316                Athletics Center O'Rena (3,000)
+#&gt; 317                       Wisdom Gymnasium (3,000)
+#&gt; 318                 Bank of Colorado Arena (2,977)
+#&gt; 319                           Bender Arena (2,930)
+#&gt; 320                Pizzitola Sports Center (2,800)
+#&gt; 321                              SRC Arena (2,750)
+#&gt; 322                       Levien Gymnasium (2,700)
+#&gt; 323                             Burr Arena (2,700)
+#&gt; 324                       Harrison Complex (2,700)
+#&gt; 325                 Hynes Athletics Center (2,611)
+#&gt; 326                  Chace Athletic Center (2,600)
+#&gt; 327             Daskalakis Athletic Center (2,532)
+#&gt; 328                       Lee Amphitheater (2,532)
+#&gt; 329                       Draddy Gymnasium (2,500)
+#&gt; 330                       Gallagher Center (2,400)
+#&gt; 331                  Templeton P.E. Center (2,300)
+#&gt; 332                      Lavietes Pavilion (2,195)
+#&gt; 333               Koessler Athletic Center (2,176)
+#&gt; 334                            Leede Arena (2,100)
+#&gt; 335                            Reitz Arena (2,100)
+#&gt; 336                            Pitt Center (2,100)
+#&gt; 337               Costello Athletic Center (2,100)
+#&gt; 338                    Spiro Sports Center (2,100)
+#&gt; 339                          Memorial Hall (2,000)
+#&gt; 340                         Rothman Center (2,000)
+#&gt; 341           McDermott Convocation Center (2,000)
+#&gt; 342              Steinberg Wellness Center (2,000)
+#&gt; 343                           Willett Hall (1,807)
+#&gt; 344                               Case Gym (1,800)
+#&gt; 345                      Schoenecker Arena (1,800)
+#&gt; 346                        Cotterell Court (1,782)
+#&gt; 347                       Alumni Gymnasium (1,650)
+#&gt; 348                               Matadome (1,600)
+#&gt; 349              Swinney Recreation Center (1,600)
+#&gt; 350             Historic Swisher Gymnasium (1,500)
+#&gt; 351                           Hammel Court (1,200)
+#&gt; 352                       Pope P.E. Center (1,200)
+#&gt; 353                               The Nest (1,012)
+#&gt; 354           Teague Special Events Center (1,000)
+#&gt; 355                              Sharp Gym (1,000)
+#&gt; 356                           Redhawk Center (999)
+#&gt; 357                    Buccaneer Field House (881)
+#&gt; 358                             Hodge Center (837)
+#&gt;                          alternate year
+#&gt; 1                                  2022
+#&gt; 2                                  2022
+#&gt; 3                                  2022
+#&gt; 4                                  2022
+#&gt; 5                                  2022
+#&gt; 6                                  2022
+#&gt; 7                                  2022
+#&gt; 8                                  2022
+#&gt; 9                                  2022
+#&gt; 10                                 2022
+#&gt; 11                                 2022
+#&gt; 12                                 2022
+#&gt; 13                                 2022
+#&gt; 14                                 2022
+#&gt; 15                                 2022
+#&gt; 16                                 2022
+#&gt; 17                                 2022
+#&gt; 18                                 2022
+#&gt; 19                                 2022
+#&gt; 20                                 2022
+#&gt; 21                                 2022
+#&gt; 22                                 2022
+#&gt; 23                                 2022
+#&gt; 24                                 2022
+#&gt; 25                                 2022
+#&gt; 26                                 2022
+#&gt; 27                                 2022
+#&gt; 28                                 2022
+#&gt; 29                                 2022
+#&gt; 30                                 2022
+#&gt; 31                                 2022
+#&gt; 32                                 2022
+#&gt; 33                                 2022
+#&gt; 34                                 2022
+#&gt; 35                                 2022
+#&gt; 36                                 2022
+#&gt; 37                                 2022
+#&gt; 38                                 2022
+#&gt; 39                                 2022
+#&gt; 40                                 2022
+#&gt; 41                                 2022
+#&gt; 42                                 2022
+#&gt; 43                                 2022
+#&gt; 44                                 2022
+#&gt; 45                                 2022
+#&gt; 46                                 2022
+#&gt; 47                                 2022
+#&gt; 48                                 2022
+#&gt; 49                                 2022
+#&gt; 50                                 2022
+#&gt; 51                                 2022
+#&gt; 52                                 2022
+#&gt; 53                                 2022
+#&gt; 54                                 2022
+#&gt; 55                                 2022
+#&gt; 56                                 2022
+#&gt; 57                                 2022
+#&gt; 58     Gates Sports Center (1,800) 2022
+#&gt; 59                                 2022
+#&gt; 60                                 2022
+#&gt; 61                                 2022
+#&gt; 62                                 2022
+#&gt; 63                                 2022
+#&gt; 64                                 2022
+#&gt; 65                                 2022
+#&gt; 66                                 2022
+#&gt; 67                                 2022
+#&gt; 68                                 2022
+#&gt; 69                                 2022
+#&gt; 70                                 2022
+#&gt; 71                                 2022
+#&gt; 72                                 2022
+#&gt; 73                                 2022
+#&gt; 74                                 2022
+#&gt; 75                                 2022
+#&gt; 76                                 2022
+#&gt; 77                                 2022
+#&gt; 78                                 2022
+#&gt; 79                                 2022
+#&gt; 80                                 2022
+#&gt; 81                                 2022
+#&gt; 82                                 2022
+#&gt; 83                                 2022
+#&gt; 84                                 2022
+#&gt; 85                                 2022
+#&gt; 86                                 2022
+#&gt; 87                                 2022
+#&gt; 88                                 2022
+#&gt; 89                                 2022
+#&gt; 90                                 2022
+#&gt; 91                                 2022
+#&gt; 92                                 2022
+#&gt; 93              XL Center (15,564) 2022
+#&gt; 94                                 2022
+#&gt; 95                                 2022
+#&gt; 96                                 2022
+#&gt; 97                                 2022
+#&gt; 98                                 2022
+#&gt; 99                                 2022
+#&gt; 100                                2022
+#&gt; 101    Kress Events Center (4,018) 2022
+#&gt; 102                                2022
+#&gt; 103                                2022
+#&gt; 104                                2022
+#&gt; 105                                2022
+#&gt; 106                                2022
+#&gt; 107                                2022
+#&gt; 108                                2022
+#&gt; 109                                2022
+#&gt; 110                                2022
+#&gt; 111                                2022
+#&gt; 112                                2022
+#&gt; 113                                2022
+#&gt; 114                                2022
+#&gt; 115                                2022
+#&gt; 116                                2022
+#&gt; 117                                2022
+#&gt; 118                                2022
+#&gt; 119                                2022
+#&gt; 120                                2022
+#&gt; 121                                2022
+#&gt; 122                                2022
+#&gt; 123                                2022
+#&gt; 124                                2022
+#&gt; 125                                2022
+#&gt; 126                                2022
+#&gt; 127                                2022
+#&gt; 128                                2022
+#&gt; 129                                2022
+#&gt; 130                                2022
+#&gt; 131                                2022
+#&gt; 132                                2022
+#&gt; 133                                2022
+#&gt; 134                                2022
+#&gt; 135                                2022
+#&gt; 136                                2022
+#&gt; 137                                2022
+#&gt; 138                                2022
+#&gt; 139                                2022
+#&gt; 140                                2022
+#&gt; 141               Reed Gym (3,141) 2022
+#&gt; 142                                2022
+#&gt; 143                                2022
+#&gt; 144                                2022
+#&gt; 145                                2022
+#&gt; 146                                2022
+#&gt; 147                                2022
+#&gt; 148                                2022
+#&gt; 149                                2022
+#&gt; 150                                2022
+#&gt; 151                                2022
+#&gt; 152      Fleming Gymnasium (2,320) 2022
+#&gt; 153                                2022
+#&gt; 154                                2022
+#&gt; 155                                2022
+#&gt; 156                                2022
+#&gt; 157                                2022
+#&gt; 158                                2022
+#&gt; 159                                2022
+#&gt; 160                                2022
+#&gt; 161                                2022
+#&gt; 162                                2022
+#&gt; 163                                2022
+#&gt; 164                                2022
+#&gt; 165                                2022
+#&gt; 166                                2022
+#&gt; 167                                2022
+#&gt; 168                                2022
+#&gt; 169                                2022
+#&gt; 170                                2022
+#&gt; 171                                2022
+#&gt; 172                                2022
+#&gt; 173                                2022
+#&gt; 174                                2022
+#&gt; 175                                2022
+#&gt; 176                                2022
+#&gt; 177                                2022
+#&gt; 178                                2022
+#&gt; 179                                2022
+#&gt; 180                                2022
+#&gt; 181                                2022
+#&gt; 182                                2022
+#&gt; 183                                2022
+#&gt; 184                                2022
+#&gt; 185    Wells Fargo Center (20,478) 2022
+#&gt; 186                                2022
+#&gt; 187                                2022
+#&gt; 188                                2022
+#&gt; 189                                2022
+#&gt; 190                                2022
+#&gt; 191                                2022
+#&gt; 192                                2022
+#&gt; 193                                2022
+#&gt; 194                                2022
+#&gt; 195                                2022
+#&gt; 196                                2022
+#&gt; 197                                2022
+#&gt; 198                                2022
+#&gt; 199                                2022
+#&gt; 200                                2022
+#&gt; 201                                2022
+#&gt; 202                                2022
+#&gt; 203                                2022
+#&gt; 204                                2022
+#&gt; 205                                2022
+#&gt; 206 Madison Square Garden (19,786) 2022
+#&gt; 207                                2022
+#&gt; 208                                2022
+#&gt; 209                                2022
+#&gt; 210                                2022
+#&gt; 211                                2022
+#&gt; 212                                2022
+#&gt; 213                                2022
+#&gt; 214                                2022
+#&gt; 215                                2022
+#&gt; 216                                2022
+#&gt; 217                                2022
+#&gt; 218                                2022
+#&gt; 219                                2022
+#&gt; 220                                2022
+#&gt; 221                                2022
+#&gt; 222                                2022
+#&gt; 223                                2022
+#&gt; 224                                2022
+#&gt; 225                                2022
+#&gt; 226                                2022
+#&gt; 227                                2022
+#&gt; 228                                2022
+#&gt; 229                                2022
+#&gt; 230                                2022
+#&gt; 231                                2022
+#&gt; 232                                2022
+#&gt; 233                                2022
+#&gt; 234                                2022
+#&gt; 235                                2022
+#&gt; 236                                2022
+#&gt; 237                                2022
+#&gt; 238                                2022
+#&gt; 239                                2022
+#&gt; 240                                2022
+#&gt; 241                                2022
+#&gt; 242                                2022
+#&gt; 243                                2022
+#&gt; 244                                2022
+#&gt; 245                                2022
+#&gt; 246                                2022
+#&gt; 247                                2022
+#&gt; 248                                2022
+#&gt; 249                                2022
+#&gt; 250                                2022
+#&gt; 251                                2022
+#&gt; 252                                2022
+#&gt; 253                                2022
+#&gt; 254                                2022
+#&gt; 255                                2022
+#&gt; 256                                2022
+#&gt; 257                                2022
+#&gt; 258                                2022
+#&gt; 259                                2022
+#&gt; 260                                2022
+#&gt; 261                                2022
+#&gt; 262                                2022
+#&gt; 263                                2022
+#&gt; 264                                2022
+#&gt; 265                                2022
+#&gt; 266                                2022
+#&gt; 267                                2022
+#&gt; 268                                2022
+#&gt; 269                                2022
+#&gt; 270                                2022
+#&gt; 271                                2022
+#&gt; 272                                2022
+#&gt; 273                                2022
+#&gt; 274                                2022
+#&gt; 275                                2022
+#&gt; 276                                2022
+#&gt; 277                                2022
+#&gt; 278                                2022
+#&gt; 279                                2022
+#&gt; 280                                2022
+#&gt; 281                                2022
+#&gt; 282                                2022
+#&gt; 283                                2022
+#&gt; 284                                2022
+#&gt; 285                                2022
+#&gt; 286                                2022
+#&gt; 287                                2022
+#&gt; 288                                2022
+#&gt; 289                                2022
+#&gt; 290                                2022
+#&gt; 291                                2022
+#&gt; 292                                2022
+#&gt; 293                                2022
+#&gt; 294                                2022
+#&gt; 295                                2022
+#&gt; 296                                2022
+#&gt; 297                                2022
+#&gt; 298                                2022
+#&gt; 299                                2022
+#&gt; 300                                2022
+#&gt; 301                                2022
+#&gt; 302                                2022
+#&gt; 303                                2022
+#&gt; 304                                2022
+#&gt; 305                                2022
+#&gt; 306                                2022
+#&gt; 307                                2022
+#&gt; 308                                2022
+#&gt; 309                                2022
+#&gt; 310                                2022
+#&gt; 311                                2022
+#&gt; 312                                2022
+#&gt; 313                                2022
+#&gt; 314                                2022
+#&gt; 315                                2022
+#&gt; 316                                2022
+#&gt; 317                                2022
+#&gt; 318                                2022
+#&gt; 319                                2022
+#&gt; 320                                2022
+#&gt; 321                                2022
+#&gt; 322                                2022
+#&gt; 323                                2022
+#&gt; 324                                2022
+#&gt; 325                                2022
+#&gt; 326                                2022
+#&gt; 327                                2022
+#&gt; 328                                2022
+#&gt; 329                                2022
+#&gt; 330                                2022
+#&gt; 331                                2022
+#&gt; 332                                2022
+#&gt; 333                                2022
+#&gt; 334                                2022
+#&gt; 335                                2022
+#&gt; 336                                2022
+#&gt; 337         Tsongas Center (6,111) 2022
+#&gt; 338                                2022
+#&gt; 339                                2022
+#&gt; 340                                2022
+#&gt; 341                                2022
+#&gt; 342                                2022
+#&gt; 343                                2022
+#&gt; 344                                2022
+#&gt; 345                                2022
+#&gt; 346                                2022
+#&gt; 347                                2022
+#&gt; 348                                2022
+#&gt; 349                                2022
+#&gt; 350                                2022
+#&gt; 351                                2022
+#&gt; 352                                2022
+#&gt; 353                                2022
+#&gt; 354                                2022
+#&gt; 355                                2022
+#&gt; 356                                2022
+#&gt; 357                                2022
+#&gt; 358                                2022</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

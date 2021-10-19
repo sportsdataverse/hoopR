@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get team schedule results</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_team_schedule</span><span class='op'>(</span><span class='va'>team</span>, <span class='va'>year</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_team_schedule</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -289,9 +292,112 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>kp_team_schedule</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year<span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+  <span class='fu'>kp_team_schedule</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    team_rk        team opponent_rk       opponent    result poss ot pre_wp
+#&gt; 1       17 Florida St.         297  North Florida  W, 86-58   72  0     NA
+#&gt; 2       22 Florida St.          50        Indiana  W, 69-67   70  1     NA
+#&gt; 3       22 Florida St.          41        Florida  W, 83-71   76  0     NA
+#&gt; 4       12 Florida St.          37   Georgia Tech  W, 74-61   64  0     NA
+#&gt; 5       15 Florida St.         100            UCF  L, 86-74   69  0     NA
+#&gt; 6       24 Florida St.         182   Gardner Webb  W, 72-59   74  0     NA
+#&gt; 7       25 Florida St.          45        Clemson  L, 77-67   73  0     NA
+#&gt; 8       35 Florida St.          71     N.C. State W, 105-73   69  0     NA
+#&gt; 9       25 Florida St.          34 North Carolina  W, 82-75   70  0     NA
+#&gt; 10      23 Florida St.          59     Louisville  W, 78-65   66  0     NA
+#&gt; 11      19 Florida St.          45        Clemson  W, 80-61   70  0     NA
+#&gt; 12      15 Florida St.         138       Miami FL  W, 81-59   68  0     NA
+#&gt; 13      14 Florida St.          37   Georgia Tech  L, 76-65   73  0     NA
+#&gt; 14      17 Florida St.         175    Wake Forest  W, 92-85   76  1     NA
+#&gt; 15      20 Florida St.          19       Virginia  W, 81-60   62  0     NA
+#&gt; 16      13 Florida St.          97     Pittsburgh  W, 79-72   71  0     NA
+#&gt; 17      12 Florida St.         138       Miami FL  W, 88-71   70  0     NA
+#&gt; 18      10 Florida St.          34 North Carolina  L, 78-70   75  0     NA
+#&gt; 19      10 Florida St.         148 Boston College  W, 93-64   78  0     NA
+#&gt; 20       9 Florida St.          85     Notre Dame  L, 83-73   77  0     NA
+#&gt; 21      15 Florida St.          34 North Carolina  W, 69-66   71  0     NA
+#&gt; 22      13 Florida St.          37   Georgia Tech  L, 80-75   69  0     NA
+#&gt; 23      18 Florida St.         108 UNC Greensboro  W, 64-54   66  0     NA
+#&gt; 24      16 Florida St.           8       Colorado  W, 71-53   65  0     NA
+#&gt; 25      12 Florida St.           3       Michigan  L, 76-58   68  0     NA
+#&gt;    location  w l w_conference l_conference conference_game
+#&gt; 1      Home  1 0           NA           NA           FALSE
+#&gt; 2      Home  2 0           NA           NA           FALSE
+#&gt; 3      Home  3 0           NA           NA           FALSE
+#&gt; 4      Home  4 0            1            0            TRUE
+#&gt; 5      Home  4 1           NA           NA           FALSE
+#&gt; 6      Home  5 1           NA           NA           FALSE
+#&gt; 7      Away  5 2            1            1            TRUE
+#&gt; 8      Home  6 2            2            1            TRUE
+#&gt; 9      Home  7 2            3            1            TRUE
+#&gt; 10     Away  8 2            4            1            TRUE
+#&gt; 11     Home  9 2            5            1            TRUE
+#&gt; 12     Home 10 2            6            1            TRUE
+#&gt; 13     Away 10 3            6            2            TRUE
+#&gt; 14     Home 11 3            7            2            TRUE
+#&gt; 15     Home 12 3            8            2            TRUE
+#&gt; 16     Away 13 3            9            2            TRUE
+#&gt; 17     Away 14 3           10            2            TRUE
+#&gt; 18     Away 14 4           10            3            TRUE
+#&gt; 19     Home 15 4           11            3            TRUE
+#&gt; 20     Away 15 5           11            4            TRUE
+#&gt; 21  Neutral 16 5           NA           NA           FALSE
+#&gt; 22  Neutral 16 6           NA           NA           FALSE
+#&gt; 23  Neutral 17 6           NA           NA           FALSE
+#&gt; 24  Neutral 18 6           NA           NA           FALSE
+#&gt; 25  Neutral 18 7           NA           NA           FALSE
+#&gt;                              postseason year   day_date game_date w_proj l_proj
+#&gt; 1                               Regular 2021  Wed Dec 2  20201202      1      0
+#&gt; 2                               Regular 2021  Wed Dec 9  20201209      2      0
+#&gt; 3                               Regular 2021 Sat Dec 12  20201212      3      0
+#&gt; 4                               Regular 2021 Tue Dec 15  20201215      4      0
+#&gt; 5                               Regular 2021 Sat Dec 19  20201219      4      1
+#&gt; 6                               Regular 2021 Mon Dec 21  20201221      5      1
+#&gt; 7                               Regular 2021 Tue Dec 29  20201229      5      2
+#&gt; 8                               Regular 2021 Wed Jan 13  20210113      6      2
+#&gt; 9                               Regular 2021 Sat Jan 16  20210116      7      2
+#&gt; 10                              Regular 2021 Mon Jan 18  20210118      8      2
+#&gt; 11                              Regular 2021 Sat Jan 23  20210123      9      2
+#&gt; 12                              Regular 2021 Wed Jan 27  20210127     10      2
+#&gt; 13                              Regular 2021 Sat Jan 30  20210130     10      3
+#&gt; 14                              Regular 2021 Sat Feb 13  20210213     11      3
+#&gt; 15                              Regular 2021 Mon Feb 15  20210215     12      3
+#&gt; 16                              Regular 2021 Sat Feb 20  20210220     13      3
+#&gt; 17                              Regular 2021 Wed Feb 24  20210224     14      3
+#&gt; 18                              Regular 2021 Sat Feb 27  20210227     14      4
+#&gt; 19                              Regular 2021  Wed Mar 3  20210303     15      4
+#&gt; 20                              Regular 2021  Sat Mar 6  20210306     15      5
+#&gt; 21 Atlantic Coast Conference Tournament 2021 Fri Mar 12  20210312     16      5
+#&gt; 22 Atlantic Coast Conference Tournament 2021 Sat Mar 13  20210313     16      6
+#&gt; 23             NCAA Tournament - 4 seed 2021 Sat Mar 20  20210320     17      6
+#&gt; 24             NCAA Tournament - 4 seed 2021 Mon Mar 22  20210322     18      6
+#&gt; 25             NCAA Tournament - 4 seed 2021 Sun Mar 28  20210328     18      7
+#&gt;    w_conference_proj l_conference_proj       date game_id tiers_of_joy
+#&gt; 1                  0                 0 2020-12-02     366         &lt;NA&gt;
+#&gt; 2                  0                 0 2020-12-09     623            B
+#&gt; 3                  0                 0 2020-12-12    4122            B
+#&gt; 4                  1                 0 2020-12-15     791            B
+#&gt; 5                  1                 0 2020-12-19     915         &lt;NA&gt;
+#&gt; 6                  1                 0 2020-12-21    4093         &lt;NA&gt;
+#&gt; 7                  1                 1 2020-12-29    1130            A
+#&gt; 8                  2                 1 2021-01-13    1787         &lt;NA&gt;
+#&gt; 9                  3                 1 2021-01-16    1947            B
+#&gt; 10                 4                 1 2021-01-18    2075            A
+#&gt; 11                 5                 1 2021-01-23    2254            B
+#&gt; 12                 6                 1 2021-01-27    2426         &lt;NA&gt;
+#&gt; 13                 6                 2 2021-01-30    2578            A
+#&gt; 14                 7                 2 2021-02-13    3194         &lt;NA&gt;
+#&gt; 15                 8                 2 2021-02-15    3312            A
+#&gt; 16                 9                 2 2021-02-20    2767            B
+#&gt; 17                10                 2 2021-02-24    3667         &lt;NA&gt;
+#&gt; 18                10                 3 2021-02-27    3826            A
+#&gt; 19                11                 3 2021-03-03    3926         &lt;NA&gt;
+#&gt; 20                11                 4 2021-03-06    4003            B
+#&gt; 21                11                 4 2021-03-12    3559            A
+#&gt; 22                11                 4 2021-03-13    3614            A
+#&gt; 23                11                 4 2021-03-20    3719         &lt;NA&gt;
+#&gt; 24                11                 4 2021-03-22    3901            A
+#&gt; 25                11                 4 2021-03-28    3957            A</div><div class='input'><span class='co'># }</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

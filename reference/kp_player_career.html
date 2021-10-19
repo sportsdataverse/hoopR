@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -285,9 +288,389 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+    <pre class="examples"><div class='input'>  <span class='co'># \donttest{</span>
     <span class='fu'>kp_player_career</span><span class='op'>(</span>player_id <span class='op'>=</span> <span class='st'>'41180'</span><span class='op'>)</span>
-  <span class='op'>}</span>
+</div><div class='output co'>#&gt; [[1]]
+#&gt; <span style='color: #949494;'># A tibble: 15 × 41</span>
+#&gt;     year team_rk team     number name   position hgt     wgt yr        g min_pct
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>  <span style='text-decoration: underline;'>2</span>021      15 Florida…     10 Malik… <span style='color: #949494;'>"</span>PF<span style='color: #949494;'>"</span>     <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>Jr<span style='color: #949494;'>"</span>     24    47.8
+#&gt; <span style='color: #BCBCBC;'> 2</span>  <span style='text-decoration: underline;'>2</span>021      15 Confere…     10 Malik… <span style='color: #949494;'>"</span>PF<span style='color: #949494;'>"</span>     <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>Jr<span style='color: #949494;'>"</span>     14    45.8
+#&gt; <span style='color: #BCBCBC;'> 3</span>  <span style='text-decoration: underline;'>2</span>021      15 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>PF<span style='color: #949494;'>"</span>     <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>Jr<span style='color: #949494;'>"</span>     17    53.9
+#&gt; <span style='color: #BCBCBC;'> 4</span>  <span style='text-decoration: underline;'>2</span>021      15 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>PF<span style='color: #949494;'>"</span>     <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>Jr<span style='color: #949494;'>"</span>     10    55.5
+#&gt; <span style='color: #BCBCBC;'> 5</span>  <span style='text-decoration: underline;'>2</span>020      15 Florida…     10 Malik… <span style='color: #949494;'>"</span>PF·C<span style='color: #949494;'>"</span>   <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>So<span style='color: #949494;'>"</span>     31    48.2
+#&gt; <span style='color: #BCBCBC;'> 6</span>  <span style='text-decoration: underline;'>2</span>020      15 Confere…     10 Malik… <span style='color: #949494;'>"</span>PF·C<span style='color: #949494;'>"</span>   <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>So<span style='color: #949494;'>"</span>     20    48.9
+#&gt; <span style='color: #BCBCBC;'> 7</span>  <span style='text-decoration: underline;'>2</span>020      15 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>PF·C<span style='color: #949494;'>"</span>   <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>So<span style='color: #949494;'>"</span>     17    53.3
+#&gt; <span style='color: #BCBCBC;'> 8</span>  <span style='text-decoration: underline;'>2</span>020      15 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>PF·C<span style='color: #949494;'>"</span>   <span style='color: #949494;'>"</span>6-9<span style='color: #949494;'>"</span>   225 <span style='color: #949494;'>"</span>So<span style='color: #949494;'>"</span>     10    55.1
+#&gt; <span style='color: #BCBCBC;'> 9</span>  <span style='text-decoration: underline;'>2</span>018     289 Rice         10 Malik… <span style='color: #949494;'>"</span>C<span style='color: #949494;'>"</span>      <span style='color: #949494;'>"</span>6-8<span style='color: #949494;'>"</span>   200 <span style='color: #949494;'>"</span>Fr<span style='color: #949494;'>"</span>     29    68.4
+#&gt; <span style='color: #BCBCBC;'>10</span>  <span style='text-decoration: underline;'>2</span>018     289 Confere…     10 Malik… <span style='color: #949494;'>"</span>C<span style='color: #949494;'>"</span>      <span style='color: #949494;'>"</span>6-8<span style='color: #949494;'>"</span>   200 <span style='color: #949494;'>"</span>Fr<span style='color: #949494;'>"</span>     18    71.9
+#&gt; <span style='color: #BCBCBC;'>11</span>  <span style='text-decoration: underline;'>2</span>018     289 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>C<span style='color: #949494;'>"</span>      <span style='color: #949494;'>"</span>6-8<span style='color: #949494;'>"</span>   200 <span style='color: #949494;'>"</span>Fr<span style='color: #949494;'>"</span>     11    71.5
+#&gt; <span style='color: #BCBCBC;'>12</span>  <span style='text-decoration: underline;'>2</span>018     289 vs. Tie…     10 Malik… <span style='color: #949494;'>"</span>C<span style='color: #949494;'>"</span>      <span style='color: #949494;'>"</span>6-8<span style='color: #949494;'>"</span>   200 <span style='color: #949494;'>"</span>Fr<span style='color: #949494;'>"</span>      2    58.8
+#&gt; <span style='color: #BCBCBC;'>13</span>    <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span> Career       <span style='color: #BB0000;'>NA</span> <span style='color: #BB0000;'>NA</span>     <span style='color: #949494;'>""</span>       <span style='color: #949494;'>""</span>       <span style='color: #BB0000;'>NA</span> <span style='color: #949494;'>""</span>       84    <span style='color: #BB0000;'>NA</span>  
+#&gt; <span style='color: #BCBCBC;'>14</span>    <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span> vs. Tie…     <span style='color: #BB0000;'>NA</span> <span style='color: #BB0000;'>NA</span>     <span style='color: #949494;'>""</span>       <span style='color: #949494;'>""</span>       <span style='color: #BB0000;'>NA</span> <span style='color: #949494;'>""</span>       45    <span style='color: #BB0000;'>NA</span>  
+#&gt; <span style='color: #BCBCBC;'>15</span>    <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span> vs. Tie…     <span style='color: #BB0000;'>NA</span> <span style='color: #BB0000;'>NA</span>     <span style='color: #949494;'>""</span>       <span style='color: #949494;'>""</span>       <span style='color: #BB0000;'>NA</span> <span style='color: #949494;'>""</span>       22    <span style='color: #BB0000;'>NA</span>  
+#&gt; <span style='color: #949494;'># … with 30 more variables: o_rtg &lt;dbl&gt;, poss_pct &lt;dbl&gt;, shots_pct &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   e_fg_pct &lt;dbl&gt;, ts_pct &lt;dbl&gt;, or_pct &lt;dbl&gt;, dr_pct &lt;dbl&gt;, a_rate &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   to_rate &lt;dbl&gt;, blk_pct &lt;dbl&gt;, stl_pct &lt;dbl&gt;, f_cper40 &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   f_dper40 &lt;dbl&gt;, ft_rate &lt;dbl&gt;, ftm &lt;dbl&gt;, fta &lt;dbl&gt;, ft_pct &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fgm_2 &lt;dbl&gt;, fga_2 &lt;dbl&gt;, fg_2_pct &lt;dbl&gt;, fgm_3 &lt;dbl&gt;, fga_3 &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fg_3_pct &lt;dbl&gt;, group_rank &lt;chr&gt;, team_finish &lt;chr&gt;, ncaa_seed &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   hometown &lt;chr&gt;, date_of_birth &lt;chr&gt;, age &lt;chr&gt;, comparisons &lt;chr&gt;</span>
+#&gt; 
+#&gt; [[2]]
+#&gt;    year        team          name position opponent_tier   date opponent_rk
+#&gt; 1  2021 Florida St. Malik Osborne       PF            NA Mar 28           3
+#&gt; 2  2021 Florida St. Malik Osborne       PF            NA Mar 22           8
+#&gt; 3  2021 Florida St. Malik Osborne       PF            NA Mar 20         108
+#&gt; 4  2021 Florida St. Malik Osborne       PF            NA Mar 13          37
+#&gt; 5  2021 Florida St. Malik Osborne       PF            NA Mar 12          34
+#&gt; 6  2021 Florida St. Malik Osborne       PF            NA  Mar 6          85
+#&gt; 7  2021 Florida St. Malik Osborne       PF            NA  Mar 3         148
+#&gt; 8  2021 Florida St. Malik Osborne       PF            NA Feb 27          34
+#&gt; 9  2021 Florida St. Malik Osborne       PF            NA Feb 24         138
+#&gt; 10 2021 Florida St. Malik Osborne       PF            NA Feb 20          97
+#&gt; 11 2021 Florida St. Malik Osborne       PF            NA Feb 15          19
+#&gt; 12 2021 Florida St. Malik Osborne       PF            NA Feb 13         175
+#&gt; 13 2021 Florida St. Malik Osborne       PF            NA Jan 30          37
+#&gt; 14 2021 Florida St. Malik Osborne       PF            NA Jan 27         138
+#&gt; 15 2021 Florida St. Malik Osborne       PF            NA Jan 23          45
+#&gt; 16 2021 Florida St. Malik Osborne       PF            NA Jan 18          59
+#&gt; 17 2021 Florida St. Malik Osborne       PF            NA Jan 16          34
+#&gt; 18 2021 Florida St. Malik Osborne       PF            NA Jan 13          71
+#&gt; 19 2021 Florida St. Malik Osborne       PF            NA Dec 29          45
+#&gt; 20 2021 Florida St. Malik Osborne       PF            NA Dec 21         182
+#&gt; 21 2021 Florida St. Malik Osborne       PF            NA Dec 19         100
+#&gt; 22 2021 Florida St. Malik Osborne       PF            NA Dec 15          37
+#&gt; 23 2021 Florida St. Malik Osborne       PF            NA Dec 12          41
+#&gt; 24 2021 Florida St. Malik Osborne       PF            NA  Dec 9          50
+#&gt; 25 2021 Florida St. Malik Osborne       PF            NA  Dec 2         297
+#&gt; 26 2020 Florida St. Malik Osborne     PF·C            NA  Mar 7         179
+#&gt; 27 2020 Florida St. Malik Osborne     PF·C            NA  Mar 4          57
+#&gt; 28 2020 Florida St. Malik Osborne     PF·C            NA Feb 29          72
+#&gt; 29 2020 Florida St. Malik Osborne     PF·C            NA Feb 24           9
+#&gt; 30 2020 Florida St. Malik Osborne     PF·C            NA Feb 22          50
+#&gt; 31 2020 Florida St. Malik Osborne     PF·C            NA Feb 18         111
+#&gt; 32 2020 Florida St. Malik Osborne     PF·C            NA Feb 15          51
+#&gt; 33 2020 Florida St. Malik Osborne     PF·C            NA Feb 10           5
+#&gt; 34 2020 Florida St. Malik Osborne     PF·C            NA  Feb 8         104
+#&gt; 35 2020 Florida St. Malik Osborne     PF·C            NA  Feb 3          84
+#&gt; 36 2020 Florida St. Malik Osborne     PF·C            NA  Feb 1         105
+#&gt; 37 2020 Florida St. Malik Osborne     PF·C            NA Jan 28          42
+#&gt; 38 2020 Florida St. Malik Osborne     PF·C            NA Jan 25          57
+#&gt; 39 2020 Florida St. Malik Osborne     PF·C            NA Jan 18         104
+#&gt; 40 2020 Florida St. Malik Osborne     PF·C            NA Jan 15          42
+#&gt; 41 2020 Florida St. Malik Osborne     PF·C            NA  Jan 8         103
+#&gt; 42 2020 Florida St. Malik Osborne     PF·C            NA  Jan 4           9
+#&gt; 43 2020 Florida St. Malik Osborne     PF·C            NA Dec 31          64
+#&gt; 44 2020 Florida St. Malik Osborne     PF·C            NA Dec 28         284
+#&gt; 45 2020 Florida St. Malik Osborne     PF·C            NA Dec 21         125
+#&gt; 46 2020 Florida St. Malik Osborne     PF·C            NA Dec 17         166
+#&gt; 47 2020 Florida St. Malik Osborne     PF·C            NA  Dec 8          72
+#&gt; 48 2020 Florida St. Malik Osborne     PF·C            NA  Dec 3          34
+#&gt; 49 2020 Florida St. Malik Osborne     PF·C            NA Nov 30          24
+#&gt; 50 2020 Florida St. Malik Osborne     PF·C            NA Nov 29          68
+#&gt; 51 2020 Florida St. Malik Osborne     PF·C            NA Nov 25         353
+#&gt; 52 2020 Florida St. Malik Osborne     PF·C            NA Nov 23         176
+#&gt; 53 2020 Florida St. Malik Osborne     PF·C            NA Nov 20         147
+#&gt; 54 2020 Florida St. Malik Osborne     PF·C            NA Nov 15         156
+#&gt; 55 2020 Florida St. Malik Osborne     PF·C            NA Nov 10          32
+#&gt; 56 2020 Florida St. Malik Osborne     PF·C            NA  Nov 6         111
+#&gt; 57 2018        Rice Malik Osborne        C            NA  Mar 3         174
+#&gt; 58 2018        Rice Malik Osborne        C            NA  Mar 1         240
+#&gt; 59 2018        Rice Malik Osborne        C            NA Feb 24         222
+#&gt; 60 2018        Rice Malik Osborne        C            NA Feb 22         233
+#&gt; 61 2018        Rice Malik Osborne        C            NA Feb 17          47
+#&gt; 62 2018        Rice Malik Osborne        C            NA Feb 15         105
+#&gt; 63 2018        Rice Malik Osborne        C            NA Feb 10         109
+#&gt; 64 2018        Rice Malik Osborne        C            NA  Feb 8          45
+#&gt; 65 2018        Rice Malik Osborne        C            NA  Feb 3         146
+#&gt; 66 2018        Rice Malik Osborne        C            NA Jan 27         233
+#&gt; 67 2018        Rice Malik Osborne        C            NA Jan 25         222
+#&gt; 68 2018        Rice Malik Osborne        C            NA Jan 20         149
+#&gt; 69 2018        Rice Malik Osborne        C            NA Jan 18         206
+#&gt; 70 2018        Rice Malik Osborne        C            NA Jan 13         146
+#&gt; 71 2018        Rice Malik Osborne        C            NA  Jan 6         308
+#&gt; 72 2018        Rice Malik Osborne        C            NA  Jan 4          64
+#&gt; 73 2018        Rice Malik Osborne        C            NA Dec 30         240
+#&gt; 74 2018        Rice Malik Osborne        C            NA Dec 28         174
+#&gt; 75 2018        Rice Malik Osborne        C            NA Dec 22         228
+#&gt; 76 2018        Rice Malik Osborne        C            NA Dec 19         106
+#&gt; 77 2018        Rice Malik Osborne        C            NA Dec 16          11
+#&gt; 78 2018        Rice Malik Osborne        C            NA Dec 14          NA
+#&gt; 79 2018        Rice Malik Osborne        C            NA  Dec 9         112
+#&gt; 80 2018        Rice Malik Osborne        C            NA  Dec 2         260
+#&gt; 81 2018        Rice Malik Osborne        C            NA Nov 29         128
+#&gt; 82 2018        Rice Malik Osborne        C            NA Nov 25          NA
+#&gt; 83 2018        Rice Malik Osborne        C            NA Nov 22         108
+#&gt; 84 2018        Rice Malik Osborne        C            NA Nov 20         107
+#&gt; 85 2018        Rice Malik Osborne        C            NA Nov 17         345
+#&gt; 86 2018        Rice Malik Osborne        C            NA Nov 14         101
+#&gt; 87 2018        Rice Malik Osborne        C            NA Nov 10         286
+#&gt;                opponent    result ot  location game_type  mvp        start
+#&gt; 1              Michigan  L, 76-58      Neutral    NCAA-T &lt;NA&gt;             
+#&gt; 2              Colorado  W, 71-53      Neutral    NCAA-T &lt;NA&gt;             
+#&gt; 3        UNC Greensboro  W, 64-54      Neutral    NCAA-T &lt;NA&gt;             
+#&gt; 4          Georgia Tech  L, 80-75      Neutral     ACC-T &lt;NA&gt;             
+#&gt; 5        North Carolina  W, 69-66      Neutral     ACC-T &lt;NA&gt;             
+#&gt; 6            Notre Dame  L, 83-73         Away       ACC &lt;NA&gt;             
+#&gt; 7        Boston College  W, 93-64         Home       ACC &lt;NA&gt; Did not play
+#&gt; 8        North Carolina  L, 78-70         Away       ACC &lt;NA&gt;             
+#&gt; 9              Miami FL  W, 88-71         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 10           Pittsburgh  W, 79-72         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 11             Virginia  W, 81-60         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 12          Wake Forest  W, 92-85 OT      Home       ACC &lt;NA&gt;       \u0095
+#&gt; 13         Georgia Tech  L, 76-65         Away       ACC &lt;NA&gt;             
+#&gt; 14             Miami FL  W, 81-59         Home       ACC &lt;NA&gt;             
+#&gt; 15              Clemson  W, 80-61         Home       ACC &lt;NA&gt;             
+#&gt; 16           Louisville  W, 78-65         Away       ACC &lt;NA&gt;             
+#&gt; 17       North Carolina  W, 82-75         Home       ACC &lt;NA&gt;             
+#&gt; 18           N.C. State W, 105-73         Home       ACC &lt;NA&gt;             
+#&gt; 19              Clemson  L, 77-67         Away       ACC &lt;NA&gt;             
+#&gt; 20         Gardner Webb  W, 72-59         Home           &lt;NA&gt;             
+#&gt; 21                  UCF  L, 86-74         Home           &lt;NA&gt;             
+#&gt; 22         Georgia Tech  W, 74-61         Home       ACC &lt;NA&gt;             
+#&gt; 23              Florida  W, 83-71         Home           &lt;NA&gt;             
+#&gt; 24              Indiana  W, 69-67 OT      Home           &lt;NA&gt;             
+#&gt; 25        North Florida  W, 86-58         Home           &lt;NA&gt;             
+#&gt; 26       Boston College  W, 80-62         Home       ACC &lt;NA&gt;             
+#&gt; 27           Notre Dame  W, 73-71         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 28              Clemson  L, 70-69         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 29           Louisville  W, 82-67         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 30           N.C. State  W, 67-61         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 31           Pittsburgh  W, 82-67         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 32             Syracuse  W, 80-77         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 33                 Duke  L, 70-65         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 34             Miami FL  W, 99-81         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 35       North Carolina  W, 65-59         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 36        Virginia Tech  W, 74-63         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 37             Virginia  L, 61-56         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 38           Notre Dame  W, 85-84         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 39             Miami FL  W, 83-79 OT      Away       ACC &lt;NA&gt;       \u0095
+#&gt; 40             Virginia  W, 54-50         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 41          Wake Forest  W, 78-68         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 42           Louisville  W, 78-65         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 43         Georgia Tech  W, 70-58         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 44        North Alabama  W, 88-71         Home           &lt;NA&gt;       \u0095
+#&gt; 45        South Florida  W, 66-60      Neutral           &lt;NA&gt;             
+#&gt; 46        North Florida  W, 98-81         Home           &lt;NA&gt;             
+#&gt; 47              Clemson  W, 72-53         Home       ACC &lt;NA&gt;       \u0095
+#&gt; 48              Indiana  L, 80-64         Away           &lt;NA&gt;       \u0095
+#&gt; 49               Purdue  W, 63-60 OT   Neutral           &lt;NA&gt;       \u0095
+#&gt; 50            Tennessee  W, 60-57      Neutral           &lt;NA&gt;       \u0095
+#&gt; 51          Chicago St. W, 113-56         Home           &lt;NA&gt;       \u0095
+#&gt; 52       St. Francis PA  W, 80-65         Home           &lt;NA&gt;       \u0095
+#&gt; 53          Chattanooga  W, 89-53         Home           &lt;NA&gt;       \u0095
+#&gt; 54     Western Carolina  W, 79-74         Home           &lt;NA&gt;       \u0095
+#&gt; 55              Florida  W, 63-51         Away           &lt;NA&gt;       \u0095
+#&gt; 56           Pittsburgh  L, 63-61         Away       ACC &lt;NA&gt;       \u0095
+#&gt; 57                 UTSA  L, 79-60         Home      CUSA            \u0095
+#&gt; 58                 UTEP  W, 76-70         Home      CUSA            \u0095
+#&gt; 59                  FIU  L, 67-64         Away      CUSA            \u0095
+#&gt; 60     Florida Atlantic  W, 79-76 OT      Away      CUSA            \u0095
+#&gt; 61     Western Kentucky  L, 85-66         Home      CUSA            \u0095
+#&gt; 62             Marshall  L, 93-80         Home      CUSA            \u0095
+#&gt; 63                  UAB  L, 61-56         Away      CUSA            \u0095
+#&gt; 64     Middle Tennessee  L, 94-75         Away      CUSA            \u0095
+#&gt; 65          North Texas  L, 74-70         Away      CUSA            \u0095
+#&gt; 66     Florida Atlantic  L, 63-62         Home      CUSA            \u0095
+#&gt; 67                  FIU  W, 73-64         Home      CUSA            \u0095
+#&gt; 68       Louisiana Tech  L, 69-54         Away      CUSA            \u0095
+#&gt; 69        Southern Miss  L, 86-75         Away      CUSA            \u0095
+#&gt; 70          North Texas  L, 85-78         Home      CUSA            \u0095
+#&gt; 71            Charlotte  W, 73-64         Home      CUSA  MVP       \u0095
+#&gt; 72         Old Dominion  L, 82-75 OT      Home      CUSA            \u0095
+#&gt; 73                 UTEP  L, 80-62         Away      CUSA            \u0095
+#&gt; 74                 UTSA  L, 79-66         Away      CUSA            \u0095
+#&gt; 75            Texas St.  L, 74-66         Home                      \u0095
+#&gt; 76           New Mexico  L, 78-69         Away                      \u0095
+#&gt; 77           Texas Tech  L, 73-53         Away                      \u0095
+#&gt; 78          St. Edwards  W, 91-86         Home                      \u0095
+#&gt; 79    Stephen F. Austin  L, 81-62         Away                      \u0095
+#&gt; 80 UT Rio Grande Valley  L, 69-67         Home                      \u0095
+#&gt; 81         UT Arlington  L, 69-49         Away                      \u0095
+#&gt; 82        St. Thomas TX  W, 70-59         Home                      \u0095
+#&gt; 83          Mississippi  L, 79-62      Neutral                      \u0095
+#&gt; 84                 UNLV  L, 95-68    Semi-Away                            
+#&gt; 85     Northwestern St.  W, 87-65         Away                            
+#&gt; 86          Georgia St.  L, 75-54         Home                            
+#&gt; 87     Eastern Kentucky  L, 73-72         Home                            
+#&gt;    minutes_played o_rtg poss_pct pts fgm_2 fga_2 fgm_3 fga_3 ftm fta or dr  a
+#&gt; 1              31   124       15  12     0     2     4     7   0   0  0  6  1
+#&gt; 2              20   120       23  11     3     4     1     4   2   3  1  4  0
+#&gt; 3              14   135       12   4     0     0     0     0   4   4  0  5  0
+#&gt; 4              22   122        7   3     0     1     1     1   0   0  0  3  1
+#&gt; 5              20   223        7   9     0     0     3     4   0   0  0  2  0
+#&gt; 6               8    NA       NA   0     0     0     0     0   0   0  0  1  0
+#&gt; 7              NA    NA       NA  NA    NA    NA    NA    NA  NA  NA NA NA NA
+#&gt; 8              20    79       11   3     1     3     0     0   1   2  2  0  0
+#&gt; 9               9    NA       NA   2     1     1     0     1   0   0  1  3  0
+#&gt; 10             24   170       15  12     3     3     0     1   6   7  2  7  0
+#&gt; 11             24   100       17   7     2     4     1     4   0   0  1  1  0
+#&gt; 12             25   140       21  12     0     3     3     4   3   4  4  4  1
+#&gt; 13             21    23       11   1     0     3     0     3   1   2  0  3  0
+#&gt; 14             19   167       18  11     3     5     1     2   2   2  2  8  0
+#&gt; 15             24   142       10   8     1     2     2     4   0   0  0  4  0
+#&gt; 16             25   120       21  12     4     5     0     3   4   4  1  2  0
+#&gt; 17             15   146       21  10     1     2     2     3   2   2  1  1  0
+#&gt; 18             20    46        7   0     0     1     0     2   0   0  1  3  0
+#&gt; 19             24    67       14   2     1     2     0     3   0   0  2  6  2
+#&gt; 20             17    79       34   8     3     5     0     2   2   3  6  2  0
+#&gt; 21             13    82        7   0     0     0     0     0   0   0  2  3  0
+#&gt; 22             19    68       12   2     1     3     0     0   0   0  0  1  1
+#&gt; 23             21    48       13   2     1     4     0     1   0   0  1  1  0
+#&gt; 24             31   164        8   5     0     2     1     1   2   2  4  5  1
+#&gt; 25             17   124       16   6     2     2     0     2   2   2  3  0  0
+#&gt; 26             12    88       11   2     0     1     0     0   2   4  1  3  0
+#&gt; 27             20    78       22   4     1     3     0     2   2   2  3  2  1
+#&gt; 28             14    91       38  11     1     3     3     3   0   3  2  6  0
+#&gt; 29             15   108       19   4     2     2     0     2   0   0  2  5  1
+#&gt; 30             30   102       20   9     4     5     0     3   1   6  5  7  0
+#&gt; 31             11   117       22   5     2     2     0     2   1   1  1  0  1
+#&gt; 32             17   124       11   4     1     4     0     0   2   2  2  1  0
+#&gt; 33             23   109       29  14     4     7     2     6   0   0  4  1  0
+#&gt; 34             12   223        8   6     0     1     2     2   0   0  1  2  0
+#&gt; 35             15   158       17   8     2     4     1     1   1   1  2  4  0
+#&gt; 36             11   104        5   1     0     0     0     0   1   2  0  2  0
+#&gt; 37             25    76       17   5     2     5     0     2   1   1  1  3  0
+#&gt; 38             14     0       12   0     0     1     0     1   0   0  0  1  0
+#&gt; 39             31   122        8   6     2     3     0     1   2   3  1  4  0
+#&gt; 40             26   125       10   5     1     2     1     3   0   0  3  1  0
+#&gt; 41             21   129       19   9     2     5     1     1   2   2  3  2  0
+#&gt; 42             30   121       15   7     2     4     1     3   0   0  4  5  1
+#&gt; 43             22   154       11   7     2     4     1     1   0   0  0  4  2
+#&gt; 44             18   132       28  14     4     7     2     5   0   0  3  1  0
+#&gt; 45             14    87       12   2     1     1     0     1   0   0  1  0  1
+#&gt; 46             10   101       23   2     1     4     0     1   0   0  3  2  1
+#&gt; 47             22   102       15   5     1     1     1     4   0   0  1  5  1
+#&gt; 48             22   126       15   7     2     3     1     2   0   0  1  2  1
+#&gt; 49             18   123       12   4     1     2     0     1   2   2  2  4  0
+#&gt; 50             16   128       10   4     0     0     1     1   1   4  2  4  0
+#&gt; 51             15   208        8   4     2     2     0     0   0   0  2  3  1
+#&gt; 52             24   131       12   9     0     2     3     5   0   0  1  3  0
+#&gt; 53             20   103       25  10     3     7     1     3   1   1  0  3  2
+#&gt; 54             25   150       12   6     2     2     0     0   2   3  4  5  1
+#&gt; 55             26   137       15  10     4     7     0     0   2   2  2  2  0
+#&gt; 56             23    62       12   2     1     2     0     2   0   0  2  7  0
+#&gt; 57             31    96       18   9     2     4     1     6   2   2  3  5  0
+#&gt; 58             27    81       29  10     2     5     1     5   3   8  4  6  1
+#&gt; 59             35   116       26  20     5     9     2     5   4   6  4  2  2
+#&gt; 60             26    57       30   8     3     7     0     5   2   3  1  5  0
+#&gt; 61             34   122       16  15     3     6     3     4   0   1  1  3  1
+#&gt; 62             32   105       33  22     4     8     3     9   5   9  3 10  1
+#&gt; 63             27    73       19   6     3     4     0     4   0   0  2  7  1
+#&gt; 64             24    81       30  11     4     7     0     3   3   4  2  3  0
+#&gt; 65             25    59       27   7     2     3     0     2   3   7  1  2  0
+#&gt; 66             33    88       26  10     3     8     1     6   1   2  4  4  1
+#&gt; 67             30   114       22  16     2     5     3     5   3   5  1  4  2
+#&gt; 68             33    96       19  11     2     6     2     4   1   1  2  5  0
+#&gt; 69             29   158       19  17     5     7     1     2   4   4  2  6  1
+#&gt; 70             26    75       17   4     0     2     0     1   4   6  2  2  1
+#&gt; 71             24   126       32  18     3     3     1     2   9  11  2  4  1
+#&gt; 72             30   113       11   5     2     4     0     0   1   3  1  4  2
+#&gt; 73             26   101       18   7     2     5     0     1   3   3  2  4  1
+#&gt; 74             33    87       14   7     3     4     0     1   1   4  4  9  0
+#&gt; 75             25   113       14   8     2     4     1     1   1   2  1  1  0
+#&gt; 76             32   137       16  12     4     7     0     0   4   4  5  6  0
+#&gt; 77             23    85       17   4     1     3     0     1   2   2  2  2  2
+#&gt; 78             24    88       20   9     1     2     0     1   7   8  0  3  1
+#&gt; 79             36    62       19   8     3     3     0     2   2   6  3  6  1
+#&gt; 80             30   128       18  14     1     4     3     5   3   3  2  4  0
+#&gt; 81             29    10        9   0     0     1     0     2   0   2  0  3  1
+#&gt; 82             17    95       16   4     2     3     0     1   0   1  3  4  1
+#&gt; 83             25    78       16   4     0     2     0     2   4   4  3  3  2
+#&gt; 84             25   108       10   4     2     3     0     1   0   0  5  4  0
+#&gt; 85             19    67       25   4     2     6     0     1   0   0  3  5  1
+#&gt; 86             26    97       15   5     2     4     0     1   1   2  3  5  2
+#&gt; 87              5    NA       NA   1     0     0     0     0   1   2  0  0  0
+#&gt;    to blk stl pf
+#&gt; 1   1   0   0  3
+#&gt; 2   0   0   1  1
+#&gt; 3   1   0   0  1
+#&gt; 4   1   0   0  2
+#&gt; 5   0   0   1  2
+#&gt; 6   2   0   1  1
+#&gt; 7  NA  NA  NA NA
+#&gt; 8   1   0   2  4
+#&gt; 9   0   0   0  0
+#&gt; 10  0   0   0  2
+#&gt; 11  0   0   0  1
+#&gt; 12  1   0   0  3
+#&gt; 13  0   2   1  4
+#&gt; 14  0   0   0  1
+#&gt; 15  0   1   2  1
+#&gt; 16  1   0   1  2
+#&gt; 17  1   1   0  1
+#&gt; 18  0   0   0  2
+#&gt; 19  1   1   0  2
+#&gt; 20  4   1   0  4
+#&gt; 21  1   0   0  2
+#&gt; 22  1   0   0  3
+#&gt; 23  1   0   1  4
+#&gt; 24  0   1   2  3
+#&gt; 25  1   0   2  1
+#&gt; 26  0   1   0  1
+#&gt; 27  2   0   0  3
+#&gt; 28  3   0   0  4
+#&gt; 29  1   0   0  0
+#&gt; 30  0   2   0  2
+#&gt; 31  1   1   1  0
+#&gt; 32  0   0   2  1
+#&gt; 33  2   2   0  3
+#&gt; 34  0   0   0  2
+#&gt; 35  0   0   0  1
+#&gt; 36  0   0   0  0
+#&gt; 37  0   2   1  2
+#&gt; 38  2   0   0  2
+#&gt; 39  0   1   1  3
+#&gt; 40  0   1   0  0
+#&gt; 41  1   0   3  2
+#&gt; 42  1   1   0  4
+#&gt; 43  0   1   2  1
+#&gt; 44  0   1   1  2
+#&gt; 45  1   0   2  2
+#&gt; 46  0   1   0  0
+#&gt; 47  1   2   0  3
+#&gt; 48  1   0   2  1
+#&gt; 49  0   0   0  2
+#&gt; 50  0   0   3  1
+#&gt; 51  0   0   0  1
+#&gt; 52  1   2   0  2
+#&gt; 53  1   0   0  1
+#&gt; 54  1   1   0  2
+#&gt; 55  0   0   1  4
+#&gt; 56  1   4   0  5
+#&gt; 57  1   1   0  1
+#&gt; 58  2   1   1  4
+#&gt; 59  2   0   1  2
+#&gt; 60  2   1   0  4
+#&gt; 61  1   1   0  0
+#&gt; 62  2   0   0  1
+#&gt; 63  2   0   2  4
+#&gt; 64  3   1   0  1
+#&gt; 65  4   2   0  4
+#&gt; 66  0   3   1  1
+#&gt; 67  2   0   0  3
+#&gt; 68  2   2   1  0
+#&gt; 69  1   0   1  1
+#&gt; 70  2   2   1  2
+#&gt; 71  4   3   1  4
+#&gt; 72  0   1   0  4
+#&gt; 73  1   0   0  1
+#&gt; 74  2   0   1  3
+#&gt; 75  1   0   0  5
+#&gt; 76  1   1   0  1
+#&gt; 77  2   0   1  5
+#&gt; 78  4   0   1  2
+#&gt; 79  6   1   4  2
+#&gt; 80  1   0   0  3
+#&gt; 81  1   0   2  2
+#&gt; 82  1   0   0  2
+#&gt; 83  2   1   0  1
+#&gt; 84  1   2   1  1
+#&gt; 85  3   0   0  3
+#&gt; 86  1   1   0  1
+#&gt; 87  0   0   0  1
+#&gt; </div><div class='input'>  <span class='co'># }</span>
 
 </div></pre>
   </div>

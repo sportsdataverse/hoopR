@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -337,12 +340,12 @@
 #&gt;   team_rebounds assists steals blocks turnovers team_turnovers total_turnovers
 #&gt; 1             0      14      6      8        20              0              20
 #&gt; 2             0      17      8      4        16              0              16
-#&gt;   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead team
-#&gt; 1               0                     0              0    24            9 Away
-#&gt; 2               0                     0              0    18           18 Home
-#&gt;   opponent_id opponent_name opponent_mascot opponent_abbrev
-#&gt; 1          52 Florida State       Seminoles             FSU
-#&gt; 2          57       Florida          Gators             FLA
+#&gt;   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead
+#&gt; 1               0                     0              0    24            9
+#&gt; 2               0                     0              0    18           18
+#&gt;   home_away opponent_id opponent_name opponent_mascot opponent_abbrev
+#&gt; 1      HOME          52 Florida State       Seminoles             FSU
+#&gt; 2      AWAY          57       Florida          Gators             FLA
 #&gt; 
 #&gt; $Player
 #&gt;    athlete_display_name team_short_display_name min   fg fg3    ft oreb dreb
@@ -367,16 +370,16 @@
 #&gt; 19       Quincy Ballard           Florida State   2  0-0 0-0   0-0    0    0
 #&gt; 20      Sardaar Calhoun           Florida State   7  1-3 1-1   0-0    0    0
 #&gt; 21       Nathanael Jack           Florida State   3  1-1 1-1   0-0    0    0
-#&gt; 22        RayQuan Evans           Florida State  18  1-4 0-1   3-3    0    3
+#&gt; 22        Rayquan Evans           Florida State  18  1-4 0-1   3-3    0    3
 #&gt; 23         Wyatt Wilkes           Florida State  18  2-5 1-4   0-0    0    0
 #&gt;    reb ast stl blk to pf pts starter ejected did_not_play active athlete_jersey
 #&gt; 1    7   0   2   1  1  3   7    TRUE   FALSE        FALSE  FALSE             12
 #&gt; 2    0   0   0   0  0  0   5    TRUE   FALSE        FALSE  FALSE             11
 #&gt; 3    8   7   1   0  3  4  17    TRUE   FALSE        FALSE  FALSE              1
 #&gt; 4    4   3   2   3  5  3  19    TRUE   FALSE        FALSE  FALSE             23
-#&gt; 5    0   1   0   0  3  2   8    TRUE   FALSE        FALSE  FALSE             10
+#&gt; 5    0   1   0   0  3  2   8    TRUE   FALSE        FALSE  FALSE              0
 #&gt; 6    3   0   0   1  1  2   2   FALSE   FALSE        FALSE  FALSE             15
-#&gt; 7    2   0   0   3  0  3   2   FALSE   FALSE        FALSE  FALSE              5
+#&gt; 7    2   0   0   3  0  3   2   FALSE   FALSE        FALSE  FALSE              4
 #&gt; 8    1   1   0   0  0  3   1   FALSE   FALSE        FALSE  FALSE              4
 #&gt; 9    2   1   0   0  2  1   4   FALSE   FALSE        FALSE  FALSE              0
 #&gt; 10   0   0   0   0  0  0   0   FALSE   FALSE        FALSE  FALSE             44
@@ -387,7 +390,7 @@
 #&gt; 15   2   3   3   0  4  1  17    TRUE   FALSE        FALSE  FALSE             23
 #&gt; 16   5   2   1   1  1  1  14    TRUE   FALSE        FALSE  FALSE              2
 #&gt; 17   2   0   1   0  1  4   2   FALSE   FALSE        FALSE  FALSE             10
-#&gt; 18   1   0   0   0  0  1   6   FALSE   FALSE        FALSE  FALSE             34
+#&gt; 18   1   0   0   0  0  1   6   FALSE   FALSE        FALSE  FALSE             11
 #&gt; 19   0   0   0   0  0  0   0   FALSE   FALSE        FALSE  FALSE             15
 #&gt; 20   0   1   1   0  0  0   3   FALSE   FALSE        FALSE  FALSE             24
 #&gt; 21   0   0   0   0  0  2   3   FALSE   FALSE        FALSE  FALSE             11

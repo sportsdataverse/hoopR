@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get Minutes Matrix from Expanded Player Page</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_minutes_matrix</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_minutes_matrix</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -289,9 +292,138 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'>kp_minutes_matrix</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span>
-  <span class='op'>}</span>
+    <pre class="examples"><div class='input'>  <span class='co'># \donttest{</span>
+    <span class='fu'>kp_minutes_matrix</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;          date opponent_rk       opponent    result justin_lindner
+#&gt; 1   Wed Dec 2         297  North Florida  W, 86-58               
+#&gt; 2   Wed Dec 9          50        Indiana  W, 69-67               
+#&gt; 3  Sat Dec 12          41        Florida  W, 83-71               
+#&gt; 4  Tue Dec 15          37   Georgia Tech  W, 74-61               
+#&gt; 5  Sat Dec 19         100            UCF  L, 86-74               
+#&gt; 6  Mon Dec 21         182   Gardner Webb  W, 72-59              1
+#&gt; 7  Tue Dec 29          45        Clemson  L, 77-67               
+#&gt; 8  Wed Jan 13          71     N.C. State W, 105-73              6
+#&gt; 9  Sat Jan 16          34 North Carolina  W, 82-75               
+#&gt; 10 Mon Jan 18          59     Louisville  W, 78-65              1
+#&gt; 11 Sat Jan 23          45        Clemson  W, 80-61              3
+#&gt; 12 Wed Jan 27         138       Miami FL  W, 81-59              2
+#&gt; 13 Sat Jan 30          37   Georgia Tech  L, 76-65               
+#&gt; 14 Sat Feb 13         175    Wake Forest  W, 92-85               
+#&gt; 15 Mon Feb 15          19       Virginia  W, 81-60              1
+#&gt; 16 Sat Feb 20          97     Pittsburgh  W, 79-72               
+#&gt; 17 Wed Feb 24         138       Miami FL  W, 88-71              2
+#&gt; 18 Sat Feb 27          34 North Carolina  L, 78-70               
+#&gt; 19  Wed Mar 3         148 Boston College  W, 93-64              5
+#&gt; 20  Sat Mar 6          85     Notre Dame  L, 83-73               
+#&gt; 21 Fri Mar 12          34 North Carolina  W, 69-66               
+#&gt; 22 Sat Mar 13          37   Georgia Tech  L, 80-75               
+#&gt; 23 Sat Mar 20         108 UNC Greensboro  W, 64-54               
+#&gt; 24 Mon Mar 22           8       Colorado  W, 71-53               
+#&gt; 25 Sun Mar 28           3       Michigan  L, 76-58              1
+#&gt;    ray_quan_evans mj_walker nathanael_jack anthony_polite sardaar_calhoun
+#&gt; 1              16        27             11             24              15
+#&gt; 2              13        41                            33              14
+#&gt; 3              18        29              3             27               7
+#&gt; 4                        35              5             34               6
+#&gt; 5              15        37                            31               8
+#&gt; 6              24        23             11             28              10
+#&gt; 7              21        33              4             27              11
+#&gt; 8              19        22             12             21              15
+#&gt; 9              31        32              2             27              16
+#&gt; 10             27        32              7                             16
+#&gt; 11             18        17             22                             17
+#&gt; 12             18        27             13                             25
+#&gt; 13             27        25              4                             17
+#&gt; 14             17        37              3             30              10
+#&gt; 15             19        29              2             15              19
+#&gt; 16             22        28                            20              14
+#&gt; 17             15                       15             24              24
+#&gt; 18             17        29                            26              20
+#&gt; 19             16        24             12             25              11
+#&gt; 20             31        26              2             26              20
+#&gt; 21             13        28              4             24              20
+#&gt; 22             12        27                            32              12
+#&gt; 23             16        32                            30              11
+#&gt; 24             18        31              9             28              11
+#&gt; 25             16        26              4             25               9
+#&gt;    travis_light will_miles harrison_prieto rai_quan_gray wyatt_wilkes
+#&gt; 1                                                     18           16
+#&gt; 2                                        1            31            7
+#&gt; 3                                                     23           18
+#&gt; 4                                                     30           11
+#&gt; 5                                        3            26           15
+#&gt; 6             0          0               0            25           12
+#&gt; 7                                                     21           15
+#&gt; 8             3          3                            22           15
+#&gt; 9                                                     30           10
+#&gt; 10            1          1                            30           16
+#&gt; 11            3          3                            11           18
+#&gt; 12            2          2                            22           20
+#&gt; 13                                                    34           26
+#&gt; 14                                                    37           20
+#&gt; 15            1          1                            28           13
+#&gt; 16                                                    29           13
+#&gt; 17            2          2                            26           22
+#&gt; 18                                                    32            9
+#&gt; 19            5          5               5            19           16
+#&gt; 20                                                    35            8
+#&gt; 21                                                    27            6
+#&gt; 22                                                    21           11
+#&gt; 23                                                    31            6
+#&gt; 24            1          1               1            28           11
+#&gt; 25            1                          1            20            9
+#&gt;    malik_osborne scottie_barnes quincy_ballard balsa_koprivica tanor_ngom
+#&gt; 1             17             24              7              18          7
+#&gt; 2             31             30              1              21          2
+#&gt; 3             21             28              2              16          6
+#&gt; 4             19             30              4              26           
+#&gt; 5             13             29              2              14          5
+#&gt; 6             17             22              2              23          2
+#&gt; 7             24             21                             19          3
+#&gt; 8             20             13              5              14         10
+#&gt; 9             15                                            30          7
+#&gt; 10            25             22              1              14          8
+#&gt; 11            24             23              5              23         12
+#&gt; 12            19             19              4              17          9
+#&gt; 13            21             23                             17          6
+#&gt; 14            25             33              7                          6
+#&gt; 15            24             24              2              14          8
+#&gt; 16            24             26                             15          9
+#&gt; 17             9             24             11              23           
+#&gt; 18            20             22              0              24          1
+#&gt; 19                           21              5              23          8
+#&gt; 20             8             32                              6          5
+#&gt; 21            20             25              1              28          5
+#&gt; 22            22             29                             26          8
+#&gt; 23            14             26                             24         10
+#&gt; 24            20             22              1              11          7
+#&gt; 25            31             25              1              23          5
+#&gt;    starting_lineup_number        team year
+#&gt; 1                       1 Florida St. 2021
+#&gt; 2                       1 Florida St. 2021
+#&gt; 3                       1 Florida St. 2021
+#&gt; 4                       1 Florida St. 2021
+#&gt; 5                       1 Florida St. 2021
+#&gt; 6                       1 Florida St. 2021
+#&gt; 7                       1 Florida St. 2021
+#&gt; 8                       2 Florida St. 2021
+#&gt; 9                       2 Florida St. 2021
+#&gt; 10                      3 Florida St. 2021
+#&gt; 11                      3 Florida St. 2021
+#&gt; 12                      3 Florida St. 2021
+#&gt; 13                      3 Florida St. 2021
+#&gt; 14                      4 Florida St. 2021
+#&gt; 15                      4 Florida St. 2021
+#&gt; 16                      4 Florida St. 2021
+#&gt; 17                      5 Florida St. 2021
+#&gt; 18                      3 Florida St. 2021
+#&gt; 19                      6 Florida St. 2021
+#&gt; 20                      2 Florida St. 2021
+#&gt; 21                      2 Florida St. 2021
+#&gt; 22                      2 Florida St. 2021
+#&gt; 23                      2 Florida St. 2021
+#&gt; 24                      2 Florida St. 2021
+#&gt; 25                      2 Florida St. 2021</div><div class='input'>  <span class='co'># }</span>
 
 
 </div></pre>

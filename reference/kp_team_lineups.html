@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
       </span>
     </div>
 
@@ -138,6 +138,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/index.html">Vignettes</a>
+    </li>
+    <li>
+      <a href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a>
     </li>
     <li>
       <a href="../articles/intro-to-hoopR.html">Intro to hoopR</a>
@@ -272,7 +275,7 @@
     <p>Get Lineups Last 5 Games from Team Page</p>
     </div>
 
-    <pre class="usage"><span class='fu'>kp_team_lineups</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>kp_team_lineups</span><span class='op'>(</span><span class='va'>team</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -304,9 +307,80 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-   <span class='fu'>kp_team_lineups</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year<span class='op'>=</span> <span class='fl'>2020</span><span class='op'>)</span>
-  <span class='op'>}</span>
+    <pre class="examples"><div class='input'>  <span class='co'># \donttest{</span>
+   <span class='fu'>kp_team_lineups</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2021</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    year        team min_pct pg_number pg_player_first_name pg_player_last_name
+#&gt; 1  2021 Florida St.   0.131        23                   MJ              Walker
+#&gt; 2  2021 Florida St.   0.110        23                   MJ              Walker
+#&gt; 3  2021 Florida St.   0.077        23                   MJ              Walker
+#&gt; 4  2021 Florida St.   0.046        23                   MJ              Walker
+#&gt; 5  2021 Florida St.   0.045         4              Scottie              Barnes
+#&gt; 6  2021 Florida St.   0.030        23                   MJ              Walker
+#&gt; 7  2021 Florida St.   0.028        23                   MJ              Walker
+#&gt; 8  2021 Florida St.   0.027         4              Scottie              Barnes
+#&gt; 9  2021 Florida St.   0.024        23                   MJ              Walker
+#&gt; 10 2021 Florida St.   0.022         4              Scottie              Barnes
+#&gt; 11 2021 Florida St.   0.032        NA              UNKNOWN                &lt;NA&gt;
+#&gt;    pg_hgt pg_wgt pg_yr sg_number sg_player_first_name sg_player_last_name
+#&gt; 1     6-5    213    Sr         2              Anthony              Polite
+#&gt; 2     6-5    213    Sr         0              RayQuan               Evans
+#&gt; 3     6-5    213    Sr         2              Anthony              Polite
+#&gt; 4     6-5    213    Sr         2              Anthony              Polite
+#&gt; 5     6-9    227    Fr        24              Sardaar             Calhoun
+#&gt; 6     6-5    213    Sr        24              Sardaar             Calhoun
+#&gt; 7     6-5    213    Sr         2              Anthony              Polite
+#&gt; 8     6-9    227    Fr        24              Sardaar             Calhoun
+#&gt; 9     6-5    213    Sr         0              RayQuan               Evans
+#&gt; 10    6-9    227    Fr        24              Sardaar             Calhoun
+#&gt; 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;
+#&gt;    sg_hgt sg_wgt sg_yr sf_number sf_player_first_name sf_player_last_name
+#&gt; 1     6-6    215    Jr         4              Scottie              Barnes
+#&gt; 2     6-4    210    Sr         2              Anthony              Polite
+#&gt; 3     6-6    215    Jr         4              Scottie              Barnes
+#&gt; 4     6-6    215    Jr         4              Scottie              Barnes
+#&gt; 5     6-6    220    Jr         2              Anthony              Polite
+#&gt; 6     6-6    220    Jr         4              Scottie              Barnes
+#&gt; 7     6-6    215    Jr         4              Scottie              Barnes
+#&gt; 8     6-6    220    Jr         2              Anthony              Polite
+#&gt; 9     6-4    210    Sr         2              Anthony              Polite
+#&gt; 10    6-6    220    Jr         2              Anthony              Polite
+#&gt; 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;
+#&gt;    sf_hgt sf_wgt sf_yr pf_number pf_player_first_name pf_player_last_name
+#&gt; 1     6-9    227    Fr         1              RaiQuan                Gray
+#&gt; 2     6-6    215    Jr         1              RaiQuan                Gray
+#&gt; 3     6-9    227    Fr        10                Malik             Osborne
+#&gt; 4     6-9    227    Fr        10                Malik             Osborne
+#&gt; 5     6-6    215    Jr        10                Malik             Osborne
+#&gt; 6     6-9    227    Fr         1              RaiQuan                Gray
+#&gt; 7     6-9    227    Fr         1              RaiQuan                Gray
+#&gt; 8     6-6    215    Jr        10                Malik             Osborne
+#&gt; 9     6-6    215    Jr         4              Scottie              Barnes
+#&gt; 10    6-6    215    Jr        10                Malik             Osborne
+#&gt; 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;
+#&gt;    pf_hgt pf_wgt pf_yr c_number c_player_first_name c_player_last_name c_hgt
+#&gt; 1     6-8    260    Jr        5               Balsa          Koprivica   7-1
+#&gt; 2     6-8    260    Jr        5               Balsa          Koprivica   7-1
+#&gt; 3     6-9    225    Jr        1             RaiQuan               Gray   6-8
+#&gt; 4     6-9    225    Jr        5               Balsa          Koprivica   7-1
+#&gt; 5     6-9    225    Jr       34               Tanor               Ngom   7-2
+#&gt; 6     6-8    260    Jr        5               Balsa          Koprivica   7-1
+#&gt; 7     6-8    260    Jr       34               Tanor               Ngom   7-2
+#&gt; 8     6-9    225    Jr        5               Balsa          Koprivica   7-1
+#&gt; 9     6-9    227    Fr        1             RaiQuan               Gray   6-8
+#&gt; 10    6-9    225    Jr        1             RaiQuan               Gray   6-8
+#&gt; 11   &lt;NA&gt;     NA             NA                &lt;NA&gt;               &lt;NA&gt;  &lt;NA&gt;
+#&gt;    c_wgt c_yr
+#&gt; 1    240   So
+#&gt; 2    240   So
+#&gt; 3    260   Jr
+#&gt; 4    240   So
+#&gt; 5    236   Sr
+#&gt; 6    240   So
+#&gt; 7    236   Sr
+#&gt; 8    240   So
+#&gt; 9    260   Jr
+#&gt; 10   260   Jr
+#&gt; 11    NA &lt;NA&gt;</div><div class='input'>  <span class='co'># }</span>
 
 </div></pre>
   </div>
