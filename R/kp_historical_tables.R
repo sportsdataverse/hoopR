@@ -747,7 +747,7 @@ kp_pomeroy_archive_ratings <- function(date){
 #' @export
 #' @examples
 #' \donttest{
-#'     kp_conf(year = 2021, conf = 'ACC')
+#'     kp_conf(year = 2020, conf = 'ACC')
 #' }
 
 kp_conf <- function(year, conf){

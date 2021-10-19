@@ -124,7 +124,7 @@ Get KenPom's conference-wide stats
 }
 \examples{
 \donttest{
-    kp_conf(year = 2021, conf = 'ACC')
+    kp_conf(year = 2020, conf = 'ACC')
 }
 }
 \keyword{Conference}
