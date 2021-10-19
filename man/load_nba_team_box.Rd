@@ -27,6 +27,6 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-load_nba_team_box(2002:2021)
+load_nba_team_box(2021)
 }
 }
