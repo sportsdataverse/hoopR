@@ -27,6 +27,6 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-load_mbb_pbp(2006:2021)
+load_mbb_pbp(2021)
 }
 }
