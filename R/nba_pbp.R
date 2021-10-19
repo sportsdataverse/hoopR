@@ -6,7 +6,7 @@ NULL
 #' @rdname load_nba_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given women's college basketball seasons.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -17,7 +17,7 @@ NULL
 #' \donttest{
 #' load_nba_pbp(2021)
 #' }
-load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
+  load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
                          dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
@@ -57,7 +57,7 @@ NULL
 #' @rdname load_nba_team_box
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -102,7 +102,7 @@ NULL
 #' @rdname load_nba_player_box
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -150,7 +150,7 @@ NULL
 #' @rdname load_nba_schedule
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by

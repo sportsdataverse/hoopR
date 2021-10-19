@@ -6,7 +6,7 @@ NULL
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2006)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -54,7 +54,7 @@ NULL
 #' @rdname load_mbb_team_box
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -102,7 +102,7 @@ NULL
 #' @rdname load_mbb_player_box
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -149,7 +149,7 @@ NULL
 #' @rdname load_mbb_schedule
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons.
+#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by

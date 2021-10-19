@@ -12,7 +12,7 @@ load_mbb_player_box(
 )
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons.}
+\item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}
