@@ -24,13 +24,13 @@
 #'   \item{\code{PPG}}{double.}
 #' }
 #' @keywords Trends
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_trends()
 #' }
 
@@ -84,21 +84,24 @@ kp_trends <- function(){
 #'   \item{\code{Year}}{double.}
 #' }
 #' @keywords Refs
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_officials(year= 2020)
+#' \donttest{
+#'   kp_officials(year = most_recent_mbb_season())
 #' }
 
-kp_officials <- function(year= 2020){
+kp_officials <- function(year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
   browser <- login()
-  assertthat::assert_that(year>=2016, msg="Data only goes back to 2016")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2016)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2016")
+  }
 
 
   ### Pull Data
@@ -155,13 +158,13 @@ kp_officials <- function(year= 2020){
 #'   \item{\code{Elev.Rk}}{double.}
 #' }
 #' @keywords HCA
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'  kp_hca()
 #' }
 
@@ -210,21 +213,24 @@ kp_hca <- function(){
 #'   \item{\code{Year}}{double.}
 #' }
 #' @keywords Arenas
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_arenas(year=2020)
+#' \donttest{
+#'  kp_arenas(year=most_recent_mbb_season())
 #' }
 
-kp_arenas <- function(year=2020){
+kp_arenas <- function(year=most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
   browser <- login()
-  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
+  }
 
   url <- paste0("https://kenpom.com/arenas.php?y=",year)
 
@@ -259,21 +265,24 @@ kp_arenas <- function(year=2020){
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 #' 'Upsets','Busts','Comeback','Window'
 #' @keywords Game
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_game_attrs(year=2020, attr = "Excitement")
+#' \donttest{
+#'   kp_game_attrs(year=most_recent_mbb_season(), attr = "Excitement")
 #' }
 
-kp_game_attrs <- function(year=2020, attr = "Excitement"){
+kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
   browser <- login()
-  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
+  }
   url <- paste0("https://kenpom.com/game_attrs.php?",
                 "y=", year,
                 "&s=", attr)
@@ -326,7 +335,7 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
 #' }
 #'
 #' @keywords FanMatch
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
 #' @import rvest
@@ -334,7 +343,7 @@ kp_game_attrs <- function(year=2020, attr = "Excitement"){
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   kp_fanmatch(date="2020-03-10")
 #' }
 

@@ -5,7 +5,7 @@
 \alias{nba_schedule}
 \title{\strong{Get NBA Stats API Schedule}}
 \usage{
-nba_schedule(season = 2020, league = "NBA")
+nba_schedule(season = 2021, league = "NBA")
 }
 \arguments{
 \item{season}{Season - 4 digit integer corresponding to the first year in the season format 2020-21}

@@ -4,7 +4,7 @@
 \alias{kp_team_depth_chart}
 \title{Get Depth Chart Last 5 Games from Team Page}
 \usage{
-kp_team_depth_chart(team, year = 2020)
+kp_team_depth_chart(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -32,8 +32,8 @@ A data frame with 12 columns:
 Get Depth Chart Last 5 Games from Team Page
 }
 \examples{
-  \dontrun{
-    kp_team_depth_chart(team = 'Florida St.', year= 2020)
+  \donttest{
+    kp_team_depth_chart(team = 'Florida St.', year= 2021)
   }
 
 

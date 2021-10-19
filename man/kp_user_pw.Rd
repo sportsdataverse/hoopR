@@ -29,7 +29,7 @@ Requires a subscription to KenPom.com
 \details{
 \strong{Using your KenPom subscription with the package:} \cr
 
-Run \href{https://usethis.r-lib.org/reference/edit.html}{\strong{\code{usethis::edit_r_environ()}}} and THEN paste the following in the new script that pops up (with\strong{out} quotations)\cr\if{html}{\out{<div class="r">}}\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
+Run \href{https://usethis.r-lib.org/reference/edit.html}{\strong{\code{usethis::edit_r_environ()}}} and THEN paste the following in the new script that pops up (with\strong{out} quotations)\cr\if{html}{\out{<div class="sourceCode r">}}\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
 KP_PW = XXX-YOUR-PASSWORD-XXX
 }\if{html}{\out{</div>}}
 

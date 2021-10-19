@@ -32,7 +32,7 @@ A data frame with 17 columns:
 Get KenPom's program ratings
 }
 \examples{
-\dontrun{
+\donttest{
   kp_program_ratings()
 }
 }

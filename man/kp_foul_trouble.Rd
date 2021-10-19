@@ -4,7 +4,7 @@
 \alias{kp_foul_trouble}
 \title{Get 2-Foul Participation Stats}
 \usage{
-kp_foul_trouble(min_year, max_year)
+kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 }
 \arguments{
 \item{min_year}{First year of data to pull}
@@ -15,8 +15,8 @@ kp_foul_trouble(min_year, max_year)
 Get 2-Foul Participation Stats
 }
 \examples{
-\dontrun{
-  kp_foul_trouble(min_year = 2020, max_year = 2020)
+\donttest{
+  kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season())
 }
 }
 \keyword{Foul}

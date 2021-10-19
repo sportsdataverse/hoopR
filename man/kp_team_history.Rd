@@ -48,7 +48,7 @@ A data frame with 30 columns:
 Get KenPom's team efficiency history
 }
 \examples{
-  \dontrun{
+  \donttest{
     kp_team_history(team = 'Florida St.')
   }
 

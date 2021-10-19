@@ -15,9 +15,6 @@ nba_boxscoreadvancedv2(game_id)
 
 \strong{Get NBA Stats API Boxscore Advanced V2}
 }
-\examples{
-nba_boxscoreadvancedv2(game_id = 21601112)
-}
 \author{
 Saiem Gilani
 }

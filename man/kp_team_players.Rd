@@ -4,7 +4,7 @@
 \alias{kp_team_players}
 \title{Get KenPom's player stats from the team page}
 \usage{
-kp_team_players(team, year = 2020)
+kp_team_players(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -15,8 +15,8 @@ kp_team_players(team, year = 2020)
 Get KenPom's player stats from the team page
 }
 \examples{
-  \dontrun{
-    kp_team_players(team = 'Florida St.', year= 2020)
+  \donttest{
+    kp_team_players(team = 'Florida St.', year = 2021)
   }
 
 }

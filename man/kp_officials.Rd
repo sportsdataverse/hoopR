@@ -4,7 +4,7 @@
 \alias{kp_officials}
 \title{Get officials rankings}
 \usage{
-kp_officials(year = 2020)
+kp_officials(year = most_recent_mbb_season())
 }
 \arguments{
 \item{year}{Year of data to pull}
@@ -25,8 +25,8 @@ A data frame with 7 columns:
 Get officials rankings
 }
 \examples{
-\dontrun{
-  kp_officials(year= 2020)
+\donttest{
+  kp_officials(year = most_recent_mbb_season())
 }
 }
 \keyword{Refs}

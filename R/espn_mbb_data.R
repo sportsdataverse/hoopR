@@ -66,6 +66,8 @@ espn_mbb_game_all <- function(game_id){
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       season <- raw_play_df[['header']][['season']][['year']]
       season_type <- raw_play_df[['header']][['season']][['type']]
+      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
+      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
       homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
       awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
       homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
@@ -87,7 +89,7 @@ espn_mbb_game_all <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- homeAwayTeam2
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -95,7 +97,7 @@ espn_mbb_game_all <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- homeAwayTeam1
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -280,6 +282,8 @@ espn_mbb_team_box <- function(game_id){
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       season <- raw_play_df[['header']][['season']][['year']]
       season_type <- raw_play_df[['header']][['season']][['type']]
+      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
+      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
       homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
       awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
       homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
@@ -290,7 +294,7 @@ espn_mbb_team_box <- function(game_id){
       homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
       awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
       game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
-      #---- Team Box ------
+
       teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
 
       teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
@@ -301,7 +305,7 @@ espn_mbb_team_box <- function(game_id){
         dplyr::rename(Away = .data$displayValue)
       teams2 <- data.frame(t(teams_box_score_df_2$Home))
       colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$Team <- "Home"
+      teams2$homeAway <- homeAwayTeam2
       teams2$OpponentId <- as.integer(awayTeamId)
       teams2$OpponentName <- awayTeamName
       teams2$OpponentMascot <- awayTeamMascot
@@ -309,7 +313,7 @@ espn_mbb_team_box <- function(game_id){
 
       teams1 <- data.frame(t(teams_box_score_df_1$Away))
       colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$Team <- "Away"
+      teams1$homeAway <- homeAwayTeam1
       teams1$OpponentId <- as.integer(homeTeamId)
       teams1$OpponentName <- homeTeamName
       teams1$OpponentMascot <- homeTeamMascot
@@ -882,4 +886,79 @@ espn_mbb_standings <- function(year){
 
   )
   return(standings)
+}
+
+
+#' Get ESPN MBB's Betting information
+#'
+#' @param game_id  Game ID
+#' @keywords MBB Betting
+#' @importFrom rlang .data
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr select rename
+#' @importFrom tidyr pivot_wider
+#' @importFrom data.table rbindlist
+#' @export
+#' @examples
+#' \donttest{
+#' espn_mbb_betting(game_id = 401256760)
+#' }
+espn_mbb_betting <- function(game_id){
+
+  summary_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?"
+
+  ## Inputs
+  ## year
+  full_url <- paste0(summary_url,
+                     "event=", game_id)
+
+  res <- httr::RETRY("GET", full_url)
+
+  # Check the result
+  check_status(res)
+  pickcenter <- data.frame()
+  againstTheSpread <- data.frame()
+  predictor_df <- data.frame()
+  tryCatch(
+    expr = {
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      raw_summary <- jsonlite::fromJSON(resp)
+      if("pickcenter" %in% names(raw_summary)){
+        pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
+          janitor::clean_names() %>%
+          dplyr::select(-.data$links)
+      }
+      if("againstTheSpread" %in% names(raw_summary)){
+        againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
+          janitor::clean_names()
+        teams <- againstTheSpread$team %>%
+          dplyr::select(-.data$links) %>%
+          janitor::clean_names()
+        records <- againstTheSpread$records
+
+        teams$records <- records
+        againstTheSpread <- teams
+      }
+      if("predictor" %in% names(raw_summary)){
+        predictor_df <- data.frame(
+          home_team_id =  raw_summary$predictor$homeTeam$id,
+          away_team_id =  raw_summary$predictor$awayTeam$id,
+          away_team_game_projection = raw_summary$predictor$awayTeam$gameProjection,
+          away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
+        )
+      }
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no betting data available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+
+  )
+  betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
+  return(betting)
 }

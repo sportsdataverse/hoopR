@@ -4,7 +4,7 @@
 \alias{kp_minutes_matrix}
 \title{Get Minutes Matrix from Expanded Player Page}
 \usage{
-kp_minutes_matrix(team, year = 2020)
+kp_minutes_matrix(team, year = 2021)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -15,8 +15,8 @@ kp_minutes_matrix(team, year = 2020)
 Get Minutes Matrix from Expanded Player Page
 }
 \examples{
-  \dontrun{
-    kp_minutes_matrix(team = 'Florida St.', year = 2020)
+  \donttest{
+    kp_minutes_matrix(team = 'Florida St.', year = 2021)
   }
 
 

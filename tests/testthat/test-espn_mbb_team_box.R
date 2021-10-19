@@ -18,7 +18,7 @@ test_that("ESPN - Get MBB team box score only", {
     "defensive_rebounds", "team_rebounds", "assists",
     "steals", "blocks", "turnovers", "team_turnovers",
     "total_turnovers", "technical_fouls", "total_technical_fouls",
-    "flagrant_fouls", "fouls", "largest_lead", "team", "opponent_id",
+    "flagrant_fouls", "fouls", "largest_lead", "home_away", "opponent_id",
     "opponent_name", "opponent_mascot", "opponent_abbrev"
   )
   expect_equal(colnames(x), cols)

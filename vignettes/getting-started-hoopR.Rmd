@@ -1,0 +1,155 @@
+---
+title: "Getting Started with hoopR"
+description: "Getting started with using <code>hoopR</code> and men's basketball data."
+author: "Saiem Gilani <br><a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
+opengraph:
+  image: 
+    src: "https://github.com/saiemgilani/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+old <- options(rmarkdown.html_vignette.check_title = FALSE)
+pacman::p_load_current_gh("r-lib/pkgapi")
+pacman::p_load_current_gh("hadley/emo")
+library(pkgapi)
+pkg <- pkgapi::map_package(path = "../")
+library(dplyr)
+exported <- pkg$defs %>% dplyr::filter(exported == TRUE)
+kp_funcs <- sum(stringr::str_detect(exported$name,"kp_"))
+espn_mbb_funcs <- sum(stringr::str_detect(exported$name,"espn_mbb"))
+espn_nba_funcs <- sum(stringr::str_detect(exported$name,"espn_nba"))
+nba_stats_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","nba_","\\E")))
+ncaa_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","ncaa_","\\E")))
+
+pkg_name <- "saiemgilani/hoopR"
+url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/master/DESCRIPTION")
+
+
+x <- readLines(url)
+remote_version <- gsub("Version:\\s*", "", x[grep('Version:', x)])
+```
+
+Welcome folks,
+
+I'm Saiem Gilani, one of the [authors](https://saiemgilani.github.io/hoopR/authors.html "Authors and contributors to hoopR") of [`hoopR`](https://saiemgilani.github.io/hoopR/), and I hope to give the community a high-quality resource for accessing men's basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.
+
+## **Install** [**`hoopR`**](https://saiemgilani.github.io/hoopR/)
+```{r install_hoopR_gs, message=FALSE,eval=FALSE}
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
+
+pacman::p_load(tidyverse, zoo, ggimage, gt)
+```
+
+### **The Data**
+
+There are generally speaking **five** men's basketball data sources accessed from this package:
+
+-   [`hoopR-data` repo](https://github.com/saiemgilani/hoopR-data) [![Twitter Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
+-   [NBA Stats and Data API](https://stats.nba.com)
+-   [ESPN](https://espn.com)
+-   [KenPom](https://kenpom.com) (Requires subscription access)
+-   [NCAA](https://ncaa.com)
+
+#### **Function names indicate the data source**
+
+-   Functions that use the [`hoopR-data` repository](https://github.com/saiemgilani/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
+
+-   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports `r nrow(nba_stats_funcs)` functions covering the NBA Stats API
+
+-   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports `r nrow(espn_mbb_funcs)` functions covering the men's college basketball endpoints and `r nrow(espn_nba_funcs)` for the NBA.
+
+-   Functions that use Ken Pomeroy's college basketball website start with `kp_` by convention and should be assumed as `get` functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of `hoopR` version `r remote_version`, the package exports `r nrow(kp_funcs)` functions covering the [KenPom.com](https://kenpom.com).
+
+-   Functions that use the NCAA website start with `ncaa_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports `r nrow(ncaa_funcs)` function(s) covering the NCAA website, namely the function to access current NET rankings.
+
+## **Quick Start**
+
+### **NBA play-by-plays (2002-2021) ~ 30-60 seconds**
+```{r load_nba_pbp_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
+})
+tictoc::toc()
+glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
+dplyr::glimpse(nba_pbp)
+```
+
+### **NBA team box scores (2002-2021) ~ 5-30 seconds**
+```{r load_nba_team_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  nba_team_box <- hoopR::load_nba_team_box(2002:2021)
+})
+
+tictoc::toc()
+
+glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
+dplyr::glimpse(nba_team_box)
+```
+
+### **NBA player box scores (2002-2021) ~ 5-30 seconds**
+```{r load_nba_player_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  nba_player_box <- hoopR::load_nba_player_box(2002:2021)
+})
+tictoc::toc()
+
+glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
+dplyr::glimpse(nba_player_box)
+```
+
+### **Men's college basketball play-by-plays (2006-2021) ~ 45-90 seconds**
+
+```{r load_mbb_pbp_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  mbb_pbp <- hoopR::load_mbb_pbp(2006:2021)
+})
+tictoc::toc()
+glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
+dplyr::glimpse(mbb_pbp)
+```
+
+### **Men's college basketball team box scores (2003-2021) ~ 5-30 seconds**
+
+```{r load_mbb_team_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  mbb_team_box <- hoopR::load_mbb_team_box(2003:2021)
+})
+tictoc::toc()
+glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
+dplyr::glimpse(mbb_team_box)
+```
+
+### **Men's college basketball player box scores (2003-2021) ~ 5-30 seconds**
+
+```{r load_mbb_player_gs, warning = FALSE}
+tictoc::tic()
+progressr::with_progress({
+  mbb_player_box <- hoopR::load_mbb_player_box(2003:2021)
+})
+tictoc::toc()
+
+glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
+dplyr::glimpse(mbb_player_box)
+```
+
+
+# **Our Authors**
+
+-   [Saiem Gilani](https://twitter.com/saiemgilani)       
+<a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
+<a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+

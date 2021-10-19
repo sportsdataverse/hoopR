@@ -5,24 +5,28 @@
 #' @param year Year of data to pull
 #'
 #' @keywords Team Schedule
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect str_pad
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_team_schedule(team = 'Florida St.', year= 2020)
+#' \donttest{
+#'   kp_team_schedule(team = 'Florida St.', year = 2021)
 #' }
 
-kp_team_schedule <- function(team, year){
+kp_team_schedule <- function(team, year = 2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -333,24 +337,28 @@ kp_team_schedule <- function(team, year){
 #' @param year Year of data to pull
 #'
 #' @keywords Game Plan
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter select rename mutate case_when mutate_at bind_rows
 #' @importFrom tidyr separate everything
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect
 #' @import rvest
 #' @export
 #' @examples
-#' \dontrun{
-#'   kp_gameplan(team='Florida St.', year=2020)
+#' \donttest{
+#'   kp_gameplan(team='Florida St.', year=2021)
 #' }
 
-kp_gameplan <- function(team, year=2020){
+kp_gameplan <- function(team, year=2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -525,25 +533,28 @@ kp_gameplan <- function(team, year=2020){
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #' @keywords Opponent Tracker
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_opptracker(team='Florida St.', year=2020)
+#' \donttest{
+#'   kp_opptracker(team = 'Florida St.', year = 2021)
 #' }
 
-kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
+kp_opptracker <- function(team, year = 2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+  }
 
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -669,7 +680,7 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
 #' @param year Year of data to pull
 #'
 #' @keywords Team Player Stats
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
@@ -677,17 +688,21 @@ kp_opptracker <- function(team, year=as.integer(format(Sys.Date(), "%Y"))){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
-#'     kp_team_players(team = 'Florida St.', year= 2020)
+#'   \donttest{
+#'     kp_team_players(team = 'Florida St.', year = 2021)
 #'   }
 #'
 
-kp_team_players <- function(team, year= 2020){
+kp_team_players <- function(team, year = 2021){
   browser <- login()
-  assertthat::assert_that(year>=2002, msg="Data only goes back to 2002")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -900,7 +915,7 @@ kp_team_players <- function(team, year= 2020){
 #' @param player_id Player Id filter to select.
 #'
 #' @keywords Player Career Stats
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
@@ -908,7 +923,7 @@ kp_team_players <- function(team, year= 2020){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
+#'   \donttest{
 #'     kp_player_career(player_id = '41180')
 #'   }
 #'
@@ -1122,25 +1137,29 @@ kp_player_career <- function(player_id){
 #' @param year Year of data to pull
 #'
 #' @keywords Minutes Matrix
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter
 #' @import rvest
 #' @export
 #'
 #' @examples
-#'   \dontrun{
-#'     kp_minutes_matrix(team = 'Florida St.', year = 2020)
+#'   \donttest{
+#'     kp_minutes_matrix(team = 'Florida St.', year = 2021)
 #'   }
 #'
 #'
-kp_minutes_matrix <- function(team, year = 2020){
+kp_minutes_matrix <- function(team, year = 2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year >= 2014, msg="Data only goes back to 2014")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -1190,7 +1209,7 @@ kp_minutes_matrix <- function(team, year = 2020){
 #' @param year Year of data to pull
 #'
 #' @keywords Team Player Stats
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
@@ -1198,17 +1217,21 @@ kp_minutes_matrix <- function(team, year = 2020){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
-#'     kp_team_player_stats(team = 'Florida St.', year = 2020)
+#'   \donttest{
+#'     kp_team_player_stats(team = 'Florida St.', year = 2021)
 #'   }
-kp_team_player_stats <- function(team, year = 2020){
+kp_team_player_stats <- function(team, year = 2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year>=2014, msg="Data only goes back to 2014")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -1409,7 +1432,7 @@ kp_team_player_stats <- function(team, year = 2020){
 #'   \item{\code{Year}}{double. DESCRIPTION.}
 #' }
 #' @keywords Depth Chart
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter  bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect str_trim
 #' @importFrom tidyr separate
@@ -1418,20 +1441,24 @@ kp_team_player_stats <- function(team, year = 2020){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
-#'     kp_team_depth_chart(team = 'Florida St.', year= 2020)
+#'   \donttest{
+#'     kp_team_depth_chart(team = 'Florida St.', year= 2021)
 #'   }
 #'
 #'
 
-kp_team_depth_chart <- function(team, year= 2020){
+kp_team_depth_chart <- function(team, year= 2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year>=2010, msg="Data only goes back to 2010")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 
@@ -1571,7 +1598,7 @@ kp_team_depth_chart <- function(team, year= 2020){
 #'   \item{\code{Year}}{double. DESCRIPTION.}
 #' }
 #' @keywords Depth Chart
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter
 #' @importFrom glue glue
 #' @importFrom stringr str_remove str_replace str_extract
@@ -1579,19 +1606,23 @@ kp_team_depth_chart <- function(team, year= 2020){
 #' @export
 #'
 #' @examples
-#'   \dontrun{
-#'    kp_team_lineups(team = 'Florida St.', year= 2020)
+#'   \donttest{
+#'    kp_team_lineups(team = 'Florida St.', year = 2021)
 #'   }
 #'
 
-kp_team_lineups <- function(team, year= 2020){
+kp_team_lineups <- function(team, year=2021){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year >= 2010, msg = "Data only goes back to 2010")
-  # Check teams parameter in teams list names
-  assertthat::assert_that(team %in% hoopR::teams_links$Team,
-                          msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
+  }
+
+  if(!(team %in% hoopR::teams_links$Team)){
+    cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
+  }
   teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
   team_name = teams_links$team.link.ref[teams_links$Team == team]
 

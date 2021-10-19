@@ -14,6 +14,23 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
+pacman::p_load_current_gh("r-lib/pkgapi")
+pacman::p_load_current_gh("hadley/emo")
+library(pkgapi)
+pkg <- pkgapi::map_package(path = "../")
+library(dplyr)
+exported <- pkg$defs %>% dplyr::filter(exported == TRUE)
+kp_funcs <- sum(stringr::str_detect(exported$name,"kp_"))
+espn_mbb_funcs <- sum(stringr::str_detect(exported$name,"espn_mbb"))
+espn_nba_funcs <- sum(stringr::str_detect(exported$name,"espn_nba"))
+nba_stats_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","nba_","\\E")))
+
+pkg_name <- "saiemgilani/hoopR"
+url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/master/DESCRIPTION")
+
+
+x <- readLines(url)
+remote_version <- gsub("Version:\\s*", "", x[grep('Version:', x)])
 library(hoopR)
 ```
 

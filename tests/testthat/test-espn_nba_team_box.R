@@ -22,7 +22,7 @@ test_that("ESPN - Get NBA team box score only", {
     "team_turnovers", "total_turnovers", "technical_fouls",
     "total_technical_fouls", "flagrant_fouls", "turnover_points",
     "fast_break_points", "points_in_paint", "fouls", "largest_lead",
-    "team", "opponent_id",
+    "home_away", "opponent_id",
     "opponent_name", "opponent_mascot", "opponent_abbrev"
   )
   expect_equal(colnames(x), cols)

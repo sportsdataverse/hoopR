@@ -21,3 +21,5 @@ mbb_pbp_db
 ^website/*
 ^docs$
 ^docs/*
+docs/*
+data-raw/*

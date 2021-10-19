@@ -13,7 +13,7 @@ espn_nba_standings(year)
 Get ESPN NBA's Standings
 }
 \examples{
-\dontrun{
+\donttest{
 espn_nba_standings(year = 2021)
 }
 }

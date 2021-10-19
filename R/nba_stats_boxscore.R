@@ -12,8 +12,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoretraditionalv2(game_id = 21601112)
 nba_boxscoretraditionalv2 <- function(game_id){
 
   version <- "boxscoretraditionalv2"
@@ -55,8 +53,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscoreadvancedv2(game_id = 21601112)
 nba_boxscoreadvancedv2 <- function(game_id){
 
   version <- "boxscoreadvancedv2"
@@ -336,8 +332,6 @@ NULL
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#' @examples
-#' nba_boxscorematchups(game_id = 21601112)
 nba_boxscorematchups <- function(game_id){
 
   version <- "boxscorematchups"

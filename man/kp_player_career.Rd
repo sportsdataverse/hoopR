@@ -13,7 +13,7 @@ kp_player_career(player_id)
 Get KenPom's player career stats from the player page
 }
 \examples{
-  \dontrun{
+  \donttest{
     kp_player_career(player_id = '41180')
   }
 

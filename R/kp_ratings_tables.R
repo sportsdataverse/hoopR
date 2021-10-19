@@ -4,7 +4,7 @@
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Ratings
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_replace str_trim
@@ -12,14 +12,17 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_pomeroy_ratings(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'   kp_pomeroy_ratings(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_pomeroy_ratings <- function(min_year, max_year){
+kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(max_year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2002")
+  }
 
   years <- min_year:max_year
 
@@ -81,21 +84,25 @@ kp_pomeroy_ratings <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Efficiency
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate mutate_at bind_rows
 #' @importFrom stringr str_remove str_remove str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_efficiency(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'  kp_efficiency(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_efficiency <- function(min_year, max_year){
+kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+  }
+
 
   years <- min_year:max_year
 
@@ -207,21 +214,25 @@ kp_efficiency <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Four Factors
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_fourfactors(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'  kp_fourfactors(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_fourfactors <- function(min_year, max_year){
+kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+  }
+
 
   years <- min_year:max_year
 
@@ -287,21 +298,25 @@ kp_fourfactors <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Points
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_pointdist(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'   kp_pointdist(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_pointdist <- function(min_year, max_year){
+kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+  }
+
 
   years <- min_year:max_year
 
@@ -368,21 +383,25 @@ kp_pointdist <- function(min_year, max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Roster
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_height(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'  kp_height(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_height <- function(min_year,max_year){
+kp_height <- function(min_year,max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2007, msg="Data only goes back to 2007")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2007)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2007")
+  }
+
   years <- min_year:max_year
 
   for(year in years) {
@@ -495,21 +514,24 @@ kp_height <- function(min_year,max_year){
 #' @param max_year Last year of data to pull
 #'
 #' @keywords Foul Trouble
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'   kp_foul_trouble(min_year = 2020, max_year = 2020)
+#' \donttest{
+#'   kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season())
 #' }
 
-kp_foul_trouble <- function(min_year, max_year){
+kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2010, msg="Data only goes back to 2010")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2010)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2010")
+  }
 
   years <- min_year:max_year
 
@@ -572,21 +594,25 @@ kp_foul_trouble <- function(min_year, max_year){
 #' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
 #'
 #' @keywords Team
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_teamstats(min_year = 2019, max_year = 2020, defense = FALSE)
+#' \donttest{
+#'  kp_teamstats(min_year = 2019, max_year = most_recent_mbb_season(), defense = FALSE)
 #' }
 
-kp_teamstats <- function(min_year, max_year, defense = FALSE){
+kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = FALSE){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
-  assertthat::assert_that(min_year>=2002, msg="Data only goes back to 2002")
+  if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+  }
+
 
   years <- min_year:max_year
 
@@ -717,18 +743,18 @@ kp_teamstats <- function(min_year, max_year, defense = FALSE){
 #' @param year Year of data to pull (earliest year of data available: 2004)
 #'
 #' @keywords Player
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
+#' \donttest{
+#'  kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
 #' }
 
-kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year){
+kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
@@ -746,8 +772,10 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 
   metric_url <- metrics_data$url_ext[m_list == metric]
 
-  assertthat::assert_that(year >= 2004, msg="Data only goes back to 2004")
-
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2004)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2004")
+  }
 
   if(metric=="ORtg"){
 
@@ -837,7 +865,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 #' @param year Year of data to pull (earliest year of data available: 2011)
 #'
 #' @keywords Leaders
-#' @importFrom assertthat assert_that
+#' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
 #' @import stringr
@@ -845,15 +873,18 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year)
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#'  kp_kpoy(year=2020)
+#' \donttest{
+#'  kp_kpoy(year=most_recent_mbb_season())
 #' }
 #'
-kp_kpoy <- function(year){
+kp_kpoy <- function(year=most_recent_mbb_season()){
   if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
   browser <- login()
 
-  assertthat::assert_that(year >= 2011, msg="Data only goes back to 2011")
+  if(!(is.numeric(year) && nchar(year) == 4 && year>=2011)) {
+    # Check if year is numeric, if not NULL
+    cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2011")
+  }
 
 
   ### Pull Data

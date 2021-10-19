@@ -4,7 +4,12 @@
 \alias{kp_playerstats}
 \title{Get Player Stats Leaders by Metric}
 \usage{
-kp_playerstats(metric = "eFG", conf = NULL, conf_only = FALSE, year)
+kp_playerstats(
+  metric = "eFG",
+  conf = NULL,
+  conf_only = FALSE,
+  year = most_recent_mbb_season()
+)
 }
 \arguments{
 \item{metric}{Used to get leaders for different metrics. Available values are: \cr
@@ -30,8 +35,8 @@ Only available if specific conference is defined. Only available for season afte
 Get Player Stats Leaders by Metric
 }
 \examples{
-\dontrun{
- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
+\donttest{
+ kp_playerstats(metric = 'eFG', conf_only = FALSE, year=most_recent_mbb_season())
 }
 }
 \keyword{Player}

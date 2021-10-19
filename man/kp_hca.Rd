@@ -29,7 +29,7 @@ A data frame with 14 columns:
 Get Home Court Advantage Estimates
 }
 \examples{
-\dontrun{
+\donttest{
  kp_hca()
 }
 }
