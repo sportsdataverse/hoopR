@@ -15,8 +15,3 @@ a dataframe as created by \code{\link[=readRDS]{readRDS()}}
 \description{
 \strong{Load .rds file from a remote connection}
 }
-\examples{
-\donttest{
-hoopR:::rds_from_url("https://github.com/nflverse/nfldata/raw/master/data/games.rds")
-}
-}
