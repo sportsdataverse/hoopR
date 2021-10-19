@@ -17,7 +17,7 @@ NULL
 #' \donttest{
 #' load_nba_pbp(2021)
 #' }
-  load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
+load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
                          dbConnection = NULL, tablename = NULL) {
 
   dots <- rlang::dots_list(...)
