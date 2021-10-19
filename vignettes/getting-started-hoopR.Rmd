@@ -14,17 +14,18 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
-pacman::p_load_current_gh("r-lib/pkgapi")
-pacman::p_load_current_gh("hadley/emo")
-library(pkgapi)
-pkg <- pkgapi::map_package(path = "../")
-library(dplyr)
-exported <- pkg$defs %>% dplyr::filter(exported == TRUE)
-kp_funcs <- sum(stringr::str_detect(exported$name,"kp_"))
-espn_mbb_funcs <- sum(stringr::str_detect(exported$name,"espn_mbb"))
-espn_nba_funcs <- sum(stringr::str_detect(exported$name,"espn_nba"))
-nba_stats_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","nba_","\\E")))
-ncaa_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","ncaa_","\\E")))
+# pacman::p_load_current_gh("r-lib/pkgapi")
+# pacman::p_load_current_gh("hadley/emo")
+pacman::p_load_current_gh('saiemgilani/hoopR')
+# library(pkgapi)
+# pkg <- pkgapi::map_package(path = "../")
+# library(dplyr)
+# exported <- pkg$defs %>% dplyr::filter(exported == TRUE)
+# kp_funcs <- sum(stringr::str_detect(exported$name,"kp_"))
+# espn_mbb_funcs <- sum(stringr::str_detect(exported$name,"espn_mbb"))
+# espn_nba_funcs <- sum(stringr::str_detect(exported$name,"espn_nba"))
+# nba_stats_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","nba_","\\E")))
+# ncaa_funcs <- sum(stringr::str_detect(exported$name,paste0("^\\Q","ncaa_","\\E")))
 
 pkg_name <- "saiemgilani/hoopR"
 url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/master/DESCRIPTION")
@@ -63,13 +64,13 @@ There are generally speaking **five** men's basketball data sources accessed fro
 
 -   Functions that use the [`hoopR-data` repository](https://github.com/saiemgilani/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
 
--   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports `r nrow(nba_stats_funcs)` functions covering the NBA Stats API
+-   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 127 functions covering the NBA Stats API
 
--   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports `r nrow(espn_mbb_funcs)` functions covering the men's college basketball endpoints and `r nrow(espn_nba_funcs)` for the NBA.
+-   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports 10 functions covering the men's college basketball endpoints and 10 for the NBA.
 
--   Functions that use Ken Pomeroy's college basketball website start with `kp_` by convention and should be assumed as `get` functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of `hoopR` version `r remote_version`, the package exports `r nrow(kp_funcs)` functions covering the [KenPom.com](https://kenpom.com).
+-   Functions that use Ken Pomeroy's college basketball website start with `kp_` by convention and should be assumed as `get` functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of `hoopR` version `r remote_version`, the package exports 36 functions covering the [KenPom.com](https://kenpom.com).
 
--   Functions that use the NCAA website start with `ncaa_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports `r nrow(ncaa_funcs)` function(s) covering the NCAA website, namely the function to access current NET rankings.
+-   Functions that use the NCAA website start with `ncaa_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.
 
 ## **Quick Start**
 
