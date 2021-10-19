@@ -12,7 +12,7 @@ load_nba_pbp(
 )
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given women's college basketball seasons.}
+\item{seasons}{A vector of 4-digit years associated with given NBA seasons. (Min: 2002)}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_nba_db()}).}
