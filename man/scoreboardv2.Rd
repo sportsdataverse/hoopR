@@ -8,7 +8,7 @@
 nba_scoreboardv2(league_id = "00", game_date = "2021-07-20", day_offset = 0)
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{game_date}{Game Date}
 

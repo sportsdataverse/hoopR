@@ -72,20 +72,31 @@ nba_fantasywidget <- function(active_players='N',
                      "&TodaysPlayers=",todays_players,
                      "&VsConference=",vs_conference,
                      "&VsDivision=",vs_division)
+  tryCatch(
+    expr={
 
-  resp <- full_url %>%
-    .nba_headers()
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no fantasy widget data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -185,20 +196,31 @@ nba_leaguedashlineups <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr={
 
-  resp <- full_url %>%
-    .nba_headers()
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard lineups data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -301,20 +323,31 @@ nba_leaguelineupviz <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr={
 
-  resp <- full_url %>%
-    .nba_headers()
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league lineup viz data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -402,19 +435,30 @@ nba_leagueplayerondetails <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league player on/off details data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -462,20 +506,31 @@ nba_leagueseasonmatchups <- function(
                      "&PerMode=", per_mode,
                      "&Season=", season,
                      "&SeasonType=", season_type)
+  tryCatch(
+    expr={
 
-  resp <- full_url %>%
-    .nba_headers()
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league season matchups data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 #' **Get NBA Stats API Matchups Rollup**
@@ -521,19 +576,30 @@ nba_matchupsrollup <- function(
                      "&Season=", season,
                      "&SeasonType=", season_type)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no matchups rollup data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 

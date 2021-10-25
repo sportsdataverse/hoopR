@@ -8,7 +8,7 @@
 nba_playerprofilev2(league_id = "", per_mode = "Totals", player_id = "2544")
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{per_mode}{Season - format 2020-21}
 

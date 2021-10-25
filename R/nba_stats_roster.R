@@ -25,19 +25,30 @@ nba_commonallplayers <- function(
                      "?IsOnlyCurrentSeason=",is_only_current_season,
                      "&LeagueID=",league_id,
                      "&Season=", season)
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or common all players data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 #' **Get NBA Stats API Player Info**
@@ -64,19 +75,30 @@ nba_commonplayerinfo <- function(
   full_url <- paste0(endpoint,
                      "?LeagueID=",league_id,
                      "&PlayerID=", player_id)
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or common player info data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -107,20 +129,30 @@ nba_commonplayoffseries <- function(
                      "?LeagueID=",league_id,
                      "&Season=", season,
                      "&SeriesID=", series_id)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or common playoff series data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -152,57 +184,29 @@ nba_commonteamroster <- function(
                      "?LeagueID=",league_id,
                      "&Season=", season,
                      "&TeamID=", team_id)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
-  return(df_list)
-}
-
-
-#' **Get NBA Stats API Team Years**
-#' @name commonteamyears
-NULL
-#' @title
-#' **Get NBA Stats API Team Years**
-#' @rdname commonteamyears
-#' @author Saiem Gilani
-#' @param league_id league_id
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
-#' @import rvest
-#' @export
-nba_commonteamyears <- function(league_id='00'){
-
-  version <- "commonteamyears"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id)
-
-  resp <- full_url %>%
-    .nba_headers()
-
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or common team roster data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
