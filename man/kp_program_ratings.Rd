@@ -33,7 +33,7 @@ Get KenPom's program ratings
 }
 \examples{
 \donttest{
-  kp_program_ratings()
+  try(kp_program_ratings())
 }
 }
 \keyword{Program}

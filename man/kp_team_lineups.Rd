@@ -30,7 +30,7 @@ Get Lineups Last 5 Games from Team Page
 }
 \examples{
   \donttest{
-   kp_team_lineups(team = 'Florida St.', year = 2021)
+   try(kp_team_lineups(team = 'Florida St.', year = 2021))
   }
 
 }

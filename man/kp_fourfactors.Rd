@@ -16,7 +16,7 @@ Get Four Factors Data
 }
 \examples{
 \donttest{
- kp_fourfactors(min_year = 2020, max_year = 2021)
+ try(kp_fourfactors(min_year = 2020, max_year = 2021))
 }
 }
 \keyword{Factors}

@@ -49,7 +49,7 @@ Get KenPom's coaching resume data
 }
 \examples{
   \donttest{
-   kp_coach_history(coach = 'Leonard Hamilton')
+   try(kp_coach_history(coach = 'Leonard Hamilton'))
   }
 
 

@@ -14,7 +14,7 @@ Get KenPom's player career stats from the player page
 }
 \examples{
   \donttest{
-    kp_player_career(player_id = '41180')
+    try(kp_player_career(player_id = '41180'))
   }
 
 }

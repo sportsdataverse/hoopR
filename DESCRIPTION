@@ -15,9 +15,9 @@ Description: An R package to quickly obtain clean and tidy men's
     active subscription to kenpom.com the capability to scrape the website tables and
     analyze the data for themselves.
 License: MIT + file LICENSE
-URL: https://saiemgilani.github.io/hoopR,
-    https://www.github.com/saiemgilani/hoopR
-BugReports: https://www.github.com/saiemgilani/hoopR/issues
+URL: https://saiemgilani.github.io/hoopR/,
+    https://github.com/saiemgilani/hoopR
+BugReports: https://github.com/saiemgilani/hoopR/issues
 SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
 Depends: 
     R (>= 3.5.0)

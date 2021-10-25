@@ -25,7 +25,7 @@ Get Home Court Arenas
 }
 \examples{
 \donttest{
- kp_arenas(year=2021)
+ try(kp_arenas(year=2021))
 }
 }
 \keyword{Arenas}

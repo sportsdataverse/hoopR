@@ -16,7 +16,7 @@ Get KenPom Ratings
 }
 \examples{
 \donttest{
-  kp_pomeroy_ratings(min_year = 2020, max_year = 2021)
+  try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 }
 }
 \keyword{Ratings}

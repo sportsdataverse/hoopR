@@ -16,7 +16,7 @@ Get Game Box Score
 }
 \examples{
 \donttest{
-  kp_box(game_id = 1238, year = 2020)
+  try(kp_box(game_id = 1238, year = 2020))
 }
 }
 \keyword{Box}

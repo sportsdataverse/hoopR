@@ -16,7 +16,7 @@ Get team schedule results
 }
 \examples{
 \donttest{
-  kp_team_schedule(team = 'Florida St.', year = 2021)
+ try(kp_team_schedule(team = 'Florida St.', year = 2021))
 }
 }
 \keyword{Schedule}

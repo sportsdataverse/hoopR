@@ -17,17 +17,17 @@ An R package to quickly obtain clean and tidy men's basketball play by play data
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://saiemgilani.github.io/hoopR}
-  \item \url{https://www.github.com/saiemgilani/hoopR}
-  \item Report bugs at \url{https://www.github.com/saiemgilani/hoopR/issues}
+  \item \url{https://saiemgilani.github.io/hoopR/}
+  \item \url{https://github.com/saiemgilani/hoopR}
+  \item Report bugs at \url{https://github.com/saiemgilani/hoopR/issues}
 }
 
 
 Useful links:
 \itemize{
-  \item \url{https://saiemgilani.github.io/hoopR}
-  \item \url{https://www.github.com/saiemgilani/hoopR}
-  \item Report bugs at \url{https://www.github.com/saiemgilani/hoopR/issues}
+  \item \url{https://saiemgilani.github.io/hoopR/}
+  \item \url{https://github.com/saiemgilani/hoopR}
+  \item Report bugs at \url{https://github.com/saiemgilani/hoopR/issues}
 }
 
 }

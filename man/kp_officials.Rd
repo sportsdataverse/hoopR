@@ -26,7 +26,7 @@ Get officials rankings
 }
 \examples{
 \donttest{
-  kp_officials(year = 2021)
+  try(kp_officials(year = 2021))
 }
 }
 \keyword{Refs}
