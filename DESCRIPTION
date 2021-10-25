@@ -20,7 +20,7 @@ URL: https://saiemgilani.github.io/hoopR/,
 BugReports: https://github.com/saiemgilani/hoopR/issues
 SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
 Depends: 
-    R (>= 3.5.0)
+    R (>= 4.0.0)
 Imports: 
     cli (>= 1.1.0),
     data.table (>= 1.14.0),
@@ -47,7 +47,7 @@ Suggests:
     ggrepel,
     httr (>= 0.5),
     purrr (>= 0.3.0),
-    qs (>= 0.24.0),
+    qs (>= 0.25.1),
     rmarkdown,
     RSQLite,
     stats,
