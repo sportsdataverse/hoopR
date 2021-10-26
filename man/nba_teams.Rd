@@ -16,6 +16,7 @@ A data frame with 30 rows and 10 variables:\
 \item{\code{LeagueID}}{character.}
 \item{\code{SeasonID}}{character.}
 \item{\code{SEASON}}{character.}
+\item{\code{TEAMNAMEFULL}}{character.}
 }
 }
 \usage{

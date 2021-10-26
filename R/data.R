@@ -24,5 +24,6 @@
 #' \item{\code{LeagueID}}{character.}
 #' \item{\code{SeasonID}}{character.}
 #' \item{\code{SEASON}}{character.}
+#' \item{\code{TEAMNAMEFULL}}{character.}
 #' }
 "nba_teams"
