@@ -87,20 +87,31 @@ nba_teamdashboardbyclutch <- function(
                      "&TeamID=",team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by clutch data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -192,20 +203,31 @@ nba_teamdashboardbygamesplits <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by game splits data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -298,20 +320,31 @@ nba_teamdashboardbygeneralsplits <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by general splits data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -404,20 +437,31 @@ nba_teamdashboardbylastngames <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no teamdashboard by last n games data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -510,20 +554,31 @@ nba_teamdashboardbyopponent <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by opponent data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -616,20 +671,31 @@ nba_teamdashboardbyshootingsplits <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by shooting splits data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -721,20 +787,31 @@ nba_teamdashboardbyteamperformance <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by team performance data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -826,20 +903,31 @@ nba_teamdashboardbyyearoveryear <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by year-over-year data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -937,20 +1025,30 @@ nba_teamdashlineups <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by lineups data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1020,20 +1118,30 @@ nba_teamdashptpass  <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking passing data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1109,20 +1217,30 @@ nba_teamdashptreb  <- function(
                      "&TeamID=", team_id,
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking rebounding data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1197,19 +1315,29 @@ nba_teamdashptshots  <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  resp <- full_url %>%
-    .nba_headers()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking shooting data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }

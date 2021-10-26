@@ -54,7 +54,7 @@ Get KenPom's conference comparison stats
 }
 \examples{
 \donttest{
-  kp_confstats(year=most_recent_mbb_season())
+  try(kp_confstats(year=most_recent_mbb_season()))
 }
 }
 \keyword{Comparison}

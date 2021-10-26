@@ -54,7 +54,7 @@ Get KenPom's historical conference ratings
 }
 \examples{
 \donttest{
- kp_confhistory(conf = 'ACC')
+ try(kp_confhistory(conf = 'ACC'))
 }
 }
 \keyword{Conference}

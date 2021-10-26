@@ -16,7 +16,7 @@ Get KenPom's team game plan page
 }
 \examples{
 \donttest{
-  kp_gameplan(team='Florida St.', year=2021)
+  try(kp_gameplan(team='Florida St.', year=2021))
 }
 }
 \keyword{Game}

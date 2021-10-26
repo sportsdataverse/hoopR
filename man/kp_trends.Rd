@@ -35,7 +35,7 @@ Get Division-I statistical trends
 }
 \examples{
 \donttest{
- kp_trends()
+ try(kp_trends())
 }
 }
 \keyword{Trends}

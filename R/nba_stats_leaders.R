@@ -7,7 +7,7 @@ NULL
 #' @author Saiem Gilani
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param top_x Top X
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -29,19 +29,30 @@ nba_alltimeleadersgrids <- function(league_id='00',
                      "&SeasonType=",season_type,
                      "&TopX=",top_x)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no all-time leaders grid data for {league_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -57,7 +68,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
 #' @param player_or_team Player or Team
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -81,19 +92,30 @@ nba_assistleaders <- function(league_id='00',
                      "&Season=",season,
                      "&SeasonType=",season_type)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no assist leaders data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 #' **Get NBA Stats API Assist Tracker**
@@ -106,7 +128,7 @@ NULL
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -127,19 +149,30 @@ nba_assisttracker <- function(league_id='00',
                      "&Season=",season,
                      "&SeasonType=",season_type)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no assist tracker data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -155,7 +188,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_category Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -164,12 +197,12 @@ NULL
 #' @export
 
 nba_homepageleaders <- function(league_id='00',
-                              game_scope = 'Season',
-                              player_or_team = 'Team',
-                              player_scope = 'All Players',
-                              season = '2020-21',
-                              season_type = 'Regular Season',
-                              stat_category = 'Points'){
+                                game_scope = 'Season',
+                                player_or_team = 'Team',
+                                player_scope = 'All Players',
+                                season = '2020-21',
+                                season_type = 'Regular Season',
+                                stat_category = 'Points'){
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat_category <- gsub(' ','+',stat_category)
@@ -185,19 +218,30 @@ nba_homepageleaders <- function(league_id='00',
                      "&SeasonType=",season_type,
                      "&StatCategory=",stat_category)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no homepage leaders data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -214,7 +258,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_type Stat Type - Traditional, Advanced, Tracking
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -223,12 +267,12 @@ NULL
 #' @export
 
 nba_homepagev2 <- function(league_id='00',
-                                game_scope = 'Season',
-                                player_or_team = 'Team',
-                                player_scope = 'All Players',
-                                season = '2020-21',
-                                season_type = 'Regular Season',
-                                stat_type = 'Traditional'){
+                           game_scope = 'Season',
+                           player_or_team = 'Team',
+                           player_scope = 'All Players',
+                           season = '2020-21',
+                           season_type = 'Regular Season',
+                           stat_type = 'Traditional'){
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat_type <- gsub(' ','+',stat_type)
@@ -244,19 +288,30 @@ nba_homepagev2 <- function(league_id='00',
                      "&SeasonType=",season_type,
                      "&StatType=",stat_type)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no homepage v2 data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -273,7 +328,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -282,12 +337,12 @@ NULL
 #' @export
 
 nba_leaderstiles <- function(league_id='00',
-                           game_scope = 'Season',
-                           player_or_team = 'Team',
-                           player_scope = 'All Players',
-                           season = '2020-21',
-                           season_type = 'Regular Season',
-                           stat = 'PTS'){
+                             game_scope = 'Season',
+                             player_or_team = 'Team',
+                             player_scope = 'All Players',
+                             season = '2020-21',
+                             season_type = 'Regular Season',
+                             stat = 'PTS'){
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat <- gsub(' ','+',stat)
@@ -303,19 +358,30 @@ nba_leaderstiles <- function(league_id='00',
                      "&SeasonType=",season_type,
                      "&Stat=",stat)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no leaders tiles data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -332,7 +398,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -340,11 +406,11 @@ NULL
 #' @export
 
 nba_defensehub <- function(league_id='00',
-                             game_scope = 'Season',
-                             player_or_team = 'Team',
-                             player_scope = 'All Players',
-                             season = '2020-21',
-                             season_type = 'Regular Season'){
+                           game_scope = 'Season',
+                           player_or_team = 'Team',
+                           player_scope = 'All Players',
+                           season = '2020-21',
+                           season_type = 'Regular Season'){
 
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
@@ -359,19 +425,30 @@ nba_defensehub <- function(league_id='00',
                      "&Season=",season,
                      "&SeasonType=",season_type)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no defense hub data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -390,7 +467,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs
 #' @param per_mode Per Mode - Totals, PerGame, Per48
 #' @param scope Scope - RS, S, Rookies
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_category Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -420,18 +497,29 @@ nba_leagueleaders <- function(active_flag='',
                      "&SeasonType=",season_type,
                      "&StatCategory=",stat_category)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league leaders data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }

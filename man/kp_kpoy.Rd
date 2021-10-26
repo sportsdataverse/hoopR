@@ -14,7 +14,7 @@ Get KPoY Leaders Tables
 }
 \examples{
 \donttest{
- kp_kpoy(year=2021)
+ try(kp_kpoy(year=2021))
 }
 
 }

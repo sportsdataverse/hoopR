@@ -104,7 +104,6 @@ module.exports = {
         'NBA/nba_commonplayerinfo',
         'NBA/nba_commonplayoffseries',
         'NBA/nba_commonteamroster',
-        'NBA/nba_commonteamyears',
         'NBA/nba_cumestatsplayer',
         'NBA/nba_cumestatsplayergames',
         'NBA/nba_cumestatsteam',

@@ -16,7 +16,7 @@ Get KenPom's team opponent tracker page
 }
 \examples{
 \donttest{
-  kp_opptracker(team = 'Florida St.', year = 2021)
+  try(kp_opptracker(team = 'Florida St.', year = 2021))
 }
 }
 \keyword{Opponent}

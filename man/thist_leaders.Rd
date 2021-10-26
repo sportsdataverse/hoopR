@@ -7,7 +7,7 @@
 \usage{
 nba_teamhistoricalleaders(
   league_id = "00",
-  season_id = "22020",
+  season_id = "2020",
   team_id = "1610612749"
 )
 }

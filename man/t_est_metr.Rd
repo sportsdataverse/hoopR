@@ -12,7 +12,7 @@ nba_teamestimatedmetrics(
 )
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{season}{Season - format 2020-21}
 

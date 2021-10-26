@@ -41,7 +41,7 @@ Get KenPom's ratings archive pages
 }
 \examples{
 \donttest{
-  kp_pomeroy_archive_ratings(date='2018-11-22')
+  try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 }
 }
 \keyword{Archive}

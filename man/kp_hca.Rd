@@ -30,7 +30,7 @@ Get Home Court Advantage Estimates
 }
 \examples{
 \donttest{
- kp_hca()
+ try(kp_hca())
 }
 }
 \keyword{HCA}

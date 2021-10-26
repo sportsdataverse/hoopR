@@ -16,7 +16,7 @@ Get KenPom Efficiency and Tempo Summary
 }
 \examples{
 \donttest{
- kp_efficiency(min_year = 2020, max_year = 2021)
+ try(kp_efficiency(min_year = 2020, max_year = 2021))
 }
 }
 \keyword{Efficiency}

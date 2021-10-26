@@ -35,7 +35,7 @@ Get FanMatch by date
 }
 \examples{
 \donttest{
-  kp_fanmatch(date="2020-03-10")
+  try(kp_fanmatch(date="2020-03-10"))
 }
 }
 \keyword{FanMatch}

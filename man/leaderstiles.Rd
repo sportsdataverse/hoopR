@@ -16,7 +16,7 @@ nba_leaderstiles(
 )
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{game_scope}{Game Scope - Season, Last 10, ,Yesterday, Finals}
 

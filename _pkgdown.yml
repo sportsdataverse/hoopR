@@ -91,8 +91,8 @@ navbar:
         href: https://jaseziv.github.io/worldfootballR/
       - text: hockeyR
         href: https://hockeyr.netlify.app/
-      # - text: baseballr
-      #   href: https://saiemgilani.github.io/baseballr/
+      - text: baseballr
+        href: https://BillPetti.github.io/baseballr/
       - text: --------------------------------
       - text: Python Packages
       - text: cfbfastR-py

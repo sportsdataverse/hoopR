@@ -127,6 +127,11 @@ module.exports = {
               target: '_self',
             },
             {
+              label: 'baseballr',
+              href: 'https://BillPetti.github.io/baseballr/',
+              target: '_self',
+            },
+            {
               label: 'Node.js Packages',
             },
             {
@@ -167,6 +172,14 @@ module.exports = {
               label: 'Twitter',
               href: 'https://twitter.com/saiemgilani',
             },
+            {
+              label: 'SportsDataverse Twitter',
+              href: 'https://twitter.com/sportsdataverse',
+            },
+            {
+              label: 'cfbfastR Twitter',
+              href: 'https://twitter.com/cfbfastR',
+            },
           ],
         },
         {
@@ -175,6 +188,12 @@ module.exports = {
             {
               label: 'GitHub',
               href: 'https://github.com/saiemgilani/hoopR',
+              target: '_self',
+            },
+            {
+              label: 'SportsDataverse',
+              href: 'https://sportsdataverse.org',
+              target: '_self',
             },
           ],
         },

@@ -16,7 +16,7 @@ Get Heights, Experience, Bench and Continuity Data
 }
 \examples{
 \donttest{
- kp_height(min_year = 2020, max_year = 2021)
+ try(kp_height(min_year = 2020, max_year = 2021))
 }
 }
 \keyword{Roster}

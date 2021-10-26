@@ -16,7 +16,7 @@ Get Minutes Matrix from Expanded Player Page
 }
 \examples{
   \donttest{
-    kp_minutes_matrix(team = 'Florida St.', year = 2021)
+    try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
   }
 
 

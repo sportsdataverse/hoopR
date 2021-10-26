@@ -16,7 +16,7 @@ Get Team Player Stats
 }
 \examples{
   \donttest{
-    kp_team_player_stats(team = 'Florida St.', year = 2021)
+   try(kp_team_player_stats(team = 'Florida St.', year = 2021))
   }
 }
 \keyword{Player}
