@@ -4,7 +4,7 @@
 \alias{kp_team_schedule}
 \title{Get team schedule results}
 \usage{
-kp_team_schedule(team, year = 2021)
+kp_team_schedule(team, year = 2022)
 }
 \arguments{
 \item{team}{Team filter to select.}
@@ -16,7 +16,7 @@ Get team schedule results
 }
 \examples{
 \donttest{
-  kp_team_schedule(team = 'Florida St.', year = 2021)
+ try(kp_team_schedule(team = 'Florida St.', year = 2022))
 }
 }
 \keyword{Schedule}

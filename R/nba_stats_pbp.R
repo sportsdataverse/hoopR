@@ -25,17 +25,29 @@ nba_pbp <- function(game_id, version = "v2"){
                      "?EndPeriod=0&",
                      "GameID=",pad_id(game_id),
                      "&StartPeriod=0")
-  resp <- full_url %>%
-    .nba_headers()
 
-  data <-
-    resp$resultSets$rowSet[[1]] %>%
-    data.frame(stringsAsFactors = F) %>%
-    as_tibble()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  json_names <-
-    resp$resultSets$headers[[1]]
-  colnames(data) <- json_names
+      data <-
+        resp$resultSets$rowSet[[1]] %>%
+        data.frame(stringsAsFactors = F) %>%
+        as_tibble()
+
+      json_names <-
+        resp$resultSets$headers[[1]]
+      colnames(data) <- json_names
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(data)
 }
 
@@ -60,16 +72,27 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
 
   # Check the result
   check_status(res)
+  tryCatch(
+    expr = {
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
 
-  resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
 
+      data <- jsonlite::fromJSON(resp)[["league"]]
 
-  data <- jsonlite::fromJSON(resp)[["league"]]
+      if(tolower(league) != 'all'){
+        data <- data[["standard"]]
+      }
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no schedule data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
 
-  if(tolower(league) != 'all'){
-    data <- data[["standard"]]
-  }
   return(data)
 }
 

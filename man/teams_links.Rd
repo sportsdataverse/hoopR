@@ -3,8 +3,8 @@
 \docType{data}
 \name{teams_links}
 \alias{teams_links}
-\title{Teams Dictionary
-Team link reference lookup for the package}
+\title{Men's College Basketball KenPom Teams Dictionary
+Team link KenPom reference lookup for the package}
 \format{
 A data frame with 357 rows and 6 variables:\
 \describe{
@@ -21,7 +21,7 @@ A data frame with 357 rows and 6 variables:\
 teams_links
 }
 \description{
-Teams Dictionary
-Team link reference lookup for the package
+Men's College Basketball KenPom Teams Dictionary
+Team link KenPom reference lookup for the package
 }
 \keyword{datasets}

@@ -109,19 +109,30 @@ nba_leaguedashoppptshot <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking oppponent shooting data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -241,19 +252,30 @@ nba_leaguedashplayerbiostats <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player bio stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -395,19 +417,30 @@ nba_leaguedashplayerclutch <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player clutch stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -547,19 +580,30 @@ nba_leaguedashplayerptshot <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking player shooting data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -691,19 +735,30 @@ nba_leaguedashplayerstats <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -839,23 +894,34 @@ nba_leaguedashplayershotlocations <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-    columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
-    columnSpan <- resp$resultSets$headers$columnSpan[[1]]
-    json_names1 <- resp$resultSets$headers$columnNames[[1]]
-    json_names_rep <- rep(json_names1,times=1,each=columnSpan)
-    json_names2 <- resp$resultSets$headers$columnNames[[2]]
-    json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
-    colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
+        columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
+        columnSpan <- resp$resultSets$headers$columnSpan[[1]]
+        json_names1 <- resp$resultSets$headers$columnNames[[1]]
+        json_names_rep <- rep(json_names1,times=1,each=columnSpan)
+        json_names2 <- resp$resultSets$headers$columnNames[[2]]
+        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
+        colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player shot locations data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -972,19 +1038,30 @@ nba_leaguedashptdefend <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking player defense data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1101,19 +1178,30 @@ nba_leaguedashptstats <- function(
                      "&VsDivision=", vs_division,
                      "&Weight=", weight)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1200,19 +1288,30 @@ nba_leaguedashptteamdefend <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking team defensive stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1334,19 +1433,30 @@ nba_leaguedashteamclutch <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team clutch data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1447,19 +1557,30 @@ nba_leaguedashteamptshot <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team player-tracking shooting stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1567,19 +1688,30 @@ nba_leaguedashteamstats <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team stats data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -1695,22 +1827,33 @@ nba_leaguedashteamshotlocations <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr={
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
-    columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
-    columnSpan <- resp$resultSets$headers$columnSpan[[1]]
-    json_names1 <- resp$resultSets$headers$columnNames[[1]]
-    json_names_rep <- rep(json_names1,times=1,each=columnSpan)
-    json_names2 <- resp$resultSets$headers$columnNames[[2]]
-    json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
-    colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
+        columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
+        columnSpan <- resp$resultSets$headers$columnSpan[[1]]
+        json_names1 <- resp$resultSets$headers$columnNames[[1]]
+        json_names_rep <- rep(json_names1,times=1,each=columnSpan)
+        json_names2 <- resp$resultSets$headers$columnNames[[2]]
+        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
+        colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team shot location data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }

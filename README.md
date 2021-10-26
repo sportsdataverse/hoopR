@@ -1,11 +1,11 @@
 
 # 
 
-# hoopR <a href='https://hoopR.sportsdataverse.org'><img src="https://hoopR.sportsdataverse.org/img/logo.png" align="right" height="139"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://hoopR.sportsdataverse.org/img/logo.png" align="right" height="139"/></a>
 
 <!-- badges: start -->
 
-[![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR/)
+[![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR)
 [![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/hoopR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/saiemgilani/hoopR/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/hoopR/)
 [![Twitter
@@ -13,17 +13,17 @@ Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40sa
 [![Contributors](https://img.shields.io/github/contributors/saiemgilani/hoopR?style=for-the-badge)](https://github.com/saiemgilani/hoopR/graphs/contributors)
 <!-- badges: end -->
 
-[**`hoopR`**](https://hoopR.sportsdataverse.org) is an R package for
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
 working with men’s basketball data.
 
 The package has functions to access **live play by play and box score**
 data from ESPN with shot locations when available. As of version 1.3.0,
-[**`hoopR`**](https://hoopR.sportsdataverse.org) is also a full NBA
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA
 Stats API wrapper with 127 functions added in this release.
 
 It is additionally a scraping and aggregating interface for Ken
 Pomeroy’s men’s college basketball statistics website,
-[kenpom.com](https://kenpom.com). It provides users with an active
+[kenpom.com](https://kenpom.com/). It provides users with an active
 subscription the capability to scrape the website tables and analyze the
 data for themselves.
 
@@ -101,7 +101,7 @@ website](https://saiemgilani.github.io/hoopR/).
 
 ## **Citations**
 
-To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org) R package
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
 in publications, use:
 
 BibTex Citation
@@ -110,7 +110,7 @@ BibTex Citation
 @misc{saiemgilani2021hoopR,
   author = {Gilani, Saiem},
   title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
-  url = {https://hoopR.sportsdataverse.org},
+  url = {https://hoopR.sportsdataverse.org/},
   year = {2021}
 }
 ```

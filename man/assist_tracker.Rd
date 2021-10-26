@@ -13,7 +13,7 @@ nba_assisttracker(
 )
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{per_mode}{Per Mode - PerGame, Totals}
 

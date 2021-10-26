@@ -16,7 +16,7 @@ Get Win Probability
 }
 \examples{
 \donttest{
-  kp_winprob(game_id = 1238, year = 2020)
+  try(kp_winprob(game_id = 1238, year = 2020))
 }
 }
 \keyword{Probability}

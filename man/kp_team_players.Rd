@@ -16,7 +16,7 @@ Get KenPom's player stats from the team page
 }
 \examples{
   \donttest{
-    kp_team_players(team = 'Florida St.', year = 2021)
+    try(kp_team_players(team = 'Florida St.', year = 2021))
   }
 
 }

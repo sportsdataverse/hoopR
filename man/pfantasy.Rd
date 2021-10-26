@@ -18,7 +18,7 @@ nba_playerfantasyprofile(
 )
 }
 \arguments{
-\item{league_id}{League - default: '00'. Other options include '01','02','03'}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{measure_type}{measure_type}
 

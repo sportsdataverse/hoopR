@@ -5,7 +5,7 @@ NULL
 #' **Get NBA Stats API Scoreboard**
 #' @rdname scoreboard
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
 #' @importFrom jsonlite fromJSON toJSON
@@ -26,19 +26,30 @@ nba_scoreboard <- function(league_id = '00',
                      "&GameDate=", game_date,
                      "&DayOffset=",day_offset)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-    data <- resp$resultSet$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSet$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSet$name
+        json_names <- resp$resultSet$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_date} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -50,7 +61,7 @@ NULL
 #' **Get NBA Stats API Scoreboard V2**
 #' @rdname scoreboardv2
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '01','02','03'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
 #' @importFrom jsonlite fromJSON toJSON
@@ -59,8 +70,8 @@ NULL
 #' @import rvest
 #' @export
 nba_scoreboardv2 <- function(league_id = '00',
-                           game_date='2021-07-20',
-                           day_offset=0){
+                             game_date='2021-07-20',
+                             day_offset=0){
 
 
   version <- "scoreboardv2"
@@ -71,19 +82,30 @@ nba_scoreboardv2 <- function(league_id = '00',
                      "&GameDate=", game_date,
                      "&DayOffset=",day_offset)
 
-  resp <- full_url %>%
-    .nba_headers()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-    data <- resp$resultSet$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
 
-    json_names <- resp$resultSet$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSet$name
+        json_names <- resp$resultSet$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboardv2 data for {game_date} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }
 
@@ -105,7 +127,7 @@ NULL
 #' @import rvest
 #' @export
 nba_winprobabilitypbp <- function(game_id = '0021700807',
-                             run_type='each second'){
+                                  run_type='each second'){
 
   run_type <- gsub(' ','+',run_type)
   version <- "winprobabilitypbp"
@@ -115,18 +137,30 @@ nba_winprobabilitypbp <- function(game_id = '0021700807',
                      "?GameID=", game_id,
                      "&RunType=",run_type)
 
-  resp <- full_url %>%
-    .nba_headers()
 
-  df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-    data <- resp$resultSet$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      as_tibble()
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
 
-    json_names <- resp$resultSet$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSet$name
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
+
+        json_names <- resp$resultSet$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no win probability pbp data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(df_list)
 }

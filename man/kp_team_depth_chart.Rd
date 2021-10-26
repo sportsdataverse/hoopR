@@ -33,7 +33,7 @@ Get Depth Chart Last 5 Games from Team Page
 }
 \examples{
   \donttest{
-    kp_team_depth_chart(team = 'Florida St.', year= 2021)
+    try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
   }
 
 
