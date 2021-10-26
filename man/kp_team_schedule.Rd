@@ -4,7 +4,7 @@
 \alias{kp_team_schedule}
 \title{Get team schedule results}
 \usage{
-kp_team_schedule(team, year = 2021)
+kp_team_schedule(team, year = 2022)
 }
 \arguments{
 \item{team}{Team filter to select.}
