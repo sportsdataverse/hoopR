@@ -1,3 +1,7 @@
+# **hoopR 1.4.1**
+- Update ```teams_links``` internal dataset for 2022 (need a better solve here)
+- Added ```nba_teams``` dataset for working with the NBA Stats API
+
 # **hoopR 1.4.0**
 - [`hoopR::espn_mbb_betting()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_betting.html)
     function added
