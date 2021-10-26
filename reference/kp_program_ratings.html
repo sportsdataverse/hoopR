@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
       </span>
     </div>
 
@@ -195,6 +195,9 @@
     <li>
       <a href="https://hockeyr.netlify.app/">hockeyR</a>
     </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/">baseballr</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Python Packages</li>
     <li>
@@ -267,7 +270,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get KenPom's program ratings</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/saiemgilani/hoopR/blob/master/R/kp_historical_tables.R'><code>R/kp_historical_tables.R</code></a></small>
     <div class="hidden name"><code>kp_program_ratings.Rd</code></div>
     </div>
 
@@ -304,7 +307,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='fu'>kp_program_ratings</span><span class='op'>(</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>kp_program_ratings</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;      rk                   team conf    rtg best_rk best_yr worst_rk worst_yr
 #&gt; 1     1                   Duke  ACC  49.72       1    2010       36     2021
 #&gt; 2     2               Kentucky  SEC  45.71       1    2015       78     2008

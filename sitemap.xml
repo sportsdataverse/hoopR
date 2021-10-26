@@ -64,9 +64,6 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/commonteamroster.html</loc>
   </url>
   <url>
-    <loc>http://saiemgilani.github.io/hoopR/reference/commonteamyears.html</loc>
-  </url>
-  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/csv_from_url.html</loc>
   </url>
   <url>
@@ -400,10 +397,16 @@
     <loc>http://saiemgilani.github.io/hoopR/reference/most_recent_nba_season.html</loc>
   </url>
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/nba_data_pbp.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/nba_stats_videodetails.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/nba_stats_videoevents.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/nba_teams.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/ncaa_mbb_NET_rankings.html</loc>
@@ -497,6 +500,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/rds_from_url.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/rejoin_schedules.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/sc.html</loc>
@@ -596,6 +602,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/winprobabilitypbp.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/year_to_season.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/articles/getting-started-hoopR.html</loc>

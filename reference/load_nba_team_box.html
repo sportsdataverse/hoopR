@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
       </span>
     </div>
 
@@ -196,6 +196,9 @@ or writes it into a db using some forwarded arguments in the dots" />
     <li>
       <a href="https://hockeyr.netlify.app/">hockeyR</a>
     </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/">baseballr</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Python Packages</li>
     <li>
@@ -268,7 +271,7 @@ or writes it into a db using some forwarded arguments in the dots" />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1><strong>Load hoopR NBA team box scores</strong></h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/saiemgilani/hoopR/blob/master/R/nba_pbp.R'><code>R/nba_pbp.R</code></a></small>
     <div class="hidden name"><code>load_nba_team_box.Rd</code></div>
     </div>
 
@@ -311,18 +314,18 @@ the season data into a database (used by <code><a href='update_nba_db.html'>upda
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='fu'>load_nba_team_box</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2,442 × 43</span>
-#&gt;    team_short_display_name team_uid       team_alternate_… team_color team_display_na…
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           
-#&gt; <span style='color: #BCBCBC;'> 1</span> Magic                   s:40~l:46~t:19 c4ced3           0860A8     Orlando Magic   
-#&gt; <span style='color: #BCBCBC;'> 2</span> Hawks                   s:40~l:46~t:1  002b5c           002B5C     Atlanta Hawks   
-#&gt; <span style='color: #BCBCBC;'> 3</span> Knicks                  s:40~l:46~t:18 f58426           225EA8     New York Knicks 
-#&gt; <span style='color: #BCBCBC;'> 4</span> Pistons                 s:40~l:46~t:8  006bb6           FA002C     Detroit Pistons 
-#&gt; <span style='color: #BCBCBC;'> 5</span> Rockets                 s:40~l:46~t:10 c4ced3           D40026     Houston Rockets 
-#&gt; <span style='color: #BCBCBC;'> 6</span> Bulls                   s:40~l:46~t:4  000000           000000     Chicago Bulls   
-#&gt; <span style='color: #BCBCBC;'> 7</span> Clippers                s:40~l:46~t:12 f1f2f3           FA0028     LA Clippers     
-#&gt; <span style='color: #BCBCBC;'> 8</span> Lakers                  s:40~l:46~t:13 552582           542582     Los Angeles Lak…
-#&gt; <span style='color: #BCBCBC;'> 9</span> Kings                   s:40~l:46~t:23 8e9090           393996     Sacramento Kings
-#&gt; <span style='color: #BCBCBC;'>10</span> Trail Blazers           s:40~l:46~t:22 bac3c9           000000     Portland Trail …
+#&gt;    team_short_display_name team_uid team_alternate_… team_color team_display_na…
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           
+#&gt; <span style='color: #BCBCBC;'> 1</span> Magic                   s:40~l:… c4ced3           0860A8     Orlando Magic   
+#&gt; <span style='color: #BCBCBC;'> 2</span> Hawks                   s:40~l:… 002b5c           002B5C     Atlanta Hawks   
+#&gt; <span style='color: #BCBCBC;'> 3</span> Knicks                  s:40~l:… f58426           225EA8     New York Knicks 
+#&gt; <span style='color: #BCBCBC;'> 4</span> Pistons                 s:40~l:… 006bb6           FA002C     Detroit Pistons 
+#&gt; <span style='color: #BCBCBC;'> 5</span> Rockets                 s:40~l:… c4ced3           D40026     Houston Rockets 
+#&gt; <span style='color: #BCBCBC;'> 6</span> Bulls                   s:40~l:… 000000           000000     Chicago Bulls   
+#&gt; <span style='color: #BCBCBC;'> 7</span> Clippers                s:40~l:… f1f2f3           FA0028     LA Clippers     
+#&gt; <span style='color: #BCBCBC;'> 8</span> Lakers                  s:40~l:… 552582           542582     Los Angeles Lak…
+#&gt; <span style='color: #BCBCBC;'> 9</span> Kings                   s:40~l:… 8e9090           393996     Sacramento Kings
+#&gt; <span style='color: #BCBCBC;'>10</span> Trail Blazers           s:40~l:… bac3c9           000000     Portland Trail …
 #&gt; <span style='color: #949494;'># … with 2,432 more rows, and 38 more variables: team_name &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   team_logo &lt;chr&gt;, team_location &lt;chr&gt;, team_id &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_slug &lt;chr&gt;,</span>

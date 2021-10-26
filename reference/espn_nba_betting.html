@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
       </span>
     </div>
 
@@ -195,6 +195,9 @@
     <li>
       <a href="https://hockeyr.netlify.app/">hockeyR</a>
     </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/">baseballr</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Python Packages</li>
     <li>
@@ -267,7 +270,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get ESPN NBA's Betting information</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/saiemgilani/hoopR/blob/master/R/espn_nba_data.R'><code>R/espn_nba_data.R</code></a></small>
     <div class="hidden name"><code>espn_nba_betting.Rd</code></div>
     </div>
 
@@ -311,36 +314,41 @@
 #&gt; 2                         67.00                           NA
 #&gt; 3                         38.12                        107.6
 #&gt; 4                            NA                        111.1
-#&gt;   away_team_odds_spread_return away_team_odds_spread_record_wins
-#&gt; 1                           NA                                NA
-#&gt; 2                           NA                                NA
-#&gt; 3                        0.183                                NA
-#&gt; 4                           NA                                 0
-#&gt;   away_team_odds_spread_record_losses away_team_odds_spread_record_pushes
-#&gt; 1                                  NA                                  NA
-#&gt; 2                                  NA                                  NA
-#&gt; 3                                  NA                                  NA
-#&gt; 4                                   0                                   0
-#&gt;   away_team_odds_spread_record_summary home_team_odds_favorite
-#&gt; 1                                 &lt;NA&gt;                    TRUE
-#&gt; 2                                 &lt;NA&gt;                    TRUE
-#&gt; 3                                 &lt;NA&gt;                    TRUE
-#&gt; 4                                0-0-0                    TRUE
-#&gt;   home_team_odds_underdog home_team_odds_money_line home_team_odds_spread_odds
-#&gt; 1                   FALSE                      -275                    -110.00
-#&gt; 2                   FALSE                      -276                    -111.00
-#&gt; 3                   FALSE                      -270                      35.12
-#&gt; 4                   FALSE                      -270                    -114.00
-#&gt;   home_team_odds_team_id home_team_odds_win_percentage
-#&gt; 1                     29                            NA
-#&gt; 2                     29                         33.00
-#&gt; 3                     29                         61.88
-#&gt; 4                     29                            NA
-#&gt;   home_team_odds_average_score home_team_odds_spread_return
-#&gt; 1                           NA                           NA
-#&gt; 2                           NA                           NA
-#&gt; 3                       110.79                       -0.329
-#&gt; 4                       117.90                           NA
+#&gt;   away_team_odds_money_line_odds away_team_odds_spread_return
+#&gt; 1                             NA                           NA
+#&gt; 2                             NA                           NA
+#&gt; 3                          38.12                        0.183
+#&gt; 4                             NA                           NA
+#&gt;   away_team_odds_spread_record_wins away_team_odds_spread_record_losses
+#&gt; 1                                NA                                  NA
+#&gt; 2                                NA                                  NA
+#&gt; 3                                NA                                  NA
+#&gt; 4                                 0                                   0
+#&gt;   away_team_odds_spread_record_pushes away_team_odds_spread_record_summary
+#&gt; 1                                  NA                                 &lt;NA&gt;
+#&gt; 2                                  NA                                 &lt;NA&gt;
+#&gt; 3                                  NA                                 &lt;NA&gt;
+#&gt; 4                                   0                                0-0-0
+#&gt;   home_team_odds_favorite home_team_odds_underdog home_team_odds_money_line
+#&gt; 1                    TRUE                   FALSE                      -275
+#&gt; 2                    TRUE                   FALSE                      -276
+#&gt; 3                    TRUE                   FALSE                      -270
+#&gt; 4                    TRUE                   FALSE                      -270
+#&gt;   home_team_odds_spread_odds home_team_odds_team_id
+#&gt; 1                    -110.00                     29
+#&gt; 2                    -111.00                     29
+#&gt; 3                      35.12                     29
+#&gt; 4                    -114.00                     29
+#&gt;   home_team_odds_win_percentage home_team_odds_average_score
+#&gt; 1                            NA                           NA
+#&gt; 2                         33.00                           NA
+#&gt; 3                         61.88                       110.79
+#&gt; 4                            NA                       117.90
+#&gt;   home_team_odds_money_line_odds home_team_odds_spread_return
+#&gt; 1                             NA                           NA
+#&gt; 2                             NA                           NA
+#&gt; 3                          61.88                       -0.329
+#&gt; 4                             NA                           NA
 #&gt;   home_team_odds_spread_record_wins home_team_odds_spread_record_losses
 #&gt; 1                                NA                                  NA
 #&gt; 2                                NA                                  NA
