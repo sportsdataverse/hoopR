@@ -13,10 +13,10 @@
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_team_schedule(team = 'Florida St.', year = 2021))
+#'  try(kp_team_schedule(team = 'Florida St.', year = 2022))
 #' }
 
-kp_team_schedule <- function(team, year = 2021){
+kp_team_schedule <- function(team, year = 2022){
 
   tryCatch(
     expr = {
@@ -52,7 +52,7 @@ kp_team_schedule <- function(team, year = 2021){
       sched <- (page %>%
                   xml2::read_html() %>%
                   rvest::html_elements(css='#schedule-table') %>%
-                  rvest::html_table())[[1]] %>%
+                  rvest::html_table()) %>%
         as.data.frame()
 
       ## Removing the tiers of joy column, will add back to data frame subsequently
@@ -332,7 +332,7 @@ kp_team_schedule <- function(team, year = 2021){
 
     },
     error = function(e){
-      message(glue::glue("{Sys.date()} - No team schedule tables available for {team} - {year}"))
+      message(glue::glue("{Sys.Date()} - No team schedule tables available for {team} - {year}"))
     },
     warning = function(w){
     },
@@ -529,7 +529,7 @@ kp_gameplan <- function(team, year=2021){
 
     },
     error = function(e){
-      message(glue::glue("{Sys.date()} - No Game Plan Points distribution tables available for {team} - {year}"))
+      message(glue::glue("{Sys.Date()} - No Game Plan Points distribution tables available for {team} - {year}"))
     },
     warning = function(w){
     },
