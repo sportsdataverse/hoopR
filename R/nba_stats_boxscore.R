@@ -7,23 +7,34 @@ NULL
 #' @rdname bs_tradv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscoretraditionalv2 <- function(game_id){
+nba_boxscoretraditionalv2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscoretraditionalv2"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
   tryCatch(
     expr={
       resp <- full_url %>%
@@ -59,23 +70,35 @@ NULL
 #' @rdname bs_advv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscoreadvancedv2 <- function(game_id){
+nba_boxscoreadvancedv2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscoreadvancedv2"
   endpoint <- nba_endpoint(version)
 
+
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
 
   tryCatch(
     expr={
@@ -160,23 +183,34 @@ NULL
 #' @rdname bs_ffv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscorefourfactorsv2 <- function(game_id){
+nba_boxscorefourfactorsv2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscorefourfactorsv2"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
   tryCatch(
     expr={
       resp <- full_url %>%
@@ -212,23 +246,34 @@ NULL
 #' @rdname bs_miscv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscoremiscv2 <- function(game_id){
+nba_boxscoremiscv2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscoremiscv2"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
   tryCatch(
     expr={
       resp <- full_url %>%
@@ -264,23 +309,34 @@ NULL
 #' @rdname bs_scoringv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscorescoringv2 <- function(game_id){
+nba_boxscorescoringv2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscorescoringv2"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
   tryCatch(
     expr={
       resp <- full_url %>%
@@ -316,23 +372,34 @@ NULL
 #' @rdname bs_usagev2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param start_period start_period
+#' @param end_period end_period
+#' @param start_range start_range
+#' @param end_range end_range
+#' @param range_type range_type
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-nba_boxscoreusagev2 <- function(game_id){
+nba_boxscoreusagev2 <- function(
+  game_id,
+  start_period=0,
+  end_period=14,
+  start_range=0,
+  end_range=0,
+  range_type=0){
 
   version <- "boxscoreusagev2"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?EndPeriod=0",
-                     "&EndRange=0",
+                     "?EndPeriod=", end_period,
+                     "&EndRange=", end_range,
                      "&GameID=",pad_id(game_id),
-                     "&RangeType=0",
-                     "&StartPeriod=0",
-                     "&StartRange=0")
+                     "&RangeType=", range_type,
+                     "&StartPeriod=",start_period,
+                     "&StartRange=", start_range)
   tryCatch(
     expr={
       resp <- full_url %>%

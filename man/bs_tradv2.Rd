@@ -5,10 +5,27 @@
 \alias{nba_boxscoretraditionalv2}
 \title{\strong{Get NBA Stats API Boxscore Traditional V2}}
 \usage{
-nba_boxscoretraditionalv2(game_id)
+nba_boxscoretraditionalv2(
+  game_id,
+  start_period = 0,
+  end_period = 14,
+  start_range = 0,
+  end_range = 0,
+  range_type = 0
+)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{start_period}{start_period}
+
+\item{end_period}{end_period}
+
+\item{start_range}{start_range}
+
+\item{end_range}{end_range}
+
+\item{range_type}{range_type}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Traditional V2}

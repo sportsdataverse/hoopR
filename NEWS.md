@@ -1,3 +1,6 @@
+# **hoopR 1.4.2**
+- Implement additional boxscore function parameters for ```nba_boxscore(.*)``` functions
+
 # **hoopR 1.4.1**
 - Update ```teams_links``` internal dataset for 2022 (need a better solve here)
 - Added ```nba_teams``` dataset for working with the NBA Stats API
