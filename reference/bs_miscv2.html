@@ -102,7 +102,7 @@ Get NBA Stats API Boxscore Misc V2" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.2</span>
       </span>
     </div>
 
@@ -280,7 +280,14 @@ Get NBA Stats API Boxscore Misc V2" />
 <p><strong>Get NBA Stats API Boxscore Misc V2</strong></p>
     </div>
 
-    <pre class="usage"><span class='fu'>nba_boxscoremiscv2</span><span class='op'>(</span><span class='va'>game_id</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>nba_boxscoremiscv2</span><span class='op'>(</span>
+  <span class='va'>game_id</span>,
+  start_period <span class='op'>=</span> <span class='fl'>0</span>,
+  end_period <span class='op'>=</span> <span class='fl'>14</span>,
+  start_range <span class='op'>=</span> <span class='fl'>0</span>,
+  end_range <span class='op'>=</span> <span class='fl'>0</span>,
+  range_type <span class='op'>=</span> <span class='fl'>0</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -288,6 +295,26 @@ Get NBA Stats API Boxscore Misc V2" />
     <tr>
       <th>game_id</th>
       <td><p>Game ID</p></td>
+    </tr>
+    <tr>
+      <th>start_period</th>
+      <td><p>start_period</p></td>
+    </tr>
+    <tr>
+      <th>end_period</th>
+      <td><p>end_period</p></td>
+    </tr>
+    <tr>
+      <th>start_range</th>
+      <td><p>start_range</p></td>
+    </tr>
+    <tr>
+      <th>end_range</th>
+      <td><p>end_range</p></td>
+    </tr>
+    <tr>
+      <th>range_type</th>
+      <td><p>range_type</p></td>
     </tr>
     </table>
 
