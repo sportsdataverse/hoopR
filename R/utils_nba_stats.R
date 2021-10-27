@@ -202,7 +202,6 @@ year_to_season <- function(year){
 #' @importFrom dplyr mutate filter select left_join
 #' @importFrom stringr str_detect
 #' @importFrom tidyr everything
-#' @export
 rejoin_schedules <- function(df){
   df <- df %>%
     dplyr::mutate(

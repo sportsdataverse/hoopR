@@ -14,8 +14,8 @@
 #'
 
 espn_mbb_game_all <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   play_base_url <- "http://cdn.espn.com/mens-college-basketball/playbyplay?render=false&userab=1&xhr=1&"
 
@@ -196,8 +196,8 @@ espn_mbb_game_all <- function(game_id){
 #'  espn_mbb_pbp(game_id = 401256760)
 #'
 espn_mbb_pbp <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   play_base_url <- "http://cdn.espn.com/mens-college-basketball/playbyplay?render=false&userab=1&xhr=1&"
 
@@ -259,8 +259,8 @@ espn_mbb_pbp <- function(game_id){
 #'  espn_mbb_team_box(game_id = 401256760)
 #'
 espn_mbb_team_box <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://cdn.espn.com/mens-college-basketball/playbyplay?render=false&userab=1&xhr=1&"
 
   ## Inputs
@@ -365,8 +365,8 @@ espn_mbb_team_box <- function(game_id){
 #'  espn_mbb_player_box(game_id = 401256760)
 #'
 espn_mbb_player_box <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://cdn.espn.com/mens-college-basketball/playbyplay?render=false&userab=1&xhr=1&"
 
   ## Inputs
@@ -444,8 +444,8 @@ espn_mbb_player_box <- function(game_id){
 #'  espn_mbb_conferences()
 #'
 espn_mbb_conferences <- function(){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences"
 
   res <- httr::RETRY("GET", play_base_url)
@@ -487,8 +487,8 @@ espn_mbb_conferences <- function(){
 #' espn_mbb_teams()
 #'
 espn_mbb_teams <- function(){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?groups=50&limit=1000"
 
   res <- httr::RETRY("GET", play_base_url)
@@ -758,8 +758,8 @@ ncaa_mbb_NET_rankings <- function(){
 #' espn_mbb_rankings()
 
 espn_mbb_rankings <- function(){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   ranks_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings?groups=50"
 

@@ -14,8 +14,8 @@
 #'
 
 espn_nba_game_all <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   play_base_url <- "http://cdn.espn.com/core/nba/playbyplay?render=false&userab=1&xhr=1&"
 
@@ -193,8 +193,8 @@ espn_nba_game_all <- function(game_id){
 #'  espn_nba_pbp(game_id = 401283399)
 #'
 espn_nba_pbp <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   play_base_url <- "http://cdn.espn.com/core/nba/playbyplay?render=false&userab=1&xhr=1&"
 
@@ -259,8 +259,8 @@ espn_nba_pbp <- function(game_id){
 #'  espn_nba_team_box(game_id = 401283399)
 #'
 espn_nba_team_box <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://cdn.espn.com/core/nba/playbyplay?render=false&userab=1&xhr=1&"
 
   ## Inputs
@@ -363,8 +363,8 @@ espn_nba_team_box <- function(game_id){
 #'  espn_nba_player_box(game_id = 401283399)
 #'
 espn_nba_player_box <- function(game_id){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://cdn.espn.com/core/nba/playbyplay?render=false&userab=1&xhr=1&"
 
   ## Inputs
@@ -443,8 +443,8 @@ espn_nba_player_box <- function(game_id){
 #'
 
 espn_nba_teams <- function(){
-  options(stringsAsFactors = FALSE)
-  options(scipen = 999)
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
 

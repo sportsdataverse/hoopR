@@ -1,3 +1,6 @@
+# **hoopR 1.4.3**
+- Option configs changed to revert to user options
+
 # **hoopR 1.4.2**
 - Implement additional boxscore function parameters for ```nba_boxscore(.*)``` functions
 
