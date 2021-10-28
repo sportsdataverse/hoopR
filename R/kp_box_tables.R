@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_box(game_id = 1238, year = 2020))
+#'   try(kp_box(game_id = 6, year = 2021))
 #' }
 
 kp_box <- function(game_id, year){
@@ -69,7 +69,7 @@ kp_box <- function(game_id, year){
                                            function(x){data.frame(x, stringsAsFactors=FALSE)})) %>%
         dplyr::rename(OfficialName=.data$x)
 
-      ref_table <- data.frame(ref_ids,ref_names,ref_ranks, stringsAsFactors = FALSE)
+      ref_table <- data.frame(ref_ids,ref_names, stringsAsFactors = FALSE)
       ref_table$GameId <- game_id
       ref_table$Year <- year
       ref_table <- ref_table %>%
