@@ -13,8 +13,9 @@ espn_nba_team_box(game_id)
 Get ESPN NBA team box scores
 }
 \examples{
-
- espn_nba_team_box(game_id = 401283399)
+\donttest{
+  try(espn_nba_team_box(game_id = 401283399))
+}
 
 }
 \author{

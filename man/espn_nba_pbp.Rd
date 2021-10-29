@@ -13,8 +13,9 @@ espn_nba_pbp(game_id)
 Get ESPN NBA PBP data
 }
 \examples{
-
- espn_nba_pbp(game_id = 401283399)
+\donttest{
+  try(espn_nba_pbp(game_id = 401283399))
+}
 
 }
 \author{

@@ -13,9 +13,9 @@ espn_mbb_player_box(game_id)
 Get ESPN men's college basketball player box scores
 }
 \examples{
-
- espn_mbb_player_box(game_id = 401256760)
-
+\donttest{
+  try(espn_mbb_player_box(game_id = 401256760))
+}
 }
 \author{
 Saiem Gilani

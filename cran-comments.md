@@ -1,7 +1,6 @@
 ## Release summary
 
 This is a minor release that 
-* fixes bugs
 * adds a new function 
 
 ## R CMD check results

@@ -9,9 +9,9 @@
 #' @export
 #'
 #' @examples
-#'
-#'  espn_mbb_game_all(game_id = 401256760)
-#'
+#' \donttest{
+#'   try(espn_mbb_game_all(game_id = 401256760))
+#' }
 
 espn_mbb_game_all <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -192,8 +192,9 @@ espn_mbb_game_all <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_mbb_pbp(game_id = 401256760)
+#' \donttest{
+#'   try(espn_mbb_pbp(game_id = 401256760))
+#' }
 #'
 espn_mbb_pbp <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -255,9 +256,9 @@ espn_mbb_pbp <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_mbb_team_box(game_id = 401256760)
-#'
+#' \donttest{
+#'   try(espn_mbb_team_box(game_id = 401256760))
+#' }
 espn_mbb_team_box <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
@@ -361,9 +362,9 @@ espn_mbb_team_box <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_mbb_player_box(game_id = 401256760)
-#'
+#' \donttest{
+#'   try(espn_mbb_player_box(game_id = 401256760))
+#' }
 espn_mbb_player_box <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
@@ -440,9 +441,9 @@ espn_mbb_player_box <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_mbb_conferences()
-#'
+#' \donttest{
+#'   try(espn_mbb_conferences())
+#' }
 espn_mbb_conferences <- function(){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
@@ -484,8 +485,9 @@ espn_mbb_conferences <- function(){
 #' @import rvest
 #' @export
 #' @examples
-#' espn_mbb_teams()
-#'
+#' \donttest{
+#'   try(espn_mbb_teams())
+#' }
 espn_mbb_teams <- function(){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
@@ -581,7 +583,9 @@ espn_mbb_teams <- function(){
 #' # Get schedule from 2018 season (returns 1000 results, max allowable.)
 #'
 #' # Get schedule from date 2021-02-15
-#' espn_mbb_scoreboard (season = "20210215")
+#' \donttest{
+#'   try(espn_mbb_scoreboard (season = "20210215"))
+#' }
 
 espn_mbb_scoreboard <- function(season){
 
@@ -713,38 +717,6 @@ espn_mbb_scoreboard <- function(season){
   )
 }
 
-#' Get men's college basketball NET rankings for the current date from the NCAA website
-#'
-#' @author Saiem Gilani
-#' @return Returns a tibble
-#' @importFrom dplyr as_tibble
-#' @import rvest
-#' @export
-#' @examples
-#' # Get current NCAA NET rankings
-#' ncaa_mbb_NET_rankings()
-
-ncaa_mbb_NET_rankings <- function(){
-
-
-  NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
-  x <- (NET_url %>%
-          xml2::read_html() %>%
-          rvest::html_elements("table"))[[1]] %>%
-    rvest::html_table() %>%
-    dplyr::as_tibble() %>%
-    dplyr::rename(
-      Quad_1 = .data$`Quad 1`,
-      Quad_2 = .data$`Quad 2`,
-      Quad_3 = .data$`Quad 3`,
-      Quad_4 = .data$`Quad 4`
-    ) %>%
-    janitor::clean_names()
-
-  return(x)
-}
-
-
 #' Get men's college basketball AP and Coaches Poll rankings from ESPN
 #'
 #' @author Saiem Gilani
@@ -755,7 +727,9 @@ ncaa_mbb_NET_rankings <- function(){
 #' @export
 #' @examples
 #' # Get current AP and Coaches Poll rankings
-#' espn_mbb_rankings()
+#' \donttest{
+#'   try(espn_mbb_rankings())
+#' }
 
 espn_mbb_rankings <- function(){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -820,7 +794,9 @@ espn_mbb_rankings <- function(){
 #' @importFrom tidyr pivot_wider
 #' @export
 #' @examples
-#' espn_mbb_standings(2021)
+#' \donttest{
+#'   try(espn_mbb_standings(2021))
+#' }
 espn_mbb_standings <- function(year){
 
   standings_url <- "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
@@ -901,7 +877,7 @@ espn_mbb_standings <- function(year){
 #' @export
 #' @examples
 #' \donttest{
-#' espn_mbb_betting(game_id = 401256760)
+#' try(espn_mbb_betting(game_id = 401256760))
 #' }
 espn_mbb_betting <- function(game_id){
 
