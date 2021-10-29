@@ -42,6 +42,7 @@ kp_box <- function(game_id, year){
       teams <- dplyr::bind_rows(lapply(rvest::html_text(teams),
                                        function(x){data.frame(Team = x, stringsAsFactors = FALSE)}))
 
+
       refs <- (page %>%
                  xml2::read_html() %>%
                  rvest::html_elements(xpath = "//*[@id='half-column3']//span//div[4]") %>%
@@ -51,25 +52,25 @@ kp_box <- function(game_id, year){
         xml2::read_html() %>%
         rvest::html_elements(xpath = "//*[@id='half-column3']//span//div[4]") %>%
         rvest::html_elements(".seed")
-
       ref_ranks <- dplyr::bind_rows(lapply(rvest::html_text(ref_ranks),
                                            function(x){data.frame(Official.Rk=x, stringsAsFactors=FALSE)}))
 
+
       ref_ids <- dplyr::bind_rows(lapply(xml2::xml_attrs(refs),
                                          function(x){data.frame(as.list(x), stringsAsFactors=FALSE)}))
-      ref_ids <- ref_ids %>%
-        dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
-        dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
-          stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
-        dplyr::select(.data$ref_id) %>%
-        dplyr::rename(OfficialId=.data$ref_id)
-
+      if(length(ref_ids)>0){
+        ref_ids <- ref_ids %>%
+          dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
+          dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
+            stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
+          dplyr::select(.data$ref_id) %>%
+          dplyr::rename(OfficialId=.data$ref_id)
+      }
 
       ref_names <- dplyr::bind_rows(lapply(rvest::html_text(refs),
-                                           function(x){data.frame(x, stringsAsFactors=FALSE)})) %>%
-        dplyr::rename(OfficialName=.data$x)
+                                           function(x){data.frame(OfficialName = x, stringsAsFactors=FALSE)}))
 
-      ref_table <- data.frame(ref_ids,ref_names, stringsAsFactors = FALSE)
+      ref_table <- dplyr::bind_cols(ref_ids,ref_names)
       ref_table$GameId <- game_id
       ref_table$Year <- year
       ref_table <- ref_table %>%

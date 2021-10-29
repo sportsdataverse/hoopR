@@ -4,7 +4,7 @@ context("KP - Get kpoy")
 
 test_that("KP - Get kpoy", {
   skip_on_cran()
-  skip_on_ci()
+  
   x <- kp_kpoy(year=2020)
   x1 <- x[[1]]
   x2 <- x[[2]]

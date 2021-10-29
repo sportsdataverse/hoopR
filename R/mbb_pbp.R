@@ -19,7 +19,8 @@ NULL
 #' }
 load_mbb_pbp <- function(seasons = most_recent_mbb_season(),...,
                          dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
@@ -66,7 +67,8 @@ NULL
 #' }
 load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
 
@@ -114,7 +116,8 @@ NULL
 #' }
 load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
 
@@ -161,7 +164,8 @@ NULL
 #' }
 load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
@@ -245,7 +249,8 @@ update_mbb_db <- function(dbdir = ".",
                           tblname = "hoopR_mbb_pbp",
                           force_rebuild = FALSE,
                           db_connection = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   # rule_header("Update hoopR Play-by-Play Database")
 
   if (!is_installed("DBI") | !is_installed("purrr") |
@@ -315,7 +320,8 @@ update_mbb_db <- function(dbdir = ".",
 
 # this is a helper function to build hoopR database from Scratch
 build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   valid_seasons <- load_mbb_games() %>%
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::group_by(.data$season) %>%

@@ -159,6 +159,91 @@ kp_officials <- function(year = most_recent_mbb_season()){
   return(kenpom)
 }
 
+#' Get referee game log
+#' @param referee Referee ID
+#' @param year Year of data to pull
+#'
+#' @return A data frame with 11 columns:
+#' \describe{
+#'   \item{\code{game_number}}{integer.}
+#'   \item{\code{date}}{character.}
+#'   \item{\code{time_et)}}{character.}
+#'   \item{\code{game}}{character.}
+#'   \item{\code{location}}{character.}
+#'   \item{\code{venue}}{character.}
+#'   \item{\code{conference}}{character.}
+#'   \item{\code{thrill_score}}{double.}
+#'   \item{\code{referee_name}}{character.}
+#'   \item{\code{ref_rank}}{integer.}
+#'   \item{\code{year}}{integer.}
+#' }
+#' @keywords Refs
+#' @importFrom cli cli_abort
+#' @importFrom dplyr select filter mutate mutate_at
+#' @import rvest
+#' @export
+#'
+#' @examples
+#' \donttest{
+#'   try(kp_referee(referee = 714363, year = 2021))
+#' }
+
+kp_referee <- function(referee, year){
+  tryCatch(
+    expr = {
+      if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
+
+      browser <- login()
+      if(!(is.numeric(year) && nchar(year) == 4 && year>=2016)) {
+        # Check if year is numeric, if not NULL
+        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2016")
+      }
+
+
+      ### Pull Data
+      url <- paste0("https://kenpom.com/referee.php?",
+                    "r=",referee,
+                    "&y=",year)
+      page <- rvest::session_jump_to(browser, url)
+      header_cols <- c("GameNumber","Date","Time (ET)","Game","Location",
+                       "Venue","Conference", "ThrillScore")
+
+      x <- (page %>%
+              xml2::read_html() %>%
+              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_table() %>%
+        as.data.frame()
+
+      colnames(x) <- header_cols
+      rk <- page %>%
+        xml2::read_html() %>%
+        rvest::html_element(".rank") %>%
+        rvest::html_text()
+      name <- page %>%
+        xml2::read_html() %>%
+        rvest::html_element("h5") %>%
+        rvest::html_text()
+      x$RefereeName <- stringr::str_remove(name,"\\d+ ")
+      x$RefRank <- as.numeric(rk)
+      x <- dplyr::mutate(x,
+                         "Year" = year)
+
+      ### Store Data
+      kenpom <- x %>%
+        janitor::clean_names()
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no referee data for {referee} in {year} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(kenpom)
+}
+
 #' Get Home Court Advantage Estimates
 #'
 #'

@@ -1,10 +1,5 @@
-context("KP - Get arenas")
-
-
-
 test_that("KP - Get arenas", {
   skip_on_cran()
-  skip_on_ci()
   x <- kp_arenas(year=2020)
 
   cols <- c(

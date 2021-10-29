@@ -6,11 +6,11 @@ citHeader("To cite the hoopR R package in publications, use:")
 citEntry(entry = "Misc",
          author = personList(as.person("Saiem Gilani")),
          title = "hoopR: The SportsDataverse's R Package for Men's Basketball Data.",
-         url = c("saiemgilani.github.io/hoopr/"),
+         url = c("https://hoopr.sportsdataverse.org"),
          year = year,
          note = note,
          textVersion = paste(
     "Saiem Gilani. hoopR: The SportsDataverse's R Package for Men's Basketball Data.",
-    "Retrieved from https://saiemgilani.github.io/hoopR/"
+    "Retrieved from https://hoopr.sportsdataverse.org"
   )
 )

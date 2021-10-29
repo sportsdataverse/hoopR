@@ -1,10 +1,5 @@
-context("KP - Get box score")
-
-
-
 test_that("KP - Get box score", {
   skip_on_cran()
-  skip_on_ci()
   x <- kp_box(game_id = 1238, year = 2020)
   x1 <- x[[1]]
   x2 <- x[[2]]
@@ -23,7 +18,7 @@ test_that("KP - Get box score", {
   )
   cols_x4 <- c(
     'official_id', 'official_name',
-    'official_rk', 'game_id', 'year'
+    'game_id', 'year'
   )
   expect_equal(colnames(x1), cols_x1)
   expect_s3_class(x1, 'data.frame')

@@ -4,7 +4,7 @@ context("KP - Get player career")
 
 test_that("KP - Get player career", {
   skip_on_cran()
-  skip_on_ci()
+  
   x <- kp_player_career(player_id = '41180')
   x1 <- x[[1]]
   x2 <- x[[2]]
