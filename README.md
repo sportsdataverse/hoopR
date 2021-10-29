@@ -74,12 +74,12 @@ length(unique(pbp$game_id))
 nrow(pbp)
 ```
 
-### **Men’s college basketball full play-by-play seasons (2002-2021) \~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2021) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
 progressr::with_progress({
-  pbp <- load_mbb_pbp(2002:2021)
+  pbp <- load_mbb_pbp(2006:2021)
 })
 tictoc::toc()
 

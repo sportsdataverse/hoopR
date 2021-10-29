@@ -30,14 +30,14 @@ of or the complete play by play data table within the database (please see detai
 }
 \description{
 \code{update_mbb_db()} updates or creates a database with \code{hoopR}
-play by play data of all completed and available games since 2002.
+play by play data of all completed and available games since 2006.
 }
 \details{
 This function creates and updates a data table with the name \code{tblname}
 within a SQLite database (other drivers via \code{db_connection}) located in
 \code{dbdir} and named \code{dbname}.
 The data table combines all play by play data for every available game back
-to the 2002 season and adds the most recent completed games as soon as they
+to the 2006 season and adds the most recent completed games as soon as they
 are available for \code{hoopR}.
 
 The argument \code{force_rebuild} is of hybrid type. It can rebuild the play
