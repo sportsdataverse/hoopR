@@ -206,13 +206,13 @@ load_mbb_games <- function(){
 #' @title
 #' **Update or create a hoopR play-by-play database**
 #' @description `update_mbb_db()` updates or creates a database with `hoopR`
-#' play by play data of all completed and available games since 2002.
+#' play by play data of all completed and available games since 2006.
 #'
 #' @details This function creates and updates a data table with the name `tblname`
 #' within a SQLite database (other drivers via `db_connection`) located in
 #' `dbdir` and named `dbname`.
 #' The data table combines all play by play data for every available game back
-#' to the 2002 season and adds the most recent completed games as soon as they
+#' to the 2006 season and adds the most recent completed games as soon as they
 #' are available for `hoopR`.
 #'
 #' The argument `force_rebuild` is of hybrid type. It can rebuild the play
@@ -286,8 +286,8 @@ update_mbb_db <- function(dbdir = ".",
 
   user_message("Checking for missing completed games...", "todo")
   completed_games <- load_mbb_games() %>%
-    # completed games since 2002, excluding the broken games
-    dplyr::filter(.data$season >= 2002) %>%
+    # completed games since 2006, excluding the broken games
+    dplyr::filter(.data$season >= 2006) %>%
     dplyr::pull(.data$game_id)
 
   # function below
@@ -323,7 +323,7 @@ build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, sh
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   valid_seasons <- load_mbb_games() %>%
-    dplyr::filter(.data$season >= 2002) %>%
+    dplyr::filter(.data$season >= 2006) %>%
     dplyr::group_by(.data$season) %>%
     dplyr::summarise() %>%
     dplyr::ungroup()
