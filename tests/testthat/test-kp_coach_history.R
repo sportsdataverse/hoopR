@@ -4,7 +4,6 @@ context("KP - Get coach history")
 
 test_that("KP - Get coach history", {
   skip_on_cran()
-  skip_on_ci()
   x <- kp_coach_history(
     coach = 'Leonard Hamilton'
   )

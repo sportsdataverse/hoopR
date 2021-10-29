@@ -14,7 +14,7 @@ test_that("ESPN - Get MBB play by play only", {
     'period_display_value', 'period_number',
     'clock_display_value', 'team_id',
     'type_id', 'type_text', 'play_id',
-    'athlete1_id', 'athlete2_id'
+    'athlete_id_1', 'athlete_id_2'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')

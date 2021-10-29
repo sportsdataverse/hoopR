@@ -15,7 +15,7 @@ test_that("ESPN - Get NBA play by play only", {
     'coordinate_x','coordinate_y',
     'clock_display_value', 'team_id',
     'type_id', 'type_text', 'play_id',
-    'athlete1_id', 'athlete2_id', 'athlete3_id'
+    'athlete_id_1', 'athlete_id_2', 'athlete_id_3'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')

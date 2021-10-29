@@ -1,3 +1,10 @@
+# **hoopR 1.4.5**
+- Add ```kp_referee()``` function
+
+# **hoopR 1.4.4**
+- Remove referee ranks from ```kp_box()``` function
+
+
 # **hoopR 1.4.3**
 - Option configs changed to revert to user options
 
