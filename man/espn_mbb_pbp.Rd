@@ -13,8 +13,9 @@ espn_mbb_pbp(game_id)
 Get ESPN men's college basketball PBP data
 }
 \examples{
-
- espn_mbb_pbp(game_id = 401256760)
+\donttest{
+  try(espn_mbb_pbp(game_id = 401256760))
+}
 
 }
 \author{

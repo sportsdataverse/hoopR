@@ -19,7 +19,9 @@ Get ESPN men's college basketball schedule for a specific year
 # Get schedule from 2018 season (returns 1000 results, max allowable.)
 
 # Get schedule from date 2021-02-15
-espn_mbb_scoreboard (season = "20210215")
+\donttest{
+  try(espn_mbb_scoreboard (season = "20210215"))
+}
 }
 \author{
 Thomas Mock, you a genius for this one.

@@ -10,9 +10,9 @@ espn_mbb_conferences()
 Get ESPN conference names and ids
 }
 \examples{
-
- espn_mbb_conferences()
-
+\donttest{
+  try(espn_mbb_conferences())
+}
 }
 \author{
 Saiem Gilani

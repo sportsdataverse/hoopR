@@ -13,7 +13,9 @@ espn_mbb_standings(year)
 Get ESPN men's college basketball standings
 }
 \examples{
-espn_mbb_standings(2021)
+\donttest{
+  try(espn_mbb_standings(2021))
+}
 }
 \keyword{MBB}
 \keyword{Standings}
