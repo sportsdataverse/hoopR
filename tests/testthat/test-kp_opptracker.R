@@ -1,10 +1,6 @@
-context("KP - Get opponent tracker")
-
-
-
 test_that("KP - Get opponent tracker", {
   skip_on_cran()
-  
+
   x <- kp_opptracker(team='Florida St.', year=2020)
   cols <- c(
     "date", "game_date", "day_date", "wl", "team",

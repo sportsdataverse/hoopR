@@ -1,10 +1,6 @@
-context("KP - Get program ratings")
-
-
-
 test_that("KP - Get program ratings", {
   skip_on_cran()
-  
+
   x <- kp_program_ratings()
 
 

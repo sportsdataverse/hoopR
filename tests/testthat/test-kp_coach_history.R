@@ -1,7 +1,3 @@
-context("KP - Get coach history")
-
-
-
 test_that("KP - Get coach history", {
   skip_on_cran()
   x <- kp_coach_history(

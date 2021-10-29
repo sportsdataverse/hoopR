@@ -1,10 +1,6 @@
-context("KP - Get heights")
-
-
-
 test_that("KP - Get heights", {
   skip_on_cran()
-  
+
   x <- kp_height(min_year = 2020, max_year = 2020)
 
   cols <- c(

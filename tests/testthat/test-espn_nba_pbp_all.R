@@ -1,7 +1,3 @@
-context("ESPN - Get NBA play by play all")
-
-
-
 test_that("ESPN - Get NBA play by play all", {
   skip_on_cran()
   x <- espn_nba_game_all(game_id = 401283399)

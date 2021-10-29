@@ -1,10 +1,6 @@
-context("KP - Get win probability")
-
-
-
 test_that("KP - Get win probability", {
   skip_on_cran()
-  
+
   x <- kp_winprob(game_id = 1238, year = 2020)
   x1 <- x[[1]]
   x2 <- x[[2]]

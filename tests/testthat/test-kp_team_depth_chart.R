@@ -1,10 +1,6 @@
-context("KP - Get team depth chart")
-
-
-
 test_that("KP - Get team depth chart", {
   skip_on_cran()
-  
+
   x <- kp_team_depth_chart(team = 'Florida St.', year= 2020)
   cols <- c(
     "pg_number", "pg_player_first_name", "pg_player_last_name",

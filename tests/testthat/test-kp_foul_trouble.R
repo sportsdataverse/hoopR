@@ -1,10 +1,6 @@
-context("KP - Get foul trouble")
-
-
-
 test_that("KP - Get foul trouble", {
   skip_on_cran()
-  
+
   x <- kp_foul_trouble(min_year = 2020, max_year = 2020)
 
   cols <- c(

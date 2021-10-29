@@ -1,10 +1,6 @@
-context("KP - Get team lineups")
-
-
-
 test_that("KP - Get team lineups", {
   skip_on_cran()
-  
+
   x <- kp_team_lineups(team = 'Florida St.', year= 2020)
 
   cols <- c(

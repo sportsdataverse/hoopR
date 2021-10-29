@@ -1,10 +1,6 @@
-context("KP - Get player stats")
-
-
-
 test_that("KP - Get player stats", {
   skip_on_cran()
-  
+
   x <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
 
   cols_x1 <- c(

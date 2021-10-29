@@ -1,7 +1,3 @@
-context("ESPN - Get MBB play by play only")
-
-
-
 test_that("ESPN - Get MBB play by play only", {
   skip_on_cran()
   x <- espn_mbb_pbp(game_id = 401256760)

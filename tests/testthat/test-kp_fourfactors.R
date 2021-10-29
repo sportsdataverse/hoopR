@@ -1,10 +1,6 @@
-context("KP - Get four factors")
-
-
-
 test_that("KP - Get four factors", {
   skip_on_cran()
-  
+
   x <- kp_fourfactors(min_year = 2020, max_year = 2020)
 
   cols <- c(

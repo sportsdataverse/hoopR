@@ -1,7 +1,3 @@
-context("ESPN - Get NBA play by play only")
-
-
-
 test_that("ESPN - Get NBA play by play only", {
   skip_on_cran()
   x <- espn_nba_pbp(game_id = 401283399)
