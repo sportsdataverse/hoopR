@@ -1,10 +1,6 @@
-context("KP - Get minutes matrix")
-
-
-
 test_that("KP - Get minutes matrix", {
   skip_on_cran()
-  
+
   x <- kp_minutes_matrix(team = 'Florida St.', year = 2020)
 
 

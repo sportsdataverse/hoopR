@@ -1,10 +1,6 @@
-context("KP - Get officials")
-
-
-
 test_that("KP - Get officials", {
   skip_on_cran()
-  
+
   x <- kp_officials(year= 2020)
 
   cols <- c(

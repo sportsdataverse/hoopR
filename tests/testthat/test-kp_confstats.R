@@ -1,10 +1,6 @@
-context("KP - Get conference statistics")
-
-
-
 test_that("KP - Get conference statistics", {
   skip_on_cran()
-  
+
   x <- kp_confstats(year='2020')
 
   cols <- c(

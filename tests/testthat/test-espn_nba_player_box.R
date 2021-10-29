@@ -1,7 +1,3 @@
-context("ESPN - Get NBA player box score only")
-
-
-
 test_that("ESPN - Get NBA player box score only", {
   skip_on_cran()
   x <- espn_nba_player_box(game_id = 401283399)

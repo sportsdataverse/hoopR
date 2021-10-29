@@ -1,10 +1,6 @@
-context("KP - Get conference (leaderboard)")
-
-
-
 test_that("KP - Get conference (leaderboard)", {
   skip_on_cran()
-  
+
   x <- kp_conf(year='2020',conf='ACC')
 
   x1 <- x[[1]]

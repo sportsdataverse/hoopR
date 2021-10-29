@@ -1,10 +1,6 @@
-context("KP - Get team player stats")
-
-
-
 test_that("KP - Get team player stats", {
   skip_on_cran()
-  
+
   x <- kp_team_player_stats(team = 'Florida St.', year = 2020)
 
   cols <- c(

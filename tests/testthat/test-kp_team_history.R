@@ -1,10 +1,6 @@
-context("KP - Get team history")
-
-
-
 test_that("KP - Get team history", {
   skip_on_cran()
-  
+
   x <- kp_team_history(
     team = 'Florida St.'
   )

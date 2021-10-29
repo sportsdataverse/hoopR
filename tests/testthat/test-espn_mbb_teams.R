@@ -1,7 +1,3 @@
-context("ESPN - Get MBB teams")
-
-
-
 test_that("ESPN - Get MBB teams", {
   skip_on_cran()
   x <- espn_mbb_teams()

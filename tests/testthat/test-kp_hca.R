@@ -1,10 +1,6 @@
-context("KP - Get home court advantage")
-
-
-
 test_that("KP - Get home court advantage", {
   skip_on_cran()
-  
+
   x <- kp_hca()
 
   cols <- c(

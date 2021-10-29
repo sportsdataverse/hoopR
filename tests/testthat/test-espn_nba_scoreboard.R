@@ -1,7 +1,3 @@
-context("ESPN - Get NBA scoreboard")
-
-
-
 test_that("ESPN - Get NBA scoreboard", {
   skip_on_cran()
   x <- espn_nba_scoreboard (season = "20210215")
