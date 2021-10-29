@@ -300,7 +300,8 @@
     <pre class="examples"><div class='input'><span class='co'># Get schedule from 2018 season (returns 1000 results, max allowable.)</span>
 
 <span class='co'># Get schedule from date 2021-02-15</span>
-<span class='fu'>espn_mbb_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span>
+<span class='co'># \donttest{</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_mbb_scoreboard</span> <span class='op'>(</span>season <span class='op'>=</span> <span class='st'>"20210215"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'>Returning data for 20210215!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 13 × 31</span>
 #&gt;    matchup       matchup_short season  type slug   game_id  game_uid   game_date
 #&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    
@@ -323,7 +324,8 @@
 #&gt; <span style='color: #949494;'>#   home_score &lt;int&gt;, home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;, away_team_color &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;, …</span></div></pre>
+#&gt; <span style='color: #949494;'>#   away_score &lt;int&gt;, away_win &lt;int&gt;, away_record &lt;chr&gt;, status_name &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
