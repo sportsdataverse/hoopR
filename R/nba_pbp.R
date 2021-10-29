@@ -19,7 +19,8 @@ NULL
 #' }
 load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
                          dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
@@ -70,7 +71,8 @@ NULL
 #' }
 load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
@@ -115,7 +117,8 @@ NULL
 #' }
 load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
@@ -163,7 +166,8 @@ NULL
 #' }
 load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
@@ -246,7 +250,8 @@ update_nba_db <- function(dbdir = ".",
                           tblname = "hoopR_nba_pbp",
                           force_rebuild = FALSE,
                           db_connection = NULL) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   # rule_header("Update hoopR Play-by-Play Database")
 
   if (!is_installed("DBI") | !is_installed("purrr") |
@@ -297,18 +302,6 @@ update_nba_db <- function(dbdir = ".",
     missing <- get_missing_nba_games(completed_games, connection, tblname)
   }
 
-  # # if there's missing games, scrape and write to db
-  # if (length(missing) > 0) {
-  #   new_pbp <- build_hoopR_pbp(missing, rules = FALSE)
-  #
-  #   if (nrow(new_pbp) == 0) {
-  #     user_message("Raw data of new games are not yet ready. Please try again in about 10 minutes.", "oops")
-  #   } else {
-  #     user_message("Appending new data to database...", "todo")
-  #     DBI::dbWriteTable(connection, tblname, new_pbp, append = TRUE)
-  #   }
-  # }
-
   message_completed("Database update completed", in_builder = TRUE)
   usethis::ui_info("{my_time()} | Path to your db: {usethis::ui_path(DBI::dbGetInfo(connection)$dbname)}")
   if (is.null(db_connection)) DBI::dbDisconnect(connection)
@@ -317,7 +310,8 @@ update_nba_db <- function(dbdir = ".",
 
 # this is a helper function to build hoopR database from Scratch
 build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
-
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
   valid_seasons <- load_nba_games() %>%
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::group_by(.data$season) %>%

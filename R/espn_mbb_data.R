@@ -32,13 +32,13 @@ espn_mbb_game_all <- function(game_id){
 
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
-
+  #---- Play-by-Play ------
   tryCatch(
     expr = {
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
 
-      #---- Play-by-Play ------
+
       plays <- raw_play_df[["plays"]] %>%
         tidyr::unnest_wider(unlist(.data$participants))
       suppressWarnings(
@@ -47,7 +47,7 @@ espn_mbb_game_all <- function(game_id){
           dplyr::select(.data$id, .data$athlete.id) %>%
           tidyr::unnest_wider(unlist(.data$athlete.id, use.names=FALSE),names_sep = "_")
       )
-      names(aths)<-c("play.id","athlete1.id","athlete2.id")
+      names(aths)<-c("play.id","athlete.id.1","athlete.id.2")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
         select(-.data$athlete.id)
 
@@ -227,7 +227,7 @@ espn_mbb_pbp <- function(game_id){
           dplyr::select(.data$id, .data$athlete.id) %>%
           tidyr::unnest_wider(unlist(.data$athlete.id, use.names=FALSE),names_sep = "_")
       )
-      names(aths)<-c("play.id","athlete1.id","athlete2.id")
+      names(aths)<-c("play.id","athlete.id.1","athlete.id.2")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
         select(-.data$athlete.id)
       plays_df <- plays_df %>%
@@ -387,7 +387,7 @@ espn_mbb_player_box <- function(game_id){
     expr = {
       raw_play_df <- jsonlite::fromJSON(resp)[["gamepackageJSON"]]
       raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
-      #---- Player Box ------
+
       players_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["players"]]), flatten=TRUE) %>%
         tidyr::unnest(.data$statistics) %>%
         tidyr::unnest(.data$athletes)

@@ -4,7 +4,7 @@ context("KP - Get conference history")
 
 test_that("KP - Get conference history", {
   skip_on_cran()
-  skip_on_ci()
+  
   x <- kp_confhistory(conf='ACC')
 
 
