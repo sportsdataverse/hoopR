@@ -9,8 +9,9 @@
 #' @export
 #'
 #' @examples
-#'
-#'  espn_nba_game_all(game_id = 401283399)
+#' \donttest{
+#'   try(espn_nba_game_all(game_id = 401283399))
+#' }
 #'
 
 espn_nba_game_all <- function(game_id){
@@ -191,8 +192,9 @@ espn_nba_game_all <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_nba_pbp(game_id = 401283399)
+#' \donttest{
+#'   try(espn_nba_pbp(game_id = 401283399))
+#' }
 #'
 espn_nba_pbp <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -257,8 +259,9 @@ espn_nba_pbp <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_nba_team_box(game_id = 401283399)
+#' \donttest{
+#'   try(espn_nba_team_box(game_id = 401283399))
+#' }
 #'
 espn_nba_team_box <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -363,8 +366,9 @@ espn_nba_team_box <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_nba_player_box(game_id = 401283399)
+#' \donttest{
+#'   try(espn_nba_player_box(game_id = 401283399))
+#' }
 #'
 espn_nba_player_box <- function(game_id){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -442,8 +446,9 @@ espn_nba_player_box <- function(game_id){
 #' @export
 #'
 #' @examples
-#'
-#'  espn_nba_teams()
+#' \donttest{
+#'   try(espn_nba_teams())
+#' }
 #'
 
 espn_nba_teams <- function(){
@@ -543,7 +548,9 @@ espn_nba_teams <- function(){
 #' @examples
 #'
 #' # Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)
-#' espn_nba_scoreboard (season = "20210215")
+#' \donttest{
+#'   try(espn_nba_scoreboard (season = "20210215"))
+#' }
 
 espn_nba_scoreboard <- function(season){
 
@@ -683,7 +690,7 @@ espn_nba_scoreboard <- function(season){
 #' @export
 #' @examples
 #' \donttest{
-#' espn_nba_standings(year = 2021)
+#' try(espn_nba_standings(year = 2021))
 #' }
 espn_nba_standings <- function(year){
 
@@ -762,7 +769,7 @@ espn_nba_standings <- function(year){
 #' @export
 #' @examples
 #' \donttest{
-#' espn_nba_betting(game_id = 401283399)
+#' try(espn_nba_betting(game_id = 401283399))
 #' }
 espn_nba_betting <- function(game_id){
 

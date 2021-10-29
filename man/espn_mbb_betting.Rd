@@ -14,7 +14,7 @@ Get ESPN MBB's Betting information
 }
 \examples{
 \donttest{
-espn_mbb_betting(game_id = 401256760)
+try(espn_mbb_betting(game_id = 401256760))
 }
 }
 \keyword{Betting}

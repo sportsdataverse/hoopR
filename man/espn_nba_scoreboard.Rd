@@ -18,7 +18,9 @@ Get ESPN men's NBA schedule for a specific year
 \examples{
 
 # Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)
-espn_nba_scoreboard (season = "20210215")
+\donttest{
+  try(espn_nba_scoreboard (season = "20210215"))
+}
 }
 \author{
 Thomas Mock, you a genius for this one.

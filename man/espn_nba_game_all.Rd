@@ -13,8 +13,9 @@ espn_nba_game_all(game_id)
 Get ESPN NBA game data (Pbp, Team and Player Box)
 }
 \examples{
-
- espn_nba_game_all(game_id = 401283399)
+\donttest{
+  try(espn_nba_game_all(game_id = 401283399))
+}
 
 }
 \author{

@@ -14,7 +14,9 @@ Get men's college basketball AP and Coaches Poll rankings from ESPN
 }
 \examples{
 # Get current AP and Coaches Poll rankings
-espn_mbb_rankings()
+\donttest{
+  try(espn_mbb_rankings())
+}
 }
 \author{
 Saiem Gilani

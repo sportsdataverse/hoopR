@@ -10,8 +10,9 @@ espn_nba_teams()
 Get ESPN NBA team names and ids
 }
 \examples{
-
- espn_nba_teams()
+\donttest{
+  try(espn_nba_teams())
+}
 
 }
 \author{

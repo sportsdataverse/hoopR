@@ -7,7 +7,9 @@
 #' @export
 #' @examples
 #' # Get current NCAA NET rankings
-#' ncaa_mbb_NET_rankings()
+#' \donttest{
+#'   try(ncaa_mbb_NET_rankings()
+#' }
 
 ncaa_mbb_NET_rankings <- function(){
 

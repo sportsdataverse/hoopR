@@ -14,7 +14,7 @@ Get ESPN NBA's Standings
 }
 \examples{
 \donttest{
-espn_nba_standings(year = 2021)
+try(espn_nba_standings(year = 2021))
 }
 }
 \keyword{NBA}

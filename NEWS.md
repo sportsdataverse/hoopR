@@ -233,7 +233,7 @@ To reflect that the package is no longer just a men's college basketball and Ken
 * Added tests for all KP and ESPN functions
 
 #### **Function Naming Convention Change**
-* All functions sourced from [kenpom.com](https://www.kenpom.com/) will start with `kp_` as opposed to `get_` 
+* All functions sourced from [kenpom.com](https://kenpom.com/) will start with `kp_` as opposed to `get_` 
 * Similarly, data and metrics sourced from ESPN will begin with `espn_` as opposed to `cbb_`. Moreover, all references to `cbb_` have been changed to `mbb_` as appropriate.
 * Data sourced directly from the NCAA website will start the function with `ncaa_`
 

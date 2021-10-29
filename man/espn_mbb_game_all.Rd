@@ -13,9 +13,9 @@ espn_mbb_game_all(game_id)
 Get ESPN men's college basketball data (Pbp, Team and Player Box)
 }
 \examples{
-
- espn_mbb_game_all(game_id = 401256760)
-
+\donttest{
+  try(espn_mbb_game_all(game_id = 401256760))
+}
 }
 \author{
 Saiem Gilani

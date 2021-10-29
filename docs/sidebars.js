@@ -52,6 +52,7 @@ module.exports = {
         'MBB/kp_pomeroy_archive_ratings',
         'MBB/kp_pomeroy_ratings',
         'MBB/kp_program_ratings',
+        'MBB/kp_referee',
         'MBB/kp_team_depth_chart',
         'MBB/kp_team_history',
         'MBB/kp_team_lineups',
