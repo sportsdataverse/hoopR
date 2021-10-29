@@ -15,7 +15,7 @@ Get men's college basketball NET rankings for the current date from the NCAA web
 \examples{
 # Get current NCAA NET rankings
 \donttest{
-  try(ncaa_mbb_NET_rankings()
+  try(ncaa_mbb_NET_rankings())
 }
 }
 \author{
