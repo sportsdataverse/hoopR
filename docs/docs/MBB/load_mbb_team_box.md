@@ -33,7 +33,7 @@ Argument      |Description
 
 ```r
 future::plan("multisession")
-load_mbb_team_box(2002:2021)
+load_mbb_team_box(2003:2021)
 ```
 
 
