@@ -340,7 +340,7 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
 
   if (!is.null(seasons)) {
     # this function lives in R/utils.R
-    load_nba_pbp(seasons, dbConnection = db_conn, tablename = tblname, qs = FALSE)
+    load_nba_pbp(seasons, dbConnection = db_conn, tablename = tblname)
   }
 }
 

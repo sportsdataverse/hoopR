@@ -350,7 +350,7 @@ build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, sh
 
   if (!is.null(seasons)) {
     # this function lives in R/utils.R
-    load_mbb_pbp(seasons, dbConnection = db_conn, tablename = tblname, qs = FALSE)
+    load_mbb_pbp(seasons, dbConnection = db_conn, tablename = tblname)
   }
 }
 
