@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_box(game_id = 1238, year = 2020))
+#'   try(kp_box(game_id = 6, year = 2021))
 #' }
 
 kp_box <- function(game_id, year){
@@ -69,8 +69,6 @@ kp_box <- function(game_id, year){
 
       ref_names <- dplyr::bind_rows(lapply(rvest::html_text(refs),
                                            function(x){data.frame(OfficialName = x, stringsAsFactors=FALSE)}))
-
-
 
       ref_table <- dplyr::bind_cols(ref_ids,ref_names)
       ref_table$GameId <- game_id
