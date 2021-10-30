@@ -89,18 +89,16 @@ navbar:
         href: https://kazink36.github.io/cfbplotR/
       - text: worldfootballR
         href: https://jaseziv.github.io/worldfootballR/
-      - text: hockeyR
-        href: https://hockeyr.netlify.app/
       - text: baseballr
         href: https://BillPetti.github.io/baseballr/
+      - text: hockeyR
+        href: https://hockeyr.netlify.app/
+      - text: whockeyR
+        href: https://BenHowell71.github.io/whockeyR/
       - text: --------------------------------
       - text: Python Packages
-      - text: cfbfastR-py
-        href: https://cfbfastR-py.sportsdataverse.org/
-      - text: hoopR-py
-        href: https://hoopR-py.sportsdataverse.org/
-      - text: wehoop-py
-        href: https://wehoop-py.sportsdataverse.org/
+      - text: sportsdataverse-py
+        href: https://py.sportsdataverse.org/
       - text: --------------------------------
       - text: Node.js Packages
       - text: sportsdataverse.js
