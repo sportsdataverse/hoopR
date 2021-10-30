@@ -99,6 +99,13 @@ For more information on the package and function reference, please see the  [**`
 [**Full News on Releases**](https://hoopr.sportsdataverse.org/CHANGELOG)
 
 
+# Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse) 
+
+[![GitHub stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/saiemgilani/hoopR/stargazers/)
+
+
 # **Our Authors**
 
 -   [Saiem Gilani](https://twitter.com/saiemgilani)       
