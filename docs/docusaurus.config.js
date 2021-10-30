@@ -127,8 +127,8 @@ module.exports = {
               target: '_self',
             },
             {
-              label: 'whockeyR',
-              href: 'https://BenHowell71.github.io/whockeyR/',
+              label: 'fastRhockey',
+              href: 'https://BenHowell71.github.io/fastRhockey/',
               target: '_self',
             },
             {
