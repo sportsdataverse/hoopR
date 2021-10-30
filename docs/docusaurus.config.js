@@ -69,18 +69,8 @@ module.exports = {
               label: 'Python Packages',
             },
             {
-              label: 'cfbfastR-py',
-              href: 'https://cfbfastR-py.sportsdataverse.org/',
-              target: '_self',
-            },
-            {
-              label: 'hoopR-py',
-              href: 'https://hoopR-py.sportsdataverse.org/',
-              target: '_self',
-            },
-            {
-              label: 'wehoop-py',
-              href: 'https://wehoop-py.sportsdataverse.org/',
+              label: 'sportsdataverse-py',
+              href: 'https://py.sportsdataverse.org/',
               target: '_self',
             },
             {
@@ -122,13 +112,18 @@ module.exports = {
               target: '_self',
             },
             {
+              label: 'baseballr',
+              href: 'https://BillPetti.github.io/baseballr/',
+              target: '_self',
+            },
+            {
               label: 'hockeyR',
               href: 'https://hockeyr.netlify.app/',
               target: '_self',
             },
             {
-              label: 'baseballr',
-              href: 'https://BillPetti.github.io/baseballr/',
+              label: 'whockeyR',
+              href: 'https://BenHowell71.github.io/whockeyR/',
               target: '_self',
             },
             {
