@@ -95,6 +95,8 @@ navbar:
         href: https://hockeyr.netlify.app/
       - text: whockeyR
         href: https://BenHowell71.github.io/whockeyR/
+      - text: powerplay
+        href: https://saiemgilani.github.io/powerplay/
       - text: --------------------------------
       - text: Python Packages
       - text: sportsdataverse-py

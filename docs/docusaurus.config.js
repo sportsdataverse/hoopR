@@ -127,6 +127,11 @@ module.exports = {
               target: '_self',
             },
             {
+              label: 'powerplay',
+              href: 'https://saiemgilani.github.io/powerplay/',
+              target: '_self',
+            },
+            {
               label: 'Node.js Packages',
             },
             {
