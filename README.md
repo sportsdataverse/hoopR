@@ -111,7 +111,7 @@ in publications, use:
 BibTex Citation
 
 ``` bibtex
-@misc{saiemgilani2021hoopR,
+@misc{gilani_2021_hoopR,
   author = {Gilani, Saiem},
   title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
   url = {https://hoopR.sportsdataverse.org},
