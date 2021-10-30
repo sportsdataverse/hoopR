@@ -22,16 +22,16 @@ analyze the data for themselves.
 ## See also
 
 Useful links:
-*   [https://hoopR.sportsdataverse.org/](https://hoopR.sportsdataverse.org/)   
+*   [https://hoopR.sportsdataverse.org/](https://hoopR.sportsdataverse.org/)
 
-*   [https://www.github.com/saiemgilani/hoopR](https://www.github.com/saiemgilani/hoopR)   
+*   [https://www.github.com/saiemgilani/hoopR](https://www.github.com/saiemgilani/hoopR)
 
 *  Report bugs at [https://www.github.com/saiemgilani/hoopR/issues](https://www.github.com/saiemgilani/hoopR/issues)
 
 
 ## **Our Authors**
 
-  - [Saiem Gilani](https://twitter.com/saiemgilani)  
+  - [Saiem Gilani](https://twitter.com/saiemgilani)
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
     <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
@@ -44,7 +44,7 @@ package in publications, use:
 BibTex Citation
 
 ``` bibtex
-@misc{saiemgilani2021hoopR,
+@misc{gilani_2021_hoopR,
   author = {Gilani, Saiem},
   title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
   url = {https://hoopR.sportsdataverse.org/},
