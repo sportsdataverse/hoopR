@@ -107,6 +107,11 @@ module.exports = {
               target: '_self',
             },
             {
+              label: 'cfb4th',
+              href: 'https://kazink36.github.io/cfb4th/',
+              target: '_self',
+            },
+            {
               label: 'worldfootballR',
               href: 'https://jaseziv.github.io/worldfootballR/',
               target: '_self',
