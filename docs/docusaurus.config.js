@@ -67,6 +67,7 @@ module.exports = {
             },
             {
               label: 'Python Packages',
+              to: CHANGELOG,
             },
             {
               label: 'sportsdataverse-py',
@@ -75,6 +76,7 @@ module.exports = {
             },
             {
               label: 'R Packages',
+              to: CHANGELOG,
             },
             {
               label: 'cfbfastR',
