@@ -332,8 +332,26 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>  <span class='co'># \donttest{</span>
    <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>kp_coach_history</span><span class='op'>(</span>coach <span class='op'>=</span> <span class='st'>'Leonard Hamilton'</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-10-30 21:22:37: Invalid arguments or no coach history data for Leonard Hamilton available!</span></div><div class='output co'>#&gt; Error in kp_coach_history(coach = "Leonard Hamilton") : 
-#&gt;   object 'kenpom' not found</div><div class='input'>  <span class='co'># }</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 24 × 57</span>
+#&gt;     year team_rk team    coach   conf  adj_t adj_o adj_d off_e_fg_pct off_to_pct
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     
+#&gt; <span style='color: #BCBCBC;'> 1</span>  <span style='text-decoration: underline;'>2</span>022      24 Florid… Leonar… ACC   73.8  109.7 91.1  0.0          100.0     
+#&gt; <span style='color: #BCBCBC;'> 2</span>  <span style='text-decoration: underline;'>2</span>021      15 Florid… Leonar… ACC   69.9  114.9 92.8  54.0         20.4      
+#&gt; <span style='color: #BCBCBC;'> 3</span>  <span style='text-decoration: underline;'>2</span>020      15 Florid… Leonar… ACC   69.9  111.7 91.5  51.9         18.9      
+#&gt; <span style='color: #BCBCBC;'> 4</span>  <span style='text-decoration: underline;'>2</span>019      14 Florid… Leonar… ACC   68.6  112.8 90.4  50.5         18.9      
+#&gt; <span style='color: #BCBCBC;'> 5</span>  <span style='text-decoration: underline;'>2</span>018      27 Florid… Leonar… ACC   71.2  114.3 96.5  53.2         17.8      
+#&gt; <span style='color: #BCBCBC;'> 6</span>  <span style='text-decoration: underline;'>2</span>017      26 Florid… Leonar… ACC   71.3  115.5 95.5  53.7         16.4      
+#&gt; <span style='color: #BCBCBC;'> 7</span>  <span style='text-decoration: underline;'>2</span>016      48 Florid… Leonar… ACC   71.6  113.1 98.9  51.8         18.0      
+#&gt; <span style='color: #BCBCBC;'> 8</span>  <span style='text-decoration: underline;'>2</span>015      99 Florid… Leonar… ACC   65.9  105.6 99.3  50.1         21.9      
+#&gt; <span style='color: #BCBCBC;'> 9</span>  <span style='text-decoration: underline;'>2</span>014      38 Florid… Leonar… ACC   65.2  112.2 97.4  51.7         21.4      
+#&gt; <span style='color: #BCBCBC;'>10</span>  <span style='text-decoration: underline;'>2</span>013     120 Florid… Leonar… ACC   64.2  107.1 102.7 49.9         22.0      
+#&gt; <span style='color: #949494;'># … with 14 more rows, and 47 more variables: off_or_pct &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   off_ft_rate &lt;chr&gt;, off_fg_2_pct &lt;chr&gt;, off_fg_3_pct &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   off_ft_pct &lt;chr&gt;, off_fg_3a_pct &lt;chr&gt;, off_a_pct &lt;chr&gt;, off_apl &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   def_e_fg_pct &lt;chr&gt;, def_to_pct &lt;chr&gt;, def_or_pct &lt;chr&gt;, def_ft_rate &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   def_fg_2_pct &lt;chr&gt;, def_fg_3_pct &lt;chr&gt;, def_blk_pct &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   def_fg_3a_pct &lt;chr&gt;, def_a_pct &lt;chr&gt;, def_apl &lt;chr&gt;, foul2partic_pct &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   wl &lt;chr&gt;, wl_conf &lt;chr&gt;, adj_t_rk &lt;dbl&gt;, adj_o_rk &lt;dbl&gt;, adj_d_rk &lt;dbl&gt;, …</span></div><div class='input'>  <span class='co'># }</span>
 
 
 </div></pre>
