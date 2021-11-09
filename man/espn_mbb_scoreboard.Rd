@@ -16,7 +16,6 @@ Returns a tibble
 Get ESPN men's college basketball schedule for a specific year
 }
 \examples{
-# Get schedule from 2018 season (returns 1000 results, max allowable.)
 
 # Get schedule from date 2021-02-15
 \donttest{

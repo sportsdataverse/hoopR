@@ -585,7 +585,6 @@ espn_mbb_teams <- function(){
 #' @import rvest
 #' @export
 #' @examples
-#' # Get schedule from 2018 season (returns 1000 results, max allowable.)
 #'
 #' # Get schedule from date 2021-02-15
 #' \donttest{
