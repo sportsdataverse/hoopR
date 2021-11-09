@@ -1,7 +1,7 @@
 ## Release summary
 
 This is a minor release that 
-* adds a new function 
+* Adds returns to all functions, including names of returned lists of data frames for all exported NBA Stats API, ESPN API, KenPom, NCAA and Data repository functions. 
 
 ## R CMD check results
 
