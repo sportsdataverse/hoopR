@@ -16,8 +16,7 @@ NULL
 #' @param top_x top_x
 #' @return Returns a named list of data frames: DraftBoard
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftboard <- function(league_id='00',
@@ -83,8 +82,7 @@ NULL
 #' @param season_year season_year
 #' @return Returns a named list of data frames: DraftCombineStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftcombinestats <- function(league_id='00',
@@ -137,8 +135,7 @@ NULL
 #' @param season_year season_year
 #' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftcombinedrillresults <- function(league_id='00',
@@ -191,8 +188,7 @@ NULL
 #' @param season_year season_year
 #' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftcombinenonstationaryshooting <- function(league_id='00',
@@ -245,8 +241,7 @@ NULL
 #' @param season_year season_year
 #' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftcombineplayeranthro <- function(league_id='00',
@@ -297,8 +292,7 @@ NULL
 #' @param season_year season_year
 #' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_draftcombinespotshooting <- function(league_id='00',

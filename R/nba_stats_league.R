@@ -16,8 +16,7 @@ NULL
 #' @param sorter sorter
 #' @return Return a named list of data frames: LeagueGameLog
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguegamelog <- function(
@@ -86,8 +85,7 @@ NULL
 #' @param season_year season_year
 #' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguestandings <- function(
@@ -146,8 +144,7 @@ NULL
 #' @param season_year season_year
 #' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguestandingsv3 <- function(
@@ -206,8 +203,7 @@ NULL
 #' EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
 #' WestConfRemainingGames, WestConfStandings
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playoffpicture <- function(
@@ -346,8 +342,7 @@ NULL
 #' @param years_experience years_experience
 #' @return Return a named list of data frames: LeagueGameFinderResults
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguegamefinder <- function(

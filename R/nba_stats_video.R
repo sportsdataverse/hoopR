@@ -37,8 +37,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videodetails <- function(
@@ -146,8 +145,7 @@ NULL
 #' @param game_event_id game_event_id
 #' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videoevents <- function(
@@ -199,8 +197,7 @@ NULL
 #' @param league_id league_id
 #' @return Return a list of tibbles: VideoStatus
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videostatus <- function(

@@ -28,8 +28,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_shotchartdetail <- function(
@@ -122,8 +121,7 @@ NULL
 #' @param season season
 #' @return Return a named list of data frames: League_Wide
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_shotchartleaguewide <- function(

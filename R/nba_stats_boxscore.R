@@ -14,8 +14,7 @@ NULL
 #' @param range_type range_type
 #' @return A list of data frames: PlayerStats, TeamStarterBenchStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoretraditionalv2 <- function(
@@ -78,8 +77,7 @@ NULL
 #' @param range_type range_type
 #' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoreadvancedv2 <- function(
@@ -139,8 +137,7 @@ NULL
 #' @param game_id Game ID
 #' @return Returns a named list of data frames: PlayerDefensiveStats, Table1
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoredefensive <- function(game_id){
@@ -193,8 +190,7 @@ NULL
 #' @param range_type range_type
 #' @return Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscorefourfactorsv2 <- function(
@@ -257,8 +253,7 @@ NULL
 #' @param range_type range_type
 #' @return Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoremiscv2 <- function(
@@ -321,8 +316,7 @@ NULL
 #' @param range_type range_type
 #' @return Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscorescoringv2 <- function(
@@ -385,8 +379,7 @@ NULL
 #' @param range_type range_type
 #' @return Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoreusagev2 <- function(
@@ -445,8 +438,7 @@ NULL
 #' @param game_id Game ID
 #' @return Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary, InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoresummaryv2 <- function(game_id){
@@ -493,8 +485,7 @@ NULL
 #' @param game_id Game ID
 #' @return Returns a named list of data frames: PlayerMatchupsStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscorematchups <- function(game_id){
@@ -541,8 +532,7 @@ NULL
 #' @param game_id Game ID
 #' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoreplayertrackv2 <- function(game_id){
@@ -596,8 +586,7 @@ NULL
 #' @param person_2_season_type person_2_season_type
 #' @return Returns a named list of data frames: BoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoresimilarityscore <- function(
@@ -659,8 +648,7 @@ NULL
 #' @param person_2_season_type person_2_season_type
 #' @return Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_glalumboxscoresimilarityscore <- function(
@@ -716,8 +704,7 @@ NULL
 #' @param game_id Game ID
 #' @return Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_hustlestatsboxscore <- function(game_id){

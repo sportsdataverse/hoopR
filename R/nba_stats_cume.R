@@ -13,8 +13,7 @@ NULL
 #' @param team_id team_id
 #' @return Return a named list of data frames: GameByGameStats, TotalPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 
@@ -82,8 +81,7 @@ NULL
 #' @param vs_team_id vs_team_id
 #' @return Returns a named list of data frames: CumeStatsPlayerGames
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_cumestatsplayergames <- function(
@@ -152,8 +150,7 @@ NULL
 #' @param team_id team_id
 #' @return Returns a named list of data frames: GameByGameStats, TotalTeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_cumestatsteam <- function(
@@ -219,8 +216,7 @@ NULL
 #' @param vs_team_id vs_team_id
 #' @return Returns a named list of data frames: CumeStatsTeamGames
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_cumestatsteamgames <- function(

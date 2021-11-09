@@ -10,8 +10,7 @@ NULL
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @return Returns a named list of data frames: PlayByPlay
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_pbp <- function(game_id, version = "v2"){
@@ -63,8 +62,7 @@ NULL
 #' @param league League - default: 'NBA'. Other options include 'all'
 #' @return Returns a tibble
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_schedule <- function(season = 2021, league = 'NBA'){
