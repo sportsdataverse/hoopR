@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -312,31 +312,35 @@ the season data into a database (used by <code><a href='update_nba_db.html'>upda
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>load_nba_team_box</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2,442 × 43</span>
-#&gt;    team_short_display_name team_uid team_alternate_… team_color team_display_na…
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           
-#&gt; <span style='color: #BCBCBC;'> 1</span> Magic                   s:40~l:… c4ced3           0860A8     Orlando Magic   
-#&gt; <span style='color: #BCBCBC;'> 2</span> Hawks                   s:40~l:… 002b5c           002B5C     Atlanta Hawks   
-#&gt; <span style='color: #BCBCBC;'> 3</span> Knicks                  s:40~l:… f58426           225EA8     New York Knicks 
-#&gt; <span style='color: #BCBCBC;'> 4</span> Pistons                 s:40~l:… 006bb6           FA002C     Detroit Pistons 
-#&gt; <span style='color: #BCBCBC;'> 5</span> Rockets                 s:40~l:… c4ced3           D40026     Houston Rockets 
-#&gt; <span style='color: #BCBCBC;'> 6</span> Bulls                   s:40~l:… 000000           000000     Chicago Bulls   
-#&gt; <span style='color: #BCBCBC;'> 7</span> Clippers                s:40~l:… f1f2f3           FA0028     LA Clippers     
-#&gt; <span style='color: #BCBCBC;'> 8</span> Lakers                  s:40~l:… 552582           542582     Los Angeles Lak…
-#&gt; <span style='color: #BCBCBC;'> 9</span> Kings                   s:40~l:… 8e9090           393996     Sacramento Kings
-#&gt; <span style='color: #BCBCBC;'>10</span> Trail Blazers           s:40~l:… bac3c9           000000     Portland Trail …
-#&gt; <span style='color: #949494;'># … with 2,432 more rows, and 38 more variables: team_name &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_logo &lt;chr&gt;, team_location &lt;chr&gt;, team_id &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_slug &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   field_goals_made_field_goals_attempted &lt;chr&gt;, field_goal_pct &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   three_point_field_goal_pct &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   free_throws_made_free_throws_attempted &lt;chr&gt;, free_throw_pct &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='fu'>load_nba_team_box</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 2,442 × 43</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    team_short_display_name team_uid team_alternate_… team_color team_display_na…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> Magic                   s:40~l:… c4ced3           0860A8     Orlando Magic   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> Hawks                   s:40~l:… 002b5c           002B5C     Atlanta Hawks   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> Knicks                  s:40~l:… f58426           225EA8     New York Knicks </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> Pistons                 s:40~l:… 006bb6           FA002C     Detroit Pistons </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> Rockets                 s:40~l:… c4ced3           D40026     Houston Rockets </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> Bulls                   s:40~l:… 000000           000000     Chicago Bulls   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> Clippers                s:40~l:… f1f2f3           FA0028     LA Clippers     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> Lakers                  s:40~l:… 552582           542582     Los Angeles Lak…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> Kings                   s:40~l:… 8e9090           393996     Sacramento Kings</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> Trail Blazers           s:40~l:… bac3c9           000000     Portland Trail …</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 2,432 more rows, and 38 more variables: team_name &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_logo &lt;chr&gt;, team_location &lt;chr&gt;, team_id &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_slug &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   field_goals_made_field_goals_attempted &lt;chr&gt;, field_goal_pct &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   three_point_field_goal_pct &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   free_throws_made_free_throws_attempted &lt;chr&gt;, free_throw_pct &lt;chr&gt;, …</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

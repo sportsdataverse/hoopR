@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -312,31 +312,35 @@ the season data into a database (used by <code><a href='update_mbb_db.html'>upda
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>load_mbb_team_box</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 8,414 × 41</span>
-#&gt;    team_short_display_name team_uid team_alternate_… team_color team_display_na…
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           
-#&gt; <span style='color: #BCBCBC;'> 1</span> Florida Int'l           s:40~l:… c5960c           091731     Florida Interna…
-#&gt; <span style='color: #BCBCBC;'> 2</span> North Florida           s:40~l:… babcbe           004B8D     North Florida O…
-#&gt; <span style='color: #BCBCBC;'> 3</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…
-#&gt; <span style='color: #BCBCBC;'> 4</span> Mississippi St          s:40~l:… c8c8c8           762123     Mississippi Sta…
-#&gt; <span style='color: #BCBCBC;'> 5</span> West Virginia           s:40~l:… eaaa00           FFC600     West Virginia M…
-#&gt; <span style='color: #BCBCBC;'> 6</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…
-#&gt; <span style='color: #BCBCBC;'> 7</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…
-#&gt; <span style='color: #BCBCBC;'> 8</span> Oklahoma                s:40~l:… cccccc           7b0000     Oklahoma Sooners
-#&gt; <span style='color: #BCBCBC;'> 9</span> Kansas                  s:40~l:… e8000d           0022B4     Kansas Jayhawks 
-#&gt; <span style='color: #BCBCBC;'>10</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…
-#&gt; <span style='color: #949494;'># … with 8,404 more rows, and 36 more variables: team_name &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_logo &lt;chr&gt;, team_location &lt;chr&gt;, team_id &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_slug &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   field_goals_made_field_goals_attempted &lt;chr&gt;, field_goal_pct &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   three_point_field_goal_pct &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   free_throws_made_free_throws_attempted &lt;chr&gt;, free_throw_pct &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='fu'>load_mbb_team_box</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 8,414 × 41</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    team_short_display_name team_uid team_alternate_… team_color team_display_na…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> Florida Int'l           s:40~l:… c5960c           091731     Florida Interna…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> North Florida           s:40~l:… babcbe           004B8D     North Florida O…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> Mississippi St          s:40~l:… c8c8c8           762123     Mississippi Sta…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> West Virginia           s:40~l:… eaaa00           FFC600     West Virginia M…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> Oklahoma                s:40~l:… cccccc           7b0000     Oklahoma Sooners</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> Kansas                  s:40~l:… e8000d           0022B4     Kansas Jayhawks </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> Iowa State              s:40~l:… 830b2c           660015     Iowa State Cycl…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 8,404 more rows, and 36 more variables: team_name &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_logo &lt;chr&gt;, team_location &lt;chr&gt;, team_id &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_slug &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   field_goals_made_field_goals_attempted &lt;chr&gt;, field_goal_pct &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   three_point_field_goal_pct &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   free_throws_made_free_throws_attempted &lt;chr&gt;, free_throw_pct &lt;chr&gt;, …</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

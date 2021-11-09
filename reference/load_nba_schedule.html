@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -312,31 +312,35 @@ the season data into a database (used by <code><a href='update_nba_db.html'>upda
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>load_nba_schedule</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1,198 × 65</span>
-#&gt;         id uid    date  attendance timeValid neutralSite conferenceCompe… recent
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span> 
-#&gt; <span style='color: #BCBCBC;'> 1</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>17</span>397 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 2</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>562 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 3</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>911 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 4</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>637 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 5</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>583 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 6</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>557 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 7</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…          0 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 8</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>389 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'> 9</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>18</span>495 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #BCBCBC;'>10</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>478 TRUE      FALSE       FALSE            FALSE 
-#&gt; <span style='color: #949494;'># … with 1,188 more rows, and 57 more variables: notes &lt;chr&gt;, startDate &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   type.id &lt;int&gt;, type.abbreviation &lt;chr&gt;, venue.id &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   venue.fullName &lt;chr&gt;, venue.address.city &lt;chr&gt;, venue.address.state &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   venue.capacity &lt;int&gt;, venue.indoor &lt;lgl&gt;, status.clock &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   status.displayClock &lt;chr&gt;, status.period &lt;int&gt;, status.type.id &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   status.type.name &lt;chr&gt;, status.type.state &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   status.type.completed &lt;lgl&gt;, status.type.description &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='fu'>load_nba_schedule</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 1,198 × 65</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         id uid    date  attendance timeValid neutralSite conferenceCompe… recent</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>17</span>397 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>562 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>911 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>637 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>583 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>557 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…          0 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>389 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>18</span>495 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>  4.01<span style='color: #949494;'>e</span>8 s:40~… 2021…      <span style='text-decoration: underline;'>16</span>478 TRUE      FALSE       FALSE            FALSE </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 1,188 more rows, and 57 more variables: notes &lt;chr&gt;, startDate &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   type.id &lt;int&gt;, type.abbreviation &lt;chr&gt;, venue.id &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   venue.fullName &lt;chr&gt;, venue.address.city &lt;chr&gt;, venue.address.state &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   venue.capacity &lt;int&gt;, venue.indoor &lt;lgl&gt;, status.clock &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   status.displayClock &lt;chr&gt;, status.period &lt;int&gt;, status.type.id &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   status.type.name &lt;chr&gt;, status.type.state &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   status.type.completed &lt;lgl&gt;, status.type.description &lt;chr&gt;, …</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

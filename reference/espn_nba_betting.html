@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -292,90 +292,94 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_nba_betting</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [[1]]
-#&gt;    details over_under spread provider_id                   provider_name
-#&gt; 1 MEM -7.0        227     -7          45 Caesars Sportsbook (New Jersey)
-#&gt; 2 MEM -7.0        227     -7        1004                       consensus
-#&gt; 3 MEM -7.0        228     -7        1003                      numberfire
-#&gt; 4 MEM -7.0        228     -7        1002                    teamrankings
-#&gt;   provider_priority away_team_odds_favorite away_team_odds_underdog
-#&gt; 1                 1                   FALSE                    TRUE
-#&gt; 2                 0                   FALSE                    TRUE
-#&gt; 3                 0                   FALSE                    TRUE
-#&gt; 4                 0                   FALSE                    TRUE
-#&gt;   away_team_odds_money_line away_team_odds_spread_odds away_team_odds_team_id
-#&gt; 1                       235                    -110.00                     25
-#&gt; 2                       226                    -109.00                     25
-#&gt; 3                       220                      61.95                     25
-#&gt; 4                       220                    -110.00                     25
-#&gt;   away_team_odds_win_percentage away_team_odds_average_score
-#&gt; 1                            NA                           NA
-#&gt; 2                         67.00                           NA
-#&gt; 3                         38.12                        107.6
-#&gt; 4                            NA                        111.1
-#&gt;   away_team_odds_money_line_odds away_team_odds_spread_return
-#&gt; 1                             NA                           NA
-#&gt; 2                             NA                           NA
-#&gt; 3                          38.12                        0.183
-#&gt; 4                             NA                           NA
-#&gt;   away_team_odds_spread_record_wins away_team_odds_spread_record_losses
-#&gt; 1                                NA                                  NA
-#&gt; 2                                NA                                  NA
-#&gt; 3                                NA                                  NA
-#&gt; 4                                 2                                   3
-#&gt;   away_team_odds_spread_record_pushes away_team_odds_spread_record_summary
-#&gt; 1                                  NA                                 &lt;NA&gt;
-#&gt; 2                                  NA                                 &lt;NA&gt;
-#&gt; 3                                  NA                                 &lt;NA&gt;
-#&gt; 4                                   0                                2-3-0
-#&gt;   home_team_odds_favorite home_team_odds_underdog home_team_odds_money_line
-#&gt; 1                    TRUE                   FALSE                      -275
-#&gt; 2                    TRUE                   FALSE                      -276
-#&gt; 3                    TRUE                   FALSE                      -270
-#&gt; 4                    TRUE                   FALSE                      -270
-#&gt;   home_team_odds_spread_odds home_team_odds_team_id
-#&gt; 1                    -110.00                     29
-#&gt; 2                    -111.00                     29
-#&gt; 3                      35.12                     29
-#&gt; 4                    -114.00                     29
-#&gt;   home_team_odds_win_percentage home_team_odds_average_score
-#&gt; 1                            NA                           NA
-#&gt; 2                         33.00                           NA
-#&gt; 3                         61.88                       110.79
-#&gt; 4                            NA                       117.90
-#&gt;   home_team_odds_money_line_odds home_team_odds_spread_return
-#&gt; 1                             NA                           NA
-#&gt; 2                             NA                           NA
-#&gt; 3                          61.88                       -0.329
-#&gt; 4                             NA                           NA
-#&gt;   home_team_odds_spread_record_wins home_team_odds_spread_record_losses
-#&gt; 1                                NA                                  NA
-#&gt; 2                                NA                                  NA
-#&gt; 3                                NA                                  NA
-#&gt; 4                                 4                                   1
-#&gt;   home_team_odds_spread_record_pushes home_team_odds_spread_record_summary
-#&gt; 1                                  NA                                 &lt;NA&gt;
-#&gt; 2                                  NA                                 &lt;NA&gt;
-#&gt; 3                                  NA                                 &lt;NA&gt;
-#&gt; 4                                   0                                4-1-0
-#&gt; 
-#&gt; [[2]]
-#&gt;   id            uid          display_name abbreviation
-#&gt; 1 25 s:40~l:46~t:25 Oklahoma City Thunder          OKC
-#&gt; 2 29 s:40~l:46~t:29     Memphis Grizzlies          MEM
-#&gt;                                                logo records
-#&gt; 1 https://a.espncdn.com/i/teamlogos/nba/500/okc.png    NULL
-#&gt; 2 https://a.espncdn.com/i/teamlogos/nba/500/mem.png    NULL
-#&gt; 
-#&gt; [[3]]
-#&gt;   home_team_id away_team_id away_team_game_projection away_team_chance_loss
-#&gt; 1           29           25                      39.4                  60.6
-#&gt; </div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_nba_betting</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $pickcenter</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    details over_under spread provider_id                   provider_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 MEM -7.0        227     -7          45 Caesars Sportsbook (New Jersey)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 MEM -7.0        227     -7        1004                       consensus</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 MEM -7.0        228     -7        1003                      numberfire</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4 MEM -7.0        228     -7        1002                    teamrankings</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   provider_priority away_team_odds_favorite away_team_odds_underdog</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                 1                   FALSE                    TRUE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                 0                   FALSE                    TRUE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                 0                   FALSE                    TRUE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                 0                   FALSE                    TRUE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   away_team_odds_money_line away_team_odds_spread_odds away_team_odds_team_id</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                       235                    -110.00                     25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                       226                    -109.00                     25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                       220                      61.95                     25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                       220                    -110.00                     25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   away_team_odds_win_percentage away_team_odds_average_score</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                            NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                         67.00                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                         38.12                        107.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                            NA                        111.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   away_team_odds_money_line_odds away_team_odds_spread_return</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                          38.12                        0.183</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   away_team_odds_spread_record_wins away_team_odds_spread_record_losses</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                                 3                                   4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   away_team_odds_spread_record_pushes away_team_odds_spread_record_summary</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                                   0                                3-4-0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_favorite home_team_odds_underdog home_team_odds_money_line</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                    TRUE                   FALSE                      -275</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                    TRUE                   FALSE                      -276</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                    TRUE                   FALSE                      -270</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                    TRUE                   FALSE                      -270</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_spread_odds home_team_odds_team_id</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                    -110.00                     29</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                    -111.00                     29</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                      35.12                     29</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                    -114.00                     29</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_win_percentage home_team_odds_average_score</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                            NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                         33.00                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                         61.88                       110.79</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                            NA                       117.90</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_money_line_odds home_team_odds_spread_return</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                          61.88                       -0.329</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                             NA                           NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_spread_record_wins home_team_odds_spread_record_losses</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                                NA                                  NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                                 6                                   2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_odds_spread_record_pushes home_team_odds_spread_record_summary</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                                  NA                                 &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                                   0                                6-2-0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $againstTheSpread</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   id            uid          display_name abbreviation</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 25 s:40~l:46~t:25 Oklahoma City Thunder          OKC</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 29 s:40~l:46~t:29     Memphis Grizzlies          MEM</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                logo records</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 https://a.espncdn.com/i/teamlogos/nba/500/okc.png    NULL</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 https://a.espncdn.com/i/teamlogos/nba/500/mem.png    NULL</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $predictor_df</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_team_id away_team_id away_team_game_projection away_team_chance_loss</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           29           25                      39.4                  60.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

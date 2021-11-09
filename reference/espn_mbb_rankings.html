@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -292,30 +292,31 @@
     <p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Get current AP and Coaches Poll rankings</span>
-<span class='co'># \donttest{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 95 × 34</span>
-#&gt;    id    name   short_name type  headline short_headline current previous points
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       1        0   <span style='text-decoration: underline;'>1</span>562
-#&gt; <span style='color: #BCBCBC;'> 2</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       2        0   <span style='text-decoration: underline;'>1</span>459
-#&gt; <span style='color: #BCBCBC;'> 3</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       3        0   <span style='text-decoration: underline;'>1</span>427
-#&gt; <span style='color: #BCBCBC;'> 4</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       4        0   <span style='text-decoration: underline;'>1</span>332
-#&gt; <span style='color: #BCBCBC;'> 5</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       5        0   <span style='text-decoration: underline;'>1</span>315
-#&gt; <span style='color: #BCBCBC;'> 6</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       6        0   <span style='text-decoration: underline;'>1</span>255
-#&gt; <span style='color: #BCBCBC;'> 7</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       7        0   <span style='text-decoration: underline;'>1</span>213
-#&gt; <span style='color: #BCBCBC;'> 8</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       8        0    992
-#&gt; <span style='color: #BCBCBC;'> 9</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       9        0    963
-#&gt; <span style='color: #BCBCBC;'>10</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…      10        0    894
-#&gt; <span style='color: #949494;'># … with 85 more rows, and 25 more variables: first_place_votes &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   trend &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   occurrence_number &lt;int&gt;, occurrence_type &lt;chr&gt;, occurrence_last &lt;lgl&gt;,</span>
-#&gt; <span style='color: #949494;'>#   occurrence_value &lt;chr&gt;, occurrence_display_value &lt;chr&gt;, season_year &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   season_start_date &lt;chr&gt;, season_end_date &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># Get current AP and Coaches Poll rankings</span></span>
+<span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'>  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_mbb_rankings</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 95 × 34</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    id    name   short_name type  headline short_headline current previous points</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       1        0   <span style='text-decoration: underline;'>1</span>562</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       2        0   <span style='text-decoration: underline;'>1</span>459</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       3        0   <span style='text-decoration: underline;'>1</span>427</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       4        0   <span style='text-decoration: underline;'>1</span>332</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       5        0   <span style='text-decoration: underline;'>1</span>315</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       6        0   <span style='text-decoration: underline;'>1</span>255</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       7        0   <span style='text-decoration: underline;'>1</span>213</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       8        0    992</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…       9        0    963</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Presea…      10        0    894</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 85 more rows, and 25 more variables: first_place_votes &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   trend &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   occurrence_number &lt;int&gt;, occurrence_type &lt;chr&gt;, occurrence_last &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   occurrence_value &lt;chr&gt;, occurrence_display_value &lt;chr&gt;, season_year &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   season_start_date &lt;chr&gt;, season_end_date &lt;chr&gt;, …</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

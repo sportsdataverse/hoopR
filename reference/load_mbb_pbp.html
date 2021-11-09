@@ -102,7 +102,7 @@ or writes it into a db using some forwarded arguments in the dots" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -312,31 +312,35 @@ the season data into a database (used by <code><a href='update_mbb_db.html'>upda
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>load_mbb_pbp</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1,273,763 × 53</span>
-#&gt;    shooting_play sequence_number period_display_value period_number home_score
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> TRUE          101805201       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 2</span> FALSE         101805501       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 3</span> TRUE          101805701       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 4</span> FALSE         101807701       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 5</span> FALSE         101807702       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 6</span> FALSE         101807901       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 7</span> TRUE          101809101       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 8</span> FALSE         101809601       1st Half                         1          0
-#&gt; <span style='color: #BCBCBC;'> 9</span> TRUE          101809801       1st Half                         1          2
-#&gt; <span style='color: #BCBCBC;'>10</span> TRUE          101815401       1st Half                         1          2
-#&gt; <span style='color: #949494;'># … with 1,273,753 more rows, and 48 more variables: scoring_play &lt;lgl&gt;,</span>
-#&gt; <span style='color: #949494;'>#   clock_display_value &lt;chr&gt;, team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   away_score &lt;int&gt;, id &lt;dbl&gt;, text &lt;chr&gt;, score_value &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   participants_0_athlete_id &lt;chr&gt;, participants_1_athlete_id &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;, away_team_name_alt &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, home_team_mascot &lt;chr&gt;, …</span></div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'><span class='fu'>load_mbb_pbp</span><span class='op'>(</span><span class='fl'>2021</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 1,273,763 × 53</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    shooting_play sequence_number period_display_value period_number home_score</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> TRUE          101805201       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> FALSE         101805501       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> TRUE          101805701       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> FALSE         101807701       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> FALSE         101807702       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> FALSE         101807901       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> TRUE          101809101       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> FALSE         101809601       1st Half                         1          0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> TRUE          101809801       1st Half                         1          2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> TRUE          101815401       1st Half                         1          2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 1,273,753 more rows, and 48 more variables: scoring_play &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   clock_display_value &lt;chr&gt;, team_id &lt;chr&gt;, type_id &lt;chr&gt;, type_text &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   away_score &lt;int&gt;, id &lt;dbl&gt;, text &lt;chr&gt;, score_value &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   participants_0_athlete_id &lt;chr&gt;, participants_1_athlete_id &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;, away_team_name_alt &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, home_team_mascot &lt;chr&gt;, …</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -292,47 +292,51 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A team boxscore data frame</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_mbb_team_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401256760</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;     game_id season season_type  game_date team_short_display_name
-#&gt; 1 401256760   2021           2 2020-12-12                 Florida
-#&gt; 2 401256760   2021           2 2020-12-12           Florida State
-#&gt;         team_uid team_alternate_color team_color       team_display_name
-#&gt; 1 s:40~l:41~t:57               0021a5     0021A5          Florida Gators
-#&gt; 2 s:40~l:41~t:52               ceb888     782F40 Florida State Seminoles
-#&gt;   team_name                                         team_logo team_location
-#&gt; 1    Gators https://a.espncdn.com/i/teamlogos/ncaa/500/57.png       Florida
-#&gt; 2 Seminoles https://a.espncdn.com/i/teamlogos/ncaa/500/52.png Florida State
-#&gt;   team_id team_abbreviation               team_slug
-#&gt; 1      57               FLA          florida-gators
-#&gt; 2      52               FSU florida-state-seminoles
-#&gt;   field_goals_made_field_goals_attempted field_goal_pct
-#&gt; 1                                  25-59           42.4
-#&gt; 2                                  26-54           48.1
-#&gt;   three_point_field_goals_made_three_point_field_goals_attempted
-#&gt; 1                                                          10-23
-#&gt; 2                                                           8-16
-#&gt;   three_point_field_goal_pct free_throws_made_free_throws_attempted
-#&gt; 1                       43.5                                  11-16
-#&gt; 2                       50.0                                  23-30
-#&gt;   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds
-#&gt; 1           68.8             34                 10                 24
-#&gt; 2           76.7             33                  8                 25
-#&gt;   team_rebounds assists steals blocks turnovers team_turnovers total_turnovers
-#&gt; 1             0      14      6      8        20              0              20
-#&gt; 2             0      17      8      4        16              0              16
-#&gt;   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead
-#&gt; 1               0                     0              0    24            9
-#&gt; 2               0                     0              0    18           18
-#&gt;   home_away opponent_id opponent_name opponent_mascot opponent_abbrev
-#&gt; 1      HOME          52 Florida State       Seminoles             FSU
-#&gt; 2      AWAY          57       Florida          Gators             FLA</div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'>  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_mbb_team_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401256760</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     game_id season season_type  game_date team_short_display_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 401256760   2021           2 2020-12-12                 Florida</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 401256760   2021           2 2020-12-12           Florida State</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         team_uid team_alternate_color team_color       team_display_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 s:40~l:41~t:57               0021a5     0021A5          Florida Gators</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 s:40~l:41~t:52               ceb888     782F40 Florida State Seminoles</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   team_name                                         team_logo team_location</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    Gators https://a.espncdn.com/i/teamlogos/ncaa/500/57.png       Florida</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 Seminoles https://a.espncdn.com/i/teamlogos/ncaa/500/52.png Florida State</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   team_id team_abbreviation               team_slug</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      57               FLA          florida-gators</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      52               FSU florida-state-seminoles</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   field_goals_made_field_goals_attempted field_goal_pct</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                  25-59           42.4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                  26-54           48.1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   three_point_field_goals_made_three_point_field_goals_attempted</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                                          10-23</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                                           8-16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   three_point_field_goal_pct free_throws_made_free_throws_attempted</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                       43.5                                  11-16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                       50.0                                  23-30</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           68.8             34                 10                 24</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2           76.7             33                  8                 25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   team_rebounds assists steals blocks turnovers team_turnovers total_turnovers</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1             0      14      6      8        20              0              20</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2             0      17      8      4        16              0              16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1               0                     0              0    24            9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2               0                     0              0    18           18</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   home_away opponent_id opponent_name opponent_mascot opponent_abbrev</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      HOME          52 Florida State       Seminoles             FSU</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      AWAY          57       Florida          Gators             FLA</span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

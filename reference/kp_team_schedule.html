@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -296,135 +296,139 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a tibble of team schedules</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
- <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>kp_team_schedule</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2022</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    team_rk        team opponent_rk          opponent   result poss ot pre_wp
-#&gt; 1       NA Florida St.         215              Penn W, 86-66   74 NA   0.97
-#&gt; 2       NA Florida St.          25           Florida L, 76-72   73 NA   0.39
-#&gt; 3       NA Florida St.         123            Tulane W, 78-65   73 NA   0.88
-#&gt; 4       NA Florida St.          69  Loyola Marymount W, 76-72   72 NA   0.66
-#&gt; 5       NA Florida St.         198 Boston University W, 83-64   72 NA   0.96
-#&gt; 6       NA Florida St.           6            Purdue L, 78-70   72 NA   0.24
-#&gt; 7       NA Florida St.          41          Syracuse W, 78-73   73 NA   0.68
-#&gt; 8       NA Florida St.          86    South Carolina W, 79-74   77 NA   0.68
-#&gt; 9       NA Florida St.         219          Lipscomb W, 85-65   73 NA   0.97
-#&gt; 10      NA Florida St.          61               UCF W, 75-71   73 NA   0.64
-#&gt; 11      NA Florida St.         235     North Florida W, 87-66   74 NA   0.97
-#&gt; 12      NA Florida St.         146    Boston College W, 76-68   72 NA   0.77
-#&gt; 13      NA Florida St.          56        N.C. State W, 75-74   74 NA   0.51
-#&gt; 14      NA Florida St.         104       Wake Forest W, 76-71   73 NA   0.69
-#&gt; 15      NA Florida St.          36        Louisville W, 74-70   72 NA   0.66
-#&gt; 16      NA Florida St.          83          Miami FL W, 78-69   73 NA   0.80
-#&gt; 17      NA Florida St.          41          Syracuse L, 76-75   73 NA   0.45
-#&gt; 18      NA Florida St.          10              Duke W, 76-75   74 NA   0.53
-#&gt; 19      NA Florida St.          83          Miami FL W, 75-72   73 NA   0.60
-#&gt; 20      NA Florida St.          54      Georgia Tech W, 74-73   73 NA   0.50
-#&gt; 21      NA Florida St.          39     Virginia Tech W, 75-71   72 NA   0.67
-#&gt; 22      NA Florida St.          59           Clemson W, 72-71   71 NA   0.51
-#&gt; 23      NA Florida St.         104       Wake Forest W, 79-67   73 NA   0.86
-#&gt; 24      NA Florida St.         145        Pittsburgh W, 80-66   73 NA   0.91
-#&gt; 25      NA Florida St.          40    North Carolina L, 77-76   75 NA   0.45
-#&gt; 26      NA Florida St.          59           Clemson W, 75-68   71 NA   0.73
-#&gt; 27      NA Florida St.          10              Duke L, 78-72   74 NA   0.30
-#&gt; 28      NA Florida St.          45          Virginia L, 67-66   68 NA   0.45
-#&gt; 29      NA Florida St.          27        Notre Dame W, 78-75   73 NA   0.63
-#&gt; 30      NA Florida St.          56        N.C. State W, 77-71   74 NA   0.73
-#&gt;     location  w  l w_conference l_conference conference_game postseason year
-#&gt; 1       Home NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 2       Away NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 3       Home NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 4    Neutral NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 5       Home NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 6       Away NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 7       Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 8  Semi-Away NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 9       Home NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 10   Neutral NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 11      Home NA NA           NA           NA           FALSE    Regular 2022
-#&gt; 12      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 13      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 14      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 15      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 16      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 17      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 18      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 19      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 20      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 21      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 22      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 23      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 24      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 25      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 26      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 27      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 28      Away NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 29      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt; 30      Home NA NA           NA           NA            TRUE    Regular 2022
-#&gt;      day_date game_date w_proj l_proj w_conference_proj l_conference_proj
-#&gt; 1  Wed Nov 10  20211110      1      0                 0                 0
-#&gt; 2  Sun Nov 14  20211114      1      1                 0                 0
-#&gt; 3  Wed Nov 17  20211117      2      1                 0                 0
-#&gt; 4  Sun Nov 21  20211121      3      1                 0                 0
-#&gt; 5  Wed Nov 24  20211124      4      1                 0                 0
-#&gt; 6  Tue Nov 30  20211130      4      2                 0                 0
-#&gt; 7   Sat Dec 4  20211204      5      2                 1                 0
-#&gt; 8  Sun Dec 12  20211212      5      3                 1                 0
-#&gt; 9  Wed Dec 15  20211215      6      3                 1                 0
-#&gt; 10 Sat Dec 18  20211218      7      3                 1                 0
-#&gt; 11 Tue Dec 21  20211221      8      3                 1                 0
-#&gt; 12 Wed Dec 29  20211229      9      3                 1                 1
-#&gt; 13  Sat Jan 1  20220101      9      4                 2                 1
-#&gt; 14  Tue Jan 4  20220104     10      4                 3                 1
-#&gt; 15  Sat Jan 8  20220108     11      4                 3                 2
-#&gt; 16 Tue Jan 11  20220111     11      5                 4                 2
-#&gt; 17 Sat Jan 15  20220115     12      5                 5                 2
-#&gt; 18 Tue Jan 18  20220118     12      6                 5                 3
-#&gt; 19 Sat Jan 22  20220122     13      6                 6                 3
-#&gt; 20 Wed Jan 26  20220126     14      6                 6                 4
-#&gt; 21 Sat Jan 29  20220129     14      7                 7                 4
-#&gt; 22  Wed Feb 2  20220202     15      7                 7                 5
-#&gt; 23  Sat Feb 5  20220205     16      7                 8                 5
-#&gt; 24  Wed Feb 9  20220209     16      8                 9                 5
-#&gt; 25 Sat Feb 12  20220212     17      8                10                 5
-#&gt; 26 Tue Feb 15  20220215     18      8                10                 6
-#&gt; 27 Sat Feb 19  20220219     18      9                11                 6
-#&gt; 28 Sat Feb 26  20220226     18     10                11                 7
-#&gt; 29  Wed Mar 2  20220302     19     10                12                 7
-#&gt; 30  Sat Mar 5  20220305     20     10                12                 8
-#&gt;          date game_id tiers_of_joy
-#&gt; 1  2021-11-10     188         &lt;NA&gt;
-#&gt; 2  2021-11-14     425            A
-#&gt; 3  2021-11-17     574         &lt;NA&gt;
-#&gt; 4  2021-11-21     790            B
-#&gt; 5  2021-11-24     945         &lt;NA&gt;
-#&gt; 6  2021-11-30    1193            A
-#&gt; 7  2021-12-04    1358            B
-#&gt; 8  2021-12-12    1766            B
-#&gt; 9  2021-12-15    1860         &lt;NA&gt;
-#&gt; 10 2021-12-18    1965            B
-#&gt; 11 2021-12-21    2113         &lt;NA&gt;
-#&gt; 12 2021-12-29    2272         &lt;NA&gt;
-#&gt; 13 2022-01-01    2443            A
-#&gt; 14 2022-01-04    2587            B
-#&gt; 15 2022-01-08    2833            B
-#&gt; 16 2022-01-11    2936         &lt;NA&gt;
-#&gt; 17 2022-01-15    3203            A
-#&gt; 18 2022-01-18    3249            A
-#&gt; 19 2022-01-22    3528            B
-#&gt; 20 2022-01-26    3641            A
-#&gt; 21 2022-01-29    3842            B
-#&gt; 22 2022-02-02    3956            A
-#&gt; 23 2022-02-05    4154         &lt;NA&gt;
-#&gt; 24 2022-02-09    4312         &lt;NA&gt;
-#&gt; 25 2022-02-12    4543            A
-#&gt; 26 2022-02-15    4605            B
-#&gt; 27 2022-02-19    4798            A
-#&gt; 28 2022-02-26    5236            A
-#&gt; 29 2022-03-02    5301            B
-#&gt; 30 2022-03-05    5438            B</div><div class='input'><span class='co'># }</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>kp_team_schedule</span><span class='op'>(</span>team <span class='op'>=</span> <span class='st'>'Florida St.'</span>, year <span class='op'>=</span> <span class='fl'>2022</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    team_rk        team opponent_rk          opponent   result poss ot pre_wp</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       NA Florida St.         214              Penn W, 86-66   74 NA   0.97</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2       NA Florida St.          25           Florida L, 76-72   73 NA   0.39</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3       NA Florida St.         123            Tulane W, 78-65   73 NA   0.88</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4       NA Florida St.          68  Loyola Marymount W, 76-72   72 NA   0.66</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5       NA Florida St.         198 Boston University W, 83-64   72 NA   0.96</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6       NA Florida St.           5            Purdue L, 78-70   72 NA   0.24</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7       NA Florida St.          41          Syracuse W, 78-73   73 NA   0.68</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8       NA Florida St.          86    South Carolina W, 79-74   77 NA   0.68</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9       NA Florida St.         218          Lipscomb W, 85-65   73 NA   0.97</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10      NA Florida St.          62               UCF W, 75-71   73 NA   0.64</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11      NA Florida St.         233     North Florida W, 87-66   74 NA   0.97</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12      NA Florida St.         145    Boston College W, 76-68   72 NA   0.77</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13      NA Florida St.          56        N.C. State W, 75-74   74 NA   0.51</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14      NA Florida St.         103       Wake Forest W, 76-71   73 NA   0.69</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15      NA Florida St.          36        Louisville W, 74-70   72 NA   0.66</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16      NA Florida St.          83          Miami FL W, 78-69   73 NA   0.80</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17      NA Florida St.          41          Syracuse L, 76-75   73 NA   0.45</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18      NA Florida St.          10              Duke W, 76-75   74 NA   0.53</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19      NA Florida St.          83          Miami FL W, 75-72   73 NA   0.60</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20      NA Florida St.          54      Georgia Tech W, 74-73   73 NA   0.50</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21      NA Florida St.          39     Virginia Tech W, 75-71   72 NA   0.67</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22      NA Florida St.          59           Clemson W, 72-71   71 NA   0.51</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23      NA Florida St.         103       Wake Forest W, 79-67   73 NA   0.86</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24      NA Florida St.         146        Pittsburgh W, 80-65   73 NA   0.92</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25      NA Florida St.          40    North Carolina L, 77-76   75 NA   0.45</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26      NA Florida St.          59           Clemson W, 75-68   71 NA   0.73</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27      NA Florida St.          10              Duke L, 78-72   74 NA   0.30</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28      NA Florida St.          45          Virginia L, 67-66   68 NA   0.45</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29      NA Florida St.          27        Notre Dame W, 78-75   73 NA   0.63</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30      NA Florida St.          56        N.C. State W, 77-71   74 NA   0.73</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     location  w  l w_conference l_conference conference_game postseason year</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       Home NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2       Away NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3       Home NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    Neutral NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5       Home NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6       Away NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7       Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  Semi-Away NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9       Home NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10   Neutral NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11      Home NA NA           NA           NA           FALSE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28      Away NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30      Home NA NA           NA           NA            TRUE    Regular 2022</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      day_date game_date w_proj l_proj w_conference_proj l_conference_proj</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  Wed Nov 10  20211110      1      0                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  Sun Nov 14  20211114      1      1                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  Wed Nov 17  20211117      2      1                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  Sun Nov 21  20211121      3      1                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  Wed Nov 24  20211124      4      1                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  Tue Nov 30  20211130      4      2                 0                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7   Sat Dec 4  20211204      5      2                 1                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  Sun Dec 12  20211212      5      3                 1                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  Wed Dec 15  20211215      6      3                 1                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 Sat Dec 18  20211218      7      3                 1                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 Tue Dec 21  20211221      8      3                 1                 0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12 Wed Dec 29  20211229      9      3                 1                 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13  Sat Jan 1  20220101      9      4                 2                 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14  Tue Jan 4  20220104     10      4                 3                 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15  Sat Jan 8  20220108     11      4                 3                 2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 Tue Jan 11  20220111     11      5                 4                 2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17 Sat Jan 15  20220115     12      5                 5                 2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18 Tue Jan 18  20220118     12      6                 5                 3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19 Sat Jan 22  20220122     13      6                 6                 3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20 Wed Jan 26  20220126     14      6                 6                 4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21 Sat Jan 29  20220129     14      7                 7                 4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22  Wed Feb 2  20220202     15      7                 7                 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23  Sat Feb 5  20220205     16      7                 8                 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24  Wed Feb 9  20220209     17      7                 9                 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25 Sat Feb 12  20220212     17      8                10                 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26 Tue Feb 15  20220215     18      8                10                 6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27 Sat Feb 19  20220219     18      9                11                 6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28 Sat Feb 26  20220226     18     10                11                 7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29  Wed Mar 2  20220302     19     10                12                 7</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30  Sat Mar 5  20220305     20     10                12                 8</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>          date game_id tiers_of_joy</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  2021-11-10     188         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  2021-11-14     425            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  2021-11-17     574         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  2021-11-21     790            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  2021-11-24     945         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  2021-11-30    1193            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  2021-12-04    1358            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  2021-12-12    1766            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  2021-12-15    1860         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 2021-12-18    1965            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 11 2021-12-21    2113         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 12 2021-12-29    2272         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 13 2022-01-01    2443            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 14 2022-01-04    2587            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 15 2022-01-08    2833            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 16 2022-01-11    2936         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 17 2022-01-15    3203            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 18 2022-01-18    3249            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 19 2022-01-22    3528            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 20 2022-01-26    3641            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 21 2022-01-29    3842            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 22 2022-02-02    3956            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 23 2022-02-05    4154         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 24 2022-02-09    4312         &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 25 2022-02-12    4543            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 26 2022-02-15    4605            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 27 2022-02-19    4798            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 28 2022-02-26    5236            A</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 29 2022-03-02    5301            B</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 30 2022-03-05    5438            B</span>
+<span class='r-in'><span class='co'># }</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

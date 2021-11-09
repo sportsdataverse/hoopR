@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -317,7 +317,7 @@
     <dt><code>key</code></dt><dd><p>Character vector of one or more column names which is passed to <code><a href='https://Rdatatable.gitlab.io/data.table/reference/setkey.html'>setkey</a></code>. It may be a single comma separated string such as <code>key="x,y,z"</code>, or a vector of names such as <code>key=c("x","y","z")</code>. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
     <dt><code>index</code></dt><dd><p>Character vector or list of character vectors of one or more column names which is passed to <code><a href='https://Rdatatable.gitlab.io/data.table/reference/setkey.html'>setindexv</a></code>. As with <code>key</code>, comma-separated notation like <code>index="x,y,z"</code> is accepted for convenience. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
     <dt><code>showProgress</code></dt><dd><p><code>TRUE</code> displays progress on the console if the ETA is greater than 3 seconds. It is produced in fread's C code where the very nice (but R level) txtProgressBar and tkProgressBar are not easily available.</p></dd>
-    <dt><code>data.table</code></dt><dd><p>TRUE returns a <code>data.table</code>. FALSE returns a <code>data.frame</code>. The default for this argument can be changed with <code><a href='https://rdrr.io/r/base/options.html'>options(datatable.fread.datatable=FALSE)</a></code>.</p></dd>
+    <dt><code>data.table</code></dt><dd><p>TRUE returns a <code>data.table</code>. FALSE returns a <code>data.frame</code>. The default for this argument can be changed with <code>options(datatable.fread.datatable=FALSE)</code>.</p></dd>
     <dt><code>nThread</code></dt><dd><p>The number of threads to use. Experiment to see what works best for your data on your hardware.</p></dd>
     <dt><code>logical01</code></dt><dd><p>If TRUE a column containing only 0s and 1s will be read as logical, otherwise as integer.</p></dd>
     <dt><code>keepLeadingZeros</code></dt><dd><p>If TRUE a column containing numeric data with leading zeros will be read as character, otherwise leading zeros will be removed and converted to numeric.</p></dd>

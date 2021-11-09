@@ -101,7 +101,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
@@ -292,51 +292,55 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A team boxscore data frame</p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Saiem Gilani</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_nba_team_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;     game_id season season_type  game_date team_short_display_name
-#&gt; 1 401283399   2021           2 2021-02-18                 Thunder
-#&gt; 2 401283399   2021           2 2021-02-18               Grizzlies
-#&gt;         team_uid team_alternate_color team_color     team_display_name
-#&gt; 1 s:40~l:46~t:25               f05133     C67C03 Oklahoma City Thunder
-#&gt; 2 s:40~l:46~t:29               7399c6     5D76A8     Memphis Grizzlies
-#&gt;   team_name                                         team_logo team_location
-#&gt; 1   Thunder https://a.espncdn.com/i/teamlogos/nba/500/okc.png Oklahoma City
-#&gt; 2 Grizzlies https://a.espncdn.com/i/teamlogos/nba/500/mem.png       Memphis
-#&gt;   team_id team_abbreviation             team_slug
-#&gt; 1      25               OKC oklahoma-city-thunder
-#&gt; 2      29               MEM     memphis-grizzlies
-#&gt;   field_goals_made_field_goals_attempted field_goal_pct
-#&gt; 1                                  35-78           44.9
-#&gt; 2                                  42-83           50.6
-#&gt;   three_point_field_goals_made_three_point_field_goals_attempted
-#&gt; 1                                                          19-41
-#&gt; 2                                                          12-26
-#&gt;   three_point_field_goal_pct free_throws_made_free_throws_attempted
-#&gt; 1                       46.3                                  24-28
-#&gt; 2                       46.2                                  26-33
-#&gt;   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds assists
-#&gt; 1           85.7             43                  6                 33      25
-#&gt; 2           78.8             52                  7                 37      31
-#&gt;   steals blocks turnovers team_turnovers total_turnovers technical_fouls
-#&gt; 1      5      3        18              0              18               0
-#&gt; 2     14      4        12              1              13               3
-#&gt;   total_technical_fouls flagrant_fouls turnover_points fast_break_points
-#&gt; 1                     0              0              23                 5
-#&gt; 2                     3              0              17                16
-#&gt;   points_in_paint fouls largest_lead home_away opponent_id opponent_name
-#&gt; 1              24    25            4      HOME          29       Memphis
-#&gt; 2              52    18           15      AWAY          25 Oklahoma City
-#&gt;   opponent_mascot opponent_abbrev
-#&gt; 1       Grizzlies             MEM
-#&gt; 2         Thunder             OKC</div><div class='input'><span class='co'># }</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'>  <span class='kw'><a href='https://rdrr.io/r/base/try.html'>try</a></span><span class='op'>(</span><span class='fu'>espn_nba_team_box</span><span class='op'>(</span>game_id <span class='op'>=</span> <span class='fl'>401283399</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     game_id season season_type  game_date team_short_display_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 401283399   2021           2 2021-02-18                 Thunder</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 401283399   2021           2 2021-02-18               Grizzlies</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         team_uid team_alternate_color team_color     team_display_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 s:40~l:46~t:25               f05133     C67C03 Oklahoma City Thunder</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 s:40~l:46~t:29               7399c6     5D76A8     Memphis Grizzlies</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   team_name                                         team_logo team_location</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1   Thunder https://a.espncdn.com/i/teamlogos/nba/500/okc.png Oklahoma City</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 Grizzlies https://a.espncdn.com/i/teamlogos/nba/500/mem.png       Memphis</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   team_id team_abbreviation             team_slug</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      25               OKC oklahoma-city-thunder</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2      29               MEM     memphis-grizzlies</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   field_goals_made_field_goals_attempted field_goal_pct</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                  35-78           44.9</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                  42-83           50.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   three_point_field_goals_made_three_point_field_goals_attempted</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                                                          19-41</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                                                          12-26</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   three_point_field_goal_pct free_throws_made_free_throws_attempted</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                       46.3                                  24-28</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                       46.2                                  26-33</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds assists</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           85.7             43                  6                 33      25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2           78.8             52                  7                 37      31</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   steals blocks turnovers team_turnovers total_turnovers technical_fouls</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1      5      3        18              0              18               0</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2     14      4        12              1              13               3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   total_technical_fouls flagrant_fouls turnover_points fast_break_points</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                     0              0              23                 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                     3              0              17                16</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   points_in_paint fouls largest_lead home_away opponent_id opponent_name</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1              24    25            4      HOME          29       Memphis</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2              52    18           15      AWAY          25 Oklahoma City</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   opponent_mascot opponent_abbrev</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1       Grizzlies             MEM</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2         Thunder             OKC</span>
+<span class='r-in'><span class='co'># }</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
