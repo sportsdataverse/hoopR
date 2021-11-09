@@ -9,8 +9,7 @@ NULL
 #' @param team_id team_id
 #' @return Returns a named list of data frames: FranchiseLeaders
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_franchiseleaders <- function(league_id='00',
@@ -65,8 +64,7 @@ NULL
 #' @param team_id team_id
 #' @return Returns a named list of data frames: FranchisePlayers
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_franchiseplayers <- function(league_id='00',
@@ -122,8 +120,7 @@ NULL
 #' @param league_id league_id
 #' @return Returns a named list of data frames: DefunctTeams, FranchiseHistory
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_franchisehistory <- function(league_id='00'){

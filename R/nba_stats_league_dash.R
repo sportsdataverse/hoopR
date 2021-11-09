@@ -39,8 +39,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashoppptshot <- function(
@@ -179,8 +178,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: LeagueDashPlayerBioStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerbiostats <- function(
@@ -329,8 +327,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: LeagueDashPlayerClutch
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerclutch <- function(
@@ -496,8 +493,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerptshot <- function(
@@ -657,8 +653,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: LeagueDashPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerstats <- function(
@@ -813,8 +808,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayershotlocations <- function(
@@ -972,8 +966,7 @@ NULL
 #' @param weight weight
 #' @return Returns a named list of data frames: LeagueDashPTDefend
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptdefend <- function(
@@ -1112,8 +1105,7 @@ NULL
 #' @param vs_division vs_division
 #' @param weight weight
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptstats <- function(
@@ -1242,8 +1234,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptteamdefend <- function(
@@ -1364,8 +1355,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: LeagueDashTeamClutch
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamclutch <- function(
@@ -1504,8 +1494,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamptshot <- function(
@@ -1631,8 +1620,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: LeagueDashTeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamstats <- function(
@@ -1765,8 +1753,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamshotlocations <- function(

@@ -10,8 +10,7 @@ NULL
 #' TeamAwardsConf, TeamAwardsDiv, TeamBackground,
 #' TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamdetails <- function(team_id='1610612749'){
@@ -62,8 +61,7 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @return Return a named list of data frames: TeamEstimatedMetrics
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamestimatedmetrics <- function(league_id = '00',
@@ -124,8 +122,7 @@ NULL
 #' @param team_id Team ID
 #' @return Return a named list of data frames: TeamGameLog
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamgamelog <- function(
@@ -205,8 +202,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Return a named list of data frames: TeamGameLogs
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamgamelogs <- function(
@@ -298,8 +294,7 @@ NULL
 #' @param team_id team_id
 #' @return Return a named list of data frames: CareerLeadersByTeam
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamhistoricalleaders <- function(
@@ -356,8 +351,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @return Return a named list of data frames: AvailableSeasons, TeamInfoCommon, TeamSeasonRanks
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teaminfocommon <- function(
@@ -438,8 +432,7 @@ NULL
 #' @return Return a named list of data frames: OverallTeamPlayerOnOffDetails,
 #' PlayersOffCourtTeamPlayerOnOffDetails, PlayersOnCourtTeamPlayerOnOffDetails
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamplayeronoffdetails <- function(
@@ -556,8 +549,7 @@ NULL
 #' @return Return a named list of data frames: OverallTeamPlayerOnOffSummary,
 #' PlayersOffCourtTeamPlayerOnOffSummary, PlayersOnCourtTeamPlayerOnOffSummary
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamplayeronoffsummary <- function(
@@ -673,8 +665,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Return a named list of data frames: PlayersSeasonTotals, TeamOverall
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamplayerdashboard <- function(
@@ -771,8 +762,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @return Return a named list of data frames: TeamStats
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamyearbyyearstats <- function(
@@ -856,8 +846,7 @@ NULL
 #' ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
 #' ShotDistanceOverall, vsPlayerOverall
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_teamvsplayer <- function(
@@ -1146,8 +1135,7 @@ NULL
 #' @param wrs_opp_tov wrs_opp_tov
 #' @return Return a named list of data frames: TeamGameStreakFinderParametersResults
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 

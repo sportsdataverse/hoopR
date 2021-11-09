@@ -11,8 +11,7 @@ NULL
 #' @return Return a named list of data frames: Available, EastConfStandingsByDay,
 #' GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_scoreboard <- function(league_id = '00',
@@ -70,8 +69,7 @@ NULL
 #' GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
 #' TicketLinks, WestConfStandingsByDay, WinProbability
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_scoreboardv2 <- function(league_id = '00',
@@ -128,8 +126,7 @@ NULL
 #' @param run_type Run Type
 #' @return Return a named list of data frames:
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_winprobabilitypbp <- function(game_id = '0021700807',

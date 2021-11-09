@@ -26,8 +26,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: FantasyWidgetResult
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_fantasywidget <- function(active_players='N',
@@ -136,8 +135,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: Lineups
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashlineups <- function(
@@ -262,8 +260,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: LeagueLineupViz
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguelineupviz <- function(
@@ -386,8 +383,7 @@ NULL
 #' @param vs_division vs_division
 #' @return Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leagueplayerondetails <- function(
@@ -485,8 +481,7 @@ NULL
 #' @param season_type season_type
 #' @return Returns a named list of data frames: SeasonMatchups
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leagueseasonmatchups <- function(
@@ -555,8 +550,7 @@ NULL
 #' @param season_type season_type
 #' @return Returns a named list of data frames: MatchupsRollup
 #' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows
-#' @importFrom tidyr unnest unnest_wider everything
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_matchupsrollup <- function(
