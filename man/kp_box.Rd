@@ -11,6 +11,9 @@ kp_box(game_id, year)
 
 \item{year}{Year of game to pull}
 }
+\value{
+Returns a tibble of game box scores
+}
 \description{
 Get Game Box Score
 }

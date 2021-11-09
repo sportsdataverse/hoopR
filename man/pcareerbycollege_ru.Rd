@@ -21,6 +21,9 @@ nba_playercareerbycollegerollup(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 }
+\value{
+Return a named list of data frames: East, Midwest, South, West
+}
 \description{
 \strong{Get NBA Stats API Player Career By College Rollup}
 

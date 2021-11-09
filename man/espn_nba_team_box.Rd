@@ -9,6 +9,9 @@ espn_nba_team_box(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+A team boxscore data frame
+}
 \description{
 Get ESPN NBA team box scores
 }

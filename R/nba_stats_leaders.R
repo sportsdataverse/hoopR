@@ -9,6 +9,8 @@ NULL
 #' @param per_mode Per Mode - PerGame, Totals
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param top_x Top X
+#' @return Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
+#'   FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders, OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -69,6 +71,7 @@ NULL
 #' @param per_mode Per Mode - PerGame, Totals
 #' @param player_or_team Player or Team
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @return Returns a named list of data frames: AssistLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -129,6 +132,7 @@ NULL
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @return Returns a named list of data frames: AssistTracker
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -190,6 +194,7 @@ NULL
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_category Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown
+#' @return Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -260,6 +265,8 @@ NULL
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_type Stat Type - Traditional, Advanced, Tracking
+#' @return Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
+#'  HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -330,6 +337,7 @@ NULL
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
+#' @return Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -399,6 +407,8 @@ NULL
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @return Returns a named list of data frames: DefenseHubStat1, DefenseHubStat10, DefenseHubStat2, DefenseHubStat3, DefenseHubStat4, DefenseHubStat5, DefenseHubStat6,
+#' DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -469,6 +479,7 @@ NULL
 #' @param scope Scope - RS, S, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param stat_category Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
+#' @return Returns a named list of data frames: LeagueLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

@@ -1,6 +1,7 @@
 #' Get ESPN NBA game data (Pbp, Team and Player Box)
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A named list of data frames: Plays, Team, Player
 #' @keywords NBA Game
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -184,6 +185,7 @@ espn_nba_game_all <- function(game_id){
 #' Get ESPN NBA PBP data
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A play-by-play data frame.
 #' @keywords NBA PBP
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -251,6 +253,7 @@ espn_nba_pbp <- function(game_id){
 #' Get ESPN NBA team box scores
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A team boxscore data frame
 #' @keywords NBA Team Box
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -358,6 +361,7 @@ espn_nba_team_box <- function(game_id){
 #' Get ESPN NBA player box scores
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A player boxscore data frame
 #' @keywords NBA Player Box
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -437,6 +441,7 @@ espn_nba_player_box <- function(game_id){
 
 #' Get ESPN NBA team names and ids
 #' @author Saiem Gilani
+#' @return A teams data frame
 #' @keywords NBA Teams
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
@@ -536,7 +541,6 @@ espn_nba_teams <- function(){
 #' Get ESPN men's NBA schedule for a specific year
 #'
 #' @param season Either numeric or character (YYYYMMDD)
-#' @author Thomas Mock, you a genius for this one.
 #' @return Returns a tibble
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
@@ -681,6 +685,7 @@ espn_nba_scoreboard <- function(season){
 #' Get ESPN NBA's Standings
 #'
 #' @param year Either numeric or character (YYYY)
+#' @return A standings data frame
 #' @keywords NBA Standings
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -762,6 +767,7 @@ espn_nba_standings <- function(year){
 #' Get ESPN NBA's Betting information
 #'
 #' @param game_id  Game ID
+#' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
 #' @keywords NBA Betting
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -828,5 +834,6 @@ espn_nba_betting <- function(game_id){
 
   )
   betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
+  names(betting) <- c("pickcenter", "againstTheSpread", "predictor_df")
   return(betting)
 }

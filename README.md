@@ -99,7 +99,7 @@ website](https://saiemgilani.github.io/hoopR/).
 
 [**Full News on Releases**](https://hoopr.sportsdataverse.org/CHANGELOG)
 
-# Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
+## Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
 
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse)
@@ -107,7 +107,7 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 [![GitHub
 stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/saiemgilani/hoopR/stargazers/)
 
-# **Our Authors**
+## **Our Authors**
 
 -   [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>

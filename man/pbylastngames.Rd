@@ -78,6 +78,10 @@ nba_playerdashboardbylastngames(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard, Last15PlayerDashboard, Last20PlayerDashboard,
+Last5PlayerDashboard, OverallPlayerDashboard
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard by Last N Games}
 

@@ -10,6 +10,9 @@ nba_boxscoredefensive(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: PlayerDefensiveStats, Table1
+}
 \description{
 \strong{Get NBA Stats API Boxscore Defensive}
 

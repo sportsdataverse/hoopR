@@ -11,6 +11,9 @@ kp_team_players(team, year = 2021)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of team player data
+}
 \description{
 Get KenPom's player stats from the team page
 }

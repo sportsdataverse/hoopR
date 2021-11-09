@@ -11,13 +11,7 @@ if (!requireNamespace('issue') & !requireNamespace('pacman')){
   install.packages('pacman')
 }
 pacman::p_load(magick, grid, dplyr, lubridate)
-pacman::p_load_gh("yonicd/issue")
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "95%"
-)
+
 opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 
 ```
@@ -99,14 +93,14 @@ For more information on the package and function reference, please see the  [**`
 [**Full News on Releases**](https://hoopr.sportsdataverse.org/CHANGELOG)
 
 
-# Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
+## Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse) 
 
 [![GitHub stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/saiemgilani/hoopR/stargazers/)
 
 
-# **Our Authors**
+## **Our Authors**
 
 -   [Saiem Gilani](https://twitter.com/saiemgilani)       
 <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>

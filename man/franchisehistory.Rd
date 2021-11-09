@@ -10,6 +10,9 @@ nba_franchisehistory(league_id = "00")
 \arguments{
 \item{league_id}{league_id}
 }
+\value{
+Returns a named list of data frames: DefunctTeams, FranchiseHistory
+}
 \description{
 \strong{Get NBA Stats API Franchise History}
 

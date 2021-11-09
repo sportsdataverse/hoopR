@@ -30,6 +30,10 @@ nba_homepagev2(
 
 \item{stat_type}{Stat Type - Traditional, Advanced, Tracking}
 }
+\value{
+Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
+HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
+}
 \description{
 \strong{Get NBA Stats API HomepageV2 Leaders}
 

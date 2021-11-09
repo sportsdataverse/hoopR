@@ -99,6 +99,9 @@ nba_videodetails(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a list of tibbles
+}
 \description{
 \strong{Get NBA Stats API Video Details}
 

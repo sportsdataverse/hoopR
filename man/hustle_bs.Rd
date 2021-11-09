@@ -10,6 +10,9 @@ nba_hustlestatsboxscore(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
+}
 \description{
 \strong{Get NBA Stats API Hustle Stats Boxscore}
 

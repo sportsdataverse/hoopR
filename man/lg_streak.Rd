@@ -273,6 +273,9 @@ nba_leaguegamefinder(
 
 \item{years_experience}{years_experience}
 }
+\value{
+Return a named list of data frames: LeagueGameFinderResults
+}
 \description{
 \strong{Get NBA Stats API League Game Streak Finder}
 

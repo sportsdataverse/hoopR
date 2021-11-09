@@ -21,6 +21,10 @@ nba_alltimeleadersgrids(
 
 \item{top_x}{Top X}
 }
+\value{
+Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
+FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders, OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
+}
 \description{
 \strong{Get NBA Stats API All-time Leaders Grid}
 

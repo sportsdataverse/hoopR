@@ -6,6 +6,9 @@
 \usage{
 espn_mbb_conferences()
 }
+\value{
+A conferences data frame
+}
 \description{
 Get ESPN conference names and ids
 }

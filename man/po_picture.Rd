@@ -12,6 +12,11 @@ nba_playoffpicture(league_id = "00", season_id = "22020")
 
 \item{season_id}{season_id}
 }
+\value{
+Return a named list of data frames: EastConfPlayoffPicture,
+EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
+WestConfRemainingGames, WestConfStandings
+}
 \description{
 \strong{Get NBA Stats API Playoff Picture}
 

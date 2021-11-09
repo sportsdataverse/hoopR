@@ -12,6 +12,9 @@ nba_schedule(season = 2021, league = "NBA")
 
 \item{league}{League - default: 'NBA'. Other options include 'all'}
 }
+\value{
+Returns a tibble
+}
 \description{
 \strong{Get NBA Stats API Schedule}
 

@@ -36,6 +36,9 @@ nba_leaguegamelog(
 
 \item{sorter}{sorter}
 }
+\value{
+Return a named list of data frames: LeagueGameLog
+}
 \description{
 \strong{Get NBA Stats API League Game Log}
 

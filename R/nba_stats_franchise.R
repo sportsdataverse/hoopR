@@ -7,6 +7,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param team_id team_id
+#' @return Returns a named list of data frames: FranchiseLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -62,6 +63,7 @@ NULL
 #' @param per_mode per_mode
 #' @param season_type season_type
 #' @param team_id team_id
+#' @return Returns a named list of data frames: FranchisePlayers
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -118,6 +120,7 @@ NULL
 #' @rdname franchisehistory
 #' @author Saiem Gilani
 #' @param league_id league_id
+#' @return Returns a named list of data frames: DefunctTeams, FranchiseHistory
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

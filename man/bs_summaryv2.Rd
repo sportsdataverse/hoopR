@@ -10,6 +10,9 @@ nba_boxscoresummaryv2(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary, InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
+}
 \description{
 \strong{Get NBA Stats API Boxscore Summary V2}
 

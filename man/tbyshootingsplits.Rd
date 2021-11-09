@@ -78,6 +78,11 @@ nba_teamdashboardbyshootingsplits(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: AssistedBy,
+AssitedShotTeamDashboard, OverallTeamDashboard, Shot5FTTeamDashboard,
+Shot8FTTeamDashboard, ShotAreaTeamDashboard, ShotTypeTeamDashboard
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard by Shooting Splits}
 

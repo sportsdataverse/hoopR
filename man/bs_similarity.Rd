@@ -33,6 +33,9 @@ nba_boxscoresimilarityscore(
 
 \item{person_2_season_type}{person_2_season_type}
 }
+\value{
+Returns a named list of data frames: BoxScoreSimilarityScores
+}
 \description{
 \strong{Get NBA Stats API Boxscore Similarity Score}
 

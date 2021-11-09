@@ -393,6 +393,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
 #' @param attr Game Attribute, valid values include: \cr
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 #' 'Upsets','Busts','Comeback','Window'
+#' @return Returns a tibble with game attributes
 #' @keywords Game
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate

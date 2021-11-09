@@ -11,6 +11,9 @@ kp_team_schedule(team, year = 2022)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of team schedules
+}
 \description{
 Get team schedule results
 }

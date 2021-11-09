@@ -102,6 +102,9 @@ nba_leaguedashptdefend(
 
 \item{weight}{weight}
 }
+\value{
+Returns a named list of data frames: LeagueDashPTDefend
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Defense}
 

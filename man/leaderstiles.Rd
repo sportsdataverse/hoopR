@@ -30,6 +30,9 @@ nba_leaderstiles(
 
 \item{stat}{Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK}
 }
+\value{
+Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
+}
 \description{
 \strong{Get NBA Stats API Leaders Tiles}
 

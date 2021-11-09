@@ -27,6 +27,9 @@ nba_boxscorefourfactorsv2(
 
 \item{range_type}{range_type}
 }
+\value{
+Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
+}
 \description{
 \strong{Get NBA Stats API Boxscore Four Factors V2}
 

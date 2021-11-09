@@ -10,6 +10,9 @@ nba_boxscorematchups(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: PlayerMatchupsStats
+}
 \description{
 \strong{Get NBA Stats API Boxscore Matchups}
 

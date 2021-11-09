@@ -14,6 +14,10 @@ nba_scoreboard(league_id = "00", game_date = "2021-07-20", day_offset = 0)
 
 \item{day_offset}{Day Offset (integer 0,-1)}
 }
+\value{
+Return a named list of data frames: Available, EastConfStandingsByDay,
+GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
+}
 \description{
 \strong{Get NBA Stats API Scoreboard}
 

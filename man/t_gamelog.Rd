@@ -27,6 +27,9 @@ nba_teamgamelog(
 
 \item{team_id}{Team ID}
 }
+\value{
+Return a named list of data frames: TeamGameLog
+}
 \description{
 \strong{Get NBA Stats API Team Game Log}
 

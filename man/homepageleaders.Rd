@@ -30,6 +30,9 @@ nba_homepageleaders(
 
 \item{stat_category}{Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown}
 }
+\value{
+Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
+}
 \description{
 \strong{Get NBA Stats API Homepage Leaders}
 

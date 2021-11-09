@@ -8,6 +8,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
+#' @return Returns a named list of data frames: PlayByPlay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -60,6 +61,7 @@ NULL
 #' @author Saiem Gilani
 #' @param season Season - 4 digit integer corresponding to the first year in the season format 2020-21
 #' @param league League - default: 'NBA'. Other options include 'all'
+#' @return Returns a tibble
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

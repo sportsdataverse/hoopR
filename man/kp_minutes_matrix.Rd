@@ -11,6 +11,9 @@ kp_minutes_matrix(team, year = 2021)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of minutes matrix data
+}
 \description{
 Get Minutes Matrix from Expanded Player Page
 }

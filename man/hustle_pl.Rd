@@ -87,6 +87,9 @@ nba_leaguehustlestatsplayerleaders(
 
 \item{weight}{weight}
 }
+\value{
+Returns a named list of data frames: PlayerChargesDrawnLeaders, PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
+}
 \description{
 \strong{Get NBA Stats API League Hustle Stats Player Leaders}
 

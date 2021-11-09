@@ -81,6 +81,9 @@ nba_playercompare(
 
 \item{vs_player_id_list}{vs_player_id_list}
 }
+\value{
+Return a named list of data frames: Individual, OverallCompare
+}
 \description{
 \strong{Get NBA Stats API Player Compare}
 

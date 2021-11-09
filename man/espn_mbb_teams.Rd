@@ -6,6 +6,9 @@
 \usage{
 espn_mbb_teams()
 }
+\value{
+A teams data frame
+}
 \description{
 Get ESPN men's college basketball team names and ids
 }

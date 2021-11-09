@@ -78,6 +78,11 @@ nba_teamdashboardbygeneralsplits(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: DaysRestTeamDashboard,
+LocationTeamDashboard, MonthTeamDashboard, OverallTeamDashboard,
+PrePostAllStarTeamDashboard, WinsLossesTeamDashboard
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard by General Splits}
 

@@ -66,6 +66,9 @@ nba_fantasywidget(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: FantasyWidgetResult
+}
 \description{
 \strong{Get NBA Stats API Fantasy Widget}
 

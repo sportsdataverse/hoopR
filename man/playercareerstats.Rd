@@ -18,6 +18,11 @@ nba_playercareerstats(
 
 \item{player_id}{Player ID}
 }
+\value{
+Return a named list of data frames: CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason,
+CareerTotalsRegularSeason, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
+SeasonTotalsPostSeason, SeasonTotalsRegularSeason
+}
 \description{
 \strong{Get NBA Stats API Player Career Stats}
 

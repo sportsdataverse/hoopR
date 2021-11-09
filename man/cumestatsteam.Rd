@@ -24,6 +24,9 @@ nba_cumestatsteam(
 
 \item{team_id}{team_id}
 }
+\value{
+Returns a named list of data frames: GameByGameStats, TotalTeamStats
+}
 \description{
 \strong{Get NBA Stats API Cumulative Team Stats}
 

@@ -9,6 +9,9 @@ espn_nba_game_all(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+A named list of data frames: Plays, Team, Player
+}
 \description{
 Get ESPN NBA game data (Pbp, Team and Player Box)
 }

@@ -21,6 +21,9 @@ nba_franchiseplayers(
 
 \item{team_id}{team_id}
 }
+\value{
+Returns a named list of data frames: FranchisePlayers
+}
 \description{
 \strong{Get NBA Stats API Franchise Players}
 

@@ -21,6 +21,9 @@ nba_leaguestandingsv3(
 
 \item{season_year}{season_year}
 }
+\value{
+Return a named list of data frames: Standings
+}
 \description{
 \strong{Get NBA Stats API League Standings V3}
 

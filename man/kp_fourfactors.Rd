@@ -11,6 +11,9 @@ kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 
 \item{max_year}{Last year of data to pull}
 }
+\value{
+Returns a tibble of four factors ratings
+}
 \description{
 Get Four Factors Data
 }

@@ -6,6 +6,7 @@ NULL
 #' @rdname nba_data_pbp
 #' @author Saiem Gilani
 #' @param game_id Game ID - 10 digits, i.e. "0021900001"
+#' @return Returns a tibble
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select mutate rename case_when
 #' @importFrom tidyr everything

@@ -63,6 +63,10 @@ nba_playerdashptreb(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: NumContestedRebounding, OverallRebounding, RebDistanceRebounding,
+ShotDistanceRebounding, ShotTypeRebounding
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Rebounding}
 

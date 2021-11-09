@@ -9,6 +9,9 @@ espn_nba_standings(year)
 \arguments{
 \item{year}{Either numeric or character (YYYY)}
 }
+\value{
+A standings data frame
+}
 \description{
 Get ESPN NBA's Standings
 }

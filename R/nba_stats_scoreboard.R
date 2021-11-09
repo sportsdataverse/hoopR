@@ -8,6 +8,8 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
+#' @return Return a named list of data frames: Available, EastConfStandingsByDay,
+#' GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -64,6 +66,9 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
+#' @return Return a named list of data frames: Available, EastConfStandingsByDay,
+#' GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
+#' TicketLinks, WestConfStandingsByDay, WinProbability
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -121,6 +126,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param run_type Run Type
+#' @return Return a named list of data frames:
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

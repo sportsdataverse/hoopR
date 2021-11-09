@@ -72,6 +72,9 @@ nba_leagueplayerondetails(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
+}
 \description{
 \strong{Get NBA Stats API League Player On/Off Details}
 

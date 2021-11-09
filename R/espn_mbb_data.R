@@ -1,6 +1,7 @@
 #' Get ESPN men's college basketball data (Pbp, Team and Player Box)
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A named list of data frames: Plays, Team, Player
 #' @keywords CBB Game
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -184,6 +185,7 @@ espn_mbb_game_all <- function(game_id){
 #' Get ESPN men's college basketball PBP data
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A play-by-play data frame.
 #' @keywords CBB PBP
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -248,6 +250,7 @@ espn_mbb_pbp <- function(game_id){
 #' Get ESPN men's college basketball team box scores
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A team boxscore data frame
 #' @keywords CBB Team Box
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -354,6 +357,7 @@ espn_mbb_team_box <- function(game_id){
 #' Get ESPN men's college basketball player box scores
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return A player boxscore data frame
 #' @keywords CBB Player Box
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -433,6 +437,7 @@ espn_mbb_player_box <- function(game_id){
 
 #' Get ESPN conference names and ids
 #' @author Saiem Gilani
+#' @return A conferences data frame
 #' @keywords CBB Conferences
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -477,6 +482,7 @@ espn_mbb_conferences <- function(){
 
 #' Get ESPN men's college basketball team names and ids
 #' @author Saiem Gilani
+#' @return A teams data frame
 #' @keywords MBB Teams
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
@@ -570,7 +576,6 @@ espn_mbb_teams <- function(){
 #' Get ESPN men's college basketball schedule for a specific year
 #'
 #' @param season Either numeric or character
-#' @author Thomas Mock, you a genius for this one.
 #' @return Returns a tibble
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
@@ -787,6 +792,7 @@ espn_mbb_rankings <- function(){
 #' Get ESPN men's college basketball standings
 #'
 #' @param year Either numeric or character (YYYY)
+#' @return A standings data frame
 #' @keywords MBB Standings
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -868,6 +874,7 @@ espn_mbb_standings <- function(year){
 #' Get ESPN MBB's Betting information
 #'
 #' @param game_id  Game ID
+#' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
 #' @keywords MBB Betting
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -936,5 +943,6 @@ espn_mbb_betting <- function(game_id){
 
   )
   betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
+  names(betting) <- c("pickcenter", "againstTheSpread", "predictor_df")
   return(betting)
 }

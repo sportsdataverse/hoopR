@@ -18,6 +18,9 @@ nba_playerestimatedmetrics(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 }
+\value{
+Return a named list of data frames: PlayerEstimatedMetrics
+}
 \description{
 \strong{Get NBA Stats API Player Estimated Metrics}
 

@@ -10,6 +10,11 @@ nba_teamdetails(team_id = "1610612749")
 \arguments{
 \item{team_id}{Team ID}
 }
+\value{
+Return a named list of data frames: TeamAwardsChampionships,
+TeamAwardsConf, TeamAwardsDiv, TeamBackground,
+TeamHistory, TeamHof, TeamRetired, TeamSocialSites
+}
 \description{
 \strong{Get NBA Stats API Team Details}
 

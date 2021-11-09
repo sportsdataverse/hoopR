@@ -24,6 +24,9 @@ nba_playernextngames(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 }
+\value{
+Return a named list of data frames: NextNGames
+}
 \description{
 \strong{Get NBA Stats API Player Next N Games}
 

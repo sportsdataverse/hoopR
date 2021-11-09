@@ -11,6 +11,9 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 
 \item{max_year}{Last year of data to pull}
 }
+\value{
+Returns a tibble of efficiency and tempo ratings
+}
 \description{
 Get KenPom Efficiency and Tempo Summary
 }

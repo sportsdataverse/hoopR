@@ -72,6 +72,9 @@ nba_shotchartdetail(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
+}
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}
 

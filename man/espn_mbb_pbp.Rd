@@ -9,6 +9,9 @@ espn_mbb_pbp(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+A play-by-play data frame.
+}
 \description{
 Get ESPN men's college basketball PBP data
 }

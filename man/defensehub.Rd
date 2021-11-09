@@ -27,6 +27,10 @@ nba_defensehub(
 
 \item{season_type}{Season Type - Regular Season, Playoffs}
 }
+\value{
+Returns a named list of data frames: DefenseHubStat1, DefenseHubStat10, DefenseHubStat2, DefenseHubStat3, DefenseHubStat4, DefenseHubStat5, DefenseHubStat6,
+DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
+}
 \description{
 \strong{Get NBA Stats API Defense Hub}
 

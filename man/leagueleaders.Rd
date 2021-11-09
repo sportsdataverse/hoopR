@@ -30,6 +30,9 @@ nba_leagueleaders(
 
 \item{stat_category}{Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK}
 }
+\value{
+Returns a named list of data frames: LeagueLeaders
+}
 \description{
 \strong{Get NBA Stats API League Leaders}
 

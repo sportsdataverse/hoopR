@@ -87,6 +87,9 @@ nba_leaguedashteamptshot(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: LeagueDashPTShots
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Team Shots}
 

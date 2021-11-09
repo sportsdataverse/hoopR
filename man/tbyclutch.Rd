@@ -78,6 +78,13 @@ nba_teamdashboardbyclutch(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: Last10Sec3Point2TeamDashboard,
+Last10Sec3PointTeamDashboard, Last1Min5PointTeamDashboard, Last1MinPlusMinus5PointTeamDashboard,
+Last30Sec3Point2TeamDashboard, Last30Sec3PointTeamDashboard, Last3Min5PointTeamDashboard,
+Last3MinPlusMinus5PointTeamDashboard, Last5Min5PointTeamDashboard,
+Last5MinPlusMinus5PointTeamDashboard, OverallTeamDashboard
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard by Clutch Splits}
 

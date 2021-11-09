@@ -87,6 +87,9 @@ nba_leaguehustlestatsteam(
 
 \item{weight}{weight}
 }
+\value{
+Returns a named list of data frames: HustleStatsTeam
+}
 \description{
 \strong{Get NBA Stats API League Hustle Stats Team}
 

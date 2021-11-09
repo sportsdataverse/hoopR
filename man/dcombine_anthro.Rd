@@ -12,6 +12,9 @@ nba_draftcombineplayeranthro(league_id = "00", season_year = "2020")
 
 \item{season_year}{season_year}
 }
+\value{
+Returns a named list of data frames: Results
+}
 \description{
 \strong{Get NBA Stats API Draft Combine Player Anthropological Measurements}
 

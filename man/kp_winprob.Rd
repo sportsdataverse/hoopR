@@ -11,6 +11,9 @@ kp_winprob(game_id, year)
 
 \item{year}{Year of game to pull}
 }
+\value{
+Returns a tibble of game win probabilities
+}
 \description{
 Get Win Probability
 }

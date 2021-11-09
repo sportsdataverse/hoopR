@@ -126,6 +126,9 @@ nba_leaguedashplayerclutch(
 
 \item{weight}{weight}
 }
+\value{
+Returns a named list of data frames: LeagueDashPlayerClutch
+}
 \description{
 \strong{Get NBA Stats API League Dashboard by Player Clutch Splits}
 

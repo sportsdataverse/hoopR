@@ -105,6 +105,9 @@ nba_leaguedashteamclutch(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: LeagueDashTeamClutch
+}
 \description{
 \strong{Get NBA Stats API League Dashboard by Team Clutch Splits}
 

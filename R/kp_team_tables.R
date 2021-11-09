@@ -5,6 +5,7 @@
 #' @param year Year of data to pull
 #'
 #' @keywords Team Schedule
+#' @return Returns a tibble of team schedules
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect str_pad
@@ -347,6 +348,7 @@ kp_team_schedule <- function(team, year = 2022){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
+#' @return Returns a tibble of team game plans
 #'
 #' @keywords Game Plan
 #' @importFrom cli cli_abort
@@ -544,6 +546,7 @@ kp_gameplan <- function(team, year=2021){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
+#' @return Returns a tibble of team opponent tracker data
 #' @keywords Opponent Tracker
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter
@@ -704,6 +707,7 @@ kp_opptracker <- function(team, year = 2021){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
+#' @return Returns a tibble of team player data
 #'
 #' @keywords Team Player Stats
 #' @importFrom cli cli_abort
@@ -940,6 +944,7 @@ kp_team_players <- function(team, year = 2021){
 #'
 #'
 #' @param player_id Player Id filter to select.
+#' @return Returns a tibble of team player career stats
 #'
 #' @keywords Player Career Stats
 #' @importFrom cli cli_abort
@@ -1163,6 +1168,7 @@ kp_player_career <- function(player_id){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
+#' @return Returns a tibble of minutes matrix data
 #'
 #' @keywords Minutes Matrix
 #' @importFrom cli cli_abort
@@ -1250,6 +1256,7 @@ kp_minutes_matrix <- function(team, year = 2021){
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
+#' @return Returns a tibble of team player stats data
 #' @keywords Team Player Stats
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows

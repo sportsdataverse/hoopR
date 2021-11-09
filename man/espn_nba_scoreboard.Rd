@@ -22,6 +22,3 @@ Get ESPN men's NBA schedule for a specific year
   try(espn_nba_scoreboard (season = "20210215"))
 }
 }
-\author{
-Thomas Mock, you a genius for this one.
-}
