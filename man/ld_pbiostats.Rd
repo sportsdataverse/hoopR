@@ -105,6 +105,9 @@ nba_leaguedashplayerbiostats(
 
 \item{weight}{weight}
 }
+\value{
+Returns a named list of data frames: LeagueDashPlayerBioStats
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Player Biographical Stats}
 

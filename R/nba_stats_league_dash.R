@@ -37,6 +37,7 @@ NULL
 #' @param touch_time_range touch_time_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -176,6 +177,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: LeagueDashPlayerBioStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -325,6 +327,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: LeagueDashPlayerClutch
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -491,6 +494,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -651,6 +655,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: LeagueDashPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -806,6 +811,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -964,6 +970,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @return Returns a named list of data frames: LeagueDashPTDefend
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1355,6 +1362,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: LeagueDashTeamClutch
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1494,6 +1502,7 @@ NULL
 #' @param touch_time_range touch_time_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1620,6 +1629,7 @@ NULL
 #' @param two_way two_way
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: LeagueDashTeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1753,6 +1763,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

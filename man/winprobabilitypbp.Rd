@@ -12,6 +12,9 @@ nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second")
 
 \item{run_type}{Run Type}
 }
+\value{
+Return a named list of data frames:
+}
 \description{
 \strong{Get NBA Stats API Win Probability PBP}
 

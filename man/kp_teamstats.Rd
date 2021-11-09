@@ -13,6 +13,9 @@ kp_teamstats(min_year, max_year = most_recent_mbb_season(), defense = FALSE)
 
 \item{defense}{Choose whether to pull offense(default) with FALSE or defense with TRUE}
 }
+\value{
+Returns a tibble of team stats
+}
 \description{
 Get Team Stats
 }

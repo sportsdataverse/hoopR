@@ -11,6 +11,7 @@ NULL
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @return Returns a tibble
 #' @import furrr
 #' @export
 #' @examples
@@ -63,6 +64,7 @@ NULL
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @return Returns a tibble
 #' @import furrr
 #' @export
 #' @examples
@@ -109,6 +111,7 @@ NULL
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @return Returns a tibble
 #' @import furrr
 #' @export
 #' @examples
@@ -158,6 +161,7 @@ NULL
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @return Returns a tibble
 #' @import furrr
 #' @export
 #' @examples
@@ -243,6 +247,7 @@ load_nba_games <- function(){
 #' of or the complete play by play data table within the database (please see details for further information)
 #' @param db_connection A `DBIConnection` object, as returned by
 #' [DBI::dbConnect()] (please see details for further information)
+#' @return Returns a logical value (TRUE/FALSE)
 #' @import furrr
 #' @export
 update_nba_db <- function(dbdir = ".",

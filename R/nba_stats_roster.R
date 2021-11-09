@@ -8,6 +8,7 @@ NULL
 #' @param is_only_current_season is_only_current_season
 #' @param league_id league_id
 #' @param season season
+#' @return Return a named list of data frames: CommonAllPlayers
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -60,6 +61,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param player_id player_id
+#' @return Return a named list of data frames: AvailableSeasons
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -112,6 +114,7 @@ NULL
 #' @param league_id league_id
 #' @param season season
 #' @param series_id series_id
+#' @return Return a named list of data frames: PlayoffSeries
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -167,6 +170,7 @@ NULL
 #' @param league_id league_id
 #' @param season season
 #' @param team_id team_id
+#' @return Return a named list of data frames: Coaches, CommonTeamRoster
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

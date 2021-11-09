@@ -18,6 +18,9 @@ nba_commonallplayers(
 
 \item{season}{season}
 }
+\value{
+Return a named list of data frames: CommonAllPlayers
+}
 \description{
 \strong{Get NBA Stats API All Players}
 

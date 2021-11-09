@@ -14,6 +14,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param sorter sorter
+#' @return Return a named list of data frames: LeagueGameLog
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -83,6 +84,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
+#' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -142,6 +144,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
+#' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -199,6 +202,9 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_id season_id
+#' @return Return a named list of data frames: EastConfPlayoffPicture,
+#' EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
+#' WestConfRemainingGames, WestConfStandings
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -338,6 +344,7 @@ NULL
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
 #' @param years_experience years_experience
+#' @return Return a named list of data frames: LeagueGameFinderResults
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

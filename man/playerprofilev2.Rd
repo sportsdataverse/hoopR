@@ -14,6 +14,11 @@ nba_playerprofilev2(league_id = "", per_mode = "Totals", player_id = "2544")
 
 \item{player_id}{Player ID}
 }
+\value{
+Return a named list of data frames: CareerHighs, CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason, CareerTotalsPreseason,
+CareerTotalsRegularSeason, NextGame, SeasonHighs, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
+SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
+}
 \description{
 \strong{Get NBA Stats API Player Profile V2}
 

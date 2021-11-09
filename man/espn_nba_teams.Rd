@@ -6,6 +6,9 @@
 \usage{
 espn_nba_teams()
 }
+\value{
+A teams data frame
+}
 \description{
 Get ESPN NBA team names and ids
 }

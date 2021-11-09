@@ -9,6 +9,9 @@ nba_data_pbp(game_id = "0021900001")
 \arguments{
 \item{game_id}{Game ID - 10 digits, i.e. "0021900001"}
 }
+\value{
+Returns a tibble
+}
 \description{
 \strong{Get NBA Data API Play-by-Play}
 

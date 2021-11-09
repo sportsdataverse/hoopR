@@ -11,6 +11,9 @@ kp_team_player_stats(team, year = 2021)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of team player stats data
+}
 \description{
 Get Team Player Stats
 }

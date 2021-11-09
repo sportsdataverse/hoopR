@@ -24,6 +24,7 @@ NULL
 #' @param todays_players todays_players
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: FantasyWidgetResult
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -133,6 +134,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: Lineups
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -258,6 +260,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: LeagueLineupViz
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -381,6 +384,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -479,6 +483,7 @@ NULL
 #' @param per_mode per_mode
 #' @param season season
 #' @param season_type season_type
+#' @return Returns a named list of data frames: SeasonMatchups
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -548,6 +553,7 @@ NULL
 #' @param per_mode per_mode
 #' @param season season
 #' @param season_type season_type
+#' @return Returns a named list of data frames: MatchupsRollup
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

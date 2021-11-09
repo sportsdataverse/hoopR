@@ -27,6 +27,9 @@ nba_boxscoreadvancedv2(
 
 \item{range_type}{range_type}
 }
+\value{
+Returns a named list of data frames: PlayerStats, TeamStats
+}
 \description{
 \strong{Get NBA Stats API Boxscore Advanced V2}
 

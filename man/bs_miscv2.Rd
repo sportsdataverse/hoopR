@@ -27,6 +27,9 @@ nba_boxscoremiscv2(
 
 \item{range_type}{range_type}
 }
+\value{
+Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
+}
 \description{
 \strong{Get NBA Stats API Boxscore Misc V2}
 

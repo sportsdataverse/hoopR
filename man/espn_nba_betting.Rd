@@ -9,6 +9,9 @@ espn_nba_betting(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
+}
 \description{
 Get ESPN NBA's Betting information
 }

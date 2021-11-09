@@ -14,6 +14,7 @@ NULL
 #' @param season season
 #' @param team_id team_id
 #' @param top_x top_x
+#' @return Returns a named list of data frames: DraftBoard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -80,6 +81,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
+#' @return Returns a named list of data frames: DraftCombineStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -133,6 +135,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
+#' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -186,6 +189,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
+#' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -239,6 +243,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
+#' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -290,6 +295,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
+#' @return Returns a named list of data frames: Results
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

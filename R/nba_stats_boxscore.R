@@ -12,6 +12,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return A list of data frames: PlayerStats, TeamStarterBenchStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -75,6 +76,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -135,6 +137,7 @@ NULL
 #' @rdname bs_defensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return Returns a named list of data frames: PlayerDefensiveStats, Table1
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -188,6 +191,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -251,6 +255,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -314,6 +319,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -377,6 +383,7 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @return Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -436,6 +443,7 @@ NULL
 #' @rdname bs_summaryv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary, InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -483,6 +491,7 @@ NULL
 #' @rdname bs_match
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return Returns a named list of data frames: PlayerMatchupsStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -530,6 +539,7 @@ NULL
 #' @rdname bs_pt_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -584,6 +594,7 @@ NULL
 #' @param person_2_league_id person_2_league_id
 #' @param person_2_season person_2_season
 #' @param person_2_season_type person_2_season_type
+#' @return Returns a named list of data frames: BoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -646,6 +657,7 @@ NULL
 #' @param person_2_league_id person_2_league_id
 #' @param person_2_season person_2_season
 #' @param person_2_season_type person_2_season_type
+#' @return Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -702,6 +714,7 @@ NULL
 #' @rdname hustle_bs
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @return Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

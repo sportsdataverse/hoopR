@@ -33,6 +33,9 @@ nba_draftboard(
 
 \item{top_x}{top_x}
 }
+\value{
+Returns a named list of data frames: DraftBoard
+}
 \description{
 \strong{Get NBA Stats API Draft Board}
 

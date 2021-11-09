@@ -27,6 +27,9 @@ nba_boxscoreusagev2(
 
 \item{range_type}{range_type}
 }
+\value{
+Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
+}
 \description{
 \strong{Get NBA Stats API Boxscore Usage V2}
 

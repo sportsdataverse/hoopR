@@ -12,6 +12,9 @@ nba_pbp(game_id, version = "v2")
 
 \item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
 }
+\value{
+Returns a named list of data frames: PlayByPlay
+}
 \description{
 \strong{Get NBA Stats API play-by-play}
 

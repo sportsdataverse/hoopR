@@ -93,6 +93,9 @@ nba_leaguedashteamstats(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: LeagueDashTeamStats
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Team Stats}
 

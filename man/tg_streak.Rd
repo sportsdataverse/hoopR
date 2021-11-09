@@ -573,6 +573,9 @@ nba_teamgamestreakfinder(
 
 \item{wrs_opp_tov}{wrs_opp_tov}
 }
+\value{
+Return a named list of data frames: TeamGameStreakFinderParametersResults
+}
 \description{
 \strong{Get NBA Stats API Team Game Streak Finder}
 

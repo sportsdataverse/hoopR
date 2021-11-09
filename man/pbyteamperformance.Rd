@@ -78,6 +78,10 @@ nba_playerdashboardbyteamperformance(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: OverallPlayerDashboard, PointsScoredPlayerDashboard, PontsAgainstPlayerDashboard,
+ScoreDifferentialPlayerDashboard
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard by Team Performance}
 

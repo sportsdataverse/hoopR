@@ -31,6 +31,9 @@ Only available if specific conference is defined. Only available for season afte
 
 \item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
+\value{
+Returns a tibble of player stats
+}
 \description{
 Get Player Stats Leaders by Metric
 }

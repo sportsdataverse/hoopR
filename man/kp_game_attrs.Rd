@@ -13,6 +13,9 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 'Upsets','Busts','Comeback','Window'}
 }
+\value{
+Returns a tibble with game attributes
+}
 \description{
 Get Game Attributes
 }

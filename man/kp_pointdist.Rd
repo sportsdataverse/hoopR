@@ -11,6 +11,9 @@ kp_pointdist(min_year, max_year = most_recent_mbb_season())
 
 \item{max_year}{Last year of data to pull}
 }
+\value{
+Returns a tibble of team points distributions
+}
 \description{
 Get Team Points Distribution
 }

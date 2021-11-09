@@ -12,6 +12,9 @@ nba_shotchartleaguewide(league_id = "00", season = "2020-21")
 
 \item{season}{season}
 }
+\value{
+Return a named list of data frames: League_Wide
+}
 \description{
 \strong{Get NBA Stats API Shot Chart League-Wide}
 

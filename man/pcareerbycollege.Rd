@@ -24,6 +24,9 @@ nba_playercareerbycollege(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 }
+\value{
+Return a named list of data frames: PlayerCareerByCollege
+}
 \description{
 \strong{Get NBA Stats API Player Career By College}
 

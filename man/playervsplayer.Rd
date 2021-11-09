@@ -75,6 +75,10 @@ nba_playervsplayer(
 
 \item{vs_player_id}{vs_player_id}
 }
+\value{
+Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOffCourt, ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
+ShotDistanceOverall, VsPlayerInfo
+}
 \description{
 \strong{Get NBA Stats API Player vs Player}
 

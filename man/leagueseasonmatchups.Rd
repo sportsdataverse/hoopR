@@ -33,6 +33,9 @@ nba_leagueseasonmatchups(
 
 \item{season_type}{season_type}
 }
+\value{
+Returns a named list of data frames: SeasonMatchups
+}
 \description{
 \strong{Get NBA Stats API League Season Matchups}
 

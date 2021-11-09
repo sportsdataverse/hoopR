@@ -90,6 +90,9 @@ nba_leaguelineupviz(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Returns a named list of data frames: LeagueLineupViz
+}
 \description{
 \strong{Get NBA Stats API League Lineup Visual Data}
 

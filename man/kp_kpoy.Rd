@@ -9,6 +9,9 @@ kp_kpoy(year = most_recent_mbb_season())
 \arguments{
 \item{year}{Year of data to pull (earliest year of data available: 2011)}
 }
+\value{
+Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"
+}
 \description{
 Get KPoY Leaders Tables
 }

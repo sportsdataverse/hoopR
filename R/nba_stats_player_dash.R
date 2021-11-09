@@ -30,6 +30,10 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: Last10Sec3Point2PlayerDashboard, Last10Sec3PointPlayerDashboard, Last1Min5PointPlayerDashboard,
+#' Last1MinPlusMinus5PointPlayerDashboard, Last30Sec3Point2PlayerDashboard, Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
+#' Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard, Last5MinPlusMinus5PointPlayerDashboard,
+#' OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -147,6 +151,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: ByActualMarginPlayerDashboard, ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -265,6 +270,8 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: DaysRestPlayerDashboard, LocationPlayerDashboard, MonthPlayerDashboard, OverallPlayerDashboard, PrePostAllStarPlayerDashboard,
+#' StartingPosition, WinsLossesPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -383,6 +390,8 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard, Last15PlayerDashboard, Last20PlayerDashboard,
+#' Last5PlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -500,6 +509,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: ConferencePlayerDashboard, DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -616,6 +626,8 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard, OverallPlayerDashboard,
+#' Shot5FTPlayerDashboard, Shot8FTPlayerDashboard, ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -732,6 +744,8 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: OverallPlayerDashboard, PointsScoredPlayerDashboard, PontsAgainstPlayerDashboard,
+#' ScoreDifferentialPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -848,6 +862,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -957,6 +972,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: PassesMade, PassesReceived
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1053,6 +1069,8 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: NumContestedRebounding, OverallRebounding, RebDistanceRebounding,
+#' ShotDistanceRebounding, ShotTypeRebounding
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1154,6 +1172,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: DefendingShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1255,6 +1274,8 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: ClosestDefender10ftPlusShooting, ClosestDefenderShooting, DribbleShooting,
+#' GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

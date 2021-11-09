@@ -11,6 +11,9 @@ kp_opptracker(team, year = 2021)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of team opponent tracker data
+}
 \description{
 Get KenPom's team opponent tracker page
 }

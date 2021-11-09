@@ -78,6 +78,12 @@ nba_playerdashboardbyclutch(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: Last10Sec3Point2PlayerDashboard, Last10Sec3PointPlayerDashboard, Last1Min5PointPlayerDashboard,
+Last1MinPlusMinus5PointPlayerDashboard, Last30Sec3Point2PlayerDashboard, Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
+Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard, Last5MinPlusMinus5PointPlayerDashboard,
+OverallPlayerDashboard
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard by Clutch Splits}
 

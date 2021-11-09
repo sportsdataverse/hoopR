@@ -35,6 +35,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -143,6 +144,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id game_id
 #' @param game_event_id game_event_id
+#' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -195,6 +197,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_date game_date
 #' @param league_id league_id
+#' @return Return a list of tibbles: VideoStatus
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

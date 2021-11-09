@@ -9,6 +9,9 @@ espn_mbb_betting(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
+}
 \description{
 Get ESPN MBB's Betting information
 }

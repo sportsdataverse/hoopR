@@ -63,6 +63,9 @@ nba_playerdashptshotdefend(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: DefendingShots
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Defense}
 

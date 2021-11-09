@@ -11,6 +11,9 @@ kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 
 \item{max_year}{Last year of data to pull}
 }
+\value{
+Returns a tibble of foul participation stats
+}
 \description{
 Get 2-Foul Participation Stats
 }

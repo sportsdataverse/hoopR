@@ -54,6 +54,9 @@ nba_teamdashptpass(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: PassesMade, PassesReceived
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard Player Tracking - Passing}
 

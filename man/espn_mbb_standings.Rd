@@ -9,6 +9,9 @@ espn_mbb_standings(year)
 \arguments{
 \item{year}{Either numeric or character (YYYY)}
 }
+\value{
+A standings data frame
+}
 \description{
 Get ESPN men's college basketball standings
 }

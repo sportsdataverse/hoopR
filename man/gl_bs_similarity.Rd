@@ -33,6 +33,9 @@ nba_glalumboxscoresimilarityscore(
 
 \item{person_2_season_type}{person_2_season_type}
 }
+\value{
+Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
+}
 \description{
 \strong{Get NBA Stats API G-League Alum Boxscore Similarity Score}
 

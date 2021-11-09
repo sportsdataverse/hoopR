@@ -21,6 +21,9 @@ nba_assisttracker(
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 }
+\value{
+Returns a named list of data frames: AssistTracker
+}
 \description{
 \strong{Get NBA Stats API Assist Tracker}
 

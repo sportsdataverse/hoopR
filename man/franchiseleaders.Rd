@@ -12,6 +12,9 @@ nba_franchiseleaders(league_id = "00", team_id = "1610612739")
 
 \item{team_id}{team_id}
 }
+\value{
+Returns a named list of data frames: FranchiseLeaders
+}
 \description{
 \strong{Get NBA Stats API Franchise Leaders}
 

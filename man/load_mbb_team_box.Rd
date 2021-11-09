@@ -21,6 +21,9 @@ the season data into a database (used by \code{update_mbb_db()}).}
 
 \item{tablename}{The name of the play by play data table within the database}
 }
+\value{
+Returns a tibble
+}
 \description{
 helper that loads multiple seasons from the data repo either into memory
 or writes it into a db using some forwarded arguments in the dots

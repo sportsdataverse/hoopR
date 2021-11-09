@@ -12,6 +12,9 @@ nba_commonplayerinfo(league_id = "00", player_id = "2544")
 
 \item{player_id}{player_id}
 }
+\value{
+Return a named list of data frames: AvailableSeasons
+}
 \description{
 \strong{Get NBA Stats API Player Info}
 

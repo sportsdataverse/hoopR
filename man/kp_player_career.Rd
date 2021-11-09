@@ -9,6 +9,9 @@ kp_player_career(player_id)
 \arguments{
 \item{player_id}{Player Id filter to select.}
 }
+\value{
+Returns a tibble of team player career stats
+}
 \description{
 Get KenPom's player career stats from the player page
 }

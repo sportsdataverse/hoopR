@@ -10,6 +10,9 @@ nba_playerawards(player_id)
 \arguments{
 \item{player_id}{Player ID}
 }
+\value{
+Return a named list of data frames: PlayerAwards
+}
 \description{
 \strong{Get NBA Stats API Player Awards}
 

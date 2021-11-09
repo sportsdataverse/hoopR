@@ -2,7 +2,7 @@
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of ratings
 #' @keywords Ratings
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows
@@ -94,7 +94,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of efficiency and tempo ratings
 #' @keywords Efficiency
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate mutate_at bind_rows
@@ -236,7 +236,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of four factors ratings
 #' @keywords Four Factors
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter bind_rows
@@ -332,7 +332,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of team points distributions
 #' @keywords Points
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
@@ -429,7 +429,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of heights
 #' @keywords Roster
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
@@ -572,7 +572,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#'
+#' @returns Returns a tibble of foul participation stats
 #' @keywords Foul Trouble
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
@@ -664,7 +664,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
-#'
+#' @returns Returns a tibble of team stats
 #' @keywords Team
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
@@ -825,7 +825,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = 
 #' @param conf_only Used to define whether stats should reflect conference games only.\cr
 #' Only available if specific conference is defined. Only available for season after 2013, FALSE by default.
 #' @param year Year of data to pull (earliest year of data available: 2004)
-#'
+#' @returns Returns a tibble of player stats
 #' @keywords Player
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate
@@ -959,7 +959,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 #' Get KPoY Leaders Tables
 #'
 #' @param year Year of data to pull (earliest year of data available: 2011)
-#'
+#' @returns Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"
 #' @keywords Leaders
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate

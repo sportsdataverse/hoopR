@@ -11,6 +11,9 @@ kp_gameplan(team, year = 2021)
 
 \item{year}{Year of data to pull}
 }
+\value{
+Returns a tibble of team game plans
+}
 \description{
 Get KenPom's team game plan page
 }

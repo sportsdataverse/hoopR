@@ -78,6 +78,9 @@ nba_playerdashboardbyyearoveryear(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboard
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard Year over Year}
 

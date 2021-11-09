@@ -9,6 +9,9 @@ espn_mbb_team_box(game_id)
 \arguments{
 \item{game_id}{Game ID}
 }
+\value{
+A team boxscore data frame
+}
 \description{
 Get ESPN men's college basketball team box scores
 }

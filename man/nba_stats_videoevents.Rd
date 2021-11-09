@@ -19,6 +19,11 @@ nba_videostatus(game_date = "2020-08-16", league_id = "00")
 
 \item{league_id}{league_id}
 }
+\value{
+Return a list of tibbles
+
+Return a list of tibbles: VideoStatus
+}
 \description{
 \strong{Get NBA Stats API Video Events}
 

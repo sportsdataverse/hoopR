@@ -2,7 +2,7 @@
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#'
+#' @returns Returns a tibble of game box scores
 #' @keywords Game Box Score
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
@@ -138,7 +138,7 @@ kp_box <- function(game_id, year){
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#'
+#' @returns Returns a tibble of game win probabilities
 #' @keywords Win Probability
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename

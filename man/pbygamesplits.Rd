@@ -78,6 +78,9 @@ nba_playerdashboardbygamesplits(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: ByActualMarginPlayerDashboard, ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard, OverallPlayerDashboard
+}
 \description{
 \strong{Get NBA Stats API Player Dashboard by Game Splits}
 

@@ -69,6 +69,9 @@ nba_teamgamelogs(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: TeamGameLogs
+}
 \description{
 \strong{Get NBA Stats API Team Game Logs}
 

@@ -84,6 +84,9 @@ nba_teamdashlineups(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: Lineups, Overall
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard - Lineups}
 

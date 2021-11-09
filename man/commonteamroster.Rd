@@ -18,6 +18,9 @@ nba_commonteamroster(
 
 \item{team_id}{team_id}
 }
+\value{
+Return a named list of data frames: Coaches, CommonTeamRoster
+}
 \description{
 \strong{Get NBA Stats API Team Roster}
 

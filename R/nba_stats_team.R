@@ -6,6 +6,9 @@ NULL
 #' @rdname t_details
 #' @author Saiem Gilani
 #' @param team_id Team ID
+#' @return Return a named list of data frames: TeamAwardsChampionships,
+#' TeamAwardsConf, TeamAwardsDiv, TeamBackground,
+#' TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -57,6 +60,7 @@ NULL
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @return Return a named list of data frames: TeamEstimatedMetrics
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -118,6 +122,7 @@ NULL
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param team_id Team ID
+#' @return Return a named list of data frames: TeamGameLog
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -198,6 +203,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: TeamGameLogs
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -290,6 +296,7 @@ NULL
 #' @param league_id league_id
 #' @param season_id season_id
 #' @param team_id team_id
+#' @return Return a named list of data frames: CareerLeadersByTeam
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -347,6 +354,7 @@ NULL
 #' @param team_id Team ID
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @return Return a named list of data frames: AvailableSeasons, TeamInfoCommon, TeamSeasonRanks
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -427,6 +435,8 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: OverallTeamPlayerOnOffDetails,
+#' PlayersOffCourtTeamPlayerOnOffDetails, PlayersOnCourtTeamPlayerOnOffDetails
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -543,6 +553,8 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: OverallTeamPlayerOnOffSummary,
+#' PlayersOffCourtTeamPlayerOnOffSummary, PlayersOnCourtTeamPlayerOnOffSummary
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -659,6 +671,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @return Return a named list of data frames: PlayersSeasonTotals, TeamOverall
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -756,6 +769,7 @@ NULL
 #' @param per_mode Per Mode
 #' @param team_id Team ID
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @return Return a named list of data frames: TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -838,6 +852,9 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_player_id vs_player_id
+#' @return Return a named list of data frames: OnOffCourt, Overall, ShotAreaOffCourt,
+#' ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
+#' ShotDistanceOverall, vsPlayerOverall
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -1127,6 +1144,7 @@ NULL
 #' @param wrs_opp_reb wrs_opp_reb
 #' @param wrs_opp_stl wrs_opp_stl
 #' @param wrs_opp_tov wrs_opp_tov
+#' @return Return a named list of data frames: TeamGameStreakFinderParametersResults
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

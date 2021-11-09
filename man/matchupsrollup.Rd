@@ -33,6 +33,9 @@ nba_matchupsrollup(
 
 \item{season_type}{season_type}
 }
+\value{
+Returns a named list of data frames: MatchupsRollup
+}
 \description{
 \strong{Get NBA Stats API Matchups Rollup}
 

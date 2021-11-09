@@ -78,6 +78,10 @@ nba_teamplayeronoffsummary(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: OverallTeamPlayerOnOffSummary,
+PlayersOffCourtTeamPlayerOnOffSummary, PlayersOnCourtTeamPlayerOnOffSummary
+}
 \description{
 \strong{Get NBA Stats API Team Player On/Off Summary}
 

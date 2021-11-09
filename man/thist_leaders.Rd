@@ -18,6 +18,9 @@ nba_teamhistoricalleaders(
 
 \item{team_id}{team_id}
 }
+\value{
+Return a named list of data frames: CareerLeadersByTeam
+}
 \description{
 \strong{Get NBA Stats API Team Historical Leaders}
 

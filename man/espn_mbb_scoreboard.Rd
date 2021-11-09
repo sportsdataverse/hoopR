@@ -23,6 +23,3 @@ Get ESPN men's college basketball schedule for a specific year
   try(espn_mbb_scoreboard (season = "20210215"))
 }
 }
-\author{
-Thomas Mock, you a genius for this one.
-}

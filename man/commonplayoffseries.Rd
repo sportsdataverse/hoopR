@@ -14,6 +14,9 @@ nba_commonplayoffseries(league_id = "00", season = "2020-21", series_id = "")
 
 \item{series_id}{series_id}
 }
+\value{
+Return a named list of data frames: PlayoffSeries
+}
 \description{
 \strong{Get NBA Stats API Playoff Series}
 

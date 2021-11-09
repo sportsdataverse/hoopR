@@ -78,6 +78,11 @@ nba_teamdashboardbygamesplits(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: ByActualMarginTeamDashboard,
+ByHalfTeamDashboard, ByPeriodTeamDashboard, ByScoreMarginTeamDashboard,
+OverallTeamDashboard
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard by Game Splits}
 

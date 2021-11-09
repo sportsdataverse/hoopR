@@ -21,6 +21,9 @@ nba_teaminfocommon(
 
 \item{team_id}{Team ID}
 }
+\value{
+Return a named list of data frames: AvailableSeasons, TeamInfoCommon, TeamSeasonRanks
+}
 \description{
 \strong{Get NBA Stats API Team Common Info}
 

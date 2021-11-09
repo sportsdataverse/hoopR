@@ -11,6 +11,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param team_id team_id
+#' @return Return a named list of data frames: GameByGameStats, TotalPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -79,6 +80,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
+#' @return Returns a named list of data frames: CumeStatsPlayerGames
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -148,6 +150,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param team_id team_id
+#' @return Returns a named list of data frames: GameByGameStats, TotalTeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -214,6 +217,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
+#' @return Returns a named list of data frames: CumeStatsTeamGames
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything

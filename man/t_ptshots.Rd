@@ -60,6 +60,11 @@ nba_teamdashptshots(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting, GeneralShooting, ShotClockShooting,
+TouchTimeShooting
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard Player Tracking - Shots}
 

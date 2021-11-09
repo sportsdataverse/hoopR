@@ -78,6 +78,10 @@ nba_teamdashboardbyopponent(
 
 \item{vs_division}{vs_division}
 }
+\value{
+Return a named list of data frames: ConferenceTeamDashboard,
+DivisionTeamDashboard, OpponentTeamDashboard, OverallTeamDashboard
+}
 \description{
 \strong{Get NBA Stats API Team Dashboard by Opponent}
 
