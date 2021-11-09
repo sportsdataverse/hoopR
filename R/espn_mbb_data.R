@@ -41,12 +41,12 @@ espn_mbb_game_all <- function(game_id){
 
 
       plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider(unlist(.data$participants))
+        tidyr::unnest_wider(.data$participants)
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
           dplyr::select(.data$id, .data$athlete.id) %>%
-          tidyr::unnest_wider(unlist(.data$athlete.id, use.names=FALSE),names_sep = "_")
+          tidyr::unnest_wider(.data$athlete.id, names_sep = "_")
       )
       names(aths)<-c("play.id","athlete.id.1","athlete.id.2")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
@@ -223,12 +223,12 @@ espn_mbb_pbp <- function(game_id){
 
       #---- Play-by-Play ------
       plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider(unlist(.data$participants))
+        tidyr::unnest_wider(.data$participants)
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
           dplyr::select(.data$id, .data$athlete.id) %>%
-          tidyr::unnest_wider(unlist(.data$athlete.id, use.names=FALSE),names_sep = "_")
+          tidyr::unnest_wider(.data$athlete.id, names_sep = "_")
       )
       names(aths)<-c("play.id","athlete.id.1","athlete.id.2")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
@@ -512,15 +512,16 @@ espn_mbb_teams <- function(){
 
       leagues <- jsonlite::fromJSON(resp)[["sports"]][["leagues"]][[1]][['teams']][[1]][['team']] %>%
         dplyr::group_by(.data$id) %>%
-        tidyr::unnest_wider(unlist(.data$logos, use.names=FALSE),names_sep = "_") %>%
-        tidyr::unnest_wider(.data$logos_href,names_sep = "_") %>%
+        tidyr::unnest_wider(.data$logos, names_sep = "_") %>%
+        tidyr::unnest_wider(.data$logos_href, names_sep = "_") %>%
         dplyr::select(-.data$logos_width,-.data$logos_height,
                       -.data$logos_alt, -.data$logos_rel) %>%
         dplyr::ungroup()
       if("records" %in% colnames(leagues)){
         records <- leagues$record
-        records<- records %>% tidyr::unnest_wider(.data$items) %>%
-          tidyr::unnest_wider(.data$stats,names_sep = "_") %>%
+        records<- records %>%
+          tidyr::unnest_wider(.data$items) %>%
+          tidyr::unnest_wider(.data$stats, names_sep = "_") %>%
           dplyr::mutate(row = dplyr::row_number())
         stat <- records %>%
           dplyr::group_by(.data$row) %>%
