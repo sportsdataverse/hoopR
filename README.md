@@ -35,6 +35,13 @@ data for themselves.
 
 ## Installation
 
+You can install the CRAN version of
+[**`hoopR`**](https://CRAN.R-project.org/package=hoopR) with:
+
+``` r
+install.packages("hoopR")
+```
+
 You can install the released version of
 [**`hoopR`**](https://github.com/saiemgilani/hoopR/) from
 [GitHub](https://github.com/saiemgilani/hoopR) with:
@@ -45,15 +52,6 @@ if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
 pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
-```
-
-``` r
-# if you would prefer devtools installation
-if (!requireNamespace('devtools', quietly = TRUE)){
-  install.packages('devtools')
-}
-# Alternatively, using the devtools package:
-devtools::install_github(repo = "saiemgilani/hoopR")
 ```
 
 ## Quick Start
