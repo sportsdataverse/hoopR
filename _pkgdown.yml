@@ -173,6 +173,7 @@ reference:
       - '`clean_team_names_NCAA_merge`'
       - '`csv_from_url`'
       - '`rds_from_url`'
+      - '`rejoin_schedules`'
       - '`most_recent_mbb_season`'
       - '`most_recent_nba_season`'
       - '`progressively`'
