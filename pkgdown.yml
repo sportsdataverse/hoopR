@@ -1,11 +1,11 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   getting-started-hoopR: getting-started-hoopR.html
   intro-to-hoopR: intro-to-hoopR.html
   kenpom-example-functions: kenpom-example-functions.html
-last_built: 2021-11-10T14:54Z
+last_built: 2021-12-19T14:40Z
 urls:
   reference: http://saiemgilani.github.io/hoopR/reference
   article: http://saiemgilani.github.io/hoopR/articles

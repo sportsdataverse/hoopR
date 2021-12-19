@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://saiemgilani.github.io/hoopR/404.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/getting-started-hoopR.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/intro-to-hoopR.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/articles/kenpom-example-functions.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/authors.html</loc>
+  </url>
+  <url>
     <loc>http://saiemgilani.github.io/hoopR/index.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/news/index.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/allplayers.html</loc>
@@ -191,6 +221,9 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/hustle_tl.html</loc>
+  </url>
+  <url>
+    <loc>http://saiemgilani.github.io/hoopR/reference/index.html</loc>
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/kp_arenas.html</loc>
@@ -608,14 +641,5 @@
   </url>
   <url>
     <loc>http://saiemgilani.github.io/hoopR/reference/year_to_season.html</loc>
-  </url>
-  <url>
-    <loc>http://saiemgilani.github.io/hoopR/articles/getting-started-hoopR.html</loc>
-  </url>
-  <url>
-    <loc>http://saiemgilani.github.io/hoopR/articles/intro-to-hoopR.html</loc>
-  </url>
-  <url>
-    <loc>http://saiemgilani.github.io/hoopR/articles/kenpom-example-functions.html</loc>
   </url>
 </urlset>
