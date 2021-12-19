@@ -27,6 +27,9 @@ jobs:
           extra-packages: |
             pkgdown
             animation
+            cfbfastR
+            fastRhockey
+            hoopR
             ggimage
             hadley/emo
             knitr
@@ -35,6 +38,8 @@ jobs:
             rsconnect
             tictoc
             tidyverse
+            wehoop
+            worldfootballR
             zoo
           needs: website
 
