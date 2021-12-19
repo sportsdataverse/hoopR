@@ -29,7 +29,6 @@ jobs:
             animation
             cfbfastR
             fastRhockey
-            hoopR
             ggimage
             hadley/emo
             knitr
