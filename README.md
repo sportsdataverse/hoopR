@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version-last-release/hoopR?style=for-the-badge)](https://CRAN.R-project.org/package=hoopR)
+status](https://www.r-pkg.org/badges/version-last-release/hoopR?style=for-the-badge&label=hoopR-CRAN](https://CRAN.R-project.org/package=hoopR)
 [![CRAN
 downloads](http://cranlogs.r-pkg.org/badges/grand-total/hoopR)](https://CRAN.R-project.org/package=hoopR)
 [![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR)

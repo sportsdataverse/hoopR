@@ -82,33 +82,18 @@ module.exports = {
               target: '_self',
             },
             {
+              label: 'hoopR',
+              href: 'https://hoopR.sportsdataverse.org/',
+              target: '_self',
+            },
+            {
               label: 'wehoop',
               href: 'https://wehoop.sportsdataverse.org/',
               target: '_self',
             },
             {
-              label: 'recruitR',
-              href: 'https://saiemgilani.github.io/recruitR/',
-              target: '_self',
-            },
-            {
-              label: 'puntr',
-              href: 'https://puntalytics.github.io/puntr/',
-              target: '_self',
-            },
-            {
-              label: 'gamezoneR',
-              href: 'https://jacklich10.github.io/gamezoneR/',
-              target: '_self',
-            },
-            {
-              label: 'cfbplotR',
-              href: 'https://kazink36.github.io/cfbplotR/',
-              target: '_self',
-            },
-            {
-              label: 'cfb4th',
-              href: 'https://kazink36.github.io/cfb4th/',
+              label: 'fastRhockey',
+              href: 'https://BenHowell71.github.io/fastRhockey/',
               target: '_self',
             },
             {
@@ -122,18 +107,28 @@ module.exports = {
               target: '_self',
             },
             {
-              label: 'hockeyR',
-              href: 'https://hockeyr.netlify.app/',
+              label: 'cfbplotR',
+              href: 'https://kazink36.github.io/cfbplotR/',
               target: '_self',
             },
             {
-              label: 'fastRhockey',
-              href: 'https://BenHowell71.github.io/fastRhockey/',
+              label: 'cfb4th',
+              href: 'https://kazink36.github.io/cfb4th/',
               target: '_self',
             },
             {
-              label: 'powerplay',
-              href: 'https://saiemgilani.github.io/powerplay/',
+              label: 'recruitR',
+              href: 'https://saiemgilani.github.io/recruitR/',
+              target: '_self',
+            },
+            {
+              label: 'gamezoneR',
+              href: 'https://jacklich10.github.io/gamezoneR/',
+              target: '_self',
+            },
+            {
+              label: 'puntr',
+              href: 'https://puntalytics.github.io/puntr/',
               target: '_self',
             },
             {

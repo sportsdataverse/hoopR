@@ -1,5 +1,6 @@
 url: http://saiemgilani.github.io/hoopR
 title: hoopR
+description: "Functions to Access Men's Basketball Play by Play Data"
 template:
   params:
     bootswatch: flatly
@@ -77,28 +78,26 @@ navbar:
       - text: R Packages
       - text: cfbfastR
         href: https://saiemgilani.github.io/cfbfastR/
+      - text: hoopR
+        href: https://hoopR.sportsdataverse.org/
       - text: wehoop
         href: https://wehoop.sportsdataverse.org/
-      - text: recruitR
-        href: https://saiemgilani.github.io/recruitR/
-      - text: puntr
-        href: https://puntalytics.github.io/puntr
-      - text: gamezoneR
-        href: https://jacklich10.github.io/gamezoneR/
-      - text: cfbplotR
-        href: https://kazink36.github.io/cfbplotR/
-      - text: cfb4th
-        href: https://kazink36.github.io/cfb4th/
+      - text: fastRhockey
+        href: https://BenHowell71.github.io/fastRhockey/
       - text: worldfootballR
         href: https://jaseziv.github.io/worldfootballR/
       - text: baseballr
         href: https://BillPetti.github.io/baseballr/
-      - text: hockeyR
-        href: https://hockeyr.netlify.app/
-      - text: whockeyR
-        href: https://BenHowell71.github.io/whockeyR/
-      - text: powerplay
-        href: https://saiemgilani.github.io/powerplay/
+      - text: cfbplotR
+        href: https://kazink36.github.io/cfbplotR/
+      - text: cfb4th
+        href: https://kazink36.github.io/cfb4th/
+      - text: recruitR
+        href: https://saiemgilani.github.io/recruitR/
+      - text: gamezoneR
+        href: https://jacklich10.github.io/gamezoneR/
+      - text: puntr
+        href: https://puntalytics.github.io/puntr/
       - text: --------------------------------
       - text: Python Packages
       - text: sportsdataverse-py

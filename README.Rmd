@@ -4,7 +4,7 @@ output: github_document
 
 #
 
-# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/img/logo.png" align="right" height="139"/></a>
+# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/img/logo.png" align="right"  width="20%" min-width="100px"/></a>
 ```{r, include = FALSE}
 require(knitr)
 if (!requireNamespace('issue') & !requireNamespace('pacman')){
