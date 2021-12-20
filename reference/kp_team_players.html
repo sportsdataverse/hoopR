@@ -68,9 +68,69 @@
      News
   </a>
 </li>
-<li>
-  <a></a>
-</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-project-diagram"></span>
+     
+     SDV
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="https://sportsdataverse.org/" class="external-link">SportsDataverse</a>
+    </li>
+    <li class="divider">
+    <li class="dropdown-header">R Packages</li>
+    <li>
+      <a href="https://saiemgilani.github.io/sportsdataverse-R/" class="external-link">sportsdataverse-R</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/cfbfastR/" class="external-link">cfbfastR</a>
+    </li>
+    <li>
+      <a href="https://hoopR.sportsdataverse.org/" class="external-link">hoopR</a>
+    </li>
+    <li>
+      <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
+    </li>
+    <li>
+      <a href="https://BenHowell71.github.io/fastRhockey/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+    </li>
+    <li>
+      <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
+    </li>
+    <li>
+      <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
+    </li>
+    <li>
+      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+    </li>
+    <li>
+      <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
+    </li>
+    <li>
+      <a href="https://puntalytics.github.io/puntr/" class="external-link">puntr</a>
+    </li>
+    <li class="divider">
+    <li class="dropdown-header">Python Packages</li>
+    <li>
+      <a href="https://py.sportsdataverse.org/" class="external-link">sportsdataverse-py</a>
+    </li>
+    <li class="divider">
+    <li class="dropdown-header">Node.js Packages</li>
+    <li>
+      <a href="https://saiemgilani.github.io/sportsdataverse/" class="external-link">sportsdataverse.js</a>
+    </li>
+    <li>
+      <a href="https://github.com/nntrn/nfl-nerd/" class="external-link">nfl-nerd</a>
+    </li>
+  </ul></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fas fa-database"></span>
@@ -141,29 +201,9 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="co"># \donttest{</span></span>
 <span class="r-in">    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_players</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 54</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    role      number player  ht       wt yr        g     s min_pct o_rtg poss_pct</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Major Co…      4 Scotti… 6-9     227 Fr       24     7    58.7 108.      25.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Signific…     23 MJ Wal… 6-5     213 Sr       24    23    69   106.      21.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Signific…      1 RaiQua… 6-8     260 Jr       25    24    65   110.      23.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Signific…      5 Balsa … 7-1     240 So       24    20    46.4 117.      22  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Signific…     11 Nathan… 6-5     195 Sr       19    <span style="color: #BB0000;">NA</span>    14.4 109.      21.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Role Pla…      2 Anthon… 6-6     215 Jr       21    16    55.1 122.      17.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Role Pla…      0 RayQua… 6-4     210 Sr       24    18    45.5  97.5     16.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Role Pla…     24 Sardaa… 6-6     220 Jr       25    <span style="color: #BB0000;">NA</span>    35.5 106.      17.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Role Pla…     34 Tanor … 7-2     236 Sr       23    <span style="color: #BB0000;">NA</span>    14.8  98.2     19  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Limited …     10 Malik … 6-9     225 Jr       24     4    47.8 115.      14.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Limited …     31 Wyatt … 6-8     220 Jr       25     9    34   112.      14.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Benchwar…     15 Quincy… 6-11    240 Fr       18    <span style="color: #BB0000;">NA</span>     6    95       19.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Benchwar…     12 Justin… 6-1     180 Sr        9     1     2.2 104.      27.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 43 more variables: shots_pct &lt;dbl&gt;, e_fg_pct &lt;dbl&gt;, ts_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_pct &lt;dbl&gt;, dr_pct &lt;dbl&gt;, a_rate &lt;dbl&gt;, to_rate &lt;dbl&gt;, blk_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   stl_pct &lt;dbl&gt;, f_cper40 &lt;dbl&gt;, f_dper40 &lt;dbl&gt;, ft_rate &lt;dbl&gt;, ftm &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fta &lt;dbl&gt;, ft_pct &lt;dbl&gt;, fgm_2 &lt;dbl&gt;, fga_2 &lt;dbl&gt;, fg_2_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fgm_3 &lt;dbl&gt;, fga_3 &lt;dbl&gt;, fg_3_pct &lt;dbl&gt;, min_pct_rk &lt;dbl&gt;, o_rtg_rk &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   poss_pct_rk &lt;dbl&gt;, shots_pct_rk &lt;dbl&gt;, e_fg_pct_rk &lt;dbl&gt;, ts_pct_rk &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_pct_rk &lt;dbl&gt;, dr_pct_rk &lt;dbl&gt;, a_rate_rk &lt;dbl&gt;, to_rate_rk &lt;dbl&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2021-12-20 19:32:26 - No Player Data available for Florida St. in 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in kp_team_players(team = "Florida St.", year = 2021) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   object 'kenpom' not found</span>
 <span class="r-in">  <span class="co"># }</span></span>
 <span class="r-in"></span>
 </code></pre></div>
