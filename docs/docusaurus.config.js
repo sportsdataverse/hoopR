@@ -77,6 +77,11 @@ module.exports = {
               label: 'R Packages',
             },
             {
+              label: 'sportsdataverse-R',
+              href: 'https://saiemgilani.github.io/sportsdataverse-R/',
+              target: '_self',
+            },
+            {
               label: 'cfbfastR',
               href: 'https://saiemgilani.github.io/cfbfastR/',
               target: '_self',
