@@ -69,6 +69,7 @@ navbar:
       - text: "KenPom Example Functions"
         href: articles/kenpom-example-functions.html
     network:
+     network:
       icon: "fas fa-project-diagram"
       text: " SDV"
       menu:
@@ -76,6 +77,8 @@ navbar:
         href: https://sportsdataverse.org/
       - text: --------------------------------
       - text: R Packages
+      - text: sportsdataverse-R
+        href: https://saiemgilani.github.io/sportsdataverse-R/
       - text: cfbfastR
         href: https://saiemgilani.github.io/cfbfastR/
       - text: hoopR
