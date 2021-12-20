@@ -69,7 +69,6 @@ navbar:
       - text: "KenPom Example Functions"
         href: articles/kenpom-example-functions.html
     network:
-     network:
       icon: "fas fa-project-diagram"
       text: " SDV"
       menu:
