@@ -67,6 +67,8 @@ module.exports = {
             },
             {
               label: 'Python Packages',
+              href: 'https://py.sportsdataverse.org/',
+              target: '_self',
             },
             {
               label: 'sportsdataverse-py',
@@ -75,6 +77,7 @@ module.exports = {
             },
             {
               label: 'R Packages',
+              href: 'https://saiemgilani.github.io/sportsdataverse-R/',
             },
             {
               label: 'sportsdataverse-R',
@@ -138,10 +141,11 @@ module.exports = {
             },
             {
               label: 'Node.js Packages',
+              href: 'https://js.sportsdataverse.org/',
             },
             {
               label: 'sportsdataverse.js',
-              href: 'https://saiemgilani.github.io/sportsdataverse/',
+              href: 'https://js.sportsdataverse.org/',
               target: '_self',
             },
             {
