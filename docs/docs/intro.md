@@ -1,20 +1,25 @@
-
+---
+title: Getting Started
+sidebar_label: Getting Started
+sidebar_position: 1
+---
 # 
 
-# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/img/logo.png" align="right" height="139"/></a>
+# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/img/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version-last-release/hoopR?style=for-the-badge)](https://CRAN.R-project.org/package=hoopR)
+status](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=CRAN%20version&prefix=v&query=%24.Version&url=https%3A%2F%2Fcrandb.r-pkg.org%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![CRAN
-downloads](http://cranlogs.r-pkg.org/badges/grand-total/hoopR)](https://CRAN.R-project.org/package=hoopR)
+downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=Downloads&query=%24%5B0%5D.downloads&url=https%3A%2F%2Fcranlogs.r-pkg.org%2Fdownloads%2Ftotal%2F2021-10-26%3Alast-day%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR)
 [![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/hoopR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/saiemgilani/hoopR/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/hoopR/)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
-[![Twitter Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse) 
+[![Twitter
+Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse)
 [![Contributors](https://img.shields.io/github/contributors/saiemgilani/hoopR?style=for-the-badge)](https://github.com/saiemgilani/hoopR/graphs/contributors)
 <!-- badges: end -->
 
@@ -34,6 +39,13 @@ data for themselves.
 
 ## Installation
 
+You can install the CRAN version of
+[**`hoopR`**](https://CRAN.R-project.org/package=hoopR) with:
+
+``` r
+install.packages("hoopR")
+```
+
 You can install the released version of
 [**`hoopR`**](https://github.com/saiemgilani/hoopR/) from
 [GitHub](https://github.com/saiemgilani/hoopR) with:
@@ -46,47 +58,35 @@ if (!requireNamespace('pacman', quietly = TRUE)){
 pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 ```
 
-``` r
-# if you would prefer devtools installation
-if (!requireNamespace('devtools', quietly = TRUE)){
-  install.packages('devtools')
-}
-# Alternatively, using the devtools package:
-devtools::install_github(repo = "saiemgilani/hoopR")
-```
-
 ## Quick Start
 
 ### **NBA full play-by-play seasons (2002-2021) \~ 1-2 minutes**
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 tictoc::tic()
 progressr::with_progress({
-  pbp <- load_nba_pbp(2002:2021)
+  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
 })
 tictoc::toc()
-## 66.99 sec elapsed
-length(unique(pbp$game_id))
-nrow(pbp)
 ```
+
+    ## 94.74 sec elapsed
+
+    ## 11789401 rows of NBA play-by-play data from 26035 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2021) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
 progressr::with_progress({
-  pbp <- load_mbb_pbp(2006:2021)
+  mbb_pbp <-  hoopR::load_mbb_pbp(2006:2021)
 })
 tictoc::toc()
-
-length(unique(pbp$game_id))
-nrow(pbp)
 ```
+
+    ## 180.75 sec elapsed
+
+    ## 20830156 rows of men's college basketball play-by-play data from 79388 games.
 
 ## **Documentation**
 
@@ -98,13 +98,15 @@ website](https://saiemgilani.github.io/hoopR/).
 
 [**Full News on Releases**](https://hoopr.sportsdataverse.org/CHANGELOG)
 
-# Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
+## Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse) 
+[![Twitter
+Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse)
 
-[![GitHub stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/saiemgilani/hoopR/stargazers/)
+[![GitHub
+stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/saiemgilani/hoopR/stargazers/)
 
-# **Our Authors**
+## **Our Authors**
 
 -   [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
@@ -118,7 +120,7 @@ in publications, use:
 BibTex Citation
 
 ``` bibtex
-@misc{saiemgilani2021hoopR,
+@misc{gilani_2021_hoopR,
   author = {Gilani, Saiem},
   title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
   url = {https://hoopR.sportsdataverse.org},
