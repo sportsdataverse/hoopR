@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version-last-release/hoopR?style=for-the-badge)](https://CRAN.R-project.org/package=hoopR)
+status](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=CRAN%20version&prefix=v&query=%24.Version&url=https%3A%2F%2Fcrandb.r-pkg.org%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![CRAN
-downloads](http://cranlogs.r-pkg.org/badges/grand-total/hoopR)](https://CRAN.R-project.org/package=hoopR)
+downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=Downloads&query=%24%5B0%5D.downloads&url=https%3A%2F%2Fcranlogs.r-pkg.org%2Fdownloads%2Ftotal%2F2021-10-26%3Alast-day%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![Version-Number](https://img.shields.io/github/r-package/v/saiemgilani/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/saiemgilani/hoopR)
 [![R-CMD-check](https://img.shields.io/github/workflow/status/saiemgilani/hoopR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/saiemgilani/hoopR/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/saiemgilani/hoopR/)
@@ -59,33 +59,30 @@ pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRU
 ### **NBA full play-by-play seasons (2002-2021) \~ 1-2 minutes**
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
 tictoc::tic()
 progressr::with_progress({
-  pbp <- load_nba_pbp(2002:2021)
+  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
 })
 tictoc::toc()
-## 66.99 sec elapsed
-length(unique(pbp$game_id))
-nrow(pbp)
 ```
+
+    ## 94.74 sec elapsed
+
+    ## 11789401 rows of NBA play-by-play data from 26035 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2021) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
 progressr::with_progress({
-  pbp <- load_mbb_pbp(2006:2021)
+  mbb_pbp <-  hoopR::load_mbb_pbp(2006:2021)
 })
 tictoc::toc()
-
-length(unique(pbp$game_id))
-nrow(pbp)
 ```
+
+    ## 180.75 sec elapsed
+
+    ## 20830156 rows of men's college basketball play-by-play data from 79388 games.
 
 ## **Documentation**
 
