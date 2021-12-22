@@ -36,6 +36,14 @@ navbar:
   icon: https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.ico
   title: "hoopR"
   components:
+    home:
+      title: An R package to quickly obtain clean and tidy men's basketball play by play data
+      description: Functions to Access Men's Basketball Play by Play Data
+      icon: fa-home
+      href: index.html
+      links:
+      - text: hoopR beginner's guide
+        href: articles/getting-started-hoopR.html
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: http://twitter.com/saiemgilani
@@ -107,7 +115,7 @@ navbar:
       - text: --------------------------------
       - text: Node.js Packages
       - text: sportsdataverse.js
-        href: https://saiemgilani.github.io/sportsdataverse/
+        href: https://js.sportsdataverse.org/
       - text: nfl-nerd
         href: https://github.com/nntrn/nfl-nerd/
     github:
