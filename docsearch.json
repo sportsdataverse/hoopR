@@ -2,21 +2,21 @@
   "index_name": "hoopR",
   "start_urls": [
     {
-      "url": "http://saiemgilani.github.io/hoopR/index.html",
+      "url": "https://hoopR.sportsdataverse.org/index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "http://saiemgilani.github.io/hoopR/reference",
+      "url": "https://hoopR.sportsdataverse.org/reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "http://saiemgilani.github.io/hoopR/articles",
+      "url": "https://hoopR.sportsdataverse.org/articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "http://saiemgilani.github.io/hoopR/sitemap.xml"
+    "https://hoopR.sportsdataverse.org/sitemap.xml"
   ],
   "selectors": {
     "homepage": {
