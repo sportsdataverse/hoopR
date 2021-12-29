@@ -85,9 +85,9 @@ navbar:
       - text: --------------------------------
       - text: R Packages
       - text: sportsdataverse-R
-        href: https://saiemgilani.github.io/sportsdataverse-R/
+        href: https://r.sportsdataverse.org/
       - text: cfbfastR
-        href: https://saiemgilani.github.io/cfbfastR/
+        href: https://cfbfastR.sportsdataverse.org/
       - text: hoopR
         href: https://hoopR.sportsdataverse.org/
       - text: wehoop

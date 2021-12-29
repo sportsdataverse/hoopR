@@ -1,7 +1,7 @@
 
 # 
 
-# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/img/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 
@@ -66,7 +66,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 94.74 sec elapsed
+    ## 76.3 sec elapsed
 
     ## 11789401 rows of NBA play-by-play data from 26035 games.
 
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 180.75 sec elapsed
+    ## 127.61 sec elapsed
 
     ## 20830156 rows of men's college basketball play-by-play data from 79388 games.
 
