@@ -207,9 +207,308 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_winprob</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">1238</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2021-12-22 22:40:04: Invalid arguments or no win probability data for 1238 available!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in kp_winprob(game_id = 1238, year = 2020) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   object 'kenpom' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     period     wp time_left visitor_score home_score visitor_scoring</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        1 0.5264     40.00             0          0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        1 0.5529     39.63             2          0               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        1 0.5763     39.40             2          0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        1 0.6022     39.23             4          0               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        1 0.6240     38.92             4          0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6        1 0.6021     38.58             4          0               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        1 0.5759     38.38             4          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8        1 0.6001     38.20             6          2               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        1 0.6219     37.80             6          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       1 0.5990     37.72             6          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11       1 0.6231     37.48             6          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       1 0.6462     37.38             8          2               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       1 0.6693     36.97             8          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       1 0.6477     36.83             8          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       1 0.6716     36.65             8          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       1 0.6502     36.48             8          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       1 0.6751     36.23             8          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       1 0.6998     35.95            10          2               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       1 0.7228     35.48            10          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       1 0.7448     35.47            12          2               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       1 0.7635     35.08            12          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22       1 0.7444     35.00            12          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23       1 0.7642     34.68            12          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24       1 0.7454     34.58            12          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25       1 0.7651     34.38            12          2               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26       1 0.7853     34.25            14          2               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27       1 0.7671     33.93            14          4               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       1 0.7509     33.42            14          4               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29       1 0.7291     33.15            14          6               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30       1 0.7084     32.87            14          6               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       1 0.6840     32.80            14          8               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32       1 0.7335     32.33            17          8               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33       1 0.7562     32.12            17          8               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34       1 0.7353     31.97            17          8               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35       1 0.6892     31.68            17         11               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36       1 0.6647     31.42            17         11               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37       1 0.6927     30.82            17         11               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38       1 0.6929     30.67            18         11               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39       1 0.7177     30.43            18         11               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40       1 0.7410     30.35            20         11               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41       1 0.7166     29.97            20         13               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42       1 0.6938     29.55            20         13               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43       1 0.6670     29.20            20         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44       1 0.6942     29.00            22         15               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45       1 0.7194     28.48            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46       1 0.6966     28.25            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47       1 0.7209     27.95            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48       1 0.6959     27.60            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49       1 0.7208     27.30            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50       1 0.6961     27.17            22         15               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51       1 0.6688     27.10            22         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52       1 0.6444     26.70            22         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53       1 0.6743     26.32            22         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54       1 0.6756     26.08            23         17               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55       1 0.7037     25.72            23         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56       1 0.7301     25.32            25         17               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57       1 0.7553     25.00            25         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58       1 0.7306     24.77            25         17               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59       1 0.7052     24.13            25         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60       1 0.6792     23.93            25         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61       1 0.7102     23.62            25         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62       1 0.6865     23.17            25         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63       1 0.7160     22.82            25         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64       1 0.7407     22.52            27         19               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65       1 0.7695     22.13            27         19               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66       1 0.7927     22.03            29         19               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67       1 0.7744     21.53            29         21               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68       1 0.7558     21.15            29         21               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69       1 0.7055     20.75            29         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70       1 0.6747     20.00            29         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71       2 0.6747     20.00            29         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72       2 0.7138     19.55            29         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73       2 0.7444     19.17            31         24               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74       2 0.7755     19.12            31         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75       2 0.7394     18.48            31         24               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76       2 0.7397     18.27            31         25               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77       2 0.7111     18.03            31         25               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78       2 0.7440     17.75            31         25               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79       2 0.7163     17.37            31         25               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80       2 0.7492     17.18            31         25               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81       2 0.8046     17.07            34         25               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82       2 0.7505     16.70            34         28               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83       2 0.7793     16.48            36         28               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84       2 0.7818     16.12            36         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85       2 0.8099     15.68            38         29               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86       2 0.8411     15.30            38         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87       2 0.8638     15.05            40         29               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88       2 0.8871     14.63            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89       2 0.8696     14.28            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90       2 0.8918     13.92            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91       2 0.8752     13.75            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92       2 0.8947     13.63            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93       2 0.8786     13.27            40         29               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94       2 0.8597     13.13            40         31               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95       2 0.8362     12.85            40         31               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96       2 0.8118     12.58            40         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97       2 0.8130     12.27            41         33               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98       2 0.8416     12.27            41         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99       2 0.8135     12.20            41         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100      2 0.8483     11.68            41         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101      2 0.8706     11.62            43         33               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102      2 0.8965     11.07            43         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103      2 0.9294     10.70            46         33               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104      2 0.9482     10.27            46         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105      2 0.9441      9.75            46         33               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106      2 0.9360      9.22            46         35               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107      2 0.9230      8.75            46         35               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108      2 0.9081      8.63            46         37               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109      2 0.8870      8.45            46         37               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110      2 0.8633      8.43            46         39               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111      2 0.8970      7.68            48         39               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112      2 0.8775      7.38            48         41               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113      2 0.8469      7.17            48         41               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114      2 0.8817      6.98            48         41               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115      2 0.9274      6.63            51         41               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116      2 0.9499      6.15            51         41               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117      2 0.9393      5.75            51         41               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118      2 0.9067      5.40            51         44               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119      2 0.8834      5.05            51         44               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120      2 0.9167      4.85            51         44               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121      2 0.8960      4.32            51         44               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122      2 0.9251      4.32            51         44               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123      2 0.9519      4.07            53         44               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124      2 0.9359      3.77            53         46               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125      2 0.9634      3.30            55         46               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126      2 0.9714      2.85            55         47               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127      2 0.9633      2.35            55         47               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128      2 0.9797      2.18            55         47               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129      2 0.9842      1.75            56         47               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130      2 0.9778      1.62            56         49               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131      2 0.9779      1.55            57         49               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132      2 0.9499      1.38            57         52               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133      2 0.9168      1.30            57         52               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134      2 0.8880      1.05            57         54               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135      2 0.9276      0.52            58         54               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136      2 0.9818      0.33            58         54               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137      2 0.9930      0.25            60         54               1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138      2 0.9988      0.15            60         54               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139      2 0.9978      0.08            60         54               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140      2 1.0000      0.00            60         57               0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     home_scoring possession_team possession_number game_id year</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1              0                                 0    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              0               V                 1    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3              0               H                 1    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4              0               V                 2    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              0               H                 2    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              0               V                 3    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7              1               H                 3    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8              0               V                 4    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9              0               H                 4    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10             0               V                 5    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11             0               H                 5    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12             0               V                 6    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13             0               H                 6    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14             0               V                 7    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15             0               H                 7    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16             0               V                 8    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17             0               H                 8    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18             0               V                 9    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19             0               H                 9    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20             0               V                10    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21             0               H                10    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22             0               V                11    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23             0               H                11    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24             0               V                12    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25             0               H                12    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26             0               V                13    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27             1               H                13    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28             0               V                14    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29             1               H                14    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30             0               V                15    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31             1               H                15    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32             0               V                16    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33             0               H                16    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34             0               V                17    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35             1               H                17    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36             0               V                18    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37             0               H                18    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38             0               V                19    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39             0               H                19    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40             0               V                20    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41             1               H                20    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42             0               V                21    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43             1               H                21    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44             0               V                22    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45             0               H                22    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46             0               V                23    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47             0               H                23    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48             0               V                24    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49             0               H                24    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50             0               V                25    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51             1               H                25    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52             0               V                26    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53             0               H                26    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54             0               V                27    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55             0               H                27    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56             0               V                28    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57             0               H                28    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58             0               V                29    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59             1               H                29    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60             0               V                30    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61             0               H                30    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62             0               V                31    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63             0               H                31    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64             0               V                32    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65             0               H                32    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66             0               V                33    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67             1               H                33    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68             0               V                34    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69             1               H                34    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70             0               V                35    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71             0               H                35    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72             0               H                36    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73             0               V                36    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74             0               H                37    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75             0               V                37    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76             1               H                38    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77             0               V                38    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78             0               H                39    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79             0               V                39    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80             0               H                40    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81             0               V                40    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82             1               H                41    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83             0               V                41    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84             1               H                42    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85             0               V                42    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86             0               H                43    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87             0               V                43    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88             0               H                44    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89             0               V                44    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90             0               H                45    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91             0               V                45    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92             0               H                46    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93             0               V                46    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94             1               H                47    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95             0               V                47    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96             1               H                48    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97             0               V                48    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98             0               H                49    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99             0               V                49    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100            0               H                50    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101            0               V                50    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102            0               H                51    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103            0               V                51    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104            0               H                52    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105            0               V                52    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106            1               H                53    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107            0               V                53    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108            1               H                54    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109            0               V                54    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110            1               H                55    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111            0               V                55    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112            1               H                56    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113            0               V                56    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114            0               H                57    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115            0               V                57    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116            0               H                58    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117            0               V                58    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118            1               H                59    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119            0               V                59    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120            0               H                60    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121            0               V                60    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122            0               H                61    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123            0               V                61    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124            1               H                62    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125            0               V                62    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126            1               H                63    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127            0               V                63    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128            0               H                64    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129            0               V                64    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130            1               H                65    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131            0               V                65    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132            1               H                66    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133            0               V                66    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134            1               H                67    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135            0               V                67    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136            0               H                68    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137            0               V                68    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138            0               H                69    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139            0               V                69    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140            1               H                70    1238 2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   game_id year                 full_date       date game_time</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    1238 2020 Friday, November 29, 2019 2019-11-29   7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        venue          city       team1 team1score team1_rk</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 The Arena at NW Florida St Niceville, FL Florida St.         60       16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       team2 team2score team2_rk dominance_season_rk tension_season_rk</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Tennessee         57       21                2265              2424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   excitement_season_rk lead_changes_season_rk minimum_wp_season_rk dominance_rk</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                 2519                   2503                 2803        99999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   tension_rk excitement_rk lead_changes_rk minimum_wp_rk dominance tension</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      99999         99999           99999         99999      1.08    1.18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   excitement favchg min_wp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       1.07      0 0.5264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   start   end visitor home</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 39.63 34.25      14    2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
