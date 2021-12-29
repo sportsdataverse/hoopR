@@ -1,7 +1,7 @@
 
 # 
 
-# hoopR <a href='https://hoopr.sportsdataverse.org/'><img src="https://hoopr.sportsdataverse.org/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/saiemgilani/hoopR/master/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 
@@ -19,12 +19,12 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 [![Contributors](https://img.shields.io/github/contributors/saiemgilani/hoopR?style=for-the-badge)](https://github.com/saiemgilani/hoopR/graphs/contributors)
 <!-- badges: end -->
 
-[**`hoopR`**](https://hoopr.sportsdataverse.org/) is an R package for
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
 working with men’s basketball data.
 
 The package has functions to access **live play by play and box score**
 data from ESPN with shot locations when available. As of version 1.3.0,
-[**`hoopR`**](https://hoopr.sportsdataverse.org/) is also a full NBA
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA
 Stats API wrapper with 127 functions added in this release.
 
 It is additionally a scraping and aggregating interface for Ken
@@ -66,7 +66,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 76.3 sec elapsed
+    ## 79.18 sec elapsed
 
     ## 11789401 rows of NBA play-by-play data from 26035 games.
 
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 127.61 sec elapsed
+    ## 135 sec elapsed
 
     ## 20830156 rows of men's college basketball play-by-play data from 79388 games.
 
@@ -88,11 +88,12 @@ tictoc::toc()
 
 For more information on the package and function reference, please see
 the [**`hoopR`** documentation
-website](https://saiemgilani.github.io/hoopR/).
+website](https://hoopR.sportsdataverse.org).
 
 ## **Breaking Changes**
 
-[**Full News on Releases**](https://hoopr.sportsdataverse.org/CHANGELOG)
+[**Full News on
+Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 
 ## Follow the [SportsDataverse](https://twitter.com/SportsDataverse) on Twitter and star this repo
 
@@ -110,7 +111,7 @@ stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=
 
 ## **Citations**
 
-To cite the [**`hoopR`**](https://hoopr.sportsdataverse.org) R package
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org) R package
 in publications, use:
 
 BibTex Citation
