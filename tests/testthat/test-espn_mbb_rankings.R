@@ -16,7 +16,7 @@ test_that("ESPN - Get MBB rankings", {
     'season_start_date', 'season_end_date',
     'season_display_name', 'season_type_type',
     'season_type_name', 'season_type_abbreviation',
-    'first_occurrence_type', 'first_occurrence_value'
+    'season_futures_ref', 'first_occurrence_type', 'first_occurrence_value'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')
