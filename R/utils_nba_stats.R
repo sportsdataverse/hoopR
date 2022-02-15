@@ -182,6 +182,19 @@ pad_id <- function(id = 21601112) {
     glue("{start}{id}") %>% as.character()
 }
 
+pad_time <- function(time = 1) {
+  zeros <-
+    4 - nchar(time)
+
+  if (zeros == 0) {
+    return(time)
+  }
+
+  start <-
+    rep("0", times = zeros) %>% stringr::str_c(collapse = "")
+  glue("{start}{time}") %>% as.character()
+}
+
 #' @title year to season (XXXX -> XXXX-YY)
 #' @param year Four digit year (XXXX)
 #' @importFrom dplyr mutate filter select left_join
