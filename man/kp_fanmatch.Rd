@@ -4,7 +4,7 @@
 \alias{kp_fanmatch}
 \title{Get FanMatch by date}
 \usage{
-kp_fanmatch(date = "2020-02-12")
+kp_fanmatch(date = "2022-02-22")
 }
 \arguments{
 \item{date}{Date of games to pull (YYYY-MM-DD)}
@@ -35,7 +35,7 @@ Get FanMatch by date
 }
 \examples{
 \donttest{
-  try(kp_fanmatch(date="2020-03-10"))
+  try(kp_fanmatch(date="2022-02-22"))
 }
 }
 \keyword{FanMatch}
