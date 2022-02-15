@@ -14,7 +14,7 @@ test_that("ESPN - Get MBB scoreboard", {
     'away_team_abb', 'away_team_id',
     'away_team_location', 'away_team_full',
     'away_team_color', 'away_score', 'away_win',
-    'away_record', 'status_name', 'start_date'
+    'away_record', 'notes', 'status_name', 'start_date'
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')
