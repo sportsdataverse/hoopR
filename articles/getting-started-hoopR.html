@@ -52,7 +52,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
       </span>
     </div>
 
@@ -240,22 +240,22 @@
     
 <p>Welcome folks,</p>
 <p>I’m Saiem Gilani, one of the <a href="https://saiemgilani.github.io/hoopR/authors.html" title="Authors and contributors to hoopR" class="external-link">authors</a> of <a href="https://saiemgilani.github.io/hoopR/" class="external-link"><code>hoopR</code></a>, and I hope to give the community a high-quality resource for accessing men’s basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.</p>
-<div class="section level2">
-<h2 id="install-hoopr">
+<div class="section level3">
+<h3 id="install-hoopr">
 <strong>Install</strong> <a href="https://saiemgilani.github.io/hoopR/" class="external-link"><strong><code>hoopR</code></strong></a><a class="anchor" aria-label="anchor" href="#install-hoopr"></a>
-</h2>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># You can install using the pacman package using the following code:</span>
 <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">'pacman'</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'pacman'</span><span class="op">)</span>
 <span class="op">}</span>
-<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load_current_gh.html" class="external-link">p_load_current_gh</a></span><span class="op">(</span><span class="st">"saiemgilani/hoopR"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span>, update <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">pacman</span><span class="fu">::</span><span class="fu">p_load_current_gh</span><span class="op">(</span><span class="st">"saiemgilani/hoopR"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span>, update <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
-<span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html" class="external-link">p_load</a></span><span class="op">(</span><span class="va">tidyverse</span>, <span class="va">zoo</span>, <span class="va">ggimage</span>, <span class="va">gt</span><span class="op">)</span></code></pre></div>
-<div class="section level3">
-<h3 id="the-data">
+<span class="fu">pacman</span><span class="fu">::</span><span class="fu">p_load</span><span class="op">(</span><span class="va">tidyverse</span>, <span class="va">zoo</span>, <span class="va">ggimage</span>, <span class="va">gt</span><span class="op">)</span></code></pre></div>
+<div class="section level4">
+<h4 id="the-data">
 <strong>The Data</strong><a class="anchor" aria-label="anchor" href="#the-data"></a>
-</h3>
+</h4>
 <p>There are generally speaking <strong>five</strong> men’s basketball data sources accessed from this package:</p>
 <ul>
 <li>
@@ -267,24 +267,24 @@
 <a href="https://kenpom.com" class="external-link">KenPom</a> (Requires subscription access)</li>
 <li><a href="https://ncaa.com" class="external-link">NCAA</a></li>
 </ul>
-<div class="section level4">
-<h4 id="function-names-indicate-the-data-source">
+<div class="section level5">
+<h5 id="function-names-indicate-the-data-source">
 <strong>Function names indicate the data source</strong><a class="anchor" aria-label="anchor" href="#function-names-indicate-the-data-source"></a>
-</h4>
+</h5>
 <ul>
 <li><p>Functions that use the <a href="https://github.com/saiemgilani/hoopR-data" class="external-link"><code>hoopR-data</code> repository</a> will contain <code>load_</code> or <code>update_</code> in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.</p></li>
-<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.5.0, the package exports 127 functions covering the NBA Stats API</p></li>
-<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.5.0, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
-<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.5.0, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
-<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.5.0, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
+<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.5.1, the package exports 127 functions covering the NBA Stats API</p></li>
+<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.5.1, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
+<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.5.1, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
+<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.5.1, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
 </ul>
 </div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="quick-start">
+<div class="section level3">
+<h3 id="quick-start">
 <strong>Quick Start</strong><a class="anchor" aria-label="anchor" href="#quick-start"></a>
-</h2>
+</h3>
 <p>For the sake of your R session, we will only look at the previous 5 years of data, but I have indicated the years to which the data goes back to. ### <strong>NBA play-by-plays (2002-2021) ~ 60-120 seconds</strong></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
@@ -292,12 +292,12 @@
   <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 45.851 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 62.177 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 3743046 rows of nba play-by-play data from 8040 games.</span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_pbp</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_pbp</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 3,743,046</span>
 <span class="co">## Columns: 55</span>
 <span class="co">## $ shooting_play                   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, …</span>
@@ -355,10 +355,10 @@
 <span class="co">## $ end_game_seconds_remaining      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2400, 2520, 2501, 2498, 2481, 2460, 24…</span>
 <span class="co">## $ period                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</span>
 <span class="co">## $ type_abbreviation               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></code></pre>
-<div class="section level3">
-<h3 id="nba-team-box-scores-2002-2021-5-30-seconds">
+<div class="section level4">
+<h4 id="nba-team-box-scores-2002-2021-5-30-seconds">
 <strong>NBA team box scores (2002-2021) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-team-box-scores-2002-2021-5-30-seconds"></a>
-</h3>
+</h4>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
@@ -366,12 +366,12 @@
 <span class="op">}</span><span class="op">)</span>
 
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 2.254 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 5.826 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 16124 rows of NBA team boxscore data from 8062 games.</span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 16,124</span>
 <span class="co">## Columns: 43</span>
 <span class="co">## $ team_short_display_name                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Piston…</span>
@@ -418,22 +418,22 @@
 <span class="co">## $ season_type                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2…</span>
 <span class="co">## $ game_date                                                      <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-1…</span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="nba-player-box-scores-2002-2021-5-30-seconds">
+<div class="section level4">
+<h4 id="nba-player-box-scores-2002-2021-5-30-seconds">
 <strong>NBA player box scores (2002-2021) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scores-2002-2021-5-30-seconds"></a>
-</h3>
+</h4>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
   <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 3.721 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 8.446 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 174366 rows of NBA player boxscore data from 8064 games.</span></code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_player_box</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_player_box</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 174,366</span>
 <span class="co">## Columns: 35</span>
 <span class="co">## $ athlete_display_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Ersan Ilyasova", "Marcus Morris Sr.", "…</span>
@@ -472,22 +472,22 @@
 <span class="co">## $ season_type                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…</span>
 <span class="co">## $ game_date                     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-10-28, 2015-10-28, 2015-10-28, 201…</span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="mens-college-basketball-play-by-plays-2006-2021-120-180-seconds">
+<div class="section level4">
+<h4 id="mens-college-basketball-play-by-plays-2006-2021-120-180-seconds">
 <strong>Men’s college basketball play-by-plays (2006-2021) ~ 120-180 seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-play-by-plays-2006-2021-120-180-seconds"></a>
-</h3>
+</h4>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
   <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 137.817 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 126.607 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 10135443 rows of men's college basketball play-by-play data from 30950 games.</span></code></pre>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_pbp</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_pbp</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 10,135,443</span>
 <span class="co">## Columns: 54</span>
 <span class="co">## $ shooting_play                   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, TRUE, TRUE, FALSE, TRUE, FALSE,…</span>
@@ -545,22 +545,22 @@
 <span class="co">## $ end_game_seconds_remaining      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 2400, 3000, 2980, 2959, 2959, 2954, 29…</span>
 <span class="co">## $ period                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="mens-college-basketball-team-box-scores-2003-2021-5-30-seconds">
+<div class="section level4">
+<h4 id="mens-college-basketball-team-box-scores-2003-2021-5-30-seconds">
 <strong>Men’s college basketball team box scores (2003-2021) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-team-box-scores-2003-2021-5-30-seconds"></a>
-</h3>
+</h4>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
   <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 3.897 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 3.255 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 66856 rows of men's college basketball team boxscore data from 33428 games.</span></code></pre>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_team_box</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_team_box</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 66,856</span>
 <span class="co">## Columns: 41</span>
 <span class="co">## $ team_short_display_name                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Kentuc…</span>
@@ -605,22 +605,22 @@
 <span class="co">## $ season_type                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2…</span>
 <span class="co">## $ game_date                                                      <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-1…</span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="mens-college-basketball-player-box-scores-2003-2021-5-30-seconds">
+<div class="section level4">
+<h4 id="mens-college-basketball-player-box-scores-2003-2021-5-30-seconds">
 <strong>Men’s college basketball player box scores (2003-2021) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-player-box-scores-2003-2021-5-30-seconds"></a>
-</h3>
+</h4>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
   <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 10.26 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 9.584 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 677446 rows of men's college basketball player boxscore data from 33441 games.</span></code></pre>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_player_box</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_player_box</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## Rows: 677,446</span>
 <span class="co">## Columns: 34</span>
 <span class="co">## $ athlete_display_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Skal Labissiere", "Marcus Lee", "Jamal …</span>
@@ -659,10 +659,10 @@
 <span class="co">## $ game_date                     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-11-18, 2015-11-18, 2015-11-18, 201…</span></code></pre>
 </div>
 </div>
-<div class="section level1">
-<h1 id="our-authors">
+<div class="section level2">
+<h2 id="our-authors">
 <strong>Our Authors</strong><a class="anchor" aria-label="anchor" href="#our-authors"></a>
-</h1>
+</h2>
 <ul>
 <li>
 <a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a><br><a href="https://twitter.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge" alt="@saiemgilani"></a> <a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
@@ -688,7 +688,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

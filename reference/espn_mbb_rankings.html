@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
       </span>
     </div>
 
@@ -205,20 +205,20 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Get current AP and Coaches Poll rankings</span></span>
 <span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_rankings</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 77 × 34</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 93 × 35</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    id    name   short_name type  headline short_headline current previous points</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        1        1   <span style="text-decoration: underline;">1</span>525</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        2        2   <span style="text-decoration: underline;">1</span>448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        3        3   <span style="text-decoration: underline;">1</span>371</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        4        4   <span style="text-decoration: underline;">1</span>335</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        5        5   <span style="text-decoration: underline;">1</span>296</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        6        7   <span style="text-decoration: underline;">1</span>233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        7        8    994</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        8        9    985</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8        9        6    973</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 8       10       11    901</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 67 more rows, and 25 more variables: first_place_votes &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       1        2   <span style="text-decoration: underline;">1</span>496</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       2        1   <span style="text-decoration: underline;">1</span>413</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       3        4   <span style="text-decoration: underline;">1</span>370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       4        5   <span style="text-decoration: underline;">1</span>350</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       5        3   <span style="text-decoration: underline;">1</span>163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       6        8   <span style="text-decoration: underline;">1</span>151</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       7       10   <span style="text-decoration: underline;">1</span>148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       8       11   <span style="text-decoration: underline;">1</span>093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15       9        7   <span style="text-decoration: underline;">1</span>073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1     AP To… AP Poll    ap    2022 NC… 2022 : Week 15      10       15    911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 83 more rows, and 26 more variables: first_place_votes &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   trend &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>
@@ -240,7 +240,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>

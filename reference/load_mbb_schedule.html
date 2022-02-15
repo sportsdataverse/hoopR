@@ -24,7 +24,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
       </span>
     </div>
 
@@ -220,18 +220,18 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in"><span class="fu">load_mbb_schedule</span><span class="op">(</span><span class="fl">2021</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,208 × 66</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         id uid    date  attendance timeValid neutralSite conferenceCompe… recent</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…       <span style="text-decoration: underline;">1</span>027 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…        737 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…        935 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…        751 TRUE      TRUE        FALSE            FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  4.01<span style="color: #949494;">e</span>8 s:40~… 2021…       <span style="text-decoration: underline;">1</span>044 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          id uid   date  attendance timeValid neutralSite conferenceCompe… recent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…       <span style="text-decoration: underline;">1</span>027 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…        737 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…        935 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…          0 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…        751 TRUE      TRUE        FALSE            FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   4.01<span style="color: #949494;">e</span>8 s:40… 2021…       <span style="text-decoration: underline;">1</span>044 TRUE      TRUE        FALSE            FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 5,198 more rows, and 58 more variables: notes &lt;chr&gt;, startDate &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   type.id &lt;int&gt;, type.abbreviation &lt;chr&gt;, venue.id &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue.fullName &lt;chr&gt;, venue.address.city &lt;chr&gt;, venue.address.state &lt;chr&gt;,</span></span>
@@ -254,7 +254,7 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer></div>

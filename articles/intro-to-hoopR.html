@@ -52,7 +52,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
       </span>
     </div>
 
@@ -337,7 +337,8 @@
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>metric <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">metric</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>team <span class="op">=</span> <span class="va">.data</span><span class="op">$</span><span class="va">conf</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.</span></code></pre>
+<pre><code><span class="co">## `summarise()` has grouped output by 'year'. You can override using the</span>
+<span class="co">## `.groups` argument.</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rtgs_fsu</span> <span class="op">&lt;-</span> <span class="va">rtgs</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">team</span> <span class="op">==</span> <span class="va">team1</span><span class="op">)</span> <span class="op">%&gt;%</span> 
@@ -493,10 +494,10 @@
 <code class="sourceCode R"><span class="fu">saveGIF</span><span class="op">(</span><span class="fu">draw_gif</span><span class="op">(</span><span class="op">)</span>, interval <span class="op">=</span> <span class="fl">1</span>, movie.name <span class="op">=</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"animated_{metric}.gif"</span><span class="op">)</span>,
         ani.width <span class="op">=</span> <span class="fl">960</span>, ani.height <span class="op">=</span> <span class="fl">540</span>, ani.res <span class="op">=</span> <span class="fl">110</span><span class="op">)</span></code></pre></div>
 <div class="figure">
-<img src="https://github.com/saiemgilani/hoopR/blob/master/reference/figures/animated_adj_em.gif?raw=true" alt=""><p class="caption">Result</p>
+<img src="https://github.com/saiemgilani/hoopR/blob/master/man/figures/animated_adj_em.gif?raw=true" alt=""><p class="caption">Result</p>
 </div>
 <div class="figure">
-<img src="http://raw.githubusercontent.com/saiemgilani/hoopR/master/reference/figures/site_navigation.png" alt=""><p class="caption">site_navigation</p>
+<img src="http://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/site_navigation.png" alt=""><p class="caption">site_navigation</p>
 </div>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">effs</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/kp_efficiency.html">kp_efficiency</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2021</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span>
@@ -576,8 +577,8 @@
 <span class="co">## $ sg_hgt_rk     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3, 2, 8, 7, 34, 14, 53, 6, 16, 1, 64, 124, 16, 24, 27, 2…</span>
 <span class="co">## $ pg_hgt        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 3.8, 0.9, 1.2, 2.9, 2.3, 1.2, 1.0, 1.7, 2.6, 2.2, 2.3, 0…</span>
 <span class="co">## $ pg_hgt_rk     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1, 111, 91, 5, 12, 92, 103, 40, 8, 23, 12, 146, 11, 24, …</span>
-<span class="co">## $ experience    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.96, 1.70, 2.38, 1.96, 1.00, 1.15, 1.02, 1.34, 1.05, 0.…</span>
-<span class="co">## $ experience_rk <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 102, 203, 20, 103, 335, 316, 331, 288, 326, 346, 89, 311…</span>
+<span class="co">## $ experience    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 1.39, 1.95, 2.26, 2.05, 1.19, 1.49, 1.19, 1.71, 0.78, 0.…</span>
+<span class="co">## $ experience_rk <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 219, 80, 26, 60, 264, 197, 263, 133, 327, 335, 234, 248,…</span>
 <span class="co">## $ bench         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 39.2, 28.7, 24.2, 30.7, 31.7, 28.8, 34.8, 38.0, 39.4, 33…</span>
 <span class="co">## $ bench_rk      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 26, 232, 312, 177, 158, 231, 84, 37, 24, 116, 160, 118, …</span>
 <span class="co">## $ continuity    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 55.0, 20.7, 51.6, 63.1, 7.6, 36.6, 47.0, 59.0, 42.7, 21.…</span>
@@ -621,7 +622,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
