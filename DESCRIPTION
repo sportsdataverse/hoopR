@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Functions to Access Men's Basketball Play by Play Data
-Version: 1.5.1
+Version: 1.6.0
 Authors@R: 
     c(person(given = "Saiem",
            family = "Gilani",
@@ -28,6 +28,7 @@ Imports:
     furrr,
     future,
     glue,
+    httr (>= 0.5),
     janitor,
     jsonlite,
     magrittr,
@@ -45,7 +46,6 @@ Suggests:
     DBI,
     ggplot2,
     ggrepel,
-    httr (>= 0.5),
     purrr (>= 0.3.0),
     qs (>= 0.25.1),
     rmarkdown,
