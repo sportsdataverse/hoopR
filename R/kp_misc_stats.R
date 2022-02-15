@@ -455,25 +455,29 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 #'
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'
-#' @return A data frame 16 columns:
-#' \describe{
-#'   \item{\code{Prediction}}{character.}
-#'   \item{\code{Time(ET)}}{character.}
-#'   \item{\code{Location}}{character.}
-#'   \item{\code{ThrillScore}}{double.}
-#'   \item{\code{Comeback}}{double.}
-#'   \item{\code{Excitement}}{double.}
-#'   \item{\code{WinRk}}{character.}
-#'   \item{\code{WinTeam}}{character.}
-#'   \item{\code{WinScore}}{double.}
-#'   \item{\code{LossRk}}{character.}
-#'   \item{\code{LossTeam}}{character.}
-#'   \item{\code{LossScore}}{double.}
-#'   \item{\code{Poss}}{double.}
-#'   \item{\code{MVP}}{character.}
-#'   \item{\code{Event}}{character.}
-#'   \item{\code{Date}}{character.}
-#' }
+#' @return A data frame 20 columns:
+#'  |col_name     |types     |
+#'  |:------------|:---------|
+#'  |prediction   |character |
+#'  |time_et      |character |
+#'  |location     |character |
+#'  |thrill_score |numeric   |
+#'  |comeback     |numeric   |
+#'  |excitement   |numeric   |
+#'  |road_rk      |numeric   |
+#'  |road_team    |character |
+#'  |home_rk      |numeric   |
+#'  |home_team    |character |
+#'  |win_rk       |numeric   |
+#'  |win_team     |character |
+#'  |win_score    |numeric   |
+#'  |loss_rk      |numeric   |
+#'  |loss_team    |character |
+#'  |loss_score   |numeric   |
+#'  |poss         |numeric   |
+#'  |mvp          |character |
+#'  |event        |character |
+#'  |date         |character |
 #'
 #' @keywords FanMatch
 #' @importFrom cli cli_abort
@@ -485,10 +489,10 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_fanmatch(date="2020-03-10"))
+#'   try(kp_fanmatch(date="2022-02-22"))
 #' }
 
-kp_fanmatch <- function(date="2020-02-12"){
+kp_fanmatch <- function(date="2022-02-22"){
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -506,6 +510,30 @@ kp_fanmatch <- function(date="2020-02-12"){
         rvest::html_table()
 
       colnames(x) <- header_cols
+      x <- x %>%
+        dplyr::mutate(
+          road_rk = stringr::str_extract(stringr::str_remove(
+            stringr::str_extract(.data$Game,".+(?<= at)|.+(?<= vs.)"),
+              " at| vs."
+            ),"\\d+"
+          ),
+          road_team = stringr::str_remove(stringr::str_extract(
+            stringr::str_extract(.data$Game,".+(?<= at)|.+(?<= vs.)"),
+            ".+(?= at)|.+(?= vs.)"
+          ),"\\d+ "),
+          home_rk = stringr::str_extract(stringr::str_remove(
+            stringr::str_extract(.data$Game,"( at ).+|( vs. ).+"),
+            " at | vs. "
+          ),"\\d+"
+          ),
+          home_team = stringr::str_remove(
+            stringr::str_remove(
+              stringr::str_extract(
+                stringr::str_extract(.data$Game,"( at ).+|( vs. ).+"),
+                "( at ).+|( vs. ).+"),
+              " \\d+ | at | vs. "),
+            "\\d+ ")
+        )
       suppressWarnings(
         x <- x %>%
           tidyr::separate(.data$Game,
@@ -515,18 +543,18 @@ kp_fanmatch <- function(date="2020-02-12"){
 
       x <- x %>%
         dplyr::mutate(
-          WinRk = stringr::str_extract(
-            stringr::str_extract(.data$Winner,"[\\w]+"),"\\d{1,3}+"),
-          WinTeam = stringr::str_extract(
-            stringr::str_extract(.data$Winner,'[^\\d]+'),".+"),
-          WinScore = stringr::str_extract(
-            stringi::stri_extract_last_regex(.data$Winner,'[\\d]+'),"\\d{1,3}+"),
+          WinRk = stringr::str_trim(stringr::str_extract(
+            stringr::str_extract(.data$Winner,"[\\w]+"),"\\d{1,3}+")),
+          WinTeam = stringr::str_trim(stringr::str_remove(stringr::str_extract(
+            stringr::str_extract(.data$Winner,'[^\\d]+'),".+")," at ")),
+          WinScore = stringr::str_trim(stringr::str_extract(
+            stringi::stri_extract_last_regex(.data$Winner,'[\\d]+'),"\\d{1,3}+")),
           Loser = stringr::str_extract(
             stringr::str_extract(.data$col,'[^\\[]+'),".+"),
-          LossRk = stringr::str_extract(
-            stringr::str_extract(.data$Loser,"[\\w]+"),"\\d{1,3}+"),
+          LossRk = stringr::str_trim(stringr::str_extract(
+            stringr::str_extract(.data$Loser,"[\\w]+"),"\\d{1,3}+")),
           LossTeam =
-            stringr::str_match(.data$Loser,'\\d{1,3}\\s(.*?)\\s\\d{1,3}')[,2],
+            stringr::str_trim(stringr::str_match(.data$Loser,'\\d{1,3}\\s(.*?)\\s\\d{1,3}')[,2]),
           LossScore = stringr::str_extract(
             stringi::stri_extract_last_regex(.data$Loser,'[\\d]+'),"\\d{1,3}+"),
           Poss = stringr::str_match(.data$col,'\\[(.*?)\\]')[,2],
@@ -538,11 +566,13 @@ kp_fanmatch <- function(date="2020-02-12"){
                          "Date" = date)
       suppressWarnings(
         x <- x %>%
-          dplyr::filter(!is.na(as.numeric(.data$Poss)))
+          dplyr::filter(!is.na(as.numeric(.data$ThrillScore)))
       )
       ### Store Data
       x <- x  %>%
         dplyr::select(-.data$col,-.data$Winner,-.data$Loser,
+                      .data$road_rk, .data$road_team,
+                      .data$home_rk, .data$home_team,
                       .data$WinRk, .data$WinTeam, .data$WinScore,
                       .data$LossRk, .data$LossTeam, .data$LossScore,
                       .data$Poss, .data$Prediction, .data$ThrillScore,
@@ -550,7 +580,7 @@ kp_fanmatch <- function(date="2020-02-12"){
                       .data$Location, "Time(ET)", .data$Event, .data$Date)
       suppressWarnings(
         kenpom <- x %>%
-          dplyr::mutate_at(c("WinScore","LossScore","Poss","ThrillScore","Comeback",
+          dplyr::mutate_at(c("road_rk","home_rk","WinRk","WinScore", "LossRk","LossScore","Poss","ThrillScore","Comeback",
                              "Excitement"), as.numeric) %>%
           janitor::clean_names()
       )
