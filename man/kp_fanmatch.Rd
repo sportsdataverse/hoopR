@@ -10,25 +10,29 @@ kp_fanmatch(date = "2022-02-22")
 \item{date}{Date of games to pull (YYYY-MM-DD)}
 }
 \value{
-A data frame 16 columns:
-\describe{
-\item{\code{Prediction}}{character.}
-\item{\code{Time(ET)}}{character.}
-\item{\code{Location}}{character.}
-\item{\code{ThrillScore}}{double.}
-\item{\code{Comeback}}{double.}
-\item{\code{Excitement}}{double.}
-\item{\code{WinRk}}{character.}
-\item{\code{WinTeam}}{character.}
-\item{\code{WinScore}}{double.}
-\item{\code{LossRk}}{character.}
-\item{\code{LossTeam}}{character.}
-\item{\code{LossScore}}{double.}
-\item{\code{Poss}}{double.}
-\item{\code{MVP}}{character.}
-\item{\code{Event}}{character.}
-\item{\code{Date}}{character.}
-}
+A data frame 20 columns:
+|col_name     |types     |
+|:------------|:---------|
+|prediction   |character |
+|time_et      |character |
+|location     |character |
+|thrill_score |numeric   |
+|comeback     |numeric   |
+|excitement   |numeric   |
+|road_rk      |numeric   |
+|road_team    |character |
+|home_rk      |numeric   |
+|home_team    |character |
+|win_rk       |numeric   |
+|win_team     |character |
+|win_score    |numeric   |
+|loss_rk      |numeric   |
+|loss_team    |character |
+|loss_score   |numeric   |
+|poss         |numeric   |
+|mvp          |character |
+|event        |character |
+|date         |character |
 }
 \description{
 Get FanMatch by date
