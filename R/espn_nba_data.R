@@ -553,15 +553,15 @@ espn_nba_teams <- function(){
 #'
 #' # Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)
 #' \donttest{
-#'   try(espn_nba_scoreboard (season = "20210215"))
+#'   try(espn_nba_scoreboard (season = "20220215"))
 #' }
 
 espn_nba_scoreboard <- function(season){
 
   max_year <- substr(Sys.Date(), 1,4)
 
-  if(!(as.integer(substr(season, 1, 4)) %in% c(2001:max_year))){
-    message(paste("Error: Season must be between 2001 and", max_year))
+  if(!(as.integer(substr(season, 1, 4)) > 2001)){
+    message(paste("Error: Season must be between 2001 and", max_year + 1))
   }
 
   # year > 2000
