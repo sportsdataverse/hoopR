@@ -663,7 +663,6 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @param defense Choose whether to pull offense(default) with FALSE or defense with TRUE
 #' @returns Returns a tibble of team stats
 #' @keywords Team
 #' @importFrom cli cli_abort
@@ -674,10 +673,10 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_teamstats(min_year = 2019, max_year =2021, defense = FALSE))
+#'  try(kp_teamstats(min_year = 2019, max_year =2021))
 #' }
 
-kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = FALSE){
+kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -780,15 +779,21 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season(), defense = 
               "Def.A.Pct", "Def.A.Pct.Rk",
               "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
               "AdjD", "AdjD.Rk"), as.numeric) %>%
+          dplyr::mutate(
+            "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
+            "Year" = year) %>%
           as.data.frame()
 
-        y <- y %>% dplyr::select(-.data$Team, -.data$Conf)
-        z <- dplyr::bind_cols(x, y)
+
 
         ### Store Data
         if(year == min_year) {
-          kenpom <- z
+          kenpom <- x %>%
+            dplyr::left_join(y, by = c("Team","Conf", "Year"))
         }else {
+          z <- x %>%
+            dplyr::left_join(y, by = c("Team","Conf", "Year"))
           kenpom <- dplyr::bind_rows(kenpom, z)
         }
       }

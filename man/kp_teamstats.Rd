@@ -4,14 +4,12 @@
 \alias{kp_teamstats}
 \title{Get Team Stats}
 \usage{
-kp_teamstats(min_year, max_year = most_recent_mbb_season(), defense = FALSE)
+kp_teamstats(min_year, max_year = most_recent_mbb_season())
 }
 \arguments{
 \item{min_year}{First year of data to pull}
 
 \item{max_year}{Last year of data to pull}
-
-\item{defense}{Choose whether to pull offense(default) with FALSE or defense with TRUE}
 }
 \value{
 Returns a tibble of team stats
@@ -21,7 +19,7 @@ Get Team Stats
 }
 \examples{
 \donttest{
- try(kp_teamstats(min_year = 2019, max_year =2021, defense = FALSE))
+ try(kp_teamstats(min_year = 2019, max_year =2021))
 }
 }
 \keyword{Team}
