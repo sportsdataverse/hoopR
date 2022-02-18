@@ -51,6 +51,7 @@ jobs:
             worldfootballR
             zoo
           needs: website
+          dependencies: "all"
 
       - name: Deploy package
         run: |
