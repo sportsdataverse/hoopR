@@ -35,21 +35,21 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-            pkgdown
-            animation
-            cfbfastR
-            fastRhockey
-            ggimage
+            any::pkgdown
+            any::animation
+            any::cfbfastR
+            any::fastRhockey
+            any::ggimage
             hadley/emo
-            knitr
-            ragg
+            any::knitr
+            any::ragg
             r-lib/pkgapi
-            rsconnect
-            tictoc
-            tidyverse
-            wehoop
-            worldfootballR
-            zoo
+            any::rsconnect
+            any::tictoc
+            any::tidyverse
+            any::wehoop
+            any::worldfootballR
+            any::zoo
           needs: website
           dependencies: "all"
 
