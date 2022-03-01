@@ -30,6 +30,7 @@ Imports:
     glue,
     httr (>= 0.5),
     janitor,
+    lubridate,
     jsonlite,
     magrittr,
     progressr (>= 0.6.0),
