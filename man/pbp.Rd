@@ -5,12 +5,14 @@
 \alias{nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, version = "v2")
+nba_pbp(game_id, version = "v2", return_message = TRUE)
 }
 \arguments{
 \item{game_id}{Game ID}
 
 \item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
+
+\item{return_message}{If TRUE returns message}
 }
 \value{
 Returns a named list of data frames: PlayByPlay

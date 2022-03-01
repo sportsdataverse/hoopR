@@ -8,12 +8,13 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
+#' @param return_message If TRUE returns message
 #' @return Returns a named list of data frames: PlayByPlay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_pbp <- function(game_id, version = "v2"){
+nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
 
   if(version=="v2"){
     endpoint <- nba_endpoint('playbyplayv2')
@@ -31,6 +32,10 @@ nba_pbp <- function(game_id, version = "v2"){
       resp <- full_url %>%
         .nba_headers()
 
+      if (return_message) {
+        glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
+      }
+
       data <-
         resp$resultSets$rowSet[[1]] %>%
         data.frame(stringsAsFactors = F) %>%
@@ -39,6 +44,70 @@ nba_pbp <- function(game_id, version = "v2"){
       json_names <-
         resp$resultSets$headers[[1]]
       colnames(data) <- json_names
+
+      # Fix version 2 Dataset
+      if (version == "v2") {
+        data <- data %>%
+          # fix column names
+          janitor::clean_names() %>%
+          dplyr::rename(
+            wc_time_string = wctimestring,
+            time_quarter = pctimestring,
+            score_margin = scoremargin,
+            even_num = eventnum,
+            event_msg_type = eventmsgtype,
+            event_msg_action_type = eventmsgactiontype,
+            home_description = homedescription,
+            neutral_description = neutraldescription,
+            visitor_description = visitordescription
+          ) %>%
+          ## Get Team Scores
+          tidyr::separate(
+            score,
+            into = c("away_score", "home_score"),
+            sep = "\\ - ",
+            remove = F
+          ) %>%
+          dplyr::mutate_at(c("home_score", "away_score"),
+                           list(. %>% as.numeric())) %>%
+          dplyr::mutate(
+            team_leading = dplyr::case_when(
+              score_margin == 0 ~ "Tie",
+              score_margin < 0 ~ "Away",
+              is.na(score_margin) ~ NA_character_,
+              TRUE ~ "Home"
+            )
+          ) %>%
+          ## Time Remaining
+          tidyr::separate(
+            "time_quarter",
+            into = c("minute_remaining_quarter", "seconds_remaining_quarter"),
+            sep = "\\:",
+            remove = F
+          ) %>%
+          dplyr::mutate_at(
+            c(
+              "minute_remaining_quarter",
+              "seconds_remaining_quarter",
+              "period"
+            ),
+            list(. %>% as.numeric())
+          ) %>%
+          dplyr::mutate(
+            minute_game = ((period - 1) * 12) + (12 - minute_remaining_quarter) +
+              (((
+                60 - seconds_remaining_quarter
+              ) / 60) - 1),
+            time_remaining = 48 - ((period - 1) * 12) - (12 - minute_remaining_quarter) -
+              ((60 - seconds_remaining_quarter) / 60 - 1)
+          ) %>%
+          dplyr::select(
+            game_id:period,
+            minute_game,
+            time_remaining,
+            dplyr::everything()
+          )
+      }
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -50,6 +119,7 @@ nba_pbp <- function(game_id, version = "v2"){
   )
   return(data)
 }
+
 
 #' **Get NBA Stats API Schedule**
 #' @name schedule
