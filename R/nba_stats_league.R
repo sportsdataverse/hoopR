@@ -49,16 +49,169 @@ nba_leaguegamelog <- function(
       resp <- full_url %>%
         .nba_headers()
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      data <- resp$resultSets$rowSet[[1]] %>%
+        data.frame(stringsAsFactors = F) %>%
+        as_tibble()
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      json_names <- resp$resultSets$headers[[1]]
+      colnames(data) <- json_names
+
+      # Fix columns
+      data <- data %>%
+        # fix column names
+        janitor::clean_names() %>%
+        dplyr::rename(
+          team = .data$team_abbreviation,
+          result = .data$wl
+        ) %>%
+        dplyr::mutate(
+          season = season,
+          game_date = lubridate::ymd(.data$game_date),
+          season_type = gsub('\\+',' ',season_type),
+          location = ifelse(stringr::str_detect(.data$matchup, "@"), "Away", "Home"),
+          opp = stringr::str_sub(.data$matchup, -3)
+        ) %>%
+        mutate(across(c(
+          "min",
+          "fgm",
+          "fga",
+          "fg_pct",
+          "fg3m",
+          "fg3a",
+          "fg3_pct",
+          "ftm",
+          "fta",
+          "ft_pct",
+          "oreb",
+          "dreb",
+          "reb",
+          "ast",
+          "stl",
+          "blk",
+          "tov",
+          "pf",
+          "pts",
+          "plus_minus",
+          "video_available"
+        ), ~as.numeric(.))) %>%
+        dplyr::select(-.data$season_id)
+
+
+      if (player_or_team == 'P') {
+        # Fix columns
+        data$fantasy_pts <- as.numeric(data$fantasy_pts)
+
+        player_games <- data %>%
+          dplyr::distinct(.data$season, .data$game_date, .data$player_id, .data$player_name) %>%
+          dplyr::group_by(.data$season, .data$player_id, .data$player_name) %>%
+          dplyr::mutate(
+            game_num = 1:n(),
+            days_rest = ifelse(
+              .data$game_num > 1,
+              (.data$game_date - dplyr::lag(.data$game_date) - 1),
+              120
+            ),
+            days_rest_next_game = ifelse(
+              .data$game_num < 82,
+              ((dplyr::lead(.data$game_date) - .data$game_date) - 1),
+              120
+            )
+          ) %>%
+          dplyr::mutate(
+            days_rest_next_game = .data$days_rest_next_game %>% as.numeric(),
+            days_rest = .data$days_rest %>% as.numeric(),
+            back2back = ifelse(.data$days_rest_next_game == 0 | .data$days_rest == 0, TRUE, FALSE)
+          ) %>%
+          dplyr::mutate(
+            back2back_first = ifelse(dplyr::lead(.data$days_rest_next_game) == 0, TRUE, FALSE),
+            back2back_second = ifelse(dplyr::lag(.data$days_rest_next_game) == 0, TRUE, FALSE)
+          ) %>%
+          dplyr::ungroup() %>%
+          dplyr::mutate_if(is.logical, funs(ifelse(. %>% is.na(), FALSE, .)))
+
+        data <- data %>%
+          dplyr::left_join(player_games, by = c("player_name", "game_date", "player_id", "season")) %>%
+          dplyr::select(dplyr::one_of(
+            c(
+              "player_id",
+              "player_name",
+              "game_id",
+              "season",
+              "season_type",
+              "game_date",
+              "matchup",
+              "team_id",
+              "team",
+              "team_name",
+              "opp",
+              "location",
+              "result",
+              "game_num",
+              "days_rest",
+              "days_rest_next_game",
+              "back2back",
+              "back2back_first",
+              "back2back_second"
+            )
+          ),
+          dplyr::everything())
+
+      } else {
+
+        team_games <- data %>%
+          dplyr::distinct(.data$season, .data$game_date, .data$team_id, .data$team) %>%
+          dplyr::group_by(.data$season, .data$team) %>%
+          dplyr::mutate(
+            game_num = 1:n(),
+            days_rest = ifelse(
+              .data$game_num > 1,
+              (.data$game_date - dplyr::lag(.data$game_date) - 1),
+              120
+            ),
+            days_rest_next_game = ifelse(
+              .data$game_num < 82,
+              ((dplyr::lead(.data$game_date) - .data$game_date) - 1),
+              120
+            )
+          ) %>%
+          dplyr::mutate(
+            days_rest_next_game = .data$days_rest_next_game %>% as.numeric(),
+            days_rest = .data$days_rest %>% as.numeric(),
+            back2back = ifelse(.data$days_rest_next_game == 0 | .data$days_rest == 0, TRUE, FALSE)
+          ) %>%
+          dplyr::mutate(
+            back2back_first = ifelse(dplyr::lead(.data$days_rest_next_game) == 0, TRUE, FALSE),
+            back2back_second = ifelse(dplyr::lag(.data$days_rest_next_game) == 0, TRUE, FALSE)
+          ) %>%
+          dplyr::ungroup() %>%
+          dplyr::mutate_if(is.logical, funs(ifelse(. %>% is.na(), FALSE, .)))
+
+        data <- data %>%
+          dplyr::left_join(team_games, by = c("team", "game_date", "team_id", "season")) %>%
+          dplyr::select(dplyr::one_of(
+            c(
+              "game_id",
+              "season",
+              "season_type",
+              "game_date",
+              "matchup",
+              "team_id",
+              "team",
+              "team_name",
+              "opp",
+              "location",
+              "result",
+              "game_num",
+              "days_rest",
+              "days_rest_next_game",
+              "back2back",
+              "back2back_first",
+              "back2back_second"
+            )
+          ),
+          dplyr::everything()
+          )
+      }
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game log data for {season} available!"))
@@ -68,7 +221,7 @@ nba_leaguegamelog <- function(
     finally = {
     }
   )
-  return(df_list)
+  return(data)
 }
 
 
