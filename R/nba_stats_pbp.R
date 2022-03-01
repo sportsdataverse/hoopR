@@ -54,7 +54,7 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             wc_time_string = wctimestring,
             time_quarter = pctimestring,
             score_margin = scoremargin,
-            even_num = eventnum,
+            event_num = eventnum,
             event_msg_type = eventmsgtype,
             event_msg_action_type = eventmsgactiontype,
             home_description = homedescription,
