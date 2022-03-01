@@ -121,6 +121,48 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
 }
 
 
+#' **Get NBA Stats API play-by-play**
+#' @name pbp2
+NULL
+#' @title
+#' **Get NBA Stats API play-by-play**
+#' @rdname pbp2
+#' @author Jason Lee
+#' @param game_ids Game IDs
+#' @param version Play-by-play version ("v2" available from 2016-17 onwards)
+#' @param nest_data If TRUE returns nested data by game
+#' @param return_message If TRUE returns message
+#' @return Returns a named list of data frames: PlayByPlay
+#' @export
+nba_pbp2 <-function(game_ids = NULL,
+                    version = "v2",
+                    nest_data = FALSE,
+                    return_message = TRUE) {
+
+  if (game_ids %>% purrr::is_null()) {
+    stop("Please enter game ids")
+  }
+
+  get_pbp_safe <-
+    purrr::possibly(nba_pbp, dplyr::tibble())
+
+  all_data <-
+    game_ids %>%
+    purrr::map_dfr(function(game_id) {
+      get_pbp_safe(game_id = game_id, return_message = return_message, version = version)
+    })
+
+  if (nest_data) {
+    all_data <-
+      all_data %>%
+      dplyr::group_by(game_id) %>%
+      tidyr::nest()
+  }
+
+  return(all_data)
+}
+
+
 #' **Get NBA Stats API Schedule**
 #' @name schedule
 NULL
