@@ -27,6 +27,17 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
                      "GameID=",pad_id(game_id),
                      "&StartPeriod=0")
 
+  # Shot Types - (numberEventActionType)
+  layup <- c(5, 6, 41, 43, 44, 71:76, 97:100)
+  dunk <- c(7, 9, 50, 51, 52, 87, 106:110)
+  jump_shot <- c(1, 2, 66)
+  hook_shot <- c(3, 57, 58, 67, 93, 96, 105)
+  turnaround <- c(47)
+  step_back <- c(80, 104)
+  fade_away <- c(63, 86)
+  floater <- c(78, 101, 102)
+  pull_up <- c(79, 103)
+
   tryCatch(
     expr = {
       resp <- full_url %>%
@@ -106,6 +117,208 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             minute_game,
             time_remaining,
             dplyr::everything()
+          ) %>%
+          dplyr::distinct(.data$game_id, .data$event_num, .keep_all = TRUE) %>%
+          dplyr::mutate(
+            event_num = dplyr::row_number(),
+            home_shot_pts = dplyr::case_when(
+              .data$event_msg_type == 3 & !stringr::str_detect(.data$home_description, "MISS") ~ 1,
+              .data$event_msg_type == 1 &  stringr::str_detect(.data$home_description, "3PT")  ~ 3,
+              .data$event_msg_type == 1 & !stringr::str_detect(.data$home_description, "3PT")  ~ 2,
+              TRUE ~ 0
+            ),
+            away_shot_pts = dplyr::case_when(
+              .data$event_msg_type == 3 & !stringr::str_detect(.data$visitor_description, "MISS") ~ 1,
+              .data$event_msg_type == 1 &  stringr::str_detect(.data$visitor_description, "3PT")  ~ 3,
+              .data$event_msg_type == 1 & !stringr::str_detect(.data$visitor_description, "3PT")  ~ 2,
+              TRUE ~ 0
+            ),
+            action = paste0(.data$event_msg_type, "_", .data$event_msg_action_type),
+            home_play_result = dplyr::case_when(
+              # blocks
+              stringr::str_detect(.data$visitor_description, "BLK") & stringr::str_detect(.data$home_description, "3PT") ~ "Block_3",
+              stringr::str_detect(.data$visitor_description, "BLK") & !stringr::str_detect(.data$home_description, "3PT") ~ "Block_2",
+
+              # layup
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(layup) & stringr::str_detect(.data$home_description, "AST") ~ "Layup_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(layup) & !stringr::str_detect(.data$home_description, "AST") ~ "Layup_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(layup) & !stringr::str_detect(.data$home_description, "BLK") ~ "Layup_Miss",
+
+              # dunk
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(dunk) & stringr::str_detect(.data$home_description, "AST") ~ "Dunk_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(dunk) & !stringr::str_detect(.data$home_description, "AST") ~ "Dunk_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(dunk) & !stringr::str_detect(.data$home_description, "BLK") ~ "Dunk_Miss",
+
+              # jump shot
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "JumpShot3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "JumpShot2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "JumpShot3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "JumpShot3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "JumpShot3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "JumpShot2_Miss",
+
+              # hook shot
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "HookShot3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "HookShot2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "HookShot3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "HookShot3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "HookShot3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "HookShot2_Miss",
+
+              # turnaround
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Turnaround3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Turnaround2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Turnaround3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Turnaround3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Turnaround3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Turnaround2_Miss",
+
+              # step back
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Stepback3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Stepback2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Stepback3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Stepback3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Stepback3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Stepback2_Miss",
+
+              # fade away
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Fadeaway3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Fadeaway2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Fadeaway3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Fadeaway3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Fadeaway3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Fadeaway2_Miss",
+
+              # floater
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Floater3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Floater2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Floater3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Floater3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Floater3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Floater2_Miss",
+
+              # pullup
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Pullup3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Pullup2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$home_description, "AST") & stringr::str_detect(.data$home_description, "3PT") ~ "Pullup3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$home_description, "AST") & !stringr::str_detect(.data$home_description, "3PT") ~ "Pullup3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Pullup3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$home_description, "3PT") & !stringr::str_detect(.data$home_description, "BLK") ~ "Pullup2_Miss",
+
+              # rebounds
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$home_description, "MISS")) & lag(stringr::str_detect(.data$home_description, "3PT")) & !is.na(.data$home_description) ~ "Off_Reb3",
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$home_description, "MISS")) & lag(!stringr::str_detect(.data$home_description, "3PT")) & !is.na(.data$home_description) ~ "Off_Reb2",
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$home_description, "3PT")) & is.na(.data$home_description) ~ "Def_Reb3",
+              .data$event_msg_type == 4 & lag(!stringr::str_detect(.data$home_description, "3PT")) & is.na(.data$home_description)  ~ "Def_Reb2",
+
+              # fouls
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 2 & is.na(.data$home_description) ~ "Shooting_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 1 & is.na(.data$home_description) ~ "Personal_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 4 & is.na(.data$home_description) ~ "Off_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 26 & !is.na(.data$home_description) ~ "Charge",
+              .data$event_msg_type == 6 & .data$event_msg_action_type != 26 & is.na(.data$home_description) ~ "Other_Foul",
+
+              # turnover
+              .data$event_msg_type == 5 & !is.na(.data$home_description) & !stringr::str_detect(.data$home_description, "STL")  ~ "Turnover",
+
+              # everything else is NA
+              TRUE ~ NA_character_
+            ),
+            away_play_result = dplyr::case_when(
+              # blocks
+              stringr::str_detect(.data$home_description, "BLK") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Block_3",
+              stringr::str_detect(.data$home_description, "BLK") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Block_2",
+
+              # layup
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(layup) & stringr::str_detect(.data$visitor_description, "AST") ~ "Layup_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(layup) & !stringr::str_detect(.data$visitor_description, "AST") ~ "Layup_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(layup) & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Layup_Miss",
+
+              # dunk
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(dunk) & stringr::str_detect(.data$visitor_description, "AST") ~ "Dunk_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(dunk) & !stringr::str_detect(.data$visitor_description, "AST") ~ "Dunk_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(dunk) & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Dunk_Miss",
+
+              # jump shot
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "JumpShot3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "JumpShot2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "JumpShot3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "JumpShot3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(jump_shot) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "JumpShot3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(jump_shot) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "JumpShot2_Miss",
+
+              # hook shot
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "HookShot3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "HookShot2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "HookShot3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "HookShot3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(hook_shot) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "HookShot3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(hook_shot) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "HookShot2_Miss",
+
+              # turnaround
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Turnaround3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Turnaround2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Turnaround3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Turnaround3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(turnaround) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Turnaround3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(turnaround) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Turnaround2_Miss",
+
+              # step back
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Stepback3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Stepback2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Stepback3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Stepback3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(step_back) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Stepback3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(step_back) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Stepback2_Miss",
+
+              # fade away
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Fadeaway3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Fadeaway2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Fadeaway3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Fadeaway3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(fade_away) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Fadeaway3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(fade_away) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Fadeaway2_Miss",
+
+              # floater
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Floater3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Floater2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Floater3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Floater3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(floater) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Floater3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(floater) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Floater2_Miss",
+
+              # pullup
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Pullup3_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Pullup2_Assist",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$visitor_description, "AST") & stringr::str_detect(.data$visitor_description, "3PT") ~ "Pullup3_Made",
+              .data$event_msg_type == 1 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$visitor_description, "AST") & !stringr::str_detect(.data$visitor_description, "3PT") ~ "Pullup3_Made",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(pull_up) & stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Pullup3_Miss",
+              .data$event_msg_type == 2 & .data$event_msg_action_type %in% c(pull_up) & !stringr::str_detect(.data$visitor_description, "3PT") & !stringr::str_detect(.data$visitor_description, "BLK") ~ "Pullup2_Miss",
+
+              # rebounds
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$visitor_description, "MISS")) & lag(stringr::str_detect(.data$visitor_description, "3PT")) & !is.na(.data$visitor_description) ~ "Off_Reb3",
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$visitor_description, "MISS")) & lag(!stringr::str_detect(.data$visitor_description, "3PT")) & !is.na(.data$visitor_description) ~ "Off_Reb2",
+              .data$event_msg_type == 4 & lag(stringr::str_detect(.data$visitor_description, "3PT")) & lag(!stringr::str_detect(.data$visitor_description, "3PT")) & is.na(.data$visitor_description) ~ "Def_Reb3",
+              .data$event_msg_type == 4 & lag(!stringr::str_detect(.data$visitor_description, "3PT")) & is.na(.data$visitor_description) ~ "Def_Reb2",
+
+              # fouls
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 2 & is.na(.data$visitor_description) ~ "Shooting_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 1 & is.na(.data$visitor_description) ~ "Personal_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 4 & is.na(.data$visitor_description) ~ "Off_Foul",
+              .data$event_msg_type == 6 & .data$event_msg_action_type == 26 & !is.na(.data$visitor_description) ~ "Charge",
+              .data$event_msg_type == 6 & .data$event_msg_action_type != 26 & is.na(.data$visitor_description) ~ "Other_Foul",
+
+              # turnover
+              .data$event_msg_type == 5 & !is.na(.data$visitor_description) & !stringr::str_detect(.data$visitor_description, "STL")  ~ "Turnover",
+
+              # everything else is NA
+              TRUE ~ NA_character_
+            ),
+            home_play_result = ifelse(.data$away_play_result %in% c("Off_Reb2", "Off_Reb3"), NA_character_, .data$home_play_result),
+            away_play_result = ifelse(.data$home_play_result %in% c("Off_Reb2", "Off_Reb3"), NA_character_, .data$away_play_result),
+            home_score = cumsum(.data$home_shot_pts),
+            away_score = cumsum(.data$away_shot_pts),
+            score_margin = .data$home_score - .data$away_score
           )
       }
     },
