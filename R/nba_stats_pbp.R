@@ -62,33 +62,25 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
           # fix column names
           janitor::clean_names() %>%
           dplyr::rename(
-            wc_time_string = wctimestring,
-            time_quarter = pctimestring,
-            score_margin = scoremargin,
-            event_num = eventnum,
-            event_msg_type = eventmsgtype,
-            event_msg_action_type = eventmsgactiontype,
-            home_description = homedescription,
-            neutral_description = neutraldescription,
-            visitor_description = visitordescription
+            wc_time_string = .data$wctimestring,
+            time_quarter = .data$pctimestring,
+            score_margin = .data$scoremargin,
+            event_num = .data$eventnum,
+            event_msg_type = .data$eventmsgtype,
+            event_msg_action_type = .data$eventmsgactiontype,
+            home_description = .data$homedescription,
+            neutral_description = .data$neutraldescription,
+            visitor_description = .data$visitordescription
           ) %>%
           ## Get Team Scores
           tidyr::separate(
-            score,
+            .data$score,
             into = c("away_score", "home_score"),
             sep = "\\ - ",
             remove = F
           ) %>%
           dplyr::mutate_at(c("home_score", "away_score"),
                            list(. %>% as.numeric())) %>%
-          dplyr::mutate(
-            team_leading = dplyr::case_when(
-              score_margin == 0 ~ "Tie",
-              score_margin < 0 ~ "Away",
-              is.na(score_margin) ~ NA_character_,
-              TRUE ~ "Home"
-            )
-          ) %>%
           ## Time Remaining
           tidyr::separate(
             "time_quarter",
@@ -105,17 +97,15 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             list(. %>% as.numeric())
           ) %>%
           dplyr::mutate(
-            minute_game = ((period - 1) * 12) + (12 - minute_remaining_quarter) +
-              (((
-                60 - seconds_remaining_quarter
-              ) / 60) - 1),
-            time_remaining = 48 - ((period - 1) * 12) - (12 - minute_remaining_quarter) -
-              ((60 - seconds_remaining_quarter) / 60 - 1)
+            minute_game = ((.data$period - 1) * 12) + (12 - .data$minute_remaining_quarter) +
+              (((60 - .data$seconds_remaining_quarter) / 60) - 1),
+            time_remaining = 48 - ((.data$period - 1) * 12) - (12 - .data$minute_remaining_quarter) -
+              ((60 - .data$seconds_remaining_quarter) / 60 - 1)
           ) %>%
           dplyr::select(
-            game_id:period,
-            minute_game,
-            time_remaining,
+            .data$game_id:.data$period,
+            .data$minute_game,
+            .data$time_remaining,
             dplyr::everything()
           ) %>%
           dplyr::distinct(.data$game_id, .data$event_num, .keep_all = TRUE) %>%
@@ -318,7 +308,13 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             away_play_result = ifelse(.data$home_play_result %in% c("Off_Reb2", "Off_Reb3"), NA_character_, .data$away_play_result),
             home_score = cumsum(.data$home_shot_pts),
             away_score = cumsum(.data$away_shot_pts),
-            score_margin = .data$home_score - .data$away_score
+            score_margin = .data$home_score - .data$away_score,
+            team_leading = dplyr::case_when(
+              .data$score_margin == 0 ~ "Tie",
+              .data$score_margin < 0 ~ "Away",
+              is.na(.data$score_margin) ~ NA_character_,
+              TRUE ~ "Home"
+              )
           )
       }
     },
@@ -368,7 +364,7 @@ nba_pbp2 <-function(game_ids = NULL,
   if (nest_data) {
     all_data <-
       all_data %>%
-      dplyr::group_by(game_id) %>%
+      dplyr::group_by(.data$game_id) %>%
       tidyr::nest()
   }
 
