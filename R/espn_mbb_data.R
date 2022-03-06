@@ -497,7 +497,7 @@ espn_mbb_conferences <- function(){
 espn_mbb_teams <- function(){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?groups=50&limit=1000"
+  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
 
   res <- httr::RETRY("GET", play_base_url)
 
@@ -573,10 +573,14 @@ espn_mbb_teams <- function(){
   return(teams)
 }
 
-
-#' Get ESPN men's college basketball schedule for a specific year
+#' Parse ESPN schedule, helper function
 #'
-#' @param season Either numeric or character
+#' @param group The ESPN conference group. Most helpful ones:
+#' * 50 - Regular season/NIT
+#' * 55 - CBI
+#' * 56 - CIT
+#' * 100 - NCAA Tournament
+#' @param season_dates Either numeric or character
 #' @return Returns a tibble
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
@@ -584,30 +588,8 @@ espn_mbb_teams <- function(){
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
 #' @import rvest
-#' @export
-#' @examples
-#'
-#' # Get schedule from date 2021-02-15
-#' \donttest{
-#'   try(espn_mbb_scoreboard (season = "20220215"))
-#' }
-
-espn_mbb_scoreboard <- function(season){
-
-  message(glue::glue("Returning data for {season}!"))
-
-  max_year <- substr(Sys.Date(), 1,4)
-
-  if(!(as.integer(substr(season, 1, 4)) > 2001)){
-    message(paste("Error: Season must be between 2001 and", max_year + 1))
-  }
-
-  # year > 2000
-  season <- as.character(season)
-
-  season_dates <- season
-
-  schedule_api <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=50&limit=1000&dates={season_dates}")
+parse_espn_mbb_scoreboard <- function(group, season_dates){
+  schedule_api <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups={group}&limit=1000&dates={season_dates}")
 
   res <- httr::RETRY("GET", schedule_api)
 
@@ -713,13 +695,56 @@ espn_mbb_scoreboard <- function(season){
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data available!"))
     },
     warning = function(w) {
     },
     finally = {
     }
-  )
+)
+}
+
+#' Get ESPN men's college basketball schedule for a specific year
+#'
+#' @param season Either numeric or character
+#' @return Returns a tibble
+#' @import utils
+#' @importFrom dplyr select rename any_of mutate
+#' @importFrom jsonlite fromJSON
+#' @importFrom tidyr unnest_wider unchop hoist
+#' @importFrom glue glue
+#' @importFrom purrr map2_dfr possibly quietly
+#' @import rvest
+#' @export
+#' @examples
+#'
+#' # Get schedule from date 2021-02-15
+#' \donttest{
+#'   try(espn_mbb_scoreboard (season = "20220215"))
+#' }
+
+espn_mbb_scoreboard <- function(season){
+
+  message(glue::glue("Returning data for {season}!"))
+
+  max_year <- substr(Sys.Date(), 1,4)
+
+  if(!(as.integer(substr(season, 1, 4)) > 2001)){
+    message(paste("Error: Season must be between 2001 and", max_year + 1))
+  }
+
+  # year > 2000
+  season <- as.character(season)
+
+  season_dates <- season
+
+  # check for regular and postseason games
+
+  scoreboard_df <- purrr::map2_dfr(c("56","55","50","100"), rep(season, 4), parse_espn_mbb_scoreboard)
+
+  if(!nrow(scoreboard_df)){
+    message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data available!"))
+  }
+  return(scoreboard_df)
 }
 
 #' Get men's college basketball AP and Coaches Poll rankings from ESPN
