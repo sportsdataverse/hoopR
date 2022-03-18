@@ -333,3 +333,70 @@ nba_draftcombinespotshooting <- function(league_id='00',
   return(df_list)
 }
 
+#' @title
+#' **Get NBA Stats API Draft History**
+#' @rdname dhistory
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param college college
+#' @param overall_pick overall_pick
+#' @param round_pick round_pick
+#' @param round_num round_num
+#' @param season season
+#' @param team_id team_id
+#' @param top_x top_x
+#' @return Returns a named list of data frames: DraftHistory
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+nba_drafthistory <- function(league_id='00',
+                           college = '',
+                           overall_pick = '',
+                           round_pick = '',
+                           round_num = '',
+                           season = '2019',
+                           team_id = '',
+                           top_x = ''){
+
+
+  version <- "drafthistory"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?College=", college,
+                     "&LeagueID=",league_id,
+                     "&OverallPick=", overall_pick,
+                     "&RoundNum=", round_num,
+                     "&RoundPick=", round_pick,
+                     "&Season=", season,
+                     "&TeamID=", team_id,
+                     "&TopX=", top_x)
+
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
+
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+        data <- resp$resultSets$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
+
+        json_names <- resp$resultSets$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSets$name
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no draft history data available for {season}!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
