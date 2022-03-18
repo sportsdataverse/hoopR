@@ -32,26 +32,29 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      - uses: r-lib/actions/setup-r-dependencies@v1
         with:
           extra-packages: |
-            any::pkgdown
-            any::animation
-            any::cfbfastR
-            any::fastRhockey
-            any::ggimage
-            hadley/emo
-            any::knitr
-            any::ragg
-            r-lib/pkgapi
-            any::rsconnect
-            any::tictoc
-            any::tidyverse
-            any::wehoop
-            any::worldfootballR
-            any::zoo
+            pkgdown
+            animation
+            cfbfastR
+            fastRhockey
+            ggimage
+            knitr
+            pacman
+            ragg
+            rsconnect
+            tictoc
+            tidyverse
+            wehoop
+            worldfootballR
+            zoo
           needs: website
-          dependencies: "all"
+      - name: Install system dependencies
+        run: |
+          pak::pkg_install("hadley/emo")
+          pak::pkg_install("r-lib/pkgapi")
+        shell: Rscript {0}
 
       - name: Deploy package
         run: |
