@@ -35,7 +35,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-code"></span>
      
      Funcs
@@ -47,7 +47,7 @@
     </li>
   </ul></li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-book-reader"></span>
      
      Articles
@@ -75,7 +75,7 @@
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-project-diagram"></span>
      
      SDV
@@ -138,7 +138,7 @@
     </li>
   </ul></li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fas fa-database"></span>
      
      Data
@@ -205,78 +205,76 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_conferences</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    group_id    short_name            uid                               name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         0        Top 25           &lt;NA&gt;                               &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2        50           ALL s:40~l:41~g:50                    NCAA Division I</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3          A 10  s:40~l:41~g:3             Atlantic 10 Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         2           ACC  s:40~l:41~g:2          Atlantic Coast Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        46          ASUN s:40~l:41~g:46                    ASUN Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         1      Am. East  s:40~l:41~g:1            America East Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7        62      American s:40~l:41~g:62       American Athletic Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8         8        Big 12  s:40~l:41~g:8                  Big 12 Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         4      Big East  s:40~l:41~g:4                Big East Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10        5       Big Sky  s:40~l:41~g:5                 Big Sky Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        6     Big South  s:40~l:41~g:6               Big South Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12        7       Big Ten  s:40~l:41~g:7                 Big Ten Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        9      Big West  s:40~l:41~g:9                Big West Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       11         C-USA s:40~l:41~g:11                     Conference USA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15       10           CAA s:40~l:41~g:10      Colonial Athletic Association</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16       45       Horizon s:40~l:41~g:45                     Horizon League</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17       12           Ivy s:40~l:41~g:12                         Ivy League</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18       13          MAAC s:40~l:41~g:13 Metro Atlantic Athletic Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19       14           MAC s:40~l:41~g:14            Mid-American Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20       16          MEAC s:40~l:41~g:16    Mid-Eastern Athletic Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21       18           MVC s:40~l:41~g:18         Missouri Valley Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22       44 Mountain West s:40~l:41~g:44           Mountain West Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23       19           NEC s:40~l:41~g:19               Northeast Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24       20           OVC s:40~l:41~g:20             Ohio Valley Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25       21        Pac-12 s:40~l:41~g:21                  Pac-12 Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26       22       Patriot s:40~l:41~g:22                     Patriot League</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27       23           SEC s:40~l:41~g:23            Southeastern Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28       26          SWAC s:40~l:41~g:26   Southwestern Athletic Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29       24      Southern s:40~l:41~g:24                Southern Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30       25     Southland s:40~l:41~g:25               Southland Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31       49        Summit s:40~l:41~g:49                      Summit League</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32       27      Sun Belt s:40~l:41~g:27                Sun Belt Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33       30           WAC s:40~l:41~g:30        Western Athletic Conference</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34       29           WCC s:40~l:41~g:29              West Coast Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         3          A 10  s:40~l:41~g:3             Atlantic 10 Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2           ACC  s:40~l:41~g:2          Atlantic Coast Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3        46          ASUN s:40~l:41~g:46                    ASUN Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         1      Am. East  s:40~l:41~g:1            America East Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        62      American s:40~l:41~g:62       American Athletic Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         8        Big 12  s:40~l:41~g:8                  Big 12 Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         4      Big East  s:40~l:41~g:4                Big East Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         5       Big Sky  s:40~l:41~g:5                 Big Sky Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         6     Big South  s:40~l:41~g:6               Big South Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        7       Big Ten  s:40~l:41~g:7                 Big Ten Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        9      Big West  s:40~l:41~g:9                Big West Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       11         C-USA s:40~l:41~g:11                     Conference USA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13       10           CAA s:40~l:41~g:10      Colonial Athletic Association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14       45       Horizon s:40~l:41~g:45                     Horizon League</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15       12           Ivy s:40~l:41~g:12                         Ivy League</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16       13          MAAC s:40~l:41~g:13 Metro Atlantic Athletic Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17       14           MAC s:40~l:41~g:14            Mid-American Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18       16          MEAC s:40~l:41~g:16    Mid-Eastern Athletic Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19       18           MVC s:40~l:41~g:18         Missouri Valley Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20       44 Mountain West s:40~l:41~g:44           Mountain West Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       19           NEC s:40~l:41~g:19               Northeast Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22       20           OVC s:40~l:41~g:20             Ohio Valley Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23       21        Pac-12 s:40~l:41~g:21                  Pac-12 Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24       22       Patriot s:40~l:41~g:22                     Patriot League</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25       23           SEC s:40~l:41~g:23            Southeastern Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26       26          SWAC s:40~l:41~g:26   Southwestern Athletic Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27       24      Southern s:40~l:41~g:24                Southern Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       25     Southland s:40~l:41~g:25               Southland Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29       49        Summit s:40~l:41~g:49                      Summit League</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30       27      Sun Belt s:40~l:41~g:27                Sun Belt Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       68           TBC s:40~l:41~g:68             The Basketball Classic</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32       30           WAC s:40~l:41~g:30        Western Athletic Conference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33       29           WCC s:40~l:41~g:29              West Coast Conference</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                   logo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                 &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                 &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      https://a.espncdn.com/i/teamlogos/ncaa_conf/500/atlantic_10.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4              https://a.espncdn.com/i/teamlogos/ncaa_conf/500/acc.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                 &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     https://a.espncdn.com/i/teamlogos/ncaa_conf/500/america_east.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/american.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_12.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_east.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_sky.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_south.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_ten.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_west.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  https://a.espncdn.com/i/teamlogos/ncaa_conf/500/conference_usa.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/colonial.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/horizon.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/ivy.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/maac.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19    https://a.espncdn.com/i/teamlogos/ncaa_conf/500/mid_american.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/meac.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 https://a.espncdn.com/i/teamlogos/ncaa_conf/500/missouri_valley.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   https://a.espncdn.com/i/teamlogos/ncaa_conf/500/mountain_west.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23       https://a.espncdn.com/i/teamlogos/ncaa_conf/500/northeast.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24     https://a.espncdn.com/i/teamlogos/ncaa_conf/500/ohio_valley.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25          https://a.espncdn.com/i/teamlogos/ncaa_conf/500/pac_12.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26  https://a.espncdn.com/i/teamlogos/ncaa_conf/500/patriot_league.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/sec.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/swac.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/southern.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30       https://a.espncdn.com/i/teamlogos/ncaa_conf/500/southland.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31   https://a.espncdn.com/i/teamlogos/ncaa_conf/500/summit_league.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/sun_belt.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/wac.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34      https://a.espncdn.com/i/teamlogos/ncaa_conf/500/west_coast.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1      https://a.espncdn.com/i/teamlogos/ncaa_conf/500/atlantic_10.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              https://a.espncdn.com/i/teamlogos/ncaa_conf/500/acc.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                 &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     https://a.espncdn.com/i/teamlogos/ncaa_conf/500/america_east.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/american.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_12.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_east.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_sky.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_south.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_ten.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/big_west.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  https://a.espncdn.com/i/teamlogos/ncaa_conf/500/conference_usa.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/colonial.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14         https://a.espncdn.com/i/teamlogos/ncaa_conf/500/horizon.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/ivy.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/maac.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17    https://a.espncdn.com/i/teamlogos/ncaa_conf/500/mid_american.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/meac.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 https://a.espncdn.com/i/teamlogos/ncaa_conf/500/missouri_valley.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   https://a.espncdn.com/i/teamlogos/ncaa_conf/500/mountain_west.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21       https://a.espncdn.com/i/teamlogos/ncaa_conf/500/northeast.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22     https://a.espncdn.com/i/teamlogos/ncaa_conf/500/ohio_valley.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23          https://a.espncdn.com/i/teamlogos/ncaa_conf/500/pac_12.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  https://a.espncdn.com/i/teamlogos/ncaa_conf/500/patriot_league.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/sec.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26            https://a.espncdn.com/i/teamlogos/ncaa_conf/500/swac.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/southern.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28       https://a.espncdn.com/i/teamlogos/ncaa_conf/500/southland.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29   https://a.espncdn.com/i/teamlogos/ncaa_conf/500/summit_league.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30        https://a.espncdn.com/i/teamlogos/ncaa_conf/500/sun_belt.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                                                                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32             https://a.espncdn.com/i/teamlogos/ncaa_conf/500/wac.png</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33      https://a.espncdn.com/i/teamlogos/ncaa_conf/500/west_coast.png</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    parent_group_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1             &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2             &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1               50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3               50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4               50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5               50</span>
@@ -308,7 +306,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 31              50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 32              50</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33              50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34              50</span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
