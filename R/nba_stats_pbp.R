@@ -79,8 +79,6 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             sep = "\\ - ",
             remove = F
           ) %>%
-          dplyr::mutate_at(c("home_score", "away_score"),
-                           list(. %>% as.numeric())) %>%
           ## Time Remaining
           tidyr::separate(
             "time_quarter",
@@ -88,13 +86,12 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
             sep = "\\:",
             remove = F
           ) %>%
-          dplyr::mutate_at(
-            c(
-              "minute_remaining_quarter",
-              "seconds_remaining_quarter",
-              "period"
-            ),
-            list(. %>% as.numeric())
+          dplyr::mutate(
+              home_score = as.numeric(.data$home_score),
+              away_score = as.numeric(.data$away_score),
+              minute_remaining_quarter = as.numeric(.data$minute_remaining_quarter),
+              seconds_remaining_quarter = as.numeric(.data$seconds_remaining_quarter),
+              period = as.numeric(.data$period)
           ) %>%
           dplyr::mutate(
             minute_game = ((.data$period - 1) * 12) + (12 - .data$minute_remaining_quarter) +
@@ -314,7 +311,18 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
               .data$score_margin < 0 ~ "Away",
               is.na(.data$score_margin) ~ NA_character_,
               TRUE ~ "Home"
-              )
+              ),
+            secs_left_quarter = (.data$minute_remaining_quarter * 60) + .data$seconds_remaining_quarter,
+            secs_start_quarter = dplyr::case_when(
+              .data$period %in% c(1:5) ~ (.data$period - 1) * 720,
+              TRUE ~ 2880 + (.data$period - 5) * 300
+            ),
+            secs_passed_quarter = ifelse(
+              .data$period %in% c(1:4),
+              720 - .data$secs_left_quarter,
+              300 - .data$secs_left_quarter
+            ),
+            secs_passed_game = .data$secs_passed_quarter + .data$secs_start_quarter
           )
       }
     },
