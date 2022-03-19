@@ -485,7 +485,7 @@ nba_playerindex <- function(
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player game log data for {player_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no player index data for {season} available!"))
     },
     warning = function(w) {
     },
@@ -493,6 +493,41 @@ nba_playerindex <- function(
     }
   )
   return(df_list)
+}
+
+#' **Get NBA Stats API Player Head-shot**
+#' @name p_headshot
+NULL
+#' @title
+#' **Get NBA Stats API Player Head-shot**
+#' @rdname p_headshot
+#' @author Saiem Gilani
+#' @param player_id Player ID
+#' @return Returns a url of the png for the player_id selected
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+nba_playerheadshot <- function(player_id= '2544'){
+
+  endpoint <- "https://cdn.nba.com/headshots/nba/latest/260x190/"
+
+  full_url <- paste0(endpoint, player_id,".png")
+
+  tryCatch(
+    expr = {
+      resp <- full_url
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no player headshot for {player_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(resp)
 }
 
 #' **Get NBA Stats API Player Game Log**
