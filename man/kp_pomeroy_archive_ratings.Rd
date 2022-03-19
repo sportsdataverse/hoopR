@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_pomeroy_archive_ratings}
 \alias{kp_pomeroy_archive_ratings}
-\title{Get KenPom's ratings archive pages}
+\title{\strong{Get KenPom's ratings archive pages}}
 \usage{
 kp_pomeroy_archive_ratings(date)
 }
@@ -37,7 +37,7 @@ A data frame with 22 columns:
 }
 }
 \description{
-Get KenPom's ratings archive pages
+\strong{Get KenPom's ratings archive pages}
 }
 \examples{
 \donttest{

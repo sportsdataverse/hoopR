@@ -411,6 +411,89 @@ nba_playerestimatedmetrics <- function(league_id = '00',
   return(df_list)
 }
 
+#' **Get NBA Stats API Player Index**
+#' @name p_index
+NULL
+#' @title
+#' **Get NBA Stats API Player Index**
+#' @rdname p_index
+#' @author Saiem Gilani
+#' @param college Player College
+#' @param country Player Country
+#' @param draft_pick Draft Pick
+#' @param draft_round Draft Round
+#' @param draft_year Draft Year
+#' @param height Player Height
+#' @param historical Whether to include only current players (0) or all historical (1).
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format 2020-21
+#' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @param team_id Team ID. Default: 0 (all teams).
+#' @param weight Player weight
+#' @return Return a named list of data frames: PlayerIndex
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+nba_playerindex <- function(
+  college = '',
+  country = '',
+  draft_pick = '',
+  draft_round='',
+  draft_year='',
+  height = '',
+  historical = 1,
+  league_id = '00',
+  season='2020-21',
+  season_type='Regular Season',
+  team_id = '0',
+  weight = ''){
+
+  season_type <- gsub(' ','+',season_type)
+  version <- "playerindex"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?College=", college,
+                     "&Country=", country,
+                     "&DraftPick=", draft_pick,
+                     "&DraftRound=", draft_round,
+                     "&DraftYear=", draft_year,
+                     "&Height=", height,
+                     "&Historical=", historical,
+                     "&LeagueID=", league_id,
+                     "&Season=", season,
+                     "&SeasonType=",season_type,
+                     "&TeamID=", team_id,
+                     "&Weight=", weight)
+
+  tryCatch(
+    expr = {
+      resp <- full_url %>%
+        .nba_headers()
+
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet[[x]] %>%
+          data.frame(stringsAsFactors = F) %>%
+          as_tibble()
+
+        json_names <- resp$resultSet$headers[[x]]
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no player game log data for {player_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
 
 #' **Get NBA Stats API Player Game Log**
 #' @name p_gamelog

@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_team_lineups}
 \alias{kp_team_lineups}
-\title{Get Lineups Last 5 Games from Team Page}
+\title{\strong{Get Lineups Last 5 Games from Team Page}}
 \usage{
 kp_team_lineups(team, year = 2021)
 }
@@ -26,7 +26,7 @@ A data frame with 9 columns:
 }
 }
 \description{
-Get Lineups Last 5 Games from Team Page
+\strong{Get Lineups Last 5 Games from Team Page}
 }
 \examples{
   \donttest{

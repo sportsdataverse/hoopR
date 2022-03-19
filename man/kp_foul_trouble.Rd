@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_foul_trouble}
 \alias{kp_foul_trouble}
-\title{Get 2-Foul Participation Stats}
+\title{\strong{Get 2-Foul Participation Stats}}
 \usage{
 kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of foul participation stats
 }
 \description{
-Get 2-Foul Participation Stats
+\strong{Get 2-Foul Participation Stats}
 }
 \examples{
 \donttest{

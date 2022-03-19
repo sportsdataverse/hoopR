@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_game_attrs}
 \alias{kp_game_attrs}
-\title{Get Game Attributes}
+\title{\strong{Get Game Attributes}}
 \usage{
 kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 }
@@ -17,7 +17,7 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 Returns a tibble with game attributes
 }
 \description{
-Get Game Attributes
+\strong{Get Game Attributes}
 }
 \examples{
 \donttest{

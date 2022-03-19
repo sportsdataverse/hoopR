@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_kpoy}
 \alias{kp_kpoy}
-\title{Get KPoY Leaders Tables}
+\title{\strong{Get KPoY Leaders Tables}}
 \usage{
 kp_kpoy(year = most_recent_mbb_season())
 }
@@ -13,7 +13,7 @@ kp_kpoy(year = most_recent_mbb_season())
 Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"
 }
 \description{
-Get KPoY Leaders Tables
+\strong{Get KPoY Leaders Tables}
 }
 \examples{
 \donttest{

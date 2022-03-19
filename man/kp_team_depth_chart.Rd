@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_team_depth_chart}
 \alias{kp_team_depth_chart}
-\title{Get Depth Chart Last 5 Games from Team Page}
+\title{\strong{Get Depth Chart Last 5 Games from Team Page}}
 \usage{
 kp_team_depth_chart(team, year = 2021)
 }
@@ -29,7 +29,7 @@ A data frame with 12 columns:
 }
 }
 \description{
-Get Depth Chart Last 5 Games from Team Page
+\strong{Get Depth Chart Last 5 Games from Team Page}
 }
 \examples{
   \donttest{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_teams}
 \alias{espn_nba_teams}
-\title{Get ESPN NBA team names and ids}
+\title{\strong{Get ESPN NBA team names and IDs}}
 \usage{
 espn_nba_teams()
 }
@@ -10,7 +10,7 @@ espn_nba_teams()
 A teams data frame
 }
 \description{
-Get ESPN NBA team names and ids
+\strong{Get ESPN NBA team names and IDs}
 }
 \examples{
 \donttest{

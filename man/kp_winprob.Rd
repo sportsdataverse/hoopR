@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_box_tables.R
 \name{kp_winprob}
 \alias{kp_winprob}
-\title{Get Win Probability}
+\title{\strong{Get KenPom Win Probability}}
 \usage{
 kp_winprob(game_id, year)
 }
@@ -15,7 +15,7 @@ kp_winprob(game_id, year)
 Returns a tibble of game win probabilities
 }
 \description{
-Get Win Probability
+\strong{Get KenPom Win Probability}
 }
 \examples{
 \donttest{

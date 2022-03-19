@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_opptracker}
 \alias{kp_opptracker}
-\title{Get KenPom's team opponent tracker page}
+\title{\strong{Get KenPom's team opponent tracker page}}
 \usage{
 kp_opptracker(team, year = 2021)
 }
@@ -15,7 +15,7 @@ kp_opptracker(team, year = 2021)
 Returns a tibble of team opponent tracker data
 }
 \description{
-Get KenPom's team opponent tracker page
+\strong{Get KenPom's team opponent tracker page}
 }
 \examples{
 \donttest{

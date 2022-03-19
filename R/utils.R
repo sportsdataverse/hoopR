@@ -26,7 +26,7 @@
 #' @name kp_user_pw
 NULL
 #' @rdname kp_user_pw
-#' @title User Login Function
+#' @title **User Login Function**
 #' @description Requires a subscription to KenPom.com
 #'
 #' @param user_email User subscription e-mail
@@ -76,7 +76,7 @@ kp_password <- function() {
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
 
 
-#' Progressively
+#' **Progressively**
 #'
 #' This function helps add progress-reporting to any function - given function `f()` and progressor `p()`, it will return a new function that calls `f()` and then (on-exiting) will call `p()` after every iteration.
 #'
@@ -192,7 +192,7 @@ most_recent_nba_season <- function() {
   )
 }
 
-#' Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging
+#' **Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging**
 #' @keywords Util
 #' @param df KenPom dataframe
 #' @importFrom rlang := .data
@@ -262,7 +262,7 @@ clean_team_names_NCAA_merge <- function(df){
 
 my_time <- function() strftime(Sys.time(), format = "%H:%M:%S")
 
-#' Check Status function
+#' **Check Status function**
 #' @param res Response from API
 #' @keywords Internal
 #' @import rvest

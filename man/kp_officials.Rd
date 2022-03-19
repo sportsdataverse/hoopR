@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_officials}
 \alias{kp_officials}
-\title{Get officials rankings}
+\title{\strong{Get officials rankings}}
 \usage{
 kp_officials(year = most_recent_mbb_season())
 }
@@ -22,7 +22,7 @@ A data frame with 7 columns:
 }
 }
 \description{
-Get officials rankings
+\strong{Get officials rankings}
 }
 \examples{
 \donttest{

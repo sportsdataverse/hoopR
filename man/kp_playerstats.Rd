@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_playerstats}
 \alias{kp_playerstats}
-\title{Get Player Stats Leaders by Metric}
+\title{\strong{Get Player Stats Leaders by Metric}}
 \usage{
 kp_playerstats(
   metric = "eFG",
@@ -35,7 +35,7 @@ Only available if specific conference is defined. Only available for season afte
 Returns a tibble of player stats
 }
 \description{
-Get Player Stats Leaders by Metric
+\strong{Get Player Stats Leaders by Metric}
 }
 \examples{
 \donttest{
