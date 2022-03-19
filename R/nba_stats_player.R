@@ -418,12 +418,18 @@ NULL
 #' **Get NBA Stats API Player Index**
 #' @rdname p_index
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
+#' @param college Player College
+#' @param country Player Country
+#' @param draft_pick Draft Pick
+#' @param draft_round Draft Round
+#' @param draft_year Draft Year
+#' @param height Player Height
+#' @param historical Whether to include only current players (0) or all historical (1).
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param player_id Player ID
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @param team_id Team ID. Default: 0 (all teams).
+#' @param weight Player weight
 #' @return Return a named list of data frames: PlayerIndex
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

@@ -21,17 +21,29 @@ nba_playerindex(
 )
 }
 \arguments{
+\item{college}{Player College}
+
+\item{country}{Player Country}
+
+\item{draft_pick}{Draft Pick}
+
+\item{draft_round}{Draft Round}
+
+\item{draft_year}{Draft Year}
+
+\item{height}{Player Height}
+
+\item{historical}{Whether to include only current players (0) or all historical (1).}
+
 \item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{season}{Season - format 2020-21}
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 
-\item{date_from}{date_from}
+\item{team_id}{Team ID. Default: 0 (all teams).}
 
-\item{date_to}{date_to}
-
-\item{player_id}{Player ID}
+\item{weight}{Player weight}
 }
 \value{
 Return a named list of data frames: PlayerIndex
