@@ -1,5 +1,6 @@
 # **hoopR 1.6.0**
 - ```nba_playerindex()``` function added.
+- ```nba_playerheadshot()``` function added.
 - ```nba_drafthistory()``` function added.
 
 # **hoopR 1.5.0**
