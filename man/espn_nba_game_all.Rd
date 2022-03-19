@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_game_all}
 \alias{espn_nba_game_all}
-\title{Get ESPN NBA game data (Pbp, Team and Player Box)}
+\title{\strong{Get ESPN NBA game data (Pbp, Team and Player Box)}}
 \usage{
 espn_nba_game_all(game_id)
 }
@@ -13,7 +13,7 @@ espn_nba_game_all(game_id)
 A named list of data frames: Plays, Team, Player
 }
 \description{
-Get ESPN NBA game data (Pbp, Team and Player Box)
+\strong{Get ESPN NBA game data (Pbp, Team and Player Box)}
 }
 \examples{
 \donttest{

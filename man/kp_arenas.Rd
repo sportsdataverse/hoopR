@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_arenas}
 \alias{kp_arenas}
-\title{Get Home Court Arenas}
+\title{\strong{Get Home Court Arenas}}
 \usage{
 kp_arenas(year = most_recent_mbb_season())
 }
@@ -21,7 +21,7 @@ A data frame with 6 columns:
 }
 }
 \description{
-Get Home Court Arenas
+\strong{Get Home Court Arenas}
 }
 \examples{
 \donttest{

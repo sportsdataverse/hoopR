@@ -1,3 +1,7 @@
+# **hoopR 1.6.0**
+- ```nba_playerindex()``` function added.
+- ```nba_drafthistory()``` function added.
+
 # **hoopR 1.5.0**
 - Major documentation update to include names of returned lists of data frames for all exported NBA Stats API, ESPN API, KenPom, NCAA and Data repository functions. 
 

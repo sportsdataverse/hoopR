@@ -3,7 +3,7 @@
 \docType{data}
 \name{nba_teams}
 \alias{nba_teams}
-\title{NBA Stats API's Teams Dictionary}
+\title{\strong{NBA Stats API's Teams Dictionary}}
 \format{
 A data frame with 30 rows and 10 variables:\
 \describe{
@@ -23,6 +23,6 @@ A data frame with 30 rows and 10 variables:\
 nba_teams
 }
 \description{
-NBA Stats API's Teams Dictionary
+\strong{NBA Stats API's Teams Dictionary}
 }
 \keyword{datasets}

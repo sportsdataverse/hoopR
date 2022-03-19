@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_efficiency}
 \alias{kp_efficiency}
-\title{Get KenPom Efficiency and Tempo Summary}
+\title{\strong{Get KenPom Efficiency and Tempo Summary}}
 \usage{
 kp_efficiency(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of efficiency and tempo ratings
 }
 \description{
-Get KenPom Efficiency and Tempo Summary
+\strong{Get KenPom Efficiency and Tempo Summary}
 }
 \examples{
 \donttest{

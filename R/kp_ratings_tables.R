@@ -1,4 +1,4 @@
-#' Get KenPom Ratings
+#' **Get KenPom Ratings**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -90,7 +90,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 }
 
 
-#' Get KenPom Efficiency and Tempo Summary
+#' **Get KenPom Efficiency and Tempo Summary**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -232,7 +232,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get Four Factors Data
+#' **Get Four Factors Data**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -328,7 +328,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get Team Points Distribution
+#' **Get Team Points Distribution**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -425,7 +425,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get Heights, Experience, Bench and Continuity Data
+#' **Get Heights, Experience, Bench and Continuity Data**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -568,7 +568,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get 2-Foul Participation Stats
+#' **Get 2-Foul Participation Stats**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -659,7 +659,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 }
 
 
-#' Get Team Stats
+#' **Get Team Stats**
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
@@ -813,7 +813,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 }
 
 
-#' Get Player Stats Leaders by Metric
+#' **Get Player Stats Leaders by Metric**
 #'
 #' @param metric Used to get leaders for different metrics. Available values are: \cr
 #' 'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', \cr
@@ -961,7 +961,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
   return(kenpom)
 }
 
-#' Get KPoY Leaders Tables
+#' **Get KPoY Leaders Tables**
 #'
 #' @param year Year of data to pull (earliest year of data available: 2011)
 #' @returns Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"

@@ -1,4 +1,4 @@
-#' Get men's college basketball NET rankings for the current date from the NCAA website
+#' **Get men's college basketball NET rankings for the current date from the NCAA website**
 #'
 #' @author Saiem Gilani
 #' @return Returns a tibble

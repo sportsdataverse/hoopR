@@ -1,4 +1,4 @@
-#' Get Game Box Score
+#' **Get KenPom Game Box Score**
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
@@ -134,7 +134,7 @@ kp_box <- function(game_id, year){
   return(kenpom)
 }
 
-#' Get Win Probability
+#' **Get KenPom Win Probability**
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull

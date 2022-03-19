@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_trends}
 \alias{kp_trends}
-\title{Get Division-I statistical trends}
+\title{\strong{Get Division-I statistical trends}}
 \usage{
 kp_trends()
 }
@@ -31,7 +31,7 @@ A data frame with 19 columns:
 }
 }
 \description{
-Get Division-I statistical trends
+\strong{Get Division-I statistical trends}
 }
 \examples{
 \donttest{

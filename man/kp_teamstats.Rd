@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_teamstats}
 \alias{kp_teamstats}
-\title{Get Team Stats}
+\title{\strong{Get Team Stats}}
 \usage{
 kp_teamstats(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_teamstats(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of team stats
 }
 \description{
-Get Team Stats
+\strong{Get Team Stats}
 }
 \examples{
 \donttest{

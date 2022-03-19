@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{check_status}
 \alias{check_status}
-\title{Check Status function}
+\title{\strong{Check Status function}}
 \usage{
 check_status(res)
 }
@@ -10,6 +10,6 @@ check_status(res)
 \item{res}{Response from API}
 }
 \description{
-Check Status function
+\strong{Check Status function}
 }
 \keyword{Internal}

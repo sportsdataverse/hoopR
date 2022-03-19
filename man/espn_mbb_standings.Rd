@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_standings}
 \alias{espn_mbb_standings}
-\title{Get ESPN men's college basketball standings}
+\title{\strong{Get ESPN men's college basketball standings}}
 \usage{
 espn_mbb_standings(year)
 }
@@ -13,7 +13,7 @@ espn_mbb_standings(year)
 A standings data frame
 }
 \description{
-Get ESPN men's college basketball standings
+\strong{Get ESPN men's college basketball standings}
 }
 \examples{
 \donttest{

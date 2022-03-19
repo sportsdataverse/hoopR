@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_game_all}
 \alias{espn_mbb_game_all}
-\title{Get ESPN men's college basketball data (Pbp, Team and Player Box)}
+\title{\strong{Get ESPN men's college basketball data (Pbp, Team and Player Box)}}
 \usage{
 espn_mbb_game_all(game_id)
 }
@@ -13,7 +13,7 @@ espn_mbb_game_all(game_id)
 A named list of data frames: Plays, Team, Player
 }
 \description{
-Get ESPN men's college basketball data (Pbp, Team and Player Box)
+\strong{Get ESPN men's college basketball data (Pbp, Team and Player Box)}
 }
 \examples{
 \donttest{

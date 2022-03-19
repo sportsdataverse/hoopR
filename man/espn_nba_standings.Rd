@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_standings}
 \alias{espn_nba_standings}
-\title{Get ESPN NBA's Standings}
+\title{\strong{Get ESPN NBA's Standings}}
 \usage{
 espn_nba_standings(year)
 }
@@ -13,7 +13,7 @@ espn_nba_standings(year)
 A standings data frame
 }
 \description{
-Get ESPN NBA's Standings
+\strong{Get ESPN NBA's Standings}
 }
 \examples{
 \donttest{

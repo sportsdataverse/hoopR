@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_rankings}
 \alias{espn_mbb_rankings}
-\title{Get men's college basketball AP and Coaches Poll rankings from ESPN}
+\title{\strong{Get men's college basketball AP and Coaches Poll rankings from ESPN}}
 \usage{
 espn_mbb_rankings()
 }
@@ -10,7 +10,7 @@ espn_mbb_rankings()
 Returns a tibble
 }
 \description{
-Get men's college basketball AP and Coaches Poll rankings from ESPN
+\strong{Get men's college basketball AP and Coaches Poll rankings from ESPN}
 }
 \examples{
 # Get current AP and Coaches Poll rankings

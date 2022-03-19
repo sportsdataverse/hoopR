@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_player_career}
 \alias{kp_player_career}
-\title{Get KenPom's player career stats from the player page}
+\title{\strong{Get KenPom's player career stats from the player page}}
 \usage{
 kp_player_career(player_id)
 }
@@ -13,7 +13,7 @@ kp_player_career(player_id)
 Returns a tibble of team player career stats
 }
 \description{
-Get KenPom's player career stats from the player page
+\strong{Get KenPom's player career stats from the player page}
 }
 \examples{
   \donttest{

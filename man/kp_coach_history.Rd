@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_coach_history}
 \alias{kp_coach_history}
-\title{Get KenPom's coaching resume data}
+\title{\strong{Get KenPom's coaching resume data}}
 \usage{
 kp_coach_history(coach)
 }
@@ -45,7 +45,7 @@ A data frame with 30 columns:
 }
 }
 \description{
-Get KenPom's coaching resume data
+\strong{Get KenPom's coaching resume data}
 }
 \examples{
   \donttest{

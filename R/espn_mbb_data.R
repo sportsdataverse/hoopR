@@ -1,4 +1,4 @@
-#' Get ESPN men's college basketball data (Pbp, Team and Player Box)
+#' **Get ESPN men's college basketball data (Pbp, Team and Player Box)**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A named list of data frames: Plays, Team, Player
@@ -218,7 +218,7 @@ espn_mbb_game_all <- function(game_id) {
   return(pbp)
 }
 
-#' Get ESPN men's college basketball PBP data
+#' **Get ESPN men's college basketball PBP data**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A play-by-play data frame.
@@ -291,7 +291,7 @@ espn_mbb_pbp <- function(game_id) {
 
   return(plays_df)
 }
-#' Get ESPN men's college basketball team box scores
+#' **Get ESPN men's college basketball team box scores**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A team boxscore data frame
@@ -407,7 +407,7 @@ espn_mbb_team_box <- function(game_id) {
   )
   return(team_box_score)
 }
-#' Get ESPN men's college basketball player box scores
+#' **Get ESPN men's college basketball player box scores**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A player boxscore data frame
@@ -510,7 +510,7 @@ espn_mbb_player_box <- function(game_id) {
 
 
 
-#' Get ESPN conference names and ids
+#' **Get ESPN conference names and IDs**
 #' @author Saiem Gilani
 #' @return A conferences data frame
 #' @keywords CBB Conferences
@@ -527,7 +527,7 @@ espn_mbb_player_box <- function(game_id) {
 espn_mbb_conferences <- function() {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  
+
   play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
 
   res <- httr::RETRY("GET", play_base_url)
@@ -561,7 +561,7 @@ espn_mbb_conferences <- function() {
   return(conferences)
 }
 
-#' Get ESPN men's college basketball team names and ids
+#' **Get ESPN men's college basketball team names and IDs**
 #' @author Saiem Gilani
 #' @return A teams data frame
 #' @keywords MBB Teams
@@ -653,7 +653,7 @@ espn_mbb_teams <- function() {
   return(teams)
 }
 
-#' Parse ESPN schedule, helper function
+#' **Parse ESPN schedule, helper function**
 #'
 #' @param group The ESPN conference group. Most helpful ones:
 #' * 50 - Regular season/NIT
@@ -810,7 +810,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
   )
 }
 
-#' Get ESPN men's college basketball schedule for a specific year
+#' **Get ESPN men's college basketball schedule for a specific year**
 #'
 #' @param season Either numeric or character
 #' @return Returns a tibble
@@ -858,7 +858,7 @@ espn_mbb_scoreboard <- function(season) {
   return(scoreboard_df)
 }
 
-#' Get men's college basketball AP and Coaches Poll rankings from ESPN
+#' **Get men's college basketball AP and Coaches Poll rankings from ESPN**
 #'
 #' @author Saiem Gilani
 #' @return Returns a tibble
@@ -938,7 +938,7 @@ espn_mbb_rankings <- function() {
 }
 
 
-#' Get ESPN men's college basketball standings
+#' **Get ESPN men's college basketball standings**
 #'
 #' @param year Either numeric or character (YYYY)
 #' @return A standings data frame
@@ -1032,7 +1032,7 @@ espn_mbb_standings <- function(year) {
 }
 
 
-#' Get ESPN MBB's Betting information
+#' **Get ESPN MBB's Betting information**
 #'
 #' @param game_id  Game ID
 #' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
