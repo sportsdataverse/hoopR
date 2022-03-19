@@ -466,7 +466,13 @@
     <loc>https://hoopR.sportsdataverse.org/reference/p_gamelogs.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/p_index.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/p_n_g.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/parse_espn_mbb_scoreboard.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/pbp.html</loc>
