@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_team_schedule}
 \alias{kp_team_schedule}
-\title{Get team schedule results}
+\title{\strong{Get team schedule results}}
 \usage{
 kp_team_schedule(team, year = 2022)
 }
@@ -15,7 +15,7 @@ kp_team_schedule(team, year = 2022)
 Returns a tibble of team schedules
 }
 \description{
-Get team schedule results
+\strong{Get team schedule results}
 }
 \examples{
 \donttest{

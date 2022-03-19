@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_hca}
 \alias{kp_hca}
-\title{Get Home Court Advantage Estimates}
+\title{\strong{Get Home Court Advantage Estimates}}
 \usage{
 kp_hca()
 }
@@ -26,7 +26,7 @@ A data frame with 14 columns:
 }
 }
 \description{
-Get Home Court Advantage Estimates
+\strong{Get Home Court Advantage Estimates}
 }
 \examples{
 \donttest{

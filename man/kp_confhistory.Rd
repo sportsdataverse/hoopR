@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_confhistory}
 \alias{kp_confhistory}
-\title{Get KenPom's historical conference ratings}
+\title{\strong{Get KenPom's historical conference ratings}}
 \usage{
 kp_confhistory(conf)
 }
@@ -50,7 +50,7 @@ A data frame with 23 columns:
 }
 }
 \description{
-Get KenPom's historical conference ratings
+\strong{Get KenPom's historical conference ratings}
 }
 \examples{
 \donttest{

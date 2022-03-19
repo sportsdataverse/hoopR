@@ -2,7 +2,7 @@
 % Please edit documentation in R/ncaa_mbb_data.R
 \name{ncaa_mbb_NET_rankings}
 \alias{ncaa_mbb_NET_rankings}
-\title{Get men's college basketball NET rankings for the current date from the NCAA website}
+\title{\strong{Get men's college basketball NET rankings for the current date from the NCAA website}}
 \usage{
 ncaa_mbb_NET_rankings()
 }
@@ -10,7 +10,7 @@ ncaa_mbb_NET_rankings()
 Returns a tibble
 }
 \description{
-Get men's college basketball NET rankings for the current date from the NCAA website
+\strong{Get men's college basketball NET rankings for the current date from the NCAA website}
 }
 \examples{
 # Get current NCAA NET rankings

@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_gameplan}
 \alias{kp_gameplan}
-\title{Get KenPom's team game plan page}
+\title{\strong{Get KenPom's team game plan page}}
 \usage{
 kp_gameplan(team, year = 2021)
 }
@@ -15,7 +15,7 @@ kp_gameplan(team, year = 2021)
 Returns a tibble of team game plans
 }
 \description{
-Get KenPom's team game plan page
+\strong{Get KenPom's team game plan page}
 }
 \examples{
 \donttest{

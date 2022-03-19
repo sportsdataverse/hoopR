@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_fourfactors}
 \alias{kp_fourfactors}
-\title{Get Four Factors Data}
+\title{\strong{Get Four Factors Data}}
 \usage{
 kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of four factors ratings
 }
 \description{
-Get Four Factors Data
+\strong{Get Four Factors Data}
 }
 \examples{
 \donttest{

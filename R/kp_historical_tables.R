@@ -1,4 +1,4 @@
-#' Get KenPom's team efficiency history
+#' **Get KenPom's team efficiency history**
 #'
 #'
 #' @param team Team filter to select.
@@ -241,7 +241,7 @@ kp_team_history <- function(team){
   return(kenpom)
 }
 
-#' Get KenPom's coaching resume data
+#' **Get KenPom's coaching resume data**
 #'
 #'
 #' @param coach Coach filter to select.
@@ -492,7 +492,7 @@ kp_coach_history <- function(coach){
   return(kenpom)
 }
 
-#' Get KenPom's program ratings
+#' **Get KenPom's program ratings**
 #'
 #'
 #'
@@ -578,7 +578,7 @@ kp_program_ratings <- function(){
   return(kenpom)
 }
 
-#' Get KenPom's ratings archive pages
+#' **Get KenPom's ratings archive pages**
 #'
 #'
 #' @param date Date (YYYY-MM-DD)
@@ -675,7 +675,7 @@ kp_pomeroy_archive_ratings <- function(date){
   return(kenpom)
 }
 
-#' Get KenPom's conference-wide stats
+#' **Get KenPom's conference-wide stats**
 #'
 #'
 #' @param year Year (YYYY)
@@ -925,7 +925,7 @@ kp_conf <- function(year, conf){
 }
 
 
-#' Get KenPom's conference comparison stats
+#' **Get KenPom's conference comparison stats**
 #'
 #'
 #' @param year Year (YYYY)
@@ -1038,7 +1038,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get KenPom's historical conference ratings
+#' **Get KenPom's historical conference ratings**
 #'
 #'
 #' @param conf Used to limit to players in a specific conference.

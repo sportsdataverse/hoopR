@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_box_tables.R
 \name{kp_box}
 \alias{kp_box}
-\title{Get Game Box Score}
+\title{\strong{Get KenPom Game Box Score}}
 \usage{
 kp_box(game_id, year)
 }
@@ -15,7 +15,7 @@ kp_box(game_id, year)
 Returns a tibble of game box scores
 }
 \description{
-Get Game Box Score
+\strong{Get KenPom Game Box Score}
 }
 \examples{
 \donttest{

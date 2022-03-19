@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_team_box}
 \alias{espn_nba_team_box}
-\title{Get ESPN NBA team box scores}
+\title{\strong{Get ESPN NBA team box scores}}
 \usage{
 espn_nba_team_box(game_id)
 }
@@ -13,7 +13,7 @@ espn_nba_team_box(game_id)
 A team boxscore data frame
 }
 \description{
-Get ESPN NBA team box scores
+\strong{Get ESPN NBA team box scores}
 }
 \examples{
 \donttest{

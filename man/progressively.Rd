@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{progressively}
 \alias{progressively}
-\title{Progressively}
+\title{\strong{Progressively}}
 \usage{
 progressively(f, p = NULL)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_conferences}
 \alias{espn_mbb_conferences}
-\title{Get ESPN conference names and ids}
+\title{\strong{Get ESPN conference names and IDs}}
 \usage{
 espn_mbb_conferences()
 }
@@ -10,7 +10,7 @@ espn_mbb_conferences()
 A conferences data frame
 }
 \description{
-Get ESPN conference names and ids
+\strong{Get ESPN conference names and IDs}
 }
 \examples{
 \donttest{

@@ -1,4 +1,4 @@
-#' Get Division-I statistical trends
+#' **Get Division-I statistical trends**
 #'
 #'
 #' @return A data frame with 19 columns:
@@ -80,7 +80,7 @@ kp_trends <- function(){
   return(kenpom)
 }
 
-#' Get officials rankings
+#' **Get officials rankings**
 #'
 #' @param year Year of data to pull
 #'
@@ -159,7 +159,7 @@ kp_officials <- function(year = most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get referee game log
+#' **Get referee game log**
 #' @param referee Referee ID
 #' @param year Year of data to pull
 #'
@@ -244,7 +244,7 @@ kp_referee <- function(referee, year){
   return(kenpom)
 }
 
-#' Get Home Court Advantage Estimates
+#' **Get Home Court Advantage Estimates**
 #'
 #'
 #' @return A data frame with 14 columns:
@@ -318,7 +318,7 @@ kp_hca <- function(){
 }
 
 
-#' Get Home Court Arenas
+#' **Get Home Court Arenas**
 #'
 #' @param year Year of data to pull
 #' @return A data frame with 6 columns:
@@ -386,7 +386,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
   return(kenpom)
 }
 
-#' Get Game Attributes
+#' **Get Game Attributes**
 #'
 #'
 #' @param year Year of data to pull
@@ -451,7 +451,7 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 }
 
 
-#' Get FanMatch by date
+#' **Get FanMatch by date**
 #'
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'

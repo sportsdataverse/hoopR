@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_team_box}
 \alias{espn_mbb_team_box}
-\title{Get ESPN men's college basketball team box scores}
+\title{\strong{Get ESPN men's college basketball team box scores}}
 \usage{
 espn_mbb_team_box(game_id)
 }
@@ -13,7 +13,7 @@ espn_mbb_team_box(game_id)
 A team boxscore data frame
 }
 \description{
-Get ESPN men's college basketball team box scores
+\strong{Get ESPN men's college basketball team box scores}
 }
 \examples{
 \donttest{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_pbp}
 \alias{espn_mbb_pbp}
-\title{Get ESPN men's college basketball PBP data}
+\title{\strong{Get ESPN men's college basketball PBP data}}
 \usage{
 espn_mbb_pbp(game_id)
 }
@@ -13,7 +13,7 @@ espn_mbb_pbp(game_id)
 A play-by-play data frame.
 }
 \description{
-Get ESPN men's college basketball PBP data
+\strong{Get ESPN men's college basketball PBP data}
 }
 \examples{
 \donttest{

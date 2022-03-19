@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_scoreboard}
 \alias{espn_mbb_scoreboard}
-\title{Get ESPN men's college basketball schedule for a specific year}
+\title{\strong{Get ESPN men's college basketball schedule for a specific year}}
 \usage{
 espn_mbb_scoreboard(season)
 }
@@ -13,7 +13,7 @@ espn_mbb_scoreboard(season)
 Returns a tibble
 }
 \description{
-Get ESPN men's college basketball schedule for a specific year
+\strong{Get ESPN men's college basketball schedule for a specific year}
 }
 \examples{
 

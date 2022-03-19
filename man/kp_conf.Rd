@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_conf}
 \alias{kp_conf}
-\title{Get KenPom's conference-wide stats}
+\title{\strong{Get KenPom's conference-wide stats}}
 \usage{
 kp_conf(year, conf)
 }
@@ -120,7 +120,7 @@ A data frame 4 columns:
 }
 }
 \description{
-Get KenPom's conference-wide stats
+\strong{Get KenPom's conference-wide stats}
 }
 \examples{
 \donttest{

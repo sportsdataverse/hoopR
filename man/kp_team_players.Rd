@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_team_players}
 \alias{kp_team_players}
-\title{Get KenPom's player stats from the team page}
+\title{\strong{Get KenPom's player stats from the team page}}
 \usage{
 kp_team_players(team, year = 2021)
 }
@@ -15,7 +15,7 @@ kp_team_players(team, year = 2021)
 Returns a tibble of team player data
 }
 \description{
-Get KenPom's player stats from the team page
+\strong{Get KenPom's player stats from the team page}
 }
 \examples{
   \donttest{

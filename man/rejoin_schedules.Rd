@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils_nba_stats.R
 \name{rejoin_schedules}
 \alias{rejoin_schedules}
-\title{rejoin schedules (when used from league game finder)}
+\title{\strong{rejoin schedules (when used from league game finder)}}
 \usage{
 rejoin_schedules(df)
 }
@@ -10,5 +10,5 @@ rejoin_schedules(df)
 \item{df}{data frame pulled from nba_leaguegamefinder()}
 }
 \description{
-rejoin schedules (when used from league game finder)
+\strong{rejoin schedules (when used from league game finder)}
 }

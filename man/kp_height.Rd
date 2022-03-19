@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_height}
 \alias{kp_height}
-\title{Get Heights, Experience, Bench and Continuity Data}
+\title{\strong{Get Heights, Experience, Bench and Continuity Data}}
 \usage{
 kp_height(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_height(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of heights
 }
 \description{
-Get Heights, Experience, Bench and Continuity Data
+\strong{Get Heights, Experience, Bench and Continuity Data}
 }
 \examples{
 \donttest{

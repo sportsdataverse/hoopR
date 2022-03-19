@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_pbp}
 \alias{espn_nba_pbp}
-\title{Get ESPN NBA PBP data}
+\title{\strong{Get ESPN NBA PBP data}}
 \usage{
 espn_nba_pbp(game_id)
 }
@@ -13,7 +13,7 @@ espn_nba_pbp(game_id)
 A play-by-play data frame.
 }
 \description{
-Get ESPN NBA PBP data
+\strong{Get ESPN NBA PBP data}
 }
 \examples{
 \donttest{

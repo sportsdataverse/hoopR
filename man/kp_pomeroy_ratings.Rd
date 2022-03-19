@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_pomeroy_ratings}
 \alias{kp_pomeroy_ratings}
-\title{Get KenPom Ratings}
+\title{\strong{Get KenPom Ratings}}
 \usage{
 kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of ratings
 }
 \description{
-Get KenPom Ratings
+\strong{Get KenPom Ratings}
 }
 \examples{
 \donttest{

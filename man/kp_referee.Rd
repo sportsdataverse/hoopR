@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_referee}
 \alias{kp_referee}
-\title{Get referee game log}
+\title{\strong{Get referee game log}}
 \usage{
 kp_referee(referee, year)
 }
@@ -28,7 +28,7 @@ A data frame with 11 columns:
 }
 }
 \description{
-Get referee game log
+\strong{Get referee game log}
 }
 \examples{
 \donttest{

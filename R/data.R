@@ -1,4 +1,4 @@
-#' Men's College Basketball KenPom Teams Dictionary
+#' **Men's College Basketball KenPom Teams Dictionary**
 #' Team link KenPom reference lookup for the package
 #' @format A data frame with 357 rows and 6 variables:\
 #' \describe{
@@ -12,7 +12,7 @@
 #' }
 "teams_links"
 
-#' NBA Stats API's Teams Dictionary
+#' **NBA Stats API's Teams Dictionary**
 #' @format A data frame with 30 rows and 10 variables:\
 #' \describe{
 #' \item{\code{TeamID}}{character.}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_program_ratings}
 \alias{kp_program_ratings}
-\title{Get KenPom's program ratings}
+\title{\strong{Get KenPom's program ratings}}
 \usage{
 kp_program_ratings()
 }
@@ -29,7 +29,7 @@ A data frame with 17 columns:
 }
 }
 \description{
-Get KenPom's program ratings
+\strong{Get KenPom's program ratings}
 }
 \examples{
 \donttest{

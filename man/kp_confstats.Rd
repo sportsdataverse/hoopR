@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_historical_tables.R
 \name{kp_confstats}
 \alias{kp_confstats}
-\title{Get KenPom's conference comparison stats}
+\title{\strong{Get KenPom's conference comparison stats}}
 \usage{
 kp_confstats(year = most_recent_mbb_season())
 }
@@ -50,7 +50,7 @@ A data frame with 35 columns:
 }
 }
 \description{
-Get KenPom's conference comparison stats
+\strong{Get KenPom's conference comparison stats}
 }
 \examples{
 \donttest{

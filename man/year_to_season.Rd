@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils_nba_stats.R
 \name{year_to_season}
 \alias{year_to_season}
-\title{year to season (XXXX -> XXXX-YY)}
+\title{\strong{year to season (XXXX -> XXXX-YY)}}
 \usage{
 year_to_season(year)
 }
@@ -10,5 +10,5 @@ year_to_season(year)
 \item{year}{Four digit year (XXXX)}
 }
 \description{
-year to season (XXXX -> XXXX-YY)
+\strong{year to season (XXXX -> XXXX-YY)}
 }

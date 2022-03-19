@@ -1,4 +1,4 @@
-#' Get ESPN NBA game data (Pbp, Team and Player Box)
+#' **Get ESPN NBA game data (Pbp, Team and Player Box)**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A named list of data frames: Plays, Team, Player
@@ -182,7 +182,7 @@ espn_nba_game_all <- function(game_id){
   return(pbp)
 }
 
-#' Get ESPN NBA PBP data
+#' **Get ESPN NBA PBP data**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A play-by-play data frame.
@@ -250,7 +250,7 @@ espn_nba_pbp <- function(game_id){
 
   return(plays_df)
 }
-#' Get ESPN NBA team box scores
+#' **Get ESPN NBA team box scores**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A team boxscore data frame
@@ -358,7 +358,7 @@ espn_nba_team_box <- function(game_id){
   )
   return(team_box_score)
 }
-#' Get ESPN NBA player box scores
+#' **Get ESPN NBA player box scores**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A player boxscore data frame
@@ -439,7 +439,7 @@ espn_nba_player_box <- function(game_id){
 }
 
 
-#' Get ESPN NBA team names and ids
+#' **Get ESPN NBA team names and IDs**
 #' @author Saiem Gilani
 #' @return A teams data frame
 #' @keywords NBA Teams
@@ -538,7 +538,7 @@ espn_nba_teams <- function(){
 }
 
 
-#' Get ESPN men's NBA schedule for a specific year
+#' **Get ESPN men's NBA schedule for a specific year**
 #'
 #' @param season Either numeric or character (YYYYMMDD)
 #' @return Returns a tibble
@@ -682,7 +682,7 @@ espn_nba_scoreboard <- function(season){
   )
 }
 
-#' Get ESPN NBA's Standings
+#' **Get ESPN NBA's Standings**
 #'
 #' @param year Either numeric or character (YYYY)
 #' @return A standings data frame
@@ -764,7 +764,7 @@ espn_nba_standings <- function(year){
 }
 
 
-#' Get ESPN NBA's Betting information
+#' **Get ESPN NBA's Betting information**
 #'
 #' @param game_id  Game ID
 #' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df

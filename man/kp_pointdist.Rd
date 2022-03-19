@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_pointdist}
 \alias{kp_pointdist}
-\title{Get Team Points Distribution}
+\title{\strong{Get Team Points Distribution}}
 \usage{
 kp_pointdist(min_year, max_year = most_recent_mbb_season())
 }
@@ -15,7 +15,7 @@ kp_pointdist(min_year, max_year = most_recent_mbb_season())
 Returns a tibble of team points distributions
 }
 \description{
-Get Team Points Distribution
+\strong{Get Team Points Distribution}
 }
 \examples{
 \donttest{

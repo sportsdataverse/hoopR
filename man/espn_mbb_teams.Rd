@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_teams}
 \alias{espn_mbb_teams}
-\title{Get ESPN men's college basketball team names and ids}
+\title{\strong{Get ESPN men's college basketball team names and IDs}}
 \usage{
 espn_mbb_teams()
 }
@@ -10,7 +10,7 @@ espn_mbb_teams()
 A teams data frame
 }
 \description{
-Get ESPN men's college basketball team names and ids
+\strong{Get ESPN men's college basketball team names and IDs}
 }
 \examples{
 \donttest{

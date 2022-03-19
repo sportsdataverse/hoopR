@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{clean_team_names_NCAA_merge}
 \alias{clean_team_names_NCAA_merge}
-\title{Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging}
+\title{\strong{Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging}}
 \usage{
 clean_team_names_NCAA_merge(df)
 }
@@ -10,6 +10,6 @@ clean_team_names_NCAA_merge(df)
 \item{df}{KenPom dataframe}
 }
 \description{
-Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging
+\strong{Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging}
 }
 \keyword{Util}

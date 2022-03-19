@@ -1,4 +1,4 @@
-#' Get team schedule results
+#' **Get team schedule results**
 #'
 #'
 #' @param team Team filter to select.
@@ -343,7 +343,7 @@ kp_team_schedule <- function(team, year = 2022){
   return(kenpom)
 }
 
-#' Get KenPom's team game plan page
+#' **Get KenPom's team game plan page**
 #'
 #'
 #' @param team Team filter to select.
@@ -541,7 +541,7 @@ kp_gameplan <- function(team, year=2021){
   return(kenpom)
 }
 
-#' Get KenPom's team opponent tracker page
+#' **Get KenPom's team opponent tracker page**
 #'
 #'
 #' @param team Team filter to select.
@@ -702,7 +702,7 @@ kp_opptracker <- function(team, year = 2021){
   return(kenpom)
 }
 
-#' Get KenPom's player stats from the team page
+#' **Get KenPom's player stats from the team page**
 #'
 #'
 #' @param team Team filter to select.
@@ -940,7 +940,7 @@ kp_team_players <- function(team, year = 2021){
   return(kenpom)
 }
 
-#' Get KenPom's player career stats from the player page
+#' **Get KenPom's player career stats from the player page**
 #'
 #'
 #' @param player_id Player Id filter to select.
@@ -1163,7 +1163,7 @@ kp_player_career <- function(player_id){
   )
   return(kenpom)
 }
-#' Get Minutes Matrix from Expanded Player Page
+#' **Get Minutes Matrix from Expanded Player Page**
 #'
 #'
 #' @param team Team filter to select.
@@ -1250,7 +1250,7 @@ kp_minutes_matrix <- function(team, year = 2021){
 }
 
 
-#' Get Team Player Stats
+#' **Get Team Player Stats**
 #'
 #'
 #' @param team Team filter to select.
@@ -1474,7 +1474,7 @@ kp_team_player_stats <- function(team, year = 2021){
 }
 
 
-#' Get Depth Chart Last 5 Games from Team Page
+#' **Get Depth Chart Last 5 Games from Team Page**
 #'
 #'
 #' @param team Team filter to select.
@@ -1642,7 +1642,7 @@ kp_team_depth_chart <- function(team, year= 2021){
   return(kenpom)
 }
 
-#' Get Lineups Last 5 Games from Team Page
+#' **Get Lineups Last 5 Games from Team Page**
 #'
 #'
 #' @param team Team filter to select.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_mbb_data.R
 \name{espn_mbb_betting}
 \alias{espn_mbb_betting}
-\title{Get ESPN MBB's Betting information}
+\title{\strong{Get ESPN MBB's Betting information}}
 \usage{
 espn_mbb_betting(game_id)
 }
@@ -13,7 +13,7 @@ espn_mbb_betting(game_id)
 Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
 }
 \description{
-Get ESPN MBB's Betting information
+\strong{Get ESPN MBB's Betting information}
 }
 \examples{
 \donttest{

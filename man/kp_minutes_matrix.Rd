@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_team_tables.R
 \name{kp_minutes_matrix}
 \alias{kp_minutes_matrix}
-\title{Get Minutes Matrix from Expanded Player Page}
+\title{\strong{Get Minutes Matrix from Expanded Player Page}}
 \usage{
 kp_minutes_matrix(team, year = 2021)
 }
@@ -15,7 +15,7 @@ kp_minutes_matrix(team, year = 2021)
 Returns a tibble of minutes matrix data
 }
 \description{
-Get Minutes Matrix from Expanded Player Page
+\strong{Get Minutes Matrix from Expanded Player Page}
 }
 \examples{
   \donttest{

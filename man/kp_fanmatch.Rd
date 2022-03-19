@@ -2,7 +2,7 @@
 % Please edit documentation in R/kp_misc_stats.R
 \name{kp_fanmatch}
 \alias{kp_fanmatch}
-\title{Get FanMatch by date}
+\title{\strong{Get FanMatch by date}}
 \usage{
 kp_fanmatch(date = "2022-02-22")
 }
@@ -35,7 +35,7 @@ A data frame 20 columns:
 |date         |character |
 }
 \description{
-Get FanMatch by date
+\strong{Get FanMatch by date}
 }
 \examples{
 \donttest{
