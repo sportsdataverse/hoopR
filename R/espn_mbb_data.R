@@ -668,7 +668,6 @@ espn_mbb_teams <- function() {
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
 #' @import rvest
-#' @noRd
 parse_espn_mbb_scoreboard <- function(group, season_dates) {
   schedule_api <-
     glue::glue(
