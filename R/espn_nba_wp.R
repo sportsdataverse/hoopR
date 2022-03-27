@@ -45,7 +45,7 @@ espn_nba_wp <- function(game_id) {
 
   if (!is.null(game_id) && !is.numeric(game_id)) {
     # Check if game_id is numeric, if not NULL
-    cli::cli_abort("Enter valid game_id value (Integer)\nCan be found using the `cfbd_game_info()` function")
+    cli::cli_abort("Enter valid game_id value (Integer)")
   }
 
   espn_game_id <- game_id
@@ -76,7 +76,8 @@ espn_nba_wp <- function(game_id) {
           game_id = espn_game_id) %>%
         dplyr::select(dplyr::any_of(c("game_id","play_id","home_win_percentage", "away_win_percentage", "tie_percentage")),
                       tidyr::everything()) %>%
-        janitor::clean_names()
+        janitor::clean_names() %>%
+        hoopR:::make_hoopR_data("ESPN NBA Win Probability Information from ESPN.com",Sys.time())
 
 
     },
