@@ -332,11 +332,11 @@ print.hoopR_data <- function(x,...) {
 # rbindlist but maintain attributes of last file
 rbindlist_with_attrs <- function(dflist){
 
-  fastRhockey_timestamp <- attr(dflist[[length(dflist)]], "fastRhockey_timestamp")
-  fastRhockey_type <- attr(dflist[[length(dflist)]], "fastRhockey_type")
+  hoopR_timestamp <- attr(dflist[[length(dflist)]], "hoopR_timestamp")
+  hoopR_type <- attr(dflist[[length(dflist)]], "hoopR_type")
   out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
-  attr(out,"fastRhockey_timestamp") <- fastRhockey_timestamp
-  attr(out,"fastRhockey_type") <- fastRhockey_type
+  attr(out,"hoopR_timestamp") <- hoopR_timestamp
+  attr(out,"hoopR_type") <- hoopR_type
   out
 }
 
