@@ -297,3 +297,46 @@ NULL
 `%c%` <- function(x,y){
   ifelse(!is.na(x),x,y)
 }
+
+
+
+# Functions for custom class
+# turn a data.frame into a tibble/hoopR_data
+make_hoopR_data <- function(df,type,timestamp){
+  out <- df %>%
+    tidyr::as_tibble()
+
+  class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+  attr(out,"hoopR_timestamp") <- timestamp
+  attr(out,"hoopR_type") <- type
+  return(out)
+}
+
+#' @export
+#' @noRd
+print.hoopR_data <- function(x,...) {
+  cli::cli_rule(left = "{attr(x,'hoopR_type')}",right = "{.emph hoopR {utils::packageVersion('hoopR')}}")
+
+  if(!is.null(attr(x,'hoopR_timestamp'))) {
+    cli::cli_alert_info(
+      "Data updated: {.field {format(attr(x,'hoopR_timestamp'), tz = Sys.timezone(), usetz = TRUE)}}"
+    )
+  }
+
+  NextMethod(print,x)
+  invisible(x)
+}
+
+
+
+# rbindlist but maintain attributes of last file
+rbindlist_with_attrs <- function(dflist){
+
+  fastRhockey_timestamp <- attr(dflist[[length(dflist)]], "fastRhockey_timestamp")
+  fastRhockey_type <- attr(dflist[[length(dflist)]], "fastRhockey_type")
+  out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
+  attr(out,"fastRhockey_timestamp") <- fastRhockey_timestamp
+  attr(out,"fastRhockey_type") <- fastRhockey_type
+  out
+}
+

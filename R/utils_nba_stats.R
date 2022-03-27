@@ -1,5 +1,6 @@
 .nba_headers <-
-  function(url = "https://stats.nba.com/stats/leaguegamelog?Counter=1000&Season=2019-20&Direction=DESC&LeagueID=00&PlayerOrTeam=P&SeasonType=Regular%20Season&Sorter=DATE") {
+  function(url = "https://stats.nba.com/stats/leaguegamelog?Counter=1000&Season=2019-20&Direction=DESC&LeagueID=00&PlayerOrTeam=P&SeasonType=Regular%20Season&Sorter=DATE",
+           params = list()) {
 
     headers <- c(
       `Host` = 'stats.nba.com',
@@ -18,6 +19,7 @@
 
     res <-
       httr::RETRY("GET", url,
+                  query=params,
                 httr::add_headers(.headers = headers))
 
     json <- res$content %>%
