@@ -14,8 +14,9 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
+nba_pbp <- function(game_id, version = "v2", p = NULL){
 
+  p("loading...")
   if(version=="v2"){
     endpoint <- nba_endpoint('playbyplayv2')
   } else {
@@ -32,9 +33,9 @@ nba_pbp <- function(game_id, version = "v2", return_message = TRUE){
       resp <- full_url %>%
         .nba_headers()
 
-      if (return_message) {
-        glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
-      }
+      # if (return_message) {
+      #   glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
+      # }
 
       data <-
         resp$resultSets$rowSet[[1]] %>%
@@ -133,20 +134,22 @@ NULL
 #' @export
 nba_pbps <-function(game_ids = NULL,
                     version = "v2",
-                    nest_data = FALSE,
-                    return_message = TRUE) {
+                    nest_data = FALSE) {
 
   if (game_ids %>% purrr::is_null()) {
     stop("Please enter game ids")
   }
 
-  get_pbp_safe <-
-    purrr::possibly(nba_pbp, dplyr::tibble())
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = game_ids)
+  get_pbp_safe <- progressively(nba_pbp, p)
+
 
   all_data <-
     game_ids %>%
     purrr::map_dfr(function(game_id) {
-      get_pbp_safe(game_id = game_id, return_message = return_message)
+      get_pbp_safe(game_id = game_id, p = p)
     })
 
   if (nest_data) {
