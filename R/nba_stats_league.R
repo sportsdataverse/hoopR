@@ -49,16 +49,13 @@ nba_leaguegamelog <- function(
       resp <- full_url %>%
         .nba_headers()
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      data <- resp$resultSets$rowSet[[1]] %>%
+        data.frame(stringsAsFactors = F) %>%
+        as_tibble()
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      json_names <- resp$resultSets$headers[[1]]
+      colnames(data) <- json_names
+
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game log data for {season} available!"))
@@ -68,7 +65,7 @@ nba_leaguegamelog <- function(
     finally = {
     }
   )
-  return(df_list)
+  return(data)
 }
 
 
