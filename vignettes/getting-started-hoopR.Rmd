@@ -58,6 +58,7 @@ There are generally speaking **five** men's basketball data sources accessed fro
 
 -   [`hoopR-data` repo](https://github.com/saiemgilani/hoopR-data) [![Twitter Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
 -   [NBA Stats and Data API](https://stats.nba.com)
+-   [NBA G-League Stats and Data API](https://stats.nba.com)
 -   [ESPN](https://espn.com)
 -   [KenPom](https://kenpom.com) (Requires subscription access)
 -   [NCAA](https://ncaa.com)
@@ -67,6 +68,8 @@ There are generally speaking **five** men's basketball data sources accessed fro
 -   Functions that use the [`hoopR-data` repository](https://github.com/saiemgilani/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
 
 -   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 127 functions covering the NBA Stats API
+
+-   Functions that use the NBA G-League Stats API start with `nbagl_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 4 functions covering the NBA G-League Stats API
 
 -   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports 10 functions covering the men's college basketball endpoints and 10 for the NBA.
 
@@ -157,4 +160,15 @@ dplyr::glimpse(mbb_player_box)
 -   [Saiem Gilani](https://twitter.com/saiemgilani)       
 <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+
+
+## **Our Contributors (they're awesome)**
+
+-   [Jason Lee](https://twitter.com/theFirmAISports)       
+<a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
+<a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+
+-   [Billy Fryer](https://twitter.com/_b4billy_)       
+<a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
+<a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
 

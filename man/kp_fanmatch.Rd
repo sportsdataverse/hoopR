@@ -10,29 +10,29 @@ kp_fanmatch(date = "2022-02-22")
 \item{date}{Date of games to pull (YYYY-MM-DD)}
 }
 \value{
-A data frame 20 columns:
-|col_name     |types     |
-|:------------|:---------|
-|prediction   |character |
-|time_et      |character |
-|location     |character |
-|thrill_score |numeric   |
-|comeback     |numeric   |
-|excitement   |numeric   |
-|road_rk      |numeric   |
-|road_team    |character |
-|home_rk      |numeric   |
-|home_team    |character |
-|win_rk       |numeric   |
-|win_team     |character |
-|win_score    |numeric   |
-|loss_rk      |numeric   |
-|loss_team    |character |
-|loss_score   |numeric   |
-|poss         |numeric   |
-|mvp          |character |
-|event        |character |
-|date         |character |
+A data frame 20 columns:\tabular{ll}{
+   col_name \tab types \cr
+   prediction \tab character \cr
+   time_et \tab character \cr
+   location \tab character \cr
+   thrill_score \tab numeric \cr
+   comeback \tab numeric \cr
+   excitement \tab numeric \cr
+   road_rk \tab numeric \cr
+   road_team \tab character \cr
+   home_rk \tab numeric \cr
+   home_team \tab character \cr
+   win_rk \tab numeric \cr
+   win_team \tab character \cr
+   win_score \tab numeric \cr
+   loss_rk \tab numeric \cr
+   loss_team \tab character \cr
+   loss_score \tab numeric \cr
+   poss \tab numeric \cr
+   mvp \tab character \cr
+   event \tab character \cr
+   date \tab character \cr
+}
 }
 \description{
 \strong{Get FanMatch by date}

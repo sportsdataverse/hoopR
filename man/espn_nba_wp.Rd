@@ -10,30 +10,30 @@ espn_nba_wp(game_id)
 \item{game_id}{(\emph{Integer} required): Game ID filter for querying a single game}
 }
 \value{
-\code{\link[=espn_nba_wp]{espn_nba_wp()}} - A data frame with 21 variables:
-|col_name             |types     |
-|:--------------------|:---------|
-|game_id              |numeric   |
-|play_id              |character |
-|home_win_percentage  |numeric   |
-|away_win_percentage  |numeric   |
-|tie_percentage       |numeric   |
-|sequence_number      |character |
-|text                 |character |
-|away_score           |integer   |
-|home_score           |integer   |
-|scoring_play         |logical   |
-|score_value          |integer   |
-|participants         |list      |
-|shooting_play        |logical   |
-|type_id              |character |
-|type_text            |character |
-|period_number        |integer   |
-|period_display_value |character |
-|clock_display_value  |character |
-|team_id              |character |
-|coordinate_x         |integer   |
-|coordinate_y         |integer   |
+\code{\link[=espn_nba_wp]{espn_nba_wp()}} - A data frame with 21 variables:\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab numeric \cr
+   play_id \tab character \cr
+   home_win_percentage \tab numeric \cr
+   away_win_percentage \tab numeric \cr
+   tie_percentage \tab numeric \cr
+   sequence_number \tab character \cr
+   text \tab character \cr
+   away_score \tab integer \cr
+   home_score \tab integer \cr
+   scoring_play \tab logical \cr
+   score_value \tab integer \cr
+   participants \tab list \cr
+   shooting_play \tab logical \cr
+   type_id \tab character \cr
+   type_text \tab character \cr
+   period_number \tab integer \cr
+   period_display_value \tab character \cr
+   clock_display_value \tab character \cr
+   team_id \tab character \cr
+   coordinate_x \tab integer \cr
+   coordinate_y \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA win probability chart data from ESPN}
