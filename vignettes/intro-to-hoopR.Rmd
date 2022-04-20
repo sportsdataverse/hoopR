@@ -24,10 +24,6 @@ remote_version <- gsub("Version:\\s*", "", x[grep('Version:', x)])
 
 We will be acquiring data from [kenpom.com](https://kenpom.com), using the `hoopR` package, created by [Saiem Gilani](https://twitter.com/saiemgilani). An active subscription to the website will be required for most of this tutorial.
 
-### R & RStudio
-
-This tutorial will require the use of R and RStudio. You can [follow the instructions at R Studio on how to get started](https://rstudio.com/products/rstudio/download/).
-
 ### **Using Your KenPom Subscription**
 
 You can save your user email and password for consistent usage by adding `KP_USER = XX-YOUR-EMAIL-XX@YOUR-DOMAIN.COM` and `KP_PW = XX-YOUR-PASSWORD-XX` to your .Renviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)). Run [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html), a new script will pop open named `.Renviron`, **THEN** paste the following in the new script that pops up (with**out** quotations)

@@ -27,6 +27,20 @@ Welcome folks,
 
 I'm Saiem Gilani, one of the [authors](https://saiemgilani.github.io/hoopR/authors.html "Authors and contributors to hoopR") of [`hoopR`](https://saiemgilani.github.io/hoopR/), and I hope to give the community a high-quality resource for accessing men's basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.
 
+### **Installing R and RStudio**
+
+1.  Head to <https://cran.r-project.org>
+2.  Select the appropriate link for your operating system (Windows, Mac OS X, or Linux)
+
+-   **Windows** - Select base and download the most recent version
+-   **Mac OS X** - Select Latest Release, but check to make sure your OS is the correct version. Look through Binaries for Legacy OS X Systems if you are on an older release
+-   **Linux** - Select the appropriate distro and follow the installation instructions
+
+3.  Head to [RStudio.com](https://www.rstudio.com/products/rstudio/download/#download "Download the appropriate version of RStudio (Free) for your operating system to use with R")
+4.  Follow the associated download and installation instructions for RStudio.
+5.  Start peering over the [RStudio IDE Cheatsheet](%22https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf%22). *An IDE is an integrated development environment.*
+6.  For **Windows** users: I recommend you install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). This is not an R package! It is “a collection of resources for building packages for R under Microsoft Windows, or for building R itself”. Go to [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) and follow the directions for installation.
+
 ## **Install** [**`hoopR`**](https://saiemgilani.github.io/hoopR/)
 ```{r install_hoopR_gs, message=FALSE,eval=FALSE}
 # You can install using the pacman package using the following code:
