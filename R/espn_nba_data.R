@@ -51,7 +51,7 @@ espn_nba_game_all <- function(game_id){
       names(aths)<-c("play.id","athlete.id.1","athlete.id.2","athlete.id.3")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
         select(-.data$athlete.id) %>%
-        hoopR:::make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -123,7 +123,7 @@ espn_nba_game_all <- function(game_id){
           .data$season_type,
           .data$game_date,
           tidyr::everything()) %>%
-        hoopR:::make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -168,7 +168,7 @@ espn_nba_game_all <- function(game_id){
         dplyr::rename(
           '+/-'=.data$x,
           fg3 = .data$x3pt) %>%
-        hoopR:::make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -238,7 +238,7 @@ espn_nba_pbp <- function(game_id){
 
       plays_df <- plays_df %>%
         janitor::clean_names() %>%
-        hoopR:::make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -348,7 +348,7 @@ espn_nba_team_box <- function(game_id){
           .data$season_type,
           .data$game_date,
           tidyr::everything()) %>%
-        hoopR:::make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -427,7 +427,7 @@ espn_nba_player_box <- function(game_id){
         dplyr::rename(
           '+/-'=.data$x,
           fg3 = .data$x3pt) %>%
-        hoopR:::make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -527,7 +527,7 @@ espn_nba_teams <- function(){
           display_name = .data$displayName
         ) %>%
         janitor::clean_names() %>%
-        hoopR:::make_hoopR_data("ESPN NBA Teams Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Teams Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no teams data available!"))
@@ -666,16 +666,16 @@ espn_nba_scoreboard <- function(season){
             ) %>%
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
-            hoopR:::make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         } else {
           schedule_out %>%
             janitor::clean_names() %>%
-            hoopR:::make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         }
       } else {
         nba_data %>% dplyr::select(!where(is.list)) %>%
           janitor::clean_names() %>%
-          hoopR:::make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
       }
     },
     error = function(e) {
@@ -757,7 +757,7 @@ espn_nba_standings <- function(year){
 
       standings <- cbind(teams, standings_data)
       standings <- standings %>%
-        hoopR:::make_hoopR_data("ESPN NBA Standings Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Standings Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no standings data available!"))
@@ -811,7 +811,7 @@ espn_nba_betting <- function(game_id){
         pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
           janitor::clean_names() %>%
           dplyr::select(-.data$links) %>%
-          hoopR:::make_hoopR_data("ESPN NBA Pickcenter Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN NBA Pickcenter Information from ESPN.com",Sys.time())
       }
       if("againstTheSpread" %in% names(raw_summary)){
         againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
@@ -823,7 +823,7 @@ espn_nba_betting <- function(game_id){
 
         teams$records <- records
         againstTheSpread <- teams %>%
-          hoopR:::make_hoopR_data("ESPN NBA Against the Spread Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN NBA Against the Spread Information from ESPN.com",Sys.time())
       }
       if("predictor" %in% names(raw_summary)){
         predictor_df <- data.frame(
@@ -833,7 +833,7 @@ espn_nba_betting <- function(game_id){
           away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
         )
         predictor_df <- predictor_df %>%
-          hoopR:::make_hoopR_data("ESPN NBA Predictor Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN NBA Predictor Information from ESPN.com",Sys.time())
       }
     },
     error = function(e) {

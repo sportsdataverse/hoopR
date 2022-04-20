@@ -77,7 +77,7 @@ espn_nba_wp <- function(game_id) {
         dplyr::select(dplyr::any_of(c("game_id","play_id","home_win_percentage", "away_win_percentage", "tie_percentage")),
                       tidyr::everything()) %>%
         janitor::clean_names() %>%
-        hoopR:::make_hoopR_data("ESPN NBA Win Probability Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN NBA Win Probability Information from ESPN.com",Sys.time())
 
 
     },

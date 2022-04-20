@@ -27,7 +27,7 @@ ncaa_mbb_NET_rankings <- function(){
       Quad_4 = .data$`Quad 4`
     ) %>%
     janitor::clean_names() %>%
-    hoopR:::make_hoopR_data("NCAA MBB NET Rankings Information from ESPN.com",Sys.time())
+    make_hoopR_data("NCAA MBB NET Rankings Information from ESPN.com",Sys.time())
 
   return(x)
 }

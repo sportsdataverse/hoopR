@@ -53,7 +53,7 @@ espn_mbb_game_all <- function(game_id) {
       names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
         select(-.data$athlete.id) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
 
     },
     error = function(e) {
@@ -134,7 +134,7 @@ espn_mbb_game_all <- function(game_id) {
           .data$season_type,
           .data$game_date,
           tidyr::everything()) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Team Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(
@@ -199,7 +199,7 @@ espn_mbb_game_all <- function(game_id) {
       player_box <- player_box %>%
         janitor::clean_names() %>%
         dplyr::rename(fg3 = .data$x3pt) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Player Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(
@@ -275,7 +275,7 @@ espn_mbb_pbp <- function(game_id) {
         select(-.data$athlete.id)
       plays_df <- plays_df %>%
         janitor::clean_names() %>%
-        hoopR:::make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(
@@ -392,7 +392,7 @@ espn_mbb_team_box <- function(game_id) {
           .data$season_type,
           .data$game_date,
           tidyr::everything()) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Team Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(
@@ -493,7 +493,7 @@ espn_mbb_player_box <- function(game_id) {
       player_box <- player_box %>%
         janitor::clean_names() %>%
         dplyr::rename(fg3 = .data$x3pt) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Player Box Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(
@@ -548,7 +548,7 @@ espn_mbb_conferences <- function() {
         dplyr::select(-.data$subGroups) %>%
         janitor::clean_names() %>%
         dplyr::filter(!(.data$group_id %in% c(0,50))) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Conferences Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Conferences Information from ESPN.com",Sys.time())
 
     },
     error = function(e) {
@@ -643,7 +643,7 @@ espn_mbb_teams <- function() {
           short_name = .data$shortDisplayName,
           alternate_color = .data$alternateColor,
           display_name = .data$displayName) %>%
-        hoopR:::make_hoopR_data("ESPN MBB Teams Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Teams Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no teams data available!"))
@@ -794,16 +794,16 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             ) %>%
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
-            hoopR:::make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
+            make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         } else {
           schedule_out %>%
             janitor::clean_names() %>%
-            hoopR:::make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
+            make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         }
       } else {
         mbb_data %>% dplyr::select(!where(is.list)) %>%
           janitor::clean_names() %>%
-          hoopR:::make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
       }
 
     },
@@ -929,7 +929,7 @@ espn_mbb_rankings <- function() {
         ranks %>% dplyr::arrange(.data$name, -.data$points) %>%
         janitor::clean_names() %>%
         janitor::clean_names() %>%
-        hoopR:::make_hoopR_data("ESPN MBB Rankings Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Rankings Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue(
@@ -1025,7 +1025,7 @@ espn_mbb_standings <- function(year) {
 
       standings <- cbind(teams, standings_data)
       standings <- standings %>%
-        hoopR:::make_hoopR_data("ESPN MBB Standings Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Standings Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue(
@@ -1087,7 +1087,7 @@ espn_mbb_betting <- function(game_id) {
                                TRUE) %>%
           janitor::clean_names() %>%
           dplyr::select(-.data$links) %>%
-          hoopR:::make_hoopR_data("ESPN MBB Pickcenter Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN MBB Pickcenter Information from ESPN.com",Sys.time())
       }
       if ("againstTheSpread" %in% names(raw_summary)) {
         againstTheSpread <-
@@ -1100,7 +1100,7 @@ espn_mbb_betting <- function(game_id) {
 
         teams$records <- records
         againstTheSpread <- teams %>%
-          hoopR:::make_hoopR_data("ESPN MBB Against the Spread Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN MBB Against the Spread Information from ESPN.com",Sys.time())
       }
       if ("predictor" %in% names(raw_summary)) {
         predictor_df <- data.frame(
@@ -1110,7 +1110,7 @@ espn_mbb_betting <- function(game_id) {
           away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
         )
         predictor_df <- predictor_df %>%
-          hoopR:::make_hoopR_data("ESPN MBB Predictor Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN MBB Predictor Information from ESPN.com",Sys.time())
       }
     },
     error = function(e) {

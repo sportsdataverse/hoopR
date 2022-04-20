@@ -87,7 +87,7 @@ espn_mbb_wp <- function(game_id) {
             .data$period_seconds_left, .data$game_seconds_left,
             .data$home_win_percentage, .data$away_win_percentage,
             .data$tie_percentage) %>%
-          hoopR:::make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com",Sys.time())
+          make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: game_id '{espn_game_id}' invalid or no ESPN win probability data available!"))
