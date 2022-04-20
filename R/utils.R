@@ -174,7 +174,7 @@ custom_mode <- function(x, na.rm = TRUE) {
 #' **Most Recent Men's College Basketball Season**
 #' @export
 most_recent_mbb_season <- function() {
-  dplyr::if_else(
+  ifelse(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
     as.double(substr(Sys.Date(), 1, 4))+1,
     as.double(substr(Sys.Date(), 1, 4))
@@ -185,7 +185,7 @@ most_recent_mbb_season <- function() {
 #' **Most Recent NBA Season**
 #' @export
 most_recent_nba_season <- function() {
-  dplyr::if_else(
+  ifelse(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
     as.double(substr(Sys.Date(), 1, 4))+1,
     as.double(substr(Sys.Date(), 1, 4))
