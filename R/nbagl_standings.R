@@ -1,8 +1,7 @@
 #' **Get Current G League Standings from NBA API**
 #' @name nbagl_standings
 NULL
-#' @title
-#' **Get Current G League Standings from NBA API**
+#' @title **Get Current G League Standings from NBA API**
 #' @description Scrapes the NBA Data API for G League Standings
 #' @rdname nbagl_standings
 #' @author Billy Fryer

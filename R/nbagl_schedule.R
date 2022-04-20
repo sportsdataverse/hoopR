@@ -1,10 +1,9 @@
 #' **Get G League Schedule from NBA API**
-#' @name nbagl_season_schedule
+#' @name nbagl_schedule
 NULL
-#' @title
-#' **Get G League Schedule from NBA API**
+#' @title **Get G League Schedule from NBA API**
 #' @description Scrapes the NBA Data API for G League Schedule for a Given Season
-#' @rdname nbagl_season_schedule
+#' @rdname nbagl_schedule
 #' @author Billy Fryer
 #' @param season Season - 4 digit, i.e. 2021
 #' @return Returns a data frame of the G League Season Schedule
@@ -14,7 +13,7 @@ NULL
 #' @import rvest
 #' @export
 
-nbagl_season_schedule <- function(season = most_recent_nba_season()-1) {
+nbagl_schedule <- function(season = most_recent_nba_season()-1) {
   # From This Line to My next comment, basically everything is
   # Copied from hoopR except the url and the table name
   full_url <- glue::glue("https://data.nba.com/data/10s/v2015/json/mobile_teams/dleague/{season}/league/20_full_schedule.json")
