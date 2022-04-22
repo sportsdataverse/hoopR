@@ -8,13 +8,13 @@ NULL
 #' @author Jason Lee
 #' @param game_id Game ID
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
-#' @param return_message If TRUE returns message
+#' @param p Progress bar
 #' @return Returns a data frame: PlayByPlay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_pbp <- function(game_id, version = "v2", p = NULL){
+nba_pbp <- function(game_id, version = "v2", p){
 
   p("loading...")
   if(version=="v2"){
@@ -93,11 +93,11 @@ nba_pbp <- function(game_id, version = "v2", p = NULL){
           ) %>%
           dplyr::mutate(
             minute_game = round(((.data$period - 1) * 12) + (12 - .data$minute_remaining_quarter) +
-              (((
-                60 - .data$seconds_remaining_quarter
-              ) / 60) - 1), 2),
+                                  (((
+                                    60 - .data$seconds_remaining_quarter
+                                  ) / 60) - 1), 2),
             time_remaining = 48 - round(((.data$period - 1) * 12) - (12 - .data$minute_remaining_quarter) -
-              ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
+                                          ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
           ) %>%
           dplyr::select(
             .data$game_id:.data$period,
@@ -129,7 +129,6 @@ NULL
 #' @param game_ids Game IDs
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @param nest_data If TRUE returns nested data by game
-#' @param return_message If TRUE returns message
 #' @return Returns a data frame: PlayByPlay
 #' @export
 nba_pbps <-function(game_ids = NULL,
@@ -207,5 +206,4 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
 
   return(data)
 }
-
 
