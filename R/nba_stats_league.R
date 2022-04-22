@@ -51,11 +51,194 @@ nba_leaguegamelog <- function(
 
       data <- resp$resultSets$rowSet[[1]] %>%
         data.frame(stringsAsFactors = F) %>%
-        as_tibble()
+        dplyr::as_tibble()
 
       json_names <- resp$resultSets$headers[[1]]
       colnames(data) <- json_names
 
+      # Fix columns
+      data <- data %>%
+        # fix column names
+        janitor::clean_names() %>%
+        dplyr::rename(
+          team = .data$team_abbreviation,
+          result = .data$wl
+        ) %>%
+        dplyr::mutate(
+          season = season,
+          game_date = lubridate::ymd(.data$game_date),
+          season_type = gsub('\\+', ' ', season_type),
+          location = ifelse(stringr::str_detect(.data$matchup, "@"), "Away", "Home"),
+          opp = stringr::str_sub(.data$matchup, -3)
+        ) %>%
+        dplyr::mutate(
+          min            = as.numeric(.data$min),
+          fgm            = as.numeric(.data$fgm),
+          fga            = as.numeric(.data$fga),
+          fg_pct         = as.numeric(.data$fg_pct),
+          fg3m           = as.numeric(.data$fg3m),
+          fg3a           = as.numeric(.data$fg3a),
+          fg3_pct        = as.numeric(.data$fg3_pct),
+          ftm            = as.numeric(.data$ftm),
+          fta            = as.numeric(.data$fta),
+          ft_pct         = as.numeric(.data$ft_pct),
+          oreb           = as.numeric(.data$oreb),
+          dreb           = as.numeric(.data$dreb),
+          reb            = as.numeric(.data$reb),
+          ast            = as.numeric(.data$ast),
+          stl            = as.numeric(.data$stl),
+          blk            = as.numeric(.data$blk),
+          tov            = as.numeric(.data$tov),
+          pf             = as.numeric(.data$pf),
+          pts            = as.numeric(.data$pts),
+          plus_minus     = as.numeric(.data$plus_minus),
+          video_availabl = as.numeric(.data$video_available),
+
+          # new feature
+          fg2m = .data$fgm - .data$fg3m,
+          fg2a = .data$fga - .data$fg3a,
+          fg2_pct = ifelse(.data$fg2a > 0 , round(.data$fg2m / .data$fg2a, 3), NA)
+        ) %>%
+        dplyr::select(-.data$season_id)
+
+
+      if (player_or_team == 'P') {
+        # Fix columns
+        data$fantasy_pts <- as.numeric(data$fantasy_pts)
+
+        player_games <- data %>%
+          dplyr::distinct(.data$season, .data$game_date, .data$player_id, .data$player_name) %>%
+          dplyr::group_by(.data$season, .data$player_id, .data$player_name) %>%
+          dplyr::mutate(
+            game_num = 1:dplyr::n(),
+            days_rest = ifelse(
+              .data$game_num > 1,
+              (.data$game_date - dplyr::lag(.data$game_date) - 1),
+              120
+            ),
+            days_rest_next_game = ifelse(
+              .data$game_num < 82,
+              ((dplyr::lead(.data$game_date) - .data$game_date) - 1),
+              120
+            )
+          ) %>%
+          dplyr::mutate(
+            days_rest_next_game = as.numeric(.data$days_rest_next_game),
+            days_rest = as.numeric(.data$days_rest),
+            back2back = ifelse(.data$days_rest_next_game == 0 | .data$days_rest == 0, 1, 0)
+          ) %>%
+          dplyr::mutate(
+            back2back_first = ifelse(dplyr::lead(.data$days_rest_next_game) == 0, 1, 0),
+            back2back_second = ifelse(dplyr::lag(.data$days_rest_next_game) == 0, 1, 0)
+          ) %>%
+          dplyr::ungroup() %>%
+          dplyr::mutate(
+            back2back        = ifelse(is.na(.data$back2back),        0, .data$back2back),
+            back2back_first  = ifelse(is.na(.data$back2back_first),  0, .data$back2back_first),
+            back2back_second = ifelse(is.na(.data$back2back_second), 0, .data$back2back_second),
+          )
+
+        data <- data %>%
+          dplyr::left_join(player_games, by = c("player_name", "game_date", "player_id", "season")) %>%
+          dplyr::select(dplyr::one_of(
+            c(
+              "player_id",
+              "player_name",
+              "game_id",
+              "season",
+              "season_type",
+              "game_date",
+              "matchup",
+              "team_id",
+              "team",
+              "team_name",
+              "opp",
+              "location",
+              "result",
+              "game_num",
+              "days_rest",
+              "days_rest_next_game",
+              "back2back",
+              "back2back_first",
+              "back2back_second",
+              "min",
+              "fgm",
+              "fga",
+              "fg_pct",
+              "fg2m",
+              "fg2a",
+              "fg2_pct"
+            )
+          ),
+          dplyr::everything()
+        )
+      } else {
+
+        team_games <- data %>%
+          dplyr::distinct(.data$season, .data$game_date, .data$team_id, .data$team) %>%
+          dplyr::group_by(.data$season, .data$team) %>%
+          dplyr::mutate(
+            game_num = 1:dplyr::n(),
+            days_rest = ifelse(
+              .data$game_num > 1,
+              (.data$game_date - dplyr::lag(.data$game_date) - 1),
+              120
+            ),
+            days_rest_next_game = ifelse(
+              .data$game_num < 82,
+              ((dplyr::lead(.data$game_date) - .data$game_date) - 1),
+              120
+            )
+          ) %>%
+          dplyr::mutate(
+            days_rest_next_game = as.numeric(.data$days_rest_next_game),
+            days_rest = as.numeric(.data$days_rest),
+            back2back = ifelse(.data$days_rest_next_game == 0 | .data$days_rest == 0, 1, 0)
+          ) %>%
+          dplyr::mutate(
+            back2back_first  = ifelse(dplyr::lead(.data$days_rest_next_game) == 0, 1, 0),
+            back2back_second = ifelse(dplyr::lag(.data$days_rest_next_game)  == 0, 1, 0)
+          ) %>%
+          dplyr::ungroup() %>%
+          dplyr::mutate(
+            back2back        = ifelse(is.na(.data$back2back),        0, .data$back2back),
+            back2back_first  = ifelse(is.na(.data$back2back_first),  0, .data$back2back_first),
+            back2back_second = ifelse(is.na(.data$back2back_second), 0, .data$back2back_second),
+          )
+
+        data <- data %>%
+          dplyr::left_join(team_games, by = c("team", "game_date", "team_id", "season")) %>%
+          dplyr::select(dplyr::one_of(
+            c(
+              "game_id",
+              "season",
+              "season_type",
+              "game_date",
+              "matchup",
+              "team_id",
+              "team",
+              "team_name",
+              "opp",
+              "location",
+              "result",
+              "game_num",
+              "days_rest",
+              "days_rest_next_game",
+              "back2back",
+              "back2back_first",
+              "back2back_second",
+              "min",
+              "fgm",
+              "fga",
+              "fg_pct",
+              "fg2m",
+              "fg2a",
+              "fg2_pct"
+            )
+          ),
+          dplyr::everything()
+        )
+      }
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game log data for {season} available!"))
