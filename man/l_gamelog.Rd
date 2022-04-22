@@ -45,5 +45,5 @@ Return a named list of data frames: LeagueGameLog
 \strong{Get NBA Stats API League Game Log}
 }
 \author{
-Saiem Gilani
+Jason Lee
 }

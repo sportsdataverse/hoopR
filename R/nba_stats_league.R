@@ -4,7 +4,7 @@ NULL
 #' @title
 #' **Get NBA Stats API League Game Log**
 #' @rdname l_gamelog
-#' @author Saiem Gilani
+#' @author Jason Lee
 #' @param counter counter
 #' @param date_from date_from
 #' @param date_to date_to
@@ -66,7 +66,7 @@ nba_leaguegamelog <- function(
         ) %>%
         dplyr::mutate(
           season = season,
-          game_date = lubridate::ymd(.data$game_date),
+          # game_date = lubridate::ymd(.data$game_date),
           season_type = gsub('\\+', ' ', season_type),
           location = ifelse(stringr::str_detect(.data$matchup, "@"), "Away", "Home"),
           opp = stringr::str_sub(.data$matchup, -3)
