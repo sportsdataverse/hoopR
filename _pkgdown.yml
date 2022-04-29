@@ -92,18 +92,22 @@ navbar:
         href: https://hoopR.sportsdataverse.org/
       - text: wehoop
         href: https://wehoop.sportsdataverse.org/
+      - text: toRvik
+        href: https://torvik.dev/
       - text: fastRhockey
         href: https://fastRhockey.sportsdataverse.org/
-      - text: worldfootballR
-        href: https://jaseziv.github.io/worldfootballR/
       - text: baseballr
         href: https://BillPetti.github.io/baseballr/
+      - text: worldfootballR
+        href: https://jaseziv.github.io/worldfootballR/
+      - text: chessR
+        href: https://jaseziv.github.io/chessR/
       - text: cfbplotR
         href: https://kazink36.github.io/cfbplotR/
       - text: cfb4th
         href: https://kazink36.github.io/cfb4th/
       - text: recruitR
-        href: https://saiemgilani.github.io/recruitR/
+        href: https://recruitr.sportsdataverse.org/
       - text: gamezoneR
         href: https://jacklich10.github.io/gamezoneR/
       - text: puntr
@@ -189,4 +193,3 @@ reference:
       - '`parse_espn_mbb_scoreboard`'
       - '`progressively`'
       - '`year_to_season`'
-
