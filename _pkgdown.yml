@@ -164,6 +164,10 @@ reference:
     desc: Functions exported by hoopR to access the NBA Stats API
     contents:
       - starts_with("nba_")
+  - subtitle: NBA G-League Stats API
+    desc: Functions exported by hoopR to access the NBA G-League Stats API
+    contents:
+      - starts_with("nbagl_")
   - title: NCAA Data
   - subtitle: NCAA Data Functions
     desc: Functions exported by hoopR to access NCAA Men's College Basketball Data
