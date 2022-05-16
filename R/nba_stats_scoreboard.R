@@ -20,17 +20,16 @@ nba_scoreboard <- function(league_id = '00',
 
 
   version <- "scoreboard"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&GameDate=", game_date,
-                     "&DayOffset=",day_offset)
-
+  full_url <- nba_endpoint(version)
+  params <- list(
+    LeagueID = league_id,
+    GameDate = game_date,
+    DayOffset = day_offset
+  )
   tryCatch(
     expr = {
       resp <- full_url %>%
-        .nba_headers()
+        .nba_headers(params=params)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%
@@ -78,17 +77,16 @@ nba_scoreboardv2 <- function(league_id = '00',
 
 
   version <- "scoreboardv2"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&GameDate=", game_date,
-                     "&DayOffset=",day_offset)
-
+  full_url <- nba_endpoint(version)
+  params <- list(
+    LeagueID = league_id,
+    GameDate = game_date,
+    DayOffset = day_offset
+  )
   tryCatch(
     expr = {
       resp <- full_url %>%
-        .nba_headers()
+        .nba_headers(params=params)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%
@@ -134,17 +132,16 @@ nba_winprobabilitypbp <- function(game_id = '0021700807',
 
   run_type <- gsub(' ','+',run_type)
   version <- "winprobabilitypbp"
-  endpoint <- nba_endpoint(version)
+  full_url <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?GameID=", game_id,
-                     "&RunType=",run_type)
-
-
+  params <- list(
+    GameID = game_id,
+    RunType = run_type
+  )
   tryCatch(
     expr = {
       resp <- full_url %>%
-        .nba_headers()
+        .nba_headers(params=params)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%

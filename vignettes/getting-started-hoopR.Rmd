@@ -27,6 +27,20 @@ Welcome folks,
 
 I'm Saiem Gilani, one of the [authors](https://saiemgilani.github.io/hoopR/authors.html "Authors and contributors to hoopR") of [`hoopR`](https://saiemgilani.github.io/hoopR/), and I hope to give the community a high-quality resource for accessing men's basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.
 
+### **Installing R and RStudio**
+
+1.  Head to <https://cran.r-project.org>
+2.  Select the appropriate link for your operating system (Windows, Mac OS X, or Linux)
+
+-   **Windows** - Select base and download the most recent version
+-   **Mac OS X** - Select Latest Release, but check to make sure your OS is the correct version. Look through Binaries for Legacy OS X Systems if you are on an older release
+-   **Linux** - Select the appropriate distro and follow the installation instructions
+
+3.  Head to [RStudio.com](https://www.rstudio.com/products/rstudio/download/#download "Download the appropriate version of RStudio (Free) for your operating system to use with R")
+4.  Follow the associated download and installation instructions for RStudio.
+5.  Start peering over the [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf). *An IDE is an integrated development environment.*
+6.  For **Windows** users: I recommend you install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). This is not an R package! It is “a collection of resources for building packages for R under Microsoft Windows, or for building R itself”. Go to [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) and follow the directions for installation.
+
 ## **Install** [**`hoopR`**](https://saiemgilani.github.io/hoopR/)
 ```{r install_hoopR_gs, message=FALSE,eval=FALSE}
 # You can install using the pacman package using the following code:
@@ -44,6 +58,7 @@ There are generally speaking **five** men's basketball data sources accessed fro
 
 -   [`hoopR-data` repo](https://github.com/saiemgilani/hoopR-data) [![Twitter Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
 -   [NBA Stats and Data API](https://stats.nba.com)
+-   [NBA G-League Stats and Data API](https://stats.nba.com)
 -   [ESPN](https://espn.com)
 -   [KenPom](https://kenpom.com) (Requires subscription access)
 -   [NCAA](https://ncaa.com)
@@ -53,6 +68,8 @@ There are generally speaking **five** men's basketball data sources accessed fro
 -   Functions that use the [`hoopR-data` repository](https://github.com/saiemgilani/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
 
 -   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 127 functions covering the NBA Stats API
+
+-   Functions that use the NBA G-League Stats API start with `nbagl_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 4 functions covering the NBA G-League Stats API
 
 -   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports 10 functions covering the men's college basketball endpoints and 10 for the NBA.
 
@@ -143,4 +160,15 @@ dplyr::glimpse(mbb_player_box)
 -   [Saiem Gilani](https://twitter.com/saiemgilani)       
 <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+
+
+## **Our Contributors (they're awesome)**
+
+-   [Jason Lee](https://twitter.com/theFirmAISports)       
+<a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
+<a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+
+-   [Billy Fryer](https://twitter.com/_b4billy_)       
+<a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
+<a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
 

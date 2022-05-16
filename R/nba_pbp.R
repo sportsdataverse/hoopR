@@ -40,12 +40,12 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
+  out <- rbindlist_with_attrs(out)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
 
   }
   out
@@ -92,8 +92,8 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
-  class(out) <- c("tbl_df","tbl","data.table","data.frame")
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   out
 }
 
@@ -138,12 +138,12 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
+  out <- rbindlist_with_attrs(out)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   }
   out
 }
@@ -189,12 +189,12 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   out <- lapply(urls, progressively(loader, p))
-  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
+  out <- rbindlist_with_attrs(out)
   if (in_db) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   }
   out
 }

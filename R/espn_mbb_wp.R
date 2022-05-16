@@ -33,7 +33,7 @@ espn_mbb_wp <- function(game_id) {
 
   if (!is.null(game_id) && !is.numeric(game_id)) {
     # Check if game_id is numeric, if not NULL
-    cli::cli_abort("Enter valid game_id value (Integer)\nCan be found using the `cfbd_game_info()` function")
+    cli::cli_abort("Enter valid game_id value (Integer)")
   }
 
   espn_game_id <- game_id
@@ -86,8 +86,8 @@ espn_mbb_wp <- function(game_id) {
             .data$time_left,
             .data$period_seconds_left, .data$game_seconds_left,
             .data$home_win_percentage, .data$away_win_percentage,
-            .data$tie_percentage
-          )
+            .data$tie_percentage) %>%
+          make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: game_id '{espn_game_id}' invalid or no ESPN win probability data available!"))

@@ -50,7 +50,8 @@ espn_nba_game_all <- function(game_id){
       )
       names(aths)<-c("play.id","athlete.id.1","athlete.id.2","athlete.id.3")
       plays_df <- dplyr::bind_cols(plays, aths) %>%
-        select(-.data$athlete.id)
+        select(-.data$athlete.id) %>%
+        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -121,8 +122,8 @@ espn_nba_game_all <- function(game_id){
           .data$season,
           .data$season_type,
           .data$game_date,
-          tidyr::everything()
-        )
+          tidyr::everything()) %>%
+        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -166,8 +167,8 @@ espn_nba_game_all <- function(game_id){
         janitor::clean_names() %>%
         dplyr::rename(
           '+/-'=.data$x,
-          fg3 = .data$x3pt
-        )
+          fg3 = .data$x3pt) %>%
+        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -236,7 +237,8 @@ espn_nba_pbp <- function(game_id){
         select(-.data$athlete.id)
 
       plays_df <- plays_df %>%
-        janitor::clean_names()
+        janitor::clean_names() %>%
+        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -345,8 +347,8 @@ espn_nba_team_box <- function(game_id){
           .data$season,
           .data$season_type,
           .data$game_date,
-          tidyr::everything()
-        )
+          tidyr::everything()) %>%
+        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -424,8 +426,8 @@ espn_nba_player_box <- function(game_id){
         janitor::clean_names() %>%
         dplyr::rename(
           '+/-'=.data$x,
-          fg3 = .data$x3pt
-        )
+          fg3 = .data$x3pt) %>%
+        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -501,18 +503,15 @@ espn_nba_teams <- function(){
         stats <- s %>% unnest_wider(.data$g)
 
         records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
-        leagues <- leagues %>% dplyr::select(
-          -.data$record
-        )
+        leagues <- leagues %>%
+          dplyr::select(-.data$record)
       }
       leagues <- leagues %>% dplyr::select(
         -.data$links,
         -.data$isActive,
         -.data$isAllStar,
         -.data$uid,
-        -.data$slug,
-        -.data$record,
-        -.data$logos_lastUpdated)
+        -.data$slug)
       teams <- leagues %>%
         dplyr::rename(
           logo = .data$logos_href_1,
@@ -524,7 +523,8 @@ espn_nba_teams <- function(){
           alternate_color = .data$alternateColor,
           display_name = .data$displayName
         ) %>%
-        janitor::clean_names()
+        janitor::clean_names() %>%
+        make_hoopR_data("ESPN NBA Teams Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no teams data available!"))
@@ -662,14 +662,17 @@ espn_nba_scoreboard <- function(season){
               broadcast_name = list(1, "names", 1)
             ) %>%
             dplyr::select(!where(is.list)) %>%
-            janitor::clean_names()
+            janitor::clean_names() %>%
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         } else {
           schedule_out %>%
-            janitor::clean_names()
+            janitor::clean_names() %>%
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         }
       } else {
         nba_data %>% dplyr::select(!where(is.list)) %>%
-          janitor::clean_names()
+          janitor::clean_names() %>%
+          make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
       }
     },
     error = function(e) {
@@ -750,6 +753,8 @@ espn_nba_standings <- function(year){
       #joining the 2 dataframes together to create a standings table
 
       standings <- cbind(teams, standings_data)
+      standings <- standings %>%
+        make_hoopR_data("ESPN NBA Standings Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no standings data available!"))
@@ -767,7 +772,7 @@ espn_nba_standings <- function(year){
 #' **Get ESPN NBA's Betting information**
 #'
 #' @param game_id  Game ID
-#' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor_df
+#' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 #' @keywords NBA Betting
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -802,7 +807,8 @@ espn_nba_betting <- function(game_id){
       if("pickcenter" %in% names(raw_summary)){
         pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
           janitor::clean_names() %>%
-          dplyr::select(-.data$links)
+          dplyr::select(-.data$links) %>%
+          make_hoopR_data("ESPN NBA Pickcenter Information from ESPN.com",Sys.time())
       }
       if("againstTheSpread" %in% names(raw_summary)){
         againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
@@ -813,7 +819,8 @@ espn_nba_betting <- function(game_id){
         records <- againstTheSpread$records
 
         teams$records <- records
-        againstTheSpread <- teams
+        againstTheSpread <- teams %>%
+          make_hoopR_data("ESPN NBA Against the Spread Information from ESPN.com",Sys.time())
       }
       if("predictor" %in% names(raw_summary)){
         predictor_df <- data.frame(
@@ -822,6 +829,8 @@ espn_nba_betting <- function(game_id){
           away_team_game_projection = raw_summary$predictor$awayTeam$gameProjection,
           away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
         )
+        predictor_df <- predictor_df %>%
+          make_hoopR_data("ESPN NBA Predictor Information from ESPN.com",Sys.time())
       }
     },
     error = function(e) {
@@ -834,6 +843,6 @@ espn_nba_betting <- function(game_id){
 
   )
   betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
-  names(betting) <- c("pickcenter", "againstTheSpread", "predictor_df")
+  names(betting) <- c("pickcenter", "againstTheSpread", "predictor")
   return(betting)
 }

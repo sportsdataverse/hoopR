@@ -97,6 +97,15 @@ For more information on the package and function reference, please see the  [**`
 <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
+## **Our Contributors (they're awesome)**
+
+-   [Jason Lee](https://twitter.com/theFirmAISports)       
+<a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
+<a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+
+-   [Billy Fryer](https://twitter.com/_b4billy_)       
+<a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
+<a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
 
 ## **Citations**
 
