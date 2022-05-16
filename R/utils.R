@@ -174,7 +174,7 @@ custom_mode <- function(x, na.rm = TRUE) {
 #' **Most Recent Men's College Basketball Season**
 #' @export
 most_recent_mbb_season <- function() {
-  dplyr::if_else(
+  ifelse(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
     as.double(substr(Sys.Date(), 1, 4))+1,
     as.double(substr(Sys.Date(), 1, 4))
@@ -185,7 +185,7 @@ most_recent_mbb_season <- function() {
 #' **Most Recent NBA Season**
 #' @export
 most_recent_nba_season <- function() {
-  dplyr::if_else(
+  ifelse(
     as.double(substr(Sys.Date(), 6, 7)) >= 10,
     as.double(substr(Sys.Date(), 1, 4))+1,
     as.double(substr(Sys.Date(), 1, 4))
@@ -297,3 +297,46 @@ NULL
 `%c%` <- function(x,y){
   ifelse(!is.na(x),x,y)
 }
+
+
+
+# Functions for custom class
+# turn a data.frame into a tibble/hoopR_data
+make_hoopR_data <- function(df,type,timestamp){
+  out <- df %>%
+    tidyr::as_tibble()
+
+  class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+  attr(out,"hoopR_timestamp") <- timestamp
+  attr(out,"hoopR_type") <- type
+  return(out)
+}
+
+#' @export
+#' @noRd
+print.hoopR_data <- function(x,...) {
+  cli::cli_rule(left = "{attr(x,'hoopR_type')}",right = "{.emph hoopR {utils::packageVersion('hoopR')}}")
+
+  if(!is.null(attr(x,'hoopR_timestamp'))) {
+    cli::cli_alert_info(
+      "Data updated: {.field {format(attr(x,'hoopR_timestamp'), tz = Sys.timezone(), usetz = TRUE)}}"
+    )
+  }
+
+  NextMethod(print,x)
+  invisible(x)
+}
+
+
+
+# rbindlist but maintain attributes of last file
+rbindlist_with_attrs <- function(dflist){
+
+  hoopR_timestamp <- attr(dflist[[length(dflist)]], "hoopR_timestamp")
+  hoopR_type <- attr(dflist[[length(dflist)]], "hoopR_type")
+  out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
+  attr(out,"hoopR_timestamp") <- hoopR_timestamp
+  attr(out,"hoopR_type") <- hoopR_type
+  out
+}
+

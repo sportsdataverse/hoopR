@@ -66,7 +66,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 79.18 sec elapsed
+    ## 71.54 sec elapsed
 
     ## 11789401 rows of NBA play-by-play data from 26035 games.
 
@@ -80,9 +80,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 135 sec elapsed
+    ## 137.5 sec elapsed
 
-    ## 20830156 rows of men's college basketball play-by-play data from 79388 games.
+    ## 20815191 rows of men's college basketball play-by-play data from 64423 games.
 
 ## **Documentation**
 
@@ -108,6 +108,16 @@ stars](https://img.shields.io/github/stars/saiemgilani/hoopR.svg?color=eee&logo=
 -   [Saiem Gilani](https://twitter.com/saiemgilani)  
     <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
     <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+
+## **Our Contributors (they’re awesome)**
+
+-   [Jason Lee](https://twitter.com/theFirmAISports)  
+    <a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
+    <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+
+-   [Billy Fryer](https://twitter.com/_b4billy_)  
+    <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
+    <a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
 
 ## **Citations**
 

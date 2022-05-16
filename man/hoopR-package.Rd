@@ -4,7 +4,7 @@
 \name{hoopR-package}
 \alias{hoopR}
 \alias{hoopR-package}
-\title{hoopR: Functions to Access Men's Basketball Play by Play Data}
+\title{hoopR: Access Men's Basketball Play by Play Data}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
@@ -21,6 +21,12 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Saiem Gilani \email{saiem.gilani@gmail.com}
+
+Other contributors:
+\itemize{
+  \item Jason Lee \email{Jason@aisportsfirm.com} [contributor]
+  \item Billy Fryer \email{billyfryer@att.net} [contributor]
+}
 
 }
 \keyword{internal}
