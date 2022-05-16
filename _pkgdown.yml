@@ -194,6 +194,5 @@ reference:
       - '`rejoin_schedules`'
       - '`most_recent_mbb_season`'
       - '`most_recent_nba_season`'
-      - '`parse_espn_mbb_scoreboard`'
       - '`progressively`'
       - '`year_to_season`'
