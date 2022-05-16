@@ -1,9 +1,6 @@
-context("KP - Get team stats")
-
-
-
 test_that("KP - Get team stats", {
   skip_on_cran()
+  skip_on_ci()
 
   x <- kp_teamstats(min_year = 2020, max_year = 2020)
 
