@@ -1,5 +1,6 @@
 test_that("KP - Get program ratings", {
   skip_on_cran()
+  skip_on_ci()
 
   x <- kp_program_ratings()
 
