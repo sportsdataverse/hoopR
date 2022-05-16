@@ -628,10 +628,15 @@ espn_mbb_teams <- function() {
 
         records <-
           dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
-        leagues <- leagues %>% dplyr::select(-.data$record)
+        leagues <- leagues %>%
+          dplyr::select(-.data$record)
       }
       leagues <- leagues %>% dplyr::select(
-        -.data$links,-.data$isActive,-.data$isAllStar,-.data$uid,-.data$slug,-.data$record,-.data$logos_lastUpdated
+        -.data$links,
+        -.data$isActive,
+        -.data$isAllStar,
+        -.data$uid,
+        -.data$slug
       )
       teams <- leagues %>%
         dplyr::rename(

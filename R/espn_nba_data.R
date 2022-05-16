@@ -503,18 +503,15 @@ espn_nba_teams <- function(){
         stats <- s %>% unnest_wider(.data$g)
 
         records <- dplyr::bind_cols(records %>% dplyr::select(.data$summary), stats)
-        leagues <- leagues %>% dplyr::select(
-          -.data$record
-        )
+        leagues <- leagues %>%
+          dplyr::select(-.data$record)
       }
       leagues <- leagues %>% dplyr::select(
         -.data$links,
         -.data$isActive,
         -.data$isAllStar,
         -.data$uid,
-        -.data$slug,
-        -.data$record,
-        -.data$logos_lastUpdated)
+        -.data$slug)
       teams <- leagues %>%
         dplyr::rename(
           logo = .data$logos_href_1,
