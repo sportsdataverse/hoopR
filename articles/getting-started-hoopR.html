@@ -52,7 +52,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -136,13 +136,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -151,7 +157,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -240,6 +246,32 @@
     
 <p>Welcome folks,</p>
 <p>I’m Saiem Gilani, one of the <a href="https://saiemgilani.github.io/hoopR/authors.html" title="Authors and contributors to hoopR" class="external-link">authors</a> of <a href="https://saiemgilani.github.io/hoopR/" class="external-link"><code>hoopR</code></a>, and I hope to give the community a high-quality resource for accessing men’s basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.</p>
+<div class="section level4">
+<h4 id="installing-r-and-rstudio">
+<strong>Installing R and RStudio</strong><a class="anchor" aria-label="anchor" href="#installing-r-and-rstudio"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Head to <a href="https://cran.r-project.org" class="external-link uri">https://cran.r-project.org</a>
+</li>
+<li>Select the appropriate link for your operating system (Windows, Mac OS X, or Linux)</li>
+</ol>
+<ul>
+<li>
+<strong>Windows</strong> - Select base and download the most recent version</li>
+<li>
+<strong>Mac OS X</strong> - Select Latest Release, but check to make sure your OS is the correct version. Look through Binaries for Legacy OS X Systems if you are on an older release</li>
+<li>
+<strong>Linux</strong> - Select the appropriate distro and follow the installation instructions</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Head to <a href="https://www.rstudio.com/products/rstudio/download/#download" title="Download the appropriate version of RStudio (Free) for your operating system to use with R" class="external-link">RStudio.com</a>
+</li>
+<li>Follow the associated download and installation instructions for RStudio.</li>
+<li>Start peering over the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf" class="external-link">RStudio IDE Cheatsheet</a>. <em>An IDE is an integrated development environment.</em>
+</li>
+<li>For <strong>Windows</strong> users: I recommend you install <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">Rtools</a>. This is not an R package! It is “a collection of resources for building packages for R under Microsoft Windows, or for building R itself”. Go to <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">https://cran.r-project.org/bin/windows/Rtools/</a> and follow the directions for installation.</li>
+</ol>
+</div>
 <div class="section level3">
 <h3 id="install-hoopr">
 <strong>Install</strong> <a href="https://saiemgilani.github.io/hoopR/" class="external-link"><strong><code>hoopR</code></strong></a><a class="anchor" aria-label="anchor" href="#install-hoopr"></a>
@@ -262,6 +294,7 @@
 <a href="https://github.com/saiemgilani/hoopR-data" class="external-link"><code>hoopR-data</code> repo</a> <a href="https://twitter.com/sportsdataverse" class="external-link"><img src="https://img.shields.io/twitter/follow/sportsdataverse?color=blue&amp;label=%40sportsdataverse&amp;logo=twitter&amp;style=for-the-badge" alt="Twitter Follow"></a>
 </li>
 <li><a href="https://stats.nba.com" class="external-link">NBA Stats and Data API</a></li>
+<li><a href="https://stats.nba.com" class="external-link">NBA G-League Stats and Data API</a></li>
 <li><a href="https://espn.com" class="external-link">ESPN</a></li>
 <li>
 <a href="https://kenpom.com" class="external-link">KenPom</a> (Requires subscription access)</li>
@@ -273,10 +306,11 @@
 </h5>
 <ul>
 <li><p>Functions that use the <a href="https://github.com/saiemgilani/hoopR-data" class="external-link"><code>hoopR-data</code> repository</a> will contain <code>load_</code> or <code>update_</code> in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.</p></li>
-<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.6.0, the package exports 127 functions covering the NBA Stats API</p></li>
-<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.6.0, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
-<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.6.0, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
-<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.6.0, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
+<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.7.0, the package exports 127 functions covering the NBA Stats API</p></li>
+<li><p>Functions that use the NBA G-League Stats API start with <code>nbagl_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.7.0, the package exports 4 functions covering the NBA G-League Stats API</p></li>
+<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.7.0, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
+<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.7.0, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
+<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.7.0, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
 </ul>
 </div>
 </div>
@@ -292,7 +326,7 @@
   <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 33.295 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 37.802 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 3743046 rows of nba play-by-play data from 8040 games.</span></code></pre>
@@ -366,7 +400,7 @@
 <span class="op">}</span><span class="op">)</span>
 
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 0.657 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 1.292 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 16124 rows of NBA team boxscore data from 8062 games.</span></code></pre>
@@ -428,7 +462,7 @@
   <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 1.913 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 2.602 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 174366 rows of NBA player boxscore data from 8064 games.</span></code></pre>
@@ -482,7 +516,7 @@
   <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 99.656 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 111.147 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 10135443 rows of men's college basketball play-by-play data from 30950 games.</span></code></pre>
@@ -555,7 +589,7 @@
   <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 2.416 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 3.112 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 66856 rows of men's college basketball team boxscore data from 33428 games.</span></code></pre>
@@ -615,7 +649,7 @@
   <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## 7.219 sec elapsed</span></code></pre>
+<pre><code><span class="co">## 7.888 sec elapsed</span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></code></pre></div>
 <pre><code><span class="co">## 677446 rows of men's college basketball player boxscore data from 33441 games.</span></code></pre>
@@ -668,6 +702,15 @@
 <a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a><br><a href="https://twitter.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge" alt="@saiemgilani"></a> <a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
 </li>
 </ul>
+<div class="section level3">
+<h3 id="our-contributors-theyre-awesome">
+<strong>Our Contributors (they’re awesome)</strong><a class="anchor" aria-label="anchor" href="#our-contributors-theyre-awesome"></a>
+</h3>
+<ul>
+<li><p><a href="https://twitter.com/theFirmAISports" class="external-link">Jason Lee</a><br><a href="https://twitter.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=twitter&amp;style=for-the-badge" alt="@theFirmAISports"></a> <a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a></p></li>
+<li><p><a href="https://twitter.com/_b4billy_" class="external-link">Billy Fryer</a><br><a href="https://twitter.com/_b4billy_" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&amp;label=%40_b4billy_&amp;logo=twitter&amp;style=for-the-badge" alt="@_b4billy_"></a> <a href="https://github.com/b4billy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/b4billy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@b4billy"></a></p></li>
+</ul>
+</div>
 </div>
   </div>
 
@@ -688,7 +731,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

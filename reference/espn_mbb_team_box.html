@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -209,39 +215,20 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_team_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401256760</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     game_id season season_type  game_date team_short_display_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 401256760   2021           2 2020-12-12                 Florida</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 401256760   2021           2 2020-12-12           Florida State</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         team_uid team_alternate_color team_color       team_display_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 s:40~l:41~t:57               0021a5     0021A5          Florida Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 s:40~l:41~t:52               ceb888     782F40 Florida State Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   team_name                                         team_logo team_location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Gators https://a.espncdn.com/i/teamlogos/ncaa/500/57.png       Florida</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Seminoles https://a.espncdn.com/i/teamlogos/ncaa/500/52.png Florida State</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   team_id team_abbreviation               team_slug</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      57               FLA          florida-gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      52               FSU florida-state-seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   field_goals_made_field_goals_attempted field_goal_pct</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                  25-59           42.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                  26-54           48.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   three_point_field_goals_made_three_point_field_goals_attempted</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                          10-23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                           8-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   three_point_field_goal_pct free_throws_made_free_throws_attempted</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                       43.5                                  11-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       50.0                                  23-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   free_throw_pct total_rebounds offensive_rebounds defensive_rebounds</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           68.8             34                 10                 24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2           76.7             33                  8                 25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   team_rebounds assists steals blocks turnovers team_turnovers total_turnovers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1             0      14      6      8        20              0              20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2             0      17      8      4        16              0              16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   technical_fouls total_technical_fouls flagrant_fouls fouls largest_lead</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1               0                     0              0    24            9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2               0                     0              0    18           18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   home_away opponent_id opponent_name opponent_mascot opponent_abbrev</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      HOME          52 Florida State       Seminoles             FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      AWAY          57       Florida          Gators             FLA</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Team Box Information from ESPN.com ────────────────── <span style="font-style: italic;">hoopR 1.7.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-16 21:41:39 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 41</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     game_id season season_type game_date  team_short_display_name team_uid      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 401<span style="text-decoration: underline;">256</span>760   <span style="text-decoration: underline;">2</span>021           2 2020-12-12 Florida                 s:40~l:41~t:57</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 401<span style="text-decoration: underline;">256</span>760   <span style="text-decoration: underline;">2</span>021           2 2020-12-12 Florida State           s:40~l:41~t:52</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 35 more variables: team_alternate_color &lt;chr&gt;, team_color &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_display_name &lt;chr&gt;, team_name &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_location &lt;chr&gt;, team_id &lt;chr&gt;, team_abbreviation &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_slug &lt;chr&gt;, field_goals_made_field_goals_attempted &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goal_pct &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goal_pct &lt;chr&gt;, …</span></span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
@@ -257,7 +244,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

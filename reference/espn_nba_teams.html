@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -204,19 +210,21 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_teams</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Teams Information from ESPN.com ───────────────────── <span style="font-style: italic;">hoopR 1.7.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-16 21:41:47 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 12</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id team         mascot    abbreviation display_name     short_name color</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1       Atlanta      Hawks     ATL          Atlanta Hawks    Hawks      002B…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2       Boston       Celtics   BOS          Boston Celtics   Celtics    0065…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 17      Brooklyn     Nets      BKN          Brooklyn Nets    Nets       0000…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 30      Charlotte    Hornets   CHA          Charlotte Horne… Hornets    1D10…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4       Chicago      Bulls     CHI          Chicago Bulls    Bulls      0000…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 5       Cleveland    Cavaliers CLE          Cleveland Caval… Cavaliers  0616…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 6       Dallas       Mavericks DAL          Dallas Mavericks Mavericks  0C47…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 7       Denver       Nuggets   DEN          Denver Nuggets   Nuggets    0860…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 8       Detroit      Pistons   DET          Detroit Pistons  Pistons    FA00…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 9       Golden State Warriors  GS           Golden State Wa… Warriors   003d…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id abbreviation display_name          short_name mascot    team    color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1       ATL          Atlanta Hawks         Hawks      Hawks     Atlanta 002B…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2       BOS          Boston Celtics        Celtics    Celtics   Boston  0065…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 17      BKN          Brooklyn Nets         Nets       Nets      Brookl… 0000…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 30      CHA          Charlotte Hornets     Hornets    Hornets   Charlo… 1D10…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4       CHI          Chicago Bulls         Bulls      Bulls     Chicago 0000…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 5       CLE          Cleveland Cavaliers   Cavaliers  Cavaliers Clevel… 0616…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 6       DAL          Dallas Mavericks      Mavericks  Mavericks Dallas  0C47…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 7       DEN          Denver Nuggets        Nuggets    Nuggets   Denver  0860…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 8       DET          Detroit Pistons       Pistons    Pistons   Detroit FA00…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 9       GS           Golden State Warriors Warriors   Warriors  Golden… 003d…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 20 more rows, and 5 more variables: alternate_color &lt;chr&gt;, logo &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   logo_dark &lt;chr&gt;, logos_href_3 &lt;chr&gt;, logos_href_4 &lt;chr&gt;</span></span>
 <span class="r-in"><span class="co"># }</span></span>
@@ -235,7 +243,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

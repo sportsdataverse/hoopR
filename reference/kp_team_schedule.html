@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -208,37 +214,37 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in"> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_schedule</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    team_rk        team opponent_rk          opponent    result poss ot pre_wp</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       24 Florida St.         214              Penn W, 105-70   80  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       23 Florida St.          53           Florida  L, 71-55   68  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       31 Florida St.          97            Tulane  W, 59-54   63  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       32 Florida St.         198  Loyola Marymount  W, 73-45   70  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       27 Florida St.         138          Missouri  W, 81-58   67  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       23 Florida St.         211 Boston University  W, 81-80   74  1     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       24 Florida St.         211              Penn W, 105-70   80  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       23 Florida St.          59           Florida  L, 71-55   68  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       31 Florida St.          98            Tulane  W, 59-54   63  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       32 Florida St.         203  Loyola Marymount  W, 73-45   70  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       27 Florida St.         137          Missouri  W, 81-58   67  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       23 Florida St.         218 Boston University  W, 81-80   74  1     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 7       29 Florida St.          14            Purdue  L, 93-65   68  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8       32 Florida St.          73          Syracuse  L, 63-60   69  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       40 Florida St.          98    South Carolina  L, 66-65   71  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10      41 Florida St.         262          Lipscomb  W, 97-60   77  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11      39 Florida St.         136        N.C. State  W, 83-81   71  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8       32 Florida St.          69          Syracuse  L, 63-60   69  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9       40 Florida St.          99    South Carolina  L, 66-65   71  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10      41 Florida St.         264          Lipscomb  W, 97-60   77  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11      39 Florida St.         128        N.C. State  W, 83-81   71  0     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12      42 Florida St.          35       Wake Forest  L, 76-54   78  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13      47 Florida St.         137        Louisville  W, 79-70   68  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14      46 Florida St.          54          Miami FL  W, 65-64   62  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15      53 Florida St.          73          Syracuse  W, 76-71   63  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16      54 Florida St.          10              Duke  W, 79-78   71  1     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13      47 Florida St.         127        Louisville  W, 79-70   68  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14      46 Florida St.          41          Miami FL  W, 65-64   62  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15      53 Florida St.          69          Syracuse  W, 76-71   63  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16      54 Florida St.           8              Duke  W, 79-78   71  1     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 17      49 Florida St.         272     North Florida  W, 86-73   72  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18      53 Florida St.          54          Miami FL  W, 61-60   64  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19      53 Florida St.         160      Georgia Tech  L, 75-61   66  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20      71 Florida St.          20     Virginia Tech  L, 85-72   62  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21      78 Florida St.          75           Clemson  L, 75-69   66  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18      53 Florida St.          41          Miami FL  W, 61-60   64  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19      53 Florida St.         156      Georgia Tech  L, 75-61   66  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20      71 Florida St.          19     Virginia Tech  L, 85-72   62  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21      78 Florida St.          71           Clemson  L, 75-69   66  0     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22      85 Florida St.          35       Wake Forest  L, 68-60   76  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23      86 Florida St.         202        Pittsburgh  L, 56-51   66  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24      95 Florida St.          23    North Carolina  L, 94-74   75  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25     100 Florida St.          75           Clemson  W, 81-80   70  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26     101 Florida St.          10              Duke  L, 88-70   67  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27     100 Florida St.         122    Boston College  L, 71-55   67  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28     110 Florida St.          81          Virginia  W, 64-63   62  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29     104 Florida St.          40        Notre Dame  W, 74-70   69  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30     105 Florida St.         136        N.C. State  W, 89-76   69  0     NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31     101 Florida St.          73          Syracuse  L, 96-57   71  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23      86 Florida St.         195        Pittsburgh  L, 56-51   66  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24      95 Florida St.          16    North Carolina  L, 94-74   75  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25     100 Florida St.          71           Clemson  W, 81-80   70  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26     101 Florida St.           8              Duke  L, 88-70   67  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27     100 Florida St.         114    Boston College  L, 71-55   67  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28     110 Florida St.          72          Virginia  W, 64-63   62  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29     104 Florida St.          38        Notre Dame  W, 74-70   69  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30     105 Florida St.         128        N.C. State  W, 89-76   69  0     NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31     101 Florida St.          69          Syracuse  L, 96-57   71  0     NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     location  w  l w_conference l_conference conference_game</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       Home  1  0           NA           NA           FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2       Away  1  1           NA           NA           FALSE</span>
@@ -323,7 +329,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 17                 5                 2 2022-01-20    2491         &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18                 6                 2 2022-01-22    3528            A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 19                 6                 3 2022-01-26    3641         &lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                 6                 4 2022-01-29    3842            B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                 6                 4 2022-01-29    3842            A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 21                 6                 5 2022-02-02    3956            A</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 22                 6                 6 2022-02-05    4154            B</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 23                 6                 7 2022-02-09    4312         &lt;NA&gt;</span>
@@ -350,7 +356,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

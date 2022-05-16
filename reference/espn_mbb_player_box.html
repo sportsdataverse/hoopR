@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -209,174 +215,28 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_player_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401256760</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_display_name team_short_display_name min   fg fg3    ft oreb dreb</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       Colin Castleton                 Florida  21  3-4 0-0   1-3    4    3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      Keyontae Johnson                 Florida   4  2-3 0-1   1-1    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              Tre Mann                 Florida  29 7-17 2-7   1-1    0    8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         Scottie Lewis                 Florida  39 6-13 4-5   3-5    2    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5            Noah Locke                 Florida  24  2-6 2-5   2-2    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           Osayi Osifo                 Florida  15  0-1 0-0   2-2    1    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7            Omar Payne                 Florida  16  1-2 0-0   0-0    1    1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        Anthony Duruji                 Florida  14  0-1 0-0   1-2    0    1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9           Ques Glover                 Florida  12  2-4 0-0   0-0    0    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10           Niels Lane                 Florida   3  0-1 0-1   0-0    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        Tyree Appleby                 Florida  23  2-7 2-4   0-0    0    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12         RaiQuan Gray           Florida State  23  2-5 0-0   1-2    2    6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13      Balsa Koprivica           Florida State  16  3-7 0-0   0-1    0    3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       Scottie Barnes           Florida State  28 7-10 1-2   2-6    0    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15            MJ Walker           Florida State  30  2-5 1-2 12-12    0    2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16       Anthony Polite           Florida State  28  4-7 3-4   3-4    2    3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17        Malik Osborne           Florida State  21  1-5 0-1   0-0    1    1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18           Tanor Ngom           Florida State   6  2-2 0-0   2-2    0    1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19       Quincy Ballard           Florida State   2  0-0 0-0   0-0    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20      Sardaar Calhoun           Florida State   7  1-3 1-1   0-0    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21       Nathanael Jack           Florida State   3  1-1 1-1   0-0    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22        RayQuan Evans           Florida State  18  1-4 0-1   3-3    0    3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23         Wyatt Wilkes           Florida State  18  2-5 1-4   0-0    0    0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    reb ast stl blk to pf pts starter ejected did_not_play active athlete_jersey</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    7   0   2   1  1  3   7    TRUE   FALSE        FALSE  FALSE             12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    0   0   0   0  0  0   5    TRUE   FALSE        FALSE  FALSE             11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    8   7   1   0  3  4  17    TRUE   FALSE        FALSE  FALSE              1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   3   2   3  5  3  19    TRUE   FALSE        FALSE  FALSE             23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    0   1   0   0  3  2   8    TRUE   FALSE        FALSE  FALSE              0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    3   0   0   1  1  2   2   FALSE   FALSE        FALSE  FALSE             15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    2   0   0   3  0  3   2   FALSE   FALSE        FALSE  FALSE              4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    1   1   0   0  0  3   1   FALSE   FALSE        FALSE  FALSE              4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    2   1   0   0  2  1   4   FALSE   FALSE        FALSE  FALSE              0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   0   0   0   0  0  0   0   FALSE   FALSE        FALSE  FALSE             44</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   2   1   1   0  5  3   6   FALSE   FALSE        FALSE  FALSE             22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   8   2   1   2  3  3   5    TRUE   FALSE        FALSE  FALSE              1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   3   0   0   1  3  1   6    TRUE   FALSE        FALSE  FALSE              5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   2   5   1   0  3  3  17    TRUE   FALSE        FALSE  FALSE              4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   2   3   3   0  4  1  17    TRUE   FALSE        FALSE  FALSE             23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   5   2   1   1  1  1  14    TRUE   FALSE        FALSE  FALSE              2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   2   0   1   0  1  4   2   FALSE   FALSE        FALSE  FALSE             10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   1   0   0   0  0  1   6   FALSE   FALSE        FALSE  FALSE             11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   0   0   0   0  0  0   0   FALSE   FALSE        FALSE  FALSE             15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   0   1   1   0  0  0   3   FALSE   FALSE        FALSE  FALSE              5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   0   0   0   0  0  2   3   FALSE   FALSE        FALSE  FALSE              0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   3   2   0   0  1  2   5   FALSE   FALSE        FALSE  FALSE              0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   0   2   0   0  0  0   5   FALSE   FALSE        FALSE  FALSE             31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_id athlete_short_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     4397204       C. Castleton</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     4395714         K. Johnson</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     4432819            T. Mann</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     4432812           S. Lewis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     4395713           N. Locke</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     4702251           O. Osifo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     4432825           O. Payne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     4279008          A. Duruji</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     4592827          Q. Glover</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    4565449            N. Lane</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    4280299         T. Appleby</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12    4277850            R. Gray</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13    4432829       B. Koprivica</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14    4433134          S. Barnes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15    4277854        M.J. Walker</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16    4277852          A. Polite</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17    4279098         M. Osborne</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18    4701240            T. Ngom</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19    4683134         Q. Ballard</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20    4701239         S. Calhoun</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21    4592191            N. Jack</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22    4592190           R. Evans</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23    4277855          W. Wilkes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                 athlete_headshot_href</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4397204.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4395714.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4432819.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4432812.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4395713.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4702251.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4432825.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4279008.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4592827.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4565449.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4280299.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4277850.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4432829.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4433134.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4277854.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4277852.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4279098.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4701240.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4683134.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4701239.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4592191.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4592190.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/4277855.png</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_position_name athlete_position_abbreviation team_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                Forward                             F    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                Forward                             F    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                  Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                Forward                             F    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                Forward                             F    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                Forward                             F    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                  Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                 Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                 Guard                             G    Gators</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12               Forward                             F Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                Center                             C Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17               Forward                             F Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18                Center                             C Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                Center                             C Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23                 Guard                             G Seminoles</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                            team_logo team_id team_abbreviation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 https://a.espncdn.com/i/teamlogos/ncaa/500/57.png      57               FLA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23 https://a.espncdn.com/i/teamlogos/ncaa/500/52.png      52               FSU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_color team_alternate_color</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9      0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10     0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11     0021A5               0021a5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22     782F40               ceb888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23     782F40               ceb888</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Player Box Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 1.7.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-16 21:41:36 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 23 × 31</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_display_n… team_short_disp… min   fg    fg3   ft    oreb  dreb  reb  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Colin Castleton    Florida          21    3-4   0-0   1-3   4     3     7    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Keyontae Johnson   Florida          4     2-3   0-1   1-1   0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Tre Mann           Florida          29    7-17  2-7   1-1   0     8     8    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Scottie Lewis      Florida          39    6-13  4-5   3-5   2     2     4    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Noah Locke         Florida          24    2-6   2-5   2-2   0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Osayi Osifo        Florida          15    0-1   0-0   2-2   1     2     3    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Omar Payne         Florida          16    1-2   0-0   0-0   1     1     2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Anthony Duruji     Florida          14    0-1   0-0   1-2   0     1     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Ques Glover        Florida          12    2-4   0-0   0-0   0     2     2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Niels Lane         Florida          3     0-1   0-1   0-0   0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 13 more rows, and 22 more variables: ast &lt;chr&gt;, stl &lt;chr&gt;, blk &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   to &lt;chr&gt;, pf &lt;chr&gt;, pts &lt;chr&gt;, starter &lt;lgl&gt;, ejected &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   did_not_play &lt;lgl&gt;, active &lt;lgl&gt;, athlete_jersey &lt;chr&gt;, athlete_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_short_name &lt;chr&gt;, athlete_headshot_href &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_position_name &lt;chr&gt;, athlete_position_abbreviation &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_name &lt;chr&gt;, team_logo &lt;chr&gt;, team_id &lt;chr&gt;, team_abbreviation &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_color &lt;chr&gt;, team_alternate_color &lt;chr&gt;</span></span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
@@ -392,7 +252,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

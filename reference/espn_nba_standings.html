@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -205,130 +211,25 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_standings</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id                   team playoffseed wins losses        winpercent</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       26              Utah Jazz           1   52     20 0.722222208976746</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       21           Phoenix Suns           2   51     21 0.708333313465118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       20     Philadelphia 76ers           1   49     23 0.680555582046509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       17          Brooklyn Nets           2   48     24 0.666666686534882</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        7         Denver Nuggets           3   47     25 0.652777791023254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       12            LA Clippers           4   47     25 0.652777791023254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       15        Milwaukee Bucks           3   46     26 0.638888895511627</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8        6       Dallas Mavericks           5   42     30 0.583333313465118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       13     Los Angeles Lakers           7   42     30 0.583333313465118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10      22 Portland Trail Blazers           6   42     30 0.583333313465118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11       1          Atlanta Hawks           5   41     31 0.569444417953491</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12      18        New York Knicks           4   41     31 0.569444417953491</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13      14             Miami Heat           6   40     32 0.555555582046509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14       9  Golden State Warriors           9   39     33 0.541666686534882</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15      29      Memphis Grizzlies           8   38     34 0.527777791023254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16       2         Boston Celtics           7   36     36               0.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17      27     Washington Wizards           8   34     38 0.472222208976746</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18      11         Indiana Pacers           9   34     38 0.472222208976746</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19      24      San Antonio Spurs          10   33     39 0.458333343267441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20      30      Charlotte Hornets          10   33     39 0.458333343267441</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21       3   New Orleans Pelicans          11   31     41 0.430555552244186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22       4          Chicago Bulls          11   31     41 0.430555552244186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23      23       Sacramento Kings          12   31     41 0.430555552244186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24      28        Toronto Raptors          12   27     45             0.375</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25      16 Minnesota Timberwolves          13   23     49 0.319444447755814</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26       5    Cleveland Cavaliers          13   22     50 0.305555552244186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27      25  Oklahoma City Thunder          14   22     50 0.305555552244186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28      19          Orlando Magic          14   21     51 0.291666656732559</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29       8        Detroit Pistons          15   20     52 0.277777791023254</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30      10        Houston Rockets          15   17     55 0.236111104488373</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    gamesbehind     avgpointsfor avgpointsagainst       differential streak</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            0 116.416664123535 107.166664123535                9.2      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2            1 115.277778625488 109.458335876465                5.8      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3            3 113.638885498047 108.055557250977                5.5      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4            4 118.569442749023 114.069442749023                4.5      5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5            5 115.055557250977          110.125                  5     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6            5 114.013885498047 107.833335876465                6.2     -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7            6          120.125 114.236114501953   5.89999999999999     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           10 112.416664123535 110.180557250977                2.2     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9           10 109.541664123535           106.75                2.7      5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10          10 116.111114501953 114.319442749023                1.8      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11          11 113.694442749023          111.375                2.3      4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12          11 107.027778625488 104.722221374512                2.3      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13          12 108.069442749023 108.041664123535 0.0999999999999943      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14          13 113.708335876465 112.652778625488                  1      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15          14 113.291664123535 112.263885498047                  1     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16          16          112.625 111.166664123535   1.39999999999999     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17          18 116.638885498047 118.472221374512  -1.90000000000001      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18          18 115.305557250977 115.319442749023                  0      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19          19 111.083335876465 112.819442749023               -1.7     -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20          19 109.458335876465 111.388885498047  -1.90000000000001     -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21          21 114.597221374512 114.888885498047 -0.300000000000011     -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22          21 110.680557250977 111.569442749023 -0.899999999999991      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23          21 113.736114501953 117.416664123535               -3.7     -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24          25 111.263885498047 111.736114501953 -0.400000000000006     -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25          29          112.125 117.680557250977  -5.60000000000001      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26          30 103.833335876465 112.277778625488               -8.5     -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27          30              105 115.638885498047              -10.6      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28          31              104 113.305557250977               -9.3     -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29          32 106.611114501953 111.083335876465               -4.5     -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30          35 108.791664123535 116.694442749023  -7.90000000000001     -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    clincher divisionwinpercent  leaguewinpercent leaguestandings  home  road</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         5  0.583333313465118 0.666666686534882           52-20  31-5 21-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         2  0.583333313465118 0.714285731315613           51-21  27-9 24-12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3  0.833333313465118 0.738095223903656           49-23  29-7 20-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4         1  0.666666686534882  0.61904764175415           48-24  28-8 20-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5         1               0.75  0.61904764175415           47-25 25-11 22-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6         1               0.75 0.642857134342194           47-25 26-10 21-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7         2  0.916666686534882 0.714285731315613           46-26 26-10 20-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8         2  0.583333313465118               0.5           42-30 21-15 21-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9         7  0.333333343267441 0.595238089561462           42-30 21-15 21-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10        1                0.5 0.547619044780731           42-30 20-16 22-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11        2               0.75 0.571428596973419           41-31 25-11 16-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12        1  0.333333343267441 0.595238089561462           41-31 25-11 16-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13        1                0.5 0.571428596973419           40-32 21-15 19-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14        6  0.416666656732559 0.595238089561462           39-33 25-11 14-22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15        7                0.5 0.452380955219269           38-34 18-18 20-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16        7  0.333333343267441 0.476190477609634           36-36 21-15 15-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17        7               0.25 0.380952388048172           34-38 19-17 15-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18        6  0.583333313465118 0.476190477609634           34-38 13-23 21-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19        6                0.5 0.404761910438538           33-39 14-22 19-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20        6  0.666666686534882 0.476190477609634           33-39 18-18 15-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21        4                0.5 0.428571432828903           31-41 18-18 13-23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22        4  0.583333313465118               0.5           31-41 15-21 16-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23        4  0.416666656732559 0.428571432828903           31-41 16-20 15-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24        4  0.333333343267441 0.404761910438538           27-45 16-20 11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25        4  0.416666656732559 0.357142865657806           23-49 13-23 10-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26        4  0.333333343267441 0.380952388048172           22-50 13-23  9-27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27        4               0.25  0.28571429848671           22-50 10-26 12-24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28        4  0.333333343267441 0.309523820877075           21-51 11-25 10-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29        4 0.0833333358168602  0.28571429848671           20-52 13-23  7-29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30        4  0.416666656732559 0.261904776096344           17-55  9-27  8-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    vsdiv vsconf lasttengames</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    7-5  28-14          7-3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    7-5  30-12          7-3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   10-2  31-11          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    8-4  26-16          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    9-3  26-16          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    9-3  27-15          4-6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   11-1  30-12          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    7-5  21-21          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    4-8  25-17          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   6-6  23-19          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   9-3  24-18          7-3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   4-8  25-17          7-3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   6-6  24-18          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   5-7  25-17          8-2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   6-6  19-23          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   4-8  20-22          4-6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   3-9  16-26          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   7-5  20-22          5-5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   6-6  17-25          2-8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   8-4  20-22          3-7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   6-6  18-24          4-6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   7-5  21-21          5-5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   5-7  18-24          6-4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24   4-8  17-25          1-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25   5-7  15-27          5-5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26   4-8  16-26          1-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27   3-9  12-30          1-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28   4-8  13-29          2-8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29  1-11  12-30          1-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30   5-7  11-31          2-8</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Standings Information from ESPN.com ───────────────── <span style="font-style: italic;">hoopR 1.7.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-16 21:41:46 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 20</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id team     playoffseed wins  losses winpercent gamesbehind avgpointsfor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 26      Utah Ja… 1           52    20     0.7222222… 0           116.4166641…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 21      Phoenix… 2           51    21     0.7083333… 1           115.2777786…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 20      Philade… 1           49    23     0.6805555… 3           113.6388854…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 17      Brookly… 2           48    24     0.6666666… 4           118.5694427…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 7       Denver … 3           47    25     0.6527777… 5           115.0555572…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 12      LA Clip… 4           47    25     0.6527777… 5           114.0138854…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 15      Milwauk… 3           46    26     0.6388888… 6           120.125     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 6       Dallas … 5           42    30     0.5833333… 10          112.4166641…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 13      Los Ang… 7           42    30     0.5833333… 10          109.5416641…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 22      Portlan… 6           42    30     0.5833333… 10          116.1111145…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 20 more rows, and 12 more variables: avgpointsagainst &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   differential &lt;chr&gt;, streak &lt;chr&gt;, clincher &lt;chr&gt;, divisionwinpercent &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   leaguewinpercent &lt;chr&gt;, leaguestandings &lt;chr&gt;, home &lt;chr&gt;, road &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   vsdiv &lt;chr&gt;, vsconf &lt;chr&gt;, lasttengames &lt;chr&gt;</span></span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
@@ -344,7 +245,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

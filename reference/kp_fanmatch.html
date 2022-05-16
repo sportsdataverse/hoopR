@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hoopR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -100,13 +100,19 @@
       <a href="https://wehoop.sportsdataverse.org/" class="external-link">wehoop</a>
     </li>
     <li>
+      <a href="https://torvik.dev/" class="external-link">toRvik</a>
+    </li>
+    <li>
       <a href="https://fastRhockey.sportsdataverse.org/" class="external-link">fastRhockey</a>
+    </li>
+    <li>
+      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
     </li>
     <li>
       <a href="https://jaseziv.github.io/worldfootballR/" class="external-link">worldfootballR</a>
     </li>
     <li>
-      <a href="https://BillPetti.github.io/baseballr/" class="external-link">baseballr</a>
+      <a href="https://jaseziv.github.io/chessR/" class="external-link">chessR</a>
     </li>
     <li>
       <a href="https://kazink36.github.io/cfbplotR/" class="external-link">cfbplotR</a>
@@ -115,7 +121,7 @@
       <a href="https://kazink36.github.io/cfb4th/" class="external-link">cfb4th</a>
     </li>
     <li>
-      <a href="https://saiemgilani.github.io/recruitR/" class="external-link">recruitR</a>
+      <a href="https://recruitr.sportsdataverse.org/" class="external-link">recruitR</a>
     </li>
     <li>
       <a href="https://jacklich10.github.io/gamezoneR/" class="external-link">gamezoneR</a>
@@ -198,30 +204,7 @@
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame 20 columns:
-|col_name     |types     |
-|:------------|:---------|
-|prediction   |character |
-|time_et      |character |
-|location     |character |
-|thrill_score |numeric   |
-|comeback     |numeric   |
-|excitement   |numeric   |
-|road_rk      |numeric   |
-|road_team    |character |
-|home_rk      |numeric   |
-|home_team    |character |
-|win_rk       |numeric   |
-|win_team     |character |
-|win_score    |numeric   |
-|loss_rk      |numeric   |
-|loss_team    |character |
-|loss_score   |numeric   |
-|poss         |numeric   |
-|mvp          |character |
-|event        |character |
-|date         |character |</p>
-    </div>
+    <p>A data frame 20 columns:</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>prediction</td><td>character</td></tr><tr><td>time_et</td><td>character</td></tr><tr><td>location</td><td>character</td></tr><tr><td>thrill_score</td><td>numeric</td></tr><tr><td>comeback</td><td>numeric</td></tr><tr><td>excitement</td><td>numeric</td></tr><tr><td>road_rk</td><td>numeric</td></tr><tr><td>road_team</td><td>character</td></tr><tr><td>home_rk</td><td>numeric</td></tr><tr><td>home_team</td><td>character</td></tr><tr><td>win_rk</td><td>numeric</td></tr><tr><td>win_team</td><td>character</td></tr><tr><td>win_score</td><td>numeric</td></tr><tr><td>loss_rk</td><td>numeric</td></tr><tr><td>loss_team</td><td>character</td></tr><tr><td>loss_score</td><td>numeric</td></tr><tr><td>poss</td><td>numeric</td></tr><tr><td>mvp</td><td>character</td></tr><tr><td>event</td><td>character</td></tr><tr><td>date</td><td>character</td></tr></table></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -233,13 +216,13 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Connecticut 68-67 … <span style="color: #949494;">"</span>box\n… Hartfor…         78.6        5       2.83      <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Arkansas 69-68 (52… <span style="color: #949494;">"</span>box\n… Gainesv…         69.9        8       1.97      <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Alabama 77-74 (60%) <span style="color: #949494;">"</span>box\n… Nashvil…         67.7        9       1.85      <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Boise St. 59-56 (5… <span style="color: #949494;">"</span>box\n… Boise, …         65.3        6       1.98      <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Boise St. 59-56 (5… <span style="color: #949494;">"</span>box\n… Boise, …         65.3        6       1.97      <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Iowa 81-75 (71%)    <span style="color: #949494;">"</span>box\n… Iowa Ci…         65.2        2      -<span style="color: #BB0000;">0.1</span>       <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> UNLV 75-74 (51%)    <span style="color: #949494;">"</span>box\n… Reno, N…         53.7        6       1.3       <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Texas Tech 70-60 (… <span style="color: #949494;">"</span>box\n… Lubbock…         51.5        0      -<span style="color: #BB0000;">0.09</span>      <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Miami FL 72-68 (65… <span style="color: #949494;">"</span>box\n… Pittsbu…         46.1        0      -<span style="color: #BB0000;">0.29</span>      <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Miami FL 72-68 (65… <span style="color: #949494;">"</span>box\n… Pittsbu…         46.1        0      -<span style="color: #BB0000;">0.3</span>       <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Kansas 78-66 (86%)  <span style="color: #949494;">"</span>box\n… Lawrenc…         45.6        3       0.3       <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Tennessee 71-60 (8… <span style="color: #949494;">"</span>box\n… Columbi…         41.9        4       0.36      <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Tennessee 71-60 (8… <span style="color: #949494;">"</span>box\n… Columbi…         41.9        4       0.35      <span style="color: #BB0000;">NA</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 18 more rows, and 13 more variables: road_team &lt;chr&gt;, home_rk &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team &lt;chr&gt;, win_rk &lt;dbl&gt;, win_team &lt;chr&gt;, win_score &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   loss_rk &lt;dbl&gt;, loss_team &lt;chr&gt;, loss_score &lt;dbl&gt;, poss &lt;dbl&gt;, mvp &lt;chr&gt;,</span></span>
@@ -259,7 +242,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>
