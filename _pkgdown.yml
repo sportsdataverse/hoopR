@@ -1,6 +1,6 @@
 url: https://hoopR.sportsdataverse.org/
 title: hoopR
-description: "Functions to Access Men's Basketball Play by Play Data"
+description: "Access Men's Basketball Play by Play Data"
 template:
   params:
     bootswatch: flatly
@@ -10,7 +10,7 @@ template:
       index_name: hoopR
   opengraph:
     image:
-      src: "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/themes/hoopR_gh.png"
+      src: "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/themes/hoopR_gh.png"
     twitter:
       creator: "@saiemgilani"
       card: summary_large_image
@@ -33,12 +33,12 @@ navbar:
   structure:
     left:  [home, intro, reference, articles, news, games, network, data, repo]
     right: [twitter, github]
-  icon: https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.ico
+  icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/master/man/figures/logo.ico
   title: "hoopR"
   components:
     home:
       title: An R package to quickly obtain clean and tidy men's basketball play by play data
-      description: Functions to Access Men's Basketball Play by Play Data
+      description: Access Men's Basketball Play by Play Data
       icon: fa-home
       href: index.html
       links:
@@ -56,7 +56,7 @@ navbar:
       text: " Data"
       menu:
       - text: "Data Repository"
-        href: https://github.com/saiemgilani/hoopR-data
+        href: https://github.com/sportsdataverse/hoopR-data
     reference:
       icon: "fas fa-code"
       text: " Funcs"
@@ -124,13 +124,13 @@ navbar:
         href: https://github.com/nntrn/nfl-nerd/
     github:
       icon: "fab fa-github fa-lg"
-      href: https://github.com/saiemgilani/hoopR/
+      href: https://github.com/sportsdataverse/hoopR/
     repo:
-      url: https://github.com/saiemgilani/hoopR/
-      home: https://github.com/saiemgilani/hoopR/
-      source: https://github.com/saiemgilani/hoopR/blob/master/
-      issue: https://github.com/saiemgilani/hoopR/issues/issues/
-      user: https://github.com/saiemgilani/
+      url: https://github.com/sportsdataverse/hoopR/
+      home: https://github.com/sportsdataverse/hoopR/
+      source: https://github.com/sportsdataverse/hoopR/blob/master/
+      issue: https://github.com/sportsdataverse/hoopR/issues/issues/
+      user: https://github.com/sportsdataverse/
 
 reference:
   - title: hoopR Data
