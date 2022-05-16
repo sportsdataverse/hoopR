@@ -1,5 +1,6 @@
 test_that("KP - Get team lineups", {
   skip_on_cran()
+  skip_on_ci()
 
   x <- kp_team_lineups(team = 'Florida St.', year= 2020)
 
