@@ -13,8 +13,8 @@ A utility to quickly obtain clean and tidy men's basketball play by play data. P
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://saiemgilani.github.io/hoopR/}
-  \item \url{https://github.com/saiemgilani/hoopR}
+  \item \url{https://github.com/sportsdataverse/hoopR}
+  \item \url{http://hoopr.sportsdataverse.org/}
   \item Report bugs at \url{https://github.com/saiemgilani/hoopR/issues}
 }
 
