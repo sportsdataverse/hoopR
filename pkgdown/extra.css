@@ -17,12 +17,12 @@ h1, h2, .h1, .h2{
   line-height: 2.2rem; /* increases, so wrapping headers don't overlap */
   color: #0f0f0f;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h3, h4, h5, h6, .h3, .h4{
   font-family: "Chivo";
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
   line-height: 1.8rem; /* increases, so wrapping headers don't overlap */
   color: #0f0f0f;
   font-weight: 500;
@@ -37,89 +37,27 @@ pre, code {
    margin-bottom: 10px;
 }
 
-.navbar-default {
-    border-color: #eee;
-}
 
-.label-default{
-    border-color: #ecdddd;
-    background-color: #658e9d;
-}
-.navbar-default {
-    border-color: #ecdddd;
 
-}
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
 
-    background-color: #3e577b;
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-
-    background-color: #3e577b;
-}
-.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-    background-color: #3e577b;
-}
-.navbar-nav>.open>a, .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus {
-    background-color: #3e577b;
-}
-#tocnav ul ul {
-    margin-left: 25px;
-}
-#tocnav ul ul {
-  font-family: "Fira Mono";
-  margin-left: 5px;
-  font-size: 11px;
-  line-height: 1.35rem;
-}
-
-#toc ul.nav li a{
-  font-family: "Fira Mono";
-  margin-left: 5px;
-  font-size: 14px;
-  line-height: 1.65rem;
-}
-.dropdown-menu {
-  box-shadow: 0 6px 12px rgba(5, 5, 5, 0.18);
-  background-color: #3e577b;
-}
-#navbar ul ul{
-  font-family: "Fira Mono";
-  letter-spacing: 0.05px;
-  line-height: 1.25rem;
-  color: #fff;
-  font-weight: 400;
-  font-size: 12px;
-}
-.nav li a {
-  font-family: "Fira Mono";
-  letter-spacing: 0.05px;
-  line-height: 1.55rem;
-  color: #fff;
-  font-weight: 400;
-  font-size: 11px;
-}
-.pkgdown {
-  display: none;
-}
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
-  
+
   background-color: #587193;
 }
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 8px #427FD4, 0 0 10px #39F8FF;
+    text-shadow: 0 0 10px #427FD4, 0 0 12px #39F8FF;
   }
 
   to {
-    text-shadow: 0 0 10px #427FD4, 0 0 11px #39F8FF;
+    text-shadow: 0 0 12px #427FD4, 0 0 14px #39F8FF;
   }
 }
 
 @keyframes glow {
     to {
-     text-shadow: 0 0 10px #427FD4, 0 0 11px #39F8FF;
+     text-shadow: 0 0 12px #427FD4, 0 0 14px #39F8FF;
     }
   }
 
@@ -136,6 +74,145 @@ pre, code {
     font-family: "Bungee";
     font-size: 16px;
     color: #FDFDFD;
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+
+
+/* bootstrap 5 version changes  */
+
+.pkgdown-footer-right {
+  display: none;
+}
+
+
+.navbar-default .navbar-link {
+    font-family: "Bungee";
+    font-size: 16px;
+    color: #FDFDFD;
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.dropdown-header {
+  font-family: "Chivo";
+  letter-spacing: 0.1px;
+  line-height: 1.3rem;
+  color: #FDFDFD;
+  font-weight: 700;
+  font-size: 14px;
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.dropdown-menu {
+  box-shadow: 0 6px 12px rgba(5, 5, 5, 0.18);
+  background-color: #3E577B;
+}
+small.nav-text {
+    --bs-text-opacity: 1;
+    border-color: #ecdddd;
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+}
+.dropdown-item {
+    color: #F3F3F3;
+    font-family: "Fira Mono";
+    font-size: small;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+    font-family: "Fira Mono";
+    font-size: small;
+    color: #D1DAE8;
+    padding: 0.5rem 1rem;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+.navbar-dark .navbar-nav {
+    font-family: "Fira Mono";
+    font-size: small;
+}
+.navbar-dark .navbar-nav {
+    font-family: "Fira Mono";
+    font-size: small;
+}
+.nav-link:hover, .nav-link:focus {
+    color: #3E577B;
+}
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .focus>.nav-link{
+    font-family: "Fira Mono";
+    font-size: small;
+    background: #3E577B;
+    color: #D1DAE8;
+}
+.navbar-dark .navbar-nav .nav-item>.nav-link:hover, .navbar-light .navbar-nav .nav-item>.nav-link:hover {
+    background: rgba(34,26,77,0.1);
+    color: #D1DAE8;
+}
+.navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    font-family: "Fira Mono";
+    font-size: small;
+    color: #D1DAE8;
+}
+
+.bg-primary .navbar-nav .show>.nav-link, .bg-primary .navbar-nav .nav-link.active, .bg-primary .navbar-nav .nav-link:hover, .bg-primary .navbar-nav .nav-link:focus {
+    font-family: "Fira Mono";
+    font-size: small;
+    color: #D1DAE8;
+}
+
+.nav-link:focus {
+    color: #D1DAE8;
+}
+.nav-link:hover {
+    color: #D1DAE8;
+}
+/*a {
+    color: #7c689c;
+}*/
+.dropdown-toggle .nav-link {
+    font-family: "Fira Mono";
+    font-size: small;
+    color: #D1DAE8;
+}
+.navbar-default .navbar-link {
+    font-family: "Bungee";
+    font-size: 16px;
+    color: #FDFDFD;
     animation: glow 3s ease-in-out infinite alternate;
 }
 
+.navbar-dark .navbar-brand {
+    font-family: "Bungee";
+    font-size: 16px;
+    color: #FDFDFD;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #ffffff;
+}
+
+.navbar-dark input[type="search"] {
+    border-color: #6c7879;
+    background-color: #ffffff;
+    color: #3b3e3f;
+}
+
+[role="button"]{
+    color: #D1DAE8;
+
+}

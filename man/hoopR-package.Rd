@@ -15,7 +15,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/sportsdataverse/hoopR}
   \item \url{http://hoopr.sportsdataverse.org/}
-  \item Report bugs at \url{https://github.com/saiemgilani/hoopR/issues}
+  \item Report bugs at \url{https://github.com/sportsdataverse/hoopR/issues}
 }
 
 }

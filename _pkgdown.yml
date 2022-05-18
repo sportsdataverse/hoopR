@@ -2,17 +2,35 @@ url: https://hoopR.sportsdataverse.org/
 title: hoopR
 description: "Access Men's Basketball Play by Play Data"
 template:
-  params:
-    bootswatch: flatly
-    ganalytics: G-FN028W4QW6
-    docsearch:
-      api_key: 95d5bfdfd37b4b14e513f2c8d59322d3
-      index_name: hoopR
+  bootstrap: 5
+  bootswatch: flatly
+  ganalytics: G-FN028W4QW6
+  bslib:
+    primary: "#2C3D50"
+    secondary: "#A7C6E6"
+    success: "#D1DAE8"
+    link-color: "#7b92c0"
+    link-hover-color: "#B4DFE6"
+    nav-link-hover-color: "#D1DAE8"
+    nav-link-focus-color: "#D1DAE8"
+    nav-link-dropdown-toggle-hover-color: "#D1DAE8"
+    navbar-hover-color: "#D1DAE8"
+    navbar-brand-hover-color: "#D1DAE8"
+    nav-tabs-link-active-bg	: "#D1DAE8"
+    nav-pills-link-active-color: "#D1DAE8"
+    btn-link-color: "#D1DAE8"
+    btn-link-hover-color: "#D1DAE8"
+    dropdown-link-color: "#D1DAE8"
+    input-btn-focus-color: "#D1DAE8"
+    dropdown-dark-link-hover-bg: "#D1DAE8"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
   opengraph:
     image:
       src: "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/themes/hoopR_gh.png"
     twitter:
       creator: "@saiemgilani"
+      site: "@sportsdataverse"
       card: summary_large_image
 
 toc:
@@ -22,41 +40,27 @@ authors:
   Saiem Gilani:
    href: https://twitter.com/saiemgilani
 home:
-  title: An R package to quickly obtain clean and tidy men's basketball play by play data
-  description: Functions to Access Men's Basketball Play by Play Data
+  title: hoopR • Data and Tools for Men's Basketball
+  description: >
+    A collection of data and a R package designed for men's basketball!
   icon: fa-home
   href: index.html
   links:
-  - text: hoopR beginner's guide
+  - text: Getting started with hoopR
     href: articles/getting-started-hoopR.html
 navbar:
   structure:
-    left:  [home, intro, reference, articles, news, games, network, data, repo]
+    left:  [home, reference, articles, news, network, data]
     right: [twitter, github]
   icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/master/man/figures/logo.ico
   title: "hoopR"
   components:
     home:
-      title: An R package to quickly obtain clean and tidy men's basketball play by play data
-      description: Access Men's Basketball Play by Play Data
+      title: hoopR • Data and Tools for Men's Basketball
+      description: >
+        A collection of data and a R package designed for men's basketball!
       icon: fa-home
       href: index.html
-      links:
-      - text: hoopR beginner's guide
-        href: articles/getting-started-hoopR.html
-    twitter:
-      icon: "fab fa-twitter fa-lg"
-      href: http://twitter.com/saiemgilani
-    news:
-      icon: "fas fa-newspaper"
-      text: " News"
-      href: news/index.html
-    data:
-      icon: "fas fa-database"
-      text: " Data"
-      menu:
-      - text: "Data Repository"
-        href: https://github.com/sportsdataverse/hoopR-data
     reference:
       icon: "fas fa-code"
       text: " Funcs"
@@ -76,6 +80,10 @@ navbar:
         href: articles/intro-to-hoopR.html
       - text: "KenPom Example Functions"
         href: articles/kenpom-example-functions.html
+    news:
+      icon: "fas fa-newspaper"
+      text: " News"
+      href: news/index.html
     network:
       icon: "fas fa-project-diagram"
       text: " SDV"
@@ -122,15 +130,18 @@ navbar:
         href: https://js.sportsdataverse.org/
       - text: nfl-nerd
         href: https://github.com/nntrn/nfl-nerd/
+    data:
+      icon: "fas fa-database"
+      text: " Data"
+      menu:
+      - text: "Data Repository"
+        href: https://github.com/sportsdataverse/hoopR-data
+    twitter:
+      icon: "fab fa-twitter fa-lg"
+      href: http://twitter.com/saiemgilani
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/sportsdataverse/hoopR/
-    repo:
-      url: https://github.com/sportsdataverse/hoopR/
-      home: https://github.com/sportsdataverse/hoopR/
-      source: https://github.com/sportsdataverse/hoopR/blob/master/
-      issue: https://github.com/sportsdataverse/hoopR/issues/issues/
-      user: https://github.com/sportsdataverse/
 
 reference:
   - title: hoopR Data
