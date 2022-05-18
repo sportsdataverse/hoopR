@@ -4,7 +4,7 @@ description: "Getting started with using <code>hoopR</code> and men's college ba
 author: "Saiem Gilani <br><a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
 opengraph:
   image: 
-    src: "https://github.com/saiemgilani/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
   twitter:
     card: summary_large_image
     creator: "@saiemgilani"
@@ -269,7 +269,7 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ```
 
-![Result](https://github.com/saiemgilani/hoopR/blob/master/man/figures/animated_adj_em.gif?raw=true)
+![Result](https://github.com/sportsdataverse/hoopR/blob/master/man/figures/animated_adj_em.gif?raw=true)
 
 ![site\_navigation](http://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/site_navigation.png)
 

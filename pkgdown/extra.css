@@ -37,12 +37,59 @@ pre, code {
    margin-bottom: 10px;
 }
 
+#toc>.nav a.nav-link.active {
+  background-color: #d6deef;
+}
+#toc>.nav a.nav-link:hover, #toc>.nav a.nav-link:focus {
+  background-color: #E6ECF9
+}
+#tocnav ul ul {
+    margin-left: 25px;
+}
+#tocnav ul ul {
+  font-family: "Fira Mono";
+  margin-left: 5px;
+  font-size: 11px;
+  line-height: 1.35rem;
+}
 
-
-
+#toc ul.nav li a{
+  font-family: "Fira Mono";
+  margin-left: 5px;
+  font-size: 14px;
+  line-height: 1.65rem;
+}
+.dropdown-menu {
+  box-shadow: 0 6px 12px rgba(5, 5, 5, 0.18);
+  background-color: #3e577b;
+}
+#navbar ul ul{
+  font-family: "Fira Mono";
+  letter-spacing: 0.05px;
+  line-height: 1.25rem;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+}
+.nav li a {
+  font-family: "Fira Mono";
+  letter-spacing: 0.05px;
+  line-height: 1.55rem;
+  color: #fff;
+  font-weight: 400;
+  font-size: 11px;
+}
+.pkgdown {
+  display: none;
+}
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
 
   background-color: #587193;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+
+  background-color: #4E76AC;
 }
 
 @-webkit-keyframes glow {
@@ -156,7 +203,7 @@ small.nav-text {
     color: #D1DAE8;
 }
 .navbar-dark .navbar-nav .nav-item>.nav-link:hover, .navbar-light .navbar-nav .nav-item>.nav-link:hover {
-    background: #C4D9EE;
+    background: #3E577B;
     color: #D1DAE8;
 }
 .navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
