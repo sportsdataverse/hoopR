@@ -14,7 +14,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
-pkg_name <- "saiemgilani/hoopR"
+pkg_name <- "sportsdataverse/hoopR"
 url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/master/DESCRIPTION")
 
 
