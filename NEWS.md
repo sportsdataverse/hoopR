@@ -30,13 +30,13 @@
 - Added ```nba_teams``` dataset for working with the NBA Stats API
 
 # **hoopR 1.4.0**
-- [`hoopR::espn_mbb_betting()`](https://saiemgilani.github.io/hoopR/reference/espn_mbb_betting.html)
+- [`hoopR::espn_mbb_betting()`](https://hoopr.sportsdataverse.org/reference/espn_mbb_betting.html)
     function added
-- [`hoopR::espn_nba_betting()`](https://saiemgilani.github.io/hoopR/reference/espn_nba_betting.html)
+- [`hoopR::espn_nba_betting()`](https://hoopr.sportsdataverse.org/reference/espn_nba_betting.html)
     function added
 
 # **hoopR 1.3.1**
-- Fix [```kp_winprob```](https://saiemgilani.github.io/hoopR/reference/kp_winprob.html) function, adding runs as third output
+- Fix [```kp_winprob```](https://hoopr.sportsdataverse.org/reference/kp_winprob.html) function, adding runs as third output
 
 # **hoopR 1.3.0**
 
@@ -177,24 +177,24 @@ Adding roughly 127 functions
 
 ### **Add schedule loaders**
 
-  - [`hoopR::load_mbb_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_mbb_schedule.html)
+  - [`hoopR::load_mbb_schedule()`](https://hoopr.sportsdataverse.org/reference/load_mbb_schedule.html)
     function added
-  - [`hoopR::load_nba_schedule()`](https://saiemgilani.github.io/hoopR/reference/load_nba_schedule.html)
+  - [`hoopR::load_nba_schedule()`](https://hoopr.sportsdataverse.org/reference/load_nba_schedule.html)
     function added
 
 # **hoopR 1.1.0** 
 ### **Add team box score loaders**
-- [```hoopR::load_mbb_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_team_box.html) function added
-- [```hoopR::load_nba_team_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_team_box.html) function added
+- [```hoopR::load_mbb_team_box()```](https://hoopr.sportsdataverse.org/reference/load_mbb_team_box.html) function added
+- [```hoopR::load_nba_team_box()```](https://hoopr.sportsdataverse.org/reference/load_nba_team_box.html) function added
 
 ### **Add player box score loaders**
-- [```hoopR::load_mbb_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_player_box.html) function added
-- [```hoopR::load_nba_player_box()```](https://saiemgilani.github.io/hoopR/reference/load_nba_player_box.html) function added
+- [```hoopR::load_mbb_player_box()```](https://hoopr.sportsdataverse.org/reference/load_mbb_player_box.html) function added
+- [```hoopR::load_nba_player_box()```](https://hoopr.sportsdataverse.org/reference/load_nba_player_box.html) function added
 
 # **hoopR 1.0.5**
 ### **Standings functions**
-- [```hoopR::espn_nba_standings()```](https://saiemgilani.github.io/hoopR/reference/espn_nba_standings.html)
-- [```hoopR::espn_mbb_standings()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_standings.html)
+- [```hoopR::espn_nba_standings()```](https://hoopr.sportsdataverse.org/reference/espn_nba_standings.html)
+- [```hoopR::espn_mbb_standings()```](https://hoopr.sportsdataverse.org/reference/espn_mbb_standings.html)
 
 # **hoopR 1.0.4**
 ### **Add retry**
@@ -213,13 +213,13 @@ To reflect that the package is no longer just a men's college basketball and Ken
 
 ### **Clean names and team returns**
 - All functions have now been given the [```janitor::clean_names()```](https://rdrr.io/cran/janitor/man/clean_names.html) treatment
-- [```hoopR::espn_mbb_teams()```](https://saiemgilani.github.io/hoopR/reference/espn_mbb_teams.html) has updated the returns to be more identity information related only
-- [```hoopR::espn_nba_teams()```](https://saiemgilani.github.io/hoopR/reference/espn_nba_teams.html) to be more identity information related only
+- [```hoopR::espn_mbb_teams()```](https://hoopr.sportsdataverse.org/reference/espn_mbb_teams.html) has updated the returns to be more identity information related only
+- [```hoopR::espn_nba_teams()```](https://hoopr.sportsdataverse.org/reference/espn_nba_teams.html) to be more identity information related only
 - All tests were updated
 
 ### **Loading capabilities added to the package**
-- [```hoopR::load_mbb_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_mbb_pbp.html) and [```hoopR::update_mbb_db()```](https://saiemgilani.github.io/hoopR/reference/update_mbb_db.html) functions added
-- [```hoopR::load_nba_pbp()```](https://saiemgilani.github.io/hoopR/reference/load_nba_pbp.html) and [```hoopR::update_nba_db()```](https://saiemgilani.github.io/hoopR/reference/update_nba_db.html) functions added
+- [```hoopR::load_mbb_pbp()```](https://hoopr.sportsdataverse.org/reference/load_mbb_pbp.html) and [```hoopR::update_mbb_db()```](https://hoopr.sportsdataverse.org/reference/update_mbb_db.html) functions added
+- [```hoopR::load_nba_pbp()```](https://hoopr.sportsdataverse.org/reference/load_nba_pbp.html) and [```hoopR::update_nba_db()```](https://hoopr.sportsdataverse.org/reference/update_nba_db.html) functions added
 
 # **hoopR 0.4**
 - Added support for ESPN's NBA play-by-play endpoints with the addition of the following functions:
