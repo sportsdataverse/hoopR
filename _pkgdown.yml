@@ -114,6 +114,8 @@ navbar:
         href: https://jaseziv.github.io/worldfootballR/
       - text: chessR
         href: https://jaseziv.github.io/chessR/
+      - text: sportyR
+        href: https://rossdrucker.github.io/sportyR/
       - text: cfbplotR
         href: https://kazink36.github.io/cfbplotR/
       - text: cfb4th
