@@ -34,7 +34,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/pbp/rds/play_by_play_",seasons,".rds")
+  urls <- paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/nba/pbp/rds/play_by_play_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -86,7 +86,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/team_box/rds/team_box_",seasons,".rds")
+  urls <- paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/nba/team_box/rds/team_box_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -132,7 +132,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/player_box/rds/player_box_",seasons,".rds")
+  urls <- paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/nba/player_box/rds/player_box_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -183,7 +183,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/schedules/rds/nba_schedule_",seasons,".rds")
+  urls <- paste0("https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/nba/schedules/rds/nba_schedule_",seasons,".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -201,7 +201,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
 
 # load games file
 load_nba_games <- function(){
-  .url <- "https://raw.githubusercontent.com/saiemgilani/hoopR-data/master/nba/nba_games_in_data_repo.csv"
+  .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/nba/nba_games_in_data_repo.csv"
   dat <- csv_from_url(.url)
   return (dat)
 }
