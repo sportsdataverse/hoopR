@@ -25,7 +25,7 @@ Description: A utility to quickly obtain clean and tidy men's
 License: MIT + file LICENSE
 URL: https://github.com/sportsdataverse/hoopR,
     http://hoopr.sportsdataverse.org/
-BugReports: https://github.com/saiemgilani/hoopR/issues
+BugReports: https://github.com/sportsdataverse/hoopR/issues
 SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
 Depends: 
     R (>= 4.0.0)
