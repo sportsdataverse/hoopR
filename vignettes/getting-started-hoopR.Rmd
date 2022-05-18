@@ -4,7 +4,7 @@ description: "Getting started with using <code>hoopR</code> and men's basketball
 author: "Saiem Gilani <br><a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
 opengraph:
   image: 
-    src: "https://github.com/saiemgilani/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
   twitter:
     card: summary_large_image
     creator: "@saiemgilani"
@@ -56,7 +56,7 @@ pacman::p_load(tidyverse, zoo, ggimage, gt)
 
 There are generally speaking **five** men's basketball data sources accessed from this package:
 
--   [`hoopR-data` repo](https://github.com/saiemgilani/hoopR-data) [![Twitter Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
+-   [`hoopR-data` repo](https://github.com/sportsdataverse/hoopR-data) [![Twitter Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
 -   [NBA Stats and Data API](https://stats.nba.com)
 -   [NBA G-League Stats and Data API](https://stats.nba.com)
 -   [ESPN](https://espn.com)
@@ -65,7 +65,7 @@ There are generally speaking **five** men's basketball data sources accessed fro
 
 #### **Function names indicate the data source**
 
--   Functions that use the [`hoopR-data` repository](https://github.com/saiemgilani/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
+-   Functions that use the [`hoopR-data` repository](https://github.com/sportsdataverse/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
 
 -   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 127 functions covering the NBA Stats API
 
