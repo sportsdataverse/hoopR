@@ -66,7 +66,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.12 sec elapsed
+    ## 4.28 sec elapsed
 
     ## 609048 rows of NBA play-by-play data from 1305 games.
 
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 10.89 sec elapsed
+    ## 11.47 sec elapsed
 
     ## 1859824 rows of men's college basketball play-by-play data from 5828 games.
 
