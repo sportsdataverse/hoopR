@@ -15,7 +15,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
 pkg_name <- "sportsdataverse/hoopR"
-url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/master/DESCRIPTION")
+url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/main/DESCRIPTION")
 
 
 x <- readLines(url)
@@ -127,7 +127,7 @@ plot_data$Color_2 = Color2
 
 ```{r anim_presets, message=FALSE}
 
-logo_url <- "https://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/logo.png"
+logo_url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.png"
 z <- tempfile()
 download.file(logo_url,z,mode="wb")
 m <- png::readPNG(z)
@@ -269,9 +269,9 @@ saveGIF(draw_gif(), interval = 1, movie.name = glue::glue("animated_{metric}.gif
 
 ```
 
-![Result](https://github.com/sportsdataverse/hoopR/blob/master/man/figures/animated_adj_em.gif?raw=true)
+![Result](https://github.com/sportsdataverse/hoopR/blob/main/man/figures/animated_adj_em.gif?raw=true)
 
-![site\_navigation](http://raw.githubusercontent.com/saiemgilani/hoopR/master/man/figures/site_navigation.png)
+![site\_navigation](http://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/site_navigation.png)
 
 ```{r kp_efficiency_ex, message = FALSE}
 

@@ -4,7 +4,7 @@ output: github_document
 
 #
 
-# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/master/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
 ```{r, include = FALSE}
 require(knitr)
 if (!requireNamespace('issue') & !requireNamespace('pacman')){
@@ -49,11 +49,11 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2021) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2022) ~ 1-2 minutes**
 ```{r nba_load_pbp_readme}
 tictoc::tic()
 progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
+  nba_pbp <- hoopR::load_nba_pbp()
 })
 tictoc::toc()
 ```
@@ -61,12 +61,12 @@ tictoc::toc()
 glue::glue("{nrow(nba_pbp)} rows of NBA play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-### **Men's college basketball full play-by-play seasons (2006-2021) ~ 2-3 minutes**
+### **Men's college basketball full play-by-play seasons (2006-2022) ~ 2-3 minutes**
 ```{r mbb_load_pbp_readme}
 
 tictoc::tic()
 progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp(2006:2021)
+  mbb_pbp <-  hoopR::load_mbb_pbp()
 })
 tictoc::toc()
 ```
