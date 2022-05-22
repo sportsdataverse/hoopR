@@ -46,6 +46,7 @@ jobs:
             pacman
             ragg
             rsconnect
+            sportyR
             tictoc
             tidyverse
             toRvik

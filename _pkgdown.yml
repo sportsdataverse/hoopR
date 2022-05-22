@@ -27,7 +27,7 @@ template:
     btn-border-radius: 0.25rem
   opengraph:
     image:
-      src: "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/themes/hoopR_gh.png"
+      src: "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"
     twitter:
       creator: "@saiemgilani"
       site: "@sportsdataverse"
@@ -56,7 +56,7 @@ navbar:
   structure:
     left:  [home, reference, articles, news, network, data]
     right: [twitter, github]
-  icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/master/man/figures/logo.ico
+  icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.ico
   title: "hoopR"
   components:
     home:
