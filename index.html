@@ -22,7 +22,7 @@
 <meta property="og:title" content="hoopR • Data and Tools for Men's Basketball">
 <meta property="og:description" content="A collection of data and a R package designed for men's basketball!
 ">
-<meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/master/themes/hoopR_gh.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@saiemgilani">
 <meta name="twitter:site" content="@sportsdataverse">
@@ -182,32 +182,32 @@
 <h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
 <div class="section level3">
-<h3 id="nba-full-play-by-play-seasons-2002-2021--1-2-minutes">
-<strong>NBA full play-by-play seasons (2002-2021) ~ 1-2 minutes</strong><a class="anchor" aria-label="anchor" href="#nba-full-play-by-play-seasons-2002-2021--1-2-minutes"></a>
+<h3 id="nba-full-play-by-play-seasons-2002-2022--1-2-minutes">
+<strong>NBA full play-by-play seasons (2002-2022) ~ 1-2 minutes</strong><a class="anchor" aria-label="anchor" href="#nba-full-play-by-play-seasons-2002-2022--1-2-minutes"></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
-  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2002</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
+  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## 71.6 sec elapsed</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## 4.12 sec elapsed</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">## 11789401 rows of NBA play-by-play data from 26035 games.</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">## 609048 rows of NBA play-by-play data from 1305 games.</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="mens-college-basketball-full-play-by-play-seasons-2006-2021--2-3-minutes">
-<strong>Men’s college basketball full play-by-play seasons (2006-2021) ~ 2-3 minutes</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-full-play-by-play-seasons-2006-2021--2-3-minutes"></a>
+<h3 id="mens-college-basketball-full-play-by-play-seasons-2006-2022--2-3-minutes">
+<strong>Men’s college basketball full play-by-play seasons (2006-2022) ~ 2-3 minutes</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-full-play-by-play-seasons-2006-2022--2-3-minutes"></a>
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu">progressr</span><span class="fu">::</span><span class="fu"><a href="https://progressr.futureverse.org/reference/with_progress.html" class="external-link">with_progress</a></span><span class="op">(</span><span class="op">{</span>
-  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span>  <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2006</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span>
+  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span>  <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">## 114.59 sec elapsed</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">## 10.89 sec elapsed</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">## 20815191 rows of men's college basketball play-by-play data from 64423 games.</span></span></code></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">## 1859824 rows of men's college basketball play-by-play data from 5828 games.</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
