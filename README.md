@@ -1,7 +1,7 @@
 
 # 
 
-# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/master/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 
@@ -56,33 +56,33 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2021) \~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2022) \~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
 progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp(2002:2021)
+  nba_pbp <- hoopR::load_nba_pbp()
 })
 tictoc::toc()
 ```
 
-    ## 71.6 sec elapsed
+    ## 4.12 sec elapsed
 
-    ## 11789401 rows of NBA play-by-play data from 26035 games.
+    ## 609048 rows of NBA play-by-play data from 1305 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2021) \~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2022) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
 progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp(2006:2021)
+  mbb_pbp <-  hoopR::load_mbb_pbp()
 })
 tictoc::toc()
 ```
 
-    ## 114.59 sec elapsed
+    ## 10.89 sec elapsed
 
-    ## 20815191 rows of men's college basketball play-by-play data from 64423 games.
+    ## 1859824 rows of men's college basketball play-by-play data from 5828 games.
 
 ## **Documentation**
 
