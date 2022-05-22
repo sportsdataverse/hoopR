@@ -4,7 +4,7 @@ description: "Getting started with using <code>hoopR</code> and men's basketball
 author: "Saiem Gilani <br><a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
 opengraph:
   image: 
-    src: "https://github.com/sportsdataverse/hoopR-data/blob/master/themes/hoopR_gh.png?raw=true"
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
   twitter:
     card: summary_large_image
     creator: "@saiemgilani"

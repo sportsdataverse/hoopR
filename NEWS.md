@@ -4,6 +4,7 @@
 - ```nbagl_schedule()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
 - ```nbagl_pbp()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
 - ```nbagl_standings()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
+- ```nba_gamerotation()``` function added.
 
 # **hoopR 1.6.0**
 - ```nba_playerindex()``` function added.

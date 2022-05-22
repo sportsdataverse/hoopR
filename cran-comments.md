@@ -1,7 +1,15 @@
 ## Release summary
 
-This is a minor release that 
-* Adds returns to all functions, including names of returned lists of data frames for all exported NBA Stats API, ESPN API, KenPom, NCAA and Data repository functions. 
+This is a minor release that adds the following:
+- ```nba_pbps()``` function added.
+- ```nbagl_players()``` function added.
+- ```nbagl_schedule()``` function added.
+- ```nbagl_pbp()``` function added.
+- ```nbagl_standings()``` function added.
+- ```nba_gamerotation()``` function added.
+- ```nba_playerindex()``` function added.
+- ```nba_playerheadshot()``` function added.
+- ```nba_drafthistory()``` function added.
 
 ## R CMD check results
 
