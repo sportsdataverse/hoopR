@@ -17,7 +17,7 @@ Returns a tibble
 }
 \examples{
 
-# Get schedule from date 2021-02-15
+# Get schedule from date 2022-02-15
 \donttest{
   try(espn_mbb_scoreboard (season = "20220215"))
 }
