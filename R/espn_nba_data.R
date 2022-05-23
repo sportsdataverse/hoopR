@@ -551,7 +551,7 @@ espn_nba_teams <- function(){
 #' @export
 #' @examples
 #'
-#' # Get schedule from date 2021-02-15 (returns 1000 results, max allowable.)
+#' # Get schedule from date 2022-02-15 (returns 1000 results, max allowable.)
 #' \donttest{
 #'   try(espn_nba_scoreboard (season = "20220215"))
 #' }
@@ -571,60 +571,117 @@ espn_nba_scoreboard <- function(season){
 
   schedule_api <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?limit=1000&dates={season_dates}")
 
-  res <- httr::RETRY("GET", schedule_api)
-
-  # Check the result
-  check_status(res)
-
   tryCatch(
     expr = {
+
+      res <- httr::RETRY("GET", schedule_api)
+
+      # Check the result
+      check_status(res)
+
       raw_sched <- res %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
+        jsonlite::fromJSON(
+          simplifyDataFrame = FALSE,
+          simplifyVector = FALSE,
+          simplifyMatrix = FALSE
+        )
 
       nba_data <- raw_sched[["events"]] %>%
         tibble::tibble(data = .data$.) %>%
         tidyr::unnest_wider(.data$data) %>%
         tidyr::unchop(.data$competitions) %>%
-        dplyr::select(-.data$id, -.data$uid, -.data$date, -.data$status) %>%
+        dplyr::select(-.data$id,-.data$uid,-.data$date,-.data$status) %>%
         tidyr::unnest_wider(.data$competitions) %>%
-        dplyr::rename(matchup = .data$name, matchup_short = .data$shortName, game_id = .data$id, game_uid = .data$uid, game_date = .data$date) %>%
+        dplyr::rename(
+          matchup = .data$name,
+          matchup_short = .data$shortName,
+          game_id = .data$id,
+          game_uid = .data$uid,
+          game_date = .data$date
+        ) %>%
         tidyr::hoist(.data$status,
                      status_name = list("type", "name")) %>%
-        dplyr::select(!dplyr::any_of(c("timeValid", "neutralSite", "conferenceCompetition","recent", "venue", "type"))) %>%
-        tidyr::unnest_wider(.data$season) %>%
-        dplyr::rename(season = .data$year) %>%
-        dplyr::select(-dplyr::any_of("status")) %>%
+        dplyr::select(!dplyr::any_of(
+          c(
+            "timeValid",
+            "neutralSite",
+            "conferenceCompetition",
+            "recent",
+            "venue",
+            "type"
+          )
+        )) %>%
+        tidyr::unnest_wider(.data$season,names_sep="_") %>%
+        dplyr::rename(season = .data$season_year) %>%
+        dplyr::select(-dplyr::any_of("status"))
+      nba_data <- nba_data %>%
         tidyr::hoist(
           .data$competitors,
-          home_team_name = list(1, "team", "name"),
-          home_team_logo = list(1, "team", "logo"),
-          home_team_abb = list(1, "team", "abbreviation"),
-          home_team_id = list(1, "team", "id"),
-          home_team_location = list(1, "team", "location"),
-          home_team_full = list(1, "team", "displayName"),
-          home_team_color = list(1, "team", "color"),
-          home_score = list(1, "score"),
-          home_win = list(1, "winner"),
-          home_record = list(1, "records", 1, "summary"),
+          homeAway = list(1,"homeAway")
+        )
+      nba_data <- nba_data %>%
+        tidyr::hoist(
+          .data$competitors,
+          team1_team_name = list(1, "team", "name"),
+          team1_team_logo = list(1, "team", "logo"),
+          team1_team_abb = list(1, "team", "abbreviation"),
+          team1_team_id = list(1, "team", "id"),
+          team1_team_location = list(1, "team", "location"),
+          team1_team_full = list(1, "team", "displayName"),
+          team1_team_color = list(1, "team", "color"),
+          team1_score = list(1, "score"),
+          team1_win = list(1, "winner"),
+          team1_record = list(1, "records", 1, "summary"),
           # away team
-          away_team_name = list(2, "team", "name"),
-          away_team_logo = list(2, "team", "logo"),
-          away_team_abb = list(2, "team", "abbreviation"),
-          away_team_id = list(2, "team", "id"),
-          away_team_location = list(2, "team", "location"),
-          away_team_full = list(2, "team", "displayName"),
-          away_team_color = list(2, "team", "color"),
-          away_score = list(2, "score"),
-          away_win = list(2, "winner"),
-          away_record = list(2, "records", 1, "summary"),
-        ) %>%
-        dplyr::mutate(home_win = as.integer(.data$home_win),
-                      away_win = as.integer(.data$away_win),
-                      home_score = as.integer(.data$home_score),
-                      away_score = as.integer(.data$away_score))
+          team2_team_name = list(2, "team", "name"),
+          team2_team_logo = list(2, "team", "logo"),
+          team2_team_abb = list(2, "team", "abbreviation"),
+          team2_team_id = list(2, "team", "id"),
+          team2_team_location = list(2, "team", "location"),
+          team2_team_full = list(2, "team", "displayName"),
+          team2_team_color = list(2, "team", "color"),
+          team2_score = list(2, "score"),
+          team2_win = list(2, "winner"),
+          team2_record = list(2, "records", 1, "summary"))
 
-      if("leaders" %in% names(nba_data)){
+
+      nba_data <- nba_data %>%
+        dplyr::mutate(
+          home_team_name = ifelse(.data$homeAway=="home",.data$team1_team_name, .data$team2_team_name),
+          home_team_logo = ifelse(.data$homeAway=="home",.data$team1_team_logo, .data$team2_team_logo),
+          home_team_abb = ifelse(.data$homeAway=="home",.data$team1_team_abb, .data$team2_team_abb),
+          home_team_id = ifelse(.data$homeAway=="home",.data$team1_team_id, .data$team2_team_id),
+          home_team_location = ifelse(.data$homeAway=="home",.data$team1_team_location, .data$team2_team_location),
+          home_team_full_name = ifelse(.data$homeAway=="home",.data$team1_team_full, .data$team2_team_full),
+          home_team_color = ifelse(.data$homeAway=="home",.data$team1_team_color, .data$team2_team_color),
+          home_score = ifelse(.data$homeAway=="home",.data$team1_score, .data$team2_score),
+          home_win = ifelse(.data$homeAway=="home",.data$team1_win, .data$team2_win),
+          home_record = ifelse(.data$homeAway=="home",.data$team1_record, .data$team2_record),
+          away_team_name = ifelse(.data$homeAway=="away",.data$team1_team_name, .data$team2_team_name),
+          away_team_logo = ifelse(.data$homeAway=="away",.data$team1_team_logo, .data$team2_team_logo),
+          away_team_abb = ifelse(.data$homeAway=="away",.data$team1_team_abb, .data$team2_team_abb),
+          away_team_id = ifelse(.data$homeAway=="away",.data$team1_team_id, .data$team2_team_id),
+          away_team_location = ifelse(.data$homeAway=="away",.data$team1_team_location, .data$team2_team_location),
+          away_team_full_name = ifelse(.data$homeAway=="away",.data$team1_team_full, .data$team2_team_full),
+          away_team_color = ifelse(.data$homeAway=="away",.data$team1_team_color, .data$team2_team_color),
+          away_score = ifelse(.data$homeAway=="away",.data$team1_score, .data$team2_score),
+          away_win = ifelse(.data$homeAway=="away",.data$team1_win, .data$team2_win),
+          away_record = ifelse(.data$homeAway=="away",.data$team1_record, .data$team2_record)
+        )
+
+      nba_data <- nba_data %>%
+        dplyr::mutate(
+          home_win = as.integer(.data$home_win),
+          away_win = as.integer(.data$away_win),
+          home_score = as.integer(.data$home_score),
+          away_score = as.integer(.data$away_score))
+      nba_data <- nba_data %>%
+        dplyr::select(-dplyr::any_of(dplyr::starts_with("team1")),
+                      -dplyr::any_of(dplyr::starts_with("team2")),
+                      -dplyr::any_of(c("homeAway")))
+
+      if ("leaders" %in% names(nba_data)) {
         schedule_out <- nba_data %>%
           tidyr::hoist(
             .data$leaders,
@@ -654,26 +711,44 @@ espn_nba_scoreboard <- function(season){
             assists_leader_pos = list(3, "leaders", 1, "athlete", "position", "abbreviation"),
           )
 
-        if("broadcasts" %in% names(schedule_out)) {
+        if ("broadcasts" %in% names(schedule_out)) {
           schedule_out %>%
             tidyr::hoist(
               .data$broadcasts,
               broadcast_market = list(1, "market"),
-              broadcast_name = list(1, "names", 1)
-            ) %>%
+              broadcast_name = list(1, "names", 1)) %>%
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
-        } else {
+        }
+
+        else {
           schedule_out %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         }
-      } else {
-        nba_data %>% dplyr::select(!where(is.list)) %>%
-          janitor::clean_names() %>%
-          make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
       }
+      else {
+
+        if ("broadcasts" %in% names(nba_data)) {
+          nba_data %>%
+            tidyr::hoist(
+              .data$broadcasts,
+              broadcast_market = list(1, "market"),
+              broadcast_name = list(1, "names", 1)) %>%
+            dplyr::select(!where(is.list)) %>%
+            janitor::clean_names() %>%
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
+        }
+
+        else {
+          nba_data %>%
+            dplyr::select(!where(is.list)) %>%
+            janitor::clean_names() %>%
+            make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
+        }
+      }
+
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data available!"))
