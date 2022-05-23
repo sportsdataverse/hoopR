@@ -147,32 +147,31 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co"># Get schedule from date 2021-02-15</span></span>
+<span class="r-in"><span class="co"># Get schedule from date 2022-02-15</span></span>
 <span class="r-in"><span class="co"># \donttest{</span></span>
 <span class="r-in">  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_scoreboard</span> <span class="op">(</span>season <span class="op">=</span> <span class="st">"20220215"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Returning data for 20220215!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 1.7.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-22 16:18:18 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 37 × 32</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    matchup           matchup_short season  type slug  game_id game_uid game_date</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Kentucky Wildcat… UK @ TENN       <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Villanova Wildca… VILL @ PROV     <span style="text-decoration: underline;">2</span>022     2 regu… 401373… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Wake Forest Demo… WAKE @ DUKE     <span style="text-decoration: underline;">2</span>022     2 regu… 401369… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Wisconsin Badger… WISC @ IU       <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Minnesota Golden… MINN @ OSU      <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Michigan State S… MSU @ PSU       <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Texas Longhorns … TEX @ OU        <span style="text-decoration: underline;">2</span>022     2 regu… 401368… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Wyoming Cowboys … WYO @ UNM       <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Arkansas Razorba… ARK @ MIZ       <span style="text-decoration: underline;">2</span>022     2 regu… 401364… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> High Point Panth… HP @ LONG       <span style="text-decoration: underline;">2</span>022     2 regu… 401404… s:40~l:… 2022-02-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 27 more rows, and 24 more variables: attendance &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_name &lt;chr&gt;, home_team_logo &lt;chr&gt;, home_team_abb &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_id &lt;chr&gt;, home_team_location &lt;chr&gt;, home_team_full &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_color &lt;chr&gt;, home_score &lt;int&gt;, home_win &lt;int&gt;, home_record &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_name &lt;chr&gt;, away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_id &lt;chr&gt;, away_team_location &lt;chr&gt;, away_team_full &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_color &lt;chr&gt;, away_score &lt;int&gt;, away_win &lt;int&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-05-23 20:10:53 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 37 × 34</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    matchup         matchup_short season season_type season_slug game_id game_uid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Kentucky Wildc… UK @ TENN       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Villanova Wild… VILL @ PROV     <span style="text-decoration: underline;">2</span>022           2 regular-se… 401373… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Wake Forest De… WAKE @ DUKE     <span style="text-decoration: underline;">2</span>022           2 regular-se… 401369… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Wisconsin Badg… WISC @ IU       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Minnesota Gold… MINN @ OSU      <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Michigan State… MSU @ PSU       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Texas Longhorn… TEX @ OU        <span style="text-decoration: underline;">2</span>022           2 regular-se… 401368… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Wyoming Cowboy… WYO @ UNM       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Arkansas Razor… ARK @ MIZ       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401364… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> High Point Pan… HP @ LONG       <span style="text-decoration: underline;">2</span>022           2 regular-se… 401404… s:40~l:…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 27 more rows, and 27 more variables: game_date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   attendance &lt;int&gt;, notes &lt;lgl&gt;, status_name &lt;chr&gt;, broadcast_market &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   broadcast_name &lt;chr&gt;, start_date &lt;chr&gt;, home_team_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_logo &lt;chr&gt;, home_team_abb &lt;chr&gt;, home_team_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_location &lt;chr&gt;, home_team_full_name &lt;chr&gt;, home_team_color &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_score &lt;int&gt;, home_win &lt;int&gt;, home_record &lt;chr&gt;, away_team_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_logo &lt;chr&gt;, away_team_abb &lt;chr&gt;, away_team_id &lt;chr&gt;, …</span></span>
 <span class="r-in"><span class="co"># }</span></span>
 </code></pre></div>
     </div>
