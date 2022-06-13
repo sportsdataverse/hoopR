@@ -10,6 +10,11 @@ This is a minor release that adds the following:
 - ```nba_playerindex()``` function added.
 - ```nba_playerheadshot()``` function added.
 - ```nba_drafthistory()``` function added.
+- ```nba_gamerotation()``` function added.
+- ```espn_mbb_player_stats()``` function added.
+- ```espn_mbb_team_stats()``` function added.
+- ```espn_nba_player_stats()``` function added.
+- ```espn_nba_team_stats()``` function added.
 
 ## R CMD check results
 

@@ -5,9 +5,9 @@ output: github_document
 #
 
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 require(knitr)
-if (!requireNamespace('issue') & !requireNamespace('pacman')){
+if (!requireNamespace('pacman')){
   install.packages('pacman')
 }
 pacman::p_load(magick, grid, dplyr, lubridate)
@@ -105,7 +105,7 @@ For more information on the package and function reference, please see the  [**`
 
 -   [Billy Fryer](https://twitter.com/_b4billy_)       
 <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
-<a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
+<a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
 ## **Citations**
 

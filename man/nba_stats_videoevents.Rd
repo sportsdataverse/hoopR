@@ -35,6 +35,4 @@ Return a list of tibbles: VideoStatus
 }
 \author{
 Saiem Gilani
-
-Saiem Gilani
 }

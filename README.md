@@ -66,9 +66,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.28 sec elapsed
+    ## 16.97 sec elapsed
 
-    ## 609048 rows of NBA play-by-play data from 1305 games.
+    ## 612191 rows of NBA play-by-play data from 1312 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2022) \~ 2-3 minutes**
 
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 11.47 sec elapsed
+    ## 46.45 sec elapsed
 
     ## 1859824 rows of men's college basketball play-by-play data from 5828 games.
 
@@ -117,7 +117,7 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 -   [Billy Fryer](https://twitter.com/_b4billy_)  
     <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
-    <a href="https://github.com/b4billy" target="blank"><img src="https://img.shields.io/github/followers/b4billy?color=eee&logo=Github&style=for-the-badge" alt="@b4billy" /></a>
+    <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
 ## **Citations**
 
