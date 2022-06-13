@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.7.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.8.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,6 +147,8 @@
 'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. <br>
 Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: <br>
 players that used more than 28 percent of possessions, more than 24 percent of possessions, more than 20 percent of possessions, and with no possession restriction.</p></dd>
+
+
 <dt>conf</dt>
 <dd><p>Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', <br>
 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', <br>
@@ -155,15 +157,22 @@ players that used more than 28 percent of possessions, more than 24 percent of p
 If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', <br>
 you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.<br>
 No filter applied by default.</p></dd>
+
+
 <dt>conf_only</dt>
 <dd><p>Used to define whether stats should reflect conference games only.<br>
 Only available if specific conference is defined. Only available for season after 2013, FALSE by default.</p></dd>
+
+
 <dt>year</dt>
 <dd><p>Year of data to pull (earliest year of data available: 2004)</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a tibble of player stats</p>
+    
+
+<p>Returns a tibble of player stats</p>
     </div>
 
     <div class="section level2">
@@ -955,7 +964,7 @@ Only available if specific conference is defined. Only available for season afte
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
     </footer></div>

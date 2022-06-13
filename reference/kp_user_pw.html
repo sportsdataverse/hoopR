@@ -12,7 +12,7 @@ Requires a subscription to KenPom.com"><meta property="og:image" content="https:
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.7.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.8.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,27 +147,30 @@ Requires a subscription to KenPom.com"><meta property="og:image" content="https:
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>user_email</dt>
 <dd><p>User subscription e-mail</p></dd>
+
+
 <dt>user_pw</dt>
 <dd><p>User subscription password</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Using your KenPom subscription with the package:</strong> <br></p>
-<p>Run <a href="https://usethis.r-lib.org/reference/edit.html" class="external-link"><strong><code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code></strong></a> and THEN paste the following in the new script that pops up (with<strong>out</strong> quotations)<br></p><div class="sourceCode r"><pre><code><span class="va">KP_USER</span> <span class="op">=</span> <span class="va">YOUR</span><span class="op">-</span><span class="va">EMAIL</span><span class="op">@</span><span class="va">DOMAIN.COM</span>
+<p>Run <a href="https://usethis.r-lib.org/reference/edit.html" class="external-link"><strong><code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code></strong></a> and THEN paste the following in the new script that pops up (with<strong>out</strong> quotations)<br></p>
+<p></p><div class="sourceCode r"><pre><code><span class="va">KP_USER</span> <span class="op">=</span> <span class="va">YOUR</span><span class="op">-</span><span class="va">EMAIL</span><span class="op">@</span><span class="va">DOMAIN.COM</span>
 <span class="va">KP_PW</span> <span class="op">=</span> <span class="va">XXX</span><span class="op">-</span><span class="va">YOUR</span><span class="op">-</span><span class="va">PASSWORD</span><span class="op">-</span><span class="va">XXX</span></code></pre><p></p></div>
-<p>You can save the login information for consistent usage by adding <br></p><div class="sourceCode"><pre><code>KP_USER = YOUR-EMAIL@DOMAIN.COM
-KP_PW = XXX-YOUR-PASSWORD-XXX
-``` \cr
-to your .REnviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)).\cr
-\cr
-
-For less consistent usage:\cr
-At the beginning of every session or within an R environment, save your login e-mail and password as the environment variables `KP_USER` and `KP_PW` (with quotations) using a command like the following.\cr
-```{r}
-Sys.setenv(KP_USER = "YOUR-EMAIL@DOMAIN.COM")
-Sys.setenv(KP_PW = "XXX-YOUR-PASSWORD-XXX")
-</code></pre></div>
-
+<p>You can save the login information for consistent usage by adding <br></p>
+<p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1"></a>KP_USER =<span class="st"> </span>YOUR<span class="op">-</span>EMAIL<span class="op">@</span>DOMAIN.COM</span>
+<span id="cb1-2"><a href="#cb1-2"></a>KP_PW =<span class="st"> </span>XXX<span class="op">-</span>YOUR<span class="op">-</span>PASSWORD<span class="op">-</span>XXX</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st">```</span><span class="dt"> \cr</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="dt">to your .REnviron file (easily accessed via [**</span><span class="st">`</span>usethis<span class="op">::</span><span class="kw">edit_r_environ</span>()<span class="st">`</span><span class="dt">**](https://usethis.r-lib.org/reference/edit.html)).\cr</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="dt">\cr</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="dt">For less consistent usage:\cr</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="dt">At the beginning of every session or within an R environment, save your login e-mail and password as the environment variables </span><span class="st">`</span>KP_USER<span class="st">`</span><span class="dt"> and </span><span class="st">`</span>KP_PW<span class="st">`</span><span class="dt"> (with quotations) using a command like the following.\cr</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">```</span>{r}</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">Sys.setenv</span>(<span class="dt">KP_USER =</span> <span class="st">"YOUR-EMAIL@DOMAIN.COM"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="kw">Sys.setenv</span>(<span class="dt">KP_PW =</span> <span class="st">"XXX-YOUR-PASSWORD-XXX"</span>)</span></code></pre><p></p></div>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -179,7 +182,7 @@ Sys.setenv(KP_PW = "XXX-YOUR-PASSWORD-XXX")
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
     </footer></div>

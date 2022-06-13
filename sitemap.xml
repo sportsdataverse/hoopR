@@ -148,6 +148,9 @@
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.html</loc>
   </url>
   <url>
@@ -158,6 +161,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.html</loc>
@@ -178,6 +184,9 @@
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.html</loc>
   </url>
   <url>
@@ -185,6 +194,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_teams.html</loc>
