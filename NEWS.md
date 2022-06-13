@@ -1,9 +1,15 @@
+# **hoopR 1.8.0**
+- ```espn_mbb_player_stats()``` function added.
+- ```espn_mbb_team_stats()``` function added.
+- ```espn_nba_player_stats()``` function added.
+- ```espn_nba_team_stats()``` function added.
+
 # **hoopR 1.7.0**
 - ```nba_pbps()``` function added, courtesy of [\@papagorgio23](https://github.com/papagorgio23). 
-- ```nbagl_players()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
-- ```nbagl_schedule()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
-- ```nbagl_pbp()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
-- ```nbagl_standings()``` function added, courtesy of [\@b4billy](https://github.com/b4billy).
+- ```nbagl_players()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
+- ```nbagl_schedule()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
+- ```nbagl_pbp()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
+- ```nbagl_standings()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
 - ```nba_gamerotation()``` function added.
 
 # **hoopR 1.6.0**
