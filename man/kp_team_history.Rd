@@ -49,7 +49,7 @@ A data frame with 30 columns:
 }
 \examples{
   \donttest{
-    kp_team_history(team = 'Florida St.')
+    try(kp_team_history(team = 'Florida St.'))
   }
 
 }
