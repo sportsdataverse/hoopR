@@ -46,7 +46,7 @@
 #'
 #' @examples
 #'   \donttest{
-#'     kp_team_history(team = 'Florida St.')
+#'     try(kp_team_history(team = 'Florida St.'))
 #'   }
 #'
 
