@@ -28,6 +28,7 @@ nba_pbp_db
 ^website$
 ^website/*
 ^cran-comments\.md$
+^lastMiKTeXException$
 ^LICENSE\.md$
 ^.travis.yml
 ^.github$
