@@ -10,7 +10,7 @@ require(knitr)
 if (!requireNamespace('pacman')){
   install.packages('pacman')
 }
-pacman::p_load(magick, grid, dplyr, lubridate)
+pacman::p_load(dplyr)
 
 opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 

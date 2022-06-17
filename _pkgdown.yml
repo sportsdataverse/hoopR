@@ -115,11 +115,13 @@ navbar:
       - text: chessR
         href: https://jaseziv.github.io/chessR/
       - text: sportyR
-        href: https://rossdrucker.github.io/sportyR/
+        href: https://sportyR.sportsdataverse.org/
       - text: cfbplotR
         href: https://kazink36.github.io/cfbplotR/
       - text: cfb4th
         href: https://kazink36.github.io/cfb4th/
+      - text: mlbplotR
+        href: https://github.com/camdenk/mlbplotR
       - text: recruitR
         href: https://recruitr.sportsdataverse.org/
       - text: gamezoneR
