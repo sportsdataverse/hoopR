@@ -2,10 +2,10 @@
 % Please edit documentation in R/nba_stats_pbp.R
 \name{pbp}
 \alias{pbp}
-\alias{nba_pbp}
+\alias{.nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, version = "v2", p)
+.nba_pbp(game_id, version = "v2", p)
 }
 \arguments{
 \item{game_id}{Game ID}

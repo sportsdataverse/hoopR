@@ -13,8 +13,7 @@ NULL
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
-#' @export
-nba_pbp <- function(game_id, version = "v2", p){
+.nba_pbp <- function(game_id, version = "v2", p){
 
   p("loading...")
   if(version=="v2"){
@@ -137,7 +136,7 @@ nba_pbps <-function(game_ids = NULL,
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = game_ids)
-  get_pbp_safe <- progressively(nba_pbp, p)
+  get_pbp_safe <- progressively(.nba_pbp, p)
 
 
   all_data <-
