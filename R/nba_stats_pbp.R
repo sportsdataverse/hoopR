@@ -56,16 +56,32 @@ NULL
             neutral_description = .data$neutraldescription,
             visitor_description = .data$visitordescription
           ) %>%
-          ## Get Team Scores
-          tidyr::separate(
-            "score",
-            into = c("away_score", "home_score"),
-            sep = "\\ - ",
-            remove = F
-          ) %>%
           dplyr::mutate(
-            home_score = as.numeric(.data$home_score),
-            away_score = as.numeric(.data$away_score),
+            action = paste0(.data$event_msg_type, "_", .data$event_msg_action_type),
+            scoring_play = dplyr::case_when(
+              stringr::str_detect(.data$home_description, "PTS")    ~ 1,
+              stringr::str_detect(.data$visitor_description, "PTS") ~ 1,
+              TRUE ~ 0
+            ),
+            shot_points_home = dplyr::case_when(
+              .data$event_msg_type == 3 &  stringr::str_detect(.data$home_description, "PTS") ~ 1,
+              .data$event_msg_type == 1 &  stringr::str_detect(.data$home_description, "3PT") ~ 3,
+              .data$event_msg_type == 1 & !stringr::str_detect(.data$home_description, "3PT") ~ 2,
+              TRUE ~ 0
+            ),
+            shot_points_away = dplyr::case_when(
+              .data$event_msg_type == 3 &  stringr::str_detect(.data$visitor_description, "PTS") ~ 1,
+              .data$event_msg_type == 1 &  stringr::str_detect(.data$visitor_description, "3PT") ~ 3,
+              .data$event_msg_type == 1 & !stringr::str_detect(.data$visitor_description, "3PT") ~ 2,
+              TRUE ~ 0
+            )
+          ) %>%
+          ## Get Team Scores
+          dplyr::mutate(
+            home_score = cumsum(.data$shot_points_home),
+            away_score = cumsum(.data$shot_points_away),
+            score = paste0(.data$away_score, " - ", .data$home_score),
+            score_margin = .data$home_score - .data$away_score,
             team_leading = dplyr::case_when(
               .data$score_margin == 0 ~ "Tie",
               .data$score_margin < 0 ~ "Away",
