@@ -29,15 +29,11 @@ Requires a subscription to KenPom.com
 \details{
 \strong{Using your KenPom subscription with the package:} \cr
 
-Run \href{https://usethis.r-lib.org/reference/edit.html}{\strong{\code{usethis::edit_r_environ()}}} and THEN paste the following in the new script that pops up (with\strong{out} quotations)\cr
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
+Run \href{https://usethis.r-lib.org/reference/edit.html}{\strong{\code{usethis::edit_r_environ()}}} and THEN paste the following in the new script that pops up (with\strong{out} quotations)\cr\if{html}{\out{<div class="sourceCode r">}}\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
 KP_PW = XXX-YOUR-PASSWORD-XXX
 }\if{html}{\out{</div>}}
 
-You can save the login information for consistent usage by adding \cr
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
+You can save the login information for consistent usage by adding \cr\preformatted{KP_USER = YOUR-EMAIL@DOMAIN.COM
 KP_PW = XXX-YOUR-PASSWORD-XXX
 ``` \\cr
 to your .REnviron file (easily accessed via [**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)).\\cr
@@ -48,6 +44,6 @@ At the beginning of every session or within an R environment, save your login e-
 ```\{r\}
 Sys.setenv(KP_USER = "YOUR-EMAIL@DOMAIN.COM")
 Sys.setenv(KP_PW = "XXX-YOUR-PASSWORD-XXX")
-}\if{html}{\out{</div>}}
+}
 }
 \keyword{Login}
