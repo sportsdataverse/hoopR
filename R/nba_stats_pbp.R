@@ -33,17 +33,12 @@ nba_pbp <- function(game_id, version = "v2", p){
       resp <- full_url %>%
         .nba_headers()
 
-      # if (return_message) {
-      #   glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
-      # }
 
-      data <-
-        resp$resultSets$rowSet[[1]] %>%
+      data <-resp$resultSets$rowSet[[1]] %>%
         data.frame(stringsAsFactors = F) %>%
         as_tibble()
 
-      json_names <-
-        resp$resultSets$headers[[1]]
+      json_names <- resp$resultSets$headers[[1]]
       colnames(data) <- json_names
 
       # Fix version 2 Dataset
