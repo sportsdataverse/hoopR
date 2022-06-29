@@ -49,7 +49,7 @@ NULL
             wc_time_string = .data$wctimestring,
             time_quarter = .data$pctimestring,
             score_margin = .data$scoremargin,
-            even_num = .data$eventnum,
+            event_num = .data$eventnum,
             event_msg_type = .data$eventmsgtype,
             event_msg_action_type = .data$eventmsgactiontype,
             home_description = .data$homedescription,
@@ -57,6 +57,7 @@ NULL
             visitor_description = .data$visitordescription
           ) %>%
           dplyr::mutate(
+            period = as.numeric(.data$period),
             action = paste0(.data$event_msg_type, "_", .data$event_msg_action_type),
             scoring_play = dplyr::case_when(
               stringr::str_detect(.data$home_description, "PTS")    ~ 1,
@@ -73,6 +74,22 @@ NULL
               .data$event_msg_type == 3 &  stringr::str_detect(.data$visitor_description, "PTS") ~ 1,
               .data$event_msg_type == 1 &  stringr::str_detect(.data$visitor_description, "3PT") ~ 3,
               .data$event_msg_type == 1 & !stringr::str_detect(.data$visitor_description, "3PT") ~ 2,
+              TRUE ~ 0
+            ),
+            assist = dplyr::case_when(
+              stringr::str_detect(.data$home_description, "AST") |
+                stringr::str_detect(.data$visitor_description, "AST") ~ 1,
+              TRUE ~ 0
+            ),
+            shot3 = dplyr::case_when(
+              stringr::str_detect(.data$home_description, "3PT") |
+                stringr::str_detect(.data$visitor_description, "3PT") ~ 1,
+              TRUE ~ 0
+            ),
+            shot2 = dplyr::case_when(
+              (.data$event_msg_type == 1 | .data$event_msg_type == 2) &
+                (!stringr::str_detect(.data$home_description, "3PT") |
+                   !stringr::str_detect(.data$visitor_description, "3PT")) ~ 1,
               TRUE ~ 0
             )
           ) %>%
@@ -92,28 +109,55 @@ NULL
           ## Time Remaining
           tidyr::separate(
             "time_quarter",
-            into = c("minute_remaining_quarter", "seconds_remaining_quarter"),
+            into = c("min_left_qtr", "secs_left_qtr"),
             sep = "\\:",
-            remove = F
+            remove = FALSE,
+            convert = TRUE
           ) %>%
           dplyr::mutate(
-            minute_remaining_quarter = as.numeric(.data$minute_remaining_quarter),
-            seconds_remaining_quarter = as.numeric(.data$seconds_remaining_quarter),
-            period = as.numeric(.data$period)
-          ) %>%
-          dplyr::mutate(
-            minute_game = round(((.data$period - 1) * 12) + (12 - .data$minute_remaining_quarter) +
+            secs_start_qtr = dplyr::case_when(
+              .data$period %in% c(1:5) ~ (.data$period - 1) * 720,
+              TRUE ~ 2880 + (.data$period - 5) * 300
+            ),
+            minute_game = round(((.data$period - 1) * 12) + (12 - .data$min_left_qtr) +
               (((
-                60 - .data$seconds_remaining_quarter
+                60 - .data$secs_left_qtr
               ) / 60) - 1), 2),
-            time_remaining = 48 - round(((.data$period - 1) * 12) - (12 - .data$minute_remaining_quarter) -
-              ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
+            time_remaining = 48 - round(((.data$period - 1) * 12) - (12 - .data$min_left_qtr) -
+              ((60 - .data$secs_left_qtr) / 60 - 1), 2),
+            secs_left_qtr = (.data$min_left_qtr * 60) + .data$secs_left_qtr,
+          ) %>%
+          dplyr::mutate(
+            secs_passed_qtr = ifelse(
+              .data$period %in% c(1:4),
+              720 - .data$secs_left_qtr,
+              300 - .data$secs_left_qtr
+            ),
+            # Note 5
+            secs_passed_game = .data$secs_passed_qtr + .data$secs_start_qtr,
+            play_duration = ifelse(
+              .data$secs_passed_game != 0,
+              .data$secs_passed_game - dplyr::lag(.data$secs_passed_game),
+              0
+            )
           ) %>%
           dplyr::select(
             .data$game_id:.data$period,
             .data$minute_game,
             .data$time_remaining,
+            .data$secs_left_qtr,
+            .data$secs_start_qtr,
+            .data$secs_passed_qtr,
+            .data$secs_passed_game,
+            .data$play_duration,
             dplyr::everything()
+          ) %>%
+          dplyr::select(
+            -c(
+              .data$min_left_qtr,
+              .data$secs_left_qtr,
+              .data$secs_start_qtr
+            )
           )
       }
     },
