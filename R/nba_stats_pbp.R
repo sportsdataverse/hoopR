@@ -56,7 +56,13 @@ NULL
             neutral_description = .data$neutraldescription,
             visitor_description = .data$visitordescription
           ) %>%
+          dplyr::distinct(
+            .data$game_id,
+            .data$event_num,
+            .keep_all = TRUE
+          ) %>%
           dplyr::mutate(
+            event_num = dplyr::row_number(),
             period = as.numeric(.data$period),
             action = paste0(.data$event_msg_type, "_", .data$event_msg_action_type),
             scoring_play = dplyr::case_when(
@@ -133,7 +139,6 @@ NULL
               720 - .data$secs_left_qtr,
               300 - .data$secs_left_qtr
             ),
-            # Note 5
             secs_passed_game = .data$secs_passed_qtr + .data$secs_start_qtr,
             play_duration = ifelse(
               .data$secs_passed_game != 0,
