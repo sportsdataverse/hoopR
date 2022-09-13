@@ -1451,13 +1451,13 @@ kp_team_player_stats <- function(team, year = 2021){
                                                 .data$Poss.Pct >= 24.0 & .data$Poss.Pct < 28.0 ~ "Major Contributor",
                                                 .data$Poss.Pct >= 28.0 ~ "Go-to Guys")) %>%
           dplyr::select(.data$Role, tidyr::everything()) %>%
-          dplyr::bind_cols(lapply(pid, as.numeric))
+          dplyr::bind_cols(lapply(pid, as.numeric)) %>%
+        janitor::clean_names()
 
-        y <- dplyr::bind_rows(y, players)
+        y <- c(y, list(players))
       }
       ### Store Data
-      kenpom <- y %>%
-        janitor::clean_names()
+      kenpom <- y
 
     },
     error = function(e){
