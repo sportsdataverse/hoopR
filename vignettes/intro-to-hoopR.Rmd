@@ -57,7 +57,7 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-#pacman::p_load_current_gh("saiemgilani/hoopR")
+pacman::p_load_current_gh("saiemgilani/hoopR")
 pacman::p_load(dplyr, ggplot2,animation,ggimage,png, glue)
 
 ```
