@@ -17,10 +17,11 @@
       `Cache-Control` = 'no-cache'
     )
 
-    res <-
-      httr::RETRY("GET", url,
-                  query=params,
-                httr::add_headers(.headers = headers))
+    if(length(params) == 0) {
+      res <- httr::RETRY("GET", url, httr::add_headers(.headers = headers))
+    } else {
+      res <- httr::RETRY("GET", url, query = params, httr::add_headers(.headers = headers))
+    }
 
     json <- res$content %>%
       rawToChar() %>%

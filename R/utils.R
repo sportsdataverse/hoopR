@@ -70,8 +70,6 @@ kp_password <- function() {
   }
 }
 
-.datatable.aware <- TRUE
-
 #' @rdname kp_user_pw
 #' @export
 has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password())
@@ -102,6 +100,8 @@ progressively <- function(f, p = NULL){
 }
 
 
+.datatable.aware <- TRUE
+
 #' @title
 #' **Load .csv / .csv.gz file from a remote connection**
 #' @description
@@ -115,7 +115,6 @@ csv_from_url <- function(...){
   data.table::fread(...)
 }
 
-.datatable.aware <- TRUE
 
 
 #' @title
@@ -304,8 +303,7 @@ NULL
 # Functions for custom class
 # turn a data.frame into a tibble/hoopR_data
 make_hoopR_data <- function(df,type,timestamp){
-  out <- df %>%
-    tidyr::as_tibble()
+  out <- df
 
   class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   attr(out,"hoopR_timestamp") <- timestamp
@@ -338,6 +336,7 @@ rbindlist_with_attrs <- function(dflist){
   out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
   attr(out,"hoopR_timestamp") <- hoopR_timestamp
   attr(out,"hoopR_type") <- hoopR_type
+  # class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   out
 }
 
