@@ -1603,6 +1603,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type='regular', total=FALS
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
 #' @keywords MBB Player Stats
+#' @export
 #' @return Returns a tibble with the player stats data
 #'
 #' @examples
@@ -1728,14 +1729,13 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type='regular', total
           logo_href = .data$logos_href,
           logo_dark_href = .data$logos_href_1)
 
-
       athlete_df[["links"]] <- NULL
       athlete_df[["injuries"]] <- NULL
-
 
       athlete_df <- athlete_df %>%
         purrr::map_if(is.list, as.data.frame) %>%
         tibble::tibble(data=.data$.)
+
       athlete_df <- athlete_df$data %>%
         as.data.frame() %>%
         dplyr::select(-dplyr::any_of(c("X.ref","X.ref.1","X.ref.2","X.ref.3","X.ref.4","X.ref.5","X.ref.6","X.ref.7","X.ref.8",
