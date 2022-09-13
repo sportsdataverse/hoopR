@@ -38,7 +38,8 @@ login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW"
 
   url <- "https://kenpom.com/index.php"
   #create a web session with the desired login address
-  my_session <- rvest::session(url)
+  my_session <- rvest::session(url,
+                               httr::add_headers(.headers = .kp_headers()))
   login_form <- rvest::html_form(my_session)[[1]]
   #in this case the submit is the 2nd form
   filled_form <- rvest::html_form_set(login_form, email = user_email, password = user_pw)
