@@ -31,7 +31,6 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
-          r-version: 4.1.3
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
           extra-packages: |
