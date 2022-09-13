@@ -1,3 +1,8 @@
+# **hoopR 1.8.1**
+- ```espn_mbb_player_stats()``` function exported properly.
+- ```espn_nba_player_stats()``` function exported properly.
+- Fixing headers for `kp_` functions.
+
 # **hoopR 1.8.0**
 - ```espn_mbb_player_stats()``` function added.
 - ```espn_mbb_team_stats()``` function added.
