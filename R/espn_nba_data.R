@@ -1342,6 +1342,7 @@ espn_nba_team_stats <- function(team_id, year, season_type='regular', total=FALS
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
 #' @keywords NBA Player Stats
+#' @export
 #' @return Returns a tibble with the player stats data
 #'
 #' @examples
