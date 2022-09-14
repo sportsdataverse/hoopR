@@ -80,8 +80,6 @@ navbar:
         href: articles/index.html
       - text: "Getting Started with hoopR"
         href: articles/getting-started-hoopR.html
-      - text: "Intro to hoopR"
-        href: articles/intro-to-hoopR.html
       - text: "KenPom Example Functions"
         href: articles/kenpom-example-functions.html
     news:
