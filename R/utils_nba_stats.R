@@ -39,8 +39,10 @@
     `Accept-Language` = "en-US,en;q=0.5",
     `Accept-Encoding` = "gzip, deflate",
     `Connection` = "keep-alive",
+    # `Referer` = 'https://kenpom.com/',
     `Pragma` = "no-cache",
-    `Cache-Control` = "no-cache"
+    `Cache-Control` = "no-cache",
+    `Upgrade-Insecure-Requests` = 1
   )
   return(headers)
 }

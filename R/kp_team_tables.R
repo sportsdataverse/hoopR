@@ -1251,8 +1251,6 @@ kp_minutes_matrix <- function(team, year = 2021){
 
 
 #' **Get Team Player Stats**
-#'
-#'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
