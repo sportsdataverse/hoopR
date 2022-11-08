@@ -962,7 +962,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
       mbb_data <- raw_sched[["events"]] %>%
         tibble::tibble(data = .data$.) %>%
         tidyr::unnest_wider("data") %>%
-        tidyr::unchop(.data$competitions) %>%
+        tidyr::unchop("competitions") %>%
         dplyr::select(
           -"id",
           -"uid",

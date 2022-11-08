@@ -41,9 +41,11 @@ jobs:
             fastRhockey
             ggimage
             knitr
+            oddsapiR
             pacman
             ragg
             rsconnect
+            sf
             sportyR
             tictoc
             tidyverse
