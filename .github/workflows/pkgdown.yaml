@@ -47,7 +47,6 @@ jobs:
             sportyR
             tictoc
             tidyverse
-            toRvik
             wehoop
             zoo
           needs: website
