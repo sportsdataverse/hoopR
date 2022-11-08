@@ -71,14 +71,14 @@ kp_team_schedule <- function(team, year = 2022){
       colnames(sched) <- sched_header_cols
       sched <-sched %>%
         dplyr::mutate(Postseason = ifelse(.data$Postseason == "", NA_character_, .data$Postseason)) %>%
-        tidyr::fill(.data$Postseason, .direction = c("down"))
+        tidyr::fill("Postseason", .direction = c("down"))
 
       suppressWarnings(
         sched <- sched %>%
           dplyr::mutate(
             WL = stringr::str_replace(stringr::str_extract(.data$Result,'W|L'),",",""),
             Score = stringr::str_replace(stringr::str_extract(.data$Result,'\\d{1,3}-\\d{1,3}'),",","")) %>%
-          tidyr::separate(.data$Score, into = c("WinnerScore", "LoserScore"), sep = "-") %>%
+          tidyr::separate("Score", into = c("WinnerScore", "LoserScore"), sep = "-") %>%
           dplyr::mutate(
             TeamScore = dplyr::case_when(
               .data$WL == "W" & .data$Record != "" ~ as.numeric(.data$WinnerScore),
@@ -88,10 +88,12 @@ kp_team_schedule <- function(team, year = 2022){
               .data$WL == "L" & .data$Record != "" ~ as.numeric(.data$WinnerScore),
               .data$WL == "W" & .data$Record != "" ~ as.numeric(.data$LoserScore),
               .data$WL == "" ~ NA_real_)) %>%
-          tidyr::separate(.data$Record,into= c("W", "L"), sep = "-") %>%
+          tidyr::separate("Record",into= c("W", "L"), sep = "-") %>%
           dplyr::filter(.data$Location %in% c("Home", "Away", "Neutral",
                                               "Semi-Home","Semi-Away")) %>%
-          dplyr::select(-.data$WinnerScore,-.data$LoserScore) %>%
+          dplyr::select(
+            -"WinnerScore",
+            -"LoserScore") %>%
           dplyr::mutate_at(c("Opponent.Rk", "Poss","TeamScore","OpponentScore"), as.numeric)
       )
       suppressWarnings(
@@ -116,7 +118,7 @@ kp_team_schedule <- function(team, year = 2022){
 
       suppressWarnings(
         sched <- sched %>%
-          tidyr::separate(.data$Conference,
+          tidyr::separate("Conference",
                           into = c("W.Conference","L.Conference"), sep = "-") %>%
           dplyr::mutate(
             W.Conference = ifelse((.data$W.Conference == "\u00d7")|(.data$W.Conference == ""), NA_real_, .data$W.Conference)
@@ -124,16 +126,43 @@ kp_team_schedule <- function(team, year = 2022){
       )
       if(year>=2011){
         sched <- sched %>%
-          dplyr::select(.data$Team.Rk, .data$Team, .data$Opponent.Rk, .data$Opponent,
-                        .data$Result, .data$Poss, .data$OT, .data$PreWP, .data$Location,
-                        .data$W, .data$L, .data$W.Conference, .data$L.Conference,
-                        .data$ConferenceGame, .data$Postseason, .data$Year, .data$Day.Date)
+          dplyr::select(
+            "Team.Rk",
+            "Team",
+            "Opponent.Rk",
+            "Opponent",
+            "Result",
+            "Poss",
+            "OT",
+            "PreWP",
+            "Location",
+            "W",
+            "L",
+            "W.Conference",
+            "L.Conference",
+            "ConferenceGame",
+            "Postseason",
+            "Year",
+            "Day.Date")
       }else{
         sched <- sched %>%
-          dplyr::select(.data$Team, .data$Opponent.Rk, .data$Opponent,
-                        .data$Result, .data$Poss, .data$OT, .data$PreWP, .data$Location,
-                        .data$W, .data$L, .data$W.Conference, .data$L.Conference,
-                        .data$ConferenceGame, .data$Postseason, .data$Year, .data$Day.Date)
+          dplyr::select(
+            "Team",
+            "Opponent.Rk",
+            "Opponent",
+            "Result",
+            "Poss",
+            "OT",
+            "PreWP",
+            "Location",
+            "W",
+            "L",
+            "W.Conference",
+            "L.Conference",
+            "ConferenceGame",
+            "Postseason",
+            "Year",
+            "Day.Date")
       }
 
       suppressWarnings(
@@ -172,7 +201,10 @@ kp_team_schedule <- function(team, year = 2022){
                                      cumsum(ifelse(.data$ConferenceGame==TRUE & !is.na(.data$PreWP), .data$PreWP, 0))),
           L.ConferenceProj = round(cummax(ifelse(is.na(.data$L.Conference), 0, .data$L.Conference)) +
                                      cumsum(ifelse(.data$ConferenceGame==TRUE & !is.na(.data$PreWP), 1 - .data$PreWP, 0)))) %>%
-        dplyr::select(-.data$Date.DD,-.data$Date.MO,-.data$Date.YR)
+        dplyr::select(
+          -"Date.DD",
+          -"Date.MO",
+          -"Date.YR")
 
       extractor <- function(x){
         data.frame(
@@ -320,7 +352,11 @@ kp_team_schedule <- function(team, year = 2022){
           Date = stringr::str_remove(stringr::str_extract(.data$fanmatch.link, "=(.+)"), "="),
           GameId = as.numeric(stringr::str_remove(stringr::str_remove(
             stringi::stri_extract_first_regex(.data$pregame.box, "=(.+)"), "="), "&(.+)"))) %>%
-        dplyr::select(.data$Date,.data$GameId, .data$TiersOfJoy, .data$Day.Date)
+        dplyr::select(
+          "Date",
+          "GameId",
+          "TiersOfJoy",
+          "Day.Date")
 
       ### Add Date and GameId back back to data frame
       sched <- dplyr::left_join(sched, sched_links, by = "Day.Date")
@@ -408,7 +444,7 @@ kp_gameplan <- function(team, year=2021){
           dplyr::mutate(
             WL = stringr::str_replace(stringr::str_extract(.data$Result,'W|L'),",",""),
             Score = stringr::str_replace(stringr::str_extract(.data$Result,'\\d{1,3}-\\d{1,3}'),",","")) %>%
-          tidyr::separate(.data$Score, into = c("WinnerScore", "LoserScore"), sep = "-") %>%
+          tidyr::separate("Score", into = c("WinnerScore", "LoserScore"), sep = "-") %>%
           dplyr::mutate(
             TeamScore = dplyr::case_when(
               .data$WL == "W"  ~ as.numeric(.data$WinnerScore),
@@ -441,23 +477,34 @@ kp_gameplan <- function(team, year=2021){
             Day.Date = .data$Date,
             Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
             GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
-          dplyr::select(-.data$Date.DD,-.data$Date.MO,-.data$Date.YR)
+          dplyr::select(
+            -"Date.DD",
+            -"Date.MO",
+            -"Date.YR")
       )
       cor <- gp[(nrow(gp)-2):nrow(gp),]
       cor <- cor %>%
-        dplyr::select(.data$Location, .data$Pace,
-                      .data$Off.eFG.Pct,.data$Off.TO.Pct,.data$Off.OR.Pct,.data$Off.FTR,
-                      .data$Def.eFG.Pct,.data$Def.TO.Pct,.data$Def.OR.Pct,.data$Def.FTR) %>%
-        dplyr::rename("Correlations (R x 100)" = .data$Location)
+        dplyr::select(
+          "Location",
+          "Pace",
+          "Off.eFG.Pct",
+          "Off.TO.Pct",
+          "Off.OR.Pct",
+          "Off.FTR",
+          "Def.eFG.Pct",
+          "Def.TO.Pct",
+          "Def.OR.Pct",
+          "Def.FTR") %>%
+        dplyr::rename("Correlations (R x 100)" = "Location")
       cor <- cor[2:3,] %>%
         janitor::clean_names()
       suppressWarnings(
         gp <- gp %>%
           dplyr::filter(!is.na(as.numeric(.data$Off.Eff))) %>%
-          tidyr::separate(.data$"Off.FGM_2-A", into = c("Off.FGM_2","Off.FGA_2")) %>%
-          tidyr::separate(.data$"Off.FGM_3-A", into = c("Off.FGM_3","Off.FGA_3")) %>%
-          tidyr::separate(.data$"Def.FGM_2-A", into = c("Def.FGM_2","Def.FGA_2")) %>%
-          tidyr::separate(.data$"Def.FGM_3-A", into = c("Def.FGM_3","Def.FGA_3")) %>%
+          tidyr::separate("Off.FGM_2-A", into = c("Off.FGM_2","Off.FGA_2")) %>%
+          tidyr::separate("Off.FGM_3-A", into = c("Off.FGM_3","Off.FGA_3")) %>%
+          tidyr::separate("Def.FGM_2-A", into = c("Def.FGM_2","Def.FGA_2")) %>%
+          tidyr::separate("Def.FGM_3-A", into = c("Def.FGM_3","Def.FGA_3")) %>%
           dplyr::mutate_at(c("Opponent.Rk", "Pace", "Off.Eff", "Off.Eff.Rk",
                              "Off.eFG.Pct",	"Off.TO.Pct",	"Off.OR.Pct", "Off.FTR",
                              "Off.FGM_2", "Off.FGA_2", "Off.FG_2.Pct",
@@ -468,7 +515,10 @@ kp_gameplan <- function(team, year=2021){
                              "Def.FG_3.Pct",	"Def.FG_3A.Pct", "TeamScore","OpponentScore"), as.numeric)
       )
       ### Store Data
-      gp <- gp %>% dplyr::select(-.data$WinnerScore, -.data$LoserScore) %>%
+      gp <- gp %>%
+        dplyr::select(
+          -"WinnerScore",
+          -"LoserScore") %>%
         janitor::clean_names()
 
       z <- data.frame()
@@ -519,7 +569,10 @@ kp_gameplan <- function(team, year=2021){
           d$PG.Pct.D1.Avg = as.numeric(d[3, "PG.Pct"])
           d <- d %>%
             dplyr::filter(!is.na(.data$C.Pct.Rk)) %>%
-            dplyr::select(.data$Team, .data$Category, tidyr::everything())
+            dplyr::select(
+              "Team",
+              "Category",
+              tidyr::everything())
 
           z <- dplyr::bind_rows(z, d)
 
@@ -615,7 +668,7 @@ kp_opptracker <- function(team, year = 2021){
             Team = team,
             WL = stringr::str_replace(stringr::str_extract(.data$Result,'W|L'),",",""),
             Score = stringr::str_replace(stringr::str_extract(.data$Result,'\\d{1,3}-\\d{1,3}'),",","")) %>%
-          tidyr::separate(.data$Score, into = c("WinnerScore", "LoserScore"), sep = "-") %>%
+          tidyr::separate("Score", into = c("WinnerScore", "LoserScore"), sep = "-") %>%
           dplyr::mutate(
             TeamScore = dplyr::case_when(
               .data$WL == "W"  ~ as.numeric(.data$WinnerScore),
@@ -648,7 +701,12 @@ kp_opptracker <- function(team, year = 2021){
             Day.Date = .data$Date,
             Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
             GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
-          dplyr::select(-.data$Date.DD, -.data$Date.MO, -.data$Date.YR, -.data$WinnerScore, -.data$LoserScore)
+          dplyr::select(
+            -"Date.DD",
+            -"Date.MO",
+            -"Date.YR",
+            -"WinnerScore",
+            -"LoserScore")
       )
 
       header_cols<- c("Date","Opponent","Result","AdjDE","AdjDE.Rk",
@@ -683,10 +741,16 @@ kp_opptracker <- function(team, year = 2021){
       opptracker <- dplyr::bind_cols(opptracker_o, opptracker_d[,4:ncol(opptracker_d)])
       ### Store Data
       kenpom <- opptracker %>%
-        dplyr::select(.data$Date, .data$GameDate, .data$Day.Date,
-                      .data$WL, .data$Team, .data$TeamScore,
-                      .data$Opponent, .data$OpponentScore,
-                      tidyr::everything()) %>%
+        dplyr::select(
+          "Date",
+          "GameDate",
+          "Day.Date",
+          "WL",
+          "Team",
+          "TeamScore",
+          "Opponent",
+          "OpponentScore",
+          tidyr::everything()) %>%
         janitor::clean_names()
     },
     error = function(e){
@@ -762,7 +826,7 @@ kp_team_players <- function(team, year = 2021){
 
       pid <- pid %>%
         dplyr::mutate(PlayerId = stringr::str_remove(stringr::str_extract(.data$href,"=(.+)"),"=")) %>%
-        dplyr::select(.data$PlayerId)
+        dplyr::select("PlayerId")
 
       if(year>= 2014){ # "S" - starts only available from 2014 onwards
         players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G", "S",
@@ -875,9 +939,9 @@ kp_team_players <- function(team, year = 2021){
       if(year>=2014){
         suppressWarnings(
           players <- players %>%
-            tidyr::separate(.data$"FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
+            tidyr::separate("FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
+            tidyr::separate("FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
+            tidyr::separate("FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
             dplyr::mutate_at(c("Number", "Wt", "G", "S",
                                "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
                                "eFG.Pct", "TS.Pct", "OR.Pct", "DR.Pct",
@@ -892,9 +956,9 @@ kp_team_players <- function(team, year = 2021){
       }else{
         suppressWarnings(
           players <- players %>%
-            tidyr::separate(.data$"FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
+            tidyr::separate("FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
+            tidyr::separate("FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
+            tidyr::separate("FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
             dplyr::mutate_at(c("Number", "Wt", "G",
                                "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
                                "eFG.Pct", "TS.Pct", "OR.Pct", "DR.Pct",
@@ -918,7 +982,9 @@ kp_team_players <- function(team, year = 2021){
                                               .data$Poss.Pct >= 20.0 & .data$Poss.Pct < 24.0 ~ "Significant Contributor",
                                               .data$Poss.Pct >= 24.0 & .data$Poss.Pct < 28.0 ~ "Major Contributor",
                                               .data$Poss.Pct >= 28.0 ~ "Go-to Guys")) %>%
-        dplyr::select(.data$Role, tidyr::everything()) %>%
+        dplyr::select(
+          "Role",
+          tidyr::everything()) %>%
         dplyr::bind_cols(lapply(pid, as.numeric))
 
       ### Store Data
@@ -987,7 +1053,7 @@ kp_player_career <- function(player_id){
         as.data.frame()
       colnames(player_town) <- "Num"
       player_town <- player_town %>%
-        tidyr::separate(.data$Num, into = c("Number", "Town", "DateOfBirth"), sep = "\u00b7")
+        tidyr::separate("Num", into = c("Number", "Town", "DateOfBirth"), sep = "\u00b7")
       player_info <- dplyr::bind_cols(player_info, player_town)
 
       #--- Player Career Average Stats ----
@@ -1021,12 +1087,17 @@ kp_player_career <- function(player_id){
       # Now need to fill year to create a join column for the age and player comps columns
       players <- players %>%
         dplyr::mutate(Year = ifelse(.data$Year == "", NA_real_, .data$Year)) %>%
-        tidyr::fill(.data$Year, .direction = c("down"))
+        tidyr::fill("Year", .direction = c("down"))
 
       player_age <- players %>%
         dplyr::filter(stringr::str_detect(.data$Team,'Age:')) %>%
-        dplyr::select(.data$Year, .data$Team, .data$Min.Pct) %>%
-        dplyr::rename(Age = .data$Team, Comparisons = .data$Min.Pct) %>%
+        dplyr::select(
+          "Year",
+          "Team",
+          "Min.Pct") %>%
+        dplyr::rename(
+          "Age" = "Team",
+          "Comparisons" = "Min.Pct") %>%
         dplyr::mutate(
           Age = stringr::str_replace(.data$Age, "Age: ", ""),
           Comparisons = stringr::str_replace(.data$Comparisons, "Similar: ", "")
@@ -1052,23 +1123,23 @@ kp_player_career <- function(player_id){
           Number = player_info$Number,
           Hometown = player_info$Town,
           DateOfBirth = player_info$DateOfBirth) %>%
-        tidyr::fill(.data$Hgt, .direction = c("down")) %>%
-        tidyr::fill(.data$Wgt, .direction = c("down")) %>%
-        tidyr::fill(.data$Yr, .direction = c("down")) %>%
-        tidyr::fill(.data$Position, .direction = c("down")) %>%
-        tidyr::fill(.data$Team.Rk, .direction = c("down")) %>%
+        tidyr::fill("Hgt", .direction = c("down")) %>%
+        tidyr::fill("Wgt", .direction = c("down")) %>%
+        tidyr::fill("Yr", .direction = c("down")) %>%
+        tidyr::fill("Position", .direction = c("down")) %>%
+        tidyr::fill("Team.Rk", .direction = c("down")) %>%
         dplyr::group_by(.data$Year) %>%
-        tidyr::fill(.data$Team.Finish, .direction = c("down")) %>%
-        tidyr::fill(.data$NCAASeed, .direction = c("down")) %>%
+        tidyr::fill("Team.Finish", .direction = c("down")) %>%
+        tidyr::fill("NCAASeed", .direction = c("down")) %>%
         dplyr::ungroup() %>%
         dplyr::bind_rows(players_career) %>%
         dplyr::left_join(player_age, by = c("Year"))
 
       suppressWarnings(
         players <- players %>%
-          tidyr::separate(.data$"FTM-A",into=c("FTM", "FTA")) %>%
-          tidyr::separate(.data$"FG_2M-A",into=c("FGM_2", "FGA_2")) %>%
-          tidyr::separate(.data$"FG_3M-A",into=c("FGM_3", "FGA_3")) %>%
+          tidyr::separate("FTM-A", into = c("FTM", "FTA")) %>%
+          tidyr::separate("FG_2M-A", into = c("FGM_2", "FGA_2")) %>%
+          tidyr::separate("FG_3M-A", into = c("FGM_3", "FGA_3")) %>%
           dplyr::mutate_at(c("Year", "Wgt", "G", "Min.Pct",
                              "ORtg", "Poss.Pct", "Shots.Pct", "eFG.Pct",
                              "TS.Pct", "OR.Pct", "DR.Pct", "ARate",
@@ -1081,7 +1152,11 @@ kp_player_career <- function(player_id){
 
       players_team_name <- players %>%
         dplyr::filter(!(stringr::str_detect(.data$Team ,"Tier A|Conference|Career"))) %>%
-        dplyr::select(.data$Year, .data$Team, .data$Name, .data$Position)
+        dplyr::select(
+          "Year",
+          "Team",
+          "Name",
+          "Position")
 
       img_extractor <- function(x){
         data.frame(
@@ -1097,8 +1172,13 @@ kp_player_career <- function(player_id){
       }
       players <- players %>%
         dplyr::select(
-          .data$Year, .data$Team.Rk,.data$Team, .data$Number,
-          .data$Name, .data$Position, tidyr::everything()) %>%
+          "Year",
+          "Team.Rk",
+          "Team",
+          "Number",
+          "Name",
+          "Position",
+          tidyr::everything()) %>%
         janitor::clean_names()
       s <- (page %>%
               xml2::read_html() %>%
@@ -1127,15 +1207,15 @@ kp_player_career <- function(player_id){
         sched$GameData <- header
         sched <- sched %>%
           dplyr::mutate(Year = as.numeric(stringr::str_replace(.data$GameData," Game Data",""))) %>%
-          dplyr::select(-.data$GameData)
+          dplyr::select(-"GameData")
         sched <- sched %>%
           dplyr::left_join(players_team_name, by="Year")
 
         suppressWarnings(
           sched <- sched %>%
-            tidyr::separate(.data$"FTM-A",into=c("FTM", "FTA")) %>%
-            tidyr::separate(.data$"FG_2M-A",into=c("FGM_2", "FGA_2")) %>%
-            tidyr::separate(.data$"FG_3M-A",into=c("FGM_3", "FGA_3")) %>%
+            tidyr::separate("FTM-A", into = c("FTM", "FTA")) %>%
+            tidyr::separate("FG_2M-A", into = c("FGM_2", "FGA_2")) %>%
+            tidyr::separate("FG_3M-A", into = c("FGM_3", "FGA_3")) %>%
             dplyr::mutate_at(c("Opponent.Rk","MinutesPlayed","ORtg","Poss.Pct",
                                "Pts","OR","DR","A","TO",
                                "FTM", "FTA","FGM_2", "FGA_2",
@@ -1143,7 +1223,12 @@ kp_player_career <- function(player_id){
                                "Blk","Stl","PF"), as.numeric)
         )
         sched <- sched %>%
-          dplyr::select(.data$Year, .data$Team, .data$Name, .data$Position, tidyr::everything())
+          dplyr::select(
+            "Year",
+            "Team",
+            "Name",
+            "Position",
+            tidyr::everything())
         schedule_games <- dplyr::bind_rows(schedule_games,sched)
       }
       schedule_games <- schedule_games %>%
@@ -1317,7 +1402,7 @@ kp_team_player_stats <- function(team, year = 2021){
 
         pid <- pid %>%
           dplyr::mutate(PlayerId = stringr::str_remove(stringr::str_extract(.data$href,"=(.+)"),"=")) %>%
-          dplyr::select(.data$PlayerId)
+          dplyr::select("PlayerId")
 
         players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G",
                                  "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
@@ -1423,9 +1508,9 @@ kp_team_player_stats <- function(team, year = 2021){
 
         suppressWarnings(
           players <- players %>%
-            tidyr::separate(.data$"FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
-            tidyr::separate(.data$"FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
+            tidyr::separate("FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
+            tidyr::separate("FGM_2-A", into = c("FGM_2", "FGA_2"), sep = "-") %>%
+            tidyr::separate("FGM_3-A", into = c("FGM_3", "FGA_3"), sep = "-") %>%
             dplyr::mutate_at(c("Number", "Wt", "G",
                                "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
                                "eFG.Pct", "TS.Pct", "OR.Pct", "DR.Pct",
@@ -1448,9 +1533,9 @@ kp_team_player_stats <- function(team, year = 2021){
                                                 .data$Poss.Pct >= 20.0 & .data$Poss.Pct < 24.0 ~ "Significant Contributor",
                                                 .data$Poss.Pct >= 24.0 & .data$Poss.Pct < 28.0 ~ "Major Contributor",
                                                 .data$Poss.Pct >= 28.0 ~ "Go-to Guys")) %>%
-          dplyr::select(.data$Role, tidyr::everything()) %>%
+          dplyr::select("Role", tidyr::everything()) %>%
           dplyr::bind_cols(lapply(pid, as.numeric)) %>%
-        janitor::clean_names()
+          janitor::clean_names()
 
         y <- c(y, list(players))
       }
@@ -1585,11 +1670,11 @@ kp_team_depth_chart <- function(team, year= 2021){
         )
       suppressWarnings(
         depth1 <- depth1 %>%
-          tidyr::separate(.data$PG, into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
-          tidyr::separate(.data$SG, into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
-          tidyr::separate(.data$SF, into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
-          tidyr::separate(.data$PF, into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
-          tidyr::separate(.data$C, into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
+          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
+          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
+          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
+          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
+          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
       )
       suppressWarnings(
         depth1 <- depth1 %>%
@@ -1614,17 +1699,43 @@ kp_team_depth_chart <- function(team, year= 2021){
       )
       depth1 <- depth1 %>%
         dplyr::select(
-          .data$PG.Number, .data$PG.PlayerFirstName,
-          .data$PG.PlayerLastName, .data$PG.Hgt, .data$PG.Wgt, .data$PG.Yr, .data$PG.Min.Pct,
-          .data$SG.Number, .data$SG.PlayerFirstName,
-          .data$SG.PlayerLastName, .data$SG.Hgt, .data$SG.Wgt, .data$SG.Yr, .data$SG.Min.Pct,
-          .data$SF.Number, .data$SF.PlayerFirstName,
-          .data$SF.PlayerLastName, .data$SF.Hgt, .data$SF.Wgt, .data$SF.Yr, .data$SF.Min.Pct,
-          .data$PF.Number, .data$PF.PlayerFirstName,
-          .data$PF.PlayerLastName, .data$PF.Hgt, .data$PF.Wgt, .data$PF.Yr, .data$PF.Min.Pct,
-          .data$C.Number, .data$C.PlayerFirstName,
-          .data$C.PlayerLastName, .data$C.Hgt, .data$C.Wgt, .data$C.Yr, .data$C.Min.Pct,
-          .data$Team, .data$Year)
+          "PG.Number",
+          "PG.PlayerFirstName",
+          "PG.PlayerLastName",
+          "PG.Hgt",
+          "PG.Wgt",
+          "PG.Yr",
+          "PG.Min.Pct",
+          "SG.Number",
+          "SG.PlayerFirstName",
+          "SG.PlayerLastName",
+          "SG.Hgt",
+          "SG.Wgt",
+          "SG.Yr",
+          "SG.Min.Pct",
+          "SF.Number",
+          "SF.PlayerFirstName",
+          "SF.PlayerLastName",
+          "SF.Hgt",
+          "SF.Wgt",
+          "SF.Yr",
+          "SF.Min.Pct",
+          "PF.Number",
+          "PF.PlayerFirstName",
+          "PF.PlayerLastName",
+          "PF.Hgt",
+          "PF.Wgt",
+          "PF.Yr",
+          "PF.Min.Pct",
+          "C.Number",
+          "C.PlayerFirstName",
+          "C.PlayerLastName",
+          "C.Hgt",
+          "C.Wgt",
+          "C.Yr",
+          "C.Min.Pct",
+          "Team",
+          "Year")
       ### Store Data
       kenpom <- depth1 %>%
         janitor::clean_names()
@@ -1748,11 +1859,11 @@ kp_team_lineups <- function(team, year=2021){
         )
       suppressWarnings(
         depth2 <- depth2 %>%
-          tidyr::separate(.data$PG, into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
-          tidyr::separate(.data$SG, into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
-          tidyr::separate(.data$SF, into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
-          tidyr::separate(.data$PF, into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
-          tidyr::separate(.data$C, into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
+          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
+          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
+          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
+          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
+          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
       )
       suppressWarnings(
         depth2 <- depth2 %>%
@@ -1773,17 +1884,39 @@ kp_team_lineups <- function(team, year=2021){
         dplyr::mutate(Team = team,
                       Year = year) %>%
         dplyr::select(
-          .data$Year, .data$Team, .data$Min.Pct,
-          .data$PG.Number, .data$PG.PlayerFirstName,
-          .data$PG.PlayerLastName, .data$PG.Hgt, .data$PG.Wgt, .data$PG.Yr,
-          .data$SG.Number, .data$SG.PlayerFirstName,
-          .data$SG.PlayerLastName, .data$SG.Hgt, .data$SG.Wgt, .data$SG.Yr,
-          .data$SF.Number, .data$SF.PlayerFirstName,
-          .data$SF.PlayerLastName, .data$SF.Hgt, .data$SF.Wgt, .data$SF.Yr,
-          .data$PF.Number, .data$PF.PlayerFirstName,
-          .data$PF.PlayerLastName, .data$PF.Hgt, .data$PF.Wgt, .data$PF.Yr,
-          .data$C.Number, .data$C.PlayerFirstName,
-          .data$C.PlayerLastName, .data$C.Hgt, .data$C.Wgt, .data$C.Yr)
+          "Year",
+          "Team",
+          "Min.Pct",
+          "PG.Number",
+          "PG.PlayerFirstName",
+          "PG.PlayerLastName",
+          "PG.Hgt",
+          "PG.Wgt",
+          "PG.Yr",
+          "SG.Number",
+          "SG.PlayerFirstName",
+          "SG.PlayerLastName",
+          "SG.Hgt",
+          "SG.Wgt",
+          "SG.Yr",
+          "SF.Number",
+          "SF.PlayerFirstName",
+          "SF.PlayerLastName",
+          "SF.Hgt",
+          "SF.Wgt",
+          "SF.Yr",
+          "PF.Number",
+          "PF.PlayerFirstName",
+          "PF.PlayerLastName",
+          "PF.Hgt",
+          "PF.Wgt",
+          "PF.Yr",
+          "C.Number",
+          "C.PlayerFirstName",
+          "C.PlayerLastName",
+          "C.Hgt",
+          "C.Wgt",
+          "C.Yr")
 
       ### Store Data
       depth2[nrow(depth2),"PG.PlayerFirstName"]<- "UNKNOWN"

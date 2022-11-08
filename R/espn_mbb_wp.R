@@ -68,25 +68,29 @@ espn_mbb_wp <- function(game_id) {
                                      .data$period_seconds_left)
         ) %>%
         dplyr::rename(
-          home_win_percentage = .data$home_win_percentage,
-          time_left = .data$seconds_left,
-          play_id = .data$play_id,
-          game_id = .data$espn_game_id
+          "home_win_percentage" = "home_win_percentage",
+          "time_left" = "seconds_left",
+          "play_id" = "play_id",
+          "game_id" = "espn_game_id"
         ) %>%
         dplyr::mutate(
           away_win_percentage = 1 - .data$home_win_percentage - .data$tie_percentage
         )
         espn_wp$time_left <- purrr::map_dfr(1:length(espn_wp$time_left), function(x){
           data.frame(time_left = sub("(.{2})(.*)", "\\1:\\2", as.character(pad_time(espn_wp$time_left[[x]]))))
-        })
+        })$time_left
 
         espn_wp <- espn_wp %>%
           dplyr::select(
-            .data$game_id, .data$play_id, .data$period,
-            .data$time_left,
-            .data$period_seconds_left, .data$game_seconds_left,
-            .data$home_win_percentage, .data$away_win_percentage,
-            .data$tie_percentage) %>%
+            "game_id",
+            "play_id",
+            "period",
+            "time_left",
+            "period_seconds_left",
+            "game_seconds_left",
+            "home_win_percentage",
+            "away_win_percentage",
+            "tie_percentage") %>%
           make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com",Sys.time())
     },
     error = function(e) {

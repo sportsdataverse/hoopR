@@ -293,7 +293,7 @@ update_mbb_db <- function(dbdir = ".",
   completed_games <- load_mbb_games() %>%
     # completed games since 2006, excluding the broken games
     dplyr::filter(.data$season >= 2006) %>%
-    dplyr::pull(.data$game_id)
+    dplyr::pull("game_id")
 
   # function below
   missing <- get_missing_mbb_games(completed_games, connection, tblname)

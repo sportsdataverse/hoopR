@@ -191,7 +191,7 @@ test_that("ESPN - Get NBAyer season stats", {
     "logos_href_2",
     "logos_href_3"
   )
-  expect_equal(colnames(x), cols)
+  expect_equal(sort(colnames(x)), sort(cols))
   expect_s3_class(x, 'data.frame')
 
 })

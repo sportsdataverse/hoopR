@@ -52,22 +52,22 @@ nba_pbp <- function(game_id, version = "v2", p){
           # fix column names
           janitor::clean_names() %>%
           dplyr::rename(
-            wc_time_string = .data$wctimestring,
-            time_quarter = .data$pctimestring,
-            score_margin = .data$scoremargin,
-            even_num = .data$eventnum,
-            event_msg_type = .data$eventmsgtype,
-            event_msg_action_type = .data$eventmsgactiontype,
-            home_description = .data$homedescription,
-            neutral_description = .data$neutraldescription,
-            visitor_description = .data$visitordescription
+            "wc_time_string" = "wctimestring",
+            "time_quarter" = "pctimestring",
+            "score_margin" = "scoremargin",
+            "even_num" = "eventnum",
+            "event_msg_type" = "eventmsgtype",
+            "event_msg_action_type" = "eventmsgactiontype",
+            "home_description" = "homedescription",
+            "neutral_description" = "neutraldescription",
+            "visitor_description" = "visitordescription"
           ) %>%
           ## Get Team Scores
           tidyr::separate(
             "score",
             into = c("away_score", "home_score"),
             sep = "\\ - ",
-            remove = F
+            remove = FALSE
           ) %>%
           dplyr::mutate(
             home_score = as.numeric(.data$home_score),
@@ -100,9 +100,9 @@ nba_pbp <- function(game_id, version = "v2", p){
               ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
           ) %>%
           dplyr::select(
-            .data$game_id:.data$period,
-            .data$minute_game,
-            .data$time_remaining,
+            "game_id":"period",
+            "minute_game",
+            "time_remaining",
             dplyr::everything()
           )
       }

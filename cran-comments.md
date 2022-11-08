@@ -1,20 +1,8 @@
 ## Release summary
 
 This is a minor release that adds the following:
-- ```nba_pbps()``` function added.
-- ```nbagl_players()``` function added.
-- ```nbagl_schedule()``` function added.
-- ```nbagl_pbp()``` function added.
-- ```nbagl_standings()``` function added.
-- ```nba_gamerotation()``` function added.
-- ```nba_playerindex()``` function added.
-- ```nba_playerheadshot()``` function added.
-- ```nba_drafthistory()``` function added.
-- ```nba_gamerotation()``` function added.
-- ```espn_mbb_player_stats()``` function added.
-- ```espn_mbb_team_stats()``` function added.
-- ```espn_nba_player_stats()``` function added.
-- ```espn_nba_team_stats()``` function added.
+ * Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions
+ 
 
 ## R CMD check results
 

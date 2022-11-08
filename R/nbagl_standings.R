@@ -25,8 +25,8 @@ nbagl_standings <- function(season = most_recent_nba_season()-1) {
         jsonlite::fromJSON(simplifyVector = T)
       # Find Table with the pbp in it
       data <- resp$sta$co %>%
-        tidyr::unnest(.data$di, names_sep = '_') %>%
-        tidyr::unnest(.data$di_t) %>%
+        tidyr::unnest("di", names_sep = '_') %>%
+        tidyr::unnest("di_t") %>%
         arrange(.data$see) %>%
         make_hoopR_data("NBA G-League Standings Information from NBA.com",Sys.time())
     },

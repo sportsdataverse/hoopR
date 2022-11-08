@@ -45,7 +45,7 @@ nbagl_pbp <- function(game_id) {
       plays_df <- purrr::map_df(plays[[1]],function(x){
         plays_df <- plays[[2]][[x]] %>%
           dplyr::mutate(period = x) %>%
-          dplyr::select(.data$period, tidyr::everything())
+          dplyr::select("period", tidyr::everything())
       }) %>%
         make_hoopR_data("NBA G-League Play-by-Play Information from NBA.com",Sys.time())
     },
