@@ -37,7 +37,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.8.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,21 +95,29 @@
     <a class="external-link dropdown-item" href="https://cfbfastR.sportsdataverse.org/">cfbfastR</a>
     <a class="dropdown-item" href="https://hoopR.sportsdataverse.org/">hoopR</a>
     <a class="external-link dropdown-item" href="https://wehoop.sportsdataverse.org/">wehoop</a>
-    <a class="external-link dropdown-item" href="https://torvik.dev/">toRvik</a>
     <a class="external-link dropdown-item" href="https://fastRhockey.sportsdataverse.org/">fastRhockey</a>
+    <a class="external-link dropdown-item" href="https://hockeyr.netlify.app/">hockeyR</a>
+    <a class="external-link dropdown-item" href="https://abhiamishra.github.io/ggshakeR/">ggshakeR</a>
     <a class="external-link dropdown-item" href="https://BillPetti.github.io/baseballr/">baseballr</a>
     <a class="external-link dropdown-item" href="https://jaseziv.github.io/worldfootballR/">worldfootballR</a>
+    <a class="external-link dropdown-item" href="https://usfootballR.sportsdataverse.org/">usfootballR</a>
+    <a class="external-link dropdown-item" href="https://github.com/Dato-Futbol/soccerAnimate/">soccerAnimate</a>
     <a class="external-link dropdown-item" href="https://jaseziv.github.io/chessR/">chessR</a>
+    <a class="external-link dropdown-item" href="https://oddsapiR.sportsdataverse.org/">oddsapiR</a>
     <a class="external-link dropdown-item" href="https://sportyR.sportsdataverse.org/">sportyR</a>
-    <a class="external-link dropdown-item" href="https://kazink36.github.io/cfbplotR/">cfbplotR</a>
-    <a class="external-link dropdown-item" href="https://kazink36.github.io/cfb4th/">cfb4th</a>
+    <a class="external-link dropdown-item" href="https://torvik.dev/">toRvik</a>
+    <a class="external-link dropdown-item" href="https://cfbplotR.sportsdataverse.org/">cfbplotR</a>
     <a class="external-link dropdown-item" href="https://github.com/camdenk/mlbplotR">mlbplotR</a>
-    <a class="external-link dropdown-item" href="https://recruitr.sportsdataverse.org/">recruitR</a>
+    <a class="external-link dropdown-item" href="https://cfb4th.sportsdataverse.org/">cfb4th</a>
     <a class="external-link dropdown-item" href="https://jacklich10.github.io/gamezoneR/">gamezoneR</a>
+    <a class="external-link dropdown-item" href="https://recruitr.sportsdataverse.org/">recruitR</a>
     <a class="external-link dropdown-item" href="https://puntalytics.github.io/puntr/">puntr</a>
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header" data-toc-skip>Python Packages</h6>
     <a class="external-link dropdown-item" href="https://py.sportsdataverse.org/">sportsdataverse-py</a>
+    <a class="external-link dropdown-item" href="https://sportypy.sportsdataverse.org/">sportypy</a>
+    <a class="external-link dropdown-item" href="https://github.com/sportsdataverse/recruitR-py/">recruitR-py</a>
+    <a class="external-link dropdown-item" href="https://collegebaseball.readthedocs.io/en/latest/index.html">collegebaseball</a>
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header" data-toc-skip>Node.js Packages</h6>
     <a class="external-link dropdown-item" href="https://js.sportsdataverse.org/">sportsdataverse.js</a>
@@ -186,7 +194,7 @@
 <strong>Linux</strong> - Select the appropriate distro and follow the installation instructions</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Head to <a href="https://www.rstudio.com/products/rstudio/download/#download" title="Download the appropriate version of RStudio (Free) for your operating system to use with R" class="external-link">RStudio.com</a>
+<li>Head to <a href="https://posit.co/download/rstudio-desktop/#download" title="Download the appropriate version of RStudio (Free) for your operating system to use with R" class="external-link">RStudio.com</a>
 </li>
 <li>Follow the associated download and installation instructions for RStudio.</li>
 <li>Start peering over the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf" class="external-link">RStudio IDE Cheatsheet</a>. <em>An IDE is an integrated development environment.</em>
@@ -228,11 +236,11 @@
 </h5>
 <ul>
 <li><p>Functions that use the <a href="https://github.com/sportsdataverse/hoopR-data" class="external-link"><code>hoopR-data</code> repository</a> will contain <code>load_</code> or <code>update_</code> in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.</p></li>
-<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.8.1, the package exports 127 functions covering the NBA Stats API</p></li>
-<li><p>Functions that use the NBA G-League Stats API start with <code>nbagl_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.8.1, the package exports 4 functions covering the NBA G-League Stats API</p></li>
-<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.8.1, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
-<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.8.1, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
-<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.8.1, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
+<li><p>Functions that use the NBA Stats API start with <code>nba_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.9.0, the package exports 127 functions covering the NBA Stats API</p></li>
+<li><p>Functions that use the NBA G-League Stats API start with <code>nbagl_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.9.0, the package exports 4 functions covering the NBA G-League Stats API</p></li>
+<li><p>Functions that use one of ESPN’s APIs start with <code>espn_</code> by convention and should be assumed as <code>get</code> functions. These functions allow for live access to game data for both men’s college basketball and the NBA. As of <code>hoopR</code> version 1.9.0, the package exports 10 functions covering the men’s college basketball endpoints and 10 for the NBA.</p></li>
+<li><p>Functions that use Ken Pomeroy’s college basketball website start with <code>kp_</code> by convention and should be assumed as <code>get</code> functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of <code>hoopR</code> version 1.9.0, the package exports 36 functions covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
+<li><p>Functions that use the NCAA website start with <code>ncaa_</code> by convention and should be assumed as <code>get</code> functions. As of <code>hoopR</code> version 1.9.0, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.</p></li>
 </ul>
 </div>
 </div>
@@ -248,33 +256,33 @@
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 29.875 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 32.235 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3743046 rows of nba play-by-play data from 8040 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 3506960 rows of nba play-by-play data from 7550 games.</span></span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_pbp</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 3,743,046</span></span>
+<pre><code><span><span class="co">## Rows: 3,506,960</span></span>
 <span><span class="co">## Columns: 55</span></span>
-<span><span class="co">## $ shooting_play                   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, …</span></span>
+<span><span class="co">## $ id                              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 4008278881, 4008278882, 4008278883, 40…</span></span>
 <span><span class="co">## $ sequence_number                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "2", "3", "5", "6", "8", "9", "10…</span></span>
-<span><span class="co">## $ period_display_value            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1st Quarter", "1st Quarter", "1st Qua…</span></span>
-<span><span class="co">## $ period_number                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</span></span>
-<span><span class="co">## $ home_score                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 0, 2, 2, 2, 2, 2, 4, 4, 4, 4,…</span></span>
-<span><span class="co">## $ coordinate_x                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 25, 23, 25, 37, 33, 13, 25, 17, 25, 9,…</span></span>
-<span><span class="co">## $ coordinate_y                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> -8, -1, -8, 7, 10, 16, -8, 3, -8, -1, …</span></span>
-<span><span class="co">## $ scoring_play                    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, TRUE, TRUE, FALSE…</span></span>
-<span><span class="co">## $ clock_display_value             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "12:00", "11:41", "11:38", "11:21", "1…</span></span>
-<span><span class="co">## $ team_id                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "8", "1", "8", "1", "1", "8", "8"…</span></span>
 <span><span class="co">## $ type_id                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "11", "110", "155", "132", "132", "92"…</span></span>
 <span><span class="co">## $ type_text                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Jump Ball", "Driving Layup Shot", "De…</span></span>
-<span><span class="co">## $ away_score                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 2, 2, 4, 4, 4, 4, 4, 5, 5, 5,…</span></span>
-<span><span class="co">## $ id                              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 4008278881, 4008278882, 4008278883, 40…</span></span>
 <span><span class="co">## $ text                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Andre Drummond vs. Al Horford (Ersan …</span></span>
+<span><span class="co">## $ away_score                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 2, 2, 4, 4, 4, 4, 4, 5, 5, 5,…</span></span>
+<span><span class="co">## $ home_score                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 0, 2, 2, 2, 2, 2, 4, 4, 4, 4,…</span></span>
+<span><span class="co">## $ period_number                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</span></span>
+<span><span class="co">## $ period_display_value            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1st Quarter", "1st Quarter", "1st Qua…</span></span>
+<span><span class="co">## $ clock_display_value             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "12:00", "11:41", "11:38", "11:21", "1…</span></span>
+<span><span class="co">## $ scoring_play                    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, TRUE, TRUE, FALSE…</span></span>
 <span><span class="co">## $ score_value                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0,…</span></span>
+<span><span class="co">## $ team_id                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "8", "1", "8", "1", "1", "8", "8"…</span></span>
 <span><span class="co">## $ participants_0_athlete_id       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3213", "6585", "6637", "6462", "3015"…</span></span>
 <span><span class="co">## $ participants_1_athlete_id       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "6585", "3213", NA, "6585", "2011", NA…</span></span>
 <span><span class="co">## $ participants_2_athlete_id       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2767", NA, NA, NA, NA, NA, NA, NA, NA…</span></span>
+<span><span class="co">## $ shooting_play                   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, …</span></span>
+<span><span class="co">## $ coordinate_x                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 25, 23, 25, 37, 33, 13, 25, 17, 25, 9,…</span></span>
+<span><span class="co">## $ coordinate_y                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> -8, -1, -8, 7, 10, 16, -8, 3, -8, -1, …</span></span>
 <span><span class="co">## $ season                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2016, 2016, 2016, 2016, 2016, 2016, 20…</span></span>
 <span><span class="co">## $ season_type                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…</span></span>
 <span><span class="co">## $ away_team_id                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,…</span></span>
@@ -322,57 +330,57 @@
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 0.79 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 0.829 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 16124 rows of NBA team boxscore data from 8062 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 15102 rows of NBA team boxscore data from 7551 games.</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 16,124</span></span>
+<pre><code><span><span class="co">## Rows: 15,102</span></span>
 <span><span class="co">## Columns: 43</span></span>
-<span><span class="co">## $ team_short_display_name                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Piston…</span></span>
+<span><span class="co">## $ team_id                                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "5", "9…</span></span>
 <span><span class="co">## $ team_uid                                                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "s:40~l…</span></span>
-<span><span class="co">## $ team_alternate_color                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "006bb6…</span></span>
-<span><span class="co">## $ team_color                                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "FA002C…</span></span>
-<span><span class="co">## $ team_display_name                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Detroi…</span></span>
-<span><span class="co">## $ team_name                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Piston…</span></span>
+<span><span class="co">## $ team_slug                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "clevel…</span></span>
+<span><span class="co">## $ team_location                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Clevel…</span></span>
+<span><span class="co">## $ team_name                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cavali…</span></span>
+<span><span class="co">## $ team_abbreviation                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "CLE", …</span></span>
+<span><span class="co">## $ team_display_name                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Clevel…</span></span>
+<span><span class="co">## $ team_short_display_name                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cavali…</span></span>
+<span><span class="co">## $ team_color                                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "061642…</span></span>
+<span><span class="co">## $ team_alternate_color                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "fdbb30…</span></span>
 <span><span class="co">## $ team_logo                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https:…</span></span>
-<span><span class="co">## $ team_location                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Detroi…</span></span>
-<span><span class="co">## $ team_id                                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "8", "1…</span></span>
-<span><span class="co">## $ team_abbreviation                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DET", …</span></span>
-<span><span class="co">## $ team_slug                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "detroi…</span></span>
-<span><span class="co">## $ field_goals_made_field_goals_attempted                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "37-96"…</span></span>
-<span><span class="co">## $ field_goal_pct                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "38.5",…</span></span>
-<span><span class="co">## $ three_point_field_goals_made_three_point_field_goals_attempted <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "12-29"…</span></span>
-<span><span class="co">## $ three_point_field_goal_pct                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "41.4",…</span></span>
-<span><span class="co">## $ free_throws_made_free_throws_attempted                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "20-26"…</span></span>
-<span><span class="co">## $ free_throw_pct                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "76.9",…</span></span>
-<span><span class="co">## $ total_rebounds                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "69", "…</span></span>
-<span><span class="co">## $ offensive_rebounds                                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "23", "…</span></span>
-<span><span class="co">## $ defensive_rebounds                                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "36", "…</span></span>
-<span><span class="co">## $ assists                                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "23", "…</span></span>
-<span><span class="co">## $ steals                                                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "5", "9…</span></span>
-<span><span class="co">## $ blocks                                                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3", "4…</span></span>
-<span><span class="co">## $ turnovers                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15", "…</span></span>
+<span><span class="co">## $ field_goals_made_field_goals_attempted                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "33-82"…</span></span>
+<span><span class="co">## $ field_goal_pct                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "40.2",…</span></span>
+<span><span class="co">## $ three_point_field_goals_made_three_point_field_goals_attempted <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "6-25",…</span></span>
+<span><span class="co">## $ three_point_field_goal_pct                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "24.0",…</span></span>
+<span><span class="co">## $ free_throws_made_free_throws_attempted                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "21-25"…</span></span>
+<span><span class="co">## $ free_throw_pct                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "84.0",…</span></span>
+<span><span class="co">## $ total_rebounds                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "59", "…</span></span>
+<span><span class="co">## $ offensive_rebounds                                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "9", "7…</span></span>
+<span><span class="co">## $ defensive_rebounds                                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "39", "…</span></span>
+<span><span class="co">## $ assists                                                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "17", "…</span></span>
+<span><span class="co">## $ steals                                                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "7", "7…</span></span>
+<span><span class="co">## $ blocks                                                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "6", "5…</span></span>
+<span><span class="co">## $ turnovers                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "11", "…</span></span>
 <span><span class="co">## $ team_turnovers                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0…</span></span>
-<span><span class="co">## $ total_turnovers                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15", "…</span></span>
+<span><span class="co">## $ total_turnovers                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "11", "…</span></span>
 <span><span class="co">## $ technical_fouls                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0…</span></span>
 <span><span class="co">## $ total_technical_fouls                                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0…</span></span>
 <span><span class="co">## $ flagrant_fouls                                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0…</span></span>
-<span><span class="co">## $ turnover_points                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "19", "…</span></span>
-<span><span class="co">## $ fast_break_points                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "10", "…</span></span>
-<span><span class="co">## $ points_in_paint                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "36", "…</span></span>
+<span><span class="co">## $ turnover_points                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "10", "…</span></span>
+<span><span class="co">## $ fast_break_points                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "18", "…</span></span>
+<span><span class="co">## $ points_in_paint                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "48", "…</span></span>
 <span><span class="co">## $ fouls                                                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "15", "…</span></span>
-<span><span class="co">## $ largest_lead                                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "19", "…</span></span>
+<span><span class="co">## $ largest_lead                                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "7", "8…</span></span>
 <span><span class="co">## $ home_away                                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "HOME",…</span></span>
-<span><span class="co">## $ opponent_id                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 8, 4…</span></span>
-<span><span class="co">## $ opponent_name                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Atlant…</span></span>
-<span><span class="co">## $ opponent_mascot                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Hawks"…</span></span>
-<span><span class="co">## $ opponent_abbrev                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ATL", …</span></span>
-<span><span class="co">## $ game_id                                                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4008278…</span></span>
+<span><span class="co">## $ opponent_id                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 9, 5, 5…</span></span>
+<span><span class="co">## $ opponent_name                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Golden…</span></span>
+<span><span class="co">## $ opponent_mascot                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Warrio…</span></span>
+<span><span class="co">## $ opponent_abbrev                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GS", "…</span></span>
+<span><span class="co">## $ game_id                                                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4008781…</span></span>
 <span><span class="co">## $ season                                                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2016, 2…</span></span>
-<span><span class="co">## $ season_type                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2…</span></span>
-<span><span class="co">## $ game_date                                                      <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-1…</span></span></code></pre>
+<span><span class="co">## $ season_type                                                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 3, 3…</span></span>
+<span><span class="co">## $ game_date                                                      <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2016-0…</span></span></code></pre>
 </div>
 <div class="section level4">
 <h4 id="nba-player-box-scores-2002-2021-5-30-seconds">
@@ -384,49 +392,49 @@
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1.988 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 2.082 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 174366 rows of NBA player boxscore data from 8064 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 160435 rows of NBA player boxscore data from 7545 games.</span></span></code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 174,366</span></span>
+<pre><code><span><span class="co">## Rows: 160,435</span></span>
 <span><span class="co">## Columns: 35</span></span>
-<span><span class="co">## $ athlete_display_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Ersan Ilyasova", "Marcus Morris Sr.", "…</span></span>
-<span><span class="co">## $ team_short_display_name       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Pistons", "Pistons", "Pistons", "Piston…</span></span>
-<span><span class="co">## $ min                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "34", "37", "37", "32", "37", "24", "11"…</span></span>
-<span><span class="co">## $ fg                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "6-12", "6-19", "6-16", "4-10", "7-14", …</span></span>
-<span><span class="co">## $ fg3                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3-6", "1-4", "0-0", "2-4", "4-7", "1-3"…</span></span>
-<span><span class="co">## $ ft                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1-2", "5-6", "6-10", "5-5", "3-3", "0-0…</span></span>
-<span><span class="co">## $ oreb                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3", "5", "8", "1", "1", "3", "1", "0", …</span></span>
-<span><span class="co">## $ dreb                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "5", "11", "7", "3", "1", "4", "0",…</span></span>
-<span><span class="co">## $ reb                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "7", "10", "19", "8", "4", "4", "5", "0"…</span></span>
-<span><span class="co">## $ ast                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3", "4", "3", "5", "1", "3", "0", "4", …</span></span>
-<span><span class="co">## $ stl                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0", "1", "2", "1", "0", "0", "1", …</span></span>
-<span><span class="co">## $ blk                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "0", "2", "0", "0", "0", "0", "0", …</span></span>
-<span><span class="co">## $ to                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3", "0", "2", "2", "2", "1", "1", "3", …</span></span>
-<span><span class="co">## $ pf                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "1", "4", "0", "1", "1", "2", "1", …</span></span>
-<span><span class="co">## $ plus_minus                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "+20", "+17", "+23", "+26", "+17", "-13"…</span></span>
-<span><span class="co">## $ pts                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "16", "18", "18", "15", "21", "7", "6", …</span></span>
+<span><span class="co">## $ athlete_display_name          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Kevin Love", "LeBron James", "Tristan T…</span></span>
+<span><span class="co">## $ team_short_display_name       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cavaliers", "Cavaliers", "Cavaliers", "…</span></span>
+<span><span class="co">## $ min                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "30", "47", "32", "43", "39", "26", "5",…</span></span>
+<span><span class="co">## $ fg                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3-9", "9-24", "3-3", "10-23", "5-13", "…</span></span>
+<span><span class="co">## $ fg3                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0-3", "1-5", "0-0", "2-5", "2-8", "0-0"…</span></span>
+<span><span class="co">## $ ft                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3-4", "8-10", "3-4", "4-4", "0-0", "0-0…</span></span>
+<span><span class="co">## $ oreb                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "1", "0", "3", "0", "1", "0", "0", …</span></span>
+<span><span class="co">## $ dreb                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "10", "10", "3", "3", "4", "8", "0", "1"…</span></span>
+<span><span class="co">## $ reb                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "14", "11", "3", "6", "4", "9", "0", "1"…</span></span>
+<span><span class="co">## $ ast                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3", "11", "0", "1", "2", "0", "0", "0",…</span></span>
+<span><span class="co">## $ stl                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2", "2", "0", "1", "1", "1", "0", "0", …</span></span>
+<span><span class="co">## $ blk                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "3", "2", "1", "0", "0", "0", "0", …</span></span>
+<span><span class="co">## $ to                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "1", "5", "0", "2", "2", "0", "1", "0", …</span></span>
+<span><span class="co">## $ pf                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2", "1", "4", "3", "3", "1", "1", "0", …</span></span>
+<span><span class="co">## $ plus_minus                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "+19", "+4", "+2", "+10", "+7", "-8", "-…</span></span>
+<span><span class="co">## $ pts                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "9", "27", "9", "26", "12", "2", "2", "6…</span></span>
 <span><span class="co">## $ starter                       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FAL…</span></span>
 <span><span class="co">## $ ejected                       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…</span></span>
 <span><span class="co">## $ did_not_play                  <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…</span></span>
-<span><span class="co">## $ active                        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FAL…</span></span>
-<span><span class="co">## $ athlete_jersey                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "77", "8", "2", "1", "1", "5", "46", "22…</span></span>
-<span><span class="co">## $ athlete_id                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2767", "6462", "6585", "6443", "2581018…</span></span>
-<span><span class="co">## $ athlete_short_name            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "E. Ilyasova", "M. Morris Sr.", "A. Drum…</span></span>
+<span><span class="co">## $ active                        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, TRUE, TRUE, TRUE, TRUE, FALSE, FA…</span></span>
+<span><span class="co">## $ athlete_jersey                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "6", "3", "11", "21", "22", "99", "…</span></span>
+<span><span class="co">## $ athlete_id                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "3449", "1966", "6474", "6442", "2444", …</span></span>
+<span><span class="co">## $ athlete_short_name            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "K. Love", "L. James", "T. Thompson", "K…</span></span>
 <span><span class="co">## $ athlete_headshot_href         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/headshots/nba/p…</span></span>
 <span><span class="co">## $ athlete_position_name         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Power Forward", "Small Forward", "Cente…</span></span>
-<span><span class="co">## $ athlete_position_abbreviation <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PF", "SF", "C", "PG", "SG", "SF", "C", …</span></span>
-<span><span class="co">## $ team_name                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Pistons", "Pistons", "Pistons", "Piston…</span></span>
+<span><span class="co">## $ athlete_position_abbreviation <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PF", "SF", "C", "PG", "G", "F", "PG", "…</span></span>
+<span><span class="co">## $ team_name                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Cavaliers", "Cavaliers", "Cavaliers", "…</span></span>
 <span><span class="co">## $ team_logo                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/teamlogos/nba/5…</span></span>
-<span><span class="co">## $ team_id                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "8", "8", "8", "8", "8", "8", "8", "8", …</span></span>
-<span><span class="co">## $ team_abbreviation             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DET", "DET", "DET", "DET", "DET", "DET"…</span></span>
-<span><span class="co">## $ team_color                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "FA002C", "FA002C", "FA002C", "FA002C", …</span></span>
-<span><span class="co">## $ game_id                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 400827888, 400827888, 400827888, 4008278…</span></span>
+<span><span class="co">## $ team_id                       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "5", "5", "5", "5", "5", "5", "5", "5", …</span></span>
+<span><span class="co">## $ team_abbreviation             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "CLE", "CLE", "CLE", "CLE", "CLE", "CLE"…</span></span>
+<span><span class="co">## $ team_color                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "061642", "061642", "061642", "061642", …</span></span>
+<span><span class="co">## $ game_id                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 400878160, 400878160, 400878160, 4008781…</span></span>
 <span><span class="co">## $ season                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2016, 2016, 2016, 2016, 2016, 2016, 2016…</span></span>
-<span><span class="co">## $ season_type                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…</span></span>
-<span><span class="co">## $ game_date                     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2015-10-28, 2015-10-28, 2015-10-28, 201…</span></span></code></pre>
+<span><span class="co">## $ season_type                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3…</span></span>
+<span><span class="co">## $ game_date                     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2016-06-20, 2016-06-20, 2016-06-20, 201…</span></span></code></pre>
 </div>
 <div class="section level4">
 <h4 id="mens-college-basketball-play-by-plays-2006-2021-120-180-seconds">
@@ -438,7 +446,7 @@
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 91.821 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 101.674 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 10135443 rows of men's college basketball play-by-play data from 30950 games.</span></span></code></pre>
@@ -511,7 +519,7 @@
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1.844 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.059 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 66856 rows of men's college basketball team boxscore data from 33428 games.</span></span></code></pre>
@@ -571,7 +579,7 @@
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2016</span><span class="op">:</span><span class="fl">2021</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 6.251 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 7.742 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 677446 rows of men's college basketball player boxscore data from 33441 games.</span></span></code></pre>
