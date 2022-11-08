@@ -883,7 +883,7 @@ espn_nba_scoreboard <- function(season){
       nba_data <- raw_sched[["events"]] %>%
         tibble::tibble(data = .data$.) %>%
         tidyr::unnest_wider("data") %>%
-        tidyr::unchop(.data$competitions) %>%
+        tidyr::unchop("competitions") %>%
         dplyr::select(
           -"id",
           -"uid",
