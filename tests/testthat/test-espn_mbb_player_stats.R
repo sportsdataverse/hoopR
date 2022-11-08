@@ -44,6 +44,13 @@ test_that("ESPN - Get MBB player season stats", {
     "status_name",
     "status_type",
     "status_abbreviation",
+    "defensive_blocks",
+    "defensive_defensive_rebounds",
+    "defensive_steals",
+    "defensive_turnover_points",
+    "defensive_avg_defensive_rebounds",
+    "defensive_avg_blocks",
+    "defensive_avg_steals",
     "general_disqualifications",
     "general_flagrant_fouls",
     "general_fouls",
@@ -113,13 +120,6 @@ test_that("ESPN - Get MBB player season stats", {
     "offensive_two_point_field_goal_pct",
     "offensive_shooting_efficiency",
     "offensive_scoring_efficiency",
-    "defensive_blocks",
-    "defensive_defensive_rebounds",
-    "defensive_steals",
-    "defensive_turnover_points",
-    "defensive_avg_defensive_rebounds",
-    "defensive_avg_blocks",
-    "defensive_avg_steals",
     "team_id",
     "team_guid",
     "team_uid",
@@ -138,7 +138,7 @@ test_that("ESPN - Get MBB player season stats", {
     "logo_href",
     "logo_dark_href"
   )
-  expect_equal(colnames(x), cols)
+  expect_equal(sort(colnames(x)), sort(cols))
   expect_s3_class(x, 'data.frame')
 
 })

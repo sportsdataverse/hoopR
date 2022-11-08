@@ -28,7 +28,7 @@ nbagl_schedule <- function(season = most_recent_nba_season()-1) {
       schedule_df <- resp$lscd$mscd %>%
         jsonlite::toJSON() %>%
         jsonlite::fromJSON(flatten=TRUE) %>%
-        tidyr::unnest(.data$g) %>%
+        tidyr::unnest("g") %>%
         janitor::clean_names() %>%
         dplyr::arrange(.data$gdte) %>%
         make_hoopR_data("NBA G-League Season Schedule Information from NBA.com",Sys.time())

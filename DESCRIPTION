@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
-Version: 1.8.1
+Version: 1.9.0
 Authors@R: 
     c(person(given = "Saiem",
              family = "Gilani",
@@ -67,4 +67,4 @@ Suggests:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1

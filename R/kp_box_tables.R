@@ -63,8 +63,8 @@ kp_box <- function(game_id, year){
           dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
           dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
             stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
-          dplyr::select(.data$ref_id) %>%
-          dplyr::rename(OfficialId=.data$ref_id)
+          dplyr::select("ref_id") %>%
+          dplyr::rename("OfficialId" = "ref_id")
       }
 
       ref_names <- dplyr::bind_rows(lapply(rvest::html_text(refs),
@@ -109,14 +109,16 @@ kp_box <- function(game_id, year){
 
         # box <- xml2::xml_text(box_stat)
         suppressWarnings(
-          x <- x %>% tidyr::separate(col=.data$"Hgt-Wgt-Yr",
+          x <- x %>% tidyr::separate(col="Hgt-Wgt-Yr",
                                      into = c("Hgt","Wgt","Yr"),
                                      sep = "\\s") %>%
             dplyr::mutate_at(c("Wgt","Number","Min","ORtg","%Ps","Pts",
                                "OR","DR","A","TO","Blk","Stl","PF"),as.numeric)
         )
-        x <- x %>% dplyr::mutate(GameId = game_id,
-                                 Year = year) %>%
+        x <- x %>%
+          dplyr::mutate(
+            GameId = game_id,
+            Year = year) %>%
           janitor::clean_names()
         y <- c(y,list(x))
       }
@@ -181,24 +183,25 @@ kp_winprob <- function(game_id, year){
       wp_dataset$Year = year
       wp_dataset <- wp_dataset %>%
         janitor::clean_names() %>%
-        dplyr::rename(Period = .data$pd,
-                      TimeLeft = .data$tl,
-                      VisitorScore = .data$vs,
-                      HomeScore = .data$hs,
-                      VisitorScoring = .data$v_sc,
-                      HomeScoring = .data$h_sc,
-                      PossessionTeam = .data$p,
-                      PossessionNumber = .data$pn) %>%
+        dplyr::rename(
+          "Period" = "pd",
+          "TimeLeft" = "tl",
+          "VisitorScore" = "vs",
+          "HomeScore" = "hs",
+          "VisitorScoring" = "v_sc",
+          "HomeScoring" = "h_sc",
+          "PossessionTeam" = "p",
+          "PossessionNumber" = "pn") %>%
         janitor::clean_names()
       run_str <- stringr::str_extract(stringr::str_remove(q[2], "(.+)var runs="),"(.+?)(?=; var data=)")
       run_str <- gsub("'",'"', run_str)
       runs <- purrr::map_dfr(c(run_str), jsonlite::fromJSON)
       runs <- runs %>%
         dplyr::rename(
-          visitor = .data$V,
-          home = .data$H,
-          start = .data$Start,
-          end = .data$End
+          "visitor" = "V",
+          "home" = "H",
+          "start" = "Start",
+          "end" = "End"
         )
       #---- game_data --------
       game_data_str <- stringr::str_remove(stringr::str_remove(q[2], "(.+)var data="),"makeWP\\(data\\);")
@@ -220,42 +223,57 @@ kp_winprob <- function(game_id, year){
       game_data <- dplyr::bind_cols(game_data, vn, cty, gmtm, dateofgame)
       colnames(game_data) <- gsub(' ','',colnames(game_data))
       game_data <- game_data %>%
-        dplyr::rename(GameId = .data$gid,
-                      Full.Date = .data$dateofgame,
-                      Date = .data$ymd,
-                      GameTime = .data$gmtm,
-                      Venue = .data$vn,
-                      City = .data$cty,
-                      Team1.Rk = .data$rank1,
-                      Team1 = .data$team1,
-                      Team1Score = .data$score1,
-                      Team2.Rk = .data$rank2,
-                      Team2 = .data$team2,
-                      Team2Score = .data$score2,
-                      Dominance.Season.Rk = .data$srank_dominance,
-                      Tension.Season.Rk = .data$srank_tension,
-                      Excitement.Season.Rk = .data$srank_excitement,
-                      LeadChanges.Season.Rk  = .data$srank_favchg,
-                      MinimumWP.Season.Rk = .data$srank_minWP,
-                      Dominance.Rk = .data$rank_dominance,
-                      Tension.Rk = .data$rank_tension,
-                      Excitement.Rk = .data$rank_excitement,
-                      LeadChanges.Rk  = .data$rank_favchg,
-                      MinimumWP.Rk = .data$rank_minWP) %>%
+        dplyr::rename(
+          "GameId" = "gid",
+          "Full.Date" = "dateofgame",
+          "Date" = "ymd",
+          "GameTime" = "gmtm",
+          "Venue" = "vn",
+          "City" = "cty",
+          "Team1.Rk" = "rank1",
+          "Team1" = "team1",
+          "Team1Score" = "score1",
+          "Team2.Rk" = "rank2",
+          "Team2" = "team2",
+          "Team2Score" = "score2",
+          "Dominance.Season.Rk" = "srank_dominance",
+          "Tension.Season.Rk" = "srank_tension",
+          "Excitement.Season.Rk" = "srank_excitement",
+          "LeadChanges.Season.Rk"  = "srank_favchg",
+          "MinimumWP.Season.Rk" = "srank_minWP",
+          "Dominance.Rk" = "rank_dominance",
+          "Tension.Rk" = "rank_tension",
+          "Excitement.Rk" = "rank_excitement",
+          "LeadChanges.Rk"  = "rank_favchg",
+          "MinimumWP.Rk" = "rank_minWP") %>%
         janitor::clean_names()
-      game_data <- game_data %>% dplyr::select(
-        c(
-          'game_id', 'year', 'full_date', 'date',
-          'game_time', 'venue', 'city',
-          'team1', 'team1score', 'team1_rk',
-          'team2', 'team2score', 'team2_rk',
-          'dominance_season_rk', 'tension_season_rk',
-          'excitement_season_rk',
-          'lead_changes_season_rk',
-          'minimum_wp_season_rk', 'dominance_rk',
-          'tension_rk', 'excitement_rk',
-          'lead_changes_rk', 'minimum_wp_rk'),dplyr::everything()
-      )
+      game_data <- game_data %>%
+        dplyr::select(
+            'game_id',
+            'year',
+            'full_date',
+            'date',
+            'game_time',
+            'venue',
+            'city',
+            'team1',
+            'team1score',
+            'team1_rk',
+            'team2',
+            'team2score',
+            'team2_rk',
+            'dominance_season_rk',
+            'tension_season_rk',
+            'excitement_season_rk',
+            'lead_changes_season_rk',
+            'minimum_wp_season_rk',
+            'dominance_rk',
+            'tension_rk',
+            'excitement_rk',
+            'lead_changes_rk',
+            'minimum_wp_rk',
+          dplyr::everything()
+        )
       kenpom <- list(wp_dataset, game_data, runs)
     },
     error = function(e) {

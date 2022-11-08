@@ -1,3 +1,7 @@
+# **hoopR 1.9.0**
+- Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions.
+- Regular minor maintenance on `kp_*` functions
+
 # **hoopR 1.8.1**
 - ```espn_mbb_player_stats()``` function exported properly.
 - ```espn_nba_player_stats()``` function exported properly.

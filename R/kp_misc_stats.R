@@ -131,7 +131,7 @@ kp_officials <- function(year = most_recent_mbb_season()){
 
       colnames(x) <- header_cols
       x <- x %>%
-        dplyr::select(-.data$Last.Game.2) %>%
+        dplyr::select(-"Last.Game.2") %>%
         suppressWarnings(
           x <- x %>%
             dplyr::filter(!is.na(as.numeric(.data$RefRating)))
@@ -435,7 +435,8 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
                          "Year" = year)%>%
         as.data.frame()
       ### Store Data
-      kenpom <- x %>% dplyr::select(-.data$col) %>%
+      kenpom <- x %>%
+        dplyr::select(-"col") %>%
         janitor::clean_names()
     },
     error = function(e) {
@@ -536,7 +537,7 @@ kp_fanmatch <- function(date="2022-02-22"){
         )
       suppressWarnings(
         x <- x %>%
-          tidyr::separate(.data$Game,
+          tidyr::separate("Game",
                           into = c("Winner","col"),
                           sep = ",",
                           extra = "merge"))
@@ -570,14 +571,30 @@ kp_fanmatch <- function(date="2022-02-22"){
       )
       ### Store Data
       x <- x  %>%
-        dplyr::select(-.data$col,-.data$Winner,-.data$Loser,
-                      .data$road_rk, .data$road_team,
-                      .data$home_rk, .data$home_team,
-                      .data$WinRk, .data$WinTeam, .data$WinScore,
-                      .data$LossRk, .data$LossTeam, .data$LossScore,
-                      .data$Poss, .data$Prediction, .data$ThrillScore,
-                      .data$Comeback, .data$Excitement, .data$MVP,
-                      .data$Location, "Time(ET)", .data$Event, .data$Date)
+        dplyr::select(
+          -"col",
+          -"Winner",
+          -"Loser",
+          "road_rk",
+          "road_team",
+          "home_rk",
+          "home_team",
+          "WinRk",
+          "WinTeam",
+          "WinScore",
+          "LossRk",
+          "LossTeam",
+          "LossScore",
+          "Poss",
+          "Prediction",
+          "ThrillScore",
+          "Comeback",
+          "Excitement",
+          "MVP",
+          "Location",
+          "Time(ET)",
+          "Event",
+          "Date")
       suppressWarnings(
         kenpom <- x %>%
           dplyr::mutate_at(c("road_rk","home_rk","WinRk","WinScore", "LossRk","LossScore","Poss","ThrillScore","Comeback",

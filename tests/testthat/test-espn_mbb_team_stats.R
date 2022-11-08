@@ -97,7 +97,7 @@ test_that("ESPN - Get MBB team season stats", {
     "defensive_avg_blocks",
     "defensive_avg_steals"
   )
-  expect_equal(colnames(x), cols)
+  expect_equal(sort(colnames(x)), sort(cols))
   expect_s3_class(x, 'data.frame')
 
 })

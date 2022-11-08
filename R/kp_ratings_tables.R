@@ -64,7 +64,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
             c("Rk","AdjEM","AdjO","AdjO.Rk","AdjD","AdjD.Rk","AdjT","AdjT.Rk",
               "Luck","Luck.Rk","SOS.AdjEM","SOS.AdjEM.Rk","SOS.OppO","SOS.OppO.Rk",
               "SOS.OppD","SOS.OppD.Rk","NCSOS.AdjEM","NCSOS.AdjEM.Rk"), as.numeric) %>%
-          dplyr::select(.data$Year, tidyr::everything())
+          dplyr::select("Year", tidyr::everything())
 
         ### Store Data
         if(year == min_year) {
@@ -1017,7 +1017,7 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
         colnames(x) <- header_cols
 
         x <- x %>%
-          tidyr::separate(.data$Player,
+          tidyr::separate("Player",
                           into = c("Player","col"),
                           sep = ",",
                           extra = "merge")
@@ -1043,7 +1043,7 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
                            "Group" = groups[i]) %>%
           as.data.frame()
         x <- x %>%
-          dplyr::select(-.data$col)
+          dplyr::select(-"col")
 
         if(i == 2) {
           replace_na_with_last <- function(x, p = is.na, d = 0){c(d, x)[cummax(seq_along(x)*(!p(x))) + 1]}

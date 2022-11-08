@@ -21,10 +21,10 @@ ncaa_mbb_NET_rankings <- function(){
     rvest::html_table() %>%
     dplyr::as_tibble() %>%
     dplyr::rename(
-      Quad_1 = .data$`Quad 1`,
-      Quad_2 = .data$`Quad 2`,
-      Quad_3 = .data$`Quad 3`,
-      Quad_4 = .data$`Quad 4`
+      "Quad_1" = "Quad 1",
+      "Quad_2" = "Quad 2",
+      "Quad_3" = "Quad 3",
+      "Quad_4" = "Quad 4"
     ) %>%
     janitor::clean_names() %>%
     make_hoopR_data("NCAA MBB NET Rankings Information from ESPN.com",Sys.time())

@@ -97,8 +97,10 @@ kp_team_history <- function(team){
                                              function(x){
                                                data.frame(x, stringsAsFactors=FALSE)
                                              }))
-      conf_record <- conf_record %>% dplyr::rename(WL.Conf = .data$x)
-      tmrank <- conf %>% rvest::html_elements(".tmrank")
+      conf_record <- conf_record %>%
+        dplyr::rename("WL.Conf" = "x")
+      tmrank <- conf %>%
+        rvest::html_elements(".tmrank")
 
       # xml2::xml_remove(tmrank)
 
@@ -133,7 +135,7 @@ kp_team_history <- function(team){
       suppressWarnings(
         conf <- conf %>% dplyr::filter(!is.na(as.numeric(.data$AdjT)))
       )
-      x <- x %>% dplyr::select(-.data$WL)
+      x <- x %>% dplyr::select(-"WL")
       x <- dplyr::bind_cols(x, WL = conf$WL, WL.Conf = conf_record$WL.Conf)
       x <- x %>%
         dplyr::filter(!is.na(.data$Year)) %>%
@@ -224,7 +226,11 @@ kp_team_history <- function(team){
                            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
       x <- x %>%
         dplyr::mutate(Team = team_name) %>%
-        dplyr::select(.data$Year, .data$Team.Rk,.data$Team,tidyr::everything())
+        dplyr::select(
+          "Year",
+          "Team.Rk",
+          "Team",
+          tidyr::everything())
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
@@ -330,20 +336,22 @@ kp_coach_history <- function(coach){
       conf_record <- (page %>%
                         xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
-      conf_record <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
+      conf_record_wl <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
                                              function(x){
                                                data.frame(x, stringsAsFactors=FALSE)
                                              }))
-      conf_record <- conf_record %>% dplyr::rename(WL.Conf = .data$x)
-      tmrank <- conf %>% rvest::html_elements(".tmrank")
-
-      # xml2::xml_remove(tmrank)
-
-      conf <- conf %>% rvest::html_table()
+      conf_record_wl <- conf_record_wl %>%
+        dplyr::rename("WL.Conf" = "x")
+      tmrank <- conf %>%
+        rvest::html_elements(".tmrank")
+      xml2::xml_remove(conf_record)
+      conf <- conf %>%
+        rvest::html_table()
 
       colnames(conf) <- header_cols
 
-      x <- x %>% rvest::html_table()
+      x <- x %>%
+        rvest::html_table()
 
       colnames(x) <- header_cols
 
@@ -370,8 +378,8 @@ kp_coach_history <- function(coach){
       suppressWarnings(
         conf <- conf %>% dplyr::filter(!is.na(as.numeric(.data$AdjT)))
       )
-      x <- x %>% dplyr::select(-.data$WL)
-      x <- dplyr::bind_cols(x, WL = conf$WL, WL.Conf = conf_record$WL.Conf)
+
+      x <- dplyr::bind_cols(x %>% dplyr::select(-"WL"), WL = conf$WL,  WL.Conf = conf_record_wl$WL.Conf)
       x <- x %>%
         dplyr::filter(!is.na(.data$Year)) %>%
         dplyr::mutate(
@@ -468,13 +476,17 @@ kp_coach_history <- function(coach){
           ), as.numeric)
       )
       x <- dplyr::mutate(x,
-                         "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                         "Team" = sapply(.data$Team, function(arg) {
-                           stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
+                         "NCAA_Seed" = as.numeric(gsub("[^0-9]", "", .data$Team)),
+                         "Team" = stringr::str_trim(stringr::str_replace(stringr::str_remove(.data$Team,'\\d+| \\*| \\*+'),'\\*+','')))
 
       x <- x %>%
         dplyr::mutate(Coach = coach) %>%
-        dplyr::select(.data$Year, .data$Team.Rk,.data$Team, .data$Coach,tidyr::everything())
+        dplyr::select(
+          "Year",
+          "Team.Rk",
+          "Team",
+          "Coach",
+          tidyr::everything())
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()

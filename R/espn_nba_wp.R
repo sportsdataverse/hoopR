@@ -67,7 +67,7 @@ espn_nba_wp <- function(game_id) {
         jsonlite::fromJSON(flatten = TRUE) %>%
         janitor::clean_names() %>%
         dplyr::rename(
-          play_id = .data$id
+          "play_id" = "id"
         )
       espn_wp <- espn_wp_vals %>%
         dplyr::left_join(espn_plays, by = "play_id")%>%
