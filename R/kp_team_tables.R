@@ -1670,11 +1670,11 @@ kp_team_depth_chart <- function(team, year= 2021){
         )
       suppressWarnings(
         depth1 <- depth1 %>%
-          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
-          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
-          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
-          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
-          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
+          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"), sep = "[^\\w']")
       )
       suppressWarnings(
         depth1 <- depth1 %>%
@@ -1859,11 +1859,11 @@ kp_team_lineups <- function(team, year=2021){
         )
       suppressWarnings(
         depth2 <- depth2 %>%
-          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName")) %>%
-          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName")) %>%
-          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName")) %>%
-          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName")) %>%
-          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"))
+          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName"), sep = "[^\\w']") %>%
+          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"), sep = "[^\\w']")
       )
       suppressWarnings(
         depth2 <- depth2 %>%
