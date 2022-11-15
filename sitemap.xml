@@ -139,6 +139,9 @@
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.html</loc>
   </url>
   <url>
@@ -173,6 +176,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.html</loc>
