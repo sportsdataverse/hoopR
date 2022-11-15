@@ -2,6 +2,9 @@
 
 This is a minor release that adds the following:
  * Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions
+ * ```espn_mbb_game_rosters()``` function added.
+ * ```espn_nba_game_rosters()``` function added.
+
  
 
 ## R CMD check results
