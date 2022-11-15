@@ -729,6 +729,252 @@ espn_nba_player_box <- function(game_id){
 }
 
 
+
+#' **Get ESPN NBA game rosters**
+#' @author Saiem Gilani
+#' @param game_id Game ID
+#' @return A game rosters data frame
+#' @keywords NBA Game Roster
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows
+#' @importFrom tidyr unnest unnest_wider everything
+#' @import rvest
+#' @export
+#'
+#' @examples
+#' \donttest{
+#'   try(espn_nba_game_rosters(game_id = 401283399))
+#' }
+espn_nba_game_rosters <- function(game_id) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  tryCatch(
+    expr = {
+      play_base_url <- paste0(
+        "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/",
+        game_id, "/competitions/",
+        game_id,"/competitors/")
+      game_res <- httr::RETRY("GET", play_base_url)
+      # Check the result
+      check_status(game_res)
+
+      game_resp <- game_res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+      game_df <- jsonlite::fromJSON(game_resp)[["items"]] %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        dplyr::rename("team_statistics_href" = "statistics.$ref")
+
+      colnames(game_df) <- gsub(".\\$ref","_href", colnames(game_df))
+
+      game_df <- game_df %>%
+        dplyr::rename(
+          "team_id" = "id",
+          "team_uid" = "uid")
+
+      game_df$game_id <- game_id
+
+      teams_df <- purrr::map_dfr(game_df$team_href, function(x){
+
+        res <- RETRY("GET", x)
+        # Check the result
+        check_status(res)
+
+        team_df <- res %>%
+          httr::content(as = "text", encoding = "UTF-8") %>%
+          jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
+
+        team_df[["links"]] <- NULL
+        team_df[["injuries"]] <- NULL
+        team_df[["record"]] <- NULL
+        team_df[["athletes"]] <- NULL
+        team_df[["venue"]] <- NULL
+        team_df[["groups"]] <- NULL
+        team_df[["ranks"]] <- NULL
+        team_df[["statistics"]] <- NULL
+        team_df[["leaders"]] <- NULL
+        team_df[["links"]] <- NULL
+        team_df[["notes"]] <- NULL
+        team_df[["franchise"]] <- NULL
+        team_df[["againstTheSpreadRecords"]] <- NULL
+        team_df[["oddsRecords"]] <- NULL
+        team_df[["college"]] <- NULL
+        team_df[["transactions"]] <- NULL
+        team_df[["leaders"]] <- NULL
+        team_df[["depthCharts"]] <- NULL
+        team_df[["awards"]] <- NULL
+        team_df[["events"]] <- NULL
+
+        team_df <- team_df %>%
+          purrr::map_if(is.list,as.data.frame) %>%
+          as.data.frame() %>%
+          dplyr::select(
+            -dplyr::any_of(
+              c("logos.width",
+                "logos.height",
+                "logos.alt",
+                "logos.rel..full.",
+                "logos.rel..default.",
+                "logos.rel..scoreboard.",
+                "logos.rel..scoreboard..1",
+                "logos.rel..scoreboard.2",
+                "logos.lastUpdated",
+                "logos.width.1",
+                "logos.height.1",
+                "logos.alt.1",
+                "logos.rel..full..1",
+                "logos.rel..dark.",
+                "logos.rel..dark..1",
+                "logos.lastUpdated.1",
+                "logos.width.2",
+                "logos.height.2",
+                "logos.alt.2",
+                "logos.rel..full..2",
+                "logos.rel..scoreboard.",
+                "logos.lastUpdated.2",
+                "logos.width.3",
+                "logos.height.3",
+                "logos.alt.3",
+                "logos.rel..full..3",
+                "logos.lastUpdated.3",
+                "X.ref",
+                "X.ref.1",
+                "X.ref.2"))) %>%
+          janitor::clean_names()
+
+        colnames(team_df)[1:13] <- paste0("team_",colnames(team_df)[1:13])
+
+        team_df <- team_df %>%
+          dplyr::rename(
+            "logo_href" = "logos_href",
+            "logo_dark_href" = "logos_href_1") %>%
+          dplyr::left_join(
+            game_df %>%
+              dplyr::select(
+                "game_id",
+                "team_id",
+                "team_uid",
+                "order",
+                "homeAway",
+                "winner",
+                "roster_href"),
+            by = c("team_id" = "team_id",
+                   "team_uid" = "team_uid")
+          )
+
+      })
+      team_ids <- teams_df$team_id
+      ## Inputs
+      ## game_id
+      team_roster_df <- purrr::map_dfr(teams_df$team_id, function(x){
+
+        res <- httr::RETRY("GET", paste0(play_base_url, x, "/roster"))
+
+        # Check the result
+        check_status(res)
+
+        resp <- res %>%
+          httr::content(as = "text", encoding = "UTF-8")
+
+        raw_play_df <- jsonlite::fromJSON(resp)[["entries"]]
+
+        raw_play_df <- raw_play_df %>%
+          jsonlite::toJSON() %>%
+          jsonlite::fromJSON(flatten = TRUE) %>%
+          dplyr::mutate(team_id = x) %>%
+          dplyr::select(-"period", -"forPlayerId", -"active")
+
+        raw_play_df <- raw_play_df %>%
+          dplyr::left_join(teams_df, by = c("team_id" = "team_id"))
+
+      })
+
+      colnames(team_roster_df) <- gsub(".\\$ref","_href", colnames(team_roster_df))
+
+      athlete_roster_df <- purrr::map_dfr(team_roster_df$athlete_href, function(x){
+
+        res <- httr::RETRY("GET", x)
+
+        # Check the result
+        check_status(res)
+
+        resp <- res %>%
+          httr::content(as = "text", encoding = "UTF-8")
+
+        raw_play_df <- jsonlite::fromJSON(resp, flatten = TRUE)
+        raw_play_df[['links']] <- NULL
+        raw_play_df[['injuries']] <- NULL
+        raw_play_df[['teams']] <- NULL
+        raw_play_df[['team']] <- NULL
+        raw_play_df[['college']] <- NULL
+        raw_play_df[['proAthlete']] <- NULL
+        raw_play_df[['statistics']] <- NULL
+        raw_play_df[['notes']] <- NULL
+        raw_play_df[['eventLog']] <- NULL
+        raw_play_df[["$ref"]] <- NULL
+        raw_play_df[["position"]][["$ref"]] <- NULL
+
+
+        raw_play_df2 <- raw_play_df %>%
+          jsonlite::toJSON() %>%
+          jsonlite::fromJSON(flatten = TRUE) %>%
+          as.data.frame() %>%
+          dplyr::mutate(id = as.integer(.data$id)) %>%
+          dplyr::rename(
+            "athlete_id" = "id",
+            "athlete_uid" = "uid",
+            "athlete_guid" = "guid",
+            "athlete_type" = "type",
+            "athlete_display_name" = "displayName"
+          )
+
+        raw_play_df2 <- raw_play_df2 %>%
+          dplyr::left_join(team_roster_df, by = c("athlete_id" = "playerId"))
+
+      })
+
+      colnames(athlete_roster_df) <- gsub(".\\$ref","_href", colnames(athlete_roster_df))
+
+      athlete_roster_df <- athlete_roster_df %>%
+        janitor::clean_names() %>%
+        dplyr::select(-dplyr::any_of(c(
+          "x_ref",
+          "x_ref_1",
+          "contract_ref",
+          "contract_ref_1",
+          "contract_ref_2",
+          "draft_ref",
+          "draft_ref_1",
+          "athlete_href",
+          "position_ref",
+          "position_href",
+          "roster_href",
+          "statistics_href"
+        ))) %>%
+        make_hoopR_data("ESPN NBA Game Roster Information from ESPN.com",Sys.time())
+
+
+    },
+    error = function(e) {
+      message(
+        glue::glue(
+          "{Sys.time()}: Invalid arguments or no game roster data for {game_id} available!"
+        )
+      )
+    },
+    warning = function(w) {
+
+    },
+    finally = {
+
+    }
+  )
+  return(athlete_roster_df)
+}
+
+
+
+
 #' **Get ESPN NBA team names and IDs**
 #' @author Saiem Gilani
 #' @return A teams data frame
