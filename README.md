@@ -66,9 +66,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.42 sec elapsed
+    ## 1.53 sec elapsed
 
-    ## 75950 rows of NBA play-by-play data from 158 games.
+    ## 105176 rows of NBA play-by-play data from 220 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2022) \~ 2-3 minutes**
 
@@ -80,9 +80,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 0.82 sec elapsed
+    ## 1.62 sec elapsed
 
-    ## 70433 rows of men's college basketball play-by-play data from 207 games.
+    ## 208803 rows of men's college basketball play-by-play data from 624 games.
 
 ## **Documentation**
 

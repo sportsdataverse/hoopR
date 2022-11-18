@@ -51,7 +51,7 @@ test_that("ESPN - Get NBA team box score only", {
     "opponent_mascot",
     "opponent_abbrev"
   )
-  expect_equal(colnames(x), cols)
+  expect_equal(sort(colnames(x)), sort(cols))
   expect_s3_class(x, 'data.frame')
 
 })
