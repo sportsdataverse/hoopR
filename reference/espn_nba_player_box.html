@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -162,39 +162,37 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_player_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401283399</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Player Box Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 1.9.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-11-15 03:08:26 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 32</span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_player_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401071880</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Player Box Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 1.9.1</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-11-18 05:01:00 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 41</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    athlete…¹ team_…² min   fg    fg3   ft    oreb  dreb  reb   ast   stl   blk  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Isaiah R… Thunder 23    4-9   1-3   1-2   2     6     8     4     2     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Darius B… Thunder 32    7-14  4-8   0-0   0     7     7     2     0     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Luguentz… Thunder 29    2-10  1-7   6-7   1     1     2     1     0     1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Shai Gil… Thunder 33    6-14  2-5   8-8   1     2     3     6     0     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Theo Mal… Thunder 34    4-7   4-5   2-2   0     5     5     2     2     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Darius M… Thunder 9     1-1   1-1   0-0   0     1     1     2     0     1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Kenrich … Thunder 24    1-1   0-0   0-0   1     4     5     3     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Justin J… Thunder 10    1-2   1-2   1-2   1     1     2     1     0     1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Mike Mus… Thunder 26    7-11  5-9   2-2   0     3     3     0     0     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Hamidou … Thunder 20    2-9   0-1   4-5   0     3     3     4     0     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Kyle And… Grizzl… 26    7-11  2-3   4-6   0     5     5     5     5     1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Dillon B… Grizzl… 30    5-13  0-3   7-7   0     1     1     1     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Jonas Va… Grizzl… 28    9-12  0-0   4-6   5     7     12    2     0     1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Ja Morant Grizzl… 35    4-14  0-3   7-8   1     10    11    12    1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> Grayson … Grizzl… 32    7-13  6-10  2-2   0     4     4     3     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> Brandon … Grizzl… 25    5-8   2-2   0-2   0     6     6     2     2     2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> Sean McD… Grizzl… 17    1-2   1-2   2-2   0     1     1     0     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> Xavier T… Grizzl… 19    3-4   1-1   0-0   0     2     2     2     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> Tyus Jon… Grizzl… 22    0-4   0-1   0-0   1     1     2     4     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span> John Kon… Grizzl… 6     1-2   0-1   0-0   0     0     0     0     1     0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 20 more variables: to &lt;chr&gt;, pf &lt;chr&gt;, `+/-` &lt;chr&gt;, pts &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   starter &lt;lgl&gt;, ejected &lt;lgl&gt;, did_not_play &lt;lgl&gt;, active &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_jersey &lt;chr&gt;, athlete_id &lt;chr&gt;, athlete_short_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_headshot_href &lt;chr&gt;, athlete_position_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_position_abbreviation &lt;chr&gt;, team_name &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_id &lt;chr&gt;, team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_alternate_color &lt;chr&gt;, and abbreviated variable names …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Kenrich … Pelica… 29    5-8   2-4   0-0   0     5     5     5     0     2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Christia… Pelica… 24    5-14  2-3   2-2   3     4     7     0     0     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Jahlil O… Pelica… 35    10-14 1-1   2-2   6     8     14    3     0     2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Elfrid P… Pelica… 39    10-19 2-7   4-5   0     6     6     14    1     3    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Ian Clark Pelica… 36    11-21 7-15  2-3   2     2     4     3     2     2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Cheick D… Pelica… 29    4-5   0-0   0-0   3     8     11    2     1     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Solomon … Pelica… 27    5-12  3-7   0-0   0     6     6     1     0     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Dairis B… Pelica… 21    2-8   2-5   0-0   0     2     2     0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Nemanja … Kings   21    6-8   3-4   0-0   0     0     0     2     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Harrison… Kings   37    10-18 4-7   5-6   2     2     4     1     0     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Willie C… Kings   19    3-7   0-0   3-4   3     4     7     2     1     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> De'Aaron… Kings   35    10-18 1-3   3-3   2     4     6     11    3     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Buddy Hi… Kings   32    5-15  2-10  0-0   2     3     5     6     1     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Marvin B… Kings   32    8-18  1-3   2-4   5     9     14    0     0     1    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> Corey Br… Kings   13    0-2   0-0   0-0   1     2     3     0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> Troy Wil… Kings   3     0-2   0-1   0-0   0     0     0     0     0     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> Yogi Fer… Kings   19    2-6   1-3   0-0   0     3     3     4     3     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> Bogdan B… Kings   29    6-15  4-9   0-0   1     4     5     1     2     0    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 29 more variables: to &lt;chr&gt;, pf &lt;chr&gt;, `+/-` &lt;chr&gt;, pts &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   reason &lt;chr&gt;, starter &lt;lgl&gt;, ejected &lt;lgl&gt;, did_not_play &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   active &lt;lgl&gt;, athlete_uid &lt;chr&gt;, athlete_jersey &lt;chr&gt;, athlete_guid &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_id &lt;chr&gt;, athlete_short_name &lt;chr&gt;, athlete_headshot_alt &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_headshot_href &lt;chr&gt;, athlete_position_display_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_position_name &lt;chr&gt;, athlete_position_abbreviation &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_uid &lt;chr&gt;, team_alternate_color &lt;chr&gt;, team_color &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
