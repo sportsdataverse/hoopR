@@ -1,3 +1,6 @@
+# # **hoopR 1.9.1**
+- Updates under-the-hood urls to the ESPN site API v2 summary endpoints
+
 # **hoopR 1.9.0**
 - Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions.
 - Regular minor maintenance on `kp_*` functions

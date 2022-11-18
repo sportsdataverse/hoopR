@@ -19,22 +19,31 @@ test_that("ESPN - Get NBA player box score only", {
     "pf",
     "+/-",
     "pts",
+    "reason",
     "starter",
     "ejected",
     "did_not_play",
     "active",
+    "athlete_uid",
     "athlete_jersey",
+    "athlete_guid",
     "athlete_id",
     "athlete_short_name",
+    "athlete_headshot_alt",
     "athlete_headshot_href",
+    "athlete_position_display_name",
     "athlete_position_name",
     "athlete_position_abbreviation",
+    "team_uid",
+    "team_alternate_color",
+    "team_color",
+    "team_display_name",
     "team_name",
     "team_logo",
+    "team_location",
     "team_id",
     "team_abbreviation",
-    "team_color",
-    "team_alternate_color"
+    "team_slug"
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, 'data.frame')
