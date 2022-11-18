@@ -128,13 +128,14 @@ test_that("ESPN - Get MBB play by play all", {
     "team_color",
     "team_alternate_color"
   )
-  expect_equal(colnames(x1), cols_x1)
+
+  expect_equal(sort(colnames(x1)), sort(cols_x1))
   expect_s3_class(x1, 'data.frame')
 
-  expect_equal(colnames(x2), cols_x2)
+  expect_equal(sort(colnames(x2)), sort(cols_x2))
   expect_s3_class(x2, 'data.frame')
 
-  expect_equal(colnames(x3), cols_x3)
+  expect_equal(sort(colnames(x3)), sort(cols_x3))
   expect_s3_class(x3, 'data.frame')
 
 })

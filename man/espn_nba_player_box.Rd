@@ -17,7 +17,7 @@ A player boxscore data frame
 }
 \examples{
 \donttest{
-  try(espn_nba_player_box(game_id = 401283399))
+  try(espn_nba_player_box(game_id = 401071880))
 }
 
 }
