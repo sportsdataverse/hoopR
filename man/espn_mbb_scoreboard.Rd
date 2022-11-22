@@ -17,8 +17,8 @@ Returns a tibble
 }
 \examples{
 
-# Get schedule from date 2022-02-15
+# Get schedule from date 2022-11-17
 \donttest{
-  try(espn_mbb_scoreboard (season = "20220215"))
+  try(espn_mbb_scoreboard (season = "20221117"))
 }
 }

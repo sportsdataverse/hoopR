@@ -793,7 +793,7 @@ espn_nba_game_rosters <- function(game_id) {
 
       teams_df <- purrr::map_dfr(game_df$team_href, function(x){
 
-        res <- RETRY("GET", x)
+        res <- httr::RETRY("GET", x)
         # Check the result
         check_status(res)
 
@@ -970,7 +970,6 @@ espn_nba_game_rosters <- function(game_id) {
         ))) %>%
         make_hoopR_data("ESPN NBA Game Roster Information from ESPN.com",Sys.time())
 
-
     },
     error = function(e) {
       message(
@@ -1107,9 +1106,9 @@ espn_nba_teams <- function(){
 #' @export
 #' @examples
 #'
-#' # Get schedule from date 2022-02-15 (returns 1000 results, max allowable.)
+#' # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
 #' \donttest{
-#'   try(espn_nba_scoreboard (season = "20220215"))
+#'   try(espn_nba_scoreboard (season = "20221117"))
 #' }
 
 espn_nba_scoreboard <- function(season){
@@ -1271,7 +1270,7 @@ espn_nba_scoreboard <- function(season){
             assists_leader_pos = list(3, "leaders", 1, "athlete", "position", "abbreviation"),
           )
 
-        if ("broadcasts" %in% names(schedule_out)) {
+        if ("broadcasts" %in% names(schedule_out) && !any(is.na(schedule_out[['broadcasts']]))) {
           schedule_out %>%
             tidyr::hoist(
               .data$broadcasts,
@@ -1280,17 +1279,14 @@ espn_nba_scoreboard <- function(season){
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
-        }
-
-        else {
+        } else {
           schedule_out %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         }
-      }
-      else {
+      } else {
 
-        if ("broadcasts" %in% names(nba_data)) {
+        if ("broadcasts" %in% names(nba_data) && !any(is.na(nba_data[['broadcasts']]))) {
           nba_data %>%
             tidyr::hoist(
               .data$broadcasts,
@@ -1299,9 +1295,7 @@ espn_nba_scoreboard <- function(season){
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
-        }
-
-        else {
+        } else {
           nba_data %>%
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
