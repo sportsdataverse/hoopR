@@ -1,0 +1,68 @@
+library(tidyverse)
+library(rvest)
+library(xml2)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(stringr)
+library(xml2)
+source("data-raw/pull_team_page.R")
+teams = hoopR::teams_links$Team
+year=2021
+
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2010)
+# BRRR::skrrrahh(sound=27)
+# BRRR::skrrrahh(sound=27)
+
+browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# kp_team_player_stats(browser, team = "Florida St.", year = 2021)
+# gather_team_pages(browser, year = 2007)
+# BRRR::skrrrahh(sound=27)
+# BRRR::skrrrahh(sound=27)
+
+
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2019)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2018)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2017)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2016)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2015)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2014)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2013)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2012)
+#
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2011)
+#
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2010)
+#
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2009)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2008)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2007)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2006)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2005)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2004)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2003)
+# browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
+# gather_team_pages(browser, year = 2002)
+BRRR::skrrrahh(sound=26)
+BRRR::skrrrahh(sound=26)
+
+
+

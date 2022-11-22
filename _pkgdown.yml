@@ -80,6 +80,8 @@ navbar:
         href: articles/index.html
       - text: "Getting Started with hoopR"
         href: articles/getting-started-hoopR.html
+      - text: "Accessing KenPom data with hoopR"
+        href: articles/intro-to-hoopR.html
       - text: "KenPom Example Functions"
         href: articles/kenpom-example-functions.html
     news:
@@ -216,6 +218,7 @@ reference:
     desc: Data included within the package
     contents:
       - '`teams_links`'
+      - '`nba_teams`'
   - subtitle: hoopR Helper Functions
     desc: Internal functions used by hoopR
     contents:
