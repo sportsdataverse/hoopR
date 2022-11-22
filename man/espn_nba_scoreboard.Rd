@@ -17,8 +17,8 @@ Returns a tibble
 }
 \examples{
 
-# Get schedule from date 2022-02-15 (returns 1000 results, max allowable.)
+# Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
 \donttest{
-  try(espn_nba_scoreboard (season = "20220215"))
+  try(espn_nba_scoreboard (season = "20221117"))
 }
 }
