@@ -30,6 +30,7 @@
 #' \item{\code{display_name}}{character.}
 #' \item{\code{mascot}}{character.}
 #' \item{\code{nickname}}{character.}
+#' \item{\code{team}}{character.}
 #' \item{\code{color}}{character.}
 #' \item{\code{alternate_color}}{character.}
 #' \item{\code{logo}}{character.}
