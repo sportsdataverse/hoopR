@@ -26,8 +26,8 @@ A data frame with 30 rows and 10 variables:\
 \item{\code{alternate_color}}{character.}
 \item{\code{logo}}{character.}
 \item{\code{logo_dark}}{character.}
-\item{\code{logo_href_3}}{character.}
-\item{\code{logo_href_4}}{character.}
+\item{\code{logos_href_3}}{character.}
+\item{\code{logos_href_4}}{character.}
 }
 }
 \usage{
