@@ -47,6 +47,8 @@ Sys.setenv(KP_PW = "XX-YOUR-PASSWORD-XX")
 This is the function that is evaluated to log you in to [kenpom.com](kenpom.com) to use the functions. In prior versions, this function needed to be set and passed as a parameter to the functions for usage, but is now applied under the hood within each KenPom (`kp_`) function.
 
 ```{r browser_old, warning = FALSE, eval=FALSE}
+pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+
 browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 ```
 
@@ -57,7 +59,7 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load(hoopR, dplyr, ggplot2, animation, ggimage, png, glue)
+pacman::p_load(dplyr, ggplot2, animation, ggimage, png, glue)
 
 ```
 
