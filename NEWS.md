@@ -1,4 +1,4 @@
-# # **hoopR 1.9.1**
+# **hoopR 1.9.1**
 - Updates under-the-hood urls to the ESPN site API v2 summary endpoints
 
 # **hoopR 1.9.0**

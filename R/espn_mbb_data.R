@@ -916,7 +916,7 @@ espn_mbb_game_rosters <- function(game_id) {
 
       teams_df <- purrr::map_dfr(game_df$team_href, function(x){
 
-        res <- RETRY("GET", x)
+        res <- httr::RETRY("GET", x)
         # Check the result
         check_status(res)
 
@@ -1082,7 +1082,6 @@ espn_mbb_game_rosters <- function(game_id) {
           "statistics_href"
         ))) %>%
         make_hoopR_data("ESPN MBB Game Roster Information from ESPN.com",Sys.time())
-      #---- Player Box ------
 
     },
     error = function(e) {
@@ -1418,7 +1417,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             assists_leader_pos = list(3, "leaders", 1, "athlete", "position", "abbreviation"),
           )
 
-        if ("broadcasts" %in% names(schedule_out)) {
+        if ("broadcasts" %in% names(schedule_out) && !any(is.na(schedule_out[['broadcasts']]))) {
           schedule_out %>%
             tidyr::hoist(
               .data$broadcasts,
@@ -1427,17 +1426,14 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
-        }
-
-        else {
+        } else {
           schedule_out %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         }
-      }
-      else {
+      } else {
 
-        if ("broadcasts" %in% names(mbb_data)) {
+        if ("broadcasts" %in% names(mbb_data) && !any(is.na(mbb_data[['broadcasts']]))) {
           mbb_data %>%
             tidyr::hoist(
               .data$broadcasts,
@@ -1446,9 +1442,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
-        }
-
-        else {
+        } else {
           mbb_data %>%
             dplyr::select(!where(is.list)) %>%
             janitor::clean_names() %>%
@@ -1483,9 +1477,9 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' @export
 #' @examples
 #'
-#' # Get schedule from date 2022-02-15
+#' # Get schedule from date 2022-11-17
 #' \donttest{
-#'   try(espn_mbb_scoreboard (season = "20220215"))
+#'   try(espn_mbb_scoreboard (season = "20221117"))
 #' }
 
 espn_mbb_scoreboard <- function(season) {
