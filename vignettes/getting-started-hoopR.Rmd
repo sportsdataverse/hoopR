@@ -47,7 +47,7 @@ I'm Saiem Gilani, one of the [authors](https://hoopR.sportsdataverse.org/authors
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR", dependencies = TRUE, update = TRUE)
+pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
 pacman::p_load(tidyverse, zoo, ggimage, gt)
 ```
