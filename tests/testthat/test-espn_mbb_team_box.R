@@ -27,7 +27,6 @@ test_that("ESPN - Get MBB team box score only", {
     "total_rebounds",
     "offensive_rebounds",
     "defensive_rebounds",
-    "team_rebounds",
     "assists",
     "steals",
     "blocks",
