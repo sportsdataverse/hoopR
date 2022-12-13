@@ -41,7 +41,7 @@ kp_team_schedule <- function(team, year = 2022){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       if(year >= 2011){
         sched_header_cols<- c("Day.Date","Team.Rk","Opponent.Rk","Opponent","Result",
                               "Poss","OT","Location","Record","Conference", "Postseason")
@@ -422,6 +422,7 @@ kp_gameplan <- function(team, year=2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Date","Opponent.Rk",	"Opponent","Result","Location","Pace",
                        "Off.Eff", "Off.Eff.Rk", "Off.eFG.Pct",	"Off.TO.Pct",	"Off.OR.Pct", "Off.FTR",
                        "Off.FGM_2-A", "Off.FG_2.Pct", "Off.FGM_3-A",	"Off.FG_3.Pct",	"Off.FG_3A.Pct",
@@ -639,7 +640,7 @@ kp_opptracker <- function(team, year = 2021){
                     "&t=o")
 
       page_o <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols<- c("Date","Opponent","Result","AdjOE","AdjOE.Rk",
                       "Off.eFG.Pct","Off.eFG.Pct.Rk","Off.TO.Pct","Off.TO.Pct.Rk",
                       "Off.OR.Pct","Off.OR.Pct.Rk","Off.FTRate","Off.FTRate.Rk",
@@ -726,6 +727,7 @@ kp_opptracker <- function(team, year = 2021){
                     "&t=d")
 
       page_d <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       opptracker_d <- (page_d %>%
                          xml2::read_html() %>%
                          rvest::html_elements(css='#conf-table'))[[1]] %>%
@@ -810,7 +812,7 @@ kp_team_players <- function(team, year = 2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       player_links <- page %>%
         xml2::read_html() %>%
         rvest::html_elements(css='#player-table') %>%
@@ -1038,7 +1040,7 @@ kp_player_career <- function(player_id){
                     "p=",player_id)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       #--- Player Info ----
       player_info <- (page %>%
                         xml2::read_html() %>%
@@ -1292,7 +1294,7 @@ kp_minutes_matrix <- function(team, year = 2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols<- c("Date","Opponent.Rk","Opponent","Result")
 
       x <- (page %>%
@@ -1379,7 +1381,7 @@ kp_team_player_stats <- function(team, year = 2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       players <- (page %>%
                     xml2::read_html() %>%
                     rvest::html_elements(css='#player-table'))
@@ -1618,7 +1620,7 @@ kp_team_depth_chart <- function(team, year= 2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       depth1_header_cols<- c("PG", "PG.Min.Pct", "SG", "SG.Min.Pct", "SF", "SF.Min.Pct",
                              "PF", "PF.Min.Pct", "C", "C.Min.Pct")
 
@@ -1807,7 +1809,7 @@ kp_team_lineups <- function(team, year=2021){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       depth2_header_cols<- c("Rk","PG", "SG", "SF",
                              "PF", "C", "Min.Pct")
 

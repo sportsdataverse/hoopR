@@ -34,6 +34,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
         ### Pull Data
         url <- paste0("https://kenpom.com/index.php?y=", year)
         page <- rvest::session_jump_to(browser, url)
+        Sys.sleep(5)
         header_cols <- c("Rk", "Team", "Conf", "W-L",
                          "AdjEM", "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk",
                          "AdjT", "AdjT.Rk", "Luck", "Luck.Rk",
@@ -125,6 +126,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
         ### Pull Data
         url <- paste0("https://kenpom.com/summary.php?y=", year)
         page <- rvest::session_jump_to(browser, url)
+        Sys.sleep(5)
         if(year<2010){
 
           header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
@@ -269,6 +271,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
         url <- paste0("https://kenpom.com/stats.php?",
                       "y=", year)
         page <- rvest::session_jump_to(browser, url)
+        Sys.sleep(5)
         header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk",
                          "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
                          "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
@@ -366,6 +369,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
                       "y=", year)
 
         page <- rvest::session_jump_to(browser, url)
+        Sys.sleep(5)
         header_cols <- c("Team", "Conf",
                          "Off.FT.Pct", "Off.FT.Pct.Rk",
                          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
@@ -461,6 +465,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
                       "y=", year)
 
         page <- rvest::session_jump_to(browser, url)
+        Sys.sleep(5)
         if(year<2008){
           header_cols <- c("Team", "Conf",
                            "Avg.Hgt", "Avg.Hgt.Rk",
@@ -604,7 +609,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
                       "y=", year)
 
         page <- rvest::session_jump_to(browser, url)
-
+        Sys.sleep(5)
         header_cols <- c("Team", "Conf", "TwoFoulParticpation.Pct",
                          "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
                          "TwoFoulTotalTime","TwoFoulTotalTime.Rk",
@@ -696,7 +701,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
                       "y=", year, "&od=o")
 
         page <- rvest::session_jump_to(browser, url)
-
+        Sys.sleep(5)
         header_cols <- c("Team", "Conf",
                          "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
                          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
@@ -878,7 +883,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
                       "&c=", conf_only)
 
         page <- rvest::session_jump_to(browser, url)
-
+        Sys.sleep(5)
         header_cols <- c("Rk","Player","Team", metric,
                          "Hgt","Wgt","Yr")
         y <- list()
@@ -921,7 +926,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
                       "&c=", conf_only)
 
         page <- rvest::session_jump_to(browser, url)
-
+        Sys.sleep(5)
         header_cols <- c("Rk","Player","Team", metric,
                          "Hgt","Wgt","Yr")
 
@@ -995,7 +1000,7 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
                     "y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       y <- list()
       for(i in 1:2){
 

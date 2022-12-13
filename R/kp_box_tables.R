@@ -34,7 +34,7 @@ kp_box <- function(game_id, year){
 
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       teams <- page %>%
         xml2::read_html() %>%
         rvest::html_elements(".teamnav") %>%
@@ -168,7 +168,7 @@ kp_winprob <- function(game_id, year){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       q <- (page %>%
               xml2::read_html() %>%
               rvest::html_elements("#content-header") %>%

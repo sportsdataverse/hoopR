@@ -44,6 +44,7 @@ kp_trends <- function(){
       ### Pull Data
       url <- "https://kenpom.com/trends.php"
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
                        "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
                        "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
@@ -120,6 +121,7 @@ kp_officials <- function(year = most_recent_mbb_season()){
       ### Pull Data
       url <- paste0("https://kenpom.com/officials.php?y=",year)
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Rk","OfficialName","RefRating","Gms","Last.Game",
                        "Last.Game.1","Last.Game.2")
 
@@ -205,6 +207,7 @@ kp_referee <- function(referee, year){
                     "r=",referee,
                     "&y=",year)
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("GameNumber","Date","Time (ET)","Game","Location",
                        "Venue","Conference", "ThrillScore")
 
@@ -284,6 +287,7 @@ kp_hca <- function(){
 
       url <- paste0("https://kenpom.com/hca.php")
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Team",	"Conf",	"HCA","HCA.Rk",	"PF","PF.Rk",	"Pts","Pts.Rk",	"NST","NST.Rk",
                        "Blk","Blk.Rk",	"Elev","Elev.Rk")
 
@@ -355,7 +359,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
       url <- paste0("https://kenpom.com/arenas.php?y=",year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols <- c("Rk","Team",	"Conf",	"Arena",
                        "Alternate")
 
@@ -419,6 +423,7 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
                     "y=", year,
                     "&s=", attr)
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Rk","Data","Game",
                        "col","Location","Conf",
                        attr)
@@ -502,6 +507,7 @@ kp_fanmatch <- function(date="2022-02-22"){
       url <- paste0("https://kenpom.com/fanmatch.php?",
                     "d=", date)
       page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
       header_cols <- c("Game","Prediction","Time(ET)",
                        "Location","ThrillScore","Comeback","Excitement")
 
