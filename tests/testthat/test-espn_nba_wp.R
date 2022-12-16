@@ -8,7 +8,8 @@ test_that("ESPN - Get NBA Win Probability", {
     "away_win_percentage", "tie_percentage",
     "sequence_number", "text", "away_score",
     "home_score", "scoring_play", "score_value",
-    "participants", "shooting_play", "type_id",
+    "participants",
+    "wallclock", "shooting_play", "type_id",
     "type_text", "period_number", "period_display_value",
     "clock_display_value",
     "team_id", "coordinate_x", "coordinate_y"

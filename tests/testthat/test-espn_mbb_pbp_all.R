@@ -77,7 +77,6 @@ test_that("ESPN - Get MBB play by play all", {
     "total_rebounds",
     "offensive_rebounds",
     "defensive_rebounds",
-    "team_rebounds",
     "assists",
     "steals",
     "blocks",

@@ -70,7 +70,7 @@ kp_team_history <- function(team){
                     "t=",team_name)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols<- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
                       'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
                       'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
@@ -313,7 +313,7 @@ kp_coach_history <- function(coach){
                     "c=",coach_name)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols<- c('Year','Team.Rk','Team',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
                       'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
                       'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
@@ -550,7 +550,7 @@ kp_program_ratings <- function(){
       url <- "https://kenpom.com/programs.php?"
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       header_cols<- c('Rk',	'Team',	'Conf','Rtg',
                       'Best.Rk','Best.Yr',
                       'Worst.Rk','Worst.Yr', 'KP.Median',
@@ -646,7 +646,7 @@ kp_pomeroy_archive_ratings <- function(date){
       ### Pull Data
       url <- paste0("https://kenpom.com/archive.php?d=", date)
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
 
       x <- (page %>%
               xml2::read_html() %>%
@@ -844,7 +844,7 @@ kp_conf <- function(year, conf){
                     "&y=", year)
 
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       y <- list()
       for(i in 1:7){
 
@@ -1008,7 +1008,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
       ### Pull Data
       url <- paste0("https://kenpom.com/confstats.php?y=", year)
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       x <- (page %>%
               xml2::read_html() %>%
               rvest::html_elements(css="#confrank-table"))[[1]] %>%
@@ -1127,7 +1127,7 @@ kp_confhistory <- function(conf){
       url <- paste0("https://kenpom.com/confhistory.php?",
                     "c=", conf_name)
       page <- rvest::session_jump_to(browser, url)
-
+      Sys.sleep(5)
       x <- page %>%
         xml2::read_html() %>%
         rvest::html_elements(css="#player-table")

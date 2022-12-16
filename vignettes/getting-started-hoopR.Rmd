@@ -49,7 +49,7 @@ if (!requireNamespace('pacman', quietly = TRUE)){
 }
 pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pacman::p_load(tidyverse, zoo, ggimage, gt)
+pacman::p_load(dplyr, zoo, ggimage, gt)
 ```
 
 ### **The Data**
