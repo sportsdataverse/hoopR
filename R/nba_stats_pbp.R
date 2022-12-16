@@ -178,7 +178,7 @@ NULL
 #' @export
 nba_schedule <- function(season = 2021, league = 'NBA'){
 
-  full_url <- glue::glue("https://data.nba.com/prod/v1/{season}/schedule.json")
+  full_url <- glue::glue("https://stats.nba.com/stats/internationalbroadcasterschedule?LeagueID=00&Season={season}&RegionID=1")
   res <- httr::RETRY("GET", full_url)
 
   # Check the result
@@ -189,11 +189,32 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
         httr::content(as = "text", encoding = "UTF-8")
 
 
-      data <- jsonlite::fromJSON(resp)[["league"]]
+      data <- jsonlite::fromJSON(resp)[["resultSets"]]
+      data <- data[["CompleteGameList"]][[2]] %>%
+        janitor::clean_names() %>%
+        dplyr::mutate(
+          game_date = lubridate::mdy(date)
+          , game_id = as.numeric(game_id)
+        ) %>%
+        dplyr::select(
+          game_id
+          , visitor_city = vt_city
+          , visitor_nickname = vt_nick_name
+          , visitor_name_short = vt_short_name
+          , visitor_abbr = vt_abbreviation
+          , home_city = ht_city
+          , home_nickname = ht_nick_name
+          , home_name_short = ht_short_name
+          , home_abbr = ht_abbreviation
+          , game_date
+          , game_start_time = time
+          , day
+        ) %>%
+        dplyr::arrange(
+          game_date
+        ) %>%
+        dplyr::as_tibble()
 
-      if(tolower(league) != 'all'){
-        data <- data[["standard"]]
-      }
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no schedule data for {season} available!"))
