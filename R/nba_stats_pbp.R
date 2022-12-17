@@ -197,7 +197,7 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
           , game_id = as.numeric(.data$game_id)
         ) %>%
         dplyr::select(
-          game_id
+          .data$game_id
           , visitor_city = .data$vt_city
           , visitor_nickname = .data$vt_nick_name
           , visitor_name_short = .data$vt_short_name
