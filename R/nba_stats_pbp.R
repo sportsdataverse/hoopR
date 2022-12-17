@@ -193,25 +193,25 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
       data <- data[["CompleteGameList"]][[2]] %>%
         janitor::clean_names() %>%
         dplyr::mutate(
-          game_date = lubridate::mdy(date)
-          , game_id = as.numeric(game_id)
+          game_date = lubridate::mdy(.data$date)
+          , game_id = as.numeric(.data$game_id)
         ) %>%
         dplyr::select(
           game_id
-          , visitor_city = vt_city
-          , visitor_nickname = vt_nick_name
-          , visitor_name_short = vt_short_name
-          , visitor_abbr = vt_abbreviation
-          , home_city = ht_city
-          , home_nickname = ht_nick_name
-          , home_name_short = ht_short_name
-          , home_abbr = ht_abbreviation
-          , game_date
-          , game_start_time = time
-          , day
+          , visitor_city = .data$vt_city
+          , visitor_nickname = .data$vt_nick_name
+          , visitor_name_short = .data$vt_short_name
+          , visitor_abbr = .data$vt_abbreviation
+          , home_city = .data$ht_city
+          , home_nickname = .data$ht_nick_name
+          , home_name_short = .data$ht_short_name
+          , home_abbr = .data$ht_abbreviation
+          , .data$game_date
+          , game_start_time = .data$time
+          , .data$day
         ) %>%
         dplyr::arrange(
-          game_date
+          .data$game_date
         ) %>%
         dplyr::as_tibble()
 
