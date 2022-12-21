@@ -201,6 +201,7 @@ NULL
 #'
 #' @details
 #' ```
+#'   nba_schedule(season = 1975, league = 'NBA')
 #'   nba_schedule(season = 1996, league = 'NBA')
 #' ```
 nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
@@ -283,24 +284,3 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
   return(schedule_df)
 }
 
-
-
-rejoin_schedules <- function(df){
-  df <- df %>%
-    dplyr::mutate(
-      HOME_AWAY = ifelse(stringr::str_detect(.data$MATCHUP,"@"),"AWAY","HOME")) %>%
-    dplyr::select(-.data$WL,.data$MATCHUP)
-  away_df <- df %>%
-    dplyr::filter(.data$HOME_AWAY == "AWAY") %>%
-    dplyr::select(-.data$HOME_AWAY) %>%
-    dplyr::select(.data$SEASON_ID, .data$GAME_ID, .data$GAME_DATE, .data$MATCHUP, tidyr::everything())
-  colnames(away_df)[5:ncol(away_df)]<-paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
-  home_df <- df %>%
-    dplyr::filter(.data$HOME_AWAY == "HOME") %>%
-    dplyr::select(-.data$HOME_AWAY, -.data$MATCHUP) %>%
-    dplyr::select(.data$SEASON_ID, .data$GAME_ID, .data$GAME_DATE,  tidyr::everything())
-  colnames(home_df)[4:ncol(home_df)]<-paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
-  sched_df <- away_df %>%
-    dplyr::left_join(home_df, by=c("GAME_ID", "SEASON_ID", "GAME_DATE"))
-  return(sched_df)
-}

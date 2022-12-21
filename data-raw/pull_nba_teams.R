@@ -1,7 +1,7 @@
 library(hoopR)
 library(dplyr)
 
-season <- hoopR::year_to_season(most_recent_nba_season()-1)
+season <- hoopR::year_to_season(1975)
 standings <- nba_leaguestandingsv3(season = season)$Standings
 nba_teams <- standings %>%
   dplyr::select(c("LeagueID","SeasonID","TeamID", "TeamCity", "TeamName","TeamSlug","Conference","Division")) %>%

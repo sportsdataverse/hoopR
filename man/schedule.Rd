@@ -43,7 +43,8 @@ A tibble with the following columns:\tabular{ll}{
 \strong{Get NBA Stats API Schedule}
 }
 \details{
-\if{html}{\out{<div class="sourceCode">}}\preformatted{  nba_schedule(season = 2022, league = 'NBA')
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  nba_schedule(season = 1975, league = 'NBA')
+  nba_schedule(season = 1996, league = 'NBA')
 }\if{html}{\out{</div>}}
 }
 \author{
