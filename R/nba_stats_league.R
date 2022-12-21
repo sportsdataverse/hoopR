@@ -331,7 +331,7 @@ NULL
 #' @param player_or_team player_or_team
 #' @param player_id player_id
 #' @param rookie_year rookie_year
-#' @param season season
+#' @param season season - Min: '1983-84'
 #' @param season_segment season_segment
 #' @param season_type season_type
 #' @param starter_bench starter_bench

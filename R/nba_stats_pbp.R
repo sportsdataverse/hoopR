@@ -176,24 +176,101 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_schedule <- function(season = 2021, league = 'NBA'){
+#' @return A tibble with the following columns:
+#'
+#'  |col_name                |types     |
+#'  |:-----------------------|:---------|
+#'  |game_id                 |character |
+#'  |season_type_id          |character |
+#'  |season_type_description |character |
+#'  |visitor_team_id         |character |
+#'  |visitor_city            |character |
+#'  |visitor_nickname        |character |
+#'  |visitor_name_short      |character |
+#'  |visitor_abbr            |character |
+#'  |visitor_team_name_full  |character |
+#'  |home_team_id            |character |
+#'  |home_city               |character |
+#'  |home_nickname           |character |
+#'  |home_name_short         |character |
+#'  |home_abbr               |character |
+#'  |home_team_name_full     |character |
+#'  |game_date               |Date      |
+#'  |game_start_time         |character |
+#'  |day                     |character |
+#'
+#' @details
+#' ```
+#'   nba_schedule(season = 1975, league = 'NBA')
+#'   nba_schedule(season = 1996, league = 'NBA')
+#' ```
+nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
 
-  full_url <- glue::glue("https://data.nba.com/prod/v1/{season}/schedule.json")
+  full_url <- glue::glue("https://stats.nba.com/stats/internationalbroadcasterschedule?LeagueID=00&Season={season}&RegionID=1")
   res <- httr::RETRY("GET", full_url)
 
   # Check the result
   check_status(res)
   tryCatch(
     expr = {
+      season_year <- hoopR::year_to_season(season)
+      standings <- nba_leaguestandingsv3(season = season)$Standings
+      teams <- standings %>%
+        dplyr::select(c("LeagueID","SeasonID","TeamID", "TeamCity", "TeamName","TeamSlug","Conference","Division")) %>%
+        dplyr::mutate(
+          Season = paste0('',season),
+          TeamNameFull = paste(.data$TeamCity,.data$TeamName)) %>%
+        dplyr::arrange(.data$TeamNameFull)
       resp <- res %>%
         httr::content(as = "text", encoding = "UTF-8")
 
 
-      data <- jsonlite::fromJSON(resp)[["league"]]
+      data <- jsonlite::fromJSON(resp)[["resultSets"]]
+      data <- data[["CompleteGameList"]][[2]] %>%
+        janitor::clean_names()
 
-      if(tolower(league) != 'all'){
-        data <- data[["standard"]]
-      }
+      data$game_id <- unlist(purrr::map(data$game_id,function(x){
+        pad_id(x)
+      }))
+
+      schedule_df <- data %>%
+        dplyr::mutate(
+          season_type_id = substr(.data$game_id, 3, 3),
+          season_type_description = dplyr::case_when(
+            .data$season_type_id == 1 ~ "Pre-Season",
+            .data$season_type_id == 2 ~ "Regular Season",
+            .data$season_type_id == 3 ~ "All-Star",
+            .data$season_type_id == 4 ~ "Playoffs",
+            .data$season_type_id == 5 ~ "Play-In Game"),
+          game_date = lubridate::mdy(.data$date),
+          visitor_team_name_full = paste(.data$vt_city, .data$vt_nick_name),
+          home_team_name_full = paste(.data$ht_city, .data$ht_nick_name)) %>%
+        dplyr::arrange(.data$game_date) %>%
+        dplyr::as_tibble()
+      schedule_df <- schedule_df %>%
+        dplyr::left_join(teams %>% dplyr::select("visitor_team_id" = "TeamID","TeamNameFull"), by = c("visitor_team_name_full" = "TeamNameFull")) %>%
+        dplyr::left_join(teams %>% dplyr::select("home_team_id" = "TeamID","TeamNameFull"), by = c("home_team_name_full" = "TeamNameFull")) %>%
+        dplyr::select(
+        "game_id"
+        , "season_type_id"
+        , "season_type_description"
+        , "visitor_team_id"
+        , "visitor_city" = "vt_city"
+        , "visitor_nickname" = "vt_nick_name"
+        , "visitor_name_short" = "vt_short_name"
+        , "visitor_abbr" = "vt_abbreviation"
+        , "visitor_team_name_full"
+        , "home_team_id"
+        , "home_city" = "ht_city"
+        , "home_nickname" = "ht_nick_name"
+        , "home_name_short" = "ht_short_name"
+        , "home_abbr" = "ht_abbreviation"
+        , "home_team_name_full"
+        , "game_date"
+        , "game_start_time" = "time"
+        , "day")
+
+
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no schedule data for {season} available!"))
@@ -204,7 +281,6 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
     }
   )
 
-  return(data)
+  return(schedule_df)
 }
-
 

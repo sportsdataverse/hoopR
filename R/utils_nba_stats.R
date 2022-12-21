@@ -237,25 +237,18 @@ rejoin_schedules <- function(df){
   df <- df %>%
     dplyr::mutate(
       HOME_AWAY = ifelse(stringr::str_detect(.data$MATCHUP,"@"),"AWAY","HOME")) %>%
-    dplyr::select(
-      -"WL",
-      "MATCHUP")
+    dplyr::select(-"WL","MATCHUP", tidyr::everything())
   away_df <- df %>%
     dplyr::filter(.data$HOME_AWAY == "AWAY") %>%
     dplyr::select(-"HOME_AWAY") %>%
-    dplyr::select(
-      "SEASON_ID",
-      "GAME_ID",
-      "GAME_DATE",
-      "MATCHUP",
-      tidyr::everything())
-  colnames(away_df)[5:ncol(away_df)]<-paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
+    dplyr::select("SEASON_ID", "GAME_ID", "GAME_DATE", "MATCHUP", tidyr::everything())
+  colnames(away_df)[5:ncol(away_df)] <- paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
   home_df <- df %>%
     dplyr::filter(.data$HOME_AWAY == "HOME") %>%
     dplyr::select(-"HOME_AWAY", -"MATCHUP") %>%
-    dplyr::select("SEASON_ID", "GAME_ID", "GAME_DATE",  tidyr::everything())
-  colnames(home_df)[4:ncol(home_df)]<-paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
+    dplyr::select("SEASON_ID", "GAME_ID", "GAME_DATE", "MATCHUP", tidyr::everything())
+  colnames(home_df)[4:ncol(home_df)] <- paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
   sched_df <- away_df %>%
-    dplyr::left_join(home_df, by=c("GAME_ID", "SEASON_ID", "GAME_DATE"))
+    dplyr::left_join(home_df, by = c("GAME_ID", "SEASON_ID", "GAME_DATE"))
   return(sched_df)
 }

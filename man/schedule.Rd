@@ -5,7 +5,7 @@
 \alias{nba_schedule}
 \title{\strong{Get NBA Stats API Schedule}}
 \usage{
-nba_schedule(season = 2021, league = "NBA")
+nba_schedule(season = most_recent_nba_season() - 1, league = "NBA")
 }
 \arguments{
 \item{season}{Season - 4 digit integer corresponding to the first year in the season format 2020-21}
@@ -14,11 +14,38 @@ nba_schedule(season = 2021, league = "NBA")
 }
 \value{
 Returns a tibble
+
+A tibble with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   season_type_id \tab character \cr
+   season_type_description \tab character \cr
+   visitor_team_id \tab character \cr
+   visitor_city \tab character \cr
+   visitor_nickname \tab character \cr
+   visitor_name_short \tab character \cr
+   visitor_abbr \tab character \cr
+   visitor_team_name_full \tab character \cr
+   home_team_id \tab character \cr
+   home_city \tab character \cr
+   home_nickname \tab character \cr
+   home_name_short \tab character \cr
+   home_abbr \tab character \cr
+   home_team_name_full \tab character \cr
+   game_date \tab Date \cr
+   game_start_time \tab character \cr
+   day \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Schedule}
 
 \strong{Get NBA Stats API Schedule}
+}
+\details{
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  nba_schedule(season = 1975, league = 'NBA')
+  nba_schedule(season = 1996, league = 'NBA')
+}\if{html}{\out{</div>}}
 }
 \author{
 Saiem Gilani
