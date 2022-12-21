@@ -201,7 +201,7 @@ NULL
 #'
 #' @details
 #' ```
-#'   nba_schedule(season = 2022, league = 'NBA')
+#'   nba_schedule(season = 1996, league = 'NBA')
 #' ```
 nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
 
@@ -212,6 +212,14 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
   check_status(res)
   tryCatch(
     expr = {
+      season_year <- hoopR::year_to_season(season)
+      standings <- nba_leaguestandingsv3(season = season)$Standings
+      teams <- standings %>%
+        dplyr::select(c("LeagueID","SeasonID","TeamID", "TeamCity", "TeamName","TeamSlug","Conference","Division")) %>%
+        dplyr::mutate(
+          Season = paste0('',season),
+          TeamNameFull = paste(.data$TeamCity,.data$TeamName)) %>%
+        dplyr::arrange(.data$TeamNameFull)
       resp <- res %>%
         httr::content(as = "text", encoding = "UTF-8")
 
@@ -223,7 +231,7 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
       data$game_id <- unlist(purrr::map(data$game_id,function(x){
         pad_id(x)
       }))
-      teams <- hoopR::nba_teams
+
       schedule_df <- data %>%
         dplyr::mutate(
           season_type_id = substr(.data$game_id, 3, 3),
