@@ -255,7 +255,7 @@ nba_leaguegamefinder(
 
 \item{rookie_year}{rookie_year}
 
-\item{season}{season}
+\item{season}{season - Min: '1983-84'}
 
 \item{season_segment}{season_segment}
 

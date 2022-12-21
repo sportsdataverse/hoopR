@@ -10,7 +10,7 @@ status](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=succ
 [![CRAN
 downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=Downloads&query=%24%5B0%5D.downloads&url=https%3A%2F%2Fcranlogs.r-pkg.org%2Fdownloads%2Ftotal%2F2021-10-26%3Alast-day%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![Version-Number](https://img.shields.io/github/r-package/v/sportsdataverse/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/sportsdataverse/hoopR)
-[![R-CMD-check](https://img.shields.io/github/workflow/status/sportsdataverse/hoopR/R-CMD-check?label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://img.shields.io/github/actions/workflow/status/sportsdataverse/hoopR/R-CMD-check.yaml?branch=main&label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/sportsdataverse/hoopR/)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
@@ -66,9 +66,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.53 sec elapsed
+    ## 2.39 sec elapsed
 
-    ## 105176 rows of NBA play-by-play data from 220 games.
+    ## 218846 rows of NBA play-by-play data from 460 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2022) \~ 2-3 minutes**
 
@@ -80,9 +80,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.62 sec elapsed
+    ## 5.37 sec elapsed
 
-    ## 208803 rows of men's college basketball play-by-play data from 624 games.
+    ## 735700 rows of men's college basketball play-by-play data from 2263 games.
 
 ## **Documentation**
 
