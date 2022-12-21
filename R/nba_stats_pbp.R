@@ -176,6 +176,29 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @return A tibble with the following columns:
+#'
+#'  |col_name                |types     |
+#'  |:-----------------------|:---------|
+#'  |game_id                 |character |
+#'  |season_type_id          |character |
+#'  |season_type_description |character |
+#'  |visitor_team_id         |character |
+#'  |visitor_city            |character |
+#'  |visitor_nickname        |character |
+#'  |visitor_name_short      |character |
+#'  |visitor_abbr            |character |
+#'  |visitor_team_name_full  |character |
+#'  |home_team_id            |character |
+#'  |home_city               |character |
+#'  |home_nickname           |character |
+#'  |home_name_short         |character |
+#'  |home_abbr               |character |
+#'  |home_team_name_full     |character |
+#'  |game_date               |Date      |
+#'  |game_start_time         |character |
+#'  |day                     |character |
+#'
 #' @details
 #' ```
 #'   nba_schedule(season = 2022, league = 'NBA')
@@ -200,7 +223,7 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
       data$game_id <- unlist(purrr::map(data$game_id,function(x){
         pad_id(x)
       }))
-      teams <- nba_teams
+      teams <- hoopR::nba_teams
       schedule_df <- data %>%
         dplyr::mutate(
           season_type_id = substr(.data$game_id, 3, 3),
@@ -211,8 +234,8 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
             .data$season_type_id == 4 ~ "Playoffs",
             .data$season_type_id == 5 ~ "Play-In Game"),
           game_date = lubridate::mdy(.data$date),
-          visitor_team_name_full = paste(vt_city, vt_nick_name),
-          home_team_name_full = paste(ht_city, ht_nick_name)) %>%
+          visitor_team_name_full = paste(.data$vt_city, .data$vt_nick_name),
+          home_team_name_full = paste(.data$ht_city, .data$ht_nick_name)) %>%
         dplyr::arrange(.data$game_date) %>%
         dplyr::as_tibble()
       schedule_df <- schedule_df %>%

@@ -14,6 +14,28 @@ nba_schedule(season = most_recent_nba_season() - 1, league = "NBA")
 }
 \value{
 Returns a tibble
+
+A tibble with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   season_type_id \tab character \cr
+   season_type_description \tab character \cr
+   visitor_team_id \tab character \cr
+   visitor_city \tab character \cr
+   visitor_nickname \tab character \cr
+   visitor_name_short \tab character \cr
+   visitor_abbr \tab character \cr
+   visitor_team_name_full \tab character \cr
+   home_team_id \tab character \cr
+   home_city \tab character \cr
+   home_nickname \tab character \cr
+   home_name_short \tab character \cr
+   home_abbr \tab character \cr
+   home_team_name_full \tab character \cr
+   game_date \tab Date \cr
+   game_start_time \tab character \cr
+   day \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Schedule}
