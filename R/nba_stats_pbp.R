@@ -176,7 +176,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_schedule <- function(season = 2021, league = 'NBA'){
+#' @details
+#' ```
+#'   nba_schedule(season = 2022, league = 'NBA')
+#' ```
+nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
 
   full_url <- glue::glue("https://stats.nba.com/stats/internationalbroadcasterschedule?LeagueID=00&Season={season}&RegionID=1")
   res <- httr::RETRY("GET", full_url)
@@ -191,29 +195,49 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
 
       data <- jsonlite::fromJSON(resp)[["resultSets"]]
       data <- data[["CompleteGameList"]][[2]] %>%
-        janitor::clean_names() %>%
+        janitor::clean_names()
+
+      data$game_id <- unlist(purrr::map(data$game_id,function(x){
+        pad_id(x)
+      }))
+      teams <- nba_teams
+      schedule_df <- data %>%
         dplyr::mutate(
-          game_date = lubridate::mdy(.data$date)
-          , game_id = as.numeric(.data$game_id)
-        ) %>%
-        dplyr::select(
-          .data$game_id
-          , visitor_city = .data$vt_city
-          , visitor_nickname = .data$vt_nick_name
-          , visitor_name_short = .data$vt_short_name
-          , visitor_abbr = .data$vt_abbreviation
-          , home_city = .data$ht_city
-          , home_nickname = .data$ht_nick_name
-          , home_name_short = .data$ht_short_name
-          , home_abbr = .data$ht_abbreviation
-          , .data$game_date
-          , game_start_time = .data$time
-          , .data$day
-        ) %>%
-        dplyr::arrange(
-          .data$game_date
-        ) %>%
+          season_type_id = substr(.data$game_id, 3, 3),
+          season_type_description = dplyr::case_when(
+            .data$season_type_id == 1 ~ "Pre-Season",
+            .data$season_type_id == 2 ~ "Regular Season",
+            .data$season_type_id == 3 ~ "All-Star",
+            .data$season_type_id == 4 ~ "Playoffs",
+            .data$season_type_id == 5 ~ "Play-In Game"),
+          game_date = lubridate::mdy(.data$date),
+          visitor_team_name_full = paste(vt_city, vt_nick_name),
+          home_team_name_full = paste(ht_city, ht_nick_name)) %>%
+        dplyr::arrange(.data$game_date) %>%
         dplyr::as_tibble()
+      schedule_df <- schedule_df %>%
+        dplyr::left_join(teams %>% dplyr::select("visitor_team_id" = "TeamID","TeamNameFull"), by = c("visitor_team_name_full" = "TeamNameFull")) %>%
+        dplyr::left_join(teams %>% dplyr::select("home_team_id" = "TeamID","TeamNameFull"), by = c("home_team_name_full" = "TeamNameFull")) %>%
+        dplyr::select(
+        "game_id"
+        , "season_type_id"
+        , "season_type_description"
+        , "visitor_team_id"
+        , "visitor_city" = "vt_city"
+        , "visitor_nickname" = "vt_nick_name"
+        , "visitor_name_short" = "vt_short_name"
+        , "visitor_abbr" = "vt_abbreviation"
+        , "visitor_team_name_full"
+        , "home_team_id"
+        , "home_city" = "ht_city"
+        , "home_nickname" = "ht_nick_name"
+        , "home_name_short" = "ht_short_name"
+        , "home_abbr" = "ht_abbreviation"
+        , "home_team_name_full"
+        , "game_date"
+        , "game_start_time" = "time"
+        , "day")
+
 
     },
     error = function(e) {
@@ -225,7 +249,27 @@ nba_schedule <- function(season = 2021, league = 'NBA'){
     }
   )
 
-  return(data)
+  return(schedule_df)
 }
 
 
+
+rejoin_schedules <- function(df){
+  df <- df %>%
+    dplyr::mutate(
+      HOME_AWAY = ifelse(stringr::str_detect(.data$MATCHUP,"@"),"AWAY","HOME")) %>%
+    dplyr::select(-.data$WL,.data$MATCHUP)
+  away_df <- df %>%
+    dplyr::filter(.data$HOME_AWAY == "AWAY") %>%
+    dplyr::select(-.data$HOME_AWAY) %>%
+    dplyr::select(.data$SEASON_ID, .data$GAME_ID, .data$GAME_DATE, .data$MATCHUP, tidyr::everything())
+  colnames(away_df)[5:ncol(away_df)]<-paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
+  home_df <- df %>%
+    dplyr::filter(.data$HOME_AWAY == "HOME") %>%
+    dplyr::select(-.data$HOME_AWAY, -.data$MATCHUP) %>%
+    dplyr::select(.data$SEASON_ID, .data$GAME_ID, .data$GAME_DATE,  tidyr::everything())
+  colnames(home_df)[4:ncol(home_df)]<-paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
+  sched_df <- away_df %>%
+    dplyr::left_join(home_df, by=c("GAME_ID", "SEASON_ID", "GAME_DATE"))
+  return(sched_df)
+}
