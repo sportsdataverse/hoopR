@@ -8,7 +8,8 @@
 nba_teamhistoricalleaders(
   league_id = "00",
   season_id = "2020",
-  team_id = "1610612749"
+  team_id = "1610612749",
+  ...
 )
 }
 \arguments{
@@ -17,6 +18,8 @@ nba_teamhistoricalleaders(
 \item{season_id}{season_id}
 
 \item{team_id}{team_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: CareerLeadersByTeam

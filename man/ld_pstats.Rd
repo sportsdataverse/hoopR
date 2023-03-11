@@ -41,7 +41,8 @@ nba_leaguedashplayerstats(
   two_way = "",
   vs_conference = "",
   vs_division = "",
-  weight = ""
+  weight = "",
+  ...
 )
 }
 \arguments{
@@ -116,6 +117,8 @@ nba_leaguedashplayerstats(
 \item{vs_division}{vs_division}
 
 \item{weight}{weight}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: LeagueDashPlayerStats

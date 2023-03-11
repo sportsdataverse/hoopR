@@ -5,12 +5,14 @@
 \alias{nba_winprobabilitypbp}
 \title{\strong{Get NBA Stats API Win Probability PBP}}
 \usage{
-nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second")
+nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second", ...)
 }
 \arguments{
 \item{game_id}{Game ID}
 
 \item{run_type}{Run Type}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames:

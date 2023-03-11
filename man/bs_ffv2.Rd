@@ -11,7 +11,8 @@ nba_boxscorefourfactorsv2(
   end_period = 14,
   start_range = 0,
   end_range = 0,
-  range_type = 0
+  range_type = 0,
+  ...
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ nba_boxscorefourfactorsv2(
 \item{end_range}{end_range}
 
 \item{range_type}{range_type}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors

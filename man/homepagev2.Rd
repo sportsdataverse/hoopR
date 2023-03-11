@@ -12,7 +12,8 @@ nba_homepagev2(
   player_scope = "All Players",
   season = "2020-21",
   season_type = "Regular Season",
-  stat_type = "Traditional"
+  stat_type = "Traditional",
+  ...
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ nba_homepagev2(
 \item{season_type}{Season Type - Regular Season, Playoffs}
 
 \item{stat_type}{Stat Type - Traditional, Advanced, Tracking}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,

@@ -5,10 +5,12 @@
 \alias{nba_franchisehistory}
 \title{\strong{Get NBA Stats API Franchise History}}
 \usage{
-nba_franchisehistory(league_id = "00")
+nba_franchisehistory(league_id = "00", ...)
 }
 \arguments{
 \item{league_id}{league_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: DefunctTeams, FranchiseHistory

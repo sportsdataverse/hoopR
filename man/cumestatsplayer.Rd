@@ -11,7 +11,8 @@ nba_cumestatsplayer(
   player_id = "1629611",
   season = "2020-21",
   season_type = "Regular Season",
-  team_id = ""
+  team_id = "",
+  ...
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ nba_cumestatsplayer(
 \item{season_type}{season_type}
 
 \item{team_id}{team_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: GameByGameStats, TotalPlayerStats

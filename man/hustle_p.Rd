@@ -31,7 +31,8 @@ nba_leaguehustlestatsplayer(
   team_id = "",
   vs_conference = "",
   vs_division = "",
-  weight = ""
+  weight = "",
+  ...
 )
 }
 \arguments{
@@ -86,6 +87,8 @@ nba_leaguehustlestatsplayer(
 \item{vs_division}{vs_division}
 
 \item{weight}{weight}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: HustleStatsPlayer

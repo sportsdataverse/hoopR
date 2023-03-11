@@ -27,7 +27,8 @@ nba_playervsplayer(
   season_type = "Regular Season",
   vs_conference = "",
   vs_division = "",
-  vs_player_id = "203076"
+  vs_player_id = "203076",
+  ...
 )
 }
 \arguments{
@@ -74,6 +75,8 @@ nba_playervsplayer(
 \item{vs_division}{vs_division}
 
 \item{vs_player_id}{vs_player_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOffCourt, ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,

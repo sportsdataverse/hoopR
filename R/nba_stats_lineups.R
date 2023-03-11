@@ -29,25 +29,26 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_fantasywidget <- function(active_players='N',
-                              date_from='',
-                              date_to='',
-                              last_n_games=0,
-                              league_id='00',
-                              location='',
-                              month='',
-                              opponent_team_id = '',
-                              po_round='',
-                              player_id='',
-                              position='',
-                              season='2019-20',
-                              season_segment='',
-                              season_type='Regular Season',
-                              team_id='',
-                              todays_opponent=0,
-                              todays_players='N',
-                              vs_conference='',
-                              vs_division=''){
+nba_fantasywidget <- function(
+    active_players='N',
+    date_from='',
+    date_to='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month='',
+    opponent_team_id = '',
+    po_round='',
+    player_id='',
+    position='',
+    season='2019-20',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    todays_opponent=0,
+    todays_players='N',
+    vs_conference='',
+    vs_division=''){
   season_type <- gsub(' ','+',season_type)
   version <- "fantasywidget"
   endpoint <- nba_endpoint(version)
@@ -73,7 +74,7 @@ nba_fantasywidget <- function(active_players='N',
                      "&VsConference=",vs_conference,
                      "&VsDivision=",vs_division)
   tryCatch(
-    expr={
+    expr = {
 
       resp <- full_url %>%
         .nba_headers()
@@ -139,32 +140,32 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguedashlineups <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  game_segment = '',
-  group_quantity=5,
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  team_id='',
-  vs_conference='',
-  vs_division=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    game_segment = '',
+    group_quantity=5,
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    team_id='',
+    vs_conference='',
+    vs_division=''){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashlineups"
   endpoint <- nba_endpoint(version)
@@ -197,7 +198,7 @@ nba_leaguedashlineups <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
   tryCatch(
-    expr={
+    expr = {
 
       resp <- full_url %>%
         .nba_headers()
@@ -264,33 +265,33 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguelineupviz <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  game_segment = '',
-  group_quantity=5,
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  minutes_min = 10,
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  team_id='',
-  vs_conference='',
-  vs_division=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    game_segment = '',
+    group_quantity=5,
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    minutes_min = 10,
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    team_id='',
+    vs_conference='',
+    vs_division=''){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguelineupviz"
   endpoint <- nba_endpoint(version)
@@ -324,7 +325,7 @@ nba_leaguelineupviz <- function(
                      "&VsConference=", vs_conference,
                      "&VsDivision=", vs_division)
   tryCatch(
-    expr={
+    expr = {
 
       resp <- full_url %>%
         .nba_headers()
@@ -387,27 +388,27 @@ NULL
 #' @import rvest
 #' @export
 nba_leagueplayerondetails <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='1610612749',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='1610612749',
+    vs_conference='',
+    vs_division=''){
   season_type <- gsub(' ','+',season_type)
   version <- "leagueplayerondetails"
   endpoint <- nba_endpoint(version)
@@ -436,7 +437,7 @@ nba_leagueplayerondetails <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
+    expr = {
       resp <- full_url %>%
         .nba_headers()
 
@@ -485,14 +486,14 @@ NULL
 #' @import rvest
 #' @export
 nba_leagueseasonmatchups <- function(
-  def_player_id='',
-  def_team_id='',
-  league_id='00',
-  off_player_id='',
-  off_team_id='',
-  per_mode='Totals',
-  season='2020-21',
-  season_type='Regular Season'){
+    def_player_id='',
+    def_team_id='',
+    league_id='00',
+    off_player_id='',
+    off_team_id='',
+    per_mode='Totals',
+    season='2020-21',
+    season_type='Regular Season'){
   season_type <- gsub(' ','+',season_type)
   version <- "leagueseasonmatchups"
   endpoint <- nba_endpoint(version)
@@ -507,7 +508,7 @@ nba_leagueseasonmatchups <- function(
                      "&Season=", season,
                      "&SeasonType=", season_type)
   tryCatch(
-    expr={
+    expr = {
 
       resp <- full_url %>%
         .nba_headers()
@@ -554,14 +555,14 @@ NULL
 #' @import rvest
 #' @export
 nba_matchupsrollup <- function(
-  def_player_id='',
-  def_team_id='',
-  league_id='00',
-  off_player_id='',
-  off_team_id='',
-  per_mode='Totals',
-  season='2020-21',
-  season_type='Regular Season'){
+    def_player_id='',
+    def_team_id='',
+    league_id='00',
+    off_player_id='',
+    off_team_id='',
+    per_mode='Totals',
+    season='2020-21',
+    season_type='Regular Season'){
   season_type <- gsub(' ','+',season_type)
   version <- "matchupsrollup"
   endpoint <- nba_endpoint(version)
@@ -577,7 +578,7 @@ nba_matchupsrollup <- function(
                      "&SeasonType=", season_type)
 
   tryCatch(
-    expr={
+    expr = {
       resp <- full_url %>%
         .nba_headers()
 

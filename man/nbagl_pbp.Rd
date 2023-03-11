@@ -4,10 +4,12 @@
 \alias{nbagl_pbp}
 \title{\strong{Get NBA Data API Play-by-Play for G League Games}}
 \usage{
-nbagl_pbp(game_id)
+nbagl_pbp(game_id, ...)
 }
 \arguments{
 \item{game_id}{Game ID - 10 digits, i.e. 0021900001}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame of play by play

@@ -5,7 +5,12 @@
 \alias{nba_commonplayoffseries}
 \title{\strong{Get NBA Stats API Playoff Series}}
 \usage{
-nba_commonplayoffseries(league_id = "00", season = "2020-21", series_id = "")
+nba_commonplayoffseries(
+  league_id = "00",
+  season = "2020-21",
+  series_id = "",
+  ...
+)
 }
 \arguments{
 \item{league_id}{league_id}
@@ -13,6 +18,8 @@ nba_commonplayoffseries(league_id = "00", season = "2020-21", series_id = "")
 \item{season}{season}
 
 \item{series_id}{series_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: PlayoffSeries

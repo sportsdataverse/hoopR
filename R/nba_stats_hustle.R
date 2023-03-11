@@ -31,38 +31,40 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HustleStatsPlayer
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguehustlestatsplayer <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayer"
   endpoint <- nba_endpoint(version)
@@ -96,8 +98,8 @@ nba_leaguehustlestatsplayer <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -155,38 +157,40 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerChargesDrawnLeaders, PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguehustlestatsplayerleaders <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayerleaders"
   endpoint <- nba_endpoint(version)
@@ -220,8 +224,8 @@ nba_leaguehustlestatsplayerleaders <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -278,38 +282,40 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HustleStatsTeam
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguehustlestatsteam <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteam"
   endpoint <- nba_endpoint(version)
@@ -343,8 +349,8 @@ nba_leaguehustlestatsteam <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -400,38 +406,40 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguehustlestatsteamleaders <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteamleaders"
   endpoint <- nba_endpoint(version)
@@ -465,8 +473,8 @@ nba_leaguehustlestatsteamleaders <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

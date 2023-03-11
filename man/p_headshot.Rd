@@ -5,10 +5,12 @@
 \alias{nba_playerheadshot}
 \title{\strong{Get NBA Stats API Player Head-shot}}
 \usage{
-nba_playerheadshot(player_id = "2544")
+nba_playerheadshot(player_id = "2544", ...)
 }
 \arguments{
 \item{player_id}{Player ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a url of the png for the player_id selected

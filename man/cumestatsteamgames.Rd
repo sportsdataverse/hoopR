@@ -15,7 +15,8 @@ nba_cumestatsteamgames(
   team_id = 1610612739,
   vs_conference = "",
   vs_division = "",
-  vs_team_id = ""
+  vs_team_id = "",
+  ...
 )
 }
 \arguments{
@@ -38,6 +39,8 @@ nba_cumestatsteamgames(
 \item{vs_division}{vs_division}
 
 \item{vs_team_id}{vs_team_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: CumeStatsTeamGames

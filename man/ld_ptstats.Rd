@@ -36,7 +36,8 @@ nba_leaguedashptstats(
   team_id = "",
   vs_conference = "",
   vs_division = "",
-  weight = ""
+  weight = "",
+  ...
 )
 }
 \arguments{
@@ -101,6 +102,8 @@ nba_leaguedashptstats(
 \item{vs_division}{vs_division}
 
 \item{weight}{weight}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Stats}

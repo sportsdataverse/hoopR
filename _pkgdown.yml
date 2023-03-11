@@ -230,3 +230,4 @@ reference:
       - '`most_recent_nba_season`'
       - '`progressively`'
       - '`year_to_season`'
+      - '`request_with_proxy`'

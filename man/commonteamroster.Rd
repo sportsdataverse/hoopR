@@ -8,7 +8,8 @@
 nba_commonteamroster(
   league_id = "00",
   season = "2020-21",
-  team_id = "1610612739"
+  team_id = "1610612739",
+  ...
 )
 }
 \arguments{
@@ -17,6 +18,8 @@ nba_commonteamroster(
 \item{season}{season}
 
 \item{team_id}{team_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: Coaches, CommonTeamRoster

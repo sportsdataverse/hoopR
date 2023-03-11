@@ -8,7 +8,8 @@
 nba_playercareerstats(
   league_id = "00",
   per_mode = "Totals",
-  player_id = "2544"
+  player_id = "2544",
+  ...
 )
 }
 \arguments{
@@ -17,6 +18,8 @@ nba_playercareerstats(
 \item{per_mode}{Per Mode - PerGame, Totals}
 
 \item{player_id}{Player ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason,

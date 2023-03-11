@@ -5,7 +5,12 @@
 \alias{nba_playerprofilev2}
 \title{\strong{Get NBA Stats API Player Profile V2}}
 \usage{
-nba_playerprofilev2(league_id = "", per_mode = "Totals", player_id = "2544")
+nba_playerprofilev2(
+  league_id = "",
+  per_mode = "Totals",
+  player_id = "2544",
+  ...
+)
 }
 \arguments{
 \item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
@@ -13,6 +18,8 @@ nba_playerprofilev2(league_id = "", per_mode = "Totals", player_id = "2544")
 \item{per_mode}{Season - format 2020-21}
 
 \item{player_id}{Player ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: CareerHighs, CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason, CareerTotalsPreseason,

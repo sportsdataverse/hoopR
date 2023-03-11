@@ -6,14 +6,16 @@
 \alias{nba_videostatus}
 \title{\strong{Get NBA Stats API Video Events}}
 \usage{
-nba_videoevents(game_id = "0021700807", game_event_id = "0")
+nba_videoevents(game_id = "0021700807", game_event_id = "0", ...)
 
-nba_videostatus(game_date = "2020-08-16", league_id = "00")
+nba_videostatus(game_date = "2023-03-10", league_id = "00", ...)
 }
 \arguments{
 \item{game_id}{game_id}
 
 \item{game_event_id}{game_event_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 
 \item{game_date}{game_date}
 

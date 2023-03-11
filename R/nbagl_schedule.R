@@ -6,6 +6,7 @@ NULL
 #' @rdname nbagl_schedule
 #' @author Billy Fryer
 #' @param season Season - 4 digit, i.e. 2021
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of the G League Season Schedule
 #' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
@@ -13,13 +14,16 @@ NULL
 #' @import rvest
 #' @export
 
-nbagl_schedule <- function(season = most_recent_nba_season()-1) {
+nbagl_schedule <- function(
+    season = most_recent_nba_season() - 1,
+    ...) {
   # From This Line to My next comment, basically everything is
   # Copied from hoopR except the url and the table name
   full_url <- glue::glue("https://data.nba.com/data/10s/v2015/json/mobile_teams/dleague/{season}/league/20_full_schedule.json")
   tryCatch(
-    expr={
-      res <- httr::RETRY("GET", full_url)
+    expr = {
+
+      res <- httr::RETRY("GET", full_url, ...)
 
       resp <- res$content %>%
         rawToChar() %>%

@@ -4,7 +4,10 @@
 \alias{nbagl_players}
 \title{\strong{Get G League Player Data Base from NBA API}}
 \usage{
-nbagl_players()
+nbagl_players(...)
+}
+\arguments{
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame of G League Players from NBA Database

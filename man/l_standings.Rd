@@ -9,7 +9,8 @@ nba_leaguestandings(
   league_id = "00",
   season = "2020-21",
   season_type = "Regular Season",
-  season_year = ""
+  season_year = "",
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@ nba_leaguestandings(
 \item{season_type}{season_type}
 
 \item{season_year}{season_year}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: Standings

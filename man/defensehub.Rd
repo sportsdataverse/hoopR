@@ -11,7 +11,8 @@ nba_defensehub(
   player_or_team = "Team",
   player_scope = "All Players",
   season = "2020-21",
-  season_type = "Regular Season"
+  season_type = "Regular Season",
+  ...
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ nba_defensehub(
 \item{season}{Season - format 2020-21}
 
 \item{season_type}{Season Type - Regular Season, Playoffs}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: DefenseHubStat1, DefenseHubStat10, DefenseHubStat2, DefenseHubStat3, DefenseHubStat4, DefenseHubStat5, DefenseHubStat6,

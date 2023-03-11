@@ -12,7 +12,8 @@ nba_leaderstiles(
   player_scope = "All Players",
   season = "2020-21",
   season_type = "Regular Season",
-  stat = "PTS"
+  stat = "PTS",
+  ...
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ nba_leaderstiles(
 \item{season_type}{Season Type - Regular Season, Playoffs}
 
 \item{stat}{Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,

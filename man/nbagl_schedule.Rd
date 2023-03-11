@@ -4,10 +4,12 @@
 \alias{nbagl_schedule}
 \title{\strong{Get G League Schedule from NBA API}}
 \usage{
-nbagl_schedule(season = most_recent_nba_season() - 1)
+nbagl_schedule(season = most_recent_nba_season() - 1, ...)
 }
 \arguments{
 \item{season}{Season - 4 digit, i.e. 2021}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame of the G League Season Schedule
