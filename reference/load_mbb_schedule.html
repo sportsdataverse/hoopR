@@ -12,7 +12,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -179,26 +179,27 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span><span class="fu">load_mbb_schedule</span><span class="op">(</span><span class="fl">2021</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ───────────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 1.9.1</span> ──</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,282 × 69</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id        uid    date  atten…¹ time_…² neutr…³ confe…⁴ recent start…⁵ notes…⁶</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401260006 s:40~… 2020…       0 TRUE    TRUE    FALSE   FALSE  2020-1… <span style="color: #949494;">"</span>event<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401255645 s:40~… 2020…       0 TRUE    TRUE    FALSE   FALSE  2020-1… <span style="color: #949494;">"</span>event<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401263443 s:40~… 2020…     535 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401259032 s:40~… 2020…       0 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401262371 s:40~… 2020…     132 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401258857 s:40~… 2020…    <span style="text-decoration: underline;">3</span>075 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">"</span>event<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401263445 s:40~… 2020…       0 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401259558 s:40~… 2020…    <span style="text-decoration: underline;">3</span>345 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401265652 s:40~… 2020…       0 TRUE    TRUE    FALSE   FALSE  2020-1… <span style="color: #949494;">"</span>event<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401252794 s:40~… 2020…       0 TRUE    FALSE   FALSE   FALSE  2020-1… <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 5,272 more rows, 59 more variables: notes_headline &lt;chr&gt;,</span></span>
+<span class="r-in"><span>  <span class="fu">load_mbb_schedule</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB Schedule Information from hoopR data repository ───── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 09:56:08 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,261 × 72</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           id uid    date  atten…¹ time_…² neutr…³ confe…⁴ recent start…⁵ notes…⁶</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401<span style="text-decoration: underline;">522</span>202 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401<span style="text-decoration: underline;">522</span>201 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401<span style="text-decoration: underline;">522</span>200 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401<span style="text-decoration: underline;">526</span>932 s:40~… 2023…       0 TRUE    TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401<span style="text-decoration: underline;">526</span>927 s:40~… 2023…       0 TRUE    TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401<span style="text-decoration: underline;">526</span>930 s:40~… 2023…       0 TRUE    TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401<span style="text-decoration: underline;">522</span>199 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401<span style="text-decoration: underline;">522</span>196 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401<span style="text-decoration: underline;">522</span>193 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401<span style="text-decoration: underline;">522</span>190 s:40~… 2023…       0 FALSE   TRUE    FALSE   FALSE  2023-0… event  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 6,251 more rows, 62 more variables: notes_headline &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   type_id &lt;chr&gt;, type_abbreviation &lt;chr&gt;, venue_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_full_name &lt;chr&gt;, venue_address_city &lt;chr&gt;, venue_address_state &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_capacity &lt;dbl&gt;, venue_indoor &lt;lgl&gt;, status_clock &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_display_clock &lt;chr&gt;, status_period &lt;dbl&gt;, status_type_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_display_clock &lt;chr&gt;, status_period &lt;int&gt;, status_type_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_type_name &lt;chr&gt;, status_type_state &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_type_completed &lt;lgl&gt;, status_type_description &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

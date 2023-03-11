@@ -12,7 +12,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -179,29 +179,29 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span><span class="fu">load_nba_pbp</span><span class="op">(</span><span class="fl">2021</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">load_nba_pbp</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Play-by-Play Information from hoopR data repository ────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-10-21 21:14:04 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 542,521 × 55</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 20:47:36 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 471,218 × 56</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         id seque…¹ type_id type_…² text  away_…³ home_…⁴ perio…⁵ perio…⁶ clock…⁷</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 4.01<span style="color: #949494;">e</span> 9 4       615     Jumpba… Jame…       0       0       1 1st Qu… 12:00  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 4.01<span style="color: #949494;">e</span> 9 7       90      Out of… DeAn…       0       0       1 1st Qu… 11:50  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 4.01<span style="color: #949494;">e</span> 9 8       44      Shooti… Kyri…       0       0       1 1st Qu… 11:38  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 4.01<span style="color: #949494;">e</span>10 10      98      Free T… Step…       1       0       1 1st Qu… 11:38  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4.01<span style="color: #949494;">e</span>10 11      99      Free T… Step…       2       0       1 1st Qu… 11:38  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 4.01<span style="color: #949494;">e</span>10 12      131     Pullup… Kyri…       2       2       1 1st Qu… 11:22  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 4.01<span style="color: #949494;">e</span>10 13      151     Cuttin… Jame…       4       2       1 1st Qu… 11:11  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 4.01<span style="color: #949494;">e</span>10 16      131     Pullup… Kevi…       4       5       1 1st Qu… 10:49  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 4.01<span style="color: #949494;">e</span>10 18      92      Jump S… Andr…       4       5       1 1st Qu… 10:31  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 4.01<span style="color: #949494;">e</span>10 19      155     Defens… Joe …       4       5       1 1st Qu… 10:25  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 542,511 more rows, 45 more variables: scoring_play &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 4.01<span style="color: #949494;">e</span> 9 4       615     Jumpba… Joel…       0       0       1 1st Qu… 12:00  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 4.01<span style="color: #949494;">e</span> 9 7       137     Turnar… Jayl…       0       0       1 1st Qu… 11:38  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 4.01<span style="color: #949494;">e</span> 9 9       156     Offens… P.J.…       0       0       1 1st Qu… 11:35  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 4.01<span style="color: #949494;">e</span>10 10      87      Out of… P.J.…       0       0       1 1st Qu… 11:35  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4.01<span style="color: #949494;">e</span>10 11      145     Drivin… Marc…       0       2       1 1st Qu… 11:15  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 4.01<span style="color: #949494;">e</span>10 12      144     Drivin… Tobi…       0       2       1 1st Qu… 11:05  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 4.01<span style="color: #949494;">e</span>10 13      156     Offens… Tobi…       0       2       1 1st Qu… 11:05  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 4.01<span style="color: #949494;">e</span>10 14      94      Tip Sh… Tobi…       2       2       1 1st Qu… 11:03  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 4.01<span style="color: #949494;">e</span>10 15      92      Jump S… Jays…       2       5       1 1st Qu… 10:46  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 4.01<span style="color: #949494;">e</span>10 17      92      Jump S… Joel…       2       5       1 1st Qu… 10:33  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 471,208 more rows, 46 more variables: scoring_play &lt;lgl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_value &lt;int&gt;, team_id &lt;chr&gt;, participants_0_athlete_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   participants_1_athlete_id &lt;chr&gt;, shooting_play &lt;lgl&gt;, coordinate_x &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   coordinate_y &lt;int&gt;, participants_2_athlete_id &lt;chr&gt;, season &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;, away_team_name_alt &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, home_team_mascot &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   participants_1_athlete_id &lt;chr&gt;, participants_2_athlete_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   wallclock &lt;chr&gt;, shooting_play &lt;lgl&gt;, coordinate_x &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   coordinate_y &lt;int&gt;, season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_name &lt;chr&gt;, away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_name_alt &lt;chr&gt;, home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

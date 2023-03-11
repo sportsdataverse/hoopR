@@ -463,6 +463,9 @@
     <loc>https://hoopR.sportsdataverse.org/reference/nba_data_pbp.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_stats_schedule.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_stats_videodetails.html</loc>
   </url>
   <url>
@@ -589,13 +592,13 @@
     <loc>https://hoopR.sportsdataverse.org/reference/rejoin_schedules.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/request_with_proxy.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/sc.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/sc_lw.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/schedule.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/scoreboard.html</loc>

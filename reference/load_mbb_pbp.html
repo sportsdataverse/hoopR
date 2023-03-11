@@ -12,7 +12,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -179,25 +179,25 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span><span class="fu">load_mbb_pbp</span><span class="op">(</span><span class="fl">2021</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">load_mbb_pbp</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Play-by-Play Information from hoopR data repository ────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-03-27 18:30:47 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,273,763 × 53</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    shooting_play seque…¹ perio…² perio…³ home_…⁴ scori…⁵ clock…⁶ team_id type_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> TRUE          101805… 1st Ha…       1       0 FALSE   19:47   2229    558    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> FALSE         101805… 1st Ha…       1       0 FALSE   19:44   2229    586    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> TRUE          101805… 1st Ha…       1       0 TRUE    19:42   2229    558    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> FALSE         101807… 1st Ha…       1       0 FALSE   19:22   2454    598    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> FALSE         101807… 1st Ha…       1       0 FALSE   19:22   2229    607    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> FALSE         101807… 1st Ha…       1       0 FALSE   19:20   2229    598    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> TRUE          101809… 1st Ha…       1       0 FALSE   19:08   2454    558    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> FALSE         101809… 1st Ha…       1       0 FALSE   19:03   2454    586    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> TRUE          101809… 1st Ha…       1       2 TRUE    19:01   2454    558    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> TRUE          101815… 1st Ha…       1       2 FALSE   18:45   2229    558    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,273,753 more rows, 44 more variables: type_text &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_score &lt;int&gt;, id &lt;dbl&gt;, text &lt;chr&gt;, score_value &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   participants_0_athlete_id &lt;chr&gt;, participants_1_athlete_id &lt;chr&gt;,</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 09:05:01 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,899,481 × 55</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         id seque…¹ type_id type_…² text  away_…³ home_…⁴ perio…⁵ perio…⁶ clock…⁷</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 4.01<span style="color: #949494;">e</span>17 101806… 519     Person… Foul…       0       0       1 1st Ha… 19:33  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 4.01<span style="color: #949494;">e</span>17 101806… 540     MadeFr… Shyk…       1       0       1 1st Ha… 19:33  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 4.01<span style="color: #949494;">e</span>17 101806… 540     MadeFr… Shyk…       2       0       1 1st Ha… 19:33  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 4.01<span style="color: #949494;">e</span>17 101808… 558     JumpSh… Leak…       2       0       1 1st Ha… 19:14  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4.01<span style="color: #949494;">e</span>17 101808… 587     Defens… Shyk…       2       0       1 1st Ha… 19:11  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 4.01<span style="color: #949494;">e</span>17 101814… 572     LayUpS… Male…       4       0       1 1st Ha… 18:51  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 4.01<span style="color: #949494;">e</span>17 101816… 519     Person… Foul…       4       0       1 1st Ha… 18:38  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 4.01<span style="color: #949494;">e</span>17 101816… 598     Lost B… Pete…       4       0       1 1st Ha… 18:38  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 4.01<span style="color: #949494;">e</span>17 101818… 558     JumpSh… Shyk…       4       0       1 1st Ha… 18:19  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 4.01<span style="color: #949494;">e</span>17 101818… 587     Defens… R.J.…       4       0       1 1st Ha… 18:15  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,899,471 more rows, 45 more variables: scoring_play &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_value &lt;int&gt;, team_id &lt;chr&gt;, participants_0_athlete_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   wallclock &lt;chr&gt;, shooting_play &lt;lgl&gt;, participants_1_athlete_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_mascot &lt;chr&gt;, away_team_abbrev &lt;chr&gt;, away_team_name_alt &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_id &lt;int&gt;, home_team_name &lt;chr&gt;, home_team_mascot &lt;chr&gt;,</span></span>

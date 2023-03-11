@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,22 +158,22 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Get current AP and Coaches Poll rankings</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_rankings</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Rankings Information from ESPN.com ────────────────── <span style="font-style: italic;">hoopR 1.9.1</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2022-12-21 09:30:15 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 88 × 37</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Rankings Information from ESPN.com ───────────── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-11 06:22:59 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 93 × 37</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    id    name      short_…¹ type  headl…² short…³ current previ…⁴ points first…⁵</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       1       1   <span style="text-decoration: underline;">1</span>502      40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       2       3   <span style="text-decoration: underline;">1</span>482      21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       3       5   <span style="text-decoration: underline;">1</span>374       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       4       8   <span style="text-decoration: underline;">1</span>290       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       5       9   <span style="text-decoration: underline;">1</span>269       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       6       2   <span style="text-decoration: underline;">1</span>195       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       7       7   <span style="text-decoration: underline;">1</span>064       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       8       6   <span style="text-decoration: underline;">1</span>024       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       9       4   <span style="text-decoration: underline;">1</span>021       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…      10      10   <span style="text-decoration: underline;">1</span>004       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 78 more rows, 27 more variables: trend &lt;chr&gt;, date &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       1       1   <span style="text-decoration: underline;">1</span>522      58</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       2       4   <span style="text-decoration: underline;">1</span>452       3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       3       3   <span style="text-decoration: underline;">1</span>368       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       4       2   <span style="text-decoration: underline;">1</span>343       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       5       5   <span style="text-decoration: underline;">1</span>274       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       6       6   <span style="text-decoration: underline;">1</span>218       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       7       9   <span style="text-decoration: underline;">1</span>100       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       8       8   <span style="text-decoration: underline;">1</span>042       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…       9      10   <span style="text-decoration: underline;">1</span>031       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1     AP Top 25 AP Poll  ap    2023 N… 2023 :…      10       7    961       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 83 more rows, 27 more variables: trend &lt;chr&gt;, date &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_updated &lt;chr&gt;, record_summary &lt;chr&gt;, team_id &lt;chr&gt;, team_uid &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_location &lt;chr&gt;, team_name &lt;chr&gt;, team_nickname &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_abbreviation &lt;chr&gt;, team_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,733 +196,733 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_hca</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       team conf hca hca_rk   pf pf_rk  pts pts_rk  nst nst_rk</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                 Colorado  P12 4.8      1 -4.7    14 11.9      3 -1.4     79</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2            West Virginia  B12 4.6      2 -4.9     9 12.5      2 -2.1     11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3               Texas Tech  B12 4.5      3 -4.6    16 11.1      8 -1.4     75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Air Force  MWC 4.4      4 -3.2   110 10.1     21 -1.2    112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                  Memphis Amer 4.4      5 -5.2     3  9.5     31 -2.4      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6           Louisiana Tech CUSA 4.3      6 -3.6    77 11.7      6 -2.7      2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7               New Mexico  MWC 4.2      7 -3.7    67 10.8     10 -0.7    212</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                 Utah St.  MWC 4.2      8 -3.3   103 11.2      7 -0.1    302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       North Carolina A&amp;T  CAA 4.2      9 -4.9    11  9.4     35 -0.9    164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10             Wake Forest  ACC 4.2     10 -5.5     1  8.2     68 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                    Iowa  B10 4.2     11 -5.0     6  9.4     35 -0.8    174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                Arkansas  SEC 4.1     12 -4.5    18  8.8     53 -0.7    207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                Stanford  P12 4.1     13 -4.2    30 10.9      9 -0.9    159</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14             Saint Louis  A10 4.1     14 -5.3     2  7.8     85 -1.8     40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    Utah  P12 4.1     15 -2.8   147 10.5     14 -1.9     26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16        Western Kentucky CUSA 4.0     16 -4.8    12  6.8    138 -2.5      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                Iowa St.  B12 4.0     17 -3.5    91 10.2     19 -2.5      5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18              Kansas St.  B12 4.0     18 -4.2    29  8.5     62 -1.8     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19               Charlotte CUSA 4.0     19 -3.7    64 10.6     12 -1.9     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    UTEP CUSA 4.0     20 -3.9    53  7.4    109 -1.9     31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21                Missouri  SEC 4.0     21 -4.1    37  9.4     32 -1.5     61</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                Oklahoma  B12 4.0     22 -4.1    35  9.7     25 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23                     SMU Amer 4.0     23 -3.8    57 10.4     15 -1.4     75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24                   Drake  MVC 3.9     24 -4.5    17  9.3     38 -0.6    216</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25            Illinois St.  MVC 3.9     25 -4.5    21  9.7     27 -1.5     56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26             Connecticut   BE 3.9     26 -4.4    23  7.4    107 -2.3      9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27             Utah Valley  WAC 3.9     27 -2.8   151  8.8     54 -1.6     53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28          South Carolina  SEC 3.9     28 -5.2     4  8.1     75 -1.7     43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                  Oregon  P12 3.9     29 -3.1   122 13.1      1 -0.5    237</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30               Texas A&amp;M  SEC 3.9     30 -5.0     6  5.7    215 -2.4      7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31                 Clemson  ACC 3.9     31 -4.0    45  8.8     54 -1.6     51</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32        South Dakota St.  Sum 3.9     32 -3.1   122 11.7      5 -1.8     35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33              Evansville  MVC 3.9     33 -5.2     5  6.4    165 -2.3      9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34                  Nevada  MWC 3.9     34 -3.0   126  8.5     61 -1.4     70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35                  Purdue  B10 3.9     35 -3.9    50 10.1     22 -0.8    187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36                Maryland  B10 3.9     36 -4.7    13  7.6     99 -1.9     28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37                     TCU  B12 3.9     37 -4.0    41  9.2     47 -1.1    131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38            Colorado St.  MWC 3.9     38 -2.8   154  7.1    120 -1.8     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39                Ohio St.  B10 3.9     39 -3.9    48 10.5     13 -0.7    201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40              Cincinnati Amer 3.8     40 -3.6    77  9.3     38 -1.8     32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41                Kentucky  SEC 3.8     41 -4.2    32  9.0     50 -0.9    154</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42         Mississippi St.  SEC 3.8     42 -4.0    45  9.6     28 -0.5    237</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43                    Ohio  MAC 3.8     43 -3.9    51  7.5    104 -2.7      1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44                  Kansas  B12 3.8     44 -4.2    32  8.9     52 -1.2    115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45                  Dayton  A10 3.8     45 -4.5    18  7.7     91 -1.9     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46                 Rutgers  B10 3.8     46 -4.2    31  7.5    104 -2.0     16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47            Old Dominion   SB 3.8     47 -4.0    39  9.1     49 -1.1    124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48              Louisville  ACC 3.8     48 -5.0     8  5.8    209 -1.7     47</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49                Marshall   SB 3.8     49 -3.9    48  9.5     29 -0.9    167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50                   Texas  B12 3.8     50 -4.3    26  7.7     91 -1.8     39</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51                  Denver  Sum 3.7     51 -2.6   166  8.0     80  0.3    343</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52               Tennessee  SEC 3.7     52 -4.4    23  6.4    165 -1.9     23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53               Boise St.  MWC 3.7     53 -3.9    54  7.2    119 -1.1    119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54                    Duke  ACC 3.7     54 -3.0   131 10.4     16 -0.8    187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55            Oklahoma St.  B12 3.7     55 -4.0    41  7.0    130 -1.7     48</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56              California  P12 3.7     56 -3.5    88  8.8     54 -2.1     12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57                La Salle  A10 3.7     57 -3.8    62  9.7     26 -0.8    179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58            Michigan St.  B10 3.7     58 -3.6    72  6.8    137 -1.4     83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59                 Bradley  MVC 3.7     59 -4.3    26  8.5     59 -0.7    214</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60                    UCLA  P12 3.7     60 -3.9    54  9.3     38 -1.1    131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61                 Georgia  SEC 3.7     61 -4.5    20  7.2    118 -0.7    201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62                 Wyoming  MWC 3.7     62 -2.0   217  6.3    179 -0.8    186</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63                     LSU  SEC 3.7     63 -4.9     9  5.9    198 -1.4     75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64                   Tulsa Amer 3.7     64 -2.8   154 10.7     11 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65           Southern Miss   SB 3.7     65 -2.6   170 11.9      4 -1.2    107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66             Mississippi  SEC 3.6     66 -3.7    69  7.7     91 -1.1    128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67             Indiana St.  MVC 3.6     67 -3.8    56 10.2     19 -0.4    267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68              St. John's   BE 3.6     68 -3.2   115  8.3     66 -1.2    112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69                     BYU  WCC 3.6     69 -2.7   163  7.9     82  0.0    320</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70                     UCF Amer 3.6     70 -3.6    80  7.7     90 -1.8     38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71             Florida St.  ACC 3.6     71 -4.2    34  9.3     42 -0.1    316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                Miami OH  MAC 3.6     72 -3.8    59  6.1    187 -1.5     56</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73                Nebraska  B10 3.6     73 -4.2    28  7.0    134 -0.5    241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74                 Arizona  P12 3.6     74 -3.5    86  7.1    120 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75               Creighton   BE 3.6     75 -3.3   105  8.0     78 -1.4     70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76             Arizona St.  P12 3.6     76 -3.2   107  7.8     86 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77           San Diego St.  MWC 3.6     77 -3.6    77  9.4     32 -1.0    139</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78                  Auburn  SEC 3.6     78 -3.5    88  7.7     89 -0.7    207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79          New Mexico St.  WAC 3.6     79 -2.7   160  6.5    158 -0.3    287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80                  Furman   SC 3.6     80 -2.7   157  8.2     69 -0.8    198</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81               Minnesota  B10 3.6     81 -4.0    40  8.2     69 -0.1    302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82           Northern Iowa  MVC 3.6     82 -4.0    41  7.9     81 -1.2    102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83                Michigan  B10 3.6     83 -3.8    63  6.5    162 -1.7     46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84                    NJIT   AE 3.6     84 -2.8   153  9.4     34 -1.8     37</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85                  Baylor  B12 3.6     85 -4.7    14  5.0    250 -1.4     70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86        Western Michigan  MAC 3.6     86 -3.5    86  8.5     60 -1.3     86</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87                 Indiana  B10 3.5     87 -3.7    69  9.2     46  0.2    340</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88               Wisconsin  B10 3.5     88 -4.5    21  6.1    188 -0.8    194</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89              Washington  P12 3.5     89 -3.3    99  7.6     98 -0.8    187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90               Weber St. BSky 3.5     90 -1.6   254  6.5    162 -1.1    134</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91            Missouri St.  MVC 3.5     91 -4.1    38  6.0    195 -1.7     43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92              Wright St. Horz 3.5     92 -3.5    82  8.4     63 -1.4     75</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93              N.C. State  ACC 3.5     93 -3.3    99  7.2    113 -1.3     86</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94       George Washington  A10 3.5     94 -2.7   156  9.5     29 -1.9     26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95                     VCU  A10 3.5     95 -3.4    97  9.2     47 -1.2    107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96              Oregon St.  P12 3.5     96 -3.3   102  9.2     44 -0.5    241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97       Stephen F. Austin  WAC 3.5     97 -2.6   166  8.2     69 -2.0     14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98        Coastal Carolina   SB 3.5     98 -3.6    80  8.2     72 -1.0    136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99           Massachusetts  A10 3.5     99 -3.7    69  6.4    168 -1.9     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100              Marquette   BE 3.5    100 -3.5    82  6.3    177 -1.4     64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101             Seton Hall   BE 3.5    101 -3.8    59  6.3    173 -1.6     55</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102                  Akron  MAC 3.5    102 -3.9    51  6.7    149 -0.7    205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103        St. Bonaventure  A10 3.5    103 -3.6    74  5.1    247 -1.7     48</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104               Penn St.  B10 3.5    104 -3.2   107  6.8    145 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105                   UNLV  MWC 3.5    105 -3.1   121  6.5    160 -1.5     58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106      Houston Christian Slnd 3.5    106 -3.2   114  7.5    103 -1.1    128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107                    USC  P12 3.4    107 -2.7   163  8.7     58 -1.9     19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108         UNC Wilmington  CAA 3.4    108 -3.3   105  8.1     73 -0.8    174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109                Alabama  SEC 3.4    109 -3.8    59  6.7    146  0.1    333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110       North Dakota St.  Sum 3.4    110 -2.9   137  9.3     41 -0.7    207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111                Buffalo  MAC 3.4    111 -3.4    95  5.8    209 -2.3      8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112                Florida  SEC 3.4    112 -4.3    25  4.5    282 -0.8    174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113               Syracuse  ACC 3.4    113 -3.7    64  5.0    250 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114           UT Arlington  WAC 3.4    114 -3.0   131  7.1    126 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115         North Carolina  ACC 3.4    115 -3.6    74  5.9    200 -1.2    115</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116       Eastern Michigan  MAC 3.4    116 -3.1   122  7.6     94 -0.8    187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117            Wichita St. Amer 3.4    117 -3.0   131  7.5    102 -1.2    102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118     South Carolina St. MEAC 3.4    118 -4.0    44  5.8    206 -0.2    291</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119                    UAB CUSA 3.4    119 -2.9   137  7.8     88 -0.4    261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120            Georgia St.   SB 3.4    120 -3.0   129  7.1    126 -0.6    232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121      Southern Illinois  MVC 3.4    121 -3.7    64  7.6     99 -0.2    293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122         Washington St.  P12 3.4    122 -1.9   227  8.1     75 -0.9    171</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123          Virginia Tech  ACC 3.4    123 -1.9   224  7.6     96 -2.1     12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124               Miami FL  ACC 3.4    124 -3.5    91  7.2    113 -1.1    128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125           Oral Roberts  Sum 3.4    125 -2.7   157  9.0     50 -0.9    167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126       Northern Arizona BSky 3.3    126 -1.4   280  4.5    275 -0.6    225</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127            North Texas CUSA 3.3    127 -3.3   103  6.3    175 -1.1    134</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128            Montana St. BSky 3.3    128 -1.1   308  8.8     54  0.0    320</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129       Central Arkansas ASun 3.3    129 -2.0   212  8.3     67 -0.8    182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130       Middle Tennessee CUSA 3.3    130 -2.5   175  7.8     86 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131     Florida Gulf Coast ASun 3.3    131 -2.6   165  9.8     24 -0.1    311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132       Louisiana Monroe   SB 3.3    132 -2.8   146  8.0     79 -1.4     83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133             Georgetown   BE 3.3    133 -4.0    45  6.0    192 -0.8    194</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134                  Lamar Slnd 3.3    134 -3.6    72  6.3    173 -0.3    282</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135               Davidson  A10 3.3    135 -1.9   222  9.3     37 -0.7    207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136         UNC Greensboro   SC 3.3    136 -2.4   185  5.2    242 -1.4     69</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137            The Citadel   SC 3.3    137 -3.6    74  4.3    288 -1.4     64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138                Seattle  WAC 3.3    138 -3.0   130  6.0    191 -1.9     29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139 North Carolina Central MEAC 3.3    139 -1.8   234 10.3     17 -0.7    199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140       Tennessee Martin  OVC 3.3    140 -2.9   139  6.7    146 -0.8    174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141                   UTSA CUSA 3.3    141 -2.1   207 10.0     23 -0.8    179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142           Georgia Tech  ACC 3.3    142 -3.5    91  5.8    203 -1.0    136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143          UNC Asheville BSth 3.3    143 -1.6   250  7.8     83 -0.9    156</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144           Arkansas St.   SB 3.3    144 -3.2   110  4.8    255 -1.3     88</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145              Utah Tech  WAC 3.3    145 -2.2   199  5.8    204 -1.2    117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146       Western Carolina   SC 3.3    146 -2.8   145  5.5    222 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147              Milwaukee Horz 3.3    147 -3.5    82  4.1    296 -1.8     35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148             Valparaiso  MVC 3.2    148 -3.5    85  6.4    168  0.3    346</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149              Villanova   BE 3.2    149 -2.8   147  7.4    110 -1.4     64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150           Grand Canyon  WAC 3.2    150 -2.5   180  6.6    153 -0.9    153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151                 Xavier   BE 3.2    151 -3.1   119  5.5    225 -2.0     18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152               Illinois  B10 3.2    152 -2.6   166  6.9    135 -1.1    131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153               Kent St.  MAC 3.2    153 -3.0   128  6.5    164 -0.8    182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154           Rhode Island  A10 3.2    154 -3.4    95  3.4    317 -1.1    126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155             Murray St.  MVC 3.2    155 -2.6   171  7.6     99 -1.3     92</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156         Saint Joseph's  A10 3.2    156 -3.7    67  3.9    306 -2.0     15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157                Hampton  CAA 3.2    157 -3.2   110  5.5    226 -1.5     59</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158          East Carolina Amer 3.2    158 -3.1   119  7.8     83  0.2    342</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159                 Toledo  MAC 3.2    159 -3.1   116  6.6    155 -1.1    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160         Loyola Chicago  A10 3.2    160 -3.2   110  7.2    115 -0.4    261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161             Fresno St.  MWC 3.2    161 -3.8    57  4.8    255 -0.4    265</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162       Georgia Southern   SB 3.2    162 -2.7   157  6.2    183 -0.4    261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163             Binghamton   AE 3.2    163 -2.6   173  6.6    155 -1.4     70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164                 Butler   BE 3.2    164 -2.8   147  7.1    126 -0.1    311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165             St. Thomas  Sum 3.2    165 -2.2   195  8.1     77 -0.8    193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166             Providence   BE 3.2    166 -3.2   109  4.7    263 -1.2    112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167                  IUPUI Horz 3.2    167 -3.0   127  5.3    239 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168                 Temple Amer 3.2    168 -1.7   246  7.4    108 -2.0     17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169             Charleston  CAA 3.1    169 -2.2   193  7.5    104 -1.0    136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170                Houston Amer 3.1    170 -2.3   191  7.0    129 -1.2    107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171     Texas A&amp;M Commerce Slnd 3.1    171 -2.1   209  6.8    142 -0.9    163</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172           Tarleton St.  WAC 3.1    172 -2.2   199  5.8    204 -1.2    117</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173         Youngstown St. Horz 3.1    173 -3.4    94  4.5    275 -1.3     91</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174            USC Upstate BSth 3.1    174 -3.1   116  5.0    249 -0.5    235</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175                   Rice CUSA 3.1    175 -2.7   162  6.1    189 -1.5     59</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176                Montana BSky 3.1    176 -2.3   187  4.4    285 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177            Jackson St. SWAC 3.1    177 -2.2   197  7.0    132 -0.9    156</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178             Vanderbilt  SEC 3.1    178 -3.5    90  4.9    254  0.0    328</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179             Notre Dame  ACC 3.1    179 -2.3   190  6.2    180 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180               Virginia  ACC 3.1    180 -3.4    98  4.1    294 -0.7    207</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181          Detroit Mercy Horz 3.1    181 -2.9   141  5.2    241 -1.3     92</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182 Southeast Missouri St.  OVC 3.1    182 -2.5   178  5.8    212 -0.7    214</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183            Norfolk St. MEAC 3.0    183 -2.3   189  6.2    183 -1.1    122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184               Winthrop BSth 3.0    184 -2.5   181  5.4    233 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185          South Florida Amer 3.0    185 -2.9   136  5.3    234 -0.7    201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186             Holy Cross  Pat 3.0    186 -3.1   122  4.4    286 -0.3    287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187          Bowling Green  MAC 3.0    187 -2.9   141  3.5    312 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188            Cal Baptist  WAC 3.0    188 -2.3   188  5.7    216 -1.0    151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189        Bethune Cookman SWAC 3.0    189 -1.3   283  8.4     64 -1.1    119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190                 Mercer   SC 3.0    190 -2.5   175  4.8    255 -1.0    142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191                Fordham  A10 3.0    191 -2.9   134  2.0    348 -2.5      3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192           Kennesaw St. ASun 3.0    192 -1.4   273  6.6    154 -1.6     53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193              Louisiana   SB 3.0    193 -2.4   186  7.0    133 -0.2    295</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 194               Duquesne  A10 3.0    194 -2.8   147  4.0    300 -0.9    171</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 195      Abilene Christian  WAC 3.0    195 -0.5   340  6.2    186 -1.9     25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196                  Siena MAAC 3.0    196 -2.1   203  6.7    152 -1.3     90</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197 Texas A&amp;M Corpus Chris Slnd 3.0    197 -2.5   181  5.7    217 -0.9    164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198              Idaho St. BSky 3.0    198 -1.5   265  4.5    273  0.6    351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199          Southern Utah  WAC 3.0    199 -0.9   321  4.0    303 -0.5    247</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200            Little Rock  OVC 3.0    200 -2.9   134  6.5    160 -0.2    297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 201 Maryland Eastern Shore MEAC 3.0    201 -2.5   178  6.7    149 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202            McNeese St. Slnd 3.0    202 -2.6   171  5.6    220 -0.2    300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203           North Dakota  Sum 3.0    203 -1.4   276  7.6     95 -1.0    139</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204         Long Beach St.   BW 3.0    204 -2.1   203  7.4    110  0.3    344</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205                 Drexel  CAA 3.0    205 -2.4   184  6.4    168 -0.3    285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206               Richmond  A10 3.0    206 -2.6   173  6.8    140 -0.9    167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207              Green Bay Horz 3.0    207 -3.1   116  5.8    202  0.0    322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208                    VMI   SC 3.0    208 -1.8   237  6.4    168 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209               Ball St.  MAC 3.0    209 -2.9   141  4.5    273 -1.0    152</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210          North Alabama ASun 3.0    210 -1.9   226  6.1    190 -0.8    185</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211               Campbell BSth 3.0    211 -2.9   141  4.4    286 -1.2    102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212            Florida A&amp;M SWAC 3.0    212 -1.9   218  6.5    157 -1.4     64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213      Northern Illinois  MAC 3.0    213 -1.7   240  5.3    237 -1.4     64</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214            Chicago St.  ind 3.0    214 -2.8   151  2.3    338 -1.9     24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215           Northwestern  B10 2.9    215 -2.5   175  4.5    275 -1.0    142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216        Appalachian St.   SB 2.9    216 -0.7   333  6.3    175 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217                 Albany   AE 2.9    217 -2.9   139  4.6    269 -1.3     92</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218          James Madison   SB 2.9    218 -1.9   224  3.0    325 -1.5     61</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219       SIU Edwardsville  OVC 2.9    219 -1.4   277  6.5    159 -0.5    241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220            Chattanooga   SC 2.9    220 -1.9   218  5.5    228 -0.2    295</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221             Lindenwood  OVC 2.9    221 -2.1   205  5.3    235 -0.6    223</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222      Purdue Fort Wayne Horz 2.9    222 -2.2   201  7.2    116 -0.2    300</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223                   UMKC  Sum 2.9    223 -1.6   254  6.7    146 -0.9    164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224       Southern Indiana  OVC 2.9    224 -2.1   205  5.3    235 -0.6    223</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225             Pittsburgh  ACC 2.9    225 -2.2   196  4.1    294 -0.5    237</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226         Boston College  ACC 2.9    226 -2.0   216  6.0    195 -0.9    156</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227                Gonzaga  WCC 2.9    227 -1.1   306  6.2    183 -1.4     81</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228       Northwestern St. Slnd 2.9    228 -2.1   210  4.6    269 -1.7     48</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229           Nicholls St. Slnd 2.9    229 -1.2   297  9.2     44 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230                Wofford   SC 2.9    230 -1.6   258  5.9    198 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 231       Central Michigan  MAC 2.9    231 -1.7   246  6.0    197 -1.2    107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 232               Bucknell  Pat 2.9    232 -1.4   270  6.8    138 -1.8     40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 233         William &amp; Mary  CAA 2.9    233 -1.3   290  5.8    209 -0.4    265</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 234       Jacksonville St. ASun 2.9    234 -3.3    99  1.8    351 -0.5    237</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 235                    FIU CUSA 2.9    235 -2.2   197  6.4    168 -0.1    316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 236                 Queens ASun 2.9    236 -1.7   242  6.8    143 -0.5    245</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 237          Tennessee St.  OVC 2.9    237 -2.1   208  4.7    267 -0.8    187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 238    Cal St. Bakersfield   BW 2.9    238 -1.6   248  5.1    245 -1.9     30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 239             Bellarmine ASun 2.9    239 -1.7   242  6.8    143 -0.5    245</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 240           George Mason  A10 2.9    240 -4.1    35  0.2    363 -1.3     92</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 241 Southeastern Louisiana Slnd 2.8    241 -1.6   258  6.8    140 -0.1    314</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 242         Sacramento St. BSky 2.8    242 -1.6   254  7.1    124  0.4    349</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 243         Tennessee Tech  OVC 2.8    243 -1.4   273  4.9    253 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244                Samford   SC 2.8    244 -1.8   234  7.1    124 -0.3    285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 245                  Idaho BSky 2.8    245 -1.3   283  4.7    263 -1.0    144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 246      Northern Kentucky Horz 2.8    246 -1.7   244  5.5    224 -0.7    212</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 247            Alabama St. SWAC 2.8    247 -2.3   191  3.7    310 -0.8    194</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 248         Incarnate Word Slnd 2.8    248 -0.9   322  6.4    167 -0.9    159</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 249                   Troy   SB 2.8    249 -1.8   231  4.5    275 -0.5    235</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 250       Western Illinois  Sum 2.8    250 -1.7   239  7.3    112 -0.3    279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 251       Eastern Illinois  OVC 2.8    251 -2.2   193  4.0    300 -0.6    227</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 252                Belmont  MVC 2.8    252 -1.9   220  6.3    178  0.0    330</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 253   UT Rio Grande Valley  WAC 2.8    253 -1.6   250  5.7    214 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 254     East Tennessee St.   SC 2.8    254 -1.7   244  3.1    324 -0.6    232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 255             Morgan St. MEAC 2.8    255 -1.9   220  6.2    181  0.1    337</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 256              Manhattan MAAC 2.8    256 -1.4   272  7.1    120 -1.2    102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 257           Morehead St.  OVC 2.8    257 -1.2   302  5.7    213 -0.1    305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 258        Sam Houston St.  WAC 2.8    258 -1.5   263  4.7    263 -0.7    201</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 259           San Jose St.  MWC 2.8    259 -0.6   338 10.3     18 -0.1    316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 260          North Florida ASun 2.7    260 -0.9   317  8.1     74 -0.6    227</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 261           Saint Mary's  WCC 2.7    261 -1.3   290  4.3    290 -1.3     88</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 262                 Tulane Amer 2.7    262 -2.7   160  1.6    357 -1.5     61</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 263           South Dakota  Sum 2.7    263 -0.9   320  7.1    120  0.0    328</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264      Northern Colorado BSky 2.7    264 -1.1   311  1.6    355 -0.1    305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 265          Cleveland St. Horz 2.7    265 -1.5   265  5.3    239 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 266                 DePaul   BE 2.7    266 -2.0   214  3.3    319 -1.1    124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 267             Alcorn St. SWAC 2.7    267 -1.4   273  8.3     65  1.1    362</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 268            Austin Peay ASun 2.7    268 -1.3   283  6.0    194 -1.1    126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 269         St. Francis PA  NEC 2.7    269 -1.6   261  2.7    330 -0.6    231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 270              Loyola MD  Pat 2.7    270 -1.8   232  5.4    230  0.1    333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 271            Alabama A&amp;M SWAC 2.7    271 -1.3   294  5.8    206 -0.3    270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 272         Nebraska Omaha  Sum 2.7    272 -1.8   236  3.8    309 -1.4     70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 273                 Hawaii   BW 2.7    273 -2.2   202  5.5    226  0.0    322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 274                 Towson  CAA 2.7    274 -2.6   166  2.2    339 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 275          San Francisco  WCC 2.7    275 -2.5   181  2.5    334 -0.9    159</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276            New Orleans Slnd 2.7    276 -1.4   277  5.5    222 -0.2    291</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 277               Delaware  CAA 2.7    277 -1.2   297  5.6    220 -0.3    276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 278               Southern SWAC 2.7    278 -1.2   299  5.4    230 -0.6    227</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 279       Florida Atlantic CUSA 2.7    279 -1.3   290  5.3    238 -0.9    154</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 280              San Diego  WCC 2.7    280 -1.9   227  2.7    331 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 281           Northeastern  CAA 2.6    281 -1.2   299  4.0    300 -1.6     52</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 282                 Lehigh  Pat 2.6    282 -1.8   232  4.7    259 -0.4    267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 283           Portland St. BSky 2.6    283 -0.5   340  7.0    131 -0.8    182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 284              Fairfield MAAC 2.6    284 -1.7   240  6.7    149  0.1    335</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 285       Prairie View A&amp;M SWAC 2.6    285 -1.3   283  6.9    136  0.0    322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 286              Texas St.   SB 2.6    286 -2.0   214  3.8    308 -0.5    247</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 287     Eastern Washington BSky 2.6    287 -0.3   347  6.0    192  0.0    322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 288            Stony Brook  CAA 2.6    288 -2.1   211  2.1    342 -1.4     79</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 289                Harvard  Ivy 2.6    289 -1.2   303  5.6    219 -0.1    314</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290                   Elon  CAA 2.6    290 -1.9   229  3.4    316 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 291               Monmouth  CAA 2.6    291 -1.3   288  6.2    181 -0.5    247</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 292             Pepperdine  WCC 2.5    292 -1.9   222  4.6    271  0.8    358</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 293           Delaware St. MEAC 2.5    293 -1.2   303  5.2    242 -0.7    199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 294                  Brown  Ivy 2.5    294 -1.8   237  2.4    335 -0.6    217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 295                 Wagner  NEC 2.5    295 -1.1   307  4.7    266  0.0    322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 296 Mississippi Valley St. SWAC 2.5    296 -0.9   318  5.5    228 -0.4    267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 297             High Point BSth 2.5    297 -0.6   338  4.7    267 -0.3    287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 298           Presbyterian BSth 2.5    298 -1.4   277  4.0    298 -0.8    174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 299                 Howard MEAC 2.5    299 -0.9   318  4.7    259 -1.4     81</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 300       Illinois Chicago  MVC 2.5    300 -1.6   254  3.9    305 -0.9    171</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 301          South Alabama   SB 2.5    301 -1.3   290  7.2    116  1.1    363</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 302                Oakland Horz 2.5    302 -1.4   270  1.7    353 -1.7     43</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 303               American  Pat 2.5    303 -1.5   267  4.0    298 -0.1    316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 304               Lipscomb ASun 2.5    304 -1.6   249  4.5    280 -0.1    309</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 305          New Hampshire   AE 2.5    305 -1.6   261  3.3    322 -0.1    305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 306         Texas Southern SWAC 2.5    306 -0.1   351  9.2     43  0.6    351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 307                   Army  Pat 2.5    307 -0.7   332  4.9    252 -0.3    276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 308           Gardner Webb BSth 2.5    308 -1.1   312  4.8    255  0.2    339</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 309    Arkansas Pine Bluff SWAC 2.5    309 -0.6   335  5.8    206 -1.2    107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 310            Santa Clara  WCC 2.5    310 -1.5   267  2.0    347 -1.1    119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 311       Mount St. Mary's MAAC 2.5    311 -0.8   327  4.2    292 -0.3    287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 312           UC San Diego   BW 2.5    312 -1.3   295  4.5    272  0.2    341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 313                Liberty ASun 2.5    313 -2.0   213  1.8    352 -0.8    179</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 314          Saint Peter's MAAC 2.5    314 -1.9   230  4.4    283 -0.1    302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 315                Pacific  WCC 2.5    315 -1.0   314  3.5    315 -0.9    167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 316              Merrimack  NEC 2.5    316 -1.0   315  3.0    327 -0.8    192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 317                 Bryant   AE 2.4    317 -1.0   316  4.3    288 -0.3    276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 318     Cal St. Northridge   BW 2.4    318 -1.3   281  1.6    355 -0.2    293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 319       Eastern Kentucky ASun 2.4    319 -1.6   250  1.9    350 -0.5    251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 320                  Maine   AE 2.4    320 -1.5   267  3.5    313 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 321                Vermont   AE 2.4    321 -1.3   281  2.6    333 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 322             Quinnipiac MAAC 2.4    322 -0.2   350  5.9    201 -0.3    282</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 323                   Penn  Ivy 2.4    323 -1.6   258  4.2    293  0.6    353</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 324               UC Davis   BW 2.4    324 -1.3   283  5.4    232  0.3    345</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 325         St. Francis NY  NEC 2.4    325 -0.9   322  3.9    304 -0.5    247</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 326       UC Santa Barbara   BW 2.4    326 -1.1   309  4.4    283  0.6    355</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 327          Robert Morris Horz 2.3    327 -0.8   329  2.2    340 -0.5    251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 328              UC Irvine   BW 2.3    328 -0.6   336  4.7    261  0.4    347</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 329              Stonehill  NEC 2.3    329 -0.8   328  3.3    321 -0.3    281</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 330               Cal Poly   BW 2.3    330 -1.5   263  2.6    332  0.0    330</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 331    Central Connecticut  NEC 2.3    331 -0.2   349  3.0    325 -1.2    102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 332                Stetson ASun 2.3    332  0.2   357  7.6     96  0.9    360</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 333              Lafayette  Pat 2.3    333 -0.8   329  4.5    275 -0.2    297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 334           Sacred Heart  NEC 2.3    334 -1.2   299  2.3    337  0.1    337</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 335                   UMBC   AE 2.3    335 -1.3   288  2.3    336 -0.8    194</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 336                   Iona MAAC 2.3    336 -1.1   309  2.1    344 -1.2     96</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 337                  Rider MAAC 2.3    337 -0.8   326  4.3    290 -0.5    241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 338                Radford BSth 2.3    338 -1.6   253  0.4    362  0.0    327</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 339             Coppin St. MEAC 2.3    339 -1.2   303  2.9    329  0.1    335</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 340                Hofstra  CAA 2.3    340 -0.7   334  2.2    341 -1.8     40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 341                Colgate  Pat 2.2    341 -0.9   322  3.3    318  0.6    353</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 342           UC Riverside   BW 2.2    342 -0.4   344  3.5    313  0.1    332</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 343                Niagara MAAC 2.2    343  0.4   360  5.6    218 -0.7    205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 344           UMass Lowell   AE 2.2    344 -1.3   296  0.7    359 -1.0    141</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 345           Jacksonville ASun 2.2    345 -0.4   343  5.2    242 -0.2    297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 346              Dartmouth  Ivy 2.2    346 -0.4   346  3.5    311 -0.1    311</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 347      Cal St. Fullerton   BW 2.1    347 -0.4   345  4.5    280  0.4    347</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 348               Portland  WCC 2.1    348 -1.0   313  1.9    349 -0.6    227</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 349          Grambling St. SWAC 2.1    349  0.0   353  3.3    319 -0.6    232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 350                    LIU  NEC 2.1    350 -0.6   336  2.1    343 -0.5    253</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 351               Columbia  Ivy 2.1    351  0.1   355  5.1    247  0.8    359</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 352       Loyola Marymount  WCC 2.1    352 -0.5   342  3.0    328 -0.1    309</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 353              Princeton  Ivy 2.0    353  0.3   358  3.1    323 -0.4    261</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 354               Longwood BSth 2.0    354  0.0   352  0.5    361 -1.4     83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 355    Charleston Southern BSth 2.0    355  0.0   353  4.7    261 -0.3    279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 356                 Marist MAAC 2.0    356  0.3   359  3.9    306 -0.3    282</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 357               Hartford  ind 2.0    357 -0.9   322  2.1    346 -0.1    305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 358                   Yale  Ivy 1.9    358  0.2   356  4.0    297  0.6    356</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 359                Cornell  Ivy 1.9    359  1.4   363  5.1    246  0.5    350</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 360               Canisius MAAC 1.9    360 -0.8   329  1.6    354  0.7    357</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 361      Boston University  Pat 1.8    361 -0.2   348  0.6    360 -0.6    225</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 362    Fairleigh Dickinson  NEC 1.7    362  0.4   361  2.1    344  1.1    361</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 363                   Navy  Pat 1.7    363  0.5   362  1.1    358 -0.9    159</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            West Virginia  B12 4.6      1 -4.5    18 12.2      2 -2.7      3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2               Texas Tech  B12 4.6      2 -5.3     3 10.3     20 -1.8     21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      TCU  B12 4.3      3 -5.6     1  9.3     35 -1.5     48</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                Air Force  MWC 4.3      4 -3.6    65  9.2     39 -0.8    174</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5               New Mexico  MWC 4.3      5 -3.0    98 11.6      5 -0.9    155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                 Utah St.  MWC 4.2      6 -3.3    82 11.5      6 -0.2    287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                 Colorado  P12 4.1      7 -3.2    86 10.9     13  0.1    329</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                 Iowa St.  B12 4.1      8 -3.9    51  9.5     27 -3.2      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                Charlotte CUSA 4.1      9 -4.1    32 11.0     11 -1.6     37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10               Tennessee  SEC 4.1     10 -4.6    15  9.2     38 -2.6      4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11             Wake Forest  ACC 4.1     11 -5.4     2  7.9     74 -1.6     36</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12             Saint Louis  A10 4.1     12 -5.1     4  8.8     48 -1.2    108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                 Bradley  MVC 4.1     13 -4.2    30 11.1      9 -1.1    116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                Oklahoma  B12 4.0     14 -4.7    11  9.3     36 -1.0    136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                Arkansas  SEC 4.0     15 -4.6    14  9.0     45 -0.5    239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16            Illinois St.  MVC 4.0     16 -4.5    20 10.1     22 -1.4     66</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17      North Carolina A&amp;T  CAA 4.0     17 -5.0     5  7.5     86 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                Kentucky  SEC 4.0     18 -4.8     8  9.1     43 -1.3     77</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                 Rutgers  B10 4.0     19 -4.4    22  9.4     29 -1.7     31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                    Iowa  B10 4.0     20 -4.2    31 10.2     21 -0.8    170</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21             Connecticut   BE 3.9     21 -4.6    13  8.5     55 -1.5     50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                 Clemson  ACC 3.9     22 -4.1    35  8.7     50 -1.9     16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                   Tulsa Amer 3.9     23 -3.0    99 12.1      3 -1.5     48</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24         Mississippi St.  SEC 3.9     24 -4.0    36 10.9     12 -0.1    299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25              Evansville  MVC 3.9     25 -4.9     6  7.5     87 -1.8     20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                Maryland  B10 3.9     26 -4.8    10  7.4     89 -1.9     16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                Missouri  SEC 3.8     27 -4.8     9  7.7     80 -0.7    210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28                  Oregon  P12 3.8     28 -2.8   118 12.7      1 -0.8    180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29               Creighton   BE 3.8     29 -3.0    99 11.3      8 -1.0    131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                  Nevada  MWC 3.8     30 -4.0    42  7.2    105 -1.4     61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                     SMU Amer 3.8     31 -3.2    85 11.7      4 -1.0    127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32              Cincinnati Amer 3.8     32 -3.9    48  9.2     42 -1.0    131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                 Memphis Amer 3.8     33 -4.5    18  8.3     62 -1.4     67</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                 Georgia  SEC 3.8     34 -4.0    42  9.3     37 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                  Purdue  B10 3.8     35 -3.5    71 10.8     15 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                     BYU  WCC 3.8     36 -2.8   122  9.1     44 -0.8    176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37         St. Bonaventure  A10 3.8     37 -3.7    58  8.9     47 -1.2     97</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                  Auburn  SEC 3.8     38 -3.7    58  8.7     51 -0.9    166</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                    Ohio  MAC 3.7     39 -3.7    58  9.4     32 -2.1     10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40          Louisiana Tech CUSA 3.7     40 -3.4    78  9.4     33 -1.6     41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41              Kansas St.  B12 3.7     41 -3.9    52  6.3    148 -2.9      2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                    Utah  P12 3.7     42 -2.2   170  8.5     55 -1.6     35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43        Western Kentucky CUSA 3.7     43 -4.5    16  4.8    244 -2.5      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44        South Dakota St.  Sum 3.7     44 -2.9   110 10.3     18 -1.4     67</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                   Texas  B12 3.7     45 -4.2    26  6.6    134 -1.6     46</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46                Stanford  P12 3.7     46 -3.0   103 10.4     17 -1.0    136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47           Massachusetts  A10 3.7     47 -4.0    45  8.2     64 -1.7     28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48                    UTEP CUSA 3.7     48 -3.3    82  7.4     91 -1.6     41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                 Alabama  SEC 3.7     49 -4.4    22  7.8     75 -0.2    283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                La Salle  A10 3.6     50 -4.0    38  8.0     69 -1.1    122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51              Louisville  ACC 3.6     51 -4.5    17  6.6    131 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52       Stephen F. Austin  WAC 3.6     52 -2.4   156  9.3     34 -1.9     14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53            Oklahoma St.  B12 3.6     53 -4.7    12  5.2    221 -2.2      9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54             Florida St.  ACC 3.6     54 -2.8   121 11.1     10 -1.2     97</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                  Baylor  B12 3.6     55 -4.9     6  4.8    247 -1.4     61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56                Ohio St.  B10 3.6     56 -3.5    74  9.4     30 -0.7    210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57             Utah Valley  WAC 3.6     57 -1.3   268  9.7     24 -1.1    113</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58           San Diego St.  MWC 3.6     58 -3.0    96 10.5     16 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59            Michigan St.  B10 3.6     59 -2.2   177 10.3     18 -1.4     59</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60            Old Dominion   SB 3.6     60 -4.0    45  8.6     54 -1.0    141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61                Michigan  B10 3.6     61 -3.8    54  7.5     85 -1.2    103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62                     LSU  SEC 3.6     62 -4.5    21  6.9    118 -1.2    108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63              N.C. State  ACC 3.6     63 -3.6    67  7.0    111 -2.4      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64                  Kansas  B12 3.5     64 -4.0    38  6.0    164 -1.4     64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                Marshall   SB 3.5     65 -3.8    54  7.2    101 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66          North Carolina  ACC 3.5     66 -3.4    76  6.6    132 -1.7     26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67                Penn St.  B10 3.5     67 -3.6    65  7.8     76 -0.3    272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68               Marquette   BE 3.5     68 -3.8    57  7.0    114 -1.2     94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69              California  P12 3.5     69 -3.1    92  9.2     39 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                 Wyoming  MWC 3.5     70 -2.9   116  5.4    200 -1.2    108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71        Middle Tennessee CUSA 3.5     71 -3.1    87  8.2     64 -1.1    125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72              Washington  P12 3.5     72 -2.9   105  7.7     79 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73               Villanova   BE 3.5     73 -4.3    25  6.3    144 -1.6     41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74               Boise St.  MWC 3.4     74 -4.2    28  6.0    168 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75              Providence   BE 3.4     75 -3.9    49  5.3    204 -0.9    155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76             Indiana St.  MVC 3.4     76 -3.6    63  8.4     58 -0.8    178</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77                 Indiana  B10 3.4     77 -3.5    69  8.4     57 -0.1    297</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78           Northern Iowa  MVC 3.4     78 -3.6    64  7.4     92 -1.0    136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79          New Mexico St.  WAC 3.4     79 -2.5   153  6.2    156 -0.6    230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80           Southern Miss   SB 3.4     80 -2.5   149 10.8     14 -0.4    260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81                     UCF Amer 3.4     81 -2.1   181 10.0     23 -1.2    103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82             North Texas CUSA 3.4     82 -3.7    58  6.7    129 -1.2    103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83          South Carolina  SEC 3.4     83 -4.3    24  5.2    221 -1.9     18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84          UNC Wilmington  CAA 3.4     84 -3.5    70  7.0    115 -1.4     59</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85                   Drake  MVC 3.4     85 -4.0    41  5.9    172 -0.7    187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86            Grand Canyon  WAC 3.4     86 -2.4   156  8.2     68 -1.4     64</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87        Coastal Carolina   SB 3.4     87 -3.8    54  7.0    115 -0.9    166</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88                    Duke  ACC 3.4     88 -2.6   140  7.6     84 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89               Texas A&amp;M  SEC 3.4     89 -4.2    29  3.9    282 -2.0     13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90                  Denver  Sum 3.3     90 -2.3   167  7.2    100 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91       Southern Illinois  MVC 3.3     91 -2.9   114  8.9     46 -0.5    246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92                     VCU  A10 3.3     92 -3.4    76  8.2     67 -0.7    206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93            Missouri St.  MVC 3.3     93 -3.9    52  6.0    167 -1.3     92</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94                     USC  P12 3.3     94 -2.1   184  8.2     64 -2.2      8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95           Tennessee St.  OVC 3.3     95 -2.9   105  7.0    113 -0.9    163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96            Colorado St.  MWC 3.3     96 -2.3   168  5.7    184 -1.7     29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97                     UAB CUSA 3.3     97 -3.1    88  7.7     83  0.2    346</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98              St. John's   BE 3.3     98 -2.6   142  7.1    108 -1.6     45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99                Southern SWAC 3.3     99 -1.9   204  9.4     28 -1.0    141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100             Seton Hall   BE 3.3    100 -4.1    34  3.5    299 -1.9     18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101                 Dayton  A10 3.3    101 -3.7    62  5.3    211 -1.1    120</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102         Loyola Chicago  A10 3.3    102 -3.2    84  8.0     71 -0.7    187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103                 Xavier   BE 3.3    103 -4.0    45  4.8    246 -1.8     23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104              Weber St. BSky 3.3    104 -2.0   198  6.2    152 -0.8    180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105                   UTSA CUSA 3.3    105 -1.8   222 11.5      7 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106 Southeast Missouri St.  OVC 3.3    106 -3.1    92  7.4     92 -0.3    277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107                   UNLV  MWC 3.3    107 -3.1    92  5.8    180 -1.1    123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108         Nebraska Omaha  Sum 3.2    108 -2.6   135  7.4     89 -1.2     97</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109                Wofford   SC 3.2    109 -2.7   131  6.6    132 -0.8    180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110                   UCLA  P12 3.2    110 -2.5   151  7.9     72 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111       Tennessee Martin  OVC 3.2    111 -3.0   101  6.9    119 -0.3    267</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112               Nebraska  B10 3.2    112 -4.0    42  5.2    223  0.1    332</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113            Norfolk St. MEAC 3.2    113 -1.9   210  8.0     69 -1.6     39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114               Virginia  ACC 3.2    114 -4.2    26  3.6    293 -0.5    251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115           Georgia Tech  ACC 3.2    115 -4.0    36  4.7    249 -1.1    113</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116               Miami FL  ACC 3.2    116 -3.4    75  5.5    192 -1.8     23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117     South Carolina St. MEAC 3.2    117 -3.9    50  4.1    273 -0.4    264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118          Virginia Tech  ACC 3.2    118 -2.1   179  6.9    117 -1.8     22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119                 Furman   SC 3.2    119 -2.9   105  5.5    195 -0.5    254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120                 Butler   BE 3.2    120 -2.7   129  7.1    106  0.2    342</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121      George Washington  A10 3.2    121 -2.6   142  6.8    124 -1.8     23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122         William &amp; Mary  CAA 3.2    122 -2.6   137  5.8    181 -0.6    232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123           Oral Roberts  Sum 3.2    123 -2.4   162  8.3     60 -0.9    159</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124 North Carolina Central MEAC 3.2    124 -1.6   241  9.4     30 -1.3     87</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125                 Temple Amer 3.2    125 -2.3   169  7.3     98 -1.9     14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126               Syracuse  ACC 3.2    126 -2.9   108  5.4    199 -0.9    159</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127                Arizona  P12 3.2    127 -2.9   114  5.3    204 -0.9    163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128             Vanderbilt  SEC 3.2    128 -4.1    33  4.5    259 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129               Miami OH  MAC 3.2    129 -3.1    95  5.3    216 -1.3     85</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130            Arizona St.  P12 3.1    130 -2.7   133  6.3    149 -1.2     95</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131             Oregon St.  P12 3.1    131 -2.9   116  6.7    128 -1.0    136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132              Wisconsin  B10 3.1    132 -3.5    72  5.9    176 -0.7    210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133                  Lamar Slnd 3.1    133 -3.5    72  5.0    237 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134            Mississippi  SEC 3.1    134 -2.6   142  6.8    124 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135         Saint Joseph's  A10 3.1    135 -3.3    79  4.4    262 -2.0     12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136       Central Arkansas ASun 3.1    136 -1.8   216  6.8    126 -1.5     56</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137              Milwaukee Horz 3.1    137 -3.3    79  4.4    263 -1.0    141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138             Wright St. Horz 3.1    138 -3.1    90  7.0    111 -0.5    236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139             Notre Dame  ACC 3.1    139 -2.4   154  6.0    164 -0.7    187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140             Murray St.  MVC 3.1    140 -1.5   246  9.7     25 -1.2    101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141             St. Thomas  Sum 3.1    141 -1.9   203  8.6     53 -0.7    198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142       Western Carolina   SC 3.1    142 -2.2   172  6.8    127 -0.8    180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143          East Carolina Amer 3.1    143 -2.8   122  7.2    103 -0.2    285</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144           George Mason  A10 3.1    144 -4.0    38  2.4    337 -1.7     26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145         Youngstown St. Horz 3.1    145 -1.7   230  8.2     63 -1.2    108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146               Kent St.  MAC 3.1    146 -2.0   196  7.7     80 -0.5    244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147               Illinois  B10 3.1    147 -2.9   110  6.2    154 -0.9    159</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148                 DePaul   BE 3.1    148 -2.9   108  4.7    254 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149       Western Michigan  MAC 3.1    149 -2.6   142  6.9    119 -1.5     52</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150                 Drexel  CAA 3.1    150 -2.2   171  8.3     61 -0.5    246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151           Tarleton St.  WAC 3.1    151 -1.8   221  7.7     82 -1.0    126</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152                Seattle  WAC 3.1    152 -2.6   137  7.9     72 -0.3    276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153      Houston Christian Slnd 3.1    153 -2.4   156  6.6    136 -0.5    239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154                Hampton  CAA 3.1    154 -2.8   126  6.8    122 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155             Valparaiso  MVC 3.1    155 -3.1    88  5.9    170  0.2    344</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156            Jackson St. SWAC 3.1    156 -3.3    81  5.4    200 -0.1    306</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157                 Howard MEAC 3.1    157 -2.0   190  6.1    159 -1.7     29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158           Arkansas St.   SB 3.1    158 -2.7   130  4.6    255 -1.5     52</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159          Detroit Mercy Horz 3.1    159 -2.9   110  6.5    137 -0.5    239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160          Bowling Green  MAC 3.1    160 -2.6   137  5.1    228 -1.4     61</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161             Charleston  CAA 3.0    161 -2.2   175  6.4    140 -1.7     31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162                Samford   SC 3.0    162 -2.4   161  7.3     98 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163              Minnesota  B10 3.0    163 -2.9   113  6.2    152 -0.1    299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164            Georgia St.   SB 3.0    164 -2.6   148  5.6    188 -0.6    232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165            Little Rock  OVC 3.0    165 -3.5    68  6.6    134  0.0    317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166                Houston Amer 3.0    166 -2.7   131  6.5    138 -1.0    127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167               Ball St.  MAC 3.0    167 -3.1    90  4.5    257 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168         Washington St.  P12 3.0    168 -1.6   239  7.3     97  0.0    317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169           Morehead St.  OVC 3.0    169 -1.8   222  6.1    159 -0.4    256</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170            Cal Baptist  WAC 3.0    170 -1.7   231  7.4     95 -1.2    100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171            Wichita St. Amer 3.0    171 -2.4   154  5.2    223 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172             Lindenwood  OVC 3.0    172 -2.0   199  6.4    142 -1.0    146</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173           San Jose St.  MWC 3.0    173 -1.9   200  8.7     52 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174       North Dakota St.  Sum 3.0    174 -2.8   118  5.9    176 -0.3    267</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175           UT Arlington  WAC 3.0    175 -2.0   193  6.4    141 -1.4     67</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176 Maryland Eastern Shore MEAC 3.0    176 -2.8   118  5.2    223 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177          South Florida Amer 3.0    177 -3.0    96  3.7    288 -1.0    127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178           Nicholls St. Slnd 2.9    178 -1.2   276  9.6     26 -1.6     41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179            Alabama A&amp;M SWAC 2.9    179 -2.4   162  6.8    123  0.0    309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180           North Dakota  Sum 2.9    180 -1.8   218  7.4     92 -1.0    147</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181                  IUPUI Horz 2.9    181 -2.6   140  5.1    228 -0.5    244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182               Davidson  A10 2.9    182 -2.1   186  5.9    173 -0.2    287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183            Montana St. BSky 2.9    183 -1.8   222  5.6    191  0.3    351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184         UNC Greensboro   SC 2.9    184 -1.5   250  3.9    285 -2.0     11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185        Sam Houston St.  WAC 2.9    185 -1.5   248  6.2    158 -1.4     70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186              Utah Tech  WAC 2.9    186 -0.9   300  7.3     96 -0.7    185</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187         Boston College  ACC 2.9    187 -2.1   181  6.2    156 -0.4    256</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188                   Troy   SB 2.9    188 -1.8   216  5.9    170 -0.6    223</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189 Texas A&amp;M Corpus Chris Slnd 2.9    189 -2.2   172  4.3    266 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190       Eastern Michigan  MAC 2.9    190 -2.8   126  4.7    253 -1.0    141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191             Pittsburgh  ACC 2.9    191 -3.0   103  4.1    271  0.1    329</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192          North Florida ASun 2.9    192 -1.3   266  8.4     59 -0.5    251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193           South Dakota  Sum 2.9    193 -1.8   222  6.6    130 -0.4    256</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194          Southern Utah  WAC 2.8    194 -1.0   293  5.3    204 -0.7    206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195       Western Illinois  Sum 2.8    195 -2.0   196  7.1    106 -0.3    272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196          San Francisco  WCC 2.8    196 -2.6   135  3.7    290 -0.9    148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197     Florida Gulf Coast ASun 2.8    197 -1.4   252  7.2    103 -0.9    150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198             Alcorn St. SWAC 2.8    198 -2.2   177  6.3    144  0.1    332</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199 Southeastern Louisiana Slnd 2.8    199 -2.1   179  5.3    216 -0.9    166</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200                 Towson  CAA 2.8    200 -2.4   164  4.4    261 -0.8    171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201         Long Beach St.   BW 2.8    201 -2.5   149  5.3    213  0.2    344</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202             Morgan St. MEAC 2.8    202 -1.3   266  7.8     77  0.0    323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203                Gonzaga  WCC 2.8    203 -1.1   282  6.2    151 -1.5     56</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204        Bethune Cookman SWAC 2.8    204 -1.2   276  7.8     77 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205                Florida  SEC 2.8    205 -2.8   126  4.2    270 -0.7    206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206                    FIU CUSA 2.8    206 -2.4   156  6.3    149  0.0    313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207               Richmond  A10 2.8    207 -2.6   142  5.3    211 -0.8    178</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208                 Tulane Amer 2.8    208 -2.5   151  3.6    292 -0.9    150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209       Louisiana Monroe   SB 2.8    209 -1.9   204  6.3    147 -0.9    150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210     Texas A&amp;M Commerce Slnd 2.8    210 -1.6   235  5.3    219 -1.3     90</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211          James Madison   SB 2.8    211 -1.8   219  3.4    302 -1.6     46</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212    Cal St. Bakersfield   BW 2.8    212 -1.6   244  6.0    168 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213       Southern Indiana  OVC 2.8    213 -2.0   195  5.2    226 -0.7    214</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214             Fresno St.  MWC 2.8    214 -2.6   142  4.0    276 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215       Georgia Southern   SB 2.8    215 -1.9   202  6.0    166  0.0    323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216                Buffalo  MAC 2.8    216 -2.1   187  4.8    244 -1.1    120</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217           Saint Mary's  WCC 2.8    217 -1.7   232  5.3    204 -1.1    118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218           Kennesaw St. ASun 2.8    218 -1.6   241  5.2    220 -1.1    116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219          UNC Asheville BSth 2.8    219 -1.4   252  5.7    185 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220                Montana BSky 2.8    220 -1.9   208  4.2    267  0.0    317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221        Appalachian St.   SB 2.8    221 -1.9   200  3.3    309 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222                 Queens ASun 2.8    222 -1.5   249  5.7    183 -0.7    186</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223          Cleveland St. Horz 2.8    223 -2.1   181  5.9    173  0.7    359</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224          South Alabama   SB 2.8    224 -0.9   304  9.2     39  0.7    360</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225               Delaware  CAA 2.8    225 -1.0   298  7.0    110 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226                  Siena MAAC 2.8    226 -1.0   293  6.5    138 -1.3     92</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227                 Toledo  MAC 2.7    227 -1.9   208  5.4    200 -1.2    103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228                   Rice CUSA 2.7    228 -1.9   204  4.7    251 -1.1    113</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229                    VMI   SC 2.7    229 -1.6   233  5.1    228 -1.2    108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230             Georgetown   BE 2.7    230 -3.0   101  3.2    313 -0.6    232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231               Winthrop BSth 2.7    231 -2.0   193  3.9    278 -1.5     56</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232         Texas Southern SWAC 2.7    232 -1.0   296  8.8     49  0.6    357</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233      Abilene Christian  WAC 2.7    233 -0.3   335  5.7    186 -1.7     33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234            The Citadel   SC 2.7    234 -2.3   165  3.3    309 -1.3     87</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235       Prairie View A&amp;M SWAC 2.7    235 -1.6   241  5.9    175  0.3    349</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236            Chattanooga   SC 2.7    236 -1.8   214  4.1    271 -0.9    163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237                   UMKC  Sum 2.7    237 -1.4   262  5.3    215 -1.3     78</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238       Eastern Kentucky ASun 2.7    238 -0.9   301  5.5    194 -0.7    215</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239               Duquesne  A10 2.7    239 -2.8   122  2.0    342 -1.0    131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240             Binghamton   AE 2.7    240 -1.7   227  5.6    189 -0.5    246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241            New Orleans Slnd 2.7    241 -1.4   252  5.3    204 -0.9    148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242           Northwestern  B10 2.7    242 -1.6   240  4.9    241 -0.7    199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243                Pacific  WCC 2.7    243 -1.6   244  4.6    255 -1.0    141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244            Alabama St. SWAC 2.7    244 -2.1   188  4.5    257  0.0    313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245          North Alabama ASun 2.7    245 -0.8   311  5.8    182 -1.3     91</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246                Belmont  MVC 2.7    246 -1.4   259  6.2    154 -0.3    272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247            Florida A&amp;M SWAC 2.7    247 -1.8   214  4.9    241 -0.9    150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248      Purdue Fort Wayne Horz 2.7    248 -1.6   236  6.1    163 -0.3    272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249           Rhode Island  A10 2.7    249 -2.7   133  1.8    344 -0.4    262</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250                Fordham  A10 2.6    250 -2.4   160  1.6    347 -1.3     87</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 251       Florida Atlantic CUSA 2.6    251 -0.9   305  5.5    196 -1.6     39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 252       Eastern Illinois  OVC 2.6    252 -2.2   172  3.4    301 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253                 Mercer   SC 2.6    253 -2.2   175  3.2    314 -1.0    127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 254                  Akron  MAC 2.6    254 -2.0   192  4.3    264 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 255            McNeese St. Slnd 2.6    255 -2.1   184  3.4    302 -0.5    251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 256            Chicago St.  ind 2.6    256 -2.3   165  1.6    345 -1.7     33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257             High Point BSth 2.6    257 -0.3   333  6.9    119 -0.3    270</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258         Tennessee Tech  OVC 2.6    258 -1.1   286  5.1    228 -0.1    308</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259      Northern Kentucky Horz 2.6    259 -1.4   257  4.1    273 -1.5     55</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260              Idaho St. BSky 2.6    260 -1.3   269  4.2    268  0.5    353</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261   UT Rio Grande Valley  WAC 2.6    261 -1.1   290  5.1    228 -0.3    277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262              Louisiana   SB 2.6    262 -1.8   212  5.3    204  0.1    335</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263       Northwestern St. Slnd 2.6    263 -1.1   289  4.7    249 -1.5     50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264           Delaware St. MEAC 2.6    264 -1.2   275  5.4    200 -0.8    171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265                  Idaho BSky 2.6    265 -1.4   262  3.8    286 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266               Monmouth  CAA 2.6    266 -1.0   291  6.1    161 -1.2    101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267                   Iona MAAC 2.6    267 -1.4   251  3.9    280 -0.9    155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268       Northern Arizona BSky 2.6    268 -1.1   286  2.7    328 -0.8    171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269              Fairfield MAAC 2.6    269 -1.1   281  5.8    179 -0.6    232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270            Austin Peay ASun 2.5    270 -1.1   282  6.3    146 -0.5    239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271                Liberty ASun 2.5    271 -1.8   212  3.1    318 -1.3     85</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272         Incarnate Word Slnd 2.5    272 -0.5   317  5.6    190 -1.0    131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273                   NJIT   AE 2.5    273 -1.2   276  5.0    236 -0.8    176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 274       SIU Edwardsville  OVC 2.5    274 -0.9   305  5.0    239 -0.5    254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 275              Green Bay Horz 2.5    275 -2.0   190  3.4    304 -0.5    246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 276             Pepperdine  WCC 2.5    276 -1.5   246  5.1    233  0.1    338</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277                 Albany   AE 2.5    277 -2.8   122  1.5    353 -1.1    118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 278              Texas St.   SB 2.5    278 -1.9   204  3.2    314 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 279          Saint Peter's MAAC 2.5    279 -1.6   233  5.4    197  0.1    339</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 280 Mississippi Valley St. SWAC 2.5    280 -0.9   299  5.3    216 -0.4    259</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281       Illinois Chicago  MVC 2.5    281 -1.3   269  3.9    282 -0.7    206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 282                   Elon  CAA 2.5    282 -1.4   259  3.5    299 -0.6    216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 283                 Bryant   AE 2.5    283 -0.9   301  5.3    210 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 284               Bucknell  Pat 2.5    284 -0.5   320  5.3    213 -1.1    123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285                Niagara MAAC 2.5    285  0.0   349  7.5     88 -0.9    150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 286              San Diego  WCC 2.5    286 -1.8   222  2.0    341 -0.5    246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 287           Portland St. BSky 2.4    287 -0.5   320  6.1    161 -0.5    236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 288              Loyola MD  Pat 2.4    288 -1.0   296  6.4    143  0.6    358</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289            USC Upstate BSth 2.4    289 -1.4   257  3.8    286 -0.2    285</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 290            Santa Clara  WCC 2.4    290 -2.1   188  1.5    351 -0.9    166</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 291               Campbell BSth 2.4    291 -1.7   227  3.3    307 -0.8    180</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 292                   Army  Pat 2.4    292 -0.5   324  5.8    178 -0.1    289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293          New Hampshire   AE 2.4    293 -1.2   274  4.2    268 -0.1    291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 294             Bellarmine ASun 2.4    294 -1.2   279  3.3    306 -0.9    162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 295           Northeastern  CAA 2.4    295 -0.3   334  5.2    227 -1.4     71</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 296     East Tennessee St.   SC 2.4    296 -1.4   252  1.6    345 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297            Stony Brook  CAA 2.4    297 -1.4   259  3.0    320 -1.0    136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 298                Hofstra  CAA 2.4    298 -1.7   227  1.0    358 -2.5      5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 299       Central Michigan  MAC 2.4    299 -1.4   262  3.1    316 -0.5    239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 300                    LIU  NEC 2.3    300 -0.9   308  3.6    294 -0.1    299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301                 Hawaii   BW 2.3    301 -1.6   236  3.9    280  0.9    361</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 302         Sacramento St. BSky 2.3    302 -0.2   340  5.4    197 -0.1    289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 303                Vermont   AE 2.3    303 -1.3   269  2.7    328 -1.2     95</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 304                   Penn  Ivy 2.3    304 -1.9   210  3.0    320  0.0    309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305                  Maine   AE 2.3    305 -1.3   269  3.9    282 -0.1    303</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 306           Presbyterian BSth 2.3    306 -0.5   320  4.1    273 -1.2    103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 307                Cornell  Ivy 2.3    307  0.7   361  7.2    102  0.0    321</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 308           UMass Lowell   AE 2.3    308 -1.1   286  3.5    298 -0.7    210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309           Jacksonville ASun 2.3    309 -0.5   318  5.5    193  0.1    337</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 310      Northern Illinois  MAC 2.3    310 -0.9   305  2.8    326 -1.5     52</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 311              Lafayette  Pat 2.3    311 -1.4   265  3.3    308  0.0    309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 312                Oakland Horz 2.3    312 -1.6   236  1.4    354 -0.8    175</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313              Manhattan MAAC 2.3    313 -0.4   329  4.7    248 -1.0    131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 314       UC Santa Barbara   BW 2.3    314 -1.1   282  2.9    323  0.0    309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 315             Quinnipiac MAAC 2.3    315 -1.1   282  3.3    309 -0.2    281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 316             Holy Cross  Pat 2.3    316 -1.3   269  2.6    331  0.0    313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317               Canisius MAAC 2.3    317 -1.4   252  2.5    333  0.1    332</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 318                Harvard  Ivy 2.3    318 -0.5   326  4.5    260  0.0    321</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 319      Northern Colorado BSky 2.3    319 -1.0   291  1.6    347 -0.1    303</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 320               Cal Poly   BW 2.3    320 -1.1   280  2.7    327 -0.6    222</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 321          Robert Morris Horz 2.3    321 -0.1   346  3.0    322 -0.2    279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 322                 Lehigh  Pat 2.3    322 -0.3   331  4.8    243 -0.1    299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 323    Arkansas Pine Bluff SWAC 2.3    323  0.3   356  7.0    109 -0.4    262</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 324          Grambling St. SWAC 2.2    324 -0.4   330  3.6    296  0.0    317</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 325           Sacred Heart  NEC 2.2    325 -0.8   313  3.3    309  0.3    350</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 326               Lipscomb ASun 2.2    326 -0.9   308  5.0    238  0.5    354</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 327       Loyola Marymount  WCC 2.2    327 -0.5   324  5.1    233  0.6    356</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 328       Jacksonville St. ASun 2.2    328 -1.8   219 -0.4    362 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 329    Charleston Southern BSth 2.2    329 -0.1   347  5.7    186 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 330              Dartmouth  Ivy 2.2    330  0.0   350  4.7    251  0.0    323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 331               UC Davis   BW 2.2    331 -1.0   293  4.3    265  0.5    355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 332       Mount St. Mary's MAAC 2.1    332  0.1   351  4.0    277 -0.4    264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 333                 Marist MAAC 2.1    333 -0.1   345  3.7    290 -0.3    270</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 334     Cal St. Northridge   BW 2.1    334 -0.5   320  1.9    343 -0.2    281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 335    Central Connecticut  NEC 2.1    335  0.1   353  3.6    294 -0.7    190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 336         St. Francis PA  NEC 2.1    336 -0.8   310  1.4    355 -0.2    279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 337           Gardner Webb BSth 2.1    337 -0.6   316  3.7    289  0.0    323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 338               American  Pat 2.1    338  0.0   348  3.1    318 -0.1    306</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 339              UC Irvine   BW 2.1    339  0.6   360  5.0    239 -0.4    264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 340                Stetson ASun 2.1    340  0.4   358  5.0    235  0.1    329</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 341               Columbia  Ivy 2.0    341 -0.6   315  3.5    297  0.9    362</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 342               Longwood BSth 2.0    342 -0.1   342  1.6    350 -1.6     37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 343                Colgate  Pat 2.0    343 -0.3   331  3.4    305  0.0    313</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 344     Eastern Washington BSky 2.0    344  0.1   351  3.9    278  0.2    342</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 345              Stonehill  NEC 2.0    345 -0.2   339  2.9    325  0.2    340</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 346                 Wagner  NEC 2.0    346 -0.1   342  2.4    335  0.3    351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 347                   UMBC   AE 2.0    347 -0.8   313  2.4    337  0.2    346</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 348                  Rider MAAC 2.0    348 -0.3   335  3.1    317 -0.2    283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 349                   Yale  Ivy 2.0    349 -0.3   335  2.5    332  0.1    335</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 350                  Brown  Ivy 2.0    350 -0.4   327  0.3    360 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 351           UC San Diego   BW 1.9    351 -0.1   344  2.4    336  0.1    328</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 352              Merrimack  NEC 1.9    352 -0.2   338  1.0    357 -0.3    269</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 353               Hartford  ind 1.9    353 -0.8   312  1.5    352  0.0    323</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 354                Radford BSth 1.9    354 -0.9   301  0.3    359 -0.1    303</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 355              Princeton  Ivy 1.9    355  0.5   359  2.5    334 -0.6    230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 356               Portland  WCC 1.9    356  0.2   354  2.7    328 -0.1    297</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 357           UC Riverside   BW 1.9    357  0.3   355  2.2    339 -0.6    224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 358             Coppin St. MEAC 1.9    358 -0.5   318  1.2    356  0.2    346</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 359      Boston University  Pat 1.8    359 -0.4   327  0.2    361 -0.9    155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 360      Cal St. Fullerton   BW 1.8    360  0.3   356  2.2    340 -0.5    236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 361         St. Francis NY  NEC 1.8    361 -0.2   340  1.6    347  0.2    341</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 362    Fairleigh Dickinson  NEC 1.5    362  1.4   363  2.9    323  1.3    363</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 363                   Navy  Pat 1.1    363  0.8   362 -2.2    363 -0.4    260</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      blk blk_rk elev elev_rk</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    1.6     83 5400       5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    2.1     18 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    1.6     89 3200      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    1.4    139 7000       2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    2.1     21  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    2.6      5  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    0.8    277 5100       7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    1.8     54 4800      10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    2.7      2  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   1.7     61 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   2.1     18  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   2.5      6 1300      42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   2.5      8  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   1.5    103  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   0.5    323 4800      10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   2.0     28  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   2.0     30  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   1.9     34 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   1.6     98  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   0.9    250 3800      19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   1.9     38  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   1.7     68 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   1.8     47  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24   1.6     98  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25   0.8    277  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26   1.8     55  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27   1.2    180 4600      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28   0.6    316  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29   2.0     25  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30   1.6     89  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31   1.9     35  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32   0.7    303 1600      38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   0.8    277  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34   0.7    307 4600      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   1.8     51  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36   1.4    139  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37   1.9     38  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38   1.3    159 5000       8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39   1.3    159  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40   1.5    111  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41   1.3    162 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42   2.0     30  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43   1.3    157  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44   1.0    230  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45   0.7    300  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46   1.8     57    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47   1.7     61    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48   1.3    168  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49   1.2    173  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50   1.1    221  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51   1.7     68 5300       6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52   1.0    236  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53   0.7    294 2700      23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54   2.3     13  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55   1.4    122  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56   1.4    142  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57   1.4    149  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58   2.4     12  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59   1.1    221  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60   0.9    246  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61   1.2    176  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62   1.1    194 7200       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63   1.2    190    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64   1.4    127  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65   1.4    130  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66   2.0     30  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67   0.6    311  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68   2.5      9  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69   1.1    221 4700      14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70   1.6     89  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71   1.1    227  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72   1.7     67  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73   1.1    220 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74   1.1    194 2400      28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75   1.3    154 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76   2.1     22 1200      45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77   0.7    289  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78   2.0     26  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79   1.9     35 4000      18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80   2.7      3 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81   1.1    221  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82   0.2    351  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83   1.2    188  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84   1.6     94  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85   1.1    194  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86   0.6    314  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87   1.2    183  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88   0.9    260  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89   2.4     11  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90   2.2     15 4800      10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91   0.4    338 1300      42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92   0.3    348  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93   1.8     47  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94   1.1    194  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95   0.8    282  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96   1.4    130  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97   1.8     55  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98   1.3    168    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99   1.2    180  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100  1.6     79  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101  1.4    127    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102  0.9    253 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103  1.3    162 1400      39</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104  2.1     22 1200      45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105  0.8    266 2000      32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106  1.9     42  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107  1.1    205  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108  1.5    107    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109  2.1     22  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110  0.8    285  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111  0.8    269  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112  1.5    102  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113  1.9     42  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114  1.8     46  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115  1.4    122  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116  1.2    173  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117  0.7    307 1400      39</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118  1.6     75  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119  1.8     47  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120  1.6     78 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121  0.8    269  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122  1.4    149 2600      25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123  0.9    255 2200      29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124  1.0    238    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125  0.8    264  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126  1.5    114 6900       3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127  1.2    190  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128  0.9    255 4900       9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129  2.5      9  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130  1.6     98  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131  1.3    162    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132  0.9    248  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133  0.7    289    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134  1.4    127    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135  1.6     95  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136  2.6      4  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137  1.7     64    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138  1.2    187  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139  1.4    142  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140  1.6     89  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141  1.0    238  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142  0.7    310  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143  1.7     68 2100      30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144  1.9     40  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145  1.3    171 2700      23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146  0.9    250 2100      30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147  1.0    232  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148  1.2    173  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149  0.6    314  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150  1.4    126 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151  0.6    320  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152  1.1    205  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153  0.7    303 1200      45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154  2.5      7  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155  0.8    264  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156  0.6    320  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157  1.1    221    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158  1.1    208  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159  0.3    348  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160  0.4    334  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161  1.1    214  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162  2.1     18  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163  0.7    294  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164  1.2    183  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165  0.8    275  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166  1.6     98    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167  1.1    214  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168  1.7     68  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169  1.4    116    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170  1.5    111    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171  1.7     66  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172  1.3    171 1300      42</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173  0.1    358 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174  0.9    255  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175  0.9    255    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176  1.1    208 3200      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177  1.3    154  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178  1.1    214  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179  1.7     72  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180  1.1    208  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181  0.7    303  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182  1.4    122  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183  1.4    130    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184  1.1    227  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185  1.1    194  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186  1.4    149  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187  1.4    130  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188  1.1    204  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189  1.6     79    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190  1.4    116  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191  1.5    103  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192  1.3    159 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193  1.4    142    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 194  1.3    154  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 195  2.3     13 1700      35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196  0.8    266  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197  1.3    157    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198  1.5    114 4600      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199  1.1    194 5800       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200  0.3    342  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 201  1.0    238    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202  1.7     64    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203  1.1    194  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204  1.8     57    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205  1.3    162  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206  0.2    355  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207  0.2    354  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208  1.6     75 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209  0.4    334  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210  1.4    125  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211  0.7    300  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212  0.8    276  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213  1.4    130  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214  1.3    162  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215  1.0    242  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216  1.5    107 3200      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217  0.4    340  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218  2.0     30 1400      39</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219  2.1     17  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220  1.9     35  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221  1.4    137  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222  0.3    345  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223  0.9    250  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224  1.4    137  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225  1.6     79 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226  1.1    194  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227  0.7    294 1900      33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228  1.2    190  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229  0.7    294    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230  1.6     83  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 231  0.9    260  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 232  0.5    330  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 233  2.8      1  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 234  1.2    176  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 235  1.2    176    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 236  1.0    234  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 237  1.4    139  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 238  1.0    229  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 239  1.0    234  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 240  0.3    345  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 241  1.8     57  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 242  2.0     26    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 243  2.2     16 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244  0.5    328  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 245  0.8    277 2600      25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 246  1.2    183  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 247  1.5    103  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 248  1.8     51  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 249  1.8     51  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 250  0.3    345  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 251  1.2    188  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 252  0.8    269  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 253  1.6     83  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 254  1.9     42 1700      35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 255  1.1    194  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 256  0.3    342  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 257  2.0     28  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 258  1.7     61  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 259  0.7    294  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 260  1.0    242    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 261  1.6     75  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 262  1.1    208    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 263  1.1    208 1200      45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264  1.6     83 4800      10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 265  1.1    194  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 266  1.0    232  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 267  1.0    242  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 268  0.6    316  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 269  1.7     72 1900      33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 270  1.3    168  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 271  1.2    183  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 272  0.5    330 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 273  0.6    316    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 274  1.1    205  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 275  0.9    248  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276  1.6     83    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 277  1.6     89  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 278  1.5    103  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 279  1.2    190    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 280  1.9     40  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 281  1.5    111    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 282  0.8    269  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 283  1.4    149  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 284  0.4    338    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 285  0.6    320  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 286  0.5    323  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 287  1.1    214 2500      27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 288  0.9    260  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 289  1.4    130    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290  0.8    282  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 291  0.3    342    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 292  1.0    238  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 293  0.8    269    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 294  1.6     95  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 295  1.6     79  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 296  1.2    180  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 297  1.8     47  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 298  0.5    330  700     116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 299  0.7    289  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 300  0.2    355  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 301  0.6    311  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 302  0.8    285  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 303  1.0    236  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 304  0.2    353  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 305  1.4    116  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 306  0.8    269    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 307  1.4    116  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 308  1.1    221  800      94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 309  0.4    334  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 310  1.4    142  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 311  1.6     95  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 312  1.1    219  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 313  0.2    351  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 314  0.1    360  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 315  1.4    116    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 316  1.6     74  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 317  1.1    208  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 318  1.9     42  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 319  0.8    277 1000      60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 320  0.6    311  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 321  0.5    327  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 322  1.2    176  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 323  0.9    260    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 324  0.3    350  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 325  1.1    214  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 326  1.3    162  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 327  1.4    149 1200      45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 328  1.6     83  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 329  1.5    110  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 330  0.7    300  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 331  1.8     57  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 332  1.4    142  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 333  0.5    323  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 334  1.5    107  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 335  0.6    316  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 336  0.8    266    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 337  0.4    334  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 338  0.8    285 1700      35</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 339  0.9    255  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 340  0.7    307  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 341  0.8    282 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 342  0.8    285 1100      50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 343  0.5    329  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 344  0.7    293  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 345  0.1    357    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 346  0.9    253  500     172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 347  0.7    303  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 348  0.3    341  200     241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 349  1.0    230  300     219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 350  1.0    242    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 351  0.9    246  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 352  0.5    323  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 353  1.4    142  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 354  1.4    142  400     193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 355  0.0    362    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 356  0.7    289  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 357 -0.1    363  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 358  0.7    294  100     268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 359  1.4    130  900      70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 360  0.1    358  600     140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 361  0.5    330    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 362  1.4    116    0     318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 363  0.0    361    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    2.3      9 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    1.3    129 3200      20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    2.0     21  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    1.4    111 7000       2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    1.1    192 5100       7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    1.5     89 4800      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    1.1    175 5400       5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    1.9     31  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    1.8     42  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   1.2    150  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   1.4     98 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   1.9     31  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   1.8     46  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   1.6     68 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   2.1     13 1300      42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   1.1    198  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   2.0     16  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18   0.9    251 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   1.8     40    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   1.7     51  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21   1.6     76  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   1.9     23  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23   1.5     85  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24   2.0     18  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25   1.3    129  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26   1.5     80  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27   1.7     56  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28   1.6     62  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29   1.6     73 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30   0.7    288 4600      15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31   1.1    170  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32   1.6     68  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33   1.2    150  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34   1.2    156  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35   1.4     98  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36   1.0    214 4700      14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37   1.4    120 1400      39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38   2.1     12  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39   0.7    295  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40   1.9     23  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41   1.7     58 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42   1.4     95 4800      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   1.9     29  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44   0.8    278 1600      38</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45   1.7     55  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46   2.0     18  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47   1.1    198  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   0.9    251 3800      19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49   1.8     46  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50   1.4     98  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51   1.0    205  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52   2.4      6  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53   0.8    278  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54   1.1    181  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55   1.4    120  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56   1.1    186  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57   1.4    113 4600      15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58   0.6    305  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59   1.9     31  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60   0.9    251    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61   1.1    175  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62   0.9    226    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63   1.2    156  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64   1.6     76  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65   1.8     38  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66   2.1     14  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67   1.6     73 1200      45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68   1.2    161  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69   1.0    223  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70   1.2    141 7200       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71   1.4    106  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72   2.7      1  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73   0.3    340  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74   0.3    337 2700      23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75   2.3     10    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76   0.4    330  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77   0.9    226  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78   0.7    295  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79   2.4      8 4000      18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80   1.0    211  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81   1.6     65  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82   0.8    278  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83   0.4    333  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84   1.1    202    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85   1.0    205  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86   1.4     98 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87   0.9    256    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88   2.5      5  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89   1.1    186  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90   0.9    232 5300       6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91   1.1    175  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92   0.7    293  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93   0.3    340 1300      42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94   1.6     76  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95   1.9     31  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96   1.1    181 5000       8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97   1.8     42  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98   1.9     31  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99   1.9     23  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100  1.4    111    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101  1.2    163  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102  0.3    337  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103  0.5    318  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104  1.8     37 4800      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105  0.1    352  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106  1.3    126  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107  1.1    198 2000      32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108  0.9    232 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109  1.9     29  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110  1.5     83  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111  1.6     62  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112  1.2    161 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113  1.8     38    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114  1.4    113  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115  0.2    349  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116  0.6    306    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117  1.7     51  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118  0.6    302 2200      29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119  2.0     18 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120  1.8     46  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121  0.9    225  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122  2.6      2  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123  0.7    288  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124  1.1    175  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125  1.0    214  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126  1.8     46  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127  1.1    170 2400      28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128  0.6    299  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129  1.1    192  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130  0.9    241 1200      45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131  0.9    232  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132  0.3    337  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133  1.4    113    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134  1.4    106  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135  0.7    286  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136  2.2     11  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137  1.4    106  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138  0.1    353  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139  1.9     26  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140  0.7    295  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141  0.9    255  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142  1.0    205 2100      30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143  1.2    163  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144  0.9    241  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145  0.9    232 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146  1.2    141 1200      45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147  0.5    311  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148  1.4    120  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149  0.1    355  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150  0.9    232  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151  0.9    231 1300      42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152  0.5    323  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153  1.7     58  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154  0.8    275    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155  1.1    170  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156  1.2    163  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157  1.6     68  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158  1.5     85  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159  0.5    311  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160  1.2    150  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161  1.1    192    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162  0.1    353  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163  0.9    226  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164  1.5     89 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165 -0.2    362  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166  0.5    311    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167  0.5    311  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168  1.3    133 2600      25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169  2.4      6  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170  0.9    261  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171  1.5     87 1400      39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172  1.4     97  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173  0.9    256  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174  0.6    306  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175  0.9    241  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176  1.1    186    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177  1.3    126  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178  0.0    357    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179  0.7    288  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180  0.5    326  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181  1.1    192  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182  1.6     67  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183  1.1    175 4900       9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184  2.6      3  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185  1.5     80  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186  1.0    222 2700      23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187  1.2    147  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188  1.6     72  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189  1.5     80    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190  0.3    340  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191  1.1    186 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192  1.0    223    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193  0.8    267 1200      45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194  1.0    205 5800       4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195  0.4    329  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196  1.3    135  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197  1.2    163    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198  1.1    186  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199  1.1    170  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200  1.3    135  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201  1.4    113    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202  1.5     89  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203  0.8    262 1900      33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204  1.2    156    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205  0.8    275  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206  0.6    309    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207  0.2    350  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208  1.3    129    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209  0.6    299  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210  1.3    138  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211  1.9     26 1400      39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212  0.9    241  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213  1.2    155  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214  1.0    211  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215  1.4     98  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216  0.8    262  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217  1.1    192  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218  1.2    163 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219  1.0    214 2100      30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220  1.6     65 3200      20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221  1.7     54 3200      20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222  1.3    125  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223  1.2    150  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224  1.4    113  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225  2.1     15  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226  1.4    106  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227  0.5    326  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228  1.1    181    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229  0.8    266 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230  0.6    302    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231  0.9    241  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232  1.4    120    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233  2.0     16 1700      35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234  1.1    186    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235  1.8     40  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236  1.4     98  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237  0.9    241  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238  1.9     26 1000      60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239  0.9    232  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240  0.5    311  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241  1.2    141    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242  1.2    141  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243  1.4     98    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244  1.3    133  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245  1.4     94  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246  0.9    241  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247  0.7    283  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248  0.5    321  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249  1.7     51  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250  1.4     95  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 251  1.3    139    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 252  0.8    267  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253  0.8    269  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 254  0.4    333 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 255  1.3    126    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 256  1.0    205  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257  1.8     42  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258  1.9     36 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259  0.9    241  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260  1.4    106 4600      15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261  2.0     21  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262  0.8    274    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263  1.1    175  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264  1.0    214    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265  1.2    163 2600      25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266  0.5    323    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267  1.4     98    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268  1.4    113 6900       3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269  0.8    262    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270  0.2    345  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271  0.5    326  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272  1.2    150  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273  0.9    256  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 274  1.6     76  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 275  0.5    318  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 276  0.8    269  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277 -0.1    361  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 278  1.1    202  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 279  0.2    345  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 280  1.1    181  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281  1.1    202  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 282  1.2    156  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 283  1.2    163  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 284  1.0    214  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285  0.4    330  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 286  1.6     68  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 287  0.9    256  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 288  0.7    288  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289  0.9    226  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 290  0.8    262  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 291  0.2    347  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 292  1.1    198  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293  1.0    219  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 294  0.9    230  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 295  0.8    275    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 296  1.5     87 1700      35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297  0.5    311  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 298  0.0    360  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 299  0.7    295  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 300  1.8     46    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301  1.0    219    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 302  1.7     58    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 303  0.5    321  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 304  0.4    335    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305  0.6    299  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 306  0.7    283  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 307  1.5     89  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 308  0.7    293  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309  1.0    219    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 310  0.6    302  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 311  0.7    285  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 312  0.8    278  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313  0.5    318  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 314  1.3    139  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 315  0.8    269  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 316  0.9    241  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317  0.9    232  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 318  1.4    120    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 319  1.5     83 4800      10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 320  0.7    288  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 321  2.5      4 1200      45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 322  1.0    211  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 323  0.5    323  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 324  1.6     62  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 325  1.5     89  300     219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 326  0.0    358  600     140</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 327  0.9    241  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 328  1.4    113  700     116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 329  0.0    359    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 330  1.2    156  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 331  0.2    350  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 332  1.3    129  500     172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 333  1.2    147  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 334  1.7     58  900      70</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 335  1.2    141  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 336  1.2    147 1900      33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 337  0.2    347  800      94</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 338  1.7     56  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 339  1.1    170  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 340  1.0    205  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 341  0.9    251  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 342  0.9    256  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 343  0.4    335 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 344  0.3    340 2500      27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 345  1.2    146  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 346  1.8     42  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 347  0.6    306  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 348  0.3    340  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 349  0.9    232  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 350  1.6     73  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 351  0.9    240  400     193</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 352  1.1    185  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 353  0.1    356  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 354  0.4    330 1700      35</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 355  1.1    192  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 356  0.8    269  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 357  0.6    309 1100      50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 358  0.7    286  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 359  0.5    311    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 360  0.8    278  200     241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 361  0.8    269  100     268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 362  1.3    135    0     318</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 363 -0.3    363    0     318</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
