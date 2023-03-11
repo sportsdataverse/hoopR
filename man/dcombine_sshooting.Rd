@@ -5,12 +5,14 @@
 \alias{nba_draftcombinespotshooting}
 \title{\strong{Get NBA Stats API Draft Combine - Spot Shooting}}
 \usage{
-nba_draftcombinespotshooting(league_id = "00", season_year = "2020")
+nba_draftcombinespotshooting(league_id = "00", season_year = "2020", ...)
 }
 \arguments{
 \item{league_id}{league_id}
 
 \item{season_year}{season_year}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: Results

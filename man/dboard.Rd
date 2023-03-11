@@ -13,7 +13,8 @@ nba_draftboard(
   round_num = "",
   season = "2019",
   team_id = "",
-  top_x = ""
+  top_x = "",
+  ...
 )
 }
 \arguments{
@@ -32,6 +33,8 @@ nba_draftboard(
 \item{team_id}{team_id}
 
 \item{top_x}{top_x}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: DraftBoard

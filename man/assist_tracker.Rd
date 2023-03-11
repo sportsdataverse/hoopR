@@ -9,7 +9,8 @@ nba_assisttracker(
   league_id = "00",
   per_mode = "PerGame",
   season = "2020-21",
-  season_type = "Regular Season"
+  season_type = "Regular Season",
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@ nba_assisttracker(
 \item{season}{Season - format 2020-21}
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: AssistTracker

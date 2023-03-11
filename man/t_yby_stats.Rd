@@ -9,7 +9,8 @@ nba_teamyearbyyearstats(
   league_id = "00",
   per_mode = "Totals",
   season_type = "Regular Season",
-  team_id = "1610612749"
+  team_id = "1610612749",
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@ nba_teamyearbyyearstats(
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 
 \item{team_id}{Team ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: TeamStats

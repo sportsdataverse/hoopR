@@ -12,7 +12,8 @@ nba_homepageleaders(
   player_scope = "All Players",
   season = "2020-21",
   season_type = "Regular Season",
-  stat_category = "Points"
+  stat_category = "Points",
+  ...
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ nba_homepageleaders(
 \item{season_type}{Season Type - Regular Season, Playoffs}
 
 \item{stat_category}{Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax

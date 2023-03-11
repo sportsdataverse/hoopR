@@ -5,10 +5,12 @@
 \alias{nba_hustlestatsboxscore}
 \title{\strong{Get NBA Stats API Hustle Stats Boxscore}}
 \usage{
-nba_hustlestatsboxscore(game_id)
+nba_hustlestatsboxscore(game_id, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats

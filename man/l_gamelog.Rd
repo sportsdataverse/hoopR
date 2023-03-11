@@ -14,7 +14,8 @@ nba_leaguegamelog(
   player_or_team = "T",
   season = "2020-21",
   season_type = "Regular Season",
-  sorter = "DATE"
+  sorter = "DATE",
+  ...
 )
 }
 \arguments{
@@ -35,6 +36,8 @@ nba_leaguegamelog(
 \item{season_type}{season_type}
 
 \item{sorter}{sorter}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: LeagueGameLog

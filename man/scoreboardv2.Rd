@@ -5,7 +5,12 @@
 \alias{nba_scoreboardv2}
 \title{\strong{Get NBA Stats API Scoreboard V2}}
 \usage{
-nba_scoreboardv2(league_id = "00", game_date = "2021-07-20", day_offset = 0)
+nba_scoreboardv2(
+  league_id = "00",
+  game_date = "2021-07-20",
+  day_offset = 0,
+  ...
+)
 }
 \arguments{
 \item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
@@ -13,6 +18,8 @@ nba_scoreboardv2(league_id = "00", game_date = "2021-07-20", day_offset = 0)
 \item{game_date}{Game Date}
 
 \item{day_offset}{Day Offset (integer 0,-1)}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: Available, EastConfStandingsByDay,

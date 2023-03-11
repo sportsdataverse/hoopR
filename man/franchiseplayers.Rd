@@ -9,7 +9,8 @@ nba_franchiseplayers(
   league_id = "00",
   per_mode = "Totals",
   season_type = "Regular Season",
-  team_id = "1610612739"
+  team_id = "1610612739",
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@ nba_franchiseplayers(
 \item{season_type}{season_type}
 
 \item{team_id}{team_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: FranchisePlayers

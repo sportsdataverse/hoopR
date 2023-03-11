@@ -20,7 +20,8 @@ nba_teamdashptpass(
   season_type = "Regular Season",
   team_id = "1610612749",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -53,6 +54,8 @@ nba_teamdashptpass(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: PassesMade, PassesReceived

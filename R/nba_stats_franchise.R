@@ -7,13 +7,16 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param team_id team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: FranchiseLeaders
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_franchiseleaders <- function(league_id='00',
-                                 team_id = '1610612739'){
+nba_franchiseleaders <- function(
+    league_id='00',
+    team_id = '1610612739',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "franchiseleaders"
   endpoint <- nba_endpoint(version)
@@ -24,8 +27,8 @@ nba_franchiseleaders <- function(league_id='00',
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -62,15 +65,18 @@ NULL
 #' @param per_mode per_mode
 #' @param season_type season_type
 #' @param team_id team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: FranchisePlayers
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_franchiseplayers <- function(league_id='00',
-                                 per_mode = 'Totals',
-                                 season_type = 'Regular Season',
-                                 team_id = '1610612739'){
+nba_franchiseplayers <- function(
+    league_id='00',
+    per_mode = 'Totals',
+    season_type = 'Regular Season',
+    team_id = '1610612739',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "franchiseplayers"
   endpoint <- nba_endpoint(version)
@@ -83,8 +89,8 @@ nba_franchiseplayers <- function(league_id='00',
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -118,12 +124,15 @@ NULL
 #' @rdname franchisehistory
 #' @author Saiem Gilani
 #' @param league_id league_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: DefunctTeams, FranchiseHistory
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_franchisehistory <- function(league_id='00'){
+nba_franchisehistory <- function(
+    league_id='00',
+    ...){
 
   version <- "franchisehistory"
   endpoint <- nba_endpoint(version)
@@ -133,8 +142,8 @@ nba_franchisehistory <- function(league_id='00'){
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

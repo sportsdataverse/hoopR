@@ -23,7 +23,8 @@ nba_playerdashptshots(
   season_type = "Regular Season",
   team_id = "0",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -62,6 +63,8 @@ nba_playerdashptshots(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: ClosestDefender10ftPlusShooting, ClosestDefenderShooting, DribbleShooting,

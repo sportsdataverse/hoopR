@@ -12,7 +12,8 @@ nba_leagueleaders(
   scope = "S",
   season = "2020-21",
   season_type = "Regular Season",
-  stat_category = "PTS"
+  stat_category = "PTS",
+  ...
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ nba_leagueleaders(
 \item{season_type}{Season Type - Regular Season, Playoffs}
 
 \item{stat_category}{Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: LeagueLeaders

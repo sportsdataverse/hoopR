@@ -33,7 +33,8 @@ nba_leaguedashteamstats(
   team_id = "",
   two_way = "",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -92,6 +93,8 @@ nba_leaguedashteamstats(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: LeagueDashTeamStats

@@ -44,7 +44,8 @@ nba_leaguedashplayerclutch(
   touch_time_range = "",
   vs_conference = "",
   vs_division = "",
-  weight = ""
+  weight = "",
+  ...
 )
 }
 \arguments{
@@ -125,6 +126,8 @@ nba_leaguedashplayerclutch(
 \item{vs_division}{vs_division}
 
 \item{weight}{weight}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: LeagueDashPlayerClutch

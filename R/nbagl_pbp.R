@@ -7,6 +7,7 @@ NULL
 #' @rdname nbagl_pbp
 #' @author Billy Fryer
 #' @param game_id Game ID - 10 digits, i.e. 0021900001
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of play by play
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows
@@ -14,15 +15,17 @@ NULL
 #' @import rvest
 #' @export
 
-nbagl_pbp <- function(game_id) {
+nbagl_pbp <- function(
+    game_id,
+    ...) {
 
   league_id <- substr(game_id,1,2)
   season_id <- substr(game_id,4,5)
-  season <- ifelse(substr(season_id,1,1)=="9", paste0('19',season_id), paste0('20',season_id))
+  season <- ifelse(substr(season_id, 1, 1) == "9", paste0('19', season_id), paste0('20', season_id))
   league <- dplyr::case_when(
-    substr(game_id,1,2)=='00' ~ 'nba',
-    substr(game_id, 1, 2)=='10' ~ 'wnba',
-    substr(game_id, 1, 2)=='20' ~ 'dleague',
+    substr(game_id, 1, 2) == '00' ~ 'nba',
+    substr(game_id, 1, 2) == '10' ~ 'wnba',
+    substr(game_id, 1, 2) == '20' ~ 'dleague',
     TRUE ~ 'NBA'
   )
   full_url <- glue::glue("https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json")
@@ -30,8 +33,9 @@ nbagl_pbp <- function(game_id) {
   plays_df <- data.frame()
 
   tryCatch(
-    expr={
-      res <- httr::RETRY("GET", full_url)
+    expr = {
+
+      res <- httr::RETRY("GET", full_url, ...)
 
       # Check the result
       check_status(res)

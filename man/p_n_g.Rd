@@ -10,7 +10,8 @@ nba_playernextngames(
   number_of_games = 2147483647,
   player_id = "2544",
   season = "2020-21",
-  season_type = "Regular Season"
+  season_type = "Regular Season",
+  ...
 )
 }
 \arguments{
@@ -23,6 +24,8 @@ nba_playernextngames(
 \item{season}{Season - format 2020-21}
 
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: NextNGames

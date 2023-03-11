@@ -13,7 +13,8 @@ nba_glalumboxscoresimilarityscore(
   person_2_id,
   person_2_league_id,
   person_2_season,
-  person_2_season_type
+  person_2_season_type,
+  ...
 )
 }
 \arguments{
@@ -32,6 +33,8 @@ nba_glalumboxscoresimilarityscore(
 \item{person_2_season}{person_2_season}
 
 \item{person_2_season_type}{person_2_season_type}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores

@@ -11,6 +11,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param team_id team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: GameByGameStats, TotalPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -23,7 +24,8 @@ nba_cumestatsplayer <- function(
   player_id='1629611',
   season='2020-21',
   season_type='Regular Season',
-  team_id = ''){
+  team_id = '',
+  ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayer"
   endpoint <- nba_endpoint(version)
@@ -36,10 +38,9 @@ nba_cumestatsplayer <- function(
                      "&SeasonType=",season_type,
                      "&TeamID=",team_id)
   tryCatch(
-    expr={
+    expr = {
 
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -79,6 +80,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: CumeStatsPlayerGames
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -93,7 +95,8 @@ nba_cumestatsplayergames <- function(
   season_type = 'Regular Season',
   vs_conference='',
   vs_division='',
-  vs_team_id=''){
+  vs_team_id='',
+  ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayergames"
   endpoint <- nba_endpoint(version)
@@ -109,10 +112,9 @@ nba_cumestatsplayergames <- function(
                      "&VsDivision=", vs_division,
                      "&VsTeamID=", vs_team_id)
   tryCatch(
-    expr={
+    expr = {
 
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -148,6 +150,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param team_id team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: GameByGameStats, TotalTeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -158,7 +161,8 @@ nba_cumestatsteam <- function(
   league_id='00',
   season='2020-21',
   season_type='Regular Season',
-  team_id = ''){
+  team_id = '',
+  ...){
 
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsteam"
@@ -171,10 +175,9 @@ nba_cumestatsteam <- function(
                      "&SeasonType=",season_type,
                      "&TeamID=",team_id)
   tryCatch(
-    expr={
+    expr = {
 
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -214,6 +217,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: CumeStatsTeamGames
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -229,7 +233,8 @@ nba_cumestatsteamgames <- function(
   team_id=1610612739,
   vs_conference='',
   vs_division='',
-  vs_team_id=''){
+  vs_team_id='',
+  ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsteamgames"
   endpoint <- nba_endpoint(version)
@@ -246,10 +251,9 @@ nba_cumestatsteamgames <- function(
                      "&VsDivision=", vs_division,
                      "&VsTeamID=", vs_team_id)
   tryCatch(
-    expr={
+    expr = {
 
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

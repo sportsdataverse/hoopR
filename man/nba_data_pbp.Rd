@@ -4,13 +4,66 @@
 \alias{nba_data_pbp}
 \title{\strong{Get NBA Data API Play-by-Play}}
 \usage{
-nba_data_pbp(game_id = "0021900001")
+nba_data_pbp(game_id = "0021900001", ...)
 }
 \arguments{
 \item{game_id}{Game ID - 10 digits, i.e. "0021900001"}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   period \tab integer \cr
+   evt \tab integer \cr
+   cl \tab character \cr
+   de \tab character \cr
+   locX \tab integer \cr
+   locY \tab integer \cr
+   opt1 \tab integer \cr
+   opt2 \tab integer \cr
+   mtype \tab integer \cr
+   etype \tab integer \cr
+   opid \tab character \cr
+   tid \tab integer \cr
+   pid \tab integer \cr
+   hs \tab integer \cr
+   vs \tab integer \cr
+   epid \tab character \cr
+   oftid \tab integer \cr
+   ord \tab integer \cr
+}
+
+
+Event Message Types (etype):
+
+1 -> MAKE
+
+2 -> MISS
+
+3 -> FreeThrow
+
+4 -> Rebound
+
+5 -> Turnover
+
+6 -> Foul
+
+7 -> Violation
+
+8 -> Substitution
+
+9 -> Timeout
+
+10 -> JumpBall
+
+11 -> Ejection
+
+12 -> StartOfPeriod
+
+13 -> EndOfPeriod
+
+14 -> Empty
 }
 \description{
 \strong{Get NBA Data API Play-by-Play}

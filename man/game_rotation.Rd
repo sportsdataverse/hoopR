@@ -5,7 +5,7 @@
 \alias{nba_gamerotation}
 \title{\strong{Get NBA Stats API Game Rotation}}
 \usage{
-nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS")
+nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS", ...)
 }
 \arguments{
 \item{game_id}{Game ID}
@@ -13,6 +13,8 @@ nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS")
 \item{league_id}{League ID}
 
 \item{rotation_stat}{Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: AwayTeam, HomeTeam

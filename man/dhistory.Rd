@@ -12,7 +12,8 @@ nba_drafthistory(
   round_num = "",
   season = "2019",
   team_id = "",
-  top_x = ""
+  top_x = "",
+  ...
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ nba_drafthistory(
 \item{team_id}{team_id}
 
 \item{top_x}{top_x}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: DraftHistory

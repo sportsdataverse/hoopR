@@ -11,7 +11,8 @@ nba_teamgamelog(
   league_id = "00",
   season = "2020-21",
   season_type = "Regular Season",
-  team_id = "1610612749"
+  team_id = "1610612749",
+  ...
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ nba_teamgamelog(
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 
 \item{team_id}{Team ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: TeamGameLog

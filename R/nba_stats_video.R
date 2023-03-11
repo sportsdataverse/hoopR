@@ -35,42 +35,44 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videodetails <- function(
-  ahead_behind='',
-  clutch_time='',
-  context_filter = '',
-  context_measure = 'FGA',
-  date_from = '',
-  date_to = '',
-  end_period='',
-  end_range='',
-  game_id='',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  period=0,
-  player_id='2544',
-  point_diff='',
-  position='',
-  range_type='',
-  rookie_year='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  start_period='',
-  start_range='',
-  team_id='1610612739',
-  vs_conference='',
-  vs_division=''){
+    ahead_behind='',
+    clutch_time='',
+    context_filter = '',
+    context_measure = 'FGA',
+    date_from = '',
+    date_to = '',
+    end_period='',
+    end_range='',
+    game_id='',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    period=0,
+    player_id='2544',
+    point_diff='',
+    position='',
+    range_type='',
+    rookie_year='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    start_period='',
+    start_range='',
+    team_id='1610612739',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "videodetails"
   endpoint <- nba_endpoint(version)
@@ -108,8 +110,8 @@ nba_videodetails <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -143,14 +145,16 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id game_id
 #' @param game_event_id game_event_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videoevents <- function(
-  game_id='0021700807',
-  game_event_id='0'){
+    game_id='0021700807',
+    game_event_id='0',
+    ...){
 
   version <- "videoevents"
   endpoint <- nba_endpoint(version)
@@ -160,8 +164,8 @@ nba_videoevents <- function(
                      "&GameEventID=", game_event_id)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -195,14 +199,16 @@ NULL
 #' @author Saiem Gilani
 #' @param game_date game_date
 #' @param league_id league_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles: VideoStatus
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_videostatus <- function(
-  game_date='2020-08-16',
-  league_id='00'){
+    game_date='2023-03-10',
+    league_id='00',
+    ...){
 
   version <- "videostatus"
   endpoint <- nba_endpoint(version)
@@ -213,8 +219,8 @@ nba_videostatus <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

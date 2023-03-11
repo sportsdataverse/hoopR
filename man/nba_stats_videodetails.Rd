@@ -35,7 +35,8 @@ nba_videodetails(
   start_range = "",
   team_id = "1610612739",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -98,6 +99,8 @@ nba_videodetails(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a list of tibbles

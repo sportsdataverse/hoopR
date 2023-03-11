@@ -17,7 +17,8 @@ nba_playerindex(
   season = "2020-21",
   season_type = "Regular Season",
   team_id = "0",
-  weight = ""
+  weight = "",
+  ...
 )
 }
 \arguments{
@@ -44,6 +45,8 @@ nba_playerindex(
 \item{team_id}{Team ID. Default: 0 (all teams).}
 
 \item{weight}{Player weight}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: PlayerIndex

@@ -5,7 +5,7 @@
 \alias{nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, version = "v2", p)
+nba_pbp(game_id, version = "v2", p, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
@@ -13,6 +13,8 @@ nba_pbp(game_id, version = "v2", p)
 \item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
 
 \item{p}{Progress bar}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame: PlayByPlay

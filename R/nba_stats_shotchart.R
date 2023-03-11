@@ -26,33 +26,35 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_shotchartdetail <- function(
-  context_measure='FGA',
-  date_from='',
-  date_to='',
-  game_id='',
-  game_segment='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  period=0,
-  player_id='202696',
-  player_position='',
-  rookie_year = '',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id=0,
-  vs_conference='',
-  vs_division=''){
+    context_measure='FGA',
+    date_from='',
+    date_to='',
+    game_id='',
+    game_segment='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    period=0,
+    player_id='202696',
+    player_position='',
+    rookie_year = '',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id=0,
+    vs_conference='',
+    vs_division='',
+    ...){
 
 
   season_type <- gsub(' ','+',season_type)
@@ -84,8 +86,8 @@ nba_shotchartdetail <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -119,14 +121,16 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param season season
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: League_Wide
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_shotchartleaguewide <- function(
-  league_id='00',
-  season='2020-21'){
+    league_id='00',
+    season='2020-21',
+    ...){
 
   version <- "shotchartleaguewide"
   endpoint <- nba_endpoint(version)
@@ -137,8 +141,8 @@ nba_shotchartleaguewide <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -164,7 +168,7 @@ nba_shotchartleaguewide <- function(
 
 
 # nba_shotchartlineupdetail <- function(
-#   context_filter = '',
+    #   context_filter = '',
 #   context_measure = 'FGA',
 #   date_from = '',
 #   date_to = '',

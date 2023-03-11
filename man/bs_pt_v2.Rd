@@ -5,10 +5,12 @@
 \alias{nba_boxscoreplayertrackv2}
 \title{\strong{Get NBA Stats API Boxscore Player Tracking V2}}
 \usage{
-nba_boxscoreplayertrackv2(game_id)
+nba_boxscoreplayertrackv2(game_id, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: PlayerStats, TeamStats

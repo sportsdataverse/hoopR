@@ -9,15 +9,20 @@ NULL
 #' @param game_id Game ID
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @param p Progress bar
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_pbp <- function(game_id, version = "v2", p){
+nba_pbp <- function(
+    game_id,
+    version = "v2",
+    p,
+    ...){
 
-  p("loading...")
-  if(version=="v2"){
+
+  if(version == "v2"){
     endpoint <- nba_endpoint('playbyplayv2')
   } else {
     endpoint <- nba_endpoint('playbyplay')
@@ -25,13 +30,13 @@ nba_pbp <- function(game_id, version = "v2", p){
 
   full_url <- paste0(endpoint,
                      "?EndPeriod=0&",
-                     "GameID=",pad_id(game_id),
+                     "GameID=", pad_id(game_id),
                      "&StartPeriod=0")
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       # if (return_message) {
       #   glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
@@ -93,11 +98,11 @@ nba_pbp <- function(game_id, version = "v2", p){
           ) %>%
           dplyr::mutate(
             minute_game = round(((.data$period - 1) * 12) + (12 - .data$minute_remaining_quarter) +
-              (((
-                60 - .data$seconds_remaining_quarter
-              ) / 60) - 1), 2),
+                                  (((
+                                    60 - .data$seconds_remaining_quarter
+                                  ) / 60) - 1), 2),
             time_remaining = 48 - round(((.data$period - 1) * 12) - (12 - .data$minute_remaining_quarter) -
-              ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
+                                          ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
           ) %>%
           dplyr::select(
             "game_id":"period",
@@ -129,11 +134,14 @@ NULL
 #' @param game_ids Game IDs
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @param nest_data If TRUE returns nested data by game
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
 #' @export
-nba_pbps <-function(game_ids = NULL,
-                    version = "v2",
-                    nest_data = FALSE) {
+nba_pbps <- function(
+    game_ids = NULL,
+    version = "v2",
+    nest_data = FALSE,
+    ...) {
 
   if (game_ids %>% purrr::is_null()) {
     stop("Please enter game ids")
@@ -148,7 +156,7 @@ nba_pbps <-function(game_ids = NULL,
   all_data <-
     game_ids %>%
     purrr::map_dfr(function(game_id) {
-      get_pbp_safe(game_id = game_id, p = p)
+      get_pbp_safe(game_id = game_id, ..., p = p)
     })
 
   if (nest_data) {
@@ -162,78 +170,106 @@ nba_pbps <-function(game_ids = NULL,
 }
 
 
-#' **Get NBA Stats API Schedule**
-#' @name schedule
+
+#' **Get NBA Stats API Season Schedule**
+#' @name nba_stats_schedule
 NULL
 #' @title
-#' **Get NBA Stats API Schedule**
-#' @rdname schedule
+#' **Get NBA Stats API Season Schedule**
+#' @rdname nba_stats_schedule
 #' @author Saiem Gilani
-#' @param season Season - 4 digit integer corresponding to the first year in the season format 2020-21
-#' @param league League - default: 'NBA'. Other options include 'all'
-#' @return Returns a tibble
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
+#' @return Returns a tibble with the following columns:
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |game_date          |character |
+#'    |game_id            |character |
+#'    |game_code          |character |
+#'    |game_status        |integer   |
+#'    |game_status_text   |character |
+#'    |game_sequence      |integer   |
+#'    |game_date_est      |character |
+#'    |game_time_est      |character |
+#'    |game_date_time_est |character |
+#'    |game_date_utc      |character |
+#'    |game_time_utc      |character |
+#'    |game_date_time_utc |character |
+#'    |away_team_time     |character |
+#'    |home_team_time     |character |
+#'    |day                |character |
+#'    |month_num          |integer   |
+#'    |week_number        |integer   |
+#'    |week_name          |character |
+#'    |if_necessary       |character |
+#'    |series_game_number |character |
+#'    |series_text        |character |
+#'    |arena_name         |character |
+#'    |arena_state        |character |
+#'    |arena_city         |character |
+#'    |postponed_status   |character |
+#'    |branch_link        |character |
+#'    |game_subtype       |character |
+#'    |home_team_id       |integer   |
+#'    |home_team_name     |character |
+#'    |home_team_city     |character |
+#'    |home_team_tricode  |character |
+#'    |home_team_slug     |character |
+#'    |home_team_wins     |integer   |
+#'    |home_team_losses   |integer   |
+#'    |home_team_score    |integer   |
+#'    |home_team_seed     |integer   |
+#'    |away_team_id       |integer   |
+#'    |away_team_name     |character |
+#'    |away_team_city     |character |
+#'    |away_team_tricode  |character |
+#'    |away_team_slug     |character |
+#'    |away_team_wins     |integer   |
+#'    |away_team_losses   |integer   |
+#'    |away_team_score    |integer   |
+#'    |away_team_seed     |integer   |
+#'    |season             |character |
+#'    |league_id          |character |
+#'
 #' @export
-#' @return A tibble with the following columns:
-#'
-#'  |col_name                |types     |
-#'  |:-----------------------|:---------|
-#'  |game_id                 |character |
-#'  |season_type_id          |character |
-#'  |season_type_description |character |
-#'  |visitor_team_id         |character |
-#'  |visitor_city            |character |
-#'  |visitor_nickname        |character |
-#'  |visitor_name_short      |character |
-#'  |visitor_abbr            |character |
-#'  |visitor_team_name_full  |character |
-#'  |home_team_id            |character |
-#'  |home_city               |character |
-#'  |home_nickname           |character |
-#'  |home_name_short         |character |
-#'  |home_abbr               |character |
-#'  |home_team_name_full     |character |
-#'  |game_date               |Date      |
-#'  |game_start_time         |character |
-#'  |day                     |character |
-#'
-#' @details
-#' ```
-#'   nba_schedule(season = 1975, league = 'NBA')
-#'   nba_schedule(season = 1996, league = 'NBA')
-#' ```
-nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
+nba_schedule <- function(
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    ...){
 
-  full_url <- glue::glue("https://stats.nba.com/stats/internationalbroadcasterschedule?LeagueID=00&Season={season}&RegionID=1")
-  res <- httr::RETRY("GET", full_url)
 
-  # Check the result
-  check_status(res)
+  version <- "scheduleleaguev2"
+  full_url <- nba_endpoint(version)
+  params <- list(
+    LeagueID = league_id,
+    Season = season
+  )
   tryCatch(
     expr = {
-      season_year <- hoopR::year_to_season(season)
-      standings <- nba_leaguestandingsv3(season = season)$Standings
-      teams <- standings %>%
-        dplyr::select(c("LeagueID","SeasonID","TeamID", "TeamCity", "TeamName","TeamSlug","Conference","Division")) %>%
-        dplyr::mutate(
-          Season = paste0('',season),
-          TeamNameFull = paste(.data$TeamCity,.data$TeamName)) %>%
-        dplyr::arrange(.data$TeamNameFull)
-      resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
 
+      resp <- request_with_proxy(url = full_url, params, ...)
 
-      data <- jsonlite::fromJSON(resp)[["resultSets"]]
-      data <- data[["CompleteGameList"]][[2]] %>%
+      league_sched <- resp %>%
+        purrr::pluck("leagueSchedule")
+      games <- league_sched %>%
+        purrr::pluck("gameDates") %>%
+        tidyr::unnest("games") %>%
+        tidyr::unnest("awayTeam", names_sep = "_") %>%
+        tidyr::unnest("homeTeam", names_sep = "_") %>%
+        dplyr::select(-dplyr::any_of(c("broadcasters", "pointsLeaders"))) %>%
         janitor::clean_names()
-
-      data$game_id <- unlist(purrr::map(data$game_id,function(x){
+      colnames(games) <- gsub('team_team', 'team', colnames(games))
+      games$game_id <- unlist(purrr::map(games$game_id,function(x){
         pad_id(x)
       }))
-
-      schedule_df <- data %>%
+      games$season <- league_sched$seasonYear
+      games$league_id <- league_sched$leagueId
+      games <- games %>%
         dplyr::mutate(
           season_type_id = substr(.data$game_id, 3, 3),
           season_type_description = dplyr::case_when(
@@ -242,45 +278,16 @@ nba_schedule <- function(season = most_recent_nba_season()-1, league = 'NBA'){
             .data$season_type_id == 3 ~ "All-Star",
             .data$season_type_id == 4 ~ "Playoffs",
             .data$season_type_id == 5 ~ "Play-In Game"),
-          game_date = lubridate::mdy(.data$date),
-          visitor_team_name_full = paste(.data$vt_city, .data$vt_nick_name),
-          home_team_name_full = paste(.data$ht_city, .data$ht_nick_name)) %>%
-        dplyr::arrange(.data$game_date) %>%
-        dplyr::as_tibble()
-      schedule_df <- schedule_df %>%
-        dplyr::left_join(teams %>% dplyr::select("visitor_team_id" = "TeamID","TeamNameFull"), by = c("visitor_team_name_full" = "TeamNameFull")) %>%
-        dplyr::left_join(teams %>% dplyr::select("home_team_id" = "TeamID","TeamNameFull"), by = c("home_team_name_full" = "TeamNameFull")) %>%
-        dplyr::select(
-        "game_id"
-        , "season_type_id"
-        , "season_type_description"
-        , "visitor_team_id"
-        , "visitor_city" = "vt_city"
-        , "visitor_nickname" = "vt_nick_name"
-        , "visitor_name_short" = "vt_short_name"
-        , "visitor_abbr" = "vt_abbreviation"
-        , "visitor_team_name_full"
-        , "home_team_id"
-        , "home_city" = "ht_city"
-        , "home_nickname" = "ht_nick_name"
-        , "home_name_short" = "ht_short_name"
-        , "home_abbr" = "ht_abbreviation"
-        , "home_team_name_full"
-        , "game_date"
-        , "game_start_time" = "time"
-        , "day")
-
+          game_date = lubridate::ymd(substring(.data$game_date,1,10)))
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no schedule data for {season} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league schedule data for {season} available!"))
     },
     warning = function(w) {
     },
     finally = {
     }
   )
-
-  return(schedule_df)
+  return(games)
 }
-

@@ -6,6 +6,7 @@ NULL
 #' @rdname nbagl_standings
 #' @author Billy Fryer
 #' @param season Season - 4 digit, i.e. 2021
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a tibble of the G League Season Standings
 #' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
@@ -13,12 +14,15 @@ NULL
 #' @import rvest
 #' @export
 
-nbagl_standings <- function(season = most_recent_nba_season()-1) {
+nbagl_standings <- function(
+    season = most_recent_nba_season() - 1,
+    ...) {
 
   full_url <- glue::glue("https://s.data.nba.com/data/10s/v2015/json/mobile_teams/dleague/{season}/20_standings_05.json")
   tryCatch(
-    expr={
-      res <- httr::RETRY("GET", full_url)
+    expr = {
+
+      res <- httr::RETRY("GET", full_url, ...)
 
       resp <- res$content %>%
         rawToChar() %>%

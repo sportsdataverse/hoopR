@@ -5,10 +5,12 @@
 \alias{nba_boxscoredefensive}
 \title{\strong{Get NBA Stats API Boxscore Defensive}}
 \usage{
-nba_boxscoredefensive(game_id)
+nba_boxscoredefensive(game_id, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: PlayerDefensiveStats, Table1

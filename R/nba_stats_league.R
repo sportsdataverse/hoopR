@@ -14,21 +14,23 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param sorter sorter
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueGameLog
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguegamelog <- function(
-  counter = 0,
-  date_from = '',
-  date_to = '',
-  direction = 'ASC',
-  league_id='00',
-  player_or_team='T',
-  season='2020-21',
-  season_type='Regular Season',
-  sorter='DATE'){
+    counter = 0,
+    date_from = '',
+    date_to = '',
+    direction = 'ASC',
+    league_id='00',
+    player_or_team='T',
+    season='2020-21',
+    season_type='Regular Season',
+    sorter='DATE',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamelog"
   endpoint <- nba_endpoint(version)
@@ -45,9 +47,9 @@ nba_leaguegamelog <- function(
                      "&Sorter=",sorter)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -83,16 +85,18 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguestandings <- function(
-  league_id='00',
-  season='2020-21',
-  season_type='Regular Season',
-  season_year=''){
+    league_id='00',
+    season='2020-21',
+    season_type='Regular Season',
+    season_year='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandings"
   endpoint <- nba_endpoint(version)
@@ -104,9 +108,9 @@ nba_leaguestandings <- function(
                      "&SeasonYear=", season_year)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -142,16 +146,18 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Standings
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguestandingsv3 <- function(
-  league_id='00',
-  season='2020-21',
-  season_type='Regular Season',
-  season_year=''){
+    league_id='00',
+    season='2020-21',
+    season_type='Regular Season',
+    season_year='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
   endpoint <- nba_endpoint(version)
@@ -163,9 +169,9 @@ nba_leaguestandingsv3 <- function(
                      "&SeasonYear=", season_year)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -199,6 +205,7 @@ NULL
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_id season_id
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: EastConfPlayoffPicture,
 #' EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
 #' WestConfRemainingGames, WestConfStandings
@@ -207,8 +214,9 @@ NULL
 #' @import rvest
 #' @export
 nba_playoffpicture <- function(
-  league_id='00',
-  season_id='22020'){
+    league_id='00',
+    season_id='22020',
+    ...){
 
   version <- "playoffpicture"
   endpoint <- nba_endpoint(version)
@@ -218,9 +226,9 @@ nba_playoffpicture <- function(
                      "&SeasonID=", season_id)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -340,100 +348,102 @@ NULL
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
 #' @param years_experience years_experience
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueGameFinderResults
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguegamefinder <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_year='',
-  draft_team_id='',
-  draft_round='',
-  draft_number='',
-  et_ast='',
-  et_blk='',
-  et_dd='',
-  et_dreb='',
-  et_fg3a='',
-  et_fg3m='',
-  et_fg3_pct='',
-  et_fga='',
-  et_fgm='',
-  et_fg_pct='',
-  et_fta='',
-  et_ftm='',
-  et_ft_pct='',
-  et_minutes='',
-  et_oreb='',
-  et_pf='',
-  et_pts='',
-  et_reb='',
-  et_stl='',
-  et_td='',
-  et_tov='',
-  game_id='',
-  gt_ast='',
-  gt_blk='',
-  gt_dd='',
-  gt_dreb='',
-  gt_fg3a='',
-  gt_fg3m='',
-  gt_fg3_pct='',
-  gt_fga='',
-  gt_fgm='',
-  gt_fg_pct='',
-  gt_fta='',
-  gt_ftm='',
-  gt_ft_pct='',
-  gt_minutes='',
-  gt_oreb='',
-  gt_pf='',
-  gt_pts='',
-  gt_reb='',
-  gt_stl='',
-  gt_td='',
-  gt_tov='',
-  league_id='00',
-  location='',
-  lt_ast='',
-  lt_blk='',
-  lt_dd='',
-  lt_dreb='',
-  lt_fg3a='',
-  lt_fg3m='',
-  lt_fg3_pct='',
-  lt_fga='',
-  lt_fgm='',
-  lt_fg_pct='',
-  lt_fta='',
-  lt_ftm='',
-  lt_ft_pct='',
-  lt_minutes='',
-  lt_oreb='',
-  lt_pf='',
-  lt_pts='',
-  lt_reb='',
-  lt_stl='',
-  lt_td='',
-  lt_tov='',
-  outcome='',
-  po_round='',
-  player_id='',
-  player_or_team='T',
-  rookie_year='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  starter_bench='',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  vs_team_id='',
-  years_experience=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_year='',
+    draft_team_id='',
+    draft_round='',
+    draft_number='',
+    et_ast='',
+    et_blk='',
+    et_dd='',
+    et_dreb='',
+    et_fg3a='',
+    et_fg3m='',
+    et_fg3_pct='',
+    et_fga='',
+    et_fgm='',
+    et_fg_pct='',
+    et_fta='',
+    et_ftm='',
+    et_ft_pct='',
+    et_minutes='',
+    et_oreb='',
+    et_pf='',
+    et_pts='',
+    et_reb='',
+    et_stl='',
+    et_td='',
+    et_tov='',
+    game_id='',
+    gt_ast='',
+    gt_blk='',
+    gt_dd='',
+    gt_dreb='',
+    gt_fg3a='',
+    gt_fg3m='',
+    gt_fg3_pct='',
+    gt_fga='',
+    gt_fgm='',
+    gt_fg_pct='',
+    gt_fta='',
+    gt_ftm='',
+    gt_ft_pct='',
+    gt_minutes='',
+    gt_oreb='',
+    gt_pf='',
+    gt_pts='',
+    gt_reb='',
+    gt_stl='',
+    gt_td='',
+    gt_tov='',
+    league_id='00',
+    location='',
+    lt_ast='',
+    lt_blk='',
+    lt_dd='',
+    lt_dreb='',
+    lt_fg3a='',
+    lt_fg3m='',
+    lt_fg3_pct='',
+    lt_fga='',
+    lt_fgm='',
+    lt_fg_pct='',
+    lt_fta='',
+    lt_ftm='',
+    lt_ft_pct='',
+    lt_minutes='',
+    lt_oreb='',
+    lt_pf='',
+    lt_pts='',
+    lt_reb='',
+    lt_stl='',
+    lt_td='',
+    lt_tov='',
+    outcome='',
+    po_round='',
+    player_id='',
+    player_or_team='T',
+    rookie_year='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    starter_bench='',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    vs_team_id='',
+    years_experience='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
   endpoint <- nba_endpoint(version)
@@ -531,9 +541,9 @@ nba_leaguegamefinder <- function(
   )
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

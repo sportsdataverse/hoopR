@@ -5,12 +5,14 @@
 \alias{nba_commonplayerinfo}
 \title{\strong{Get NBA Stats API Player Info}}
 \usage{
-nba_commonplayerinfo(league_id = "00", player_id = "2544")
+nba_commonplayerinfo(league_id = "00", player_id = "2544", ...)
 }
 \arguments{
 \item{league_id}{league_id}
 
 \item{player_id}{player_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: AvailableSeasons

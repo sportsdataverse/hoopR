@@ -193,7 +193,8 @@ nba_teamgamestreakfinder(
   wrs_opp_pts_paint = "",
   wrs_opp_reb = "",
   wrs_opp_stl = "",
-  wrs_opp_tov = ""
+  wrs_opp_tov = "",
+  ...
 )
 }
 \arguments{
@@ -572,6 +573,8 @@ nba_teamgamestreakfinder(
 \item{wrs_opp_stl}{wrs_opp_stl}
 
 \item{wrs_opp_tov}{wrs_opp_tov}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: TeamGameStreakFinderParametersResults

@@ -12,18 +12,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: PlayerStats, TeamStarterBenchStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoretraditionalv2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscoretraditionalv2"
   endpoint <- nba_endpoint(version)
@@ -36,9 +38,9 @@ nba_boxscoretraditionalv2 <- function(
                      "&StartPeriod=",start_period,
                      "&StartRange=", start_range)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -75,18 +77,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoreadvancedv2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscoreadvancedv2"
   endpoint <- nba_endpoint(version)
@@ -101,9 +105,9 @@ nba_boxscoreadvancedv2 <- function(
                      "&StartRange=", start_range)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -135,12 +139,15 @@ NULL
 #' @rdname bs_defensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerDefensiveStats, Table1
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_boxscoredefensive <- function(game_id){
+nba_boxscoredefensive <- function(
+    game_id,
+    ...){
 
   version <- "boxscoredefensive"
   endpoint <- nba_endpoint(version)
@@ -148,10 +155,9 @@ nba_boxscoredefensive <- function(game_id){
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
 
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -188,18 +194,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscorefourfactorsv2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscorefourfactorsv2"
   endpoint <- nba_endpoint(version)
@@ -212,9 +220,9 @@ nba_boxscorefourfactorsv2 <- function(
                      "&StartPeriod=",start_period,
                      "&StartRange=", start_range)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -251,18 +259,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoremiscv2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscoremiscv2"
   endpoint <- nba_endpoint(version)
@@ -275,9 +285,9 @@ nba_boxscoremiscv2 <- function(
                      "&StartPeriod=",start_period,
                      "&StartRange=", start_range)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -314,18 +324,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscorescoringv2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscorescoringv2"
   endpoint <- nba_endpoint(version)
@@ -338,9 +350,9 @@ nba_boxscorescoringv2 <- function(
                      "&StartPeriod=",start_period,
                      "&StartRange=", start_range)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -377,18 +389,20 @@ NULL
 #' @param start_range start_range
 #' @param end_range end_range
 #' @param range_type range_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoreusagev2 <- function(
-  game_id,
-  start_period=0,
-  end_period=14,
-  start_range=0,
-  end_range=0,
-  range_type=0){
+    game_id,
+    start_period=0,
+    end_period=14,
+    start_range=0,
+    end_range=0,
+    range_type=0,
+    ...){
 
   version <- "boxscoreusagev2"
   endpoint <- nba_endpoint(version)
@@ -401,9 +415,9 @@ nba_boxscoreusagev2 <- function(
                      "&StartPeriod=",start_period,
                      "&StartRange=", start_range)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -436,12 +450,15 @@ NULL
 #' @rdname bs_summaryv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary, InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_boxscoresummaryv2 <- function(game_id){
+nba_boxscoresummaryv2 <- function(
+    game_id,
+    ...){
 
   version <- "boxscoresummaryv2"
   endpoint <- nba_endpoint(version)
@@ -449,9 +466,9 @@ nba_boxscoresummaryv2 <- function(game_id){
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -483,12 +500,15 @@ NULL
 #' @rdname bs_match
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerMatchupsStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_boxscorematchups <- function(game_id){
+nba_boxscorematchups <- function(
+    game_id,
+    ...){
 
   version <- "boxscorematchups"
   endpoint <- nba_endpoint(version)
@@ -496,9 +516,9 @@ nba_boxscorematchups <- function(game_id){
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -530,12 +550,15 @@ NULL
 #' @rdname bs_pt_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_boxscoreplayertrackv2 <- function(game_id){
+nba_boxscoreplayertrackv2 <- function(
+    game_id,
+    ...){
 
   version <- "boxscoreplayertrackv2"
   endpoint <- nba_endpoint(version)
@@ -543,9 +566,9 @@ nba_boxscoreplayertrackv2 <- function(game_id){
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -584,14 +607,22 @@ NULL
 #' @param person_2_league_id person_2_league_id
 #' @param person_2_season person_2_season
 #' @param person_2_season_type person_2_season_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: BoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_boxscoresimilarityscore <- function(
-  person_1_id,person_1_league_id,person_1_season,person_1_season_type,
-  person_2_id,person_2_league_id,person_2_season,person_2_season_type){
+    person_1_id,
+    person_1_league_id,
+    person_1_season,
+    person_1_season_type,
+    person_2_id,
+    person_2_league_id,
+    person_2_season,
+    person_2_season_type,
+    ...){
 
   version <- "boxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
@@ -606,9 +637,9 @@ nba_boxscoresimilarityscore <- function(
                      "&Person2Season=", person_2_season,
                      "&Person2SeasonType=", person_2_season_type)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -646,14 +677,22 @@ NULL
 #' @param person_2_league_id person_2_league_id
 #' @param person_2_season person_2_season
 #' @param person_2_season_type person_2_season_type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_glalumboxscoresimilarityscore <- function(
-  person_1_id,person_1_league_id,person_1_season,person_1_season_type,
-  person_2_id,person_2_league_id,person_2_season,person_2_season_type){
+    person_1_id,
+    person_1_league_id,
+    person_1_season,
+    person_1_season_type,
+    person_2_id,
+    person_2_league_id,
+    person_2_season,
+    person_2_season_type,
+    ...){
 
   version <- "glalumboxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
@@ -668,9 +707,9 @@ nba_glalumboxscoresimilarityscore <- function(
                      "&Person2Season=", person_2_season,
                      "&Person2SeasonType=", person_2_season_type)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -702,12 +741,15 @@ NULL
 #' @rdname hustle_bs
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_hustlestatsboxscore <- function(game_id){
+nba_hustlestatsboxscore <- function(
+    game_id,
+    ...){
 
   version <- "hustlestatsboxscore"
   endpoint <- nba_endpoint(version)
@@ -715,9 +757,9 @@ nba_hustlestatsboxscore <- function(game_id){
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -752,15 +794,17 @@ NULL
 #' @param game_id Game ID
 #' @param league_id League ID
 #' @param rotation_stat Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: AwayTeam, HomeTeam
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_gamerotation <- function(
-  game_id,
-  league_id='00',
-  rotation_stat = 'PLAYER_PTS'){
+    game_id,
+    league_id='00',
+    rotation_stat = 'PLAYER_PTS',
+    ...){
 
   version <- "gamerotation"
   endpoint <- nba_endpoint(version)
@@ -770,9 +814,9 @@ nba_gamerotation <- function(
                      "&LeagueID=",league_id,
                      "&RotationStat=", rotation_stat)
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

@@ -30,6 +30,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Last10Sec3Point2PlayerDashboard, Last10Sec3PointPlayerDashboard, Last1Min5PointPlayerDashboard,
 #' Last1MinPlusMinus5PointPlayerDashboard, Last30Sec3Point2PlayerDashboard, Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
 #' Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard, Last5MinPlusMinus5PointPlayerDashboard,
@@ -39,29 +40,30 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashboardbyclutch <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbyclutch"
   endpoint <- nba_endpoint(version)
@@ -93,8 +95,8 @@ nba_playerdashboardbyclutch <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -150,35 +152,37 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ByActualMarginPlayerDashboard, ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playerdashboardbygamesplits <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbygamesplits"
   endpoint <- nba_endpoint(version)
@@ -210,8 +214,8 @@ nba_playerdashboardbygamesplits <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -268,6 +272,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: DaysRestPlayerDashboard, LocationPlayerDashboard, MonthPlayerDashboard, OverallPlayerDashboard, PrePostAllStarPlayerDashboard,
 #' StartingPosition, WinsLossesPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
@@ -275,29 +280,30 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashboardbygeneralsplits <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbygeneralsplits"
   endpoint <- nba_endpoint(version)
@@ -329,8 +335,8 @@ nba_playerdashboardbygeneralsplits <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -387,6 +393,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard, Last15PlayerDashboard, Last20PlayerDashboard,
 #' Last5PlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
@@ -394,29 +401,30 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashboardbylastngames <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbylastngames"
   endpoint <- nba_endpoint(version)
@@ -447,8 +455,8 @@ nba_playerdashboardbylastngames <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -505,35 +513,37 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ConferencePlayerDashboard, DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playerdashboardbyopponent <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbyopponent"
   endpoint <- nba_endpoint(version)
@@ -564,8 +574,8 @@ nba_playerdashboardbyopponent <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -621,6 +631,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard, OverallPlayerDashboard,
 #' Shot5FTPlayerDashboard, Shot8FTPlayerDashboard, ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
@@ -628,29 +639,30 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashboardbyshootingsplits <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbyshootingsplits"
   endpoint <- nba_endpoint(version)
@@ -681,8 +693,8 @@ nba_playerdashboardbyshootingsplits <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -738,6 +750,7 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: OverallPlayerDashboard, PointsScoredPlayerDashboard, PontsAgainstPlayerDashboard,
 #' ScoreDifferentialPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
@@ -745,29 +758,30 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashboardbyteamperformance <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbyteamperformance"
   endpoint <- nba_endpoint(version)
@@ -798,8 +812,8 @@ nba_playerdashboardbyteamperformance <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -855,35 +869,37 @@ NULL
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playerdashboardbyyearoveryear <- function(
-  date_from = '',
-  date_to = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  plus_minus = 'N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashboardbyyearoveryear"
   endpoint <- nba_endpoint(version)
@@ -915,8 +931,8 @@ nba_playerdashboardbyyearoveryear <- function(
 
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -964,28 +980,30 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PassesMade, PassesReceived
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playerdashptpass  <- function(
-  date_from = '',
-  date_to = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  per_mode='Totals',
-  player_id='2544',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='0',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    per_mode='Totals',
+    player_id='2544',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='0',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashptpass"
   endpoint <- nba_endpoint(version)
@@ -1009,8 +1027,8 @@ nba_playerdashptpass  <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1060,6 +1078,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: NumContestedRebounding, OverallRebounding, RebDistanceRebounding,
 #' ShotDistanceRebounding, ShotTypeRebounding
 #' @importFrom jsonlite fromJSON toJSON
@@ -1067,24 +1086,25 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashptreb  <- function(
-  date_from = '',
-  date_to = '',
-  game_segment='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='0',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='0',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashptreb"
   endpoint <- nba_endpoint(version)
@@ -1110,8 +1130,8 @@ nba_playerdashptreb  <- function(
                      "&VsDivision=", vs_division)
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers()
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1162,30 +1182,32 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: DefendingShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_playerdashptshotdefend  <- function(
-  date_from = '',
-  date_to = '',
-  game_segment='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='0',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='0',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashptshotdefend"
   endpoint <- nba_endpoint(version)
@@ -1212,8 +1234,7 @@ nba_playerdashptshotdefend  <- function(
   tryCatch(
     expr = {
 
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1263,6 +1284,7 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ClosestDefender10ftPlusShooting, ClosestDefenderShooting, DribbleShooting,
 #' GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
 #' @importFrom jsonlite fromJSON toJSON
@@ -1270,24 +1292,25 @@ NULL
 #' @import rvest
 #' @export
 nba_playerdashptshots  <- function(
-  date_from = '',
-  date_to = '',
-  game_segment='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  per_mode='Totals',
-  period=0,
-  player_id='2544',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='0',
-  vs_conference='',
-  vs_division=''){
+    date_from = '',
+    date_to = '',
+    game_segment='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    per_mode='Totals',
+    period=0,
+    player_id='2544',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='0',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playerdashptshots"
   endpoint <- nba_endpoint(version)
@@ -1314,9 +1337,7 @@ nba_playerdashptshots  <- function(
   tryCatch(
     expr = {
 
-
-      resp <- full_url %>%
-        .nba_headers()
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%

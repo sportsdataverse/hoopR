@@ -5,12 +5,14 @@
 \alias{nba_playoffpicture}
 \title{\strong{Get NBA Stats API Playoff Picture}}
 \usage{
-nba_playoffpicture(league_id = "00", season_id = "22020")
+nba_playoffpicture(league_id = "00", season_id = "22020", ...)
 }
 \arguments{
 \item{league_id}{league_id}
 
 \item{season_id}{season_id}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: EastConfPlayoffPicture,

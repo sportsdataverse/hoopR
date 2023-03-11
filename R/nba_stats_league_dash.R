@@ -37,42 +37,44 @@ NULL
 #' @param touch_time_range touch_time_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashoppptshot <- function(
-  close_def_dist_range = '',
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  dribble_range = '',
-  game_segment = '',
-  general_range='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  shot_dist_range = '',
-  team_id='',
-  touch_time_range = '',
-  vs_conference='',
-  vs_division=''){
+    close_def_dist_range = '',
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    dribble_range = '',
+    game_segment = '',
+    general_range='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    shot_dist_range = '',
+    team_id='',
+    touch_time_range = '',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashoppptshot"
   endpoint <- nba_endpoint(version)
@@ -110,9 +112,9 @@ nba_leaguedashoppptshot <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -176,44 +178,46 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerBioStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerbiostats <- function(
-  college = '',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  game_segment = '',
-  game_scope='',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  period='',
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  touch_time_range = '',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college = '',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    game_segment = '',
+    game_scope='',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    period='',
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    touch_time_range = '',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerbiostats"
   endpoint <- nba_endpoint(version)
@@ -253,9 +257,9 @@ nba_leaguedashplayerbiostats <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -325,51 +329,53 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerClutch
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerclutch <- function(
-  ahead_behind='Ahead or Behind',
-  clutch_time = 'Last 5 Minutes',
-  college = '',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  game_scope='',
-  game_segment = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  pace_adjust='N',
-  plus_minus = 'N',
-  point_diff = 5,
-  po_round='',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  touch_time_range = '',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    ahead_behind='Ahead or Behind',
+    clutch_time = 'Last 5 Minutes',
+    college = '',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    game_scope='',
+    game_segment = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    pace_adjust='N',
+    plus_minus = 'N',
+    point_diff = 5,
+    po_round='',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    touch_time_range = '',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   ahead_behind <- gsub(' ','+',ahead_behind)
   clutch_time <- gsub(' ','+',clutch_time)
   season_type <- gsub(' ','+',season_type)
@@ -418,9 +424,9 @@ nba_leaguedashplayerclutch <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -491,51 +497,53 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerptshot <- function(
-  close_def_dist_range = '',
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  distance_range='',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  dribble_range = '',
-  game_scope='',
-  game_segment = '',
-  general_range='',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type = 'Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  pace_adjust = 'N',
-  po_round='',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  shot_dist_range = '',
-  starter_bench = '',
-  team_id='',
-  touch_time_range = '',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    close_def_dist_range = '',
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    distance_range='',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    dribble_range = '',
+    game_scope='',
+    game_segment = '',
+    general_range='',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type = 'Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    pace_adjust = 'N',
+    po_round='',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    shot_dist_range = '',
+    starter_bench = '',
+    team_id='',
+    touch_time_range = '',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerptshot"
   endpoint <- nba_endpoint(version)
@@ -581,9 +589,9 @@ nba_leaguedashplayerptshot <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -651,48 +659,50 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayerstats <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  game_scope='',
-  game_segment = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type = 'Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  pace_adjust = 'N',
-  po_round='',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  two_way='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    game_scope='',
+    game_segment = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type = 'Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    pace_adjust = 'N',
+    po_round='',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    two_way='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerstats"
   endpoint <- nba_endpoint(version)
@@ -736,9 +746,9 @@ nba_leaguedashplayerstats <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -806,49 +816,51 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashplayershotlocations <- function(
-  college='',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  distance_range = 'By Zone',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  dribble_range = '',
-  game_scope = '',
-  game_segment = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust = 'N',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  plus_minus='N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college='',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    distance_range = 'By Zone',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    dribble_range = '',
+    game_scope = '',
+    game_segment = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust = 'N',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    plus_minus='N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
 
   distance_range <- gsub(' ','+',distance_range)
   season_type <- gsub(' ','+',season_type)
@@ -895,9 +907,9 @@ nba_leaguedashplayershotlocations <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
@@ -964,43 +976,45 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTDefend
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptdefend <- function(
-  college = '',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  defense_category = 'Overall',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  game_segment = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  period='',
-  player_experience='',
-  player_id='',
-  player_position='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  starter_bench = '',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college = '',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    defense_category = 'Overall',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    game_segment = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    period='',
+    player_experience='',
+    player_id='',
+    player_position='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    starter_bench = '',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptdefend"
   endpoint <- nba_endpoint(version)
@@ -1039,9 +1053,9 @@ nba_leaguedashptdefend <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1104,42 +1118,44 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param weight weight
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptstats <- function(
-  college = '',
-  conference = '',
-  country = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  draft_pick = '',
-  draft_year = '',
-  game_scope = '',
-  height = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  period='',
-  player_experience='',
-  player_or_team='Team',
-  player_position='',
-  pt_measure_type = 'SpeedDistance',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  starter_bench = '',
-  team_id='',
-  vs_conference='',
-  vs_division='',
-  weight=''){
+    college = '',
+    conference = '',
+    country = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    draft_pick = '',
+    draft_year = '',
+    game_scope = '',
+    height = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    period='',
+    player_experience='',
+    player_or_team='Team',
+    player_position='',
+    pt_measure_type = 'SpeedDistance',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    starter_bench = '',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    weight='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptstats"
   endpoint <- nba_endpoint(version)
@@ -1178,9 +1194,9 @@ nba_leaguedashptstats <- function(
                      "&Weight=", weight)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1233,32 +1249,34 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashptteamdefend <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  defense_category = 'Overall',
-  division = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  period='',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  team_id='',
-  vs_conference='',
-  vs_division=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    defense_category = 'Overall',
+    division = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    period='',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptteamdefend"
   endpoint <- nba_endpoint(version)
@@ -1287,9 +1305,9 @@ nba_leaguedashptteamdefend <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1353,44 +1371,46 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashTeamClutch
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamclutch <- function(
-  ahead_behind='Ahead or Behind',
-  clutch_time = 'Last 5 Minutes',
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  game_scope='',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  pace_adjust='N',
-  plus_minus = 'N',
-  point_diff = 5,
-  po_round='',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  vs_conference='',
-  vs_division=''){
+    ahead_behind='Ahead or Behind',
+    clutch_time = 'Last 5 Minutes',
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    game_scope='',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    pace_adjust='N',
+    plus_minus = 'N',
+    point_diff = 5,
+    po_round='',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    ...){
   ahead_behind <- gsub(' ','+',ahead_behind)
   clutch_time <- gsub(' ','+',clutch_time)
   season_type <- gsub(' ','+',season_type)
@@ -1432,9 +1452,9 @@ nba_leaguedashteamclutch <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1492,38 +1512,40 @@ NULL
 #' @param touch_time_range touch_time_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamptshot <- function(
-  close_def_dist_range = '',
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  dribble_range = '',
-  game_segment = '',
-  general_range='',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  per_mode='Totals',
-  period=0,
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  shot_dist_range = '',
-  team_id='',
-  touch_time_range = '',
-  vs_conference='',
-  vs_division=''){
+    close_def_dist_range = '',
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    dribble_range = '',
+    game_segment = '',
+    general_range='',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    per_mode='Totals',
+    period=0,
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    shot_dist_range = '',
+    team_id='',
+    touch_time_range = '',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashteamptshot"
   endpoint <- nba_endpoint(version)
@@ -1556,9 +1578,9 @@ nba_leaguedashteamptshot <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1618,40 +1640,42 @@ NULL
 #' @param two_way two_way
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashTeamStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamstats <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  division = '',
-  game_scope='',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust='N',
-  per_mode='Totals',
-  period=0,
-  plus_minus='N',
-  rank='N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench='',
-  team_id='',
-  two_way='',
-  vs_conference='',
-  vs_division=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    division = '',
+    game_scope='',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust='N',
+    per_mode='Totals',
+    period=0,
+    plus_minus='N',
+    rank='N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench='',
+    team_id='',
+    two_way='',
+    vs_conference='',
+    vs_division='',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashteamstats"
   endpoint <- nba_endpoint(version)
@@ -1687,9 +1711,9 @@ nba_leaguedashteamstats <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -1751,42 +1775,44 @@ NULL
 #' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: ShotLocations
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 nba_leaguedashteamshotlocations <- function(
-  conference = '',
-  date_from = '',
-  date_to = '',
-  distance_range = 'By Zone',
-  division = '',
-  game_scope = '',
-  game_segment = '',
-  last_n_games=0,
-  league_id='00',
-  location='',
-  measure_type='Base',
-  month=0,
-  opponent_team_id=0,
-  outcome='',
-  po_round='',
-  pace_adjust = 'N',
-  per_mode='Totals',
-  period=0,
-  player_experience='',
-  player_position='',
-  plus_minus='N',
-  rank = 'N',
-  season='2020-21',
-  season_segment='',
-  season_type='Regular Season',
-  shot_clock_range='',
-  starter_bench = '',
-  team_id='',
-  vs_conference='',
-  vs_division=''){
+    conference = '',
+    date_from = '',
+    date_to = '',
+    distance_range = 'By Zone',
+    division = '',
+    game_scope = '',
+    game_segment = '',
+    last_n_games=0,
+    league_id='00',
+    location='',
+    measure_type='Base',
+    month=0,
+    opponent_team_id=0,
+    outcome='',
+    po_round='',
+    pace_adjust = 'N',
+    per_mode='Totals',
+    period=0,
+    player_experience='',
+    player_position='',
+    plus_minus='N',
+    rank = 'N',
+    season='2020-21',
+    season_segment='',
+    season_type='Regular Season',
+    shot_clock_range='',
+    starter_bench = '',
+    team_id='',
+    vs_conference='',
+    vs_division='',
+    ...){
 
   distance_range <- gsub(' ','+',distance_range)
   season_type <- gsub(' ','+',season_type)
@@ -1826,9 +1852,9 @@ nba_leaguedashteamshotlocations <- function(
                      "&VsDivision=", vs_division)
 
   tryCatch(
-    expr={
-      resp <- full_url %>%
-        .nba_headers()
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%

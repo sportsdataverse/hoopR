@@ -9,7 +9,8 @@ nba_alltimeleadersgrids(
   league_id = "00",
   per_mode = "PerGame",
   season_type = "Regular Season",
-  top_x = 10
+  top_x = 10,
+  ...
 )
 }
 \arguments{
@@ -20,6 +21,8 @@ nba_alltimeleadersgrids(
 \item{season_type}{Season Type - Regular Season, Playoffs, All-Star}
 
 \item{top_x}{Top X}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,

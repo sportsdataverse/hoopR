@@ -5,7 +5,7 @@
 \alias{nba_pbps}
 \title{\strong{Get NBA Stats API play-by-play (Multiple Games)}}
 \usage{
-nba_pbps(game_ids = NULL, version = "v2", nest_data = FALSE)
+nba_pbps(game_ids = NULL, version = "v2", nest_data = FALSE, ...)
 }
 \arguments{
 \item{game_ids}{Game IDs}
@@ -13,6 +13,8 @@ nba_pbps(game_ids = NULL, version = "v2", nest_data = FALSE)
 \item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
 
 \item{nest_data}{If TRUE returns nested data by game}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame: PlayByPlay

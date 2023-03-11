@@ -94,7 +94,8 @@ nba_playergamestreakfinder(
   vs_conference = "",
   vs_division = "",
   vs_team_id = "",
-  years_experience = ""
+  years_experience = "",
+  ...
 )
 }
 \arguments{
@@ -275,6 +276,8 @@ nba_playergamestreakfinder(
 \item{vs_team_id}{vs_team_id}
 
 \item{years_experience}{years_experience}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Return a named list of data frames: PlayerGameStreakFinderResults

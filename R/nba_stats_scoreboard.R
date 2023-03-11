@@ -1,3 +1,6 @@
+
+
+
 #' **Get NBA Stats API Scoreboard**
 #' @name scoreboard
 NULL
@@ -8,15 +11,18 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Available, EastConfStandingsByDay,
 #' GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_scoreboard <- function(league_id = '00',
-                           game_date='2021-07-20',
-                           day_offset=0){
+nba_scoreboard <- function(
+    league_id = '00',
+    game_date='2021-07-20',
+    day_offset=0,
+    ...){
 
 
   version <- "scoreboard"
@@ -28,8 +34,8 @@ nba_scoreboard <- function(league_id = '00',
   )
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers(params=params)
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%
@@ -64,6 +70,7 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
 #' @param day_offset Day Offset (integer 0,-1)
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Available, EastConfStandingsByDay,
 #' GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
 #' TicketLinks, WestConfStandingsByDay, WinProbability
@@ -71,9 +78,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_scoreboardv2 <- function(league_id = '00',
-                             game_date='2021-07-20',
-                             day_offset=0){
+nba_scoreboardv2 <- function(
+    league_id = '00',
+    game_date='2021-07-20',
+    day_offset=0,
+    ...){
 
 
   version <- "scoreboardv2"
@@ -85,8 +94,8 @@ nba_scoreboardv2 <- function(league_id = '00',
   )
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers(params=params)
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%
@@ -122,13 +131,16 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param run_type Run Type
+#' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames:
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-nba_winprobabilitypbp <- function(game_id = '0021700807',
-                                  run_type='each second'){
+nba_winprobabilitypbp <- function(
+    game_id = '0021700807',
+    run_type='each second',
+    ...){
 
   run_type <- gsub(' ','+',run_type)
   version <- "winprobabilitypbp"
@@ -140,8 +152,8 @@ nba_winprobabilitypbp <- function(game_id = '0021700807',
   )
   tryCatch(
     expr = {
-      resp <- full_url %>%
-        .nba_headers(params=params)
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet[[x]] %>%
