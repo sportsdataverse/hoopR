@@ -1,6 +1,3 @@
-context("ESPN - Get NBA team box score only")
-
-
 
 test_that("ESPN - Get NBA team box score only", {
   skip_on_cran()
