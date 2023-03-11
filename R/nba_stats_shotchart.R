@@ -61,33 +61,34 @@ nba_shotchartdetail <- function(
   version <- "shotchartdetail"
   endpoint <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?ContextMeasure=", context_measure,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameID=", game_id,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&Period=", period,
-                     "&PlayerID=", player_id,
-                     "&PlayerPosition=", player_position,
-                     "&RookieYear=", rookie_year,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    ContextMeasure = context_measure,
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameID = game_id,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    Period = period,
+    PlayerID = player_id,
+    PlayerPosition = player_position,
+    RookieYear = rookie_year,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- request_with_proxy(url = endpoint, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -135,14 +136,14 @@ nba_shotchartleaguewide <- function(
   version <- "shotchartleaguewide"
   endpoint <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Season=", season)
-
+  params <- list(
+    LeagueID = league_id,
+    Season = season
+  )
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- request_with_proxy(url = endpoint, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
