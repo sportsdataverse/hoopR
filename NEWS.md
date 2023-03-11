@@ -1,3 +1,6 @@
+# **hoopR 1.9.1.9000**
+* Add proxy rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
+
 # **hoopR 1.9.1**
 - Updates under-the-hood urls to the ESPN site API v2 summary endpoints
 
