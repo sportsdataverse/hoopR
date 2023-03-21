@@ -22,7 +22,7 @@ nba_pbp <- function(
     ...){
 
 
-  if(version == "v2"){
+  if (version == "v2") {
     endpoint <- nba_endpoint('playbyplayv2')
   } else {
     endpoint <- nba_endpoint('playbyplay')

@@ -14,7 +14,7 @@ NULL
 #' @import rvest
 #' @export
 nba_franchiseleaders <- function(
-    league_id='00',
+    league_id = '00',
     team_id = '1610612739',
     ...){
   season_type <- gsub(' ','+',season_type)
@@ -30,16 +30,7 @@ nba_franchiseleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -72,7 +63,7 @@ NULL
 #' @import rvest
 #' @export
 nba_franchiseplayers <- function(
-    league_id='00',
+    league_id = '00',
     per_mode = 'Totals',
     season_type = 'Regular Season',
     team_id = '1610612739',
@@ -92,16 +83,7 @@ nba_franchiseplayers <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -131,7 +113,7 @@ NULL
 #' @import rvest
 #' @export
 nba_franchisehistory <- function(
-    league_id='00',
+    league_id = '00',
     ...){
 
   version <- "franchisehistory"
@@ -145,16 +127,7 @@ nba_franchisehistory <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {

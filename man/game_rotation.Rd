@@ -24,6 +24,10 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 
 \strong{Get NBA Stats API Game Rotation}
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_gamerotation(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+}
 \author{
 Saiem Gilani
 }

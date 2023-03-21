@@ -15,9 +15,9 @@ NULL
 #' @import rvest
 #' @export
 nba_commonallplayers <- function(
-    is_only_current_season=0,
-    league_id='00',
-    season='2020-21',
+    is_only_current_season = 0,
+    league_id = '00',
+    season = '2020-21',
     ...){
 
   version <- "commonallplayers"
@@ -32,16 +32,8 @@ nba_commonallplayers <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or common all players data for {season} available!"))
@@ -69,8 +61,8 @@ NULL
 #' @import rvest
 #' @export
 nba_commonplayerinfo <- function(
-    league_id='00',
-    player_id='2544',
+    league_id = '00',
+    player_id = '2544',
     ...){
 
   version <- "commonplayerinfo"
@@ -84,16 +76,8 @@ nba_commonplayerinfo <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or common player info data for {season} available!"))
@@ -123,9 +107,9 @@ NULL
 #' @import rvest
 #' @export
 nba_commonplayoffseries <- function(
-    league_id='00',
+    league_id = '00',
     season = '2020-21',
-    series_id='',
+    series_id = '',
     ...){
 
   version <- "commonplayoffseries"
@@ -140,16 +124,8 @@ nba_commonplayoffseries <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or common playoff series data for {season} available!"))
@@ -180,9 +156,9 @@ NULL
 #' @import rvest
 #' @export
 nba_commonteamroster <- function(
-    league_id='00',
+    league_id = '00',
     season = '2020-21',
-    team_id='1610612739',
+    team_id = '1610612739',
     ...){
 
   version <- "commonteamroster"
@@ -197,16 +173,8 @@ nba_commonteamroster <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or common team roster data for {season} available!"))

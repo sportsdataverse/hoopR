@@ -6,18 +6,22 @@
 \usage{
 request_with_proxy(
   url,
-  ...,
   params = list(),
   origin = "https://stats.nba.com",
-  referer = "https://www.nba.com/"
+  referer = "https://www.nba.com/",
+  ...
 )
 }
 \arguments{
 \item{url}{Request url}
 
-\item{...}{passed to httr::RETRY}
-
 \item{params}{list of params}
+
+\item{origin}{Origin url}
+
+\item{referer}{Referer url}
+
+\item{...}{passed to httr::RETRY}
 }
 \description{
 This is a thin wrapper on httr::RETRY

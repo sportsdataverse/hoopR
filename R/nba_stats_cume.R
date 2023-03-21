@@ -19,11 +19,11 @@ NULL
 #' @export
 
 nba_cumestatsplayer <- function(
-  game_ids='0022000756',
-  league_id='00',
-  player_id='1629611',
-  season='2020-21',
-  season_type='Regular Season',
+  game_ids = '0022000756',
+  league_id = '00',
+  player_id = '1629611',
+  season = '2020-21',
+  season_type = 'Regular Season',
   team_id = '',
   ...){
   season_type <- gsub(' ','+',season_type)
@@ -42,16 +42,8 @@ nba_cumestatsplayer <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative player stats data available for {player_id}!"))
@@ -87,15 +79,15 @@ NULL
 #' @import rvest
 #' @export
 nba_cumestatsplayergames <- function(
-  league_id='00',
+  league_id = '00',
   location = '',
   outcome = '',
   player_id = '2544',
   season = '2020-21',
   season_type = 'Regular Season',
-  vs_conference='',
-  vs_division='',
-  vs_team_id='',
+  vs_conference = '',
+  vs_division = '',
+  vs_team_id = '',
   ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayergames"
@@ -116,16 +108,8 @@ nba_cumestatsplayergames <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative player game stats data available for {player_id}!"))
@@ -157,10 +141,10 @@ NULL
 #' @import rvest
 #' @export
 nba_cumestatsteam <- function(
-  game_ids='0022000756',
-  league_id='00',
-  season='2020-21',
-  season_type='Regular Season',
+  game_ids = '0022000756',
+  league_id = '00',
+  season = '2020-21',
+  season_type = 'Regular Season',
   team_id = '',
   ...){
 
@@ -179,16 +163,8 @@ nba_cumestatsteam <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative team stats data available for {team_id}!"))
@@ -224,16 +200,16 @@ NULL
 #' @import rvest
 #' @export
 nba_cumestatsteamgames <- function(
-  league_id='00',
+  league_id = '00',
   location = '',
   outcome = '',
   season = '2020-21',
   season_id = '',
   season_type = 'Regular Season',
-  team_id=1610612739,
-  vs_conference='',
-  vs_division='',
-  vs_team_id='',
+  team_id = 1610612739,
+  vs_conference = '',
+  vs_division = '',
+  vs_team_id = '',
   ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsteamgames"
@@ -255,16 +231,8 @@ nba_cumestatsteamgames <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative team game stats data available for {team_id}!"))

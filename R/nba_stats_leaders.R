@@ -18,7 +18,7 @@ NULL
 #' @export
 
 nba_alltimeleadersgrids <- function(
-    league_id='00',
+    league_id = '00',
     per_mode = 'PerGame',
     season_type = 'Regular Season',
     top_x = 10,
@@ -38,16 +38,8 @@ nba_alltimeleadersgrids <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no all-time leaders grid data for {league_id} available!"))
@@ -81,9 +73,9 @@ NULL
 #' @export
 
 nba_assistleaders <- function(
-    league_id='00',
+    league_id = '00',
     per_mode = 'PerGame',
-    player_or_team ='Team',
+    player_or_team = 'Team',
     season = '2020-21',
     season_type = 'Regular Season',
     ...){
@@ -104,16 +96,8 @@ nba_assistleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no assist leaders data for {season} available!"))
@@ -143,7 +127,7 @@ NULL
 #' @import rvest
 #' @export
 nba_assisttracker <- function(
-    league_id='00',
+    league_id = '00',
     per_mode = 'PerGame',
     season = '2020-21',
     season_type = 'Regular Season',
@@ -164,16 +148,8 @@ nba_assisttracker <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no assist tracker data for {season} available!"))
@@ -208,7 +184,7 @@ NULL
 #' @export
 
 nba_homepageleaders <- function(
-    league_id='00',
+    league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
@@ -236,16 +212,8 @@ nba_homepageleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no homepage leaders data for {season} available!"))
@@ -282,7 +250,7 @@ NULL
 #' @export
 
 nba_homepagev2 <- function(
-    league_id='00',
+    league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
@@ -310,16 +278,8 @@ nba_homepagev2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no homepage v2 data for {season} available!"))
@@ -355,7 +315,7 @@ NULL
 #' @export
 
 nba_leaderstiles <- function(
-    league_id='00',
+    league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
@@ -383,16 +343,8 @@ nba_leaderstiles <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no leaders tiles data for {season} available!"))
@@ -428,7 +380,7 @@ NULL
 #' @export
 
 nba_defensehub <- function(
-    league_id='00',
+    league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
@@ -454,16 +406,8 @@ nba_defensehub <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no defense hub data for {season} available!"))
@@ -501,8 +445,8 @@ NULL
 #' @export
 
 nba_leagueleaders <- function(
-    active_flag='',
-    league_id='00',
+    active_flag = '',
+    league_id = '00',
     per_mode = 'Totals',
     scope = 'S',
     season = '2020-21',
@@ -529,16 +473,8 @@ nba_leagueleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league leaders data for {season} available!"))

@@ -20,6 +20,10 @@ Returns a named list of data frames: PlayerStats, TeamStats
 
 \strong{Get NBA Stats API Boxscore Player Tracking V2}
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreplayertrackv2(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+}
 \author{
 Saiem Gilani
 }
