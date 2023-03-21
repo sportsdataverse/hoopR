@@ -43,37 +43,37 @@
     <loc>https://hoopR.sportsdataverse.org/reference/assists.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_advv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_adv_v2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/bs_defensive.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_ffv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_ff_v2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/bs_match.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_miscv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_misc_v2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/bs_pt_v2.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_scoringv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_scoring_v2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/bs_similarity.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_summaryv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_summary_v2.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_tradv2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_trad_v2.html</loc>
   </url>
   <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/bs_usagev2.html</loc>
+    <loc>https://hoopR.sportsdataverse.org/reference/bs_usage_v2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/check_status.html</loc>
@@ -596,6 +596,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/sc.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/sc_lineups.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/sc_lw.html</loc>

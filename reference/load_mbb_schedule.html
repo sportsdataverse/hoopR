@@ -131,7 +131,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1><strong>Load hoopR men's college basketball schedule</strong></h1>
-      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/mbb_pbp.R" class="external-link"><code>R/mbb_pbp.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/load_mbb.R" class="external-link"><code>R/load_mbb.R</code></a></small>
       <div class="d-none name"><code>load_mbb_schedule.Rd</code></div>
     </div>
 
@@ -181,7 +181,7 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">load_mbb_schedule</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB Schedule Information from hoopR data repository ───── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 09:56:08 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-20 10:00:10 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,261 × 72</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id uid    date  atten…¹ time_…² neutr…³ confe…⁴ recent start…⁵ notes…⁶</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
@@ -198,7 +198,7 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 6,251 more rows, 62 more variables: notes_headline &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   type_id &lt;chr&gt;, type_abbreviation &lt;chr&gt;, venue_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_full_name &lt;chr&gt;, venue_address_city &lt;chr&gt;, venue_address_state &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_capacity &lt;dbl&gt;, venue_indoor &lt;lgl&gt;, status_clock &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_capacity &lt;int&gt;, venue_indoor &lt;lgl&gt;, status_clock &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_display_clock &lt;chr&gt;, status_period &lt;int&gt;, status_type_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_type_name &lt;chr&gt;, status_type_state &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status_type_completed &lt;lgl&gt;, status_type_description &lt;chr&gt;, …</span></span>

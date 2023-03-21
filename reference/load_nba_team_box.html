@@ -131,7 +131,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1><strong>Load hoopR NBA team box scores</strong></h1>
-      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/nba_pbp.R" class="external-link"><code>R/nba_pbp.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/load_nba.R" class="external-link"><code>R/load_nba.R</code></a></small>
       <div class="d-none name"><code>load_nba_team_box.Rd</code></div>
     </div>
 
@@ -181,21 +181,21 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">load_nba_team_box</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Box Information from hoopR data repository ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 20:51:49 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,996 × 43</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-20 10:19:30 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,142 × 43</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    team_id team_uid      team_…¹ team_…² team_…³ team_…⁴ team_…⁵ team_…⁶ team_…⁷</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 18      s:40~l:46~t:… new-yo… New Yo… Knicks  NY      New Yo… Knicks  225EA8 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 23      s:40~l:46~t:… sacram… Sacram… Kings   SAC     Sacram… Kings   393996 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 17      s:40~l:46~t:… brookl… Brookl… Nets    BKN     Brookl… Nets    000000 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 15      s:40~l:46~t:… milwau… Milwau… Bucks   MIL     Milwau… Bucks   003813 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 9       s:40~l:46~t:9 golden… Golden… Warrio… GS      Golden… Warrio… 003da5 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 29      s:40~l:46~t:… memphi… Memphis Grizzl… MEM     Memphi… Grizzl… 5D76A8 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 30      s:40~l:46~t:… charlo… Charlo… Hornets CHA     Charlo… Hornets 1D1060 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 8       s:40~l:46~t:8 detroi… Detroit Pistons DET     Detroi… Pistons FA002C </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10      s:40~l:46~t:… housto… Houston Rockets HOU     Housto… Rockets D40026 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 11      s:40~l:46~t:… indian… Indiana Pacers  IND     Indian… Pacers  061642 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,986 more rows, 34 more variables: team_alternate_color &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 19      s:40~l:46~t:… orland… Orlando Magic   ORL     Orland… Magic   0860A8 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 13      s:40~l:46~t:… los-an… Los An… Lakers  LAL     Los An… Lakers  542582 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 12      s:40~l:46~t:… la-cli… LA      Clippe… LAC     LA Cli… Clippe… FA0028 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 22      s:40~l:46~t:… portla… Portla… Trail … POR     Portla… Trail … 000000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 28      s:40~l:46~t:… toront… Toronto Raptors TOR     Toront… Raptors CE0F41 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 15      s:40~l:46~t:… milwau… Milwau… Bucks   MIL     Milwau… Bucks   003813 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 3       s:40~l:46~t:3 new-or… New Or… Pelica… NO      New Or… Pelica… 002a5c </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 10      s:40~l:46~t:… housto… Houston Rockets HOU     Housto… Rockets D40026 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 14      s:40~l:46~t:… miami-… Miami   Heat    MIA     Miami … Heat    000000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 8       s:40~l:46~t:8 detroi… Detroit Pistons DET     Detroi… Pistons FA002C </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 2,132 more rows, 34 more variables: team_alternate_color &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_logo &lt;chr&gt;, field_goals_made_field_goals_attempted &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goal_pct &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span></span>

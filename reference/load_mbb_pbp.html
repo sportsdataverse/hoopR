@@ -131,7 +131,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1><strong>Load hoopR men's college basketball play-by-play</strong></h1>
-      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/mbb_pbp.R" class="external-link"><code>R/mbb_pbp.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/HEAD/R/load_mbb.R" class="external-link"><code>R/load_mbb.R</code></a></small>
       <div class="d-none name"><code>load_mbb_pbp.Rd</code></div>
     </div>
 
@@ -181,8 +181,8 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">load_mbb_pbp</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Play-by-Play Information from hoopR data repository ────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-10 09:05:01 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,899,481 × 55</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-20 09:05:24 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,948,000 × 55</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         id seque…¹ type_id type_…² text  away_…³ home_…⁴ perio…⁵ perio…⁶ clock…⁷</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 4.01<span style="color: #949494;">e</span>17 101806… 519     Person… Foul…       0       0       1 1st Ha… 19:33  </span>
@@ -195,7 +195,7 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 4.01<span style="color: #949494;">e</span>17 101816… 598     Lost B… Pete…       4       0       1 1st Ha… 18:38  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 4.01<span style="color: #949494;">e</span>17 101818… 558     JumpSh… Shyk…       4       0       1 1st Ha… 18:19  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 4.01<span style="color: #949494;">e</span>17 101818… 587     Defens… R.J.…       4       0       1 1st Ha… 18:15  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,899,471 more rows, 45 more variables: scoring_play &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,947,990 more rows, 45 more variables: scoring_play &lt;lgl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_value &lt;int&gt;, team_id &lt;chr&gt;, participants_0_athlete_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   wallclock &lt;chr&gt;, shooting_play &lt;lgl&gt;, participants_1_athlete_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season &lt;int&gt;, season_type &lt;int&gt;, away_team_id &lt;int&gt;, away_team_name &lt;chr&gt;,</span></span>
