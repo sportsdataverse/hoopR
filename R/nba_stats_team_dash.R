@@ -44,26 +44,26 @@ nba_teamdashboardbyclutch <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbyclutch"
@@ -98,16 +98,7 @@ nba_teamdashboardbyclutch <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -164,26 +155,26 @@ nba_teamdashboardbygamesplits <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbygamesplits"
@@ -218,16 +209,7 @@ nba_teamdashboardbygamesplits <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -285,26 +267,26 @@ nba_teamdashboardbygeneralsplits <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbygeneralsplits"
@@ -339,16 +321,7 @@ nba_teamdashboardbygeneralsplits <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -406,26 +379,26 @@ nba_teamdashboardbylastngames <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbylastngames"
@@ -460,16 +433,7 @@ nba_teamdashboardbylastngames <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -526,26 +490,26 @@ nba_teamdashboardbyopponent <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbyopponent"
@@ -580,16 +544,7 @@ nba_teamdashboardbyopponent <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -646,26 +601,26 @@ nba_teamdashboardbyshootingsplits <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbyshootingsplits"
@@ -701,16 +656,7 @@ nba_teamdashboardbyshootingsplits <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -766,26 +712,26 @@ nba_teamdashboardbyteamperformance <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbyteamperformance"
@@ -820,16 +766,7 @@ nba_teamdashboardbyteamperformance <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -884,26 +821,26 @@ nba_teamdashboardbyyearoveryear <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashboardbyyearoveryear"
@@ -938,16 +875,7 @@ nba_teamdashboardbyyearoveryear <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -1006,26 +934,26 @@ nba_teamdashlineups <- function(
     game_id = '',
     game_segment = '',
     group_quantity = 5,
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamdashlineups"
@@ -1062,16 +990,8 @@ nba_teamdashlineups <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard by lineups data for {team_id} available!"))
@@ -1117,19 +1037,19 @@ NULL
 nba_teamdashptpass  <- function(
     date_from = '',
     date_to = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    per_mode='Totals',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    per_mode = 'Totals',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
 
@@ -1157,16 +1077,8 @@ nba_teamdashptpass  <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking passing data for {team_id} available!"))
@@ -1214,21 +1126,21 @@ NULL
 nba_teamdashptreb  <- function(
     date_from = '',
     date_to = '',
-    game_segment='',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    per_mode='Totals',
-    period=0,
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    game_segment = '',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    per_mode = 'Totals',
+    period = 0,
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
 
@@ -1259,16 +1171,8 @@ nba_teamdashptreb  <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking rebounding data for {team_id} available!"))
@@ -1316,21 +1220,21 @@ NULL
 nba_teamdashptshots  <- function(
     date_from = '',
     date_to = '',
-    game_segment='',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    per_mode='Totals',
-    period=0,
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    game_segment = '',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    per_mode = 'Totals',
+    period = 0,
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
 
@@ -1361,16 +1265,8 @@ nba_teamdashptshots  <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team dashboard player-tracking shooting data for {team_id} available!"))

@@ -5,10 +5,12 @@
 \alias{nba_boxscorematchups}
 \title{\strong{Get NBA Stats API Boxscore Matchups}}
 \usage{
-nba_boxscorematchups(game_id, ...)
+nba_boxscorematchups(game_id, version = "v2", ...)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{version}{Boxscore Matchups version ("v2" available from 2016-17 onwards)}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -19,6 +21,10 @@ Returns a named list of data frames: PlayerMatchupsStats
 \strong{Get NBA Stats API Boxscore Matchups}
 
 \strong{Get NBA Stats API Boxscore Matchups}
+}
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorematchups(game_id = "0022200021", version = "v1")
+}\if{html}{\out{</div>}}
 }
 \author{
 Saiem Gilani

@@ -42,36 +42,36 @@ NULL
 #' @import rvest
 #' @export
 nba_videodetails <- function(
-    ahead_behind='',
-    clutch_time='',
+    ahead_behind = '',
+    clutch_time = '',
     context_filter = '',
     context_measure = 'FGA',
     date_from = '',
     date_to = '',
-    end_period='',
-    end_range='',
-    game_id='',
+    end_period = '',
+    end_range = '',
+    game_id = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    period=0,
-    player_id='2544',
-    point_diff='',
-    position='',
-    range_type='',
-    rookie_year='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    start_period='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    period = 0,
+    player_id = '2544',
+    point_diff = '',
+    position = '',
+    range_type = '',
+    rookie_year = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    start_period = '',
     start_range='',
-    team_id='1610612739',
-    vs_conference='',
-    vs_division='',
+    team_id = '1610612739',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "videodetails"
@@ -113,16 +113,8 @@ nba_videodetails <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no video details data available!"))
@@ -152,8 +144,8 @@ NULL
 #' @import rvest
 #' @export
 nba_videoevents <- function(
-    game_id='0021700807',
-    game_event_id='0',
+    game_id = '0021700807',
+    game_event_id = '0',
     ...){
 
   version <- "videoevents"
@@ -167,16 +159,8 @@ nba_videoevents <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no video events data for {game_id} available!"))
@@ -206,8 +190,8 @@ NULL
 #' @import rvest
 #' @export
 nba_videostatus <- function(
-    game_date='2023-03-10',
-    league_id='00',
+    game_date = '2023-03-10',
+    league_id = '00',
     ...){
 
   version <- "videostatus"
@@ -222,16 +206,8 @@ nba_videostatus <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no video status data for {game_date} available!"))

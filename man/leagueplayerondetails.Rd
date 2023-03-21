@@ -26,7 +26,8 @@ nba_leagueplayerondetails(
   season_type = "Regular Season",
   team_id = "1610612749",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -71,6 +72,8 @@ nba_leagueplayerondetails(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails

@@ -24,7 +24,8 @@ nba_fantasywidget(
   todays_opponent = 0,
   todays_players = "N",
   vs_conference = "",
-  vs_division = ""
+  vs_division = "",
+  ...
 )
 }
 \arguments{
@@ -65,6 +66,8 @@ nba_fantasywidget(
 \item{vs_conference}{vs_conference}
 
 \item{vs_division}{vs_division}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: FantasyWidgetResult

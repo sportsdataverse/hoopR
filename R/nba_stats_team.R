@@ -15,7 +15,7 @@ NULL
 #' @import rvest
 #' @export
 nba_teamdetails <- function(
-    team_id='1610612749',
+    team_id = '1610612749',
     ...){
 
   version <- "teamdetails"
@@ -28,16 +28,7 @@ nba_teamdetails <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -70,8 +61,8 @@ NULL
 #' @export
 nba_teamestimatedmetrics <- function(
     league_id = '00',
-    season='2020-21',
-    season_type='Regular Season',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -87,16 +78,7 @@ nba_teamestimatedmetrics <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -136,9 +118,9 @@ nba_teamgamelog <- function(
     date_from = '',
     date_to = '',
     league_id = '00',
-    season='2020-21',
-    season_type='Regular Season',
-    team_id='1610612749',
+    season = '2020-21',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -157,16 +139,7 @@ nba_teamgamelog <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -218,23 +191,23 @@ nba_teamgamelogs <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_id='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_id = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -267,16 +240,7 @@ nba_teamgamelogs <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -309,9 +273,9 @@ NULL
 #' @import rvest
 #' @export
 nba_teamhistoricalleaders <- function(
-    league_id='00',
-    season_id='2020',
-    team_id='1610612749',
+    league_id = '00',
+    season_id = '2020',
+    team_id = '1610612749',
     ...){
 
   version <- "teamhistoricalleaders"
@@ -326,16 +290,7 @@ nba_teamhistoricalleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -369,9 +324,9 @@ NULL
 #' @export
 nba_teaminfocommon <- function(
     league_id = '00',
-    season='2020-21',
-    season_type='Regular Season',
-    team_id='1610612749',
+    season = '2020-21',
+    season_type = 'Regular Season',
+    team_id = '1610612749',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -388,16 +343,7 @@ nba_teaminfocommon <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -454,26 +400,26 @@ nba_teamplayeronoffdetails <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamplayeronoffdetails"
@@ -508,16 +454,7 @@ nba_teamplayeronoffdetails <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -573,26 +510,26 @@ nba_teamplayeronoffsummary <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamplayeronoffsummary"
@@ -627,16 +564,8 @@ nba_teamplayeronoffsummary <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team player on off summary data for {team_id} available!"))
@@ -691,26 +620,26 @@ nba_teamplayerdashboard <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamplayerdashboard"
@@ -745,16 +674,8 @@ nba_teamplayerdashboard <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team player dashboard data for {team_id} available!"))
@@ -807,16 +728,7 @@ nba_teamyearbyyearstats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -876,28 +788,28 @@ nba_teamvsplayer <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    pace_adjust='N',
-    per_mode='Totals',
-    period=0,
-    player_id='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    period = 0,
+    player_id = '',
     plus_minus = 'N',
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    team_id='1610612749',
-    vs_conference='',
-    vs_division='',
-    vs_player_id='2544',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    team_id = '1610612749',
+    vs_conference = '',
+    vs_division = '',
+    vs_player_id = '2544',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamvsplayer"
@@ -934,17 +846,7 @@ nba_teamvsplayer <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -1165,194 +1067,194 @@ NULL
 #' @export
 
 nba_teamgamestreakfinder <- function(
-    active_streaks_only='',
-    active_teams_only='',
-    btr_opp_ast='',
-    btr_opp_blk='',
-    btr_opp_dreb='',
-    btr_opp_fg3a='',
-    btr_opp_fg3m='',
-    btr_opp_fg3_pct='',
-    btr_opp_fga='',
-    btr_opp_fgm='',
-    btr_opp_fg_pct='',
-    btr_opp_fta='',
-    btr_opp_ftm='',
-    btr_opp_ft_pct='',
-    btr_opp_oreb='',
-    btr_opp_pf='',
-    btr_opp_pts='',
-    btr_opp_pts2nd_chance='',
-    btr_opp_pts_fb='',
-    btr_opp_pts_off_tov='',
-    btr_opp_pts_paint='',
-    btr_opp_reb='',
-    btr_opp_stl='',
-    btr_opp_tov='',
+    active_streaks_only = '',
+    active_teams_only = '',
+    btr_opp_ast = '',
+    btr_opp_blk = '',
+    btr_opp_dreb = '',
+    btr_opp_fg3a = '',
+    btr_opp_fg3m = '',
+    btr_opp_fg3_pct = '',
+    btr_opp_fga = '',
+    btr_opp_fgm = '',
+    btr_opp_fg_pct = '',
+    btr_opp_fta = '',
+    btr_opp_ftm = '',
+    btr_opp_ft_pct = '',
+    btr_opp_oreb = '',
+    btr_opp_pf = '',
+    btr_opp_pts = '',
+    btr_opp_pts2nd_chance = '',
+    btr_opp_pts_fb = '',
+    btr_opp_pts_off_tov = '',
+    btr_opp_pts_paint = '',
+    btr_opp_reb = '',
+    btr_opp_stl = '',
+    btr_opp_tov = '',
     conference = '',
     date_from = '',
     date_to = '',
     division = '',
-    et_ast='',
-    et_blk='',
-    et_dd='',
-    et_dreb='',
-    et_fg3a='',
-    et_fg3m='',
-    et_fg3_pct='',
-    et_fga='',
-    et_fgm='',
-    et_fg_pct='',
-    et_fta='',
-    et_ftm='',
-    et_ft_pct='',
-    et_minutes='',
-    eq_opp_pts2nd_chance='',
-    eq_opp_pts_fb='',
-    eq_opp_pts_off_tov='',
-    eq_opp_pts_paint='',
-    et_oreb='',
-    et_pf='',
-    et_pts='',
-    eq_pts2nd_chance='',
-    eq_pts_fb='',
-    eq_pts_off_tov='',
-    eq_pts_paint='',
-    et_reb='',
-    et_stl='',
-    et_td='',
-    et_tov='',
-    game_id='',
-    gt_ast='',
-    gt_blk='',
-    gt_dd='',
-    gt_dreb='',
-    gt_fg3a='',
-    gt_fg3m='',
-    gt_fg3_pct='',
-    gt_fga='',
-    gt_fgm='',
-    gt_fg_pct='',
-    gt_fta='',
-    gt_ftm='',
-    gt_ft_pct='',
-    gt_minutes='',
-    gt_opp_ast='',
-    gt_opp_blk='',
-    gt_opp_dreb='',
-    gt_opp_fg3a='',
-    gt_opp_fg3m='',
-    gt_opp_fg3_pct='',
-    gt_opp_fga='',
-    gt_opp_fgm='',
-    gt_opp_fg_pct='',
-    gt_opp_fta='',
-    gt_opp_ftm='',
-    gt_opp_ft_pct='',
-    gt_opp_oreb='',
-    gt_opp_pf='',
-    gt_opp_pts='',
-    gt_opp_pts2nd_chance='',
-    gt_opp_pts_fb='',
-    gt_opp_pts_off_tov='',
-    gt_opp_pts_paint='',
-    gt_opp_reb='',
-    gt_opp_stl='',
-    gt_opp_tov='',
-    gt_oreb='',
-    gt_pf='',
-    gt_pts='',
-    gt_pts2nd_chance='',
-    gt_pts_fb='',
-    gt_pts_off_tov='',
-    gt_pts_paint='',
-    gt_reb='',
-    gt_stl='',
-    gt_td='',
-    gt_tov='',
-    lstreak='',
-    league_id='00',
-    location='',
-    lt_ast='',
-    lt_blk='',
-    lt_dd='',
-    lt_dreb='',
-    lt_fg3a='',
-    lt_fg3m='',
-    lt_fg3_pct='',
-    lt_fga='',
-    lt_fgm='',
-    lt_fg_pct='',
-    lt_fta='',
-    lt_ftm='',
-    lt_ft_pct='',
-    lt_minutes='',
-    lt_opp_ast='',
-    lt_opp_blk='',
-    lt_opp_dreb='',
-    lt_opp_fg3a='',
-    lt_opp_fg3m='',
-    lt_opp_fg3_pct='',
-    lt_opp_fga='',
-    lt_opp_fgm='',
-    lt_opp_fg_pct='',
-    lt_opp_fta='',
-    lt_opp_ftm='',
-    lt_opp_ft_pct='',
-    lt_opp_oreb='',
-    lt_opp_pf='',
-    lt_opp_pts='',
-    lt_opp_pts2nd_chance='',
-    lt_opp_pts_fb='',
-    lt_opp_pts_off_tov='',
-    lt_opp_pts_paint='',
-    lt_opp_reb='',
-    lt_opp_stl='',
-    lt_opp_tov='',
-    lt_oreb='',
-    lt_pf='',
-    lt_pts='',
-    lt_pts2nd_chance='',
-    lt_pts_fb='',
-    lt_pts_off_tov='',
-    lt_pts_paint='',
-    lt_reb='',
-    lt_stl='',
-    lt_td='',
-    lt_tov='',
-    min_games='',
-    outcome='',
-    po_round='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    vs_team_id='',
-    wstreak='',
-    wrs_opp_ast='',
-    wrs_opp_blk='',
-    wrs_opp_dreb='',
-    wrs_opp_fg3a='',
-    wrs_opp_fg3m='',
-    wrs_opp_fg3_pct='',
-    wrs_opp_fga='',
-    wrs_opp_fgm='',
-    wrs_opp_fg_pct='',
-    wrs_opp_fta='',
-    wrs_opp_ftm='',
-    wrs_opp_ft_pct='',
-    wrs_opp_oreb='',
-    wrs_opp_pf='',
-    wrs_opp_pts='',
-    wrs_opp_pts2nd_chance='',
-    wrs_opp_pts_fb='',
-    wrs_opp_pts_off_tov='',
-    wrs_opp_pts_paint='',
-    wrs_opp_reb='',
-    wrs_opp_stl='',
-    wrs_opp_tov='',
+    et_ast = '',
+    et_blk = '',
+    et_dd = '',
+    et_dreb = '',
+    et_fg3a = '',
+    et_fg3m = '',
+    et_fg3_pct = '',
+    et_fga = '',
+    et_fgm = '',
+    et_fg_pct = '',
+    et_fta = '',
+    et_ftm = '',
+    et_ft_pct = '',
+    et_minutes = '',
+    eq_opp_pts2nd_chance = '',
+    eq_opp_pts_fb = '',
+    eq_opp_pts_off_tov = '',
+    eq_opp_pts_paint = '',
+    et_oreb = '',
+    et_pf = '',
+    et_pts = '',
+    eq_pts2nd_chance = '',
+    eq_pts_fb = '',
+    eq_pts_off_tov = '',
+    eq_pts_paint = '',
+    et_reb = '',
+    et_stl = '',
+    et_td = '',
+    et_tov = '',
+    game_id = '',
+    gt_ast = '',
+    gt_blk = '',
+    gt_dd = '',
+    gt_dreb = '',
+    gt_fg3a = '',
+    gt_fg3m = '',
+    gt_fg3_pct = '',
+    gt_fga = '',
+    gt_fgm = '',
+    gt_fg_pct = '',
+    gt_fta = '',
+    gt_ftm = '',
+    gt_ft_pct = '',
+    gt_minutes = '',
+    gt_opp_ast = '',
+    gt_opp_blk = '',
+    gt_opp_dreb = '',
+    gt_opp_fg3a = '',
+    gt_opp_fg3m = '',
+    gt_opp_fg3_pct = '',
+    gt_opp_fga = '',
+    gt_opp_fgm = '',
+    gt_opp_fg_pct = '',
+    gt_opp_fta = '',
+    gt_opp_ftm = '',
+    gt_opp_ft_pct = '',
+    gt_opp_oreb = '',
+    gt_opp_pf = '',
+    gt_opp_pts = '',
+    gt_opp_pts2nd_chance = '',
+    gt_opp_pts_fb = '',
+    gt_opp_pts_off_tov = '',
+    gt_opp_pts_paint = '',
+    gt_opp_reb = '',
+    gt_opp_stl = '',
+    gt_opp_tov = '',
+    gt_oreb = '',
+    gt_pf = '',
+    gt_pts = '',
+    gt_pts2nd_chance = '',
+    gt_pts_fb = '',
+    gt_pts_off_tov = '',
+    gt_pts_paint = '',
+    gt_reb = '',
+    gt_stl = '',
+    gt_td = '',
+    gt_tov = '',
+    lstreak = '',
+    league_id = '00',
+    location = '',
+    lt_ast = '',
+    lt_blk = '',
+    lt_dd = '',
+    lt_dreb = '',
+    lt_fg3a = '',
+    lt_fg3m = '',
+    lt_fg3_pct = '',
+    lt_fga = '',
+    lt_fgm = '',
+    lt_fg_pct = '',
+    lt_fta = '',
+    lt_ftm = '',
+    lt_ft_pct = '',
+    lt_minutes = '',
+    lt_opp_ast = '',
+    lt_opp_blk = '',
+    lt_opp_dreb = '',
+    lt_opp_fg3a = '',
+    lt_opp_fg3m = '',
+    lt_opp_fg3_pct = '',
+    lt_opp_fga = '',
+    lt_opp_fgm = '',
+    lt_opp_fg_pct = '',
+    lt_opp_fta = '',
+    lt_opp_ftm = '',
+    lt_opp_ft_pct = '',
+    lt_opp_oreb = '',
+    lt_opp_pf = '',
+    lt_opp_pts = '',
+    lt_opp_pts2nd_chance = '',
+    lt_opp_pts_fb = '',
+    lt_opp_pts_off_tov = '',
+    lt_opp_pts_paint = '',
+    lt_opp_reb = '',
+    lt_opp_stl = '',
+    lt_opp_tov = '',
+    lt_oreb = '',
+    lt_pf = '',
+    lt_pts = '',
+    lt_pts2nd_chance = '',
+    lt_pts_fb = '',
+    lt_pts_off_tov = '',
+    lt_pts_paint = '',
+    lt_reb = '',
+    lt_stl = '',
+    lt_td = '',
+    lt_tov = '',
+    min_games = '',
+    outcome = '',
+    po_round = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    vs_team_id = '',
+    wstreak = '',
+    wrs_opp_ast = '',
+    wrs_opp_blk = '',
+    wrs_opp_dreb = '',
+    wrs_opp_fg3a = '',
+    wrs_opp_fg3m = '',
+    wrs_opp_fg3_pct = '',
+    wrs_opp_fga = '',
+    wrs_opp_fgm = '',
+    wrs_opp_fg_pct = '',
+    wrs_opp_fta = '',
+    wrs_opp_ftm = '',
+    wrs_opp_ft_pct = '',
+    wrs_opp_oreb = '',
+    wrs_opp_pf = '',
+    wrs_opp_pts = '',
+    wrs_opp_pts2nd_chance = '',
+    wrs_opp_pts_fb = '',
+    wrs_opp_pts_off_tov = '',
+    wrs_opp_pts_paint = '',
+    wrs_opp_reb = '',
+    wrs_opp_stl = '',
+    wrs_opp_tov = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "teamgamestreakfinder"
@@ -1553,16 +1455,8 @@ nba_teamgamestreakfinder <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team streak finder data for the given parameters available!"))

@@ -13,7 +13,8 @@ nba_leagueseasonmatchups(
   off_team_id = "",
   per_mode = "Totals",
   season = "2020-21",
-  season_type = "Regular Season"
+  season_type = "Regular Season",
+  ...
 )
 }
 \arguments{
@@ -32,6 +33,8 @@ nba_leagueseasonmatchups(
 \item{season}{season}
 
 \item{season_type}{season_type}
+
+\item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a named list of data frames: SeasonMatchups

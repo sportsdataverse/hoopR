@@ -21,7 +21,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftboard <- function(
-    league_id='00',
+    league_id = '00',
     college = '',
     overall_pick = '',
     round_pick = '',
@@ -50,16 +50,7 @@ nba_draftboard <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -90,7 +81,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftcombinestats <- function(
-    league_id='00',
+    league_id = '00',
     season_year = '2020',
     ...){
 
@@ -107,16 +98,7 @@ nba_draftcombinestats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine stats data available for {season_year}!"))
@@ -146,7 +128,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftcombinedrillresults <- function(
-    league_id='00',
+    league_id = '00',
     season_year = '2020',
     ...){
 
@@ -163,16 +145,8 @@ nba_draftcombinedrillresults <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine drill results data available for {season_year}!"))
@@ -202,7 +176,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftcombinenonstationaryshooting <- function(
-    league_id='00',
+    league_id = '00',
     season_year = '2020',
     ...){
 
@@ -219,16 +193,8 @@ nba_draftcombinenonstationaryshooting <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine stationary shooting data available for {season_year}!"))
@@ -258,7 +224,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftcombineplayeranthro <- function(
-    league_id='00',
+    league_id = '00',
     season_year = '2020',
     ...){
 
@@ -274,16 +240,8 @@ nba_draftcombineplayeranthro <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine player anthropological data available for {season_year}!"))
@@ -312,7 +270,7 @@ NULL
 #' @import rvest
 #' @export
 nba_draftcombinespotshooting <- function(
-    league_id='00',
+    league_id = '00',
     season_year = '2020',
     ...){
 
@@ -329,16 +287,8 @@ nba_draftcombinespotshooting <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine spot shooting data available for {season_year}!"))
@@ -370,7 +320,7 @@ nba_draftcombinespotshooting <- function(
 #' @import rvest
 #' @export
 nba_drafthistory <- function(
-    league_id='00',
+    league_id = '00',
     college = '',
     overall_pick = '',
     round_pick = '',
@@ -399,16 +349,7 @@ nba_drafthistory <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {

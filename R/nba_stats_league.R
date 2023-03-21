@@ -51,16 +51,8 @@ nba_leaguegamelog <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game log data for {season} available!"))
@@ -112,16 +104,8 @@ nba_leaguestandings <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league standings data for {season} available!"))
@@ -173,16 +157,8 @@ nba_leaguestandingsv3 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league standings v3 data available for {season}!"))
@@ -230,16 +206,8 @@ nba_playoffpicture <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no playoff picture data available for {season}!"))
@@ -359,97 +327,96 @@ nba_leaguegamefinder <- function(
     date_from = '',
     date_to = '',
     division = '',
-    draft_year='',
-    draft_team_id='',
-    draft_round='',
-    draft_number='',
-    et_ast='',
-    et_blk='',
-    et_dd='',
-    et_dreb='',
-    et_fg3a='',
-    et_fg3m='',
-    et_fg3_pct='',
-    et_fga='',
-    et_fgm='',
-    et_fg_pct='',
-    et_fta='',
-    et_ftm='',
-    et_ft_pct='',
-    et_minutes='',
-    et_oreb='',
-    et_pf='',
-    et_pts='',
-    et_reb='',
-    et_stl='',
-    et_td='',
-    et_tov='',
-    game_id='',
-    gt_ast='',
-    gt_blk='',
-    gt_dd='',
-    gt_dreb='',
-    gt_fg3a='',
-    gt_fg3m='',
-    gt_fg3_pct='',
-    gt_fga='',
-    gt_fgm='',
-    gt_fg_pct='',
-    gt_fta='',
-    gt_ftm='',
-    gt_ft_pct='',
-    gt_minutes='',
-    gt_oreb='',
-    gt_pf='',
-    gt_pts='',
-    gt_reb='',
-    gt_stl='',
-    gt_td='',
-    gt_tov='',
-    league_id='00',
-    location='',
-    lt_ast='',
-    lt_blk='',
-    lt_dd='',
-    lt_dreb='',
-    lt_fg3a='',
-    lt_fg3m='',
-    lt_fg3_pct='',
-    lt_fga='',
-    lt_fgm='',
-    lt_fg_pct='',
-    lt_fta='',
-    lt_ftm='',
-    lt_ft_pct='',
-    lt_minutes='',
-    lt_oreb='',
-    lt_pf='',
-    lt_pts='',
-    lt_reb='',
-    lt_stl='',
-    lt_td='',
-    lt_tov='',
-    outcome='',
-    po_round='',
-    player_id='',
-    player_or_team='T',
-    rookie_year='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    starter_bench='',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    vs_team_id='',
-    years_experience='',
+    draft_year = '',
+    draft_team_id = '',
+    draft_round = '',
+    draft_number = '',
+    et_ast = '',
+    et_blk = '',
+    et_dd = '',
+    et_dreb = '',
+    et_fg3a = '',
+    et_fg3m = '',
+    et_fg3_pct = '',
+    et_fga = '',
+    et_fgm = '',
+    et_fg_pct = '',
+    et_fta = '',
+    et_ftm = '',
+    et_ft_pct = '',
+    et_minutes = '',
+    et_oreb = '',
+    et_pf = '',
+    et_pts = '',
+    et_reb = '',
+    et_stl = '',
+    et_td = '',
+    et_tov = '',
+    game_id = '',
+    gt_ast = '',
+    gt_blk = '',
+    gt_dd = '',
+    gt_dreb = '',
+    gt_fg3a = '',
+    gt_fg3m = '',
+    gt_fg3_pct = '',
+    gt_fga = '',
+    gt_fgm = '',
+    gt_fg_pct = '',
+    gt_fta = '',
+    gt_ftm = '',
+    gt_ft_pct = '',
+    gt_minutes = '',
+    gt_oreb = '',
+    gt_pf = '',
+    gt_pts = '',
+    gt_reb = '',
+    gt_stl = '',
+    gt_td = '',
+    gt_tov = '',
+    league_id = '00',
+    location = '',
+    lt_ast = '',
+    lt_blk = '',
+    lt_dd = '',
+    lt_dreb = '',
+    lt_fg3a = '',
+    lt_fg3m = '',
+    lt_fg3_pct = '',
+    lt_fga = '',
+    lt_fgm = '',
+    lt_fg_pct = '',
+    lt_fta = '',
+    lt_ftm = '',
+    lt_ft_pct = '',
+    lt_minutes = '',
+    lt_oreb = '',
+    lt_pf = '',
+    lt_pts = '',
+    lt_reb = '',
+    lt_stl = '',
+    lt_td = '',
+    lt_tov = '',
+    outcome = '',
+    po_round = '',
+    player_id = '',
+    player_or_team = 'T',
+    rookie_year = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    starter_bench = '',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    vs_team_id = '',
+    years_experience = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-
                      "?Conference=", conference,
                      "&DateFrom=", date_from,
                      "&DateTo=", date_to,
@@ -545,16 +512,8 @@ nba_leaguegamefinder <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game finder data available for the given parameters!"))

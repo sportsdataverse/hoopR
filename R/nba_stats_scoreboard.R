@@ -20,8 +20,8 @@ NULL
 #' @export
 nba_scoreboard <- function(
     league_id = '00',
-    game_date='2021-07-20',
-    day_offset=0,
+    game_date = '2021-07-20',
+    day_offset = 0,
     ...){
 
 
@@ -37,16 +37,8 @@ nba_scoreboard <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_date} available!"))
@@ -80,8 +72,8 @@ NULL
 #' @export
 nba_scoreboardv2 <- function(
     league_id = '00',
-    game_date='2021-07-20',
-    day_offset=0,
+    game_date = '2021-07-20',
+    day_offset = 0,
     ...){
 
 
@@ -97,16 +89,8 @@ nba_scoreboardv2 <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboardv2 data for {game_date} available!"))
@@ -139,7 +123,7 @@ NULL
 #' @export
 nba_winprobabilitypbp <- function(
     game_id = '0021700807',
-    run_type='each second',
+    run_type = 'each second',
     ...){
 
   run_type <- gsub(' ','+',run_type)
@@ -155,16 +139,8 @@ nba_winprobabilitypbp <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no win probability pbp data for {game_id} available!"))

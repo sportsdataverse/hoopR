@@ -37,13 +37,17 @@
 #' @description
 #' This is a thin wrapper on httr::RETRY
 #' @param url Request url
-#' @param ... passed to httr::RETRY
 #' @param params list of params
+#' @param origin Origin url
+#' @param referer Referer url
+#' @param ... passed to httr::RETRY
 #' @keywords internal
 #' @import rvest
-request_with_proxy <- function(url, ..., params=list(),
+request_with_proxy <- function(url,
+                               params = list(),
                                origin = "https://stats.nba.com",
-                               referer="https://www.nba.com/"){
+                               referer="https://www.nba.com/",
+                               ...){
   dots <- rlang::dots_list(..., .named = TRUE)
   proxy <- dots$proxy
   headers <- dots$headers
@@ -61,8 +65,8 @@ request_with_proxy <- function(url, ..., params=list(),
     `Cache-Control` = 'no-cache'
   )
   if (length(params) >= 1) {
-    url <- httr::modify_url(url, query = params)
-    res <- rvest::session(url = {{url}}, ..., httr::add_headers(.headers = headers), httr::timeout(10))
+    url <- httr::modify_url({{url}}, query = params)
+    res <- rvest::session(url = {{url}}, ...,  httr::add_headers(.headers = headers), httr::timeout(10))
 
     json <- res$response %>%
       httr::content(as = "text", encoding = "UTF-8") %>%
@@ -94,6 +98,7 @@ request_with_proxy <- function(url, ..., params=list(),
   )
   return(headers)
 }
+
 nba_endpoint <- function(endpoint){
   all_endpoints = c(
     'alltimeleadersgrids',
@@ -236,16 +241,16 @@ nba_endpoint <- function(endpoint){
 
 
 pad_id <- function(id = 21601112) {
-    zeros <-
-      10 - nchar(id)
+  zeros <-
+    10 - nchar(id)
 
-    if (zeros == 0) {
-      return(id)
-    }
+  if (zeros == 0) {
+    return(id)
+  }
 
-    start <-
-      rep("0", times = zeros) %>% stringr::str_c(collapse = "")
-    glue("{start}{id}") %>% as.character()
+  start <-
+    rep("0", times = zeros) %>% stringr::str_c(collapse = "")
+  glue("{start}{id}") %>% as.character()
 }
 
 pad_time <- function(time = 1) {
@@ -261,6 +266,19 @@ pad_time <- function(time = 1) {
   glue("{start}{time}") %>% as.character()
 }
 
+nba_stats_map_result_sets <- function(resp) {
+  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+    data <- resp$resultSets$rowSet[[x]] %>%
+      data.frame(stringsAsFactors = F) %>%
+      dplyr::as_tibble()
+
+    json_names <- resp$resultSets$headers[[x]]
+    colnames(data) <- json_names
+    return(data)
+  })
+  names(df_list) <- resp$resultSets$name
+  return(df_list)
+}
 #' @title **year to season (XXXX -> XXXX-YY)**
 #' @param year Four digit year (XXXX)
 #' @importFrom dplyr mutate filter select left_join

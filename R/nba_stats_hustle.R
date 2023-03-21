@@ -38,7 +38,7 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguehustlestatsplayer <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -47,23 +47,23 @@ nba_leaguehustlestatsplayer <- function(
     draft_pick = '',
     draft_year = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    player_experience = '',
+    player_position = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayer"
@@ -101,16 +101,7 @@ nba_leaguehustlestatsplayer <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -164,7 +155,7 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguehustlestatsplayerleaders <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -173,23 +164,23 @@ nba_leaguehustlestatsplayerleaders <- function(
     draft_pick = '',
     draft_year = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    player_experience = '',
+    player_position = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayerleaders"
@@ -227,16 +218,8 @@ nba_leaguehustlestatsplayerleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle stats player leaders data available for {season}!"))
@@ -289,7 +272,7 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguehustlestatsteam <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -298,23 +281,23 @@ nba_leaguehustlestatsteam <- function(
     draft_pick = '',
     draft_year = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    player_experience = '',
+    player_position = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteam"
@@ -352,16 +335,8 @@ nba_leaguehustlestatsteam <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle team stats data available for {season}!"))
@@ -413,7 +388,7 @@ NULL
 #' @import rvest
 #' @export
 nba_leaguehustlestatsteamleaders <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -422,23 +397,23 @@ nba_leaguehustlestatsteamleaders <- function(
     draft_pick = '',
     draft_year = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    player_experience = '',
+    player_position = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteamleaders"
@@ -476,16 +451,8 @@ nba_leaguehustlestatsteamleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle team stats leaders data available for {season}!"))

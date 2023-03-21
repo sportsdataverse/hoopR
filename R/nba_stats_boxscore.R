@@ -1,10 +1,10 @@
 
 #' **Get NBA Stats API Boxscore Traditional V2**
-#' @name bs_tradv2
+#' @name bs_trad_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Traditional V2**
-#' @rdname bs_tradv2
+#' @rdname bs_trad_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -18,13 +18,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoretraditionalv2(game_id = "0022200021")
+#' ```
 nba_boxscoretraditionalv2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscoretraditionalv2"
@@ -42,16 +46,8 @@ nba_boxscoretraditionalv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no traditional boxscore v2 data for {game_id} available!"))
@@ -65,11 +61,11 @@ nba_boxscoretraditionalv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Advanced V2**
-#' @name bs_advv2
+#' @name bs_adv_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Advanced V2**
-#' @rdname bs_advv2
+#' @rdname bs_adv_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -83,13 +79,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoreadvancedv2(game_id = "0022200021")
+#' ```
 nba_boxscoreadvancedv2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscoreadvancedv2"
@@ -109,16 +109,8 @@ nba_boxscoreadvancedv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no advanced boxscore v2 data for {game_id} available!"))
@@ -145,6 +137,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoredefensive(game_id = "0022200021")
+#' ```
 nba_boxscoredefensive <- function(
     game_id,
     ...){
@@ -159,16 +155,8 @@ nba_boxscoredefensive <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no defensive boxscore data for {game_id} available!"))
@@ -182,11 +170,11 @@ nba_boxscoredefensive <- function(
 }
 
 #' **Get NBA Stats API Boxscore Four Factors V2**
-#' @name bs_ffv2
+#' @name bs_ff_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Four Factors V2**
-#' @rdname bs_ffv2
+#' @rdname bs_ff_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -200,13 +188,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscorefourfactorsv2(game_id = "0022200021")
+#' ```
 nba_boxscorefourfactorsv2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscorefourfactorsv2"
@@ -224,16 +216,8 @@ nba_boxscorefourfactorsv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no four factors boxscore v2 data for {game_id} available!"))
@@ -247,11 +231,11 @@ nba_boxscorefourfactorsv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Misc V2**
-#' @name bs_miscv2
+#' @name bs_misc_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Misc V2**
-#' @rdname bs_miscv2
+#' @rdname bs_misc_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -265,13 +249,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoremiscv2(game_id = "0022200021")
+#' ```
 nba_boxscoremiscv2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscoremiscv2"
@@ -289,16 +277,8 @@ nba_boxscoremiscv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no miscellaneous boxscore v2 data for {game_id} available!"))
@@ -312,11 +292,11 @@ nba_boxscoremiscv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Scoring V2**
-#' @name bs_scoringv2
+#' @name bs_scoring_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Scoring V2**
-#' @rdname bs_scoringv2
+#' @rdname bs_scoring_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -330,13 +310,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscorescoringv2(game_id = "0022200021")
+#' ```
 nba_boxscorescoringv2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscorescoringv2"
@@ -354,16 +338,8 @@ nba_boxscorescoringv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoring boxscore v2 data for {game_id} available!"))
@@ -377,11 +353,11 @@ nba_boxscorescoringv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Usage V2**
-#' @name bs_usagev2
+#' @name bs_usage_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Usage V2**
-#' @rdname bs_usagev2
+#' @rdname bs_usage_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -395,13 +371,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoreusagev2(game_id = "0022200021")
+#' ```
 nba_boxscoreusagev2 <- function(
     game_id,
-    start_period=0,
-    end_period=14,
-    start_range=0,
-    end_range=0,
-    range_type=0,
+    start_period = 0,
+    end_period = 14,
+    start_range = 0,
+    end_range = 0,
+    range_type = 0,
     ...){
 
   version <- "boxscoreusagev2"
@@ -419,16 +399,8 @@ nba_boxscoreusagev2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no usage boxscore v2 data for {game_id} available!"))
@@ -441,13 +413,12 @@ nba_boxscoreusagev2 <- function(
   return(df_list)
 }
 
-
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @name bs_summaryv2
+#' @name bs_summary_v2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @rdname bs_summaryv2
+#' @rdname bs_summary_v2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -456,6 +427,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoresummaryv2(game_id = "0022200021")
+#' ```
 nba_boxscoresummaryv2 <- function(
     game_id,
     ...){
@@ -470,16 +445,8 @@ nba_boxscoresummaryv2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no summary boxscore v2 data for {game_id} available!"))
@@ -500,18 +467,27 @@ NULL
 #' @rdname bs_match
 #' @author Saiem Gilani
 #' @param game_id Game ID
+#' @param version Boxscore Matchups version ("v2" available from 2016-17 onwards)
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayerMatchupsStats
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscorematchups(game_id = "0022200021", version = "v1")
+#' ```
 nba_boxscorematchups <- function(
     game_id,
+    version = "v2",
     ...){
 
-  version <- "boxscorematchups"
-  endpoint <- nba_endpoint(version)
+  if (version == "v2") {
+    endpoint <- nba_endpoint('boxscorematchupsv2')
+  } else {
+    endpoint <- nba_endpoint('boxscorematchups')
+  }
 
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
@@ -520,16 +496,8 @@ nba_boxscorematchups <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no matchups boxscore data for {game_id} available!"))
@@ -556,6 +524,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_boxscoreplayertrackv2(game_id = "0022200021")
+#' ```
 nba_boxscoreplayertrackv2 <- function(
     game_id,
     ...){
@@ -565,6 +537,104 @@ nba_boxscoreplayertrackv2 <- function(
 
   full_url <- paste0(endpoint,
                      "?GameID=",pad_id(game_id))
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no  player tracking boxscore v2 data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+#' **Get NBA Stats API Hustle Stats Boxscore**
+#' @name hustle_bs
+NULL
+#' @title
+#' **Get NBA Stats API Hustle Stats Boxscore**
+#' @rdname hustle_bs
+#' @author Saiem Gilani
+#' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @details
+#' ```r
+#'  nba_hustlestatsboxscore(game_id = "0022200021")
+#' ```
+nba_hustlestatsboxscore <- function(
+    game_id,
+    ...){
+
+  version <- "hustlestatsboxscore"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?GameID=",pad_id(game_id))
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no hustle stats boxscore data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+#' **Get NBA Stats API Game Rotation**
+#' @name game_rotation
+NULL
+#' @title
+#' **Get NBA Stats API Game Rotation**
+#' @rdname game_rotation
+#' @author Saiem Gilani
+#' @param game_id Game ID
+#' @param league_id League ID
+#' @param rotation_stat Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: AwayTeam, HomeTeam
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @details
+#' ```r
+#'  nba_gamerotation(game_id = "0022200021")
+#' ```
+nba_gamerotation <- function(
+    game_id,
+    league_id = '00',
+    rotation_stat = 'PLAYER_PTS',
+    ...){
+
+  version <- "gamerotation"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?GameID=",pad_id(game_id),
+                     "&LeagueID=",league_id,
+                     "&RotationStat=", rotation_stat)
   tryCatch(
     expr = {
 
@@ -582,7 +652,7 @@ nba_boxscoreplayertrackv2 <- function(
       names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no  player tracking boxscore v2 data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no game rotation data for {game_id} available!"))
     },
     warning = function(w) {
     },
@@ -641,16 +711,8 @@ nba_boxscoresimilarityscore <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore similarity data for given parameters available!"))
@@ -662,6 +724,7 @@ nba_boxscoresimilarityscore <- function(
   )
   return(df_list)
 }
+
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
 #' @name gl_bs_similarity
 NULL
@@ -711,16 +774,8 @@ nba_glalumboxscoresimilarityscore <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no G-League alum boxscore similarity data for given parameters available!"))
@@ -733,112 +788,7 @@ nba_glalumboxscoresimilarityscore <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Hustle Stats Boxscore**
-#' @name hustle_bs
-NULL
-#' @title
-#' **Get NBA Stats API Hustle Stats Boxscore**
-#' @rdname hustle_bs
-#' @author Saiem Gilani
-#' @param game_id Game ID
-#' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
-#' @import rvest
-#' @export
-nba_hustlestatsboxscore <- function(
-    game_id,
-    ...){
 
-  version <- "hustlestatsboxscore"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
-  tryCatch(
-    expr = {
-
-      resp <- request_with_proxy(url = full_url, ...)
-
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
-    },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no hustle stats boxscore data for {game_id} available!"))
-    },
-    warning = function(w) {
-    },
-    finally = {
-    }
-  )
-  return(df_list)
-}
-
-
-#' **Get NBA Stats API Game Rotation**
-#' @name game_rotation
-NULL
-#' @title
-#' **Get NBA Stats API Game Rotation**
-#' @rdname game_rotation
-#' @author Saiem Gilani
-#' @param game_id Game ID
-#' @param league_id League ID
-#' @param rotation_stat Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT
-#' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: AwayTeam, HomeTeam
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
-#' @import rvest
-#' @export
-nba_gamerotation <- function(
-    game_id,
-    league_id='00',
-    rotation_stat = 'PLAYER_PTS',
-    ...){
-
-  version <- "gamerotation"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id),
-                     "&LeagueID=",league_id,
-                     "&RotationStat=", rotation_stat)
-  tryCatch(
-    expr = {
-
-      resp <- request_with_proxy(url = full_url, ...)
-
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
-    },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no game rotation data for {game_id} available!"))
-    },
-    warning = function(w) {
-    },
-    finally = {
-    }
-  )
-  return(df_list)
-}
 
 #
 # nba_boxscore <- function(game_id, version = "boxscoretraditionalv2"){

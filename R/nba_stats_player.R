@@ -1,3 +1,119 @@
+
+#' **Get NBA Stats API Player Index**
+#' @name p_index
+NULL
+#' @title
+#' **Get NBA Stats API Player Index**
+#' @rdname p_index
+#' @author Saiem Gilani
+#' @param college Player College
+#' @param country Player Country
+#' @param draft_pick Draft Pick
+#' @param draft_round Draft Round
+#' @param draft_year Draft Year
+#' @param height Player Height
+#' @param historical Whether to include only current players (0) or all historical (1).
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format 2020-21
+#' @param season_type Season Type - Regular Season, Playoffs, All-Star
+#' @param team_id Team ID. Default: 0 (all teams).
+#' @param weight Player weight
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Return a named list of data frames: PlayerIndex
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+nba_playerindex <- function(
+    college = '',
+    country = '',
+    draft_pick = '',
+    draft_round = '',
+    draft_year = '',
+    height = '',
+    historical = 1,
+    league_id = '00',
+    season = '2020-21',
+    season_type = 'Regular Season',
+    team_id = '0',
+    weight = '',
+    ...){
+
+  season_type <- gsub(' ','+',season_type)
+  version <- "playerindex"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?College=", college,
+                     "&Country=", country,
+                     "&DraftPick=", draft_pick,
+                     "&DraftRound=", draft_round,
+                     "&DraftYear=", draft_year,
+                     "&Height=", height,
+                     "&Historical=", historical,
+                     "&LeagueID=", league_id,
+                     "&Season=", season,
+                     "&SeasonType=",season_type,
+                     "&TeamID=", team_id,
+                     "&Weight=", weight)
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no player index data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+#' **Get NBA Stats API Player Head-shot**
+#' @name p_headshot
+NULL
+#' @title
+#' **Get NBA Stats API Player Head-shot**
+#' @rdname p_headshot
+#' @author Saiem Gilani
+#' @param player_id Player ID
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a url of the png for the player_id selected
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+nba_playerheadshot <- function(
+    player_id = '2544',
+    ...){
+
+  endpoint <- "https://cdn.nba.com/headshots/nba/latest/260x190/"
+
+  full_url <- paste0(endpoint, player_id,".png")
+
+  tryCatch(
+    expr = {
+      resp <- full_url
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no player headshot for {player_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(resp)
+}
+
 #' **Get NBA Stats API Player Awards**
 #' @name playerawards
 NULL
@@ -26,16 +142,8 @@ nba_playerawards <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player awards data for {player_id} available!"))
@@ -70,8 +178,8 @@ nba_playercareerbycollege <- function(
     college = 'Florida State',
     league_id = '00',
     per_mode = 'Totals',
-    season='2020-21',
-    season_type='Regular Season',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
   college <- gsub(' ','+',college)
   season_type <- gsub(' ','+',season_type)
@@ -89,16 +197,8 @@ nba_playercareerbycollege <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player careers by college data for {player_id} available!"))
@@ -132,8 +232,8 @@ NULL
 nba_playercareerbycollegerollup <- function(
     league_id = '00',
     per_mode = 'Totals',
-    season='2020-21',
-    season_type='Regular Season',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -150,16 +250,8 @@ nba_playercareerbycollegerollup <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player careers by college rollup data for {season} available!"))
@@ -194,7 +286,7 @@ NULL
 nba_playercareerstats <- function(
     league_id = '00',
     per_mode = 'Totals',
-    player_id='2544',
+    player_id = '2544',
     ...){
 
 
@@ -210,16 +302,8 @@ nba_playercareerstats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player career stats data for {player_id} available!"))
@@ -256,14 +340,14 @@ NULL
 #' @export
 nba_playerfantasyprofile <- function(
     league_id = '00',
-    measure_type='Base',
-    pace_adjust='N',
-    per_mode='Totals',
-    player_id='2544',
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_type='Regular Season',
+    measure_type = 'Base',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    player_id = '2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -286,16 +370,8 @@ nba_playerfantasyprofile <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player fantasy profile data for {player_id} available!"))
@@ -329,9 +405,9 @@ NULL
 #' @export
 nba_playerfantasyprofilebargraph <- function(
     league_id = '00',
-    player_id='2544',
-    season='2020-21',
-    season_type='Regular Season',
+    player_id = '2544',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -349,16 +425,7 @@ nba_playerfantasyprofilebargraph <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -391,8 +458,8 @@ NULL
 #' @export
 nba_playerestimatedmetrics <- function(
     league_id = '00',
-    season='2020-21',
-    season_type='Regular Season',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -409,16 +476,7 @@ nba_playerestimatedmetrics <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -432,129 +490,6 @@ nba_playerestimatedmetrics <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Player Index**
-#' @name p_index
-NULL
-#' @title
-#' **Get NBA Stats API Player Index**
-#' @rdname p_index
-#' @author Saiem Gilani
-#' @param college Player College
-#' @param country Player Country
-#' @param draft_pick Draft Pick
-#' @param draft_round Draft Round
-#' @param draft_year Draft Year
-#' @param height Player Height
-#' @param historical Whether to include only current players (0) or all historical (1).
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param team_id Team ID. Default: 0 (all teams).
-#' @param weight Player weight
-#' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: PlayerIndex
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
-#' @import rvest
-#' @export
-nba_playerindex <- function(
-    college = '',
-    country = '',
-    draft_pick = '',
-    draft_round='',
-    draft_year='',
-    height = '',
-    historical = 1,
-    league_id = '00',
-    season='2020-21',
-    season_type='Regular Season',
-    team_id = '0',
-    weight = '',
-    ...){
-
-  season_type <- gsub(' ','+',season_type)
-  version <- "playerindex"
-  endpoint <- nba_endpoint(version)
-
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&Country=", country,
-                     "&DraftPick=", draft_pick,
-                     "&DraftRound=", draft_round,
-                     "&DraftYear=", draft_year,
-                     "&Height=", height,
-                     "&Historical=", historical,
-                     "&LeagueID=", league_id,
-                     "&Season=", season,
-                     "&SeasonType=",season_type,
-                     "&TeamID=", team_id,
-                     "&Weight=", weight)
-
-  tryCatch(
-    expr = {
-
-      resp <- request_with_proxy(url = full_url, ...)
-
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
-
-    },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player index data for {season} available!"))
-    },
-    warning = function(w) {
-    },
-    finally = {
-    }
-  )
-  return(df_list)
-}
-
-#' **Get NBA Stats API Player Head-shot**
-#' @name p_headshot
-NULL
-#' @title
-#' **Get NBA Stats API Player Head-shot**
-#' @rdname p_headshot
-#' @author Saiem Gilani
-#' @param player_id Player ID
-#' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a url of the png for the player_id selected
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
-#' @import rvest
-#' @export
-nba_playerheadshot <- function(
-    player_id= '2544',
-    ...){
-
-  endpoint <- "https://cdn.nba.com/headshots/nba/latest/260x190/"
-
-  full_url <- paste0(endpoint, player_id,".png")
-
-  tryCatch(
-    expr = {
-      resp <- full_url
-
-    },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player headshot for {player_id} available!"))
-    },
-    warning = function(w) {
-    },
-    finally = {
-    }
-  )
-  return(resp)
-}
 
 #' **Get NBA Stats API Player Game Log**
 #' @name p_gamelog
@@ -579,9 +514,9 @@ nba_playergamelog <- function(
     date_from = '',
     date_to = '',
     league_id = '00',
-    player_id='2544',
-    season='2020-21',
-    season_type='Regular Season',
+    player_id = '2544',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -601,16 +536,7 @@ nba_playergamelog <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -661,23 +587,23 @@ nba_playergamelogs <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_id='2544',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_id = '2544',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -711,16 +637,7 @@ nba_playergamelogs <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -839,95 +756,95 @@ NULL
 #' @export
 
 nba_playergamestreakfinder <- function(
-    active_streaks_only='',
+    active_streaks_only = '',
     conference = '',
     date_from = '',
     date_to = '',
     division = '',
-    draft_year='',
-    draft_team_id='',
-    draft_round='',
-    draft_number='',
-    et_ast='',
-    et_blk='',
-    et_dd='',
-    et_dreb='',
-    et_fg3a='',
-    et_fg3m='',
-    et_fg3_pct='',
-    et_fga='',
-    et_fgm='',
-    et_fg_pct='',
-    et_fta='',
-    et_ftm='',
-    et_ft_pct='',
-    et_minutes='',
-    et_oreb='',
-    et_pf='',
-    et_pts='',
-    et_reb='',
-    et_stl='',
-    et_td='',
-    et_tov='',
-    game_id='',
-    gt_ast='',
-    gt_blk='',
-    gt_dd='',
-    gt_dreb='',
-    gt_fg3a='',
-    gt_fg3m='',
-    gt_fg3_pct='',
-    gt_fga='',
-    gt_fgm='',
-    gt_fg_pct='',
-    gt_fta='',
-    gt_ftm='',
-    gt_ft_pct='',
-    gt_minutes='',
-    gt_oreb='',
-    gt_pf='',
-    gt_pts='',
-    gt_reb='',
-    gt_stl='',
-    gt_td='',
-    gt_tov='',
-    league_id='00',
-    location='',
-    lt_ast='',
-    lt_blk='',
-    lt_dd='',
-    lt_dreb='',
-    lt_fg3a='',
-    lt_fg3m='',
-    lt_fg3_pct='',
-    lt_fga='',
-    lt_fgm='',
-    lt_fg_pct='',
-    lt_fta='',
-    lt_ftm='',
-    lt_ft_pct='',
-    lt_minutes='',
-    lt_oreb='',
-    lt_pf='',
-    lt_pts='',
-    lt_reb='',
-    lt_stl='',
-    lt_td='',
-    lt_tov='',
-    min_games='',
-    outcome='',
-    po_round='',
-    player_id='',
-    rookie_year='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    starter_bench='',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    vs_team_id='',
-    years_experience='',
+    draft_year = '',
+    draft_team_id = '',
+    draft_round = '',
+    draft_number = '',
+    et_ast = '',
+    et_blk = '',
+    et_dd = '',
+    et_dreb = '',
+    et_fg3a = '',
+    et_fg3m = '',
+    et_fg3_pct = '',
+    et_fga = '',
+    et_fgm = '',
+    et_fg_pct = '',
+    et_fta = '',
+    et_ftm = '',
+    et_ft_pct = '',
+    et_minutes = '',
+    et_oreb = '',
+    et_pf = '',
+    et_pts = '',
+    et_reb = '',
+    et_stl = '',
+    et_td = '',
+    et_tov = '',
+    game_id = '',
+    gt_ast = '',
+    gt_blk = '',
+    gt_dd = '',
+    gt_dreb = '',
+    gt_fg3a = '',
+    gt_fg3m = '',
+    gt_fg3_pct = '',
+    gt_fga = '',
+    gt_fgm = '',
+    gt_fg_pct = '',
+    gt_fta = '',
+    gt_ftm = '',
+    gt_ft_pct = '',
+    gt_minutes = '',
+    gt_oreb = '',
+    gt_pf = '',
+    gt_pts = '',
+    gt_reb = '',
+    gt_stl = '',
+    gt_td = '',
+    gt_tov = '',
+    league_id = '00',
+    location = '',
+    lt_ast = '',
+    lt_blk = '',
+    lt_dd = '',
+    lt_dreb = '',
+    lt_fg3a = '',
+    lt_fg3m = '',
+    lt_fg3_pct = '',
+    lt_fga = '',
+    lt_fgm = '',
+    lt_fg_pct = '',
+    lt_fta = '',
+    lt_ftm = '',
+    lt_ft_pct = '',
+    lt_minutes = '',
+    lt_oreb = '',
+    lt_pf = '',
+    lt_pts = '',
+    lt_reb = '',
+    lt_stl = '',
+    lt_td = '',
+    lt_tov = '',
+    min_games = '',
+    outcome = '',
+    po_round = '',
+    player_id = '',
+    rookie_year = '',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    starter_bench = '',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    vs_team_id = '',
+    years_experience = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "playergamestreakfinder"
@@ -1030,16 +947,7 @@ nba_playergamestreakfinder <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     },
     error = function(e) {
@@ -1074,10 +982,10 @@ NULL
 #' @export
 nba_playernextngames <- function(
     league_id = '',
-    number_of_games=2147483647,
-    player_id='2544',
-    season='2020-21',
-    season_type='Regular Season',
+    number_of_games = 2147483647,
+    player_id = '2544',
+    season = '2020-21',
+    season_type = 'Regular Season',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -1096,16 +1004,8 @@ nba_playernextngames <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player next n games data available for {player_id}!"))
@@ -1141,8 +1041,8 @@ NULL
 #' @export
 nba_playerprofilev2 <- function(
     league_id = '',
-    per_mode='Totals',
-    player_id='2544',
+    per_mode = 'Totals',
+    player_id = '2544',
     ...){
 
 
@@ -1158,16 +1058,8 @@ nba_playerprofilev2 <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player profile v2 data available for {player_id}!"))
@@ -1221,25 +1113,25 @@ nba_playervsplayer <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
-    per_mode='Totals',
-    period=0,
-    player_id='2544',
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    vs_conference='',
-    vs_division='',
-    vs_player_id='203076',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    period = 0,
+    player_id = '2544',
+    plus_minus = 'N',
+    rank = 'N',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    vs_conference = '',
+    vs_division = '',
+    vs_player_id = '203076',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -1274,16 +1166,8 @@ nba_playervsplayer <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player vs player data unavailable for the parameters selected!"))
@@ -1339,26 +1223,26 @@ nba_playercompare <- function(
     date_from = '',
     date_to = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
-    per_mode='Totals',
-    period=0,
-    player_id_list='202681,203078,2544,201567,203954',
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    vs_conference='',
-    vs_division='',
-    vs_player_id_list='201566,201939,201935,201142,203076',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    period = 0,
+    player_id_list = '202681,203078,2544,201567,203954',
+    plus_minus = 'N',
+    rank = 'N',
+    season = '2020-21',
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    vs_conference = '',
+    vs_division = '',
+    vs_player_id_list = '201566,201939,201935,201142,203076',
     ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -1395,16 +1279,8 @@ nba_playercompare <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSet$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player comparison data unavailable for the parameters selected!"))

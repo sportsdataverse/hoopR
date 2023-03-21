@@ -20,6 +20,10 @@ Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStat
 
 \strong{Get NBA Stats API Hustle Stats Boxscore}
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_hustlestatsboxscore(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+}
 \author{
 Saiem Gilani
 }
