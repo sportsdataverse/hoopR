@@ -503,23 +503,29 @@ espn_mbb_pbp <- function(game_id) {
 
 
       plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider("participants") %>%
-        dplyr::mutate(
-          coordinate_x_transformed = dplyr::case_when(
-            team.id == homeTeamId ~ -1 * (coordinate.y - 41.75),
-            TRUE ~ coordinate.y - 41.75
-          ),
-          coordinate_y_transformed = dplyr::case_when(
-            team.id == homeTeamId ~ -1 * (coordinate.x - 25),
-            TRUE ~ coordinate.x - 25
+        tidyr::unnest_wider("participants")
+      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
+        plays <- plays %>%
+          dplyr::mutate(
+            coordinate_x_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+              TRUE ~ .data$coordinate.y - 41.75
+            ),
+            coordinate_y_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+              TRUE ~ .data$coordinate.x - 25
+            )
+          ) %>%
+          dplyr::select(-.data$coordinate.x, -.data$coordinate.y) %>%
+          dplyr::rename(
+            coordinate.x = .data$coordinate_x_transformed,
+            coordinate.y = .data$coordinate_y_transformed
+          ) %>%
+          dplyr::select(
+            -.data$coordinate_x_transformed,
+            -.data$coordinate_y_transformed
           )
-        ) %>%
-        dplyr::select(-coordinate.x, -coordinate.y) %>%
-        dplyr::rename(
-          coordinate.x = coordinate_x_transformed,
-          coordinate.y = coordinate_y_transformed
-        ) %>%
-        dplyr::select(-coordinate_x_transformed, -coordinate_y_transformed)
+      }
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
@@ -537,7 +543,7 @@ espn_mbb_pbp <- function(game_id) {
           season_type = season_type,
           game_date = game_date) %>%
         janitor::clean_names() %>%
-        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com", Sys.time())
     },
     error = function(e) {
       message(
