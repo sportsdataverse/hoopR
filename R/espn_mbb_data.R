@@ -503,7 +503,23 @@ espn_mbb_pbp <- function(game_id) {
 
 
       plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider("participants")
+        tidyr::unnest_wider("participants") %>%
+        dplyr::mutate(
+          coordinate_x_transformed = dplyr::case_when(
+            team.id == homeTeamId ~ -1 * (coordinate.y - 41.75),
+            TRUE ~ coordinate.y - 41.75
+          ),
+          coordinate_y_transformed = dplyr::case_when(
+            team.id == homeTeamId ~ -1 * (coordinate.x - 25),
+            TRUE ~ coordinate.x - 25
+          )
+        ) %>%
+        dplyr::select(-coordinate.x, -coordinate.y) %>%
+        dplyr::rename(
+          coordinate.x = coordinate_x_transformed,
+          coordinate.y = coordinate_y_transformed
+        ) %>%
+        dplyr::select(-coordinate_x_transformed, -coordinate_y_transformed)
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
