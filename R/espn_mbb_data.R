@@ -157,6 +157,39 @@ espn_mbb_game_all <- function(game_id) {
 
       plays <- raw_play_df[["plays"]] %>%
         tidyr::unnest_wider("participants")
+      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
+        plays <- plays %>%
+          dplyr::mutate(
+            # convert types
+            coordinate.x = as.double(.data$coordinate.x),
+            coordinate.y = as.double(.data$coordinate.y),
+            # Free throws are adjusted automatically to 19' from baseline, which
+            # corresponds to 13.75' from the center of the basket (originally
+            # the center of the basket is (25, 0))
+            coordinate.y = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+              TRUE ~ .data$coordinate.y
+            ),
+            coordinate.x = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+              TRUE ~ .data$coordinate.x
+            ),
+            coordinate_x_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+              TRUE ~ .data$coordinate.y - 41.75
+            ),
+            coordinate_y_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+              TRUE ~ .data$coordinate.x - 25
+            )
+          ) %>%
+          dplyr::rename(
+            coordinate.x.raw = .data$coordinate.x,
+            coordinate.y.raw = .data$coordinate.y,
+            coordinate.x = .data$coordinate_x_transformed,
+            coordinate.y = .data$coordinate_y_transformed
+          )
+      }
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
@@ -174,7 +207,7 @@ espn_mbb_game_all <- function(game_id) {
           season_type = season_type,
           game_date = game_date) %>%
         janitor::clean_names() %>%
-        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com", Sys.time())
 
     },
     error = function(e) {
@@ -507,6 +540,20 @@ espn_mbb_pbp <- function(game_id) {
       if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
         plays <- plays %>%
           dplyr::mutate(
+            # convert types
+            coordinate.x = as.double(.data$coordinate.x),
+            coordinate.y = as.double(.data$coordinate.y),
+            # Free throws are adjusted automatically to 19' from baseline, which
+            # corresponds to 13.75' from the center of the basket (originally
+            # the center of the basket is (25, 0))
+            coordinate.y = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+              TRUE ~ .data$coordinate.y
+            ),
+            coordinate.x = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+              TRUE ~ .data$coordinate.x
+            ),
             coordinate_x_transformed = dplyr::case_when(
               .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
               TRUE ~ .data$coordinate.y - 41.75
@@ -516,14 +563,11 @@ espn_mbb_pbp <- function(game_id) {
               TRUE ~ .data$coordinate.x - 25
             )
           ) %>%
-          dplyr::select(-.data$coordinate.x, -.data$coordinate.y) %>%
           dplyr::rename(
+            coordinate.x.raw = .data$coordinate.x,
+            coordinate.y.raw = .data$coordinate.y,
             coordinate.x = .data$coordinate_x_transformed,
             coordinate.y = .data$coordinate_y_transformed
-          ) %>%
-          dplyr::select(
-            -.data$coordinate_x_transformed,
-            -.data$coordinate_y_transformed
           )
       }
       suppressWarnings(
