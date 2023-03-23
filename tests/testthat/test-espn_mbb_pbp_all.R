@@ -196,7 +196,7 @@ test_that("ESPN - Get MBB play by play all (with coordinate data)", {
     "coordinate_x",
     "coordinate_x_raw",
     "coordinate_y",
-    "coordinate_y_raw",
+    "coordinate_y_raw"
   )
   cols_x2 <- c(
     "game_id",
