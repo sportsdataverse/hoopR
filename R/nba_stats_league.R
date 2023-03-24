@@ -1,9 +1,9 @@
 #' **Get NBA Stats API League Game Log**
-#' @name l_gamelog
+#' @name nba_leaguegamelog
 NULL
 #' @title
 #' **Get NBA Stats API League Game Log**
-#' @rdname l_gamelog
+#' @rdname nba_leaguegamelog
 #' @author Saiem Gilani
 #' @param counter counter
 #' @param date_from date_from
@@ -20,16 +20,21 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player/Team Boxscores](https://www.nba.com/stats/players/boxscores)
+#' ```r
+#'  nba_leaguegamelog(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguegamelog <- function(
     counter = 0,
     date_from = '',
     date_to = '',
     direction = 'ASC',
-    league_id='00',
-    player_or_team='T',
-    season='2020-21',
-    season_type='Regular Season',
-    sorter='DATE',
+    league_id = '00',
+    player_or_team = 'T',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    sorter = 'DATE',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamelog"
@@ -67,11 +72,11 @@ nba_leaguegamelog <- function(
 
 
 #' **Get NBA Stats API League Standings**
-#' @name l_standings
+#' @name nba_leaguestandings
 NULL
 #' @title
 #' **Get NBA Stats API League Standings**
-#' @rdname l_standings
+#' @rdname nba_leaguestandings
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season season
@@ -83,11 +88,16 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [League Standings](https://www.nba.com/standings)
+#' ```r
+#'  nba_leaguestandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguestandings <- function(
-    league_id='00',
-    season='2020-21',
-    season_type='Regular Season',
-    season_year='',
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    season_year = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandings"
@@ -120,11 +130,11 @@ nba_leaguestandings <- function(
 
 
 #' **Get NBA Stats API League Standings V3**
-#' @name l_standingsv3
+#' @name nba_leaguestandingsv3
 NULL
 #' @title
 #' **Get NBA Stats API League Standings V3**
-#' @rdname l_standingsv3
+#' @rdname nba_leaguestandingsv3
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season season
@@ -136,11 +146,16 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [League Standings](https://www.nba.com/standings)
+#' ```r
+#'  nba_leaguestandingsv3(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguestandingsv3 <- function(
-    league_id='00',
-    season='2020-21',
-    season_type='Regular Season',
-    season_year='',
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    season_year = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
@@ -173,11 +188,11 @@ nba_leaguestandingsv3 <- function(
 
 
 #' **Get NBA Stats API Playoff Picture**
-#' @name po_picture
+#' @name nba_playoffpicture
 NULL
 #' @title
 #' **Get NBA Stats API Playoff Picture**
-#' @rdname po_picture
+#' @rdname nba_playoffpicture
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_id season_id
@@ -190,8 +205,8 @@ NULL
 #' @import rvest
 #' @export
 nba_playoffpicture <- function(
-    league_id='00',
-    season_id='22020',
+    league_id = '00',
+    season_id = '22022',
     ...){
 
   version <- "playoffpicture"
@@ -222,11 +237,11 @@ nba_playoffpicture <- function(
 
 
 #' **Get NBA Stats API League Game Streak Finder**
-#' @name lg_streak
+#' @name nba_leaguegamefinder
 NULL
 #' @title
 #' **Get NBA Stats API League Game Streak Finder**
-#' @rdname lg_streak
+#' @rdname nba_leaguegamefinder
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -322,6 +337,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_leaguegamefinder(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguegamefinder <- function(
     conference = '',
     date_from = '',
@@ -402,7 +421,7 @@ nba_leaguegamefinder <- function(
     player_id = '',
     player_or_team = 'T',
     rookie_year = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     starter_bench = '',
