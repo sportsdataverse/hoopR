@@ -158,6 +158,39 @@ espn_nba_game_all <- function(game_id){
 
       plays <- raw_play_df[["plays"]] %>%
         tidyr::unnest_wider("participants")
+      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
+        plays <- plays %>%
+          dplyr::mutate(
+            # convert types
+            coordinate.x = as.double(.data$coordinate.x),
+            coordinate.y = as.double(.data$coordinate.y),
+            # Free throws are adjusted automatically to 19' from baseline, which
+            # corresponds to 13.75' from the center of the basket (originally
+            # the center of the basket is (25, 0))
+            coordinate.y = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+              TRUE ~ .data$coordinate.y
+            ),
+            coordinate.x = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+              TRUE ~ .data$coordinate.x
+            ),
+            coordinate_x_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+              TRUE ~ .data$coordinate.y - 41.75
+            ),
+            coordinate_y_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+              TRUE ~ .data$coordinate.x - 25
+            )
+          ) %>%
+          dplyr::rename(
+            "coordinate.x.raw" = "coordinate.x",
+            "coordinate.y.raw" = "coordinate.y",
+            "coordinate.x" = "coordinate_x_transformed",
+            "coordinate.y" = "coordinate_y_transformed"
+          )
+      }
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
@@ -484,6 +517,39 @@ espn_nba_pbp <- function(game_id){
 
       plays <- raw_play_df[["plays"]] %>%
         tidyr::unnest_wider("participants")
+      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
+        plays <- plays %>%
+          dplyr::mutate(
+            # convert types
+            coordinate.x = as.double(.data$coordinate.x),
+            coordinate.y = as.double(.data$coordinate.y),
+            # Free throws are adjusted automatically to 19' from baseline, which
+            # corresponds to 13.75' from the center of the basket (originally
+            # the center of the basket is (25, 0))
+            coordinate.y = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+              TRUE ~ .data$coordinate.y
+            ),
+            coordinate.x = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+              TRUE ~ .data$coordinate.x
+            ),
+            coordinate_x_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+              TRUE ~ .data$coordinate.y - 41.75
+            ),
+            coordinate_y_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+              TRUE ~ .data$coordinate.x - 25
+            )
+          ) %>%
+          dplyr::rename(
+            "coordinate.x.raw" = "coordinate.x",
+            "coordinate.y.raw" = "coordinate.y",
+            "coordinate.x" = "coordinate_x_transformed",
+            "coordinate.y" = "coordinate_y_transformed"
+          )
+      }
       suppressWarnings(
         aths <- plays %>%
           dplyr::group_by(.data$id) %>%
