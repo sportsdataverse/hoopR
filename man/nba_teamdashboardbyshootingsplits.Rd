@@ -96,7 +96,44 @@ Shot8FTTeamDashboard, ShotAreaTeamDashboard, ShotTypeTeamDashboard
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyshootingsplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Team Functions: 
+\code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_teamdashboardbyclutch}()},
+\code{\link{nba_teamdashboardbygamesplits}()},
+\code{\link{nba_teamdashboardbygeneralsplits}()},
+\code{\link{nba_teamdashboardbylastngames}()},
+\code{\link{nba_teamdashboardbyopponent}()},
+\code{\link{nba_teamdashboardbyteamperformance}()},
+\code{\link{nba_teamdashboardbyyearoveryear}()},
+\code{\link{nba_teamdashlineups}()},
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()},
+\code{\link{nba_teamdetails}()},
+\code{\link{nba_teamestimatedmetrics}()},
+\code{\link{nba_teamgamelogs}()},
+\code{\link{nba_teamgamelog}()},
+\code{\link{nba_teamgamestreakfinder}()},
+\code{\link{nba_teamhistoricalleaders}()},
+\code{\link{nba_teaminfocommon}()},
+\code{\link{nba_teamplayerdashboard}()},
+\code{\link{nba_teamplayeronoffdetails}()},
+\code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teamvsplayer}()},
+\code{\link{nba_teamyearbyyearstats}()}
+
+Other NBA Shooting Functions: 
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_shotchartdetail}()},
+\code{\link{nba_shotchartleaguewide}()},
+\code{\link{nba_shotchartlineupdetail}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Team Functions, NBA Shooting Functions}
+\concept{NBA Shooting Functions}
+\concept{NBA Team Functions}

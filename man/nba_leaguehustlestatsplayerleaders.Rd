@@ -105,6 +105,7 @@ Returns a named list of data frames: PlayerChargesDrawnLeaders, PlayerContestedS
 }
 \seealso{
 Other NBA Hustle Functions: 
+\code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_leaguehustlestatsplayer}()},
 \code{\link{nba_leaguehustlestatsteamleaders}()},
 \code{\link{nba_leaguehustlestatsteam}()}

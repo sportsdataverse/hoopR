@@ -47,10 +47,14 @@ Other NBA Boxscore Functions:
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorematchups}()},
 \code{\link{nba_boxscoremiscv2}()},
+\code{\link{nba_boxscoreplayertrackv2}()},
 \code{\link{nba_boxscorescoringv2}()},
 \code{\link{nba_boxscoresummaryv2}()},
 \code{\link{nba_boxscoretraditionalv2}()},
-\code{\link{nba_boxscoreusagev2}()}
+\code{\link{nba_boxscoreusagev2}()},
+\code{\link{nba_gamerotation}()},
+\code{\link{nba_hustlestatsboxscore}()},
+\code{\link{nba_live_boxscore}()}
 }
 \author{
 Saiem Gilani

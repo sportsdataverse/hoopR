@@ -195,7 +195,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA PBP Functions, NBA Live Functions
+#' @family NBA PBP Functions
+#' @family NBA Live Functions
 #' @details
 #' ```r
 #'  nba_live_pbp(game_id = 0022201086)
@@ -254,7 +255,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Boxscore Functions, NBA Live Functions
+#' @family NBA Boxscore Functions
+#' @family NBA Live Functions
 #' @details
 #' ```r
 #'  nba_live_boxscore(game_id = 0022201086)

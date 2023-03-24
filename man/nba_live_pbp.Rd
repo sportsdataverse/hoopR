@@ -23,7 +23,18 @@ Returns a data frame: PlayByPlay
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_pbp(game_id = 0022201086)
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA PBP Functions: 
+\code{\link{nba_data_pbp}()},
+\code{\link{nba_pbps}()},
+\code{\link{nba_pbp}()},
+\code{\link{nba_winprobabilitypbp}()}
+
+Other NBA Live Functions: 
+\code{\link{nba_live_boxscore}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA PBP Functions, NBA Live Functions}
+\concept{NBA Live Functions}
+\concept{NBA PBP Functions}

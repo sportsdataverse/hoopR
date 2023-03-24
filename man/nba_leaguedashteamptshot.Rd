@@ -103,7 +103,60 @@ Returns a named list of data frames: LeagueDashPTShots
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashteamptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions: 
+\code{\link{nba_leaguedashlineups}()},
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerbiostats}()},
+\code{\link{nba_leaguedashplayerclutch}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashplayerstats}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_leaguedashteamclutch}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_leaguegamefinder}()},
+\code{\link{nba_leaguegamelog}()},
+\code{\link{nba_leaguelineupviz}()},
+\code{\link{nba_leagueplayerondetails}()},
+\code{\link{nba_leagueseasonmatchups}()},
+\code{\link{nba_leaguestandingsv3}()},
+\code{\link{nba_leaguestandings}()},
+\code{\link{nba_matchupsrollup}()},
+\code{\link{nba_playoffpicture}()},
+\code{\link{nba_shotchartleaguewide}()}
+
+Other NBA Player Tracking Functions: 
+\code{\link{nba_boxscoreplayertrackv2}()},
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_playerdashptpass}()},
+\code{\link{nba_playerdashptreb}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()},
+\code{\link{nba_synergyplaytypes}()},
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()}
+
+Other NBA Shooting Functions: 
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_shotchartdetail}()},
+\code{\link{nba_shotchartleaguewide}()},
+\code{\link{nba_shotchartlineupdetail}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA League Functions, NBA Player Tracking Functions, NBA Shooting Functions}
+\concept{NBA League Functions}
+\concept{NBA Player Tracking Functions}
+\concept{NBA Shooting Functions}

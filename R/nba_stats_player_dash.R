@@ -39,7 +39,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Clutch Functions
+#' @family NBA Player Functions
+#' @family NBA Clutch Functions
 #' @details
 #' [Player Clutch Stats Dashboard](https://www.nba.com/stats/players/clutch-traditional)
 #' ```r
@@ -640,7 +641,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Shooting Functions
+#' @family NBA Player Functions
+#' @family NBA Shooting Functions
 #' @details
 #' [Player Stats Dashboard by Shooting Splits](https://www.nba.com/stats/player/2544/shooting)
 #' ```r
@@ -990,7 +992,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Player Tracking Functions
+#' @family NBA Player Functions
+#' @family NBA Player Tracking Functions
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Passing](https://www.nba.com/stats/player/2544/passes-dash)
 #' ```r
@@ -1091,7 +1094,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Player Tracking Functions
+#' @family NBA Player Functions
+#' @family NBA Player Tracking Functions
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Rebounding](https://www.nba.com/stats/player/2544/rebounds-dash)
 #' ```r
@@ -1196,7 +1200,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Player Tracking Functions
+#' @family NBA Player Functions
+#' @family NBA Player Tracking Functions
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Defending](https://www.nba.com/stats/player/2544/defense-dash)
 #' ```r
@@ -1301,7 +1306,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Player Tracking Functions
+#' @family NBA Player Functions
+#' @family NBA Player Tracking Functions
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Shooting](https://www.nba.com/stats/player/2544/shots-dash)
 #' ```r

@@ -559,7 +559,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Boxscore Functions, NBA Player Tracking Functions
+#' @family NBA Boxscore Functions
+#' @family NBA Player Tracking Functions
 #' @details
 #' ```r
 #'  nba_boxscoreplayertrackv2(game_id = "0022200021")
@@ -609,7 +610,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Boxscore Functions, NBA Hustle Functions
+#' @family NBA Boxscore Functions
+#' @family NBA Hustle Functions
 #' @details
 #' ```r
 #'  nba_hustlestatsboxscore(game_id = "0022200021")
@@ -661,7 +663,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Boxscore Functions, NBA Lineup Functions
+#' @family NBA Boxscore Functions
+#' @family NBA Lineup Functions
 #' @details
 #' ```r
 #'  nba_gamerotation(game_id = "0022200021")

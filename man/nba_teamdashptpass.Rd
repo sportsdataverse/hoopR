@@ -71,11 +71,50 @@ Return a named list of data frames: PassesMade, PassesReceived
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Team Functions, NBA Player Tracking Functions: 
+Other NBA Team Functions: 
+\code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_teamdashboardbyclutch}()},
+\code{\link{nba_teamdashboardbygamesplits}()},
+\code{\link{nba_teamdashboardbygeneralsplits}()},
+\code{\link{nba_teamdashboardbylastngames}()},
+\code{\link{nba_teamdashboardbyopponent}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()},
+\code{\link{nba_teamdashboardbyteamperformance}()},
+\code{\link{nba_teamdashboardbyyearoveryear}()},
+\code{\link{nba_teamdashlineups}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()},
+\code{\link{nba_teamdetails}()},
+\code{\link{nba_teamestimatedmetrics}()},
+\code{\link{nba_teamgamelogs}()},
+\code{\link{nba_teamgamelog}()},
+\code{\link{nba_teamgamestreakfinder}()},
+\code{\link{nba_teamhistoricalleaders}()},
+\code{\link{nba_teaminfocommon}()},
+\code{\link{nba_teamplayerdashboard}()},
+\code{\link{nba_teamplayeronoffdetails}()},
+\code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teamvsplayer}()},
+\code{\link{nba_teamyearbyyearstats}()}
+
+Other NBA Player Tracking Functions: 
+\code{\link{nba_boxscoreplayertrackv2}()},
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_playerdashptpass}()},
+\code{\link{nba_playerdashptreb}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()},
+\code{\link{nba_synergyplaytypes}()},
 \code{\link{nba_teamdashptreb}()},
 \code{\link{nba_teamdashptshots}()}
 }
 \author{
 Saiem Gilani
 }
-\concept{NBA Team Functions, NBA Player Tracking Functions}
+\concept{NBA Player Tracking Functions}
+\concept{NBA Team Functions}

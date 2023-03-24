@@ -86,6 +86,16 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_shotchartdetail(league_id = '00', player_id = '202696', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Shooting Functions: 
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_shotchartleaguewide}()},
+\code{\link{nba_shotchartlineupdetail}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()}
+}
 \author{
 Saiem Gilani
 }

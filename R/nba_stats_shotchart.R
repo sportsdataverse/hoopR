@@ -125,7 +125,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Shooting Functions, NBA League Functions
+#' @family NBA Shooting Functions
+#' @family NBA League Functions
 #' @details
 #' ```r
 #'  nba_shotchartleaguewide(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
@@ -232,7 +233,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Shooting Functions, NBA Lineup Functions
+#' @family NBA Shooting Functions
+#' @family NBA Lineup Functions
 #' @details
 #' ```r
 #'  nba_shotchartlineupdetail(group_id = '-202689-203493-203501-1626174-1627827-',
