@@ -1,10 +1,10 @@
 library(rvest)
 library(dplyr)
-Years=2023:2002
+Years = 2023:2002
 browser <- login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
 
 all_teams_links <- data.frame()
-for(year in Years){
+for (year in Years) {
   url <- paste0("https://kenpom.com/index.php?y=", year)
   page <- rvest::session_jump_to(browser, url)
   q <- (page %>%
@@ -13,7 +13,7 @@ for(year in Years){
 
 
   texts <- as.list(rvest::html_text(rvest::html_elements(q, "a")))
-  y <- dplyr::bind_rows(lapply(xml2::xml_attrs(rvest::html_elements(q, "a")), function(x) data.frame(as.list(x), stringsAsFactors=FALSE)))
+  y <- dplyr::bind_rows(lapply(xml2::xml_attrs(rvest::html_elements(q, "a")), function(x) data.frame(as.list(x), stringsAsFactors = FALSE)))
 
   y <- y %>%
     dplyr::mutate(ind = rep(c(1, 2), length.out = n())) %>%
@@ -21,8 +21,8 @@ for(year in Years){
     dplyr::mutate(id = row_number()) %>%
     tidyr::spread("ind", "href") %>%
     dplyr::select(-"id") %>%
-    dplyr::rename("Team.link"= 1,
-                  "Conf.link"= 2) %>%
+    dplyr::rename("Team.link" = 1,
+                  "Conf.link" = 2) %>%
     dplyr::mutate(Team.link = stringr::str_remove(.data$Team.link, "&y(.+)"),
                   Conf.link = stringr::str_remove(.data$Conf.link, "&y(.+)"))
   z <- data.frame()
@@ -35,8 +35,8 @@ for(year in Years){
     tidyr::spread("ind", "texts") %>%
     dplyr::select(-"id") %>%
     dplyr::rename(
-      "Team"= 1,
-      "Conf"= 2
+      "Team" = 1,
+      "Conf" = 2
     )
 
   team_links <- dplyr::bind_cols(z, y)
@@ -63,7 +63,7 @@ for(year in Years){
 }
 all_teams <- collapse::funique.data.frame(all_teams_links)
 
-write.csv(all_teams, "data-raw/kp_team_info.csv", row.names=FALSE)
+write.csv(all_teams, "data-raw/kp_team_info.csv", row.names = FALSE)
 teams_links <- all_teams
 usethis::use_data(teams_links, overwrite = TRUE)
 

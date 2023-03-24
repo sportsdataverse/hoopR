@@ -33,6 +33,7 @@ jobs:
           extra-packages: |
             any::pkgdown
             any::animation
+            any::baseballr
             any::cfbfastR
             any::fastRhockey
             any::ggimage
