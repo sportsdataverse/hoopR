@@ -1,9 +1,9 @@
 #' **Get NBA Stats API Shot Chart Detail**
-#' @name sc
+#' @name nba_shotchartdetail
 NULL
 #' @title
 #' **Get NBA Stats API Shot Chart Detail**
-#' @rdname sc
+#' @rdname nba_shotchartdetail
 #' @author Saiem Gilani
 #' @param context_measure context_measure
 #' @param date_from date_from
@@ -32,6 +32,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_shotchartdetail(league_id = '00', player_id = '202696', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_shotchartdetail <- function(
     context_measure = 'FGA',
     date_from = '',
@@ -48,7 +52,7 @@ nba_shotchartdetail <- function(
     player_id = '202696',
     player_position = '',
     rookie_year = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = 0,
@@ -107,11 +111,11 @@ nba_shotchartdetail <- function(
 
 
 #' **Get NBA Stats API Shot Chart League-Wide**
-#' @name sc_lw
+#' @name nba_shotchartleaguewide
 NULL
 #' @title
 #' **Get NBA Stats API Shot Chart League-Wide**
-#' @rdname sc_lw
+#' @rdname nba_shotchartleaguewide
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param season season
@@ -121,6 +125,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_shotchartleaguewide(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_shotchartleaguewide <- function(
     league_id = '00',
     season = year_to_season(most_recent_nba_season() - 1),
@@ -152,12 +160,13 @@ nba_shotchartleaguewide <- function(
   )
   return(df_list)
 }
+
 #' **Get NBA Stats API Shot Chart for Lineups**
-#' @name sc_lineups
+#' @name nba_shotchartlineupdetail
 NULL
 #' @title
 #' **Get NBA Stats API Shot Chart for Lineups**
-#' @rdname sc_lineups
+#' @rdname nba_shotchartlineupdetail
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param cfid cfid
@@ -175,7 +184,7 @@ NULL
 #' @param game_event_id game_event_id
 #' @param game_id game_id
 #' @param game_segment game_segment
-#' @param group_id_2 group_id_2
+#' @param group_id2 group_id2
 #' @param group_mode group_mode
 #' @param group_quantity group_quantity
 #' @param last_n_games last_n_games
@@ -221,6 +230,12 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_shotchartlineupdetail(group_id = '-202689-203493-203501-1626174-1627827-',
+#'                            group_id2 = '-202689-203493-203501-1626174-1627827-',
+#'                            season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_shotchartlineupdetail <- function(
     ahead_behind = '',
     cfid = '',
@@ -238,7 +253,7 @@ nba_shotchartlineupdetail <- function(
     game_event_id = '',
     game_id = '',
     game_segment = '',
-    group_id_2 = '-202689-203493-203501-1626174-1627827-',
+    group_id2 = '-202689-203493-203501-1626174-1627827-',
     group_mode = '',
     group_quantity = '5',
     last_n_games = '0',
@@ -301,7 +316,7 @@ nba_shotchartlineupdetail <- function(
     GameEventID = game_event_id,
     GameID = game_id,
     GameSegment = game_segment,
-    GroupID = group_id_2,
+    GroupID = group_id2,
     GroupMode = group_mode,
     GroupQuantity = group_quantity,
     LastNGames = last_n_games,

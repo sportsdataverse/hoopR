@@ -1,9 +1,9 @@
 #' **Get NBA Stats API League Hustle Stats Player**
-#' @name hustle_p
+#' @name nba_leaguehustlestatsplayer
 NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Player**
-#' @rdname hustle_p
+#' @rdname nba_leaguehustlestatsplayer
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -37,6 +37,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Hustle Stats](https://www.nba.com/stats/players/hustle)
+#' ```r
+#'  nba_leaguehustlestatsplayer(league_id = '00')
+#'  nba_leaguehustlestatsplayer(league_id = '00', team_id = '1610612761')
+#'
+#' ```
 nba_leaguehustlestatsplayer <- function(
     college = '',
     conference = '',
@@ -57,7 +64,7 @@ nba_leaguehustlestatsplayer <- function(
     per_mode = 'Totals',
     player_experience = '',
     player_position = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',
@@ -116,11 +123,11 @@ nba_leaguehustlestatsplayer <- function(
 }
 
 #' **Get NBA Stats API League Hustle Stats Player Leaders**
-#' @name hustle_pl
+#' @name nba_leaguehustlestatsplayerleaders
 NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Player Leaders**
-#' @rdname hustle_pl
+#' @rdname nba_leaguehustlestatsplayerleaders
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -154,6 +161,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Hustle Stats Leaders](https://www.nba.com/stats/players/hustle-leaders)
+#' ```r
+#'  nba_leaguehustlestatsplayerleaders(league_id = '00')
+#' ```
 nba_leaguehustlestatsplayerleaders <- function(
     college = '',
     conference = '',
@@ -174,7 +186,7 @@ nba_leaguehustlestatsplayerleaders <- function(
     per_mode = 'Totals',
     player_experience = '',
     player_position = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',
@@ -233,11 +245,11 @@ nba_leaguehustlestatsplayerleaders <- function(
 }
 
 #' **Get NBA Stats API League Hustle Stats Team**
-#' @name hustle_t
+#' @name nba_leaguehustlestatsteam
 NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Team**
-#' @rdname hustle_t
+#' @rdname nba_leaguehustlestatsteam
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -271,6 +283,12 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Hustle Stats](https://www.nba.com/stats/teams/hustle)
+#' ```r
+#'  nba_leaguehustlestatsteam(league_id = '00')
+#'
+#' ```
 nba_leaguehustlestatsteam <- function(
     college = '',
     conference = '',
@@ -291,7 +309,7 @@ nba_leaguehustlestatsteam <- function(
     per_mode = 'Totals',
     player_experience = '',
     player_position = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',
@@ -349,11 +367,11 @@ nba_leaguehustlestatsteam <- function(
   return(df_list)
 }
 #' **Get NBA Stats API League Hustle Stats Team Leaders**
-#' @name hustle_tl
+#' @name nba_leaguehustlestatsteamleaders
 NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Team Leaders**
-#' @rdname hustle_tl
+#' @rdname nba_leaguehustlestatsteamleaders
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -387,6 +405,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Hustle Stats Leaders](https://www.nba.com/stats/teams/hustle-leaders)
+#' ```r
+#'  nba_leaguehustlestatsteamleaders(league_id = '00')
+#' ```
 nba_leaguehustlestatsteamleaders <- function(
     college = '',
     conference = '',
@@ -407,7 +430,7 @@ nba_leaguehustlestatsteamleaders <- function(
     per_mode = 'Totals',
     player_experience = '',
     player_position = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',

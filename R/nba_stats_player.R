@@ -1,10 +1,10 @@
 
 #' **Get NBA Stats API Player Index**
-#' @name p_index
+#' @name nba_playerindex
 NULL
 #' @title
 #' **Get NBA Stats API Player Index**
-#' @rdname p_index
+#' @rdname nba_playerindex
 #' @author Saiem Gilani
 #' @param college Player College
 #' @param country Player Country
@@ -24,6 +24,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Index](https://www.nba.com/stats/players)
+#' ```r
+#'  nba_playerindex()
+#' ```
 nba_playerindex <- function(
     college = '',
     country = '',
@@ -33,7 +38,7 @@ nba_playerindex <- function(
     height = '',
     historical = 1,
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     team_id = '0',
     weight = '',
@@ -77,11 +82,11 @@ nba_playerindex <- function(
 }
 
 #' **Get NBA Stats API Player Head-shot**
-#' @name p_headshot
+#' @name nba_playerheadshot
 NULL
 #' @title
 #' **Get NBA Stats API Player Head-shot**
-#' @rdname p_headshot
+#' @rdname nba_playerheadshot
 #' @author Saiem Gilani
 #' @param player_id Player ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -90,6 +95,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Headshot](https://cdn.nba.com/headshots/nba/latest/260x190/2544.png)
+#' ```r
+#'  nba_playerheadshot(player_id = '2544')
+#' ```
 nba_playerheadshot <- function(
     player_id = '2544',
     ...){
@@ -115,11 +125,11 @@ nba_playerheadshot <- function(
 }
 
 #' **Get NBA Stats API Player Awards**
-#' @name playerawards
+#' @name nba_playerawards
 NULL
 #' @title
 #' **Get NBA Stats API Player Awards**
-#' @rdname playerawards
+#' @rdname nba_playerawards
 #' @author Saiem Gilani
 #' @param player_id Player ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -128,6 +138,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Awards](https://www.nba.com/stats/player/2544/career)
+#' ```r
+#'  nba_playerawards(player_id = '2544')
+#' ```
 nba_playerawards <- function(
     player_id,
     ...){
@@ -157,11 +172,11 @@ nba_playerawards <- function(
 }
 
 #' **Get NBA Stats API Player Career By College**
-#' @name pcareerbycollege
+#' @name nba_playercareerbycollege
 NULL
 #' @title
 #' **Get NBA Stats API Player Career By College**
-#' @rdname pcareerbycollege
+#' @rdname nba_playercareerbycollege
 #' @author Saiem Gilani
 #' @param college College Name
 #' @param season Season - format 2020-21
@@ -174,11 +189,15 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playercareerbycollege(college = 'Florida State', per_mode = 'PerGame')
+#' ```
 nba_playercareerbycollege <- function(
     college = 'Florida State',
     league_id = '00',
     per_mode = 'Totals',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
   college <- gsub(' ','+',college)
@@ -213,11 +232,11 @@ nba_playercareerbycollege <- function(
 
 
 #' **Get NBA Stats API Player Career By College Rollup**
-#' @name pcareerbycollege_ru
+#' @name nba_playercareerbycollegerollup
 NULL
 #' @title
 #' **Get NBA Stats API Player Career By College Rollup**
-#' @rdname pcareerbycollege_ru
+#' @rdname nba_playercareerbycollegerollup
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
@@ -229,10 +248,14 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playercareerbycollegerollup(per_mode = 'Totals')
+#' ```
 nba_playercareerbycollegerollup <- function(
     league_id = '00',
     per_mode = 'Totals',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -248,7 +271,7 @@ nba_playercareerbycollegerollup <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -266,11 +289,11 @@ nba_playercareerbycollegerollup <- function(
 
 
 #' **Get NBA Stats API Player Career Stats**
-#' @name playercareerstats
+#' @name nba_playercareerstats
 NULL
 #' @title
 #' **Get NBA Stats API Player Career Stats**
-#' @rdname playercareerstats
+#' @rdname nba_playercareerstats
 #' @author Saiem Gilani
 #' @param player_id Player ID
 #' @param per_mode Per Mode - PerGame, Totals
@@ -283,6 +306,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Career Stats](https://www.nba.com/stats/player/2544/career)
+#' ```r
+#'  nba_playercareerstats(player_id = '2544')
+#' ```
 nba_playercareerstats <- function(
     league_id = '00',
     per_mode = 'Totals',
@@ -317,11 +345,11 @@ nba_playercareerstats <- function(
 }
 
 #' **Get NBA Stats API Player Fantasy Profile**
-#' @name pfantasy
+#' @name nba_playerfantasyprofile
 NULL
 #' @title
 #' **Get NBA Stats API Player Fantasy Profile**
-#' @rdname pfantasy
+#' @rdname nba_playerfantasyprofile
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param measure_type measure_type
@@ -338,6 +366,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playerfantasyprofile(player_id = '2544')
+#' ```
 nba_playerfantasyprofile <- function(
     league_id = '00',
     measure_type = 'Base',
@@ -346,7 +378,7 @@ nba_playerfantasyprofile <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -387,11 +419,11 @@ nba_playerfantasyprofile <- function(
 
 
 #' **Get NBA Stats API Player Fantasy Profile Bar Graph**
-#' @name pfantasy_bg
+#' @name nba_playerfantasyprofilebargraph
 NULL
 #' @title
 #' **Get NBA Stats API Player Fantasy Profile Bar Graph**
-#' @rdname pfantasy_bg
+#' @rdname nba_playerfantasyprofilebargraph
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param player_id Player ID
@@ -403,10 +435,14 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playerfantasyprofilebargraph(player_id = '2544')
+#' ```
 nba_playerfantasyprofilebargraph <- function(
     league_id = '00',
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -441,11 +477,11 @@ nba_playerfantasyprofilebargraph <- function(
 
 
 #' **Get NBA Stats API Player Estimated Metrics**
-#' @name p_est_metr
+#' @name nba_playerestimatedmetrics
 NULL
 #' @title
 #' **Get NBA Stats API Player Estimated Metrics**
-#' @rdname p_est_metr
+#' @rdname nba_playerestimatedmetrics
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
@@ -456,9 +492,14 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Estimated Metrics](https://www.nba.com/stats/players/estimated-advanced)
+#' ```r
+#'  nba_playerestimatedmetrics()
+#' ```
 nba_playerestimatedmetrics <- function(
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -474,9 +515,19 @@ nba_playerestimatedmetrics <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url)
 
-      df_list <- nba_stats_map_result_sets(resp)
+
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet %>%
+          data.frame(stringsAsFactors = F) %>%
+          dplyr::as_tibble()
+
+        json_names <- resp$resultSet$headers
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
 
     },
     error = function(e) {
@@ -492,11 +543,11 @@ nba_playerestimatedmetrics <- function(
 
 
 #' **Get NBA Stats API Player Game Log**
-#' @name p_gamelog
+#' @name nba_playergamelog
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Log**
-#' @rdname p_gamelog
+#' @rdname nba_playergamelog
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -510,12 +561,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Game Log](https://www.nba.com/stats/player/2544/boxscores-traditional)
+#' ```r
+#'  nba_playergamelog(player_id = '2544')
+#' ```
 nba_playergamelog <- function(
     date_from = '',
     date_to = '',
     league_id = '00',
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -551,11 +607,11 @@ nba_playergamelog <- function(
 }
 
 #' **Get NBA Stats API Player Game Logs**
-#' @name p_gamelogs
+#' @name nba_playergamelogs
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Logs**
-#' @rdname p_gamelogs
+#' @rdname nba_playergamelogs
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -583,6 +639,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Game Logs](https://www.nba.com/stats/player/2544/boxscores-traditional)
+#' ```r
+#'  nba_playergamelogs(player_id = '2544')
+#' ```
 nba_playergamelogs <- function(
     date_from = '',
     date_to = '',
@@ -598,7 +659,7 @@ nba_playergamelogs <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',
@@ -653,11 +714,11 @@ nba_playergamelogs <- function(
 
 
 #' **Get NBA Stats API Player Game Streak Finder**
-#' @name pg_streak
+#' @name nba_playergamestreakfinder
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Streak Finder**
-#' @rdname pg_streak
+#' @rdname nba_playergamestreakfinder
 #' @author Saiem Gilani
 #' @param active_streaks_only active_streaks_only
 #' @param conference conference
@@ -754,6 +815,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playergamestreakfinder()
+#' ```
 
 nba_playergamestreakfinder <- function(
     active_streaks_only = '',
@@ -836,7 +901,7 @@ nba_playergamestreakfinder <- function(
     po_round = '',
     player_id = '',
     rookie_year = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     starter_bench = '',
@@ -963,11 +1028,11 @@ nba_playergamestreakfinder <- function(
 
 
 #' **Get NBA Stats API Player Next N Games**
-#' @name p_n_g
+#' @name nba_playernextngames
 NULL
 #' @title
 #' **Get NBA Stats API Player Next N Games**
-#' @rdname p_n_g
+#' @rdname nba_playernextngames
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param number_of_games N in number of games
@@ -980,11 +1045,15 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playernextngames(player_id = '2544')
+#' ```
 nba_playernextngames <- function(
     league_id = '',
     number_of_games = 2147483647,
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -1022,11 +1091,11 @@ nba_playernextngames <- function(
 
 
 #' **Get NBA Stats API Player Profile V2**
-#' @name playerprofilev2
+#' @name nba_playerprofilev2
 NULL
 #' @title
 #' **Get NBA Stats API Player Profile V2**
-#' @rdname playerprofilev2
+#' @rdname nba_playerprofilev2
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param player_id Player ID
@@ -1039,6 +1108,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Profile](https://www.nba.com/stats/player/2544/career)
+#' ```r
+#'  nba_playerprofilev2(player_id = '2544')
+#' ```
 nba_playerprofilev2 <- function(
     league_id = '',
     per_mode = 'Totals',
@@ -1074,11 +1148,11 @@ nba_playerprofilev2 <- function(
 
 
 #' **Get NBA Stats API Player vs Player**
-#' @name playervsplayer
+#' @name nba_playervsplayer
 NULL
 #' @title
 #' **Get NBA Stats API Player vs Player**
-#' @rdname playervsplayer
+#' @rdname nba_playervsplayer
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1109,6 +1183,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playervsplayer(player_id = '2544', vs_player_id = '203076')
+#' ```
 nba_playervsplayer <- function(
     date_from = '',
     date_to = '',
@@ -1126,7 +1204,7 @@ nba_playervsplayer <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     vs_conference = '',
@@ -1182,11 +1260,11 @@ nba_playervsplayer <- function(
 
 
 #' **Get NBA Stats API Player Compare**
-#' @name playercompare
+#' @name nba_playercompare
 NULL
 #' @title
 #' **Get NBA Stats API Player Compare**
-#' @rdname playercompare
+#' @rdname nba_playercompare
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -1218,6 +1296,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_playercompare(player_id_list = '202681,203078,2544,201567,203954', vs_player_id_list = '201566,201939,201935,201142,203076')
+#' ```
 nba_playercompare <- function(
     conference = '',
     date_from = '',

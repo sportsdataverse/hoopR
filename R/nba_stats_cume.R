@@ -1,9 +1,9 @@
 #' **Get NBA Stats API Cumulative Player Stats**
-#' @name cumestatsplayer
+#' @name nba_cumestatsplayer
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Player Stats**
-#' @rdname cumestatsplayer
+#' @rdname nba_cumestatsplayer
 #' @author Saiem Gilani
 #' @param game_ids game_ids
 #' @param league_id league_id
@@ -17,6 +17,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [CUME Stats](https://www.nba.com/stats/cumestats)
+#' ```r
+#'  nba_cumestatsplayer()
+#' ```
 
 nba_cumestatsplayer <- function(
   game_ids = '0022000756',
@@ -57,11 +62,11 @@ nba_cumestatsplayer <- function(
 }
 
 #' **Get NBA Stats API Cumulative Player Game Stats**
-#' @name cumestatsplayergames
+#' @name nba_cumestatsplayergames
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Player Game Stats**
-#' @rdname cumestatsplayergames
+#' @rdname nba_cumestatsplayergames
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param location location
@@ -78,12 +83,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [CUME Stats](https://www.nba.com/stats/cumestats)
+#' ```r
+#'  nba_cumestatsplayergames(player_id = '2544')
+#' ```
 nba_cumestatsplayergames <- function(
   league_id = '00',
   location = '',
   outcome = '',
   player_id = '2544',
-  season = '2020-21',
+  season = year_to_season(most_recent_nba_season() - 1),
   season_type = 'Regular Season',
   vs_conference = '',
   vs_division = '',
@@ -123,11 +133,11 @@ nba_cumestatsplayergames <- function(
 }
 
 #' **Get NBA Stats API Cumulative Team Stats**
-#' @name cumestatsteam
+#' @name nba_cumestatsteam
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Team Stats**
-#' @rdname cumestatsteam
+#' @rdname nba_cumestatsteam
 #' @author Saiem Gilani
 #' @param game_ids game_ids
 #' @param league_id league_id
@@ -140,12 +150,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [CUME Stats](https://www.nba.com/stats/cumestats)
+#' ```r
+#'  nba_cumestatsteam()
+#' ```
 nba_cumestatsteam <- function(
   game_ids = '0022000756',
   league_id = '00',
   season = '2020-21',
   season_type = 'Regular Season',
-  team_id = '',
+  team_id = '1610612739',
   ...){
 
   season_type <- gsub(' ','+',season_type)
@@ -177,11 +192,11 @@ nba_cumestatsteam <- function(
   return(df_list)
 }
 #' **Get NBA Stats API Cumulative Team Game Stats**
-#' @name cumestatsteamgames
+#' @name nba_cumestatsteamgames
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Team Game Stats**
-#' @rdname cumestatsteamgames
+#' @rdname nba_cumestatsteamgames
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param location location
@@ -199,11 +214,16 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [CUME Stats](https://www.nba.com/stats/cumestats)
+#' ```r
+#'  nba_cumestatsteamgames()
+#' ```
 nba_cumestatsteamgames <- function(
   league_id = '00',
   location = '',
   outcome = '',
-  season = '2020-21',
+  season = year_to_season(most_recent_nba_season() - 1),
   season_id = '',
   season_type = 'Regular Season',
   team_id = 1610612739,
