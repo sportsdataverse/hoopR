@@ -2,6 +2,8 @@
 - Add proxy rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
 - ```nba_shotchartlineupdetail()``` function added.
 - ```nba_synergyplaytypes()``` function added.
+- ```nba_live_pbp()``` function added.
+- ```nba_live_boxscore()``` function added.
 - ```nba_franchiseleaderswrank()``` function added.
 - ```nba_videodetailsasset()``` function added.
 
