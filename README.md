@@ -66,7 +66,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 10.49 sec elapsed
+    ## 4.49 sec elapsed
 
     ## 515664 rows of NBA play-by-play data from 1093 games.
 
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 28.57 sec elapsed
+    ## 13.89 sec elapsed
 
     ## 1951588 rows of men's college basketball play-by-play data from 6098 games.
 
@@ -118,6 +118,10 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 -   [Billy Fryer](https://twitter.com/_b4billy_)  
     <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
     <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
+
+-   [Ross Drucker](https://twitter.com/rossdrucker9)  
+    <a href="https://twitter.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge" alt="@rossdrucker9" /></a>
+    <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
 
 ## **Citations**
 
