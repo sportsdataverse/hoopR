@@ -13,7 +13,11 @@ Authors@R:
       person(given = "Billy",
              family = "Fryer",
              role = c("ctb"),
-             email = "billyfryer@att.net"))
+             email = "billyfryer@att.net"),
+      person(given = "Ross",
+             family = "Drucker",
+             role = c("ctb"),
+             email = "ross.a.drucker@gmail.com"))
 Description: A utility to quickly obtain clean and tidy men's
     basketball play by play data. Provides functions to access
     live play by play and box score data from ESPN<https://www.espn.com> with shot locations
