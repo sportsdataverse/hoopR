@@ -190,9 +190,78 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_lineups</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-03-24 11:52:35 - Florida St. - 2021 Team Lineups are missing</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in kp_team_lineups(team = "Florida St.", year = 2021) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   object 'kenpom' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    year        team min_pct pg_number pg_player_first_name pg_player_last_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2021 Florida St.   0.131        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2021 Florida St.   0.110        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2021 Florida St.   0.077        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2021 Florida St.   0.046        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2021 Florida St.   0.045         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2021 Florida St.   0.030        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2021 Florida St.   0.028        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2021 Florida St.   0.027         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2021 Florida St.   0.024        23                   MJ              Walker</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2021 Florida St.   0.022         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2021 Florida St.   0.032        NA              UNKNOWN                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    pg_hgt pg_wgt pg_yr sg_number sg_player_first_name sg_player_last_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     6-5    213    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     6-5    213    Sr         0              RayQuan               Evans</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     6-5    213    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     6-5    213    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     6-9    227    Fr        24              Sardaar             Calhoun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6-5    213    Sr        24              Sardaar             Calhoun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     6-5    213    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     6-9    227    Fr        24              Sardaar             Calhoun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     6-5    213    Sr         0              RayQuan               Evans</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    6-9    227    Fr        24              Sardaar             Calhoun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    sg_hgt sg_wgt sg_yr sf_number sf_player_first_name sf_player_last_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     6-6    215    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     6-4    210    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     6-6    215    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     6-6    215    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     6-6    220    Jr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6-6    220    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     6-6    215    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     6-6    220    Jr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     6-4    210    Sr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    6-6    220    Jr         2              Anthony              Polite</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    sf_hgt sf_wgt sf_yr pf_number pf_player_first_name pf_player_last_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     6-9    227    Fr         1              RaiQuan                Gray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     6-6    215    Jr         1              RaiQuan                Gray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     6-9    227    Fr        10                Malik             Osborne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     6-9    227    Fr        10                Malik             Osborne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     6-6    215    Jr        10                Malik             Osborne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6-9    227    Fr         1              RaiQuan                Gray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     6-9    227    Fr         1              RaiQuan                Gray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     6-6    215    Jr        10                Malik             Osborne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     6-6    215    Jr         4              Scottie              Barnes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    6-6    215    Jr        10                Malik             Osborne</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   &lt;NA&gt;     NA              NA                 &lt;NA&gt;                &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    pf_hgt pf_wgt pf_yr c_number c_player_first_name c_player_last_name c_hgt</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     6-8    260    Jr        5               Balsa          Koprivica   7-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     6-8    260    Jr        5               Balsa          Koprivica   7-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     6-9    225    Jr        1             RaiQuan               Gray   6-8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     6-9    225    Jr        5               Balsa          Koprivica   7-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     6-9    225    Jr       34               Tanor               Ngom   7-2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6-8    260    Jr        5               Balsa          Koprivica   7-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     6-8    260    Jr       34               Tanor               Ngom   7-2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     6-9    225    Jr        5               Balsa          Koprivica   7-1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     6-9    227    Fr        1             RaiQuan               Gray   6-8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    6-9    225    Jr        1             RaiQuan               Gray   6-8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   &lt;NA&gt;     NA             NA                &lt;NA&gt;               &lt;NA&gt;  &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    c_wgt c_yr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    240   So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    240   So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    260   Jr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    240   So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    236   Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    240   So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    236   Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    240   So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    260   Jr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   260   Jr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11    NA &lt;NA&gt;</span>
 <span class="r-in"><span>  <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
