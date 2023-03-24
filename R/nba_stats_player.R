@@ -386,7 +386,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Fantasy Functions
+#' @family NBA Player Functions
+#' @family NBA Fantasy Functions
 #' @details
 #' ```r
 #'  nba_playerfantasyprofile(player_id = '2544')
@@ -458,7 +459,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Fantasy Functions
+#' @family NBA Player Functions
+#' @family NBA Fantasy Functions
 #' @details
 #' ```r
 #'  nba_playerfantasyprofilebargraph(player_id = '2544')
@@ -851,7 +853,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA Player Functions, NBA Game Finder Functions
+#' @family NBA Player Functions
+#' @family NBA Game Finder Functions
 #' @details
 #' ```r
 #'  nba_playergamestreakfinder()

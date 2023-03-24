@@ -109,7 +109,60 @@ Returns a named list of data frames: LeagueDashTeamStats
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashteamstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions: 
+\code{\link{nba_leaguedashlineups}()},
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerbiostats}()},
+\code{\link{nba_leaguedashplayerclutch}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashplayerstats}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_leaguedashteamclutch}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_leaguegamefinder}()},
+\code{\link{nba_leaguegamelog}()},
+\code{\link{nba_leaguelineupviz}()},
+\code{\link{nba_leagueplayerondetails}()},
+\code{\link{nba_leagueseasonmatchups}()},
+\code{\link{nba_leaguestandingsv3}()},
+\code{\link{nba_leaguestandings}()},
+\code{\link{nba_matchupsrollup}()},
+\code{\link{nba_playoffpicture}()},
+\code{\link{nba_shotchartleaguewide}()}
+
+Other NBA Team Functions: 
+\code{\link{nba_teamdashboardbyclutch}()},
+\code{\link{nba_teamdashboardbygamesplits}()},
+\code{\link{nba_teamdashboardbygeneralsplits}()},
+\code{\link{nba_teamdashboardbylastngames}()},
+\code{\link{nba_teamdashboardbyopponent}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()},
+\code{\link{nba_teamdashboardbyteamperformance}()},
+\code{\link{nba_teamdashboardbyyearoveryear}()},
+\code{\link{nba_teamdashlineups}()},
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()},
+\code{\link{nba_teamdetails}()},
+\code{\link{nba_teamestimatedmetrics}()},
+\code{\link{nba_teamgamelogs}()},
+\code{\link{nba_teamgamelog}()},
+\code{\link{nba_teamgamestreakfinder}()},
+\code{\link{nba_teamhistoricalleaders}()},
+\code{\link{nba_teaminfocommon}()},
+\code{\link{nba_teamplayerdashboard}()},
+\code{\link{nba_teamplayeronoffdetails}()},
+\code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teamvsplayer}()},
+\code{\link{nba_teamyearbyyearstats}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA League Functions, NBA Team Functions}
+\concept{NBA League Functions}
+\concept{NBA Team Functions}

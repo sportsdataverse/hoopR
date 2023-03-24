@@ -23,7 +23,39 @@ Returns a named list of data frames: PlayerStats, TeamStats
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreplayertrackv2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Boxscore Functions: 
+\code{\link{nba_boxscoreadvancedv2}()},
+\code{\link{nba_boxscoredefensive}()},
+\code{\link{nba_boxscorefourfactorsv2}()},
+\code{\link{nba_boxscorematchups}()},
+\code{\link{nba_boxscoremiscv2}()},
+\code{\link{nba_boxscorescoringv2}()},
+\code{\link{nba_boxscoresummaryv2}()},
+\code{\link{nba_boxscoretraditionalv2}()},
+\code{\link{nba_boxscoreusagev2}()},
+\code{\link{nba_gamerotation}()},
+\code{\link{nba_hustlestatsboxscore}()},
+\code{\link{nba_live_boxscore}()}
+
+Other NBA Player Tracking Functions: 
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_playerdashptpass}()},
+\code{\link{nba_playerdashptreb}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()},
+\code{\link{nba_synergyplaytypes}()},
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Boxscore Functions, NBA Player Tracking Functions}
+\concept{NBA Boxscore Functions}
+\concept{NBA Player Tracking Functions}

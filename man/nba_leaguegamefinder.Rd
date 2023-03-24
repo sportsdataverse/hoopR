@@ -287,7 +287,38 @@ Return a named list of data frames: LeagueGameFinderResults
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguegamefinder(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions: 
+\code{\link{nba_leaguedashlineups}()},
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerbiostats}()},
+\code{\link{nba_leaguedashplayerclutch}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashplayerstats}()},
+\code{\link{nba_leaguedashptdefend}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()},
+\code{\link{nba_leaguedashteamclutch}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_leaguegamelog}()},
+\code{\link{nba_leaguelineupviz}()},
+\code{\link{nba_leagueplayerondetails}()},
+\code{\link{nba_leagueseasonmatchups}()},
+\code{\link{nba_leaguestandingsv3}()},
+\code{\link{nba_leaguestandings}()},
+\code{\link{nba_matchupsrollup}()},
+\code{\link{nba_playoffpicture}()},
+\code{\link{nba_shotchartleaguewide}()}
+
+Other NBA Game Finder Functions: 
+\code{\link{nba_playergamestreakfinder}()},
+\code{\link{nba_teamgamestreakfinder}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA League Functions, NBA Game Finder Functions}
+\concept{NBA Game Finder Functions}
+\concept{NBA League Functions}

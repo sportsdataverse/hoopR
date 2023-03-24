@@ -32,13 +32,6 @@ Return a named list of data frames: PlayoffSeries
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonplayoffseries(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
-\seealso{
-Other NBA Roster Functions: 
-\code{\link{nba_commonallplayers}()},
-\code{\link{nba_commonplayerinfo}()},
-\code{\link{nba_commonteamroster}()}
-}
 \author{
 Saiem Gilani
 }
-\concept{NBA Roster Functions}

@@ -23,7 +23,26 @@ Returns a data frame: PlayByPlay
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_boxscore(game_id = 0022201086)
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Boxscore Functions: 
+\code{\link{nba_boxscoreadvancedv2}()},
+\code{\link{nba_boxscoredefensive}()},
+\code{\link{nba_boxscorefourfactorsv2}()},
+\code{\link{nba_boxscorematchups}()},
+\code{\link{nba_boxscoremiscv2}()},
+\code{\link{nba_boxscoreplayertrackv2}()},
+\code{\link{nba_boxscorescoringv2}()},
+\code{\link{nba_boxscoresummaryv2}()},
+\code{\link{nba_boxscoretraditionalv2}()},
+\code{\link{nba_boxscoreusagev2}()},
+\code{\link{nba_gamerotation}()},
+\code{\link{nba_hustlestatsboxscore}()}
+
+Other NBA Live Functions: 
+\code{\link{nba_live_pbp}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Boxscore Functions, NBA Live Functions}
+\concept{NBA Boxscore Functions}
+\concept{NBA Live Functions}

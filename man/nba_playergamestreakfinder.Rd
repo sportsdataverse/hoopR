@@ -290,7 +290,49 @@ Return a named list of data frames: PlayerGameStreakFinderResults
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playergamestreakfinder()
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions: 
+\code{\link{nba_leaguedashplayerbiostats}()},
+\code{\link{nba_leaguedashplayerclutch}()},
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashplayerstats}()},
+\code{\link{nba_leagueplayerondetails}()},
+\code{\link{nba_leagueseasonmatchups}()},
+\code{\link{nba_matchupsrollup}()},
+\code{\link{nba_playerawards}()},
+\code{\link{nba_playercareerbycollegerollup}()},
+\code{\link{nba_playercareerbycollege}()},
+\code{\link{nba_playercareerstats}()},
+\code{\link{nba_playercompare}()},
+\code{\link{nba_playerdashboardbyclutch}()},
+\code{\link{nba_playerdashboardbygamesplits}()},
+\code{\link{nba_playerdashboardbygeneralsplits}()},
+\code{\link{nba_playerdashboardbylastngames}()},
+\code{\link{nba_playerdashboardbyopponent}()},
+\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_playerdashboardbyteamperformance}()},
+\code{\link{nba_playerdashboardbyyearoveryear}()},
+\code{\link{nba_playerdashptpass}()},
+\code{\link{nba_playerdashptreb}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()},
+\code{\link{nba_playerestimatedmetrics}()},
+\code{\link{nba_playerfantasyprofilebargraph}()},
+\code{\link{nba_playerfantasyprofile}()},
+\code{\link{nba_playergamelogs}()},
+\code{\link{nba_playergamelog}()},
+\code{\link{nba_playerheadshot}()},
+\code{\link{nba_playerindex}()},
+\code{\link{nba_playernextngames}()},
+\code{\link{nba_playerprofilev2}()},
+\code{\link{nba_playervsplayer}()}
+
+Other NBA Game Finder Functions: 
+\code{\link{nba_leaguegamefinder}()},
+\code{\link{nba_teamgamestreakfinder}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Player Functions, NBA Game Finder Functions}
+\concept{NBA Game Finder Functions}
+\concept{NBA Player Functions}

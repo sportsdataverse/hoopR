@@ -142,7 +142,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Lineup Functions
+#' @family NBA League Functions
+#' @family NBA Lineup Functions
 #' @details
 #' [Lineups Dashboard](https://www.nba.com/stats/lineups/traditional)
 #' ```r
@@ -270,7 +271,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Lineup Functions
+#' @family NBA League Functions
+#' @family NBA Lineup Functions
 #' @details
 #' [Lineups Dashboard](https://www.nba.com/stats/lineups/traditional)
 #' ```r
@@ -396,7 +398,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Player Functions
+#' @family NBA League Functions
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_leagueplayerondetails(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
@@ -496,7 +499,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Player Functions
+#' @family NBA League Functions
+#' @family NBA Player Functions
 #' @details
 #' [Player Season Matchups](https://www.nba.com/stats/player/2544/head-to-head)
 #' ```r
@@ -568,7 +572,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Player Functions
+#' @family NBA League Functions
+#' @family NBA Player Functions
 #' @details
 #' [Player Matchups Rollup](https://www.nba.com/stats/player/2544/by-position)
 #' ```r

@@ -23,7 +23,29 @@ Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStat
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_hustlestatsboxscore(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Boxscore Functions: 
+\code{\link{nba_boxscoreadvancedv2}()},
+\code{\link{nba_boxscoredefensive}()},
+\code{\link{nba_boxscorefourfactorsv2}()},
+\code{\link{nba_boxscorematchups}()},
+\code{\link{nba_boxscoremiscv2}()},
+\code{\link{nba_boxscoreplayertrackv2}()},
+\code{\link{nba_boxscorescoringv2}()},
+\code{\link{nba_boxscoresummaryv2}()},
+\code{\link{nba_boxscoretraditionalv2}()},
+\code{\link{nba_boxscoreusagev2}()},
+\code{\link{nba_gamerotation}()},
+\code{\link{nba_live_boxscore}()}
+
+Other NBA Hustle Functions: 
+\code{\link{nba_leaguehustlestatsplayerleaders}()},
+\code{\link{nba_leaguehustlestatsplayer}()},
+\code{\link{nba_leaguehustlestatsteamleaders}()},
+\code{\link{nba_leaguehustlestatsteam}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Boxscore Functions, NBA Hustle Functions}
+\concept{NBA Boxscore Functions}
+\concept{NBA Hustle Functions}

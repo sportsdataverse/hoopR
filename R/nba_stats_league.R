@@ -352,7 +352,8 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-#' @family NBA League Functions, NBA Game Finder Functions
+#' @family NBA League Functions
+#' @family NBA Game Finder Functions
 #' @details
 #' ```r
 #'  nba_leaguegamefinder(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))

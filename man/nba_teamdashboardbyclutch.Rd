@@ -98,7 +98,39 @@ Last5MinPlusMinus5PointTeamDashboard, OverallTeamDashboard
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyclutch(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Team Functions: 
+\code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_teamdashboardbygamesplits}()},
+\code{\link{nba_teamdashboardbygeneralsplits}()},
+\code{\link{nba_teamdashboardbylastngames}()},
+\code{\link{nba_teamdashboardbyopponent}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()},
+\code{\link{nba_teamdashboardbyteamperformance}()},
+\code{\link{nba_teamdashboardbyyearoveryear}()},
+\code{\link{nba_teamdashlineups}()},
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptreb}()},
+\code{\link{nba_teamdashptshots}()},
+\code{\link{nba_teamdetails}()},
+\code{\link{nba_teamestimatedmetrics}()},
+\code{\link{nba_teamgamelogs}()},
+\code{\link{nba_teamgamelog}()},
+\code{\link{nba_teamgamestreakfinder}()},
+\code{\link{nba_teamhistoricalleaders}()},
+\code{\link{nba_teaminfocommon}()},
+\code{\link{nba_teamplayerdashboard}()},
+\code{\link{nba_teamplayeronoffdetails}()},
+\code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teamvsplayer}()},
+\code{\link{nba_teamyearbyyearstats}()}
+
+Other NBA Clutch Functions: 
+\code{\link{nba_leaguedashteamclutch}()},
+\code{\link{nba_playerdashboardbyclutch}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Team Functions, NBA Clutch Functions}
+\concept{NBA Clutch Functions}
+\concept{NBA Team Functions}

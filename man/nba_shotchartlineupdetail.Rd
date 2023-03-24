@@ -193,7 +193,24 @@ Return a named list of data frames: League_Wide
                            season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Shooting Functions: 
+\code{\link{nba_leaguedashplayershotlocations}()},
+\code{\link{nba_leaguedashteamptshot}()},
+\code{\link{nba_leaguedashteamshotlocations}()},
+\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_shotchartdetail}()},
+\code{\link{nba_shotchartleaguewide}()},
+\code{\link{nba_teamdashboardbyshootingsplits}()}
+
+Other NBA Lineup Functions: 
+\code{\link{nba_gamerotation}()},
+\code{\link{nba_leaguedashlineups}()},
+\code{\link{nba_leaguelineupviz}()},
+\code{\link{nba_teamdashlineups}()}
+}
 \author{
 Saiem Gilani
 }
-\concept{NBA Shooting Functions, NBA Lineup Functions}
+\concept{NBA Lineup Functions}
+\concept{NBA Shooting Functions}

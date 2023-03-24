@@ -80,6 +80,11 @@ Returns a named list of data frames: FantasyWidgetResult
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_fantasywidget(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Fantasy Functions: 
+\code{\link{nba_playerfantasyprofilebargraph}()},
+\code{\link{nba_playerfantasyprofile}()}
+}
 \author{
 Saiem Gilani
 }
