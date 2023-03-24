@@ -1,11 +1,11 @@
 ## Player Dashboard parameters are the same
 
 #' **Get NBA Stats API Player Dashboard by Clutch Splits**
-#' @name pbyclutch
+#' @name nba_playerdashboardbyclutch
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Clutch Splits**
-#' @rdname pbyclutch
+#' @rdname nba_playerdashboardbyclutch
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -39,6 +39,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Clutch Stats Dashboard](https://www.nba.com/stats/players/clutch-traditional)
+#' ```r
+#'  nba_playerdashboardbyclutch(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbyclutch <- function(
     date_from = '',
     date_to = '',
@@ -57,7 +62,7 @@ nba_playerdashboardbyclutch <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -114,11 +119,11 @@ nba_playerdashboardbyclutch <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Game Splits**
-#' @name pbygamesplits
+#' @name nba_playerdashboardbygamesplits
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Game Splits**
-#' @rdname pbygamesplits
+#' @rdname nba_playerdashboardbygamesplits
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -149,6 +154,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Game Splits](https://www.nba.com/stats/player/2544/traditional?Split=ingame)
+#' ```r
+#'  nba_playerdashboardbygamesplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbygamesplits <- function(
     date_from = '',
     date_to = '',
@@ -167,7 +177,7 @@ nba_playerdashboardbygamesplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -225,11 +235,11 @@ nba_playerdashboardbygamesplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by General Splits**
-#' @name pbygeneralsplits
+#' @name nba_playerdashboardbygeneralsplits
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by General Splits**
-#' @rdname pbygeneralsplits
+#' @rdname nba_playerdashboardbygeneralsplits
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -261,6 +271,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by General Splits](https://www.nba.com/stats/player/2544/traditional)
+#' ```r
+#'  nba_playerdashboardbygeneralsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbygeneralsplits <- function(
     date_from = '',
     date_to = '',
@@ -279,7 +294,7 @@ nba_playerdashboardbygeneralsplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -337,11 +352,11 @@ nba_playerdashboardbygeneralsplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Last N Games**
-#' @name pbylastngames
+#' @name nba_playerdashboardbylastngames
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Last N Games**
-#' @rdname pbylastngames
+#' @rdname nba_playerdashboardbylastngames
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -373,6 +388,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Last N Games](https://www.nba.com/stats/player/2544/traditional?Split=lastn)
+#' ```r
+#'  nba_playerdashboardbylastngames(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbylastngames <- function(
     date_from = '',
     date_to = '',
@@ -391,7 +411,7 @@ nba_playerdashboardbylastngames <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -448,11 +468,11 @@ nba_playerdashboardbylastngames <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Opponent**
-#' @name pbyopponent
+#' @name nba_playerdashboardbyopponent
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Opponent**
-#' @rdname pbyopponent
+#' @rdname nba_playerdashboardbyopponent
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -483,6 +503,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Opponent](https://www.nba.com/stats/player/2544/traditional?Split=opp)
+#' ```r
+#'  nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbyopponent <- function(
     date_from = '',
     date_to = '',
@@ -501,7 +526,7 @@ nba_playerdashboardbyopponent <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -557,11 +582,11 @@ nba_playerdashboardbyopponent <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Shooting Splits**
-#' @name pbyshootingsplits
+#' @name nba_playerdashboardbyshootingsplits
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Shooting Splits**
-#' @rdname pbyshootingsplits
+#' @rdname nba_playerdashboardbyshootingsplits
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -593,6 +618,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Shooting Splits](https://www.nba.com/stats/player/2544/shooting)
+#' ```r
+#'  nba_playerdashboardbyshootingsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbyshootingsplits <- function(
     date_from = '',
     date_to = '',
@@ -611,7 +641,7 @@ nba_playerdashboardbyshootingsplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -667,11 +697,11 @@ nba_playerdashboardbyshootingsplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Team Performance**
-#' @name pbyteamperformance
+#' @name nba_playerdashboardbyteamperformance
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Team Performance**
-#' @rdname pbyteamperformance
+#' @rdname nba_playerdashboardbyteamperformance
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -703,6 +733,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Team Performance](https://www.nba.com/stats/player/2544/traditional?Split=teamperf&PerMode=PerGame)
+#' ```r
+#'  nba_playerdashboardbyteamperformance(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbyteamperformance <- function(
     date_from = '',
     date_to = '',
@@ -721,7 +756,7 @@ nba_playerdashboardbyteamperformance <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -777,11 +812,11 @@ nba_playerdashboardbyteamperformance <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Year over Year**
-#' @name pbyyearoveryear
+#' @name nba_playerdashboardbyyearoveryear
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Year over Year**
-#' @rdname pbyyearoveryear
+#' @rdname nba_playerdashboardbyyearoveryear
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -812,6 +847,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Stats Dashboard by Team Performance](https://www.nba.com/stats/player/2544/traditional?Split=yoy&PerMode=PerGame)
+#' ```r
+#'  nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashboardbyyearoveryear <- function(
     date_from = '',
     date_to = '',
@@ -830,7 +870,7 @@ nba_playerdashboardbyyearoveryear <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -886,11 +926,11 @@ nba_playerdashboardbyyearoveryear <- function(
 }
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Passing**
-#' @name pptpass
+#' @name nba_playerdashptpass
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Passing**
-#' @rdname pptpass
+#' @rdname nba_playerdashptpass
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -914,6 +954,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Tracking (Second Spectrum) Stats - Passing](https://www.nba.com/stats/player/2544/passes-dash)
+#' ```r
+#'  nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashptpass  <- function(
     date_from = '',
     date_to = '',
@@ -925,7 +970,7 @@ nba_playerdashptpass  <- function(
     outcome = '',
     per_mode = 'Totals',
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -974,11 +1019,11 @@ nba_playerdashptpass  <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
-#' @name pptreb
+#' @name nba_playerdashptreb
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
-#' @rdname pptreb
+#' @rdname nba_playerdashptreb
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1005,6 +1050,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Tracking (Second Spectrum) Stats - Rebounding](https://www.nba.com/stats/player/2544/rebounds-dash)
+#' ```r
+#'  nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashptreb  <- function(
     date_from = '',
     date_to = '',
@@ -1018,7 +1068,7 @@ nba_playerdashptreb  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1070,11 +1120,11 @@ nba_playerdashptreb  <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Defense**
-#' @name pptshotdefend
+#' @name nba_playerdashptshotdefend
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Defense**
-#' @rdname pptshotdefend
+#' @rdname nba_playerdashptshotdefend
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1100,6 +1150,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Tracking (Second Spectrum) Stats - Defending](https://www.nba.com/stats/player/2544/defense-dash)
+#' ```r
+#'  nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashptshotdefend  <- function(
     date_from = '',
     date_to = '',
@@ -1113,7 +1168,7 @@ nba_playerdashptshotdefend  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1164,11 +1219,11 @@ nba_playerdashptshotdefend  <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Shots**
-#' @name pptshots
+#' @name nba_playerdashptshots
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Shots**
-#' @rdname pptshots
+#' @rdname nba_playerdashptshots
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1195,6 +1250,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Tracking (Second Spectrum) Stats - Shooting](https://www.nba.com/stats/player/2544/shots-dash)
+#' ```r
+#'  nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_playerdashptshots  <- function(
     date_from = '',
     date_to = '',
@@ -1208,7 +1268,7 @@ nba_playerdashptshots  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1248,6 +1308,75 @@ nba_playerdashptshots  <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player dashboard player-tracking shots data available for {player_id}!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+
+
+#' **Get NBA Stats API Synergy Play Type Stats**
+#' @name nba_synergyplaytypes
+NULL
+#' @title
+#' **Get NBA Stats API Synergy Play Type Stats**
+#' @rdname nba_synergyplaytypes
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param per_mode per_mode
+#' @param play_type play_type - 'Isolation', 'Transition', 'PRBallHandler', 'PRRollman', 'Postup',
+#'  'Spotup', 'Handoff', 'Cut', 'OffScreen', 'OffRebound', 'Misc'
+#' @param player_or_team player_or_team ('P' or 'T')
+#' @param season_type season_type
+#' @param season season
+#' @param type_grouping type_grouping - Offensive, Defensive
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @details
+#' [Synergy Play Type Stats](https://www.nba.com/stats/teams/isolation)
+#' ```r
+#'  nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
+nba_synergyplaytypes <- function(
+    league_id = '00',
+    per_mode = 'PerGame',
+    play_type = 'Isolation',
+    player_or_team = 'P',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    type_grouping = 'Offensive',
+    ...){
+  season_type <- gsub(' ','+',season_type)
+  version <- "synergyplaytypes"
+  endpoint <- nba_endpoint(version)
+
+  full_url <- paste0(endpoint,
+                     "?LeagueID=", league_id,
+                     "&PerMode=", per_mode,
+                     "&PlayType=", play_type,
+                     "&PlayerOrTeam=", player_or_team,
+                     "&SeasonType=", season_type,
+                     "&SeasonYear=", season,
+                     "&TypeGrouping=", type_grouping)
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no Synergy play types data for {season} available!"))
     },
     warning = function(w) {
     },

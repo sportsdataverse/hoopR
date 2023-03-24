@@ -99,6 +99,10 @@ request_with_proxy <- function(url,
   return(headers)
 }
 
+nba_live_endpoint <- function(endpoint){
+  base_url = glue::glue('https://cdn.nba.com/static/json/liveData/{endpoint}')
+  return(base_url)
+}
 nba_endpoint <- function(endpoint){
   all_endpoints = c(
     'alltimeleadersgrids',
@@ -240,6 +244,34 @@ nba_endpoint <- function(endpoint){
 }
 
 
+nba_stats_map_result_sets <- function(resp) {
+  if ("resultSets" %in% names(resp)) {
+    df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+      data <- resp$resultSets$rowSet[[x]] %>%
+        data.frame(stringsAsFactors = F) %>%
+        dplyr::as_tibble()
+
+      json_names <- resp$resultSets$headers[[x]]
+      colnames(data) <- json_names
+      return(data)
+    })
+    names(df_list) <- resp$resultSets$name
+    return(df_list)
+  } else {
+    df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+      data <- resp$resultSet$rowSet[[x]] %>%
+        data.frame(stringsAsFactors = F) %>%
+        dplyr::as_tibble()
+
+      json_names <- resp$resultSet$headers[[x]]
+      colnames(data) <- json_names
+      return(data)
+    })
+    names(df_list) <- resp$resultSet$name
+    return(df_list)
+  }
+}
+
 pad_id <- function(id = 21601112) {
   zeros <-
     10 - nchar(id)
@@ -266,19 +298,7 @@ pad_time <- function(time = 1) {
   glue("{start}{time}") %>% as.character()
 }
 
-nba_stats_map_result_sets <- function(resp) {
-  df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-    data <- resp$resultSets$rowSet[[x]] %>%
-      data.frame(stringsAsFactors = F) %>%
-      dplyr::as_tibble()
 
-    json_names <- resp$resultSets$headers[[x]]
-    colnames(data) <- json_names
-    return(data)
-  })
-  names(df_list) <- resp$resultSets$name
-  return(df_list)
-}
 #' @title **year to season (XXXX -> XXXX-YY)**
 #' @param year Four digit year (XXXX)
 #' @importFrom dplyr mutate filter select left_join

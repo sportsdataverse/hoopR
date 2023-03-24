@@ -1,10 +1,10 @@
 
 #' **Get NBA Stats API Boxscore Traditional V2**
-#' @name bs_trad_v2
+#' @name nba_boxscoretraditionalv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Traditional V2**
-#' @rdname bs_trad_v2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -61,11 +61,11 @@ nba_boxscoretraditionalv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Advanced V2**
-#' @name bs_adv_v2
+#' @name nba_boxscoreadvancedv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Advanced V2**
-#' @rdname bs_adv_v2
+#' @rdname nba_boxscoreadvancedv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -124,11 +124,11 @@ nba_boxscoreadvancedv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Defensive**
-#' @name bs_defensive
+#' @name nba_boxscoredefensive
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Defensive**
-#' @rdname bs_defensive
+#' @rdname nba_boxscoredefensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -170,11 +170,11 @@ nba_boxscoredefensive <- function(
 }
 
 #' **Get NBA Stats API Boxscore Four Factors V2**
-#' @name bs_ff_v2
+#' @name nba_boxscorefourfactorsv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Four Factors V2**
-#' @rdname bs_ff_v2
+#' @rdname nba_boxscorefourfactorsv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -231,11 +231,11 @@ nba_boxscorefourfactorsv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Misc V2**
-#' @name bs_misc_v2
+#' @name nba_boxscoremiscv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Misc V2**
-#' @rdname bs_misc_v2
+#' @rdname nba_boxscoremiscv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -292,11 +292,11 @@ nba_boxscoremiscv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Scoring V2**
-#' @name bs_scoring_v2
+#' @name nba_boxscorescoringv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Scoring V2**
-#' @rdname bs_scoring_v2
+#' @rdname nba_boxscorescoringv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -353,11 +353,11 @@ nba_boxscorescoringv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Usage V2**
-#' @name bs_usage_v2
+#' @name nba_boxscoreusagev2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Usage V2**
-#' @rdname bs_usage_v2
+#' @rdname nba_boxscoreusagev2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -414,11 +414,11 @@ nba_boxscoreusagev2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @name bs_summary_v2
+#' @name nba_boxscoresummaryv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @rdname bs_summary_v2
+#' @rdname nba_boxscoresummaryv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -460,11 +460,11 @@ nba_boxscoresummaryv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Matchups**
-#' @name bs_match
+#' @name nba_boxscorematchups
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Matchups**
-#' @rdname bs_match
+#' @rdname nba_boxscorematchups
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param version Boxscore Matchups version ("v2" available from 2016-17 onwards)
@@ -511,11 +511,11 @@ nba_boxscorematchups <- function(
 }
 
 #' **Get NBA Stats API Boxscore Player Tracking V2**
-#' @name bs_pt_v2
+#' @name nba_boxscoreplayertrackv2
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Player Tracking V2**
-#' @rdname bs_pt_v2
+#' @rdname nba_boxscoreplayertrackv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -557,11 +557,11 @@ nba_boxscoreplayertrackv2 <- function(
 }
 
 #' **Get NBA Stats API Hustle Stats Boxscore**
-#' @name hustle_bs
+#' @name nba_hustlestatsboxscore
 NULL
 #' @title
 #' **Get NBA Stats API Hustle Stats Boxscore**
-#' @rdname hustle_bs
+#' @rdname nba_hustlestatsboxscore
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -603,11 +603,11 @@ nba_hustlestatsboxscore <- function(
 }
 
 #' **Get NBA Stats API Game Rotation**
-#' @name game_rotation
+#' @name nba_gamerotation
 NULL
 #' @title
 #' **Get NBA Stats API Game Rotation**
-#' @rdname game_rotation
+#' @rdname nba_gamerotation
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param league_id League ID
@@ -663,11 +663,11 @@ nba_gamerotation <- function(
 }
 
 #' **Get NBA Stats API Boxscore Similarity Score**
-#' @name bs_similarity
+#' @name nba_boxscoresimilarityscore
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Similarity Score**
-#' @rdname bs_similarity
+#' @rdname nba_boxscoresimilarityscore
 #' @author Saiem Gilani
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
@@ -726,11 +726,11 @@ nba_boxscoresimilarityscore <- function(
 }
 
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
-#' @name gl_bs_similarity
+#' @name nba_glalumboxscoresimilarityscore
 NULL
 #' @title
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
-#' @rdname gl_bs_similarity
+#' @rdname nba_glalumboxscoresimilarityscore
 #' @author Saiem Gilani
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id

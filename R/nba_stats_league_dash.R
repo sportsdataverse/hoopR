@@ -1,11 +1,11 @@
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Opponent Shots**
-#' @name ld_oppptshot
+#' @name nba_leaguedashoppptshot
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Opponent Shots**
-#' @rdname ld_oppptshot
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param close_def_dist_range close_def_dist_range
 #' @param conference conference
@@ -43,6 +43,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Opponent Shots - General](https://www.nba.com/stats/teams/opponent-shots-general)
+#' ```r
+#'  nba_leaguedashoppptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashoppptshot <- function(
     close_def_dist_range = '',
     conference = '',
@@ -51,29 +56,29 @@ nba_leaguedashoppptshot <- function(
     division = '',
     dribble_range = '',
     game_segment = '',
-    general_range='',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    pace_adjust='N',
-    per_mode='Totals',
-    period=0,
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    general_range = '',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    period = 0,
+    plus_minus = 'N',
+    rank = 'Y',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     shot_dist_range = '',
-    team_id='',
+    team_id = '',
     touch_time_range = '',
-    vs_conference='',
-    vs_division='',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashoppptshot"
@@ -116,16 +121,8 @@ nba_leaguedashoppptshot <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking oppponent shooting data for {season} available!"))
@@ -140,11 +137,11 @@ nba_leaguedashoppptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Biographical Stats**
-#' @name ld_pbiostats
+#' @name nba_leaguedashplayerbiostats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Biographical Stats**
-#' @rdname ld_pbiostats
+#' @rdname nba_leaguedashplayerbiostats
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -184,6 +181,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Bio Stats](https://www.nba.com/stats/players/bio)
+#' ```r
+#'  nba_leaguedashplayerbiostats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashplayerbiostats <- function(
     college = '',
     conference = '',
@@ -194,29 +196,29 @@ nba_leaguedashplayerbiostats <- function(
     draft_pick = '',
     draft_year = '',
     game_segment = '',
-    game_scope='',
+    game_scope = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period='',
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    period = '',
+    player_experience = '',
+    player_position = '',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
+    team_id = '',
     touch_time_range = '',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerbiostats"
@@ -261,16 +263,8 @@ nba_leaguedashplayerbiostats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player bio stats data for {season} available!"))
@@ -284,11 +278,11 @@ nba_leaguedashplayerbiostats <- function(
 }
 
 #' **Get NBA Stats API League Dashboard by Player Clutch Splits**
-#' @name ld_pclutch
+#' @name nba_leaguedashplayerclutch
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard by Player Clutch Splits**
-#' @rdname ld_pclutch
+#' @rdname nba_leaguedashplayerclutch
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param clutch_time clutch_time
@@ -335,8 +329,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Players Clutch Stats](https://www.nba.com/stats/players/clutch-traditional)
+#' ```r
+#'  nba_leaguedashplayerbiostats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashplayerclutch <- function(
-    ahead_behind='Ahead or Behind',
+    ahead_behind = 'Ahead or Behind',
     clutch_time = 'Last 5 Minutes',
     college = '',
     conference = '',
@@ -346,35 +345,35 @@ nba_leaguedashplayerclutch <- function(
     division = '',
     draft_pick = '',
     draft_year = '',
-    game_scope='',
+    game_scope = '',
     game_segment = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    pace_adjust='N',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    pace_adjust = 'N',
     plus_minus = 'N',
     point_diff = 5,
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
+    team_id = '',
     touch_time_range = '',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   ahead_behind <- gsub(' ','+',ahead_behind)
   clutch_time <- gsub(' ','+',clutch_time)
@@ -428,16 +427,8 @@ nba_leaguedashplayerclutch <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player clutch stats data for {season} available!"))
@@ -452,11 +443,11 @@ nba_leaguedashplayerclutch <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Player Shots**
-#' @name ld_pptshot
+#' @name nba_leaguedashplayerptshot
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Player Shots**
-#' @rdname ld_pptshot
+#' @rdname nba_leaguedashplayerptshot
 #' @author Saiem Gilani
 #' @param close_def_dist_range close_def_dist_range
 #' @param college college
@@ -503,46 +494,51 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Players Shot Dashboard](https://www.nba.com/stats/players/shots-general)
+#' ```r
+#'  nba_leaguedashplayerptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashplayerptshot <- function(
     close_def_dist_range = '',
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
     date_to = '',
-    distance_range='',
+    distance_range = '',
     division = '',
     draft_pick = '',
     draft_year = '',
     dribble_range = '',
-    game_scope='',
+    game_scope = '',
     game_segment = '',
-    general_range='',
+    general_range = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
     measure_type = 'Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
     pace_adjust = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     shot_dist_range = '',
     starter_bench = '',
-    team_id='',
+    team_id = '',
     touch_time_range = '',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerptshot"
@@ -617,11 +613,11 @@ nba_leaguedashplayerptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Stats**
-#' @name ld_pstats
+#' @name nba_leaguedashplayerstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Stats**
-#' @rdname ld_pstats
+#' @rdname nba_leaguedashplayerstats
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -665,8 +661,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Players Stats](https://www.nba.com/stats/players/traditional)
+#' ```r
+#'  nba_leaguedashplayerstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashplayerstats <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -674,34 +675,34 @@ nba_leaguedashplayerstats <- function(
     division = '',
     draft_pick = '',
     draft_year = '',
-    game_scope='',
+    game_scope = '',
     game_segment = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
     measure_type = 'Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
     pace_adjust = 'N',
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
+    plus_minus = 'N',
+    rank = 'N',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
-    two_way='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    team_id = '',
+    two_way = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashplayerstats"
@@ -750,16 +751,8 @@ nba_leaguedashplayerstats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player stats data for {season} available!"))
@@ -773,11 +766,11 @@ nba_leaguedashplayerstats <- function(
 }
 
 #' **Get NBA Stats API League Dashboard Player Shot Locations**
-#' @name ld_pshotloc
+#' @name nba_leaguedashplayershotlocations
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Shot Locations**
-#' @rdname ld_pshotloc
+#' @rdname nba_leaguedashplayershotlocations
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -822,8 +815,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Players Shooting by Shot Location](https://www.nba.com/stats/players/shooting)
+#' ```r
+#'  nba_leaguedashplayershotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashplayershotlocations <- function(
-    college='',
+    college = '',
     conference = '',
     country = '',
     date_from = '',
@@ -836,30 +834,30 @@ nba_leaguedashplayershotlocations <- function(
     game_scope = '',
     game_segment = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
     pace_adjust = 'N',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
-    plus_minus='N',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
+    plus_minus = 'N',
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
 
   distance_range <- gsub(' ','+',distance_range)
@@ -914,13 +912,13 @@ nba_leaguedashplayershotlocations <- function(
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
           data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+          dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]
         json_names1 <- resp$resultSets$headers$columnNames[[1]]
-        json_names_rep <- rep(json_names1,times=1,each=columnSpan)
+        json_names_rep <- rep(json_names1, times = 1, each = columnSpan)
         json_names2 <- resp$resultSets$headers$columnNames[[2]]
-        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
+        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip + 1):30]))
         colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
         return(data)
       })
@@ -939,11 +937,11 @@ nba_leaguedashplayershotlocations <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Defense**
-#' @name ld_ptdefend
+#' @name nba_leaguedashptdefend
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Defense**
-#' @rdname ld_ptdefend
+#' @rdname nba_leaguedashptdefend
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -982,6 +980,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Defensive Dashboard](https://www.nba.com/stats/players/defense-dash-overall)
+#' ```r
+#'  nba_leaguedashptdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashptdefend <- function(
     college = '',
     conference = '',
@@ -994,26 +997,26 @@ nba_leaguedashptdefend <- function(
     draft_year = '',
     game_segment = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period='',
-    player_experience='',
-    player_id='',
-    player_position='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    period = '',
+    player_experience = '',
+    player_id = '',
+    player_position = '',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
     starter_bench = '',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptdefend"
@@ -1057,16 +1060,8 @@ nba_leaguedashptdefend <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking player defense data for {season} available!"))
@@ -1081,11 +1076,11 @@ nba_leaguedashptdefend <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Stats**
-#' @name ld_ptstats
+#' @name nba_leaguedashptstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Stats**
-#' @rdname ld_ptstats
+#' @rdname nba_leaguedashptstats
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -1123,6 +1118,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Players Tracking (Second Spectrum) Stats](https://www.nba.com/stats/players/drives)
+#' ```r
+#'  nba_leaguedashptstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashptstats <- function(
     college = '',
     conference = '',
@@ -1134,27 +1134,27 @@ nba_leaguedashptstats <- function(
     draft_year = '',
     game_scope = '',
     height = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period='',
-    player_experience='',
-    player_or_team='Team',
-    player_position='',
-    pt_measure_type = 'SpeedDistance',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'PerGame',
+    period = '',
+    player_experience = '',
+    player_or_team = 'Player',
+    player_position = '',
+    pt_measure_type = 'Drives',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
     starter_bench = '',
-    team_id='',
-    vs_conference='',
-    vs_division='',
-    weight='',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
+    weight = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptstats"
@@ -1198,16 +1198,8 @@ nba_leaguedashptstats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking stats data for {season} available!"))
@@ -1222,11 +1214,11 @@ nba_leaguedashptstats <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Defense**
-#' @name ld_ptteamdefend
+#' @name nba_leaguedashptteamdefend
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Defense**
-#' @rdname ld_ptteamdefend
+#' @rdname nba_leaguedashptteamdefend
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -1254,6 +1246,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Defensive Dashboard](https://www.nba.com/stats/teams/defense-dash-overall)
+#' ```r
+#'  nba_leaguedashptteamdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashptteamdefend <- function(
     conference = '',
     date_from = '',
@@ -1261,21 +1258,21 @@ nba_leaguedashptteamdefend <- function(
     defense_category = 'Overall',
     division = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period='',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    team_id='',
-    vs_conference='',
-    vs_division='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'PerGame',
+    period = '',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashptteamdefend"
@@ -1309,16 +1306,8 @@ nba_leaguedashptteamdefend <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking team defensive stats data for {season} available!"))
@@ -1333,11 +1322,11 @@ nba_leaguedashptteamdefend <- function(
 
 
 #' **Get NBA Stats API League Dashboard by Team Clutch Splits**
-#' @name ld_tclutch
+#' @name nba_leaguedashteamclutch
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard by Team Clutch Splits**
-#' @rdname ld_tclutch
+#' @rdname nba_leaguedashteamclutch
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param clutch_time clutch_time
@@ -1377,43 +1366,48 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Clutch Stats](https://www.nba.com/stats/teams/clutch-traditional)
+#' ```r
+#'  nba_leaguedashteamclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashteamclutch <- function(
-    ahead_behind='Ahead or Behind',
+    ahead_behind = 'Ahead or Behind',
     clutch_time = 'Last 5 Minutes',
     conference = '',
     date_from = '',
     date_to = '',
     division = '',
-    game_scope='',
+    game_scope = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
     pace_adjust='N',
     plus_minus = 'N',
     point_diff = 5,
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
-    vs_conference='',
-    vs_division='',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
     ...){
-  ahead_behind <- gsub(' ','+',ahead_behind)
-  clutch_time <- gsub(' ','+',clutch_time)
-  season_type <- gsub(' ','+',season_type)
+  ahead_behind <- gsub(' ', '+', ahead_behind)
+  clutch_time <- gsub(' ', '+', clutch_time)
+  season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamclutch"
   endpoint <- nba_endpoint(version)
 
@@ -1456,16 +1450,8 @@ nba_leaguedashteamclutch <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team clutch data for {season} available!"))
@@ -1480,11 +1466,11 @@ nba_leaguedashteamclutch <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Shots**
-#' @name ld_tptshot
+#' @name nba_leaguedashteamptshot
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Shots**
-#' @rdname ld_tptshot
+#' @rdname nba_leaguedashteamptshot
 #' @author Saiem Gilani
 #' @param close_def_dist_range close_def_dist_range
 #' @param conference conference
@@ -1518,6 +1504,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Shot Dashboard](https://www.nba.com/stats/teams/shots-general)
+#' ```r
+#'  nba_leaguedashteamptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashteamptshot <- function(
     close_def_dist_range = '',
     conference = '',
@@ -1526,25 +1517,25 @@ nba_leaguedashteamptshot <- function(
     division = '',
     dribble_range = '',
     game_segment = '',
-    general_range='',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    per_mode='Totals',
-    period=0,
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    general_range = '',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    per_mode = 'Totals',
+    period = 0,
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     shot_dist_range = '',
-    team_id='',
+    team_id = '',
     touch_time_range = '',
-    vs_conference='',
-    vs_division='',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashteamptshot"
@@ -1582,16 +1573,8 @@ nba_leaguedashteamptshot <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team player-tracking shooting stats data for {season} available!"))
@@ -1606,11 +1589,11 @@ nba_leaguedashteamptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Team Stats**
-#' @name ld_tstats
+#' @name nba_leaguedashteamstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Team Stats**
-#' @rdname ld_tstats
+#' @rdname nba_leaguedashteamstats
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -1646,35 +1629,40 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Stats](https://www.nba.com/stats/teams/traditional)
+#' ```r
+#'  nba_leaguedashteamstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashteamstats <- function(
     conference = '',
     date_from = '',
     date_to = '',
     division = '',
-    game_scope='',
+    game_scope = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
-    pace_adjust='N',
-    per_mode='Totals',
-    period=0,
-    plus_minus='N',
-    rank='N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
-    starter_bench='',
-    team_id='',
-    two_way='',
-    vs_conference='',
-    vs_division='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
+    pace_adjust = 'N',
+    per_mode = 'Totals',
+    period = 0,
+    plus_minus = 'N',
+    rank = 'N',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
+    starter_bench = '',
+    team_id = '',
+    two_way = '',
+    vs_conference = '',
+    vs_division = '',
     ...){
   season_type <- gsub(' ','+',season_type)
   version <- "leaguedashteamstats"
@@ -1715,16 +1703,8 @@ nba_leaguedashteamstats <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+      df_list <- nba_stats_map_result_sets(resp)
 
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team stats data for {season} available!"))
@@ -1739,11 +1719,11 @@ nba_leaguedashteamstats <- function(
 
 
 #' **Get NBA Stats API League Dashboard Team Shot Locations**
-#' @name ld_tshotloc
+#' @name nba_leaguedashteamshotlocations
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Team Shot Locations**
-#' @rdname ld_tshotloc
+#' @rdname nba_leaguedashteamshotlocations
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -1781,6 +1761,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Shooting by Shot Location](https://www.nba.com/stats/teams/shooting)
+#' ```r
+#'  nba_leaguedashteamshotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashteamshotlocations <- function(
     conference = '',
     date_from = '',
@@ -1789,29 +1774,29 @@ nba_leaguedashteamshotlocations <- function(
     division = '',
     game_scope = '',
     game_segment = '',
-    last_n_games=0,
-    league_id='00',
-    location='',
-    measure_type='Base',
-    month=0,
-    opponent_team_id=0,
-    outcome='',
-    po_round='',
+    last_n_games = 0,
+    league_id = '00',
+    location = '',
+    measure_type = 'Base',
+    month = 0,
+    opponent_team_id = 0,
+    outcome = '',
+    po_round = '',
     pace_adjust = 'N',
-    per_mode='Totals',
-    period=0,
-    player_experience='',
-    player_position='',
-    plus_minus='N',
+    per_mode = 'Totals',
+    period = 0,
+    player_experience = '',
+    player_position = '',
+    plus_minus = 'N',
     rank = 'N',
-    season='2020-21',
-    season_segment='',
-    season_type='Regular Season',
-    shot_clock_range='',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_segment = '',
+    season_type = 'Regular Season',
+    shot_clock_range = '',
     starter_bench = '',
-    team_id='',
-    vs_conference='',
-    vs_division='',
+    team_id = '',
+    vs_conference = '',
+    vs_division = '',
     ...){
 
   distance_range <- gsub(' ','+',distance_range)
@@ -1859,13 +1844,13 @@ nba_leaguedashteamshotlocations <- function(
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
           data.frame(stringsAsFactors = F) %>%
-          as_tibble()
+          dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]
         json_names1 <- resp$resultSets$headers$columnNames[[1]]
-        json_names_rep <- rep(json_names1,times=1,each=columnSpan)
+        json_names_rep <- rep(json_names1,times = 1, each = columnSpan)
         json_names2 <- resp$resultSets$headers$columnNames[[2]]
-        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip+1):30]))
+        json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip + 1):30]))
         colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
         return(data)
       })

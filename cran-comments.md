@@ -5,6 +5,11 @@ This is a minor release that adds the following:
  * ```espn_mbb_game_rosters()``` function added.
  * ```espn_nba_game_rosters()``` function added.
  * ```nba_shotchartlineupdetail()``` function added.
+ * ```nba_synergyplaytypes()``` function added.
+ * ```nba_live_pbp()``` function added.
+ * ```nba_live_boxscore()``` function added.
+ * ```nba_franchiseleaderswrank()``` function added.
+ * ```nba_videodetailsasset()``` function added.
 
  
 

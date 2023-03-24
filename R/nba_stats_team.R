@@ -1,9 +1,9 @@
 #' **Get NBA Stats API Team Details**
-#' @name t_details
+#' @name nba_teamdetails
 NULL
 #' @title
 #' **Get NBA Stats API Team Details**
-#' @rdname t_details
+#' @rdname nba_teamdetails
 #' @author Saiem Gilani
 #' @param team_id Team ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -14,6 +14,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamdetails(team_id = '1610612749')
+#' ```
 nba_teamdetails <- function(
     team_id = '1610612749',
     ...){
@@ -44,11 +48,11 @@ nba_teamdetails <- function(
 
 
 #' **Get NBA Stats API Team Estimated Metrics**
-#' @name t_est_metr
+#' @name nba_teamestimatedmetrics
 NULL
 #' @title
 #' **Get NBA Stats API Team Estimated Metrics**
-#' @rdname t_est_metr
+#' @rdname nba_teamestimatedmetrics
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
@@ -59,9 +63,14 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Estimated Metrics](https://www.nba.com/stats/teams/estimated-advanced)
+#' ```r
+#'  nba_teamestimatedmetrics()
+#' ```
 nba_teamestimatedmetrics <- function(
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -96,11 +105,11 @@ nba_teamestimatedmetrics <- function(
 
 
 #' **Get NBA Stats API Team Game Log**
-#' @name t_gamelog
+#' @name nba_teamgamelog
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Log**
-#' @rdname t_gamelog
+#' @rdname nba_teamgamelog
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -114,11 +123,16 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Teams Game Log](https://www.nba.com/stats/team/1610612749/boxscores)
+#' ```r
+#'  nba_teamgamelog(team_id = '1610612749')
+#' ```
 nba_teamgamelog <- function(
     date_from = '',
     date_to = '',
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     team_id = '1610612749',
     ...){
@@ -155,11 +169,11 @@ nba_teamgamelog <- function(
 
 
 #' **Get NBA Stats API Team Game Logs**
-#' @name t_gamelogs
+#' @name nba_teamgamelogs
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Logs**
-#' @rdname t_gamelogs
+#' @rdname nba_teamgamelogs
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -187,6 +201,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Teams Game Log](https://www.nba.com/stats/team/1610612749/boxscores)
+#' ```r
+#'  nba_teamgamelogs(team_id = '1610612749')
+#' ```
 nba_teamgamelogs <- function(
     date_from = '',
     date_to = '',
@@ -202,7 +221,7 @@ nba_teamgamelogs <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '1610612749',
@@ -257,11 +276,11 @@ nba_teamgamelogs <- function(
 
 
 #' **Get NBA Stats API Team Historical Leaders**
-#' @name thist_leaders
+#' @name nba_teamhistoricalleaders
 NULL
 #' @title
 #' **Get NBA Stats API Team Historical Leaders**
-#' @rdname thist_leaders
+#' @rdname nba_teamhistoricalleaders
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_id season_id
@@ -272,9 +291,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamhistoricalleaders(team_id = '1610612749')
+#' ```
 nba_teamhistoricalleaders <- function(
     league_id = '00',
-    season_id = '2020',
+    season_id = '22022',
     team_id = '1610612749',
     ...){
 
@@ -306,11 +329,11 @@ nba_teamhistoricalleaders <- function(
 
 
 #' **Get NBA Stats API Team Common Info**
-#' @name teaminfo
+#' @name nba_teaminfocommon
 NULL
 #' @title
 #' **Get NBA Stats API Team Common Info**
-#' @rdname teaminfo
+#' @rdname nba_teaminfocommon
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param team_id Team ID
@@ -322,9 +345,13 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teaminfocommon(team_id = '1610612749')
+#' ```
 nba_teaminfocommon <- function(
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     team_id = '1610612749',
     ...){
@@ -360,11 +387,11 @@ nba_teaminfocommon <- function(
 
 
 #' **Get NBA Stats API Team Player On/Off Details**
-#' @name tp_onoff_det
+#' @name nba_teamplayeronoffdetails
 NULL
 #' @title
 #' **Get NBA Stats API Team Player On/Off Details**
-#' @rdname tp_onoff_det
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -396,6 +423,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamplayeronoffdetails(team_id = '1610612749')
+#' ```
 nba_teamplayeronoffdetails <- function(
     date_from = '',
     date_to = '',
@@ -413,7 +444,7 @@ nba_teamplayeronoffdetails <- function(
     per_mode = 'Totals',
     period = 0,
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -470,11 +501,11 @@ nba_teamplayeronoffdetails <- function(
 
 
 #' **Get NBA Stats API Team Player On/Off Summary**
-#' @name tp_onoffsummary
+#' @name nba_teamplayeronoffsummary
 NULL
 #' @title
 #' **Get NBA Stats API Team Player On/Off Summary**
-#' @rdname tp_onoffsummary
+#' @rdname nba_teamplayeronoffsummary
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -506,6 +537,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamplayeronoffsummary(team_id = '1610612749')
+#' ```
 nba_teamplayeronoffsummary <- function(
     date_from = '',
     date_to = '',
@@ -523,7 +558,7 @@ nba_teamplayeronoffsummary <- function(
     per_mode = 'Totals',
     period = 0,
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -581,11 +616,11 @@ nba_teamplayeronoffsummary <- function(
 
 
 #' **Get NBA Stats API Team Player Dashboard**
-#' @name tp
+#' @name nba_teamplayerdashboard
 NULL
 #' @title
 #' **Get NBA Stats API Team Player Dashboard**
-#' @rdname tp
+#' @rdname nba_teamplayerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -616,6 +651,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamplayerdashboard(team_id = '1610612749')
+#' ```
 nba_teamplayerdashboard <- function(
     date_from = '',
     date_to = '',
@@ -633,7 +672,7 @@ nba_teamplayerdashboard <- function(
     per_mode = 'Totals',
     period = 0,
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -691,11 +730,11 @@ nba_teamplayerdashboard <- function(
 
 
 #' **Get NBA Stats API Team Year by Year Stats**
-#' @name t_yby_stats
+#' @name nba_teamyearbyyearstats
 NULL
 #' @title
 #' **Get NBA Stats API Team Year by Year Stats**
-#' @rdname t_yby_stats
+#' @rdname nba_teamyearbyyearstats
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param per_mode Per Mode
@@ -707,6 +746,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Team Year by Year Stats](https://www.nba.com/stats/team/1610612756/seasons)
+#' ```r
+#'  nba_teamyearbyyearstats(team_id = '1610612749')
+#' ```
 nba_teamyearbyyearstats <- function(
     league_id = '00',
     per_mode = 'Totals',
@@ -745,11 +789,11 @@ nba_teamyearbyyearstats <- function(
 
 
 #' **Get NBA Stats API Team vs Player**
-#' @name t_vs_p
+#' @name nba_teamvsplayer
 NULL
 #' @title
 #' **Get NBA Stats API Team vs Player**
-#' @rdname t_vs_p
+#' @rdname nba_teamvsplayer
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -784,6 +828,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamvsplayer(team_id = '1610612749', vs_player_id = '2544')
+#' ```
 nba_teamvsplayer <- function(
     date_from = '',
     date_to = '',
@@ -802,7 +850,7 @@ nba_teamvsplayer <- function(
     player_id = '',
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -865,11 +913,11 @@ nba_teamvsplayer <- function(
 
 
 #' **Get NBA Stats API Team Game Streak Finder**
-#' @name tg_streak
+#' @name nba_teamgamestreakfinder
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Streak Finder**
-#' @rdname tg_streak
+#' @rdname nba_teamgamestreakfinder
 #' @author Saiem Gilani
 #' @param active_streaks_only active_streaks_only
 #' @param active_teams_only active_teams_only
@@ -1065,6 +1113,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_teamgamestreakfinder()
+#' ```
 
 nba_teamgamestreakfinder <- function(
     active_streaks_only = '',
@@ -1225,7 +1277,7 @@ nba_teamgamestreakfinder <- function(
     min_games = '',
     outcome = '',
     po_round = '',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',

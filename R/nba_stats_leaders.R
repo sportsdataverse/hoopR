@@ -1,9 +1,9 @@
 #' **Get NBA Stats API All-time Leaders Grid**
-#' @name alltime
+#' @name nba_alltimeleadersgrids
 NULL
 #' @title
 #' **Get NBA Stats API All-time Leaders Grid**
-#' @rdname alltime
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
@@ -16,6 +16,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_alltimeleadersgrids(league_id = '00')
+#' ```
 
 nba_alltimeleadersgrids <- function(
     league_id = '00',
@@ -28,10 +32,10 @@ nba_alltimeleadersgrids <- function(
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PerMode=",per_mode,
-                     "&SeasonType=",season_type,
-                     "&TopX=",top_x)
+                     "?LeagueID=", league_id,
+                     "&PerMode=", per_mode,
+                     "&SeasonType=", season_type,
+                     "&TopX=", top_x)
 
   tryCatch(
     expr = {
@@ -54,11 +58,11 @@ nba_alltimeleadersgrids <- function(
 
 
 #' **Get NBA Stats API Assist Leaders**
-#' @name assists
+#' @name nba_assistleaders
 NULL
 #' @title
 #' **Get NBA Stats API Assist Leaders**
-#' @rdname assists
+#' @rdname nba_assistleaders
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
@@ -71,12 +75,16 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-
+#' @details
+#' ```r
+#'  nba_assistleaders(league_id = '00', player_or_team = "Player")
+#'  nba_assistleaders(league_id = '00', player_or_team = "Team")
+#' ```
 nba_assistleaders <- function(
     league_id = '00',
     per_mode = 'PerGame',
     player_or_team = 'Team',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -85,11 +93,11 @@ nba_assistleaders <- function(
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PerMode=",per_mode,
-                     "&PlayerOrTeam=",player_or_team,
-                     "&Season=",season,
-                     "&SeasonType=",season_type)
+                     "?LeagueID=", league_id,
+                     "&PerMode=", per_mode,
+                     "&PlayerOrTeam=", player_or_team,
+                     "&Season=", season,
+                     "&SeasonType=", season_type)
 
   tryCatch(
     expr = {
@@ -110,11 +118,11 @@ nba_assistleaders <- function(
   return(df_list)
 }
 #' **Get NBA Stats API Assist Tracker**
-#' @name assist_tracker
+#' @name nba_assisttracker
 NULL
 #' @title
 #' **Get NBA Stats API Assist Tracker**
-#' @rdname assist_tracker
+#' @rdname nba_assisttracker
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
 #' @param season_type Season Type - Regular Season, Playoffs, All-Star
@@ -126,10 +134,14 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_assisttracker(league_id = '00')
+#' ```
 nba_assisttracker <- function(
     league_id = '00',
     per_mode = 'PerGame',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -138,10 +150,10 @@ nba_assisttracker <- function(
   endpoint <- nba_endpoint(version)
 
   full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PerMode=",per_mode,
-                     "&Season=",season,
-                     "&SeasonType=",season_type)
+                     "?LeagueID=", league_id,
+                     "&PerMode=", per_mode,
+                     "&Season=", season,
+                     "&SeasonType=", season_type)
 
   tryCatch(
     expr = {
@@ -163,11 +175,11 @@ nba_assisttracker <- function(
 }
 
 #' **Get NBA Stats API Homepage Leaders**
-#' @name homepageleaders
+#' @name nba_homepageleaders
 NULL
 #' @title
 #' **Get NBA Stats API Homepage Leaders**
-#' @rdname homepageleaders
+#' @rdname nba_homepageleaders
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param season Season - format 2020-21
@@ -182,13 +194,17 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
-
+#' @details
+#' ```r
+#'  nba_homepageleaders(league_id = '00', player_or_team = "Player")
+#'  nba_homepageleaders(league_id = '00', player_or_team = "Team")
+#' ```
 nba_homepageleaders <- function(
     league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     stat_category = 'Points',
     ...){
@@ -228,11 +244,11 @@ nba_homepageleaders <- function(
 
 
 #' **Get NBA Stats API HomepageV2 Leaders**
-#' @name homepagev2
+#' @name nba_homepagev2
 NULL
 #' @title
 #' **Get NBA Stats API HomepageV2 Leaders**
-#' @rdname homepagev2
+#' @rdname nba_homepagev2
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param season Season - format 2020-21
@@ -248,13 +264,18 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_homepagev2(league_id = '00', player_or_team = "Player")
+#'  nba_homepagev2(league_id = '00', player_or_team = "Team")
+#' ```
 
 nba_homepagev2 <- function(
     league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     stat_type = 'Traditional',
     ...){
@@ -294,11 +315,11 @@ nba_homepagev2 <- function(
 
 
 #' **Get NBA Stats API Leaders Tiles**
-#' @name leaderstiles
+#' @name nba_leaderstiles
 NULL
 #' @title
 #' **Get NBA Stats API Leaders Tiles**
-#' @rdname leaderstiles
+#' @rdname nba_leaderstiles
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param season Season - format 2020-21
@@ -313,13 +334,18 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_leaderstiles(league_id = '00', player_or_team = "Player")
+#'  nba_leaderstiles(league_id = '00', player_or_team = "Team")
+#' ```
 
 nba_leaderstiles <- function(
     league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     stat = 'PTS',
     ...){
@@ -359,11 +385,11 @@ nba_leaderstiles <- function(
 
 
 #' **Get NBA Stats API Defense Hub**
-#' @name defensehub
+#' @name nba_defensehub
 NULL
 #' @title
 #' **Get NBA Stats API Defense Hub**
-#' @rdname defensehub
+#' @rdname nba_defensehub
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param season Season - format 2020-21
@@ -378,13 +404,18 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_defensehub(league_id = '00', player_or_team = "Player")
+#'  nba_defensehub(league_id = '00', player_or_team = "Team")
+#' ```
 
 nba_defensehub <- function(
     league_id = '00',
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
 
@@ -424,11 +455,11 @@ nba_defensehub <- function(
 
 
 #' **Get NBA Stats API League Leaders**
-#' @name leagueleaders
+#' @name nba_leagueleaders
 NULL
 #' @title
 #' **Get NBA Stats API League Leaders**
-#' @rdname leagueleaders
+#' @rdname nba_leagueleaders
 #' @author Saiem Gilani
 #' @param active_flag Active Flag
 #' @param season Season - format 2020-21
@@ -443,13 +474,18 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [League Leaders](https://www.nba.com/stats/leaders)
+#' ```r
+#'  nba_leagueleaders(league_id = '00')
+#' ```
 
 nba_leagueleaders <- function(
     active_flag = '',
     league_id = '00',
     per_mode = 'Totals',
     scope = 'S',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     stat_category = 'PTS',
     ...){
@@ -473,7 +509,16 @@ nba_leagueleaders <- function(
 
       resp <- request_with_proxy(url = full_url, ...)
 
-      df_list <- nba_stats_map_result_sets(resp)
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+        data <- resp$resultSet$rowSet %>%
+          data.frame(stringsAsFactors = F) %>%
+          dplyr::as_tibble()
+
+        json_names <- resp$resultSet$headers
+        colnames(data) <- json_names
+        return(data)
+      })
+      names(df_list) <- resp$resultSet$name
 
     },
     error = function(e) {

@@ -1,9 +1,9 @@
 #' **Get NBA Stats API Fantasy Widget**
-#' @name fantasywidget
+#' @name nba_fantasywidget
 NULL
 #' @title
 #' **Get NBA Stats API Fantasy Widget**
-#' @rdname fantasywidget
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
 #' @param active_players active_players
 #' @param date_from date_from date_from
@@ -30,6 +30,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_fantasywidget(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_fantasywidget <- function(
     active_players = 'N',
     date_from = '',
@@ -42,7 +46,7 @@ nba_fantasywidget <- function(
     po_round = '',
     player_id = '',
     position = '',
-    season = '2019-20',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '',
@@ -95,11 +99,11 @@ nba_fantasywidget <- function(
 }
 
 #' **Get NBA Stats API League Dashboard Lineups**
-#' @name leaguedashlineups
+#' @name nba_leaguedashlineups
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Lineups**
-#' @rdname leaguedashlineups
+#' @rdname nba_leaguedashlineups
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -133,6 +137,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Lineups Dashboard](https://www.nba.com/stats/lineups/traditional)
+#' ```r
+#'  nba_leaguedashlineups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguedashlineups <- function(
     conference = '',
     date_from = '',
@@ -153,7 +162,7 @@ nba_leaguedashlineups <- function(
     period = 0,
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -212,11 +221,11 @@ nba_leaguedashlineups <- function(
 }
 
 #' **Get NBA Stats API League Lineup Visual Data**
-#' @name leaguelineupviz
+#' @name nba_leaguelineupviz
 NULL
 #' @title
 #' **Get NBA Stats API League Lineup Visual Data**
-#' @rdname leaguelineupviz
+#' @rdname nba_leaguelineupviz
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -251,6 +260,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Lineups Dashboard](https://www.nba.com/stats/lineups/traditional)
+#' ```r
+#'  nba_leaguelineupviz(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leaguelineupviz <- function(
     conference = '',
     date_from = '',
@@ -272,7 +286,7 @@ nba_leaguelineupviz <- function(
     period = 0,
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -334,11 +348,11 @@ nba_leaguelineupviz <- function(
 
 
 #' **Get NBA Stats API League Player On/Off Details**
-#' @name leagueplayerondetails
+#' @name nba_leagueplayerondetails
 NULL
 #' @title
 #' **Get NBA Stats API League Player On/Off Details**
-#' @rdname leagueplayerondetails
+#' @rdname nba_leagueplayerondetails
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -367,6 +381,10 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' ```r
+#'  nba_leagueplayerondetails(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leagueplayerondetails <- function(
     date_from = '',
     date_to = '',
@@ -383,7 +401,7 @@ nba_leagueplayerondetails <- function(
     period = 0,
     plus_minus = 'N',
     rank = 'N',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '1610612749',
@@ -439,11 +457,11 @@ nba_leagueplayerondetails <- function(
 
 
 #' **Get NBA Stats API League Season Matchups**
-#' @name leagueseasonmatchups
+#' @name nba_leagueseasonmatchups
 NULL
 #' @title
 #' **Get NBA Stats API League Season Matchups**
-#' @rdname leagueseasonmatchups
+#' @rdname nba_leagueseasonmatchups
 #' @author Saiem Gilani
 #' @param def_player_id def_player_id
 #' @param def_team_id def_team_id
@@ -459,6 +477,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Season Matchups](https://www.nba.com/stats/player/2544/head-to-head)
+#' ```r
+#'  nba_leagueseasonmatchups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_leagueseasonmatchups <- function(
     def_player_id = '',
     def_team_id = '',
@@ -466,7 +489,7 @@ nba_leagueseasonmatchups <- function(
     off_player_id = '',
     off_team_id = '',
     per_mode = 'Totals',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
   season_type <- gsub(' ','+',season_type)
@@ -501,11 +524,11 @@ nba_leagueseasonmatchups <- function(
   return(df_list)
 }
 #' **Get NBA Stats API Matchups Rollup**
-#' @name matchupsrollup
+#' @name nba_matchupsrollup
 NULL
 #' @title
 #' **Get NBA Stats API Matchups Rollup**
-#' @rdname matchupsrollup
+#' @rdname nba_matchupsrollup
 #' @author Saiem Gilani
 #' @param def_player_id def_player_id
 #' @param def_team_id def_team_id
@@ -521,6 +544,11 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @details
+#' [Player Matchups Rollup](https://www.nba.com/stats/player/2544/by-position)
+#' ```r
+#'  nba_matchupsrollup(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
 nba_matchupsrollup <- function(
     def_player_id = '',
     def_team_id = '',
@@ -528,7 +556,7 @@ nba_matchupsrollup <- function(
     off_player_id = '',
     off_team_id = '',
     per_mode = 'Totals',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
   season_type <- gsub(' ','+',season_type)
