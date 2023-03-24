@@ -33,18 +33,21 @@ nba_boxscoretraditionalv2 <- function(
 
   version <- "boxscoretraditionalv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -94,20 +97,21 @@ nba_boxscoreadvancedv2 <- function(
 
   version <- "boxscoreadvancedv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -147,13 +151,16 @@ nba_boxscoredefensive <- function(
 
   version <- "boxscoredefensive"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -203,18 +210,21 @@ nba_boxscorefourfactorsv2 <- function(
 
   version <- "boxscorefourfactorsv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -264,18 +274,21 @@ nba_boxscoremiscv2 <- function(
 
   version <- "boxscoremiscv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -325,18 +338,21 @@ nba_boxscorescoringv2 <- function(
 
   version <- "boxscorescoringv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -386,18 +402,21 @@ nba_boxscoreusagev2 <- function(
 
   version <- "boxscoreusagev2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=",pad_id(game_id),
-                     "&RangeType=", range_type,
-                     "&StartPeriod=",start_period,
-                     "&StartRange=", start_range)
+  params <- list(
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = pad_id(game_id),
+    RangeType = range_type,
+    StartPeriod = start_period,
+    StartRange = start_range
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -437,13 +456,16 @@ nba_boxscoresummaryv2 <- function(
 
   version <- "boxscoresummaryv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -489,12 +511,16 @@ nba_boxscorematchups <- function(
     endpoint <- nba_endpoint('boxscorematchups')
   }
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
+  full_url <- endpoint
+
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -534,13 +560,16 @@ nba_boxscoreplayertrackv2 <- function(
 
   version <- "boxscoreplayertrackv2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -580,13 +609,16 @@ nba_hustlestatsboxscore <- function(
 
   version <- "hustlestatsboxscore"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id))
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -630,15 +662,18 @@ nba_gamerotation <- function(
 
   version <- "gamerotation"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=",pad_id(game_id),
-                     "&LeagueID=",league_id,
-                     "&RotationStat=", rotation_stat)
+  params <- list(
+    GameID = pad_id(game_id),
+    LeagueID = league_id,
+    RotationStat = rotation_stat
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
@@ -696,20 +731,23 @@ nba_boxscoresimilarityscore <- function(
 
   version <- "boxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?Person1Id=", person_1_id,
-                     "&Person1LeagueId=", person_1_league_id,
-                     "&Person1Season=", person_1_season,
-                     "&Person1SeasonType=", person_1_season_type,
-                     "Person2Id=", person_2_id,
-                     "&Person2LeagueId=", person_2_league_id,
-                     "&Person2Season=", person_2_season,
-                     "&Person2SeasonType=", person_2_season_type)
+  params <- list(
+    Person1Id = person_1_id,
+    Person1LeagueId = person_1_league_id,
+    Person1Season = person_1_season,
+    Person1SeasonType = person_1_season_type,
+    Person2Id = person_2_id,
+    Person2LeagueId = person_2_league_id,
+    Person2Season = person_2_season,
+    Person2SeasonType = person_2_season_type
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -759,20 +797,23 @@ nba_glalumboxscoresimilarityscore <- function(
 
   version <- "glalumboxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?Person1Id=", person_1_id,
-                     "&Person1LeagueId=", person_1_league_id,
-                     "&Person1Season=", person_1_season,
-                     "&Person1SeasonType=", person_1_season_type,
-                     "Person2Id=", person_2_id,
-                     "&Person2LeagueId=", person_2_league_id,
-                     "&Person2Season=", person_2_season,
-                     "&Person2SeasonType=", person_2_season_type)
+  params <- list(
+    Person1Id = person_1_id,
+    Person1LeagueId = person_1_league_id,
+    Person1Season = person_1_season,
+    Person1SeasonType = person_1_season_type,
+    Person2Id = person_2_id,
+    Person2LeagueId = person_2_league_id,
+    Person2Season = person_2_season,
+    Person2SeasonType = person_2_season_type
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

@@ -13,6 +13,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Franchise Functions
 #' @details
 #' [Franchise Leaders](https://www.nba.com/stats/team/1610612737/franchise-leaders)
 #' ```r
@@ -22,17 +23,20 @@ nba_franchiseleaders <- function(
     league_id = '00',
     team_id = '1610612739',
     ...){
+
   version <- "franchiseleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&TeamID=",team_id)
+  params <- list(
+    LeagueID = league_id,
+    TeamID = team_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -65,6 +69,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Franchise Functions
 #' @details
 #' [Franchise Players](https://www.nba.com/stats/team/1610612739/franchise-leaders)
 #' ```r
@@ -77,20 +82,23 @@ nba_franchiseleaderswrank <- function(
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "franchiseleaderswrank"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PerMode=", per_mode,
-                     "&SeasonType=", season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -123,6 +131,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Franchise Functions
 #' @details
 #' [Franchise Players](https://www.nba.com/stats/team/1610612739/franchise-leaders)
 #' ```r
@@ -135,20 +144,23 @@ nba_franchiseplayers <- function(
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "franchiseplayers"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PerMode=", per_mode,
-                     "&SeasonType=", season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -179,6 +191,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Franchise Functions
 #' @details
 #' [Franchise History](https://www.nba.com/stats/history)
 #' ```r
@@ -193,14 +206,16 @@ nba_franchisehistory <- function(
 
   version <- "franchisehistory"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id)
+  params <- list(
+    LeagueID = league_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

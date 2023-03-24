@@ -35,24 +35,25 @@ nba_draftboard <- function(
     top_x = '',
     ...){
 
-
   version <- "draftboard"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&LeagueID=",league_id,
-                     "&OverallPick=", overall_pick,
-                     "&RoundNum=", round_num,
-                     "&RoundPick=", round_pick,
-                     "&Season=", season,
-                     "&TeamID=", team_id,
-                     "&TopX=", top_x)
+  params <- list(
+    College = college,
+    LeagueID = league_id,
+    OverallPick = overall_pick,
+    RoundNum = round_num,
+    RoundPick = round_pick,
+    Season = season,
+    TeamID = team_id,
+    TopX = top_x
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -93,18 +94,19 @@ nba_draftcombinestats <- function(
     season_year = most_recent_nba_season() - 1,
     ...){
 
-
   version <- "draftcombinestats"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&SeasonYear=",season_year)
+  params <- list(
+    LeagueID = league_id,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
     },
@@ -145,18 +147,19 @@ nba_draftcombinedrillresults <- function(
     season_year = most_recent_nba_season() - 1,
     ...){
 
-
   version <- "draftcombinedrillresults"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&SeasonYear=",season_year)
+  params <- list(
+    LeagueID = league_id,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -198,18 +201,19 @@ nba_draftcombinenonstationaryshooting <- function(
     season_year = most_recent_nba_season() - 1,
     ...){
 
-
   version <- "draftcombinenonstationaryshooting"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&SeasonYear=",season_year)
+  params <- list(
+    LeagueID = league_id,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -251,17 +255,19 @@ nba_draftcombineplayeranthro <- function(
     season_year = most_recent_nba_season() - 1,
     ...){
 
-
   version <- "draftcombineplayeranthro"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&SeasonYear=",season_year)
+  params <- list(
+    LeagueID = league_id,
+    SeasonYear = season_year
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -302,18 +308,20 @@ nba_draftcombinespotshooting <- function(
     season_year = most_recent_nba_season() - 1,
     ...){
 
-
   version <- "draftcombinespotshooting"
   endpoint <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&SeasonYear=",season_year)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -363,24 +371,26 @@ nba_drafthistory <- function(
     top_x = '',
     ...){
 
-
   version <- "drafthistory"
   endpoint <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&LeagueID=",league_id,
-                     "&OverallPick=", overall_pick,
-                     "&RoundNum=", round_num,
-                     "&RoundPick=", round_pick,
-                     "&Season=", season,
-                     "&TeamID=", team_id,
-                     "&TopX=", top_x)
+  full_url <- endpoint
+
+  params <- list(
+    College = college,
+    LeagueID = league_id,
+    OverallPick = overall_pick,
+    RoundNum = round_num,
+    RoundPick = round_pick,
+    Season = season,
+    TeamID = team_id,
+    TopX = top_x
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

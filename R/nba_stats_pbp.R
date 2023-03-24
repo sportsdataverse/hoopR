@@ -32,15 +32,18 @@ nba_pbp <- function(
     endpoint <- nba_endpoint('playbyplay')
   }
 
-  full_url <- paste0(endpoint,
-                     "?EndPeriod=0&",
-                     "GameID=", pad_id(game_id),
-                     "&StartPeriod=0")
+  full_url <- endpoint
+
+  params <- list(
+    EndPeriod = 0,
+    GameID, pad_id(game_id),
+    StartPeriod = 0
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       # if (return_message) {
       #   glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)

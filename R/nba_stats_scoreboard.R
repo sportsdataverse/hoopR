@@ -75,13 +75,14 @@ nba_schedule <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     ...){
 
-
   version <- "scheduleleaguev2"
   full_url <- nba_endpoint(version)
+
   params <- list(
     LeagueID = league_id,
     Season = season
   )
+
   tryCatch(
     expr = {
 
@@ -153,14 +154,15 @@ nba_scoreboard <- function(
     day_offset = 0,
     ...){
 
-
   version <- "scoreboard"
   full_url <- nba_endpoint(version)
+
   params <- list(
     LeagueID = league_id,
     GameDate = game_date,
     DayOffset = day_offset
   )
+
   tryCatch(
     expr = {
 
@@ -209,14 +211,15 @@ nba_scoreboardv2 <- function(
     day_offset = 0,
     ...){
 
-
   version <- "scoreboardv2"
   full_url <- nba_endpoint(version)
+
   params <- list(
     LeagueID = league_id,
     GameDate = game_date,
     DayOffset = day_offset
   )
+
   tryCatch(
     expr = {
 
@@ -263,7 +266,7 @@ nba_winprobabilitypbp <- function(
     run_type = 'each second',
     ...){
 
-  run_type <- gsub(' ','+',run_type)
+  run_type <- gsub(' ', '+', run_type)
   version <- "winprobabilitypbp"
   full_url <- nba_endpoint(version)
 
@@ -271,6 +274,7 @@ nba_winprobabilitypbp <- function(
     GameID = game_id,
     RunType = run_type
   )
+
   tryCatch(
     expr = {
 

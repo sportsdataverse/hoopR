@@ -60,8 +60,7 @@ nba_shotchartdetail <- function(
     vs_division = '',
     ...){
 
-
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "shotchartdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -142,6 +141,7 @@ nba_shotchartleaguewide <- function(
     LeagueID = league_id,
     Season = season
   )
+
   tryCatch(
     expr = {
 
@@ -294,7 +294,8 @@ nba_shotchartlineupdetail <- function(
     vs_player_id5 = '',
     vs_team_id = '',
     ...){
-  # season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "shotchartlineupdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -357,6 +358,7 @@ nba_shotchartlineupdetail <- function(
     VsPlayerID5 = vs_player_id5,
     VsTeamID = vs_team_id
   )
+
   tryCatch(
     expr = {
 

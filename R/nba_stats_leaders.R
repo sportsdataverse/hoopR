@@ -27,20 +27,23 @@ nba_alltimeleadersgrids <- function(
     season_type = 'Regular Season',
     top_x = 10,
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "alltimeleadersgrids"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&PerMode=", per_mode,
-                     "&SeasonType=", season_type,
-                     "&TopX=", top_x)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    SeasonType = season_type,
+    TopX = top_x
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -91,18 +94,20 @@ nba_assistleaders <- function(
   season_type <- gsub(' ','+',season_type)
   version <- "assistleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&PerMode=", per_mode,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&Season=", season,
-                     "&SeasonType=", season_type)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    PlayerOrTeam = player_or_team,
+    Season = season,
+    SeasonType = season_type
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -148,7 +153,6 @@ nba_assisttracker <- function(
   season_type <- gsub(' ','+',season_type)
   version <- "assisttracker"
   endpoint <- nba_endpoint(version)
-
   full_url <- paste0(endpoint,
                      "?LeagueID=", league_id,
                      "&PerMode=", per_mode,
@@ -208,25 +212,28 @@ nba_homepageleaders <- function(
     season_type = 'Regular Season',
     stat_category = 'Points',
     ...){
+
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat_category <- gsub(' ','+',stat_category)
   version <- "homepageleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameScope=", game_scope,
-                     "&LeagueID=",league_id,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&PlayerScope=", player_scope,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&StatCategory=",stat_category)
+  params <- list(
+    GameScope =  game_scope,
+    LeagueID = league_id,
+    PlayerOrTeam = player_or_team,
+    PlayerScope = player_scope,
+    Season = season,
+    SeasonType = season_type,
+    StatCategory = stat_category
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -279,25 +286,28 @@ nba_homepagev2 <- function(
     season_type = 'Regular Season',
     stat_type = 'Traditional',
     ...){
+
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat_type <- gsub(' ','+',stat_type)
   version <- "homepagev2"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameScope=", game_scope,
-                     "&LeagueID=",league_id,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&PlayerScope=", player_scope,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&StatType=",stat_type)
+  params <- list(
+    GameScope = game_scope,
+    LeagueID = league_id,
+    PlayerOrTeam = player_or_team,
+    PlayerScope = player_scope,
+    Season = season,
+    SeasonType = season_type,
+    StatType = stat_type
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -349,25 +359,28 @@ nba_leaderstiles <- function(
     season_type = 'Regular Season',
     stat = 'PTS',
     ...){
+
   player_scope <- gsub(' ','+',player_scope)
   season_type <- gsub(' ','+',season_type)
   stat <- gsub(' ','+',stat)
   version <- "leaderstiles"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameScope=", game_scope,
-                     "&LeagueID=",league_id,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&PlayerScope=", player_scope,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&Stat=",stat)
+  params <- list(
+    GameScope = game_scope,
+    LeagueID = league_id,
+    PlayerOrTeam = player_or_team,
+    PlayerScope = player_scope,
+    Season = season,
+    SeasonType = season_type,
+    Stat = stat
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -423,19 +436,21 @@ nba_defensehub <- function(
   season_type <- gsub(' ','+',season_type)
   version <- "defensehub"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameScope=", game_scope,
-                     "&LeagueID=",league_id,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&PlayerScope=", player_scope,
-                     "&Season=",season,
-                     "&SeasonType=",season_type)
+  params <- list(
+    GameScope = game_scope,
+    LeagueID = league_id,
+    PlayerOrTeam = player_or_team,
+    PlayerScope = player_scope,
+    Season = season,
+    SeasonType = season_type
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -489,25 +504,28 @@ nba_leagueleaders <- function(
     season_type = 'Regular Season',
     stat_category = 'PTS',
     ...){
+
   scope <- gsub(' ','+',scope)
   season_type <- gsub(' ','+',season_type)
   stat_category <- gsub(' ','+',stat_category)
   version <- "leagueleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?ActiveFlag=", active_flag,
-                     "&LeagueID=",league_id,
-                     "&PerMode=", per_mode,
-                     "&Scope=", scope,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&StatCategory=",stat_category)
+  params <- list(
+    ActiveFlag = active_flag,
+    LeagueID = league_id,
+    PerMode = per_mode,
+    Scope = scope,
+    Season = season,
+    SeasonType = season_type,
+    StatCategory = stat_category
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet %>%

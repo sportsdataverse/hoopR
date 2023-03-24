@@ -27,15 +27,18 @@ nba_commonallplayers <- function(
 
   version <- "commonallplayers"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?IsOnlyCurrentSeason=",is_only_current_season,
-                     "&LeagueID=",league_id,
-                     "&Season=", season)
+  params <- list(
+    IsOnlyCurrentSeason = is_only_current_season,
+    LeagueID = league_id,
+    Season = season
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -78,13 +81,17 @@ nba_commonplayerinfo <- function(
   version <- "commonplayerinfo"
   endpoint <- nba_endpoint(version)
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&PlayerID=", player_id)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    PlayerID = player_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -128,15 +135,18 @@ nba_commonplayoffseries <- function(
 
   version <- "commonplayoffseries"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&Season=", season,
-                     "&SeriesID=", series_id)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeriesID = series_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -182,15 +192,18 @@ nba_commonteamroster <- function(
 
   version <- "commonteamroster"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=",league_id,
-                     "&Season=", season,
-                     "&TeamID=", team_id)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
