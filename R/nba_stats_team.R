@@ -14,6 +14,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamdetails(team_id = '1610612749')
@@ -66,6 +67,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' [Team Estimated Metrics](https://www.nba.com/stats/teams/estimated-advanced)
 #' ```r
@@ -129,6 +131,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' [Teams Game Log](https://www.nba.com/stats/team/1610612749/boxscores)
 #' ```r
@@ -210,6 +213,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' [Teams Game Log](https://www.nba.com/stats/team/1610612749/boxscores)
 #' ```r
@@ -303,6 +307,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamhistoricalleaders(team_id = '1610612749')
@@ -360,6 +365,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teaminfocommon(team_id = '1610612749')
@@ -441,6 +447,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamplayeronoffdetails(team_id = '1610612749')
@@ -559,6 +566,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamplayeronoffsummary(team_id = '1610612749')
@@ -677,6 +685,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamplayerdashboard(team_id = '1610612749')
@@ -776,6 +785,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' [Team Year by Year Stats](https://www.nba.com/stats/team/1610612756/seasons)
 #' ```r
@@ -861,6 +871,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions
 #' @details
 #' ```r
 #'  nba_teamvsplayer(team_id = '1610612749', vs_player_id = '2544')
@@ -1150,6 +1161,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Team Functions, NBA Game Finder Functions
 #' @details
 #' ```r
 #'  nba_teamgamestreakfinder()

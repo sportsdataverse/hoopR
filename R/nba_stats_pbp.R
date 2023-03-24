@@ -15,6 +15,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA PBP Functions
 #' @details
 #' ```r
 #'  nba_pbp(game_id = 0022201086)
@@ -144,6 +145,7 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
 #' @export
+#' @family NBA PBP Functions
 nba_pbps <- function(
     game_ids = NULL,
     version = "v2",
@@ -193,6 +195,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA PBP Functions, NBA Live Functions
 #' @details
 #' ```r
 #'  nba_live_pbp(game_id = 0022201086)
@@ -251,6 +254,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions, NBA Live Functions
 #' @details
 #' ```r
 #'  nba_live_boxscore(game_id = 0022201086)

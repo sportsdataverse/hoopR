@@ -24,6 +24,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Index](https://www.nba.com/stats/players)
 #' ```r
@@ -97,6 +98,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Headshot](https://cdn.nba.com/headshots/nba/latest/260x190/2544.png)
 #' ```r
@@ -140,6 +142,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Awards](https://www.nba.com/stats/player/2544/career)
 #' ```r
@@ -194,6 +197,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_playercareerbycollege(college = 'Florida State', per_mode = 'PerGame')
@@ -257,6 +261,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_playercareerbycollegerollup(per_mode = 'Totals')
@@ -318,6 +323,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Career Stats](https://www.nba.com/stats/player/2544/career)
 #' ```r
@@ -380,6 +386,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions, NBA Fantasy Functions
 #' @details
 #' ```r
 #'  nba_playerfantasyprofile(player_id = '2544')
@@ -451,6 +458,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions, NBA Fantasy Functions
 #' @details
 #' ```r
 #'  nba_playerfantasyprofilebargraph(player_id = '2544')
@@ -510,6 +518,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Estimated Metrics](https://www.nba.com/stats/players/estimated-advanced)
 #' ```r
@@ -581,6 +590,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Game Log](https://www.nba.com/stats/player/2544/boxscores-traditional)
 #' ```r
@@ -661,6 +671,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Game Logs](https://www.nba.com/stats/player/2544/boxscores-traditional)
 #' ```r
@@ -840,6 +851,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions, NBA Game Finder Functions
 #' @details
 #' ```r
 #'  nba_playergamestreakfinder()
@@ -1072,6 +1084,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_playernextngames(player_id = '2544')
@@ -1137,6 +1150,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' [Player Profile](https://www.nba.com/stats/player/2544/career)
 #' ```r
@@ -1214,6 +1228,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_playervsplayer(player_id = '2544', vs_player_id = '203076')
@@ -1330,6 +1345,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Player Functions
 #' @details
 #' ```r
 #'  nba_playercompare(player_id_list = '202681,203078,2544,201567,203954', vs_player_id_list = '201566,201939,201935,201142,203076')

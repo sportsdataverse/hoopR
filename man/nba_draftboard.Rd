@@ -47,6 +47,16 @@ Returns a named list of data frames: DraftBoard
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_draftboard(season = most_recent_nba_season() - 1)
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Draft Functions: 
+\code{\link{nba_draftcombinedrillresults}()},
+\code{\link{nba_draftcombinenonstationaryshooting}()},
+\code{\link{nba_draftcombineplayeranthro}()},
+\code{\link{nba_draftcombinespotshooting}()},
+\code{\link{nba_draftcombinestats}()},
+\code{\link{nba_drafthistory}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Draft Functions}

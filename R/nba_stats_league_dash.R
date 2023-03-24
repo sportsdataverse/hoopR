@@ -43,6 +43,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions
 #' @details
 #' [Opponent Shots - General](https://www.nba.com/stats/teams/opponent-shots-general)
 #' ```r
@@ -184,6 +185,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Functions
 #' @details
 #' [Player Bio Stats](https://www.nba.com/stats/players/bio)
 #' ```r
@@ -335,6 +337,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Functions
 #' @details
 #' [Players Clutch Stats](https://www.nba.com/stats/players/clutch-traditional)
 #' ```r
@@ -503,6 +506,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions
 #' @details
 #' [Players Shot Dashboard](https://www.nba.com/stats/players/shots-general)
 #' ```r
@@ -673,6 +677,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Functions
 #' @details
 #' [Players Stats](https://www.nba.com/stats/players/traditional)
 #' ```r
@@ -830,6 +835,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Functions, NBA Shooting Functions
 #' @details
 #' [Players Shooting by Shot Location](https://www.nba.com/stats/players/shooting)
 #' ```r
@@ -997,6 +1003,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions
 #' @details
 #' [Defensive Dashboard](https://www.nba.com/stats/players/defense-dash-overall)
 #' ```r
@@ -1138,6 +1145,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions
 #' @details
 #' [Players Tracking (Second Spectrum) Stats](https://www.nba.com/stats/players/drives)
 #' ```r
@@ -1269,6 +1277,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions
 #' @details
 #' [Team Defensive Dashboard](https://www.nba.com/stats/teams/defense-dash-overall)
 #' ```r
@@ -1392,6 +1401,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Clutch Functions
 #' @details
 #' [Team Clutch Stats](https://www.nba.com/stats/teams/clutch-traditional)
 #' ```r
@@ -1533,6 +1543,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Player Tracking Functions, NBA Shooting Functions
 #' @details
 #' [Team Shot Dashboard](https://www.nba.com/stats/teams/shots-general)
 #' ```r
@@ -1661,6 +1672,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Team Functions
 #' @details
 #' [Team Stats](https://www.nba.com/stats/teams/traditional)
 #' ```r
@@ -1796,6 +1808,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA League Functions, NBA Shooting Functions
 #' @details
 #' [Team Shooting by Shot Location](https://www.nba.com/stats/teams/shooting)
 #' ```r

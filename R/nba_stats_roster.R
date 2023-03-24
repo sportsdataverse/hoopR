@@ -14,6 +14,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Roster Functions
 #' @details
 #' [All Players](https://www.nba.com/players)
 #' ```r
@@ -68,6 +69,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Roster Functions
 #' @details
 #' [Player Info](https://www.nba.com/stats/player/2544)
 #' ```r
@@ -123,6 +125,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Roster Functions
 #' @details
 #' ```r
 #'  nba_commonplayoffseries(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
@@ -179,6 +182,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Roster Functions
 #' @details
 #' [Team Roster](https://www.nba.com/stats/team/1610612756)
 #' ```r

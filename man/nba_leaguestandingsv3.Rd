@@ -37,6 +37,13 @@ Return a named list of data frames: Standings
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguestandingsv3(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions: 
+\code{\link{nba_leaguegamelog}()},
+\code{\link{nba_leaguestandings}()},
+\code{\link{nba_playoffpicture}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions}

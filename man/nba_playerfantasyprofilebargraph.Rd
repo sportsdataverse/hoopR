@@ -35,6 +35,11 @@ Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerfantasyprofilebargraph(player_id = '2544')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions, NBA Fantasy Functions: 
+\code{\link{nba_playerfantasyprofile}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions, NBA Fantasy Functions}

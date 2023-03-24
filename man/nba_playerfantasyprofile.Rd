@@ -50,6 +50,11 @@ Return a named list of data frames: DaysRestModified, LastNGames, Location, Oppo
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerfantasyprofile(player_id = '2544')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions, NBA Fantasy Functions: 
+\code{\link{nba_playerfantasyprofilebargraph}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions, NBA Fantasy Functions}

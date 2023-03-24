@@ -27,6 +27,13 @@ Returns a named list of data frames: FranchiseLeaders
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_franchiseleaders(league_id = '00', team_id = '1610612739')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Franchise Functions: 
+\code{\link{nba_franchisehistory}()},
+\code{\link{nba_franchiseleaderswrank}()},
+\code{\link{nba_franchiseplayers}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Franchise Functions}

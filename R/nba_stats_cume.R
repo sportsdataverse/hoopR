@@ -17,6 +17,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Cume Functions
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
@@ -86,6 +87,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Cume Functions
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
@@ -156,6 +158,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Cume Functions
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
@@ -223,6 +226,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Cume Functions
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r

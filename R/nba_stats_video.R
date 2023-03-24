@@ -41,6 +41,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Video Functions
 #' @details
 #' ```r
 #'  nba_videodetailsasset(player_id = '2544', team_id = '1610612747')
@@ -181,6 +182,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Video Functions
 #' @details
 #' ```r
 #'  nba_videodetails(player_id = '2544', team_id = '1610612747')
@@ -293,6 +295,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Video Functions
 #' @details
 #' ```r
 #'  nba_videoevents(game_id = '0021700807', game_event_id = '0')
@@ -351,6 +354,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Video Functions
 #' @details
 #' ```r
 #'  nba_videostatus(game_date = '2023-03-10', league_id = '00')

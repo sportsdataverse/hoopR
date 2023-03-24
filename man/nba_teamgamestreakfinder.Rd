@@ -590,3 +590,4 @@ Return a named list of data frames: TeamGameStreakFinderParametersResults
 \author{
 Saiem Gilani
 }
+\concept{NBA Team Functions, NBA Game Finder Functions}

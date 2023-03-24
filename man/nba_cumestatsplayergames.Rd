@@ -52,6 +52,13 @@ Returns a named list of data frames: CumeStatsPlayerGames
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsplayergames(player_id = '2544')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Cume Functions: 
+\code{\link{nba_cumestatsplayer}()},
+\code{\link{nba_cumestatsteamgames}()},
+\code{\link{nba_cumestatsteam}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Cume Functions}

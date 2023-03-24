@@ -27,6 +27,13 @@ Returns a data frame: PlayByPlay
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_pbp(game_id = 0022201086)
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA PBP Functions: 
+\code{\link{nba_data_pbp}()},
+\code{\link{nba_pbps}()},
+\code{\link{nba_winprobabilitypbp}()}
+}
 \author{
 Jason Lee
 }
+\concept{NBA PBP Functions}

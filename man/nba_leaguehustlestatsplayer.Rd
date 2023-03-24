@@ -105,6 +105,13 @@ Returns a named list of data frames: HustleStatsPlayer
 
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Hustle Functions: 
+\code{\link{nba_leaguehustlestatsplayerleaders}()},
+\code{\link{nba_leaguehustlestatsteamleaders}()},
+\code{\link{nba_leaguehustlestatsteam}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Hustle Functions}

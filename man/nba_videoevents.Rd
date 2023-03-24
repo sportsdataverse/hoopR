@@ -25,6 +25,13 @@ Return a list of tibbles: videoUrls, playlist
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videoevents(game_id = '0021700807', game_event_id = '0')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Video Functions: 
+\code{\link{nba_videodetailsasset}()},
+\code{\link{nba_videodetails}()},
+\code{\link{nba_videostatus}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Video Functions}

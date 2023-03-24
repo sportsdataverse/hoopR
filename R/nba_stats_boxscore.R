@@ -18,6 +18,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoretraditionalv2(game_id = "0022200021")
@@ -82,6 +83,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoreadvancedv2(game_id = "0022200021")
@@ -141,6 +143,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoredefensive(game_id = "0022200021")
@@ -195,6 +198,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscorefourfactorsv2(game_id = "0022200021")
@@ -259,6 +263,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoremiscv2(game_id = "0022200021")
@@ -323,6 +328,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscorescoringv2(game_id = "0022200021")
@@ -387,6 +393,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoreusagev2(game_id = "0022200021")
@@ -446,6 +453,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscoresummaryv2(game_id = "0022200021")
@@ -496,6 +504,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions
 #' @details
 #' ```r
 #'  nba_boxscorematchups(game_id = "0022200021", version = "v1")
@@ -550,6 +559,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions, NBA Player Tracking Functions
 #' @details
 #' ```r
 #'  nba_boxscoreplayertrackv2(game_id = "0022200021")
@@ -599,6 +609,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions, NBA Hustle Functions
 #' @details
 #' ```r
 #'  nba_hustlestatsboxscore(game_id = "0022200021")
@@ -650,6 +661,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Functions, NBA Lineup Functions
 #' @details
 #' ```r
 #'  nba_gamerotation(game_id = "0022200021")
@@ -718,6 +730,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Similarity Functions
 nba_boxscoresimilarityscore <- function(
     person_1_id,
     person_1_league_id,
@@ -784,6 +797,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Boxscore Similarity Functions
 nba_glalumboxscoresimilarityscore <- function(
     person_1_id,
     person_1_league_id,

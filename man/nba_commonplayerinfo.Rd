@@ -27,6 +27,13 @@ Return a named list of data frames: AvailableSeasons
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonplayerinfo(league_id = '00', player_id = '2544')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Roster Functions: 
+\code{\link{nba_commonallplayers}()},
+\code{\link{nba_commonplayoffseries}()},
+\code{\link{nba_commonteamroster}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Roster Functions}

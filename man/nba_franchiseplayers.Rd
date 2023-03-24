@@ -38,6 +38,13 @@ Returns a named list of data frames: FranchisePlayers
  nba_franchiseplayers(league_id = '00', season_type = 'Playoffs', team_id = '1610612739')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Franchise Functions: 
+\code{\link{nba_franchisehistory}()},
+\code{\link{nba_franchiseleaderswrank}()},
+\code{\link{nba_franchiseleaders}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Franchise Functions}

@@ -43,6 +43,17 @@ DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
  nba_defensehub(league_id = '00', player_or_team = "Team")
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Leaders Functions: 
+\code{\link{nba_alltimeleadersgrids}()},
+\code{\link{nba_assistleaders}()},
+\code{\link{nba_assisttracker}()},
+\code{\link{nba_homepageleaders}()},
+\code{\link{nba_homepagev2}()},
+\code{\link{nba_leaderstiles}()},
+\code{\link{nba_leagueleaders}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Leaders Functions}

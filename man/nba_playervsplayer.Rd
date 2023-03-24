@@ -90,6 +90,28 @@ ShotDistanceOverall, VsPlayerInfo
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playervsplayer(player_id = '2544', vs_player_id = '203076')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions: 
+\code{\link{nba_playerawards}()},
+\code{\link{nba_playercareerbycollegerollup}()},
+\code{\link{nba_playercareerbycollege}()},
+\code{\link{nba_playercareerstats}()},
+\code{\link{nba_playercompare}()},
+\code{\link{nba_playerdashboardbygamesplits}()},
+\code{\link{nba_playerdashboardbygeneralsplits}()},
+\code{\link{nba_playerdashboardbylastngames}()},
+\code{\link{nba_playerdashboardbyopponent}()},
+\code{\link{nba_playerdashboardbyteamperformance}()},
+\code{\link{nba_playerdashboardbyyearoveryear}()},
+\code{\link{nba_playerestimatedmetrics}()},
+\code{\link{nba_playergamelogs}()},
+\code{\link{nba_playergamelog}()},
+\code{\link{nba_playerheadshot}()},
+\code{\link{nba_playerindex}()},
+\code{\link{nba_playernextngames}()},
+\code{\link{nba_playerprofilev2}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions}

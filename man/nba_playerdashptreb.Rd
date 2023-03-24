@@ -80,6 +80,13 @@ ShotDistanceRebounding, ShotTypeRebounding
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions, NBA Player Tracking Functions: 
+\code{\link{nba_playerdashptpass}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions, NBA Player Tracking Functions}

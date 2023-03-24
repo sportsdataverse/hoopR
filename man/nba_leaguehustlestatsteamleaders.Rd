@@ -103,6 +103,13 @@ Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, Te
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguehustlestatsteamleaders(league_id = '00')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Hustle Functions: 
+\code{\link{nba_leaguehustlestatsplayerleaders}()},
+\code{\link{nba_leaguehustlestatsplayer}()},
+\code{\link{nba_leaguehustlestatsteam}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Hustle Functions}
