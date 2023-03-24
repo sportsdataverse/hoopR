@@ -73,6 +73,13 @@ Return a named list of data frames: PassesMade, PassesReceived
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions, NBA Player Tracking Functions: 
+\code{\link{nba_playerdashptreb}()},
+\code{\link{nba_playerdashptshotdefend}()},
+\code{\link{nba_playerdashptshots}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions, NBA Player Tracking Functions}

@@ -25,6 +25,13 @@ Return a list of tibbles: VideoStatus
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videostatus(game_date = '2023-03-10', league_id = '00')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Video Functions: 
+\code{\link{nba_videodetailsasset}()},
+\code{\link{nba_videodetails}()},
+\code{\link{nba_videoevents}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Video Functions}

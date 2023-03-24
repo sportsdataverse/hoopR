@@ -70,6 +70,13 @@ Event Message Types (etype):
 
 \strong{Get NBA Data API Play-by-Play}
 }
+\seealso{
+Other NBA PBP Functions: 
+\code{\link{nba_pbps}()},
+\code{\link{nba_pbp}()},
+\code{\link{nba_winprobabilitypbp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA PBP Functions}

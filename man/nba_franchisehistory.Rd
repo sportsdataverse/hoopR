@@ -28,6 +28,13 @@ Returns a named list of data frames: DefunctTeams, FranchiseHistory
  nba_franchisehistory(league_id = '20')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Franchise Functions: 
+\code{\link{nba_franchiseleaderswrank}()},
+\code{\link{nba_franchiseleaders}()},
+\code{\link{nba_franchiseplayers}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Franchise Functions}

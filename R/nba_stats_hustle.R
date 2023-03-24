@@ -37,6 +37,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Hustle Functions
 #' @details
 #' [Player Hustle Stats](https://www.nba.com/stats/players/hustle)
 #' ```r
@@ -164,6 +165,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Hustle Functions
 #' @details
 #' [Player Hustle Stats Leaders](https://www.nba.com/stats/players/hustle-leaders)
 #' ```r
@@ -289,6 +291,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Hustle Functions
 #' @details
 #' [Team Hustle Stats](https://www.nba.com/stats/teams/hustle)
 #' ```r
@@ -414,6 +417,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Hustle Functions
 #' @details
 #' [Team Hustle Stats Leaders](https://www.nba.com/stats/teams/hustle-leaders)
 #' ```r

@@ -66,6 +66,7 @@ NULL
 #'    |league_id          |character |
 #'
 #' @export
+#' @family NBA Schedule Functions
 #' @details
 #' ```r
 #'  nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
@@ -144,6 +145,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Schedule Functions
 #' @details
 #' ```r
 #'  nba_scoreboard(league_id = '00', game_date = '2021-07-20')
@@ -201,6 +203,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Schedule Functions
 #' @details
 #' ```r
 #'  nba_scoreboardv2(league_id = '00', game_date = '2021-07-20')
@@ -257,6 +260,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA PBP Functions
 #' @details
 #' ```r
 #'  nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')

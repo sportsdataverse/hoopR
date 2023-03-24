@@ -38,6 +38,28 @@ Return a named list of data frames: PlayerCareerByCollege
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playercareerbycollege(college = 'Florida State', per_mode = 'PerGame')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Player Functions: 
+\code{\link{nba_playerawards}()},
+\code{\link{nba_playercareerbycollegerollup}()},
+\code{\link{nba_playercareerstats}()},
+\code{\link{nba_playercompare}()},
+\code{\link{nba_playerdashboardbygamesplits}()},
+\code{\link{nba_playerdashboardbygeneralsplits}()},
+\code{\link{nba_playerdashboardbylastngames}()},
+\code{\link{nba_playerdashboardbyopponent}()},
+\code{\link{nba_playerdashboardbyteamperformance}()},
+\code{\link{nba_playerdashboardbyyearoveryear}()},
+\code{\link{nba_playerestimatedmetrics}()},
+\code{\link{nba_playergamelogs}()},
+\code{\link{nba_playergamelog}()},
+\code{\link{nba_playerheadshot}()},
+\code{\link{nba_playerindex}()},
+\code{\link{nba_playernextngames}()},
+\code{\link{nba_playerprofilev2}()},
+\code{\link{nba_playervsplayer}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions}

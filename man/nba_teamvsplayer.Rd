@@ -100,6 +100,26 @@ ShotDistanceOverall, vsPlayerOverall
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamvsplayer(team_id = '1610612749', vs_player_id = '2544')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Team Functions: 
+\code{\link{nba_teamdashboardbygamesplits}()},
+\code{\link{nba_teamdashboardbygeneralsplits}()},
+\code{\link{nba_teamdashboardbylastngames}()},
+\code{\link{nba_teamdashboardbyopponent}()},
+\code{\link{nba_teamdashboardbyteamperformance}()},
+\code{\link{nba_teamdashboardbyyearoveryear}()},
+\code{\link{nba_teamdetails}()},
+\code{\link{nba_teamestimatedmetrics}()},
+\code{\link{nba_teamgamelogs}()},
+\code{\link{nba_teamgamelog}()},
+\code{\link{nba_teamhistoricalleaders}()},
+\code{\link{nba_teaminfocommon}()},
+\code{\link{nba_teamplayerdashboard}()},
+\code{\link{nba_teamplayeronoffdetails}()},
+\code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teamyearbyyearstats}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Team Functions}

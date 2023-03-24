@@ -23,6 +23,13 @@ Returns a data frame: PlayByPlay
 
 \strong{Get NBA Stats API play-by-play (Multiple Games)}
 }
+\seealso{
+Other NBA PBP Functions: 
+\code{\link{nba_data_pbp}()},
+\code{\link{nba_pbp}()},
+\code{\link{nba_winprobabilitypbp}()}
+}
 \author{
 Jason Lee
 }
+\concept{NBA PBP Functions}

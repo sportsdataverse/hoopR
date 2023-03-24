@@ -25,6 +25,13 @@ Return a named list of data frames:
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA PBP Functions: 
+\code{\link{nba_data_pbp}()},
+\code{\link{nba_pbps}()},
+\code{\link{nba_pbp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA PBP Functions}

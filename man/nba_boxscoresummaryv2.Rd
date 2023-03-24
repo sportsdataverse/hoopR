@@ -23,6 +23,18 @@ Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary, Inac
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoresummaryv2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Boxscore Functions: 
+\code{\link{nba_boxscoreadvancedv2}()},
+\code{\link{nba_boxscoredefensive}()},
+\code{\link{nba_boxscorefourfactorsv2}()},
+\code{\link{nba_boxscorematchups}()},
+\code{\link{nba_boxscoremiscv2}()},
+\code{\link{nba_boxscorescoringv2}()},
+\code{\link{nba_boxscoretraditionalv2}()},
+\code{\link{nba_boxscoreusagev2}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Boxscore Functions}

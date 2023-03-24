@@ -20,6 +20,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' ```r
 #'  nba_draftboard(season = most_recent_nba_season() - 1)
@@ -85,6 +86,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' ```r
 #'  nba_draftcombinestats(season_year = most_recent_nba_season() - 1)
@@ -137,6 +139,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' [Draft Combine](https://www.nba.com/stats/draft/combine)
 #' ```r
@@ -191,6 +194,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' [Draft Combine Non-stationary Shooting](https://www.nba.com/stats/draft/combine-non-stationary)
 #' ```r
@@ -245,6 +249,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' [Draft Combine Player Anthro](https://www.nba.com/stats/draft/combine)
 #' ```r
@@ -298,6 +303,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' [Draft Combine Spot Shooting](https://www.nba.com/stats/draft/combine-spot-up)
 #' ```r
@@ -355,6 +361,7 @@ nba_draftcombinespotshooting <- function(
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Draft Functions
 #' @details
 #' [Draft History](https://www.nba.com/stats/draft/history)
 #' ```r

@@ -40,6 +40,13 @@ Returns a named list of data frames: GameByGameStats, TotalTeamStats
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteam()
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Cume Functions: 
+\code{\link{nba_cumestatsplayergames}()},
+\code{\link{nba_cumestatsplayer}()},
+\code{\link{nba_cumestatsteamgames}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Cume Functions}

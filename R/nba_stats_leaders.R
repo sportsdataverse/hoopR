@@ -16,6 +16,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_alltimeleadersgrids(league_id = '00')
@@ -78,6 +79,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_assistleaders(league_id = '00', player_or_team = "Player")
@@ -139,6 +141,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_assisttracker(league_id = '00')
@@ -198,6 +201,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_homepageleaders(league_id = '00', player_or_team = "Player")
@@ -271,6 +275,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_homepagev2(league_id = '00', player_or_team = "Player")
@@ -344,6 +349,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_leaderstiles(league_id = '00', player_or_team = "Player")
@@ -417,6 +423,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' ```r
 #'  nba_defensehub(league_id = '00', player_or_team = "Player")
@@ -489,6 +496,7 @@ NULL
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
+#' @family NBA Leaders Functions
 #' @details
 #' [League Leaders](https://www.nba.com/stats/leaders)
 #' ```r

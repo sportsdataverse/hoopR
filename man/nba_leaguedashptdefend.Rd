@@ -118,6 +118,14 @@ Returns a named list of data frames: LeagueDashPTDefend
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashptdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions, NBA Player Tracking Functions: 
+\code{\link{nba_leaguedashoppptshot}()},
+\code{\link{nba_leaguedashplayerptshot}()},
+\code{\link{nba_leaguedashptstats}()},
+\code{\link{nba_leaguedashptteamdefend}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions, NBA Player Tracking Functions}

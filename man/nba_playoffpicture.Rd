@@ -23,6 +23,13 @@ WestConfRemainingGames, WestConfStandings
 
 \strong{Get NBA Stats API Playoff Picture}
 }
+\seealso{
+Other NBA League Functions: 
+\code{\link{nba_leaguegamelog}()},
+\code{\link{nba_leaguestandingsv3}()},
+\code{\link{nba_leaguestandings}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions}

@@ -77,6 +77,12 @@ RebDistanceRebounding, ShotDistanceRebounding, ShotTypeRebounding
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptreb(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Team Functions, NBA Player Tracking Functions: 
+\code{\link{nba_teamdashptpass}()},
+\code{\link{nba_teamdashptshots}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Team Functions, NBA Player Tracking Functions}

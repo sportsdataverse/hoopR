@@ -86,6 +86,15 @@ Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions, NBA Player Functions: 
+\code{\link{nba_leaguedashplayerbiostats}()},
+\code{\link{nba_leaguedashplayerclutch}()},
+\code{\link{nba_leaguedashplayerstats}()},
+\code{\link{nba_leagueseasonmatchups}()},
+\code{\link{nba_matchupsrollup}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions, NBA Player Functions}

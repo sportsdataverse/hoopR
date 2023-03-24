@@ -106,6 +106,11 @@ Returns a named list of data frames: LeagueLineupViz
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguelineupviz(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA League Functions, NBA Lineup Functions: 
+\code{\link{nba_leaguedashlineups}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions, NBA Lineup Functions}

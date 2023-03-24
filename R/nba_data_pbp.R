@@ -66,6 +66,7 @@ NULL
 #' @import furrr
 #' @import rvest
 #' @export
+#' @family NBA PBP Functions
 nba_data_pbp <- function(game_id = "0021900001",
                          ...){
 

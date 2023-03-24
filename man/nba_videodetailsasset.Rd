@@ -113,6 +113,13 @@ Return a list of tibbles: videoUrls, playlist
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videodetailsasset(player_id = '2544', team_id = '1610612747')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Video Functions: 
+\code{\link{nba_videodetails}()},
+\code{\link{nba_videoevents}()},
+\code{\link{nba_videostatus}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Video Functions}

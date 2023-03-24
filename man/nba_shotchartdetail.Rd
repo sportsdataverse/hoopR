@@ -89,3 +89,4 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 \author{
 Saiem Gilani
 }
+\concept{NBA Shooting Functions}

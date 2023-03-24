@@ -28,6 +28,12 @@ GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboard(league_id = '00', game_date = '2021-07-20')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Schedule Functions: 
+\code{\link{nba_schedule}()},
+\code{\link{nba_scoreboardv2}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Schedule Functions}

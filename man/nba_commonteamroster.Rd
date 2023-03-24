@@ -34,6 +34,13 @@ Return a named list of data frames: Coaches, CommonTeamRoster
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 1), team_id = '1610612739')
 }\if{html}{\out{</div>}}
 }
+\seealso{
+Other NBA Roster Functions: 
+\code{\link{nba_commonallplayers}()},
+\code{\link{nba_commonplayerinfo}()},
+\code{\link{nba_commonplayoffseries}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{NBA Roster Functions}

@@ -293,3 +293,4 @@ Return a named list of data frames: PlayerGameStreakFinderResults
 \author{
 Saiem Gilani
 }
+\concept{NBA Player Functions, NBA Game Finder Functions}
