@@ -36,25 +36,28 @@ nba_leaguegamelog <- function(
     season_type = 'Regular Season',
     sorter = 'DATE',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamelog"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?Counter=", counter,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Direction=", direction,
-                     "&LeagueID=", league_id,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&Season=", season,
-                     "&SeasonType=", season_type,
-                     "&Sorter=",sorter)
+  params <- list(
+    Counter = counter,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Direction = direction,
+    LeagueID = league_id,
+    PlayerOrTeam = player_or_team,
+    Season = season,
+    SeasonType = season_type,
+    Sorter = sorter
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -99,20 +102,23 @@ nba_leaguestandings <- function(
     season_type = 'Regular Season',
     season_year = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandings"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Season=", season,
-                     "&SeasonType=", season_type,
-                     "&SeasonYear=", season_year)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -157,20 +163,23 @@ nba_leaguestandingsv3 <- function(
     season_type = 'Regular Season',
     season_year = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Season=", season,
-                     "&SeasonType=", season_type,
-                     "&SeasonYear=", season_year)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type,
+    SeasonYear = season_year
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -211,15 +220,17 @@ nba_playoffpicture <- function(
 
   version <- "playoffpicture"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&SeasonID=", season_id)
+  params <- list(
+    LeagueID = league_id,
+    SeasonID = season_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -431,105 +442,107 @@ nba_leaguegamefinder <- function(
     vs_team_id = '',
     years_experience = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?Conference=", conference,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&DraftNumber=",draft_number,
-                     "&DraftRound=",draft_round,
-                     "&DraftTeamID=",draft_team_id,
-                     "&DraftYear=",draft_year,
-                     "&EqAST=",et_ast,
-                     "&EqBLK=",et_blk,
-                     "&EqDD=",et_dd,
-                     "&EqDREB=",et_dreb,
-                     "&EqFG3A=",et_fg3a,
-                     "&EqFG3M=",et_fg3m,
-                     "&EqFG3_PCT=",et_fg3_pct,
-                     "&EqFGA=",et_fga,
-                     "&EqFGM=",et_fgm,
-                     "&EqFG_PCT=",et_fg_pct,
-                     "&EqFTA=",et_fta,
-                     "&EqFTM=",et_ftm,
-                     "&EqFT_PCT=", et_ft_pct,
-                     "&EqMINUTES=",et_minutes,
-                     "&EqOREB=", et_oreb,
-                     "&EqPF=",et_pf,
-                     "&EqPTS=",et_pts,
-                     "&EqREB=", et_reb,
-                     "&EqSTL=",et_stl,
-                     "&EqTD=",et_td,
-                     "&EqTOV=",et_tov,
-                     "&GameID=",game_id,
-                     "&GtAST=",gt_ast,
-                     "&GtBLK=",gt_blk,
-                     "&GtDD=",gt_dd,
-                     "&GtDREB=",gt_dreb,
-                     "&GtFG3A=",gt_fg3a,
-                     "&GtFG3M=",gt_fg3m,
-                     "&GtFG3_PCT=",gt_fg3_pct,
-                     "&GtFGA=",gt_fga,
-                     "&GtFGM=",gt_fgm,
-                     "&GtFG_PCT=",gt_fg_pct,
-                     "&GtFTA=",gt_fta,
-                     "&GtFTM=",gt_ftm,
-                     "&GtFT_PCT=", gt_ft_pct,
-                     "&GtMINUTES=",gt_minutes,
-                     "&GtOREB=", gt_oreb,
-                     "&GtPF=",gt_pf,
-                     "&GtPTS=",gt_pts,
-                     "&GtREB=", gt_reb,
-                     "&GtSTL=",gt_stl,
-                     "&GtTD=",gt_td,
-                     "&GtTOV=",gt_tov,
-                     "&LeagueID=", league_id,
-                     "&Location=",location,
-                     "&LtAST=",lt_ast,
-                     "&LtBLK=",lt_blk,
-                     "&LtDD=",lt_dd,
-                     "&LtDREB=",lt_dreb,
-                     "&LtFG3A=",lt_fg3a,
-                     "&LtFG3M=",lt_fg3m,
-                     "&LtFG3_PCT=",lt_fg3_pct,
-                     "&LtFGA=",lt_fga,
-                     "&LtFGM=",lt_fgm,
-                     "&LtFG_PCT=",lt_fg_pct,
-                     "&LtFTA=",lt_fta,
-                     "&LtFTM=",lt_ftm,
-                     "&LtFT_PCT=", lt_ft_pct,
-                     "&LtMINUTES=",lt_minutes,
-                     "&LtOREB=", lt_oreb,
-                     "&LtPF=",lt_pf,
-                     "&LtPTS=",lt_pts,
-                     "&LtREB=", lt_reb,
-                     "&LtSTL=",lt_stl,
-                     "&LtTD=",lt_td,
-                     "&LtTOV=",lt_tov,
-                     "&Outcome=",outcome,
-                     "&PORound=",po_round,
-                     "&PlayerID=",player_id,
-                     "&PlayerOrTeam=",player_or_team,
-                     "&RookieYear=",rookie_year,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&StarterBench",starter_bench,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&VsTeamID=", vs_team_id,
-                     "&YearsExperience=", years_experience
+  params <- list(
+    Conference = conference,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    DraftNumber = draft_number,
+    DraftRound = draft_round,
+    DraftTeamID = draft_team_id,
+    DraftYear = draft_year,
+    EqAST = et_ast,
+    EqBLK = et_blk,
+    EqDD = et_dd,
+    EqDREB = et_dreb,
+    EqFG3A = et_fg3a,
+    EqFG3M = et_fg3m,
+    EqFG3_PCT = et_fg3_pct,
+    EqFGA = et_fga,
+    EqFGM = et_fgm,
+    EqFG_PCT = et_fg_pct,
+    EqFTA = et_fta,
+    EqFTM = et_ftm,
+    EqFT_PCT = et_ft_pct,
+    EqMINUTES = et_minutes,
+    EqOREB = et_oreb,
+    EqPF = et_pf,
+    EqPTS = et_pts,
+    EqREB = et_reb,
+    EqSTL = et_stl,
+    EqTD = et_td,
+    EqTOV = et_tov,
+    GameID = game_id,
+    GtAST = gt_ast,
+    GtBLK = gt_blk,
+    GtDD = gt_dd,
+    GtDREB = gt_dreb,
+    GtFG3A = gt_fg3a,
+    GtFG3M = gt_fg3m,
+    GtFG3_PCT = gt_fg3_pct,
+    GtFGA = gt_fga,
+    GtFGM = gt_fgm,
+    GtFG_PCT = gt_fg_pct,
+    GtFTA = gt_fta,
+    GtFTM = gt_ftm,
+    GtFT_PCT = gt_ft_pct,
+    GtMINUTES = gt_minutes,
+    GtOREB = gt_oreb,
+    GtPF = gt_pf,
+    GtPTS = gt_pts,
+    GtREB = gt_reb,
+    GtSTL = gt_stl,
+    GtTD = gt_td,
+    GtTOV = gt_tov,
+    LeagueID = league_id,
+    Location = location,
+    LtAST = lt_ast,
+    LtBLK = lt_blk,
+    LtDD = lt_dd,
+    LtDREB = lt_dreb,
+    LtFG3A = lt_fg3a,
+    LtFG3M = lt_fg3m,
+    LtFG3_PCT = lt_fg3_pct,
+    LtFGA = lt_fga,
+    LtFGM = lt_fgm,
+    LtFG_PCT = lt_fg_pct,
+    LtFTA = lt_fta,
+    LtFTM = lt_ftm,
+    LtFT_PCT = lt_ft_pct,
+    LtMINUTES = lt_minutes,
+    LtOREB = lt_oreb,
+    LtPF = lt_pf,
+    LtPTS = lt_pts,
+    LtREB = lt_reb,
+    LtSTL = lt_stl,
+    LtTD = lt_td,
+    LtTOV = lt_tov,
+    Outcome = outcome,
+    PORound = po_round,
+    PlayerID = player_id,
+    PlayerOrTeam = player_or_team,
+    RookieYear = rookie_year,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    StarterBench = starter_bench,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    VsTeamID = vs_team_id,
+    YearsExperience = years_experience
   )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

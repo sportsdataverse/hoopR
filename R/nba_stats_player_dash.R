@@ -69,39 +69,42 @@ nba_playerdashboardbyclutch <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyclutch"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -184,39 +187,42 @@ nba_playerdashboardbygamesplits <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbygamesplits"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -301,39 +307,42 @@ nba_playerdashboardbygeneralsplits <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbygeneralsplits"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -418,38 +427,42 @@ nba_playerdashboardbylastngames <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbylastngames"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -533,38 +546,42 @@ nba_playerdashboardbyopponent <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyopponent"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -648,38 +665,42 @@ nba_playerdashboardbyshootingsplits <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyshootingsplits"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -763,38 +784,42 @@ nba_playerdashboardbyteamperformance <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyteamperformance"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -877,39 +902,42 @@ nba_playerdashboardbyyearoveryear <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyyearoveryear"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -977,31 +1005,35 @@ nba_playerdashptpass  <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptpass"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PerMode=", per_mode,
-                     "&PlayerID=",player_id,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PerMode = per_mode,
+    PlayerID = player_id,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -1075,33 +1107,37 @@ nba_playerdashptreb  <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptreb"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=",game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -1175,33 +1211,37 @@ nba_playerdashptshotdefend  <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptshotdefend"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=",game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -1275,33 +1315,37 @@ nba_playerdashptshots  <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptshots"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=",game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -1354,23 +1398,26 @@ nba_synergyplaytypes <- function(
     season_type = 'Regular Season',
     type_grouping = 'Offensive',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "synergyplaytypes"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&PerMode=", per_mode,
-                     "&PlayType=", play_type,
-                     "&PlayerOrTeam=", player_or_team,
-                     "&SeasonType=", season_type,
-                     "&SeasonYear=", season,
-                     "&TypeGrouping=", type_grouping)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    PlayType = play_type,
+    PlayerOrTeam = player_or_team,
+    SeasonType = season_type,
+    SeasonYear = season,
+    TypeGrouping = type_grouping
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

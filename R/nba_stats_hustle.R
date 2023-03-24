@@ -72,41 +72,44 @@ nba_leaguehustlestatsplayer <- function(
     vs_division = '',
     weight = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayer"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&Conference=", conference,
-                     "&Country=", country,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&DraftPick=", draft_pick,
-                     "&DraftYear=", draft_year,
-                     "&Height=", height,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&PlayerExperience=",player_experience,
-                     "&PlayerPosition=", player_position,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&Weight=", weight)
+  params <- list(
+    College = college,
+    Conference = conference,
+    Country = country,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    DraftPick = draft_pick,
+    DraftYear = draft_year,
+    Height = height,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PerMode = per_mode,
+    PlayerExperience = player_experience,
+    PlayerPosition = player_position,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    Weight = weight
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -194,41 +197,44 @@ nba_leaguehustlestatsplayerleaders <- function(
     vs_division = '',
     weight = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayerleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&Conference=", conference,
-                     "&Country=", country,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&DraftPick=", draft_pick,
-                     "&DraftYear=", draft_year,
-                     "&Height=", height,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&PlayerExperience=",player_experience,
-                     "&PlayerPosition=", player_position,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&Weight=", weight)
+  params <- list(
+    College = college,
+    Conference = conference,
+    Country = country,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    DraftPick = draft_pick,
+    DraftYear = draft_year,
+    Height = height,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PerMode = per_mode,
+    PlayerExperience = player_experience,
+    PlayerPosition = player_position,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    Weight = weight
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -317,41 +323,44 @@ nba_leaguehustlestatsteam <- function(
     vs_division = '',
     weight = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteam"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&Conference=", conference,
-                     "&Country=", country,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&DraftPick=", draft_pick,
-                     "&DraftYear=", draft_year,
-                     "&Height=", height,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&PlayerExperience=",player_experience,
-                     "&PlayerPosition=", player_position,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&Weight=", weight)
+  params <- list(
+    College = college,
+    Conference = conference,
+    Country = country,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    DraftPick = draft_pick,
+    DraftYear = draft_year,
+    Height = height,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PerMode = per_mode,
+    PlayerExperience = player_experience,
+    PlayerPosition = player_position,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    Weight = weight
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -438,41 +447,44 @@ nba_leaguehustlestatsteamleaders <- function(
     vs_division = '',
     weight = '',
     ...){
+
   season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteamleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?College=", college,
-                     "&Conference=", conference,
-                     "&Country=", country,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&DraftPick=", draft_pick,
-                     "&DraftYear=", draft_year,
-                     "&Height=", height,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&PlayerExperience=",player_experience,
-                     "&PlayerPosition=", player_position,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&Weight=", weight)
+  params <- list(
+    College = college,
+    Conference = conference,
+    Country = country,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    DraftPick = draft_pick,
+    DraftYear = draft_year,
+    Height = height,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PerMode = per_mode,
+    PlayerExperience = player_experience,
+    PlayerPosition = player_position,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    Weight = weight
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

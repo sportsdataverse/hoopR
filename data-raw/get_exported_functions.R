@@ -13,7 +13,8 @@ nba_functions <- exported %>%
 nba_function_parameters <- purrr::map(nba_functions$name, function(x){
   data.frame(param = names(as.list(args(x))), function_name = x)
 }) %>%
-  purrr::list_rbind()
+  purrr::list_rbind() %>%
+  dplyr::filter(!(.data$param %in% c("", "...")))
 
 nba_function_parameters_raw <- nba_function_parameters %>%
   dplyr::select("param") %>%
@@ -37,7 +38,7 @@ pkg_usage_summary <- function_calls %>%
   dplyr::summarize(n = dplyr::n()) %>%
   dplyr::arrange(dplyr::desc(.data$n))
 
-write.csv(exported,"data-raw/hoopR_exported_functions.csv",row.names=F)
+write.csv(exported,"data-raw/hoopR_exported_functions.csv", row.names = FALSE)
 
 new_nba <- exported %>%
   dplyr::filter(stringr::str_starts(.data$name,"nba_"))

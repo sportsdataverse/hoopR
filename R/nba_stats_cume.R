@@ -24,28 +24,31 @@ NULL
 #' ```
 
 nba_cumestatsplayer <- function(
-  game_ids = '0022000756',
-  league_id = '00',
-  player_id = '1629611',
-  season = '2020-21',
-  season_type = 'Regular Season',
-  team_id = '',
-  ...){
+    game_ids = '0022000756',
+    league_id = '00',
+    player_id = '1629611',
+    season = '2020-21',
+    season_type = 'Regular Season',
+    team_id = '',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayer"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameIDs=",game_ids,
-                     "&LeagueID=",league_id,
-                     "&PlayerID=",player_id,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    GameIDs = game_ids,
+    LeagueID = league_id,
+    PlayerID = player_id,
+    Season = season,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -89,34 +92,37 @@ NULL
 #'  nba_cumestatsplayergames(player_id = '2544')
 #' ```
 nba_cumestatsplayergames <- function(
-  league_id = '00',
-  location = '',
-  outcome = '',
-  player_id = '2544',
-  season = year_to_season(most_recent_nba_season() - 1),
-  season_type = 'Regular Season',
-  vs_conference = '',
-  vs_division = '',
-  vs_team_id = '',
-  ...){
+    league_id = '00',
+    location = '',
+    outcome = '',
+    player_id = '2544',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    vs_conference = '',
+    vs_division = '',
+    vs_team_id = '',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsplayergames"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Outcome=", outcome,
-                     "&PlayerID=", player_id,
-                     "&Season=", season,
-                     "&SeasonType=", season_type,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&VsTeamID=", vs_team_id)
+  params <- list(
+    LeagueID = league_id,
+    Location = location,
+    Outcome = outcome,
+    PlayerID = player_id,
+    Season = season,
+    SeasonType = season_type,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    VsTeamID = vs_team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -156,27 +162,30 @@ NULL
 #'  nba_cumestatsteam()
 #' ```
 nba_cumestatsteam <- function(
-  game_ids = '0022000756',
-  league_id = '00',
-  season = '2020-21',
-  season_type = 'Regular Season',
-  team_id = '1610612739',
-  ...){
+    game_ids = '0022000756',
+    league_id = '00',
+    season = '2020-21',
+    season_type = 'Regular Season',
+    team_id = '1610612739',
+    ...){
 
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsteam"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameIDs=",game_ids,
-                     "&LeagueID=",league_id,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    GameIDs = game_ids,
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -220,36 +229,39 @@ NULL
 #'  nba_cumestatsteamgames()
 #' ```
 nba_cumestatsteamgames <- function(
-  league_id = '00',
-  location = '',
-  outcome = '',
-  season = year_to_season(most_recent_nba_season() - 1),
-  season_id = '',
-  season_type = 'Regular Season',
-  team_id = 1610612739,
-  vs_conference = '',
-  vs_division = '',
-  vs_team_id = '',
-  ...){
+    league_id = '00',
+    location = '',
+    outcome = '',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_id = '',
+    season_type = 'Regular Season',
+    team_id = 1610612739,
+    vs_conference = '',
+    vs_division = '',
+    vs_team_id = '',
+    ...){
   season_type <- gsub(' ','+',season_type)
   version <- "cumestatsteamgames"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Outcome=", outcome,
-                     "&Season=", season,
-                     "&SeasonID=", season_id,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&VsTeamID=", vs_team_id)
+  params <- list(
+    LeagueID = league_id,
+    Location = location,
+    Outcome = outcome,
+    Season = season,
+    SeasonID = season_id,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    VsTeamID = vs_team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

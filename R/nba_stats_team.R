@@ -24,13 +24,16 @@ nba_teamdetails <- function(
 
   version <- "teamdetails"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?TeamID=",team_id)
+  params <- list(
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -74,18 +77,21 @@ nba_teamestimatedmetrics <- function(
     season_type = 'Regular Season',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamestimatedmetrics"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&Season=",season,
-                     "&SeasonType=",season_type)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -137,21 +143,24 @@ nba_teamgamelog <- function(
     team_id = '1610612749',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelog"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&LeagueID=", league_id,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -229,35 +238,38 @@ nba_teamgamelogs <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelogs"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=",player_id,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -303,15 +315,18 @@ nba_teamhistoricalleaders <- function(
 
   version <- "teamhistoricalleaders"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&SeasonID=", season_id,
-                     "&TeamID=", team_id)
+  params <- list(
+    LeagueID = league_id,
+    SeasonID = season_id,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -356,19 +371,22 @@ nba_teaminfocommon <- function(
     team_id = '1610612749',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "teaminfocommon"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?&LeagueID=", league_id,
-                     "&Season=",season,
-                     "&SeasonType=",season_type,
-                     "&TeamID=",team_id)
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -452,38 +470,42 @@ nba_teamplayeronoffdetails <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffdetails"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -566,38 +588,42 @@ nba_teamplayeronoffsummary <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffsummary"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -680,38 +706,42 @@ nba_teamplayerdashboard <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamplayerdashboard"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PORound=", po_round,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PaceAdjust = pace_adjust,
+    PORound = po_round,
+    PerMode = per_mode,
+    Period = period,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -758,19 +788,22 @@ nba_teamyearbyyearstats <- function(
     team_id = '1610612749',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamyearbyyearstats"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&PerMode=",per_mode,
-                     "&SeasonType=",season_type,
-                     "&TeamID=", team_id)
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    SeasonType = season_type,
+    TeamID = team_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -859,40 +892,44 @@ nba_teamvsplayer <- function(
     vs_division = '',
     vs_player_id = '2544',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamvsplayer"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&MeasureType=", measure_type,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&PaceAdjust=", pace_adjust,
-                     "&PerMode=", per_mode,
-                     "&Period=", period,
-                     "&PlayerID=", player_id,
-                     "&PlusMinus=", plus_minus,
-                     "&Rank=", rank,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&ShotClockRange=",shot_clock_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&VsPlayerID=", vs_player_id)
+  params <- list(
+    DateFrom = date_from,
+    DateTo = date_to,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    MeasureType = measure_type,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    PORound = po_round,
+    PaceAdjust = pace_adjust,
+    PerMode = per_mode,
+    Period = period,
+    PlayerID = player_id,
+    PlusMinus = plus_minus,
+    Rank = rank,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    ShotClockRange = shot_clock_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    VsPlayerID = vs_player_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -1308,204 +1345,207 @@ nba_teamgamestreakfinder <- function(
     wrs_opp_stl = '',
     wrs_opp_tov = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "teamgamestreakfinder"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?ActiveStreaksOnly", active_streaks_only,
-                     "&ActiveTeamsOnly=", active_teams_only,
-                     "&BtrOPPAST=", btr_opp_ast,
-                     "&BtrOPPBLK=", btr_opp_blk,
-                     "&BtrOPPDREB=", btr_opp_dreb,
-                     "&BtrOPPFG3A=", btr_opp_fg3a,
-                     "&BtrOPPFG3M=", btr_opp_fg3m,
-                     "&BtrOPPFG3PCT=", btr_opp_fg3_pct,
-                     "&BtrOPPFGA=", btr_opp_fga,
-                     "&BtrOPPFGM=", btr_opp_fgm,
-                     "&BtrOPPFG_PCT=", btr_opp_fg_pct,
-                     "&BtrOPPFTA=", btr_opp_fta,
-                     "&BtrOPPFTM=", btr_opp_ftm,
-                     "&BtrOPPFT_PCT=", btr_opp_ft_pct,
-                     "&BtrOPPOREB=", btr_opp_oreb,
-                     "&BtrOPPPF=", btr_opp_pf,
-                     "&BtrOPPPTS=", btr_opp_pts,
-                     "&BtrOPPPTS2NDCHANCE=", btr_opp_pts2nd_chance,
-                     "&BtrOPPPTSFB=", btr_opp_pts_fb,
-                     "&BtrOPPPTSOFFTOV=", btr_opp_pts_off_tov,
-                     "&BtrOPPPTSPAINT=", btr_opp_pts_paint,
-                     "&BtrOPPREB=", btr_opp_reb,
-                     "&BtrOPPSTL=", btr_opp_stl,
-                     "&BtrOPPTOV=", btr_opp_tov,
-                     "&Conference=", conference,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&Division=", division,
-                     "&EqAST=", et_ast,
-                     "&EqBLK=", et_blk,
-                     "&EqDD=", et_dd,
-                     "&EqDREB=", et_dreb,
-                     "&EqFG3A=", et_fg3a,
-                     "&EqFG3M=", et_fg3m,
-                     "&EqFG3_PCT=", et_fg3_pct,
-                     "&EqFGA=", et_fga,
-                     "&EqFGM=", et_fgm,
-                     "&EqFG_PCT=", et_fg_pct,
-                     "&EqFTA=", et_fta,
-                     "&EqFTM=", et_ftm,
-                     "&EqFT_PCT=", et_ft_pct,
-                     "&EqMINUTES=", et_minutes,
-                     "&EqOPPPTS2NDCHANCE=", eq_opp_pts2nd_chance,
-                     "&EqOPPPTSFB=", eq_opp_pts_fb,
-                     "&EqOPPPTSOFFTOV=", eq_opp_pts_off_tov,
-                     "&EqOPPPTSPAINT=", eq_opp_pts_paint,
-                     "&EqOREB=", et_oreb,
-                     "&EqPF=", et_pf,
-                     "&EqPTS=", et_pts,
-                     "&EqPTS2NDCHANCE=", eq_pts2nd_chance,
-                     "&EqPTSFB=", eq_pts_fb,
-                     "&EqPTSOFFTOV=", eq_pts_off_tov,
-                     "&EqPTSPAINT=", eq_pts_paint,
-                     "&EqREB=", et_reb,
-                     "&EqSTL=", et_stl,
-                     "&EqTD=", et_td,
-                     "&EqTOV=", et_tov,
-                     "&GameID=", game_id,
-                     "&GtAST=", gt_ast,
-                     "&GtBLK=", gt_blk,
-                     "&GtDD=", gt_dd,
-                     "&GtDREB=", gt_dreb,
-                     "&GtFG3A=", gt_fg3a,
-                     "&GtFG3M=", gt_fg3m,
-                     "&GtFG3_PCT=", gt_fg3_pct,
-                     "&GtFGA=", gt_fga,
-                     "&GtFGM=", gt_fgm,
-                     "&GtFG_PCT=", gt_fg_pct,
-                     "&GtFTA=", gt_fta,
-                     "&GtFTM=", gt_ftm,
-                     "&GtFT_PCT=", gt_ft_pct,
-                     "&GtMINUTES=", gt_minutes,
-                     "&GtOPPAST=", gt_opp_ast,
-                     "&GtOPPBLK=", gt_opp_blk,
-                     "&GtOPPDREB=", gt_opp_dreb,
-                     "&GtOPPFG3A=", gt_opp_fg3a,
-                     "&GtOPPFG3M=", gt_opp_fg3m,
-                     "&GtOPPFG3PCT=", gt_opp_fg3_pct,
-                     "&GtOPPFGA=", gt_opp_fga,
-                     "&GtOPPFGM=", gt_opp_fgm,
-                     "&GtOPPFG_PCT=", gt_opp_fg_pct,
-                     "&GtOPPFTA=", gt_opp_fta,
-                     "&GtOPPFTM=", gt_opp_ftm,
-                     "&GtOPPFT_PCT=", gt_opp_ft_pct,
-                     "&GtOPPOREB=", gt_opp_oreb,
-                     "&GtOPPPF=", gt_opp_pf,
-                     "&GtOPPPTS=", gt_opp_pts,
-                     "&GtOPPPTS2NDCHANCE=", gt_opp_pts2nd_chance,
-                     "&GtOPPPTSFB=", gt_opp_pts_fb,
-                     "&GtOPPPTSOFFTOV=", gt_opp_pts_off_tov,
-                     "&GtOPPPTSPAINT=", gt_opp_pts_paint,
-                     "&GtOPPREB=", gt_opp_reb,
-                     "&GtOPPSTL=", gt_opp_stl,
-                     "&GtOPPTOV=", gt_opp_tov,
-                     "&GtOREB=", gt_oreb,
-                     "&GtPF=", gt_pf,
-                     "&GtPTS=", gt_pts,
-                     "&GtPTS2NDCHANCE=", gt_pts2nd_chance,
-                     "&GtPTSFB=", gt_pts_fb,
-                     "&GtPTSOFFTOV=", gt_pts_off_tov,
-                     "&GtPTSPAINT=", gt_pts_paint,
-                     "&GtREB=", gt_reb,
-                     "&GtSTL=", gt_stl,
-                     "&GtTD=", gt_td,
-                     "&GtTOV=", gt_tov,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&LStreak=", lstreak,
-                     "&LtAST=", lt_ast,
-                     "&LtBLK=", lt_blk,
-                     "&LtDD=", lt_dd,
-                     "&LtDREB=", lt_dreb,
-                     "&LtFG3A=", lt_fg3a,
-                     "&LtFG3M=", lt_fg3m,
-                     "&LtFG3_PCT=", lt_fg3_pct,
-                     "&LtFGA=", lt_fga,
-                     "&LtFGM=", lt_fgm,
-                     "&LtFG_PCT=", lt_fg_pct,
-                     "&LtFTA=", lt_fta,
-                     "&LtFTM=", lt_ftm,
-                     "&LtFT_PCT=", lt_ft_pct,
-                     "&LtMINUTES=", lt_minutes,
-                     "&LtOPPAST=", lt_opp_ast,
-                     "&LtOPPBLK=", lt_opp_blk,
-                     "&LtOPPDREB=", lt_opp_dreb,
-                     "&LtOPPFG3A=", lt_opp_fg3a,
-                     "&LtOPPFG3M=", lt_opp_fg3m,
-                     "&LtOPPFG3PCT=", lt_opp_fg3_pct,
-                     "&LtOPPFGA=", lt_opp_fga,
-                     "&LtOPPFGM=", lt_opp_fgm,
-                     "&LtOPPFG_PCT=", lt_opp_fg_pct,
-                     "&LtOPPFTA=", lt_opp_fta,
-                     "&LtOPPFTM=", lt_opp_ftm,
-                     "&LtOPPFT_PCT=", lt_opp_ft_pct,
-                     "&LtOPPOREB=", lt_opp_oreb,
-                     "&LtOPPPF=", lt_opp_pf,
-                     "&LtOPPPTS=", lt_opp_pts,
-                     "&LtOPPPTS2NDCHANCE=", lt_opp_pts2nd_chance,
-                     "&LtOPPPTSFB=", lt_opp_pts_fb,
-                     "&LtOPPPTSOFFTOV=", lt_opp_pts_off_tov,
-                     "&LtOPPPTSPAINT=", lt_opp_pts_paint,
-                     "&LtOPPREB=", lt_opp_reb,
-                     "&LtOPPSTL=", lt_opp_stl,
-                     "&LtOPPTOV=", lt_opp_tov,
-                     "&LtOREB=", lt_oreb,
-                     "&LtPF=", lt_pf,
-                     "&LtPTS=", lt_pts,
-                     "&LtPTS2NDCHANCE=", lt_pts2nd_chance,
-                     "&LtPTSFB=", lt_pts_fb,
-                     "&LtPTSOFFTOV=", lt_pts_off_tov,
-                     "&LtPTSPAINT=", lt_pts_paint,
-                     "&LtREB=", lt_reb,
-                     "&LtSTL=", lt_stl,
-                     "&LtTD=", lt_td,
-                     "&LtTOV=", lt_tov,
-                     "&MinGames=", min_games,
-                     "&Outcome=", outcome,
-                     "&PORound=", po_round,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division,
-                     "&VsTeamID=", vs_team_id,
-                     "&WStreak=", wstreak,
-                     "&WrsOPPAST=", wrs_opp_ast,
-                     "&WrsOPPBLK=", wrs_opp_blk,
-                     "&WrsOPPDREB=", wrs_opp_dreb,
-                     "&WrsOPPFG3A=", wrs_opp_fg3a,
-                     "&WrsOPPFG3M=", wrs_opp_fg3m,
-                     "&WrsOPPFG3PCT=", wrs_opp_fg3_pct,
-                     "&WrsOPPFGA=", wrs_opp_fga,
-                     "&WrsOPPFGM=", wrs_opp_fgm,
-                     "&WrsOPPFG_PCT=", wrs_opp_fg_pct,
-                     "&WrsOPPFTA=", wrs_opp_fta,
-                     "&WrsOPPFTM=", wrs_opp_ftm,
-                     "&WrsOPPFT_PCT=", wrs_opp_ft_pct,
-                     "&WrsOPPOREB=", wrs_opp_oreb,
-                     "&WrsOPPPF=", wrs_opp_pf,
-                     "&WrsOPPPTS=", wrs_opp_pts,
-                     "&WrsOPPPTS2NDCHANCE=", wrs_opp_pts2nd_chance,
-                     "&WrsOPPPTSFB=", wrs_opp_pts_fb,
-                     "&WrsOPPPTSOFFTOV=", wrs_opp_pts_off_tov,
-                     "&WrsOPPPTSPAINT=", wrs_opp_pts_paint,
-                     "&WrsOPPREB=", wrs_opp_reb,
-                     "&WrsOPPSTL=", wrs_opp_stl,
-                     "&WrsOPPTOV=", wrs_opp_tov
+  params <- list(
+    ActiveStreaksOnly = active_streaks_only,
+    ActiveTeamsOnly = active_teams_only,
+    BtrOPPAST = btr_opp_ast,
+    BtrOPPBLK = btr_opp_blk,
+    BtrOPPDREB = btr_opp_dreb,
+    BtrOPPFG3A = btr_opp_fg3a,
+    BtrOPPFG3M = btr_opp_fg3m,
+    BtrOPPFG3PCT = btr_opp_fg3_pct,
+    BtrOPPFGA = btr_opp_fga,
+    BtrOPPFGM = btr_opp_fgm,
+    BtrOPPFG_PCT = btr_opp_fg_pct,
+    BtrOPPFTA = btr_opp_fta,
+    BtrOPPFTM = btr_opp_ftm,
+    BtrOPPFT_PCT = btr_opp_ft_pct,
+    BtrOPPOREB = btr_opp_oreb,
+    BtrOPPPF = btr_opp_pf,
+    BtrOPPPTS = btr_opp_pts,
+    BtrOPPPTS2NDCHANCE = btr_opp_pts2nd_chance,
+    BtrOPPPTSFB = btr_opp_pts_fb,
+    BtrOPPPTSOFFTOV = btr_opp_pts_off_tov,
+    BtrOPPPTSPAINT = btr_opp_pts_paint,
+    BtrOPPREB = btr_opp_reb,
+    BtrOPPSTL = btr_opp_stl,
+    BtrOPPTOV = btr_opp_tov,
+    Conference = conference,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    EqAST = et_ast,
+    EqBLK = et_blk,
+    EqDD = et_dd,
+    EqDREB = et_dreb,
+    EqFG3A = et_fg3a,
+    EqFG3M = et_fg3m,
+    EqFG3_PCT = et_fg3_pct,
+    EqFGA = et_fga,
+    EqFGM = et_fgm,
+    EqFG_PCT = et_fg_pct,
+    EqFTA = et_fta,
+    EqFTM = et_ftm,
+    EqFT_PCT = et_ft_pct,
+    EqMINUTES = et_minutes,
+    EqOPPPTS2NDCHANCE = eq_opp_pts2nd_chance,
+    EqOPPPTSFB = eq_opp_pts_fb,
+    EqOPPPTSOFFTOV = eq_opp_pts_off_tov,
+    EqOPPPTSPAINT = eq_opp_pts_paint,
+    EqOREB = et_oreb,
+    EqPF = et_pf,
+    EqPTS = et_pts,
+    EqPTS2NDCHANCE = eq_pts2nd_chance,
+    EqPTSFB = eq_pts_fb,
+    EqPTSOFFTOV = eq_pts_off_tov,
+    EqPTSPAINT = eq_pts_paint,
+    EqREB = et_reb,
+    EqSTL = et_stl,
+    EqTD = et_td,
+    EqTOV = et_tov,
+    GameID = game_id,
+    GtAST = gt_ast,
+    GtBLK = gt_blk,
+    GtDD = gt_dd,
+    GtDREB = gt_dreb,
+    GtFG3A = gt_fg3a,
+    GtFG3M = gt_fg3m,
+    GtFG3_PCT = gt_fg3_pct,
+    GtFGA = gt_fga,
+    GtFGM = gt_fgm,
+    GtFG_PCT = gt_fg_pct,
+    GtFTA = gt_fta,
+    GtFTM = gt_ftm,
+    GtFT_PCT = gt_ft_pct,
+    GtMINUTES = gt_minutes,
+    GtOPPAST = gt_opp_ast,
+    GtOPPBLK = gt_opp_blk,
+    GtOPPDREB = gt_opp_dreb,
+    GtOPPFG3A = gt_opp_fg3a,
+    GtOPPFG3M = gt_opp_fg3m,
+    GtOPPFG3PCT = gt_opp_fg3_pct,
+    GtOPPFGA = gt_opp_fga,
+    GtOPPFGM = gt_opp_fgm,
+    GtOPPFG_PCT = gt_opp_fg_pct,
+    GtOPPFTA = gt_opp_fta,
+    GtOPPFTM = gt_opp_ftm,
+    GtOPPFT_PCT = gt_opp_ft_pct,
+    GtOPPOREB = gt_opp_oreb,
+    GtOPPPF = gt_opp_pf,
+    GtOPPPTS = gt_opp_pts,
+    GtOPPPTS2NDCHANCE = gt_opp_pts2nd_chance,
+    GtOPPPTSFB = gt_opp_pts_fb,
+    GtOPPPTSOFFTOV = gt_opp_pts_off_tov,
+    GtOPPPTSPAINT = gt_opp_pts_paint,
+    GtOPPREB = gt_opp_reb,
+    GtOPPSTL = gt_opp_stl,
+    GtOPPTOV = gt_opp_tov,
+    GtOREB = gt_oreb,
+    GtPF = gt_pf,
+    GtPTS = gt_pts,
+    GtPTS2NDCHANCE = gt_pts2nd_chance,
+    GtPTSFB = gt_pts_fb,
+    GtPTSOFFTOV = gt_pts_off_tov,
+    GtPTSPAINT = gt_pts_paint,
+    GtREB = gt_reb,
+    GtSTL = gt_stl,
+    GtTD = gt_td,
+    GtTOV = gt_tov,
+    LeagueID = league_id,
+    Location = location,
+    LStreak = lstreak,
+    LtAST = lt_ast,
+    LtBLK = lt_blk,
+    LtDD = lt_dd,
+    LtDREB = lt_dreb,
+    LtFG3A = lt_fg3a,
+    LtFG3M = lt_fg3m,
+    LtFG3_PCT = lt_fg3_pct,
+    LtFGA = lt_fga,
+    LtFGM = lt_fgm,
+    LtFG_PCT = lt_fg_pct,
+    LtFTA = lt_fta,
+    LtFTM = lt_ftm,
+    LtFT_PCT = lt_ft_pct,
+    LtMINUTES = lt_minutes,
+    LtOPPAST = lt_opp_ast,
+    LtOPPBLK = lt_opp_blk,
+    LtOPPDREB = lt_opp_dreb,
+    LtOPPFG3A = lt_opp_fg3a,
+    LtOPPFG3M = lt_opp_fg3m,
+    LtOPPFG3PCT = lt_opp_fg3_pct,
+    LtOPPFGA = lt_opp_fga,
+    LtOPPFGM = lt_opp_fgm,
+    LtOPPFG_PCT = lt_opp_fg_pct,
+    LtOPPFTA = lt_opp_fta,
+    LtOPPFTM = lt_opp_ftm,
+    LtOPPFT_PCT = lt_opp_ft_pct,
+    LtOPPOREB = lt_opp_oreb,
+    LtOPPPF = lt_opp_pf,
+    LtOPPPTS = lt_opp_pts,
+    LtOPPPTS2NDCHANCE = lt_opp_pts2nd_chance,
+    LtOPPPTSFB = lt_opp_pts_fb,
+    LtOPPPTSOFFTOV = lt_opp_pts_off_tov,
+    LtOPPPTSPAINT = lt_opp_pts_paint,
+    LtOPPREB = lt_opp_reb,
+    LtOPPSTL = lt_opp_stl,
+    LtOPPTOV = lt_opp_tov,
+    LtOREB = lt_oreb,
+    LtPF = lt_pf,
+    LtPTS = lt_pts,
+    LtPTS2NDCHANCE = lt_pts2nd_chance,
+    LtPTSFB = lt_pts_fb,
+    LtPTSOFFTOV = lt_pts_off_tov,
+    LtPTSPAINT = lt_pts_paint,
+    LtREB = lt_reb,
+    LtSTL = lt_stl,
+    LtTD = lt_td,
+    LtTOV = lt_tov,
+    MinGames = min_games,
+    Outcome = outcome,
+    PORound = po_round,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division,
+    VsTeamID = vs_team_id,
+    WStreak = wstreak,
+    WrsOPPAST = wrs_opp_ast,
+    WrsOPPBLK = wrs_opp_blk,
+    WrsOPPDREB = wrs_opp_dreb,
+    WrsOPPFG3A = wrs_opp_fg3a,
+    WrsOPPFG3M = wrs_opp_fg3m,
+    WrsOPPFG3PCT = wrs_opp_fg3_pct,
+    WrsOPPFGA = wrs_opp_fga,
+    WrsOPPFGM = wrs_opp_fgm,
+    WrsOPPFG_PCT = wrs_opp_fg_pct,
+    WrsOPPFTA = wrs_opp_fta,
+    WrsOPPFTM = wrs_opp_ftm,
+    WrsOPPFT_PCT = wrs_opp_ft_pct,
+    WrsOPPOREB = wrs_opp_oreb,
+    WrsOPPPF = wrs_opp_pf,
+    WrsOPPPTS = wrs_opp_pts,
+    WrsOPPPTS2NDCHANCE = wrs_opp_pts2nd_chance,
+    WrsOPPPTSFB = wrs_opp_pts_fb,
+    WrsOPPPTSOFFTOV = wrs_opp_pts_off_tov,
+    WrsOPPPTSPAINT = wrs_opp_pts_paint,
+    WrsOPPREB = wrs_opp_reb,
+    WrsOPPSTL = wrs_opp_stl,
+    WrsOPPTOV = wrs_opp_tov
   )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
