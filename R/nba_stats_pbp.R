@@ -37,7 +37,7 @@ nba_pbp <- function(
 
   params <- list(
     EndPeriod = 0,
-    GameID, pad_id(game_id),
+    GameID = pad_id(game_id),
     StartPeriod = 0
   )
 
