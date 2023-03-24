@@ -185,10 +185,10 @@ espn_nba_game_all <- function(game_id){
             )
           ) %>%
           dplyr::rename(
-            coordinate.x.raw = .data$coordinate.x,
-            coordinate.y.raw = .data$coordinate.y,
-            coordinate.x = .data$coordinate_x_transformed,
-            coordinate.y = .data$coordinate_y_transformed
+            "coordinate.x.raw" = "coordinate.x",
+            "coordinate.y.raw" = "coordinate.y",
+            "coordinate.x" = "coordinate_x_transformed",
+            "coordinate.y" = "coordinate_y_transformed"
           )
       }
       suppressWarnings(
@@ -544,10 +544,10 @@ espn_nba_pbp <- function(game_id){
             )
           ) %>%
           dplyr::rename(
-            coordinate.x.raw = .data$coordinate.x,
-            coordinate.y.raw = .data$coordinate.y,
-            coordinate.x = .data$coordinate_x_transformed,
-            coordinate.y = .data$coordinate_y_transformed
+            "coordinate.x.raw" = "coordinate.x",
+            "coordinate.y.raw" = "coordinate.y",
+            "coordinate.x" = "coordinate_x_transformed",
+            "coordinate.y" = "coordinate_y_transformed"
           )
       }
       suppressWarnings(
