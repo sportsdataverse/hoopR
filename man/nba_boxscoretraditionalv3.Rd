@@ -34,6 +34,281 @@ A list of data frames:
 home_team_player_traditional, away_team_player_traditional, home_team_totals_traditional,
 away_team_totals_traditional, home_team_starters_totals, away_team_starters_totals,
 home_team_bench_totals, away_team_bench_totals
+
+\strong{home_team_player_traditional}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+   plus_minus_points \tab numeric \cr
+}
+
+
+\strong{away_team_player_traditional}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+   plus_minus_points \tab numeric \cr
+}
+
+
+\strong{home_team_totals_traditional}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+   plus_minus_points \tab numeric \cr
+}
+
+
+\strong{away_team_totals_traditional}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+   plus_minus_points \tab numeric \cr
+}
+
+
+\strong{home_team_starters_totals}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+}
+
+
+\strong{away_team_starters_totals}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+}
+
+
+\strong{home_team_bench_totals}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+}
+
+
+\strong{away_team_bench_totals}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls_personal \tab integer \cr
+   points \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Traditional V3}
