@@ -37,7 +37,8 @@ TicketLinks, WestConfStandingsByDay, WinProbability
 \seealso{
 Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
-\code{\link{nba_scoreboard}()}
+\code{\link{nba_scoreboard}()},
+\code{\link{nba_todays_scoreboard}()}
 }
 \author{
 Saiem Gilani

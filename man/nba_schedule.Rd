@@ -76,12 +76,14 @@ Returns a tibble with the following columns:\tabular{ll}{
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+ nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA Schedule Functions: 
 \code{\link{nba_scoreboardv2}()},
-\code{\link{nba_scoreboard}()}
+\code{\link{nba_scoreboard}()},
+\code{\link{nba_todays_scoreboard}()}
 }
 \author{
 Saiem Gilani

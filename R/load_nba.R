@@ -18,7 +18,7 @@ NULL
 #' \donttest{
 #'   load_nba_pbp(seasons = most_recent_nba_season())
 #' }
-load_nba_pbp <- function(seasons = most_recent_nba_season(),...,
+load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))

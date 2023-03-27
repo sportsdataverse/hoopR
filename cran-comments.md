@@ -1,16 +1,29 @@
 ## Release summary
 
 This is a minor release that adds the following:
- * Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions
- * ```espn_mbb_game_rosters()``` function added.
- * ```espn_nba_game_rosters()``` function added.
- * ```nba_shotchartlineupdetail()``` function added.
- * ```nba_synergyplaytypes()``` function added.
- * ```nba_live_pbp()``` function added.
- * ```nba_live_boxscore()``` function added.
- * ```nba_franchiseleaderswrank()``` function added.
- * ```nba_videodetailsasset()``` function added.
 
+- Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions
+- ```espn_mbb_game_rosters()``` function added.
+- ```espn_nba_game_rosters()``` function added.
+- Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
+- ```nba_shotchartlineupdetail()``` function added.
+- ```nba_synergyplaytypes()``` function added.
+- ```nba_live_pbp()``` function added.
+- ```nba_live_boxscore()``` function added.
+- ```nba_todays_scoreboard()``` function added.
+- ```nba_franchiseleaderswrank()``` function added.
+- ```nba_videodetailsasset()``` function added.
+- ```nba_boxscoretraditionalv3()``` function added.
+- ```nba_boxscoreadvancedv3()``` function added.
+- ```nba_boxscoremiscv3()``` function added.
+- ```nba_boxscorescoringv3()``` function added.
+- ```nba_boxscoreusagev3()``` function added.
+- ```nba_boxscorefourfactorsv3()``` function added.
+- ```nba_boxscoreplayertrackv3()``` function added.
+- ```nba_boxscorematchupsv3()``` function added.
+- ```nba_boxscorehustlev2()``` function added.
+- ```nba_boxscoredefensivev2()``` function added.
+- ```nba_infographicfanduelplayer()``` function added.
  
 
 ## R CMD check results

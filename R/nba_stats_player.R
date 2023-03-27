@@ -364,6 +364,57 @@ nba_playercareerstats <- function(
   return(df_list)
 }
 
+#' **Get NBA Stats API FanDuel Player Infographic**
+#' @name nba_infographicfanduelplayer
+NULL
+#' @title
+#' **Get NBA Stats API FanDuel Player Infographic**
+#' @rdname nba_infographicfanduelplayer
+#' @author Saiem Gilani
+#' @param game_id game_id
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Return a named list of data frames: FanDuelPlayer
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Player Functions
+#' @family NBA Fantasy Functions
+#' @details
+#' ```r
+#'  nba_infographicfanduelplayer(game_id = "0022201086")
+#' ```
+nba_infographicfanduelplayer <- function(
+    game_id,
+    ...){
+
+  version <- "infographicfanduelplayer"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    GameID = game_id
+  )
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no FanDuel player infographic data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
 #' **Get NBA Stats API Player Fantasy Profile**
 #' @name nba_playerfantasyprofile
 NULL

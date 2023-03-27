@@ -1,11 +1,23 @@
 # **hoopR 1.9.1.9000**
-- Add proxy rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
+- Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
 - ```nba_shotchartlineupdetail()``` function added.
 - ```nba_synergyplaytypes()``` function added.
 - ```nba_live_pbp()``` function added.
 - ```nba_live_boxscore()``` function added.
+- ```nba_todays_scoreboard()``` function added.
 - ```nba_franchiseleaderswrank()``` function added.
 - ```nba_videodetailsasset()``` function added.
+- ```nba_boxscoretraditionalv3()``` function added.
+- ```nba_boxscoreadvancedv3()``` function added.
+- ```nba_boxscoremiscv3()``` function added.
+- ```nba_boxscorescoringv3()``` function added.
+- ```nba_boxscoreusagev3()``` function added.
+- ```nba_boxscorefourfactorsv3()``` function added.
+- ```nba_boxscoreplayertrackv3()``` function added.
+- ```nba_boxscorematchupsv3()``` function added.
+- ```nba_boxscorehustlev2()``` function added.
+- ```nba_boxscoredefensivev2()``` function added.
+- ```nba_infographicfanduelplayer()``` function added.
 
 # **hoopR 1.9.1**
 - Updates under-the-hood urls to the ESPN site API v2 summary endpoints

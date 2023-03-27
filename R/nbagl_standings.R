@@ -13,6 +13,11 @@ NULL
 #' @importFrom dplyr pull bind_rows arrange
 #' @import rvest
 #' @export
+#' @family NBA G-League Functions
+#' @details
+#' ```r
+#'  nbagl_standings(season = most_recent_nba_season() - 1)
+#' ```
 
 nbagl_standings <- function(
     season = most_recent_nba_season() - 1,

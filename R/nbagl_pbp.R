@@ -14,6 +14,11 @@ NULL
 #' @importFrom glue glue
 #' @import rvest
 #' @export
+#' @family NBA G-League Functions
+#' @details
+#' ```r
+#'  nbagl_pbp(game_id = "2012200001")
+#' ```
 
 nbagl_pbp <- function(
     game_id,

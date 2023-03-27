@@ -48,6 +48,7 @@ request_with_proxy <- function(url,
                                origin = "https://stats.nba.com",
                                referer="https://www.nba.com/",
                                ...){
+
   dots <- rlang::dots_list(..., .named = TRUE)
   proxy <- dots$proxy
   headers <- dots$headers

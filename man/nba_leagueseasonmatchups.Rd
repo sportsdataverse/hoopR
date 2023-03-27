@@ -76,6 +76,7 @@ Other NBA League Functions:
 \code{\link{nba_shotchartleaguewide}()}
 
 Other NBA Player Functions: 
+\code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
 \code{\link{nba_leaguedashplayershotlocations}()},
