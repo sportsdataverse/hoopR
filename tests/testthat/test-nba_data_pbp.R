@@ -1,4 +1,4 @@
-test_that("NBA Live PBP", {
+test_that("NBA Data PBP", {
   skip_on_cran()
   skip_on_ci()
   x <- nba_data_pbp(game_id = "0021900001")

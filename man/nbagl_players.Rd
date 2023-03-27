@@ -15,6 +15,17 @@ Returns a data frame of G League Players from NBA Database
 \description{
 Scrapes the NBA Data API for All Players in G League History
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_players()
+}\if{html}{\out{</div>}}
+}
+\seealso{
+Other NBA G-League Functions: 
+\code{\link{nbagl_pbp}()},
+\code{\link{nbagl_schedule}()},
+\code{\link{nbagl_standings}()}
+}
 \author{
 Billy Fryer
 }
+\concept{NBA G-League Functions}

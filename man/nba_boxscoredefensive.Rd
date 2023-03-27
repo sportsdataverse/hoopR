@@ -20,6 +20,8 @@ Returns a named list of data frames: PlayerDefensiveStats, Table1
 \strong{Get NBA Stats API Boxscore Defensive}
 }
 \details{
+(Possibly Deprecated)
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoredefensive(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }

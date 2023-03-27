@@ -31,7 +31,7 @@ Return a named list of data frames: CommonAllPlayers
 \details{
 \href{https://www.nba.com/players}{All Players}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
 \seealso{

@@ -17,6 +17,17 @@ Returns a data frame of the G League Season Schedule
 \description{
 Scrapes the NBA Data API for G League Schedule for a Given Season
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_schedule(season = most_recent_nba_season() - 1)
+}\if{html}{\out{</div>}}
+}
+\seealso{
+Other NBA G-League Functions: 
+\code{\link{nbagl_pbp}()},
+\code{\link{nbagl_players}()},
+\code{\link{nbagl_standings}()}
+}
 \author{
 Billy Fryer
 }
+\concept{NBA G-League Functions}

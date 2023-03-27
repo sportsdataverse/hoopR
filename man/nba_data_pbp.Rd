@@ -70,6 +70,10 @@ Event Message Types (etype):
 
 \strong{Get NBA Data API Play-by-Play}
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_data_pbp(game_id = "0021900001")
+}\if{html}{\out{</div>}}
+}
 \seealso{
 Other NBA PBP Functions: 
 \code{\link{nba_live_pbp}()},

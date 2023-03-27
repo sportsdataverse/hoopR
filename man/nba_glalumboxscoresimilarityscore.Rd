@@ -43,6 +43,9 @@ Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 
 \strong{Get NBA Stats API G-League Alum Boxscore Similarity Score}
 }
+\details{
+(Possibly Deprecated)
+}
 \seealso{
 Other NBA Boxscore Similarity Functions: 
 \code{\link{nba_boxscoresimilarityscore}()}

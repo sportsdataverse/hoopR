@@ -31,6 +31,76 @@ nba_boxscoreadvancedv2(
 }
 \value{
 Returns a named list of data frames: PlayerStats, TeamStats
+
+PlayerStats\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   NICKNAME \tab character \cr
+   START_POSITION \tab character \cr
+   COMMENT \tab character \cr
+   MIN \tab character \cr
+   E_OFF_RATING \tab character \cr
+   OFF_RATING \tab character \cr
+   E_DEF_RATING \tab character \cr
+   DEF_RATING \tab character \cr
+   E_NET_RATING \tab character \cr
+   NET_RATING \tab character \cr
+   AST_PCT \tab character \cr
+   AST_TOV \tab character \cr
+   AST_RATIO \tab character \cr
+   OREB_PCT \tab character \cr
+   DREB_PCT \tab character \cr
+   REB_PCT \tab character \cr
+   TM_TOV_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   TS_PCT \tab character \cr
+   USG_PCT \tab character \cr
+   E_USG_PCT \tab character \cr
+   E_PACE \tab character \cr
+   PACE \tab character \cr
+   PACE_PER40 \tab character \cr
+   POSS \tab character \cr
+   PIE \tab character \cr
+}
+
+
+TeamStats\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   MIN \tab character \cr
+   E_OFF_RATING \tab character \cr
+   OFF_RATING \tab character \cr
+   E_DEF_RATING \tab character \cr
+   DEF_RATING \tab character \cr
+   E_NET_RATING \tab character \cr
+   NET_RATING \tab character \cr
+   AST_PCT \tab character \cr
+   AST_TOV \tab character \cr
+   AST_RATIO \tab character \cr
+   OREB_PCT \tab character \cr
+   DREB_PCT \tab character \cr
+   REB_PCT \tab character \cr
+   E_TM_TOV_PCT \tab character \cr
+   TM_TOV_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   TS_PCT \tab character \cr
+   USG_PCT \tab character \cr
+   E_USG_PCT \tab character \cr
+   E_PACE \tab character \cr
+   PACE \tab character \cr
+   PACE_PER40 \tab character \cr
+   POSS \tab character \cr
+   PIE \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Advanced V2}
