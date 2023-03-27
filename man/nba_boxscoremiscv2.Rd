@@ -31,6 +31,55 @@ nba_boxscoremiscv2(
 }
 \value{
 Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
+
+\strong{sqlPlayersMisc}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   NICKNAME \tab character \cr
+   START_POSITION \tab character \cr
+   COMMENT \tab character \cr
+   MIN \tab character \cr
+   PTS_OFF_TOV \tab character \cr
+   PTS_2ND_CHANCE \tab character \cr
+   PTS_FB \tab character \cr
+   PTS_PAINT \tab character \cr
+   OPP_PTS_OFF_TOV \tab character \cr
+   OPP_PTS_2ND_CHANCE \tab character \cr
+   OPP_PTS_FB \tab character \cr
+   OPP_PTS_PAINT \tab character \cr
+   BLK \tab character \cr
+   BLKA \tab character \cr
+   PF \tab character \cr
+   PFD \tab character \cr
+}
+
+
+\strong{sqlTeamsMisc}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   MIN \tab character \cr
+   PTS_OFF_TOV \tab character \cr
+   PTS_2ND_CHANCE \tab character \cr
+   PTS_FB \tab character \cr
+   PTS_PAINT \tab character \cr
+   OPP_PTS_OFF_TOV \tab character \cr
+   OPP_PTS_2ND_CHANCE \tab character \cr
+   OPP_PTS_FB \tab character \cr
+   OPP_PTS_PAINT \tab character \cr
+   BLK \tab character \cr
+   BLKA \tab character \cr
+   PF \tab character \cr
+   PFD \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Misc V2}

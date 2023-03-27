@@ -31,6 +31,47 @@ nba_boxscorefourfactorsv2(
 }
 \value{
 Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
+
+\strong{sqlPlayersFourFactors}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   NICKNAME \tab character \cr
+   START_POSITION \tab character \cr
+   COMMENT \tab character \cr
+   MIN \tab character \cr
+   EFG_PCT \tab character \cr
+   FTA_RATE \tab character \cr
+   TM_TOV_PCT \tab character \cr
+   OREB_PCT \tab character \cr
+   OPP_EFG_PCT \tab character \cr
+   OPP_FTA_RATE \tab character \cr
+   OPP_TOV_PCT \tab character \cr
+   OPP_OREB_PCT \tab character \cr
+}
+
+
+\strong{sqlTeamsFourFactors}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   MIN \tab character \cr
+   EFG_PCT \tab character \cr
+   FTA_RATE \tab character \cr
+   TM_TOV_PCT \tab character \cr
+   OREB_PCT \tab character \cr
+   OPP_EFG_PCT \tab character \cr
+   OPP_FTA_RATE \tab character \cr
+   OPP_TOV_PCT \tab character \cr
+   OPP_OREB_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Four Factors V2}

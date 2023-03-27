@@ -17,6 +17,17 @@ Returns a tibble of the G League Season Standings
 \description{
 Scrapes the NBA Data API for G League Standings
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_standings(season = most_recent_nba_season() - 1)
+}\if{html}{\out{</div>}}
+}
+\seealso{
+Other NBA G-League Functions: 
+\code{\link{nbagl_pbp}()},
+\code{\link{nbagl_players}()},
+\code{\link{nbagl_schedule}()}
+}
 \author{
 Billy Fryer
 }
+\concept{NBA G-League Functions}

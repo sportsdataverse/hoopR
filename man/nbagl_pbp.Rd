@@ -17,6 +17,17 @@ Returns a data frame of play by play
 \description{
 Scrapes the NBA Data API for Play By Play for G League games
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_pbp(game_id = "2012200001")
+}\if{html}{\out{</div>}}
+}
+\seealso{
+Other NBA G-League Functions: 
+\code{\link{nbagl_players}()},
+\code{\link{nbagl_schedule}()},
+\code{\link{nbagl_standings}()}
+}
 \author{
 Billy Fryer
 }
+\concept{NBA G-League Functions}

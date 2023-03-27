@@ -13,6 +13,69 @@ nba_hustlestatsboxscore(game_id, ...)
 }
 \value{
 Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
+
+\strong{HustleStatsAvailable}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   HUSTLE_STATUS \tab character \cr
+}
+
+
+\strong{PlayerStats}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   START_POSITION \tab character \cr
+   COMMENT \tab character \cr
+   MINUTES \tab character \cr
+   PTS \tab character \cr
+   CONTESTED_SHOTS \tab character \cr
+   CONTESTED_SHOTS_2PT \tab character \cr
+   CONTESTED_SHOTS_3PT \tab character \cr
+   DEFLECTIONS \tab character \cr
+   CHARGES_DRAWN \tab character \cr
+   SCREEN_ASSISTS \tab character \cr
+   SCREEN_AST_PTS \tab character \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
+   LOOSE_BALLS_RECOVERED \tab character \cr
+   OFF_BOXOUTS \tab character \cr
+   DEF_BOXOUTS \tab character \cr
+   BOX_OUT_PLAYER_TEAM_REBS \tab character \cr
+   BOX_OUT_PLAYER_REBS \tab character \cr
+   BOX_OUTS \tab character \cr
+}
+
+
+\strong{TeamStats}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY \tab character \cr
+   MINUTES \tab character \cr
+   PTS \tab character \cr
+   CONTESTED_SHOTS \tab character \cr
+   CONTESTED_SHOTS_2PT \tab character \cr
+   CONTESTED_SHOTS_3PT \tab character \cr
+   DEFLECTIONS \tab character \cr
+   CHARGES_DRAWN \tab character \cr
+   SCREEN_ASSISTS \tab character \cr
+   SCREEN_AST_PTS \tab character \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
+   LOOSE_BALLS_RECOVERED \tab character \cr
+   OFF_BOXOUTS \tab character \cr
+   DEF_BOXOUTS \tab character \cr
+   BOX_OUT_PLAYER_TEAM_REBS \tab character \cr
+   BOX_OUT_PLAYER_REBS \tab character \cr
+   BOX_OUTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Hustle Stats Boxscore}
