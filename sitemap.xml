@@ -271,22 +271,46 @@
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoresimilarityscore.html</loc>
@@ -298,7 +322,13 @@
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_commonallplayers.html</loc>
@@ -380,6 +410,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.html</loc>
@@ -659,6 +692,9 @@
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.html</loc>
   </url>
   <url>
     <loc>https://hoopR.sportsdataverse.org/reference/nba_videodetails.html</loc>
