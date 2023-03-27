@@ -32,6 +32,167 @@ nba_boxscoreadvancedv3(
 \value{
 A list of data frames: home_team_player_advanced, away_team_player_advanced,
 home_team_totals_advanced, away_team_totals_advanced
+
+\strong{home_team_player_advanced}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   estimated_offensive_rating \tab numeric \cr
+   offensive_rating \tab numeric \cr
+   estimated_defensive_rating \tab numeric \cr
+   defensive_rating \tab numeric \cr
+   estimated_net_rating \tab numeric \cr
+   net_rating \tab numeric \cr
+   assist_percentage \tab numeric \cr
+   assist_to_turnover \tab numeric \cr
+   assist_ratio \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   defensive_rebound_percentage \tab numeric \cr
+   rebound_percentage \tab numeric \cr
+   turnover_ratio \tab numeric \cr
+   effective_field_goal_percentage \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   usage_percentage \tab numeric \cr
+   estimated_usage_percentage \tab numeric \cr
+   estimated_pace \tab numeric \cr
+   pace \tab numeric \cr
+   pace_per40 \tab numeric \cr
+   possessions \tab numeric \cr
+   pie \tab numeric \cr
+}
+
+
+\strong{away_team_player_advanced}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   estimated_offensive_rating \tab numeric \cr
+   offensive_rating \tab numeric \cr
+   estimated_defensive_rating \tab numeric \cr
+   defensive_rating \tab numeric \cr
+   estimated_net_rating \tab numeric \cr
+   net_rating \tab numeric \cr
+   assist_percentage \tab numeric \cr
+   assist_to_turnover \tab numeric \cr
+   assist_ratio \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   defensive_rebound_percentage \tab numeric \cr
+   rebound_percentage \tab numeric \cr
+   turnover_ratio \tab numeric \cr
+   effective_field_goal_percentage \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   usage_percentage \tab numeric \cr
+   estimated_usage_percentage \tab numeric \cr
+   estimated_pace \tab numeric \cr
+   pace \tab numeric \cr
+   pace_per40 \tab numeric \cr
+   possessions \tab numeric \cr
+   pie \tab numeric \cr
+}
+
+
+\strong{home_team_totals_advanced}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   estimated_offensive_rating \tab numeric \cr
+   offensive_rating \tab numeric \cr
+   estimated_defensive_rating \tab numeric \cr
+   defensive_rating \tab numeric \cr
+   estimated_net_rating \tab numeric \cr
+   net_rating \tab numeric \cr
+   assist_percentage \tab numeric \cr
+   assist_to_turnover \tab numeric \cr
+   assist_ratio \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   defensive_rebound_percentage \tab numeric \cr
+   rebound_percentage \tab numeric \cr
+   estimated_team_turnover_percentage \tab numeric \cr
+   turnover_ratio \tab numeric \cr
+   effective_field_goal_percentage \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   usage_percentage \tab numeric \cr
+   estimated_usage_percentage \tab numeric \cr
+   estimated_pace \tab numeric \cr
+   pace \tab numeric \cr
+   pace_per40 \tab numeric \cr
+   possessions \tab numeric \cr
+   pie \tab numeric \cr
+}
+
+
+\strong{away_team_totals_advanced}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   estimated_offensive_rating \tab numeric \cr
+   offensive_rating \tab numeric \cr
+   estimated_defensive_rating \tab numeric \cr
+   defensive_rating \tab numeric \cr
+   estimated_net_rating \tab numeric \cr
+   net_rating \tab numeric \cr
+   assist_percentage \tab numeric \cr
+   assist_to_turnover \tab numeric \cr
+   assist_ratio \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   defensive_rebound_percentage \tab numeric \cr
+   rebound_percentage \tab numeric \cr
+   estimated_team_turnover_percentage \tab numeric \cr
+   turnover_ratio \tab numeric \cr
+   effective_field_goal_percentage \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   usage_percentage \tab numeric \cr
+   estimated_usage_percentage \tab numeric \cr
+   estimated_pace \tab numeric \cr
+   pace \tab numeric \cr
+   pace_per40 \tab numeric \cr
+   possessions \tab numeric \cr
+   pie \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Advanced V3}

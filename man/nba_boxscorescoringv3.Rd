@@ -32,6 +32,137 @@ nba_boxscorescoringv3(
 \value{
 A list of data frames: home_team_player_scoring, away_team_player_scoring,
 home_team_totals_scoring, away_team_totals_scoring
+
+\strong{home_team_player_scoring}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   percentage_field_goals_attempted2pt \tab numeric \cr
+   percentage_field_goals_attempted3pt \tab numeric \cr
+   percentage_points2pt \tab numeric \cr
+   percentage_points_midrange2pt \tab numeric \cr
+   percentage_points3pt \tab numeric \cr
+   percentage_points_fast_break \tab numeric \cr
+   percentage_points_free_throw \tab numeric \cr
+   percentage_points_off_turnovers \tab numeric \cr
+   percentage_points_paint \tab numeric \cr
+   percentage_assisted2pt \tab numeric \cr
+   percentage_unassisted2pt \tab numeric \cr
+   percentage_assisted3pt \tab numeric \cr
+   percentage_unassisted3pt \tab numeric \cr
+   percentage_assisted_fgm \tab numeric \cr
+   percentage_unassisted_fgm \tab numeric \cr
+}
+
+
+\strong{away_team_player_scoring}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   percentage_field_goals_attempted2pt \tab numeric \cr
+   percentage_field_goals_attempted3pt \tab numeric \cr
+   percentage_points2pt \tab numeric \cr
+   percentage_points_midrange2pt \tab numeric \cr
+   percentage_points3pt \tab numeric \cr
+   percentage_points_fast_break \tab numeric \cr
+   percentage_points_free_throw \tab numeric \cr
+   percentage_points_off_turnovers \tab numeric \cr
+   percentage_points_paint \tab numeric \cr
+   percentage_assisted2pt \tab numeric \cr
+   percentage_unassisted2pt \tab numeric \cr
+   percentage_assisted3pt \tab numeric \cr
+   percentage_unassisted3pt \tab numeric \cr
+   percentage_assisted_fgm \tab numeric \cr
+   percentage_unassisted_fgm \tab numeric \cr
+}
+
+
+\strong{home_team_totals_scoring}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   percentage_field_goals_attempted2pt \tab numeric \cr
+   percentage_field_goals_attempted3pt \tab numeric \cr
+   percentage_points2pt \tab numeric \cr
+   percentage_points_midrange2pt \tab numeric \cr
+   percentage_points3pt \tab numeric \cr
+   percentage_points_fast_break \tab numeric \cr
+   percentage_points_free_throw \tab numeric \cr
+   percentage_points_off_turnovers \tab numeric \cr
+   percentage_points_paint \tab numeric \cr
+   percentage_assisted2pt \tab numeric \cr
+   percentage_unassisted2pt \tab numeric \cr
+   percentage_assisted3pt \tab numeric \cr
+   percentage_unassisted3pt \tab numeric \cr
+   percentage_assisted_fgm \tab numeric \cr
+   percentage_unassisted_fgm \tab numeric \cr
+}
+
+
+\strong{away_team_totals_scoring}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   percentage_field_goals_attempted2pt \tab numeric \cr
+   percentage_field_goals_attempted3pt \tab numeric \cr
+   percentage_points2pt \tab numeric \cr
+   percentage_points_midrange2pt \tab numeric \cr
+   percentage_points3pt \tab numeric \cr
+   percentage_points_fast_break \tab numeric \cr
+   percentage_points_free_throw \tab numeric \cr
+   percentage_points_off_turnovers \tab numeric \cr
+   percentage_points_paint \tab numeric \cr
+   percentage_assisted2pt \tab numeric \cr
+   percentage_unassisted2pt \tab numeric \cr
+   percentage_assisted3pt \tab numeric \cr
+   percentage_unassisted3pt \tab numeric \cr
+   percentage_assisted_fgm \tab numeric \cr
+   percentage_unassisted_fgm \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Scoring V3}
