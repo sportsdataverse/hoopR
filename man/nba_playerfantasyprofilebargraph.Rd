@@ -25,6 +25,45 @@ nba_playerfantasyprofilebargraph(
 }
 \value{
 Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
+
+\strong{SeasonAvg}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   FAN_DUEL_PTS \tab character \cr
+   NBA_FANTASY_PTS \tab character \cr
+   PTS \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   FG3M \tab character \cr
+   FT_PCT \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{LastFiveGamesAvg}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   FAN_DUEL_PTS \tab character \cr
+   NBA_FANTASY_PTS \tab character \cr
+   PTS \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   FG3M \tab character \cr
+   FT_PCT \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   FG_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Fantasy Profile Bar Graph}

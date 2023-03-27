@@ -280,6 +280,19 @@ nba_playergamestreakfinder(
 }
 \value{
 Return a named list of data frames: PlayerGameStreakFinderResults
+
+\strong{PlayerGameStreakFinderResults}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   PLAYER_ID \tab character \cr
+   GAMESTREAK \tab character \cr
+   STARTDATE \tab character \cr
+   ENDDATE \tab character \cr
+   ACTIVESTREAK \tab character \cr
+   NUMSEASONS \tab character \cr
+   LASTSEASON \tab character \cr
+   FIRSTSEASON \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Game Streak Finder}

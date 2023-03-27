@@ -81,7 +81,8 @@ nba_playerdashboardbyteamperformance(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: OverallPlayerDashboard, PointsScoredPlayerDashboard, PontsAgainstPlayerDashboard,
+Return a named list of data frames: OverallPlayerDashboard,
+PointsScoredPlayerDashboard, PointsAgainstPlayerDashboard,
 ScoreDifferentialPlayerDashboard
 }
 \description{

@@ -109,6 +109,33 @@ nba_leaguedashplayerbiostats(
 }
 \value{
 Returns a named list of data frames: LeagueDashPlayerBioStats
+
+\strong{LeagueDashPlayerBioStats}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   PLAYER_HEIGHT \tab character \cr
+   PLAYER_HEIGHT_INCHES \tab character \cr
+   PLAYER_WEIGHT \tab character \cr
+   COLLEGE \tab character \cr
+   COUNTRY \tab character \cr
+   DRAFT_YEAR \tab character \cr
+   DRAFT_ROUND \tab character \cr
+   DRAFT_NUMBER \tab character \cr
+   GP \tab character \cr
+   PTS \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   NET_RATING \tab character \cr
+   OREB_PCT \tab character \cr
+   DREB_PCT \tab character \cr
+   USG_PCT \tab character \cr
+   TS_PCT \tab character \cr
+   AST_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Biographical Stats}

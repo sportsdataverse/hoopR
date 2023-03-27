@@ -104,6 +104,38 @@ nba_leaguedashptstats(
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
+\value{
+Returns a named list of data frames: LeagueDashPtStats
+
+\strong{LeagueDashPtStats}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   GP \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   MIN \tab character \cr
+   DRIVES \tab character \cr
+   DRIVE_FGM \tab character \cr
+   DRIVE_FGA \tab character \cr
+   DRIVE_FG_PCT \tab character \cr
+   DRIVE_FTM \tab character \cr
+   DRIVE_FTA \tab character \cr
+   DRIVE_FT_PCT \tab character \cr
+   DRIVE_PTS \tab character \cr
+   DRIVE_PTS_PCT \tab character \cr
+   DRIVE_PASSES \tab character \cr
+   DRIVE_PASSES_PCT \tab character \cr
+   DRIVE_AST \tab character \cr
+   DRIVE_AST_PCT \tab character \cr
+   DRIVE_TOV \tab character \cr
+   DRIVE_TOV_PCT \tab character \cr
+   DRIVE_PF \tab character \cr
+   DRIVE_PF_PCT \tab character \cr
+}
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Stats}
 

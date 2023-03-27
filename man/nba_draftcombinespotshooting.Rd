@@ -19,6 +19,61 @@ nba_draftcombinespotshooting(
 }
 \value{
 Returns a named list of data frames: Results
+
+\strong{Results}\tabular{ll}{
+   col_name \tab types \cr
+   TEMP_PLAYER_ID \tab character \cr
+   PLAYER_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   PLAYER_NAME \tab character \cr
+   POSITION \tab character \cr
+   FIFTEEN_CORNER_LEFT_MADE \tab character \cr
+   FIFTEEN_CORNER_LEFT_ATTEMPT \tab character \cr
+   FIFTEEN_CORNER_LEFT_PCT \tab character \cr
+   FIFTEEN_BREAK_LEFT_MADE \tab character \cr
+   FIFTEEN_BREAK_LEFT_ATTEMPT \tab character \cr
+   FIFTEEN_BREAK_LEFT_PCT \tab character \cr
+   FIFTEEN_TOP_KEY_MADE \tab character \cr
+   FIFTEEN_TOP_KEY_ATTEMPT \tab character \cr
+   FIFTEEN_TOP_KEY_PCT \tab character \cr
+   FIFTEEN_BREAK_RIGHT_MADE \tab character \cr
+   FIFTEEN_BREAK_RIGHT_ATTEMPT \tab character \cr
+   FIFTEEN_BREAK_RIGHT_PCT \tab character \cr
+   FIFTEEN_CORNER_RIGHT_MADE \tab character \cr
+   FIFTEEN_CORNER_RIGHT_ATTEMPT \tab character \cr
+   FIFTEEN_CORNER_RIGHT_PCT \tab character \cr
+   COLLEGE_CORNER_LEFT_MADE \tab character \cr
+   COLLEGE_CORNER_LEFT_ATTEMPT \tab character \cr
+   COLLEGE_CORNER_LEFT_PCT \tab character \cr
+   COLLEGE_BREAK_LEFT_MADE \tab character \cr
+   COLLEGE_BREAK_LEFT_ATTEMPT \tab character \cr
+   COLLEGE_BREAK_LEFT_PCT \tab character \cr
+   COLLEGE_TOP_KEY_MADE \tab character \cr
+   COLLEGE_TOP_KEY_ATTEMPT \tab character \cr
+   COLLEGE_TOP_KEY_PCT \tab character \cr
+   COLLEGE_BREAK_RIGHT_MADE \tab character \cr
+   COLLEGE_BREAK_RIGHT_ATTEMPT \tab character \cr
+   COLLEGE_BREAK_RIGHT_PCT \tab character \cr
+   COLLEGE_CORNER_RIGHT_MADE \tab character \cr
+   COLLEGE_CORNER_RIGHT_ATTEMPT \tab character \cr
+   COLLEGE_CORNER_RIGHT_PCT \tab character \cr
+   NBA_CORNER_LEFT_MADE \tab character \cr
+   NBA_CORNER_LEFT_ATTEMPT \tab character \cr
+   NBA_CORNER_LEFT_PCT \tab character \cr
+   NBA_BREAK_LEFT_MADE \tab character \cr
+   NBA_BREAK_LEFT_ATTEMPT \tab character \cr
+   NBA_BREAK_LEFT_PCT \tab character \cr
+   NBA_TOP_KEY_MADE \tab character \cr
+   NBA_TOP_KEY_ATTEMPT \tab character \cr
+   NBA_TOP_KEY_PCT \tab character \cr
+   NBA_BREAK_RIGHT_MADE \tab character \cr
+   NBA_BREAK_RIGHT_ATTEMPT \tab character \cr
+   NBA_BREAK_RIGHT_PCT \tab character \cr
+   NBA_CORNER_RIGHT_MADE \tab character \cr
+   NBA_CORNER_RIGHT_ATTEMPT \tab character \cr
+   NBA_CORNER_RIGHT_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Draft Combine - Spot Shooting}

@@ -31,10 +31,12 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: Last10Sec3Point2PlayerDashboard, Last10Sec3PointPlayerDashboard, Last1Min5PointPlayerDashboard,
-#' Last1MinPlusMinus5PointPlayerDashboard, Last30Sec3Point2PlayerDashboard, Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
-#' Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard, Last5MinPlusMinus5PointPlayerDashboard,
-#' OverallPlayerDashboard
+#' @return Return a named list of data frames: Last10Sec3Point2PlayerDashboard,
+#' Last10Sec3PointPlayerDashboard, Last1Min5PointPlayerDashboard,
+#' Last1MinPlusMinus5PointPlayerDashboard, Last30Sec3Point2PlayerDashboard,
+#'  Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
+#' Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard,
+#' Last5MinPlusMinus5PointPlayerDashboard,  OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -154,7 +156,9 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: ByActualMarginPlayerDashboard, ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard, OverallPlayerDashboard
+#' @return Return a named list of data frames: ByActualMarginPlayerDashboard,
+#' ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard,
+#' OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -274,7 +278,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: DaysRestPlayerDashboard, LocationPlayerDashboard, MonthPlayerDashboard, OverallPlayerDashboard, PrePostAllStarPlayerDashboard,
+#' @return Return a named list of data frames: DaysRestPlayerDashboard, LocationPlayerDashboard,
+#' MonthPlayerDashboard, OverallPlayerDashboard, PrePostAllStarPlayerDashboard,
 #' StartingPosition, WinsLossesPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -395,7 +400,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard, Last15PlayerDashboard, Last20PlayerDashboard,
+#' @return Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard,
+#'  Last15PlayerDashboard, Last20PlayerDashboard,
 #' Last5PlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -516,7 +522,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: ConferencePlayerDashboard, DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
+#' @return Return a named list of data frames: ConferencePlayerDashboard,
+#' DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -635,8 +642,9 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard, OverallPlayerDashboard,
-#' Shot5FTPlayerDashboard, Shot8FTPlayerDashboard, ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
+#' @return Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard,
+#'  OverallPlayerDashboard, Shot5FTPlayerDashboard, Shot8FTPlayerDashboard,
+#'  ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -756,7 +764,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: OverallPlayerDashboard, PointsScoredPlayerDashboard, PontsAgainstPlayerDashboard,
+#' @return Return a named list of data frames: OverallPlayerDashboard,
+#' PointsScoredPlayerDashboard, PointsAgainstPlayerDashboard,
 #' ScoreDifferentialPlayerDashboard
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1088,7 +1097,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: NumContestedRebounding, OverallRebounding, RebDistanceRebounding,
+#' @return Return a named list of data frames: NumContestedRebounding,
+#' OverallRebounding, RebDistanceRebounding,
 #' ShotDistanceRebounding, ShotTypeRebounding
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1300,7 +1310,8 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: ClosestDefender10ftPlusShooting, ClosestDefenderShooting, DribbleShooting,
+#' @return Return a named list of data frames: ClosestDefender10ftPlusShooting,
+#' ClosestDefenderShooting, DribbleShooting,
 #' GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

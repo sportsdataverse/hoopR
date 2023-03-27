@@ -9,7 +9,10 @@ x %>% knitr::kable()
 purrr::walk(names(x), function(y){
 
   print(glue::glue("\n\n {y} \n\n"))
+  # cat('c(\n"')
   cat(colnames(x[[y]]), sep = '",\n"')
+  # cat('\n')
+  # cat('\n')
 })
 
 cat(names(x), sep = ', ')
@@ -17,8 +20,10 @@ cat(names(x), sep = ', ')
 purrr::walk(names(x), function(y){
 
   print(glue::glue("\n\n **{y}** "))
-  df <- data.frame(col_name = colnames(x[[y]]), types = sapply(x[[y]], class))
-  df %>% dplyr::select(col_name, types) %>% knitr::kable(row.names = FALSE) %>%
-    print()
+  if (length(x[[y]]) > 0) {
+    df <- data.frame(col_name = colnames(x[[y]]), types = sapply(x[[y]], class))
+    df %>% dplyr::select(col_name, types) %>% knitr::kable(row.names = FALSE) %>%
+      print()
+  }
 })
 

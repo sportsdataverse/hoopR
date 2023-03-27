@@ -13,6 +13,95 @@ NULL
 #' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: GameByGameStats, TotalPlayerStats
+#'
+#'    **GameByGameStats**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |DATE_EST       |character |
+#'    |VISITOR_TEAM   |character |
+#'    |HOME_TEAM      |character |
+#'    |GP             |character |
+#'    |GS             |character |
+#'    |ACTUAL_MINUTES |character |
+#'    |ACTUAL_SECONDS |character |
+#'    |FG             |character |
+#'    |FGA            |character |
+#'    |FG_PCT         |character |
+#'    |FG3            |character |
+#'    |FG3A           |character |
+#'    |FG3_PCT        |character |
+#'    |FT             |character |
+#'    |FTA            |character |
+#'    |FT_PCT         |character |
+#'    |OFF_REB        |character |
+#'    |DEF_REB        |character |
+#'    |TOT_REB        |character |
+#'    |AVG_TOT_REB    |character |
+#'    |AST            |character |
+#'    |PF             |character |
+#'    |DQ             |character |
+#'    |STL            |character |
+#'    |TURNOVERS      |character |
+#'    |BLK            |character |
+#'    |PTS            |character |
+#'    |AVG_PTS        |character |
+#'
+#'    **TotalPlayerStats**
+#'
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |DISPLAY_FI_LAST    |character |
+#'    |PERSON_ID          |character |
+#'    |JERSEY_NUM         |character |
+#'    |GP                 |character |
+#'    |GS                 |character |
+#'    |ACTUAL_MINUTES     |character |
+#'    |ACTUAL_SECONDS     |character |
+#'    |FG                 |character |
+#'    |FGA                |character |
+#'    |FG_PCT             |character |
+#'    |FG3                |character |
+#'    |FG3A               |character |
+#'    |FG3_PCT            |character |
+#'    |FT                 |character |
+#'    |FTA                |character |
+#'    |FT_PCT             |character |
+#'    |OFF_REB            |character |
+#'    |DEF_REB            |character |
+#'    |TOT_REB            |character |
+#'    |AST                |character |
+#'    |PF                 |character |
+#'    |DQ                 |character |
+#'    |STL                |character |
+#'    |TURNOVERS          |character |
+#'    |BLK                |character |
+#'    |PTS                |character |
+#'    |MAX_ACTUAL_MINUTES |character |
+#'    |MAX_ACTUAL_SECONDS |character |
+#'    |MAX_REB            |character |
+#'    |MAX_AST            |character |
+#'    |MAX_STL            |character |
+#'    |MAX_TURNOVERS      |character |
+#'    |MAX_BLK            |character |
+#'    |MAX_PTS            |character |
+#'    |AVG_ACTUAL_MINUTES |character |
+#'    |AVG_ACTUAL_SECONDS |character |
+#'    |AVG_TOT_REB        |character |
+#'    |AVG_AST            |character |
+#'    |AVG_STL            |character |
+#'    |AVG_TURNOVERS      |character |
+#'    |AVG_BLK            |character |
+#'    |AVG_PTS            |character |
+#'    |PER_MIN_TOT_REB    |character |
+#'    |PER_MIN_AST        |character |
+#'    |PER_MIN_STL        |character |
+#'    |PER_MIN_TURNOVERS  |character |
+#'    |PER_MIN_BLK        |character |
+#'    |PER_MIN_PTS        |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -32,7 +121,9 @@ nba_cumestatsplayer <- function(
     season_type = 'Regular Season',
     team_id = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  # intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -83,6 +174,15 @@ NULL
 #' @param vs_team_id vs_team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: CumeStatsPlayerGames
+#'
+#'    **CumeStatsPlayerGames**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |MATCHUP  |character |
+#'    |GAME_ID  |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -104,7 +204,9 @@ nba_cumestatsplayergames <- function(
     vs_division = '',
     vs_team_id = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  # intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsplayergames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -154,6 +256,104 @@ NULL
 #' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: GameByGameStats, TotalTeamStats
+#'
+#'    **GameByGameStats**
+#'
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |JERSEY_NUM         |character |
+#'    |PLAYER             |character |
+#'    |PERSON_ID          |character |
+#'    |TEAM_ID            |character |
+#'    |GP                 |character |
+#'    |GS                 |character |
+#'    |ACTUAL_MINUTES     |character |
+#'    |ACTUAL_SECONDS     |character |
+#'    |FG                 |character |
+#'    |FGA                |character |
+#'    |FG_PCT             |character |
+#'    |FG3                |character |
+#'    |FG3A               |character |
+#'    |FG3_PCT            |character |
+#'    |FT                 |character |
+#'    |FTA                |character |
+#'    |FT_PCT             |character |
+#'    |OFF_REB            |character |
+#'    |DEF_REB            |character |
+#'    |TOT_REB            |character |
+#'    |AST                |character |
+#'    |PF                 |character |
+#'    |DQ                 |character |
+#'    |STL                |character |
+#'    |TURNOVERS          |character |
+#'    |BLK                |character |
+#'    |PTS                |character |
+#'    |MAX_ACTUAL_MINUTES |character |
+#'    |MAX_ACTUAL_SECONDS |character |
+#'    |MAX_REB            |character |
+#'    |MAX_AST            |character |
+#'    |MAX_STL            |character |
+#'    |MAX_TURNOVERS      |character |
+#'    |MAX_BLKP           |character |
+#'    |MAX_PTS            |character |
+#'    |AVG_ACTUAL_MINUTES |character |
+#'    |AVG_ACTUAL_SECONDS |character |
+#'    |AVG_REB            |character |
+#'    |AVG_AST            |character |
+#'    |AVG_STL            |character |
+#'    |AVG_TURNOVERS      |character |
+#'    |AVG_BLKP           |character |
+#'    |AVG_PTS            |character |
+#'    |PER_MIN_REB        |character |
+#'    |PER_MIN_AST        |character |
+#'    |PER_MIN_STL        |character |
+#'    |PER_MIN_TURNOVERS  |character |
+#'    |PER_MIN_BLK        |character |
+#'    |PER_MIN_PTS        |character |
+#'
+#'    **TotalTeamStats**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |CITY            |character |
+#'    |NICKNAME        |character |
+#'    |TEAM_ID         |character |
+#'    |W               |character |
+#'    |L               |character |
+#'    |W_HOME          |character |
+#'    |L_HOME          |character |
+#'    |W_ROAD          |character |
+#'    |L_ROAD          |character |
+#'    |TEAM_TURNOVERS  |character |
+#'    |TEAM_REBOUNDS   |character |
+#'    |GP              |character |
+#'    |GS              |character |
+#'    |ACTUAL_MINUTES  |character |
+#'    |ACTUAL_SECONDS  |character |
+#'    |FG              |character |
+#'    |FGA             |character |
+#'    |FG_PCT          |character |
+#'    |FG3             |character |
+#'    |FG3A            |character |
+#'    |FG3_PCT         |character |
+#'    |FT              |character |
+#'    |FTA             |character |
+#'    |FT_PCT          |character |
+#'    |OFF_REB         |character |
+#'    |DEF_REB         |character |
+#'    |TOT_REB         |character |
+#'    |AST             |character |
+#'    |PF              |character |
+#'    |STL             |character |
+#'    |TOTAL_TURNOVERS |character |
+#'    |BLK             |character |
+#'    |PTS             |character |
+#'    |AVG_REB         |character |
+#'    |AVG_PTS         |character |
+#'    |DQ              |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -162,17 +362,18 @@ NULL
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
-#'  nba_cumestatsteam()
+#'  nba_cumestatsteam(game_ids = '0022201094', season = '2022-23', team_id = '1610612739')
 #' ```
 nba_cumestatsteam <- function(
-    game_ids = '0022000756',
+    game_ids = '0022201094',
     league_id = '00',
-    season = '2020-21',
+    season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsteam"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -188,7 +389,7 @@ nba_cumestatsteam <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- request_with_proxy(url = full_url, params = params)
 
       df_list <- nba_stats_map_result_sets(resp)
 
@@ -222,6 +423,15 @@ NULL
 #' @param vs_team_id vs_team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: CumeStatsTeamGames
+#'
+#'    **CumeStatsTeamGames**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |MATCHUP  |character |
+#'    |GAME_ID  |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -230,7 +440,7 @@ NULL
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
-#'  nba_cumestatsteamgames()
+#'  nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_cumestatsteamgames <- function(
     league_id = '00',
@@ -244,7 +454,9 @@ nba_cumestatsteamgames <- function(
     vs_division = '',
     vs_team_id = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  # intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsteamgames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

@@ -81,7 +81,9 @@ nba_playerdashboardbygamesplits(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: ByActualMarginPlayerDashboard, ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard, OverallPlayerDashboard
+Return a named list of data frames: ByActualMarginPlayerDashboard,
+ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard,
+OverallPlayerDashboard
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard by Game Splits}

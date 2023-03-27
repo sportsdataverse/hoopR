@@ -28,6 +28,15 @@ nba_assistleaders(
 }
 \value{
 Returns a named list of data frames: AssistLeaders
+
+\strong{AssistLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   RANK \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_NAME \tab character \cr
+   AST \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Assist Leaders}

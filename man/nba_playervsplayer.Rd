@@ -78,8 +78,196 @@ nba_playervsplayer(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOffCourt, ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
+Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOffCourt,
+ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
 ShotDistanceOverall, VsPlayerInfo
+
+\strong{Overall}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   GP \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   TOV \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   BLKA \tab character \cr
+   PF \tab character \cr
+   PFD \tab character \cr
+   PTS \tab character \cr
+   PLUS_MINUS \tab character \cr
+   NBA_FANTASY_PTS \tab character \cr
+}
+
+
+\strong{OnOffCourt}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GP \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   TOV \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   BLKA \tab character \cr
+   PF \tab character \cr
+   PFD \tab character \cr
+   PTS \tab character \cr
+   PLUS_MINUS \tab character \cr
+   NBA_FANTASY_PTS \tab character \cr
+}
+
+
+\strong{ShotDistanceOverall}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{ShotDistanceOnCourt}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{ShotDistanceOffCourt}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{ShotAreaOverall}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{ShotAreaOnCourt}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{ShotAreaOffCourt}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+}
+
+
+\strong{PlayerInfo}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   DISPLAY_FIRST_LAST \tab character \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \cr
+   DISPLAY_FI_LAST \tab character \cr
+   BIRTHDATE \tab character \cr
+   SCHOOL \tab character \cr
+   COUNTRY \tab character \cr
+   LAST_AFFILIATION \tab character \cr
+}
+
+
+\strong{VsPlayerInfo}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   DISPLAY_FIRST_LAST \tab character \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \cr
+   DISPLAY_FI_LAST \tab character \cr
+   BIRTHDATE \tab character \cr
+   SCHOOL \tab character \cr
+   COUNTRY \tab character \cr
+   LAST_AFFILIATION \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player vs Player}

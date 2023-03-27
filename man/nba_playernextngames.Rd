@@ -28,6 +28,23 @@ nba_playernextngames(
 }
 \value{
 Return a named list of data frames: NextNGames
+
+\strong{NextNGames}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   GAME_DATE \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   HOME_TEAM_NAME \tab character \cr
+   VISITOR_TEAM_NAME \tab character \cr
+   HOME_TEAM_ABBREVIATION \tab character \cr
+   VISITOR_TEAM_ABBREVIATION \tab character \cr
+   HOME_TEAM_NICKNAME \tab character \cr
+   VISITOR_TEAM_NICKNAME \tab character \cr
+   GAME_TIME \tab character \cr
+   HOME_WL \tab character \cr
+   VISITOR_WL \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Next N Games}

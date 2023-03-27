@@ -21,9 +21,265 @@ nba_playercareerstats(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason,
-CareerTotalsRegularSeason, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
+Return a named list of data frames: CareerTotalsAllStarSeason,
+CareerTotalsCollegeSeason, CareerTotalsPostSeason,
+CareerTotalsRegularSeason, SeasonRankingsPostSeason,
+SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
 SeasonTotalsPostSeason, SeasonTotalsRegularSeason
+
+\strong{SeasonTotalsRegularSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PLAYER_AGE \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{CareerTotalsRegularSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   Team_ID \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{SeasonTotalsPostSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PLAYER_AGE \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{CareerTotalsPostSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   Team_ID \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{SeasonTotalsAllStarSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PLAYER_AGE \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{CareerTotalsAllStarSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   Team_ID \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
+
+
+\strong{SeasonTotalsCollegeSeason}
+
+\strong{CareerTotalsCollegeSeason}
+
+\strong{SeasonTotalsShowcaseSeason}
+
+\strong{CareerTotalsShowcaseSeason}
+
+\strong{SeasonRankingsRegularSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PLAYER_AGE \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   RANK_MIN \tab character \cr
+   RANK_FGM \tab character \cr
+   RANK_FGA \tab character \cr
+   RANK_FG_PCT \tab character \cr
+   RANK_FG3M \tab character \cr
+   RANK_FG3A \tab character \cr
+   RANK_FG3_PCT \tab character \cr
+   RANK_FTM \tab character \cr
+   RANK_FTA \tab character \cr
+   RANK_FT_PCT \tab character \cr
+   RANK_OREB \tab character \cr
+   RANK_DREB \tab character \cr
+   RANK_REB \tab character \cr
+   RANK_AST \tab character \cr
+   RANK_STL \tab character \cr
+   RANK_BLK \tab character \cr
+   RANK_TOV \tab character \cr
+   RANK_PTS \tab character \cr
+   RANK_EFF \tab character \cr
+}
+
+
+\strong{SeasonRankingsPostSeason}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PLAYER_AGE \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   RANK_MIN \tab character \cr
+   RANK_FGM \tab character \cr
+   RANK_FGA \tab character \cr
+   RANK_FG_PCT \tab character \cr
+   RANK_FG3M \tab character \cr
+   RANK_FG3A \tab character \cr
+   RANK_FG3_PCT \tab character \cr
+   RANK_FTM \tab character \cr
+   RANK_FTA \tab character \cr
+   RANK_FT_PCT \tab character \cr
+   RANK_OREB \tab character \cr
+   RANK_DREB \tab character \cr
+   RANK_REB \tab character \cr
+   RANK_AST \tab character \cr
+   RANK_STL \tab character \cr
+   RANK_BLK \tab character \cr
+   RANK_TOV \tab character \cr
+   RANK_PTS \tab character \cr
+   RANK_EFF \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Career Stats}

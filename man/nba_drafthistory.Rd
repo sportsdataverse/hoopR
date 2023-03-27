@@ -37,6 +37,24 @@ nba_drafthistory(
 }
 \value{
 Returns a named list of data frames: DraftHistory
+
+\strong{DraftHistory}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   SEASON \tab character \cr
+   ROUND_NUMBER \tab character \cr
+   ROUND_PICK \tab character \cr
+   OVERALL_PICK \tab character \cr
+   DRAFT_TYPE \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   ORGANIZATION \tab character \cr
+   ORGANIZATION_TYPE \tab character \cr
+   PLAYER_PROFILE_FLAG \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Draft History}

@@ -1388,7 +1388,7 @@ nba_boxscoresimilarityscore <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet %>%

@@ -15,6 +15,26 @@ nba_franchiseleaders(league_id = "00", team_id = "1610612739", ...)
 }
 \value{
 Returns a named list of data frames: FranchiseLeaders
+
+\strong{FranchiseLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   PTS \tab character \cr
+   PTS_PERSON_ID \tab character \cr
+   PTS_PLAYER \tab character \cr
+   AST \tab character \cr
+   AST_PERSON_ID \tab character \cr
+   AST_PLAYER \tab character \cr
+   REB \tab character \cr
+   REB_PERSON_ID \tab character \cr
+   REB_PLAYER \tab character \cr
+   BLK \tab character \cr
+   BLK_PERSON_ID \tab character \cr
+   BLK_PLAYER \tab character \cr
+   STL \tab character \cr
+   STL_PERSON_ID \tab character \cr
+   STL_PLAYER \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Franchise Leaders}

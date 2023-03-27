@@ -81,8 +81,9 @@ nba_playerdashboardbyshootingsplits(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard, OverallPlayerDashboard,
-Shot5FTPlayerDashboard, Shot8FTPlayerDashboard, ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
+Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard,
+OverallPlayerDashboard, Shot5FTPlayerDashboard, Shot8FTPlayerDashboard,
+ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard by Shooting Splits}

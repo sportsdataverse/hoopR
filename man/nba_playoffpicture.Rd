@@ -17,11 +17,128 @@ nba_playoffpicture(league_id = "00", season_id = "22022", ...)
 Return a named list of data frames: EastConfPlayoffPicture,
 EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
 WestConfRemainingGames, WestConfStandings
+
+\strong{EastConfPlayoffPicture}\tabular{ll}{
+   col_name \tab types \cr
+   CONFERENCE \tab character \cr
+   HIGH_SEED_RANK \tab character \cr
+   HIGH_SEED_TEAM \tab character \cr
+   HIGH_SEED_TEAM_ID \tab character \cr
+   LOW_SEED_RANK \tab character \cr
+   LOW_SEED_TEAM \tab character \cr
+   LOW_SEED_TEAM_ID \tab character \cr
+   HIGH_SEED_SERIES_W \tab character \cr
+   HIGH_SEED_SERIES_L \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_G \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \cr
+}
+
+
+\strong{WestConfPlayoffPicture}\tabular{ll}{
+   col_name \tab types \cr
+   CONFERENCE \tab character \cr
+   HIGH_SEED_RANK \tab character \cr
+   HIGH_SEED_TEAM \tab character \cr
+   HIGH_SEED_TEAM_ID \tab character \cr
+   LOW_SEED_RANK \tab character \cr
+   LOW_SEED_TEAM \tab character \cr
+   LOW_SEED_TEAM_ID \tab character \cr
+   HIGH_SEED_SERIES_W \tab character \cr
+   HIGH_SEED_SERIES_L \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_G \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \cr
+   HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \cr
+}
+
+
+\strong{EastConfStandings}\tabular{ll}{
+   col_name \tab types \cr
+   CONFERENCE \tab character \cr
+   RANK \tab character \cr
+   TEAM \tab character \cr
+   TEAM_SLUG \tab character \cr
+   TEAM_ID \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   PCT \tab character \cr
+   DIV \tab character \cr
+   CONF \tab character \cr
+   HOME \tab character \cr
+   AWAY \tab character \cr
+   GB \tab character \cr
+   GR_OVER_500 \tab character \cr
+   GR_OVER_500_HOME \tab character \cr
+   GR_OVER_500_AWAY \tab character \cr
+   GR_UNDER_500 \tab character \cr
+   GR_UNDER_500_HOME \tab character \cr
+   GR_UNDER_500_AWAY \tab character \cr
+   RANKING_CRITERIA \tab character \cr
+   CLINCHED_PLAYOFFS \tab character \cr
+   CLINCHED_CONFERENCE \tab character \cr
+   CLINCHED_DIVISION \tab character \cr
+   ELIMINATED_PLAYOFFS \tab character \cr
+   SOSA_REMAINING \tab character \cr
+}
+
+
+\strong{WestConfStandings}\tabular{ll}{
+   col_name \tab types \cr
+   CONFERENCE \tab character \cr
+   RANK \tab character \cr
+   TEAM \tab character \cr
+   TEAM_SLUG \tab character \cr
+   TEAM_ID \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   PCT \tab character \cr
+   DIV \tab character \cr
+   CONF \tab character \cr
+   HOME \tab character \cr
+   AWAY \tab character \cr
+   GB \tab character \cr
+   GR_OVER_500 \tab character \cr
+   GR_OVER_500_HOME \tab character \cr
+   GR_OVER_500_AWAY \tab character \cr
+   GR_UNDER_500 \tab character \cr
+   GR_UNDER_500_HOME \tab character \cr
+   GR_UNDER_500_AWAY \tab character \cr
+   RANKING_CRITERIA \tab character \cr
+   CLINCHED_PLAYOFFS \tab character \cr
+   CLINCHED_CONFERENCE \tab character \cr
+   CLINCHED_DIVISION \tab character \cr
+   ELIMINATED_PLAYOFFS \tab character \cr
+   SOSA_REMAINING \tab character \cr
+}
+
+
+\strong{EastConfRemainingGames}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM \tab character \cr
+   TEAM_ID \tab character \cr
+   REMAINING_G \tab character \cr
+   REMAINING_HOME_G \tab character \cr
+   REMAINING_AWAY_G \tab character \cr
+}
+
+
+\strong{WestConfRemainingGames}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM \tab character \cr
+   TEAM_ID \tab character \cr
+   REMAINING_G \tab character \cr
+   REMAINING_HOME_G \tab character \cr
+   REMAINING_AWAY_G \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Playoff Picture}
 
 \strong{Get NBA Stats API Playoff Picture}
+}
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playoffpicture(league_id = '00', season_id = paste0(2, most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA League Functions: 

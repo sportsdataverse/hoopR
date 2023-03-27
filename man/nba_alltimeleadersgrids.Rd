@@ -24,8 +24,199 @@ nba_alltimeleadersgrids(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
-FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders, OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
+Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders,
+FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
+FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders,
+OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
+
+\strong{GPLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   GP \tab character \cr
+   GP_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{PTSLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   PTS \tab character \cr
+   PTS_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{ASTLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   AST \tab character \cr
+   AST_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{STLLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   STL \tab character \cr
+   STL_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{OREBLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   OREB \tab character \cr
+   OREB_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{DREBLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   DREB \tab character \cr
+   DREB_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{REBLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   REB \tab character \cr
+   REB_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{BLKLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   BLK \tab character \cr
+   BLK_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FGMLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FGALeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FGA \tab character \cr
+   FGA_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FG_PCTLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FG_PCT \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{TOVLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TOV \tab character \cr
+   TOV_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FG3MLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FG3M \tab character \cr
+   FG3M_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FG3ALeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FG3A \tab character \cr
+   FG3A_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FG3_PCTLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FG3_PCT \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{PFLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   PF \tab character \cr
+   PF_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FTMLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FTM \tab character \cr
+   FTM_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FTALeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FTA \tab character \cr
+   FTA_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
+
+
+\strong{FT_PCTLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FT_PCT \tab character \cr
+   FT_PCT_RANK \tab character \cr
+   IS_ACTIVE_FLAG \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API All-time Leaders Grid}

@@ -90,7 +90,80 @@ nba_leaguehustlestatsplayerleaders(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a named list of data frames: PlayerChargesDrawnLeaders, PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
+Returns a named list of data frames: PlayerChargesDrawnLeaders,
+PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders,
+PlayerScreenAssistLeaders, Table5
+
+\strong{PlayerContestedShotsLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   CONTESTED_SHOTS \tab character \cr
+}
+
+
+\strong{PlayerChargesDrawnLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   CHARGES_DRAWN \tab character \cr
+}
+
+
+\strong{PlayerDeflectionsLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   DEFLECTIONS \tab character \cr
+}
+
+
+\strong{PlayerLooseBallLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   LOOSE_BALLS_RECOVERED \tab character \cr
+}
+
+
+\strong{PlayerScreenAssistLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   SCREEN_ASSISTS \tab character \cr
+}
+
+
+\strong{Table5}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   RANK \tab character \cr
+   BOX_OUTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Hustle Stats Player Leaders}

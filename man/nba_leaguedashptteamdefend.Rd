@@ -74,6 +74,24 @@ nba_leaguedashptteamdefend(
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
+\value{
+Returns a named list of data frames: LeagueDashPtTeamDefend
+
+\strong{LeagueDashPtTeamDefend}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   FREQ \tab character \cr
+   D_FGM \tab character \cr
+   D_FGA \tab character \cr
+   D_FG_PCT \tab character \cr
+   NORMAL_FG_PCT \tab character \cr
+   PCT_PLUSMINUS \tab character \cr
+}
+}
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Team Defense}
 

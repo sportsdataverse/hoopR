@@ -91,6 +91,75 @@ nba_leaguehustlestatsteamleaders(
 }
 \value{
 Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
+
+\strong{TeamContestedShotsLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   CONTESTED_SHOTS \tab character \cr
+}
+
+
+\strong{TeamChargesDrawnLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   CHARGES_DRAWN \tab character \cr
+}
+
+
+\strong{TeamDeflectionsLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   DEFLECTIONS \tab character \cr
+}
+
+
+\strong{TeamLooseBallLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   LOOSE_BALLS_RECOVERED \tab character \cr
+}
+
+
+\strong{TeamScreenAssistLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   SCREEN_ASSISTS \tab character \cr
+}
+
+
+\strong{Table5}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   BOX_OUTS \tab character \cr
+}
+
+
+\strong{Table6}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   RANK \tab character \cr
+   BOX_OUTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Hustle Stats Team Leaders}

@@ -277,6 +277,38 @@ nba_leaguegamefinder(
 }
 \value{
 Return a named list of data frames: LeagueGameFinderResults
+
+\strong{LeagueGameFinderResults}\tabular{ll}{
+   col_name \tab types \cr
+   SEASON_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_NAME \tab character \cr
+   GAME_ID \tab character \cr
+   GAME_DATE \tab character \cr
+   MATCHUP \tab character \cr
+   WL \tab character \cr
+   MIN \tab character \cr
+   PTS \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   TOV \tab character \cr
+   PF \tab character \cr
+   PLUS_MINUS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Game Streak Finder}
