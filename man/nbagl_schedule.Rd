@@ -12,7 +12,41 @@ nbagl_schedule(season = most_recent_nba_season() - 1, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame of the G League Season Schedule
+Returns a data frame of the G League Season Schedule\tabular{ll}{
+   col_name \tab types \cr
+   mon \tab character \cr
+   gid \tab character \cr
+   gcode \tab character \cr
+   seri \tab character \cr
+   is \tab integer \cr
+   gdte \tab character \cr
+   htm \tab character \cr
+   vtm \tab character \cr
+   etm \tab character \cr
+   an \tab character \cr
+   ac \tab character \cr
+   as \tab character \cr
+   st \tab character \cr
+   stt \tab character \cr
+   gdtutc \tab character \cr
+   utctm \tab character \cr
+   ppdst \tab character \cr
+   seq \tab integer \cr
+   bd_b \tab list \cr
+   v_tid \tab integer \cr
+   v_re \tab character \cr
+   v_ta \tab character \cr
+   v_tn \tab character \cr
+   v_tc \tab character \cr
+   v_s \tab character \cr
+   h_tid \tab integer \cr
+   h_re \tab character \cr
+   h_ta \tab character \cr
+   h_tn \tab character \cr
+   h_tc \tab character \cr
+   h_s \tab character \cr
+   ptsls_pl \tab list \cr
+}
 }
 \description{
 Scrapes the NBA Data API for G League Schedule for a Given Season

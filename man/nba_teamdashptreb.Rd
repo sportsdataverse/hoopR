@@ -65,6 +65,114 @@ nba_teamdashptreb(
 \value{
 Return a named list of data frames: NumContestedRebounding, OverallRebounding,
 RebDistanceRebounding, ShotDistanceRebounding, ShotTypeRebounding
+
+\strong{OverallRebounding}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   G \tab character \cr
+   OVERALL \tab character \cr
+   REB_FREQUENCY \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   C_OREB \tab character \cr
+   C_DREB \tab character \cr
+   C_REB \tab character \cr
+   C_REB_PCT \tab character \cr
+   UC_OREB \tab character \cr
+   UC_DREB \tab character \cr
+   UC_REB \tab character \cr
+   UC_REB_PCT \tab character \cr
+}
+
+
+\strong{ShotTypeRebounding}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   SORT_ORDER \tab character \cr
+   G \tab character \cr
+   SHOT_TYPE_RANGE \tab character \cr
+   REB_FREQUENCY \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   C_OREB \tab character \cr
+   C_DREB \tab character \cr
+   C_REB \tab character \cr
+   C_REB_PCT \tab character \cr
+   UC_OREB \tab character \cr
+   UC_DREB \tab character \cr
+   UC_REB \tab character \cr
+   UC_REB_PCT \tab character \cr
+}
+
+
+\strong{NumContestedRebounding}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   SORT_ORDER \tab character \cr
+   G \tab character \cr
+   REB_NUM_CONTESTING_RANGE \tab character \cr
+   REB_FREQUENCY \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   C_OREB \tab character \cr
+   C_DREB \tab character \cr
+   C_REB \tab character \cr
+   C_REB_PCT \tab character \cr
+   UC_OREB \tab character \cr
+   UC_DREB \tab character \cr
+   UC_REB \tab character \cr
+   UC_REB_PCT \tab character \cr
+}
+
+
+\strong{ShotDistanceRebounding}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   SORT_ORDER \tab character \cr
+   G \tab character \cr
+   SHOT_DIST_RANGE \tab character \cr
+   REB_FREQUENCY \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   C_OREB \tab character \cr
+   C_DREB \tab character \cr
+   C_REB \tab character \cr
+   C_REB_PCT \tab character \cr
+   UC_OREB \tab character \cr
+   UC_DREB \tab character \cr
+   UC_REB \tab character \cr
+   UC_REB_PCT \tab character \cr
+}
+
+
+\strong{RebDistanceRebounding}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   SORT_ORDER \tab character \cr
+   G \tab character \cr
+   REB_DIST_RANGE \tab character \cr
+   REB_FREQUENCY \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   C_OREB \tab character \cr
+   C_DREB \tab character \cr
+   C_REB \tab character \cr
+   C_REB_PCT \tab character \cr
+   UC_OREB \tab character \cr
+   UC_DREB \tab character \cr
+   UC_REB \tab character \cr
+   UC_REB_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Dashboard Player Tracking - Rebounding}

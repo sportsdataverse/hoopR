@@ -22,6 +22,15 @@ nba_commonplayoffseries(
 }
 \value{
 Return a named list of data frames: PlayoffSeries
+
+\strong{PlayoffSeries}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   SERIES_ID \tab character \cr
+   GAME_NUM \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Playoff Series}

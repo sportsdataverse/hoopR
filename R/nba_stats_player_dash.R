@@ -37,6 +37,755 @@ NULL
 #'  Last30Sec3PointPlayerDashboard, Last3Min5PointPlayerDashboard,
 #' Last3MinPlusMinus5PointPlayerDashboard, Last5Min5PointPlayerDashboard,
 #' Last5MinPlusMinus5PointPlayerDashboard,  OverallPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last5Min5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last3Min5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last1Min5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last30Sec3PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last10Sec3PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last5MinPlusMinus5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last3MinPlusMinus5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last1MinPlusMinus5PointPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last30Sec3Point2PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last10Sec3Point2PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -74,7 +823,8 @@ nba_playerdashboardbyclutch <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -159,6 +909,347 @@ NULL
 #' @return Return a named list of data frames: ByActualMarginPlayerDashboard,
 #' ByHalfPlayerDashboard, ByPeriodPlayerDashboard, ByScoreMarginPlayerDashboard,
 #' OverallPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ByHalfPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ByPeriodPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ByScoreMarginPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ByActualMarginPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -195,7 +1286,8 @@ nba_playerdashboardbygamesplits <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbygamesplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -281,6 +1373,483 @@ NULL
 #' @return Return a named list of data frames: DaysRestPlayerDashboard, LocationPlayerDashboard,
 #' MonthPlayerDashboard, OverallPlayerDashboard, PrePostAllStarPlayerDashboard,
 #' StartingPosition, WinsLossesPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **LocationPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **WinsLossesPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **MonthPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **PrePostAllStarPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **StartingPosition**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **DaysRestPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -317,7 +1886,8 @@ nba_playerdashboardbygeneralsplits <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbygeneralsplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -403,6 +1973,415 @@ NULL
 #' @return Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard,
 #'  Last15PlayerDashboard, Last20PlayerDashboard,
 #' Last5PlayerDashboard, OverallPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last5PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last10PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last15PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **Last20PlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **GameNumberPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -439,7 +2418,8 @@ nba_playerdashboardbylastngames <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbylastngames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -524,6 +2504,279 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ConferencePlayerDashboard,
 #' DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ConferencePlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **DivisionPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **OpponentPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -560,7 +2813,8 @@ nba_playerdashboardbyopponent <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyopponent"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -645,6 +2899,282 @@ NULL
 #' @return Return a named list of data frames: AssistedBy, AssitedShotPlayerDashboard,
 #'  OverallPlayerDashboard, Shot5FTPlayerDashboard, Shot8FTPlayerDashboard,
 #'  ShotAreaPlayerDashboard, ShotTypePlayerDashboard, ShotTypeSummaryPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **Shot5FTPlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **Shot8FTPlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **ShotAreaPlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **AssitedShotPlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **ShotTypeSummaryPlayerDashboard**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |GROUP_SET    |character |
+#'    |GROUP_VALUE  |character |
+#'    |FGM          |character |
+#'    |FGA          |character |
+#'    |FG_PCT       |character |
+#'    |FG3M         |character |
+#'    |FG3A         |character |
+#'    |FG3_PCT      |character |
+#'    |EFG_PCT      |character |
+#'    |BLKA         |character |
+#'    |PCT_AST_2PM  |character |
+#'    |PCT_UAST_2PM |character |
+#'    |PCT_AST_3PM  |character |
+#'    |PCT_UAST_3PM |character |
+#'    |PCT_AST_FGM  |character |
+#'    |PCT_UAST_FGM |character |
+#'
+#'    **ShotTypePlayerDashboard**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |GROUP_VALUE       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
+#'    **AssistedBy**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |EFG_PCT           |character |
+#'    |BLKA              |character |
+#'    |PCT_AST_2PM       |character |
+#'    |PCT_UAST_2PM      |character |
+#'    |PCT_AST_3PM       |character |
+#'    |PCT_UAST_3PM      |character |
+#'    |PCT_AST_FGM       |character |
+#'    |PCT_UAST_FGM      |character |
+#'    |FGM_RANK          |character |
+#'    |FGA_RANK          |character |
+#'    |FG_PCT_RANK       |character |
+#'    |FG3M_RANK         |character |
+#'    |FG3A_RANK         |character |
+#'    |FG3_PCT_RANK      |character |
+#'    |EFG_PCT_RANK      |character |
+#'    |BLKA_RANK         |character |
+#'    |PCT_AST_2PM_RANK  |character |
+#'    |PCT_UAST_2PM_RANK |character |
+#'    |PCT_AST_3PM_RANK  |character |
+#'    |PCT_UAST_3PM_RANK |character |
+#'    |PCT_AST_FGM_RANK  |character |
+#'    |PCT_UAST_FGM_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -682,7 +3212,8 @@ nba_playerdashboardbyshootingsplits <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyshootingsplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -767,6 +3298,285 @@ NULL
 #' @return Return a named list of data frames: OverallPlayerDashboard,
 #' PointsScoredPlayerDashboard, PointsAgainstPlayerDashboard,
 #' ScoreDifferentialPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ScoreDifferentialPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE_ORDER     |character |
+#'    |GROUP_VALUE           |character |
+#'    |GROUP_VALUE_2         |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **PointsScoredPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE_ORDER     |character |
+#'    |GROUP_VALUE           |character |
+#'    |GROUP_VALUE_2         |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **PontsAgainstPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE_ORDER     |character |
+#'    |GROUP_VALUE           |character |
+#'    |GROUP_VALUE_2         |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -803,7 +3613,8 @@ nba_playerdashboardbyteamperformance <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyteamperformance"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -886,6 +3697,149 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboard
+#'
+#'    **OverallPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |TEAM_ID               |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |MAX_GAME_DATE         |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
+#'    **ByYearPlayerDashboard**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |GROUP_VALUE           |character |
+#'    |TEAM_ID               |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |MAX_GAME_DATE         |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -922,7 +3876,8 @@ nba_playerdashboardbyyearoveryear <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashboardbyyearoveryear"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -997,6 +3952,61 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PassesMade, PassesReceived
+#'
+#'    **PassesMade**
+#'
+#'
+#'    |col_name                |types     |
+#'    |:-----------------------|:---------|
+#'    |PLAYER_ID               |character |
+#'    |PLAYER_NAME_LAST_FIRST  |character |
+#'    |TEAM_NAME               |character |
+#'    |TEAM_ID                 |character |
+#'    |TEAM_ABBREVIATION       |character |
+#'    |PASS_TYPE               |character |
+#'    |G                       |character |
+#'    |PASS_TO                 |character |
+#'    |PASS_TEAMMATE_PLAYER_ID |character |
+#'    |FREQUENCY               |character |
+#'    |PASS                    |character |
+#'    |AST                     |character |
+#'    |FGM                     |character |
+#'    |FGA                     |character |
+#'    |FG_PCT                  |character |
+#'    |FG2M                    |character |
+#'    |FG2A                    |character |
+#'    |FG2_PCT                 |character |
+#'    |FG3M                    |character |
+#'    |FG3A                    |character |
+#'    |FG3_PCT                 |character |
+#'
+#'    **PassesReceived**
+#'
+#'
+#'    |col_name                |types     |
+#'    |:-----------------------|:---------|
+#'    |PLAYER_ID               |character |
+#'    |PLAYER_NAME_LAST_FIRST  |character |
+#'    |TEAM_NAME               |character |
+#'    |TEAM_ID                 |character |
+#'    |TEAM_ABBREVIATION       |character |
+#'    |PASS_TYPE               |character |
+#'    |G                       |character |
+#'    |PASS_FROM               |character |
+#'    |PASS_TEAMMATE_PLAYER_ID |character |
+#'    |FREQUENCY               |character |
+#'    |PASS                    |character |
+#'    |AST                     |character |
+#'    |FGM                     |character |
+#'    |FGA                     |character |
+#'    |FG_PCT                  |character |
+#'    |FG2M                    |character |
+#'    |FG2A                    |character |
+#'    |FG2_PCT                 |character |
+#'    |FG3M                    |character |
+#'    |FG3A                    |character |
+#'    |FG3_PCT                 |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1027,7 +4037,8 @@ nba_playerdashptpass  <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptpass"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1132,7 +4143,8 @@ nba_playerdashptreb  <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptreb"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1206,6 +4218,23 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: DefendingShots
+#'
+#'    **DefendingShots**
+#'
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |CLOSE_DEF_playerId |character |
+#'    |GP                 |character |
+#'    |G                  |character |
+#'    |DEFENSE_CATEGORY   |character |
+#'    |FREQ               |character |
+#'    |D_FGM              |character |
+#'    |D_FGA              |character |
+#'    |D_FG_PCT           |character |
+#'    |NORMAL_FG_PCT      |character |
+#'    |PCT_PLUSMINUS      |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1238,7 +4267,8 @@ nba_playerdashptshotdefend  <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptshotdefend"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1313,6 +4343,182 @@ NULL
 #' @return Return a named list of data frames: ClosestDefender10ftPlusShooting,
 #' ClosestDefenderShooting, DribbleShooting,
 #' GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
+#'
+#'    **Overall**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |SHOT_TYPE              |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **GeneralShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |SHOT_TYPE              |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **ShotClockShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |SHOT_CLOCK_RANGE       |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **DribbleShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |DRIBBLE_RANGE          |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **ClosestDefenderShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |CLOSE_DEF_DIST_RANGE   |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **ClosestDefender10ftPlusShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |CLOSE_DEF_DIST_RANGE   |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
+#'    **TouchTimeShooting**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |PLAYER_ID              |character |
+#'    |PLAYER_NAME_LAST_FIRST |character |
+#'    |SORT_ORDER             |character |
+#'    |GP                     |character |
+#'    |G                      |character |
+#'    |TOUCH_TIME_RANGE       |character |
+#'    |FGA_FREQUENCY          |character |
+#'    |FGM                    |character |
+#'    |FGA                    |character |
+#'    |FG_PCT                 |character |
+#'    |EFG_PCT                |character |
+#'    |FG2A_FREQUENCY         |character |
+#'    |FG2M                   |character |
+#'    |FG2A                   |character |
+#'    |FG2_PCT                |character |
+#'    |FG3A_FREQUENCY         |character |
+#'    |FG3M                   |character |
+#'    |FG3A                   |character |
+#'    |FG3_PCT                |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1345,7 +4551,8 @@ nba_playerdashptshots  <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "playerdashptshots"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1409,6 +4616,37 @@ NULL
 #' @param season season
 #' @param type_grouping type_grouping - Offensive, Defensive
 #' @param ... Additional arguments passed to an underlying function like httr.
+#' @return  Return a named list of data frames: SynergyPlayType
+#'
+#'    **SynergyPlayType**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |SEASON_ID         |character |
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |PLAY_TYPE         |character |
+#'    |TYPE_GROUPING     |character |
+#'    |PERCENTILE        |character |
+#'    |GP                |character |
+#'    |POSS_PCT          |character |
+#'    |PPP               |character |
+#'    |FG_PCT            |character |
+#'    |FT_POSS_PCT       |character |
+#'    |TOV_POSS_PCT      |character |
+#'    |SF_POSS_PCT       |character |
+#'    |PLUSONE_POSS_PCT  |character |
+#'    |SCORE_POSS_PCT    |character |
+#'    |EFG_PCT           |character |
+#'    |POSS              |character |
+#'    |PTS               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FGMX              |character |
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1429,7 +4667,8 @@ nba_synergyplaytypes <- function(
     type_grouping = 'Offensive',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "synergyplaytypes"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

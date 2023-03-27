@@ -15,6 +15,24 @@ nba_videostatus(game_date = "2023-03-10", league_id = "00", ...)
 }
 \value{
 Return a list of tibbles: VideoStatus
+
+\strong{VideoStatus}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   GAME_DATE \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   VISITOR_TEAM_CITY \tab character \cr
+   VISITOR_TEAM_NAME \tab character \cr
+   VISITOR_TEAM_ABBREVIATION \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   HOME_TEAM_CITY \tab character \cr
+   HOME_TEAM_NAME \tab character \cr
+   HOME_TEAM_ABBREVIATION \tab character \cr
+   GAME_STATUS \tab character \cr
+   GAME_STATUS_TEXT \tab character \cr
+   IS_AVAILABLE \tab character \cr
+   PT_XYZ_AVAILABLE \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Video Status}

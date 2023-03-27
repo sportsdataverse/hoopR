@@ -22,6 +22,40 @@ nba_teamestimatedmetrics(
 }
 \value{
 Return a named list of data frames: TeamEstimatedMetrics
+
+\strong{TeamEstimatedMetrics}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   GP \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   MIN \tab character \cr
+   E_OFF_RATING \tab character \cr
+   E_DEF_RATING \tab character \cr
+   E_NET_RATING \tab character \cr
+   E_PACE \tab character \cr
+   E_AST_RATIO \tab character \cr
+   E_OREB_PCT \tab character \cr
+   E_DREB_PCT \tab character \cr
+   E_REB_PCT \tab character \cr
+   E_TM_TOV_PCT \tab character \cr
+   GP_RANK \tab character \cr
+   W_RANK \tab character \cr
+   L_RANK \tab character \cr
+   W_PCT_RANK \tab character \cr
+   MIN_RANK \tab character \cr
+   E_OFF_RATING_RANK \tab character \cr
+   E_DEF_RATING_RANK \tab character \cr
+   E_NET_RATING_RANK \tab character \cr
+   E_AST_RATIO_RANK \tab character \cr
+   E_OREB_PCT_RANK \tab character \cr
+   E_DREB_PCT_RANK \tab character \cr
+   E_REB_PCT_RANK \tab character \cr
+   E_TM_TOV_PCT_RANK \tab character \cr
+   E_PACE_RANK \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Estimated Metrics}

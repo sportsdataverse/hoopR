@@ -2,7 +2,7 @@
 % Please edit documentation in R/nbagl_pbp.R
 \name{nbagl_pbp}
 \alias{nbagl_pbp}
-\title{\strong{Get NBA Data API Play-by-Play for G League Games}}
+\title{\strong{Get NBA Data API Play-by-Play for G-League Games}}
 \usage{
 nbagl_pbp(game_id, ...)
 }
@@ -12,7 +12,31 @@ nbagl_pbp(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame of play by play
+Returns a data frame of play by play with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   period \tab integer \cr
+   evt \tab integer \cr
+   wallclk \tab character \cr
+   cl \tab character \cr
+   de \tab character \cr
+   locX \tab integer \cr
+   locY \tab integer \cr
+   opt1 \tab integer \cr
+   opt2 \tab integer \cr
+   opt3 \tab integer \cr
+   opt4 \tab integer \cr
+   mtype \tab integer \cr
+   etype \tab integer \cr
+   opid \tab character \cr
+   tid \tab integer \cr
+   pid \tab integer \cr
+   hs \tab integer \cr
+   vs \tab integer \cr
+   epid \tab character \cr
+   oftid \tab integer \cr
+   ord \tab integer \cr
+   pts \tab integer \cr
+}
 }
 \description{
 Scrapes the NBA Data API for Play By Play for G League games

@@ -19,6 +19,17 @@ nba_shotchartleaguewide(
 }
 \value{
 Return a named list of data frames: League_Wide
+
+\strong{League_Wide}\tabular{ll}{
+   col_name \tab types \cr
+   GRID_TYPE \tab character \cr
+   SHOT_ZONE_BASIC \tab character \cr
+   SHOT_ZONE_AREA \tab character \cr
+   SHOT_ZONE_RANGE \tab character \cr
+   FGA \tab character \cr
+   FGM \tab character \cr
+   FG_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Shot Chart League-Wide}

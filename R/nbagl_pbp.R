@@ -1,14 +1,40 @@
-#' **Get NBA Data API Play-by-Play for G League Games**
+#' **Get NBA Data API Play-by-Play for G-League Games**
 #' @name nbagl_pbp
 NULL
 #' @title
-#' **Get NBA Data API Play-by-Play for G League Games**
+#' **Get NBA Data API Play-by-Play for G-League Games**
 #' @description Scrapes the NBA Data API for Play By Play for G League games
 #' @rdname nbagl_pbp
 #' @author Billy Fryer
 #' @param game_id Game ID - 10 digits, i.e. 0021900001
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a data frame of play by play
+#' @return Returns a data frame of play by play with the following columns:
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |period   |integer   |
+#'    |evt      |integer   |
+#'    |wallclk  |character |
+#'    |cl       |character |
+#'    |de       |character |
+#'    |locX     |integer   |
+#'    |locY     |integer   |
+#'    |opt1     |integer   |
+#'    |opt2     |integer   |
+#'    |opt3     |integer   |
+#'    |opt4     |integer   |
+#'    |mtype    |integer   |
+#'    |etype    |integer   |
+#'    |opid     |character |
+#'    |tid      |integer   |
+#'    |pid      |integer   |
+#'    |hs       |integer   |
+#'    |vs       |integer   |
+#'    |epid     |character |
+#'    |oftid    |integer   |
+#'    |ord      |integer   |
+#'    |pts      |integer   |
+#'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows
 #' @importFrom glue glue

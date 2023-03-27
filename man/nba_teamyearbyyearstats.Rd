@@ -25,6 +25,44 @@ nba_teamyearbyyearstats(
 }
 \value{
 Return a named list of data frames: TeamStats
+
+\strong{TeamStats}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   YEAR \tab character \cr
+   GP \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   WIN_PCT \tab character \cr
+   CONF_RANK \tab character \cr
+   DIV_RANK \tab character \cr
+   PO_WINS \tab character \cr
+   PO_LOSSES \tab character \cr
+   CONF_COUNT \tab character \cr
+   DIV_COUNT \tab character \cr
+   NBA_FINALS_APPEARANCE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   STL \tab character \cr
+   TOV \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   PTS_RANK \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Year by Year Stats}

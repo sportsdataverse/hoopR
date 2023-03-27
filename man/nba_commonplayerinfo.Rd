@@ -14,7 +14,63 @@ nba_commonplayerinfo(league_id = "00", player_id = "2544", ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: AvailableSeasons
+Return a named list of data frames: CommonPlayerInfo, PlayerHeadlineStats,
+AvailableSeasons
+
+\strong{CommonPlayerInfo}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   DISPLAY_FIRST_LAST \tab character \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \cr
+   DISPLAY_FI_LAST \tab character \cr
+   PLAYER_SLUG \tab character \cr
+   BIRTHDATE \tab character \cr
+   SCHOOL \tab character \cr
+   COUNTRY \tab character \cr
+   LAST_AFFILIATION \tab character \cr
+   HEIGHT \tab character \cr
+   WEIGHT \tab character \cr
+   SEASON_EXP \tab character \cr
+   JERSEY \tab character \cr
+   POSITION \tab character \cr
+   ROSTERSTATUS \tab character \cr
+   GAMES_PLAYED_CURRENT_SEASON_FLAG \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CODE \tab character \cr
+   TEAM_CITY \tab character \cr
+   PLAYERCODE \tab character \cr
+   FROM_YEAR \tab character \cr
+   TO_YEAR \tab character \cr
+   DLEAGUE_FLAG \tab character \cr
+   NBA_FLAG \tab character \cr
+   GAMES_PLAYED_FLAG \tab character \cr
+   DRAFT_YEAR \tab character \cr
+   DRAFT_ROUND \tab character \cr
+   DRAFT_NUMBER \tab character \cr
+   GREATEST_75_FLAG \tab character \cr
+}
+
+
+\strong{PlayerHeadlineStats}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TimeFrame \tab character \cr
+   PTS \tab character \cr
+   AST \tab character \cr
+   REB \tab character \cr
+   PIE \tab character \cr
+}
+
+
+\strong{AvailableSeasons}\tabular{ll}{
+   col_name \tab types \cr
+   SEASON_ID \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Info}

@@ -103,6 +103,44 @@ nba_videodetails(
 }
 \value{
 Return a list of tibbles: videoUrls, playlist
+
+\strong{videoUrls}\tabular{ll}{
+   col_name \tab types \cr
+   uuid \tab character \cr
+   dur \tab logical \cr
+   stt \tab logical \cr
+   stp \tab logical \cr
+   sth \tab logical \cr
+   stw \tab logical \cr
+   mtt \tab logical \cr
+   mtp \tab logical \cr
+   mth \tab logical \cr
+   mtw \tab logical \cr
+   ltt \tab logical \cr
+   ltp \tab logical \cr
+   lth \tab logical \cr
+   ltw \tab logical \cr
+}
+
+
+\strong{playlist}\tabular{ll}{
+   col_name \tab types \cr
+   gi \tab character \cr
+   ei \tab integer \cr
+   y \tab integer \cr
+   m \tab character \cr
+   d \tab character \cr
+   gc \tab character \cr
+   p \tab integer \cr
+   dsc \tab character \cr
+   ha \tab character \cr
+   va \tab character \cr
+   hpb \tab integer \cr
+   hpa \tab integer \cr
+   vpb \tab integer \cr
+   vpa \tab integer \cr
+   pta \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Video Details}

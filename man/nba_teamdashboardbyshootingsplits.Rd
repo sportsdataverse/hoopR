@@ -84,6 +84,251 @@ nba_teamdashboardbyshootingsplits(
 Return a named list of data frames: AssistedBy,
 AssitedShotTeamDashboard, OverallTeamDashboard, Shot5FTTeamDashboard,
 Shot8FTTeamDashboard, ShotAreaTeamDashboard, ShotTypeTeamDashboard
+
+\strong{OverallTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{Shot5FTTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{Shot8FTTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{ShotAreaTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{AssitedShotTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{ShotTypeTeamDashboard}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   GROUP_VALUE \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
+
+
+\strong{AssistedBy}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   BLKA \tab character \cr
+   PCT_AST_2PM \tab character \cr
+   PCT_UAST_2PM \tab character \cr
+   PCT_AST_3PM \tab character \cr
+   PCT_UAST_3PM \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   EFG_PCT_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PCT_AST_2PM_RANK \tab character \cr
+   PCT_UAST_2PM_RANK \tab character \cr
+   PCT_AST_3PM_RANK \tab character \cr
+   PCT_UAST_3PM_RANK \tab character \cr
+   PCT_AST_FGM_RANK \tab character \cr
+   PCT_UAST_FGM_RANK \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Dashboard by Shooting Splits}

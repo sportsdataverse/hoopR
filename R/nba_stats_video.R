@@ -37,6 +37,49 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles: videoUrls, playlist
+#'
+#'    **videoUrls**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |uuid     |character |
+#'    |sdur     |integer   |
+#'    |surl     |character |
+#'    |sth      |character |
+#'    |mdur     |integer   |
+#'    |murl     |character |
+#'    |mth      |character |
+#'    |ldur     |integer   |
+#'    |lurl     |character |
+#'    |lth      |character |
+#'    |vtt      |character |
+#'    |scc      |character |
+#'    |srt      |character |
+#'
+#'    **playlist**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |gi       |character |
+#'    |ei       |integer   |
+#'    |y        |integer   |
+#'    |m        |character |
+#'    |d        |character |
+#'    |gc       |character |
+#'    |p        |integer   |
+#'    |dsc      |character |
+#'    |ha       |character |
+#'    |hid      |integer   |
+#'    |va       |character |
+#'    |vid      |integer   |
+#'    |hpb      |integer   |
+#'    |hpa      |integer   |
+#'    |vpb      |integer   |
+#'    |vpa      |integer   |
+#'    |pta      |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -78,45 +121,49 @@ nba_videodetailsasset <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "videodetailsasset"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?AheadBehind=", ahead_behind,
-                     "&ClutchTime=", clutch_time,
-                     "&ContextFilter=", context_filter,
-                     "&ContextMeasure=", context_measure,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=", game_id,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&Period=", period,
-                     "&PlayerID=", player_id,
-                     "&PointDiff=", point_diff,
-                     "&Position=", position,
-                     "&RangeType=", range_type,
-                     "&RookieYear=", rookie_year,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&StartPeriod=", start_period,
-                     "&StartRange=", start_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    AheadBehind = ahead_behind,
+    ClutchTime = clutch_time,
+    ContextFilter = context_filter,
+    ContextMeasure = context_measure,
+    DateFrom = date_from,
+    DateTo = date_to,
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = game_id,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    Period = period,
+    PlayerID = player_id,
+    PointDiff = point_diff,
+    Position = position,
+    RangeType = range_type,
+    RookieYear = rookie_year,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    StartPeriod = start_period,
+    StartRange = start_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
       videoUrls <- resp$resultSets$Meta$videoUrls %>%
         data.frame() %>%
         dplyr::as_tibble()
@@ -178,6 +225,48 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles: videoUrls, playlist
+#'
+#'    **videoUrls**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |uuid     |character |
+#'    |dur      |logical   |
+#'    |stt      |logical   |
+#'    |stp      |logical   |
+#'    |sth      |logical   |
+#'    |stw      |logical   |
+#'    |mtt      |logical   |
+#'    |mtp      |logical   |
+#'    |mth      |logical   |
+#'    |mtw      |logical   |
+#'    |ltt      |logical   |
+#'    |ltp      |logical   |
+#'    |lth      |logical   |
+#'    |ltw      |logical   |
+#'
+#'    **playlist**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |gi       |character |
+#'    |ei       |integer   |
+#'    |y        |integer   |
+#'    |m        |character |
+#'    |d        |character |
+#'    |gc       |character |
+#'    |p        |integer   |
+#'    |dsc      |character |
+#'    |ha       |character |
+#'    |va       |character |
+#'    |hpb      |integer   |
+#'    |hpa      |integer   |
+#'    |vpb      |integer   |
+#'    |vpa      |integer   |
+#'    |pta      |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -219,45 +308,48 @@ nba_videodetails <- function(
     vs_conference = '',
     vs_division = '',
     ...){
-  season_type <- gsub(' ','+',season_type)
+
+  season_type <- gsub(' ', '+', season_type)
   version <- "videodetails"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?AheadBehind=", ahead_behind,
-                     "&ClutchTime=", clutch_time,
-                     "&ContextFilter=", context_filter,
-                     "&ContextMeasure=", context_measure,
-                     "&DateFrom=", date_from,
-                     "&DateTo=", date_to,
-                     "&EndPeriod=", end_period,
-                     "&EndRange=", end_range,
-                     "&GameID=", game_id,
-                     "&GameSegment=", game_segment,
-                     "&LastNGames=", last_n_games,
-                     "&LeagueID=", league_id,
-                     "&Location=", location,
-                     "&Month=", month,
-                     "&OpponentTeamID=", opponent_team_id,
-                     "&Outcome=", outcome,
-                     "&Period=", period,
-                     "&PlayerID=", player_id,
-                     "&PointDiff=", point_diff,
-                     "&Position=", position,
-                     "&RangeType=", range_type,
-                     "&RookieYear=", rookie_year,
-                     "&Season=", season,
-                     "&SeasonSegment=", season_segment,
-                     "&SeasonType=", season_type,
-                     "&StartPeriod=", start_period,
-                     "&StartRange=", start_range,
-                     "&TeamID=", team_id,
-                     "&VsConference=", vs_conference,
-                     "&VsDivision=", vs_division)
+  params <- list(
+    AheadBehind = ahead_behind,
+    ClutchTime = clutch_time,
+    ContextFilter = context_filter,
+    ContextMeasure = context_measure,
+    DateFrom = date_from,
+    DateTo = date_to,
+    EndPeriod = end_period,
+    EndRange = end_range,
+    GameID = game_id,
+    GameSegment = game_segment,
+    LastNGames = last_n_games,
+    LeagueID = league_id,
+    Location = location,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Outcome = outcome,
+    Period = period,
+    PlayerID = player_id,
+    PointDiff = point_diff,
+    Position = position,
+    RangeType = range_type,
+    RookieYear = rookie_year,
+    Season = season,
+    SeasonSegment = season_segment,
+    SeasonType = season_type,
+    StartPeriod = start_period,
+    StartRange = start_range,
+    TeamID = team_id,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
       videoUrls <- resp$resultSets$Meta$videoUrls %>%
         data.frame() %>%
         dplyr::as_tibble()
@@ -298,23 +390,26 @@ NULL
 #' @family NBA Video Functions
 #' @details
 #' ```r
-#'  nba_videoevents(game_id = '0021700807', game_event_id = '0')
+#'  nba_videoevents(game_id = '0021700807', game_event_id = '10')
 #' ```
 nba_videoevents <- function(
     game_id = '0021700807',
-    game_event_id = '0',
+    game_event_id = '10',
     ...){
 
   version <- "videoevents"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameID=", game_id,
-                     "&GameEventID=", game_event_id)
+  params <- list(
+    GameID = game_id,
+    GameEventID = game_event_id
+  )
+
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       videoUrls <- resp$resultSets$Meta$videoUrls %>%
         data.frame() %>%
@@ -350,6 +445,27 @@ NULL
 #' @param league_id league_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles: VideoStatus
+#'
+#'    **VideoStatus**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |GAME_ID                   |character |
+#'    |GAME_DATE                 |character |
+#'    |VISITOR_TEAM_ID           |character |
+#'    |VISITOR_TEAM_CITY         |character |
+#'    |VISITOR_TEAM_NAME         |character |
+#'    |VISITOR_TEAM_ABBREVIATION |character |
+#'    |HOME_TEAM_ID              |character |
+#'    |HOME_TEAM_CITY            |character |
+#'    |HOME_TEAM_NAME            |character |
+#'    |HOME_TEAM_ABBREVIATION    |character |
+#'    |GAME_STATUS               |character |
+#'    |GAME_STATUS_TEXT          |character |
+#'    |IS_AVAILABLE              |character |
+#'    |PT_XYZ_AVAILABLE          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -366,15 +482,17 @@ nba_videostatus <- function(
 
   version <- "videostatus"
   endpoint <- nba_endpoint(version)
+  full_url <- endpoint
 
-  full_url <- paste0(endpoint,
-                     "?GameDate=", game_date,
-                     "&LeagueID=", league_id)
+  params <- list(
+    GameDate = game_date,
+    LeagueID = league_id
+  )
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

@@ -67,6 +67,20 @@ nba_playerdashptshotdefend(
 }
 \value{
 Return a named list of data frames: DefendingShots
+
+\strong{DefendingShots}\tabular{ll}{
+   col_name \tab types \cr
+   CLOSE_DEF_playerId \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   DEFENSE_CATEGORY \tab character \cr
+   FREQ \tab character \cr
+   D_FGM \tab character \cr
+   D_FGA \tab character \cr
+   D_FG_PCT \tab character \cr
+   NORMAL_FG_PCT \tab character \cr
+   PCT_PLUSMINUS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Defense}
