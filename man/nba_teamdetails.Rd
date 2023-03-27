@@ -15,6 +15,81 @@ nba_teamdetails(team_id = "1610612749", ...)
 Return a named list of data frames: TeamAwardsChampionships,
 TeamAwardsConf, TeamAwardsDiv, TeamBackground,
 TeamHistory, TeamHof, TeamRetired, TeamSocialSites
+
+\strong{TeamBackground}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   ABBREVIATION \tab character \cr
+   NICKNAME \tab character \cr
+   YEARFOUNDED \tab character \cr
+   CITY \tab character \cr
+   ARENA \tab character \cr
+   ARENACAPACITY \tab character \cr
+   OWNER \tab character \cr
+   GENERALMANAGER \tab character \cr
+   HEADCOACH \tab character \cr
+   DLEAGUEAFFILIATION \tab character \cr
+}
+
+
+\strong{TeamHistory}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   CITY \tab character \cr
+   NICKNAME \tab character \cr
+   YEARFOUNDED \tab character \cr
+   YEARACTIVETILL \tab character \cr
+}
+
+
+\strong{TeamSocialSites}\tabular{ll}{
+   col_name \tab types \cr
+   ACCOUNTTYPE \tab character \cr
+   WEBSITE_LINK \tab character \cr
+}
+
+
+\strong{TeamAwardsChampionships}\tabular{ll}{
+   col_name \tab types \cr
+   YEARAWARDED \tab character \cr
+   OPPOSITETEAM \tab character \cr
+}
+
+
+\strong{TeamAwardsConf}\tabular{ll}{
+   col_name \tab types \cr
+   YEARAWARDED \tab integer \cr
+   OPPOSITETEAM \tab integer \cr
+}
+
+
+\strong{TeamAwardsDiv}\tabular{ll}{
+   col_name \tab types \cr
+   YEARAWARDED \tab integer \cr
+   OPPOSITETEAM \tab integer \cr
+}
+
+
+\strong{TeamHof}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYERID \tab character \cr
+   PLAYER \tab character \cr
+   POSITION \tab character \cr
+   JERSEY \tab character \cr
+   SEASONSWITHTEAM \tab character \cr
+   YEAR \tab character \cr
+}
+
+
+\strong{TeamRetired}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYERID \tab character \cr
+   PLAYER \tab character \cr
+   POSITION \tab character \cr
+   JERSEY \tab character \cr
+   SEASONSWITHTEAM \tab character \cr
+   YEAR \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Details}

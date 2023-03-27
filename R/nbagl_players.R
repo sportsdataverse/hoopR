@@ -8,6 +8,35 @@ NULL
 #' @author Billy Fryer
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of G League Players from NBA Database
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |nba-affiliation |character |
+#'    |season          |integer   |
+#'    |permalink       |character |
+#'    |tid             |integer   |
+#'    |fn              |character |
+#'    |ln              |character |
+#'    |pid             |integer   |
+#'    |num             |character |
+#'    |pos             |character |
+#'    |dob             |character |
+#'    |ht              |character |
+#'    |wt              |integer   |
+#'    |y               |integer   |
+#'    |sn              |character |
+#'    |ty              |character |
+#'    |co              |character |
+#'    |la              |character |
+#'    |dy              |character |
+#'    |pc              |character |
+#'    |fa              |character |
+#'    |s               |character |
+#'    |twc             |character |
+#'    |ta              |character |
+#'    |tn              |character |
+#'    |tc              |character |
+#'
 #' @importFrom jsonlite fromJSON
 #' @import rvest
 #' @export

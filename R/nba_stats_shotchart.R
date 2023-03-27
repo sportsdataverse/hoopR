@@ -28,6 +28,50 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
+#'
+#'    **Shot_Chart_Detail**
+#'
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |GRID_TYPE           |character |
+#'    |GAME_ID             |character |
+#'    |GAME_EVENT_ID       |character |
+#'    |PLAYER_ID           |character |
+#'    |PLAYER_NAME         |character |
+#'    |TEAM_ID             |character |
+#'    |TEAM_NAME           |character |
+#'    |PERIOD              |character |
+#'    |MINUTES_REMAINING   |character |
+#'    |SECONDS_REMAINING   |character |
+#'    |EVENT_TYPE          |character |
+#'    |ACTION_TYPE         |character |
+#'    |SHOT_TYPE           |character |
+#'    |SHOT_ZONE_BASIC     |character |
+#'    |SHOT_ZONE_AREA      |character |
+#'    |SHOT_ZONE_RANGE     |character |
+#'    |SHOT_DISTANCE       |character |
+#'    |LOC_X               |character |
+#'    |LOC_Y               |character |
+#'    |SHOT_ATTEMPTED_FLAG |character |
+#'    |SHOT_MADE_FLAG      |character |
+#'    |GAME_DATE           |character |
+#'    |HTM                 |character |
+#'    |VTM                 |character |
+#'
+#'    **LeagueAverages**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |GRID_TYPE       |character |
+#'    |SHOT_ZONE_BASIC |character |
+#'    |SHOT_ZONE_AREA  |character |
+#'    |SHOT_ZONE_RANGE |character |
+#'    |FGA             |character |
+#'    |FGM             |character |
+#'    |FG_PCT          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -61,7 +105,8 @@ nba_shotchartdetail <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "shotchartdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -121,6 +166,20 @@ NULL
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: League_Wide
+#'
+#'    **League_Wide**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |GRID_TYPE       |character |
+#'    |SHOT_ZONE_BASIC |character |
+#'    |SHOT_ZONE_AREA  |character |
+#'    |SHOT_ZONE_RANGE |character |
+#'    |FGA             |character |
+#'    |FGM             |character |
+#'    |FG_PCT          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -187,7 +246,6 @@ NULL
 #' @param game_event_id game_event_id
 #' @param game_id game_id
 #' @param game_segment game_segment
-#' @param group_id2 group_id2
 #' @param group_mode group_mode
 #' @param group_quantity group_quantity
 #' @param last_n_games last_n_games
@@ -228,7 +286,53 @@ NULL
 #' @param vs_player_id5 vs_player_id5
 #' @param vs_team_id vs_team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: League_Wide
+#' @return Return a named list of data frames: ShotChartLineupDetail, ShotChartLineupLeagueAverage
+#'
+#'    **ShotChartLineupDetail**
+#'
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |GRID_TYPE           |character |
+#'    |GAME_ID             |character |
+#'    |GAME_EVENT_ID       |character |
+#'    |GROUP_ID            |character |
+#'    |GROUP_NAME          |character |
+#'    |PLAYER_ID           |character |
+#'    |PLAYER_NAME         |character |
+#'    |TEAM_ID             |character |
+#'    |TEAM_NAME           |character |
+#'    |PERIOD              |character |
+#'    |MINUTES_REMAINING   |character |
+#'    |SECONDS_REMAINING   |character |
+#'    |EVENT_TYPE          |character |
+#'    |ACTION_TYPE         |character |
+#'    |SHOT_TYPE           |character |
+#'    |SHOT_ZONE_BASIC     |character |
+#'    |SHOT_ZONE_AREA      |character |
+#'    |SHOT_ZONE_RANGE     |character |
+#'    |SHOT_DISTANCE       |character |
+#'    |LOC_X               |character |
+#'    |LOC_Y               |character |
+#'    |SHOT_ATTEMPTED_FLAG |character |
+#'    |SHOT_MADE_FLAG      |character |
+#'    |GAME_DATE           |character |
+#'    |HTM                 |character |
+#'    |VTM                 |character |
+#'
+#'    **ShotChartLineupLeagueAverage**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |GRID_TYPE       |character |
+#'    |SHOT_ZONE_BASIC |character |
+#'    |SHOT_ZONE_AREA  |character |
+#'    |SHOT_ZONE_RANGE |character |
+#'    |FGA             |character |
+#'    |FGM             |character |
+#'    |FG_PCT          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -258,7 +362,6 @@ nba_shotchartlineupdetail <- function(
     game_event_id = '',
     game_id = '',
     game_segment = '',
-    group_id2 = '-202689-203493-203501-1626174-1627827-',
     group_mode = '',
     group_quantity = '5',
     last_n_games = '0',
@@ -300,11 +403,12 @@ nba_shotchartlineupdetail <- function(
     vs_team_id = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "shotchartlineupdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
-
+  group_id2 <- group_id
   params <- list(
     AheadBehind = ahead_behind,
     CFID = cfid,

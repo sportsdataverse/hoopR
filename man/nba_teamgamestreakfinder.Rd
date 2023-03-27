@@ -577,6 +577,20 @@ nba_teamgamestreakfinder(
 }
 \value{
 Return a named list of data frames: TeamGameStreakFinderParametersResults
+
+\strong{TeamGameStreakFinderParametersResults}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   GAMESTREAK \tab character \cr
+   STARTDATE \tab character \cr
+   ENDDATE \tab character \cr
+   ACTIVESTREAK \tab character \cr
+   NUMSEASONS \tab character \cr
+   LASTSEASON \tab character \cr
+   FIRSTSEASON \tab character \cr
+   ABBREVIATION \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Game Streak Finder}

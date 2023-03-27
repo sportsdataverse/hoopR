@@ -24,6 +24,157 @@ nba_scoreboardv2(
 Return a named list of data frames: Available, EastConfStandingsByDay,
 GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
 TicketLinks, WestConfStandingsByDay, WinProbability
+
+\strong{GameHeader}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_DATE_EST \tab character \cr
+   GAME_SEQUENCE \tab character \cr
+   GAME_ID \tab character \cr
+   GAME_STATUS_ID \tab character \cr
+   GAME_STATUS_TEXT \tab character \cr
+   GAMECODE \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   SEASON \tab character \cr
+   LIVE_PERIOD \tab character \cr
+   LIVE_PC_TIME \tab character \cr
+   NATL_TV_BROADCASTER_ABBREVIATION \tab character \cr
+   HOME_TV_BROADCASTER_ABBREVIATION \tab character \cr
+   AWAY_TV_BROADCASTER_ABBREVIATION \tab character \cr
+   LIVE_PERIOD_TIME_BCAST \tab character \cr
+   ARENA_NAME \tab character \cr
+   WH_STATUS \tab character \cr
+   WNBA_COMMISSIONER_FLAG \tab character \cr
+}
+
+
+\strong{LineScore}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_DATE_EST \tab character \cr
+   GAME_SEQUENCE \tab character \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CITY_NAME \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_WINS_LOSSES \tab character \cr
+   PTS_QTR1 \tab character \cr
+   PTS_QTR2 \tab character \cr
+   PTS_QTR3 \tab character \cr
+   PTS_QTR4 \tab character \cr
+   PTS_OT1 \tab character \cr
+   PTS_OT2 \tab character \cr
+   PTS_OT3 \tab character \cr
+   PTS_OT4 \tab character \cr
+   PTS_OT5 \tab character \cr
+   PTS_OT6 \tab character \cr
+   PTS_OT7 \tab character \cr
+   PTS_OT8 \tab character \cr
+   PTS_OT9 \tab character \cr
+   PTS_OT10 \tab character \cr
+   PTS \tab character \cr
+   FG_PCT \tab character \cr
+   FT_PCT \tab character \cr
+   FG3_PCT \tab character \cr
+   AST \tab character \cr
+   REB \tab character \cr
+   TOV \tab character \cr
+}
+
+
+\strong{SeriesStandings}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   GAME_DATE_EST \tab character \cr
+   HOME_TEAM_WINS \tab character \cr
+   HOME_TEAM_LOSSES \tab character \cr
+   SERIES_LEADER \tab character \cr
+}
+
+
+\strong{LastMeeting}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   LAST_GAME_ID \tab character \cr
+   LAST_GAME_DATE_EST \tab character \cr
+   LAST_GAME_HOME_TEAM_ID \tab character \cr
+   LAST_GAME_HOME_TEAM_CITY \tab character \cr
+   LAST_GAME_HOME_TEAM_NAME \tab character \cr
+   LAST_GAME_HOME_TEAM_ABBREVIATION \tab character \cr
+   LAST_GAME_HOME_TEAM_POINTS \tab character \cr
+   LAST_GAME_VISITOR_TEAM_ID \tab character \cr
+   LAST_GAME_VISITOR_TEAM_CITY \tab character \cr
+   LAST_GAME_VISITOR_TEAM_NAME \tab character \cr
+   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \cr
+   LAST_GAME_VISITOR_TEAM_POINTS \tab character \cr
+}
+
+
+\strong{EastConfStandingsByDay}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   STANDINGSDATE \tab character \cr
+   CONFERENCE \tab character \cr
+   TEAM \tab character \cr
+   G \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   HOME_RECORD \tab character \cr
+   ROAD_RECORD \tab character \cr
+}
+
+
+\strong{WestConfStandingsByDay}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   LEAGUE_ID \tab character \cr
+   SEASON_ID \tab character \cr
+   STANDINGSDATE \tab character \cr
+   CONFERENCE \tab character \cr
+   TEAM \tab character \cr
+   G \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   HOME_RECORD \tab character \cr
+   ROAD_RECORD \tab character \cr
+}
+
+
+\strong{Available}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   PT_AVAILABLE \tab character \cr
+}
+
+
+\strong{TeamLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NICKNAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PTS_PLAYER_ID \tab character \cr
+   PTS_PLAYER_NAME \tab character \cr
+   PTS \tab character \cr
+   REB_PLAYER_ID \tab character \cr
+   REB_PLAYER_NAME \tab character \cr
+   REB \tab character \cr
+   AST_PLAYER_ID \tab character \cr
+   AST_PLAYER_NAME \tab character \cr
+   AST \tab character \cr
+}
+
+
+\strong{TicketLinks}
+
+\strong{WinProbability}
 }
 \description{
 \strong{Get NBA Stats API Scoreboard V2}

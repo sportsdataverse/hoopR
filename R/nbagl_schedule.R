@@ -8,6 +8,42 @@ NULL
 #' @param season Season - 4 digit, i.e. 2021
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of the G League Season Schedule
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |mon      |character |
+#'    |gid      |character |
+#'    |gcode    |character |
+#'    |seri     |character |
+#'    |is       |integer   |
+#'    |gdte     |character |
+#'    |htm      |character |
+#'    |vtm      |character |
+#'    |etm      |character |
+#'    |an       |character |
+#'    |ac       |character |
+#'    |as       |character |
+#'    |st       |character |
+#'    |stt      |character |
+#'    |gdtutc   |character |
+#'    |utctm    |character |
+#'    |ppdst    |character |
+#'    |seq      |integer   |
+#'    |bd_b     |list      |
+#'    |v_tid    |integer   |
+#'    |v_re     |character |
+#'    |v_ta     |character |
+#'    |v_tn     |character |
+#'    |v_tc     |character |
+#'    |v_s      |character |
+#'    |h_tid    |integer   |
+#'    |h_re     |character |
+#'    |h_ta     |character |
+#'    |h_tn     |character |
+#'    |h_tc     |character |
+#'    |h_s      |character |
+#'    |ptsls_pl |list      |
+#'
 #' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange

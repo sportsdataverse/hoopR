@@ -9,18 +9,43 @@ test_that("KP - Get box score", {
   x4 <- x[[4]]
 
   cols_x1 <- c(
-    'hgt', 'wgt', 'yr', 'number', 'player',
-    'min', 'o_rtg', 'percent_ps', 'pts', 'fgm2_a',
-    'fgm3_a', 'ftm_a', 'or', 'dr', 'a',
-    'to', 'blk', 'stl',
-    'pf', 'team', 'wp_note', 'game_id', 'year'
+    'hgt',
+    'wgt',
+    'yr',
+    'number',
+    'player',
+    'min',
+    'o_rtg',
+    'percent_ps',
+    'pts',
+    'fgm2_a',
+    'fgm3_a',
+    'ftm_a',
+    'or',
+    'dr',
+    'a',
+    'to',
+    'blk',
+    'stl',
+    'pf',
+    'team',
+    'wp_note',
+    'game_id',
+    'year'
   )
   cols_x3 <- c(
-    'team', 'q1', 'q2', 'q3', 'q4', 't'
+    'team',
+    'q1',
+    'q2',
+    'q3',
+    'q4',
+    't'
   )
   cols_x4 <- c(
-    'official_id', 'official_name',
-    'game_id', 'year'
+    'official_id',
+    'official_name',
+    'game_id',
+    'year'
   )
   expect_equal(colnames(x1), cols_x1)
   expect_s3_class(x1, 'data.frame')
@@ -31,4 +56,5 @@ test_that("KP - Get box score", {
   expect_equal(colnames(x4), cols_x4)
   expect_s3_class(x4, 'data.frame')
 
+  Sys.sleep(2)
 })

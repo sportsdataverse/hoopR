@@ -22,6 +22,41 @@ nba_commonteamroster(
 }
 \value{
 Return a named list of data frames: Coaches, CommonTeamRoster
+
+\strong{CommonTeamRoster}\tabular{ll}{
+   col_name \tab types \cr
+   TeamID \tab character \cr
+   SEASON \tab character \cr
+   LeagueID \tab character \cr
+   PLAYER \tab character \cr
+   NICKNAME \tab character \cr
+   PLAYER_SLUG \tab character \cr
+   NUM \tab character \cr
+   POSITION \tab character \cr
+   HEIGHT \tab character \cr
+   WEIGHT \tab character \cr
+   BIRTH_DATE \tab character \cr
+   AGE \tab character \cr
+   EXP \tab character \cr
+   SCHOOL \tab character \cr
+   PLAYER_ID \tab character \cr
+   HOW_ACQUIRED \tab character \cr
+}
+
+
+\strong{Coaches}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   SEASON \tab character \cr
+   COACH_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   COACH_NAME \tab character \cr
+   IS_ASSISTANT \tab character \cr
+   COACH_TYPE \tab character \cr
+   SORT_SEQUENCE \tab character \cr
+   SUB_SORT_SEQUENCE \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Team Roster}

@@ -10,6 +10,29 @@ NULL
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: CommonAllPlayers
+#'
+#'    **CommonAllPlayers**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |PERSON_ID                 |character |
+#'    |DISPLAY_LAST_COMMA_FIRST  |character |
+#'    |DISPLAY_FIRST_LAST        |character |
+#'    |ROSTERSTATUS              |character |
+#'    |FROM_YEAR                 |character |
+#'    |TO_YEAR                   |character |
+#'    |PLAYERCODE                |character |
+#'    |PLAYER_SLUG               |character |
+#'    |TEAM_ID                   |character |
+#'    |TEAM_CITY                 |character |
+#'    |TEAM_NAME                 |character |
+#'    |TEAM_ABBREVIATION         |character |
+#'    |TEAM_CODE                 |character |
+#'    |TEAM_SLUG                 |character |
+#'    |GAMES_PLAYED_FLAG         |character |
+#'    |OTHERLEAGUE_EXPERIENCE_CH |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -65,7 +88,68 @@ NULL
 #' @param league_id league_id
 #' @param player_id player_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: AvailableSeasons
+#' @return Return a named list of data frames: CommonPlayerInfo, PlayerHeadlineStats,
+#'  AvailableSeasons
+#'
+#'    **CommonPlayerInfo**
+#'
+#'
+#'    |col_name                         |types     |
+#'    |:--------------------------------|:---------|
+#'    |PERSON_ID                        |character |
+#'    |FIRST_NAME                       |character |
+#'    |LAST_NAME                        |character |
+#'    |DISPLAY_FIRST_LAST               |character |
+#'    |DISPLAY_LAST_COMMA_FIRST         |character |
+#'    |DISPLAY_FI_LAST                  |character |
+#'    |PLAYER_SLUG                      |character |
+#'    |BIRTHDATE                        |character |
+#'    |SCHOOL                           |character |
+#'    |COUNTRY                          |character |
+#'    |LAST_AFFILIATION                 |character |
+#'    |HEIGHT                           |character |
+#'    |WEIGHT                           |character |
+#'    |SEASON_EXP                       |character |
+#'    |JERSEY                           |character |
+#'    |POSITION                         |character |
+#'    |ROSTERSTATUS                     |character |
+#'    |GAMES_PLAYED_CURRENT_SEASON_FLAG |character |
+#'    |TEAM_ID                          |character |
+#'    |TEAM_NAME                        |character |
+#'    |TEAM_ABBREVIATION                |character |
+#'    |TEAM_CODE                        |character |
+#'    |TEAM_CITY                        |character |
+#'    |PLAYERCODE                       |character |
+#'    |FROM_YEAR                        |character |
+#'    |TO_YEAR                          |character |
+#'    |DLEAGUE_FLAG                     |character |
+#'    |NBA_FLAG                         |character |
+#'    |GAMES_PLAYED_FLAG                |character |
+#'    |DRAFT_YEAR                       |character |
+#'    |DRAFT_ROUND                      |character |
+#'    |DRAFT_NUMBER                     |character |
+#'    |GREATEST_75_FLAG                 |character |
+#'
+#'    **PlayerHeadlineStats**
+#'
+#'
+#'    |col_name    |types     |
+#'    |:-----------|:---------|
+#'    |PLAYER_ID   |character |
+#'    |PLAYER_NAME |character |
+#'    |TimeFrame   |character |
+#'    |PTS         |character |
+#'    |AST         |character |
+#'    |REB         |character |
+#'    |PIE         |character |
+#'
+#'    **AvailableSeasons**
+#'
+#'
+#'    |col_name  |types     |
+#'    |:---------|:---------|
+#'    |SEASON_ID |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -122,6 +206,18 @@ NULL
 #' @param series_id series_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayoffSeries
+#'
+#'    **PlayoffSeries**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |GAME_ID         |character |
+#'    |HOME_TEAM_ID    |character |
+#'    |VISITOR_TEAM_ID |character |
+#'    |SERIES_ID       |character |
+#'    |GAME_NUM        |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -177,6 +273,45 @@ NULL
 #' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Coaches, CommonTeamRoster
+#'
+#'    **CommonTeamRoster**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |TeamID       |character |
+#'    |SEASON       |character |
+#'    |LeagueID     |character |
+#'    |PLAYER       |character |
+#'    |NICKNAME     |character |
+#'    |PLAYER_SLUG  |character |
+#'    |NUM          |character |
+#'    |POSITION     |character |
+#'    |HEIGHT       |character |
+#'    |WEIGHT       |character |
+#'    |BIRTH_DATE   |character |
+#'    |AGE          |character |
+#'    |EXP          |character |
+#'    |SCHOOL       |character |
+#'    |PLAYER_ID    |character |
+#'    |HOW_ACQUIRED |character |
+#'
+#'    **Coaches**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |SEASON            |character |
+#'    |COACH_ID          |character |
+#'    |FIRST_NAME        |character |
+#'    |LAST_NAME         |character |
+#'    |COACH_NAME        |character |
+#'    |IS_ASSISTANT      |character |
+#'    |COACH_TYPE        |character |
+#'    |SORT_SEQUENCE     |character |
+#'    |SUB_SORT_SEQUENCE |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

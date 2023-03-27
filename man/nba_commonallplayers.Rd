@@ -22,6 +22,26 @@ nba_commonallplayers(
 }
 \value{
 Return a named list of data frames: CommonAllPlayers
+
+\strong{CommonAllPlayers}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \cr
+   DISPLAY_FIRST_LAST \tab character \cr
+   ROSTERSTATUS \tab character \cr
+   FROM_YEAR \tab character \cr
+   TO_YEAR \tab character \cr
+   PLAYERCODE \tab character \cr
+   PLAYER_SLUG \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_CODE \tab character \cr
+   TEAM_SLUG \tab character \cr
+   GAMES_PLAYED_FLAG \tab character \cr
+   OTHERLEAGUE_EXPERIENCE_CH \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API All Players}

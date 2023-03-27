@@ -33,6 +33,37 @@ nba_synergyplaytypes(
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
+\value{
+Return a named list of data frames: SynergyPlayType
+
+\strong{SynergyPlayType}\tabular{ll}{
+   col_name \tab types \cr
+   SEASON_ID \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_NAME \tab character \cr
+   PLAY_TYPE \tab character \cr
+   TYPE_GROUPING \tab character \cr
+   PERCENTILE \tab character \cr
+   GP \tab character \cr
+   POSS_PCT \tab character \cr
+   PPP \tab character \cr
+   FG_PCT \tab character \cr
+   FT_POSS_PCT \tab character \cr
+   TOV_POSS_PCT \tab character \cr
+   SF_POSS_PCT \tab character \cr
+   PLUSONE_POSS_PCT \tab character \cr
+   SCORE_POSS_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   POSS \tab character \cr
+   PTS \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FGMX \tab character \cr
+}
+}
 \description{
 \strong{Get NBA Stats API Synergy Play Type Stats}
 

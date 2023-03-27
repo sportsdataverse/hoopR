@@ -69,6 +69,173 @@ nba_playerdashptshots(
 Return a named list of data frames: ClosestDefender10ftPlusShooting,
 ClosestDefenderShooting, DribbleShooting,
 GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
+
+\strong{Overall}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   SHOT_TYPE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{GeneralShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   SHOT_TYPE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{ShotClockShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   SHOT_CLOCK_RANGE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{DribbleShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   DRIBBLE_RANGE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{ClosestDefenderShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   CLOSE_DEF_DIST_RANGE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{ClosestDefender10ftPlusShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   CLOSE_DEF_DIST_RANGE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{TouchTimeShooting}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   SORT_ORDER \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   TOUCH_TIME_RANGE \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Shots}

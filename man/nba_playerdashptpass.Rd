@@ -61,6 +61,57 @@ nba_playerdashptpass(
 }
 \value{
 Return a named list of data frames: PassesMade, PassesReceived
+
+\strong{PassesMade}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PASS_TYPE \tab character \cr
+   G \tab character \cr
+   PASS_TO \tab character \cr
+   PASS_TEAMMATE_PLAYER_ID \tab character \cr
+   FREQUENCY \tab character \cr
+   PASS \tab character \cr
+   AST \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
+
+
+\strong{PassesReceived}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME_LAST_FIRST \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PASS_TYPE \tab character \cr
+   G \tab character \cr
+   PASS_FROM \tab character \cr
+   PASS_TEAMMATE_PLAYER_ID \tab character \cr
+   FREQUENCY \tab character \cr
+   PASS \tab character \cr
+   AST \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Passing}

@@ -76,6 +76,46 @@ nba_shotchartdetail(
 }
 \value{
 Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
+
+\strong{Shot_Chart_Detail}\tabular{ll}{
+   col_name \tab types \cr
+   GRID_TYPE \tab character \cr
+   GAME_ID \tab character \cr
+   GAME_EVENT_ID \tab character \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   PERIOD \tab character \cr
+   MINUTES_REMAINING \tab character \cr
+   SECONDS_REMAINING \tab character \cr
+   EVENT_TYPE \tab character \cr
+   ACTION_TYPE \tab character \cr
+   SHOT_TYPE \tab character \cr
+   SHOT_ZONE_BASIC \tab character \cr
+   SHOT_ZONE_AREA \tab character \cr
+   SHOT_ZONE_RANGE \tab character \cr
+   SHOT_DISTANCE \tab character \cr
+   LOC_X \tab character \cr
+   LOC_Y \tab character \cr
+   SHOT_ATTEMPTED_FLAG \tab character \cr
+   SHOT_MADE_FLAG \tab character \cr
+   GAME_DATE \tab character \cr
+   HTM \tab character \cr
+   VTM \tab character \cr
+}
+
+
+\strong{LeagueAverages}\tabular{ll}{
+   col_name \tab types \cr
+   GRID_TYPE \tab character \cr
+   SHOT_ZONE_BASIC \tab character \cr
+   SHOT_ZONE_AREA \tab character \cr
+   SHOT_ZONE_RANGE \tab character \cr
+   FGA \tab character \cr
+   FGM \tab character \cr
+   FG_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}

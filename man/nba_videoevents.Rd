@@ -4,7 +4,7 @@
 \alias{nba_videoevents}
 \title{\strong{Get NBA Stats API Video Events}}
 \usage{
-nba_videoevents(game_id = "0021700807", game_event_id = "0", ...)
+nba_videoevents(game_id = "0021700807", game_event_id = "10", ...)
 }
 \arguments{
 \item{game_id}{game_id}
@@ -22,7 +22,7 @@ Return a list of tibbles: videoUrls, playlist
 \strong{Get NBA Stats API Video Events}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videoevents(game_id = '0021700807', game_event_id = '0')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videoevents(game_id = '0021700807', game_event_id = '10')
 }\if{html}{\out{</div>}}
 }
 \seealso{

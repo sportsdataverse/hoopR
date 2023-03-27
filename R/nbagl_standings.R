@@ -8,6 +8,31 @@ NULL
 #' @param season Season - 4 digit, i.e. 2021
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a tibble of the G League Season Standings
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |val      |character |
+#'    |di_val   |character |
+#'    |tid      |integer   |
+#'    |see      |integer   |
+#'    |cli      |integer   |
+#'    |clid     |integer   |
+#'    |clic     |integer   |
+#'    |elim     |integer   |
+#'    |str      |character |
+#'    |l10      |character |
+#'    |dr       |character |
+#'    |cr       |character |
+#'    |l        |integer   |
+#'    |w        |integer   |
+#'    |hr       |character |
+#'    |ar       |character |
+#'    |gb       |numeric   |
+#'    |gbd      |numeric   |
+#'    |ta       |character |
+#'    |tn       |character |
+#'    |tc       |character |
+#'
 #' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange

@@ -14,7 +14,39 @@ nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second", ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames:
+Return a named list of data frames: WinProbPBP, GameInfo
+
+\strong{WinProbPBP}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   EVENT_NUM \tab character \cr
+   HOME_PCT \tab character \cr
+   VISITOR_PCT \tab character \cr
+   HOME_PTS \tab character \cr
+   VISITOR_PTS \tab character \cr
+   HOME_SCORE_MARGIN \tab character \cr
+   PERIOD \tab character \cr
+   SECONDS_REMAINING \tab character \cr
+   HOME_POSS_IND \tab character \cr
+   HOME_G \tab character \cr
+   DESCRIPTION \tab character \cr
+   LOCATION \tab character \cr
+   PCTIMESTRING \tab character \cr
+   ISVISIBLE \tab character \cr
+}
+
+
+\strong{GameInfo}\tabular{ll}{
+   col_name \tab types \cr
+   GAME_ID \tab character \cr
+   GAME_DATE \tab character \cr
+   HOME_TEAM_ID \tab character \cr
+   HOME_TEAM_ABR \tab character \cr
+   HOME_TEAM_PTS \tab character \cr
+   VISITOR_TEAM_ID \tab character \cr
+   VISITOR_TEAM_ABR \tab character \cr
+   VISITOR_TEAM_PTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Win Probability PBP}
