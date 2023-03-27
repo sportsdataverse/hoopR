@@ -11,6 +11,11 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @import rvest
 #' @export
+#' @family NBA G-League Functions
+#' @details
+#' ```r
+#'  nbagl_players()
+#' ```
 
 nbagl_players <- function(
     ...) {

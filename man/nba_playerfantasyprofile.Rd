@@ -52,6 +52,7 @@ Return a named list of data frames: DaysRestModified, LastNGames, Location, Oppo
 }
 \seealso{
 Other NBA Player Functions: 
+\code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
 \code{\link{nba_leaguedashplayershotlocations}()},
@@ -89,6 +90,7 @@ Other NBA Player Functions:
 
 Other NBA Fantasy Functions: 
 \code{\link{nba_fantasywidget}()},
+\code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_playerfantasyprofilebargraph}()}
 }
 \author{

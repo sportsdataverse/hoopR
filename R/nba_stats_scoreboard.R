@@ -70,11 +70,15 @@ NULL
 #' @details
 #' ```r
 #'  nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_schedule <- function(
     league_id = '00',
     season = year_to_season(most_recent_nba_season() - 1),
     ...){
+
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   version <- "scheduleleaguev2"
   full_url <- nba_endpoint(version)
@@ -155,6 +159,9 @@ nba_scoreboard <- function(
     game_date = '2021-07-20',
     day_offset = 0,
     ...){
+
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   version <- "scoreboard"
   full_url <- nba_endpoint(version)
@@ -242,6 +249,132 @@ nba_scoreboardv2 <- function(
   return(df_list)
 }
 
+#' **Get NBA Stats API Today's Scoreboard**
+#' @name nba_todays_scoreboard
+NULL
+#' @title
+#' **Get NBA Stats API Today's Scoreboard**
+#' @rdname nba_todays_scoreboard
+#' @author Saiem Gilani
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Return a data frame with the following columns:
+#'
+#'   |col_name                  |types     |
+#'   |:-------------------------|:---------|
+#'   |game_id                   |character |
+#'   |game_code                 |character |
+#'   |game_status               |integer   |
+#'   |game_status_text          |character |
+#'   |period                    |integer   |
+#'   |game_clock                |character |
+#'   |game_time_utc             |character |
+#'   |game_et                   |character |
+#'   |regulation_periods        |integer   |
+#'   |if_necessary              |logical   |
+#'   |series_game_number        |character |
+#'   |series_text               |character |
+#'   |series_conference         |character |
+#'   |po_round_desc             |character |
+#'   |game_subtype              |character |
+#'   |home_team_id              |integer   |
+#'   |home_team_name            |character |
+#'   |home_team_city            |character |
+#'   |home_team_tricode         |character |
+#'   |home_wins                 |integer   |
+#'   |home_losses               |integer   |
+#'   |home_score                |integer   |
+#'   |home_seed                 |logical   |
+#'   |home_in_bonus             |character |
+#'   |home_timeouts_remaining   |integer   |
+#'   |home_periods              |list      |
+#'   |away_team_id              |integer   |
+#'   |away_team_name            |character |
+#'   |away_team_city            |character |
+#'   |away_team_tricode         |character |
+#'   |away_wins                 |integer   |
+#'   |away_losses               |integer   |
+#'   |away_score                |integer   |
+#'   |away_seed                 |logical   |
+#'   |away_in_bonus             |character |
+#'   |away_timeouts_remaining   |integer   |
+#'   |away_periods              |list      |
+#'   |home_leaders_person_id    |integer   |
+#'   |home_leaders_name         |character |
+#'   |home_leaders_jersey_num   |character |
+#'   |home_leaders_position     |character |
+#'   |home_leaders_team_tricode |character |
+#'   |home_leaders_player_slug  |character |
+#'   |home_leaders_points       |integer   |
+#'   |home_leaders_rebounds     |integer   |
+#'   |home_leaders_assists      |integer   |
+#'   |away_leaders_person_id    |integer   |
+#'   |away_leaders_name         |character |
+#'   |away_leaders_jersey_num   |character |
+#'   |away_leaders_position     |character |
+#'   |away_leaders_team_tricode |character |
+#'   |away_leaders_player_slug  |character |
+#'   |away_leaders_points       |integer   |
+#'   |away_leaders_rebounds     |integer   |
+#'   |away_leaders_assists      |integer   |
+#'   |pb_odds_team              |logical   |
+#'   |pb_odds_odds              |numeric   |
+#'   |pb_odds_suspended         |integer   |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Schedule Functions
+#' @family NBA Live Functions
+#' @details
+#' ```r
+#'  nba_todays_scoreboard()
+#' ```
+nba_todays_scoreboard <- function(
+    ...){
+
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+
+  tryCatch(
+    expr = {
+      full_url <- "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+      res <- rvest::session(url = full_url, ...,  httr::timeout(60))
+
+      resp <- res$response %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
+        jsonlite::fromJSON()
+
+      scoreboard <- resp %>%
+        purrr::pluck("scoreboard")
+
+      games <- scoreboard %>%
+        purrr::pluck("games") %>%
+        tidyr::unnest("homeTeam", names_sep = '_') %>%
+        tidyr::unnest("awayTeam", names_sep = '_') %>%
+        tidyr::unnest("gameLeaders") %>%
+        tidyr::unnest("homeLeaders", names_sep = '_') %>%
+        tidyr::unnest("awayLeaders", names_sep = '_') %>%
+        tidyr::unnest("pbOdds", names_sep = '_')
+
+      colnames(games) <- gsub("homeTeam","home", colnames(games))
+      colnames(games) <- gsub("awayTeam","away", colnames(games))
+
+      games <- games %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no today's scoreboard data for {game_date} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(games)
+}
 
 
 
@@ -269,6 +402,9 @@ nba_winprobabilitypbp <- function(
     game_id = '0021700807',
     run_type = 'each second',
     ...){
+
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   run_type <- gsub(' ', '+', run_type)
   version <- "winprobabilitypbp"

@@ -11,6 +11,51 @@ NULL
 #' @param p Progress bar
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |game_id                   |character |
+#'    |event_num                 |character |
+#'    |event_msg_type            |character |
+#'    |event_msg_action_type     |character |
+#'    |period                    |numeric   |
+#'    |minute_game               |numeric   |
+#'    |time_remaining            |numeric   |
+#'    |wc_time_string            |character |
+#'    |time_quarter              |character |
+#'    |minute_remaining_quarter  |numeric   |
+#'    |seconds_remaining_quarter |numeric   |
+#'    |home_description          |character |
+#'    |neutral_description       |character |
+#'    |visitor_description       |character |
+#'    |score                     |character |
+#'    |away_score                |numeric   |
+#'    |home_score                |numeric   |
+#'    |score_margin              |character |
+#'    |person1type               |character |
+#'    |player1_id                |character |
+#'    |player1_name              |character |
+#'    |player1_team_id           |character |
+#'    |player1_team_city         |character |
+#'    |player1_team_nickname     |character |
+#'    |player1_team_abbreviation |character |
+#'    |person2type               |character |
+#'    |player2_id                |character |
+#'    |player2_name              |character |
+#'    |player2_team_id           |character |
+#'    |player2_team_city         |character |
+#'    |player2_team_nickname     |character |
+#'    |player2_team_abbreviation |character |
+#'    |person3type               |character |
+#'    |player3_id                |character |
+#'    |player3_name              |character |
+#'    |player3_team_id           |character |
+#'    |player3_team_city         |character |
+#'    |player3_team_nickname     |character |
+#'    |player3_team_abbreviation |character |
+#'    |video_available_flag      |character |
+#'    |team_leading              |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -25,7 +70,6 @@ nba_pbp <- function(
     version = "v2",
     p,
     ...){
-
 
   if (version == "v2") {
     endpoint <- nba_endpoint('playbyplayv2')
@@ -152,6 +196,9 @@ nba_pbps <- function(
     nest_data = FALSE,
     ...) {
 
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+
   if (game_ids %>% purrr::is_null()) {
     stop("Please enter game ids")
   }
@@ -191,6 +238,66 @@ NULL
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
+#'
+#'    |col_name                     |types     |
+#'    |:----------------------------|:---------|
+#'    |action_number                |integer   |
+#'    |clock                        |character |
+#'    |time_actual                  |character |
+#'    |period                       |integer   |
+#'    |period_type                  |character |
+#'    |action_type                  |character |
+#'    |sub_type                     |character |
+#'    |qualifiers                   |list      |
+#'    |person_id                    |integer   |
+#'    |x                            |numeric   |
+#'    |y                            |numeric   |
+#'    |possession                   |integer   |
+#'    |score_home                   |character |
+#'    |score_away                   |character |
+#'    |edited                       |character |
+#'    |order_number                 |integer   |
+#'    |is_target_score_last_period  |logical   |
+#'    |x_legacy                     |integer   |
+#'    |y_legacy                     |integer   |
+#'    |is_field_goal                |integer   |
+#'    |side                         |character |
+#'    |description                  |character |
+#'    |person_ids_filter            |list      |
+#'    |team_id                      |integer   |
+#'    |team_tricode                 |character |
+#'    |descriptor                   |character |
+#'    |jump_ball_recovered_name     |character |
+#'    |jump_ball_recoverd_person_id |integer   |
+#'    |player_name                  |character |
+#'    |player_name_i                |character |
+#'    |jump_ball_won_player_name    |character |
+#'    |jump_ball_won_person_id      |integer   |
+#'    |jump_ball_lost_player_name   |character |
+#'    |jump_ball_lost_person_id     |integer   |
+#'    |area                         |character |
+#'    |area_detail                  |character |
+#'    |shot_distance                |numeric   |
+#'    |shot_result                  |character |
+#'    |points_total                 |integer   |
+#'    |assist_player_name_initial   |character |
+#'    |assist_person_id             |integer   |
+#'    |assist_total                 |integer   |
+#'    |shot_action_number           |integer   |
+#'    |rebound_total                |integer   |
+#'    |rebound_defensive_total      |integer   |
+#'    |rebound_offensive_total      |integer   |
+#'    |official_id                  |integer   |
+#'    |foul_personal_total          |integer   |
+#'    |foul_technical_total         |integer   |
+#'    |foul_drawn_player_name       |character |
+#'    |foul_drawn_person_id         |integer   |
+#'    |block_player_name            |character |
+#'    |block_person_id              |integer   |
+#'    |turnover_total               |integer   |
+#'    |steal_player_name            |character |
+#'    |steal_person_id              |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -205,6 +312,8 @@ nba_live_pbp <- function(
     game_id,
     ...){
 
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   endpoint <- nba_live_endpoint('playbyplay')
 
@@ -225,7 +334,9 @@ nba_live_pbp <- function(
       data <- resp %>%
         purrr::pluck("game") %>%
         purrr::pluck("actions") %>%
-        janitor::clean_names()
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
+
 
     },
     error = function(e) {
@@ -250,7 +361,9 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a data frame: PlayByPlay
+#' @return Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
+#' away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
+#' away_team_linescores
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -259,12 +372,14 @@ NULL
 #' @family NBA Live Functions
 #' @details
 #' ```r
-#'  nba_live_boxscore(game_id = 0022201086)
+#'  nba_live_boxscore(game_id = "0022201086")
 #' ```
 nba_live_boxscore <- function(
     game_id,
     ...){
 
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
 
   endpoint <- nba_live_endpoint('boxscore')
 
@@ -276,7 +391,7 @@ nba_live_boxscore <- function(
   tryCatch(
     expr = {
 
-      res <- rvest::session(url = full_url, httr::timeout(60))
+      res <- rvest::session(url = full_url, ..., httr::timeout(60))
 
       resp <- res$response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
@@ -285,14 +400,153 @@ nba_live_boxscore <- function(
       data <- resp %>%
         purrr::pluck("game")
 
+      game_details <- data.frame(
+        game_id = data %>% purrr::pluck("gameId"),
+        game_time_local = data %>% purrr::pluck("gameTimeLocal"),
+        game_time_utc = data %>% purrr::pluck("gameTimeUTC"),
+        game_time_home = data %>% purrr::pluck("gameTimeHome"),
+        game_time_away = data %>% purrr::pluck("gameTimeAway"),
+        game_et = data %>% purrr::pluck("gameEt"),
+        duration = data %>% purrr::pluck("duration"),
+        game_code = data %>% purrr::pluck("gameCode"),
+        game_status_text = data %>% purrr::pluck("gameStatusText"),
+        game_status = data %>% purrr::pluck("gameStatus"),
+        regulation_periods = data %>% purrr::pluck("regulationPeriods"),
+        period = data %>% purrr::pluck("period"),
+        game_clock = data %>% purrr::pluck("gameClock"),
+        attendance = data %>% purrr::pluck("attendance"),
+        sellout = data %>% purrr::pluck("sellout")
+      )
+
+      arena <- data %>%
+        purrr::pluck("arena") %>%
+        data.frame() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Game Arena Information from NBA.com", Sys.time())
+
+      officials <- data %>%
+        purrr::pluck("officials") %>%
+        data.frame() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Game Officials Information from NBA.com", Sys.time())
+
+      if ("homeTeam" %in% names(data)) {
+
+        home_team <- data %>%
+          purrr::pluck("homeTeam")
+
+        home_team_info <- data.frame(
+          team_id = home_team %>% purrr::pluck("teamId"),
+          team_name = home_team %>% purrr::pluck("teamName"),
+          team_city = home_team %>% purrr::pluck("teamCity"),
+          team_tricode = home_team %>% purrr::pluck("teamTricode"),
+          team_score = home_team %>% purrr::pluck("score"),
+          team_in_bonus = home_team %>% purrr::pluck("inBonus"),
+          team_timeouts_remaining = home_team %>% purrr::pluck("timeoutsRemaining")
+        )
+
+        home_team_box <- home_team %>%
+          purrr::pluck("statistics") %>%
+          data.frame()
+
+        home_team_linescores <- home_team$periods %>%
+          janitor::clean_names()
+
+        home_team_players <- home_team %>%
+          purrr::pluck("players") %>%
+          tidyr::unnest("statistics")
+
+        home_team_player_boxscore <- home_team_info %>%
+          dplyr::bind_cols(home_team_players) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Game Player Boxscore Information from NBA.com", Sys.time())
+
+        home_team_boxscore <- home_team_info %>%
+          dplyr::bind_cols(home_team_box) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Game Team Boxscore Information from NBA.com", Sys.time())
+
+      }
+
+      if ("awayTeam" %in% names(data)) {
+
+        away_team <- data %>%
+          purrr::pluck("awayTeam")
+
+        away_team_info <- data.frame(
+          team_id = away_team %>% purrr::pluck("teamId"),
+          team_name = away_team %>% purrr::pluck("teamName"),
+          team_city = away_team %>% purrr::pluck("teamCity"),
+          team_tricode = away_team %>% purrr::pluck("teamTricode"),
+          team_score = away_team %>% purrr::pluck("score"),
+          team_in_bonus = away_team %>% purrr::pluck("inBonus"),
+          team_timeouts_remaining = away_team %>% purrr::pluck("timeoutsRemaining")
+        )
+
+        away_team_box <- away_team %>%
+          purrr::pluck("statistics") %>%
+          data.frame()
+
+        away_team_linescores <- away_team$periods %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Game Linescore Information from NBA.com", Sys.time())
+
+        away_team_players <- away_team %>%
+          purrr::pluck("players") %>%
+          tidyr::unnest("statistics")
+
+        away_team_player_boxscore <- away_team_info %>%
+          dplyr::bind_cols(away_team_players) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Game Player Boxscore Information from NBA.com", Sys.time())
+
+        away_team_boxscore <- away_team_info %>%
+          dplyr::bind_cols(away_team_box) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Game Team Boxscore Information from NBA.com", Sys.time())
+
+      }
+
+      colnames(home_team_info) <- paste0("home_", colnames(home_team_info))
+      colnames(away_team_info) <- paste0("away_", colnames(away_team_info))
+
+      game_details <- game_details %>%
+        dplyr::bind_cols(home_team_info) %>%
+        dplyr::bind_cols(away_team_info) %>%
+        make_hoopR_data("NBA Game Linescore Information from NBA.com", Sys.time())
+
+      df_list <- c(
+        list(game_details),
+        list(arena),
+        list(officials),
+        list(home_team_boxscore),
+        list(away_team_boxscore),
+        list(home_team_player_boxscore),
+        list(away_team_player_boxscore),
+        list(home_team_linescores),
+        list(away_team_linescores)
+      )
+
+      names(df_list) = c(
+        "game_details",
+        "arena",
+        "officials",
+        "home_team_boxscore",
+        "away_team_boxscore",
+        "home_team_player_boxscore",
+        "away_team_player_boxscore",
+        "home_team_linescores",
+        "away_team_linescores"
+      )
+
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore data for {game_id} available!"))
     },
     warning = function(w) {
     },
     finally = {
     }
   )
-  return(data)
+  return(df_list)
 }

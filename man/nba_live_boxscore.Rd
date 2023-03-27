@@ -12,7 +12,9 @@ nba_live_boxscore(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame: PlayByPlay
+Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
+away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
+away_team_linescores
 }
 \description{
 \strong{Get NBA Stats API Live Boxscore}
@@ -20,7 +22,7 @@ Returns a data frame: PlayByPlay
 \strong{Get NBA Stats API Live Boxscore}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_boxscore(game_id = 0022201086)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_boxscore(game_id = "0022201086")
 }\if{html}{\out{</div>}}
 }
 \seealso{
@@ -39,7 +41,8 @@ Other NBA Boxscore Functions:
 \code{\link{nba_hustlestatsboxscore}()}
 
 Other NBA Live Functions: 
-\code{\link{nba_live_pbp}()}
+\code{\link{nba_live_pbp}()},
+\code{\link{nba_todays_scoreboard}()}
 }
 \author{
 Saiem Gilani

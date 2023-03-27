@@ -12,7 +12,65 @@ nba_live_pbp(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame: PlayByPlay
+Returns a data frame: PlayByPlay\tabular{ll}{
+   col_name \tab types \cr
+   action_number \tab integer \cr
+   clock \tab character \cr
+   time_actual \tab character \cr
+   period \tab integer \cr
+   period_type \tab character \cr
+   action_type \tab character \cr
+   sub_type \tab character \cr
+   qualifiers \tab list \cr
+   person_id \tab integer \cr
+   x \tab numeric \cr
+   y \tab numeric \cr
+   possession \tab integer \cr
+   score_home \tab character \cr
+   score_away \tab character \cr
+   edited \tab character \cr
+   order_number \tab integer \cr
+   is_target_score_last_period \tab logical \cr
+   x_legacy \tab integer \cr
+   y_legacy \tab integer \cr
+   is_field_goal \tab integer \cr
+   side \tab character \cr
+   description \tab character \cr
+   person_ids_filter \tab list \cr
+   team_id \tab integer \cr
+   team_tricode \tab character \cr
+   descriptor \tab character \cr
+   jump_ball_recovered_name \tab character \cr
+   jump_ball_recoverd_person_id \tab integer \cr
+   player_name \tab character \cr
+   player_name_i \tab character \cr
+   jump_ball_won_player_name \tab character \cr
+   jump_ball_won_person_id \tab integer \cr
+   jump_ball_lost_player_name \tab character \cr
+   jump_ball_lost_person_id \tab integer \cr
+   area \tab character \cr
+   area_detail \tab character \cr
+   shot_distance \tab numeric \cr
+   shot_result \tab character \cr
+   points_total \tab integer \cr
+   assist_player_name_initial \tab character \cr
+   assist_person_id \tab integer \cr
+   assist_total \tab integer \cr
+   shot_action_number \tab integer \cr
+   rebound_total \tab integer \cr
+   rebound_defensive_total \tab integer \cr
+   rebound_offensive_total \tab integer \cr
+   official_id \tab integer \cr
+   foul_personal_total \tab integer \cr
+   foul_technical_total \tab integer \cr
+   foul_drawn_player_name \tab character \cr
+   foul_drawn_person_id \tab integer \cr
+   block_player_name \tab character \cr
+   block_person_id \tab integer \cr
+   turnover_total \tab integer \cr
+   steal_player_name \tab character \cr
+   steal_person_id \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Live play-by-play}
@@ -31,7 +89,8 @@ Other NBA PBP Functions:
 \code{\link{nba_winprobabilitypbp}()}
 
 Other NBA Live Functions: 
-\code{\link{nba_live_boxscore}()}
+\code{\link{nba_live_boxscore}()},
+\code{\link{nba_todays_scoreboard}()}
 }
 \author{
 Saiem Gilani

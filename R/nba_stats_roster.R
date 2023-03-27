@@ -18,7 +18,7 @@ NULL
 #' @details
 #' [All Players](https://www.nba.com/players)
 #' ```r
-#'  nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'   nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_commonallplayers <- function(
     is_only_current_season = 0,
@@ -54,6 +54,7 @@ nba_commonallplayers <- function(
   )
   return(df_list)
 }
+
 #' **Get NBA Stats API Player Info**
 #' @name nba_commonplayerinfo
 NULL
@@ -163,7 +164,6 @@ nba_commonplayoffseries <- function(
   )
   return(df_list)
 }
-
 
 #' **Get NBA Stats API Team Roster**
 #' @name nba_commonteamroster
