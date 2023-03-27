@@ -13,6 +13,45 @@ nba_franchisehistory(league_id = "00", ...)
 }
 \value{
 Returns a named list of data frames: DefunctTeams, FranchiseHistory
+
+\strong{FranchiseHistory}\tabular{ll}{
+   col_name \tab types \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   START_YEAR \tab character \cr
+   END_YEAR \tab character \cr
+   YEARS \tab character \cr
+   GAMES \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   WIN_PCT \tab character \cr
+   PO_APPEARANCES \tab character \cr
+   DIV_TITLES \tab character \cr
+   CONF_TITLES \tab character \cr
+   LEAGUE_TITLES \tab character \cr
+}
+
+
+\strong{DefunctTeams}\tabular{ll}{
+   col_name \tab types \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   START_YEAR \tab character \cr
+   END_YEAR \tab character \cr
+   YEARS \tab character \cr
+   GAMES \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   WIN_PCT \tab character \cr
+   PO_APPEARANCES \tab character \cr
+   DIV_TITLES \tab character \cr
+   CONF_TITLES \tab character \cr
+   LEAGUE_TITLES \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Franchise History}

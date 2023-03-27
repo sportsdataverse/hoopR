@@ -10,8 +10,220 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param top_x Top X
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
-#'   FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders, OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
+#' @return Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders,
+#'  FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
+#'  FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders,
+#'  OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
+#'
+#'    **GPLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |GP             |character |
+#'    |GP_RANK        |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **PTSLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |PTS            |character |
+#'    |PTS_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **ASTLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |AST            |character |
+#'    |AST_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **STLLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |STL            |character |
+#'    |STL_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **OREBLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |OREB           |character |
+#'    |OREB_RANK      |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **DREBLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |DREB           |character |
+#'    |DREB_RANK      |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **REBLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |REB            |character |
+#'    |REB_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **BLKLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |BLK            |character |
+#'    |BLK_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FGMLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FGM            |character |
+#'    |FGM_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FGALeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FGA            |character |
+#'    |FGA_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FG_PCTLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FG_PCT         |character |
+#'    |FG_PCT_RANK    |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **TOVLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |TOV            |character |
+#'    |TOV_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FG3MLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FG3M           |character |
+#'    |FG3M_RANK      |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FG3ALeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FG3A           |character |
+#'    |FG3A_RANK      |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FG3_PCTLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FG3_PCT        |character |
+#'    |FG3_PCT_RANK   |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **PFLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |PF             |character |
+#'    |PF_RANK        |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FTMLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FTM            |character |
+#'    |FTM_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FTALeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FTA            |character |
+#'    |FTA_RANK       |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
+#'    **FT_PCTLeaders**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |PLAYER_ID      |character |
+#'    |PLAYER_NAME    |character |
+#'    |FT_PCT         |character |
+#'    |FT_PCT_RANK    |character |
+#'    |IS_ACTIVE_FLAG |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -29,7 +241,8 @@ nba_alltimeleadersgrids <- function(
     top_x = 10,
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "alltimeleadersgrids"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -75,6 +288,18 @@ NULL
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: AssistLeaders
+#'
+#'    **AssistLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |AST               |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -93,7 +318,8 @@ nba_assistleaders <- function(
     season_type = 'Regular Season',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "assistleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -197,6 +423,50 @@ NULL
 #' @param stat_category Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
+#'
+#'    **HomePageLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |PTS               |character |
+#'    |FG_PCT            |character |
+#'    |FG3_PCT           |character |
+#'    |FT_PCT            |character |
+#'    |EFG_PCT           |character |
+#'    |TS_PCT            |character |
+#'    |PTS_PER48         |character |
+#'
+#'    **LeagueAverage**
+#'
+#'
+#'    |col_name  |types   |
+#'    |:---------|:-------|
+#'    |PTS       |numeric |
+#'    |FG_PCT    |numeric |
+#'    |FG3_PCT   |numeric |
+#'    |FT_PCT    |numeric |
+#'    |EFG_PCT   |numeric |
+#'    |TS_PCT    |numeric |
+#'    |PTS_PER48 |numeric |
+#'
+#'    **LeagueMax**
+#'
+#'
+#'    |col_name  |types   |
+#'    |:---------|:-------|
+#'    |PTS       |numeric |
+#'    |FG_PCT    |numeric |
+#'    |FG3_PCT   |numeric |
+#'    |FT_PCT    |numeric |
+#'    |EFG_PCT   |numeric |
+#'    |TS_PCT    |numeric |
+#'    |PTS_PER48 |numeric |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -218,7 +488,8 @@ nba_homepageleaders <- function(
     ...){
 
   player_scope <- gsub(' ','+',player_scope)
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ','+',season_type)
   stat_category <- gsub(' ','+',stat_category)
   version <- "homepageleaders"
   endpoint <- nba_endpoint(version)
@@ -271,6 +542,95 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
 #'  HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
+#'
+#'    **HomePageStat1**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |PTS               |character |
+#'
+#'    **HomePageStat2**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |REB               |character |
+#'
+#'    **HomePageStat3**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |AST               |character |
+#'
+#'    **HomePageStat4**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |STL               |character |
+#'
+#'    **HomePageStat5**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |FG_PCT            |character |
+#'
+#'    **HomePageStat6**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |FT_PCT            |character |
+#'
+#'    **HomePageStat7**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |FG3_PCT           |character |
+#'
+#'    **HomePageStat8**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |BLK               |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -293,7 +653,8 @@ nba_homepagev2 <- function(
     ...){
 
   player_scope <- gsub(' ','+',player_scope)
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ','+',season_type)
   stat_type <- gsub(' ','+',stat_type)
   version <- "homepagev2"
   endpoint <- nba_endpoint(version)
@@ -345,6 +706,51 @@ NULL
 #' @param stat Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
+#'
+#'    **LeadersTiles**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |PTS               |character |
+#'
+#'    **AllTimeSeasonHigh**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |SEASON_YEAR       |character |
+#'    |PTS               |character |
+#'
+#'    **LastSeasonHigh**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |RANK              |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |PTS               |character |
+#'
+#'    **LowSeasonHigh**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |SEASON_YEAR       |character |
+#'    |PTS               |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -367,7 +773,7 @@ nba_leaderstiles <- function(
     ...){
 
   player_scope <- gsub(' ','+',player_scope)
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   stat <- gsub(' ','+',stat)
   version <- "leaderstiles"
   endpoint <- nba_endpoint(version)
@@ -425,6 +831,7 @@ NULL
 #' @export
 #' @family NBA Leaders Functions
 #' @details
+#' (Possibly Deprecated)
 #' ```r
 #'  nba_defensehub(league_id = '00', player_or_team = "Player")
 #'  nba_defensehub(league_id = '00', player_or_team = "Team")
@@ -440,7 +847,7 @@ nba_defensehub <- function(
     ...){
 
   player_scope <- gsub(' ','+',player_scope)
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   version <- "defensehub"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -492,6 +899,41 @@ NULL
 #' @param stat_category Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueLeaders
+#'
+#'    **LeagueLeaders**
+#'
+#'
+#'    |col_name  |types     |
+#'    |:---------|:---------|
+#'    |PLAYER_ID |character |
+#'    |RANK      |character |
+#'    |PLAYER    |character |
+#'    |TEAM_ID   |character |
+#'    |TEAM      |character |
+#'    |GP        |character |
+#'    |MIN       |character |
+#'    |FGM       |character |
+#'    |FGA       |character |
+#'    |FG_PCT    |character |
+#'    |FG3M      |character |
+#'    |FG3A      |character |
+#'    |FG3_PCT   |character |
+#'    |FTM       |character |
+#'    |FTA       |character |
+#'    |FT_PCT    |character |
+#'    |OREB      |character |
+#'    |DREB      |character |
+#'    |REB       |character |
+#'    |AST       |character |
+#'    |STL       |character |
+#'    |BLK       |character |
+#'    |TOV       |character |
+#'    |PF        |character |
+#'    |PTS       |character |
+#'    |EFF       |character |
+#'    |AST_TOV   |character |
+#'    |STL_TOV   |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -514,7 +956,7 @@ nba_leagueleaders <- function(
     ...){
 
   scope <- gsub(' ','+',scope)
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   stat_category <- gsub(' ','+',stat_category)
   version <- "leagueleaders"
   endpoint <- nba_endpoint(version)

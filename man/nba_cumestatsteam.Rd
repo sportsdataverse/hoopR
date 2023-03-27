@@ -5,9 +5,9 @@
 \title{\strong{Get NBA Stats API Cumulative Team Stats}}
 \usage{
 nba_cumestatsteam(
-  game_ids = "0022000756",
+  game_ids = "0022201094",
   league_id = "00",
-  season = "2020-21",
+  season = year_to_season(most_recent_nba_season() - 1),
   season_type = "Regular Season",
   team_id = "1610612739",
   ...
@@ -28,6 +28,100 @@ nba_cumestatsteam(
 }
 \value{
 Returns a named list of data frames: GameByGameStats, TotalTeamStats
+
+\strong{GameByGameStats}\tabular{ll}{
+   col_name \tab types \cr
+   JERSEY_NUM \tab character \cr
+   PLAYER \tab character \cr
+   PERSON_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   ACTUAL_MINUTES \tab character \cr
+   ACTUAL_SECONDS \tab character \cr
+   FG \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3 \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FT \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OFF_REB \tab character \cr
+   DEF_REB \tab character \cr
+   TOT_REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   DQ \tab character \cr
+   STL \tab character \cr
+   TURNOVERS \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   MAX_ACTUAL_MINUTES \tab character \cr
+   MAX_ACTUAL_SECONDS \tab character \cr
+   MAX_REB \tab character \cr
+   MAX_AST \tab character \cr
+   MAX_STL \tab character \cr
+   MAX_TURNOVERS \tab character \cr
+   MAX_BLKP \tab character \cr
+   MAX_PTS \tab character \cr
+   AVG_ACTUAL_MINUTES \tab character \cr
+   AVG_ACTUAL_SECONDS \tab character \cr
+   AVG_REB \tab character \cr
+   AVG_AST \tab character \cr
+   AVG_STL \tab character \cr
+   AVG_TURNOVERS \tab character \cr
+   AVG_BLKP \tab character \cr
+   AVG_PTS \tab character \cr
+   PER_MIN_REB \tab character \cr
+   PER_MIN_AST \tab character \cr
+   PER_MIN_STL \tab character \cr
+   PER_MIN_TURNOVERS \tab character \cr
+   PER_MIN_BLK \tab character \cr
+   PER_MIN_PTS \tab character \cr
+}
+
+
+\strong{TotalTeamStats}\tabular{ll}{
+   col_name \tab types \cr
+   CITY \tab character \cr
+   NICKNAME \tab character \cr
+   TEAM_ID \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_HOME \tab character \cr
+   L_HOME \tab character \cr
+   W_ROAD \tab character \cr
+   L_ROAD \tab character \cr
+   TEAM_TURNOVERS \tab character \cr
+   TEAM_REBOUNDS \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   ACTUAL_MINUTES \tab character \cr
+   ACTUAL_SECONDS \tab character \cr
+   FG \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3 \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FT \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OFF_REB \tab character \cr
+   DEF_REB \tab character \cr
+   TOT_REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   STL \tab character \cr
+   TOTAL_TURNOVERS \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   AVG_REB \tab character \cr
+   AVG_PTS \tab character \cr
+   DQ \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Team Stats}
@@ -37,7 +131,7 @@ Returns a named list of data frames: GameByGameStats, TotalTeamStats
 \details{
 \href{https://www.nba.com/stats/cumestats}{CUME Stats}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteam()
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteam(game_ids = '0022201094', season = '2022-23', team_id = '1610612739')
 }\if{html}{\out{</div>}}
 }
 \seealso{

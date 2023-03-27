@@ -13,6 +13,24 @@ nba_playerawards(player_id, ...)
 }
 \value{
 Return a named list of data frames: PlayerAwards
+
+\strong{PlayerAwards}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   TEAM \tab character \cr
+   DESCRIPTION \tab character \cr
+   ALL_NBA_TEAM_NUMBER \tab character \cr
+   SEASON \tab character \cr
+   MONTH \tab character \cr
+   WEEK \tab character \cr
+   CONFERENCE \tab character \cr
+   TYPE \tab character \cr
+   SUBTYPE1 \tab character \cr
+   SUBTYPE2 \tab character \cr
+   SUBTYPE3 \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Awards}

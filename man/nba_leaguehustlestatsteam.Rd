@@ -91,6 +91,30 @@ nba_leaguehustlestatsteam(
 }
 \value{
 Returns a named list of data frames: HustleStatsTeam
+
+\strong{HustleStatsTeam}\tabular{ll}{
+   col_name \tab types \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   MIN \tab character \cr
+   CONTESTED_SHOTS \tab character \cr
+   CONTESTED_SHOTS_2PT \tab character \cr
+   CONTESTED_SHOTS_3PT \tab character \cr
+   DEFLECTIONS \tab character \cr
+   CHARGES_DRAWN \tab character \cr
+   SCREEN_ASSISTS \tab character \cr
+   SCREEN_AST_PTS \tab character \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
+   LOOSE_BALLS_RECOVERED \tab character \cr
+   PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \cr
+   PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \cr
+   OFF_BOXOUTS \tab character \cr
+   DEF_BOXOUTS \tab character \cr
+   BOX_OUTS \tab character \cr
+   PCT_BOX_OUTS_OFF \tab character \cr
+   PCT_BOX_OUTS_DEF \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Hustle Stats Team}

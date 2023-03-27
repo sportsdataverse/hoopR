@@ -335,7 +335,7 @@ nba_boxscoretraditionalv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreTraditional") %>%
@@ -701,7 +701,7 @@ nba_boxscoreadvancedv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreAdvanced") %>%
@@ -978,7 +978,7 @@ nba_boxscoremiscv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreMisc") %>%
@@ -1266,7 +1266,7 @@ nba_boxscorescoringv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreScoring") %>%
@@ -1566,7 +1566,7 @@ nba_boxscoreusagev3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreUsage") %>%
@@ -1827,7 +1827,7 @@ nba_boxscorefourfactorsv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreFourFactors") %>%
@@ -2133,7 +2133,7 @@ nba_boxscoreplayertrackv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScorePlayerTrack") %>%
@@ -2392,7 +2392,7 @@ nba_boxscorematchupsv3 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreMatchups") %>%
@@ -2899,7 +2899,7 @@ nba_boxscoredefensivev2 <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
         purrr::pluck("boxScoreDefensive") %>%

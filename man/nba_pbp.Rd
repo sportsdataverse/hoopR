@@ -67,7 +67,7 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 \strong{Get NBA Stats API play-by-play}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_pbp(game_id = 0022201086)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_pbp(game_id = '0022201086')
 }\if{html}{\out{</div>}}
 }
 \seealso{

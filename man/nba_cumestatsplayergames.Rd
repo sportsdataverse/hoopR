@@ -40,6 +40,12 @@ nba_cumestatsplayergames(
 }
 \value{
 Returns a named list of data frames: CumeStatsPlayerGames
+
+\strong{CumeStatsPlayerGames}\tabular{ll}{
+   col_name \tab types \cr
+   MATCHUP \tab character \cr
+   GAME_ID \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Player Game Stats}

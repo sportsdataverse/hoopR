@@ -49,6 +49,36 @@ nba_playerindex(
 }
 \value{
 Return a named list of data frames: PlayerIndex
+
+\strong{PlayerIndex}\tabular{ll}{
+   col_name \tab types \cr
+   PERSON_ID \tab character \cr
+   PLAYER_LAST_NAME \tab character \cr
+   PLAYER_FIRST_NAME \tab character \cr
+   PLAYER_SLUG \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_SLUG \tab character \cr
+   IS_DEFUNCT \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   JERSEY_NUMBER \tab character \cr
+   POSITION \tab character \cr
+   HEIGHT \tab character \cr
+   WEIGHT \tab character \cr
+   COLLEGE \tab character \cr
+   COUNTRY \tab character \cr
+   DRAFT_YEAR \tab character \cr
+   DRAFT_ROUND \tab character \cr
+   DRAFT_NUMBER \tab character \cr
+   ROSTER_STATUS \tab character \cr
+   PTS \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   STATS_TIMEFRAME \tab character \cr
+   FROM_YEAR \tab character \cr
+   TO_YEAR \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Index}

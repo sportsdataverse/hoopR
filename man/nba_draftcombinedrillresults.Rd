@@ -19,6 +19,22 @@ nba_draftcombinedrillresults(
 }
 \value{
 Returns a named list of data frames: Results
+
+\strong{Results}\tabular{ll}{
+   col_name \tab types \cr
+   TEMP_PLAYER_ID \tab character \cr
+   PLAYER_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   PLAYER_NAME \tab character \cr
+   POSITION \tab character \cr
+   STANDING_VERTICAL_LEAP \tab character \cr
+   MAX_VERTICAL_LEAP \tab character \cr
+   LANE_AGILITY_TIME \tab character \cr
+   MODIFIED_LANE_AGILITY_TIME \tab character \cr
+   THREE_QUARTER_SPRINT \tab character \cr
+   BENCH_PRESS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Draft Combine Drill Results}

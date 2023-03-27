@@ -94,6 +94,34 @@ nba_leaguelineupviz(
 }
 \value{
 Returns a named list of data frames: LeagueLineupViz
+
+\strong{LeagueLineupViz}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_ID \tab character \cr
+   GROUP_NAME \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   MIN \tab character \cr
+   OFF_RATING \tab character \cr
+   DEF_RATING \tab character \cr
+   NET_RATING \tab character \cr
+   PACE \tab character \cr
+   TS_PCT \tab character \cr
+   FTA_RATE \tab character \cr
+   TM_AST_PCT \tab character \cr
+   PCT_FGA_2PT \tab character \cr
+   PCT_FGA_3PT \tab character \cr
+   PCT_PTS_2PT_MR \tab character \cr
+   PCT_PTS_FB \tab character \cr
+   PCT_PTS_FT \tab character \cr
+   PCT_PTS_PAINT \tab character \cr
+   PCT_AST_FGM \tab character \cr
+   PCT_UAST_FGM \tab character \cr
+   OPP_FG3_PCT \tab character \cr
+   OPP_EFG_PCT \tab character \cr
+   OPP_FTA_RATE \tab character \cr
+   OPP_TOV_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Lineup Visual Data}

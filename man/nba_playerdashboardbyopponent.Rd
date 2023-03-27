@@ -81,7 +81,8 @@ nba_playerdashboardbyopponent(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: ConferencePlayerDashboard, DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
+Return a named list of data frames: ConferencePlayerDashboard,
+DivisionPlayerDashboard, OpponentPlayerDashboard, OverallPlayerDashboard
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard by Opponent}

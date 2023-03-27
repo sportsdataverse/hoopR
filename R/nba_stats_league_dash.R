@@ -39,6 +39,31 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
+#'
+#'    **LeagueDashPTShots**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |GP                |character |
+#'    |G                 |character |
+#'    |FGA_FREQUENCY     |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |EFG_PCT           |character |
+#'    |FG2A_FREQUENCY    |character |
+#'    |FG2M              |character |
+#'    |FG2A              |character |
+#'    |FG2_PCT           |character |
+#'    |FG3A_FREQUENCY    |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -83,7 +108,8 @@ nba_leaguedashoppptshot <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashoppptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -182,6 +208,36 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerBioStats
+#'
+#'    **LeagueDashPlayerBioStats**
+#'
+#'
+#'    |col_name             |types     |
+#'    |:--------------------|:---------|
+#'    |PLAYER_ID            |character |
+#'    |PLAYER_NAME          |character |
+#'    |TEAM_ID              |character |
+#'    |TEAM_ABBREVIATION    |character |
+#'    |AGE                  |character |
+#'    |PLAYER_HEIGHT        |character |
+#'    |PLAYER_HEIGHT_INCHES |character |
+#'    |PLAYER_WEIGHT        |character |
+#'    |COLLEGE              |character |
+#'    |COUNTRY              |character |
+#'    |DRAFT_YEAR           |character |
+#'    |DRAFT_ROUND          |character |
+#'    |DRAFT_NUMBER         |character |
+#'    |GP                   |character |
+#'    |PTS                  |character |
+#'    |REB                  |character |
+#'    |AST                  |character |
+#'    |NET_RATING           |character |
+#'    |OREB_PCT             |character |
+#'    |DREB_PCT             |character |
+#'    |USG_PCT              |character |
+#'    |TS_PCT               |character |
+#'    |AST_PCT              |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -228,7 +284,8 @@ nba_leaguedashplayerbiostats <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerbiostats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -335,6 +392,80 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerClutch
+#'
+#'    **LeagueDashPlayerClutch**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |GROUP_SET             |character |
+#'    |PLAYER_ID             |character |
+#'    |PLAYER_NAME           |character |
+#'    |NICKNAME              |character |
+#'    |TEAM_ID               |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |AGE                   |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -344,7 +475,7 @@ NULL
 #' @details
 #' [Players Clutch Stats](https://www.nba.com/stats/players/clutch-traditional)
 #' ```r
-#'  nba_leaguedashplayerbiostats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_leaguedashplayerclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_leaguedashplayerclutch <- function(
     ahead_behind = 'Ahead or Behind',
@@ -388,9 +519,10 @@ nba_leaguedashplayerclutch <- function(
     weight = '',
     ...){
 
-  ahead_behind <- gsub(' ', '+', ahead_behind)
-  clutch_time <- gsub(' ', '+', clutch_time)
-  season_type <- gsub(' ', '+', season_type)
+  # ahead_behind <- gsub(' ', '+', ahead_behind)
+  # clutch_time <- gsub(' ', '+', clutch_time)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -505,6 +637,33 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
+#'
+#'    **LeagueDashPTShots**
+#'
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |PLAYER_ID                     |character |
+#'    |PLAYER_NAME                   |character |
+#'    |PLAYER_LAST_TEAM_ID           |character |
+#'    |PLAYER_LAST_TEAM_ABBREVIATION |character |
+#'    |AGE                           |character |
+#'    |GP                            |character |
+#'    |G                             |character |
+#'    |FGA_FREQUENCY                 |character |
+#'    |FGM                           |character |
+#'    |FGA                           |character |
+#'    |FG_PCT                        |character |
+#'    |EFG_PCT                       |character |
+#'    |FG2A_FREQUENCY                |character |
+#'    |FG2M                          |character |
+#'    |FG2A                          |character |
+#'    |FG2_PCT                       |character |
+#'    |FG3A_FREQUENCY                |character |
+#'    |FG3M                          |character |
+#'    |FG3A                          |character |
+#'    |FG3_PCT                       |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -558,7 +717,8 @@ nba_leaguedashplayerptshot <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -677,6 +837,79 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPlayerStats
+#'
+#'    **LeagueDashPlayerStats**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |PLAYER_ID             |character |
+#'    |PLAYER_NAME           |character |
+#'    |NICKNAME              |character |
+#'    |TEAM_ID               |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |AGE                   |character |
+#'    |GP                    |character |
+#'    |W                     |character |
+#'    |L                     |character |
+#'    |W_PCT                 |character |
+#'    |MIN                   |character |
+#'    |FGM                   |character |
+#'    |FGA                   |character |
+#'    |FG_PCT                |character |
+#'    |FG3M                  |character |
+#'    |FG3A                  |character |
+#'    |FG3_PCT               |character |
+#'    |FTM                   |character |
+#'    |FTA                   |character |
+#'    |FT_PCT                |character |
+#'    |OREB                  |character |
+#'    |DREB                  |character |
+#'    |REB                   |character |
+#'    |AST                   |character |
+#'    |TOV                   |character |
+#'    |STL                   |character |
+#'    |BLK                   |character |
+#'    |BLKA                  |character |
+#'    |PF                    |character |
+#'    |PFD                   |character |
+#'    |PTS                   |character |
+#'    |PLUS_MINUS            |character |
+#'    |NBA_FANTASY_PTS       |character |
+#'    |DD2                   |character |
+#'    |TD3                   |character |
+#'    |WNBA_FANTASY_PTS      |character |
+#'    |GP_RANK               |character |
+#'    |W_RANK                |character |
+#'    |L_RANK                |character |
+#'    |W_PCT_RANK            |character |
+#'    |MIN_RANK              |character |
+#'    |FGM_RANK              |character |
+#'    |FGA_RANK              |character |
+#'    |FG_PCT_RANK           |character |
+#'    |FG3M_RANK             |character |
+#'    |FG3A_RANK             |character |
+#'    |FG3_PCT_RANK          |character |
+#'    |FTM_RANK              |character |
+#'    |FTA_RANK              |character |
+#'    |FT_PCT_RANK           |character |
+#'    |OREB_RANK             |character |
+#'    |DREB_RANK             |character |
+#'    |REB_RANK              |character |
+#'    |AST_RANK              |character |
+#'    |TOV_RANK              |character |
+#'    |STL_RANK              |character |
+#'    |BLK_RANK              |character |
+#'    |BLKA_RANK             |character |
+#'    |PF_RANK               |character |
+#'    |PFD_RANK              |character |
+#'    |PTS_RANK              |character |
+#'    |PLUS_MINUS_RANK       |character |
+#'    |NBA_FANTASY_PTS_RANK  |character |
+#'    |DD2_RANK              |character |
+#'    |TD3_RANK              |character |
+#'    |WNBA_FANTASY_PTS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -727,7 +960,8 @@ nba_leaguedashplayerstats <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -836,6 +1070,43 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: ShotLocations
+#'
+#'    **ShotLocations**
+#'
+#'
+#'    |col_name                   |types     |
+#'    |:--------------------------|:---------|
+#'    |PLAYER_ID                  |character |
+#'    |PLAYER_NAME                |character |
+#'    |TEAM_ID                    |character |
+#'    |TEAM_ABBREVIATION          |character |
+#'    |AGE                        |character |
+#'    |NICKNAME                   |character |
+#'    |Restricted_Area_FGM        |character |
+#'    |Restricted_Area_FGA        |character |
+#'    |Restricted_Area_FG_PCT     |character |
+#'    |In_The_Paint_Non_RA_FGM    |character |
+#'    |In_The_Paint_Non_RA_FGA    |character |
+#'    |In_The_Paint_Non_RA_FG_PCT |character |
+#'    |Mid_Range_FGM              |character |
+#'    |Mid_Range_FGA              |character |
+#'    |Mid_Range_FG_PCT           |character |
+#'    |Left_Corner_3_FGM          |character |
+#'    |Left_Corner_3_FGA          |character |
+#'    |Left_Corner_3_FG_PCT       |character |
+#'    |Right_Corner_3_FGM         |character |
+#'    |Right_Corner_3_FGA         |character |
+#'    |Right_Corner_3_FG_PCT      |character |
+#'    |Above_the_Break_3_FGM      |character |
+#'    |Above_the_Break_3_FGA      |character |
+#'    |Above_the_Break_3_FG_PCT   |character |
+#'    |Backcourt_FGM              |character |
+#'    |Backcourt_FGA              |character |
+#'    |Backcourt_FG_PCT           |character |
+#'    |Corner_3_FGM               |character |
+#'    |Corner_3_FGA               |character |
+#'    |Corner_3_FG_PCT            |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -888,8 +1159,9 @@ nba_leaguedashplayershotlocations <- function(
     weight = '',
     ...){
 
-  distance_range <- gsub(' ', '+', distance_range)
-  season_type <- gsub(' ', '+', season_type)
+  # distance_range <- gsub(' ', '+', distance_range)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayershotlocations"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1006,6 +1278,27 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTDefend
+#'
+#'    **LeagueDashPTDefend**
+#'
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |CLOSE_DEF_PERSON_ID           |character |
+#'    |PLAYER_NAME                   |character |
+#'    |PLAYER_LAST_TEAM_ID           |character |
+#'    |PLAYER_LAST_TEAM_ABBREVIATION |character |
+#'    |PLAYER_POSITION               |character |
+#'    |AGE                           |character |
+#'    |GP                            |character |
+#'    |G                             |character |
+#'    |FREQ                          |character |
+#'    |D_FGM                         |character |
+#'    |D_FGA                         |character |
+#'    |D_FG_PCT                      |character |
+#'    |NORMAL_FG_PCT                 |character |
+#'    |PCT_PLUSMINUS                 |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1051,7 +1344,8 @@ nba_leaguedashptdefend <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptdefend"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1149,6 +1443,39 @@ NULL
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: LeagueDashPtStats
+#'
+#'    **LeagueDashPtStats**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |GP                |character |
+#'    |W                 |character |
+#'    |L                 |character |
+#'    |MIN               |character |
+#'    |DRIVES            |character |
+#'    |DRIVE_FGM         |character |
+#'    |DRIVE_FGA         |character |
+#'    |DRIVE_FG_PCT      |character |
+#'    |DRIVE_FTM         |character |
+#'    |DRIVE_FTA         |character |
+#'    |DRIVE_FT_PCT      |character |
+#'    |DRIVE_PTS         |character |
+#'    |DRIVE_PTS_PCT     |character |
+#'    |DRIVE_PASSES      |character |
+#'    |DRIVE_PASSES_PCT  |character |
+#'    |DRIVE_AST         |character |
+#'    |DRIVE_AST_PCT     |character |
+#'    |DRIVE_TOV         |character |
+#'    |DRIVE_TOV_PCT     |character |
+#'    |DRIVE_PF          |character |
+#'    |DRIVE_PF_PCT      |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1194,7 +1521,8 @@ nba_leaguedashptstats <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1282,6 +1610,25 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: LeagueDashPtTeamDefend
+#'
+#'    **LeagueDashPtTeamDefend**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |GP                |character |
+#'    |G                 |character |
+#'    |FREQ              |character |
+#'    |D_FGM             |character |
+#'    |D_FGA             |character |
+#'    |D_FG_PCT          |character |
+#'    |NORMAL_FG_PCT     |character |
+#'    |PCT_PLUSMINUS     |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1317,7 +1664,8 @@ nba_leaguedashptteamdefend <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptteamdefend"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1407,6 +1755,67 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashTeamClutch
+#'
+#'    **LeagueDashTeamClutch**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |TEAM_ID         |character |
+#'    |TEAM_NAME       |character |
+#'    |GP              |character |
+#'    |W               |character |
+#'    |L               |character |
+#'    |W_PCT           |character |
+#'    |MIN             |character |
+#'    |FGM             |character |
+#'    |FGA             |character |
+#'    |FG_PCT          |character |
+#'    |FG3M            |character |
+#'    |FG3A            |character |
+#'    |FG3_PCT         |character |
+#'    |FTM             |character |
+#'    |FTA             |character |
+#'    |FT_PCT          |character |
+#'    |OREB            |character |
+#'    |DREB            |character |
+#'    |REB             |character |
+#'    |AST             |character |
+#'    |TOV             |character |
+#'    |STL             |character |
+#'    |BLK             |character |
+#'    |BLKA            |character |
+#'    |PF              |character |
+#'    |PFD             |character |
+#'    |PTS             |character |
+#'    |PLUS_MINUS      |character |
+#'    |GP_RANK         |character |
+#'    |W_RANK          |character |
+#'    |L_RANK          |character |
+#'    |W_PCT_RANK      |character |
+#'    |MIN_RANK        |character |
+#'    |FGM_RANK        |character |
+#'    |FGA_RANK        |character |
+#'    |FG_PCT_RANK     |character |
+#'    |FG3M_RANK       |character |
+#'    |FG3A_RANK       |character |
+#'    |FG3_PCT_RANK    |character |
+#'    |FTM_RANK        |character |
+#'    |FTA_RANK        |character |
+#'    |FT_PCT_RANK     |character |
+#'    |OREB_RANK       |character |
+#'    |DREB_RANK       |character |
+#'    |REB_RANK        |character |
+#'    |AST_RANK        |character |
+#'    |TOV_RANK        |character |
+#'    |STL_RANK        |character |
+#'    |BLK_RANK        |character |
+#'    |BLKA_RANK       |character |
+#'    |PF_RANK         |character |
+#'    |PFD_RANK        |character |
+#'    |PTS_RANK        |character |
+#'    |PLUS_MINUS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1453,9 +1862,10 @@ nba_leaguedashteamclutch <- function(
     vs_division = '',
     ...){
 
-  ahead_behind <- gsub(' ', '+', ahead_behind)
-  clutch_time <- gsub(' ', '+', clutch_time)
-  season_type <- gsub(' ', '+', season_type)
+  # ahead_behind <- gsub(' ', '+', ahead_behind)
+  # clutch_time <- gsub(' ', '+', clutch_time)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1550,6 +1960,31 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashPTShots
+#'
+#'    **LeagueDashPTShots**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |GP                |character |
+#'    |G                 |character |
+#'    |FGA_FREQUENCY     |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |EFG_PCT           |character |
+#'    |FG2A_FREQUENCY    |character |
+#'    |FG2M              |character |
+#'    |FG2A              |character |
+#'    |FG2_PCT           |character |
+#'    |FG3A_FREQUENCY    |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1591,7 +2026,8 @@ nba_leaguedashteamptshot <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1681,6 +2117,67 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueDashTeamStats
+#'
+#'    **LeagueDashTeamStats**
+#'
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |TEAM_ID         |character |
+#'    |TEAM_NAME       |character |
+#'    |GP              |character |
+#'    |W               |character |
+#'    |L               |character |
+#'    |W_PCT           |character |
+#'    |MIN             |character |
+#'    |FGM             |character |
+#'    |FGA             |character |
+#'    |FG_PCT          |character |
+#'    |FG3M            |character |
+#'    |FG3A            |character |
+#'    |FG3_PCT         |character |
+#'    |FTM             |character |
+#'    |FTA             |character |
+#'    |FT_PCT          |character |
+#'    |OREB            |character |
+#'    |DREB            |character |
+#'    |REB             |character |
+#'    |AST             |character |
+#'    |TOV             |character |
+#'    |STL             |character |
+#'    |BLK             |character |
+#'    |BLKA            |character |
+#'    |PF              |character |
+#'    |PFD             |character |
+#'    |PTS             |character |
+#'    |PLUS_MINUS      |character |
+#'    |GP_RANK         |character |
+#'    |W_RANK          |character |
+#'    |L_RANK          |character |
+#'    |W_PCT_RANK      |character |
+#'    |MIN_RANK        |character |
+#'    |FGM_RANK        |character |
+#'    |FGA_RANK        |character |
+#'    |FG_PCT_RANK     |character |
+#'    |FG3M_RANK       |character |
+#'    |FG3A_RANK       |character |
+#'    |FG3_PCT_RANK    |character |
+#'    |FTM_RANK        |character |
+#'    |FTA_RANK        |character |
+#'    |FT_PCT_RANK     |character |
+#'    |OREB_RANK       |character |
+#'    |DREB_RANK       |character |
+#'    |REB_RANK        |character |
+#'    |AST_RANK        |character |
+#'    |TOV_RANK        |character |
+#'    |STL_RANK        |character |
+#'    |BLK_RANK        |character |
+#'    |BLKA_RANK       |character |
+#'    |PF_RANK         |character |
+#'    |PFD_RANK        |character |
+#'    |PTS_RANK        |character |
+#'    |PLUS_MINUS_RANK |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1723,7 +2220,8 @@ nba_leaguedashteamstats <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1818,6 +2316,39 @@ NULL
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: ShotLocations
+#'
+#'    **ShotLocations**
+#'
+#'
+#'    |col_name                   |types     |
+#'    |:--------------------------|:---------|
+#'    |TEAM_ID                    |character |
+#'    |TEAM_NAME                  |character |
+#'    |Restricted_Area_FGM        |character |
+#'    |Restricted_Area_FGA        |character |
+#'    |Restricted_Area_FG_PCT     |character |
+#'    |In_The_Paint_Non_RA_FGM    |character |
+#'    |In_The_Paint_Non_RA_FGA    |character |
+#'    |In_The_Paint_Non_RA_FG_PCT |character |
+#'    |Mid_Range_FGM              |character |
+#'    |Mid_Range_FGA              |character |
+#'    |Mid_Range_FG_PCT           |character |
+#'    |Left_Corner_3_FGM          |character |
+#'    |Left_Corner_3_FGA          |character |
+#'    |Left_Corner_3_FG_PCT       |character |
+#'    |Right_Corner_3_FGM         |character |
+#'    |Right_Corner_3_FGA         |character |
+#'    |Right_Corner_3_FG_PCT      |character |
+#'    |Above_the_Break_3_FGM      |character |
+#'    |Above_the_Break_3_FGA      |character |
+#'    |Above_the_Break_3_FG_PCT   |character |
+#'    |Backcourt_FGM              |character |
+#'    |Backcourt_FGA              |character |
+#'    |Backcourt_FG_PCT           |character |
+#'    |Corner_3_FGM               |character |
+#'    |Corner_3_FGA               |character |
+#'    |Corner_3_FG_PCT            |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1862,8 +2393,9 @@ nba_leaguedashteamshotlocations <- function(
     vs_division = '',
     ...){
 
-  distance_range <- gsub(' ', '+', distance_range)
-  season_type <- gsub(' ', '+', season_type)
+  # distance_range <- gsub(' ', '+', distance_range)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamshotlocations"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

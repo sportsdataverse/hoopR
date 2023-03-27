@@ -39,6 +39,8 @@ DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
 \strong{Get NBA Stats API Defense Hub}
 }
 \details{
+(Possibly Deprecated)
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_defensehub(league_id = '00', player_or_team = "Player")
  nba_defensehub(league_id = '00', player_or_team = "Team")
 }\if{html}{\out{</div>}}

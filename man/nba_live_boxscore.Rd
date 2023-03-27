@@ -15,6 +15,342 @@ nba_live_boxscore(game_id, ...)
 Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
 away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
 away_team_linescores
+
+\strong{game_details}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   game_time_local \tab character \cr
+   game_time_utc \tab character \cr
+   game_time_home \tab character \cr
+   game_time_away \tab character \cr
+   game_et \tab character \cr
+   duration \tab integer \cr
+   game_code \tab character \cr
+   game_status_text \tab character \cr
+   game_status \tab integer \cr
+   regulation_periods \tab integer \cr
+   period \tab integer \cr
+   game_clock \tab character \cr
+   attendance \tab integer \cr
+   sellout \tab character \cr
+   home_team_id \tab integer \cr
+   home_team_name \tab character \cr
+   home_team_city \tab character \cr
+   home_team_tricode \tab character \cr
+   home_team_score \tab integer \cr
+   home_team_in_bonus \tab character \cr
+   home_team_timeouts_remaining \tab integer \cr
+   away_team_id \tab integer \cr
+   away_team_name \tab character \cr
+   away_team_city \tab character \cr
+   away_team_tricode \tab character \cr
+   away_team_score \tab integer \cr
+   away_team_in_bonus \tab character \cr
+   away_team_timeouts_remaining \tab integer \cr
+}
+
+
+\strong{arena}\tabular{ll}{
+   col_name \tab types \cr
+   arena_id \tab integer \cr
+   arena_name \tab character \cr
+   arena_city \tab character \cr
+   arena_state \tab character \cr
+   arena_country \tab character \cr
+   arena_timezone \tab character \cr
+}
+
+
+\strong{officials}\tabular{ll}{
+   col_name \tab types \cr
+   person_id \tab integer \cr
+   name \tab character \cr
+   name_i \tab character \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   jersey_num \tab character \cr
+   assignment \tab character \cr
+}
+
+
+\strong{home_team_boxscore}\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_score \tab integer \cr
+   team_in_bonus \tab character \cr
+   team_timeouts_remaining \tab integer \cr
+   assists \tab integer \cr
+   assists_turnover_ratio \tab numeric \cr
+   bench_points \tab integer \cr
+   biggest_lead \tab integer \cr
+   biggest_lead_score \tab character \cr
+   biggest_scoring_run \tab integer \cr
+   biggest_scoring_run_score \tab character \cr
+   blocks \tab integer \cr
+   blocks_received \tab integer \cr
+   fast_break_points_attempted \tab integer \cr
+   fast_break_points_made \tab integer \cr
+   fast_break_points_percentage \tab numeric \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_effective_adjusted \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   fouls_offensive \tab integer \cr
+   fouls_drawn \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_team \tab integer \cr
+   fouls_technical \tab integer \cr
+   fouls_team_technical \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_made \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   lead_changes \tab integer \cr
+   minutes \tab character \cr
+   minutes_calculated \tab character \cr
+   points \tab integer \cr
+   points_against \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_from_turnovers \tab integer \cr
+   points_in_the_paint \tab integer \cr
+   points_in_the_paint_attempted \tab integer \cr
+   points_in_the_paint_made \tab integer \cr
+   points_in_the_paint_percentage \tab numeric \cr
+   points_second_chance \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_personal \tab integer \cr
+   rebounds_team \tab integer \cr
+   rebounds_team_defensive \tab integer \cr
+   rebounds_team_offensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   second_chance_points_attempted \tab integer \cr
+   second_chance_points_made \tab integer \cr
+   second_chance_points_percentage \tab numeric \cr
+   steals \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   time_leading \tab character \cr
+   times_tied \tab integer \cr
+   true_shooting_attempts \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   turnovers \tab integer \cr
+   turnovers_team \tab integer \cr
+   turnovers_total \tab integer \cr
+   two_pointers_attempted \tab integer \cr
+   two_pointers_made \tab integer \cr
+   two_pointers_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_boxscore}\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_score \tab integer \cr
+   team_in_bonus \tab character \cr
+   team_timeouts_remaining \tab integer \cr
+   assists \tab integer \cr
+   assists_turnover_ratio \tab numeric \cr
+   bench_points \tab integer \cr
+   biggest_lead \tab integer \cr
+   biggest_lead_score \tab character \cr
+   biggest_scoring_run \tab integer \cr
+   biggest_scoring_run_score \tab character \cr
+   blocks \tab integer \cr
+   blocks_received \tab integer \cr
+   fast_break_points_attempted \tab integer \cr
+   fast_break_points_made \tab integer \cr
+   fast_break_points_percentage \tab numeric \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_effective_adjusted \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   fouls_offensive \tab integer \cr
+   fouls_drawn \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_team \tab integer \cr
+   fouls_technical \tab integer \cr
+   fouls_team_technical \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_made \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   lead_changes \tab integer \cr
+   minutes \tab character \cr
+   minutes_calculated \tab character \cr
+   points \tab integer \cr
+   points_against \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_from_turnovers \tab integer \cr
+   points_in_the_paint \tab integer \cr
+   points_in_the_paint_attempted \tab integer \cr
+   points_in_the_paint_made \tab integer \cr
+   points_in_the_paint_percentage \tab numeric \cr
+   points_second_chance \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_personal \tab integer \cr
+   rebounds_team \tab integer \cr
+   rebounds_team_defensive \tab integer \cr
+   rebounds_team_offensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   second_chance_points_attempted \tab integer \cr
+   second_chance_points_made \tab integer \cr
+   second_chance_points_percentage \tab numeric \cr
+   steals \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   time_leading \tab character \cr
+   times_tied \tab integer \cr
+   true_shooting_attempts \tab numeric \cr
+   true_shooting_percentage \tab numeric \cr
+   turnovers \tab integer \cr
+   turnovers_team \tab integer \cr
+   turnovers_total \tab integer \cr
+   two_pointers_attempted \tab integer \cr
+   two_pointers_made \tab integer \cr
+   two_pointers_percentage \tab numeric \cr
+}
+
+
+\strong{home_team_player_boxscore}\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_score \tab integer \cr
+   team_in_bonus \tab character \cr
+   team_timeouts_remaining \tab integer \cr
+   status \tab character \cr
+   order \tab integer \cr
+   person_id \tab integer \cr
+   jersey_num \tab character \cr
+   position \tab character \cr
+   starter \tab character \cr
+   oncourt \tab character \cr
+   played \tab character \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   blocks_received \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_made \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   fouls_offensive \tab integer \cr
+   fouls_drawn \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_technical \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_made \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   minus \tab numeric \cr
+   minutes \tab character \cr
+   minutes_calculated \tab character \cr
+   plus \tab numeric \cr
+   plus_minus_points \tab numeric \cr
+   points \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_in_the_paint \tab integer \cr
+   points_second_chance \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   steals \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   turnovers \tab integer \cr
+   two_pointers_attempted \tab integer \cr
+   two_pointers_made \tab integer \cr
+   two_pointers_percentage \tab numeric \cr
+   name \tab character \cr
+   name_i \tab character \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   not_playing_reason \tab character \cr
+   not_playing_description \tab character \cr
+}
+
+
+\strong{away_team_player_boxscore}\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_score \tab integer \cr
+   team_in_bonus \tab character \cr
+   team_timeouts_remaining \tab integer \cr
+   status \tab character \cr
+   order \tab integer \cr
+   person_id \tab integer \cr
+   jersey_num \tab character \cr
+   position \tab character \cr
+   starter \tab character \cr
+   oncourt \tab character \cr
+   played \tab character \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   blocks_received \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   field_goals_made \tab integer \cr
+   field_goals_percentage \tab numeric \cr
+   fouls_offensive \tab integer \cr
+   fouls_drawn \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_technical \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   free_throws_made \tab integer \cr
+   free_throws_percentage \tab numeric \cr
+   minus \tab numeric \cr
+   minutes \tab character \cr
+   minutes_calculated \tab character \cr
+   plus \tab numeric \cr
+   plus_minus_points \tab numeric \cr
+   points \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_in_the_paint \tab integer \cr
+   points_second_chance \tab integer \cr
+   rebounds_defensive \tab integer \cr
+   rebounds_offensive \tab integer \cr
+   rebounds_total \tab integer \cr
+   steals \tab integer \cr
+   three_pointers_attempted \tab integer \cr
+   three_pointers_made \tab integer \cr
+   three_pointers_percentage \tab numeric \cr
+   turnovers \tab integer \cr
+   two_pointers_attempted \tab integer \cr
+   two_pointers_made \tab integer \cr
+   two_pointers_percentage \tab numeric \cr
+   name \tab character \cr
+   name_i \tab character \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   not_playing_reason \tab character \cr
+   not_playing_description \tab character \cr
+}
+
+
+\strong{home_team_linescores}\tabular{ll}{
+   col_name \tab types \cr
+   period \tab integer \cr
+   period_type \tab character \cr
+   score \tab integer \cr
+}
+
+
+\strong{away_team_linescores}\tabular{ll}{
+   col_name \tab types \cr
+   period \tab integer \cr
+   period_type \tab character \cr
+   score \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Live Boxscore}

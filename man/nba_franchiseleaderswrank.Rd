@@ -25,6 +25,57 @@ nba_franchiseleaderswrank(
 }
 \value{
 Returns a named list of data frames: FranchiseLeaderswRank
+
+\strong{FranchiseLeaderswRank}\tabular{ll}{
+   col_name \tab types \cr
+   LEAGUE_ID \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM \tab character \cr
+   PERSON_ID \tab character \cr
+   PLAYER \tab character \cr
+   SEASON_TYPE \tab character \cr
+   ACTIVE_WITH_TEAM \tab character \cr
+   GP \tab character \cr
+   MINUTES \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   STL \tab character \cr
+   TOV \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   F_RANK_GP \tab character \cr
+   F_RANK_MINUTES \tab character \cr
+   F_RANK_FGM \tab character \cr
+   F_RANK_FGA \tab character \cr
+   F_RANK_FG_PCT \tab character \cr
+   F_RANK_FG3M \tab character \cr
+   F_RANK_FG3A \tab character \cr
+   F_RANK_FG3_PCT \tab character \cr
+   F_RANK_FTM \tab character \cr
+   F_RANK_FTA \tab character \cr
+   F_RANK_FT_PCT \tab character \cr
+   F_RANK_OREB \tab character \cr
+   F_RANK_DREB \tab character \cr
+   F_RANK_REB \tab character \cr
+   F_RANK_AST \tab character \cr
+   F_RANK_PF \tab character \cr
+   F_RANK_STL \tab character \cr
+   F_RANK_TOV \tab character \cr
+   F_RANK_BLK \tab character \cr
+   F_RANK_PTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Franchise Leaders with Rank}

@@ -34,6 +34,45 @@ nba_homepageleaders(
 }
 \value{
 Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
+
+\strong{HomePageLeaders}\tabular{ll}{
+   col_name \tab types \cr
+   RANK \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   PTS \tab character \cr
+   FG_PCT \tab character \cr
+   FG3_PCT \tab character \cr
+   FT_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   TS_PCT \tab character \cr
+   PTS_PER48 \tab character \cr
+}
+
+
+\strong{LeagueAverage}\tabular{ll}{
+   col_name \tab types \cr
+   PTS \tab numeric \cr
+   FG_PCT \tab numeric \cr
+   FG3_PCT \tab numeric \cr
+   FT_PCT \tab numeric \cr
+   EFG_PCT \tab numeric \cr
+   TS_PCT \tab numeric \cr
+   PTS_PER48 \tab numeric \cr
+}
+
+
+\strong{LeagueMax}\tabular{ll}{
+   col_name \tab types \cr
+   PTS \tab numeric \cr
+   FG_PCT \tab numeric \cr
+   FG3_PCT \tab numeric \cr
+   FT_PCT \tab numeric \cr
+   EFG_PCT \tab numeric \cr
+   TS_PCT \tab numeric \cr
+   PTS_PER48 \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Homepage Leaders}

@@ -66,7 +66,8 @@ nba_playerdashptreb(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: NumContestedRebounding, OverallRebounding, RebDistanceRebounding,
+Return a named list of data frames: NumContestedRebounding,
+OverallRebounding, RebDistanceRebounding,
 ShotDistanceRebounding, ShotTypeRebounding
 }
 \description{

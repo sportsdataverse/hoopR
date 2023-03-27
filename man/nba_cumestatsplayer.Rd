@@ -31,6 +31,91 @@ nba_cumestatsplayer(
 }
 \value{
 Return a named list of data frames: GameByGameStats, TotalPlayerStats
+
+\strong{GameByGameStats}\tabular{ll}{
+   col_name \tab types \cr
+   DATE_EST \tab character \cr
+   VISITOR_TEAM \tab character \cr
+   HOME_TEAM \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   ACTUAL_MINUTES \tab character \cr
+   ACTUAL_SECONDS \tab character \cr
+   FG \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3 \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FT \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OFF_REB \tab character \cr
+   DEF_REB \tab character \cr
+   TOT_REB \tab character \cr
+   AVG_TOT_REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   DQ \tab character \cr
+   STL \tab character \cr
+   TURNOVERS \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   AVG_PTS \tab character \cr
+}
+
+
+\strong{TotalPlayerStats}\tabular{ll}{
+   col_name \tab types \cr
+   DISPLAY_FI_LAST \tab character \cr
+   PERSON_ID \tab character \cr
+   JERSEY_NUM \tab character \cr
+   GP \tab character \cr
+   GS \tab character \cr
+   ACTUAL_MINUTES \tab character \cr
+   ACTUAL_SECONDS \tab character \cr
+   FG \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3 \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FT \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OFF_REB \tab character \cr
+   DEF_REB \tab character \cr
+   TOT_REB \tab character \cr
+   AST \tab character \cr
+   PF \tab character \cr
+   DQ \tab character \cr
+   STL \tab character \cr
+   TURNOVERS \tab character \cr
+   BLK \tab character \cr
+   PTS \tab character \cr
+   MAX_ACTUAL_MINUTES \tab character \cr
+   MAX_ACTUAL_SECONDS \tab character \cr
+   MAX_REB \tab character \cr
+   MAX_AST \tab character \cr
+   MAX_STL \tab character \cr
+   MAX_TURNOVERS \tab character \cr
+   MAX_BLK \tab character \cr
+   MAX_PTS \tab character \cr
+   AVG_ACTUAL_MINUTES \tab character \cr
+   AVG_ACTUAL_SECONDS \tab character \cr
+   AVG_TOT_REB \tab character \cr
+   AVG_AST \tab character \cr
+   AVG_STL \tab character \cr
+   AVG_TURNOVERS \tab character \cr
+   AVG_BLK \tab character \cr
+   AVG_PTS \tab character \cr
+   PER_MIN_TOT_REB \tab character \cr
+   PER_MIN_AST \tab character \cr
+   PER_MIN_STL \tab character \cr
+   PER_MIN_TURNOVERS \tab character \cr
+   PER_MIN_BLK \tab character \cr
+   PER_MIN_PTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Player Stats}

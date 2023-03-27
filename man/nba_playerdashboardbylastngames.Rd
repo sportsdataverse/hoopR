@@ -81,7 +81,8 @@ nba_playerdashboardbylastngames(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard, Last15PlayerDashboard, Last20PlayerDashboard,
+Return a named list of data frames: GameNumberPlayerDashboard, Last10PlayerDashboard,
+Last15PlayerDashboard, Last20PlayerDashboard,
 Last5PlayerDashboard, OverallPlayerDashboard
 }
 \description{

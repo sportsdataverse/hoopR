@@ -43,6 +43,12 @@ nba_cumestatsteamgames(
 }
 \value{
 Returns a named list of data frames: CumeStatsTeamGames
+
+\strong{CumeStatsTeamGames}\tabular{ll}{
+   col_name \tab types \cr
+   MATCHUP \tab character \cr
+   GAME_ID \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Team Game Stats}
@@ -52,7 +58,7 @@ Returns a named list of data frames: CumeStatsTeamGames
 \details{
 \href{https://www.nba.com/stats/cumestats}{CUME Stats}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteamgames()
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
 \seealso{

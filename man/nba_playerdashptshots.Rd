@@ -66,7 +66,8 @@ nba_playerdashptshots(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: ClosestDefender10ftPlusShooting, ClosestDefenderShooting, DribbleShooting,
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting,
 GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
 }
 \description{

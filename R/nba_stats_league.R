@@ -16,6 +16,42 @@ NULL
 #' @param sorter sorter
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueGameLog
+#'
+#'    **LeagueGameLog**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |SEASON_ID         |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |GAME_ID           |character |
+#'    |GAME_DATE         |character |
+#'    |MATCHUP           |character |
+#'    |WL                |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |TOV               |character |
+#'    |PF                |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'    |VIDEO_AVAILABLE   |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -38,7 +74,8 @@ nba_leaguegamelog <- function(
     sorter = 'DATE',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguegamelog"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -88,6 +125,94 @@ NULL
 #' @param season_year season_year
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Standings
+#'
+#'    **Standings**
+#'
+#'
+#'    |col_name                |types     |
+#'    |:-----------------------|:---------|
+#'    |LeagueID                |character |
+#'    |SeasonID                |character |
+#'    |TeamID                  |character |
+#'    |TeamCity                |character |
+#'    |TeamName                |character |
+#'    |Conference              |character |
+#'    |ConferenceRecord        |character |
+#'    |PlayoffRank             |character |
+#'    |ClinchIndicator         |character |
+#'    |Division                |character |
+#'    |DivisionRecord          |character |
+#'    |DivisionRank            |character |
+#'    |WINS                    |character |
+#'    |LOSSES                  |character |
+#'    |WinPCT                  |character |
+#'    |LeagueRank              |character |
+#'    |Record                  |character |
+#'    |HOME                    |character |
+#'    |ROAD                    |character |
+#'    |L10                     |character |
+#'    |Last10Home              |character |
+#'    |Last10Road              |character |
+#'    |OT                      |character |
+#'    |ThreePTSOrLess          |character |
+#'    |TenPTSOrMore            |character |
+#'    |LongHomeStreak          |character |
+#'    |strLongHomeStreak       |character |
+#'    |LongRoadStreak          |character |
+#'    |strLongRoadStreak       |character |
+#'    |LongWinStreak           |character |
+#'    |LongLossStreak          |character |
+#'    |CurrentHomeStreak       |character |
+#'    |strCurrentHomeStreak    |character |
+#'    |CurrentRoadStreak       |character |
+#'    |strCurrentRoadStreak    |character |
+#'    |CurrentStreak           |character |
+#'    |strCurrentStreak        |character |
+#'    |ConferenceGamesBack     |character |
+#'    |DivisionGamesBack       |character |
+#'    |ClinchedConferenceTitle |character |
+#'    |ClinchedDivisionTitle   |character |
+#'    |ClinchedPlayoffBirth    |character |
+#'    |EliminatedConference    |character |
+#'    |EliminatedDivision      |character |
+#'    |AheadAtHalf             |character |
+#'    |BehindAtHalf            |character |
+#'    |TiedAtHalf              |character |
+#'    |AheadAtThird            |character |
+#'    |BehindAtThird           |character |
+#'    |TiedAtThird             |character |
+#'    |Score100PTS             |character |
+#'    |OppScore100PTS          |character |
+#'    |OppOver500              |character |
+#'    |LeadInFGPCT             |character |
+#'    |LeadInReb               |character |
+#'    |FewerTurnovers          |character |
+#'    |PointsPG                |character |
+#'    |OppPointsPG             |character |
+#'    |DiffPointsPG            |character |
+#'    |vsEast                  |character |
+#'    |vsAtlantic              |character |
+#'    |vsCentral               |character |
+#'    |vsSoutheast             |character |
+#'    |vsWest                  |character |
+#'    |vsNorthwest             |character |
+#'    |vsPacific               |character |
+#'    |vsSouthwest             |character |
+#'    |Jan                     |character |
+#'    |Feb                     |character |
+#'    |Mar                     |character |
+#'    |Apr                     |character |
+#'    |May                     |character |
+#'    |Jun                     |character |
+#'    |Jul                     |character |
+#'    |Aug                     |character |
+#'    |Sep                     |character |
+#'    |Oct                     |character |
+#'    |Nov                     |character |
+#'    |Dec                     |character |
+#'    |PreAS                   |character |
+#'    |PostAS                  |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -105,7 +230,8 @@ nba_leaguestandings <- function(
     season_year = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandings"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -150,6 +276,101 @@ NULL
 #' @param season_year season_year
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: Standings
+#'
+#'    **Standings**
+#'
+#'
+#'    |col_name                |types     |
+#'    |:-----------------------|:---------|
+#'    |LeagueID                |character |
+#'    |SeasonID                |character |
+#'    |TeamID                  |character |
+#'    |TeamCity                |character |
+#'    |TeamName                |character |
+#'    |TeamSlug                |character |
+#'    |Conference              |character |
+#'    |ConferenceRecord        |character |
+#'    |PlayoffRank             |character |
+#'    |ClinchIndicator         |character |
+#'    |Division                |character |
+#'    |DivisionRecord          |character |
+#'    |DivisionRank            |character |
+#'    |WINS                    |character |
+#'    |LOSSES                  |character |
+#'    |WinPCT                  |character |
+#'    |LeagueRank              |character |
+#'    |Record                  |character |
+#'    |HOME                    |character |
+#'    |ROAD                    |character |
+#'    |L10                     |character |
+#'    |Last10Home              |character |
+#'    |Last10Road              |character |
+#'    |OT                      |character |
+#'    |ThreePTSOrLess          |character |
+#'    |TenPTSOrMore            |character |
+#'    |LongHomeStreak          |character |
+#'    |strLongHomeStreak       |character |
+#'    |LongRoadStreak          |character |
+#'    |strLongRoadStreak       |character |
+#'    |LongWinStreak           |character |
+#'    |LongLossStreak          |character |
+#'    |CurrentHomeStreak       |character |
+#'    |strCurrentHomeStreak    |character |
+#'    |CurrentRoadStreak       |character |
+#'    |strCurrentRoadStreak    |character |
+#'    |CurrentStreak           |character |
+#'    |strCurrentStreak        |character |
+#'    |ConferenceGamesBack     |character |
+#'    |DivisionGamesBack       |character |
+#'    |ClinchedConferenceTitle |character |
+#'    |ClinchedDivisionTitle   |character |
+#'    |ClinchedPlayoffBirth    |character |
+#'    |ClinchedPlayIn          |character |
+#'    |EliminatedConference    |character |
+#'    |EliminatedDivision      |character |
+#'    |AheadAtHalf             |character |
+#'    |BehindAtHalf            |character |
+#'    |TiedAtHalf              |character |
+#'    |AheadAtThird            |character |
+#'    |BehindAtThird           |character |
+#'    |TiedAtThird             |character |
+#'    |Score100PTS             |character |
+#'    |OppScore100PTS          |character |
+#'    |OppOver500              |character |
+#'    |LeadInFGPCT             |character |
+#'    |LeadInReb               |character |
+#'    |FewerTurnovers          |character |
+#'    |PointsPG                |character |
+#'    |OppPointsPG             |character |
+#'    |DiffPointsPG            |character |
+#'    |vsEast                  |character |
+#'    |vsAtlantic              |character |
+#'    |vsCentral               |character |
+#'    |vsSoutheast             |character |
+#'    |vsWest                  |character |
+#'    |vsNorthwest             |character |
+#'    |vsPacific               |character |
+#'    |vsSouthwest             |character |
+#'    |Jan                     |character |
+#'    |Feb                     |character |
+#'    |Mar                     |character |
+#'    |Apr                     |character |
+#'    |May                     |character |
+#'    |Jun                     |character |
+#'    |Jul                     |character |
+#'    |Aug                     |character |
+#'    |Sep                     |character |
+#'    |Oct                     |character |
+#'    |Nov                     |character |
+#'    |Dec                     |character |
+#'    |Score_80_Plus           |character |
+#'    |Opp_Score_80_Plus       |character |
+#'    |Score_Below_80          |character |
+#'    |Opp_Score_Below_80      |character |
+#'    |TotalPoints             |character |
+#'    |OppTotalPoints          |character |
+#'    |DiffTotalPoints         |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -167,7 +388,8 @@ nba_leaguestandingsv3 <- function(
     season_year = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # Intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -212,11 +434,136 @@ NULL
 #' @return Return a named list of data frames: EastConfPlayoffPicture,
 #' EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
 #' WestConfRemainingGames, WestConfStandings
+#'
+#'    **EastConfPlayoffPicture**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |CONFERENCE                        |character |
+#'    |HIGH_SEED_RANK                    |character |
+#'    |HIGH_SEED_TEAM                    |character |
+#'    |HIGH_SEED_TEAM_ID                 |character |
+#'    |LOW_SEED_RANK                     |character |
+#'    |LOW_SEED_TEAM                     |character |
+#'    |LOW_SEED_TEAM_ID                  |character |
+#'    |HIGH_SEED_SERIES_W                |character |
+#'    |HIGH_SEED_SERIES_L                |character |
+#'    |HIGH_SEED_SERIES_REMAINING_G      |character |
+#'    |HIGH_SEED_SERIES_REMAINING_HOME_G |character |
+#'    |HIGH_SEED_SERIES_REMAINING_AWAY_G |character |
+#'
+#'    **WestConfPlayoffPicture**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |CONFERENCE                        |character |
+#'    |HIGH_SEED_RANK                    |character |
+#'    |HIGH_SEED_TEAM                    |character |
+#'    |HIGH_SEED_TEAM_ID                 |character |
+#'    |LOW_SEED_RANK                     |character |
+#'    |LOW_SEED_TEAM                     |character |
+#'    |LOW_SEED_TEAM_ID                  |character |
+#'    |HIGH_SEED_SERIES_W                |character |
+#'    |HIGH_SEED_SERIES_L                |character |
+#'    |HIGH_SEED_SERIES_REMAINING_G      |character |
+#'    |HIGH_SEED_SERIES_REMAINING_HOME_G |character |
+#'    |HIGH_SEED_SERIES_REMAINING_AWAY_G |character |
+#'
+#'    **EastConfStandings**
+#'
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |CONFERENCE          |character |
+#'    |RANK                |character |
+#'    |TEAM                |character |
+#'    |TEAM_SLUG           |character |
+#'    |TEAM_ID             |character |
+#'    |WINS                |character |
+#'    |LOSSES              |character |
+#'    |PCT                 |character |
+#'    |DIV                 |character |
+#'    |CONF                |character |
+#'    |HOME                |character |
+#'    |AWAY                |character |
+#'    |GB                  |character |
+#'    |GR_OVER_500         |character |
+#'    |GR_OVER_500_HOME    |character |
+#'    |GR_OVER_500_AWAY    |character |
+#'    |GR_UNDER_500        |character |
+#'    |GR_UNDER_500_HOME   |character |
+#'    |GR_UNDER_500_AWAY   |character |
+#'    |RANKING_CRITERIA    |character |
+#'    |CLINCHED_PLAYOFFS   |character |
+#'    |CLINCHED_CONFERENCE |character |
+#'    |CLINCHED_DIVISION   |character |
+#'    |ELIMINATED_PLAYOFFS |character |
+#'    |SOSA_REMAINING      |character |
+#'
+#'    **WestConfStandings**
+#'
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |CONFERENCE          |character |
+#'    |RANK                |character |
+#'    |TEAM                |character |
+#'    |TEAM_SLUG           |character |
+#'    |TEAM_ID             |character |
+#'    |WINS                |character |
+#'    |LOSSES              |character |
+#'    |PCT                 |character |
+#'    |DIV                 |character |
+#'    |CONF                |character |
+#'    |HOME                |character |
+#'    |AWAY                |character |
+#'    |GB                  |character |
+#'    |GR_OVER_500         |character |
+#'    |GR_OVER_500_HOME    |character |
+#'    |GR_OVER_500_AWAY    |character |
+#'    |GR_UNDER_500        |character |
+#'    |GR_UNDER_500_HOME   |character |
+#'    |GR_UNDER_500_AWAY   |character |
+#'    |RANKING_CRITERIA    |character |
+#'    |CLINCHED_PLAYOFFS   |character |
+#'    |CLINCHED_CONFERENCE |character |
+#'    |CLINCHED_DIVISION   |character |
+#'    |ELIMINATED_PLAYOFFS |character |
+#'    |SOSA_REMAINING      |character |
+#'
+#'    **EastConfRemainingGames**
+#'
+#'
+#'    |col_name         |types     |
+#'    |:----------------|:---------|
+#'    |TEAM             |character |
+#'    |TEAM_ID          |character |
+#'    |REMAINING_G      |character |
+#'    |REMAINING_HOME_G |character |
+#'    |REMAINING_AWAY_G |character |
+#'
+#'    **WestConfRemainingGames**
+#'
+#'
+#'    |col_name         |types     |
+#'    |:----------------|:---------|
+#'    |TEAM             |character |
+#'    |TEAM_ID          |character |
+#'    |REMAINING_G      |character |
+#'    |REMAINING_HOME_G |character |
+#'    |REMAINING_AWAY_G |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
 #' @export
 #' @family NBA League Functions
+#' @details
+#' ```r
+#'  nba_playoffpicture(league_id = '00', season_id = paste0(2, most_recent_nba_season() - 1))
+#' ```
 nba_playoffpicture <- function(
     league_id = '00',
     season_id = '22022',
@@ -348,6 +695,41 @@ NULL
 #' @param years_experience years_experience
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LeagueGameFinderResults
+#'
+#'    **LeagueGameFinderResults**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |SEASON_ID         |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |TEAM_NAME         |character |
+#'    |GAME_ID           |character |
+#'    |GAME_DATE         |character |
+#'    |MATCHUP           |character |
+#'    |WL                |character |
+#'    |MIN               |character |
+#'    |PTS               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |TOV               |character |
+#'    |PF                |character |
+#'    |PLUS_MINUS        |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -449,7 +831,7 @@ nba_leaguegamefinder <- function(
     years_experience = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

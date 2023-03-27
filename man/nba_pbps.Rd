@@ -23,6 +23,12 @@ Returns a data frame: PlayByPlay
 
 \strong{Get NBA Stats API play-by-play (Multiple Games)}
 }
+\details{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{y <- c("0022201086", "0022200021")
+
+nba_pbps(game_ids = y, version = "v2")
+}\if{html}{\out{</div>}}
+}
 \seealso{
 Other NBA PBP Functions: 
 \code{\link{nba_data_pbp}()},

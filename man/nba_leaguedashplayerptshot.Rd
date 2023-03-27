@@ -130,6 +130,30 @@ nba_leaguedashplayerptshot(
 }
 \value{
 Returns a named list of data frames: LeagueDashPTShots
+
+\strong{LeagueDashPTShots}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   PLAYER_LAST_TEAM_ID \tab character \cr
+   PLAYER_LAST_TEAM_ABBREVIATION \tab character \cr
+   AGE \tab character \cr
+   GP \tab character \cr
+   G \tab character \cr
+   FGA_FREQUENCY \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   EFG_PCT \tab character \cr
+   FG2A_FREQUENCY \tab character \cr
+   FG2M \tab character \cr
+   FG2A \tab character \cr
+   FG2_PCT \tab character \cr
+   FG3A_FREQUENCY \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Player Shots}

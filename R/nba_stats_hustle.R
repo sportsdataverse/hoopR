@@ -33,6 +33,41 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HustleStatsPlayer
+#'
+#'    **HustleStatsPlayer**
+#'
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |PLAYER_ID                     |character |
+#'    |PLAYER_NAME                   |character |
+#'    |TEAM_ID                       |character |
+#'    |TEAM_ABBREVIATION             |character |
+#'    |AGE                           |character |
+#'    |G                             |character |
+#'    |MIN                           |character |
+#'    |CONTESTED_SHOTS               |character |
+#'    |CONTESTED_SHOTS_2PT           |character |
+#'    |CONTESTED_SHOTS_3PT           |character |
+#'    |DEFLECTIONS                   |character |
+#'    |CHARGES_DRAWN                 |character |
+#'    |SCREEN_ASSISTS                |character |
+#'    |SCREEN_AST_PTS                |character |
+#'    |OFF_LOOSE_BALLS_RECOVERED     |character |
+#'    |DEF_LOOSE_BALLS_RECOVERED     |character |
+#'    |LOOSE_BALLS_RECOVERED         |character |
+#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |
+#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |
+#'    |OFF_BOXOUTS                   |character |
+#'    |DEF_BOXOUTS                   |character |
+#'    |BOX_OUT_PLAYER_TEAM_REBS      |character |
+#'    |BOX_OUT_PLAYER_REBS           |character |
+#'    |BOX_OUTS                      |character |
+#'    |PCT_BOX_OUTS_OFF              |character |
+#'    |PCT_BOX_OUTS_DEF              |character |
+#'    |PCT_BOX_OUTS_TEAM_REB         |character |
+#'    |PCT_BOX_OUTS_REB              |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -74,7 +109,8 @@ nba_leaguehustlestatsplayer <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  #intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -160,7 +196,88 @@ NULL
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: PlayerChargesDrawnLeaders, PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
+#' @return Returns a named list of data frames: PlayerChargesDrawnLeaders,
+#'  PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders,
+#'  PlayerScreenAssistLeaders, Table5
+#'
+#'    **PlayerContestedShotsLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |AGE               |character |
+#'    |RANK              |character |
+#'    |CONTESTED_SHOTS   |character |
+#'
+#'    **PlayerChargesDrawnLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |AGE               |character |
+#'    |RANK              |character |
+#'    |CHARGES_DRAWN     |character |
+#'
+#'    **PlayerDeflectionsLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |AGE               |character |
+#'    |RANK              |character |
+#'    |DEFLECTIONS       |character |
+#'
+#'    **PlayerLooseBallLeaders**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |PLAYER_ID             |character |
+#'    |PLAYER_NAME           |character |
+#'    |TEAM_ID               |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |AGE                   |character |
+#'    |RANK                  |character |
+#'    |LOOSE_BALLS_RECOVERED |character |
+#'
+#'    **PlayerScreenAssistLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |AGE               |character |
+#'    |RANK              |character |
+#'    |SCREEN_ASSISTS    |character |
+#'
+#'    **Table5**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |TEAM_ID           |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |AGE               |character |
+#'    |RANK              |character |
+#'    |BOX_OUTS          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -200,7 +317,7 @@ nba_leaguehustlestatsplayerleaders <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayerleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -287,6 +404,33 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: HustleStatsTeam
+#'
+#'    **HustleStatsTeam**
+#'
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |TEAM_ID                       |character |
+#'    |TEAM_NAME                     |character |
+#'    |MIN                           |character |
+#'    |CONTESTED_SHOTS               |character |
+#'    |CONTESTED_SHOTS_2PT           |character |
+#'    |CONTESTED_SHOTS_3PT           |character |
+#'    |DEFLECTIONS                   |character |
+#'    |CHARGES_DRAWN                 |character |
+#'    |SCREEN_ASSISTS                |character |
+#'    |SCREEN_AST_PTS                |character |
+#'    |OFF_LOOSE_BALLS_RECOVERED     |character |
+#'    |DEF_LOOSE_BALLS_RECOVERED     |character |
+#'    |LOOSE_BALLS_RECOVERED         |character |
+#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |
+#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |
+#'    |OFF_BOXOUTS                   |character |
+#'    |DEF_BOXOUTS                   |character |
+#'    |BOX_OUTS                      |character |
+#'    |PCT_BOX_OUTS_OFF              |character |
+#'    |PCT_BOX_OUTS_DEF              |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -327,7 +471,8 @@ nba_leaguehustlestatsteam <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteam"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -413,6 +558,84 @@ NULL
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
+#'
+#'    **TeamContestedShotsLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |CONTESTED_SHOTS   |character |
+#'
+#'    **TeamChargesDrawnLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |CHARGES_DRAWN     |character |
+#'
+#'    **TeamDeflectionsLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |DEFLECTIONS       |character |
+#'
+#'    **TeamLooseBallLeaders**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |TEAM_ID               |character |
+#'    |TEAM_NAME             |character |
+#'    |TEAM_ABBREVIATION     |character |
+#'    |RANK                  |character |
+#'    |LOOSE_BALLS_RECOVERED |character |
+#'
+#'    **TeamScreenAssistLeaders**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |SCREEN_ASSISTS    |character |
+#'
+#'    **Table5**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |BOX_OUTS          |character |
+#'
+#'    **Table6**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |TEAM_ID           |character |
+#'    |TEAM_NAME         |character |
+#'    |TEAM_ABBREVIATION |character |
+#'    |RANK              |character |
+#'    |BOX_OUTS          |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -452,7 +675,8 @@ nba_leaguehustlestatsteamleaders <- function(
     weight = '',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # intentional
+  # season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsteamleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

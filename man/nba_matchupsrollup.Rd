@@ -37,6 +37,32 @@ nba_matchupsrollup(
 }
 \value{
 Returns a named list of data frames: MatchupsRollup
+
+\strong{MatchupsRollup}\tabular{ll}{
+   col_name \tab types \cr
+   SEASON_ID \tab character \cr
+   POSITION \tab character \cr
+   PERCENT_OF_TIME \tab character \cr
+   DEF_PLAYER_ID \tab character \cr
+   DEF_PLAYER_NAME \tab character \cr
+   GP \tab character \cr
+   MATCHUP_MIN \tab character \cr
+   PARTIAL_POSS \tab character \cr
+   PLAYER_PTS \tab character \cr
+   TEAM_PTS \tab character \cr
+   MATCHUP_AST \tab character \cr
+   MATCHUP_TOV \tab character \cr
+   MATCHUP_BLK \tab character \cr
+   MATCHUP_FGM \tab character \cr
+   MATCHUP_FGA \tab character \cr
+   MATCHUP_FG_PCT \tab character \cr
+   MATCHUP_FG3M \tab character \cr
+   MATCHUP_FG3A \tab character \cr
+   MATCHUP_FG3_PCT \tab character \cr
+   MATCHUP_FTM \tab character \cr
+   MATCHUP_FTA \tab character \cr
+   SFL \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Matchups Rollup}

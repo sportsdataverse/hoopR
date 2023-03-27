@@ -19,6 +19,57 @@ nba_draftcombinestats(
 }
 \value{
 Returns a named list of data frames: DraftCombineStats
+
+\strong{DraftCombineStats}\tabular{ll}{
+   col_name \tab types \cr
+   SEASON \tab character \cr
+   PLAYER_ID \tab character \cr
+   FIRST_NAME \tab character \cr
+   LAST_NAME \tab character \cr
+   PLAYER_NAME \tab character \cr
+   POSITION \tab character \cr
+   HEIGHT_WO_SHOES \tab character \cr
+   HEIGHT_WO_SHOES_FT_IN \tab character \cr
+   HEIGHT_W_SHOES \tab character \cr
+   HEIGHT_W_SHOES_FT_IN \tab character \cr
+   WEIGHT \tab character \cr
+   WINGSPAN \tab character \cr
+   WINGSPAN_FT_IN \tab character \cr
+   STANDING_REACH \tab character \cr
+   STANDING_REACH_FT_IN \tab character \cr
+   BODY_FAT_PCT \tab character \cr
+   HAND_LENGTH \tab character \cr
+   HAND_WIDTH \tab character \cr
+   STANDING_VERTICAL_LEAP \tab character \cr
+   MAX_VERTICAL_LEAP \tab character \cr
+   LANE_AGILITY_TIME \tab character \cr
+   MODIFIED_LANE_AGILITY_TIME \tab character \cr
+   THREE_QUARTER_SPRINT \tab character \cr
+   BENCH_PRESS \tab character \cr
+   SPOT_FIFTEEN_CORNER_LEFT \tab character \cr
+   SPOT_FIFTEEN_BREAK_LEFT \tab character \cr
+   SPOT_FIFTEEN_TOP_KEY \tab character \cr
+   SPOT_FIFTEEN_BREAK_RIGHT \tab character \cr
+   SPOT_FIFTEEN_CORNER_RIGHT \tab character \cr
+   SPOT_COLLEGE_CORNER_LEFT \tab character \cr
+   SPOT_COLLEGE_BREAK_LEFT \tab character \cr
+   SPOT_COLLEGE_TOP_KEY \tab character \cr
+   SPOT_COLLEGE_BREAK_RIGHT \tab character \cr
+   SPOT_COLLEGE_CORNER_RIGHT \tab character \cr
+   SPOT_NBA_CORNER_LEFT \tab character \cr
+   SPOT_NBA_BREAK_LEFT \tab character \cr
+   SPOT_NBA_TOP_KEY \tab character \cr
+   SPOT_NBA_BREAK_RIGHT \tab character \cr
+   SPOT_NBA_CORNER_RIGHT \tab character \cr
+   OFF_DRIB_FIFTEEN_BREAK_LEFT \tab character \cr
+   OFF_DRIB_FIFTEEN_TOP_KEY \tab character \cr
+   OFF_DRIB_FIFTEEN_BREAK_RIGHT \tab character \cr
+   OFF_DRIB_COLLEGE_BREAK_LEFT \tab character \cr
+   OFF_DRIB_COLLEGE_TOP_KEY \tab character \cr
+   OFF_DRIB_COLLEGE_BREAK_RIGHT \tab character \cr
+   ON_MOVE_FIFTEEN \tab character \cr
+   ON_MOVE_COLLEGE \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Draft Combine Stats}

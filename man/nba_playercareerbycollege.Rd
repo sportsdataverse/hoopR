@@ -28,6 +28,33 @@ nba_playercareerbycollege(
 }
 \value{
 Return a named list of data frames: PlayerCareerByCollege
+
+\strong{PlayerCareerByCollege}\tabular{ll}{
+   col_name \tab types \cr
+   PLAYER_ID \tab character \cr
+   PLAYER_NAME \tab character \cr
+   COLLEGE \tab character \cr
+   GP \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   TOV \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   PF \tab character \cr
+   PTS \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Player Career By College}

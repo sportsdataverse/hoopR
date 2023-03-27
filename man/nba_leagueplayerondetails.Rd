@@ -76,6 +76,69 @@ nba_leagueplayerondetails(
 }
 \value{
 Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
+
+\strong{PlayersOnCourtLeaguePlayerDetails}\tabular{ll}{
+   col_name \tab types \cr
+   GROUP_SET \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   TEAM_NAME \tab character \cr
+   VS_PLAYER_ID \tab character \cr
+   VS_PLAYER_NAME \tab character \cr
+   COURT_STATUS \tab character \cr
+   GP \tab character \cr
+   W \tab character \cr
+   L \tab character \cr
+   W_PCT \tab character \cr
+   MIN \tab character \cr
+   FGM \tab character \cr
+   FGA \tab character \cr
+   FG_PCT \tab character \cr
+   FG3M \tab character \cr
+   FG3A \tab character \cr
+   FG3_PCT \tab character \cr
+   FTM \tab character \cr
+   FTA \tab character \cr
+   FT_PCT \tab character \cr
+   OREB \tab character \cr
+   DREB \tab character \cr
+   REB \tab character \cr
+   AST \tab character \cr
+   TOV \tab character \cr
+   STL \tab character \cr
+   BLK \tab character \cr
+   BLKA \tab character \cr
+   PF \tab character \cr
+   PFD \tab character \cr
+   PTS \tab character \cr
+   PLUS_MINUS \tab character \cr
+   GP_RANK \tab character \cr
+   W_RANK \tab character \cr
+   L_RANK \tab character \cr
+   W_PCT_RANK \tab character \cr
+   MIN_RANK \tab character \cr
+   FGM_RANK \tab character \cr
+   FGA_RANK \tab character \cr
+   FG_PCT_RANK \tab character \cr
+   FG3M_RANK \tab character \cr
+   FG3A_RANK \tab character \cr
+   FG3_PCT_RANK \tab character \cr
+   FTM_RANK \tab character \cr
+   FTA_RANK \tab character \cr
+   FT_PCT_RANK \tab character \cr
+   OREB_RANK \tab character \cr
+   DREB_RANK \tab character \cr
+   REB_RANK \tab character \cr
+   AST_RANK \tab character \cr
+   TOV_RANK \tab character \cr
+   STL_RANK \tab character \cr
+   BLK_RANK \tab character \cr
+   BLKA_RANK \tab character \cr
+   PF_RANK \tab character \cr
+   PFD_RANK \tab character \cr
+   PTS_RANK \tab character \cr
+   PLUS_MINUS_RANK \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API League Player On/Off Details}
@@ -83,7 +146,7 @@ Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
 \strong{Get NBA Stats API League Player On/Off Details}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
 \seealso{
