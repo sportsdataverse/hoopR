@@ -32,6 +32,125 @@ nba_boxscoremiscv3(
 \value{
 A list of data frames:  home_team_player_misc, away_team_player_misc,
 home_team_totals_misc, away_team_totals_misc
+
+\strong{home_team_player_misc}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   points_off_turnovers \tab integer \cr
+   points_second_chance \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_paint \tab integer \cr
+   opp_points_off_turnovers \tab integer \cr
+   opp_points_second_chance \tab integer \cr
+   opp_points_fast_break \tab integer \cr
+   opp_points_paint \tab integer \cr
+   blocks \tab integer \cr
+   blocks_against \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_drawn \tab integer \cr
+}
+
+
+\strong{away_team_player_misc}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   points_off_turnovers \tab integer \cr
+   points_second_chance \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_paint \tab integer \cr
+   opp_points_off_turnovers \tab integer \cr
+   opp_points_second_chance \tab integer \cr
+   opp_points_fast_break \tab integer \cr
+   opp_points_paint \tab integer \cr
+   blocks \tab integer \cr
+   blocks_against \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_drawn \tab integer \cr
+}
+
+
+\strong{home_team_totals_misc}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   points_off_turnovers \tab integer \cr
+   points_second_chance \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_paint \tab integer \cr
+   opp_points_off_turnovers \tab integer \cr
+   opp_points_second_chance \tab integer \cr
+   opp_points_fast_break \tab integer \cr
+   opp_points_paint \tab integer \cr
+   blocks \tab integer \cr
+   blocks_against \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_drawn \tab integer \cr
+}
+
+
+\strong{away_team_totals_misc}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   points_off_turnovers \tab integer \cr
+   points_second_chance \tab integer \cr
+   points_fast_break \tab integer \cr
+   points_paint \tab integer \cr
+   opp_points_off_turnovers \tab integer \cr
+   opp_points_second_chance \tab integer \cr
+   opp_points_fast_break \tab integer \cr
+   opp_points_paint \tab integer \cr
+   blocks \tab integer \cr
+   blocks_against \tab integer \cr
+   fouls_personal \tab integer \cr
+   fouls_drawn \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Misc V3}

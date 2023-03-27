@@ -33,6 +33,109 @@ nba_boxscorefourfactorsv3(
 A list of data frames:  home_team_player_four_factors,
 away_team_player_four_factors, home_team_totals_four_factors,
 away_team_totals_four_factors
+
+\strong{home_team_player_four_factors}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   effective_field_goal_percentage \tab numeric \cr
+   free_throw_attempt_rate \tab numeric \cr
+   team_turnover_percentage \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   opp_effective_field_goal_percentage \tab numeric \cr
+   opp_free_throw_attempt_rate \tab numeric \cr
+   opp_team_turnover_percentage \tab numeric \cr
+   opp_offensive_rebound_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_player_four_factors}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   effective_field_goal_percentage \tab numeric \cr
+   free_throw_attempt_rate \tab numeric \cr
+   team_turnover_percentage \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   opp_effective_field_goal_percentage \tab numeric \cr
+   opp_free_throw_attempt_rate \tab numeric \cr
+   opp_team_turnover_percentage \tab numeric \cr
+   opp_offensive_rebound_percentage \tab numeric \cr
+}
+
+
+\strong{home_team_totals_four_factors}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   effective_field_goal_percentage \tab numeric \cr
+   free_throw_attempt_rate \tab numeric \cr
+   team_turnover_percentage \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   opp_effective_field_goal_percentage \tab numeric \cr
+   opp_free_throw_attempt_rate \tab numeric \cr
+   opp_team_turnover_percentage \tab numeric \cr
+   opp_offensive_rebound_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_totals_four_factors}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   effective_field_goal_percentage \tab numeric \cr
+   free_throw_attempt_rate \tab numeric \cr
+   team_turnover_percentage \tab numeric \cr
+   offensive_rebound_percentage \tab numeric \cr
+   opp_effective_field_goal_percentage \tab numeric \cr
+   opp_free_throw_attempt_rate \tab numeric \cr
+   opp_team_turnover_percentage \tab numeric \cr
+   opp_offensive_rebound_percentage \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Four Factors V3}

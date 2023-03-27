@@ -32,6 +32,149 @@ nba_boxscoreusagev3(
 \value{
 A list of data frames:  home_team_player_usage, away_team_player_usage,
 home_team_totals_usage, away_team_totals_usage
+
+\strong{home_team_player_usage}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   usage_percentage \tab numeric \cr
+   percentage_field_goals_made \tab numeric \cr
+   percentage_field_goals_attempted \tab numeric \cr
+   percentage_three_pointers_made \tab numeric \cr
+   percentage_three_pointers_attempted \tab numeric \cr
+   percentage_free_throws_made \tab numeric \cr
+   percentage_free_throws_attempted \tab numeric \cr
+   percentage_rebounds_offensive \tab numeric \cr
+   percentage_rebounds_defensive \tab numeric \cr
+   percentage_rebounds_total \tab numeric \cr
+   percentage_assists \tab numeric \cr
+   percentage_turnovers \tab numeric \cr
+   percentage_steals \tab numeric \cr
+   percentage_blocks \tab numeric \cr
+   percentage_blocks_allowed \tab numeric \cr
+   percentage_personal_fouls \tab numeric \cr
+   percentage_personal_fouls_drawn \tab numeric \cr
+   percentage_points \tab numeric \cr
+}
+
+
+\strong{away_team_player_usage}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   usage_percentage \tab numeric \cr
+   percentage_field_goals_made \tab numeric \cr
+   percentage_field_goals_attempted \tab numeric \cr
+   percentage_three_pointers_made \tab numeric \cr
+   percentage_three_pointers_attempted \tab numeric \cr
+   percentage_free_throws_made \tab numeric \cr
+   percentage_free_throws_attempted \tab numeric \cr
+   percentage_rebounds_offensive \tab numeric \cr
+   percentage_rebounds_defensive \tab numeric \cr
+   percentage_rebounds_total \tab numeric \cr
+   percentage_assists \tab numeric \cr
+   percentage_turnovers \tab numeric \cr
+   percentage_steals \tab numeric \cr
+   percentage_blocks \tab numeric \cr
+   percentage_blocks_allowed \tab numeric \cr
+   percentage_personal_fouls \tab numeric \cr
+   percentage_personal_fouls_drawn \tab numeric \cr
+   percentage_points \tab numeric \cr
+}
+
+
+\strong{home_team_totals_usage}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   usage_percentage \tab numeric \cr
+   percentage_field_goals_made \tab numeric \cr
+   percentage_field_goals_attempted \tab numeric \cr
+   percentage_three_pointers_made \tab numeric \cr
+   percentage_three_pointers_attempted \tab numeric \cr
+   percentage_free_throws_made \tab numeric \cr
+   percentage_free_throws_attempted \tab numeric \cr
+   percentage_rebounds_offensive \tab numeric \cr
+   percentage_rebounds_defensive \tab numeric \cr
+   percentage_rebounds_total \tab numeric \cr
+   percentage_assists \tab numeric \cr
+   percentage_turnovers \tab numeric \cr
+   percentage_steals \tab numeric \cr
+   percentage_blocks \tab numeric \cr
+   percentage_blocks_allowed \tab numeric \cr
+   percentage_personal_fouls \tab numeric \cr
+   percentage_personal_fouls_drawn \tab numeric \cr
+   percentage_points \tab numeric \cr
+}
+
+
+\strong{away_team_totals_usage}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   usage_percentage \tab numeric \cr
+   percentage_field_goals_made \tab numeric \cr
+   percentage_field_goals_attempted \tab numeric \cr
+   percentage_three_pointers_made \tab numeric \cr
+   percentage_three_pointers_attempted \tab numeric \cr
+   percentage_free_throws_made \tab numeric \cr
+   percentage_free_throws_attempted \tab numeric \cr
+   percentage_rebounds_offensive \tab numeric \cr
+   percentage_rebounds_defensive \tab numeric \cr
+   percentage_rebounds_total \tab numeric \cr
+   percentage_assists \tab numeric \cr
+   percentage_turnovers \tab numeric \cr
+   percentage_steals \tab numeric \cr
+   percentage_blocks \tab numeric \cr
+   percentage_blocks_allowed \tab numeric \cr
+   percentage_personal_fouls \tab numeric \cr
+   percentage_personal_fouls_drawn \tab numeric \cr
+   percentage_points \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Usage V3}

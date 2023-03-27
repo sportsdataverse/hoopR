@@ -32,6 +32,103 @@ nba_boxscoredefensivev2(
 \value{
 A list of data frames: home_team_player_defensive, away_team_player_defensive,
 home_team_totals_defensive, away_team_totals_defensive
+
+\strong{home_team_player_defensive}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   matchup_minutes \tab character \cr
+   partial_possessions \tab numeric \cr
+   switches_on \tab integer \cr
+   player_points \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   matchup_assists \tab integer \cr
+   matchup_turnovers \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   matchup_field_goals_made \tab integer \cr
+   matchup_field_goals_attempted \tab integer \cr
+   matchup_field_goal_percentage \tab numeric \cr
+   matchup_three_pointers_made \tab integer \cr
+   matchup_three_pointers_attempted \tab integer \cr
+   matchup_three_pointer_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_player_defensive}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   matchup_minutes \tab character \cr
+   partial_possessions \tab numeric \cr
+   switches_on \tab integer \cr
+   player_points \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   matchup_assists \tab integer \cr
+   matchup_turnovers \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   matchup_field_goals_made \tab integer \cr
+   matchup_field_goals_attempted \tab integer \cr
+   matchup_field_goal_percentage \tab numeric \cr
+   matchup_three_pointers_made \tab integer \cr
+   matchup_three_pointers_attempted \tab integer \cr
+   matchup_three_pointer_percentage \tab numeric \cr
+}
+
+
+\strong{home_team_totals_defensive}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+}
+
+
+\strong{away_team_totals_defensive}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Defensive V2}

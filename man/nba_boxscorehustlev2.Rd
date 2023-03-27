@@ -14,6 +14,141 @@ nba_boxscorehustlev2(game_id = "0022200021", ...)
 \value{
 Returns a named list of data frames: home_team_player_hustle, away_team_player_hustle,
 home_team_hustle_totals, away_team_hustle_totals
+
+\strong{home_team_player_hustle}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   points \tab integer \cr
+   contested_shots \tab integer \cr
+   contested_shots2pt \tab integer \cr
+   contested_shots3pt \tab integer \cr
+   deflections \tab integer \cr
+   charges_drawn \tab integer \cr
+   screen_assists \tab integer \cr
+   screen_assist_points \tab integer \cr
+   loose_balls_recovered_offensive \tab integer \cr
+   loose_balls_recovered_defensive \tab integer \cr
+   loose_balls_recovered_total \tab integer \cr
+   offensive_box_outs \tab integer \cr
+   defensive_box_outs \tab integer \cr
+   box_out_player_team_rebounds \tab integer \cr
+   box_out_player_rebounds \tab integer \cr
+   box_outs \tab integer \cr
+}
+
+
+\strong{away_team_player_hustle}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   points \tab integer \cr
+   contested_shots \tab integer \cr
+   contested_shots2pt \tab integer \cr
+   contested_shots3pt \tab integer \cr
+   deflections \tab integer \cr
+   charges_drawn \tab integer \cr
+   screen_assists \tab integer \cr
+   screen_assist_points \tab integer \cr
+   loose_balls_recovered_offensive \tab integer \cr
+   loose_balls_recovered_defensive \tab integer \cr
+   loose_balls_recovered_total \tab integer \cr
+   offensive_box_outs \tab integer \cr
+   defensive_box_outs \tab integer \cr
+   box_out_player_team_rebounds \tab integer \cr
+   box_out_player_rebounds \tab integer \cr
+   box_outs \tab integer \cr
+}
+
+
+\strong{home_team_totals_hustle}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   points \tab integer \cr
+   contested_shots \tab integer \cr
+   contested_shots2pt \tab integer \cr
+   contested_shots3pt \tab integer \cr
+   deflections \tab integer \cr
+   charges_drawn \tab integer \cr
+   screen_assists \tab integer \cr
+   screen_assist_points \tab integer \cr
+   loose_balls_recovered_offensive \tab integer \cr
+   loose_balls_recovered_defensive \tab integer \cr
+   loose_balls_recovered_total \tab integer \cr
+   offensive_box_outs \tab integer \cr
+   defensive_box_outs \tab integer \cr
+   box_out_player_team_rebounds \tab integer \cr
+   box_out_player_rebounds \tab integer \cr
+   box_outs \tab integer \cr
+}
+
+
+\strong{away_team_totals_hustle}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   points \tab integer \cr
+   contested_shots \tab integer \cr
+   contested_shots2pt \tab integer \cr
+   contested_shots3pt \tab integer \cr
+   deflections \tab integer \cr
+   charges_drawn \tab integer \cr
+   screen_assists \tab integer \cr
+   screen_assist_points \tab integer \cr
+   loose_balls_recovered_offensive \tab integer \cr
+   loose_balls_recovered_defensive \tab integer \cr
+   loose_balls_recovered_total \tab integer \cr
+   offensive_box_outs \tab integer \cr
+   defensive_box_outs \tab integer \cr
+   box_out_player_team_rebounds \tab integer \cr
+   box_out_player_rebounds \tab integer \cr
+   box_outs \tab integer \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Hustle V2}

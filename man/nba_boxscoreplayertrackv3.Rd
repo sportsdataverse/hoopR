@@ -32,6 +32,155 @@ nba_boxscoreplayertrackv3(
 \value{
 A list of data frames: home_team_player_player_track, away_team_player_player_track,
 home_team_totals_player_track, away_team_totals_player_track
+
+\strong{home_team_player_player_track}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   speed \tab numeric \cr
+   distance \tab numeric \cr
+   rebound_chances_offensive \tab integer \cr
+   rebound_chances_defensive \tab integer \cr
+   rebound_chances_total \tab integer \cr
+   touches \tab integer \cr
+   secondary_assists \tab integer \cr
+   free_throw_assists \tab integer \cr
+   passes \tab integer \cr
+   assists \tab integer \cr
+   contested_field_goals_made \tab integer \cr
+   contested_field_goals_attempted \tab integer \cr
+   contested_field_goal_percentage \tab numeric \cr
+   uncontested_field_goals_made \tab integer \cr
+   uncontested_field_goals_attempted \tab integer \cr
+   uncontested_field_goals_percentage \tab numeric \cr
+   field_goal_percentage \tab numeric \cr
+   defended_at_rim_field_goals_made \tab integer \cr
+   defended_at_rim_field_goals_attempted \tab integer \cr
+   defended_at_rim_field_goal_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_player_player_track}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   person_id \tab integer \cr
+   first_name \tab character \cr
+   family_name \tab character \cr
+   name_i \tab character \cr
+   player_slug \tab character \cr
+   position \tab character \cr
+   comment \tab character \cr
+   jersey_num \tab character \cr
+   minutes \tab character \cr
+   speed \tab numeric \cr
+   distance \tab numeric \cr
+   rebound_chances_offensive \tab integer \cr
+   rebound_chances_defensive \tab integer \cr
+   rebound_chances_total \tab integer \cr
+   touches \tab integer \cr
+   secondary_assists \tab integer \cr
+   free_throw_assists \tab integer \cr
+   passes \tab integer \cr
+   assists \tab integer \cr
+   contested_field_goals_made \tab integer \cr
+   contested_field_goals_attempted \tab integer \cr
+   contested_field_goal_percentage \tab numeric \cr
+   uncontested_field_goals_made \tab integer \cr
+   uncontested_field_goals_attempted \tab integer \cr
+   uncontested_field_goals_percentage \tab numeric \cr
+   field_goal_percentage \tab numeric \cr
+   defended_at_rim_field_goals_made \tab integer \cr
+   defended_at_rim_field_goals_attempted \tab integer \cr
+   defended_at_rim_field_goal_percentage \tab numeric \cr
+}
+
+
+\strong{home_team_totals_player_track}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   distance \tab numeric \cr
+   rebound_chances_offensive \tab integer \cr
+   rebound_chances_defensive \tab integer \cr
+   rebound_chances_total \tab integer \cr
+   touches \tab integer \cr
+   secondary_assists \tab integer \cr
+   free_throw_assists \tab integer \cr
+   passes \tab integer \cr
+   assists \tab integer \cr
+   contested_field_goals_made \tab integer \cr
+   contested_field_goals_attempted \tab integer \cr
+   contested_field_goal_percentage \tab numeric \cr
+   uncontested_field_goals_made \tab integer \cr
+   uncontested_field_goals_attempted \tab integer \cr
+   uncontested_field_goals_percentage \tab numeric \cr
+   field_goal_percentage \tab numeric \cr
+   defended_at_rim_field_goals_made \tab integer \cr
+   defended_at_rim_field_goals_attempted \tab integer \cr
+   defended_at_rim_field_goal_percentage \tab numeric \cr
+}
+
+
+\strong{away_team_totals_player_track}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   away_team_id \tab integer \cr
+   home_team_id \tab integer \cr
+   team_id \tab integer \cr
+   team_name \tab character \cr
+   team_city \tab character \cr
+   team_tricode \tab character \cr
+   team_slug \tab character \cr
+   minutes \tab character \cr
+   distance \tab numeric \cr
+   rebound_chances_offensive \tab integer \cr
+   rebound_chances_defensive \tab integer \cr
+   rebound_chances_total \tab integer \cr
+   touches \tab integer \cr
+   secondary_assists \tab integer \cr
+   free_throw_assists \tab integer \cr
+   passes \tab integer \cr
+   assists \tab integer \cr
+   contested_field_goals_made \tab integer \cr
+   contested_field_goals_attempted \tab integer \cr
+   contested_field_goal_percentage \tab numeric \cr
+   uncontested_field_goals_made \tab integer \cr
+   uncontested_field_goals_attempted \tab integer \cr
+   uncontested_field_goals_percentage \tab numeric \cr
+   field_goal_percentage \tab numeric \cr
+   defended_at_rim_field_goals_made \tab integer \cr
+   defended_at_rim_field_goals_attempted \tab integer \cr
+   defended_at_rim_field_goal_percentage \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Boxscore Player Tracking V3}

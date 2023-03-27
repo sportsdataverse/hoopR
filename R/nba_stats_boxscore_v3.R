@@ -500,6 +500,173 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: home_team_player_advanced, away_team_player_advanced,
 #' home_team_totals_advanced, away_team_totals_advanced
+#'
+#'    **home_team_player_advanced**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |person_id                       |integer   |
+#'    |first_name                      |character |
+#'    |family_name                     |character |
+#'    |name_i                          |character |
+#'    |player_slug                     |character |
+#'    |position                        |character |
+#'    |comment                         |character |
+#'    |jersey_num                      |character |
+#'    |minutes                         |character |
+#'    |estimated_offensive_rating      |numeric   |
+#'    |offensive_rating                |numeric   |
+#'    |estimated_defensive_rating      |numeric   |
+#'    |defensive_rating                |numeric   |
+#'    |estimated_net_rating            |numeric   |
+#'    |net_rating                      |numeric   |
+#'    |assist_percentage               |numeric   |
+#'    |assist_to_turnover              |numeric   |
+#'    |assist_ratio                    |numeric   |
+#'    |offensive_rebound_percentage    |numeric   |
+#'    |defensive_rebound_percentage    |numeric   |
+#'    |rebound_percentage              |numeric   |
+#'    |turnover_ratio                  |numeric   |
+#'    |effective_field_goal_percentage |numeric   |
+#'    |true_shooting_percentage        |numeric   |
+#'    |usage_percentage                |numeric   |
+#'    |estimated_usage_percentage      |numeric   |
+#'    |estimated_pace                  |numeric   |
+#'    |pace                            |numeric   |
+#'    |pace_per40                      |numeric   |
+#'    |possessions                     |numeric   |
+#'    |pie                             |numeric   |
+#'
+#'    **away_team_player_advanced**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |person_id                       |integer   |
+#'    |first_name                      |character |
+#'    |family_name                     |character |
+#'    |name_i                          |character |
+#'    |player_slug                     |character |
+#'    |position                        |character |
+#'    |comment                         |character |
+#'    |jersey_num                      |character |
+#'    |minutes                         |character |
+#'    |estimated_offensive_rating      |numeric   |
+#'    |offensive_rating                |numeric   |
+#'    |estimated_defensive_rating      |numeric   |
+#'    |defensive_rating                |numeric   |
+#'    |estimated_net_rating            |numeric   |
+#'    |net_rating                      |numeric   |
+#'    |assist_percentage               |numeric   |
+#'    |assist_to_turnover              |numeric   |
+#'    |assist_ratio                    |numeric   |
+#'    |offensive_rebound_percentage    |numeric   |
+#'    |defensive_rebound_percentage    |numeric   |
+#'    |rebound_percentage              |numeric   |
+#'    |turnover_ratio                  |numeric   |
+#'    |effective_field_goal_percentage |numeric   |
+#'    |true_shooting_percentage        |numeric   |
+#'    |usage_percentage                |numeric   |
+#'    |estimated_usage_percentage      |numeric   |
+#'    |estimated_pace                  |numeric   |
+#'    |pace                            |numeric   |
+#'    |pace_per40                      |numeric   |
+#'    |possessions                     |numeric   |
+#'    |pie                             |numeric   |
+#'
+#'    **home_team_totals_advanced**
+#'
+#'
+#'    |col_name                           |types     |
+#'    |:----------------------------------|:---------|
+#'    |game_id                            |character |
+#'    |away_team_id                       |integer   |
+#'    |home_team_id                       |integer   |
+#'    |team_id                            |integer   |
+#'    |team_name                          |character |
+#'    |team_city                          |character |
+#'    |team_tricode                       |character |
+#'    |team_slug                          |character |
+#'    |minutes                            |character |
+#'    |estimated_offensive_rating         |numeric   |
+#'    |offensive_rating                   |numeric   |
+#'    |estimated_defensive_rating         |numeric   |
+#'    |defensive_rating                   |numeric   |
+#'    |estimated_net_rating               |numeric   |
+#'    |net_rating                         |numeric   |
+#'    |assist_percentage                  |numeric   |
+#'    |assist_to_turnover                 |numeric   |
+#'    |assist_ratio                       |numeric   |
+#'    |offensive_rebound_percentage       |numeric   |
+#'    |defensive_rebound_percentage       |numeric   |
+#'    |rebound_percentage                 |numeric   |
+#'    |estimated_team_turnover_percentage |numeric   |
+#'    |turnover_ratio                     |numeric   |
+#'    |effective_field_goal_percentage    |numeric   |
+#'    |true_shooting_percentage           |numeric   |
+#'    |usage_percentage                   |numeric   |
+#'    |estimated_usage_percentage         |numeric   |
+#'    |estimated_pace                     |numeric   |
+#'    |pace                               |numeric   |
+#'    |pace_per40                         |numeric   |
+#'    |possessions                        |numeric   |
+#'    |pie                                |numeric   |
+#'
+#'    **away_team_totals_advanced**
+#'
+#'
+#'    |col_name                           |types     |
+#'    |:----------------------------------|:---------|
+#'    |game_id                            |character |
+#'    |away_team_id                       |integer   |
+#'    |home_team_id                       |integer   |
+#'    |team_id                            |integer   |
+#'    |team_name                          |character |
+#'    |team_city                          |character |
+#'    |team_tricode                       |character |
+#'    |team_slug                          |character |
+#'    |minutes                            |character |
+#'    |estimated_offensive_rating         |numeric   |
+#'    |offensive_rating                   |numeric   |
+#'    |estimated_defensive_rating         |numeric   |
+#'    |defensive_rating                   |numeric   |
+#'    |estimated_net_rating               |numeric   |
+#'    |net_rating                         |numeric   |
+#'    |assist_percentage                  |numeric   |
+#'    |assist_to_turnover                 |numeric   |
+#'    |assist_ratio                       |numeric   |
+#'    |offensive_rebound_percentage       |numeric   |
+#'    |defensive_rebound_percentage       |numeric   |
+#'    |rebound_percentage                 |numeric   |
+#'    |estimated_team_turnover_percentage |numeric   |
+#'    |turnover_ratio                     |numeric   |
+#'    |effective_field_goal_percentage    |numeric   |
+#'    |true_shooting_percentage           |numeric   |
+#'    |usage_percentage                   |numeric   |
+#'    |estimated_usage_percentage         |numeric   |
+#'    |estimated_pace                     |numeric   |
+#'    |pace                               |numeric   |
+#'    |pace_per40                         |numeric   |
+#'    |possessions                        |numeric   |
+#'    |pie                                |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -652,6 +819,131 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames:  home_team_player_misc, away_team_player_misc,
 #' home_team_totals_misc, away_team_totals_misc
+#'
+#'    **home_team_player_misc**
+#'
+#'
+#'    |col_name                 |types     |
+#'    |:------------------------|:---------|
+#'    |game_id                  |character |
+#'    |away_team_id             |integer   |
+#'    |home_team_id             |integer   |
+#'    |team_id                  |integer   |
+#'    |team_name                |character |
+#'    |team_city                |character |
+#'    |team_tricode             |character |
+#'    |team_slug                |character |
+#'    |person_id                |integer   |
+#'    |first_name               |character |
+#'    |family_name              |character |
+#'    |name_i                   |character |
+#'    |player_slug              |character |
+#'    |position                 |character |
+#'    |comment                  |character |
+#'    |jersey_num               |character |
+#'    |minutes                  |character |
+#'    |points_off_turnovers     |integer   |
+#'    |points_second_chance     |integer   |
+#'    |points_fast_break        |integer   |
+#'    |points_paint             |integer   |
+#'    |opp_points_off_turnovers |integer   |
+#'    |opp_points_second_chance |integer   |
+#'    |opp_points_fast_break    |integer   |
+#'    |opp_points_paint         |integer   |
+#'    |blocks                   |integer   |
+#'    |blocks_against           |integer   |
+#'    |fouls_personal           |integer   |
+#'    |fouls_drawn              |integer   |
+#'
+#'    **away_team_player_misc**
+#'
+#'
+#'    |col_name                 |types     |
+#'    |:------------------------|:---------|
+#'    |game_id                  |character |
+#'    |away_team_id             |integer   |
+#'    |home_team_id             |integer   |
+#'    |team_id                  |integer   |
+#'    |team_name                |character |
+#'    |team_city                |character |
+#'    |team_tricode             |character |
+#'    |team_slug                |character |
+#'    |person_id                |integer   |
+#'    |first_name               |character |
+#'    |family_name              |character |
+#'    |name_i                   |character |
+#'    |player_slug              |character |
+#'    |position                 |character |
+#'    |comment                  |character |
+#'    |jersey_num               |character |
+#'    |minutes                  |character |
+#'    |points_off_turnovers     |integer   |
+#'    |points_second_chance     |integer   |
+#'    |points_fast_break        |integer   |
+#'    |points_paint             |integer   |
+#'    |opp_points_off_turnovers |integer   |
+#'    |opp_points_second_chance |integer   |
+#'    |opp_points_fast_break    |integer   |
+#'    |opp_points_paint         |integer   |
+#'    |blocks                   |integer   |
+#'    |blocks_against           |integer   |
+#'    |fouls_personal           |integer   |
+#'    |fouls_drawn              |integer   |
+#'
+#'    **home_team_totals_misc**
+#'
+#'
+#'    |col_name                 |types     |
+#'    |:------------------------|:---------|
+#'    |game_id                  |character |
+#'    |away_team_id             |integer   |
+#'    |home_team_id             |integer   |
+#'    |team_id                  |integer   |
+#'    |team_name                |character |
+#'    |team_city                |character |
+#'    |team_tricode             |character |
+#'    |team_slug                |character |
+#'    |minutes                  |character |
+#'    |points_off_turnovers     |integer   |
+#'    |points_second_chance     |integer   |
+#'    |points_fast_break        |integer   |
+#'    |points_paint             |integer   |
+#'    |opp_points_off_turnovers |integer   |
+#'    |opp_points_second_chance |integer   |
+#'    |opp_points_fast_break    |integer   |
+#'    |opp_points_paint         |integer   |
+#'    |blocks                   |integer   |
+#'    |blocks_against           |integer   |
+#'    |fouls_personal           |integer   |
+#'    |fouls_drawn              |integer   |
+#'
+#'    **away_team_totals_misc**
+#'
+#'
+#'    |col_name                 |types     |
+#'    |:------------------------|:---------|
+#'    |game_id                  |character |
+#'    |away_team_id             |integer   |
+#'    |home_team_id             |integer   |
+#'    |team_id                  |integer   |
+#'    |team_name                |character |
+#'    |team_city                |character |
+#'    |team_tricode             |character |
+#'    |team_slug                |character |
+#'    |minutes                  |character |
+#'    |points_off_turnovers     |integer   |
+#'    |points_second_chance     |integer   |
+#'    |points_fast_break        |integer   |
+#'    |points_paint             |integer   |
+#'    |opp_points_off_turnovers |integer   |
+#'    |opp_points_second_chance |integer   |
+#'    |opp_points_fast_break    |integer   |
+#'    |opp_points_paint         |integer   |
+#'    |blocks                   |integer   |
+#'    |blocks_against           |integer   |
+#'    |fouls_personal           |integer   |
+#'    |fouls_drawn              |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -803,6 +1095,143 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: home_team_player_scoring, away_team_player_scoring,
 #' home_team_totals_scoring, away_team_totals_scoring
+#'
+#'    **home_team_player_scoring**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |percentage_field_goals_attempted2pt |numeric   |
+#'    |percentage_field_goals_attempted3pt |numeric   |
+#'    |percentage_points2pt                |numeric   |
+#'    |percentage_points_midrange2pt       |numeric   |
+#'    |percentage_points3pt                |numeric   |
+#'    |percentage_points_fast_break        |numeric   |
+#'    |percentage_points_free_throw        |numeric   |
+#'    |percentage_points_off_turnovers     |numeric   |
+#'    |percentage_points_paint             |numeric   |
+#'    |percentage_assisted2pt              |numeric   |
+#'    |percentage_unassisted2pt            |numeric   |
+#'    |percentage_assisted3pt              |numeric   |
+#'    |percentage_unassisted3pt            |numeric   |
+#'    |percentage_assisted_fgm             |numeric   |
+#'    |percentage_unassisted_fgm           |numeric   |
+#'
+#'    **away_team_player_scoring**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |percentage_field_goals_attempted2pt |numeric   |
+#'    |percentage_field_goals_attempted3pt |numeric   |
+#'    |percentage_points2pt                |numeric   |
+#'    |percentage_points_midrange2pt       |numeric   |
+#'    |percentage_points3pt                |numeric   |
+#'    |percentage_points_fast_break        |numeric   |
+#'    |percentage_points_free_throw        |numeric   |
+#'    |percentage_points_off_turnovers     |numeric   |
+#'    |percentage_points_paint             |numeric   |
+#'    |percentage_assisted2pt              |numeric   |
+#'    |percentage_unassisted2pt            |numeric   |
+#'    |percentage_assisted3pt              |numeric   |
+#'    |percentage_unassisted3pt            |numeric   |
+#'    |percentage_assisted_fgm             |numeric   |
+#'    |percentage_unassisted_fgm           |numeric   |
+#'
+#'    **home_team_totals_scoring**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |percentage_field_goals_attempted2pt |numeric   |
+#'    |percentage_field_goals_attempted3pt |numeric   |
+#'    |percentage_points2pt                |numeric   |
+#'    |percentage_points_midrange2pt       |numeric   |
+#'    |percentage_points3pt                |numeric   |
+#'    |percentage_points_fast_break        |numeric   |
+#'    |percentage_points_free_throw        |numeric   |
+#'    |percentage_points_off_turnovers     |numeric   |
+#'    |percentage_points_paint             |numeric   |
+#'    |percentage_assisted2pt              |numeric   |
+#'    |percentage_unassisted2pt            |numeric   |
+#'    |percentage_assisted3pt              |numeric   |
+#'    |percentage_unassisted3pt            |numeric   |
+#'    |percentage_assisted_fgm             |numeric   |
+#'    |percentage_unassisted_fgm           |numeric   |
+#'
+#'    **away_team_totals_scoring**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |percentage_field_goals_attempted2pt |numeric   |
+#'    |percentage_field_goals_attempted3pt |numeric   |
+#'    |percentage_points2pt                |numeric   |
+#'    |percentage_points_midrange2pt       |numeric   |
+#'    |percentage_points3pt                |numeric   |
+#'    |percentage_points_fast_break        |numeric   |
+#'    |percentage_points_free_throw        |numeric   |
+#'    |percentage_points_off_turnovers     |numeric   |
+#'    |percentage_points_paint             |numeric   |
+#'    |percentage_assisted2pt              |numeric   |
+#'    |percentage_unassisted2pt            |numeric   |
+#'    |percentage_assisted3pt              |numeric   |
+#'    |percentage_unassisted3pt            |numeric   |
+#'    |percentage_assisted_fgm             |numeric   |
+#'    |percentage_unassisted_fgm           |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -954,6 +1383,155 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames:  home_team_player_usage, away_team_player_usage,
 #' home_team_totals_usage, away_team_totals_usage
+#'
+#'    **home_team_player_usage**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |usage_percentage                    |numeric   |
+#'    |percentage_field_goals_made         |numeric   |
+#'    |percentage_field_goals_attempted    |numeric   |
+#'    |percentage_three_pointers_made      |numeric   |
+#'    |percentage_three_pointers_attempted |numeric   |
+#'    |percentage_free_throws_made         |numeric   |
+#'    |percentage_free_throws_attempted    |numeric   |
+#'    |percentage_rebounds_offensive       |numeric   |
+#'    |percentage_rebounds_defensive       |numeric   |
+#'    |percentage_rebounds_total           |numeric   |
+#'    |percentage_assists                  |numeric   |
+#'    |percentage_turnovers                |numeric   |
+#'    |percentage_steals                   |numeric   |
+#'    |percentage_blocks                   |numeric   |
+#'    |percentage_blocks_allowed           |numeric   |
+#'    |percentage_personal_fouls           |numeric   |
+#'    |percentage_personal_fouls_drawn     |numeric   |
+#'    |percentage_points                   |numeric   |
+#'
+#'    **away_team_player_usage**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |usage_percentage                    |numeric   |
+#'    |percentage_field_goals_made         |numeric   |
+#'    |percentage_field_goals_attempted    |numeric   |
+#'    |percentage_three_pointers_made      |numeric   |
+#'    |percentage_three_pointers_attempted |numeric   |
+#'    |percentage_free_throws_made         |numeric   |
+#'    |percentage_free_throws_attempted    |numeric   |
+#'    |percentage_rebounds_offensive       |numeric   |
+#'    |percentage_rebounds_defensive       |numeric   |
+#'    |percentage_rebounds_total           |numeric   |
+#'    |percentage_assists                  |numeric   |
+#'    |percentage_turnovers                |numeric   |
+#'    |percentage_steals                   |numeric   |
+#'    |percentage_blocks                   |numeric   |
+#'    |percentage_blocks_allowed           |numeric   |
+#'    |percentage_personal_fouls           |numeric   |
+#'    |percentage_personal_fouls_drawn     |numeric   |
+#'    |percentage_points                   |numeric   |
+#'
+#'    **home_team_totals_usage**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |usage_percentage                    |numeric   |
+#'    |percentage_field_goals_made         |numeric   |
+#'    |percentage_field_goals_attempted    |numeric   |
+#'    |percentage_three_pointers_made      |numeric   |
+#'    |percentage_three_pointers_attempted |numeric   |
+#'    |percentage_free_throws_made         |numeric   |
+#'    |percentage_free_throws_attempted    |numeric   |
+#'    |percentage_rebounds_offensive       |numeric   |
+#'    |percentage_rebounds_defensive       |numeric   |
+#'    |percentage_rebounds_total           |numeric   |
+#'    |percentage_assists                  |numeric   |
+#'    |percentage_turnovers                |numeric   |
+#'    |percentage_steals                   |numeric   |
+#'    |percentage_blocks                   |numeric   |
+#'    |percentage_blocks_allowed           |numeric   |
+#'    |percentage_personal_fouls           |numeric   |
+#'    |percentage_personal_fouls_drawn     |numeric   |
+#'    |percentage_points                   |numeric   |
+#'
+#'    **away_team_totals_usage**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |usage_percentage                    |numeric   |
+#'    |percentage_field_goals_made         |numeric   |
+#'    |percentage_field_goals_attempted    |numeric   |
+#'    |percentage_three_pointers_made      |numeric   |
+#'    |percentage_three_pointers_attempted |numeric   |
+#'    |percentage_free_throws_made         |numeric   |
+#'    |percentage_free_throws_attempted    |numeric   |
+#'    |percentage_rebounds_offensive       |numeric   |
+#'    |percentage_rebounds_defensive       |numeric   |
+#'    |percentage_rebounds_total           |numeric   |
+#'    |percentage_assists                  |numeric   |
+#'    |percentage_turnovers                |numeric   |
+#'    |percentage_steals                   |numeric   |
+#'    |percentage_blocks                   |numeric   |
+#'    |percentage_blocks_allowed           |numeric   |
+#'    |percentage_personal_fouls           |numeric   |
+#'    |percentage_personal_fouls_drawn     |numeric   |
+#'    |percentage_points                   |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1106,6 +1684,115 @@ NULL
 #' @return A list of data frames:  home_team_player_four_factors,
 #' away_team_player_four_factors, home_team_totals_four_factors,
 #' away_team_totals_four_factors
+#'
+#'    **home_team_player_four_factors**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |effective_field_goal_percentage     |numeric   |
+#'    |free_throw_attempt_rate             |numeric   |
+#'    |team_turnover_percentage            |numeric   |
+#'    |offensive_rebound_percentage        |numeric   |
+#'    |opp_effective_field_goal_percentage |numeric   |
+#'    |opp_free_throw_attempt_rate         |numeric   |
+#'    |opp_team_turnover_percentage        |numeric   |
+#'    |opp_offensive_rebound_percentage    |numeric   |
+#'
+#'    **away_team_player_four_factors**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |person_id                           |integer   |
+#'    |first_name                          |character |
+#'    |family_name                         |character |
+#'    |name_i                              |character |
+#'    |player_slug                         |character |
+#'    |position                            |character |
+#'    |comment                             |character |
+#'    |jersey_num                          |character |
+#'    |minutes                             |character |
+#'    |effective_field_goal_percentage     |numeric   |
+#'    |free_throw_attempt_rate             |numeric   |
+#'    |team_turnover_percentage            |numeric   |
+#'    |offensive_rebound_percentage        |numeric   |
+#'    |opp_effective_field_goal_percentage |numeric   |
+#'    |opp_free_throw_attempt_rate         |numeric   |
+#'    |opp_team_turnover_percentage        |numeric   |
+#'    |opp_offensive_rebound_percentage    |numeric   |
+#'
+#'    **home_team_totals_four_factors**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |effective_field_goal_percentage     |numeric   |
+#'    |free_throw_attempt_rate             |numeric   |
+#'    |team_turnover_percentage            |numeric   |
+#'    |offensive_rebound_percentage        |numeric   |
+#'    |opp_effective_field_goal_percentage |numeric   |
+#'    |opp_free_throw_attempt_rate         |numeric   |
+#'    |opp_team_turnover_percentage        |numeric   |
+#'    |opp_offensive_rebound_percentage    |numeric   |
+#'
+#'    **away_team_totals_four_factors**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |game_id                             |character |
+#'    |away_team_id                        |integer   |
+#'    |home_team_id                        |integer   |
+#'    |team_id                             |integer   |
+#'    |team_name                           |character |
+#'    |team_city                           |character |
+#'    |team_tricode                        |character |
+#'    |team_slug                           |character |
+#'    |minutes                             |character |
+#'    |effective_field_goal_percentage     |numeric   |
+#'    |free_throw_attempt_rate             |numeric   |
+#'    |team_turnover_percentage            |numeric   |
+#'    |offensive_rebound_percentage        |numeric   |
+#'    |opp_effective_field_goal_percentage |numeric   |
+#'    |opp_free_throw_attempt_rate         |numeric   |
+#'    |opp_team_turnover_percentage        |numeric   |
+#'    |opp_offensive_rebound_percentage    |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1257,6 +1944,161 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: home_team_player_player_track, away_team_player_player_track,
 #' home_team_totals_player_track, away_team_totals_player_track
+#'
+#'    **home_team_player_player_track**
+#'
+#'
+#'    |col_name                              |types     |
+#'    |:-------------------------------------|:---------|
+#'    |game_id                               |character |
+#'    |away_team_id                          |integer   |
+#'    |home_team_id                          |integer   |
+#'    |team_id                               |integer   |
+#'    |team_name                             |character |
+#'    |team_city                             |character |
+#'    |team_tricode                          |character |
+#'    |team_slug                             |character |
+#'    |person_id                             |integer   |
+#'    |first_name                            |character |
+#'    |family_name                           |character |
+#'    |name_i                                |character |
+#'    |player_slug                           |character |
+#'    |position                              |character |
+#'    |comment                               |character |
+#'    |jersey_num                            |character |
+#'    |minutes                               |character |
+#'    |speed                                 |numeric   |
+#'    |distance                              |numeric   |
+#'    |rebound_chances_offensive             |integer   |
+#'    |rebound_chances_defensive             |integer   |
+#'    |rebound_chances_total                 |integer   |
+#'    |touches                               |integer   |
+#'    |secondary_assists                     |integer   |
+#'    |free_throw_assists                    |integer   |
+#'    |passes                                |integer   |
+#'    |assists                               |integer   |
+#'    |contested_field_goals_made            |integer   |
+#'    |contested_field_goals_attempted       |integer   |
+#'    |contested_field_goal_percentage       |numeric   |
+#'    |uncontested_field_goals_made          |integer   |
+#'    |uncontested_field_goals_attempted     |integer   |
+#'    |uncontested_field_goals_percentage    |numeric   |
+#'    |field_goal_percentage                 |numeric   |
+#'    |defended_at_rim_field_goals_made      |integer   |
+#'    |defended_at_rim_field_goals_attempted |integer   |
+#'    |defended_at_rim_field_goal_percentage |numeric   |
+#'
+#'    **away_team_player_player_track**
+#'
+#'
+#'    |col_name                              |types     |
+#'    |:-------------------------------------|:---------|
+#'    |game_id                               |character |
+#'    |away_team_id                          |integer   |
+#'    |home_team_id                          |integer   |
+#'    |team_id                               |integer   |
+#'    |team_name                             |character |
+#'    |team_city                             |character |
+#'    |team_tricode                          |character |
+#'    |team_slug                             |character |
+#'    |person_id                             |integer   |
+#'    |first_name                            |character |
+#'    |family_name                           |character |
+#'    |name_i                                |character |
+#'    |player_slug                           |character |
+#'    |position                              |character |
+#'    |comment                               |character |
+#'    |jersey_num                            |character |
+#'    |minutes                               |character |
+#'    |speed                                 |numeric   |
+#'    |distance                              |numeric   |
+#'    |rebound_chances_offensive             |integer   |
+#'    |rebound_chances_defensive             |integer   |
+#'    |rebound_chances_total                 |integer   |
+#'    |touches                               |integer   |
+#'    |secondary_assists                     |integer   |
+#'    |free_throw_assists                    |integer   |
+#'    |passes                                |integer   |
+#'    |assists                               |integer   |
+#'    |contested_field_goals_made            |integer   |
+#'    |contested_field_goals_attempted       |integer   |
+#'    |contested_field_goal_percentage       |numeric   |
+#'    |uncontested_field_goals_made          |integer   |
+#'    |uncontested_field_goals_attempted     |integer   |
+#'    |uncontested_field_goals_percentage    |numeric   |
+#'    |field_goal_percentage                 |numeric   |
+#'    |defended_at_rim_field_goals_made      |integer   |
+#'    |defended_at_rim_field_goals_attempted |integer   |
+#'    |defended_at_rim_field_goal_percentage |numeric   |
+#'
+#'    **home_team_totals_player_track**
+#'
+#'
+#'    |col_name                              |types     |
+#'    |:-------------------------------------|:---------|
+#'    |game_id                               |character |
+#'    |away_team_id                          |integer   |
+#'    |home_team_id                          |integer   |
+#'    |team_id                               |integer   |
+#'    |team_name                             |character |
+#'    |team_city                             |character |
+#'    |team_tricode                          |character |
+#'    |team_slug                             |character |
+#'    |minutes                               |character |
+#'    |distance                              |numeric   |
+#'    |rebound_chances_offensive             |integer   |
+#'    |rebound_chances_defensive             |integer   |
+#'    |rebound_chances_total                 |integer   |
+#'    |touches                               |integer   |
+#'    |secondary_assists                     |integer   |
+#'    |free_throw_assists                    |integer   |
+#'    |passes                                |integer   |
+#'    |assists                               |integer   |
+#'    |contested_field_goals_made            |integer   |
+#'    |contested_field_goals_attempted       |integer   |
+#'    |contested_field_goal_percentage       |numeric   |
+#'    |uncontested_field_goals_made          |integer   |
+#'    |uncontested_field_goals_attempted     |integer   |
+#'    |uncontested_field_goals_percentage    |numeric   |
+#'    |field_goal_percentage                 |numeric   |
+#'    |defended_at_rim_field_goals_made      |integer   |
+#'    |defended_at_rim_field_goals_attempted |integer   |
+#'    |defended_at_rim_field_goal_percentage |numeric   |
+#'
+#'    **away_team_totals_player_track**
+#'
+#'
+#'    |col_name                              |types     |
+#'    |:-------------------------------------|:---------|
+#'    |game_id                               |character |
+#'    |away_team_id                          |integer   |
+#'    |home_team_id                          |integer   |
+#'    |team_id                               |integer   |
+#'    |team_name                             |character |
+#'    |team_city                             |character |
+#'    |team_tricode                          |character |
+#'    |team_slug                             |character |
+#'    |minutes                               |character |
+#'    |distance                              |numeric   |
+#'    |rebound_chances_offensive             |integer   |
+#'    |rebound_chances_defensive             |integer   |
+#'    |rebound_chances_total                 |integer   |
+#'    |touches                               |integer   |
+#'    |secondary_assists                     |integer   |
+#'    |free_throw_assists                    |integer   |
+#'    |passes                                |integer   |
+#'    |assists                               |integer   |
+#'    |contested_field_goals_made            |integer   |
+#'    |contested_field_goals_attempted       |integer   |
+#'    |contested_field_goal_percentage       |numeric   |
+#'    |uncontested_field_goals_made          |integer   |
+#'    |uncontested_field_goals_attempted     |integer   |
+#'    |uncontested_field_goals_percentage    |numeric   |
+#'    |field_goal_percentage                 |numeric   |
+#'    |defended_at_rim_field_goals_made      |integer   |
+#'    |defended_at_rim_field_goals_attempted |integer   |
+#'    |defended_at_rim_field_goal_percentage |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1407,6 +2249,115 @@ NULL
 #' @param range_type range_type
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: home_team_player_matchups, away_team_player_matchups
+#'
+#'    **home_team_player_matchups**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |character |
+#'    |away_team_id                      |integer   |
+#'    |home_team_id                      |integer   |
+#'    |team_id                           |integer   |
+#'    |team_name                         |character |
+#'    |team_city                         |character |
+#'    |team_tricode                      |character |
+#'    |team_slug                         |character |
+#'    |person_id                         |integer   |
+#'    |first_name                        |character |
+#'    |family_name                       |character |
+#'    |name_i                            |character |
+#'    |player_slug                       |character |
+#'    |position                          |character |
+#'    |comment                           |character |
+#'    |jersey_num                        |character |
+#'    |matchups_person_id                |integer   |
+#'    |matchups_first_name               |character |
+#'    |matchups_family_name              |character |
+#'    |matchups_name_i                   |character |
+#'    |matchups_player_slug              |character |
+#'    |matchups_jersey_num               |character |
+#'    |matchup_minutes                   |character |
+#'    |matchup_minutes_sort              |numeric   |
+#'    |partial_possessions               |numeric   |
+#'    |percentage_defender_total_time    |numeric   |
+#'    |percentage_offensive_total_time   |numeric   |
+#'    |percentage_total_time_both_on     |numeric   |
+#'    |switches_on                       |integer   |
+#'    |player_points                     |integer   |
+#'    |team_points                       |integer   |
+#'    |matchup_assists                   |integer   |
+#'    |matchup_potential_assists         |integer   |
+#'    |matchup_turnovers                 |integer   |
+#'    |matchup_blocks                    |integer   |
+#'    |matchup_field_goals_made          |integer   |
+#'    |matchup_field_goals_attempted     |integer   |
+#'    |matchup_field_goals_percentage    |numeric   |
+#'    |matchup_three_pointers_made       |integer   |
+#'    |matchup_three_pointers_attempted  |integer   |
+#'    |matchup_three_pointers_percentage |numeric   |
+#'    |help_blocks                       |integer   |
+#'    |help_field_goals_made             |integer   |
+#'    |help_field_goals_attempted        |integer   |
+#'    |help_field_goals_percentage       |numeric   |
+#'    |matchup_free_throws_made          |integer   |
+#'    |matchup_free_throws_attempted     |integer   |
+#'    |shooting_fouls                    |integer   |
+#'
+#'    **away_team_player_matchups**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |character |
+#'    |away_team_id                      |integer   |
+#'    |home_team_id                      |integer   |
+#'    |team_id                           |integer   |
+#'    |team_name                         |character |
+#'    |team_city                         |character |
+#'    |team_tricode                      |character |
+#'    |team_slug                         |character |
+#'    |person_id                         |integer   |
+#'    |first_name                        |character |
+#'    |family_name                       |character |
+#'    |name_i                            |character |
+#'    |player_slug                       |character |
+#'    |position                          |character |
+#'    |comment                           |character |
+#'    |jersey_num                        |character |
+#'    |matchups_person_id                |integer   |
+#'    |matchups_first_name               |character |
+#'    |matchups_family_name              |character |
+#'    |matchups_name_i                   |character |
+#'    |matchups_player_slug              |character |
+#'    |matchups_jersey_num               |character |
+#'    |matchup_minutes                   |character |
+#'    |matchup_minutes_sort              |numeric   |
+#'    |partial_possessions               |numeric   |
+#'    |percentage_defender_total_time    |numeric   |
+#'    |percentage_offensive_total_time   |numeric   |
+#'    |percentage_total_time_both_on     |numeric   |
+#'    |switches_on                       |integer   |
+#'    |player_points                     |integer   |
+#'    |team_points                       |integer   |
+#'    |matchup_assists                   |integer   |
+#'    |matchup_potential_assists         |integer   |
+#'    |matchup_turnovers                 |integer   |
+#'    |matchup_blocks                    |integer   |
+#'    |matchup_field_goals_made          |integer   |
+#'    |matchup_field_goals_attempted     |integer   |
+#'    |matchup_field_goals_percentage    |numeric   |
+#'    |matchup_three_pointers_made       |integer   |
+#'    |matchup_three_pointers_attempted  |integer   |
+#'    |matchup_three_pointers_percentage |numeric   |
+#'    |help_blocks                       |integer   |
+#'    |help_field_goals_made             |integer   |
+#'    |help_field_goals_attempted        |integer   |
+#'    |help_field_goals_percentage       |numeric   |
+#'    |matchup_free_throws_made          |integer   |
+#'    |matchup_free_throws_attempted     |integer   |
+#'    |shooting_fouls                    |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1531,6 +2482,147 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: home_team_player_hustle, away_team_player_hustle,
 #'  home_team_hustle_totals, away_team_hustle_totals
+#'
+#'    **home_team_player_hustle**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |person_id                       |integer   |
+#'    |first_name                      |character |
+#'    |family_name                     |character |
+#'    |name_i                          |character |
+#'    |player_slug                     |character |
+#'    |position                        |character |
+#'    |comment                         |character |
+#'    |jersey_num                      |character |
+#'    |minutes                         |character |
+#'    |points                          |integer   |
+#'    |contested_shots                 |integer   |
+#'    |contested_shots2pt              |integer   |
+#'    |contested_shots3pt              |integer   |
+#'    |deflections                     |integer   |
+#'    |charges_drawn                   |integer   |
+#'    |screen_assists                  |integer   |
+#'    |screen_assist_points            |integer   |
+#'    |loose_balls_recovered_offensive |integer   |
+#'    |loose_balls_recovered_defensive |integer   |
+#'    |loose_balls_recovered_total     |integer   |
+#'    |offensive_box_outs              |integer   |
+#'    |defensive_box_outs              |integer   |
+#'    |box_out_player_team_rebounds    |integer   |
+#'    |box_out_player_rebounds         |integer   |
+#'    |box_outs                        |integer   |
+#'
+#'    **away_team_player_hustle**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |person_id                       |integer   |
+#'    |first_name                      |character |
+#'    |family_name                     |character |
+#'    |name_i                          |character |
+#'    |player_slug                     |character |
+#'    |position                        |character |
+#'    |comment                         |character |
+#'    |jersey_num                      |character |
+#'    |minutes                         |character |
+#'    |points                          |integer   |
+#'    |contested_shots                 |integer   |
+#'    |contested_shots2pt              |integer   |
+#'    |contested_shots3pt              |integer   |
+#'    |deflections                     |integer   |
+#'    |charges_drawn                   |integer   |
+#'    |screen_assists                  |integer   |
+#'    |screen_assist_points            |integer   |
+#'    |loose_balls_recovered_offensive |integer   |
+#'    |loose_balls_recovered_defensive |integer   |
+#'    |loose_balls_recovered_total     |integer   |
+#'    |offensive_box_outs              |integer   |
+#'    |defensive_box_outs              |integer   |
+#'    |box_out_player_team_rebounds    |integer   |
+#'    |box_out_player_rebounds         |integer   |
+#'    |box_outs                        |integer   |
+#'
+#'    **home_team_totals_hustle**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |minutes                         |character |
+#'    |points                          |integer   |
+#'    |contested_shots                 |integer   |
+#'    |contested_shots2pt              |integer   |
+#'    |contested_shots3pt              |integer   |
+#'    |deflections                     |integer   |
+#'    |charges_drawn                   |integer   |
+#'    |screen_assists                  |integer   |
+#'    |screen_assist_points            |integer   |
+#'    |loose_balls_recovered_offensive |integer   |
+#'    |loose_balls_recovered_defensive |integer   |
+#'    |loose_balls_recovered_total     |integer   |
+#'    |offensive_box_outs              |integer   |
+#'    |defensive_box_outs              |integer   |
+#'    |box_out_player_team_rebounds    |integer   |
+#'    |box_out_player_rebounds         |integer   |
+#'    |box_outs                        |integer   |
+#'
+#'    **away_team_totals_hustle**
+#'
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |game_id                         |character |
+#'    |away_team_id                    |integer   |
+#'    |home_team_id                    |integer   |
+#'    |team_id                         |integer   |
+#'    |team_name                       |character |
+#'    |team_city                       |character |
+#'    |team_tricode                    |character |
+#'    |team_slug                       |character |
+#'    |minutes                         |character |
+#'    |points                          |integer   |
+#'    |contested_shots                 |integer   |
+#'    |contested_shots2pt              |integer   |
+#'    |contested_shots3pt              |integer   |
+#'    |deflections                     |integer   |
+#'    |charges_drawn                   |integer   |
+#'    |screen_assists                  |integer   |
+#'    |screen_assist_points            |integer   |
+#'    |loose_balls_recovered_offensive |integer   |
+#'    |loose_balls_recovered_defensive |integer   |
+#'    |loose_balls_recovered_total     |integer   |
+#'    |offensive_box_outs              |integer   |
+#'    |defensive_box_outs              |integer   |
+#'    |box_out_player_team_rebounds    |integer   |
+#'    |box_out_player_rebounds         |integer   |
+#'    |box_outs                        |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1670,6 +2762,109 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A list of data frames: home_team_player_defensive, away_team_player_defensive,
 #'  home_team_totals_defensive, away_team_totals_defensive
+#'
+#'    **home_team_player_defensive**
+#'
+#'
+#'    |col_name                         |types     |
+#'    |:--------------------------------|:---------|
+#'    |game_id                          |character |
+#'    |away_team_id                     |integer   |
+#'    |home_team_id                     |integer   |
+#'    |team_id                          |integer   |
+#'    |team_name                        |character |
+#'    |team_city                        |character |
+#'    |team_tricode                     |character |
+#'    |team_slug                        |character |
+#'    |person_id                        |integer   |
+#'    |first_name                       |character |
+#'    |family_name                      |character |
+#'    |name_i                           |character |
+#'    |player_slug                      |character |
+#'    |position                         |character |
+#'    |comment                          |character |
+#'    |jersey_num                       |character |
+#'    |matchup_minutes                  |character |
+#'    |partial_possessions              |numeric   |
+#'    |switches_on                      |integer   |
+#'    |player_points                    |integer   |
+#'    |defensive_rebounds               |integer   |
+#'    |matchup_assists                  |integer   |
+#'    |matchup_turnovers                |integer   |
+#'    |steals                           |integer   |
+#'    |blocks                           |integer   |
+#'    |matchup_field_goals_made         |integer   |
+#'    |matchup_field_goals_attempted    |integer   |
+#'    |matchup_field_goal_percentage    |numeric   |
+#'    |matchup_three_pointers_made      |integer   |
+#'    |matchup_three_pointers_attempted |integer   |
+#'    |matchup_three_pointer_percentage |numeric   |
+#'
+#'    **away_team_player_defensive**
+#'
+#'
+#'    |col_name                         |types     |
+#'    |:--------------------------------|:---------|
+#'    |game_id                          |character |
+#'    |away_team_id                     |integer   |
+#'    |home_team_id                     |integer   |
+#'    |team_id                          |integer   |
+#'    |team_name                        |character |
+#'    |team_city                        |character |
+#'    |team_tricode                     |character |
+#'    |team_slug                        |character |
+#'    |person_id                        |integer   |
+#'    |first_name                       |character |
+#'    |family_name                      |character |
+#'    |name_i                           |character |
+#'    |player_slug                      |character |
+#'    |position                         |character |
+#'    |comment                          |character |
+#'    |jersey_num                       |character |
+#'    |matchup_minutes                  |character |
+#'    |partial_possessions              |numeric   |
+#'    |switches_on                      |integer   |
+#'    |player_points                    |integer   |
+#'    |defensive_rebounds               |integer   |
+#'    |matchup_assists                  |integer   |
+#'    |matchup_turnovers                |integer   |
+#'    |steals                           |integer   |
+#'    |blocks                           |integer   |
+#'    |matchup_field_goals_made         |integer   |
+#'    |matchup_field_goals_attempted    |integer   |
+#'    |matchup_field_goal_percentage    |numeric   |
+#'    |matchup_three_pointers_made      |integer   |
+#'    |matchup_three_pointers_attempted |integer   |
+#'    |matchup_three_pointer_percentage |numeric   |
+#'
+#'    **home_team_totals_defensive**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |game_id      |character |
+#'    |away_team_id |integer   |
+#'    |home_team_id |integer   |
+#'    |team_id      |integer   |
+#'    |team_name    |character |
+#'    |team_city    |character |
+#'    |team_tricode |character |
+#'    |team_slug    |character |
+#'
+#'    **away_team_totals_defensive**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |game_id      |character |
+#'    |away_team_id |integer   |
+#'    |home_team_id |integer   |
+#'    |team_id      |integer   |
+#'    |team_name    |character |
+#'    |team_city    |character |
+#'    |team_tricode |character |
+#'    |team_slug    |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
