@@ -16,7 +16,50 @@ nba_pbps(game_ids = NULL, version = "v2", nest_data = FALSE, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame: PlayByPlay
+Returns a data frame: PlayByPlay\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   event_num \tab character \cr
+   event_type \tab character \cr
+   event_action_type \tab character \cr
+   period \tab numeric \cr
+   minute_game \tab numeric \cr
+   time_remaining \tab numeric \cr
+   wc_time_string \tab character \cr
+   time_quarter \tab character \cr
+   minute_remaining_quarter \tab numeric \cr
+   seconds_remaining_quarter \tab numeric \cr
+   home_description \tab character \cr
+   neutral_description \tab character \cr
+   visitor_description \tab character \cr
+   score \tab character \cr
+   away_score \tab numeric \cr
+   home_score \tab numeric \cr
+   score_margin \tab character \cr
+   person1type \tab character \cr
+   player1_id \tab character \cr
+   player1_name \tab character \cr
+   player1_team_id \tab character \cr
+   player1_team_city \tab character \cr
+   player1_team_nickname \tab character \cr
+   player1_team_abbreviation \tab character \cr
+   person2type \tab character \cr
+   player2_id \tab character \cr
+   player2_name \tab character \cr
+   player2_team_id \tab character \cr
+   player2_team_city \tab character \cr
+   player2_team_nickname \tab character \cr
+   player2_team_abbreviation \tab character \cr
+   person3type \tab character \cr
+   player3_id \tab character \cr
+   player3_name \tab character \cr
+   player3_team_id \tab character \cr
+   player3_team_city \tab character \cr
+   player3_team_nickname \tab character \cr
+   player3_team_abbreviation \tab character \cr
+   video_available_flag \tab character \cr
+   team_leading \tab character \cr
+}
 }
 \description{
 \strong{Get NBA Stats API play-by-play (Multiple Games)}

@@ -22,7 +22,52 @@ the season data into a database (used by \code{update_nba_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab character \cr
+   team_uid \tab character \cr
+   team_slug \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   team_logo \tab character \cr
+   field_goals_made_field_goals_attempted \tab character \cr
+   field_goal_pct \tab character \cr
+   three_point_field_goals_made_three_point_field_goals_attempted \tab character \cr
+   three_point_field_goal_pct \tab character \cr
+   free_throws_made_free_throws_attempted \tab character \cr
+   free_throw_pct \tab character \cr
+   total_rebounds \tab character \cr
+   offensive_rebounds \tab character \cr
+   defensive_rebounds \tab character \cr
+   assists \tab character \cr
+   steals \tab character \cr
+   blocks \tab character \cr
+   turnovers \tab character \cr
+   team_turnovers \tab character \cr
+   total_turnovers \tab character \cr
+   technical_fouls \tab character \cr
+   total_technical_fouls \tab character \cr
+   flagrant_fouls \tab character \cr
+   turnover_points \tab character \cr
+   fast_break_points \tab character \cr
+   points_in_paint \tab character \cr
+   fouls \tab character \cr
+   largest_lead \tab character \cr
+   home_away \tab character \cr
+   opponent_id \tab integer \cr
+   opponent_name \tab character \cr
+   opponent_mascot \tab character \cr
+   opponent_abbrev \tab character \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory

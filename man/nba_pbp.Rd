@@ -20,8 +20,8 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    col_name \tab types \cr
    game_id \tab character \cr
    event_num \tab character \cr
-   event_msg_type \tab character \cr
-   event_msg_action_type \tab character \cr
+   event_type \tab character \cr
+   event_action_type \tab character \cr
    period \tab numeric \cr
    minute_game \tab numeric \cr
    time_remaining \tab numeric \cr

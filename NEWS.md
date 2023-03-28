@@ -8,6 +8,7 @@
 
 ### **NBA Boxscore V3 (and V3-styled) Endpoints Added**
 
+- ```nba_scoreboardv3()``` function added.
 - ```nba_boxscoretraditionalv3()``` function added.
 - ```nba_boxscoreadvancedv3()``` function added.
 - ```nba_boxscoremiscv3()``` function added.

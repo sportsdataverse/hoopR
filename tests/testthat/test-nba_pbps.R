@@ -7,8 +7,8 @@ test_that("NBA PBPs", {
   cols_x1 <- c(
     "game_id",
     "event_num",
-    "event_msg_type",
-    "event_msg_action_type",
+    "event_type",
+    "event_action_type",
     "period",
     "minute_game",
     "time_remaining",

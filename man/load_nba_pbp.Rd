@@ -22,7 +22,65 @@ the season data into a database (used by \code{update_nba_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   id \tab numeric \cr
+   sequence_number \tab character \cr
+   type_id \tab character \cr
+   type_text \tab character \cr
+   text \tab character \cr
+   away_score \tab integer \cr
+   home_score \tab integer \cr
+   period_number \tab integer \cr
+   period_display_value \tab character \cr
+   clock_display_value \tab character \cr
+   scoring_play \tab logical \cr
+   score_value \tab integer \cr
+   team_id \tab character \cr
+   participants_0_athlete_id \tab character \cr
+   participants_1_athlete_id \tab character \cr
+   participants_2_athlete_id \tab character \cr
+   wallclock \tab character \cr
+   shooting_play \tab logical \cr
+   coordinate_x \tab integer \cr
+   coordinate_y \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   away_team_id \tab integer \cr
+   away_team_name \tab character \cr
+   away_team_mascot \tab character \cr
+   away_team_abbrev \tab character \cr
+   away_team_name_alt \tab character \cr
+   home_team_id \tab integer \cr
+   home_team_name \tab character \cr
+   home_team_mascot \tab character \cr
+   home_team_abbrev \tab character \cr
+   home_team_name_alt \tab character \cr
+   home_team_spread \tab numeric \cr
+   game_spread \tab numeric \cr
+   home_favorite \tab logical \cr
+   game_spread_available \tab logical \cr
+   game_id \tab integer \cr
+   qtr \tab integer \cr
+   time \tab character \cr
+   clock_minutes \tab integer \cr
+   clock_seconds \tab numeric \cr
+   half \tab character \cr
+   game_half \tab character \cr
+   lag_qtr \tab numeric \cr
+   lead_qtr \tab numeric \cr
+   lag_game_half \tab character \cr
+   lead_game_half \tab character \cr
+   start_quarter_seconds_remaining \tab integer \cr
+   start_half_seconds_remaining \tab integer \cr
+   start_game_seconds_remaining \tab integer \cr
+   game_play_number \tab integer \cr
+   end_quarter_seconds_remaining \tab numeric \cr
+   end_half_seconds_remaining \tab numeric \cr
+   end_game_seconds_remaining \tab numeric \cr
+   period \tab integer \cr
+   type_abbreviation \tab logical \cr
+}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory

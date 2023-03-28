@@ -78,7 +78,7 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 \strong{Get NBA Stats API Live play-by-play}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_pbp(game_id = '0022201086')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ x<-nba_live_pbp(game_id = '0022201086')
 }\if{html}{\out{</div>}}
 }
 \seealso{

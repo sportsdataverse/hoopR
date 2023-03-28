@@ -822,7 +822,7 @@ nba_playercareerstats <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 

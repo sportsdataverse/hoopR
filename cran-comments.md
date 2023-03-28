@@ -7,6 +7,7 @@ This is a minor release that adds the following:
 - ```nba_live_pbp()``` function added.
 - ```nba_live_boxscore()``` function added.
 - ```nba_todays_scoreboard()``` function added.
+- ```nba_scoreboardv3()``` function added.
 - ```nba_boxscoretraditionalv3()``` function added.
 - ```nba_boxscoreadvancedv3()``` function added.
 - ```nba_boxscoremiscv3()``` function added.
