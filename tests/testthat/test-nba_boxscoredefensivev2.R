@@ -103,4 +103,6 @@ test_that("NBA Boxscore Defensive V2", {
   expect_equal(sort(colnames(x[[4]])), sort(cols_x4))
   expect_s3_class(x[[4]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

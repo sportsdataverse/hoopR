@@ -289,4 +289,6 @@ test_that("NBA Team vs Player", {
   expect_equal(sort(colnames(x[[9]])), sort(cols_x9))
   expect_s3_class(x[[9]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

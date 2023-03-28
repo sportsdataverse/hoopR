@@ -7,6 +7,9 @@ test_that("NBA Player Dashboard by Year over Year", {
   cols_x1 <- c(
     "GROUP_SET",
     "GROUP_VALUE",
+    "TEAM_ID",
+    "TEAM_ABBREVIATION",
+    "MAX_GAME_DATE",
     "GP",
     "W",
     "L",
@@ -71,9 +74,10 @@ test_that("NBA Player Dashboard by Year over Year", {
 
   cols_x2 <- c(
     "GROUP_SET",
-    "GROUP_VALUE_ORDER",
     "GROUP_VALUE",
-    "GROUP_VALUE_2",
+    "TEAM_ID",
+    "TEAM_ABBREVIATION",
+    "MAX_GAME_DATE",
     "GP",
     "W",
     "L",
@@ -141,5 +145,7 @@ test_that("NBA Player Dashboard by Year over Year", {
   expect_s3_class(x[[1]], 'data.frame')
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
   expect_s3_class(x[[2]], 'data.frame')
+
+  Sys.sleep(3)
 
 })

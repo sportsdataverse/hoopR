@@ -655,4 +655,6 @@ test_that("NBA Team Dashboard by Clutch", {
   expect_equal(sort(colnames(x[[11]])), sort(cols_x11))
   expect_s3_class(x[[11]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

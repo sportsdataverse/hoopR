@@ -372,4 +372,6 @@ test_that("NBA Player Profile V2", {
   expect_equal(sort(colnames(x[[15]])), sort(cols_x15))
   expect_s3_class(x[[15]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

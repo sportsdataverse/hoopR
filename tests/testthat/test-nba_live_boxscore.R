@@ -341,4 +341,7 @@ test_that("NBA Live Boxscore", {
   expect_s3_class(x[[8]], 'data.frame')
   expect_equal(sort(colnames(x[[9]])), sort(cols_x9))
   expect_s3_class(x[[9]], 'data.frame')
+
+  Sys.sleep(3)
+
 })

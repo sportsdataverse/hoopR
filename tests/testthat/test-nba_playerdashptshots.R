@@ -174,4 +174,6 @@ test_that("NBA Player Tracking - Shooting", {
   expect_equal(sort(colnames(x[[7]])), sort(cols_x7))
   expect_s3_class(x[[7]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

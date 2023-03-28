@@ -69,4 +69,6 @@ test_that("NBA Today's Scoreboard", {
   expect_equal(sort(colnames(x)), sort(cols_x1))
   expect_s3_class(x, 'data.frame')
 
+  Sys.sleep(3)
+
 })

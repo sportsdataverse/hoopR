@@ -5,34 +5,28 @@ test_that("NBA Common All Players", {
   x <- nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 
   cols_x1 <- c(
-    "SEASON_ID",
-    "PLAYER_ID",
-    "PLAYER_NAME",
+    "PERSON_ID",
+    "DISPLAY_LAST_COMMA_FIRST",
+    "DISPLAY_FIRST_LAST",
+    "ROSTERSTATUS",
+    "FROM_YEAR",
+    "TO_YEAR",
+    "PLAYERCODE",
+    "PLAYER_SLUG",
     "TEAM_ID",
-    "TEAM_ABBREVIATION",
+    "TEAM_CITY",
     "TEAM_NAME",
-    "PLAY_TYPE",
-    "TYPE_GROUPING",
-    "PERCENTILE",
-    "GP",
-    "POSS_PCT",
-    "PPP",
-    "FG_PCT",
-    "FT_POSS_PCT",
-    "TOV_POSS_PCT",
-    "SF_POSS_PCT",
-    "PLUSONE_POSS_PCT",
-    "SCORE_POSS_PCT",
-    "EFG_PCT",
-    "POSS",
-    "PTS",
-    "FGM",
-    "FGA",
-    "FGMX"
+    "TEAM_ABBREVIATION",
+    "TEAM_CODE",
+    "TEAM_SLUG",
+    "GAMES_PLAYED_FLAG",
+    "OTHERLEAGUE_EXPERIENCE_CH"
   )
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
   expect_s3_class(x[[1]], 'data.frame')
+
+  Sys.sleep(3)
 
 })

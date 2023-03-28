@@ -301,4 +301,6 @@ test_that("NBA Team Dashboard by Game Splits", {
   expect_equal(sort(colnames(x[[5]])), sort(cols_x5))
   expect_s3_class(x[[5]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

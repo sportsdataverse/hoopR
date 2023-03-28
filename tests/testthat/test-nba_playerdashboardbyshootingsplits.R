@@ -273,4 +273,6 @@ test_that("NBA Player Dashboard by Shooting Splits", {
   expect_equal(sort(colnames(x[[8]])), sort(cols_x8))
   expect_s3_class(x[[8]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

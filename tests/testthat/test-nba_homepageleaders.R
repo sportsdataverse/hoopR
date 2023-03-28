@@ -44,4 +44,6 @@ test_that("NBA Home Page Leaders", {
   expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
   expect_s3_class(x[[3]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

@@ -309,7 +309,7 @@ nba_videodetails <- function(
     vs_division = '',
     ...){
 
-  season_type <- gsub(' ', '+', season_type)
+  # season_type <- gsub(' ', '+', season_type)
   version <- "videodetails"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
