@@ -22,7 +22,81 @@ the season data into a database (used by \code{update_mbb_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   id \tab integer \cr
+   uid \tab character \cr
+   date \tab character \cr
+   attendance \tab integer \cr
+   time_valid \tab logical \cr
+   neutral_site \tab logical \cr
+   conference_competition \tab logical \cr
+   recent \tab logical \cr
+   start_date \tab character \cr
+   notes_type \tab character \cr
+   notes_headline \tab character \cr
+   type_id \tab character \cr
+   type_abbreviation \tab character \cr
+   venue_id \tab character \cr
+   venue_full_name \tab character \cr
+   venue_address_city \tab character \cr
+   venue_address_state \tab character \cr
+   venue_capacity \tab integer \cr
+   venue_indoor \tab logical \cr
+   status_clock \tab numeric \cr
+   status_display_clock \tab character \cr
+   status_period \tab integer \cr
+   status_type_id \tab character \cr
+   status_type_name \tab character \cr
+   status_type_state \tab character \cr
+   status_type_completed \tab logical \cr
+   status_type_description \tab character \cr
+   status_type_detail \tab character \cr
+   status_type_short_detail \tab character \cr
+   format_regulation_periods \tab integer \cr
+   home_id \tab character \cr
+   home_uid \tab character \cr
+   home_location \tab character \cr
+   home_name \tab character \cr
+   home_abbreviation \tab character \cr
+   home_display_name \tab character \cr
+   home_short_display_name \tab character \cr
+   home_color \tab character \cr
+   home_alternate_color \tab character \cr
+   home_is_active \tab logical \cr
+   home_venue_id \tab character \cr
+   home_logo \tab character \cr
+   home_conference_id \tab character \cr
+   home_score \tab character \cr
+   home_winner \tab logical \cr
+   away_id \tab character \cr
+   away_uid \tab character \cr
+   away_location \tab character \cr
+   away_name \tab character \cr
+   away_abbreviation \tab character \cr
+   away_display_name \tab character \cr
+   away_short_display_name \tab character \cr
+   away_color \tab character \cr
+   away_alternate_color \tab character \cr
+   away_is_active \tab logical \cr
+   away_venue_id \tab character \cr
+   away_logo \tab character \cr
+   away_conference_id \tab character \cr
+   away_score \tab character \cr
+   away_winner \tab logical \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   status_type_alt_detail \tab character \cr
+   groups_id \tab character \cr
+   groups_name \tab character \cr
+   groups_short_name \tab character \cr
+   groups_is_conference \tab logical \cr
+   tournament_id \tab numeric \cr
+   PBP \tab logical \cr
+   team_box \tab logical \cr
+   player_box \tab logical \cr
+}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory
@@ -30,7 +104,7 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-  load_mbb_schedule(seasons = most_recent_nba_season())
+  load_mbb_schedule(seasons = most_recent_mbb_season())
 }
 }
 \seealso{

@@ -12,12 +12,71 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
+#'
+#'    |col_name                        |types     |
+#'    |:-------------------------------|:---------|
+#'    |id                              |numeric   |
+#'    |sequence_number                 |character |
+#'    |type_id                         |character |
+#'    |type_text                       |character |
+#'    |text                            |character |
+#'    |away_score                      |integer   |
+#'    |home_score                      |integer   |
+#'    |period_number                   |integer   |
+#'    |period_display_value            |character |
+#'    |clock_display_value             |character |
+#'    |scoring_play                    |logical   |
+#'    |score_value                     |integer   |
+#'    |team_id                         |character |
+#'    |participants_0_athlete_id       |character |
+#'    |wallclock                       |character |
+#'    |shooting_play                   |logical   |
+#'    |participants_1_athlete_id       |character |
+#'    |season                          |integer   |
+#'    |season_type                     |integer   |
+#'    |away_team_id                    |integer   |
+#'    |away_team_name                  |character |
+#'    |away_team_mascot                |character |
+#'    |away_team_abbrev                |character |
+#'    |away_team_name_alt              |character |
+#'    |home_team_id                    |integer   |
+#'    |home_team_name                  |character |
+#'    |home_team_mascot                |character |
+#'    |home_team_abbrev                |character |
+#'    |home_team_name_alt              |character |
+#'    |home_team_spread                |numeric   |
+#'    |game_spread                     |numeric   |
+#'    |home_favorite                   |logical   |
+#'    |game_spread_available           |logical   |
+#'    |game_id                         |integer   |
+#'    |qtr                             |integer   |
+#'    |time                            |character |
+#'    |clock_minutes                   |character |
+#'    |clock_seconds                   |character |
+#'    |half                            |character |
+#'    |game_half                       |character |
+#'    |lag_qtr                         |numeric   |
+#'    |lead_qtr                        |numeric   |
+#'    |lag_game_half                   |character |
+#'    |lead_game_half                  |character |
+#'    |start_quarter_seconds_remaining |integer   |
+#'    |start_half_seconds_remaining    |integer   |
+#'    |start_game_seconds_remaining    |integer   |
+#'    |game_play_number                |integer   |
+#'    |end_quarter_seconds_remaining   |numeric   |
+#'    |end_half_seconds_remaining      |numeric   |
+#'    |end_game_seconds_remaining      |numeric   |
+#'    |period                          |integer   |
+#'    |coordinate_x                    |integer   |
+#'    |coordinate_y                    |integer   |
+#'    |media_id                        |character |
+#'
 #' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_mbb_pbp(seasons = most_recent_nba_season())
+#'   load_mbb_pbp(seasons = most_recent_mbb_season())
 #' }
 load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
@@ -63,11 +122,55 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
+#'
+#'    |col_name                                                       |types     |
+#'    |:--------------------------------------------------------------|:---------|
+#'    |team_id                                                        |character |
+#'    |team_uid                                                       |character |
+#'    |team_slug                                                      |character |
+#'    |team_location                                                  |character |
+#'    |team_name                                                      |character |
+#'    |team_abbreviation                                              |character |
+#'    |team_display_name                                              |character |
+#'    |team_short_display_name                                        |character |
+#'    |team_color                                                     |character |
+#'    |team_alternate_color                                           |character |
+#'    |team_logo                                                      |character |
+#'    |field_goals_made_field_goals_attempted                         |character |
+#'    |field_goal_pct                                                 |character |
+#'    |three_point_field_goals_made_three_point_field_goals_attempted |character |
+#'    |three_point_field_goal_pct                                     |character |
+#'    |free_throws_made_free_throws_attempted                         |character |
+#'    |free_throw_pct                                                 |character |
+#'    |total_rebounds                                                 |character |
+#'    |offensive_rebounds                                             |character |
+#'    |defensive_rebounds                                             |character |
+#'    |assists                                                        |character |
+#'    |steals                                                         |character |
+#'    |blocks                                                         |character |
+#'    |turnovers                                                      |character |
+#'    |team_turnovers                                                 |character |
+#'    |total_turnovers                                                |character |
+#'    |technical_fouls                                                |character |
+#'    |total_technical_fouls                                          |character |
+#'    |flagrant_fouls                                                 |character |
+#'    |fouls                                                          |character |
+#'    |largest_lead                                                   |character |
+#'    |home_away                                                      |character |
+#'    |opponent_id                                                    |integer   |
+#'    |opponent_name                                                  |character |
+#'    |opponent_mascot                                                |character |
+#'    |opponent_abbrev                                                |character |
+#'    |game_id                                                        |integer   |
+#'    |season                                                         |integer   |
+#'    |season_type                                                    |integer   |
+#'    |game_date                                                      |Date      |
+#'
 #' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_team_box(seasons = most_recent_nba_season())
+#'   load_mbb_team_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
@@ -114,11 +217,49 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |athlete_display_name          |character |
+#'    |team_short_display_name       |character |
+#'    |min                           |character |
+#'    |fg                            |character |
+#'    |fg3                           |character |
+#'    |ft                            |character |
+#'    |oreb                          |character |
+#'    |dreb                          |character |
+#'    |reb                           |character |
+#'    |ast                           |character |
+#'    |stl                           |character |
+#'    |blk                           |character |
+#'    |to                            |character |
+#'    |pf                            |character |
+#'    |pts                           |character |
+#'    |starter                       |logical   |
+#'    |ejected                       |logical   |
+#'    |did_not_play                  |logical   |
+#'    |active                        |logical   |
+#'    |athlete_jersey                |character |
+#'    |athlete_id                    |character |
+#'    |athlete_short_name            |character |
+#'    |athlete_headshot_href         |character |
+#'    |athlete_position_name         |character |
+#'    |athlete_position_abbreviation |character |
+#'    |team_name                     |character |
+#'    |team_logo                     |character |
+#'    |team_id                       |character |
+#'    |team_abbreviation             |character |
+#'    |team_color                    |character |
+#'    |game_id                       |integer   |
+#'    |season                        |integer   |
+#'    |season_type                   |integer   |
+#'    |game_date                     |Date      |
+#'
 #' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_player_box(seasons = most_recent_nba_season())
+#'   load_mbb_player_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
@@ -164,11 +305,87 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |id                        |integer   |
+#'    |uid                       |character |
+#'    |date                      |character |
+#'    |attendance                |integer   |
+#'    |time_valid                |logical   |
+#'    |neutral_site              |logical   |
+#'    |conference_competition    |logical   |
+#'    |recent                    |logical   |
+#'    |start_date                |character |
+#'    |notes_type                |character |
+#'    |notes_headline            |character |
+#'    |type_id                   |character |
+#'    |type_abbreviation         |character |
+#'    |venue_id                  |character |
+#'    |venue_full_name           |character |
+#'    |venue_address_city        |character |
+#'    |venue_address_state       |character |
+#'    |venue_capacity            |integer   |
+#'    |venue_indoor              |logical   |
+#'    |status_clock              |numeric   |
+#'    |status_display_clock      |character |
+#'    |status_period             |integer   |
+#'    |status_type_id            |character |
+#'    |status_type_name          |character |
+#'    |status_type_state         |character |
+#'    |status_type_completed     |logical   |
+#'    |status_type_description   |character |
+#'    |status_type_detail        |character |
+#'    |status_type_short_detail  |character |
+#'    |format_regulation_periods |integer   |
+#'    |home_id                   |character |
+#'    |home_uid                  |character |
+#'    |home_location             |character |
+#'    |home_name                 |character |
+#'    |home_abbreviation         |character |
+#'    |home_display_name         |character |
+#'    |home_short_display_name   |character |
+#'    |home_color                |character |
+#'    |home_alternate_color      |character |
+#'    |home_is_active            |logical   |
+#'    |home_venue_id             |character |
+#'    |home_logo                 |character |
+#'    |home_conference_id        |character |
+#'    |home_score                |character |
+#'    |home_winner               |logical   |
+#'    |away_id                   |character |
+#'    |away_uid                  |character |
+#'    |away_location             |character |
+#'    |away_name                 |character |
+#'    |away_abbreviation         |character |
+#'    |away_display_name         |character |
+#'    |away_short_display_name   |character |
+#'    |away_color                |character |
+#'    |away_alternate_color      |character |
+#'    |away_is_active            |logical   |
+#'    |away_venue_id             |character |
+#'    |away_logo                 |character |
+#'    |away_conference_id        |character |
+#'    |away_score                |character |
+#'    |away_winner               |logical   |
+#'    |game_id                   |integer   |
+#'    |season                    |integer   |
+#'    |season_type               |integer   |
+#'    |status_type_alt_detail    |character |
+#'    |groups_id                 |character |
+#'    |groups_name               |character |
+#'    |groups_short_name         |character |
+#'    |groups_is_conference      |logical   |
+#'    |tournament_id             |numeric   |
+#'    |PBP                       |logical   |
+#'    |team_box                  |logical   |
+#'    |player_box                |logical   |
+#'
 #' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_schedule(seasons = most_recent_nba_season())
+#'   load_mbb_schedule(seasons = most_recent_mbb_season())
 #' }
 load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {

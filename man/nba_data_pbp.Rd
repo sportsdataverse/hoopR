@@ -14,28 +14,30 @@ nba_data_pbp(game_id = "0021900001", ...)
 \value{
 Returns a tibble\tabular{ll}{
    col_name \tab types \cr
+   game_id \tab character \cr
+   league \tab character \cr
    period \tab integer \cr
-   evt \tab integer \cr
-   cl \tab character \cr
-   de \tab character \cr
+   event_num \tab integer \cr
+   clock \tab character \cr
+   description \tab character \cr
    locX \tab integer \cr
    locY \tab integer \cr
    opt1 \tab integer \cr
    opt2 \tab integer \cr
-   mtype \tab integer \cr
-   etype \tab integer \cr
-   opid \tab character \cr
-   tid \tab integer \cr
-   pid \tab integer \cr
-   hs \tab integer \cr
-   vs \tab integer \cr
-   epid \tab character \cr
-   oftid \tab integer \cr
-   ord \tab integer \cr
+   event_action_type \tab integer \cr
+   event_type \tab integer \cr
+   team_id \tab integer \cr
+   offense_team_id \tab integer \cr
+   player1_id \tab integer \cr
+   player2_id \tab integer \cr
+   player3_id \tab integer \cr
+   home_score \tab integer \cr
+   away_score \tab integer \cr
+   order \tab integer \cr
 }
 
 
-Event Message Types (etype):
+Event Message Types (event_type):
 
 1 -> MAKE
 

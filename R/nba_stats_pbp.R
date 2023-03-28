@@ -16,8 +16,8 @@ NULL
 #'    |:-------------------------|:---------|
 #'    |game_id                   |character |
 #'    |event_num                 |character |
-#'    |event_msg_type            |character |
-#'    |event_msg_action_type     |character |
+#'    |event_type                |character |
+#'    |event_action_type         |character |
 #'    |period                    |numeric   |
 #'    |minute_game               |numeric   |
 #'    |time_remaining            |numeric   |
@@ -113,8 +113,8 @@ nba_pbp <- function(
             "time_quarter" = "pctimestring",
             "score_margin" = "scoremargin",
             "event_num" = "eventnum",
-            "event_msg_type" = "eventmsgtype",
-            "event_msg_action_type" = "eventmsgactiontype",
+            "event_type" = "eventmsgtype",
+            "event_action_type" = "eventmsgactiontype",
             "home_description" = "homedescription",
             "neutral_description" = "neutraldescription",
             "visitor_description" = "visitordescription"
@@ -188,6 +188,51 @@ NULL
 #' @param nest_data If TRUE returns nested data by game
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |game_id                   |character |
+#'    |event_num                 |character |
+#'    |event_type                |character |
+#'    |event_action_type         |character |
+#'    |period                    |numeric   |
+#'    |minute_game               |numeric   |
+#'    |time_remaining            |numeric   |
+#'    |wc_time_string            |character |
+#'    |time_quarter              |character |
+#'    |minute_remaining_quarter  |numeric   |
+#'    |seconds_remaining_quarter |numeric   |
+#'    |home_description          |character |
+#'    |neutral_description       |character |
+#'    |visitor_description       |character |
+#'    |score                     |character |
+#'    |away_score                |numeric   |
+#'    |home_score                |numeric   |
+#'    |score_margin              |character |
+#'    |person1type               |character |
+#'    |player1_id                |character |
+#'    |player1_name              |character |
+#'    |player1_team_id           |character |
+#'    |player1_team_city         |character |
+#'    |player1_team_nickname     |character |
+#'    |player1_team_abbreviation |character |
+#'    |person2type               |character |
+#'    |player2_id                |character |
+#'    |player2_name              |character |
+#'    |player2_team_id           |character |
+#'    |player2_team_city         |character |
+#'    |player2_team_nickname     |character |
+#'    |player2_team_abbreviation |character |
+#'    |person3type               |character |
+#'    |player3_id                |character |
+#'    |player3_name              |character |
+#'    |player3_team_id           |character |
+#'    |player3_team_city         |character |
+#'    |player3_team_nickname     |character |
+#'    |player3_team_abbreviation |character |
+#'    |video_available_flag      |character |
+#'    |team_leading              |character |
+#'
 #' @export
 #' @family NBA PBP Functions
 #' @details
@@ -312,7 +357,7 @@ NULL
 #' @family NBA Live Functions
 #' @details
 #' ```r
-#'  nba_live_pbp(game_id = '0022201086')
+#'  x<-nba_live_pbp(game_id = '0022201086')
 #' ```
 nba_live_pbp <- function(
     game_id,
@@ -331,7 +376,7 @@ nba_live_pbp <- function(
   tryCatch(
     expr = {
 
-      res <- rvest::session(url = full_url, ..., httr::timeout(60))
+      res <- rvest::session(url = full_url,  httr::timeout(60))
 
       resp <- res$response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
@@ -340,7 +385,38 @@ nba_live_pbp <- function(
       data <- resp %>%
         purrr::pluck("game") %>%
         purrr::pluck("actions") %>%
-        janitor::clean_names() %>%
+        janitor::clean_names()
+
+      data <- data  %>%
+        dplyr::rename(dplyr::any_of(c(
+          "period" = "period",
+          "event_num" = "action_number",
+          "clock" = "clock",
+          "description" = "description",
+          "locX" = "xLegacy",
+          "locY" = "yLegacy",
+          "action_type" = "action_type",
+          "sub_type" = "sub_type",
+          "descriptor" = "descriptor",
+          "shot_result" = "shot_result",
+          "shot_action_number" = "shot_action_number",
+          "qualifiers" = "qualifiers",
+          "team_id" = "team_id",
+          "player1_id" = "person_id",
+          "home_score" = "score_home",
+          "away_score" = "score_away",
+          "offense_team_id" = "possession",
+          "order" = "order_number"))) %>%
+        dplyr::mutate(
+          player2_id = dplyr::case_when(
+            !is.na(.data$assist_person_id) ~ .data$assist_person_id,
+            TRUE ~ NA_integer_),
+          player3_id = dplyr::case_when(
+            !is.na(.data$block_person_id) ~ .data$block_person_id,
+            !is.na(.data$steal_person_id) ~ .data$steal_person_id,
+            !is.na(.data$foul_drawn_person_id) ~ .data$foul_drawn_person_id,
+            TRUE ~ NA_integer_
+          )) %>%
         make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
 
 

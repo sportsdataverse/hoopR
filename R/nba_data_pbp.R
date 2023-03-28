@@ -9,28 +9,30 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a tibble
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |period   |integer   | period
-#'    |evt      |integer   | event number
-#'    |cl       |character | clock
-#'    |de       |character | description
-#'    |locX     |integer   | Location x-coordinate
-#'    |locY     |integer   | Location y-coordinate
-#'    |opt1     |integer   | description value
-#'    |opt2     |integer   |
-#'    |mtype    |integer   | event message action type "Message (i.e., action) Type"
-#'    |etype    |integer   | event message type "Event Type"
-#'    |opid     |character | player_id_3 "Opposing player ID; e.g., player fouled"
-#'    |tid      |integer   | team_id "Team ID of player"
-#'    |pid      |integer   | player_id_1 "Player ID"
-#'    |hs       |integer   | home team score
-#'    |vs       |integer   | visiting team score
-#'    |epid     |character | player_id_2 "Extra person ID; e.g., official's ID on foul call"
-#'    |oftid    |integer   | team_id_2 "Offensive team's ID"
-#'    |ord      |integer   | play order number
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |league            |character |
+#'    |period            |integer   |
+#'    |event_num         |integer   |
+#'    |clock             |character |
+#'    |description       |character |
+#'    |locX              |integer   |
+#'    |locY              |integer   |
+#'    |opt1              |integer   |
+#'    |opt2              |integer   |
+#'    |event_action_type |integer   |
+#'    |event_type        |integer   |
+#'    |team_id           |integer   |
+#'    |offense_team_id   |integer   |
+#'    |player1_id        |integer   |
+#'    |player2_id        |integer   |
+#'    |player3_id        |integer   |
+#'    |home_score        |integer   |
+#'    |away_score        |integer   |
+#'    |order             |integer   |
 #'
-#'   Event Message Types (etype):
+#'   Event Message Types (event_type):
 #'
 #'   1 -> MAKE
 #'
@@ -104,7 +106,38 @@ nba_data_pbp <- function(game_id = "0021900001",
         plays_df <- plays[[2]][[x]] %>%
           dplyr::mutate(period = x) %>%
           dplyr::select("period", tidyr::everything())
-      }) %>%
+      })
+
+      plays_df <- plays_df %>%
+        dplyr::select(dplyr::any_of(c(
+          "period" = "period",
+          "event_num" = "evt",
+          "clock" = "cl",
+          "description" = "de",
+          "locX" = "locX",
+          "locY" = "locY",
+          "opt1" = "opt1",
+          "opt2" = "opt2",
+          "event_action_type" = "mtype",
+          "event_type" = "etype",
+          "team_id" = "tid",
+          "offense_team_id" = "oftid",
+          "player1_id" = "pid",
+          "player2_id" = "epid",
+          "player3_id" = "opid",
+          "home_score" = "hs",
+          "away_score" = "vs",
+          "order" = "ord"))) %>%
+        dplyr::mutate(
+          player2_id = as.integer(.data$player2_id),
+          player3_id = as.integer(.data$player3_id),
+          game_id = game_id,
+          league = dplyr::case_when(
+            substr(game_id,1,2) == '00' ~ 'NBA',
+            substr(game_id, 1, 2) == '10' ~ 'WNBA',
+            substr(game_id, 1, 2) == '20' ~ 'G-League',
+            TRUE ~ 'NBA')) %>%
+        dplyr::select("game_id", "league", tidyr::everything()) %>%
         make_hoopR_data("NBA Play-by-Play Information from NBA.com",Sys.time())
     },
     error = function(e) {

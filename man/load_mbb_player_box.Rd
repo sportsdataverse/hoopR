@@ -22,7 +22,43 @@ the season data into a database (used by \code{update_mbb_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   athlete_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   min \tab character \cr
+   fg \tab character \cr
+   fg3 \tab character \cr
+   ft \tab character \cr
+   oreb \tab character \cr
+   dreb \tab character \cr
+   reb \tab character \cr
+   ast \tab character \cr
+   stl \tab character \cr
+   blk \tab character \cr
+   to \tab character \cr
+   pf \tab character \cr
+   pts \tab character \cr
+   starter \tab logical \cr
+   ejected \tab logical \cr
+   did_not_play \tab logical \cr
+   active \tab logical \cr
+   athlete_jersey \tab character \cr
+   athlete_id \tab character \cr
+   athlete_short_name \tab character \cr
+   athlete_headshot_href \tab character \cr
+   athlete_position_name \tab character \cr
+   athlete_position_abbreviation \tab character \cr
+   team_name \tab character \cr
+   team_logo \tab character \cr
+   team_id \tab character \cr
+   team_abbreviation \tab character \cr
+   team_color \tab character \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory
@@ -30,7 +66,7 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-  load_mbb_player_box(seasons = most_recent_nba_season())
+  load_mbb_player_box(seasons = most_recent_mbb_season())
 }
 }
 \seealso{
