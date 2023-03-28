@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,6 +153,25 @@
     
 
 <p>A team boxscore data frame</p>
+
+
+<p><strong>Team</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>integer</td></tr><tr><td>season</td><td>integer</td></tr><tr><td>season_type</td><td>integer</td></tr><tr><td>game_date</td><td>Date</td></tr><tr><td>team_id</td><td>integer</td></tr><tr><td>team_uid</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>team_location</td><td>character</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_abbreviation</td><td>character</td></tr><tr><td>team_display_name</td><td>character</td></tr><tr><td>team_short_display_name</td><td>character</td></tr><tr><td>team_color</td><td>character</td></tr><tr><td>team_alternate_color</td><td>character</td></tr><tr><td>team_logo</td><td>character</td></tr><tr><td>team_home_away</td><td>character</td></tr><tr><td>team_score</td><td>integer</td></tr><tr><td>team_winner</td><td>logical</td></tr><tr><td>assists</td><td>integer</td></tr><tr><td>blocks</td><td>integer</td></tr><tr><td>defensive_rebounds</td><td>integer</td></tr><tr><td>field_goal_pct</td><td>numeric</td></tr><tr><td>field_goals_made</td><td>integer</td></tr><tr><td>field_goals_attempted</td><td>integer</td></tr><tr><td>flagrant_fouls</td><td>integer</td></tr><tr><td>fouls</td><td>integer</td></tr><tr><td>free_throw_pct</td><td>numeric</td></tr><tr><td>free_throws_made</td><td>integer</td></tr><tr><td>free_throws_attempted</td><td>integer</td></tr><tr><td>largest_lead</td><td>character</td></tr><tr><td>offensive_rebounds</td><td>integer</td></tr><tr><td>steals</td><td>integer</td></tr><tr><td>team_turnovers</td><td>integer</td></tr><tr><td>technical_fouls</td><td>integer</td></tr><tr><td>three_point_field_goal_pct</td><td>numeric</td></tr><tr><td>three_point_field_goals_made</td><td>integer</td></tr><tr><td>three_point_field_goals_attempted</td><td>integer</td></tr><tr><td>total_rebounds</td><td>integer</td></tr><tr><td>total_technical_fouls</td><td>integer</td></tr><tr><td>total_turnovers</td><td>integer</td></tr><tr><td>turnovers</td><td>integer</td></tr><tr><td>opponent_team_id</td><td>integer</td></tr><tr><td>opponent_team_uid</td><td>character</td></tr><tr><td>opponent_team_slug</td><td>character</td></tr><tr><td>opponent_team_location</td><td>character</td></tr><tr><td>opponent_team_name</td><td>character</td></tr><tr><td>opponent_team_abbreviation</td><td>character</td></tr><tr><td>opponent_team_display_name</td><td>character</td></tr><tr><td>opponent_team_short_display_name</td><td>character</td></tr><tr><td>opponent_team_color</td><td>character</td></tr><tr><td>opponent_team_alternate_color</td><td>character</td></tr><tr><td>opponent_team_logo</td><td>character</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other ESPN MBB Functions: 
+<code><a href="espn_mbb_betting.html">espn_mbb_betting</a>()</code>,
+<code><a href="espn_mbb_conferences.html">espn_mbb_conferences</a>()</code>,
+<code><a href="espn_mbb_game_all.html">espn_mbb_game_all</a>()</code>,
+<code><a href="espn_mbb_game_rosters.html">espn_mbb_game_rosters</a>()</code>,
+<code><a href="espn_mbb_pbp.html">espn_mbb_pbp</a>()</code>,
+<code><a href="espn_mbb_player_box.html">espn_mbb_player_box</a>()</code>,
+<code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats</a>()</code>,
+<code><a href="espn_mbb_rankings.html">espn_mbb_rankings</a>()</code>,
+<code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard</a>()</code>,
+<code><a href="espn_mbb_standings.html">espn_mbb_standings</a>()</code>,
+<code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats</a>()</code>,
+<code><a href="espn_mbb_teams.html">espn_mbb_teams</a>()</code>,
+<code><a href="espn_mbb_wp.html">espn_mbb_wp</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -162,21 +181,21 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_team_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401256760</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Team Box Information from ESPN.com ───────────── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-27 21:34:35 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 40</span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_team_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401479672</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Team Box Information from ESPN.com ────────────────── <span style="font-style: italic;">hoopR 2.0.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-28 05:41:27 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 52</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   game_id season season_type game_date  team_id team_uid team_slug team_location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>021           2 2020-12-12 57      s:40~l:… florida-… Florida      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>021           2 2020-12-12 52      s:40~l:… florida-… Florida State</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 32 more variables: team_name &lt;chr&gt;, team_abbreviation &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>023           2 2022-11-30     183 s:40~l:… syracuse… Syracuse     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>023           2 2022-11-30     356 s:40~l:… illinois… Illinois     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 44 more variables: team_name &lt;chr&gt;, team_abbreviation &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_display_name &lt;chr&gt;, team_short_display_name &lt;chr&gt;, team_color &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_alternate_color &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made_field_goals_attempted &lt;chr&gt;, field_goal_pct &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goals_made_three_point_field_goals_attempted &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goal_pct &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_made_free_throws_attempted &lt;chr&gt;, free_throw_pct &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_alternate_color &lt;chr&gt;, team_logo &lt;chr&gt;, team_home_away &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_score &lt;int&gt;, team_winner &lt;lgl&gt;, assists &lt;int&gt;, blocks &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defensive_rebounds &lt;int&gt;, field_goal_pct &lt;dbl&gt;, field_goals_made &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_attempted &lt;int&gt;, flagrant_fouls &lt;int&gt;, fouls &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throw_pct &lt;dbl&gt;, free_throws_made &lt;int&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

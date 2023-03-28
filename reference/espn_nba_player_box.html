@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,6 +153,23 @@
     
 
 <p>A player boxscore data frame</p>
+
+
+<p><strong>Player</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>integer</td></tr><tr><td>season</td><td>integer</td></tr><tr><td>season_type</td><td>integer</td></tr><tr><td>game_date</td><td>Date</td></tr><tr><td>athlete_id</td><td>character</td></tr><tr><td>athlete_display_name</td><td>character</td></tr><tr><td>team_id</td><td>character</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_location</td><td>character</td></tr><tr><td>team_short_display_name</td><td>character</td></tr><tr><td>minutes</td><td>numeric</td></tr><tr><td>field_goals_made</td><td>integer</td></tr><tr><td>field_goals_attempted</td><td>integer</td></tr><tr><td>three_point_field_goals_made</td><td>integer</td></tr><tr><td>three_point_field_goals_attempted</td><td>integer</td></tr><tr><td>free_throws_made</td><td>integer</td></tr><tr><td>free_throws_attempted</td><td>integer</td></tr><tr><td>offensive_rebounds</td><td>integer</td></tr><tr><td>defensive_rebounds</td><td>integer</td></tr><tr><td>rebounds</td><td>integer</td></tr><tr><td>assists</td><td>integer</td></tr><tr><td>steals</td><td>integer</td></tr><tr><td>blocks</td><td>integer</td></tr><tr><td>turnovers</td><td>integer</td></tr><tr><td>fouls</td><td>integer</td></tr><tr><td>plus_minus</td><td>character</td></tr><tr><td>points</td><td>integer</td></tr><tr><td>starter</td><td>logical</td></tr><tr><td>ejected</td><td>logical</td></tr><tr><td>did_not_play</td><td>logical</td></tr><tr><td>reason</td><td>character</td></tr><tr><td>active</td><td>logical</td></tr><tr><td>athlete_jersey</td><td>character</td></tr><tr><td>athlete_short_name</td><td>character</td></tr><tr><td>athlete_headshot_href</td><td>character</td></tr><tr><td>athlete_position_name</td><td>character</td></tr><tr><td>athlete_position_abbreviation</td><td>character</td></tr><tr><td>team_display_name</td><td>character</td></tr><tr><td>team_uid</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>team_logo</td><td>character</td></tr><tr><td>team_abbreviation</td><td>character</td></tr><tr><td>team_color</td><td>character</td></tr><tr><td>team_alternate_color</td><td>character</td></tr><tr><td>home_away</td><td>character</td></tr><tr><td>team_winner</td><td>logical</td></tr><tr><td>team_score</td><td>character</td></tr><tr><td>opponent_team_id</td><td>integer</td></tr><tr><td>opponent_team_name</td><td>character</td></tr><tr><td>opponent_team_location</td><td>character</td></tr><tr><td>opponent_team_display_name</td><td>character</td></tr><tr><td>opponent_team_abbreviation</td><td>character</td></tr><tr><td>opponent_team_logo</td><td>character</td></tr><tr><td>opponent_team_color</td><td>character</td></tr><tr><td>opponent_team_alternate_color</td><td>character</td></tr><tr><td>opponent_team_score</td><td>character</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other ESPN NBA Functions: 
+<code><a href="espn_nba_betting.html">espn_nba_betting</a>()</code>,
+<code><a href="espn_nba_game_all.html">espn_nba_game_all</a>()</code>,
+<code><a href="espn_nba_game_rosters.html">espn_nba_game_rosters</a>()</code>,
+<code><a href="espn_nba_pbp.html">espn_nba_pbp</a>()</code>,
+<code><a href="espn_nba_player_stats.html">espn_nba_player_stats</a>()</code>,
+<code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard</a>()</code>,
+<code><a href="espn_nba_standings.html">espn_nba_standings</a>()</code>,
+<code><a href="espn_nba_team_box.html">espn_nba_team_box</a>()</code>,
+<code><a href="espn_nba_team_stats.html">espn_nba_team_stats</a>()</code>,
+<code><a href="espn_nba_teams.html">espn_nba_teams</a>()</code>,
+<code><a href="espn_nba_wp.html">espn_nba_wp</a>()</code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -163,36 +180,28 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_player_box</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401071880</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Player Box Information from ESPN.com ─────────── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-27 21:34:45 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 41</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_display_name team_short_display_name min   fg    fg3   ft    oreb </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Christian Wood       Pelicans                24    5-14  2-3   2-2   3    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Kenrich Williams     Pelicans                29    5-8   2-4   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Jahlil Okafor        Pelicans                35    10-14 1-1   2-2   6    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Elfrid Payton        Pelicans                39    10-19 2-7   4-5   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Ian Clark            Pelicans                36    11-21 7-15  2-3   2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Cheick Diallo        Pelicans                29    4-5   0-0   0-0   3    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Solomon Hill         Pelicans                27    5-12  3-7   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Dairis Bertans       Pelicans                21    2-8   2-5   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Nemanja Bjelica      Kings                   21    6-8   3-4   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Harrison Barnes      Kings                   37    10-18 4-7   5-6   2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Willie Cauley-Stein  Kings                   19    3-7   0-0   3-4   3    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> De'Aaron Fox         Kings                   35    10-18 1-3   3-3   2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Buddy Hield          Kings                   32    5-15  2-10  0-0   2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Marvin Bagley III    Kings                   32    8-18  1-3   2-4   5    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> Corey Brewer         Kings                   13    0-2   0-0   0-0   1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> Troy Williams        Kings                   3     0-2   0-1   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> Yogi Ferrell         Kings                   19    2-6   1-3   0-0   0    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> Bogdan Bogdanovic    Kings                   29    6-15  4-9   0-0   1    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 34 more variables: dreb &lt;chr&gt;, reb &lt;chr&gt;, ast &lt;chr&gt;, stl &lt;chr&gt;, blk &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   to &lt;chr&gt;, pf &lt;chr&gt;, `+/-` &lt;chr&gt;, pts &lt;chr&gt;, reason &lt;chr&gt;, starter &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ejected &lt;lgl&gt;, did_not_play &lt;lgl&gt;, active &lt;lgl&gt;, athlete_uid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_jersey &lt;chr&gt;, athlete_guid &lt;chr&gt;, athlete_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_short_name &lt;chr&gt;, athlete_headshot_alt &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_headshot_href &lt;chr&gt;, athlete_position_display_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_position_name &lt;chr&gt;, athlete_position_abbreviation &lt;chr&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Player Box Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 2.0.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-28 05:41:37 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 26 × 56</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id season season_type game_date  athlete_id athlete_display_name team_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 3058254    Christian Wood       3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 3133626    Kenrich Williams     3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 3135048    Jahlil Okafor        3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 2583639    Elfrid Payton        3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 2489785    Ian Clark            3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 3919335    Cheick Diallo        3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 2488958    Solomon Hill         3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 2585637    Dairis Bertans       3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 6583       Anthony Davis        3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  4.01<span style="color: #949494;">e</span>8   <span style="text-decoration: underline;">2</span>019           2 2019-04-08 3064514    Julius Randle        3      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 49 more variables: team_name &lt;chr&gt;, team_location &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_short_display_name &lt;chr&gt;, minutes &lt;dbl&gt;, field_goals_made &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_attempted &lt;int&gt;, three_point_field_goals_made &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_field_goals_attempted &lt;int&gt;, free_throws_made &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_attempted &lt;int&gt;, offensive_rebounds &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defensive_rebounds &lt;int&gt;, rebounds &lt;int&gt;, assists &lt;int&gt;, steals &lt;int&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

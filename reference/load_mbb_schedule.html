@@ -12,7 +12,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
     
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.9.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -175,12 +175,23 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
 
 <p>Returns a tibble</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other hoopR Loader Functions: 
+<code><a href="load_mbb_pbp.html">load_mbb_pbp</a>()</code>,
+<code><a href="load_mbb_player_box.html">load_mbb_player_box</a>()</code>,
+<code><a href="load_mbb_team_box.html">load_mbb_team_box</a>()</code>,
+<code><a href="load_nba_pbp.html">load_nba_pbp</a>()</code>,
+<code><a href="load_nba_player_box.html">load_nba_player_box</a>()</code>,
+<code><a href="load_nba_schedule.html">load_nba_schedule</a>()</code>,
+<code><a href="load_nba_team_box.html">load_nba_team_box</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">load_mbb_schedule</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB Schedule Information from hoopR data repository ───── <span style="font-style: italic;">hoopR 1.9.1.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB Schedule Information from hoopR data repository ────────── <span style="font-style: italic;">hoopR 2.0.0</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-27 09:56:20 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,261 × 72</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         id uid   date  attendance time_valid neutral_site conference_competition</span>
