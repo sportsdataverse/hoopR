@@ -360,4 +360,6 @@ test_that("NBA Team Dashboard by Last N Games", {
   expect_equal(sort(colnames(x[[6]])), sort(cols_x6))
   expect_s3_class(x[[6]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

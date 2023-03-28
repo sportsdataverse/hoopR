@@ -1,12 +1,13 @@
 # **hoopR 2.0.0**
-- Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
-- ```nba_shotchartlineupdetail()``` function added.
-- ```nba_synergyplaytypes()``` function added.
+
+### **NBA Stats API Live Endpoints**
+
 - ```nba_live_pbp()``` function added.
 - ```nba_live_boxscore()``` function added.
 - ```nba_todays_scoreboard()``` function added.
-- ```nba_franchiseleaderswrank()``` function added.
-- ```nba_videodetailsasset()``` function added.
+
+### **NBA Boxscore V3 (and V3-styled) Endpoints Added**
+
 - ```nba_boxscoretraditionalv3()``` function added.
 - ```nba_boxscoreadvancedv3()``` function added.
 - ```nba_boxscoremiscv3()``` function added.
@@ -17,7 +18,21 @@
 - ```nba_boxscorematchupsv3()``` function added.
 - ```nba_boxscorehustlev2()``` function added.
 - ```nba_boxscoredefensivev2()``` function added.
+
+### **Other NBA Stats API functions added**
+
+- ```nba_shotchartlineupdetail()``` function added.
+- ```nba_synergyplaytypes()``` function added.
+- ```nba_franchiseleaderswrank()``` function added.
+- ```nba_videodetailsasset()``` function added.
 - ```nba_infographicfanduelplayer()``` function added.
+
+### **Proxy Capability Added and Other Notes**
+
+- Add rlang dots option for passing ```httr::use_proxy()``` option to `nba_*()` functions
+- Returns documentation added for all working NBA Stats API endpoints and ESPN functions
+- Tests added for all working NBA Stats API endpoints and ESPN functions, over 1000 tests when
+  run locally
 
 # **hoopR 1.9.1**
 - Updates under-the-hood urls to the ESPN site API v2 summary endpoints

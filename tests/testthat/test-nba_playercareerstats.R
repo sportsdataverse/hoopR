@@ -276,4 +276,6 @@ test_that("NBA Player Career Stats", {
   expect_equal(sort(colnames(x[[12]])), sort(cols_x12))
   expect_s3_class(x[[12]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

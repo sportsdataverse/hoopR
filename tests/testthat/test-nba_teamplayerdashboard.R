@@ -138,4 +138,6 @@ test_that("NBA Team Player Dashboard", {
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
   expect_s3_class(x[[2]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

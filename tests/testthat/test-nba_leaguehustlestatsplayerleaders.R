@@ -77,4 +77,6 @@ test_that("NBA League Hustle Stats Player Leaders", {
   expect_equal(sort(colnames(x[[6]])), sort(cols_x6))
   expect_s3_class(x[[6]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

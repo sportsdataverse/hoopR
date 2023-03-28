@@ -200,4 +200,5 @@ test_that("NBA All-Time Leaders Grids", {
   expect_equal(sort(colnames(x[[19]])), sort(cols_x19))
   expect_s3_class(x[[19]], 'data.frame')
 
+  Sys.sleep(3)
 })

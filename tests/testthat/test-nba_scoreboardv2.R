@@ -163,4 +163,6 @@ test_that("NBA Scoreboard V2", {
   # expect_equal(sort(colnames(x[[10]])), sort(cols_x10))
   expect_s3_class(x[[10]], 'data.frame')
 
+  Sys.sleep(3)
+
 })

@@ -27,4 +27,6 @@ test_that("NBA Data PBP", {
   expect_equal(sort(colnames(x)), sort(cols))
   expect_s3_class(x, 'data.frame')
 
+  Sys.sleep(3)
+
 })

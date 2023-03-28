@@ -42,4 +42,6 @@ test_that("NBA Draft Combine Non-Stationary Shooting Results", {
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
   expect_s3_class(x[[1]], 'data.frame')
 
+  Sys.sleep(3)
+
 })
