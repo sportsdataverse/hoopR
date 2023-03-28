@@ -118,6 +118,24 @@
     <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_wp.html</loc>
   </url>
   <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_player_box.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_team_box.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_player_box.html</loc>
+  </url>
+  <url>
+    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_team_box.html</loc>
+  </url>
+  <url>
     <loc>https://hoopR.sportsdataverse.org/reference/hoopR-package.html</loc>
   </url>
   <url>
