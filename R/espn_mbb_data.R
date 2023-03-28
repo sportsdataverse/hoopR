@@ -2473,6 +2473,7 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type='regular', total
   return(df)
 }
 
+#' @export
 #' @noRd
 helper_espn_mbb_pbp <- function(resp){
   game_json <- resp %>%
@@ -2653,6 +2654,7 @@ helper_espn_mbb_pbp <- function(resp){
   return(plays_df)
 }
 
+#' @export
 #' @noRd
 helper_espn_mbb_team_box <- function(resp) {
   game_json <- resp %>%
@@ -2843,6 +2845,7 @@ helper_espn_mbb_team_box <- function(resp) {
 }
 
 
+#' @export
 #' @noRd
 helper_espn_mbb_player_box <- function(resp){
   game_json <- resp %>%

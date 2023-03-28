@@ -2288,6 +2288,7 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
   return(df)
 }
 
+#' @export
 #' @noRd
 helper_espn_nba_pbp <- function(resp){
 
@@ -2472,6 +2473,7 @@ helper_espn_nba_pbp <- function(resp){
   return(plays_df)
 }
 
+#' @export
 #' @noRd
 helper_espn_nba_team_box <- function(resp){
 
@@ -2662,6 +2664,7 @@ helper_espn_nba_team_box <- function(resp){
   return(team_box_score)
 }
 
+#' @export
 #' @noRd
 helper_espn_nba_player_box <- function(resp){
 
