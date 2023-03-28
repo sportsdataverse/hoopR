@@ -2473,6 +2473,9 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type='regular', total
   return(df)
 }
 
+#'  **Parse ESPN MBB PBP, helper function**
+#' @param resp Response object from the ESPN MBB game summary endpoint
+#' @return Returns a tibble
 #' @export
 #' @noRd
 helper_espn_mbb_pbp <- function(resp){
@@ -2654,6 +2657,9 @@ helper_espn_mbb_pbp <- function(resp){
   return(plays_df)
 }
 
+#'  **Parse ESPN MBB Team Box, helper function**
+#' @param resp Response object from the ESPN MBB game summary endpoint
+#' @return Returns a tibble
 #' @export
 #' @noRd
 helper_espn_mbb_team_box <- function(resp) {
@@ -2844,7 +2850,9 @@ helper_espn_mbb_team_box <- function(resp) {
   return(team_box_score)
 }
 
-
+#'  **Parse ESPN MBB Player Box, helper function**
+#' @param resp Response object from the ESPN MBB game summary endpoint
+#' @return Returns a tibble
 #' @export
 #' @noRd
 helper_espn_mbb_player_box <- function(resp){
