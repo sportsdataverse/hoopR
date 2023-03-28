@@ -7,7 +7,46 @@
 espn_mbb_rankings()
 }
 \value{
-Returns a tibble
+Returns a tibble\tabular{ll}{
+   col_name \tab types \cr
+   id \tab character \cr
+   name \tab character \cr
+   short_name \tab character \cr
+   type \tab character \cr
+   headline \tab character \cr
+   short_headline \tab character \cr
+   current \tab integer \cr
+   previous \tab integer \cr
+   points \tab numeric \cr
+   first_place_votes \tab integer \cr
+   trend \tab character \cr
+   date \tab character \cr
+   last_updated \tab character \cr
+   record_summary \tab character \cr
+   team_id \tab character \cr
+   team_uid \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_nickname \tab character \cr
+   team_abbreviation \tab character \cr
+   team_color \tab character \cr
+   team_logo \tab character \cr
+   occurrence_number \tab integer \cr
+   occurrence_type \tab character \cr
+   occurrence_last \tab logical \cr
+   occurrence_value \tab character \cr
+   occurrence_display_value \tab character \cr
+   season_year \tab integer \cr
+   season_start_date \tab character \cr
+   season_end_date \tab character \cr
+   season_display_name \tab character \cr
+   season_type_type \tab integer \cr
+   season_type_name \tab character \cr
+   season_type_abbreviation \tab character \cr
+   season_futures_ref \tab character \cr
+   first_occurrence_type \tab character \cr
+   first_occurrence_value \tab character \cr
+}
 }
 \description{
 \strong{Get men's college basketball AP and Coaches Poll rankings from ESPN}
@@ -18,6 +57,23 @@ Returns a tibble
   try(espn_mbb_rankings())
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN MBB Functions}

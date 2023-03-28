@@ -7,7 +7,15 @@
 espn_mbb_conferences()
 }
 \value{
-A conferences data frame
+A conferences data frame\tabular{ll}{
+   col_name \tab types \cr
+   group_id \tab character \cr
+   short_name \tab character \cr
+   uid \tab character \cr
+   name \tab character \cr
+   logo \tab character \cr
+   parent_group_id \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN conference names and IDs}
@@ -17,8 +25,25 @@ A conferences data frame
   try(espn_mbb_conferences())
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
+}
 \author{
 Saiem Gilani
 }
-\keyword{CBB}
+\concept{ESPN MBB Functions}
 \keyword{Conferences}
+\keyword{MBB}

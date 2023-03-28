@@ -10,7 +10,43 @@ espn_nba_scoreboard(season)
 \item{season}{Either numeric or character (YYYYMMDD)}
 }
 \value{
-Returns a tibble
+Returns a tibble with scoreboard data\tabular{ll}{
+   col_name \tab types \cr
+   matchup \tab character \cr
+   matchup_short \tab character \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   season_slug \tab character \cr
+   game_id \tab character \cr
+   game_uid \tab character \cr
+   game_date \tab character \cr
+   attendance \tab integer \cr
+   notes \tab logical \cr
+   status_name \tab character \cr
+   broadcasts \tab logical \cr
+   start_date \tab character \cr
+   geo_broadcasts \tab logical \cr
+   home_team_name \tab character \cr
+   home_team_logo \tab character \cr
+   home_team_abb \tab character \cr
+   home_team_id \tab character \cr
+   home_team_location \tab character \cr
+   home_team_full_name \tab character \cr
+   home_team_color \tab character \cr
+   home_score \tab integer \cr
+   home_win \tab integer \cr
+   home_record \tab character \cr
+   away_team_name \tab character \cr
+   away_team_logo \tab character \cr
+   away_team_abb \tab character \cr
+   away_team_id \tab character \cr
+   away_team_location \tab character \cr
+   away_team_full_name \tab character \cr
+   away_team_color \tab character \cr
+   away_score \tab integer \cr
+   away_win \tab integer \cr
+   away_record \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN men's NBA schedule for a specific year}
@@ -22,3 +58,18 @@ Returns a tibble
   try(espn_nba_scoreboard (season = "20221117"))
 }
 }
+\seealso{
+Other ESPN NBA Functions: 
+\code{\link{espn_nba_betting}()},
+\code{\link{espn_nba_game_all}()},
+\code{\link{espn_nba_game_rosters}()},
+\code{\link{espn_nba_pbp}()},
+\code{\link{espn_nba_player_box}()},
+\code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_standings}()},
+\code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_stats}()},
+\code{\link{espn_nba_teams}()},
+\code{\link{espn_nba_wp}()}
+}
+\concept{ESPN NBA Functions}

@@ -10,7 +10,83 @@ espn_mbb_standings(year)
 \item{year}{Either numeric or character (YYYY)}
 }
 \value{
-A standings data frame
+A standings data frame\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab character \cr
+   team \tab character \cr
+   avgpointsagainst \tab character \cr
+   avgpointsfor \tab character \cr
+   gamesbehind \tab character \cr
+   leaguewinpercent \tab character \cr
+   losses \tab character \cr
+   playoffseed \tab character \cr
+   pointsagainst \tab character \cr
+   pointsfor \tab character \cr
+   streak \tab character \cr
+   winpercent \tab character \cr
+   wins \tab character \cr
+   total \tab character \cr
+   home_avgpointsagainst \tab character \cr
+   home_avgpointsfor \tab character \cr
+   home_gamesbehind \tab character \cr
+   home_leaguewinpercent \tab character \cr
+   home_losses \tab character \cr
+   home_playoffseed \tab character \cr
+   home_pointsagainst \tab character \cr
+   home_pointsfor \tab character \cr
+   home_streak \tab character \cr
+   home_winpercent \tab character \cr
+   home_wins \tab character \cr
+   home \tab character \cr
+   road_avgpointsagainst \tab character \cr
+   road_avgpointsfor \tab character \cr
+   road_gamesbehind \tab character \cr
+   road_leaguewinpercent \tab character \cr
+   road_losses \tab character \cr
+   road_playoffseed \tab character \cr
+   road_pointsagainst \tab character \cr
+   road_pointsfor \tab character \cr
+   road_streak \tab character \cr
+   road_winpercent \tab character \cr
+   road_wins \tab character \cr
+   road \tab character \cr
+   vsaprankedteams_avgpointsagainst \tab character \cr
+   vsaprankedteams_avgpointsfor \tab character \cr
+   vsaprankedteams_gamesbehind \tab character \cr
+   vsaprankedteams_leaguewinpercent \tab character \cr
+   vsaprankedteams_losses \tab character \cr
+   vsaprankedteams_playoffseed \tab character \cr
+   vsaprankedteams_pointsagainst \tab character \cr
+   vsaprankedteams_pointsfor \tab character \cr
+   vsaprankedteams_streak \tab character \cr
+   vsaprankedteams_winpercent \tab character \cr
+   vsaprankedteams_wins \tab character \cr
+   vsaprankedteams \tab character \cr
+   vsusarankedteams_avgpointsagainst \tab character \cr
+   vsusarankedteams_avgpointsfor \tab character \cr
+   vsusarankedteams_gamesbehind \tab character \cr
+   vsusarankedteams_leaguewinpercent \tab character \cr
+   vsusarankedteams_losses \tab character \cr
+   vsusarankedteams_playoffseed \tab character \cr
+   vsusarankedteams_pointsagainst \tab character \cr
+   vsusarankedteams_pointsfor \tab character \cr
+   vsusarankedteams_streak \tab character \cr
+   vsusarankedteams_winpercent \tab character \cr
+   vsusarankedteams_wins \tab character \cr
+   vsusarankedteams \tab character \cr
+   vsconf_avgpointsagainst \tab character \cr
+   vsconf_avgpointsfor \tab character \cr
+   vsconf_gamesbehind \tab character \cr
+   vsconf_leaguewinpercent \tab character \cr
+   vsconf_losses \tab character \cr
+   vsconf_playoffseed \tab character \cr
+   vsconf_pointsagainst \tab character \cr
+   vsconf_pointsfor \tab character \cr
+   vsconf_streak \tab character \cr
+   vsconf_winpercent \tab character \cr
+   vsconf_wins \tab character \cr
+   vsconf \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN men's college basketball standings}
@@ -20,5 +96,22 @@ A standings data frame
   try(espn_mbb_standings(2021))
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
+}
+\concept{ESPN MBB Functions}
 \keyword{MBB}
 \keyword{Standings}

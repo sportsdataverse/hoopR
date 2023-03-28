@@ -6,13 +6,18 @@ test_that("KP - Get minutes matrix", {
 
 
   cols_x1 <- c(
-    'date', 'opponent_rk', 'opponent', 'result'
+    'date',
+    'opponent_rk',
+    'opponent',
+    'result'
   )
   cols_x2 <- c(
-    'starting_lineup_number', 'team', 'year'
+    'starting_lineup_number',
+    'team',
+    'year'
   )
   expect_equal(colnames(x[1:4]), cols_x1)
-  expect_equal(colnames(x[(ncol(x)-2):ncol(x)]), cols_x2)
+  expect_equal(colnames(x[(ncol(x) - 2):ncol(x)]), cols_x2)
   expect_s3_class(x, 'data.frame')
 
 })

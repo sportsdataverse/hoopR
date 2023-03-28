@@ -2,24 +2,204 @@
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A named list of data frames: Plays, Team, Player
-#' @keywords NBA Game
+#'
+#'    **Plays**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |id                        |character |
+#'    |sequence_number           |character |
+#'    |text                      |character |
+#'    |away_score                |integer   |
+#'    |home_score                |integer   |
+#'    |scoring_play              |logical   |
+#'    |score_value               |integer   |
+#'    |wallclock                 |character |
+#'    |shooting_play             |logical   |
+#'    |type_id                   |character |
+#'    |type_text                 |character |
+#'    |period_number             |integer   |
+#'    |period_display_value      |character |
+#'    |clock_display_value       |character |
+#'    |team_id                   |character |
+#'    |coordinate_x_raw          |numeric   |
+#'    |coordinate_y_raw          |numeric   |
+#'    |coordinate_x              |numeric   |
+#'    |coordinate_y              |numeric   |
+#'    |play_id                   |character |
+#'    |athlete_id_1              |character |
+#'    |athlete_id_2              |character |
+#'    |athlete_id_3              |character |
+#'    |home_team_id              |integer   |
+#'    |home_team_mascot          |character |
+#'    |home_team_name            |character |
+#'    |home_team_abbrev          |character |
+#'    |home_team_logo            |character |
+#'    |home_team_logo_dark       |character |
+#'    |home_team_full_name       |character |
+#'    |home_team_color           |character |
+#'    |home_team_alternate_color |character |
+#'    |home_team_score           |integer   |
+#'    |home_team_winner          |logical   |
+#'    |home_team_record          |character |
+#'    |away_team_id              |integer   |
+#'    |away_team_mascot          |character |
+#'    |away_team_name            |character |
+#'    |away_team_abbrev          |character |
+#'    |away_team_logo            |character |
+#'    |away_team_logo_dark       |character |
+#'    |away_team_full_name       |character |
+#'    |away_team_color           |character |
+#'    |away_team_alternate_color |character |
+#'    |away_team_score           |integer   |
+#'    |away_team_winner          |logical   |
+#'    |away_team_record          |character |
+#'    |game_id                   |integer   |
+#'    |season                    |integer   |
+#'    |season_type               |integer   |
+#'    |game_date                 |Date      |
+#'
+#'    **Team**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |team_id                           |integer   |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_location                     |character |
+#'    |team_name                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_display_name                 |character |
+#'    |team_short_display_name           |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |team_logo                         |character |
+#'    |team_home_away                    |character |
+#'    |team_score                        |integer   |
+#'    |team_winner                       |logical   |
+#'    |assists                           |integer   |
+#'    |blocks                            |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |fast_break_points                 |character |
+#'    |field_goal_pct                    |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |flagrant_fouls                    |integer   |
+#'    |fouls                             |integer   |
+#'    |free_throw_pct                    |numeric   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |largest_lead                      |character |
+#'    |offensive_rebounds                |integer   |
+#'    |points_in_paint                   |character |
+#'    |steals                            |integer   |
+#'    |team_turnovers                    |integer   |
+#'    |technical_fouls                   |integer   |
+#'    |three_point_field_goal_pct        |numeric   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |total_rebounds                    |integer   |
+#'    |total_technical_fouls             |integer   |
+#'    |total_turnovers                   |integer   |
+#'    |turnover_points                   |character |
+#'    |turnovers                         |integer   |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_uid                 |character |
+#'    |opponent_team_slug                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_short_display_name  |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_logo                |character |
+#'
+#'    **Player**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |athlete_id                        |character |
+#'    |athlete_display_name              |character |
+#'    |team_id                           |character |
+#'    |team_name                         |character |
+#'    |team_location                     |character |
+#'    |team_short_display_name           |character |
+#'    |minutes                           |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |offensive_rebounds                |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |rebounds                          |integer   |
+#'    |assists                           |integer   |
+#'    |steals                            |integer   |
+#'    |blocks                            |integer   |
+#'    |turnovers                         |integer   |
+#'    |fouls                             |integer   |
+#'    |plus_minus                        |character |
+#'    |points                            |integer   |
+#'    |starter                           |logical   |
+#'    |ejected                           |logical   |
+#'    |did_not_play                      |logical   |
+#'    |reason                            |character |
+#'    |active                            |logical   |
+#'    |athlete_jersey                    |character |
+#'    |athlete_short_name                |character |
+#'    |athlete_headshot_href             |character |
+#'    |athlete_position_name             |character |
+#'    |athlete_position_abbreviation     |character |
+#'    |team_display_name                 |character |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_logo                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |home_away                         |character |
+#'    |team_winner                       |logical   |
+#'    |team_score                        |character |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_logo                |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_score               |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
-#'
+#' @keywords NBA Game
+#' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
 #'   try(espn_nba_game_all(game_id = 401283399))
 #' }
 #'
 
-espn_nba_game_all <- function(game_id){
+espn_nba_game_all <- function(game_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  summary_url <-
-    "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?"
+  summary_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?"
 
   ## Inputs
   ## game_id
@@ -34,181 +214,16 @@ espn_nba_game_all <- function(game_id){
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
+  plays_df <- data.frame()
+  team_box_score <- data.frame()
+  player_box_score <- data.frame()
+
   #---- Play-by-Play ------
   tryCatch(
     expr = {
 
-      raw_play_df <- jsonlite::fromJSON(resp)
+      plays_df <- helper_espn_nba_pbp(resp)
 
-      homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
-
-      season <- raw_play_df[['header']][['season']][['year']]
-      season_type <- raw_play_df[['header']][['season']][['type']]
-      game_date <- as.Date(substr(raw_play_df[['header']][['competitions']][['date']], 0, 10))
-      id_vars <- data.frame()
-      if (homeAway1 == "home") {
-
-        homeTeamId <- as.integer(raw_play_df[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
-        homeTeamMascot <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-        homeTeamName <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-        homeTeamAbbrev <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-        homeTeamLogo <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
-        homeTeamLogoDark <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
-        homeTeamFullName <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
-        homeTeamColor <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
-        homeTeamAlternateColor <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
-        homeTeamScore <- as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][1])
-        homeTeamWinner <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][1]
-        homeTeamRecord <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
-        awayTeamId <- as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
-        awayTeamMascot <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-        awayTeamName <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
-        awayTeamAbbrev <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-        awayTeamLogo <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
-        awayTeamLogoDark <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
-        awayTeamFullName <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
-        awayTeamColor <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
-        awayTeamAlternateColor <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
-        awayTeamScore <- as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][2])
-        awayTeamWinner <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][2]
-        awayTeamRecord <- raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
-        id_vars <- data.frame(
-          homeTeamId,
-          homeTeamMascot,
-          homeTeamName,
-          homeTeamAbbrev,
-          homeTeamLogo,
-          homeTeamLogoDark,
-          homeTeamFullName,
-          homeTeamColor,
-          homeTeamAlternateColor,
-          homeTeamScore,
-          homeTeamWinner,
-          homeTeamRecord,
-          awayTeamId,
-          awayTeamMascot,
-          awayTeamName,
-          awayTeamAbbrev,
-          awayTeamLogo,
-          awayTeamLogoDark,
-          awayTeamFullName,
-          awayTeamColor,
-          awayTeamAlternateColor,
-          awayTeamScore,
-          awayTeamWinner,
-          awayTeamRecord
-        )
-      } else {
-
-        homeTeamId = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
-        homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-        homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
-        homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-        homeTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
-        homeTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
-        homeTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
-        homeTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
-        homeTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
-        homeTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][2])
-        homeTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][2]
-        homeTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
-        awayTeamId = as.integer(raw_play_df[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
-        awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-        awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-        awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-        awayTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
-        awayTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
-        awayTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
-        awayTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
-        awayTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
-        awayTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][1])
-        awayTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][1]
-        awayTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
-        id_vars <- data.frame(
-          homeTeamId,
-          homeTeamMascot,
-          homeTeamName,
-          homeTeamAbbrev,
-          homeTeamLogo,
-          homeTeamLogoDark,
-          homeTeamFullName,
-          homeTeamColor,
-          homeTeamAlternateColor,
-          homeTeamScore,
-          homeTeamWinner,
-          homeTeamRecord,
-          awayTeamId,
-          awayTeamMascot,
-          awayTeamName,
-          awayTeamAbbrev,
-          awayTeamLogo,
-          awayTeamLogoDark,
-          awayTeamFullName,
-          awayTeamColor,
-          awayTeamAlternateColor,
-          awayTeamScore,
-          awayTeamWinner,
-          awayTeamRecord
-        )
-
-      }
-
-      raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
-
-
-      plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider("participants")
-      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
-        plays <- plays %>%
-          dplyr::mutate(
-            # convert types
-            coordinate.x = as.double(.data$coordinate.x),
-            coordinate.y = as.double(.data$coordinate.y),
-            # Free throws are adjusted automatically to 19' from baseline, which
-            # corresponds to 13.75' from the center of the basket (originally
-            # the center of the basket is (25, 0))
-            coordinate.y = dplyr::case_when(
-              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
-              TRUE ~ .data$coordinate.y
-            ),
-            coordinate.x = dplyr::case_when(
-              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
-              TRUE ~ .data$coordinate.x
-            ),
-            coordinate_x_transformed = dplyr::case_when(
-              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
-              TRUE ~ .data$coordinate.y - 41.75
-            ),
-            coordinate_y_transformed = dplyr::case_when(
-              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
-              TRUE ~ .data$coordinate.x - 25
-            )
-          ) %>%
-          dplyr::rename(
-            "coordinate.x.raw" = "coordinate.x",
-            "coordinate.y.raw" = "coordinate.y",
-            "coordinate.x" = "coordinate_x_transformed",
-            "coordinate.y" = "coordinate_y_transformed"
-          )
-      }
-      suppressWarnings(
-        aths <- plays %>%
-          dplyr::group_by(.data$id) %>%
-          dplyr::select(
-            "id",
-            "athlete.id") %>%
-          tidyr::unnest_wider("athlete.id", names_sep = "_")
-      )
-      names(aths)<-c("play.id","athlete.id.1","athlete.id.2","athlete.id.3")
-      plays_df <- dplyr::bind_cols(plays, aths, id_vars) %>%
-        select(-"athlete.id") %>%
-        dplyr::mutate(
-          game_id = game_id,
-          season = season,
-          season_type = season_type,
-          game_date = game_date) %>%
-        janitor::clean_names() %>%
-        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -222,69 +237,9 @@ espn_nba_game_all <- function(game_id){
   #---- Team Box ------
   tryCatch(
     expr = {
-      raw_play_df <- jsonlite::fromJSON(resp)
-      season <- raw_play_df[['header']][['season']][['year']]
-      season_type <- raw_play_df[['header']][['season']][['type']]
-      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
-      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
-      homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
-      awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
-      homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-      awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-      homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-      awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
 
-      homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-      awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-      game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
-      teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
+      team_box_score <- helper_espn_nba_team_box(resp)
 
-      teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
-        dplyr::select(
-          "displayValue",
-          "name") %>%
-        dplyr::rename("Home" = "displayValue")
-      teams_box_score_df_1 <- teams_box_score_df[[1]][[1]] %>%
-        dplyr::select(
-          "displayValue",
-          "name") %>%
-        dplyr::rename("Away" = "displayValue")
-      teams2 <- data.frame(t(teams_box_score_df_2$Home))
-      colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$homeAway <- homeAwayTeam2
-      teams2$OpponentId <- as.integer(awayTeamId)
-      teams2$OpponentName <- awayTeamName
-      teams2$OpponentMascot <- awayTeamMascot
-      teams2$OpponentAbbrev <- awayTeamAbbrev
-
-      teams1 <- data.frame(t(teams_box_score_df_1$Away))
-      colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$homeAway <- homeAwayTeam1
-      teams1$OpponentId <- as.integer(homeTeamId)
-      teams1$OpponentName <- homeTeamName
-      teams1$OpponentMascot <- homeTeamMascot
-      teams1$OpponentAbbrev <- homeTeamAbbrev
-      teams <- dplyr::bind_rows(teams1,teams2)
-
-      team_box_score <- teams_box_score_df %>%
-        dplyr::select(-"statistics") %>%
-        dplyr::bind_cols(teams)
-
-      team_box_score <- team_box_score %>%
-        dplyr::mutate(
-          game_id = game_id,
-          season = season,
-          season_type = season_type,
-          game_date = game_date
-        ) %>%
-        janitor::clean_names() %>%
-        dplyr::select(
-          "game_id",
-          "season",
-          "season_type",
-          "game_date",
-          tidyr::everything()) %>%
-        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -294,57 +249,13 @@ espn_nba_game_all <- function(game_id){
     finally = {
     }
   )
+
   #---- Player Box ------
   tryCatch(
     expr = {
-      raw_play_df <- jsonlite::fromJSON(resp)
-      players_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["players"]]), flatten=TRUE) %>%
-        tidyr::unnest("statistics") %>%
-        tidyr::unnest("athletes")
-      stat_cols <- players_df$names[[1]]
-      stats <- players_df$stats
 
-      stats_df <- as.data.frame(do.call(rbind,stats))
-      colnames(stats_df) <- stat_cols
+      player_box_score <- helper_espn_nba_player_box(resp)
 
-      players_df <- players_df %>%
-        dplyr::filter(!.data$didNotPlay) %>%
-        dplyr::select(
-          "starter",
-          "ejected",
-          "didNotPlay",
-          "active",
-          "athlete.displayName",
-          "athlete.jersey",
-          "athlete.id",
-          "athlete.shortName",
-          "athlete.headshot.href",
-          "athlete.position.name",
-          "athlete.position.abbreviation",
-          "team.shortDisplayName",
-          "team.name",
-          "team.logo",
-          "team.id",
-          "team.abbreviation",
-          "team.color",
-          "team.alternateColor"
-        )
-
-      player_box <- dplyr::bind_cols(stats_df,players_df) %>%
-        dplyr::select(
-          "athlete.displayName",
-          "team.shortDisplayName",
-          tidyr::everything())
-      plays_df <- plays_df %>%
-        janitor::clean_names()
-      team_box_score <- team_box_score %>%
-        janitor::clean_names()
-      player_box <- player_box %>%
-        janitor::clean_names() %>%
-        dplyr::rename(
-          '+/-' = "x",
-          "fg3" = "x3pt") %>%
-        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -354,21 +265,82 @@ espn_nba_game_all <- function(game_id){
     finally = {
     }
   )
-  pbp <- c(list(plays_df), list(team_box_score),list(player_box))
-  names(pbp) <- c("Plays","Team","Player")
+
+  pbp <- c(list(plays_df), list(team_box_score), list(player_box_score))
+  names(pbp) <- c("Plays", "Team", "Player")
   return(pbp)
 }
+
 
 #' **Get ESPN NBA PBP data**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A play-by-play data frame.
-#' @keywords NBA PBP
+#'
+#'    **Plays**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |id                        |character |
+#'    |sequence_number           |character |
+#'    |text                      |character |
+#'    |away_score                |integer   |
+#'    |home_score                |integer   |
+#'    |scoring_play              |logical   |
+#'    |score_value               |integer   |
+#'    |wallclock                 |character |
+#'    |shooting_play             |logical   |
+#'    |type_id                   |character |
+#'    |type_text                 |character |
+#'    |period_number             |integer   |
+#'    |period_display_value      |character |
+#'    |clock_display_value       |character |
+#'    |team_id                   |character |
+#'    |coordinate_x_raw          |numeric   |
+#'    |coordinate_y_raw          |numeric   |
+#'    |coordinate_x              |numeric   |
+#'    |coordinate_y              |numeric   |
+#'    |play_id                   |character |
+#'    |athlete_id_1              |character |
+#'    |athlete_id_2              |character |
+#'    |athlete_id_3              |character |
+#'    |home_team_id              |integer   |
+#'    |home_team_mascot          |character |
+#'    |home_team_name            |character |
+#'    |home_team_abbrev          |character |
+#'    |home_team_logo            |character |
+#'    |home_team_logo_dark       |character |
+#'    |home_team_full_name       |character |
+#'    |home_team_color           |character |
+#'    |home_team_alternate_color |character |
+#'    |home_team_score           |integer   |
+#'    |home_team_winner          |logical   |
+#'    |home_team_record          |character |
+#'    |away_team_id              |integer   |
+#'    |away_team_mascot          |character |
+#'    |away_team_name            |character |
+#'    |away_team_abbrev          |character |
+#'    |away_team_logo            |character |
+#'    |away_team_logo_dark       |character |
+#'    |away_team_full_name       |character |
+#'    |away_team_color           |character |
+#'    |away_team_alternate_color |character |
+#'    |away_team_score           |integer   |
+#'    |away_team_winner          |logical   |
+#'    |away_team_record          |character |
+#'    |game_id                   |integer   |
+#'    |season                    |integer   |
+#'    |season_type               |integer   |
+#'    |game_date                 |Date      |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
+#' @keywords NBA PBP
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
@@ -393,181 +365,14 @@ espn_nba_pbp <- function(game_id){
 
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
+
+  plays_df <- data.frame()
   #---- Play-by-Play ------
   tryCatch(
     expr = {
 
-      raw_play_df <- jsonlite::fromJSON(resp)
+      plays_df <- helper_espn_nba_pbp(resp)
 
-      homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
-
-      season <- raw_play_df[['header']][['season']][['year']]
-      season_type <- raw_play_df[['header']][['season']][['type']]
-      game_date <- as.Date(substr(raw_play_df[['header']][['competitions']][['date']], 0, 10))
-      id_vars <- data.frame()
-      if (homeAway1 == "home") {
-
-        homeTeamId = as.integer(raw_play_df[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
-        homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-        homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-        homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-        homeTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
-        homeTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
-        homeTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
-        homeTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
-        homeTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
-        homeTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][1])
-        homeTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][1]
-        homeTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
-        awayTeamId = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
-        awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-        awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
-        awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-        awayTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
-        awayTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
-        awayTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
-        awayTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
-        awayTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
-        awayTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][2])
-        awayTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][2]
-        awayTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
-        id_vars <- data.frame(
-          homeTeamId,
-          homeTeamMascot,
-          homeTeamName,
-          homeTeamAbbrev,
-          homeTeamLogo,
-          homeTeamLogoDark,
-          homeTeamFullName,
-          homeTeamColor,
-          homeTeamAlternateColor,
-          homeTeamScore,
-          homeTeamWinner,
-          homeTeamRecord,
-          awayTeamId,
-          awayTeamMascot,
-          awayTeamName,
-          awayTeamAbbrev,
-          awayTeamLogo,
-          awayTeamLogoDark,
-          awayTeamFullName,
-          awayTeamColor,
-          awayTeamAlternateColor,
-          awayTeamScore,
-          awayTeamWinner,
-          awayTeamRecord
-        )
-      } else {
-
-        awayTeamId = as.integer(raw_play_df[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
-        awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-        awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-        awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-        awayTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
-        awayTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
-        awayTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
-        awayTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
-        awayTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
-        awayTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][1])
-        awayTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][1]
-        awayTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
-        homeTeamId = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
-        homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-        homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
-        homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-        homeTeamLogo = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
-        homeTeamLogoDark = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
-        homeTeamFullName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
-        homeTeamColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
-        homeTeamAlternateColor = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
-        homeTeamScore = as.integer(raw_play_df[['header']][['competitions']][['competitors']][[1]][['score']][2])
-        homeTeamWinner = raw_play_df[['header']][['competitions']][['competitors']][[1]][['winner']][2]
-        homeTeamRecord = raw_play_df[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
-        id_vars <- data.frame(
-          homeTeamId,
-          homeTeamMascot,
-          homeTeamName,
-          homeTeamAbbrev,
-          homeTeamLogo,
-          homeTeamLogoDark,
-          homeTeamFullName,
-          homeTeamColor,
-          homeTeamAlternateColor,
-          homeTeamScore,
-          homeTeamWinner,
-          homeTeamRecord,
-          awayTeamId,
-          awayTeamMascot,
-          awayTeamName,
-          awayTeamAbbrev,
-          awayTeamLogo,
-          awayTeamLogoDark,
-          awayTeamFullName,
-          awayTeamColor,
-          awayTeamAlternateColor,
-          awayTeamScore,
-          awayTeamWinner,
-          awayTeamRecord
-        )
-
-      }
-
-      raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
-
-
-      plays <- raw_play_df[["plays"]] %>%
-        tidyr::unnest_wider("participants")
-      if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
-        plays <- plays %>%
-          dplyr::mutate(
-            # convert types
-            coordinate.x = as.double(.data$coordinate.x),
-            coordinate.y = as.double(.data$coordinate.y),
-            # Free throws are adjusted automatically to 19' from baseline, which
-            # corresponds to 13.75' from the center of the basket (originally
-            # the center of the basket is (25, 0))
-            coordinate.y = dplyr::case_when(
-              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
-              TRUE ~ .data$coordinate.y
-            ),
-            coordinate.x = dplyr::case_when(
-              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
-              TRUE ~ .data$coordinate.x
-            ),
-            coordinate_x_transformed = dplyr::case_when(
-              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
-              TRUE ~ .data$coordinate.y - 41.75
-            ),
-            coordinate_y_transformed = dplyr::case_when(
-              .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
-              TRUE ~ .data$coordinate.x - 25
-            )
-          ) %>%
-          dplyr::rename(
-            "coordinate.x.raw" = "coordinate.x",
-            "coordinate.y.raw" = "coordinate.y",
-            "coordinate.x" = "coordinate_x_transformed",
-            "coordinate.y" = "coordinate_y_transformed"
-          )
-      }
-      suppressWarnings(
-        aths <- plays %>%
-          dplyr::group_by(.data$id) %>%
-          dplyr::select(
-            "id",
-            "athlete.id") %>%
-          tidyr::unnest_wider("athlete.id", names_sep = "_")
-      )
-      names(aths)<-c("play.id","athlete.id.1","athlete.id.2","athlete.id.3")
-      plays_df <- dplyr::bind_cols(plays, aths, id_vars) %>%
-        select(-"athlete.id") %>%
-        dplyr::mutate(
-          game_id = game_id,
-          season = season,
-          season_type = season_type,
-          game_date = game_date) %>%
-        janitor::clean_names() %>%
-        make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -581,16 +386,81 @@ espn_nba_pbp <- function(game_id){
 
   return(plays_df)
 }
+
+
 #' **Get ESPN NBA team box scores**
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A team boxscore data frame
-#' @keywords NBA Team Box
+#'
+#'    **Team**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |team_id                           |integer   |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_location                     |character |
+#'    |team_name                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_display_name                 |character |
+#'    |team_short_display_name           |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |team_logo                         |character |
+#'    |team_home_away                    |character |
+#'    |team_score                        |integer   |
+#'    |team_winner                       |logical   |
+#'    |assists                           |integer   |
+#'    |blocks                            |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |fast_break_points                 |character |
+#'    |field_goal_pct                    |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |flagrant_fouls                    |integer   |
+#'    |fouls                             |integer   |
+#'    |free_throw_pct                    |numeric   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |largest_lead                      |character |
+#'    |offensive_rebounds                |integer   |
+#'    |points_in_paint                   |character |
+#'    |steals                            |integer   |
+#'    |team_turnovers                    |integer   |
+#'    |technical_fouls                   |integer   |
+#'    |three_point_field_goal_pct        |numeric   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |total_rebounds                    |integer   |
+#'    |total_technical_fouls             |integer   |
+#'    |total_turnovers                   |integer   |
+#'    |turnover_points                   |character |
+#'    |turnovers                         |integer   |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_uid                 |character |
+#'    |opponent_team_slug                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_short_display_name  |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_logo                |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
+#' @keywords NBA Team Box
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
@@ -616,73 +486,13 @@ espn_nba_team_box <- function(game_id){
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
+  team_box_score <- data.frame()
   #---- Team Box ------
   tryCatch(
     expr = {
 
-      raw_play_df <- jsonlite::fromJSON(resp)
-      season <- raw_play_df[['header']][['season']][['year']]
-      season_type <- raw_play_df[['header']][['season']][['type']]
-      homeAwayTeam1 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][1])
-      homeAwayTeam2 = toupper(raw_play_df[['header']][['competitions']][['competitors']][[1]][['homeAway']][2])
-      homeTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][1]
-      awayTeamId = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2]
-      homeTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
-      awayTeamMascot = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
-      homeTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
-      awayTeamName = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
+      team_box_score <- helper_espn_nba_team_box(resp)
 
-      homeTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
-      awayTeamAbbrev = raw_play_df[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
-      game_date = as.Date(substr(raw_play_df[['header']][['competitions']][['date']],0,10))
-
-      teams_box_score_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["teams"]]),flatten=TRUE)
-
-      teams_box_score_df_2 <- teams_box_score_df[[1]][[2]] %>%
-        dplyr::select(
-          "displayValue",
-          "name") %>%
-        dplyr::rename(
-          "Home" = "displayValue")
-      teams_box_score_df_1 <- teams_box_score_df[[1]][[1]] %>%
-        dplyr::select("displayValue", "name") %>%
-        dplyr::rename("Away" = "displayValue")
-      teams2 <- data.frame(t(teams_box_score_df_2$Home))
-      colnames(teams2) <- t(teams_box_score_df_2$name)
-      teams2$homeAway <- homeAwayTeam2
-      teams2$OpponentId <- as.integer(awayTeamId)
-      teams2$OpponentName <- awayTeamName
-      teams2$OpponentMascot <- awayTeamMascot
-      teams2$OpponentAbbrev <- awayTeamAbbrev
-
-      teams1 <- data.frame(t(teams_box_score_df_1$Away))
-      colnames(teams1) <- t(teams_box_score_df_1$name)
-      teams1$homeAway <- homeAwayTeam1
-      teams1$OpponentId <- as.integer(homeTeamId)
-      teams1$OpponentName <- homeTeamName
-      teams1$OpponentMascot <- homeTeamMascot
-      teams1$OpponentAbbrev <- homeTeamAbbrev
-      teams <- dplyr::bind_rows(teams1,teams2)
-
-      team_box_score <- teams_box_score_df %>%
-        dplyr::select(-"statistics") %>%
-        dplyr::bind_cols(teams)
-
-      team_box_score <- team_box_score %>%
-        dplyr::mutate(
-          game_id = game_id,
-          season = season,
-          season_type = season_type,
-          game_date = game_date
-        ) %>%
-        janitor::clean_names() %>%
-        dplyr::select(
-          "game_id",
-          "season",
-          "season_type",
-          "game_date",
-          tidyr::everything()) %>%
-        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -698,12 +508,76 @@ espn_nba_team_box <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A player boxscore data frame
-#' @keywords NBA Player Box
+#'
+#'    **Player**
+#'
+#'
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |athlete_id                        |character |
+#'    |athlete_display_name              |character |
+#'    |team_id                           |character |
+#'    |team_name                         |character |
+#'    |team_location                     |character |
+#'    |team_short_display_name           |character |
+#'    |minutes                           |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |offensive_rebounds                |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |rebounds                          |integer   |
+#'    |assists                           |integer   |
+#'    |steals                            |integer   |
+#'    |blocks                            |integer   |
+#'    |turnovers                         |integer   |
+#'    |fouls                             |integer   |
+#'    |plus_minus                        |character |
+#'    |points                            |integer   |
+#'    |starter                           |logical   |
+#'    |ejected                           |logical   |
+#'    |did_not_play                      |logical   |
+#'    |reason                            |character |
+#'    |active                            |logical   |
+#'    |athlete_jersey                    |character |
+#'    |athlete_short_name                |character |
+#'    |athlete_headshot_href             |character |
+#'    |athlete_position_name             |character |
+#'    |athlete_position_abbreviation     |character |
+#'    |team_display_name                 |character |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_logo                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |home_away                         |character |
+#'    |team_winner                       |logical   |
+#'    |team_score                        |character |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_logo                |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_score               |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
+#' @keywords NBA Player Box
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
@@ -730,75 +604,13 @@ espn_nba_player_box <- function(game_id){
     httr::content(as = "text", encoding = "UTF-8")
 
 
+  player_box_score <- data.frame()
   #---- Player Box ------
   tryCatch(
     expr = {
 
-      raw_play_df <- jsonlite::fromJSON(resp)
-      raw_play_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df),flatten=TRUE)
+      player_box_score <- helper_espn_nba_player_box(resp)
 
-      players_df <- jsonlite::fromJSON(jsonlite::toJSON(raw_play_df[["boxscore"]][["players"]]), flatten=TRUE) %>%
-        tidyr::unnest("statistics") %>%
-        tidyr::unnest("athletes")
-      stat_cols <- players_df$names[[1]]
-      # athlete_ids <- players_df %>% dplyr::select("athlete.id")
-      # stats <- players_df %>%
-      #   purrr::pluck("stats")
-      #
-      # stat_col_df <-   data.frame(matrix(nrow = 0, ncol = length(stat_cols)))
-      # colnames(stat_col_df) <- stat_cols
-      # stat_col_df %>% dplyr::bind_rows(stats)
-      # purrr::map_dfr(athlete_ids, function(x){
-      #   athlete_stats <- players_df $stats
-      # })
-      stats <- players_df$stats
-
-      stats_df <- as.data.frame(do.call(rbind,stats))
-      colnames(stats_df) <- stat_cols
-
-      players_df <- players_df %>%
-        dplyr::filter(!.data$didNotPlay) %>%
-        dplyr::select(
-          "reason",
-          "starter",
-          "ejected",
-          "didNotPlay",
-          "active",
-          "athlete.uid",
-          "athlete.displayName",
-          "athlete.jersey",
-          "athlete.guid",
-          "athlete.id",
-          "athlete.shortName",
-          "athlete.headshot.alt",
-          "athlete.headshot.href",
-          "athlete.position.displayName",
-          "athlete.position.name",
-          "athlete.position.abbreviation",
-          "team.shortDisplayName",
-          "team.uid",
-          "team.alternateColor",
-          "team.color",
-          "team.displayName",
-          "team.name",
-          "team.logo",
-          "team.location",
-          "team.id",
-          "team.abbreviation",
-          "team.slug"
-        )
-
-      player_box <- dplyr::bind_cols(stats_df,players_df) %>%
-        dplyr::select(
-          "athlete.displayName",
-          "team.shortDisplayName",
-          tidyr::everything())
-      player_box <- player_box %>%
-        janitor::clean_names() %>%
-        dplyr::rename(
-          '+/-' = "x",
-          "fg3" = "x3pt") %>%
-        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com",Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
@@ -808,7 +620,7 @@ espn_nba_player_box <- function(game_id){
     finally = {
     }
   )
-  return(player_box)
+  return(player_box_score)
 }
 
 
@@ -817,12 +629,107 @@ espn_nba_player_box <- function(game_id){
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @return A game rosters data frame
-#' @keywords NBA Game Roster
+#'
+#'    |col_name                                   |types     |
+#'    |:------------------------------------------|:---------|
+#'    |athlete_id                                 |integer   |
+#'    |athlete_uid                                |character |
+#'    |athlete_guid                               |character |
+#'    |athlete_type                               |character |
+#'    |sdr                                        |character |
+#'    |first_name                                 |character |
+#'    |last_name                                  |character |
+#'    |full_name                                  |character |
+#'    |athlete_display_name                       |character |
+#'    |short_name                                 |character |
+#'    |weight                                     |integer   |
+#'    |display_weight                             |character |
+#'    |height                                     |integer   |
+#'    |display_height                             |character |
+#'    |age                                        |integer   |
+#'    |date_of_birth                              |character |
+#'    |debut_year                                 |integer   |
+#'    |birth_place_city                           |character |
+#'    |birth_place_state                          |character |
+#'    |birth_place_country                        |character |
+#'    |slug                                       |character |
+#'    |headshot_href                              |character |
+#'    |headshot_alt                               |character |
+#'    |jersey                                     |character |
+#'    |position_id                                |character |
+#'    |position_name                              |character |
+#'    |position_display_name                      |character |
+#'    |position_abbreviation                      |character |
+#'    |position_leaf                              |logical   |
+#'    |linked                                     |logical   |
+#'    |years                                      |integer   |
+#'    |active                                     |logical   |
+#'    |contract_bird_status                       |integer   |
+#'    |contract_active                            |logical   |
+#'    |contract_active_1                          |logical   |
+#'    |contract_incoming_trade_value              |integer   |
+#'    |contract_outgoing_trade_value              |integer   |
+#'    |contract_minimum_salary_exception          |logical   |
+#'    |contract_option_type                       |integer   |
+#'    |contract_salary                            |integer   |
+#'    |contract_salary_remaining                  |integer   |
+#'    |contract_years_remaining                   |integer   |
+#'    |contract_trade_kicker_active               |logical   |
+#'    |contract_trade_kicker_percentage           |integer   |
+#'    |contract_trade_kicker_value                |integer   |
+#'    |contract_trade_kicker_trade_value          |integer   |
+#'    |contract_trade_restriction                 |logical   |
+#'    |contract_unsigned_foreign_pick             |logical   |
+#'    |contract_active_2                          |logical   |
+#'    |draft_display_text                         |character |
+#'    |draft_round                                |integer   |
+#'    |draft_year                                 |integer   |
+#'    |draft_selection                            |integer   |
+#'    |status_id                                  |character |
+#'    |status_name                                |character |
+#'    |status_type                                |character |
+#'    |status_abbreviation                        |character |
+#'    |starter                                    |logical   |
+#'    |valid                                      |logical   |
+#'    |did_not_play                               |logical   |
+#'    |display_name                               |character |
+#'    |reason                                     |character |
+#'    |ejected                                    |logical   |
+#'    |team_id                                    |character |
+#'    |team_guid                                  |character |
+#'    |team_uid                                   |character |
+#'    |team_slug                                  |character |
+#'    |team_location                              |character |
+#'    |team_name                                  |character |
+#'    |team_abbreviation                          |character |
+#'    |team_display_name                          |character |
+#'    |team_short_display_name                    |character |
+#'    |team_color                                 |character |
+#'    |team_alternate_color                       |character |
+#'    |team_is_active                             |logical   |
+#'    |team_is_all_star                           |logical   |
+#'    |logo_href                                  |character |
+#'    |logo_dark_href                             |character |
+#'    |logos_href_2                               |character |
+#'    |logos_href_3                               |character |
+#'    |game_id                                    |numeric   |
+#'    |order                                      |integer   |
+#'    |home_away                                  |character |
+#'    |winner                                     |logical   |
+#'    |citizenship                                |character |
+#'    |contract_base_year_compensation_active     |logical   |
+#'    |contract_base_year_compensation_expiration |character |
+#'    |hand_type                                  |character |
+#'    |hand_abbreviation                          |character |
+#'    |hand_display_value                         |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @import rvest
 #' @export
+#' @keywords NBA Game Roster
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
@@ -1060,13 +967,31 @@ espn_nba_game_rosters <- function(game_id) {
 #' **Get ESPN NBA team names and IDs**
 #' @author Saiem Gilani
 #' @return A teams data frame
-#' @keywords NBA Teams
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |team_id         |character |
+#'    |abbreviation    |character |
+#'    |display_name    |character |
+#'    |short_name      |character |
+#'    |mascot          |character |
+#'    |nickname        |character |
+#'    |team            |character |
+#'    |color           |character |
+#'    |alternate_color |character |
+#'    |logo            |character |
+#'    |logo_dark       |character |
+#'    |logos_href_3    |character |
+#'    |logos_href_4    |character |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
 #' @importFrom tidyr unnest unnest_wider everything pivot_wider
 #' @import furrr
 #' @import rvest
 #' @export
+#' @keywords NBA Teams
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
@@ -1162,7 +1087,45 @@ espn_nba_teams <- function(){
 #' **Get ESPN men's NBA schedule for a specific year**
 #'
 #' @param season Either numeric or character (YYYYMMDD)
-#' @return Returns a tibble
+#' @return Returns a tibble with scoreboard data
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |matchup             |character |
+#'    |matchup_short       |character |
+#'    |season              |integer   |
+#'    |season_type         |integer   |
+#'    |season_slug         |character |
+#'    |game_id             |character |
+#'    |game_uid            |character |
+#'    |game_date           |character |
+#'    |attendance          |integer   |
+#'    |notes               |logical   |
+#'    |status_name         |character |
+#'    |broadcasts          |logical   |
+#'    |start_date          |character |
+#'    |geo_broadcasts      |logical   |
+#'    |home_team_name      |character |
+#'    |home_team_logo      |character |
+#'    |home_team_abb       |character |
+#'    |home_team_id        |character |
+#'    |home_team_location  |character |
+#'    |home_team_full_name |character |
+#'    |home_team_color     |character |
+#'    |home_score          |integer   |
+#'    |home_win            |integer   |
+#'    |home_record         |character |
+#'    |away_team_name      |character |
+#'    |away_team_logo      |character |
+#'    |away_team_abb       |character |
+#'    |away_team_id        |character |
+#'    |away_team_location  |character |
+#'    |away_team_full_name |character |
+#'    |away_team_color     |character |
+#'    |away_score          |integer   |
+#'    |away_win            |integer   |
+#'    |away_record         |character |
+#'
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
@@ -1170,6 +1133,7 @@ espn_nba_teams <- function(){
 #' @importFrom glue glue
 #' @import rvest
 #' @export
+#' @family ESPN NBA Functions
 #' @examples
 #'
 #' # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
@@ -1237,7 +1201,7 @@ espn_nba_scoreboard <- function(season){
             "type"
           )
         )) %>%
-        tidyr::unnest_wider("season",names_sep="_") %>%
+        tidyr::unnest_wider("season", names_sep = "_") %>%
         dplyr::rename("season" = "season_year") %>%
         dplyr::select(-dplyr::any_of("status"))
       nba_data <- nba_data %>%
@@ -1384,16 +1348,41 @@ espn_nba_scoreboard <- function(season){
 #'
 #' @param year Either numeric or character (YYYY)
 #' @return A standings data frame
-#' @keywords NBA Standings
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |team_id            |character |
+#'    |team               |character |
+#'    |avgpointsagainst   |character |
+#'    |avgpointsfor       |character |
+#'    |clincher           |character |
+#'    |differential       |character |
+#'    |divisionwinpercent |character |
+#'    |gamesbehind        |character |
+#'    |leaguewinpercent   |character |
+#'    |losses             |character |
+#'    |playoffseed        |character |
+#'    |streak             |character |
+#'    |winpercent         |character |
+#'    |wins               |character |
+#'    |leaguestandings    |character |
+#'    |home               |character |
+#'    |road               |character |
+#'    |vsdiv              |character |
+#'    |vsconf             |character |
+#'    |lasttengames       |character |
+#'
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select rename
 #' @importFrom tidyr pivot_wider
 #' @importFrom data.table rbindlist
 #' @export
+#' @keywords NBA Standings
+#' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#' try(espn_nba_standings(year = 2021))
+#'   try(espn_nba_standings(year = 2021))
 #' }
 espn_nba_standings <- function(year){
 
@@ -1472,14 +1461,77 @@ espn_nba_standings <- function(year){
 #'
 #' @param game_id  Game ID
 #' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor
-#' @keywords NBA Betting
+#'
+#'    **pickcenter**
+#'
+#'
+#'    |col_name                             |types     |
+#'    |:------------------------------------|:---------|
+#'    |details                              |character |
+#'    |over_under                           |integer   |
+#'    |spread                               |integer   |
+#'    |provider_id                          |character |
+#'    |provider_name                        |character |
+#'    |provider_priority                    |integer   |
+#'    |away_team_odds_favorite              |logical   |
+#'    |away_team_odds_underdog              |logical   |
+#'    |away_team_odds_money_line            |integer   |
+#'    |away_team_odds_spread_odds           |numeric   |
+#'    |away_team_odds_team_id               |character |
+#'    |away_team_odds_win_percentage        |numeric   |
+#'    |away_team_odds_average_score         |numeric   |
+#'    |away_team_odds_money_line_odds       |numeric   |
+#'    |away_team_odds_spread_return         |numeric   |
+#'    |away_team_odds_spread_record_wins    |integer   |
+#'    |away_team_odds_spread_record_losses  |integer   |
+#'    |away_team_odds_spread_record_pushes  |integer   |
+#'    |away_team_odds_spread_record_summary |character |
+#'    |home_team_odds_favorite              |logical   |
+#'    |home_team_odds_underdog              |logical   |
+#'    |home_team_odds_money_line            |integer   |
+#'    |home_team_odds_spread_odds           |numeric   |
+#'    |home_team_odds_team_id               |character |
+#'    |home_team_odds_win_percentage        |numeric   |
+#'    |home_team_odds_average_score         |numeric   |
+#'    |home_team_odds_money_line_odds       |numeric   |
+#'    |home_team_odds_spread_return         |numeric   |
+#'    |home_team_odds_spread_record_wins    |integer   |
+#'    |home_team_odds_spread_record_losses  |integer   |
+#'    |home_team_odds_spread_record_pushes  |integer   |
+#'    |home_team_odds_spread_record_summary |character |
+#'
+#'    **againstTheSpread**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |id           |character |
+#'    |uid          |character |
+#'    |display_name |character |
+#'    |abbreviation |character |
+#'    |logo         |character |
+#'    |logos        |list      |
+#'    |records      |list      |
+#'
+#'    **predictor**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |home_team_id              |character |
+#'    |away_team_id              |character |
+#'    |away_team_game_projection |character |
+#'    |away_team_chance_loss     |character |
+#'
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select rename
 #' @export
+#' @keywords NBA Betting
+#' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#' try(espn_nba_betting(game_id = 401283399))
+#'   try(espn_nba_betting(game_id = 401283399))
 #' }
 espn_nba_betting <- function(game_id){
 
@@ -1559,20 +1611,158 @@ espn_nba_betting <- function(game_id){
 #' @param year Year
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
-#' @keywords NBA Team Stats
+#' @return Returns a tibble with the team stats data
+#'
+#'    |col_name                                         |types     |
+#'    |:------------------------------------------------|:---------|
+#'    |team_id                                          |character |
+#'    |team_guid                                        |character |
+#'    |team_uid                                         |character |
+#'    |team_slug                                        |character |
+#'    |team_location                                    |character |
+#'    |team_name                                        |character |
+#'    |team_abbreviation                                |character |
+#'    |team_display_name                                |character |
+#'    |team_short_display_name                          |character |
+#'    |team_color                                       |character |
+#'    |team_alternate_color                             |character |
+#'    |team_is_active                                   |logical   |
+#'    |team_is_all_star                                 |logical   |
+#'    |logo_href                                        |character |
+#'    |logo_dark_href                                   |character |
+#'    |logos_href_2                                     |character |
+#'    |logos_href_3                                     |character |
+#'    |defensive_blocks                                 |numeric   |
+#'    |defensive_defensive_rebounds                     |numeric   |
+#'    |defensive_steals                                 |numeric   |
+#'    |defensive_turnover_points                        |numeric   |
+#'    |defensive_def_rebound_rate                       |numeric   |
+#'    |defensive_avg_defensive_rebounds                 |numeric   |
+#'    |defensive_avg_blocks                             |numeric   |
+#'    |defensive_avg_steals                             |numeric   |
+#'    |defensive_avg48defensive_rebounds                |numeric   |
+#'    |defensive_avg48blocks                            |numeric   |
+#'    |defensive_avg48steals                            |numeric   |
+#'    |general_disqualifications                        |numeric   |
+#'    |general_flagrant_fouls                           |numeric   |
+#'    |general_fouls                                    |numeric   |
+#'    |general_rebound_rate                             |numeric   |
+#'    |general_ejections                                |numeric   |
+#'    |general_technical_fouls                          |numeric   |
+#'    |general_rebounds                                 |numeric   |
+#'    |general_minutes                                  |numeric   |
+#'    |general_avg_minutes                              |numeric   |
+#'    |general_fantasy_rating                           |numeric   |
+#'    |general_nba_rating                               |numeric   |
+#'    |general_plus_minus                               |numeric   |
+#'    |general_avg_rebounds                             |numeric   |
+#'    |general_avg_fouls                                |numeric   |
+#'    |general_avg_flagrant_fouls                       |numeric   |
+#'    |general_avg_technical_fouls                      |numeric   |
+#'    |general_avg_ejections                            |numeric   |
+#'    |general_avg_disqualifications                    |numeric   |
+#'    |general_assist_turnover_ratio                    |numeric   |
+#'    |general_steal_foul_ratio                         |numeric   |
+#'    |general_block_foul_ratio                         |numeric   |
+#'    |general_avg_team_rebounds                        |numeric   |
+#'    |general_total_rebounds                           |numeric   |
+#'    |general_total_technical_fouls                    |numeric   |
+#'    |general_team_assist_turnover_ratio               |numeric   |
+#'    |general_team_rebounds                            |numeric   |
+#'    |general_steal_turnover_ratio                     |numeric   |
+#'    |general_avg48rebounds                            |numeric   |
+#'    |general_avg48fouls                               |numeric   |
+#'    |general_avg48flagrant_fouls                      |numeric   |
+#'    |general_avg48technical_fouls                     |numeric   |
+#'    |general_avg48ejections                           |numeric   |
+#'    |general_avg48disqualifications                   |numeric   |
+#'    |general_r40                                      |numeric   |
+#'    |general_games_played                             |numeric   |
+#'    |general_games_started                            |numeric   |
+#'    |general_double_double                            |numeric   |
+#'    |general_triple_double                            |numeric   |
+#'    |offensive_assists                                |numeric   |
+#'    |offensive_effective_fg_pct                       |numeric   |
+#'    |offensive_field_goals                            |numeric   |
+#'    |offensive_field_goals_attempted                  |numeric   |
+#'    |offensive_field_goals_made                       |numeric   |
+#'    |offensive_field_goal_pct                         |numeric   |
+#'    |offensive_free_throws                            |numeric   |
+#'    |offensive_free_throw_pct                         |numeric   |
+#'    |offensive_free_throws_attempted                  |numeric   |
+#'    |offensive_free_throws_made                       |numeric   |
+#'    |offensive_offensive_rebounds                     |numeric   |
+#'    |offensive_points                                 |numeric   |
+#'    |offensive_turnovers                              |numeric   |
+#'    |offensive_three_point_pct                        |numeric   |
+#'    |offensive_three_point_field_goals_attempted      |numeric   |
+#'    |offensive_three_point_field_goals_made           |numeric   |
+#'    |offensive_true_shooting_pct                      |numeric   |
+#'    |offensive_team_turnovers                         |numeric   |
+#'    |offensive_total_turnovers                        |numeric   |
+#'    |offensive_assist_ratio                           |numeric   |
+#'    |offensive_points_in_paint                        |numeric   |
+#'    |offensive_off_rebound_rate                       |numeric   |
+#'    |offensive_turnover_ratio                         |numeric   |
+#'    |offensive_fast_break_points                      |numeric   |
+#'    |offensive_possessions                            |numeric   |
+#'    |offensive_pace_factor                            |numeric   |
+#'    |offensive_avg_field_goals_made                   |numeric   |
+#'    |offensive_avg_field_goals_attempted              |numeric   |
+#'    |offensive_avg_three_point_field_goals_made       |numeric   |
+#'    |offensive_avg_three_point_field_goals_attempted  |numeric   |
+#'    |offensive_avg_free_throws_made                   |numeric   |
+#'    |offensive_avg_free_throws_attempted              |numeric   |
+#'    |offensive_avg_points                             |numeric   |
+#'    |offensive_avg_offensive_rebounds                 |numeric   |
+#'    |offensive_avg_assists                            |numeric   |
+#'    |offensive_avg_turnovers                          |numeric   |
+#'    |offensive_offensive_rebound_pct                  |numeric   |
+#'    |offensive_estimated_possessions                  |numeric   |
+#'    |offensive_avg_estimated_possessions              |numeric   |
+#'    |offensive_points_per_estimated_possessions       |numeric   |
+#'    |offensive_avg_team_turnovers                     |numeric   |
+#'    |offensive_avg_total_turnovers                    |numeric   |
+#'    |offensive_three_point_field_goal_pct             |numeric   |
+#'    |offensive_two_point_field_goals_made             |numeric   |
+#'    |offensive_two_point_field_goals_attempted        |numeric   |
+#'    |offensive_avg_two_point_field_goals_made         |numeric   |
+#'    |offensive_avg_two_point_field_goals_attempted    |numeric   |
+#'    |offensive_two_point_field_goal_pct               |numeric   |
+#'    |offensive_shooting_efficiency                    |numeric   |
+#'    |offensive_scoring_efficiency                     |numeric   |
+#'    |offensive_avg48field_goals_made                  |numeric   |
+#'    |offensive_avg48field_goals_attempted             |numeric   |
+#'    |offensive_avg48three_point_field_goals_made      |numeric   |
+#'    |offensive_avg48three_point_field_goals_attempted |numeric   |
+#'    |offensive_avg48free_throws_made                  |numeric   |
+#'    |offensive_avg48free_throws_attempted             |numeric   |
+#'    |offensive_avg48points                            |numeric   |
+#'    |offensive_avg48offensive_rebounds                |numeric   |
+#'    |offensive_avg48assists                           |numeric   |
+#'    |offensive_avg48turnovers                         |numeric   |
+#'    |offensive_p40                                    |numeric   |
+#'    |offensive_a40                                    |numeric   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
 #' @export
-#' @return Returns a tibble with the team stats data
+#' @keywords NBA Team Stats
+#' @family ESPN NBA Functions
 #'
 #' @examples
 #' \donttest{
 #'   try(espn_nba_team_stats(team_id = 18, year = 2020))
 #' }
 
-espn_nba_team_stats <- function(team_id, year, season_type='regular', total=FALSE){
-  if (!(tolower(season_type) %in% c("regular","postseason"))) {
+espn_nba_team_stats <- function(
+    team_id,
+    year,
+    season_type = "regular",
+    total = FALSE) {
+
+  if (!(tolower(season_type) %in% c("regular", "postseason"))) {
     # Check if season_type is appropriate, if not regular
     cli::cli_abort("Enter valid season_type: regular or postseason")
   }
@@ -1725,10 +1915,201 @@ espn_nba_team_stats <- function(team_id, year, season_type='regular', total=FALS
 #' @param year Year
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
-#' @keywords NBA Player Stats
-#' @export
 #' @return Returns a tibble with the player stats data
 #'
+#'    |col_name                                         |types     |
+#'    |:------------------------------------------------|:---------|
+#'    |athlete_id                                       |character |
+#'    |athlete_uid                                      |character |
+#'    |athlete_guid                                     |character |
+#'    |athlete_type                                     |character |
+#'    |sdr                                              |character |
+#'    |first_name                                       |character |
+#'    |last_name                                        |character |
+#'    |full_name                                        |character |
+#'    |display_name                                     |character |
+#'    |short_name                                       |character |
+#'    |weight                                           |numeric   |
+#'    |display_weight                                   |character |
+#'    |height                                           |numeric   |
+#'    |display_height                                   |character |
+#'    |age                                              |integer   |
+#'    |date_of_birth                                    |character |
+#'    |slug                                             |character |
+#'    |headshot_href                                    |character |
+#'    |headshot_alt                                     |character |
+#'    |jersey                                           |character |
+#'    |position_id                                      |character |
+#'    |position_name                                    |character |
+#'    |position_display_name                            |character |
+#'    |position_abbreviation                            |character |
+#'    |position_leaf                                    |logical   |
+#'    |linked                                           |logical   |
+#'    |years                                            |integer   |
+#'    |active                                           |logical   |
+#'    |contract_x_ref                                   |character |
+#'    |contract_bird_status                             |integer   |
+#'    |contract_active                                  |logical   |
+#'    |contract_active_1                                |logical   |
+#'    |contract_incoming_trade_value                    |integer   |
+#'    |contract_outgoing_trade_value                    |integer   |
+#'    |contract_minimum_salary_exception                |logical   |
+#'    |contract_option_type                             |integer   |
+#'    |contract_salary                                  |integer   |
+#'    |contract_salary_remaining                        |integer   |
+#'    |contract_years_remaining                         |integer   |
+#'    |contract_x_ref_1                                 |character |
+#'    |contract_x_ref_2                                 |character |
+#'    |contract_trade_kicker_active                     |logical   |
+#'    |contract_trade_kicker_percentage                 |numeric   |
+#'    |contract_trade_kicker_value                      |integer   |
+#'    |contract_trade_kicker_trade_value                |integer   |
+#'    |contract_trade_restriction                       |logical   |
+#'    |contract_unsigned_foreign_pick                   |logical   |
+#'    |contract_active_2                                |logical   |
+#'    |draft_display_text                               |character |
+#'    |draft_round                                      |integer   |
+#'    |draft_year                                       |integer   |
+#'    |draft_selection                                  |integer   |
+#'    |draft_x_ref                                      |character |
+#'    |draft_x_ref_1                                    |character |
+#'    |status_id                                        |character |
+#'    |status_name                                      |character |
+#'    |status_type                                      |character |
+#'    |status_abbreviation                              |character |
+#'    |defensive_blocks                                 |numeric   |
+#'    |defensive_defensive_rebounds                     |numeric   |
+#'    |defensive_steals                                 |numeric   |
+#'    |defensive_def_rebound_rate                       |numeric   |
+#'    |defensive_avg_defensive_rebounds                 |numeric   |
+#'    |defensive_avg_blocks                             |numeric   |
+#'    |defensive_avg_steals                             |numeric   |
+#'    |defensive_avg48defensive_rebounds                |numeric   |
+#'    |defensive_avg48blocks                            |numeric   |
+#'    |defensive_avg48steals                            |numeric   |
+#'    |defensive_drpm                                   |numeric   |
+#'    |general_disqualifications                        |numeric   |
+#'    |general_flagrant_fouls                           |numeric   |
+#'    |general_fouls                                    |numeric   |
+#'    |general_per                                      |numeric   |
+#'    |general_rebound_rate                             |numeric   |
+#'    |general_ejections                                |numeric   |
+#'    |general_technical_fouls                          |numeric   |
+#'    |general_rebounds                                 |numeric   |
+#'    |general_vorp                                     |numeric   |
+#'    |general_warp                                     |numeric   |
+#'    |general_rpm                                      |numeric   |
+#'    |general_minutes                                  |numeric   |
+#'    |general_avg_minutes                              |numeric   |
+#'    |general_nba_rating                               |numeric   |
+#'    |general_plus_minus                               |numeric   |
+#'    |general_avg_rebounds                             |numeric   |
+#'    |general_avg_fouls                                |numeric   |
+#'    |general_avg_flagrant_fouls                       |numeric   |
+#'    |general_avg_technical_fouls                      |numeric   |
+#'    |general_avg_ejections                            |numeric   |
+#'    |general_avg_disqualifications                    |numeric   |
+#'    |general_assist_turnover_ratio                    |numeric   |
+#'    |general_steal_foul_ratio                         |numeric   |
+#'    |general_block_foul_ratio                         |numeric   |
+#'    |general_avg_team_rebounds                        |numeric   |
+#'    |general_total_rebounds                           |numeric   |
+#'    |general_total_technical_fouls                    |numeric   |
+#'    |general_team_assist_turnover_ratio               |numeric   |
+#'    |general_steal_turnover_ratio                     |numeric   |
+#'    |general_avg48rebounds                            |numeric   |
+#'    |general_avg48fouls                               |numeric   |
+#'    |general_avg48flagrant_fouls                      |numeric   |
+#'    |general_avg48technical_fouls                     |numeric   |
+#'    |general_avg48ejections                           |numeric   |
+#'    |general_avg48disqualifications                   |numeric   |
+#'    |general_r40                                      |numeric   |
+#'    |general_games_played                             |numeric   |
+#'    |general_games_started                            |numeric   |
+#'    |general_double_double                            |numeric   |
+#'    |general_triple_double                            |numeric   |
+#'    |offensive_assists                                |numeric   |
+#'    |offensive_effective_fg_pct                       |numeric   |
+#'    |offensive_field_goals                            |numeric   |
+#'    |offensive_field_goals_attempted                  |numeric   |
+#'    |offensive_field_goals_made                       |numeric   |
+#'    |offensive_field_goal_pct                         |numeric   |
+#'    |offensive_free_throws                            |numeric   |
+#'    |offensive_free_throw_pct                         |numeric   |
+#'    |offensive_free_throws_attempted                  |numeric   |
+#'    |offensive_free_throws_made                       |numeric   |
+#'    |offensive_offensive_rebounds                     |numeric   |
+#'    |offensive_points                                 |numeric   |
+#'    |offensive_turnovers                              |numeric   |
+#'    |offensive_three_point_pct                        |numeric   |
+#'    |offensive_three_point_field_goals_attempted      |numeric   |
+#'    |offensive_three_point_field_goals_made           |numeric   |
+#'    |offensive_true_shooting_pct                      |numeric   |
+#'    |offensive_total_turnovers                        |numeric   |
+#'    |offensive_assist_ratio                           |numeric   |
+#'    |offensive_points_in_paint                        |numeric   |
+#'    |offensive_off_rebound_rate                       |numeric   |
+#'    |offensive_turnover_ratio                         |numeric   |
+#'    |offensive_brick_index                            |numeric   |
+#'    |offensive_usage_rate                             |numeric   |
+#'    |offensive_avg_field_goals_made                   |numeric   |
+#'    |offensive_avg_field_goals_attempted              |numeric   |
+#'    |offensive_avg_three_point_field_goals_made       |numeric   |
+#'    |offensive_avg_three_point_field_goals_attempted  |numeric   |
+#'    |offensive_avg_free_throws_made                   |numeric   |
+#'    |offensive_avg_free_throws_attempted              |numeric   |
+#'    |offensive_avg_points                             |numeric   |
+#'    |offensive_avg_offensive_rebounds                 |numeric   |
+#'    |offensive_avg_assists                            |numeric   |
+#'    |offensive_avg_turnovers                          |numeric   |
+#'    |offensive_offensive_rebound_pct                  |numeric   |
+#'    |offensive_estimated_possessions                  |numeric   |
+#'    |offensive_avg_estimated_possessions              |numeric   |
+#'    |offensive_points_per_estimated_possessions       |numeric   |
+#'    |offensive_avg_team_turnovers                     |numeric   |
+#'    |offensive_avg_total_turnovers                    |numeric   |
+#'    |offensive_three_point_field_goal_pct             |numeric   |
+#'    |offensive_two_point_field_goals_made             |numeric   |
+#'    |offensive_two_point_field_goals_attempted        |numeric   |
+#'    |offensive_avg_two_point_field_goals_made         |numeric   |
+#'    |offensive_avg_two_point_field_goals_attempted    |numeric   |
+#'    |offensive_two_point_field_goal_pct               |numeric   |
+#'    |offensive_shooting_efficiency                    |numeric   |
+#'    |offensive_scoring_efficiency                     |numeric   |
+#'    |offensive_avg48field_goals_made                  |numeric   |
+#'    |offensive_avg48field_goals_attempted             |numeric   |
+#'    |offensive_avg48three_point_field_goals_made      |numeric   |
+#'    |offensive_avg48three_point_field_goals_attempted |numeric   |
+#'    |offensive_avg48free_throws_made                  |numeric   |
+#'    |offensive_avg48free_throws_attempted             |numeric   |
+#'    |offensive_avg48points                            |numeric   |
+#'    |offensive_avg48offensive_rebounds                |numeric   |
+#'    |offensive_avg48assists                           |numeric   |
+#'    |offensive_avg48turnovers                         |numeric   |
+#'    |offensive_p40                                    |numeric   |
+#'    |offensive_a40                                    |numeric   |
+#'    |offensive_orpm                                   |numeric   |
+#'    |team_id                                          |character |
+#'    |team_guid                                        |character |
+#'    |team_uid                                         |character |
+#'    |team_slug                                        |character |
+#'    |team_location                                    |character |
+#'    |team_name                                        |character |
+#'    |team_abbreviation                                |character |
+#'    |team_display_name                                |character |
+#'    |team_short_display_name                          |character |
+#'    |team_color                                       |character |
+#'    |team_alternate_color                             |character |
+#'    |team_is_active                                   |logical   |
+#'    |team_is_all_star                                 |logical   |
+#'    |logo_href                                        |character |
+#'    |logo_dark_href                                   |character |
+#'    |logos_href_2                                     |character |
+#'    |logos_href_3                                     |character |
+#'
+#' @export
+#' @keywords NBA Player Stats
+#' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
 #'   try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
@@ -1905,4 +2286,634 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
     }
   )
   return(df)
+}
+
+#' @noRd
+helper_espn_nba_pbp <- function(resp){
+
+  game_json <- resp %>%
+    jsonlite::fromJSON()
+
+  homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
+
+  gameId <- as.integer(game_json[["header"]][["id"]])
+  season <- game_json[['header']][['season']][['year']]
+  season_type <- game_json[['header']][['season']][['type']]
+  game_date <- as.Date(substr(game_json[['header']][['competitions']][['date']], 0, 10))
+
+  id_vars <- data.frame()
+  if (homeAway1 == "home") {
+
+    homeTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
+    homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
+    homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
+    homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
+    homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
+    homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
+    homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
+    homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
+    homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
+    homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']][1])
+    homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']][1]
+    homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
+    awayTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
+    awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
+    awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
+    awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
+    awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
+    awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
+    awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
+    awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
+    awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
+    awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']][2])
+    awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']][2]
+    awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
+    id_vars <- data.frame(
+      homeTeamId,
+      homeTeamMascot,
+      homeTeamName,
+      homeTeamAbbrev,
+      homeTeamLogo,
+      homeTeamLogoDark,
+      homeTeamFullName,
+      homeTeamColor,
+      homeTeamAlternateColor,
+      homeTeamScore,
+      homeTeamWinner,
+      homeTeamRecord,
+      awayTeamId,
+      awayTeamMascot,
+      awayTeamName,
+      awayTeamAbbrev,
+      awayTeamLogo,
+      awayTeamLogoDark,
+      awayTeamFullName,
+      awayTeamColor,
+      awayTeamAlternateColor,
+      awayTeamScore,
+      awayTeamWinner,
+      awayTeamRecord
+    )
+  } else {
+
+    awayTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']][1])
+    awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']][1]
+    awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']][1]
+    awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][1]
+    awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][1]
+    awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']][2]
+    awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][1]
+    awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][1]
+    awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][1]
+    awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']][1])
+    awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']][1]
+    awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][1]
+    homeTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']][2])
+    homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']][2]
+    homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']][2]
+    homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']][2]
+    homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][1]
+    homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']][2]
+    homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]][2]
+    homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]][2]
+    homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]][2]
+    homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']][2])
+    homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']][2]
+    homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']][2]
+    id_vars <- data.frame(
+      homeTeamId,
+      homeTeamMascot,
+      homeTeamName,
+      homeTeamAbbrev,
+      homeTeamLogo,
+      homeTeamLogoDark,
+      homeTeamFullName,
+      homeTeamColor,
+      homeTeamAlternateColor,
+      homeTeamScore,
+      homeTeamWinner,
+      homeTeamRecord,
+      awayTeamId,
+      awayTeamMascot,
+      awayTeamName,
+      awayTeamAbbrev,
+      awayTeamLogo,
+      awayTeamLogoDark,
+      awayTeamFullName,
+      awayTeamColor,
+      awayTeamAlternateColor,
+      awayTeamScore,
+      awayTeamWinner,
+      awayTeamRecord
+    )
+
+  }
+
+  game_json <- game_json %>%
+    jsonlite::toJSON() %>%
+    jsonlite::fromJSON(flatten = TRUE)
+
+
+  plays <- game_json[["plays"]] %>%
+    tidyr::unnest_wider("participants")
+
+  if (("coordinate.x" %in% names(plays)) && ("coordinate.y" %in% names(plays))) {
+    plays <- plays %>%
+      dplyr::mutate(
+        # convert types
+        coordinate.x = as.double(.data$coordinate.x),
+        coordinate.y = as.double(.data$coordinate.y),
+        # Free throws are adjusted automatically to 19' from baseline, which
+        # corresponds to 13.75' from the center of the basket (originally
+        # the center of the basket is (25, 0))
+        coordinate.y = dplyr::case_when(
+          stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+          TRUE ~ .data$coordinate.y
+        ),
+        coordinate.x = dplyr::case_when(
+          stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+          TRUE ~ .data$coordinate.x
+        ),
+        coordinate_x_transformed = dplyr::case_when(
+          .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+          TRUE ~ .data$coordinate.y - 41.75
+        ),
+        coordinate_y_transformed = dplyr::case_when(
+          .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+          TRUE ~ .data$coordinate.x - 25
+        )
+      ) %>%
+      dplyr::rename(
+        "coordinate.x.raw" = "coordinate.x",
+        "coordinate.y.raw" = "coordinate.y",
+        "coordinate.x" = "coordinate_x_transformed",
+        "coordinate.y" = "coordinate_y_transformed"
+      )
+  }
+  suppressWarnings(
+    aths <- plays %>%
+      dplyr::group_by(.data$id) %>%
+      dplyr::select(
+        "id",
+        "athlete.id") %>%
+      tidyr::unnest_wider("athlete.id", names_sep = "_")
+  )
+  names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2", "athlete.id.3")
+  plays_df <- dplyr::bind_cols(plays, aths, id_vars) %>%
+    select(-"athlete.id") %>%
+    dplyr::mutate(
+      game_id = gameId,
+      season = season,
+      season_type = season_type,
+      game_date = game_date) %>%
+    janitor::clean_names() %>%
+    make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com", Sys.time())
+
+  return(plays_df)
+}
+
+#' @noRd
+helper_espn_nba_team_box <- function(resp){
+
+  game_json <- resp %>%
+    jsonlite::fromJSON()
+
+  gameId <- as.integer(game_json[["header"]][["id"]])
+  box_score_available <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
+  if (box_score_available == TRUE) {
+    teams_box_score_df <- game_json[["boxscore"]][["teams"]] %>%
+      jsonlite::toJSON() %>%
+      jsonlite::fromJSON(flatten = TRUE)
+    if (length(teams_box_score_df[["statistics"]][[1]]) > 0) {
+      # Teams info columns and values
+      teams_df <- game_json[["header"]][["competitions"]][["competitors"]][[1]]
+
+      homeAway1 <- teams_df[["homeAway"]][1]
+      homeAway1_team.id <- as.integer(teams_df[["id"]][1])
+      homeAway1_team.score <- as.integer(teams_df[["score"]][1])
+      homeAway1_team.winner <- teams_df[["winner"]][1]
+
+      homeAway2 <- teams_df[["homeAway"]][2]
+      homeAway2_team.id <- as.integer(teams_df[["id"]][2])
+      homeAway2_team.score <- as.integer(teams_df[["score"]][2])
+      homeAway2_team.winner <- teams_df[["winner"]][2]
+
+      # Pivoting the table values for each team from long to wide
+      statistics_df_1 <- teams_box_score_df[["statistics"]][[1]] %>%
+        tibble::tibble() %>%
+        dplyr::select("name", "displayValue") %>%
+        tidyr::spread("name", "displayValue")
+
+      statistics_df_2 <- teams_box_score_df[["statistics"]][[2]] %>%
+        tibble::tibble() %>%
+        dplyr::select("name", "displayValue") %>%
+        tidyr::spread("name", "displayValue")
+
+      # Assigning values to the correct data frame rows - 1
+      statistics_df_1$team.homeAway <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][1]) == as.integer(homeAway1_team.id),
+        homeAway1,
+        homeAway2
+      )
+      statistics_df_1$team.score <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][1]) == as.integer(homeAway1_team.id),
+        as.integer(homeAway1_team.score),
+        as.integer(homeAway2_team.score)
+      )
+      statistics_df_1$team.winner <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][1]) == as.integer(homeAway1_team.id),
+        homeAway1_team.winner,
+        homeAway2_team.winner
+      )
+      statistics_df_1$team.id <- as.integer(teams_box_score_df[["team.id"]][[1]])
+      statistics_df_1$team.uid <- teams_box_score_df[["team.uid"]][[1]]
+      statistics_df_1$team.slug <- teams_box_score_df[["team.slug"]][[1]]
+      statistics_df_1$team.location <- teams_box_score_df[["team.location"]][[1]]
+      statistics_df_1$team.name <- teams_box_score_df[["team.name"]][[1]]
+      statistics_df_1$team.abbreviation <- teams_box_score_df[["team.abbreviation"]][[1]]
+      statistics_df_1$team.displayName <- teams_box_score_df[["team.displayName"]][[1]]
+      statistics_df_1$team.shortDisplayName <- teams_box_score_df[["team.shortDisplayName"]][[1]]
+      statistics_df_1$team.color <- teams_box_score_df[["team.color"]][[1]]
+      statistics_df_1$team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[1]]
+      statistics_df_1$team.logo <- teams_box_score_df[["team.logo"]][[1]]
+      statistics_df_1$opponent.team.id <- as.integer(teams_box_score_df[["team.id"]][[2]])
+      statistics_df_1$opponent.team.uid <- teams_box_score_df[["team.uid"]][[2]]
+      statistics_df_1$opponent.team.slug <- teams_box_score_df[["team.slug"]][[2]]
+      statistics_df_1$opponent.team.location <- teams_box_score_df[["team.location"]][[2]]
+      statistics_df_1$opponent.team.name <- teams_box_score_df[["team.name"]][[2]]
+      statistics_df_1$opponent.team.abbreviation <- teams_box_score_df[["team.abbreviation"]][[2]]
+      statistics_df_1$opponent.team.displayName <- teams_box_score_df[["team.displayName"]][[2]]
+      statistics_df_1$opponent.team.shortDisplayName <- teams_box_score_df[["team.shortDisplayName"]][[2]]
+      statistics_df_1$opponent.team.color <- teams_box_score_df[["team.color"]][[2]]
+      statistics_df_1$opponent.team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[2]]
+      statistics_df_1$opponent.team.logo <- teams_box_score_df[["team.logo"]][[2]]
+
+      # Assigning values to the correct data frame rows - 2
+      statistics_df_2$team.homeAway <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][2]) == as.integer(homeAway2_team.id),
+        homeAway2,
+        homeAway1
+      )
+      statistics_df_2$team.score <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][2]) == as.integer(homeAway2_team.id),
+        as.integer(homeAway2_team.score),
+        as.integer(homeAway1_team.score)
+      )
+      statistics_df_2$team.winner <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][2]) == as.integer(homeAway2_team.id),
+        homeAway2_team.winner,
+        homeAway1_team.winner
+      )
+      statistics_df_2$team.id <- as.integer(teams_box_score_df[["team.id"]][[2]])
+      statistics_df_2$team.uid <- teams_box_score_df[["team.uid"]][[2]]
+      statistics_df_2$team.slug <- teams_box_score_df[["team.slug"]][[2]]
+      statistics_df_2$team.location <- teams_box_score_df[["team.location"]][[2]]
+      statistics_df_2$team.name <- teams_box_score_df[["team.name"]][[2]]
+      statistics_df_2$team.abbreviation <- teams_box_score_df[["team.abbreviation"]][[2]]
+      statistics_df_2$team.displayName <- teams_box_score_df[["team.displayName"]][[2]]
+      statistics_df_2$team.shortDisplayName <- teams_box_score_df[["team.shortDisplayName"]][[2]]
+      statistics_df_2$team.color <- teams_box_score_df[["team.color"]][[2]]
+      statistics_df_2$team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[2]]
+      statistics_df_2$team.logo <- teams_box_score_df[["team.logo"]][[2]]
+      statistics_df_2$opponent.team.id <- as.integer(teams_box_score_df[["team.id"]][[1]])
+      statistics_df_2$opponent.team.uid <- teams_box_score_df[["team.uid"]][[1]]
+      statistics_df_2$opponent.team.slug <- teams_box_score_df[["team.slug"]][[1]]
+      statistics_df_2$opponent.team.location <- teams_box_score_df[["team.location"]][[1]]
+      statistics_df_2$opponent.team.name <- teams_box_score_df[["team.name"]][[1]]
+      statistics_df_2$opponent.team.abbreviation <- teams_box_score_df[["team.abbreviation"]][[1]]
+      statistics_df_2$opponent.team.displayName <- teams_box_score_df[["team.displayName"]][[1]]
+      statistics_df_2$opponent.team.shortDisplayName <- teams_box_score_df[["team.shortDisplayName"]][[1]]
+      statistics_df_2$opponent.team.color <- teams_box_score_df[["team.color"]][[1]]
+      statistics_df_2$opponent.team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[1]]
+      statistics_df_2$opponent.team.logo <- teams_box_score_df[["team.logo"]][[1]]
+
+      complete_statistics_df <- statistics_df_1 %>%
+        dplyr::bind_rows(statistics_df_2)
+
+      # Assigning game/season level data to team box score and converting types
+      complete_statistics_df$season <- game_json[["header"]][["season"]][["year"]]
+      complete_statistics_df$season_type <- game_json[["header"]][["season"]][["type"]]
+      complete_statistics_df$game_date <- as.Date(substr(game_json[["header"]][["competitions"]][["date"]], 0, 10))
+      complete_statistics_df$game_id <- as.integer(gameId)
+
+      suppressWarnings(
+        complete_statistics_df <- complete_statistics_df %>%
+          tidyr::separate("fieldGoalsMade-fieldGoalsAttempted",
+                          into = c("fieldGoalsMade", "fieldGoalsAttempted"),
+                          sep = "-") %>%
+          tidyr::separate("freeThrowsMade-freeThrowsAttempted",
+                          into = c("freeThrowsMade", "freeThrowsAttempted"),
+                          sep = "-") %>%
+          tidyr::separate("threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+                          into = c("threePointFieldGoalsMade", "threePointFieldGoalsAttempted"),
+                          sep = "-") %>%
+          dplyr::mutate(dplyr::across(c(
+            "fieldGoalPct",
+            "freeThrowPct",
+            "threePointFieldGoalPct"
+          ), ~as.numeric(.x))) %>%
+          dplyr::mutate(dplyr::across(dplyr::any_of(c(
+            "assists",
+            "blocks",
+            "defensiveRebounds",
+            "fieldGoalsMade",
+            "fieldGoalsAttempted",
+            "flagrantFouls",
+            "fouls",
+            "freeThrowsMade",
+            "freeThrowsAttempted",
+            "offensiveRebounds",
+            "steals",
+            "teamTurnovers",
+            "technicalFouls",
+            "threePointFieldGoalsMade",
+            "threePointFieldGoalsAttempted",
+            "totalRebounds",
+            "totalTechnicalFouls",
+            "totalTurnovers",
+            "turnovers"
+          )), ~as.integer(.x)))
+      )
+      team_box_score <- complete_statistics_df %>%
+        janitor::clean_names() %>%
+        dplyr::select(dplyr::any_of(c(
+          "game_id",
+          "season",
+          "season_type",
+          "game_date",
+          "team_id",
+          "team_uid",
+          "team_slug",
+          "team_location",
+          "team_name",
+          "team_abbreviation",
+          "team_display_name",
+          "team_short_display_name",
+          "team_color",
+          "team_alternate_color",
+          "team_logo",
+          "team_home_away",
+          "team_score",
+          "team_winner")),
+          tidyr::everything()) %>%
+        make_hoopR_data("ESPN NBA Team Box Information from ESPN.com", Sys.time())
+    }
+  }
+  return(team_box_score)
+}
+
+#' @noRd
+helper_espn_nba_player_box <- function(resp){
+
+  game_json <- resp %>%
+    jsonlite::fromJSON(flatten = TRUE)
+
+  players_box_score_df <- game_json[["boxscore"]][["players"]] %>%
+    jsonlite::toJSON() %>%
+    jsonlite::fromJSON(flatten = TRUE) %>%
+    as.data.frame()
+
+  gameId <- as.integer(game_json[["header"]][["id"]])
+  season <- game_json[["header"]][["season"]][["year"]]
+  season_type <- game_json[["header"]][["season"]][["type"]]
+  game_date <- as.Date(substr(game_json[["header"]][["competitions"]][["date"]], 0, 10))
+  boxScoreAvailable <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
+
+  boxScoreSource <- game_json[["header"]][["competitions"]][["boxscoreSource"]]
+  if (boxScoreAvailable == TRUE &&
+      length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1) {
+    players_df <- players_box_score_df %>%
+      tidyr::unnest("statistics") %>%
+      tidyr::unnest("athletes")
+    if (length(players_box_score_df[["statistics"]]) > 1 &&
+        length(players_df$stats[[1]]) > 0) {
+
+      players_df <- jsonlite::fromJSON(jsonlite::toJSON(game_json[["boxscore"]][["players"]]), flatten = TRUE) %>%
+        tidyr::unnest("statistics") %>%
+        tidyr::unnest("athletes")
+
+      stat_cols <- players_df$keys[[1]]
+      stats <- players_df$stats
+
+      stats_df <- as.data.frame(do.call(rbind,stats))
+      colnames(stats_df) <- stat_cols
+      suppressWarnings(
+        stats_df <- stats_df %>%
+          tidyr::separate("fieldGoalsMade-fieldGoalsAttempted",
+                          into = c("fieldGoalsMade", "fieldGoalsAttempted"),
+                          sep = "-") %>%
+          tidyr::separate("freeThrowsMade-freeThrowsAttempted",
+                          into = c("freeThrowsMade", "freeThrowsAttempted"),
+                          sep = "-") %>%
+          tidyr::separate("threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+                          into = c("threePointFieldGoalsMade", "threePointFieldGoalsAttempted"),
+                          sep = "-") %>%
+          dplyr::mutate(dplyr::across(dplyr::any_of(c(
+            "minutes",
+            "fieldGoalPct",
+            "freeThrowPct",
+            "threePointFieldGoalPct"
+          )), ~as.numeric(.x))) %>%
+          dplyr::mutate(dplyr::across(dplyr::any_of(c(
+            "assists",
+            "blocks",
+            "defensiveRebounds",
+            "fieldGoalsMade",
+            "fieldGoalsAttempted",
+            "flagrantFouls",
+            "fouls",
+            "freeThrowsMade",
+            "freeThrowsAttempted",
+            "offensiveRebounds",
+            "steals",
+            "teamTurnovers",
+            "technicalFouls",
+            "threePointFieldGoalsMade",
+            "threePointFieldGoalsAttempted",
+            "rebounds",
+            "totalTechnicalFouls",
+            "totalTurnovers",
+            "turnovers",
+            "points"
+          )), ~as.integer(.x)))
+      )
+      players_df_did_not_play <- players_df %>%
+        dplyr::filter(.data$didNotPlay) %>%
+        dplyr::select(dplyr::any_of(c(
+          "starter",
+          "ejected",
+          "didNotPlay",
+          "reason",
+          "active",
+          "athlete.displayName",
+          "athlete.jersey",
+          "athlete.id",
+          "athlete.shortName",
+          "athlete.headshot.href",
+          "athlete.position.name",
+          "athlete.position.abbreviation",
+          "team.displayName",
+          "team.shortDisplayName",
+          "team.location",
+          "team.name",
+          "team.logo",
+          "team.id",
+          "team.uid",
+          "team.slug",
+          "team.abbreviation",
+          "team.color",
+          "team.alternateColor"
+        )))
+
+      players_df <- players_df %>%
+        dplyr::filter(!.data$didNotPlay) %>%
+        dplyr::select(dplyr::any_of(c(
+          "starter",
+          "ejected",
+          "didNotPlay",
+          "reason",
+          "active",
+          "athlete.displayName",
+          "athlete.jersey",
+          "athlete.id",
+          "athlete.shortName",
+          "athlete.headshot.href",
+          "athlete.position.name",
+          "athlete.position.abbreviation",
+          "team.displayName",
+          "team.shortDisplayName",
+          "team.location",
+          "team.name",
+          "team.logo",
+          "team.id",
+          "team.uid",
+          "team.slug",
+          "team.abbreviation",
+          "team.color",
+          "team.alternateColor"
+        )))
+
+      players_df <- stats_df %>%
+        dplyr::bind_cols(players_df) %>%
+        dplyr::bind_rows(players_df_did_not_play)
+
+      players_df <- players_df %>%
+        dplyr::select(dplyr::any_of(c(
+          "athlete.displayName",
+          "team.shortDisplayName")),
+          tidyr::everything()) %>%
+        janitor::clean_names() %>%
+        dplyr::mutate(
+          game_id = gameId,
+          season = season,
+          season_type = season_type,
+          game_date = game_date)
+
+
+      teams_df <- game_json[["header"]][["competitions"]][["competitors"]][[1]]
+
+      homeAway1 <- teams_df[["homeAway"]][1]
+      homeAway1_team.id <- as.integer(teams_df[["id"]][1])
+      homeAway1_team.location <- teams_df[["team.location"]][1]
+      homeAway1_team.name <- teams_df[["team.name"]][1]
+      homeAway1_team.abbreviation <- teams_df[["team.abbreviation"]][1]
+      homeAway1_team.displayName <- teams_df[["team.displayName"]][1]
+      homeAway1_team.logos <- teams_df[["team.logos"]][[1]][["href"]][1]
+      homeAway1_team.color <- teams_df[["team.color"]][1]
+      homeAway1_team.alternateColor <- teams_df[["team.alternateColor"]][1]
+      homeAway1_team.winner <- teams_df[["winner"]][1]
+      homeAway1_team.score <- teams_df[["score"]][1]
+
+      homeAway2 <- teams_df[["homeAway"]][2]
+      homeAway2_team.id <- as.integer(teams_df[["id"]][2])
+      homeAway2_team.location <- teams_df[["team.location"]][2]
+      homeAway2_team.name <- teams_df[["team.name"]][2]
+      homeAway2_team.abbreviation <- teams_df[["team.abbreviation"]][2]
+      homeAway2_team.displayName <- teams_df[["team.displayName"]][2]
+      homeAway2_team.logos <- teams_df[["team.logos"]][[2]][["href"]][1]
+      homeAway2_team.color <- teams_df[["team.color"]][2]
+      homeAway2_team.alternateColor <- teams_df[["team.alternateColor"]][2]
+      homeAway2_team.winner <- teams_df[["winner"]][2]
+      homeAway2_team.score <- teams_df[["score"]][2]
+
+      players_df <- players_df %>%
+        dplyr::mutate(
+          home_away = ifelse(.data$team_id == homeAway1_team.id, homeAway1, homeAway2),
+          team_winner = ifelse(.data$team_id == homeAway1_team.id, homeAway1_team.winner, homeAway2_team.winner),
+          team_score = ifelse(.data$team_id == homeAway1_team.id, homeAway1_team.score, homeAway2_team.score),
+          opponent_team_id = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.id, homeAway1_team.id),
+          opponent_team_name = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.name, homeAway1_team.name),
+          opponent_team_location = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.location, homeAway1_team.location),
+          opponent_team_display_name = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.displayName, homeAway1_team.displayName),
+          opponent_team_abbreviation = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.abbreviation, homeAway1_team.abbreviation),
+          opponent_team_logo = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.logos, homeAway1_team.logos),
+          opponent_team_color = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.color, homeAway1_team.color),
+          opponent_team_alternate_color = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.alternateColor, homeAway1_team.alternateColor),
+          opponent_team_score = ifelse(.data$team_id == homeAway1_team.id, homeAway2_team.score, homeAway1_team.score),
+        ) %>%
+        dplyr::arrange(.data$home_away)
+
+      player_box_score <- players_df %>%
+        dplyr::select(dplyr::any_of(c(
+          "game_id",
+          "season",
+          "season_type",
+          "game_date",
+          "athlete_id",
+          "athlete_display_name",
+          "team_id",
+          "team_name",
+          "team_location",
+          "team_short_display_name",
+          "minutes",
+          "field_goals_made",
+          "field_goals_attempted",
+          "three_point_field_goals_made",
+          "three_point_field_goals_attempted",
+          "free_throws_made",
+          "free_throws_attempted",
+          "offensive_rebounds",
+          "defensive_rebounds",
+          "rebounds",
+          "assists",
+          "steals",
+          "blocks",
+          "turnovers",
+          "fouls",
+          "plus_minus",
+          "points",
+          "starter",
+          "ejected",
+          "did_not_play",
+          "reason",
+          "active",
+          "athlete_jersey",
+          "athlete_short_name",
+          "athlete_headshot_href",
+          "athlete_position_name",
+          "athlete_position_abbreviation",
+          "team_display_name",
+          "team_uid",
+          "team_slug",
+          "team_logo",
+          "team_abbreviation",
+          "team_color",
+          "team_alternate_color",
+          "home_away",
+          "team_winner",
+          "team_score",
+          "opponent_team_id",
+          "opponent_team_name",
+          "opponent_team_location",
+          "opponent_team_display_name",
+          "opponent_team_abbreviation",
+          "opponent_team_logo",
+          "opponent_team_color",
+          "opponent_team_alternate_color",
+          "opponent_team_score"
+          ))) %>%
+        make_hoopR_data("ESPN NBA Player Box Information from ESPN.com", Sys.time())
+    }
+  }
+  return(player_box_score)
 }

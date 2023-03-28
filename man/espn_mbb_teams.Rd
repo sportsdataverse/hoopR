@@ -7,7 +7,20 @@
 espn_mbb_teams()
 }
 \value{
-A teams data frame
+A teams data frame\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab character \cr
+   abbreviation \tab character \cr
+   display_name \tab character \cr
+   short_name \tab character \cr
+   mascot \tab character \cr
+   nickname \tab character \cr
+   team \tab character \cr
+   color \tab character \cr
+   alternate_color \tab character \cr
+   logo \tab character \cr
+   logo_dark \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN men's college basketball team names and IDs}
@@ -17,8 +30,25 @@ A teams data frame
   try(espn_mbb_teams())
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN MBB Functions}
 \keyword{MBB}
 \keyword{Teams}

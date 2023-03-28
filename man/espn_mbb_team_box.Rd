@@ -11,18 +11,91 @@ espn_mbb_team_box(game_id)
 }
 \value{
 A team boxscore data frame
+
+\strong{Team}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+   team_id \tab integer \cr
+   team_uid \tab character \cr
+   team_slug \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   team_logo \tab character \cr
+   team_home_away \tab character \cr
+   team_score \tab integer \cr
+   team_winner \tab logical \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   field_goal_pct \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   flagrant_fouls \tab integer \cr
+   fouls \tab integer \cr
+   free_throw_pct \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   largest_lead \tab character \cr
+   offensive_rebounds \tab integer \cr
+   steals \tab integer \cr
+   team_turnovers \tab integer \cr
+   technical_fouls \tab integer \cr
+   three_point_field_goal_pct \tab numeric \cr
+   three_point_field_goals_made \tab integer \cr
+   three_point_field_goals_attempted \tab integer \cr
+   total_rebounds \tab integer \cr
+   total_technical_fouls \tab integer \cr
+   total_turnovers \tab integer \cr
+   turnovers \tab integer \cr
+   opponent_team_id \tab integer \cr
+   opponent_team_uid \tab character \cr
+   opponent_team_slug \tab character \cr
+   opponent_team_location \tab character \cr
+   opponent_team_name \tab character \cr
+   opponent_team_abbreviation \tab character \cr
+   opponent_team_display_name \tab character \cr
+   opponent_team_short_display_name \tab character \cr
+   opponent_team_color \tab character \cr
+   opponent_team_alternate_color \tab character \cr
+   opponent_team_logo \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN men's college basketball team box scores}
 }
 \examples{
 \donttest{
-  try(espn_mbb_team_box(game_id = 401256760))
+  try(espn_mbb_team_box(game_id = 401479672))
 }
+}
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
 }
 \author{
 Saiem Gilani
 }
+\concept{ESPN MBB Functions}
 \keyword{Box}
-\keyword{CBB}
+\keyword{MBB}
 \keyword{Team}

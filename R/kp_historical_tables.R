@@ -59,7 +59,7 @@ kp_team_history <- function(team){
       browser <- login()
 
       # Check teams parameter in teams list names
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort( "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
@@ -71,7 +71,7 @@ kp_team_history <- function(team){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols<- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
+      header_cols <- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
                       'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
                       'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
                       'Off.A.Pct',	'Off.APL',
@@ -80,22 +80,22 @@ kp_team_history <- function(team){
                       'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
                       'Def.APL',	'Foul2Partic.Pct')
 
-      x<- (page %>%
+      x <- (page %>%
              xml2::read_html() %>%
-             rvest::html_elements(css='#player-table'))[[1]]
+             rvest::html_elements(css = '#player-table'))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
       conf <- (page %>%
                  xml2::read_html() %>%
-                 rvest::html_elements(css='#player-table'))[[1]]
+                 rvest::html_elements(css = '#player-table'))[[1]]
 
       conf_record <- (page %>%
                         xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
       conf_record <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
                                              function(x){
-                                               data.frame(x, stringsAsFactors=FALSE)
+                                               data.frame(x)
                                              }))
       conf_record <- conf_record %>%
         dplyr::rename("WL.Conf" = "x")

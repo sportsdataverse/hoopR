@@ -14,6 +14,7 @@ NULL
 #' @return Returns a tibble
 #' @import furrr
 #' @export
+#' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
 #'   load_nba_pbp(seasons = most_recent_nba_season())
@@ -28,7 +29,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
 
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
   stopifnot(is.numeric(seasons),
             seasons >= 2002,
@@ -67,6 +68,7 @@ NULL
 #' @return Returns a tibble
 #' @import furrr
 #' @export
+#' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
 #'   load_nba_team_box(seasons = most_recent_nba_season())
@@ -80,7 +82,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
   stopifnot(is.numeric(seasons),
             seasons >= 2002,
@@ -114,6 +116,7 @@ NULL
 #' @return Returns a tibble
 #' @import furrr
 #' @export
+#' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
 #'   load_nba_player_box(seasons = most_recent_nba_season())
@@ -126,7 +129,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
   stopifnot(is.numeric(seasons),
             seasons >= 2002,
@@ -164,6 +167,7 @@ NULL
 #' @return Returns a tibble
 #' @import furrr
 #' @export
+#' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
 #'   load_nba_schedule(seasons = most_recent_nba_season())
@@ -177,7 +181,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if(isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
   stopifnot(is.numeric(seasons),
             seasons >= 2002,
@@ -203,7 +207,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
 load_nba_games <- function(){
   .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/nba/nba_games_in_data_repo.csv"
   dat <- csv_from_url(.url)
-  return (dat)
+  return(dat)
 }
 
 #' @name update_nba_db
@@ -250,6 +254,7 @@ load_nba_games <- function(){
 #' @return Returns a logical value (TRUE/FALSE)
 #' @import furrr
 #' @export
+#' @family hoopR Database Functions
 update_nba_db <- function(dbdir = ".",
                           dbname = "hoopR_db",
                           tblname = "hoopR_nba_pbp",
@@ -301,7 +306,7 @@ update_nba_db <- function(dbdir = ".",
   missing <- get_missing_nba_games(completed_games, connection, tblname)
 
   # rebuild db if number of missing games is too large
-  if(length(missing) > 16) {# limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
+  if (length(missing) > 16) {# limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
     # message("The number of missing games is so large that rebuilding the database is more efficient.")
     build_nba_db(tblname, connection, show_message = FALSE, rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4))))
     missing <- get_missing_nba_games(completed_games, connection, tblname)
@@ -330,7 +335,7 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
     usethis::ui_todo("{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}...")
   } else if (is.numeric(rebuild) & all(rebuild %in% valid_seasons$season)) {
     string <- paste0(rebuild, collapse = ", ")
-    if (show_message){usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")}
+    if (show_message) {usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")}
     DBI::dbExecute(db_conn, glue::glue_sql("DELETE FROM {`tblname`} WHERE season IN ({vals*})", vals = rebuild, .con = db_conn))
     seasons <- valid_seasons %>% dplyr::filter(.data$season %in% rebuild) %>% dplyr::pull("season")
     usethis::ui_todo("{my_time()} | Starting download of the {string} season(s)...")

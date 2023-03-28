@@ -11,14 +11,88 @@ espn_mbb_betting(game_id)
 }
 \value{
 Returns a named list of data frames: pickcenter, againstTheSpread, predictor
+
+\strong{pickcenter}\tabular{ll}{
+   col_name \tab types \cr
+   details \tab character \cr
+   over_under \tab integer \cr
+   spread \tab integer \cr
+   provider_id \tab character \cr
+   provider_name \tab character \cr
+   provider_priority \tab integer \cr
+   away_team_odds_favorite \tab logical \cr
+   away_team_odds_underdog \tab logical \cr
+   away_team_odds_money_line \tab integer \cr
+   away_team_odds_spread_odds \tab numeric \cr
+   away_team_odds_team_id \tab character \cr
+   away_team_odds_win_percentage \tab numeric \cr
+   away_team_odds_average_score \tab numeric \cr
+   away_team_odds_money_line_odds \tab numeric \cr
+   away_team_odds_spread_return \tab numeric \cr
+   away_team_odds_spread_record_wins \tab integer \cr
+   away_team_odds_spread_record_losses \tab integer \cr
+   away_team_odds_spread_record_pushes \tab integer \cr
+   away_team_odds_spread_record_summary \tab character \cr
+   home_team_odds_favorite \tab logical \cr
+   home_team_odds_underdog \tab logical \cr
+   home_team_odds_money_line \tab integer \cr
+   home_team_odds_spread_odds \tab numeric \cr
+   home_team_odds_team_id \tab character \cr
+   home_team_odds_win_percentage \tab numeric \cr
+   home_team_odds_average_score \tab numeric \cr
+   home_team_odds_money_line_odds \tab numeric \cr
+   home_team_odds_spread_return \tab numeric \cr
+   home_team_odds_spread_record_wins \tab integer \cr
+   home_team_odds_spread_record_losses \tab integer \cr
+   home_team_odds_spread_record_pushes \tab integer \cr
+   home_team_odds_spread_record_summary \tab character \cr
+}
+
+
+\strong{againstTheSpread}\tabular{ll}{
+   col_name \tab types \cr
+   id \tab character \cr
+   uid \tab character \cr
+   display_name \tab character \cr
+   abbreviation \tab character \cr
+   logo \tab character \cr
+   logos \tab list \cr
+   records \tab list \cr
+}
+
+
+\strong{predictor}\tabular{ll}{
+   col_name \tab types \cr
+   home_team_id \tab character \cr
+   away_team_id \tab character \cr
+   away_team_game_projection \tab character \cr
+   away_team_chance_loss \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN MBB's Betting information}
 }
 \examples{
 \donttest{
-try(espn_mbb_betting(game_id = 401256760))
+  try(espn_mbb_betting(game_id = 401256760))
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
+}
+\concept{ESPN MBB Functions}
 \keyword{Betting}
 \keyword{MBB}
