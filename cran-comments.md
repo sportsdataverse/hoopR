@@ -3,9 +3,9 @@
 This is a minor release that adds the following:
 
 - Takes care of tidyselect deprecation of data masking for certain tidyr and dplyr functions
+- Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
 - ```espn_mbb_game_rosters()``` function added.
 - ```espn_nba_game_rosters()``` function added.
-- Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
 - ```nba_shotchartlineupdetail()``` function added.
 - ```nba_synergyplaytypes()``` function added.
 - ```nba_live_pbp()``` function added.

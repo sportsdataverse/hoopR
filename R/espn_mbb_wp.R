@@ -15,7 +15,7 @@
 #'   \item{`away_win_percentage`: double.}{The probability of the away team winning the game (calculated as 1 - `home_win_percentage` - `tie_percentage`).}
 #'   \item{`tie_percentage`: double.}{The probability of the game ending the final period in a tie.}
 #' }
-#' @keywords MBB Win Probability Chart Data
+#'
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET RETRY
 #' @importFrom utils URLencode URLdecode
@@ -24,6 +24,8 @@
 #' @importFrom stringr str_sub str_length
 #' @import dplyr
 #' @export
+#' @keywords MBB Win Probability Chart Data
+#' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
 #'   espn_mbb_wp(game_id = 401256760)

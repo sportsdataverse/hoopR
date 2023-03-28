@@ -16,7 +16,143 @@ espn_mbb_player_stats(athlete_id, year, season_type = "regular", total = FALSE)
 \item{total}{(boolean, default: FALSE): Totals}
 }
 \value{
-Returns a tibble with the player stats data
+Returns a tibble with the player stats data\tabular{ll}{
+   col_name \tab types \cr
+   athlete_id \tab character \cr
+   athlete_uid \tab character \cr
+   athlete_guid \tab character \cr
+   athlete_type \tab character \cr
+   sdr \tab character \cr
+   first_name \tab character \cr
+   last_name \tab character \cr
+   full_name \tab character \cr
+   display_name \tab character \cr
+   short_name \tab character \cr
+   weight \tab numeric \cr
+   display_weight \tab character \cr
+   height \tab numeric \cr
+   display_height \tab character \cr
+   age \tab integer \cr
+   date_of_birth \tab character \cr
+   birth_place_city \tab character \cr
+   birth_place_state \tab character \cr
+   birth_place_country \tab character \cr
+   slug \tab character \cr
+   headshot_href \tab character \cr
+   headshot_alt \tab character \cr
+   jersey \tab character \cr
+   position_id \tab character \cr
+   position_name \tab character \cr
+   position_display_name \tab character \cr
+   position_abbreviation \tab character \cr
+   position_leaf \tab logical \cr
+   linked \tab logical \cr
+   experience_years \tab integer \cr
+   experience_display_value \tab character \cr
+   experience_abbreviation \tab character \cr
+   active \tab logical \cr
+   draft_display_text \tab character \cr
+   draft_round \tab integer \cr
+   draft_year \tab integer \cr
+   draft_selection \tab integer \cr
+   status_id \tab character \cr
+   status_name \tab character \cr
+   status_type \tab character \cr
+   status_abbreviation \tab character \cr
+   defensive_blocks \tab numeric \cr
+   defensive_defensive_rebounds \tab numeric \cr
+   defensive_steals \tab numeric \cr
+   defensive_turnover_points \tab numeric \cr
+   defensive_avg_defensive_rebounds \tab numeric \cr
+   defensive_avg_blocks \tab numeric \cr
+   defensive_avg_steals \tab numeric \cr
+   general_disqualifications \tab numeric \cr
+   general_flagrant_fouls \tab numeric \cr
+   general_fouls \tab numeric \cr
+   general_per \tab numeric \cr
+   general_ejections \tab numeric \cr
+   general_technical_fouls \tab numeric \cr
+   general_rebounds \tab numeric \cr
+   general_minutes \tab numeric \cr
+   general_avg_minutes \tab numeric \cr
+   general_fantasy_rating \tab numeric \cr
+   general_plus_minus \tab numeric \cr
+   general_avg_rebounds \tab numeric \cr
+   general_avg_fouls \tab numeric \cr
+   general_avg_flagrant_fouls \tab numeric \cr
+   general_avg_technical_fouls \tab numeric \cr
+   general_avg_ejections \tab numeric \cr
+   general_avg_disqualifications \tab numeric \cr
+   general_assist_turnover_ratio \tab numeric \cr
+   general_steal_foul_ratio \tab numeric \cr
+   general_block_foul_ratio \tab numeric \cr
+   general_avg_team_rebounds \tab numeric \cr
+   general_total_rebounds \tab numeric \cr
+   general_total_technical_fouls \tab numeric \cr
+   general_steal_turnover_ratio \tab numeric \cr
+   general_games_played \tab numeric \cr
+   general_games_started \tab numeric \cr
+   general_double_double \tab numeric \cr
+   general_triple_double \tab numeric \cr
+   offensive_assists \tab numeric \cr
+   offensive_field_goals \tab numeric \cr
+   offensive_field_goals_attempted \tab numeric \cr
+   offensive_field_goals_made \tab numeric \cr
+   offensive_field_goal_pct \tab numeric \cr
+   offensive_free_throws \tab numeric \cr
+   offensive_free_throw_pct \tab numeric \cr
+   offensive_free_throws_attempted \tab numeric \cr
+   offensive_free_throws_made \tab numeric \cr
+   offensive_offensive_rebounds \tab numeric \cr
+   offensive_points \tab numeric \cr
+   offensive_turnovers \tab numeric \cr
+   offensive_three_point_field_goals_attempted \tab numeric \cr
+   offensive_three_point_field_goals_made \tab numeric \cr
+   offensive_total_turnovers \tab numeric \cr
+   offensive_points_in_paint \tab numeric \cr
+   offensive_fast_break_points \tab numeric \cr
+   offensive_avg_field_goals_made \tab numeric \cr
+   offensive_avg_field_goals_attempted \tab numeric \cr
+   offensive_avg_three_point_field_goals_made \tab numeric \cr
+   offensive_avg_three_point_field_goals_attempted \tab numeric \cr
+   offensive_avg_free_throws_made \tab numeric \cr
+   offensive_avg_free_throws_attempted \tab numeric \cr
+   offensive_avg_points \tab numeric \cr
+   offensive_avg_offensive_rebounds \tab numeric \cr
+   offensive_avg_assists \tab numeric \cr
+   offensive_avg_turnovers \tab numeric \cr
+   offensive_offensive_rebound_pct \tab numeric \cr
+   offensive_estimated_possessions \tab numeric \cr
+   offensive_avg_estimated_possessions \tab numeric \cr
+   offensive_points_per_estimated_possessions \tab numeric \cr
+   offensive_avg_team_turnovers \tab numeric \cr
+   offensive_avg_total_turnovers \tab numeric \cr
+   offensive_three_point_field_goal_pct \tab numeric \cr
+   offensive_two_point_field_goals_made \tab numeric \cr
+   offensive_two_point_field_goals_attempted \tab numeric \cr
+   offensive_avg_two_point_field_goals_made \tab numeric \cr
+   offensive_avg_two_point_field_goals_attempted \tab numeric \cr
+   offensive_two_point_field_goal_pct \tab numeric \cr
+   offensive_shooting_efficiency \tab numeric \cr
+   offensive_scoring_efficiency \tab numeric \cr
+   team_id \tab character \cr
+   team_guid \tab character \cr
+   team_uid \tab character \cr
+   team_sdr \tab character \cr
+   team_slug \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_nickname \tab character \cr
+   team_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   is_active \tab logical \cr
+   is_all_star \tab logical \cr
+   logo_href \tab character \cr
+   logo_dark_href \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN men's college basketball player stats data}
@@ -26,9 +162,26 @@ Returns a tibble with the player stats data
   try(espn_mbb_player_stats(athlete_id = 4433134, year = 2021))
 }
 }
+\seealso{
+Other ESPN MBB Functions: 
+\code{\link{espn_mbb_betting}()},
+\code{\link{espn_mbb_conferences}()},
+\code{\link{espn_mbb_game_all}()},
+\code{\link{espn_mbb_game_rosters}()},
+\code{\link{espn_mbb_pbp}()},
+\code{\link{espn_mbb_player_box}()},
+\code{\link{espn_mbb_rankings}()},
+\code{\link{espn_mbb_scoreboard}()},
+\code{\link{espn_mbb_standings}()},
+\code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_stats}()},
+\code{\link{espn_mbb_teams}()},
+\code{\link{espn_mbb_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN MBB Functions}
 \keyword{MBB}
 \keyword{Player}
 \keyword{Stats}

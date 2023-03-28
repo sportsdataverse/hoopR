@@ -1,4 +1,4 @@
-# **hoopR 1.9.1.9000**
+# **hoopR 2.0.0**
 - Add rlang dots option for passing httr::use_proxy() option to `nba_*()` functions
 - ```nba_shotchartlineupdetail()``` function added.
 - ```nba_synergyplaytypes()``` function added.

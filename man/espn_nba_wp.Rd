@@ -44,6 +44,21 @@ espn_nba_wp(game_id)
 }
 
 }
+\seealso{
+Other ESPN NBA Functions: 
+\code{\link{espn_nba_betting}()},
+\code{\link{espn_nba_game_all}()},
+\code{\link{espn_nba_game_rosters}()},
+\code{\link{espn_nba_pbp}()},
+\code{\link{espn_nba_player_box}()},
+\code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_scoreboard}()},
+\code{\link{espn_nba_standings}()},
+\code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_stats}()},
+\code{\link{espn_nba_teams}()}
+}
+\concept{ESPN NBA Functions}
 \keyword{Chart}
 \keyword{Data}
 \keyword{NBA}

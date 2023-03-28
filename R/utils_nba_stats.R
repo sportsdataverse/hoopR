@@ -17,7 +17,7 @@
       `Cache-Control` = 'no-cache'
     )
 
-    if(length(params) == 0) {
+    if (length(params) == 0) {
       res <- httr::RETRY("GET", url, httr::add_headers(.headers = headers))
     } else {
       res <- httr::RETRY("GET", url, query = params, httr::add_headers(.headers = headers))

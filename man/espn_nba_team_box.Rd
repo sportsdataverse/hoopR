@@ -11,6 +11,65 @@ espn_nba_team_box(game_id)
 }
 \value{
 A team boxscore data frame
+
+\strong{Team}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+   team_id \tab integer \cr
+   team_uid \tab character \cr
+   team_slug \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   team_logo \tab character \cr
+   team_home_away \tab character \cr
+   team_score \tab integer \cr
+   team_winner \tab logical \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   fast_break_points \tab character \cr
+   field_goal_pct \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   flagrant_fouls \tab integer \cr
+   fouls \tab integer \cr
+   free_throw_pct \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   largest_lead \tab character \cr
+   offensive_rebounds \tab integer \cr
+   points_in_paint \tab character \cr
+   steals \tab integer \cr
+   team_turnovers \tab integer \cr
+   technical_fouls \tab integer \cr
+   three_point_field_goal_pct \tab numeric \cr
+   three_point_field_goals_made \tab integer \cr
+   three_point_field_goals_attempted \tab integer \cr
+   total_rebounds \tab integer \cr
+   total_technical_fouls \tab integer \cr
+   total_turnovers \tab integer \cr
+   turnover_points \tab character \cr
+   turnovers \tab integer \cr
+   opponent_team_id \tab integer \cr
+   opponent_team_uid \tab character \cr
+   opponent_team_slug \tab character \cr
+   opponent_team_location \tab character \cr
+   opponent_team_name \tab character \cr
+   opponent_team_abbreviation \tab character \cr
+   opponent_team_display_name \tab character \cr
+   opponent_team_short_display_name \tab character \cr
+   opponent_team_color \tab character \cr
+   opponent_team_alternate_color \tab character \cr
+   opponent_team_logo \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN NBA team box scores}
@@ -21,9 +80,24 @@ A team boxscore data frame
 }
 
 }
+\seealso{
+Other ESPN NBA Functions: 
+\code{\link{espn_nba_betting}()},
+\code{\link{espn_nba_game_all}()},
+\code{\link{espn_nba_game_rosters}()},
+\code{\link{espn_nba_pbp}()},
+\code{\link{espn_nba_player_box}()},
+\code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_scoreboard}()},
+\code{\link{espn_nba_standings}()},
+\code{\link{espn_nba_team_stats}()},
+\code{\link{espn_nba_teams}()},
+\code{\link{espn_nba_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN NBA Functions}
 \keyword{Box}
 \keyword{NBA}
 \keyword{Team}

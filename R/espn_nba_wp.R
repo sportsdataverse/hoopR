@@ -4,6 +4,7 @@
 #' @param game_id (*Integer* required): Game ID filter for querying a single game
 #'
 #' @return [espn_nba_wp()] - A data frame with 21 variables:
+#'
 #'   |col_name             |types     |
 #'   |:--------------------|:---------|
 #'   |game_id              |numeric   |
@@ -27,7 +28,7 @@
 #'   |team_id              |character |
 #'   |coordinate_x         |integer   |
 #'   |coordinate_y         |integer   |
-#' @keywords NBA Win Probability Chart Data
+#'
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET RETRY
 #' @importFrom utils URLencode URLdecode
@@ -36,6 +37,8 @@
 #' @importFrom stringr str_sub str_length
 #' @import dplyr
 #' @export
+#' @keywords NBA Win Probability Chart Data
+#' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
 #'   espn_nba_wp(game_id = 401283399)

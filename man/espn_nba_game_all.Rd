@@ -11,6 +11,182 @@ espn_nba_game_all(game_id)
 }
 \value{
 A named list of data frames: Plays, Team, Player
+
+\strong{Plays}\tabular{ll}{
+   col_name \tab types \cr
+   id \tab character \cr
+   sequence_number \tab character \cr
+   text \tab character \cr
+   away_score \tab integer \cr
+   home_score \tab integer \cr
+   scoring_play \tab logical \cr
+   score_value \tab integer \cr
+   wallclock \tab character \cr
+   shooting_play \tab logical \cr
+   type_id \tab character \cr
+   type_text \tab character \cr
+   period_number \tab integer \cr
+   period_display_value \tab character \cr
+   clock_display_value \tab character \cr
+   team_id \tab character \cr
+   coordinate_x_raw \tab numeric \cr
+   coordinate_y_raw \tab numeric \cr
+   coordinate_x \tab numeric \cr
+   coordinate_y \tab numeric \cr
+   play_id \tab character \cr
+   athlete_id_1 \tab character \cr
+   athlete_id_2 \tab character \cr
+   athlete_id_3 \tab character \cr
+   home_team_id \tab integer \cr
+   home_team_mascot \tab character \cr
+   home_team_name \tab character \cr
+   home_team_abbrev \tab character \cr
+   home_team_logo \tab character \cr
+   home_team_logo_dark \tab character \cr
+   home_team_full_name \tab character \cr
+   home_team_color \tab character \cr
+   home_team_alternate_color \tab character \cr
+   home_team_score \tab integer \cr
+   home_team_winner \tab logical \cr
+   home_team_record \tab character \cr
+   away_team_id \tab integer \cr
+   away_team_mascot \tab character \cr
+   away_team_name \tab character \cr
+   away_team_abbrev \tab character \cr
+   away_team_logo \tab character \cr
+   away_team_logo_dark \tab character \cr
+   away_team_full_name \tab character \cr
+   away_team_color \tab character \cr
+   away_team_alternate_color \tab character \cr
+   away_team_score \tab integer \cr
+   away_team_winner \tab logical \cr
+   away_team_record \tab character \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+}
+
+
+\strong{Team}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+   team_id \tab integer \cr
+   team_uid \tab character \cr
+   team_slug \tab character \cr
+   team_location \tab character \cr
+   team_name \tab character \cr
+   team_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_short_display_name \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   team_logo \tab character \cr
+   team_home_away \tab character \cr
+   team_score \tab integer \cr
+   team_winner \tab logical \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   fast_break_points \tab character \cr
+   field_goal_pct \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   flagrant_fouls \tab integer \cr
+   fouls \tab integer \cr
+   free_throw_pct \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   largest_lead \tab character \cr
+   offensive_rebounds \tab integer \cr
+   points_in_paint \tab character \cr
+   steals \tab integer \cr
+   team_turnovers \tab integer \cr
+   technical_fouls \tab integer \cr
+   three_point_field_goal_pct \tab numeric \cr
+   three_point_field_goals_made \tab integer \cr
+   three_point_field_goals_attempted \tab integer \cr
+   total_rebounds \tab integer \cr
+   total_technical_fouls \tab integer \cr
+   total_turnovers \tab integer \cr
+   turnover_points \tab character \cr
+   turnovers \tab integer \cr
+   opponent_team_id \tab integer \cr
+   opponent_team_uid \tab character \cr
+   opponent_team_slug \tab character \cr
+   opponent_team_location \tab character \cr
+   opponent_team_name \tab character \cr
+   opponent_team_abbreviation \tab character \cr
+   opponent_team_display_name \tab character \cr
+   opponent_team_short_display_name \tab character \cr
+   opponent_team_color \tab character \cr
+   opponent_team_alternate_color \tab character \cr
+   opponent_team_logo \tab character \cr
+}
+
+
+\strong{Player}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+   athlete_id \tab character \cr
+   athlete_display_name \tab character \cr
+   team_id \tab character \cr
+   team_name \tab character \cr
+   team_location \tab character \cr
+   team_short_display_name \tab character \cr
+   minutes \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   three_point_field_goals_made \tab integer \cr
+   three_point_field_goals_attempted \tab integer \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
+   offensive_rebounds \tab integer \cr
+   defensive_rebounds \tab integer \cr
+   rebounds \tab integer \cr
+   assists \tab integer \cr
+   steals \tab integer \cr
+   blocks \tab integer \cr
+   turnovers \tab integer \cr
+   fouls \tab integer \cr
+   plus_minus \tab character \cr
+   points \tab integer \cr
+   starter \tab logical \cr
+   ejected \tab logical \cr
+   did_not_play \tab logical \cr
+   reason \tab character \cr
+   active \tab logical \cr
+   athlete_jersey \tab character \cr
+   athlete_short_name \tab character \cr
+   athlete_headshot_href \tab character \cr
+   athlete_position_name \tab character \cr
+   athlete_position_abbreviation \tab character \cr
+   team_display_name \tab character \cr
+   team_uid \tab character \cr
+   team_slug \tab character \cr
+   team_logo \tab character \cr
+   team_abbreviation \tab character \cr
+   team_color \tab character \cr
+   team_alternate_color \tab character \cr
+   home_away \tab character \cr
+   team_winner \tab logical \cr
+   team_score \tab character \cr
+   opponent_team_id \tab integer \cr
+   opponent_team_name \tab character \cr
+   opponent_team_location \tab character \cr
+   opponent_team_display_name \tab character \cr
+   opponent_team_abbreviation \tab character \cr
+   opponent_team_logo \tab character \cr
+   opponent_team_color \tab character \cr
+   opponent_team_alternate_color \tab character \cr
+   opponent_team_score \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN NBA game data (Pbp, Team and Player Box)}
@@ -21,8 +197,23 @@ A named list of data frames: Plays, Team, Player
 }
 
 }
+\seealso{
+Other ESPN NBA Functions: 
+\code{\link{espn_nba_betting}()},
+\code{\link{espn_nba_game_rosters}()},
+\code{\link{espn_nba_pbp}()},
+\code{\link{espn_nba_player_box}()},
+\code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_scoreboard}()},
+\code{\link{espn_nba_standings}()},
+\code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_stats}()},
+\code{\link{espn_nba_teams}()},
+\code{\link{espn_nba_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN NBA Functions}
 \keyword{Game}
 \keyword{NBA}

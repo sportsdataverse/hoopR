@@ -7,7 +7,22 @@
 espn_nba_teams()
 }
 \value{
-A teams data frame
+A teams data frame\tabular{ll}{
+   col_name \tab types \cr
+   team_id \tab character \cr
+   abbreviation \tab character \cr
+   display_name \tab character \cr
+   short_name \tab character \cr
+   mascot \tab character \cr
+   nickname \tab character \cr
+   team \tab character \cr
+   color \tab character \cr
+   alternate_color \tab character \cr
+   logo \tab character \cr
+   logo_dark \tab character \cr
+   logos_href_3 \tab character \cr
+   logos_href_4 \tab character \cr
+}
 }
 \description{
 \strong{Get ESPN NBA team names and IDs}
@@ -18,8 +33,23 @@ A teams data frame
 }
 
 }
+\seealso{
+Other ESPN NBA Functions: 
+\code{\link{espn_nba_betting}()},
+\code{\link{espn_nba_game_all}()},
+\code{\link{espn_nba_game_rosters}()},
+\code{\link{espn_nba_pbp}()},
+\code{\link{espn_nba_player_box}()},
+\code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_scoreboard}()},
+\code{\link{espn_nba_standings}()},
+\code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_stats}()},
+\code{\link{espn_nba_wp}()}
+}
 \author{
 Saiem Gilani
 }
+\concept{ESPN NBA Functions}
 \keyword{NBA}
 \keyword{Teams}
