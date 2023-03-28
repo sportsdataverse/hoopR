@@ -173,8 +173,7 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble</p>
-    </div>
+<p>Returns a tibble</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>athlete_display_name</td><td>character</td></tr><tr><td>team_short_display_name</td><td>character</td></tr><tr><td>min</td><td>character</td></tr><tr><td>fg</td><td>character</td></tr><tr><td>fg3</td><td>character</td></tr><tr><td>ft</td><td>character</td></tr><tr><td>oreb</td><td>character</td></tr><tr><td>dreb</td><td>character</td></tr><tr><td>reb</td><td>character</td></tr><tr><td>ast</td><td>character</td></tr><tr><td>stl</td><td>character</td></tr><tr><td>blk</td><td>character</td></tr><tr><td>to</td><td>character</td></tr><tr><td>pf</td><td>character</td></tr><tr><td>pts</td><td>character</td></tr><tr><td>starter</td><td>logical</td></tr><tr><td>ejected</td><td>logical</td></tr><tr><td>did_not_play</td><td>logical</td></tr><tr><td>active</td><td>logical</td></tr><tr><td>athlete_jersey</td><td>character</td></tr><tr><td>athlete_id</td><td>character</td></tr><tr><td>athlete_short_name</td><td>character</td></tr><tr><td>athlete_headshot_href</td><td>character</td></tr><tr><td>athlete_position_name</td><td>character</td></tr><tr><td>athlete_position_abbreviation</td><td>character</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_logo</td><td>character</td></tr><tr><td>team_id</td><td>character</td></tr><tr><td>team_abbreviation</td><td>character</td></tr><tr><td>team_color</td><td>character</td></tr><tr><td>game_id</td><td>integer</td></tr><tr><td>season</td><td>integer</td></tr><tr><td>season_type</td><td>integer</td></tr><tr><td>game_date</td><td>Date</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other hoopR Loader Functions: 
@@ -190,9 +189,9 @@ the season data into a database (used by <code><a href="update_mbb_db.html">upda
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">load_mbb_player_box</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">load_mbb_player_box</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Player Boxscore Information from hoopR data repository ─────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-27 09:56:15 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2023-03-28 09:49:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 125,189 × 34</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_display_name team_short_display_name min   fg    fg3   ft    oreb </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
