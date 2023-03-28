@@ -2292,7 +2292,6 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
 #' @export
-#' @noRd
 helper_espn_nba_pbp <- function(resp){
 
   game_json <- resp %>%
@@ -2480,7 +2479,6 @@ helper_espn_nba_pbp <- function(resp){
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
 #' @export
-#' @noRd
 helper_espn_nba_team_box <- function(resp){
 
   game_json <- resp %>%
@@ -2674,7 +2672,6 @@ helper_espn_nba_team_box <- function(resp){
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
 #' @export
-#' @noRd
 helper_espn_nba_player_box <- function(resp){
 
   game_json <- resp %>%
