@@ -12,7 +12,64 @@ kp_winprob(game_id, year)
 \item{year}{Year of game to pull}
 }
 \value{
-Returns a tibble of game win probabilities
+Returns a named list of tibbles: winprob_dataset, game_data, runs
+
+\strong{winprob_dataset}\tabular{ll}{
+   col_name \tab types \cr
+   period \tab integer \cr
+   wp \tab numeric \cr
+   time_left \tab numeric \cr
+   visitor_score \tab integer \cr
+   home_score \tab integer \cr
+   visitor_scoring \tab integer \cr
+   home_scoring \tab integer \cr
+   possession_team \tab character \cr
+   possession_number \tab character \cr
+   game_id \tab numeric \cr
+   year \tab numeric \cr
+}
+
+
+\strong{game_data}\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   year \tab integer \cr
+   full_date \tab character \cr
+   date \tab character \cr
+   game_time \tab character \cr
+   venue \tab character \cr
+   city \tab character \cr
+   team1 \tab character \cr
+   team1score \tab integer \cr
+   team1_rk \tab character \cr
+   team2 \tab character \cr
+   team2score \tab integer \cr
+   team2_rk \tab character \cr
+   dominance_season_rk \tab character \cr
+   tension_season_rk \tab character \cr
+   excitement_season_rk \tab character \cr
+   lead_changes_season_rk \tab character \cr
+   minimum_wp_season_rk \tab character \cr
+   dominance_rk \tab character \cr
+   tension_rk \tab character \cr
+   excitement_rk \tab character \cr
+   lead_changes_rk \tab character \cr
+   minimum_wp_rk \tab character \cr
+   dominance \tab character \cr
+   tension \tab character \cr
+   excitement \tab character \cr
+   favchg \tab character \cr
+   min_wp \tab character \cr
+}
+
+
+\strong{runs}\tabular{ll}{
+   col_name \tab types \cr
+   start \tab numeric \cr
+   end \tab numeric \cr
+   visitor \tab integer \cr
+   home \tab integer \cr
+}
 }
 \description{
 \strong{Get KenPom Win Probability}
@@ -22,5 +79,10 @@ Returns a tibble of game win probabilities
   try(kp_winprob(game_id = 1238, year = 2020))
 }
 }
+\seealso{
+Other KenPom Boxscore Functions: 
+\code{\link{kp_box}()}
+}
+\concept{KenPom Boxscore Functions}
 \keyword{Probability}
 \keyword{Win}

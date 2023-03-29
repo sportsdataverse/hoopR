@@ -12,19 +12,19 @@ kp_referee(referee, year)
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with 11 columns:
-\describe{
-\item{\code{game_number}}{integer.}
-\item{\code{date}}{character.}
-\item{\code{time_et)}}{character.}
-\item{\code{game}}{character.}
-\item{\code{location}}{character.}
-\item{\code{venue}}{character.}
-\item{\code{conference}}{character.}
-\item{\code{thrill_score}}{double.}
-\item{\code{referee_name}}{character.}
-\item{\code{ref_rank}}{integer.}
-\item{\code{year}}{integer.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   game_number \tab integer \cr
+   date \tab character \cr
+   time_et \tab character \cr
+   game \tab character \cr
+   location \tab character \cr
+   venue \tab character \cr
+   conference \tab character \cr
+   thrill_score \tab numeric \cr
+   referee_name \tab character \cr
+   ref_rank \tab numeric \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -35,4 +35,14 @@ A data frame with 11 columns:
   try(kp_referee(referee = 714363, year = 2021))
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{Refs}

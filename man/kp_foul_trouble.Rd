@@ -12,7 +12,23 @@ kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of foul participation stats
+Returns a tibble of foul participation stats\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   conf \tab character \cr
+   two_foul_particpation_pct \tab numeric \cr
+   two_foul_particpation_pct_rk \tab numeric \cr
+   adj2fp \tab numeric \cr
+   adj2fp_rk \tab numeric \cr
+   two_foul_total_time \tab character \cr
+   two_foul_total_time_rk \tab character \cr
+   two_foul_time_on \tab character \cr
+   two_foul_time_on_rk \tab character \cr
+   bench_pct \tab numeric \cr
+   bench_pct_rk \tab numeric \cr
+   ncaa_seed \tab numeric \cr
+   year \tab integer \cr
+}
 }
 \description{
 \strong{Get 2-Foul Participation Stats}
@@ -22,5 +38,17 @@ Returns a tibble of foul participation stats
   try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Foul}
 \keyword{Trouble}

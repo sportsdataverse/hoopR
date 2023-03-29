@@ -12,7 +12,58 @@ kp_opptracker(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team opponent tracker data
+Returns a tibble of team opponent tracker data\tabular{ll}{
+   col_name \tab types \cr
+   date \tab Date \cr
+   game_date \tab numeric \cr
+   day_date \tab character \cr
+   wl \tab character \cr
+   team \tab character \cr
+   team_score \tab numeric \cr
+   opponent \tab character \cr
+   opponent_score \tab numeric \cr
+   result \tab character \cr
+   adj_oe \tab numeric \cr
+   adj_oe_rk \tab integer \cr
+   off_e_fg_pct \tab numeric \cr
+   off_e_fg_pct_rk \tab integer \cr
+   off_to_pct \tab numeric \cr
+   off_to_pct_rk \tab integer \cr
+   off_or_pct \tab numeric \cr
+   off_or_pct_rk \tab integer \cr
+   off_ft_rate \tab numeric \cr
+   off_ft_rate_rk \tab integer \cr
+   off_fg_2_pct \tab numeric \cr
+   off_fg_2_pct_rk \tab integer \cr
+   off_fg_3_pct \tab numeric \cr
+   off_fg_3_pct_rk \tab integer \cr
+   off_blk_pct \tab numeric \cr
+   off_blk_pct_rk \tab integer \cr
+   off_fg_3a_pct \tab numeric \cr
+   off_fg_3a_pct_rk \tab integer \cr
+   off_apl \tab numeric \cr
+   off_apl_rk \tab integer \cr
+   adj_de \tab numeric \cr
+   adj_de_rk \tab integer \cr
+   def_e_fg_pct \tab numeric \cr
+   def_e_fg_pct_rk \tab integer \cr
+   def_to_pct \tab numeric \cr
+   def_to_pct_rk \tab integer \cr
+   def_or_pct \tab numeric \cr
+   def_or_pct_rk \tab integer \cr
+   def_ft_rate \tab numeric \cr
+   def_ft_rate_rk \tab integer \cr
+   def_fg_2_pct \tab numeric \cr
+   def_fg_2_pct_rk \tab integer \cr
+   def_fg_3_pct \tab numeric \cr
+   def_fg_3_pct_rk \tab integer \cr
+   def_blk_pct \tab numeric \cr
+   def_blk_pct_rk \tab integer \cr
+   def_fg_3a_pct \tab numeric \cr
+   def_fg_3a_pct_rk \tab integer \cr
+   def_apl \tab numeric \cr
+   def_apl_rk \tab integer \cr
+}
 }
 \description{
 \strong{Get KenPom's team opponent tracker page}
@@ -22,5 +73,17 @@ Returns a tibble of team opponent tracker data
   try(kp_opptracker(team = 'Florida St.', year = 2021))
 }
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Opponent}
 \keyword{Tracker}

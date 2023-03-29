@@ -10,15 +10,56 @@ kp_kpoy(year = most_recent_mbb_season())
 \item{year}{Year of data to pull (earliest year of data available: 2011)}
 }
 \value{
-Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"
+Returns a list of tibbles: "kPoYRatings", "GameMVPs"
+
+\strong{KPoYRatings}\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab integer \cr
+   player \tab character \cr
+   kpoy_rating \tab numeric \cr
+   team \tab character \cr
+   hgt \tab character \cr
+   wgt \tab numeric \cr
+   exp \tab character \cr
+   home_town \tab character \cr
+   year \tab numeric \cr
+   group \tab character \cr
+}
+
+
+\strong{GameMVPs}\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab numeric \cr
+   player \tab character \cr
+   game_mv_ps \tab numeric \cr
+   team \tab character \cr
+   hgt \tab character \cr
+   wgt \tab numeric \cr
+   exp \tab character \cr
+   home_town \tab character \cr
+   year \tab numeric \cr
+   group \tab character \cr
+}
 }
 \description{
 \strong{Get KPoY Leaders Tables}
 }
 \examples{
 \donttest{
- try(kp_kpoy(year=2021))
+  try(kp_kpoy(year=2021))
 }
 
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Leaders}

@@ -7,25 +7,25 @@
 kp_program_ratings()
 }
 \value{
-A data frame with 17 columns:
-\describe{
-\item{\code{Rk}}{double.}
-\item{\code{Team}}{character.}
-\item{\code{Conf}}{character.}
-\item{\code{Rtg}}{double.}
-\item{\code{Best.Rk}}{double.}
-\item{\code{Best.Yr}}{double.}
-\item{\code{Worst.Rk}}{double.}
-\item{\code{Worst.Yr}}{double.}
-\item{\code{KP.Median}}{double.}
-\item{\code{Top10}}{double.}
-\item{\code{Top25}}{double.}
-\item{\code{Top50}}{double.}
-\item{\code{CH}}{double.}
-\item{\code{F4}}{double.}
-\item{\code{S16}}{double.}
-\item{\code{R1}}{double.}
-\item{\code{Chg}}{double.}
+A data frame with 17 columns:\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab numeric \cr
+   team \tab character \cr
+   conf \tab character \cr
+   rtg \tab numeric \cr
+   best_rk \tab numeric \cr
+   best_yr \tab numeric \cr
+   worst_rk \tab numeric \cr
+   worst_yr \tab numeric \cr
+   kp_median \tab numeric \cr
+   top10 \tab numeric \cr
+   top25 \tab numeric \cr
+   top50 \tab numeric \cr
+   ch \tab numeric \cr
+   f4 \tab numeric \cr
+   s16 \tab numeric \cr
+   r1 \tab numeric \cr
+   chg \tab numeric \cr
 }
 }
 \description{
@@ -36,5 +36,15 @@ A data frame with 17 columns:
   try(kp_program_ratings())
 }
 }
+\seealso{
+Other KenPom Historical Functions: 
+\code{\link{kp_coach_history}()},
+\code{\link{kp_confhistory}()},
+\code{\link{kp_confstats}()},
+\code{\link{kp_conf}()},
+\code{\link{kp_pomeroy_archive_ratings}()},
+\code{\link{kp_team_history}()}
+}
+\concept{KenPom Historical Functions}
 \keyword{Program}
 \keyword{Ratings}

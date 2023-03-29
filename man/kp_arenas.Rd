@@ -10,14 +10,14 @@ kp_arenas(year = most_recent_mbb_season())
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with 6 columns:
-\describe{
-\item{\code{Rk}}{double.}
-\item{\code{Team}}{character.}
-\item{\code{Conf}}{character.}
-\item{\code{Arena}}{character.}
-\item{\code{Alternate}}{character.}
-\item{\code{Year}}{double.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab numeric \cr
+   team \tab character \cr
+   conf \tab character \cr
+   arena \tab character \cr
+   alternate \tab character \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -25,7 +25,17 @@ A data frame with 6 columns:
 }
 \examples{
 \donttest{
- try(kp_arenas(year=2021))
+  try(kp_arenas(year=2021))
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_referee}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{Arenas}

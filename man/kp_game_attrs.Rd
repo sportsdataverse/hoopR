@@ -14,14 +14,33 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 'Upsets','Busts','Comeback','Window'}
 }
 \value{
-Returns a tibble with game attributes
+Returns a tibble with game attributes\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab integer \cr
+   data \tab character \cr
+   game \tab character \cr
+   location \tab character \cr
+   conf \tab character \cr
+   excitement \tab numeric \cr
+   year \tab numeric \cr
+}
 }
 \description{
 \strong{Get Game Attributes}
 }
 \examples{
 \donttest{
-  try(kp_game_attrs(year=2021, attr = "Excitement"))
+  try(kp_game_attrs(year = 2021, attr = "Excitement"))
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_referee}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{Game}

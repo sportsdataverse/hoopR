@@ -32,14 +32,36 @@ Only available if specific conference is defined. Only available for season afte
 \item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
 \value{
-Returns a tibble of player stats
+Returns a tibble of player stats\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab character \cr
+   player \tab character \cr
+   team \tab character \cr
+   e_fg \tab character \cr
+   hgt \tab character \cr
+   wgt \tab character \cr
+   yr \tab character \cr
+   year \tab numeric \cr
+}
 }
 \description{
 \strong{Get Player Stats Leaders by Metric}
 }
 \examples{
 \donttest{
- try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
+  try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Player}

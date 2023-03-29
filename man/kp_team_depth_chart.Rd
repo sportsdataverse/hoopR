@@ -12,20 +12,45 @@ kp_team_depth_chart(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with 12 columns:
-\describe{
-\item{\code{PG}}{character. DESCRIPTION.}
-\item{\code{PG.Minpct}}{character. DESCRIPTION.}
-\item{\code{SG}}{character. DESCRIPTION.}
-\item{\code{SG.Minpct}}{character. DESCRIPTION.}
-\item{\code{SF}}{character. DESCRIPTION.}
-\item{\code{SF.Minpct}}{character. DESCRIPTION.}
-\item{\code{PF}}{character. DESCRIPTION.}
-\item{\code{PF.Minpct}}{character. DESCRIPTION.}
-\item{\code{C}}{character. DESCRIPTION.}
-\item{\code{C.Minpct}}{character. DESCRIPTION.}
-\item{\code{Team}}{character. DESCRIPTION.}
-\item{\code{Year}}{double. DESCRIPTION.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   pg_number \tab numeric \cr
+   pg_player_first_name \tab character \cr
+   pg_player_last_name \tab character \cr
+   pg_hgt \tab character \cr
+   pg_wgt \tab numeric \cr
+   pg_yr \tab character \cr
+   pg_min_pct \tab numeric \cr
+   sg_number \tab numeric \cr
+   sg_player_first_name \tab character \cr
+   sg_player_last_name \tab character \cr
+   sg_hgt \tab character \cr
+   sg_wgt \tab numeric \cr
+   sg_yr \tab character \cr
+   sg_min_pct \tab numeric \cr
+   sf_number \tab numeric \cr
+   sf_player_first_name \tab character \cr
+   sf_player_last_name \tab character \cr
+   sf_hgt \tab character \cr
+   sf_wgt \tab numeric \cr
+   sf_yr \tab character \cr
+   sf_min_pct \tab numeric \cr
+   pf_number \tab numeric \cr
+   pf_player_first_name \tab character \cr
+   pf_player_last_name \tab character \cr
+   pf_hgt \tab character \cr
+   pf_wgt \tab numeric \cr
+   pf_yr \tab character \cr
+   pf_min_pct \tab numeric \cr
+   c_number \tab numeric \cr
+   c_player_first_name \tab character \cr
+   c_player_last_name \tab character \cr
+   c_hgt \tab character \cr
+   c_wgt \tab numeric \cr
+   c_yr \tab character \cr
+   c_min_pct \tab numeric \cr
+   team \tab character \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -38,5 +63,17 @@ A data frame with 12 columns:
 
 
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Chart}
 \keyword{Depth}

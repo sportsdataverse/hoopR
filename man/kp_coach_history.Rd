@@ -10,38 +10,65 @@ kp_coach_history(coach)
 \item{coach}{Coach filter to select.}
 }
 \value{
-A data frame with 30 columns:
-\describe{
-\item{\code{Year}}{double.}
-\item{\code{Team.Rk}}{double.}
-\item{\code{Team}}{character.}
-\item{\code{Coach}}{character.}
-\item{\code{Conf}}{character.}
-\item{\code{W-L}}{character.}
-\item{\code{AdjT}}{double.}
-\item{\code{AdjO}}{double.}
-\item{\code{AdjD}}{double.}
-\item{\code{Off.eFG.Pct}}{double.}
-\item{\code{Off.TO.Pct}}{double.}
-\item{\code{Off.OR.Pct}}{double.}
-\item{\code{Off.FTRate}}{double.}
-\item{\code{Off.FG_2.Pct}}{double.}
-\item{\code{Off.FG_3.Pct}}{double.}
-\item{\code{Off.FT.Pct}}{double.}
-\item{\code{Off.FG_3A.Pct}}{double.}
-\item{\code{Off.A.Pct}}{double.}
-\item{\code{Off.APL}}{double.}
-\item{\code{Def.eFG.Pct}}{double.}
-\item{\code{Def.TO.Pct}}{double.}
-\item{\code{Def.OR.Pct}}{double.}
-\item{\code{Def.FTRate}}{double.}
-\item{\code{Def.FG_2.Pct}}{double.}
-\item{\code{Def.FG_3.Pct}}{double.}
-\item{\code{Def.Blk.Pct}}{double.}
-\item{\code{Def.FG_3A.Pct}}{double.}
-\item{\code{Def.A.Pct}}{double.}
-\item{\code{Def.AP}}{double.}
-\item{\code{Foul2Partic.Pct}}{double.}
+A data frame with 30 columns:\tabular{ll}{
+   col_name \tab types \cr
+   year \tab numeric \cr
+   team_rk \tab numeric \cr
+   team \tab character \cr
+   coach \tab character \cr
+   conf \tab character \cr
+   adj_t \tab character \cr
+   adj_o \tab character \cr
+   adj_d \tab character \cr
+   off_e_fg_pct \tab character \cr
+   off_to_pct \tab character \cr
+   off_or_pct \tab character \cr
+   off_ft_rate \tab character \cr
+   off_fg_2_pct \tab character \cr
+   off_fg_3_pct \tab character \cr
+   off_ft_pct \tab character \cr
+   off_fg_3a_pct \tab character \cr
+   off_a_pct \tab character \cr
+   off_apl \tab character \cr
+   def_e_fg_pct \tab character \cr
+   def_to_pct \tab character \cr
+   def_or_pct \tab character \cr
+   def_ft_rate \tab character \cr
+   def_fg_2_pct \tab character \cr
+   def_fg_3_pct \tab character \cr
+   def_blk_pct \tab character \cr
+   def_fg_3a_pct \tab character \cr
+   def_a_pct \tab character \cr
+   def_apl \tab character \cr
+   foul2partic_pct \tab character \cr
+   wl \tab character \cr
+   wl_conf \tab character \cr
+   adj_t_rk \tab numeric \cr
+   adj_o_rk \tab numeric \cr
+   adj_d_rk \tab numeric \cr
+   off_e_fg_pct_rk \tab numeric \cr
+   off_to_pct_rk \tab numeric \cr
+   off_or_pct_rk \tab numeric \cr
+   off_ft_rate_rk \tab numeric \cr
+   off_fg_2_pct_rk \tab numeric \cr
+   off_fg_3_pct_rk \tab numeric \cr
+   off_ft_pct_rk \tab numeric \cr
+   off_fg_3a_pct_rk \tab numeric \cr
+   off_a_pct_rk \tab numeric \cr
+   off_apl_rk \tab numeric \cr
+   def_e_fg_pct_rk \tab numeric \cr
+   def_to_pct_rk \tab numeric \cr
+   def_or_pct_rk \tab numeric \cr
+   def_ft_rate_rk \tab numeric \cr
+   def_fg_2_pct_rk \tab numeric \cr
+   def_fg_3_pct_rk \tab numeric \cr
+   def_blk_pct_rk \tab numeric \cr
+   def_fg_3a_pct_rk \tab numeric \cr
+   def_a_pct_rk \tab numeric \cr
+   def_apl_rk \tab numeric \cr
+   foul2partic_pct_rk \tab numeric \cr
+   team_finish \tab character \cr
+   ncaa_seed \tab numeric \cr
 }
 }
 \description{
@@ -54,5 +81,15 @@ A data frame with 30 columns:
 
 
 }
+\seealso{
+Other KenPom Historical Functions: 
+\code{\link{kp_confhistory}()},
+\code{\link{kp_confstats}()},
+\code{\link{kp_conf}()},
+\code{\link{kp_pomeroy_archive_ratings}()},
+\code{\link{kp_program_ratings}()},
+\code{\link{kp_team_history}()}
+}
+\concept{KenPom Historical Functions}
 \keyword{Coach}
 \keyword{History}

@@ -2,14 +2,42 @@
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of ratings
-#' @keywords Ratings
+#' @return Returns a tibble of ratings
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |year            |integer   |
+#'    |rk              |numeric   |
+#'    |team            |character |
+#'    |conf            |character |
+#'    |w_l             |character |
+#'    |adj_em          |numeric   |
+#'    |adj_o           |numeric   |
+#'    |adj_o_rk        |numeric   |
+#'    |adj_d           |numeric   |
+#'    |adj_d_rk        |numeric   |
+#'    |adj_t           |numeric   |
+#'    |adj_t_rk        |numeric   |
+#'    |luck            |numeric   |
+#'    |luck_rk         |numeric   |
+#'    |sos_adj_em      |numeric   |
+#'    |sos_adj_em_rk   |numeric   |
+#'    |sos_opp_o       |numeric   |
+#'    |sos_opp_o_rk    |numeric   |
+#'    |sos_opp_d       |numeric   |
+#'    |sos_opp_d_rk    |numeric   |
+#'    |ncsos_adj_em    |numeric   |
+#'    |ncsos_adj_em_rk |numeric   |
+#'    |ncaa_seed       |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Ratings
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
@@ -21,14 +49,14 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2002")
       }
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
 
         ### Pull Data
@@ -68,9 +96,9 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
           dplyr::select("Year", tidyr::everything())
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -95,17 +123,42 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of efficiency and tempo ratings
-#' @keywords Efficiency
+#' @return Returns a tibble of efficiency and tempo ratings
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |team                   |character |
+#'    |conf                   |character |
+#'    |adj_t                  |numeric   |
+#'    |adj_t_rk               |numeric   |
+#'    |raw_t                  |numeric   |
+#'    |raw_t_rk               |numeric   |
+#'    |avg_poss_length_off    |numeric   |
+#'    |avg_poss_length_off_rk |numeric   |
+#'    |avg_poss_length_def    |numeric   |
+#'    |avg_poss_length_def_rk |numeric   |
+#'    |adj_o                  |numeric   |
+#'    |adj_o_rk               |numeric   |
+#'    |raw_o                  |numeric   |
+#'    |raw_o_rk               |numeric   |
+#'    |adj_d                  |numeric   |
+#'    |adj_d_rk               |numeric   |
+#'    |raw_d                  |numeric   |
+#'    |raw_d_rk               |numeric   |
+#'    |ncaa_seed              |numeric   |
+#'    |year                   |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate mutate_at bind_rows
 #' @importFrom stringr str_remove str_remove str_trim
 #' @import rvest
 #' @export
+#' @keywords Efficiency
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_efficiency(min_year = 2020, max_year = 2021))
+#'    try(kp_efficiency(min_year = 2020, max_year = 2021))
 #' }
 
 kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
@@ -113,7 +166,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
       }
@@ -121,13 +174,13 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/summary.php?y=", year)
         page <- rvest::session_jump_to(browser, url)
         Sys.sleep(5)
-        if(year<2010){
+        if (year < 2010) {
 
           header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
                            "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
@@ -173,7 +226,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
               as.numeric) %>%
             as.data.frame()
 
-        }else{
+        } else {
 
           header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
                            "AvgPossLengthOff","AvgPossLengthOff.Rk",
@@ -212,9 +265,9 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
         }
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -238,17 +291,48 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of four factors ratings
-#' @keywords Four Factors
+#' @return Returns a tibble of four factors ratings
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |team            |character |
+#'    |conf            |character |
+#'    |adj_t           |numeric   |
+#'    |adj_t_rk        |numeric   |
+#'    |adj_o           |numeric   |
+#'    |adj_o_rk        |numeric   |
+#'    |off_e_fg_pct    |numeric   |
+#'    |off_e_fg_pct_rk |numeric   |
+#'    |off_to_pct      |numeric   |
+#'    |off_to_pct_rk   |numeric   |
+#'    |off_or_pct      |numeric   |
+#'    |off_or_pct_rk   |numeric   |
+#'    |off_ft_rate     |numeric   |
+#'    |off_ft_rate_rk  |numeric   |
+#'    |adj_d           |numeric   |
+#'    |adj_d_rk        |numeric   |
+#'    |def_e_fg_pct    |numeric   |
+#'    |def_e_fg_pct_rk |numeric   |
+#'    |def_to_pct      |numeric   |
+#'    |def_to_pct_rk   |numeric   |
+#'    |def_or_pct      |numeric   |
+#'    |def_or_pct_rk   |numeric   |
+#'    |def_ft_rate     |numeric   |
+#'    |def_ft_rate_rk  |numeric   |
+#'    |ncaa_seed       |numeric   |
+#'    |year            |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Four Factors
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_fourfactors(min_year = 2020, max_year = 2021))
+#'    try(kp_fourfactors(min_year = 2020, max_year = 2021))
 #' }
 
 kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
@@ -256,7 +340,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
       }
@@ -264,7 +348,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
 
         ### Pull Data
@@ -282,7 +366,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
         x <- x[,1:24]
 
@@ -309,9 +393,9 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
           as.data.frame()
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -335,17 +419,38 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of team points distributions
-#' @keywords Points
+#' @return Returns a tibble of team points distributions
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |team            |character |
+#'    |conf            |character |
+#'    |off_ft_pct      |numeric   |
+#'    |off_ft_pct_rk   |numeric   |
+#'    |off_fg_2_pct    |numeric   |
+#'    |off_fg_2_pct_rk |numeric   |
+#'    |off_fg_3_pct    |numeric   |
+#'    |off_fg_3_pct_rk |numeric   |
+#'    |def_ft_pct      |numeric   |
+#'    |def_ft_pct_rk   |numeric   |
+#'    |def_fg_2_pct    |numeric   |
+#'    |def_fg_2_pct_rk |numeric   |
+#'    |def_fg_3_pct    |numeric   |
+#'    |def_fg_3_pct_rk |numeric   |
+#'    |ncaa_seed       |numeric   |
+#'    |year            |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Points
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_pointdist(min_year = 2020, max_year = 2021))
+#'    try(kp_pointdist(min_year = 2020, max_year = 2021))
 #' }
 
 kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
@@ -353,7 +458,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
       }
@@ -361,7 +466,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
 
         ### Pull Data
@@ -380,7 +485,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
 
         x <- x[,1:14]
@@ -398,7 +503,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
                            "Team" = sapply(.data$Team, function(arg) {
                              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                            "Year" = year) %>%
-          dplyr:: mutate_at(
+          dplyr::mutate_at(
             c("Off.FT.Pct", "Off.FT.Pct.Rk",
               "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
               "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
@@ -408,7 +513,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
           as.data.frame()
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
         }else {
           kenpom <- dplyr::bind_rows(kenpom, x)
@@ -433,17 +538,46 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of heights
-#' @keywords Roster
+#' @return Returns a tibble of heights
+#'
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |team          |character |
+#'    |conf          |character |
+#'    |avg_hgt       |numeric   |
+#'    |avg_hgt_rk    |numeric   |
+#'    |eff_hgt       |numeric   |
+#'    |eff_hgt_rk    |numeric   |
+#'    |c_hgt         |numeric   |
+#'    |c_hgt_rk      |numeric   |
+#'    |pf_hgt        |numeric   |
+#'    |pf_hgt_rk     |numeric   |
+#'    |sf_hgt        |numeric   |
+#'    |sf_hgt_rk     |numeric   |
+#'    |sg_hgt        |numeric   |
+#'    |sg_hgt_rk     |numeric   |
+#'    |pg_hgt        |numeric   |
+#'    |pg_hgt_rk     |numeric   |
+#'    |experience    |numeric   |
+#'    |experience_rk |numeric   |
+#'    |bench         |numeric   |
+#'    |bench_rk      |numeric   |
+#'    |continuity    |numeric   |
+#'    |continuity_rk |numeric   |
+#'    |ncaa_seed     |numeric   |
+#'    |year          |integer   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Roster
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_height(min_year = 2020, max_year = 2021))
+#'   try(kp_height(min_year = 2020, max_year = 2021))
 #' }
 
 kp_height <- function(min_year,max_year = most_recent_mbb_season()){
@@ -451,14 +585,14 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2007)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2007)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2007")
       }
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/height.php?",
@@ -466,7 +600,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 
         page <- rvest::session_jump_to(browser, url)
         Sys.sleep(5)
-        if(year<2008){
+        if (year < 2008) {
           header_cols <- c("Team", "Conf",
                            "Avg.Hgt", "Avg.Hgt.Rk",
                            "Eff.Hgt", "Eff.Hgt.Rk",
@@ -480,7 +614,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 
           x <- (page %>%
                   xml2::read_html() %>%
-                  rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                  rvest::html_elements(css = '#ratings-table'))[[1]] %>%
             rvest::html_table()
           x <- x[,1:20]
           colnames(x) <- header_cols
@@ -494,7 +628,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
                              "Team" = sapply(.data$Team, function(arg) {
                                stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                              "Year" = year) %>%
-            dplyr:: mutate_at(
+            dplyr::mutate_at(
               c("Avg.Hgt", "Avg.Hgt.Rk",
                 "Eff.Hgt", "Eff.Hgt.Rk",
                 "C.Hgt", "C.Hgt.Rk",
@@ -520,7 +654,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 
           x <- (page %>%
                   xml2::read_html() %>%
-                  rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                  rvest::html_elements(css = '#ratings-table'))[[1]] %>%
             rvest::html_table()
 
           x <- x[,1:22]
@@ -539,7 +673,7 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
                            "Team" = sapply(.data$Team, function(arg) {
                              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                            "Year" = year) %>%
-          dplyr:: mutate_at(
+          dplyr::mutate_at(
             c("Avg.Hgt", "Avg.Hgt.Rk",
               "Eff.Hgt", "Eff.Hgt.Rk",
               "C.Hgt", "C.Hgt.Rk",
@@ -552,9 +686,9 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
           as.data.frame()
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -577,13 +711,32 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of foul participation stats
-#' @keywords Foul Trouble
+#' @return Returns a tibble of foul participation stats
+#'
+#'    |col_name                     |types     |
+#'    |:----------------------------|:---------|
+#'    |team                         |character |
+#'    |conf                         |character |
+#'    |two_foul_particpation_pct    |numeric   |
+#'    |two_foul_particpation_pct_rk |numeric   |
+#'    |adj2fp                       |numeric   |
+#'    |adj2fp_rk                    |numeric   |
+#'    |two_foul_total_time          |character |
+#'    |two_foul_total_time_rk       |character |
+#'    |two_foul_time_on             |character |
+#'    |two_foul_time_on_rk          |character |
+#'    |bench_pct                    |numeric   |
+#'    |bench_pct_rk                 |numeric   |
+#'    |ncaa_seed                    |numeric   |
+#'    |year                         |integer   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Foul Trouble
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
@@ -595,14 +748,14 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2010)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2010)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2010")
       }
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/foul_trouble.php?",
@@ -617,7 +770,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
                          "Bench.Pct","Bench.Pct.Rk")
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
 
         x <- x[,1:12]
@@ -635,14 +788,14 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
                            "Team" = sapply(.data$Team, function(arg) {
                              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
                            "Year" = year) %>%
-          dplyr:: mutate_at(
+          dplyr::mutate_at(
             c("TwoFoulParticpation.Pct",
               "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
               "Bench.Pct","Bench.Pct.Rk"), as.numeric) %>%
           as.data.frame()
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x
         }else {
           kenpom <- dplyr::bind_rows(kenpom, x)
@@ -668,17 +821,62 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
-#' @returns Returns a tibble of team stats
-#' @keywords Team
+#' @return Returns a tibble of team stats
+#'
+#'   |col_name           |types     |
+#'   |:------------------|:---------|
+#'   |team               |character |
+#'   |conf               |character |
+#'   |off_fg_3_pct       |numeric   |
+#'   |off_fg_3_pct_rk    |numeric   |
+#'   |off_fg_2_pct       |numeric   |
+#'   |off_fg_2_pct_rk    |numeric   |
+#'   |off_ft_pct         |numeric   |
+#'   |off_ft_pct_rk      |numeric   |
+#'   |off_blk_pct        |numeric   |
+#'   |off_blk_pct_rk     |numeric   |
+#'   |off_stl_pct        |numeric   |
+#'   |off_stl_pct_rk     |numeric   |
+#'   |off_non_stl_pct    |numeric   |
+#'   |off_non_stl_pct_rk |numeric   |
+#'   |off_a_pct          |numeric   |
+#'   |off_a_pct_rk       |numeric   |
+#'   |off_fg_3a_pct      |numeric   |
+#'   |off_fg_3a_pct_rk   |numeric   |
+#'   |adj_o              |numeric   |
+#'   |adj_o_rk           |numeric   |
+#'   |ncaa_seed          |numeric   |
+#'   |year               |numeric   |
+#'   |def_fg_3_pct       |numeric   |
+#'   |def_fg_3_pct_rk    |numeric   |
+#'   |def_fg_2_pct       |numeric   |
+#'   |def_fg_2_pct_rk    |numeric   |
+#'   |def_ft_pct         |numeric   |
+#'   |def_ft_pct_rk      |numeric   |
+#'   |def_blk_pct        |numeric   |
+#'   |def_blk_pct_rk     |numeric   |
+#'   |def_stl_pct        |numeric   |
+#'   |def_stl_pct_rk     |numeric   |
+#'   |def_non_stl_pct    |numeric   |
+#'   |def_non_stl_pct_rk |numeric   |
+#'   |def_a_pct          |numeric   |
+#'   |def_a_pct_rk       |numeric   |
+#'   |def_fg_3a_pct      |numeric   |
+#'   |def_fg_3a_pct_rk   |numeric   |
+#'   |adj_d              |numeric   |
+#'   |adj_d_rk           |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Team
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_teamstats(min_year = 2019, max_year =2021))
+#'    try(kp_teamstats(min_year = 2019, max_year =2021))
 #' }
 
 kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
@@ -686,7 +884,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(min_year) && nchar(min_year) == 4 && min_year>=2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
       }
@@ -694,7 +892,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 
       years <- min_year:max_year
 
-      for(year in years) {
+      for (year in years) {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/teamstats.php?",
@@ -715,7 +913,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
 
         x <- x[,1:20]
@@ -761,7 +959,7 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 
         y <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
 
         y <- y[,1:20]
@@ -786,17 +984,17 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
               "AdjD", "AdjD.Rk"), as.numeric) %>%
           dplyr::mutate(
             "Team" = sapply(.data$Team, function(arg) {
-            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
+              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
             "Year" = year) %>%
           as.data.frame()
 
 
 
         ### Store Data
-        if(year == min_year) {
+        if (year == min_year) {
           kenpom <- x %>%
             dplyr::left_join(y, by = c("Team","Conf", "Year"))
-        }else {
+        } else {
           z <- x %>%
             dplyr::left_join(y, by = c("Team","Conf", "Year"))
           kenpom <- dplyr::bind_rows(kenpom, z)
@@ -835,17 +1033,30 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 #' @param conf_only Used to define whether stats should reflect conference games only.\cr
 #' Only available if specific conference is defined. Only available for season after 2013, FALSE by default.
 #' @param year Year of data to pull (earliest year of data available: 2004)
-#' @returns Returns a tibble of player stats
-#' @keywords Player
+#' @return Returns a tibble of player stats
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |rk       |character |
+#'    |player   |character |
+#'    |team     |character |
+#'    |e_fg     |character |
+#'    |hgt      |character |
+#'    |wgt      |character |
+#'    |yr       |character |
+#'    |year     |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_replace str_trim
 #' @import rvest
 #' @export
+#' @keywords Player
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
+#'   try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
 #' }
 
 kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=most_recent_mbb_season()){
@@ -868,12 +1079,12 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 
       metric_url <- metrics_data$url_ext[m_list == metric]
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2004)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2004)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2004")
       }
 
-      if(metric=="ORtg"){
+      if (metric == "ORtg") {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/playerstats.php?",
@@ -887,7 +1098,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
         header_cols <- c("Rk","Player","Team", metric,
                          "Hgt","Wgt","Yr")
         y <- list()
-        for(i in 1:4){
+        for (i in 1:4) {
 
           groups <- c("At least 28% of possessions used", "At least 24% of possessions used",
                       "At least 20% of possessions used", "All players")
@@ -916,7 +1127,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
         ### Store Data
 
         kenpom <- y
-      }else{
+      } else {
 
         ### Pull Data
         url <- paste0("https://kenpom.com/playerstats.php?",
@@ -933,7 +1144,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#ratings-table'))[[1]] %>%
+                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
           rvest::html_table()
 
         x <- x[,1:7]
@@ -945,7 +1156,7 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
         x <- dplyr::mutate(x,
                            "Team" = sapply(.data$Team, function(arg) {
                              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year)%>%
+                           "Year" = year) %>%
           as.data.frame()
 
         ### Store Data
@@ -969,18 +1180,52 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 #' **Get KPoY Leaders Tables**
 #'
 #' @param year Year of data to pull (earliest year of data available: 2011)
-#' @returns Returns a list of tibbles: "kPoY Rating", "Game MVP Leaders"
-#' @keywords Leaders
+#' @return Returns a list of tibbles: "kPoYRatings", "GameMVPs"
+#'
+#'    **KPoYRatings**
+#'
+#'
+#'    |col_name    |types     |
+#'    |:-----------|:---------|
+#'    |rk          |integer   |
+#'    |player      |character |
+#'    |kpoy_rating |numeric   |
+#'    |team        |character |
+#'    |hgt         |character |
+#'    |wgt         |numeric   |
+#'    |exp         |character |
+#'    |home_town   |character |
+#'    |year        |numeric   |
+#'    |group       |character |
+#'
+#'    **GameMVPs**
+#'
+#'
+#'    |col_name   |types     |
+#'    |:----------|:---------|
+#'    |rk         |numeric   |
+#'    |player     |character |
+#'    |game_mv_ps |numeric   |
+#'    |team       |character |
+#'    |hgt        |character |
+#'    |wgt        |numeric   |
+#'    |exp        |character |
+#'    |home_town  |character |
+#'    |year       |numeric   |
+#'    |group      |character |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
 #' @import stringr
 #' @import rvest
 #' @export
+#' @keywords Leaders
+#' @family KenPom Ratings Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_kpoy(year=2021))
+#'   try(kp_kpoy(year=2021))
 #' }
 #'
 kp_kpoy <- function(year=most_recent_mbb_season()){
@@ -989,7 +1234,7 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2011)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2011)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2011")
       }
@@ -1002,19 +1247,19 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
       y <- list()
-      for(i in 1:2){
+      for (i in 1:2) {
 
         groups <- c("kPoY Rating", "Game MVP Leaders")
 
         x <- (page %>%
                 xml2::read_html() %>%
-                rvest::html_elements(css='#kpoy-table'))[[i]] %>%
+                rvest::html_elements(css = '#kpoy-table'))[[i]] %>%
           rvest::html_table() %>%
           as.data.frame()
 
-        if(i == 1){
-          header_cols <- c("Rk","Player","kpoyRating")}
-        else{
+        if (i == 1) {
+          header_cols <- c("Rk","Player","kpoyRating")
+        } else {
           header_cols <- c("Rk","Player","GameMVPs")
         }
 
@@ -1040,17 +1285,23 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
               stringi::stri_extract_last_regex(.data$col, '[^\u00b7]+'),".*")
           )
         suppressWarnings(
-          if(i == 1){x <- x %>% dplyr::mutate_at(c("kpoyRating","Wgt"), as.numeric)
-          }else{x <- x %>% dplyr::mutate_at(c("GameMVPs","Wgt"), as.numeric)}
+          if (i == 1) {
+            x <- x %>%
+              dplyr::mutate_at(c("kpoyRating","Wgt"), as.numeric)
+          } else {
+            x <- x %>%
+              dplyr::mutate_at(c("GameMVPs","Wgt"), as.numeric)
+          }
         )
-        x <- dplyr::mutate(x,
-                           "Year" = year,
-                           "Group" = groups[i]) %>%
+        x <- x %>%
+          dplyr::mutate(
+            "Year" = year,
+            "Group" = groups[i]) %>%
           as.data.frame()
         x <- x %>%
           dplyr::select(-"col")
 
-        if(i == 2) {
+        if (i == 2) {
           replace_na_with_last <- function(x, p = is.na, d = 0){c(d, x)[cummax(seq_along(x)*(!p(x))) + 1]}
           x$Rk <- replace_na_with_last(x$Rk)
         }
@@ -1061,6 +1312,7 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
       ### Store Data
 
       kenpom <- y
+      names(kenpom) <- c("KPoYRatings", "GameMVPs")
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no KenPom player of the year data for {year} available!"))

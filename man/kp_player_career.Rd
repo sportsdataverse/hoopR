@@ -10,7 +10,88 @@ kp_player_career(player_id)
 \item{player_id}{Player Id filter to select.}
 }
 \value{
-Returns a tibble of team player career stats
+Returns a named list of tibbles: player_stats, gamelog
+
+\strong{player_stats}\tabular{ll}{
+   col_name \tab types \cr
+   year \tab numeric \cr
+   team_rk \tab numeric \cr
+   team \tab character \cr
+   number \tab numeric \cr
+   name \tab character \cr
+   position \tab character \cr
+   hgt \tab character \cr
+   wgt \tab numeric \cr
+   yr \tab character \cr
+   g \tab numeric \cr
+   min_pct \tab numeric \cr
+   o_rtg \tab numeric \cr
+   poss_pct \tab numeric \cr
+   shots_pct \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   ts_pct \tab numeric \cr
+   or_pct \tab numeric \cr
+   dr_pct \tab numeric \cr
+   a_rate \tab numeric \cr
+   to_rate \tab numeric \cr
+   blk_pct \tab numeric \cr
+   stl_pct \tab numeric \cr
+   f_cper40 \tab numeric \cr
+   f_dper40 \tab numeric \cr
+   ft_rate \tab numeric \cr
+   ftm \tab numeric \cr
+   fta \tab numeric \cr
+   ft_pct \tab numeric \cr
+   fgm_2 \tab numeric \cr
+   fga_2 \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fgm_3 \tab numeric \cr
+   fga_3 \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   group_rank \tab character \cr
+   team_finish \tab character \cr
+   ncaa_seed \tab numeric \cr
+   hometown \tab character \cr
+   date_of_birth \tab character \cr
+   age \tab character \cr
+   comparisons \tab character \cr
+}
+
+
+\strong{gamelog}\tabular{ll}{
+   col_name \tab types \cr
+   year \tab numeric \cr
+   team \tab character \cr
+   name \tab character \cr
+   position \tab character \cr
+   opponent_tier \tab logical \cr
+   date \tab character \cr
+   opponent_rk \tab numeric \cr
+   opponent \tab character \cr
+   result \tab character \cr
+   ot \tab character \cr
+   location \tab character \cr
+   game_type \tab character \cr
+   mvp \tab character \cr
+   start \tab character \cr
+   minutes_played \tab numeric \cr
+   o_rtg \tab numeric \cr
+   poss_pct \tab numeric \cr
+   pts \tab numeric \cr
+   fgm_2 \tab numeric \cr
+   fga_2 \tab numeric \cr
+   fgm_3 \tab numeric \cr
+   fga_3 \tab numeric \cr
+   ftm \tab numeric \cr
+   fta \tab numeric \cr
+   or \tab numeric \cr
+   dr \tab numeric \cr
+   a \tab numeric \cr
+   to \tab numeric \cr
+   blk \tab numeric \cr
+   stl \tab numeric \cr
+   pf \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom's player career stats from the player page}
@@ -21,6 +102,18 @@ Returns a tibble of team player career stats
   }
 
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Career}
 \keyword{Player}
 \keyword{Stats}

@@ -12,7 +12,32 @@ kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of ratings
+Returns a tibble of ratings\tabular{ll}{
+   col_name \tab types \cr
+   year \tab integer \cr
+   rk \tab numeric \cr
+   team \tab character \cr
+   conf \tab character \cr
+   w_l \tab character \cr
+   adj_em \tab numeric \cr
+   adj_o \tab numeric \cr
+   adj_o_rk \tab numeric \cr
+   adj_d \tab numeric \cr
+   adj_d_rk \tab numeric \cr
+   adj_t \tab numeric \cr
+   adj_t_rk \tab numeric \cr
+   luck \tab numeric \cr
+   luck_rk \tab numeric \cr
+   sos_adj_em \tab numeric \cr
+   sos_adj_em_rk \tab numeric \cr
+   sos_opp_o \tab numeric \cr
+   sos_opp_o_rk \tab numeric \cr
+   sos_opp_d \tab numeric \cr
+   sos_opp_d_rk \tab numeric \cr
+   ncsos_adj_em \tab numeric \cr
+   ncsos_adj_em_rk \tab numeric \cr
+   ncaa_seed \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom Ratings}
@@ -22,4 +47,16 @@ Returns a tibble of ratings
   try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Ratings}

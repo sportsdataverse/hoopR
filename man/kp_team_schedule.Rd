@@ -12,15 +12,54 @@ kp_team_schedule(team, year = 2022)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team schedules
+Returns a tibble of team schedules\tabular{ll}{
+   col_name \tab types \cr
+   team_rk \tab numeric \cr
+   team \tab character \cr
+   opponent_rk \tab numeric \cr
+   opponent \tab character \cr
+   result \tab character \cr
+   poss \tab numeric \cr
+   ot \tab numeric \cr
+   pre_wp \tab numeric \cr
+   location \tab character \cr
+   w \tab numeric \cr
+   l \tab numeric \cr
+   w_conference \tab numeric \cr
+   l_conference \tab numeric \cr
+   conference_game \tab logical \cr
+   postseason \tab character \cr
+   year \tab numeric \cr
+   day_date \tab character \cr
+   game_date \tab numeric \cr
+   w_proj \tab numeric \cr
+   l_proj \tab numeric \cr
+   w_conference_proj \tab numeric \cr
+   l_conference_proj \tab numeric \cr
+   date \tab character \cr
+   game_id \tab numeric \cr
+   tiers_of_joy \tab character \cr
+}
 }
 \description{
 \strong{Get team schedule results}
 }
 \examples{
 \donttest{
- try(kp_team_schedule(team = 'Florida St.', year = 2022))
+  try(kp_team_schedule(team = 'Florida St.', year = 2022))
 }
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Schedule}
 \keyword{Team}

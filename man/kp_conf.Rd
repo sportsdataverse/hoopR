@@ -18,105 +18,111 @@ you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid tab
 No filter applied by default.}
 }
 \value{
-A list of 7 dataframes accessible via \code{[[1]]},\code{[[2]]},...,,\code{[[7]]}\cr
-First data frame, accessible via \code{[[1]]}\cr
-A data frame with 15 columns:
-\describe{
-\item{\code{Team}}{character.}
-\item{\code{Overall}}{character.}
-\item{\code{Conf}}{character.}
-\item{\code{AdjEM}}{double.}
-\item{\code{AdjEM.Rk}}{double.}
-\item{\code{AdjO}}{double.}
-\item{\code{AdjO.Rk}}{double.}
-\item{\code{AdjD}}{double.}
-\item{\code{AdjD.Rk}}{double.}
-\item{\code{AdjT}}{double.}
-\item{\code{AdjT.Rk}}{double.}
-\item{\code{ConfSOS}}{double.}
-\item{\code{ConfSOS.Rk}}{double.}
-\item{\code{NextGame}}{character.}
-\item{\code{Year}}{character.}
+A list of named data frames:
+
+\strong{Standings}\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   overall \tab character \cr
+   conf \tab character \cr
+   adj_em \tab numeric \cr
+   adj_em_rk \tab numeric \cr
+   adj_o \tab numeric \cr
+   adj_o_rk \tab numeric \cr
+   adj_d \tab numeric \cr
+   adj_d_rk \tab numeric \cr
+   adj_t \tab numeric \cr
+   adj_t_rk \tab numeric \cr
+   conf_sos \tab numeric \cr
+   conf_sos_rk \tab numeric \cr
+   next_game \tab character \cr
+   year \tab numeric \cr
 }
-Second data frame, accessible via \code{[[2]]}\cr
-A data frame with 20 columns:
-\describe{
-\item{\code{Team}}{character.}
-\item{\code{OE}}{double.}
-\item{\code{OE.Rk}}{double.}
-\item{\code{eFG.Pct}}{double.}
-\item{\code{eFG.Pct.Rk}}{double.}
-\item{\code{TO.Pct}}{double.}
-\item{\code{TO.Pct.Rk}}{double.}
-\item{\code{OR.Pct}}{double.}
-\item{\code{OR.Pct.Rk}}{double.}
-\item{\code{FTR}}{double.}
-\item{\code{FTR.Rk}}{double.}
-\item{\code{FG2.Pct}}{double.}
-\item{\code{FG2.Pct.Rk}}{double.}
-\item{\code{FG3.Pct}}{double.}
-\item{\code{FG3.Pct.Rk}}{double.}
-\item{\code{FT.Pct}}{double.}
-\item{\code{FT.Pct.Rk}}{double.}
-\item{\code{Tempo}}{double.}
-\item{\code{Tempo.Rk}}{double.}
-\item{\code{Year}}{character.}
+
+
+\strong{ConferencePlayOffense}\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   oe \tab numeric \cr
+   oe_rk \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   e_fg_pct_rk \tab numeric \cr
+   to_pct \tab numeric \cr
+   to_pct_rk \tab numeric \cr
+   or_pct \tab numeric \cr
+   or_pct_rk \tab numeric \cr
+   ft_rate \tab numeric \cr
+   ft_rate_rk \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fg_2_pct_rk \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   fg_3_pct_rk \tab numeric \cr
+   ft_pct \tab numeric \cr
+   ft_pct_rk \tab numeric \cr
+   tempo \tab numeric \cr
+   tempo_rk \tab numeric \cr
+   year \tab numeric \cr
 }
-Third data frame, accessible via \code{[[3]]}\cr
-A data frame with 20 columns:
-\describe{
-\item{\code{Team}}{character.}
-\item{\code{DE}}{double.}
-\item{\code{DE.Rk}}{double.}
-\item{\code{eFG.Pct}}{double.}
-\item{\code{eFG.Pct.Rk}}{double.}
-\item{\code{TO.Pct}}{double.}
-\item{\code{TO.Pct.Rk}}{double.}
-\item{\code{OR.Pct}}{double.}
-\item{\code{OR.Pct.Rk}}{double.}
-\item{\code{FTR}}{double.}
-\item{\code{FTR.Rk}}{double.}
-\item{\code{FG2.Pct}}{double.}
-\item{\code{FG2.Pct.Rk}}{double.}
-\item{\code{FG3.Pct}}{double.}
-\item{\code{FG3.Pct.Rk}}{double.}
-\item{\code{Blk.Pct}}{double.}
-\item{\code{Blk.Pct.Rk}}{double.}
-\item{\code{Stl.Pct}}{double.}
-\item{\code{Stl.Pct.Rk}}{double.}
-\item{\code{Year}}{character.}
+
+
+\strong{ConferencePlayDefense}\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   de \tab numeric \cr
+   de_rk \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   e_fg_pct_rk \tab numeric \cr
+   to_pct \tab numeric \cr
+   to_pct_rk \tab numeric \cr
+   or_pct \tab numeric \cr
+   or_pct_rk \tab numeric \cr
+   ft_rate \tab numeric \cr
+   ft_rate_rk \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fg_2_pct_rk \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   fg_3_pct_rk \tab numeric \cr
+   blk_pct \tab numeric \cr
+   blk_pct_rk \tab numeric \cr
+   stl_pct \tab numeric \cr
+   stl_pct_rk \tab numeric \cr
+   year \tab numeric \cr
 }
-Fourth data frame, accessible via \code{[[4]]}\cr
-A data frame with 3 columns:
-\describe{
-\item{\code{Rk}}{integer.}
-\item{\code{Player}}{character.}
-\item{\code{Year}}{character.}
+
+
+\strong{AllKenPom}\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab integer \cr
+   player \tab character \cr
+   year \tab numeric \cr
 }
-Fifth data frame, accessible via \code{[[5]]}\cr
-A data frame with 4 columns:
-\describe{
-\item{\code{Stat}}{character.}
-\item{\code{Value}}{double.}
-\item{\code{Rk}}{double.}
-\item{\code{Year}}{character.}
+
+
+\strong{ConferenceAggregateStats}\tabular{ll}{
+   col_name \tab types \cr
+   stat \tab character \cr
+   value \tab numeric \cr
+   rk \tab numeric \cr
+   year \tab numeric \cr
 }
-Sixth data frame, accessible via \code{[[6]]}\cr
-A data frame with 5 columns:
-\describe{
-\item{\code{Stat}}{character.}
-\item{\code{Count}}{character.}
-\item{\code{Value}}{double.}
-\item{\code{Rk}}{double.}
-\item{\code{Year}}{character.}
+
+
+\strong{WinningTrends}\tabular{ll}{
+   col_name \tab types \cr
+   stat \tab character \cr
+   count \tab character \cr
+   value \tab numeric \cr
+   rk \tab numeric \cr
+   year \tab numeric \cr
 }
-Seventh data frame, accessible via \code{[[7]]}\cr
-A data frame 4 columns:
-\describe{
-\item{\code{Rk}}{double.}
-\item{\code{Conference}}{character.}
-\item{\code{Rating}}{double.}
-\item{\code{Year}}{character.}
+
+
+\strong{ConferenceComparison}\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab numeric \cr
+   conference \tab character \cr
+   rating \tab numeric \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -127,5 +133,15 @@ A data frame 4 columns:
     try(kp_conf(year = 2020, conf = 'ACC'))
 }
 }
+\seealso{
+Other KenPom Historical Functions: 
+\code{\link{kp_coach_history}()},
+\code{\link{kp_confhistory}()},
+\code{\link{kp_confstats}()},
+\code{\link{kp_pomeroy_archive_ratings}()},
+\code{\link{kp_program_ratings}()},
+\code{\link{kp_team_history}()}
+}
+\concept{KenPom Historical Functions}
 \keyword{Conference}
 \keyword{Stats}

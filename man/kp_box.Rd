@@ -12,16 +12,97 @@ kp_box(game_id, year)
 \item{year}{Year of game to pull}
 }
 \value{
-Returns a tibble of game box scores
+Returns a tibble of game box scores with names: away_team, home_team,
+linescore, officials
+
+\strong{away_team}\tabular{ll}{
+   col_name \tab types \cr
+   hgt \tab character \cr
+   wgt \tab numeric \cr
+   yr \tab character \cr
+   number \tab numeric \cr
+   player \tab character \cr
+   min \tab numeric \cr
+   o_rtg \tab numeric \cr
+   percent_ps \tab numeric \cr
+   pts \tab numeric \cr
+   fgm2_a \tab character \cr
+   fgm3_a \tab character \cr
+   ftm_a \tab character \cr
+   or \tab numeric \cr
+   dr \tab numeric \cr
+   a \tab numeric \cr
+   to \tab numeric \cr
+   blk \tab numeric \cr
+   stl \tab numeric \cr
+   pf \tab numeric \cr
+   team \tab character \cr
+   wp_note \tab character \cr
+   game_id \tab numeric \cr
+   year \tab numeric \cr
+}
+
+
+\strong{home_team}\tabular{ll}{
+   col_name \tab types \cr
+   hgt \tab character \cr
+   wgt \tab numeric \cr
+   yr \tab character \cr
+   number \tab numeric \cr
+   player \tab character \cr
+   min \tab numeric \cr
+   o_rtg \tab numeric \cr
+   percent_ps \tab numeric \cr
+   pts \tab numeric \cr
+   fgm2_a \tab character \cr
+   fgm3_a \tab character \cr
+   ftm_a \tab character \cr
+   or \tab numeric \cr
+   dr \tab numeric \cr
+   a \tab numeric \cr
+   to \tab numeric \cr
+   blk \tab numeric \cr
+   stl \tab numeric \cr
+   pf \tab numeric \cr
+   team \tab character \cr
+   wp_note \tab character \cr
+   game_id \tab numeric \cr
+   year \tab numeric \cr
+}
+
+
+\strong{linescore}\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   q1 \tab integer \cr
+   q2 \tab integer \cr
+   q3 \tab integer \cr
+   q4 \tab integer \cr
+   t \tab integer \cr
+}
+
+
+\strong{officials}\tabular{ll}{
+   col_name \tab types \cr
+   official_id \tab character \cr
+   official_name \tab character \cr
+   game_id \tab numeric \cr
+   year \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom Game Box Score}
 }
 \examples{
 \donttest{
-  try(kp_box(game_id = 6, year = 2021))
+  x<-try(kp_box(game_id = 6, year = 2021))
 }
 }
+\seealso{
+Other KenPom Boxscore Functions: 
+\code{\link{kp_winprob}()}
+}
+\concept{KenPom Boxscore Functions}
 \keyword{Box}
 \keyword{Game}
 \keyword{Score}
