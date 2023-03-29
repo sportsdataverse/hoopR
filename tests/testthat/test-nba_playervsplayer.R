@@ -2,7 +2,7 @@ test_that("NBA Player vs Player", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_playervsplayer(player_id = '2544', vs_player_id = '203076')
+  x <- nba_playervsplayer(player_id = "2544", vs_player_id = "203076")
 
   cols_x1 <- c(
     "GROUP_SET",
@@ -174,25 +174,25 @@ test_that("NBA Player vs Player", {
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
   expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
-  expect_s3_class(x[[3]], 'data.frame')
+  expect_s3_class(x[[3]], "data.frame")
   expect_equal(sort(colnames(x[[4]])), sort(cols_x4))
-  expect_s3_class(x[[4]], 'data.frame')
+  expect_s3_class(x[[4]], "data.frame")
   expect_equal(sort(colnames(x[[5]])), sort(cols_x5))
-  expect_s3_class(x[[5]], 'data.frame')
+  expect_s3_class(x[[5]], "data.frame")
   expect_equal(sort(colnames(x[[6]])), sort(cols_x6))
-  expect_s3_class(x[[6]], 'data.frame')
+  expect_s3_class(x[[6]], "data.frame")
   expect_equal(sort(colnames(x[[7]])), sort(cols_x7))
-  expect_s3_class(x[[7]], 'data.frame')
+  expect_s3_class(x[[7]], "data.frame")
   expect_equal(sort(colnames(x[[8]])), sort(cols_x8))
-  expect_s3_class(x[[8]], 'data.frame')
+  expect_s3_class(x[[8]], "data.frame")
   expect_equal(sort(colnames(x[[9]])), sort(cols_x9))
-  expect_s3_class(x[[9]], 'data.frame')
+  expect_s3_class(x[[9]], "data.frame")
   expect_equal(sort(colnames(x[[10]])), sort(cols_x10))
-  expect_s3_class(x[[10]], 'data.frame')
+  expect_s3_class(x[[10]], "data.frame")
 
   Sys.sleep(3)
 

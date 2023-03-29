@@ -139,6 +139,6 @@ test_that("ESPN - Get MBB player season stats", {
     "logo_dark_href"
   )
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

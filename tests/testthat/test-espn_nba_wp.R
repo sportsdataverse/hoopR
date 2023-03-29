@@ -15,6 +15,6 @@ test_that("ESPN - Get NBA Win Probability", {
     "team_id", "coordinate_x", "coordinate_y"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

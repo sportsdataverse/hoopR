@@ -3,11 +3,11 @@ test_that("KP - Get team history", {
   skip_on_ci()
 
   x <- kp_team_history(
-    team = 'Florida St.'
+    team = "Florida St."
   )
 
   y <- kp_team_history(
-    team = 'Duke'
+    team = "Duke"
   )
 
   cols <- c(

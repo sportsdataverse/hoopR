@@ -26,9 +26,12 @@ linescore, officials
    o_rtg \tab numeric \cr
    percent_ps \tab numeric \cr
    pts \tab numeric \cr
-   fgm2_a \tab character \cr
-   fgm3_a \tab character \cr
-   ftm_a \tab character \cr
+   fgm_2 \tab numeric \cr
+   fga_2 \tab numeric \cr
+   fgm_3 \tab numeric \cr
+   fga_3 \tab numeric \cr
+   ftm \tab numeric \cr
+   fta \tab numeric \cr
    or \tab numeric \cr
    dr \tab numeric \cr
    a \tab numeric \cr
@@ -54,9 +57,12 @@ linescore, officials
    o_rtg \tab numeric \cr
    percent_ps \tab numeric \cr
    pts \tab numeric \cr
-   fgm2_a \tab character \cr
-   fgm3_a \tab character \cr
-   ftm_a \tab character \cr
+   fgm_2 \tab numeric \cr
+   fga_2 \tab numeric \cr
+   fgm_3 \tab numeric \cr
+   fga_3 \tab numeric \cr
+   ftm \tab numeric \cr
+   fta \tab numeric \cr
    or \tab numeric \cr
    dr \tab numeric \cr
    a \tab numeric \cr
@@ -95,7 +101,7 @@ linescore, officials
 }
 \examples{
 \donttest{
-  x<-try(kp_box(game_id = 6, year = 2021))
+  try(kp_box(game_id = 6, year = 2021))
 }
 }
 \seealso{

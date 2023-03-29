@@ -42,6 +42,6 @@ test_that("ESPN - Get MBB rankings", {
     "first_occurrence_value"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

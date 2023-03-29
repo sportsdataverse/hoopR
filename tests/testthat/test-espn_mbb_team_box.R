@@ -57,6 +57,6 @@ test_that("ESPN - Get MBB team box score only", {
     "opponent_team_logo"
   )
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

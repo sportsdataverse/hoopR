@@ -292,7 +292,7 @@ NULL
 #'
 #'    |col_name                     |types     |
 #'    |:----------------------------|:---------|
-#'    |action_number                |integer   |
+#'    |event_num                    |integer   |
 #'    |clock                        |character |
 #'    |time_actual                  |character |
 #'    |period                       |integer   |
@@ -300,14 +300,14 @@ NULL
 #'    |action_type                  |character |
 #'    |sub_type                     |character |
 #'    |qualifiers                   |list      |
-#'    |person_id                    |integer   |
+#'    |player1_id                   |integer   |
 #'    |x                            |numeric   |
 #'    |y                            |numeric   |
-#'    |possession                   |integer   |
-#'    |score_home                   |character |
-#'    |score_away                   |character |
+#'    |offense_team_id              |integer   |
+#'    |home_score                   |character |
+#'    |away_score                   |character |
 #'    |edited                       |character |
-#'    |order_number                 |integer   |
+#'    |order                        |integer   |
 #'    |is_target_score_last_period  |logical   |
 #'    |x_legacy                     |integer   |
 #'    |y_legacy                     |integer   |
@@ -348,6 +348,8 @@ NULL
 #'    |turnover_total               |integer   |
 #'    |steal_player_name            |character |
 #'    |steal_person_id              |integer   |
+#'    |player2_id                   |integer   |
+#'    |player3_id                   |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -357,7 +359,7 @@ NULL
 #' @family NBA Live Functions
 #' @details
 #' ```r
-#'  x<-nba_live_pbp(game_id = '0022201086')
+#'  nba_live_pbp(game_id = '0022201086')
 #' ```
 nba_live_pbp <- function(
     game_id,

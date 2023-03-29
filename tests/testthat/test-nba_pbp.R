@@ -2,7 +2,7 @@ test_that("NBA PBP", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_pbp(game_id = '0022201086')
+  x <- nba_pbp(game_id = "0022201086")
 
   cols_x1 <- c(
     "game_id",
@@ -50,7 +50,7 @@ test_that("NBA PBP", {
 
 
   expect_equal(sort(colnames(x)), sort(cols_x1))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)
 

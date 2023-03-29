@@ -9,6 +9,6 @@ test_that("ESPN - Get MBB Win Probability", {
     "home_win_percentage", "away_win_percentage", "tie_percentage"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

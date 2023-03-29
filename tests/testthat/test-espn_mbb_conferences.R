@@ -3,10 +3,10 @@ test_that("ESPN - Get MBB conferences", {
   x <- espn_mbb_conferences()
 
   cols <- c(
-    'group_id', 'short_name', 'uid',
-    'name', 'logo', 'parent_group_id'
+    "group_id", "short_name", "uid",
+    "name", "logo", "parent_group_id"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

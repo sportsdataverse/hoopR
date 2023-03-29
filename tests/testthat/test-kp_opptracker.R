@@ -2,7 +2,7 @@ test_that("KP - Get opponent tracker", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_opptracker(team = 'Florida St.', year = 2020)
+  x <- kp_opptracker(team = "Florida St.", year = 2020)
 
   cols <- c(
     "date",
@@ -56,6 +56,6 @@ test_that("KP - Get opponent tracker", {
     "def_apl_rk"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

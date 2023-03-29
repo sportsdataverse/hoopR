@@ -2,10 +2,10 @@ test_that("NBA Live PBP", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_live_pbp(game_id = '0022201086')
+  x <- nba_live_pbp(game_id = "0022201086")
 
   cols_x1 <- c(
-    "action_number",
+    "event_num",
     "clock",
     "time_actual",
     "period",
@@ -13,14 +13,14 @@ test_that("NBA Live PBP", {
     "action_type",
     "sub_type",
     "qualifiers",
-    "person_id",
+    "player1_id",
     "x",
     "y",
-    "possession",
-    "score_home",
-    "score_away",
+    "offense_team_id",
+    "home_score",
+    "away_score",
     "edited",
-    "order_number",
+    "order",
     "is_target_score_last_period",
     "x_legacy",
     "y_legacy",
@@ -60,12 +60,14 @@ test_that("NBA Live PBP", {
     "block_person_id",
     "turnover_total",
     "steal_player_name",
-    "steal_person_id"
+    "steal_person_id",
+    "player2_id",
+    "player3_id"
   )
 
 
   expect_equal(sort(colnames(x)), sort(cols_x1))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)
 

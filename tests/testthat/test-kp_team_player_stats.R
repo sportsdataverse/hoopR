@@ -2,7 +2,7 @@ test_that("KP - Get team player stats", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_team_player_stats(team = 'Florida St.', year = 2020)
+  x <- kp_team_player_stats(team = "Florida St.", year = 2020)
 
   cols <- c(
     "role", "number", "player", "ht", "wt", "yr",
@@ -19,7 +19,7 @@ test_that("KP - Get team player stats", {
   )
 
   expect_equal(colnames(x[[1]]), cols)
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
 
 
 })

@@ -14,7 +14,7 @@ nba_live_pbp(game_id, ...)
 \value{
 Returns a data frame: PlayByPlay\tabular{ll}{
    col_name \tab types \cr
-   action_number \tab integer \cr
+   event_num \tab integer \cr
    clock \tab character \cr
    time_actual \tab character \cr
    period \tab integer \cr
@@ -22,14 +22,14 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    action_type \tab character \cr
    sub_type \tab character \cr
    qualifiers \tab list \cr
-   person_id \tab integer \cr
+   player1_id \tab integer \cr
    x \tab numeric \cr
    y \tab numeric \cr
-   possession \tab integer \cr
-   score_home \tab character \cr
-   score_away \tab character \cr
+   offense_team_id \tab integer \cr
+   home_score \tab character \cr
+   away_score \tab character \cr
    edited \tab character \cr
-   order_number \tab integer \cr
+   order \tab integer \cr
    is_target_score_last_period \tab logical \cr
    x_legacy \tab integer \cr
    y_legacy \tab integer \cr
@@ -70,6 +70,8 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    turnover_total \tab integer \cr
    steal_player_name \tab character \cr
    steal_person_id \tab integer \cr
+   player2_id \tab integer \cr
+   player3_id \tab integer \cr
 }
 }
 \description{
@@ -78,7 +80,7 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 \strong{Get NBA Stats API Live play-by-play}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ x<-nba_live_pbp(game_id = '0022201086')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_live_pbp(game_id = '0022201086')
 }\if{html}{\out{</div>}}
 }
 \seealso{

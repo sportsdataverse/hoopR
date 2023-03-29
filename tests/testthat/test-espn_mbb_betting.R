@@ -55,10 +55,10 @@ test_that("ESPN - Get MBB Betting", {
   )
 
   expect_equal(colnames(x[[1]]), cols_x1)
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(colnames(x[[2]]), cols_x2)
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
   expect_equal(colnames(x[[3]]), cols_x3)
-  expect_s3_class(x[[3]], 'data.frame')
+  expect_s3_class(x[[3]], "data.frame")
 
 })

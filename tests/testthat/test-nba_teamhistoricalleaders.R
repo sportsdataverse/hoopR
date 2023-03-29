@@ -2,7 +2,7 @@ test_that("NBA Team Historical Leaders", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_teamhistoricalleaders(team_id = '1610612749')
+  x <- nba_teamhistoricalleaders(team_id = "1610612749")
 
 
   cols_x1 <- c(
@@ -27,7 +27,7 @@ test_that("NBA Team Historical Leaders", {
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)
 

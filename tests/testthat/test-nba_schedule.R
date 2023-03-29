@@ -2,7 +2,7 @@ test_that("NBA Schedule", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+  x <- nba_schedule(league_id = "00", season = year_to_season(most_recent_nba_season() - 1))
 
   cols_x1 <- c(
     "game_date",
@@ -55,7 +55,7 @@ test_that("NBA Schedule", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols_x1))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)
 

@@ -3,11 +3,11 @@ test_that("NBA Cume Stats Team", {
   skip_on_ci()
 
   x <- nba_cumestatsteam(
-    game_ids = '0022201094',
-    league_id = '00',
-    season = '2022-23',
-    season_type = 'Regular Season',
-    team_id = '1610612739'
+    game_ids = "0022201094",
+    league_id = "00",
+    season = "2022-23",
+    season_type = "Regular Season",
+    team_id = "1610612739"
   )
 
   cols_x1 <- c(
@@ -102,9 +102,9 @@ test_that("NBA Cume Stats Team", {
   )
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
 
   Sys.sleep(3)
 

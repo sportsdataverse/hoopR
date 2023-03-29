@@ -39,6 +39,6 @@ test_that("ESPN - Get MBB scoreboard", {
     "away_record"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })
