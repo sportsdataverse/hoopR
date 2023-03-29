@@ -24,5 +24,17 @@ Returns a tibble of minutes matrix data
 
 
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Matrix}
 \keyword{Minutes}

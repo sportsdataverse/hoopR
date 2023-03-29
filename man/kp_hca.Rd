@@ -7,22 +7,22 @@
 kp_hca()
 }
 \value{
-A data frame with 14 columns:
-\describe{
-\item{\code{Team}}{character.}
-\item{\code{Conf}}{character.}
-\item{\code{HCA}}{double.}
-\item{\code{HCA.Rk}}{double.}
-\item{\code{PF}}{double.}
-\item{\code{PF.Rk}}{double.}
-\item{\code{Pts}}{double.}
-\item{\code{Pts.Rk}}{double.}
-\item{\code{NST}}{double.}
-\item{\code{NST.Rk}}{double.}
-\item{\code{Blk}}{double.}
-\item{\code{Blk.Rk}}{double.}
-\item{\code{Elev}}{double.}
-\item{\code{Elev.Rk}}{double.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   conf \tab character \cr
+   hca \tab numeric \cr
+   hca_rk \tab numeric \cr
+   pf \tab numeric \cr
+   pf_rk \tab numeric \cr
+   pts \tab numeric \cr
+   pts_rk \tab numeric \cr
+   nst \tab numeric \cr
+   nst_rk \tab numeric \cr
+   blk \tab numeric \cr
+   blk_rk \tab numeric \cr
+   elev \tab numeric \cr
+   elev_rk \tab numeric \cr
 }
 }
 \description{
@@ -30,7 +30,17 @@ A data frame with 14 columns:
 }
 \examples{
 \donttest{
- try(kp_hca())
+  try(kp_hca())
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_referee}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{HCA}

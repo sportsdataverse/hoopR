@@ -10,43 +10,43 @@ kp_confstats(year = most_recent_mbb_season())
 \item{year}{Year (YYYY)}
 }
 \value{
-A data frame with 35 columns:
-\itemize{
-\item{\code{Conf}}{character.}
-\item{\code{Eff}}{double.}
-\item{\code{Eff.Rk}}{double.}
-\item{\code{Tempo}}{double.}
-\item{\code{Tempo.Rk}}{double.}
-\item{\code{eFG.Pct}}{double.}
-\item{\code{eFG.Pct.Rk}}{double.}
-\item{\code{TO.Pct}}{double.}
-\item{\code{TO.Pct.Rk}}{double.}
-\item{\code{OR.Pct}}{double.}
-\item{\code{OR.Pct.Rk}}{double.}
-\item{\code{FTRate}}{double.}
-\item{\code{FTRate.Rk}}{double.}
-\item{\code{Blk.Pct}}{double.}
-\item{\code{Blk.Pct.Rk}}{double.}
-\item{\code{Stl.Pct}}{double.}
-\item{\code{Stl.Pct.Rk}}{double.}
-\item{\code{FG_2.Pct}}{double.}
-\item{\code{FG_2.Pct.Rk}}{double.}
-\item{\code{FG_3.Pct}}{double.}
-\item{\code{FG_3.Pct.Rk}}{double.}
-\item{\code{FT.Pct}}{double.}
-\item{\code{FT.Pct.Rk}}{double.}
-\item{\code{FG_3A.Pct}}{double.}
-\item{\code{FG_3A.Pct.Rk}}{double.}
-\item{\code{A.Pct}}{double.}
-\item{\code{A.Pct.Rk}}{double.}
-\item{\code{HomeWL}}{character.}
-\item{\code{HomeWL.Pct}}{double.}
-\item{\code{HomeWL.Rk}}{double.}
-\item{\code{Close}}{double.}
-\item{\code{Close.Rk}}{double.}
-\item{\code{Blowouts}}{double.}
-\item{\code{Blowouts.Rk}}{double.}
-\item{\code{Year}}{character.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   conf \tab character \cr
+   eff \tab numeric \cr
+   eff_rk \tab numeric \cr
+   tempo \tab numeric \cr
+   tempo_rk \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   e_fg_pct_rk \tab numeric \cr
+   to_pct \tab numeric \cr
+   to_pct_rk \tab numeric \cr
+   or_pct \tab numeric \cr
+   or_pct_rk \tab numeric \cr
+   ft_rate \tab numeric \cr
+   ft_rate_rk \tab numeric \cr
+   blk_pct \tab numeric \cr
+   blk_pct_rk \tab numeric \cr
+   stl_pct \tab numeric \cr
+   stl_pct_rk \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fg_2_pct_rk \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   fg_3_pct_rk \tab numeric \cr
+   ft_pct \tab numeric \cr
+   ft_pct_rk \tab numeric \cr
+   fg_3a_pct \tab numeric \cr
+   fg_3a_pct_rk \tab numeric \cr
+   a_pct \tab numeric \cr
+   a_pct_rk \tab numeric \cr
+   home_w_l \tab character \cr
+   home_w_l_pct \tab numeric \cr
+   home_w_l_rk \tab numeric \cr
+   close \tab numeric \cr
+   close_rk \tab numeric \cr
+   blowouts \tab numeric \cr
+   blowouts_rk \tab numeric \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -57,5 +57,15 @@ A data frame with 35 columns:
   try(kp_confstats(year=most_recent_mbb_season()))
 }
 }
+\seealso{
+Other KenPom Historical Functions: 
+\code{\link{kp_coach_history}()},
+\code{\link{kp_confhistory}()},
+\code{\link{kp_conf}()},
+\code{\link{kp_pomeroy_archive_ratings}()},
+\code{\link{kp_program_ratings}()},
+\code{\link{kp_team_history}()}
+}
+\concept{KenPom Historical Functions}
 \keyword{Comparison}
 \keyword{Conference}

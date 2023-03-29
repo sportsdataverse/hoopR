@@ -10,7 +10,7 @@ kp_fanmatch(date = "2022-02-22")
 \item{date}{Date of games to pull (YYYY-MM-DD)}
 }
 \value{
-A data frame 20 columns:\tabular{ll}{
+A data frame with the following columns:\tabular{ll}{
    col_name \tab types \cr
    prediction \tab character \cr
    time_et \tab character \cr
@@ -42,4 +42,14 @@ A data frame 20 columns:\tabular{ll}{
   try(kp_fanmatch(date="2022-02-22"))
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_referee}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{FanMatch}

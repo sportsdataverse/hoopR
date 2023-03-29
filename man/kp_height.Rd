@@ -12,14 +12,52 @@ kp_height(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of heights
+Returns a tibble of heights\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   conf \tab character \cr
+   avg_hgt \tab numeric \cr
+   avg_hgt_rk \tab numeric \cr
+   eff_hgt \tab numeric \cr
+   eff_hgt_rk \tab numeric \cr
+   c_hgt \tab numeric \cr
+   c_hgt_rk \tab numeric \cr
+   pf_hgt \tab numeric \cr
+   pf_hgt_rk \tab numeric \cr
+   sf_hgt \tab numeric \cr
+   sf_hgt_rk \tab numeric \cr
+   sg_hgt \tab numeric \cr
+   sg_hgt_rk \tab numeric \cr
+   pg_hgt \tab numeric \cr
+   pg_hgt_rk \tab numeric \cr
+   experience \tab numeric \cr
+   experience_rk \tab numeric \cr
+   bench \tab numeric \cr
+   bench_rk \tab numeric \cr
+   continuity \tab numeric \cr
+   continuity_rk \tab numeric \cr
+   ncaa_seed \tab numeric \cr
+   year \tab integer \cr
+}
 }
 \description{
 \strong{Get Heights, Experience, Bench and Continuity Data}
 }
 \examples{
 \donttest{
- try(kp_height(min_year = 2020, max_year = 2021))
+  try(kp_height(min_year = 2020, max_year = 2021))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Roster}

@@ -10,15 +10,15 @@ kp_officials(year = most_recent_mbb_season())
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with 7 columns:
-\describe{
-\item{\code{Rk}}{integer.}
-\item{\code{OfficialName}}{character.}
-\item{\code{RefRating}}{double.}
-\item{\code{Gms}}{double.}
-\item{\code{Last.Game}}{character.}
-\item{\code{Last.Game.1}}{character.}
-\item{\code{Year}}{double.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   rk \tab integer \cr
+   official_name \tab character \cr
+   ref_rating \tab numeric \cr
+   gms \tab numeric \cr
+   last_game \tab character \cr
+   last_game_1 \tab character \cr
+   year \tab numeric \cr
 }
 }
 \description{
@@ -29,4 +29,14 @@ A data frame with 7 columns:
   try(kp_officials(year = 2021))
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_referee}()},
+\code{\link{kp_trends}()}
+}
+\concept{KP Misc. Functions}
 \keyword{Refs}

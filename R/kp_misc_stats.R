@@ -1,37 +1,40 @@
 #' **Get Division-I statistical trends**
 #'
 #'
-#' @return A data frame with 19 columns:
-#' \describe{
-#'   \item{\code{Season}}{double.}
-#'   \item{\code{Efficiency}}{double.}
-#'   \item{\code{Tempo}}{double.}
-#'   \item{\code{eFG.Pct}}{double.}
-#'   \item{\code{TO.Pct}}{double.}
-#'   \item{\code{OR.Pct}}{double.}
-#'   \item{\code{FTRate}}{double.}
-#'   \item{\code{FG_2.Pct}}{double.}
-#'   \item{\code{FG_3.Pct}}{double.}
-#'   \item{\code{FG_3A.Pct}}{double.}
-#'   \item{\code{FT.Pct}}{double.}
-#'   \item{\code{A.Pct}}{double.}
-#'   \item{\code{Blk.Pct}}{double.}
-#'   \item{\code{Stl.Pct}}{double.}
-#'   \item{\code{NonStl.Pct}}{double.}
-#'   \item{\code{AvgHgt}}{double.}
-#'   \item{\code{Continuity}}{double.}
-#'   \item{\code{HomeWin.Pct}}{double.}
-#'   \item{\code{PPG}}{double.}
-#' }
-#' @keywords Trends
+#' @return A data frame with the following columns:
+#'
+#'    |col_name     |types   |
+#'    |:------------|:-------|
+#'    |season       |numeric |
+#'    |efficiency   |numeric |
+#'    |tempo        |numeric |
+#'    |e_fg_pct     |numeric |
+#'    |to_pct       |numeric |
+#'    |or_pct       |numeric |
+#'    |ft_rate      |numeric |
+#'    |fg_2_pct     |numeric |
+#'    |fg_3_pct     |numeric |
+#'    |fg_3a_pct    |numeric |
+#'    |ft_pct       |numeric |
+#'    |a_pct        |numeric |
+#'    |blk_pct      |numeric |
+#'    |stl_pct      |numeric |
+#'    |non_stl_pct  |numeric |
+#'    |avg_hgt      |numeric |
+#'    |continuity   |numeric |
+#'    |home_win_pct |numeric |
+#'    |ppg          |numeric |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
 #' @import rvest
 #' @export
+#' @keywords Trends
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_trends())
+#'   try(kp_trends())
 #' }
 
 kp_trends <- function(){
@@ -85,21 +88,24 @@ kp_trends <- function(){
 #'
 #' @param year Year of data to pull
 #'
-#' @return A data frame with 7 columns:
-#' \describe{
-#'   \item{\code{Rk}}{integer.}
-#'   \item{\code{OfficialName}}{character.}
-#'   \item{\code{RefRating}}{double.}
-#'   \item{\code{Gms}}{double.}
-#'   \item{\code{Last.Game}}{character.}
-#'   \item{\code{Last.Game.1}}{character.}
-#'   \item{\code{Year}}{double.}
-#' }
-#' @keywords Refs
+#' @return A data frame with the following columns:
+#'
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |rk            |integer   |
+#'    |official_name |character |
+#'    |ref_rating    |numeric   |
+#'    |gms           |numeric   |
+#'    |last_game     |character |
+#'    |last_game_1   |character |
+#'    |year          |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
 #' @import rvest
 #' @export
+#' @keywords Refs
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
@@ -165,25 +171,28 @@ kp_officials <- function(year = most_recent_mbb_season()){
 #' @param referee Referee ID
 #' @param year Year of data to pull
 #'
-#' @return A data frame with 11 columns:
-#' \describe{
-#'   \item{\code{game_number}}{integer.}
-#'   \item{\code{date}}{character.}
-#'   \item{\code{time_et)}}{character.}
-#'   \item{\code{game}}{character.}
-#'   \item{\code{location}}{character.}
-#'   \item{\code{venue}}{character.}
-#'   \item{\code{conference}}{character.}
-#'   \item{\code{thrill_score}}{double.}
-#'   \item{\code{referee_name}}{character.}
-#'   \item{\code{ref_rank}}{integer.}
-#'   \item{\code{year}}{integer.}
-#' }
-#' @keywords Refs
+#' @return A data frame with the following columns:
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |game_number  |integer   |
+#'    |date         |character |
+#'    |time_et      |character |
+#'    |game         |character |
+#'    |location     |character |
+#'    |venue        |character |
+#'    |conference   |character |
+#'    |thrill_score |numeric   |
+#'    |referee_name |character |
+#'    |ref_rank     |numeric   |
+#'    |year         |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
 #' @import rvest
 #' @export
+#' @keywords Refs
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
@@ -250,32 +259,35 @@ kp_referee <- function(referee, year){
 #' **Get Home Court Advantage Estimates**
 #'
 #'
-#' @return A data frame with 14 columns:
-#' \describe{
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{HCA}}{double.}
-#'   \item{\code{HCA.Rk}}{double.}
-#'   \item{\code{PF}}{double.}
-#'   \item{\code{PF.Rk}}{double.}
-#'   \item{\code{Pts}}{double.}
-#'   \item{\code{Pts.Rk}}{double.}
-#'   \item{\code{NST}}{double.}
-#'   \item{\code{NST.Rk}}{double.}
-#'   \item{\code{Blk}}{double.}
-#'   \item{\code{Blk.Rk}}{double.}
-#'   \item{\code{Elev}}{double.}
-#'   \item{\code{Elev.Rk}}{double.}
-#' }
-#' @keywords HCA
+#' @return A data frame with the following columns:
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |team     |character |
+#'    |conf     |character |
+#'    |hca      |numeric   |
+#'    |hca_rk   |numeric   |
+#'    |pf       |numeric   |
+#'    |pf_rk    |numeric   |
+#'    |pts      |numeric   |
+#'    |pts_rk   |numeric   |
+#'    |nst      |numeric   |
+#'    |nst_rk   |numeric   |
+#'    |blk      |numeric   |
+#'    |blk_rk   |numeric   |
+#'    |elev     |numeric   |
+#'    |elev_rk  |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
 #' @import rvest
 #' @export
+#' @keywords HCA
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_hca())
+#'   try(kp_hca())
 #' }
 
 kp_hca <- function(){
@@ -325,24 +337,27 @@ kp_hca <- function(){
 #' **Get Home Court Arenas**
 #'
 #' @param year Year of data to pull
-#' @return A data frame with 6 columns:
-#' \describe{
-#'   \item{\code{Rk}}{double.}
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{Arena}}{character.}
-#'   \item{\code{Alternate}}{character.}
-#'   \item{\code{Year}}{double.}
-#' }
-#' @keywords Arenas
+#' @return A data frame with the following columns:
+#'
+#'    |col_name  |types     |
+#'    |:---------|:---------|
+#'    |rk        |numeric   |
+#'    |team      |character |
+#'    |conf      |character |
+#'    |arena     |character |
+#'    |alternate |character |
+#'    |year      |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
 #' @import rvest
 #' @export
+#' @keywords Arenas
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_arenas(year=2021))
+#'   try(kp_arenas(year=2021))
 #' }
 
 kp_arenas <- function(year=most_recent_mbb_season()){
@@ -397,25 +412,40 @@ kp_arenas <- function(year=most_recent_mbb_season()){
 #' @param attr Game Attribute, valid values include: \cr
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
 #' 'Upsets','Busts','Comeback','Window'
+#'
 #' @return Returns a tibble with game attributes
-#' @keywords Game
+#'
+#'    |col_name   |types     |
+#'    |:----------|:---------|
+#'    |rk         |integer   |
+#'    |data       |character |
+#'    |game       |character |
+#'    |location   |character |
+#'    |conf       |character |
+#'    |excitement |numeric   |
+#'    |year       |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate
 #' @import rvest
 #' @export
+#' @keywords Game
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_game_attrs(year=2021, attr = "Excitement"))
+#'   try(kp_game_attrs(year = 2021, attr = "Excitement"))
 #' }
 
-kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
+kp_game_attrs <- function(
+    year = most_recent_mbb_season(),
+    attr = "Excitement") {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }
@@ -437,7 +467,7 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
       colnames(x) <- header_cols
 
       x <- dplyr::mutate(x,
-                         "Year" = year)%>%
+                         "Year" = year) %>%
         as.data.frame()
       ### Store Data
       kenpom <- x %>%
@@ -461,7 +491,8 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 #'
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'
-#' @return A data frame 20 columns:
+#' @return A data frame with the following columns:
+#'
 #'  |col_name     |types     |
 #'  |:------------|:---------|
 #'  |prediction   |character |
@@ -485,20 +516,21 @@ kp_game_attrs <- function(year=most_recent_mbb_season(), attr = "Excitement"){
 #'  |event        |character |
 #'  |date         |character |
 #'
-#' @keywords FanMatch
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate
 #' @importFrom tidyr separate
 #' @import rvest
 #' @import stringr
 #' @export
+#' @keywords FanMatch
+#' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
 #'   try(kp_fanmatch(date="2022-02-22"))
 #' }
 
-kp_fanmatch <- function(date="2022-02-22"){
+kp_fanmatch <- function(date = "2022-02-22"){
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)

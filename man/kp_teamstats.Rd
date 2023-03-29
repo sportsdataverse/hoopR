@@ -12,14 +12,68 @@ kp_teamstats(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of team stats
+Returns a tibble of team stats\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   conf \tab character \cr
+   off_fg_3_pct \tab numeric \cr
+   off_fg_3_pct_rk \tab numeric \cr
+   off_fg_2_pct \tab numeric \cr
+   off_fg_2_pct_rk \tab numeric \cr
+   off_ft_pct \tab numeric \cr
+   off_ft_pct_rk \tab numeric \cr
+   off_blk_pct \tab numeric \cr
+   off_blk_pct_rk \tab numeric \cr
+   off_stl_pct \tab numeric \cr
+   off_stl_pct_rk \tab numeric \cr
+   off_non_stl_pct \tab numeric \cr
+   off_non_stl_pct_rk \tab numeric \cr
+   off_a_pct \tab numeric \cr
+   off_a_pct_rk \tab numeric \cr
+   off_fg_3a_pct \tab numeric \cr
+   off_fg_3a_pct_rk \tab numeric \cr
+   adj_o \tab numeric \cr
+   adj_o_rk \tab numeric \cr
+   ncaa_seed \tab numeric \cr
+   year \tab numeric \cr
+   def_fg_3_pct \tab numeric \cr
+   def_fg_3_pct_rk \tab numeric \cr
+   def_fg_2_pct \tab numeric \cr
+   def_fg_2_pct_rk \tab numeric \cr
+   def_ft_pct \tab numeric \cr
+   def_ft_pct_rk \tab numeric \cr
+   def_blk_pct \tab numeric \cr
+   def_blk_pct_rk \tab numeric \cr
+   def_stl_pct \tab numeric \cr
+   def_stl_pct_rk \tab numeric \cr
+   def_non_stl_pct \tab numeric \cr
+   def_non_stl_pct_rk \tab numeric \cr
+   def_a_pct \tab numeric \cr
+   def_a_pct_rk \tab numeric \cr
+   def_fg_3a_pct \tab numeric \cr
+   def_fg_3a_pct_rk \tab numeric \cr
+   adj_d \tab numeric \cr
+   adj_d_rk \tab numeric \cr
+}
 }
 \description{
 \strong{Get Team Stats}
 }
 \examples{
 \donttest{
- try(kp_teamstats(min_year = 2019, max_year =2021))
+   try(kp_teamstats(min_year = 2019, max_year =2021))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_efficiency}()},
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Team}

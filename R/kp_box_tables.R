@@ -2,18 +2,101 @@
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#' @returns Returns a tibble of game box scores
-#' @keywords Game Box Score
+#' @returns Returns a tibble of game box scores with names: away_team, home_team,
+#'  linescore, officials
+#'
+#'  **away_team**
+#'
+#'
+#'    |col_name   |types     |
+#'    |:----------|:---------|
+#'    |hgt        |character |
+#'    |wgt        |numeric   |
+#'    |yr         |character |
+#'    |number     |numeric   |
+#'    |player     |character |
+#'    |min        |numeric   |
+#'    |o_rtg      |numeric   |
+#'    |percent_ps |numeric   |
+#'    |pts        |numeric   |
+#'    |fgm2_a     |character |
+#'    |fgm3_a     |character |
+#'    |ftm_a      |character |
+#'    |or         |numeric   |
+#'    |dr         |numeric   |
+#'    |a          |numeric   |
+#'    |to         |numeric   |
+#'    |blk        |numeric   |
+#'    |stl        |numeric   |
+#'    |pf         |numeric   |
+#'    |team       |character |
+#'    |wp_note    |character |
+#'    |game_id    |numeric   |
+#'    |year       |numeric   |
+#'
+#'    **home_team**
+#'
+#'
+#'    |col_name   |types     |
+#'    |:----------|:---------|
+#'    |hgt        |character |
+#'    |wgt        |numeric   |
+#'    |yr         |character |
+#'    |number     |numeric   |
+#'    |player     |character |
+#'    |min        |numeric   |
+#'    |o_rtg      |numeric   |
+#'    |percent_ps |numeric   |
+#'    |pts        |numeric   |
+#'    |fgm2_a     |character |
+#'    |fgm3_a     |character |
+#'    |ftm_a      |character |
+#'    |or         |numeric   |
+#'    |dr         |numeric   |
+#'    |a          |numeric   |
+#'    |to         |numeric   |
+#'    |blk        |numeric   |
+#'    |stl        |numeric   |
+#'    |pf         |numeric   |
+#'    |team       |character |
+#'    |wp_note    |character |
+#'    |game_id    |numeric   |
+#'    |year       |numeric   |
+#'
+#'    **linescore**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |team     |character |
+#'    |q1       |integer   |
+#'    |q2       |integer   |
+#'    |q3       |integer   |
+#'    |q4       |integer   |
+#'    |t        |integer   |
+#'
+#'    **officials**
+#'
+#'
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |official_id   |character |
+#'    |official_name |character |
+#'    |game_id       |numeric   |
+#'    |year          |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
 #' @importFrom tidyr everything separate
 #' @import rvest
 #' @import stringr
 #' @export
+#' @keywords Game Box Score
+#' @family KenPom Boxscore Functions
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_box(game_id = 6, year = 2021))
+#'   x<-try(kp_box(game_id = 6, year = 2021))
 #' }
 
 kp_box <- function(game_id, year){
@@ -23,14 +106,14 @@ kp_box <- function(game_id, year){
 
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2013)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2013)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2013")
       }
       ### Pull Data
       url <- paste0("https://kenpom.com/box.php?",
-                    "g=",game_id,
-                    "&y=",year)
+                    "g=", game_id,
+                    "&y=", year)
 
 
       page <- rvest::session_jump_to(browser, url)
@@ -40,7 +123,7 @@ kp_box <- function(game_id, year){
         rvest::html_elements(".teamnav") %>%
         rvest::html_elements("b > a")
       teams <- dplyr::bind_rows(lapply(rvest::html_text(teams),
-                                       function(x){data.frame(Team = x, stringsAsFactors = FALSE)}))
+                                       function(x){data.frame(Team = x)}))
 
 
       refs <- (page %>%
@@ -53,24 +136,24 @@ kp_box <- function(game_id, year){
         rvest::html_elements(xpath = "//*[@id='half-column3']//span//div[4]") %>%
         rvest::html_elements(".seed")
       ref_ranks <- dplyr::bind_rows(lapply(rvest::html_text(ref_ranks),
-                                           function(x){data.frame(Official.Rk=x, stringsAsFactors=FALSE)}))
+                                           function(x){data.frame(Official.Rk = x)}))
 
 
       ref_ids <- dplyr::bind_rows(lapply(xml2::xml_attrs(refs),
-                                         function(x){data.frame(as.list(x), stringsAsFactors=FALSE)}))
-      if(length(ref_ids)>0){
+                                         function(x){data.frame(as.list(x))}))
+      if (length(ref_ids) > 0) {
         ref_ids <- ref_ids %>%
-          dplyr::filter(!stringr::str_detect(.data$href,"official")) %>%
+          dplyr::filter(!stringr::str_detect(.data$href, "official")) %>%
           dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
-            stringi::stri_extract_first_regex(.data$href,"=(.+)"),"="),"&(.+)")) %>%
+            stringi::stri_extract_first_regex(.data$href, "=(.+)"), "="), "&(.+)")) %>%
           dplyr::select("ref_id") %>%
           dplyr::rename("OfficialId" = "ref_id")
       }
 
       ref_names <- dplyr::bind_rows(lapply(rvest::html_text(refs),
-                                           function(x){data.frame(OfficialName = x, stringsAsFactors=FALSE)}))
+                                           function(x){data.frame(OfficialName = x)}))
 
-      ref_table <- dplyr::bind_cols(ref_ids,ref_names)
+      ref_table <- dplyr::bind_cols(ref_ids, ref_names)
       ref_table$GameId <- game_id
       ref_table$Year <- year
       ref_table <- ref_table %>%
@@ -84,7 +167,7 @@ kp_box <- function(game_id, year){
       linescore <- linescore %>%
         janitor::clean_names()
       y <- list()
-      for(i in 1:2){
+      for (i in 1:2) {
         x <- (page %>%
                 xml2::read_html() %>%
                 rvest::html_elements(".box-table"))[[i]]
@@ -98,8 +181,8 @@ kp_box <- function(game_id, year){
           rvest::html_table()
         x$Team <- teams[i,]
         x$WP.Note <- NA_character_
-        x$WP.Note <- x[nrow(x),1]
-        x <- x[1:(nrow(x)-1),]
+        x$WP.Note <- x[nrow(x),1][[1]]
+        x <- x[1:(nrow(x) - 1),]
         header_cols <- c("Hgt-Wgt-Yr", "Number", "Player", "Min",
                          "ORtg", "%Ps", "Pts", "FGM2-A", "FGM3-A",
                          "FTM-A", "OR", "DR", "A",
@@ -109,11 +192,13 @@ kp_box <- function(game_id, year){
 
         # box <- xml2::xml_text(box_stat)
         suppressWarnings(
-          x <- x %>% tidyr::separate(col="Hgt-Wgt-Yr",
-                                     into = c("Hgt","Wgt","Yr"),
+          x <- x %>% tidyr::separate(col = "Hgt-Wgt-Yr",
+                                     into = c("Hgt", "Wgt", "Yr"),
                                      sep = "\\s") %>%
-            dplyr::mutate_at(c("Wgt","Number","Min","ORtg","%Ps","Pts",
-                               "OR","DR","A","TO","Blk","Stl","PF"),as.numeric)
+            dplyr::mutate_at(c("Wgt", "Number", "Min",
+                               "ORtg", "%Ps", "Pts",
+                               "OR", "DR", "A", "TO",
+                               "Blk", "Stl", "PF"), as.numeric)
         )
         x <- x %>%
           dplyr::mutate(
@@ -124,6 +209,7 @@ kp_box <- function(game_id, year){
       }
       ### Store Data
       kenpom <- c(y,list(linescore),list(ref_table))
+      names(kenpom) <- c("away_team", "home_team", "linescore", "officials")
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no box data for {game_id} available!"))
@@ -140,14 +226,77 @@ kp_box <- function(game_id, year){
 #'
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
-#' @returns Returns a tibble of game win probabilities
-#' @keywords Win Probability
+#' @return Returns a named list of tibbles: winprob_dataset, game_data, runs
+#'
+#'    **winprob_dataset**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |period            |integer   |
+#'    |wp                |numeric   |
+#'    |time_left         |numeric   |
+#'    |visitor_score     |integer   |
+#'    |home_score        |integer   |
+#'    |visitor_scoring   |integer   |
+#'    |home_scoring      |integer   |
+#'    |possession_team   |character |
+#'    |possession_number |character |
+#'    |game_id           |numeric   |
+#'    |year              |numeric   |
+#'
+#'    **game_data**
+#'
+#'
+#'    |col_name               |types     |
+#'    |:----------------------|:---------|
+#'    |game_id                |character |
+#'    |year                   |integer   |
+#'    |full_date              |character |
+#'    |date                   |character |
+#'    |game_time              |character |
+#'    |venue                  |character |
+#'    |city                   |character |
+#'    |team1                  |character |
+#'    |team1score             |integer   |
+#'    |team1_rk               |character |
+#'    |team2                  |character |
+#'    |team2score             |integer   |
+#'    |team2_rk               |character |
+#'    |dominance_season_rk    |character |
+#'    |tension_season_rk      |character |
+#'    |excitement_season_rk   |character |
+#'    |lead_changes_season_rk |character |
+#'    |minimum_wp_season_rk   |character |
+#'    |dominance_rk           |character |
+#'    |tension_rk             |character |
+#'    |excitement_rk          |character |
+#'    |lead_changes_rk        |character |
+#'    |minimum_wp_rk          |character |
+#'    |dominance              |character |
+#'    |tension                |character |
+#'    |excitement             |character |
+#'    |favchg                 |character |
+#'    |min_wp                 |character |
+#'
+#'    **runs**
+#'
+#'
+#'    |col_name |types   |
+#'    |:--------|:-------|
+#'    |start    |numeric |
+#'    |end      |numeric |
+#'    |visitor  |integer |
+#'    |home     |integer |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename
 #' @importFrom tidyr everything
 #' @importFrom stringr str_remove str_extract_all
 #' @import rvest
 #' @export
+#' @keywords Win Probability
+#' @family KenPom Boxscore Functions
 #'
 #' @examples
 #' \donttest{
@@ -275,6 +424,7 @@ kp_winprob <- function(game_id, year){
           dplyr::everything()
         )
       kenpom <- list(wp_dataset, game_data, runs)
+      names(kenpom) <- c("winprob_dataset", "game_data", "runs")
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no win probability data for {game_id} available!"))

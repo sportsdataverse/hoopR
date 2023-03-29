@@ -12,15 +12,105 @@ kp_gameplan(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team game plans
+Returns a named list of tibbles: gameplan, correlations, position_distributions
+
+\strong{gameplan}\tabular{ll}{
+   col_name \tab types \cr
+   date \tab Date \cr
+   opponent_rk \tab numeric \cr
+   opponent \tab character \cr
+   result \tab character \cr
+   location \tab character \cr
+   pace \tab numeric \cr
+   off_eff \tab numeric \cr
+   off_eff_rk \tab numeric \cr
+   off_e_fg_pct \tab numeric \cr
+   off_to_pct \tab numeric \cr
+   off_or_pct \tab numeric \cr
+   off_ftr \tab numeric \cr
+   off_fgm_2 \tab numeric \cr
+   off_fga_2 \tab numeric \cr
+   off_fg_2_pct \tab numeric \cr
+   off_fgm_3 \tab numeric \cr
+   off_fga_3 \tab numeric \cr
+   off_fg_3_pct \tab numeric \cr
+   off_fg_3a_pct \tab numeric \cr
+   def_eff \tab numeric \cr
+   def_eff_rk \tab numeric \cr
+   def_e_fg_pct \tab numeric \cr
+   def_to_pct \tab numeric \cr
+   def_or_pct \tab numeric \cr
+   def_ftr \tab numeric \cr
+   def_fgm_2 \tab numeric \cr
+   def_fga_2 \tab numeric \cr
+   def_fg_2_pct \tab numeric \cr
+   def_fgm_3 \tab numeric \cr
+   def_fga_3 \tab numeric \cr
+   def_fg_3_pct \tab numeric \cr
+   def_fg_3a_pct \tab numeric \cr
+   wl \tab character \cr
+   team_score \tab numeric \cr
+   opponent_score \tab numeric \cr
+   day_date \tab character \cr
+   game_date \tab numeric \cr
+}
+
+
+\strong{correlations}\tabular{ll}{
+   col_name \tab types \cr
+   correlations_r_x_100 \tab character \cr
+   pace \tab character \cr
+   off_e_fg_pct \tab character \cr
+   off_to_pct \tab character \cr
+   off_or_pct \tab character \cr
+   off_ftr \tab character \cr
+   def_e_fg_pct \tab character \cr
+   def_to_pct \tab character \cr
+   def_or_pct \tab character \cr
+   def_ftr \tab character \cr
+}
+
+
+\strong{position_distributions}\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   category \tab character \cr
+   c_pct \tab numeric \cr
+   pf_pct \tab numeric \cr
+   sf_pct \tab numeric \cr
+   sg_pct \tab numeric \cr
+   pg_pct \tab numeric \cr
+   c_pct_rk \tab numeric \cr
+   pf_pct_rk \tab numeric \cr
+   sf_pct_rk \tab numeric \cr
+   sg_pct_rk \tab numeric \cr
+   pg_pct_rk \tab numeric \cr
+   c_pct_d1_avg \tab numeric \cr
+   pf_pct_d1_avg \tab numeric \cr
+   sf_pct_d1_avg \tab numeric \cr
+   sg_pct_d1_avg \tab numeric \cr
+   pg_pct_d1_avg \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom's team game plan page}
 }
 \examples{
 \donttest{
-  try(kp_gameplan(team='Florida St.', year=2021))
+   try(kp_gameplan(team='Florida St.', year=2021))
 }
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_players}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Game}
 \keyword{Plan}

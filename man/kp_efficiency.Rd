@@ -12,14 +12,48 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of efficiency and tempo ratings
+Returns a tibble of efficiency and tempo ratings\tabular{ll}{
+   col_name \tab types \cr
+   team \tab character \cr
+   conf \tab character \cr
+   adj_t \tab numeric \cr
+   adj_t_rk \tab numeric \cr
+   raw_t \tab numeric \cr
+   raw_t_rk \tab numeric \cr
+   avg_poss_length_off \tab numeric \cr
+   avg_poss_length_off_rk \tab numeric \cr
+   avg_poss_length_def \tab numeric \cr
+   avg_poss_length_def_rk \tab numeric \cr
+   adj_o \tab numeric \cr
+   adj_o_rk \tab numeric \cr
+   raw_o \tab numeric \cr
+   raw_o_rk \tab numeric \cr
+   adj_d \tab numeric \cr
+   adj_d_rk \tab numeric \cr
+   raw_d \tab numeric \cr
+   raw_d_rk \tab numeric \cr
+   ncaa_seed \tab numeric \cr
+   year \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom Efficiency and Tempo Summary}
 }
 \examples{
 \donttest{
- try(kp_efficiency(min_year = 2020, max_year = 2021))
+   try(kp_efficiency(min_year = 2020, max_year = 2021))
 }
 }
+\seealso{
+Other KenPom Ratings Functions: 
+\code{\link{kp_foul_trouble}()},
+\code{\link{kp_fourfactors}()},
+\code{\link{kp_height}()},
+\code{\link{kp_kpoy}()},
+\code{\link{kp_playerstats}()},
+\code{\link{kp_pointdist}()},
+\code{\link{kp_pomeroy_ratings}()},
+\code{\link{kp_teamstats}()}
+}
+\concept{KenPom Ratings Functions}
 \keyword{Efficiency}

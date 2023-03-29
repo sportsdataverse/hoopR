@@ -7,27 +7,27 @@
 kp_trends()
 }
 \value{
-A data frame with 19 columns:
-\describe{
-\item{\code{Season}}{double.}
-\item{\code{Efficiency}}{double.}
-\item{\code{Tempo}}{double.}
-\item{\code{eFG.Pct}}{double.}
-\item{\code{TO.Pct}}{double.}
-\item{\code{OR.Pct}}{double.}
-\item{\code{FTRate}}{double.}
-\item{\code{FG_2.Pct}}{double.}
-\item{\code{FG_3.Pct}}{double.}
-\item{\code{FG_3A.Pct}}{double.}
-\item{\code{FT.Pct}}{double.}
-\item{\code{A.Pct}}{double.}
-\item{\code{Blk.Pct}}{double.}
-\item{\code{Stl.Pct}}{double.}
-\item{\code{NonStl.Pct}}{double.}
-\item{\code{AvgHgt}}{double.}
-\item{\code{Continuity}}{double.}
-\item{\code{HomeWin.Pct}}{double.}
-\item{\code{PPG}}{double.}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   season \tab numeric \cr
+   efficiency \tab numeric \cr
+   tempo \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   to_pct \tab numeric \cr
+   or_pct \tab numeric \cr
+   ft_rate \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   fg_3a_pct \tab numeric \cr
+   ft_pct \tab numeric \cr
+   a_pct \tab numeric \cr
+   blk_pct \tab numeric \cr
+   stl_pct \tab numeric \cr
+   non_stl_pct \tab numeric \cr
+   avg_hgt \tab numeric \cr
+   continuity \tab numeric \cr
+   home_win_pct \tab numeric \cr
+   ppg \tab numeric \cr
 }
 }
 \description{
@@ -35,7 +35,17 @@ A data frame with 19 columns:
 }
 \examples{
 \donttest{
- try(kp_trends())
+  try(kp_trends())
 }
 }
+\seealso{
+Other KP Misc. Functions: 
+\code{\link{kp_arenas}()},
+\code{\link{kp_fanmatch}()},
+\code{\link{kp_game_attrs}()},
+\code{\link{kp_hca}()},
+\code{\link{kp_officials}()},
+\code{\link{kp_referee}()}
+}
+\concept{KP Misc. Functions}
 \keyword{Trends}

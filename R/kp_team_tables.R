@@ -4,17 +4,47 @@
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
-#' @keywords Team Schedule
 #' @return Returns a tibble of team schedules
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |team_rk           |numeric   |
+#'    |team              |character |
+#'    |opponent_rk       |numeric   |
+#'    |opponent          |character |
+#'    |result            |character |
+#'    |poss              |numeric   |
+#'    |ot                |numeric   |
+#'    |pre_wp            |numeric   |
+#'    |location          |character |
+#'    |w                 |numeric   |
+#'    |l                 |numeric   |
+#'    |w_conference      |numeric   |
+#'    |l_conference      |numeric   |
+#'    |conference_game   |logical   |
+#'    |postseason        |character |
+#'    |year              |numeric   |
+#'    |day_date          |character |
+#'    |game_date         |numeric   |
+#'    |w_proj            |numeric   |
+#'    |l_proj            |numeric   |
+#'    |w_conference_proj |numeric   |
+#'    |l_conference_proj |numeric   |
+#'    |date              |character |
+#'    |game_id           |numeric   |
+#'    |tiers_of_joy      |character |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect str_pad
 #' @import rvest
 #' @export
+#' @keywords Team Schedule
+#' @family KenPom Team Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_team_schedule(team = 'Florida St.', year = 2022))
+#'   try(kp_team_schedule(team = 'Florida St.', year = 2022))
 #' }
 
 kp_team_schedule <- function(team, year = 2022){
@@ -228,104 +258,104 @@ kp_team_schedule <- function(team, year = 2022){
           stringsAsFactors = FALSE)
       }
 
-      if(year >= 2011){
+      if (year >= 2011) {
         w_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(1)")
 
         l_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(1)")
 
         un_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(1)")
 
         fm_links <- c(w_links,l_links,un_links)
 
         w_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(5)")
         l_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(5)")
         un_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(5)")
 
         box_links <- c(w_box, l_box, un_box)
 
         w_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(11)")
 
         l_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(11)")
 
         un_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(11)")
 
         tiers <- c(w_tier, l_tier, un_tier)
 
-      }else{
+      } else {
         w_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(1)")
 
         l_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(1)")
 
         un_links <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(1)")
 
-        fm_links <- c(w_links,l_links,un_links)
+        fm_links <- c(w_links,l_links, un_links)
 
         w_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(4)")
 
         l_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(4)")
 
         un_box <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css="#schedule-table") %>%
+          rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(4)")
 
         box_links <- c(w_box, l_box, un_box)
 
         w_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(10)")
 
         l_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(10)")
 
         un_tier <- page %>%
           xml2::read_html() %>%
-          rvest::html_elements(css='#schedule-table') %>%
+          rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(10)")
 
         tiers <- c(w_tier, l_tier, un_tier)
@@ -384,18 +414,101 @@ kp_team_schedule <- function(team, year = 2022){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#' @return Returns a tibble of team game plans
+#' @return Returns a named list of tibbles: gameplan, correlations, position_distributions
 #'
-#' @keywords Game Plan
+#'    **gameplan**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |date           |Date      |
+#'    |opponent_rk    |numeric   |
+#'    |opponent       |character |
+#'    |result         |character |
+#'    |location       |character |
+#'    |pace           |numeric   |
+#'    |off_eff        |numeric   |
+#'    |off_eff_rk     |numeric   |
+#'    |off_e_fg_pct   |numeric   |
+#'    |off_to_pct     |numeric   |
+#'    |off_or_pct     |numeric   |
+#'    |off_ftr        |numeric   |
+#'    |off_fgm_2      |numeric   |
+#'    |off_fga_2      |numeric   |
+#'    |off_fg_2_pct   |numeric   |
+#'    |off_fgm_3      |numeric   |
+#'    |off_fga_3      |numeric   |
+#'    |off_fg_3_pct   |numeric   |
+#'    |off_fg_3a_pct  |numeric   |
+#'    |def_eff        |numeric   |
+#'    |def_eff_rk     |numeric   |
+#'    |def_e_fg_pct   |numeric   |
+#'    |def_to_pct     |numeric   |
+#'    |def_or_pct     |numeric   |
+#'    |def_ftr        |numeric   |
+#'    |def_fgm_2      |numeric   |
+#'    |def_fga_2      |numeric   |
+#'    |def_fg_2_pct   |numeric   |
+#'    |def_fgm_3      |numeric   |
+#'    |def_fga_3      |numeric   |
+#'    |def_fg_3_pct   |numeric   |
+#'    |def_fg_3a_pct  |numeric   |
+#'    |wl             |character |
+#'    |team_score     |numeric   |
+#'    |opponent_score |numeric   |
+#'    |day_date       |character |
+#'    |game_date      |numeric   |
+#'
+#'    **correlations**
+#'
+#'
+#'    |col_name             |types     |
+#'    |:--------------------|:---------|
+#'    |correlations_r_x_100 |character |
+#'    |pace                 |character |
+#'    |off_e_fg_pct         |character |
+#'    |off_to_pct           |character |
+#'    |off_or_pct           |character |
+#'    |off_ftr              |character |
+#'    |def_e_fg_pct         |character |
+#'    |def_to_pct           |character |
+#'    |def_or_pct           |character |
+#'    |def_ftr              |character |
+#'
+#'    **position_distributions**
+#'
+#'
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |team          |character |
+#'    |category      |character |
+#'    |c_pct         |numeric   |
+#'    |pf_pct        |numeric   |
+#'    |sf_pct        |numeric   |
+#'    |sg_pct        |numeric   |
+#'    |pg_pct        |numeric   |
+#'    |c_pct_rk      |numeric   |
+#'    |pf_pct_rk     |numeric   |
+#'    |sf_pct_rk     |numeric   |
+#'    |sg_pct_rk     |numeric   |
+#'    |pg_pct_rk     |numeric   |
+#'    |c_pct_d1_avg  |numeric   |
+#'    |pf_pct_d1_avg |numeric   |
+#'    |sf_pct_d1_avg |numeric   |
+#'    |sg_pct_d1_avg |numeric   |
+#'    |pg_pct_d1_avg |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter select rename mutate case_when mutate_at bind_rows
 #' @importFrom tidyr separate everything
 #' @importFrom stringr str_trim str_extract str_remove str_replace str_detect
 #' @import rvest
 #' @export
+#' @keywords Game Plan
+#' @family KenPom Team Functions
 #' @examples
 #' \donttest{
-#'   try(kp_gameplan(team='Florida St.', year=2021))
+#'    try(kp_gameplan(team='Florida St.', year=2021))
 #' }
 
 kp_gameplan <- function(team, year=2021){
@@ -404,12 +517,12 @@ kp_gameplan <- function(team, year=2021){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -432,14 +545,14 @@ kp_gameplan <- function(team, year=2021){
 
       gp <- (page %>%
                xml2::read_html() %>%
-               rvest::html_elements(css='#schedule-table'))[[1]] %>%
+               rvest::html_elements(css = '#schedule-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
       colnames(gp) <- header_cols
 
       gp <- gp %>%
-        dplyr::filter(.data$Location!="")
+        dplyr::filter(.data$Location != "")
       suppressWarnings(
         gp <- gp %>%
           dplyr::mutate(
@@ -455,7 +568,7 @@ kp_gameplan <- function(team, year=2021){
               .data$WL == "L" ~ as.numeric(.data$WinnerScore),
               .data$WL == "W" ~ as.numeric(.data$LoserScore),
               .data$WL == "" ~ NA_real_),
-            Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad="0"),
+            Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad = "0"),
             Date.MO = NA_character_,
             Date.MO = dplyr::case_when(
               stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ "10",
@@ -483,7 +596,7 @@ kp_gameplan <- function(team, year=2021){
             -"Date.MO",
             -"Date.YR")
       )
-      cor <- gp[(nrow(gp)-2):nrow(gp),]
+      cor <- gp[(nrow(gp) - 2):nrow(gp),]
       cor <- cor %>%
         dplyr::select(
           "Location",
@@ -525,13 +638,13 @@ kp_gameplan <- function(team, year=2021){
       z <- data.frame()
       y <- page %>%
         xml2::read_html() %>%
-        rvest::html_elements(css='.dist-table')
-      if(length(y)>0){
-        for(i in 1:length(y)){
+        rvest::html_elements(css = '.dist-table')
+      if (length(y) > 0) {
+        for (i in 1:length(y)) {
           header_cols <- c("Team","C.Pct","PF.Pct","SF.Pct","SG.Pct","PG.Pct")
           d <- (page %>%
                   xml2::read_html() %>%
-                  rvest::html_elements(css='.dist-table'))[[i]] %>%
+                  rvest::html_elements(css = '.dist-table'))[[i]] %>%
             rvest::html_table() %>%
             as.data.frame()
           category <- colnames(d)[1]
@@ -582,6 +695,7 @@ kp_gameplan <- function(team, year=2021){
       z <- z %>%
         janitor::clean_names()
       kenpom <- c(list(gp),list(cor),list(z))
+      names(kenpom) <- c("gameplan", "correlations", "position_distributions")
 
     },
     error = function(e){
@@ -601,11 +715,65 @@ kp_gameplan <- function(team, year=2021){
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #' @return Returns a tibble of team opponent tracker data
-#' @keywords Opponent Tracker
+#'
+#'    |col_name         |types     |
+#'    |:----------------|:---------|
+#'    |date             |Date      |
+#'    |game_date        |numeric   |
+#'    |day_date         |character |
+#'    |wl               |character |
+#'    |team             |character |
+#'    |team_score       |numeric   |
+#'    |opponent         |character |
+#'    |opponent_score   |numeric   |
+#'    |result           |character |
+#'    |adj_oe           |numeric   |
+#'    |adj_oe_rk        |integer   |
+#'    |off_e_fg_pct     |numeric   |
+#'    |off_e_fg_pct_rk  |integer   |
+#'    |off_to_pct       |numeric   |
+#'    |off_to_pct_rk    |integer   |
+#'    |off_or_pct       |numeric   |
+#'    |off_or_pct_rk    |integer   |
+#'    |off_ft_rate      |numeric   |
+#'    |off_ft_rate_rk   |integer   |
+#'    |off_fg_2_pct     |numeric   |
+#'    |off_fg_2_pct_rk  |integer   |
+#'    |off_fg_3_pct     |numeric   |
+#'    |off_fg_3_pct_rk  |integer   |
+#'    |off_blk_pct      |numeric   |
+#'    |off_blk_pct_rk   |integer   |
+#'    |off_fg_3a_pct    |numeric   |
+#'    |off_fg_3a_pct_rk |integer   |
+#'    |off_apl          |numeric   |
+#'    |off_apl_rk       |integer   |
+#'    |adj_de           |numeric   |
+#'    |adj_de_rk        |integer   |
+#'    |def_e_fg_pct     |numeric   |
+#'    |def_e_fg_pct_rk  |integer   |
+#'    |def_to_pct       |numeric   |
+#'    |def_to_pct_rk    |integer   |
+#'    |def_or_pct       |numeric   |
+#'    |def_or_pct_rk    |integer   |
+#'    |def_ft_rate      |numeric   |
+#'    |def_ft_rate_rk   |integer   |
+#'    |def_fg_2_pct     |numeric   |
+#'    |def_fg_2_pct_rk  |integer   |
+#'    |def_fg_3_pct     |numeric   |
+#'    |def_fg_3_pct_rk  |integer   |
+#'    |def_blk_pct      |numeric   |
+#'    |def_blk_pct_rk   |integer   |
+#'    |def_fg_3a_pct    |numeric   |
+#'    |def_fg_3a_pct_rk |integer   |
+#'    |def_apl          |numeric   |
+#'    |def_apl_rk       |integer   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter
 #' @import rvest
 #' @export
+#' @keywords Opponent Tracker
+#' @family KenPom Team Functions
 #'
 #' @examples
 #' \donttest{
@@ -619,12 +787,12 @@ kp_opptracker <- function(team, year = 2021){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -641,18 +809,18 @@ kp_opptracker <- function(team, year = 2021){
 
       page_o <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols<- c("Date","Opponent","Result","AdjOE","AdjOE.Rk",
-                      "Off.eFG.Pct","Off.eFG.Pct.Rk","Off.TO.Pct","Off.TO.Pct.Rk",
-                      "Off.OR.Pct","Off.OR.Pct.Rk","Off.FTRate","Off.FTRate.Rk",
-                      "Off.FG_2.Pct","Off.FG_2.Pct.Rk","Off.FG_3.Pct","Off.FG_3.Pct.Rk",
-                      "Off.Blk.Pct","Off.Blk.Pct.Rk","Off.FG_3A.Pct","Off.FG_3A.Pct.Rk")
-      if(year>=2010){
+      header_cols <- c("Date","Opponent","Result","AdjOE","AdjOE.Rk",
+                       "Off.eFG.Pct","Off.eFG.Pct.Rk","Off.TO.Pct","Off.TO.Pct.Rk",
+                       "Off.OR.Pct","Off.OR.Pct.Rk","Off.FTRate","Off.FTRate.Rk",
+                       "Off.FG_2.Pct","Off.FG_2.Pct.Rk","Off.FG_3.Pct","Off.FG_3.Pct.Rk",
+                       "Off.Blk.Pct","Off.Blk.Pct.Rk","Off.FG_3A.Pct","Off.FG_3A.Pct.Rk")
+      if (year >= 2010) {
         header_cols <- c(header_cols, "Off.APL","Off.APL.Rk")
       }
 
       opptracker_o <- (page_o %>%
                          xml2::read_html() %>%
-                         rvest::html_elements(css='#conf-table'))[[1]] %>%
+                         rvest::html_elements(css = '#conf-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -679,7 +847,7 @@ kp_opptracker <- function(team, year = 2021){
               .data$WL == "L" ~ as.numeric(.data$WinnerScore),
               .data$WL == "W" ~ as.numeric(.data$LoserScore),
               .data$WL == "" ~ NA_real_),
-            Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad="0"),
+            Date.DD = stringr::str_pad(stringr::str_extract(.data$Date,'\\d+'), 2, pad = "0"),
             Date.MO = NA_character_,
             Date.MO = dplyr::case_when(
               stringr::str_detect(.data$Date,regex("Oct",ignore_case=TRUE)) ~ "10",
@@ -710,13 +878,13 @@ kp_opptracker <- function(team, year = 2021){
             -"LoserScore")
       )
 
-      header_cols<- c("Date","Opponent","Result","AdjDE","AdjDE.Rk",
-                      "Def.eFG.Pct","Def.eFG.Pct.Rk","Def.TO.Pct","Def.TO.Pct.Rk",
-                      "Def.OR.Pct","Def.OR.Pct.Rk","Def.FTRate","Def.FTRate.Rk",
-                      "Def.FG_2.Pct","Def.FG_2.Pct.Rk","Def.FG_3.Pct","Def.FG_3.Pct.Rk",
-                      "Def.Blk.Pct","Def.Blk.Pct.Rk","Def.FG_3A.Pct","Def.FG_3A.Pct.Rk")
+      header_cols <- c("Date","Opponent","Result","AdjDE","AdjDE.Rk",
+                       "Def.eFG.Pct","Def.eFG.Pct.Rk","Def.TO.Pct","Def.TO.Pct.Rk",
+                       "Def.OR.Pct","Def.OR.Pct.Rk","Def.FTRate","Def.FTRate.Rk",
+                       "Def.FG_2.Pct","Def.FG_2.Pct.Rk","Def.FG_3.Pct","Def.FG_3.Pct.Rk",
+                       "Def.Blk.Pct","Def.Blk.Pct.Rk","Def.FG_3A.Pct","Def.FG_3A.Pct.Rk")
 
-      if(year>=2010){
+      if (year >= 2010) {
         header_cols <- c(header_cols, "Def.APL","Def.APL.Rk")
       }
 
@@ -730,7 +898,7 @@ kp_opptracker <- function(team, year = 2021){
       Sys.sleep(5)
       opptracker_d <- (page_d %>%
                          xml2::read_html() %>%
-                         rvest::html_elements(css='#conf-table'))[[1]] %>%
+                         rvest::html_elements(css = '#conf-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -775,13 +943,71 @@ kp_opptracker <- function(team, year = 2021){
 #' @param year Year of data to pull
 #' @return Returns a tibble of team player data
 #'
-#' @keywords Team Player Stats
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |role          |character |
+#'    |number        |numeric   |
+#'    |player        |character |
+#'    |ht            |character |
+#'    |wt            |numeric   |
+#'    |yr            |character |
+#'    |g             |numeric   |
+#'    |s             |numeric   |
+#'    |min_pct       |numeric   |
+#'    |o_rtg         |numeric   |
+#'    |poss_pct      |numeric   |
+#'    |shots_pct     |numeric   |
+#'    |e_fg_pct      |numeric   |
+#'    |ts_pct        |numeric   |
+#'    |or_pct        |numeric   |
+#'    |dr_pct        |numeric   |
+#'    |a_rate        |numeric   |
+#'    |to_rate       |numeric   |
+#'    |blk_pct       |numeric   |
+#'    |stl_pct       |numeric   |
+#'    |f_cper40      |numeric   |
+#'    |f_dper40      |numeric   |
+#'    |ft_rate       |numeric   |
+#'    |ftm           |numeric   |
+#'    |fta           |numeric   |
+#'    |ft_pct        |numeric   |
+#'    |fgm_2         |numeric   |
+#'    |fga_2         |numeric   |
+#'    |fg_2_pct      |numeric   |
+#'    |fgm_3         |numeric   |
+#'    |fga_3         |numeric   |
+#'    |fg_3_pct      |numeric   |
+#'    |min_pct_rk    |numeric   |
+#'    |o_rtg_rk      |numeric   |
+#'    |poss_pct_rk   |numeric   |
+#'    |shots_pct_rk  |numeric   |
+#'    |e_fg_pct_rk   |numeric   |
+#'    |ts_pct_rk     |numeric   |
+#'    |or_pct_rk     |numeric   |
+#'    |dr_pct_rk     |numeric   |
+#'    |a_rate_rk     |numeric   |
+#'    |to_rate_rk    |numeric   |
+#'    |blk_pct_rk    |numeric   |
+#'    |stl_pct_rk    |numeric   |
+#'    |f_cper40_rk   |numeric   |
+#'    |f_dper40_rk   |numeric   |
+#'    |ft_rate_rk    |numeric   |
+#'    |ft_pct_rk     |numeric   |
+#'    |fg_2_pct_rk   |numeric   |
+#'    |fg_3_pct_rk   |numeric   |
+#'    |national_rank |character |
+#'    |team          |character |
+#'    |year          |numeric   |
+#'    |player_id     |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
 #' @import rvest
 #' @export
+#' @keywords Team Player Stats
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
@@ -794,12 +1020,12 @@ kp_team_players <- function(team, year = 2021){
   tryCatch(
     expr = {
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2002)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -815,14 +1041,14 @@ kp_team_players <- function(team, year = 2021){
       Sys.sleep(5)
       player_links <- page %>%
         xml2::read_html() %>%
-        rvest::html_elements(css='#player-table') %>%
+        rvest::html_elements(css = '#player-table') %>%
         rvest::html_elements("td:nth-child(2) > a")
 
 
       pid <- dplyr::bind_rows(lapply(xml2::xml_attrs(player_links),
                                      function(x){
-                                       if(!stringr::str_detect(x,"kpoy")){
-                                         data.frame(as.list(x), stringsAsFactors=FALSE)
+                                       if (!stringr::str_detect(x,"kpoy")) {
+                                         data.frame(as.list(x), stringsAsFactors = FALSE)
                                        }
                                      }))
 
@@ -830,14 +1056,14 @@ kp_team_players <- function(team, year = 2021){
         dplyr::mutate(PlayerId = stringr::str_remove(stringr::str_extract(.data$href,"=(.+)"),"=")) %>%
         dplyr::select("PlayerId")
 
-      if(year>= 2014){ # "S" - starts only available from 2014 onwards
+      if (year >= 2014) { # "S" - starts only available from 2014 onwards
         players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G", "S",
                                  "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
                                  "eFG.Pct", "TS.Pct", "OR.Pct", "DR.Pct",
                                  "ARate", "TORate", "Blk.Pct","Stl.Pct","FCper40","FDper40",
                                  "FTRate", "FTM-A", "FT.Pct",
                                  "FGM_2-A", "FG_2.Pct", "FGM_3-A", "FG_3.Pct")
-      }else{
+      } else {
         players_header_cols <- c("Number", "Player", "Ht", "Wt", "Yr", "G",
                                  "Min.Pct", "ORtg", "Poss.Pct","Shots.Pct",
                                  "eFG.Pct", "TS.Pct", "OR.Pct", "DR.Pct",
@@ -848,7 +1074,7 @@ kp_team_players <- function(team, year = 2021){
 
       players <- (page %>%
                     xml2::read_html() %>%
-                    rvest::html_elements(css='#player-table'))[[1]]
+                    rvest::html_elements(css = '#player-table'))[[1]]
 
       players <- players %>%
         rvest::html_table()
@@ -903,11 +1129,11 @@ kp_team_players <- function(team, year = 2021){
           Player = stringr::str_replace(.data$Player, "National Rank",""),
 
           Min.Pct = substr(sprintf("%.*f",4, as.numeric(.data$Min.Pct)), 1,
-                           nchar(sprintf("%.*f",4, as.numeric(.data$Min.Pct)))-3),
+                           nchar(sprintf("%.*f",4, as.numeric(.data$Min.Pct))) - 3),
           ORtg = substr(sprintf("%.*f",4, as.numeric(.data$ORtg)), 1,
                         nchar(sprintf("%.*f",4, as.numeric(.data$ORtg))) - 3),
           Poss.Pct = substr(sprintf("%.*f",4, as.numeric(.data$Poss.Pct)), 1,
-                            nchar(sprintf("%.*f",4, as.numeric(.data$Poss.Pct)))-3),
+                            nchar(sprintf("%.*f",4, as.numeric(.data$Poss.Pct))) - 3),
           Shots.Pct = substr(sprintf("%.*f",4, as.numeric(.data$Shots.Pct)), 1,
                              nchar(sprintf("%.*f",4, as.numeric(.data$Shots.Pct))) - 3),
           eFG.Pct = substr(sprintf("%.*f",4, as.numeric(.data$eFG.Pct)), 1,
@@ -938,7 +1164,7 @@ kp_team_players <- function(team, year = 2021){
                             nchar(sprintf("%.*f",6, as.numeric(.data$FG_2.Pct))) - 3),
           FG_3.Pct = substr(sprintf("%.*f",6, as.numeric(.data$FG_3.Pct)), 1,
                             nchar(sprintf("%.*f",6, as.numeric(.data$FG_3.Pct))) - 3))
-      if(year>=2014){
+      if (year >= 2014) {
         suppressWarnings(
           players <- players %>%
             tidyr::separate("FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
@@ -955,7 +1181,7 @@ kp_team_players <- function(team, year = 2021){
                                "ARate.Rk", "TORate.Rk", "Blk.Pct.Rk","Stl.Pct.Rk", "FCper40.Rk", "FDper40.Rk",
                                "FTRate.Rk", "FT.Pct.Rk", "FG_2.Pct.Rk", "FG_3.Pct.Rk"), as.numeric)
         )
-      }else{
+      } else {
         suppressWarnings(
           players <- players %>%
             tidyr::separate("FTM-A", into = c("FTM", "FTA"), sep = "-") %>%
@@ -1012,15 +1238,100 @@ kp_team_players <- function(team, year = 2021){
 #'
 #'
 #' @param player_id Player Id filter to select.
-#' @return Returns a tibble of team player career stats
+#' @return Returns a named list of tibbles: player_stats, gamelog
 #'
-#' @keywords Player Career Stats
+#'    **player_stats**
+#'
+#'
+#'    |col_name      |types     |
+#'    |:-------------|:---------|
+#'    |year          |numeric   |
+#'    |team_rk       |numeric   |
+#'    |team          |character |
+#'    |number        |numeric   |
+#'    |name          |character |
+#'    |position      |character |
+#'    |hgt           |character |
+#'    |wgt           |numeric   |
+#'    |yr            |character |
+#'    |g             |numeric   |
+#'    |min_pct       |numeric   |
+#'    |o_rtg         |numeric   |
+#'    |poss_pct      |numeric   |
+#'    |shots_pct     |numeric   |
+#'    |e_fg_pct      |numeric   |
+#'    |ts_pct        |numeric   |
+#'    |or_pct        |numeric   |
+#'    |dr_pct        |numeric   |
+#'    |a_rate        |numeric   |
+#'    |to_rate       |numeric   |
+#'    |blk_pct       |numeric   |
+#'    |stl_pct       |numeric   |
+#'    |f_cper40      |numeric   |
+#'    |f_dper40      |numeric   |
+#'    |ft_rate       |numeric   |
+#'    |ftm           |numeric   |
+#'    |fta           |numeric   |
+#'    |ft_pct        |numeric   |
+#'    |fgm_2         |numeric   |
+#'    |fga_2         |numeric   |
+#'    |fg_2_pct      |numeric   |
+#'    |fgm_3         |numeric   |
+#'    |fga_3         |numeric   |
+#'    |fg_3_pct      |numeric   |
+#'    |group_rank    |character |
+#'    |team_finish   |character |
+#'    |ncaa_seed     |numeric   |
+#'    |hometown      |character |
+#'    |date_of_birth |character |
+#'    |age           |character |
+#'    |comparisons   |character |
+#'
+#'    **gamelog**
+#'
+#'
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |year           |numeric   |
+#'    |team           |character |
+#'    |name           |character |
+#'    |position       |character |
+#'    |opponent_tier  |logical   |
+#'    |date           |character |
+#'    |opponent_rk    |numeric   |
+#'    |opponent       |character |
+#'    |result         |character |
+#'    |ot             |character |
+#'    |location       |character |
+#'    |game_type      |character |
+#'    |mvp            |character |
+#'    |start          |character |
+#'    |minutes_played |numeric   |
+#'    |o_rtg          |numeric   |
+#'    |poss_pct       |numeric   |
+#'    |pts            |numeric   |
+#'    |fgm_2          |numeric   |
+#'    |fga_2          |numeric   |
+#'    |fgm_3          |numeric   |
+#'    |fga_3          |numeric   |
+#'    |ftm            |numeric   |
+#'    |fta            |numeric   |
+#'    |or             |numeric   |
+#'    |dr             |numeric   |
+#'    |a              |numeric   |
+#'    |to             |numeric   |
+#'    |blk            |numeric   |
+#'    |stl            |numeric   |
+#'    |pf             |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
 #' @import rvest
 #' @export
+#' @keywords Player Career Stats
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
@@ -1067,7 +1378,7 @@ kp_player_career <- function(player_id){
                                "FG_3.Pct")
       players <- (page %>%
                     xml2::read_html() %>%
-                    rvest::html_elements(css='#player-table'))[[1]] %>%
+                    rvest::html_elements(css = '#player-table'))[[1]] %>%
         rvest::html_table()
 
       colnames(players) <- players_header_cols
@@ -1084,8 +1395,8 @@ kp_player_career <- function(player_id){
         )
 
       # separating the career totals so as to not fill those columns (they're empty in the table)
-      players_career <- players[(nrow(players)-2):nrow(players),]
-      players <- players[1:(nrow(players)-3),]
+      players_career <- players[(nrow(players) - 2):nrow(players),]
+      players <- players[1:(nrow(players) - 3),]
       # Now need to fill year to create a join column for the age and player comps columns
       players <- players %>%
         dplyr::mutate(Year = ifelse(.data$Year == "", NA_real_, .data$Year)) %>%
@@ -1184,13 +1495,13 @@ kp_player_career <- function(player_id){
         janitor::clean_names()
       s <- (page %>%
               xml2::read_html() %>%
-              rvest::html_elements(css='#schedule-table'))
+              rvest::html_elements(css = '#schedule-table'))
       schedule_games <- data.frame()
-      for(i in 1:length(s)){
+      for (i in 1:length(s)) {
 
         header <- (page %>%
                      xml2::read_html() %>%
-                     rvest::html_elements(css='div.gamelogdiv > h3'))[[i]] %>%
+                     rvest::html_elements(css = 'div.gamelogdiv > h3'))[[i]] %>%
           rvest::html_text()
         sched_header_cols <- c("Opponent.Tier", "Date", "Opponent.Rk", "Opponent",
                                "Result","OT", "Location", "GameType",
@@ -1200,7 +1511,7 @@ kp_player_career <- function(player_id){
 
         sched <-  ((page %>%
                       xml2::read_html() %>%
-                      rvest::html_elements(css='#schedule-table'))[[i]] %>%
+                      rvest::html_elements(css = '#schedule-table'))[[i]] %>%
                      rvest::html_table())[,1:24]
 
         colnames(sched) <- sched_header_cols
@@ -1211,7 +1522,7 @@ kp_player_career <- function(player_id){
           dplyr::mutate(Year = as.numeric(stringr::str_replace(.data$GameData," Game Data",""))) %>%
           dplyr::select(-"GameData")
         sched <- sched %>%
-          dplyr::left_join(players_team_name, by="Year")
+          dplyr::left_join(players_team_name, by = "Year")
 
         suppressWarnings(
           sched <- sched %>%
@@ -1237,6 +1548,7 @@ kp_player_career <- function(player_id){
         janitor::clean_names()
       ### Store Data
       kenpom <- c(list(players),list(schedule_games))
+      names(kenpom) <- c("player_stats", "gamelog")
     },
     error = function(e){
       message(glue::glue("{Sys.time()} - No Player Career Data available for {player_id}"))
@@ -1257,11 +1569,12 @@ kp_player_career <- function(player_id){
 #' @param year Year of data to pull
 #' @return Returns a tibble of minutes matrix data
 #'
-#' @keywords Minutes Matrix
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter
 #' @import rvest
 #' @export
+#' @keywords Minutes Matrix
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
@@ -1276,12 +1589,12 @@ kp_minutes_matrix <- function(team, year = 2021){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2014)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -1295,11 +1608,11 @@ kp_minutes_matrix <- function(team, year = 2021){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols<- c("Date","Opponent.Rk","Opponent","Result")
+      header_cols <- c("Date","Opponent.Rk","Opponent","Result")
 
       x <- (page %>%
               xml2::read_html() %>%
-              rvest::html_elements(css='#minutes-table'))[[1]] %>%
+              rvest::html_elements(css = '#minutes-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -1341,18 +1654,140 @@ kp_minutes_matrix <- function(team, year = 2021){
 #' @param team Team filter to select.
 #' @param year Year of data to pull
 #'
-#' @return Returns a tibble of team player stats data
-#' @keywords Team Player Stats
+#' @return Returns a list of named data frames: all_games, conference_games
+#'
+#'    **all_games**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |role         |character |
+#'    |number       |numeric   |
+#'    |player       |character |
+#'    |ht           |character |
+#'    |wt           |numeric   |
+#'    |yr           |character |
+#'    |g            |numeric   |
+#'    |min_pct      |numeric   |
+#'    |o_rtg        |numeric   |
+#'    |poss_pct     |numeric   |
+#'    |shots_pct    |numeric   |
+#'    |e_fg_pct     |numeric   |
+#'    |ts_pct       |numeric   |
+#'    |or_pct       |numeric   |
+#'    |dr_pct       |numeric   |
+#'    |a_rate       |numeric   |
+#'    |to_rate      |numeric   |
+#'    |blk_pct      |numeric   |
+#'    |stl_pct      |numeric   |
+#'    |f_cper40     |numeric   |
+#'    |f_dper40     |numeric   |
+#'    |ft_rate      |numeric   |
+#'    |ftm          |numeric   |
+#'    |fta          |numeric   |
+#'    |ft_pct       |numeric   |
+#'    |fgm_2        |numeric   |
+#'    |fga_2        |numeric   |
+#'    |fg_2_pct     |numeric   |
+#'    |fgm_3        |numeric   |
+#'    |fga_3        |numeric   |
+#'    |fg_3_pct     |numeric   |
+#'    |category     |character |
+#'    |min_pct_rk   |numeric   |
+#'    |o_rtg_rk     |numeric   |
+#'    |poss_pct_rk  |numeric   |
+#'    |shots_pct_rk |numeric   |
+#'    |e_fg_pct_rk  |numeric   |
+#'    |ts_pct_rk    |numeric   |
+#'    |or_pct_rk    |numeric   |
+#'    |dr_pct_rk    |numeric   |
+#'    |a_rate_rk    |numeric   |
+#'    |to_rate_rk   |numeric   |
+#'    |blk_pct_rk   |numeric   |
+#'    |stl_pct_rk   |numeric   |
+#'    |f_cper40_rk  |numeric   |
+#'    |f_dper40_rk  |numeric   |
+#'    |ft_rate_rk   |numeric   |
+#'    |ft_pct_rk    |numeric   |
+#'    |fg_2_pct_rk  |numeric   |
+#'    |fg_3_pct_rk  |numeric   |
+#'    |group_rank   |character |
+#'    |team         |character |
+#'    |year         |numeric   |
+#'    |player_id    |numeric   |
+#'
+#'    **conference_games**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |role         |character |
+#'    |number       |numeric   |
+#'    |player       |character |
+#'    |ht           |character |
+#'    |wt           |numeric   |
+#'    |yr           |character |
+#'    |g            |numeric   |
+#'    |min_pct      |numeric   |
+#'    |o_rtg        |numeric   |
+#'    |poss_pct     |numeric   |
+#'    |shots_pct    |numeric   |
+#'    |e_fg_pct     |numeric   |
+#'    |ts_pct       |numeric   |
+#'    |or_pct       |numeric   |
+#'    |dr_pct       |numeric   |
+#'    |a_rate       |numeric   |
+#'    |to_rate      |numeric   |
+#'    |blk_pct      |numeric   |
+#'    |stl_pct      |numeric   |
+#'    |f_cper40     |numeric   |
+#'    |f_dper40     |numeric   |
+#'    |ft_rate      |numeric   |
+#'    |ftm          |numeric   |
+#'    |fta          |numeric   |
+#'    |ft_pct       |numeric   |
+#'    |fgm_2        |numeric   |
+#'    |fga_2        |numeric   |
+#'    |fg_2_pct     |numeric   |
+#'    |fgm_3        |numeric   |
+#'    |fga_3        |numeric   |
+#'    |fg_3_pct     |numeric   |
+#'    |category     |character |
+#'    |min_pct_rk   |numeric   |
+#'    |o_rtg_rk     |numeric   |
+#'    |poss_pct_rk  |numeric   |
+#'    |shots_pct_rk |numeric   |
+#'    |e_fg_pct_rk  |numeric   |
+#'    |ts_pct_rk    |numeric   |
+#'    |or_pct_rk    |numeric   |
+#'    |dr_pct_rk    |numeric   |
+#'    |a_rate_rk    |numeric   |
+#'    |to_rate_rk   |numeric   |
+#'    |blk_pct_rk   |numeric   |
+#'    |stl_pct_rk   |numeric   |
+#'    |f_cper40_rk  |numeric   |
+#'    |f_dper40_rk  |numeric   |
+#'    |ft_rate_rk   |numeric   |
+#'    |ft_pct_rk    |numeric   |
+#'    |fg_2_pct_rk  |numeric   |
+#'    |fg_3_pct_rk  |numeric   |
+#'    |group_rank   |character |
+#'    |team         |character |
+#'    |year         |numeric   |
+#'    |player_id    |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect
 #' @importFrom tidyr everything separate
 #' @import rvest
 #' @export
+#' @keywords Team Player Stats
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
-#'    try(kp_team_player_stats(team = 'Florida St.', year = 2021))
+#'     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
 #'   }
 kp_team_player_stats <- function(team, year = 2021){
 
@@ -1361,12 +1796,12 @@ kp_team_player_stats <- function(team, year = 2021){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2014)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -1384,20 +1819,20 @@ kp_team_player_stats <- function(team, year = 2021){
       Sys.sleep(5)
       players <- (page %>%
                     xml2::read_html() %>%
-                    rvest::html_elements(css='#player-table'))
+                    rvest::html_elements(css = '#player-table'))
       y <- list()
 
-      for(i in 1:length(players)){
+      for (i in 1:length(players)) {
         player_links <- (page %>%
                            xml2::read_html() %>%
-                           rvest::html_elements(css='#player-table'))[[i]] %>%
+                           rvest::html_elements(css = '#player-table'))[[i]] %>%
           rvest::html_elements("td:nth-child(2) > a")
 
 
         pid <- dplyr::bind_rows(lapply(xml2::xml_attrs(player_links),
                                        function(x){
-                                         if(!stringr::str_detect(x,"kpoy")){
-                                           data.frame(as.list(x), stringsAsFactors=FALSE)
+                                         if (!stringr::str_detect(x,"kpoy")) {
+                                           data.frame(as.list(x), stringsAsFactors = FALSE)
                                          }
                                        }))
         # pid <- dplyr::bind_rows(lapply(player_links, extractor))
@@ -1415,7 +1850,7 @@ kp_team_player_stats <- function(team, year = 2021){
 
         players <- (page %>%
                       xml2::read_html() %>%
-                      rvest::html_elements(css='#player-table'))[[i]]
+                      rvest::html_elements(css = '#player-table'))[[i]]
 
         players <- players %>%
           rvest::html_table()
@@ -1425,9 +1860,9 @@ kp_team_player_stats <- function(team, year = 2021){
           players <- players %>%
             dplyr::filter(!is.na(as.numeric(.data$G)))
         )
-        if(i==1){
+        if (i == 1) {
           players$Category <- "All Games"
-        }else{
+        } else {
           players$Category <- "Conference Games"
         }
         players$Min.Pct.Rk <- NA_real_
@@ -1540,10 +1975,11 @@ kp_team_player_stats <- function(team, year = 2021){
           janitor::clean_names()
 
         y <- c(y, list(players))
+
       }
       ### Store Data
       kenpom <- y
-
+      names(kenpom) <- c("all_games", "conference_games")
     },
     error = function(e){
       message(glue::glue("{Sys.time()} - {team} - {year} team player stats are missing"))
@@ -1564,22 +2000,48 @@ kp_team_player_stats <- function(team, year = 2021){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#' @return A data frame with 12 columns:
-#' \describe{
-#'   \item{\code{PG}}{character. DESCRIPTION.}
-#'   \item{\code{PG.Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{SG}}{character. DESCRIPTION.}
-#'   \item{\code{SG.Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{SF}}{character. DESCRIPTION.}
-#'   \item{\code{SF.Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{PF}}{character. DESCRIPTION.}
-#'   \item{\code{PF.Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{C}}{character. DESCRIPTION.}
-#'   \item{\code{C.Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{Team}}{character. DESCRIPTION.}
-#'   \item{\code{Year}}{double. DESCRIPTION.}
-#' }
-#' @keywords Depth Chart
+#' @return A data frame with the following columns:
+#'
+#'    |col_name             |types     |
+#'    |:--------------------|:---------|
+#'    |pg_number            |numeric   |
+#'    |pg_player_first_name |character |
+#'    |pg_player_last_name  |character |
+#'    |pg_hgt               |character |
+#'    |pg_wgt               |numeric   |
+#'    |pg_yr                |character |
+#'    |pg_min_pct           |numeric   |
+#'    |sg_number            |numeric   |
+#'    |sg_player_first_name |character |
+#'    |sg_player_last_name  |character |
+#'    |sg_hgt               |character |
+#'    |sg_wgt               |numeric   |
+#'    |sg_yr                |character |
+#'    |sg_min_pct           |numeric   |
+#'    |sf_number            |numeric   |
+#'    |sf_player_first_name |character |
+#'    |sf_player_last_name  |character |
+#'    |sf_hgt               |character |
+#'    |sf_wgt               |numeric   |
+#'    |sf_yr                |character |
+#'    |sf_min_pct           |numeric   |
+#'    |pf_number            |numeric   |
+#'    |pf_player_first_name |character |
+#'    |pf_player_last_name  |character |
+#'    |pf_hgt               |character |
+#'    |pf_wgt               |numeric   |
+#'    |pf_yr                |character |
+#'    |pf_min_pct           |numeric   |
+#'    |c_number             |numeric   |
+#'    |c_player_first_name  |character |
+#'    |c_player_last_name   |character |
+#'    |c_hgt                |character |
+#'    |c_wgt                |numeric   |
+#'    |c_yr                 |character |
+#'    |c_min_pct            |numeric   |
+#'    |team                 |character |
+#'    |year                 |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter  bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect str_trim
@@ -1587,6 +2049,8 @@ kp_team_player_stats <- function(team, year = 2021){
 #' @importFrom glue glue
 #' @import rvest
 #' @export
+#' @keywords Depth Chart
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
@@ -1602,12 +2066,12 @@ kp_team_depth_chart <- function(team, year= 2021){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2014)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2014)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2014")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -1621,12 +2085,12 @@ kp_team_depth_chart <- function(team, year= 2021){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      depth1_header_cols<- c("PG", "PG.Min.Pct", "SG", "SG.Min.Pct", "SF", "SF.Min.Pct",
+      depth1_header_cols <- c("PG", "PG.Min.Pct", "SG", "SG.Min.Pct", "SF", "SF.Min.Pct",
                              "PF", "PF.Min.Pct", "C", "C.Min.Pct")
 
       depth1 <- (page %>%
                    xml2::read_html() %>%
-                   rvest::html_elements(css='#dc-table'))[[1]] %>%
+                   rvest::html_elements(css = '#dc-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -1758,29 +2222,56 @@ kp_team_depth_chart <- function(team, year= 2021){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#' @return A data frame with 9 columns:
-#' \describe{
-#'   \item{\code{Rk}}{character. DESCRIPTION.}
-#'   \item{\code{PG}}{character. DESCRIPTION.}
-#'   \item{\code{SG}}{character. DESCRIPTION.}
-#'   \item{\code{SF}}{character. DESCRIPTION.}
-#'   \item{\code{PF}}{character. DESCRIPTION.}
-#'   \item{\code{C}}{character. DESCRIPTION.}
-#'   \item{\code{Minpct}}{character. DESCRIPTION.}
-#'   \item{\code{Team}}{character. DESCRIPTION.}
-#'   \item{\code{Year}}{double. DESCRIPTION.}
-#' }
-#' @keywords Depth Chart
+#' @return A data frame with the following columns:
+#'
+#'    |col_name             |types     |
+#'    |:--------------------|:---------|
+#'    |year                 |numeric   |
+#'    |team                 |character |
+#'    |min_pct              |numeric   |
+#'    |pg_number            |numeric   |
+#'    |pg_player_first_name |character |
+#'    |pg_player_last_name  |character |
+#'    |pg_hgt               |character |
+#'    |pg_wgt               |numeric   |
+#'    |pg_yr                |character |
+#'    |sg_number            |numeric   |
+#'    |sg_player_first_name |character |
+#'    |sg_player_last_name  |character |
+#'    |sg_hgt               |character |
+#'    |sg_wgt               |numeric   |
+#'    |sg_yr                |character |
+#'    |sf_number            |numeric   |
+#'    |sf_player_first_name |character |
+#'    |sf_player_last_name  |character |
+#'    |sf_hgt               |character |
+#'    |sf_wgt               |numeric   |
+#'    |sf_yr                |character |
+#'    |pf_number            |numeric   |
+#'    |pf_player_first_name |character |
+#'    |pf_player_last_name  |character |
+#'    |pf_hgt               |character |
+#'    |pf_wgt               |numeric   |
+#'    |pf_yr                |character |
+#'    |c_number             |numeric   |
+#'    |c_player_first_name  |character |
+#'    |c_player_last_name   |character |
+#'    |c_hgt                |character |
+#'    |c_wgt                |numeric   |
+#'    |c_yr                 |character |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter
 #' @importFrom glue glue
 #' @importFrom stringr str_remove str_replace str_extract
 #' @import rvest
 #' @export
+#' @keywords Depth Chart
+#' @family KenPom Team Functions
 #'
 #' @examples
 #'   \donttest{
-#'    try(kp_team_lineups(team = 'Florida St.', year = 2021))
+#'     try(kp_team_lineups(team = 'Florida St.', year = 2021))
 #'   }
 #'
 
@@ -1791,12 +2282,12 @@ kp_team_lineups <- function(team, year=2021){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }
 
-      if(!(team %in% hoopR::teams_links$Team)){
+      if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
       teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
@@ -1810,12 +2301,12 @@ kp_team_lineups <- function(team, year=2021){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      depth2_header_cols<- c("Rk","PG", "SG", "SF",
+      depth2_header_cols <- c("Rk","PG", "SG", "SF",
                              "PF", "C", "Min.Pct")
 
-      depth2<- (page %>%
+      depth2 <- (page %>%
                   xml2::read_html() %>%
-                  rvest::html_elements(css='#dc-table2'))[[1]] %>%
+                  rvest::html_elements(css = '#dc-table2'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -1828,7 +2319,7 @@ kp_team_lineups <- function(team, year=2021){
 
       depth2 <- depth2 %>%
         dplyr::mutate(
-          PG.Yr = substr(.data$PG, nchar(.data$PG)-2, nchar(.data$PG)),
+          PG.Yr = substr(.data$PG, nchar(.data$PG) - 2, nchar(.data$PG)),
           PG = substr(.data$PG, 1, nchar(.data$PG) - 3),
           PG.Wgt = stringr::str_extract(.data$PG, '\\d{3}'),
           PG = stringr::str_trim(stringr::str_remove(.data$PG, '\\d{3}')),
@@ -1921,7 +2412,7 @@ kp_team_lineups <- function(team, year=2021){
           "C.Yr")
 
       ### Store Data
-      depth2[nrow(depth2),"PG.PlayerFirstName"]<- "UNKNOWN"
+      depth2[nrow(depth2),"PG.PlayerFirstName"] <- "UNKNOWN"
       depth2[nrow(depth2),"C.Number"] <- NA_real_
       depth2[nrow(depth2),"C.Yr"] <- NA_real_
       kenpom <- depth2 %>%

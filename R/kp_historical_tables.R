@@ -2,39 +2,67 @@
 #'
 #'
 #' @param team Team filter to select.
-#' @return A data frame with 30 columns:
-#' \describe{
-#'   \item{\code{Year}}{double.}
-#'   \item{\code{Team.Rk}}{double.}
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Coach}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{W-L}}{character.}
-#'   \item{\code{AdjT}}{double.}
-#'   \item{\code{AdjO}}{double.}
-#'   \item{\code{AdjD}}{double.}
-#'   \item{\code{Off.eFG.Pct}}{double.}
-#'   \item{\code{Off.TO.Pct}}{double.}
-#'   \item{\code{Off.OR.Pct}}{double.}
-#'   \item{\code{Off.FTRate}}{double.}
-#'   \item{\code{Off.FG_2.Pct}}{double.}
-#'   \item{\code{Off.FG_3.Pct}}{double.}
-#'   \item{\code{Off.FT.Pct}}{double.}
-#'   \item{\code{Off.FG_3A.Pct}}{double.}
-#'   \item{\code{Off.A.Pct}}{double.}
-#'   \item{\code{Off.APL}}{double.}
-#'   \item{\code{Def.eFG.Pct}}{double.}
-#'   \item{\code{Def.TO.Pct}}{double.}
-#'   \item{\code{Def.OR.Pct}}{double.}
-#'   \item{\code{Def.FTRate}}{double.}
-#'   \item{\code{Def.FG_2.Pct}}{double.}
-#'   \item{\code{Def.FG_3.Pct}}{double.}
-#'   \item{\code{Def.Blk.Pct}}{double.}
-#'   \item{\code{Def.FG_3A.Pct}}{double.}
-#'   \item{\code{Def.A.Pct}}{double.}
-#'   \item{\code{Def.AP}}{double.}
-#'   \item{\code{Foul2Partic.Pct}}{double.}
-#' }
+#' @return A data frame with the following columns:
+#'
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |year               |numeric   |
+#'    |team_rk            |numeric   |
+#'    |team               |character |
+#'    |coach              |character |
+#'    |conf               |character |
+#'    |adj_t              |numeric   |
+#'    |adj_o              |numeric   |
+#'    |adj_d              |numeric   |
+#'    |off_e_fg_pct       |numeric   |
+#'    |off_to_pct         |numeric   |
+#'    |off_or_pct         |numeric   |
+#'    |off_ft_rate        |numeric   |
+#'    |off_fg_2_pct       |numeric   |
+#'    |off_fg_3_pct       |numeric   |
+#'    |off_ft_pct         |numeric   |
+#'    |off_fg_3a_pct      |numeric   |
+#'    |off_a_pct          |numeric   |
+#'    |off_apl            |numeric   |
+#'    |def_e_fg_pct       |numeric   |
+#'    |def_to_pct         |numeric   |
+#'    |def_or_pct         |numeric   |
+#'    |def_ft_rate        |numeric   |
+#'    |def_fg_2_pct       |numeric   |
+#'    |def_fg_3_pct       |numeric   |
+#'    |def_blk_pct        |numeric   |
+#'    |def_fg_3a_pct      |numeric   |
+#'    |def_a_pct          |numeric   |
+#'    |def_apl            |numeric   |
+#'    |foul2partic_pct    |numeric   |
+#'    |wl                 |character |
+#'    |wl_conf            |character |
+#'    |adj_t_rk           |numeric   |
+#'    |adj_o_rk           |numeric   |
+#'    |adj_d_rk           |numeric   |
+#'    |off_e_fg_pct_rk    |numeric   |
+#'    |off_to_pct_rk      |numeric   |
+#'    |off_or_pct_rk      |numeric   |
+#'    |off_ft_rate_rk     |numeric   |
+#'    |off_fg_2_pct_rk    |numeric   |
+#'    |off_fg_3_pct_rk    |numeric   |
+#'    |off_ft_pct_rk      |numeric   |
+#'    |off_fg_3a_pct_rk   |numeric   |
+#'    |off_a_pct_rk       |numeric   |
+#'    |off_apl_rk         |numeric   |
+#'    |def_e_fg_pct_rk    |numeric   |
+#'    |def_to_pct_rk      |numeric   |
+#'    |def_or_pct_rk      |numeric   |
+#'    |def_ft_rate_rk     |numeric   |
+#'    |def_fg_2_pct_rk    |numeric   |
+#'    |def_fg_3_pct_rk    |numeric   |
+#'    |def_blk_pct_rk     |numeric   |
+#'    |def_fg_3a_pct_rk   |numeric   |
+#'    |def_a_pct_rk       |numeric   |
+#'    |def_apl_rk         |numeric   |
+#'    |foul2partic_pct_rk |numeric   |
+#'    |team_finish        |character |
+#'    |ncaa_seed          |numeric   |
 #'
 #' @keywords Team History
 #' @importFrom cli cli_abort
@@ -43,10 +71,12 @@
 #' @importFrom stringr str_remove str_replace str_extract regex
 #' @import rvest
 #' @export
+#' @keywords Team History
+#' @family KenPom Historical Functions
 #'
 #' @examples
 #'   \donttest{
-#'     try(kp_team_history(team = 'Florida St.'))
+#'     x<-try(kp_team_history(team = 'Florida St.'))
 #'   }
 #'
 
@@ -72,17 +102,17 @@ kp_team_history <- function(team){
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
       header_cols <- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
-                      'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
-                      'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
-                      'Off.A.Pct',	'Off.APL',
-                      'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
-                      'Def.FG_2.Pct',	'Def.FG_3.Pct',
-                      'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
-                      'Def.APL',	'Foul2Partic.Pct')
+                       'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                       'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                       'Off.A.Pct',	'Off.APL',
+                       'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                       'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                       'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                       'Def.APL',	'Foul2Partic.Pct')
 
       x <- (page %>%
-             xml2::read_html() %>%
-             rvest::html_elements(css = '#player-table'))[[1]]
+              xml2::read_html() %>%
+              rvest::html_elements(css = '#player-table'))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
@@ -145,7 +175,7 @@ kp_team_history <- function(team){
           AdjD.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$AdjD, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
           Off.eFG.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.eFG.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
           Off.TO.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.TO.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
-          Off.OR.Pct.Rk = stringr::str_replace(stringr::str_extract(.data$Off.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', ""),
+          Off.OR.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.OR.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
           Off.FTRate.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FTRate, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
           Off.FG_2.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_2.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
           Off.FG_3.Pct.Rk = as.numeric(stringr::str_replace(stringr::str_extract(.data$Off.FG_3.Pct, '\\d{1,3}\\.\\d(.+)'), '(.+)\\.\\d', "")),
@@ -231,6 +261,29 @@ kp_team_history <- function(team){
           "Team.Rk",
           "Team",
           tidyr::everything())
+
+
+
+      suppressWarnings(
+        x <- x %>%
+          dplyr::mutate_at(c('Year','Team.Rk','AdjT', 'AdjO',	'AdjD',
+                             'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                             'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                             'Off.A.Pct',	'Off.APL',
+                             'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                             'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                             'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                             'Def.APL',	'Foul2Partic.Pct'
+                             # 'Off.eFG.Pct.Rk',	'Off.TO.Pct.Rk',	'Off.OR.Pct.Rk','Off.FTRate.Rk',
+                             # 'Off.FG_2.Pct.Rk',	'Off.FG_3.Pct.Rk',	'Off.FT.Pct.Rk',	'Off.FG_3A.Pct.Rk',
+                             # 'Off.A.Pct.Rk',	'Off.APL.Rk',
+                             # 'Def.eFG.Pct.Rk', 'Def.TO.Pct.Rk',	'Def.OR.Pct.Rk',	'Def.FTRate.Rk',
+                             # 'Def.FG_2.Pct.Rk',	'Def.FG_3.Pct.Rk',
+                             # 'Def.Blk.Pct.Rk',	'Def.FG_3A.Pct.Rk',	'Def.A.Pct.Rk',
+                             # 'Def.APL.Rk',	'Foul2Partic.Pct.Rk'
+          ), as.numeric)
+      )
+
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
@@ -253,45 +306,74 @@ kp_team_history <- function(team){
 #' @param coach Coach filter to select.
 #'
 #' @return A data frame with 30 columns:
-#' \describe{
-#'   \item{\code{Year}}{double.}
-#'   \item{\code{Team.Rk}}{double.}
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Coach}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{W-L}}{character.}
-#'   \item{\code{AdjT}}{double.}
-#'   \item{\code{AdjO}}{double.}
-#'   \item{\code{AdjD}}{double.}
-#'   \item{\code{Off.eFG.Pct}}{double.}
-#'   \item{\code{Off.TO.Pct}}{double.}
-#'   \item{\code{Off.OR.Pct}}{double.}
-#'   \item{\code{Off.FTRate}}{double.}
-#'   \item{\code{Off.FG_2.Pct}}{double.}
-#'   \item{\code{Off.FG_3.Pct}}{double.}
-#'   \item{\code{Off.FT.Pct}}{double.}
-#'   \item{\code{Off.FG_3A.Pct}}{double.}
-#'   \item{\code{Off.A.Pct}}{double.}
-#'   \item{\code{Off.APL}}{double.}
-#'   \item{\code{Def.eFG.Pct}}{double.}
-#'   \item{\code{Def.TO.Pct}}{double.}
-#'   \item{\code{Def.OR.Pct}}{double.}
-#'   \item{\code{Def.FTRate}}{double.}
-#'   \item{\code{Def.FG_2.Pct}}{double.}
-#'   \item{\code{Def.FG_3.Pct}}{double.}
-#'   \item{\code{Def.Blk.Pct}}{double.}
-#'   \item{\code{Def.FG_3A.Pct}}{double.}
-#'   \item{\code{Def.A.Pct}}{double.}
-#'   \item{\code{Def.AP}}{double.}
-#'   \item{\code{Foul2Partic.Pct}}{double.}
-#' }
 #'
-#' @keywords Coach History
+#'    |col_name           |types     |
+#'    |:------------------|:---------|
+#'    |year               |numeric   |
+#'    |team_rk            |numeric   |
+#'    |team               |character |
+#'    |coach              |character |
+#'    |conf               |character |
+#'    |adj_t              |character |
+#'    |adj_o              |character |
+#'    |adj_d              |character |
+#'    |off_e_fg_pct       |character |
+#'    |off_to_pct         |character |
+#'    |off_or_pct         |character |
+#'    |off_ft_rate        |character |
+#'    |off_fg_2_pct       |character |
+#'    |off_fg_3_pct       |character |
+#'    |off_ft_pct         |character |
+#'    |off_fg_3a_pct      |character |
+#'    |off_a_pct          |character |
+#'    |off_apl            |character |
+#'    |def_e_fg_pct       |character |
+#'    |def_to_pct         |character |
+#'    |def_or_pct         |character |
+#'    |def_ft_rate        |character |
+#'    |def_fg_2_pct       |character |
+#'    |def_fg_3_pct       |character |
+#'    |def_blk_pct        |character |
+#'    |def_fg_3a_pct      |character |
+#'    |def_a_pct          |character |
+#'    |def_apl            |character |
+#'    |foul2partic_pct    |character |
+#'    |wl                 |character |
+#'    |wl_conf            |character |
+#'    |adj_t_rk           |numeric   |
+#'    |adj_o_rk           |numeric   |
+#'    |adj_d_rk           |numeric   |
+#'    |off_e_fg_pct_rk    |numeric   |
+#'    |off_to_pct_rk      |numeric   |
+#'    |off_or_pct_rk      |numeric   |
+#'    |off_ft_rate_rk     |numeric   |
+#'    |off_fg_2_pct_rk    |numeric   |
+#'    |off_fg_3_pct_rk    |numeric   |
+#'    |off_ft_pct_rk      |numeric   |
+#'    |off_fg_3a_pct_rk   |numeric   |
+#'    |off_a_pct_rk       |numeric   |
+#'    |off_apl_rk         |numeric   |
+#'    |def_e_fg_pct_rk    |numeric   |
+#'    |def_to_pct_rk      |numeric   |
+#'    |def_or_pct_rk      |numeric   |
+#'    |def_ft_rate_rk     |numeric   |
+#'    |def_fg_2_pct_rk    |numeric   |
+#'    |def_fg_3_pct_rk    |numeric   |
+#'    |def_blk_pct_rk     |numeric   |
+#'    |def_fg_3a_pct_rk   |numeric   |
+#'    |def_a_pct_rk       |numeric   |
+#'    |def_apl_rk         |numeric   |
+#'    |foul2partic_pct_rk |numeric   |
+#'    |team_finish        |character |
+#'    |ncaa_seed          |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select mutate_at
 #' @importFrom tidyr everything
 #' @import rvest
 #' @export
+#' @keywords Coach History
+#' @family KenPom Historical Functions
 #'
 #' @examples
 #'   \donttest{
@@ -337,9 +419,9 @@ kp_coach_history <- function(coach){
                         xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
       conf_record_wl <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
-                                             function(x){
-                                               data.frame(x, stringsAsFactors=FALSE)
-                                             }))
+                                                function(x){
+                                                  data.frame(x, stringsAsFactors=FALSE)
+                                                }))
       conf_record_wl <- conf_record_wl %>%
         dplyr::rename("WL.Conf" = "x")
       tmrank <- conf %>%
@@ -509,31 +591,33 @@ kp_coach_history <- function(coach){
 #'
 #'
 #' @return A data frame with 17 columns:
-#' \describe{
-#'   \item{\code{Rk}}{double.}
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{Rtg}}{double.}
-#'   \item{\code{Best.Rk}}{double.}
-#'   \item{\code{Best.Yr}}{double.}
-#'   \item{\code{Worst.Rk}}{double.}
-#'   \item{\code{Worst.Yr}}{double.}
-#'   \item{\code{KP.Median}}{double.}
-#'   \item{\code{Top10}}{double.}
-#'   \item{\code{Top25}}{double.}
-#'   \item{\code{Top50}}{double.}
-#'   \item{\code{CH}}{double.}
-#'   \item{\code{F4}}{double.}
-#'   \item{\code{S16}}{double.}
-#'   \item{\code{R1}}{double.}
-#'   \item{\code{Chg}}{double.}
-#' }
 #'
-#' @keywords Program Ratings
+#'    |col_name  |types     |
+#'    |:---------|:---------|
+#'    |rk        |numeric   |
+#'    |team      |character |
+#'    |conf      |character |
+#'    |rtg       |numeric   |
+#'    |best_rk   |numeric   |
+#'    |best_yr   |numeric   |
+#'    |worst_rk  |numeric   |
+#'    |worst_yr  |numeric   |
+#'    |kp_median |numeric   |
+#'    |top10     |numeric   |
+#'    |top25     |numeric   |
+#'    |top50     |numeric   |
+#'    |ch        |numeric   |
+#'    |f4        |numeric   |
+#'    |s16       |numeric   |
+#'    |r1        |numeric   |
+#'    |chg       |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter
 #' @import rvest
 #' @export
+#' @keywords Program Ratings
+#' @family KenPom Historical Functions
 #' @examples
 #' \donttest{
 #'   try(kp_program_ratings())
@@ -596,36 +680,38 @@ kp_program_ratings <- function(){
 #' @param date Date (YYYY-MM-DD)
 #'
 #' @return A data frame with 22 columns:
-#' \describe{
-#'   \item{\code{AdjEM.Rk}}{double.}
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{AdjEM}}{double.}
-#'   \item{\code{AdjO}}{double.}
-#'   \item{\code{AdjO.Rk}}{double.}
-#'   \item{\code{AdjD}}{double.}
-#'   \item{\code{AdjD.Rk}}{double.}
-#'   \item{\code{AdjT}}{double.}
-#'   \item{\code{AdjT.Rk}}{double.}
-#'   \item{\code{Final.Rk}}{double.}
-#'   \item{\code{Final.AdjEM}}{double.}
-#'   \item{\code{Final.AdjO}}{double.}
-#'   \item{\code{Final.AdjO.Rk}}{double.}
-#'   \item{\code{Final.AdjD}}{double.}
-#'   \item{\code{Final.AdjD.Rk}}{double.}
-#'   \item{\code{Final.AdjT}}{double.}
-#'   \item{\code{Final.AdjT.Rk}}{double.}
-#'   \item{\code{Rk.Chg}}{double.}
-#'   \item{\code{EM.Chg}}{double.}
-#'   \item{\code{AdjT.Chg}}{double.}
-#'   \item{\code{NCAA_Seed}}{double.}
-#' }
 #'
-#' @keywords Ratings Archive
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |adj_em_rk      |numeric   |
+#'    |team           |character |
+#'    |conf           |character |
+#'    |adj_em         |numeric   |
+#'    |adj_o          |numeric   |
+#'    |adj_o_rk       |numeric   |
+#'    |adj_d          |numeric   |
+#'    |adj_d_rk       |numeric   |
+#'    |adj_t          |numeric   |
+#'    |adj_t_rk       |numeric   |
+#'    |final_rk       |numeric   |
+#'    |final_adj_em   |numeric   |
+#'    |final_adj_o    |numeric   |
+#'    |final_adj_o_rk |numeric   |
+#'    |final_adj_d    |numeric   |
+#'    |final_adj_d_rk |numeric   |
+#'    |final_adj_t    |numeric   |
+#'    |final_adj_t_rk |numeric   |
+#'    |rk_chg         |numeric   |
+#'    |em_chg         |numeric   |
+#'    |adj_t_chg      |numeric   |
+#'    |ncaa_seed      |numeric   |
+#'
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_remove str_trim
 #' @import rvest
 #' @export
+#' @keywords Ratings Archive
+#' @family KenPom Historical Functions
 #' @examples
 #' \donttest{
 #'   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
@@ -699,111 +785,127 @@ kp_pomeroy_archive_ratings <- function(date){
 #' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
 #' No filter applied by default.
 #'
-#' @return A list of 7 dataframes accessible via \code{[[1]]},\code{[[2]]},...,,\code{[[7]]}\cr
-#'   First data frame, accessible via \code{[[1]]}\cr
-#'   A data frame with 15 columns:
-#' \describe{
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{Overall}}{character.}
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{AdjEM}}{double.}
-#'   \item{\code{AdjEM.Rk}}{double.}
-#'   \item{\code{AdjO}}{double.}
-#'   \item{\code{AdjO.Rk}}{double.}
-#'   \item{\code{AdjD}}{double.}
-#'   \item{\code{AdjD.Rk}}{double.}
-#'   \item{\code{AdjT}}{double.}
-#'   \item{\code{AdjT.Rk}}{double.}
-#'   \item{\code{ConfSOS}}{double.}
-#'   \item{\code{ConfSOS.Rk}}{double.}
-#'   \item{\code{NextGame}}{character.}
-#'   \item{\code{Year}}{character.}
-#' }
-#' Second data frame, accessible via \code{[[2]]}\cr
-#'   A data frame with 20 columns:
-#' \describe{
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{OE}}{double.}
-#'   \item{\code{OE.Rk}}{double.}
-#'   \item{\code{eFG.Pct}}{double.}
-#'   \item{\code{eFG.Pct.Rk}}{double.}
-#'   \item{\code{TO.Pct}}{double.}
-#'   \item{\code{TO.Pct.Rk}}{double.}
-#'   \item{\code{OR.Pct}}{double.}
-#'   \item{\code{OR.Pct.Rk}}{double.}
-#'   \item{\code{FTR}}{double.}
-#'   \item{\code{FTR.Rk}}{double.}
-#'   \item{\code{FG2.Pct}}{double.}
-#'   \item{\code{FG2.Pct.Rk}}{double.}
-#'   \item{\code{FG3.Pct}}{double.}
-#'   \item{\code{FG3.Pct.Rk}}{double.}
-#'   \item{\code{FT.Pct}}{double.}
-#'   \item{\code{FT.Pct.Rk}}{double.}
-#'   \item{\code{Tempo}}{double.}
-#'   \item{\code{Tempo.Rk}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
-#' Third data frame, accessible via \code{[[3]]}\cr
-#'   A data frame with 20 columns:
-#' \describe{
-#'   \item{\code{Team}}{character.}
-#'   \item{\code{DE}}{double.}
-#'   \item{\code{DE.Rk}}{double.}
-#'   \item{\code{eFG.Pct}}{double.}
-#'   \item{\code{eFG.Pct.Rk}}{double.}
-#'   \item{\code{TO.Pct}}{double.}
-#'   \item{\code{TO.Pct.Rk}}{double.}
-#'   \item{\code{OR.Pct}}{double.}
-#'   \item{\code{OR.Pct.Rk}}{double.}
-#'   \item{\code{FTR}}{double.}
-#'   \item{\code{FTR.Rk}}{double.}
-#'   \item{\code{FG2.Pct}}{double.}
-#'   \item{\code{FG2.Pct.Rk}}{double.}
-#'   \item{\code{FG3.Pct}}{double.}
-#'   \item{\code{FG3.Pct.Rk}}{double.}
-#'   \item{\code{Blk.Pct}}{double.}
-#'   \item{\code{Blk.Pct.Rk}}{double.}
-#'   \item{\code{Stl.Pct}}{double.}
-#'   \item{\code{Stl.Pct.Rk}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
-#'   Fourth data frame, accessible via \code{[[4]]}\cr
-#'   A data frame with 3 columns:
-#' \describe{
-#'   \item{\code{Rk}}{integer.}
-#'   \item{\code{Player}}{character.}
-#'   \item{\code{Year}}{character.}
-#' }
-#'   Fifth data frame, accessible via \code{[[5]]}\cr
-#'   A data frame with 4 columns:
-#' \describe{
-#'   \item{\code{Stat}}{character.}
-#'   \item{\code{Value}}{double.}
-#'   \item{\code{Rk}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
-#'   Sixth data frame, accessible via \code{[[6]]}\cr
-#'   A data frame with 5 columns:
-#' \describe{
-#'   \item{\code{Stat}}{character.}
-#'   \item{\code{Count}}{character.}
-#'   \item{\code{Value}}{double.}
-#'   \item{\code{Rk}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
-#'   Seventh data frame, accessible via \code{[[7]]}\cr
-#'   A data frame 4 columns:
-#' \describe{
-#'   \item{\code{Rk}}{double.}
-#'   \item{\code{Conference}}{character.}
-#'   \item{\code{Rating}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
-#' @keywords Conference Stats
+#' @return A list of named data frames:
+#'
+#'    **Standings**
+#'
+#'
+#'    |col_name    |types     |
+#'    |:-----------|:---------|
+#'    |team        |character |
+#'    |overall     |character |
+#'    |conf        |character |
+#'    |adj_em      |numeric   |
+#'    |adj_em_rk   |numeric   |
+#'    |adj_o       |numeric   |
+#'    |adj_o_rk    |numeric   |
+#'    |adj_d       |numeric   |
+#'    |adj_d_rk    |numeric   |
+#'    |adj_t       |numeric   |
+#'    |adj_t_rk    |numeric   |
+#'    |conf_sos    |numeric   |
+#'    |conf_sos_rk |numeric   |
+#'    |next_game   |character |
+#'    |year        |numeric   |
+#'
+#'    **ConferencePlayOffense**
+#'
+#'
+#'    |col_name    |types     |
+#'    |:-----------|:---------|
+#'    |team        |character |
+#'    |oe          |numeric   |
+#'    |oe_rk       |numeric   |
+#'    |e_fg_pct    |numeric   |
+#'    |e_fg_pct_rk |numeric   |
+#'    |to_pct      |numeric   |
+#'    |to_pct_rk   |numeric   |
+#'    |or_pct      |numeric   |
+#'    |or_pct_rk   |numeric   |
+#'    |ft_rate     |numeric   |
+#'    |ft_rate_rk  |numeric   |
+#'    |fg_2_pct    |numeric   |
+#'    |fg_2_pct_rk |numeric   |
+#'    |fg_3_pct    |numeric   |
+#'    |fg_3_pct_rk |numeric   |
+#'    |ft_pct      |numeric   |
+#'    |ft_pct_rk   |numeric   |
+#'    |tempo       |numeric   |
+#'    |tempo_rk    |numeric   |
+#'    |year        |numeric   |
+#'
+#'    **ConferencePlayDefense**
+#'
+#'
+#'    |col_name    |types     |
+#'    |:-----------|:---------|
+#'    |team        |character |
+#'    |de          |numeric   |
+#'    |de_rk       |numeric   |
+#'    |e_fg_pct    |numeric   |
+#'    |e_fg_pct_rk |numeric   |
+#'    |to_pct      |numeric   |
+#'    |to_pct_rk   |numeric   |
+#'    |or_pct      |numeric   |
+#'    |or_pct_rk   |numeric   |
+#'    |ft_rate     |numeric   |
+#'    |ft_rate_rk  |numeric   |
+#'    |fg_2_pct    |numeric   |
+#'    |fg_2_pct_rk |numeric   |
+#'    |fg_3_pct    |numeric   |
+#'    |fg_3_pct_rk |numeric   |
+#'    |blk_pct     |numeric   |
+#'    |blk_pct_rk  |numeric   |
+#'    |stl_pct     |numeric   |
+#'    |stl_pct_rk  |numeric   |
+#'    |year        |numeric   |
+#'
+#'    **AllKenPom**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |rk       |integer   |
+#'    |player   |character |
+#'    |year     |numeric   |
+#'
+#'    **ConferenceAggregateStats**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |stat     |character |
+#'    |value    |numeric   |
+#'    |rk       |numeric   |
+#'    |year     |numeric   |
+#'
+#'    **WinningTrends**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |stat     |character |
+#'    |count    |character |
+#'    |value    |numeric   |
+#'    |rk       |numeric   |
+#'    |year     |numeric   |
+#'
+#'    **ConferenceComparison**
+#'
+#'
+#'    |col_name   |types     |
+#'    |:----------|:---------|
+#'    |rk         |numeric   |
+#'    |conference |character |
+#'    |rating     |numeric   |
+#'    |year       |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
 #' @import rvest
 #' @export
+#' @keywords Conference Stats
+#' @family KenPom Historical Functions
 #' @examples
 #' \donttest{
 #'     try(kp_conf(year = 2020, conf = 'ACC'))
@@ -818,21 +920,21 @@ kp_conf <- function(year, conf){
       header_cols <- c('Team',	'Overall',	'Conf','AdjEM','AdjEM.Rk',
                        'AdjO','AdjO.Rk',	'AdjD','AdjD.Rk',	'AdjT','AdjT.Rk',
                        'ConfSOS','ConfSOS.Rk','NextGame')
-      header_cols2<- c('Team',	'OE','OE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
-                       'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
-                       'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct','FT.Pct.Rk','Tempo','Tempo.Rk')
-      header_cols3<- c('Team',	'DE','DE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
-                       'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
-                       'FG_3.Pct', 'FG_3.Pct.Rk', 'Blk.Pct','Blk.Pct.Rk','Stl.Pct','Stl.Pct.Rk')
-      header_cols4<- c('Rk','Player')
-      header_cols5<- c('Stat','Value','Rk')
-      header_cols6<- c('Stat','Count','Value','Rk')
-      header_cols7<- c('Rk','Conference','Rating','Rk2','Conference2','Rating2')
+      header_cols2 <- c('Team',	'OE','OE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                        'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+                        'FG_3.Pct', 'FG_3.Pct.Rk', 'FT.Pct','FT.Pct.Rk','Tempo','Tempo.Rk')
+      header_cols3 <- c('Team',	'DE','DE.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
+                        'OR.Pct','OR.Pct.Rk','FTRate', 'FTRate.Rk',	'FG_2.Pct', 'FG_2.Pct.Rk',
+                        'FG_3.Pct', 'FG_3.Pct.Rk', 'Blk.Pct','Blk.Pct.Rk','Stl.Pct','Stl.Pct.Rk')
+      header_cols4 <- c('Rk','Player')
+      header_cols5 <- c('Stat','Value','Rk')
+      header_cols6 <- c('Stat','Count','Value','Rk')
+      header_cols7 <- c('Rk','Conference','Rating','Rk2','Conference2','Rating2')
 
 
 
       # Check conf parameter in teams_list$Conf names
-      if(!(conf %in% hoopR::teams_links$Conf)){
+      if (!(conf %in% hoopR::teams_links$Conf)) {
         cli::cli_abort("Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
       }
 
@@ -846,7 +948,7 @@ kp_conf <- function(year, conf){
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
       y <- list()
-      for(i in 1:7){
+      for (i in 1:7) {
 
         x <- (page %>%
                 xml2::read_html() %>%
@@ -854,20 +956,20 @@ kp_conf <- function(year, conf){
           rvest::html_table() %>%
           as.data.frame()
 
-        if(i == 1){
-          x<-x[1:(length(x)-2)]
-          if(length(colnames(x)) == length(header_cols)){
+        if (i == 1) {
+          x <- x[1:(length(x) - 2)]
+          if (length(colnames(x)) == length(header_cols)) {
             colnames(x) <- header_cols
-          }else{
+          } else {
             colnames(x) <- header_cols[-length(header_cols)]
           }
           suppressWarnings(
             x <- x %>%
-              mutate_at(c('AdjEM','AdjEM.Rk',
-                          'AdjO','AdjO.Rk',	'AdjD','AdjD.Rk',	'AdjT','AdjT.Rk',
-                          'ConfSOS','ConfSOS.Rk'),as.numeric)
+              mutate_at(c('AdjEM', 'AdjEM.Rk',
+                          'AdjO', 'AdjO.Rk', 'AdjD', 'AdjD.Rk',	'AdjT', 'AdjT.Rk',
+                          'ConfSOS', 'ConfSOS.Rk'), as.numeric)
           )
-        }else if(i == 2){
+        } else if (i == 2) {
           colnames(x) <- header_cols2
           suppressWarnings(
             x <- x %>%
@@ -878,7 +980,7 @@ kp_conf <- function(year, conf){
                 as.numeric
               )
           )
-        }else if(i == 3){
+        } else if (i == 3) {
           colnames(x) <- header_cols3
           suppressWarnings(
             x <- x %>%
@@ -889,21 +991,21 @@ kp_conf <- function(year, conf){
                 as.numeric)
           )
 
-        }else if(i == 4){
+        } else if (i == 4) {
           colnames(x) <- header_cols4
-        }else if(i == 5){
+        } else if (i == 5) {
           colnames(x) <- header_cols5
           suppressWarnings(
             x <- x %>%
               dplyr::mutate_at(c('Value','Rk'),as.numeric)
           )
-        }else if(i == 6){
+        } else if (i == 6) {
           colnames(x) <- header_cols6
           suppressWarnings(
             x <- x %>%
               dplyr::mutate_at(c('Value','Rk'),as.numeric)
           )
-        }else if(i == 7){
+        } else if (i == 7) {
           colnames(x) <- header_cols7
           w <- x[1:3]
           v <- x[4:6]
@@ -923,6 +1025,15 @@ kp_conf <- function(year, conf){
       }
 
       kenpom <- y
+      names(kenpom) <- c(
+        "Standings",
+        "ConferencePlayOffense",
+        "ConferencePlayDefense",
+        "AllKenPom",
+        "ConferenceAggregateStats",
+        "WinningTrends",
+        "ConferenceComparison"
+      )
 
     },
     error = function(e) {
@@ -942,50 +1053,52 @@ kp_conf <- function(year, conf){
 #'
 #' @param year Year (YYYY)
 #'
-#' @return A data frame with 35 columns:
-#' \itemize{
-#'   \item{\code{Conf}}{character.}
-#'   \item{\code{Eff}}{double.}
-#'   \item{\code{Eff.Rk}}{double.}
-#'   \item{\code{Tempo}}{double.}
-#'   \item{\code{Tempo.Rk}}{double.}
-#'   \item{\code{eFG.Pct}}{double.}
-#'   \item{\code{eFG.Pct.Rk}}{double.}
-#'   \item{\code{TO.Pct}}{double.}
-#'   \item{\code{TO.Pct.Rk}}{double.}
-#'   \item{\code{OR.Pct}}{double.}
-#'   \item{\code{OR.Pct.Rk}}{double.}
-#'   \item{\code{FTRate}}{double.}
-#'   \item{\code{FTRate.Rk}}{double.}
-#'   \item{\code{Blk.Pct}}{double.}
-#'   \item{\code{Blk.Pct.Rk}}{double.}
-#'   \item{\code{Stl.Pct}}{double.}
-#'   \item{\code{Stl.Pct.Rk}}{double.}
-#'   \item{\code{FG_2.Pct}}{double.}
-#'   \item{\code{FG_2.Pct.Rk}}{double.}
-#'   \item{\code{FG_3.Pct}}{double.}
-#'   \item{\code{FG_3.Pct.Rk}}{double.}
-#'   \item{\code{FT.Pct}}{double.}
-#'   \item{\code{FT.Pct.Rk}}{double.}
-#'   \item{\code{FG_3A.Pct}}{double.}
-#'   \item{\code{FG_3A.Pct.Rk}}{double.}
-#'   \item{\code{A.Pct}}{double.}
-#'   \item{\code{A.Pct.Rk}}{double.}
-#'   \item{\code{HomeWL}}{character.}
-#'   \item{\code{HomeWL.Pct}}{double.}
-#'   \item{\code{HomeWL.Rk}}{double.}
-#'   \item{\code{Close}}{double.}
-#'   \item{\code{Close.Rk}}{double.}
-#'   \item{\code{Blowouts}}{double.}
-#'   \item{\code{Blowouts.Rk}}{double.}
-#'   \item{\code{Year}}{character.}
-#' }
+#' @return A data frame with the following columns:
 #'
-#' @keywords Conference Comparison
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |conf         |character |
+#'    |eff          |numeric   |
+#'    |eff_rk       |numeric   |
+#'    |tempo        |numeric   |
+#'    |tempo_rk     |numeric   |
+#'    |e_fg_pct     |numeric   |
+#'    |e_fg_pct_rk  |numeric   |
+#'    |to_pct       |numeric   |
+#'    |to_pct_rk    |numeric   |
+#'    |or_pct       |numeric   |
+#'    |or_pct_rk    |numeric   |
+#'    |ft_rate      |numeric   |
+#'    |ft_rate_rk   |numeric   |
+#'    |blk_pct      |numeric   |
+#'    |blk_pct_rk   |numeric   |
+#'    |stl_pct      |numeric   |
+#'    |stl_pct_rk   |numeric   |
+#'    |fg_2_pct     |numeric   |
+#'    |fg_2_pct_rk  |numeric   |
+#'    |fg_3_pct     |numeric   |
+#'    |fg_3_pct_rk  |numeric   |
+#'    |ft_pct       |numeric   |
+#'    |ft_pct_rk    |numeric   |
+#'    |fg_3a_pct    |numeric   |
+#'    |fg_3a_pct_rk |numeric   |
+#'    |a_pct        |numeric   |
+#'    |a_pct_rk     |numeric   |
+#'    |home_w_l     |character |
+#'    |home_w_l_pct |numeric   |
+#'    |home_w_l_rk  |numeric   |
+#'    |close        |numeric   |
+#'    |close_rk     |numeric   |
+#'    |blowouts     |numeric   |
+#'    |blowouts_rk  |numeric   |
+#'    |year         |numeric   |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter mutate_at
 #' @import rvest
 #' @export
+#' @keywords Conference Comparison
+#' @family KenPom Historical Functions
 #'
 #' @examples
 #' \donttest{
@@ -1067,40 +1180,44 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
 #' No filter applied by default.
 #'
-#' @return A data frame with 23 columns:
-#'   - `Year`- *integer*
-#'   - `Rank`- *character*
-#'   - `Tempo`- *double*
-#'   - `Efficiency`- *double*
-#'   - `eFG.Pct`- *double*
-#'   - `TO.Pct`- *double*
-#'   - `OR.Pct`- *double*
-#'   - `FTR`- *double*
-#'   - `FG2.Pct`- *double*
-#'   - `FG3.Pct`- *double*
-#'   - `FT.Pct`- *double*
-#'   - `FG3A.Pct`- *double*
-#'   - `A.Pct`- *double*
-#'   - `Blk.Pct`- *double*
-#'   - `Stl.Pct`- *double*
-#'   - `HomeRecord`- *character*
-#'   - `Bids`- *character*
-#'   - `S16`- *character*
-#'   - `F4`- *character*
-#'   - `CH`- *character*
-#'   - `RegSeasonChamp`- *character*
-#'   - `TourneyChamp`- *character*
-#'   - `BestTeam`- *character*
+#' @return A data frame with the following columns:
 #'
-#' @keywords Conference History
+#'    |col_name         |types     |
+#'    |:----------------|:---------|
+#'    |year             |integer   |
+#'    |rank             |character |
+#'    |tempo            |numeric   |
+#'    |efficiency       |numeric   |
+#'    |e_fg_pct         |numeric   |
+#'    |to_pct           |numeric   |
+#'    |or_pct           |numeric   |
+#'    |ft_rate          |numeric   |
+#'    |fg_2_pct         |numeric   |
+#'    |fg_3_pct         |numeric   |
+#'    |ft_pct           |numeric   |
+#'    |fg_3a_pct        |numeric   |
+#'    |a_pct            |numeric   |
+#'    |blk_pct          |numeric   |
+#'    |stl_pct          |numeric   |
+#'    |home_record      |character |
+#'    |bids             |character |
+#'    |s16              |character |
+#'    |f4               |character |
+#'    |ch               |character |
+#'    |reg_season_champ |character |
+#'    |tourney_champ    |character |
+#'    |best_team        |character |
+#'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate_at
 #' @import rvest
 #' @export
+#' @keywords Conference History
+#' @family KenPom Historical Functions
 #'
 #' @examples
 #' \donttest{
-#'  try(kp_confhistory(conf = 'ACC'))
+#'   try(kp_confhistory(conf = 'ACC'))
 #' }
 
 kp_confhistory <- function(conf){

@@ -12,7 +12,63 @@ kp_team_players(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team player data
+Returns a tibble of team player data\tabular{ll}{
+   col_name \tab types \cr
+   role \tab character \cr
+   number \tab numeric \cr
+   player \tab character \cr
+   ht \tab character \cr
+   wt \tab numeric \cr
+   yr \tab character \cr
+   g \tab numeric \cr
+   s \tab numeric \cr
+   min_pct \tab numeric \cr
+   o_rtg \tab numeric \cr
+   poss_pct \tab numeric \cr
+   shots_pct \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   ts_pct \tab numeric \cr
+   or_pct \tab numeric \cr
+   dr_pct \tab numeric \cr
+   a_rate \tab numeric \cr
+   to_rate \tab numeric \cr
+   blk_pct \tab numeric \cr
+   stl_pct \tab numeric \cr
+   f_cper40 \tab numeric \cr
+   f_dper40 \tab numeric \cr
+   ft_rate \tab numeric \cr
+   ftm \tab numeric \cr
+   fta \tab numeric \cr
+   ft_pct \tab numeric \cr
+   fgm_2 \tab numeric \cr
+   fga_2 \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fgm_3 \tab numeric \cr
+   fga_3 \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   min_pct_rk \tab numeric \cr
+   o_rtg_rk \tab numeric \cr
+   poss_pct_rk \tab numeric \cr
+   shots_pct_rk \tab numeric \cr
+   e_fg_pct_rk \tab numeric \cr
+   ts_pct_rk \tab numeric \cr
+   or_pct_rk \tab numeric \cr
+   dr_pct_rk \tab numeric \cr
+   a_rate_rk \tab numeric \cr
+   to_rate_rk \tab numeric \cr
+   blk_pct_rk \tab numeric \cr
+   stl_pct_rk \tab numeric \cr
+   f_cper40_rk \tab numeric \cr
+   f_dper40_rk \tab numeric \cr
+   ft_rate_rk \tab numeric \cr
+   ft_pct_rk \tab numeric \cr
+   fg_2_pct_rk \tab numeric \cr
+   fg_3_pct_rk \tab numeric \cr
+   national_rank \tab character \cr
+   team \tab character \cr
+   year \tab numeric \cr
+   player_id \tab numeric \cr
+}
 }
 \description{
 \strong{Get KenPom's player stats from the team page}
@@ -23,6 +79,18 @@ Returns a tibble of team player data
   }
 
 }
+\seealso{
+Other KenPom Team Functions: 
+\code{\link{kp_gameplan}()},
+\code{\link{kp_minutes_matrix}()},
+\code{\link{kp_opptracker}()},
+\code{\link{kp_player_career}()},
+\code{\link{kp_team_depth_chart}()},
+\code{\link{kp_team_lineups}()},
+\code{\link{kp_team_player_stats}()},
+\code{\link{kp_team_schedule}()}
+}
+\concept{KenPom Team Functions}
 \keyword{Player}
 \keyword{Stats}
 \keyword{Team}

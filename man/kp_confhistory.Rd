@@ -22,31 +22,31 @@ you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid tab
 No filter applied by default.}
 }
 \value{
-A data frame with 23 columns:
-\itemize{
-\item \code{Year}- \emph{integer}
-\item \code{Rank}- \emph{character}
-\item \code{Tempo}- \emph{double}
-\item \code{Efficiency}- \emph{double}
-\item \code{eFG.Pct}- \emph{double}
-\item \code{TO.Pct}- \emph{double}
-\item \code{OR.Pct}- \emph{double}
-\item \code{FTR}- \emph{double}
-\item \code{FG2.Pct}- \emph{double}
-\item \code{FG3.Pct}- \emph{double}
-\item \code{FT.Pct}- \emph{double}
-\item \code{FG3A.Pct}- \emph{double}
-\item \code{A.Pct}- \emph{double}
-\item \code{Blk.Pct}- \emph{double}
-\item \code{Stl.Pct}- \emph{double}
-\item \code{HomeRecord}- \emph{character}
-\item \code{Bids}- \emph{character}
-\item \code{S16}- \emph{character}
-\item \code{F4}- \emph{character}
-\item \code{CH}- \emph{character}
-\item \code{RegSeasonChamp}- \emph{character}
-\item \code{TourneyChamp}- \emph{character}
-\item \code{BestTeam}- \emph{character}
+A data frame with the following columns:\tabular{ll}{
+   col_name \tab types \cr
+   year \tab integer \cr
+   rank \tab character \cr
+   tempo \tab numeric \cr
+   efficiency \tab numeric \cr
+   e_fg_pct \tab numeric \cr
+   to_pct \tab numeric \cr
+   or_pct \tab numeric \cr
+   ft_rate \tab numeric \cr
+   fg_2_pct \tab numeric \cr
+   fg_3_pct \tab numeric \cr
+   ft_pct \tab numeric \cr
+   fg_3a_pct \tab numeric \cr
+   a_pct \tab numeric \cr
+   blk_pct \tab numeric \cr
+   stl_pct \tab numeric \cr
+   home_record \tab character \cr
+   bids \tab character \cr
+   s16 \tab character \cr
+   f4 \tab character \cr
+   ch \tab character \cr
+   reg_season_champ \tab character \cr
+   tourney_champ \tab character \cr
+   best_team \tab character \cr
 }
 }
 \description{
@@ -54,8 +54,18 @@ A data frame with 23 columns:
 }
 \examples{
 \donttest{
- try(kp_confhistory(conf = 'ACC'))
+  try(kp_confhistory(conf = 'ACC'))
 }
 }
+\seealso{
+Other KenPom Historical Functions: 
+\code{\link{kp_coach_history}()},
+\code{\link{kp_confstats}()},
+\code{\link{kp_conf}()},
+\code{\link{kp_pomeroy_archive_ratings}()},
+\code{\link{kp_program_ratings}()},
+\code{\link{kp_team_history}()}
+}
+\concept{KenPom Historical Functions}
 \keyword{Conference}
 \keyword{History}
