@@ -162,257 +162,26 @@ No filter applied by default.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A list of 7 dataframes accessible via <code>[[1]]</code>,<code>[[2]]</code>,...,,<code>[[7]]</code><br></p>
-
-
-<p>First data frame, accessible via <code>[[1]]</code><br></p>
-
-
-<p>A data frame with 15 columns:</p><dl><dt><code>Team</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Overall</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Conf</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>AdjEM</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjEM.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjO</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjO.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjD</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjD.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjT</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AdjT.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>ConfSOS</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>ConfSOS.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>NextGame</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Second data frame, accessible via <code>[[2]]</code><br></p>
-
-
-<p>A data frame with 20 columns:</p><dl><dt><code>Team</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>OE</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OE.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>eFG.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>eFG.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>TO.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>TO.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OR.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OR.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FTR</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FTR.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG2.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG2.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG3.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG3.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FT.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FT.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Tempo</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Tempo.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Third data frame, accessible via <code>[[3]]</code><br></p>
-
-
-<p>A data frame with 20 columns:</p><dl><dt><code>Team</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>DE</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>DE.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>eFG.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>eFG.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>TO.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>TO.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OR.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OR.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FTR</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FTR.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG2.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG2.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG3.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG3.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Blk.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Blk.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Stl.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Stl.Pct.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Fourth data frame, accessible via <code>[[4]]</code><br></p>
-
-
-<p>A data frame with 3 columns:</p><dl><dt><code>Rk</code></dt>
-<dd><p>integer.</p></dd>
-
-<dt><code>Player</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Fifth data frame, accessible via <code>[[5]]</code><br></p>
-
-
-<p>A data frame with 4 columns:</p><dl><dt><code>Stat</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Value</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Sixth data frame, accessible via <code>[[6]]</code><br></p>
-
-
-<p>A data frame with 5 columns:</p><dl><dt><code>Stat</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Count</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Value</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl><p>Seventh data frame, accessible via <code>[[7]]</code><br></p>
-
-
-<p>A data frame 4 columns:</p><dl><dt><code>Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Conference</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Rating</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>character.</p></dd>
-
-
-</dl></div>
+<p>A list of named data frames:</p>
+
+
+<p><strong>Standings</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>overall</td><td>character</td></tr><tr><td>conf</td><td>character</td></tr><tr><td>adj_em</td><td>numeric</td></tr><tr><td>adj_em_rk</td><td>numeric</td></tr><tr><td>adj_o</td><td>numeric</td></tr><tr><td>adj_o_rk</td><td>numeric</td></tr><tr><td>adj_d</td><td>numeric</td></tr><tr><td>adj_d_rk</td><td>numeric</td></tr><tr><td>adj_t</td><td>numeric</td></tr><tr><td>adj_t_rk</td><td>numeric</td></tr><tr><td>conf_sos</td><td>numeric</td></tr><tr><td>conf_sos_rk</td><td>numeric</td></tr><tr><td>next_game</td><td>character</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>ConferencePlayOffense</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>oe</td><td>numeric</td></tr><tr><td>oe_rk</td><td>numeric</td></tr><tr><td>e_fg_pct</td><td>numeric</td></tr><tr><td>e_fg_pct_rk</td><td>numeric</td></tr><tr><td>to_pct</td><td>numeric</td></tr><tr><td>to_pct_rk</td><td>numeric</td></tr><tr><td>or_pct</td><td>numeric</td></tr><tr><td>or_pct_rk</td><td>numeric</td></tr><tr><td>ft_rate</td><td>numeric</td></tr><tr><td>ft_rate_rk</td><td>numeric</td></tr><tr><td>fg_2_pct</td><td>numeric</td></tr><tr><td>fg_2_pct_rk</td><td>numeric</td></tr><tr><td>fg_3_pct</td><td>numeric</td></tr><tr><td>fg_3_pct_rk</td><td>numeric</td></tr><tr><td>ft_pct</td><td>numeric</td></tr><tr><td>ft_pct_rk</td><td>numeric</td></tr><tr><td>tempo</td><td>numeric</td></tr><tr><td>tempo_rk</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>ConferencePlayDefense</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>de</td><td>numeric</td></tr><tr><td>de_rk</td><td>numeric</td></tr><tr><td>e_fg_pct</td><td>numeric</td></tr><tr><td>e_fg_pct_rk</td><td>numeric</td></tr><tr><td>to_pct</td><td>numeric</td></tr><tr><td>to_pct_rk</td><td>numeric</td></tr><tr><td>or_pct</td><td>numeric</td></tr><tr><td>or_pct_rk</td><td>numeric</td></tr><tr><td>ft_rate</td><td>numeric</td></tr><tr><td>ft_rate_rk</td><td>numeric</td></tr><tr><td>fg_2_pct</td><td>numeric</td></tr><tr><td>fg_2_pct_rk</td><td>numeric</td></tr><tr><td>fg_3_pct</td><td>numeric</td></tr><tr><td>fg_3_pct_rk</td><td>numeric</td></tr><tr><td>blk_pct</td><td>numeric</td></tr><tr><td>blk_pct_rk</td><td>numeric</td></tr><tr><td>stl_pct</td><td>numeric</td></tr><tr><td>stl_pct_rk</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>AllKenPom</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>rk</td><td>integer</td></tr><tr><td>player</td><td>character</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>ConferenceAggregateStats</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>stat</td><td>character</td></tr><tr><td>value</td><td>numeric</td></tr><tr><td>rk</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>WinningTrends</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>stat</td><td>character</td></tr><tr><td>count</td><td>character</td></tr><tr><td>value</td><td>numeric</td></tr><tr><td>rk</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>ConferenceComparison</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>rk</td><td>numeric</td></tr><tr><td>conference</td><td>character</td></tr><tr><td>rating</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Historical Functions: 
+<code><a href="kp_coach_history.html">kp_coach_history</a>()</code>,
+<code><a href="kp_confhistory.html">kp_confhistory</a>()</code>,
+<code><a href="kp_confstats.html">kp_confstats</a>()</code>,
+<code><a href="kp_pomeroy_archive_ratings.html">kp_pomeroy_archive_ratings</a>()</code>,
+<code><a href="kp_program_ratings.html">kp_program_ratings</a>()</code>,
+<code><a href="kp_team_history.html">kp_team_history</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_conf</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, conf <span class="op">=</span> <span class="st">'ACC'</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Standings</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                            team</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                Florida St. 2*</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                       Duke 3*</span>
@@ -499,7 +268,7 @@ No filter applied by default.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15                                                         &lt;NA&gt; 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 16 *Tournament seed is from the consensus at bracketmatrix.com. 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ConferencePlayOffense</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              team    oe oe_rk e_fg_pct e_fg_pct_rk to_pct to_pct_rk or_pct</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1            Duke 111.2     1     52.7           1   17.1         4   31.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2      Louisville 107.9     2     51.7           2   17.9         6   31.4</span>
@@ -549,7 +318,7 @@ No filter applied by default.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14   71.8         8  60.5       15 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15   62.9        15  68.3       10 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ConferencePlayDefense</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              team    de de_rk e_fg_pct e_fg_pct_rk to_pct to_pct_rk or_pct</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1        Virginia  87.9     1     43.3           1   17.4        10   23.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2            Duke  95.4     2     45.8           2   18.5         6   29.4</span>
@@ -599,7 +368,7 @@ No filter applied by default.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14     6.4         14    10.1          5 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15     6.3         15     6.3         15 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $AllKenPom</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rk                        player year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  1       Vernon Carey, Duke (Fr) 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  2 Jordan Nwora, Louisville (Jr) 2020</span>
@@ -607,7 +376,7 @@ No filter applied by default.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4  4  Elijah Hughes, Syracuse (Jr) 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5  5          Tre Jones, Duke (So) 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ConferenceAggregateStats</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             stat value rk year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     Efficiency 100.9 22 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2          Tempo  68.0 17 2020</span>
@@ -623,13 +392,13 @@ No filter applied by default.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 12           2P%  48.8 22 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13           FT%  72.0 11 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $WinningTrends</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  stat       count value rk year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1           Home win% (91 of 150)    NA 16 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2       Close game% ( (40 of 150)    NA  3 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3 Blowout % (&gt;19 pts) (17 of 150)    NA 24 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $ConferenceComparison</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    rk                         conference rating year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   1                 Big Ten Conference  17.49 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   2                  Big 12 Conference  15.73 2020</span>

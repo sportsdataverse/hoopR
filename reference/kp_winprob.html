@@ -156,14 +156,21 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble of game win probabilities</p>
+<p>Returns a named list of tibbles: winprob_dataset, game_data, runs</p>
+
+
+<p><strong>winprob_dataset</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>period</td><td>integer</td></tr><tr><td>wp</td><td>numeric</td></tr><tr><td>time_left</td><td>numeric</td></tr><tr><td>visitor_score</td><td>integer</td></tr><tr><td>home_score</td><td>integer</td></tr><tr><td>visitor_scoring</td><td>integer</td></tr><tr><td>home_scoring</td><td>integer</td></tr><tr><td>possession_team</td><td>character</td></tr><tr><td>possession_number</td><td>character</td></tr><tr><td>game_id</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table><p><strong>game_data</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>character</td></tr><tr><td>year</td><td>integer</td></tr><tr><td>full_date</td><td>character</td></tr><tr><td>date</td><td>character</td></tr><tr><td>game_time</td><td>character</td></tr><tr><td>venue</td><td>character</td></tr><tr><td>city</td><td>character</td></tr><tr><td>team1</td><td>character</td></tr><tr><td>team1score</td><td>integer</td></tr><tr><td>team1_rk</td><td>character</td></tr><tr><td>team2</td><td>character</td></tr><tr><td>team2score</td><td>integer</td></tr><tr><td>team2_rk</td><td>character</td></tr><tr><td>dominance_season_rk</td><td>character</td></tr><tr><td>tension_season_rk</td><td>character</td></tr><tr><td>excitement_season_rk</td><td>character</td></tr><tr><td>lead_changes_season_rk</td><td>character</td></tr><tr><td>minimum_wp_season_rk</td><td>character</td></tr><tr><td>dominance_rk</td><td>character</td></tr><tr><td>tension_rk</td><td>character</td></tr><tr><td>excitement_rk</td><td>character</td></tr><tr><td>lead_changes_rk</td><td>character</td></tr><tr><td>minimum_wp_rk</td><td>character</td></tr><tr><td>dominance</td><td>character</td></tr><tr><td>tension</td><td>character</td></tr><tr><td>excitement</td><td>character</td></tr><tr><td>favchg</td><td>character</td></tr><tr><td>min_wp</td><td>character</td></tr></table><p><strong>runs</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>start</td><td>numeric</td></tr><tr><td>end</td><td>numeric</td></tr><tr><td>visitor</td><td>integer</td></tr><tr><td>home</td><td>integer</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Boxscore Functions: 
+<code><a href="kp_box.html">kp_box</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_winprob</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">1238</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $winprob_dataset</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     period     wp time_left visitor_score home_score visitor_scoring</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1        1 0.5264     40.00             0          0               0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2        1 0.5529     39.63             2          0               1</span>
@@ -447,7 +454,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 139            0               V                69    1238 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 140            1               H                70    1238 2020</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $game_data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   game_id year                 full_date       date game_time</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1238 2020 Friday, November 29, 2019 2019-11-29   7:00 PM</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        venue          city       team1 team1score team1_rk</span>
@@ -461,7 +468,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>   excitement favchg min_wp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       1.07      0 0.5264</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $runs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   start   end visitor home</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 39.63 34.25      14    2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

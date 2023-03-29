@@ -156,40 +156,24 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A data frame with 9 columns:</p><dl><dt><code>Rk</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>PG</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>SG</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>SF</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>PF</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>C</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>Minpct</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>Team</code></dt>
-<dd><p>character. DESCRIPTION.</p></dd>
-
-<dt><code>Year</code></dt>
-<dd><p>double. DESCRIPTION.</p></dd>
-
-
-</dl></div>
+<p>A data frame with the following columns:</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>year</td><td>numeric</td></tr><tr><td>team</td><td>character</td></tr><tr><td>min_pct</td><td>numeric</td></tr><tr><td>pg_number</td><td>numeric</td></tr><tr><td>pg_player_first_name</td><td>character</td></tr><tr><td>pg_player_last_name</td><td>character</td></tr><tr><td>pg_hgt</td><td>character</td></tr><tr><td>pg_wgt</td><td>numeric</td></tr><tr><td>pg_yr</td><td>character</td></tr><tr><td>sg_number</td><td>numeric</td></tr><tr><td>sg_player_first_name</td><td>character</td></tr><tr><td>sg_player_last_name</td><td>character</td></tr><tr><td>sg_hgt</td><td>character</td></tr><tr><td>sg_wgt</td><td>numeric</td></tr><tr><td>sg_yr</td><td>character</td></tr><tr><td>sf_number</td><td>numeric</td></tr><tr><td>sf_player_first_name</td><td>character</td></tr><tr><td>sf_player_last_name</td><td>character</td></tr><tr><td>sf_hgt</td><td>character</td></tr><tr><td>sf_wgt</td><td>numeric</td></tr><tr><td>sf_yr</td><td>character</td></tr><tr><td>pf_number</td><td>numeric</td></tr><tr><td>pf_player_first_name</td><td>character</td></tr><tr><td>pf_player_last_name</td><td>character</td></tr><tr><td>pf_hgt</td><td>character</td></tr><tr><td>pf_wgt</td><td>numeric</td></tr><tr><td>pf_yr</td><td>character</td></tr><tr><td>c_number</td><td>numeric</td></tr><tr><td>c_player_first_name</td><td>character</td></tr><tr><td>c_player_last_name</td><td>character</td></tr><tr><td>c_hgt</td><td>character</td></tr><tr><td>c_wgt</td><td>numeric</td></tr><tr><td>c_yr</td><td>character</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Team Functions: 
+<code><a href="kp_gameplan.html">kp_gameplan</a>()</code>,
+<code><a href="kp_minutes_matrix.html">kp_minutes_matrix</a>()</code>,
+<code><a href="kp_opptracker.html">kp_opptracker</a>()</code>,
+<code><a href="kp_player_career.html">kp_player_career</a>()</code>,
+<code><a href="kp_team_depth_chart.html">kp_team_depth_chart</a>()</code>,
+<code><a href="kp_team_player_stats.html">kp_team_player_stats</a>()</code>,
+<code><a href="kp_team_players.html">kp_team_players</a>()</code>,
+<code><a href="kp_team_schedule.html">kp_team_schedule</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_lineups</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_lineups</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    year        team min_pct pg_number pg_player_first_name pg_player_last_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  2021 Florida St.   0.131        23                   MJ              Walker</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  2021 Florida St.   0.110        23                   MJ              Walker</span>

@@ -146,55 +146,22 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A data frame with 14 columns:</p><dl><dt><code>Team</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>Conf</code></dt>
-<dd><p>character.</p></dd>
-
-<dt><code>HCA</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>HCA.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>PF</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>PF.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Pts</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Pts.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>NST</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>NST.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Blk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Blk.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Elev</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Elev.Rk</code></dt>
-<dd><p>double.</p></dd>
-
-
-</dl></div>
+<p>A data frame with the following columns:</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>conf</td><td>character</td></tr><tr><td>hca</td><td>numeric</td></tr><tr><td>hca_rk</td><td>numeric</td></tr><tr><td>pf</td><td>numeric</td></tr><tr><td>pf_rk</td><td>numeric</td></tr><tr><td>pts</td><td>numeric</td></tr><tr><td>pts_rk</td><td>numeric</td></tr><tr><td>nst</td><td>numeric</td></tr><tr><td>nst_rk</td><td>numeric</td></tr><tr><td>blk</td><td>numeric</td></tr><tr><td>blk_rk</td><td>numeric</td></tr><tr><td>elev</td><td>numeric</td></tr><tr><td>elev_rk</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KP Misc. Functions: 
+<code><a href="kp_arenas.html">kp_arenas</a>()</code>,
+<code><a href="kp_fanmatch.html">kp_fanmatch</a>()</code>,
+<code><a href="kp_game_attrs.html">kp_game_attrs</a>()</code>,
+<code><a href="kp_officials.html">kp_officials</a>()</code>,
+<code><a href="kp_referee.html">kp_referee</a>()</code>,
+<code><a href="kp_trends.html">kp_trends</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_hca</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_hca</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       team conf hca hca_rk   pf pf_rk  pts pts_rk  nst nst_rk</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1            West Virginia  B12 4.6      1 -4.5    18 12.2      2 -2.7      3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2               Texas Tech  B12 4.6      2 -5.3     3 10.3     20 -1.8     21</span>

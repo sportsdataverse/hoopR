@@ -156,14 +156,28 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble of team game plans</p>
+<p>Returns a named list of tibbles: gameplan, correlations, position_distributions</p>
+
+
+<p><strong>gameplan</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>date</td><td>Date</td></tr><tr><td>opponent_rk</td><td>numeric</td></tr><tr><td>opponent</td><td>character</td></tr><tr><td>result</td><td>character</td></tr><tr><td>location</td><td>character</td></tr><tr><td>pace</td><td>numeric</td></tr><tr><td>off_eff</td><td>numeric</td></tr><tr><td>off_eff_rk</td><td>numeric</td></tr><tr><td>off_e_fg_pct</td><td>numeric</td></tr><tr><td>off_to_pct</td><td>numeric</td></tr><tr><td>off_or_pct</td><td>numeric</td></tr><tr><td>off_ftr</td><td>numeric</td></tr><tr><td>off_fgm_2</td><td>numeric</td></tr><tr><td>off_fga_2</td><td>numeric</td></tr><tr><td>off_fg_2_pct</td><td>numeric</td></tr><tr><td>off_fgm_3</td><td>numeric</td></tr><tr><td>off_fga_3</td><td>numeric</td></tr><tr><td>off_fg_3_pct</td><td>numeric</td></tr><tr><td>off_fg_3a_pct</td><td>numeric</td></tr><tr><td>def_eff</td><td>numeric</td></tr><tr><td>def_eff_rk</td><td>numeric</td></tr><tr><td>def_e_fg_pct</td><td>numeric</td></tr><tr><td>def_to_pct</td><td>numeric</td></tr><tr><td>def_or_pct</td><td>numeric</td></tr><tr><td>def_ftr</td><td>numeric</td></tr><tr><td>def_fgm_2</td><td>numeric</td></tr><tr><td>def_fga_2</td><td>numeric</td></tr><tr><td>def_fg_2_pct</td><td>numeric</td></tr><tr><td>def_fgm_3</td><td>numeric</td></tr><tr><td>def_fga_3</td><td>numeric</td></tr><tr><td>def_fg_3_pct</td><td>numeric</td></tr><tr><td>def_fg_3a_pct</td><td>numeric</td></tr><tr><td>wl</td><td>character</td></tr><tr><td>team_score</td><td>numeric</td></tr><tr><td>opponent_score</td><td>numeric</td></tr><tr><td>day_date</td><td>character</td></tr><tr><td>game_date</td><td>numeric</td></tr></table><p><strong>correlations</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>correlations_r_x_100</td><td>character</td></tr><tr><td>pace</td><td>character</td></tr><tr><td>off_e_fg_pct</td><td>character</td></tr><tr><td>off_to_pct</td><td>character</td></tr><tr><td>off_or_pct</td><td>character</td></tr><tr><td>off_ftr</td><td>character</td></tr><tr><td>def_e_fg_pct</td><td>character</td></tr><tr><td>def_to_pct</td><td>character</td></tr><tr><td>def_or_pct</td><td>character</td></tr><tr><td>def_ftr</td><td>character</td></tr></table><p><strong>position_distributions</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>category</td><td>character</td></tr><tr><td>c_pct</td><td>numeric</td></tr><tr><td>pf_pct</td><td>numeric</td></tr><tr><td>sf_pct</td><td>numeric</td></tr><tr><td>sg_pct</td><td>numeric</td></tr><tr><td>pg_pct</td><td>numeric</td></tr><tr><td>c_pct_rk</td><td>numeric</td></tr><tr><td>pf_pct_rk</td><td>numeric</td></tr><tr><td>sf_pct_rk</td><td>numeric</td></tr><tr><td>sg_pct_rk</td><td>numeric</td></tr><tr><td>pg_pct_rk</td><td>numeric</td></tr><tr><td>c_pct_d1_avg</td><td>numeric</td></tr><tr><td>pf_pct_d1_avg</td><td>numeric</td></tr><tr><td>sf_pct_d1_avg</td><td>numeric</td></tr><tr><td>sg_pct_d1_avg</td><td>numeric</td></tr><tr><td>pg_pct_d1_avg</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Team Functions: 
+<code><a href="kp_minutes_matrix.html">kp_minutes_matrix</a>()</code>,
+<code><a href="kp_opptracker.html">kp_opptracker</a>()</code>,
+<code><a href="kp_player_career.html">kp_player_career</a>()</code>,
+<code><a href="kp_team_depth_chart.html">kp_team_depth_chart</a>()</code>,
+<code><a href="kp_team_lineups.html">kp_team_lineups</a>()</code>,
+<code><a href="kp_team_player_stats.html">kp_team_player_stats</a>()</code>,
+<code><a href="kp_team_players.html">kp_team_players</a>()</code>,
+<code><a href="kp_team_schedule.html">kp_team_schedule</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_gameplan</span><span class="op">(</span>team<span class="op">=</span><span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_gameplan</span><span class="op">(</span>team<span class="op">=</span><span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $gameplan</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          date opponent_rk       opponent    result location pace off_eff</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020-12-02         297  North Florida  W, 86-58        H   72   118.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  2020-12-09          50        Indiana  W, 69-67        H   62    99.1</span>
@@ -321,7 +335,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 24             53 Mon Mar 22  20210322</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 25             76 Sun Mar 28  20210328</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $correlations</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        correlations_r_x_100 pace off_e_fg_pct off_to_pct off_or_pct off_ftr</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 27 to offensive efficiency:  -28          +84        -44        +16     -15</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 28 to defensive efficiency:   -2           +7        +13         +3      +0</span>
@@ -329,7 +343,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 27          +30         +4        -34     -61</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 28          +57        -48        +30     +46</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $position_distributions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          team   category c_pct pf_pct sf_pct sg_pct pg_pct c_pct_rk pf_pct_rk</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 Florida St.   % Points  20.2   19.1   21.8   20.8   18.1      169       188</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 Florida St. % Off Rebs  35.7   21.3   18.5   15.5    9.0      173       279</span>

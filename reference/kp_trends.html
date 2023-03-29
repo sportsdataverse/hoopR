@@ -146,70 +146,22 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>A data frame with 19 columns:</p><dl><dt><code>Season</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Efficiency</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Tempo</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>eFG.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>TO.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>OR.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FTRate</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG_2.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG_3.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FG_3A.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>FT.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>A.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Blk.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Stl.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>NonStl.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>AvgHgt</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>Continuity</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>HomeWin.Pct</code></dt>
-<dd><p>double.</p></dd>
-
-<dt><code>PPG</code></dt>
-<dd><p>double.</p></dd>
-
-
-</dl></div>
+<p>A data frame with the following columns:</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>season</td><td>numeric</td></tr><tr><td>efficiency</td><td>numeric</td></tr><tr><td>tempo</td><td>numeric</td></tr><tr><td>e_fg_pct</td><td>numeric</td></tr><tr><td>to_pct</td><td>numeric</td></tr><tr><td>or_pct</td><td>numeric</td></tr><tr><td>ft_rate</td><td>numeric</td></tr><tr><td>fg_2_pct</td><td>numeric</td></tr><tr><td>fg_3_pct</td><td>numeric</td></tr><tr><td>fg_3a_pct</td><td>numeric</td></tr><tr><td>ft_pct</td><td>numeric</td></tr><tr><td>a_pct</td><td>numeric</td></tr><tr><td>blk_pct</td><td>numeric</td></tr><tr><td>stl_pct</td><td>numeric</td></tr><tr><td>non_stl_pct</td><td>numeric</td></tr><tr><td>avg_hgt</td><td>numeric</td></tr><tr><td>continuity</td><td>numeric</td></tr><tr><td>home_win_pct</td><td>numeric</td></tr><tr><td>ppg</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KP Misc. Functions: 
+<code><a href="kp_arenas.html">kp_arenas</a>()</code>,
+<code><a href="kp_fanmatch.html">kp_fanmatch</a>()</code>,
+<code><a href="kp_game_attrs.html">kp_game_attrs</a>()</code>,
+<code><a href="kp_hca.html">kp_hca</a>()</code>,
+<code><a href="kp_officials.html">kp_officials</a>()</code>,
+<code><a href="kp_referee.html">kp_referee</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_trends</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_trends</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season efficiency tempo e_fg_pct to_pct or_pct ft_rate fg_2_pct fg_3_pct</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    2023      103.2  67.9     50.4   18.2   28.5    31.5     50.1     34.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2022      102.0  68.1     50.0   18.4   28.1    30.3     49.7     33.6</span>

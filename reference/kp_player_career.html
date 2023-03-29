@@ -152,14 +152,28 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble of team player career stats</p>
+<p>Returns a named list of tibbles: player_stats, gamelog</p>
+
+
+<p><strong>player_stats</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>year</td><td>numeric</td></tr><tr><td>team_rk</td><td>numeric</td></tr><tr><td>team</td><td>character</td></tr><tr><td>number</td><td>numeric</td></tr><tr><td>name</td><td>character</td></tr><tr><td>position</td><td>character</td></tr><tr><td>hgt</td><td>character</td></tr><tr><td>wgt</td><td>numeric</td></tr><tr><td>yr</td><td>character</td></tr><tr><td>g</td><td>numeric</td></tr><tr><td>min_pct</td><td>numeric</td></tr><tr><td>o_rtg</td><td>numeric</td></tr><tr><td>poss_pct</td><td>numeric</td></tr><tr><td>shots_pct</td><td>numeric</td></tr><tr><td>e_fg_pct</td><td>numeric</td></tr><tr><td>ts_pct</td><td>numeric</td></tr><tr><td>or_pct</td><td>numeric</td></tr><tr><td>dr_pct</td><td>numeric</td></tr><tr><td>a_rate</td><td>numeric</td></tr><tr><td>to_rate</td><td>numeric</td></tr><tr><td>blk_pct</td><td>numeric</td></tr><tr><td>stl_pct</td><td>numeric</td></tr><tr><td>f_cper40</td><td>numeric</td></tr><tr><td>f_dper40</td><td>numeric</td></tr><tr><td>ft_rate</td><td>numeric</td></tr><tr><td>ftm</td><td>numeric</td></tr><tr><td>fta</td><td>numeric</td></tr><tr><td>ft_pct</td><td>numeric</td></tr><tr><td>fgm_2</td><td>numeric</td></tr><tr><td>fga_2</td><td>numeric</td></tr><tr><td>fg_2_pct</td><td>numeric</td></tr><tr><td>fgm_3</td><td>numeric</td></tr><tr><td>fga_3</td><td>numeric</td></tr><tr><td>fg_3_pct</td><td>numeric</td></tr><tr><td>group_rank</td><td>character</td></tr><tr><td>team_finish</td><td>character</td></tr><tr><td>ncaa_seed</td><td>numeric</td></tr><tr><td>hometown</td><td>character</td></tr><tr><td>date_of_birth</td><td>character</td></tr><tr><td>age</td><td>character</td></tr><tr><td>comparisons</td><td>character</td></tr></table><p><strong>gamelog</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>year</td><td>numeric</td></tr><tr><td>team</td><td>character</td></tr><tr><td>name</td><td>character</td></tr><tr><td>position</td><td>character</td></tr><tr><td>opponent_tier</td><td>logical</td></tr><tr><td>date</td><td>character</td></tr><tr><td>opponent_rk</td><td>numeric</td></tr><tr><td>opponent</td><td>character</td></tr><tr><td>result</td><td>character</td></tr><tr><td>ot</td><td>character</td></tr><tr><td>location</td><td>character</td></tr><tr><td>game_type</td><td>character</td></tr><tr><td>mvp</td><td>character</td></tr><tr><td>start</td><td>character</td></tr><tr><td>minutes_played</td><td>numeric</td></tr><tr><td>o_rtg</td><td>numeric</td></tr><tr><td>poss_pct</td><td>numeric</td></tr><tr><td>pts</td><td>numeric</td></tr><tr><td>fgm_2</td><td>numeric</td></tr><tr><td>fga_2</td><td>numeric</td></tr><tr><td>fgm_3</td><td>numeric</td></tr><tr><td>fga_3</td><td>numeric</td></tr><tr><td>ftm</td><td>numeric</td></tr><tr><td>fta</td><td>numeric</td></tr><tr><td>or</td><td>numeric</td></tr><tr><td>dr</td><td>numeric</td></tr><tr><td>a</td><td>numeric</td></tr><tr><td>to</td><td>numeric</td></tr><tr><td>blk</td><td>numeric</td></tr><tr><td>stl</td><td>numeric</td></tr><tr><td>pf</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Team Functions: 
+<code><a href="kp_gameplan.html">kp_gameplan</a>()</code>,
+<code><a href="kp_minutes_matrix.html">kp_minutes_matrix</a>()</code>,
+<code><a href="kp_opptracker.html">kp_opptracker</a>()</code>,
+<code><a href="kp_team_depth_chart.html">kp_team_depth_chart</a>()</code>,
+<code><a href="kp_team_lineups.html">kp_team_lineups</a>()</code>,
+<code><a href="kp_team_player_stats.html">kp_team_player_stats</a>()</code>,
+<code><a href="kp_team_players.html">kp_team_players</a>()</code>,
+<code><a href="kp_team_schedule.html">kp_team_schedule</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_player_career</span><span class="op">(</span>player_id <span class="op">=</span> <span class="st">'41180'</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $player_stats</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 41</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     year team_rk team      number name  position hgt     wgt yr        g min_pct</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -190,7 +204,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fg_3_pct &lt;dbl&gt;, group_rank &lt;chr&gt;, team_finish &lt;chr&gt;, ncaa_seed &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   hometown &lt;chr&gt;, date_of_birth &lt;chr&gt;, age &lt;chr&gt;, comparisons &lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $gamelog</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     year        team          name position opponent_tier   date opponent_rk</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   2022 Florida St. Malik Osborne     C·PF            NA  Mar 9          69</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   2022 Florida St. Malik Osborne     C·PF            NA  Mar 5         128</span>

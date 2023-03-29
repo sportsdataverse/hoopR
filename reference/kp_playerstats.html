@@ -180,13 +180,24 @@ Only available if specific conference is defined. Only available for season afte
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble of player stats</p>
+<p>Returns a tibble of player stats</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>rk</td><td>character</td></tr><tr><td>player</td><td>character</td></tr><tr><td>team</td><td>character</td></tr><tr><td>e_fg</td><td>character</td></tr><tr><td>hgt</td><td>character</td></tr><tr><td>wgt</td><td>character</td></tr><tr><td>yr</td><td>character</td></tr><tr><td>year</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Ratings Functions: 
+<code><a href="kp_efficiency.html">kp_efficiency</a>()</code>,
+<code><a href="kp_foul_trouble.html">kp_foul_trouble</a>()</code>,
+<code><a href="kp_fourfactors.html">kp_fourfactors</a>()</code>,
+<code><a href="kp_height.html">kp_height</a>()</code>,
+<code><a href="kp_kpoy.html">kp_kpoy</a>()</code>,
+<code><a href="kp_pointdist.html">kp_pointdist</a>()</code>,
+<code><a href="kp_pomeroy_ratings.html">kp_pomeroy_ratings</a>()</code>,
+<code><a href="kp_teamstats.html">kp_teamstats</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_playerstats</span><span class="op">(</span>metric <span class="op">=</span> <span class="st">'eFG'</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year<span class="op">=</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_playerstats</span><span class="op">(</span>metric <span class="op">=</span> <span class="st">'eFG'</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year<span class="op">=</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     rk                 player                   team e_fg  hgt wgt yr year</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1             Aher Uguak         Loyola Chicago 69.8  6-7 225 Sr 2021</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    1         Osinachi Smart             Charleston 66.7  6-8 240 Sr 2021</span>

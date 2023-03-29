@@ -158,13 +158,22 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble with game attributes</p>
+<p>Returns a tibble with game attributes</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>rk</td><td>integer</td></tr><tr><td>data</td><td>character</td></tr><tr><td>game</td><td>character</td></tr><tr><td>location</td><td>character</td></tr><tr><td>conf</td><td>character</td></tr><tr><td>excitement</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KP Misc. Functions: 
+<code><a href="kp_arenas.html">kp_arenas</a>()</code>,
+<code><a href="kp_fanmatch.html">kp_fanmatch</a>()</code>,
+<code><a href="kp_hca.html">kp_hca</a>()</code>,
+<code><a href="kp_officials.html">kp_officials</a>()</code>,
+<code><a href="kp_referee.html">kp_referee</a>()</code>,
+<code><a href="kp_trends.html">kp_trends</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_game_attrs</span><span class="op">(</span>year<span class="op">=</span><span class="fl">2021</span>, attr <span class="op">=</span> <span class="st">"Excitement"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_game_attrs</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2021</span>, attr <span class="op">=</span> <span class="st">"Excitement"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      rk       data                                                         game</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 Wed Nov 25               108 Georgia St. 123, 72 Georgia Tech 120 (4OT)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     2  Sun Dec 6          184 Western Carolina 76, 321 Tennessee Tech 75 (OT)</span>

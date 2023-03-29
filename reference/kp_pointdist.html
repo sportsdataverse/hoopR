@@ -156,14 +156,25 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a tibble of team points distributions</p>
+<p>Returns a tibble of team points distributions</p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>team</td><td>character</td></tr><tr><td>conf</td><td>character</td></tr><tr><td>off_ft_pct</td><td>numeric</td></tr><tr><td>off_ft_pct_rk</td><td>numeric</td></tr><tr><td>off_fg_2_pct</td><td>numeric</td></tr><tr><td>off_fg_2_pct_rk</td><td>numeric</td></tr><tr><td>off_fg_3_pct</td><td>numeric</td></tr><tr><td>off_fg_3_pct_rk</td><td>numeric</td></tr><tr><td>def_ft_pct</td><td>numeric</td></tr><tr><td>def_ft_pct_rk</td><td>numeric</td></tr><tr><td>def_fg_2_pct</td><td>numeric</td></tr><tr><td>def_fg_2_pct_rk</td><td>numeric</td></tr><tr><td>def_fg_3_pct</td><td>numeric</td></tr><tr><td>def_fg_3_pct_rk</td><td>numeric</td></tr><tr><td>ncaa_seed</td><td>numeric</td></tr><tr><td>year</td><td>numeric</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other KenPom Ratings Functions: 
+<code><a href="kp_efficiency.html">kp_efficiency</a>()</code>,
+<code><a href="kp_foul_trouble.html">kp_foul_trouble</a>()</code>,
+<code><a href="kp_fourfactors.html">kp_fourfactors</a>()</code>,
+<code><a href="kp_height.html">kp_height</a>()</code>,
+<code><a href="kp_kpoy.html">kp_kpoy</a>()</code>,
+<code><a href="kp_playerstats.html">kp_playerstats</a>()</code>,
+<code><a href="kp_pomeroy_ratings.html">kp_pomeroy_ratings</a>()</code>,
+<code><a href="kp_teamstats.html">kp_teamstats</a>()</code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_pointdist</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-03-28 15:27:36: Invalid arguments or no point distribution data for 2020 - 2021 available!</span>
+<span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_pointdist</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-03-29 16:56:36: Invalid arguments or no point distribution data for 2020 - 2021 available!</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                       Team Conf Off.FT.Pct Off.FT.Pct.Rk Off.FG_2.Pct</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1             Arkansas St.   SB       26.2             1         48.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2              Chicago St.  WAC       25.2             2         47.8</span>
