@@ -13,5 +13,5 @@ test_that("KP - Get trends", {
 
 
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 })

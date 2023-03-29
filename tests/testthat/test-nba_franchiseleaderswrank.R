@@ -2,7 +2,7 @@ test_that("NBA Franchise Leaders with Rank", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_franchiseleaderswrank(league_id = '00', team_id = '1610612739')
+  x <- nba_franchiseleaderswrank(league_id = "00", team_id = "1610612739")
 
   cols_x1 <- c(
     "LEAGUE_ID",
@@ -56,7 +56,7 @@ test_that("NBA Franchise Leaders with Rank", {
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)
 

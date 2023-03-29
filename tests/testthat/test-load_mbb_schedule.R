@@ -79,6 +79,6 @@ test_that("hoopR Loader MBB Schedule", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

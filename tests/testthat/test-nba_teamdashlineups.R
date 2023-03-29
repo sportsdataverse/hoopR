@@ -2,7 +2,7 @@ test_that("NBA Team Dashboard Lineups", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_teamdashlineups(team_id = '1610612749',
+  x <- nba_teamdashlineups(team_id = "1610612749",
                            season = year_to_season(most_recent_nba_season() - 1))
 
   cols_x1 <- c(
@@ -124,9 +124,9 @@ test_that("NBA Team Dashboard Lineups", {
   )
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
 
   Sys.sleep(3)
 

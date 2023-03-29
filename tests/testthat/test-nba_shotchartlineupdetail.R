@@ -2,7 +2,7 @@ test_that("NBA Shot Chart Lineup Detail", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_shotchartlineupdetail(group_id = '-202689-203493-203501-1626174-1627827-',
+  x <- nba_shotchartlineupdetail(group_id = "-202689-203493-203501-1626174-1627827-",
                                  season = year_to_season(most_recent_nba_season() - 1))
 
 
@@ -46,9 +46,9 @@ test_that("NBA Shot Chart Lineup Detail", {
   )
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
 
   Sys.sleep(3)
 

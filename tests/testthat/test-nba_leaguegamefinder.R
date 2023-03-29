@@ -2,7 +2,7 @@ test_that("NBA League Game Finder", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_leaguegamefinder(league_id = '00')
+  x <- nba_leaguegamefinder(league_id = "00")
 
   cols_x1 <- c(
     "SEASON_ID",
@@ -37,7 +37,7 @@ test_that("NBA League Game Finder", {
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)
 

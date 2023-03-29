@@ -42,6 +42,6 @@ test_that("hoopR Loader NBA Player Box", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

@@ -1,4 +1,4 @@
-test_that("NBA Today's Scoreboard", {
+test_that("NBA Todays Scoreboard", {
   skip_on_cran()
   skip_on_ci()
 
@@ -67,7 +67,7 @@ test_that("NBA Today's Scoreboard", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols_x1))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)
 

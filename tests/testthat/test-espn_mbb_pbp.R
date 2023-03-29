@@ -52,7 +52,7 @@ test_that("ESPN - Get MBB play by play only (no coordinate data)", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })
 
@@ -115,6 +115,6 @@ test_that("ESPN - Get MBB play by play only (with coordinate data)", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

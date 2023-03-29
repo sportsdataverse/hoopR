@@ -118,7 +118,7 @@ kp_officials <- function(year = most_recent_mbb_season()){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2016)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2016)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2016")
       }
@@ -205,7 +205,7 @@ kp_referee <- function(referee, year){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2016)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2016)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2016")
       }
@@ -366,7 +366,7 @@ kp_arenas <- function(year=most_recent_mbb_season()){
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }

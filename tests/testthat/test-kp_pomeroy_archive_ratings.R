@@ -2,7 +2,7 @@ test_that("KP - Get pomeroy archive ratings", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_pomeroy_archive_ratings(date = '2018-11-22')
+  x <- kp_pomeroy_archive_ratings(date = "2018-11-22")
 
 
   cols <- c(

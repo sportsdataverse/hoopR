@@ -70,8 +70,8 @@
 #     "PIE"
 #   )
 #   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-#   expect_s3_class(x[[1]], 'data.frame')
+#   expect_s3_class(x[[1]], "data.frame")
 #   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-#   expect_s3_class(x[[2]], 'data.frame')
+#   expect_s3_class(x[[2]], "data.frame")
 #
 # })

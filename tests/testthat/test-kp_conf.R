@@ -2,7 +2,7 @@ test_that("KP - Get conference (leaderboard)", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_conf(year='2020',conf='ACC')
+  x <- kp_conf(year="2020",conf="ACC")
 
   x1 <- x[[1]]
   x2 <- x[[2]]
@@ -74,28 +74,28 @@ test_that("KP - Get conference (leaderboard)", {
     "year"
   )
   cols_x4 <- c(
-    'rk',
-    'player',
-    'year'
+    "rk",
+    "player",
+    "year"
   )
   cols_x5 <- c(
-    'stat',
-    'value',
-    'rk',
-    'year'
+    "stat",
+    "value",
+    "rk",
+    "year"
   )
   cols_x6 <- c(
-    'stat',
-    'count',
-    'value',
-    'rk',
-    'year'
+    "stat",
+    "count",
+    "value",
+    "rk",
+    "year"
   )
   cols_x7 <- c(
-    'rk',
-    'conference',
-    'rating',
-    'year'
+    "rk",
+    "conference",
+    "rating",
+    "year"
   )
 
   expect_equal(colnames(x1), cols_x1)

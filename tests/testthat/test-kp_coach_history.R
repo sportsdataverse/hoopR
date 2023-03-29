@@ -3,11 +3,11 @@ test_that("KP - Get coach history", {
   skip_on_ci()
 
   x <- kp_coach_history(
-    coach = 'Leonard Hamilton'
+    coach = "Leonard Hamilton"
   )
 
   y <- kp_coach_history(
-    coach = 'Mike Krzyzewski'
+    coach = "Mike Krzyzewski"
   )
 
   cols <- c(

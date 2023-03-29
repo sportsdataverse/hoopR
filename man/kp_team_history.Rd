@@ -76,7 +76,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 \examples{
   \donttest{
-    x<-try(kp_team_history(team = 'Florida St.'))
+    try(kp_team_history(team = 'Florida St.'))
   }
 
 }

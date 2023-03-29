@@ -131,6 +131,6 @@ test_that("ESPN - Get NBA team season stats", {
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

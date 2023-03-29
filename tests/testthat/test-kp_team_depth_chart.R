@@ -2,7 +2,7 @@ test_that("KP - Get team depth chart", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_team_depth_chart(team = 'Florida St.', year = 2020)
+  x <- kp_team_depth_chart(team = "Florida St.", year = 2020)
   cols <- c(
     "pg_number",
     "pg_player_first_name",
@@ -44,7 +44,7 @@ test_that("KP - Get team depth chart", {
   )
 
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 
 })

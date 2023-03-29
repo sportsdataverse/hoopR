@@ -76,7 +76,7 @@
 #'
 #' @examples
 #'   \donttest{
-#'     x<-try(kp_team_history(team = 'Florida St.'))
+#'     try(kp_team_history(team = 'Florida St.'))
 #'   }
 #'
 
@@ -396,31 +396,31 @@ kp_coach_history <- function(coach){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols<- c('Year','Team.Rk','Team',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
-                      'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
-                      'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
-                      'Off.A.Pct',	'Off.APL',
-                      'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
-                      'Def.FG_2.Pct',	'Def.FG_3.Pct',
-                      'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
-                      'Def.APL',	'Foul2Partic.Pct')
+      header_cols <- c('Year','Team.Rk','Team',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
+                       'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
+                       'Off.FG_2.Pct',	'Off.FG_3.Pct',	'Off.FT.Pct',	'Off.FG_3A.Pct',
+                       'Off.A.Pct',	'Off.APL',
+                       'Def.eFG.Pct', 'Def.TO.Pct',	'Def.OR.Pct',	'Def.FTRate',
+                       'Def.FG_2.Pct',	'Def.FG_3.Pct',
+                       'Def.Blk.Pct',	'Def.FG_3A.Pct',	'Def.A.Pct',
+                       'Def.APL',	'Foul2Partic.Pct')
 
-      x<- (page %>%
+      x <- (page %>%
              xml2::read_html() %>%
-             rvest::html_elements(css='#player-table'))[[1]]
+             rvest::html_elements(css = '#player-table'))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
       conf <- (page %>%
                  xml2::read_html() %>%
-                 rvest::html_elements(css='#player-table'))[[1]]
+                 rvest::html_elements(css = '#player-table'))[[1]]
 
       conf_record <- (page %>%
                         xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
       conf_record_wl <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
                                                 function(x){
-                                                  data.frame(x, stringsAsFactors=FALSE)
+                                                  data.frame(x, stringsAsFactors = FALSE)
                                                 }))
       conf_record_wl <- conf_record_wl %>%
         dplyr::rename("WL.Conf" = "x")
@@ -635,7 +635,7 @@ kp_program_ratings <- function(){
 
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols<- c('Rk',	'Team',	'Conf','Rtg',
+      header_cols <- c('Rk',	'Team',	'Conf','Rtg',
                       'Best.Rk','Best.Yr',
                       'Worst.Rk','Worst.Yr', 'KP.Median',
                       'Top10',	'Top25',	'Top50',	'CH',
@@ -643,7 +643,7 @@ kp_program_ratings <- function(){
 
       x <- (page %>%
               xml2::read_html() %>%
-              rvest::html_elements(css='#ratings-table'))[[1]]
+              rvest::html_elements(css = '#ratings-table'))[[1]]
 
       x <- x %>%
         rvest::html_table() %>%
@@ -1124,7 +1124,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
       Sys.sleep(5)
       x <- (page %>%
               xml2::read_html() %>%
-              rvest::html_elements(css="#confrank-table"))[[1]] %>%
+              rvest::html_elements(css = "#confrank-table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -1235,7 +1235,7 @@ kp_confhistory <- function(conf){
 
 
       # Check conf parameter in teams_list$Conf names
-      if(!(conf %in% hoopR::teams_links$Conf)){
+      if (!(conf %in% hoopR::teams_links$Conf)) {
         cli::cli_abort("Incorrect conference name as compared to the website, see hoopR::teams_links for conference name parameter specifications.")
       }
       conf_name = unique(hoopR::teams_links$conf.link.ref[hoopR::teams_links$Conf == conf])
@@ -1247,7 +1247,7 @@ kp_confhistory <- function(conf){
       Sys.sleep(5)
       x <- page %>%
         xml2::read_html() %>%
-        rvest::html_elements(css="#player-table")
+        rvest::html_elements(css = "#player-table")
 
       ## removing national rankings for easier manipulation
       ## TO-DO: Add these rankings back as columns

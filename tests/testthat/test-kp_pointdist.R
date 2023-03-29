@@ -24,7 +24,7 @@ test_that("KP - Get point distribution", {
   )
 
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 
 })

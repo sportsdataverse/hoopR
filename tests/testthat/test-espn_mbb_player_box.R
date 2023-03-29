@@ -59,6 +59,6 @@ test_that("ESPN - Get MBB player box score only", {
     "opponent_team_score"
   )
   expect_equal(colnames(x), cols)
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
 })

@@ -175,12 +175,12 @@ test_that("ESPN - Get NBA play by play all", {
   )
 
   expect_equal(sort(colnames(x1)), sort(cols_x1))
-  expect_s3_class(x1, 'data.frame')
+  expect_s3_class(x1, "data.frame")
 
   expect_equal(sort(colnames(x2)), sort(cols_x2))
-  expect_s3_class(x2, 'data.frame')
+  expect_s3_class(x2, "data.frame")
 
   expect_equal(sort(colnames(x3)), sort(cols_x3))
-  expect_s3_class(x3, 'data.frame')
+  expect_s3_class(x3, "data.frame")
 
 })

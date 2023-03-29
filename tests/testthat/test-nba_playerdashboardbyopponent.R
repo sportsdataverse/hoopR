@@ -2,7 +2,7 @@ test_that("NBA Player Dashboard by Opponent", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+  x <- nba_playerdashboardbyopponent(player_id = "2544", season = year_to_season(most_recent_nba_season() - 1))
 
   cols_x1 <- c(
     "GROUP_SET",
@@ -266,13 +266,13 @@ test_that("NBA Player Dashboard by Opponent", {
 
 
   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], 'data.frame')
+  expect_s3_class(x[[1]], "data.frame")
   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], 'data.frame')
+  expect_s3_class(x[[2]], "data.frame")
   expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
-  expect_s3_class(x[[3]], 'data.frame')
+  expect_s3_class(x[[3]], "data.frame")
   expect_equal(sort(colnames(x[[4]])), sort(cols_x4))
-  expect_s3_class(x[[4]], 'data.frame')
+  expect_s3_class(x[[4]], "data.frame")
 
   Sys.sleep(3)
 

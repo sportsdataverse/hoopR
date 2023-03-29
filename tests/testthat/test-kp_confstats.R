@@ -2,7 +2,7 @@ test_that("KP - Get conference statistics", {
   skip_on_cran()
   skip_on_ci()
 
-  x <- kp_confstats(year = '2020')
+  x <- kp_confstats(year = "2020")
 
   cols <- c(
     "conf",
@@ -42,7 +42,7 @@ test_that("KP - Get conference statistics", {
     "year")
 
   expect_equal(colnames(x), cols)
-  expect_s3_class(x,'data.frame')
+  expect_s3_class(x,"data.frame")
 
   Sys.sleep(2)
 })

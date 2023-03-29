@@ -5,7 +5,7 @@
 #' @returns Returns a tibble of game box scores with names: away_team, home_team,
 #'  linescore, officials
 #'
-#'  **away_team**
+#'    **away_team**
 #'
 #'
 #'    |col_name   |types     |
@@ -19,9 +19,12 @@
 #'    |o_rtg      |numeric   |
 #'    |percent_ps |numeric   |
 #'    |pts        |numeric   |
-#'    |fgm2_a     |character |
-#'    |fgm3_a     |character |
-#'    |ftm_a      |character |
+#'    |fgm_2      |numeric   |
+#'    |fga_2      |numeric   |
+#'    |fgm_3      |numeric   |
+#'    |fga_3      |numeric   |
+#'    |ftm        |numeric   |
+#'    |fta        |numeric   |
 #'    |or         |numeric   |
 #'    |dr         |numeric   |
 #'    |a          |numeric   |
@@ -48,9 +51,12 @@
 #'    |o_rtg      |numeric   |
 #'    |percent_ps |numeric   |
 #'    |pts        |numeric   |
-#'    |fgm2_a     |character |
-#'    |fgm3_a     |character |
-#'    |ftm_a      |character |
+#'    |fgm_2      |numeric   |
+#'    |fga_2      |numeric   |
+#'    |fgm_3      |numeric   |
+#'    |fga_3      |numeric   |
+#'    |ftm        |numeric   |
+#'    |fta        |numeric   |
 #'    |or         |numeric   |
 #'    |dr         |numeric   |
 #'    |a          |numeric   |
@@ -96,7 +102,7 @@
 #'
 #' @examples
 #' \donttest{
-#'   x<-try(kp_box(game_id = 6, year = 2021))
+#'   try(kp_box(game_id = 6, year = 2021))
 #' }
 
 kp_box <- function(game_id, year){
@@ -192,11 +198,24 @@ kp_box <- function(game_id, year){
 
         # box <- xml2::xml_text(box_stat)
         suppressWarnings(
-          x <- x %>% tidyr::separate(col = "Hgt-Wgt-Yr",
+          x <- x %>%
+            tidyr::separate(col = "Hgt-Wgt-Yr",
                                      into = c("Hgt", "Wgt", "Yr"),
                                      sep = "\\s") %>%
+            tidyr::separate(col = "FGM2-A",
+                            into = c("FGM_2","FGA_2"),
+                            sep = "-") %>%
+            tidyr::separate(col = "FGM3-A",
+                            into = c("FGM_3","FGA_3"),
+                            sep = "-") %>%
+            tidyr::separate(col = "FTM-A",
+                            into = c("FTM","FTA"),
+                            sep = "-") %>%
             dplyr::mutate_at(c("Wgt", "Number", "Min",
                                "ORtg", "%Ps", "Pts",
+                               "FGM_2", "FGA_2",
+                               "FGM_3", "FGA_3",
+                               "FTM", "FTA",
                                "OR", "DR", "A", "TO",
                                "Blk", "Stl", "PF"), as.numeric)
         )
@@ -308,7 +327,7 @@ kp_winprob <- function(game_id, year){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if(!(is.numeric(year) && nchar(year) == 4 && year>=2010)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }
@@ -354,15 +373,15 @@ kp_winprob <- function(game_id, year){
         )
       #---- game_data --------
       game_data_str <- stringr::str_remove(stringr::str_remove(q[2], "(.+)var data="),"makeWP\\(data\\);")
-      vn <- data.frame(vn = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="venue:\'(.+)\', city:"),pattern=", city:"),pattern="venue:"))))
-      cty <- data.frame(cty = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern="city:\'(.+)\', gameTime:"),pattern=", gameTime:"),pattern="city:"))))
-      gmtm <- data.frame(gmtm = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="gameTime:\'(.+)\', dominance:"),pattern=", dominance:"),pattern="gameTime:"))))
-      dateofgame <- data.frame(dateofgame = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2],pattern="dateOfGame:\'(.+)\', ymd:"),pattern=", ymd:"),pattern="dateOfGame:"))))
-      game_data_str <- stringr::str_remove(game_data_str,pattern="venue:\'(.+)\',(?= city:)")
-      game_data_str <- stringr::str_remove(game_data_str,pattern="city:\'(.+)\',(?= gameTime:)")
-      game_data_str <- stringr::str_remove(game_data_str,pattern="gameTime:\'(.+)\',(?= dominance:)")
-      game_data_str <- stringr::str_remove(game_data_str,pattern="dateOfGame:\'(.+)\',(?= ymd:)")
-      game_data_str <- stringr::str_remove(game_data_str,pattern=", input:(.+)(?=\\})")
+      vn <- data.frame(vn = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "venue:\'(.+)\', city:"), pattern = ", city:"), pattern = "venue:"))))
+      cty <- data.frame(cty = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "city:\'(.+)\', gameTime:"), pattern = ", gameTime:"), pattern = "city:"))))
+      gmtm <- data.frame(gmtm = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "gameTime:\'(.+)\', dominance:"), pattern = ", dominance:"), pattern = "gameTime:"))))
+      dateofgame <- data.frame(dateofgame = t(gsub(pattern = "'","", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "dateOfGame:\'(.+)\', ymd:"), pattern = ", ymd:"), pattern = "dateOfGame:"))))
+      game_data_str <- stringr::str_remove(game_data_str,pattern = "venue:\'(.+)\',(?= city:)")
+      game_data_str <- stringr::str_remove(game_data_str,pattern = "city:\'(.+)\',(?= gameTime:)")
+      game_data_str <- stringr::str_remove(game_data_str,pattern = "gameTime:\'(.+)\',(?= dominance:)")
+      game_data_str <- stringr::str_remove(game_data_str,pattern = "dateOfGame:\'(.+)\',(?= ymd:)")
+      game_data_str <- stringr::str_remove(game_data_str,pattern = ", input:(.+)(?=\\})")
       game_data_str <- gsub("\\{ ",'\\{ "', game_data_str)
       game_data_str <- gsub(", ",', "', game_data_str)
       game_data_str <- gsub(":",'":', game_data_str)
