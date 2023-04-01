@@ -1145,7 +1145,7 @@ espn_nba_scoreboard <- function(season){
 
   max_year <- substr(Sys.Date(), 1,4)
 
-  if(!(as.integer(substr(season, 1, 4)) > 2001)){
+  if (!(as.integer(substr(season, 1, 4)) > 2001)) {
     message(paste("Error: Season must be between 2001 and", max_year + 1))
   }
 
@@ -1189,7 +1189,7 @@ espn_nba_scoreboard <- function(season){
           "game_uid" = "uid",
           "game_date" = "date"
         ) %>%
-        tidyr::hoist(.data$status,
+        tidyr::hoist("status",
                      status_name = list("type", "name")) %>%
         dplyr::select(!dplyr::any_of(
           c(
@@ -1206,12 +1206,12 @@ espn_nba_scoreboard <- function(season){
         dplyr::select(-dplyr::any_of("status"))
       nba_data <- nba_data %>%
         tidyr::hoist(
-          .data$competitors,
+          "competitors",
           homeAway = list(1,"homeAway")
         )
       nba_data <- nba_data %>%
         tidyr::hoist(
-          .data$competitors,
+          "competitors",
           team1_team_name = list(1, "team", "name"),
           team1_team_logo = list(1, "team", "logo"),
           team1_team_abb = list(1, "team", "abbreviation"),
@@ -1273,7 +1273,7 @@ espn_nba_scoreboard <- function(season){
       if ("leaders" %in% names(nba_data)) {
         schedule_out <- nba_data %>%
           tidyr::hoist(
-            .data$leaders,
+            "leaders",
             # points
             points_leader_points = list(1, "leaders", 1, "value"),
             points_leader_stat = list(1, "leaders", 1, "displayValue"),
@@ -1303,7 +1303,7 @@ espn_nba_scoreboard <- function(season){
         if ("broadcasts" %in% names(schedule_out) && !any(is.na(schedule_out[['broadcasts']]))) {
           schedule_out %>%
             tidyr::hoist(
-              .data$broadcasts,
+              "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
             dplyr::select(!where(is.list)) %>%
@@ -1319,7 +1319,7 @@ espn_nba_scoreboard <- function(season){
         if ("broadcasts" %in% names(nba_data) && !any(is.na(nba_data[['broadcasts']]))) {
           nba_data %>%
             tidyr::hoist(
-              .data$broadcasts,
+              "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
             dplyr::select(!where(is.list)) %>%
