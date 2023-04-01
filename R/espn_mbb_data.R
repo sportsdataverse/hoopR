@@ -1058,7 +1058,7 @@ espn_mbb_conferences <- function() {
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   x<-try(espn_mbb_teams())
+#'   try(espn_mbb_teams())
 #' }
 espn_mbb_teams <- function(year = most_recent_mbb_season()) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
