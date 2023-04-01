@@ -924,7 +924,7 @@ espn_mbb_game_rosters <- function(game_id) {
           "position_href",
           "statistics_href"
         ))) %>%
-        make_hoopR_data("ESPN MBB Game Roster Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Game Roster Information from ESPN.com", Sys.time())
 
     },
     error = function(e) {
@@ -950,14 +950,15 @@ espn_mbb_game_rosters <- function(game_id) {
 #' @author Saiem Gilani
 #' @return A conferences data frame
 #'
-#'    |col_name        |types     |
-#'    |:---------------|:---------|
-#'    |group_id        |character |
-#'    |short_name      |character |
-#'    |uid             |character |
-#'    |name            |character |
-#'    |logo            |character |
-#'    |parent_group_id |character |
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |group_id              |integer   |
+#'    |conference_short_name |character |
+#'    |conference_uid        |character |
+#'    |conference_name       |character |
+#'    |conference_logo       |character |
+#'    |parent_group_id       |character |
+#'    |conference_id         |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -975,10 +976,11 @@ espn_mbb_conferences <- function() {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
 
   tryCatch(
     expr = {
+      play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
+
       res <- httr::RETRY("GET", play_base_url)
 
       # Check the result
@@ -991,6 +993,15 @@ espn_mbb_conferences <- function() {
         dplyr::select(-"subGroups") %>%
         janitor::clean_names() %>%
         dplyr::filter(!(.data$group_id %in% c(0,50))) %>%
+        dplyr::mutate(
+          group_id = as.integer(.data$group_id),
+          conference_id = .data$group_id) %>%
+        dplyr::rename(dplyr::any_of(c(
+          "conference_short_name" = "short_name",
+          "conference_uid" = "uid",
+          "conference_name" = "name",
+          "conference_logo" = "logo"
+        ))) %>%
         make_hoopR_data("ESPN MBB Conferences Information from ESPN.com",Sys.time())
 
     },
@@ -1011,21 +1022,31 @@ espn_mbb_conferences <- function() {
 
 #' **Get ESPN men's college basketball team names and IDs**
 #' @author Saiem Gilani
+#' @param year Either numeric or character (YYYY)
 #' @return A teams data frame
 #'
-#'    |col_name        |types     |
-#'    |:---------------|:---------|
-#'    |team_id         |character |
-#'    |abbreviation    |character |
-#'    |display_name    |character |
-#'    |short_name      |character |
-#'    |mascot          |character |
-#'    |nickname        |character |
-#'    |team            |character |
-#'    |color           |character |
-#'    |alternate_color |character |
-#'    |logo            |character |
-#'    |logo_dark       |character |
+#'   |col_name              |types     |
+#'   |:---------------------|:---------|
+#'   |team_id               |integer   |
+#'   |abbreviation          |character |
+#'   |display_name          |character |
+#'   |short_name            |character |
+#'   |mascot                |character |
+#'   |nickname              |character |
+#'   |team                  |character |
+#'   |color                 |character |
+#'   |alternate_color       |character |
+#'   |logo                  |character |
+#'   |logo_dark             |character |
+#'   |href                  |character |
+#'   |conference_url        |character |
+#'   |group_id              |integer   |
+#'   |conference_short_name |character |
+#'   |conference_uid        |character |
+#'   |conference_name       |character |
+#'   |conference_logo       |character |
+#'   |parent_group_id       |character |
+#'   |conference_id         |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
@@ -1037,16 +1058,17 @@ espn_mbb_conferences <- function() {
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   try(espn_mbb_teams())
+#'   x<-try(espn_mbb_teams())
 #' }
-espn_mbb_teams <- function() {
+espn_mbb_teams <- function(year = most_recent_mbb_season()) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
 
   tryCatch(
     expr = {
-      res <- httr::RETRY("GET", play_base_url)
+      teams_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
+
+      res <- httr::RETRY("GET", teams_base_url)
 
       # Check the result
       check_status(res)
@@ -1105,7 +1127,63 @@ espn_mbb_teams <- function() {
           "short_name" = "shortDisplayName",
           "alternate_color" = "alternateColor",
           "display_name" = "displayName") %>%
-        make_hoopR_data("ESPN MBB Teams Information from ESPN.com",Sys.time())
+        dplyr::mutate(team_id = as.integer(.data$team_id))
+
+      conferences <- espn_mbb_conferences()
+
+      # ---- Figuring out which teams are in which conference (32 calls)
+      base_url <- "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons"
+      conferences_base_url <- glue::glue("{base_url}/{year}/types/2/groups/50/children?limit=1000&lang=en&region=us")
+
+      res <- httr::RETRY("GET", conferences_base_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      conf_items <- resp %>%
+        jsonlite::fromJSON() %>%
+        purrr::pluck("items") %>%
+        data.frame() %>%
+        dplyr::rename("href" = "X.ref") %>%
+        dplyr::mutate(
+          group_id = as.integer(stringr::str_extract(.data$href, "(?<=groups\\/)\\d+")),
+          teams_url = paste0(base_url,"/",
+                             year,
+                             "/types/2/groups/",
+                             .data$group_id,
+                             "/teams?lang=en&region=us")
+        )
+
+      conference_teams <- purrr::map_dfr(conf_items$teams_url, function(x){
+        res <- httr::RETRY("GET", x)
+
+        # Check the result
+        check_status(res)
+
+        resp <- res %>%
+          httr::content(as = "text", encoding = "UTF-8")
+
+        conf_items <- resp %>%
+          jsonlite::fromJSON() %>%
+          purrr::pluck("items") %>%
+          data.frame() %>%
+          dplyr::rename("href" = "X.ref") %>%
+          dplyr::mutate(
+            conference_url = x,
+            group_id = as.integer(stringr::str_extract(x, "(?<=groups\\/)\\d+")),
+            team_id = as.integer(stringr::str_extract(.data$href, "(?<=teams\\/)\\d+"))
+          )
+        return(conf_items)
+      })
+
+      teams <- teams %>%
+        dplyr::left_join(conference_teams, by = c("team_id" = "team_id")) %>%
+        dplyr::left_join(conferences, by = c("group_id" = "group_id")) %>%
+        make_hoopR_data("ESPN MBB Teams Information from ESPN.com", Sys.time())
+
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no teams data available!"))
@@ -1188,7 +1266,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             "type"
           )
         )) %>%
-        tidyr::unnest_wider("season",names_sep="_") %>%
+        tidyr::unnest_wider("season", names_sep = "_") %>%
         dplyr::rename("season" = "season_year") %>%
         dplyr::select(-dplyr::any_of("status"))
       mbb_data <- mbb_data %>%
@@ -1224,26 +1302,26 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 
       mbb_data <- mbb_data %>%
         dplyr::mutate(
-          home_team_name = ifelse(.data$homeAway=="home",.data$team1_team_name, .data$team2_team_name),
-          home_team_logo = ifelse(.data$homeAway=="home",.data$team1_team_logo, .data$team2_team_logo),
-          home_team_abb = ifelse(.data$homeAway=="home",.data$team1_team_abb, .data$team2_team_abb),
-          home_team_id = ifelse(.data$homeAway=="home",.data$team1_team_id, .data$team2_team_id),
-          home_team_location = ifelse(.data$homeAway=="home",.data$team1_team_location, .data$team2_team_location),
-          home_team_full_name = ifelse(.data$homeAway=="home",.data$team1_team_full, .data$team2_team_full),
-          home_team_color = ifelse(.data$homeAway=="home",.data$team1_team_color, .data$team2_team_color),
-          home_score = ifelse(.data$homeAway=="home",.data$team1_score, .data$team2_score),
-          home_win = ifelse(.data$homeAway=="home",.data$team1_win, .data$team2_win),
-          home_record = ifelse(.data$homeAway=="home",.data$team1_record, .data$team2_record),
-          away_team_name = ifelse(.data$homeAway=="away",.data$team1_team_name, .data$team2_team_name),
-          away_team_logo = ifelse(.data$homeAway=="away",.data$team1_team_logo, .data$team2_team_logo),
-          away_team_abb = ifelse(.data$homeAway=="away",.data$team1_team_abb, .data$team2_team_abb),
-          away_team_id = ifelse(.data$homeAway=="away",.data$team1_team_id, .data$team2_team_id),
-          away_team_location = ifelse(.data$homeAway=="away",.data$team1_team_location, .data$team2_team_location),
-          away_team_full_name = ifelse(.data$homeAway=="away",.data$team1_team_full, .data$team2_team_full),
-          away_team_color = ifelse(.data$homeAway=="away",.data$team1_team_color, .data$team2_team_color),
-          away_score = ifelse(.data$homeAway=="away",.data$team1_score, .data$team2_score),
-          away_win = ifelse(.data$homeAway=="away",.data$team1_win, .data$team2_win),
-          away_record = ifelse(.data$homeAway=="away",.data$team1_record, .data$team2_record)
+          home_team_name = ifelse(.data$homeAway == "home",.data$team1_team_name, .data$team2_team_name),
+          home_team_logo = ifelse(.data$homeAway == "home",.data$team1_team_logo, .data$team2_team_logo),
+          home_team_abb = ifelse(.data$homeAway == "home",.data$team1_team_abb, .data$team2_team_abb),
+          home_team_id = ifelse(.data$homeAway == "home",.data$team1_team_id, .data$team2_team_id),
+          home_team_location = ifelse(.data$homeAway == "home",.data$team1_team_location, .data$team2_team_location),
+          home_team_full_name = ifelse(.data$homeAway == "home",.data$team1_team_full, .data$team2_team_full),
+          home_team_color = ifelse(.data$homeAway == "home",.data$team1_team_color, .data$team2_team_color),
+          home_score = ifelse(.data$homeAway == "home",.data$team1_score, .data$team2_score),
+          home_win = ifelse(.data$homeAway == "home",.data$team1_win, .data$team2_win),
+          home_record = ifelse(.data$homeAway == "home",.data$team1_record, .data$team2_record),
+          away_team_name = ifelse(.data$homeAway == "away",.data$team1_team_name, .data$team2_team_name),
+          away_team_logo = ifelse(.data$homeAway == "away",.data$team1_team_logo, .data$team2_team_logo),
+          away_team_abb = ifelse(.data$homeAway == "away",.data$team1_team_abb, .data$team2_team_abb),
+          away_team_id = ifelse(.data$homeAway == "away",.data$team1_team_id, .data$team2_team_id),
+          away_team_location = ifelse(.data$homeAway == "away",.data$team1_team_location, .data$team2_team_location),
+          away_team_full_name = ifelse(.data$homeAway == "away",.data$team1_team_full, .data$team2_team_full),
+          away_team_color = ifelse(.data$homeAway == "away",.data$team1_team_color, .data$team2_team_color),
+          away_score = ifelse(.data$homeAway == "away",.data$team1_score, .data$team2_score),
+          away_win = ifelse(.data$homeAway == "away",.data$team1_win, .data$team2_win),
+          away_record = ifelse(.data$homeAway == "away",.data$team1_record, .data$team2_record)
         )
 
       mbb_data <- mbb_data %>%
@@ -1640,7 +1718,7 @@ espn_mbb_rankings <- function() {
 #' \donttest{
 #'   try(espn_mbb_standings(2021))
 #' }
-espn_mbb_standings <- function(year) {
+espn_mbb_standings <- function(year = most_recent_mbb_season()) {
   standings_url <-
     "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
 
@@ -1658,8 +1736,11 @@ espn_mbb_standings <- function(year) {
       resp <- res %>%
         httr::content(as = "text", encoding = "UTF-8")
 
-      raw_standings <- jsonlite::fromJSON(resp)[["standings"]]
+      raw_resp <- resp %>%
+        jsonlite::fromJSON()
 
+      raw_standings <- raw_resp %>%
+        purrr::pluck("standings")
       #Create a dataframe of all NBA teams by extracting from the raw_standings file
 
       teams <- raw_standings[["entries"]][["team"]]

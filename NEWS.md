@@ -27,6 +27,11 @@
 - ```nba_franchiseleaderswrank()``` function added.
 - ```nba_videodetailsasset()``` function added.
 - ```nba_infographicfanduelplayer()``` function added.
+- ```nba_teams()``` function added.
+
+### **Other Functions Added**
+
+- ```ncaa_mbb_teams()``` function added.
 
 ### **Proxy Capability Added and Other Notes**
 

@@ -94,13 +94,11 @@ nba_pbp <- function(
       #   glue::glue("Getting play by play for game {game_id}") %>% cat(fill = T)
       # }
 
-      data <-
-        resp$resultSets$rowSet[[1]] %>%
-        data.frame(stringsAsFactors = F) %>%
-        as_tibble()
+      data <- resp$resultSets$rowSet[[1]] %>%
+        data.frame() %>%
+        dplyr::as_tibble()
 
-      json_names <-
-        resp$resultSets$headers[[1]]
+      json_names <- resp$resultSets$headers[[1]]
       colnames(data) <- json_names
 
       # Fix version 2 Dataset
@@ -108,7 +106,7 @@ nba_pbp <- function(
         data <- data %>%
           # fix column names
           janitor::clean_names() %>%
-          dplyr::rename(
+          dplyr::rename(dplyr::any_of(c(
             "wc_time_string" = "wctimestring",
             "time_quarter" = "pctimestring",
             "score_margin" = "scoremargin",
@@ -118,7 +116,7 @@ nba_pbp <- function(
             "home_description" = "homedescription",
             "neutral_description" = "neutraldescription",
             "visitor_description" = "visitordescription"
-          ) %>%
+          ))) %>%
           ## Get Team Scores
           tidyr::separate(
             "score",
@@ -165,7 +163,7 @@ nba_pbp <- function(
       }
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {pad_id(game_id)} available!"))
     },
     warning = function(w) {
     },

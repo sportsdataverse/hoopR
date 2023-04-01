@@ -5,6 +5,9 @@ template:
   bootstrap: 5
   bootswatch: flatly
   ganalytics: G-FN028W4QW6
+  includes:
+    in_header: |
+      <script defer data-domain="hoopR.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script>
   bslib:
     primary: "#2C3D50"
     secondary: "#A7C6E6"
@@ -218,7 +221,6 @@ reference:
     desc: Data included within the package
     contents:
       - '`teams_links`'
-      - '`nba_teams`'
   - subtitle: hoopR Helper Functions
     desc: Internal functions used by hoopR
     contents:

@@ -4,7 +4,7 @@
 \alias{espn_mbb_standings}
 \title{\strong{Get ESPN men's college basketball standings}}
 \usage{
-espn_mbb_standings(year)
+espn_mbb_standings(year = most_recent_mbb_season())
 }
 \arguments{
 \item{year}{Either numeric or character (YYYY)}

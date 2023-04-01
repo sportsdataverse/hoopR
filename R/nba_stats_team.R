@@ -1,3 +1,94 @@
+#' **Get NBA Stats API Teams**
+#' @name nba_teams
+NULL
+#' @title
+#' **Get NBA Stats API Teams**
+#' @rdname nba_teams
+#' @author Saiem Gilani
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Return a data frame with the following columns:
+#'
+#'    |col_name        |types     |
+#'    |:---------------|:---------|
+#'    |league_id       |character |
+#'    |season_id       |character |
+#'    |team_id         |character |
+#'    |team_city       |character |
+#'    |team_name       |character |
+#'    |team_slug       |character |
+#'    |conference      |character |
+#'    |division        |character |
+#'    |season          |character |
+#'    |team_name_full  |character |
+#'    |espn_team_id    |integer   |
+#'    |abbreviation    |character |
+#'    |display_name    |character |
+#'    |mascot          |character |
+#'    |nickname        |character |
+#'    |team            |character |
+#'    |color           |character |
+#'    |alternate_color |character |
+#'    |logo            |character |
+#'    |logo_dark       |character |
+#'    |logos_href_3    |character |
+#'    |logos_href_4    |character |
+#'    |nba_logo_svg    |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Team Functions
+#' @details
+#' ```r
+#'  nba_teams()
+#' ```
+nba_teams <- function(...){
+
+  tryCatch(
+    expr = {
+
+      standings <- nba_leaguestandingsv3(season = year_to_season(most_recent_nba_season() - 1)) %>%
+        purrr::pluck("Standings")
+      nba_teams <- standings %>%
+        dplyr::select(dplyr::any_of(c(
+          "LeagueID",
+          "SeasonID",
+          "TeamID",
+          "TeamCity",
+          "TeamName",
+          "TeamSlug",
+          "Conference",
+          "Division"))) %>%
+        dplyr::mutate(
+          Season = paste0('', year_to_season(most_recent_nba_season() - 1)),
+          TeamNameFull = paste(.data$TeamCity, .data$TeamName)) %>%
+        dplyr::arrange(.data$TeamNameFull)
+
+      espn_nba_teams <- espn_nba_teams() %>%
+        dplyr::rename("espn_team_id" = "team_id")
+      nba_teams <- nba_teams %>%
+        dplyr::left_join(espn_nba_teams, by = c("TeamName" = "short_name"))
+
+      nba_teams <- nba_teams %>%
+        dplyr::mutate(
+          espn_team_id = as.integer(.data$espn_team_id),
+          nba_logo_svg = paste0("https://cdn.nba.com/logos/nba/", .data$TeamID, "/primary/L/logo.svg")) %>%
+        janitor::clean_names()
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team details data for {team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(nba_teams)
+}
+
+
 #' **Get NBA Stats API Team Details**
 #' @name nba_teamdetails
 NULL
