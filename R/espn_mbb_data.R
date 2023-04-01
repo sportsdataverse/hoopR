@@ -1002,7 +1002,7 @@ espn_mbb_conferences <- function() {
           "conference_name" = "name",
           "conference_logo" = "logo"
         ))) %>%
-        make_hoopR_data("ESPN MBB Conferences Information from ESPN.com",Sys.time())
+        make_hoopR_data("ESPN MBB Conferences Information from ESPN.com", Sys.time())
 
     },
     error = function(e) {
@@ -1254,7 +1254,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
           "game_uid" = "uid",
           "game_date" = "date"
         ) %>%
-        tidyr::hoist(.data$status,
+        tidyr::hoist("status",
                      status_name = list("type", "name")) %>%
         dplyr::select(!dplyr::any_of(
           c(
@@ -1271,12 +1271,12 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
         dplyr::select(-dplyr::any_of("status"))
       mbb_data <- mbb_data %>%
         tidyr::hoist(
-          .data$competitors,
+          "competitors",
           homeAway = list(1,"homeAway")
         )
       mbb_data <- mbb_data %>%
         tidyr::hoist(
-          .data$competitors,
+          "competitors",
           team1_team_name = list(1, "team", "name"),
           team1_team_logo = list(1, "team", "logo"),
           team1_team_abb = list(1, "team", "abbreviation"),
@@ -1338,7 +1338,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
       if ("leaders" %in% names(mbb_data)) {
         schedule_out <- mbb_data %>%
           tidyr::hoist(
-            .data$leaders,
+            "leaders",
             # points
             points_leader_points = list(1, "leaders", 1, "value"),
             points_leader_stat = list(1, "leaders", 1, "displayValue"),
@@ -1368,7 +1368,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
         if ("broadcasts" %in% names(schedule_out) && !any(is.na(schedule_out[['broadcasts']]))) {
           schedule_out %>%
             tidyr::hoist(
-              .data$broadcasts,
+              "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
             dplyr::select(!where(is.list)) %>%
@@ -1384,7 +1384,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
         if ("broadcasts" %in% names(mbb_data) && !any(is.na(mbb_data[['broadcasts']]))) {
           mbb_data %>%
             tidyr::hoist(
-              .data$broadcasts,
+              "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
             dplyr::select(!where(is.list)) %>%
