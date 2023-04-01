@@ -22,9 +22,11 @@ This is a minor release that adds the following:
 - ```nba_synergyplaytypes()``` function added.
 - ```nba_franchiseleaderswrank()``` function added.
 - ```nba_videodetailsasset()``` function added.
+- ```nba_teams()``` function added.
 - ```nba_infographicfanduelplayer()``` function added.
 - ```espn_mbb_game_rosters()``` function added.
 - ```espn_nba_game_rosters()``` function added.
+- ```ncaa_mbb_teams()``` function added.
  
 
 ## R CMD check results

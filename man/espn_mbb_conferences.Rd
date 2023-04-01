@@ -9,12 +9,13 @@ espn_mbb_conferences()
 \value{
 A conferences data frame\tabular{ll}{
    col_name \tab types \cr
-   group_id \tab character \cr
-   short_name \tab character \cr
-   uid \tab character \cr
-   name \tab character \cr
-   logo \tab character \cr
+   group_id \tab integer \cr
+   conference_short_name \tab character \cr
+   conference_uid \tab character \cr
+   conference_name \tab character \cr
+   conference_logo \tab character \cr
    parent_group_id \tab character \cr
+   conference_id \tab integer \cr
 }
 }
 \description{

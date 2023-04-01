@@ -306,6 +306,7 @@ Other NBA Team Functions:
 \code{\link{nba_teaminfocommon}()},
 \code{\link{nba_teamplayerdashboard}()},
 \code{\link{nba_teamplayeronoffsummary}()},
+\code{\link{nba_teams}()},
 \code{\link{nba_teamvsplayer}()},
 \code{\link{nba_teamyearbyyearstats}()}
 }

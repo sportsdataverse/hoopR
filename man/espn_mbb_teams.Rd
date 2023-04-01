@@ -4,12 +4,15 @@
 \alias{espn_mbb_teams}
 \title{\strong{Get ESPN men's college basketball team names and IDs}}
 \usage{
-espn_mbb_teams()
+espn_mbb_teams(year = most_recent_mbb_season())
+}
+\arguments{
+\item{year}{Either numeric or character (YYYY)}
 }
 \value{
 A teams data frame\tabular{ll}{
    col_name \tab types \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    abbreviation \tab character \cr
    display_name \tab character \cr
    short_name \tab character \cr
@@ -20,6 +23,15 @@ A teams data frame\tabular{ll}{
    alternate_color \tab character \cr
    logo \tab character \cr
    logo_dark \tab character \cr
+   href \tab character \cr
+   conference_url \tab character \cr
+   group_id \tab integer \cr
+   conference_short_name \tab character \cr
+   conference_uid \tab character \cr
+   conference_name \tab character \cr
+   conference_logo \tab character \cr
+   parent_group_id \tab character \cr
+   conference_id \tab integer \cr
 }
 }
 \description{
@@ -27,7 +39,7 @@ A teams data frame\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_mbb_teams())
+  x<-try(espn_mbb_teams())
 }
 }
 \seealso{
