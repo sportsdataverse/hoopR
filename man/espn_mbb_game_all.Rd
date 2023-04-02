@@ -23,19 +23,19 @@ A named list of data frames: Plays, Team, Player
    score_value \tab integer \cr
    wallclock \tab character \cr
    shooting_play \tab logical \cr
-   type_id \tab character \cr
+   type_id \tab integer \cr
    type_text \tab character \cr
    period_number \tab integer \cr
    period_display_value \tab character \cr
    clock_display_value \tab character \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    coordinate_x_raw \tab numeric \cr
    coordinate_y_raw \tab numeric \cr
    coordinate_x \tab numeric \cr
    coordinate_y \tab numeric \cr
    play_id \tab character \cr
-   athlete_id_1 \tab character \cr
-   athlete_id_2 \tab character \cr
+   athlete_id_1 \tab integer \cr
+   athlete_id_2 \tab integer \cr
    home_team_id \tab integer \cr
    home_team_mascot \tab character \cr
    home_team_name \tab character \cr
@@ -121,6 +121,7 @@ A named list of data frames: Plays, Team, Player
    opponent_team_color \tab character \cr
    opponent_team_alternate_color \tab character \cr
    opponent_team_logo \tab character \cr
+   opponent_team_score \tab integer \cr
 }
 
 
@@ -130,9 +131,9 @@ A named list of data frames: Plays, Team, Player
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
-   athlete_id \tab character \cr
+   athlete_id \tab integer \cr
    athlete_display_name \tab character \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    team_name \tab character \cr
    team_location \tab character \cr
    team_short_display_name \tab character \cr
@@ -170,7 +171,7 @@ A named list of data frames: Plays, Team, Player
    team_alternate_color \tab character \cr
    home_away \tab character \cr
    team_winner \tab logical \cr
-   team_score \tab character \cr
+   team_score \tab integer \cr
    opponent_team_id \tab integer \cr
    opponent_team_name \tab character \cr
    opponent_team_location \tab character \cr
@@ -179,7 +180,7 @@ A named list of data frames: Plays, Team, Player
    opponent_team_logo \tab character \cr
    opponent_team_color \tab character \cr
    opponent_team_alternate_color \tab character \cr
-   opponent_team_score \tab character \cr
+   opponent_team_score \tab integer \cr
 }
 }
 \description{
@@ -187,7 +188,7 @@ A named list of data frames: Plays, Team, Player
 }
 \examples{
 \donttest{
-  x <- try(espn_mbb_game_all(game_id = 401479672))
+  try(espn_mbb_game_all(game_id = 401479672))
 }
 }
 \seealso{

@@ -15,16 +15,16 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 \strong{pickcenter}\tabular{ll}{
    col_name \tab types \cr
    details \tab character \cr
-   over_under \tab integer \cr
-   spread \tab integer \cr
-   provider_id \tab character \cr
+   over_under \tab numeric \cr
+   spread \tab numeric \cr
+   provider_id \tab integer \cr
    provider_name \tab character \cr
    provider_priority \tab integer \cr
    away_team_odds_favorite \tab logical \cr
    away_team_odds_underdog \tab logical \cr
    away_team_odds_money_line \tab integer \cr
    away_team_odds_spread_odds \tab numeric \cr
-   away_team_odds_team_id \tab character \cr
+   away_team_odds_team_id \tab integer \cr
    away_team_odds_win_percentage \tab numeric \cr
    away_team_odds_average_score \tab numeric \cr
    away_team_odds_money_line_odds \tab numeric \cr
@@ -37,7 +37,7 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
    home_team_odds_underdog \tab logical \cr
    home_team_odds_money_line \tab integer \cr
    home_team_odds_spread_odds \tab numeric \cr
-   home_team_odds_team_id \tab character \cr
+   home_team_odds_team_id \tab integer \cr
    home_team_odds_win_percentage \tab numeric \cr
    home_team_odds_average_score \tab numeric \cr
    home_team_odds_money_line_odds \tab numeric \cr
@@ -46,27 +46,31 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
    home_team_odds_spread_record_losses \tab integer \cr
    home_team_odds_spread_record_pushes \tab integer \cr
    home_team_odds_spread_record_summary \tab character \cr
+   game_id \tab integer \cr
 }
 
 
 \strong{againstTheSpread}\tabular{ll}{
    col_name \tab types \cr
-   id \tab character \cr
+   id \tab integer \cr
    uid \tab character \cr
    display_name \tab character \cr
    abbreviation \tab character \cr
    logo \tab character \cr
    logos \tab list \cr
    records \tab list \cr
+   game_id \tab integer \cr
+   team_id \tab integer \cr
 }
 
 
 \strong{predictor}\tabular{ll}{
    col_name \tab types \cr
-   home_team_id \tab character \cr
-   away_team_id \tab character \cr
-   away_team_game_projection \tab character \cr
-   away_team_chance_loss \tab character \cr
+   game_id \tab integer \cr
+   home_team_id \tab integer \cr
+   away_team_id \tab integer \cr
+   away_team_game_projection \tab numeric \cr
+   away_team_chance_loss \tab numeric \cr
 }
 }
 \description{

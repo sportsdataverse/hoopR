@@ -113,7 +113,8 @@ test_that("ESPN - Get NBA play by play all", {
     "opponent_team_short_display_name",
     "opponent_team_color",
     "opponent_team_alternate_color",
-    "opponent_team_logo"
+    "opponent_team_logo",
+    "opponent_team_score"
   )
   cols_x3 <- c(
     "game_id",

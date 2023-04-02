@@ -17,20 +17,20 @@
 #'    |score_value               |integer   |
 #'    |wallclock                 |character |
 #'    |shooting_play             |logical   |
-#'    |type_id                   |character |
+#'    |type_id                   |integer   |
 #'    |type_text                 |character |
 #'    |period_number             |integer   |
 #'    |period_display_value      |character |
 #'    |clock_display_value       |character |
-#'    |team_id                   |character |
+#'    |team_id                   |integer   |
 #'    |coordinate_x_raw          |numeric   |
 #'    |coordinate_y_raw          |numeric   |
 #'    |coordinate_x              |numeric   |
 #'    |coordinate_y              |numeric   |
 #'    |play_id                   |character |
-#'    |athlete_id_1              |character |
-#'    |athlete_id_2              |character |
-#'    |athlete_id_3              |character |
+#'    |athlete_id_1              |integer   |
+#'    |athlete_id_2              |integer   |
+#'    |athlete_id_3              |integer   |
 #'    |home_team_id              |integer   |
 #'    |home_team_mascot          |character |
 #'    |home_team_name            |character |
@@ -120,6 +120,7 @@
 #'    |opponent_team_color               |character |
 #'    |opponent_team_alternate_color     |character |
 #'    |opponent_team_logo                |character |
+#'    |opponent_team_score               |integer   |
 #'
 #'    **Player**
 #'
@@ -130,9 +131,9 @@
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
-#'    |athlete_id                        |character |
+#'    |athlete_id                        |integer   |
 #'    |athlete_display_name              |character |
-#'    |team_id                           |character |
+#'    |team_id                           |integer   |
 #'    |team_name                         |character |
 #'    |team_location                     |character |
 #'    |team_short_display_name           |character |
@@ -172,7 +173,7 @@
 #'    |team_alternate_color              |character |
 #'    |home_away                         |character |
 #'    |team_winner                       |logical   |
-#'    |team_score                        |character |
+#'    |team_score                        |integer   |
 #'    |opponent_team_id                  |integer   |
 #'    |opponent_team_name                |character |
 #'    |opponent_team_location            |character |
@@ -181,7 +182,7 @@
 #'    |opponent_team_logo                |character |
 #'    |opponent_team_color               |character |
 #'    |opponent_team_alternate_color     |character |
-#'    |opponent_team_score               |character |
+#'    |opponent_team_score               |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -453,6 +454,7 @@ espn_nba_pbp <- function(game_id){
 #'    |opponent_team_color               |character |
 #'    |opponent_team_alternate_color     |character |
 #'    |opponent_team_logo                |character |
+#'    |opponent_team_score               |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -518,9 +520,9 @@ espn_nba_team_box <- function(game_id){
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
-#'    |athlete_id                        |character |
+#'    |athlete_id                        |integer   |
 #'    |athlete_display_name              |character |
-#'    |team_id                           |character |
+#'    |team_id                           |integer   |
 #'    |team_name                         |character |
 #'    |team_location                     |character |
 #'    |team_short_display_name           |character |
@@ -560,7 +562,7 @@ espn_nba_team_box <- function(game_id){
 #'    |team_alternate_color              |character |
 #'    |home_away                         |character |
 #'    |team_winner                       |logical   |
-#'    |team_score                        |character |
+#'    |team_score                        |integer   |
 #'    |opponent_team_id                  |integer   |
 #'    |opponent_team_name                |character |
 #'    |opponent_team_location            |character |
@@ -569,7 +571,7 @@ espn_nba_team_box <- function(game_id){
 #'    |opponent_team_logo                |character |
 #'    |opponent_team_color               |character |
 #'    |opponent_team_alternate_color     |character |
-#'    |opponent_team_score               |character |
+#'    |opponent_team_score               |integer   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -636,7 +638,7 @@ espn_nba_player_box <- function(game_id){
 #'    |athlete_uid                                |character |
 #'    |athlete_guid                               |character |
 #'    |athlete_type                               |character |
-#'    |sdr                                        |character |
+#'    |sdr                                        |integer   |
 #'    |first_name                                 |character |
 #'    |last_name                                  |character |
 #'    |full_name                                  |character |
@@ -656,7 +658,7 @@ espn_nba_player_box <- function(game_id){
 #'    |headshot_href                              |character |
 #'    |headshot_alt                               |character |
 #'    |jersey                                     |character |
-#'    |position_id                                |character |
+#'    |position_id                                |integer   |
 #'    |position_name                              |character |
 #'    |position_display_name                      |character |
 #'    |position_abbreviation                      |character |
@@ -685,7 +687,7 @@ espn_nba_player_box <- function(game_id){
 #'    |draft_round                                |integer   |
 #'    |draft_year                                 |integer   |
 #'    |draft_selection                            |integer   |
-#'    |status_id                                  |character |
+#'    |status_id                                  |integer   |
 #'    |status_name                                |character |
 #'    |status_type                                |character |
 #'    |status_abbreviation                        |character |
@@ -695,7 +697,7 @@ espn_nba_player_box <- function(game_id){
 #'    |display_name                               |character |
 #'    |reason                                     |character |
 #'    |ejected                                    |logical   |
-#'    |team_id                                    |character |
+#'    |team_id                                    |integer   |
 #'    |team_guid                                  |character |
 #'    |team_uid                                   |character |
 #'    |team_slug                                  |character |
@@ -712,7 +714,7 @@ espn_nba_player_box <- function(game_id){
 #'    |logo_dark_href                             |character |
 #'    |logos_href_2                               |character |
 #'    |logos_href_3                               |character |
-#'    |game_id                                    |numeric   |
+#'    |game_id                                    |integer   |
 #'    |order                                      |integer   |
 #'    |home_away                                  |character |
 #'    |winner                                     |logical   |
@@ -722,6 +724,7 @@ espn_nba_player_box <- function(game_id){
 #'    |hand_type                                  |character |
 #'    |hand_abbreviation                          |character |
 #'    |hand_display_value                         |character |
+#'
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -941,6 +944,13 @@ espn_nba_game_rosters <- function(game_id) {
           "roster_href",
           "statistics_href"
         ))) %>%
+        dplyr::mutate_at(c(
+          "game_id",
+          "athlete_id",
+          "team_id",
+          "position_id",
+          "status_id",
+          "sdr"), as.integer) %>%
         make_hoopR_data("ESPN NBA Game Roster Information from ESPN.com",Sys.time())
 
     },
@@ -970,7 +980,7 @@ espn_nba_game_rosters <- function(game_id) {
 #'
 #'    |col_name        |types     |
 #'    |:---------------|:---------|
-#'    |team_id         |character |
+#'    |team_id         |integer   |
 #'    |abbreviation    |character |
 #'    |display_name    |character |
 #'    |short_name      |character |
@@ -1002,10 +1012,10 @@ espn_nba_game_rosters <- function(game_id) {
 espn_nba_teams <- function(){
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
+  teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
 
-  res <- httr::RETRY("GET", play_base_url)
+  res <- httr::RETRY("GET", teams_url)
 
   # Check the result
   check_status(res)
@@ -1070,6 +1080,7 @@ espn_nba_teams <- function(){
           "display_name" = "displayName"
         ) %>%
         janitor::clean_names() %>%
+        dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
         make_hoopR_data("ESPN NBA Teams Information from ESPN.com",Sys.time())
     },
     error = function(e) {
@@ -1096,7 +1107,7 @@ espn_nba_teams <- function(){
 #'    |season              |integer   |
 #'    |season_type         |integer   |
 #'    |season_slug         |character |
-#'    |game_id             |character |
+#'    |game_id             |integer   |
 #'    |game_uid            |character |
 #'    |game_date           |character |
 #'    |attendance          |integer   |
@@ -1108,7 +1119,7 @@ espn_nba_teams <- function(){
 #'    |home_team_name      |character |
 #'    |home_team_logo      |character |
 #'    |home_team_abb       |character |
-#'    |home_team_id        |character |
+#'    |home_team_id        |integer   |
 #'    |home_team_location  |character |
 #'    |home_team_full_name |character |
 #'    |home_team_color     |character |
@@ -1118,7 +1129,7 @@ espn_nba_teams <- function(){
 #'    |away_team_name      |character |
 #'    |away_team_logo      |character |
 #'    |away_team_abb       |character |
-#'    |away_team_id        |character |
+#'    |away_team_id        |integer   |
 #'    |away_team_location  |character |
 #'    |away_team_full_name |character |
 #'    |away_team_color     |character |
@@ -1260,11 +1271,14 @@ espn_nba_scoreboard <- function(season){
         )
 
       nba_data <- nba_data %>%
-        dplyr::mutate(
-          home_win = as.integer(.data$home_win),
-          away_win = as.integer(.data$away_win),
-          home_score = as.integer(.data$home_score),
-          away_score = as.integer(.data$away_score))
+        dplyr::mutate_at(c(
+          "game_id",
+          "home_team_id",
+          "home_win",
+          "away_team_id",
+          "away_win",
+          "home_score",
+          "away_score"), as.integer)
       nba_data <- nba_data %>%
         dplyr::select(-dplyr::any_of(dplyr::starts_with("team1")),
                       -dplyr::any_of(dplyr::starts_with("team2")),
@@ -1351,20 +1365,20 @@ espn_nba_scoreboard <- function(season){
 #'
 #'    |col_name           |types     |
 #'    |:------------------|:---------|
-#'    |team_id            |character |
+#'    |team_id            |integer   |
 #'    |team               |character |
-#'    |avgpointsagainst   |character |
-#'    |avgpointsfor       |character |
-#'    |clincher           |character |
-#'    |differential       |character |
-#'    |divisionwinpercent |character |
-#'    |gamesbehind        |character |
-#'    |leaguewinpercent   |character |
-#'    |losses             |character |
-#'    |playoffseed        |character |
-#'    |streak             |character |
-#'    |winpercent         |character |
-#'    |wins               |character |
+#'    |avgpointsagainst   |numeric   |
+#'    |avgpointsfor       |numeric   |
+#'    |clincher           |numeric   |
+#'    |differential       |numeric   |
+#'    |divisionwinpercent |numeric   |
+#'    |gamesbehind        |numeric   |
+#'    |leaguewinpercent   |numeric   |
+#'    |losses             |numeric   |
+#'    |playoffseed        |numeric   |
+#'    |streak             |numeric   |
+#'    |winpercent         |numeric   |
+#'    |wins               |numeric   |
 #'    |leaguestandings    |character |
 #'    |home               |character |
 #'    |road               |character |
@@ -1440,7 +1454,22 @@ espn_nba_standings <- function(year){
 
       #joining the 2 dataframes together to create a standings table
 
-      standings <- cbind(teams, standings_data)
+      standings <- cbind(teams, standings_data) %>%
+      dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
+        dplyr::mutate_at(c(
+          "avgpointsagainst",
+          "avgpointsfor",
+          "clincher",
+          "differential",
+          "divisionwinpercent",
+          "gamesbehind",
+          "leaguewinpercent",
+          "losses",
+          "playoffseed",
+          "streak",
+          "winpercent",
+          "wins"
+        ), as.numeric)
       standings <- standings %>%
         make_hoopR_data("ESPN NBA Standings Information from ESPN.com",Sys.time())
     },
@@ -1468,16 +1497,16 @@ espn_nba_standings <- function(year){
 #'    |col_name                             |types     |
 #'    |:------------------------------------|:---------|
 #'    |details                              |character |
-#'    |over_under                           |integer   |
-#'    |spread                               |integer   |
-#'    |provider_id                          |character |
+#'    |over_under                           |numeric   |
+#'    |spread                               |numeric   |
+#'    |provider_id                          |integer   |
 #'    |provider_name                        |character |
 #'    |provider_priority                    |integer   |
 #'    |away_team_odds_favorite              |logical   |
 #'    |away_team_odds_underdog              |logical   |
 #'    |away_team_odds_money_line            |integer   |
 #'    |away_team_odds_spread_odds           |numeric   |
-#'    |away_team_odds_team_id               |character |
+#'    |away_team_odds_team_id               |integer   |
 #'    |away_team_odds_win_percentage        |numeric   |
 #'    |away_team_odds_average_score         |numeric   |
 #'    |away_team_odds_money_line_odds       |numeric   |
@@ -1490,7 +1519,7 @@ espn_nba_standings <- function(year){
 #'    |home_team_odds_underdog              |logical   |
 #'    |home_team_odds_money_line            |integer   |
 #'    |home_team_odds_spread_odds           |numeric   |
-#'    |home_team_odds_team_id               |character |
+#'    |home_team_odds_team_id               |integer   |
 #'    |home_team_odds_win_percentage        |numeric   |
 #'    |home_team_odds_average_score         |numeric   |
 #'    |home_team_odds_money_line_odds       |numeric   |
@@ -1499,29 +1528,33 @@ espn_nba_standings <- function(year){
 #'    |home_team_odds_spread_record_losses  |integer   |
 #'    |home_team_odds_spread_record_pushes  |integer   |
 #'    |home_team_odds_spread_record_summary |character |
+#'    |game_id                              |integer   |
 #'
 #'    **againstTheSpread**
 #'
 #'
 #'    |col_name     |types     |
 #'    |:------------|:---------|
-#'    |id           |character |
+#'    |id           |integer   |
 #'    |uid          |character |
 #'    |display_name |character |
 #'    |abbreviation |character |
 #'    |logo         |character |
 #'    |logos        |list      |
 #'    |records      |list      |
+#'    |game_id      |integer   |
+#'    |team_id      |integer   |
 #'
 #'    **predictor**
 #'
 #'
-#'    |col_name                  |types     |
-#'    |:-------------------------|:---------|
-#'    |home_team_id              |character |
-#'    |away_team_id              |character |
-#'    |away_team_game_projection |character |
-#'    |away_team_chance_loss     |character |
+#'    |col_name                  |types   |
+#'    |:-------------------------|:-------|
+#'    |game_id                   |integer |
+#'    |home_team_id              |integer |
+#'    |away_team_id              |integer |
+#'    |away_team_game_projection |numeric |
+#'    |away_team_chance_loss     |numeric |
 #'
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
@@ -1556,17 +1589,23 @@ espn_nba_betting <- function(game_id){
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
   predictor_df <- data.frame()
+
   tryCatch(
     expr = {
 
       raw_summary <- jsonlite::fromJSON(resp)
-      if("pickcenter" %in% names(raw_summary)){
-        pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten=TRUE) %>%
+      if ("pickcenter" %in% names(raw_summary)) {
+        pickcenter <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$pickcenter), flatten = TRUE) %>%
           janitor::clean_names() %>%
           dplyr::select(-"links") %>%
+          dplyr::mutate(game_id = as.integer(game_id)) %>%
+          dplyr::mutate_at(c(
+            "provider_id",
+            "away_team_odds_team_id",
+            "home_team_odds_team_id"), as.integer) %>%
           make_hoopR_data("ESPN NBA Pickcenter Information from ESPN.com",Sys.time())
       }
-      if("againstTheSpread" %in% names(raw_summary)){
+      if ("againstTheSpread" %in% names(raw_summary)) {
         againstTheSpread <- jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
           janitor::clean_names()
         teams <- againstTheSpread$team %>%
@@ -1576,14 +1615,19 @@ espn_nba_betting <- function(game_id){
 
         teams$records <- records
         againstTheSpread <- teams %>%
+          dplyr::mutate(
+            game_id = as.integer(game_id),
+            id = as.integer(.data$id),
+            team_id = as.integer(.data$id)) %>%
           make_hoopR_data("ESPN NBA Against the Spread Information from ESPN.com",Sys.time())
       }
-      if("predictor" %in% names(raw_summary)){
+      if ("predictor" %in% names(raw_summary)) {
         predictor_df <- data.frame(
-          home_team_id =  raw_summary$predictor$homeTeam$id,
-          away_team_id =  raw_summary$predictor$awayTeam$id,
-          away_team_game_projection = raw_summary$predictor$awayTeam$gameProjection,
-          away_team_chance_loss = raw_summary$predictor$awayTeam$teamChanceLoss
+          game_id = as.integer(game_id),
+          home_team_id = as.integer(raw_summary$predictor$homeTeam$id),
+          away_team_id = as.integer(raw_summary$predictor$awayTeam$id),
+          away_team_game_projection = as.numeric(raw_summary$predictor$awayTeam$gameProjection),
+          away_team_chance_loss = as.numeric(raw_summary$predictor$awayTeam$teamChanceLoss)
         )
         predictor_df <- predictor_df %>%
           make_hoopR_data("ESPN NBA Predictor Information from ESPN.com",Sys.time())
@@ -1615,7 +1659,7 @@ espn_nba_betting <- function(game_id){
 #'
 #'    |col_name                                         |types     |
 #'    |:------------------------------------------------|:---------|
-#'    |team_id                                          |character |
+#'    |team_id                                          |integer   |
 #'    |team_guid                                        |character |
 #'    |team_uid                                         |character |
 #'    |team_slug                                        |character |
@@ -1753,7 +1797,7 @@ espn_nba_betting <- function(game_id){
 #'
 #' @examples
 #' \donttest{
-#'   try(espn_nba_team_stats(team_id = 18, year = 2020))
+#'   x<-try(espn_nba_team_stats(team_id = 18, year = 2020))
 #' }
 
 espn_nba_team_stats <- function(
@@ -1774,8 +1818,8 @@ espn_nba_team_stats <- function(
   full_url <- paste0(
     base_url,
     year,
-    '/types/',s_type,
-    '/teams/',team_id,
+    '/types/', s_type,
+    '/teams/', team_id,
     '/statistics/', totals
   )
 
@@ -1877,7 +1921,7 @@ espn_nba_team_stats <- function(
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%
-        tidyr::unnest("stats", names_sep="_")
+        tidyr::unnest("stats", names_sep = "_")
       df <- df %>%
         dplyr::mutate(
           stats_category_name = glue::glue("{.data$name}_{.data$stats_name}")) %>%
@@ -1894,6 +1938,8 @@ espn_nba_team_stats <- function(
 
 
       df <- df %>%
+        dplyr::mutate_at(c(
+          "team_id"), as.integer) %>%
         make_hoopR_data("ESPN NBA Team Season Stats from ESPN.com",Sys.time())
 
     },
@@ -1919,11 +1965,11 @@ espn_nba_team_stats <- function(
 #'
 #'    |col_name                                         |types     |
 #'    |:------------------------------------------------|:---------|
-#'    |athlete_id                                       |character |
+#'    |athlete_id                                       |integer   |
 #'    |athlete_uid                                      |character |
 #'    |athlete_guid                                     |character |
 #'    |athlete_type                                     |character |
-#'    |sdr                                              |character |
+#'    |sdr                                              |integer   |
 #'    |first_name                                       |character |
 #'    |last_name                                        |character |
 #'    |full_name                                        |character |
@@ -1939,7 +1985,7 @@ espn_nba_team_stats <- function(
 #'    |headshot_href                                    |character |
 #'    |headshot_alt                                     |character |
 #'    |jersey                                           |character |
-#'    |position_id                                      |character |
+#'    |position_id                                      |integer   |
 #'    |position_name                                    |character |
 #'    |position_display_name                            |character |
 #'    |position_abbreviation                            |character |
@@ -1973,7 +2019,7 @@ espn_nba_team_stats <- function(
 #'    |draft_selection                                  |integer   |
 #'    |draft_x_ref                                      |character |
 #'    |draft_x_ref_1                                    |character |
-#'    |status_id                                        |character |
+#'    |status_id                                        |integer   |
 #'    |status_name                                      |character |
 #'    |status_type                                      |character |
 #'    |status_abbreviation                              |character |
@@ -2089,7 +2135,7 @@ espn_nba_team_stats <- function(
 #'    |offensive_p40                                    |numeric   |
 #'    |offensive_a40                                    |numeric   |
 #'    |offensive_orpm                                   |numeric   |
-#'    |team_id                                          |character |
+#'    |team_id                                          |integer   |
 #'    |team_guid                                        |character |
 #'    |team_uid                                         |character |
 #'    |team_slug                                        |character |
@@ -2240,7 +2286,7 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
 
       athlete_df <- athlete_df %>%
         purrr::map_if(is.list, as.data.frame) %>%
-        tibble::tibble(data=.data$.)
+        tibble::tibble(data = .data$.)
       athlete_df <- athlete_df$data %>%
         as.data.frame() %>%
         dplyr::select(-dplyr::any_of(c("X.ref","X.ref.1","X.ref.2","X.ref.3","X.ref.4","X.ref.5","X.ref.6","X.ref.7","X.ref.8",
@@ -2261,7 +2307,7 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%
-        tidyr::unnest("stats", names_sep="_")
+        tidyr::unnest("stats", names_sep = "_")
       df <- df %>%
         dplyr::mutate(
           stats_category_name = glue::glue("{.data$name}_{.data$stats_name}")) %>%
@@ -2274,6 +2320,12 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
         dplyr::bind_cols(df) %>%
         dplyr::bind_cols(team_df)
       df <- df %>%
+        dplyr::mutate_at(c(
+          "athlete_id",
+          "team_id",
+          "position_id",
+          "status_id",
+          "sdr"), as.integer) %>%
         make_hoopR_data("ESPN NBA Player Season Stats from ESPN.com",Sys.time())
 
     },
@@ -2470,6 +2522,12 @@ helper_espn_nba_pbp <- function(resp){
       season_type = season_type,
       game_date = game_date) %>%
     janitor::clean_names() %>%
+    dplyr::mutate_at(c(
+      "type_id",
+      "team_id",
+      "athlete_id_1",
+      "athlete_id_2",
+      "athlete_id_3"), as.integer) %>%
     make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com", Sys.time())
 
   return(plays_df)
@@ -2553,7 +2611,11 @@ helper_espn_nba_team_box <- function(resp){
       statistics_df_1$opponent.team.color <- teams_box_score_df[["team.color"]][[2]]
       statistics_df_1$opponent.team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[2]]
       statistics_df_1$opponent.team.logo <- teams_box_score_df[["team.logo"]][[2]]
-
+      statistics_df_1$opponent.team.score <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][1]) == as.integer(homeAway1_team.id),
+        as.integer(homeAway2_team.score),
+        as.integer(homeAway1_team.score)
+      )
       # Assigning values to the correct data frame rows - 2
       statistics_df_2$team.homeAway <- ifelse(
         as.integer(teams_box_score_df[["team.id"]][2]) == as.integer(homeAway2_team.id),
@@ -2592,7 +2654,11 @@ helper_espn_nba_team_box <- function(resp){
       statistics_df_2$opponent.team.color <- teams_box_score_df[["team.color"]][[1]]
       statistics_df_2$opponent.team.alternateColor <- teams_box_score_df[["team.alternateColor"]][[1]]
       statistics_df_2$opponent.team.logo <- teams_box_score_df[["team.logo"]][[1]]
-
+      statistics_df_2$opponent.team.score <- ifelse(
+        as.integer(teams_box_score_df[["team.id"]][2]) == as.integer(homeAway2_team.id),
+        as.integer(homeAway1_team.score),
+        as.integer(homeAway2_team.score)
+      )
       complete_statistics_df <- statistics_df_1 %>%
         dplyr::bind_rows(statistics_df_2)
 
@@ -2921,6 +2987,12 @@ helper_espn_nba_player_box <- function(resp){
           "opponent_team_alternate_color",
           "opponent_team_score"
           ))) %>%
+        dplyr::mutate_at(c(
+          "athlete_id",
+          "team_id",
+          "team_score",
+          "opponent_team_score"
+        ), as.integer) %>%
         make_hoopR_data("ESPN NBA Player Box Information from ESPN.com", Sys.time())
     }
   }

@@ -56,7 +56,7 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2022) \~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2023) \~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -66,11 +66,11 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 5.87 sec elapsed
+    ## 5.23 sec elapsed
 
     ## 546926 rows of NBA play-by-play data from 1161 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2022) \~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2023) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -80,7 +80,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 15.97 sec elapsed
+    ## 17.72 sec elapsed
 
     ## 1956490 rows of men's college basketball play-by-play data from 6113 games.
 

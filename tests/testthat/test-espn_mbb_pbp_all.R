@@ -104,7 +104,8 @@ test_that("ESPN - Get MBB play by play all (no coordinate data)", {
     "opponent_team_short_display_name",
     "opponent_team_color",
     "opponent_team_alternate_color",
-    "opponent_team_logo"
+    "opponent_team_logo",
+    "opponent_team_score"
   )
   cols_x3 <- c(
     "game_id",
@@ -285,7 +286,8 @@ test_that("ESPN - Get MBB play by play all (with coordinate data)", {
     "opponent_team_short_display_name",
     "opponent_team_color",
     "opponent_team_alternate_color",
-    "opponent_team_logo"
+    "opponent_team_logo",
+    "opponent_team_score"
   )
   cols_x3 <- c(
     "game_id",

@@ -18,7 +18,7 @@ espn_nba_team_stats(team_id, year, season_type = "regular", total = FALSE)
 \value{
 Returns a tibble with the team stats data\tabular{ll}{
    col_name \tab types \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    team_guid \tab character \cr
    team_uid \tab character \cr
    team_slug \tab character \cr
@@ -153,7 +153,7 @@ Returns a tibble with the team stats data\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_nba_team_stats(team_id = 18, year = 2020))
+  x<-try(espn_nba_team_stats(team_id = 18, year = 2020))
 }
 }
 \seealso{

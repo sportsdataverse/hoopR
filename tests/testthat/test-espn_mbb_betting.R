@@ -34,7 +34,8 @@ test_that("ESPN - Get MBB Betting", {
     "home_team_odds_spread_record_wins",
     "home_team_odds_spread_record_losses",
     "home_team_odds_spread_record_pushes",
-    "home_team_odds_spread_record_summary"
+    "home_team_odds_spread_record_summary",
+    "game_id"
   )
 
   cols_x2 <- c(
@@ -44,10 +45,13 @@ test_that("ESPN - Get MBB Betting", {
     "abbreviation",
     "logo",
     "logos",
-    "records"
+    "records",
+    "game_id",
+    "team_id"
   )
 
   cols_x3 <- c(
+    "game_id",
     "home_team_id",
     "away_team_id",
     "away_team_game_projection",
