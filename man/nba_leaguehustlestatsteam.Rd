@@ -125,7 +125,6 @@ Returns a named list of data frames: HustleStatsTeam
 \href{https://www.nba.com/stats/teams/hustle}{Team Hustle Stats}
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguehustlestatsteam(league_id = '00')
-
 }\if{html}{\out{</div>}}
 }
 \seealso{

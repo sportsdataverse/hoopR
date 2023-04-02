@@ -32,7 +32,7 @@ Returns a named list of data frames: AssistTracker
 \strong{Get NBA Stats API Assist Tracker}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_assisttracker(league_id = '00')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_assisttracker(league_id = '00')
 }\if{html}{\out{</div>}}
 }
 \seealso{

@@ -159,7 +159,8 @@ nba_pbp <- function(
             "minute_game",
             "time_remaining",
             dplyr::everything()
-          )
+          ) %>%
+          make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
       }
     },
     error = function(e) {

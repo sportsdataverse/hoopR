@@ -598,7 +598,6 @@ nba_draftcombinespotshooting <- function(
 
   version <- "draftcombinespotshooting"
   endpoint <- nba_endpoint(version)
-
   full_url <- endpoint
 
   params <- list(
@@ -683,7 +682,6 @@ nba_drafthistory <- function(
 
   version <- "drafthistory"
   endpoint <- nba_endpoint(version)
-
   full_url <- endpoint
 
   params <- list(

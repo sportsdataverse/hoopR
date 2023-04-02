@@ -370,7 +370,7 @@ NULL
 #' @family NBA Leaders Functions
 #' @details
 #' ```r
-#'  nba_assisttracker(league_id = '00')
+#'   nba_assisttracker(league_id = '00')
 #' ```
 nba_assisttracker <- function(
     league_id = '00',
@@ -379,19 +379,21 @@ nba_assisttracker <- function(
     season_type = 'Regular Season',
     ...){
 
-  season_type <- gsub(' ','+',season_type)
+  # season_type <- gsub(' ','+',season_type)
   version <- "assisttracker"
   endpoint <- nba_endpoint(version)
-  full_url <- paste0(endpoint,
-                     "?LeagueID=", league_id,
-                     "&PerMode=", per_mode,
-                     "&Season=", season,
-                     "&SeasonType=", season_type)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    PerMode = per_mode,
+    Season = season,
+    SeasonType = season_type)
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, ...)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
