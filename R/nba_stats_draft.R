@@ -6,16 +6,76 @@ NULL
 #' **Get NBA Stats API Draft Board**
 #' @rdname nba_draftboard
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param college college
-#' @param overall_pick overall_pick
-#' @param round_pick round_pick
-#' @param round_num round_num
 #' @param season season
-#' @param team_id team_id
-#' @param top_x top_x
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: DraftBoard
+#' @return Returns a named list of data frames: Picks, TeamsWithoutPicks, LiveDetails
+#'
+#'    **Picks**
+#'
+#'
+#'    |col_name                         |types     |
+#'    |:--------------------------------|:---------|
+#'    |pick_number                      |integer   |
+#'    |pick_details                     |character |
+#'    |team_id                          |integer   |
+#'    |team_type                        |character |
+#'    |team_season                      |integer   |
+#'    |team_team_id                     |integer   |
+#'    |team_permalink                   |character |
+#'    |team_app_url                     |character |
+#'    |team_trade_details               |list      |
+#'    |team_team_name                   |character |
+#'    |team_team_abbr                   |character |
+#'    |team_picked_first_round          |logical   |
+#'    |team_picked_second_round         |logical   |
+#'    |team_team_record_season          |character |
+#'    |team_team_record_wins_and_losses |character |
+#'    |team_team_record_season_finish   |character |
+#'    |team_team_record_playoffs_finish |character |
+#'    |prospect_id                      |integer   |
+#'    |prospect_type                    |character |
+#'    |prospect_season                  |integer   |
+#'    |prospect_display_name            |character |
+#'    |prospect_first_name              |character |
+#'    |prospect_last_name               |character |
+#'    |prospect_permalink               |character |
+#'    |prospect_app_url                 |character |
+#'    |prospect_position                |character |
+#'    |prospect_weight_lbs              |integer   |
+#'    |prospect_school                  |character |
+#'    |prospect_status                  |character |
+#'    |prospect_birthday                |character |
+#'    |prospect_country                 |character |
+#'    |prospect_trade_details           |list      |
+#'    |prospect_height_feet_and_inches  |character |
+#'    |prospect_height_inches_only      |integer   |
+#'
+#'    **TeamsWithoutPicks**
+#'
+#'
+#'    |col_name            |types      |
+#'    |:-------------------|:----------|
+#'    |id                  |integer    |
+#'    |type                |character  |
+#'    |season              |integer    |
+#'    |team_id             |integer    |
+#'    |team_record         |data.frame |
+#'    |permalink           |character  |
+#'    |app_url             |character  |
+#'    |trade_details       |list       |
+#'    |team_name           |character  |
+#'    |team_abbr           |character  |
+#'    |picked_second_round |logical    |
+#'    |picked_first_round  |logical    |
+#'
+#'    **LiveDetails**
+#'
+#'
+#'    |col_name                       |types   |
+#'    |:------------------------------|:-------|
+#'    |is_draft_live                  |logical |
+#'    |live_draft_current_pick_number |numeric |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -23,40 +83,69 @@ NULL
 #' @family NBA Draft Functions
 #' @details
 #' ```r
-#'  nba_draftboard(season = most_recent_nba_season() - 1)
+#'   nba_draftboard(season = most_recent_nba_season() - 1)
 #' ```
 nba_draftboard <- function(
-    league_id = '00',
-    college = '',
-    overall_pick = '',
-    round_pick = '',
-    round_num = '',
     season = most_recent_nba_season() - 1,
-    team_id = '',
-    top_x = '',
     ...){
 
   version <- "draftboard"
-  endpoint <- nba_endpoint(version)
+  endpoint <- glue::glue("https://content-api-prod.nba.com/public/1/leagues/nba/draft/{season}/board")
   full_url <- endpoint
 
-  params <- list(
-    College = college,
-    LeagueID = league_id,
-    OverallPick = overall_pick,
-    RoundNum = round_num,
-    RoundPick = round_pick,
-    Season = season,
-    TeamID = team_id,
-    TopX = top_x
-  )
+  params <- list()
 
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      res <- httr::RETRY("GET", full_url, query = params)
+      resp <-  res %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
+        jsonlite::fromJSON() %>%
+        purrr::pluck("results")
 
-      df_list <- nba_stats_map_result_sets(resp)
+      first_round_picks <- resp %>%
+        purrr::pluck("picks") %>%
+        purrr::pluck("firstRound", .default = data.frame()) %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        janitor::clean_names()
+
+      second_round_picks <- resp %>%
+        purrr::pluck("picks") %>%
+        purrr::pluck("secondRound", .default = data.frame()) %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        janitor::clean_names()
+
+      picks <- first_round_picks %>%
+        dplyr::bind_rows(second_round_picks)
+
+      teams_without_picks_first <- resp %>%
+        purrr::pluck("teamsWithoutPicks") %>%
+        purrr::pluck("firstRound") %>%
+        data.frame()
+
+      teams_without_picks_second <- resp %>%
+        purrr::pluck("teamsWithoutPicks") %>%
+        purrr::pluck("secondRound") %>%
+        data.frame()
+
+      teams_without_picks <- teams_without_picks_first %>%
+        dplyr::bind_rows(teams_without_picks_second)
+
+      teams_without_picks <- teams_without_picks %>%
+        janitor::clean_names()
+
+      live_details <- data.frame(
+        is_draft_live = resp$isDraftLive,
+        live_draft_current_pick_number = ifelse(
+          is.null(resp$liveDraftCurrentPickNumber), 0, resp$liveDraftCurrentPickNumber
+        )
+      )
+
+      df_list <- c(list(picks), list(teams_without_picks), list(live_details))
+      names(df_list) <- c("Picks", "TeamsWithoutPicks","LiveDetails")
 
     },
     error = function(e) {
