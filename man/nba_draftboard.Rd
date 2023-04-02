@@ -4,39 +4,77 @@
 \alias{nba_draftboard}
 \title{\strong{Get NBA Stats API Draft Board}}
 \usage{
-nba_draftboard(
-  league_id = "00",
-  college = "",
-  overall_pick = "",
-  round_pick = "",
-  round_num = "",
-  season = most_recent_nba_season() - 1,
-  team_id = "",
-  top_x = "",
-  ...
-)
+nba_draftboard(season = most_recent_nba_season() - 1, ...)
 }
 \arguments{
-\item{league_id}{league_id}
-
-\item{college}{college}
-
-\item{overall_pick}{overall_pick}
-
-\item{round_pick}{round_pick}
-
-\item{round_num}{round_num}
-
 \item{season}{season}
-
-\item{team_id}{team_id}
-
-\item{top_x}{top_x}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a named list of data frames: DraftBoard
+Returns a named list of data frames: Picks, TeamsWithoutPicks, LiveDetails
+
+\strong{Picks}\tabular{ll}{
+   col_name \tab types \cr
+   pick_number \tab integer \cr
+   pick_details \tab character \cr
+   team_id \tab integer \cr
+   team_type \tab character \cr
+   team_season \tab integer \cr
+   team_team_id \tab integer \cr
+   team_permalink \tab character \cr
+   team_app_url \tab character \cr
+   team_trade_details \tab list \cr
+   team_team_name \tab character \cr
+   team_team_abbr \tab character \cr
+   team_picked_first_round \tab logical \cr
+   team_picked_second_round \tab logical \cr
+   team_team_record_season \tab character \cr
+   team_team_record_wins_and_losses \tab character \cr
+   team_team_record_season_finish \tab character \cr
+   team_team_record_playoffs_finish \tab character \cr
+   prospect_id \tab integer \cr
+   prospect_type \tab character \cr
+   prospect_season \tab integer \cr
+   prospect_display_name \tab character \cr
+   prospect_first_name \tab character \cr
+   prospect_last_name \tab character \cr
+   prospect_permalink \tab character \cr
+   prospect_app_url \tab character \cr
+   prospect_position \tab character \cr
+   prospect_weight_lbs \tab integer \cr
+   prospect_school \tab character \cr
+   prospect_status \tab character \cr
+   prospect_birthday \tab character \cr
+   prospect_country \tab character \cr
+   prospect_trade_details \tab list \cr
+   prospect_height_feet_and_inches \tab character \cr
+   prospect_height_inches_only \tab integer \cr
+}
+
+
+\strong{TeamsWithoutPicks}\tabular{ll}{
+   col_name \tab types \cr
+   id \tab integer \cr
+   type \tab character \cr
+   season \tab integer \cr
+   team_id \tab integer \cr
+   team_record \tab data.frame \cr
+   permalink \tab character \cr
+   app_url \tab character \cr
+   trade_details \tab list \cr
+   team_name \tab character \cr
+   team_abbr \tab character \cr
+   picked_second_round \tab logical \cr
+   picked_first_round \tab logical \cr
+}
+
+
+\strong{LiveDetails}\tabular{ll}{
+   col_name \tab types \cr
+   is_draft_live \tab logical \cr
+   live_draft_current_pick_number \tab numeric \cr
+}
 }
 \description{
 \strong{Get NBA Stats API Draft Board}
@@ -44,7 +82,7 @@ Returns a named list of data frames: DraftBoard
 \strong{Get NBA Stats API Draft Board}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_draftboard(season = most_recent_nba_season() - 1)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_draftboard(season = most_recent_nba_season() - 1)
 }\if{html}{\out{</div>}}
 }
 \seealso{
