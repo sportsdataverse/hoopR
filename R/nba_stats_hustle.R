@@ -440,7 +440,6 @@ NULL
 #' [Team Hustle Stats](https://www.nba.com/stats/teams/hustle)
 #' ```r
 #'  nba_leaguehustlestatsteam(league_id = '00')
-#'
 #' ```
 nba_leaguehustlestatsteam <- function(
     college = '',

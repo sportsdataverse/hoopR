@@ -474,7 +474,7 @@ nba_boxscoretraditionalv3 <- function(
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no traditional boxscore v2 data for {game_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no traditional boxscore v3 data for {game_id} available!"))
     },
     warning = function(w) {
     },

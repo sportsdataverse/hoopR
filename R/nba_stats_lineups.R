@@ -778,6 +778,8 @@ nba_leagueseasonmatchups <- function(
   )
   return(df_list)
 }
+
+
 #' **Get NBA Stats API Matchups Rollup**
 #' @name nba_matchupsrollup
 NULL
