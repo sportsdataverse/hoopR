@@ -14,7 +14,7 @@ A conferences data frame\tabular{ll}{
    conference_uid \tab character \cr
    conference_name \tab character \cr
    conference_logo \tab character \cr
-   parent_group_id \tab character \cr
+   parent_group_id \tab integer \cr
    conference_id \tab integer \cr
 }
 }

@@ -23,19 +23,19 @@ A play-by-play data frame.
    score_value \tab integer \cr
    wallclock \tab character \cr
    shooting_play \tab logical \cr
-   type_id \tab character \cr
+   type_id \tab integer \cr
    type_text \tab character \cr
    period_number \tab integer \cr
    period_display_value \tab character \cr
    clock_display_value \tab character \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    coordinate_x_raw \tab numeric \cr
    coordinate_y_raw \tab numeric \cr
    coordinate_x \tab numeric \cr
    coordinate_y \tab numeric \cr
    play_id \tab character \cr
-   athlete_id_1 \tab character \cr
-   athlete_id_2 \tab character \cr
+   athlete_id_1 \tab integer \cr
+   athlete_id_2 \tab integer \cr
    home_team_id \tab integer \cr
    home_team_mascot \tab character \cr
    home_team_name \tab character \cr

@@ -9,7 +9,7 @@ espn_mbb_rankings()
 \value{
 Returns a tibble\tabular{ll}{
    col_name \tab types \cr
-   id \tab character \cr
+   id \tab integer \cr
    name \tab character \cr
    short_name \tab character \cr
    type \tab character \cr
@@ -23,7 +23,7 @@ Returns a tibble\tabular{ll}{
    date \tab character \cr
    last_updated \tab character \cr
    record_summary \tab character \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    team_uid \tab character \cr
    team_location \tab character \cr
    team_name \tab character \cr

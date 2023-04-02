@@ -9,7 +9,7 @@ espn_nba_teams()
 \value{
 A teams data frame\tabular{ll}{
    col_name \tab types \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    abbreviation \tab character \cr
    display_name \tab character \cr
    short_name \tab character \cr

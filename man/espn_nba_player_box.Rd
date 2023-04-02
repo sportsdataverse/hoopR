@@ -18,9 +18,9 @@ A player boxscore data frame
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
-   athlete_id \tab character \cr
+   athlete_id \tab integer \cr
    athlete_display_name \tab character \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    team_name \tab character \cr
    team_location \tab character \cr
    team_short_display_name \tab character \cr
@@ -60,7 +60,7 @@ A player boxscore data frame
    team_alternate_color \tab character \cr
    home_away \tab character \cr
    team_winner \tab logical \cr
-   team_score \tab character \cr
+   team_score \tab integer \cr
    opponent_team_id \tab integer \cr
    opponent_team_name \tab character \cr
    opponent_team_location \tab character \cr
@@ -69,7 +69,7 @@ A player boxscore data frame
    opponent_team_logo \tab character \cr
    opponent_team_color \tab character \cr
    opponent_team_alternate_color \tab character \cr
-   opponent_team_score \tab character \cr
+   opponent_team_score \tab integer \cr
 }
 }
 \description{

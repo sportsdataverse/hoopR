@@ -16,7 +16,7 @@ A game rosters data frame\tabular{ll}{
    athlete_uid \tab character \cr
    athlete_guid \tab character \cr
    athlete_type \tab character \cr
-   sdr \tab character \cr
+   sdr \tab integer \cr
    first_name \tab character \cr
    last_name \tab character \cr
    full_name \tab character \cr
@@ -36,7 +36,7 @@ A game rosters data frame\tabular{ll}{
    headshot_href \tab character \cr
    headshot_alt \tab character \cr
    jersey \tab character \cr
-   position_id \tab character \cr
+   position_id \tab integer \cr
    position_name \tab character \cr
    position_display_name \tab character \cr
    position_abbreviation \tab character \cr
@@ -65,7 +65,7 @@ A game rosters data frame\tabular{ll}{
    draft_round \tab integer \cr
    draft_year \tab integer \cr
    draft_selection \tab integer \cr
-   status_id \tab character \cr
+   status_id \tab integer \cr
    status_name \tab character \cr
    status_type \tab character \cr
    status_abbreviation \tab character \cr
@@ -75,7 +75,7 @@ A game rosters data frame\tabular{ll}{
    display_name \tab character \cr
    reason \tab character \cr
    ejected \tab logical \cr
-   team_id \tab character \cr
+   team_id \tab integer \cr
    team_guid \tab character \cr
    team_uid \tab character \cr
    team_slug \tab character \cr
@@ -92,7 +92,7 @@ A game rosters data frame\tabular{ll}{
    logo_dark_href \tab character \cr
    logos_href_2 \tab character \cr
    logos_href_3 \tab character \cr
-   game_id \tab numeric \cr
+   game_id \tab integer \cr
    order \tab integer \cr
    home_away \tab character \cr
    winner \tab logical \cr
