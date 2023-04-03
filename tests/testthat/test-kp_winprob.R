@@ -36,4 +36,6 @@ test_that("KP - Get win probability", {
   expect_equal(colnames(x3), cols_x3)
   expect_s3_class(x3, "data.frame")
 
+  Sys.sleep(3)
+
 })

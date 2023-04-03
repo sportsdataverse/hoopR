@@ -17,4 +17,7 @@ test_that("KP - Get officials", {
 
   expect_equal(colnames(x), cols)
   expect_s3_class(x, "data.frame")
+
+  Sys.sleep(3)
+
 })

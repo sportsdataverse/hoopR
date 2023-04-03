@@ -16,4 +16,7 @@ test_that("KP - Get team schedule", {
 
   expect_equal(colnames(x), cols)
   expect_s3_class(x,"data.frame")
+
+  Sys.sleep(3)
+
 })

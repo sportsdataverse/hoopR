@@ -30,4 +30,7 @@ test_that("KP - Get team history", {
   expect_equal(colnames(y), cols)
   expect_s3_class(x, "data.frame")
   expect_s3_class(y, "data.frame")
+
+  Sys.sleep(3)
+
 })

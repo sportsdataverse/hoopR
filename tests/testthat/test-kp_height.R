@@ -34,5 +34,6 @@ test_that("KP - Get heights", {
   expect_equal(colnames(x), cols)
   expect_s3_class(x, "data.frame")
 
+  Sys.sleep(3)
 
 })

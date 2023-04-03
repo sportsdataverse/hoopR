@@ -20,4 +20,6 @@ test_that("KP - Get minutes matrix", {
   expect_equal(colnames(x[(ncol(x) - 2):ncol(x)]), cols_x2)
   expect_s3_class(x, "data.frame")
 
+  Sys.sleep(3)
+
 })
