@@ -2396,10 +2396,13 @@ helper_espn_nba_pbp <- function(resp){
 
   game_json <- resp %>%
     jsonlite::fromJSON()
+
   pbp_source <- game_json[["header"]][["competitions"]][["playByPlaySource"]]
+
   plays <- game_json %>%
     purrr::pluck("plays") %>%
     dplyr::as_tibble()
+
   if (pbp_source != "none" && nrow(plays) > 10) {
     homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
 
@@ -2909,8 +2912,17 @@ helper_espn_nba_player_box <- function(resp){
   boxScoreAvailable <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
 
   boxScoreSource <- game_json[["header"]][["competitions"]][["boxscoreSource"]]
+
+  # This is checking if  [[athletes]][[1]]'s stat rebounds is able to be converted to a numeric value
+  #  without introducing NA's
+  suppressWarnings(
+    valid_stats <- players_box_score_df[["statistics"]][[1]][["athletes"]][[1]][["stats"]][[1]] %>%
+      purrr::pluck(7) %>%
+      as.numeric()
+  )
   if (boxScoreAvailable == TRUE &&
-      length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1) {
+      length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1 &&
+      !is.na(valid_stats)) {
     players_df <- players_box_score_df %>%
       tidyr::unnest("statistics") %>%
       tidyr::unnest("athletes")
