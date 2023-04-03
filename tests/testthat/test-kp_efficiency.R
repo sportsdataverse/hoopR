@@ -29,6 +29,6 @@ test_that("KP - Get efficiency", {
   expect_equal(colnames(x), cols)
   expect_s3_class(x, "data.frame")
 
-  Sys.sleep(2)
+  Sys.sleep(3)
 
 })

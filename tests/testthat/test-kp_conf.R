@@ -105,5 +105,7 @@ test_that("KP - Get conference (leaderboard)", {
   expect_equal(colnames(x5), cols_x5)
   expect_equal(colnames(x6), cols_x6)
   expect_equal(colnames(x7), cols_x7)
-  Sys.sleep(2)
+
+  Sys.sleep(3)
+
 })

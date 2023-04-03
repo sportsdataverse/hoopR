@@ -83,5 +83,7 @@ test_that("KP - Get gameplan", {
   expect_equal(colnames(x1), cols_x1)
   expect_equal(colnames(x2), cols_x2)
   expect_equal(colnames(x3), cols_x3)
-  Sys.sleep(2)
+
+  Sys.sleep(3)
+
 })

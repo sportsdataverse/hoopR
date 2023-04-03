@@ -33,4 +33,7 @@ test_that("KP - Get kpoy", {
   )
   expect_equal(colnames(x1), cols_x1)
   expect_equal(colnames(x2), cols_x2)
+
+  Sys.sleep(3)
+
 })

@@ -20,5 +20,6 @@ test_that("KP - Get player stats", {
   expect_equal(colnames(x[5:8]), cols_x2)
   expect_s3_class(x, "data.frame")
 
+  Sys.sleep(3)
 
 })

@@ -59,5 +59,5 @@ test_that("KP - Get box score", {
   expect_equal(colnames(x4), cols_x4)
   expect_s3_class(x4, "data.frame")
 
-  Sys.sleep(2)
+  Sys.sleep(3)
 })
