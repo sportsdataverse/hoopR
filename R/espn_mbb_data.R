@@ -355,7 +355,7 @@ espn_mbb_game_all <- function(game_id) {
 #'
 #' @examples
 #' \donttest{
-#'   x<-try(espn_mbb_pbp(game_id = 401414032))
+#'   try(espn_mbb_pbp(game_id = 401479672))
 #' }
 #'
 espn_mbb_pbp <- function(game_id) {
@@ -3134,8 +3134,8 @@ helper_espn_mbb_team_box <- function(resp) {
           tidyr::everything()) %>%
         make_hoopR_data("ESPN MBB Team Box Information from ESPN.com", Sys.time())
     }
+    return(team_box_score)
   }
-  return(team_box_score)
 }
 
 #'  **Parse ESPN MBB Player Box, helper function**
