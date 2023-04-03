@@ -1181,6 +1181,7 @@ espn_nba_teams <- function(){
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
+#' @importFrom lubridate with_tz ymd_hm
 #' @import rvest
 #' @export
 #' @family ESPN NBA Functions
@@ -1259,8 +1260,8 @@ espn_nba_scoreboard <- function(season){
         dplyr::mutate(
           game_date_time = lubridate::ymd_hm(substr(.data$game_date, 1, nchar(.data$game_date) - 1)) %>%
             lubridate::with_tz(tzone = "America/New_York"),
-          game_date = as.Date(substr(.data$game_date_time, 1, 10))
-        )
+          game_date = as.Date(substr(.data$game_date_time, 1, 10)))
+
       nba_data <- nba_data %>%
         tidyr::hoist(
           "competitors",
@@ -2389,6 +2390,7 @@ espn_nba_player_stats <- function(athlete_id, year, season_type='regular', total
 #'  **Parse ESPN NBA PBP, helper function**
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_nba_pbp <- function(resp){
 
@@ -2667,6 +2669,7 @@ helper_espn_nba_pbp <- function(resp){
 #'  **Parse ESPN NBA Team Box, helper function**
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_nba_team_box <- function(resp){
 
@@ -2878,6 +2881,7 @@ helper_espn_nba_team_box <- function(resp){
 #'  **Parse ESPN NBA Player Box, helper function**
 #' @param resp Response object from the ESPN NBA game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_nba_player_box <- function(resp){
 

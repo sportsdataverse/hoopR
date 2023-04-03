@@ -1253,6 +1253,7 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @importFrom glue glue
+#' @importFrom lubridate with_tz ymd_hm
 #' @import rvest
 #' @noRd
 parse_espn_mbb_scoreboard <- function(group, season_dates) {
@@ -1310,17 +1311,18 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
         tidyr::unnest_wider("season", names_sep = "_") %>%
         dplyr::rename("season" = "season_year") %>%
         dplyr::select(-dplyr::any_of("status"))
+
       mbb_data <- mbb_data %>%
         dplyr::mutate(
           game_date_time = lubridate::ymd_hm(substr(.data$game_date, 1, nchar(.data$game_date) - 1)) %>%
             lubridate::with_tz(tzone = "America/New_York"),
-          game_date = as.Date(substr(.data$game_date_time, 1, 10))
-        )
+          game_date = as.Date(substr(.data$game_date_time, 1, 10)))
+
       mbb_data <- mbb_data %>%
         tidyr::hoist(
           "competitors",
-          homeAway = list(1,"homeAway")
-        )
+          homeAway = list(1,"homeAway"))
+
       mbb_data <- mbb_data %>%
         tidyr::hoist(
           "competitors",
@@ -2705,6 +2707,7 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type='regular', total
 #'  **Parse ESPN MBB PBP, helper function**
 #' @param resp Response object from the ESPN MBB game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_pbp <- function(resp){
   game_json <- resp %>%
@@ -2982,6 +2985,7 @@ helper_espn_mbb_pbp <- function(resp){
 #'  **Parse ESPN MBB Team Box, helper function**
 #' @param resp Response object from the ESPN MBB game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_team_box <- function(resp) {
   game_json <- resp %>%
@@ -3120,7 +3124,6 @@ helper_espn_mbb_team_box <- function(resp) {
       complete_statistics_df$season_type <- game_json[["header"]][["season"]][["type"]]
       complete_statistics_df$game_date <- game_date
       complete_statistics_df$game_date_time <- game_date_time
-
       complete_statistics_df$game_id <- as.integer(gameId)
 
       suppressWarnings(
@@ -3194,6 +3197,7 @@ helper_espn_mbb_team_box <- function(resp) {
 #'  **Parse ESPN MBB Player Box, helper function**
 #' @param resp Response object from the ESPN MBB game summary endpoint
 #' @return Returns a tibble
+#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_player_box <- function(resp){
   game_json <- resp %>%
