@@ -20,8 +20,9 @@ Return a data frame with the following columns:\tabular{ll}{
    team_slug \tab character \cr
    conference \tab character \cr
    division \tab character \cr
-   season \tab character \cr
+   team_abbreviation \tab character \cr
    team_name_full \tab character \cr
+   season \tab character \cr
    espn_team_id \tab integer \cr
    abbreviation \tab character \cr
    display_name \tab character \cr

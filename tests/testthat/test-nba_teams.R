@@ -16,7 +16,6 @@ test_that("NBA Teams", {
     "team_abbreviation",
     "team_name_full",
     "season",
-    "team_name_full_2",
     "espn_team_id",
     "abbreviation",
     "display_name",

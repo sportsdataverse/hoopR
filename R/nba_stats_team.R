@@ -8,31 +8,32 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a data frame with the following columns:
 #'
-#'    |col_name        |types     |
-#'    |:---------------|:---------|
-#'    |league_id       |character |
-#'    |season_id       |character |
-#'    |team_id         |character |
-#'    |team_city       |character |
-#'    |team_name       |character |
-#'    |team_slug       |character |
-#'    |conference      |character |
-#'    |division        |character |
-#'    |season          |character |
-#'    |team_name_full  |character |
-#'    |espn_team_id    |integer   |
-#'    |abbreviation    |character |
-#'    |display_name    |character |
-#'    |mascot          |character |
-#'    |nickname        |character |
-#'    |team            |character |
-#'    |color           |character |
-#'    |alternate_color |character |
-#'    |logo            |character |
-#'    |logo_dark       |character |
-#'    |logos_href_3    |character |
-#'    |logos_href_4    |character |
-#'    |nba_logo_svg    |character |
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |league_id         |character |
+#'    |season_id         |character |
+#'    |team_id           |character |
+#'    |team_city         |character |
+#'    |team_name         |character |
+#'    |team_slug         |character |
+#'    |conference        |character |
+#'    |division          |character |
+#'    |team_abbreviation |character |
+#'    |team_name_full    |character |
+#'    |season            |character |
+#'    |espn_team_id      |integer   |
+#'    |abbreviation      |character |
+#'    |display_name      |character |
+#'    |mascot            |character |
+#'    |nickname          |character |
+#'    |team              |character |
+#'    |color             |character |
+#'    |alternate_color   |character |
+#'    |logo              |character |
+#'    |logo_dark         |character |
+#'    |logos_href_3      |character |
+#'    |logos_href_4      |character |
+#'    |nba_logo_svg      |character |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -48,8 +49,22 @@ nba_teams <- function(...){
   tryCatch(
     expr = {
 
-      standings <- nba_leaguestandingsv3(season = year_to_season(most_recent_nba_season() - 1)) %>%
+      standings <- nba_leaguestandingsv3(season = year_to_season(most_recent_nba_season() - 1), ...) %>%
         purrr::pluck("Standings")
+
+      league_gamelog <- nba_leaguegamelog(league_id = '00',
+                                           season = year_to_season(most_recent_nba_season() - 1), ...) %>%
+        purrr::pluck("LeagueGameLog") %>%
+        dplyr::rename("team_name_full" = "TEAM_NAME") %>%
+        dplyr::select(
+          "TEAM_ID",
+          "TEAM_ABBREVIATION",
+          "team_name_full") %>%
+        dplyr::distinct()
+
+      standings <- standings %>%
+        dplyr::left_join(league_gamelog, by = c("TeamID" = "TEAM_ID"))
+
       nba_teams <- standings %>%
         dplyr::select(dplyr::any_of(c(
           "LeagueID",
@@ -59,11 +74,12 @@ nba_teams <- function(...){
           "TeamName",
           "TeamSlug",
           "Conference",
-          "Division"))) %>%
+          "Division",
+          "TEAM_ABBREVIATION",
+          "team_name_full"))) %>%
         dplyr::mutate(
-          Season = paste0('', year_to_season(most_recent_nba_season() - 1)),
-          TeamNameFull = paste(.data$TeamCity, .data$TeamName)) %>%
-        dplyr::arrange(.data$TeamNameFull)
+          Season = paste0('', year_to_season(most_recent_nba_season() - 1))) %>%
+        dplyr::arrange(.data$team_name_full)
 
       espn_nba_teams <- espn_nba_teams() %>%
         dplyr::rename("espn_team_id" = "team_id")
