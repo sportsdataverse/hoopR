@@ -2800,9 +2800,10 @@ helper_espn_nba_team_box <- function(resp){
           "team_winner")),
           tidyr::everything()) %>%
         make_hoopR_data("ESPN NBA Team Box Information from ESPN.com", Sys.time())
+
+      return(team_box_score)
     }
   }
-  return(team_box_score)
 }
 
 #'  **Parse ESPN NBA Player Box, helper function**
@@ -3065,7 +3066,8 @@ helper_espn_nba_player_box <- function(resp){
           "opponent_team_score"
         ), as.integer) %>%
         make_hoopR_data("ESPN NBA Player Box Information from ESPN.com", Sys.time())
+
+      return(player_box_score)
     }
-    return(player_box_score)
   }
 }
