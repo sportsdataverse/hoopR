@@ -56,13 +56,15 @@ test_that("ESPN - Get NBA play by play all", {
     "game_id",
     "season",
     "season_type",
-    "game_date"
+    "game_date",
+    "game_date_time"
   )
   cols_x2 <- c(
     "game_id",
     "season",
     "season_type",
     "game_date",
+    "game_date_time",
     "team_id",
     "team_uid",
     "team_slug",
@@ -121,6 +123,7 @@ test_that("ESPN - Get NBA play by play all", {
     "season",
     "season_type",
     "game_date",
+    "game_date_time",
     "athlete_id",
     "athlete_display_name",
     "team_id",

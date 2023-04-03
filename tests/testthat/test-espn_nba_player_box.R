@@ -7,6 +7,7 @@ test_that("ESPN - Get NBA player box score only", {
     "season",
     "season_type",
     "game_date",
+    "game_date_time",
     "athlete_id",
     "athlete_display_name",
     "team_id",
@@ -60,6 +61,7 @@ test_that("ESPN - Get NBA player box score only", {
     "opponent_team_alternate_color",
     "opponent_team_score"
   )
+
   expect_equal(colnames(x), cols)
   expect_s3_class(x, "data.frame")
 

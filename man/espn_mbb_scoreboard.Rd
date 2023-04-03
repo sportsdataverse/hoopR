@@ -19,12 +19,13 @@ Returns a tibble\tabular{ll}{
    season_slug \tab character \cr
    game_id \tab integer \cr
    game_uid \tab character \cr
-   game_date \tab character \cr
+   game_date \tab Date \cr
    attendance \tab integer \cr
    status_name \tab character \cr
    broadcast_market \tab character \cr
    broadcast_name \tab character \cr
    start_date \tab character \cr
+   game_date_time \tab POSIXct \cr
    home_team_name \tab character \cr
    home_team_logo \tab character \cr
    home_team_abb \tab character \cr

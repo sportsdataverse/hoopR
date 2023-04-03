@@ -7,6 +7,7 @@ test_that("ESPN - Get MBB team box score only", {
     "season",
     "season_type",
     "game_date",
+    "game_date_time",
     "team_id",
     "team_uid",
     "team_slug",

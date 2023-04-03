@@ -17,6 +17,7 @@ test_that("ESPN - Get NBA scoreboard", {
     "broadcast_market",
     "broadcast_name",
     "start_date",
+    "game_date_time",
     "home_team_name",
     "home_team_logo",
     "home_team_abb",
