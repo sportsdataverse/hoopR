@@ -215,10 +215,6 @@ espn_nba_game_all <- function(game_id) {
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
-  plays_df <- data.frame()
-  team_box_score <- data.frame()
-  player_box_score <- data.frame()
-
   #---- Play-by-Play ------
   tryCatch(
     expr = {
@@ -367,7 +363,6 @@ espn_nba_pbp <- function(game_id){
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
-  plays_df <- data.frame()
   #---- Play-by-Play ------
   tryCatch(
     expr = {
@@ -488,7 +483,6 @@ espn_nba_team_box <- function(game_id){
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
-  team_box_score <- data.frame()
   #---- Team Box ------
   tryCatch(
     expr = {
@@ -605,8 +599,6 @@ espn_nba_player_box <- function(game_id){
   resp <- res %>%
     httr::content(as = "text", encoding = "UTF-8")
 
-
-  player_box_score <- data.frame()
   #---- Player Box ------
   tryCatch(
     expr = {
@@ -2469,10 +2461,10 @@ helper_espn_nba_pbp <- function(resp){
     jsonlite::fromJSON(flatten = TRUE)
 
 
-  plays <- game_json[["plays"]] %>%
-    tidyr::unnest_wider("participants")
+  plays <- game_json %>%
+    purrr::pluck("plays")
 
-  if (("coordinate.x" %in% names(plays)) && ("coordinate.y" %in% names(plays))) {
+  if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
     plays <- plays %>%
       dplyr::mutate(
         # convert types
@@ -2505,29 +2497,59 @@ helper_espn_nba_pbp <- function(resp){
         "coordinate.y" = "coordinate_y_transformed"
       )
   }
-  suppressWarnings(
-    aths <- plays %>%
-      dplyr::group_by(.data$id) %>%
-      dplyr::select(
-        "id",
-        "athlete.id") %>%
-      tidyr::unnest_wider("athlete.id", names_sep = "_")
-  )
-  names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2", "athlete.id.3")
-  plays_df <- dplyr::bind_cols(plays, aths, id_vars) %>%
-    select(-"athlete.id") %>%
+
+  ## Written this way for compliance with data repository processing
+  if ("participants" %in% names(plays)) {
+    plays <- plays %>%
+      tidyr::unnest_wider("participants")
+    suppressWarnings(
+      aths <- plays %>%
+        dplyr::group_by(.data$id) %>%
+        dplyr::select(
+          "id",
+          "athlete.id") %>%
+        tidyr::unnest_wider("athlete.id", names_sep = "_")
+    )
+    names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2", "athlete.id.3")
+    plays <- plays %>%
+      dplyr::bind_cols(aths) %>%
+      janitor::clean_names() %>%
+      dplyr::mutate(dplyr::across(dplyr::any_of(c(
+        "athlete_id_1",
+        "athlete_id_2",
+        "athlete_id_3"
+      )), ~as.integer(.x)))
+  }
+  ## Written this way for compliance with data repository processing
+  if (!("homeTeamName" %in% names(plays))) {
+    plays <- plays %>%
+      dplyr::bind_cols(id_vars)
+  }
+
+  plays <- plays %>%
+    dplyr::select(-dplyr::any_of(c("athlete.id", "athlete_id")))  %>%
+    janitor::clean_names() %>%
     dplyr::mutate(
       game_id = gameId,
       season = season,
       season_type = season_type,
       game_date = game_date) %>%
-    janitor::clean_names() %>%
+    dplyr::rename(dplyr::any_of(c(
+      "athlete_id_1" = "participants_0_athlete_id",
+      "athlete_id_2" = "participants_1_athlete_id",
+      "athlete_id_3" = "participants_2_athlete_id")))
+
+    plays <- plays %>%
+      dplyr::mutate(dplyr::across(dplyr::any_of(c(
+        "athlete_id_1",
+        "athlete_id_2",
+        "athlete_id_3"
+      )), ~as.integer(.x)))
+
+  plays_df <- plays %>%
     dplyr::mutate_at(c(
       "type_id",
-      "team_id",
-      "athlete_id_1",
-      "athlete_id_2",
-      "athlete_id_3"), as.integer) %>%
+      "team_id"), as.integer) %>%
     make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com", Sys.time())
 
   return(plays_df)
