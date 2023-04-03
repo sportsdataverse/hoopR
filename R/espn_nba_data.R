@@ -2397,7 +2397,9 @@ helper_espn_nba_pbp <- function(resp){
   game_json <- resp %>%
     jsonlite::fromJSON()
   pbp_source <- game_json[["header"]][["competitions"]][["playByPlaySource"]]
-  if (pbp_source != "none") {
+  plays <- game_json %>%
+    purrr::pluck("plays")
+  if (pbp_source != "none" && nrow(plays) > 10) {
     homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
 
     gameId <- as.integer(game_json[["header"]][["id"]])
