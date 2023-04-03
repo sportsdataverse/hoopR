@@ -3354,29 +3354,51 @@ helper_espn_mbb_player_box <- function(resp){
 
       teams_df <- game_json[["header"]][["competitions"]][["competitors"]][[1]]
 
-      homeAway1 <- teams_df[["homeAway"]][1]
-      homeAway1_team.id <- as.integer(teams_df[["id"]][1])
-      homeAway1_team.location <- teams_df[["team.location"]][1]
-      homeAway1_team.name <- teams_df[["team.name"]][1]
-      homeAway1_team.abbreviation <- teams_df[["team.abbreviation"]][1]
-      homeAway1_team.displayName <- teams_df[["team.displayName"]][1]
-      homeAway1_team.logos <- teams_df[["team.logos"]][[1]][["href"]][1]
-      homeAway1_team.color <- teams_df[["team.color"]][1]
-      homeAway1_team.alternateColor <- teams_df[["team.alternateColor"]][1]
-      homeAway1_team.winner <- teams_df[["winner"]][1]
-      homeAway1_team.score <- teams_df[["score"]][1]
+      homeAway1 <- teams_df[["homeAway"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.id <- as.integer(teams_df[["id"]] %>%
+                                        purrr::pluck(1, .default = NA_integer_))
+      homeAway1_team.location <- teams_df[["team.location"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.name <- teams_df[["team.name"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.abbreviation <- teams_df[["team.abbreviation"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.displayName <- teams_df[["team.displayName"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.logos <- teams_df[["team.logos"]][[1]][["href"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.color <- teams_df[["team.color"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.alternateColor <- teams_df[["team.alternateColor"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.winner <- teams_df[["winner"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway1_team.score <- as.integer(teams_df[["score"]] %>%
+                                           purrr::pluck(1, .default = NA_integer_))
 
-      homeAway2 <- teams_df[["homeAway"]][2]
-      homeAway2_team.id <- as.integer(teams_df[["id"]][2])
-      homeAway2_team.location <- teams_df[["team.location"]][2]
-      homeAway2_team.name <- teams_df[["team.name"]][2]
-      homeAway2_team.abbreviation <- teams_df[["team.abbreviation"]][2]
-      homeAway2_team.displayName <- teams_df[["team.displayName"]][2]
-      homeAway2_team.logos <- teams_df[["team.logos"]][[2]][["href"]][1]
-      homeAway2_team.color <- teams_df[["team.color"]][2]
-      homeAway2_team.alternateColor <- teams_df[["team.alternateColor"]][2]
-      homeAway2_team.winner <- teams_df[["winner"]][2]
-      homeAway2_team.score <- teams_df[["score"]][2]
+      homeAway2 <- teams_df[["homeAway"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.id <- as.integer(teams_df[["id"]] %>%
+                                        purrr::pluck(2, .default = NA_integer_))
+      homeAway2_team.location <- teams_df[["team.location"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.name <- teams_df[["team.name"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.abbreviation <- teams_df[["team.abbreviation"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.displayName <- teams_df[["team.displayName"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.logos <- teams_df[["team.logos"]][[2]][["href"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeAway2_team.color <- teams_df[["team.color"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.alternateColor <- teams_df[["team.alternateColor"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.winner <- teams_df[["winner"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeAway2_team.score <- as.integer(teams_df[["score"]] %>%
+                                           purrr::pluck(2, .default = NA_integer_))
 
       players_df <- players_df %>%
         dplyr::mutate(
