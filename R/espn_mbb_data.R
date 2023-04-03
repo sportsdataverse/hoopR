@@ -220,6 +220,10 @@ espn_mbb_game_all <- function(game_id) {
 
       plays_df <- helper_espn_mbb_pbp(resp)
 
+      if (is.null(plays_df)) {
+        message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!"))
+      }
+
     },
     error = function(e) {
       message(
@@ -241,6 +245,10 @@ espn_mbb_game_all <- function(game_id) {
 
       team_box_score <- helper_espn_mbb_team_box(resp)
 
+      if (is.null(team_box_score)) {
+        message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!"))
+      }
+
     },
     error = function(e) {
       message(
@@ -261,6 +269,10 @@ espn_mbb_game_all <- function(game_id) {
     expr = {
 
       player_box_score <- helper_espn_mbb_player_box(resp)
+
+      if (is.null(player_box_score)) {
+        message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!"))
+      }
 
     },
     error = function(e) {
@@ -382,6 +394,10 @@ espn_mbb_pbp <- function(game_id) {
 
       plays_df <- helper_espn_mbb_pbp(resp)
 
+      if (is.null(plays_df)) {
+        return(message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!")))
+      }
+
     },
     error = function(e) {
       message(
@@ -474,7 +490,7 @@ espn_mbb_pbp <- function(game_id) {
 #'
 #' @examples
 #' \donttest{
-#'   try(espn_mbb_team_box(game_id = 401479672))
+#'   try(espn_mbb_team_box(game_id = 401371464))
 #' }
 espn_mbb_team_box <- function(game_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -498,6 +514,10 @@ espn_mbb_team_box <- function(game_id) {
         httr::content(as = "text", encoding = "UTF-8")
 
       team_box_score <- helper_espn_mbb_team_box(resp)
+
+      if (is.null(team_box_score)) {
+        return(message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!")))
+      }
 
     },
     error = function(e) {
@@ -615,6 +635,10 @@ espn_mbb_player_box <- function(game_id) {
         httr::content(as = "text", encoding = "UTF-8")
 
       player_box_score <- helper_espn_mbb_player_box(resp)
+
+      if (is.null(player_box_score)) {
+        return(message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!")))
+      }
 
     },
     error = function(e) {
@@ -2703,7 +2727,7 @@ helper_espn_mbb_pbp <- function(resp){
       homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
         purrr::pluck(1, .default = NA_character_)
       homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
-        purrr::pluck(1, .default = NA_character_))
+                                   purrr::pluck(1, .default = NA_character_))
       homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
         purrr::pluck(1, .default = NA_character_)
       homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%

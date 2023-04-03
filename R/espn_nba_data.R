@@ -221,45 +221,73 @@ espn_nba_game_all <- function(game_id) {
 
       plays_df <- helper_espn_nba_pbp(resp)
 
+      if (is.null(plays_df)) {
+        message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!"))
+      }
+
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+      message(
+        glue::glue(
+          "{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"
+        )
+      )
     },
     warning = function(w) {
+
     },
     finally = {
+
     }
   )
-
   #---- Team Box ------
   tryCatch(
     expr = {
 
       team_box_score <- helper_espn_nba_team_box(resp)
 
+      if (is.null(team_box_score)) {
+        message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!"))
+      }
+
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
+      message(
+        glue::glue(
+          "{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"
+        )
+      )
     },
     warning = function(w) {
+
     },
     finally = {
+
     }
   )
-
   #---- Player Box ------
   tryCatch(
     expr = {
 
       player_box_score <- helper_espn_nba_player_box(resp)
 
+      if (is.null(player_box_score)) {
+        message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!"))
+      }
+
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"))
+      message(
+        glue::glue(
+          "{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"
+        )
+      )
     },
     warning = function(w) {
+
     },
     finally = {
+
     }
   )
 
@@ -368,6 +396,10 @@ espn_nba_pbp <- function(game_id){
     expr = {
 
       plays_df <- helper_espn_nba_pbp(resp)
+
+      if (is.null(plays_df)) {
+        return(message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!")))
+      }
 
     },
     error = function(e) {
@@ -489,6 +521,10 @@ espn_nba_team_box <- function(game_id){
 
       team_box_score <- helper_espn_nba_team_box(resp)
 
+      if (is.null(team_box_score)) {
+        return(message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!")))
+      }
+
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"))
@@ -604,6 +640,10 @@ espn_nba_player_box <- function(game_id){
     expr = {
 
       player_box_score <- helper_espn_nba_player_box(resp)
+
+      if (is.null(player_box_score)) {
+        return(message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!")))
+      }
 
     },
     error = function(e) {
