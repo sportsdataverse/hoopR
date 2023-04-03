@@ -95,7 +95,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -195,7 +195,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -281,7 +281,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -402,7 +402,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_nba_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)

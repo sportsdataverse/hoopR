@@ -92,7 +92,7 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
             seasons >= 2006,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -186,7 +186,7 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
             seasons >= 2003,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -275,7 +275,7 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
             seasons >= 2003,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -402,7 +402,7 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
             seasons >= 2002,
             seasons <= most_recent_mbb_season())
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_",seasons,".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_", seasons, ".rds")
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)

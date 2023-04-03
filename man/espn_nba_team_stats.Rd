@@ -153,7 +153,7 @@ Returns a tibble with the team stats data\tabular{ll}{
 }
 \examples{
 \donttest{
-  x<-try(espn_nba_team_stats(team_id = 18, year = 2020))
+  try(espn_nba_team_stats(team_id = 18, year = 2020))
 }
 }
 \seealso{
