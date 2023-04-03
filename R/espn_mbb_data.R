@@ -490,7 +490,7 @@ espn_mbb_pbp <- function(game_id) {
 #'
 #' @examples
 #' \donttest{
-#'   try(espn_mbb_team_box(game_id = 401371464))
+#'   try(espn_mbb_team_box(game_id = 401479672))
 #' }
 espn_mbb_team_box <- function(game_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
