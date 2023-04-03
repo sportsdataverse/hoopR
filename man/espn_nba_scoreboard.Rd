@@ -2,7 +2,7 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_scoreboard}
 \alias{espn_nba_scoreboard}
-\title{\strong{Get ESPN men's NBA schedule for a specific year}}
+\title{\strong{Get ESPN NBA schedule for a specific year}}
 \usage{
 espn_nba_scoreboard(season)
 }
@@ -19,13 +19,14 @@ Returns a tibble with scoreboard data\tabular{ll}{
    season_slug \tab character \cr
    game_id \tab integer \cr
    game_uid \tab character \cr
-   game_date \tab character \cr
+   game_date \tab Date \cr
    attendance \tab integer \cr
    notes \tab logical \cr
    status_name \tab character \cr
    broadcasts \tab logical \cr
    start_date \tab character \cr
    geo_broadcasts \tab logical \cr
+   game_date_time \tab POSIXct \cr
    home_team_name \tab character \cr
    home_team_logo \tab character \cr
    home_team_abb \tab character \cr
@@ -49,7 +50,7 @@ Returns a tibble with scoreboard data\tabular{ll}{
 }
 }
 \description{
-\strong{Get ESPN men's NBA schedule for a specific year}
+\strong{Get ESPN NBA schedule for a specific year}
 }
 \examples{
 

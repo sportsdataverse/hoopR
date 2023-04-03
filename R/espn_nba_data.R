@@ -59,6 +59,7 @@
 #'    |season                    |integer   |
 #'    |season_type               |integer   |
 #'    |game_date                 |Date      |
+#'    |game_date_time            |POSIXct   |
 #'
 #'    **Team**
 #'
@@ -69,6 +70,7 @@
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
 #'    |team_id                           |integer   |
 #'    |team_uid                          |character |
 #'    |team_slug                         |character |
@@ -131,6 +133,7 @@
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
 #'    |athlete_id                        |integer   |
 #'    |athlete_display_name              |character |
 #'    |team_id                           |integer   |
@@ -316,20 +319,20 @@ espn_nba_game_all <- function(game_id) {
 #'    |score_value               |integer   |
 #'    |wallclock                 |character |
 #'    |shooting_play             |logical   |
-#'    |type_id                   |character |
+#'    |type_id                   |integer   |
 #'    |type_text                 |character |
 #'    |period_number             |integer   |
 #'    |period_display_value      |character |
 #'    |clock_display_value       |character |
-#'    |team_id                   |character |
+#'    |team_id                   |integer   |
 #'    |coordinate_x_raw          |numeric   |
 #'    |coordinate_y_raw          |numeric   |
 #'    |coordinate_x              |numeric   |
 #'    |coordinate_y              |numeric   |
 #'    |play_id                   |character |
-#'    |athlete_id_1              |character |
-#'    |athlete_id_2              |character |
-#'    |athlete_id_3              |character |
+#'    |athlete_id_1              |integer   |
+#'    |athlete_id_2              |integer   |
+#'    |athlete_id_3              |integer   |
 #'    |home_team_id              |integer   |
 #'    |home_team_mascot          |character |
 #'    |home_team_name            |character |
@@ -358,6 +361,7 @@ espn_nba_game_all <- function(game_id) {
 #'    |season                    |integer   |
 #'    |season_type               |integer   |
 #'    |game_date                 |Date      |
+#'    |game_date_time            |POSIXct   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
@@ -430,6 +434,7 @@ espn_nba_pbp <- function(game_id){
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
 #'    |team_id                           |integer   |
 #'    |team_uid                          |character |
 #'    |team_slug                         |character |
@@ -550,6 +555,7 @@ espn_nba_team_box <- function(game_id){
 #'    |season                            |integer   |
 #'    |season_type                       |integer   |
 #'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
 #'    |athlete_id                        |integer   |
 #'    |athlete_display_name              |character |
 #'    |team_id                           |integer   |
@@ -1127,7 +1133,7 @@ espn_nba_teams <- function(){
 }
 
 
-#' **Get ESPN men's NBA schedule for a specific year**
+#' **Get ESPN NBA schedule for a specific year**
 #'
 #' @param season Either numeric or character (YYYYMMDD)
 #' @return Returns a tibble with scoreboard data
@@ -1141,13 +1147,14 @@ espn_nba_teams <- function(){
 #'    |season_slug         |character |
 #'    |game_id             |integer   |
 #'    |game_uid            |character |
-#'    |game_date           |character |
+#'    |game_date           |Date      |
 #'    |attendance          |integer   |
 #'    |notes               |logical   |
 #'    |status_name         |character |
 #'    |broadcasts          |logical   |
 #'    |start_date          |character |
 #'    |geo_broadcasts      |logical   |
+#'    |game_date_time      |POSIXct   |
 #'    |home_team_name      |character |
 #'    |home_team_logo      |character |
 #'    |home_team_abb       |character |
@@ -1247,6 +1254,13 @@ espn_nba_scoreboard <- function(season){
         tidyr::unnest_wider("season", names_sep = "_") %>%
         dplyr::rename("season" = "season_year") %>%
         dplyr::select(-dplyr::any_of("status"))
+
+      nba_data <- nba_data %>%
+        dplyr::mutate(
+          game_date_time = lubridate::ymd_hm(substr(.data$game_date, 1, nchar(.data$game_date) - 1)) %>%
+            lubridate::with_tz(tzone = "America/New_York"),
+          game_date = as.Date(substr(.data$game_date_time, 1, 10))
+        )
       nba_data <- nba_data %>%
         tidyr::hoist(
           "competitors",
@@ -1487,7 +1501,7 @@ espn_nba_standings <- function(year){
       #joining the 2 dataframes together to create a standings table
 
       standings <- cbind(teams, standings_data) %>%
-      dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
+        dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
         dplyr::mutate_at(c(
           "avgpointsagainst",
           "avgpointsfor",
@@ -2382,265 +2396,271 @@ helper_espn_nba_pbp <- function(resp){
     jsonlite::fromJSON()
   pbp_source <- game_json[["header"]][["competitions"]][["playByPlaySource"]]
   if (pbp_source != "none") {
-  homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
+    homeAway1 <- jsonlite::fromJSON(resp)[['header']][['competitions']][['competitors']][[1]][['homeAway']][1]
 
-  gameId <- as.integer(game_json[["header"]][["id"]])
-  season <- game_json[['header']][['season']][['year']]
-  season_type <- game_json[['header']][['season']][['type']]
-  game_date <- as.Date(substr(game_json[['header']][['competitions']][['date']], 0, 10))
+    gameId <- as.integer(game_json[["header"]][["id"]])
+    season <- game_json[['header']][['season']][['year']]
+    season_type <- game_json[['header']][['season']][['type']]
+    game_date_time <- substr(game_json[['header']][['competitions']][['date']], 1,
+                             nchar(game_json[['header']][['competitions']][['date']]) - 1) %>%
+      lubridate::ymd_hm() %>%
+      lubridate::with_tz(tzone = "America/New_York")
 
-  id_vars <- data.frame()
-  if (homeAway1 == "home") {
+    game_date <- as.Date(substr(game_date_time, 0, 10))
 
-    homeTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']] %>%
-                              purrr::pluck(1, .default = NA_integer_))
-    homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
-                                 purrr::pluck(1, .default = NA_character_))
-    homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']] %>%
-                              purrr::pluck(2, .default = NA_integer_))
-    awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
-                                 purrr::pluck(2, .default = NA_integer_))
-    awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    id_vars <- data.frame(
-      homeTeamId,
-      homeTeamMascot,
-      homeTeamName,
-      homeTeamAbbrev,
-      homeTeamLogo,
-      homeTeamLogoDark,
-      homeTeamFullName,
-      homeTeamColor,
-      homeTeamAlternateColor,
-      homeTeamScore,
-      homeTeamWinner,
-      homeTeamRecord,
-      awayTeamId,
-      awayTeamMascot,
-      awayTeamName,
-      awayTeamAbbrev,
-      awayTeamLogo,
-      awayTeamLogoDark,
-      awayTeamFullName,
-      awayTeamColor,
-      awayTeamAlternateColor,
-      awayTeamScore,
-      awayTeamWinner,
-      awayTeamRecord
-    )
-  } else {
+    id_vars <- data.frame()
+    if (homeAway1 == "home") {
 
-    awayTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']] %>%
-                              purrr::pluck(1, .default = NA_integer_))
-    awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
-                                 purrr::pluck(1, .default = NA_integer_))
-    awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
-      purrr::pluck(1, .default = NA_character_)
-    homeTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']] %>%
-                              purrr::pluck(2, .default = NA_integer_))
-    homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
-                                 purrr::pluck(2, .default = NA_integer_))
-    homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
-      purrr::pluck(2, .default = NA_character_)
-    id_vars <- data.frame(
-      homeTeamId,
-      homeTeamMascot,
-      homeTeamName,
-      homeTeamAbbrev,
-      homeTeamLogo,
-      homeTeamLogoDark,
-      homeTeamFullName,
-      homeTeamColor,
-      homeTeamAlternateColor,
-      homeTeamScore,
-      homeTeamWinner,
-      homeTeamRecord,
-      awayTeamId,
-      awayTeamMascot,
-      awayTeamName,
-      awayTeamAbbrev,
-      awayTeamLogo,
-      awayTeamLogoDark,
-      awayTeamFullName,
-      awayTeamColor,
-      awayTeamAlternateColor,
-      awayTeamScore,
-      awayTeamWinner,
-      awayTeamRecord
-    )
-
-  }
-
-  game_json <- game_json %>%
-    jsonlite::toJSON() %>%
-    jsonlite::fromJSON(flatten = TRUE)
-
-
-  plays <- game_json %>%
-    purrr::pluck("plays")
-
-  if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
-    plays <- plays %>%
-      dplyr::mutate(
-        # convert types
-        coordinate.x = as.double(.data$coordinate.x),
-        coordinate.y = as.double(.data$coordinate.y),
-        # Free throws are adjusted automatically to 19' from baseline, which
-        # corresponds to 13.75' from the center of the basket (originally
-        # the center of the basket is (25, 0))
-        coordinate.y = dplyr::case_when(
-          stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
-          TRUE ~ .data$coordinate.y
-        ),
-        coordinate.x = dplyr::case_when(
-          stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
-          TRUE ~ .data$coordinate.x
-        ),
-        coordinate_x_transformed = dplyr::case_when(
-          .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
-          TRUE ~ .data$coordinate.y - 41.75
-        ),
-        coordinate_y_transformed = dplyr::case_when(
-          .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
-          TRUE ~ .data$coordinate.x - 25
-        )
-      ) %>%
-      dplyr::rename(
-        "coordinate.x.raw" = "coordinate.x",
-        "coordinate.y.raw" = "coordinate.y",
-        "coordinate.x" = "coordinate_x_transformed",
-        "coordinate.y" = "coordinate_y_transformed"
+      homeTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']] %>%
+                                purrr::pluck(1, .default = NA_integer_))
+      homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
+                                   purrr::pluck(1, .default = NA_character_))
+      homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']] %>%
+                                purrr::pluck(2, .default = NA_integer_))
+      awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
+                                   purrr::pluck(2, .default = NA_integer_))
+      awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      id_vars <- data.frame(
+        homeTeamId,
+        homeTeamMascot,
+        homeTeamName,
+        homeTeamAbbrev,
+        homeTeamLogo,
+        homeTeamLogoDark,
+        homeTeamFullName,
+        homeTeamColor,
+        homeTeamAlternateColor,
+        homeTeamScore,
+        homeTeamWinner,
+        homeTeamRecord,
+        awayTeamId,
+        awayTeamMascot,
+        awayTeamName,
+        awayTeamAbbrev,
+        awayTeamLogo,
+        awayTeamLogoDark,
+        awayTeamFullName,
+        awayTeamColor,
+        awayTeamAlternateColor,
+        awayTeamScore,
+        awayTeamWinner,
+        awayTeamRecord
       )
-  }
+    } else {
 
-  ## Written this way for compliance with data repository processing
-  if ("participants" %in% names(plays)) {
+      awayTeamId = as.integer(game_json[["header"]][["competitions"]][["competitors"]][[1]][['team']][['id']] %>%
+                                purrr::pluck(1, .default = NA_integer_))
+      awayTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[1]][['href']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      awayTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
+                                   purrr::pluck(1, .default = NA_integer_))
+      awayTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      awayTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
+        purrr::pluck(1, .default = NA_character_)
+      homeTeamId = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['team']][['id']] %>%
+                                purrr::pluck(2, .default = NA_integer_))
+      homeTeamMascot = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['name']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['location']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamAbbrev = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['abbreviation']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamLogo = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamLogoDark = game_json[['header']][['competitions']][['competitors']][[1]][['team']][['logos']][[2]][['href']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamFullName = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["displayName"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["color"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamAlternateColor = game_json[['header']][['competitions']][['competitors']][[1]][['team']][["alternateColor"]] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamScore = as.integer(game_json[['header']][['competitions']][['competitors']][[1]][['score']] %>%
+                                   purrr::pluck(2, .default = NA_integer_))
+      homeTeamWinner = game_json[['header']][['competitions']][['competitors']][[1]][['winner']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      homeTeamRecord = game_json[['header']][['competitions']][['competitors']][[1]][['record']][[1]][['summary']] %>%
+        purrr::pluck(2, .default = NA_character_)
+      id_vars <- data.frame(
+        homeTeamId,
+        homeTeamMascot,
+        homeTeamName,
+        homeTeamAbbrev,
+        homeTeamLogo,
+        homeTeamLogoDark,
+        homeTeamFullName,
+        homeTeamColor,
+        homeTeamAlternateColor,
+        homeTeamScore,
+        homeTeamWinner,
+        homeTeamRecord,
+        awayTeamId,
+        awayTeamMascot,
+        awayTeamName,
+        awayTeamAbbrev,
+        awayTeamLogo,
+        awayTeamLogoDark,
+        awayTeamFullName,
+        awayTeamColor,
+        awayTeamAlternateColor,
+        awayTeamScore,
+        awayTeamWinner,
+        awayTeamRecord
+      )
+
+    }
+
+    game_json <- game_json %>%
+      jsonlite::toJSON() %>%
+      jsonlite::fromJSON(flatten = TRUE)
+
+
+    plays <- game_json %>%
+      purrr::pluck("plays")
+
+    if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
+      plays <- plays %>%
+        dplyr::mutate(
+          # convert types
+          coordinate.x = as.double(.data$coordinate.x),
+          coordinate.y = as.double(.data$coordinate.y),
+          # Free throws are adjusted automatically to 19' from baseline, which
+          # corresponds to 13.75' from the center of the basket (originally
+          # the center of the basket is (25, 0))
+          coordinate.y = dplyr::case_when(
+            stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+            TRUE ~ .data$coordinate.y
+          ),
+          coordinate.x = dplyr::case_when(
+            stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+            TRUE ~ .data$coordinate.x
+          ),
+          coordinate_x_transformed = dplyr::case_when(
+            .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
+            TRUE ~ .data$coordinate.y - 41.75
+          ),
+          coordinate_y_transformed = dplyr::case_when(
+            .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
+            TRUE ~ .data$coordinate.x - 25
+          )
+        ) %>%
+        dplyr::rename(
+          "coordinate.x.raw" = "coordinate.x",
+          "coordinate.y.raw" = "coordinate.y",
+          "coordinate.x" = "coordinate_x_transformed",
+          "coordinate.y" = "coordinate_y_transformed"
+        )
+    }
+
+    ## Written this way for compliance with data repository processing
+    if ("participants" %in% names(plays)) {
+      plays <- plays %>%
+        tidyr::unnest_wider("participants")
+      suppressWarnings(
+        aths <- plays %>%
+          dplyr::group_by(.data$id) %>%
+          dplyr::select(
+            "id",
+            "athlete.id") %>%
+          tidyr::unnest_wider("athlete.id", names_sep = "_")
+      )
+      names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2", "athlete.id.3")
+      plays <- plays %>%
+        dplyr::bind_cols(aths) %>%
+        janitor::clean_names() %>%
+        dplyr::mutate(dplyr::across(dplyr::any_of(c(
+          "athlete_id_1",
+          "athlete_id_2",
+          "athlete_id_3"
+        )), ~as.integer(.x)))
+    }
+    ## Written this way for compliance with data repository processing
+    if (!("homeTeamName" %in% names(plays))) {
+      plays <- plays %>%
+        dplyr::bind_cols(id_vars)
+    }
+
     plays <- plays %>%
-      tidyr::unnest_wider("participants")
-    suppressWarnings(
-      aths <- plays %>%
-        dplyr::group_by(.data$id) %>%
-        dplyr::select(
-          "id",
-          "athlete.id") %>%
-        tidyr::unnest_wider("athlete.id", names_sep = "_")
-    )
-    names(aths) <- c("play.id", "athlete.id.1", "athlete.id.2", "athlete.id.3")
-    plays <- plays %>%
-      dplyr::bind_cols(aths) %>%
+      dplyr::select(-dplyr::any_of(c("athlete.id", "athlete_id")))  %>%
       janitor::clean_names() %>%
+      dplyr::mutate(
+        game_id = gameId,
+        season = season,
+        season_type = season_type,
+        game_date = game_date,
+        game_date_time = game_date_time) %>%
+      dplyr::rename(dplyr::any_of(c(
+        "athlete_id_1" = "participants_0_athlete_id",
+        "athlete_id_2" = "participants_1_athlete_id",
+        "athlete_id_3" = "participants_2_athlete_id")))
+
+    plays <- plays %>%
       dplyr::mutate(dplyr::across(dplyr::any_of(c(
         "athlete_id_1",
         "athlete_id_2",
-        "athlete_id_3"
+        "athlete_id_3",
+        "type_id",
+        "team_id"
       )), ~as.integer(.x)))
-  }
-  ## Written this way for compliance with data repository processing
-  if (!("homeTeamName" %in% names(plays))) {
-    plays <- plays %>%
-      dplyr::bind_cols(id_vars)
-  }
 
-  plays <- plays %>%
-    dplyr::select(-dplyr::any_of(c("athlete.id", "athlete_id")))  %>%
-    janitor::clean_names() %>%
-    dplyr::mutate(
-      game_id = gameId,
-      season = season,
-      season_type = season_type,
-      game_date = game_date) %>%
-    dplyr::rename(dplyr::any_of(c(
-      "athlete_id_1" = "participants_0_athlete_id",
-      "athlete_id_2" = "participants_1_athlete_id",
-      "athlete_id_3" = "participants_2_athlete_id")))
+    plays_df <- plays %>%
+      make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com", Sys.time())
 
-  plays <- plays %>%
-    dplyr::mutate(dplyr::across(dplyr::any_of(c(
-      "athlete_id_1",
-      "athlete_id_2",
-      "athlete_id_3",
-      "type_id",
-      "team_id"
-    )), ~as.integer(.x)))
-
-  plays_df <- plays %>%
-    make_hoopR_data("ESPN NBA Play-by-Play Information from ESPN.com", Sys.time())
-
-  return(plays_df)
+    return(plays_df)
   }
 }
 
@@ -2654,6 +2674,12 @@ helper_espn_nba_team_box <- function(resp){
     jsonlite::fromJSON()
 
   gameId <- as.integer(game_json[["header"]][["id"]])
+  game_date_time <- substr(game_json[['header']][['competitions']][['date']], 1,
+                           nchar(game_json[['header']][['competitions']][['date']]) - 1) %>%
+    lubridate::ymd_hm() %>%
+    lubridate::with_tz(tzone = "America/New_York")
+
+  game_date <- as.Date(substr(game_date_time, 0, 10))
   box_score_available <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
   if (box_score_available == TRUE) {
     teams_box_score_df <- game_json[["boxscore"]][["teams"]] %>%
@@ -2778,6 +2804,8 @@ helper_espn_nba_team_box <- function(resp){
       complete_statistics_df$season_type <- game_json[["header"]][["season"]][["type"]]
       complete_statistics_df$game_date <- as.Date(substr(game_json[["header"]][["competitions"]][["date"]], 0, 10))
       complete_statistics_df$game_id <- as.integer(gameId)
+      complete_statistics_df$game_date_time <- game_date_time
+      complete_statistics_df$game_date <- game_date
 
       suppressWarnings(
         complete_statistics_df <- complete_statistics_df %>%
@@ -2824,6 +2852,7 @@ helper_espn_nba_team_box <- function(resp){
           "season",
           "season_type",
           "game_date",
+          "game_date_time",
           "team_id",
           "team_uid",
           "team_slug",
@@ -2863,7 +2892,13 @@ helper_espn_nba_player_box <- function(resp){
   gameId <- as.integer(game_json[["header"]][["id"]])
   season <- game_json[["header"]][["season"]][["year"]]
   season_type <- game_json[["header"]][["season"]][["type"]]
-  game_date <- as.Date(substr(game_json[["header"]][["competitions"]][["date"]], 0, 10))
+  game_date_time <- substr(game_json[['header']][['competitions']][['date']], 1,
+                           nchar(game_json[['header']][['competitions']][['date']]) - 1) %>%
+    lubridate::ymd_hm() %>%
+    lubridate::with_tz(tzone = "America/New_York")
+
+  game_date <- as.Date(substr(game_date_time, 0, 10))
+
   boxScoreAvailable <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
 
   boxScoreSource <- game_json[["header"]][["competitions"]][["boxscoreSource"]]
@@ -2994,7 +3029,8 @@ helper_espn_nba_player_box <- function(resp){
           game_id = gameId,
           season = season,
           season_type = season_type,
-          game_date = game_date)
+          game_date = game_date,
+          game_date_time = game_date_time)
 
 
       teams_df <- game_json[["header"]][["competitions"]][["competitors"]][[1]]
@@ -3046,6 +3082,7 @@ helper_espn_nba_player_box <- function(resp){
           "season",
           "season_type",
           "game_date",
+          "game_date_time",
           "athlete_id",
           "athlete_display_name",
           "team_id",
@@ -3098,7 +3135,7 @@ helper_espn_nba_player_box <- function(resp){
           "opponent_team_color",
           "opponent_team_alternate_color",
           "opponent_team_score"
-          ))) %>%
+        ))) %>%
         dplyr::mutate_at(c(
           "athlete_id",
           "team_id",

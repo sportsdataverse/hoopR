@@ -18,6 +18,7 @@ A team boxscore data frame
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
    team_id \tab integer \cr
    team_uid \tab character \cr
    team_slug \tab character \cr

@@ -64,6 +64,7 @@ A play-by-play data frame.
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
 }
 }
 \description{

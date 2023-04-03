@@ -1,6 +1,6 @@
 test_that("ESPN - Get MBB scoreboard", {
   skip_on_cran()
-  x <- espn_mbb_scoreboard (season = "20220215")
+  x <- espn_mbb_scoreboard(season = "20220215")
 
   cols <- c(
     "matchup",
@@ -17,6 +17,7 @@ test_that("ESPN - Get MBB scoreboard", {
     "broadcast_market",
     "broadcast_name",
     "start_date",
+    "game_date_time",
     "home_team_name",
     "home_team_logo",
     "home_team_abb",

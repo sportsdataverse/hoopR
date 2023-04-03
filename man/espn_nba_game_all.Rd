@@ -65,6 +65,7 @@ A named list of data frames: Plays, Team, Player
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
 }
 
 
@@ -74,6 +75,7 @@ A named list of data frames: Plays, Team, Player
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
    team_id \tab integer \cr
    team_uid \tab character \cr
    team_slug \tab character \cr
@@ -135,6 +137,7 @@ A named list of data frames: Plays, Team, Player
    season \tab integer \cr
    season_type \tab integer \cr
    game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
    athlete_id \tab integer \cr
    athlete_display_name \tab character \cr
    team_id \tab integer \cr
