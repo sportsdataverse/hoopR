@@ -194,22 +194,22 @@
 <span></span>
 <span><span class="va">teamstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_teamstats.html">kp_teamstats</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">playerstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_playerstats.html">kp_playerstats</a></span><span class="op">(</span>metric <span class="op">=</span> <span class="st">'eFG'</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">playerstats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_playerstats.html">kp_playerstats</a></span><span class="op">(</span>metric <span class="op">=</span> <span class="st">'eFG'</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">kpoy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_kpoy.html">kp_kpoy</a></span><span class="op">(</span>year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">kpoy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_kpoy.html">kp_kpoy</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="team-tables">Team Tables<a class="anchor" aria-label="anchor" href="#team-tables"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#---- kp_team_tables.R -------------------</span></span>
-<span><span class="va">team_sched</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_schedule.html">kp_team_schedule</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">team_sched</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_schedule.html">kp_team_schedule</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">gameplan</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_gameplan.html">kp_gameplan</a></span><span class="op">(</span>team<span class="op">=</span><span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">gameplan</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_gameplan.html">kp_gameplan</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">opptracker</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_opptracker.html">kp_opptracker</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">opptracker</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_opptracker.html">kp_opptracker</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">team_players</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_players.html">kp_team_players</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">team_players</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_players.html">kp_team_players</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">minutes_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_minutes_matrix.html">kp_minutes_matrix</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
@@ -219,9 +219,9 @@
 <span></span>
 <span><span class="va">team_player_stats2</span> <span class="op">&lt;-</span> <span class="va">team_player_stats</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
 <span></span>
-<span><span class="va">team_depth_chart</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_depth_chart.html">kp_team_depth_chart</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">team_depth_chart</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_depth_chart.html">kp_team_depth_chart</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">team_lineups</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_lineups.html">kp_team_lineups</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">team_lineups</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_team_lineups.html">kp_team_lineups</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="historical-tables">Historical Tables<a class="anchor" aria-label="anchor" href="#historical-tables"></a>
@@ -238,13 +238,13 @@
 <span><span class="co"># there anymore at the moment for all years</span></span>
 <span><span class="co"># records_team &lt;- get_records_team(browser, team = 'Florida St.')</span></span>
 <span></span>
-<span><span class="va">pomeroy_archive_ratings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_pomeroy_archive_ratings.html">kp_pomeroy_archive_ratings</a></span><span class="op">(</span> date<span class="op">=</span><span class="st">'2018-11-22'</span><span class="op">)</span></span>
+<span><span class="va">pomeroy_archive_ratings</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_pomeroy_archive_ratings.html">kp_pomeroy_archive_ratings</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">'2018-11-22'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">conf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_conf.html">kp_conf</a></span><span class="op">(</span>year<span class="op">=</span><span class="st">'2020'</span>,conf<span class="op">=</span><span class="st">'ACC'</span><span class="op">)</span></span>
+<span><span class="va">conf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_conf.html">kp_conf</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">'2020'</span>,conf <span class="op">=</span> <span class="st">'ACC'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">conf_stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_confstats.html">kp_confstats</a></span><span class="op">(</span>year<span class="op">=</span><span class="st">'2020'</span><span class="op">)</span></span>
+<span><span class="va">conf_stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_confstats.html">kp_confstats</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">'2020'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">conf_history</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_confhistory.html">kp_confhistory</a></span><span class="op">(</span>conf<span class="op">=</span><span class="st">'ACC'</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">conf_history</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_confhistory.html">kp_confhistory</a></span><span class="op">(</span>conf <span class="op">=</span> <span class="st">'ACC'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="miscellaneous-stats-tables">Miscellaneous Stats Tables<a class="anchor" aria-label="anchor" href="#miscellaneous-stats-tables"></a>
@@ -254,18 +254,18 @@
 <span><span class="va">trends</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_trends.html">kp_trends</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">officials</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_officials.html">kp_officials</a></span><span class="op">(</span>year<span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">officials</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_officials.html">kp_officials</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">hca</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_hca.html">kp_hca</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">arenas</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_arenas.html">kp_arenas</a></span><span class="op">(</span>year<span class="op">=</span><span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">arenas</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_arenas.html">kp_arenas</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span></span>
-<span><span class="va">game_attrs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_game_attrs.html">kp_game_attrs</a></span><span class="op">(</span>year<span class="op">=</span><span class="fl">2020</span>, attr <span class="op">=</span> <span class="st">"Excitement"</span><span class="op">)</span></span>
+<span><span class="va">game_attrs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_game_attrs.html">kp_game_attrs</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, attr <span class="op">=</span> <span class="st">"Excitement"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">fanmatch</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_fanmatch.html">kp_fanmatch</a></span><span class="op">(</span>date<span class="op">=</span><span class="st">"2020-03-10"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">fanmatch</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kp_fanmatch.html">kp_fanmatch</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">"2020-03-10"</span><span class="op">)</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
