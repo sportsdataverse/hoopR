@@ -17,7 +17,7 @@ NULL
 #'    |:-------------------------------|:---------|
 #'    |id                              |numeric   |
 #'    |sequence_number                 |character |
-#'    |type_id                         |character |
+#'    |type_id                         |integer   |
 #'    |type_text                       |character |
 #'    |text                            |character |
 #'    |away_score                      |integer   |
@@ -27,14 +27,14 @@ NULL
 #'    |clock_display_value             |character |
 #'    |scoring_play                    |logical   |
 #'    |score_value                     |integer   |
-#'    |team_id                         |character |
-#'    |participants_0_athlete_id       |character |
-#'    |participants_1_athlete_id       |character |
-#'    |participants_2_athlete_id       |character |
+#'    |team_id                         |integer   |
+#'    |athlete_id_1                    |integer   |
+#'    |athlete_id_2                    |integer   |
+#'    |athlete_id_3                    |integer   |
 #'    |wallclock                       |character |
 #'    |shooting_play                   |logical   |
-#'    |coordinate_x                    |integer   |
-#'    |coordinate_y                    |integer   |
+#'    |coordinate_x_raw                |numeric   |
+#'    |coordinate_y_raw                |numeric   |
 #'    |season                          |integer   |
 #'    |season_type                     |integer   |
 #'    |away_team_id                    |integer   |
@@ -58,19 +58,23 @@ NULL
 #'    |clock_seconds                   |numeric   |
 #'    |half                            |character |
 #'    |game_half                       |character |
-#'    |lag_qtr                         |numeric   |
-#'    |lead_qtr                        |numeric   |
-#'    |lag_game_half                   |character |
+#'    |lead_qtr                        |integer   |
 #'    |lead_game_half                  |character |
 #'    |start_quarter_seconds_remaining |integer   |
 #'    |start_half_seconds_remaining    |integer   |
 #'    |start_game_seconds_remaining    |integer   |
 #'    |game_play_number                |integer   |
-#'    |end_quarter_seconds_remaining   |numeric   |
-#'    |end_half_seconds_remaining      |numeric   |
-#'    |end_game_seconds_remaining      |numeric   |
+#'    |end_quarter_seconds_remaining   |integer   |
+#'    |end_half_seconds_remaining      |integer   |
+#'    |end_game_seconds_remaining      |integer   |
 #'    |period                          |integer   |
-#'    |type_abbreviation               |logical   |
+#'    |lag_qtr                         |integer   |
+#'    |lag_game_half                   |character |
+#'    |coordinate_x                    |numeric   |
+#'    |coordinate_y                    |numeric   |
+#'    |game_date                       |Date      |
+#'    |game_date_time                  |POSIXct   |
+#'    |type_abbreviation               |character |
 #'
 #' @import furrr
 #' @export
@@ -127,51 +131,65 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                                                       |types     |
-#'    |:--------------------------------------------------------------|:---------|
-#'    |team_id                                                        |character |
-#'    |team_uid                                                       |character |
-#'    |team_slug                                                      |character |
-#'    |team_location                                                  |character |
-#'    |team_name                                                      |character |
-#'    |team_abbreviation                                              |character |
-#'    |team_display_name                                              |character |
-#'    |team_short_display_name                                        |character |
-#'    |team_color                                                     |character |
-#'    |team_alternate_color                                           |character |
-#'    |team_logo                                                      |character |
-#'    |field_goals_made_field_goals_attempted                         |character |
-#'    |field_goal_pct                                                 |character |
-#'    |three_point_field_goals_made_three_point_field_goals_attempted |character |
-#'    |three_point_field_goal_pct                                     |character |
-#'    |free_throws_made_free_throws_attempted                         |character |
-#'    |free_throw_pct                                                 |character |
-#'    |total_rebounds                                                 |character |
-#'    |offensive_rebounds                                             |character |
-#'    |defensive_rebounds                                             |character |
-#'    |assists                                                        |character |
-#'    |steals                                                         |character |
-#'    |blocks                                                         |character |
-#'    |turnovers                                                      |character |
-#'    |team_turnovers                                                 |character |
-#'    |total_turnovers                                                |character |
-#'    |technical_fouls                                                |character |
-#'    |total_technical_fouls                                          |character |
-#'    |flagrant_fouls                                                 |character |
-#'    |turnover_points                                                |character |
-#'    |fast_break_points                                              |character |
-#'    |points_in_paint                                                |character |
-#'    |fouls                                                          |character |
-#'    |largest_lead                                                   |character |
-#'    |home_away                                                      |character |
-#'    |opponent_id                                                    |integer   |
-#'    |opponent_name                                                  |character |
-#'    |opponent_mascot                                                |character |
-#'    |opponent_abbrev                                                |character |
-#'    |game_id                                                        |integer   |
-#'    |season                                                         |integer   |
-#'    |season_type                                                    |integer   |
-#'    |game_date                                                      |Date      |
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
+#'    |team_id                           |integer   |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_location                     |character |
+#'    |team_name                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_display_name                 |character |
+#'    |team_short_display_name           |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |team_logo                         |character |
+#'    |team_home_away                    |character |
+#'    |team_score                        |integer   |
+#'    |team_winner                       |logical   |
+#'    |assists                           |integer   |
+#'    |blocks                            |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |fast_break_points                 |character |
+#'    |field_goal_pct                    |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |flagrant_fouls                    |integer   |
+#'    |fouls                             |integer   |
+#'    |free_throw_pct                    |numeric   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |largest_lead                      |character |
+#'    |offensive_rebounds                |integer   |
+#'    |points_in_paint                   |character |
+#'    |steals                            |integer   |
+#'    |team_turnovers                    |integer   |
+#'    |technical_fouls                   |integer   |
+#'    |three_point_field_goal_pct        |numeric   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |total_rebounds                    |integer   |
+#'    |total_technical_fouls             |integer   |
+#'    |total_turnovers                   |integer   |
+#'    |turnover_points                   |character |
+#'    |turnovers                         |integer   |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_uid                 |character |
+#'    |opponent_team_slug                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_short_display_name  |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_logo                |character |
+#'    |opponent_team_score               |integer   |
 #'
 #' @import furrr
 #' @export
@@ -222,43 +240,65 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                      |types     |
-#'    |:-----------------------------|:---------|
-#'    |athlete_display_name          |character |
-#'    |team_short_display_name       |character |
-#'    |min                           |character |
-#'    |fg                            |character |
-#'    |fg3                           |character |
-#'    |ft                            |character |
-#'    |oreb                          |character |
-#'    |dreb                          |character |
-#'    |reb                           |character |
-#'    |ast                           |character |
-#'    |stl                           |character |
-#'    |blk                           |character |
-#'    |to                            |character |
-#'    |pf                            |character |
-#'    |plus_minus                    |character |
-#'    |pts                           |character |
-#'    |starter                       |logical   |
-#'    |ejected                       |logical   |
-#'    |did_not_play                  |logical   |
-#'    |active                        |logical   |
-#'    |athlete_jersey                |character |
-#'    |athlete_id                    |character |
-#'    |athlete_short_name            |character |
-#'    |athlete_headshot_href         |character |
-#'    |athlete_position_name         |character |
-#'    |athlete_position_abbreviation |character |
-#'    |team_name                     |character |
-#'    |team_logo                     |character |
-#'    |team_id                       |character |
-#'    |team_abbreviation             |character |
-#'    |team_color                    |character |
-#'    |game_id                       |integer   |
-#'    |season                        |integer   |
-#'    |season_type                   |integer   |
-#'    |game_date                     |Date      |
+#'    |col_name                          |types     |
+#'    |:---------------------------------|:---------|
+#'    |game_id                           |integer   |
+#'    |season                            |integer   |
+#'    |season_type                       |integer   |
+#'    |game_date                         |Date      |
+#'    |game_date_time                    |POSIXct   |
+#'    |athlete_id                        |integer   |
+#'    |athlete_display_name              |character |
+#'    |team_id                           |integer   |
+#'    |team_name                         |character |
+#'    |team_location                     |character |
+#'    |team_short_display_name           |character |
+#'    |minutes                           |numeric   |
+#'    |field_goals_made                  |integer   |
+#'    |field_goals_attempted             |integer   |
+#'    |three_point_field_goals_made      |integer   |
+#'    |three_point_field_goals_attempted |integer   |
+#'    |free_throws_made                  |integer   |
+#'    |free_throws_attempted             |integer   |
+#'    |offensive_rebounds                |integer   |
+#'    |defensive_rebounds                |integer   |
+#'    |rebounds                          |integer   |
+#'    |assists                           |integer   |
+#'    |steals                            |integer   |
+#'    |blocks                            |integer   |
+#'    |turnovers                         |integer   |
+#'    |fouls                             |integer   |
+#'    |plus_minus                        |character |
+#'    |points                            |integer   |
+#'    |starter                           |logical   |
+#'    |ejected                           |logical   |
+#'    |did_not_play                      |logical   |
+#'    |reason                            |character |
+#'    |active                            |logical   |
+#'    |athlete_jersey                    |character |
+#'    |athlete_short_name                |character |
+#'    |athlete_headshot_href             |character |
+#'    |athlete_position_name             |character |
+#'    |athlete_position_abbreviation     |character |
+#'    |team_display_name                 |character |
+#'    |team_uid                          |character |
+#'    |team_slug                         |character |
+#'    |team_logo                         |character |
+#'    |team_abbreviation                 |character |
+#'    |team_color                        |character |
+#'    |team_alternate_color              |character |
+#'    |home_away                         |character |
+#'    |team_winner                       |logical   |
+#'    |team_score                        |integer   |
+#'    |opponent_team_id                  |integer   |
+#'    |opponent_team_name                |character |
+#'    |opponent_team_location            |character |
+#'    |opponent_team_display_name        |character |
+#'    |opponent_team_abbreviation        |character |
+#'    |opponent_team_logo                |character |
+#'    |opponent_team_color               |character |
+#'    |opponent_team_alternate_color     |character |
+#'    |opponent_team_score               |integer   |
 #'
 #' @import furrr
 #' @export
@@ -379,6 +419,8 @@ NULL
 #'    |PBP                       |logical   |
 #'    |team_box                  |logical   |
 #'    |player_box                |logical   |
+#'    |game_date_time            |POSIXct   |
+#'    |game_date                 |Date      |
 #'
 #' @import furrr
 #' @export

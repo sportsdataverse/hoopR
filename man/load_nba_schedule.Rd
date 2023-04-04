@@ -89,6 +89,8 @@ Returns a tibble\tabular{ll}{
    PBP \tab logical \cr
    team_box \tab logical \cr
    player_box \tab logical \cr
+   game_date_time \tab POSIXct \cr
+   game_date \tab Date \cr
 }
 }
 \description{
