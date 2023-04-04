@@ -26,9 +26,9 @@ height <- kp_height(min_year = 2020, max_year = 2020)
 
 teamstats <- kp_teamstats(min_year = 2020, max_year = 2020)
 
-playerstats <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2020)
+playerstats <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year = 2020)
 
-kpoy <- kp_kpoy(year=2020)
+kpoy <- kp_kpoy(year = 2020)
 
 ```
 
@@ -38,13 +38,13 @@ kpoy <- kp_kpoy(year=2020)
 
 
 #---- kp_team_tables.R -------------------
-team_sched <- kp_team_schedule(team = 'Florida St.', year= 2020)
+team_sched <- kp_team_schedule(team = 'Florida St.', year = 2020)
 
-gameplan <- kp_gameplan(team='Florida St.', year=2020)
+gameplan <- kp_gameplan(team = 'Florida St.', year = 2020)
 
-opptracker <- kp_opptracker(team = 'Florida St.', year=2020)
+opptracker <- kp_opptracker(team = 'Florida St.', year = 2020)
 
-team_players <- kp_team_players(team = 'Florida St.', year= 2020)
+team_players <- kp_team_players(team = 'Florida St.', year = 2020)
 
 minutes_matrix <- kp_minutes_matrix(team = 'Florida St.', year = 2020)
 
@@ -54,9 +54,9 @@ team_player_stats1 <- team_player_stats[[1]]
 
 team_player_stats2 <- team_player_stats[[2]]
 
-team_depth_chart <- kp_team_depth_chart(team = 'Florida St.', year= 2020)
+team_depth_chart <- kp_team_depth_chart(team = 'Florida St.', year = 2020)
 
-team_lineups <- kp_team_lineups(team = 'Florida St.', year= 2020)
+team_lineups <- kp_team_lineups(team = 'Florida St.', year = 2020)
 
 ```
 
@@ -75,13 +75,13 @@ program_ratings <- kp_program_ratings()
 # there anymore at the moment for all years
 # records_team <- get_records_team(browser, team = 'Florida St.')
 
-pomeroy_archive_ratings <- kp_pomeroy_archive_ratings( date='2018-11-22')
+pomeroy_archive_ratings <- kp_pomeroy_archive_ratings(date = '2018-11-22')
 
-conf <- kp_conf(year='2020',conf='ACC')
+conf <- kp_conf(year = '2020',conf = 'ACC')
 
-conf_stats <- kp_confstats(year='2020')
+conf_stats <- kp_confstats(year = '2020')
 
-conf_history <- kp_confhistory(conf='ACC')
+conf_history <- kp_confhistory(conf = 'ACC')
 
 ```
 
@@ -92,18 +92,18 @@ conf_history <- kp_confhistory(conf='ACC')
 trends <- kp_trends()
 
 
-officials <- kp_officials(year= 2020)
+officials <- kp_officials(year = 2020)
 
 hca <- kp_hca()
 
 
-arenas <- kp_arenas(year=2020)
+arenas <- kp_arenas(year = 2020)
 
 
 
-game_attrs <- kp_game_attrs(year=2020, attr = "Excitement")
+game_attrs <- kp_game_attrs(year = 2020, attr = "Excitement")
 
-fanmatch <- kp_fanmatch(date="2020-03-10")
+fanmatch <- kp_fanmatch(date = "2020-03-10")
 
 
 ```
