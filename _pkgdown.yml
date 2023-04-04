@@ -1,6 +1,4 @@
 url: https://hoopR.sportsdataverse.org/
-title: hoopR
-description: "Access Men's Basketball Play by Play Data"
 template:
   bootstrap: 5
   bootswatch: flatly
