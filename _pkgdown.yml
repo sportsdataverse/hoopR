@@ -130,9 +130,13 @@ navbar:
       - text: cfbplotR
         href: https://cfbplotR.sportsdataverse.org/
       - text: mlbplotR
-        href: https://github.com/camdenk/mlbplotR
+        href: https://camdenk.github.io/mlbplotR/
+      - text: softballR
+        href: https://github.com/sportsdataverse/softballR/
       - text: cfb4th
         href: https://cfb4th.sportsdataverse.org/
+      - text: nwslR
+        href: https://github.com/nwslR/nwslR/
       - text: gamezoneR
         href: https://jacklich10.github.io/gamezoneR/
       - text: recruitR
@@ -145,10 +149,12 @@ navbar:
         href: https://py.sportsdataverse.org/
       - text: sportypy
         href: https://sportypy.sportsdataverse.org/
+      - text: nwslpy
+        href: https://github.com/nwslR/nwslpy/
       - text: recruitR-py
         href: https://github.com/sportsdataverse/recruitR-py/
       - text: collegebaseball
-        href: https://collegebaseball.readthedocs.io/en/latest/index.html
+        href: https://github.com/nathanblumenfeld/collegebaseball/
       - text: --------------------------------
       - text: "Node.js Packages"
       - text: sportsdataverse.js
@@ -159,7 +165,9 @@ navbar:
       icon: "fas fa-database"
       text: " Data"
       menu:
-      - text: "Data Repository"
+      - text: "SDV Data Releases"
+        href: https://github.com/sportsdataverse/sportsdataverse-data/releases
+      - text: "hoopR Data Repository"
         href: https://github.com/sportsdataverse/hoopR-data
     twitter:
       icon: "fab fa-twitter fa-lg"
