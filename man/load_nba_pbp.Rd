@@ -26,7 +26,7 @@ Returns a tibble\tabular{ll}{
    col_name \tab types \cr
    id \tab numeric \cr
    sequence_number \tab character \cr
-   type_id \tab character \cr
+   type_id \tab integer \cr
    type_text \tab character \cr
    text \tab character \cr
    away_score \tab integer \cr
@@ -36,14 +36,14 @@ Returns a tibble\tabular{ll}{
    clock_display_value \tab character \cr
    scoring_play \tab logical \cr
    score_value \tab integer \cr
-   team_id \tab character \cr
-   participants_0_athlete_id \tab character \cr
-   participants_1_athlete_id \tab character \cr
-   participants_2_athlete_id \tab character \cr
+   team_id \tab integer \cr
+   athlete_id_1 \tab integer \cr
+   athlete_id_2 \tab integer \cr
+   athlete_id_3 \tab integer \cr
    wallclock \tab character \cr
    shooting_play \tab logical \cr
-   coordinate_x \tab integer \cr
-   coordinate_y \tab integer \cr
+   coordinate_x_raw \tab numeric \cr
+   coordinate_y_raw \tab numeric \cr
    season \tab integer \cr
    season_type \tab integer \cr
    away_team_id \tab integer \cr
@@ -67,19 +67,23 @@ Returns a tibble\tabular{ll}{
    clock_seconds \tab numeric \cr
    half \tab character \cr
    game_half \tab character \cr
-   lag_qtr \tab numeric \cr
-   lead_qtr \tab numeric \cr
-   lag_game_half \tab character \cr
+   lead_qtr \tab integer \cr
    lead_game_half \tab character \cr
    start_quarter_seconds_remaining \tab integer \cr
    start_half_seconds_remaining \tab integer \cr
    start_game_seconds_remaining \tab integer \cr
    game_play_number \tab integer \cr
-   end_quarter_seconds_remaining \tab numeric \cr
-   end_half_seconds_remaining \tab numeric \cr
-   end_game_seconds_remaining \tab numeric \cr
+   end_quarter_seconds_remaining \tab integer \cr
+   end_half_seconds_remaining \tab integer \cr
+   end_game_seconds_remaining \tab integer \cr
    period \tab integer \cr
-   type_abbreviation \tab logical \cr
+   lag_qtr \tab integer \cr
+   lag_game_half \tab character \cr
+   coordinate_x \tab numeric \cr
+   coordinate_y \tab numeric \cr
+   game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
+   type_abbreviation \tab character \cr
 }
 }
 \description{

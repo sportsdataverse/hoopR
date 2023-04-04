@@ -24,7 +24,12 @@ the season data into a database (used by \code{update_nba_db()}).}
 \value{
 Returns a tibble\tabular{ll}{
    col_name \tab types \cr
-   team_id \tab character \cr
+   game_id \tab integer \cr
+   season \tab integer \cr
+   season_type \tab integer \cr
+   game_date \tab Date \cr
+   game_date_time \tab POSIXct \cr
+   team_id \tab integer \cr
    team_uid \tab character \cr
    team_slug \tab character \cr
    team_location \tab character \cr
@@ -35,38 +40,47 @@ Returns a tibble\tabular{ll}{
    team_color \tab character \cr
    team_alternate_color \tab character \cr
    team_logo \tab character \cr
-   field_goals_made_field_goals_attempted \tab character \cr
-   field_goal_pct \tab character \cr
-   three_point_field_goals_made_three_point_field_goals_attempted \tab character \cr
-   three_point_field_goal_pct \tab character \cr
-   free_throws_made_free_throws_attempted \tab character \cr
-   free_throw_pct \tab character \cr
-   total_rebounds \tab character \cr
-   offensive_rebounds \tab character \cr
-   defensive_rebounds \tab character \cr
-   assists \tab character \cr
-   steals \tab character \cr
-   blocks \tab character \cr
-   turnovers \tab character \cr
-   team_turnovers \tab character \cr
-   total_turnovers \tab character \cr
-   technical_fouls \tab character \cr
-   total_technical_fouls \tab character \cr
-   flagrant_fouls \tab character \cr
-   turnover_points \tab character \cr
+   team_home_away \tab character \cr
+   team_score \tab integer \cr
+   team_winner \tab logical \cr
+   assists \tab integer \cr
+   blocks \tab integer \cr
+   defensive_rebounds \tab integer \cr
    fast_break_points \tab character \cr
-   points_in_paint \tab character \cr
-   fouls \tab character \cr
+   field_goal_pct \tab numeric \cr
+   field_goals_made \tab integer \cr
+   field_goals_attempted \tab integer \cr
+   flagrant_fouls \tab integer \cr
+   fouls \tab integer \cr
+   free_throw_pct \tab numeric \cr
+   free_throws_made \tab integer \cr
+   free_throws_attempted \tab integer \cr
    largest_lead \tab character \cr
-   home_away \tab character \cr
-   opponent_id \tab integer \cr
-   opponent_name \tab character \cr
-   opponent_mascot \tab character \cr
-   opponent_abbrev \tab character \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   game_date \tab Date \cr
+   offensive_rebounds \tab integer \cr
+   points_in_paint \tab character \cr
+   steals \tab integer \cr
+   team_turnovers \tab integer \cr
+   technical_fouls \tab integer \cr
+   three_point_field_goal_pct \tab numeric \cr
+   three_point_field_goals_made \tab integer \cr
+   three_point_field_goals_attempted \tab integer \cr
+   total_rebounds \tab integer \cr
+   total_technical_fouls \tab integer \cr
+   total_turnovers \tab integer \cr
+   turnover_points \tab character \cr
+   turnovers \tab integer \cr
+   opponent_team_id \tab integer \cr
+   opponent_team_uid \tab character \cr
+   opponent_team_slug \tab character \cr
+   opponent_team_location \tab character \cr
+   opponent_team_name \tab character \cr
+   opponent_team_abbreviation \tab character \cr
+   opponent_team_display_name \tab character \cr
+   opponent_team_short_display_name \tab character \cr
+   opponent_team_color \tab character \cr
+   opponent_team_alternate_color \tab character \cr
+   opponent_team_logo \tab character \cr
+   opponent_team_score \tab integer \cr
 }
 }
 \description{

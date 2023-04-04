@@ -68,7 +68,9 @@ test_that("hoopR Loader NBA Schedule", {
     "status_type_alt_detail",
     "PBP",
     "team_box",
-    "player_box"
+    "player_box",
+    "game_date_time",
+    "game_date"
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
