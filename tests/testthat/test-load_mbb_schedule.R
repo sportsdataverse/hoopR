@@ -75,7 +75,9 @@ test_that("hoopR Loader MBB Schedule", {
     "tournament_id",
     "PBP",
     "team_box",
-    "player_box"
+    "player_box",
+    "game_date",
+    "game_date_time"
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
