@@ -3228,6 +3228,10 @@ helper_espn_mbb_player_box <- function(resp){
 
   boxScoreSource <- game_json[["header"]][["competitions"]][["boxscoreSource"]]
 
+  valid_stats <- players_box_score_df %>%
+    tidyr::unnest("statistics")
+
+  valid_athletes <- is.data.frame(valid_stats[["athletes"]][[1]]) && is.data.frame(valid_stats[["athletes"]][[2]])
   # This is checking if  [[athletes]][[1]]'s stat rebounds is able to be converted to a numeric value
   #  without introducing NA's
   suppressWarnings(
@@ -3237,11 +3241,15 @@ helper_espn_mbb_player_box <- function(resp){
   )
   if (boxScoreAvailable == TRUE &&
       length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1 &&
+      length(players_box_score_df[["statistics"]][[1]][["athletes"]][[2]]) > 1 &&
       length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]][["stats"]][[1]]) > 1 &&
+      valid_athletes &&
       !is.na(valid_stats)) {
+
     players_df <- players_box_score_df %>%
       tidyr::unnest("statistics") %>%
       tidyr::unnest("athletes")
+
     if (length(players_box_score_df[["statistics"]]) > 1 &&
         length(players_df$stats[[1]] > 0)) {
 
