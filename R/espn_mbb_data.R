@@ -3241,7 +3241,6 @@ helper_espn_mbb_player_box <- function(resp){
   )
   if (boxScoreAvailable == TRUE &&
       length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1 &&
-      length(players_box_score_df[["statistics"]][[1]][["athletes"]][[2]]) > 1 &&
       length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]][["stats"]][[1]]) > 1 &&
       valid_athletes &&
       !is.na(valid_stats)) {
