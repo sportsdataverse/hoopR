@@ -37,6 +37,7 @@ test_that("hoopR Loader MBB Player Box", {
     "active",
     "athlete_jersey",
     "athlete_short_name",
+    "athlete_headshot_href",
     "athlete_position_name",
     "athlete_position_abbreviation",
     "team_display_name",
