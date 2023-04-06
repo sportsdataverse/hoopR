@@ -313,13 +313,13 @@ back to.</p>
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 14.424 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 17.599 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1717358 rows of nba play-by-play data from 3673 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 1721104 rows of nba play-by-play data from 3681 games.</span></span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_pbp</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 1,717,358</span></span>
+<pre><code><span><span class="co">## Rows: 1,721,104</span></span>
 <span><span class="co">## Columns: 60</span></span>
 <span><span class="co">## $ id                              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 4013441404, 4013441407, 4013441408, 40…</span></span>
 <span><span class="co">## $ sequence_number                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4", "7", "8", "10", "11", "12", "14",…</span></span>
@@ -393,13 +393,13 @@ back to.</p>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1.482 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 2.224 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 7346 rows of NBA team boxscore data from 3673 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 7362 rows of NBA team boxscore data from 3681 games.</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 7,346</span></span>
+<pre><code><span><span class="co">## Rows: 7,362</span></span>
 <span><span class="co">## Columns: 57</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401344140, 401344140, 401344139, 401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, …</span></span>
@@ -470,13 +470,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.595 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.586 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 95663 rows of NBA player boxscore data from 3673 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 95878 rows of NBA player boxscore data from 3681 games.</span></span></code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 95,663</span></span>
+<pre><code><span><span class="co">## Rows: 95,878</span></span>
 <span><span class="co">## Columns: 57</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401344140, 401344140, 401344140, 401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, …</span></span>
@@ -547,7 +547,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 40.102 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 48.148 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 5090789 rows of men's college basketball play-by-play data from 15887 games.</span></span></code></pre>
@@ -628,7 +628,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.491 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.014 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 32778 rows of men's college basketball team boxscore data from 16389 games.</span></span></code></pre>
@@ -711,69 +711,69 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1.855 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 7.63 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 32702 rows of men's college basketball player boxscore data from 16351 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 519348 rows of men's college basketball player boxscore data from 16354 games.</span></span></code></pre>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 32,702</span></span>
+<pre><code><span><span class="co">## Rows: 519,348</span></span>
 <span><span class="co">## Columns: 55</span></span>
-<span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401310865, 401310865, 401310867, 401…</span></span>
+<span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401310865, 401310865, 401310865, 401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021, 2021, 2021, 2021, 2021, 2021, …</span></span>
 <span><span class="co">## $ season_type                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …</span></span>
-<span><span class="co">## $ game_date                         <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-04-05, 2021-04-05, 2021-04-03,…</span></span>
+<span><span class="co">## $ game_date                         <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 2021-04-05, 2021-04-05, 2021-04-05,…</span></span>
 <span><span class="co">## $ game_date_time                    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2021-04-05 21:20:00, 2021-04-05 21:…</span></span>
-<span><span class="co">## $ team_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 239, 2250, 26, 2250, 248, 239, 30, 2…</span></span>
-<span><span class="co">## $ team_uid                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "s:40~l:41~t:239", "s:40~l:41~t:2250…</span></span>
-<span><span class="co">## $ team_slug                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "baylor-bears", "gonzaga-bulldogs", …</span></span>
-<span><span class="co">## $ team_location                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor", "Gonzaga", "UCLA", "Gonzag…</span></span>
-<span><span class="co">## $ team_name                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Bears", "Bulldogs", "Bruins", "Bull…</span></span>
-<span><span class="co">## $ team_abbreviation                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "BAY", "GONZ", "UCLA", "GONZ", "HOU"…</span></span>
-<span><span class="co">## $ team_display_name                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor Bears", "Gonzaga Bulldogs", …</span></span>
-<span><span class="co">## $ team_short_display_name           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor", "Gonzaga", "UCLA", "Gonzag…</span></span>
-<span><span class="co">## $ team_color                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "004834", "002967", "005C8E", "00296…</span></span>
-<span><span class="co">## $ team_alternate_color              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ffb81c", "cfd4d8", "ffc72c", "cfd4d…</span></span>
+<span><span class="co">## $ athlete_id                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4395692, 4395695, 4278053, 4067696, …</span></span>
+<span><span class="co">## $ athlete_display_name              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Flo Thamba", "Jared Butler", "Davio…</span></span>
+<span><span class="co">## $ team_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 239, 239, 239, 239, 239, 239, 239, 2…</span></span>
+<span><span class="co">## $ team_name                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Bears", "Bears", "Bears", "Bears", …</span></span>
+<span><span class="co">## $ team_location                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor", "Baylor", "Baylor", "Baylo…</span></span>
+<span><span class="co">## $ team_short_display_name           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor", "Baylor", "Baylor", "Baylo…</span></span>
+<span><span class="co">## $ minutes                           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 16, 31, 36, 31, 27, 1, 16, 16, 1, 1,…</span></span>
+<span><span class="co">## $ field_goals_made                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 6, 6, 8, 3, 0, 3, 1, 0, 0, 3, 0, …</span></span>
+<span><span class="co">## $ field_goals_attempted             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 14, 15, 15, 7, 0, 4, 2, 0, 1, 6, …</span></span>
+<span><span class="co">## $ three_point_field_goals_made      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 4, 1, 2, 0, 0, 0, 0, 0, 0, 3, 0, …</span></span>
+<span><span class="co">## $ three_point_field_goals_attempted <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 9, 4, 3, 1, 0, 0, 1, 0, 1, 4, 0, …</span></span>
+<span><span class="co">## $ free_throws_made                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 6, 2, 1, 0, 0, 0, 0, 0, 0, 4, 0, …</span></span>
+<span><span class="co">## $ free_throws_attempted             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 4, 6, 2, 2, 0, 0, 0, 0, 0, 0, 4, 0, …</span></span>
+<span><span class="co">## $ offensive_rebounds                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 0, 1, 0, 8, 0, 1, 0, 0, 0, 1, 0, …</span></span>
+<span><span class="co">## $ defensive_rebounds                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 3, 5, 2, 3, 0, 1, 2, 0, 0, 1, 0, …</span></span>
+<span><span class="co">## $ rebounds                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 6, 3, 6, 2, 11, 0, 2, 2, 0, 0, 2, 0,…</span></span>
+<span><span class="co">## $ assists                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 7, 5, 0, 2, 0, 1, 1, 0, 0, 2, 0, …</span></span>
+<span><span class="co">## $ steals                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 1, 0, 2, 0, 2, 1, 0, 0, 1, 0, …</span></span>
+<span><span class="co">## $ blocks                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">## $ turnovers                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1, 0, 3, 1, 0, 0, 0, 1, 0, 0, 1, 0, …</span></span>
+<span><span class="co">## $ fouls                             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 5, 3, 1, 0, 3, 0, 4, 1, 0, 0, 2, 0, …</span></span>
+<span><span class="co">## $ points                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 3, 22, 15, 19, 6, 0, 6, 2, 0, 0, 13,…</span></span>
+<span><span class="co">## $ starter                           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE, TRUE, TRUE, TRUE, FALSE,…</span></span>
+<span><span class="co">## $ ejected                           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE, F…</span></span>
+<span><span class="co">## $ did_not_play                      <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE, F…</span></span>
+<span><span class="co">## $ active                            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE, FALSE, FALSE, FALSE, FALSE, F…</span></span>
+<span><span class="co">## $ athlete_jersey                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "12", "45", "31", "11", "32", "…</span></span>
+<span><span class="co">## $ athlete_short_name                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "F. Thamba", "J. Butler", "D. Mitche…</span></span>
+<span><span class="co">## $ athlete_headshot_href             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/headshots/m…</span></span>
+<span><span class="co">## $ athlete_position_name             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Forward", "Guard", "Guard", "Guard"…</span></span>
+<span><span class="co">## $ athlete_position_abbreviation     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "F", "G", "G", "G", "G", "F", "F", "…</span></span>
+<span><span class="co">## $ team_display_name                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Baylor Bears", "Baylor Bears", "Bay…</span></span>
+<span><span class="co">## $ team_uid                          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "s:40~l:41~t:239", "s:40~l:41~t:239"…</span></span>
+<span><span class="co">## $ team_slug                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "baylor-bears", "baylor-bears", "bay…</span></span>
 <span><span class="co">## $ team_logo                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/teamlogos/n…</span></span>
-<span><span class="co">## $ team_home_away                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "away", "home", "away", "home", "awa…</span></span>
-<span><span class="co">## $ team_score                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 86, 70, 90, 93, 59, 78, 66, 85, 51, …</span></span>
-<span><span class="co">## $ team_winner                       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, FALSE, FALSE, TRUE, FALSE, TRU…</span></span>
-<span><span class="co">## $ assists                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 18, 16, 21, 26, 10, 23, 9, 21, 12, 1…</span></span>
-<span><span class="co">## $ blocks                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 5, 3, 1, 3, 5, 0, 0, 3, 2, 3, 5, 5, …</span></span>
-<span><span class="co">## $ defensive_rebounds                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 22, 17, 25, 20, 14, 20, 21, 29, 21, …</span></span>
-<span><span class="co">## $ field_goal_pct                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 44.8, 51.0, 57.6, 58.7, 38.2, 52.7, …</span></span>
-<span><span class="co">## $ field_goals_made                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 30, 25, 34, 37, 21, 29, 24, 33, 21, …</span></span>
-<span><span class="co">## $ field_goals_attempted             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 67, 49, 59, 63, 55, 55, 62, 66, 54, …</span></span>
-<span><span class="co">## $ flagrant_fouls                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
-<span><span class="co">## $ fouls                             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 19, 17, 16, 16, 10, 18, 13, 16, 14, …</span></span>
-<span><span class="co">## $ free_throw_pct                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 88.9, 71.4, 66.7, 60.0, 68.8, 69.2, …</span></span>
-<span><span class="co">## $ free_throws_made                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 16, 15, 14, 12, 11, 9, 14, 12, 6, 6,…</span></span>
-<span><span class="co">## $ free_throws_attempted             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 18, 21, 21, 20, 16, 13, 19, 17, 7, 1…</span></span>
-<span><span class="co">## $ largest_lead                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "20", "0", "6", "7", "3", "25", "0",…</span></span>
-<span><span class="co">## $ offensive_rebounds                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 16, 5, 7, 6, 14, 13, 8, 12, 7, 11, 1…</span></span>
-<span><span class="co">## $ steals                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 8, 4, 4, 8, 4, 6, 7, 6, 5, 5, 5, 9, …</span></span>
-<span><span class="co">## $ team_rebounds                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0", "0", "0", "0", "0", "0", "0", "…</span></span>
-<span><span class="co">## $ team_turnovers                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, …</span></span>
-<span><span class="co">## $ technical_fouls                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
-<span><span class="co">## $ three_point_field_goal_pct        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 43.5, 29.4, 47.1, 33.3, 31.6, 45.8, …</span></span>
-<span><span class="co">## $ three_point_field_goals_made      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 10, 5, 8, 7, 6, 11, 4, 7, 3, 3, 3, 8…</span></span>
-<span><span class="co">## $ three_point_field_goals_attempted <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 23, 17, 17, 21, 19, 24, 15, 21, 13, …</span></span>
-<span><span class="co">## $ total_rebounds                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 38, 22, 32, 26, 28, 33, 29, 41, 28, …</span></span>
-<span><span class="co">## $ total_technical_fouls             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
-<span><span class="co">## $ total_turnovers                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 9, 14, 10, 10, 11, 9, 10, 9, 8, 14, …</span></span>
-<span><span class="co">## $ turnovers                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 9, 14, 10, 10, 11, 9, 10, 9, 8, 14, …</span></span>
-<span><span class="co">## $ opponent_team_id                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2250, 239, 2250, 26, 239, 248, 2250,…</span></span>
-<span><span class="co">## $ opponent_team_uid                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "s:40~l:41~t:2250", "s:40~l:41~t:239…</span></span>
-<span><span class="co">## $ opponent_team_slug                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "gonzaga-bulldogs", "baylor-bears", …</span></span>
-<span><span class="co">## $ opponent_team_location            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Gonzaga", "Baylor", "Gonzaga", "UCL…</span></span>
-<span><span class="co">## $ opponent_team_name                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Bulldogs", "Bears", "Bulldogs", "Br…</span></span>
-<span><span class="co">## $ opponent_team_abbreviation        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GONZ", "BAY", "GONZ", "UCLA", "BAY"…</span></span>
-<span><span class="co">## $ opponent_team_display_name        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Gonzaga Bulldogs", "Baylor Bears", …</span></span>
-<span><span class="co">## $ opponent_team_short_display_name  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Gonzaga", "Baylor", "Gonzaga", "UCL…</span></span>
-<span><span class="co">## $ opponent_team_color               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "002967", "004834", "002967", "005C8…</span></span>
-<span><span class="co">## $ opponent_team_alternate_color     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "cfd4d8", "ffb81c", "cfd4d8", "ffc72…</span></span>
+<span><span class="co">## $ team_abbreviation                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "BAY", "BAY", "BAY", "BAY", "BAY", "…</span></span>
+<span><span class="co">## $ team_color                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "004834", "004834", "004834", "00483…</span></span>
+<span><span class="co">## $ team_alternate_color              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ffb81c", "ffb81c", "ffb81c", "ffb81…</span></span>
+<span><span class="co">## $ home_away                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "away", "away", "away", "away", "awa…</span></span>
+<span><span class="co">## $ team_winner                       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, …</span></span>
+<span><span class="co">## $ team_score                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 86, 86, 86, 86, 86, 86, 86, 86, 86, …</span></span>
+<span><span class="co">## $ opponent_team_id                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2250, 2250, 2250, 2250, 2250, 2250, …</span></span>
+<span><span class="co">## $ opponent_team_name                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Bulldogs", "Bulldogs", "Bulldogs", …</span></span>
+<span><span class="co">## $ opponent_team_location            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Gonzaga", "Gonzaga", "Gonzaga", "Go…</span></span>
+<span><span class="co">## $ opponent_team_display_name        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Gonzaga Bulldogs", "Gonzaga Bulldog…</span></span>
+<span><span class="co">## $ opponent_team_abbreviation        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GONZ", "GONZ", "GONZ", "GONZ", "GON…</span></span>
 <span><span class="co">## $ opponent_team_logo                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/teamlogos/n…</span></span>
-<span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 70, 86, 93, 90, 78, 59, 85, 66, 49, …</span></span></code></pre>
+<span><span class="co">## $ opponent_team_color               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "002967", "002967", "002967", "00296…</span></span>
+<span><span class="co">## $ opponent_team_alternate_color     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "cfd4d8", "cfd4d8", "cfd4d8", "cfd4d…</span></span>
+<span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 70, 70, 70, 70, 70, 70, 70, 70, 70, …</span></span></code></pre>
 </div>
 </div>
 <div class="section level2">
