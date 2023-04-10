@@ -839,7 +839,7 @@ nba_todays_scoreboard <- function(
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no today's scoreboard data for {game_date} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no today's scoreboard data available!"))
     },
     warning = function(w) {
     },
