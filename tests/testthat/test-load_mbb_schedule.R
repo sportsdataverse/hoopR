@@ -73,11 +73,13 @@ test_that("hoopR Loader MBB Schedule", {
     "groups_short_name",
     "groups_is_conference",
     "tournament_id",
+    "game_json",
+    "game_json_url",
+    "game_date_time",
+    "game_date",
     "PBP",
     "team_box",
-    "player_box",
-    "game_date",
-    "game_date_time"
+    "player_box"
   )
 
   expect_equal(sort(colnames(x)), sort(cols))
