@@ -49,9 +49,9 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
       years <- min_year:max_year
@@ -166,9 +166,9 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
 
@@ -340,9 +340,9 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
 
@@ -458,9 +458,9 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
 
@@ -884,9 +884,9 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid min_year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
 
