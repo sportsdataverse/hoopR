@@ -53,9 +53,9 @@ kp_team_schedule <- function(team, year = 2022){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2001")
       }
 
       if (!(team %in% hoopR::teams_links$Team)) {
@@ -517,9 +517,9 @@ kp_gameplan <- function(team, year=2021){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
       if (!(team %in% hoopR::teams_links$Team)) {
@@ -786,10 +786,9 @@ kp_opptracker <- function(team, year = 2021){
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
-
-      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
+      if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
         # Check if year is numeric, if not NULL
-        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2002")
+        cli::cli_abort("Enter valid min_ as a number (YYYY), data only goes back to 2001")
       }
 
       if (!(team %in% hoopR::teams_links$Team)) {

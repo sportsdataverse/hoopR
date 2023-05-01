@@ -530,7 +530,7 @@ kp_game_attrs <- function(
 #'   try(kp_fanmatch(date="2022-02-22"))
 #' }
 
-kp_fanmatch <- function(date = "2022-02-22"){
+kp_fanmatch <- function(date){
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
