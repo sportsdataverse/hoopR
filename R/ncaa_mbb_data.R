@@ -84,7 +84,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
                     "&division=", division,
                     "&sport_code=MBB")
 
-      resp <- httr::RETRY("GET", url = {{url}}, ..., headers, httr::timeout(15))
+      resp <- httr::RETRY("GET", url = {{url}}, headers, httr::timeout(15))
 
       data_read <- resp %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
@@ -122,7 +122,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
                                  "&division=", division,
                                  "&sport_code=MBB")
 
-        resp <- httr::RETRY("GET", url = {{conf_team_urls}}, ..., headers, httr::timeout(15))
+        resp <- httr::RETRY("GET", url = {{conf_team_urls}},  headers, httr::timeout(15))
 
         team_urls <- resp %>%
           httr::content(as = "text", encoding = "UTF-8") %>%

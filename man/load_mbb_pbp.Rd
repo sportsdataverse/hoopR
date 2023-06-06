@@ -87,7 +87,7 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-  load_mbb_pbp(seasons = most_recent_mbb_season())
+load_mbb_pbp(seasons = most_recent_mbb_season())
 }
 }
 \seealso{

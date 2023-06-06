@@ -93,6 +93,8 @@ Returns a tibble\tabular{ll}{
    groups_short_name \tab character \cr
    groups_is_conference \tab logical \cr
    tournament_id \tab numeric \cr
+   game_date_time \tab POSIXct \cr
+   game_date \tab Date \cr
    PBP \tab logical \cr
    team_box \tab logical \cr
    player_box \tab logical \cr
@@ -104,7 +106,7 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-  load_mbb_schedule(seasons = most_recent_mbb_season())
+load_mbb_schedule(seasons = most_recent_mbb_season())
 }
 }
 \seealso{
