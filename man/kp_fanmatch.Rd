@@ -4,7 +4,7 @@
 \alias{kp_fanmatch}
 \title{\strong{Get FanMatch by date}}
 \usage{
-kp_fanmatch(date = "2022-02-22")
+kp_fanmatch(date)
 }
 \arguments{
 \item{date}{Date of games to pull (YYYY-MM-DD)}
