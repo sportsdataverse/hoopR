@@ -14,6 +14,7 @@ test_that("ESPN - Get NBA Standings", {
     "leaguewinpercent",
     "losses",
     "playoffseed",
+    "pointdifferential",
     "streak",
     "winpercent",
     "wins",

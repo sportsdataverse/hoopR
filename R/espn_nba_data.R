@@ -1189,7 +1189,7 @@ espn_nba_teams <- function(){
 #'
 #' # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
 #' \donttest{
-#'   try(espn_nba_scoreboard (season = "20221117"))
+#'   try(espn_nba_scoreboard(season = 20230423))
 #' }
 
 espn_nba_scoreboard <- function(season){
