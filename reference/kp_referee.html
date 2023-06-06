@@ -176,9 +176,302 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_referee</span><span class="op">(</span>referee <span class="op">=</span> <span class="fl">714363</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-01 01:05:45.652052: Invalid arguments or no referee data for 714363 in 2021 available!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in kp_referee(referee = 714363, year = 2021) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   object 'kenpom' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    game_number       date  time_et</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           73  Mon Apr 5  9:20 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           72 Sat Mar 27  7:25 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           71 Mon Mar 22  8:45 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           70 Sat Mar 20  3:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           69 Fri Mar 19  1:15 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           68 Sat Mar 13  6:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7           67 Thu Mar 11 11:30 AM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8           66 Wed Mar 10  9:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9           65  Sun Mar 7  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10          64  Sat Mar 6  5:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11          63  Fri Mar 5  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12          62  Thu Mar 4  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13          61  Wed Mar 3  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14          60  Tue Mar 2  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15          59  Mon Mar 1  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16          58 Sat Feb 27 12:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17          57 Fri Feb 26  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18          56 Wed Feb 24  6:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19          55 Tue Feb 23  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20          54 Mon Feb 22  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21          53 Sun Feb 21  1:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22          52 Sat Feb 20 12:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23          51 Sun Feb 14  1:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24          50 Sat Feb 13  1:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25          49 Fri Feb 12  6:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26          48 Wed Feb 10  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27          47  Tue Feb 9  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28          46  Mon Feb 8  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29          45  Sat Feb 6  3:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30          44  Tue Feb 2  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31          43  Mon Feb 1  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32          42 Sat Jan 30  2:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33          41 Thu Jan 28  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34          40 Wed Jan 27  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35          39 Tue Jan 26  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36          38 Mon Jan 25  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37          37 Sat Jan 23 12:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38          36 Mon Jan 18  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39          35 Sun Jan 17  5:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40          34 Sat Jan 16  3:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41          33 Wed Jan 13  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42          32  Sat Jan 9  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43          31  Fri Jan 8  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44          30  Wed Jan 6  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45          29  Tue Jan 5 10:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46          28  Sun Jan 3  6:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47          27  Sat Jan 2  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48          26  Fri Jan 1  6:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49          25 Wed Dec 30  6:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50          24 Tue Dec 29  9:07 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51          23 Mon Dec 28  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52          22 Sat Dec 26  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53          21 Fri Dec 25  2:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54          20 Wed Dec 23  5:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55          19 Mon Dec 21  3:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56          18 Sun Dec 20  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57          17 Sat Dec 19 12:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58          16 Thu Dec 17  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59          15 Wed Dec 16  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60          14 Tue Dec 15  9:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61          13 Sun Dec 13 12:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62          12 Sat Dec 12  3:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63          11 Fri Dec 11  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64          10  Tue Dec 8 10:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65           9  Mon Dec 7  7:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66           8  Thu Dec 3  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67           7  Wed Dec 2 10:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68           6 Mon Nov 30  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69           5 Sun Nov 29  5:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70           4 Sat Nov 28  7:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71           3 Fri Nov 27  8:30 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72           2 Thu Nov 26  8:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73           1 Wed Nov 25  4:00 PM</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                  game            location</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           2 Baylor 86, 1 Gonzaga 70    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                 15 Arkansas 72, 128 Oral Roberts 70    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        8 Alabama 96, 30 Maryland 77    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4             20 Creighton 63, 71 UC Santa Barbara 62    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        3 Illinois 78, 145 Drexel 49    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                     25 Texas 91, 30 Oklahoma St. 86     Kansas City, MO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7             37 Oklahoma St. 72, 25 West Virginia 69     Kansas City, MO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                     38 Oklahoma 79, 179 Iowa St. 73     Kansas City, MO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                       3 Baylor 88, 20 Texas Tech 73            Waco, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                 183 Kansas St. 61, 175 Iowa St. 56       Manhattan, KS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                      114 UAB 65, 62 North Texas 51          Denton, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                    20 West Virginia 76, 127 TCU 67      Morgantown, WV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                 72 Northwestern 60, 26 Maryland 55        Evanston, IL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                       6 Illinois 76, 2 Michigan 53       Ann Arbor, MI</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                 36 Oklahoma St. 79, 33 Oklahoma 75      Stillwater, OK</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                      25 Texas Tech 68, 22 Texas 59         Lubbock, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17         173 New Mexico St. 78, 311 Tarleton St. 51    Stephenville, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    71 N.C. State 68, 9 Virginia 61 Charlottesville, VA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                 51 Louisville 69, 56 Notre Dame 57      Louisville, KY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                         31 Duke 85, 53 Syracuse 71          Durham, NC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                       4 Michigan 92, 6 Ohio St. 87        Columbus, OH</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                56 Georgia Tech 87, 129 Miami FL 60    Coral Gables, FL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                       92 Cincinnati 69, 105 UCF 68      Cincinnati, OH</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24          23 Oklahoma 91, 16 West Virginia 90 (2OT)      Morgantown, WV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25           72 Marshall 107, 261 Middle Tennessee 79      Huntington, WV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26              48 Saint Louis 67, 74 Rhode Island 60       St. Louis, MO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                  20 Creighton 63, 96 Georgetown 48      Washington, DC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  357 Mississippi Valley St. 68, 352 Alabama St. 65      Montgomery, AL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29              38 Oklahoma St. 75, 12 Texas 67 (2OT)      Stillwater, OK</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                61 Clemson 63, 37 North Carolina 50         Clemson, SC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                   12 Texas Tech 57, 20 Oklahoma 52         Lubbock, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                 25 Florida 85, 16 West Virginia 80      Morgantown, WV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                           204 UTSA 86, 171 UTEP 79     San Antonio, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                    50 Clemson 54, 38 Louisville 50         Clemson, SC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                     34 Duke 75, 58 Georgia Tech 68          Durham, NC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                      9 Virginia 81, 36 Syracuse 58 Charlottesville, VA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37                       26 Oklahoma 75, 14 Kansas 68          Norman, OK</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                23 Florida St. 78, 31 Louisville 65      Louisville, KY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39               134 Santa Clara 69, 180 San Diego 63       San Diego, CA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                     14 Colorado 77, 45 Stanford 64         Boulder, CO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                    62 Boise St. 90, 198 Wyoming 70         Laramie, WY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                   14 Texas Tech 91, 87 Iowa St. 64            Ames, IA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43      89 Western Kentucky 66, 112 Louisiana Tech 64   Bowling Green, KY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44                        2 Baylor 76, 44 Oklahoma 61            Waco, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                            12 Kansas 93, 63 TCU 64      Fort Worth, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46             73 Georgia Tech 70, 117 Wake Forest 54         Atlanta, GA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47             27 North Carolina 66, 92 Notre Dame 65     Chapel Hill, NC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48                295 Troy 69, 197 Appalachian St. 56           Boone, NC</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                    16 Ohio St. 90, 116 Nebraska 54        Columbus, OH</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                      5 Iowa 87, 53 Northwestern 72       Iowa City, IA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                42 Minnesota 81, 31 Michigan St. 56     Minneapolis, MN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                       7 Illinois 69, 21 Indiana 60       Champaign, IL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                       33 Purdue 73, 47 Maryland 70  West Lafayette, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                 7 Tennessee 80, 303 USC Upstate 60       Knoxville, TN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                    261 Rice 73, 316 New Orleans 62         Houston, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56           183 UTSA 102, NR Our Lady of the Lake 70     San Antonio, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                            1 Gonzaga 99, 4 Iowa 88     Sioux Falls, SD</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58                       9 Kansas 58, 8 Texas Tech 57         Lubbock, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                 5 Texas 79, 309 Sam Houston St. 63          Austin, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60                  155 Kansas St. 74, 78 Iowa St. 65            Ames, IA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61         82 Western Kentucky 68, 73 Rhode Island 65   Bowling Green, KY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62             46 Oklahoma St. 67, 101 Wichita St. 64         Wichita, KS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63                   13 Creighton 98, 111 Nebraska 74           Omaha, NE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64                    68 Saint Mary's 73, 197 UTEP 61          Moraga, CA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65                118 Nevada 86, NR William Jessup 64            Reno, NV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66                 57 TCU 74, 274 Northwestern St. 68      Fort Worth, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67                        2 Baylor 82, 22 Illinois 69    Indianapolis, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68           58 SMU 91, 315 Texas A&amp;M Corpus Chris 54          Dallas, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                     17 Houston 64, 5 Texas Tech 53      Fort Worth, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                             57 TCU 70, 93 Tulsa 65     Kansas City, MO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71                  58 Colorado 76, 127 Kansas St. 58       Manhattan, KS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72 105 North Texas 116, 357 Mississippi Valley St. 62          Denton, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73            34 Oklahoma St. 75, 159 UT Arlington 68       Arlington, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                               venue conference thrill_score referee_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                 Lucas Oil Stadium       NCAA         88.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           Bankers Life Fieldhouse       NCAA         36.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           Bankers Life Fieldhouse       NCAA         74.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                 Lucas Oil Stadium       NCAA         62.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          Indiana Farmers Coliseum       NCAA         26.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   T-Mobile Center      B12-T         79.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                   T-Mobile Center      B12-T         77.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                   T-Mobile Center      B12-T         30.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                    Ferrell Center        B12         65.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10           Fred Bramlage Coliseum        B12         37.7 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                    The Super Pit       CUSA         44.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                     WVU Coliseum        B12         32.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                 Welsh-Ryan Arena        B10         68.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                   Crisler Center        B10         76.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15              Gallagher-Iba Arena        B12         73.2 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        United Supermarkets Arena        B12         76.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                 Wisdom Gymnasium        WAC         26.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18            John Paul Jones Arena        ACC         47.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                  KFC Yum! Center        ACC         66.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20           Cameron Indoor Stadium        ACC         67.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                 Value City Arena        B10         87.2 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                    Watsco Center        ACC         52.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                Fifth Third Arena       Amer         49.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                     WVU Coliseum        B12         75.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                 Henderson Center       CUSA         14.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                   Chaifetz Arena        A10         57.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                  McDonough Arena         BE         58.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28              Dunn-Oliver Acadome       SWAC         10.2 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29              Gallagher-Iba Arena        B12         77.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30              Littlejohn Coliseum        ACC         69.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31        United Supermarkets Arena        B12         74.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                     WVU Coliseum                    72.7 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33          UTSA Convocation Center       CUSA         37.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34              Littlejohn Coliseum        ACC         68.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35           Cameron Indoor Stadium        ACC         63.7 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36            John Paul Jones Arena        ACC         63.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37               Lloyd Noble Center        B12         78.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                  KFC Yum! Center        ACC         75.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39             Jenny Craig Pavilion        WCC         39.2 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                 CU Events Center        P12         63.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                 Arena-Auditorium        MWC         34.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                  Hilton Coliseum        B12         60.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                     Diddle Arena       CUSA         45.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44                   Ferrell Center        B12         53.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                Schollmaier Arena        B12         67.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46                McCamish Pavilion        ACC         42.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47             Dean E. Smith Center        ACC         45.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48        Holmes Convocation Center         SB         23.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                 Value City Arena        B10         33.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50             Carver-Hawkeye Arena        B10         59.5 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                   Williams Arena        B10         74.7 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                State Farm Center        B10         72.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                     Mackey Arena        B10         66.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54            Thompson-Boling Arena                     9.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                 Tudor Fieldhouse                    25.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56          UTSA Convocation Center                     0.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57                 Sanford Pentagon                    85.7 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58        United Supermarkets Arena        B12         77.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59                     Erwin Center                     9.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60                  Hilton Coliseum        B12         32.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61                E.A. Diddle Arena                    59.6 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62               Charles Koch Arena                    56.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63          CHI Health Center Omaha                    33.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64 University Credit Union Pavilion                    23.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65             Lawlor Events Center                     0.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66                Schollmaier Arena                    12.8 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67          Bankers Life Fieldhouse                    73.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68                   Moody Coliseum                    10.9 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69                    Dickies Arena                    78.1 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70                  T-Mobile Center                    54.0 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71                Bramlage Coliseum                    49.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72                    The Super Pit                     6.4 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73              College Park Center                    36.3 Keith Kimble</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ref_rank year</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72        3 2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73        3 2021</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
