@@ -11,6 +11,7 @@ test_that("hoopR Loader NBA Schedule", {
     "time_valid",
     "neutral_site",
     "conference_competition",
+    "play_by_play_available",
     "recent",
     "start_date",
     "notes_type",
