@@ -12,6 +12,7 @@ test_that("ESPN - Get MBB scoreboard", {
     "game_uid",
     "game_date",
     "attendance",
+    "play_by_play_available",
     "notes",
     "status_name",
     "broadcast_market",

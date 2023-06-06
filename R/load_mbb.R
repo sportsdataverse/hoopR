@@ -76,7 +76,7 @@ NULL
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_mbb_pbp(seasons = most_recent_mbb_season())
+#' load_mbb_pbp(seasons = most_recent_mbb_season())
 #' }
 load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
@@ -88,9 +88,11 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
 
   if (isTRUE(seasons)) seasons <- 2006:most_recent_mbb_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2006,
-            seasons <= most_recent_mbb_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2006,
+    seasons <= most_recent_mbb_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_", seasons, ".rds")
 
@@ -103,7 +105,7 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
@@ -170,7 +172,7 @@ NULL
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_team_box(seasons = most_recent_mbb_season())
+#' load_mbb_team_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
@@ -182,9 +184,11 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if (isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2003,
-            seasons <= most_recent_mbb_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2003,
+    seasons <= most_recent_mbb_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_", seasons, ".rds")
 
@@ -197,7 +201,7 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
@@ -280,7 +284,7 @@ NULL
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_player_box(seasons = most_recent_mbb_season())
+#' load_mbb_player_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
@@ -292,9 +296,11 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if (isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2003,
-            seasons <= most_recent_mbb_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2003,
+    seasons <= most_recent_mbb_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_", seasons, ".rds")
 
@@ -307,7 +313,7 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
@@ -408,7 +414,7 @@ NULL
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
-#'   load_mbb_schedule(seasons = most_recent_mbb_season())
+#' load_mbb_schedule(seasons = most_recent_mbb_season())
 #' }
 load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
@@ -421,9 +427,11 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
   if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2002,
-            seasons <= most_recent_mbb_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_", seasons, ".rds")
 
@@ -436,13 +444,13 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
 
 # load games file
-load_mbb_games <- function(){
+load_mbb_games <- function() {
   .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
   dat <- hoopR::csv_from_url(.url)
   # close(con)
@@ -504,7 +512,7 @@ update_mbb_db <- function(dbdir = ".",
   # rule_header("Update hoopR Play-by-Play Database")
 
   if (!is_installed("DBI") | !is_installed("purrr") |
-      (!is_installed("RSQLite") & is.null(db_connection))) {
+    (!is_installed("RSQLite") & is.null(db_connection))) {
     usethis::ui_stop("{my_time()} | Packages {usethis::ui_value('DBI')}, {usethis::ui_value('RSQLite')} and {usethis::ui_value('purrr')} required for database communication. Please install them.")
   }
 
@@ -544,7 +552,7 @@ update_mbb_db <- function(dbdir = ".",
   missing <- get_missing_mbb_games(completed_games, connection, tblname)
 
   # rebuild db if number of missing games is too large
-  if (length(missing) > 16) {# limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
+  if (length(missing) > 16) { # limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
     # message("The number of missing games is so large that rebuilding the database is more efficient.")
     build_mbb_db(tblname, connection, show_message = FALSE, rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4))))
     missing <- get_missing_mbb_games(completed_games, connection, tblname)
@@ -585,9 +593,13 @@ build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, sh
     usethis::ui_todo("{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}...")
   } else if (is.numeric(rebuild) & all(rebuild %in% valid_seasons$season)) {
     string <- paste0(rebuild, collapse = ", ")
-    if (show_message) {usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")}
+    if (show_message) {
+      usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")
+    }
     DBI::dbExecute(db_conn, glue::glue_sql("DELETE FROM {`tblname`} WHERE season IN ({vals*})", vals = rebuild, .con = db_conn))
-    seasons <- valid_seasons %>% dplyr::filter(.data$season %in% rebuild) %>% dplyr::pull("season")
+    seasons <- valid_seasons %>%
+      dplyr::filter(.data$season %in% rebuild) %>%
+      dplyr::pull("season")
     usethis::ui_todo("{my_time()} | Starting download of the {string} season(s)...")
   } else if (all(rebuild == "NEW")) {
     usethis::ui_info("{my_time()} | Can't find the data table {usethis::ui_value(tblname)} in your database. Will load the play by play data from scratch.")
