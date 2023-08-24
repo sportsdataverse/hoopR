@@ -1,6 +1,7 @@
 test_that("KP - Get FanMatch", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_fanmatch(date = "2020-03-10")
 

@@ -2,6 +2,7 @@
 test_that("KP - Get team schedule", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_team_schedule(team = "Florida St.", year= 2020)
 

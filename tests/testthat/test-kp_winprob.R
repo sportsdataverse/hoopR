@@ -1,6 +1,7 @@
 test_that("KP - Get win probability", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_winprob(game_id = 1238, year = 2020)
   x1 <- x[[1]]
