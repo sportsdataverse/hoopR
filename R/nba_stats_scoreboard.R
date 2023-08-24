@@ -117,7 +117,7 @@ nba_schedule <- function(
             .data$season_type_id == 3 ~ "All-Star",
             .data$season_type_id == 4 ~ "Playoffs",
             .data$season_type_id == 5 ~ "Play-In Game"),
-          game_date = lubridate::ymd(substring(.data$game_date,1,10)))
+          game_date = lubridate::mdy(substring(.data$game_date,1,10)))
 
     },
     error = function(e) {
