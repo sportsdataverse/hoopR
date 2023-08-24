@@ -1,6 +1,7 @@
 test_that("KP - Get conference history", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_confhistory(conf="ACC")
 

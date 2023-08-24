@@ -1,6 +1,7 @@
 test_that("KP - Get box score", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_box(game_id = 1238, year = 2020)
   x1 <- x[[1]]
