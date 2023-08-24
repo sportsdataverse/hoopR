@@ -1,6 +1,7 @@
 test_that("KP - Get home court advantage", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_hca()
 

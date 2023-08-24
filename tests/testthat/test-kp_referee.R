@@ -1,6 +1,7 @@
 test_that("KP - Get referee game log", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_referee(referee = 714363, year = 2020)
 
