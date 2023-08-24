@@ -1,6 +1,7 @@
 test_that("KP - Get four factors", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_fourfactors(min_year = 2020, max_year = 2020)
 

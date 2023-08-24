@@ -1,6 +1,7 @@
 test_that("KP - Get player stats", {
   skip_on_cran()
   skip_on_ci()
+  skip_kenpom_test()
 
   x <- kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2020)
 
