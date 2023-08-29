@@ -1,4 +1,202 @@
 
+#' **Add players on court in  NBA Stats API play-by-play**
+#' @name .players_on_court
+NULL
+#' @title
+#' **Add players on court in  NBA Stats API play-by-play**
+#' @author Vladislav Shufinskiy
+#' @param pbp_data PlayByPlay data frame received `nba_pbp` function
+#' @return Returns a data frame: PlayByPlay
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |game_id                   |character |
+#'    |event_num                 |character |
+#'    |event_type                |character |
+#'    |event_action_type         |character |
+#'    |period                    |numeric   |
+#'    |minute_game               |numeric   |
+#'    |time_remaining            |numeric   |
+#'    |wc_time_string            |character |
+#'    |time_quarter              |character |
+#'    |minute_remaining_quarter  |numeric   |
+#'    |seconds_remaining_quarter |numeric   |
+#'    |home_description          |character |
+#'    |neutral_description       |character |
+#'    |visitor_description       |character |
+#'    |score                     |character |
+#'    |away_score                |numeric   |
+#'    |home_score                |numeric   |
+#'    |score_margin              |character |
+#'    |person1type               |character |
+#'    |player1_id                |character |
+#'    |player1_name              |character |
+#'    |player1_team_id           |character |
+#'    |player1_team_city         |character |
+#'    |player1_team_nickname     |character |
+#'    |player1_team_abbreviation |character |
+#'    |person2type               |character |
+#'    |player2_id                |character |
+#'    |player2_name              |character |
+#'    |player2_team_id           |character |
+#'    |player2_team_city         |character |
+#'    |player2_team_nickname     |character |
+#'    |player2_team_abbreviation |character |
+#'    |person3type               |character |
+#'    |player3_id                |character |
+#'    |player3_name              |character |
+#'    |player3_team_id           |character |
+#'    |player3_team_city         |character |
+#'    |player3_team_nickname     |character |
+#'    |player3_team_abbreviation |character |
+#'    |video_available_flag      |character |
+#'    |team_leading              |character |
+#'    |away_player1              |numeric   |
+#'    |away_player2              |numeric   |
+#'    |away_player3              |numeric   |
+#'    |away_player4              |numeric   |
+#'    |away_player5              |numeric   |
+#'    |home_player1              |numeric   |
+#'    |home_player2              |numeric   |
+#'    |home_player3              |numeric   |
+#'    |home_player4              |numeric   |
+#'    |home_player5              |numeric   |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @noRd
+#' @family NBA PBP Functions
+.players_on_court <- function(pbp_data) {
+
+  pbp_data <- dplyr::mutate(pbp_data, PCTIMESTRING = ifelse(.data$period < 5, abs((.data$minute_remaining_quarter * 60 + .data$seconds_remaining_quarter) - 720 * .data$period),
+                                                            abs((.data$minute_remaining_quarter * 60 + .data$seconds_remaining_quarter) - (2880 + 300 * (.data$period - 4)))))
+
+  l <- lapply(sort(unique(pbp_data$period)), function(x){
+
+    pbp_data_period <- dplyr::filter(pbp_data, .data$period == x)
+    all_id <- unique(c(pbp_data_period$player1_id[!pbp_data_period$event_type %in% c(9, 18) & !is.na(pbp_data_period$player1_name) & !pbp_data_period$person1type %in% c(6, 7)],
+                       pbp_data_period$player2_id[!pbp_data_period$event_type %in% c(9, 18) & !is.na(pbp_data_period$player2_name) & !pbp_data_period$person2type %in% c(6, 7)],
+                       pbp_data_period$player3_id[!pbp_data_period$event_type %in% c(9, 18) & !is.na(pbp_data_period$player3_name) & !pbp_data_period$person3type %in% c(6, 7)]))
+    all_id <- as.numeric(all_id)
+
+    all_id <- all_id[all_id != 0 & all_id < 1610612737]
+
+    sub_off <- as.numeric(unique(pbp_data_period$player1_id[pbp_data_period$event_type == 8]))
+    sub_on <- as.numeric(unique(pbp_data_period$player2_id[pbp_data_period$event_type == 8]))
+
+    '%!in%' <- Negate(`%in%`)
+    all_id <- all_id[all_id  %!in% setdiff(sub_on, sub_off)]
+
+    sub_on_off <- dplyr::intersect(sub_on, sub_off)
+
+    for (i in sub_on_off){
+      on <- min(pbp_data_period$PCTIMESTRING[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
+      off <- min(pbp_data_period$PCTIMESTRING[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
+      if (off > on){
+        all_id <- all_id[all_id != i]
+      } else if (off == on){
+        on_event <- min(pbp_data_period$event_num[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
+        off_event <- min(pbp_data_period$event_num[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
+        if(off_event > on_event){
+          all_id <- all_id[all_id != i]
+        }
+      }
+    }
+
+    if((length(all_id) == 10)){
+      ord_all_id <- pbp_data_period %>%
+        dplyr::select("player1_id", "person1type") %>%
+        dplyr::filter(.data$player1_id != 0 & .data$person1type %in% c(4, 5)) %>%
+        dplyr::rename("player_id" = "player1_id", "persontype" = "person1type") %>%
+        dplyr::bind_rows(pbp_data_period %>%
+                           dplyr::select("player2_id", "person2type") %>%
+                           dplyr::filter(.data$player2_id != 0 & .data$person2type %in% c(4, 5)) %>%
+                           dplyr::rename("player_id" = "player2_id", "persontype" = "person2type")) %>%
+        dplyr::bind_rows(pbp_data_period %>%
+                           dplyr::select("player3_id", "person3type") %>%
+                           dplyr::filter(.data$player3_id != 0 & .data$person3type %in% c(4, 5)) %>%
+                           dplyr::rename("player_id" = "player3_id", "persontype" = "person3type")) %>%
+        dplyr::distinct() %>%
+        dplyr::arrange(dplyr::desc(.data$persontype)) %>%
+        dplyr::select("player_id") %>%
+        dplyr::mutate(player_id = as.numeric(.data$player_id)) %>%
+        dplyr::pull()
+
+      all_id <- ord_all_id[ord_all_id %in% all_id]
+    }
+
+    if(length(all_id) != 10){
+
+      if(inherits(pbp_data$game_id[1], "integer")){
+        tmp_gameid <- paste0("00", as.character(pbp_data$game_id[1]))
+      } else{
+        tmp_gameid <- pbp_data$game_id[1]
+      }
+
+      tmp_data <- hoopR::nba_boxscoretraditionalv2(game_id = tmp_gameid, start_period = x, end_period = x, range_type = 1)$PlayerStats
+
+      all_id <- as.integer(tmp_data$PLAYER_ID)
+
+      sub_off <- unique(pbp_data_period$player1_id[pbp_data_period$event_type == 8])
+      sub_on <- unique(pbp_data_period$player2_id[pbp_data_period$event_type == 8])
+
+      '%!in%' <- Negate(`%in%`)
+      all_id <- all_id[all_id  %!in% setdiff(sub_on, sub_off)]
+
+      sub_on_off <- dplyr::intersect(sub_on, sub_off)
+
+      for (i in sub_on_off){
+        on <- min(pbp_data_period$PCTIMESTRING[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
+        off <- min(pbp_data_period$PCTIMESTRING[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
+        if (off > on){
+          all_id <- all_id[all_id != i]
+        } else if (off == on){
+          on_event <- min(pbp_data_period$even_num[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
+          off_event <- min(pbp_data_period$even_num[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
+          if(off_event > on_event){
+            all_id <- all_id[all_id != i]
+          }
+        }
+      }
+    }
+
+    columns <- paste0("player", seq(1, 10))
+    pbp_data_period[columns] <- NA
+
+    for(i in seq(1:10)){
+      pbp_data_period[columns][i] <- all_id[i]
+    }
+
+    for(column in paste0("player", seq(1, 10))){
+      i <- 1
+      repeat{
+        n <- nrow(pbp_data_period)
+        if(length(which(pbp_data_period$event_type == 8 & as.numeric(pbp_data_period$player1_id) == pbp_data_period[, column])) == 0){
+          break
+        }
+        i <- min(which(pbp_data_period$event_type == 8 & pbp_data_period[, column] == as.numeric(pbp_data_period$player1_id)))
+        player_on <- as.numeric(pbp_data_period$player2_id[i])
+        pbp_data_period[i:n, column] <- player_on
+      }
+    }
+    return(dplyr::select(pbp_data_period, -"PCTIMESTRING"))
+  })
+  return(dplyr::bind_rows(l) %>% dplyr::rename(
+    "away_player1" = 'player1',
+    "away_player2" = 'player2',
+    "away_player3" = 'player3',
+    "away_player4" = 'player4',
+    "away_player5" = 'player5',
+    "home_player1" = 'player6',
+    "home_player2" = 'player7',
+    "home_player3" = 'player8',
+    "home_player4" = 'player9',
+    "home_player5" = 'player10'
+  ))
+}
+
+
 #' **Get NBA Stats API play-by-play**
 #' @name nba_pbp
 NULL
@@ -7,6 +205,7 @@ NULL
 #' @rdname nba_pbp
 #' @author Jason Lee
 #' @param game_id Game ID
+#' @param on_court IF TRUE will be added ID of players on court
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @param p Progress bar
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -55,6 +254,16 @@ NULL
 #'    |player3_team_abbreviation |character |
 #'    |video_available_flag      |character |
 #'    |team_leading              |character |
+#'    |away_player1              |numeric   |
+#'    |away_player2              |numeric   |
+#'    |away_player3              |numeric   |
+#'    |away_player4              |numeric   |
+#'    |away_player5              |numeric   |
+#'    |home_player1              |numeric   |
+#'    |home_player2              |numeric   |
+#'    |home_player3              |numeric   |
+#'    |home_player4              |numeric   |
+#'    |home_player5              |numeric   |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -67,6 +276,7 @@ NULL
 #' ```
 nba_pbp <- function(
     game_id,
+    on_court = FALSE,
     version = "v2",
     p,
     ...){
@@ -161,6 +371,10 @@ nba_pbp <- function(
             dplyr::everything()
           ) %>%
           make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
+
+        if(on_court){
+          data <- .players_on_court(data)
+        }
       }
     },
     error = function(e) {
@@ -183,6 +397,7 @@ NULL
 #' @rdname nba_pbps
 #' @author Jason Lee
 #' @param game_ids Game IDs
+#' @param on_court IF TRUE will be added ID of players on court
 #' @param version Play-by-play version ("v2" available from 2016-17 onwards)
 #' @param nest_data If TRUE returns nested data by game
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -231,6 +446,16 @@ NULL
 #'    |player3_team_abbreviation |character |
 #'    |video_available_flag      |character |
 #'    |team_leading              |character |
+#'    |away_player1              |numeric   |
+#'    |away_player2              |numeric   |
+#'    |away_player3              |numeric   |
+#'    |away_player4              |numeric   |
+#'    |away_player5              |numeric   |
+#'    |home_player1              |numeric   |
+#'    |home_player2              |numeric   |
+#'    |home_player3              |numeric   |
+#'    |home_player4              |numeric   |
+#'    |home_player5              |numeric   |
 #'
 #' @export
 #' @family NBA PBP Functions
@@ -242,6 +467,7 @@ NULL
 #' ```
 nba_pbps <- function(
     game_ids = NULL,
+    on_court = FALSE,
     version = "v2",
     nest_data = FALSE,
     ...) {
@@ -262,7 +488,7 @@ nba_pbps <- function(
   all_data <-
     game_ids %>%
     purrr::map_dfr(function(game_id) {
-      get_pbp_safe(game_id = game_id, ..., p = p)
+      get_pbp_safe(game_id = game_id, on_court = on_court, ..., p = p)
     })
 
   if (nest_data) {
@@ -274,8 +500,6 @@ nba_pbps <- function(
 
   return(all_data)
 }
-
-
 
 
 #' **Get NBA Stats API Live play-by-play**
