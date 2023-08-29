@@ -4,10 +4,12 @@
 \alias{nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, version = "v2", p, ...)
+nba_pbp(game_id, on_court = FALSE, version = "v2", p, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
+
+\item{on_court}{IF TRUE will be added ID of players on court}
 
 \item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
 
@@ -59,6 +61,16 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    player3_team_abbreviation \tab character \cr
    video_available_flag \tab character \cr
    team_leading \tab character \cr
+   away_player1 \tab numeric \cr
+   away_player2 \tab numeric \cr
+   away_player3 \tab numeric \cr
+   away_player4 \tab numeric \cr
+   away_player5 \tab numeric \cr
+   home_player1 \tab numeric \cr
+   home_player2 \tab numeric \cr
+   home_player3 \tab numeric \cr
+   home_player4 \tab numeric \cr
+   home_player5 \tab numeric \cr
 }
 }
 \description{
