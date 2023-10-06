@@ -91,16 +91,28 @@ nba_schedule <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- request_with_proxy(url = full_url, params = params)
 
       league_sched <- resp %>%
         purrr::pluck("leagueSchedule")
       games <- league_sched %>%
         purrr::pluck("gameDates") %>%
         tidyr::unnest("games") %>%
-        tidyr::unnest("awayTeam", names_sep = "_") %>%
-        tidyr::unnest("homeTeam", names_sep = "_") %>%
         dplyr::select(-dplyr::any_of(c("broadcasters", "pointsLeaders"))) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("awayTeam") %>%
+            dplyr::rename_with(~paste0("away_", .x))
+        ) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("homeTeam") %>%
+            dplyr::rename_with(~paste0("home_", .x))
+        ) %>%
         janitor::clean_names()
       colnames(games) <- gsub('team_team', 'team', colnames(games))
       games$game_id <- unlist(purrr::map(games$game_id,function(x){
