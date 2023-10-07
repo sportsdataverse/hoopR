@@ -91,7 +91,7 @@ nba_schedule <- function(
   tryCatch(
     expr = {
 
-      resp <- request_with_proxy(url = full_url, params = params)
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
       league_sched <- resp %>%
         purrr::pluck("leagueSchedule")
