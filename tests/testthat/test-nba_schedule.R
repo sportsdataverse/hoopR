@@ -51,7 +51,9 @@ test_that("NBA Schedule", {
     "away_team_score",
     "away_team_seed",
     "season",
-    "league_id"
+    "league_id",
+    "season_type_id",
+    "season_type_description"
   )
 
   expect_equal(sort(colnames(x)), sort(cols_x1))
