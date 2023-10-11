@@ -98,9 +98,22 @@ nba_schedule <- function(
       games <- league_sched %>%
         purrr::pluck("gameDates") %>%
         tidyr::unnest("games") %>%
-        tidyr::unnest("awayTeam", names_sep = "_") %>%
-        tidyr::unnest("homeTeam", names_sep = "_") %>%
         dplyr::select(-dplyr::any_of(c("broadcasters", "pointsLeaders"))) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("homeTeam") %>%
+            dplyr::rename_with(~paste0("home_team_", .x))
+        ) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("awayTeam") %>%
+            dplyr::rename_with(~paste0("away_team_", .x))
+        ) %>%
+        select(-homeTeam, -awayTeam) %>%
         janitor::clean_names()
       colnames(games) <- gsub('team_team', 'team', colnames(games))
       games$game_id <- unlist(purrr::map(games$game_id,function(x){
@@ -117,7 +130,7 @@ nba_schedule <- function(
             .data$season_type_id == 3 ~ "All-Star",
             .data$season_type_id == 4 ~ "Playoffs",
             .data$season_type_id == 5 ~ "Play-In Game"),
-          game_date = lubridate::mdy(substring(.data$game_date,1,10)))
+          game_date = lubridate::mdy(substring(.data$game_date, 1, 10)))
 
     },
     error = function(e) {
