@@ -304,8 +304,8 @@ rankings.</p></li>
 years of data, but I have indicated the years to which the data goes
 back to.</p>
 <div class="section level4">
-<h4 id="nba-play-by-plays-2002-2023-60-120-seconds">
-<strong>NBA play-by-plays (2002-2023) ~ 60-120 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-play-by-plays-2002-2023-60-120-seconds"></a>
+<h4 id="nba-play-by-plays-2002-2024-60-120-seconds">
+<strong>NBA play-by-plays (2002-2024) ~ 60-120 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-play-by-plays-2002-2024-60-120-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -313,7 +313,7 @@ back to.</p>
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 26.273 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 22.66 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 1775398 rows of nba play-by-play data from 3799 games.</span></span></code></pre>
@@ -383,8 +383,8 @@ back to.</p>
 <span><span class="co">## $ type_abbreviation               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span></code></pre>
 </div>
 <div class="section level4">
-<h4 id="nba-team-box-scores-2002-2023-5-30-seconds">
-<strong>NBA team box scores (2002-2023) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-team-box-scores-2002-2023-5-30-seconds"></a>
+<h4 id="nba-team-box-scores-2002-2024-5-30-seconds">
+<strong>NBA team box scores (2002-2024) ~ 5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#nba-team-box-scores-2002-2024-5-30-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -393,7 +393,7 @@ back to.</p>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.653 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 2.194 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 7598 rows of NBA team boxscore data from 3799 games.</span></span></code></pre>
@@ -460,9 +460,9 @@ back to.</p>
 <span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 105, 98, 119, 123, 109, 103, 120, 10…</span></span></code></pre>
 </div>
 <div class="section level4">
-<h4 id="nba-player-box-scores-2002-2023-5-30-seconds">
-<strong>NBA player box scores (2002-2023) ~ 5-30
-seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scores-2002-2023-5-30-seconds"></a>
+<h4 id="nba-player-box-scores-2002-2024-5-30-seconds">
+<strong>NBA player box scores (2002-2024) ~ 5-30
+seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scores-2002-2024-5-30-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -470,7 +470,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3.296 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.063 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 99045 rows of NBA player boxscore data from 3799 games.</span></span></code></pre>
@@ -537,9 +537,9 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 105, 105, 105, 105, 105, 105, 105, 1…</span></span></code></pre>
 </div>
 <div class="section level4">
-<h4 id="mens-college-basketball-play-by-plays-2006-2023-120-180-seconds">
-<strong>Men’s college basketball play-by-plays (2006-2023) ~ 120-180
-seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-play-by-plays-2006-2023-120-180-seconds"></a>
+<h4 id="mens-college-basketball-play-by-plays-2006-2024-120-180-seconds">
+<strong>Men’s college basketball play-by-plays (2006-2024) ~ 120-180
+seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-play-by-plays-2006-2024-120-180-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -547,7 +547,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 59.045 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 53.453 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 5113881 rows of men's college basketball play-by-play data from 15960 games.</span></span></code></pre>
@@ -616,9 +616,9 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span><span class="co">## $ media_id                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…</span></span></code></pre>
 </div>
 <div class="section level4">
-<h4 id="mens-college-basketball-team-box-scores-2003-2023-5-30-seconds">
-<strong>Men’s college basketball team box scores (2003-2023) ~ 5-30
-seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-team-box-scores-2003-2023-5-30-seconds"></a>
+<h4 id="mens-college-basketball-team-box-scores-2003-2024-5-30-seconds">
+<strong>Men’s college basketball team box scores (2003-2024) ~ 5-30
+seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-team-box-scores-2003-2024-5-30-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -626,7 +626,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.842 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 2.893 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 32934 rows of men's college basketball team boxscore data from 16467 games.</span></span></code></pre>
@@ -690,9 +690,9 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 70, 86, 93, 90, 78, 59, 49, 51, 85, …</span></span></code></pre>
 </div>
 <div class="section level4">
-<h4 id="mens-college-basketball-player-box-scores-2003-2023-5-30-seconds">
-<strong>Men’s college basketball player box scores (2003-2023) ~
-5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-player-box-scores-2003-2023-5-30-seconds"></a>
+<h4 id="mens-college-basketball-player-box-scores-2003-2024-5-30-seconds">
+<strong>Men’s college basketball player box scores (2003-2024) ~
+5-30 seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basketball-player-box-scores-2003-2024-5-30-seconds"></a>
 </h4>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">tic</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -700,7 +700,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 8.79 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 8.801 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 523036 rows of men's college basketball player boxscore data from 16470 games.</span></span></code></pre>
