@@ -46,6 +46,8 @@ authors:
    href: https://twitter.com/_b4billy_
   Ross Drucker:
    href: https://twitter.com/rossdrucker9
+  Vladislav Shufinskiy:
+   href: https://twitter.com/vshufinskiy
 home:
   title: hoopR • Data and Tools for Men's Basketball
   description: >
@@ -247,3 +249,4 @@ reference:
       - '`helper_espn_mbb_pbp`'
       - '`helper_espn_mbb_team_box`'
       - '`helper_espn_mbb_player_box`'
+      - '`.players_on_court`'

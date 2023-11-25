@@ -56,7 +56,7 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2023) \~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -66,11 +66,11 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 5.23 sec elapsed
+    ## 1.19 sec elapsed
 
-    ## 546926 rows of NBA play-by-play data from 1161 games.
+    ## 105107 rows of NBA play-by-play data from 220 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2023) \~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -80,9 +80,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 17.72 sec elapsed
+    ## 1.64 sec elapsed
 
-    ## 1956490 rows of men's college basketball play-by-play data from 6113 games.
+    ## 339256 rows of men's college basketball play-by-play data from 1010 games.
 
 ## **Documentation**
 
@@ -105,23 +105,27 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 ## **Our Authors**
 
--   [Saiem Gilani](https://twitter.com/saiemgilani)  
-    <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
-    <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
+- [Saiem Gilani](https://twitter.com/saiemgilani)  
+  <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a>
+  <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
 ## **Our Contributors (they’re awesome)**
 
--   [Jason Lee](https://twitter.com/theFirmAISports)  
-    <a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
-    <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+- [Jason Lee](https://twitter.com/theFirmAISports)  
+  <a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a>
+  <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
--   [Billy Fryer](https://twitter.com/_b4billy_)  
-    <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
-    <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
+- [Billy Fryer](https://twitter.com/_b4billy_)  
+  <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a>
+  <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
--   [Ross Drucker](https://twitter.com/rossdrucker9)  
-    <a href="https://twitter.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge" alt="@rossdrucker9" /></a>
-    <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
+- [Ross Drucker](https://twitter.com/rossdrucker9)  
+  <a href="https://twitter.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge" alt="@rossdrucker9" /></a>
+  <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
+
+- [Vladislav Shufinskiy](https://twitter.com/vshufinskiy)  
+  <a href="https://twitter.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=twitter&style=for-the-badge" alt="@vshufinskiy" /></a>
+  <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
 
 ## **Citations**
 

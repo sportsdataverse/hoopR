@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
-Version: 2.0.1
+Version: 2.1.0
 Authors@R: 
     c(person(given = "Saiem",
              family = "Gilani",
@@ -17,7 +17,11 @@ Authors@R:
       person(given = "Ross",
              family = "Drucker",
              role = c("ctb"),
-             email = "ross.a.drucker@gmail.com"))
+             email = "ross.a.drucker@gmail.com"),
+      person(given = "Vladislav",
+             family = "Shufinskiy",
+             role = c("ctb"),
+             email = "hollywood.90210@mail.ru"))
 Description: A utility to quickly obtain clean and tidy men's
     basketball play by play data. Provides functions to access
     live play by play and box score data from ESPN<https://www.espn.com> with shot locations
