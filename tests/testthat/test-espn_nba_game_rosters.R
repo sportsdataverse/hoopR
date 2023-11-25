@@ -28,6 +28,9 @@ test_that("ESPN - Get NBA game roster", {
     "headshot_href",
     "headshot_alt",
     "jersey",
+    "hand_type",
+    "hand_abbreviation",
+    "hand_display_value",
     "position_id",
     "position_name",
     "position_display_name",
@@ -89,10 +92,7 @@ test_that("ESPN - Get NBA game roster", {
     "home_away",
     "winner",
     "contract_base_year_compensation_active",
-    "contract_base_year_compensation_expiration",
-    "hand_type",
-    "hand_abbreviation",
-    "hand_display_value"
+    "contract_base_year_compensation_expiration"
   )
   expect_equal(colnames(x), cols)
   expect_s3_class(x, "data.frame")

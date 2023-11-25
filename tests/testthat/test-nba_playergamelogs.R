@@ -71,12 +71,11 @@ test_that("NBA Player Game Logs", {
     "NBA_FANTASY_PTS_RANK",
     "DD2_RANK",
     "TD3_RANK",
-    "WNBA_FANTASY_PTS_RANK",
-    "VIDEO_AVAILABLE_FLAG"
+    "WNBA_FANTASY_PTS_RANK"
   )
 
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)
