@@ -3,7 +3,7 @@ test_that("NBA Shot Chart Lineup Detail", {
   skip_on_ci()
 
   x <- nba_shotchartlineupdetail(group_id = "-202689-203493-203501-1626174-1627827-",
-                                 season = year_to_season(most_recent_nba_season() - 1))
+                                 season = "2022-23")
 
 
   cols_x1 <- c(

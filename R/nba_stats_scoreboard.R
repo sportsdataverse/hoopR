@@ -113,7 +113,7 @@ nba_schedule <- function(
             purrr::pluck("awayTeam") %>%
             dplyr::rename_with(~paste0("away_team_", .x))
         ) %>%
-        select(-homeTeam, -awayTeam) %>%
+        select(-"homeTeam", -"awayTeam") %>%
         janitor::clean_names()
       colnames(games) <- gsub('team_team', 'team', colnames(games))
       games$game_id <- unlist(purrr::map(games$game_id,function(x){

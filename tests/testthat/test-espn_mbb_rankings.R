@@ -24,6 +24,7 @@ test_that("ESPN - Get MBB rankings", {
     "team_nickname",
     "team_abbreviation",
     "team_color",
+    "team_logos",
     "team_logo",
     "occurrence_number",
     "occurrence_type",

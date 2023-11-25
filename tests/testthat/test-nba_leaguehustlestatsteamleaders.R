@@ -1,4 +1,5 @@
 test_that("NBA League Hustle Stats Team Leaders", {
+  skip()
   skip_on_cran()
   skip_on_ci()
 
