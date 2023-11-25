@@ -134,7 +134,7 @@ NULL
         tmp_gameid <- pbp_data$game_id[1]
       }
 
-      tmp_data <- hoopR::nba_boxscoretraditionalv2(game_id = tmp_gameid, start_period = x, end_period = x, range_type = 1)$PlayerStats
+      tmp_data <- nba_boxscoretraditionalv2(game_id = tmp_gameid, start_period = x, end_period = x, range_type = 1)$PlayerStats
 
       all_id <- as.integer(tmp_data$PLAYER_ID)
 
@@ -276,7 +276,7 @@ NULL
 #' ```
 nba_pbp <- function(
     game_id,
-    on_court = FALSE,
+    on_court = TRUE,
     version = "v2",
     p,
     ...){
@@ -467,7 +467,7 @@ NULL
 #' ```
 nba_pbps <- function(
     game_ids = NULL,
-    on_court = FALSE,
+    on_court = TRUE,
     version = "v2",
     nest_data = FALSE,
     ...) {

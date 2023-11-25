@@ -6,7 +6,7 @@
 \usage{
 nba_pbps(
   game_ids = NULL,
-  on_court = FALSE,
+  on_court = TRUE,
   version = "v2",
   nest_data = FALSE,
   ...

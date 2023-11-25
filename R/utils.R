@@ -175,7 +175,7 @@ custom_mode <- function(x, na.rm = TRUE) {
 #' @export
 most_recent_mbb_season <- function() {
   ifelse(
-    as.double(substr(Sys.Date(), 6, 7)) >= 10,
+    as.double(substr(Sys.Date(), 6, 7)) > 10,
     as.double(substr(Sys.Date(), 1, 4)) + 1,
     as.double(substr(Sys.Date(), 1, 4))
   )
