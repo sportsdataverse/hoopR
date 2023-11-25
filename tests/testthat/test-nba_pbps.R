@@ -45,7 +45,17 @@ test_that("NBA PBPs", {
     "player3_team_nickname",
     "player3_team_abbreviation",
     "video_available_flag",
-    "team_leading"
+    "team_leading",
+    "away_player1",
+    "away_player2",
+    "away_player3",
+    "away_player4",
+    "away_player5",
+    "home_player1",
+    "home_player2",
+    "home_player3",
+    "home_player4",
+    "home_player5"
   )
 
 

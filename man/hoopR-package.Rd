@@ -27,6 +27,7 @@ Other contributors:
   \item Jason Lee \email{Jason@aisportsfirm.com} [contributor]
   \item Billy Fryer \email{billyfryer@att.net} [contributor]
   \item Ross Drucker \email{ross.a.drucker@gmail.com} [contributor]
+  \item Vladislav Shufinskiy \email{hollywood.90210@mail.ru} [contributor]
 }
 
 }

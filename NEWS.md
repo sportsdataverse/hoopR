@@ -1,3 +1,8 @@
+# **hoopR 2.1.0**
+* ```load_nba_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
+* ```load_mbb_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
+- ```nba_pbp()``` and ```nba_pbps()``` functions add parameter `on_court` (default `TRUE`) to return on-court players for each play event, courtesy of [\@shufinskiy](https://github.com/shufinskiy)
+
 # **hoopR 2.0.0**
 
 ### **NBA Stats API Live Endpoints**
