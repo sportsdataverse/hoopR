@@ -75,7 +75,7 @@ Returns a tibble of team player data\tabular{ll}{
 }
 \examples{
   \donttest{
-    try(kp_team_players(team = 'Florida St.', year = 2021))
+    try(kp_team_players(team = 'Florida St.', year = 2024))
   }
 
 }
