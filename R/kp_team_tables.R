@@ -1010,7 +1010,7 @@ kp_opptracker <- function(team, year = 2021){
 #'
 #' @examples
 #'   \donttest{
-#'     try(kp_team_players(team = 'Florida St.', year = 2021))
+#'     try(kp_team_players(team = 'Florida St.', year = 2024))
 #'   }
 #'
 

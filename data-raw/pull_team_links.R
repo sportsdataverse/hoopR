@@ -10,7 +10,7 @@ suppressPackageStartupMessages(suppressMessages(library(data.table)))
 suppressPackageStartupMessages(suppressMessages(library(arrow)))
 suppressPackageStartupMessages(suppressMessages(library(glue)))
 suppressPackageStartupMessages(suppressMessages(library(optparse)))
-years <- hoopR::most_recent_mbb_season()
+years <- hoopR::most_recent_mbb_season():2002
 
 browser <- hoopR::login()
 
@@ -73,7 +73,7 @@ for (year in years) {
 }
 all_teams <- collapse::funique.data.frame(all_teams_links)
 
-write.csv(all_teams, "data-raw/kp_team_info_2023.csv", row.names = FALSE)
+write.csv(all_teams, "data-raw/kp_team_info_2024.csv", row.names = FALSE)
 # remotes::install_github("lbenz730/ncaahoopR")
 all_teams_joined <- all_teams %>%
   dplyr::left_join(ncaahoopR::dict, by = c("Team" = "Trank"), keep = TRUE) %>%
