@@ -341,7 +341,7 @@ nba_pbp <- function(
               .data$score_margin == 0 ~ "Tie",
               .data$score_margin < 0 ~ "Away",
               is.na(.data$score_margin) ~ NA_character_,
-              TRUE ~ "Home"
+              .default = "Home"
             )
           ) %>%
           ## Time Remaining
@@ -349,7 +349,7 @@ nba_pbp <- function(
             "time_quarter",
             into = c("minute_remaining_quarter", "seconds_remaining_quarter"),
             sep = "\\:",
-            remove = F
+            remove = FALSE
           ) %>%
           dplyr::mutate(
             minute_remaining_quarter = as.numeric(.data$minute_remaining_quarter),

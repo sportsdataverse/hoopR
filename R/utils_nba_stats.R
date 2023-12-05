@@ -43,6 +43,7 @@
 #' @param ... passed to httr::RETRY
 #' @keywords internal
 #' @import rvest
+#' @noRd
 request_with_proxy <- function(url,
                                params = list(),
                                origin = "https://stats.nba.com",
@@ -262,7 +263,7 @@ nba_stats_map_result_sets <- function(resp) {
   } else {
     df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
       data <- resp$resultSet$rowSet[[x]] %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         dplyr::as_tibble()
 
       json_names <- resp$resultSet$headers[[x]]

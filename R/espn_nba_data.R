@@ -1502,8 +1502,9 @@ espn_nba_standings <- function(year){
       #joining the 2 dataframes together to create a standings table
 
       standings <- cbind(teams, standings_data) %>%
-        dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
-        dplyr::mutate_at(c(
+        dplyr::mutate(
+          team_id = as.integer(.data$team_id),
+          dplyr::across(c(
             "avgpointsagainst",
             "avgpointsfor",
             "clincher",
@@ -1516,8 +1517,9 @@ espn_nba_standings <- function(year){
             "streak",
             "winpercent",
             "wins"
-        ), as.numeric)
-      standings <- standings %>%
+          ),
+          .fns = as.numeric)
+        ) %>%
         make_hoopR_data("ESPN NBA Standings Information from ESPN.com", Sys.time())
     },
     error = function(e) {

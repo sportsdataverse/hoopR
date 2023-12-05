@@ -50,24 +50,12 @@ login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW"
 #' @rdname kp_user_pw
 #' @export
 kp_user_email <- function() {
-  kp_user <- Sys.getenv("KP_USER")
-
-  if (kp_user == "") {
-    return(NA_character_)
-  } else {
-    return(kp_user)
-  }
+  Sys.getenv("KP_USER", unset = NA_character_)
 }
 #' @rdname kp_user_pw
 #' @export
 kp_password <- function() {
-  kp_pw <- Sys.getenv("KP_PW")
-
-  if (kp_pw == "") {
-    return(NA_character_)
-  } else {
-    return(kp_pw)
-  }
+  Sys.getenv("KP_PW", unset = NA_character_)
 }
 
 #' @rdname kp_user_pw
