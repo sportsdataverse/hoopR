@@ -1,7 +1,7 @@
 
 # 
 
-# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 

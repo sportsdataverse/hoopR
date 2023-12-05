@@ -39,7 +39,6 @@ nba_pbp_db
 ^data-raw$
 ^data-raw
 ^CODE_OF_CONDUCT\.md
-^logo.png
 ^\.github$
 ^man/figures
 ^README\.Rmd$
