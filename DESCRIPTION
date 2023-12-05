@@ -60,7 +60,6 @@ Suggests:
     curl,
     DBI,
     ggplot2,
-    qs (>= 0.25.1),
     rmarkdown,
     RSQLite,
     stats,
