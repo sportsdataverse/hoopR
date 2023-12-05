@@ -34,7 +34,7 @@ NULL
 #' @keywords Login
 #' @importFrom rvest html_session html_form set_values submit_form
 #' @export
-login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW")){
+login <- function(user_email = Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW")){
 
   url <- "https://kenpom.com/index.php"
   #create a web session with the desired login address
@@ -94,11 +94,10 @@ progressively <- function(f, p = NULL){
 #' @title
 #' **Load .csv / .csv.gz file from a remote connection**
 #' @description
-#' This is a thin wrapper on data.table::fread
-#' @param ... passed to data.table::fread
-#' @inheritDotParams data.table::fread
+#' This is a thin wrapper around [data.table::fread()]
+#' @inheritDotParams data.table::fread -yaml
 #' @importFrom data.table fread
-#' @return a dataframe as created by [`data.table::fread()`]
+#' @return a dataframe as created by [data.table::fread()]
 #' @export
 csv_from_url <- function(...){
   data.table::fread(...)
