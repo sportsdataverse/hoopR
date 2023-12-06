@@ -248,13 +248,13 @@ clean_team_names_NCAA_merge <- function(df){
 # resembles usethis::ui_todo
 hoop_todo <- function(x, .envir = parent.frame()) {
   x <- paste0(my_time(), " | ", x)
-  names(x) <- cli::col_red(cli::symbol$bullet)
+  names(x) = "*"
   cli::cli_bullets(x, .envir = .envir)
 }
 # similar to usethis::ui_info
 hoop_info <- function(x, .envir = parent.frame()) {
   x <- paste0(my_time(), " | ", x)
-  names(x) <- cli::col_yellow(cli::symbol$info) # similar to ui_info()
+  names(x) <- "i"
   cli::cli_bullets(x, .envir = .envir)
 }
 
