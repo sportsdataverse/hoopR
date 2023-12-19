@@ -176,6 +176,7 @@ nba_videodetailsasset <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no video detail assets data available!"))
+      if (!exists("df_list")) df_list <- list() # to silence failing tests
     },
     warning = function(w) {
     },

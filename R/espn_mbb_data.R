@@ -1423,7 +1423,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
               "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         } else {
@@ -1439,12 +1439,12 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
               "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         } else {
           mbb_data %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com",Sys.time())
         }

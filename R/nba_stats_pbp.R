@@ -341,7 +341,7 @@ nba_pbp <- function(
               .data$score_margin == 0 ~ "Tie",
               .data$score_margin < 0 ~ "Away",
               is.na(.data$score_margin) ~ NA_character_,
-              TRUE ~ "Home"
+              .default = "Home"
             )
           ) %>%
           ## Time Remaining
@@ -349,7 +349,7 @@ nba_pbp <- function(
             "time_quarter",
             into = c("minute_remaining_quarter", "seconds_remaining_quarter"),
             sep = "\\:",
-            remove = F
+            remove = FALSE
           ) %>%
           dplyr::mutate(
             minute_remaining_quarter = as.numeric(.data$minute_remaining_quarter),
@@ -364,11 +364,10 @@ nba_pbp <- function(
             time_remaining = 48 - round(((.data$period - 1) * 12) - (12 - .data$minute_remaining_quarter) -
                                           ((60 - .data$seconds_remaining_quarter) / 60 - 1), 2)
           ) %>%
-          dplyr::select(
+          dplyr::relocate(
             "game_id":"period",
             "minute_game",
-            "time_remaining",
-            dplyr::everything()
+            "time_remaining"
           ) %>%
           make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
 
@@ -475,20 +474,14 @@ nba_pbps <- function(
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  if (game_ids %>% purrr::is_null()) {
+  if (rlang::is_null(game_ids)) {
     stop("Please enter game ids")
   }
 
-
-  p <- NULL
-  if (is_installed("progressr")) p <- progressr::progressor(along = game_ids)
-  get_pbp_safe <- progressively(nba_pbp, p)
-
-
-  all_data <-
-    game_ids %>%
-    purrr::map_dfr(function(game_id) {
-      get_pbp_safe(game_id = game_id, on_court = on_court, ..., p = p)
+  all_data <- purrr::map_dfr(
+    cli::cli_progress_along(game_ids, name = "Loading"),
+    function(i) {
+      nba_pbp(game_id = game_ids[i], on_court = on_court)
     })
 
   if (nest_data) {

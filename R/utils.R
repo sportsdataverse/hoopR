@@ -34,7 +34,7 @@ NULL
 #' @keywords Login
 #' @importFrom rvest html_session html_form set_values submit_form
 #' @export
-login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW")){
+login <- function(user_email = Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW")){
 
   url <- "https://kenpom.com/index.php"
   #create a web session with the desired login address
@@ -50,24 +50,12 @@ login <- function(user_email=Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_PW"
 #' @rdname kp_user_pw
 #' @export
 kp_user_email <- function() {
-  kp_user <- Sys.getenv("KP_USER")
-
-  if (kp_user == "") {
-    return(NA_character_)
-  } else {
-    return(kp_user)
-  }
+  Sys.getenv("KP_USER", unset = NA_character_)
 }
 #' @rdname kp_user_pw
 #' @export
 kp_password <- function() {
-  kp_pw <- Sys.getenv("KP_PW")
-
-  if (kp_pw == "") {
-    return(NA_character_)
-  } else {
-    return(kp_pw)
-  }
+  Sys.getenv("KP_PW", unset = NA_character_)
 }
 
 #' @rdname kp_user_pw
@@ -88,6 +76,7 @@ has_kp_user_and_pw <- function() !is.na(kp_user_email()) && !is.na(kp_password()
 #'
 #' @export
 progressively <- function(f, p = NULL){
+  # no longer using progressr. Using cli progress bars
   if(!is.null(p) && !inherits(p, "progressor")) stop("`p` must be a progressor function!")
   if(is.null(p)) p <- function(...) NULL
   force(f)
@@ -105,11 +94,10 @@ progressively <- function(f, p = NULL){
 #' @title
 #' **Load .csv / .csv.gz file from a remote connection**
 #' @description
-#' This is a thin wrapper on data.table::fread
-#' @param ... passed to data.table::fread
-#' @inheritDotParams data.table::fread
+#' This is a thin wrapper around [data.table::fread()]
+#' @inheritDotParams data.table::fread -yaml
 #' @importFrom data.table fread
-#' @return a dataframe as created by [`data.table::fread()`]
+#' @return a dataframe as created by [data.table::fread()]
 #' @export
 csv_from_url <- function(...){
   data.table::fread(...)
@@ -137,30 +125,8 @@ rds_from_url <- function(url) {
   return(load)
 }
 
-# The function `message_completed` to create the green "...completed" message
-# only exists to hide the option `in_builder` in dots
-message_completed <- function(x, in_builder = FALSE) {
-  if (!in_builder) {
-    usethis::ui_done("{usethis::ui_field(x)}")
-  } else if (in_builder) {
-    usethis::ui_done(x)
-  }
-}
-user_message <- function(x, type) {
-  if (type == "done") {
-    usethis::ui_done("{my_time()} | {x}")
-  } else if (type == "todo") {
-    usethis::ui_todo("{my_time()} | {x}")
-  } else if (type == "info") {
-    usethis::ui_info("{my_time()} | {x}")
-  } else if (type == "oops") {
-    usethis::ui_oops("{my_time()} | {x}")
-  }
-}
 # Identify sessions with sequential future resolving
 is_sequential <- function() inherits(future::plan(), "sequential")
-# check if a package is installed
-is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
 # custom mode function from https://stackoverflow.com/questions/2547402/is-there-a-built-in-function-for-finding-the-mode/8189441
 custom_mode <- function(x, na.rm = TRUE) {
   if (na.rm) {
@@ -276,13 +242,29 @@ clean_team_names_NCAA_merge <- function(df){
   return(df)
 }
 
+
+# length 1
+# adds time
+# resembles usethis::ui_todo
+hoop_todo <- function(x, .envir = parent.frame()) {
+  x <- paste0(my_time(), " | ", x)
+  names(x) = "*"
+  cli::cli_bullets(x, .envir = .envir)
+}
+# similar to usethis::ui_info
+hoop_info <- function(x, .envir = parent.frame()) {
+  x <- paste0(my_time(), " | ", x)
+  names(x) <- "i"
+  cli::cli_bullets(x, .envir = .envir)
+}
+
 my_time <- function() strftime(Sys.time(), format = "%H:%M:%S")
 
 #' **Check Status function**
 #' @param res Response from API
 #' @keywords Internal
 #' @import rvest
-#'
+#' @noRd
 check_status <- function(res) {
 
   x = httr::status_code(res)
@@ -296,14 +278,6 @@ check_status <- function(res) {
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL
-
-#' @import utils
-utils::globalVariables(c("where"))
-
-# check if a package is installed
-is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
-
-
 
 #' @keywords internal
 "_PACKAGE"

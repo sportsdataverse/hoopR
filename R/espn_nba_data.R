@@ -1367,7 +1367,7 @@ espn_nba_scoreboard <- function(season){
               "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         } else {
@@ -1383,12 +1383,12 @@ espn_nba_scoreboard <- function(season){
               "broadcasts",
               broadcast_market = list(1, "market"),
               broadcast_name = list(1, "names", 1)) %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         } else {
           nba_data %>%
-            dplyr::select(!where(is.list)) %>%
+            dplyr::select(!dplyr::where(is.list)) %>%
             janitor::clean_names() %>%
             make_hoopR_data("ESPN NBA Scoreboard Information from ESPN.com",Sys.time())
         }
@@ -1502,23 +1502,25 @@ espn_nba_standings <- function(year){
       #joining the 2 dataframes together to create a standings table
 
       standings <- cbind(teams, standings_data) %>%
-        dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
-        dplyr::mutate_at(c(
-          "avgpointsagainst",
-          "avgpointsfor",
-          "clincher",
-          "differential",
-          "divisionwinpercent",
-          "gamesbehind",
-          "leaguewinpercent",
-          "losses",
-          "playoffseed",
-          "streak",
-          "winpercent",
-          "wins"
-        ), as.numeric)
-      standings <- standings %>%
-        make_hoopR_data("ESPN NBA Standings Information from ESPN.com",Sys.time())
+        dplyr::mutate(
+          team_id = as.integer(.data$team_id),
+          dplyr::across(c(
+            "avgpointsagainst",
+            "avgpointsfor",
+            "clincher",
+            "differential",
+            "divisionwinpercent",
+            "gamesbehind",
+            "leaguewinpercent",
+            "losses",
+            "playoffseed",
+            "streak",
+            "winpercent",
+            "wins"
+          ),
+          .fns = as.numeric)
+        ) %>%
+        make_hoopR_data("ESPN NBA Standings Information from ESPN.com", Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no standings data available!"))

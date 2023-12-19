@@ -4,7 +4,7 @@ output: github_document
 
 #
 
-# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.png" align="right"  width="20%" min-width="100px"/></a>
 ```{r setup, include = FALSE}
 require(knitr)
 if (!requireNamespace('pacman')){
@@ -54,9 +54,7 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 ### **NBA full play-by-play seasons (2002-`r hoopR::most_recent_nba_season()`) ~ 1-2 minutes**
 ```{r nba_load_pbp_readme}
 tictoc::tic()
-progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp()
-})
+nba_pbp <- hoopR::load_nba_pbp()
 tictoc::toc()
 ```
 ```{r nba_pbp_message, echo = FALSE}
@@ -67,9 +65,7 @@ glue::glue("{nrow(nba_pbp)} rows of NBA play-by-play data from {length(unique(nb
 ```{r mbb_load_pbp_readme}
 
 tictoc::tic()
-progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp()
-})
+mbb_pbp <-  hoopR::load_mbb_pbp()
 tictoc::toc()
 ```
 

@@ -1,7 +1,7 @@
 
 # 
 
-# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
+# hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
 <!-- badges: start -->
 
@@ -57,9 +57,7 @@ pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update =
 
 ``` r
 tictoc::tic()
-progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp()
-})
+nba_pbp <- hoopR::load_nba_pbp()
 tictoc::toc()
 ```
 
@@ -71,9 +69,7 @@ tictoc::toc()
 
 ``` r
 tictoc::tic()
-progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp()
-})
+mbb_pbp <-  hoopR::load_mbb_pbp()
 tictoc::toc()
 ```
 

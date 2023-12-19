@@ -14,7 +14,7 @@ A utility to quickly obtain clean and tidy men's basketball play by play data. P
 Useful links:
 \itemize{
   \item \url{https://github.com/sportsdataverse/hoopR}
-  \item \url{http://hoopr.sportsdataverse.org/}
+  \item \url{https://hoopr.sportsdataverse.org}
   \item Report bugs at \url{https://github.com/sportsdataverse/hoopR/issues}
 }
 
