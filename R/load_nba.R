@@ -587,7 +587,7 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
   valid_seasons <- load_nba_games() %>%
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::group_by(.data$season) %>%
-    dplyr::summarise(.drops = "drop")
+    dplyr::summarise(.groups = "drop")
 
   if (all(rebuild == TRUE)) {
     hoop_todo("Purging the complete data table {.val {tblname}} in your connected database...")
