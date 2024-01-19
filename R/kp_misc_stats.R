@@ -373,7 +373,12 @@ kp_hca <- function(){
 #'   try(kp_arenas(year=2021))
 #' }
 
-kp_arenas <- function(year=most_recent_mbb_season()){
+kp_arenas <- function(year=most_recent_mbb_season(){
+  tryCatch({
+    if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", call. = FALSE)
+    if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) stop("Enter valid year as a number (YYYY), data only goes back to 2010", call. = FALSE)
+    kenpom <- NULL
+    }
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
