@@ -26,32 +26,35 @@
 #'    |ppg          |numeric |
 #'
 #' @importFrom cli cli_abort
-#' @importFrom dplyr filter mutate_at
+#' @importFrom dplyr select filter mutate mutate_at
 #' @import rvest
 #' @export
-#' @keywords Trends
+#' @keywords Refs
 #' @family KP Misc. Functions
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_trends())
+#'   try(kp_officials(year = 2021))
 #' }
 
-kp_trends <- function(){
+kp_officials <- function(year = most_recent_mbb_season()){
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2016)) {
+        # Check if year is numeric, if not NULL
+        cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2016")
+      }
+
 
       ### Pull Data
-      url <- "https://kenpom.com/trends.php"
+      url <- paste0("https://kenpom.com/officials.php?y=",year)
       page <- rvest::session_jump_to(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
-                       "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
-                       "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
-                       "Continuity","HomeWin.Pct","PPG")
+      header_cols <- c("Rk","OfficialName","RefRating","Gms","Last.Game",
+                       "Last.Game.1","Last.Game.2")
 
       x <- (page %>%
               xml2::read_html() %>%
@@ -60,24 +63,34 @@ kp_trends <- function(){
         as.data.frame()
 
       colnames(x) <- header_cols
+      x <- x %>%
+        dplyr::select(-"Last.Game.2") %>%
+        suppressWarnings(
+          x <- x %>%
+            dplyr::filter(!is.na(as.numeric(.data$RefRating)))
+        )
+      x <- dplyr::mutate(x,
+                         "Year" = year)
       suppressWarnings(
         x <- x %>%
-          dplyr::filter(!is.na(as.numeric(.data$eFG.Pct)))
+          dplyr::mutate_at(c("Year","RefRating","Gms"), as.numeric) %>%
+          as.data.frame()
       )
       ### Store Data
       kenpom <- x %>%
-        dplyr::mutate_at(c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
-                           "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
-                           "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
-                           "Continuity","HomeWin.Pct","PPG"), as.numeric) %>%
         janitor::clean_names()
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no trends data available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no officials data for {year} available!"))
     },
     warning = function(w) {
     },
+    finally = {
+    }
+  )
+  return(kenpom)
+}
     finally = {
     }
   )
