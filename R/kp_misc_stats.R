@@ -448,7 +448,48 @@ kp_arenas <- function(year=most_recent_mbb_season(){
 #' @import rvest
 #' @export
 #' @keywords Game
-#' @family KP Misc. Functions
+      tryCatch({
+      if (is.null(Sys.getenv("KP_USER")) || is.null(Sys.getenv("KP_PW"))) {
+        stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", call. = FALSE)
+      }
+      if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
+        # Check if year is numeric, if not NULL
+        stop("Enter valid year as a number (YYYY), data only goes back to 2010", call. = FALSE)
+      }
+      url <- paste0("https://kenpom.com/game_attrs.php?",
+                    "y=", year,
+                    "&s=", attr)
+      tryCatch({
+      page <- rvest::session_jump_to(browser, url)
+      Sys.sleep(5)
+      header_cols <- c("Rk","Data","Game",
+                       "col","Location","Conf",
+                       attr)
+
+      x <- (page %>%
+            xml2::read_html() %>%
+            rvest::html_elements("table"))[[1]] %>%
+        rvest::html_table()
+      colnames(x) <- header_cols
+      x <- dplyr::mutate(x,
+                         "Year" = as.numeric(year)) %>%
+        as.data.frame()
+      ### Store Data
+      kenpom <- x %>%
+        dplyr::select(-"col") %>%
+        janitor::clean_names()
+      },
+      error = function(e) {
+        message(glue::glue("{Sys.time()}: Invalid arguments or no game attributes for {attr} available!"))
+        kenpom <- NULL
+      }
+      )
+      },
+      error = function(e) {
+        message(glue::glue("{Sys.time()}: Invalid arguments or no game attributes for {attr} available!"))
+        kenpom <- NULL
+      }
+      )
 #'
 #' @examples
 #' \donttest{
