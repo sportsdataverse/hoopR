@@ -39,9 +39,9 @@ A data frame with 17 columns:\tabular{ll}{
 \seealso{
 Other KenPom Historical Functions: 
 \code{\link{kp_coach_history}()},
+\code{\link{kp_conf}()},
 \code{\link{kp_confhistory}()},
 \code{\link{kp_confstats}()},
-\code{\link{kp_conf}()},
 \code{\link{kp_pomeroy_archive_ratings}()},
 \code{\link{kp_team_history}()}
 }
