@@ -83,9 +83,9 @@ A data frame with the following columns:\tabular{ll}{
 \seealso{
 Other KenPom Historical Functions: 
 \code{\link{kp_coach_history}()},
+\code{\link{kp_conf}()},
 \code{\link{kp_confhistory}()},
 \code{\link{kp_confstats}()},
-\code{\link{kp_conf}()},
 \code{\link{kp_pomeroy_archive_ratings}()},
 \code{\link{kp_program_ratings}()}
 }

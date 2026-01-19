@@ -61,8 +61,8 @@ Return a named list of data frames: WinProbPBP, GameInfo
 Other NBA PBP Functions: 
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
-\code{\link{nba_pbps}()},
-\code{\link{nba_pbp}()}
+\code{\link{nba_pbp}()},
+\code{\link{nba_pbps}()}
 }
 \author{
 Saiem Gilani

@@ -141,8 +141,8 @@ Returns a named list of data frames: HustleStatsPlayer
 Other NBA Hustle Functions: 
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_leaguehustlestatsplayerleaders}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()}
+\code{\link{nba_leaguehustlestatsteam}()},
+\code{\link{nba_leaguehustlestatsteamleaders}()}
 }
 \author{
 Saiem Gilani

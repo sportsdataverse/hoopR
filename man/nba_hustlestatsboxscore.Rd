@@ -102,10 +102,10 @@ Other NBA Boxscore Functions:
 \code{\link{nba_live_boxscore}()}
 
 Other NBA Hustle Functions: 
-\code{\link{nba_leaguehustlestatsplayerleaders}()},
 \code{\link{nba_leaguehustlestatsplayer}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()}
+\code{\link{nba_leaguehustlestatsplayerleaders}()},
+\code{\link{nba_leaguehustlestatsteam}()},
+\code{\link{nba_leaguehustlestatsteamleaders}()}
 }
 \author{
 Saiem Gilani
