@@ -1,780 +1,262 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/404.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/articles/getting-started-hoopR.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/articles/kenpom-example-functions.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/check_status.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/csv_from_url.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_betting.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_standings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_teams.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/espn_nba_wp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/hoopR-package.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_arenas.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_coach_history.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_conf.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_confhistory.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_confstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_efficiency.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_fanmatch.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_fourfactors.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_game_attrs.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_gameplan.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_hca.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_height.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_kpoy.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_minutes_matrix.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_officials.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_opptracker.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_player_career.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_playerstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_pointdist.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_pomeroy_archive_ratings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_program_ratings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_referee.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_depth_chart.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_history.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_lineups.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_player_stats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_players.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_team_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_teamstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_trends.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_user_pw.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/kp_winprob.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_nba_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_nba_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_box.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_assistleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_assisttracker.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoresimilarityscore.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_commonallplayers.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_commonplayerinfo.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_commonplayoffseries.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_commonteamroster.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayergames.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsteam.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsteamgames.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_data_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_defensehub.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinedrillresults.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinenonstationaryshooting.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombineplayeranthro.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinespotshooting.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_drafthistory.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaderswrank.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseplayers.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_gamerotation.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_glalumboxscoresimilarityscore.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_homepagev2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayershotlocations.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptteamdefend.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamshotlocations.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguegamefinder.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayerleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteam.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteamleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguelineupviz.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leagueseasonmatchups.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguestandings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_leaguestandingsv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_live_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_matchupsrollup.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_pbps.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerawards.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playercompare.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playergamelog.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playergamelogs.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playergamestreakfinder.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerheadshot.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerindex.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playernextngames.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_playoffpicture.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamdetails.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamestimatedmetrics.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamelog.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayerdashboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffsummary.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teams.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_videodetails.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_videoevents.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_videostatus.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nbagl_pbp.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nbagl_players.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nbagl_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/nbagl_standings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/progressively.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/rds_from_url.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/rejoin_schedules.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/request_with_proxy.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/teams_links.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/update_mbb_db.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/update_nba_db.html</loc>
-  </url>
-  <url>
-    <loc>https://hoopR.sportsdataverse.org/reference/year_to_season.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://hoopR.sportsdataverse.org/404.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/LICENSE-text.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/LICENSE.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/articles/getting-started-hoopR.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/articles/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/articles/kenpom-example-functions.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/authors.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/news/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/check_status.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/csv_from_url.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_betting.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_standings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_teams.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_wp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/hoopR-package.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_arenas.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_coach_history.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_conf.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_confhistory.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_confstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_efficiency.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_fanmatch.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_fourfactors.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_game_attrs.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_gameplan.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_hca.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_height.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_kpoy.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_minutes_matrix.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_officials.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_opptracker.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_player_career.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_playerstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_pointdist.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_pomeroy_archive_ratings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_program_ratings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_referee.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_depth_chart.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_history.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_lineups.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_player_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_players.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_teamstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_trends.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_user_pw.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp_winprob.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_assistleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_assisttracker.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoresimilarityscore.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_commonallplayers.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_commonplayerinfo.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_commonplayoffseries.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_commonteamroster.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayergames.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsteam.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsteamgames.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_data_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_defensehub.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinedrillresults.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinenonstationaryshooting.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombineplayeranthro.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinespotshooting.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_drafthistory.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaderswrank.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseplayers.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_gamerotation.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_glalumboxscoresimilarityscore.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_homepagev2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayershotlocations.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashptteamdefend.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamshotlocations.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguegamefinder.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayerleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteam.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteamleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguelineupviz.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leagueseasonmatchups.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguestandings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguestandingsv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_live_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_matchupsrollup.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_pbps.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerawards.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercompare.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playergamelog.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playergamelogs.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playergamestreakfinder.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerheadshot.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerindex.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playernextngames.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_playoffpicture.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdetails.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamestimatedmetrics.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamelog.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayerdashboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffsummary.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teams.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_videodetails.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_videoevents.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_videostatus.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nbagl_pbp.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nbagl_players.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nbagl_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nbagl_standings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/progressively.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/rds_from_url.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/rejoin_schedules.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/request_with_proxy.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/teams_links.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/update_mbb_db.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/update_nba_db.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/year_to_season.html</loc></url>
 </urlset>
+

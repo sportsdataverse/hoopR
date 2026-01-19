@@ -1,0 +1,1445 @@
+# 
+
+# hoopR
+
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
+working with men’s basketball data.
+
+The package has functions to access **live play by play and box score**
+data from ESPN with shot locations when available. As of version 1.3.0,
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA
+Stats API wrapper with 127 functions added in this release.
+
+It is additionally a scraping and aggregating interface for Ken
+Pomeroy’s men’s college basketball statistics website,
+[kenpom.com](https://kenpom.com/). It provides users with an active
+subscription the capability to scrape the website tables and analyze the
+data for themselves.
+
+## Installation
+
+You can install the CRAN version of
+[**`hoopR`**](https://CRAN.R-project.org/package=hoopR) with:
+
+``` r
+install.packages("hoopR")
+```
+
+You can install the released version of
+[**`hoopR`**](https://github.com/sportsdataverse/hoopR/) from
+[GitHub](https://github.com/sportsdataverse/hoopR) with:
+
+``` r
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+```
+
+## Quick Start
+
+### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
+
+``` r
+tictoc::tic()
+progressr::with_progress({
+  nba_pbp <- hoopR::load_nba_pbp()
+})
+tictoc::toc()
+```
+
+``` R
+## 1.02 sec elapsed
+
+## 109783 rows of NBA play-by-play data from 230 games.
+```
+
+### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
+
+``` r
+tictoc::tic()
+progressr::with_progress({
+  mbb_pbp <-  hoopR::load_mbb_pbp()
+})
+tictoc::toc()
+```
+
+``` R
+## 1.62 sec elapsed
+
+## 360517 rows of men's college basketball play-by-play data from 1074 games.
+```
+
+## **Documentation**
+
+For more information on the package and function reference, please see
+the [**`hoopR`** documentation
+website](https://hoopR.sportsdataverse.org).
+
+## **Breaking Changes**
+
+[**Full News on
+Releases**](https://hoopR.sportsdataverse.org/news/index.html)
+
+## Follow the SportsDataverse (@SportsDataverse) on Twitter and star this repo
+
+[![GitHub
+stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR/stargazers/)
+
+## **Our Authors**
+
+- Saiem Gilani (@saiemgilani)  
+
+[![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
+
+## **Our Contributors (they’re awesome)**
+
+- Jason Lee (@theFirmAISports)  
+  [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
+
+- Billy Fryer (@\_b4billy\_)
+  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+
+- Ross Drucker (@rossdrucker9)  
+  [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
+
+- Vladislav Shufinskiy (@vshufinskiy)  
+  [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+## **Citations**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org) R package
+in publications, use:
+
+BibTex Citation
+
+``` bibtex
+@misc{gilani_2021_hoopR,
+  author = {Gilani, Saiem},
+  title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
+  url = {https://hoopR.sportsdataverse.org},
+  year = {2021}
+}
+```
+
+# Package index
+
+## hoopR Data
+
+### NBA Data Functions
+
+Functions exported by hoopR to access the hoopR-data repository’s NBA
+Data
+
+- [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  :
+
+  **Load hoopR NBA play-by-play**
+
+- [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_box.md)
+  :
+
+  **Load hoopR NBA team box scores**
+
+- [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_box.md)
+  :
+
+  **Load hoopR NBA player box scores**
+
+- [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_schedule.md)
+  :
+
+  **Load hoopR NBA schedules**
+
+- [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
+  :
+
+  **Update or create a hoopR NBA play-by-play database**
+
+### Men’s College Basketball Data Functions
+
+Functions exported by hoopR to access the hoopR-data repository’s Men’s
+College Basketball Data
+
+- [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  :
+
+  **Load hoopR men's college basketball play-by-play**
+
+- [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md)
+  :
+
+  **Load hoopR men's college basketball team box scores**
+
+- [`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.md)
+  :
+
+  **Load hoopR men's college basketball player box scores**
+
+- [`load_mbb_schedule()`](https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.md)
+  :
+
+  **Load hoopR men's college basketball schedule**
+
+- [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
+  :
+
+  **Update or create a hoopR MBB play-by-play database**
+
+## ESPN Data
+
+### Men’s College Basketball Data Functions
+
+Functions exported by hoopR to access ESPN Men’s College Basketball Data
+
+- [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md)
+  :
+
+  **Get ESPN MBB's Betting information**
+
+- [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md)
+  :
+
+  **Get ESPN conference names and IDs**
+
+- [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  :
+
+  **Get ESPN men's college basketball data (Pbp, Team and Player Box)**
+
+- [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.md)
+  :
+
+  **Get ESPN men's college basketball game rosters**
+
+- [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.md)
+  :
+
+  **Get ESPN men's college basketball PBP data**
+
+- [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.md)
+  :
+
+  **Get ESPN men's college basketball player box scores**
+
+- [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md)
+  :
+
+  **Get ESPN men's college basketball player stats data**
+
+- [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md)
+  :
+
+  **Get men's college basketball AP and Coaches Poll rankings from
+  ESPN**
+
+- [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md)
+  :
+
+  **Get ESPN men's college basketball schedule for a specific year**
+
+- [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md)
+  :
+
+  **Get ESPN men's college basketball standings**
+
+- [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md)
+  :
+
+  **Get ESPN men's college basketball team box scores**
+
+- [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md)
+  :
+
+  **Get ESPN men's college basketball team stats data**
+
+- [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
+  :
+
+  **Get ESPN men's college basketball team names and IDs**
+
+- [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
+  :
+
+  **Men's College Basketball win probability chart data from ESPN**
+
+### NBA Data Functions
+
+Functions exported by hoopR to access ESPN’s NBA Data
+
+- [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md)
+  :
+
+  **Get ESPN NBA's Betting information**
+
+- [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+  :
+
+  **Get ESPN NBA game data (Pbp, Team and Player Box)**
+
+- [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md)
+  :
+
+  **Get ESPN NBA game rosters**
+
+- [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md)
+  :
+
+  **Get ESPN NBA PBP data**
+
+- [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md)
+  :
+
+  **Get ESPN NBA player box scores**
+
+- [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md)
+  :
+
+  **Get ESPN NBA player stats data**
+
+- [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md)
+  :
+
+  **Get ESPN NBA schedule for a specific year**
+
+- [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md)
+  :
+
+  **Get ESPN NBA's Standings**
+
+- [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md)
+  :
+
+  **Get ESPN NBA team box scores**
+
+- [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md)
+  :
+
+  **Get ESPN NBA team stats data**
+
+- [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md)
+  :
+
+  **Get ESPN NBA team names and IDs**
+
+- [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
+  :
+
+  **Get NBA win probability chart data from ESPN**
+
+## NBA Data
+
+### NBA Stats API
+
+Functions exported by hoopR to access the NBA Stats API
+
+- [`nba_alltimeleadersgrids()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md)
+  :
+
+  **Get NBA Stats API All-time Leaders Grid**
+
+- [`nba_assistleaders()`](https://hoopR.sportsdataverse.org/reference/nba_assistleaders.md)
+  :
+
+  **Get NBA Stats API Assist Leaders**
+
+- [`nba_assisttracker()`](https://hoopR.sportsdataverse.org/reference/nba_assisttracker.md)
+  :
+
+  **Get NBA Stats API Assist Tracker**
+
+- [`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Advanced V2**
+
+- [`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Advanced V3**
+
+- [`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md)
+  :
+
+  **Get NBA Stats API Boxscore Defensive**
+
+- [`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.md)
+  :
+
+  **Get NBA Stats API Boxscore Defensive V2**
+
+- [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Four Factors V2**
+
+- [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Four Factors V3**
+
+- [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md)
+  :
+
+  **Get NBA Stats API Boxscore Hustle V2**
+
+- [`nba_boxscorematchups()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.md)
+  :
+
+  **Get NBA Stats API Boxscore Matchups**
+
+- [`nba_boxscorematchupsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Matchups V3**
+
+- [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Misc V2**
+
+- [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Misc V3**
+
+- [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Player Tracking V2**
+
+- [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Player Tracking V3**
+
+- [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Scoring V2**
+
+- [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Scoring V3**
+
+- [`nba_boxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresimilarityscore.md)
+  :
+
+  **Get NBA Stats API Boxscore Similarity Score**
+
+- [`nba_boxscoresummaryv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Summary V2**
+
+- [`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  :
+
+  **Get NBA Stats API Boxscore Traditional V2**
+
+- [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Traditional V3**
+
+- [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md)
+  :
+
+  **Get NBA Stats API Boxscore Usage V2**
+
+- [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md)
+  :
+
+  **Get NBA Stats API Boxscore Usage V3**
+
+- [`nba_commonallplayers()`](https://hoopR.sportsdataverse.org/reference/nba_commonallplayers.md)
+  :
+
+  **Get NBA Stats API All Players**
+
+- [`nba_commonplayerinfo()`](https://hoopR.sportsdataverse.org/reference/nba_commonplayerinfo.md)
+  :
+
+  **Get NBA Stats API Player Info**
+
+- [`nba_commonplayoffseries()`](https://hoopR.sportsdataverse.org/reference/nba_commonplayoffseries.md)
+  :
+
+  **Get NBA Stats API Playoff Series**
+
+- [`nba_commonteamroster()`](https://hoopR.sportsdataverse.org/reference/nba_commonteamroster.md)
+  :
+
+  **Get NBA Stats API Team Roster**
+
+- [`nba_cumestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.md)
+  :
+
+  **Get NBA Stats API Cumulative Player Stats**
+
+- [`nba_cumestatsplayergames()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayergames.md)
+  :
+
+  **Get NBA Stats API Cumulative Player Game Stats**
+
+- [`nba_cumestatsteam()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsteam.md)
+  :
+
+  **Get NBA Stats API Cumulative Team Stats**
+
+- [`nba_cumestatsteamgames()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsteamgames.md)
+  :
+
+  **Get NBA Stats API Cumulative Team Game Stats**
+
+- [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
+  :
+
+  **Get NBA Data API Play-by-Play**
+
+- [`nba_defensehub()`](https://hoopR.sportsdataverse.org/reference/nba_defensehub.md)
+  :
+
+  **Get NBA Stats API Defense Hub**
+
+- [`nba_draftboard()`](https://hoopR.sportsdataverse.org/reference/nba_draftboard.md)
+  :
+
+  **Get NBA Stats API Draft Board**
+
+- [`nba_draftcombinedrillresults()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinedrillresults.md)
+  :
+
+  **Get NBA Stats API Draft Combine Drill Results**
+
+- [`nba_draftcombinenonstationaryshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinenonstationaryshooting.md)
+  :
+
+  **Get NBA Stats API Draft Combine Non-Stationary Shooting**
+
+- [`nba_draftcombineplayeranthro()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombineplayeranthro.md)
+  :
+
+  **Get NBA Stats API Draft Combine Player Anthropological
+  Measurements**
+
+- [`nba_draftcombinespotshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinespotshooting.md)
+  :
+
+  **Get NBA Stats API Draft Combine - Spot Shooting**
+
+- [`nba_draftcombinestats()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md)
+  :
+
+  **Get NBA Stats API Draft Combine Stats**
+
+- [`nba_drafthistory()`](https://hoopR.sportsdataverse.org/reference/nba_drafthistory.md)
+  :
+
+  **Get NBA Stats API Draft History**
+
+- [`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md)
+  :
+
+  **Get NBA Stats API Fantasy Widget**
+
+- [`nba_franchisehistory()`](https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.md)
+  :
+
+  **Get NBA Stats API Franchise History**
+
+- [`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md)
+  :
+
+  **Get NBA Stats API Franchise Leaders**
+
+- [`nba_franchiseleaderswrank()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaderswrank.md)
+  :
+
+  **Get NBA Stats API Franchise Leaders with Rank**
+
+- [`nba_franchiseplayers()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseplayers.md)
+  :
+
+  **Get NBA Stats API Franchise Players**
+
+- [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  :
+
+  **Get NBA Stats API Game Rotation**
+
+- [`nba_glalumboxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_glalumboxscoresimilarityscore.md)
+  :
+
+  **Get NBA Stats API G-League Alum Boxscore Similarity Score**
+
+- [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md)
+  :
+
+  **Get NBA Stats API Homepage Leaders**
+
+- [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md)
+  :
+
+  **Get NBA Stats API HomepageV2 Leaders**
+
+- [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md)
+  :
+
+  **Get NBA Stats API Hustle Stats Boxscore**
+
+- [`nba_infographicfanduelplayer()`](https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.md)
+  :
+
+  **Get NBA Stats API FanDuel Player Infographic**
+
+- [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)
+  :
+
+  **Get NBA Stats API Leaders Tiles**
+
+- [`nba_leaguedashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.md)
+  :
+
+  **Get NBA Stats API League Dashboard Lineups**
+
+- [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Opponent
+  Shots**
+
+- [`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Biographical Stats**
+
+- [`nba_leaguedashplayerclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.md)
+  :
+
+  **Get NBA Stats API League Dashboard by Player Clutch Splits**
+
+- [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Player Shots**
+
+- [`nba_leaguedashplayershotlocations()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayershotlocations.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Shot Locations**
+
+- [`nba_leaguedashplayerstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerstats.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Stats**
+
+- [`nba_leaguedashptdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Defense**
+
+- [`nba_leaguedashptstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptstats.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Stats**
+
+- [`nba_leaguedashptteamdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptteamdefend.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Team Defense**
+
+- [`nba_leaguedashteamclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch.md)
+  :
+
+  **Get NBA Stats API League Dashboard by Team Clutch Splits**
+
+- [`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.md)
+  :
+
+  **Get NBA Stats API League Dashboard Player Tracking - Team Shots**
+
+- [`nba_leaguedashteamshotlocations()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamshotlocations.md)
+  :
+
+  **Get NBA Stats API League Dashboard Team Shot Locations**
+
+- [`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md)
+  :
+
+  **Get NBA Stats API League Dashboard Team Stats**
+
+- [`nba_leaguegamefinder()`](https://hoopR.sportsdataverse.org/reference/nba_leaguegamefinder.md)
+  :
+
+  **Get NBA Stats API League Game Streak Finder**
+
+- [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.md)
+  :
+
+  **Get NBA Stats API League Game Log**
+
+- [`nba_leaguehustlestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.md)
+  :
+
+  **Get NBA Stats API League Hustle Stats Player**
+
+- [`nba_leaguehustlestatsplayerleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayerleaders.md)
+  :
+
+  **Get NBA Stats API League Hustle Stats Player Leaders**
+
+- [`nba_leaguehustlestatsteam()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteam.md)
+  :
+
+  **Get NBA Stats API League Hustle Stats Team**
+
+- [`nba_leaguehustlestatsteamleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsteamleaders.md)
+  :
+
+  **Get NBA Stats API League Hustle Stats Team Leaders**
+
+- [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
+  :
+
+  **Get NBA Stats API League Leaders**
+
+- [`nba_leaguelineupviz()`](https://hoopR.sportsdataverse.org/reference/nba_leaguelineupviz.md)
+  :
+
+  **Get NBA Stats API League Lineup Visual Data**
+
+- [`nba_leagueplayerondetails()`](https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails.md)
+  :
+
+  **Get NBA Stats API League Player On/Off Details**
+
+- [`nba_leagueseasonmatchups()`](https://hoopR.sportsdataverse.org/reference/nba_leagueseasonmatchups.md)
+  :
+
+  **Get NBA Stats API League Season Matchups**
+
+- [`nba_leaguestandings()`](https://hoopR.sportsdataverse.org/reference/nba_leaguestandings.md)
+  :
+
+  **Get NBA Stats API League Standings**
+
+- [`nba_leaguestandingsv3()`](https://hoopR.sportsdataverse.org/reference/nba_leaguestandingsv3.md)
+  :
+
+  **Get NBA Stats API League Standings V3**
+
+- [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
+  :
+
+  **Get NBA Stats API Live Boxscore**
+
+- [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_pbp.md)
+  :
+
+  **Get NBA Stats API Live play-by-play**
+
+- [`nba_matchupsrollup()`](https://hoopR.sportsdataverse.org/reference/nba_matchupsrollup.md)
+  :
+
+  **Get NBA Stats API Matchups Rollup**
+
+- [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  :
+
+  **Get NBA Stats API play-by-play**
+
+- [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md)
+  :
+
+  **Get NBA Stats API play-by-play (Multiple Games)**
+
+- [`nba_playerawards()`](https://hoopR.sportsdataverse.org/reference/nba_playerawards.md)
+  :
+
+  **Get NBA Stats API Player Awards**
+
+- [`nba_playercareerbycollege()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.md)
+  :
+
+  **Get NBA Stats API Player Career By College**
+
+- [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md)
+  :
+
+  **Get NBA Stats API Player Career By College Rollup**
+
+- [`nba_playercareerstats()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.md)
+  :
+
+  **Get NBA Stats API Player Career Stats**
+
+- [`nba_playercompare()`](https://hoopR.sportsdataverse.org/reference/nba_playercompare.md)
+  :
+
+  **Get NBA Stats API Player Compare**
+
+- [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Clutch Splits**
+
+- [`nba_playerdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Game Splits**
+
+- [`nba_playerdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by General Splits**
+
+- [`nba_playerdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Last N Games**
+
+- [`nba_playerdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Opponent**
+
+- [`nba_playerdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Shooting Splits**
+
+- [`nba_playerdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.md)
+  :
+
+  **Get NBA Stats API Player Dashboard by Team Performance**
+
+- [`nba_playerdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.md)
+  :
+
+  **Get NBA Stats API Player Dashboard Year over Year**
+
+- [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md)
+  :
+
+  **Get NBA Stats API Player Dashboard Player Tracking - Passing**
+
+- [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md)
+  :
+
+  **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
+
+- [`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md)
+  :
+
+  **Get NBA Stats API Player Dashboard Player Tracking - Defense**
+
+- [`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md)
+  :
+
+  **Get NBA Stats API Player Dashboard Player Tracking - Shots**
+
+- [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md)
+  :
+
+  **Get NBA Stats API Player Estimated Metrics**
+
+- [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md)
+  :
+
+  **Get NBA Stats API Player Fantasy Profile**
+
+- [`nba_playerfantasyprofilebargraph()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.md)
+  :
+
+  **Get NBA Stats API Player Fantasy Profile Bar Graph**
+
+- [`nba_playergamelog()`](https://hoopR.sportsdataverse.org/reference/nba_playergamelog.md)
+  :
+
+  **Get NBA Stats API Player Game Log**
+
+- [`nba_playergamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_playergamelogs.md)
+  :
+
+  **Get NBA Stats API Player Game Logs**
+
+- [`nba_playergamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_playergamestreakfinder.md)
+  :
+
+  **Get NBA Stats API Player Game Streak Finder**
+
+- [`nba_playerheadshot()`](https://hoopR.sportsdataverse.org/reference/nba_playerheadshot.md)
+  :
+
+  **Get NBA Stats API Player Head-shot**
+
+- [`nba_playerindex()`](https://hoopR.sportsdataverse.org/reference/nba_playerindex.md)
+  :
+
+  **Get NBA Stats API Player Index**
+
+- [`nba_playernextngames()`](https://hoopR.sportsdataverse.org/reference/nba_playernextngames.md)
+  :
+
+  **Get NBA Stats API Player Next N Games**
+
+- [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
+  :
+
+  **Get NBA Stats API Player Profile V2**
+
+- [`nba_playervsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.md)
+  :
+
+  **Get NBA Stats API Player vs Player**
+
+- [`nba_playoffpicture()`](https://hoopR.sportsdataverse.org/reference/nba_playoffpicture.md)
+  :
+
+  **Get NBA Stats API Playoff Picture**
+
+- [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  :
+
+  **Get NBA Stats API Season Schedule**
+
+- [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md)
+  :
+
+  **Get NBA Stats API Scoreboard**
+
+- [`nba_scoreboardv2()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.md)
+  :
+
+  **Get NBA Stats API Scoreboard V2**
+
+- [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
+  :
+
+  **Get NBA Stats API Scoreboard V3**
+
+- [`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md)
+  :
+
+  **Get NBA Stats API Shot Chart Detail**
+
+- [`nba_shotchartleaguewide()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.md)
+  :
+
+  **Get NBA Stats API Shot Chart League-Wide**
+
+- [`nba_shotchartlineupdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.md)
+  :
+
+  **Get NBA Stats API Shot Chart for Lineups**
+
+- [`nba_synergyplaytypes()`](https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.md)
+  :
+
+  **Get NBA Stats API Synergy Play Type Stats**
+
+- [`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Clutch Splits**
+
+- [`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Game Splits**
+
+- [`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by General Splits**
+
+- [`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Last N Games**
+
+- [`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Opponent**
+
+- [`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Shooting Splits**
+
+- [`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md)
+  :
+
+  **Get NBA Stats API Team Dashboard by Team Performance**
+
+- [`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md)
+  :
+
+  **Get NBA Stats API Team Dashboard Year over Year**
+
+- [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md)
+  :
+
+  **Get NBA Stats API Team Dashboard - Lineups**
+
+- [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md)
+  :
+
+  **Get NBA Stats API Team Dashboard Player Tracking - Passing**
+
+- [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md)
+  :
+
+  **Get NBA Stats API Team Dashboard Player Tracking - Rebounding**
+
+- [`nba_teamdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.md)
+  :
+
+  **Get NBA Stats API Team Dashboard Player Tracking - Shots**
+
+- [`nba_teamdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamdetails.md)
+  :
+
+  **Get NBA Stats API Team Details**
+
+- [`nba_teamestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_teamestimatedmetrics.md)
+  :
+
+  **Get NBA Stats API Team Estimated Metrics**
+
+- [`nba_teamgamelog()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelog.md)
+  :
+
+  **Get NBA Stats API Team Game Log**
+
+- [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md)
+  :
+
+  **Get NBA Stats API Team Game Logs**
+
+- [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md)
+  :
+
+  **Get NBA Stats API Team Game Streak Finder**
+
+- [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md)
+  :
+
+  **Get NBA Stats API Team Historical Leaders**
+
+- [`nba_teaminfocommon()`](https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.md)
+  :
+
+  **Get NBA Stats API Team Common Info**
+
+- [`nba_teamplayerdashboard()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayerdashboard.md)
+  :
+
+  **Get NBA Stats API Team Player Dashboard**
+
+- [`nba_teamplayeronoffdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
+  :
+
+  **Get NBA Stats API Team Player On/Off Details**
+
+- [`nba_teamplayeronoffsummary()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffsummary.md)
+  :
+
+  **Get NBA Stats API Team Player On/Off Summary**
+
+- [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teams.md)
+  :
+
+  **Get NBA Stats API Teams**
+
+- [`nba_teamvsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.md)
+  :
+
+  **Get NBA Stats API Team vs Player**
+
+- [`nba_teamyearbyyearstats()`](https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.md)
+  :
+
+  **Get NBA Stats API Team Year by Year Stats**
+
+- [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.md)
+  :
+
+  **Get NBA Stats API Today's Scoreboard**
+
+- [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
+  :
+
+  **Get NBA Stats API Video Details**
+
+- [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md)
+  :
+
+  **Get NBA Stats API Video Details**
+
+- [`nba_videoevents()`](https://hoopR.sportsdataverse.org/reference/nba_videoevents.md)
+  :
+
+  **Get NBA Stats API Video Events**
+
+- [`nba_videostatus()`](https://hoopR.sportsdataverse.org/reference/nba_videostatus.md)
+  :
+
+  **Get NBA Stats API Video Status**
+
+- [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
+  :
+
+  **Get NBA Stats API Win Probability PBP**
+
+### NBA G-League Stats API
+
+Functions exported by hoopR to access the NBA G-League Stats API
+
+- [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
+  :
+
+  **Get NBA Data API Play-by-Play for G-League Games**
+
+- [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
+  :
+
+  **Get G League Player Data Base from NBA API**
+
+- [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)
+  :
+
+  **Get G League Schedule from NBA API**
+
+- [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
+  :
+
+  **Get Current G League Standings from NBA API**
+
+## NCAA Data
+
+### NCAA Data Functions
+
+Functions exported by hoopR to access NCAA Men’s College Basketball Data
+
+- [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
+  :
+
+  **Get men's college basketball NET rankings for the current date from
+  the NCAA website**
+
+- [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md)
+  :
+
+  **Scrape NCAA Men's Baskebtall Teams (Division I, II, and III)**
+
+## KenPom Data
+
+### KenPom Data Functions
+
+Functions exported by hoopR
+
+- [`kp_arenas()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md)
+  :
+
+  **Get Home Court Arenas**
+
+- [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) :
+
+  **Get KenPom Game Box Score**
+
+- [`kp_coach_history()`](https://hoopR.sportsdataverse.org/reference/kp_coach_history.md)
+  :
+
+  **Get KenPom's coaching resume data**
+
+- [`kp_conf()`](https://hoopR.sportsdataverse.org/reference/kp_conf.md)
+  :
+
+  **Get KenPom's conference-wide stats**
+
+- [`kp_confhistory()`](https://hoopR.sportsdataverse.org/reference/kp_confhistory.md)
+  :
+
+  **Get KenPom's historical conference ratings**
+
+- [`kp_confstats()`](https://hoopR.sportsdataverse.org/reference/kp_confstats.md)
+  :
+
+  **Get KenPom's conference comparison stats**
+
+- [`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_efficiency.md)
+  :
+
+  **Get KenPom Efficiency and Tempo Summary**
+
+- [`kp_fanmatch()`](https://hoopR.sportsdataverse.org/reference/kp_fanmatch.md)
+  :
+
+  **Get FanMatch by date**
+
+- [`kp_foul_trouble()`](https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.md)
+  :
+
+  **Get 2-Foul Participation Stats**
+
+- [`kp_fourfactors()`](https://hoopR.sportsdataverse.org/reference/kp_fourfactors.md)
+  :
+
+  **Get Four Factors Data**
+
+- [`kp_game_attrs()`](https://hoopR.sportsdataverse.org/reference/kp_game_attrs.md)
+  :
+
+  **Get Game Attributes**
+
+- [`kp_gameplan()`](https://hoopR.sportsdataverse.org/reference/kp_gameplan.md)
+  :
+
+  **Get KenPom's team game plan page**
+
+- [`kp_hca()`](https://hoopR.sportsdataverse.org/reference/kp_hca.md) :
+
+  **Get Home Court Advantage Estimates**
+
+- [`kp_height()`](https://hoopR.sportsdataverse.org/reference/kp_height.md)
+  :
+
+  **Get Heights, Experience, Bench and Continuity Data**
+
+- [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md)
+  :
+
+  **Get KPoY Leaders Tables**
+
+- [`kp_minutes_matrix()`](https://hoopR.sportsdataverse.org/reference/kp_minutes_matrix.md)
+  :
+
+  **Get Minutes Matrix from Expanded Player Page**
+
+- [`kp_officials()`](https://hoopR.sportsdataverse.org/reference/kp_officials.md)
+  :
+
+  **Get officials rankings**
+
+- [`kp_opptracker()`](https://hoopR.sportsdataverse.org/reference/kp_opptracker.md)
+  :
+
+  **Get KenPom's team opponent tracker page**
+
+- [`kp_player_career()`](https://hoopR.sportsdataverse.org/reference/kp_player_career.md)
+  :
+
+  **Get KenPom's player career stats from the player page**
+
+- [`kp_playerstats()`](https://hoopR.sportsdataverse.org/reference/kp_playerstats.md)
+  :
+
+  **Get Player Stats Leaders by Metric**
+
+- [`kp_pointdist()`](https://hoopR.sportsdataverse.org/reference/kp_pointdist.md)
+  :
+
+  **Get Team Points Distribution**
+
+- [`kp_pomeroy_archive_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_archive_ratings.md)
+  :
+
+  **Get KenPom's ratings archive pages**
+
+- [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md)
+  :
+
+  **Get KenPom Ratings**
+
+- [`kp_program_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_program_ratings.md)
+  :
+
+  **Get KenPom's program ratings**
+
+- [`kp_referee()`](https://hoopR.sportsdataverse.org/reference/kp_referee.md)
+  :
+
+  **Get referee game log**
+
+- [`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_depth_chart.md)
+  :
+
+  **Get Depth Chart Last 5 Games from Team Page**
+
+- [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)
+  :
+
+  **Get KenPom's team efficiency history**
+
+- [`kp_team_lineups()`](https://hoopR.sportsdataverse.org/reference/kp_team_lineups.md)
+  :
+
+  **Get Lineups Last 5 Games from Team Page**
+
+- [`kp_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/kp_team_player_stats.md)
+  :
+
+  **Get Team Player Stats**
+
+- [`kp_team_players()`](https://hoopR.sportsdataverse.org/reference/kp_team_players.md)
+  :
+
+  **Get KenPom's player stats from the team page**
+
+- [`kp_team_schedule()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md)
+  :
+
+  **Get team schedule results**
+
+- [`kp_teamstats()`](https://hoopR.sportsdataverse.org/reference/kp_teamstats.md)
+  :
+
+  **Get Team Stats**
+
+- [`kp_trends()`](https://hoopR.sportsdataverse.org/reference/kp_trends.md)
+  :
+
+  **Get Division-I statistical trends**
+
+- [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`kp_user_email()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`kp_password()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`has_kp_user_and_pw()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  :
+
+  **KenPom Login and Password credentials**
+
+- [`kp_winprob()`](https://hoopR.sportsdataverse.org/reference/kp_winprob.md)
+  :
+
+  **Get KenPom Win Probability**
+
+## Helper Functions and Data
+
+### Included data
+
+Data included within the package
+
+- [`teams_links`](https://hoopR.sportsdataverse.org/reference/teams_links.md)
+  :
+
+  **Men's College Basketball KenPom Teams Dictionary** Team link KenPom
+  reference lookup for the package
+
+### hoopR Helper Functions
+
+Internal functions used by hoopR
+
+- [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`kp_user_email()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`kp_password()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  [`has_kp_user_and_pw()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  :
+
+  **KenPom Login and Password credentials**
+
+- [`check_status()`](https://hoopR.sportsdataverse.org/reference/check_status.md)
+  :
+
+  **Check Status function**
+
+- [`clean_team_names_NCAA_merge()`](https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.md)
+  :
+
+  **Clean KenPom Data Frame Team Names to match NCAA Team Names for
+  easier merging**
+
+- [`csv_from_url()`](https://hoopR.sportsdataverse.org/reference/csv_from_url.md)
+  :
+
+  **Load .csv / .csv.gz file from a remote connection**
+
+- [`rds_from_url()`](https://hoopR.sportsdataverse.org/reference/rds_from_url.md)
+  :
+
+  **Load .rds file from a remote connection**
+
+- [`rejoin_schedules()`](https://hoopR.sportsdataverse.org/reference/rejoin_schedules.md)
+  :
+
+  **rejoin schedules (when used from league game finder)**
+
+- [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md)
+  :
+
+  **Most Recent Men's College Basketball Season**
+
+- [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
+  :
+
+  **Most Recent NBA Season**
+
+- [`progressively()`](https://hoopR.sportsdataverse.org/reference/progressively.md)
+  :
+
+  **Progressively**
+
+- [`year_to_season()`](https://hoopR.sportsdataverse.org/reference/year_to_season.md)
+  :
+
+  **year to season (XXXX -\> XXXX-YY)**
+
+- [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+  :
+
+  **Retry http request with proxy**
+
+- [`helper_espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.md)
+  :
+
+  **Parse ESPN NBA PBP, helper function**
+
+- [`helper_espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_team_box.md)
+  :
+
+  **Parse ESPN NBA Team Box, helper function**
+
+- [`helper_espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_player_box.md)
+  :
+
+  **Parse ESPN NBA Player Box, helper function**
+
+- [`helper_espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.md)
+  :
+
+  **Parse ESPN MBB PBP, helper function**
+
+- [`helper_espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_team_box.md)
+  :
+
+  **Parse ESPN MBB Team Box, helper function**
+
+- [`helper_espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_player_box.md)
+  :
+
+  **Parse ESPN MBB Player Box, helper function**
+
+- [`.players_on_court`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court.md)
+  :
+
+  **Add players on court in NBA Stats API play-by-play**
+
+# Articles
+
+### All vignettes
+
+- [Getting Started with
+  hoopR](https://hoopR.sportsdataverse.org/articles/getting-started-hoopR.md):
+
+  Getting started with using `hoopR` and men’s basketball data.
+
+- [KenPom Example
+  Functions](https://hoopR.sportsdataverse.org/articles/kenpom-example-functions.md):
+
+  Some examples to get started with using `hoopR` and KenPom’s men’s
+  college basketball website.
