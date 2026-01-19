@@ -180,8 +180,8 @@ PlayerScreenAssistLeaders, Table5
 Other NBA Hustle Functions: 
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_leaguehustlestatsplayer}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()}
+\code{\link{nba_leaguehustlestatsteam}()},
+\code{\link{nba_leaguehustlestatsteamleaders}()}
 }
 \author{
 Saiem Gilani

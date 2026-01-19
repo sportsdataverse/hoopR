@@ -61,8 +61,8 @@ Returns a named list of data frames: CumeStatsPlayerGames
 \seealso{
 Other NBA Cume Functions: 
 \code{\link{nba_cumestatsplayer}()},
-\code{\link{nba_cumestatsteamgames}()},
-\code{\link{nba_cumestatsteam}()}
+\code{\link{nba_cumestatsteam}()},
+\code{\link{nba_cumestatsteamgames}()}
 }
 \author{
 Saiem Gilani

@@ -184,8 +184,8 @@ Other NBA League Functions:
 \code{\link{nba_leaguelineupviz}()},
 \code{\link{nba_leagueplayerondetails}()},
 \code{\link{nba_leagueseasonmatchups}()},
-\code{\link{nba_leaguestandingsv3}()},
 \code{\link{nba_leaguestandings}()},
+\code{\link{nba_leaguestandingsv3}()},
 \code{\link{nba_matchupsrollup}()},
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}

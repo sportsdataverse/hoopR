@@ -131,8 +131,8 @@ Return a named list of data frames: GameByGameStats, TotalPlayerStats
 \seealso{
 Other NBA Cume Functions: 
 \code{\link{nba_cumestatsplayergames}()},
-\code{\link{nba_cumestatsteamgames}()},
-\code{\link{nba_cumestatsteam}()}
+\code{\link{nba_cumestatsteam}()},
+\code{\link{nba_cumestatsteamgames}()}
 }
 \author{
 Saiem Gilani

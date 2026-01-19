@@ -84,9 +84,9 @@ Return a data frame with the following columns:\tabular{ll}{
 \seealso{
 Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
+\code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},
-\code{\link{nba_scoreboardv3}()},
-\code{\link{nba_scoreboard}()}
+\code{\link{nba_scoreboardv3}()}
 
 Other NBA Live Functions: 
 \code{\link{nba_live_boxscore}()},

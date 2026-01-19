@@ -45,8 +45,8 @@ Return a list of tibbles: VideoStatus
 }
 \seealso{
 Other NBA Video Functions: 
-\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videodetails}()},
+\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videoevents}()}
 }
 \author{

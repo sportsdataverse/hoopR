@@ -27,8 +27,8 @@ Return a list of tibbles: videoUrls, playlist
 }
 \seealso{
 Other NBA Video Functions: 
-\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videodetails}()},
+\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videostatus}()}
 }
 \author{
