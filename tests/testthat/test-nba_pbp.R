@@ -1,6 +1,8 @@
 test_that("NBA PBP", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x1 <- nba_pbp(game_id = "0022201086")
 

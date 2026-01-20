@@ -1,6 +1,8 @@
 test_that("NBA Player Career Stats", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_playercareerstats(player_id = "2544")
 

@@ -87,6 +87,7 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_scoreboard}()},
 \code{\link{espn_nba_standings}()},
 \code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_current_roster}()},
 \code{\link{espn_nba_team_stats}()},
 \code{\link{espn_nba_teams}()},
 \code{\link{espn_nba_wp}()}

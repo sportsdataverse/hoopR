@@ -1,6 +1,9 @@
 test_that("NBA Cume Stats Team", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_cumestatsteam(
     game_ids = "0022201094",

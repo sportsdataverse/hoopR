@@ -1,6 +1,9 @@
 test_that("NBA FanDuel Player Infographic", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_infographicfanduelplayer(game_id = "0022201086")
 

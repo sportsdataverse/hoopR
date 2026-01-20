@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA Betting", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_betting(game_id = 401283399)
 
   cols_x1 <- c(

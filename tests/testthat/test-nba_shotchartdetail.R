@@ -1,6 +1,7 @@
 test_that("NBA Shot Chart Detail", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_shotchartdetail(league_id = "00",
                            player_id = "202696",

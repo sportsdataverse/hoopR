@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB Standings", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_standings(year = 2021)
 
   cols <- c(

@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA teams", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_teams()
 
   cols <- c(

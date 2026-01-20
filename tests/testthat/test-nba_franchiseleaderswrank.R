@@ -1,6 +1,9 @@
 test_that("NBA Franchise Leaders with Rank", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_franchiseleaderswrank(league_id = "00", team_id = "1610612739")
 

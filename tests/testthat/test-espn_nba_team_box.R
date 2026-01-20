@@ -1,6 +1,8 @@
 
 test_that("ESPN - Get NBA team box score only", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_team_box(game_id = 401283399)
 
   cols <- c(

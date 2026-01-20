@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB Win Probability", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_wp(game_id = 401256760)
 
 

@@ -1,6 +1,7 @@
 test_that("NBA Player Estimated Metrics", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_playerestimatedmetrics()
 

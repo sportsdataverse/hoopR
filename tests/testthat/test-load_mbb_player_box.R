@@ -1,5 +1,7 @@
 test_that("hoopR Loader MBB Player Box", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- load_mbb_player_box(seasons = most_recent_mbb_season())
 
 

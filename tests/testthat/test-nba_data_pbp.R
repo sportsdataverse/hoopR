@@ -1,6 +1,10 @@
 test_that("NBA Data PBP", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
+
   x <- nba_data_pbp(game_id = "0021900001")
 
   cols <- c(

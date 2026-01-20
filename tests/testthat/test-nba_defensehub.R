@@ -1,6 +1,8 @@
 # test_that("NBA Defense Hub", {
 #   skip_on_cran()
 #   skip_on_ci()
+  skip_nba_stats_test()
+	
 #
 #   x <- nba_defensehub(league_id = "00")
 #

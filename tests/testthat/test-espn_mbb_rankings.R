@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB rankings", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_rankings()
 
   cols <- c(

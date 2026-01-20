@@ -1,6 +1,9 @@
 test_that("NBA Draft Combine Drill Results", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_draftcombinedrillresults(league_id = "00",
                                     season_year = most_recent_nba_season() - 1)

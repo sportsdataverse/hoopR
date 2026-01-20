@@ -1,6 +1,7 @@
 test_that("NBA G-League Schedule", {
   skip_on_cran()
   skip_on_ci()
+  skip_nbagl_stats_test()
 
   x <- nbagl_schedule(season = most_recent_nba_season() - 1)
 

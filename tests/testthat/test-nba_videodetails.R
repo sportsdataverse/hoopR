@@ -1,6 +1,7 @@
 test_that("NBA Video Details", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_videodetails(player_id = "2544", team_id = "1610612747")
 

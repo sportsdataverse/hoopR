@@ -1,6 +1,7 @@
 test_that("NBA G-League Players", {
   skip_on_cran()
   skip_on_ci()
+  skip_nbagl_stats_test()
 
   x <- nbagl_players()
 

@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB player box score only", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_player_box(game_id = 401256760)
 
   cols <- c(

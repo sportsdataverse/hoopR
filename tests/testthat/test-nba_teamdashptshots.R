@@ -1,6 +1,7 @@
 test_that("NBA Team Dashboard Player Tracking - Shooting", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_teamdashptshots(team_id = "1610612749",
                            season = year_to_season(most_recent_nba_season() - 1))

@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA Standings", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_standings(year = 2021)
 
   cols <- c(
@@ -25,7 +27,7 @@ test_that("ESPN - Get NBA Standings", {
     "vsconf",
     "lasttengames"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

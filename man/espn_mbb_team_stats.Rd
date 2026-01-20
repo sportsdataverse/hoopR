@@ -134,6 +134,7 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_scoreboard}()},
 \code{\link{espn_mbb_standings}()},
 \code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_current_roster}()},
 \code{\link{espn_mbb_teams}()},
 \code{\link{espn_mbb_wp}()}
 }

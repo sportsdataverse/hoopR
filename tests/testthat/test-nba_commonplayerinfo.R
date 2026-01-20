@@ -1,6 +1,9 @@
 test_that("NBA Common Player Info", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_commonplayerinfo(league_id = "00", player_id = "2544")
 

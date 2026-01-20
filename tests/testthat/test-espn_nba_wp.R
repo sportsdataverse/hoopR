@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA Win Probability", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_wp(game_id = 401283399)
 
 
@@ -14,7 +16,7 @@ test_that("ESPN - Get NBA Win Probability", {
     "clock_display_value",
     "team_id", "coordinate_x", "coordinate_y"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

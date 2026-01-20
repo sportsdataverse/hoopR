@@ -48,6 +48,8 @@ Scrapes the NBA Data API for All Players in G League History
 }
 \seealso{
 Other NBA G-League Functions: 
+\code{\link{nbagl_live_boxscore}()},
+\code{\link{nbagl_live_pbp}()},
 \code{\link{nbagl_pbp}()},
 \code{\link{nbagl_schedule}()},
 \code{\link{nbagl_standings}()}

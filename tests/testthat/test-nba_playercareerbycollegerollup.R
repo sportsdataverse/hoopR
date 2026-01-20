@@ -1,6 +1,8 @@
 test_that("NBA Player Career by College Rollup", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_playercareerbycollegerollup(per_mode = "Totals")
 

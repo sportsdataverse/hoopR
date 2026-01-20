@@ -1,6 +1,8 @@
 test_that("NBA Player Awards", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_playerawards(player_id = "2544")
 

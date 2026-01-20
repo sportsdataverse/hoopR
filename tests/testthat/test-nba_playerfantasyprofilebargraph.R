@@ -1,6 +1,7 @@
 test_that("NBA Player Fantasy Profile Bar Graph", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_playerfantasyprofilebargraph(player_id = "2544")
 

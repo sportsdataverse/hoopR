@@ -1,6 +1,7 @@
 test_that("NBA Playoff Picture", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_playoffpicture(league_id = "00", season_id = paste0(2, most_recent_nba_season() - 1))
 

@@ -1,6 +1,7 @@
 test_that("NBA Player Profile V2", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_playerprofilev2(player_id = "2544")
 

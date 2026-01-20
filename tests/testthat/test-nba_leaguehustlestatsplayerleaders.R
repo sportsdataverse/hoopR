@@ -2,6 +2,8 @@ test_that("NBA League Hustle Stats Player Leaders", {
   skip()
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
 
   x <- nba_leaguehustlestatsplayerleaders(league_id = "00")
 

@@ -1,6 +1,8 @@
 test_that("NBA Matchups Rollup", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_matchupsrollup(league_id = "00",
                           season = year_to_season(most_recent_nba_season() - 1))

@@ -1,6 +1,8 @@
 test_that("NBA Player Dashboard by Team Performance", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_playerdashboardbyteamperformance(player_id = "2544", season = year_to_season(most_recent_nba_season() - 1))
 

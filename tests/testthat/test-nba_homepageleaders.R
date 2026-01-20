@@ -1,6 +1,9 @@
 test_that("NBA Home Page Leaders", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
 
   x <- nba_homepageleaders(league_id = "00")
 

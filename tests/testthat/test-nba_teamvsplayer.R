@@ -2,6 +2,7 @@ test_that("NBA Team vs Player", {
   skip()
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_teamvsplayer(team_id = "1610612749", vs_player_id = "2544")
 

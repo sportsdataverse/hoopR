@@ -1,6 +1,10 @@
 test_that("NBA Boxscore Advanced V2", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
+  
+
   x <- nba_boxscoreadvancedv2(game_id = "0022200021")
 
   cols_x1 <- c(

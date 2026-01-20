@@ -1,6 +1,7 @@
 test_that("NBA Shot Chart League-Wide", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_shotchartleaguewide(league_id = "00",
                                season = year_to_season(most_recent_nba_season() - 1))

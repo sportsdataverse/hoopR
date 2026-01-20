@@ -1,6 +1,8 @@
 test_that("NBA League Game Finder", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+	
 
   x <- nba_leaguegamefinder(league_id = "00")
 
