@@ -1,3 +1,6 @@
+# **hoopR 3.0.0**
+
+
 # **hoopR 2.1.0**
 * ```load_nba_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
 * ```load_mbb_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL

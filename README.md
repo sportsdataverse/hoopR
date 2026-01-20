@@ -44,16 +44,16 @@ You can install the released version of
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR")
 ```
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -63,11 +63,11 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.02 sec elapsed
+    ## 3.55 sec elapsed
 
-    ## 109783 rows of NBA play-by-play data from 230 games.
+    ## 615581 rows of NBA play-by-play data from 1305 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -77,9 +77,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.62 sec elapsed
+    ## 6.94 sec elapsed
 
-    ## 360517 rows of men's college basketball play-by-play data from 1074 games.
+    ## 2112541 rows of men's college basketball play-by-play data from 5915 games.
 
 ## **Documentation**
 

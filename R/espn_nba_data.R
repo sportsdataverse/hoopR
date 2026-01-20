@@ -956,7 +956,8 @@ espn_nba_game_rosters <- function(game_id) {
             "athlete_uid" = "uid",
             "athlete_guid" = "guid",
             "athlete_type" = "type",
-            "athlete_display_name" = "displayName"
+            "athlete_display_name" = "displayName",
+            "athlete_jersey_number" = "jersey"
           )
 
         raw_play_df2 <- raw_play_df2 %>%
@@ -1130,6 +1131,137 @@ espn_nba_teams <- function(){
     }
   )
   return(teams)
+}
+
+
+
+#' **Get ESPN NBA current team roster**
+#'
+#' @author Saiem Gilani
+#' @param team_id Either numeric or character (YYYY)
+#' @return A teams data frame
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
+#' @importFrom tidyr unnest unnest_wider everything pivot_wider
+#' @import furrr
+#' @import rvest
+#' @export
+#' @keywords NBA Team Roster
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   try(espn_nba_team_current_roster(team_id = 18))
+#' }
+espn_nba_team_current_roster <- function(team_id) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+
+  tryCatch(
+    expr = {
+      teams_base_url <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}?enable=roster")
+
+      res <- httr::RETRY("GET", teams_base_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        httr::content(as = "text", encoding = "UTF-8")
+
+      team_roster <- resp %>%
+        jsonlite::fromJSON() %>%
+        purrr::pluck("team") %>%
+        purrr::discard_at(c("links", "nextEvent", "record"))
+
+      players <- team_roster %>%
+        purrr::pluck("athletes") %>%
+        purrr::discard_at(c("links","injuries","teams")) %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        dplyr::as_tibble() %>%
+        dplyr::select(-dplyr::any_of(c(
+          "headshot.width",
+          "headshot.height",
+          "headshot.alt",
+          "headshot.rel",
+          "teams",
+          "flag.alt",
+          "flag.rel",
+          "flag.width",
+          "flag.height")))
+
+      colnames(players) <- paste0("athlete_", colnames(players))
+
+      players <- players %>%
+        dplyr::mutate(
+          athlete_id = as.integer(.data$athlete_id),
+          team_id = as.integer(team_id)) %>%
+        janitor::clean_names()
+
+      conference_info <- team_roster %>%
+        purrr::pluck("groups") %>%
+        dplyr::as_tibble() %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        dplyr::rename(dplyr::any_of(c(
+          "group_id" = "id",
+          "group_is_conference" = "isConference",
+          "parent_group_id" = "parent"))) %>%
+        dplyr::mutate(
+          group_id = as.integer(.data$group_id),
+          conference_id = .data$group_id,
+          parent_group_id = as.integer(.data$parent_group_id))
+
+      team_roster_full <- team_roster %>%
+        purrr::discard_at(c("groups", "athletes")) %>%
+        jsonlite::toJSON() %>%
+        jsonlite::fromJSON(flatten=TRUE) %>%
+        data.frame() %>%
+        dplyr::slice(1:2) %>%
+        dplyr::mutate(
+          logo = .data$logos.href[1],
+          logo_dark = .data$logos.href[2]) %>%
+        dplyr::slice(1) %>%
+        dplyr::select(-dplyr::any_of(c(
+          "logos.href",
+          "logos.width",
+          "logos.height",
+          "logos.alt",
+          "logos.rel",
+          "logos.lastUpdated"))) %>%
+        dplyr::rename(dplyr::any_of(c(
+          "team_id" = "id",
+          "team_uid" = "uid",
+          "team_guid" = "guid",
+          "team_slug" = "slug",
+          "team_is_active" = "isActive",
+          "team_type" = "type",
+          "team_display_name" = "displayName",
+          "team_short_name" = "shortDisplayName",
+          "team_location" = "location",
+          "team_name" = "name",
+          "team_nickname" = "nickname",
+          "team_abbreviation" = "abbreviation",
+          "team_color" = "color",
+          "team_alternate_color" = "alternateColor"))) %>%
+        dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
+        dplyr::bind_cols(conference_info) %>%
+        dplyr::left_join(players, by = c("team_id" = "team_id")) %>%
+        make_hoopR_data("ESPN NBA Team Current Roster Information from ESPN.com", Sys.time())
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team current roster data available!"))
+    },
+    warning = function(w) {
+
+    },
+    finally = {
+
+    }
+  )
+  return(team_roster_full)
 }
 
 

@@ -54,12 +54,19 @@ nba_teams <- function(...){
 
       league_gamelog <- nba_leaguegamelog(league_id = '00',
                                            season = year_to_season(most_recent_nba_season() - 1), ...) %>%
-        purrr::pluck("LeagueGameLog") %>%
-        dplyr::rename("team_name_full" = "TEAM_NAME") %>%
-        dplyr::select(
+        purrr::pluck("LeagueGameLog")
+      if (nrow(league_gamelog) == 0) {
+        league_gamelog <- nba_leaguegamelog(league_id = '00',
+                                             season = year_to_season(most_recent_nba_season() - 2), ...) %>%
+          purrr::pluck("LeagueGameLog")
+      }
+
+      league_gamelog <- league_gamelog %>%
+        dplyr::rename(dplyr::any_of(c("team_name_full" = "TEAM_NAME"))) %>%
+        dplyr::select(dplyr::any_of(c(
           "TEAM_ID",
           "TEAM_ABBREVIATION",
-          "team_name_full") %>%
+          "team_name_full"))) %>%
         dplyr::distinct()
 
       standings <- standings %>%
@@ -82,7 +89,7 @@ nba_teams <- function(...){
         dplyr::arrange(.data$team_name_full)
 
       espn_nba_teams <- espn_nba_teams() %>%
-        dplyr::rename("espn_team_id" = "team_id")
+        dplyr::rename(dplyr::any_of(c("espn_team_id" = "team_id")))
       nba_teams <- nba_teams %>%
         dplyr::left_join(espn_nba_teams, by = c("TeamName" = "short_name"))
 
@@ -94,7 +101,7 @@ nba_teams <- function(...){
 
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no team details data for {team_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team details data available!"))
     },
     warning = function(w) {
     },

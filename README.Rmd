@@ -7,10 +7,10 @@ output: github_document
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
 ```{r setup, include = FALSE}
 require(knitr)
-if (!requireNamespace('pacman')){
-  install.packages('pacman')
+if (!requireNamespace('pak')){
+  install.packages('pak')
 }
-pacman::p_load(dplyr)
+pak::pkg_install("dplyr")
 
 opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 
@@ -41,12 +41,12 @@ install.packages("hoopR")
 
 You can install the released version of [**`hoopR`**](https://github.com/sportsdataverse/hoopR/) from [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
-```{r readme_pacman_install, eval=FALSE}
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+```{r pak_readme, eval=FALSE}
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR")
 ```
 
 ## Quick Start
