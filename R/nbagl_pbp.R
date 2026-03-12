@@ -635,6 +635,8 @@ nbagl_live_boxscore <- function(
                      pad_id(game_id),
                      ".json")
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 

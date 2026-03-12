@@ -99,6 +99,8 @@ nba_playerindex <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -215,6 +217,8 @@ nba_playerawards <- function(
     PlayerID = player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -309,6 +313,8 @@ nba_playercareerbycollege <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -492,6 +498,8 @@ nba_playercareerbycollegerollup <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -819,6 +827,8 @@ nba_playercareerstats <- function(
     PlayerID = player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -909,6 +919,8 @@ nba_infographicfanduelplayer <- function(
   params <- list(
     GameID = game_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1179,6 +1191,8 @@ nba_playerfantasyprofile <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1286,6 +1300,8 @@ nba_playerfantasyprofilebargraph <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1384,6 +1400,8 @@ nba_playerestimatedmetrics <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1497,6 +1515,8 @@ nba_playergamelog <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1683,6 +1703,8 @@ nba_playergamelogs <- function(
     VsDivision = vs_division
   )
 
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -2019,6 +2041,8 @@ nba_playergamestreakfinder <- function(
     YearsExperience = years_experience
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2103,6 +2127,8 @@ nba_playernextngames <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -2541,6 +2567,8 @@ nba_playerprofilev2 <- function(
     PlayerID = player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2858,6 +2886,8 @@ nba_playervsplayer <- function(
     VsPlayerID = vs_player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -3040,6 +3070,8 @@ nba_playercompare <- function(
     VsDivision = vs_division,
     VsPlayerIDList = URLencode(vs_player_id_list)
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
