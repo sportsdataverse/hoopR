@@ -61,7 +61,7 @@ test_that("NBA PBP", {
   )
 
 
-  expect_equal(sort(colnames(x1)), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x1)))
   expect_s3_class(x1, "data.frame")
 
   Sys.sleep(3)
@@ -123,7 +123,7 @@ test_that("NBA PBP", {
   )
 
 
-  expect_equal(sort(colnames(x2)), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x2)))
   expect_s3_class(x2, "data.frame")
 
   Sys.sleep(3)

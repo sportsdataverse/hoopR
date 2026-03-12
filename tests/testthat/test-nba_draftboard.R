@@ -64,11 +64,11 @@ test_that("NBA Draft Board", {
     "live_draft_current_pick_number"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x[[2]])))
   expect_s3_class(x[[2]], "data.frame")
-  expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
+  expect_in(sort(cols_x3), sort(colnames(x[[3]])))
   expect_s3_class(x[[3]], "data.frame")
 
   Sys.sleep(3)

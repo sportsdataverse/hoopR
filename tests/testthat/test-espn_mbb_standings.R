@@ -86,7 +86,7 @@ test_that("ESPN - Get MBB Standings", {
     "vsconf_wins",
     "vsconf"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

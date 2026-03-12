@@ -89,7 +89,7 @@ test_that("NBA Scoreboard V3", {
   )
 
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

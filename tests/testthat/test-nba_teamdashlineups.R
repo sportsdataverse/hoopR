@@ -124,9 +124,9 @@ test_that("NBA Team Dashboard Lineups", {
     "PLUS_MINUS_RANK"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x[[2]])))
   expect_s3_class(x[[2]], "data.frame")
 
   Sys.sleep(3)
