@@ -38,4 +38,3 @@ purrr::walk(names(x), function(y){
       print()
   }
 })
-

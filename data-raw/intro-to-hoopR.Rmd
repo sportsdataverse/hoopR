@@ -3,7 +3,7 @@ title: "Intro to hoopR"
 description: "Getting started with using <code>hoopR</code> and men's college basketball analytics."
 author: "Saiem Gilani <br><a href='https://twitter.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
 opengraph:
-  image: 
+  image:
     src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
   twitter:
     card: summary_large_image
@@ -85,7 +85,7 @@ First, to keep things a bit simpler, we will first create a second and third `rt
 
 team1 = "Florida St."
 team2 = "ACC"
-metric <- "adj_em" 
+metric <- "adj_em"
 full_metric <- "Adjusted Efficiency Margin"
 Color1 = '#782F40'
 Color2 = 'navyblue'
@@ -93,32 +93,32 @@ Color2 = 'navyblue'
 rtgs$metric = rtgs[, metric]
 
 
-rtgs_acc <- rtgs %>% 
-  dplyr::filter(.data$conf == team2) %>% 
-  dplyr::group_by(.data$year,.data$conf) %>% 
-  dplyr::summarize(metric = mean(metric)) %>% 
-  dplyr::ungroup() %>% 
+rtgs_acc <- rtgs %>%
+  dplyr::filter(.data$conf == team2) %>%
+  dplyr::group_by(.data$year,.data$conf) %>%
+  dplyr::summarize(metric = mean(metric)) %>%
+  dplyr::ungroup() %>%
   dplyr::rename("team" = "conf")
 
-rtgs_fsu <- rtgs %>% 
-  filter(team == team1) %>% 
-  arrange(-.data$year, .data$rk) %>% 
+rtgs_fsu <- rtgs %>%
+  filter(team == team1) %>%
+  arrange(-.data$year, .data$rk) %>%
   select(year, team, metric)
 
 # combine the two datasets using rbind
 plot_data <- rbind(rtgs_fsu, rtgs_acc)
 
-plot_data <- rtgs_fsu %>% 
-  mutate(metric_1 = metric) %>% 
-  left_join(rtgs_acc %>% 
+plot_data <- rtgs_fsu %>%
+  mutate(metric_1 = metric) %>%
+  left_join(rtgs_acc %>%
               select(.data$year, .data$metric),
-            by=c("year"),suffix=c("","_2"))  
-plot_data <- plot_data %>% 
+            by=c("year"),suffix=c("","_2"))
+plot_data <- plot_data %>%
   mutate(
     metric = round(metric,1),
     metric_1 = round(metric_1,1),
     metric_2 = round(metric_2,1)
-  ) %>% 
+  ) %>%
   arrange(.data$year)
 
 plot_data$Color_1 = Color1
@@ -134,7 +134,7 @@ m <- png::readPNG(z)
 img <- matrix(rgb(m[,,1],m[,,2],m[,,3], m[,,4] ), nrow=dim(m)[1]) #0.2 is alpha
 rast <- grid::rasterGrob(img, interpolate = T)
 
-plot_data <- plot_data %>% 
+plot_data <- plot_data %>%
   mutate(logo_1 = "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png?transparent=true&w=35&h=35",
          logo_2 = "https://a.espncdn.com/i/teamlogos/ncaa_conf/500/1.png?transparent=true&w=35&h=35") %>% arrange(year)
 # points for plotting
@@ -153,17 +153,17 @@ draw_frame <- function(year)
 {
   yr <- year
   # frame data
-  frm_data <- plot_data %>% 
+  frm_data <- plot_data %>%
     filter(.data$year <= yr)
-  
+
   # output quarter changes
   if (nrow(frm_data %>% filter(year == max(.data$year))) == 1)
   {
     print(glue::glue("Plotting AdjEM in Year: {max(frm_data$year)}"))
   }
-  
+
   # plot
-  frm_plot <- frm_data %>% 
+  frm_plot <- frm_data %>%
     ggplot(aes(x = year, y = metric, group=team))+
     theme_minimal()+
     geom_vline(xintercept = c(2010, x_max), color = "#5555AA")+
@@ -197,11 +197,11 @@ draw_frame <- function(year)
           plot.caption = element_text(size = 14, family = "sans", face = 'bold', color = "#3D1A22",hjust=0.5),
           panel.background = element_rect(fill = "snow"),
           plot.background = element_rect(fill = "#DCF2F5"))
-  
-  # score display 
+
+  # score display
   metric1 <- tail(frm_data$metric_1, n=1)
   metric2 <- tail(frm_data$metric_2, n=1)
-  
+
   # clock display
   Year <- case_when(
     max(frm_data$year) == 2010 ~ "2010" ,
@@ -218,15 +218,15 @@ draw_frame <- function(year)
     max(frm_data$year) == 2020 ~ "2021" ,
     TRUE ~ as.character(max(frm_data$year))
   )
-  
+
   # add score and clock to plot
-  frm_plot <- frm_plot + 
+  frm_plot <- frm_plot +
     annotate("text", x = x_score-1, y = 16, label = metric1, color = Color1, size = 8) +
     annotate("text", x = x_score-1, y = -4, label = metric2, color = Color2, size = 8) +
     annotate("text", x = x_score-1, y = 8, label = Year, color = "#000000", size = 7)
-  
+
   # label key moments
-  # frm_labels <- frm_data %>% 
+  # frm_labels <- frm_data %>%
   #   filter(text != "")
   # frm_plot <- frm_plot +
   #   geom_point(frm_labels, mapping = aes(x = Year, y = AdjEM),
@@ -235,7 +235,7 @@ draw_frame <- function(year)
   #                linetype = "dashed", color = "#000000", na.rm=TRUE) +
   #   geom_label(frm_labels, mapping = aes(x = x_text, y = y_text, label = text),
   #              size = 3, color = "#000000", na.rm = TRUE, alpha = 0.8)
-  
+
   # plot the frame
   plot(frm_plot, width = 12.5, height = 6.47, dpi = 500)
 }
@@ -252,7 +252,7 @@ draw_frame(2014)
 draw_gif <- function()
 {
   lapply(plot_data$year, function(year)
-  { 
+  {
     draw_frame(year)
   })
   print("Plotting frames for pause")

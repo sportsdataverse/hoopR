@@ -53,8 +53,8 @@ gather_team_pages <- function(year, fp){
                             msg = "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
     teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
     team_name = teams_links$team.link.ref[teams_links$Team == team]
-    
-    
+
+
     ### Pull Data
     url <- paste0("https://kenpom.com/team.php?",
                   "team=",team_name,

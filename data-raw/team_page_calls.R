@@ -63,6 +63,3 @@ browser <- hoopR::login(Sys.getenv("kp_user"),Sys.getenv("kp_pw"))
 # gather_team_pages(browser, year = 2002)
 BRRR::skrrrahh(sound=26)
 BRRR::skrrrahh(sound=26)
-
-
-
