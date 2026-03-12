@@ -44,20 +44,22 @@ NULL
 #' ```r
 #'  nba_teams()
 #' ```
-nba_teams <- function(...){
-
+nba_teams <- function(...) {
   tryCatch(
     expr = {
-
       standings <- nba_leaguestandingsv3(season = year_to_season(most_recent_nba_season() - 1), ...) %>%
         purrr::pluck("Standings")
 
-      league_gamelog <- nba_leaguegamelog(league_id = '00',
-                                           season = year_to_season(most_recent_nba_season() - 1), ...) %>%
+      league_gamelog <- nba_leaguegamelog(
+        league_id = "00",
+        season = year_to_season(most_recent_nba_season() - 1), ...
+      ) %>%
         purrr::pluck("LeagueGameLog")
       if (nrow(league_gamelog) == 0) {
-        league_gamelog <- nba_leaguegamelog(league_id = '00',
-                                             season = year_to_season(most_recent_nba_season() - 2), ...) %>%
+        league_gamelog <- nba_leaguegamelog(
+          league_id = "00",
+          season = year_to_season(most_recent_nba_season() - 2), ...
+        ) %>%
           purrr::pluck("LeagueGameLog")
       }
 
@@ -66,7 +68,8 @@ nba_teams <- function(...){
         dplyr::select(dplyr::any_of(c(
           "TEAM_ID",
           "TEAM_ABBREVIATION",
-          "team_name_full"))) %>%
+          "team_name_full"
+        ))) %>%
         dplyr::distinct()
 
       standings <- standings %>%
@@ -83,9 +86,11 @@ nba_teams <- function(...){
           "Conference",
           "Division",
           "TEAM_ABBREVIATION",
-          "team_name_full"))) %>%
+          "team_name_full"
+        ))) %>%
         dplyr::mutate(
-          Season = paste0('', year_to_season(most_recent_nba_season() - 1))) %>%
+          Season = paste0("", year_to_season(most_recent_nba_season() - 1))
+        ) %>%
         dplyr::arrange(.data$team_name_full)
 
       espn_nba_teams <- espn_nba_teams() %>%
@@ -96,9 +101,9 @@ nba_teams <- function(...){
       nba_teams <- nba_teams %>%
         dplyr::mutate(
           espn_team_id = as.integer(.data$espn_team_id),
-          nba_logo_svg = paste0("https://cdn.nba.com/logos/nba/", .data$TeamID, "/primary/L/logo.svg")) %>%
+          nba_logo_svg = paste0("https://cdn.nba.com/logos/nba/", .data$TeamID, "/primary/L/logo.svg")
+        ) %>%
         janitor::clean_names()
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team details data available!"))
@@ -219,9 +224,8 @@ NULL
 #'  nba_teamdetails(team_id = '1610612749')
 #' ```
 nba_teamdetails <- function(
-    team_id = '1610612749',
-    ...){
-
+    team_id = "1610612749",
+    ...) {
   version <- "teamdetails"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -230,13 +234,13 @@ nba_teamdetails <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team details data for {team_id} available!"))
@@ -310,11 +314,10 @@ NULL
 #'  nba_teamestimatedmetrics()
 #' ```
 nba_teamestimatedmetrics <- function(
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamestimatedmetrics"
@@ -327,12 +330,13 @@ nba_teamestimatedmetrics <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+      df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
         data <- resp$resultSet$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
@@ -342,7 +346,6 @@ nba_teamestimatedmetrics <- function(
         return(data)
       })
       names(df_list) <- resp$resultSet$name
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team estimated metrics data for {season} available!"))
@@ -418,14 +421,13 @@ NULL
 #'  nba_teamgamelog(team_id = '1610612749')
 #' ```
 nba_teamgamelog <- function(
-    date_from = '',
-    date_to = '',
-    league_id = '00',
+    date_from = "",
+    date_to = "",
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    team_id = '1610612749',
-    ...){
-
+    season_type = "Regular Season",
+    team_id = "1610612749",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelog"
@@ -441,13 +443,13 @@ nba_teamgamelog <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team game log data for {team_id} available!"))
@@ -564,28 +566,27 @@ NULL
 #'  nba_teamgamelogs(team_id = '1610612749')
 #' ```
 nba_teamgamelogs <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    po_round = '',
-    per_mode = 'Totals',
+    outcome = "",
+    po_round = "",
+    per_mode = "Totals",
     period = 0,
-    player_id = '',
+    player_id = "",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    team_id = '1610612749',
-    vs_conference = '',
-    vs_division = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    team_id = "1610612749",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelogs"
@@ -615,13 +616,13 @@ nba_teamgamelogs <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team game logs for {team_id} available!"))
@@ -682,11 +683,10 @@ NULL
 #'  nba_teamhistoricalleaders(team_id = '1610612749')
 #' ```
 nba_teamhistoricalleaders <- function(
-    league_id = '00',
-    season_id = '22022',
-    team_id = '1610612749',
-    ...){
-
+    league_id = "00",
+    season_id = "22022",
+    team_id = "1610612749",
+    ...) {
   version <- "teamhistoricalleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -697,13 +697,13 @@ nba_teamhistoricalleaders <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team historical leaders data for {team_id} available!"))
@@ -788,12 +788,11 @@ NULL
 #'  nba_teaminfocommon(team_id = '1610612749')
 #' ```
 nba_teaminfocommon <- function(
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    team_id = '1610612749',
-    ...){
-
+    season_type = "Regular Season",
+    team_id = "1610612749",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teaminfocommon"
@@ -807,13 +806,13 @@ nba_teaminfocommon <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team common info data for {team_id} available!"))
@@ -1065,31 +1064,30 @@ NULL
 #'  nba_teamplayeronoffdetails(team_id = '1610612749')
 #' ```
 nba_teamplayeronoffdetails <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    pace_adjust = 'N',
-    plus_minus = 'N',
-    po_round = '',
-    per_mode = 'Totals',
+    outcome = "",
+    pace_adjust = "N",
+    plus_minus = "N",
+    po_round = "",
+    per_mode = "Totals",
     period = 0,
-    rank = 'N',
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    shot_clock_range = '',
-    team_id = '1610612749',
-    vs_conference = '',
-    vs_division = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    shot_clock_range = "",
+    team_id = "1610612749",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffdetails"
@@ -1122,13 +1120,13 @@ nba_teamplayeronoffdetails <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team player on off details data for {team_id} available!"))
@@ -1287,31 +1285,30 @@ NULL
 #'  nba_teamplayeronoffsummary(team_id = '1610612749')
 #' ```
 nba_teamplayeronoffsummary <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    pace_adjust = 'N',
-    plus_minus = 'N',
-    po_round = '',
-    per_mode = 'Totals',
+    outcome = "",
+    pace_adjust = "N",
+    plus_minus = "N",
+    po_round = "",
+    per_mode = "Totals",
     period = 0,
-    rank = 'N',
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    shot_clock_range = '',
-    team_id = '1610612749',
-    vs_conference = '',
-    vs_division = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    shot_clock_range = "",
+    team_id = "1610612749",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffsummary"
@@ -1344,13 +1341,13 @@ nba_teamplayeronoffsummary <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team player on off summary data for {team_id} available!"))
@@ -1540,31 +1537,30 @@ NULL
 #'  nba_teamplayerdashboard(team_id = '1610612749')
 #' ```
 nba_teamplayerdashboard <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    pace_adjust = 'N',
-    plus_minus = 'N',
-    po_round = '',
-    per_mode = 'Totals',
+    outcome = "",
+    pace_adjust = "N",
+    plus_minus = "N",
+    po_round = "",
+    per_mode = "Totals",
     period = 0,
-    rank = 'N',
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    shot_clock_range = '',
-    team_id = '1610612749',
-    vs_conference = '',
-    vs_division = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    shot_clock_range = "",
+    team_id = "1610612749",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayerdashboard"
@@ -1597,13 +1593,13 @@ nba_teamplayerdashboard <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team player dashboard data for {team_id} available!"))
@@ -1683,12 +1679,11 @@ NULL
 #'  nba_teamyearbyyearstats(team_id = '1610612749')
 #' ```
 nba_teamyearbyyearstats <- function(
-    league_id = '00',
-    per_mode = 'Totals',
-    season_type = 'Regular Season',
-    team_id = '1610612749',
-    ...){
-
+    league_id = "00",
+    per_mode = "Totals",
+    season_type = "Regular Season",
+    team_id = "1610612749",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamyearbyyearstats"
@@ -1702,13 +1697,13 @@ nba_teamyearbyyearstats <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team year-by-year stats data for {team_id} available!"))
@@ -2062,33 +2057,32 @@ NULL
 #'  nba_teamvsplayer(team_id = '1610612749', vs_player_id = '2544')
 #' ```
 nba_teamvsplayer <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    po_round = '',
-    pace_adjust = 'N',
-    per_mode = 'Totals',
+    outcome = "",
+    po_round = "",
+    pace_adjust = "N",
+    per_mode = "Totals",
     period = 0,
-    player_id = '',
-    plus_minus = 'N',
-    rank = 'N',
+    player_id = "",
+    plus_minus = "N",
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    shot_clock_range = '',
-    team_id = '1610612749',
-    vs_conference = '',
-    vs_division = '',
-    vs_player_id = '2544',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    shot_clock_range = "",
+    team_id = "1610612749",
+    vs_conference = "",
+    vs_division = "",
+    vs_player_id = "2544",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamvsplayer"
@@ -2123,13 +2117,13 @@ nba_teamvsplayer <- function(
     VsPlayerID = vs_player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team vs player data for {team_id} and {player_id} available!"))
@@ -2143,6 +2137,324 @@ nba_teamvsplayer <- function(
 }
 
 
+#' **Get NBA Stats API Team and Players vs Players**
+#' @name nba_teamandplayersvsplayers
+NULL
+#' @title
+#' **Get NBA Stats API Team and Players vs Players**
+#' @rdname nba_teamandplayersvsplayers
+#' @author Saiem Gilani
+#' @param team_id team_id
+#' @param vs_team_id vs_team_id
+#' @param player_id1 player_id1
+#' @param player_id2 player_id2
+#' @param player_id3 player_id3
+#' @param player_id4 player_id4
+#' @param player_id5 player_id5
+#' @param vs_player_id1 vs_player_id1
+#' @param vs_player_id2 vs_player_id2
+#' @param vs_player_id3 vs_player_id3
+#' @param vs_player_id4 vs_player_id4
+#' @param vs_player_id5 vs_player_id5
+#' @param season season
+#' @param season_type season_type
+#' @param measure_type measure_type
+#' @param per_mode per_mode
+#' @param plus_minus plus_minus
+#' @param pace_adjust pace_adjust
+#' @param rank rank
+#' @param league_id league_id
+#' @param last_n_games last_n_games
+#' @param month month
+#' @param opponent_team_id opponent_team_id
+#' @param period period
+#' @param conference conference
+#' @param date_from date_from
+#' @param date_to date_to
+#' @param division division
+#' @param game_segment game_segment
+#' @param location location
+#' @param outcome outcome
+#' @param season_segment season_segment
+#' @param shot_clock_range shot_clock_range
+#' @param vs_conference vs_conference
+#' @param vs_division vs_division
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: PlayersVsPlayers,
+#'  TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers, TeamVsPlayersOff
+#'
+#'    **PlayersVsPlayers**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |TITLE_DESCRIPTION |character |
+#'    |DESCRIPTION       |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |TOV               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |BLKA              |character |
+#'    |PF                |character |
+#'    |PFD               |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'
+#'    **TeamPlayersVsPlayersOn**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |TITLE_DESCRIPTION |character |
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |TOV               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |BLKA              |character |
+#'    |PF                |character |
+#'    |PFD               |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'
+#'    **TeamPlayersVsPlayersOff**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |TITLE_DESCRIPTION |character |
+#'    |PLAYER_ID         |character |
+#'    |PLAYER_NAME       |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |TOV               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |BLKA              |character |
+#'    |PF                |character |
+#'    |PFD               |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'
+#'    **TeamVsPlayers**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |TITLE_DESCRIPTION |character |
+#'    |DESCRIPTION       |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |TOV               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |BLKA              |character |
+#'    |PF                |character |
+#'    |PFD               |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'
+#'    **TeamVsPlayersOff**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |GROUP_SET         |character |
+#'    |TITLE_DESCRIPTION |character |
+#'    |DESCRIPTION       |character |
+#'    |MIN               |character |
+#'    |FGM               |character |
+#'    |FGA               |character |
+#'    |FG_PCT            |character |
+#'    |FG3M              |character |
+#'    |FG3A              |character |
+#'    |FG3_PCT           |character |
+#'    |FTM               |character |
+#'    |FTA               |character |
+#'    |FT_PCT            |character |
+#'    |OREB              |character |
+#'    |DREB              |character |
+#'    |REB               |character |
+#'    |AST               |character |
+#'    |TOV               |character |
+#'    |STL               |character |
+#'    |BLK               |character |
+#'    |BLKA              |character |
+#'    |PF                |character |
+#'    |PFD               |character |
+#'    |PTS               |character |
+#'    |PLUS_MINUS        |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Team Functions
+#' @details
+#' ```r
+#'  nba_teamandplayersvsplayers(
+#'    team_id = '1610612739',
+#'    vs_team_id = '1610612765',
+#'    player_id1 = '202681', player_id2 = '203078',
+#'    player_id3 = '203507', player_id4 = '201567',
+#'    player_id5 = '203954',
+#'    vs_player_id1 = '201566', vs_player_id2 = '201939',
+#'    vs_player_id3 = '201935', vs_player_id4 = '201142',
+#'    vs_player_id5 = '203076',
+#'    season = '2019-20')
+#' ```
+nba_teamandplayersvsplayers <- function(
+    team_id,
+    vs_team_id,
+    player_id1,
+    player_id2,
+    player_id3,
+    player_id4,
+    player_id5,
+    vs_player_id1,
+    vs_player_id2,
+    vs_player_id3,
+    vs_player_id4,
+    vs_player_id5,
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = "Regular Season",
+    measure_type = "Base",
+    per_mode = "Totals",
+    plus_minus = "N",
+    pace_adjust = "N",
+    rank = "N",
+    league_id = "00",
+    last_n_games = 0,
+    month = 0,
+    opponent_team_id = 0,
+    period = 0,
+    conference = "",
+    date_from = "",
+    date_to = "",
+    division = "",
+    game_segment = "",
+    location = "",
+    outcome = "",
+    season_segment = "",
+    shot_clock_range = "",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
+  season_type <- gsub(" ", "+", season_type)
+  version <- "teamandplayersvsplayers"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    TeamID = team_id,
+    VsTeamID = vs_team_id,
+    PlayerID1 = player_id1,
+    PlayerID2 = player_id2,
+    PlayerID3 = player_id3,
+    PlayerID4 = player_id4,
+    PlayerID5 = player_id5,
+    VsPlayerID1 = vs_player_id1,
+    VsPlayerID2 = vs_player_id2,
+    VsPlayerID3 = vs_player_id3,
+    VsPlayerID4 = vs_player_id4,
+    VsPlayerID5 = vs_player_id5,
+    Season = season,
+    SeasonType = season_type,
+    MeasureType = measure_type,
+    PerMode = per_mode,
+    PlusMinus = plus_minus,
+    PaceAdjust = pace_adjust,
+    Rank = rank,
+    LeagueID = league_id,
+    LastNGames = last_n_games,
+    Month = month,
+    OpponentTeamID = opponent_team_id,
+    Period = period,
+    Conference = conference,
+    DateFrom = date_from,
+    DateTo = date_to,
+    Division = division,
+    GameSegment = game_segment,
+    Location = location,
+    Outcome = outcome,
+    SeasonSegment = season_segment,
+    ShotClockRange = shot_clock_range,
+    VsConference = vs_conference,
+    VsDivision = vs_division
+  )
+
+  df_list <- list()
+  tryCatch(
+    expr = {
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no team and players vs players data for {team_id} vs {vs_team_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
 
 
 
@@ -2372,196 +2684,195 @@ NULL
 #' ```
 
 nba_teamgamestreakfinder <- function(
-    active_streaks_only = '',
-    active_teams_only = '',
-    btr_opp_ast = '',
-    btr_opp_blk = '',
-    btr_opp_dreb = '',
-    btr_opp_fg3a = '',
-    btr_opp_fg3m = '',
-    btr_opp_fg3_pct = '',
-    btr_opp_fga = '',
-    btr_opp_fgm = '',
-    btr_opp_fg_pct = '',
-    btr_opp_fta = '',
-    btr_opp_ftm = '',
-    btr_opp_ft_pct = '',
-    btr_opp_oreb = '',
-    btr_opp_pf = '',
-    btr_opp_pts = '',
-    btr_opp_pts2nd_chance = '',
-    btr_opp_pts_fb = '',
-    btr_opp_pts_off_tov = '',
-    btr_opp_pts_paint = '',
-    btr_opp_reb = '',
-    btr_opp_stl = '',
-    btr_opp_tov = '',
-    conference = '',
-    date_from = '',
-    date_to = '',
-    division = '',
-    et_ast = '',
-    et_blk = '',
-    et_dd = '',
-    et_dreb = '',
-    et_fg3a = '',
-    et_fg3m = '',
-    et_fg3_pct = '',
-    et_fga = '',
-    et_fgm = '',
-    et_fg_pct = '',
-    et_fta = '',
-    et_ftm = '',
-    et_ft_pct = '',
-    et_minutes = '',
-    eq_opp_pts2nd_chance = '',
-    eq_opp_pts_fb = '',
-    eq_opp_pts_off_tov = '',
-    eq_opp_pts_paint = '',
-    et_oreb = '',
-    et_pf = '',
-    et_pts = '',
-    eq_pts2nd_chance = '',
-    eq_pts_fb = '',
-    eq_pts_off_tov = '',
-    eq_pts_paint = '',
-    et_reb = '',
-    et_stl = '',
-    et_td = '',
-    et_tov = '',
-    game_id = '',
-    gt_ast = '',
-    gt_blk = '',
-    gt_dd = '',
-    gt_dreb = '',
-    gt_fg3a = '',
-    gt_fg3m = '',
-    gt_fg3_pct = '',
-    gt_fga = '',
-    gt_fgm = '',
-    gt_fg_pct = '',
-    gt_fta = '',
-    gt_ftm = '',
-    gt_ft_pct = '',
-    gt_minutes = '',
-    gt_opp_ast = '',
-    gt_opp_blk = '',
-    gt_opp_dreb = '',
-    gt_opp_fg3a = '',
-    gt_opp_fg3m = '',
-    gt_opp_fg3_pct = '',
-    gt_opp_fga = '',
-    gt_opp_fgm = '',
-    gt_opp_fg_pct = '',
-    gt_opp_fta = '',
-    gt_opp_ftm = '',
-    gt_opp_ft_pct = '',
-    gt_opp_oreb = '',
-    gt_opp_pf = '',
-    gt_opp_pts = '',
-    gt_opp_pts2nd_chance = '',
-    gt_opp_pts_fb = '',
-    gt_opp_pts_off_tov = '',
-    gt_opp_pts_paint = '',
-    gt_opp_reb = '',
-    gt_opp_stl = '',
-    gt_opp_tov = '',
-    gt_oreb = '',
-    gt_pf = '',
-    gt_pts = '',
-    gt_pts2nd_chance = '',
-    gt_pts_fb = '',
-    gt_pts_off_tov = '',
-    gt_pts_paint = '',
-    gt_reb = '',
-    gt_stl = '',
-    gt_td = '',
-    gt_tov = '',
-    lstreak = '',
-    league_id = '00',
-    location = '',
-    lt_ast = '',
-    lt_blk = '',
-    lt_dd = '',
-    lt_dreb = '',
-    lt_fg3a = '',
-    lt_fg3m = '',
-    lt_fg3_pct = '',
-    lt_fga = '',
-    lt_fgm = '',
-    lt_fg_pct = '',
-    lt_fta = '',
-    lt_ftm = '',
-    lt_ft_pct = '',
-    lt_minutes = '',
-    lt_opp_ast = '',
-    lt_opp_blk = '',
-    lt_opp_dreb = '',
-    lt_opp_fg3a = '',
-    lt_opp_fg3m = '',
-    lt_opp_fg3_pct = '',
-    lt_opp_fga = '',
-    lt_opp_fgm = '',
-    lt_opp_fg_pct = '',
-    lt_opp_fta = '',
-    lt_opp_ftm = '',
-    lt_opp_ft_pct = '',
-    lt_opp_oreb = '',
-    lt_opp_pf = '',
-    lt_opp_pts = '',
-    lt_opp_pts2nd_chance = '',
-    lt_opp_pts_fb = '',
-    lt_opp_pts_off_tov = '',
-    lt_opp_pts_paint = '',
-    lt_opp_reb = '',
-    lt_opp_stl = '',
-    lt_opp_tov = '',
-    lt_oreb = '',
-    lt_pf = '',
-    lt_pts = '',
-    lt_pts2nd_chance = '',
-    lt_pts_fb = '',
-    lt_pts_off_tov = '',
-    lt_pts_paint = '',
-    lt_reb = '',
-    lt_stl = '',
-    lt_td = '',
-    lt_tov = '',
-    min_games = '',
-    outcome = '',
-    po_round = '',
+    active_streaks_only = "",
+    active_teams_only = "",
+    btr_opp_ast = "",
+    btr_opp_blk = "",
+    btr_opp_dreb = "",
+    btr_opp_fg3a = "",
+    btr_opp_fg3m = "",
+    btr_opp_fg3_pct = "",
+    btr_opp_fga = "",
+    btr_opp_fgm = "",
+    btr_opp_fg_pct = "",
+    btr_opp_fta = "",
+    btr_opp_ftm = "",
+    btr_opp_ft_pct = "",
+    btr_opp_oreb = "",
+    btr_opp_pf = "",
+    btr_opp_pts = "",
+    btr_opp_pts2nd_chance = "",
+    btr_opp_pts_fb = "",
+    btr_opp_pts_off_tov = "",
+    btr_opp_pts_paint = "",
+    btr_opp_reb = "",
+    btr_opp_stl = "",
+    btr_opp_tov = "",
+    conference = "",
+    date_from = "",
+    date_to = "",
+    division = "",
+    et_ast = "",
+    et_blk = "",
+    et_dd = "",
+    et_dreb = "",
+    et_fg3a = "",
+    et_fg3m = "",
+    et_fg3_pct = "",
+    et_fga = "",
+    et_fgm = "",
+    et_fg_pct = "",
+    et_fta = "",
+    et_ftm = "",
+    et_ft_pct = "",
+    et_minutes = "",
+    eq_opp_pts2nd_chance = "",
+    eq_opp_pts_fb = "",
+    eq_opp_pts_off_tov = "",
+    eq_opp_pts_paint = "",
+    et_oreb = "",
+    et_pf = "",
+    et_pts = "",
+    eq_pts2nd_chance = "",
+    eq_pts_fb = "",
+    eq_pts_off_tov = "",
+    eq_pts_paint = "",
+    et_reb = "",
+    et_stl = "",
+    et_td = "",
+    et_tov = "",
+    game_id = "",
+    gt_ast = "",
+    gt_blk = "",
+    gt_dd = "",
+    gt_dreb = "",
+    gt_fg3a = "",
+    gt_fg3m = "",
+    gt_fg3_pct = "",
+    gt_fga = "",
+    gt_fgm = "",
+    gt_fg_pct = "",
+    gt_fta = "",
+    gt_ftm = "",
+    gt_ft_pct = "",
+    gt_minutes = "",
+    gt_opp_ast = "",
+    gt_opp_blk = "",
+    gt_opp_dreb = "",
+    gt_opp_fg3a = "",
+    gt_opp_fg3m = "",
+    gt_opp_fg3_pct = "",
+    gt_opp_fga = "",
+    gt_opp_fgm = "",
+    gt_opp_fg_pct = "",
+    gt_opp_fta = "",
+    gt_opp_ftm = "",
+    gt_opp_ft_pct = "",
+    gt_opp_oreb = "",
+    gt_opp_pf = "",
+    gt_opp_pts = "",
+    gt_opp_pts2nd_chance = "",
+    gt_opp_pts_fb = "",
+    gt_opp_pts_off_tov = "",
+    gt_opp_pts_paint = "",
+    gt_opp_reb = "",
+    gt_opp_stl = "",
+    gt_opp_tov = "",
+    gt_oreb = "",
+    gt_pf = "",
+    gt_pts = "",
+    gt_pts2nd_chance = "",
+    gt_pts_fb = "",
+    gt_pts_off_tov = "",
+    gt_pts_paint = "",
+    gt_reb = "",
+    gt_stl = "",
+    gt_td = "",
+    gt_tov = "",
+    lstreak = "",
+    league_id = "00",
+    location = "",
+    lt_ast = "",
+    lt_blk = "",
+    lt_dd = "",
+    lt_dreb = "",
+    lt_fg3a = "",
+    lt_fg3m = "",
+    lt_fg3_pct = "",
+    lt_fga = "",
+    lt_fgm = "",
+    lt_fg_pct = "",
+    lt_fta = "",
+    lt_ftm = "",
+    lt_ft_pct = "",
+    lt_minutes = "",
+    lt_opp_ast = "",
+    lt_opp_blk = "",
+    lt_opp_dreb = "",
+    lt_opp_fg3a = "",
+    lt_opp_fg3m = "",
+    lt_opp_fg3_pct = "",
+    lt_opp_fga = "",
+    lt_opp_fgm = "",
+    lt_opp_fg_pct = "",
+    lt_opp_fta = "",
+    lt_opp_ftm = "",
+    lt_opp_ft_pct = "",
+    lt_opp_oreb = "",
+    lt_opp_pf = "",
+    lt_opp_pts = "",
+    lt_opp_pts2nd_chance = "",
+    lt_opp_pts_fb = "",
+    lt_opp_pts_off_tov = "",
+    lt_opp_pts_paint = "",
+    lt_opp_reb = "",
+    lt_opp_stl = "",
+    lt_opp_tov = "",
+    lt_oreb = "",
+    lt_pf = "",
+    lt_pts = "",
+    lt_pts2nd_chance = "",
+    lt_pts_fb = "",
+    lt_pts_off_tov = "",
+    lt_pts_paint = "",
+    lt_reb = "",
+    lt_stl = "",
+    lt_td = "",
+    lt_tov = "",
+    min_games = "",
+    outcome = "",
+    po_round = "",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    team_id = '',
-    vs_conference = '',
-    vs_division = '',
-    vs_team_id = '',
-    wstreak = '',
-    wrs_opp_ast = '',
-    wrs_opp_blk = '',
-    wrs_opp_dreb = '',
-    wrs_opp_fg3a = '',
-    wrs_opp_fg3m = '',
-    wrs_opp_fg3_pct = '',
-    wrs_opp_fga = '',
-    wrs_opp_fgm = '',
-    wrs_opp_fg_pct = '',
-    wrs_opp_fta = '',
-    wrs_opp_ftm = '',
-    wrs_opp_ft_pct = '',
-    wrs_opp_oreb = '',
-    wrs_opp_pf = '',
-    wrs_opp_pts = '',
-    wrs_opp_pts2nd_chance = '',
-    wrs_opp_pts_fb = '',
-    wrs_opp_pts_off_tov = '',
-    wrs_opp_pts_paint = '',
-    wrs_opp_reb = '',
-    wrs_opp_stl = '',
-    wrs_opp_tov = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    team_id = "",
+    vs_conference = "",
+    vs_division = "",
+    vs_team_id = "",
+    wstreak = "",
+    wrs_opp_ast = "",
+    wrs_opp_blk = "",
+    wrs_opp_dreb = "",
+    wrs_opp_fg3a = "",
+    wrs_opp_fg3m = "",
+    wrs_opp_fg3_pct = "",
+    wrs_opp_fga = "",
+    wrs_opp_fgm = "",
+    wrs_opp_fg_pct = "",
+    wrs_opp_fta = "",
+    wrs_opp_ftm = "",
+    wrs_opp_ft_pct = "",
+    wrs_opp_oreb = "",
+    wrs_opp_pf = "",
+    wrs_opp_pts = "",
+    wrs_opp_pts2nd_chance = "",
+    wrs_opp_pts_fb = "",
+    wrs_opp_pts_off_tov = "",
+    wrs_opp_pts_paint = "",
+    wrs_opp_reb = "",
+    wrs_opp_stl = "",
+    wrs_opp_tov = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamestreakfinder"
@@ -2759,13 +3070,13 @@ nba_teamgamestreakfinder <- function(
     WrsOPPTOV = wrs_opp_tov
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no team streak finder data for the given parameters available!"))
@@ -2777,5 +3088,3 @@ nba_teamgamestreakfinder <- function(
   )
   return(df_list)
 }
-
-

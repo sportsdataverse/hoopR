@@ -316,6 +316,8 @@ nba_scoreboard <- function(
     DayOffset = day_offset
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -534,6 +536,8 @@ nba_scoreboardv2 <- function(
     GameDate = game_date,
     DayOffset = day_offset
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -937,6 +941,8 @@ nba_winprobabilitypbp <- function(
     RunType = run_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -947,6 +953,183 @@ nba_winprobabilitypbp <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no win probability pbp data for {game_id} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API International Schedule**
+#' @name nba_scheduleleaguev2int
+NULL
+#' @title
+#' **Get NBA Stats API International Schedule**
+#' @rdname nba_scheduleleaguev2int
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param season season
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Return a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
+#'
+#'    **SeasonGames**
+#'
+#'
+#'    |col_name                   |types     |
+#'    |:--------------------------|:---------|
+#'    |game_date                  |character |
+#'    |game_id                    |character |
+#'    |game_code                  |character |
+#'    |game_status                |character |
+#'    |game_status_text           |character |
+#'    |game_sequence              |character |
+#'    |home_team_id               |character |
+#'    |home_team_name             |character |
+#'    |home_team_city             |character |
+#'    |home_team_tricode          |character |
+#'    |home_team_slug             |character |
+#'    |home_team_wins             |character |
+#'    |home_team_losses           |character |
+#'    |home_team_score            |character |
+#'    |away_team_id               |character |
+#'    |away_team_name             |character |
+#'    |away_team_city             |character |
+#'    |away_team_tricode          |character |
+#'    |away_team_slug             |character |
+#'    |away_team_wins             |character |
+#'    |away_team_losses           |character |
+#'    |away_team_score            |character |
+#'    |season                     |character |
+#'    |league_id                  |character |
+#'
+#'    **SeasonWeeks**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |league_id    |character |
+#'    |season_year  |character |
+#'    |week_number  |character |
+#'    |week_name    |character |
+#'    |start_date   |character |
+#'    |end_date     |character |
+#'
+#'    **BroadcasterList**
+#'
+#'
+#'    |col_name                  |types     |
+#'    |:-------------------------|:---------|
+#'    |league_id                 |character |
+#'    |season_year               |character |
+#'    |broadcaster_abbreviation  |character |
+#'    |broadcaster_display       |character |
+#'    |broadcaster_id            |character |
+#'    |region_id                 |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Schedule Functions
+#' @details
+#' ```r
+#'  nba_scheduleleaguev2int(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
+nba_scheduleleaguev2int <- function(
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    ...){
+
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+
+  version <- "scheduleleaguev2int"
+  full_url <- nba_endpoint(version)
+
+  params <- list(
+    LeagueID = league_id,
+    Season = season
+  )
+
+  df_list <- list()
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      league_sched <- resp %>%
+        purrr::pluck("leagueSchedule")
+
+      # SeasonGames
+      game_dates <- league_sched %>%
+        purrr::pluck("gameDates")
+
+      if (length(game_dates) > 0) {
+        games <- game_dates %>%
+          tidyr::unnest("games") %>%
+          dplyr::select(-dplyr::any_of(c("broadcasters", "pointsLeaders"))) %>%
+          dplyr::bind_cols(
+            game_dates %>%
+              tidyr::unnest("games") %>%
+              purrr::pluck("homeTeam") %>%
+              dplyr::rename_with(~paste0("home_team_", .x))
+          ) %>%
+          dplyr::bind_cols(
+            game_dates %>%
+              tidyr::unnest("games") %>%
+              purrr::pluck("awayTeam") %>%
+              dplyr::rename_with(~paste0("away_team_", .x))
+          ) %>%
+          dplyr::select(-"homeTeam", -"awayTeam") %>%
+          janitor::clean_names()
+        colnames(games) <- gsub('team_team', 'team', colnames(games))
+        games$game_id <- unlist(purrr::map(games$game_id, function(x) {
+          pad_id(x)
+        }))
+        games$season <- league_sched$seasonYear
+        games$league_id <- league_sched$leagueId
+      } else {
+        games <- dplyr::tibble()
+      }
+
+      # SeasonWeeks
+      weeks <- league_sched %>%
+        purrr::pluck("weeks")
+      if (!is.null(weeks) && length(weeks) > 0) {
+        weeks_df <- weeks %>%
+          data.frame(stringsAsFactors = FALSE) %>%
+          dplyr::as_tibble() %>%
+          janitor::clean_names()
+        weeks_df$league_id <- league_sched$leagueId
+        weeks_df$season_year <- league_sched$seasonYear
+      } else {
+        weeks_df <- dplyr::tibble()
+      }
+
+      # BroadcasterList
+      broadcasters <- league_sched %>%
+        purrr::pluck("broadcasters")
+      if (!is.null(broadcasters) && length(broadcasters) > 0) {
+        broadcast_df <- broadcasters %>%
+          data.frame(stringsAsFactors = FALSE) %>%
+          dplyr::as_tibble() %>%
+          janitor::clean_names()
+        broadcast_df$league_id <- league_sched$leagueId
+        broadcast_df$season_year <- league_sched$seasonYear
+      } else {
+        broadcast_df <- dplyr::tibble()
+      }
+
+      df_list <- c(list(games), list(weeks_df), list(broadcast_df))
+      names(df_list) <- c("SeasonGames", "SeasonWeeks", "BroadcasterList")
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no international schedule data for {season} available!"))
     },
     warning = function(w) {
     },

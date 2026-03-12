@@ -1,20 +1,19 @@
 .nba_headers <-
   function(url = "https://stats.nba.com/stats/leaguegamelog?Counter=1000&Season=2019-20&Direction=DESC&LeagueID=00&PlayerOrTeam=P&SeasonType=Regular%20Season&Sorter=DATE",
            params = list()) {
-
     headers <- c(
-      `Host` = 'stats.nba.com',
-      `User-Agent` = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
-      `Accept` = 'application/json, text/plain, */*',
-      `Accept-Language` = 'en-US,en;q=0.5',
-      `Accept-Encoding` = 'gzip, deflate, br',
-      `x-nba-stats-origin` = 'stats',
-      `x-nba-stats-token` = 'true',
-      `Connection` = 'keep-alive',
+      `Host` = "stats.nba.com",
+      `User-Agent` = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36",
+      `Accept` = "application/json, text/plain, */*",
+      `Accept-Language` = "en-US,en;q=0.5",
+      `Accept-Encoding` = "gzip, deflate, br",
+      `x-nba-stats-origin` = "stats",
+      `x-nba-stats-token` = "true",
+      `Connection` = "keep-alive",
       `Origin` = "http://stats.nba.com",
-      `Referer` = 'https://www.nba.com/',
-      `Pragma` = 'no-cache',
-      `Cache-Control` = 'no-cache'
+      `Referer` = "https://www.nba.com/",
+      `Pragma` = "no-cache",
+      `Cache-Control` = "no-cache"
     )
 
     if (length(params) == 0) {
@@ -28,7 +27,6 @@
       jsonlite::fromJSON(simplifyVector = T)
 
     return(json)
-
   }
 
 
@@ -46,35 +44,33 @@
 request_with_proxy <- function(url,
                                params = list(),
                                origin = "https://stats.nba.com",
-                               referer="https://www.nba.com/",
-                               ...){
-
+                               referer = "https://www.nba.com/",
+                               ...) {
   dots <- rlang::dots_list(..., .named = TRUE)
   proxy <- dots$proxy
   headers <- dots$headers
   headers <- c(
-    `Host` = 'stats.nba.com',
-    `User-Agent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
-    `Accept` = 'application/json, text/plain, */*',
-    `Accept-Language` = 'en-US,en;q=0.5',
-    `Accept-Encoding` = 'gzip, deflate, br',
-    `x-nba-stats-origin` = 'stats',
-    `x-nba-stats-token` = 'true',
-    `Connection` = 'keep-alive',
-    `Referer` = 'https://www.nba.com/',
-    `Pragma` = 'no-cache',
-    `Cache-Control` = 'no-cache'
+    `Host` = "stats.nba.com",
+    `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+    `Accept` = "application/json, text/plain, */*",
+    `Accept-Language` = "en-US,en;q=0.5",
+    `Accept-Encoding` = "gzip, deflate, br",
+    `x-nba-stats-origin` = "stats",
+    `x-nba-stats-token` = "true",
+    `Connection` = "keep-alive",
+    `Referer` = "https://www.nba.com/",
+    `Pragma` = "no-cache",
+    `Cache-Control` = "no-cache"
   )
   if (length(params) >= 1) {
-    url <- httr::modify_url({{url}}, query = params)
-    res <- rvest::session(url = url, ...,  httr::add_headers(.headers = headers), httr::timeout(60))
+    url <- httr::modify_url({{ url }}, query = params)
+    res <- rvest::session(url = url, ..., httr::add_headers(.headers = headers), httr::timeout(60))
 
     json <- res$response %>%
       httr::content(as = "text", encoding = "UTF-8") %>%
       jsonlite::fromJSON()
-
   } else {
-    res <- rvest::session(url = {{url}}, ..., httr::add_headers(.headers = headers), httr::timeout(60))
+    res <- rvest::session(url = {{ url }}, ..., httr::add_headers(.headers = headers), httr::timeout(60))
 
     json <- res$response %>%
       httr::content(as = "text", encoding = "UTF-8") %>%
@@ -84,17 +80,16 @@ request_with_proxy <- function(url,
   return(json)
 }
 
-.kp_headers <- function(url = "https://kenpom.com/index.php"){
+.kp_headers <- function(url = "https://kenpom.com/index.php") {
   headers <- c(
-
     `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     `Accept` = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
     `Accept-Language` = "en-US,en;q=0.9",
     `Accept-Encoding` = "gzip, deflate",
     `Connection` = "keep-alive",
     # `Cookie` = 'ai_user=2AfNxymZOzGspsdjLDP2nd|2024-11-15T14:14:39.947Z; _ga=GA1.1.1591538523.1731680080; PHPSESSID=a9947dc105f068ff73097124c9b336d8; kenpomuser=saiem.gilani%40gmail.com; kenpomid=bc5e5bd2e53c5ea9b92bfeb87614f0a5; __stripe_mid=63479aec-d09d-4c2f-bbff-dff29bf004988cc095; __stripe_sid=a00feb19-1262-426c-bdf5-cfc162f62db2016464; _ga_6DKK0E2CDM=GS1.1.1732220597.2.1.1732220871.0.0.0',
-    `Priority` = 'u=0, i',
-    `Referer` = 'https://kenpom.com/',
+    `Priority` = "u=0, i",
+    `Referer` = "https://kenpom.com/",
     `Sec-Ch-Ua` = '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
     `Sec-Ch-Ua-Mobile` = "?0",
     `Sec-Ch-Ua-Platform` = '"Windows"',
@@ -109,161 +104,176 @@ request_with_proxy <- function(url,
   return(headers)
 }
 
-nbagl_live_endpoint <- function(endpoint){
-  base_url = glue::glue('https://cdn-gleague.nba.com/static/json/liveData/{endpoint}')
+nbagl_live_endpoint <- function(endpoint) {
+  base_url <- glue::glue("https://cdn-gleague.nba.com/static/json/liveData/{endpoint}")
   return(base_url)
 }
 
-nba_live_endpoint <- function(endpoint){
-  base_url = glue::glue('https://cdn.nba.com/static/json/liveData/{endpoint}')
+nba_live_endpoint <- function(endpoint) {
+  base_url <- glue::glue("https://cdn.nba.com/static/json/liveData/{endpoint}")
   return(base_url)
 }
 
-nba_endpoint <- function(endpoint){
-  all_endpoints = c(
-    'alltimeleadersgrids',
-    'assistleaders',
-    'assisttracker',
-    'boxscoreadvancedv2',
-    'boxscoredefensive',
-    'boxscorefourfactorsv2',
-    'boxscorematchups',
-    'boxscoremiscv2',
-    'boxscoreplayertrackv2',
-    'boxscorescoringv2',
-    'boxscoresimilarityscore',
-    'boxscoresummaryv2',
-    'boxscoretraditionalv2',
-    'boxscoreusagev2',
-    'commonallplayers',
-    'commonplayerinfo',
-    'commonplayoffseries',
-    'commonteamroster',
-    'commonteamyears',
-    'cumestatsplayer',
-    'cumestatsplayergames',
-    'cumestatsteam',
-    'cumestatsteamgames',
-    'defensehub',
-    'draftboard',
-    'draftcombinedrillresults',
-    'draftcombinenonstationaryshooting',
-    'draftcombineplayeranthro',
-    'draftcombinespotshooting',
-    'draftcombinestats',
-    'drafthistory',
-    'fantasywidget',
-    'franchisehistory',
-    'franchiseleaders',
-    'franchiseplayers',
-    'gamerotation',
-    'glalumboxscoresimilarityscore',
-    'homepageleaders',
-    'homepagev2',
-    'hustlestatsboxscore',
-    'infographicfanduelplayer',
-    'leaderstiles',
-    'leaguedashlineups',
-    'leaguedashplayerbiostats',
-    'leaguedashplayerclutch',
-    'leaguedashplayerptshot',
-    'leaguedashplayershotlocations',
-    'leaguedashplayerstats',
-    'leaguedashptdefend',
-    'leaguedashptstats',
-    'leaguedashptteamdefend',
-    'leaguedashteamclutch',
-    'leaguedashoppptshot',
-    'leaguedashteamptshot',
-    'leaguedashteamshotlocations',
-    'leaguedashteamstats',
-    'leaguegamefinder',
-    'leaguegamelog',
-    'leaguehustlestatsplayer',
-    'leaguehustlestatsplayerleaders',
-    'leaguehustlestatsteam',
-    'leaguehustlestatsteamleaders',
-    'leagueleaders',
-    'leaguelineupviz',
-    'leagueplayerondetails',
-    'leagueseasonmatchups',
-    'leaguestandings',
-    'leaguestandingsv3',
-    'matchupsrollup',
-    'playbyplay',#d
-    'playbyplayv2',#d
-    'playbyplayv3',
-    'playerawards',
-    'playercareerbycollege',
-    'playercareerbycollegerollup',
-    'playercareerstats',
-    'playercompare',
-    'playerdashptpass',
-    'playerdashptreb',
-    'playerdashptshotdefend',
-    'playerdashptshots',
-    'playerdashboardbyclutch',
-    'playerdashboardbygamesplits',
-    'playerdashboardbygeneralsplits',
-    'playerdashboardbylastngames',
-    'playerdashboardbyopponent',
-    'playerdashboardbyshootingsplits',
-    'playerdashboardbyteamperformance',
-    'playerdashboardbyyearoveryear',
-    'playerestimatedmetrics',
-    'playerfantasyprofile',
-    'playerfantasyprofilebargraph',
-    'playergamelog',
-    'playergamelogs',
-    'playergamestreakfinder',
-    'playernextngames',
-    'playerprofilev2',
-    'playervsplayer',
-    'playoffpicture',
-    'scoreboard',
-    'scoreboardv2',
-    'shotchartdetail',
-    'shotchartleaguewide',
-    'shotchartlineupdetail',
-    'synergyplaytypes',
-    'teamandplayersvsplayers',
-    'teamdashlineups',
-    'teamdashptpass',
-    'teamdashptreb',
-    'teamdashptshots',
-    'teamdashboardbyclutch',
-    'teamdashboardbygamesplits',
-    'teamdashboardbygeneralsplits',
-    'teamdashboardbylastngames',
-    'teamdashboardbyopponent',
-    'teamdashboardbyshootingsplits',
-    'teamdashboardbyteamperformance',
-    'teamdashboardbyyearoveryear',
-    'teamdetails',
-    'teamestimatedmetrics',
-    'teamgamelog',
-    'teamgamelogs',
-    'teamgamestreakfinder',
-    'teamhistoricalleaders',
-    'teaminfocommon',
-    'teamplayerdashboard',
-    'teamplayeronoffdetails',
-    'teamplayeronoffsummary',
-    'teamvsplayer',
-    'teamyearbyyearstats',
-    'videodetails',
-    'videoevents',
-    'videostatus',
-    'winprobabilitypbp'
+nba_endpoint <- function(endpoint) {
+  all_endpoints <- c(
+    "alltimeleadersgrids",
+    "assistleaders",
+    "assisttracker",
+    "boxscoreadvancedv2",
+    "boxscoredefensive",
+    "boxscorefourfactorsv2",
+    "boxscorematchups",
+    "boxscoremiscv2",
+    "boxscoreplayertrackv2",
+    "boxscorescoringv2",
+    "boxscoresimilarityscore",
+    "boxscoresummaryv2",
+    "boxscoresummaryv3",
+    "boxscoretraditionalv2",
+    "boxscoretraditionalv3",
+    "boxscoreadvancedv3",
+    "boxscoremiscv3",
+    "boxscorescoringv3",
+    "boxscoreusagev3",
+    "boxscorefourfactorsv3",
+    "boxscoreplayertrackv3",
+    "boxscorematchupsv3",
+    "boxscoredefensivev2",
+    "boxscorehustlev2",
+    "commonallplayers",
+    "commonplayerinfo",
+    "commonplayoffseries",
+    "commonteamroster",
+    "commonteamyears",
+    "cumestatsplayer",
+    "cumestatsplayergames",
+    "cumestatsteam",
+    "cumestatsteamgames",
+    "defensehub",
+    "draftboard",
+    "dunkscoreleaders",
+    "draftcombinedrillresults",
+    "draftcombinenonstationaryshooting",
+    "draftcombineplayeranthro",
+    "draftcombinespotshooting",
+    "draftcombinestats",
+    "drafthistory",
+    "fantasywidget",
+    "franchisehistory",
+    "franchiseleaders",
+    "gravityleaders",
+    "franchiseplayers",
+    "gamerotation",
+    "glalumboxscoresimilarityscore",
+    "homepageleaders",
+    "homepagev2",
+    "hustlestatsboxscore",
+    "infographicfanduelplayer",
+    "iststandings",
+    "leaderstiles",
+    "leaguedashlineups",
+    "leaguedashplayerbiostats",
+    "leaguedashplayerclutch",
+    "leaguedashplayerptshot",
+    "leaguedashplayershotlocations",
+    "leaguedashplayerstats",
+    "leaguedashptdefend",
+    "leaguedashptstats",
+    "leaguedashptteamdefend",
+    "leaguedashteamclutch",
+    "leaguedashoppptshot",
+    "leaguedashteamptshot",
+    "leaguedashteamshotlocations",
+    "leaguedashteamstats",
+    "leaguegamefinder",
+    "leaguegamelog",
+    "leaguehustlestatsplayer",
+    "leaguehustlestatsplayerleaders",
+    "leaguehustlestatsteam",
+    "leaguehustlestatsteamleaders",
+    "leagueleaders",
+    "leaguelineupviz",
+    "leagueplayerondetails",
+    "leagueseasonmatchups",
+    "leaguestandings",
+    "leaguestandingsv3",
+    "matchupsrollup",
+    "playbyplay", # d
+    "playbyplayv2", # d
+    "playbyplayv3",
+    "playerawards",
+    "playercareerbycollege",
+    "playercareerbycollegerollup",
+    "playercareerstats",
+    "playercompare",
+    "playerdashptpass",
+    "playerdashptreb",
+    "playerdashptshotdefend",
+    "playerdashptshots",
+    "playerdashboardbyclutch",
+    "playerdashboardbygamesplits",
+    "playerdashboardbygeneralsplits",
+    "playerdashboardbylastngames",
+    "playerdashboardbyopponent",
+    "playerdashboardbyshootingsplits",
+    "playerdashboardbyteamperformance",
+    "playerdashboardbyyearoveryear",
+    "playerestimatedmetrics",
+    "playerfantasyprofile",
+    "playerfantasyprofilebargraph",
+    "playergamelog",
+    "playergamelogs",
+    "playergamestreakfinder",
+    "playernextngames",
+    "playerprofilev2",
+    "playervsplayer",
+    "playoffpicture",
+    "scheduleleaguev2int",
+    "scoreboard",
+    "scoreboardv2",
+    "shotchartdetail",
+    "shotchartleaguewide",
+    "shotchartlineupdetail",
+    "synergyplaytypes",
+    "teamandplayersvsplayers",
+    "teamdashlineups",
+    "teamdashptpass",
+    "teamdashptreb",
+    "teamdashptshots",
+    "teamdashboardbyclutch",
+    "teamdashboardbygamesplits",
+    "teamdashboardbygeneralsplits",
+    "teamdashboardbylastngames",
+    "teamdashboardbyopponent",
+    "teamdashboardbyshootingsplits",
+    "teamdashboardbyteamperformance",
+    "teamdashboardbyyearoveryear",
+    "teamdetails",
+    "teamestimatedmetrics",
+    "teamgamelog",
+    "teamgamelogs",
+    "teamgamestreakfinder",
+    "teamhistoricalleaders",
+    "teaminfocommon",
+    "teamplayerdashboard",
+    "teamplayeronoffdetails",
+    "teamplayeronoffsummary",
+    "teamvsplayer",
+    "teamyearbyyearstats",
+    "videodetails",
+    "videoevents",
+    "videoeventsasset",
+    "videostatus",
+    "winprobabilitypbp"
   )
-  base_url = glue::glue('https://stats.nba.com/stats/{endpoint}')
+  base_url <- glue::glue("https://stats.nba.com/stats/{endpoint}")
   return(base_url)
 }
 
 
 nba_stats_map_result_sets <- function(resp) {
   if ("resultSets" %in% names(resp)) {
-    df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+    df_list <- purrr::map(1:length(resp$resultSets$name), function(x) {
       data <- resp$resultSets$rowSet[[x]] %>%
         data.frame(stringsAsFactors = F) %>%
         dplyr::as_tibble()
@@ -275,7 +285,7 @@ nba_stats_map_result_sets <- function(resp) {
     names(df_list) <- resp$resultSets$name
     return(df_list)
   } else {
-    df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+    df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
       data <- resp$resultSet$rowSet[[x]] %>%
         data.frame(stringsAsFactors = F) %>%
         dplyr::as_tibble()
@@ -321,35 +331,36 @@ pad_time <- function(time = 1) {
 #' @importFrom dplyr mutate filter select left_join
 #' @importFrom stringr str_detect
 #' @importFrom tidyr everything
-rejoin_schedules <- function(df){
+rejoin_schedules <- function(df) {
   df <- df %>%
     dplyr::mutate(
-      HOME_AWAY = ifelse(stringr::str_detect(.data$MATCHUP,"@"),"AWAY","HOME")) %>%
-    dplyr::select(-"WL","MATCHUP", tidyr::everything())
+      HOME_AWAY = ifelse(stringr::str_detect(.data$MATCHUP, "@"), "AWAY", "HOME")
+    ) %>%
+    dplyr::select(-"WL", "MATCHUP", tidyr::everything())
   away_df <- df %>%
     dplyr::filter(.data$HOME_AWAY == "AWAY") %>%
     dplyr::select(-"HOME_AWAY") %>%
     dplyr::select("SEASON_ID", "GAME_ID", "GAME_DATE", "MATCHUP", tidyr::everything())
-  colnames(away_df)[5:ncol(away_df)]<-paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
+  colnames(away_df)[5:ncol(away_df)] <- paste0("AWAY_", colnames(away_df)[5:ncol(away_df)])
   home_df <- df %>%
     dplyr::filter(.data$HOME_AWAY == "HOME") %>%
     dplyr::select(-"HOME_AWAY", -"MATCHUP") %>%
     dplyr::select("SEASON_ID", "GAME_ID", "GAME_DATE", tidyr::everything())
-  colnames(home_df)[4:ncol(home_df)]<-paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
+  colnames(home_df)[4:ncol(home_df)] <- paste0("HOME_", colnames(home_df)[4:ncol(home_df)])
   sched_df <- away_df %>%
-    dplyr::left_join(home_df, by=c("GAME_ID", "SEASON_ID", "GAME_DATE"))
+    dplyr::left_join(home_df, by = c("GAME_ID", "SEASON_ID", "GAME_DATE"))
   return(sched_df)
 }
 
-.ncaa_headers <- function(url){
+.ncaa_headers <- function(url) {
   headers <- c(
-    `Host` = 'stats.ncaa.org',
-    `User-Agent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
-    `Accept` = 'application/json, text/html, text/plain, */*',
-    `Accept-Language` = 'en-US,en;q=0.5',
-    `Accept-Encoding` = 'gzip, deflate, br',
-    `Pragma` = 'no-cache',
-    `Cache-Control` = 'no-cache'
+    `Host` = "stats.ncaa.org",
+    `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+    `Accept` = "application/json, text/html, text/plain, */*",
+    `Accept-Language` = "en-US,en;q=0.5",
+    `Accept-Encoding` = "gzip, deflate, br",
+    `Pragma` = "no-cache",
+    `Cache-Control` = "no-cache"
   )
   return(headers)
 }

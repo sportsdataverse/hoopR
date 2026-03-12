@@ -211,7 +211,7 @@ year_to_season <- function(year) {
 #' **Clean KenPom Data Frame Team Names to match NCAA Team Names for easier merging**
 #' @keywords Util
 #' @param df KenPom dataframe
-#' @importFrom rlang := .data
+#' @importFrom rlang := .data %||%
 #' @importFrom data.table setDT
 #'
 clean_team_names_NCAA_merge <- function(df){
@@ -357,4 +357,3 @@ rbindlist_with_attrs <- function(dflist){
   # class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
   out
 }
-

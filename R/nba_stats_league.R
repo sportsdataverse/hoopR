@@ -92,6 +92,8 @@ nba_leaguegamelog <- function(
     Sorter = sorter
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -242,6 +244,8 @@ nba_leaguestandings <- function(
     SeasonType = season_type,
     SeasonYear = season_year
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -400,6 +404,8 @@ nba_leaguestandingsv3 <- function(
     SeasonType = season_type,
     SeasonYear = season_year
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -577,6 +583,8 @@ nba_playoffpicture <- function(
     LeagueID = league_id,
     SeasonID = season_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -927,6 +935,8 @@ nba_leaguegamefinder <- function(
     YearsExperience = years_experience
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -937,6 +947,137 @@ nba_leaguegamefinder <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league game finder data available for the given parameters!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API In-Season Tournament Standings**
+#' @name nba_iststandings
+NULL
+#' @title
+#' **Get NBA Stats API In-Season Tournament Standings**
+#' @rdname nba_iststandings
+#' @author Saiem Gilani
+#' @param league_id league_id
+#' @param season season
+#' @param section section
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: Standings
+#'
+#'    **Standings**
+#'
+#'
+#'    |col_name                       |types     |
+#'    |:------------------------------|:---------|
+#'    |league_id                      |character |
+#'    |season_year                    |character |
+#'    |team_id                        |character |
+#'    |team_city                      |character |
+#'    |team_name                      |character |
+#'    |team_abbreviation              |character |
+#'    |team_slug                      |character |
+#'    |conference                     |character |
+#'    |ist_group                      |character |
+#'    |clinch_indicator               |character |
+#'    |clinched_ist_knockout          |character |
+#'    |clinched_ist_group             |character |
+#'    |clinched_ist_wildcard          |character |
+#'    |ist_wildcard_rank              |character |
+#'    |ist_group_rank                 |character |
+#'    |ist_knockout_rank              |character |
+#'    |wins                           |character |
+#'    |losses                         |character |
+#'    |pct                            |character |
+#'    |ist_group_gb                   |character |
+#'    |ist_wildcard_gb                |character |
+#'    |diff                           |character |
+#'    |pts                            |character |
+#'    |opp_pts                        |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA League Functions
+#' @details
+#' ```r
+#'  nba_iststandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#' ```
+nba_iststandings <- function(
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    section = 'group',
+    ...){
+
+  version <- "iststandings"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    Section = section
+  )
+
+  df_list <- list()
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      teams <- resp %>%
+        purrr::pluck("teams")
+
+      if (length(teams) > 0) {
+        league_id_val <- resp$leagueId %||% NA_character_
+        season_year_val <- resp$seasonYear %||% NA_character_
+
+        base_cols <- setdiff(colnames(teams), "games")
+        base_data <- teams[, base_cols, drop = FALSE]
+
+        if ("games" %in% colnames(teams)) {
+          games_wide <- do.call(rbind, lapply(seq_len(nrow(teams)), function(i) {
+            g <- teams$games[[i]]
+            if (is.data.frame(g) && nrow(g) > 0) {
+              do.call(cbind, lapply(seq_len(nrow(g)), function(j) {
+                row_data <- as.list(g[j, ])
+                num <- row_data$gameNumber %||% j
+                row_data$gameNumber <- NULL
+                names(row_data) <- paste0(names(row_data), num)
+                data.frame(lapply(row_data, as.character), stringsAsFactors = FALSE)
+              }))
+            } else {
+              data.frame(row.names = 1)
+            }
+          }))
+          base_data <- dplyr::bind_cols(base_data, games_wide)
+        }
+
+        data <- base_data %>%
+          dplyr::mutate(
+            leagueId = as.character(league_id_val),
+            seasonYear = as.character(season_year_val)
+          ) %>%
+          dplyr::as_tibble() %>%
+          dplyr::mutate(dplyr::across(dplyr::everything(), as.character)) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("IST Standings from NBA.com", Sys.time())
+      } else {
+        data <- dplyr::tibble()
+      }
+
+      df_list <- c(list(data))
+      names(df_list) <- c("Standings")
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no IST standings data for {season} available!"))
     },
     warning = function(w) {
     },

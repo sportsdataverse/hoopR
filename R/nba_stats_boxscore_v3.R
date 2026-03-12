@@ -311,14 +311,13 @@ NULL
 #'  nba_boxscoretraditionalv3(game_id = "0022200021")
 #' ```
 nba_boxscoretraditionalv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoretraditionalv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -332,9 +331,10 @@ nba_boxscoretraditionalv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -343,7 +343,7 @@ nba_boxscoretraditionalv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -471,7 +471,6 @@ nba_boxscoretraditionalv3 <- function(
         "home_team_bench_totals",
         "away_team_bench_totals"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no traditional boxscore v3 data for {game_id} available!"))
@@ -677,14 +676,13 @@ NULL
 #'  nba_boxscoreadvancedv3(game_id = "0022200021")
 #' ```
 nba_boxscoreadvancedv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoreadvancedv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -698,9 +696,10 @@ nba_boxscoreadvancedv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -709,7 +708,7 @@ nba_boxscoreadvancedv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -789,7 +788,6 @@ nba_boxscoreadvancedv3 <- function(
         "home_team_totals_advanced",
         "away_team_totals_advanced"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no advanced boxscore v3 data for {game_id} available!"))
@@ -954,14 +952,13 @@ NULL
 #'  nba_boxscoremiscv3(game_id = "0022200021")
 #' ```
 nba_boxscoremiscv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoremiscv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -975,9 +972,10 @@ nba_boxscoremiscv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -986,7 +984,7 @@ nba_boxscoremiscv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -1066,7 +1064,6 @@ nba_boxscoremiscv3 <- function(
         "home_team_totals_misc",
         "away_team_totals_misc"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no misc boxscore v3 data for {game_id} available!"))
@@ -1242,14 +1239,13 @@ NULL
 #'  nba_boxscorescoringv3(game_id = "0022200021")
 #' ```
 nba_boxscorescoringv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscorescoringv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1263,9 +1259,10 @@ nba_boxscorescoringv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -1274,7 +1271,7 @@ nba_boxscorescoringv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -1354,7 +1351,6 @@ nba_boxscorescoringv3 <- function(
         "home_team_totals_scoring",
         "away_team_totals_scoring"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoring boxscore v3 data for {game_id} available!"))
@@ -1542,14 +1538,13 @@ NULL
 #'  nba_boxscoreusagev3(game_id = "0022200021")
 #' ```
 nba_boxscoreusagev3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoreusagev3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1563,9 +1558,10 @@ nba_boxscoreusagev3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -1574,7 +1570,7 @@ nba_boxscoreusagev3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -1654,7 +1650,6 @@ nba_boxscoreusagev3 <- function(
         "home_team_totals_usage",
         "away_team_totals_usage"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no usage boxscore v3 data for {game_id} available!"))
@@ -1803,14 +1798,13 @@ NULL
 #'  nba_boxscorefourfactorsv3(game_id = "0022200021")
 #' ```
 nba_boxscorefourfactorsv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscorefourfactorsv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1824,9 +1818,10 @@ nba_boxscorefourfactorsv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -1835,7 +1830,7 @@ nba_boxscorefourfactorsv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -1915,7 +1910,6 @@ nba_boxscorefourfactorsv3 <- function(
         "home_team_totals_four_factors",
         "away_team_totals_four_factors"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no four factors boxscore v3 data for {game_id} available!"))
@@ -2109,14 +2103,13 @@ NULL
 #'  nba_boxscoreplayertrackv3(game_id = "0022200021")
 #' ```
 nba_boxscoreplayertrackv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoreplayertrackv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2130,9 +2123,10 @@ nba_boxscoreplayertrackv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -2141,7 +2135,7 @@ nba_boxscoreplayertrackv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -2221,7 +2215,6 @@ nba_boxscoreplayertrackv3 <- function(
         "home_team_totals_player_track",
         "away_team_totals_player_track"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player tracking boxscore v3 data for {game_id} available!"))
@@ -2368,14 +2361,13 @@ NULL
 #'  nba_boxscorematchupsv3(game_id = "0022200021")
 #' ```
 nba_boxscorematchupsv3 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscorematchupsv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2389,9 +2381,10 @@ nba_boxscorematchupsv3 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -2400,7 +2393,7 @@ nba_boxscorematchupsv3 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -2458,7 +2451,6 @@ nba_boxscorematchupsv3 <- function(
         "home_team_player_matchups",
         "away_team_player_matchups"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no matchups boxscore v3 data for {game_id} available!"))
@@ -2633,9 +2625,8 @@ NULL
 #'  nba_boxscorehustlev2(game_id = "0022200021")
 #' ```
 nba_boxscorehustlev2 <- function(
-    game_id = '0022200021',
-    ...){
-
+    game_id = "0022200021",
+    ...) {
   version <- "boxscorehustlev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2643,9 +2634,10 @@ nba_boxscorehustlev2 <- function(
   params <- list(
     GameID = pad_id(game_id)
   )
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       box_score_hustle <- resp %>%
@@ -2653,7 +2645,7 @@ nba_boxscorehustlev2 <- function(
 
       ids_df <- box_score_hustle %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_hustle <- box_score_hustle %>%
@@ -2732,8 +2724,6 @@ nba_boxscorehustlev2 <- function(
         "home_team_totals_hustle",
         "away_team_totals_hustle"
       )
-
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no hustle stats boxscore v2 data for {game_id} available!"))
@@ -2875,14 +2865,13 @@ NULL
 #'  nba_boxscoredefensivev2(game_id = "0022200021")
 #' ```
 nba_boxscoredefensivev2 <- function(
-    game_id = '0022200021',
+    game_id = "0022200021",
     start_period = 0,
     end_period = 14,
     start_range = 0,
     end_range = 0,
     range_type = 0,
-    ...){
-
+    ...) {
   version <- "boxscoredefensivev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2896,9 +2885,10 @@ nba_boxscoredefensivev2 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp %>%
@@ -2907,7 +2897,7 @@ nba_boxscoredefensivev2 <- function(
 
       ids_df <- data %>%
         data.frame() %>%
-        dplyr::select("gameId","awayTeamId","homeTeamId") %>%
+        dplyr::select("gameId", "awayTeamId", "homeTeamId") %>%
         dplyr::distinct()
 
       home_team_data <- data %>%
@@ -2987,7 +2977,6 @@ nba_boxscoredefensivev2 <- function(
         "home_team_totals_defensive",
         "away_team_totals_defensive"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no defensive boxscore v2 data for {game_id} available!"))
@@ -3062,10 +3051,9 @@ NULL
 #' ```
 nba_gamerotation <- function(
     game_id,
-    league_id = '00',
-    rotation_stat = 'PLAYER_PTS',
-    ...){
-
+    league_id = "00",
+    rotation_stat = "PLAYER_PTS",
+    ...) {
   version <- "gamerotation"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -3076,12 +3064,13 @@ nba_gamerotation <- function(
     RotationStat = rotation_stat
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+      df_list <- purrr::map(1:length(resp$resultSets$name), function(x) {
         data <- resp$resultSets$rowSet[[x]] %>%
           data.frame(stringsAsFactors = F) %>%
           as_tibble()
@@ -3101,4 +3090,466 @@ nba_gamerotation <- function(
     }
   )
   return(df_list)
+}
+
+
+#' **Get NBA Stats API Boxscore Summary V3**
+#' @name nba_boxscoresummaryv3
+NULL
+#' @title
+#' **Get NBA Stats API Boxscore Summary V3**
+#' @rdname nba_boxscoresummaryv3
+#' @author Saiem Gilani
+#' @param game_id Game ID
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return A named list of data frames:
+#' GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
+#' InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
+#'
+#'    **GameSummary**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |game_code         |character |
+#'    |game_status       |integer   |
+#'    |game_status_text  |character |
+#'    |period            |integer   |
+#'    |game_clock        |character |
+#'    |game_time_utc     |character |
+#'    |game_et           |character |
+#'    |away_team_id      |integer   |
+#'    |home_team_id      |integer   |
+#'    |duration          |integer   |
+#'    |attendance        |integer   |
+#'    |sellout           |character |
+#'
+#'    **GameInfo**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |game_date         |character |
+#'    |attendance        |integer   |
+#'    |game_duration     |integer   |
+#'
+#'    **ArenaInfo**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |arena_id          |integer   |
+#'    |arena_name        |character |
+#'    |arena_city        |character |
+#'    |arena_state       |character |
+#'    |arena_country     |character |
+#'    |arena_timezone    |character |
+#'
+#'    **Officials**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |person_id         |integer   |
+#'    |name              |character |
+#'    |name_i            |character |
+#'    |first_name        |character |
+#'    |family_name       |character |
+#'    |jersey_num        |character |
+#'
+#'    **LineScore**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |team_id           |integer   |
+#'    |team_city         |character |
+#'    |team_name         |character |
+#'    |team_tricode      |character |
+#'    |team_slug         |character |
+#'    |team_wins         |integer   |
+#'    |team_losses       |integer   |
+#'    |period1_score     |integer   |
+#'    |period2_score     |integer   |
+#'    |period3_score     |integer   |
+#'    |period4_score     |integer   |
+#'    |score             |integer   |
+#'
+#'    **InactivePlayers**
+#'
+#'
+#'    |col_name          |types     |
+#'    |:-----------------|:---------|
+#'    |game_id           |character |
+#'    |team_id           |integer   |
+#'    |person_id         |integer   |
+#'    |first_name        |character |
+#'    |family_name       |character |
+#'    |jersey_num        |character |
+#'
+#'    **LastFiveMeetings**
+#'
+#'
+#'    |col_name            |types     |
+#'    |:-------------------|:---------|
+#'    |recency_order       |integer   |
+#'    |game_id             |character |
+#'    |game_time_utc       |character |
+#'    |game_et             |character |
+#'    |game_status         |integer   |
+#'    |game_status_text    |character |
+#'    |away_team_id        |integer   |
+#'    |away_team_city      |character |
+#'    |away_team_name      |character |
+#'    |away_team_tricode   |character |
+#'    |away_team_score     |integer   |
+#'    |away_team_wins      |integer   |
+#'    |away_team_losses    |integer   |
+#'    |home_team_id        |integer   |
+#'    |home_team_city      |character |
+#'    |home_team_name      |character |
+#'    |home_team_tricode   |character |
+#'    |home_team_score     |integer   |
+#'    |home_team_wins      |integer   |
+#'    |home_team_losses    |integer   |
+#'
+#'    **OtherStats**
+#'
+#'
+#'    |col_name                      |types     |
+#'    |:-----------------------------|:---------|
+#'    |game_id                       |character |
+#'    |team_id                       |integer   |
+#'    |team_city                     |character |
+#'    |team_name                     |character |
+#'    |team_tricode                  |character |
+#'    |points                        |integer   |
+#'    |rebounds_total                |integer   |
+#'    |assists                       |integer   |
+#'    |steals                        |integer   |
+#'    |blocks                        |integer   |
+#'    |turnovers                     |integer   |
+#'    |field_goals_percentage        |numeric   |
+#'    |three_pointers_percentage     |numeric   |
+#'    |free_throws_percentage        |numeric   |
+#'    |points_in_the_paint           |integer   |
+#'    |points_second_chance          |integer   |
+#'    |points_fast_break             |integer   |
+#'    |biggest_lead                  |integer   |
+#'    |lead_changes                  |integer   |
+#'    |times_tied                    |integer   |
+#'    |biggest_scoring_run           |integer   |
+#'    |turnovers_team                |integer   |
+#'    |turnovers_total               |integer   |
+#'    |rebounds_team                 |integer   |
+#'    |points_from_turnovers         |integer   |
+#'    |bench_points                  |integer   |
+#'
+#'    **AvailableVideo**
+#'
+#'
+#'    |col_name              |types     |
+#'    |:---------------------|:---------|
+#'    |game_id               |character |
+#'    |video_available_flag  |integer   |
+#'    |pt_available          |integer   |
+#'    |pt_xyz_available      |integer   |
+#'    |wh_status             |integer   |
+#'    |hustle_status         |integer   |
+#'    |historical_status     |integer   |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Boxscore V3 Functions
+#' @details
+#' ```r
+#'  nba_boxscoresummaryv3(game_id = "0022200021")
+#' ```
+nba_boxscoresummaryv3 <- function(
+    game_id = "0022200021",
+    ...) {
+  version <- "boxscoresummaryv3"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    GameID = pad_id(game_id)
+  )
+
+  tryCatch(
+    expr = {
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      summary_data <- resp %>%
+        purrr::pluck("boxScoreSummary")
+
+      game_id_val <- summary_data$gameId
+
+      # GameSummary
+      game_summary <- data.frame(
+        gameId = game_id_val,
+        gameCode = summary_data$gameCode %||% NA_character_,
+        gameStatus = summary_data$gameStatus %||% NA_integer_,
+        gameStatusText = summary_data$gameStatusText %||% NA_character_,
+        period = summary_data$period %||% NA_integer_,
+        gameClock = summary_data$gameClock %||% NA_character_,
+        gameTimeUTC = summary_data$gameTimeUTC %||% NA_character_,
+        gameEt = summary_data$gameEt %||% NA_character_,
+        awayTeamId = summary_data$awayTeamId %||% NA_integer_,
+        homeTeamId = summary_data$homeTeamId %||% NA_integer_,
+        duration = summary_data$duration %||% NA_integer_,
+        attendance = summary_data$attendance %||% NA_integer_,
+        sellout = summary_data$sellout %||% NA_character_,
+        stringsAsFactors = FALSE
+      ) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Game Summary from NBA.com", Sys.time())
+
+      # GameInfo
+      game_info <- data.frame(
+        gameId = game_id_val,
+        gameDate = summary_data$gameEt %||% NA_character_,
+        attendance = summary_data$attendance %||% NA_integer_,
+        gameDuration = summary_data$duration %||% NA_integer_,
+        stringsAsFactors = FALSE
+      ) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Game Info from NBA.com", Sys.time())
+
+      # ArenaInfo
+      arena <- summary_data$arena %||% list()
+      arena_info <- data.frame(
+        gameId = game_id_val,
+        arenaId = arena$arenaId %||% NA_integer_,
+        arenaName = arena$arenaName %||% NA_character_,
+        arenaCity = arena$arenaCity %||% NA_character_,
+        arenaState = arena$arenaState %||% NA_character_,
+        arenaCountry = arena$arenaCountry %||% NA_character_,
+        arenaTimezone = arena$arenaTimezone %||% NA_character_,
+        stringsAsFactors = FALSE
+      ) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Arena Info from NBA.com", Sys.time())
+
+      # Officials
+      officials_list <- summary_data$officials %||% list()
+      if (length(officials_list) > 0) {
+        officials <- data.frame(officials_list, stringsAsFactors = FALSE) %>%
+          dplyr::as_tibble() %>%
+          dplyr::mutate(gameId = game_id_val) %>%
+          dplyr::select("gameId", dplyr::everything()) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Officials from NBA.com", Sys.time())
+      } else {
+        officials <- dplyr::tibble(
+          game_id = character(),
+          person_id = integer(),
+          name = character(),
+          name_i = character(),
+          first_name = character(),
+          family_name = character(),
+          jersey_num = character()
+        ) %>%
+          make_hoopR_data("NBA Officials from NBA.com", Sys.time())
+      }
+
+      # LineScore - extract home and away
+      line_score_rows <- list()
+      for (team_key in c("homeTeam", "awayTeam")) {
+        team <- summary_data[[team_key]] %||% list()
+        periods <- team$periods %||% list()
+        period_scores <- c(NA_integer_, NA_integer_, NA_integer_, NA_integer_)
+        if (length(periods) > 0) {
+          for (p in periods) {
+            pnum <- p$period %||% 0
+            if (pnum >= 1 && pnum <= 4) {
+              period_scores[pnum] <- p$score %||% NA_integer_
+            }
+          }
+        }
+        line_score_rows[[team_key]] <- data.frame(
+          gameId = game_id_val,
+          teamId = team$teamId %||% NA_integer_,
+          teamCity = team$teamCity %||% NA_character_,
+          teamName = team$teamName %||% NA_character_,
+          teamTricode = team$teamTricode %||% NA_character_,
+          teamSlug = team$teamSlug %||% NA_character_,
+          teamWins = team$teamWins %||% NA_integer_,
+          teamLosses = team$teamLosses %||% NA_integer_,
+          period1Score = period_scores[1],
+          period2Score = period_scores[2],
+          period3Score = period_scores[3],
+          period4Score = period_scores[4],
+          score = team$score %||% NA_integer_,
+          stringsAsFactors = FALSE
+        )
+      }
+      line_score <- dplyr::bind_rows(line_score_rows) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Line Score from NBA.com", Sys.time())
+
+      # InactivePlayers
+      inactive_rows <- list()
+      for (team_key in c("homeTeam", "awayTeam")) {
+        team <- summary_data[[team_key]] %||% list()
+        team_id <- team$teamId %||% NA_integer_
+        inactives <- team$inactives %||% list()
+        if (length(inactives) > 0) {
+          for (inactive in inactives) {
+            inactive_rows[[length(inactive_rows) + 1]] <- data.frame(
+              gameId = game_id_val,
+              teamId = team_id,
+              personId = inactive$personId %||% NA_integer_,
+              firstName = inactive$firstName %||% NA_character_,
+              familyName = inactive$familyName %||% NA_character_,
+              jerseyNum = inactive$jerseyNum %||% NA_character_,
+              stringsAsFactors = FALSE
+            )
+          }
+        }
+      }
+      if (length(inactive_rows) > 0) {
+        inactive_players <- dplyr::bind_rows(inactive_rows) %>%
+          dplyr::as_tibble() %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Inactive Players from NBA.com", Sys.time())
+      } else {
+        inactive_players <- dplyr::tibble(
+          game_id = character(),
+          team_id = integer(),
+          person_id = integer(),
+          first_name = character(),
+          family_name = character(),
+          jersey_num = character()
+        ) %>%
+          make_hoopR_data("NBA Inactive Players from NBA.com", Sys.time())
+      }
+
+      # LastFiveMeetings
+      meetings <- summary_data$lastFiveMeetings$meetings %||% list()
+      if (length(meetings) > 0) {
+        meeting_rows <- lapply(meetings, function(meeting) {
+          away <- meeting$awayTeam %||% list()
+          home <- meeting$homeTeam %||% list()
+          data.frame(
+            recencyOrder = meeting$recencyOrder %||% NA_integer_,
+            gameId = meeting$gameId %||% NA_character_,
+            gameTimeUTC = meeting$gameTimeUTC %||% NA_character_,
+            gameEt = meeting$gameEt %||% NA_character_,
+            gameStatus = meeting$gameStatus %||% NA_integer_,
+            gameStatusText = meeting$gameStatusText %||% NA_character_,
+            awayTeamId = away$teamId %||% NA_integer_,
+            awayTeamCity = away$teamCity %||% NA_character_,
+            awayTeamName = away$teamName %||% NA_character_,
+            awayTeamTricode = away$teamTricode %||% NA_character_,
+            awayTeamScore = away$score %||% NA_integer_,
+            awayTeamWins = away$wins %||% NA_integer_,
+            awayTeamLosses = away$losses %||% NA_integer_,
+            homeTeamId = home$teamId %||% NA_integer_,
+            homeTeamCity = home$teamCity %||% NA_character_,
+            homeTeamName = home$teamName %||% NA_character_,
+            homeTeamTricode = home$teamTricode %||% NA_character_,
+            homeTeamScore = home$score %||% NA_integer_,
+            homeTeamWins = home$wins %||% NA_integer_,
+            homeTeamLosses = home$losses %||% NA_integer_,
+            stringsAsFactors = FALSE
+          )
+        })
+        last_five_meetings <- dplyr::bind_rows(meeting_rows) %>%
+          dplyr::as_tibble() %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Last Five Meetings from NBA.com", Sys.time())
+      } else {
+        last_five_meetings <- dplyr::tibble() %>%
+          make_hoopR_data("NBA Last Five Meetings from NBA.com", Sys.time())
+      }
+
+      # OtherStats (postgameCharts)
+      postgame <- summary_data$postgameCharts %||% list()
+      other_rows <- list()
+      for (team_key in c("homeTeam", "awayTeam")) {
+        team <- postgame[[team_key]] %||% list()
+        stats <- team$statistics %||% list()
+        other_rows[[team_key]] <- data.frame(
+          gameId = game_id_val,
+          teamId = team$teamId %||% NA_integer_,
+          teamCity = team$teamCity %||% NA_character_,
+          teamName = team$teamName %||% NA_character_,
+          teamTricode = team$teamTricode %||% NA_character_,
+          points = stats$points %||% NA_integer_,
+          reboundsTotal = stats$reboundsTotal %||% NA_integer_,
+          assists = stats$assists %||% NA_integer_,
+          steals = stats$steals %||% NA_integer_,
+          blocks = stats$blocks %||% NA_integer_,
+          turnovers = stats$turnovers %||% NA_integer_,
+          fieldGoalsPercentage = stats$fieldGoalsPercentage %||% NA_real_,
+          threePointersPercentage = stats$threePointersPercentage %||% NA_real_,
+          freeThrowsPercentage = stats$freeThrowsPercentage %||% NA_real_,
+          pointsInThePaint = stats$pointsInThePaint %||% NA_integer_,
+          pointsSecondChance = stats$pointsSecondChance %||% NA_integer_,
+          pointsFastBreak = stats$pointsFastBreak %||% NA_integer_,
+          biggestLead = stats$biggestLead %||% NA_integer_,
+          leadChanges = stats$leadChanges %||% NA_integer_,
+          timesTied = stats$timesTied %||% NA_integer_,
+          biggestScoringRun = stats$biggestScoringRun %||% NA_integer_,
+          turnoversTeam = stats$turnoversTeam %||% NA_integer_,
+          turnoversTotal = stats$turnoversTotal %||% NA_integer_,
+          reboundsTeam = stats$reboundsTeam %||% NA_integer_,
+          pointsFromTurnovers = stats$pointsFromTurnovers %||% NA_integer_,
+          benchPoints = stats$benchPoints %||% NA_integer_,
+          stringsAsFactors = FALSE
+        )
+      }
+      other_stats <- dplyr::bind_rows(other_rows) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Other Stats from NBA.com", Sys.time())
+
+      # AvailableVideo
+      available_video <- data.frame(
+        gameId = game_id_val,
+        videoAvailableFlag = summary_data$videoAvailableFlag %||% NA_integer_,
+        ptAvailable = summary_data$ptAvailable %||% NA_integer_,
+        ptXYZAvailable = summary_data$ptXYZAvailable %||% NA_integer_,
+        whStatus = summary_data$whStatus %||% NA_integer_,
+        hustleStatus = summary_data$hustleStatus %||% NA_integer_,
+        historicalStatus = summary_data$historicalStatus %||% NA_integer_,
+        stringsAsFactors = FALSE
+      ) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data("NBA Available Video from NBA.com", Sys.time())
+
+      data <- list(
+        GameSummary = game_summary,
+        GameInfo = game_info,
+        ArenaInfo = arena_info,
+        Officials = officials,
+        LineScore = line_score,
+        InactivePlayers = inactive_players,
+        LastFiveMeetings = last_five_meetings,
+        OtherStats = other_stats,
+        AvailableVideo = available_video
+      )
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore summary V3 data for {pad_id(game_id)} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(data)
 }
