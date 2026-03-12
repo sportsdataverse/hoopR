@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [hoopR Copilot Instructions](#hoopr-copilot-instructions)
+  - [Project Context](#project-context)
+  - [Code Style](#code-style)
+  - [Function Naming](#function-naming)
+  - [Roxygen Documentation](#roxygen-documentation)
+  - [Testing](#testing)
+    - [Environment Variables](#environment-variables)
+  - [Conventional Commits](#conventional-commits)
+  - [V3 API Notes](#v3-api-notes)
+  - [Common Pitfalls](#common-pitfalls)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # hoopR Copilot Instructions
 
 ## Project Context
@@ -31,8 +48,8 @@ Every exported function needs:
 - `@name` and `@rdname` tags with `NULL` object
 - `@title` with bold markdown description
 - `@author` tag
-- `@param` for every parameter (including `...`)
-- `@return` with markdown tables documenting column names and types
+- `@param` for every parameter (including `...`) with descriptive text (e.g., `@param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')`)
+- `@return` with markdown tables documenting column names and types for each data frame returned
 - `@importFrom` for specific function imports
 - `@export`
 - `@family` for grouping in pkgdown (e.g., "NBA PBP Functions", "NBA Boxscore V3 Functions")
@@ -62,6 +79,8 @@ Every exported function needs:
 Use the format: `type: description`
 
 Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
+
+**Important**: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers referencing AI tools.
 
 ## V3 API Notes
 

@@ -1,3 +1,28 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [CLAUDE.md -- hoopR Development Guide](#claudemd----hoopr-development-guide)
+  - [Package Overview](#package-overview)
+  - [Build & Development Commands](#build--development-commands)
+  - [Project Structure](#project-structure)
+  - [Key Coding Conventions](#key-coding-conventions)
+    - [Function Naming](#function-naming)
+    - [Function Pattern (NBA Stats API)](#function-pattern-nba-stats-api)
+    - [Data Processing Pipeline](#data-processing-pipeline)
+    - [V2 vs V3 API Differences](#v2-vs-v3-api-differences)
+    - [Null Safety](#null-safety)
+    - [HTTP Layer](#http-layer)
+  - [Testing](#testing)
+    - [Test Pattern](#test-pattern)
+    - [Environment Variables for Tests](#environment-variables-for-tests)
+    - [Rate Limiting](#rate-limiting)
+  - [NAMESPACE](#namespace)
+  - [Commit Convention](#commit-convention)
+  - [Common Pitfalls](#common-pitfalls)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # CLAUDE.md -- hoopR Development Guide
 
 ## Package Overview
@@ -80,9 +105,18 @@ NULL
 #' **Get NBA Stats API [Endpoint Name]**
 #' @rdname nba_functionname
 #' @author Author Name
-#' @param game_id Game ID
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: Component1, Component2
+#'
+#'    **Component1**
+#'
+#'
+#'    |col_name |types     |
+#'    |:--------|:---------|
+#'    |column1  |character |
+#'    |column2  |integer   |
+#'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -97,12 +131,15 @@ nba_functionname <- function(game_id = "0022200021", ...) {
   full_url <- endpoint
   params <- list(GameID = pad_id(game_id))
 
+  df_list <- list()  # Always initialize before tryCatch
+
   tryCatch(
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
       # Parse response...
       # Apply janitor::clean_names()
       # Apply make_hoopR_data()
+      # Assign to df_list
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no data for {pad_id(game_id)} available!"))
@@ -110,7 +147,7 @@ nba_functionname <- function(game_id = "0022200021", ...) {
     warning = function(w) {},
     finally = {}
   )
-  return(data)
+  return(df_list)
 }
 ```
 
@@ -209,6 +246,8 @@ refactor: extract V3 substitution parsing into helper
 chore: update .Rbuildignore patterns
 ci: update GitHub Actions workflow versions
 ```
+
+**Important**: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers referencing AI tools.
 
 ## Common Pitfalls
 
