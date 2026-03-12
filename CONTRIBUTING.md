@@ -1,3 +1,31 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Contributing to hoopR](#contributing-to-hoopr)
+  - [Development Setup](#development-setup)
+  - [Workflow](#workflow)
+    - [Making Changes](#making-changes)
+    - [Adding a New NBA Stats API Endpoint](#adding-a-new-nba-stats-api-endpoint)
+  - [Naming Conventions](#naming-conventions)
+    - [Function Names](#function-names)
+    - [General Naming Rules](#general-naming-rules)
+    - [V2 vs V3 API Patterns](#v2-vs-v3-api-patterns)
+    - [Data Processing Pipeline](#data-processing-pipeline)
+    - [Roxygen Documentation](#roxygen-documentation)
+    - [Code Style](#code-style)
+  - [Commit Messages](#commit-messages)
+  - [Pull Requests](#pull-requests)
+  - [Testing](#testing)
+    - [Environment Variables](#environment-variables)
+    - [Test Pattern](#test-pattern)
+    - [Rate Limiting](#rate-limiting)
+  - [CI / GitHub Actions](#ci--github-actions)
+  - [Reporting Issues](#reporting-issues)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Contributing to hoopR
 
 Thank you for your interest in contributing to hoopR! This guide will help you get started.

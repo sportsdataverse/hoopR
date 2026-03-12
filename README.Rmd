@@ -21,12 +21,12 @@ opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 
 [![CRAN status](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=CRAN%20version&prefix=v&query=%24.Version&url=https%3A%2F%2Fcrandb.r-pkg.org%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
 [![CRAN downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=Downloads&query=%24%5B0%5D.downloads&url=https%3A%2F%2Fcranlogs.r-pkg.org%2Fdownloads%2Ftotal%2F2021-10-26%3Alast-day%2FhoopR)](https://CRAN.R-project.org/package=hoopR)
-[![Version-Number](https://img.shields.io/github/r-package/v/sportsdataverse/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/sportsdataverse/hoopR)  [![R-CMD-check](https://img.shields.io/github/actions/workflow/status/sportsdataverse/hoopR/R-CMD-check.yaml?branch=main&label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/R-CMD-check.yaml) [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/sportsdataverse/hoopR/) 
+[![Version-Number](https://img.shields.io/github/r-package/v/sportsdataverse/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/sportsdataverse/hoopR)  [![R-CMD-check](https://img.shields.io/github/actions/workflow/status/sportsdataverse/hoopR/R-CMD-check.yaml?branch=main&label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/R-CMD-check.yaml) [![Lifecycle:maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg?style=for-the-badge&logo=github)](https://github.com/sportsdataverse/hoopR/)
 <!-- [![Twitter Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani) [![Twitter Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=twitter&style=for-the-badge)](https://twitter.com/SportsDataverse)  -->
 [![Contributors](https://img.shields.io/github/contributors/sportsdataverse/hoopR?style=for-the-badge)](https://github.com/sportsdataverse/hoopR/graphs/contributors)
 <!-- badges: end -->
 
-[**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for working with men's basketball data. 
+[**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for working with men's basketball data.
 
 The package has functions to access **live play by play and box score** data from ESPN with shot locations when available. As of version 1.3.0, [**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA Stats API wrapper with 127 functions added in this release.
 
@@ -95,14 +95,14 @@ For more information on the package and function reference, please see the  [**`
 
 ## **Our Authors**
 
--   Saiem Gilani (@saiemgilani)       
+-   Saiem Gilani (@saiemgilani)
 <!-- <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a> -->
 
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
 ## **Our Contributors (they're awesome)**
 
--   Jason Lee (@theFirmAISports)       
+-   Jason Lee (@theFirmAISports)
 <!-- <a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a> -->
 <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
@@ -110,11 +110,11 @@ For more information on the package and function reference, please see the  [**`
 <!-- <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a> -->
 <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
--   Ross Drucker (@rossdrucker9)       
+-   Ross Drucker (@rossdrucker9)
 <!-- <a href="https://twitter.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge" alt="@rossdrucker9" /></a> -->
 <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
 
--   Vladislav Shufinskiy (@vshufinskiy)       
+-   Vladislav Shufinskiy (@vshufinskiy)
 <!-- <a href="https://twitter.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=twitter&style=for-the-badge" alt="@vshufinskiy" /></a> -->
 <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
 
