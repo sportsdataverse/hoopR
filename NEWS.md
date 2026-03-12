@@ -1,3 +1,66 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [**hoopR 3.0.0**](#hoopr-300)
+    - [**NBA Play-by-Play V3**](#nba-play-by-play-v3)
+    - [**NBA Boxscore Summary V3**](#nba-boxscore-summary-v3)
+    - [**New NBA Stats API Endpoint Wrappers**](#new-nba-stats-api-endpoint-wrappers)
+    - [**ESPN & G-League Functions**](#espn--g-league-functions)
+    - [**Other Improvements**](#other-improvements)
+    - [**Bug Fixes**](#bug-fixes)
+    - [**Test Improvements**](#test-improvements)
+- [**hoopR 2.1.0**](#hoopr-210)
+- [**hoopR 2.0.0**](#hoopr-200)
+    - [**NBA Stats API Live Endpoints**](#nba-stats-api-live-endpoints)
+    - [**NBA Boxscore V3 (and V3-styled) Endpoints Added**](#nba-boxscore-v3-and-v3-styled-endpoints-added)
+    - [**Other NBA Stats API functions added**](#other-nba-stats-api-functions-added)
+    - [**Other Functions Added**](#other-functions-added)
+    - [**Proxy Capability Added and Other Notes**](#proxy-capability-added-and-other-notes)
+- [**hoopR 1.9.1**](#hoopr-191)
+- [**hoopR 1.9.0**](#hoopr-190)
+- [**hoopR 1.8.1**](#hoopr-181)
+- [**hoopR 1.8.0**](#hoopr-180)
+- [**hoopR 1.7.0**](#hoopr-170)
+- [**hoopR 1.6.0**](#hoopr-160)
+- [**hoopR 1.5.0**](#hoopr-150)
+- [**hoopR 1.4.5**](#hoopr-145)
+- [**hoopR 1.4.4**](#hoopr-144)
+- [**hoopR 1.4.3**](#hoopr-143)
+- [**hoopR 1.4.2**](#hoopr-142)
+- [**hoopR 1.4.1**](#hoopr-141)
+- [**hoopR 1.4.0**](#hoopr-140)
+- [**hoopR 1.3.1**](#hoopr-131)
+- [**hoopR 1.3.0**](#hoopr-130)
+    - [**Add Full Coverage for NBA Stats API**](#add-full-coverage-for-nba-stats-api)
+- [**hoopR 1.2.0**](#hoopr-120)
+    - [**Add schedule loaders**](#add-schedule-loaders)
+- [**hoopR 1.1.0**](#hoopr-110)
+    - [**Add team box score loaders**](#add-team-box-score-loaders)
+    - [**Add player box score loaders**](#add-player-box-score-loaders)
+- [**hoopR 1.0.5**](#hoopr-105)
+    - [**Standings functions**](#standings-functions)
+- [**hoopR 1.0.4**](#hoopr-104)
+    - [**Add retry**](#add-retry)
+- [**hoopR 1.0.2-3**](#hoopr-102-3)
+    - [**Quick fix for update db functions**](#quick-fix-for-update-db-functions)
+- [**hoopR 1.0.1-4**](#hoopr-101-4)
+    - [**Dependency pruning**](#dependency-pruning)
+- [**hoopR 1.0.0**](#hoopr-100)
+    - [**Package renamed to hoopR**](#package-renamed-to-hoopr)
+    - [**Clean names and team returns**](#clean-names-and-team-returns)
+    - [**Loading capabilities added to the package**](#loading-capabilities-added-to-the-package)
+- [**hoopR 0.4**](#hoopr-04)
+- [**hoopR 0.3.0**](#hoopr-030)
+    - [**Dependencies**](#dependencies)
+    - [**Test coverage**](#test-coverage)
+      - [**Function Naming Convention Change**](#function-naming-convention-change)
+- [**hoopR 0.2.0-3**](#hoopr-020-3)
+- [**hoopR 0.1.0**](#hoopr-010)
+- [**hoopR 0.0.0.9**](#hoopr-0009)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # **hoopR 3.0.0**
 
 ### **NBA Play-by-Play V3**
@@ -37,6 +100,8 @@
 
 ### **Bug Fixes**
 
+- Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
+- Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
 - Fixed `helper-skip.R` test guard functions to use proper string comparison (`!= "1"`) instead of numeric comparison (`== 0`).
 - Fixed `nba_dunkscoreleaders()` HTTP 400 error caused by empty string parameters.
 - Fixed V3-style data.frame parsing for leader/standings endpoints.
@@ -45,6 +110,7 @@
 
 ### **Test Improvements**
 
+- Converted 400+ `expect_equal(colnames())` assertions to `expect_in()` for subset validation, preventing test failures when APIs add new columns.
 - Added tests for all new endpoints with column validation and rate limiting.
 - Added `skip_ncaa_mbb_test()` and `skip_ncaa_wbb_test()` helpers.
 - Updated ESPN test expectations for current API responses.

@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Release summary](#release-summary)
+  - [NBA Play-by-Play V3](#nba-play-by-play-v3)
+  - [NBA Boxscore Summary V3](#nba-boxscore-summary-v3)
+  - [New NBA Stats API Endpoint Wrappers](#new-nba-stats-api-endpoint-wrappers)
+  - [ESPN Functions](#espn-functions)
+  - [Bug Fixes](#bug-fixes)
+  - [Infrastructure](#infrastructure)
+- [R CMD check results](#r-cmd-check-results)
+- [revdepcheck results](#revdepcheck-results)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Release summary
 
 This is a major release (v3.0.0) with the following changes:
@@ -26,10 +42,16 @@ This is a major release (v3.0.0) with the following changes:
 - `nbagl_live_boxscore()` function added.
 
 ### Bug Fixes
+- Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
+- Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
 - Fixed `helper-skip.R` test guard functions to use proper string comparison.
 - Fixed empty parameter bug in `nba_dunkscoreleaders()`.
 - Fixed V3-style data.frame parsing for leader/standings endpoints.
 - Fixed `nba_iststandings()` nested games column flattening.
+
+### Test Improvements
+- Converted 400+ `expect_equal(colnames())` assertions to `expect_in()` for robust subset validation.
+- Added tests for all new endpoints with column validation and rate limiting.
 
 ### Infrastructure
 - Updated GitHub Actions to v4.
