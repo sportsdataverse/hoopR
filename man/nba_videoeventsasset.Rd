@@ -7,14 +7,14 @@
 nba_videoeventsasset(game_id, game_event_id = 0, ...)
 }
 \arguments{
-\item{game_id}{game_id}
+\item{game_id}{Game ID - 10-digit zero-padded ID (e.g., '0021700807')}
 
-\item{game_event_id}{game_event_id}
+\item{game_event_id}{Game Event ID - event number from play-by-play data}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a list of data frames with video event asset data
+Returns a named list containing video event asset data (structure varies by response)
 }
 \description{
 \strong{Get NBA Stats API Video Events Asset}
@@ -26,7 +26,7 @@ Return a list of data frames with video event asset data
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions: 
+Other NBA Video Functions:
 \code{\link{nba_videodetails}()},
 \code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videoevents}()},

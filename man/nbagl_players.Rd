@@ -47,7 +47,7 @@ Scrapes the NBA Data API for All Players in G League History
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA G-League Functions: 
+Other NBA G-League Functions:
 \code{\link{nbagl_live_boxscore}()},
 \code{\link{nbagl_live_pbp}()},
 \code{\link{nbagl_pbp}()},

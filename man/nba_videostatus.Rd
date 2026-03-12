@@ -44,7 +44,7 @@ Return a list of tibbles: VideoStatus
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions: 
+Other NBA Video Functions:
 \code{\link{nba_videodetails}()},
 \code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videoevents}()},

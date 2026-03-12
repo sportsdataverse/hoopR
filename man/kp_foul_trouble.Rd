@@ -39,7 +39,7 @@ Returns a tibble of foul participation stats\tabular{ll}{
 }
 }
 \seealso{
-Other KenPom Ratings Functions: 
+Other KenPom Ratings Functions:
 \code{\link{kp_efficiency}()},
 \code{\link{kp_fourfactors}()},
 \code{\link{kp_height}()},

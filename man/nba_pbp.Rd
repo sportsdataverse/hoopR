@@ -84,7 +84,7 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
+Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbps}()},

@@ -11,14 +11,14 @@ nba_scheduleleaguev2int(
 )
 }
 \arguments{
-\item{league_id}{league_id}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
-\item{season}{season}
+\item{season}{Season - format: '2023-24'}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
+Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 
 \strong{SeasonGames}\tabular{ll}{
    col_name \tab types \cr
@@ -80,7 +80,7 @@ Return a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions: 
+Other NBA Schedule Functions:
 \code{\link{nba_schedule}()},
 \code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},

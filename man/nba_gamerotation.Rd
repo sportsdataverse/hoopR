@@ -61,7 +61,7 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
+Other NBA Boxscore Functions:
 \code{\link{nba_boxscoreadvancedv2}()},
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorefourfactorsv2}()},
@@ -75,7 +75,7 @@ Other NBA Boxscore Functions:
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_live_boxscore}()}
 
-Other NBA Lineup Functions: 
+Other NBA Lineup Functions:
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguelineupviz}()},
 \code{\link{nba_shotchartlineupdetail}()},

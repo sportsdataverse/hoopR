@@ -44,75 +44,75 @@ nba_teamandplayersvsplayers(
 )
 }
 \arguments{
-\item{team_id}{team_id}
+\item{team_id}{Team ID}
 
-\item{vs_team_id}{vs_team_id}
+\item{vs_team_id}{Opponent Team ID to compare against}
 
-\item{player_id1}{player_id1}
+\item{player_id1}{Player ID 1 for team lineup}
 
-\item{player_id2}{player_id2}
+\item{player_id2}{Player ID 2 for team lineup}
 
-\item{player_id3}{player_id3}
+\item{player_id3}{Player ID 3 for team lineup}
 
-\item{player_id4}{player_id4}
+\item{player_id4}{Player ID 4 for team lineup}
 
-\item{player_id5}{player_id5}
+\item{player_id5}{Player ID 5 for team lineup}
 
-\item{vs_player_id1}{vs_player_id1}
+\item{vs_player_id1}{Opponent Player ID 1 for comparison lineup}
 
-\item{vs_player_id2}{vs_player_id2}
+\item{vs_player_id2}{Opponent Player ID 2 for comparison lineup}
 
-\item{vs_player_id3}{vs_player_id3}
+\item{vs_player_id3}{Opponent Player ID 3 for comparison lineup}
 
-\item{vs_player_id4}{vs_player_id4}
+\item{vs_player_id4}{Opponent Player ID 4 for comparison lineup}
 
-\item{vs_player_id5}{vs_player_id5}
+\item{vs_player_id5}{Opponent Player ID 5 for comparison lineup}
 
-\item{season}{season}
+\item{season}{Season - format: '2023-24'}
 
-\item{season_type}{season_type}
+\item{season_type}{Season Type - 'Regular Season', 'Playoffs'}
 
-\item{measure_type}{measure_type}
+\item{measure_type}{Measure Type - 'Base', 'Advanced', 'Misc', 'Scoring', 'Usage'}
 
-\item{per_mode}{per_mode}
+\item{per_mode}{Per Mode - 'Totals', 'PerGame', 'Per36', 'Per48'}
 
-\item{plus_minus}{plus_minus}
+\item{plus_minus}{Plus Minus - 'Y' or 'N'}
 
-\item{pace_adjust}{pace_adjust}
+\item{pace_adjust}{Pace Adjust - 'Y' or 'N'}
 
-\item{rank}{rank}
+\item{rank}{Rank - 'Y' or 'N'}
 
-\item{league_id}{league_id}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
-\item{last_n_games}{last_n_games}
+\item{last_n_games}{Last N Games filter}
 
-\item{month}{month}
+\item{month}{Month filter (0 for all)}
 
-\item{opponent_team_id}{opponent_team_id}
+\item{opponent_team_id}{Opponent Team ID filter}
 
-\item{period}{period}
+\item{period}{Period filter (0 for all)}
 
-\item{conference}{conference}
+\item{conference}{Conference filter - 'East', 'West', or ''}
 
-\item{date_from}{date_from}
+\item{date_from}{Date From filter - format: 'MM/DD/YYYY'}
 
-\item{date_to}{date_to}
+\item{date_to}{Date To filter - format: 'MM/DD/YYYY'}
 
-\item{division}{division}
+\item{division}{Division filter}
 
-\item{game_segment}{game_segment}
+\item{game_segment}{Game Segment - 'First Half', 'Second Half', 'Overtime', or ''}
 
-\item{location}{location}
+\item{location}{Location filter - 'Home', 'Road', or ''}
 
-\item{outcome}{outcome}
+\item{outcome}{Outcome filter - 'W', 'L', or ''}
 
-\item{season_segment}{season_segment}
+\item{season_segment}{Season Segment - 'Pre All-Star', 'Post All-Star', or ''}
 
-\item{shot_clock_range}{shot_clock_range}
+\item{shot_clock_range}{Shot Clock Range filter}
 
-\item{vs_conference}{vs_conference}
+\item{vs_conference}{Opponent Conference filter}
 
-\item{vs_division}{vs_division}
+\item{vs_division}{Opponent Division filter}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -290,7 +290,7 @@ TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers, TeamVsPlayersOff
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Team Functions: 
+Other NBA Team Functions:
 \code{\link{nba_leaguedashteamstats}()},
 \code{\link{nba_teamdashboardbyclutch}()},
 \code{\link{nba_teamdashboardbygamesplits}()},

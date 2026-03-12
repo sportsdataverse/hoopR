@@ -195,7 +195,7 @@ A named list of data frames: Plays, Team, Player
 }
 }
 \seealso{
-Other ESPN MBB Functions: 
+Other ESPN MBB Functions:
 \code{\link{espn_mbb_betting}()},
 \code{\link{espn_mbb_conferences}()},
 \code{\link{espn_mbb_game_rosters}()},

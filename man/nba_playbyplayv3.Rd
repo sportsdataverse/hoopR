@@ -7,11 +7,11 @@
 nba_playbyplayv3(game_id, start_period = 0, end_period = 0, ...)
 }
 \arguments{
-\item{game_id}{Game ID}
+\item{game_id}{Game ID - 10-digit zero-padded ID (e.g., '0022201086')}
 
-\item{start_period}{start_period}
+\item{start_period}{Start period filter - default: 0 (all periods)}
 
-\item{end_period}{end_period}
+\item{end_period}{End period filter - default: 0 (all periods)}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -62,7 +62,7 @@ Returns a named list of data frames: PlayByPlay, AvailableVideo
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
+Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbp}()},

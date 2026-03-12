@@ -34,7 +34,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 }
 \seealso{
-Other KP Misc. Functions: 
+Other KP Misc. Functions:
 \code{\link{kp_arenas}()},
 \code{\link{kp_fanmatch}()},
 \code{\link{kp_game_attrs}()},

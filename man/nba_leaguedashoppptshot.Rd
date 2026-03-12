@@ -138,7 +138,7 @@ Returns a named list of data frames: LeagueDashPTShots
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
 \code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
@@ -164,7 +164,7 @@ Other NBA League Functions:
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}
 
-Other NBA Player Tracking Functions: 
+Other NBA Player Tracking Functions:
 \code{\link{nba_boxscoreplayertrackv2}()},
 \code{\link{nba_leaguedashplayerptshot}()},
 \code{\link{nba_leaguedashptdefend}()},

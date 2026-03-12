@@ -320,7 +320,7 @@ Return a named list of data frames: LeagueGameFinderResults
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
 \code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
@@ -346,7 +346,7 @@ Other NBA League Functions:
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}
 
-Other NBA Game Finder Functions: 
+Other NBA Game Finder Functions:
 \code{\link{nba_playergamestreakfinder}()},
 \code{\link{nba_teamgamestreakfinder}()}
 }

@@ -171,7 +171,7 @@ Returns a named list of data frames: ShotLocations
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
 \code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
@@ -197,7 +197,7 @@ Other NBA League Functions:
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}
 
-Other NBA Player Functions: 
+Other NBA Player Functions:
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
@@ -234,7 +234,7 @@ Other NBA Player Functions:
 \code{\link{nba_playerprofilev2}()},
 \code{\link{nba_playervsplayer}()}
 
-Other NBA Shooting Functions: 
+Other NBA Shooting Functions:
 \code{\link{nba_leaguedashteamptshot}()},
 \code{\link{nba_leaguedashteamshotlocations}()},
 \code{\link{nba_playerdashboardbyshootingsplits}()},

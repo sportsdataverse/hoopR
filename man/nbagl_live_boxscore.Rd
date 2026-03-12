@@ -362,7 +362,7 @@ away_team_linescores
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA G-League Functions: 
+Other NBA G-League Functions:
 \code{\link{nbagl_live_pbp}()},
 \code{\link{nbagl_pbp}()},
 \code{\link{nbagl_players}()},

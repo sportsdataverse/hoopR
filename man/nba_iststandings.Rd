@@ -12,11 +12,11 @@ nba_iststandings(
 )
 }
 \arguments{
-\item{league_id}{league_id}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
-\item{season}{season}
+\item{season}{Season - format: '2023-24'}
 
-\item{section}{section}
+\item{section}{Section filter - 'group' or 'knockout'}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -61,7 +61,7 @@ Returns a named list of data frames: Standings
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},

@@ -17,20 +17,20 @@ nba_boxscoreadvancedv3(
 \arguments{
 \item{game_id}{Game ID}
 
-\item{start_period}{start_period}
+\item{start_period}{Start period filter - default: 0}
 
-\item{end_period}{end_period}
+\item{end_period}{End period filter - default: 0}
 
-\item{start_range}{start_range}
+\item{start_range}{Start range filter (in tenths of a second) - default: 0}
 
-\item{end_range}{end_range}
+\item{end_range}{End range filter (in tenths of a second) - default: 0}
 
-\item{range_type}{range_type}
+\item{range_type}{Range type - 0: by half, 1: by period, 2: custom range}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-A list of data frames: home_team_player_advanced, away_team_player_advanced,
+Returns a named list of data frames: home_team_player_advanced, away_team_player_advanced,
 home_team_totals_advanced, away_team_totals_advanced
 
 \strong{home_team_player_advanced}\tabular{ll}{
@@ -204,7 +204,7 @@ home_team_totals_advanced, away_team_totals_advanced
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions: 
+Other NBA Boxscore V3 Functions:
 \code{\link{nba_boxscoredefensivev2}()},
 \code{\link{nba_boxscorefourfactorsv3}()},
 \code{\link{nba_boxscorehustlev2}()},

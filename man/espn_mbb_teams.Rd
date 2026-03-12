@@ -43,7 +43,7 @@ A teams data frame\tabular{ll}{
 }
 }
 \seealso{
-Other ESPN MBB Functions: 
+Other ESPN MBB Functions:
 \code{\link{espn_mbb_betting}()},
 \code{\link{espn_mbb_conferences}()},
 \code{\link{espn_mbb_game_all}()},

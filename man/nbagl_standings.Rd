@@ -45,7 +45,7 @@ Scrapes the NBA Data API for G League Standings
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA G-League Functions: 
+Other NBA G-League Functions:
 \code{\link{nbagl_live_boxscore}()},
 \code{\link{nbagl_live_pbp}()},
 \code{\link{nbagl_pbp}()},

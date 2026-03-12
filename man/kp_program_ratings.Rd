@@ -37,7 +37,7 @@ A data frame with 17 columns:\tabular{ll}{
 }
 }
 \seealso{
-Other KenPom Historical Functions: 
+Other KenPom Historical Functions:
 \code{\link{kp_coach_history}()},
 \code{\link{kp_conf}()},
 \code{\link{kp_confhistory}()},

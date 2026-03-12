@@ -12,7 +12,7 @@ nba_boxscoresummaryv3(game_id = "0022200021", ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-A named list of data frames:
+Returns a named list of data frames:
 GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
 InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
 
@@ -173,7 +173,7 @@ InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions: 
+Other NBA Boxscore V3 Functions:
 \code{\link{nba_boxscoreadvancedv3}()},
 \code{\link{nba_boxscoredefensivev2}()},
 \code{\link{nba_boxscorefourfactorsv3}()},

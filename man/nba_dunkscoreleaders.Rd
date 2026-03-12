@@ -15,17 +15,17 @@ nba_dunkscoreleaders(
 )
 }
 \arguments{
-\item{league_id}{league_id}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
-\item{season}{season}
+\item{season}{Season - format: '2023-24'}
 
-\item{season_type}{season_type}
+\item{season_type}{Season Type - 'Regular Season', 'Playoffs'}
 
-\item{player_id}{player_id}
+\item{player_id}{Player ID filter (optional, leave empty for all players)}
 
-\item{team_id}{team_id}
+\item{team_id}{Team ID filter (optional, leave empty for all teams)}
 
-\item{game_id}{game_id}
+\item{game_id}{Game ID filter (optional, leave empty for all games)}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -101,7 +101,7 @@ Returns a named list of data frames: DunkScoreLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions: 
+Other NBA Leaders Functions:
 \code{\link{nba_alltimeleadersgrids}()},
 \code{\link{nba_assistleaders}()},
 \code{\link{nba_assisttracker}()},

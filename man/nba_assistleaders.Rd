@@ -49,7 +49,7 @@ Returns a named list of data frames: AssistLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions: 
+Other NBA Leaders Functions:
 \code{\link{nba_alltimeleadersgrids}()},
 \code{\link{nba_assisttracker}()},
 \code{\link{nba_defensehub}()},

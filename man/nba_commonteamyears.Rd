@@ -7,12 +7,12 @@
 nba_commonteamyears(league_id = "00", ...)
 }
 \arguments{
-\item{league_id}{league_id}
+\item{league_id}{League - default: '00'. Other options include '10': WNBA, '20': G-League}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a named list of data frames: TeamYears
+Returns a named list of data frames: TeamYears
 
 \strong{TeamYears}\tabular{ll}{
    col_name \tab types \cr
@@ -33,7 +33,7 @@ Return a named list of data frames: TeamYears
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Roster Functions: 
+Other NBA Roster Functions:
 \code{\link{nba_commonallplayers}()},
 \code{\link{nba_commonplayerinfo}()},
 \code{\link{nba_commonteamroster}()}

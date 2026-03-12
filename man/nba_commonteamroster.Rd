@@ -70,7 +70,7 @@ Return a named list of data frames: Coaches, CommonTeamRoster
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Roster Functions: 
+Other NBA Roster Functions:
 \code{\link{nba_commonallplayers}()},
 \code{\link{nba_commonplayerinfo}()},
 \code{\link{nba_commonteamyears}()}

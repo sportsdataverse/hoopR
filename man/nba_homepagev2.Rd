@@ -126,7 +126,7 @@ HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions: 
+Other NBA Leaders Functions:
 \code{\link{nba_alltimeleadersgrids}()},
 \code{\link{nba_assistleaders}()},
 \code{\link{nba_assisttracker}()},

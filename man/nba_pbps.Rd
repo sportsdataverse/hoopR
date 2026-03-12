@@ -92,7 +92,7 @@ nba_pbps(game_ids = y, version = "v2")
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
+Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbp}()},

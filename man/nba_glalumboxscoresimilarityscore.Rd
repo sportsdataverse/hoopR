@@ -47,7 +47,7 @@ Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 (Possibly Deprecated)
 }
 \seealso{
-Other NBA Boxscore Similarity Functions: 
+Other NBA Boxscore Similarity Functions:
 \code{\link{nba_boxscoresimilarityscore}()}
 }
 \author{

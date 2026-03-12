@@ -222,7 +222,7 @@ Return a named list of data frames: Lineups, Overall
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Team Functions: 
+Other NBA Team Functions:
 \code{\link{nba_leaguedashteamstats}()},
 \code{\link{nba_teamandplayersvsplayers}()},
 \code{\link{nba_teamdashboardbyclutch}()},
@@ -250,7 +250,7 @@ Other NBA Team Functions:
 \code{\link{nba_teamvsplayer}()},
 \code{\link{nba_teamyearbyyearstats}()}
 
-Other NBA Lineup Functions: 
+Other NBA Lineup Functions:
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguelineupviz}()},
