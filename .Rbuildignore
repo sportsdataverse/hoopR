@@ -1,7 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
-^\.pre-commit-config\.yaml$
 ^\.travis\.yml$
 ^data-raw$
 ^docs$
@@ -23,5 +22,6 @@
 ^man/figures$
 ^hoopR_.*$
 CLAUDE\.md$
+^\.lintr$
 nba_pbp_db
 mbb_pbp_db
