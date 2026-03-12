@@ -2,8 +2,8 @@ test_that("NBA Boxscore Defensive V2", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
-  
+
+
 
   x <- nba_boxscoredefensivev2(game_id = "0022200021")
 

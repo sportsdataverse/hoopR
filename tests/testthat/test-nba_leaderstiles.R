@@ -2,8 +2,8 @@ test_that("NBA Leaders Tiles", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
-  
+
+
 
   x <- nba_leaderstiles(league_id = "00")
 

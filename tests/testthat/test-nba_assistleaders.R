@@ -2,8 +2,8 @@ test_that("NBA Assist Leaders", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
-  
+
+
 
   x <- nba_assistleaders(league_id = "00")
 

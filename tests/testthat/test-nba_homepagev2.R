@@ -2,8 +2,8 @@ test_that("NBA Home Page V2", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
-  
+
+
 
   x <- nba_homepagev2(league_id = "00")
 

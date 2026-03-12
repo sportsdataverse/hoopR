@@ -2,8 +2,8 @@ test_that("NBA Boxscore Matchups V3", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
-  
+
+
 
   x <- nba_boxscorematchupsv3(game_id = "0022200021")
 

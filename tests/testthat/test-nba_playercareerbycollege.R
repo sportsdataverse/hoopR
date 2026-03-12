@@ -2,7 +2,7 @@ test_that("NBA Player Career by College", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
+
 
   x <- nba_playercareerbycollege(college = "Florida State",
                                  league_id = "00",

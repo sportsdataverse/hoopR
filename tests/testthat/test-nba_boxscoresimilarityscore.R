@@ -2,7 +2,7 @@
 #   skip_on_cran()
 #   skip_on_ci()
   skip_nba_stats_test()
-	
+
 #   z <- nba_commonallplayers()$CommonAllPlayers
 #   klay <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == "Klay Thompson")
 #   book <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == "Devin Booker")

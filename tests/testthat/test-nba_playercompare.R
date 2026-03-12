@@ -2,7 +2,7 @@ test_that("NBA Player Compare", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
-	
+
 
   x <- nba_playercompare(player_id_list = "202681,203078,2544,201567,203954",
                          vs_player_id_list = "201566,201939,201935,201142,203076")
