@@ -970,10 +970,10 @@ NULL
 #' **Get NBA Stats API International Schedule**
 #' @rdname nba_scheduleleaguev2int
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
+#' @return Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 #'
 #'    **SeasonGames**
 #'

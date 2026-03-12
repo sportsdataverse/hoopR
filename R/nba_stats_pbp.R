@@ -416,9 +416,9 @@ NULL
 #' **Get NBA Stats API Play-by-Play V3**
 #' @rdname nba_playbyplayv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022201086')
+#' @param start_period Start period filter - default: 0 (all periods)
+#' @param end_period End period filter - default: 0 (all periods)
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayByPlay, AvailableVideo
 #'

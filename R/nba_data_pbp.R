@@ -151,4 +151,3 @@ nba_data_pbp <- function(game_id = "0021900001",
   )
   return(plays_df)
 }
-

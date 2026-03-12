@@ -5,14 +5,14 @@ NULL
 #' **Get NBA Stats API Boxscore Traditional V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames:
+#' @return Returns a named list of data frames:
 #' home_team_player_traditional, away_team_player_traditional, home_team_totals_traditional,
 #' away_team_totals_traditional, home_team_starters_totals, away_team_starters_totals,
 #' home_team_bench_totals, away_team_bench_totals
@@ -491,13 +491,13 @@ NULL
 #' @rdname nba_boxscoreadvancedv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames: home_team_player_advanced, away_team_player_advanced,
+#' @return Returns a named list of data frames: home_team_player_advanced, away_team_player_advanced,
 #' home_team_totals_advanced, away_team_totals_advanced
 #'
 #'    **home_team_player_advanced**
@@ -809,13 +809,13 @@ NULL
 #' @rdname nba_boxscoremiscv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames:  home_team_player_misc, away_team_player_misc,
+#' @return Returns a named list of data frames:  home_team_player_misc, away_team_player_misc,
 #' home_team_totals_misc, away_team_totals_misc
 #'
 #'    **home_team_player_misc**
@@ -1084,13 +1084,13 @@ NULL
 #' @rdname nba_boxscorescoringv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames: home_team_player_scoring, away_team_player_scoring,
+#' @return Returns a named list of data frames: home_team_player_scoring, away_team_player_scoring,
 #' home_team_totals_scoring, away_team_totals_scoring
 #'
 #'    **home_team_player_scoring**
@@ -1371,13 +1371,13 @@ NULL
 #' @rdname nba_boxscoreusagev3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames:  home_team_player_usage, away_team_player_usage,
+#' @return Returns a named list of data frames:  home_team_player_usage, away_team_player_usage,
 #' home_team_totals_usage, away_team_totals_usage
 #'
 #'    **home_team_player_usage**
@@ -1670,13 +1670,13 @@ NULL
 #' @rdname nba_boxscorefourfactorsv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames:  home_team_player_four_factors,
+#' @return Returns a named list of data frames:  home_team_player_four_factors,
 #' away_team_player_four_factors, home_team_totals_four_factors,
 #' away_team_totals_four_factors
 #'
@@ -1930,13 +1930,13 @@ NULL
 #' @rdname nba_boxscoreplayertrackv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames: home_team_player_player_track, away_team_player_player_track,
+#' @return Returns a named list of data frames: home_team_player_player_track, away_team_player_player_track,
 #' home_team_totals_player_track, away_team_totals_player_track
 #'
 #'    **home_team_player_player_track**
@@ -2235,13 +2235,13 @@ NULL
 #' @rdname nba_boxscorematchupsv3
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames: home_team_player_matchups, away_team_player_matchups
+#' @return Returns a named list of data frames: home_team_player_matchups, away_team_player_matchups
 #'
 #'    **home_team_player_matchups**
 #'
@@ -2744,13 +2744,13 @@ NULL
 #' @rdname nba_boxscoredefensivev2
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @param start_period start_period
-#' @param end_period end_period
-#' @param start_range start_range
-#' @param end_range end_range
-#' @param range_type range_type
+#' @param start_period Start period filter - default: 0
+#' @param end_period End period filter - default: 0
+#' @param start_range Start range filter (in tenths of a second) - default: 0
+#' @param end_range End range filter (in tenths of a second) - default: 0
+#' @param range_type Range type - 0: by half, 1: by period, 2: custom range
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A list of data frames: home_team_player_defensive, away_team_player_defensive,
+#' @return Returns a named list of data frames: home_team_player_defensive, away_team_player_defensive,
 #'  home_team_totals_defensive, away_team_totals_defensive
 #'
 #'    **home_team_player_defensive**
@@ -3102,7 +3102,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A named list of data frames:
+#' @return Returns a named list of data frames:
 #' GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
 #' InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
 #'

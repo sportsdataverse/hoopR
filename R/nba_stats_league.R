@@ -964,9 +964,9 @@ NULL
 #' **Get NBA Stats API In-Season Tournament Standings**
 #' @rdname nba_iststandings
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
-#' @param section section
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
+#' @param section Section filter - 'group' or 'knockout'
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: Standings
 #'

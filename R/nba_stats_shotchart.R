@@ -492,4 +492,3 @@ nba_shotchartlineupdetail <- function(
   )
   return(df_list)
 }
-

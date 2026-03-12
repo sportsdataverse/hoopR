@@ -2144,41 +2144,41 @@ NULL
 #' **Get NBA Stats API Team and Players vs Players**
 #' @rdname nba_teamandplayersvsplayers
 #' @author Saiem Gilani
-#' @param team_id team_id
-#' @param vs_team_id vs_team_id
-#' @param player_id1 player_id1
-#' @param player_id2 player_id2
-#' @param player_id3 player_id3
-#' @param player_id4 player_id4
-#' @param player_id5 player_id5
-#' @param vs_player_id1 vs_player_id1
-#' @param vs_player_id2 vs_player_id2
-#' @param vs_player_id3 vs_player_id3
-#' @param vs_player_id4 vs_player_id4
-#' @param vs_player_id5 vs_player_id5
-#' @param season season
-#' @param season_type season_type
-#' @param measure_type measure_type
-#' @param per_mode per_mode
-#' @param plus_minus plus_minus
-#' @param pace_adjust pace_adjust
-#' @param rank rank
-#' @param league_id league_id
-#' @param last_n_games last_n_games
-#' @param month month
-#' @param opponent_team_id opponent_team_id
-#' @param period period
-#' @param conference conference
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param division division
-#' @param game_segment game_segment
-#' @param location location
-#' @param outcome outcome
-#' @param season_segment season_segment
-#' @param shot_clock_range shot_clock_range
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
+#' @param team_id Team ID
+#' @param vs_team_id Opponent Team ID to compare against
+#' @param player_id1 Player ID 1 for team lineup
+#' @param player_id2 Player ID 2 for team lineup
+#' @param player_id3 Player ID 3 for team lineup
+#' @param player_id4 Player ID 4 for team lineup
+#' @param player_id5 Player ID 5 for team lineup
+#' @param vs_player_id1 Opponent Player ID 1 for comparison lineup
+#' @param vs_player_id2 Opponent Player ID 2 for comparison lineup
+#' @param vs_player_id3 Opponent Player ID 3 for comparison lineup
+#' @param vs_player_id4 Opponent Player ID 4 for comparison lineup
+#' @param vs_player_id5 Opponent Player ID 5 for comparison lineup
+#' @param season Season - format: '2023-24'
+#' @param season_type Season Type - 'Regular Season', 'Playoffs'
+#' @param measure_type Measure Type - 'Base', 'Advanced', 'Misc', 'Scoring', 'Usage'
+#' @param per_mode Per Mode - 'Totals', 'PerGame', 'Per36', 'Per48'
+#' @param plus_minus Plus Minus - 'Y' or 'N'
+#' @param pace_adjust Pace Adjust - 'Y' or 'N'
+#' @param rank Rank - 'Y' or 'N'
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param last_n_games Last N Games filter
+#' @param month Month filter (0 for all)
+#' @param opponent_team_id Opponent Team ID filter
+#' @param period Period filter (0 for all)
+#' @param conference Conference filter - 'East', 'West', or ''
+#' @param date_from Date From filter - format: 'MM/DD/YYYY'
+#' @param date_to Date To filter - format: 'MM/DD/YYYY'
+#' @param division Division filter
+#' @param game_segment Game Segment - 'First Half', 'Second Half', 'Overtime', or ''
+#' @param location Location filter - 'Home', 'Road', or ''
+#' @param outcome Outcome filter - 'W', 'L', or ''
+#' @param season_segment Season Segment - 'Pre All-Star', 'Post All-Star', or ''
+#' @param shot_clock_range Shot Clock Range filter
+#' @param vs_conference Opponent Conference filter
+#' @param vs_division Opponent Division filter
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayersVsPlayers,
 #'  TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers, TeamVsPlayersOff

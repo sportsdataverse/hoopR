@@ -524,10 +524,10 @@ NULL
 #' **Get NBA Stats API Video Events Asset**
 #' @rdname nba_videoeventsasset
 #' @author Saiem Gilani
-#' @param game_id game_id
-#' @param game_event_id game_event_id
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0021700807')
+#' @param game_event_id Game Event ID - event number from play-by-play data
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a list of data frames with video event asset data
+#' @return Returns a named list containing video event asset data (structure varies by response)
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

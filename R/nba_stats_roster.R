@@ -373,9 +373,9 @@ NULL
 #' **Get NBA Stats API Common Team Years**
 #' @rdname nba_commonteamyears
 #' @author Saiem Gilani
-#' @param league_id league_id
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamYears
+#' @return Returns a named list of data frames: TeamYears
 #'
 #'    **TeamYears**
 #'

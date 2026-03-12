@@ -1026,12 +1026,12 @@ NULL
 #' **Get NBA Stats API Dunk Score Leaders**
 #' @rdname nba_dunkscoreleaders
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
-#' @param season_type season_type
-#' @param player_id player_id
-#' @param team_id team_id
-#' @param game_id game_id
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
+#' @param season_type Season Type - 'Regular Season', 'Playoffs'
+#' @param player_id Player ID filter (optional, leave empty for all players)
+#' @param team_id Team ID filter (optional, leave empty for all teams)
+#' @param game_id Game ID filter (optional, leave empty for all games)
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: DunkScoreLeaders
 #'
@@ -1169,9 +1169,9 @@ NULL
 #' **Get NBA Stats API Gravity Leaders**
 #' @rdname nba_gravityleaders
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
-#' @param season_type season_type
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
+#' @param season_type Season Type - 'Regular Season', 'Playoffs'
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: GravityLeaders
 #'
