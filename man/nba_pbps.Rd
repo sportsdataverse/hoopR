@@ -7,7 +7,7 @@
 nba_pbps(
   game_ids = NULL,
   on_court = TRUE,
-  version = "v2",
+  version = "v3",
   nest_data = FALSE,
   ...
 )
@@ -17,7 +17,7 @@ nba_pbps(
 
 \item{on_court}{IF TRUE will be added ID of players on court}
 
-\item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
+\item{version}{Play-by-play version ("v3" is the default, "v2" available from 2016-17 onwards)}
 
 \item{nest_data}{If TRUE returns nested data by game}
 
@@ -87,6 +87,7 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{y <- c("0022201086", "0022200021")
 
+nba_pbps(game_ids = y)
 nba_pbps(game_ids = y, version = "v2")
 }\if{html}{\out{</div>}}
 }
@@ -95,6 +96,7 @@ Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbp}()},
+\code{\link{nba_playbyplayv3}()},
 \code{\link{nba_winprobabilitypbp}()}
 }
 \author{

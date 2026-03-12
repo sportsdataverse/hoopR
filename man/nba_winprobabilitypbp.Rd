@@ -62,7 +62,8 @@ Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbp}()},
-\code{\link{nba_pbps}()}
+\code{\link{nba_pbps}()},
+\code{\link{nba_playbyplayv3}()}
 }
 \author{
 Saiem Gilani

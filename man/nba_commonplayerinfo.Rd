@@ -86,7 +86,8 @@ AvailableSeasons
 \seealso{
 Other NBA Roster Functions: 
 \code{\link{nba_commonallplayers}()},
-\code{\link{nba_commonteamroster}()}
+\code{\link{nba_commonteamroster}()},
+\code{\link{nba_commonteamyears}()}
 }
 \author{
 Saiem Gilani

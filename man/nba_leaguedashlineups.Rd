@@ -166,6 +166,7 @@ Returns a named list of data frames: Lineups
 }
 \seealso{
 Other NBA League Functions: 
+\code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},

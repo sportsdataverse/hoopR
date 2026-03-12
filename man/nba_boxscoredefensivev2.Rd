@@ -148,6 +148,7 @@ Other NBA Boxscore V3 Functions:
 \code{\link{nba_boxscoremiscv3}()},
 \code{\link{nba_boxscoreplayertrackv3}()},
 \code{\link{nba_boxscorescoringv3}()},
+\code{\link{nba_boxscoresummaryv3}()},
 \code{\link{nba_boxscoretraditionalv3}()},
 \code{\link{nba_boxscoreusagev3}()}
 }

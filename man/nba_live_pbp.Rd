@@ -88,6 +88,7 @@ Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_pbp}()},
 \code{\link{nba_pbps}()},
+\code{\link{nba_playbyplayv3}()},
 \code{\link{nba_winprobabilitypbp}()}
 
 Other NBA Live Functions: 

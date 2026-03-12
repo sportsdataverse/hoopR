@@ -110,6 +110,7 @@ Return a tibble with the following scoreboard data:\tabular{ll}{
 \seealso{
 Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
+\code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},
 \code{\link{nba_todays_scoreboard}()}

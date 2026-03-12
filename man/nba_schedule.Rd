@@ -81,6 +81,7 @@ Returns a tibble with the following columns:\tabular{ll}{
 }
 \seealso{
 Other NBA Schedule Functions: 
+\code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},
 \code{\link{nba_scoreboardv3}()},

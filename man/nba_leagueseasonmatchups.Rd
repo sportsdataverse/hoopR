@@ -82,6 +82,7 @@ Returns a named list of data frames: SeasonMatchups
 }
 \seealso{
 Other NBA League Functions: 
+\code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},

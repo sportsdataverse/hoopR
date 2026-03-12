@@ -169,6 +169,7 @@ Returns a named list of data frames: LeagueDashTeamStats
 }
 \seealso{
 Other NBA League Functions: 
+\code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
@@ -194,6 +195,7 @@ Other NBA League Functions:
 \code{\link{nba_shotchartleaguewide}()}
 
 Other NBA Team Functions: 
+\code{\link{nba_teamandplayersvsplayers}()},
 \code{\link{nba_teamdashboardbyclutch}()},
 \code{\link{nba_teamdashboardbygamesplits}()},
 \code{\link{nba_teamdashboardbygeneralsplits}()},

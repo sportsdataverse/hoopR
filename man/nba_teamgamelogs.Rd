@@ -148,6 +148,7 @@ Return a named list of data frames: TeamGameLogs
 \seealso{
 Other NBA Team Functions: 
 \code{\link{nba_leaguedashteamstats}()},
+\code{\link{nba_teamandplayersvsplayers}()},
 \code{\link{nba_teamdashboardbyclutch}()},
 \code{\link{nba_teamdashboardbygamesplits}()},
 \code{\link{nba_teamdashboardbygeneralsplits}()},

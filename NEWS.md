@@ -1,5 +1,53 @@
 # **hoopR 3.0.0**
 
+### **NBA Play-by-Play V3**
+
+- `nba_playbyplayv3()` function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.
+- `nba_pbp()` and `nba_pbps()` now default to `version = "v3"` (previously `"v2"`). Pass `version = "v2"` to use the previous behavior.
+- `.players_on_court_v3()` internal helper added — enriches V3 play-by-play data with on-court player IDs by parsing V3 substitution descriptions and using `nba_boxscoretraditionalv3()` as a fallback for initial lineup determination.
+
+### **NBA Boxscore Summary V3**
+
+- `nba_boxscoresummaryv3()` function added — returns a named list of 9 data frames: GameSummary, GameInfo, ArenaInfo, Officials, LineScore, InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo.
+
+### **New NBA Stats API Endpoint Wrappers**
+
+- `nba_commonteamyears()` function added — returns team IDs with their active year ranges.
+- `nba_dunkscoreleaders()` function added — returns dunk tracking data with biomechanics, scores, and style metrics.
+- `nba_gravityleaders()` function added — returns gravity scores measuring how much defensive attention each player draws.
+- `nba_iststandings()` function added — returns In-Season Tournament (NBA Cup) standings.
+- `nba_scheduleleaguev2int()` function added — returns international schedule data with broadcaster information.
+- `nba_teamandplayersvsplayers()` function added — returns team and player lineup comparison stats (5 datasets).
+- `nba_videoeventsasset()` function added — returns video event asset data for a given game event.
+
+### **ESPN & G-League Functions**
+
+- `espn_nba_team_current_roster()` function added — returns current team roster from ESPN.
+- `espn_mbb_team_current_roster()` function added — returns current MBB team roster from ESPN.
+- `nbagl_live_pbp()` function added — returns live G-League play-by-play data.
+- `nbagl_live_boxscore()` function added — returns live G-League box score data.
+
+### **Other Improvements**
+
+- Internal `nba_endpoint()` registry updated with all V3 boxscore endpoints and `boxscoresummaryv3`.
+- Removed deprecated `qs` dependency.
+- Updated GitHub Actions to v4.
+- Cleaned up `.Rbuildignore` duplicates.
+- Added comprehensive `CONTRIBUTING.md` with naming conventions and test environment documentation.
+
+### **Bug Fixes**
+
+- Fixed `helper-skip.R` test guard functions to use proper string comparison (`!= "1"`) instead of numeric comparison (`== 0`).
+- Fixed `nba_dunkscoreleaders()` HTTP 400 error caused by empty string parameters.
+- Fixed V3-style data.frame parsing for leader/standings endpoints.
+- Fixed `nba_iststandings()` nested games column flattening.
+- Fixed `%||%` import for R < 4.4.0 compatibility.
+
+### **Test Improvements**
+
+- Added tests for all new endpoints with column validation and rate limiting.
+- Added `skip_ncaa_mbb_test()` and `skip_ncaa_wbb_test()` helpers.
+- Updated ESPN test expectations for current API responses.
 
 # **hoopR 2.1.0**
 * ```load_nba_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
@@ -69,7 +117,7 @@
 - ```espn_nba_team_stats()``` function added.
 
 # **hoopR 1.7.0**
-- ```nba_pbps()``` function added, courtesy of [\@papagorgio23](https://github.com/papagorgio23). 
+- ```nba_pbps()``` function added, courtesy of [\@papagorgio23](https://github.com/papagorgio23).
 - ```nbagl_players()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
 - ```nbagl_schedule()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
 - ```nbagl_pbp()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
@@ -82,7 +130,7 @@
 - ```nba_drafthistory()``` function added.
 
 # **hoopR 1.5.0**
-- Major documentation update to include names of returned lists of data frames for all exported NBA Stats API, ESPN API, KenPom, NCAA and Data repository functions. 
+- Major documentation update to include names of returned lists of data frames for all exported NBA Stats API, ESPN API, KenPom, NCAA and Data repository functions.
 
 # **hoopR 1.4.5**
 - Add ```kp_referee()``` function
@@ -253,7 +301,7 @@ Adding roughly 127 functions
   - [`hoopR::load_nba_schedule()`](https://hoopr.sportsdataverse.org/reference/load_nba_schedule.html)
     function added
 
-# **hoopR 1.1.0** 
+# **hoopR 1.1.0**
 ### **Add team box score loaders**
 - [```hoopR::load_mbb_team_box()```](https://hoopr.sportsdataverse.org/reference/load_mbb_team_box.html) function added
 - [```hoopR::load_nba_team_box()```](https://hoopr.sportsdataverse.org/reference/load_nba_team_box.html) function added
@@ -271,7 +319,7 @@ Adding roughly 127 functions
 ### **Add retry**
 - Adding [```httr::retry()```](https://httr.r-lib.org/reference/RETRY.html) to all function calls to more naturally navigate rejected/failed requests from the API.
 
-# **hoopR 1.0.2-3** 
+# **hoopR 1.0.2-3**
 ### **Quick fix for update db functions**
 
 # **hoopR 1.0.1-4**
@@ -280,7 +328,7 @@ This update is a non-user facing change to package dependencies to shrink the li
 
 # **hoopR 1.0.0**
 ### **Package renamed to hoopR**
-To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package. 
+To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package.
 
 ### **Clean names and team returns**
 - All functions have now been given the [```janitor::clean_names()```](https://rdrr.io/cran/janitor/man/clean_names.html) treatment
@@ -298,8 +346,8 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - ```hoopR::espn_nba_team_box()```
 - ```hoopR::espn_nba_player_box()```
 - ```hoopR::espn_nba_pbp()```
-- ```hoopR::espn_nba_teams()``` 
-- ```hoopR::espn_nba_scoreboard()``` 
+- ```hoopR::espn_nba_teams()```
+- ```hoopR::espn_nba_scoreboard()```
 
 # **hoopR 0.3.0**
 ### **Dependencies**
@@ -319,7 +367,7 @@ To reflect that the package is no longer just a men's college basketball and Ken
 * Added tests for all KP and ESPN functions
 
 #### **Function Naming Convention Change**
-* All functions sourced from [kenpom.com](https://kenpom.com/) will start with `kp_` as opposed to `get_` 
+* All functions sourced from [kenpom.com](https://kenpom.com/) will start with `kp_` as opposed to `get_`
 * Similarly, data and metrics sourced from ESPN will begin with `espn_` as opposed to `cbb_`. Moreover, all references to `cbb_` have been changed to `mbb_` as appropriate.
 * Data sourced directly from the NCAA website will start the function with `ncaa_`
 
@@ -336,7 +384,7 @@ To reflect that the package is no longer just a men's college basketball and Ken
 - ```hoopR::ncaa_mbb_NET_rankings()``` (bumps to v0.2.3)
 - ```hoopR::espn_mbb_rankings()``` (bumps to v0.2.3)
 
-# **hoopR 0.1.0** 
+# **hoopR 0.1.0**
 -    Minor fixes
 
 # **hoopR 0.0.0.9**

@@ -72,7 +72,8 @@ Return a named list of data frames: Coaches, CommonTeamRoster
 \seealso{
 Other NBA Roster Functions: 
 \code{\link{nba_commonallplayers}()},
-\code{\link{nba_commonplayerinfo}()}
+\code{\link{nba_commonplayerinfo}()},
+\code{\link{nba_commonteamyears}()}
 }
 \author{
 Saiem Gilani
