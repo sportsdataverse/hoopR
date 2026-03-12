@@ -456,5 +456,3 @@ kp_winprob <- function(game_id, year){
 
   return(kenpom)
 }
-
-
