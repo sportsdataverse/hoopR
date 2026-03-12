@@ -36,9 +36,16 @@ jobs:
       KP_USER: ${{ secrets.KP_USER }}
       KP_PW: ${{ secrets.KP_PW }}
       R_KEEP_PKG_SOURCE: yes
+      # Note: NBA Stats, ESPN, G-League, and NCAA MBB tests are skipped on CI
+      # via skip_on_ci(). To enable them, add these secrets and remove the
+      # skip_on_ci() guard in the relevant test files:
+      # NBA_STATS_TESTS: ${{ secrets.NBA_STATS_TESTS }}
+      # ESPN_TESTS: ${{ secrets.ESPN_TESTS }}
+      # NBAGL_STATS_TESTS: ${{ secrets.NBAGL_STATS_TESTS }}
+      # NCAA_MBB_TESTS: ${{ secrets.NCAA_MBB_TESTS }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
 
