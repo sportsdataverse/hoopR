@@ -103,7 +103,7 @@ Returns a named list of tibbles: player_stats, gamelog
 
 }
 \seealso{
-Other KenPom Team Functions:
+Other KenPom Team Functions: 
 \code{\link{kp_gameplan}()},
 \code{\link{kp_minutes_matrix}()},
 \code{\link{kp_opptracker}()},

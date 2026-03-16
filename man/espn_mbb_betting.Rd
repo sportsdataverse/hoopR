@@ -82,7 +82,7 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 }
 }
 \seealso{
-Other ESPN MBB Functions:
+Other ESPN MBB Functions: 
 \code{\link{espn_mbb_conferences}()},
 \code{\link{espn_mbb_game_all}()},
 \code{\link{espn_mbb_game_rosters}()},

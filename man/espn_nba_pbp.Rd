@@ -78,7 +78,7 @@ A play-by-play data frame.
 
 }
 \seealso{
-Other ESPN NBA Functions:
+Other ESPN NBA Functions: 
 \code{\link{espn_nba_betting}()},
 \code{\link{espn_nba_game_all}()},
 \code{\link{espn_nba_game_rosters}()},

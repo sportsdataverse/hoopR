@@ -55,7 +55,7 @@ Return a named list of data frames: CommonAllPlayers
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Roster Functions:
+Other NBA Roster Functions: 
 \code{\link{nba_commonplayerinfo}()},
 \code{\link{nba_commonteamroster}()},
 \code{\link{nba_commonteamyears}()}

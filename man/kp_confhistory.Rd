@@ -58,7 +58,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 }
 \seealso{
-Other KenPom Historical Functions:
+Other KenPom Historical Functions: 
 \code{\link{kp_coach_history}()},
 \code{\link{kp_conf}()},
 \code{\link{kp_confstats}()},

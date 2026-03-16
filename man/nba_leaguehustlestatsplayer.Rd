@@ -138,7 +138,7 @@ Returns a named list of data frames: HustleStatsPlayer
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Hustle Functions:
+Other NBA Hustle Functions: 
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_leaguehustlestatsplayerleaders}()},
 \code{\link{nba_leaguehustlestatsteam}()},

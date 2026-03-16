@@ -86,7 +86,7 @@ Return a named list of data frames: LeagueGameLog
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions:
+Other NBA League Functions: 
 \code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},

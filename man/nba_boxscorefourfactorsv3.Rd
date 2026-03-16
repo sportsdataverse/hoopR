@@ -147,7 +147,7 @@ away_team_totals_four_factors
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions:
+Other NBA Boxscore V3 Functions: 
 \code{\link{nba_boxscoreadvancedv3}()},
 \code{\link{nba_boxscoredefensivev2}()},
 \code{\link{nba_boxscorehustlev2}()},

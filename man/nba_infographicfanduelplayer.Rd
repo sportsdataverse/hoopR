@@ -61,7 +61,7 @@ Return a named list of data frames: FanDuelPlayer
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions:
+Other NBA Player Functions: 
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
 \code{\link{nba_leaguedashplayershotlocations}()},
@@ -98,7 +98,7 @@ Other NBA Player Functions:
 \code{\link{nba_playerprofilev2}()},
 \code{\link{nba_playervsplayer}()}
 
-Other NBA Fantasy Functions:
+Other NBA Fantasy Functions: 
 \code{\link{nba_fantasywidget}()},
 \code{\link{nba_playerfantasyprofile}()},
 \code{\link{nba_playerfantasyprofilebargraph}()}

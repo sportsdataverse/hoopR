@@ -233,7 +233,7 @@ Return a named list of data frames: ShotChartLineupDetail, ShotChartLineupLeague
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Shooting Functions:
+Other NBA Shooting Functions: 
 \code{\link{nba_leaguedashplayershotlocations}()},
 \code{\link{nba_leaguedashteamptshot}()},
 \code{\link{nba_leaguedashteamshotlocations}()},
@@ -242,7 +242,7 @@ Other NBA Shooting Functions:
 \code{\link{nba_shotchartleaguewide}()},
 \code{\link{nba_teamdashboardbyshootingsplits}()}
 
-Other NBA Lineup Functions:
+Other NBA Lineup Functions: 
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguelineupviz}()},

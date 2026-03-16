@@ -498,7 +498,7 @@ Last5PlayerDashboard, OverallPlayerDashboard
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions:
+Other NBA Player Functions: 
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},

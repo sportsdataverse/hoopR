@@ -26,7 +26,7 @@ Returns a named list containing video event asset data (structure varies by resp
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions:
+Other NBA Video Functions: 
 \code{\link{nba_videodetails}()},
 \code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videoevents}()},

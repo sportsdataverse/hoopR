@@ -147,7 +147,7 @@ Returns a named list of data frames: home_team_player_matchups, away_team_player
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions:
+Other NBA Boxscore V3 Functions: 
 \code{\link{nba_boxscoreadvancedv3}()},
 \code{\link{nba_boxscoredefensivev2}()},
 \code{\link{nba_boxscorefourfactorsv3}()},

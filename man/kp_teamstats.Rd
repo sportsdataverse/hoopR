@@ -65,7 +65,7 @@ Returns a tibble of team stats\tabular{ll}{
 }
 }
 \seealso{
-Other KenPom Ratings Functions:
+Other KenPom Ratings Functions: 
 \code{\link{kp_efficiency}()},
 \code{\link{kp_foul_trouble}()},
 \code{\link{kp_fourfactors}()},
