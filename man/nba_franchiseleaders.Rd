@@ -48,7 +48,7 @@ Returns a named list of data frames: FranchiseLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Franchise Functions:
+Other NBA Franchise Functions: 
 \code{\link{nba_franchisehistory}()},
 \code{\link{nba_franchiseleaderswrank}()},
 \code{\link{nba_franchiseplayers}()}

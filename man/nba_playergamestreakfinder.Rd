@@ -304,7 +304,7 @@ Return a named list of data frames: PlayerGameStreakFinderResults
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions:
+Other NBA Player Functions: 
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
@@ -341,7 +341,7 @@ Other NBA Player Functions:
 \code{\link{nba_playerprofilev2}()},
 \code{\link{nba_playervsplayer}()}
 
-Other NBA Game Finder Functions:
+Other NBA Game Finder Functions: 
 \code{\link{nba_leaguegamefinder}()},
 \code{\link{nba_teamgamestreakfinder}()}
 }

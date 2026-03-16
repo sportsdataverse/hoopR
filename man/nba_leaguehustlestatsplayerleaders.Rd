@@ -177,7 +177,7 @@ PlayerScreenAssistLeaders, Table5
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Hustle Functions:
+Other NBA Hustle Functions: 
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_leaguehustlestatsplayer}()},
 \code{\link{nba_leaguehustlestatsteam}()},

@@ -81,7 +81,7 @@ Returns a named list of data frames: DraftCombineStats
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Draft Functions:
+Other NBA Draft Functions: 
 \code{\link{nba_draftboard}()},
 \code{\link{nba_draftcombinedrillresults}()},
 \code{\link{nba_draftcombinenonstationaryshooting}()},

@@ -80,7 +80,7 @@ Returns a named list of tibbles: winprob_dataset, game_data, runs
 }
 }
 \seealso{
-Other KenPom Boxscore Functions:
+Other KenPom Boxscore Functions: 
 \code{\link{kp_box}()}
 }
 \concept{KenPom Boxscore Functions}

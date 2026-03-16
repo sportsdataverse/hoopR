@@ -162,7 +162,7 @@ home_team_totals_misc, away_team_totals_misc
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions:
+Other NBA Boxscore V3 Functions: 
 \code{\link{nba_boxscoreadvancedv3}()},
 \code{\link{nba_boxscoredefensivev2}()},
 \code{\link{nba_boxscorefourfactorsv3}()},

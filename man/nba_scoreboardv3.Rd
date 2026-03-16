@@ -108,7 +108,7 @@ Return a tibble with the following scoreboard data:\tabular{ll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions:
+Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
 \code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_scoreboard}()},

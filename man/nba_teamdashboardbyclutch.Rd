@@ -747,7 +747,7 @@ Last5MinPlusMinus5PointTeamDashboard, OverallTeamDashboard
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Team Functions:
+Other NBA Team Functions: 
 \code{\link{nba_leaguedashteamstats}()},
 \code{\link{nba_teamandplayersvsplayers}()},
 \code{\link{nba_teamdashboardbygamesplits}()},
@@ -775,7 +775,7 @@ Other NBA Team Functions:
 \code{\link{nba_teamvsplayer}()},
 \code{\link{nba_teamyearbyyearstats}()}
 
-Other NBA Clutch Functions:
+Other NBA Clutch Functions: 
 \code{\link{nba_leaguedashteamclutch}()},
 \code{\link{nba_playerdashboardbyclutch}()}
 }

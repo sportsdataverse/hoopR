@@ -82,7 +82,7 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 }
 }
 \seealso{
-Other ESPN NBA Functions:
+Other ESPN NBA Functions: 
 \code{\link{espn_nba_game_all}()},
 \code{\link{espn_nba_game_rosters}()},
 \code{\link{espn_nba_pbp}()},

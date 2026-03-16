@@ -45,7 +45,7 @@ Returns a tibble of efficiency and tempo ratings\tabular{ll}{
 }
 }
 \seealso{
-Other KenPom Ratings Functions:
+Other KenPom Ratings Functions: 
 \code{\link{kp_foul_trouble}()},
 \code{\link{kp_fourfactors}()},
 \code{\link{kp_height}()},

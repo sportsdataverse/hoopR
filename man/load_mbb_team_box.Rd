@@ -76,7 +76,7 @@ load_mbb_team_box(seasons = most_recent_mbb_season())
 }
 }
 \seealso{
-Other hoopR Loader Functions:
+Other hoopR Loader Functions: 
 \code{\link{load_mbb_pbp}()},
 \code{\link{load_mbb_player_box}()},
 \code{\link{load_mbb_schedule}()},

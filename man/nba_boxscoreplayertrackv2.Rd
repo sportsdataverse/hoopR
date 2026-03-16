@@ -87,7 +87,7 @@ Returns a named list of data frames: PlayerStats, TeamStats
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions:
+Other NBA Boxscore Functions: 
 \code{\link{nba_boxscoreadvancedv2}()},
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorefourfactorsv2}()},
@@ -101,7 +101,7 @@ Other NBA Boxscore Functions:
 \code{\link{nba_hustlestatsboxscore}()},
 \code{\link{nba_live_boxscore}()}
 
-Other NBA Player Tracking Functions:
+Other NBA Player Tracking Functions: 
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerptshot}()},
 \code{\link{nba_leaguedashptdefend}()},

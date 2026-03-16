@@ -101,7 +101,7 @@ Returns a named list of data frames: DunkScoreLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions:
+Other NBA Leaders Functions: 
 \code{\link{nba_alltimeleadersgrids}()},
 \code{\link{nba_assistleaders}()},
 \code{\link{nba_assisttracker}()},

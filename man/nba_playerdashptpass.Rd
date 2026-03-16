@@ -125,7 +125,7 @@ Return a named list of data frames: PassesMade, PassesReceived
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions:
+Other NBA Player Functions: 
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
@@ -162,7 +162,7 @@ Other NBA Player Functions:
 \code{\link{nba_playerprofilev2}()},
 \code{\link{nba_playervsplayer}()}
 
-Other NBA Player Tracking Functions:
+Other NBA Player Tracking Functions: 
 \code{\link{nba_boxscoreplayertrackv2}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerptshot}()},

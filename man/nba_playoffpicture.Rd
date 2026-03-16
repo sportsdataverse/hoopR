@@ -141,7 +141,7 @@ WestConfRemainingGames, WestConfStandings
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions:
+Other NBA League Functions: 
 \code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},

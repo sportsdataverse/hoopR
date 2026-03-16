@@ -76,7 +76,7 @@ Return a named list of data frames: SynergyPlayType
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Tracking Functions:
+Other NBA Player Tracking Functions: 
 \code{\link{nba_boxscoreplayertrackv2}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerptshot}()},

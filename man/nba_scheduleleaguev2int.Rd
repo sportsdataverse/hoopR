@@ -80,7 +80,7 @@ Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions:
+Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
 \code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},

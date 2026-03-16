@@ -362,7 +362,7 @@ away_team_linescores
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions:
+Other NBA Boxscore Functions: 
 \code{\link{nba_boxscoreadvancedv2}()},
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorefourfactorsv2}()},
@@ -376,7 +376,7 @@ Other NBA Boxscore Functions:
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_hustlestatsboxscore}()}
 
-Other NBA Live Functions:
+Other NBA Live Functions: 
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_todays_scoreboard}()}
 }
