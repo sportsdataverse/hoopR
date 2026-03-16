@@ -134,7 +134,7 @@ A list of named data frames:
 }
 }
 \seealso{
-Other KenPom Historical Functions: 
+Other KenPom Historical Functions:
 \code{\link{kp_coach_history}()},
 \code{\link{kp_confhistory}()},
 \code{\link{kp_confstats}()},

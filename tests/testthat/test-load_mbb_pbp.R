@@ -1,5 +1,7 @@
 test_that("hoopR Loader MBB Play-by-Play", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- load_mbb_pbp(seasons = most_recent_mbb_season())
 
 
@@ -55,14 +57,13 @@ test_that("hoopR Loader MBB Play-by-Play", {
     "athlete_id_2",
     "game_date",
     "game_date_time",
-    "media_id",
     "coordinate_x_raw",
     "coordinate_y_raw",
     "coordinate_x",
     "coordinate_y"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

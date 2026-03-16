@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA game roster", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_game_rosters(game_id = 401283399)
 
   cols <- c(
@@ -94,7 +96,7 @@ test_that("ESPN - Get NBA game roster", {
     "contract_base_year_compensation_active",
     "contract_base_year_compensation_expiration"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

@@ -17,7 +17,7 @@ template:
     nav-link-dropdown-toggle-hover-color: "#D1DAE8"
     navbar-hover-color: "#D1DAE8"
     navbar-brand-hover-color: "#D1DAE8"
-    nav-tabs-link-active-bg	: "#D1DAE8"
+    nav-tabs-link-active-bg: "#D1DAE8"
     nav-pills-link-active-color: "#D1DAE8"
     btn-link-color: "#D1DAE8"
     btn-link-hover-color: "#D1DAE8"
@@ -33,33 +33,32 @@ template:
       creator: "@saiemgilani"
       site: "@sportsdataverse"
       card: summary_large_image
-
 toc:
   depth: 3
-
 authors:
   Saiem Gilani:
-   href: https://twitter.com/saiemgilani
+    href: https://twitter.com/saiemgilani
   Jason Lee:
-   href: https://twitter.com/theFirmAISports
+    href: https://twitter.com/theFirmAISports
   Billy Fryer:
-   href: https://twitter.com/_b4billy_
+    href: https://twitter.com/_b4billy_
   Ross Drucker:
-   href: https://twitter.com/rossdrucker9
+    href: https://twitter.com/rossdrucker9
   Vladislav Shufinskiy:
-   href: https://twitter.com/vshufinskiy
+    href: https://twitter.com/vshufinskiy
 home:
   title: hoopR • Data and Tools for Men's Basketball
   description: >
     A collection of data and a R package designed for men's basketball!
+
   icon: fa-home
   href: index.html
   links:
-  - text: Getting started with hoopR
-    href: articles/getting-started-hoopR.html
+    - text: Getting started with hoopR
+      href: articles/getting-started-hoopR.html
 navbar:
   structure:
-    left:  [home, reference, articles, news, network, data]
+    left: [home, reference, articles, news, network, data]
     right: [twitter, github]
   icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.ico
   title: "hoopR"
@@ -68,6 +67,7 @@ navbar:
       title: hoopR • Data and Tools for Men's Basketball
       description: >
         A collection of data and a R package designed for men's basketball!
+
       icon: fa-home
       href: index.html
     reference:
@@ -75,18 +75,18 @@ navbar:
       text: " Funcs"
       href: reference/index.html
       menu:
-      - text: "Function Index"
-        href: reference/index.html
+        - text: "Function Index"
+          href: reference/index.html
     articles:
       icon: "fas fa-book-reader"
       text: " Articles"
       menu:
-      - text: Vignettes
-        href: articles/index.html
-      - text: "Getting Started with hoopR"
-        href: articles/getting-started-hoopR.html
-      - text: "KenPom Example Functions"
-        href: articles/kenpom-example-functions.html
+        - text: Vignettes
+          href: articles/index.html
+        - text: "Getting Started with hoopR"
+          href: articles/getting-started-hoopR.html
+        - text: "KenPom Example Functions"
+          href: articles/kenpom-example-functions.html
     news:
       icon: "fas fa-newspaper"
       text: " News"
@@ -95,89 +95,88 @@ navbar:
       icon: "fas fa-project-diagram"
       text: " SDV"
       menu:
-      - text: SportsDataverse
-        href: https://sportsdataverse.org/
-      - text: --------------------------------
-      - text: "R Packages"
-      - text: sportsdataverse-R
-        href: https://r.sportsdataverse.org/
-      - text: cfbfastR
-        href: https://cfbfastR.sportsdataverse.org/
-      - text: hoopR
-        href: https://hoopR.sportsdataverse.org/
-      - text: wehoop
-        href: https://wehoop.sportsdataverse.org/
-      - text: fastRhockey
-        href: https://fastRhockey.sportsdataverse.org/
-      - text: hockeyR
-        href: https://hockeyr.netlify.app/
-      - text: ggshakeR
-        href: https://abhiamishra.github.io/ggshakeR/
-      - text: baseballr
-        href: https://BillPetti.github.io/baseballr/
-      - text: worldfootballR
-        href: https://jaseziv.github.io/worldfootballR/
-      - text: usfootballR
-        href: https://usfootballR.sportsdataverse.org/
-      - text: soccerAnimate
-        href: https://github.com/Dato-Futbol/soccerAnimate/
-      - text: chessR
-        href: https://jaseziv.github.io/chessR/
-      - text: oddsapiR
-        href: https://oddsapiR.sportsdataverse.org/
-      - text: sportyR
-        href: https://sportyR.sportsdataverse.org/
-      - text: toRvik
-        href: https://torvik.dev/
-      - text: cfbplotR
-        href: https://cfbplotR.sportsdataverse.org/
-      - text: mlbplotR
-        href: https://camdenk.github.io/mlbplotR/
-      - text: softballR
-        href: https://github.com/sportsdataverse/softballR/
-      - text: cfb4th
-        href: https://cfb4th.sportsdataverse.org/
-      - text: nwslR
-        href: https://github.com/nwslR/nwslR/
-      - text: gamezoneR
-        href: https://jacklich10.github.io/gamezoneR/
-      - text: recruitR
-        href: https://recruitr.sportsdataverse.org/
-      - text: puntr
-        href: https://puntalytics.github.io/puntr/
-      - text: --------------------------------
-      - text: "Python Packages"
-      - text: sportsdataverse-py
-        href: https://py.sportsdataverse.org/
-      - text: sportypy
-        href: https://sportypy.sportsdataverse.org/
-      - text: nwslpy
-        href: https://github.com/nwslR/nwslpy/
-      - text: recruitR-py
-        href: https://github.com/sportsdataverse/recruitR-py/
-      - text: collegebaseball
-        href: https://github.com/nathanblumenfeld/collegebaseball/
-      - text: --------------------------------
-      - text: "Node.js Packages"
-      - text: sportsdataverse.js
-        href: https://js.sportsdataverse.org/
-      - text: nfl-nerd
-        href: https://github.com/nntrn/nfl-nerd/
+        - text: SportsDataverse
+          href: https://sportsdataverse.org/
+        - text: '--------------------------------'
+        - text: "R Packages"
+        - text: sportsdataverse-R
+          href: https://r.sportsdataverse.org/
+        - text: cfbfastR
+          href: https://cfbfastR.sportsdataverse.org/
+        - text: hoopR
+          href: https://hoopR.sportsdataverse.org/
+        - text: wehoop
+          href: https://wehoop.sportsdataverse.org/
+        - text: fastRhockey
+          href: https://fastRhockey.sportsdataverse.org/
+        - text: hockeyR
+          href: https://hockeyr.netlify.app/
+        - text: ggshakeR
+          href: https://abhiamishra.github.io/ggshakeR/
+        - text: baseballr
+          href: https://BillPetti.github.io/baseballr/
+        - text: worldfootballR
+          href: https://jaseziv.github.io/worldfootballR/
+        - text: usfootballR
+          href: https://usfootballR.sportsdataverse.org/
+        - text: soccerAnimate
+          href: https://github.com/Dato-Futbol/soccerAnimate/
+        - text: chessR
+          href: https://jaseziv.github.io/chessR/
+        - text: oddsapiR
+          href: https://oddsapiR.sportsdataverse.org/
+        - text: sportyR
+          href: https://sportyR.sportsdataverse.org/
+        - text: toRvik
+          href: https://torvik.dev/
+        - text: cfbplotR
+          href: https://cfbplotR.sportsdataverse.org/
+        - text: mlbplotR
+          href: https://camdenk.github.io/mlbplotR/
+        - text: softballR
+          href: https://github.com/sportsdataverse/softballR/
+        - text: cfb4th
+          href: https://cfb4th.sportsdataverse.org/
+        - text: nwslR
+          href: https://github.com/nwslR/nwslR/
+        - text: gamezoneR
+          href: https://jacklich10.github.io/gamezoneR/
+        - text: recruitR
+          href: https://recruitr.sportsdataverse.org/
+        - text: puntr
+          href: https://puntalytics.github.io/puntr/
+        - text: '--------------------------------'
+        - text: "Python Packages"
+        - text: sportsdataverse-py
+          href: https://py.sportsdataverse.org/
+        - text: sportypy
+          href: https://sportypy.sportsdataverse.org/
+        - text: nwslpy
+          href: https://github.com/nwslR/nwslpy/
+        - text: recruitR-py
+          href: https://github.com/sportsdataverse/recruitR-py/
+        - text: collegebaseball
+          href: https://github.com/nathanblumenfeld/collegebaseball/
+        - text: '--------------------------------'
+        - text: "Node.js Packages"
+        - text: sportsdataverse.js
+          href: https://js.sportsdataverse.org/
+        - text: nfl-nerd
+          href: https://github.com/nntrn/nfl-nerd/
     data:
       icon: "fas fa-database"
       text: " Data"
       menu:
-      - text: "SDV Data Releases"
-        href: https://github.com/sportsdataverse/sportsdataverse-data/releases
-      - text: "hoopR Data Repository"
-        href: https://github.com/sportsdataverse/hoopR-data
+        - text: "SDV Data Releases"
+          href: https://github.com/sportsdataverse/sportsdataverse-data/releases
+        - text: "hoopR Data Repository"
+          href: https://github.com/sportsdataverse/hoopR-data
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: http://twitter.com/saiemgilani
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/sportsdataverse/hoopR/
-
 reference:
   - title: hoopR Data
   - subtitle: NBA Data Functions
@@ -250,3 +249,4 @@ reference:
       - '`helper_espn_mbb_team_box`'
       - '`helper_espn_mbb_player_box`'
       - '`.players_on_court`'
+      - '`.players_on_court_v3`'

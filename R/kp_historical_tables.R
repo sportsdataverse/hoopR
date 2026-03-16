@@ -1280,4 +1280,3 @@ kp_confhistory <- function(conf){
   )
   return(kenpom)
 }
-

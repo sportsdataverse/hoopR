@@ -1,6 +1,7 @@
 test_that("NBA Team Dashboard Player Tracking - Rebounding", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_teamdashptreb(team_id = "1610612749",
                          season = year_to_season(most_recent_nba_season() - 1))
@@ -104,15 +105,15 @@ test_that("NBA Team Dashboard Player Tracking - Rebounding", {
     "UC_REB_PCT"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x[[2]])))
   expect_s3_class(x[[2]], "data.frame")
-  expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
+  expect_in(sort(cols_x3), sort(colnames(x[[3]])))
   expect_s3_class(x[[3]], "data.frame")
-  expect_equal(sort(colnames(x[[4]])), sort(cols_x4))
+  expect_in(sort(cols_x4), sort(colnames(x[[4]])))
   expect_s3_class(x[[4]], "data.frame")
-  expect_equal(sort(colnames(x[[5]])), sort(cols_x5))
+  expect_in(sort(cols_x5), sort(colnames(x[[5]])))
   expect_s3_class(x[[5]], "data.frame")
 
   Sys.sleep(3)

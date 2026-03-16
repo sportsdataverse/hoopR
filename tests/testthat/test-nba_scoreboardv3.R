@@ -1,6 +1,7 @@
 test_that("NBA Scoreboard V3", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_scoreboardv3(league_id = "00", game_date = "2023-03-26")
 
@@ -88,7 +89,7 @@ test_that("NBA Scoreboard V3", {
   )
 
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

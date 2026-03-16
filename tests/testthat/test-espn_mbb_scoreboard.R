@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB scoreboard", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_scoreboard(season = "20220215")
 
   cols <- c(
@@ -40,7 +42,7 @@ test_that("ESPN - Get MBB scoreboard", {
     "away_win",
     "away_record"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

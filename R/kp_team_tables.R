@@ -2428,6 +2428,3 @@ kp_team_lineups <- function(team, year=2021){
   )
   return(kenpom)
 }
-
-
-

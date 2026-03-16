@@ -228,10 +228,12 @@ OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions: 
+Other NBA Leaders Functions:
 \code{\link{nba_assistleaders}()},
 \code{\link{nba_assisttracker}()},
 \code{\link{nba_defensehub}()},
+\code{\link{nba_dunkscoreleaders}()},
+\code{\link{nba_gravityleaders}()},
 \code{\link{nba_homepageleaders}()},
 \code{\link{nba_homepagev2}()},
 \code{\link{nba_leaderstiles}()},

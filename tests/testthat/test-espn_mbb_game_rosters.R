@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB game roster", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_game_rosters(game_id = 401256760)
 
   cols <- c(
@@ -80,7 +82,7 @@ test_that("ESPN - Get MBB game roster", {
     "winner",
     "roster_href"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

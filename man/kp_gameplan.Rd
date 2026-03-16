@@ -101,7 +101,7 @@ Returns a named list of tibbles: gameplan, correlations, position_distributions
 }
 }
 \seealso{
-Other KenPom Team Functions: 
+Other KenPom Team Functions:
 \code{\link{kp_minutes_matrix}()},
 \code{\link{kp_opptracker}()},
 \code{\link{kp_player_career}()},

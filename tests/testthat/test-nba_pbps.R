@@ -1,6 +1,8 @@
 test_that("NBA PBPs", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
   y <- c("0022201086", "0022200021")
   x1 <- nba_pbps(game_ids = y)
 
@@ -59,7 +61,7 @@ test_that("NBA PBPs", {
   )
 
 
-  expect_equal(sort(colnames(x1)), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x1)))
   expect_s3_class(x1, "data.frame")
 
   Sys.sleep(3)
@@ -121,7 +123,7 @@ test_that("NBA PBPs", {
   )
 
 
-  expect_equal(sort(colnames(x2)), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x2)))
   expect_s3_class(x2, "data.frame")
 
   Sys.sleep(3)

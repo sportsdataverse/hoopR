@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB player season stats", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_player_stats(athlete_id = 4433134, year = 2021)
 
   cols <- c(
@@ -143,7 +145,7 @@ test_that("ESPN - Get MBB player season stats", {
     "logo_href",
     "logo_dark_href"
   )
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

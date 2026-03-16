@@ -86,7 +86,7 @@ Returns a named list of data frames: Picks, TeamsWithoutPicks, LiveDetails
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Draft Functions: 
+Other NBA Draft Functions:
 \code{\link{nba_draftcombinedrillresults}()},
 \code{\link{nba_draftcombinenonstationaryshooting}()},
 \code{\link{nba_draftcombineplayeranthro}()},

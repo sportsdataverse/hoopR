@@ -59,6 +59,8 @@ nba_commonallplayers <- function(
     Season = season
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -175,6 +177,8 @@ nba_commonplayerinfo <- function(
     PlayerID = player_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -241,6 +245,8 @@ nba_commonplayoffseries <- function(
     Season = season,
     SeriesID = series_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -338,6 +344,8 @@ nba_commonteamroster <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -348,6 +356,71 @@ nba_commonteamroster <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or common team roster data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API Common Team Years**
+#' @name nba_commonteamyears
+NULL
+#' @title
+#' **Get NBA Stats API Common Team Years**
+#' @rdname nba_commonteamyears
+#' @author Saiem Gilani
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: TeamYears
+#'
+#'    **TeamYears**
+#'
+#'
+#'    |col_name     |types     |
+#'    |:------------|:---------|
+#'    |LEAGUE_ID    |character |
+#'    |TEAM_ID      |character |
+#'    |MIN_YEAR     |character |
+#'    |MAX_YEAR     |character |
+#'    |ABBREVIATION |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Roster Functions
+#' @details
+#' ```r
+#'  nba_commonteamyears(league_id = '00')
+#' ```
+nba_commonteamyears <- function(
+    league_id = '00',
+    ...){
+
+  version <- "commonteamyears"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id
+  )
+
+  df_list <- list()
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      df_list <- nba_stats_map_result_sets(resp)
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no common team years data available!"))
     },
     warning = function(w) {
     },

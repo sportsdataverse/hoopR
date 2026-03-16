@@ -180,7 +180,8 @@ Returns a named list of data frames: LeagueDashTeamClutch
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
+\code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
@@ -205,7 +206,7 @@ Other NBA League Functions:
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}
 
-Other NBA Clutch Functions: 
+Other NBA Clutch Functions:
 \code{\link{nba_playerdashboardbyclutch}()},
 \code{\link{nba_teamdashboardbyclutch}()}
 }

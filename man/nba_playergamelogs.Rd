@@ -158,7 +158,7 @@ Return a named list of data frames: PlayerGameLogs
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions: 
+Other NBA Player Functions:
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},

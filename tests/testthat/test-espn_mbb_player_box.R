@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB player box score only", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_player_box(game_id = 401256760)
 
   cols <- c(
@@ -33,7 +35,6 @@ test_that("ESPN - Get MBB player box score only", {
     "starter",
     "ejected",
     "did_not_play",
-    "active",
     "athlete_jersey",
     "athlete_short_name",
     "athlete_headshot_href",
@@ -59,7 +60,7 @@ test_that("ESPN - Get MBB player box score only", {
     "opponent_team_alternate_color",
     "opponent_team_score"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

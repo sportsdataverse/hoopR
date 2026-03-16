@@ -83,7 +83,7 @@ Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
+Other NBA Boxscore Functions:
 \code{\link{nba_boxscoreadvancedv2}()},
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorematchups}()},

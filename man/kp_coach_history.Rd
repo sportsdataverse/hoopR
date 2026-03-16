@@ -82,7 +82,7 @@ A data frame with 30 columns:\tabular{ll}{
 
 }
 \seealso{
-Other KenPom Historical Functions: 
+Other KenPom Historical Functions:
 \code{\link{kp_conf}()},
 \code{\link{kp_confhistory}()},
 \code{\link{kp_confstats}()},

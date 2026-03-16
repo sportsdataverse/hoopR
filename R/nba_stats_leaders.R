@@ -254,6 +254,8 @@ nba_alltimeleadersgrids <- function(
     TopX = top_x
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -332,6 +334,8 @@ nba_assistleaders <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -389,6 +393,8 @@ nba_assisttracker <- function(
     PerMode = per_mode,
     Season = season,
     SeasonType = season_type)
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -506,6 +512,8 @@ nba_homepageleaders <- function(
     SeasonType = season_type,
     StatCategory = stat_category
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -672,6 +680,8 @@ nba_homepagev2 <- function(
     StatType = stat_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -791,6 +801,8 @@ nba_leaderstiles <- function(
     Stat = stat
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -862,6 +874,8 @@ nba_defensehub <- function(
     Season = season,
     SeasonType = season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -974,6 +988,8 @@ nba_leagueleaders <- function(
     StatCategory = stat_category
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -993,6 +1009,255 @@ nba_leagueleaders <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league leaders data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API Dunk Score Leaders**
+#' @name nba_dunkscoreleaders
+NULL
+#' @title
+#' **Get NBA Stats API Dunk Score Leaders**
+#' @rdname nba_dunkscoreleaders
+#' @author Saiem Gilani
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
+#' @param season_type Season Type - 'Regular Season', 'Playoffs'
+#' @param player_id Player ID filter (optional, leave empty for all players)
+#' @param team_id Team ID filter (optional, leave empty for all teams)
+#' @param game_id Game ID filter (optional, leave empty for all games)
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: DunkScoreLeaders
+#'
+#'    **DunkScoreLeaders**
+#'
+#'
+#'    |col_name                       |types     |
+#'    |:------------------------------|:---------|
+#'    |game_id                        |character |
+#'    |game_date                      |character |
+#'    |matchup                        |character |
+#'    |period                         |character |
+#'    |game_clock_time                |character |
+#'    |event_num                      |character |
+#'    |player_id                      |character |
+#'    |player_name                    |character |
+#'    |first_name                     |character |
+#'    |last_name                      |character |
+#'    |team_id                        |character |
+#'    |team_name                      |character |
+#'    |team_city                      |character |
+#'    |team_abbreviation              |character |
+#'    |dunk_score                     |character |
+#'    |jump_subscore                  |character |
+#'    |power_subscore                 |character |
+#'    |style_subscore                 |character |
+#'    |defensive_contest_subscore     |character |
+#'    |max_ball_height                |character |
+#'    |ball_speed_through_rim         |character |
+#'    |player_vertical                |character |
+#'    |hang_time                      |character |
+#'    |takeoff_distance               |character |
+#'    |reverse_dunk                   |character |
+#'    |dunk360                        |character |
+#'    |through_the_legs               |character |
+#'    |alley_oop                      |character |
+#'    |tip_in                         |character |
+#'    |self_oop                       |character |
+#'    |player_rotation                |character |
+#'    |player_lateral_speed           |character |
+#'    |ball_distance_traveled         |character |
+#'    |ball_reach_back                |character |
+#'    |total_ball_acceleration        |character |
+#'    |dunking_hand                   |character |
+#'    |jumping_foot                   |character |
+#'    |pass_length                    |character |
+#'    |catching_hand                  |character |
+#'    |catch_distance                 |character |
+#'    |lateral_catch_distance         |character |
+#'    |passer_id                      |character |
+#'    |passer_name                    |character |
+#'    |passer_first_name              |character |
+#'    |passer_last_name               |character |
+#'    |pass_release_point             |character |
+#'    |shooter_id                     |character |
+#'    |shooter_name                   |character |
+#'    |shooter_first_name             |character |
+#'    |shooter_last_name              |character |
+#'    |shot_release_point             |character |
+#'    |shot_length                    |character |
+#'    |defensive_contest_level        |character |
+#'    |possible_attempted_charge      |character |
+#'    |video_available                |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Leaders Functions
+#' @details
+#' ```r
+#'  nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 1))
+#' ```
+nba_dunkscoreleaders <- function(
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    player_id = '',
+    team_id = '',
+    game_id = '',
+    ...){
+
+  version <- "dunkscoreleaders"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type
+  )
+  if (nchar(player_id) > 0) params[["PlayerID"]] <- player_id
+  if (nchar(team_id) > 0) params[["TeamID"]] <- team_id
+  if (nchar(game_id) > 0) params[["GameID"]] <- game_id
+
+  df_list <- list()
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      dunks <- resp %>%
+        purrr::pluck("dunks")
+
+      if (length(dunks) > 0) {
+        data <- dunks %>%
+          dplyr::as_tibble() %>%
+          dplyr::mutate(dplyr::across(dplyr::everything(), as.character)) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("Dunk Score Leaders from NBA.com", Sys.time())
+      } else {
+        data <- dplyr::tibble()
+      }
+
+      df_list <- c(list(data))
+      names(df_list) <- c("DunkScoreLeaders")
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no dunk score leaders data for {season} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API Gravity Leaders**
+#' @name nba_gravityleaders
+NULL
+#' @title
+#' **Get NBA Stats API Gravity Leaders**
+#' @rdname nba_gravityleaders
+#' @author Saiem Gilani
+#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
+#' @param season Season - format: '2023-24'
+#' @param season_type Season Type - 'Regular Season', 'Playoffs'
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list of data frames: GravityLeaders
+#'
+#'    **GravityLeaders**
+#'
+#'
+#'    |col_name                            |types     |
+#'    |:-----------------------------------|:---------|
+#'    |playerid                            |character |
+#'    |firstname                           |character |
+#'    |lastname                            |character |
+#'    |teamid                              |character |
+#'    |teamabbreviation                    |character |
+#'    |teamname                            |character |
+#'    |teamcity                            |character |
+#'    |frames                              |character |
+#'    |gravityscore                        |character |
+#'    |avggravityscore                     |character |
+#'    |onballperimeterframes               |character |
+#'    |onballperimetergravityscore         |character |
+#'    |avgonballperimetergravityscore      |character |
+#'    |offballperimeterframes              |character |
+#'    |offballperimetergravityscore        |character |
+#'    |avgoffballperimetergravityscore     |character |
+#'    |onballinteriorframes               |character |
+#'    |onballinteriorgravityscore          |character |
+#'    |avgonballinteriorgravityscore       |character |
+#'    |offballinteriorframes              |character |
+#'    |offballinteriorgravityscore         |character |
+#'    |avgoffballinteriorgravityscore      |character |
+#'    |gamesplayed                         |character |
+#'    |minutes                             |character |
+#'    |pts                                 |character |
+#'    |reb                                 |character |
+#'    |ast                                 |character |
+#'
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Leaders Functions
+#' @details
+#' ```r
+#'  nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 1))
+#' ```
+nba_gravityleaders <- function(
+    league_id = '00',
+    season = year_to_season(most_recent_nba_season() - 1),
+    season_type = 'Regular Season',
+    ...){
+
+  version <- "gravityleaders"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    LeagueID = league_id,
+    Season = season,
+    SeasonType = season_type
+  )
+
+  df_list <- list()
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      leaders <- resp %>%
+        purrr::pluck("leaders")
+
+      if (length(leaders) > 0) {
+        data <- leaders %>%
+          dplyr::as_tibble() %>%
+          dplyr::mutate(dplyr::across(dplyr::everything(), as.character)) %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("Gravity Leaders from NBA.com", Sys.time())
+      } else {
+        data <- dplyr::tibble()
+      }
+
+      df_list <- c(list(data))
+      names(df_list) <- c("GravityLeaders")
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no gravity leaders data for {season} available!"))
     },
     warning = function(w) {
     },

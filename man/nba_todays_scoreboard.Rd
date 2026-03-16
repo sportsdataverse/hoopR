@@ -82,13 +82,14 @@ Return a data frame with the following columns:\tabular{ll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions: 
+Other NBA Schedule Functions:
 \code{\link{nba_schedule}()},
+\code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},
 \code{\link{nba_scoreboardv3}()}
 
-Other NBA Live Functions: 
+Other NBA Live Functions:
 \code{\link{nba_live_boxscore}()},
 \code{\link{nba_live_pbp}()}
 }

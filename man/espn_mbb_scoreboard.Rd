@@ -59,7 +59,7 @@ Returns a tibble\tabular{ll}{
 }
 }
 \seealso{
-Other ESPN MBB Functions: 
+Other ESPN MBB Functions:
 \code{\link{espn_mbb_betting}()},
 \code{\link{espn_mbb_conferences}()},
 \code{\link{espn_mbb_game_all}()},
@@ -70,6 +70,7 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_rankings}()},
 \code{\link{espn_mbb_standings}()},
 \code{\link{espn_mbb_team_box}()},
+\code{\link{espn_mbb_team_current_roster}()},
 \code{\link{espn_mbb_team_stats}()},
 \code{\link{espn_mbb_teams}()},
 \code{\link{espn_mbb_wp}()}

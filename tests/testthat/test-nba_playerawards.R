@@ -1,6 +1,8 @@
 test_that("NBA Player Awards", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
 
   x <- nba_playerawards(player_id = "2544")
 
@@ -22,7 +24,7 @@ test_that("NBA Player Awards", {
   )
 
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)

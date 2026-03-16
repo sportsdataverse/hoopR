@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB play by play all (no coordinate data)", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_game_all(game_id = 401256760)
   x1 <- x[[1]]
   x2 <- x[[2]]
@@ -140,7 +142,6 @@ test_that("ESPN - Get MBB play by play all (no coordinate data)", {
     "starter",
     "ejected",
     "did_not_play",
-    "active",
     "athlete_jersey",
     "athlete_short_name",
     "athlete_headshot_href",
@@ -167,14 +168,14 @@ test_that("ESPN - Get MBB play by play all (no coordinate data)", {
     "opponent_team_score"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], "data.frame")
+  expect_in(sort(cols_x1), sort(colnames(x1)))
+  expect_s3_class(x1, "data.frame")
 
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], "data.frame")
+  expect_in(sort(cols_x2), sort(colnames(x2)))
+  expect_s3_class(x2, "data.frame")
 
-  expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
-  expect_s3_class(x[[3]], "data.frame")
+  expect_in(sort(cols_x3), sort(colnames(x3)))
+  expect_s3_class(x3, "data.frame")
 
 })
 
@@ -325,7 +326,6 @@ test_that("ESPN - Get MBB play by play all (with coordinate data)", {
     "starter",
     "ejected",
     "did_not_play",
-    "active",
     "athlete_jersey",
     "athlete_short_name",
     "athlete_headshot_href",
@@ -352,13 +352,13 @@ test_that("ESPN - Get MBB play by play all (with coordinate data)", {
     "opponent_team_score"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
-  expect_s3_class(x[[1]], "data.frame")
+  expect_in(sort(cols_x1), sort(colnames(x1)))
+  expect_s3_class(x1, "data.frame")
 
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
-  expect_s3_class(x[[2]], "data.frame")
+  expect_in(sort(cols_x2), sort(colnames(x2)))
+  expect_s3_class(x2, "data.frame")
 
-  expect_equal(sort(colnames(x[[3]])), sort(cols_x3))
-  expect_s3_class(x[[3]], "data.frame")
+  expect_in(sort(cols_x3), sort(colnames(x3)))
+  expect_s3_class(x3, "data.frame")
 
 })

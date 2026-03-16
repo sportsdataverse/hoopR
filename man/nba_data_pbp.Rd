@@ -77,10 +77,11 @@ Event Message Types (event_type):
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
+Other NBA PBP Functions:
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbp}()},
 \code{\link{nba_pbps}()},
+\code{\link{nba_playbyplayv3}()},
 \code{\link{nba_winprobabilitypbp}()}
 }
 \author{

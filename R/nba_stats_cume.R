@@ -137,6 +137,8 @@ nba_cumestatsplayer <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -222,6 +224,8 @@ nba_cumestatsplayergames <- function(
     VsDivision = vs_division,
     VsTeamID = vs_team_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -386,6 +390,8 @@ nba_cumestatsteam <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -473,6 +479,8 @@ nba_cumestatsteamgames <- function(
     VsDivision = vs_division,
     VsTeamID = vs_team_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

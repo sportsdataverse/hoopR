@@ -1326,6 +1326,3 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
 
   return(kenpom)
 }
-
-
-

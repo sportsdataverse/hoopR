@@ -46,7 +46,9 @@ Scrapes the NBA Data API for Play By Play for G League games
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA G-League Functions: 
+Other NBA G-League Functions:
+\code{\link{nbagl_live_boxscore}()},
+\code{\link{nbagl_live_pbp}()},
 \code{\link{nbagl_players}()},
 \code{\link{nbagl_schedule}()},
 \code{\link{nbagl_standings}()}

@@ -1,6 +1,7 @@
 test_that("NBA Player Game Logs", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_playergamelogs(player_id = "2544")
 

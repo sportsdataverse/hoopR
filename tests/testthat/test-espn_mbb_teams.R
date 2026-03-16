@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB teams", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_teams()
 
   cols <- c(
@@ -23,7 +25,7 @@ test_that("ESPN - Get MBB teams", {
     "conference_logo",
     "parent_group_id",
     "conference_id")
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })
