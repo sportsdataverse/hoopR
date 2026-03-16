@@ -92,6 +92,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -105,8 +106,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_team_box(game_id = 401071880))
-#> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:28 UTC
+#> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:26 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     

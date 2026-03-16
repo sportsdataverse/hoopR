@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@
 
 
 <dl><dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Arguments passed on to <code><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">data.table::fread</a></code></p><dl><dt><code>input</code></dt>
+<dd><p>Arguments passed on to <code><a href="https://rdrr.io/pkg/data.table/man/fread.html" class="external-link">data.table::fread</a></code></p><dl><dt><code>input</code></dt>
 <dd><p>A single character string. The value is inspected and deferred to either <code>file=</code> (if no \n present), <code>text=</code> (if at least one \n is present) or <code>cmd=</code> (if no \n is present, at least one space is present, and it isn't a file name). Exactly one of <code>input=</code>, <code>file=</code>, <code>text=</code>, or <code>cmd=</code> should be used in the same call.</p></dd>
 
     <dt><code>file</code></dt>
@@ -173,11 +173,14 @@
     <dt><code>blank.lines.skip</code></dt>
 <dd><p><code>logical</code>, default is <code>FALSE</code>. If <code>TRUE</code> blank lines in the input are ignored.</p></dd>
 
+    <dt><code>comment.char</code></dt>
+<dd><p>Character vector of length one containing a single character of an empty string. Any text after the comment character in a line is ignored, including skipping comment-only lines. Use <code>""</code> to turn off the interpretation of comments altogether.</p></dd>
+
     <dt><code>key</code></dt>
-<dd><p>Character vector of one or more column names which is passed to <code><a href="https://rdatatable.gitlab.io/data.table/reference/setkey.html" class="external-link">setkey</a></code>. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
+<dd><p>Character vector of one or more column names which is passed to <code><a href="https://rdrr.io/pkg/data.table/man/setkey.html" class="external-link">setkey</a></code>. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
 
     <dt><code>index</code></dt>
-<dd><p>Character vector or list of character vectors of one or more column names which is passed to <code><a href="https://rdatatable.gitlab.io/data.table/reference/setkey.html" class="external-link">setindexv</a></code>. As with <code>key</code>, comma-separated notation like <code>index="x,y,z"</code> is accepted for convenience. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
+<dd><p>Character vector or list of character vectors of one or more column names which is passed to <code><a href="https://rdrr.io/pkg/data.table/man/setkey.html" class="external-link">setindexv</a></code>. As with <code>key</code>, comma-separated notation like <code>index="x,y,z"</code> is accepted for convenience. Only valid when argument <code>data.table=TRUE</code>. Where applicable, this should refer to column names given in <code>col.names</code>.</p></dd>
 
     <dt><code>showProgress</code></dt>
 <dd><p><code>TRUE</code> displays progress on the console if the ETA is greater than 3 seconds. It is produced in fread's C code where the very nice (but R level) txtProgressBar and tkProgressBar are not easily available.</p></dd>
@@ -200,14 +203,11 @@
     <dt><code>yaml</code></dt>
 <dd><p>If <code>TRUE</code>, <code>fread</code> will attempt to parse (using <code><a href="https://yaml.r-lib.org/reference/yaml.load.html" class="external-link">yaml.load</a></code>) the top of the input as YAML, and further to glean parameters relevant to improving the performance of <code>fread</code> on the data itself. The entire YAML section is returned as parsed into a <code>list</code> in the <code>yaml_metadata</code> attribute. See <code>Details</code>.</p></dd>
 
-    <dt><code>autostart</code></dt>
-<dd><p>Deprecated. Please use <code>skip</code> instead.</p></dd>
-
     <dt><code>tmpdir</code></dt>
 <dd><p>Directory to use as the <code>tmpdir</code> argument for any <code>tempfile</code> calls, e.g. when the input is a URL or a shell command. The default is <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir()</a></code> which can be controlled by setting <code>TMPDIR</code> before starting the R session; see <code><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">base::tempdir</a></code>.</p></dd>
 
     <dt><code>tz</code></dt>
-<dd><p>Relevant to datetime values which have no Z or UTC-offset at the end, i.e. <em>unmarked</em> datetime, as written by <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">utils::write.csv</a></code>. The default <code>tz="UTC"</code> reads unmarked datetime as UTC POSIXct efficiently. <code>tz=""</code> reads unmarked datetime as type character (slowly) so that <code>as.POSIXct</code> can interpret (slowly) the character datetimes in local timezone; e.g. by using <code>"POSIXct"</code> in <code>colClasses=</code>. Note that <code>fwrite()</code> by default writes datetime in UTC including the final Z and therefore <code>fwrite</code>'s output will be read by <code>fread</code> consistently and quickly without needing to use <code>tz=</code> or <code>colClasses=</code>. If the <code>TZ</code> environment variable is set to <code>"UTC"</code> (or <code>""</code> on non-Windows where unset vs `""` is significant) then the R session's timezone is already UTC and <code>tz=""</code> will result in unmarked datetimes being read as UTC POSIXct. For more information, please see the news items from v1.13.0 and v1.14.0.</p></dd>
+<dd><p>Relevant to datetime values which have no Z or UTC-offset at the end, i.e. <em>unmarked</em> datetime, as written by <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">utils::write.csv</a></code>. The default <code>tz="UTC"</code> reads unmarked datetime as UTC POSIXct efficiently. <code>tz=""</code> reads unmarked datetime as type character (slowly) so that <code>as.POSIXct</code> can interpret (slowly) the character datetimes in local timezone; e.g. by using <code>"POSIXct"</code> in <code>colClasses=</code>. Note that <code>fwrite()</code> by default writes datetime in UTC including the final Z and therefore <code>fwrite</code>'s output will be read by <code>fread</code> consistently and quickly without needing to use <code>tz=</code> or <code>colClasses=</code>. If the <code>TZ</code> environment variable is set to <code>"UTC"</code> (or <code>""</code> on non-Windows where unset vs <code>""</code> is significant) then the R session's timezone is already UTC and <code>tz=""</code> will result in unmarked datetimes being read as UTC POSIXct. For more information, please see the news items from v1.13.0 and v1.14.0.</p></dd>
 
 
 </dl></dd>
@@ -215,7 +215,7 @@
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>a dataframe as created by <code><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">data.table::fread()</a></code></p>
+    <p>a dataframe as created by <code><a href="https://rdrr.io/pkg/data.table/man/fread.html" class="external-link">data.table::fread()</a></code></p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

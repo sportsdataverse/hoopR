@@ -26,23 +26,23 @@ nba_boxscoreadvancedv3(
 
 - start_period:
 
-  start_period
+  Start period filter - default: 0
 
 - end_period:
 
-  end_period
+  End period filter - default: 0
 
 - start_range:
 
-  start_range
+  Start range filter (in tenths of a second) - default: 0
 
 - end_range:
 
-  end_range
+  End range filter (in tenths of a second) - default: 0
 
 - range_type:
 
-  range_type
+  Range type - 0: by half, 1: by period, 2: custom range
 
 - ...:
 
@@ -50,7 +50,7 @@ nba_boxscoreadvancedv3(
 
 ## Value
 
-A list of data frames: home_team_player_advanced,
+Returns a named list of data frames: home_team_player_advanced,
 away_team_player_advanced, home_team_totals_advanced,
 away_team_totals_advanced
 
@@ -234,6 +234,7 @@ Other NBA Boxscore V3 Functions:
 [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md),
 [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md),
 [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md),
+[`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md),
 [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
 [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md)
 

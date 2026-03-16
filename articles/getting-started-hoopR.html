@@ -33,7 +33,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -223,28 +223,28 @@ in the function name and would be considered loading functions for the
 play-by-play data, team box scores, and player box scores.</p></li>
 <li><p>Functions that use the NBA Stats API start with <code>nba_</code>
 by convention and should be assumed as <code>get</code> functions. As of
-<code>hoopR</code> version 2.1.1, the package exports 127 functions
+<code>hoopR</code> version 3.0.0, the package exports 127 functions
 covering the NBA Stats API</p></li>
 <li><p>Functions that use the NBA G-League Stats API start with
 <code>nbagl_</code> by convention and should be assumed as
-<code>get</code> functions. As of <code>hoopR</code> version 2.1.1, the
+<code>get</code> functions. As of <code>hoopR</code> version 3.0.0, the
 package exports 4 functions covering the NBA G-League Stats API</p></li>
 <li><p>Functions that use one of ESPN’s APIs start with
 <code>espn_</code> by convention and should be assumed as
 <code>get</code> functions. These functions allow for live access to
 game data for both men’s college basketball and the NBA. As of
-<code>hoopR</code> version 2.1.1, the package exports 10 functions
+<code>hoopR</code> version 3.0.0, the package exports 10 functions
 covering the men’s college basketball endpoints and 10 for the
 NBA.</p></li>
 <li><p>Functions that use Ken Pomeroy’s college basketball website start
 with <code>kp_</code> by convention and should be assumed as
 <code>get</code> functions. These functions allow users with an active
 subscription to get access to the data in a tidy format. As of
-<code>hoopR</code> version 2.1.1, the package exports 36 functions
+<code>hoopR</code> version 3.0.0, the package exports 36 functions
 covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
 <li><p>Functions that use the NCAA website start with <code>ncaa_</code>
 by convention and should be assumed as <code>get</code> functions. As of
-<code>hoopR</code> version 2.1.1, the package exports 1 function(s)
+<code>hoopR</code> version 3.0.0, the package exports 1 function(s)
 covering the NCAA website, namely the function to access current NET
 rankings.</p></li>
 </ul>
@@ -268,13 +268,13 @@ back to.</p>
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 23.959 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 28.394 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3273997 rows of nba play-by-play data from 6964 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 3430234 rows of nba play-by-play data from 7292 games.</span></span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_pbp</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 3,273,997</span></span>
+<pre><code><span><span class="co">## Rows: 3,430,234</span></span>
 <span><span class="co">## Columns: 64</span></span>
 <span><span class="co">## $ game_play_number                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1<span style="color: #949494;">, </span>2<span style="color: #949494;">, </span>3<span style="color: #949494;">, </span>4<span style="color: #949494;">, </span>5<span style="color: #949494;">, </span>6<span style="color: #949494;">, </span>7<span style="color: #949494;">, </span>8<span style="color: #949494;">, </span>9<span style="color: #949494;">, </span>10<span style="color: #949494;">, </span>11<span style="color: #949494;">, </span>12<span style="color: #949494;">,</span>…</span></span>
 <span><span class="co">## $ id                              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 4013441404<span style="color: #949494;">, </span>4013441407<span style="color: #949494;">, </span>4013441408<span style="color: #949494;">, </span>40…</span></span>
@@ -352,13 +352,13 @@ back to.</p>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.385 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 4.093 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 13826 rows of NBA team boxscore data from 6913 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 14484 rows of NBA team boxscore data from 7242 games.</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 13,826</span></span>
+<pre><code><span><span class="co">## Rows: 14,484</span></span>
 <span><span class="co">## Columns: 59</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401344140<span style="color: #949494;">, </span>401344140<span style="color: #949494;">, </span>401344139<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -431,13 +431,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3.601 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 4.765 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 182868 rows of NBA player boxscore data from 6964 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 191428 rows of NBA player boxscore data from 7293 games.</span></span></code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 182,868</span></span>
+<pre><code><span><span class="co">## Rows: 191,428</span></span>
 <span><span class="co">## Columns: 57</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401344140<span style="color: #949494;">, </span>401344140<span style="color: #949494;">, </span>401344140<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -508,13 +508,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 62.991 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 75.011 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 11031348 rows of men's college basketball play-by-play data from 31872 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 12040088 rows of men's college basketball play-by-play data from 34114 games.</span></span></code></pre>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_pbp</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 11,031,348</span></span>
+<pre><code><span><span class="co">## Rows: 12,040,088</span></span>
 <span><span class="co">## Columns: 69</span></span>
 <span><span class="co">## $ id                              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 4.013109e+17<span style="color: #949494;">, </span>4.013109e+17<span style="color: #949494;">, </span>4.013109e+…</span></span>
 <span><span class="co">## $ sequence_number                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "101799901"<span style="color: #949494;">, </span>"101806001"<span style="color: #949494;">, </span>"101806002"<span style="color: #949494;">,</span>…</span></span>
@@ -597,13 +597,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.617 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 4.624 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 65282 rows of men's college basketball team boxscore data from 32641 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 69768 rows of men's college basketball team boxscore data from 34884 games.</span></span></code></pre>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_team_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 65,282</span></span>
+<pre><code><span><span class="co">## Rows: 69,768</span></span>
 <span><span class="co">## Columns: 59</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401310865<span style="color: #949494;">, </span>401310865<span style="color: #949494;">, </span>401310867<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -676,13 +676,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 10.351 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 10.338 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1043896 rows of men's college basketball player boxscore data from 32650 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 1113512 rows of men's college basketball player boxscore data from 34893 games.</span></span></code></pre>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 1,043,896</span></span>
+<pre><code><span><span class="co">## Rows: 1,113,512</span></span>
 <span><span class="co">## Columns: 55</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401310865<span style="color: #949494;">, </span>401310865<span style="color: #949494;">, </span>401310865<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -747,7 +747,8 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 </h2>
 <ul>
 <li>
-<a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a><br><a href="https://twitter.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a>
+<a href="https://twitter.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=twitter&amp;style=for-the-badge" alt="@saiemgilani"></a>
 <a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
 </li>
 </ul>
@@ -756,14 +757,18 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <strong>Our Contributors (they’re awesome)</strong><a class="anchor" aria-label="anchor" href="#our-contributors-theyre-awesome"></a>
 </h3>
 <ul>
-<li><p><a href="https://twitter.com/theFirmAISports" class="external-link">Jason Lee</a><br><a href="https://twitter.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=twitter&amp;style=for-the-badge" alt="@theFirmAISports"></a>
+<li><p><a href="https://twitter.com/theFirmAISports" class="external-link">Jason Lee</a>
+<a href="https://twitter.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=twitter&amp;style=for-the-badge" alt="@theFirmAISports"></a>
 <a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a></p></li>
-<li><p><a href="https://twitter.com/_b4billy_" class="external-link">Billy Fryer</a><br><a href="https://twitter.com/_b4billy_" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&amp;label=%40_b4billy_&amp;logo=twitter&amp;style=for-the-badge" alt="@_b4billy_"></a>
+<li><p><a href="https://twitter.com/_b4billy_" class="external-link">Billy Fryer</a>
+<a href="https://twitter.com/_b4billy_" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&amp;label=%40_b4billy_&amp;logo=twitter&amp;style=for-the-badge" alt="@_b4billy_"></a>
 <a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a></p></li>
-<li><p><a href="https://twitter.com/rossdrucker9" class="external-link">Ross Drucker</a><br><a href="https://twitter.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=twitter&amp;style=for-the-badge" alt="@rossdrucker9"></a>
+<li><p><a href="https://twitter.com/rossdrucker9" class="external-link">Ross Drucker</a>
+<a href="https://twitter.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=twitter&amp;style=for-the-badge" alt="@rossdrucker9"></a>
 <a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a></p></li>
 <li><p><a href="https://twitter.com/vshufinskiy" class="external-link">Vladislav
-Shufinskiy</a><br><a href="https://twitter.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=twitter&amp;style=for-the-badge" alt="@vshufinskiy"></a>
+Shufinskiy</a>
+<a href="https://twitter.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=twitter&amp;style=for-the-badge" alt="@vshufinskiy"></a>
 <a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a></p></li>
 </ul>
 </div>

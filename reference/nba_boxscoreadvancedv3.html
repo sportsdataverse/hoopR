@@ -9,7 +9,7 @@ Get NBA Stats API Boxscore Advanced V3"><meta property="og:image" content="https
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,23 +115,23 @@ Get NBA Stats API Boxscore Advanced V3"><meta property="og:image" content="https
 
 
 <dt id="arg-start-period">start_period<a class="anchor" aria-label="anchor" href="#arg-start-period"></a></dt>
-<dd><p>start_period</p></dd>
+<dd><p>Start period filter - default: 0</p></dd>
 
 
 <dt id="arg-end-period">end_period<a class="anchor" aria-label="anchor" href="#arg-end-period"></a></dt>
-<dd><p>end_period</p></dd>
+<dd><p>End period filter - default: 0</p></dd>
 
 
 <dt id="arg-start-range">start_range<a class="anchor" aria-label="anchor" href="#arg-start-range"></a></dt>
-<dd><p>start_range</p></dd>
+<dd><p>Start range filter (in tenths of a second) - default: 0</p></dd>
 
 
 <dt id="arg-end-range">end_range<a class="anchor" aria-label="anchor" href="#arg-end-range"></a></dt>
-<dd><p>end_range</p></dd>
+<dd><p>End range filter (in tenths of a second) - default: 0</p></dd>
 
 
 <dt id="arg-range-type">range_type<a class="anchor" aria-label="anchor" href="#arg-range-type"></a></dt>
-<dd><p>range_type</p></dd>
+<dd><p>Range type - 0: by half, 1: by period, 2: custom range</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -140,7 +140,7 @@ Get NBA Stats API Boxscore Advanced V3"><meta property="og:image" content="https
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A list of data frames: home_team_player_advanced, away_team_player_advanced,
+    <p>Returns a named list of data frames: home_team_player_advanced, away_team_player_advanced,
 home_team_totals_advanced, away_team_totals_advanced</p>
 <p><strong>home_team_player_advanced</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>character</td></tr><tr><td>away_team_id</td><td>integer</td></tr><tr><td>home_team_id</td><td>integer</td></tr><tr><td>team_id</td><td>integer</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_city</td><td>character</td></tr><tr><td>team_tricode</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>person_id</td><td>integer</td></tr><tr><td>first_name</td><td>character</td></tr><tr><td>family_name</td><td>character</td></tr><tr><td>name_i</td><td>character</td></tr><tr><td>player_slug</td><td>character</td></tr><tr><td>position</td><td>character</td></tr><tr><td>comment</td><td>character</td></tr><tr><td>jersey_num</td><td>character</td></tr><tr><td>minutes</td><td>character</td></tr><tr><td>estimated_offensive_rating</td><td>numeric</td></tr><tr><td>offensive_rating</td><td>numeric</td></tr><tr><td>estimated_defensive_rating</td><td>numeric</td></tr><tr><td>defensive_rating</td><td>numeric</td></tr><tr><td>estimated_net_rating</td><td>numeric</td></tr><tr><td>net_rating</td><td>numeric</td></tr><tr><td>assist_percentage</td><td>numeric</td></tr><tr><td>assist_to_turnover</td><td>numeric</td></tr><tr><td>assist_ratio</td><td>numeric</td></tr><tr><td>offensive_rebound_percentage</td><td>numeric</td></tr><tr><td>defensive_rebound_percentage</td><td>numeric</td></tr><tr><td>rebound_percentage</td><td>numeric</td></tr><tr><td>turnover_ratio</td><td>numeric</td></tr><tr><td>effective_field_goal_percentage</td><td>numeric</td></tr><tr><td>true_shooting_percentage</td><td>numeric</td></tr><tr><td>usage_percentage</td><td>numeric</td></tr><tr><td>estimated_usage_percentage</td><td>numeric</td></tr><tr><td>estimated_pace</td><td>numeric</td></tr><tr><td>pace</td><td>numeric</td></tr><tr><td>pace_per40</td><td>numeric</td></tr><tr><td>possessions</td><td>numeric</td></tr><tr><td>pie</td><td>numeric</td></tr></table><p><strong>away_team_player_advanced</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>character</td></tr><tr><td>away_team_id</td><td>integer</td></tr><tr><td>home_team_id</td><td>integer</td></tr><tr><td>team_id</td><td>integer</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_city</td><td>character</td></tr><tr><td>team_tricode</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>person_id</td><td>integer</td></tr><tr><td>first_name</td><td>character</td></tr><tr><td>family_name</td><td>character</td></tr><tr><td>name_i</td><td>character</td></tr><tr><td>player_slug</td><td>character</td></tr><tr><td>position</td><td>character</td></tr><tr><td>comment</td><td>character</td></tr><tr><td>jersey_num</td><td>character</td></tr><tr><td>minutes</td><td>character</td></tr><tr><td>estimated_offensive_rating</td><td>numeric</td></tr><tr><td>offensive_rating</td><td>numeric</td></tr><tr><td>estimated_defensive_rating</td><td>numeric</td></tr><tr><td>defensive_rating</td><td>numeric</td></tr><tr><td>estimated_net_rating</td><td>numeric</td></tr><tr><td>net_rating</td><td>numeric</td></tr><tr><td>assist_percentage</td><td>numeric</td></tr><tr><td>assist_to_turnover</td><td>numeric</td></tr><tr><td>assist_ratio</td><td>numeric</td></tr><tr><td>offensive_rebound_percentage</td><td>numeric</td></tr><tr><td>defensive_rebound_percentage</td><td>numeric</td></tr><tr><td>rebound_percentage</td><td>numeric</td></tr><tr><td>turnover_ratio</td><td>numeric</td></tr><tr><td>effective_field_goal_percentage</td><td>numeric</td></tr><tr><td>true_shooting_percentage</td><td>numeric</td></tr><tr><td>usage_percentage</td><td>numeric</td></tr><tr><td>estimated_usage_percentage</td><td>numeric</td></tr><tr><td>estimated_pace</td><td>numeric</td></tr><tr><td>pace</td><td>numeric</td></tr><tr><td>pace_per40</td><td>numeric</td></tr><tr><td>possessions</td><td>numeric</td></tr><tr><td>pie</td><td>numeric</td></tr></table><p><strong>home_team_totals_advanced</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>character</td></tr><tr><td>away_team_id</td><td>integer</td></tr><tr><td>home_team_id</td><td>integer</td></tr><tr><td>team_id</td><td>integer</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_city</td><td>character</td></tr><tr><td>team_tricode</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>minutes</td><td>character</td></tr><tr><td>estimated_offensive_rating</td><td>numeric</td></tr><tr><td>offensive_rating</td><td>numeric</td></tr><tr><td>estimated_defensive_rating</td><td>numeric</td></tr><tr><td>defensive_rating</td><td>numeric</td></tr><tr><td>estimated_net_rating</td><td>numeric</td></tr><tr><td>net_rating</td><td>numeric</td></tr><tr><td>assist_percentage</td><td>numeric</td></tr><tr><td>assist_to_turnover</td><td>numeric</td></tr><tr><td>assist_ratio</td><td>numeric</td></tr><tr><td>offensive_rebound_percentage</td><td>numeric</td></tr><tr><td>defensive_rebound_percentage</td><td>numeric</td></tr><tr><td>rebound_percentage</td><td>numeric</td></tr><tr><td>estimated_team_turnover_percentage</td><td>numeric</td></tr><tr><td>turnover_ratio</td><td>numeric</td></tr><tr><td>effective_field_goal_percentage</td><td>numeric</td></tr><tr><td>true_shooting_percentage</td><td>numeric</td></tr><tr><td>usage_percentage</td><td>numeric</td></tr><tr><td>estimated_usage_percentage</td><td>numeric</td></tr><tr><td>estimated_pace</td><td>numeric</td></tr><tr><td>pace</td><td>numeric</td></tr><tr><td>pace_per40</td><td>numeric</td></tr><tr><td>possessions</td><td>numeric</td></tr><tr><td>pie</td><td>numeric</td></tr></table><p><strong>away_team_totals_advanced</strong></p><table class="table table"><tr><td>col_name</td><td>types</td></tr><tr><td>game_id</td><td>character</td></tr><tr><td>away_team_id</td><td>integer</td></tr><tr><td>home_team_id</td><td>integer</td></tr><tr><td>team_id</td><td>integer</td></tr><tr><td>team_name</td><td>character</td></tr><tr><td>team_city</td><td>character</td></tr><tr><td>team_tricode</td><td>character</td></tr><tr><td>team_slug</td><td>character</td></tr><tr><td>minutes</td><td>character</td></tr><tr><td>estimated_offensive_rating</td><td>numeric</td></tr><tr><td>offensive_rating</td><td>numeric</td></tr><tr><td>estimated_defensive_rating</td><td>numeric</td></tr><tr><td>defensive_rating</td><td>numeric</td></tr><tr><td>estimated_net_rating</td><td>numeric</td></tr><tr><td>net_rating</td><td>numeric</td></tr><tr><td>assist_percentage</td><td>numeric</td></tr><tr><td>assist_to_turnover</td><td>numeric</td></tr><tr><td>assist_ratio</td><td>numeric</td></tr><tr><td>offensive_rebound_percentage</td><td>numeric</td></tr><tr><td>defensive_rebound_percentage</td><td>numeric</td></tr><tr><td>rebound_percentage</td><td>numeric</td></tr><tr><td>estimated_team_turnover_percentage</td><td>numeric</td></tr><tr><td>turnover_ratio</td><td>numeric</td></tr><tr><td>effective_field_goal_percentage</td><td>numeric</td></tr><tr><td>true_shooting_percentage</td><td>numeric</td></tr><tr><td>usage_percentage</td><td>numeric</td></tr><tr><td>estimated_usage_percentage</td><td>numeric</td></tr><tr><td>estimated_pace</td><td>numeric</td></tr><tr><td>pace</td><td>numeric</td></tr><tr><td>pace_per40</td><td>numeric</td></tr><tr><td>possessions</td><td>numeric</td></tr><tr><td>pie</td><td>numeric</td></tr></table></div>
     <div class="section level2">
@@ -157,6 +157,7 @@ home_team_totals_advanced, away_team_totals_advanced</p>
 <code><a href="nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code>,
 <code><a href="nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code>,
 <code><a href="nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code>,
+<code><a href="nba_boxscoresummaryv3.html">nba_boxscoresummaryv3()</a></code>,
 <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>,
 <code><a href="nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code></p></div>
     </div>

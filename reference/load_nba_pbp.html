@@ -9,7 +9,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,22 +143,22 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">load_nba_pbp</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── <span style="font-style: italic;">hoopR 2.1.1</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-01-17 12:27:38 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 303,852 × 64</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── <span style="font-style: italic;">hoopR 3.0.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-03-07 12:42:03 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 460,089 × 64</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    game_play_number        id sequence_number type_id type_text text  away_score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                1   4.02<span style="color: #949494;">e</span> 9               4     615 Jumpball  Deri…          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                2   4.02<span style="color: #949494;">e</span> 9               8     137 Turnarou… John…          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                3   4.02<span style="color: #949494;">e</span> 9               9     155 Defensiv… Deri…          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                4   4.02<span style="color: #949494;">e</span>10              10     110 Driving … Deri…          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                5   4.02<span style="color: #949494;">e</span>10              11     155 Defensiv… Jay …          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                6   4.02<span style="color: #949494;">e</span>10              12     129 Running … Pasc…          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                7   4.02<span style="color: #949494;">e</span>10              14     110 Driving … Zion…          2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                8   4.02<span style="color: #949494;">e</span>10              16     128 Driving … Andr…          2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                9   4.02<span style="color: #949494;">e</span>10              17     155 Defensiv… Deri…          2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>               10   4.02<span style="color: #949494;">e</span>10              18     113 Running … Jere…          2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 303,842 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                1   4.02<span style="color: #949494;">e</span> 9               4     615 Jumpball  Dwig…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                2   4.02<span style="color: #949494;">e</span> 9               7      92 Jump Shot Sam …          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                3   4.02<span style="color: #949494;">e</span> 9               8     156 Offensiv… Jayl…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                4   4.02<span style="color: #949494;">e</span> 9               9     131 Pullup J… Jays…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                5   4.02<span style="color: #949494;">e</span>10              10     155 Defensiv… Max …          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                6   4.02<span style="color: #949494;">e</span>10              11     131 Pullup J… Khri…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                7   4.02<span style="color: #949494;">e</span>10              12     155 Defensiv… Neem…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                8   4.02<span style="color: #949494;">e</span>10              13     113 Running … Sam …          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                9   4.02<span style="color: #949494;">e</span>10              14     156 Offensiv… Neem…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>               10   4.02<span style="color: #949494;">e</span>10              15     122 Jump Sho… Derr…          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 460,079 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 57 more variables: home_score &lt;int&gt;, period_number &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   period_display_value &lt;chr&gt;, clock_display_value &lt;chr&gt;, scoring_play &lt;lgl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_value &lt;int&gt;, team_id &lt;int&gt;, athlete_id_1 &lt;int&gt;, athlete_id_2 &lt;int&gt;,</span></span>

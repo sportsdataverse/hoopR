@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,6 +111,7 @@
 <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
 <code><a href="espn_mbb_standings.html">espn_mbb_standings()</a></code>,
 <code><a href="espn_mbb_team_box.html">espn_mbb_team_box()</a></code>,
+<code><a href="espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code>,
 <code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
 <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
 <code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p></div>
@@ -124,8 +125,23 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_conferences</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-01-19 16:28:06.042241: Invalid arguments or no conferences info available!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in espn_mbb_conferences() : object 'conferences' not found</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Conferences Information from ESPN.com ─────────────── <span style="font-style: italic;">hoopR 3.0.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-03-16 14:12:03 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 31 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    conference_uid group_id conference_name conference_short_name conference_logo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> s:40~l:41~g:3         3 Atlantic 10 Co… A-10                  https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> s:40~l:41~g:2         2 Atlantic Coast… ACC                   https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> s:40~l:41~g:1         1 America East C… Am. East              https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> s:40~l:41~g:62       62 American Confe… American              <span style="color: #BB0000;">NA</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> s:40~l:41~g:46       46 ASUN Conference ASUN                  <span style="color: #BB0000;">NA</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> s:40~l:41~g:8         8 Big 12 Confere… Big 12                https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> s:40~l:41~g:4         4 Big East Confe… Big East              https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> s:40~l:41~g:5         5 Big Sky Confer… Big Sky               https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> s:40~l:41~g:6         6 Big South Conf… Big South             https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> s:40~l:41~g:7         7 Big Ten Confer… Big Ten               https://a.espn…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: parent_group_id &lt;int&gt;, conference_id &lt;int&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

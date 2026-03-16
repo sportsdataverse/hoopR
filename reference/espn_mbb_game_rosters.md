@@ -106,6 +106,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -119,9 +120,9 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_mbb_game_rosters(game_id = 401256760))
-#> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:11 UTC
-#> # A tibble: 34 × 123
+#> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:07 UTC
+#> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    
 #>  1    4277850 s:40~l:41~a… 7b156c52-fa… basketball   4.28e6 RaiQuan    Gray     
@@ -135,11 +136,11 @@ Saiem Gilani
 #>  9    4701239 s:40~l:41~a… 88820814-39… basketball   4.70e6 Sardaar    Calhoun  
 #> 10    4592191 s:40~l:41~a… 066a390d-78… basketball   4.59e6 Nathanael  Jack     
 #> # ℹ 24 more rows
-#> # ℹ 116 more variables: full_name <chr>, athlete_display_name <chr>,
+#> # ℹ 144 more variables: full_name <chr>, athlete_display_name <chr>,
 #> #   short_name <chr>, weight <int>, display_weight <chr>, height <int>,
 #> #   display_height <chr>, age <int>, date_of_birth <chr>,
 #> #   birth_place_city <chr>, birth_place_state <chr>, birth_place_country <chr>,
 #> #   birth_country_alternate_id <chr>, birth_country_abbreviation <chr>,
-#> #   slug <chr>, headshot_href <chr>, headshot_alt <chr>, jersey_x <chr>, …
+#> #   slug <chr>, headshot_href <chr>, headshot_alt <chr>, …
 # }
 ```

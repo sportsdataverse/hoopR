@@ -55,6 +55,7 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md)
 
@@ -63,8 +64,8 @@ Other ESPN NBA Functions:
 ``` r
 # \donttest{
   espn_nba_wp(game_id = 401283399)
-#> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:30 UTC
+#> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:28 UTC
 #> # A tibble: 472 × 24
 #>      game_id play_id     home_win_percentage away_win_percentage tie_percentage
 #>        <dbl> <chr>                     <dbl>               <dbl>          <dbl>

@@ -95,6 +95,7 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -104,7 +105,7 @@ Other ESPN NBA Functions:
 ``` r
 # \donttest{
   try(espn_nba_betting(game_id = 401283399))
-#> 2026-01-19 16:28:20.18147: Invalid arguments or no betting data available!
+#> 2026-03-16 14:12:18.292582: Invalid arguments or no betting data available!
 #> $pickcenter
 #> data frame with 0 columns and 0 rows
 #> 

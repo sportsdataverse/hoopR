@@ -92,6 +92,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -105,8 +106,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_mbb_player_box(game_id = 401479672))
-#> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:12 UTC
+#> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:09 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

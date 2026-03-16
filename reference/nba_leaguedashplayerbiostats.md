@@ -220,6 +220,7 @@ Returns a named list of data frames: LeagueDashPlayerBioStats
 ## See also
 
 Other NBA League Functions:
+[`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md),
 [`nba_leaguedashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.md),
 [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_leaguedashplayerclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.md),

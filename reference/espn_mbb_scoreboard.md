@@ -69,6 +69,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -79,8 +80,8 @@ Other ESPN MBB Functions:
 # Get schedule from date 2022-11-17
 # \donttest{
   try(espn_mbb_scoreboard (season = "20221117"))
-#> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:15 UTC
+#> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:11 UTC
 #> # A tibble: 50 × 36
 #>    matchup         matchup_short season season_type season_slug game_id game_uid
 #>    <chr>           <chr>          <int>       <int> <chr>         <int> <chr>   

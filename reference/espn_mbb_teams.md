@@ -56,6 +56,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
 
@@ -68,9 +69,9 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_mbb_teams())
-#> 2026-01-19 16:28:18.941534: Invalid arguments or no conferences info available!
-#> 2026-01-19 16:28:18.942158: Invalid arguments or no teams data available!
-#> # A tibble: 362 × 19
+#> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:17 UTC
+#> # A tibble: 362 × 32
 #>    team_id abbreviation display_name      short_name mascot nickname team  color
 #>      <int> <chr>        <chr>             <chr>      <chr>  <chr>    <chr> <chr>
 #>  1    2000 ACU          Abilene Christia… Abilene C… Wildc… Abilene… Abil… 592d…
@@ -84,9 +85,11 @@ Saiem Gilani
 #>  9    2026 APP          App State Mounta… App State  Mount… App Sta… App … 0000…
 #> 10       9 ASU          Arizona State Su… Arizona St Sun D… Arizona… Ariz… 8e0c…
 #> # ℹ 352 more rows
-#> # ℹ 11 more variables: alternate_color <chr>, logo <chr>, logo_dark <chr>,
+#> # ℹ 24 more variables: alternate_color <chr>, logo <chr>, logo_dark <chr>,
 #> #   logos_href_3 <chr>, logos_href_4 <chr>, logos_href_5 <chr>,
 #> #   logos_href_6 <chr>, logos_href_7 <chr>, logos_href_8 <chr>,
-#> #   logos_href_9 <chr>, logos_href_10 <chr>
+#> #   logos_href_9 <chr>, logos_href_10 <chr>, logos_href_11 <chr>,
+#> #   logos_href_12 <chr>, logos_href_13 <chr>, logos_href_14 <chr>, href <chr>,
+#> #   conference_url <chr>, group_id <int>, conference_uid <chr>, …
 # }
 ```

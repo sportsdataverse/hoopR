@@ -109,6 +109,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md),
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -118,9 +119,9 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
   try(espn_mbb_standings(2021))
-#> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:16 UTC
-#> # A tibble: 348 × 80
+#> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:12 UTC
+#> # A tibble: 348 × 86
 #>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
 #>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>
 #>  1    2250 Gonzaga B…             69.7         91.0         0              1    
@@ -134,9 +135,9 @@ Other ESPN MBB Functions:
 #>  9     253 Southern …             69.5         84.2        -3              0.857
 #> 10    2426 Navy Mids…             67           71.5         0              0.923
 #> # ℹ 338 more rows
-#> # ℹ 74 more variables: losses <dbl>, playoffseed <dbl>,
+#> # ℹ 80 more variables: losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,
-#> #   streak <dbl>, winpercent <dbl>, wins <dbl>, total <chr>,
+#> #   streak <dbl>, winpercent <dbl>, wins <dbl>, gamesahead <chr>, total <chr>,
 #> #   home_avgpointsagainst <dbl>, home_avgpointsfor <dbl>,
 #> #   home_gamesbehind <dbl>, home_leaguewinpercent <dbl>, home_losses <dbl>,
 #> #   home_playoffseed <dbl>, home_pointdifferential <chr>, …

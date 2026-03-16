@@ -70,6 +70,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
 
@@ -78,8 +79,8 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
   espn_mbb_wp(game_id = 401256760)
-#> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:19 UTC
+#> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:17 UTC
 #> # A tibble: 352 × 9
 #>    game_id   play_id      period time_left period_seconds_left game_seconds_left
 #>  * <chr>     <chr>         <dbl> <chr>                   <dbl>             <dbl>

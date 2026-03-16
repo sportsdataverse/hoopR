@@ -96,6 +96,7 @@ Other NBA PBP Functions:
 [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md),
 [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md),
 [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md),
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md),
 [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
 
 Other NBA Live Functions:

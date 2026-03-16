@@ -65,6 +65,8 @@ Returns a data frame of the G League Season Schedule
 ## See also
 
 Other NBA G-League Functions:
+[`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md),
+[`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md),
 [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md),
 [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md),
 [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)

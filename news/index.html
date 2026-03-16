@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,6 +85,76 @@
       <small>Source: <a href="https://github.com/sportsdataverse/hoopR/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2>
+<div class="section level4">
+<h4 id="nba-play-by-play-v3-3-0-0"><strong>NBA Play-by-Play V3</strong><a class="anchor" aria-label="anchor" href="#nba-play-by-play-v3-3-0-0"></a></h4>
+<ul><li>
+<code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.</li>
+<li>
+<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> and <code><a href="../reference/nba_pbps.html">nba_pbps()</a></code> now default to <code>version = "v3"</code> (previously <code>"v2"</code>). Pass <code>version = "v2"</code> to use the previous behavior.</li>
+<li>
+<code><a href="../reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> internal helper added — enriches V3 play-by-play data with on-court player IDs by parsing V3 substitution descriptions and using <code><a href="../reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code> as a fallback for initial lineup determination.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="nba-boxscore-summary-v3-3-0-0"><strong>NBA Boxscore Summary V3</strong><a class="anchor" aria-label="anchor" href="#nba-boxscore-summary-v3-3-0-0"></a></h4>
+<ul><li>
+<code><a href="../reference/nba_boxscoresummaryv3.html">nba_boxscoresummaryv3()</a></code> function added — returns a named list of 9 data frames: GameSummary, GameInfo, ArenaInfo, Officials, LineScore, InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="new-nba-stats-api-endpoint-wrappers-3-0-0"><strong>New NBA Stats API Endpoint Wrappers</strong><a class="anchor" aria-label="anchor" href="#new-nba-stats-api-endpoint-wrappers-3-0-0"></a></h4>
+<ul><li>
+<code><a href="../reference/nba_commonteamyears.html">nba_commonteamyears()</a></code> function added — returns team IDs with their active year ranges.</li>
+<li>
+<code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code> function added — returns dunk tracking data with biomechanics, scores, and style metrics.</li>
+<li>
+<code><a href="../reference/nba_gravityleaders.html">nba_gravityleaders()</a></code> function added — returns gravity scores measuring how much defensive attention each player draws.</li>
+<li>
+<code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code> function added — returns In-Season Tournament (NBA Cup) standings.</li>
+<li>
+<code><a href="../reference/nba_scheduleleaguev2int.html">nba_scheduleleaguev2int()</a></code> function added — returns international schedule data with broadcaster information.</li>
+<li>
+<code><a href="../reference/nba_teamandplayersvsplayers.html">nba_teamandplayersvsplayers()</a></code> function added — returns team and player lineup comparison stats (5 datasets).</li>
+<li>
+<code><a href="../reference/nba_videoeventsasset.html">nba_videoeventsasset()</a></code> function added — returns video event asset data for a given game event.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="espn--g-league-functions-3-0-0"><strong>ESPN &amp; G-League Functions</strong><a class="anchor" aria-label="anchor" href="#espn--g-league-functions-3-0-0"></a></h4>
+<ul><li>
+<code><a href="../reference/espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code> function added — returns current team roster from ESPN.</li>
+<li>
+<code><a href="../reference/espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code> function added — returns current MBB team roster from ESPN.</li>
+<li>
+<code><a href="../reference/nbagl_live_pbp.html">nbagl_live_pbp()</a></code> function added — returns live G-League play-by-play data.</li>
+<li>
+<code><a href="../reference/nbagl_live_boxscore.html">nbagl_live_boxscore()</a></code> function added — returns live G-League box score data.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="other-improvements-3-0-0"><strong>Other Improvements</strong><a class="anchor" aria-label="anchor" href="#other-improvements-3-0-0"></a></h4>
+<ul><li>Internal <code>nba_endpoint()</code> registry updated with all V3 boxscore endpoints and <code>boxscoresummaryv3</code>.</li>
+<li>Removed deprecated <code>qs</code> dependency.</li>
+<li>Updated GitHub Actions to v4.</li>
+<li>Cleaned up <code>.Rbuildignore</code> duplicates.</li>
+<li>Added comprehensive <code>CONTRIBUTING.md</code> with naming conventions and test environment documentation.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="bug-fixes-3-0-0"><strong>Bug Fixes</strong><a class="anchor" aria-label="anchor" href="#bug-fixes-3-0-0"></a></h4>
+<ul><li>Fixed <code>df_list</code> not initialized before <code>tryCatch</code> in 147 NBA Stats API wrapper functions, preventing crashes on API errors.</li>
+<li>Fixed <code><a href="../reference/nba_data_pbp.html">nba_data_pbp()</a></code> <code>plays_df</code> not initialized before <code>tryCatch</code>.</li>
+<li>Fixed <code>helper-skip.R</code> test guard functions to use proper string comparison (<code>!= "1"</code>) instead of numeric comparison (<code>== 0</code>).</li>
+<li>Fixed <code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code> HTTP 400 error caused by empty string parameters.</li>
+<li>Fixed V3-style data.frame parsing for leader/standings endpoints.</li>
+<li>Fixed <code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code> nested games column flattening.</li>
+<li>Fixed <code>%||%</code> import for R &lt; 4.4.0 compatibility.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="test-improvements-3-0-0"><strong>Test Improvements</strong><a class="anchor" aria-label="anchor" href="#test-improvements-3-0-0"></a></h4>
+<ul><li>Converted 400+ <code>expect_equal(colnames())</code> assertions to <code>expect_in()</code> for subset validation, preventing test failures when APIs add new columns.</li>
+<li>Added tests for all new endpoints with column validation and rate limiting.</li>
+<li>Added <code>skip_ncaa_mbb_test()</code> and <code>skip_ncaa_wbb_test()</code> helpers.</li>
+<li>Updated ESPN test expectations for current API responses.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2.1.0" id="hoopr-210"><strong>hoopR 2.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-210"></a></h2><p class="text-muted">CRAN release: 2023-11-25</p>
 <ul><li>

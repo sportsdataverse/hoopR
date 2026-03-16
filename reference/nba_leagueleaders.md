@@ -105,6 +105,8 @@ Other NBA Leaders Functions:
 [`nba_assistleaders()`](https://hoopR.sportsdataverse.org/reference/nba_assistleaders.md),
 [`nba_assisttracker()`](https://hoopR.sportsdataverse.org/reference/nba_assisttracker.md),
 [`nba_defensehub()`](https://hoopR.sportsdataverse.org/reference/nba_defensehub.md),
+[`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md),
+[`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md),
 [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md),
 [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md),
 [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)

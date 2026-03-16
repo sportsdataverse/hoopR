@@ -9,7 +9,7 @@ Get NBA Stats API Boxscore Traditional V3"><meta property="og:image" content="ht
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,27 +111,27 @@ Get NBA Stats API Boxscore Traditional V3"><meta property="og:image" content="ht
 
 
 <dl><dt id="arg-game-id">game_id<a class="anchor" aria-label="anchor" href="#arg-game-id"></a></dt>
-<dd><p>Game ID</p></dd>
+<dd><p>Game ID - 10-digit zero-padded ID (e.g., '0022200021')</p></dd>
 
 
 <dt id="arg-start-period">start_period<a class="anchor" aria-label="anchor" href="#arg-start-period"></a></dt>
-<dd><p>start_period</p></dd>
+<dd><p>Start period filter - default: 0</p></dd>
 
 
 <dt id="arg-end-period">end_period<a class="anchor" aria-label="anchor" href="#arg-end-period"></a></dt>
-<dd><p>end_period</p></dd>
+<dd><p>End period filter - default: 0</p></dd>
 
 
 <dt id="arg-start-range">start_range<a class="anchor" aria-label="anchor" href="#arg-start-range"></a></dt>
-<dd><p>start_range</p></dd>
+<dd><p>Start range filter (in tenths of a second) - default: 0</p></dd>
 
 
 <dt id="arg-end-range">end_range<a class="anchor" aria-label="anchor" href="#arg-end-range"></a></dt>
-<dd><p>end_range</p></dd>
+<dd><p>End range filter (in tenths of a second) - default: 0</p></dd>
 
 
 <dt id="arg-range-type">range_type<a class="anchor" aria-label="anchor" href="#arg-range-type"></a></dt>
-<dd><p>range_type</p></dd>
+<dd><p>Range type - 0: by half, 1: by period, 2: custom range</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
@@ -140,7 +140,7 @@ Get NBA Stats API Boxscore Traditional V3"><meta property="og:image" content="ht
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A list of data frames:
+    <p>Returns a named list of data frames:
 home_team_player_traditional, away_team_player_traditional, home_team_totals_traditional,
 away_team_totals_traditional, home_team_starters_totals, away_team_starters_totals,
 home_team_bench_totals, away_team_bench_totals</p>
@@ -160,6 +160,7 @@ home_team_bench_totals, away_team_bench_totals</p>
 <code><a href="nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code>,
 <code><a href="nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code>,
 <code><a href="nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code>,
+<code><a href="nba_boxscoresummaryv3.html">nba_boxscoresummaryv3()</a></code>,
 <code><a href="nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code></p></div>
     </div>
     <div class="section level2">

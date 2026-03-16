@@ -22,6 +22,7 @@ Useful links:
 ## Author
 
 **Maintainer**: Saiem Gilani <saiem.gilani@gmail.com>
+([ORCID](https://orcid.org/0000-0002-7194-9067))
 
 Other contributors:
 

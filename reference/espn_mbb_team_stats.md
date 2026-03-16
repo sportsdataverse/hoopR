@@ -141,6 +141,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
 
@@ -153,13 +154,13 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_mbb_team_stats(team_id = 52, year = 2020))
-#> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:17 UTC
-#> # A tibble: 1 × 140
+#> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:14 UTC
+#> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    
 #> 1      52 7215a749-b7bf-207… s:40~l:…     5993 florida-… Florida State Seminoles
-#> # ℹ 133 more variables: team_nickname <chr>, team_abbreviation <chr>,
+#> # ℹ 161 more variables: team_nickname <chr>, team_abbreviation <chr>,
 #> #   team_display_name <chr>, team_short_display_name <chr>, team_color <chr>,
 #> #   team_alternate_color <chr>, is_active <lgl>, is_all_star <lgl>,
 #> #   logo_href <chr>, logo_dark_href <chr>, logos_href_2 <chr>,

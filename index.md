@@ -1,5 +1,28 @@
 # 
 
+**Table of Contents** *generated with
+[DocToc](https://github.com/thlorenz/doctoc)*
+
+- [](#)
+- [hoopR](#hoopr-a-hrefhttpshooprsportsdataverseorgimg-srchttpsrawgithubusercontentcomsportsdataversehooprmainlogopng-alignright--width20%25-min-width100pxa)
+  [![](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+    - [**NBA full play-by-play seasons (2002-2025) ~ 1-2
+      minutes**](#nba-full-play-by-play-seasons-2002-2025--1-2-minutes)
+    - [**Men’s college basketball full play-by-play seasons (2006-2025)
+      ~ 2-3
+      minutes**](#mens-college-basketball-full-play-by-play-seasons-2006-2025--2-3-minutes)
+  - [**Documentation**](#documentation)
+  - [**Breaking Changes**](#breaking-changes)
+  - [Follow the SportsDataverse (@SportsDataverse) on Twitter and star
+    this
+    repo](#follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo)
+  - [**Our Authors**](#our-authors)
+  - [**Our Contributors (they’re
+    awesome)**](#our-contributors-theyre-awesome)
+  - [**Citations**](#citations)
+
 # hoopR
 
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
@@ -30,16 +53,16 @@ You can install the released version of
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR")
 ```
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -50,12 +73,12 @@ tictoc::toc()
 ```
 
 ``` R
-## 1.02 sec elapsed
+## 3.55 sec elapsed
 
-## 109783 rows of NBA play-by-play data from 230 games.
+## 615581 rows of NBA play-by-play data from 1305 games.
 ```
 
-### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -66,9 +89,9 @@ tictoc::toc()
 ```
 
 ``` R
-## 1.62 sec elapsed
+## 6.94 sec elapsed
 
-## 360517 rows of men's college basketball play-by-play data from 1074 games.
+## 2112541 rows of men's college basketball play-by-play data from 5915 games.
 ```
 
 ## **Documentation**
@@ -89,22 +112,22 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 ## **Our Authors**
 
-- Saiem Gilani (@saiemgilani)  
+- Saiem Gilani (@saiemgilani)
 
 [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
 
 ## **Our Contributors (they’re awesome)**
 
-- Jason Lee (@theFirmAISports)  
+- Jason Lee (@theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
 
 - Billy Fryer (@\_b4billy\_)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
 
-- Ross Drucker (@rossdrucker9)  
+- Ross Drucker (@rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
 
-- Vladislav Shufinskiy (@vshufinskiy)  
+- Vladislav Shufinskiy (@vshufinskiy)
   [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
 
 ## **Citations**

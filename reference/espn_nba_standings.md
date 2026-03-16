@@ -53,6 +53,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -62,9 +63,9 @@ Other ESPN NBA Functions:
 ``` r
 # \donttest{
   try(espn_nba_standings(year = 2021))
-#> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:28 UTC
-#> # A tibble: 30 × 24
+#> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:25 UTC
+#> # A tibble: 30 × 25
 #>    team_id team              avgpointsagainst avgpointsfor clincher differential
 #>  *   <int> <chr>                        <dbl>        <dbl>    <dbl>        <dbl>
 #>  1      26 Utah Jazz                     107.         116.        5         9.2 
@@ -78,11 +79,11 @@ Other ESPN NBA Functions:
 #>  9      13 Los Angeles Lake…             107.         110.        7         2.7 
 #> 10      22 Portland Trail B…             114.         116.        1         1.8 
 #> # ℹ 20 more rows
-#> # ℹ 18 more variables: divisionwinpercent <dbl>, gamesbehind <dbl>,
+#> # ℹ 19 more variables: divisionwinpercent <dbl>, gamesbehind <dbl>,
 #> #   leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, points <chr>, pointsagainst <chr>,
 #> #   pointsfor <chr>, streak <dbl>, winpercent <dbl>, wins <dbl>,
-#> #   leaguestandings <chr>, home <chr>, road <chr>, vsdiv <chr>, vsconf <chr>,
-#> #   lasttengames <chr>
+#> #   gamesahead <chr>, leaguestandings <chr>, home <chr>, road <chr>,
+#> #   vsdiv <chr>, vsconf <chr>, lasttengames <chr>
 # }
 ```

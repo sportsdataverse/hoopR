@@ -1,5 +1,10 @@
 # MIT License
 
+**Table of Contents** *generated with
+[DocToc](https://github.com/thlorenz/doctoc)*
+
+- [MIT License](#mit-license)
+
 Copyright (c) 2020 hoopR authors
 
 Permission is hereby granted, free of charge, to any person obtaining a

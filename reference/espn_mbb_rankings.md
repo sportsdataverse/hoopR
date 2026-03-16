@@ -66,6 +66,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -80,22 +81,22 @@ Saiem Gilani
 # Get current AP and Coaches Poll rankings
 # \donttest{
   try(espn_mbb_rankings())
-#> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:14 UTC
-#> # A tibble: 88 × 38
+#> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:10 UTC
+#> # A tibble: 37 × 38
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>
-#>  1     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       1        1   1524
-#>  2     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       2        3   1448
-#>  3     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       3        4   1358
-#>  4     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       4        2   1300
-#>  5     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       5        5   1253
-#>  6     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       6        6   1237
-#>  7     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       7        7   1130
-#>  8     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       8       10   1056
-#>  9     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11       9        8   1050
-#> 10     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 11      10       11   1035
-#> # ℹ 78 more rows
+#>  1     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       1        1    770
+#>  2     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       2        2    744
+#>  3     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       3        3    718
+#>  4     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       4        4    656
+#>  5     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       5        5    653
+#>  6     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       6        7    586
+#>  7     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       7        6    570
+#>  8     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       8       11    531
+#>  9     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       9       13    514
+#> 10     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20      10       12    470
+#> # ℹ 27 more rows
 #> # ℹ 29 more variables: first_place_votes <int>, trend <chr>, date <chr>,
 #> #   last_updated <chr>, record_summary <chr>, team_id <int>, team_uid <chr>,
 #> #   team_location <chr>, team_name <chr>, team_nickname <chr>,

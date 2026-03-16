@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,6 +117,7 @@
 <code><a href="espn_nba_player_stats.html">espn_nba_player_stats()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
 <code><a href="espn_nba_team_box.html">espn_nba_team_box()</a></code>,
+<code><a href="espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code>,
 <code><a href="espn_nba_team_stats.html">espn_nba_team_stats()</a></code>,
 <code><a href="espn_nba_teams.html">espn_nba_teams()</a></code>,
 <code><a href="espn_nba_wp.html">espn_nba_wp()</a></code></p></div>
@@ -128,8 +129,8 @@
 <span class="r-in"><span><span class="co"># Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_scoreboard</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">20230423</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 2.1.1</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-01-19 16:28:27 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 3.0.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-03-16 14:12:25 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 37</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   matchup          matchup_short season season_type season_slug game_id game_uid</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>

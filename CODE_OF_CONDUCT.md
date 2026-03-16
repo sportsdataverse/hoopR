@@ -1,5 +1,22 @@
 # Contributor Covenant Code of Conduct
 
+**Table of Contents** *generated with
+[DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Contributor Covenant Code of
+  Conduct](#contributor-covenant-code-of-conduct)
+  - [Our Pledge](#our-pledge)
+  - [Our Standards](#our-standards)
+  - [Enforcement Responsibilities](#enforcement-responsibilities)
+  - [Scope](#scope)
+  - [Enforcement](#enforcement)
+  - [Enforcement Guidelines](#enforcement-guidelines)
+    - [1. Correction](#id_1-correction)
+    - [2. Warning](#id_2-warning)
+    - [3. Temporary Ban](#id_3-temporary-ban)
+    - [4. Permanent Ban](#id_4-permanent-ban)
+  - [Attribution](#attribution)
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in

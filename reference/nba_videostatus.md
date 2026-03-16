@@ -57,7 +57,8 @@ Return a list of tibbles: VideoStatus
 Other NBA Video Functions:
 [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
 [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md),
-[`nba_videoevents()`](https://hoopR.sportsdataverse.org/reference/nba_videoevents.md)
+[`nba_videoevents()`](https://hoopR.sportsdataverse.org/reference/nba_videoevents.md),
+[`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md)
 
 ## Author
 

@@ -1,5 +1,28 @@
 # 
 
+**Table of Contents** *generated with
+[DocToc](https://github.com/thlorenz/doctoc)*
+
+- [](#)
+- [hoopR](#hoopr-a-hrefhttpshooprsportsdataverseorgimg-srchttpsrawgithubusercontentcomsportsdataversehooprmainlogopng-alignright--width20%25-min-width100pxa)
+  [![](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+    - [**NBA full play-by-play seasons (2002-2025) ~ 1-2
+      minutes**](#nba-full-play-by-play-seasons-2002-2025--1-2-minutes)
+    - [**Men’s college basketball full play-by-play seasons (2006-2025)
+      ~ 2-3
+      minutes**](#mens-college-basketball-full-play-by-play-seasons-2006-2025--2-3-minutes)
+  - [**Documentation**](#documentation)
+  - [**Breaking Changes**](#breaking-changes)
+  - [Follow the SportsDataverse (@SportsDataverse) on Twitter and star
+    this
+    repo](#follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo)
+  - [**Our Authors**](#our-authors)
+  - [**Our Contributors (they’re
+    awesome)**](#our-contributors-theyre-awesome)
+  - [**Citations**](#citations)
+
 # hoopR
 
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
@@ -30,16 +53,16 @@ You can install the released version of
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR")
 ```
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -50,12 +73,12 @@ tictoc::toc()
 ```
 
 ``` R
-## 1.02 sec elapsed
+## 3.55 sec elapsed
 
-## 109783 rows of NBA play-by-play data from 230 games.
+## 615581 rows of NBA play-by-play data from 1305 games.
 ```
 
-### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -66,9 +89,9 @@ tictoc::toc()
 ```
 
 ``` R
-## 1.62 sec elapsed
+## 6.94 sec elapsed
 
-## 360517 rows of men's college basketball play-by-play data from 1074 games.
+## 2112541 rows of men's college basketball play-by-play data from 5915 games.
 ```
 
 ## **Documentation**
@@ -89,22 +112,22 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 ## **Our Authors**
 
-- Saiem Gilani (@saiemgilani)  
+- Saiem Gilani (@saiemgilani)
 
 [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
 
 ## **Our Contributors (they’re awesome)**
 
-- Jason Lee (@theFirmAISports)  
+- Jason Lee (@theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
 
 - Billy Fryer (@\_b4billy\_)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
 
-- Ross Drucker (@rossdrucker9)  
+- Ross Drucker (@rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
 
-- Vladislav Shufinskiy (@vshufinskiy)  
+- Vladislav Shufinskiy (@vshufinskiy)
   [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
 
 ## **Citations**
@@ -249,6 +272,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN men's college basketball team box scores**
 
+- [`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md)
+  :
+
+  **Get ESPN men's college basketball current team roster**
+
 - [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md)
   :
 
@@ -312,6 +340,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA team box scores**
+
+- [`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md)
+  :
+
+  **Get ESPN NBA current team roster**
 
 - [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md)
   :
@@ -434,6 +467,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Boxscore Summary V2**
 
+- [`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md)
+  :
+
+  **Get NBA Stats API Boxscore Summary V3**
+
 - [`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
   :
 
@@ -473,6 +511,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Team Roster**
+
+- [`nba_commonteamyears()`](https://hoopR.sportsdataverse.org/reference/nba_commonteamyears.md)
+  :
+
+  **Get NBA Stats API Common Team Years**
 
 - [`nba_cumestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.md)
   :
@@ -540,6 +583,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Draft History**
 
+- [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md)
+  :
+
+  **Get NBA Stats API Dunk Score Leaders**
+
 - [`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md)
   :
 
@@ -575,6 +623,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API G-League Alum Boxscore Similarity Score**
 
+- [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md)
+  :
+
+  **Get NBA Stats API Gravity Leaders**
+
 - [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md)
   :
 
@@ -594,6 +647,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API FanDuel Player Infographic**
+
+- [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  :
+
+  **Get NBA Stats API In-Season Tournament Standings**
 
 - [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)
   :
@@ -756,6 +814,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API play-by-play (Multiple Games)**
 
+- [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  :
+
+  **Get NBA Stats API Play-by-Play V3**
+
 - [`nba_playerawards()`](https://hoopR.sportsdataverse.org/reference/nba_playerawards.md)
   :
 
@@ -906,6 +969,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Season Schedule**
 
+- [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md)
+  :
+
+  **Get NBA Stats API International Schedule**
+
 - [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md)
   :
 
@@ -940,6 +1008,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Synergy Play Type Stats**
+
+- [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md)
+  :
+
+  **Get NBA Stats API Team and Players vs Players**
 
 - [`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md)
   :
@@ -1086,6 +1159,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Video Events**
 
+- [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md)
+  :
+
+  **Get NBA Stats API Video Events Asset**
+
 - [`nba_videostatus()`](https://hoopR.sportsdataverse.org/reference/nba_videostatus.md)
   :
 
@@ -1099,6 +1177,16 @@ Functions exported by hoopR to access the NBA Stats API
 ### NBA G-League Stats API
 
 Functions exported by hoopR to access the NBA G-League Stats API
+
+- [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md)
+  :
+
+  **Get NBA G-League Stats API Live Boxscore**
+
+- [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md)
+  :
+
+  **Get NBA G-League Stats API Live play-by-play**
 
 - [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
   :
@@ -1428,6 +1516,11 @@ Internal functions used by hoopR
   :
 
   **Add players on court in NBA Stats API play-by-play**
+
+- [`.players_on_court_v3`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  :
+
+  **Add players on court in NBA Stats API V3 play-by-play**
 
 # Articles
 

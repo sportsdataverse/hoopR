@@ -206,6 +206,7 @@ General](https://www.nba.com/stats/teams/opponent-shots-general)
 ## See also
 
 Other NBA League Functions:
+[`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md),
 [`nba_leaguedashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.md),
 [`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md),
 [`nba_leaguedashplayerclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.md),

@@ -174,6 +174,7 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
 
@@ -186,13 +187,13 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_team_stats(team_id = 18, year = 2020))
-#> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:29 UTC
-#> # A tibble: 1 × 185
+#> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:27 UTC
+#> # A tibble: 1 × 213
 #>   team_id team_guid team_uid team_slug team_location team_name team_abbreviation
 #>     <int> <chr>     <chr>    <chr>     <chr>         <chr>     <chr>            
 #> 1      18 61719eb2… s:40~l:… new-york… New York      Knicks    NY               
-#> # ℹ 178 more variables: team_display_name <chr>, team_short_display_name <chr>,
+#> # ℹ 206 more variables: team_display_name <chr>, team_short_display_name <chr>,
 #> #   team_color <chr>, team_alternate_color <chr>, team_is_active <lgl>,
 #> #   team_is_all_star <lgl>, logo_href <chr>, logo_dark_href <chr>,
 #> #   logos_href_2 <chr>, logos_href_3 <chr>, logos_href_4 <chr>,

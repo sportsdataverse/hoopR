@@ -133,22 +133,22 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
-#> ── ESPN MBB Schedule from hoopR data repository ───────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 11:40:53 UTC
-#> # A tibble: 6,181 × 86
+#> ── ESPN MBB Schedule from hoopR data repository ───────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-07 12:43:15 UTC
+#> # A tibble: 6,333 × 86
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
-#>  1  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  2  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  3  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  4  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  5  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  6  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  7  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  8  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#>  9  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#> 10  4.02e8 s:40… 2026…          0 TRUE       TRUE         TRUE                  
-#> # ℹ 6,171 more rows
+#>  1  4.02e8 s:40… 2026…          0 FALSE      TRUE         FALSE                 
+#>  2  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#>  3  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#>  4  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#>  5  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#>  6  4.02e8 s:40… 2026…          0 FALSE      TRUE         FALSE                 
+#>  7  4.02e8 s:40… 2026…          0 FALSE      TRUE         FALSE                 
+#>  8  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#>  9  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#> 10  4.02e8 s:40… 2026…          0 TRUE       TRUE         FALSE                 
+#> # ℹ 6,323 more rows
 #> # ℹ 79 more variables: play_by_play_available <lgl>, recent <lgl>,
 #> #   start_date <chr>, broadcast <chr>, highlights <chr>, notes_type <chr>,
 #> #   notes_headline <chr>, broadcast_market <chr>, broadcast_name <chr>,

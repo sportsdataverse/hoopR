@@ -181,6 +181,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -194,13 +195,13 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_mbb_player_stats(athlete_id = 4433134, year = 2021))
-#> ── ESPN MBB Player Season Stats from ESPN.com ─────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:13 UTC
-#> # A tibble: 1 × 186
+#> ── ESPN MBB Player Season Stats from ESPN.com ─────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:10 UTC
+#> # A tibble: 1 × 214
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
 #> 1    4433134 s:40~l:41~a:… dd0bb1da-07… basketball   4.43e6 Scottie    Barnes   
-#> # ℹ 179 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
+#> # ℹ 207 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
 #> #   weight <dbl>, display_weight <chr>, height <dbl>, display_height <chr>,
 #> #   age <int>, date_of_birth <chr>, birth_place_city <chr>,
 #> #   birth_place_state <chr>, birth_place_country <chr>,

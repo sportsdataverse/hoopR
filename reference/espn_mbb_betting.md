@@ -97,6 +97,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
 [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
 [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
 [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
@@ -106,7 +107,7 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
   try(espn_mbb_betting(game_id = 401256760))
-#> 2026-01-19 16:28:05.711792: Invalid arguments or no betting data available!
+#> 2026-03-16 14:12:02.772864: Invalid arguments or no betting data available!
 #> $pickcenter
 #> data frame with 0 columns and 0 rows
 #> 

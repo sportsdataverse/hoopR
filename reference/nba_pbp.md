@@ -7,7 +7,7 @@
 ## Usage
 
 ``` r
-nba_pbp(game_id, on_court = TRUE, version = "v2", p, ...)
+nba_pbp(game_id, on_court = TRUE, version = "v3", p, ...)
 ```
 
 ## Arguments
@@ -22,7 +22,8 @@ nba_pbp(game_id, on_court = TRUE, version = "v2", p, ...)
 
 - version:
 
-  Play-by-play version ("v2" available from 2016-17 onwards)
+  Play-by-play version ("v3" is the default, "v2" available from 2016-17
+  onwards)
 
 - p:
 
@@ -94,6 +95,7 @@ Returns a data frame: PlayByPlay
 ## Details
 
      nba_pbp(game_id = '0022201086')
+     nba_pbp(game_id = '0022201086', version = "v2")
 
 ## See also
 
@@ -101,6 +103,7 @@ Other NBA PBP Functions:
 [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md),
 [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_pbp.md),
 [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md),
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md),
 [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
 
 ## Author

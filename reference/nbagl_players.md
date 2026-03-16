@@ -54,6 +54,8 @@ Returns a data frame of G League Players from NBA Database
 ## See also
 
 Other NBA G-League Functions:
+[`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md),
+[`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md),
 [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md),
 [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md),
 [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)

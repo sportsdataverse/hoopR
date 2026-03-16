@@ -1,5 +1,101 @@
 # Changelog
 
+## **hoopR 3.0.0**
+
+#### **NBA Play-by-Play V3**
+
+- [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  function added — dedicated wrapper for the NBA Stats PlayByPlayV3
+  endpoint.
+- [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  and
+  [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md)
+  now default to `version = "v3"` (previously `"v2"`). Pass
+  `version = "v2"` to use the previous behavior.
+- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  internal helper added — enriches V3 play-by-play data with on-court
+  player IDs by parsing V3 substitution descriptions and using
+  [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
+  as a fallback for initial lineup determination.
+
+#### **NBA Boxscore Summary V3**
+
+- [`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md)
+  function added — returns a named list of 9 data frames: GameSummary,
+  GameInfo, ArenaInfo, Officials, LineScore, InactivePlayers,
+  LastFiveMeetings, OtherStats, AvailableVideo.
+
+#### **New NBA Stats API Endpoint Wrappers**
+
+- [`nba_commonteamyears()`](https://hoopR.sportsdataverse.org/reference/nba_commonteamyears.md)
+  function added — returns team IDs with their active year ranges.
+- [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md)
+  function added — returns dunk tracking data with biomechanics, scores,
+  and style metrics.
+- [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md)
+  function added — returns gravity scores measuring how much defensive
+  attention each player draws.
+- [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  function added — returns In-Season Tournament (NBA Cup) standings.
+- [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md)
+  function added — returns international schedule data with broadcaster
+  information.
+- [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md)
+  function added — returns team and player lineup comparison stats (5
+  datasets).
+- [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md)
+  function added — returns video event asset data for a given game
+  event.
+
+#### **ESPN & G-League Functions**
+
+- [`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md)
+  function added — returns current team roster from ESPN.
+- [`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md)
+  function added — returns current MBB team roster from ESPN.
+- [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md)
+  function added — returns live G-League play-by-play data.
+- [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md)
+  function added — returns live G-League box score data.
+
+#### **Other Improvements**
+
+- Internal `nba_endpoint()` registry updated with all V3 boxscore
+  endpoints and `boxscoresummaryv3`.
+- Removed deprecated `qs` dependency.
+- Updated GitHub Actions to v4.
+- Cleaned up `.Rbuildignore` duplicates.
+- Added comprehensive `CONTRIBUTING.md` with naming conventions and test
+  environment documentation.
+
+#### **Bug Fixes**
+
+- Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API
+  wrapper functions, preventing crashes on API errors.
+- Fixed
+  [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
+  `plays_df` not initialized before `tryCatch`.
+- Fixed `helper-skip.R` test guard functions to use proper string
+  comparison (`!= "1"`) instead of numeric comparison (`== 0`).
+- Fixed
+  [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md)
+  HTTP 400 error caused by empty string parameters.
+- Fixed V3-style data.frame parsing for leader/standings endpoints.
+- Fixed
+  [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  nested games column flattening.
+- Fixed `%||%` import for R \< 4.4.0 compatibility.
+
+#### **Test Improvements**
+
+- Converted 400+ `expect_equal(colnames())` assertions to `expect_in()`
+  for subset validation, preventing test failures when APIs add new
+  columns.
+- Added tests for all new endpoints with column validation and rate
+  limiting.
+- Added `skip_ncaa_mbb_test()` and `skip_ncaa_wbb_test()` helpers.
+- Updated ESPN test expectations for current API responses.
+
 ## **hoopR 2.1.0**
 
 CRAN release: 2023-11-25

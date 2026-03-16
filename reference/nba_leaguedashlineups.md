@@ -224,6 +224,7 @@ Returns a named list of data frames: Lineups
 ## See also
 
 Other NBA League Functions:
+[`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md),
 [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md),
 [`nba_leaguedashplayerclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerclutch.md),

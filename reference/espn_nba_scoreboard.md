@@ -68,6 +68,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -78,8 +79,8 @@ Other ESPN NBA Functions:
 # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
 # \donttest{
   try(espn_nba_scoreboard(season = 20230423))
-#> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:27 UTC
+#> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:25 UTC
 #> # A tibble: 4 × 37
 #>   matchup          matchup_short season season_type season_slug game_id game_uid
 #>   <chr>            <chr>          <int>       <int> <chr>         <int> <chr>   

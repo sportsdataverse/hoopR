@@ -73,7 +73,8 @@ Other NBA PBP Functions:
 [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md),
 [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_pbp.md),
 [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md),
-[`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md)
+[`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md),
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
 
 ## Author
 

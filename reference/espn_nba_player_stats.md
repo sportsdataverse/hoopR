@@ -232,6 +232,7 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -245,13 +246,13 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
-#> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:27 UTC
-#> # A tibble: 1 × 243
+#> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:24 UTC
+#> # A tibble: 1 × 271
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
 #> 1    4433134 s:40~l:46~a:… dd0bb1da-07… basketball   4.43e6 Scottie    Barnes   
-#> # ℹ 236 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
+#> # ℹ 264 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
 #> #   weight <dbl>, display_weight <chr>, height <dbl>, display_height <chr>,
 #> #   age <int>, date_of_birth <chr>, slug <chr>, headshot_href <chr>,
 #> #   headshot_alt <chr>, jersey <chr>, position_id <int>, position_name <chr>,

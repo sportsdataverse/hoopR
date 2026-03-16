@@ -123,6 +123,7 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -136,9 +137,9 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_game_rosters(game_id = 401283399))
-#> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 2.1.1 ──
-#> ℹ Data updated: 2026-01-19 16:28:24 UTC
-#> # A tibble: 24 × 147
+#> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.0.0 ──
+#> ℹ Data updated: 2026-03-16 14:12:21 UTC
+#> # A tibble: 24 × 175
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    
 #>  1    2993874 s:40~l:46~a… 0b5e3fdc-79… basketball   2.99e6 Kyle       Anderson 
@@ -152,11 +153,11 @@ Saiem Gilani
 #>  9    3134932 s:40~l:46~a… d4c8df92-1b… basketball   3.13e6 John       Konchar  
 #> 10    3135046 s:40~l:46~a… c4cddbcc-95… basketball   3.14e6 Tyus       Jones    
 #> # ℹ 14 more rows
-#> # ℹ 140 more variables: full_name <chr>, athlete_display_name <chr>,
+#> # ℹ 168 more variables: full_name <chr>, athlete_display_name <chr>,
 #> #   short_name <chr>, weight <int>, display_weight <chr>, height <int>,
 #> #   display_height <chr>, age <int>, date_of_birth <chr>, debut_year <int>,
 #> #   birth_place_city <chr>, birth_place_state <chr>, birth_place_country <chr>,
 #> #   citizenship <chr>, slug <chr>, headshot_href <chr>, headshot_alt <chr>,
-#> #   jersey_x <chr>, hand_type <chr>, hand_abbreviation <chr>, …
+#> #   athlete_jersey_number <chr>, position_id <int>, position_name <chr>, …
 # }
 ```
