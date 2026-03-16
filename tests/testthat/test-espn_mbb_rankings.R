@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB rankings", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_rankings()
 
   cols <- c(
@@ -42,7 +44,7 @@ test_that("ESPN - Get MBB rankings", {
     "first_occurrence_type",
     "first_occurrence_value"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

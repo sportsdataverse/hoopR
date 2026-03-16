@@ -4,14 +4,14 @@
 \alias{nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, on_court = TRUE, version = "v2", p, ...)
+nba_pbp(game_id, on_court = TRUE, version = "v3", p, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
 
 \item{on_court}{IF TRUE will be added ID of players on court}
 
-\item{version}{Play-by-play version ("v2" available from 2016-17 onwards)}
+\item{version}{Play-by-play version ("v3" is the default, "v2" available from 2016-17 onwards)}
 
 \item{p}{Progress bar}
 
@@ -80,13 +80,15 @@ Returns a data frame: PlayByPlay\tabular{ll}{
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_pbp(game_id = '0022201086')
+ nba_pbp(game_id = '0022201086', version = "v2")
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
+Other NBA PBP Functions:
 \code{\link{nba_data_pbp}()},
 \code{\link{nba_live_pbp}()},
 \code{\link{nba_pbps}()},
+\code{\link{nba_playbyplayv3}()},
 \code{\link{nba_winprobabilitypbp}()}
 }
 \author{

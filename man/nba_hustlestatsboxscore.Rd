@@ -87,7 +87,7 @@ Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStat
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
+Other NBA Boxscore Functions:
 \code{\link{nba_boxscoreadvancedv2}()},
 \code{\link{nba_boxscoredefensive}()},
 \code{\link{nba_boxscorefourfactorsv2}()},
@@ -101,7 +101,7 @@ Other NBA Boxscore Functions:
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_live_boxscore}()}
 
-Other NBA Hustle Functions: 
+Other NBA Hustle Functions:
 \code{\link{nba_leaguehustlestatsplayer}()},
 \code{\link{nba_leaguehustlestatsplayerleaders}()},
 \code{\link{nba_leaguehustlestatsteam}()},

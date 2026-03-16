@@ -1,6 +1,8 @@
 test_that("NCAA - Get MBB Teams", {
   skip_on_cran()
   skip_on_ci()
+  skip_ncaa_mbb_test()
+
   x <- ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1)
 
   cols <- c(

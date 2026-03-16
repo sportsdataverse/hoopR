@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA play by play only", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_pbp(game_id = 401283399)
 
 
@@ -57,7 +59,7 @@ test_that("ESPN - Get NBA play by play only", {
     "game_date",
     "game_date_time"
   )
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

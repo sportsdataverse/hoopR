@@ -69,7 +69,7 @@ Returns a named list of data frames: FranchisePlayers
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Franchise Functions: 
+Other NBA Franchise Functions:
 \code{\link{nba_franchisehistory}()},
 \code{\link{nba_franchiseleaders}()},
 \code{\link{nba_franchiseleaderswrank}()}

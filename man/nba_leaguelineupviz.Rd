@@ -135,7 +135,8 @@ Returns a named list of data frames: LeagueLineupViz
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
+Other NBA League Functions:
+\code{\link{nba_iststandings}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_leaguedashoppptshot}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
@@ -160,7 +161,7 @@ Other NBA League Functions:
 \code{\link{nba_playoffpicture}()},
 \code{\link{nba_shotchartleaguewide}()}
 
-Other NBA Lineup Functions: 
+Other NBA Lineup Functions:
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_leaguedashlineups}()},
 \code{\link{nba_shotchartlineupdetail}()},

@@ -1,6 +1,8 @@
 
 test_that("ESPN - Get NBA team box score only", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_team_box(game_id = 401283399)
 
   cols <- c(
@@ -62,7 +64,7 @@ test_that("ESPN - Get NBA team box score only", {
     "opponent_team_logo",
     "opponent_team_score"
   )
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

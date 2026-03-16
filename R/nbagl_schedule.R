@@ -127,4 +127,3 @@ nbagl_schedule <- function(
 # utctm = ???
 # ppdst = ???
 # seq = Game Order By Day (1st game on 1-1-2022, 2nd game on 1-1-2022, 1st game on 1-2-2022, etc.)
-

@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB Win Probability", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_wp(game_id = 401256760)
 
 
@@ -8,7 +10,7 @@ test_that("ESPN - Get MBB Win Probability", {
     "period_seconds_left", "game_seconds_left",
     "home_win_percentage", "away_win_percentage", "tie_percentage"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

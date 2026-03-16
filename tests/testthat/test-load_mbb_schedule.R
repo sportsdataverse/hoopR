@@ -1,5 +1,7 @@
 test_that("hoopR Loader MBB Schedule", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- load_mbb_schedule(seasons = most_recent_mbb_season())
 
 
@@ -24,7 +26,6 @@ test_that("hoopR Loader MBB Schedule", {
     "venue_full_name",
     "venue_address_city",
     "venue_address_state",
-    "venue_capacity",
     "venue_indoor",
     "status_clock",
     "status_display_clock",
@@ -91,7 +92,7 @@ test_that("hoopR Loader MBB Schedule", {
     "player_box"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

@@ -766,6 +766,8 @@ nba_teamdashboardbyclutch <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1188,6 +1190,8 @@ nba_teamdashboardbygamesplits <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1679,6 +1683,8 @@ nba_teamdashboardbygeneralsplits <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2163,6 +2169,8 @@ nba_teamdashboardbylastngames <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2525,6 +2533,8 @@ nba_teamdashboardbyopponent <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -2903,6 +2913,8 @@ nba_teamdashboardbyshootingsplits <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -3271,6 +3283,8 @@ nba_teamdashboardbyteamperformance <- function(
     VsDivision =  vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -3511,6 +3525,8 @@ nba_teamdashboardbyyearoveryear <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -3764,6 +3780,8 @@ nba_teamdashlineups <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -3910,6 +3928,8 @@ nba_teamdashptpass  <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -4129,6 +4149,8 @@ nba_teamdashptreb  <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -4378,6 +4400,8 @@ nba_teamdashptshots  <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

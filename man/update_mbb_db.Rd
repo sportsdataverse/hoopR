@@ -61,7 +61,7 @@ is provided but the argument \code{tblname} will still be used to write the
 data table into the database.
 }
 \seealso{
-Other hoopR Database Functions: 
+Other hoopR Database Functions:
 \code{\link{update_nba_db}()}
 }
 \concept{hoopR Database Functions}

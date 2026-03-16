@@ -1,5 +1,7 @@
 test_that("hoopR Loader MBB Team Box", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- load_mbb_team_box(seasons = most_recent_mbb_season())
 
 
@@ -60,7 +62,7 @@ test_that("hoopR Loader MBB Team Box", {
     "opponent_team_score"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

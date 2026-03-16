@@ -87,6 +87,8 @@ nba_data_pbp <- function(game_id = "0021900001",
   )
   full_url <- glue::glue("https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json")
 
+  plays_df <- data.frame()
+
   tryCatch(
     expr = {
 
@@ -101,7 +103,6 @@ nba_data_pbp <- function(game_id = "0021900001",
 
       data <- jsonlite::fromJSON(resp)$g
       plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd), flatten = TRUE)
-      plays_df <- data.frame()
       plays_df <- purrr::map_df(plays[[1]], function(x){
         plays_df <- plays[[2]][[x]] %>%
           dplyr::mutate(period = x) %>%
@@ -150,4 +151,3 @@ nba_data_pbp <- function(game_id = "0021900001",
   )
   return(plays_df)
 }
-

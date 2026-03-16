@@ -1,38 +1,42 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+about: Report a bug or unexpected behavior in hoopR
+title: 'bug: '
+labels: 'bug'
 assignees: ''
 
 ---
 
+**Function and Parameters**
+Which hoopR function(s) are affected? Include the exact parameters used.
+```r
+nba_pbp(game_id = "0022200021", version = "v3")
+```
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Reprex (Reproducible Example)**
+Please include a minimal reproducible example using `reprex::reprex()`:
+```r
+# Paste reprex output here
+```
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Error message / output**
+```
+# Paste error message or unexpected output here
+```
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Session Info**
+Paste the output of `sessionInfo()`:
+```r
+# sessionInfo() output here
+```
 
 **Additional context**
-Add any other context about the problem here.
+- hoopR version: (e.g., 3.0.0)
+- R version: (e.g., 4.3.1)
+- OS: (e.g., Windows 11, macOS 14)

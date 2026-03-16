@@ -61,7 +61,7 @@ nba_boxscoresimilarityscore(person_1_id = klay$PERSON_ID,
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Similarity Functions: 
+Other NBA Boxscore Similarity Functions:
 \code{\link{nba_glalumboxscoresimilarityscore}()}
 }
 \author{

@@ -1,6 +1,8 @@
 # test_that("NBA G-League Alum Boxscore Similarity Score", {
 #   skip_on_cran()
 #   skip_on_ci()
+  skip_nba_stats_test()
+
 #   z <- nba_commonallplayers()$CommonAllPlayers
 #   klay <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == "Klay Thompson")
 #   book <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == "Devin Booker")
@@ -43,9 +45,9 @@
 #     "USG_PCT"
 #   )
 #
-#   expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+#   expect_in(sort(cols_x1), sort(colnames(x[[1]])))
 #   expect_s3_class(x[[1]], "data.frame")
-#   expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
+#   expect_in(sort(cols_x2), sort(colnames(x[[2]])))
 #   expect_s3_class(x[[2]], "data.frame")
 #
 # })

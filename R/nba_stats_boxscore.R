@@ -143,6 +143,8 @@ nba_boxscoretraditionalv2 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -280,6 +282,8 @@ nba_boxscoreadvancedv2 <- function(
     StartRange = start_range
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -330,6 +334,8 @@ nba_boxscoredefensive <- function(
   params <- list(
     GameID = pad_id(game_id)
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -440,6 +446,8 @@ nba_boxscorefourfactorsv2 <- function(
     StartPeriod = start_period,
     StartRange = start_range
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -558,6 +566,8 @@ nba_boxscoremiscv2 <- function(
     StartPeriod = start_period,
     StartRange = start_range
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -682,6 +692,8 @@ nba_boxscorescoringv2 <- function(
     StartPeriod = start_period,
     StartRange = start_range
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -812,6 +824,8 @@ nba_boxscoreusagev2 <- function(
     StartPeriod = start_period,
     StartRange = start_range
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1012,6 +1026,8 @@ nba_boxscoresummaryv2 <- function(
     GameID = pad_id(game_id)
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1061,6 +1077,8 @@ nba_boxscorematchups <- function(
   params <- list(
     GameID = pad_id(game_id)
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1179,6 +1197,8 @@ nba_boxscoreplayertrackv2 <- function(
   params <- list(
     GameID = pad_id(game_id)
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1299,6 +1319,8 @@ nba_hustlestatsboxscore <- function(
     GameID = pad_id(game_id)
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1385,6 +1407,8 @@ nba_boxscoresimilarityscore <- function(
     Person2SeasonType = person_2_season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1464,6 +1488,8 @@ nba_glalumboxscoresimilarityscore <- function(
     Person2Season = person_2_season,
     Person2SeasonType = person_2_season_type
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

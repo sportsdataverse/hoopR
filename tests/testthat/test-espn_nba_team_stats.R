@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA team season stats", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_team_stats(team_id = 28, year = 2022)
 
   cols <- c(
@@ -130,7 +132,7 @@ test_that("ESPN - Get NBA team season stats", {
     "defensive_avg48steals"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

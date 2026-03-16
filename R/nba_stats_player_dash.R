@@ -855,6 +855,8 @@ nba_playerdashboardbyclutch <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1317,6 +1319,8 @@ nba_playerdashboardbygamesplits <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1918,6 +1922,8 @@ nba_playerdashboardbygeneralsplits <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2450,6 +2456,8 @@ nba_playerdashboardbylastngames <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2844,6 +2852,8 @@ nba_playerdashboardbyopponent <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -3243,6 +3253,8 @@ nba_playerdashboardbyshootingsplits <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -3645,6 +3657,8 @@ nba_playerdashboardbyteamperformance <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -3908,6 +3922,8 @@ nba_playerdashboardbyyearoveryear <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -4062,6 +4078,8 @@ nba_playerdashptpass  <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -4169,6 +4187,8 @@ nba_playerdashptreb  <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -4293,6 +4313,8 @@ nba_playerdashptshotdefend  <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -4578,6 +4600,8 @@ nba_playerdashptshots  <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -4682,6 +4706,8 @@ nba_synergyplaytypes <- function(
     SeasonYear = season,
     TypeGrouping = type_grouping
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

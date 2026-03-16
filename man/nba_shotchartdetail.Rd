@@ -127,7 +127,7 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Shooting Functions: 
+Other NBA Shooting Functions:
 \code{\link{nba_leaguedashplayershotlocations}()},
 \code{\link{nba_leaguedashteamptshot}()},
 \code{\link{nba_leaguedashteamshotlocations}()},

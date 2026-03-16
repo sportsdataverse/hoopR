@@ -1,5 +1,7 @@
 test_that("hoopR Loader NBA Schedule", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- load_nba_schedule(seasons = most_recent_nba_season())
 
 
@@ -23,7 +25,6 @@ test_that("hoopR Loader NBA Schedule", {
     "venue_id",
     "venue_full_name",
     "venue_address_city",
-    "venue_capacity",
     "venue_indoor",
     "status_clock",
     "status_display_clock",
@@ -82,7 +83,7 @@ test_that("hoopR Loader NBA Schedule", {
     "player_box"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

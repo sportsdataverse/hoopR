@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA teams", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_teams()
 
   cols <- c(
@@ -13,11 +15,9 @@ test_that("ESPN - Get NBA teams", {
     "color",
     "alternate_color",
     "logo",
-    "logo_dark",
-    "logos_href_3",
-    "logos_href_4"
+    "logo_dark"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

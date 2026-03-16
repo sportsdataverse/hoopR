@@ -1,5 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-# 
+- [](#)
+- [hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>](#hoopr-a-hrefhttpshooprsportsdataverseorgimg-srchttpsrawgithubusercontentcomsportsdataversehooprmainlogopng-alignright--width20%25-min-width100pxa)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+    - [**NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**](#nba-full-play-by-play-seasons-2002-2025--1-2-minutes)
+    - [**Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**](#mens-college-basketball-full-play-by-play-seasons-2006-2025--2-3-minutes)
+  - [**Documentation**](#documentation)
+  - [**Breaking Changes**](#breaking-changes)
+  - [Follow the SportsDataverse (@SportsDataverse) on Twitter and star this repo](#follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo)
+  - [**Our Authors**](#our-authors)
+  - [**Our Contributors (they’re awesome)**](#our-contributors-theyre-awesome)
+  - [**Citations**](#citations)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+#
 
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
 
@@ -44,16 +63,16 @@ You can install the released version of
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ``` r
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR")
 ```
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2024) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -63,11 +82,11 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.02 sec elapsed
+    ## 3.55 sec elapsed
 
-    ## 109783 rows of NBA play-by-play data from 230 games.
+    ## 615581 rows of NBA play-by-play data from 1305 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2024) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -77,9 +96,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 1.62 sec elapsed
+    ## 6.94 sec elapsed
 
-    ## 360517 rows of men's college basketball play-by-play data from 1074 games.
+    ## 2112541 rows of men's college basketball play-by-play data from 5915 games.
 
 ## **Documentation**
 
@@ -101,14 +120,14 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 ## **Our Authors**
 
-- Saiem Gilani (@saiemgilani)  
+- Saiem Gilani (@saiemgilani)
   <!-- <a href="https://twitter.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge" alt="@saiemgilani" /></a> -->
 
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
 ## **Our Contributors (they’re awesome)**
 
-- Jason Lee (@theFirmAISports)  
+- Jason Lee (@theFirmAISports)
   <!-- <a href="https://twitter.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge" alt="@theFirmAISports" /></a> -->
   <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
@@ -116,11 +135,11 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
   <!-- <a href="https://twitter.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge" alt="@_b4billy_" /></a> -->
   <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
-- Ross Drucker (@rossdrucker9)  
+- Ross Drucker (@rossdrucker9)
   <!-- <a href="https://twitter.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge" alt="@rossdrucker9" /></a> -->
   <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
 
-- Vladislav Shufinskiy (@vshufinskiy)  
+- Vladislav Shufinskiy (@vshufinskiy)
   <!-- <a href="https://twitter.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=twitter&style=for-the-badge" alt="@vshufinskiy" /></a> -->
   <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
 

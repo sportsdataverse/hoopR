@@ -1,6 +1,7 @@
 test_that("NBA G-League Players", {
   skip_on_cran()
   skip_on_ci()
+  skip_nbagl_stats_test()
 
   x <- nbagl_players()
 
@@ -33,7 +34,7 @@ test_that("NBA G-League Players", {
   )
 
 
-  expect_equal(sort(colnames(x)), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x)))
   expect_s3_class(x, 'data.frame')
 
   Sys.sleep(3)

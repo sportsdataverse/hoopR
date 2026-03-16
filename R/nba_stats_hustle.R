@@ -143,6 +143,8 @@ nba_leaguehustlestatsplayer <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -350,6 +352,8 @@ nba_leaguehustlestatsplayerleaders <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -503,6 +507,8 @@ nba_leaguehustlestatsteam <- function(
     VsDivision = vs_division,
     Weight = weight
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -708,6 +714,8 @@ nba_leaguehustlestatsteamleaders <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -726,4 +734,3 @@ nba_leaguehustlestatsteamleaders <- function(
   )
   return(df_list)
 }
-

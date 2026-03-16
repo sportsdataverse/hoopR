@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB Betting", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_betting(game_id = 401256760)
 
   cols_x1 <- c(

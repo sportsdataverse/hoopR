@@ -95,6 +95,8 @@ nba_draftboard <- function(
 
   params <- list()
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -248,6 +250,8 @@ nba_draftcombinestats <- function(
     SeasonYear = season_year
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -320,6 +324,8 @@ nba_draftcombinedrillresults <- function(
     LeagueID = league_id,
     SeasonYear = season_year
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -413,6 +419,8 @@ nba_draftcombinenonstationaryshooting <- function(
     SeasonYear = season_year
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -492,6 +500,8 @@ nba_draftcombineplayeranthro <- function(
     LeagueID = league_id,
     SeasonYear = season_year
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -605,6 +615,8 @@ nba_draftcombinespotshooting <- function(
     SeasonYear = season_year
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -694,6 +706,8 @@ nba_drafthistory <- function(
     TeamID = team_id,
     TopX = top_x
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

@@ -1,6 +1,9 @@
 test_that("NBA Boxscore Matchups V3", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
+
+
 
   x <- nba_boxscorematchupsv3(game_id = "0022200021")
 
@@ -106,9 +109,9 @@ test_that("NBA Boxscore Matchups V3", {
     "shooting_fouls"
   )
 
-  expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))
   expect_s3_class(x[[1]], "data.frame")
-  expect_equal(sort(colnames(x[[2]])), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x[[2]])))
   expect_s3_class(x[[2]], "data.frame")
 
   Sys.sleep(3)

@@ -836,7 +836,7 @@ Last5MinPlusMinus5PointPlayerDashboard,  OverallPlayerDashboard
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Player Functions: 
+Other NBA Player Functions:
 \code{\link{nba_infographicfanduelplayer}()},
 \code{\link{nba_leaguedashplayerbiostats}()},
 \code{\link{nba_leaguedashplayerclutch}()},
@@ -873,7 +873,7 @@ Other NBA Player Functions:
 \code{\link{nba_playerprofilev2}()},
 \code{\link{nba_playervsplayer}()}
 
-Other NBA Clutch Functions: 
+Other NBA Clutch Functions:
 \code{\link{nba_leaguedashteamclutch}()},
 \code{\link{nba_teamdashboardbyclutch}()}
 }

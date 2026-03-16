@@ -147,6 +147,8 @@ nba_leaguedashoppptshot <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -324,6 +326,8 @@ nba_leaguedashplayerbiostats <- function(
     VsDivision = vs_division,
     Weight = weight
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -569,6 +573,8 @@ nba_leaguedashplayerclutch <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -763,6 +769,8 @@ nba_leaguedashplayerptshot <- function(
     VsDivision = vs_division,
     Weight = weight
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1005,6 +1013,8 @@ nba_leaguedashplayerstats <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1206,6 +1216,8 @@ nba_leaguedashplayershotlocations <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1384,6 +1396,8 @@ nba_leaguedashptdefend <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1561,6 +1575,8 @@ nba_leaguedashptstats <- function(
     Weight = weight
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -1693,6 +1709,8 @@ nba_leaguedashptteamdefend <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -1905,6 +1923,8 @@ nba_leaguedashteamclutch <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2059,6 +2079,8 @@ nba_leaguedashteamptshot <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -2257,6 +2279,8 @@ nba_leaguedashteamstats <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -2432,6 +2456,8 @@ nba_leaguedashteamshotlocations <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

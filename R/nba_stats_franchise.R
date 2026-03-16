@@ -56,6 +56,8 @@ nba_franchiseleaders <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -172,6 +174,8 @@ nba_franchiseleaderswrank <- function(
     TeamID = team_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -266,6 +270,8 @@ nba_franchiseplayers <- function(
     SeasonType = season_type,
     TeamID = team_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -364,6 +370,8 @@ nba_franchisehistory <- function(
   params <- list(
     LeagueID = league_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {

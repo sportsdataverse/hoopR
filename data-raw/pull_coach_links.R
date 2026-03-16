@@ -77,11 +77,3 @@ teamlist <- data.frame(hoopR::teams_links)
 
 
 teamlist
-
-
-
-
-
-
-
-

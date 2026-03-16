@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB conferences", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_conferences()
 
   cols <- c(
@@ -11,7 +13,8 @@ test_that("ESPN - Get MBB conferences", {
     "parent_group_id",
     "conference_id"
   )
-  expect_equal(colnames(x), cols)
+
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })

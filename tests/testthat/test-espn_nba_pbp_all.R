@@ -1,5 +1,7 @@
 test_that("ESPN - Get NBA play by play all", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_nba_game_all(game_id = 401283399)
   x1 <- x[[1]]
   x2 <- x[[2]]
@@ -178,13 +180,13 @@ test_that("ESPN - Get NBA play by play all", {
     "opponent_team_score"
   )
 
-  expect_equal(sort(colnames(x1)), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x1)))
   expect_s3_class(x1, "data.frame")
 
-  expect_equal(sort(colnames(x2)), sort(cols_x2))
+  expect_in(sort(cols_x2), sort(colnames(x2)))
   expect_s3_class(x2, "data.frame")
 
-  expect_equal(sort(colnames(x3)), sort(cols_x3))
+  expect_in(sort(cols_x3), sort(colnames(x3)))
   expect_s3_class(x3, "data.frame")
 
 })

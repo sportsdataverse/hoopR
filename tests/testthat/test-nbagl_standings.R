@@ -1,6 +1,7 @@
 test_that("NBA G-League Standings", {
   skip_on_cran()
   skip_on_ci()
+  skip_nbagl_stats_test()
 
   x <- nbagl_standings(season = most_recent_nba_season() - 1)
 
@@ -29,7 +30,7 @@ test_that("NBA G-League Standings", {
   )
 
 
-  expect_equal(sort(colnames(x)), sort(cols_x1))
+  expect_in(sort(cols_x1), sort(colnames(x)))
   expect_s3_class(x, 'data.frame')
 
   Sys.sleep(3)

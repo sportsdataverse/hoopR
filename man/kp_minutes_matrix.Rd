@@ -25,7 +25,7 @@ Returns a tibble of minutes matrix data
 
 }
 \seealso{
-Other KenPom Team Functions: 
+Other KenPom Team Functions:
 \code{\link{kp_gameplan}()},
 \code{\link{kp_opptracker}()},
 \code{\link{kp_player_career}()},

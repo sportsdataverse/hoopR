@@ -105,7 +105,7 @@ linescore, officials
 }
 }
 \seealso{
-Other KenPom Boxscore Functions: 
+Other KenPom Boxscore Functions:
 \code{\link{kp_winprob}()}
 }
 \concept{KenPom Boxscore Functions}

@@ -160,6 +160,8 @@ nba_videodetailsasset <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -346,6 +348,8 @@ nba_videodetails <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -405,6 +409,8 @@ nba_videoevents <- function(
     GameID = game_id,
     GameEventID = game_event_id
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -489,6 +495,8 @@ nba_videostatus <- function(
     LeagueID = league_id
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -499,6 +507,66 @@ nba_videostatus <- function(
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no video status data for {game_date} available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
+  return(df_list)
+}
+
+
+#' **Get NBA Stats API Video Events Asset**
+#' @name nba_videoeventsasset
+NULL
+#' @title
+#' **Get NBA Stats API Video Events Asset**
+#' @rdname nba_videoeventsasset
+#' @author Saiem Gilani
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0021700807')
+#' @param game_event_id Game Event ID - event number from play-by-play data
+#' @param ... Additional arguments passed to an underlying function like httr.
+#' @return Returns a named list containing video event asset data (structure varies by response)
+#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
+#' @import rvest
+#' @export
+#' @family NBA Video Functions
+#' @details
+#' ```r
+#'  nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
+#' ```
+nba_videoeventsasset <- function(
+    game_id,
+    game_event_id = 0,
+    ...){
+
+  version <- "videoeventsasset"
+  endpoint <- nba_endpoint(version)
+  full_url <- endpoint
+
+  params <- list(
+    GameID = game_id,
+    GameEventID = game_event_id
+  )
+
+  df_list <- list()
+
+  tryCatch(
+    expr = {
+
+      resp <- request_with_proxy(url = full_url, params = params, ...)
+
+      if ("resultSets" %in% names(resp) || "resultSet" %in% names(resp)) {
+        df_list <- nba_stats_map_result_sets(resp)
+      } else {
+        df_list <- resp
+      }
+
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no video events asset data for {game_id} available!"))
     },
     warning = function(w) {
     },

@@ -112,6 +112,8 @@ nba_fantasywidget <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -305,6 +307,8 @@ nba_leaguedashlineups <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -467,6 +471,8 @@ nba_leaguelineupviz <- function(
     VsConference = vs_conference,
     VsDivision = vs_division
   )
+
+  df_list <- list()
 
   tryCatch(
     expr = {
@@ -649,6 +655,8 @@ nba_leagueplayerondetails <- function(
     VsDivision = vs_division
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -760,6 +768,8 @@ nba_leagueseasonmatchups <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -865,6 +875,8 @@ nba_matchupsrollup <- function(
     SeasonType = season_type
   )
 
+  df_list <- list()
+
   tryCatch(
     expr = {
 
@@ -883,4 +895,3 @@ nba_matchupsrollup <- function(
   )
   return(df_list)
 }
-

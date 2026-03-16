@@ -45,4 +45,3 @@ new_nba <- exported %>%
 print(nrow(new_nba))
 new_nba %>%
   knitr::kable()
-

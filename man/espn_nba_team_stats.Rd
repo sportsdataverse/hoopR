@@ -157,7 +157,7 @@ Returns a tibble with the team stats data\tabular{ll}{
 }
 }
 \seealso{
-Other ESPN NBA Functions: 
+Other ESPN NBA Functions:
 \code{\link{espn_nba_betting}()},
 \code{\link{espn_nba_game_all}()},
 \code{\link{espn_nba_game_rosters}()},
@@ -167,6 +167,7 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_scoreboard}()},
 \code{\link{espn_nba_standings}()},
 \code{\link{espn_nba_team_box}()},
+\code{\link{espn_nba_team_current_roster}()},
 \code{\link{espn_nba_teams}()},
 \code{\link{espn_nba_wp}()}
 }

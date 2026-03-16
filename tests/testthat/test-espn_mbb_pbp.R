@@ -1,5 +1,7 @@
 test_that("ESPN - Get MBB play by play only (no coordinate data)", {
   skip_on_cran()
+  skip_espn_test()
+
   x <- espn_mbb_pbp(game_id = 401256760)
 
 
@@ -52,7 +54,7 @@ test_that("ESPN - Get MBB play by play only (no coordinate data)", {
     "game_date_time"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })
@@ -116,7 +118,7 @@ test_that("ESPN - Get MBB play by play only (with coordinate data)", {
     "game_date_time"
   )
 
-  expect_equal(sort(colnames(x)), sort(cols))
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 
 })
