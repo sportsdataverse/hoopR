@@ -67,7 +67,11 @@
 
 - `nba_playbyplayv3()` function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.
 - `nba_pbp()` and `nba_pbps()` now default to `version = "v3"` (previously `"v2"`). Pass `version = "v2"` to use the previous behavior.
-- `.players_on_court_v3()` internal helper added — enriches V3 play-by-play data with on-court player IDs by parsing V3 substitution descriptions and using `nba_boxscoretraditionalv3()` as a fallback for initial lineup determination.
+- `.v3_to_v2_format()` internal helper added — converts V3 play-by-play data to V2-compatible column format with mapped event types, player resolution, and retained V3 shot coordinate columns (`x_legacy`, `y_legacy`, `shot_distance`, `shot_result`, `is_field_goal`, `points_total`, `shot_value`).
+- `.build_player_roster()` internal helper added — retrieves player roster from `nba_boxscoretraditionalv3()` for name-to-ID resolution during V3-to-V2 conversion.
+- `.players_on_court_v3()` internal helper rewritten — now uses `nba_gamerotation()` stint data with interval mapping for robust on-court player determination (replaces previous substitution-parsing approach).
+- `nba_pbp()` `p` parameter is now optional (default: `NULL`) — previously required even when not using progress tracking.
+- Removed `stringr::str_match` import from NAMESPACE — V3 clock parsing now uses base R regex functions.
 
 ### **NBA Boxscore Summary V3**
 
@@ -107,6 +111,7 @@
 - Fixed V3-style data.frame parsing for leader/standings endpoints.
 - Fixed `nba_iststandings()` nested games column flattening.
 - Fixed `%||%` import for R < 4.4.0 compatibility.
+- Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()`, preventing crashes on API errors.
 
 ### **Test Improvements**
 

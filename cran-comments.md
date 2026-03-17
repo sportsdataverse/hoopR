@@ -21,7 +21,9 @@ This is a major release (v3.0.0) with the following changes:
 ### NBA Play-by-Play V3
 - `nba_playbyplayv3()` function added -- dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.
 - `nba_pbp()` and `nba_pbps()` now default to `version = "v3"` (previously `"v2"`).
-- `.players_on_court_v3()` internal helper added for enriching V3 play-by-play data with on-court player IDs.
+- `.v3_to_v2_format()` internal helper added -- converts V3 PBP to V2-compatible format with event type mapping and player resolution.
+- `.build_player_roster()` internal helper added -- retrieves player roster from boxscore for name-to-ID resolution.
+- `.players_on_court_v3()` internal helper rewritten -- uses `nba_gamerotation()` stint data for robust on-court player determination.
 
 ### NBA Boxscore Summary V3
 - `nba_boxscoresummaryv3()` function added -- returns 9 data frames including GameSummary, Officials, LineScore, etc.
@@ -48,6 +50,8 @@ This is a major release (v3.0.0) with the following changes:
 - Fixed empty parameter bug in `nba_dunkscoreleaders()`.
 - Fixed V3-style data.frame parsing for leader/standings endpoints.
 - Fixed `nba_iststandings()` nested games column flattening.
+- Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()`.
+- Removed `stringr::str_match` import from NAMESPACE (replaced with base R regex).
 
 ### Test Improvements
 - Converted 400+ `expect_equal(colnames())` assertions to `expect_in()` for robust subset validation.
