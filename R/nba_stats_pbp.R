@@ -1,8 +1,8 @@
-#' **Add players on court in  NBA Stats API play-by-play**
+#' **Add players on court in NBA Stats API play-by-play**
 #' @name .players_on_court
 NULL
 #' @title
-#' **Add players on court in  NBA Stats API play-by-play**
+#' **Add players on court in NBA Stats API play-by-play**
 #' @author Vladislav Shufinskiy
 #' @param pbp_data PlayByPlay data frame received `nba_pbp` function
 #' @return Returns a data frame: PlayByPlay
@@ -196,216 +196,735 @@ NULL
 }
 
 
+#' **Convert V3 PBP columns to V2-compatible format**
+#' @name .v3_to_v2_format
+NULL
+#' @title
+#' **Convert V3 PBP columns to V2-compatible format**
+#' @param pbp_data PlayByPlay V3 data frame from `nba_playbyplayv3` function
+#' @param player_roster Player roster data frame with person_id, name, team info
+#'   (from `.build_player_roster`)
+#' @return Returns a data frame with V2-compatible column names and derived fields
+#' @noRd
+#' @family NBA PBP Functions
+.v3_to_v2_format <- function(pbp_data, player_roster = NULL) {
+  # V3 event_type mapping to V2 EVENTMSGTYPE numeric codes
+  event_type_map <- c(
+    "period" = "12",
+    "Jump Ball" = "10",
+    "Made Shot" = "1",
+    "Missed Shot" = "2",
+    "Free Throw" = "3",
+    "Rebound" = "4",
+    "Turnover" = "5",
+    "Foul" = "6",
+    "Violation" = "7",
+    "Substitution" = "8",
+    "Timeout" = "9",
+    "Ejection" = "11",
+    "Instant Replay" = "18",
+    "Game" = "12",
+    "Stoppage" = "18"
+  )
+
+  # V3 sub_type -> V2 EVENTMSGACTIONTYPE mapping (from nba_api event types CSV)
+  # Shots (used for both Made Shot and Missed Shot event types)
+  shot_action_map <- c(
+    "Jump Shot" = "1",
+    "Hook Shot" = "3",
+    "Layup" = "5", "Layup Shot" = "5",
+    "Dunk" = "7", "Dunk Shot" = "7",
+    "Running Layup" = "41", "Running Layup Shot" = "41",
+    "Driving Layup" = "42", "Driving Layup Shot" = "42",
+    "Alley Oop Layup" = "43", "Alley Oop Layup Shot" = "43",
+    "Alley Oop Dunk Shot" = "43", "Running Alley Oop Dunk Shot" = "43",
+    "Running Jump Shot" = "46",
+    "Turnaround Jump Shot" = "47",
+    "Driving Dunk" = "49", "Driving Dunk Shot" = "49",
+    "Running Dunk" = "50", "Running Dunk Shot" = "50",
+    "Driving Hook Shot" = "57",
+    "Turnaround Hook Shot" = "58",
+    "Fadeaway Jumper" = "63", "Fadeaway Jump Shot" = "63",
+    "Jump Bank Shot" = "66",
+    "Putback Layup" = "72", "Putback Layup Shot" = "72",
+    "Driving Reverse Layup" = "73", "Driving Reverse Layup Shot" = "73",
+    "Running Finger Roll Layup" = "76", "Running Finger Roll Layup Shot" = "76",
+    "Floating Jump Shot" = "78", "Floating Jump shot" = "78",
+    "Driving Floating Jump Shot" = "78",
+    "Driving Floating Bank Jump Shot" = "78",
+    "Pullup Jump Shot" = "79", "Pullup Jump shot" = "79",
+    "Running Pull-Up Jump Shot" = "79",
+    "Step Back Jump Shot" = "80", "Step Back Jump shot" = "80",
+    "Step Back Bank Jump Shot" = "80",
+    "Driving Bank Shot" = "82",
+    "Turnaround Fadeaway" = "86", "Turnaround Fadeaway shot" = "86",
+    "Tip Layup Shot" = "97",
+    "Cutting Layup Shot" = "98",
+    "Cutting Dunk Shot" = "108",
+    "Tip Dunk Shot" = "108",
+    "Cutting Finger Roll Layup Shot" = "98",
+    "Driving Finger Roll Layup Shot" = "42",
+    "Finger Roll Layup Shot" = "76"
+  )
+
+  # Free throw sub_type -> EVENTMSGACTIONTYPE
+  ft_action_map <- c(
+    "Free Throw 1 of 1" = "10",
+    "Free Throw 1 of 2" = "11",
+    "Free Throw 2 of 2" = "12",
+    "Free Throw 1 of 3" = "13",
+    "Free Throw 2 of 3" = "14",
+    "Free Throw 3 of 3" = "15",
+    "Free Throw Technical" = "16",
+    "Free Throw Flagrant 1 of 2" = "18",
+    "Free Throw Flagrant 2 of 2" = "19",
+    "Free Throw Flagrant 1 of 1" = "20",
+    "Free Throw Clear Path 1 of 2" = "25",
+    "Free Throw Clear Path 2 of 2" = "26",
+    "Free Throw Flagrant 1 of 3" = "27",
+    "Free Throw Flagrant 2 of 3" = "28",
+    "Free Throw Flagrant 3 of 3" = "29"
+  )
+
+  # Turnover sub_type -> EVENTMSGACTIONTYPE
+  to_action_map <- c(
+    "Bad Pass" = "1",
+    "Lost Ball" = "2",
+    "Traveling" = "4",
+    "Offensive Foul Turnover" = "37",
+    "Double Dribble" = "6",
+    "Discontinue Dribble" = "7",
+    "3 Second Violation" = "8",
+    "5 Second Violation" = "9",
+    "8 Second Violation" = "10",
+    "Shot Clock Violation" = "11", "Shot Clock" = "11",
+    "Inbound Turnover" = "12",
+    "Backcourt Turnover" = "13", "Backcourt" = "13",
+    "Offensive Goaltending" = "15",
+    "Lane Violation" = "17",
+    "Kicked Ball Violation" = "19",
+    "Palming" = "21",
+    "5 Second Inbound" = "38",
+    "Step Out of Bounds" = "39",
+    "Out of Bounds Lost Ball Turnover" = "40",
+    "Out of Bounds - Bad Pass Turnover" = "45"
+  )
+
+  # Foul sub_type -> EVENTMSGACTIONTYPE
+  foul_action_map <- c(
+    "Personal" = "1",
+    "Shooting" = "2",
+    "Loose Ball" = "3",
+    "Offensive" = "4",
+    "Intentional" = "5",
+    "Away From Play" = "6",
+    "Clear Path" = "9",
+    "Double Technical" = "10",
+    "Technical" = "11",
+    "Flagrant 1" = "14", "Flagrant Type 1" = "14",
+    "Flagrant 2" = "15", "Flagrant Type 2" = "15",
+    "Defense 3 Second" = "17",
+    "Taunting" = "19",
+    "Excess Timeout" = "25",
+    "Charge" = "26",
+    "Block" = "27",
+    "Personal Take" = "28",
+    "Shooting Block" = "29"
+  )
+
+  # Timeout sub_type -> EVENTMSGACTIONTYPE
+  timeout_action_map <- c(
+    "Regular" = "1",
+    "Short" = "2",
+    "Official" = "4"
+  )
+
+  # Violation sub_type -> EVENTMSGACTIONTYPE
+  violation_action_map <- c(
+    "Delay Of Game" = "1", "Delay of Game" = "1",
+    "Defensive Goaltending" = "2",
+    "Lane Violation" = "3",
+    "Jump Ball Violation" = "4",
+    "Kicked Ball" = "5", "Kicked Ball Violation" = "5",
+    "Double Lane Violation" = "6"
+  )
+
+  # --- Consolidate blank action_type rows (blocks/steals) into parent actions ---
+  # Blank action_type rows are secondary actions (BLOCK, STEAL) that should be
+
+  # merged into the preceding Missed Shot or Turnover row as player2/player3 info
+  is_block <- pbp_data$action_type == "" & grepl("BLOCK", pbp_data$description)
+  is_steal <- pbp_data$action_type == "" & grepl("STEAL", pbp_data$description)
+
+  # Initialize columns for consolidated secondary player info
+  pbp_data$block_person_id <- NA_integer_
+  pbp_data$block_player_name <- NA_character_
+  pbp_data$steal_person_id <- NA_integer_
+  pbp_data$steal_player_name <- NA_character_
+
+  # Merge blocks into the nearest preceding Missed Shot at same clock/period
+  block_indices <- which(is_block)
+  for (bi in block_indices) {
+    # Search backwards for the nearest Missed Shot at same clock+period
+    for (j in (bi - 1):max(1, bi - 5)) {
+      if (pbp_data$action_type[j] == "Missed Shot" &&
+        pbp_data$period[j] == pbp_data$period[bi] &&
+        pbp_data$clock[j] == pbp_data$clock[bi]) {
+        pbp_data$block_person_id[j] <- pbp_data$person_id[bi]
+        pbp_data$block_player_name[j] <- pbp_data$player_name[bi]
+        break
+      }
+    }
+  }
+
+  # Merge steals into the nearest Turnover at same clock/period (search backwards then forwards)
+  steal_indices <- which(is_steal)
+  for (si in steal_indices) {
+    found <- FALSE
+    # Search backwards first
+    for (j in (si - 1):max(1, si - 5)) {
+      if (pbp_data$action_type[j] == "Turnover" &&
+        pbp_data$period[j] == pbp_data$period[si] &&
+        pbp_data$clock[j] == pbp_data$clock[si]) {
+        pbp_data$steal_person_id[j] <- pbp_data$person_id[si]
+        pbp_data$steal_player_name[j] <- pbp_data$player_name[si]
+        found <- TRUE
+        break
+      }
+    }
+    if (!found) {
+      # Search forwards
+      for (j in (si + 1):min(nrow(pbp_data), si + 5)) {
+        if (pbp_data$action_type[j] == "Turnover" &&
+          pbp_data$period[j] == pbp_data$period[si] &&
+          pbp_data$clock[j] == pbp_data$clock[si]) {
+          pbp_data$steal_person_id[j] <- pbp_data$person_id[si]
+          pbp_data$steal_player_name[j] <- pbp_data$player_name[si]
+          break
+        }
+      }
+    }
+  }
+
+  # Remove consolidated blank action_type rows
+  pbp_data <- pbp_data[!(is_block | is_steal), ]
+
+  # --- Parse assist info from Made Shot descriptions ---
+  # Pattern: "(PlayerName N AST)"
+  assist_match <- regmatches(
+    pbp_data$description,
+    regexec("\\(([^)]+?)\\s+[0-9]+\\s+AST\\)", pbp_data$description)
+  )
+  pbp_data$assist_player_name <- vapply(
+    assist_match,
+    function(m) if (length(m) >= 2) m[2] else NA_character_,
+    character(1)
+  )
+
+  # --- Parse substitution incoming player ---
+  # Pattern: "SUB: IncomingPlayer FOR OutgoingPlayer"
+  # V3: person_id = outgoing player. We need the incoming player name for player2.
+  sub_in_match <- regmatches(
+    pbp_data$description,
+    regexec("SUB:\\s+(.+?)\\s+FOR\\s+.+", pbp_data$description)
+  )
+  pbp_data$sub_in_player_name <- vapply(
+    sub_in_match,
+    function(m) if (length(m) >= 2) m[2] else NA_character_,
+    character(1)
+  )
+
+  # --- Parse jump ball players ---
+  # Pattern: "Jump Ball PlayerA vs. PlayerB: Tip to PlayerC"
+  jb_match <- regmatches(
+    pbp_data$description,
+    regexec("Jump Ball\\s+.+?\\s+vs\\.\\s+(.+?)(?::\\s+Tip to\\s+(.+?))?\\s*$", pbp_data$description, perl = TRUE)
+  )
+  pbp_data$jb_player2_name <- vapply(
+    jb_match,
+    function(m) if (length(m) >= 2 && nchar(m[2]) > 0) m[2] else NA_character_,
+    character(1)
+  )
+  pbp_data$jb_player3_name <- vapply(
+    jb_match,
+    function(m) if (length(m) >= 3 && nchar(m[3]) > 0) m[3] else NA_character_,
+    character(1)
+  )
+
+  # --- Resolve player2/player3 IDs from roster lookup ---
+  .lookup_player <- function(name, roster) {
+    if (is.null(roster) || is.na(name) || nchar(name) == 0) {
+      return(list(
+        person_id = NA_character_, team_id = NA_character_,
+        team_city = NA_character_, team_name = NA_character_,
+        team_tricode = NA_character_, full_name = NA_character_
+      ))
+    }
+    # Try exact match on family_name first, then name_i, then partial
+    idx <- which(roster$family_name == name)
+    if (length(idx) == 0) idx <- which(roster$name_i == name)
+    if (length(idx) == 0) {
+      # Try matching "F. LastName" format
+      idx <- which(vapply(seq_len(nrow(roster)), function(r) {
+        fn <- roster$first_name[r]
+        ln <- roster$family_name[r]
+        abbr <- paste0(substr(fn, 1, 1), ". ", ln)
+        abbr == name
+      }, logical(1)))
+    }
+    if (length(idx) == 0) {
+      # Fuzzy: check if name is contained in full_name or vice versa
+      idx <- which(vapply(seq_len(nrow(roster)), function(r) {
+        grepl(name, roster$full_name[r], fixed = TRUE) ||
+          grepl(name, roster$family_name[r], fixed = TRUE)
+      }, logical(1)))
+    }
+    if (length(idx) == 0) {
+      return(list(
+        person_id = NA_character_, team_id = NA_character_,
+        team_city = NA_character_, team_name = NA_character_,
+        team_tricode = NA_character_, full_name = name
+      ))
+    }
+    r <- roster[idx[1], ]
+    list(
+      person_id = as.character(r$person_id),
+      team_id = as.character(r$team_id),
+      team_city = r$team_city,
+      team_name = r$team_name,
+      team_tricode = r$team_tricode,
+      full_name = r$full_name
+    )
+  }
+
+  # Build player2/player3 columns
+  n <- nrow(pbp_data)
+  p2_id <- rep(NA_character_, n)
+  p2_name <- rep(NA_character_, n)
+  p2_team_id <- rep(NA_character_, n)
+  p2_team_city <- rep(NA_character_, n)
+  p2_team_nickname <- rep(NA_character_, n)
+  p2_team_abbr <- rep(NA_character_, n)
+  p2type <- rep(NA_character_, n)
+
+  p3_id <- rep(NA_character_, n)
+  p3_name <- rep(NA_character_, n)
+  p3_team_id <- rep(NA_character_, n)
+  p3_team_city <- rep(NA_character_, n)
+  p3_team_nickname <- rep(NA_character_, n)
+  p3_team_abbr <- rep(NA_character_, n)
+  p3type <- rep(NA_character_, n)
+
+  for (i in seq_len(n)) {
+    at <- pbp_data$action_type[i]
+
+    # Assists on Made Shots -> player2
+    if (at == "Made Shot" && !is.na(pbp_data$assist_player_name[i])) {
+      info <- .lookup_player(pbp_data$assist_player_name[i], player_roster)
+      p2_id[i] <- info$person_id
+      p2_name[i] <- info$full_name
+      p2_team_id[i] <- info$team_id
+      p2_team_city[i] <- info$team_city
+      p2_team_nickname[i] <- info$team_name
+      p2_team_abbr[i] <- info$team_tricode
+    }
+
+    # Blocks on Missed Shots -> player3
+    if (at == "Missed Shot" && !is.na(pbp_data$block_person_id[i])) {
+      p3_id[i] <- as.character(pbp_data$block_person_id[i])
+      p3_name[i] <- pbp_data$block_player_name[i]
+      if (!is.null(player_roster)) {
+        info <- .lookup_player(pbp_data$block_player_name[i], player_roster)
+        if (!is.na(info$person_id)) p3_id[i] <- info$person_id
+        p3_name[i] <- info$full_name %||% pbp_data$block_player_name[i]
+        p3_team_id[i] <- info$team_id
+        p3_team_city[i] <- info$team_city
+        p3_team_nickname[i] <- info$team_name
+        p3_team_abbr[i] <- info$team_tricode
+      }
+    }
+
+    # Steals on Turnovers -> player2
+    if (at == "Turnover" && !is.na(pbp_data$steal_person_id[i])) {
+      p2_id[i] <- as.character(pbp_data$steal_person_id[i])
+      p2_name[i] <- pbp_data$steal_player_name[i]
+      if (!is.null(player_roster)) {
+        info <- .lookup_player(pbp_data$steal_player_name[i], player_roster)
+        if (!is.na(info$person_id)) p2_id[i] <- info$person_id
+        p2_name[i] <- info$full_name %||% pbp_data$steal_player_name[i]
+        p2_team_id[i] <- info$team_id
+        p2_team_city[i] <- info$team_city
+        p2_team_nickname[i] <- info$team_name
+        p2_team_abbr[i] <- info$team_tricode
+      }
+    }
+
+    # Substitutions: V3 person_id = outgoing player (player1 in V2)
+    # player2 = incoming player (parsed from "SUB: IncomingPlayer FOR ...")
+    if (at == "Substitution" && !is.na(pbp_data$sub_in_player_name[i])) {
+      info <- .lookup_player(pbp_data$sub_in_player_name[i], player_roster)
+      p2_id[i] <- info$person_id
+      p2_name[i] <- info$full_name %||% pbp_data$sub_in_player_name[i]
+      p2_team_id[i] <- info$team_id %||% as.character(pbp_data$team_id[i])
+      p2_team_city[i] <- info$team_city
+      p2_team_nickname[i] <- info$team_name
+      p2_team_abbr[i] <- info$team_tricode %||% as.character(pbp_data$team_tricode[i])
+    }
+
+    # Jump Balls: player2 = vs player, player3 = tip-to player
+    if (at == "Jump Ball") {
+      if (!is.na(pbp_data$jb_player2_name[i])) {
+        info <- .lookup_player(pbp_data$jb_player2_name[i], player_roster)
+        p2_id[i] <- info$person_id
+        p2_name[i] <- info$full_name
+        p2_team_id[i] <- info$team_id
+        p2_team_city[i] <- info$team_city
+        p2_team_nickname[i] <- info$team_name
+        p2_team_abbr[i] <- info$team_tricode
+      }
+      if (!is.na(pbp_data$jb_player3_name[i])) {
+        info <- .lookup_player(pbp_data$jb_player3_name[i], player_roster)
+        p3_id[i] <- info$person_id
+        p3_name[i] <- info$full_name
+        p3_team_id[i] <- info$team_id
+        p3_team_city[i] <- info$team_city
+        p3_team_nickname[i] <- info$team_name
+        p3_team_abbr[i] <- info$team_tricode
+      }
+    }
+  }
+
+  # Parse V3 clock "PT10M30.00S" -> minutes and seconds remaining
+  matches <- regmatches(pbp_data$clock, regexec("PT([0-9]+)M([0-9.]+)S", pbp_data$clock))
+  mins <- vapply(matches, function(m) if (length(m) == 3) as.numeric(m[2]) else NA_real_, numeric(1))
+  secs <- vapply(matches, function(m) if (length(m) == 3) as.numeric(m[3]) else NA_real_, numeric(1))
+
+  period <- as.numeric(pbp_data$period)
+
+  # Time columns
+  minute_remaining_quarter <- as.numeric(floor(mins))
+  seconds_remaining_quarter <- as.numeric(floor(secs))
+  time_quarter <- sprintf("%02d:%02d", as.integer(minute_remaining_quarter), as.integer(seconds_remaining_quarter))
+
+  # Elapsed game time in minutes
+  # Regulation (period 1-4): 12-minute quarters
+  # Overtime (period 5+): 5-minute periods
+  quarter_len <- ifelse(period <= 4, 12, 5)
+  elapsed_in_period <- quarter_len - (minute_remaining_quarter + seconds_remaining_quarter / 60)
+  minute_game <- ifelse(
+    period <= 4,
+    (period - 1) * 12 + elapsed_in_period,
+    48 + (period - 5) * 5 + elapsed_in_period
+  )
+  minute_game <- round(minute_game, 2)
+
+  # Time remaining: for regulation, remaining until end of 4Q;
+  # for OT, remaining in current OT period
+  time_remaining <- ifelse(
+    period <= 4,
+    (4 - period) * 12 + minute_remaining_quarter + seconds_remaining_quarter / 60,
+    minute_remaining_quarter + seconds_remaining_quarter / 60
+  )
+  time_remaining <- round(time_remaining, 2)
+
+  # Score columns: parse then forward-fill so every row has the current score
+  home_score <- suppressWarnings(as.numeric(pbp_data$score_home))
+  away_score <- suppressWarnings(as.numeric(pbp_data$score_away))
+
+  # Forward-fill: carry last known score into rows without score updates
+  last_home <- 0
+  last_away <- 0
+  for (i in seq_along(home_score)) {
+    if (!is.na(home_score[i])) {
+      last_home <- home_score[i]
+      last_away <- away_score[i]
+    } else {
+      home_score[i] <- last_home
+      away_score[i] <- last_away
+    }
+  }
+
+  score <- paste(away_score, "-", home_score)
+  score_margin <- as.character(home_score - away_score)
+  team_leading <- dplyr::case_when(
+    home_score == away_score ~ "Tie",
+    home_score > away_score ~ "Home",
+    TRUE ~ "Away"
+  )
+
+  # Split description into home/neutral/visitor based on location
+  location <- pbp_data$location
+  description <- pbp_data$description
+  home_description <- ifelse(location == "h", description, NA_character_)
+  neutral_description <- ifelse(is.na(location) | location == "", description, NA_character_)
+  visitor_description <- ifelse(location == "v", description, NA_character_)
+
+  # Map event types (EVENTMSGTYPE)
+  # Handle period start/end: V3 uses "period" action_type with sub_type "start"/"end"
+  is_period_end <- pbp_data$action_type == "period" & pbp_data$sub_type == "end"
+  event_type <- event_type_map[pbp_data$action_type]
+  event_type <- ifelse(is.na(event_type), "0", unname(event_type))
+  event_type[is_period_end] <- "13"
+
+  # Map event_action_type (EVENTMSGACTIONTYPE) from sub_type per event category
+  action_type_v3 <- pbp_data$action_type
+  sub_type_v3 <- pbp_data$sub_type
+
+  event_action_type <- vapply(seq_len(n), function(i) {
+    at <- action_type_v3[i]
+    st <- sub_type_v3[i]
+    if (is.na(st) || nchar(st) == 0) return("0")
+    result <- switch(at,
+      "Made Shot" = , "Missed Shot" = shot_action_map[st] %||% "0",
+      "Free Throw" = ft_action_map[st] %||% "0",
+      "Turnover" = to_action_map[st] %||% "0",
+      "Foul" = foul_action_map[st] %||% "0",
+      "Timeout" = timeout_action_map[st] %||% "0",
+      "Violation" = violation_action_map[st] %||% "0",
+      "Substitution" = "0",
+      "Jump Ball" = "0",
+      "Rebound" = "0",
+      "0"
+    )
+    unname(result)
+  }, character(1))
+
+  # person1type: 4 = home player, 5 = away player, 0 = neutral/none
+  person1type <- dplyr::case_when(
+    location == "h" ~ "4",
+    location == "v" ~ "5",
+    TRUE ~ "0"
+  )
+
+  # Build V2-compatible data frame with retained V3 columns
+  result <- dplyr::tibble(
+    game_id = as.character(pbp_data$game_id),
+    event_num = as.character(pbp_data$action_number),
+    event_type = event_type,
+    event_action_type = event_action_type,
+    period = period,
+    clock = pbp_data$clock,
+    minute_game = minute_game,
+    time_remaining = time_remaining,
+    wc_time_string = NA_character_,
+    time_quarter = time_quarter,
+    minute_remaining_quarter = minute_remaining_quarter,
+    seconds_remaining_quarter = seconds_remaining_quarter,
+    action_type = pbp_data$action_type,
+    sub_type = pbp_data$sub_type,
+    home_description = home_description,
+    neutral_description = neutral_description,
+    visitor_description = visitor_description,
+    description = pbp_data$description,
+    location = pbp_data$location,
+    score = score,
+    away_score = away_score,
+    home_score = home_score,
+    score_margin = score_margin,
+    person1type = person1type,
+    # V3 person_id is already the outgoing player for subs (player1 in V2 convention)
+    player1_id = as.character(pbp_data$person_id),
+    player1_name = ifelse(!is.na(pbp_data$player_name), pbp_data$player_name, NA_character_),
+    player1_team_id = as.character(pbp_data$team_id),
+    player1_team_city = NA_character_,
+    player1_team_nickname = NA_character_,
+    player1_team_abbreviation = as.character(pbp_data$team_tricode),
+    person2type = p2type,
+    player2_id = p2_id,
+    player2_name = p2_name,
+    player2_team_id = p2_team_id,
+    player2_team_city = p2_team_city,
+    player2_team_nickname = p2_team_nickname,
+    player2_team_abbreviation = p2_team_abbr,
+    person3type = p3type,
+    player3_id = p3_id,
+    player3_name = p3_name,
+    player3_team_id = p3_team_id,
+    player3_team_city = p3_team_city,
+    player3_team_nickname = p3_team_nickname,
+    player3_team_abbreviation = p3_team_abbr,
+    video_available_flag = as.character(pbp_data$video_available),
+    team_leading = team_leading,
+    # Retained V3 columns
+    x_legacy = pbp_data$x_legacy,
+    y_legacy = pbp_data$y_legacy,
+    shot_distance = pbp_data$shot_distance,
+    shot_result = pbp_data$shot_result,
+    is_field_goal = pbp_data$is_field_goal,
+    points_total = pbp_data$points_total,
+    shot_value = pbp_data$shot_value
+  )
+
+  result <- make_hoopR_data(result, "NBA Game Play-by-Play Information from NBA.com", Sys.time())
+  return(result)
+}
+
+
+#' **Build player roster lookup from boxscore data**
+#' @name .build_player_roster
+NULL
+#' @title
+#' **Build player roster lookup from boxscore data**
+#' @param game_id Game ID - 10-digit zero-padded ID
+#' @return Returns a data frame with person_id, first_name, family_name, name_i,
+#'   full_name, team_id, team_name, team_city, team_tricode
+#' @noRd
+#' @family NBA PBP Functions
+.build_player_roster <- function(game_id) {
+  tryCatch({
+    box <- nba_boxscoretraditionalv3(game_id = game_id)
+    home <- box$home_team_player_traditional
+    away <- box$away_team_player_traditional
+
+    cols <- c("person_id", "first_name", "family_name", "name_i",
+              "team_id", "team_name", "team_city", "team_tricode")
+    roster <- dplyr::bind_rows(
+      home[, cols, drop = FALSE],
+      away[, cols, drop = FALSE]
+    )
+    roster$full_name <- paste(roster$first_name, roster$family_name)
+    roster$person_id <- as.character(roster$person_id)
+    roster$team_id <- as.character(roster$team_id)
+    roster
+  }, error = function(e) {
+    message(glue::glue("{Sys.time()}: Could not retrieve boxscore for player roster lookup."))
+    NULL
+  })
+}
+
+
 #' **Add players on court in NBA Stats API V3 play-by-play**
 #' @name .players_on_court_v3
 NULL
 #' @title
 #' **Add players on court in NBA Stats API V3 play-by-play**
 #' @author Saiem Gilani
-#' @param pbp_data PlayByPlay V3 data frame from `nba_playbyplayv3` function
+#' @param pbp_data PlayByPlay data frame (V2-formatted via `.v3_to_v2_format`)
 #' @return Returns a data frame: PlayByPlay with on-court player columns
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble mutate
-#' @importFrom stringr str_match
 #' @noRd
 #' @family NBA PBP Functions
 .players_on_court_v3 <- function(pbp_data) {
-  # Build player name -> ID map from all PBP actions
-  name_id_map <- pbp_data %>%
-    dplyr::filter(!is.na(.data$player_name_i), .data$person_id != 0) %>%
-    dplyr::distinct(.data$player_name_i, .data$person_id) %>%
-    dplyr::mutate(person_id = as.numeric(.data$person_id))
-
-  full_name_map <- pbp_data %>%
-    dplyr::filter(!is.na(.data$player_name), .data$person_id != 0) %>%
-    dplyr::distinct(.data$player_name, .data$person_id) %>%
-    dplyr::mutate(person_id = as.numeric(.data$person_id))
-
-  # Parse V3 clock format "PT10M30.00S" -> elapsed seconds from game start
-  parse_v3_clock <- function(clock_str, period) {
-    matches <- stringr::str_match(clock_str, "PT(\\d+)M([\\d.]+)S")
-    mins <- as.numeric(matches[, 2])
-    secs <- as.numeric(matches[, 3])
-    ifelse(period < 5,
-      abs((mins * 60 + secs) - 720 * period),
-      abs((mins * 60 + secs) - (2880 + 300 * (period - 4)))
-    )
+  game_id <- pbp_data$game_id[1]
+  if (inherits(game_id, "integer")) {
+    game_id <- paste0("00", as.character(game_id))
   }
 
-  pbp_data <- pbp_data %>%
-    dplyr::mutate(
-      PCTIMESTRING = parse_v3_clock(.data$clock, .data$period)
-    )
-
-  # Resolve outgoing player ID from substitution description
-  resolve_sub_out <- function(desc, name_id_map, full_name_map) {
-    m <- stringr::str_match(desc, "(?i)\\bFOR\\s+(.+)$")
-    if (is.na(m[1, 2])) {
-      return(NA_real_)
+  # Single API call to get all player stints with exact in/out times
+  rotation <- tryCatch(
+    nba_gamerotation(game_id = game_id),
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Could not retrieve game rotation for {game_id}. On-court data will be NA."))
+      NULL
     }
-    out_name <- trimws(m[1, 2])
+  )
 
-    # Match against player_name_i
-    matched <- name_id_map$person_id[tolower(name_id_map$player_name_i) == tolower(out_name)]
-    if (length(matched) == 1) {
-      return(matched)
-    }
-
-    # Match against full player_name
-    matched <- full_name_map$person_id[tolower(full_name_map$player_name) == tolower(out_name)]
-    if (length(matched) == 1) {
-      return(matched)
-    }
-
-    # Fuzzy: try last name match
-    out_parts <- strsplit(out_name, "\\s+")[[1]]
-    out_last <- out_parts[length(out_parts)]
-    matched <- name_id_map$person_id[grepl(paste0("\\b", out_last, "$"), name_id_map$player_name_i, ignore.case = TRUE)]
-    if (length(matched) == 1) {
-      return(matched)
-    }
-
-    return(NA_real_)
+  # Initialize player columns as NA
+  for (i in 1:5) {
+    pbp_data[[paste0("away_player", i)]] <- NA_real_
+  }
+  for (i in 1:5) {
+    pbp_data[[paste0("home_player", i)]] <- NA_real_
   }
 
-  l <- lapply(sort(unique(pbp_data$period)), function(x) {
-    pbp_period <- dplyr::filter(pbp_data, .data$period == x)
-
-    # Identify substitution actions and resolve in/out IDs
-    is_sub <- tolower(pbp_period$action_type) == "substitution"
-    sub_in_ids <- as.numeric(pbp_period$person_id[is_sub])
-
-    sub_out_ids <- vapply(which(is_sub), function(i) {
-      resolve_sub_out(pbp_period$description[i], name_id_map, full_name_map)
-    }, numeric(1))
-
-    # Get all non-sub player IDs in the period
-    all_id <- pbp_period %>%
-      dplyr::filter(
-        !is_sub,
-        !is.na(.data$player_name),
-        .data$person_id != 0,
-        .data$person_id < 1610612737
-      ) %>%
-      dplyr::pull(.data$person_id) %>%
-      as.numeric() %>%
-      unique()
-
-    # Remove players who only entered via substitution
-    valid_sub_out <- sub_out_ids[!is.na(sub_out_ids)]
-    sub_in_only <- setdiff(sub_in_ids, valid_sub_out)
-    all_id <- all_id[!all_id %in% sub_in_only]
-
-    # Handle players who were both subbed in and out
-    sub_on_off <- intersect(sub_in_ids, valid_sub_out)
-    for (pid in sub_on_off) {
-      on_time <- min(pbp_period$PCTIMESTRING[is_sub & pbp_period$person_id == pid])
-      out_rows <- which(sub_out_ids == pid)
-      if (length(out_rows) > 0) {
-        off_time <- min(pbp_period$PCTIMESTRING[which(is_sub)[out_rows]])
-        if (off_time > on_time) {
-          all_id <- all_id[all_id != pid]
-        } else if (off_time == on_time) {
-          on_event <- min(pbp_period$action_number[is_sub & pbp_period$person_id == pid])
-          off_event <- min(pbp_period$action_number[which(is_sub)[out_rows]])
-          if (off_event > on_event) {
-            all_id <- all_id[all_id != pid]
-          }
-        }
-      }
-    }
-
-    # Fallback if we don't have exactly 10 players
-    if (length(all_id) != 10) {
-      game_id <- pbp_data$game_id[1]
-      if (inherits(game_id, "integer")) {
-        game_id <- paste0("00", as.character(game_id))
-      }
-
-      tryCatch(
-        {
-          tmp_data <- nba_boxscoretraditionalv3(
-            game_id = game_id,
-            start_period = x,
-            end_period = x,
-            range_type = 1
-          )
-          away_ids <- as.integer(tmp_data$away_team_player_traditional$person_id)
-          home_ids <- as.integer(tmp_data$home_team_player_traditional$person_id)
-          all_id <- c(away_ids, home_ids)
-
-          sub_in_only <- setdiff(sub_in_ids, valid_sub_out)
-          all_id <- all_id[!all_id %in% sub_in_only]
-
-          for (pid in sub_on_off) {
-            on_time <- min(pbp_period$PCTIMESTRING[is_sub & pbp_period$person_id == pid])
-            out_rows <- which(sub_out_ids == pid)
-            if (length(out_rows) > 0) {
-              off_time <- min(pbp_period$PCTIMESTRING[which(is_sub)[out_rows]])
-              if (off_time > on_time) {
-                all_id <- all_id[all_id != pid]
-              }
-            }
-          }
-        },
-        error = function(e) {
-          message(glue::glue("Could not retrieve boxscore for period {x}. On-court data may be incomplete."))
-        }
-      )
-    }
-
-    # Assign player columns
-    columns <- paste0("player", seq(1, 10))
-    pbp_period[columns] <- NA
-
-    if (length(all_id) >= 10) {
-      for (i in seq_len(10)) {
-        pbp_period[columns[i]] <- all_id[i]
-      }
-
-      # Walk substitutions: when a player in a column is subbed out, replace with incoming
-      sub_indices <- which(is_sub)
-      for (column in columns) {
-        repeat {
-          found <- FALSE
-          for (si_idx in seq_along(sub_indices)) {
-            row_idx <- sub_indices[si_idx]
-            if (!is.na(sub_out_ids[si_idx]) &&
-              !is.na(pbp_period[[column]][row_idx]) &&
-              pbp_period[[column]][row_idx] == sub_out_ids[si_idx]) {
-              n <- nrow(pbp_period)
-              player_in <- as.numeric(pbp_period$person_id[row_idx])
-              pbp_period[row_idx:n, column] <- player_in
-              found <- TRUE
-              break
-            }
-          }
-          if (!found) break
-        }
-      }
-    }
-
-    return(dplyr::select(pbp_period, -"PCTIMESTRING"))
-  })
-
-  result <- dplyr::bind_rows(l)
-
-  if (all(paste0("player", 1:10) %in% colnames(result))) {
-    result <- result %>%
-      dplyr::rename(
-        "away_player1" = "player1",
-        "away_player2" = "player2",
-        "away_player3" = "player3",
-        "away_player4" = "player4",
-        "away_player5" = "player5",
-        "home_player1" = "player6",
-        "home_player2" = "player7",
-        "home_player3" = "player8",
-        "home_player4" = "player9",
-        "home_player5" = "player10"
-      )
+  if (is.null(rotation) || length(rotation) == 0 ||
+    is.null(rotation$AwayTeam) || is.null(rotation$HomeTeam) ||
+    nrow(rotation$AwayTeam) == 0 || nrow(rotation$HomeTeam) == 0) {
+    return(pbp_data)
   }
 
-  return(result)
+  # Compute elapsed game time in tenths of a second from V2-format time columns
+  # to match IN_TIME_REAL / OUT_TIME_REAL units from rotation data
+  remaining_sec <- pbp_data$minute_remaining_quarter * 60 + pbp_data$seconds_remaining_quarter
+  pbp_times <- ifelse(
+    pbp_data$period <= 4,
+    ((pbp_data$period - 1) * 720 + (720 - remaining_sec)) * 10,
+    (2880 + (pbp_data$period - 5) * 300 + (300 - remaining_sec)) * 10
+  )
+
+  # Resolve on-court players for a team using rotation stint data
+  # Uses interval mapping: find all unique time boundaries from stints,
+  # compute the lineup at each interval midpoint, then map PBP times via findInterval
+  .resolve_team_oncourt <- function(stints, times) {
+    in_times <- as.numeric(stints$IN_TIME_REAL)
+    out_times <- as.numeric(stints$OUT_TIME_REAL)
+    person_ids <- as.numeric(stints$PERSON_ID)
+    n_pbp <- length(times)
+
+    # Get sorted unique time boundaries from all stints
+    boundaries <- sort(unique(c(in_times, out_times)))
+    n_bounds <- length(boundaries)
+
+    if (n_bounds < 2) {
+      active <- unique(person_ids)
+      lineup <- rep(NA_real_, 5)
+      n_a <- min(length(active), 5)
+      if (n_a > 0) lineup[1:n_a] <- active[1:n_a]
+      return(matrix(rep(lineup, each = n_pbp), nrow = n_pbp, ncol = 5))
+    }
+
+    n_intervals <- n_bounds - 1
+
+    # Compute lineup at midpoint of each interval between boundaries
+    midpoints <- (boundaries[-n_bounds] + boundaries[-1]) / 2
+    lineup_mat <- matrix(NA_real_, nrow = n_intervals, ncol = 5)
+    for (k in seq_len(n_intervals)) {
+      mid <- midpoints[k]
+      # Player is on court if stint started at or before mid and ends after mid
+      active <- unique(person_ids[in_times <= mid & out_times > mid])
+      n_a <- min(length(active), 5)
+      if (n_a > 0) lineup_mat[k, 1:n_a] <- active[1:n_a]
+    }
+
+    # Game-end lineup: at the last boundary, use >= for out_times
+    max_t <- boundaries[n_bounds]
+    final_active <- unique(person_ids[in_times <= max_t & out_times >= max_t])
+    final_lineup <- rep(NA_real_, 5)
+    n_f <- min(length(final_active), 5)
+    if (n_f > 0) final_lineup[1:n_f] <- final_active[1:n_f]
+
+    # Append final lineup as extra row
+    all_lineups <- rbind(lineup_mat, matrix(final_lineup, nrow = 1))
+
+    # Map each PBP time to an interval index via findInterval
+    # findInterval returns k where boundaries[k] <= t < boundaries[k+1]
+    idx <- findInterval(times, boundaries)
+    # Clamp: 0 -> 1 (before first boundary), n_bounds -> n_intervals + 1 (game end)
+    idx[idx == 0L] <- 1L
+    idx[idx == n_bounds] <- n_intervals + 1L
+    idx <- pmin(pmax(idx, 1L), n_intervals + 1L)
+
+    return(all_lineups[idx, , drop = FALSE])
+  }
+
+  away_mat <- .resolve_team_oncourt(rotation$AwayTeam, pbp_times)
+  home_mat <- .resolve_team_oncourt(rotation$HomeTeam, pbp_times)
+
+  for (i in 1:5) {
+    pbp_data[[paste0("away_player", i)]] <- away_mat[, i]
+  }
+  for (i in 1:5) {
+    pbp_data[[paste0("home_player", i)]] <- home_mat[, i]
+  }
+
+  # Populate player1 team city/nickname from rotation data
+  away_team_id <- rotation$AwayTeam$TEAM_ID[1]
+  away_team_city <- rotation$AwayTeam$TEAM_CITY[1]
+  away_team_name <- rotation$AwayTeam$TEAM_NAME[1]
+  home_team_id <- rotation$HomeTeam$TEAM_ID[1]
+  home_team_city <- rotation$HomeTeam$TEAM_CITY[1]
+  home_team_name <- rotation$HomeTeam$TEAM_NAME[1]
+
+  is_away <- pbp_data$player1_team_id == away_team_id
+  is_home <- pbp_data$player1_team_id == home_team_id
+  is_away[is.na(is_away)] <- FALSE
+  is_home[is.na(is_home)] <- FALSE
+  pbp_data$player1_team_city[is_away] <- away_team_city
+  pbp_data$player1_team_city[is_home] <- home_team_city
+  pbp_data$player1_team_nickname[is_away] <- away_team_name
+  pbp_data$player1_team_nickname[is_home] <- home_team_name
+
+  return(pbp_data)
 }
 
 
@@ -417,8 +936,8 @@ NULL
 #' @rdname nba_playbyplayv3
 #' @author Saiem Gilani
 #' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022201086')
-#' @param start_period Start period filter - default: 0 (all periods)
-#' @param end_period End period filter - default: 0 (all periods)
+#' @param start_period Start period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.
+#' @param end_period End period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayByPlay, AvailableVideo
 #'
@@ -482,9 +1001,11 @@ nba_playbyplayv3 <- function(
     StartPeriod = start_period
   )
 
+  data <- list()  # Initialize before tryCatch
+
   tryCatch(
     expr = {
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- request_with_proxy(url = full_url, params = params)
 
       game_data <- resp %>%
         purrr::pluck("game")
@@ -530,10 +1051,12 @@ NULL
 #' **Get NBA Stats API play-by-play**
 #' @rdname nba_pbp
 #' @author Jason Lee
-#' @param game_id Game ID
-#' @param on_court IF TRUE will be added ID of players on court
-#' @param version Play-by-play version ("v3" is the default, "v2" available from 2016-17 onwards)
-#' @param p Progress bar
+#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022201086')
+#' @param on_court If TRUE (default), on-court player IDs are added for each play event.
+#'   V3 uses `nba_gamerotation()` stint data; V2 infers lineups from substitution events.
+#' @param version Play-by-play version - `"v3"` (default) or `"v2"`. V3 returns richer data
+#'   with shot coordinates, shot values, and V3 action types. V2 is available from 2016-17 onwards.
+#' @param p Optional progress object from `progressr` (default: NULL). Used internally by `nba_pbps()`.
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
 #'
@@ -544,15 +1067,20 @@ NULL
 #'    |event_type                |character |
 #'    |event_action_type         |character |
 #'    |period                    |numeric   |
+#'    |clock                     |character |
 #'    |minute_game               |numeric   |
 #'    |time_remaining            |numeric   |
 #'    |wc_time_string            |character |
 #'    |time_quarter              |character |
 #'    |minute_remaining_quarter  |numeric   |
 #'    |seconds_remaining_quarter |numeric   |
+#'    |action_type               |character |
+#'    |sub_type                  |character |
 #'    |home_description          |character |
 #'    |neutral_description       |character |
 #'    |visitor_description       |character |
+#'    |description               |character |
+#'    |location                  |character |
 #'    |score                     |character |
 #'    |away_score                |numeric   |
 #'    |home_score                |numeric   |
@@ -580,6 +1108,13 @@ NULL
 #'    |player3_team_abbreviation |character |
 #'    |video_available_flag      |character |
 #'    |team_leading              |character |
+#'    |x_legacy                  |integer   |
+#'    |y_legacy                  |integer   |
+#'    |shot_distance             |numeric   |
+#'    |shot_result               |character |
+#'    |is_field_goal             |integer   |
+#'    |points_total              |integer   |
+#'    |shot_value                |integer   |
 #'    |away_player1              |numeric   |
 #'    |away_player2              |numeric   |
 #'    |away_player3              |numeric   |
@@ -605,15 +1140,21 @@ nba_pbp <- function(
     game_id,
     on_court = TRUE,
     version = "v3",
-    p,
+    p = NULL,
     ...) {
   # V3 path: use the dedicated V3 endpoint and parsing
 
   if (version == "v3") {
+    data <- data.frame()  # Initialize before tryCatch
     tryCatch(
       expr = {
-        v3_result <- nba_playbyplayv3(game_id = game_id, ...)
+        v3_result <- nba_playbyplayv3(game_id = game_id)
         data <- v3_result$PlayByPlay
+
+        # Build player roster for name->ID resolution
+        player_roster <- .build_player_roster(game_id = pad_id(game_id))
+
+        data <- .v3_to_v2_format(data, player_roster = player_roster)
 
         if (on_court) {
           data <- .players_on_court_v3(data)
@@ -631,6 +1172,7 @@ nba_pbp <- function(
   }
 
   # V2/V1 path
+  data <- data.frame()  # Initialize before tryCatch
   if (version == "v2") {
     endpoint <- nba_endpoint("playbyplayv2")
   } else {
@@ -755,15 +1297,20 @@ NULL
 #'    |event_type                |character |
 #'    |event_action_type         |character |
 #'    |period                    |numeric   |
+#'    |clock                     |character |
 #'    |minute_game               |numeric   |
 #'    |time_remaining            |numeric   |
 #'    |wc_time_string            |character |
 #'    |time_quarter              |character |
 #'    |minute_remaining_quarter  |numeric   |
 #'    |seconds_remaining_quarter |numeric   |
+#'    |action_type               |character |
+#'    |sub_type                  |character |
 #'    |home_description          |character |
 #'    |neutral_description       |character |
 #'    |visitor_description       |character |
+#'    |description               |character |
+#'    |location                  |character |
 #'    |score                     |character |
 #'    |away_score                |numeric   |
 #'    |home_score                |numeric   |
@@ -791,6 +1338,13 @@ NULL
 #'    |player3_team_abbreviation |character |
 #'    |video_available_flag      |character |
 #'    |team_leading              |character |
+#'    |x_legacy                  |integer   |
+#'    |y_legacy                  |integer   |
+#'    |shot_distance             |numeric   |
+#'    |shot_result               |character |
+#'    |is_field_goal             |integer   |
+#'    |points_total              |integer   |
+#'    |shot_value                |integer   |
 #'    |away_player1              |numeric   |
 #'    |away_player2              |numeric   |
 #'    |away_player3              |numeric   |
