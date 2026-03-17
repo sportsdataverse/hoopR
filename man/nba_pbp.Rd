@@ -4,7 +4,7 @@
 \alias{nba_pbp}
 \title{\strong{Get NBA Stats API play-by-play}}
 \usage{
-nba_pbp(game_id, on_court = TRUE, version = "v3", p, ...)
+nba_pbp(game_id, on_court = TRUE, version = "v3", p = NULL, ...)
 }
 \arguments{
 \item{game_id}{Game ID}
