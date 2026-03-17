@@ -50,7 +50,7 @@ The NBA Stats API has been migrating endpoints to V3, which returns nested JSON 
 
 | File/Resource | Change Description |
 | ------------- | ------------------ |
-| `R/nba_stats_pbp.R` | Added `nba_playbyplayv3()` wrapper, `.players_on_court_v3()` helper, changed `nba_pbp()`/`nba_pbps()` default to `version = "v3"` |
+| `R/nba_stats_pbp.R` | Added `nba_playbyplayv3()` wrapper, `.v3_to_v2_format()` V3-to-V2 converter, `.build_player_roster()` roster resolver, rewrote `.players_on_court_v3()` to use `nba_gamerotation()` stint data, changed `nba_pbp()`/`nba_pbps()` default to `version = "v3"`, made `p` parameter optional, fixed `data` init before tryCatch |
 | `R/nba_stats_boxscore_v3.R` | Added `nba_boxscoresummaryv3()` returning 9 data frames |
 | `R/nba_stats_roster.R` | Added `nba_commonteamyears()` |
 | `R/nba_stats_leaders.R` | Added `nba_dunkscoreleaders()`, `nba_gravityleaders()` |
@@ -67,16 +67,19 @@ The NBA Stats API has been migrating endpoints to V3, which returns nested JSON 
 | `tests/testthat/test-*.R` (100+ files) | Converted 400+ `expect_equal(colnames())` to `expect_in()` |
 | `NEWS.md` | Documented all v3.0.0 changes with fix counts |
 | `cran-comments.md` | Updated release summary with bug fix details |
-| `CLAUDE.md` | Fixed function template (df_list init, return, @return tables, @param format), added no-coauthor commit rule |
-| `.github/copilot-instructions.md` | Added @param descriptive format guidance, no-coauthor rule |
-| `_pkgdown.yml` | Added `.players_on_court_v3` to helper functions reference |
+| `CLAUDE.md` | Fixed function template (df_list init, return, @return tables, @param format), added no-coauthor commit rule, documented V3-to-V2 conversion pipeline and new helpers |
+| `.github/copilot-instructions.md` | Added @param descriptive format guidance, no-coauthor rule, V3-to-V2 conversion pipeline docs, updated substitution direction note |
+| `_pkgdown.yml` | Added `.players_on_court_v3`, `.v3_to_v2_format`, `.build_player_roster` to helper functions reference |
 | `CONTRIBUTING.md` | Added comprehensive contributor guide |
 | `.github/workflows/*.yaml` | Updated GitHub Actions to v4 |
 | `.Rbuildignore` | Cleaned up duplicate patterns |
 | `data-raw/PR_devel.md` | This file — comprehensive PR summary |
 
-### New Functions (9)
+### New Functions (9 exported + 3 internal helpers)
 - `nba_playbyplayv3()` — NBA Stats PlayByPlayV3 endpoint
+- `.v3_to_v2_format()` — Internal helper converting V3 PBP to V2-compatible format with event type mapping and player resolution
+- `.build_player_roster()` — Internal helper retrieving player roster from boxscore for name-to-ID resolution
+- `.players_on_court_v3()` — Internal helper (rewritten) using `nba_gamerotation()` stint data for on-court player determination
 - `nba_boxscoresummaryv3()` — NBA Stats BoxScoreSummaryV3 endpoint (9 data frames)
 - `nba_commonteamyears()` — Team IDs with active year ranges
 - `nba_dunkscoreleaders()` — Dunk tracking biomechanics data
@@ -94,6 +97,8 @@ The NBA Stats API has been migrating endpoints to V3, which returns nested JSON 
 - Fixed `nba_iststandings()` nested games column flattening
 - Fixed `helper-skip.R` string comparison for env var guards
 - Fixed `%||%` import for R < 4.4.0 compatibility
+- Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()` (crash on API failure)
+- Removed `stringr::str_match` import from NAMESPACE (replaced with base R regex)
 
 ### Documentation
 - Updated function template in CLAUDE.md to match actual codebase pattern
