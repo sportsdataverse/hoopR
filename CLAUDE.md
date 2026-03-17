@@ -60,7 +60,7 @@ pkgdown::build_site()
 
 ```
 R/                    # All package source code
-  nba_stats_pbp.R     # PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .players_on_court()
+  nba_stats_pbp.R     # PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .v3_to_v2_format(), .build_player_roster(), .players_on_court(), .players_on_court_v3()
   nba_stats_boxscore_v3.R  # All V3 boxscore wrappers + nba_boxscoresummaryv3()
   nba_stats_leaders.R # Leader endpoints: nba_leagueleaders(), nba_dunkscoreleaders(), nba_gravityleaders()
   nba_stats_league.R  # League endpoints: nba_leaguestandingsv3(), nba_iststandings(), etc.
@@ -168,9 +168,11 @@ raw_data %>%
 - **V2**: Returns `resultSets[].headers[] + rowSet[][]` (tabular). Parsed via `nba_stats_map_result_sets()`.
 - **V3**: Returns nested JSON (e.g., `game.actions[]`, `boxScoreSummary.homeTeam.periods[]`). Parsed via `purrr::pluck()` -> `data.frame()` -> pipeline.
 - **V3-style leader/standings endpoints**: Return flat nested JSON arrays (e.g., `dunks[]`, `leaders[]`, `teams[]`). Parsed via `purrr::pluck("key")` -> `dplyr::as_tibble()` -> `dplyr::mutate(across(everything(), as.character))` -> `janitor::clean_names()` -> `make_hoopR_data()`. Examples: `nba_dunkscoreleaders()`, `nba_gravityleaders()`, `nba_iststandings()`.
+- **V3-to-V2 conversion pipeline** (`nba_pbp()` V3 path): `nba_playbyplayv3()` -> `.build_player_roster()` -> `.v3_to_v2_format()` -> `.players_on_court_v3()`. This produces V2-compatible columns (event_type, player1/2/3, etc.) while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).
 - V3 PBP has a single `personId` per action (not `player1_id`/`player2_id`/`player3_id` like V2).
-- V3 substitutions: `actionType="Substitution"`, `personId`=incoming, description contains "FOR OutgoingPlayer".
-- V3 clock format: ISO 8601 duration `"PT10M30.00S"` (not `"MM:SS"`).
+- V3 substitutions: `actionType="Substitution"`, `personId`=outgoing player, description contains "SUB: IncomingPlayer FOR OutgoingPlayer".
+- V3 clock format: ISO 8601 duration `"PT10M30.00S"` (not `"MM:SS"`). Parsed with base R `regexec()`/`regmatches()`.
+- V3 on-court players: `.players_on_court_v3()` uses `nba_gamerotation()` stint data with interval mapping via `findInterval()` (not substitution-event parsing like V2).
 
 ### Null Safety
 
@@ -259,4 +261,6 @@ ci: update GitHub Actions workflow versions
 - IST Standings has dynamic game columns (gameId1, gameId2, etc.) -- tests should use `expect_true(all(core_cols %in% colnames()))` instead of exact match.
 - ESPN API columns change over time -- use `expect_in()` for subset validation in tests.
 - NBA Stats V2 endpoints may return empty data for certain games -- tests should handle empty results gracefully.
-- Always initialize `df_list <- list()` before `tryCatch` blocks to avoid "object not found" errors.
+- Always initialize `df_list <- list()` (or `data <- data.frame()` / `data <- list()`) before `tryCatch` blocks to avoid "object not found" errors.
+- `.v3_to_v2_format()` uses row-level loops for player resolution -- performance-sensitive for large PBP datasets. The `%||%` operator from rlang is used for null-safe named vector lookups in event type maps.
+- `.players_on_court_v3()` depends on `nba_gamerotation()` returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second -- ensure time unit consistency when modifying.

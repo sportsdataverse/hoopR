@@ -250,3 +250,5 @@ reference:
       - '`helper_espn_mbb_player_box`'
       - '`.players_on_court`'
       - '`.players_on_court_v3`'
+      - '`.v3_to_v2_format`'
+      - '`.build_player_roster`'

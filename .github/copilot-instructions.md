@@ -85,15 +85,17 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 ## V3 API Notes
 
 - V3 endpoints return nested JSON -- use `purrr::pluck()` for extraction.
-- V3 PBP clock format is `"PT10M30.00S"` not `"MM:SS"`.
-- V3 PBP substitutions have single `personId` (incoming) with outgoing parsed from description.
+- V3 PBP clock format is `"PT10M30.00S"` not `"MM:SS"`. Parsed with base R `regexec()`/`regmatches()`.
+- V3 PBP substitutions: `personId` = outgoing player, incoming parsed from "SUB: IncomingPlayer FOR OutgoingPlayer" in description.
+- V3-to-V2 conversion pipeline (`nba_pbp()` V3 path): `nba_playbyplayv3()` -> `.build_player_roster()` -> `.v3_to_v2_format()` -> `.players_on_court_v3()`. Produces V2-compatible columns while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).
+- `.players_on_court_v3()` uses `nba_gamerotation()` stint data with interval mapping (not substitution-event parsing like V2).
 - V3 boxscore endpoints namespace: `boxscoretraditionalv3`, `boxscoreadvancedv3`, etc.
 - V3-style leader/standings endpoints (dunkscoreleaders, gravityleaders, iststandings) return flat nested JSON arrays. Parse via `purrr::pluck("key")` -> `dplyr::as_tibble()` -> `dplyr::mutate(across(everything(), as.character))` -> `janitor::clean_names()`.
 - V3-style schedule endpoint (scheduleleaguev2int) follows the same nested structure as `nba_schedule()`.
 
 ## Common Pitfalls
 
-- Always initialize `df_list <- list()` before `tryCatch` blocks.
+- Always initialize `df_list <- list()` (or `data <- data.frame()` / `data <- list()`) before `tryCatch` blocks.
 - ESPN API columns change over time -- use subset validation in tests.
 - V3-style leader endpoints return mixed types -- coerce to `as.character()` with `%||% NA_character_`.
 - IST Standings has dynamic game columns -- use `expect_true(all(core_cols %in% colnames()))`.
