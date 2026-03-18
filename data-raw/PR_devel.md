@@ -6,9 +6,9 @@
   - [Summary](#summary)
   - [Type of Change](#type-of-change)
   - [Related Issues](#related-issues)
-  - [Background & Context](#background--context)
+  - [Background \& Context](#background--context)
   - [Changes Made](#changes-made)
-    - [New Functions (9)](#new-functions-9)
+    - [New Functions (9 exported + 3 internal helpers)](#new-functions-9-exported--3-internal-helpers)
     - [Bug Fixes](#bug-fixes)
     - [Documentation](#documentation)
     - [Infrastructure](#infrastructure)
@@ -74,6 +74,15 @@ The NBA Stats API has been migrating endpoints to V3, which returns nested JSON 
 | `.github/workflows/*.yaml` | Updated GitHub Actions to v4 |
 | `.Rbuildignore` | Cleaned up duplicate patterns |
 | `data-raw/PR_devel.md` | This file — comprehensive PR summary |
+| `tests/testthat/test-nba_leaguedashlineups.R` | Added skip-on-empty guard before indexing result tables |
+| `tests/testthat/test-nba_teamdashlineups.R` | Added skip-on-empty guard for both expected result sets |
+| `tests/testthat/test-nba_playercareerstats.R` | Updated expected column casing from `Team_ID` to `TEAM_ID` |
+| `tests/testthat/test-nba_playerdashptshotdefend.R` | Updated expected key column to `MATCHUPID` |
+| `tests/testthat/test-nba_playerprofilev2.R` | Added payload-length guard and relaxed assertions for optional/empty result sets |
+| `tests/testthat/test-ncaa_mbb_teams.R` | Added skip-on-empty and converted exact column match to subset validation |
+| `.github/workflows/R-CMD-check.yaml` | Added permissions/concurrency and clearer env var guidance |
+| `.github/workflows/pkgdown.yaml` | Added permissions/concurrency to deployment workflow |
+| `.Rbuildignore` | Added local directory ignores to avoid packaging/check noise |
 
 ### New Functions (9 exported + 3 internal helpers)
 - `nba_playbyplayv3()` — NBA Stats PlayByPlayV3 endpoint

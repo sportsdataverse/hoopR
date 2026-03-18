@@ -8,7 +8,7 @@
   - [New NBA Stats API Endpoint Wrappers](#new-nba-stats-api-endpoint-wrappers)
   - [ESPN Functions](#espn-functions)
   - [Bug Fixes](#bug-fixes)
-  - [Infrastructure](#infrastructure)
+  - [Deprecations](#deprecations)
 - [R CMD check results](#r-cmd-check-results)
 - [revdepcheck results](#revdepcheck-results)
 
@@ -46,21 +46,32 @@ This is a major release (v3.0.0) with the following changes:
 ### Bug Fixes
 - Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
 - Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
-- Fixed `helper-skip.R` test guard functions to use proper string comparison.
-- Fixed empty parameter bug in `nba_dunkscoreleaders()`.
-- Fixed V3-style data.frame parsing for leader/standings endpoints.
 - Fixed `nba_iststandings()` nested games column flattening.
-- Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()`.
-- Removed `stringr::str_match` import from NAMESPACE (replaced with base R regex).
+- Moves `furrr` and `future` dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.
+- Add `lifecycle` dependency and deprecation warnings for unstable functions/endpoints to guide users to maintained alternatives.
 
-### Test Improvements
-- Converted 400+ `expect_equal(colnames())` assertions to `expect_in()` for robust subset validation.
-- Added tests for all new endpoints with column validation and rate limiting.
+### Deprecations
+- Deprecated unstable NBA boxscore V2 wrappers and redirect users to maintained alternatives:
+  `nba_boxscorefourfactorsv2()` -> `nba_boxscorefourfactorsv3()`,
+  `nba_boxscoremiscv2()` -> `nba_boxscoremiscv3()`,
+  `nba_boxscorescoringv2()` -> `nba_boxscorescoringv3()`,
+  `nba_boxscoreusagev2()` -> `nba_boxscoreusagev3()`,
+  `nba_boxscoreplayertrackv2()` -> `nba_boxscoreplayertrackv3()`,
+  `nba_boxscorehustlev2()` -> `nba_hustlestatsboxscore()`.
+- Deprecated unstable NBA endpoints and redirect users to maintained alternatives:
+  `nba_homepageleaders()` -> `nba_leagueleaders()`,
+  `nba_homepagev2()` -> `nba_leagueleaders()`,
+  `nba_leaderstiles()` -> `nba_leagueleaders()`,
+  `nba_teamgamestreakfinder()` -> `nba_teamgamelogs()`,
+  `nba_teamhistoricalleaders()` -> `nba_franchiseleaders()`,
+  `nba_videodetails()` -> `nba_videodetailsasset()`,
+  `nba_winprobabilitypbp()` -> No replacement available.
+- Deprecated additional unstable NBA endpoints and redirect users to maintained alternatives:
+  `nba_playercareerbycollege()` -> `nba_playercareerbycollegerollup()`/`nba_leaguedashplayerbiostats()`,
+  `nba_playernextngames()` -> `nba_playerprofilev2()`,
+  `nba_scoreboard()` -> `nba_scoreboardv3()`,
+  `nba_scoreboardv2()` -> `nba_scoreboardv3()`.
 
-### Infrastructure
-- Updated GitHub Actions to v4.
-- Cleaned up `.Rbuildignore`.
-- Added comprehensive CONTRIBUTING.md with naming conventions and test environment documentation.
 
 ## R CMD check results
 
