@@ -49,9 +49,11 @@ Return a named list of data frames: WinProbPBP, GameInfo
 }
 }
 \description{
-\strong{Get NBA Stats API Win Probability PBP}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Win Probability PBP}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_playbyplayv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')

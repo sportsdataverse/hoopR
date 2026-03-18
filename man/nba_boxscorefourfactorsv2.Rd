@@ -74,9 +74,11 @@ Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 }
 }
 \description{
-\strong{Get NBA Stats API Boxscore Four Factors V2}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Boxscore Four Factors V2}
+NBA Stats no longer returns stable data for this V2 endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_boxscorefourfactorsv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorefourfactorsv2(game_id = "0022200021")

@@ -2,6 +2,7 @@ test_that("NBA Player Next N Games", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
+  skip("Deprecated: nba_playernextngames() replaced by nba_playerprofilev2().")
 
   x <- nba_playernextngames(player_id = "2544")
 

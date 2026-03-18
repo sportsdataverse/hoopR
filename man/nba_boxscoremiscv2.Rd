@@ -82,9 +82,11 @@ Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 }
 }
 \description{
-\strong{Get NBA Stats API Boxscore Misc V2}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Boxscore Misc V2}
+NBA Stats no longer returns stable data for this V2 endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_boxscoremiscv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoremiscv2(game_id = "0022200021")

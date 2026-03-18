@@ -1,4 +1,3 @@
-
 #' **Get NBA Stats API Player Index**
 #' @name nba_playerindex
 NULL
@@ -64,20 +63,19 @@ NULL
 #'  nba_playerindex()
 #' ```
 nba_playerindex <- function(
-    college = '',
-    country = '',
-    draft_pick = '',
-    draft_round = '',
-    draft_year = '',
-    height = '',
+    college = "",
+    country = "",
+    draft_pick = "",
+    draft_round = "",
+    draft_year = "",
+    height = "",
     historical = 1,
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    team_id = '0',
-    weight = '',
-    ...){
-
+    season_type = "Regular Season",
+    team_id = "0",
+    weight = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playerindex"
@@ -103,11 +101,9 @@ nba_playerindex <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player index data for {season} available!"))
@@ -141,17 +137,15 @@ NULL
 #'  nba_playerheadshot(player_id = '2544')
 #' ```
 nba_playerheadshot <- function(
-    player_id = '2544',
-    ...){
-
+    player_id = "2544",
+    ...) {
   endpoint <- "https://cdn.nba.com/headshots/nba/latest/260x190/"
 
-  full_url <- paste0(endpoint, player_id,".png")
+  full_url <- paste0(endpoint, player_id, ".png")
 
   tryCatch(
     expr = {
       resp <- full_url
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player headshot for {player_id} available!"))
@@ -207,8 +201,7 @@ NULL
 #' ```
 nba_playerawards <- function(
     player_id,
-    ...){
-
+    ...) {
   version <- "playerawards"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -221,11 +214,9 @@ nba_playerawards <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player awards data for {player_id} available!"))
@@ -243,6 +234,7 @@ nba_playerawards <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Player Career By College**
+#' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_playercareerbycollegerollup()` instead.
 #' @rdname nba_playercareerbycollege
 #' @author Saiem Gilani
 #' @param college College Name
@@ -292,14 +284,19 @@ NULL
 #'  nba_playercareerbycollege(college = 'Florida State', per_mode = 'PerGame')
 #' ```
 nba_playercareerbycollege <- function(
-    college = 'Florida State',
-    league_id = '00',
-    per_mode = 'Totals',
+    college = "Florida State",
+    league_id = "00",
+    per_mode = "Totals",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
+    season_type = "Regular Season",
+    ...) {
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_playercareerbycollege()",
+    details = "No direct replacement is available in hoopR for this unstable endpoint. Consider using  `nba_playercareerbycollegerollup()` or `nba_leaguedashplayerbiostats()` for aggregated career stats by college instead."
+  )
 
-  # college <- gsub(' ', '+', college)
+  college <- gsub(" ", "+", college)
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playercareerbycollege"
@@ -318,14 +315,12 @@ nba_playercareerbycollege <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or player careers by college data for {player_id} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or player careers by college data for {college} available!"))
     },
     warning = function(w) {
     },
@@ -480,12 +475,11 @@ NULL
 #'  nba_playercareerbycollegerollup(per_mode = 'Totals')
 #' ```
 nba_playercareerbycollegerollup <- function(
-    league_id = '00',
-    per_mode = 'Totals',
+    league_id = "00",
+    per_mode = "Totals",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playercareerbycollegerollup"
@@ -503,11 +497,9 @@ nba_playercareerbycollegerollup <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player careers by college rollup data for {season} available!"))
@@ -812,11 +804,10 @@ NULL
 #'  nba_playercareerstats(player_id = '2544')
 #' ```
 nba_playercareerstats <- function(
-    league_id = '00',
-    per_mode = 'Totals',
-    player_id = '2544',
-    ...){
-
+    league_id = "00",
+    per_mode = "Totals",
+    player_id = "2544",
+    ...) {
   version <- "playercareerstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -831,11 +822,9 @@ nba_playercareerstats <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player career stats data for {player_id} available!"))
@@ -910,8 +899,7 @@ NULL
 #' ```
 nba_infographicfanduelplayer <- function(
     game_id,
-    ...){
-
+    ...) {
   version <- "infographicfanduelplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -924,11 +912,9 @@ nba_infographicfanduelplayer <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no FanDuel player infographic data for {game_id} available!"))
@@ -1162,17 +1148,16 @@ NULL
 #'  nba_playerfantasyprofile(player_id = '2544')
 #' ```
 nba_playerfantasyprofile <- function(
-    league_id = '00',
-    measure_type = 'Base',
-    pace_adjust = 'N',
-    per_mode = 'Totals',
-    player_id = '2544',
-    plus_minus = 'N',
-    rank = 'N',
+    league_id = "00",
+    measure_type = "Base",
+    pace_adjust = "N",
+    per_mode = "Totals",
+    player_id = "2544",
+    plus_minus = "N",
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playerfantasyprofile"
@@ -1195,11 +1180,9 @@ nba_playerfantasyprofile <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player fantasy profile data for {player_id} available!"))
@@ -1281,12 +1264,11 @@ NULL
 #'  nba_playerfantasyprofilebargraph(player_id = '2544')
 #' ```
 nba_playerfantasyprofilebargraph <- function(
-    league_id = '00',
-    player_id = '2544',
+    league_id = "00",
+    player_id = "2544",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playerfantasyprofilebargraph"
@@ -1304,11 +1286,9 @@ nba_playerfantasyprofilebargraph <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player fantasy profile bar graph data for {player_id} available!"))
@@ -1384,11 +1364,10 @@ NULL
 #'  nba_playerestimatedmetrics()
 #' ```
 nba_playerestimatedmetrics <- function(
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playerestimatedmetrics"
@@ -1405,11 +1384,10 @@ nba_playerestimatedmetrics <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
         data <- resp$resultSet$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
@@ -1419,7 +1397,6 @@ nba_playerestimatedmetrics <- function(
         return(data)
       })
       names(df_list) <- resp$resultSet$name
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player estimated metrics data for {player_id} available!"))
@@ -1493,14 +1470,13 @@ NULL
 #'  nba_playergamelog(player_id = '2544')
 #' ```
 nba_playergamelog <- function(
-    date_from = '',
-    date_to = '',
-    league_id = '00',
-    player_id = '2544',
+    date_from = "",
+    date_to = "",
+    league_id = "00",
+    player_id = "2544",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
-
+    season_type = "Regular Season",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playergamelog"
@@ -1520,11 +1496,9 @@ nba_playergamelog <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player game log data for {player_id} available!"))
@@ -1652,28 +1626,27 @@ NULL
 #'  nba_playergamelogs(player_id = '2544')
 #' ```
 nba_playergamelogs <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    po_round = '',
-    per_mode = 'Totals',
+    outcome = "",
+    po_round = "",
+    per_mode = "Totals",
     period = 0,
-    player_id = '2544',
+    player_id = "2544",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    team_id = '',
-    vs_conference = '',
-    vs_division = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    team_id = "",
+    vs_conference = "",
+    vs_division = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playergamelogs"
@@ -1708,11 +1681,9 @@ nba_playergamelogs <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player game logs data for {player_id} available!"))
@@ -1852,97 +1823,96 @@ NULL
 #' ```
 
 nba_playergamestreakfinder <- function(
-    active_streaks_only = '',
-    conference = '',
-    date_from = '',
-    date_to = '',
-    division = '',
-    draft_year = '',
-    draft_team_id = '',
-    draft_round = '',
-    draft_number = '',
-    et_ast = '',
-    et_blk = '',
-    et_dd = '',
-    et_dreb = '',
-    et_fg3a = '',
-    et_fg3m = '',
-    et_fg3_pct = '',
-    et_fga = '',
-    et_fgm = '',
-    et_fg_pct = '',
-    et_fta = '',
-    et_ftm = '',
-    et_ft_pct = '',
-    et_minutes = '',
-    et_oreb = '',
-    et_pf = '',
-    et_pts = '',
-    et_reb = '',
-    et_stl = '',
-    et_td = '',
-    et_tov = '',
-    game_id = '',
-    gt_ast = '',
-    gt_blk = '',
-    gt_dd = '',
-    gt_dreb = '',
-    gt_fg3a = '',
-    gt_fg3m = '',
-    gt_fg3_pct = '',
-    gt_fga = '',
-    gt_fgm = '',
-    gt_fg_pct = '',
-    gt_fta = '',
-    gt_ftm = '',
-    gt_ft_pct = '',
-    gt_minutes = '',
-    gt_oreb = '',
-    gt_pf = '',
-    gt_pts = '',
-    gt_reb = '',
-    gt_stl = '',
-    gt_td = '',
-    gt_tov = '',
-    league_id = '00',
-    location = '',
-    lt_ast = '',
-    lt_blk = '',
-    lt_dd = '',
-    lt_dreb = '',
-    lt_fg3a = '',
-    lt_fg3m = '',
-    lt_fg3_pct = '',
-    lt_fga = '',
-    lt_fgm = '',
-    lt_fg_pct = '',
-    lt_fta = '',
-    lt_ftm = '',
-    lt_ft_pct = '',
-    lt_minutes = '',
-    lt_oreb = '',
-    lt_pf = '',
-    lt_pts = '',
-    lt_reb = '',
-    lt_stl = '',
-    lt_td = '',
-    lt_tov = '',
-    min_games = '',
-    outcome = '',
-    po_round = '',
-    player_id = '',
-    rookie_year = '',
+    active_streaks_only = "",
+    conference = "",
+    date_from = "",
+    date_to = "",
+    division = "",
+    draft_year = "",
+    draft_team_id = "",
+    draft_round = "",
+    draft_number = "",
+    et_ast = "",
+    et_blk = "",
+    et_dd = "",
+    et_dreb = "",
+    et_fg3a = "",
+    et_fg3m = "",
+    et_fg3_pct = "",
+    et_fga = "",
+    et_fgm = "",
+    et_fg_pct = "",
+    et_fta = "",
+    et_ftm = "",
+    et_ft_pct = "",
+    et_minutes = "",
+    et_oreb = "",
+    et_pf = "",
+    et_pts = "",
+    et_reb = "",
+    et_stl = "",
+    et_td = "",
+    et_tov = "",
+    game_id = "",
+    gt_ast = "",
+    gt_blk = "",
+    gt_dd = "",
+    gt_dreb = "",
+    gt_fg3a = "",
+    gt_fg3m = "",
+    gt_fg3_pct = "",
+    gt_fga = "",
+    gt_fgm = "",
+    gt_fg_pct = "",
+    gt_fta = "",
+    gt_ftm = "",
+    gt_ft_pct = "",
+    gt_minutes = "",
+    gt_oreb = "",
+    gt_pf = "",
+    gt_pts = "",
+    gt_reb = "",
+    gt_stl = "",
+    gt_td = "",
+    gt_tov = "",
+    league_id = "00",
+    location = "",
+    lt_ast = "",
+    lt_blk = "",
+    lt_dd = "",
+    lt_dreb = "",
+    lt_fg3a = "",
+    lt_fg3m = "",
+    lt_fg3_pct = "",
+    lt_fga = "",
+    lt_fgm = "",
+    lt_fg_pct = "",
+    lt_fta = "",
+    lt_ftm = "",
+    lt_ft_pct = "",
+    lt_minutes = "",
+    lt_oreb = "",
+    lt_pf = "",
+    lt_pts = "",
+    lt_reb = "",
+    lt_stl = "",
+    lt_td = "",
+    lt_tov = "",
+    min_games = "",
+    outcome = "",
+    po_round = "",
+    player_id = "",
+    rookie_year = "",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    starter_bench = '',
-    team_id = '',
-    vs_conference = '',
-    vs_division = '',
-    vs_team_id = '',
-    years_experience = '',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    starter_bench = "",
+    team_id = "",
+    vs_conference = "",
+    vs_division = "",
+    vs_team_id = "",
+    years_experience = "",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playergamestreakfinder"
@@ -2045,11 +2015,9 @@ nba_playergamestreakfinder <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player streak finder data available for the parameters selected!"))
@@ -2068,6 +2036,7 @@ nba_playergamestreakfinder <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Player Next N Games**
+#' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_playerprofilev2()` instead.
 #' @rdname nba_playernextngames
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -2107,12 +2076,17 @@ NULL
 #'  nba_playernextngames(player_id = '2544')
 #' ```
 nba_playernextngames <- function(
-    league_id = '',
+    league_id = "",
     number_of_games = 2147483647,
-    player_id = '2544',
+    player_id = "2544",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_type = 'Regular Season',
-    ...){
+    season_type = "Regular Season",
+    ...) {
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_playernextngames()",
+    with = "nba_playerprofilev2()"
+  )
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -2132,11 +2106,9 @@ nba_playernextngames <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player next n games data available for {player_id}!"))
@@ -2552,11 +2524,10 @@ NULL
 #'  nba_playerprofilev2(player_id = '2544')
 #' ```
 nba_playerprofilev2 <- function(
-    league_id = '',
-    per_mode = 'Totals',
-    player_id = '2544',
-    ...){
-
+    league_id = "",
+    per_mode = "Totals",
+    player_id = "2544",
+    ...) {
   version <- "playerprofilev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2571,11 +2542,9 @@ nba_playerprofilev2 <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no player profile v2 data available for {player_id}!"))
@@ -2831,30 +2800,29 @@ NULL
 #'  nba_playervsplayer(player_id = '2544', vs_player_id = '203076')
 #' ```
 nba_playervsplayer <- function(
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    pace_adjust = 'N',
-    per_mode = 'Totals',
+    outcome = "",
+    pace_adjust = "N",
+    per_mode = "Totals",
     period = 0,
-    player_id = '2544',
-    plus_minus = 'N',
-    rank = 'N',
+    player_id = "2544",
+    plus_minus = "N",
+    rank = "N",
     season = year_to_season(most_recent_nba_season() - 1),
-    season_segment = '',
-    season_type = 'Regular Season',
-    vs_conference = '',
-    vs_division = '',
-    vs_player_id = '203076',
-    ...){
-
+    season_segment = "",
+    season_type = "Regular Season",
+    vs_conference = "",
+    vs_division = "",
+    vs_player_id = "203076",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playervsplayer"
@@ -2890,11 +2858,9 @@ nba_playervsplayer <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player vs player data unavailable for the parameters selected!"))
@@ -3012,32 +2978,31 @@ NULL
 #'  nba_playercompare(player_id_list = '202681,203078,2544,201567,203954', vs_player_id_list = '201566,201939,201935,201142,203076')
 #' ```
 nba_playercompare <- function(
-    conference = '',
-    date_from = '',
-    date_to = '',
-    game_segment = '',
+    conference = "",
+    date_from = "",
+    date_to = "",
+    game_segment = "",
     last_n_games = 0,
-    league_id = '00',
-    location = '',
-    measure_type = 'Base',
+    league_id = "00",
+    location = "",
+    measure_type = "Base",
     month = 0,
     opponent_team_id = 0,
-    outcome = '',
-    pace_adjust = 'N',
-    per_mode = 'Totals',
+    outcome = "",
+    pace_adjust = "N",
+    per_mode = "Totals",
     period = 0,
-    player_id_list = '202681,203078,2544,201567,203954',
-    plus_minus = 'N',
-    rank = 'N',
-    season = '2020-21',
-    season_segment = '',
-    season_type = 'Regular Season',
-    shot_clock_range = '',
-    vs_conference = '',
-    vs_division = '',
-    vs_player_id_list = '201566,201939,201935,201142,203076',
-    ...){
-
+    player_id_list = "202681,203078,2544,201567,203954",
+    plus_minus = "N",
+    rank = "N",
+    season = "2020-21",
+    season_segment = "",
+    season_type = "Regular Season",
+    shot_clock_range = "",
+    vs_conference = "",
+    vs_division = "",
+    vs_player_id_list = "201566,201939,201935,201142,203076",
+    ...) {
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playercompare"
@@ -3075,11 +3040,9 @@ nba_playercompare <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or player comparison data unavailable for the parameters selected!"))

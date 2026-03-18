@@ -2,6 +2,7 @@ test_that("NBA Boxscore Scoring V2", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
+  skip("Deprecated: nba_boxscorescoringv2() now errors by design; use nba_boxscorescoringv3().")
 
 
 

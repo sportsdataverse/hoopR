@@ -361,6 +361,12 @@ nba_boxscoredefensive <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Four Factors V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_boxscorefourfactorsv3()` instead.
 #' @rdname nba_boxscorefourfactorsv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -434,6 +440,12 @@ nba_boxscorefourfactorsv2 <- function(
     range_type = 0,
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscorefourfactorsv2()",
+    with = "nba_boxscorefourfactorsv3()"
+  )
+
   version <- "boxscorefourfactorsv2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -473,6 +485,12 @@ nba_boxscorefourfactorsv2 <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Misc V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_boxscoremiscv3()` instead.
 #' @rdname nba_boxscoremiscv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -554,6 +572,12 @@ nba_boxscoremiscv2 <- function(
     range_type = 0,
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscoremiscv2()",
+    with = "nba_boxscoremiscv3()"
+  )
+
   version <- "boxscoremiscv2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -593,6 +617,12 @@ nba_boxscoremiscv2 <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Scoring V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_boxscorescoringv3()` instead.
 #' @rdname nba_boxscorescoringv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -680,6 +710,12 @@ nba_boxscorescoringv2 <- function(
     range_type = 0,
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscorescoringv2()",
+    with = "nba_boxscorescoringv3()"
+  )
+
   version <- "boxscorescoringv2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -719,6 +755,12 @@ nba_boxscorescoringv2 <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Usage V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_boxscoreusagev3()` instead.
 #' @rdname nba_boxscoreusagev2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -811,6 +853,12 @@ nba_boxscoreusagev2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscoreusagev2()",
+    with = "nba_boxscoreusagev3()"
+  )
 
   version <- "boxscoreusagev2"
   endpoint <- nba_endpoint(version)
@@ -1104,6 +1152,12 @@ nba_boxscorematchups <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Player Tracking V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_boxscoreplayertrackv3()` instead.
 #' @rdname nba_boxscoreplayertrackv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -1189,6 +1243,12 @@ NULL
 nba_boxscoreplayertrackv2 <- function(
     game_id,
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscoreplayertrackv2()",
+    with = "nba_boxscoreplayertrackv3()"
+  )
 
   version <- "boxscoreplayertrackv2"
   endpoint <- nba_endpoint(version)

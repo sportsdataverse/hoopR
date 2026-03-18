@@ -2,6 +2,7 @@ test_that("NBA Win Probability PBP", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
+  skip("Deprecated: nba_winprobabilitypbp() now errors by design; use nba_playbyplayv3().")
 
   x <- nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')
 

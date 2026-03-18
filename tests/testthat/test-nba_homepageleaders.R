@@ -2,6 +2,7 @@ test_that("NBA Home Page Leaders", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
+  skip("Deprecated: nba_homepageleaders() now errors by design; use nba_leagueleaders().")
 
 
 
