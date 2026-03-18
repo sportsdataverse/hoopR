@@ -1,8 +1,11 @@
 # **Get NBA Stats API Team Historical Leaders**
 
-**Get NBA Stats API Team Historical Leaders**
+**\[deprecated\]**
 
-**Get NBA Stats API Team Historical Leaders**
+NBA Stats no longer returns stable data for this endpoint. This function
+is deprecated and now errors when called. Use
+[`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md)
+instead.
 
 ## Usage
 

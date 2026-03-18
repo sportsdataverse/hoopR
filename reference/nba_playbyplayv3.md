@@ -18,11 +18,13 @@ nba_playbyplayv3(game_id, start_period = 0, end_period = 0, ...)
 
 - start_period:
 
-  Start period filter - default: 0 (all periods)
+  Start period filter (default: 0 = all periods). Use 1-4 for regulation
+  quarters, 5+ for overtime.
 
 - end_period:
 
-  End period filter - default: 0 (all periods)
+  End period filter (default: 0 = all periods). Use 1-4 for regulation
+  quarters, 5+ for overtime.
 
 - ...:
 

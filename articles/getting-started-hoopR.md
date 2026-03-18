@@ -112,19 +112,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 28.394 sec elapsed
+    ## 25.713 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-    ## 3430234 rows of nba play-by-play data from 7292 games.
+    ## 3471277 rows of nba play-by-play data from 7377 games.
 
 ``` r
 dplyr::glimpse(nba_pbp)
 ```
 
-    ## Rows: 3,430,234
+    ## Rows: 3,471,277
     ## Columns: 64
     ## $ game_play_number                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
     ## $ id                              <dbl> 4013441404, 4013441407, 4013441408, 40…
@@ -202,19 +202,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.093 sec elapsed
+    ## 3.17 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 14484 rows of NBA team boxscore data from 7242 games.
+    ## 14654 rows of NBA team boxscore data from 7327 games.
 
 ``` r
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 14,484
+    ## Rows: 14,654
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -286,19 +286,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.765 sec elapsed
+    ## 3.739 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
 ```
 
-    ## 191428 rows of NBA player boxscore data from 7293 games.
+    ## 193670 rows of NBA player boxscore data from 7378 games.
 
 ``` r
 dplyr::glimpse(nba_player_box)
 ```
 
-    ## Rows: 191,428
+    ## Rows: 193,670
     ## Columns: 57
     ## $ game_id                           <int> 401344140, 401344140, 401344140, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -368,19 +368,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 75.011 sec elapsed
+    ## 73.299 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
 ```
 
-    ## 12040088 rows of men's college basketball play-by-play data from 34114 games.
+    ## 12182656 rows of men's college basketball play-by-play data from 34428 games.
 
 ``` r
 dplyr::glimpse(mbb_pbp)
 ```
 
-    ## Rows: 12,040,088
+    ## Rows: 12,182,656
     ## Columns: 69
     ## $ id                              <dbl> 4.013109e+17, 4.013109e+17, 4.013109e+…
     ## $ sequence_number                 <chr> "101799901", "101806001", "101806002",…
@@ -462,19 +462,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.624 sec elapsed
+    ## 2.355 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
 ```
 
-    ## 69768 rows of men's college basketball team boxscore data from 34884 games.
+    ## 70396 rows of men's college basketball team boxscore data from 35198 games.
 
 ``` r
 dplyr::glimpse(mbb_team_box)
 ```
 
-    ## Rows: 69,768
+    ## Rows: 70,396
     ## Columns: 59
     ## $ game_id                           <int> 401310865, 401310865, 401310867, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -546,19 +546,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 10.338 sec elapsed
+    ## 9.152 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 1113512 rows of men's college basketball player boxscore data from 34893 games.
+    ## 1123215 rows of men's college basketball player boxscore data from 35207 games.
 
 ``` r
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 1,113,512
+    ## Rows: 1,123,215
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …

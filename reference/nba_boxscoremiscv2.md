@@ -1,8 +1,11 @@
 # **Get NBA Stats API Boxscore Misc V2**
 
-**Get NBA Stats API Boxscore Misc V2**
+**\[deprecated\]**
 
-**Get NBA Stats API Boxscore Misc V2**
+NBA Stats no longer returns stable data for this V2 endpoint. This
+function is deprecated and now errors when called. Use
+[`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md)
+instead.
 
 ## Usage
 

@@ -88,13 +88,33 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2>
 <div class="section level4">
+<h4 id="stability-and-test-robustness-3-0-0"><strong>Stability and Test Robustness</strong><a class="anchor" aria-label="anchor" href="#stability-and-test-robustness-3-0-0"></a></h4>
+<ul><li>Hardened API-facing tests against live schema drift and intermittent empty payloads.</li>
+<li>Added explicit skip-on-empty guards for lineup and NCAA teams tests to avoid false negatives when upstream endpoints return no rows.</li>
+<li>Updated expected columns for currently active payloads in key NBA endpoints (including <code><a href="../reference/nba_playercareerstats.html">nba_playercareerstats()</a></code>, <code><a href="../reference/nba_playerdashptshotdefend.html">nba_playerdashptshotdefend()</a></code>, and <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code>).</li>
+<li>Improved <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code> assertions to validate core columns while tolerating empty optional result sets.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="ci-and-check-improvements-3-0-0"><strong>CI and Check Improvements</strong><a class="anchor" aria-label="anchor" href="#ci-and-check-improvements-3-0-0"></a></h4>
+<ul><li>Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.</li>
+<li>Clarified optional environment variable usage in CI for live API test toggles.</li>
+<li>Updated package build ignores to exclude local development folders from source checks.</li>
+</ul></div>
+<div class="section level4">
 <h4 id="nba-play-by-play-v3-3-0-0"><strong>NBA Play-by-Play V3</strong><a class="anchor" aria-label="anchor" href="#nba-play-by-play-v3-3-0-0"></a></h4>
 <ul><li>
 <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.</li>
 <li>
 <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> and <code><a href="../reference/nba_pbps.html">nba_pbps()</a></code> now default to <code>version = "v3"</code> (previously <code>"v2"</code>). Pass <code>version = "v2"</code> to use the previous behavior.</li>
 <li>
-<code><a href="../reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> internal helper added — enriches V3 play-by-play data with on-court player IDs by parsing V3 substitution descriptions and using <code><a href="../reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code> as a fallback for initial lineup determination.</li>
+<code><a href="../reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> internal helper added — converts V3 play-by-play data to V2-compatible column format with mapped event types, player resolution, and retained V3 shot coordinate columns (<code>x_legacy</code>, <code>y_legacy</code>, <code>shot_distance</code>, <code>shot_result</code>, <code>is_field_goal</code>, <code>points_total</code>, <code>shot_value</code>).</li>
+<li>
+<code><a href="../reference/dot-build_player_roster.html">.build_player_roster()</a></code> internal helper added — retrieves player roster from <code><a href="../reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code> for name-to-ID resolution during V3-to-V2 conversion.</li>
+<li>
+<code><a href="../reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> internal helper rewritten — now uses <code><a href="../reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping for robust on-court player determination (replaces previous substitution-parsing approach).</li>
+<li>
+<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> <code>p</code> parameter is now optional (default: <code>NULL</code>) — previously required even when not using progress tracking.</li>
+<li>Removed <code><a href="https://stringr.tidyverse.org/reference/str_match.html" class="external-link">stringr::str_match</a></code> import from NAMESPACE — V3 clock parsing now uses base R regex functions.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="nba-boxscore-summary-v3-3-0-0"><strong>NBA Boxscore Summary V3</strong><a class="anchor" aria-label="anchor" href="#nba-boxscore-summary-v3-3-0-0"></a></h4>
@@ -136,6 +156,7 @@
 <li>Updated GitHub Actions to v4.</li>
 <li>Cleaned up <code>.Rbuildignore</code> duplicates.</li>
 <li>Added comprehensive <code>CONTRIBUTING.md</code> with naming conventions and test environment documentation.</li>
+<li>Moved <code>furrr</code> and <code>future</code> dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="bug-fixes-3-0-0"><strong>Bug Fixes</strong><a class="anchor" aria-label="anchor" href="#bug-fixes-3-0-0"></a></h4>
@@ -146,6 +167,29 @@
 <li>Fixed V3-style data.frame parsing for leader/standings endpoints.</li>
 <li>Fixed <code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code> nested games column flattening.</li>
 <li>Fixed <code>%||%</code> import for R &lt; 4.4.0 compatibility.</li>
+<li>Fixed <code>data</code> not initialized before <code>tryCatch</code> in <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> and <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code>, preventing crashes on API errors.</li>
+<li>Fixed <code><a href="../reference/nbagl_pbp.html">nbagl_pbp()</a></code> to avoid on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.</li>
+<li>Fixed NBAGL wrapper defaults for error paths where return objects were not initialized before <code>tryCatch</code>.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="deprecations-3-0-0"><strong>Deprecations</strong><a class="anchor" aria-label="anchor" href="#deprecations-3-0-0"></a></h4>
+<ul><li>Deprecated <code><a href="../reference/nba_boxscorefourfactorsv2.html">nba_boxscorefourfactorsv2()</a></code> in favor of <code><a href="../reference/nba_boxscorefourfactorsv3.html">nba_boxscorefourfactorsv3()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_boxscoremiscv2.html">nba_boxscoremiscv2()</a></code> in favor of <code><a href="../reference/nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_boxscorescoringv2.html">nba_boxscorescoringv2()</a></code> in favor of <code><a href="../reference/nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_boxscoreusagev2.html">nba_boxscoreusagev2()</a></code> in favor of <code><a href="../reference/nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_boxscoreplayertrackv2.html">nba_boxscoreplayertrackv2()</a></code> in favor of <code><a href="../reference/nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_boxscorehustlev2.html">nba_boxscorehustlev2()</a></code> in favor of <code><a href="../reference/nba_hustlestatsboxscore.html">nba_hustlestatsboxscore()</a></code> due to unstable/partial V2 API responses.</li>
+<li>Deprecated <code><a href="../reference/nba_homepageleaders.html">nba_homepageleaders()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_homepagev2.html">nba_homepagev2()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_leaderstiles.html">nba_leaderstiles()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_teamgamestreakfinder.html">nba_teamgamestreakfinder()</a></code> in favor of <code><a href="../reference/nba_teamgamelogs.html">nba_teamgamelogs()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_teamhistoricalleaders.html">nba_teamhistoricalleaders()</a></code> in favor of <code><a href="../reference/nba_franchiseleaders.html">nba_franchiseleaders()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_videodetails.html">nba_videodetails()</a></code> in favor of <code><a href="../reference/nba_videodetailsasset.html">nba_videodetailsasset()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_winprobabilitypbp.html">nba_winprobabilitypbp()</a></code> in favor of <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_playercareerbycollege.html">nba_playercareerbycollege()</a></code> in favor of <code><a href="../reference/nba_playercareerbycollegerollup.html">nba_playercareerbycollegerollup()</a></code>/<code><a href="../reference/nba_leaguedashplayerbiostats.html">nba_leaguedashplayerbiostats()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_playernextngames.html">nba_playernextngames()</a></code> in favor of <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_scoreboard.html">nba_scoreboard()</a></code> in favor of <code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code> due to unstable/empty endpoint responses.</li>
+<li>Deprecated <code><a href="../reference/nba_scoreboardv2.html">nba_scoreboardv2()</a></code> in favor of <code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code> due to unstable/partial endpoint responses.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="test-improvements-3-0-0"><strong>Test Improvements</strong><a class="anchor" aria-label="anchor" href="#test-improvements-3-0-0"></a></h4>
@@ -153,6 +197,7 @@
 <li>Added tests for all new endpoints with column validation and rate limiting.</li>
 <li>Added <code>skip_ncaa_mbb_test()</code> and <code>skip_ncaa_wbb_test()</code> helpers.</li>
 <li>Updated ESPN test expectations for current API responses.</li>
+<li>Updated NBAGL tests to validate NBA Stats-backed return shapes (<code><a href="../reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="../reference/nbagl_standings.html">nbagl_standings()</a></code> named-list returns, and current schedule/PBP core columns).</li>
 </ul></div>
 </div>
     <div class="section level2">

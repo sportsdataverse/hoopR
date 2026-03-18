@@ -105,6 +105,18 @@ website](https://hoopR.sportsdataverse.org).
 [**Full News on
 Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 
+- Legacy `nbagl_*` wrappers now follow NBA Stats-backed payload
+  structures.
+- [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
+  and
+  [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
+  return named lists of data frames (`PlayerIndex`, `Standings`) instead
+  of legacy flat schema assumptions.
+- [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)
+  and
+  [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
+  return modernized core columns aligned with current upstream sources.
+
 ## Follow the SportsDataverse (@SportsDataverse) on Twitter and star this repo
 
 [![GitHub

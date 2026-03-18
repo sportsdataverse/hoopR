@@ -126,6 +126,12 @@
 <strong>Branch</strong>: <code>devel</code> for active development, <code>main</code> for releases</li>
 </ul></div>
 <div class="section level2">
+<h2 id="branching--pr-workflow">Branching &amp; PR Workflow<a class="anchor" aria-label="anchor" href="#branching--pr-workflow"></a></h2>
+<ul><li>Create feature branches from <code>devel</code> for development work.</li>
+<li>Target <code>devel</code> for normal development PRs; reserve <code>main</code> for release snapshots.</li>
+<li>Keep code, tests, and roxygen/docs updates in the same PR when changing exported behavior.</li>
+</ul></div>
+<div class="section level2">
 <h2 id="build--development-commands">Build &amp; Development Commands<a class="anchor" aria-label="anchor" href="#build--development-commands"></a></h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Regenerate roxygen documentation + NAMESPACE</span></span>
@@ -149,7 +155,7 @@
 <div class="section level2">
 <h2 id="project-structure">Project Structure<a class="anchor" aria-label="anchor" href="#project-structure"></a></h2>
 <pre><code><span><span class="va">R</span><span class="op">/</span>                    <span class="co"># All package source code</span></span>
-<span>  <span class="va">nba_stats_pbp.R</span>     <span class="co"># PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .players_on_court()</span></span>
+<span>  <span class="va">nba_stats_pbp.R</span>     <span class="co"># PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .v3_to_v2_format(), .build_player_roster(), .players_on_court(), .players_on_court_v3()</span></span>
 <span>  <span class="va">nba_stats_boxscore_v3.R</span>  <span class="co"># All V3 boxscore wrappers + nba_boxscoresummaryv3()</span></span>
 <span>  <span class="va">nba_stats_leaders.R</span> <span class="co"># Leader endpoints: nba_leagueleaders(), nba_dunkscoreleaders(), nba_gravityleaders()</span></span>
 <span>  <span class="va">nba_stats_league.R</span>  <span class="co"># League endpoints: nba_leaguestandingsv3(), nba_iststandings(), etc.</span></span>
@@ -263,6 +269,7 @@
 <span>  <span class="op">)</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">df_list</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
+<p>For deprecated functions, add lifecycle documentation and a clear replacement path in <code>@description</code>, then enforce at runtime with <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code>.</p>
 </div>
 <div class="section level3">
 <h3 id="data-processing-pipeline">Data Processing Pipeline<a class="anchor" aria-label="anchor" href="#data-processing-pipeline"></a></h3>
@@ -282,9 +289,13 @@
 <strong>V3</strong>: Returns nested JSON (e.g., <code>game.actions[]</code>, <code>boxScoreSummary.homeTeam.periods[]</code>). Parsed via <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code> -&gt; <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> -&gt; pipeline.</li>
 <li>
 <strong>V3-style leader/standings endpoints</strong>: Return flat nested JSON arrays (e.g., <code>dunks[]</code>, <code>leaders[]</code>, <code>teams[]</code>). Parsed via <code>purrr::pluck("key")</code> -&gt; <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">dplyr::as_tibble()</a></code> -&gt; <code>dplyr::mutate(across(everything(), as.character))</code> -&gt; <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code> -&gt; <code>make_hoopR_data()</code>. Examples: <code><a href="reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code>, <code><a href="reference/nba_gravityleaders.html">nba_gravityleaders()</a></code>, <code><a href="reference/nba_iststandings.html">nba_iststandings()</a></code>.</li>
+<li>
+<strong>V3-to-V2 conversion pipeline</strong> (<code><a href="reference/nba_pbp.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. This produces V2-compatible columns (event_type, player1/2/3, etc.) while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
 <li>V3 PBP has a single <code>personId</code> per action (not <code>player1_id</code>/<code>player2_id</code>/<code>player3_id</code> like V2).</li>
-<li>V3 substitutions: <code>actionType="Substitution"</code>, <code>personId</code>=incoming, description contains “FOR OutgoingPlayer”.</li>
-<li>V3 clock format: ISO 8601 duration <code>"PT10M30.00S"</code> (not <code>"MM:SS"</code>).</li>
+<li>V3 substitutions: <code>actionType="Substitution"</code>, <code>personId</code>=outgoing player, description contains “SUB: IncomingPlayer FOR OutgoingPlayer”.</li>
+<li>V3 clock format: ISO 8601 duration <code>"PT10M30.00S"</code> (not <code>"MM:SS"</code>). Parsed with base R <code><a href="https://rdrr.io/r/base/grep.html" class="external-link">regexec()</a></code>/<code><a href="https://rdrr.io/r/base/regmatches.html" class="external-link">regmatches()</a></code>.</li>
+<li>V3 on-court players: <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping via <code><a href="https://rdrr.io/r/base/findInterval.html" class="external-link">findInterval()</a></code> (not substitution-event parsing like V2).</li>
+<li>NBAGL wrappers now use NBA Stats-backed sources for several endpoints. <code><a href="reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code> return named lists of data frames (not single data frames), while <code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code> and <code><a href="reference/nbagl_pbp.html">nbagl_pbp()</a></code> expose current core columns from active payloads.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="null-safety">Null Safety<a class="anchor" aria-label="anchor" href="#null-safety"></a></h3>
@@ -320,6 +331,16 @@
 <p>For endpoints with dynamic columns (like IST Standings with game columns):</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">expect_true</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/all.html" class="external-link">all</a></span><span class="op">(</span><span class="va">core_cols</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>For intermittent or occasionally empty API responses, guard before indexing/asserting:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">skip</span><span class="op">(</span><span class="st">"No rows returned from endpoint at test time"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>For deprecated wrappers, prefer explicit <code>skip()</code> with replacement guidance in the test file to avoid false negatives from intentional hard stops.</p>
+<p>For NBAGL wrappers with named-list returns, validate component names first and then validate core columns within the component:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">expect_true</span><span class="op">(</span><span class="st">"Standings"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">core_cols</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="environment-variables-for-tests">Environment Variables for Tests<a class="anchor" aria-label="anchor" href="#environment-variables-for-tests"></a></h3>
@@ -337,7 +358,21 @@
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
-</tr></tbody></table></div>
+</tr></tbody></table><p>Note: in CI, many live API tests still include <code>skip_on_ci()</code> guards. Env vars alone do not override those guards unless tests are intentionally changed.</p>
+</div>
+<div class="section level3">
+<h3 id="ci-secrets">CI Secrets<a class="anchor" aria-label="anchor" href="#ci-secrets"></a></h3>
+<p>GitHub Actions workflows should have these configured:</p>
+<table class="table"><thead><tr class="header"><th>Secret</th>
+<th>Description</th>
+</tr></thead><tbody><tr class="odd"><td><code>GITHUB_TOKEN</code></td>
+<td>Auto-provided GitHub token</td>
+</tr><tr class="even"><td><code>KP_USER</code></td>
+<td>KenPom username/email</td>
+</tr><tr class="odd"><td><code>KP_PW</code></td>
+<td>KenPom password</td>
+</tr></tbody></table><p>Optional live-test secrets (<code>NBA_STATS_TESTS</code>, <code>NBAGL_STATS_TESTS</code>, <code>ESPN_TESTS</code>, <code>NCAA_MBB_TESTS</code>) only matter if <code>skip_on_ci()</code> gates are intentionally relaxed.</p>
+</div>
 <div class="section level3">
 <h3 id="rate-limiting">Rate Limiting<a class="anchor" aria-label="anchor" href="#rate-limiting"></a></h3>
 <p>NBA Stats API: ~590 requests per 10 minutes. Always add <code>Sys.sleep(3)</code> at the end of each NBA Stats API test.</p>
@@ -371,7 +406,12 @@ ci: update GitHub Actions workflow versions</code></pre>
 <li>IST Standings has dynamic game columns (gameId1, gameId2, etc.) – tests should use <code>expect_true(all(core_cols %in% colnames()))</code> instead of exact match.</li>
 <li>ESPN API columns change over time – use <code>expect_in()</code> for subset validation in tests.</li>
 <li>NBA Stats V2 endpoints may return empty data for certain games – tests should handle empty results gracefully.</li>
-<li>Always initialize <code>df_list &lt;- list()</code> before <code>tryCatch</code> blocks to avoid “object not found” errors.</li>
+<li>Always initialize <code>df_list &lt;- list()</code> (or <code>data &lt;- data.frame()</code> / <code>data &lt;- list()</code>) before <code>tryCatch</code> blocks to avoid “object not found” errors.</li>
+<li>
+<code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> uses row-level loops for player resolution – performance-sensitive for large PBP datasets. The <code>%||%</code> operator from rlang is used for null-safe named vector lookups in event type maps.</li>
+<li>
+<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
+<li>Local dev artifacts (for example <code>.vscode</code>, <code>.claude</code>, ad-hoc logs) can surface as <code>R CMD check</code> notes/warnings if not excluded from build inputs.</li>
 </ul></div>
 </div>
 

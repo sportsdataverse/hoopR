@@ -1,18 +1,36 @@
 # **Get Current G League Standings from NBA API**
 
-Scrapes the NBA Data API for G League Standings
+Retrieves G-League standings via the NBA Stats API standings endpoint.
 
 ## Usage
 
 ``` r
-nbagl_standings(season = most_recent_nba_season() - 1, ...)
+nbagl_standings(
+  league_id = "20",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  season_year = "",
+  ...
+)
 ```
 
 ## Arguments
 
+- league_id:
+
+  League - default: '20' (G-League).
+
 - season:
 
-  Season - 4 digit, i.e. 2021
+  Season - format 2020-21.
+
+- season_type:
+
+  Season Type - Regular Season, Playoffs, All-Star.
+
+- season_year:
+
+  Season year filter (optional).
 
 - ...:
 
@@ -20,32 +38,37 @@ nbagl_standings(season = most_recent_nba_season() - 1, ...)
 
 ## Value
 
-Returns a tibble of the G League Season Standings
+Returns a named list of data frames: Standings
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| val      | character |
-| di_val   | character |
-| tid      | integer   |
-| see      | integer   |
-| cli      | integer   |
-| clid     | integer   |
-| clic     | integer   |
-| elim     | integer   |
-| str      | character |
-| l10      | character |
-| dr       | character |
-| cr       | character |
-| l        | integer   |
-| w        | integer   |
-| hr       | character |
-| ar       | character |
-| gb       | numeric   |
-| gbd      | numeric   |
-| ta       | character |
-| tn       | character |
-| tc       | character |
+**Standings**
+
+|                     |           |
+|---------------------|-----------|
+| col_name            | types     |
+| LeagueID            | character |
+| SeasonID            | character |
+| TeamID              | character |
+| TeamCity            | character |
+| TeamName            | character |
+| TeamSlug            | character |
+| Conference          | character |
+| ConferenceRecord    | character |
+| PlayoffRank         | character |
+| Division            | character |
+| WINS                | character |
+| LOSSES              | character |
+| WinPCT              | character |
+| LeagueRank          | character |
+| Record              | character |
+| HOME                | character |
+| ROAD                | character |
+| CurrentStreak       | character |
+| strCurrentStreak    | character |
+| ConferenceGamesBack | character |
+| DivisionGamesBack   | character |
+| LeagueGamesBack     | character |
+| ClinchedPostSeason  | character |
+| NEUTRAL             | character |
 
 ## Details
 

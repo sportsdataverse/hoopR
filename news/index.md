@@ -2,6 +2,32 @@
 
 ## **hoopR 3.0.0**
 
+#### **Stability and Test Robustness**
+
+- Hardened API-facing tests against live schema drift and intermittent
+  empty payloads.
+- Added explicit skip-on-empty guards for lineup and NCAA teams tests to
+  avoid false negatives when upstream endpoints return no rows.
+- Updated expected columns for currently active payloads in key NBA
+  endpoints (including
+  [`nba_playercareerstats()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.md),
+  [`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
+  and
+  [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)).
+- Improved
+  [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
+  assertions to validate core columns while tolerating empty optional
+  result sets.
+
+#### **CI and Check Improvements**
+
+- Added workflow-level concurrency and explicit permissions to GitHub
+  Actions workflows.
+- Clarified optional environment variable usage in CI for live API test
+  toggles.
+- Updated package build ignores to exclude local development folders
+  from source checks.
+
 #### **NBA Play-by-Play V3**
 
 - [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
@@ -12,11 +38,27 @@
   [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md)
   now default to `version = "v3"` (previously `"v2"`). Pass
   `version = "v2"` to use the previous behavior.
-- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
-  internal helper added — enriches V3 play-by-play data with on-court
-  player IDs by parsing V3 substitution descriptions and using
+- [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
+  internal helper added — converts V3 play-by-play data to V2-compatible
+  column format with mapped event types, player resolution, and retained
+  V3 shot coordinate columns (`x_legacy`, `y_legacy`, `shot_distance`,
+  `shot_result`, `is_field_goal`, `points_total`, `shot_value`).
+- [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
+  internal helper added — retrieves player roster from
   [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
-  as a fallback for initial lineup determination.
+  for name-to-ID resolution during V3-to-V2 conversion.
+- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  internal helper rewritten — now uses
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  stint data with interval mapping for robust on-court player
+  determination (replaces previous substitution-parsing approach).
+- [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  `p` parameter is now optional (default: `NULL`) — previously required
+  even when not using progress tracking.
+- Removed
+  [`stringr::str_match`](https://stringr.tidyverse.org/reference/str_match.html)
+  import from NAMESPACE — V3 clock parsing now uses base R regex
+  functions.
 
 #### **NBA Boxscore Summary V3**
 
@@ -67,6 +109,9 @@
 - Cleaned up `.Rbuildignore` duplicates.
 - Added comprehensive `CONTRIBUTING.md` with naming conventions and test
   environment documentation.
+- Moved `furrr` and `future` dependencies to Suggests with version
+  requirements for users who want to use parallel features, but not
+  required for core functionality.
 
 #### **Bug Fixes**
 
@@ -85,6 +130,105 @@
   [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
   nested games column flattening.
 - Fixed `%||%` import for R \< 4.4.0 compatibility.
+- Fixed `data` not initialized before `tryCatch` in
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  and
+  [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md),
+  preventing crashes on API errors.
+- Fixed
+  [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
+  to avoid on-court enrichment dependency failures for G-League game IDs
+  by using the stable core play-by-play path.
+- Fixed NBAGL wrapper defaults for error paths where return objects were
+  not initialized before `tryCatch`.
+
+#### **Deprecations**
+
+- Deprecated
+  [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md)
+  in favor of
+  [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md)
+  in favor of
+  [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md)
+  in favor of
+  [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md)
+  in favor of
+  [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md)
+  in favor of
+  [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md)
+  in favor of
+  [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md)
+  due to unstable/partial V2 API responses.
+- Deprecated
+  [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md)
+  in favor of
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md)
+  in favor of
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)
+  in favor of
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md)
+  in favor of
+  [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md)
+  in favor of
+  [`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
+  in favor of
+  [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
+  in favor of
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_playercareerbycollege()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.md)
+  in favor of
+  [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md)/[`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_playernextngames()`](https://hoopR.sportsdataverse.org/reference/nba_playernextngames.md)
+  in favor of
+  [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md)
+  in favor of
+  [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
+  due to unstable/empty endpoint responses.
+- Deprecated
+  [`nba_scoreboardv2()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.md)
+  in favor of
+  [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
+  due to unstable/partial endpoint responses.
 
 #### **Test Improvements**
 
@@ -95,6 +239,11 @@
   limiting.
 - Added `skip_ncaa_mbb_test()` and `skip_ncaa_wbb_test()` helpers.
 - Updated ESPN test expectations for current API responses.
+- Updated NBAGL tests to validate NBA Stats-backed return shapes
+  ([`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
+  and
+  [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
+  named-list returns, and current schedule/PBP core columns).
 
 ## **hoopR 2.1.0**
 

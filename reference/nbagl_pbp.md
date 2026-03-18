@@ -1,11 +1,12 @@
 # **Get NBA Data API Play-by-Play for G-League Games**
 
-Scrapes the NBA Data API for Play By Play for G League games
+Retrieves G-League play-by-play using the NBA Stats play-by-play
+pipeline.
 
 ## Usage
 
 ``` r
-nbagl_pbp(game_id, ...)
+nbagl_pbp(game_id, on_court = TRUE, ...)
 ```
 
 ## Arguments
@@ -14,43 +15,59 @@ nbagl_pbp(game_id, ...)
 
   Game ID - 10 digits, i.e. 0021900001
 
+- on_court:
+
+  If TRUE (default), on-court player IDs are added for each play event.
+
 - ...:
 
   Additional arguments passed to an underlying function like httr.
 
 ## Value
 
-Returns a data frame of play by play with the following columns:
+Returns a data frame of play-by-play with core columns: When
+`on_court = TRUE`, lineup columns are included and may be `NA` when
+lineup inference data is unavailable for a given game.
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| period   | integer   |
-| evt      | integer   |
-| wallclk  | character |
-| cl       | character |
-| de       | character |
-| locX     | integer   |
-| locY     | integer   |
-| opt1     | integer   |
-| opt2     | integer   |
-| opt3     | integer   |
-| opt4     | integer   |
-| mtype    | integer   |
-| etype    | integer   |
-| opid     | character |
-| tid      | integer   |
-| pid      | integer   |
-| hs       | integer   |
-| vs       | integer   |
-| epid     | character |
-| oftid    | integer   |
-| ord      | integer   |
-| pts      | integer   |
+|                 |           |
+|-----------------|-----------|
+| col_name        | types     |
+| game_id         | character |
+| action_number   | integer   |
+| clock           | character |
+| period          | integer   |
+| team_id         | integer   |
+| person_id       | integer   |
+| player_name     | character |
+| x_legacy        | integer   |
+| y_legacy        | integer   |
+| shot_distance   | numeric   |
+| shot_result     | character |
+| is_field_goal   | integer   |
+| score_home      | character |
+| score_away      | character |
+| points_total    | integer   |
+| location        | character |
+| description     | character |
+| action_type     | character |
+| sub_type        | character |
+| video_available | logical   |
+| shot_value      | integer   |
+| action_id       | integer   |
+| away_player1    | numeric   |
+| away_player2    | numeric   |
+| away_player3    | numeric   |
+| away_player4    | numeric   |
+| away_player5    | numeric   |
+| home_player1    | numeric   |
+| home_player2    | numeric   |
+| home_player3    | numeric   |
+| home_player4    | numeric   |
+| home_player5    | numeric   |
 
 ## Details
 
-     nbagl_pbp(game_id = "2012200001")
+     nbagl_pbp(game_id = "2052500034")
 
 ## See also
 

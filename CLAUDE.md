@@ -37,6 +37,14 @@ families: `nba_*()`, `espn_*()`, and `kp_*()`.
 - **License**: MIT
 - **Branch**: `devel` for active development, `main` for releases
 
+## Branching & PR Workflow
+
+- Create feature branches from `devel` for development work.
+- Target `devel` for normal development PRs; reserve `main` for release
+  snapshots.
+- Keep code, tests, and roxygen/docs updates in the same PR when
+  changing exported behavior.
+
 ## Build & Development Commands
 
 ``` r
@@ -62,7 +70,7 @@ pkgdown::build_site()
 ## Project Structure
 
     R/                    # All package source code
-      nba_stats_pbp.R     # PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .players_on_court()
+      nba_stats_pbp.R     # PBP functions: nba_pbp(), nba_pbps(), nba_playbyplayv3(), .v3_to_v2_format(), .build_player_roster(), .players_on_court(), .players_on_court_v3()
       nba_stats_boxscore_v3.R  # All V3 boxscore wrappers + nba_boxscoresummaryv3()
       nba_stats_leaders.R # Leader endpoints: nba_leagueleaders(), nba_dunkscoreleaders(), nba_gravityleaders()
       nba_stats_league.R  # League endpoints: nba_leaguestandingsv3(), nba_iststandings(), etc.
@@ -152,6 +160,10 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 }
 ```
 
+For deprecated functions, add lifecycle documentation and a clear
+replacement path in `@description`, then enforce at runtime with
+[`lifecycle::deprecate_stop()`](https://lifecycle.r-lib.org/reference/deprecate_soft.html).
+
 ### Data Processing Pipeline
 
 ``` r
@@ -185,11 +197,42 @@ attaches `hoopR_timestamp` and `hoopR_type` attributes.
   [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md),
   [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md),
   [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md).
+- **V3-to-V2 conversion pipeline**
+  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  V3 path):
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  -\>
+  [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
+  -\>
+  [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
+  -\>
+  [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md).
+  This produces V2-compatible columns (event_type, player1/2/3, etc.)
+  while retaining V3-only columns (x_legacy, y_legacy, shot_distance,
+  shot_result, is_field_goal, points_total, shot_value).
 - V3 PBP has a single `personId` per action (not
   `player1_id`/`player2_id`/`player3_id` like V2).
-- V3 substitutions: `actionType="Substitution"`, `personId`=incoming,
-  description contains “FOR OutgoingPlayer”.
+- V3 substitutions: `actionType="Substitution"`, `personId`=outgoing
+  player, description contains “SUB: IncomingPlayer FOR OutgoingPlayer”.
 - V3 clock format: ISO 8601 duration `"PT10M30.00S"` (not `"MM:SS"`).
+  Parsed with base R
+  [`regexec()`](https://rdrr.io/r/base/grep.html)/[`regmatches()`](https://rdrr.io/r/base/regmatches.html).
+- V3 on-court players:
+  [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  uses
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  stint data with interval mapping via
+  [`findInterval()`](https://rdrr.io/r/base/findInterval.html) (not
+  substitution-event parsing like V2).
+- NBAGL wrappers now use NBA Stats-backed sources for several endpoints.
+  [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
+  and
+  [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
+  return named lists of data frames (not single data frames), while
+  [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)
+  and
+  [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
+  expose current core columns from active payloads.
 
 ### Null Safety
 
@@ -242,6 +285,27 @@ columns):
 expect_true(all(core_cols %in% colnames(x)))
 ```
 
+For intermittent or occasionally empty API responses, guard before
+indexing/asserting:
+
+``` r
+if (length(x) == 0 || is.null(x[[1]]) || nrow(x[[1]]) == 0) {
+  skip("No rows returned from endpoint at test time")
+}
+```
+
+For deprecated wrappers, prefer explicit `skip()` with replacement
+guidance in the test file to avoid false negatives from intentional hard
+stops.
+
+For NBAGL wrappers with named-list returns, validate component names
+first and then validate core columns within the component:
+
+``` r
+expect_true("Standings" %in% names(x))
+expect_in(sort(core_cols), sort(colnames(x[[1]])))
+```
+
 ### Environment Variables for Tests
 
 | Variable              | Description                |
@@ -251,6 +315,24 @@ expect_true(all(core_cols %in% colnames(x)))
 | `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests  |
 | `NCAA_MBB_TESTS=1`    | Enable NCAA MBB tests      |
 | `KP_USER` / `KP_PW`   | KenPom credentials         |
+
+Note: in CI, many live API tests still include `skip_on_ci()` guards.
+Env vars alone do not override those guards unless tests are
+intentionally changed.
+
+### CI Secrets
+
+GitHub Actions workflows should have these configured:
+
+| Secret         | Description                |
+|----------------|----------------------------|
+| `GITHUB_TOKEN` | Auto-provided GitHub token |
+| `KP_USER`      | KenPom username/email      |
+| `KP_PW`        | KenPom password            |
+
+Optional live-test secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`,
+`ESPN_TESTS`, `NCAA_MBB_TESTS`) only matter if `skip_on_ci()` gates are
+intentionally relaxed.
 
 ### Rate Limiting
 
@@ -299,5 +381,18 @@ referencing AI tools.
   validation in tests.
 - NBA Stats V2 endpoints may return empty data for certain games – tests
   should handle empty results gracefully.
-- Always initialize `df_list <- list()` before `tryCatch` blocks to
-  avoid “object not found” errors.
+- Always initialize `df_list <- list()` (or `data <- data.frame()` /
+  `data <- list()`) before `tryCatch` blocks to avoid “object not found”
+  errors.
+- [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
+  uses row-level loops for player resolution – performance-sensitive for
+  large PBP datasets. The `%||%` operator from rlang is used for
+  null-safe named vector lookups in event type maps.
+- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  depends on
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second –
+  ensure time unit consistency when modifying.
+- Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs)
+  can surface as `R CMD check` notes/warnings if not excluded from build
+  inputs.

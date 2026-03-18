@@ -1,8 +1,8 @@
 # **Get NBA Stats API Player Career By College**
 
-**Get NBA Stats API Player Career By College**
-
-**Get NBA Stats API Player Career By College**
+Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use
+[`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md)
+instead.
 
 ## Usage
 

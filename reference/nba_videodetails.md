@@ -1,8 +1,11 @@
 # **Get NBA Stats API Video Details**
 
-**Get NBA Stats API Video Details**
+**\[deprecated\]**
 
-**Get NBA Stats API Video Details**
+NBA Stats no longer returns stable data for this endpoint. This function
+is deprecated and now errors when called. Use
+[`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md)
+instead.
 
 ## Usage
 

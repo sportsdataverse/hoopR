@@ -1,8 +1,11 @@
 # **Get NBA Stats API Team Game Streak Finder**
 
-**Get NBA Stats API Team Game Streak Finder**
+**\[deprecated\]**
 
-**Get NBA Stats API Team Game Streak Finder**
+NBA Stats no longer returns stable data for this endpoint. This function
+is deprecated and now errors when called. Use
+[`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md)
+instead.
 
 ## Usage
 

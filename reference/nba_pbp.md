@@ -7,27 +7,33 @@
 ## Usage
 
 ``` r
-nba_pbp(game_id, on_court = TRUE, version = "v3", p, ...)
+nba_pbp(game_id, on_court = TRUE, version = "v3", p = NULL, ...)
 ```
 
 ## Arguments
 
 - game_id:
 
-  Game ID
+  Game ID - 10-digit zero-padded ID (e.g., '0022201086')
 
 - on_court:
 
-  IF TRUE will be added ID of players on court
+  If TRUE (default), on-court player IDs are added for each play event.
+  V3 uses
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  stint data; V2 infers lineups from substitution events.
 
 - version:
 
-  Play-by-play version ("v3" is the default, "v2" available from 2016-17
-  onwards)
+  Play-by-play version - `"v3"` (default) or `"v2"`. V3 returns richer
+  data with shot coordinates, shot values, and V3 action types. V2 is
+  available from 2016-17 onwards.
 
 - p:
 
-  Progress bar
+  Optional progress object from `progressr` (default: NULL). Used
+  internally by
+  [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md).
 
 - ...:
 
@@ -45,15 +51,20 @@ Returns a data frame: PlayByPlay
 | event_type                | character |
 | event_action_type         | character |
 | period                    | numeric   |
+| clock                     | character |
 | minute_game               | numeric   |
 | time_remaining            | numeric   |
 | wc_time_string            | character |
 | time_quarter              | character |
 | minute_remaining_quarter  | numeric   |
 | seconds_remaining_quarter | numeric   |
+| action_type               | character |
+| sub_type                  | character |
 | home_description          | character |
 | neutral_description       | character |
 | visitor_description       | character |
+| description               | character |
+| location                  | character |
 | score                     | character |
 | away_score                | numeric   |
 | home_score                | numeric   |
@@ -81,6 +92,13 @@ Returns a data frame: PlayByPlay
 | player3_team_abbreviation | character |
 | video_available_flag      | character |
 | team_leading              | character |
+| x_legacy                  | integer   |
+| y_legacy                  | integer   |
+| shot_distance             | numeric   |
+| shot_result               | character |
+| is_field_goal             | integer   |
+| points_total              | integer   |
+| shot_value                | integer   |
 | away_player1              | numeric   |
 | away_player2              | numeric   |
 | away_player3              | numeric   |

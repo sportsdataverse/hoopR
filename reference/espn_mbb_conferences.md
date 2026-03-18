@@ -49,9 +49,9 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  try(espn_mbb_conferences())
+try(espn_mbb_conferences())
 #> ── ESPN MBB Conferences Information from ESPN.com ─────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-16 14:12:03 UTC
+#> ℹ Data updated: 2026-03-18 16:18:32 UTC
 #> # A tibble: 31 × 7
 #>    conference_uid group_id conference_name conference_short_name conference_logo
 #>    <chr>             <int> <chr>           <chr>                 <chr>          

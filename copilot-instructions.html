@@ -108,6 +108,12 @@
 <p>hoopR is an R package (v3.0.0 dev) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.</p>
 </div>
 <div class="section level2">
+<h2 id="repository-workflow">Repository Workflow<a class="anchor" aria-label="anchor" href="#repository-workflow"></a></h2>
+<ul><li>Use feature branches for changes and target <code>devel</code> for development PRs.</li>
+<li>Keep <code>main</code> reserved for release-ready states.</li>
+<li>For any change to exported functions, update tests and documentation in the same PR.</li>
+</ul></div>
+<div class="section level2">
 <h2 id="code-style">Code Style<a class="anchor" aria-label="anchor" href="#code-style"></a></h2>
 <ul><li>Follow tidyverse style: snake_case for variables/functions, 2-space indentation.</li>
 <li>All NBA Stats API functions use <code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> for HTTP calls with required NBA headers.</li>
@@ -174,12 +180,15 @@
 <code>@family</code> for grouping in pkgdown (e.g., “NBA PBP Functions”, “NBA Boxscore V3 Functions”)</li>
 <li>
 <code>@details</code> with runnable example code block</li>
+<li>For deprecated endpoints, document with <code>@description</code> lifecycle badge and provide replacement guidance.</li>
 </ul></div>
 <div class="section level2">
 <h2 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a></h2>
 <ul><li>Use <code>skip_on_cran()</code>, <code>skip_on_ci()</code>, and <code>skip_nba_stats_test()</code> guards.</li>
 <li>Validate columns with <code>expect_in(sort(expected_cols), sort(colnames(x)))</code> (subset check, not exact match).</li>
 <li>For dynamic columns, use <code>expect_true(all(core_cols %in% colnames(x)))</code>.</li>
+<li>For intermittent endpoints, add explicit skip-on-empty guards before indexing <code>x[[1]]</code> or asserting columns.</li>
+<li>For deprecated wrappers, prefer explicit test skips with a replacement note rather than brittle live assertions.</li>
 <li>Add <code>Sys.sleep(3)</code> at the end of NBA Stats API tests for rate limiting (~590 req/10 min).</li>
 <li>Test game ID: <code>"0022200021"</code> or <code>"0022201086"</code> for known completed games.</li>
 <li>Handle empty API responses gracefully in tests (V2 endpoints may return empty for old games).</li>
@@ -199,7 +208,21 @@
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
-</tr></tbody></table></div>
+</tr></tbody></table><p>On CI, most live API tests are additionally guarded with <code>skip_on_ci()</code>. Setting env vars alone will not run those tests unless that guard is intentionally relaxed.</p>
+</div>
+<div class="section level3">
+<h3 id="ci-secrets">CI Secrets<a class="anchor" aria-label="anchor" href="#ci-secrets"></a></h3>
+<p>Current CI workflows rely on:</p>
+<table class="table"><thead><tr class="header"><th>Secret</th>
+<th>Description</th>
+</tr></thead><tbody><tr class="odd"><td><code>GITHUB_TOKEN</code></td>
+<td>Auto-provided token for workflow operations</td>
+</tr><tr class="even"><td><code>KP_USER</code></td>
+<td>KenPom username/email for credentialed tests</td>
+</tr><tr class="odd"><td><code>KP_PW</code></td>
+<td>KenPom password for credentialed tests</td>
+</tr></tbody></table><p>Optional env-var secrets (<code>NBA_STATS_TESTS</code>, <code>NBAGL_STATS_TESTS</code>, <code>ESPN_TESTS</code>, <code>NCAA_MBB_TESTS</code>) only have effect if corresponding <code>skip_on_ci()</code> guards are intentionally adjusted.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="conventional-commits">Conventional Commits<a class="anchor" aria-label="anchor" href="#conventional-commits"></a></h2>
@@ -210,18 +233,24 @@
 <div class="section level2">
 <h2 id="v3-api-notes">V3 API Notes<a class="anchor" aria-label="anchor" href="#v3-api-notes"></a></h2>
 <ul><li>V3 endpoints return nested JSON – use <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code> for extraction.</li>
-<li>V3 PBP clock format is <code>"PT10M30.00S"</code> not <code>"MM:SS"</code>.</li>
-<li>V3 PBP substitutions have single <code>personId</code> (incoming) with outgoing parsed from description.</li>
+<li>V3 PBP clock format is <code>"PT10M30.00S"</code> not <code>"MM:SS"</code>. Parsed with base R <code><a href="https://rdrr.io/r/base/grep.html" class="external-link">regexec()</a></code>/<code><a href="https://rdrr.io/r/base/regmatches.html" class="external-link">regmatches()</a></code>.</li>
+<li>V3 PBP substitutions: <code>personId</code> = outgoing player, incoming parsed from “SUB: IncomingPlayer FOR OutgoingPlayer” in description.</li>
+<li>V3-to-V2 conversion pipeline (<code><a href="reference/nba_pbp.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. Produces V2-compatible columns while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
+<li>
+<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping (not substitution-event parsing like V2).</li>
 <li>V3 boxscore endpoints namespace: <code>boxscoretraditionalv3</code>, <code>boxscoreadvancedv3</code>, etc.</li>
 <li>V3-style leader/standings endpoints (dunkscoreleaders, gravityleaders, iststandings) return flat nested JSON arrays. Parse via <code>purrr::pluck("key")</code> -&gt; <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">dplyr::as_tibble()</a></code> -&gt; <code>dplyr::mutate(across(everything(), as.character))</code> -&gt; <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code>.</li>
 <li>V3-style schedule endpoint (scheduleleaguev2int) follows the same nested structure as <code><a href="reference/nba_schedule.html">nba_schedule()</a></code>.</li>
+<li>NBAGL wrappers can follow NBA Stats-backed payloads. In particular, <code><a href="reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code> may return named lists of data frames (e.g., <code>PlayerIndex</code>, <code>Standings</code>) rather than a single flat data frame.</li>
 </ul></div>
 <div class="section level2">
 <h2 id="common-pitfalls">Common Pitfalls<a class="anchor" aria-label="anchor" href="#common-pitfalls"></a></h2>
-<ul><li>Always initialize <code>df_list &lt;- list()</code> before <code>tryCatch</code> blocks.</li>
+<ul><li>Always initialize <code>df_list &lt;- list()</code> (or <code>data &lt;- data.frame()</code> / <code>data &lt;- list()</code>) before <code>tryCatch</code> blocks.</li>
 <li>ESPN API columns change over time – use subset validation in tests.</li>
 <li>V3-style leader endpoints return mixed types – coerce to <code><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character()</a></code> with <code>%||% NA_character_</code>.</li>
 <li>IST Standings has dynamic game columns – use <code>expect_true(all(core_cols %in% colnames()))</code>.</li>
+<li>NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.</li>
+<li>Local editor/worktree artifacts (e.g., <code>.vscode</code>, <code>.claude</code>, temp logs) can cause <code>R CMD check</code> notes/warnings if included in source checks.</li>
 </ul></div>
 </div>
 

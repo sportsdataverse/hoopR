@@ -21,6 +21,14 @@ API, and KenPom. It exports 270+ functions and uses roxygen2 for
 documentation, testthat for testing, and pkgdown for the documentation
 site.
 
+## Repository Workflow
+
+- Use feature branches for changes and target `devel` for development
+  PRs.
+- Keep `main` reserved for release-ready states.
+- For any change to exported functions, update tests and documentation
+  in the same PR.
+
 ## Code Style
 
 - Follow tidyverse style: snake_case for variables/functions, 2-space
@@ -64,6 +72,8 @@ Every exported function needs:
 - `@family` for grouping in pkgdown (e.g., “NBA PBP Functions”, “NBA
   Boxscore V3 Functions”)
 - `@details` with runnable example code block
+- For deprecated endpoints, document with `@description` lifecycle badge
+  and provide replacement guidance.
 
 ## Testing
 
@@ -74,6 +84,10 @@ Every exported function needs:
   exact match).
 - For dynamic columns, use
   `expect_true(all(core_cols %in% colnames(x)))`.
+- For intermittent endpoints, add explicit skip-on-empty guards before
+  indexing `x[[1]]` or asserting columns.
+- For deprecated wrappers, prefer explicit test skips with a replacement
+  note rather than brittle live assertions.
 - Add `Sys.sleep(3)` at the end of NBA Stats API tests for rate limiting
   (~590 req/10 min).
 - Test game ID: `"0022200021"` or `"0022201086"` for known completed
@@ -91,6 +105,24 @@ Every exported function needs:
 | `NCAA_MBB_TESTS=1`    | Enable NCAA MBB tests      |
 | `KP_USER` / `KP_PW`   | KenPom credentials         |
 
+On CI, most live API tests are additionally guarded with `skip_on_ci()`.
+Setting env vars alone will not run those tests unless that guard is
+intentionally relaxed.
+
+### CI Secrets
+
+Current CI workflows rely on:
+
+| Secret         | Description                                  |
+|----------------|----------------------------------------------|
+| `GITHUB_TOKEN` | Auto-provided token for workflow operations  |
+| `KP_USER`      | KenPom username/email for credentialed tests |
+| `KP_PW`        | KenPom password for credentialed tests       |
+
+Optional env-var secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`,
+`ESPN_TESTS`, `NCAA_MBB_TESTS`) only have effect if corresponding
+`skip_on_ci()` guards are intentionally adjusted.
+
 ## Conventional Commits
 
 Use the format: `type: description`
@@ -107,9 +139,29 @@ referencing AI tools.
 - V3 endpoints return nested JSON – use
   [`purrr::pluck()`](https://purrr.tidyverse.org/reference/pluck.html)
   for extraction.
-- V3 PBP clock format is `"PT10M30.00S"` not `"MM:SS"`.
-- V3 PBP substitutions have single `personId` (incoming) with outgoing
-  parsed from description.
+- V3 PBP clock format is `"PT10M30.00S"` not `"MM:SS"`. Parsed with base
+  R
+  [`regexec()`](https://rdrr.io/r/base/grep.html)/[`regmatches()`](https://rdrr.io/r/base/regmatches.html).
+- V3 PBP substitutions: `personId` = outgoing player, incoming parsed
+  from “SUB: IncomingPlayer FOR OutgoingPlayer” in description.
+- V3-to-V2 conversion pipeline
+  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  V3 path):
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  -\>
+  [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
+  -\>
+  [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
+  -\>
+  [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md).
+  Produces V2-compatible columns while retaining V3-only columns
+  (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal,
+  points_total, shot_value).
+- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
+  uses
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  stint data with interval mapping (not substitution-event parsing like
+  V2).
 - V3 boxscore endpoints namespace: `boxscoretraditionalv3`,
   `boxscoreadvancedv3`, etc.
 - V3-style leader/standings endpoints (dunkscoreleaders, gravityleaders,
@@ -121,13 +173,26 @@ referencing AI tools.
 - V3-style schedule endpoint (scheduleleaguev2int) follows the same
   nested structure as
   [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md).
+- NBAGL wrappers can follow NBA Stats-backed payloads. In particular,
+  [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
+  and
+  [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
+  may return named lists of data frames (e.g., `PlayerIndex`,
+  `Standings`) rather than a single flat data frame.
 
 ## Common Pitfalls
 
-- Always initialize `df_list <- list()` before `tryCatch` blocks.
+- Always initialize `df_list <- list()` (or `data <- data.frame()` /
+  `data <- list()`) before `tryCatch` blocks.
 - ESPN API columns change over time – use subset validation in tests.
 - V3-style leader endpoints return mixed types – coerce to
   [`as.character()`](https://rdrr.io/r/base/character.html) with
   `%||% NA_character_`.
 - IST Standings has dynamic game columns – use
   `expect_true(all(core_cols %in% colnames()))`.
+- NBAGL legacy schemas are no longer stable references for tests. Prefer
+  validating core columns from current API payloads and handle
+  named-list returns explicitly in tests.
+- Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp
+  logs) can cause `R CMD check` notes/warnings if included in source
+  checks.

@@ -104,9 +104,9 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  try(espn_mbb_team_box(game_id = 401479672))
+try(espn_mbb_team_box(game_id = 401479672))
 #> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-16 14:12:13 UTC
+#> ℹ Data updated: 2026-03-18 16:18:45 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     

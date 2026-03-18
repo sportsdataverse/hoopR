@@ -1,8 +1,11 @@
 # **Get NBA Stats API Boxscore Four Factors V2**
 
-**Get NBA Stats API Boxscore Four Factors V2**
+**\[deprecated\]**
 
-**Get NBA Stats API Boxscore Four Factors V2**
+NBA Stats no longer returns stable data for this V2 endpoint. This
+function is deprecated and now errors when called. Use
+[`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md)
+instead.
 
 ## Usage
 

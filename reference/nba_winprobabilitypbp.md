@@ -1,8 +1,11 @@
 # **Get NBA Stats API Win Probability PBP**
 
-**Get NBA Stats API Win Probability PBP**
+**\[deprecated\]**
 
-**Get NBA Stats API Win Probability PBP**
+NBA Stats no longer returns stable data for this endpoint. This function
+is deprecated and now errors when called. Use
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+instead.
 
 ## Usage
 

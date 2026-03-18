@@ -1,8 +1,8 @@
 # **Get NBA Stats API Player Next N Games**
 
-**Get NBA Stats API Player Next N Games**
-
-**Get NBA Stats API Player Next N Games**
+Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use
+[`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
+instead.
 
 ## Usage
 

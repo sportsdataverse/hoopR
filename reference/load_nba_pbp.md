@@ -118,23 +118,23 @@ Other hoopR Loader Functions:
 
 ``` r
 # \donttest{
-  load_nba_pbp(seasons = most_recent_nba_season())
+load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-07 12:42:03 UTC
-#> # A tibble: 460,089 × 64
+#> ℹ Data updated: 2026-03-18 11:43:32 UTC
+#> # A tibble: 501,132 × 64
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
-#>  1                1   4.02e 9               4     615 Jumpball  Dwig…          0
-#>  2                2   4.02e 9               7      92 Jump Shot Sam …          0
-#>  3                3   4.02e 9               8     156 Offensiv… Jayl…          0
-#>  4                4   4.02e 9               9     131 Pullup J… Jays…          0
-#>  5                5   4.02e10              10     155 Defensiv… Max …          0
-#>  6                6   4.02e10              11     131 Pullup J… Khri…          0
-#>  7                7   4.02e10              12     155 Defensiv… Neem…          0
-#>  8                8   4.02e10              13     113 Running … Sam …          0
-#>  9                9   4.02e10              14     156 Offensiv… Neem…          0
-#> 10               10   4.02e10              15     122 Jump Sho… Derr…          0
-#> # ℹ 460,079 more rows
+#>  1                1   4.02e 9               4     615 Jumpball  Kel'…          0
+#>  2                2   4.02e 9               7      93 Hook Shot Norm…          0
+#>  3                3   4.02e 9               8     155 Defensiv… LaMe…          0
+#>  4                4   4.02e 9               9     131 Pullup J… LaMe…          0
+#>  5                5   4.02e10              10     156 Offensiv… Horn…          0
+#>  6                6   4.02e10              11      43 Loose Ba… Pell…          0
+#>  7                7   4.02e10              13      92 Jump Shot Kon …          0
+#>  8                8   4.02e10              14     155 Defensiv… Davi…          0
+#>  9                9   4.02e10              15      44 Shooting… Kon …          0
+#> 10               10   4.02e10              17      98 Free Thr… Tyle…          1
+#> # ℹ 501,122 more rows
 #> # ℹ 57 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,

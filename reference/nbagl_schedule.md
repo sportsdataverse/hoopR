@@ -1,18 +1,27 @@
 # **Get G League Schedule from NBA API**
 
-Scrapes the NBA Data API for G League Schedule for a Given Season
+Retrieves G-League schedule data via the NBA Stats API schedule
+endpoint.
 
 ## Usage
 
 ``` r
-nbagl_schedule(season = most_recent_nba_season() - 1, ...)
+nbagl_schedule(
+  league_id = "20",
+  season = year_to_season(most_recent_nba_season() - 1),
+  ...
+)
 ```
 
 ## Arguments
 
+- league_id:
+
+  League - default: '20' (G-League).
+
 - season:
 
-  Season - 4 digit, i.e. 2021
+  Season - format 2020-21.
 
 - ...:
 
@@ -22,41 +31,34 @@ nbagl_schedule(season = most_recent_nba_season() - 1, ...)
 
 Returns a data frame of the G League Season Schedule
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| mon      | character |
-| gid      | character |
-| gcode    | character |
-| seri     | character |
-| is       | integer   |
-| gdte     | character |
-| htm      | character |
-| vtm      | character |
-| etm      | character |
-| an       | character |
-| ac       | character |
-| as       | character |
-| st       | character |
-| stt      | character |
-| gdtutc   | character |
-| utctm    | character |
-| ppdst    | character |
-| seq      | integer   |
-| bd_b     | list      |
-| v_tid    | integer   |
-| v_re     | character |
-| v_ta     | character |
-| v_tn     | character |
-| v_tc     | character |
-| v_s      | character |
-| h_tid    | integer   |
-| h_re     | character |
-| h_ta     | character |
-| h_tn     | character |
-| h_tc     | character |
-| h_s      | character |
-| ptsls_pl | list      |
+|                         |           |
+|-------------------------|-----------|
+| col_name                | types     |
+| game_date               | date      |
+| game_id                 | character |
+| game_code               | character |
+| game_status             | integer   |
+| game_status_text        | character |
+| game_sequence           | integer   |
+| game_date_est           | character |
+| game_time_est           | character |
+| game_date_utc           | character |
+| game_time_utc           | character |
+| arena_name              | character |
+| arena_state             | character |
+| arena_city              | character |
+| home_team_id            | character |
+| home_team_name          | character |
+| home_team_tricode       | character |
+| home_team_score         | character |
+| away_team_id            | character |
+| away_team_name          | character |
+| away_team_tricode       | character |
+| away_team_score         | character |
+| season                  | character |
+| league_id               | character |
+| season_type_id          | character |
+| season_type_description | character |
 
 ## Details
 

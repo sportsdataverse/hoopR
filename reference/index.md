@@ -255,7 +255,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Defensive V2**
 
 - [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Four Factors V2**
 
@@ -265,7 +265,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Four Factors V3**
 
 - [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Hustle V2**
 
@@ -280,7 +280,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Matchups V3**
 
 - [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Misc V2**
 
@@ -290,7 +290,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Misc V3**
 
 - [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Player Tracking V2**
 
@@ -300,7 +300,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Player Tracking V3**
 
 - [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Scoring V2**
 
@@ -335,7 +335,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Boxscore Traditional V3**
 
 - [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Boxscore Usage V2**
 
@@ -481,12 +481,12 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Gravity Leaders**
 
 - [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Homepage Leaders**
 
 - [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API HomepageV2 Leaders**
 
@@ -506,7 +506,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API In-Season Tournament Standings**
 
 - [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Leaders Tiles**
 
@@ -947,12 +947,12 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Team Game Logs**
 
 - [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Team Game Streak Finder**
 
 - [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Team Historical Leaders**
 
@@ -997,7 +997,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Today's Scoreboard**
 
 - [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Video Details**
 
@@ -1022,7 +1022,7 @@ Functions exported by hoopR to access the NBA Stats API
   **Get NBA Stats API Video Status**
 
 - [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
-  :
+  **\[deprecated\]** :
 
   **Get NBA Stats API Win Probability PBP**
 
@@ -1373,3 +1373,13 @@ Internal functions used by hoopR
   :
 
   **Add players on court in NBA Stats API V3 play-by-play**
+
+- [`.v3_to_v2_format`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
+  :
+
+  **Convert V3 PBP columns to V2-compatible format**
+
+- [`.build_player_roster`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
+  :
+
+  **Build player roster lookup from boxscore data**

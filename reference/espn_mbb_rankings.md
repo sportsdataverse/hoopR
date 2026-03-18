@@ -80,24 +80,24 @@ Saiem Gilani
 ``` r
 # Get current AP and Coaches Poll rankings
 # \donttest{
-  try(espn_mbb_rankings())
+try(espn_mbb_rankings())
 #> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-16 14:12:10 UTC
-#> # A tibble: 37 × 38
+#> ℹ Data updated: 2026-03-18 16:18:42 UTC
+#> # A tibble: 77 × 39
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>
-#>  1     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       1        1    770
-#>  2     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       2        2    744
-#>  3     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       3        3    718
-#>  4     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       4        4    656
-#>  5     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       5        5    653
-#>  6     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       6        7    586
-#>  7     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       7        6    570
-#>  8     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       8       11    531
-#>  9     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20       9       13    514
-#> 10     2 Coach… Coaches P… usa   2026 NC… 2026 : Week 20      10       12    470
-#> # ℹ 27 more rows
-#> # ℹ 29 more variables: first_place_votes <int>, trend <chr>, date <chr>,
+#>  1     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       1        1   1418
+#>  2     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       2        2   1372
+#>  3     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       3        3   1310
+#>  4     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       4        4   1221
+#>  5     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       5        5   1214
+#>  6     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       6        7   1096
+#>  7     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       7        6   1032
+#>  8     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       8       18    912
+#>  9     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       9       10    903
+#> 10     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20      10       13    860
+#> # ℹ 67 more rows
+#> # ℹ 30 more variables: first_place_votes <int>, trend <chr>, date <chr>,
 #> #   last_updated <chr>, record_summary <chr>, team_id <int>, team_uid <chr>,
 #> #   team_location <chr>, team_name <chr>, team_nickname <chr>,
 #> #   team_abbreviation <chr>, team_color <chr>, team_logos <list>,

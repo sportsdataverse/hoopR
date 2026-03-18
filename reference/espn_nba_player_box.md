@@ -105,9 +105,9 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  try(espn_nba_player_box(game_id = 401071880))
+try(espn_nba_player_box(game_id = 401071880))
 #> ── ESPN NBA Player Box Information from ESPN.com ──────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-16 14:12:23 UTC
+#> ℹ Data updated: 2026-03-18 16:19:00 UTC
 #> # A tibble: 26 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

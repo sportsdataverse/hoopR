@@ -1,8 +1,8 @@
 # **Get NBA Stats API Scoreboard**
 
-**Get NBA Stats API Scoreboard**
-
-**Get NBA Stats API Scoreboard**
+Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use
+[`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
+instead.
 
 ## Usage
 

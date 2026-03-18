@@ -214,6 +214,13 @@
 <strong>Breaking Changes</strong><a class="anchor" aria-label="anchor" href="#breaking-changes"></a>
 </h2>
 <p><a href="https://hoopR.sportsdataverse.org/news/index.html"><strong>Full News on Releases</strong></a></p>
+<ul>
+<li>Legacy <code>nbagl_*</code> wrappers now follow NBA Stats-backed payload structures.</li>
+<li>
+<code><a href="reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code> return named lists of data frames (<code>PlayerIndex</code>, <code>Standings</code>) instead of legacy flat schema assumptions.</li>
+<li>
+<code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code> and <code><a href="reference/nbagl_pbp.html">nbagl_pbp()</a></code> return modernized core columns aligned with current upstream sources.</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo">Follow the SportsDataverse (@SportsDataverse) on Twitter and star this repo<a class="anchor" aria-label="anchor" href="#follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo"></a>

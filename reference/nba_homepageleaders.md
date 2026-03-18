@@ -1,8 +1,11 @@
 # **Get NBA Stats API Homepage Leaders**
 
-**Get NBA Stats API Homepage Leaders**
+**\[deprecated\]**
 
-**Get NBA Stats API Homepage Leaders**
+NBA Stats no longer returns stable data for this endpoint. This function
+is deprecated and now errors when called. Use
+[`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
+instead.
 
 ## Usage
 
