@@ -197,7 +197,7 @@ A named list of data frames: Plays, Team, Player
 }
 \examples{
 \donttest{
-  try(espn_nba_game_all(game_id = 401283399))
+try(espn_nba_game_all(game_id = 401283399))
 }
 
 }

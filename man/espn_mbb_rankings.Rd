@@ -54,7 +54,7 @@ Returns a tibble\tabular{ll}{
 \examples{
 # Get current AP and Coaches Poll rankings
 \donttest{
-  try(espn_mbb_rankings())
+try(espn_mbb_rankings())
 }
 }
 \seealso{

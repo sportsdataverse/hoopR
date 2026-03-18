@@ -191,7 +191,7 @@ A named list of data frames: Plays, Team, Player
 }
 \examples{
 \donttest{
-  try(espn_mbb_game_all(game_id = 401479672))
+try(espn_mbb_game_all(game_id = 401479672))
 }
 }
 \seealso{

@@ -39,7 +39,7 @@ A teams data frame\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_mbb_teams())
+try(espn_mbb_teams())
 }
 }
 \seealso{

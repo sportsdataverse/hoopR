@@ -92,7 +92,7 @@ or writes it into a db using some forwarded arguments in the dots
 }
 \examples{
 \donttest{
-  load_nba_pbp(seasons = most_recent_nba_season())
+load_nba_pbp(seasons = most_recent_nba_season())
 }
 }
 \seealso{

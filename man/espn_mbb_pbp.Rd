@@ -72,7 +72,7 @@ A play-by-play data frame.
 }
 \examples{
 \donttest{
-  try(espn_mbb_pbp(game_id = 401479672))
+try(espn_mbb_pbp(game_id = 401479672))
 }
 
 }

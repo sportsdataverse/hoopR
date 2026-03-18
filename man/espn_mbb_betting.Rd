@@ -78,7 +78,7 @@ Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 }
 \examples{
 \donttest{
-  try(espn_mbb_betting(game_id = 401256760))
+try(espn_mbb_betting(game_id = 401256760))
 }
 }
 \seealso{

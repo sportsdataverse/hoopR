@@ -76,12 +76,11 @@ NULL
 #'    |game_date_time                  |POSIXct   |
 #'    |type_abbreviation               |character |
 #'
-#' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_nba_pbp(seasons = most_recent_nba_season())
+#' load_nba_pbp(seasons = most_recent_nba_season())
 #' }
 load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
@@ -95,9 +94,11 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
 
   if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2002,
-            seasons <= most_recent_nba_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons, ".rds")
 
@@ -110,8 +111,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
-
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
@@ -191,12 +191,12 @@ NULL
 #'    |opponent_team_logo                |character |
 #'    |opponent_team_score               |integer   |
 #'
-#' @import furrr
+#'
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_nba_team_box(seasons = most_recent_nba_season())
+#' load_nba_team_box(seasons = most_recent_nba_season())
 #' }
 load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
@@ -209,9 +209,11 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
 
   if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2002,
-            seasons <= most_recent_nba_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_", seasons, ".rds")
 
@@ -220,7 +222,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
-  class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   out
 }
 
@@ -300,12 +302,12 @@ NULL
 #'    |opponent_team_alternate_color     |character |
 #'    |opponent_team_score               |integer   |
 #'
-#' @import furrr
+#'
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_nba_player_box(seasons = most_recent_nba_season())
+#' load_nba_player_box(seasons = most_recent_nba_season())
 #' }
 load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
@@ -317,9 +319,11 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
 
   if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2002,
-            seasons <= most_recent_nba_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_", seasons, ".rds")
 
@@ -332,7 +336,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
@@ -422,12 +426,12 @@ NULL
 #'    |game_date_time            |POSIXct   |
 #'    |game_date                 |Date      |
 #'
-#' @import furrr
+#'
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
-#'   load_nba_schedule(seasons = most_recent_nba_season())
+#' load_nba_schedule(seasons = most_recent_nba_season())
 #' }
 load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
@@ -440,9 +444,11 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
 
   if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
 
-  stopifnot(is.numeric(seasons),
-            seasons >= 2002,
-            seasons <= most_recent_nba_season())
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_", seasons, ".rds")
 
@@ -455,13 +461,13 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   }
   out
 }
 
 # load games file
-load_nba_games <- function(){
+load_nba_games <- function() {
   .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/nba/nba_games_in_data_repo.csv"
   dat <- csv_from_url(.url)
   return(dat)
@@ -511,7 +517,7 @@ NULL
 #' @param db_connection A `DBIConnection` object, as returned by
 #' [DBI::dbConnect()] (please see details for further information)
 #' @return Returns a logical value (TRUE/FALSE)
-#' @import furrr
+#'
 #' @export
 #' @family hoopR Database Functions
 update_nba_db <- function(dbdir = ".",
@@ -524,7 +530,7 @@ update_nba_db <- function(dbdir = ".",
   # rule_header("Update hoopR Play-by-Play Database")
 
   if (!is_installed("DBI") | !is_installed("purrr") |
-      (!is_installed("RSQLite") & is.null(db_connection))) {
+    (!is_installed("RSQLite") & is.null(db_connection))) {
     usethis::ui_stop("{my_time()} | Packages {usethis::ui_value('DBI')}, {usethis::ui_value('RSQLite')} and {usethis::ui_value('purrr')} required for database communication. Please install them.")
   }
 
@@ -565,7 +571,7 @@ update_nba_db <- function(dbdir = ".",
   missing <- get_missing_nba_games(completed_games, connection, tblname)
 
   # rebuild db if number of missing games is too large
-  if (length(missing) > 16) {# limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
+  if (length(missing) > 16) { # limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
     # message("The number of missing games is so large that rebuilding the database is more efficient.")
     build_nba_db(tblname, connection, show_message = FALSE, rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4))))
     missing <- get_missing_nba_games(completed_games, connection, tblname)
@@ -594,9 +600,13 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
     usethis::ui_todo("{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}...")
   } else if (is.numeric(rebuild) & all(rebuild %in% valid_seasons$season)) {
     string <- paste0(rebuild, collapse = ", ")
-    if (show_message) {usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")}
+    if (show_message) {
+      usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")
+    }
     DBI::dbExecute(db_conn, glue::glue_sql("DELETE FROM {`tblname`} WHERE season IN ({vals*})", vals = rebuild, .con = db_conn))
-    seasons <- valid_seasons %>% dplyr::filter(.data$season %in% rebuild) %>% dplyr::pull("season")
+    seasons <- valid_seasons %>%
+      dplyr::filter(.data$season %in% rebuild) %>%
+      dplyr::pull("season")
     usethis::ui_todo("{my_time()} | Starting download of the {string} season(s)...")
   } else if (all(rebuild == "NEW")) {
     usethis::ui_info("{my_time()} | Can't find the data table {usethis::ui_value(tblname)} in your database. Will load the play by play data from scratch.")
