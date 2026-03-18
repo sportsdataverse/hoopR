@@ -21,6 +21,12 @@
 
 hoopR is an R package (v3.0.0 dev) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
 
+## Repository Workflow
+
+- Use feature branches for changes and target `devel` for development PRs.
+- Keep `main` reserved for release-ready states.
+- For any change to exported functions, update tests and documentation in the same PR.
+
 ## Code Style
 
 - Follow tidyverse style: snake_case for variables/functions, 2-space indentation.
@@ -54,12 +60,15 @@ Every exported function needs:
 - `@export`
 - `@family` for grouping in pkgdown (e.g., "NBA PBP Functions", "NBA Boxscore V3 Functions")
 - `@details` with runnable example code block
+- For deprecated endpoints, document with `@description` lifecycle badge and provide replacement guidance.
 
 ## Testing
 
 - Use `skip_on_cran()`, `skip_on_ci()`, and `skip_nba_stats_test()` guards.
 - Validate columns with `expect_in(sort(expected_cols), sort(colnames(x)))` (subset check, not exact match).
 - For dynamic columns, use `expect_true(all(core_cols %in% colnames(x)))`.
+- For intermittent endpoints, add explicit skip-on-empty guards before indexing `x[[1]]` or asserting columns.
+- For deprecated wrappers, prefer explicit test skips with a replacement note rather than brittle live assertions.
 - Add `Sys.sleep(3)` at the end of NBA Stats API tests for rate limiting (~590 req/10 min).
 - Test game ID: `"0022200021"` or `"0022201086"` for known completed games.
 - Handle empty API responses gracefully in tests (V2 endpoints may return empty for old games).
@@ -73,6 +82,20 @@ Every exported function needs:
 | `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests |
 | `NCAA_MBB_TESTS=1` | Enable NCAA MBB tests |
 | `KP_USER` / `KP_PW` | KenPom credentials |
+
+On CI, most live API tests are additionally guarded with `skip_on_ci()`. Setting env vars alone will not run those tests unless that guard is intentionally relaxed.
+
+### CI Secrets
+
+Current CI workflows rely on:
+
+| Secret | Description |
+|---|---|
+| `GITHUB_TOKEN` | Auto-provided token for workflow operations |
+| `KP_USER` | KenPom username/email for credentialed tests |
+| `KP_PW` | KenPom password for credentialed tests |
+
+Optional env-var secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) only have effect if corresponding `skip_on_ci()` guards are intentionally adjusted.
 
 ## Conventional Commits
 
@@ -92,6 +115,7 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 - V3 boxscore endpoints namespace: `boxscoretraditionalv3`, `boxscoreadvancedv3`, etc.
 - V3-style leader/standings endpoints (dunkscoreleaders, gravityleaders, iststandings) return flat nested JSON arrays. Parse via `purrr::pluck("key")` -> `dplyr::as_tibble()` -> `dplyr::mutate(across(everything(), as.character))` -> `janitor::clean_names()`.
 - V3-style schedule endpoint (scheduleleaguev2int) follows the same nested structure as `nba_schedule()`.
+- NBAGL wrappers can follow NBA Stats-backed payloads. In particular, `nbagl_players()` and `nbagl_standings()` may return named lists of data frames (e.g., `PlayerIndex`, `Standings`) rather than a single flat data frame.
 
 ## Common Pitfalls
 
@@ -99,3 +123,5 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 - ESPN API columns change over time -- use subset validation in tests.
 - V3-style leader endpoints return mixed types -- coerce to `as.character()` with `%||% NA_character_`.
 - IST Standings has dynamic game columns -- use `expect_true(all(core_cols %in% colnames()))`.
+- NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.
+- Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp logs) can cause `R CMD check` notes/warnings if included in source checks.
