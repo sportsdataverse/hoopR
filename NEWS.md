@@ -3,12 +3,15 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [**hoopR 3.0.0**](#hoopr-300)
+    - [**Stability and Test Robustness**](#stability-and-test-robustness)
+    - [**CI and Check Improvements**](#ci-and-check-improvements)
     - [**NBA Play-by-Play V3**](#nba-play-by-play-v3)
     - [**NBA Boxscore Summary V3**](#nba-boxscore-summary-v3)
     - [**New NBA Stats API Endpoint Wrappers**](#new-nba-stats-api-endpoint-wrappers)
-    - [**ESPN & G-League Functions**](#espn--g-league-functions)
+    - [**ESPN \& G-League Functions**](#espn--g-league-functions)
     - [**Other Improvements**](#other-improvements)
     - [**Bug Fixes**](#bug-fixes)
+    - [**Deprecations**](#deprecations)
     - [**Test Improvements**](#test-improvements)
 - [**hoopR 2.1.0**](#hoopr-210)
 - [**hoopR 2.0.0**](#hoopr-200)
@@ -63,6 +66,19 @@
 
 # **hoopR 3.0.0**
 
+### **Stability and Test Robustness**
+
+- Hardened API-facing tests against live schema drift and intermittent empty payloads.
+- Added explicit skip-on-empty guards for lineup and NCAA teams tests to avoid false negatives when upstream endpoints return no rows.
+- Updated expected columns for currently active payloads in key NBA endpoints (including `nba_playercareerstats()`, `nba_playerdashptshotdefend()`, and `nba_playerprofilev2()`).
+- Improved `nba_playerprofilev2()` assertions to validate core columns while tolerating empty optional result sets.
+
+### **CI and Check Improvements**
+
+- Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.
+- Clarified optional environment variable usage in CI for live API test toggles.
+- Updated package build ignores to exclude local development folders from source checks.
+
 ### **NBA Play-by-Play V3**
 
 - `nba_playbyplayv3()` function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.
@@ -101,6 +117,7 @@
 - Updated GitHub Actions to v4.
 - Cleaned up `.Rbuildignore` duplicates.
 - Added comprehensive `CONTRIBUTING.md` with naming conventions and test environment documentation.
+- Moved `furrr` and `future` dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.
 
 ### **Bug Fixes**
 
@@ -112,6 +129,28 @@
 - Fixed `nba_iststandings()` nested games column flattening.
 - Fixed `%||%` import for R < 4.4.0 compatibility.
 - Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()`, preventing crashes on API errors.
+- Fixed `nbagl_pbp()` to avoid on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.
+- Fixed NBAGL wrapper defaults for error paths where return objects were not initialized before `tryCatch`.
+
+### **Deprecations**
+
+- Deprecated `nba_boxscorefourfactorsv2()` in favor of `nba_boxscorefourfactorsv3()` due to unstable/partial V2 API responses.
+- Deprecated `nba_boxscoremiscv2()` in favor of `nba_boxscoremiscv3()` due to unstable/partial V2 API responses.
+- Deprecated `nba_boxscorescoringv2()` in favor of `nba_boxscorescoringv3()` due to unstable/partial V2 API responses.
+- Deprecated `nba_boxscoreusagev2()` in favor of `nba_boxscoreusagev3()` due to unstable/partial V2 API responses.
+- Deprecated `nba_boxscoreplayertrackv2()` in favor of `nba_boxscoreplayertrackv3()` due to unstable/partial V2 API responses.
+- Deprecated `nba_boxscorehustlev2()` in favor of `nba_hustlestatsboxscore()` due to unstable/partial V2 API responses.
+- Deprecated `nba_homepageleaders()` in favor of `nba_leagueleaders()` due to unstable/empty endpoint responses.
+- Deprecated `nba_homepagev2()` in favor of `nba_leagueleaders()` due to unstable/empty endpoint responses.
+- Deprecated `nba_leaderstiles()` in favor of `nba_leagueleaders()` due to unstable/empty endpoint responses.
+- Deprecated `nba_teamgamestreakfinder()` in favor of `nba_teamgamelogs()` due to unstable/empty endpoint responses.
+- Deprecated `nba_teamhistoricalleaders()` in favor of `nba_franchiseleaders()` due to unstable/empty endpoint responses.
+- Deprecated `nba_videodetails()` in favor of `nba_videodetailsasset()` due to unstable/empty endpoint responses.
+- Deprecated `nba_winprobabilitypbp()` in favor of `nba_playbyplayv3()` due to unstable/empty endpoint responses.
+- Deprecated `nba_playercareerbycollege()` in favor of `nba_playercareerbycollegerollup()`/`nba_leaguedashplayerbiostats()` due to unstable/empty endpoint responses.
+- Deprecated `nba_playernextngames()` in favor of `nba_playerprofilev2()` due to unstable/empty endpoint responses.
+- Deprecated `nba_scoreboard()` in favor of `nba_scoreboardv3()` due to unstable/empty endpoint responses.
+- Deprecated `nba_scoreboardv2()` in favor of `nba_scoreboardv3()` due to unstable/partial endpoint responses.
 
 ### **Test Improvements**
 
@@ -119,6 +158,7 @@
 - Added tests for all new endpoints with column validation and rate limiting.
 - Added `skip_ncaa_mbb_test()` and `skip_ncaa_wbb_test()` helpers.
 - Updated ESPN test expectations for current API responses.
+- Updated NBAGL tests to validate NBA Stats-backed return shapes (`nbagl_players()` and `nbagl_standings()` named-list returns, and current schedule/PBP core columns).
 
 # **hoopR 2.1.0**
 * ```load_nba_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
