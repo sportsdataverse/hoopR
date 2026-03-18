@@ -118,6 +118,7 @@
 - Cleaned up `.Rbuildignore` duplicates.
 - Added comprehensive `CONTRIBUTING.md` with naming conventions and test environment documentation.
 - Moved `furrr` and `future` dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.
+- Add `lifecycle` dependency and deprecation warnings for unstable functions/endpoints to guide users to maintained alternatives.
 
 ### **Bug Fixes**
 
