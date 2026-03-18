@@ -150,6 +150,7 @@ nba_schedule <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Scoreboard**
+#' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_scoreboardv3()` instead.
 #' @rdname nba_scoreboard
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -304,6 +305,12 @@ nba_scoreboard <- function(
     day_offset = 0,
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_scoreboard()",
+    with = "nba_scoreboardv3()"
+  )
+
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -343,6 +350,7 @@ nba_scoreboard <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Scoreboard V2**
+#' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/partial; use `nba_scoreboardv3()` instead.
 #' @rdname nba_scoreboardv2
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -527,6 +535,12 @@ nba_scoreboardv2 <- function(
     game_date = '2021-07-20',
     day_offset = 0,
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_scoreboardv2()",
+    with = "nba_scoreboardv3()"
+  )
 
   version <- "scoreboardv2"
   full_url <- nba_endpoint(version)
@@ -873,6 +887,12 @@ nba_todays_scoreboard <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Win Probability PBP**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_playbyplayv3()` instead.
 #' @rdname nba_winprobabilitypbp
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -928,6 +948,12 @@ nba_winprobabilitypbp <- function(
     game_id = '0021700807',
     run_type = 'each second',
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_winprobabilitypbp()",
+    with = "nba_playbyplayv3()"
+  )
 
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))

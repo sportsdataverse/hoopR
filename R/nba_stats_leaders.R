@@ -420,6 +420,12 @@ nba_assisttracker <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Homepage Leaders**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_leagueleaders()` instead.
 #' @rdname nba_homepageleaders
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
@@ -495,6 +501,12 @@ nba_homepageleaders <- function(
     stat_category = 'Points',
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_homepageleaders()",
+    with = "nba_leagueleaders()"
+  )
+
   player_scope <- gsub(' ','+',player_scope)
   # Intentional
   # season_type <- gsub(' ','+',season_type)
@@ -540,6 +552,12 @@ nba_homepageleaders <- function(
 NULL
 #' @title
 #' **Get NBA Stats API HomepageV2 Leaders**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_leagueleaders()` instead.
 #' @rdname nba_homepagev2
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
@@ -662,6 +680,12 @@ nba_homepagev2 <- function(
     stat_type = 'Traditional',
     ...){
 
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_homepagev2()",
+    with = "nba_leagueleaders()"
+  )
+
   player_scope <- gsub(' ','+',player_scope)
   # Intentional
   # season_type <- gsub(' ','+',season_type)
@@ -707,6 +731,12 @@ nba_homepagev2 <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Leaders Tiles**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_leagueleaders()` instead.
 #' @rdname nba_leaderstiles
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
@@ -783,6 +813,12 @@ nba_leaderstiles <- function(
     season_type = 'Regular Season',
     stat = 'PTS',
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_leaderstiles()",
+    with = "nba_leagueleaders()"
+  )
 
   player_scope <- gsub(' ','+',player_scope)
   # season_type <- gsub(' ','+',season_type)

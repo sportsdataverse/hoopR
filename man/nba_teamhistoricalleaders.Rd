@@ -45,9 +45,11 @@ Return a named list of data frames: CareerLeadersByTeam
 }
 }
 \description{
-\strong{Get NBA Stats API Team Historical Leaders}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Team Historical Leaders}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_franchiseleaders()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamhistoricalleaders(team_id = '1610612749')

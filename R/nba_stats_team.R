@@ -642,6 +642,12 @@ nba_teamgamelogs <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Team Historical Leaders**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_franchiseleaders()` instead.
 #' @rdname nba_teamhistoricalleaders
 #' @author Saiem Gilani
 #' @param league_id league_id
@@ -687,6 +693,12 @@ nba_teamhistoricalleaders <- function(
     season_id = "22022",
     team_id = "1610612749",
     ...) {
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_teamhistoricalleaders()",
+    with = "nba_franchiseleaders()"
+  )
+
   version <- "teamhistoricalleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -2463,6 +2475,12 @@ nba_teamandplayersvsplayers <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Streak Finder**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_teamgamelogs()` instead.
 #' @rdname nba_teamgamestreakfinder
 #' @author Saiem Gilani
 #' @param active_streaks_only active_streaks_only
@@ -2873,6 +2891,12 @@ nba_teamgamestreakfinder <- function(
     wrs_opp_stl = "",
     wrs_opp_tov = "",
     ...) {
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_teamgamestreakfinder()",
+    with = "nba_teamgamelogs()"
+  )
+
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamestreakfinder"

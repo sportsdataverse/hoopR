@@ -143,9 +143,11 @@ Return a list of tibbles: videoUrls, playlist
 }
 }
 \description{
-\strong{Get NBA Stats API Video Details}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Video Details}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_videodetailsasset()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videodetails(player_id = '2544', team_id = '1610612747')

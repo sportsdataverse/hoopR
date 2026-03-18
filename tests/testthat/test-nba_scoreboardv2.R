@@ -2,6 +2,7 @@ test_that("NBA Scoreboard V2", {
   skip_on_cran()
   skip_on_ci()
   skip_nba_stats_test()
+  skip("Deprecated: nba_scoreboardv2() replaced by nba_scoreboardv3().")
 
   x <- nba_scoreboardv2(league_id = "00", game_date = "2021-07-20")
 

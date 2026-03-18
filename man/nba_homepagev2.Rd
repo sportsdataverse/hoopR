@@ -116,9 +116,11 @@ HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 }
 }
 \description{
-\strong{Get NBA Stats API HomepageV2 Leaders}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API HomepageV2 Leaders}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_leagueleaders()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_homepagev2(league_id = '00', player_or_team = "Player")

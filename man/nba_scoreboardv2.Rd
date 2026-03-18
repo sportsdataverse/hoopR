@@ -177,9 +177,7 @@ TicketLinks, WestConfStandingsByDay, WinProbability
 \strong{WinProbability}
 }
 \description{
-\strong{Get NBA Stats API Scoreboard V2}
-
-\strong{Get NBA Stats API Scoreboard V2}
+Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/partial; use \code{nba_scoreboardv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboardv2(league_id = '00', game_date = '2021-07-20')

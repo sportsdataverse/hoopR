@@ -193,6 +193,12 @@ nba_videodetailsasset <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Video Details**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_videodetailsasset()` instead.
 #' @rdname nba_videodetails
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
@@ -310,6 +316,12 @@ nba_videodetails <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_videodetails()",
+    with = "nba_videodetailsasset()"
+  )
 
   # season_type <- gsub(' ', '+', season_type)
   version <- "videodetails"

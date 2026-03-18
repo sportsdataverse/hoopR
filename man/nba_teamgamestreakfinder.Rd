@@ -593,9 +593,11 @@ Return a named list of data frames: TeamGameStreakFinderParametersResults
 }
 }
 \description{
-\strong{Get NBA Stats API Team Game Streak Finder}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Team Game Streak Finder}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_teamgamelogs()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamgamestreakfinder()

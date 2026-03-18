@@ -47,9 +47,7 @@ Return a named list of data frames: NextNGames
 }
 }
 \description{
-\strong{Get NBA Stats API Player Next N Games}
-
-\strong{Get NBA Stats API Player Next N Games}
+Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_playerprofilev2()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playernextngames(player_id = '2544')

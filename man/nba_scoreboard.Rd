@@ -142,9 +142,7 @@ GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
 }
 }
 \description{
-\strong{Get NBA Stats API Scoreboard}
-
-\strong{Get NBA Stats API Scoreboard}
+Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_scoreboardv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboard(league_id = '00', game_date = '2021-07-20')

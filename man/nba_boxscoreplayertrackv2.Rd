@@ -78,9 +78,11 @@ Returns a named list of data frames: PlayerStats, TeamStats
 }
 }
 \description{
-\strong{Get NBA Stats API Boxscore Player Tracking V2}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Boxscore Player Tracking V2}
+NBA Stats no longer returns stable data for this V2 endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_boxscoreplayertrackv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreplayertrackv2(game_id = "0022200021")

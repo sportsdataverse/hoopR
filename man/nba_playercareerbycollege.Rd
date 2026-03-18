@@ -57,9 +57,7 @@ Return a named list of data frames: PlayerCareerByCollege
 }
 }
 \description{
-\strong{Get NBA Stats API Player Career By College}
-
-\strong{Get NBA Stats API Player Career By College}
+Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_playercareerbycollegerollup()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playercareerbycollege(college = 'Florida State', per_mode = 'PerGame')
