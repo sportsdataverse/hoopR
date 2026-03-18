@@ -23,7 +23,7 @@ A conferences data frame\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_mbb_conferences())
+try(espn_mbb_conferences())
 }
 }
 \seealso{

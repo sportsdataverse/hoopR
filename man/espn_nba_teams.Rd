@@ -29,7 +29,7 @@ A teams data frame\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_nba_teams())
+try(espn_nba_teams())
 }
 
 }

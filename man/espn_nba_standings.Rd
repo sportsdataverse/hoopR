@@ -39,7 +39,7 @@ A standings data frame\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_nba_standings(year = 2021))
+try(espn_nba_standings(year = 2021))
 }
 }
 \seealso{

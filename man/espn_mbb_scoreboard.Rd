@@ -55,7 +55,7 @@ Returns a tibble\tabular{ll}{
 
 # Get schedule from date 2022-11-17
 \donttest{
-  try(espn_mbb_scoreboard (season = "20221117"))
+try(espn_mbb_scoreboard(season = "20221117"))
 }
 }
 \seealso{

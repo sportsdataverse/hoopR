@@ -212,7 +212,7 @@ Returns a tibble with the player stats data\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
+try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
 }
 }
 \seealso{

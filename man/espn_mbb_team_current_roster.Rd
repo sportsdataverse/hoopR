@@ -17,7 +17,7 @@ A teams data frame
 }
 \examples{
 \donttest{
-  try(espn_mbb_team_current_roster(team_id = 52))
+try(espn_mbb_team_current_roster(team_id = 52))
 }
 }
 \seealso{
