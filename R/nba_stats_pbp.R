@@ -208,6 +208,15 @@ NULL
 #' @noRd
 #' @family NBA PBP Functions
 .v3_to_v2_format <- function(pbp_data, player_roster = NULL) {
+  required_roster_cols <- c(
+    "person_id", "first_name", "family_name", "name_i",
+    "full_name", "team_id", "team_name", "team_city", "team_tricode"
+  )
+
+  if (is.null(player_roster) || !all(required_roster_cols %in% colnames(player_roster))) {
+    player_roster <- NULL
+  }
+
   # V3 event_type mapping to V2 EVENTMSGTYPE numeric codes
   event_type_map <- c(
     "period" = "12",
@@ -673,9 +682,12 @@ NULL
   event_action_type <- vapply(seq_len(n), function(i) {
     at <- action_type_v3[i]
     st <- sub_type_v3[i]
-    if (is.na(st) || nchar(st) == 0) return("0")
+    if (is.na(st) || nchar(st) == 0) {
+      return("0")
+    }
     result <- switch(at,
-      "Made Shot" = , "Missed Shot" = shot_action_map[st] %||% "0",
+      "Made Shot" = ,
+      "Missed Shot" = shot_action_map[st] %||% "0",
       "Free Throw" = ft_action_map[st] %||% "0",
       "Turnover" = to_action_map[st] %||% "0",
       "Foul" = foul_action_map[st] %||% "0",
@@ -752,7 +764,18 @@ NULL
     shot_result = pbp_data$shot_result,
     is_field_goal = pbp_data$is_field_goal,
     points_total = pbp_data$points_total,
-    shot_value = pbp_data$shot_value
+    shot_value = pbp_data$shot_value,
+    # Additional V3 passthrough columns for closer parity with raw/live outputs
+    action_number = as.integer(pbp_data$action_number),
+    team_id = as.integer(pbp_data$team_id),
+    team_tricode = as.character(pbp_data$team_tricode),
+    person_id = as.integer(pbp_data$person_id),
+    player_name = as.character(pbp_data$player_name),
+    player_name_i = as.character(pbp_data$player_name_i),
+    score_home = as.character(pbp_data$score_home),
+    score_away = as.character(pbp_data$score_away),
+    video_available = pbp_data$video_available,
+    action_id = as.integer(pbp_data$action_id)
   )
 
   result <- make_hoopR_data(result, "NBA Game Play-by-Play Information from NBA.com", Sys.time())
@@ -771,25 +794,58 @@ NULL
 #' @noRd
 #' @family NBA PBP Functions
 .build_player_roster <- function(game_id) {
-  tryCatch({
-    box <- nba_boxscoretraditionalv3(game_id = game_id)
-    home <- box$home_team_player_traditional
-    away <- box$away_team_player_traditional
+  tryCatch(
+    {
+      box <- nba_boxscoretraditionalv3(game_id = game_id)
+      home <- box$home_team_player_traditional
+      away <- box$away_team_player_traditional
 
-    cols <- c("person_id", "first_name", "family_name", "name_i",
-              "team_id", "team_name", "team_city", "team_tricode")
-    roster <- dplyr::bind_rows(
-      home[, cols, drop = FALSE],
-      away[, cols, drop = FALSE]
-    )
-    roster$full_name <- paste(roster$first_name, roster$family_name)
-    roster$person_id <- as.character(roster$person_id)
-    roster$team_id <- as.character(roster$team_id)
-    roster
-  }, error = function(e) {
-    message(glue::glue("{Sys.time()}: Could not retrieve boxscore for player roster lookup."))
-    NULL
-  })
+      cols <- c(
+        "person_id", "first_name", "family_name", "name_i",
+        "team_id", "team_name", "team_city", "team_tricode"
+      )
+
+      empty_roster <- dplyr::tibble(
+        person_id = character(),
+        first_name = character(),
+        family_name = character(),
+        name_i = character(),
+        team_id = character(),
+        team_name = character(),
+        team_city = character(),
+        team_tricode = character(),
+        full_name = character()
+      )
+
+      if (is.null(home) || is.null(away) ||
+        !all(cols %in% colnames(home)) || !all(cols %in% colnames(away))) {
+        return(empty_roster)
+      }
+
+      roster <- dplyr::bind_rows(
+        home[, cols, drop = FALSE],
+        away[, cols, drop = FALSE]
+      )
+      roster$full_name <- paste(roster$first_name, roster$family_name)
+      roster$person_id <- as.character(roster$person_id)
+      roster$team_id <- as.character(roster$team_id)
+      roster
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Could not retrieve boxscore for player roster lookup."))
+      dplyr::tibble(
+        person_id = character(),
+        first_name = character(),
+        family_name = character(),
+        name_i = character(),
+        team_id = character(),
+        team_name = character(),
+        team_city = character(),
+        team_tricode = character(),
+        full_name = character()
+      )
+    }
+  )
 }
 
 
@@ -1001,7 +1057,7 @@ nba_playbyplayv3 <- function(
     StartPeriod = start_period
   )
 
-  data <- list()  # Initialize before tryCatch
+  data <- list() # Initialize before tryCatch
 
   tryCatch(
     expr = {
@@ -1145,7 +1201,7 @@ nba_pbp <- function(
   # V3 path: use the dedicated V3 endpoint and parsing
 
   if (version == "v3") {
-    data <- data.frame()  # Initialize before tryCatch
+    data <- data.frame() # Initialize before tryCatch
     tryCatch(
       expr = {
         v3_result <- nba_playbyplayv3(game_id = game_id)
@@ -1172,7 +1228,7 @@ nba_pbp <- function(
   }
 
   # V2/V1 path
-  data <- data.frame()  # Initialize before tryCatch
+  data <- data.frame() # Initialize before tryCatch
   if (version == "v2") {
     endpoint <- nba_endpoint("playbyplayv2")
   } else {

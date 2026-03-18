@@ -3,37 +3,50 @@
 NULL
 #' @title
 #' **Get NBA Data API Play-by-Play for G-League Games**
-#' @description Scrapes the NBA Data API for Play By Play for G League games
+#' @description Retrieves G-League play-by-play using the NBA Stats play-by-play pipeline.
 #' @rdname nbagl_pbp
 #' @author Billy Fryer
 #' @param game_id Game ID - 10 digits, i.e. 0021900001
+#' @param on_court If TRUE (default), on-court player IDs are added for each play event.
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a data frame of play by play with the following columns:
+#' @return Returns a data frame of play-by-play with core columns:
+#' When `on_court = TRUE`, lineup columns are included and may be `NA` when lineup
+#' inference data is unavailable for a given game.
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |period   |integer   |
-#'    |evt      |integer   |
-#'    |wallclk  |character |
-#'    |cl       |character |
-#'    |de       |character |
-#'    |locX     |integer   |
-#'    |locY     |integer   |
-#'    |opt1     |integer   |
-#'    |opt2     |integer   |
-#'    |opt3     |integer   |
-#'    |opt4     |integer   |
-#'    |mtype    |integer   |
-#'    |etype    |integer   |
-#'    |opid     |character |
-#'    |tid      |integer   |
-#'    |pid      |integer   |
-#'    |hs       |integer   |
-#'    |vs       |integer   |
-#'    |epid     |character |
-#'    |oftid    |integer   |
-#'    |ord      |integer   |
-#'    |pts      |integer   |
+#'    |col_name       |types     |
+#'    |:--------------|:---------|
+#'    |game_id        |character |
+#'    |action_number  |integer   |
+#'    |clock          |character |
+#'    |period         |integer   |
+#'    |team_id        |integer   |
+#'    |person_id      |integer   |
+#'    |player_name    |character |
+#'    |x_legacy       |integer   |
+#'    |y_legacy       |integer   |
+#'    |shot_distance  |numeric   |
+#'    |shot_result    |character |
+#'    |is_field_goal  |integer   |
+#'    |score_home     |character |
+#'    |score_away     |character |
+#'    |points_total   |integer   |
+#'    |location       |character |
+#'    |description    |character |
+#'    |action_type    |character |
+#'    |sub_type       |character |
+#'    |video_available|logical   |
+#'    |shot_value     |integer   |
+#'    |action_id      |integer   |
+#'    |away_player1   |numeric   |
+#'    |away_player2   |numeric   |
+#'    |away_player3   |numeric   |
+#'    |away_player4   |numeric   |
+#'    |away_player5   |numeric   |
+#'    |home_player1   |numeric   |
+#'    |home_player2   |numeric   |
+#'    |home_player3   |numeric   |
+#'    |home_player4   |numeric   |
+#'    |home_player5   |numeric   |
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows
@@ -43,46 +56,32 @@ NULL
 #' @family NBA G-League Functions
 #' @details
 #' ```r
-#'  nbagl_pbp(game_id = "2012200001")
+#'  nbagl_pbp(game_id = "2052500034")
 #' ```
 
 nbagl_pbp <- function(
     game_id,
+    on_court = TRUE,
     ...) {
-
-  league_id <- substr(game_id,1,2)
-  season_id <- substr(game_id,4,5)
-  season <- ifelse(substr(season_id, 1, 1) == "9", paste0('19', season_id), paste0('20', season_id))
-  league <- dplyr::case_when(
-    substr(game_id, 1, 2) == '00' ~ 'nba',
-    substr(game_id, 1, 2) == '10' ~ 'wnba',
-    substr(game_id, 1, 2) == '20' ~ 'dleague',
-    TRUE ~ 'NBA'
-  )
-  full_url <- glue::glue("https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json")
-
   plays_df <- data.frame()
 
   tryCatch(
     expr = {
+      plays_df <- nba_pbp(game_id = {{ game_id }}, on_court = on_court)
 
-      res <- httr::RETRY("GET", full_url, ...)
+      if (on_court) {
+        on_court_cols <- c(
+          "away_player1", "away_player2", "away_player3", "away_player4", "away_player5",
+          "home_player1", "home_player2", "home_player3", "home_player4", "home_player5"
+        )
+        missing_cols <- setdiff(on_court_cols, colnames(plays_df))
+        if (length(missing_cols) > 0) {
+          plays_df[missing_cols] <- NA_real_
+        }
+      }
 
-      # Check the result
-      check_status(res)
-
-      resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
-
-
-      data <- jsonlite::fromJSON(resp)$g
-      plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd),flatten=TRUE)
-      plays_df <- purrr::map_df(plays[[1]],function(x){
-        plays_df <- plays[[2]][[x]] %>%
-          dplyr::mutate(period = x) %>%
-          dplyr::select("period", tidyr::everything())
-      }) %>%
-        make_hoopR_data("NBA G-League Play-by-Play Information from NBA.com",Sys.time())
+      plays_df <- plays_df |>
+        make_hoopR_data("NBA G-League Play-by-Play Information from NBA.com", Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -180,22 +179,24 @@ NULL
 #' ```
 nbagl_live_pbp <- function(
     game_id,
-    ...){
-
+    ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  endpoint <- nbagl_live_endpoint('playbyplay')
+  data <- data.frame()
 
-  full_url <- paste0(endpoint,
-                     "/playbyplay_",
-                     pad_id(game_id),
-                     ".json")
+  endpoint <- nbagl_live_endpoint("playbyplay")
+
+  full_url <- paste0(
+    endpoint,
+    "/playbyplay_",
+    pad_id(game_id),
+    ".json"
+  )
 
   tryCatch(
     expr = {
-
-      res <- rvest::session(url = full_url,  httr::timeout(60))
+      res <- rvest::session(url = full_url, httr::timeout(60))
 
       resp <- res$response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
@@ -206,7 +207,7 @@ nbagl_live_pbp <- function(
         purrr::pluck("actions") %>%
         janitor::clean_names()
 
-      data <- data  %>%
+      data <- data %>%
         dplyr::rename(dplyr::any_of(c(
           "period" = "period",
           "event_num" = "action_number",
@@ -225,20 +226,21 @@ nbagl_live_pbp <- function(
           "home_score" = "score_home",
           "away_score" = "score_away",
           "offense_team_id" = "possession",
-          "order" = "order_number"))) %>%
+          "order" = "order_number"
+        ))) %>%
         dplyr::mutate(
           player2_id = dplyr::case_when(
             !is.na(.data$assist_person_id) ~ .data$assist_person_id,
-            TRUE ~ NA_integer_),
+            TRUE ~ NA_integer_
+          ),
           player3_id = dplyr::case_when(
             !is.na(.data$block_person_id) ~ .data$block_person_id,
             !is.na(.data$steal_person_id) ~ .data$steal_person_id,
             !is.na(.data$foul_drawn_person_id) ~ .data$foul_drawn_person_id,
             TRUE ~ NA_integer_
-          )) %>%
+          )
+        ) %>%
         make_hoopR_data("NBA G-League Game Play-by-Play Information from NBA.com", Sys.time())
-
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
@@ -623,23 +625,23 @@ NULL
 #' ```
 nbagl_live_boxscore <- function(
     game_id,
-    ...){
-
+    ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  endpoint <- nbagl_live_endpoint('boxscore')
+  endpoint <- nbagl_live_endpoint("boxscore")
 
-  full_url <- paste0(endpoint,
-                     "/boxscore_",
-                     pad_id(game_id),
-                     ".json")
+  full_url <- paste0(
+    endpoint,
+    "/boxscore_",
+    pad_id(game_id),
+    ".json"
+  )
 
   df_list <- list()
 
   tryCatch(
     expr = {
-
       res <- rvest::session(url = full_url, ..., httr::timeout(60))
 
       resp <- res$response %>%
@@ -680,7 +682,6 @@ nbagl_live_boxscore <- function(
         make_hoopR_data("NBA G-League Game Officials Information from NBA.com", Sys.time())
 
       if ("homeTeam" %in% names(data)) {
-
         home_team <- data %>%
           purrr::pluck("homeTeam")
 
@@ -714,11 +715,9 @@ nbagl_live_boxscore <- function(
           dplyr::bind_cols(home_team_box) %>%
           janitor::clean_names() %>%
           make_hoopR_data("NBA G-League Game Team Boxscore Information from NBA.com", Sys.time())
-
       }
 
       if ("awayTeam" %in% names(data)) {
-
         away_team <- data %>%
           purrr::pluck("awayTeam")
 
@@ -753,7 +752,6 @@ nbagl_live_boxscore <- function(
           dplyr::bind_cols(away_team_box) %>%
           janitor::clean_names() %>%
           make_hoopR_data("NBA Game Team Boxscore Information from NBA.com", Sys.time())
-
       }
 
       colnames(home_team_info) <- paste0("home_", colnames(home_team_info))
@@ -776,7 +774,7 @@ nbagl_live_boxscore <- function(
         list(away_team_linescores)
       )
 
-      names(df_list) = c(
+      names(df_list) <- c(
         "game_details",
         "arena",
         "officials",
@@ -787,7 +785,6 @@ nbagl_live_boxscore <- function(
         "home_team_linescores",
         "away_team_linescores"
       )
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore data for {game_id} available!"))

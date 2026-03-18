@@ -9,9 +9,9 @@ nba_playbyplayv3(game_id, start_period = 0, end_period = 0, ...)
 \arguments{
 \item{game_id}{Game ID - 10-digit zero-padded ID (e.g., '0022201086')}
 
-\item{start_period}{Start period filter - default: 0 (all periods)}
+\item{start_period}{Start period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.}
 
-\item{end_period}{End period filter - default: 0 (all periods)}
+\item{end_period}{End period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
