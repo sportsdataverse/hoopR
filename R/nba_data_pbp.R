@@ -65,7 +65,6 @@ NULL
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select mutate rename case_when
 #' @importFrom tidyr everything
-#' @import furrr
 #' @import rvest
 #' @export
 #' @family NBA PBP Functions
@@ -73,18 +72,23 @@ NULL
 #' ```r
 #'  nba_data_pbp(game_id = "0021900001")
 #' ```
-nba_data_pbp <- function(game_id = "0021900001",
-                         ...) {
+nba_data_pbp <- function(game_id = "0021900001", ...) {
   league_id <- substr(game_id, 1, 2)
   season_id <- substr(game_id, 4, 5)
-  season <- ifelse(substr(season_id, 1, 1) == "9", paste0("19", season_id), paste0("20", season_id))
+  season <- ifelse(
+    substr(season_id, 1, 1) == "9",
+    paste0("19", season_id),
+    paste0("20", season_id)
+  )
   league <- dplyr::case_when(
     substr(game_id, 1, 2) == "00" ~ "nba",
     substr(game_id, 1, 2) == "10" ~ "wnba",
     substr(game_id, 1, 2) == "20" ~ "dleague",
     TRUE ~ "NBA"
   )
-  full_url <- glue::glue("https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json")
+  full_url <- glue::glue(
+    "https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json"
+  )
 
   plays_df <- data.frame()
 
@@ -97,7 +101,6 @@ nba_data_pbp <- function(game_id = "0021900001",
 
       resp <- res %>%
         httr::content(as = "text", encoding = "UTF-8")
-
 
       data <- jsonlite::fromJSON(resp)$g
       plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd), flatten = TRUE)
@@ -143,12 +146,12 @@ nba_data_pbp <- function(game_id = "0021900001",
         make_hoopR_data("NBA Play-by-Play Information from NBA.com", Sys.time())
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
+      message(glue::glue(
+        "{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"
+      ))
     },
-    warning = function(w) {
-    },
-    finally = {
-    }
+    warning = function(w) {},
+    finally = {}
   )
   return(plays_df)
 }
