@@ -6,44 +6,34 @@ test_that("NBA G-League Schedule", {
   x <- nbagl_schedule(season = most_recent_nba_season() - 1)
 
   cols_x1 <- c(
-    "mon",
-    "gid",
-    "gcode",
-    "seri",
-    "is",
-    "gdte",
-    "htm",
-    "vtm",
-    "etm",
-    "an",
-    "ac",
-    "as",
-    "st",
-    "stt",
-    "gdtutc",
-    "utctm",
-    "ppdst",
-    "seq",
-    "bd_b",
-    "v_tid",
-    "v_re",
-    "v_ta",
-    "v_tn",
-    "v_tc",
-    "v_s",
-    "h_tid",
-    "h_re",
-    "h_ta",
-    "h_tn",
-    "h_tc",
-    "h_s",
-    "ptsls_pl"
+    "game_date",
+    "game_id",
+    "game_code",
+    "game_status",
+    "game_status_text",
+    "game_time_est",
+    "game_date_utc",
+    "game_time_utc",
+    "arena_name",
+    "arena_city",
+    "arena_state",
+    "home_team_id",
+    "home_team_name",
+    "home_team_tricode",
+    "home_team_score",
+    "away_team_id",
+    "away_team_name",
+    "away_team_tricode",
+    "away_team_score",
+    "season",
+    "league_id",
+    "season_type_id",
+    "season_type_description"
   )
 
 
   expect_in(sort(cols_x1), sort(colnames(x)))
-  expect_s3_class(x, 'data.frame')
+  expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)
-
 })

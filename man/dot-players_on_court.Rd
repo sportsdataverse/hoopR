@@ -2,7 +2,7 @@
 % Please edit documentation in R/nba_stats_pbp.R
 \name{.players_on_court}
 \alias{.players_on_court}
-\title{\strong{Add players on court in  NBA Stats API play-by-play}}
+\title{\strong{Add players on court in NBA Stats API play-by-play}}
 \description{
-\strong{Add players on court in  NBA Stats API play-by-play}
+\strong{Add players on court in NBA Stats API play-by-play}
 }

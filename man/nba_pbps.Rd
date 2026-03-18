@@ -31,15 +31,20 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    event_type \tab character \cr
    event_action_type \tab character \cr
    period \tab numeric \cr
+   clock \tab character \cr
    minute_game \tab numeric \cr
    time_remaining \tab numeric \cr
    wc_time_string \tab character \cr
    time_quarter \tab character \cr
    minute_remaining_quarter \tab numeric \cr
    seconds_remaining_quarter \tab numeric \cr
+   action_type \tab character \cr
+   sub_type \tab character \cr
    home_description \tab character \cr
    neutral_description \tab character \cr
    visitor_description \tab character \cr
+   description \tab character \cr
+   location \tab character \cr
    score \tab character \cr
    away_score \tab numeric \cr
    home_score \tab numeric \cr
@@ -67,6 +72,13 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    player3_team_abbreviation \tab character \cr
    video_available_flag \tab character \cr
    team_leading \tab character \cr
+   x_legacy \tab integer \cr
+   y_legacy \tab integer \cr
+   shot_distance \tab numeric \cr
+   shot_result \tab character \cr
+   is_field_goal \tab integer \cr
+   points_total \tab integer \cr
+   shot_value \tab integer \cr
    away_player1 \tab numeric \cr
    away_player2 \tab numeric \cr
    away_player3 \tab numeric \cr

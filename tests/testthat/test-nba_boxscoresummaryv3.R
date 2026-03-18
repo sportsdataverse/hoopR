@@ -5,6 +5,10 @@ test_that("NBA Boxscore Summary V3", {
 
     x <- nba_boxscoresummaryv3(game_id = "0022200021")
 
+    if (!is.list(x) || length(x) == 0) {
+        skip("No boxscore summary v3 data returned for this game at test time")
+    }
+
     # GameSummary
     cols_game_summary <- c(
         "game_id",

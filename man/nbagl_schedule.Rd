@@ -4,52 +4,51 @@
 \alias{nbagl_schedule}
 \title{\strong{Get G League Schedule from NBA API}}
 \usage{
-nbagl_schedule(season = most_recent_nba_season() - 1, ...)
+nbagl_schedule(
+  league_id = "20",
+  season = year_to_season(most_recent_nba_season() - 1),
+  ...
+)
 }
 \arguments{
-\item{season}{Season - 4 digit, i.e. 2021}
+\item{league_id}{League - default: '20' (G-League).}
+
+\item{season}{Season - format 2020-21.}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
 Returns a data frame of the G League Season Schedule\tabular{ll}{
    col_name \tab types \cr
-   mon \tab character \cr
-   gid \tab character \cr
-   gcode \tab character \cr
-   seri \tab character \cr
-   is \tab integer \cr
-   gdte \tab character \cr
-   htm \tab character \cr
-   vtm \tab character \cr
-   etm \tab character \cr
-   an \tab character \cr
-   ac \tab character \cr
-   as \tab character \cr
-   st \tab character \cr
-   stt \tab character \cr
-   gdtutc \tab character \cr
-   utctm \tab character \cr
-   ppdst \tab character \cr
-   seq \tab integer \cr
-   bd_b \tab list \cr
-   v_tid \tab integer \cr
-   v_re \tab character \cr
-   v_ta \tab character \cr
-   v_tn \tab character \cr
-   v_tc \tab character \cr
-   v_s \tab character \cr
-   h_tid \tab integer \cr
-   h_re \tab character \cr
-   h_ta \tab character \cr
-   h_tn \tab character \cr
-   h_tc \tab character \cr
-   h_s \tab character \cr
-   ptsls_pl \tab list \cr
+   game_date \tab date \cr
+   game_id \tab character \cr
+   game_code \tab character \cr
+   game_status \tab integer \cr
+   game_status_text \tab character \cr
+   game_sequence \tab integer \cr
+   game_date_est \tab character \cr
+   game_time_est \tab character \cr
+   game_date_utc \tab character \cr
+   game_time_utc \tab character \cr
+   arena_name \tab character \cr
+   arena_state \tab character \cr
+   arena_city \tab character \cr
+   home_team_id \tab character \cr
+   home_team_name \tab character \cr
+   home_team_tricode \tab character \cr
+   home_team_score \tab character \cr
+   away_team_id \tab character \cr
+   away_team_name \tab character \cr
+   away_team_tricode \tab character \cr
+   away_team_score \tab character \cr
+   season \tab character \cr
+   league_id \tab character \cr
+   season_type_id \tab character \cr
+   season_type_description \tab character \cr
 }
 }
 \description{
-Scrapes the NBA Data API for G League Schedule for a Given Season
+Retrieves G-League schedule data via the NBA Stats API schedule endpoint.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_schedule(season = most_recent_nba_season() - 1)

@@ -7,13 +7,15 @@
 nba_pbp(game_id, on_court = TRUE, version = "v3", p = NULL, ...)
 }
 \arguments{
-\item{game_id}{Game ID}
+\item{game_id}{Game ID - 10-digit zero-padded ID (e.g., '0022201086')}
 
-\item{on_court}{IF TRUE will be added ID of players on court}
+\item{on_court}{If TRUE (default), on-court player IDs are added for each play event.
+V3 uses \code{nba_gamerotation()} stint data; V2 infers lineups from substitution events.}
 
-\item{version}{Play-by-play version ("v3" is the default, "v2" available from 2016-17 onwards)}
+\item{version}{Play-by-play version - \code{"v3"} (default) or \code{"v2"}. V3 returns richer data
+with shot coordinates, shot values, and V3 action types. V2 is available from 2016-17 onwards.}
 
-\item{p}{Progress bar}
+\item{p}{Optional progress object from \code{progressr} (default: NULL). Used internally by \code{nba_pbps()}.}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
@@ -25,15 +27,20 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    event_type \tab character \cr
    event_action_type \tab character \cr
    period \tab numeric \cr
+   clock \tab character \cr
    minute_game \tab numeric \cr
    time_remaining \tab numeric \cr
    wc_time_string \tab character \cr
    time_quarter \tab character \cr
    minute_remaining_quarter \tab numeric \cr
    seconds_remaining_quarter \tab numeric \cr
+   action_type \tab character \cr
+   sub_type \tab character \cr
    home_description \tab character \cr
    neutral_description \tab character \cr
    visitor_description \tab character \cr
+   description \tab character \cr
+   location \tab character \cr
    score \tab character \cr
    away_score \tab numeric \cr
    home_score \tab numeric \cr
@@ -61,6 +68,13 @@ Returns a data frame: PlayByPlay\tabular{ll}{
    player3_team_abbreviation \tab character \cr
    video_available_flag \tab character \cr
    team_leading \tab character \cr
+   x_legacy \tab integer \cr
+   y_legacy \tab integer \cr
+   shot_distance \tab numeric \cr
+   shot_result \tab character \cr
+   is_field_goal \tab integer \cr
+   points_total \tab integer \cr
+   shot_value \tab integer \cr
    away_player1 \tab numeric \cr
    away_player2 \tab numeric \cr
    away_player3 \tab numeric \cr

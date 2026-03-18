@@ -4,45 +4,59 @@
 \alias{nbagl_pbp}
 \title{\strong{Get NBA Data API Play-by-Play for G-League Games}}
 \usage{
-nbagl_pbp(game_id, ...)
+nbagl_pbp(game_id, on_court = TRUE, ...)
 }
 \arguments{
 \item{game_id}{Game ID - 10 digits, i.e. 0021900001}
 
+\item{on_court}{If TRUE (default), on-court player IDs are added for each play event.}
+
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame of play by play with the following columns:\tabular{ll}{
+Returns a data frame of play-by-play with core columns:
+When \code{on_court = TRUE}, lineup columns are included and may be \code{NA} when lineup
+inference data is unavailable for a given game.\tabular{ll}{
    col_name \tab types \cr
+   game_id \tab character \cr
+   action_number \tab integer \cr
+   clock \tab character \cr
    period \tab integer \cr
-   evt \tab integer \cr
-   wallclk \tab character \cr
-   cl \tab character \cr
-   de \tab character \cr
-   locX \tab integer \cr
-   locY \tab integer \cr
-   opt1 \tab integer \cr
-   opt2 \tab integer \cr
-   opt3 \tab integer \cr
-   opt4 \tab integer \cr
-   mtype \tab integer \cr
-   etype \tab integer \cr
-   opid \tab character \cr
-   tid \tab integer \cr
-   pid \tab integer \cr
-   hs \tab integer \cr
-   vs \tab integer \cr
-   epid \tab character \cr
-   oftid \tab integer \cr
-   ord \tab integer \cr
-   pts \tab integer \cr
+   team_id \tab integer \cr
+   person_id \tab integer \cr
+   player_name \tab character \cr
+   x_legacy \tab integer \cr
+   y_legacy \tab integer \cr
+   shot_distance \tab numeric \cr
+   shot_result \tab character \cr
+   is_field_goal \tab integer \cr
+   score_home \tab character \cr
+   score_away \tab character \cr
+   points_total \tab integer \cr
+   location \tab character \cr
+   description \tab character \cr
+   action_type \tab character \cr
+   sub_type \tab character \cr
+   video_available \tab logical \cr
+   shot_value \tab integer \cr
+   action_id \tab integer \cr
+   away_player1 \tab numeric \cr
+   away_player2 \tab numeric \cr
+   away_player3 \tab numeric \cr
+   away_player4 \tab numeric \cr
+   away_player5 \tab numeric \cr
+   home_player1 \tab numeric \cr
+   home_player2 \tab numeric \cr
+   home_player3 \tab numeric \cr
+   home_player4 \tab numeric \cr
+   home_player5 \tab numeric \cr
 }
 }
 \description{
-Scrapes the NBA Data API for Play By Play for G League games
+Retrieves G-League play-by-play using the NBA Stats play-by-play pipeline.
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_pbp(game_id = "2012200001")
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_pbp(game_id = "2052500034")
 }\if{html}{\out{</div>}}
 }
 \seealso{

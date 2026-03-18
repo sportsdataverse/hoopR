@@ -4,43 +4,86 @@
 \alias{nbagl_players}
 \title{\strong{Get G League Player Data Base from NBA API}}
 \usage{
-nbagl_players(...)
+nbagl_players(
+  college = "",
+  country = "",
+  draft_pick = "",
+  draft_round = "",
+  draft_year = "",
+  height = "",
+  historical = 1,
+  league_id = "20",
+  player_position = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  team_id = "0",
+  weight = "",
+  active = "",
+  all_star = "",
+  ...
+)
 }
 \arguments{
+\item{college}{College filter.}
+
+\item{country}{Country filter.}
+
+\item{draft_pick}{Draft pick filter.}
+
+\item{draft_round}{Draft round filter.}
+
+\item{draft_year}{Draft year filter.}
+
+\item{height}{Height filter.}
+
+\item{historical}{Historical flag.}
+
+\item{league_id}{League - default: '20' (G-League).}
+
+\item{player_position}{Player position filter.}
+
+\item{season}{Season - format 2020-21.}
+
+\item{season_type}{Season Type - Regular Season, Playoffs, All-Star.}
+
+\item{team_id}{Team ID filter.}
+
+\item{weight}{Weight filter.}
+
+\item{active}{Active status filter.}
+
+\item{all_star}{All-Star filter.}
+
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame of G League Players from NBA Database\tabular{ll}{
+Returns a named list of data frames: PlayerIndex
+
+\strong{PlayerIndex}\tabular{ll}{
    col_name \tab types \cr
-   nba-affiliation \tab character \cr
-   season \tab integer \cr
-   permalink \tab character \cr
-   tid \tab integer \cr
-   fn \tab character \cr
-   ln \tab character \cr
-   pid \tab integer \cr
-   num \tab character \cr
-   pos \tab character \cr
-   dob \tab character \cr
-   ht \tab character \cr
-   wt \tab integer \cr
-   y \tab integer \cr
-   sn \tab character \cr
-   ty \tab character \cr
-   co \tab character \cr
-   la \tab character \cr
-   dy \tab character \cr
-   pc \tab character \cr
-   fa \tab character \cr
-   s \tab character \cr
-   twc \tab character \cr
-   ta \tab character \cr
-   tn \tab character \cr
-   tc \tab character \cr
+   PERSON_ID \tab character \cr
+   PLAYER_LAST_NAME \tab character \cr
+   PLAYER_FIRST_NAME \tab character \cr
+   PLAYER_SLUG \tab character \cr
+   TEAM_ID \tab character \cr
+   TEAM_SLUG \tab character \cr
+   TEAM_CITY \tab character \cr
+   TEAM_NAME \tab character \cr
+   TEAM_ABBREVIATION \tab character \cr
+   JERSEY_NUMBER \tab character \cr
+   POSITION \tab character \cr
+   HEIGHT \tab character \cr
+   WEIGHT \tab character \cr
+   COLLEGE \tab character \cr
+   COUNTRY \tab character \cr
+   DRAFT_YEAR \tab character \cr
+   DRAFT_ROUND \tab character \cr
+   DRAFT_NUMBER \tab character \cr
+   ROSTER_STATUS \tab character \cr
 }
 }
 \description{
-Scrapes the NBA Data API for All Players in G League History
+Retrieves G-League player index data via the NBA Stats API player index endpoint.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_players()

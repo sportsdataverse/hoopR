@@ -4,41 +4,58 @@
 \alias{nbagl_standings}
 \title{\strong{Get Current G League Standings from NBA API}}
 \usage{
-nbagl_standings(season = most_recent_nba_season() - 1, ...)
+nbagl_standings(
+  league_id = "20",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  season_year = "",
+  ...
+)
 }
 \arguments{
-\item{season}{Season - 4 digit, i.e. 2021}
+\item{league_id}{League - default: '20' (G-League).}
+
+\item{season}{Season - format 2020-21.}
+
+\item{season_type}{Season Type - Regular Season, Playoffs, All-Star.}
+
+\item{season_year}{Season year filter (optional).}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a tibble of the G League Season Standings\tabular{ll}{
+Returns a named list of data frames: Standings
+
+\strong{Standings}\tabular{ll}{
    col_name \tab types \cr
-   val \tab character \cr
-   di_val \tab character \cr
-   tid \tab integer \cr
-   see \tab integer \cr
-   cli \tab integer \cr
-   clid \tab integer \cr
-   clic \tab integer \cr
-   elim \tab integer \cr
-   str \tab character \cr
-   l10 \tab character \cr
-   dr \tab character \cr
-   cr \tab character \cr
-   l \tab integer \cr
-   w \tab integer \cr
-   hr \tab character \cr
-   ar \tab character \cr
-   gb \tab numeric \cr
-   gbd \tab numeric \cr
-   ta \tab character \cr
-   tn \tab character \cr
-   tc \tab character \cr
+   LeagueID \tab character \cr
+   SeasonID \tab character \cr
+   TeamID \tab character \cr
+   TeamCity \tab character \cr
+   TeamName \tab character \cr
+   TeamSlug \tab character \cr
+   Conference \tab character \cr
+   ConferenceRecord \tab character \cr
+   PlayoffRank \tab character \cr
+   Division \tab character \cr
+   WINS \tab character \cr
+   LOSSES \tab character \cr
+   WinPCT \tab character \cr
+   LeagueRank \tab character \cr
+   Record \tab character \cr
+   HOME \tab character \cr
+   ROAD \tab character \cr
+   CurrentStreak \tab character \cr
+   strCurrentStreak \tab character \cr
+   ConferenceGamesBack \tab character \cr
+   DivisionGamesBack \tab character \cr
+   LeagueGamesBack \tab character \cr
+   ClinchedPostSeason \tab character \cr
+   NEUTRAL \tab character \cr
 }
 }
 \description{
-Scrapes the NBA Data API for G League Standings
+Retrieves G-League standings via the NBA Stats API standings endpoint.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_standings(season = most_recent_nba_season() - 1)

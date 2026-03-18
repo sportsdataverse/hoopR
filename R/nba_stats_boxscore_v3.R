@@ -2468,6 +2468,12 @@ nba_boxscorematchupsv3 <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Hustle V2**
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' NBA Stats no longer returns stable data for this V2 endpoint.
+#' This function is deprecated and now errors when called.
+#' Use `nba_hustlestatsboxscore()` instead.
 #' @rdname nba_boxscorehustlev2
 #' @author Saiem Gilani
 #' @param game_id Game ID
@@ -2627,6 +2633,12 @@ NULL
 nba_boxscorehustlev2 <- function(
     game_id = "0022200021",
     ...) {
+  lifecycle::deprecate_stop(
+    when = "3.0.0",
+    what = "nba_boxscorehustlev2()",
+    with = "nba_hustlestatsboxscore()"
+  )
+
   version <- "boxscorehustlev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -3070,7 +3082,7 @@ nba_gamerotation <- function(
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x) {
+      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x) {
         data <- resp$resultSets$rowSet[[x]] %>%
           data.frame(stringsAsFactors = F) %>%
           as_tibble()
@@ -3283,6 +3295,8 @@ nba_boxscoresummaryv3 <- function(
     GameID = pad_id(game_id)
   )
 
+  data <- list()
+
   tryCatch(
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
@@ -3367,9 +3381,16 @@ nba_boxscoresummaryv3 <- function(
       line_score_rows <- list()
       for (team_key in c("homeTeam", "awayTeam")) {
         team <- summary_data[[team_key]] %||% list()
-        periods <- team$periods %||% list()
+        periods <- team$periods %||% data.frame(stringsAsFactors = FALSE)
         period_scores <- c(NA_integer_, NA_integer_, NA_integer_, NA_integer_)
-        if (length(periods) > 0) {
+        if (is.data.frame(periods) && nrow(periods) > 0) {
+          for (i in seq_len(nrow(periods))) {
+            pnum <- periods$period[[i]] %||% 0
+            if (pnum >= 1 && pnum <= 4) {
+              period_scores[pnum] <- periods$score[[i]] %||% NA_integer_
+            }
+          }
+        } else if (is.list(periods) && length(periods) > 0) {
           for (p in periods) {
             pnum <- p$period %||% 0
             if (pnum >= 1 && pnum <= 4) {
@@ -3386,10 +3407,10 @@ nba_boxscoresummaryv3 <- function(
           teamSlug = team$teamSlug %||% NA_character_,
           teamWins = team$teamWins %||% NA_integer_,
           teamLosses = team$teamLosses %||% NA_integer_,
-          period1Score = period_scores[1],
-          period2Score = period_scores[2],
-          period3Score = period_scores[3],
-          period4Score = period_scores[4],
+          period1_score = period_scores[1],
+          period2_score = period_scores[2],
+          period3_score = period_scores[3],
+          period4_score = period_scores[4],
           score = team$score %||% NA_integer_,
           stringsAsFactors = FALSE
         )
@@ -3404,8 +3425,21 @@ nba_boxscoresummaryv3 <- function(
       for (team_key in c("homeTeam", "awayTeam")) {
         team <- summary_data[[team_key]] %||% list()
         team_id <- team$teamId %||% NA_integer_
-        inactives <- team$inactives %||% list()
-        if (length(inactives) > 0) {
+        inactives <- team$inactives %||% data.frame(stringsAsFactors = FALSE)
+
+        if (is.data.frame(inactives) && nrow(inactives) > 0) {
+          inactive_df <- data.frame(
+            gameId = game_id_val,
+            teamId = team_id,
+            personId = inactives$personId %||% rep(NA_integer_, nrow(inactives)),
+            firstName = inactives$firstName %||% rep(NA_character_, nrow(inactives)),
+            familyName = inactives$familyName %||% rep(NA_character_, nrow(inactives)),
+            jerseyNum = inactives$jerseyNum %||% rep(NA_character_, nrow(inactives)),
+            stringsAsFactors = FALSE
+          )
+
+          inactive_rows[[length(inactive_rows) + 1]] <- inactive_df
+        } else if (is.list(inactives) && length(inactives) > 0) {
           for (inactive in inactives) {
             inactive_rows[[length(inactive_rows) + 1]] <- data.frame(
               gameId = game_id_val,
@@ -3437,36 +3471,35 @@ nba_boxscoresummaryv3 <- function(
       }
 
       # LastFiveMeetings
-      meetings <- summary_data$lastFiveMeetings$meetings %||% list()
-      if (length(meetings) > 0) {
-        meeting_rows <- lapply(meetings, function(meeting) {
-          away <- meeting$awayTeam %||% list()
-          home <- meeting$homeTeam %||% list()
-          data.frame(
-            recencyOrder = meeting$recencyOrder %||% NA_integer_,
-            gameId = meeting$gameId %||% NA_character_,
-            gameTimeUTC = meeting$gameTimeUTC %||% NA_character_,
-            gameEt = meeting$gameEt %||% NA_character_,
-            gameStatus = meeting$gameStatus %||% NA_integer_,
-            gameStatusText = meeting$gameStatusText %||% NA_character_,
-            awayTeamId = away$teamId %||% NA_integer_,
-            awayTeamCity = away$teamCity %||% NA_character_,
-            awayTeamName = away$teamName %||% NA_character_,
-            awayTeamTricode = away$teamTricode %||% NA_character_,
-            awayTeamScore = away$score %||% NA_integer_,
-            awayTeamWins = away$wins %||% NA_integer_,
-            awayTeamLosses = away$losses %||% NA_integer_,
-            homeTeamId = home$teamId %||% NA_integer_,
-            homeTeamCity = home$teamCity %||% NA_character_,
-            homeTeamName = home$teamName %||% NA_character_,
-            homeTeamTricode = home$teamTricode %||% NA_character_,
-            homeTeamScore = home$score %||% NA_integer_,
-            homeTeamWins = home$wins %||% NA_integer_,
-            homeTeamLosses = home$losses %||% NA_integer_,
-            stringsAsFactors = FALSE
-          )
-        })
-        last_five_meetings <- dplyr::bind_rows(meeting_rows) %>%
+      meetings <- summary_data$lastFiveMeetings$meetings %||% data.frame(stringsAsFactors = FALSE)
+      if (is.data.frame(meetings) && nrow(meetings) > 0) {
+        away <- meetings$awayTeam %||% data.frame(stringsAsFactors = FALSE)
+        home <- meetings$homeTeam %||% data.frame(stringsAsFactors = FALSE)
+        n_meetings <- nrow(meetings)
+
+        last_five_meetings <- data.frame(
+          recencyOrder = meetings$recencyOrder %||% rep(NA_integer_, n_meetings),
+          gameId = meetings$gameId %||% rep(NA_character_, n_meetings),
+          gameTimeUTC = meetings$gameTimeUTC %||% rep(NA_character_, n_meetings),
+          gameEt = meetings$gameEt %||% rep(NA_character_, n_meetings),
+          gameStatus = meetings$gameStatus %||% rep(NA_integer_, n_meetings),
+          gameStatusText = meetings$gameStatusText %||% rep(NA_character_, n_meetings),
+          awayTeamId = away$teamId %||% rep(NA_integer_, n_meetings),
+          awayTeamCity = away$teamCity %||% rep(NA_character_, n_meetings),
+          awayTeamName = away$teamName %||% rep(NA_character_, n_meetings),
+          awayTeamTricode = away$teamTricode %||% rep(NA_character_, n_meetings),
+          awayTeamScore = away$score %||% rep(NA_integer_, n_meetings),
+          awayTeamWins = away$wins %||% rep(NA_integer_, n_meetings),
+          awayTeamLosses = away$losses %||% rep(NA_integer_, n_meetings),
+          homeTeamId = home$teamId %||% rep(NA_integer_, n_meetings),
+          homeTeamCity = home$teamCity %||% rep(NA_character_, n_meetings),
+          homeTeamName = home$teamName %||% rep(NA_character_, n_meetings),
+          homeTeamTricode = home$teamTricode %||% rep(NA_character_, n_meetings),
+          homeTeamScore = home$score %||% rep(NA_integer_, n_meetings),
+          homeTeamWins = home$wins %||% rep(NA_integer_, n_meetings),
+          homeTeamLosses = home$losses %||% rep(NA_integer_, n_meetings),
+          stringsAsFactors = FALSE
+        ) %>%
           dplyr::as_tibble() %>%
           janitor::clean_names() %>%
           make_hoopR_data("NBA Last Five Meetings from NBA.com", Sys.time())

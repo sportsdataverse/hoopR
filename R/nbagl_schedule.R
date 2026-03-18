@@ -2,47 +2,41 @@
 #' @name nbagl_schedule
 NULL
 #' @title **Get G League Schedule from NBA API**
-#' @description Scrapes the NBA Data API for G League Schedule for a Given Season
+#' @description Retrieves G-League schedule data via the NBA Stats API schedule endpoint.
 #' @rdname nbagl_schedule
 #' @author Billy Fryer
-#' @param season Season - 4 digit, i.e. 2021
+#' @param league_id League - default: '20' (G-League).
+#' @param season Season - format 2020-21.
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of the G League Season Schedule
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |mon      |character |
-#'    |gid      |character |
-#'    |gcode    |character |
-#'    |seri     |character |
-#'    |is       |integer   |
-#'    |gdte     |character |
-#'    |htm      |character |
-#'    |vtm      |character |
-#'    |etm      |character |
-#'    |an       |character |
-#'    |ac       |character |
-#'    |as       |character |
-#'    |st       |character |
-#'    |stt      |character |
-#'    |gdtutc   |character |
-#'    |utctm    |character |
-#'    |ppdst    |character |
-#'    |seq      |integer   |
-#'    |bd_b     |list      |
-#'    |v_tid    |integer   |
-#'    |v_re     |character |
-#'    |v_ta     |character |
-#'    |v_tn     |character |
-#'    |v_tc     |character |
-#'    |v_s      |character |
-#'    |h_tid    |integer   |
-#'    |h_re     |character |
-#'    |h_ta     |character |
-#'    |h_tn     |character |
-#'    |h_tc     |character |
-#'    |h_s      |character |
-#'    |ptsls_pl |list      |
+#'    |col_name                |types     |
+#'    |:-----------------------|:---------|
+#'    |game_date               |date      |
+#'    |game_id                 |character |
+#'    |game_code               |character |
+#'    |game_status             |integer   |
+#'    |game_status_text        |character |
+#'    |game_sequence           |integer   |
+#'    |game_date_est           |character |
+#'    |game_time_est           |character |
+#'    |game_date_utc           |character |
+#'    |game_time_utc           |character |
+#'    |arena_name              |character |
+#'    |arena_state             |character |
+#'    |arena_city              |character |
+#'    |home_team_id            |character |
+#'    |home_team_name          |character |
+#'    |home_team_tricode       |character |
+#'    |home_team_score         |character |
+#'    |away_team_id            |character |
+#'    |away_team_name          |character |
+#'    |away_team_tricode       |character |
+#'    |away_team_score         |character |
+#'    |season                  |character |
+#'    |league_id               |character |
+#'    |season_type_id          |character |
+#'    |season_type_description |character |
 #'
 #' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
@@ -56,39 +50,78 @@ NULL
 #' ```
 
 nbagl_schedule <- function(
-    season = most_recent_nba_season() - 1,
+    league_id = "20",
+    season = year_to_season(most_recent_nba_season() - 1),
     ...) {
-  # From This Line to My next comment, basically everything is
-  # Copied from hoopR except the url and the table name
-  full_url <- glue::glue("https://data.nba.com/data/10s/v2015/json/mobile_teams/dleague/{season}/league/20_full_schedule.json")
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+
+  games <- dplyr::tibble()
+
+  version <- "scheduleleaguev2"
+  full_url <- nba_endpoint(version)
+
+  params <- list(
+    LeagueID = league_id,
+    Season = season
+  )
+
   tryCatch(
     expr = {
+      resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      res <- httr::RETRY("GET", full_url, ...)
-
-      resp <- res$content %>%
-        rawToChar() %>%
-        jsonlite::fromJSON(simplifyVector = T)
-
-      schedule_df <- resp$lscd$mscd %>%
-        jsonlite::toJSON() %>%
-        jsonlite::fromJSON(flatten=TRUE) %>%
-        tidyr::unnest("g") %>%
-        janitor::clean_names() %>%
-        dplyr::arrange(.data$gdte) %>%
-        make_hoopR_data("NBA G-League Season Schedule Information from NBA.com",Sys.time())
+      league_sched <- resp %>%
+        purrr::pluck("leagueSchedule")
+      games <- league_sched %>%
+        purrr::pluck("gameDates") %>%
+        tidyr::unnest("games") %>%
+        dplyr::select(-dplyr::any_of(c("broadcasters", "pointsLeaders"))) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("homeTeam") %>%
+            dplyr::rename_with(~ paste0("home_team_", .x))
+        ) %>%
+        dplyr::bind_cols(
+          league_sched %>%
+            purrr::pluck("gameDates") %>%
+            tidyr::unnest("games") %>%
+            purrr::pluck("awayTeam") %>%
+            dplyr::rename_with(~ paste0("away_team_", .x))
+        ) %>%
+        dplyr::select(-"homeTeam", -"awayTeam") %>%
+        janitor::clean_names()
+      colnames(games) <- gsub("team_team", "team", colnames(games))
+      games$game_id <- unlist(purrr::map(games$game_id, function(x) {
+        pad_id(x)
+      }))
+      games$season <- league_sched$seasonYear
+      games$league_id <- league_sched$leagueId
+      games <- games %>%
+        dplyr::mutate(
+          season_type_id = substr(.data$game_id, 3, 3),
+          season_type_description = dplyr::case_when(
+            .data$season_type_id == 1 ~ "Pre-Season",
+            .data$season_type_id == 2 ~ "Regular Season",
+            .data$season_type_id == 3 ~ "All-Star",
+            .data$season_type_id == 4 ~ "Playoffs",
+            .data$season_type_id == 5 ~ "Play-In Game"
+          ),
+          game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
+        )
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no season schedule data for {season} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no league schedule data for {season} available!"))
     },
     warning = function(w) {
     },
     finally = {
     }
   )
-
-  return(schedule_df)
+  return(games)
 }
+
 
 # Example JSON Link:
 # https://data.nba.com/data/10s/v2015/json/mobile_teams/dleague/2021/league/20_full_schedule.json
