@@ -71,22 +71,31 @@ NULL
 #'    |coordinate_y                    |integer   |
 #'    |media_id                        |character |
 #'
-#' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
 #' \donttest{
 #' load_mbb_pbp(seasons = most_recent_mbb_season())
 #' }
-load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
-                         dbConnection = NULL, tablename = NULL) {
+load_mbb_pbp <- function(
+  seasons = most_recent_mbb_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
-  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    in_db <- TRUE
+  } else {
+    in_db <- FALSE
+  }
 
-  if (isTRUE(seasons)) seasons <- 2006:most_recent_mbb_season()
+  if (isTRUE(seasons)) {
+    seasons <- 2006:most_recent_mbb_season()
+  }
 
   stopifnot(
     is.numeric(seasons),
@@ -94,10 +103,16 @@ load_mbb_pbp <- function(seasons = most_recent_mbb_season(), ...,
     seasons <= most_recent_mbb_season()
   )
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_", seasons, ".rds")
+  urls <- paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_",
+    seasons,
+    ".rds"
+  )
 
   p <- NULL
-  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+  if (is_installed("progressr")) {
+    p <- progressr::progressor(along = seasons)
+  }
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
@@ -168,21 +183,30 @@ NULL
 #'    |season_type                                                    |integer   |
 #'    |game_date                                                      |Date      |
 #'
-#' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
 #' load_mbb_team_box(seasons = most_recent_mbb_season())
 #' }
-load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
-                              dbConnection = NULL, tablename = NULL) {
+load_mbb_team_box <- function(
+  seasons = most_recent_mbb_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
 
-  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
-  if (isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    in_db <- TRUE
+  } else {
+    in_db <- FALSE
+  }
+  if (isTRUE(seasons)) {
+    seasons <- 2003:most_recent_mbb_season()
+  }
 
   stopifnot(
     is.numeric(seasons),
@@ -190,10 +214,16 @@ load_mbb_team_box <- function(seasons = most_recent_mbb_season(), ...,
     seasons <= most_recent_mbb_season()
   )
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_", seasons, ".rds")
+  urls <- paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_",
+    seasons,
+    ".rds"
+  )
 
   p <- NULL
-  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+  if (is_installed("progressr")) {
+    p <- progressr::progressor(along = seasons)
+  }
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
@@ -280,21 +310,30 @@ NULL
 #'    |opponent_team_alternate_color     |character |
 #'    |opponent_team_score               |integer   |
 #'
-#' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
 #' load_mbb_player_box(seasons = most_recent_mbb_season())
 #' }
-load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
-                                dbConnection = NULL, tablename = NULL) {
+load_mbb_player_box <- function(
+  seasons = most_recent_mbb_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   dots <- rlang::dots_list(...)
   loader <- rds_from_url
 
-  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
-  if (isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    in_db <- TRUE
+  } else {
+    in_db <- FALSE
+  }
+  if (isTRUE(seasons)) {
+    seasons <- 2003:most_recent_mbb_season()
+  }
 
   stopifnot(
     is.numeric(seasons),
@@ -302,10 +341,16 @@ load_mbb_player_box <- function(seasons = most_recent_mbb_season(), ...,
     seasons <= most_recent_mbb_season()
   )
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_", seasons, ".rds")
+  urls <- paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_",
+    seasons,
+    ".rds"
+  )
 
   p <- NULL
-  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+  if (is_installed("progressr")) {
+    p <- progressr::progressor(along = seasons)
+  }
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
@@ -410,22 +455,31 @@ NULL
 #'    |team_box                  |logical   |
 #'    |player_box                |logical   |
 #'
-#' @import furrr
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
 #' load_mbb_schedule(seasons = most_recent_mbb_season())
 #' }
-load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
-                              dbConnection = NULL, tablename = NULL) {
+load_mbb_schedule <- function(
+  seasons = most_recent_mbb_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
 
-  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+  if (!is.null(dbConnection) && !is.null(tablename)) {
+    in_db <- TRUE
+  } else {
+    in_db <- FALSE
+  }
+  if (isTRUE(seasons)) {
+    seasons <- 2002:most_recent_mbb_season()
+  }
 
   stopifnot(
     is.numeric(seasons),
@@ -433,10 +487,16 @@ load_mbb_schedule <- function(seasons = most_recent_mbb_season(), ...,
     seasons <= most_recent_mbb_season()
   )
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_", seasons, ".rds")
+  urls <- paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_",
+    seasons,
+    ".rds"
+  )
 
   p <- NULL
-  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+  if (is_installed("progressr")) {
+    p <- progressr::progressor(along = seasons)
+  }
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
@@ -501,38 +561,53 @@ NULL
 #' @param db_connection A `DBIConnection` object, as returned by
 #' [DBI::dbConnect()] (please see details for further information)
 #' @return Returns a logical value (TRUE/FALSE)
-#' @import furrr
 #' @export
 #' @family hoopR Database Functions
-update_mbb_db <- function(dbdir = ".",
-                          dbname = "hoopR_db",
-                          tblname = "hoopR_mbb_pbp",
-                          force_rebuild = FALSE,
-                          db_connection = NULL) {
+update_mbb_db <- function(
+  dbdir = ".",
+  dbname = "hoopR_db",
+  tblname = "hoopR_mbb_pbp",
+  force_rebuild = FALSE,
+  db_connection = NULL
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   # rule_header("Update hoopR Play-by-Play Database")
 
-  if (!is_installed("DBI") | !is_installed("purrr") |
-    (!is_installed("RSQLite") & is.null(db_connection))) {
-    usethis::ui_stop("{my_time()} | Packages {usethis::ui_value('DBI')}, {usethis::ui_value('RSQLite')} and {usethis::ui_value('purrr')} required for database communication. Please install them.")
+  if (
+    !is_installed("DBI") |
+      !is_installed("purrr") |
+      (!is_installed("RSQLite") & is.null(db_connection))
+  ) {
+    usethis::ui_stop(
+      "{my_time()} | Packages {usethis::ui_value('DBI')}, {usethis::ui_value('RSQLite')} and {usethis::ui_value('purrr')} required for database communication. Please install them."
+    )
   }
 
   if (any(force_rebuild == "NEW")) {
-    usethis::ui_stop("{my_time()} | The argument {usethis::ui_value('force_rebuild = NEW')} is only for internal usage!")
+    usethis::ui_stop(
+      "{my_time()} | The argument {usethis::ui_value('force_rebuild = NEW')} is only for internal usage!"
+    )
   }
 
   if (!(is.logical(force_rebuild) | is.numeric(force_rebuild))) {
-    usethis::ui_stop("{my_time()} | The argument {usethis::ui_value('force_rebuild')} has to be either logical or numeric!")
+    usethis::ui_stop(
+      "{my_time()} | The argument {usethis::ui_value('force_rebuild')} has to be either logical or numeric!"
+    )
   }
 
   if (!dir.exists(dbdir) & is.null(db_connection)) {
-    usethis::ui_oops("{my_time()} | Directory {usethis::ui_path(dbdir)} doesn't exist yet. Try creating...")
+    usethis::ui_oops(
+      "{my_time()} | Directory {usethis::ui_path(dbdir)} doesn't exist yet. Try creating..."
+    )
     dir.create(dbdir)
   }
 
   if (is.null(db_connection)) {
-    connection <- DBI::dbConnect(RSQLite::SQLite(), glue::glue("{dbdir}/{dbname}"))
+    connection <- DBI::dbConnect(
+      RSQLite::SQLite(),
+      glue::glue("{dbdir}/{dbname}")
+    )
   } else {
     connection <- db_connection
   }
@@ -540,7 +615,9 @@ update_mbb_db <- function(dbdir = ".",
   # create db if it doesn't exist or user forces rebuild
   if (!DBI::dbExistsTable(connection, tblname)) {
     build_mbb_db(tblname, connection, rebuild = "NEW")
-  } else if (DBI::dbExistsTable(connection, tblname) & all(force_rebuild != FALSE)) {
+  } else if (
+    DBI::dbExistsTable(connection, tblname) & all(force_rebuild != FALSE)
+  ) {
     build_mbb_db(tblname, connection, rebuild = force_rebuild)
   }
 
@@ -554,9 +631,15 @@ update_mbb_db <- function(dbdir = ".",
   missing <- get_missing_mbb_games(completed_games, connection, tblname)
 
   # rebuild db if number of missing games is too large
-  if (length(missing) > 16) { # limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
+  if (length(missing) > 16) {
+    # limit set to >16 to make sure this doesn't get triggered on gameday (e.g. week 17)
     # message("The number of missing games is so large that rebuilding the database is more efficient.")
-    build_mbb_db(tblname, connection, show_message = FALSE, rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4))))
+    build_mbb_db(
+      tblname,
+      connection,
+      show_message = FALSE,
+      rebuild = as.numeric(unique(stringr::str_sub(missing, 1, 4)))
+    )
     missing <- get_missing_mbb_games(completed_games, connection, tblname)
   }
 
@@ -573,13 +656,20 @@ update_mbb_db <- function(dbdir = ".",
   # }
 
   message_completed("Database update completed", in_builder = TRUE)
-  usethis::ui_info("{my_time()} | Path to your db: {usethis::ui_path(DBI::dbGetInfo(connection)$dbname)}")
+  usethis::ui_info(
+    "{my_time()} | Path to your db: {usethis::ui_path(DBI::dbGetInfo(connection)$dbname)}"
+  )
   if (is.null(db_connection)) DBI::dbDisconnect(connection)
   # rule_footer("DONE")
 }
 
 # this is a helper function to build hoopR database from Scratch
-build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
+build_mbb_db <- function(
+  tblname = "hoopR_mbb_pbp",
+  db_conn,
+  rebuild = FALSE,
+  show_message = TRUE
+) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   valid_seasons <- load_mbb_games() %>%
@@ -589,27 +679,48 @@ build_mbb_db <- function(tblname = "hoopR_mbb_pbp", db_conn, rebuild = FALSE, sh
     dplyr::ungroup()
 
   if (all(rebuild == TRUE)) {
-    usethis::ui_todo("{my_time()} | Purging the complete data table {usethis::ui_value(tblname)} in your connected database...")
+    usethis::ui_todo(
+      "{my_time()} | Purging the complete data table {usethis::ui_value(tblname)} in your connected database..."
+    )
     DBI::dbRemoveTable(db_conn, tblname)
     seasons <- valid_seasons %>% dplyr::pull("season")
-    usethis::ui_todo("{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}...")
+    usethis::ui_todo(
+      "{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}..."
+    )
   } else if (is.numeric(rebuild) & all(rebuild %in% valid_seasons$season)) {
     string <- paste0(rebuild, collapse = ", ")
     if (show_message) {
-      usethis::ui_todo("{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database...")
+      usethis::ui_todo(
+        "{my_time()} | Purging {string} season(s) from the data table {usethis::ui_value(tblname)} in your connected database..."
+      )
     }
-    DBI::dbExecute(db_conn, glue::glue_sql("DELETE FROM {`tblname`} WHERE season IN ({vals*})", vals = rebuild, .con = db_conn))
+    DBI::dbExecute(
+      db_conn,
+      glue::glue_sql(
+        "DELETE FROM {`tblname`} WHERE season IN ({vals*})",
+        vals = rebuild,
+        .con = db_conn
+      )
+    )
     seasons <- valid_seasons %>%
       dplyr::filter(.data$season %in% rebuild) %>%
       dplyr::pull("season")
-    usethis::ui_todo("{my_time()} | Starting download of the {string} season(s)...")
+    usethis::ui_todo(
+      "{my_time()} | Starting download of the {string} season(s)..."
+    )
   } else if (all(rebuild == "NEW")) {
-    usethis::ui_info("{my_time()} | Can't find the data table {usethis::ui_value(tblname)} in your database. Will load the play by play data from scratch.")
+    usethis::ui_info(
+      "{my_time()} | Can't find the data table {usethis::ui_value(tblname)} in your database. Will load the play by play data from scratch."
+    )
     seasons <- valid_seasons %>% dplyr::pull("season")
-    usethis::ui_todo("{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}...")
+    usethis::ui_todo(
+      "{my_time()} | Starting download of {length(seasons)} seasons between {min(seasons)} and {max(seasons)}..."
+    )
   } else {
     seasons <- NULL
-    usethis::ui_oops("{my_time()} | At least one invalid value passed to argument {usethis::ui_code('force_rebuild')}. Please try again with valid input.")
+    usethis::ui_oops(
+      "{my_time()} | At least one invalid value passed to argument {usethis::ui_code('force_rebuild')}. Please try again with valid input."
+    )
   }
 
   if (!is.null(seasons)) {
@@ -629,6 +740,8 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
 
   need_scrape <- completed_games[!completed_games %in% db_ids]
 
-  usethis::ui_info("{my_time()} | You have {length(db_ids)} games and are missing {length(need_scrape)}.")
+  usethis::ui_info(
+    "{my_time()} | You have {length(db_ids)} games and are missing {length(need_scrape)}."
+  )
   return(need_scrape)
 }
