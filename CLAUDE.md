@@ -34,6 +34,12 @@ hoopR is an R package providing clean, tidy men's basketball play-by-play and bo
 - **License**: MIT
 - **Branch**: `devel` for active development, `main` for releases
 
+## Branching & PR Workflow
+
+- Create feature branches from `devel` for development work.
+- Target `devel` for normal development PRs; reserve `main` for release snapshots.
+- Keep code, tests, and roxygen/docs updates in the same PR when changing exported behavior.
+
 ## Build & Development Commands
 
 ```r
@@ -151,6 +157,8 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 }
 ```
 
+For deprecated functions, add lifecycle documentation and a clear replacement path in `@description`, then enforce at runtime with `lifecycle::deprecate_stop()`.
+
 ### Data Processing Pipeline
 
 ```r
@@ -173,6 +181,7 @@ raw_data %>%
 - V3 substitutions: `actionType="Substitution"`, `personId`=outgoing player, description contains "SUB: IncomingPlayer FOR OutgoingPlayer".
 - V3 clock format: ISO 8601 duration `"PT10M30.00S"` (not `"MM:SS"`). Parsed with base R `regexec()`/`regmatches()`.
 - V3 on-court players: `.players_on_court_v3()` uses `nba_gamerotation()` stint data with interval mapping via `findInterval()` (not substitution-event parsing like V2).
+- NBAGL wrappers now use NBA Stats-backed sources for several endpoints. `nbagl_players()` and `nbagl_standings()` return named lists of data frames (not single data frames), while `nbagl_schedule()` and `nbagl_pbp()` expose current core columns from active payloads.
 
 ### Null Safety
 
@@ -217,6 +226,21 @@ For endpoints with dynamic columns (like IST Standings with game columns):
 expect_true(all(core_cols %in% colnames(x)))
 ```
 
+For intermittent or occasionally empty API responses, guard before indexing/asserting:
+```r
+if (length(x) == 0 || is.null(x[[1]]) || nrow(x[[1]]) == 0) {
+  skip("No rows returned from endpoint at test time")
+}
+```
+
+For deprecated wrappers, prefer explicit `skip()` with replacement guidance in the test file to avoid false negatives from intentional hard stops.
+
+For NBAGL wrappers with named-list returns, validate component names first and then validate core columns within the component:
+```r
+expect_true("Standings" %in% names(x))
+expect_in(sort(core_cols), sort(colnames(x[[1]])))
+```
+
 ### Environment Variables for Tests
 
 | Variable | Description |
@@ -226,6 +250,20 @@ expect_true(all(core_cols %in% colnames(x)))
 | `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests |
 | `NCAA_MBB_TESTS=1` | Enable NCAA MBB tests |
 | `KP_USER` / `KP_PW` | KenPom credentials |
+
+Note: in CI, many live API tests still include `skip_on_ci()` guards. Env vars alone do not override those guards unless tests are intentionally changed.
+
+### CI Secrets
+
+GitHub Actions workflows should have these configured:
+
+| Secret | Description |
+|---|---|
+| `GITHUB_TOKEN` | Auto-provided GitHub token |
+| `KP_USER` | KenPom username/email |
+| `KP_PW` | KenPom password |
+
+Optional live-test secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) only matter if `skip_on_ci()` gates are intentionally relaxed.
 
 ### Rate Limiting
 
@@ -264,3 +302,4 @@ ci: update GitHub Actions workflow versions
 - Always initialize `df_list <- list()` (or `data <- data.frame()` / `data <- list()`) before `tryCatch` blocks to avoid "object not found" errors.
 - `.v3_to_v2_format()` uses row-level loops for player resolution -- performance-sensitive for large PBP datasets. The `%||%` operator from rlang is used for null-safe named vector lookups in event type maps.
 - `.players_on_court_v3()` depends on `nba_gamerotation()` returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second -- ensure time unit consistency when modifying.
+- Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs) can surface as `R CMD check` notes/warnings if not excluded from build inputs.
