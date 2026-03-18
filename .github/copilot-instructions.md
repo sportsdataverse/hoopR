@@ -19,12 +19,14 @@
 
 ## Project Context
 
-hoopR is an R package (v3.0.0 dev) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
+hoopR is an R package (v3.0.0) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
+
+When there is any conflict between this file and repository contributor docs, follow `CONTRIBUTING.md` and the current helper/test implementations under `tests/testthat/` as the source of truth.
 
 ## Repository Workflow
 
-- Use feature branches for changes and target `devel` for development PRs.
-- Keep `main` reserved for release-ready states.
+- Use feature branches for changes.
+- `main` is the default branch and release branch. `devel` may be used for active development staging; confirm PR target branch in GitHub before opening a PR.
 - For any change to exported functions, update tests and documentation in the same PR.
 
 ## Code Style
@@ -35,6 +37,7 @@ hoopR is an R package (v3.0.0 dev) that wraps the NBA Stats API, ESPN API, and K
 - All returned data frames must pass through `janitor::clean_names()` then `make_hoopR_data()`.
 - Use `pad_id()` for game IDs before passing to the API.
 - Internal/non-exported helpers are prefixed with `.` (e.g., `.players_on_court_v3()`).
+- Keep imports minimal and explicit; remove unused imports (for example, avoid `@import furrr` unless the file actually uses it).
 
 ## Function Naming
 
@@ -65,6 +68,7 @@ Every exported function needs:
 ## Testing
 
 - Use `skip_on_cran()`, `skip_on_ci()`, and `skip_nba_stats_test()` guards.
+- Use source-specific guards when applicable: `skip_espn_test()`, `skip_nbagl_stats_test()`, `skip_ncaa_mbb_test()`, `skip_ncaa_wbb_test()`, and `skip_kenpom_test()`.
 - Validate columns with `expect_in(sort(expected_cols), sort(colnames(x)))` (subset check, not exact match).
 - For dynamic columns, use `expect_true(all(core_cols %in% colnames(x)))`.
 - For intermittent endpoints, add explicit skip-on-empty guards before indexing `x[[1]]` or asserting columns.
@@ -81,6 +85,7 @@ Every exported function needs:
 | `ESPN_TESTS=1` | Enable ESPN API tests |
 | `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests |
 | `NCAA_MBB_TESTS=1` | Enable NCAA MBB tests |
+| `NCAA_WBB_TESTS=1` | Enable NCAA WBB tests |
 | `KP_USER` / `KP_PW` | KenPom credentials |
 
 On CI, most live API tests are additionally guarded with `skip_on_ci()`. Setting env vars alone will not run those tests unless that guard is intentionally relaxed.
@@ -102,6 +107,10 @@ Optional env-var secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, 
 Use the format: `type: description`
 
 Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
+
+- Optional scope is encouraged for clarity (e.g., `docs(instructions): ...`, `refactor(espn): ...`).
+- Use `type!:` or a `BREAKING CHANGE:` footer for breaking changes.
+- Keep commits logically grouped (docs-only, tests-only, refactor-only) so each commit is easy to review and revert.
 
 **Important**: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers referencing AI tools.
 
@@ -125,3 +134,4 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 - IST Standings has dynamic game columns -- use `expect_true(all(core_cols %in% colnames()))`.
 - NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.
 - Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp logs) can cause `R CMD check` notes/warnings if included in source checks.
+- Never edit `NAMESPACE` or `man/` files by hand; regenerate with `devtools::document()`.
