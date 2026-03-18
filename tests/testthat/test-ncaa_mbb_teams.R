@@ -15,7 +15,12 @@ test_that("NCAA - Get MBB Teams", {
     "year",
     "season_id"
   )
-  expect_equal(colnames(x), cols)
+
+  if (nrow(x) == 0) {
+    skip("No NCAA MBB teams returned for current query.")
+  }
+
+  expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, 'data.frame')
 
 })

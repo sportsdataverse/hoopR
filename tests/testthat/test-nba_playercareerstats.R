@@ -39,7 +39,7 @@ test_that("NBA Player Career Stats", {
   cols_x2 <- c(
     "PLAYER_ID",
     "LEAGUE_ID",
-    "Team_ID",
+    "TEAM_ID",
     "GP",
     "GS",
     "MIN",
@@ -96,7 +96,7 @@ test_that("NBA Player Career Stats", {
   cols_x4 <- c(
     "PLAYER_ID",
     "LEAGUE_ID",
-    "Team_ID",
+    "TEAM_ID",
     "GP",
     "GS",
     "MIN",
@@ -153,7 +153,7 @@ test_that("NBA Player Career Stats", {
   cols_x6 <- c(
     "PLAYER_ID",
     "LEAGUE_ID",
-    "Team_ID",
+    "TEAM_ID",
     "GP",
     "GS",
     "MIN",

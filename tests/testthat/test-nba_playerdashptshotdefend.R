@@ -6,7 +6,7 @@ test_that("NBA Player Tracking Dashboard - Defense", {
   x <- nba_playerdashptshotdefend(player_id = "2544", season = year_to_season(most_recent_nba_season() - 1))
 
   cols_x1 <- c(
-    "CLOSE_DEF_playerId",
+    "MATCHUPID",
     "GP",
     "G",
     "DEFENSE_CATEGORY",

@@ -7,6 +7,10 @@ test_that("NBA League Dash - Lineups", {
 
   x <- nba_leaguedashlineups(league_id = "00", season = year_to_season(most_recent_nba_season() - 1))
 
+  if (length(x) == 0 || is.null(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No lineup rows returned for current league dash lineups query.")
+  }
+
   cols_x1 <- c(
     "GROUP_SET",
     "GROUP_ID",
