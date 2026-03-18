@@ -105,12 +105,14 @@
 
 <div class="section level2">
 <h2 id="project-context">Project Context<a class="anchor" aria-label="anchor" href="#project-context"></a></h2>
-<p>hoopR is an R package (v3.0.0 dev) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.</p>
+<p>hoopR is an R package (v3.0.0) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.</p>
+<p>When there is any conflict between this file and repository contributor docs, follow <code>CONTRIBUTING.md</code> and the current helper/test implementations under <code>tests/testthat/</code> as the source of truth.</p>
 </div>
 <div class="section level2">
 <h2 id="repository-workflow">Repository Workflow<a class="anchor" aria-label="anchor" href="#repository-workflow"></a></h2>
-<ul><li>Use feature branches for changes and target <code>devel</code> for development PRs.</li>
-<li>Keep <code>main</code> reserved for release-ready states.</li>
+<ul><li>Use feature branches for changes.</li>
+<li>
+<code>main</code> is the default branch and release branch. <code>devel</code> may be used for active development staging; confirm PR target branch in GitHub before opening a PR.</li>
 <li>For any change to exported functions, update tests and documentation in the same PR.</li>
 </ul></div>
 <div class="section level2">
@@ -121,6 +123,7 @@
 <li>All returned data frames must pass through <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code> then <code>make_hoopR_data()</code>.</li>
 <li>Use <code>pad_id()</code> for game IDs before passing to the API.</li>
 <li>Internal/non-exported helpers are prefixed with <code>.</code> (e.g., <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>).</li>
+<li>Keep imports minimal and explicit; remove unused imports (for example, avoid <code>@import furrr</code> unless the file actually uses it).</li>
 </ul></div>
 <div class="section level2">
 <h2 id="function-naming">Function Naming<a class="anchor" aria-label="anchor" href="#function-naming"></a></h2>
@@ -185,6 +188,7 @@
 <div class="section level2">
 <h2 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a></h2>
 <ul><li>Use <code>skip_on_cran()</code>, <code>skip_on_ci()</code>, and <code>skip_nba_stats_test()</code> guards.</li>
+<li>Use source-specific guards when applicable: <code>skip_espn_test()</code>, <code>skip_nbagl_stats_test()</code>, <code>skip_ncaa_mbb_test()</code>, <code>skip_ncaa_wbb_test()</code>, and <code>skip_kenpom_test()</code>.</li>
 <li>Validate columns with <code>expect_in(sort(expected_cols), sort(colnames(x)))</code> (subset check, not exact match).</li>
 <li>For dynamic columns, use <code>expect_true(all(core_cols %in% colnames(x)))</code>.</li>
 <li>For intermittent endpoints, add explicit skip-on-empty guards before indexing <code>x[[1]]</code> or asserting columns.</li>
@@ -204,7 +208,9 @@
 <td>Enable NBA G-League tests</td>
 </tr><tr class="even"><td><code>NCAA_MBB_TESTS=1</code></td>
 <td>Enable NCAA MBB tests</td>
-</tr><tr class="odd"><td>
+</tr><tr class="odd"><td><code>NCAA_WBB_TESTS=1</code></td>
+<td>Enable NCAA WBB tests</td>
+</tr><tr class="even"><td>
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
@@ -228,7 +234,10 @@
 <h2 id="conventional-commits">Conventional Commits<a class="anchor" aria-label="anchor" href="#conventional-commits"></a></h2>
 <p>Use the format: <code>type: description</code></p>
 <p>Types: <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>test</code>, <code>refactor</code>, <code>chore</code>, <code>style</code>, <code>perf</code>, <code>ci</code></p>
-<p><strong>Important</strong>: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all <code>Co-Authored-By</code> trailers referencing AI tools.</p>
+<ul><li>Optional scope is encouraged for clarity (e.g., <code>docs(instructions): ...</code>, <code>refactor(espn): ...</code>).</li>
+<li>Use <code>type!:</code> or a <code>BREAKING CHANGE:</code> footer for breaking changes.</li>
+<li>Keep commits logically grouped (docs-only, tests-only, refactor-only) so each commit is easy to review and revert.</li>
+</ul><p><strong>Important</strong>: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all <code>Co-Authored-By</code> trailers referencing AI tools.</p>
 </div>
 <div class="section level2">
 <h2 id="v3-api-notes">V3 API Notes<a class="anchor" aria-label="anchor" href="#v3-api-notes"></a></h2>
@@ -251,6 +260,7 @@
 <li>IST Standings has dynamic game columns – use <code>expect_true(all(core_cols %in% colnames()))</code>.</li>
 <li>NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.</li>
 <li>Local editor/worktree artifacts (e.g., <code>.vscode</code>, <code>.claude</code>, temp logs) can cause <code>R CMD check</code> notes/warnings if included in source checks.</li>
+<li>Never edit <code>NAMESPACE</code> or <code>man/</code> files by hand; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>
 

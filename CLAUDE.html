@@ -116,6 +116,7 @@
 <div class="section level2">
 <h2 id="package-overview">Package Overview<a class="anchor" aria-label="anchor" href="#package-overview"></a></h2>
 <p>hoopR is an R package providing clean, tidy men’s basketball play-by-play and box score data. It wraps the NBA Stats API, ESPN API, and KenPom, exporting 270+ functions across three primary data source families: <code>nba_*()</code>, <code>espn_*()</code>, and <code>kp_*()</code>.</p>
+<p>When this guide differs from current repository docs, treat <code>CONTRIBUTING.md</code> and current test helper implementations as authoritative.</p>
 <ul><li>
 <strong>Version</strong>: 3.0.0 (dev)</li>
 <li>
@@ -127,8 +128,9 @@
 </ul></div>
 <div class="section level2">
 <h2 id="branching--pr-workflow">Branching &amp; PR Workflow<a class="anchor" aria-label="anchor" href="#branching--pr-workflow"></a></h2>
-<ul><li>Create feature branches from <code>devel</code> for development work.</li>
-<li>Target <code>devel</code> for normal development PRs; reserve <code>main</code> for release snapshots.</li>
+<ul><li>Create feature branches from the latest stable base.</li>
+<li>
+<code>main</code> is the default branch and release branch. <code>devel</code> may still be used for staging active development; verify the intended PR target branch before opening a PR.</li>
 <li>Keep code, tests, and roxygen/docs updates in the same PR when changing exported behavior.</li>
 </ul></div>
 <div class="section level2">
@@ -270,6 +272,7 @@
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">df_list</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <p>For deprecated functions, add lifecycle documentation and a clear replacement path in <code>@description</code>, then enforce at runtime with <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code>.</p>
+<p>Prefer explicit imports and keep them minimal. Avoid package-wide <code>@import</code> directives unless required; remove unused imports when refactoring files.</p>
 </div>
 <div class="section level3">
 <h3 id="data-processing-pipeline">Data Processing Pipeline<a class="anchor" aria-label="anchor" href="#data-processing-pipeline"></a></h3>
@@ -341,6 +344,7 @@
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">expect_true</span><span class="op">(</span><span class="st">"Standings"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">core_cols</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Use the source-specific skip helper for the endpoint under test: - <code>skip_nba_stats_test()</code> - <code>skip_espn_test()</code> - <code>skip_nbagl_stats_test()</code> - <code>skip_ncaa_mbb_test()</code> - <code>skip_ncaa_wbb_test()</code> - <code>skip_kenpom_test()</code></p>
 </div>
 <div class="section level3">
 <h3 id="environment-variables-for-tests">Environment Variables for Tests<a class="anchor" aria-label="anchor" href="#environment-variables-for-tests"></a></h3>
@@ -354,7 +358,9 @@
 <td>Enable NBA G-League tests</td>
 </tr><tr class="even"><td><code>NCAA_MBB_TESTS=1</code></td>
 <td>Enable NCAA MBB tests</td>
-</tr><tr class="odd"><td>
+</tr><tr class="odd"><td><code>NCAA_WBB_TESTS=1</code></td>
+<td>Enable NCAA WBB tests</td>
+</tr><tr class="even"><td>
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
@@ -392,6 +398,7 @@ test: add boxscoresummaryv3 column validation tests
 refactor: extract V3 substitution parsing into helper
 chore: update .Rbuildignore patterns
 ci: update GitHub Actions workflow versions</code></pre>
+<p>Prefer scoped commit subjects when useful (for example <code>docs(instructions): ...</code> or <code>refactor(loaders): ...</code>). Use <code>type!:</code> or a <code>BREAKING CHANGE:</code> footer when introducing a breaking change. Split unrelated work into separate commits for reviewability.</p>
 <p><strong>Important</strong>: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all <code>Co-Authored-By</code> trailers referencing AI tools.</p>
 </div>
 <div class="section level2">
@@ -412,6 +419,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 <li>
 <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
 <li>Local dev artifacts (for example <code>.vscode</code>, <code>.claude</code>, ad-hoc logs) can surface as <code>R CMD check</code> notes/warnings if not excluded from build inputs.</li>
+<li>Never hand-edit <code>NAMESPACE</code> or files under <code>man/</code>; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>
 

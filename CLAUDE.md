@@ -32,6 +32,10 @@ play-by-play and box score data. It wraps the NBA Stats API, ESPN API,
 and KenPom, exporting 270+ functions across three primary data source
 families: `nba_*()`, `espn_*()`, and `kp_*()`.
 
+When this guide differs from current repository docs, treat
+`CONTRIBUTING.md` and current test helper implementations as
+authoritative.
+
 - **Version**: 3.0.0 (dev)
 - **R Requirement**: \>= 4.1.0
 - **License**: MIT
@@ -39,9 +43,10 @@ families: `nba_*()`, `espn_*()`, and `kp_*()`.
 
 ## Branching & PR Workflow
 
-- Create feature branches from `devel` for development work.
-- Target `devel` for normal development PRs; reserve `main` for release
-  snapshots.
+- Create feature branches from the latest stable base.
+- `main` is the default branch and release branch. `devel` may still be
+  used for staging active development; verify the intended PR target
+  branch before opening a PR.
 - Keep code, tests, and roxygen/docs updates in the same PR when
   changing exported behavior.
 
@@ -163,6 +168,10 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 For deprecated functions, add lifecycle documentation and a clear
 replacement path in `@description`, then enforce at runtime with
 [`lifecycle::deprecate_stop()`](https://lifecycle.r-lib.org/reference/deprecate_soft.html).
+
+Prefer explicit imports and keep them minimal. Avoid package-wide
+`@import` directives unless required; remove unused imports when
+refactoring files.
 
 ### Data Processing Pipeline
 
@@ -306,6 +315,11 @@ expect_true("Standings" %in% names(x))
 expect_in(sort(core_cols), sort(colnames(x[[1]])))
 ```
 
+Use the source-specific skip helper for the endpoint under test: -
+`skip_nba_stats_test()` - `skip_espn_test()` -
+`skip_nbagl_stats_test()` - `skip_ncaa_mbb_test()` -
+`skip_ncaa_wbb_test()` - `skip_kenpom_test()`
+
 ### Environment Variables for Tests
 
 | Variable              | Description                |
@@ -314,6 +328,7 @@ expect_in(sort(core_cols), sort(colnames(x[[1]])))
 | `ESPN_TESTS=1`        | Enable ESPN API tests      |
 | `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests  |
 | `NCAA_MBB_TESTS=1`    | Enable NCAA MBB tests      |
+| `NCAA_WBB_TESTS=1`    | Enable NCAA WBB tests      |
 | `KP_USER` / `KP_PW`   | KenPom credentials         |
 
 Note: in CI, many live API tests still include `skip_on_ci()` guards.
@@ -356,6 +371,11 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
     chore: update .Rbuildignore patterns
     ci: update GitHub Actions workflow versions
 
+Prefer scoped commit subjects when useful (for example
+`docs(instructions): ...` or `refactor(loaders): ...`). Use `type!:` or
+a `BREAKING CHANGE:` footer when introducing a breaking change. Split
+unrelated work into separate commits for reviewability.
+
 **Important**: Never include AI agents or assistants (e.g., Claude,
 Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers
 referencing AI tools.
@@ -396,3 +416,5 @@ referencing AI tools.
 - Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs)
   can surface as `R CMD check` notes/warnings if not excluded from build
   inputs.
+- Never hand-edit `NAMESPACE` or files under `man/`; regenerate with
+  `devtools::document()`.

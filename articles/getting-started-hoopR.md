@@ -112,7 +112,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 25.713 sec elapsed
+    ## 24.651 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
@@ -202,7 +202,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.17 sec elapsed
+    ## 2.479 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
@@ -286,7 +286,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.739 sec elapsed
+    ## 3.181 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
@@ -368,7 +368,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 73.299 sec elapsed
+    ## 71.79 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
@@ -462,7 +462,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.355 sec elapsed
+    ## 2.543 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
@@ -546,7 +546,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.152 sec elapsed
+    ## 8.361 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")

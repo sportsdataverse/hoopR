@@ -44,7 +44,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 18))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ─────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-18 16:19:02 UTC
+#> ℹ Data updated: 2026-03-18 18:14:48 UTC
 #> # A tibble: 18 × 104
 #>    team_id team_uid       team_slug    team_location team_name team_abbreviation
 #>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            

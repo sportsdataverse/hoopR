@@ -107,7 +107,7 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
 try(espn_mbb_betting(game_id = 401256760))
-#> 2026-03-18 16:18:32.166818: Invalid arguments or no betting data available!
+#> 2026-03-18 18:14:17.618546: Invalid arguments or no betting data available!
 #> $pickcenter
 #> data frame with 0 columns and 0 rows
 #> 
