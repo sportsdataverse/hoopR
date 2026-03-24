@@ -3,6 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [**hoopR 3.0.0**](#hoopr-300)
+    - [**HTTP Backend Migration**](#http-backend-migration)
+    - [**Messaging Migration (usethis → cli)**](#messaging-migration-usethis--cli)
+    - [**Social Branding (Twitter → X)**](#social-branding-twitter--x)
     - [**Stability and Test Robustness**](#stability-and-test-robustness)
     - [**CI and Check Improvements**](#ci-and-check-improvements)
     - [**NBA Play-by-Play V3**](#nba-play-by-play-v3)
@@ -65,6 +68,28 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # **hoopR 3.0.0**
+
+### **HTTP Backend Migration**
+
+- **Breaking**: Replaced `httr` with `httr2` as the HTTP backend for all API requests across the package.
+- Removed `httr` from package dependencies (`Imports`).
+- `request_with_proxy()` now uses `httr2` request/retry pipeline instead of `rvest::session()` with `httr` config arguments, resolving segfaults on systems with libcurl >= 8.x / curl R package >= 7.0.0.
+- All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (`.retry_request()`, `.resp_text()`) backed by `httr2`.
+- `check_status()` now uses `httr2::resp_status()` instead of `httr::status_code()`.
+- KenPom (`kp_*`) functions now use `httr2` cookie jar authentication via `login()`, `.kp_get_page()`, and `.kp_request()` helpers.
+
+### **Messaging Migration (usethis → cli)**
+
+- Replaced all `usethis::ui_*()` messaging calls in database builder and loader functions with `cli` equivalents.
+- `usethis::ui_stop()` → `cli::cli_abort()`, `usethis::ui_oops()` → `cli::cli_alert_danger()`, `usethis::ui_todo()` → `cli::cli_ul()`, `usethis::ui_info()` → `cli::cli_alert_info()`.
+- Inline markup converted: `usethis::ui_value()` → `{.val}`, `usethis::ui_path()` → `{.file}`, `usethis::ui_code()` → `{.code}`.
+- Moved `usethis` from `Imports` to `Suggests` (retained for `usethis::edit_r_environ()` documentation references).
+
+### **Social Branding (Twitter → X)**
+
+- Updated all social media links and badges from Twitter to X across README, pkgdown site, and vignettes.
+- Shields.io badge `logo=twitter` → `logo=x`; profile URLs `twitter.com` → `x.com`.
+- pkgdown navbar icon updated from `fa-twitter` to `fa-x-twitter`.
 
 ### **Stability and Test Robustness**
 

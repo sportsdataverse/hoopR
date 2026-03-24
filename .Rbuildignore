@@ -25,5 +25,7 @@ CLAUDE\.md$
 ^\.lintr$
 nba_pbp_db
 mbb_pbp_db
+^\.claude$
+^\.vscode$
 ^\\.claude$
 ^\\.vscode$
