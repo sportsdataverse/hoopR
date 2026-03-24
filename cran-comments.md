@@ -3,6 +3,9 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Release summary](#release-summary)
+  - [HTTP Backend Migration](#http-backend-migration)
+  - [Messaging Migration (usethis → cli)](#messaging-migration-usethis--cli)
+  - [Social Branding (Twitter → X)](#social-branding-twitter--x)
   - [NBA Play-by-Play V3](#nba-play-by-play-v3)
   - [NBA Boxscore Summary V3](#nba-boxscore-summary-v3)
   - [New NBA Stats API Endpoint Wrappers](#new-nba-stats-api-endpoint-wrappers)
@@ -17,6 +20,21 @@
 ## Release summary
 
 This is a major release (v3.0.0) with the following changes:
+
+### HTTP Backend Migration
+- Replaced `httr` with `httr2` as the sole HTTP backend for all API requests.
+- Removed `httr` from package dependencies, resolving compatibility issues with libcurl >= 8.x.
+- All HTTP calls now use `httr2` request/retry pipelines via shared internal helpers.
+- KenPom functions now use `httr2` cookie jar authentication.
+
+### Messaging Migration (usethis → cli)
+- Replaced all `usethis::ui_*()` calls in load/database functions with `cli` equivalents (`cli::cli_abort()`, `cli::cli_alert_info()`, `cli::cli_ul()`, `cli::cli_alert_danger()`).
+- Moved `usethis` from `Imports` to `Suggests`.
+
+### Social Branding (Twitter → X)
+- Updated all social media links and badges from Twitter to X across README, pkgdown site, and vignettes.
+- Profile URLs `twitter.com` → `x.com`; shields badge logos updated to X.
+- pkgdown navbar icon updated from `fa-twitter` to `fa-x-twitter`.
 
 ### NBA Play-by-Play V3
 - `nba_playbyplayv3()` function added -- dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.
