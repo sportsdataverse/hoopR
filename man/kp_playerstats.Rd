@@ -49,7 +49,7 @@ Returns a tibble of player stats\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
+try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 }
 }
 \seealso{

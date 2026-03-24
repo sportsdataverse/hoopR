@@ -39,7 +39,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_fanmatch(date="2022-02-22"))
+try(kp_fanmatch(date = "2022-02-22"))
 }
 }
 \seealso{

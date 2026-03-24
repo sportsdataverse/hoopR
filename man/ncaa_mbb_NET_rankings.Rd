@@ -15,7 +15,7 @@ Returns a tibble
 \examples{
 # Get current NCAA NET rankings
 \donttest{
-  try(ncaa_mbb_NET_rankings())
+try(ncaa_mbb_NET_rankings())
 }
 }
 \author{

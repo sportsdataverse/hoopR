@@ -7,7 +7,7 @@
 check_status(res)
 }
 \arguments{
-\item{res}{Response from API}
+\item{res}{Response from API (httr2 response object)}
 }
 \description{
 \strong{Check Status function}

@@ -8,16 +8,13 @@
 #' @examples
 #' # Get current NCAA NET rankings
 #' \donttest{
-#'   try(ncaa_mbb_NET_rankings())
+#' try(ncaa_mbb_NET_rankings())
 #' }
-
-ncaa_mbb_NET_rankings <- function(){
-
-
+ncaa_mbb_NET_rankings <- function() {
   NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
   x <- (NET_url %>%
-          xml2::read_html() %>%
-          rvest::html_elements("table"))[[1]] %>%
+    xml2::read_html() %>%
+    rvest::html_elements("table"))[[1]] %>%
     rvest::html_table() %>%
     dplyr::as_tibble() %>%
     dplyr::rename(
@@ -60,7 +57,6 @@ ncaa_mbb_NET_rankings <- function(){
 #' ```
 
 ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
-
   if (is.null(year)) {
     cli::cli_abort("Enter valid year as a number (YYYY)")
   }
@@ -68,26 +64,26 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
     cli::cli_abort("Enter valid division as a number: 1, 2, 3")
   }
   if (year < 2002) {
-    stop('you must provide a year that is equal to or greater than 2002')
+    stop("you must provide a year that is equal to or greater than 2002")
   }
 
   df <- data.frame()
 
-  headers <- httr::add_headers(.headers = .ncaa_headers())
+  ncaa_headers <- .ncaa_headers()
   tryCatch(
     expr = {
+      url <- paste0(
+        "http://stats.ncaa.org/team/inst_team_list?academic_year=",
+        year,
+        "&conf_id=-1",
+        "&division=", division,
+        "&sport_code=MBB"
+      )
 
-
-      url <- paste0("http://stats.ncaa.org/team/inst_team_list?academic_year=",
-                    year,
-                    "&conf_id=-1",
-                    "&division=", division,
-                    "&sport_code=MBB")
-
-      resp <- httr::RETRY("GET", url = {{url}}, headers, httr::timeout(15))
+      resp <- .retry_request(url, headers = ncaa_headers, timeout = 15)
 
       data_read <- resp %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         xml2::read_html()
 
       team_urls <- data_read %>%
@@ -101,12 +97,12 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
         rvest::html_text()
 
       conference_names <- ((data_read %>%
-                              rvest::html_elements(".level2"))[[4]] %>%
-                             rvest::html_elements("a") %>%
-                             rvest::html_text())[-1]
+        rvest::html_elements(".level2"))[[4]] %>%
+        rvest::html_elements("a") %>%
+        rvest::html_text())[-1]
 
       conference_ids <- (data_read %>%
-                           rvest::html_elements(".level2"))[[4]] %>%
+        rvest::html_elements(".level2"))[[4]] %>%
         rvest::html_elements("a") %>%
         rvest::html_attr("href") %>%
         stringr::str_extract("javascript:changeConference\\(\\d+\\)") %>%
@@ -115,34 +111,38 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
 
       conference_df <- data.frame(conference = conference_names, conference_id = conference_ids)
 
-      conferences_team_df <- lapply(conference_df$conference_id, function(x){
-        conf_team_urls <- paste0("http://stats.ncaa.org/team/inst_team_list?academic_year=",
-                                 year,
-                                 "&conf_id=", x,
-                                 "&division=", division,
-                                 "&sport_code=MBB")
+      conferences_team_df <- lapply(conference_df$conference_id, function(x) {
+        conf_team_urls <- paste0(
+          "http://stats.ncaa.org/team/inst_team_list?academic_year=",
+          year,
+          "&conf_id=", x,
+          "&division=", division,
+          "&sport_code=MBB"
+        )
 
-        resp <- httr::RETRY("GET", url = {{conf_team_urls}},  headers, httr::timeout(15))
+        resp <- .retry_request(conf_team_urls, headers = ncaa_headers, timeout = 15)
 
-        team_urls <- resp %>%
-          httr::content(as = "text", encoding = "UTF-8") %>%
+        resp_text <- .resp_text(resp)
+
+        team_urls <- resp_text %>%
           xml2::read_html() %>%
           rvest::html_elements("table") %>%
           rvest::html_elements("a") %>%
           rvest::html_attr("href")
 
-        team_names <- resp %>%
-          httr::content(as = "text", encoding = "UTF-8") %>%
+        team_names <- resp_text %>%
           xml2::read_html() %>%
           rvest::html_elements("table") %>%
           rvest::html_elements("a") %>%
           rvest::html_text()
 
-        data <- data.frame(team_url = team_urls,
-                           team_name = team_names,
-                           division = division,
-                           year = year,
-                           conference_id = x)
+        data <- data.frame(
+          team_url = team_urls,
+          team_name = team_names,
+          division = division,
+          year = year,
+          conference_id = x
+        )
         data <- data %>%
           dplyr::left_join(conference_df, by = c("conference_id"))
         Sys.sleep(5)
@@ -168,9 +168,9 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
           "conference",
           "division",
           "year",
-          "season_id") %>%
+          "season_id"
+        ) %>%
         make_hoopR_data("NCAA Basketball Teams data from stats.ncaa.org", Sys.time())
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments provided"))

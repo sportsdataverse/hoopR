@@ -70,7 +70,7 @@ kp_team_schedule <- function(team, year = 2022){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       if (year >= 2011) {
         sched_header_cols <- c("Day.Date","Team.Rk","Opponent.Rk","Opponent","Result",
@@ -81,7 +81,6 @@ kp_team_schedule <- function(team, year = 2022){
       }
 
       sched <- (page %>%
-                  xml2::read_html() %>%
                   rvest::html_elements(css = '#schedule-table') %>%
                   rvest::html_table()) %>%
         as.data.frame()
@@ -260,49 +259,40 @@ kp_team_schedule <- function(team, year = 2022){
 
       if (year >= 2011) {
         w_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(1)")
 
         l_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(1)")
 
         un_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(1)")
 
         fm_links <- c(w_links,l_links,un_links)
 
         w_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(5)")
         l_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(5)")
         un_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(5)")
 
         box_links <- c(w_box, l_box, un_box)
 
         w_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(11)")
 
         l_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(11)")
 
         un_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(11)")
 
@@ -310,51 +300,42 @@ kp_team_schedule <- function(team, year = 2022){
 
       } else {
         w_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(1)")
 
         l_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(1)")
 
         un_links <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(1)")
 
         fm_links <- c(w_links,l_links, un_links)
 
         w_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(4)")
 
         l_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(4)")
 
         un_box <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = "#schedule-table") %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(4)")
 
         box_links <- c(w_box, l_box, un_box)
 
         w_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.w > td:not(.label):nth-child(10)")
 
         l_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.l > td:not(.label):nth-child(10)")
 
         un_tier <- page %>%
-          xml2::read_html() %>%
           rvest::html_elements(css = '#schedule-table') %>%
           rvest::html_elements("tr.un > td:not(.label):nth-child(10)")
 
@@ -534,7 +515,7 @@ kp_gameplan <- function(team, year=2021){
                     "team=", team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c("Date","Opponent.Rk",	"Opponent","Result","Location","Pace",
                        "Off.Eff", "Off.Eff.Rk", "Off.eFG.Pct",	"Off.TO.Pct",	"Off.OR.Pct", "Off.FTR",
@@ -544,7 +525,6 @@ kp_gameplan <- function(team, year=2021){
 
 
       gp <- (page %>%
-               xml2::read_html() %>%
                rvest::html_elements(css = '#schedule-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -637,13 +617,11 @@ kp_gameplan <- function(team, year=2021){
 
       z <- data.frame()
       y <- page %>%
-        xml2::read_html() %>%
         rvest::html_elements(css = '.dist-table')
       if (length(y) > 0) {
         for (i in 1:length(y)) {
           header_cols <- c("Team","C.Pct","PF.Pct","SF.Pct","SG.Pct","PG.Pct")
           d <- (page %>%
-                  xml2::read_html() %>%
                   rvest::html_elements(css = '.dist-table'))[[i]] %>%
             rvest::html_table() %>%
             as.data.frame()
@@ -806,7 +784,7 @@ kp_opptracker <- function(team, year = 2021){
                     "&y=", year,
                     "&t=o")
 
-      page_o <- rvest::session_jump_to(browser, url)
+      page_o <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c("Date","Opponent","Result","AdjOE","AdjOE.Rk",
                        "Off.eFG.Pct","Off.eFG.Pct.Rk","Off.TO.Pct","Off.TO.Pct.Rk",
@@ -818,7 +796,6 @@ kp_opptracker <- function(team, year = 2021){
       }
 
       opptracker_o <- (page_o %>%
-                         xml2::read_html() %>%
                          rvest::html_elements(css = '#conf-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -893,10 +870,9 @@ kp_opptracker <- function(team, year = 2021){
                     "&y=", year,
                     "&t=d")
 
-      page_d <- rvest::session_jump_to(browser, url)
+      page_d <- .kp_get_page(browser, url)
       Sys.sleep(5)
       opptracker_d <- (page_d %>%
-                         xml2::read_html() %>%
                          rvest::html_elements(css = '#conf-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -1036,10 +1012,9 @@ kp_team_players <- function(team, year = 2021){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       player_links <- page %>%
-        xml2::read_html() %>%
         rvest::html_elements(css = '#player-table') %>%
         rvest::html_elements("td:nth-child(2) > a")
 
@@ -1072,7 +1047,6 @@ kp_team_players <- function(team, year = 2021){
       }
 
       players <- (page %>%
-                    xml2::read_html() %>%
                     rvest::html_elements(css = '#player-table'))[[1]]
 
       players <- players %>%
@@ -1349,17 +1323,15 @@ kp_player_career <- function(player_id){
       url <- paste0("https://kenpom.com/player.php?",
                     "p=",player_id)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       #--- Player Info ----
       player_info <- (page %>%
-                        xml2::read_html() %>%
                         rvest::html_elements(css = 'span.name')) %>%
         rvest::html_text() %>%
         as.data.frame()
       colnames(player_info) <- "Player"
       player_town <- (page %>%
-                        xml2::read_html() %>%
                         rvest::html_elements(css = 'span.town')) %>%
         rvest::html_text() %>%
         as.data.frame()
@@ -1376,7 +1348,6 @@ kp_player_career <- function(player_id){
                                "FTM-A","FT.Pct","FG_2M-A","FG_2.Pct","FG_3M-A",
                                "FG_3.Pct")
       players <- (page %>%
-                    xml2::read_html() %>%
                     rvest::html_elements(css = '#player-table'))[[1]] %>%
         rvest::html_table()
 
@@ -1493,13 +1464,11 @@ kp_player_career <- function(player_id){
           tidyr::everything()) %>%
         janitor::clean_names()
       s <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements(css = '#schedule-table'))
       schedule_games <- data.frame()
       for (i in 1:length(s)) {
 
         header <- (page %>%
-                     xml2::read_html() %>%
                      rvest::html_elements(css = 'div.gamelogdiv > h3'))[[i]] %>%
           rvest::html_text()
         sched_header_cols <- c("Opponent.Tier", "Date", "Opponent.Rk", "Opponent",
@@ -1509,7 +1478,6 @@ kp_player_career <- function(player_id){
                                "OR", "DR", "A", "TO", "Blk", "Stl", "PF")
 
         sched <-  ((page %>%
-                      xml2::read_html() %>%
                       rvest::html_elements(css = '#schedule-table'))[[i]] %>%
                      rvest::html_table())[,1:24]
 
@@ -1605,12 +1573,11 @@ kp_minutes_matrix <- function(team, year = 2021){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c("Date","Opponent.Rk","Opponent","Result")
 
       x <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements(css = '#minutes-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -1814,16 +1781,14 @@ kp_team_player_stats <- function(team, year = 2021){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       players <- (page %>%
-                    xml2::read_html() %>%
                     rvest::html_elements(css = '#player-table'))
       y <- list()
 
       for (i in 1:length(players)) {
         player_links <- (page %>%
-                           xml2::read_html() %>%
                            rvest::html_elements(css = '#player-table'))[[i]] %>%
           rvest::html_elements("td:nth-child(2) > a")
 
@@ -1848,7 +1813,6 @@ kp_team_player_stats <- function(team, year = 2021){
                                  "FGM_2-A", "FG_2.Pct", "FGM_3-A", "FG_3.Pct")
 
         players <- (page %>%
-                      xml2::read_html() %>%
                       rvest::html_elements(css = '#player-table'))[[i]]
 
         players <- players %>%
@@ -2082,13 +2046,12 @@ kp_team_depth_chart <- function(team, year= 2021){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       depth1_header_cols <- c("PG", "PG.Min.Pct", "SG", "SG.Min.Pct", "SF", "SF.Min.Pct",
                              "PF", "PF.Min.Pct", "C", "C.Min.Pct")
 
       depth1 <- (page %>%
-                   xml2::read_html() %>%
                    rvest::html_elements(css = '#dc-table'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -2298,13 +2261,12 @@ kp_team_lineups <- function(team, year=2021){
                     "team=",team_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       depth2_header_cols <- c("Rk","PG", "SG", "SF",
                              "PF", "C", "Min.Pct")
 
       depth2 <- (page %>%
-                  xml2::read_html() %>%
                   rvest::html_elements(css = '#dc-table2'))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()

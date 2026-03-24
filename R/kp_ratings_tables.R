@@ -41,10 +41,9 @@
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
+#' try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 #' }
-
-kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
+kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -57,21 +56,20 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
-
         ### Pull Data
         url <- paste0("https://kenpom.com/index.php?y=", year)
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Rk", "Team", "Conf", "W-L",
-                         "AdjEM", "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk",
-                         "AdjT", "AdjT.Rk", "Luck", "Luck.Rk",
-                         "SOS.AdjEM", "SOS.AdjEM.Rk", "SOS.OppO", "SOS.OppO.Rk",
-                         "SOS.OppD", "SOS.OppD.Rk", "NCSOS.AdjEM", "NCSOS.AdjEM.Rk")
+        header_cols <- c(
+          "Rk", "Team", "Conf", "W-L",
+          "AdjEM", "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk",
+          "AdjT", "AdjT.Rk", "Luck", "Luck.Rk",
+          "SOS.AdjEM", "SOS.AdjEM.Rk", "SOS.OppO", "SOS.OppO.Rk",
+          "SOS.OppD", "SOS.OppD.Rk", "NCSOS.AdjEM", "NCSOS.AdjEM.Rk"
+        )
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements("#ratings-table"))[[1]] %>%
+          rvest::html_elements("#ratings-table"))[[1]] %>%
           rvest::html_table()
 
         colnames(x) <- header_cols
@@ -81,18 +79,25 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
         )
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           as.data.frame()
 
         x <- x %>%
           dplyr::mutate_at(
-            c("Rk","AdjEM","AdjO","AdjO.Rk","AdjD","AdjD.Rk","AdjT","AdjT.Rk",
-              "Luck","Luck.Rk","SOS.AdjEM","SOS.AdjEM.Rk","SOS.OppO","SOS.OppO.Rk",
-              "SOS.OppD","SOS.OppD.Rk","NCSOS.AdjEM","NCSOS.AdjEM.Rk"), as.numeric) %>%
+            c(
+              "Rk", "AdjEM", "AdjO", "AdjO.Rk", "AdjD", "AdjD.Rk", "AdjT", "AdjT.Rk",
+              "Luck", "Luck.Rk", "SOS.AdjEM", "SOS.AdjEM.Rk", "SOS.OppO", "SOS.OppO.Rk",
+              "SOS.OppD", "SOS.OppD.Rk", "NCSOS.AdjEM", "NCSOS.AdjEM.Rk"
+            ), as.numeric
+          ) %>%
           dplyr::select("Year", tidyr::everything())
 
         ### Store Data
@@ -158,10 +163,9 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'    try(kp_efficiency(min_year = 2020, max_year = 2021))
+#' try(kp_efficiency(min_year = 2020, max_year = 2021))
 #' }
-
-kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
+kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -175,22 +179,21 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
         ### Pull Data
         url <- paste0("https://kenpom.com/summary.php?y=", year)
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
         if (year < 2010) {
-
-          header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
-                           "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
-                           "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")
+          header_cols <- c(
+            "Team", "Conf", "AdjT", "AdjT.Rk", "RawT", "RawT.Rk",
+            "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+            "AdjD", "AdjD.Rk", "RawD", "RawD.Rk"
+          )
           x <- (page %>%
-                  xml2::read_html() %>%
-                  rvest::html_elements("#ratings-table"))[[1]] %>%
+            rvest::html_elements("#ratings-table"))[[1]] %>%
             rvest::html_table()
 
-          x <- x[,1:14]
+          x <- x[, 1:14]
           colnames(x) <- header_cols
           suppressWarnings(
             x <- x %>%
@@ -201,45 +204,54 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
               AvgPossLengthOff = 0.0,
               AvgPossLengthOff.Rk = 0,
               AvgPossLengthDef = 0.0,
-              AvgPossLengthDef.Rk = 0)
+              AvgPossLengthDef.Rk = 0
+            )
 
 
 
-          x <- x[,c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
-                    "AvgPossLengthOff","AvgPossLengthOff.Rk",
-                    "AvgPossLengthDef","AvgPossLengthDef.Rk",
-                    "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
-                    "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")]
+          x <- x[, c(
+            "Team", "Conf", "AdjT", "AdjT.Rk", "RawT", "RawT.Rk",
+            "AvgPossLengthOff", "AvgPossLengthOff.Rk",
+            "AvgPossLengthDef", "AvgPossLengthDef.Rk",
+            "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+            "AdjD", "AdjD.Rk", "RawD", "RawD.Rk"
+          )]
 
           x <- dplyr::mutate(x,
-                             "NCAA_Seed" = NA_integer_,
-                             "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                             "Team" = sapply(.data$Team, function(arg) {
-                               stringr::str_trim(str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                             "Year" = year) %>%
+            "NCAA_Seed" = NA_integer_,
+            "NCAA_Seed" = sapply(.data$Team, function(arg) {
+              as.numeric(gsub("[^0-9]", "", arg))
+            }),
+            "Team" = sapply(.data$Team, function(arg) {
+              stringr::str_trim(str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+            }),
+            "Year" = year
+          ) %>%
             dplyr::mutate_at(
-              c("AdjT", "AdjT.Rk","RawT", "RawT.Rk",
-                "AvgPossLengthOff","AvgPossLengthOff.Rk",
-                "AvgPossLengthDef","AvgPossLengthDef.Rk",
+              c(
+                "AdjT", "AdjT.Rk", "RawT", "RawT.Rk",
+                "AvgPossLengthOff", "AvgPossLengthOff.Rk",
+                "AvgPossLengthDef", "AvgPossLengthDef.Rk",
                 "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
-                "AdjD", "AdjD.Rk", "RawD", "RawD.Rk", "Year"),
-              as.numeric) %>%
+                "AdjD", "AdjD.Rk", "RawD", "RawD.Rk", "Year"
+              ),
+              as.numeric
+            ) %>%
             as.data.frame()
-
         } else {
-
-          header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk","RawT", "RawT.Rk",
-                           "AvgPossLengthOff","AvgPossLengthOff.Rk",
-                           "AvgPossLengthDef","AvgPossLengthDef.Rk",
-                           "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
-                           "AdjD", "AdjD.Rk", "RawD", "RawD.Rk")
+          header_cols <- c(
+            "Team", "Conf", "AdjT", "AdjT.Rk", "RawT", "RawT.Rk",
+            "AvgPossLengthOff", "AvgPossLengthOff.Rk",
+            "AvgPossLengthDef", "AvgPossLengthDef.Rk",
+            "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
+            "AdjD", "AdjD.Rk", "RawD", "RawD.Rk"
+          )
           x <- (page %>%
-                  xml2::read_html() %>%
-                  rvest::html_elements("#ratings-table"))[[1]] %>%
+            rvest::html_elements("#ratings-table"))[[1]] %>%
             rvest::html_table()
 
 
-          x <- x[,1:18]
+          x <- x[, 1:18]
 
           colnames(x) <- header_cols
           suppressWarnings(
@@ -249,18 +261,25 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 
 
           x <- dplyr::mutate(x,
-                             "NCAA_Seed" = NA_integer_,
-                             "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                             "Team" = sapply(.data$Team, function(arg) {
-                               stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                             "Year" = year) %>%
+            "NCAA_Seed" = NA_integer_,
+            "NCAA_Seed" = sapply(.data$Team, function(arg) {
+              as.numeric(gsub("[^0-9]", "", arg))
+            }),
+            "Team" = sapply(.data$Team, function(arg) {
+              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+            }),
+            "Year" = year
+          ) %>%
             dplyr::mutate_at(
-              c("AdjT", "AdjT.Rk","RawT", "RawT.Rk",
-                "AvgPossLengthOff","AvgPossLengthOff.Rk",
-                "AvgPossLengthDef","AvgPossLengthDef.Rk",
+              c(
+                "AdjT", "AdjT.Rk", "RawT", "RawT.Rk",
+                "AvgPossLengthOff", "AvgPossLengthOff.Rk",
+                "AvgPossLengthDef", "AvgPossLengthDef.Rk",
                 "AdjO", "AdjO.Rk", "RawO", "RawO.Rk",
-                "AdjD", "AdjD.Rk", "RawD", "RawD.Rk", "Year"),
-              as.numeric) %>%
+                "AdjD", "AdjD.Rk", "RawD", "RawD.Rk", "Year"
+              ),
+              as.numeric
+            ) %>%
             as.data.frame()
         }
 
@@ -332,10 +351,9 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'    try(kp_fourfactors(min_year = 2020, max_year = 2021))
+#' try(kp_fourfactors(min_year = 2020, max_year = 2021))
 #' }
-
-kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
+kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -349,26 +367,27 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/stats.php?",
-                      "y=", year)
-        page <- rvest::session_jump_to(browser, url)
+        url <- paste0(
+          "https://kenpom.com/stats.php?",
+          "y=", year
+        )
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Team", "Conf", "AdjT", "AdjT.Rk",
-                         "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
-                         "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
-                         "Off.FTRate", "Off.FTRate.Rk",
-                         "AdjD", "AdjD.Rk", "Def.eFG.Pct", "Def.eFG.Pct.Rk",
-                         "Def.TO.Pct", "Def.TO.Pct.Rk", "Def.OR.Pct", "Def.OR.Pct.Rk",
-                         "Def.FTRate", "Def.FTRate.Rk")
+        header_cols <- c(
+          "Team", "Conf", "AdjT", "AdjT.Rk",
+          "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
+          "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
+          "Off.FTRate", "Off.FTRate.Rk",
+          "AdjD", "AdjD.Rk", "Def.eFG.Pct", "Def.eFG.Pct.Rk",
+          "Def.TO.Pct", "Def.TO.Pct.Rk", "Def.OR.Pct", "Def.OR.Pct.Rk",
+          "Def.FTRate", "Def.FTRate.Rk"
+        )
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
-        x <- x[,1:24]
+        x <- x[, 1:24]
 
         colnames(x) <- header_cols
 
@@ -378,18 +397,25 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
         )
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           dplyr::mutate_at(
-            c("AdjT", "AdjT.Rk", "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
+            c(
+              "AdjT", "AdjT.Rk", "AdjO", "AdjO.Rk", "Off.eFG.Pct", "Off.eFG.Pct.Rk",
               "Off.TO.Pct", "Off.TO.Pct.Rk", "Off.OR.Pct", "Off.OR.Pct.Rk",
               "Off.FTRate", "Off.FTRate.Rk",
               "AdjD", "AdjD.Rk", "Def.eFG.Pct", "Def.eFG.Pct.Rk",
               "Def.TO.Pct", "Def.TO.Pct.Rk", "Def.OR.Pct", "Def.OR.Pct.Rk",
-              "Def.FTRate", "Def.FTRate.Rk", "Year"), as.numeric) %>%
+              "Def.FTRate", "Def.FTRate.Rk", "Year"
+            ), as.numeric
+          ) %>%
           as.data.frame()
 
         ### Store Data
@@ -400,7 +426,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
         }
       }
       kenpom <- kenpom %>%
-        dplyr::arrange(-.data$Year,.data$AdjO.Rk) %>%
+        dplyr::arrange(-.data$Year, .data$AdjO.Rk) %>%
         janitor::clean_names()
     },
     error = function(e) {
@@ -450,10 +476,9 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'    try(kp_pointdist(min_year = 2020, max_year = 2021))
+#' try(kp_pointdist(min_year = 2020, max_year = 2021))
 #' }
-
-kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
+kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -467,28 +492,29 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/pointdist.php?",
-                      "y=", year)
+        url <- paste0(
+          "https://kenpom.com/pointdist.php?",
+          "y=", year
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Team", "Conf",
-                         "Off.FT.Pct", "Off.FT.Pct.Rk",
-                         "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
-                         "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
-                         "Def.FT.Pct", "Def.FT.Pct.Rk",
-                         "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
-                         "Def.FG_3.Pct", "Def.FG_3.Pct.Rk")
+        header_cols <- c(
+          "Team", "Conf",
+          "Off.FT.Pct", "Off.FT.Pct.Rk",
+          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+          "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+          "Def.FT.Pct", "Def.FT.Pct.Rk",
+          "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+          "Def.FG_3.Pct", "Def.FG_3.Pct.Rk"
+        )
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
 
-        x <- x[,1:14]
+        x <- x[, 1:14]
 
         colnames(x) <- header_cols
 
@@ -498,24 +524,31 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
         )
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           dplyr::mutate_at(
-            c("Off.FT.Pct", "Off.FT.Pct.Rk",
+            c(
+              "Off.FT.Pct", "Off.FT.Pct.Rk",
               "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
               "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
               "Def.FT.Pct", "Def.FT.Pct.Rk",
               "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
-              "Def.FG_3.Pct", "Def.FG_3.Pct.Rk","Year"), as.numeric) %>%
+              "Def.FG_3.Pct", "Def.FG_3.Pct.Rk", "Year"
+            ), as.numeric
+          ) %>%
           as.data.frame()
 
         ### Store Data
         if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -577,10 +610,9 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_height(min_year = 2020, max_year = 2021))
+#' try(kp_height(min_year = 2020, max_year = 2021))
 #' }
-
-kp_height <- function(min_year,max_year = most_recent_mbb_season()){
+kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -593,43 +625,51 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/height.php?",
-                      "y=", year)
+        url <- paste0(
+          "https://kenpom.com/height.php?",
+          "y=", year
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
         if (year < 2008) {
-          header_cols <- c("Team", "Conf",
-                           "Avg.Hgt", "Avg.Hgt.Rk",
-                           "Eff.Hgt", "Eff.Hgt.Rk",
-                           "C.Hgt", "C.Hgt.Rk",
-                           "PF.Hgt", "PF.Hgt.Rk",
-                           "SF.Hgt", "SF.Hgt.Rk",
-                           "SG.Hgt", "SG.Hgt.Rk",
-                           "PG.Hgt", "PG.Hgt.Rk",
-                           "Experience", "Experience.Rk",
-                           "Bench", "Bench.Rk")
+          header_cols <- c(
+            "Team", "Conf",
+            "Avg.Hgt", "Avg.Hgt.Rk",
+            "Eff.Hgt", "Eff.Hgt.Rk",
+            "C.Hgt", "C.Hgt.Rk",
+            "PF.Hgt", "PF.Hgt.Rk",
+            "SF.Hgt", "SF.Hgt.Rk",
+            "SG.Hgt", "SG.Hgt.Rk",
+            "PG.Hgt", "PG.Hgt.Rk",
+            "Experience", "Experience.Rk",
+            "Bench", "Bench.Rk"
+          )
 
           x <- (page %>%
-                  xml2::read_html() %>%
-                  rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+            rvest::html_elements(css = "#ratings-table"))[[1]] %>%
             rvest::html_table()
-          x <- x[,1:20]
+          x <- x[, 1:20]
           colnames(x) <- header_cols
           x <- x %>%
             dplyr::mutate(
               Continuity = 0.0,
-              Continuity.Rk = 0)
+              Continuity.Rk = 0
+            )
           x <- dplyr::mutate(x,
-                             "NCAA_Seed" = NA_integer_,
-                             "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                             "Team" = sapply(.data$Team, function(arg) {
-                               stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                             "Year" = year) %>%
+            "NCAA_Seed" = NA_integer_,
+            "NCAA_Seed" = sapply(.data$Team, function(arg) {
+              as.numeric(gsub("[^0-9]", "", arg))
+            }),
+            "Team" = sapply(.data$Team, function(arg) {
+              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+            }),
+            "Year" = year
+          ) %>%
             dplyr::mutate_at(
-              c("Avg.Hgt", "Avg.Hgt.Rk",
+              c(
+                "Avg.Hgt", "Avg.Hgt.Rk",
                 "Eff.Hgt", "Eff.Hgt.Rk",
                 "C.Hgt", "C.Hgt.Rk",
                 "PF.Hgt", "PF.Hgt.Rk",
@@ -637,27 +677,30 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
                 "SG.Hgt", "SG.Hgt.Rk",
                 "PG.Hgt", "PG.Hgt.Rk",
                 "Experience", "Experience.Rk",
-                "Bench", "Bench.Rk","Continuity","Continuity.Rk"), as.numeric) %>%
+                "Bench", "Bench.Rk", "Continuity", "Continuity.Rk"
+              ), as.numeric
+            ) %>%
             as.data.frame()
-        }else{
-          header_cols <- c("Team", "Conf",
-                           "Avg.Hgt", "Avg.Hgt.Rk",
-                           "Eff.Hgt", "Eff.Hgt.Rk",
-                           "C.Hgt", "C.Hgt.Rk",
-                           "PF.Hgt", "PF.Hgt.Rk",
-                           "SF.Hgt", "SF.Hgt.Rk",
-                           "SG.Hgt", "SG.Hgt.Rk",
-                           "PG.Hgt", "PG.Hgt.Rk",
-                           "Experience", "Experience.Rk",
-                           "Bench", "Bench.Rk",
-                           "Continuity", "Continuity.Rk")
+        } else {
+          header_cols <- c(
+            "Team", "Conf",
+            "Avg.Hgt", "Avg.Hgt.Rk",
+            "Eff.Hgt", "Eff.Hgt.Rk",
+            "C.Hgt", "C.Hgt.Rk",
+            "PF.Hgt", "PF.Hgt.Rk",
+            "SF.Hgt", "SF.Hgt.Rk",
+            "SG.Hgt", "SG.Hgt.Rk",
+            "PG.Hgt", "PG.Hgt.Rk",
+            "Experience", "Experience.Rk",
+            "Bench", "Bench.Rk",
+            "Continuity", "Continuity.Rk"
+          )
 
           x <- (page %>%
-                  xml2::read_html() %>%
-                  rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+            rvest::html_elements(css = "#ratings-table"))[[1]] %>%
             rvest::html_table()
 
-          x <- x[,1:22]
+          x <- x[, 1:22]
           colnames(x) <- header_cols
         }
 
@@ -668,13 +711,18 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           dplyr::mutate_at(
-            c("Avg.Hgt", "Avg.Hgt.Rk",
+            c(
+              "Avg.Hgt", "Avg.Hgt.Rk",
               "Eff.Hgt", "Eff.Hgt.Rk",
               "C.Hgt", "C.Hgt.Rk",
               "PF.Hgt", "PF.Hgt.Rk",
@@ -682,7 +730,9 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
               "SG.Hgt", "SG.Hgt.Rk",
               "PG.Hgt", "PG.Hgt.Rk",
               "Experience", "Experience.Rk",
-              "Bench", "Bench.Rk","Continuity","Continuity.Rk"), as.numeric) %>%
+              "Bench", "Bench.Rk", "Continuity", "Continuity.Rk"
+            ), as.numeric
+          ) %>%
           as.data.frame()
 
         ### Store Data
@@ -740,10 +790,9 @@ kp_height <- function(min_year,max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
+#' try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 #' }
-
-kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
+kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -756,24 +805,26 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/foul_trouble.php?",
-                      "y=", year)
+        url <- paste0(
+          "https://kenpom.com/foul_trouble.php?",
+          "y=", year
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Team", "Conf", "TwoFoulParticpation.Pct",
-                         "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
-                         "TwoFoulTotalTime","TwoFoulTotalTime.Rk",
-                         "TwoFoulTimeOn","TwoFoulTimeOn.Rk",
-                         "Bench.Pct","Bench.Pct.Rk")
+        header_cols <- c(
+          "Team", "Conf", "TwoFoulParticpation.Pct",
+          "TwoFoulParticpation.Pct.Rk", "Adj2FP", "Adj2FP.Rk",
+          "TwoFoulTotalTime", "TwoFoulTotalTime.Rk",
+          "TwoFoulTimeOn", "TwoFoulTimeOn.Rk",
+          "Bench.Pct", "Bench.Pct.Rk"
+        )
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
 
-        x <- x[,1:12]
+        x <- x[, 1:12]
 
         colnames(x) <- header_cols
 
@@ -783,21 +834,28 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
         )
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           dplyr::mutate_at(
-            c("TwoFoulParticpation.Pct",
-              "TwoFoulParticpation.Pct.Rk",	"Adj2FP", "Adj2FP.Rk",
-              "Bench.Pct","Bench.Pct.Rk"), as.numeric) %>%
+            c(
+              "TwoFoulParticpation.Pct",
+              "TwoFoulParticpation.Pct.Rk", "Adj2FP", "Adj2FP.Rk",
+              "Bench.Pct", "Bench.Pct.Rk"
+            ), as.numeric
+          ) %>%
           as.data.frame()
 
         ### Store Data
         if (year == min_year) {
           kenpom <- x
-        }else {
+        } else {
           kenpom <- dplyr::bind_rows(kenpom, x)
         }
       }
@@ -876,10 +934,9 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'    try(kp_teamstats(min_year = 2019, max_year =2021))
+#' try(kp_teamstats(min_year = 2019, max_year = 2021))
 #' }
-
-kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
+kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -893,30 +950,32 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
       years <- min_year:max_year
 
       for (year in years) {
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/teamstats.php?",
-                      "y=", year, "&od=o")
+        url <- paste0(
+          "https://kenpom.com/teamstats.php?",
+          "y=", year, "&od=o"
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Team", "Conf",
-                         "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
-                         "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
-                         "Off.FT.Pct", "Off.FT.Pct.Rk",
-                         "Off.Blk.Pct", "Off.Blk.Pct.Rk",
-                         "Off.Stl.Pct", "Off.Stl.Pct.Rk",
-                         "Off.NonStl.Pct", "Off.NonStl.Pct.Rk",
-                         "Off.A.Pct", "Off.A.Pct.Rk",
-                         "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk",
-                         "AdjO","AdjO.Rk")
+        header_cols <- c(
+          "Team", "Conf",
+          "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+          "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
+          "Off.FT.Pct", "Off.FT.Pct.Rk",
+          "Off.Blk.Pct", "Off.Blk.Pct.Rk",
+          "Off.Stl.Pct", "Off.Stl.Pct.Rk",
+          "Off.NonStl.Pct", "Off.NonStl.Pct.Rk",
+          "Off.A.Pct", "Off.A.Pct.Rk",
+          "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk",
+          "AdjO", "AdjO.Rk"
+        )
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
 
-        x <- x[,1:20]
+        x <- x[, 1:20]
 
         colnames(x) <- header_cols
 
@@ -926,43 +985,53 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
         )
 
         x <- dplyr::mutate(x,
-                           "NCAA_Seed" = NA_integer_,
-                           "NCAA_Seed" = sapply(.data$Team, function(arg) { as.numeric(gsub("[^0-9]", "", arg)) }),
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "NCAA_Seed" = NA_integer_,
+          "NCAA_Seed" = sapply(.data$Team, function(arg) {
+            as.numeric(gsub("[^0-9]", "", arg))
+          }),
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           dplyr::mutate_at(
-            c("Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
+            c(
+              "Off.FG_3.Pct", "Off.FG_3.Pct.Rk",
               "Off.FG_2.Pct", "Off.FG_2.Pct.Rk",
               "Off.FT.Pct", "Off.FT.Pct.Rk",
-              "Off.Blk.Pct", 'Off.Blk.Pct.Rk',
+              "Off.Blk.Pct", "Off.Blk.Pct.Rk",
               "Off.Stl.Pct", "Off.Stl.Pct.Rk",
               "Off.NonStl.Pct", "Off.NonStl.Pct.Rk",
               "Off.A.Pct", "Off.A.Pct.Rk",
-              "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk", "AdjO", "AdjO.Rk", "Year"), as.numeric) %>%
+              "Off.FG_3A.Pct", "Off.FG_3A.Pct.Rk", "AdjO", "AdjO.Rk", "Year"
+            ), as.numeric
+          ) %>%
           as.data.frame()
         ### Pull Data
-        url <- paste0("https://kenpom.com/teamstats.php?",
-                      "y=", year, "&od=d")
+        url <- paste0(
+          "https://kenpom.com/teamstats.php?",
+          "y=", year, "&od=d"
+        )
 
-        page <- rvest::session_jump_to(browser, url)
-        d_header_cols <- c("Team", "Conf",
-                           "Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
-                           "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
-                           "Def.FT.Pct", "Def.FT.Pct.Rk",
-                           "Def.Blk.Pct", 'Def.Blk.Pct.Rk',
-                           "Def.Stl.Pct", "Def.Stl.Pct.Rk",
-                           "Def.NonStl.Pct", "Def.NonStl.Pct.Rk",
-                           "Def.A.Pct", "Def.A.Pct.Rk",
-                           "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
-                           "AdjD","AdjD.Rk")
+        page <- .kp_get_page(browser, url)
+        d_header_cols <- c(
+          "Team", "Conf",
+          "Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
+          "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
+          "Def.FT.Pct", "Def.FT.Pct.Rk",
+          "Def.Blk.Pct", "Def.Blk.Pct.Rk",
+          "Def.Stl.Pct", "Def.Stl.Pct.Rk",
+          "Def.NonStl.Pct", "Def.NonStl.Pct.Rk",
+          "Def.A.Pct", "Def.A.Pct.Rk",
+          "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
+          "AdjD", "AdjD.Rk"
+        )
 
         y <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
 
-        y <- y[,1:20]
+        y <- y[, 1:20]
 
         colnames(y) <- d_header_cols
 
@@ -973,19 +1042,24 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 
         y <- y %>%
           dplyr::mutate_at(
-            c("Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
+            c(
+              "Def.FG_3.Pct", "Def.FG_3.Pct.Rk",
               "Def.FG_2.Pct", "Def.FG_2.Pct.Rk",
               "Def.FT.Pct", "Def.FT.Pct.Rk",
-              "Def.Blk.Pct", 'Def.Blk.Pct.Rk',
+              "Def.Blk.Pct", "Def.Blk.Pct.Rk",
               "Def.Stl.Pct", "Def.Stl.Pct.Rk",
               "Def.NonStl.Pct", "Def.NonStl.Pct.Rk",
               "Def.A.Pct", "Def.A.Pct.Rk",
               "Def.FG_3A.Pct", "Def.FG_3A.Pct.Rk",
-              "AdjD", "AdjD.Rk"), as.numeric) %>%
+              "AdjD", "AdjD.Rk"
+            ), as.numeric
+          ) %>%
           dplyr::mutate(
             "Team" = sapply(.data$Team, function(arg) {
-              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-            "Year" = year) %>%
+              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+            }),
+            "Year" = year
+          ) %>%
           as.data.frame()
 
 
@@ -993,10 +1067,10 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
         ### Store Data
         if (year == min_year) {
           kenpom <- x %>%
-            dplyr::left_join(y, by = c("Team","Conf", "Year"))
+            dplyr::left_join(y, by = c("Team", "Conf", "Year"))
         } else {
           z <- x %>%
-            dplyr::left_join(y, by = c("Team","Conf", "Year"))
+            dplyr::left_join(y, by = c("Team", "Conf", "Year"))
           kenpom <- dplyr::bind_rows(kenpom, z)
         }
       }
@@ -1056,26 +1130,31 @@ kp_teamstats <- function(min_year, max_year=most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
+#' try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 #' }
-
-kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=most_recent_mbb_season()){
+kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
-      m_list <- c('ORtg', 'Min', 'eFG', 'Poss', 'Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', 'FTRate', 'Stl',
-                  'TS', 'FC40', 'FD40', '2P', '3P', 'FT')
+      m_list <- c(
+        "ORtg", "Min", "eFG", "Poss", "Shots", "OR", "DR", "TO", "ARate", "Blk", "FTRate", "Stl",
+        "TS", "FC40", "FD40", "2P", "3P", "FT"
+      )
 
-      url_ext <- c('ORtg','PctMin', 'eFG', 'PctPoss','PctShots', 'ORPct', 'DRPct','TORate', 'ARate', 'PctBlocks', 'FTRate',
-                   'PctStls', 'TS',  'FCper40', 'FDper40', 'FG2Pct', 'FG3Pct', 'FTPct')
+      url_ext <- c(
+        "ORtg", "PctMin", "eFG", "PctPoss", "PctShots", "ORPct", "DRPct", "TORate", "ARate", "PctBlocks", "FTRate",
+        "PctStls", "TS", "FCper40", "FDper40", "FG2Pct", "FG3Pct", "FTPct"
+      )
 
       metrics_data <- data.frame(m_list, url_ext)
 
-      conf_list <- c('A10', 'ACC', 'AE', 'AMER', 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW',
-                     'CAA', 'CUSA', 'HORZ', 'IND', 'IVY', 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC',
-                     'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', 'SUM', 'SWAC', 'WAC', 'WCC')
+      conf_list <- c(
+        "A10", "ACC", "AE", "AMER", "ASUN", "B10", "B12", "BE", "BSKY", "BSTH", "BW",
+        "CAA", "CUSA", "HORZ", "IND", "IVY", "MAAC", "MAC", "MEAC", "MVC", "MWC", "NEC",
+        "OVC", "P12", "PAT", "SB", "SC", "SEC", "SLND", "SUM", "SWAC", "WAC", "WCC"
+      )
 
       metric_url <- metrics_data$url_ext[m_list == metric]
 
@@ -1085,30 +1164,33 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
       }
 
       if (metric == "ORtg") {
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/playerstats.php?",
-                      "y=", year,
-                      "&s=", metric_url,
-                      "&f=", conf,
-                      "&c=", conf_only)
+        url <- paste0(
+          "https://kenpom.com/playerstats.php?",
+          "y=", year,
+          "&s=", metric_url,
+          "&f=", conf,
+          "&c=", conf_only
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Rk","Player","Team", metric,
-                         "Hgt","Wgt","Yr")
+        header_cols <- c(
+          "Rk", "Player", "Team", metric,
+          "Hgt", "Wgt", "Yr"
+        )
         y <- list()
         for (i in 1:4) {
-
-          groups <- c("At least 28% of possessions used", "At least 24% of possessions used",
-                      "At least 20% of possessions used", "All players")
+          groups <- c(
+            "At least 28% of possessions used", "At least 24% of possessions used",
+            "At least 20% of possessions used", "All players"
+          )
 
           x <- (page %>%
-                  xml2::read_html() %>%
-                  rvest::html_elements("table"))[[i]] %>%
+            rvest::html_elements("table"))[[i]] %>%
             rvest::html_table()
 
-          x <- x[,1:7]
+          x <- x[, 1:7]
           colnames(x) <- header_cols
           suppressWarnings(
             x <- x %>%
@@ -1116,47 +1198,53 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
           )
 
           x <- dplyr::mutate(x,
-                             "Team" = sapply(.data$Team, function(arg) {
-                               stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                             "Year" = year,
-                             "Group" = groups[i]) %>%
+            "Team" = sapply(.data$Team, function(arg) {
+              stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+            }),
+            "Year" = year,
+            "Group" = groups[i]
+          ) %>%
             as.data.frame() %>%
             janitor::clean_names()
-          y <- c(y,list(x))
+          y <- c(y, list(x))
         }
         ### Store Data
 
         kenpom <- y
       } else {
-
         ### Pull Data
-        url <- paste0("https://kenpom.com/playerstats.php?",
-                      "y=", year,
-                      "&s=", metric_url,
-                      "&f=", conf,
-                      "&c=", conf_only)
+        url <- paste0(
+          "https://kenpom.com/playerstats.php?",
+          "y=", year,
+          "&s=", metric_url,
+          "&f=", conf,
+          "&c=", conf_only
+        )
 
-        page <- rvest::session_jump_to(browser, url)
+        page <- .kp_get_page(browser, url)
         Sys.sleep(5)
-        header_cols <- c("Rk","Player","Team", metric,
-                         "Hgt","Wgt","Yr")
+        header_cols <- c(
+          "Rk", "Player", "Team", metric,
+          "Hgt", "Wgt", "Yr"
+        )
 
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#ratings-table'))[[1]] %>%
+          rvest::html_elements(css = "#ratings-table"))[[1]] %>%
           rvest::html_table()
 
-        x <- x[,1:7]
+        x <- x[, 1:7]
         colnames(x) <- header_cols
         suppressWarnings(
           x <- x %>%
             dplyr::filter(!is.na(as.numeric(.data$Wgt)))
         )
         x <- dplyr::mutate(x,
-                           "Team" = sapply(.data$Team, function(arg) {
-                             stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }),
-                           "Year" = year) %>%
+          "Team" = sapply(.data$Team, function(arg) {
+            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg, "\\d+| \\*| \\*+"), "\\*+", ""))
+          }),
+          "Year" = year
+        ) %>%
           as.data.frame()
 
         ### Store Data
@@ -1225,10 +1313,10 @@ kp_playerstats <- function(metric = 'eFG', conf = NULL, conf_only = FALSE, year=
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_kpoy(year=2021))
+#' try(kp_kpoy(year = 2021))
 #' }
 #'
-kp_kpoy <- function(year=most_recent_mbb_season()){
+kp_kpoy <- function(year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1241,26 +1329,26 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
 
 
       ### Pull Data
-      url <- paste0("https://kenpom.com/kpoy.php?",
-                    "y=", year)
+      url <- paste0(
+        "https://kenpom.com/kpoy.php?",
+        "y=", year
+      )
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       y <- list()
       for (i in 1:2) {
-
         groups <- c("kPoY Rating", "Game MVP Leaders")
 
         x <- (page %>%
-                xml2::read_html() %>%
-                rvest::html_elements(css = '#kpoy-table'))[[i]] %>%
+          rvest::html_elements(css = "#kpoy-table"))[[i]] %>%
           rvest::html_table() %>%
           as.data.frame()
 
         if (i == 1) {
-          header_cols <- c("Rk","Player","kpoyRating")
+          header_cols <- c("Rk", "Player", "kpoyRating")
         } else {
-          header_cols <- c("Rk","Player","GameMVPs")
+          header_cols <- c("Rk", "Player", "GameMVPs")
         }
 
 
@@ -1268,46 +1356,53 @@ kp_kpoy <- function(year=most_recent_mbb_season()){
 
         x <- x %>%
           tidyr::separate("Player",
-                          into = c("Player","col"),
-                          sep = ",",
-                          extra = "merge")
+            into = c("Player", "col"),
+            sep = ",",
+            extra = "merge"
+          )
 
         x <- x %>%
           dplyr::mutate(
             Team = stringr::str_extract(
-              stringr::str_extract(.data$col,'[^\\d-\\d{1,}]+'),".+"),
+              stringr::str_extract(.data$col, "[^\\d-\\d{1,}]+"), ".+"
+            ),
             Hgt = stringr::str_extract(
-              stringi::stri_extract_first_regex(.data$col, '[^,]+'),"\\d{1,}-\\d{1,}+"),
+              stringi::stri_extract_first_regex(.data$col, "[^,]+"), "\\d{1,}-\\d{1,}+"
+            ),
             Wgt =
-              stringr::str_extract(.data$col,'\\d{3}'),
+              stringr::str_extract(.data$col, "\\d{3}"),
             Exp = stringr::str_extract(.data$col, "Fr|So|Jr|Sr|r-Fr|r-So|r-Jr|r-Sr"),
             HomeTown = stringr::str_extract(
-              stringi::stri_extract_last_regex(.data$col, '[^\u00b7]+'),".*")
+              stringi::stri_extract_last_regex(.data$col, "[^\u00b7]+"), ".*"
+            )
           )
         suppressWarnings(
           if (i == 1) {
             x <- x %>%
-              dplyr::mutate_at(c("kpoyRating","Wgt"), as.numeric)
+              dplyr::mutate_at(c("kpoyRating", "Wgt"), as.numeric)
           } else {
             x <- x %>%
-              dplyr::mutate_at(c("GameMVPs","Wgt"), as.numeric)
+              dplyr::mutate_at(c("GameMVPs", "Wgt"), as.numeric)
           }
         )
         x <- x %>%
           dplyr::mutate(
             "Year" = year,
-            "Group" = groups[i]) %>%
+            "Group" = groups[i]
+          ) %>%
           as.data.frame()
         x <- x %>%
           dplyr::select(-"col")
 
         if (i == 2) {
-          replace_na_with_last <- function(x, p = is.na, d = 0){c(d, x)[cummax(seq_along(x)*(!p(x))) + 1]}
+          replace_na_with_last <- function(x, p = is.na, d = 0) {
+            c(d, x)[cummax(seq_along(x) * (!p(x))) + 1]
+          }
           x$Rk <- replace_na_with_last(x$Rk)
         }
         x <- x %>%
           janitor::clean_names()
-        y <- c(y,list(x))
+        y <- c(y, list(x))
       }
       ### Store Data
 

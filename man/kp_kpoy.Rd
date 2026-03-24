@@ -46,7 +46,7 @@ Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 }
 \examples{
 \donttest{
-  try(kp_kpoy(year=2021))
+try(kp_kpoy(year = 2021))
 }
 
 }

@@ -61,7 +61,7 @@ Returns a tibble of team stats\tabular{ll}{
 }
 \examples{
 \donttest{
-   try(kp_teamstats(min_year = 2019, max_year =2021))
+try(kp_teamstats(min_year = 2019, max_year = 2021))
 }
 }
 \seealso{

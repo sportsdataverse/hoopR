@@ -25,7 +25,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_arenas(year=2021))
+try(kp_arenas(year = 2021))
 }
 }
 \seealso{

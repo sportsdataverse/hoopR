@@ -30,7 +30,7 @@
 #'   |coordinate_y         |integer   |
 #'
 #' @importFrom jsonlite fromJSON
-#' @importFrom httr GET RETRY
+#' @importFrom httr2 request req_headers req_timeout req_retry req_perform resp_body_string
 #' @importFrom utils URLencode URLdecode
 #' @importFrom cli cli_abort
 #' @importFrom janitor clean_names
@@ -41,11 +41,10 @@
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_wp(game_id = 401283399)
+#' espn_nba_wp(game_id = 401283399)
 #' }
 #'
 espn_nba_wp <- function(game_id) {
-
   if (!is.null(game_id) && !is.numeric(game_id)) {
     # Check if game_id is numeric, if not NULL
     cli::cli_abort("Enter valid game_id value (Integer)")
@@ -58,8 +57,8 @@ espn_nba_wp <- function(game_id) {
   tryCatch(
     expr = {
       espn_wp <-
-        httr::GET(url = glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={espn_game_id}")) %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .retry_request(glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={espn_game_id}")) %>%
+        .resp_text() %>%
         jsonlite::fromJSON(flatten = TRUE)
 
       espn_wp_vals <- espn_wp %>%
@@ -73,16 +72,17 @@ espn_nba_wp <- function(game_id) {
           "play_id" = "id"
         )
       espn_wp <- espn_wp_vals %>%
-        dplyr::left_join(espn_plays, by = "play_id")%>%
+        dplyr::left_join(espn_plays, by = "play_id") %>%
         dplyr::mutate(
           away_win_percentage = 1 - .data$home_win_percentage - .data$tie_percentage,
-          game_id = espn_game_id) %>%
-        dplyr::select(dplyr::any_of(c("game_id","play_id","home_win_percentage", "away_win_percentage", "tie_percentage")),
-                      tidyr::everything()) %>%
+          game_id = espn_game_id
+        ) %>%
+        dplyr::select(
+          dplyr::any_of(c("game_id", "play_id", "home_win_percentage", "away_win_percentage", "tie_percentage")),
+          tidyr::everything()
+        ) %>%
         janitor::clean_names() %>%
-        make_hoopR_data("ESPN NBA Win Probability Information from ESPN.com",Sys.time())
-
-
+        make_hoopR_data("ESPN NBA Win Probability Information from ESPN.com", Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: game_id '{espn_game_id}' invalid or no ESPN win probability data available!"))

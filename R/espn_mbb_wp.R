@@ -17,7 +17,7 @@
 #' }
 #'
 #' @importFrom jsonlite fromJSON
-#' @importFrom httr GET RETRY
+#' @importFrom httr2 request req_headers req_timeout req_retry req_perform resp_body_string
 #' @importFrom utils URLencode URLdecode
 #' @importFrom cli cli_abort
 #' @importFrom janitor clean_names
@@ -28,11 +28,10 @@
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_wp(game_id = 401256760)
+#' espn_mbb_wp(game_id = 401256760)
 #' }
 #'
 espn_mbb_wp <- function(game_id) {
-
   if (!is.null(game_id) && !is.numeric(game_id)) {
     # Check if game_id is numeric, if not NULL
     cli::cli_abort("Enter valid game_id value (Integer)")
@@ -45,29 +44,32 @@ espn_mbb_wp <- function(game_id) {
   tryCatch(
     expr = {
       espn_wp <-
-        httr::GET(url = glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event={espn_game_id}")) %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .retry_request(glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event={espn_game_id}")) %>%
+        .resp_text() %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
         purrr::pluck("winprobability") %>%
         janitor::clean_names() %>%
         dplyr::mutate(
           espn_game_id = stringr::str_sub(.data$play_id, end = stringr::str_length(espn_game_id)),
           period = dplyr::case_when(
-            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3))<2000000 ~ 1,
-            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3))<3000000 ~ 2,
-            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3))<4000000 ~ 3,
+            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3)) < 2000000 ~ 1,
+            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3)) < 3000000 ~ 2,
+            as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3)) < 4000000 ~ 3,
             TRUE ~ NA_real_
           ),
-          seconds_left = ifelse(as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3))<2000000,
-                                20000 - as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3, end = stringr::str_length(.data$play_id)-2))-1,
-                                30000 - as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id)+3, end = stringr::str_length(.data$play_id)-2))-1),
-          period_seconds_left = ifelse(stringr::str_length(.data$seconds_left)>2,
-                           as.integer(stringr::str_sub(.data$seconds_left,  end = stringr::str_length(.data$seconds_left)-2))*60+
-                             as.integer(stringr::str_sub(.data$seconds_left,  start = stringr::str_length(.data$seconds_left)-1)),
-                           as.integer(stringr::str_sub(.data$seconds_left,  start = stringr::str_length(.data$seconds_left)-1))),
+          seconds_left = ifelse(as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3)) < 2000000,
+            20000 - as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3, end = stringr::str_length(.data$play_id) - 2)) - 1,
+            30000 - as.integer(stringr::str_sub(.data$play_id, start = stringr::str_length(espn_game_id) + 3, end = stringr::str_length(.data$play_id) - 2)) - 1
+          ),
+          period_seconds_left = ifelse(stringr::str_length(.data$seconds_left) > 2,
+            as.integer(stringr::str_sub(.data$seconds_left, end = stringr::str_length(.data$seconds_left) - 2)) * 60 +
+              as.integer(stringr::str_sub(.data$seconds_left, start = stringr::str_length(.data$seconds_left) - 1)),
+            as.integer(stringr::str_sub(.data$seconds_left, start = stringr::str_length(.data$seconds_left) - 1))
+          ),
           game_seconds_left = ifelse(.data$period == 1,
-                                     .data$period_seconds_left + 1200,
-                                     .data$period_seconds_left)
+            .data$period_seconds_left + 1200,
+            .data$period_seconds_left
+          )
         ) %>%
         dplyr::rename(
           "home_win_percentage" = "home_win_percentage",
@@ -78,22 +80,23 @@ espn_mbb_wp <- function(game_id) {
         dplyr::mutate(
           away_win_percentage = 1 - .data$home_win_percentage - .data$tie_percentage
         )
-        espn_wp$time_left <- purrr::map_dfr(1:length(espn_wp$time_left), function(x){
-          data.frame(time_left = sub("(.{2})(.*)", "\\1:\\2", as.character(pad_time(espn_wp$time_left[[x]]))))
-        })$time_left
+      espn_wp$time_left <- purrr::map_dfr(1:length(espn_wp$time_left), function(x) {
+        data.frame(time_left = sub("(.{2})(.*)", "\\1:\\2", as.character(pad_time(espn_wp$time_left[[x]]))))
+      })$time_left
 
-        espn_wp <- espn_wp %>%
-          dplyr::select(
-            "game_id",
-            "play_id",
-            "period",
-            "time_left",
-            "period_seconds_left",
-            "game_seconds_left",
-            "home_win_percentage",
-            "away_win_percentage",
-            "tie_percentage") %>%
-          make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com",Sys.time())
+      espn_wp <- espn_wp %>%
+        dplyr::select(
+          "game_id",
+          "play_id",
+          "period",
+          "time_left",
+          "period_seconds_left",
+          "game_seconds_left",
+          "home_win_percentage",
+          "away_win_percentage",
+          "tie_percentage"
+        ) %>%
+        make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com", Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: game_id '{espn_game_id}' invalid or no ESPN win probability data available!"))

@@ -1,4 +1,3 @@
-
 #' **Get NBA Stats API Draft Board**
 #' @name nba_draftboard
 NULL
@@ -87,8 +86,7 @@ NULL
 #' ```
 nba_draftboard <- function(
     season = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftboard"
   endpoint <- glue::glue("https://content-api-prod.nba.com/public/1/leagues/nba/draft/{season}/board")
   full_url <- endpoint
@@ -99,10 +97,9 @@ nba_draftboard <- function(
 
   tryCatch(
     expr = {
-
-      res <- httr::RETRY("GET", full_url, query = params)
-      resp <-  res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+      res <- .retry_request(full_url, params = params)
+      resp <- res %>%
+        .resp_text() %>%
         jsonlite::fromJSON() %>%
         purrr::pluck("results")
 
@@ -147,8 +144,7 @@ nba_draftboard <- function(
       )
 
       df_list <- c(list(picks), list(teams_without_picks), list(live_details))
-      names(df_list) <- c("Picks", "TeamsWithoutPicks","LiveDetails")
-
+      names(df_list) <- c("Picks", "TeamsWithoutPicks", "LiveDetails")
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft board data available for {season}!"))
@@ -237,10 +233,9 @@ NULL
 #'  nba_draftcombinestats(season_year = most_recent_nba_season() - 1)
 #' ```
 nba_draftcombinestats <- function(
-    league_id = '00',
+    league_id = "00",
     season_year = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftcombinestats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -254,7 +249,6 @@ nba_draftcombinestats <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
@@ -312,10 +306,9 @@ NULL
 #'  nba_draftcombinedrillresults(season_year = most_recent_nba_season() - 1)
 #' ```
 nba_draftcombinedrillresults <- function(
-    league_id = '00',
+    league_id = "00",
     season_year = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftcombinedrillresults"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -329,11 +322,9 @@ nba_draftcombinedrillresults <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine drill results data available for {season_year}!"))
@@ -406,10 +397,9 @@ NULL
 #'  nba_draftcombinenonstationaryshooting(season_year = most_recent_nba_season() - 1)
 #' ```
 nba_draftcombinenonstationaryshooting <- function(
-    league_id = '00',
+    league_id = "00",
     season_year = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftcombinenonstationaryshooting"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -423,11 +413,9 @@ nba_draftcombinenonstationaryshooting <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine stationary shooting data available for {season_year}!"))
@@ -488,10 +476,9 @@ NULL
 #'  nba_draftcombineplayeranthro(season_year = most_recent_nba_season() - 1)
 #' ```
 nba_draftcombineplayeranthro <- function(
-    league_id = '00',
+    league_id = "00",
     season_year = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftcombineplayeranthro"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -505,11 +492,9 @@ nba_draftcombineplayeranthro <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine player anthropological data available for {season_year}!"))
@@ -602,10 +587,9 @@ NULL
 #'  nba_draftcombinespotshooting(season_year = most_recent_nba_season() - 1)
 #' ```
 nba_draftcombinespotshooting <- function(
-    league_id = '00',
+    league_id = "00",
     season_year = most_recent_nba_season() - 1,
-    ...){
-
+    ...) {
   version <- "draftcombinespotshooting"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -619,11 +603,9 @@ nba_draftcombinespotshooting <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft combine spot shooting data available for {season_year}!"))
@@ -682,16 +664,15 @@ nba_draftcombinespotshooting <- function(
 #'  nba_drafthistory(season = most_recent_nba_season() - 1)
 #' ```
 nba_drafthistory <- function(
-    league_id = '00',
-    college = '',
-    overall_pick = '',
-    round_pick = '',
-    round_num = '',
+    league_id = "00",
+    college = "",
+    overall_pick = "",
+    round_pick = "",
+    round_num = "",
     season = most_recent_nba_season() - 1,
-    team_id = '',
-    top_x = '',
-    ...){
-
+    team_id = "",
+    top_x = "",
+    ...) {
   version <- "drafthistory"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -711,11 +692,9 @@ nba_drafthistory <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no draft history data available for {season}!"))

@@ -30,7 +30,7 @@ Returns a tibble with game attributes\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_game_attrs(year = 2021, attr = "Excitement"))
+try(kp_game_attrs(year = 2021, attr = "Excitement"))
 }
 }
 \seealso{
