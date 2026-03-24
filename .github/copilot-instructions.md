@@ -1,17 +1,18 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [hoopR Copilot Instructions](#hoopr-copilot-instructions)
   - [Project Context](#project-context)
+  - [Repository Workflow](#repository-workflow)
   - [Code Style](#code-style)
-  - [Function Naming](#function-naming)
   - [HTTP Layer](#http-layer)
   - [Messaging Layer](#messaging-layer)
+  - [Function Naming](#function-naming)
   - [Roxygen Documentation](#roxygen-documentation)
   - [Testing](#testing)
     - [Environment Variables](#environment-variables)
+    - [CI Secrets](#ci-secrets)
   - [Conventional Commits](#conventional-commits)
   - [V3 API Notes](#v3-api-notes)
   - [Common Pitfalls](#common-pitfalls)
@@ -153,4 +154,5 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 - IST Standings has dynamic game columns -- use `expect_true(all(core_cols %in% colnames()))`.
 - NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.
 - Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp logs) can cause `R CMD check` notes/warnings if included in source checks.
+- KenPom HTML structure changes periodically -- CSS selectors for tables (`table#player-table`), referee links (`div.refline`), and navigation elements are fragile and may need updating.
 - Never edit `NAMESPACE` or `man/` files by hand; regenerate with `devtools::document()`.

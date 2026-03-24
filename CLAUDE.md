@@ -4,6 +4,7 @@
 
 - [CLAUDE.md -- hoopR Development Guide](#claudemd----hoopr-development-guide)
   - [Package Overview](#package-overview)
+  - [Branching & PR Workflow](#branching--pr-workflow)
   - [Build & Development Commands](#build--development-commands)
   - [Project Structure](#project-structure)
   - [Key Coding Conventions](#key-coding-conventions)
@@ -17,6 +18,7 @@
   - [Testing](#testing)
     - [Test Pattern](#test-pattern)
     - [Environment Variables for Tests](#environment-variables-for-tests)
+    - [CI Secrets](#ci-secrets)
     - [Rate Limiting](#rate-limiting)
   - [NAMESPACE](#namespace)
   - [Commit Convention](#commit-convention)
@@ -343,4 +345,5 @@ Split unrelated work into separate commits for reviewability.
 - `.v3_to_v2_format()` uses row-level loops for player resolution -- performance-sensitive for large PBP datasets. The `%||%` operator from rlang is used for null-safe named vector lookups in event type maps.
 - `.players_on_court_v3()` depends on `nba_gamerotation()` returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second -- ensure time unit consistency when modifying.
 - Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs) can surface as `R CMD check` notes/warnings if not excluded from build inputs.
+- KenPom HTML structure changes periodically -- CSS selectors for tables (`table#player-table`), referee links (`div.refline`), and navigation elements are fragile and may need updating.
 - Never hand-edit `NAMESPACE` or files under `man/`; regenerate with `devtools::document()`.
