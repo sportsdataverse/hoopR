@@ -4,8 +4,8 @@
 
 - [Release summary](#release-summary)
   - [HTTP Backend Migration](#http-backend-migration)
-  - [Messaging Migration (usethis → cli)](#messaging-migration-usethis--cli)
-  - [Social Branding (Twitter → X)](#social-branding-twitter--x)
+  - [Messaging Migration (usethis → cli)](#messaging-migration-usethis-%E2%86%92-cli)
+  - [Social Branding (Twitter → X)](#social-branding-twitter-%E2%86%92-x)
   - [NBA Play-by-Play V3](#nba-play-by-play-v3)
   - [NBA Boxscore Summary V3](#nba-boxscore-summary-v3)
   - [New NBA Stats API Endpoint Wrappers](#new-nba-stats-api-endpoint-wrappers)
@@ -65,8 +65,12 @@ This is a major release (v3.0.0) with the following changes:
 - Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
 - Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
 - Fixed `nba_iststandings()` nested games column flattening.
-- Moves `furrr` and `future` dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.
-- Add `lifecycle` dependency and deprecation warnings for unstable functions/endpoints to guide users to maintained alternatives.
+- Moved `furrr` and `future` dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.
+- Added `lifecycle` dependency and deprecation warnings for unstable functions/endpoints to guide users to maintained alternatives.
+- Fixed `kp_box()` referee link extraction by updating CSS selectors to match current KenPom HTML structure.
+- Fixed `kp_team_history()` CSS selector and team name assignment to use the display name instead of the URL slug.
+- Updated `kp_kpoy()` example year from 2021 to 2026 for current season relevance.
+- Updated `teams_links` dataset with 2026 season team data.
 
 ### Deprecations
 - Deprecated unstable NBA boxscore V2 wrappers and redirect users to maintained alternatives:
@@ -97,6 +101,9 @@ This is a major release (v3.0.0) with the following changes:
 
 * checking CRAN incoming feasibility ... NOTE
   - New submission (major version bump from 2.1.0 to 3.0.0)
+
+* Win-builder R-devel (2026-03-23 r89685 ucrt): 0 errors | 0 warnings | 1 NOTE
+  - Found (possibly) invalid URLs: all flagged URLs are `www.nba.com/stats/*` endpoints that return HTTP/2 INTERNAL_ERROR (stream reset) to automated URL checkers. These URLs are valid and functional in browsers; nba.com rate-limits/blocks automated requests.
 
 ## revdepcheck results
 
