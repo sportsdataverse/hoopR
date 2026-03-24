@@ -34,10 +34,9 @@
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_trends())
+#' try(kp_trends())
 #' }
-
-kp_trends <- function(){
+kp_trends <- function() {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -46,16 +45,17 @@ kp_trends <- function(){
 
       ### Pull Data
       url <- "https://kenpom.com/trends.php"
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
-                       "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
-                       "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
-                       "Continuity","HomeWin.Pct","PPG")
+      header_cols <- c(
+        "Season", "Efficiency", "Tempo", "eFG.Pct", "TO.Pct",
+        "OR.Pct", "FTRate", "FG_2.Pct", "FG_3.Pct", "FG_3A.Pct", "FT.Pct",
+        "A.Pct", "Blk.Pct", "Stl.Pct", "NonStl.Pct", "Avg.Hgt",
+        "Continuity", "HomeWin.Pct", "PPG"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -66,12 +66,13 @@ kp_trends <- function(){
       )
       ### Store Data
       kenpom <- x %>%
-        dplyr::mutate_at(c("Season","Efficiency","Tempo","eFG.Pct","TO.Pct",
-                           "OR.Pct","FTRate","FG_2.Pct","FG_3.Pct","FG_3A.Pct",'FT.Pct',
-                           "A.Pct","Blk.Pct","Stl.Pct","NonStl.Pct","Avg.Hgt",
-                           "Continuity","HomeWin.Pct","PPG"), as.numeric) %>%
+        dplyr::mutate_at(c(
+          "Season", "Efficiency", "Tempo", "eFG.Pct", "TO.Pct",
+          "OR.Pct", "FTRate", "FG_2.Pct", "FG_3.Pct", "FG_3A.Pct", "FT.Pct",
+          "A.Pct", "Blk.Pct", "Stl.Pct", "NonStl.Pct", "Avg.Hgt",
+          "Continuity", "HomeWin.Pct", "PPG"
+        ), as.numeric) %>%
         janitor::clean_names()
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no trends data available!"))
@@ -109,10 +110,9 @@ kp_trends <- function(){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_officials(year = 2021))
+#' try(kp_officials(year = 2021))
 #' }
-
-kp_officials <- function(year = most_recent_mbb_season()){
+kp_officials <- function(year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -125,15 +125,16 @@ kp_officials <- function(year = most_recent_mbb_season()){
 
 
       ### Pull Data
-      url <- paste0("https://kenpom.com/officials.php?y=",year)
-      page <- rvest::session_jump_to(browser, url)
+      url <- paste0("https://kenpom.com/officials.php?y=", year)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Rk","OfficialName","RefRating","Gms","Last.Game",
-                       "Last.Game.1","Last.Game.2")
+      header_cols <- c(
+        "Rk", "OfficialName", "RefRating", "Gms", "Last.Game",
+        "Last.Game.1", "Last.Game.2"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -145,16 +146,16 @@ kp_officials <- function(year = most_recent_mbb_season()){
             dplyr::filter(!is.na(as.numeric(.data$RefRating)))
         )
       x <- dplyr::mutate(x,
-                         "Year" = year)
+        "Year" = year
+      )
       suppressWarnings(
         x <- x %>%
-          dplyr::mutate_at(c("Year","RefRating","Gms"), as.numeric) %>%
+          dplyr::mutate_at(c("Year", "RefRating", "Gms"), as.numeric) %>%
           as.data.frame()
       )
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no officials data for {year} available!"))
@@ -196,10 +197,9 @@ kp_officials <- function(year = most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_referee(referee = 714363, year = 2021))
+#' try(kp_referee(referee = 714363, year = 2021))
 #' }
-
-kp_referee <- function(referee, year){
+kp_referee <- function(referee, year) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -212,38 +212,39 @@ kp_referee <- function(referee, year){
 
 
       ### Pull Data
-      url <- paste0("https://kenpom.com/referee.php?",
-                    "r=",referee,
-                    "&y=",year)
-      page <- rvest::session_jump_to(browser, url)
+      url <- paste0(
+        "https://kenpom.com/referee.php?",
+        "r=", referee,
+        "&y=", year
+      )
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("GameNumber","Date","Time (ET)","Game","Location",
-                       "Venue","Conference", "ThrillScore")
+      header_cols <- c(
+        "GameNumber", "Date", "Time (ET)", "Game", "Location",
+        "Venue", "Conference", "ThrillScore"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
       colnames(x) <- header_cols
       rk <- page %>%
-        xml2::read_html() %>%
         rvest::html_element(".rank") %>%
         rvest::html_text()
       name <- page %>%
-        xml2::read_html() %>%
         rvest::html_element("h5") %>%
         rvest::html_text()
-      x$RefereeName <- stringr::str_remove(name,"\\d+ ")
+      x$RefereeName <- stringr::str_remove(name, "\\d+ ")
       x$RefRank <- as.numeric(rk)
       x <- dplyr::mutate(x,
-                         "Year" = year)
+        "Year" = year
+      )
 
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no referee data for {referee} in {year} available!"))
@@ -287,10 +288,9 @@ kp_referee <- function(referee, year){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_hca())
+#' try(kp_hca())
 #' }
-
-kp_hca <- function(){
+kp_hca <- function() {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -298,14 +298,15 @@ kp_hca <- function(){
       browser <- login()
 
       url <- paste0("https://kenpom.com/hca.php")
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Team",	"Conf",	"HCA","HCA.Rk",	"PF","PF.Rk",	"Pts","Pts.Rk",	"NST","NST.Rk",
-                       "Blk","Blk.Rk",	"Elev","Elev.Rk")
+      header_cols <- c(
+        "Team", "Conf", "HCA", "HCA.Rk", "PF", "PF.Rk", "Pts", "Pts.Rk", "NST", "NST.Rk",
+        "Blk", "Blk.Rk", "Elev", "Elev.Rk"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
@@ -316,9 +317,13 @@ kp_hca <- function(){
       )
       ### Store Data
       kenpom <- x %>%
-        dplyr::mutate_at(c("HCA","HCA.Rk",	"PF","PF.Rk",	"Pts","Pts.Rk",
-                           "NST","NST.Rk", "Blk","Blk.Rk",	"Elev","Elev.Rk"),
-                         as.numeric) %>%
+        dplyr::mutate_at(
+          c(
+            "HCA", "HCA.Rk", "PF", "PF.Rk", "Pts", "Pts.Rk",
+            "NST", "NST.Rk", "Blk", "Blk.Rk", "Elev", "Elev.Rk"
+          ),
+          as.numeric
+        ) %>%
         janitor::clean_names()
     },
     error = function(e) {
@@ -357,10 +362,9 @@ kp_hca <- function(){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_arenas(year=2021))
+#' try(kp_arenas(year = 2021))
 #' }
-
-kp_arenas <- function(year=most_recent_mbb_season()){
+kp_arenas <- function(year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -371,24 +375,26 @@ kp_arenas <- function(year=most_recent_mbb_season()){
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }
 
-      url <- paste0("https://kenpom.com/arenas.php?y=",year)
+      url <- paste0("https://kenpom.com/arenas.php?y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Rk","Team",	"Conf",	"Arena",
-                       "Alternate")
+      header_cols <- c(
+        "Rk", "Team", "Conf", "Arena",
+        "Alternate"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
 
       colnames(x) <- header_cols
 
       x <- dplyr::mutate(x,
-                         "Rk" = as.numeric(.data$Rk),
-                         "Year" = as.numeric(year))
+        "Rk" = as.numeric(.data$Rk),
+        "Year" = as.numeric(year)
+      )
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
@@ -434,9 +440,8 @@ kp_arenas <- function(year=most_recent_mbb_season()){
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_game_attrs(year = 2021, attr = "Excitement"))
+#' try(kp_game_attrs(year = 2021, attr = "Excitement"))
 #' }
-
 kp_game_attrs <- function(
     year = most_recent_mbb_season(),
     attr = "Excitement") {
@@ -449,25 +454,29 @@ kp_game_attrs <- function(
         # Check if year is numeric, if not NULL
         cli::cli_abort("Enter valid year as a number (YYYY), data only goes back to 2010")
       }
-      url <- paste0("https://kenpom.com/game_attrs.php?",
-                    "y=", year,
-                    "&s=", attr)
-      page <- rvest::session_jump_to(browser, url)
+      url <- paste0(
+        "https://kenpom.com/game_attrs.php?",
+        "y=", year,
+        "&s=", attr
+      )
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Rk","Data","Game",
-                       "col","Location","Conf",
-                       attr)
+      header_cols <- c(
+        "Rk", "Data", "Game",
+        "col", "Location", "Conf",
+        attr
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("table"))[[1]] %>%
+        rvest::html_elements("table"))[[1]] %>%
         rvest::html_table()
 
 
       colnames(x) <- header_cols
 
       x <- dplyr::mutate(x,
-                         "Year" = year) %>%
+        "Year" = year
+      ) %>%
         as.data.frame()
       ### Store Data
       kenpom <- x %>%
@@ -527,88 +536,100 @@ kp_game_attrs <- function(
 #'
 #' @examples
 #' \donttest{
-#'   try(kp_fanmatch(date="2022-02-22"))
+#' try(kp_fanmatch(date = "2022-02-22"))
 #' }
-
-kp_fanmatch <- function(date){
+kp_fanmatch <- function(date) {
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
-      url <- paste0("https://kenpom.com/fanmatch.php?",
-                    "d=", date)
-      page <- rvest::session_jump_to(browser, url)
+      url <- paste0(
+        "https://kenpom.com/fanmatch.php?",
+        "d=", date
+      )
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      header_cols <- c("Game","Prediction","Time(ET)",
-                       "Location","ThrillScore","Comeback","Excitement")
+      header_cols <- c(
+        "Game", "Prediction", "Time(ET)",
+        "Location", "ThrillScore", "Comeback", "Excitement"
+      )
 
       x <- (page %>%
-              xml2::read_html() %>%
-              rvest::html_elements("#fanmatch-table"))[[1]] %>%
+        rvest::html_elements("#fanmatch-table"))[[1]] %>%
         rvest::html_table()
 
       colnames(x) <- header_cols
       x <- x %>%
         dplyr::mutate(
           road_rk = stringr::str_extract(stringr::str_remove(
-            stringr::str_extract(.data$Game,".+(?<= at)|.+(?<= vs.)"),
-              " at| vs."
-            ),"\\d+"
-          ),
+            stringr::str_extract(.data$Game, ".+(?<= at)|.+(?<= vs.)"),
+            " at| vs."
+          ), "\\d+"),
           road_team = stringr::str_remove(stringr::str_extract(
-            stringr::str_extract(.data$Game,".+(?<= at)|.+(?<= vs.)"),
+            stringr::str_extract(.data$Game, ".+(?<= at)|.+(?<= vs.)"),
             ".+(?= at)|.+(?= vs.)"
-          ),"\\d+ "),
+          ), "\\d+ "),
           home_rk = stringr::str_extract(stringr::str_remove(
-            stringr::str_extract(.data$Game,"( at ).+|( vs. ).+"),
+            stringr::str_extract(.data$Game, "( at ).+|( vs. ).+"),
             " at | vs. "
-          ),"\\d+"
-          ),
+          ), "\\d+"),
           home_team = stringr::str_remove(
             stringr::str_remove(
               stringr::str_extract(
-                stringr::str_extract(.data$Game,"( at ).+|( vs. ).+"),
-                "( at ).+|( vs. ).+"),
-              " \\d+ | at | vs. "),
-            "\\d+ ")
+                stringr::str_extract(.data$Game, "( at ).+|( vs. ).+"),
+                "( at ).+|( vs. ).+"
+              ),
+              " \\d+ | at | vs. "
+            ),
+            "\\d+ "
+          )
         )
       suppressWarnings(
         x <- x %>%
           tidyr::separate("Game",
-                          into = c("Winner","col"),
-                          sep = ",",
-                          extra = "merge"))
+            into = c("Winner", "col"),
+            sep = ",",
+            extra = "merge"
+          )
+      )
 
       x <- x %>%
         dplyr::mutate(
           WinRk = stringr::str_trim(stringr::str_extract(
-            stringr::str_extract(.data$Winner,"[\\w]+"),"\\d{1,3}+")),
+            stringr::str_extract(.data$Winner, "[\\w]+"), "\\d{1,3}+"
+          )),
           WinTeam = stringr::str_trim(stringr::str_remove(stringr::str_extract(
-            stringr::str_extract(.data$Winner,'[^\\d]+'),".+")," at ")),
+            stringr::str_extract(.data$Winner, "[^\\d]+"), ".+"
+          ), " at ")),
           WinScore = stringr::str_trim(stringr::str_extract(
-            stringi::stri_extract_last_regex(.data$Winner,'[\\d]+'),"\\d{1,3}+")),
+            stringi::stri_extract_last_regex(.data$Winner, "[\\d]+"), "\\d{1,3}+"
+          )),
           Loser = stringr::str_extract(
-            stringr::str_extract(.data$col,'[^\\[]+'),".+"),
+            stringr::str_extract(.data$col, "[^\\[]+"), ".+"
+          ),
           LossRk = stringr::str_trim(stringr::str_extract(
-            stringr::str_extract(.data$Loser,"[\\w]+"),"\\d{1,3}+")),
+            stringr::str_extract(.data$Loser, "[\\w]+"), "\\d{1,3}+"
+          )),
           LossTeam =
-            stringr::str_trim(stringr::str_match(.data$Loser,'\\d{1,3}\\s(.*?)\\s\\d{1,3}')[,2]),
+            stringr::str_trim(stringr::str_match(.data$Loser, "\\d{1,3}\\s(.*?)\\s\\d{1,3}")[, 2]),
           LossScore = stringr::str_extract(
-            stringi::stri_extract_last_regex(.data$Loser,'[\\d]+'),"\\d{1,3}+"),
-          Poss = stringr::str_match(.data$col,'\\[(.*?)\\]')[,2],
-          MVP = stringr::str_match(.data$col,'MVP\\:(.*)')[,2],
-          Event = stringr::str_match(.data$col,'\\](.*)')[,2]
+            stringi::stri_extract_last_regex(.data$Loser, "[\\d]+"), "\\d{1,3}+"
+          ),
+          Poss = stringr::str_match(.data$col, "\\[(.*?)\\]")[, 2],
+          MVP = stringr::str_match(.data$col, "MVP\\:(.*)")[, 2],
+          Event = stringr::str_match(.data$col, "\\](.*)")[, 2]
         )
 
       x <- dplyr::mutate(x,
-                         "Date" = date)
+        "Date" = date
+      )
       suppressWarnings(
         x <- x %>%
           dplyr::filter(!is.na(as.numeric(.data$ThrillScore)))
       )
       ### Store Data
-      x <- x  %>%
+      x <- x %>%
         dplyr::select(
           -"col",
           -"Winner",
@@ -632,11 +653,14 @@ kp_fanmatch <- function(date){
           "Location",
           "Time(ET)",
           "Event",
-          "Date")
+          "Date"
+        )
       suppressWarnings(
         kenpom <- x %>%
-          dplyr::mutate_at(c("road_rk","home_rk","WinRk","WinScore", "LossRk","LossScore","Poss","ThrillScore","Comeback",
-                             "Excitement"), as.numeric) %>%
+          dplyr::mutate_at(c(
+            "road_rk", "home_rk", "WinRk", "WinScore", "LossRk", "LossScore", "Poss", "ThrillScore", "Comeback",
+            "Excitement"
+          ), as.numeric) %>%
           janitor::clean_names()
       )
     },

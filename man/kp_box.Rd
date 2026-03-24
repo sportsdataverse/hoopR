@@ -101,7 +101,7 @@ linescore, officials
 }
 \examples{
 \donttest{
-  try(kp_box(game_id = 6, year = 2021))
+try(kp_box(game_id = 6, year = 2021))
 }
 }
 \seealso{

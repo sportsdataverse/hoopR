@@ -206,13 +206,13 @@ espn_mbb_game_all <- function(game_id) {
     "event=", game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   # plays_df <- data.frame()
   # team_box_score <- data.frame()
@@ -382,7 +382,7 @@ espn_mbb_pbp <- function(game_id) {
     "event=", game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
@@ -390,7 +390,7 @@ espn_mbb_pbp <- function(game_id) {
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       plays_df <- helper_espn_mbb_pbp(resp)
 
@@ -505,7 +505,7 @@ espn_mbb_team_box <- function(game_id) {
     "event=", game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
@@ -513,7 +513,7 @@ espn_mbb_team_box <- function(game_id) {
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       team_box_score <- helper_espn_mbb_team_box(resp)
 
@@ -628,7 +628,7 @@ espn_mbb_player_box <- function(game_id) {
     "event=", game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
@@ -636,7 +636,7 @@ espn_mbb_player_box <- function(game_id) {
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       player_box_score <- helper_espn_mbb_player_box(resp)
 
@@ -764,12 +764,12 @@ espn_mbb_game_rosters <- function(game_id) {
         game_id, "/competitions/",
         game_id, "/competitors/"
       )
-      game_res <- httr::RETRY("GET", play_base_url)
+      game_res <- .retry_request(play_base_url)
       # Check the result
       check_status(game_res)
 
       game_resp <- game_res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
       game_df <- jsonlite::fromJSON(game_resp)[["items"]] %>%
         jsonlite::toJSON() %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
@@ -786,12 +786,12 @@ espn_mbb_game_rosters <- function(game_id) {
       game_df$game_id <- game_id
 
       teams_df <- purrr::map_dfr(game_df$team_href, function(x) {
-        res <- httr::RETRY("GET", x)
+        res <- .retry_request(x)
         # Check the result
         check_status(res)
 
         team_df <- res %>%
-          httr::content(as = "text", encoding = "UTF-8") %>%
+          .resp_text() %>%
           jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
         team_df[["links"]] <- NULL
@@ -884,13 +884,13 @@ espn_mbb_game_rosters <- function(game_id) {
       ## Inputs
       ## game_id
       team_roster_df <- purrr::map_dfr(teams_df$team_id, function(x) {
-        res <- httr::RETRY("GET", paste0(play_base_url, x, "/roster"))
+        res <- .retry_request(paste0(play_base_url, x, "/roster"))
 
         # Check the result
         check_status(res)
 
         resp <- res %>%
-          httr::content(as = "text", encoding = "UTF-8")
+          .resp_text()
 
         raw_play_df <- jsonlite::fromJSON(resp)[["entries"]]
 
@@ -907,13 +907,13 @@ espn_mbb_game_rosters <- function(game_id) {
       colnames(team_roster_df) <- gsub(".\\$ref", "_href", colnames(team_roster_df))
 
       athlete_roster_df <- purrr::map_dfr(team_roster_df$athlete_href, function(x) {
-        res <- httr::RETRY("GET", x)
+        res <- .retry_request(x)
 
         # Check the result
         check_status(res)
 
         resp <- res %>%
-          httr::content(as = "text", encoding = "UTF-8")
+          .resp_text()
 
         raw_play_df <- jsonlite::fromJSON(resp, flatten = TRUE)
         raw_play_df[["links"]] <- NULL
@@ -1020,13 +1020,13 @@ espn_mbb_conferences <- function() {
     expr = {
       play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
 
-      res <- httr::RETRY("GET", play_base_url)
+      res <- .retry_request(play_base_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       conferences <- jsonlite::fromJSON(resp)[["conferences"]] %>%
         dplyr::select(-dplyr::any_of(c("subGroups"))) %>%
@@ -1108,13 +1108,13 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
     expr = {
       teams_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
 
-      res <- httr::RETRY("GET", teams_base_url)
+      res <- .retry_request(teams_base_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       leagues <-
         jsonlite::fromJSON(resp)[["sports"]][["leagues"]][[1]][["teams"]][[1]][["team"]] %>%
@@ -1178,13 +1178,13 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
       base_url <- "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons"
       conferences_base_url <- glue::glue("{base_url}/{year}/types/2/groups/50/children?limit=1000&lang=en&region=us")
 
-      res <- httr::RETRY("GET", conferences_base_url)
+      res <- .retry_request(conferences_base_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       conf_items <- resp %>%
         jsonlite::fromJSON() %>%
@@ -1203,13 +1203,13 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
         )
 
       conference_teams <- purrr::map_dfr(conf_items$teams_url, function(x) {
-        res <- httr::RETRY("GET", x)
+        res <- .retry_request(x)
 
         # Check the result
         check_status(res)
 
         resp <- res %>%
-          httr::content(as = "text", encoding = "UTF-8")
+          .resp_text()
 
         conf_items <- resp %>%
           jsonlite::fromJSON() %>%
@@ -1272,13 +1272,13 @@ espn_mbb_team_current_roster <- function(team_id) {
     expr = {
       teams_base_url <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/{team_id}?enable=roster")
 
-      res <- httr::RETRY("GET", teams_base_url)
+      res <- .retry_request(teams_base_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       team_roster <- resp %>%
         jsonlite::fromJSON() %>%
@@ -1408,13 +1408,13 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 
   tryCatch(
     expr = {
-      res <- httr::RETRY("GET", schedule_api)
+      res <- .retry_request(schedule_api)
 
       # Check the result
       check_status(res)
 
       raw_sched <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -1764,13 +1764,13 @@ espn_mbb_rankings <- function() {
 
   tryCatch(
     expr = {
-      res <- httr::RETRY("GET", ranks_url)
+      res <- .retry_request(ranks_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
       ranks_df <- jsonlite::fromJSON(resp, flatten = TRUE)[["rankings"]]
       ranks_top25 <- ranks_df %>%
         tidyr::unnest("ranks", names_repair = "minimal") %>%
@@ -1938,14 +1938,14 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
     "season=", year
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       raw_resp <- resp %>%
         jsonlite::fromJSON()
@@ -2187,7 +2187,7 @@ espn_mbb_betting <- function(game_id) {
     "event=", game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
@@ -2197,7 +2197,7 @@ espn_mbb_betting <- function(game_id) {
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       raw_summary <- jsonlite::fromJSON(resp)
       if ("pickcenter" %in% names(raw_summary)) {
@@ -2408,26 +2408,26 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
   tryCatch(
     expr = {
       # Create the GET request and set response as res
-      res <- httr::RETRY("GET", full_url)
+      res <- .retry_request(full_url)
 
       # Check the result
       check_status(res)
 
       # Get the content and return result as data.frame
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
       team_url <- df[["team"]][["$ref"]]
 
       # Create the GET request and set response as res
-      team_res <- httr::RETRY("GET", team_url)
+      team_res <- .retry_request(team_url)
 
       # Check the result
       check_status(team_res)
 
       team_df <- team_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
       team_df[["links"]] <- NULL
@@ -2502,7 +2502,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
         )
 
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%
@@ -2718,30 +2718,30 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
   tryCatch(
     expr = {
       # Create the GET request and set response as res
-      res <- httr::RETRY("GET", full_url)
+      res <- .retry_request(full_url)
 
       # Check the result
       check_status(res)
       # Create the GET request and set response as res
-      athlete_res <- httr::RETRY("GET", athlete_url)
+      athlete_res <- .retry_request(athlete_url)
 
       # Check the result
       check_status(athlete_res)
 
       athlete_df <- athlete_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
       team_url <- athlete_df[["team"]][["$ref"]]
 
       # Create the GET request and set response as res
-      team_res <- httr::RETRY("GET", team_url)
+      team_res <- .retry_request(team_url)
 
       # Check the result
       check_status(team_res)
 
       team_df <- team_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 
       team_df[["links"]] <- NULL
@@ -2840,7 +2840,7 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
 
       # Get the content and return result as data.frame
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%

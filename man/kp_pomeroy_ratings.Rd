@@ -44,7 +44,7 @@ Returns a tibble of ratings\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
+try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 }
 }
 \seealso{

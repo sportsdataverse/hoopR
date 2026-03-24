@@ -24,7 +24,8 @@ has_kp_user_and_pw()
 \description{
 Save your KenPom login e-mail and password as the system environment variables \code{KP_USER} and \code{KP_PW}
 
-Requires a subscription to KenPom.com
+Requires a subscription to KenPom.com.
+Uses httr2 for HTTP requests and cookie management.
 }
 \details{
 \strong{Using your KenPom subscription with the package:} \cr

@@ -47,7 +47,7 @@ Returns a tibble of four factors ratings\tabular{ll}{
 }
 \examples{
 \donttest{
-   try(kp_fourfactors(min_year = 2020, max_year = 2021))
+try(kp_fourfactors(min_year = 2020, max_year = 2021))
 }
 }
 \seealso{

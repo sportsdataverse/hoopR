@@ -32,7 +32,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_referee(referee = 714363, year = 2021))
+try(kp_referee(referee = 714363, year = 2021))
 }
 }
 \seealso{

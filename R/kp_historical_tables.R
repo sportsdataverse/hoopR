@@ -99,7 +99,7 @@ kp_team_history <- function(team){
       url <- paste0("https://kenpom.com/history.php?",
                     "t=",team_name)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c('Year','Team.Rk','Coach',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
                        'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
@@ -111,17 +111,14 @@ kp_team_history <- function(team){
                        'Def.APL',	'Foul2Partic.Pct')
 
       x <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements(css = '#player-table'))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
       conf <- (page %>%
-                 xml2::read_html() %>%
                  rvest::html_elements(css = '#player-table'))[[1]]
 
       conf_record <- (page %>%
-                        xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
       conf_record <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
                                              function(x){
@@ -394,7 +391,7 @@ kp_coach_history <- function(coach){
       url <- paste0("https://kenpom.com/history.php?",
                     "c=",coach_name)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c('Year','Team.Rk','Team',	'Conf','WL',	'AdjT', 'AdjO',	'AdjD',
                        'Off.eFG.Pct',	'Off.TO.Pct',	'Off.OR.Pct','Off.FTRate',
@@ -406,17 +403,14 @@ kp_coach_history <- function(coach){
                        'Def.APL',	'Foul2Partic.Pct')
 
       x <- (page %>%
-             xml2::read_html() %>%
              rvest::html_elements(css = '#player-table'))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
       conf <- (page %>%
-                 xml2::read_html() %>%
                  rvest::html_elements(css = '#player-table'))[[1]]
 
       conf_record <- (page %>%
-                        xml2::read_html() %>%
                         rvest::html_elements("td:nth-child(5) > span"))
       conf_record_wl <- dplyr::bind_rows(lapply(rvest::html_text(conf_record),
                                                 function(x){
@@ -633,7 +627,7 @@ kp_program_ratings <- function(){
       ### Pull Data
       url <- "https://kenpom.com/programs.php?"
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       header_cols <- c('Rk',	'Team',	'Conf','Rtg',
                       'Best.Rk','Best.Yr',
@@ -642,7 +636,6 @@ kp_program_ratings <- function(){
                       'F4',	'S16',	'R1',	'Chg')
 
       x <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements(css = '#ratings-table'))[[1]]
 
       x <- x %>%
@@ -731,11 +724,10 @@ kp_pomeroy_archive_ratings <- function(date){
 
       ### Pull Data
       url <- paste0("https://kenpom.com/archive.php?d=", date)
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
 
       x <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements("table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -945,13 +937,12 @@ kp_conf <- function(year, conf){
                     "c=", conf_name,
                     "&y=", year)
 
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       y <- list()
       for (i in 1:7) {
 
         x <- (page %>%
-                xml2::read_html() %>%
                 rvest::html_elements('table'))[[i]] %>%
           rvest::html_table() %>%
           as.data.frame()
@@ -1120,10 +1111,9 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 
       ### Pull Data
       url <- paste0("https://kenpom.com/confstats.php?y=", year)
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       x <- (page %>%
-              xml2::read_html() %>%
               rvest::html_elements(css = "#confrank-table"))[[1]] %>%
         rvest::html_table() %>%
         as.data.frame()
@@ -1243,10 +1233,9 @@ kp_confhistory <- function(conf){
       ### Pull Data
       url <- paste0("https://kenpom.com/confhistory.php?",
                     "c=", conf_name)
-      page <- rvest::session_jump_to(browser, url)
+      page <- .kp_get_page(browser, url)
       Sys.sleep(5)
       x <- page %>%
-        xml2::read_html() %>%
         rvest::html_elements(css = "#player-table")
 
       ## removing national rankings for easier manipulation

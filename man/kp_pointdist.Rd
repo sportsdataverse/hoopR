@@ -37,7 +37,7 @@ Returns a tibble of team points distributions\tabular{ll}{
 }
 \examples{
 \donttest{
-   try(kp_pointdist(min_year = 2020, max_year = 2021))
+try(kp_pointdist(min_year = 2020, max_year = 2021))
 }
 }
 \seealso{

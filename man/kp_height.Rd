@@ -45,7 +45,7 @@ Returns a tibble of heights\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_height(min_year = 2020, max_year = 2021))
+try(kp_height(min_year = 2020, max_year = 2021))
 }
 }
 \seealso{

@@ -35,7 +35,7 @@ Returns a tibble of foul participation stats\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
+try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 }
 }
 \seealso{

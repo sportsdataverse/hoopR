@@ -16,14 +16,10 @@
       `Cache-Control` = "no-cache"
     )
 
-    if (length(params) == 0) {
-      res <- httr::RETRY("GET", url, httr::add_headers(.headers = headers))
-    } else {
-      res <- httr::RETRY("GET", url, query = params, httr::add_headers(.headers = headers))
-    }
+    resp <- .retry_request(url, params = params, headers = headers)
 
-    json <- res$content %>%
-      rawToChar() %>%
+    json <- resp %>%
+      .resp_text() %>%
       jsonlite::fromJSON(simplifyVector = T)
 
     return(json)
@@ -33,22 +29,18 @@
 #' @title
 #' **Retry http request with proxy**
 #' @description
-#' This is a thin wrapper on httr::RETRY
+#' This is a thin wrapper around httr2 for NBA Stats API requests
 #' @param url Request url
 #' @param params list of params
 #' @param origin Origin url
 #' @param referer Referer url
-#' @param ... passed to httr::RETRY
+#' @param ... Additional arguments (currently unused)
 #' @keywords internal
-#' @import rvest
 request_with_proxy <- function(url,
                                params = list(),
                                origin = "https://stats.nba.com",
                                referer = "https://www.nba.com/",
                                ...) {
-  dots <- rlang::dots_list(..., .named = TRUE)
-  proxy <- dots$proxy
-  headers <- dots$headers
   headers <- c(
     `Host` = "stats.nba.com",
     `User-Agent` = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
@@ -62,20 +54,12 @@ request_with_proxy <- function(url,
     `Pragma` = "no-cache",
     `Cache-Control` = "no-cache"
   )
-  if (length(params) >= 1) {
-    url <- httr::modify_url({{ url }}, query = params)
-    res <- rvest::session(url = url, ..., httr::add_headers(.headers = headers), httr::timeout(60))
 
-    json <- res$response %>%
-      httr::content(as = "text", encoding = "UTF-8") %>%
-      jsonlite::fromJSON()
-  } else {
-    res <- rvest::session(url = {{ url }}, ..., httr::add_headers(.headers = headers), httr::timeout(60))
+  resp <- .retry_request(url, params = params, headers = headers)
 
-    json <- res$response %>%
-      httr::content(as = "text", encoding = "UTF-8") %>%
-      jsonlite::fromJSON()
-  }
+  json <- resp %>%
+    .resp_text() %>%
+    jsonlite::fromJSON()
 
   return(json)
 }
@@ -87,7 +71,6 @@ request_with_proxy <- function(url,
     `Accept-Language` = "en-US,en;q=0.9",
     `Accept-Encoding` = "gzip, deflate",
     `Connection` = "keep-alive",
-    # `Cookie` = 'ai_user=2AfNxymZOzGspsdjLDP2nd|2024-11-15T14:14:39.947Z; _ga=GA1.1.1591538523.1731680080; PHPSESSID=a9947dc105f068ff73097124c9b336d8; kenpomuser=saiem.gilani%40gmail.com; kenpomid=bc5e5bd2e53c5ea9b92bfeb87614f0a5; __stripe_mid=63479aec-d09d-4c2f-bbff-dff29bf004988cc095; __stripe_sid=a00feb19-1262-426c-bdf5-cfc162f62db2016464; _ga_6DKK0E2CDM=GS1.1.1732220597.2.1.1732220871.0.0.0',
     `Priority` = "u=0, i",
     `Referer` = "https://kenpom.com/",
     `Sec-Ch-Ua` = '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
@@ -102,6 +85,12 @@ request_with_proxy <- function(url,
     `Upgrade-Insecure-Requests` = 1
   )
   return(headers)
+}
+
+#' KenPom headers as a named list (for httr2 req_headers)
+#' @keywords internal
+.kp_headers_list <- function() {
+  as.list(.kp_headers())
 }
 
 nbagl_live_endpoint <- function(endpoint) {

@@ -212,13 +212,13 @@ espn_nba_game_all <- function(game_id) {
     game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   #---- Play-by-Play ------
   tryCatch(
@@ -380,13 +380,13 @@ espn_nba_pbp <- function(game_id) {
     game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   #---- Play-by-Play ------
   tryCatch(
@@ -507,13 +507,13 @@ espn_nba_team_box <- function(game_id) {
     game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   #---- Team Box ------
   tryCatch(
@@ -631,13 +631,13 @@ espn_nba_player_box <- function(game_id) {
     game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   #---- Player Box ------
   tryCatch(
@@ -785,12 +785,12 @@ espn_nba_game_rosters <- function(game_id) {
         game_id,
         "/competitors/"
       )
-      game_res <- httr::RETRY("GET", play_base_url)
+      game_res <- .retry_request(play_base_url)
       # Check the result
       check_status(game_res)
 
       game_resp <- game_res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
       game_df <- jsonlite::fromJSON(game_resp)[["items"]] %>%
         jsonlite::toJSON() %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
@@ -807,12 +807,12 @@ espn_nba_game_rosters <- function(game_id) {
       game_df$game_id <- game_id
 
       teams_df <- purrr::map_dfr(game_df$team_href, function(x) {
-        res <- httr::RETRY("GET", x)
+        res <- .retry_request(x)
         # Check the result
         check_status(res)
 
         team_df <- res %>%
-          httr::content(as = "text", encoding = "UTF-8") %>%
+          .resp_text() %>%
           jsonlite::fromJSON(
             simplifyDataFrame = FALSE,
             simplifyVector = FALSE,
@@ -909,13 +909,13 @@ espn_nba_game_rosters <- function(game_id) {
       ## Inputs
       ## game_id
       team_roster_df <- purrr::map_dfr(teams_df$team_id, function(x) {
-        res <- httr::RETRY("GET", paste0(play_base_url, x, "/roster"))
+        res <- .retry_request(paste0(play_base_url, x, "/roster"))
 
         # Check the result
         check_status(res)
 
         resp <- res %>%
-          httr::content(as = "text", encoding = "UTF-8")
+          .resp_text()
 
         raw_play_df <- jsonlite::fromJSON(resp)[["entries"]]
 
@@ -938,13 +938,13 @@ espn_nba_game_rosters <- function(game_id) {
       athlete_roster_df <- purrr::map_dfr(
         team_roster_df$athlete_href,
         function(x) {
-          res <- httr::RETRY("GET", x)
+          res <- .retry_request(x)
 
           # Check the result
           check_status(res)
 
           resp <- res %>%
-            httr::content(as = "text", encoding = "UTF-8")
+            .resp_text()
 
           raw_play_df <- jsonlite::fromJSON(resp, flatten = TRUE)
           raw_play_df[["links"]] <- NULL
@@ -1070,13 +1070,13 @@ espn_nba_teams <- function() {
   on.exit(options(old))
   teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
-  res <- httr::RETRY("GET", teams_url)
+  res <- .retry_request(teams_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   tryCatch(
     expr = {
@@ -1183,13 +1183,13 @@ espn_nba_team_current_roster <- function(team_id) {
         "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}?enable=roster"
       )
 
-      res <- httr::RETRY("GET", teams_base_url)
+      res <- .retry_request(teams_base_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       team_roster <- resp %>%
         jsonlite::fromJSON() %>%
@@ -1374,13 +1374,13 @@ espn_nba_scoreboard <- function(season) {
 
   tryCatch(
     expr = {
-      res <- httr::RETRY("GET", schedule_api)
+      res <- .retry_request(schedule_api)
 
       # Check the result
       check_status(res)
 
       raw_sched <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -1808,14 +1808,14 @@ espn_nba_standings <- function(year) {
     year
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
   tryCatch(
     expr = {
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       raw_standings <- jsonlite::fromJSON(resp)[["standings"]]
 
@@ -1996,13 +1996,13 @@ espn_nba_betting <- function(game_id) {
     game_id
   )
 
-  res <- httr::RETRY("GET", full_url)
+  res <- .retry_request(full_url)
 
   # Check the result
   check_status(res)
 
   resp <- res %>%
-    httr::content(as = "text", encoding = "UTF-8")
+    .resp_text()
 
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
@@ -2239,11 +2239,10 @@ espn_nba_betting <- function(game_id) {
 #' try(espn_nba_team_stats(team_id = 18, year = 2020))
 #' }
 espn_nba_team_stats <- function(
-  team_id,
-  year,
-  season_type = "regular",
-  total = FALSE
-) {
+    team_id,
+    year,
+    season_type = "regular",
+    total = FALSE) {
   if (!(tolower(season_type) %in% c("regular", "postseason"))) {
     # Check if season_type is appropriate, if not regular
     cli::cli_abort("Enter valid season_type: regular or postseason")
@@ -2268,14 +2267,14 @@ espn_nba_team_stats <- function(
   tryCatch(
     expr = {
       # Create the GET request and set response as res
-      res <- httr::RETRY("GET", full_url)
+      res <- .retry_request(full_url)
 
       # Check the result
       check_status(res)
 
       # Get the content and return result as data.frame
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -2285,13 +2284,13 @@ espn_nba_team_stats <- function(
       team_url <- df[["team"]][["$ref"]]
 
       # Create the GET request and set response as res
-      team_res <- httr::RETRY("GET", team_url)
+      team_res <- .retry_request(team_url)
 
       # Check the result
       check_status(team_res)
 
       team_df <- team_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -2369,7 +2368,7 @@ espn_nba_team_stats <- function(
         )
 
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%
@@ -2619,11 +2618,10 @@ espn_nba_team_stats <- function(
 #' try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
 #' }
 espn_nba_player_stats <- function(
-  athlete_id,
-  year,
-  season_type = "regular",
-  total = FALSE
-) {
+    athlete_id,
+    year,
+    season_type = "regular",
+    total = FALSE) {
   if (!(tolower(season_type) %in% c("regular", "postseason"))) {
     # Check if season_type is appropriate, if not regular
     cli::cli_abort("Enter valid season_type: regular or postseason")
@@ -2653,18 +2651,18 @@ espn_nba_player_stats <- function(
   tryCatch(
     expr = {
       # Create the GET request and set response as res
-      res <- httr::RETRY("GET", full_url)
+      res <- .retry_request(full_url)
 
       # Check the result
       check_status(res)
       # Create the GET request and set response as res
-      athlete_res <- httr::RETRY("GET", athlete_url)
+      athlete_res <- .retry_request(athlete_url)
 
       # Check the result
       check_status(athlete_res)
 
       athlete_df <- athlete_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -2674,13 +2672,13 @@ espn_nba_player_stats <- function(
       team_url <- athlete_df[["team"]][["$ref"]]
 
       # Create the GET request and set response as res
-      team_res <- httr::RETRY("GET", team_url)
+      team_res <- .retry_request(team_url)
 
       # Check the result
       check_status(team_res)
 
       team_df <- team_res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON(
           simplifyDataFrame = FALSE,
           simplifyVector = FALSE,
@@ -2795,7 +2793,7 @@ espn_nba_player_stats <- function(
 
       # Get the content and return result as data.frame
       df <- res %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+        .resp_text() %>%
         jsonlite::fromJSON() %>%
         purrr::pluck("splits") %>%
         purrr::pluck("categories") %>%

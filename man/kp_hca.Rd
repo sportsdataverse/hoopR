@@ -30,7 +30,7 @@ A data frame with the following columns:\tabular{ll}{
 }
 \examples{
 \donttest{
-  try(kp_hca())
+try(kp_hca())
 }
 }
 \seealso{

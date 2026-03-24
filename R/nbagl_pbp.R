@@ -196,10 +196,10 @@ nbagl_live_pbp <- function(
 
   tryCatch(
     expr = {
-      res <- rvest::session(url = full_url, httr::timeout(60))
+      res <- .retry_request(full_url)
 
-      resp <- res$response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+      resp <- res %>%
+        .resp_text() %>%
         jsonlite::fromJSON()
 
       data <- resp %>%
@@ -642,10 +642,10 @@ nbagl_live_boxscore <- function(
 
   tryCatch(
     expr = {
-      res <- rvest::session(url = full_url, ..., httr::timeout(60))
+      res <- .retry_request(full_url)
 
-      resp <- res$response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+      resp <- res %>%
+        .resp_text() %>%
         jsonlite::fromJSON()
 
       data <- resp %>%

@@ -1,5 +1,3 @@
-
-
 #' **Get NBA Stats API Season Schedule**
 #' @name nba_schedule
 NULL
@@ -73,10 +71,9 @@ NULL
 #'  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_schedule <- function(
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    ...){
-
+    ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -90,7 +87,6 @@ nba_schedule <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       league_sched <- resp %>%
@@ -104,19 +100,19 @@ nba_schedule <- function(
             purrr::pluck("gameDates") %>%
             tidyr::unnest("games") %>%
             purrr::pluck("homeTeam") %>%
-            dplyr::rename_with(~paste0("home_team_", .x))
+            dplyr::rename_with(~ paste0("home_team_", .x))
         ) %>%
         dplyr::bind_cols(
           league_sched %>%
             purrr::pluck("gameDates") %>%
             tidyr::unnest("games") %>%
             purrr::pluck("awayTeam") %>%
-            dplyr::rename_with(~paste0("away_team_", .x))
+            dplyr::rename_with(~ paste0("away_team_", .x))
         ) %>%
         select(-"homeTeam", -"awayTeam") %>%
         janitor::clean_names()
-      colnames(games) <- gsub('team_team', 'team', colnames(games))
-      games$game_id <- unlist(purrr::map(games$game_id,function(x){
+      colnames(games) <- gsub("team_team", "team", colnames(games))
+      games$game_id <- unlist(purrr::map(games$game_id, function(x) {
         pad_id(x)
       }))
       games$season <- league_sched$seasonYear
@@ -129,9 +125,10 @@ nba_schedule <- function(
             .data$season_type_id == 2 ~ "Regular Season",
             .data$season_type_id == 3 ~ "All-Star",
             .data$season_type_id == 4 ~ "Playoffs",
-            .data$season_type_id == 5 ~ "Play-In Game"),
-          game_date = lubridate::mdy(substring(.data$game_date, 1, 10)))
-
+            .data$season_type_id == 5 ~ "Play-In Game"
+          ),
+          game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
+        )
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no league schedule data for {season} available!"))
@@ -300,11 +297,10 @@ NULL
 #'  nba_scoreboard(league_id = '00', game_date = '2021-07-20')
 #' ```
 nba_scoreboard <- function(
-    league_id = '00',
-    game_date = '2021-07-20',
+    league_id = "00",
+    game_date = "2021-07-20",
     day_offset = 0,
-    ...){
-
+    ...) {
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_scoreboard()",
@@ -327,11 +323,9 @@ nba_scoreboard <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_date} available!"))
@@ -531,11 +525,10 @@ NULL
 #'  nba_scoreboardv2(league_id = '00', game_date = '2021-07-20')
 #' ```
 nba_scoreboardv2 <- function(
-    league_id = '00',
-    game_date = '2021-07-20',
+    league_id = "00",
+    game_date = "2021-07-20",
     day_offset = 0,
-    ...){
-
+    ...) {
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_scoreboardv2()",
@@ -555,11 +548,9 @@ nba_scoreboardv2 <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboardv2 data for {game_date} available!"))
@@ -677,10 +668,9 @@ NULL
 #'  nba_scoreboardv3(league_id = '00', game_date = '2023-03-26')
 #' ```
 nba_scoreboardv3 <- function(
-    league_id = '00',
-    game_date = '2023-03-26',
-    ...){
-
+    league_id = "00",
+    game_date = "2023-03-26",
+    ...) {
   version <- "scoreboardv3"
   full_url <- nba_endpoint(version)
 
@@ -691,7 +681,6 @@ nba_scoreboardv3 <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       scoreboard <- resp %>%
@@ -699,20 +688,20 @@ nba_scoreboardv3 <- function(
 
       games <- scoreboard %>%
         purrr::pluck("games") %>%
-        tidyr::unnest("homeTeam", names_sep = '_') %>%
-        tidyr::unnest("awayTeam", names_sep = '_') %>%
-        tidyr::unnest("gameLeaders", names_sep = '_') %>%
-        tidyr::unnest("gameLeaders_homeLeaders", names_sep = '_') %>%
-        tidyr::unnest("gameLeaders_awayLeaders", names_sep = '_')  %>%
-        tidyr::unnest("teamLeaders", names_sep = '_') %>%
-        tidyr::unnest("teamLeaders_homeLeaders", names_sep = '_') %>%
-        tidyr::unnest("teamLeaders_awayLeaders", names_sep = '_')
+        tidyr::unnest("homeTeam", names_sep = "_") %>%
+        tidyr::unnest("awayTeam", names_sep = "_") %>%
+        tidyr::unnest("gameLeaders", names_sep = "_") %>%
+        tidyr::unnest("gameLeaders_homeLeaders", names_sep = "_") %>%
+        tidyr::unnest("gameLeaders_awayLeaders", names_sep = "_") %>%
+        tidyr::unnest("teamLeaders", names_sep = "_") %>%
+        tidyr::unnest("teamLeaders_homeLeaders", names_sep = "_") %>%
+        tidyr::unnest("teamLeaders_awayLeaders", names_sep = "_")
 
 
-      colnames(games) <- gsub("gameLeaders","game", colnames(games))
-      colnames(games) <- gsub("teamLeaders","team", colnames(games))
-      colnames(games) <- gsub("homeTeam","home", colnames(games))
-      colnames(games) <- gsub("awayTeam","away", colnames(games))
+      colnames(games) <- gsub("gameLeaders", "game", colnames(games))
+      colnames(games) <- gsub("teamLeaders", "team", colnames(games))
+      colnames(games) <- gsub("homeTeam", "home", colnames(games))
+      colnames(games) <- gsub("awayTeam", "away", colnames(games))
 
 
 
@@ -722,10 +711,12 @@ nba_scoreboardv3 <- function(
           game_date = game_date,
           league_id = league_id,
           league = dplyr::case_when(
-            league_id == '00' ~ 'NBA',
-            league_id == '10' ~ 'WNBA',
-            league_id == '20' ~ 'G-League',
-            TRUE ~ 'NBA')) %>%
+            league_id == "00" ~ "NBA",
+            league_id == "10" ~ "WNBA",
+            league_id == "20" ~ "G-League",
+            TRUE ~ "NBA"
+          )
+        ) %>%
         dplyr::select(
           "game_id",
           "game_code",
@@ -736,10 +727,10 @@ nba_scoreboardv3 <- function(
           "game_et",
           dplyr::starts_with("home_team"),
           dplyr::starts_with("away_team"),
-          tidyr::everything()) %>%
+          tidyr::everything()
+        ) %>%
         dplyr::relocate("broadcasters", .after = dplyr::last_col()) %>%
-      make_hoopR_data("NBA Scoreboard V3 Information from NBA.com", Sys.time())
-
+        make_hoopR_data("NBA Scoreboard V3 Information from NBA.com", Sys.time())
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard v3 data for {game_date} available!"))
@@ -835,18 +826,17 @@ NULL
 #'  nba_todays_scoreboard()
 #' ```
 nba_todays_scoreboard <- function(
-    ...){
-
+    ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
   tryCatch(
     expr = {
       full_url <- "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
-      res <- rvest::session(url = full_url, ...,  httr::timeout(60))
+      res <- .retry_request(full_url)
 
-      resp <- res$response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
+      resp <- res %>%
+        .resp_text() %>%
         jsonlite::fromJSON()
 
       scoreboard <- resp %>%
@@ -854,20 +844,19 @@ nba_todays_scoreboard <- function(
 
       games <- scoreboard %>%
         purrr::pluck("games") %>%
-        tidyr::unnest("homeTeam", names_sep = '_') %>%
-        tidyr::unnest("awayTeam", names_sep = '_') %>%
+        tidyr::unnest("homeTeam", names_sep = "_") %>%
+        tidyr::unnest("awayTeam", names_sep = "_") %>%
         tidyr::unnest("gameLeaders") %>%
-        tidyr::unnest("homeLeaders", names_sep = '_') %>%
-        tidyr::unnest("awayLeaders", names_sep = '_') %>%
-        tidyr::unnest("pbOdds", names_sep = '_')
+        tidyr::unnest("homeLeaders", names_sep = "_") %>%
+        tidyr::unnest("awayLeaders", names_sep = "_") %>%
+        tidyr::unnest("pbOdds", names_sep = "_")
 
-      colnames(games) <- gsub("homeTeam","home", colnames(games))
-      colnames(games) <- gsub("awayTeam","away", colnames(games))
+      colnames(games) <- gsub("homeTeam", "home", colnames(games))
+      colnames(games) <- gsub("awayTeam", "away", colnames(games))
 
       games <- games %>%
         janitor::clean_names() %>%
         make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no today's scoreboard data available!"))
@@ -945,10 +934,9 @@ NULL
 #'  nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')
 #' ```
 nba_winprobabilitypbp <- function(
-    game_id = '0021700807',
-    run_type = 'each second',
-    ...){
-
+    game_id = "0021700807",
+    run_type = "each second",
+    ...) {
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_winprobabilitypbp()",
@@ -971,11 +959,9 @@ nba_winprobabilitypbp <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no win probability pbp data for {game_id} available!"))
@@ -1065,10 +1051,9 @@ NULL
 #'  nba_scheduleleaguev2int(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 #' ```
 nba_scheduleleaguev2int <- function(
-    league_id = '00',
+    league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
-    ...){
-
+    ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -1084,7 +1069,6 @@ nba_scheduleleaguev2int <- function(
 
   tryCatch(
     expr = {
-
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       league_sched <- resp %>%
@@ -1102,17 +1086,17 @@ nba_scheduleleaguev2int <- function(
             game_dates %>%
               tidyr::unnest("games") %>%
               purrr::pluck("homeTeam") %>%
-              dplyr::rename_with(~paste0("home_team_", .x))
+              dplyr::rename_with(~ paste0("home_team_", .x))
           ) %>%
           dplyr::bind_cols(
             game_dates %>%
               tidyr::unnest("games") %>%
               purrr::pluck("awayTeam") %>%
-              dplyr::rename_with(~paste0("away_team_", .x))
+              dplyr::rename_with(~ paste0("away_team_", .x))
           ) %>%
           dplyr::select(-"homeTeam", -"awayTeam") %>%
           janitor::clean_names()
-        colnames(games) <- gsub('team_team', 'team', colnames(games))
+        colnames(games) <- gsub("team_team", "team", colnames(games))
         games$game_id <- unlist(purrr::map(games$game_id, function(x) {
           pad_id(x)
         }))
@@ -1152,7 +1136,6 @@ nba_scheduleleaguev2int <- function(
 
       df_list <- c(list(games), list(weeks_df), list(broadcast_df))
       names(df_list) <- c("SeasonGames", "SeasonWeeks", "BroadcasterList")
-
     },
     error = function(e) {
       message(glue::glue("{Sys.time()}: Invalid arguments or no international schedule data for {season} available!"))

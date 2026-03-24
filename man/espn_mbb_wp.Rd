@@ -28,7 +28,7 @@ espn_mbb_wp(game_id)
 }
 \examples{
 \donttest{
-  espn_mbb_wp(game_id = 401256760)
+espn_mbb_wp(game_id = 401256760)
 }
 
 }

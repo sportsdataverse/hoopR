@@ -41,7 +41,7 @@ Returns a tibble of efficiency and tempo ratings\tabular{ll}{
 }
 \examples{
 \donttest{
-   try(kp_efficiency(min_year = 2020, max_year = 2021))
+try(kp_efficiency(min_year = 2020, max_year = 2021))
 }
 }
 \seealso{

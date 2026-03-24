@@ -21,9 +21,9 @@ request_with_proxy(
 
 \item{referer}{Referer url}
 
-\item{...}{passed to httr::RETRY}
+\item{...}{Additional arguments (currently unused)}
 }
 \description{
-This is a thin wrapper on httr::RETRY
+This is a thin wrapper around httr2 for NBA Stats API requests
 }
 \keyword{internal}

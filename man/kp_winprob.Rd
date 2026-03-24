@@ -76,7 +76,7 @@ Returns a named list of tibbles: winprob_dataset, game_data, runs
 }
 \examples{
 \donttest{
-  try(kp_winprob(game_id = 1238, year = 2020))
+try(kp_winprob(game_id = 1238, year = 2020))
 }
 }
 \seealso{

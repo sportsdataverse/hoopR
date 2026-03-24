@@ -94,13 +94,13 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
 
   tryCatch(
     expr = {
-      res <- httr::RETRY("GET", full_url, ...)
+      res <- .retry_request(full_url)
 
       # Check the result
       check_status(res)
 
       resp <- res %>%
-        httr::content(as = "text", encoding = "UTF-8")
+        .resp_text()
 
       data <- jsonlite::fromJSON(resp)$g
       plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd), flatten = TRUE)
