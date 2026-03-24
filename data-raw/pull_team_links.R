@@ -73,7 +73,7 @@ for (year in years) {
 }
 all_teams <- collapse::funique.data.frame(all_teams_links)
 
-write.csv(all_teams, "data-raw/kp_team_info_2024.csv", row.names = FALSE)
+write.csv(all_teams, "data-raw/kp_team_info_2026.csv", row.names = FALSE)
 # remotes::install_github("lbenz730/ncaahoopR")
 all_teams_joined <- all_teams %>%
   dplyr::left_join(ncaahoopR::dict, by = c("Team" = "Trank"), keep = TRUE) %>%
@@ -90,8 +90,8 @@ dict_hoopR_joined <- dict_hoopR %>%
   dplyr::left_join(espn_teams, by = c("ESPN" = "team"), keep = TRUE) %>%
   dplyr::left_join(espn_teams, by = c("ESPN_PBP" = "team"))
 
-# teams_links <- all_teams
-# usethis::use_data(teams_links, overwrite = TRUE)
+teams_links <- all_teams
+usethis::use_data(teams_links, overwrite = TRUE)
 #
 # teamlist <- data.frame(hoopR::teams_links)
 #

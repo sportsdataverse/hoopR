@@ -137,11 +137,11 @@ kp_box <- function(game_id, year) {
 
 
       refs <- (page %>%
-        rvest::html_elements(xpath = "//*[@id='half-column3']//span//div[4]") %>%
+        rvest::html_elements("div.refline") %>%
         rvest::html_elements("a"))[-1]
 
       ref_ranks <- page %>%
-        rvest::html_elements(xpath = "//*[@id='half-column3']//span//div[4]") %>%
+        rvest::html_elements("div.refline") %>%
         rvest::html_elements(".seed")
       ref_ranks <- dplyr::bind_rows(lapply(
         rvest::html_text(ref_ranks),
@@ -159,7 +159,7 @@ kp_box <- function(game_id, year) {
       ))
       if (length(ref_ids) > 0) {
         ref_ids <- ref_ids %>%
-          dplyr::filter(!stringr::str_detect(.data$href, "official")) %>%
+          dplyr::filter(stringr::str_detect(.data$href, "referee")) %>%
           dplyr::mutate(ref_id = stringr::str_remove(stringr::str_remove(
             stringi::stri_extract_first_regex(.data$href, "=(.+)"), "="
           ), "&(.+)")) %>%
