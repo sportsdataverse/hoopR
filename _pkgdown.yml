@@ -37,15 +37,15 @@ toc:
   depth: 3
 authors:
   Saiem Gilani:
-    href: https://twitter.com/saiemgilani
+    href: https://x.com/saiemgilani
   Jason Lee:
-    href: https://twitter.com/theFirmAISports
+    href: https://x.com/theFirmAISports
   Billy Fryer:
-    href: https://twitter.com/_b4billy_
+    href: https://x.com/_b4billy_
   Ross Drucker:
-    href: https://twitter.com/rossdrucker9
+    href: https://x.com/rossdrucker9
   Vladislav Shufinskiy:
-    href: https://twitter.com/vshufinskiy
+    href: https://x.com/vshufinskiy
 home:
   title: hoopR • Data and Tools for Men's Basketball
   description: >
@@ -59,7 +59,7 @@ home:
 navbar:
   structure:
     left: [home, reference, articles, news, network, data]
-    right: [twitter, github]
+    right: [x, github]
   icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.ico
   title: "hoopR"
   components:
@@ -171,9 +171,9 @@ navbar:
           href: https://github.com/sportsdataverse/sportsdataverse-data/releases
         - text: "hoopR Data Repository"
           href: https://github.com/sportsdataverse/hoopR-data
-    twitter:
-      icon: "fab fa-twitter fa-lg"
-      href: http://twitter.com/saiemgilani
+    x:
+      icon: "fab fa-x-twitter fa-lg"
+      href: https://x.com/saiemgilani
     github:
       icon: "fab fa-github fa-lg"
       href: https://github.com/sportsdataverse/hoopR/
