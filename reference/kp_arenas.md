@@ -42,7 +42,8 @@ Other KP Misc. Functions:
 
 ``` r
 # \donttest{
-  try(kp_arenas(year=2021))
+try(kp_arenas(year = 2021))
+#> 2026-03-24 01:20:53.42364: Invalid arguments or no arenas data available!
 #> Error in kp_arenas(year = 2021) : object 'kenpom' not found
 # }
 ```

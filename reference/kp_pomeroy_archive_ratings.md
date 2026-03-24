@@ -59,6 +59,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
+#> 2026-03-24 01:20:59.287766: Invalid arguments or no kp_pomeroy_archive_ratings data for 2018-11-22 available!
 #> Error in kp_pomeroy_archive_ratings(date = "2018-11-22") : 
 #>   object 'kenpom' not found
 # }

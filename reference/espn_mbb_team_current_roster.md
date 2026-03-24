@@ -46,7 +46,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 52))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ─────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-18 18:14:31 UTC
+#> ℹ Data updated: 2026-03-24 01:20:34 UTC
 #> # A tibble: 15 × 59
 #>    team_id team_uid       team_slug        team_location team_name team_nickname
 #>      <int> <chr>          <chr>            <chr>         <chr>     <chr>        

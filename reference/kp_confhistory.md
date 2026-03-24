@@ -70,6 +70,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_confhistory(conf = 'ACC'))
+#> 2026-03-24 01:20:54.57675: Invalid arguments or no conference history data for ACC available!
 #> Error in kp_confhistory(conf = "ACC") : object 'kenpom' not found
 # }
 ```

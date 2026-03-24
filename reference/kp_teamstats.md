@@ -82,7 +82,8 @@ Other KenPom Ratings Functions:
 
 ``` r
 # \donttest{
-   try(kp_teamstats(min_year = 2019, max_year =2021))
+try(kp_teamstats(min_year = 2019, max_year = 2021))
+#> 2026-03-24 01:21:02.131542: Invalid arguments or no team stats data for 2019 - 2021 available!
 #> Error in kp_teamstats(min_year = 2019, max_year = 2021) : 
 #>   object 'kenpom' not found
 # }

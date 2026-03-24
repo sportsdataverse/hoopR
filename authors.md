@@ -2,17 +2,16 @@
 
 ## Authors
 
-- **[Saiem Gilani](https://twitter.com/saiemgilani)**. Author,
-  maintainer. [](https://orcid.org/0000-0002-7194-9067)
+- **[Saiem Gilani](https://x.com/saiemgilani)**. Author, maintainer.
+  [](https://orcid.org/0000-0002-7194-9067)
 
-- **[Jason Lee](https://twitter.com/theFirmAISports)**. Contributor.
+- **[Jason Lee](https://x.com/theFirmAISports)**. Contributor.
 
-- **[Billy Fryer](https://twitter.com/_b4billy_)**. Contributor.
+- **[Billy Fryer](https://x.com/_b4billy_)**. Contributor.
 
-- **[Ross Drucker](https://twitter.com/rossdrucker9)**. Contributor.
+- **[Ross Drucker](https://x.com/rossdrucker9)**. Contributor.
 
-- **[Vladislav Shufinskiy](https://twitter.com/vshufinskiy)**.
-  Contributor.
+- **[Vladislav Shufinskiy](https://x.com/vshufinskiy)**. Contributor.
 
 ## Citation
 

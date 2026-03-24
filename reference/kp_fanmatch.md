@@ -56,7 +56,8 @@ Other KP Misc. Functions:
 
 ``` r
 # \donttest{
-  try(kp_fanmatch(date="2022-02-22"))
+try(kp_fanmatch(date = "2022-02-22"))
+#> 2026-03-24 01:20:55.409475: Invalid arguments or no Fan Match data for 2022-02-22 available!
 #> Error in kp_fanmatch(date = "2022-02-22") : object 'kenpom' not found
 # }
 ```

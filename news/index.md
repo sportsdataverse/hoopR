@@ -2,6 +2,68 @@
 
 ## **hoopR 3.0.0**
 
+#### **HTTP Backend Migration**
+
+- **Breaking**: Replaced `httr` with `httr2` as the HTTP backend for all
+  API requests across the package.
+- Removed `httr` from package dependencies (`Imports`).
+- [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+  now uses `httr2` request/retry pipeline instead of
+  [`rvest::session()`](https://rvest.tidyverse.org/reference/session.html)
+  with `httr` config arguments, resolving segfaults on systems with
+  libcurl \>= 8.x / curl R package \>= 7.0.0.
+- All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use
+  shared internal helpers
+  ([`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md),
+  [`.resp_text()`](https://hoopR.sportsdataverse.org/reference/dot-resp_text.md))
+  backed by `httr2`.
+- [`check_status()`](https://hoopR.sportsdataverse.org/reference/check_status.md)
+  now uses
+  [`httr2::resp_status()`](https://httr2.r-lib.org/reference/resp_status.html)
+  instead of
+  [`httr::status_code()`](https://httr.r-lib.org/reference/status_code.html).
+- KenPom (`kp_*`) functions now use `httr2` cookie jar authentication
+  via
+  [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md),
+  [`.kp_get_page()`](https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.md),
+  and
+  [`.kp_request()`](https://hoopR.sportsdataverse.org/reference/dot-kp_request.md)
+  helpers.
+
+#### **Messaging Migration (usethis → cli)**
+
+- Replaced all `usethis::ui_*()` messaging calls in database builder and
+  loader functions with `cli` equivalents.
+- [`usethis::ui_stop()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  →
+  [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html),
+  [`usethis::ui_oops()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  →
+  [`cli::cli_alert_danger()`](https://cli.r-lib.org/reference/cli_alert.html),
+  [`usethis::ui_todo()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  → [`cli::cli_ul()`](https://cli.r-lib.org/reference/cli_ul.html),
+  [`usethis::ui_info()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  →
+  [`cli::cli_alert_info()`](https://cli.r-lib.org/reference/cli_alert.html).
+- Inline markup converted:
+  [`usethis::ui_value()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  → `{.val}`,
+  [`usethis::ui_path()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  → `{.file}`,
+  [`usethis::ui_code()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
+  → `{.code}`.
+- Moved `usethis` from `Imports` to `Suggests` (retained for
+  [`usethis::edit_r_environ()`](https://usethis.r-lib.org/reference/edit.html)
+  documentation references).
+
+#### **Social Branding (Twitter → X)**
+
+- Updated all social media links and badges from Twitter to X across
+  README, pkgdown site, and vignettes.
+- Shields.io badge `logo=twitter` → `logo=x`; profile URLs `twitter.com`
+  → `x.com`.
+- pkgdown navbar icon updated from `fa-twitter` to `fa-x-twitter`.
+
 #### **Stability and Test Robustness**
 
 - Hardened API-facing tests against live schema drift and intermittent

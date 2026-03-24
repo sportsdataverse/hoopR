@@ -84,7 +84,8 @@ Other KenPom Ratings Functions:
 
 ``` r
 # \donttest{
-  try(kp_playerstats(metric = 'eFG', conf_only = FALSE, year=2021))
+try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
+#> 2026-03-24 01:20:58.730035: Invalid arguments or no player stats data for 2021 eFG available!
 #> Error in kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021) : 
 #>   object 'kenpom' not found
 # }

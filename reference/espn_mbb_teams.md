@@ -70,7 +70,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_teams())
 #> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-18 18:14:36 UTC
+#> ℹ Data updated: 2026-03-24 01:20:38 UTC
 #> # A tibble: 362 × 32
 #>    team_id abbreviation display_name      short_name mascot nickname team  color
 #>      <int> <chr>        <chr>             <chr>      <chr>  <chr>    <chr> <chr>

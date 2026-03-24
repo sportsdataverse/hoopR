@@ -7,6 +7,8 @@
   - [Project Context](#project-context)
   - [Code Style](#code-style)
   - [Function Naming](#function-naming)
+  - [HTTP Layer](#http-layer)
+  - [Messaging Layer](#messaging-layer)
   - [Roxygen Documentation](#roxygen-documentation)
   - [Testing](#testing)
     - [Environment Variables](#environment-variables)
@@ -50,6 +52,47 @@ implementations under `tests/testthat/` as the source of truth.
   [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)).
 - Keep imports minimal and explicit; remove unused imports (for example,
   avoid `@import furrr` unless the file actually uses it).
+
+## HTTP Layer
+
+All HTTP requests use `httr2` as the sole backend. The `httr` package is
+no longer a dependency.
+
+- [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+  in `utils_nba_stats.R` uses
+  [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+  (an `httr2` wrapper) with required NBA headers (`x-nba-stats-origin`,
+  `x-nba-stats-token`, `Referer`).
+- Shared internal helpers in `utils.R`:
+  [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md),
+  [`.resp_text()`](https://hoopR.sportsdataverse.org/reference/dot-resp_text.md),
+  [`check_status()`](https://hoopR.sportsdataverse.org/reference/check_status.md).
+- KenPom functions use `httr2`-based helpers:
+  [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md)
+  (cookie jar auth),
+  [`.kp_get_page()`](https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.md),
+  [`.kp_request()`](https://hoopR.sportsdataverse.org/reference/dot-kp_request.md).
+- `nba_endpoint()` builds URLs via
+  `glue::glue('https://stats.nba.com/stats/{endpoint}')` – does NOT
+  validate against its internal endpoint list.
+
+## Messaging Layer
+
+All user-facing messages use `cli`. The `usethis` package is in
+`Suggests` only (retained for
+[`usethis::edit_r_environ()`](https://usethis.r-lib.org/reference/edit.html)
+documentation references).
+
+- Internal helpers: `message_completed()` wraps
+  [`cli::cli_alert_success()`](https://cli.r-lib.org/reference/cli_alert.html);
+  `user_message()` dispatches to
+  [`cli::cli_alert_success()`](https://cli.r-lib.org/reference/cli_alert.html)
+  / [`cli::cli_ul()`](https://cli.r-lib.org/reference/cli_ul.html) /
+  [`cli::cli_alert_info()`](https://cli.r-lib.org/reference/cli_alert.html)
+  /
+  [`cli::cli_alert_danger()`](https://cli.r-lib.org/reference/cli_alert.html).
+- Inline markup: `{.val x}` for values, `{.file x}` for paths,
+  `{.code x}` for code.
 
 ## Function Naming
 

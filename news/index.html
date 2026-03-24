@@ -72,7 +72,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown--data"><li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/sportsdataverse-data/releases">SDV Data Releases</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/hoopR-data">hoopR Data Repository</a></li>
   </ul></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="http://twitter.com/saiemgilani"><span class="fa fab fa-twitter fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://x.com/saiemgilani"><span class="fa fab fa-x-twitter fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/sportsdataverse/hoopR/"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -87,6 +87,32 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2>
+<div class="section level4">
+<h4 id="http-backend-migration-3-0-0"><strong>HTTP Backend Migration</strong><a class="anchor" aria-label="anchor" href="#http-backend-migration-3-0-0"></a></h4>
+<ul><li>
+<strong>Breaking</strong>: Replaced <code>httr</code> with <code>httr2</code> as the HTTP backend for all API requests across the package.</li>
+<li>Removed <code>httr</code> from package dependencies (<code>Imports</code>).</li>
+<li>
+<code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> now uses <code>httr2</code> request/retry pipeline instead of <code><a href="https://rvest.tidyverse.org/reference/session.html" class="external-link">rvest::session()</a></code> with <code>httr</code> config arguments, resolving segfaults on systems with libcurl &gt;= 8.x / curl R package &gt;= 7.0.0.</li>
+<li>All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (<code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="../reference/dot-resp_text.html">.resp_text()</a></code>) backed by <code>httr2</code>.</li>
+<li>
+<code><a href="../reference/check_status.html">check_status()</a></code> now uses <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code> instead of <code><a href="https://httr.r-lib.org/reference/status_code.html" class="external-link">httr::status_code()</a></code>.</li>
+<li>KenPom (<code>kp_*</code>) functions now use <code>httr2</code> cookie jar authentication via <code><a href="../reference/kp_user_pw.html">login()</a></code>, <code><a href="../reference/dot-kp_get_page.html">.kp_get_page()</a></code>, and <code><a href="../reference/dot-kp_request.html">.kp_request()</a></code> helpers.</li>
+</ul></div>
+<div class="section level4">
+<h4 id="messaging-migration-usethis--cli-3-0-0"><strong>Messaging Migration (usethis → cli)</strong><a class="anchor" aria-label="anchor" href="#messaging-migration-usethis--cli-3-0-0"></a></h4>
+<ul><li>Replaced all <code>usethis::ui_*()</code> messaging calls in database builder and loader functions with <code>cli</code> equivalents.</li>
+<li>
+<code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_stop()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_abort()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_oops()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_todo()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_ul.html" class="external-link">cli::cli_ul()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_info()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_info()</a></code>.</li>
+<li>Inline markup converted: <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_value()</a></code> → <code>{.val}</code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_path()</a></code> → <code>{.file}</code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_code()</a></code> → <code>{.code}</code>.</li>
+<li>Moved <code>usethis</code> from <code>Imports</code> to <code>Suggests</code> (retained for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</li>
+</ul></div>
+<div class="section level4">
+<h4 id="social-branding-twitter--x-3-0-0"><strong>Social Branding (Twitter → X)</strong><a class="anchor" aria-label="anchor" href="#social-branding-twitter--x-3-0-0"></a></h4>
+<ul><li>Updated all social media links and badges from Twitter to X across README, pkgdown site, and vignettes.</li>
+<li>Shields.io badge <code>logo=twitter</code> → <code>logo=x</code>; profile URLs <code>twitter.com</code> → <code>x.com</code>.</li>
+<li>pkgdown navbar icon updated from <code>fa-twitter</code> to <code>fa-x-twitter</code>.</li>
+</ul></div>
 <div class="section level4">
 <h4 id="stability-and-test-robustness-3-0-0"><strong>Stability and Test Robustness</strong><a class="anchor" aria-label="anchor" href="#stability-and-test-robustness-3-0-0"></a></h4>
 <ul><li>Hardened API-facing tests against live schema drift and intermittent empty payloads.</li>
@@ -792,7 +818,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
+  <p>Developed by <a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

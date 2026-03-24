@@ -72,6 +72,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_confstats(year=most_recent_mbb_season()))
+#> 2026-03-24 01:20:54.846154: Invalid arguments or no conference stats data for 2026 available!
 #> Error in kp_confstats(year = most_recent_mbb_season()) : 
 #>   object 'kenpom' not found
 # }

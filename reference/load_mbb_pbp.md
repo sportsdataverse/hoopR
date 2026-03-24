@@ -115,21 +115,21 @@ Other hoopR Loader Functions:
 # \donttest{
 load_mbb_pbp(seasons = most_recent_mbb_season())
 #> ── ESPN MBB Play-by-Play from hoopR data repository ───────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-18 11:23:42 UTC
-#> # A tibble: 2,873,370 × 57
+#> ℹ Data updated: 2026-03-23 11:22:03 UTC
+#> # A tibble: 2,902,736 × 57
 #>    game_play_number      id sequence_number type_id type_text   text  away_score
 #>               <int>   <dbl>           <int>   <int> <chr>       <chr>      <int>
-#>  1                1 4.02e17       120285968     615 Jumpball    "Sta…          0
-#>  2                2 4.02e17       120285969     615 Jumpball    "Jum…          0
-#>  3                3 4.02e17       120285970     615 Jumpball    "Jum…          0
-#>  4                4 4.02e17       120285971     558 JumpShot    "Dar…          0
-#>  5                5 4.02e17       120285972     598 Lost Ball … "Dai…          0
-#>  6                6 4.02e17       120285973     607 Steal       "Qua…          0
-#>  7                7 4.02e17       120286003     558 JumpShot    "Ven…          0
-#>  8                8 4.02e17       120286004     587 Defensive … "Dai…          0
-#>  9                9 4.02e17       120286005     598 Lost Ball … "Dai…          0
-#> 10               10 4.02e17       120286008     558 JumpShot    "Ven…          0
-#> # ℹ 2,873,360 more rows
+#>  1                1 4.02e17       120364995     615 Jumpball    "Sta…          0
+#>  2                2 4.02e17       120364996     615 Jumpball    "Jum…          0
+#>  3                3 4.02e17       120364997     615 Jumpball    "Jum…          0
+#>  4                4 4.02e17       120365025     572 LayUpShot   "Boo…          0
+#>  5                5 4.02e17       120365029     598 Lost Ball … "Kae…          0
+#>  6                6 4.02e17       120365030     607 Steal       "Rue…          0
+#>  7                7 4.02e17       120365031     572 LayUpShot   "Xai…          0
+#>  8                8 4.02e17       120365060     558 JumpShot    "Tav…          0
+#>  9                9 4.02e17       120365061     587 Defensive … "Ale…          0
+#> 10               10 4.02e17       120365063     519 PersonalFo… "Fou…          0
+#> # ℹ 2,902,726 more rows
 #> # ℹ 50 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, wallclock <chr>, shooting_play <lgl>,

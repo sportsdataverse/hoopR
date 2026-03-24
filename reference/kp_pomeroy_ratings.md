@@ -65,7 +65,8 @@ Other KenPom Ratings Functions:
 
 ``` r
 # \donttest{
-  try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
+try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
+#> 2026-03-24 01:20:59.566218: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!
 #> Error in kp_pomeroy_ratings(min_year = 2020, max_year = 2021) : 
 #>   object 'kenpom' not found
 # }

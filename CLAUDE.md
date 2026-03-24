@@ -16,6 +16,7 @@
     - [V2 vs V3 API Differences](#v2-vs-v3-api-differences)
     - [Null Safety](#null-safety)
     - [HTTP Layer](#http-layer)
+    - [Messaging Layer](#messaging-layer)
   - [Testing](#testing)
     - [Test Pattern](#test-pattern)
     - [Environment Variables for
@@ -120,7 +121,7 @@ NULL
 #' @rdname nba_functionname
 #' @author Author Name
 #' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')
-#' @param ... Additional arguments passed to an underlying function like httr.
+#' @param ... Additional arguments passed to the underlying function.
 #' @return Returns a named list of data frames: Component1, Component2
 #'
 #'    **Component1**
@@ -253,15 +254,54 @@ value <- obj$field %||% NA_character_
 
 ### HTTP Layer
 
+All HTTP requests use `httr2` as the sole backend. The `httr` package is
+no longer a dependency.
+
 [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
 in `utils_nba_stats.R` uses
-[`rvest::session()`](https://rvest.tidyverse.org/reference/session.html)
-with required NBA headers: - `x-nba-stats-origin: stats` -
-`x-nba-stats-token: true` - `Referer: https://www.nba.com/`
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+(an `httr2` wrapper) with required NBA headers: -
+`x-nba-stats-origin: stats` - `x-nba-stats-token: true` -
+`Referer: https://www.nba.com/`
+
+Shared internal helpers in `utils.R`: -
+`.retry_request(url, params, headers, timeout)` – performs a GET with
+retry logic via `httr2` - `.resp_text(resp)` – extracts response body as
+UTF-8 text via
+[`httr2::resp_body_string()`](https://httr2.r-lib.org/reference/resp_body_raw.html) -
+`check_status(res)` – checks HTTP status via
+[`httr2::resp_status()`](https://httr2.r-lib.org/reference/resp_status.html)
+
+KenPom functions use separate `httr2`-based helpers: -
+[`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md) –
+authenticates via `httr2` cookie jar - `.kp_get_page(jar, url)` –
+fetches a page as parsed HTML - `.kp_request(url, jar)` – builds an
+`httr2` request with KenPom headers
 
 `nba_endpoint()` builds URLs via
 `glue::glue('https://stats.nba.com/stats/{endpoint}')` – it does NOT
 validate against its internal endpoint list.
+
+### Messaging Layer
+
+All user-facing messages use `cli`. The `usethis` package is in
+`Suggests` only (for
+[`usethis::edit_r_environ()`](https://usethis.r-lib.org/reference/edit.html)
+documentation references).
+
+Internal messaging helpers in `utils.R`: -
+`message_completed(x, in_builder)` – wraps
+[`cli::cli_alert_success()`](https://cli.r-lib.org/reference/cli_alert.html) -
+`user_message(x, type)` – dispatches to
+[`cli::cli_alert_success()`](https://cli.r-lib.org/reference/cli_alert.html)
+/ [`cli::cli_ul()`](https://cli.r-lib.org/reference/cli_ul.html) /
+[`cli::cli_alert_info()`](https://cli.r-lib.org/reference/cli_alert.html)
+/
+[`cli::cli_alert_danger()`](https://cli.r-lib.org/reference/cli_alert.html)
+based on type
+
+Inline markup in cli strings: `{.val x}` for values, `{.file x}` for
+paths, `{.code x}` for code.
 
 ## Testing
 

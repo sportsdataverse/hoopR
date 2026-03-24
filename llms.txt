@@ -1,28 +1,5 @@
 # 
 
-**Table of Contents** *generated with
-[DocToc](https://github.com/thlorenz/doctoc)*
-
-- [](#)
-- [hoopR](#hoopr-a-hrefhttpshooprsportsdataverseorgimg-srchttpsrawgithubusercontentcomsportsdataversehooprmainlogopng-alignright--width20%25-min-width100pxa)
-  [![](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
-  - [Installation](#installation)
-  - [Quick Start](#quick-start)
-    - [**NBA full play-by-play seasons (2002-2025) ~ 1-2
-      minutes**](#nba-full-play-by-play-seasons-2002-2025--1-2-minutes)
-    - [**Men’s college basketball full play-by-play seasons (2006-2025)
-      ~ 2-3
-      minutes**](#mens-college-basketball-full-play-by-play-seasons-2006-2025--2-3-minutes)
-  - [**Documentation**](#documentation)
-  - [**Breaking Changes**](#breaking-changes)
-  - [Follow the SportsDataverse (@SportsDataverse) on Twitter and star
-    this
-    repo](#follow-the-sportsdataverse-sportsdataverse-on-twitter-and-star-this-repo)
-  - [**Our Authors**](#our-authors)
-  - [**Our Contributors (they’re
-    awesome)**](#our-contributors-theyre-awesome)
-  - [**Citations**](#citations)
-
 # hoopR
 
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
@@ -62,7 +39,7 @@ pak::pak("sportsdataverse/hoopR")
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2025) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2026) ~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -73,12 +50,12 @@ tictoc::toc()
 ```
 
 ``` R
-## 3.55 sec elapsed
+## 2.85 sec elapsed
 
-## 615581 rows of NBA play-by-play data from 1305 games.
+## 519304 rows of NBA play-by-play data from 1069 games.
 ```
 
-### **Men’s college basketball full play-by-play seasons (2006-2025) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2026) ~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -89,9 +66,9 @@ tictoc::toc()
 ```
 
 ``` R
-## 6.94 sec elapsed
+## 9.94 sec elapsed
 
-## 2112541 rows of men's college basketball play-by-play data from 5915 games.
+## 2902736 rows of men's college basketball play-by-play data from 6246 games.
 ```
 
 ## **Documentation**
@@ -105,19 +82,10 @@ website](https://hoopR.sportsdataverse.org).
 [**Full News on
 Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 
-- Legacy `nbagl_*` wrappers now follow NBA Stats-backed payload
-  structures.
-- [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
-  and
-  [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
-  return named lists of data frames (`PlayerIndex`, `Standings`) instead
-  of legacy flat schema assumptions.
-- [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)
-  and
-  [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
-  return modernized core columns aligned with current upstream sources.
+## Follow the SportsDataverse (@SportsDataverse) on X and star this repo
 
-## Follow the SportsDataverse (@SportsDataverse) on Twitter and star this repo
+[![X
+Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=x&style=for-the-badge)](https://x.com/SportsDataverse)
 
 [![GitHub
 stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR/stargazers/)
@@ -125,21 +93,26 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 ## **Our Authors**
 
 - Saiem Gilani (@saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
 
 [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
 
 ## **Our Contributors (they’re awesome)**
 
 - Jason Lee (@theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
 
 - Billy Fryer (@\_b4billy\_)
+  [![@\_b4billy\_](https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=x&style=for-the-badge)](https://x.com/_b4billy_)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
 
 - Ross Drucker (@rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
 
 - Vladislav Shufinskiy (@vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
   [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
 
 ## **Citations**

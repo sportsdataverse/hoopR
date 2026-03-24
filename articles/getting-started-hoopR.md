@@ -54,8 +54,8 @@ There are generally speaking **six** men’s basketball data sources
 accessed from this package:
 
 - [`hoopR-data` repo](https://github.com/sportsdataverse/hoopR-data)
-  [![Twitter
-  Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=twitter&style=for-the-badge)](https://twitter.com/sportsdataverse)
+  [![X
+  Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=x&style=for-the-badge)](https://x.com/sportsdataverse)
 - [NBA Stats and Data API](https://stats.nba.com)
 - [NBA G-League Stats and Data API](https://stats.nba.com)
 - [ESPN](https://espn.com)
@@ -118,13 +118,13 @@ tictoc::toc()
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-    ## 3471277 rows of nba play-by-play data from 7377 games.
+    ## 3489449 rows of nba play-by-play data from 7415 games.
 
 ``` r
 dplyr::glimpse(nba_pbp)
 ```
 
-    ## Rows: 3,471,277
+    ## Rows: 3,489,449
     ## Columns: 64
     ## $ game_play_number                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
     ## $ id                              <dbl> 4013441404, 4013441407, 4013441408, 40…
@@ -202,19 +202,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.479 sec elapsed
+    ## 2.208 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 14654 rows of NBA team boxscore data from 7327 games.
+    ## 14730 rows of NBA team boxscore data from 7365 games.
 
 ``` r
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 14,654
+    ## Rows: 14,730
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -286,19 +286,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.181 sec elapsed
+    ## 3.1 sec elapsed
 
 ``` r
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
 ```
 
-    ## 193670 rows of NBA player boxscore data from 7378 games.
+    ## 194663 rows of NBA player boxscore data from 7416 games.
 
 ``` r
 dplyr::glimpse(nba_player_box)
 ```
 
-    ## Rows: 193,670
+    ## Rows: 194,663
     ## Columns: 57
     ## $ game_id                           <int> 401344140, 401344140, 401344140, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -368,19 +368,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 71.79 sec elapsed
+    ## 71.188 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
 ```
 
-    ## 12182656 rows of men's college basketball play-by-play data from 34428 games.
+    ## 12212022 rows of men's college basketball play-by-play data from 34494 games.
 
 ``` r
 dplyr::glimpse(mbb_pbp)
 ```
 
-    ## Rows: 12,182,656
+    ## Rows: 12,212,022
     ## Columns: 69
     ## $ id                              <dbl> 4.013109e+17, 4.013109e+17, 4.013109e+…
     ## $ sequence_number                 <chr> "101799901", "101806001", "101806002",…
@@ -462,19 +462,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.543 sec elapsed
+    ## 2.726 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
 ```
 
-    ## 70396 rows of men's college basketball team boxscore data from 35198 games.
+    ## 70528 rows of men's college basketball team boxscore data from 35264 games.
 
 ``` r
 dplyr::glimpse(mbb_team_box)
 ```
 
-    ## Rows: 70,396
+    ## Rows: 70,528
     ## Columns: 59
     ## $ game_id                           <int> 401310865, 401310865, 401310867, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -546,19 +546,19 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 8.361 sec elapsed
+    ## 8.467 sec elapsed
 
 ``` r
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 1123215 rows of men's college basketball player boxscore data from 35207 games.
+    ## 1125258 rows of men's college basketball player boxscore data from 35273 games.
 
 ``` r
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 1,123,215
+    ## Rows: 1,125,258
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -618,24 +618,24 @@ dplyr::glimpse(mbb_player_box)
 
 ## **Our Authors**
 
-- [Saiem Gilani](https://twitter.com/saiemgilani)
-  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=twitter&style=for-the-badge)](https://twitter.com/saiemgilani)
+- [Saiem Gilani](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
   [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
 
 ### **Our Contributors (they’re awesome)**
 
-- [Jason Lee](https://twitter.com/theFirmAISports)
-  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=twitter&style=for-the-badge)](https://twitter.com/theFirmAISports)
+- [Jason Lee](https://x.com/theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
 
-- [Billy Fryer](https://twitter.com/_b4billy_)
-  [![@\_b4billy\_](https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=twitter&style=for-the-badge)](https://twitter.com/_b4billy_)
+- [Billy Fryer](https://x.com/_b4billy_)
+  [![@\_b4billy\_](https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=x&style=for-the-badge)](https://x.com/_b4billy_)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
 
-- [Ross Drucker](https://twitter.com/rossdrucker9)
-  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=twitter&style=for-the-badge)](https://twitter.com/rossdrucker9)
+- [Ross Drucker](https://x.com/rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
 
-- [Vladislav Shufinskiy](https://twitter.com/vshufinskiy)
-  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=twitter&style=for-the-badge)](https://twitter.com/vshufinskiy)
+- [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
   [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)

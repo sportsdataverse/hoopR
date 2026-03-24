@@ -49,7 +49,8 @@ Other KP Misc. Functions:
 
 ``` r
 # \donttest{
-  try(kp_game_attrs(year = 2021, attr = "Excitement"))
+try(kp_game_attrs(year = 2021, attr = "Excitement"))
+#> 2026-03-24 01:20:56.241534: Invalid arguments or no game attributes data for Excitement available!
 #> Error in kp_game_attrs(year = 2021, attr = "Excitement") : 
 #>   object 'kenpom' not found
 # }

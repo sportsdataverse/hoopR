@@ -72,7 +72,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown--data"><li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/sportsdataverse-data/releases">SDV Data Releases</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/hoopR-data">hoopR Data Repository</a></li>
   </ul></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="http://twitter.com/saiemgilani"><span class="fa fab fa-twitter fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://x.com/saiemgilani"><span class="fa fab fa-x-twitter fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/sportsdataverse/hoopR/"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -92,6 +92,8 @@
 <ul><li><a href="#project-context">Project Context</a></li>
 <li><a href="#code-style">Code Style</a></li>
 <li><a href="#function-naming">Function Naming</a></li>
+<li><a href="#http-layer">HTTP Layer</a></li>
+<li><a href="#messaging-layer">Messaging Layer</a></li>
 <li><a href="#roxygen-documentation">Roxygen Documentation</a></li>
 <li>
 <a href="#testing">Testing</a>
@@ -124,6 +126,22 @@
 <li>Use <code>pad_id()</code> for game IDs before passing to the API.</li>
 <li>Internal/non-exported helpers are prefixed with <code>.</code> (e.g., <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>).</li>
 <li>Keep imports minimal and explicit; remove unused imports (for example, avoid <code>@import furrr</code> unless the file actually uses it).</li>
+</ul></div>
+<div class="section level2">
+<h2 id="http-layer">HTTP Layer<a class="anchor" aria-label="anchor" href="#http-layer"></a></h2>
+<p>All HTTP requests use <code>httr2</code> as the sole backend. The <code>httr</code> package is no longer a dependency.</p>
+<ul><li>
+<code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> in <code>utils_nba_stats.R</code> uses <code><a href="reference/dot-retry_request.html">.retry_request()</a></code> (an <code>httr2</code> wrapper) with required NBA headers (<code>x-nba-stats-origin</code>, <code>x-nba-stats-token</code>, <code>Referer</code>).</li>
+<li>Shared internal helpers in <code>utils.R</code>: <code><a href="reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="reference/dot-resp_text.html">.resp_text()</a></code>, <code><a href="reference/check_status.html">check_status()</a></code>.</li>
+<li>KenPom functions use <code>httr2</code>-based helpers: <code><a href="reference/kp_user_pw.html">login()</a></code> (cookie jar auth), <code><a href="reference/dot-kp_get_page.html">.kp_get_page()</a></code>, <code><a href="reference/dot-kp_request.html">.kp_request()</a></code>.</li>
+<li>
+<code>nba_endpoint()</code> builds URLs via <code>glue::glue('https://stats.nba.com/stats/{endpoint}')</code> – does NOT validate against its internal endpoint list.</li>
+</ul></div>
+<div class="section level2">
+<h2 id="messaging-layer">Messaging Layer<a class="anchor" aria-label="anchor" href="#messaging-layer"></a></h2>
+<p>All user-facing messages use <code>cli</code>. The <code>usethis</code> package is in <code>Suggests</code> only (retained for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</p>
+<ul><li>Internal helpers: <code>message_completed()</code> wraps <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_success()</a></code>; <code>user_message()</code> dispatches to <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_success()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_ul.html" class="external-link">cli::cli_ul()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_info()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger()</a></code>.</li>
+<li>Inline markup: <code>{.val x}</code> for values, <code>{.file x}</code> for paths, <code>{.code x}</code> for code.</li>
 </ul></div>
 <div class="section level2">
 <h2 id="function-naming">Function Naming<a class="anchor" aria-label="anchor" href="#function-naming"></a></h2>
@@ -270,7 +288,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
+  <p>Developed by <a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

@@ -44,7 +44,8 @@ Other KP Misc. Functions:
 
 ``` r
 # \donttest{
-  try(kp_hca())
+try(kp_hca())
+#> 2026-03-24 01:20:56.811519: Invalid arguments or no home court advantage data available!
 #> Error in kp_hca() : object 'kenpom' not found
 # }
 ```

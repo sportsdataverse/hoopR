@@ -92,6 +92,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
+#> 2026-03-24 01:20:58.150049 - Florida St. - 2021 Team opponent tracker data is missing
 #> Error in kp_opptracker(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
 # }

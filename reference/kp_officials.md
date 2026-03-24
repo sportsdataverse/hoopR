@@ -43,7 +43,8 @@ Other KP Misc. Functions:
 
 ``` r
 # \donttest{
-  try(kp_officials(year = 2021))
+try(kp_officials(year = 2021))
+#> 2026-03-24 01:20:57.88721: Invalid arguments or no officials data for 2021 available!
 #> Error in kp_officials(year = 2021) : object 'kenpom' not found
 # }
 ```

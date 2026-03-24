@@ -17,8 +17,13 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/csv_from_url.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_headers_list.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_request.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-resp_text.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-retry_request.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.html</loc></url>

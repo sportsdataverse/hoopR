@@ -122,6 +122,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
+#> 2026-03-24 - No Game Plan Points distribution tables available for Florida St. - 2021
 #> Error in kp_gameplan(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
 # }

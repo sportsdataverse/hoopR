@@ -3,7 +3,8 @@
 Save your KenPom login e-mail and password as the system environment
 variables `KP_USER` and `KP_PW`
 
-Requires a subscription to KenPom.com
+Requires a subscription to KenPom.com. Uses httr2 for HTTP requests and
+cookie management.
 
 ## Usage
 

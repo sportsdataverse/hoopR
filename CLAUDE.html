@@ -72,7 +72,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown--data"><li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/sportsdataverse-data/releases">SDV Data Releases</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/hoopR-data">hoopR Data Repository</a></li>
   </ul></li>
-      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="http://twitter.com/saiemgilani"><span class="fa fab fa-twitter fa-lg"></span></a></li>
+      </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://x.com/saiemgilani"><span class="fa fab fa-x-twitter fa-lg"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/sportsdataverse/hoopR/"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -100,6 +100,7 @@
 <li><a href="#v2-vs-v3-api-differences">V2 vs V3 API Differences</a></li>
 <li><a href="#null-safety">Null Safety</a></li>
 <li><a href="#http-layer">HTTP Layer</a></li>
+<li><a href="#messaging-layer">Messaging Layer</a></li>
 </ul></li>
 <li>
 <a href="#testing">Testing</a>
@@ -228,7 +229,7 @@
 <span><span class="co">#' @rdname nba_functionname</span></span>
 <span><span class="co">#' @author Author Name</span></span>
 <span><span class="co">#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')</span></span>
-<span><span class="co">#' @param ... Additional arguments passed to an underlying function like httr.</span></span>
+<span><span class="co">#' @param ... Additional arguments passed to the underlying function.</span></span>
 <span><span class="co">#' @return Returns a named list of data frames: Component1, Component2</span></span>
 <span><span class="co">#'</span></span>
 <span><span class="co">#'    **Component1**</span></span>
@@ -308,8 +309,17 @@
 </div>
 <div class="section level3">
 <h3 id="http-layer">HTTP Layer<a class="anchor" aria-label="anchor" href="#http-layer"></a></h3>
-<p><code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> in <code>utils_nba_stats.R</code> uses <code><a href="https://rvest.tidyverse.org/reference/session.html" class="external-link">rvest::session()</a></code> with required NBA headers: - <code>x-nba-stats-origin: stats</code> - <code>x-nba-stats-token: true</code> - <code>Referer: https://www.nba.com/</code></p>
+<p>All HTTP requests use <code>httr2</code> as the sole backend. The <code>httr</code> package is no longer a dependency.</p>
+<p><code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> in <code>utils_nba_stats.R</code> uses <code><a href="reference/dot-retry_request.html">.retry_request()</a></code> (an <code>httr2</code> wrapper) with required NBA headers: - <code>x-nba-stats-origin: stats</code> - <code>x-nba-stats-token: true</code> - <code>Referer: https://www.nba.com/</code></p>
+<p>Shared internal helpers in <code>utils.R</code>: - <code>.retry_request(url, params, headers, timeout)</code> – performs a GET with retry logic via <code>httr2</code> - <code>.resp_text(resp)</code> – extracts response body as UTF-8 text via <code><a href="https://httr2.r-lib.org/reference/resp_body_raw.html" class="external-link">httr2::resp_body_string()</a></code> - <code>check_status(res)</code> – checks HTTP status via <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code></p>
+<p>KenPom functions use separate <code>httr2</code>-based helpers: - <code><a href="reference/kp_user_pw.html">login()</a></code> – authenticates via <code>httr2</code> cookie jar - <code>.kp_get_page(jar, url)</code> – fetches a page as parsed HTML - <code>.kp_request(url, jar)</code> – builds an <code>httr2</code> request with KenPom headers</p>
 <p><code>nba_endpoint()</code> builds URLs via <code>glue::glue('https://stats.nba.com/stats/{endpoint}')</code> – it does NOT validate against its internal endpoint list.</p>
+</div>
+<div class="section level3">
+<h3 id="messaging-layer">Messaging Layer<a class="anchor" aria-label="anchor" href="#messaging-layer"></a></h3>
+<p>All user-facing messages use <code>cli</code>. The <code>usethis</code> package is in <code>Suggests</code> only (for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</p>
+<p>Internal messaging helpers in <code>utils.R</code>: - <code>message_completed(x, in_builder)</code> – wraps <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_success()</a></code> - <code>user_message(x, type)</code> – dispatches to <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_success()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_ul.html" class="external-link">cli::cli_ul()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_info()</a></code> / <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger()</a></code> based on type</p>
+<p>Inline markup in cli strings: <code>{.val x}</code> for values, <code>{.file x}</code> for paths, <code>{.code x}</code> for code.</p>
 </div>
 </div>
 <div class="section level2">
@@ -429,7 +439,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://twitter.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
+  <p>Developed by <a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
