@@ -52,7 +52,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_referee(referee = 714363, year = 2021))
-#> 2026-03-24 01:21:00.105601: Invalid arguments or no referee data for 714363 in 2021 available!
+#> 2026-03-24 04:18:11.86973: Invalid arguments or no referee data for 714363 in 2021 available!
 #> Error in kp_referee(referee = 714363, year = 2021) : 
 #>   object 'kenpom' not found
 # }

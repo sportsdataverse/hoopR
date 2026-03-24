@@ -119,7 +119,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_player_career(player_id = '41180'))
-#> 2026-03-24 01:20:58.427507 - No Player Career Data available for 41180
+#> 2026-03-24 04:18:10.143195 - No Player Career Data available for 41180
 #> Error in kp_player_career(player_id = "41180") : 
 #>   object 'kenpom' not found
   # }

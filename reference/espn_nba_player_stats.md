@@ -247,7 +247,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
 #> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-24 01:20:47 UTC
+#> ℹ Data updated: 2026-03-24 04:17:59 UTC
 #> # A tibble: 1 × 271
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    

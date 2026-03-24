@@ -66,8 +66,8 @@ Other KenPom Ratings Functions:
 
 ``` r
 # \donttest{
-try(kp_kpoy(year = 2021))
-#> 2026-03-24 01:20:57.352003: Invalid arguments or no KenPom player of the year data for 2021 available!
-#> Error in kp_kpoy(year = 2021) : object 'kenpom' not found
+try(kp_kpoy(year = 2026))
+#> 2026-03-24 04:18:09.02754: Invalid arguments or no KenPom player of the year data for 2026 available!
+#> Error in kp_kpoy(year = 2026) : object 'kenpom' not found
 # }
 ```

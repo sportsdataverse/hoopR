@@ -119,7 +119,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_box(game_id = 6, year = 2021))
-#> 2026-03-24 01:20:53.682594: Invalid arguments or no box data for 6 available!
+#> 2026-03-24 04:18:05.253641: Invalid arguments or no box data for 6 available!
 #> Error in kp_box(game_id = 6, year = 2021) : object 'kenpom' not found
 # }
 ```

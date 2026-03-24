@@ -59,7 +59,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_pointdist(min_year = 2020, max_year = 2021))
-#> 2026-03-24 01:20:59.010736: Invalid arguments or no point distribution data for 2020 - 2021 available!
+#> 2026-03-24 04:18:10.735571: Invalid arguments or no point distribution data for 2020 - 2021 available!
 #> Error in kp_pointdist(min_year = 2020, max_year = 2021) : 
 #>   object 'kenpom' not found
 # }

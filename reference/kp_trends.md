@@ -50,7 +50,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_trends())
-#> 2026-03-24 01:21:02.425569: Invalid arguments or no trends data available!
+#> 2026-03-24 04:18:14.193839: Invalid arguments or no trends data available!
 #> Error in kp_trends() : object 'kenpom' not found
 # }
 ```
