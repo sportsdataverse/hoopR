@@ -6,6 +6,8 @@
   - [Project Context](#project-context)
   - [Code Style](#code-style)
   - [Function Naming](#function-naming)
+  - [HTTP Layer](#http-layer)
+  - [Messaging Layer](#messaging-layer)
   - [Roxygen Documentation](#roxygen-documentation)
   - [Testing](#testing)
     - [Environment Variables](#environment-variables)
@@ -38,6 +40,22 @@ When there is any conflict between this file and repository contributor docs, fo
 - Use `pad_id()` for game IDs before passing to the API.
 - Internal/non-exported helpers are prefixed with `.` (e.g., `.players_on_court_v3()`).
 - Keep imports minimal and explicit; remove unused imports (for example, avoid `@import furrr` unless the file actually uses it).
+
+## HTTP Layer
+
+All HTTP requests use `httr2` as the sole backend. The `httr` package is no longer a dependency.
+
+- `request_with_proxy()` in `utils_nba_stats.R` uses `.retry_request()` (an `httr2` wrapper) with required NBA headers (`x-nba-stats-origin`, `x-nba-stats-token`, `Referer`).
+- Shared internal helpers in `utils.R`: `.retry_request()`, `.resp_text()`, `check_status()`.
+- KenPom functions use `httr2`-based helpers: `login()` (cookie jar auth), `.kp_get_page()`, `.kp_request()`.
+- `nba_endpoint()` builds URLs via `glue::glue('https://stats.nba.com/stats/{endpoint}')` -- does NOT validate against its internal endpoint list.
+
+## Messaging Layer
+
+All user-facing messages use `cli`. The `usethis` package is in `Suggests` only (retained for `usethis::edit_r_environ()` documentation references).
+
+- Internal helpers: `message_completed()` wraps `cli::cli_alert_success()`; `user_message()` dispatches to `cli::cli_alert_success()` / `cli::cli_ul()` / `cli::cli_alert_info()` / `cli::cli_alert_danger()`.
+- Inline markup: `{.val x}` for values, `{.file x}` for paths, `{.code x}` for code.
 
 ## Function Naming
 

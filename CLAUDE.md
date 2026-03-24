@@ -13,6 +13,7 @@
     - [V2 vs V3 API Differences](#v2-vs-v3-api-differences)
     - [Null Safety](#null-safety)
     - [HTTP Layer](#http-layer)
+    - [Messaging Layer](#messaging-layer)
   - [Testing](#testing)
     - [Test Pattern](#test-pattern)
     - [Environment Variables for Tests](#environment-variables-for-tests)
@@ -114,7 +115,7 @@ NULL
 #' @rdname nba_functionname
 #' @author Author Name
 #' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')
-#' @param ... Additional arguments passed to an underlying function like httr.
+#' @param ... Additional arguments passed to the underlying function.
 #' @return Returns a named list of data frames: Component1, Component2
 #'
 #'    **Component1**
@@ -196,12 +197,34 @@ value <- obj$field %||% NA_character_
 
 ### HTTP Layer
 
-`request_with_proxy()` in `utils_nba_stats.R` uses `rvest::session()` with required NBA headers:
+All HTTP requests use `httr2` as the sole backend. The `httr` package is no longer a dependency.
+
+`request_with_proxy()` in `utils_nba_stats.R` uses `.retry_request()` (an `httr2` wrapper) with required NBA headers:
 - `x-nba-stats-origin: stats`
 - `x-nba-stats-token: true`
 - `Referer: https://www.nba.com/`
 
+Shared internal helpers in `utils.R`:
+- `.retry_request(url, params, headers, timeout)` -- performs a GET with retry logic via `httr2`
+- `.resp_text(resp)` -- extracts response body as UTF-8 text via `httr2::resp_body_string()`
+- `check_status(res)` -- checks HTTP status via `httr2::resp_status()`
+
+KenPom functions use separate `httr2`-based helpers:
+- `login()` -- authenticates via `httr2` cookie jar
+- `.kp_get_page(jar, url)` -- fetches a page as parsed HTML
+- `.kp_request(url, jar)` -- builds an `httr2` request with KenPom headers
+
 `nba_endpoint()` builds URLs via `glue::glue('https://stats.nba.com/stats/{endpoint}')` -- it does NOT validate against its internal endpoint list.
+
+### Messaging Layer
+
+All user-facing messages use `cli`. The `usethis` package is in `Suggests` only (for `usethis::edit_r_environ()` documentation references).
+
+Internal messaging helpers in `utils.R`:
+- `message_completed(x, in_builder)` -- wraps `cli::cli_alert_success()`
+- `user_message(x, type)` -- dispatches to `cli::cli_alert_success()` / `cli::cli_ul()` / `cli::cli_alert_info()` / `cli::cli_alert_danger()` based on type
+
+Inline markup in cli strings: `{.val x}` for values, `{.file x}` for paths, `{.code x}` for code.
 
 ## Testing
 
