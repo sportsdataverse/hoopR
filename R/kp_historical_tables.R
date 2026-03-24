@@ -111,7 +111,7 @@ kp_team_history <- function(team){
                        'Def.APL',	'Foul2Partic.Pct')
 
       x <- (page %>%
-              rvest::html_elements(css = '#player-table'))[[1]]
+              rvest::html_elements("table#player-table"))[[1]]
 
       ## removing national rankings for easier manipulation
       ## TODO: Add these rankings back as columns
@@ -252,7 +252,7 @@ kp_team_history <- function(team){
                          "Coach" = sapply(.data$Coach, function(arg) {
                            stringr::str_trim(stringr::str_replace(stringr::str_remove(arg,'\\d+| \\*| \\*+'),'\\*+','')) }))
       x <- x %>%
-        dplyr::mutate(Team = team_name) %>%
+        dplyr::mutate(Team = team) %>%
         dplyr::select(
           "Year",
           "Team.Rk",

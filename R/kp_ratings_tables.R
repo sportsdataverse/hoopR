@@ -1313,7 +1313,7 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 #'
 #' @examples
 #' \donttest{
-#' try(kp_kpoy(year = 2021))
+#' try(kp_kpoy(year = 2026))
 #' }
 #'
 kp_kpoy <- function(year = most_recent_mbb_season()) {

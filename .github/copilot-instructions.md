@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [hoopR Copilot Instructions](#hoopr-copilot-instructions)
   - [Project Context](#project-context)
@@ -59,14 +60,14 @@ All user-facing messages use `cli`. The `usethis` package is in `Suggests` only 
 
 ## Function Naming
 
-| Data Source | Prefix | Example |
-|---|---|---|
-| NBA Stats API | `nba_` | `nba_leagueleaders()`, `nba_boxscoretraditionalv3()` |
-| ESPN API | `espn_nba_` / `espn_mbb_` | `espn_nba_pbp()`, `espn_mbb_teams()` |
-| KenPom | `kp_` | `kp_pomeroy_ratings()`, `kp_box()` |
-| NBA G-League | `nbagl_` | `nbagl_schedule()`, `nbagl_standings()` |
-| NCAA | `ncaa_mbb_` | `ncaa_mbb_teams()` |
-| Data loaders | `load_nba_` / `load_mbb_` | `load_nba_pbp()`, `load_mbb_team_box()` |
+| Data Source   | Prefix                    | Example                                              |
+| ------------- | ------------------------- | ---------------------------------------------------- |
+| NBA Stats API | `nba_`                    | `nba_leagueleaders()`, `nba_boxscoretraditionalv3()` |
+| ESPN API      | `espn_nba_` / `espn_mbb_` | `espn_nba_pbp()`, `espn_mbb_teams()`                 |
+| KenPom        | `kp_`                     | `kp_pomeroy_ratings()`, `kp_box()`                   |
+| NBA G-League  | `nbagl_`                  | `nbagl_schedule()`, `nbagl_standings()`              |
+| NCAA          | `ncaa_mbb_`               | `ncaa_mbb_teams()`                                   |
+| Data loaders  | `load_nba_` / `load_mbb_` | `load_nba_pbp()`, `load_mbb_team_box()`              |
 
 ## Roxygen Documentation
 
@@ -97,14 +98,14 @@ Every exported function needs:
 
 ### Environment Variables
 
-| Variable | Description |
-|---|---|
-| `NBA_STATS_TESTS=1` | Enable NBA Stats API tests |
-| `ESPN_TESTS=1` | Enable ESPN API tests |
-| `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests |
-| `NCAA_MBB_TESTS=1` | Enable NCAA MBB tests |
-| `NCAA_WBB_TESTS=1` | Enable NCAA WBB tests |
-| `KP_USER` / `KP_PW` | KenPom credentials |
+| Variable              | Description                |
+| --------------------- | -------------------------- |
+| `NBA_STATS_TESTS=1`   | Enable NBA Stats API tests |
+| `ESPN_TESTS=1`        | Enable ESPN API tests      |
+| `NBAGL_STATS_TESTS=1` | Enable NBA G-League tests  |
+| `NCAA_MBB_TESTS=1`    | Enable NCAA MBB tests      |
+| `NCAA_WBB_TESTS=1`    | Enable NCAA WBB tests      |
+| `KP_USER` / `KP_PW`   | KenPom credentials         |
 
 On CI, most live API tests are additionally guarded with `skip_on_ci()`. Setting env vars alone will not run those tests unless that guard is intentionally relaxed.
 
@@ -112,11 +113,11 @@ On CI, most live API tests are additionally guarded with `skip_on_ci()`. Setting
 
 Current CI workflows rely on:
 
-| Secret | Description |
-|---|---|
-| `GITHUB_TOKEN` | Auto-provided token for workflow operations |
-| `KP_USER` | KenPom username/email for credentialed tests |
-| `KP_PW` | KenPom password for credentialed tests |
+| Secret         | Description                                  |
+| -------------- | -------------------------------------------- |
+| `GITHUB_TOKEN` | Auto-provided token for workflow operations  |
+| `KP_USER`      | KenPom username/email for credentialed tests |
+| `KP_PW`        | KenPom password for credentialed tests       |
 
 Optional env-var secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) only have effect if corresponding `skip_on_ci()` guards are intentionally adjusted.
 
