@@ -4,14 +4,14 @@
 
 - [**hoopR 3.0.0**](#hoopr-300)
     - [**HTTP Backend Migration**](#http-backend-migration)
-    - [**Messaging Migration (usethis → cli)**](#messaging-migration-usethis--cli)
-    - [**Social Branding (Twitter → X)**](#social-branding-twitter--x)
+    - [**Messaging Migration (usethis → cli)**](#messaging-migration-usethis-%E2%86%92-cli)
+    - [**Social Branding (Twitter → X)**](#social-branding-twitter-%E2%86%92-x)
     - [**Stability and Test Robustness**](#stability-and-test-robustness)
     - [**CI and Check Improvements**](#ci-and-check-improvements)
     - [**NBA Play-by-Play V3**](#nba-play-by-play-v3)
     - [**NBA Boxscore Summary V3**](#nba-boxscore-summary-v3)
     - [**New NBA Stats API Endpoint Wrappers**](#new-nba-stats-api-endpoint-wrappers)
-    - [**ESPN \& G-League Functions**](#espn--g-league-functions)
+    - [**ESPN & G-League Functions**](#espn--g-league-functions)
     - [**Other Improvements**](#other-improvements)
     - [**Bug Fixes**](#bug-fixes)
     - [**Deprecations**](#deprecations)
@@ -157,6 +157,10 @@
 - Fixed `data` not initialized before `tryCatch` in `nba_playbyplayv3()` and `nba_pbp()`, preventing crashes on API errors.
 - Fixed `nbagl_pbp()` to avoid on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.
 - Fixed NBAGL wrapper defaults for error paths where return objects were not initialized before `tryCatch`.
+- Fixed `kp_box()` referee link extraction by updating CSS selectors to match current KenPom HTML structure (`div.refline` with href-based filtering).
+- Fixed `kp_team_history()` CSS selector (`table#player-table`) and team name assignment to use the display name instead of the URL slug.
+- Updated `kp_kpoy()` example year from 2021 to 2026 for current season relevance.
+- Updated `teams_links` dataset with 2026 season team data.
 
 ### **Deprecations**
 
