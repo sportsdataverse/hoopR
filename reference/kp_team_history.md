@@ -94,7 +94,7 @@ Other KenPom Historical Functions:
 ``` r
   # \donttest{
     try(kp_team_history(team = 'Florida St.'))
-#> 2026-03-24 04:18:12.434949: Invalid arguments or no team history data for Florida St. available!
+#> 2026-03-26 14:51:23.002509: Invalid arguments or no team history data for Florida St. available!
 #> Error in kp_team_history(team = "Florida St.") : 
 #>   object 'kenpom' not found
   # }

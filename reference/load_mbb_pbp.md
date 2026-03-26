@@ -115,21 +115,21 @@ Other hoopR Loader Functions:
 # \donttest{
 load_mbb_pbp(seasons = most_recent_mbb_season())
 #> ── ESPN MBB Play-by-Play from hoopR data repository ───────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-23 11:22:03 UTC
-#> # A tibble: 2,902,736 × 57
+#> ℹ Data updated: 2026-03-26 11:22:23 UTC
+#> # A tibble: 2,774,867 × 57
 #>    game_play_number      id sequence_number type_id type_text   text  away_score
 #>               <int>   <dbl>           <int>   <int> <chr>       <chr>      <int>
-#>  1                1 4.02e17       120364995     615 Jumpball    "Sta…          0
-#>  2                2 4.02e17       120364996     615 Jumpball    "Jum…          0
-#>  3                3 4.02e17       120364997     615 Jumpball    "Jum…          0
-#>  4                4 4.02e17       120365025     572 LayUpShot   "Boo…          0
-#>  5                5 4.02e17       120365029     598 Lost Ball … "Kae…          0
-#>  6                6 4.02e17       120365030     607 Steal       "Rue…          0
-#>  7                7 4.02e17       120365031     572 LayUpShot   "Xai…          0
-#>  8                8 4.02e17       120365060     558 JumpShot    "Tav…          0
-#>  9                9 4.02e17       120365061     587 Defensive … "Ale…          0
-#> 10               10 4.02e17       120365063     519 PersonalFo… "Fou…          0
-#> # ℹ 2,902,726 more rows
+#>  1                1 4.02e17       120383831     615 Jumpball    Star…          0
+#>  2                2 4.02e17       120383832     615 Jumpball    Jump…          0
+#>  3                3 4.02e17       120383833     615 Jumpball    Jump…          0
+#>  4                4 4.02e17       120383834     558 JumpShot    De'S…          0
+#>  5                5 4.02e17       120383835     587 Defensive … Chas…          0
+#>  6                6 4.02e17       120383836     558 JumpShot    Maso…          0
+#>  7                7 4.02e17       120383837     587 Defensive … Jaiu…          0
+#>  8                8 4.02e17       120383838     519 PersonalFo… Foul…          0
+#>  9                9 4.02e17       120383880     558 JumpShot    Javo…          0
+#> 10               10 4.02e17       120383881     587 Defensive … Chas…          0
+#> # ℹ 2,774,857 more rows
 #> # ℹ 50 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, wallclock <chr>, shooting_play <lgl>,

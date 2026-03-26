@@ -2,6 +2,8 @@
 
 ## **hoopR 3.0.0**
 
+CRAN release: 2026-03-24
+
 #### **HTTP Backend Migration**
 
 - **Breaking**: Replaced `httr` with `httr2` as the HTTP backend for all
@@ -205,6 +207,18 @@
   by using the stable core play-by-play path.
 - Fixed NBAGL wrapper defaults for error paths where return objects were
   not initialized before `tryCatch`.
+- Fixed
+  [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md)
+  referee link extraction by updating CSS selectors to match current
+  KenPom HTML structure (`div.refline` with href-based filtering).
+- Fixed
+  [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)
+  CSS selector (`table#player-table`) and team name assignment to use
+  the display name instead of the URL slug.
+- Updated
+  [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md)
+  example year from 2021 to 2026 for current season relevance.
+- Updated `teams_links` dataset with 2026 season team data.
 
 #### **Deprecations**
 

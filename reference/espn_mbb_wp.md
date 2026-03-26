@@ -80,7 +80,7 @@ Other ESPN MBB Functions:
 # \donttest{
 espn_mbb_wp(game_id = 401256760)
 #> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-24 04:17:52 UTC
+#> ℹ Data updated: 2026-03-26 14:51:01 UTC
 #> # A tibble: 352 × 9
 #>    game_id   play_id      period time_left period_seconds_left game_seconds_left
 #>  * <chr>     <chr>         <dbl> <chr>                   <dbl>             <dbl>

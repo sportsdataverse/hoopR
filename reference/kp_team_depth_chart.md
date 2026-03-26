@@ -80,7 +80,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
-#> 2026-03-24 04:18:12.150668 - Florida St. - 2021 Team Depth Chart is missing
+#> 2026-03-26 14:51:22.709922 - Florida St. - 2021 Team Depth Chart is missing
 #> Error in kp_team_depth_chart(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
   # }

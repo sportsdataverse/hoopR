@@ -67,7 +67,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_height(min_year = 2020, max_year = 2021))
-#> 2026-03-24 04:18:08.74755: Invalid arguments or no height data for 2020 - 2021 available!
+#> 2026-03-26 14:51:19.357646: Invalid arguments or no height data for 2020 - 2021 available!
 #> Error in kp_height(min_year = 2020, max_year = 2021) : 
 #>   object 'kenpom' not found
 # }

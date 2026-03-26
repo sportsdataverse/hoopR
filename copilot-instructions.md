@@ -1,17 +1,16 @@
 # hoopR Copilot Instructions
 
-**Table of Contents** *generated with
-[DocToc](https://github.com/thlorenz/doctoc)*
-
 - [hoopR Copilot Instructions](#hoopr-copilot-instructions)
   - [Project Context](#project-context)
+  - [Repository Workflow](#repository-workflow)
   - [Code Style](#code-style)
-  - [Function Naming](#function-naming)
   - [HTTP Layer](#http-layer)
   - [Messaging Layer](#messaging-layer)
+  - [Function Naming](#function-naming)
   - [Roxygen Documentation](#roxygen-documentation)
   - [Testing](#testing)
     - [Environment Variables](#environment-variables)
+    - [CI Secrets](#ci-secrets)
   - [Conventional Commits](#conventional-commits)
   - [V3 API Notes](#v3-api-notes)
   - [Common Pitfalls](#common-pitfalls)
@@ -256,5 +255,8 @@ referencing AI tools.
 - Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp
   logs) can cause `R CMD check` notes/warnings if included in source
   checks.
+- KenPom HTML structure changes periodically – CSS selectors for tables
+  (`table#player-table`), referee links (`div.refline`), and navigation
+  elements are fragile and may need updating.
 - Never edit `NAMESPACE` or `man/` files by hand; regenerate with
   `devtools::document()`.

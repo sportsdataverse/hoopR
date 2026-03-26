@@ -97,7 +97,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> 2026-03-24 04:18:13.338675 - No Player Data available for Florida St. in 2024
+#> 2026-03-26 14:51:23.924513 - No Player Data available for Florida St. in 2024
 #> Error in kp_team_players(team = "Florida St.", year = 2024) : 
 #>   object 'kenpom' not found
   # }

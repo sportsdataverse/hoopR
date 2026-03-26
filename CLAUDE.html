@@ -90,6 +90,7 @@
 <ul><li>
 <a href="#claudemd----hoopr-development-guide">CLAUDE.md – hoopR Development Guide</a>
 <ul><li><a href="#package-overview">Package Overview</a></li>
+<li><a href="#branching--pr-workflow">Branching &amp; PR Workflow</a></li>
 <li><a href="#build--development-commands">Build &amp; Development Commands</a></li>
 <li><a href="#project-structure">Project Structure</a></li>
 <li>
@@ -106,6 +107,7 @@
 <a href="#testing">Testing</a>
 <ul><li><a href="#test-pattern">Test Pattern</a></li>
 <li><a href="#environment-variables-for-tests">Environment Variables for Tests</a></li>
+<li><a href="#ci-secrets">CI Secrets</a></li>
 <li><a href="#rate-limiting">Rate Limiting</a></li>
 </ul></li>
 <li><a href="#namespace">NAMESPACE</a></li>
@@ -429,6 +431,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 <li>
 <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
 <li>Local dev artifacts (for example <code>.vscode</code>, <code>.claude</code>, ad-hoc logs) can surface as <code>R CMD check</code> notes/warnings if not excluded from build inputs.</li>
+<li>KenPom HTML structure changes periodically – CSS selectors for tables (<code>table#player-table</code>), referee links (<code>div.refline</code>), and navigation elements are fragile and may need updating.</li>
 <li>Never hand-edit <code>NAMESPACE</code> or files under <code>man/</code>; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>

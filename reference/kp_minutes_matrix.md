@@ -39,7 +39,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
-#> 2026-03-24 04:18:09.319001 - Florida St. - 2021 minutes matrix is missing
+#> 2026-03-26 14:51:19.912999 - Florida St. - 2021 minutes matrix is missing
 #> Error in kp_minutes_matrix(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
   # }

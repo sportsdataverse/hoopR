@@ -159,7 +159,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
-#> 2026-03-24 04:18:13.019087 - Florida St. - 2021 team player stats are missing
+#> 2026-03-26 14:51:23.596488 - Florida St. - 2021 team player stats are missing
 #> Error in kp_team_player_stats(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
   # }

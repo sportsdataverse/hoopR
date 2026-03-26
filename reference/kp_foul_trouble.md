@@ -57,7 +57,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
-#> 2026-03-24 04:18:07.321862: Invalid arguments or no foul trouble data for 2020 - 2026 available!
+#> 2026-03-26 14:51:17.959153: Invalid arguments or no foul trouble data for 2020 - 2026 available!
 #> Error in kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()) : 
 #>   object 'kenpom' not found
 # }

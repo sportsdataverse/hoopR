@@ -86,7 +86,7 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2>
+<h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2><p class="text-muted">CRAN release: 2026-03-24</p>
 <div class="section level4">
 <h4 id="http-backend-migration-3-0-0"><strong>HTTP Backend Migration</strong><a class="anchor" aria-label="anchor" href="#http-backend-migration-3-0-0"></a></h4>
 <ul><li>
@@ -197,6 +197,10 @@
 <li>Fixed <code>data</code> not initialized before <code>tryCatch</code> in <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> and <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code>, preventing crashes on API errors.</li>
 <li>Fixed <code><a href="../reference/nbagl_pbp.html">nbagl_pbp()</a></code> to avoid on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.</li>
 <li>Fixed NBAGL wrapper defaults for error paths where return objects were not initialized before <code>tryCatch</code>.</li>
+<li>Fixed <code><a href="../reference/kp_box.html">kp_box()</a></code> referee link extraction by updating CSS selectors to match current KenPom HTML structure (<code>div.refline</code> with href-based filtering).</li>
+<li>Fixed <code><a href="../reference/kp_team_history.html">kp_team_history()</a></code> CSS selector (<code>table#player-table</code>) and team name assignment to use the display name instead of the URL slug.</li>
+<li>Updated <code><a href="../reference/kp_kpoy.html">kp_kpoy()</a></code> example year from 2021 to 2026 for current season relevance.</li>
+<li>Updated <code>teams_links</code> dataset with 2026 season team data.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="deprecations-3-0-0"><strong>Deprecations</strong><a class="anchor" aria-label="anchor" href="#deprecations-3-0-0"></a></h4>

@@ -68,7 +68,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
-#> 2026-03-24 - No team schedule tables available for Florida St. - 2022
+#> 2026-03-26 - No team schedule tables available for Florida St. - 2022
 #> Error in kp_team_schedule(team = "Florida St.", year = 2022) : 
 #>   object 'kenpom' not found
 # }

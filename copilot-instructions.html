@@ -86,18 +86,19 @@
     </div>
 
 
-<p><strong>Table of Contents</strong> <em>generated with <a href="https://github.com/thlorenz/doctoc" class="external-link">DocToc</a></em></p>
 <ul><li>
 <a href="#hoopr-copilot-instructions">hoopR Copilot Instructions</a>
 <ul><li><a href="#project-context">Project Context</a></li>
+<li><a href="#repository-workflow">Repository Workflow</a></li>
 <li><a href="#code-style">Code Style</a></li>
-<li><a href="#function-naming">Function Naming</a></li>
 <li><a href="#http-layer">HTTP Layer</a></li>
 <li><a href="#messaging-layer">Messaging Layer</a></li>
+<li><a href="#function-naming">Function Naming</a></li>
 <li><a href="#roxygen-documentation">Roxygen Documentation</a></li>
 <li>
 <a href="#testing">Testing</a>
 <ul><li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#ci-secrets">CI Secrets</a></li>
 </ul></li>
 <li><a href="#conventional-commits">Conventional Commits</a></li>
 <li><a href="#v3-api-notes">V3 API Notes</a></li>
@@ -278,6 +279,7 @@
 <li>IST Standings has dynamic game columns – use <code>expect_true(all(core_cols %in% colnames()))</code>.</li>
 <li>NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.</li>
 <li>Local editor/worktree artifacts (e.g., <code>.vscode</code>, <code>.claude</code>, temp logs) can cause <code>R CMD check</code> notes/warnings if included in source checks.</li>
+<li>KenPom HTML structure changes periodically – CSS selectors for tables (<code>table#player-table</code>), referee links (<code>div.refline</code>), and navigation elements are fragile and may need updating.</li>
 <li>Never edit <code>NAMESPACE</code> or <code>man/</code> files by hand; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>

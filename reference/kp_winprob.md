@@ -93,7 +93,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
-#> 2026-03-24 04:18:14.949826: Invalid arguments or no win probability data for 1238 available!
+#> 2026-03-26 14:51:25.584458: Invalid arguments or no win probability data for 1238 available!
 #> Error in kp_winprob(game_id = 1238, year = 2020) : 
 #>   object 'kenpom' not found
 # }

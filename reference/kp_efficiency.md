@@ -63,7 +63,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_efficiency(min_year = 2020, max_year = 2021))
-#> 2026-03-24 04:18:06.771996: Invalid arguments or no efficiency data for 2020 - 2021 available!
+#> 2026-03-26 14:51:17.392452: Invalid arguments or no efficiency data for 2020 - 2021 available!
 #> Error in kp_efficiency(min_year = 2020, max_year = 2021) : 
 #>   object 'kenpom' not found
 # }

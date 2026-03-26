@@ -161,7 +161,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
     try(kp_conf(year = 2020, conf = 'ACC'))
-#> 2026-03-24 04:18:05.870196: Invalid arguments or no conference data for 2020 ACC available!
+#> 2026-03-26 14:51:16.529399: Invalid arguments or no conference data for 2020 ACC available!
 #> Error in kp_conf(year = 2020, conf = "ACC") : object 'kenpom' not found
 # }
 ```

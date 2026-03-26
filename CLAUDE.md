@@ -6,6 +6,7 @@
 - [CLAUDE.md – hoopR Development
   Guide](#claudemd----hoopr-development-guide)
   - [Package Overview](#package-overview)
+  - [Branching & PR Workflow](#branching--pr-workflow)
   - [Build & Development Commands](#build--development-commands)
   - [Project Structure](#project-structure)
   - [Key Coding Conventions](#key-coding-conventions)
@@ -21,6 +22,7 @@
     - [Test Pattern](#test-pattern)
     - [Environment Variables for
       Tests](#environment-variables-for-tests)
+    - [CI Secrets](#ci-secrets)
     - [Rate Limiting](#rate-limiting)
   - [NAMESPACE](#namespace)
   - [Commit Convention](#commit-convention)
@@ -456,5 +458,8 @@ referencing AI tools.
 - Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs)
   can surface as `R CMD check` notes/warnings if not excluded from build
   inputs.
+- KenPom HTML structure changes periodically – CSS selectors for tables
+  (`table#player-table`), referee links (`div.refline`), and navigation
+  elements are fragile and may need updating.
 - Never hand-edit `NAMESPACE` or files under `man/`; regenerate with
   `devtools::document()`.

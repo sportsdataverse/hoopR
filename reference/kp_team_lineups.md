@@ -76,7 +76,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
-#> 2026-03-24 04:18:12.734432 - Florida St. - 2021 Team Lineups are missing
+#> 2026-03-26 14:51:23.305255 - Florida St. - 2021 Team Lineups are missing
 #> Error in kp_team_lineups(team = "Florida St.", year = 2021) : 
 #>   object 'kenpom' not found
   # }

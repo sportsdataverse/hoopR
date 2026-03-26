@@ -134,7 +134,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 #> ── ESPN MBB Schedule from hoopR data repository ───────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-23 11:48:10 UTC
+#> ℹ Data updated: 2026-03-26 11:51:32 UTC
 #> # A tibble: 6,318 × 86
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 

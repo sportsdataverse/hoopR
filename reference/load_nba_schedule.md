@@ -127,8 +127,8 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA Schedule from hoopR data repository ───────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-23 11:48:39 UTC
-#> # A tibble: 1,246 × 77
+#> ℹ Data updated: 2026-03-26 11:47:31 UTC
+#> # A tibble: 1,246 × 76
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
 #>  1  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
@@ -142,7 +142,7 @@ load_nba_schedule(seasons = most_recent_nba_season())
 #>  9  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
 #> 10  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
 #> # ℹ 1,236 more rows
-#> # ℹ 70 more variables: play_by_play_available <lgl>, recent <lgl>,
+#> # ℹ 69 more variables: play_by_play_available <lgl>, recent <lgl>,
 #> #   start_date <chr>, broadcast <chr>, highlights <chr>, notes_type <chr>,
 #> #   notes_headline <chr>, broadcast_market <chr>, broadcast_name <chr>,
 #> #   type_id <int>, type_abbreviation <chr>, venue_id <int>,
