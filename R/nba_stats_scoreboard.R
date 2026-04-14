@@ -85,6 +85,8 @@ nba_schedule <- function(
     Season = season
   )
 
+  games <- NULL
+
   tryCatch(
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)

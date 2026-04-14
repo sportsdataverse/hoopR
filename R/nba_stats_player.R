@@ -143,6 +143,8 @@ nba_playerheadshot <- function(
 
   full_url <- paste0(endpoint, player_id, ".png")
 
+  resp <- NULL
+
   tryCatch(
     expr = {
       resp <- full_url
