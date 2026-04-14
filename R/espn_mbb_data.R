@@ -1015,6 +1015,7 @@ espn_mbb_conferences <- function() {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
+  conferences <- NULL
 
   tryCatch(
     expr = {

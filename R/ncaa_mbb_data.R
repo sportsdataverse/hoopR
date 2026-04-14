@@ -12,20 +12,37 @@
 #' }
 ncaa_mbb_NET_rankings <- function() {
   NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
-  x <- (NET_url %>%
-    xml2::read_html() %>%
-    rvest::html_elements("table"))[[1]] %>%
-    rvest::html_table() %>%
-    dplyr::as_tibble() %>%
-    dplyr::rename(
-      "Quad_1" = "Quad 1",
-      "Quad_2" = "Quad 2",
-      "Quad_3" = "Quad 3",
-      "Quad_4" = "Quad 4"
-    ) %>%
-    janitor::clean_names() %>%
-    make_hoopR_data("NCAA MBB NET Rankings Information from ESPN.com", Sys.time())
 
+  x <- NULL
+
+  tryCatch(
+    expr = {
+      x <- (NET_url %>%
+        xml2::read_html() %>%
+        rvest::html_elements("table"))[[1]] %>%
+        rvest::html_table() %>%
+        dplyr::as_tibble() %>%
+        dplyr::rename(dplyr::any_of(c(
+          "Quad_1" = "Quad 1",
+          "Quad_2" = "Quad 2",
+          "Quad_3" = "Quad 3",
+          "Quad_4" = "Quad 4"
+        ))) %>%
+        janitor::clean_names() %>%
+        dplyr::rename(dplyr::any_of(c(
+          "conference" = "conf",
+          "previous" = "prev"
+        ))) %>%
+        make_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com", Sys.time())
+    },
+    error = function(e) {
+      message(glue::glue("{Sys.time()}: Invalid arguments or no NET rankings available!"))
+    },
+    warning = function(w) {
+    },
+    finally = {
+    }
+  )
   return(x)
 }
 

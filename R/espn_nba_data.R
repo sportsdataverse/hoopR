@@ -388,6 +388,8 @@ espn_nba_pbp <- function(game_id) {
   resp <- res %>%
     .resp_text()
 
+  plays_df <- NULL
+
   #---- Play-by-Play ------
   tryCatch(
     expr = {
