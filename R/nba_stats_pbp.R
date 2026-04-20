@@ -151,8 +151,8 @@ NULL
         if (off > on) {
           all_id <- all_id[all_id != i]
         } else if (off == on) {
-          on_event <- min(pbp_data_period$even_num[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
-          off_event <- min(pbp_data_period$even_num[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
+          on_event <- min(pbp_data_period$event_num[pbp_data_period$event_type == 8 & pbp_data_period$player2_id == i])
+          off_event <- min(pbp_data_period$event_num[pbp_data_period$event_type == 8 & pbp_data_period$player1_id == i])
           if (off_event > on_event) {
             all_id <- all_id[all_id != i]
           }

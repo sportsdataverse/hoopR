@@ -222,7 +222,12 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
 
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
-  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    out <- NULL
+  } else {
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  }
   out
 }
 
