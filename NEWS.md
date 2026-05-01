@@ -49,7 +49,7 @@
     - `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy` / `no_proxy` env vars automatically.
     - `proxy = "http://host:port"` — string form, forwarded to `httr2::req_proxy(url = ...)`.
     - `proxy = list(url=, port=, username=, password=, auth=)` — named list spread into `httr2::req_proxy()` for authenticated proxies.
-  The argument threads via `...` through every wrapper, so callers can do `nba_pbp(game_id = "...", proxy = "http://my-proxy:8080")` without any per-function plumbing.
+  Resolution order in `.retry_request()`: explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env vars. The `...` thread works for NBA Stats wrappers (which forward into `request_with_proxy()`); ESPN / KenPom / NBA G-League wrappers call `.retry_request()` directly without `...`, so use `options(hoopR.proxy = ...)` at the top of the session to cover those without per-function plumbing.
 
 ### **Messaging Migration (usethis → cli)**
 
