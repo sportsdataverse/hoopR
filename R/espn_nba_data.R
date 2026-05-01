@@ -213,17 +213,34 @@ espn_nba_game_all <- function(game_id) {
     game_id
   )
 
-  res <- .retry_request(full_url)
+  pbp <- list(Plays = NULL, Team = NULL, Player = NULL)
+  resp <- NULL
+  plays_df <- NULL
+  team_box_score <- NULL
+  player_box_score <- NULL
 
-  # Check the result
-  check_status(res)
+  #---- Fetch the summary endpoint (single outer tryCatch) -------------------
+  tryCatch(
+    expr = {
+      res <- .retry_request(full_url)
+      check_status(res)
+      resp <- res %>%
+        .resp_text()
+    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Could not fetch game summary for game_id = {game_id}",
+      args = .args
+    ),
+    warning = function(w) {},
+    finally = {}
+  )
 
-  resp <- res %>%
-    .resp_text()
+  if (is.null(resp)) {
+    return(pbp)
+  }
 
   #---- Play-by-Play ------
-  pbp <- NULL
-
   tryCatch(
     expr = {
       plays_df <- helper_espn_nba_pbp(resp)
@@ -378,19 +395,19 @@ espn_nba_pbp <- function(game_id) {
     game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
-  resp <- res %>%
-    .resp_text()
-
   plays_df <- NULL
 
   #---- Play-by-Play ------
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        .resp_text()
+
       plays_df <- helper_espn_nba_pbp(resp)
 
       if (is.null(plays_df)) {
@@ -508,19 +525,19 @@ espn_nba_team_box <- function(game_id) {
     game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
-  resp <- res %>%
-    .resp_text()
-
   #---- Team Box ------
   team_box_score <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        .resp_text()
+
       team_box_score <- helper_espn_nba_team_box(resp)
 
       if (is.null(team_box_score)) {
@@ -635,19 +652,19 @@ espn_nba_player_box <- function(game_id) {
     game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
-  resp <- res %>%
-    .resp_text()
-
   #---- Player Box ------
   player_box_score <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        .resp_text()
+
       player_box_score <- helper_espn_nba_player_box(resp)
 
       if (is.null(player_box_score)) {
@@ -1078,18 +1095,18 @@ espn_nba_teams <- function() {
   on.exit(options(old))
   teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
-  res <- .retry_request(teams_url)
-
-  # Check the result
-  check_status(res)
-
-  resp <- res %>%
-    .resp_text()
-
   teams <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(teams_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        .resp_text()
+
       leagues <- jsonlite::fromJSON(resp)[["sports"]][["leagues"]][[1]][[
         "teams"
       ]][[1]][["team"]] %>%
@@ -1823,14 +1840,15 @@ espn_nba_standings <- function(year) {
     year
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
   standings <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
@@ -2014,14 +2032,6 @@ espn_nba_betting <- function(game_id) {
     game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
-  resp <- res %>%
-    .resp_text()
-
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
   predictor_df <- data.frame()
@@ -2030,6 +2040,14 @@ espn_nba_betting <- function(game_id) {
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
+      resp <- res %>%
+        .resp_text()
+
       raw_summary <- jsonlite::fromJSON(resp)
       if ("pickcenter" %in% names(raw_summary)) {
         pickcenter <- jsonlite::fromJSON(
