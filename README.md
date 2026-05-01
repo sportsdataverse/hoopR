@@ -1,4 +1,19 @@
 
+  - [](#section)
+  - [hoopR
+    <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>](#hoopr-)
+      - [Installation](#installation)
+      - [Quick Start](#quick-start)
+      - [**Documentation**](#documentation)
+      - [**Breaking Changes**](#breaking-changes)
+      - [Follow the SportsDataverse (@SportsDataverse) on X and star
+        this
+        repo](#follow-the-sportsdataverse-sportsdataverse-on-x-and-star-this-repo)
+      - [**Our Authors**](#our-authors)
+      - [**Our Contributors (they’re
+        awesome)**](#our-contributors-theyre-awesome)
+      - [**Citations**](#citations)
+
 # 
 
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px"/></a>
@@ -56,7 +71,7 @@ pak::pak("sportsdataverse/hoopR")
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2026) ~ 1-2 minutes**
+### **NBA full play-by-play seasons (2002-2026) \~ 1-2 minutes**
 
 ``` r
 tictoc::tic()
@@ -66,11 +81,11 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.85 sec elapsed
+    ## 3.39 sec elapsed
 
-    ## 519304 rows of NBA play-by-play data from 1069 games.
+    ## 619841 rows of NBA play-by-play data from 1279 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2026) ~ 2-3 minutes**
+### **Men’s college basketball full play-by-play seasons (2006-2026) \~ 2-3 minutes**
 
 ``` r
 tictoc::tic()
@@ -80,9 +95,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.94 sec elapsed
+    ## 10.62 sec elapsed
 
-    ## 2902736 rows of men's college basketball play-by-play data from 6246 games.
+    ## 2915731 rows of men's college basketball play-by-play data from 6275 games.
 
 ## **Documentation**
 
@@ -105,28 +120,28 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
 
 ## **Our Authors**
 
-- Saiem Gilani (@saiemgilani)
-  <a href="https://x.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge" alt="@saiemgilani" /></a>
+  - Saiem Gilani (@saiemgilani)
+    <a href="https://x.com/saiemgilani" target="blank"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge" alt="@saiemgilani" /></a>
 
 <a href="https://github.com/saiemgilani" target="blank"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge" alt="@saiemgilani" /></a>
 
 ## **Our Contributors (they’re awesome)**
 
-- Jason Lee (@theFirmAISports)
-  <a href="https://x.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge" alt="@theFirmAISports" /></a>
-  <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
+  - Jason Lee (@theFirmAISports)
+    <a href="https://x.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge" alt="@theFirmAISports" /></a>
+    <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
-- Billy Fryer (@\_b4billy\_)
-  <a href="https://x.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=x&style=for-the-badge" alt="@_b4billy_" /></a>
-  <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
+  - Billy Fryer (@\_b4billy\_)
+    <a href="https://x.com/_b4billy_" target="blank"><img src="https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=x&style=for-the-badge" alt="@_b4billy_" /></a>
+    <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
-- Ross Drucker (@rossdrucker9)
-  <a href="https://x.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge" alt="@rossdrucker9" /></a>
-  <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
+  - Ross Drucker (@rossdrucker9)
+    <a href="https://x.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge" alt="@rossdrucker9" /></a>
+    <a href="https://github.com/rossdrucker" target="blank"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge" alt="@rossdrucker" /></a>
 
-- Vladislav Shufinskiy (@vshufinskiy)
-  <a href="https://x.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge" alt="@vshufinskiy" /></a>
-  <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
+  - Vladislav Shufinskiy (@vshufinskiy)
+    <a href="https://x.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge" alt="@vshufinskiy" /></a>
+    <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
 
 ## **Citations**
 

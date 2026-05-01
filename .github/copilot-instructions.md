@@ -1,21 +1,15 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-
-- [hoopR Copilot Instructions](#hoopr-copilot-instructions)
-  - [Project Context](#project-context)
-  - [Repository Workflow](#repository-workflow)
-  - [Code Style](#code-style)
-  - [HTTP Layer](#http-layer)
-  - [Messaging Layer](#messaging-layer)
-  - [Function Naming](#function-naming)
-  - [Roxygen Documentation](#roxygen-documentation)
-  - [Testing](#testing)
-    - [Environment Variables](#environment-variables)
-    - [CI Secrets](#ci-secrets)
-  - [Conventional Commits](#conventional-commits)
-  - [V3 API Notes](#v3-api-notes)
-  - [Common Pitfalls](#common-pitfalls)
+- [Project Context](#project-context)
+- [Repository Workflow](#repository-workflow)
+- [Code Style](#code-style)
+- [HTTP Layer](#http-layer)
+- [Messaging Layer](#messaging-layer)
+- [Function Naming](#function-naming)
+- [Roxygen Documentation](#roxygen-documentation)
+- [Testing](#testing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -152,6 +146,22 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 - Keep commits logically grouped (docs-only, tests-only, refactor-only) so each commit is easy to review and revert.
 
 **Important**: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers referencing AI tools.
+
+## Documentation Maintenance
+
+Two regeneration steps are part of the commit workflow whenever the relevant sources change. Both are mechanical — never edit the generated regions by hand.
+
+- **Markdown TOCs.** `NEWS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `.github/copilot-instructions.md`, and `.github/PULL_REQUEST_TEMPLATE.md` carry a doctoc-generated TOC inside marker comments. (`cran-comments.md` is intentionally excluded — it is a short CRAN-submission file.) After editing any of them, run:
+
+  ```sh
+  Rscript tools/run_doctoc.R --maxlevel 2 \
+    NEWS.md CLAUDE.md CONTRIBUTING.md \
+    .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md
+  ```
+
+  `tools/run_doctoc.R` is a no-deps R replacement for the npm `doctoc` CLI; it is idempotent and runs without Node.js. Use `--maxlevel 2` (level-3 sub-entries crowd the nav).
+
+- **README.md.** Rendered from `README.Rmd` (with `output: github_document: { toc: true, toc_depth: 2 }`). After editing the Rmd, run `devtools::build_readme()` and commit `README.Rmd` + `README.md` together. Never hand-edit `README.md`.
 
 ## V3 API Notes
 
