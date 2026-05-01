@@ -548,7 +548,7 @@ update_nba_db <- function(dbdir = ".",
   }
 
   if (is.null(db_connection)) {
-    connection <- DBI::dbConnect(RSQLite::SQLite(), glue::glue("{dbdir}/{dbname}"))
+    connection <- DBI::dbConnect(RSQLite::SQLite(), file.path(dbdir, dbname))
   } else {
     connection <- db_connection
   }
@@ -603,7 +603,16 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
     if (show_message) {
       cli::cli_ul("{my_time()} | Purging {string} season(s) from the data table {.val {tblname}} in your connected database...")
     }
-    DBI::dbExecute(db_conn, glue::glue_sql("DELETE FROM {`tblname`} WHERE season IN ({vals*})", vals = rebuild, .con = db_conn))
+    DBI::dbExecute(
+      db_conn,
+      paste0(
+        "DELETE FROM ", DBI::dbQuoteIdentifier(db_conn, tblname),
+        " WHERE season IN (",
+        paste(rep("?", length(rebuild)), collapse = ", "),
+        ")"
+      ),
+      params = as.list(rebuild)
+    )
     seasons <- valid_seasons %>%
       dplyr::filter(.data$season %in% rebuild) %>%
       dplyr::pull("season")
