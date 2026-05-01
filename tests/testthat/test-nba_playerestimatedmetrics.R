@@ -5,6 +5,10 @@ test_that("NBA Player Estimated Metrics", {
 
   x <- nba_playerestimatedmetrics()
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "PLAYER_ID",
     "PLAYER_NAME",

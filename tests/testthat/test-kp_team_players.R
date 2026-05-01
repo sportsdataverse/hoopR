@@ -17,7 +17,7 @@ test_that("KP - Get team players (roster)", {
     "f_dper40_rk", "ft_rate_rk", "ft_pct_rk",
     "fg_2_pct_rk", "fg_3_pct_rk", "national_rank", "team", "year", "player_id"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

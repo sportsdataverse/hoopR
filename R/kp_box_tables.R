@@ -105,6 +105,8 @@
 #' try(kp_box(game_id = 6, year = 2021))
 #' }
 kp_box <- function(game_id, year) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)

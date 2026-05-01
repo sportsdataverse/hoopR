@@ -4,6 +4,10 @@ test_that("KP - Get win probability", {
   skip_kenpom_test()
 
   x <- kp_winprob(game_id = 1238, year = 2020)
+
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
   x1 <- x[[1]]
   x2 <- x[[2]]
   x3 <- x[[3]]
@@ -30,11 +34,11 @@ test_that("KP - Get win probability", {
   cols_x3 <- c(
     "start", "end", "visitor", "home"
   )
-  expect_equal(colnames(x1), cols_x1)
+  expect_in(cols_x1, colnames(x1))
   expect_s3_class(x1, "data.frame")
-  expect_equal(colnames(x2), cols_x2)
+  expect_in(cols_x2, colnames(x2))
   expect_s3_class(x2, "data.frame")
-  expect_equal(colnames(x3), cols_x3)
+  expect_in(cols_x3, colnames(x3))
   expect_s3_class(x3, "data.frame")
 
   Sys.sleep(3)

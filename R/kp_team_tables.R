@@ -49,6 +49,8 @@
 
 kp_team_schedule <- function(team, year = 2022){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -494,6 +496,8 @@ kp_team_schedule <- function(team, year = 2022){
 
 kp_gameplan <- function(team, year=2021){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -760,6 +764,8 @@ kp_gameplan <- function(team, year=2021){
 
 kp_opptracker <- function(team, year = 2021){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -991,6 +997,8 @@ kp_opptracker <- function(team, year = 2021){
 #'
 
 kp_team_players <- function(team, year = 2021){
+
+  kenpom <- NULL
 
   tryCatch(
     expr = {
@@ -1313,6 +1321,8 @@ kp_team_players <- function(team, year = 2021){
 #'
 kp_player_career <- function(player_id){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1551,6 +1561,8 @@ kp_player_career <- function(player_id){
 #'
 kp_minutes_matrix <- function(team, year = 2021){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1756,6 +1768,8 @@ kp_minutes_matrix <- function(team, year = 2021){
 #'     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
 #'   }
 kp_team_player_stats <- function(team, year = 2021){
+
+  kenpom <- NULL
 
   tryCatch(
     expr = {
@@ -2024,6 +2038,8 @@ kp_team_player_stats <- function(team, year = 2021){
 
 kp_team_depth_chart <- function(team, year= 2021){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -2238,6 +2254,8 @@ kp_team_depth_chart <- function(team, year= 2021){
 #'
 
 kp_team_lineups <- function(team, year=2021){
+
+  kenpom <- NULL
 
   tryCatch(
     expr = {

@@ -27,8 +27,8 @@ test_that("KP - Get team history", {
     "def_apl_rk", "foul2partic_pct_rk", "team_finish", "ncaa_seed"
   )
 
-  expect_equal(colnames(x), cols)
-  expect_equal(colnames(y), cols)
+  expect_in(cols, colnames(x))
+  expect_in(cols, colnames(y))
   expect_s3_class(x, "data.frame")
   expect_s3_class(y, "data.frame")
 

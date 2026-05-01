@@ -1,8 +1,13 @@
 test_that("NBA Video Status", {
   skip_on_cran()
   skip_on_ci()
+  skip_nba_stats_test()
 
   x <- nba_videostatus(game_date = "2023-03-10", league_id = "00")
+
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
 
   cols_x1 <- c(
     "GAME_ID",

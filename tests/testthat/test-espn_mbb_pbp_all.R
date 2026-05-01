@@ -3,6 +3,10 @@ test_that("ESPN - Get MBB play by play all (no coordinate data)", {
   skip_espn_test()
 
   x <- espn_mbb_game_all(game_id = 401256760)
+
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
   x1 <- x[[1]]
   x2 <- x[[2]]
   x3 <- x[[3]]
@@ -182,6 +186,10 @@ test_that("ESPN - Get MBB play by play all (no coordinate data)", {
 test_that("ESPN - Get MBB play by play all (with coordinate data)", {
   skip_on_cran()
   x <- espn_mbb_game_all(game_id = 401479672)
+
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
   x1 <- x[[1]]
   x2 <- x[[2]]
   x3 <- x[[3]]

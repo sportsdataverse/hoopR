@@ -8,6 +8,10 @@ test_that("NBA Boxscore Four Factors V2", {
 
   x <- nba_boxscorefourfactorsv2(game_id = "0022200021")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "GAME_ID",
     "TEAM_ID",

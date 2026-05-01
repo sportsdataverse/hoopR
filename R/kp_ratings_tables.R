@@ -44,6 +44,8 @@
 #' try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 #' }
 kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -166,6 +168,8 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_efficiency(min_year = 2020, max_year = 2021))
 #' }
 kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -354,6 +358,8 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_fourfactors(min_year = 2020, max_year = 2021))
 #' }
 kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -479,6 +485,8 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_pointdist(min_year = 2020, max_year = 2021))
 #' }
 kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -613,6 +621,8 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_height(min_year = 2020, max_year = 2021))
 #' }
 kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -793,6 +803,8 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 #' }
 kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -937,6 +949,8 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_teamstats(min_year = 2019, max_year = 2021))
 #' }
 kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1133,6 +1147,8 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 #' }
 kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1317,6 +1333,8 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 #' }
 #'
 kp_kpoy <- function(year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)

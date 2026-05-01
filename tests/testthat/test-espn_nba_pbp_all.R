@@ -3,6 +3,10 @@ test_that("ESPN - Get NBA play by play all", {
   skip_espn_test()
 
   x <- espn_nba_game_all(game_id = 401283399)
+
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
   x1 <- x[[1]]
   x2 <- x[[2]]
   x3 <- x[[3]]

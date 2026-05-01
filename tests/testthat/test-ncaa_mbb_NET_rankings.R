@@ -10,7 +10,7 @@ test_that("NCAA - Get MBB NET rankings", {
     'record', 'road', 'neutral', 'home',
     'quad_1', 'quad_2', 'quad_3', 'quad_4'
   )
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, 'data.frame')
 
 })

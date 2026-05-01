@@ -4,6 +4,10 @@ test_that("ESPN - Get NBA Betting", {
 
   x <- espn_nba_betting(game_id = 401283399)
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   # Betting data may not be available for older games
   if (length(x) >= 1 && ncol(x[[1]]) > 0) {
     cols_x1 <- c(

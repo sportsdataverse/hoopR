@@ -37,6 +37,8 @@
 #' try(kp_trends())
 #' }
 kp_trends <- function() {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -113,6 +115,8 @@ kp_trends <- function() {
 #' try(kp_officials(year = 2021))
 #' }
 kp_officials <- function(year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -200,6 +204,8 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 #' try(kp_referee(referee = 714363, year = 2021))
 #' }
 kp_referee <- function(referee, year) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -291,6 +297,8 @@ kp_referee <- function(referee, year) {
 #' try(kp_hca())
 #' }
 kp_hca <- function() {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -365,6 +373,8 @@ kp_hca <- function() {
 #' try(kp_arenas(year = 2021))
 #' }
 kp_arenas <- function(year = most_recent_mbb_season()) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -445,6 +455,8 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 kp_game_attrs <- function(
     year = most_recent_mbb_season(),
     attr = "Excitement") {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -539,6 +551,8 @@ kp_game_attrs <- function(
 #' try(kp_fanmatch(date = "2022-02-22"))
 #' }
 kp_fanmatch <- function(date) {
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)

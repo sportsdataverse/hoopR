@@ -5,6 +5,10 @@ test_that("NBA Player Profile V2", {
 
   x <- nba_playerprofilev2(player_id = "2544")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   if (length(x) < 15) {
     skip("Player profile payload did not return all expected result sets.")
   }

@@ -6,6 +6,10 @@ test_that("NBA League Hustle Stats Team", {
 
   x <- nba_leaguehustlestatsteam(league_id = "00")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "TEAM_ID",
     "TEAM_NAME",
