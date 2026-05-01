@@ -498,13 +498,16 @@ check_status <- function(res) {
   if (!is.null(headers)) {
     req <- req |> httr2::req_headers(!!!as.list(headers))
   }
-  # Optional proxy support. `proxy` accepts:
-  #   - NULL                (default)               -- libcurl honors the
-  #                                                    standard `http_proxy` /
-  #                                                    `https_proxy` /
-  #                                                    `no_proxy` env vars
-  #                                                    automatically; nothing
-  #                                                    needs threading here.
+  # Optional proxy support. Resolution order:
+  #   1. `proxy` argument (caller-supplied, highest precedence).
+  #   2. `getOption("hoopR.proxy")` (session-level fallback — set once with
+  #      `options(hoopR.proxy = ...)` and every call picks it up; needed for
+  #      ESPN / KenPom / NBA G-League wrappers that don't thread `...` to
+  #      `.retry_request`).
+  #   3. `http_proxy` / `https_proxy` / `no_proxy` env vars (read by libcurl
+  #      automatically when the explicit `proxy` is NULL — no code path here).
+  #
+  # The `proxy` argument accepts:
   #   - a single URL string                         -- e.g. "http://host:port",
   #                                                    passed to
   #                                                    `httr2::req_proxy(url=)`.
@@ -514,6 +517,9 @@ check_status <- function(res) {
   #                                                    (`url`, `port`,
   #                                                    `username`, `password`,
   #                                                    `auth`).
+  if (is.null(proxy)) {
+    proxy <- getOption("hoopR.proxy", default = NULL)
+  }
   if (!is.null(proxy)) {
     req <- if (is.list(proxy)) {
       do.call(httr2::req_proxy, c(list(req = req), proxy))
