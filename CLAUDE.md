@@ -197,6 +197,44 @@ Use `%||%` (from rlang) for null-safe defaults throughout:
 value <- obj$field %||% NA_character_
 ```
 
+### Return-Value Initialization (CRITICAL)
+
+Every wrapper that returns a variable assigned inside a `tryCatch` must initialize that variable **before** the `tryCatch` block. Otherwise, when the API errors (500s, timeouts, HTTP/2 stream errors, connection resets) the `error` handler runs, the return variable is never bound, and `return(<var>)` throws `object '<var>' not found` instead of the intended `cli::cli_alert_danger` + empty fallback.
+
+```r
+nba_func <- function(...) {
+  endpoint <- nba_endpoint('foo')
+  params   <- list(...)
+
+  df_list <- list()   # <-- MANDATORY. Not inside tryCatch.
+
+  tryCatch(
+    expr = {
+      resp    <- request_with_proxy(url = endpoint, params = params, ...)
+      df_list <- nba_stats_map_result_sets(resp)
+    },
+    error = function(e) {
+      cli::cli_alert_danger("{Sys.time()}: Invalid arguments or no data available!")
+      cli::cli_alert_danger("Error:\n{e}")
+    },
+    warning = function(w) {
+      cli::cli_alert_warning("{Sys.time()}: Warning:\n{w}")
+    },
+    finally = {}
+  )
+  return(df_list)
+}
+```
+
+This rule applies to **every return variable name**, not just `df_list`: `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. Initialize to the appropriate empty value — `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
+
+### Column Drift Resilience
+
+Both the NBA Stats API and ESPN's JSON payloads add columns over time without removing old ones, and occasionally rename or drop columns. Two guardrails apply:
+
+1. **Inside functions** — when dropping a known-transient column, use `dplyr::select(-dplyr::any_of("colname"))` instead of `dplyr::select(-"colname")`. The bare form errors the moment upstream drops that column; `any_of` no-ops silently.
+2. **Inside pipelines that rename** — use `dplyr::rename(dplyr::any_of(c(new = "old")))` so a schema drift that removes `old` is survivable. See `espn_mbb_conferences()` and `ncaa_mbb_NET_rankings()` for examples.
+
 ### HTTP Layer
 
 All HTTP requests use `httr2` as the sole backend. The `httr` package is no longer a dependency.
@@ -232,7 +270,7 @@ Inline markup in cli strings: `{.val x}` for values, `{.file x}` for paths, `{.c
 
 ### Test Pattern
 
-Use `expect_in()` (subset check) rather than `expect_equal()` (exact match) for column validation. This prevents test failures when APIs add new columns:
+**Always use the subset direction for column assertions.** Because the upstream APIs add columns, strict `expect_equal` will break on any new column. The rule is: the *expected* list must be a subset of the *actual* columns. The subset direction is the only pattern that survives upstream drift.
 
 ```r
 test_that("NBA Endpoint Name", {
@@ -242,33 +280,55 @@ test_that("NBA Endpoint Name", {
 
   x <- nba_function(game_id = "0022200021")
 
+  # Skip-if-empty guard — always right after the API call, before any assertions
+  # that touch x[[1]]. Handles transient 500s and HTTP/2 stream errors.
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) ||
+      nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c("col1", "col2", ...)
-  expect_in(sort(cols_x1), sort(colnames(x$Component)))
-  expect_s3_class(x$Component, "data.frame")
+  expect_in(sort(cols_x1), sort(colnames(x[[1]])))   # expected ⊆ actual
+  expect_s3_class(x[[1]], "data.frame")
 
   Sys.sleep(3)  # Rate limiting between tests
 })
 ```
 
-For endpoints with dynamic columns (like IST Standings with game columns):
+**Anti-patterns to avoid**:
+
 ```r
-expect_true(all(core_cols %in% colnames(x)))
+# WRONG - flags when upstream adds a column, even though it's non-breaking
+expect_equal(sort(colnames(x[[1]])), sort(cols_x1))
+
+# WRONG - same direction problem, just phrased with expect_in
+expect_in(sort(colnames(x[[1]])), sort(cols_x1))
 ```
 
-For intermittent or occasionally empty API responses, guard before indexing/asserting:
+For dynamic columns (like IST Standings with game columns), `expect_true(all(core_cols %in% colnames(x)))` is equivalent to the subset-direction `expect_in()`.
+
+**Per-element null checks**: if the API sometimes returns fewer result sets than the test expects (e.g., 7 instead of 11), use an inline helper so individual asserts skip gracefully rather than erroring:
+
 ```r
-if (length(x) == 0 || is.null(x[[1]]) || nrow(x[[1]]) == 0) {
-  skip("No rows returned from endpoint at test time")
+check_cols <- function(i, cols) {
+  if (length(x) < i || is.null(x[[i]]) || !is.data.frame(x[[i]]) ||
+      ncol(x[[i]]) == 0) return(invisible(NULL))
+  expect_in(sort(cols), sort(colnames(x[[i]])))
+  expect_s3_class(x[[i]], "data.frame")
 }
+check_cols(1, cols_x1)
+check_cols(2, cols_x2)
 ```
 
-For deprecated wrappers, prefer explicit `skip()` with replacement guidance in the test file to avoid false negatives from intentional hard stops.
+See wehoop's `test-wnba_teamvsplayer.R` and `test-wnba_playerdashboardbyclutch.R` for reference implementations of this helper pattern (no direct hoopR analogue exists yet).
 
 For NBAGL wrappers with named-list returns, validate component names first and then validate core columns within the component:
 ```r
 expect_true("Standings" %in% names(x))
 expect_in(sort(core_cols), sort(colnames(x[[1]])))
 ```
+
+For deprecated wrappers, prefer explicit `skip()` with replacement guidance in the test file to avoid false negatives from intentional hard stops.
 
 Use the source-specific skip helper for the endpoint under test:
 - `skip_nba_stats_test()`
@@ -346,4 +406,5 @@ Split unrelated work into separate commits for reviewability.
 - `.players_on_court_v3()` depends on `nba_gamerotation()` returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second -- ensure time unit consistency when modifying.
 - Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs) can surface as `R CMD check` notes/warnings if not excluded from build inputs.
 - KenPom HTML structure changes periodically -- CSS selectors for tables (`table#player-table`), referee links (`div.refline`), and navigation elements are fragile and may need updating.
+- **Two-block roxygen pattern + `@noRd` trap:** when an internal helper uses the `@name` + `NULL` topic block above the function-block, putting `@noRd` only on the function block leaves the topic block to generate an orphan `man/dot-*.Rd` file. pkgdown's `build_reference_index()` will then fail with "topics missing from index". Fix: put `@keywords internal` on the topic block as well as `@noRd` on the function block.
 - Never hand-edit `NAMESPACE` or files under `man/`; regenerate with `devtools::document()`.

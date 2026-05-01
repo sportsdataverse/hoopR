@@ -89,9 +89,28 @@ Every exported function needs:
 
 - Use `skip_on_cran()`, `skip_on_ci()`, and `skip_nba_stats_test()` guards.
 - Use source-specific guards when applicable: `skip_espn_test()`, `skip_nbagl_stats_test()`, `skip_ncaa_mbb_test()`, `skip_ncaa_wbb_test()`, and `skip_kenpom_test()`.
-- Validate columns with `expect_in(sort(expected_cols), sort(colnames(x)))` (subset check, not exact match).
-- For dynamic columns, use `expect_true(all(core_cols %in% colnames(x)))`.
-- For intermittent endpoints, add explicit skip-on-empty guards before indexing `x[[1]]` or asserting columns.
+- **Column assertions must always use the subset direction** — expected ⊆ actual:
+  `expect_in(sort(expected_cols), sort(colnames(x)))`. NBA Stats and ESPN APIs add columns without removing old ones, so strict `expect_equal(sort(colnames(x)), sort(cols))` will flag on any new column. The subset direction is the only pattern that survives upstream drift. Equivalently, `expect_in(sort(colnames(x)), sort(expected))` is also wrong — same direction problem.
+- For dynamic columns, `expect_true(all(core_cols %in% colnames(x)))` is equivalent to the subset-direction `expect_in()`.
+- **Always add a skip-if-empty guard immediately after the API call**, before any assertion that touches `x[[1]]`:
+  ```r
+  x <- nba_func(...)
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) ||
+      nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+  ```
+  This handles transient 500s, HTTP/2 stream errors, and empty responses without polluting the failure report.
+- For tests that assert against multiple result sets (`x[[1]]..x[[N]]`) where the API sometimes returns fewer elements, wrap each assertion in a per-index null/empty-column helper:
+  ```r
+  check_cols <- function(i, cols) {
+    if (length(x) < i || is.null(x[[i]]) || !is.data.frame(x[[i]]) ||
+        ncol(x[[i]]) == 0) return(invisible(NULL))
+    expect_in(sort(cols), sort(colnames(x[[i]])))
+    expect_s3_class(x[[i]], "data.frame")
+  }
+  ```
+  See wehoop's `test-wnba_teamvsplayer.R` for a reference implementation.
 - For deprecated wrappers, prefer explicit test skips with a replacement note rather than brittle live assertions.
 - Add `Sys.sleep(3)` at the end of NBA Stats API tests for rate limiting (~590 req/10 min).
 - Test game ID: `"0022200021"` or `"0022201086"` for known completed games.
@@ -148,11 +167,14 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`, `perf`, `ci`
 
 ## Common Pitfalls
 
-- Always initialize `df_list <- list()` (or `data <- data.frame()` / `data <- list()`) before `tryCatch` blocks.
-- ESPN API columns change over time -- use subset validation in tests.
+- **Return-value initialization is mandatory**: every wrapper that `return(X)` where `X` is assigned only inside `tryCatch(expr = {...})` must initialize `X` *before* the `tryCatch`. Otherwise, when the API errors, `return(X)` throws `object 'X' not found` instead of the intended empty fallback. Applies to `df_list`, `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. — any return variable. Initialize to `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
+- When dropping a known-transient column inside a function, use `dplyr::select(-dplyr::any_of("colname"))` instead of `dplyr::select(-"colname")`. The bare form errors the moment upstream drops the column.
+- When renaming columns after `janitor::clean_names()`, use `dplyr::rename(dplyr::any_of(c(new = "old")))` so the function survives upstream rename/drops without breaking. See `espn_mbb_conferences()` and `ncaa_mbb_NET_rankings()` for examples.
+- ESPN API columns change over time — **column assertions in tests must use the subset direction** (`expect_in(expected, actual)`).
 - V3-style leader endpoints return mixed types -- coerce to `as.character()` with `%||% NA_character_`.
 - IST Standings has dynamic game columns -- use `expect_true(all(core_cols %in% colnames()))`.
 - NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.
 - Local editor/worktree artifacts (e.g., `.vscode`, `.claude`, temp logs) can cause `R CMD check` notes/warnings if included in source checks.
 - KenPom HTML structure changes periodically -- CSS selectors for tables (`table#player-table`), referee links (`div.refline`), and navigation elements are fragile and may need updating.
+- **Two-block roxygen pattern + `@noRd` trap:** when an internal helper uses the `@name` + `NULL` topic block above the function-block, putting `@noRd` only on the function block leaves the topic block to generate an orphan `man/dot-*.Rd` file. pkgdown's `build_reference_index()` will then fail with "topics missing from index". Fix: put `@keywords internal` on the topic block as well as `@noRd` on the function block.
 - Never edit `NAMESPACE` or `man/` files by hand; regenerate with `devtools::document()`.
