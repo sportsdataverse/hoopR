@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [CLAUDE.md -- hoopR Development Guide](#claudemd----hoopr-development-guide)
 - [Package Overview](#package-overview)
 - [Branching & PR Workflow](#branching-pr-workflow)
 - [Build & Development Commands](#build-development-commands)
@@ -397,6 +398,18 @@ usethis::use_tidy_description()
 ```
 
 This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines so subsequent diffs stay minimal. Run it even for one-line edits.
+
+### Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml
+
+Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
+
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.0.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.0.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
+
+- **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
+
+- **`_pkgdown.yml`** — the pkgdown reference index. New exported functions need to land in the right `reference:` section. The existing hoopR config uses `starts_with("nba_")` / `starts_with("espn_")` / `starts_with("kp_")` / `starts_with("ncaa_")` selectors so new functions matching those prefixes are picked up automatically; explicitly-listed functions need a manual entry. Functions deprecated via `lifecycle::deprecate_stop()` + `@keywords internal` are excluded from the rendered index by default — preview with `pkgdown::build_site()` when in doubt.
+
+When the change touches the API surface (new export, deprecation, removal), include a one-line note in your commit message confirming you've checked all three files.
 
 ## Commit Convention
 

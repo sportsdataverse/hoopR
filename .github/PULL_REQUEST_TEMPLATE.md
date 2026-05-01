@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Pull Request](#pull-request)
 - [Summary](#summary)
 - [Type of Change](#type-of-change)
 - [Related Issues](#related-issues)
