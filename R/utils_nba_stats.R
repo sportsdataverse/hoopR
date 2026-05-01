@@ -94,12 +94,12 @@ request_with_proxy <- function(url,
 }
 
 nbagl_live_endpoint <- function(endpoint) {
-  base_url <- glue::glue("https://cdn-gleague.nba.com/static/json/liveData/{endpoint}")
+  base_url <- paste0("https://cdn-gleague.nba.com/static/json/liveData/", endpoint)
   return(base_url)
 }
 
 nba_live_endpoint <- function(endpoint) {
-  base_url <- glue::glue("https://cdn.nba.com/static/json/liveData/{endpoint}")
+  base_url <- paste0("https://cdn.nba.com/static/json/liveData/", endpoint)
   return(base_url)
 }
 
@@ -255,7 +255,7 @@ nba_endpoint <- function(endpoint) {
     "videostatus",
     "winprobabilitypbp"
   )
-  base_url <- glue::glue("https://stats.nba.com/stats/{endpoint}")
+  base_url <- paste0("https://stats.nba.com/stats/", endpoint)
   return(base_url)
 }
 
@@ -289,29 +289,25 @@ nba_stats_map_result_sets <- function(resp) {
 }
 
 pad_id <- function(id = 21601112) {
-  zeros <-
-    10 - nchar(id)
+  zeros <- 10 - nchar(id)
 
   if (zeros == 0) {
-    return(id)
+    return(as.character(id))
   }
 
-  start <-
-    rep("0", times = zeros) %>% stringr::str_c(collapse = "")
-  glue("{start}{id}") %>% as.character()
+  start <- strrep("0", zeros)
+  paste0(start, id)
 }
 
 pad_time <- function(time = 1) {
-  zeros <-
-    4 - nchar(time)
+  zeros <- 4 - nchar(time)
 
   if (zeros == 0) {
-    return(time)
+    return(as.character(time))
   }
 
-  start <-
-    rep("0", times = zeros) %>% stringr::str_c(collapse = "")
-  glue("{start}{time}") %>% as.character()
+  start <- strrep("0", zeros)
+  paste0(start, time)
 }
 
 
