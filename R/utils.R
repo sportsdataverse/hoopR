@@ -419,6 +419,7 @@ check_status <- function(res) {
   req |>
     httr2::req_timeout(timeout) |>
     httr2::req_retry(max_tries = 3) |>
+    httr2::req_error(is_error = function(resp) FALSE) |>
     httr2::req_perform()
 }
 

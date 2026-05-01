@@ -207,21 +207,38 @@ espn_mbb_game_all <- function(game_id) {
     "event=", game_id
   )
 
-  res <- .retry_request(full_url)
+  pbp <- list(Plays = NULL, Team = NULL, Player = NULL)
+  resp <- NULL
+  plays_df <- NULL
+  team_box_score <- NULL
+  player_box_score <- NULL
 
-  # Check the result
-  check_status(res)
+  #---- Fetch the summary endpoint (single outer tryCatch) -------------------
+  tryCatch(
+    expr = {
+      res <- .retry_request(full_url)
+      check_status(res)
+      resp <- res %>%
+        .resp_text()
+    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Could not fetch game summary for game_id = {game_id}",
+      args = .args
+    ),
+    warning = function(w) {
 
-  resp <- res %>%
-    .resp_text()
+    },
+    finally = {
 
-  # plays_df <- data.frame()
-  # team_box_score <- data.frame()
-  # player_box_score <- data.frame()
+    }
+  )
+
+  if (is.null(resp)) {
+    return(pbp)
+  }
 
   #---- Play-by-Play ------
-  pbp <- NULL
-
   tryCatch(
     expr = {
       plays_df <- helper_espn_mbb_pbp(resp)
@@ -380,15 +397,15 @@ espn_mbb_pbp <- function(game_id) {
     "event=", game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
   plays_df <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
@@ -504,15 +521,15 @@ espn_mbb_team_box <- function(game_id) {
     "event=", game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
   team_box_score <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
@@ -628,15 +645,15 @@ espn_mbb_player_box <- function(game_id) {
     "event=", game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
-
   player_box_score <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
@@ -1958,14 +1975,15 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
     "season=", year
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
   standings <- NULL
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
@@ -2210,10 +2228,6 @@ espn_mbb_betting <- function(game_id) {
     "event=", game_id
   )
 
-  res <- .retry_request(full_url)
-
-  # Check the result
-  check_status(res)
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
   predictor_df <- data.frame()
@@ -2221,6 +2235,11 @@ espn_mbb_betting <- function(game_id) {
 
   tryCatch(
     expr = {
+      res <- .retry_request(full_url)
+
+      # Check the result
+      check_status(res)
+
       resp <- res %>%
         .resp_text()
 
