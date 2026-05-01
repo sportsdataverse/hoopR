@@ -1,22 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Release summary](#release-summary)
-  - [HTTP Backend Migration](#http-backend-migration)
-  - [Messaging Migration (usethis → cli)](#messaging-migration-usethis-%E2%86%92-cli)
-  - [Social Branding (Twitter → X)](#social-branding-twitter-%E2%86%92-x)
-  - [NBA Play-by-Play V3](#nba-play-by-play-v3)
-  - [NBA Boxscore Summary V3](#nba-boxscore-summary-v3)
-  - [New NBA Stats API Endpoint Wrappers](#new-nba-stats-api-endpoint-wrappers)
-  - [ESPN Functions](#espn-functions)
-  - [Bug Fixes](#bug-fixes)
-  - [Deprecations](#deprecations)
-- [R CMD check results](#r-cmd-check-results)
-- [revdepcheck results](#revdepcheck-results)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Release summary
 
 This is a major release (v3.0.0) with the following changes:

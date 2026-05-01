@@ -2,17 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Pull Request](#pull-request)
-  - [Summary](#summary)
-  - [Type of Change](#type-of-change)
-  - [Related Issues](#related-issues)
-  - [Background & Context](#background--context)
-  - [Changes Made](#changes-made)
-  - [Submission Checklist](#submission-checklist)
-  - [Testing](#testing)
-  - [Screenshots / Output](#screenshots--output)
-  - [Reviewer Checklist](#reviewer-checklist)
-  - [Additional Notes](#additional-notes)
+- [Summary](#summary)
+- [Type of Change](#type-of-change)
+- [Related Issues](#related-issues)
+- [Background & Context](#background-context)
+- [Changes Made](#changes-made)
+- [Submission Checklist](#submission-checklist)
+- [Testing](#testing)
+- [Screenshots / Output](#screenshots-output)
+- [Reviewer Checklist](#reviewer-checklist)
+- [Additional Notes](#additional-notes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

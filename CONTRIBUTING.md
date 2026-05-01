@@ -2,27 +2,16 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Contributing to hoopR](#contributing-to-hoopr)
-  - [Development Setup](#development-setup)
-  - [Workflow](#workflow)
-    - [Making Changes](#making-changes)
-    - [Adding a New NBA Stats API Endpoint](#adding-a-new-nba-stats-api-endpoint)
-  - [Naming Conventions](#naming-conventions)
-    - [Function Names](#function-names)
-    - [General Naming Rules](#general-naming-rules)
-    - [V2 vs V3 API Patterns](#v2-vs-v3-api-patterns)
-    - [Data Processing Pipeline](#data-processing-pipeline)
-    - [Roxygen Documentation](#roxygen-documentation)
-    - [Code Style](#code-style)
-  - [Commit Messages](#commit-messages)
-  - [Pull Requests](#pull-requests)
-  - [Testing](#testing)
-    - [Environment Variables](#environment-variables)
-    - [Test Pattern](#test-pattern)
-    - [Rate Limiting](#rate-limiting)
-  - [CI / GitHub Actions](#ci--github-actions)
-  - [Reporting Issues](#reporting-issues)
-  - [License](#license)
+- [Development Setup](#development-setup)
+- [Workflow](#workflow)
+- [Naming Conventions](#naming-conventions)
+- [Documentation Maintenance](#documentation-maintenance)
+- [Commit Messages](#commit-messages)
+- [Pull Requests](#pull-requests)
+- [Testing](#testing)
+- [CI / GitHub Actions](#ci-github-actions)
+- [Reporting Issues](#reporting-issues)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -115,6 +104,34 @@ Every exported function needs:
 - Internal helpers start with `.` (e.g., `.players_on_court_v3()`)
 - Game IDs must be passed through `pad_id()` before API calls
 - Use `%||%` (rlang) for null-safe defaults when parsing API responses
+
+## Documentation Maintenance
+
+Two regeneration steps are part of the commit workflow whenever the relevant sources change. Both are mechanical — never edit the generated regions by hand.
+
+### Markdown TOCs (doctoc)
+
+`NEWS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `.github/copilot-instructions.md`, and `.github/PULL_REQUEST_TEMPLATE.md` carry a doctoc-generated table of contents inside the standard marker comments. After editing any of those files, regenerate the TOC before committing:
+
+```sh
+Rscript tools/run_doctoc.R --maxlevel 2 \
+  NEWS.md CLAUDE.md CONTRIBUTING.md \
+  .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md
+```
+
+`cran-comments.md` is intentionally excluded — it is a short release-notes file submitted to CRAN and does not need a TOC.
+
+`tools/run_doctoc.R` is a no-deps R replacement for the npm `doctoc` CLI — it produces output indistinguishable from the upstream tool, is idempotent (a no-op if no headings changed), and runs without Node.js. Use `--maxlevel 2` so the TOC only lists `# ` and `## ` headings; level-3 sub-entries crowd the nav.
+
+### README.md (rmarkdown)
+
+`README.md` is rendered from `README.Rmd`. The Rmd carries `output: github_document: { toc: true, toc_depth: 2 }`, so the README has its own auto-generated TOC. After editing `README.Rmd`, re-render before committing:
+
+```r
+devtools::build_readme()
+```
+
+Commit `README.Rmd` and the regenerated `README.md` together. Never hand-edit `README.md`.
 
 ## Commit Messages
 
