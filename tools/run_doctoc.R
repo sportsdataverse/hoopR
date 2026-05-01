@@ -60,13 +60,14 @@ make_anchor <- function(text, seen) {
 }
 
 # Walk lines, return list(level, text) for each ATX heading outside fenced
-# code blocks. Skips the leading `# Title` (level-1) heading by convention,
-# matching doctoc's default of starting from `## ` headings.
+# code blocks. Includes every heading at level <= maxlevel; matches the npm
+# doctoc CLI's default behavior. (An earlier revision of this script skipped
+# the first level-1 heading as a page title, which mis-handled NEWS.md where
+# the top heading is itself a release entry that belongs in the TOC.)
 extract_headings <- function(lines, maxlevel) {
   in_fence <- FALSE
   fence_marker <- ""
   out <- vector("list", 0L)
-  level1_seen <- FALSE
   for (ln in lines) {
     fence_match <- regmatches(ln, regexpr("^\\s*(```+|~~~+)", ln, perl = TRUE))
     if (length(fence_match) > 0L) {
@@ -88,11 +89,6 @@ extract_headings <- function(lines, maxlevel) {
     hashes <- pieces[2]
     text <- pieces[3]
     level <- nchar(hashes)
-    # Skip the very first level-1 heading (page title); include subsequent ones.
-    if (level == 1L && !level1_seen) {
-      level1_seen <- TRUE
-      next
-    }
     if (level > maxlevel) next
     out[[length(out) + 1L]] <- list(level = level, text = text)
   }
