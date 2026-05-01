@@ -1078,7 +1078,7 @@ espn_nba_game_rosters <- function(game_id) {
 #' }
 #'
 espn_nba_teams <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"

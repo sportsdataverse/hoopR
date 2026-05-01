@@ -514,6 +514,36 @@ check_status <- function(res) {
   httr2::resp_body_string(resp, encoding = "UTF-8")
 }
 
+#' Capture the calling function's formal arguments
+#'
+#' Returns a named list of the bound formal arguments (excluding `...`) of the
+#' calling function, suitable for passing to `.report_api_error()` /
+#' `.report_api_warning()`. Tolerates functions with empty or `...`-only
+#' formals (where `names(formals())` is `NULL`), unlike the inline
+#' `mget(setdiff(names(formals()), "..."))` pattern that errors with
+#' `mget: invalid first argument` for arg-less wrappers.
+#'
+#' Caller usage:
+#'
+#' ```r
+#' some_wrapper <- function(...) {
+#'   .args <- .capture_args()
+#'   ...
+#' }
+#' ```
+#'
+#' @return Named list. Empty list if the caller has no non-... formals.
+#' @keywords internal
+.capture_args <- function() {
+  parent_fn <- sys.function(sys.parent())
+  if (is.null(parent_fn)) return(list())
+  fmls <- formals(parent_fn)
+  if (length(fmls) == 0L) return(list())
+  nms <- setdiff(names(fmls), "...")
+  if (length(nms) == 0L) return(list())
+  mget(nms, envir = parent.frame(), ifnotfound = list(NULL))
+}
+
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL
