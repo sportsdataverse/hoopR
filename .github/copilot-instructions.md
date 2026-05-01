@@ -163,6 +163,8 @@ Two regeneration steps are part of the commit workflow whenever the relevant sou
 
 - **README.md.** Rendered from `README.Rmd` (with `output: github_document: { toc: true, toc_depth: 2 }`). After editing the Rmd, run `devtools::build_readme()` and commit `README.Rmd` + `README.md` together. Never hand-edit `README.md`.
 
+- **DESCRIPTION.** After editing `DESCRIPTION` (deps, versions, `Authors@R`, etc.), run `usethis::use_tidy_description()` to normalize field order, alphabetize `Imports`/`Suggests`, and reflow long lines. Run it even for one-line edits.
+
 ## V3 API Notes
 
 - V3 endpoints return nested JSON -- use `purrr::pluck()` for extraction.

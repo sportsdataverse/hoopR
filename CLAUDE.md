@@ -388,6 +388,16 @@ devtools::build_readme()
 
 Commit `README.Rmd` and the regenerated `README.md` together. Never hand-edit `README.md`.
 
+### DESCRIPTION (usethis)
+
+After editing `DESCRIPTION` (adding/removing packages, bumping versions, updating `Authors@R`, etc.), normalize formatting before committing:
+
+```r
+usethis::use_tidy_description()
+```
+
+This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines so subsequent diffs stay minimal. Run it even for one-line edits.
+
 ## Commit Convention
 
 Use [Conventional Commits](https://www.conventionalcommits.org/):
