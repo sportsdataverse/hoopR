@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [**hoopR 3.0.0**](#hoopr-300)
 - [**hoopR 2.1.0**](#hoopr-210)
 - [**hoopR 2.0.0**](#hoopr-200)
 - [**hoopR 1.9.1**](#hoopr-191)
