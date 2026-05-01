@@ -244,7 +244,7 @@ espn_mbb_game_all <- function(game_id) {
       plays_df <- helper_espn_mbb_pbp(resp)
 
       if (is.null(plays_df)) {
-        message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!"))
+        message(sprintf("%s: No play-by-play data for %s available!", Sys.time(), game_id))
       }
     },
     error = function(e) .report_api_error(
@@ -265,7 +265,7 @@ espn_mbb_game_all <- function(game_id) {
       team_box_score <- helper_espn_mbb_team_box(resp)
 
       if (is.null(team_box_score)) {
-        message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!"))
+        message(sprintf("%s: No team box score data for %s available!", Sys.time(), game_id))
       }
     },
     error = function(e) .report_api_error(
@@ -286,7 +286,7 @@ espn_mbb_game_all <- function(game_id) {
       player_box_score <- helper_espn_mbb_player_box(resp)
 
       if (is.null(player_box_score)) {
-        message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!"))
+        message(sprintf("%s: No player box score data for %s available!", Sys.time(), game_id))
       }
     },
     error = function(e) .report_api_error(
@@ -412,7 +412,7 @@ espn_mbb_pbp <- function(game_id) {
       plays_df <- helper_espn_mbb_pbp(resp)
 
       if (is.null(plays_df)) {
-        return(message(glue::glue("{Sys.time()}: No play-by-play data for {game_id} available!")))
+        return(message(sprintf("%s: No play-by-play data for %s available!", Sys.time(), game_id)))
       }
     },
     error = function(e) .report_api_error(
@@ -536,7 +536,7 @@ espn_mbb_team_box <- function(game_id) {
       team_box_score <- helper_espn_mbb_team_box(resp)
 
       if (is.null(team_box_score)) {
-        return(message(glue::glue("{Sys.time()}: No team box score data for {game_id} available!")))
+        return(message(sprintf("%s: No team box score data for %s available!", Sys.time(), game_id)))
       }
     },
     error = function(e) .report_api_error(
@@ -660,7 +660,7 @@ espn_mbb_player_box <- function(game_id) {
       player_box_score <- helper_espn_mbb_player_box(resp)
 
       if (is.null(player_box_score)) {
-        return(message(glue::glue("{Sys.time()}: No player box score data for {game_id} available!")))
+        return(message(sprintf("%s: No player box score data for %s available!", Sys.time(), game_id)))
       }
     },
     error = function(e) .report_api_error(
@@ -1199,7 +1199,10 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 
       # ---- Figuring out which teams are in which conference (32 calls)
       base_url <- "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons"
-      conferences_base_url <- glue::glue("{base_url}/{year}/types/2/groups/50/children?limit=1000&lang=en&region=us")
+      conferences_base_url <- sprintf(
+        "%s/%s/types/2/groups/50/children?limit=1000&lang=en&region=us",
+        base_url, year
+      )
 
       res <- .retry_request(conferences_base_url)
 
@@ -1298,7 +1301,10 @@ espn_mbb_team_current_roster <- function(team_id) {
 
   tryCatch(
     expr = {
-      teams_base_url <- glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/{team_id}?enable=roster")
+      teams_base_url <- sprintf(
+        "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/%s?enable=roster",
+        team_id
+      )
 
       res <- .retry_request(teams_base_url)
 
@@ -1425,16 +1431,15 @@ espn_mbb_team_current_roster <- function(team_id) {
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest_wider unchop hoist
-#' @importFrom glue glue
 #' @importFrom lubridate with_tz ymd_hm
 #' @import rvest
 #' @noRd
 parse_espn_mbb_scoreboard <- function(group, season_dates) {
   .args <- mget(setdiff(names(formals()), "..."))
-  schedule_api <-
-    glue::glue(
-      "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups={group}&limit=1000&dates={season_dates}"
-    )
+  schedule_api <- sprintf(
+    "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=%s&limit=1000&dates=%s",
+    group, season_dates
+  )
 
 
   tryCatch(
@@ -1692,7 +1697,6 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest_wider unchop hoist
-#' @importFrom glue glue
 #' @importFrom purrr map2_dfr possibly quietly
 #' @import rvest
 #' @export
@@ -1725,9 +1729,7 @@ espn_mbb_scoreboard <- function(season) {
     )
 
   if (!nrow(scoreboard_df)) {
-    message(glue::glue(
-      "{Sys.time()}: Invalid arguments or no scoreboard data available!"
-    ))
+    message(sprintf("%s: Invalid arguments or no scoreboard data available!", Sys.time()))
   }
   return(scoreboard_df)
 }
@@ -2554,7 +2556,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
         tidyr::unnest("stats", names_sep = "_")
       df <- df %>%
         dplyr::mutate(
-          stats_category_name = glue::glue("{.data$name}_{.data$stats_name}")
+          stats_category_name = paste0(.data$name, "_", .data$stats_name)
         ) %>%
         dplyr::select("stats_category_name", "stats_value") %>%
         tidyr::pivot_wider(
@@ -2895,7 +2897,7 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
         tidyr::unnest("stats", names_sep = "_")
       df <- df %>%
         dplyr::mutate(
-          stats_category_name = glue::glue("{.data$name}_{.data$stats_name}")
+          stats_category_name = paste0(.data$name, "_", .data$stats_name)
         ) %>%
         dplyr::select(
           "stats_category_name",

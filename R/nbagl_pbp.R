@@ -50,7 +50,6 @@ NULL
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows
-#' @importFrom glue glue
 #' @import rvest
 #' @export
 #' @family NBA G-League Functions

@@ -89,7 +89,7 @@ nba_draftboard <- function(
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
   version <- "draftboard"
-  endpoint <- glue::glue("https://content-api-prod.nba.com/public/1/leagues/nba/draft/{season}/board")
+  endpoint <- sprintf("https://content-api-prod.nba.com/public/1/leagues/nba/draft/%s/board", season)
   full_url <- endpoint
 
   params <- list()

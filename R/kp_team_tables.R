@@ -217,13 +217,13 @@ kp_team_schedule <- function(team, year = 2022){
             stringr::str_detect(.data$Day.Date, regex("Mar",ignore_case = TRUE)) ~ stringr::str_pad(3, 2, pad = "0"),
             stringr::str_detect(.data$Day.Date, regex("Apr",ignore_case = TRUE)) ~ stringr::str_pad(4, 2, pad = "0")),
           Date.YR = dplyr::case_when(
-            stringr::str_detect(.data$Day.Date, regex("Oct",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-            stringr::str_detect(.data$Day.Date, regex("Nov",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-            stringr::str_detect(.data$Day.Date, regex("Dec",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-            stringr::str_detect(.data$Day.Date, regex("Jan",ignore_case = TRUE)) ~ glue::glue("{year}"),
-            stringr::str_detect(.data$Day.Date, regex("Feb",ignore_case = TRUE)) ~ glue::glue("{year}"),
-            stringr::str_detect(.data$Day.Date, regex("Mar",ignore_case = TRUE)) ~ glue::glue("{year}"),
-            stringr::str_detect(.data$Day.Date, regex("Apr",ignore_case = TRUE)) ~ glue::glue("{year}")),
+            stringr::str_detect(.data$Day.Date, regex("Oct",ignore_case = TRUE)) ~ as.character(year - 1L),
+            stringr::str_detect(.data$Day.Date, regex("Nov",ignore_case = TRUE)) ~ as.character(year - 1L),
+            stringr::str_detect(.data$Day.Date, regex("Dec",ignore_case = TRUE)) ~ as.character(year - 1L),
+            stringr::str_detect(.data$Day.Date, regex("Jan",ignore_case = TRUE)) ~ as.character(year),
+            stringr::str_detect(.data$Day.Date, regex("Feb",ignore_case = TRUE)) ~ as.character(year),
+            stringr::str_detect(.data$Day.Date, regex("Mar",ignore_case = TRUE)) ~ as.character(year),
+            stringr::str_detect(.data$Day.Date, regex("Apr",ignore_case = TRUE)) ~ as.character(year)),
           GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD)),
           W.Proj = round(cummax(ifelse(is.na(.data$W), 0, .data$W)) +
                            cumsum(ifelse(is.na(.data$PreWP), 0, .data$PreWP))),
@@ -568,16 +568,16 @@ kp_gameplan <- function(team, year=2021){
               stringr::str_detect(.data$Date, regex("Apr", ignore_case = TRUE)) ~ stringr::str_pad(4, 2, pad="0")
             ),
             Date.YR = dplyr::case_when(
-              stringr::str_detect(.data$Date, regex("Oct", ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Nov", ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Dec", ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Jan", ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Feb", ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Mar", ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Apr", ignore_case = TRUE)) ~ glue::glue("{year}")
+              stringr::str_detect(.data$Date, regex("Oct", ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Nov", ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Dec", ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Jan", ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Feb", ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Mar", ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Apr", ignore_case = TRUE)) ~ as.character(year)
             ),
             Day.Date = .data$Date,
-            Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
+            Date = as.Date(paste(.data$Date.YR, .data$Date.MO, .data$Date.DD, sep = "-")),
             GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
           dplyr::select(
             -"Date.DD",
@@ -848,16 +848,16 @@ kp_opptracker <- function(team, year = 2021){
               stringr::str_detect(.data$Date, regex("Apr", ignore_case = TRUE)) ~ stringr::str_pad(4, 2, pad="0")
             ),
             Date.YR = dplyr::case_when(
-              stringr::str_detect(.data$Date, regex("Oct",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Nov",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Dec",ignore_case = TRUE)) ~ glue::glue("{year-1}"),
-              stringr::str_detect(.data$Date, regex("Jan",ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Feb",ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Mar",ignore_case = TRUE)) ~ glue::glue("{year}"),
-              stringr::str_detect(.data$Date, regex("Apr",ignore_case = TRUE)) ~ glue::glue("{year}")
+              stringr::str_detect(.data$Date, regex("Oct",ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Nov",ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Dec",ignore_case = TRUE)) ~ as.character(year - 1L),
+              stringr::str_detect(.data$Date, regex("Jan",ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Feb",ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Mar",ignore_case = TRUE)) ~ as.character(year),
+              stringr::str_detect(.data$Date, regex("Apr",ignore_case = TRUE)) ~ as.character(year)
             ),
             Day.Date = .data$Date,
-            Date = as.Date(glue::glue("{.data$Date.YR}-{.data$Date.MO}-{.data$Date.DD}")),
+            Date = as.Date(paste(.data$Date.YR, .data$Date.MO, .data$Date.DD, sep = "-")),
             GameDate = as.numeric(paste0(.data$Date.YR, .data$Date.MO, .data$Date.DD))) %>%
           dplyr::select(
             -"Date.DD",
@@ -2044,7 +2044,6 @@ kp_team_player_stats <- function(team, year = 2021){
 #' @importFrom dplyr select mutate filter  bind_cols bind_rows
 #' @importFrom stringr str_extract str_remove str_replace str_detect str_trim
 #' @importFrom tidyr separate
-#' @importFrom glue glue
 #' @import rvest
 #' @export
 #' @keywords Depth Chart
@@ -2264,7 +2263,6 @@ kp_team_depth_chart <- function(team, year= 2021){
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter
-#' @importFrom glue glue
 #' @importFrom stringr str_remove str_replace str_extract
 #' @import rvest
 #' @export

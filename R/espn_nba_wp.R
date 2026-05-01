@@ -58,7 +58,7 @@ espn_nba_wp <- function(game_id) {
   tryCatch(
     expr = {
       espn_wp <-
-        .retry_request(glue::glue("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={espn_game_id}")) %>%
+        .retry_request(sprintf("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=%s", espn_game_id)) %>%
         .resp_text() %>%
         jsonlite::fromJSON(flatten = TRUE)
 
