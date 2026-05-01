@@ -1,7 +1,7 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
 Version: 3.0.0
-Authors@R:c(
+Authors@R: c(
     person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7194-9067")),
     person("Jason", "Lee", , "Jason@aisportsfirm.com", role = "ctb"),
@@ -28,7 +28,6 @@ Imports:
     cli (>= 1.1.0),
     data.table (>= 1.14.0),
     dplyr,
-    glue,
     httr2 (>= 1.0.0),
     janitor,
     jsonlite,
@@ -51,6 +50,7 @@ Suggests:
     future (>= 1.24.0),
     ggplot2,
     ggrepel,
+    glue,
     rmarkdown,
     RSQLite,
     stats,
