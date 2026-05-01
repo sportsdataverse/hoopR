@@ -489,13 +489,37 @@ check_status <- function(res) {
 #' @param timeout Timeout in seconds (default: 60)
 #' @return An httr2 response object
 #' @keywords internal
-.retry_request <- function(url, params = list(), headers = NULL, timeout = 60) {
+.retry_request <- function(url, params = list(), headers = NULL, timeout = 60,
+                           proxy = NULL) {
   req <- httr2::request(url)
   if (length(params) > 0) {
     req <- req |> httr2::req_url_query(!!!params)
   }
   if (!is.null(headers)) {
     req <- req |> httr2::req_headers(!!!as.list(headers))
+  }
+  # Optional proxy support. `proxy` accepts:
+  #   - NULL                (default)               -- libcurl honors the
+  #                                                    standard `http_proxy` /
+  #                                                    `https_proxy` /
+  #                                                    `no_proxy` env vars
+  #                                                    automatically; nothing
+  #                                                    needs threading here.
+  #   - a single URL string                         -- e.g. "http://host:port",
+  #                                                    passed to
+  #                                                    `httr2::req_proxy(url=)`.
+  #   - a named list                                -- spread as keyword args
+  #                                                    into `httr2::req_proxy()`
+  #                                                    for full control
+  #                                                    (`url`, `port`,
+  #                                                    `username`, `password`,
+  #                                                    `auth`).
+  if (!is.null(proxy)) {
+    req <- if (is.list(proxy)) {
+      do.call(httr2::req_proxy, c(list(req = req), proxy))
+    } else {
+      httr2::req_proxy(req, url = proxy)
+    }
   }
   req |>
     httr2::req_timeout(timeout) |>

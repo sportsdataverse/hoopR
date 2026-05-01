@@ -2,13 +2,14 @@
 % Please edit documentation in R/utils_nba_stats.R
 \name{request_with_proxy}
 \alias{request_with_proxy}
-\title{\strong{Retry http request with proxy}}
+\title{\strong{Retry http request with optional proxy}}
 \usage{
 request_with_proxy(
   url,
   params = list(),
   origin = "https://stats.nba.com",
   referer = "https://www.nba.com/",
+  proxy = NULL,
   ...
 )
 }
@@ -21,9 +22,16 @@ request_with_proxy(
 
 \item{referer}{Referer url}
 
-\item{...}{Additional arguments (currently unused)}
+\item{proxy}{Optional proxy config. \code{NULL} (default) lets libcurl honor
+the standard \code{http_proxy} / \code{https_proxy} / \code{no_proxy} environment
+variables. A single URL string (e.g. \code{"http://host:port"}) is forwarded
+to \code{httr2::req_proxy(url = proxy)}. A named list is spread as keyword
+args into \code{httr2::req_proxy()} (\code{url}, \code{port}, \code{username}, \code{password},
+\code{auth}) for full control over authenticated proxies.}
+
+\item{...}{Additional arguments (currently unused).}
 }
 \description{
-This is a thin wrapper around httr2 for NBA Stats API requests
+This is a thin wrapper around httr2 for NBA Stats API requests.
 }
 \keyword{internal}

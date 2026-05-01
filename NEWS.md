@@ -45,6 +45,11 @@
 - All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (`.retry_request()`, `.resp_text()`) backed by `httr2`.
 - `check_status()` now uses `httr2::resp_status()` instead of `httr::status_code()`.
 - KenPom (`kp_*`) functions now use `httr2` cookie jar authentication via `login()`, `.kp_get_page()`, and `.kp_request()` helpers.
+- **Proxy support restored.** When the package migrated from `httr` to `httr2` the legacy `httr::use_proxy()` plumbing was dropped and `request_with_proxy()` quietly stopped honoring proxies (its `...` was preserved purely for source compatibility). Both `request_with_proxy()` and the lower-level `.retry_request()` now accept a `proxy =` argument:
+    - `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy` / `no_proxy` env vars automatically.
+    - `proxy = "http://host:port"` — string form, forwarded to `httr2::req_proxy(url = ...)`.
+    - `proxy = list(url=, port=, username=, password=, auth=)` — named list spread into `httr2::req_proxy()` for authenticated proxies.
+  The argument threads via `...` through every wrapper, so callers can do `nba_pbp(game_id = "...", proxy = "http://my-proxy:8080")` without any per-function plumbing.
 
 ### **Messaging Migration (usethis → cli)**
 
