@@ -601,7 +601,7 @@ update_mbb_db <- function(
   if (is.null(db_connection)) {
     connection <- DBI::dbConnect(
       RSQLite::SQLite(),
-      glue::glue("{dbdir}/{dbname}")
+      file.path(dbdir, dbname)
     )
   } else {
     connection <- db_connection
@@ -690,11 +690,13 @@ build_mbb_db <- function(
     }
     DBI::dbExecute(
       db_conn,
-      glue::glue_sql(
-        "DELETE FROM {`tblname`} WHERE season IN ({vals*})",
-        vals = rebuild,
-        .con = db_conn
-      )
+      paste0(
+        "DELETE FROM ", DBI::dbQuoteIdentifier(db_conn, tblname),
+        " WHERE season IN (",
+        paste(rep("?", length(rebuild)), collapse = ", "),
+        ")"
+      ),
+      params = as.list(rebuild)
     )
     seasons <- valid_seasons %>%
       dplyr::filter(.data$season %in% rebuild) %>%
