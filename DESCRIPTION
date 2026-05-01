@@ -1,41 +1,27 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
 Version: 3.0.0
-Authors@R:
-    c(person(given = "Saiem",
-             family = "Gilani",
-             role = c("aut", "cre"),
-             email = "saiem.gilani@gmail.com",
-             comment = c(ORCID = "0000-0002-7194-9067")),
-      person(given = "Jason",
-             family = "Lee",
-             role = c("ctb"),
-             email = "Jason@aisportsfirm.com"),
-      person(given = "Billy",
-             family = "Fryer",
-             role = c("ctb"),
-             email = "billyfryer@att.net"),
-      person(given = "Ross",
-             family = "Drucker",
-             role = c("ctb"),
-             email = "ross.a.drucker@gmail.com"),
-      person(given = "Vladislav",
-             family = "Shufinskiy",
-             role = c("ctb"),
-             email = "hollywood.90210@mail.ru"))
-Description: A utility to quickly obtain clean and tidy men's
-    basketball play by play data. Provides functions to access
-    live play by play and box score data from ESPN<https://www.espn.com> with shot locations
-    when available. It is also a full NBA Stats API<https://www.nba.com/stats/> wrapper.
-    It is also a scraping and aggregating interface for Ken Pomeroy's
-    men's college basketball statistics website<https://kenpom.com>. It provides users with an
+Authors@R:c(
+    person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7194-9067")),
+    person("Jason", "Lee", , "Jason@aisportsfirm.com", role = "ctb"),
+    person("Billy", "Fryer", , "billyfryer@att.net", role = "ctb"),
+    person("Ross", "Drucker", , "ross.a.drucker@gmail.com", role = "ctb"),
+    person("Vladislav", "Shufinskiy", , "hollywood.90210@mail.ru", role = "ctb")
+  )
+Description: A utility to quickly obtain clean and tidy men's basketball
+    play by play data. Provides functions to access live play by play and
+    box score data from ESPN<https://www.espn.com> with shot locations
+    when available. It is also a full NBA Stats
+    API<https://www.nba.com/stats/> wrapper.  It is also a scraping and
+    aggregating interface for Ken Pomeroy's men's college basketball
+    statistics website<https://kenpom.com>. It provides users with an
     active subscription the capability to scrape the website tables and
     analyze the data for themselves.
 License: MIT + file LICENSE
 URL: https://github.com/sportsdataverse/hoopR,
     http://hoopr.sportsdataverse.org/
 BugReports: https://github.com/sportsdataverse/hoopR/issues
-SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
 Depends:
     R (>= 4.1.0)
 Imports:
@@ -78,3 +64,4 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
+SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
