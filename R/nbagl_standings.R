@@ -41,7 +41,6 @@ NULL
 #'    |ClinchedPostSeason   |character |
 #'    |NEUTRAL              |character |
 #'
-#' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange
 #' @import rvest

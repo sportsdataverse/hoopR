@@ -38,7 +38,6 @@ NULL
 #'    |season_type_id          |character |
 #'    |season_type_description |character |
 #'
-#' @importFrom glue glue
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange
 #' @import rvest

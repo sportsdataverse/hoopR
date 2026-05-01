@@ -419,7 +419,7 @@ kp_winprob <- function(game_id, year) {
       game_data_str <- gsub(", ", ', "', game_data_str)
       game_data_str <- gsub(":", '":', game_data_str)
       game_data_str <- gsub("'", '"', game_data_str)
-      game_data_str <- glue::glue("[{game_data_str}]")
+      game_data_str <- paste0("[", game_data_str, "]")
       game_data <- purrr::map_dfr(c(game_data_str), jsonlite::fromJSON)
       game_data <- dplyr::bind_cols(game_data, vn, cty, gmtm, dateofgame)
       colnames(game_data) <- gsub(" ", "", colnames(game_data))

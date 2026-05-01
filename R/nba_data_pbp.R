@@ -87,8 +87,9 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
     substr(game_id, 1, 2) == "20" ~ "dleague",
     TRUE ~ "NBA"
   )
-  full_url <- glue::glue(
-    "https://data.nba.com/data/v2015/json/mobile_teams/{league}/{season}/scores/pbp/{game_id}_full_pbp.json"
+  full_url <- sprintf(
+    "https://data.nba.com/data/v2015/json/mobile_teams/%s/%s/scores/pbp/%s_full_pbp.json",
+    league, season, game_id
   )
 
   plays_df <- data.frame()
