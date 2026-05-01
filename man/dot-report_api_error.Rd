@@ -9,9 +9,10 @@
 \arguments{
 \item{e}{error condition (the \code{e} from \verb{function(e)} in \code{tryCatch}).}
 
-\item{hint}{character. A glue-interpolated friendly message (interpolated
-in the \emph{caller's} environment, so \code{{game_id}}-style references resolve
-against the function's formals). If \code{NULL}, defaults to "Request failed".}
+\item{hint}{character. A friendly message with optional \code{{name}} tokens
+that resolve against the \emph{caller's} environment (so \code{{game_id}} etc.
+pull from the wrapper's formals). If \code{NULL}, defaults to "Request
+failed".}
 
 \item{args}{optional named list of caller arguments to dump (typically
 \code{mget(setdiff(names(formals()), "..."))} captured at function entry).}
@@ -20,13 +21,13 @@ against the function's formals). If \code{NULL}, defaults to "Request failed".}
 Invisibly \code{NULL}. Called for its side effects.
 }
 \description{
-Internal helper that standardizes the message every WNBA / ESPN / NCAA
+Internal helper that standardizes the message every NBA / ESPN / NCAA
 wrapper emits inside its \code{tryCatch(error = ...)} block. Always emits, in
 order:
 }
 \details{
 \enumerate{
-\item A timestamped friendly hint (glue-interpolated by \code{cli::cli_alert_danger()}),
+\item A timestamped friendly hint (brace-interpolated against the caller env),
 \item A dump of the function call's arguments,
 \item The actual error message (\code{conditionMessage(e)}).
 }
