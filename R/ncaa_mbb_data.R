@@ -11,6 +11,7 @@
 #' try(ncaa_mbb_NET_rankings())
 #' }
 ncaa_mbb_NET_rankings <- function() {
+  .args <- mget(setdiff(names(formals()), "..."))
   NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
 
   x <- NULL
@@ -35,9 +36,11 @@ ncaa_mbb_NET_rankings <- function() {
         ))) %>%
         make_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no NET rankings available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no NET rankings available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -74,6 +77,7 @@ ncaa_mbb_NET_rankings <- function() {
 #' ```
 
 ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   if (is.null(year)) {
     cli::cli_abort("Enter valid year as a number (YYYY)")
   }
@@ -189,9 +193,11 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
         ) %>%
         make_hoopR_data("NCAA Basketball Teams data from stats.ncaa.org", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments provided"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments provided",
+      args = .args
+    ),
     finally = {
     }
   )

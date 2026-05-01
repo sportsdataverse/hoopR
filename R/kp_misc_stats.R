@@ -37,6 +37,7 @@
 #' try(kp_trends())
 #' }
 kp_trends <- function() {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -76,9 +77,11 @@ kp_trends <- function() {
         ), as.numeric) %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no trends data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no trends data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -115,6 +118,7 @@ kp_trends <- function() {
 #' try(kp_officials(year = 2021))
 #' }
 kp_officials <- function(year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -161,9 +165,11 @@ kp_officials <- function(year = most_recent_mbb_season()) {
       kenpom <- x %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no officials data for {year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no officials data for {year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -204,6 +210,7 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 #' try(kp_referee(referee = 714363, year = 2021))
 #' }
 kp_referee <- function(referee, year) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -252,9 +259,11 @@ kp_referee <- function(referee, year) {
       kenpom <- x %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no referee data for {referee} in {year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no referee data for {referee} in {year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -297,6 +306,7 @@ kp_referee <- function(referee, year) {
 #' try(kp_hca())
 #' }
 kp_hca <- function() {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -334,9 +344,11 @@ kp_hca <- function() {
         ) %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no home court advantage data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no home court advantage data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -373,6 +385,7 @@ kp_hca <- function() {
 #' try(kp_arenas(year = 2021))
 #' }
 kp_arenas <- function(year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -409,9 +422,11 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
       kenpom <- x %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no arenas data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no arenas data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -455,6 +470,7 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 kp_game_attrs <- function(
     year = most_recent_mbb_season(),
     attr = "Excitement") {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -495,9 +511,11 @@ kp_game_attrs <- function(
         dplyr::select(-"col") %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no game attributes data for {attr} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no game attributes data for {attr} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -551,6 +569,7 @@ kp_game_attrs <- function(
 #' try(kp_fanmatch(date = "2022-02-22"))
 #' }
 kp_fanmatch <- function(date) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -678,9 +697,11 @@ kp_fanmatch <- function(date) {
           janitor::clean_names()
       )
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no Fan Match data for {date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no Fan Match data for {date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

@@ -48,6 +48,7 @@
 #' }
 
 kp_team_schedule <- function(team, year = 2022){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -381,9 +382,11 @@ kp_team_schedule <- function(team, year = 2022){
         janitor::clean_names()
 
     },
-    error = function(e){
-      message(glue::glue("{Sys.Date()} - No team schedule tables available for {team} - {year}"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.Date()} - No team schedule tables available for {team} - {year}",
+      args = .args
+    ),
     warning = function(w){
     },
     finally = {
@@ -495,6 +498,7 @@ kp_team_schedule <- function(team, year = 2022){
 #' }
 
 kp_gameplan <- function(team, year=2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -680,9 +684,11 @@ kp_gameplan <- function(team, year=2021){
       names(kenpom) <- c("gameplan", "correlations", "position_distributions")
 
     },
-    error = function(e){
-      message(glue::glue("{Sys.Date()} - No Game Plan Points distribution tables available for {team} - {year}"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.Date()} - No Game Plan Points distribution tables available for {team} - {year}",
+      args = .args
+    ),
     warning = function(w){
     },
     finally = {
@@ -763,6 +769,7 @@ kp_gameplan <- function(team, year=2021){
 #' }
 
 kp_opptracker <- function(team, year = 2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -904,9 +911,11 @@ kp_opptracker <- function(team, year = 2021){
           tidyr::everything()) %>%
         janitor::clean_names()
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - {team} - {year} Team opponent tracker data is missing"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - {team} - {year} Team opponent tracker data is missing",
+      args = .args
+    ),
     warning = function(w){
 
     },
@@ -997,6 +1006,7 @@ kp_opptracker <- function(team, year = 2021){
 #'
 
 kp_team_players <- function(team, year = 2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1200,9 +1210,11 @@ kp_team_players <- function(team, year = 2021){
       kenpom <- players %>%
         janitor::clean_names()
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - No Player Data available for {team} in {year}"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - No Player Data available for {team} in {year}",
+      args = .args
+    ),
     warning = function(w){
 
     },
@@ -1320,6 +1332,7 @@ kp_team_players <- function(team, year = 2021){
 #'   }
 #'
 kp_player_career <- function(player_id){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1527,9 +1540,11 @@ kp_player_career <- function(player_id){
       kenpom <- c(list(players),list(schedule_games))
       names(kenpom) <- c("player_stats", "gamelog")
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - No Player Career Data available for {player_id}"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - No Player Career Data available for {player_id}",
+      args = .args
+    ),
     warning = function(w){
 
     },
@@ -1560,6 +1575,7 @@ kp_player_career <- function(player_id){
 #'
 #'
 kp_minutes_matrix <- function(team, year = 2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1614,9 +1630,11 @@ kp_minutes_matrix <- function(team, year = 2021){
         janitor::clean_names()
 
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - {team} - {year} minutes matrix is missing"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - {team} - {year} minutes matrix is missing",
+      args = .args
+    ),
     warning = function(w){
 
     },
@@ -1768,6 +1786,7 @@ kp_minutes_matrix <- function(team, year = 2021){
 #'     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
 #'   }
 kp_team_player_stats <- function(team, year = 2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1958,9 +1977,11 @@ kp_team_player_stats <- function(team, year = 2021){
       kenpom <- y
       names(kenpom) <- c("all_games", "conference_games")
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - {team} - {year} team player stats are missing"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - {team} - {year} team player stats are missing",
+      args = .args
+    ),
     warning = function(w){
 
     },
@@ -2037,6 +2058,7 @@ kp_team_player_stats <- function(team, year = 2021){
 #'
 
 kp_team_depth_chart <- function(team, year= 2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -2184,9 +2206,11 @@ kp_team_depth_chart <- function(team, year= 2021){
       kenpom <- depth1 %>%
         janitor::clean_names()
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - {team} - {year} Team Depth Chart is missing"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - {team} - {year} Team Depth Chart is missing",
+      args = .args
+    ),
     warning = function(w){
     },
     finally = {
@@ -2254,6 +2278,7 @@ kp_team_depth_chart <- function(team, year= 2021){
 #'
 
 kp_team_lineups <- function(team, year=2021){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -2398,9 +2423,11 @@ kp_team_lineups <- function(team, year=2021){
         janitor::clean_names()
 
     },
-    error = function(e){
-      message(glue::glue("{Sys.time()} - {team} - {year} Team Lineups are missing"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "{Sys.time()} - {team} - {year} Team Lineups are missing",
+      args = .args
+    ),
     warning = function(w){
     },
     finally = {

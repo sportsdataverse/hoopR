@@ -105,6 +105,7 @@
 #' try(kp_box(game_id = 6, year = 2021))
 #' }
 kp_box <- function(game_id, year) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -258,9 +259,11 @@ kp_box <- function(game_id, year) {
       kenpom <- c(y, list(linescore), list(ref_table))
       names(kenpom) <- c("away_team", "home_team", "linescore", "officials")
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no box data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no box data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -350,6 +353,7 @@ kp_box <- function(game_id, year) {
 #' try(kp_winprob(game_id = 1238, year = 2020))
 #' }
 kp_winprob <- function(game_id, year) {
+  .args <- mget(setdiff(names(formals()), "..."))
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -475,9 +479,11 @@ kp_winprob <- function(game_id, year) {
       kenpom <- list(wp_dataset, game_data, runs)
       names(kenpom) <- c("winprob_dataset", "game_data", "runs")
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no win probability data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no win probability data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

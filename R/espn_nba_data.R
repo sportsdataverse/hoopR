@@ -200,6 +200,7 @@
 #' }
 #'
 espn_nba_game_all <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   summary_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?"
@@ -233,13 +234,11 @@ espn_nba_game_all <- function(game_id) {
         ))
       }
     },
-    error = function(e) {
-      message(
-        glue::glue(
-          "{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"
-        )
-      )
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -254,13 +253,11 @@ espn_nba_game_all <- function(game_id) {
         ))
       }
     },
-    error = function(e) {
-      message(
-        glue::glue(
-          "{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"
-        )
-      )
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team box score data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -275,13 +272,11 @@ espn_nba_game_all <- function(game_id) {
         ))
       }
     },
-    error = function(e) {
-      message(
-        glue::glue(
-          "{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"
-        )
-      )
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no player box score data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -369,6 +364,7 @@ espn_nba_game_all <- function(game_id) {
 #' }
 #'
 espn_nba_pbp <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   summary_url <-
@@ -403,11 +399,11 @@ espn_nba_pbp <- function(game_id) {
         )))
       }
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -498,6 +494,7 @@ espn_nba_pbp <- function(game_id) {
 #' }
 #'
 espn_nba_team_box <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   summary_url <-
@@ -532,11 +529,11 @@ espn_nba_team_box <- function(game_id) {
         )))
       }
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no team box score data for {game_id} available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team box score data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -624,6 +621,7 @@ espn_nba_team_box <- function(game_id) {
 #' }
 #'
 espn_nba_player_box <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   summary_url <-
@@ -658,11 +656,11 @@ espn_nba_player_box <- function(game_id) {
         )))
       }
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no player box score data for {game_id} available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no player box score data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -782,6 +780,7 @@ espn_nba_player_box <- function(game_id) {
 #' try(espn_nba_game_rosters(game_id = 401283399))
 #' }
 espn_nba_game_rosters <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   athlete_roster_df <- NULL
@@ -1028,13 +1027,11 @@ espn_nba_game_rosters <- function(game_id) {
           Sys.time()
         )
     },
-    error = function(e) {
-      message(
-        glue::glue(
-          "{Sys.time()}: Invalid arguments or no game roster data for {game_id} available!"
-        )
-      )
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no game roster data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -1076,6 +1073,7 @@ espn_nba_game_rosters <- function(game_id) {
 #' }
 #'
 espn_nba_teams <- function() {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
@@ -1156,11 +1154,11 @@ espn_nba_teams <- function() {
         dplyr::mutate(team_id = as.integer(.data$team_id)) %>%
         make_hoopR_data("ESPN NBA Teams Information from ESPN.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no teams data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no teams data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -1186,6 +1184,7 @@ espn_nba_teams <- function() {
 #' try(espn_nba_team_current_roster(team_id = 18))
 #' }
 espn_nba_team_current_roster <- function(team_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -1300,11 +1299,11 @@ espn_nba_team_current_roster <- function(team_id) {
           Sys.time()
         )
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no team current roster data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team current roster data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -1371,6 +1370,7 @@ espn_nba_team_current_roster <- function(team_id) {
 #' try(espn_nba_scoreboard(season = 20230423))
 #' }
 espn_nba_scoreboard <- function(season) {
+  .args <- mget(setdiff(names(formals()), "..."))
   max_year <- substr(Sys.Date(), 1, 4)
 
   if (!(as.integer(substr(season, 1, 4)) > 2001)) {
@@ -1761,11 +1761,11 @@ espn_nba_scoreboard <- function(season) {
         }
       }
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no scoreboard data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no scoreboard data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -1812,6 +1812,7 @@ espn_nba_scoreboard <- function(season) {
 #' try(espn_nba_standings(year = 2021))
 #' }
 espn_nba_standings <- function(year) {
+  .args <- mget(setdiff(names(formals()), "..."))
   standings_url <- "https://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
 
   ## Inputs
@@ -1906,11 +1907,11 @@ espn_nba_standings <- function(year) {
           Sys.time()
         )
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no standings data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no standings data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -1999,6 +2000,7 @@ espn_nba_standings <- function(year) {
 #' try(espn_nba_betting(game_id = 401283399))
 #' }
 espn_nba_betting <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
   summary_url <-
@@ -2091,11 +2093,11 @@ espn_nba_betting <- function(game_id) {
           )
       }
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no betting data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no betting data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -2261,6 +2263,7 @@ espn_nba_team_stats <- function(
     year,
     season_type = "regular",
     total = FALSE) {
+  .args <- mget(setdiff(names(formals()), "..."))
   if (!(tolower(season_type) %in% c("regular", "postseason"))) {
     # Check if season_type is appropriate, if not regular
     cli::cli_abort("Enter valid season_type: regular or postseason")
@@ -2418,11 +2421,11 @@ espn_nba_team_stats <- function(
         ) %>%
         make_hoopR_data("ESPN NBA Team Season Stats from ESPN.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}:Invalid arguments or no team season stats data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team season stats data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )
@@ -2640,6 +2643,7 @@ espn_nba_player_stats <- function(
     year,
     season_type = "regular",
     total = FALSE) {
+  .args <- mget(setdiff(names(formals()), "..."))
   if (!(tolower(season_type) %in% c("regular", "postseason"))) {
     # Check if season_type is appropriate, if not regular
     cli::cli_abort("Enter valid season_type: regular or postseason")
@@ -2846,11 +2850,11 @@ espn_nba_player_stats <- function(
           Sys.time()
         )
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}:Invalid arguments or no player season stats data available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no player season stats data available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )

@@ -46,6 +46,7 @@ nba_franchiseleaders <- function(
     league_id = '00',
     team_id = '1610612739',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "franchiseleaders"
   endpoint <- nba_endpoint(version)
@@ -66,9 +67,11 @@ nba_franchiseleaders <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no franchise leaders data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no franchise leaders data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -161,6 +164,7 @@ nba_franchiseleaderswrank <- function(
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
   version <- "franchiseleaderswrank"
@@ -184,9 +188,11 @@ nba_franchiseleaderswrank <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no franchise players data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no franchise players data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -258,6 +264,7 @@ nba_franchiseplayers <- function(
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
   version <- "franchiseplayers"
@@ -281,9 +288,11 @@ nba_franchiseplayers <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no franchise players data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no franchise players data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -362,6 +371,7 @@ NULL
 nba_franchisehistory <- function(
     league_id = '00',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "franchisehistory"
   endpoint <- nba_endpoint(version)
@@ -381,9 +391,11 @@ nba_franchisehistory <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no franchise history data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no franchise history data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

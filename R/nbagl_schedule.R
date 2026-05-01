@@ -53,6 +53,7 @@ nbagl_schedule <- function(
     league_id = "20",
     season = year_to_season(most_recent_nba_season() - 1),
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -111,9 +112,11 @@ nbagl_schedule <- function(
           game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
         )
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league schedule data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league schedule data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

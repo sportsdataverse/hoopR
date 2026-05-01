@@ -240,6 +240,7 @@ nba_alltimeleadersgrids <- function(
     season_type = 'Regular Season',
     top_x = 10,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -264,9 +265,11 @@ nba_alltimeleadersgrids <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no all-time leaders grid data for {league_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no all-time leaders grid data for {league_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -319,6 +322,7 @@ nba_assistleaders <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ','+',season_type)
@@ -344,9 +348,11 @@ nba_assistleaders <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no assist leaders data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no assist leaders data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -382,6 +388,7 @@ nba_assisttracker <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
   version <- "assisttracker"
@@ -404,9 +411,11 @@ nba_assisttracker <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no assist tracker data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no assist tracker data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -500,6 +509,7 @@ nba_homepageleaders <- function(
     season_type = 'Regular Season',
     stat_category = 'Points',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -535,9 +545,11 @@ nba_homepageleaders <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no homepage leaders data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no homepage leaders data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -679,6 +691,7 @@ nba_homepagev2 <- function(
     season_type = 'Regular Season',
     stat_type = 'Traditional',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -714,9 +727,11 @@ nba_homepagev2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no homepage v2 data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no homepage v2 data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -813,6 +828,7 @@ nba_leaderstiles <- function(
     season_type = 'Regular Season',
     stat = 'PTS',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -847,9 +863,11 @@ nba_leaderstiles <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no leaders tiles data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no leaders tiles data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -895,6 +913,7 @@ nba_defensehub <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   player_scope <- gsub(' ','+',player_scope)
   # season_type <- gsub(' ','+',season_type)
@@ -921,9 +940,11 @@ nba_defensehub <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no defense hub data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no defense hub data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1006,6 +1027,7 @@ nba_leagueleaders <- function(
     season_type = 'Regular Season',
     stat_category = 'PTS',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   scope <- gsub(' ','+',scope)
   # season_type <- gsub(' ','+',season_type)
@@ -1043,9 +1065,11 @@ nba_leagueleaders <- function(
       names(df_list) <- resp$resultSet$name
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league leaders data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league leaders data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1149,6 +1173,7 @@ nba_dunkscoreleaders <- function(
     team_id = '',
     game_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "dunkscoreleaders"
   endpoint <- nba_endpoint(version)
@@ -1186,9 +1211,11 @@ nba_dunkscoreleaders <- function(
       names(df_list) <- c("DunkScoreLeaders")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no dunk score leaders data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no dunk score leaders data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1258,6 +1285,7 @@ nba_gravityleaders <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "gravityleaders"
   endpoint <- nba_endpoint(version)
@@ -1292,9 +1320,11 @@ nba_gravityleaders <- function(
       names(df_list) <- c("GravityLeaders")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no gravity leaders data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no gravity leaders data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

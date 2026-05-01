@@ -63,6 +63,7 @@ nbagl_pbp <- function(
     game_id,
     on_court = TRUE,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   plays_df <- data.frame()
 
   tryCatch(
@@ -83,9 +84,11 @@ nbagl_pbp <- function(
       plays_df <- plays_df |>
         make_hoopR_data("NBA G-League Play-by-Play Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -180,6 +183,7 @@ NULL
 nbagl_live_pbp <- function(
     game_id,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -242,9 +246,11 @@ nbagl_live_pbp <- function(
         ) %>%
         make_hoopR_data("NBA G-League Game Play-by-Play Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -626,6 +632,7 @@ NULL
 nbagl_live_boxscore <- function(
     game_id,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -786,9 +793,11 @@ nbagl_live_boxscore <- function(
         "away_team_linescores"
       )
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no boxscore data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

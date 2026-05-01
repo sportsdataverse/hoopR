@@ -73,6 +73,7 @@ nba_leaguegamelog <- function(
     season_type = 'Regular Season',
     sorter = 'DATE',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -102,9 +103,11 @@ nba_leaguegamelog <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league game log data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league game log data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -231,6 +234,7 @@ nba_leaguestandings <- function(
     season_type = 'Regular Season',
     season_year = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ','+',season_type)
@@ -255,9 +259,11 @@ nba_leaguestandings <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league standings data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league standings data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -391,6 +397,7 @@ nba_leaguestandingsv3 <- function(
     season_type = 'Regular Season',
     season_year = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ','+',season_type)
@@ -415,9 +422,11 @@ nba_leaguestandingsv3 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league standings v3 data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league standings v3 data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -574,6 +583,7 @@ nba_playoffpicture <- function(
     league_id = '00',
     season_id = '22022',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "playoffpicture"
   endpoint <- nba_endpoint(version)
@@ -594,9 +604,11 @@ nba_playoffpicture <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no playoff picture data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no playoff picture data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -838,6 +850,7 @@ nba_leaguegamefinder <- function(
     vs_team_id = '',
     years_experience = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
@@ -945,9 +958,11 @@ nba_leaguegamefinder <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league game finder data available for the given parameters!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league game finder data available for the given parameters!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1014,6 +1029,7 @@ nba_iststandings <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     section = 'group',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "iststandings"
   endpoint <- nba_endpoint(version)
@@ -1076,9 +1092,11 @@ nba_iststandings <- function(
       names(df_list) <- c("Standings")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no IST standings data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no IST standings data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

@@ -32,6 +32,7 @@
 #' }
 #'
 espn_mbb_wp <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   if (!is.null(game_id) && !is.numeric(game_id)) {
     # Check if game_id is numeric, if not NULL
     cli::cli_abort("Enter valid game_id value (Integer)")
@@ -98,9 +99,11 @@ espn_mbb_wp <- function(game_id) {
         ) %>%
         make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: game_id '{espn_game_id}' invalid or no ESPN win probability data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "game_id '{espn_game_id}' invalid or no ESPN win probability data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

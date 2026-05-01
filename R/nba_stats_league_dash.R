@@ -107,6 +107,7 @@ nba_leaguedashoppptshot <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -157,9 +158,11 @@ nba_leaguedashoppptshot <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking oppponent shooting data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player-tracking oppponent shooting data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -285,6 +288,7 @@ nba_leaguedashplayerbiostats <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -337,9 +341,11 @@ nba_leaguedashplayerbiostats <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player bio stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player bio stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -522,6 +528,7 @@ nba_leaguedashplayerclutch <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # ahead_behind <- gsub(' ', '+', ahead_behind)
   # clutch_time <- gsub(' ', '+', clutch_time)
@@ -583,9 +590,11 @@ nba_leaguedashplayerclutch <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player clutch stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player clutch stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -722,6 +731,7 @@ nba_leaguedashplayerptshot <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -788,9 +798,11 @@ nba_leaguedashplayerptshot <- function(
       })
       names(df_list) <- resp$resultSets$name
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking player shooting data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player-tracking player shooting data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -967,6 +979,7 @@ nba_leaguedashplayerstats <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -1023,9 +1036,11 @@ nba_leaguedashplayerstats <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1168,6 +1183,7 @@ nba_leaguedashplayershotlocations <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # distance_range <- gsub(' ', '+', distance_range)
   # Intentional
@@ -1238,9 +1254,11 @@ nba_leaguedashplayershotlocations <- function(
       })
       names(df_list) <- resp$resultSets$name
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player shot locations data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player shot locations data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1355,6 +1373,7 @@ nba_leaguedashptdefend <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -1406,9 +1425,11 @@ nba_leaguedashptdefend <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking player defense data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player-tracking player defense data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1534,6 +1555,7 @@ nba_leaguedashptstats <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -1585,9 +1607,11 @@ nba_leaguedashptstats <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player-tracking stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1679,6 +1703,7 @@ nba_leaguedashptteamdefend <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -1720,9 +1745,11 @@ nba_leaguedashptteamdefend <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard player-tracking team defensive stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard player-tracking team defensive stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1879,6 +1906,7 @@ nba_leaguedashteamclutch <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # ahead_behind <- gsub(' ', '+', ahead_behind)
   # clutch_time <- gsub(' ', '+', clutch_time)
@@ -1933,9 +1961,11 @@ nba_leaguedashteamclutch <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team clutch data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard team clutch data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -2045,6 +2075,7 @@ nba_leaguedashteamptshot <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -2090,9 +2121,11 @@ nba_leaguedashteamptshot <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team player-tracking shooting stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard team player-tracking shooting stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -2241,6 +2274,7 @@ nba_leaguedashteamstats <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -2289,9 +2323,11 @@ nba_leaguedashteamstats <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team stats data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard team stats data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -2416,6 +2452,7 @@ nba_leaguedashteamshotlocations <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # distance_range <- gsub(' ', '+', distance_range)
   # Intentional
@@ -2479,9 +2516,11 @@ nba_leaguedashteamshotlocations <- function(
       })
       names(df_list) <- resp$resultSets$name
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard team shot location data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard team shot location data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

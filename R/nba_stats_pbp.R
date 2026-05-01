@@ -794,6 +794,7 @@ NULL
 #' @noRd
 #' @family NBA PBP Functions
 .build_player_roster <- function(game_id) {
+  .args <- mget(setdiff(names(formals()), "..."))
   empty_roster <- NULL
 
   tryCatch(
@@ -833,20 +834,11 @@ NULL
       roster$team_id <- as.character(roster$team_id)
       roster
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Could not retrieve boxscore for player roster lookup."))
-      dplyr::tibble(
-        person_id = character(),
-        first_name = character(),
-        family_name = character(),
-        name_i = character(),
-        team_id = character(),
-        team_name = character(),
-        team_city = character(),
-        team_tricode = character(),
-        full_name = character()
-      )
-    }
+    error = function(e) .report_api_error(
+      e,
+      hint = "Could not retrieve boxscore for player roster lookup.",
+      args = .args
+    )
   )
 }
 
@@ -863,6 +855,7 @@ NULL
 #' @noRd
 #' @family NBA PBP Functions
 .players_on_court_v3 <- function(pbp_data) {
+  .args <- mget(setdiff(names(formals()), "..."))
   game_id <- pbp_data$game_id[1]
   if (inherits(game_id, "integer")) {
     game_id <- paste0("00", as.character(game_id))
@@ -871,10 +864,11 @@ NULL
   # Single API call to get all player stints with exact in/out times
   rotation <- tryCatch(
     nba_gamerotation(game_id = game_id),
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Could not retrieve game rotation for {game_id}. On-court data will be NA."))
-      NULL
-    }
+    error = function(e) .report_api_error(
+      e,
+      hint = "Could not retrieve game rotation for {game_id}. On-court data will be NA.",
+      args = .args
+    )
   )
 
   # Initialize player columns as NA
@@ -1050,6 +1044,7 @@ nba_playbyplayv3 <- function(
     start_period = 0,
     end_period = 0,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   endpoint <- nba_endpoint("playbyplayv3")
   full_url <- endpoint
 
@@ -1090,9 +1085,11 @@ nba_playbyplayv3 <- function(
 
       data <- c(list(PlayByPlay = actions), list(AvailableVideo = video_available))
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1200,6 +1197,7 @@ nba_pbp <- function(
     version = "v3",
     p = NULL,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   # V3 path: use the dedicated V3 endpoint and parsing
 
   if (version == "v3") {
@@ -1218,9 +1216,11 @@ nba_pbp <- function(
           data <- .players_on_court_v3(data)
         }
       },
-      error = function(e) {
-        message(glue::glue("{Sys.time()}: Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!"))
-      },
+      error = function(e) .report_api_error(
+        e,
+        hint = "Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!",
+        args = .args
+      ),
       warning = function(w) {
       },
       finally = {
@@ -1322,9 +1322,11 @@ nba_pbp <- function(
         }
       }
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {pad_id(game_id)} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {pad_id(game_id)} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1544,6 +1546,7 @@ NULL
 nba_live_pbp <- function(
     game_id,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -1606,9 +1609,11 @@ nba_live_pbp <- function(
         ) %>%
         make_hoopR_data("NBA Game Play-by-Play Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1991,6 +1996,7 @@ NULL
 nba_live_boxscore <- function(
     game_id,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -2151,9 +2157,11 @@ nba_live_boxscore <- function(
         "away_team_linescores"
       )
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no boxscore data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

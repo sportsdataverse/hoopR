@@ -58,6 +58,7 @@ nbagl_standings <- function(
     season_type = "Regular Season",
     season_year = "",
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   # Intentional
   # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
@@ -79,9 +80,11 @@ nbagl_standings <- function(
 
       df_list <- nba_stats_map_result_sets(resp)
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league standings v3 data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league standings v3 data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

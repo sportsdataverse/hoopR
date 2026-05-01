@@ -83,6 +83,7 @@ nba_fantasywidget <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -122,9 +123,11 @@ nba_fantasywidget <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no fantasy widget data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no fantasy widget data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -271,6 +274,7 @@ nba_leaguedashlineups <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -317,9 +321,11 @@ nba_leaguedashlineups <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league dashboard lineups data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league dashboard lineups data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -435,6 +441,7 @@ nba_leaguelineupviz <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -482,9 +489,11 @@ nba_leaguelineupviz <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league lineup viz data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league lineup viz data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -624,6 +633,7 @@ nba_leagueplayerondetails <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -665,9 +675,11 @@ nba_leagueplayerondetails <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league player on/off details data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league player on/off details data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -750,6 +762,7 @@ nba_leagueseasonmatchups <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -778,9 +791,11 @@ nba_leagueseasonmatchups <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league season matchups data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league season matchups data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -857,6 +872,7 @@ nba_matchupsrollup <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -885,9 +901,11 @@ nba_matchupsrollup <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no matchups rollup data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no matchups rollup data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

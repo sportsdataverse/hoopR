@@ -48,6 +48,7 @@ nba_commonallplayers <- function(
     league_id = '00',
     season = year_to_season(most_recent_nba_season() - 1),
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "commonallplayers"
   endpoint <- nba_endpoint(version)
@@ -69,9 +70,11 @@ nba_commonallplayers <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or common all players data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or common all players data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -166,6 +169,7 @@ nba_commonplayerinfo <- function(
     league_id = '00',
     player_id = '2544',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "commonplayerinfo"
   endpoint <- nba_endpoint(version)
@@ -187,9 +191,11 @@ nba_commonplayerinfo <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or common player info data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or common player info data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -235,6 +241,7 @@ nba_commonplayoffseries <- function(
     season = year_to_season(most_recent_nba_season() - 2),
     series_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "commonplayoffseries"
   endpoint <- nba_endpoint(version)
@@ -256,9 +263,11 @@ nba_commonplayoffseries <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or common playoff series data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or common playoff series data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -333,6 +342,7 @@ nba_commonteamroster <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     team_id = '1610612739',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "commonteamroster"
   endpoint <- nba_endpoint(version)
@@ -354,9 +364,11 @@ nba_commonteamroster <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or common team roster data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or common team roster data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -400,6 +412,7 @@ NULL
 nba_commonteamyears <- function(
     league_id = '00',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "commonteamyears"
   endpoint <- nba_endpoint(version)
@@ -419,9 +432,11 @@ nba_commonteamyears <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no common team years data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no common team years data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
