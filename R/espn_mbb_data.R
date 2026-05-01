@@ -1030,7 +1030,7 @@ espn_mbb_game_rosters <- function(game_id) {
 #' try(espn_mbb_conferences())
 #' }
 espn_mbb_conferences <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -1790,7 +1790,7 @@ espn_mbb_scoreboard <- function(season) {
 #' try(espn_mbb_rankings())
 #' }
 espn_mbb_rankings <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 

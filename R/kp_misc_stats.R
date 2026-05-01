@@ -37,7 +37,7 @@
 #' try(kp_trends())
 #' }
 kp_trends <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
   kenpom <- NULL
 
   tryCatch(
@@ -306,7 +306,7 @@ kp_referee <- function(referee, year) {
 #' try(kp_hca())
 #' }
 kp_hca <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
   kenpom <- NULL
 
   tryCatch(
