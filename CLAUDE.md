@@ -235,9 +235,19 @@ All HTTP requests use `httr2` as the sole backend. The `httr` package is no long
 - `Referer: https://www.nba.com/`
 
 Shared internal helpers in `utils.R`:
-- `.retry_request(url, params, headers, timeout)` -- performs a GET with retry logic via `httr2`
+- `.retry_request(url, params, headers, timeout, proxy)` -- performs a GET with retry logic via `httr2`
 - `.resp_text(resp)` -- extracts response body as UTF-8 text via `httr2::resp_body_string()`
 - `check_status(res)` -- checks HTTP status via `httr2::resp_status()`
+
+#### Proxy support
+
+Both `request_with_proxy()` and `.retry_request()` accept a `proxy =` argument:
+
+- `proxy = NULL` (default) — libcurl honors the standard `http_proxy` / `https_proxy` / `no_proxy` env vars automatically; nothing else needs threading. **This is the recommended path** — set the env var once in `~/.Renviron` (or the shell) and every wrapper picks it up.
+- `proxy = "http://host:port"` — passed straight to `httr2::req_proxy(url = ...)`. Use for one-off overrides.
+- `proxy = list(url = "...", port = 8080, username = "...", password = "...", auth = "basic")` — spread as keyword args into `httr2::req_proxy()` for authenticated proxies or non-default schemes.
+
+The proxy parameter threads cleanly from any user-facing wrapper through `request_with_proxy()` to `.retry_request()`, so callers can do e.g. `nba_pbp(game_id = "...", proxy = "http://my-proxy:8080")` without modifying the wrappers (the `...` argument forwards `proxy =`).
 
 KenPom functions use separate `httr2`-based helpers:
 - `login()` -- authenticates via `httr2` cookie jar

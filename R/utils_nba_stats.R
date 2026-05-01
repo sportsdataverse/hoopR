@@ -27,19 +27,26 @@
 
 
 #' @title
-#' **Retry http request with proxy**
+#' **Retry http request with optional proxy**
 #' @description
-#' This is a thin wrapper around httr2 for NBA Stats API requests
+#' This is a thin wrapper around httr2 for NBA Stats API requests.
 #' @param url Request url
 #' @param params list of params
 #' @param origin Origin url
 #' @param referer Referer url
-#' @param ... Additional arguments (currently unused)
+#' @param proxy Optional proxy config. `NULL` (default) lets libcurl honor
+#'   the standard `http_proxy` / `https_proxy` / `no_proxy` environment
+#'   variables. A single URL string (e.g. `"http://host:port"`) is forwarded
+#'   to `httr2::req_proxy(url = proxy)`. A named list is spread as keyword
+#'   args into `httr2::req_proxy()` (`url`, `port`, `username`, `password`,
+#'   `auth`) for full control over authenticated proxies.
+#' @param ... Additional arguments (currently unused).
 #' @keywords internal
 request_with_proxy <- function(url,
                                params = list(),
                                origin = "https://stats.nba.com",
                                referer = "https://www.nba.com/",
+                               proxy = NULL,
                                ...) {
   headers <- c(
     `Host` = "stats.nba.com",
@@ -55,7 +62,7 @@ request_with_proxy <- function(url,
     `Cache-Control` = "no-cache"
   )
 
-  resp <- .retry_request(url, params = params, headers = headers)
+  resp <- .retry_request(url, params = params, headers = headers, proxy = proxy)
 
   json <- resp %>%
     .resp_text() %>%

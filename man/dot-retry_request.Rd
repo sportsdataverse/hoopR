@@ -4,7 +4,13 @@
 \alias{.retry_request}
 \title{Perform an HTTP GET request with retry logic}
 \usage{
-.retry_request(url, params = list(), headers = NULL, timeout = 60)
+.retry_request(
+  url,
+  params = list(),
+  headers = NULL,
+  timeout = 60,
+  proxy = NULL
+)
 }
 \arguments{
 \item{url}{The URL to request}

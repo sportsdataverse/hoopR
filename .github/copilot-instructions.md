@@ -45,7 +45,16 @@ All HTTP requests use `httr2` as the sole backend. The `httr` package is no long
 - `request_with_proxy()` in `utils_nba_stats.R` uses `.retry_request()` (an `httr2` wrapper) with required NBA headers (`x-nba-stats-origin`, `x-nba-stats-token`, `Referer`).
 - Shared internal helpers in `utils.R`: `.retry_request()`, `.resp_text()`, `check_status()`.
 - KenPom functions use `httr2`-based helpers: `login()` (cookie jar auth), `.kp_get_page()`, `.kp_request()`.
-- `nba_endpoint()` builds URLs via `glue::glue('https://stats.nba.com/stats/{endpoint}')` -- does NOT validate against its internal endpoint list.
+- `nba_endpoint()` builds URLs via `paste0("https://stats.nba.com/stats/", endpoint)` -- does NOT validate against its internal endpoint list.
+
+### Proxy support
+
+Both `request_with_proxy()` and `.retry_request()` accept a `proxy =` argument:
+- `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy` / `no_proxy` env vars; recommended.
+- `proxy = "http://host:port"` — string form, forwarded to `httr2::req_proxy(url = ...)`.
+- `proxy = list(url=, port=, username=, password=, auth=)` — named list spread into `req_proxy()` for authenticated proxies.
+
+Wrappers forward `proxy` via `...`, so callers can do `nba_pbp(game_id = "...", proxy = "http://my-proxy:8080")` without per-function plumbing.
 
 ## Messaging Layer
 
