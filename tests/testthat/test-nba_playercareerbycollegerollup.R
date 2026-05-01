@@ -6,6 +6,10 @@ test_that("NBA Player Career by College Rollup", {
 
   x <- nba_playercareerbycollegerollup(per_mode = "Totals")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "REGION",
     "SEED",

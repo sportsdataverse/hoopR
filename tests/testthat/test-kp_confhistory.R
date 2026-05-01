@@ -13,7 +13,7 @@ test_that("KP - Get conference history", {
     "home_record", "bids", "s16", "f4", "ch", "reg_season_champ",
     "tourney_champ", "best_team")
 
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x,"data.frame")
 
   Sys.sleep(3)

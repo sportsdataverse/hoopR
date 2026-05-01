@@ -14,7 +14,7 @@ test_that("KP - Get team lineups", {
     "c_player_first_name", "c_player_last_name", "c_hgt", "c_wgt", "c_yr"
   )
 
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

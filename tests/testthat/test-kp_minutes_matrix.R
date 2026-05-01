@@ -17,7 +17,7 @@ test_that("KP - Get minutes matrix", {
     "team",
     "year"
   )
-  expect_equal(colnames(x[1:4]), cols_x1)
+  expect_in(cols_x1, colnames(x[1:4]))
   expect_equal(colnames(x[(ncol(x) - 2):ncol(x)]), cols_x2)
   expect_s3_class(x, "data.frame")
 

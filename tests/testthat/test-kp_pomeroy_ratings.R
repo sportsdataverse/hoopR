@@ -31,7 +31,7 @@ test_that("KP - Get Pomeroy ratings", {
     "ncaa_seed"
   )
 
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

@@ -6,6 +6,10 @@ test_that("NBA Win Probability PBP", {
 
   x <- nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
 
   cols_x1 <- c(
     "GAME_ID",

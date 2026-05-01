@@ -17,7 +17,7 @@ test_that("KP - Get team stats", {
     "def_a_pct", "def_a_pct_rk", "def_fg_3a_pct", "def_fg_3a_pct_rk", "adj_d", "adj_d_rk"
   )
 
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

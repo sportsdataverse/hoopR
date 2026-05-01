@@ -7,6 +7,10 @@ test_that("NBA Player Compare", {
   x <- nba_playercompare(player_id_list = "202681,203078,2544,201567,203954",
                          vs_player_id_list = "201566,201939,201935,201142,203076")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "GROUP_SET",
     "DESCRIPTION",

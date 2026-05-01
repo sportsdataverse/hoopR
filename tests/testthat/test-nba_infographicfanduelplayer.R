@@ -7,6 +7,10 @@ test_that("NBA FanDuel Player Infographic", {
 
   x <- nba_infographicfanduelplayer(game_id = "0022201086")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   cols_x1 <- c(
     "PLAYER_ID",
     "PLAYER_NAME",

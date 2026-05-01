@@ -82,6 +82,8 @@
 
 kp_team_history <- function(team){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -380,6 +382,8 @@ kp_team_history <- function(team){
 #'
 
 kp_coach_history <- function(coach){
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -619,6 +623,8 @@ kp_coach_history <- function(coach){
 
 kp_program_ratings <- function(){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -710,6 +716,8 @@ kp_program_ratings <- function(){
 #'   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 #' }
 kp_pomeroy_archive_ratings <- function(date){
+
+  kenpom <- NULL
 
   tryCatch(
     expr = {
@@ -905,6 +913,8 @@ kp_pomeroy_archive_ratings <- function(date){
 
 kp_conf <- function(year, conf){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1098,6 +1108,8 @@ kp_conf <- function(year, conf){
 
 kp_confstats <- function(year = most_recent_mbb_season()){
 
+  kenpom <- NULL
+
   tryCatch(
     expr = {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
@@ -1211,6 +1223,8 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' }
 
 kp_confhistory <- function(conf){
+
+  kenpom <- NULL
 
   tryCatch(
     expr = {

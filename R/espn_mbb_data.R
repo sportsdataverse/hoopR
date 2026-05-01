@@ -219,6 +219,8 @@ espn_mbb_game_all <- function(game_id) {
   # player_box_score <- data.frame()
 
   #---- Play-by-Play ------
+  pbp <- NULL
+
   tryCatch(
     expr = {
       plays_df <- helper_espn_mbb_pbp(resp)
@@ -387,6 +389,8 @@ espn_mbb_pbp <- function(game_id) {
   # Check the result
   check_status(res)
 
+  plays_df <- NULL
+
   tryCatch(
     expr = {
       resp <- res %>%
@@ -510,6 +514,8 @@ espn_mbb_team_box <- function(game_id) {
   # Check the result
   check_status(res)
 
+  team_box_score <- NULL
+
   tryCatch(
     expr = {
       resp <- res %>%
@@ -632,6 +638,8 @@ espn_mbb_player_box <- function(game_id) {
 
   # Check the result
   check_status(res)
+
+  player_box_score <- NULL
 
   tryCatch(
     expr = {
@@ -757,6 +765,8 @@ espn_mbb_player_box <- function(game_id) {
 espn_mbb_game_rosters <- function(game_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
+  athlete_roster_df <- NULL
+
   tryCatch(
     expr = {
       play_base_url <- paste0(
@@ -1105,6 +1115,8 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
+  teams <- NULL
+
   tryCatch(
     expr = {
       teams_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
@@ -1268,6 +1280,8 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 espn_mbb_team_current_roster <- function(team_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
+
+  team_roster_full <- NULL
 
   tryCatch(
     expr = {
@@ -1763,6 +1777,8 @@ espn_mbb_rankings <- function() {
     "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings?groups=50"
 
 
+  ranks <- NULL
+
   tryCatch(
     expr = {
       res <- .retry_request(ranks_url)
@@ -1943,6 +1959,8 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
 
   # Check the result
   check_status(res)
+  standings <- NULL
+
   tryCatch(
     expr = {
       resp <- res %>%
@@ -2195,6 +2213,8 @@ espn_mbb_betting <- function(game_id) {
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
   predictor_df <- data.frame()
+  betting <- NULL
+
   tryCatch(
     expr = {
       resp <- res %>%

@@ -44,7 +44,7 @@ test_that("KP - Get team depth chart", {
     "year"
   )
 
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

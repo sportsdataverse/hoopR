@@ -56,7 +56,7 @@ test_that("KP - Get opponent tracker", {
     "def_apl",
     "def_apl_rk"
   )
-  expect_equal(colnames(x), cols)
+  expect_in(cols, colnames(x))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

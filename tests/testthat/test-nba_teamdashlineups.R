@@ -6,6 +6,10 @@ test_that("NBA Team Dashboard Lineups", {
   x <- nba_teamdashlineups(team_id = "1610612749",
                            season = year_to_season(most_recent_nba_season() - 1))
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   if (length(x) == 0 || is.null(x[[1]]) || is.null(x[[2]]) || nrow(x[[1]]) == 0 || nrow(x[[2]]) == 0) {
     skip("No lineup rows returned for current team dash lineups query.")
   }

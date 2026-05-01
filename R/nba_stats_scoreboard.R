@@ -681,6 +681,8 @@ nba_scoreboardv3 <- function(
     GameDate = game_date
   )
 
+  games <- NULL
+
   tryCatch(
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
@@ -831,6 +833,8 @@ nba_todays_scoreboard <- function(
     ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
+
+  games <- NULL
 
   tryCatch(
     expr = {

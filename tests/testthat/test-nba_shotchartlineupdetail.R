@@ -6,6 +6,10 @@ test_that("NBA Shot Chart Lineup Detail", {
   x <- nba_shotchartlineupdetail(group_id = "-202689-203493-203501-1626174-1627827-",
                                  season = "2022-23")
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
 
   cols_x1 <- c(
     "GRID_TYPE",

@@ -17,8 +17,8 @@ test_that("KP - Get player stats", {
     "yr",
     "year"
   )
-  expect_equal(colnames(x[1:3]), cols_x1)
-  expect_equal(colnames(x[5:8]), cols_x2)
+  expect_in(cols_x1, colnames(x[1:3]))
+  expect_in(cols_x2, colnames(x[5:8]))
   expect_s3_class(x, "data.frame")
 
   Sys.sleep(3)

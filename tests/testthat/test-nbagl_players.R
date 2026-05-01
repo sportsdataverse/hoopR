@@ -5,6 +5,10 @@ test_that("NBA G-League Players", {
 
   x <- nbagl_players()
 
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+
   expect_true("PlayerIndex" %in% names(x))
   expect_s3_class(x[[1]], "data.frame")
 

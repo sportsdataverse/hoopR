@@ -221,6 +221,8 @@ espn_nba_game_all <- function(game_id) {
     .resp_text()
 
   #---- Play-by-Play ------
+  pbp <- NULL
+
   tryCatch(
     expr = {
       plays_df <- helper_espn_nba_pbp(resp)
@@ -518,6 +520,8 @@ espn_nba_team_box <- function(game_id) {
     .resp_text()
 
   #---- Team Box ------
+  team_box_score <- NULL
+
   tryCatch(
     expr = {
       team_box_score <- helper_espn_nba_team_box(resp)
@@ -642,6 +646,8 @@ espn_nba_player_box <- function(game_id) {
     .resp_text()
 
   #---- Player Box ------
+  player_box_score <- NULL
+
   tryCatch(
     expr = {
       player_box_score <- helper_espn_nba_player_box(resp)
@@ -778,6 +784,8 @@ espn_nba_player_box <- function(game_id) {
 espn_nba_game_rosters <- function(game_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
+  athlete_roster_df <- NULL
+
   tryCatch(
     expr = {
       play_base_url <- paste0(
@@ -1080,6 +1088,8 @@ espn_nba_teams <- function() {
   resp <- res %>%
     .resp_text()
 
+  teams <- NULL
+
   tryCatch(
     expr = {
       leagues <- jsonlite::fromJSON(resp)[["sports"]][["leagues"]][[1]][[
@@ -1178,6 +1188,8 @@ espn_nba_teams <- function() {
 espn_nba_team_current_roster <- function(team_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
+
+  team_roster_full <- NULL
 
   tryCatch(
     expr = {
@@ -1814,6 +1826,8 @@ espn_nba_standings <- function(year) {
 
   # Check the result
   check_status(res)
+  standings <- NULL
+
   tryCatch(
     expr = {
       resp <- res %>%
@@ -2009,6 +2023,8 @@ espn_nba_betting <- function(game_id) {
   pickcenter <- data.frame()
   againstTheSpread <- data.frame()
   predictor_df <- data.frame()
+
+  betting <- NULL
 
   tryCatch(
     expr = {

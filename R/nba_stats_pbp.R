@@ -794,6 +794,8 @@ NULL
 #' @noRd
 #' @family NBA PBP Functions
 .build_player_roster <- function(game_id) {
+  empty_roster <- NULL
+
   tryCatch(
     {
       box <- nba_boxscoretraditionalv3(game_id = game_id)
@@ -1553,6 +1555,8 @@ nba_live_pbp <- function(
     pad_id(game_id),
     ".json"
   )
+
+  data <- NULL
 
   tryCatch(
     expr = {
