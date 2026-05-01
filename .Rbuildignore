@@ -29,3 +29,4 @@ mbb_pbp_db
 ^\.vscode$
 ^\\.claude$
 ^\\.vscode$
+^tools$
