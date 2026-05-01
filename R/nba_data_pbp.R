@@ -73,6 +73,7 @@ NULL
 #'  nba_data_pbp(game_id = "0021900001")
 #' ```
 nba_data_pbp <- function(game_id = "0021900001", ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   league_id <- substr(game_id, 1, 2)
   season_id <- substr(game_id, 4, 5)
   season <- ifelse(
@@ -145,11 +146,11 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
         dplyr::select("game_id", "league", tidyr::everything()) %>%
         make_hoopR_data("NBA Play-by-Play Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue(
-        "{Sys.time()}: Invalid arguments or no play-by-play data for {game_id} available!"
-      ))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no play-by-play data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {},
     finally = {}
   )

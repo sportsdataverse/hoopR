@@ -247,6 +247,59 @@ most_recent_nba_season <- function() {
   )
 }
 
+#' Report an API-call error with full context
+#'
+#' Internal helper that standardizes the message every WNBA / ESPN / NCAA
+#' wrapper emits inside its `tryCatch(error = ...)` block. Always emits, in
+#' order:
+#'
+#' 1. A timestamped friendly hint (glue-interpolated by `cli::cli_alert_danger()`),
+#' 2. A dump of the function call's arguments,
+#' 3. The actual error message (`conditionMessage(e)`).
+#'
+#' Functions opt in by capturing their formals once near the top --
+#' `.args <- mget(setdiff(names(formals()), "..."))` -- and then calling
+#' `.report_api_error(e, hint = "...", args = .args)` from the error handler.
+#'
+#' @param e error condition (the `e` from `function(e)` in `tryCatch`).
+#' @param hint character. A glue-interpolated friendly message (interpolated
+#'   in the *caller's* environment, so `{game_id}`-style references resolve
+#'   against the function's formals). If `NULL`, defaults to "Request failed".
+#' @param args optional named list of caller arguments to dump (typically
+#'   `mget(setdiff(names(formals()), "..."))` captured at function entry).
+#' @return Invisibly `NULL`. Called for its side effects.
+#' @keywords internal
+.report_api_error <- function(e, hint = NULL, args = list()) {
+  caller_env <- parent.frame()
+
+  hint_text <- if (!is.null(hint)) {
+    tryCatch(
+      glue::glue(hint, .envir = caller_env),
+      error = function(.e) hint
+    )
+  } else {
+    "Request failed"
+  }
+
+  cli::cli_alert_danger("{Sys.time()}: {hint_text}")
+
+  if (length(args) > 0) {
+    args_str <- paste0(
+      names(args), " = ",
+      vapply(args, function(a) {
+        s <- tryCatch(deparse(a, width.cutoff = 60)[1],
+                      error = function(...) "<?>")
+        if (nchar(s) > 60) paste0(substr(s, 1, 60), "...") else s
+      }, character(1)),
+      collapse = ", "
+    )
+    cli::cli_alert_danger("Args: {args_str}")
+  }
+
+  cli::cli_alert_danger("Error: {conditionMessage(e)}")
+  invisible(NULL)
+}
+
 #' @title **year to season (XXXX -> XXXX-YY)**
 #' @param year Four digit year (XXXX)
 #' @importFrom dplyr mutate filter select left_join

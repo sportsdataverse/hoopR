@@ -44,6 +44,7 @@
 #' try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 #' }
 kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -113,9 +114,11 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
         dplyr::arrange(-.data$Year, .data$Rk) %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no pomeroy ratings data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no pomeroy ratings data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -168,6 +171,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_efficiency(min_year = 2020, max_year = 2021))
 #' }
 kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -298,9 +302,11 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
         dplyr::arrange(-.data$Year, .data$AdjT.Rk) %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no efficiency data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no efficiency data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -358,6 +364,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_fourfactors(min_year = 2020, max_year = 2021))
 #' }
 kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -435,9 +442,11 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
         dplyr::arrange(-.data$Year, .data$AdjO.Rk) %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no four factors data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no four factors data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -485,6 +494,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_pointdist(min_year = 2020, max_year = 2021))
 #' }
 kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -563,9 +573,11 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no point distribution data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no point distribution data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -621,6 +633,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_height(min_year = 2020, max_year = 2021))
 #' }
 kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -755,9 +768,11 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no height data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no height data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -803,6 +818,7 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 #' }
 kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -874,9 +890,11 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no foul trouble data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no foul trouble data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -949,6 +967,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_teamstats(min_year = 2019, max_year = 2021))
 #' }
 kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -1091,9 +1110,11 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no team stats data for {min_year} - {max_year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team stats data for {min_year} - {max_year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1147,6 +1168,7 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
 #' try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 #' }
 kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -1269,9 +1291,11 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
           janitor::clean_names()
       }
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player stats data for {year} {metric} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no player stats data for {year} {metric} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1333,6 +1357,7 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 #' }
 #'
 kp_kpoy <- function(year = most_recent_mbb_season()) {
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -1427,9 +1452,11 @@ kp_kpoy <- function(year = most_recent_mbb_season()) {
       kenpom <- y
       names(kenpom) <- c("KPoYRatings", "GameMVPs")
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no KenPom player of the year data for {year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no KenPom player of the year data for {year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

@@ -121,6 +121,7 @@ nba_videodetailsasset <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -176,9 +177,11 @@ nba_videodetailsasset <- function(
       names(df_list) <- c("videoUrls", "playlist")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no video detail assets data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no video detail assets data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -316,6 +319,7 @@ nba_videodetails <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -376,9 +380,11 @@ nba_videodetails <- function(
       names(df_list) <- c("videoUrls", "playlist")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no video details data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no video details data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -412,6 +418,7 @@ nba_videoevents <- function(
     game_id = '0021700807',
     game_event_id = '10',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "videoevents"
   endpoint <- nba_endpoint(version)
@@ -440,9 +447,11 @@ nba_videoevents <- function(
       names(df_list) <- c("videoUrls", "playlist")
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no video events data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no video events data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -497,6 +506,7 @@ nba_videostatus <- function(
     game_date = '2023-03-10',
     league_id = '00',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "videostatus"
   endpoint <- nba_endpoint(version)
@@ -517,9 +527,11 @@ nba_videostatus <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no video status data for {game_date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no video status data for {game_date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -553,6 +565,7 @@ nba_videoeventsasset <- function(
     game_id,
     game_event_id = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "videoeventsasset"
   endpoint <- nba_endpoint(version)
@@ -577,9 +590,11 @@ nba_videoeventsasset <- function(
       }
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no video events asset data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no video events asset data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

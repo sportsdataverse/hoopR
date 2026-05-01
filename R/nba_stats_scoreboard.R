@@ -74,6 +74,7 @@ nba_schedule <- function(
     league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -132,9 +133,11 @@ nba_schedule <- function(
           game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
         )
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league schedule data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league schedule data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -303,6 +306,7 @@ nba_scoreboard <- function(
     game_date = "2021-07-20",
     day_offset = 0,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_scoreboard()",
@@ -329,9 +333,11 @@ nba_scoreboard <- function(
 
       df_list <- nba_stats_map_result_sets(resp)
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard data for {game_date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no scoreboard data for {game_date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -531,6 +537,7 @@ nba_scoreboardv2 <- function(
     game_date = "2021-07-20",
     day_offset = 0,
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_scoreboardv2()",
@@ -554,9 +561,11 @@ nba_scoreboardv2 <- function(
 
       df_list <- nba_stats_map_result_sets(resp)
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboardv2 data for {game_date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no scoreboardv2 data for {game_date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -673,6 +682,7 @@ nba_scoreboardv3 <- function(
     league_id = "00",
     game_date = "2023-03-26",
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   version <- "scoreboardv3"
   full_url <- nba_endpoint(version)
 
@@ -736,9 +746,11 @@ nba_scoreboardv3 <- function(
         dplyr::relocate("broadcasters", .after = dplyr::last_col()) %>%
         make_hoopR_data("NBA Scoreboard V3 Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoreboard v3 data for {game_date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no scoreboard v3 data for {game_date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -831,6 +843,7 @@ NULL
 #' ```
 nba_todays_scoreboard <- function(
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -864,9 +877,11 @@ nba_todays_scoreboard <- function(
         janitor::clean_names() %>%
         make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no today's scoreboard data available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no today's scoreboard data available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -943,6 +958,7 @@ nba_winprobabilitypbp <- function(
     game_id = "0021700807",
     run_type = "each second",
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_winprobabilitypbp()",
@@ -969,9 +985,11 @@ nba_winprobabilitypbp <- function(
 
       df_list <- nba_stats_map_result_sets(resp)
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no win probability pbp data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no win probability pbp data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1060,6 +1078,7 @@ nba_scheduleleaguev2int <- function(
     league_id = "00",
     season = year_to_season(most_recent_nba_season() - 1),
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -1143,9 +1162,11 @@ nba_scheduleleaguev2int <- function(
       df_list <- c(list(games), list(weeks_df), list(broadcast_df))
       names(df_list) <- c("SeasonGames", "SeasonWeeks", "BroadcasterList")
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no international schedule data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no international schedule data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

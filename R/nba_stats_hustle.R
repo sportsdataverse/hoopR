@@ -108,6 +108,7 @@ nba_leaguehustlestatsplayer <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   #intentional
   # season_type <- gsub(' ','+',season_type)
@@ -153,9 +154,11 @@ nba_leaguehustlestatsplayer <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle player stats data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league hustle player stats data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -318,6 +321,7 @@ nba_leaguehustlestatsplayerleaders <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
   version <- "leaguehustlestatsplayerleaders"
@@ -362,9 +366,11 @@ nba_leaguehustlestatsplayerleaders <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle stats player leaders data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league hustle stats player leaders data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -473,6 +479,7 @@ nba_leaguehustlestatsteam <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ','+',season_type)
@@ -518,9 +525,11 @@ nba_leaguehustlestatsteam <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle team stats data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league hustle team stats data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -679,6 +688,7 @@ nba_leaguehustlestatsteamleaders <- function(
     vs_division = '',
     weight = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ','+',season_type)
@@ -724,9 +734,11 @@ nba_leaguehustlestatsteamleaders <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league hustle team stats leaders data available for {season}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league hustle team stats leaders data available for {season}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

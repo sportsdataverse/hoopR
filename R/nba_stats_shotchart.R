@@ -104,6 +104,7 @@ nba_shotchartdetail <- function(
     vs_conference = '',
     vs_division = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -145,9 +146,11 @@ nba_shotchartdetail <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no shot chart detail data for {player_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no shot chart detail data for {player_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -196,6 +199,7 @@ nba_shotchartleaguewide <- function(
     league_id = '00',
     season = year_to_season(most_recent_nba_season() - 1),
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "shotchartleaguewide"
   endpoint <- nba_endpoint(version)
@@ -216,9 +220,11 @@ nba_shotchartleaguewide <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no league-wide shot chart data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no league-wide shot chart data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -406,6 +412,7 @@ nba_shotchartlineupdetail <- function(
     vs_player_id5 = '',
     vs_team_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -482,9 +489,11 @@ nba_shotchartlineupdetail <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no shot chart lineup data available for {season}! (group_id: {group_id})"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no shot chart lineup data available for {season}! (group_id: {group_id})",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

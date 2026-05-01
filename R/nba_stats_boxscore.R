@@ -129,6 +129,7 @@ nba_boxscoretraditionalv2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "boxscoretraditionalv2"
   endpoint <- nba_endpoint(version)
@@ -153,9 +154,11 @@ nba_boxscoretraditionalv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no traditional boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no traditional boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -268,6 +271,7 @@ nba_boxscoreadvancedv2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "boxscoreadvancedv2"
   endpoint <- nba_endpoint(version)
@@ -292,9 +296,11 @@ nba_boxscoreadvancedv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no advanced boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no advanced boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -326,6 +332,7 @@ NULL
 nba_boxscoredefensive <- function(
     game_id,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "boxscoredefensive"
   endpoint <- nba_endpoint(version)
@@ -345,9 +352,11 @@ nba_boxscoredefensive <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no defensive boxscore data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no defensive boxscore data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -439,6 +448,7 @@ nba_boxscorefourfactorsv2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -469,9 +479,11 @@ nba_boxscorefourfactorsv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no four factors boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no four factors boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -571,6 +583,7 @@ nba_boxscoremiscv2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -601,9 +614,11 @@ nba_boxscoremiscv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no miscellaneous boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no miscellaneous boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -709,6 +724,7 @@ nba_boxscorescoringv2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -739,9 +755,11 @@ nba_boxscorescoringv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no scoring boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no scoring boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -853,6 +871,7 @@ nba_boxscoreusagev2 <- function(
     end_range = 0,
     range_type = 0,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -883,9 +902,11 @@ nba_boxscoreusagev2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no usage boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no usage boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1065,6 +1086,7 @@ NULL
 nba_boxscoresummaryv2 <- function(
     game_id,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "boxscoresummaryv2"
   endpoint <- nba_endpoint(version)
@@ -1084,9 +1106,11 @@ nba_boxscoresummaryv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no summary boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no summary boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1118,6 +1142,7 @@ NULL
 nba_boxscorematchups <- function(
     game_id,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   endpoint <- nba_endpoint('boxscorematchups')
   full_url <- endpoint
@@ -1136,9 +1161,11 @@ nba_boxscorematchups <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no matchups boxscore data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no matchups boxscore data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1243,6 +1270,7 @@ NULL
 nba_boxscoreplayertrackv2 <- function(
     game_id,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   lifecycle::deprecate_stop(
     when = "3.0.0",
@@ -1268,9 +1296,11 @@ nba_boxscoreplayertrackv2 <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no  player tracking boxscore v2 data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no  player tracking boxscore v2 data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1370,6 +1400,7 @@ NULL
 nba_hustlestatsboxscore <- function(
     game_id,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   version <- "hustlestatsboxscore"
   endpoint <- nba_endpoint(version)
@@ -1389,9 +1420,11 @@ nba_hustlestatsboxscore <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no hustle stats boxscore data for {game_id} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no hustle stats boxscore data for {game_id} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1449,6 +1482,7 @@ nba_boxscoresimilarityscore <- function(
     person_2_season = most_recent_nba_season() - 3,
     person_2_season_type = 'Regular Season',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   person_1_season_type <- gsub(' ', '+', person_1_season_type)
   person_2_season_type <- gsub(' ', '+', person_2_season_type)
@@ -1486,9 +1520,11 @@ nba_boxscoresimilarityscore <- function(
       names(df_list) <- resp$resultSet$name
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no boxscore similarity data for given parameters available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no boxscore similarity data for given parameters available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1531,6 +1567,7 @@ nba_glalumboxscoresimilarityscore <- function(
     person_2_season,
     person_2_season_type,
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   person_1_season_type <- gsub(' ', '+', person_1_season_type)
   person_2_season_type <- gsub(' ', '+', person_2_season_type)
@@ -1559,9 +1596,11 @@ nba_glalumboxscoresimilarityscore <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no G-League alum boxscore similarity data for given parameters available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no G-League alum boxscore similarity data for given parameters available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

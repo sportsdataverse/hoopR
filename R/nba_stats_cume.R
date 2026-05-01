@@ -121,6 +121,7 @@ nba_cumestatsplayer <- function(
     season_type = 'Regular Season',
     team_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -147,9 +148,11 @@ nba_cumestatsplayer <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative player stats data available for {player_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no cumulative player stats data available for {player_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -206,6 +209,7 @@ nba_cumestatsplayergames <- function(
     vs_division = '',
     vs_team_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -235,9 +239,11 @@ nba_cumestatsplayergames <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative player game stats data available for {player_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no cumulative player game stats data available for {player_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -375,6 +381,7 @@ nba_cumestatsteam <- function(
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -400,9 +407,11 @@ nba_cumestatsteam <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative team stats data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no cumulative team stats data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -460,6 +469,7 @@ nba_cumestatsteamgames <- function(
     vs_division = '',
     vs_team_id = '',
     ...){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
   # season_type <- gsub(' ', '+', season_type)
@@ -490,9 +500,11 @@ nba_cumestatsteamgames <- function(
       df_list <- nba_stats_map_result_sets(resp)
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no cumulative team game stats data available for {team_id}!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no cumulative team game stats data available for {team_id}!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

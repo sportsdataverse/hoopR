@@ -81,6 +81,7 @@
 #'
 
 kp_team_history <- function(team){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -288,9 +289,11 @@ kp_team_history <- function(team){
         janitor::clean_names()
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no team history data for {team} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no team history data for {team} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -382,6 +385,7 @@ kp_team_history <- function(team){
 #'
 
 kp_coach_history <- function(coach){
+  .args <- mget(setdiff(names(formals()), "..."))
   kenpom <- NULL
 
   tryCatch(
@@ -573,9 +577,11 @@ kp_coach_history <- function(coach){
 
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no coach history data for {coach} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no coach history data for {coach} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -622,6 +628,7 @@ kp_coach_history <- function(coach){
 #' }
 
 kp_program_ratings <- function(){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -662,9 +669,11 @@ kp_program_ratings <- function(){
         janitor::clean_names()
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no program ratings available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no program ratings available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -716,6 +725,7 @@ kp_program_ratings <- function(){
 #'   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 #' }
 kp_pomeroy_archive_ratings <- function(date){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -762,9 +772,11 @@ kp_pomeroy_archive_ratings <- function(date){
         janitor::clean_names()
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no kp_pomeroy_archive_ratings data for {date} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no kp_pomeroy_archive_ratings data for {date} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -912,6 +924,7 @@ kp_pomeroy_archive_ratings <- function(date){
 #' }
 
 kp_conf <- function(year, conf){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1037,9 +1050,11 @@ kp_conf <- function(year, conf){
       )
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no conference data for {year} {conf} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no conference data for {year} {conf} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1107,6 +1122,7 @@ kp_conf <- function(year, conf){
 #' }
 
 kp_confstats <- function(year = most_recent_mbb_season()){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1154,9 +1170,11 @@ kp_confstats <- function(year = most_recent_mbb_season()){
         janitor::clean_names()
 
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no conference stats data for {year} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no conference stats data for {year} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
@@ -1223,6 +1241,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' }
 
 kp_confhistory <- function(conf){
+  .args <- mget(setdiff(names(formals()), "..."))
 
   kenpom <- NULL
 
@@ -1273,9 +1292,11 @@ kp_confhistory <- function(conf){
       kenpom <- x %>%
         janitor::clean_names()
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no conference history data for {conf} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no conference history data for {conf} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {

@@ -74,6 +74,7 @@ nbagl_players <- function(
     active = "",
     all_star = "",
     ...) {
+  .args <- mget(setdiff(names(formals()), "..."))
   # Intentional
   # season_type <- gsub(' ', '+', season_type)
   version <- "playerindex"
@@ -106,9 +107,11 @@ nbagl_players <- function(
 
       df_list <- nba_stats_map_result_sets(resp)
     },
-    error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no player index data for {season} available!"))
-    },
+    error = function(e) .report_api_error(
+      e,
+      hint = "Invalid arguments or no player index data for {season} available!",
+      args = .args
+    ),
     warning = function(w) {
     },
     finally = {
