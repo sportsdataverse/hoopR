@@ -209,6 +209,35 @@ CRAN release: 2026-03-24
 
 #### **Bug Fixes**
 
+- [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  — migrated off the retired `stats.nba.com/stats/scheduleleaguev2`
+  endpoint (returns `Connection was reset` across multiple client
+  environments; issues
+  [\#184](https://github.com/sportsdataverse/hoopR/issues/184) and
+  [\#187](https://github.com/sportsdataverse/hoopR/issues/187)) to the
+  public CDN at
+  `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. The CDN
+  serves the same `leagueSchedule.gameDates[].games[]` payload as the
+  dead stats endpoint, requires no authentication or special headers,
+  and stays current with the live NBA season. G-League schedules now
+  come from the `_2`-suffixed variant on the same CDN. For historical
+  seasons (CDN only serves the current season) the function now emits a
+  [`message()`](https://rdrr.io/r/base/message.html) directing users at
+  `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL`
+  before the `tryCatch` so an upstream HTTP error surfaces the
+  `cli`/`message` alert instead of `object 'games' not found` (issue
+  [\#184](https://github.com/sportsdataverse/hoopR/issues/184)).
+  Verified 2026-05-16: returns 1,398 NBA games × 52 cols for the current
+  2025-26 season.
+- [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.md)
+  — reordered the outgoing query-string parameter ordering to put
+  `LeagueID` first. As of 2026 the NBA Stats API rejects the
+  alphabetical ordering
+  (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a
+  Cloudflare HTML error page; `LeagueID`-first ordering matches what the
+  nba.com client sends and parses successfully. Verified 2026-05-16:
+  returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the
+  WNBA equivalent in `wehoop`.
 - Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API
   wrapper functions, preventing crashes on API errors.
 - Fixed
