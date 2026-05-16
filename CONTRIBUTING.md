@@ -4,27 +4,16 @@
 [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Contributing to hoopR](#contributing-to-hoopr)
-  - [Development Setup](#development-setup)
-  - [Workflow](#workflow)
-    - [Making Changes](#making-changes)
-    - [Adding a New NBA Stats API
-      Endpoint](#adding-a-new-nba-stats-api-endpoint)
-  - [Naming Conventions](#naming-conventions)
-    - [Function Names](#function-names)
-    - [General Naming Rules](#general-naming-rules)
-    - [V2 vs V3 API Patterns](#v2-vs-v3-api-patterns)
-    - [Data Processing Pipeline](#data-processing-pipeline)
-    - [Roxygen Documentation](#roxygen-documentation)
-    - [Code Style](#code-style)
-  - [Commit Messages](#commit-messages)
-  - [Pull Requests](#pull-requests)
-  - [Testing](#testing)
-    - [Environment Variables](#environment-variables)
-    - [Test Pattern](#test-pattern)
-    - [Rate Limiting](#rate-limiting)
-  - [CI / GitHub Actions](#ci--github-actions)
-  - [Reporting Issues](#reporting-issues)
-  - [License](#license)
+- [Development Setup](#development-setup)
+- [Workflow](#workflow)
+- [Naming Conventions](#naming-conventions)
+- [Documentation Maintenance](#documentation-maintenance)
+- [Commit Messages](#commit-messages)
+- [Pull Requests](#pull-requests)
+- [Testing](#testing)
+- [CI / GitHub Actions](#ci-github-actions)
+- [Reporting Issues](#reporting-issues)
+- [License](#license)
 
 Thank you for your interest in contributing to hoopR! This guide will
 help you get started.
@@ -70,14 +59,14 @@ help you get started.
 
 ### Function Names
 
-| Data Source   | Prefix                    | Example                                                                                                                                                                                              |
-|---------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NBA Stats API | `nba_`                    | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
-| ESPN API      | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)                                 |
-| KenPom        | `kp_`                     | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md)                                     |
-| NBA G-League  | `nbagl_`                  | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)                           |
-| NCAA          | `ncaa_mbb_`               | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md)                                                                                                                  |
-| Data loaders  | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md)                           |
+| Data Source | Prefix | Example |
+|----|----|----|
+| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
+| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
+| KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
+| NBA G-League | `nbagl_` | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md) |
+| NCAA | `ncaa_mbb_` | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md) |
+| Data loaders | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md) |
 
 ### General Naming Rules
 
@@ -112,6 +101,7 @@ help you get started.
 All returned data frames must pass through:
 
 ``` r
+
 raw_data %>%
   data.frame(stringsAsFactors = FALSE) %>%
   dplyr::as_tibble() %>%
@@ -143,6 +133,104 @@ Every exported function needs:
 - Game IDs must be passed through `pad_id()` before API calls
 - Use `%||%` (rlang) for null-safe defaults when parsing API responses
 
+## Documentation Maintenance
+
+Two regeneration steps are part of the commit workflow whenever the
+relevant sources change. Both are mechanical — never edit the generated
+regions by hand.
+
+### Markdown TOCs (doctoc)
+
+`NEWS.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
+`.github/copilot-instructions.md`, and
+`.github/PULL_REQUEST_TEMPLATE.md` carry a doctoc-generated table of
+contents inside the standard marker comments. After editing any of those
+files, regenerate the TOC before committing:
+
+``` sh
+Rscript tools/run_doctoc.R --maxlevel 2 \
+  NEWS.md CLAUDE.md CONTRIBUTING.md \
+  .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md
+```
+
+`cran-comments.md` is intentionally excluded — it is a short
+release-notes file submitted to CRAN and does not need a TOC.
+
+`tools/run_doctoc.R` is a no-deps R replacement for the npm `doctoc` CLI
+— it produces output indistinguishable from the upstream tool, is
+idempotent (a no-op if no headings changed), and runs without Node.js.
+Use `--maxlevel 2` so the TOC only lists `#` and `##` headings; level-3
+sub-entries crowd the nav.
+
+### README.md (rmarkdown)
+
+`README.md` is rendered from `README.Rmd`. The Rmd carries
+`output: github_document: { toc: true, toc_depth: 2 }`, so the README
+has its own auto-generated TOC. After editing `README.Rmd`, re-render
+before committing:
+
+``` r
+
+devtools::build_readme()
+```
+
+Commit `README.Rmd` and the regenerated `README.md` together. Never
+hand-edit `README.md`.
+
+### DESCRIPTION (usethis)
+
+After editing `DESCRIPTION` (adding/removing packages, bumping versions,
+updating `Authors@R`, etc.), normalize formatting before committing:
+
+``` r
+
+usethis::use_tidy_description()
+```
+
+This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows
+long lines so subsequent diffs stay minimal. Run it even for one-line
+edits.
+
+### Release notes triad: NEWS.md / cran-comments.md / \_pkgdown.yml
+
+Three files describe the same release at different audiences. Whenever
+you add a `NEWS.md` bullet, **think through all three before
+committing**:
+
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered
+  into the pkgdown changelog. **All new bullets go under the most recent
+  unreleased version heading** (currently `# **hoopR 3.0.0**`). Do NOT
+  create a new version section ahead of release. Add to or extend an
+  existing subsection (`### Bug Fixes`, `### Deprecations`,
+  `### Stability and Test Robustness`, etc.) instead of starting a new
+  one when the change is incremental. Once `3.0.0` ships to CRAN, the
+  development version gets its own heading and the rule rolls forward.
+
+- **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral
+  or user-visible change you add to `NEWS.md` should also be reflected
+  in `cran-comments.md` before submission. The two files are not
+  duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md`
+  is the short-form release summary. If a `NEWS.md` bullet is purely
+  internal (refactor, test infrastructure, dev tooling) it can be
+  omitted from `cran-comments.md`.
+
+- **`_pkgdown.yml`** — the pkgdown reference index. New exported
+  functions need to land in the right `reference:` section. The existing
+  hoopR config uses `starts_with("nba_")` / `starts_with("espn_")` /
+  `starts_with("kp_")` / `starts_with("ncaa_")` selectors so new
+  functions matching those prefixes are picked up automatically;
+  explicitly-listed functions need a manual entry. Functions deprecated
+  via
+  [`lifecycle::deprecate_stop()`](https://lifecycle.r-lib.org/reference/deprecate_soft.html) +
+  `@keywords internal` are excluded from the rendered index by default —
+  preview with
+  [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html)
+  when in doubt.
+
+When the change touches the API surface (new export, deprecation,
+removal), include a one-line note in your commit message confirming
+you’ve checked all three files.
+
 ## Commit Messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/):
@@ -171,6 +259,7 @@ Tests for different API sources are gated behind environment variables.
 Set them before running tests:
 
 ``` r
+
 # Enable specific test suites
 Sys.setenv(NBA_STATS_TESTS = "1")     # NBA Stats API tests
 Sys.setenv(ESPN_TESTS = "1")          # ESPN API tests
@@ -204,6 +293,7 @@ responses.
 When writing tests for NBA Stats API endpoints, follow this pattern:
 
 ``` r
+
 test_that("NBA Endpoint Name", {
   skip_on_cran()
   skip_on_ci()

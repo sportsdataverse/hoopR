@@ -97,8 +97,28 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> 2026-03-26 14:51:23.924513 - No Player Data available for Florida St. in 2024
-#> Error in kp_team_players(team = "Florida St.", year = 2024) : 
-#>   object 'kenpom' not found
+#> # A tibble: 13 × 54
+#>    role       number player ht       wt yr        g     s min_pct o_rtg poss_pct
+#>    <chr>       <dbl> <chr>  <chr> <dbl> <chr> <dbl> <dbl>   <dbl> <dbl>    <dbl>
+#>  1 Go-to Guys      2 "Jami… 6-7     210 Jr       33    33    70.2 110.      28.2
+#>  2 Major Con…     23 "Prim… 6-3     185 Jr       24    NA    41.3  92.4     27.1
+#>  3 Role Play…     22 "Dari… 6-5     195 Sr       32    32    72.4 106.      17.1
+#>  4 Role Play…     11 "Baba… 6-11    204 So       33    32    61.7  98.3     17.8
+#>  5 Role Play…      1 "Jale… 6-7     205 Jr       33    32    60.1 106.      18.5
+#>  6 Role Play…      3 "Cam … 6-10    225 So       28    12    45.2 122.      18.5
+#>  7 Role Play…      0 "Chan… 6-5     220 So       31     1    34.2 113.      16.4
+#>  8 Role Play…      5 "De'A… 6-9     210 So       31    20    27.8 106       19.8
+#>  9 Role Play…     10 "Tayl… 6-10    195 Fr       31    NA    25.7 101.      16.4
+#> 10 Limited R…     20 "Josh… 6-5     200 Sr       32     1    22.5  92.6     14.9
+#> 11 Limited R…     33 "Jayl… 6-10    230 Sr       28     1    22.3 103       13.3
+#> 12 Benchwarm…     21 "Cam'… 6-7     220 Sr        7    NA     8.4  86.2     27.9
+#> 13 Benchwarm…     12 "Tom … 6-7     200 So       23    NA     6.3 110.      19.6
+#> # ℹ 43 more variables: shots_pct <dbl>, e_fg_pct <dbl>, ts_pct <dbl>,
+#> #   or_pct <dbl>, dr_pct <dbl>, a_rate <dbl>, to_rate <dbl>, blk_pct <dbl>,
+#> #   stl_pct <dbl>, f_cper40 <dbl>, f_dper40 <dbl>, ft_rate <dbl>, ftm <dbl>,
+#> #   fta <dbl>, ft_pct <dbl>, fgm_2 <dbl>, fga_2 <dbl>, fg_2_pct <dbl>,
+#> #   fgm_3 <dbl>, fga_3 <dbl>, fg_3_pct <dbl>, min_pct_rk <dbl>, o_rtg_rk <dbl>,
+#> #   poss_pct_rk <dbl>, shots_pct_rk <dbl>, e_fg_pct_rk <dbl>, ts_pct_rk <dbl>,
+#> #   or_pct_rk <dbl>, dr_pct_rk <dbl>, a_rate_rk <dbl>, to_rate_rk <dbl>, …
   # }
 ```

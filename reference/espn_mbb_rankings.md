@@ -82,21 +82,21 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_rankings())
 #> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-26 14:50:52 UTC
-#> # A tibble: 77 × 39
+#> ℹ Data updated: 2026-05-16 19:40:54 UTC
+#> # A tibble: 81 × 39
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>
-#>  1     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       1        1   1418
-#>  2     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       2        2   1372
-#>  3     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       3        3   1310
-#>  4     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       4        4   1221
-#>  5     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       5        5   1214
-#>  6     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       6        7   1096
-#>  7     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       7        6   1032
-#>  8     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       8       18    912
-#>  9     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20       9       10    903
-#> 10     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 20      10       13    860
-#> # ℹ 67 more rows
+#>  1     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        1        3   1425
+#>  2     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        2        7   1352
+#>  3     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        3        2   1311
+#>  4     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        4        1   1237
+#>  5     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        5       13   1228
+#>  6     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        6        8   1113
+#>  7     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        7        5   1021
+#>  8     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        8        6    924
+#>  9     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3        9        4    909
+#> 10     1 AP To… AP Poll    ap    2026 NC… 2026 : Week 3       10       10    891
+#> # ℹ 71 more rows
 #> # ℹ 30 more variables: first_place_votes <int>, trend <chr>, date <chr>,
 #> #   last_updated <chr>, record_summary <chr>, team_id <int>, team_uid <chr>,
 #> #   team_location <chr>, team_name <chr>, team_nickname <chr>,

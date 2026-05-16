@@ -39,6 +39,7 @@ show you some of what you can do with this edition of the package.
 ### **Install** [**`hoopR`**](https://hoopr.sportsdataverse.org/)
 
 ``` r
+
 # You can install using the pacman package using the following code:
 if (!requireNamespace('pacman', quietly = TRUE)){
   install.packages('pacman')
@@ -105,6 +106,7 @@ back to.
 #### **NBA play-by-plays (2002-2026) ~ 60-120 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   nba_pbp <- hoopR::load_nba_pbp(2021:hoopR::most_recent_nba_season())
@@ -112,19 +114,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 27.207 sec elapsed
+    ## 26.916 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-    ## 3496133 rows of nba play-by-play data from 7429 games.
+    ## 3603963 rows of nba play-by-play data from 7654 games.
 
 ``` r
+
 dplyr::glimpse(nba_pbp)
 ```
 
-    ## Rows: 3,496,133
+    ## Rows: 3,603,963
     ## Columns: 64
     ## $ game_play_number                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
     ## $ id                              <dbl> 4013441404, 4013441407, 4013441408, 40…
@@ -194,6 +198,7 @@ dplyr::glimpse(nba_pbp)
 #### **NBA team box scores (2002-2026) ~ 5-30 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   nba_team_box <- hoopR::load_nba_team_box(2021:hoopR::most_recent_nba_season())
@@ -202,19 +207,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.816 sec elapsed
+    ## 3.023 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 14782 rows of NBA team boxscore data from 7391 games.
+    ## 15208 rows of NBA team boxscore data from 7604 games.
 
 ``` r
+
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 14,782
+    ## Rows: 15,208
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -279,6 +286,7 @@ dplyr::glimpse(nba_team_box)
 #### **NBA player box scores (2002-2026) ~ 5-30 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   nba_player_box <- hoopR::load_nba_player_box(2021:hoopR::most_recent_nba_season())
@@ -286,19 +294,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.491 sec elapsed
+    ## 3.897 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
 ```
 
-    ## 195339 rows of NBA player boxscore data from 7442 games.
+    ## 201143 rows of NBA player boxscore data from 7655 games.
 
 ``` r
+
 dplyr::glimpse(nba_player_box)
 ```
 
-    ## Rows: 195,339
+    ## Rows: 201,143
     ## Columns: 57
     ## $ game_id                           <int> 401344140, 401344140, 401344140, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -361,6 +371,7 @@ dplyr::glimpse(nba_player_box)
 #### **Men’s college basketball play-by-plays (2006-2026) ~ 120-180 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   mbb_pbp <- hoopR::load_mbb_pbp(2021:hoopR::most_recent_mbb_season())
@@ -368,19 +379,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 70.798 sec elapsed
+    ## 74.939 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
 ```
 
-    ## 12084153 rows of men's college basketball play-by-play data from 34220 games.
+    ## 12225017 rows of men's college basketball play-by-play data from 34523 games.
 
 ``` r
+
 dplyr::glimpse(mbb_pbp)
 ```
 
-    ## Rows: 12,084,153
+    ## Rows: 12,225,017
     ## Columns: 69
     ## $ id                              <dbl> 4.013109e+17, 4.013109e+17, 4.013109e+…
     ## $ sequence_number                 <chr> "101799901", "101806001", "101806002",…
@@ -455,6 +468,7 @@ dplyr::glimpse(mbb_pbp)
 #### **Men’s college basketball team box scores (2003-2026) ~ 5-30 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   mbb_team_box <- hoopR::load_mbb_team_box(2021:hoopR::most_recent_mbb_season())
@@ -462,19 +476,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.684 sec elapsed
+    ## 3.169 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
 ```
 
-    ## 70446 rows of men's college basketball team boxscore data from 35223 games.
+    ## 70586 rows of men's college basketball team boxscore data from 35293 games.
 
 ``` r
+
 dplyr::glimpse(mbb_team_box)
 ```
 
-    ## Rows: 70,446
+    ## Rows: 70,586
     ## Columns: 59
     ## $ game_id                           <int> 401310865, 401310865, 401310867, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -539,6 +555,7 @@ dplyr::glimpse(mbb_team_box)
 #### **Men’s college basketball player box scores (2003-2026) ~ 5-30 seconds**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   mbb_player_box <- hoopR::load_mbb_player_box(2021:hoopR::most_recent_mbb_season())
@@ -546,19 +563,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.275 sec elapsed
+    ## 9.111 sec elapsed
 
 ``` r
+
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 1123516 rows of men's college basketball player boxscore data from 35217 games.
+    ## 1126146 rows of men's college basketball player boxscore data from 35302 games.
 
 ``` r
+
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 1,123,516
+    ## Rows: 1,126,146
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …

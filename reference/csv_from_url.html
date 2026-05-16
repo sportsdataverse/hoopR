@@ -147,7 +147,7 @@
     If type coercion results in an error, introduces <code>NA</code>s, or would result in loss of accuracy, the coercion attempt is aborted for that column with warning and the column's type is left unchanged. If you really desire data loss (e.g. reading <code>3.14</code> as <code>integer</code>) you have to truncate such columns afterwards yourself explicitly so that this is clear to future readers of your code.</p></dd>
 
     <dt><code>integer64</code></dt>
-<dd><p>"integer64" (default) reads columns detected as containing integers larger than 2^31 as type <code><a href="https://rdrr.io/pkg/bit64/man/bit64-package.html" class="external-link">bit64::integer64</a></code>. Alternatively, <code>"double"|"numeric"</code> reads as <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">utils::read.csv</a></code> does; i.e., possibly with loss of precision and if so silently. Or, "character".</p></dd>
+<dd><p>"integer64" (default) reads columns detected as containing integers larger than 2^31 as type <code><a href="https://bit64.r-lib.org/reference/bit64-package.html" class="external-link">bit64::integer64</a></code>. Alternatively, <code>"double"|"numeric"</code> reads as <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">utils::read.csv</a></code> does; i.e., possibly with loss of precision and if so silently. Or, "character".</p></dd>
 
     <dt><code>dec</code></dt>
 <dd><p>The decimal separator as in <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">utils::read.csv</a></code>. When <code>"auto"</code> (the default), an attempt is made to decide whether <code>"."</code> or <code>","</code> is more suitable for this input. See details.</p></dd>

@@ -6,7 +6,13 @@ Supports optional query parameters and custom headers.
 ## Usage
 
 ``` r
-.retry_request(url, params = list(), headers = NULL, timeout = 60)
+.retry_request(
+  url,
+  params = list(),
+  headers = NULL,
+  timeout = 60,
+  proxy = NULL
+)
 ```
 
 ## Arguments

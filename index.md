@@ -1,5 +1,19 @@
 # 
 
+- [](#section)
+- [hoopR](#hoopr-)
+  [![](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [**Documentation**](#documentation)
+  - [**Breaking Changes**](#breaking-changes)
+  - [Follow the SportsDataverse (@SportsDataverse) on X and star this
+    repo](#follow-the-sportsdataverse-sportsdataverse-on-x-and-star-this-repo)
+  - [**Our Authors**](#our-authors)
+  - [**Our Contributors (they’re
+    awesome)**](#our-contributors-theyre-awesome)
+  - [**Citations**](#citations)
+
 # hoopR
 
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
@@ -22,6 +36,7 @@ You can install the CRAN version of
 [**`hoopR`**](https://CRAN.R-project.org/package=hoopR) with:
 
 ``` r
+
 install.packages("hoopR")
 ```
 
@@ -30,6 +45,7 @@ You can install the released version of
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ``` r
+
 # You can install using the pak package using the following code:
 if (!requireNamespace('pak', quietly = TRUE)){
   install.packages('pak')
@@ -42,6 +58,7 @@ pak::pak("sportsdataverse/hoopR")
 ### **NBA full play-by-play seasons (2002-2026) ~ 1-2 minutes**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   nba_pbp <- hoopR::load_nba_pbp()
@@ -50,14 +67,15 @@ tictoc::toc()
 ```
 
 ``` R
-## 2.85 sec elapsed
+## 3.39 sec elapsed
 
-## 519304 rows of NBA play-by-play data from 1069 games.
+## 619841 rows of NBA play-by-play data from 1279 games.
 ```
 
 ### **Men’s college basketball full play-by-play seasons (2006-2026) ~ 2-3 minutes**
 
 ``` r
+
 tictoc::tic()
 progressr::with_progress({
   mbb_pbp <-  hoopR::load_mbb_pbp()
@@ -66,9 +84,9 @@ tictoc::toc()
 ```
 
 ``` R
-## 9.94 sec elapsed
+## 10.62 sec elapsed
 
-## 2902736 rows of men's college basketball play-by-play data from 6246 games.
+## 2915731 rows of men's college basketball play-by-play data from 6275 games.
 ```
 
 ## **Documentation**

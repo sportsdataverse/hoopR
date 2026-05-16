@@ -152,7 +152,7 @@ csv_from_url(...)
 
   :   "integer64" (default) reads columns detected as containing
       integers larger than 2^31 as type
-      [`bit64::integer64`](https://rdrr.io/pkg/bit64/man/bit64-package.html).
+      [`bit64::integer64`](https://bit64.r-lib.org/reference/bit64-package.html).
       Alternatively, `"double"|"numeric"` reads as
       [`utils::read.csv`](https://rdrr.io/r/utils/read.table.html) does;
       i.e., possibly with loss of precision and if so silently. Or,

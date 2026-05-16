@@ -4,16 +4,16 @@
 [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Pull Request](#pull-request)
-  - [Summary](#summary)
-  - [Type of Change](#type-of-change)
-  - [Related Issues](#related-issues)
-  - [Background & Context](#background--context)
-  - [Changes Made](#changes-made)
-  - [Submission Checklist](#submission-checklist)
-  - [Testing](#testing)
-  - [Screenshots / Output](#screenshots--output)
-  - [Reviewer Checklist](#reviewer-checklist)
-  - [Additional Notes](#additional-notes)
+- [Summary](#summary)
+- [Type of Change](#type-of-change)
+- [Related Issues](#related-issues)
+- [Background & Context](#background-context)
+- [Changes Made](#changes-made)
+- [Submission Checklist](#submission-checklist)
+- [Testing](#testing)
+- [Screenshots / Output](#screenshots-output)
+- [Reviewer Checklist](#reviewer-checklist)
+- [Additional Notes](#additional-notes)
 
 ## Summary
 

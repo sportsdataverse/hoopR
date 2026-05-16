@@ -3,6 +3,7 @@
 ## Ratings Table Function examples
 
 ``` r
+
 #---- kp_ratings_tables.R ----------------
 pomeroy_ratings <- kp_pomeroy_ratings(min_year = 2020, max_year = 2020)
 
@@ -24,6 +25,7 @@ kpoy <- kp_kpoy(year = 2020)
 ## Team Tables
 
 ``` r
+
 #---- kp_team_tables.R -------------------
 team_sched <- kp_team_schedule(team = 'Florida St.', year = 2020)
 
@@ -49,6 +51,7 @@ team_lineups <- kp_team_lineups(team = 'Florida St.', year = 2020)
 ## Historical Tables
 
 ``` r
+
 #---- kp_historical_tables.R ------------
 team_history <- kp_team_history(team = 'Florida St.')
 
@@ -72,6 +75,7 @@ conf_history <- kp_confhistory(conf = 'ACC')
 ## Miscellaneous Stats Tables
 
 ``` r
+
 #---- kp_misc_stats.R ------------------
 trends <- kp_trends()
 

@@ -48,7 +48,6 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_program_ratings())
-#> 2026-03-26 14:51:22.146809: Invalid arguments or no program ratings available!
-#> Error in kp_program_ratings() : object 'kenpom' not found
+#> Error in mget(setdiff(names(formals()), "...")) : invalid first argument
 # }
 ```

@@ -86,24 +86,16 @@
     </div>
 
 
-<ul><li>
-<a href="#hoopr-copilot-instructions">hoopR Copilot Instructions</a>
-<ul><li><a href="#project-context">Project Context</a></li>
+<p><strong>Table of Contents</strong> <em>generated with <a href="https://github.com/thlorenz/doctoc" class="external-link">DocToc</a></em></p>
+<ul><li><a href="#hoopr-copilot-instructions">hoopR Copilot Instructions</a></li>
+<li><a href="#project-context">Project Context</a></li>
 <li><a href="#repository-workflow">Repository Workflow</a></li>
 <li><a href="#code-style">Code Style</a></li>
 <li><a href="#http-layer">HTTP Layer</a></li>
 <li><a href="#messaging-layer">Messaging Layer</a></li>
 <li><a href="#function-naming">Function Naming</a></li>
 <li><a href="#roxygen-documentation">Roxygen Documentation</a></li>
-<li>
-<a href="#testing">Testing</a>
-<ul><li><a href="#environment-variables">Environment Variables</a></li>
-<li><a href="#ci-secrets">CI Secrets</a></li>
-</ul></li>
-<li><a href="#conventional-commits">Conventional Commits</a></li>
-<li><a href="#v3-api-notes">V3 API Notes</a></li>
-<li><a href="#common-pitfalls">Common Pitfalls</a></li>
-</ul></li>
+<li><a href="#testing">Testing</a></li>
 </ul><!-- END doctoc generated TOC please keep comment here to allow auto update --><div id="hoopr-copilot-instructions" class="section level1">
 
 <div class="section level2">
@@ -136,8 +128,14 @@
 <li>Shared internal helpers in <code>utils.R</code>: <code><a href="reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="reference/dot-resp_text.html">.resp_text()</a></code>, <code><a href="reference/check_status.html">check_status()</a></code>.</li>
 <li>KenPom functions use <code>httr2</code>-based helpers: <code><a href="reference/kp_user_pw.html">login()</a></code> (cookie jar auth), <code><a href="reference/dot-kp_get_page.html">.kp_get_page()</a></code>, <code><a href="reference/dot-kp_request.html">.kp_request()</a></code>.</li>
 <li>
-<code>nba_endpoint()</code> builds URLs via <code>glue::glue('https://stats.nba.com/stats/{endpoint}')</code> – does NOT validate against its internal endpoint list.</li>
-</ul></div>
+<code>nba_endpoint()</code> builds URLs via <code>paste0("https://stats.nba.com/stats/", endpoint)</code> – does NOT validate against its internal endpoint list.</li>
+</ul><div class="section level3">
+<h3 id="proxy-support">Proxy support<a class="anchor" aria-label="anchor" href="#proxy-support"></a></h3>
+<p><code><a href="reference/dot-retry_request.html">.retry_request()</a></code> resolves a proxy in this order: explicit <code>proxy =</code> arg → <code>getOption("hoopR.proxy")</code> → libcurl env vars (<code>http_proxy</code> / <code>https_proxy</code> / <code>no_proxy</code>).</p>
+<p>Proxy value accepts a URL string <code>"http://host:port"</code> or a named list <code>list(url=, port=, username=, password=, auth=)</code> spread into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code>.</p>
+<p>Per-call override (<code>nba_foo(proxy = ...)</code>) only threads through NBA Stats wrappers (which forward <code>...</code> to <code>request_with_proxy</code>). ESPN / KenPom / NBA G-League wrappers call <code><a href="reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so use <code>options(hoopR.proxy = ...)</code> once at session top — that’s the recommended pattern for any session that runs through a proxy.</p>
+</div>
+</div>
 <div class="section level2">
 <h2 id="messaging-layer">Messaging Layer<a class="anchor" aria-label="anchor" href="#messaging-layer"></a></h2>
 <p>All user-facing messages use <code>cli</code>. The <code>usethis</code> package is in <code>Suggests</code> only (retained for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</p>
@@ -146,35 +144,35 @@
 </ul></div>
 <div class="section level2">
 <h2 id="function-naming">Function Naming<a class="anchor" aria-label="anchor" href="#function-naming"></a></h2>
-<table class="table"><colgroup><col width="14%"><col width="27%"><col width="57%"></colgroup><thead><tr class="header"><th>Data Source</th>
+<table class="table"><colgroup><col width="14%"><col width="27%"><col width="57%"></colgroup><thead><tr><th>Data Source</th>
 <th>Prefix</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td>NBA Stats API</td>
+</tr></thead><tbody><tr><td>NBA Stats API</td>
 <td><code>nba_</code></td>
 <td>
 <code><a href="reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
 </td>
-</tr><tr class="even"><td>ESPN API</td>
+</tr><tr><td>ESPN API</td>
 <td>
 <code>espn_nba_</code> / <code>espn_mbb_</code>
 </td>
 <td>
 <code><a href="reference/espn_nba_pbp.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
 </td>
-</tr><tr class="odd"><td>KenPom</td>
+</tr><tr><td>KenPom</td>
 <td><code>kp_</code></td>
 <td>
 <code><a href="reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings()</a></code>, <code><a href="reference/kp_box.html">kp_box()</a></code>
 </td>
-</tr><tr class="even"><td>NBA G-League</td>
+</tr><tr><td>NBA G-League</td>
 <td><code>nbagl_</code></td>
 <td>
 <code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code>, <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code>
 </td>
-</tr><tr class="odd"><td>NCAA</td>
+</tr><tr><td>NCAA</td>
 <td><code>ncaa_mbb_</code></td>
 <td><code><a href="reference/ncaa_mbb_teams.html">ncaa_mbb_teams()</a></code></td>
-</tr><tr class="even"><td>Data loaders</td>
+</tr><tr><td>Data loaders</td>
 <td>
 <code>load_nba_</code> / <code>load_mbb_</code>
 </td>
@@ -206,30 +204,50 @@
 </ul></div>
 <div class="section level2">
 <h2 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a></h2>
-<ul><li>Use <code>skip_on_cran()</code>, <code>skip_on_ci()</code>, and <code>skip_nba_stats_test()</code> guards.</li>
-<li>Use source-specific guards when applicable: <code>skip_espn_test()</code>, <code>skip_nbagl_stats_test()</code>, <code>skip_ncaa_mbb_test()</code>, <code>skip_ncaa_wbb_test()</code>, and <code>skip_kenpom_test()</code>.</li>
-<li>Validate columns with <code>expect_in(sort(expected_cols), sort(colnames(x)))</code> (subset check, not exact match).</li>
-<li>For dynamic columns, use <code>expect_true(all(core_cols %in% colnames(x)))</code>.</li>
-<li>For intermittent endpoints, add explicit skip-on-empty guards before indexing <code>x[[1]]</code> or asserting columns.</li>
-<li>For deprecated wrappers, prefer explicit test skips with a replacement note rather than brittle live assertions.</li>
-<li>Add <code>Sys.sleep(3)</code> at the end of NBA Stats API tests for rate limiting (~590 req/10 min).</li>
-<li>Test game ID: <code>"0022200021"</code> or <code>"0022201086"</code> for known completed games.</li>
-<li>Handle empty API responses gracefully in tests (V2 endpoints may return empty for old games).</li>
+<ul><li><p>Use <code>skip_on_cran()</code>, <code>skip_on_ci()</code>, and <code>skip_nba_stats_test()</code> guards.</p></li>
+<li><p>Use source-specific guards when applicable: <code>skip_espn_test()</code>, <code>skip_nbagl_stats_test()</code>, <code>skip_ncaa_mbb_test()</code>, <code>skip_ncaa_wbb_test()</code>, and <code>skip_kenpom_test()</code>.</p></li>
+<li><p><strong>Column assertions must always use the subset direction</strong> — expected ⊆ actual: <code>expect_in(sort(expected_cols), sort(colnames(x)))</code>. NBA Stats and ESPN APIs add columns without removing old ones, so strict <code>expect_equal(sort(colnames(x)), sort(cols))</code> will flag on any new column. The subset direction is the only pattern that survives upstream drift. Equivalently, <code>expect_in(sort(colnames(x)), sort(expected))</code> is also wrong — same direction problem.</p></li>
+<li><p>For dynamic columns, <code>expect_true(all(core_cols %in% colnames(x)))</code> is equivalent to the subset-direction <code>expect_in()</code>.</p></li>
+<li>
+<p><strong>Always add a skip-if-empty guard immediately after the API call</strong>, before any assertion that touches <code>x[[1]]</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">nba_func</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">skip</span><span class="op">(</span><span class="st">"No rows returned from endpoint at test time"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>This handles transient 500s, HTTP/2 stream errors, and empty responses without polluting the failure report.</p>
+</li>
+<li>
+<p>For tests that assert against multiple result sets (<code>x[[1]]..x[[N]]</code>) where the API sometimes returns fewer elements, wrap each assertion in a per-index null/empty-column helper:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">check_cols</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">i</span>, <span class="va">cols</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;</span> <span class="va">i</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_s3_class</span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>, <span class="st">"data.frame"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>See wehoop’s <code>test-wnba_teamvsplayer.R</code> for a reference implementation.</p>
+</li>
+<li><p>For deprecated wrappers, prefer explicit test skips with a replacement note rather than brittle live assertions.</p></li>
+<li><p>Add <code>Sys.sleep(3)</code> at the end of NBA Stats API tests for rate limiting (~590 req/10 min).</p></li>
+<li><p>Test game ID: <code>"0022200021"</code> or <code>"0022201086"</code> for known completed games.</p></li>
+<li><p>Handle empty API responses gracefully in tests (V2 endpoints may return empty for old games).</p></li>
 </ul><div class="section level3">
 <h3 id="environment-variables">Environment Variables<a class="anchor" aria-label="anchor" href="#environment-variables"></a></h3>
-<table class="table"><thead><tr class="header"><th>Variable</th>
+<table class="table"><thead><tr><th>Variable</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>NBA_STATS_TESTS=1</code></td>
+</tr></thead><tbody><tr><td><code>NBA_STATS_TESTS=1</code></td>
 <td>Enable NBA Stats API tests</td>
-</tr><tr class="even"><td><code>ESPN_TESTS=1</code></td>
+</tr><tr><td><code>ESPN_TESTS=1</code></td>
 <td>Enable ESPN API tests</td>
-</tr><tr class="odd"><td><code>NBAGL_STATS_TESTS=1</code></td>
+</tr><tr><td><code>NBAGL_STATS_TESTS=1</code></td>
 <td>Enable NBA G-League tests</td>
-</tr><tr class="even"><td><code>NCAA_MBB_TESTS=1</code></td>
+</tr><tr><td><code>NCAA_MBB_TESTS=1</code></td>
 <td>Enable NCAA MBB tests</td>
-</tr><tr class="odd"><td><code>NCAA_WBB_TESTS=1</code></td>
+</tr><tr><td><code>NCAA_WBB_TESTS=1</code></td>
 <td>Enable NCAA WBB tests</td>
-</tr><tr class="even"><td>
+</tr><tr><td>
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
@@ -238,13 +256,13 @@
 <div class="section level3">
 <h3 id="ci-secrets">CI Secrets<a class="anchor" aria-label="anchor" href="#ci-secrets"></a></h3>
 <p>Current CI workflows rely on:</p>
-<table class="table"><thead><tr class="header"><th>Secret</th>
+<table class="table"><thead><tr><th>Secret</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>GITHUB_TOKEN</code></td>
+</tr></thead><tbody><tr><td><code>GITHUB_TOKEN</code></td>
 <td>Auto-provided token for workflow operations</td>
-</tr><tr class="even"><td><code>KP_USER</code></td>
+</tr><tr><td><code>KP_USER</code></td>
 <td>KenPom username/email for credentialed tests</td>
-</tr><tr class="odd"><td><code>KP_PW</code></td>
+</tr><tr><td><code>KP_PW</code></td>
 <td>KenPom password for credentialed tests</td>
 </tr></tbody></table><p>Optional env-var secrets (<code>NBA_STATS_TESTS</code>, <code>NBAGL_STATS_TESTS</code>, <code>ESPN_TESTS</code>, <code>NCAA_MBB_TESTS</code>) only have effect if corresponding <code>skip_on_ci()</code> guards are intentionally adjusted.</p>
 </div>
@@ -258,6 +276,28 @@
 <li>Keep commits logically grouped (docs-only, tests-only, refactor-only) so each commit is easy to review and revert.</li>
 </ul><p><strong>Important</strong>: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all <code>Co-Authored-By</code> trailers referencing AI tools.</p>
 </div>
+<div class="section level2">
+<h2 id="documentation-maintenance">Documentation Maintenance<a class="anchor" aria-label="anchor" href="#documentation-maintenance"></a></h2>
+<p>Two regeneration steps are part of the commit workflow whenever the relevant sources change. Both are mechanical — never edit the generated regions by hand.</p>
+<ul><li>
+<p><strong>Markdown TOCs.</strong> <code>NEWS.md</code>, <code>CLAUDE.md</code>, <code>CONTRIBUTING.md</code>, <code>.github/copilot-instructions.md</code>, and <code>.github/PULL_REQUEST_TEMPLATE.md</code> carry a doctoc-generated TOC inside marker comments. (<code>cran-comments.md</code> is intentionally excluded — it is a short CRAN-submission file.) After editing any of them, run:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">Rscript</span> tools/run_doctoc.R <span class="at">--maxlevel</span> 2 <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  NEWS.md CLAUDE.md CONTRIBUTING.md <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md</span></code></pre></div>
+<p><code>tools/run_doctoc.R</code> is a no-deps R replacement for the npm <code>doctoc</code> CLI; it is idempotent and runs without Node.js. Use <code>--maxlevel 2</code> (level-3 sub-entries crowd the nav).</p>
+</li>
+<li><p><strong>README.md.</strong> Rendered from <code>README.Rmd</code> (with <code>output: github_document: { toc: true, toc_depth: 2 }</code>). After editing the Rmd, run <code>devtools::build_readme()</code> and commit <code>README.Rmd</code> + <code>README.md</code> together. Never hand-edit <code>README.md</code>.</p></li>
+<li><p><strong>DESCRIPTION.</strong> After editing <code>DESCRIPTION</code> (deps, versions, <code>Authors@R</code>, etc.), run <code><a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external-link">usethis::use_tidy_description()</a></code> to normalize field order, alphabetize <code>Imports</code>/<code>Suggests</code>, and reflow long lines. Run it even for one-line edits.</p></li>
+<li>
+<p><strong>Release notes triad — <code>NEWS.md</code> / <code>cran-comments.md</code> / <code>_pkgdown.yml</code>.</strong> Whenever you add a <code>NEWS.md</code> bullet, check the other two:</p>
+<ul><li>
+<code>NEWS.md</code> — all new bullets go under the most recent <strong>unreleased</strong> version heading (currently <code># **hoopR 3.0.0**</code>). Do NOT create a new version section ahead of release; extend the existing subsections (<code>### Bug Fixes</code>, <code>### Deprecations</code>, <code>### Stability and Test Robustness</code>, …). After the release ships the rule rolls forward to the next dev version.</li>
+<li>
+<code>cran-comments.md</code> — every user-visible / behavioral change in <code>NEWS.md</code> should be reflected in <code>cran-comments.md</code> before submission. Internal-only changes (refactors, test infra, dev tooling) can be omitted.</li>
+<li>
+<code>_pkgdown.yml</code> — new exports go in the right <code>reference:</code> section. <code>starts_with()</code> selectors auto-pick up <code>nba_*</code> / <code>espn_*</code> / <code>kp_*</code> / <code>ncaa_*</code> prefixes; explicitly-listed functions need a manual entry. <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code> + <code>@keywords internal</code> excludes a function from the rendered index by default.</li>
+</ul></li>
+</ul></div>
 <div class="section level2">
 <h2 id="v3-api-notes">V3 API Notes<a class="anchor" aria-label="anchor" href="#v3-api-notes"></a></h2>
 <ul><li>V3 endpoints return nested JSON – use <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code> for extraction.</li>
@@ -273,13 +313,18 @@
 </ul></div>
 <div class="section level2">
 <h2 id="common-pitfalls">Common Pitfalls<a class="anchor" aria-label="anchor" href="#common-pitfalls"></a></h2>
-<ul><li>Always initialize <code>df_list &lt;- list()</code> (or <code>data &lt;- data.frame()</code> / <code>data &lt;- list()</code>) before <code>tryCatch</code> blocks.</li>
-<li>ESPN API columns change over time – use subset validation in tests.</li>
+<ul><li>
+<strong>Return-value initialization is mandatory</strong>: every wrapper that <code>return(X)</code> where <code>X</code> is assigned only inside <code>tryCatch(expr = {...})</code> must initialize <code>X</code> <em>before</em> the <code>tryCatch</code>. Otherwise, when the API errors, <code>return(X)</code> throws <code>object 'X' not found</code> instead of the intended empty fallback. Applies to <code>df_list</code>, <code>plays_df</code>, <code>pbp</code>, <code>standings</code>, <code>teams</code>, <code>team_box_score</code>, <code>athlete_roster_df</code>, <code>games</code>, <code>conferences</code>, <code>resp</code>, <code>data</code>, etc. — any return variable. Initialize to <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code> for named-list returns, <code>NULL</code> for single-object returns, <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> for tibble returns.</li>
+<li>When dropping a known-transient column inside a function, use <code>dplyr::select(-dplyr::any_of("colname"))</code> instead of <code>dplyr::select(-"colname")</code>. The bare form errors the moment upstream drops the column.</li>
+<li>When renaming columns after <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code>, use <code>dplyr::rename(dplyr::any_of(c(new = "old")))</code> so the function survives upstream rename/drops without breaking. See <code><a href="reference/espn_mbb_conferences.html">espn_mbb_conferences()</a></code> and <code><a href="reference/ncaa_mbb_NET_rankings.html">ncaa_mbb_NET_rankings()</a></code> for examples.</li>
+<li>ESPN API columns change over time — <strong>column assertions in tests must use the subset direction</strong> (<code>expect_in(expected, actual)</code>).</li>
 <li>V3-style leader endpoints return mixed types – coerce to <code><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character()</a></code> with <code>%||% NA_character_</code>.</li>
 <li>IST Standings has dynamic game columns – use <code>expect_true(all(core_cols %in% colnames()))</code>.</li>
 <li>NBAGL legacy schemas are no longer stable references for tests. Prefer validating core columns from current API payloads and handle named-list returns explicitly in tests.</li>
 <li>Local editor/worktree artifacts (e.g., <code>.vscode</code>, <code>.claude</code>, temp logs) can cause <code>R CMD check</code> notes/warnings if included in source checks.</li>
 <li>KenPom HTML structure changes periodically – CSS selectors for tables (<code>table#player-table</code>), referee links (<code>div.refline</code>), and navigation elements are fragile and may need updating.</li>
+<li>
+<strong>Two-block roxygen pattern + <code>@noRd</code> trap:</strong> when an internal helper uses the <code>@name</code> + <code>NULL</code> topic block above the function-block, putting <code>@noRd</code> only on the function block leaves the topic block to generate an orphan <code>man/dot-*.Rd</code> file. pkgdown’s <code>build_reference_index()</code> will then fail with “topics missing from index”. Fix: put <code>@keywords internal</code> on the topic block as well as <code>@noRd</code> on the function block.</li>
 <li>Never edit <code>NAMESPACE</code> or <code>man/</code> files by hand; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>

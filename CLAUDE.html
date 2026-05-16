@@ -87,33 +87,17 @@
 
 
 <p><strong>Table of Contents</strong> <em>generated with <a href="https://github.com/thlorenz/doctoc" class="external-link">DocToc</a></em></p>
-<ul><li>
-<a href="#claudemd----hoopr-development-guide">CLAUDE.md – hoopR Development Guide</a>
-<ul><li><a href="#package-overview">Package Overview</a></li>
-<li><a href="#branching--pr-workflow">Branching &amp; PR Workflow</a></li>
-<li><a href="#build--development-commands">Build &amp; Development Commands</a></li>
+<ul><li><a href="#claudemd----hoopr-development-guide">CLAUDE.md – hoopR Development Guide</a></li>
+<li><a href="#package-overview">Package Overview</a></li>
+<li><a href="#branching-pr-workflow">Branching &amp; PR Workflow</a></li>
+<li><a href="#build-development-commands">Build &amp; Development Commands</a></li>
 <li><a href="#project-structure">Project Structure</a></li>
-<li>
-<a href="#key-coding-conventions">Key Coding Conventions</a>
-<ul><li><a href="#function-naming">Function Naming</a></li>
-<li><a href="#function-pattern-nba-stats-api">Function Pattern (NBA Stats API)</a></li>
-<li><a href="#data-processing-pipeline">Data Processing Pipeline</a></li>
-<li><a href="#v2-vs-v3-api-differences">V2 vs V3 API Differences</a></li>
-<li><a href="#null-safety">Null Safety</a></li>
-<li><a href="#http-layer">HTTP Layer</a></li>
-<li><a href="#messaging-layer">Messaging Layer</a></li>
-</ul></li>
-<li>
-<a href="#testing">Testing</a>
-<ul><li><a href="#test-pattern">Test Pattern</a></li>
-<li><a href="#environment-variables-for-tests">Environment Variables for Tests</a></li>
-<li><a href="#ci-secrets">CI Secrets</a></li>
-<li><a href="#rate-limiting">Rate Limiting</a></li>
-</ul></li>
+<li><a href="#key-coding-conventions">Key Coding Conventions</a></li>
+<li><a href="#testing">Testing</a></li>
 <li><a href="#namespace">NAMESPACE</a></li>
+<li><a href="#documentation-maintenance">Documentation Maintenance</a></li>
 <li><a href="#commit-convention">Commit Convention</a></li>
 <li><a href="#common-pitfalls">Common Pitfalls</a></li>
-</ul></li>
 </ul><!-- END doctoc generated TOC please keep comment here to allow auto update --><div id="claudemd--hoopr-development-guide" class="section level1">
 
 <div class="section level2">
@@ -183,35 +167,35 @@
 <h2 id="key-coding-conventions">Key Coding Conventions<a class="anchor" aria-label="anchor" href="#key-coding-conventions"></a></h2>
 <div class="section level3">
 <h3 id="function-naming">Function Naming<a class="anchor" aria-label="anchor" href="#function-naming"></a></h3>
-<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr class="header"><th>Data Source</th>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Data Source</th>
 <th>Prefix</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td>NBA Stats API</td>
+</tr></thead><tbody><tr><td>NBA Stats API</td>
 <td><code>nba_</code></td>
 <td>
 <code><a href="reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
 </td>
-</tr><tr class="even"><td>ESPN API</td>
+</tr><tr><td>ESPN API</td>
 <td>
 <code>espn_nba_</code> / <code>espn_mbb_</code>
 </td>
 <td>
 <code><a href="reference/espn_nba_pbp.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
 </td>
-</tr><tr class="odd"><td>KenPom</td>
+</tr><tr><td>KenPom</td>
 <td><code>kp_</code></td>
 <td>
 <code><a href="reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings()</a></code>, <code><a href="reference/kp_box.html">kp_box()</a></code>
 </td>
-</tr><tr class="even"><td>NBA G-League</td>
+</tr><tr><td>NBA G-League</td>
 <td><code>nbagl_</code></td>
 <td>
 <code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code>, <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code>
 </td>
-</tr><tr class="odd"><td>NCAA</td>
+</tr><tr><td>NCAA</td>
 <td><code>ncaa_mbb_</code></td>
 <td><code><a href="reference/ncaa_mbb_teams.html">ncaa_mbb_teams()</a></code></td>
-</tr><tr class="even"><td>Data loaders</td>
+</tr><tr><td>Data loaders</td>
 <td>
 <code>load_nba_</code> / <code>load_mbb_</code>
 </td>
@@ -310,12 +294,60 @@
 <code class="sourceCode R"><span><span class="va">value</span> <span class="op">&lt;-</span> <span class="va">obj</span><span class="op">$</span><span class="va">field</span> <span class="op"><a href="https://rdrr.io/r/base/Control.html" class="external-link">%||%</a></span> <span class="cn">NA_character_</span></span></code></pre></div>
 </div>
 <div class="section level3">
+<h3 id="return-value-initialization-critical">Return-Value Initialization (CRITICAL)<a class="anchor" aria-label="anchor" href="#return-value-initialization-critical"></a></h3>
+<p>Every wrapper that returns a variable assigned inside a <code>tryCatch</code> must initialize that variable <strong>before</strong> the <code>tryCatch</code> block. Otherwise, when the API errors (500s, timeouts, HTTP/2 stream errors, connection resets) the <code>error</code> handler runs, the return variable is never bound, and <code>return(&lt;var&gt;)</code> throws <code>object '&lt;var&gt;' not found</code> instead of the intended <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger</a></code> + empty fallback.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nba_func</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">endpoint</span> <span class="op">&lt;-</span> <span class="fu">nba_endpoint</span><span class="op">(</span><span class="st">'foo'</span><span class="op">)</span></span>
+<span>  <span class="va">params</span>   <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">df_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>   <span class="co"># &lt;-- MANDATORY. Not inside tryCatch.</span></span>
+<span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/conditions.html" class="external-link">tryCatch</a></span><span class="op">(</span></span>
+<span>    expr <span class="op">=</span> <span class="op">{</span></span>
+<span>      <span class="va">resp</span>    <span class="op">&lt;-</span> <span class="fu"><a href="reference/request_with_proxy.html">request_with_proxy</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">endpoint</span>, params <span class="op">=</span> <span class="va">params</span>, <span class="va">...</span><span class="op">)</span></span>
+<span>      <span class="va">df_list</span> <span class="op">&lt;-</span> <span class="fu">nba_stats_map_result_sets</span><span class="op">(</span><span class="va">resp</span><span class="op">)</span></span>
+<span>    <span class="op">}</span>,</span>
+<span>    error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu">cli</span><span class="fu">::</span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli_alert_danger</a></span><span class="op">(</span><span class="st">"{Sys.time()}: Invalid arguments or no data available!"</span><span class="op">)</span></span>
+<span>      <span class="fu">cli</span><span class="fu">::</span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli_alert_danger</a></span><span class="op">(</span><span class="st">"Error:\n{e}"</span><span class="op">)</span></span>
+<span>    <span class="op">}</span>,</span>
+<span>    warning <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">w</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu">cli</span><span class="fu">::</span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli_alert_warning</a></span><span class="op">(</span><span class="st">"{Sys.time()}: Warning:\n{w}"</span><span class="op">)</span></span>
+<span>    <span class="op">}</span>,</span>
+<span>    finally <span class="op">=</span> <span class="op">{</span><span class="op">}</span></span>
+<span>  <span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">df_list</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>This rule applies to <strong>every return variable name</strong>, not just <code>df_list</code>: <code>plays_df</code>, <code>pbp</code>, <code>standings</code>, <code>teams</code>, <code>team_box_score</code>, <code>athlete_roster_df</code>, <code>games</code>, <code>conferences</code>, <code>resp</code>, <code>data</code>, etc. Initialize to the appropriate empty value — <code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code> for named-list returns, <code>NULL</code> for single-object returns, <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> for tibble returns.</p>
+</div>
+<div class="section level3">
+<h3 id="column-drift-resilience">Column Drift Resilience<a class="anchor" aria-label="anchor" href="#column-drift-resilience"></a></h3>
+<p>Both the NBA Stats API and ESPN’s JSON payloads add columns over time without removing old ones, and occasionally rename or drop columns. Two guardrails apply:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>Inside functions</strong> — when dropping a known-transient column, use <code>dplyr::select(-dplyr::any_of("colname"))</code> instead of <code>dplyr::select(-"colname")</code>. The bare form errors the moment upstream drops that column; <code>any_of</code> no-ops silently.</li>
+<li>
+<strong>Inside pipelines that rename</strong> — use <code>dplyr::rename(dplyr::any_of(c(new = "old")))</code> so a schema drift that removes <code>old</code> is survivable. See <code><a href="reference/espn_mbb_conferences.html">espn_mbb_conferences()</a></code> and <code><a href="reference/ncaa_mbb_NET_rankings.html">ncaa_mbb_NET_rankings()</a></code> for examples.</li>
+</ol></div>
+<div class="section level3">
 <h3 id="http-layer">HTTP Layer<a class="anchor" aria-label="anchor" href="#http-layer"></a></h3>
 <p>All HTTP requests use <code>httr2</code> as the sole backend. The <code>httr</code> package is no longer a dependency.</p>
 <p><code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> in <code>utils_nba_stats.R</code> uses <code><a href="reference/dot-retry_request.html">.retry_request()</a></code> (an <code>httr2</code> wrapper) with required NBA headers: - <code>x-nba-stats-origin: stats</code> - <code>x-nba-stats-token: true</code> - <code>Referer: https://www.nba.com/</code></p>
-<p>Shared internal helpers in <code>utils.R</code>: - <code>.retry_request(url, params, headers, timeout)</code> – performs a GET with retry logic via <code>httr2</code> - <code>.resp_text(resp)</code> – extracts response body as UTF-8 text via <code><a href="https://httr2.r-lib.org/reference/resp_body_raw.html" class="external-link">httr2::resp_body_string()</a></code> - <code>check_status(res)</code> – checks HTTP status via <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code></p>
+<p>Shared internal helpers in <code>utils.R</code>: - <code>.retry_request(url, params, headers, timeout, proxy)</code> – performs a GET with retry logic via <code>httr2</code> - <code>.resp_text(resp)</code> – extracts response body as UTF-8 text via <code><a href="https://httr2.r-lib.org/reference/resp_body_raw.html" class="external-link">httr2::resp_body_string()</a></code> - <code>check_status(res)</code> – checks HTTP status via <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code></p>
+<div class="section level4">
+<h4 id="proxy-support">Proxy support<a class="anchor" aria-label="anchor" href="#proxy-support"></a></h4>
+<p><code><a href="reference/dot-retry_request.html">.retry_request()</a></code> resolves a proxy in this order:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>Explicit <code>proxy =</code> argument</strong> (caller-supplied; highest precedence).</li>
+<li>
+<strong><code>getOption("hoopR.proxy")</code></strong> session-level fallback — set once with <code>options(hoopR.proxy = ...)</code> and every call picks it up.</li>
+<li>
+<strong><code>http_proxy</code> / <code>https_proxy</code> / <code>no_proxy</code> environment variables</strong> — libcurl reads these automatically when no explicit proxy is supplied.</li>
+</ol><p>The proxy value (whether passed or read from the option) accepts: - <code>"http://host:port"</code> — string form, forwarded to <code>httr2::req_proxy(url = ...)</code>. - <code>list(url = "...", port = 8080, username = "...", password = "...", auth = "basic")</code> — spread as keyword args into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code> for authenticated proxies.</p>
+<p><strong>Per-call override</strong> works only for wrappers that thread <code>...</code> to <code><a href="reference/request_with_proxy.html">request_with_proxy()</a></code> — that’s every NBA Stats API function (<code>nba_*()</code>), e.g. <code>nba_pbp(game_id = "...", proxy = "http://my-proxy:8080")</code>. ESPN / KenPom / NBA G-League wrappers call <code><a href="reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so for those use the <code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> fallback or env-var path. The session option is the recommended pattern when working through one proxy across many calls — it’s a single line at the top of the script and it covers everything.</p>
 <p>KenPom functions use separate <code>httr2</code>-based helpers: - <code><a href="reference/kp_user_pw.html">login()</a></code> – authenticates via <code>httr2</code> cookie jar - <code>.kp_get_page(jar, url)</code> – fetches a page as parsed HTML - <code>.kp_request(url, jar)</code> – builds an <code>httr2</code> request with KenPom headers</p>
 <p><code>nba_endpoint()</code> builds URLs via <code>glue::glue('https://stats.nba.com/stats/{endpoint}')</code> – it does NOT validate against its internal endpoint list.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="messaging-layer">Messaging Layer<a class="anchor" aria-label="anchor" href="#messaging-layer"></a></h3>
@@ -328,8 +360,8 @@
 <h2 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a></h2>
 <div class="section level3">
 <h3 id="test-pattern">Test Pattern<a class="anchor" aria-label="anchor" href="#test-pattern"></a></h3>
-<p>Use <code>expect_in()</code> (subset check) rather than <code>expect_equal()</code> (exact match) for column validation. This prevents test failures when APIs add new columns:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p><strong>Always use the subset direction for column assertions.</strong> Because the upstream APIs add columns, strict <code>expect_equal</code> will break on any new column. The rule is: the <em>expected</em> list must be a subset of the <em>actual</em> columns. The subset direction is the only pattern that survives upstream drift.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"NBA Endpoint Name"</span>, <span class="op">{</span></span>
 <span>  <span class="fu">skip_on_cran</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu">skip_on_ci</span><span class="op">(</span><span class="op">)</span></span>
@@ -337,42 +369,60 @@
 <span></span>
 <span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">nba_function</span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"0022200021"</span><span class="op">)</span></span>
 <span></span>
+<span>  <span class="co"># Skip-if-empty guard — always right after the API call, before any assertions</span></span>
+<span>  <span class="co"># that touch x[[1]]. Handles transient 500s and HTTP/2 stream errors.</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">skip</span><span class="op">(</span><span class="st">"No rows returned from endpoint at test time"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
 <span>  <span class="va">cols_x1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="va">...</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols_x1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">Component</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_s3_class</span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">Component</span>, <span class="st">"data.frame"</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols_x1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>   <span class="co"># expected ⊆ actual</span></span>
+<span>  <span class="fu">expect_s3_class</span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="st">"data.frame"</span><span class="op">)</span></span>
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>  <span class="co"># Rate limiting between tests</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
-<p>For endpoints with dynamic columns (like IST Standings with game columns):</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">expect_true</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/all.html" class="external-link">all</a></span><span class="op">(</span><span class="va">core_cols</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p>For intermittent or occasionally empty API responses, guard before indexing/asserting:</p>
+<p><strong>Anti-patterns to avoid</strong>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">skip</span><span class="op">(</span><span class="st">"No rows returned from endpoint at test time"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
-<p>For deprecated wrappers, prefer explicit <code>skip()</code> with replacement guidance in the test file to avoid false negatives from intentional hard stops.</p>
-<p>For NBAGL wrappers with named-list returns, validate component names first and then validate core columns within the component:</p>
+<code class="sourceCode R"><span><span class="co"># WRONG - flags when upstream adds a column, even though it's non-breaking</span></span>
+<span><span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols_x1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># WRONG - same direction problem, just phrased with expect_in</span></span>
+<span><span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols_x1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>For dynamic columns (like IST Standings with game columns), <code>expect_true(all(core_cols %in% colnames(x)))</code> is equivalent to the subset-direction <code>expect_in()</code>.</p>
+<p><strong>Per-element null checks</strong>: if the API sometimes returns fewer result sets than the test expects (e.g., 7 instead of 11), use an inline helper so individual asserts skip gracefully rather than erroring:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">check_cols</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">i</span>, <span class="va">cols</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;</span> <span class="va">i</span> <span class="op">||</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">is.data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">||</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">cols</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu">expect_s3_class</span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>, <span class="st">"data.frame"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">check_cols</span><span class="op">(</span><span class="fl">1</span>, <span class="va">cols_x1</span><span class="op">)</span></span>
+<span><span class="fu">check_cols</span><span class="op">(</span><span class="fl">2</span>, <span class="va">cols_x2</span><span class="op">)</span></span></code></pre></div>
+<p>See wehoop’s <code>test-wnba_teamvsplayer.R</code> and <code>test-wnba_playerdashboardbyclutch.R</code> for reference implementations of this helper pattern (no direct hoopR analogue exists yet).</p>
+<p>For NBAGL wrappers with named-list returns, validate component names first and then validate core columns within the component:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">expect_true</span><span class="op">(</span><span class="st">"Standings"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">expect_in</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">core_cols</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">x</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>For deprecated wrappers, prefer explicit <code>skip()</code> with replacement guidance in the test file to avoid false negatives from intentional hard stops.</p>
 <p>Use the source-specific skip helper for the endpoint under test: - <code>skip_nba_stats_test()</code> - <code>skip_espn_test()</code> - <code>skip_nbagl_stats_test()</code> - <code>skip_ncaa_mbb_test()</code> - <code>skip_ncaa_wbb_test()</code> - <code>skip_kenpom_test()</code></p>
 </div>
 <div class="section level3">
 <h3 id="environment-variables-for-tests">Environment Variables for Tests<a class="anchor" aria-label="anchor" href="#environment-variables-for-tests"></a></h3>
-<table class="table"><thead><tr class="header"><th>Variable</th>
+<table class="table"><thead><tr><th>Variable</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>NBA_STATS_TESTS=1</code></td>
+</tr></thead><tbody><tr><td><code>NBA_STATS_TESTS=1</code></td>
 <td>Enable NBA Stats API tests</td>
-</tr><tr class="even"><td><code>ESPN_TESTS=1</code></td>
+</tr><tr><td><code>ESPN_TESTS=1</code></td>
 <td>Enable ESPN API tests</td>
-</tr><tr class="odd"><td><code>NBAGL_STATS_TESTS=1</code></td>
+</tr><tr><td><code>NBAGL_STATS_TESTS=1</code></td>
 <td>Enable NBA G-League tests</td>
-</tr><tr class="even"><td><code>NCAA_MBB_TESTS=1</code></td>
+</tr><tr><td><code>NCAA_MBB_TESTS=1</code></td>
 <td>Enable NCAA MBB tests</td>
-</tr><tr class="odd"><td><code>NCAA_WBB_TESTS=1</code></td>
+</tr><tr><td><code>NCAA_WBB_TESTS=1</code></td>
 <td>Enable NCAA WBB tests</td>
-</tr><tr class="even"><td>
+</tr><tr><td>
 <code>KP_USER</code> / <code>KP_PW</code>
 </td>
 <td>KenPom credentials</td>
@@ -381,13 +431,13 @@
 <div class="section level3">
 <h3 id="ci-secrets">CI Secrets<a class="anchor" aria-label="anchor" href="#ci-secrets"></a></h3>
 <p>GitHub Actions workflows should have these configured:</p>
-<table class="table"><thead><tr class="header"><th>Secret</th>
+<table class="table"><thead><tr><th>Secret</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>GITHUB_TOKEN</code></td>
+</tr></thead><tbody><tr><td><code>GITHUB_TOKEN</code></td>
 <td>Auto-provided GitHub token</td>
-</tr><tr class="even"><td><code>KP_USER</code></td>
+</tr><tr><td><code>KP_USER</code></td>
 <td>KenPom username/email</td>
-</tr><tr class="odd"><td><code>KP_PW</code></td>
+</tr><tr><td><code>KP_PW</code></td>
 <td>KenPom password</td>
 </tr></tbody></table><p>Optional live-test secrets (<code>NBA_STATS_TESTS</code>, <code>NBAGL_STATS_TESTS</code>, <code>ESPN_TESTS</code>, <code>NCAA_MBB_TESTS</code>) only matter if <code>skip_on_ci()</code> gates are intentionally relaxed.</p>
 </div>
@@ -399,6 +449,41 @@
 <div class="section level2">
 <h2 id="namespace">NAMESPACE<a class="anchor" aria-label="anchor" href="#namespace"></a></h2>
 <p>Auto-generated by roxygen2. <strong>Never edit manually.</strong> Run <code>devtools::document()</code> to regenerate.</p>
+</div>
+<div class="section level2">
+<h2 id="documentation-maintenance">Documentation Maintenance<a class="anchor" aria-label="anchor" href="#documentation-maintenance"></a></h2>
+<p>Two regeneration steps are part of the commit workflow whenever the relevant sources change. Both are mechanical — never edit the generated regions by hand.</p>
+<div class="section level3">
+<h3 id="markdown-tocs-doctoc">Markdown TOCs (doctoc)<a class="anchor" aria-label="anchor" href="#markdown-tocs-doctoc"></a></h3>
+<p><code>NEWS.md</code>, <code>CLAUDE.md</code>, <code>CONTRIBUTING.md</code>, <code>.github/copilot-instructions.md</code>, and <code>.github/PULL_REQUEST_TEMPLATE.md</code> carry a doctoc-generated table of contents inside the standard marker comments. After editing any of those files, regenerate the TOC before committing:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">Rscript</span> tools/run_doctoc.R <span class="at">--maxlevel</span> 2 <span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  NEWS.md CLAUDE.md CONTRIBUTING.md <span class="dt">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md</span></code></pre></div>
+<p><code>cran-comments.md</code> is intentionally excluded — it is a short release-notes file submitted to CRAN and does not need a TOC.</p>
+<p><code>tools/run_doctoc.R</code> is a no-deps R replacement for the npm <code>doctoc</code> CLI — it produces output indistinguishable from the upstream tool, is idempotent (a no-op if no headings changed), and runs without Node.js. Use <code>--maxlevel 2</code> so the TOC only lists <code>#</code> and <code>##</code> headings; level-3 sub-entries crowd the nav.</p>
+</div>
+<div class="section level3">
+<h3 id="readmemd-rmarkdown">README.md (rmarkdown)<a class="anchor" aria-label="anchor" href="#readmemd-rmarkdown"></a></h3>
+<p><code>README.md</code> is rendered from <code>README.Rmd</code>. The Rmd carries <code>output: github_document: { toc: true, toc_depth: 2 }</code>, so the README has its own auto-generated TOC. After editing <code>README.Rmd</code>, re-render before committing:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">build_readme</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Commit <code>README.Rmd</code> and the regenerated <code>README.md</code> together. Never hand-edit <code>README.md</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="description-usethis">DESCRIPTION (usethis)<a class="anchor" aria-label="anchor" href="#description-usethis"></a></h3>
+<p>After editing <code>DESCRIPTION</code> (adding/removing packages, bumping versions, updating <code>Authors@R</code>, etc.), normalize formatting before committing:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external-link">use_tidy_description</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This re-orders fields, alphabetizes <code>Imports</code>/<code>Suggests</code>, and reflows long lines so subsequent diffs stay minimal. Run it even for one-line edits.</p>
+</div>
+<div class="section level3">
+<h3 id="release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml">Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml<a class="anchor" aria-label="anchor" href="#release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml"></a></h3>
+<p>Three files describe the same release at different audiences. Whenever you add a <code>NEWS.md</code> bullet, <strong>think through all three before committing</strong>:</p>
+<ul><li><p><strong><code>NEWS.md</code></strong> — authoritative changelog for downstream users; rendered into the pkgdown changelog. <strong>All new bullets go under the most recent unreleased version heading</strong> (currently <code># **hoopR 3.0.0**</code>). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (<code>### Bug Fixes</code>, <code>### Deprecations</code>, <code>### Stability and Test Robustness</code>, etc.) instead of starting a new one when the change is incremental. Once <code>3.0.0</code> ships to CRAN, the development version gets its own heading and the rule rolls forward.</p></li>
+<li><p><strong><code>cran-comments.md</code></strong> — what gets submitted to CRAN. Every behavioral or user-visible change you add to <code>NEWS.md</code> should also be reflected in <code>cran-comments.md</code> before submission. The two files are not duplicates: <code>NEWS.md</code> is the long-form changelog, <code>cran-comments.md</code> is the short-form release summary. If a <code>NEWS.md</code> bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from <code>cran-comments.md</code>.</p></li>
+<li><p><strong><code>_pkgdown.yml</code></strong> — the pkgdown reference index. New exported functions need to land in the right <code>reference:</code> section. The existing hoopR config uses <code>starts_with("nba_")</code> / <code>starts_with("espn_")</code> / <code>starts_with("kp_")</code> / <code>starts_with("ncaa_")</code> selectors so new functions matching those prefixes are picked up automatically; explicitly-listed functions need a manual entry. Functions deprecated via <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code> + <code>@keywords internal</code> are excluded from the rendered index by default — preview with <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code> when in doubt.</p></li>
+</ul><p>When the change touches the API surface (new export, deprecation, removal), include a one-line note in your commit message confirming you’ve checked all three files.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="commit-convention">Commit Convention<a class="anchor" aria-label="anchor" href="#commit-convention"></a></h2>
@@ -432,6 +517,8 @@ ci: update GitHub Actions workflow versions</code></pre>
 <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
 <li>Local dev artifacts (for example <code>.vscode</code>, <code>.claude</code>, ad-hoc logs) can surface as <code>R CMD check</code> notes/warnings if not excluded from build inputs.</li>
 <li>KenPom HTML structure changes periodically – CSS selectors for tables (<code>table#player-table</code>), referee links (<code>div.refline</code>), and navigation elements are fragile and may need updating.</li>
+<li>
+<strong>Two-block roxygen pattern + <code>@noRd</code> trap:</strong> when an internal helper uses the <code>@name</code> + <code>NULL</code> topic block above the function-block, putting <code>@noRd</code> only on the function block leaves the topic block to generate an orphan <code>man/dot-*.Rd</code> file. pkgdown’s <code>build_reference_index()</code> will then fail with “topics missing from index”. Fix: put <code>@keywords internal</code> on the topic block as well as <code>@noRd</code> on the function block.</li>
 <li>Never hand-edit <code>NAMESPACE</code> or files under <code>man/</code>; regenerate with <code>devtools::document()</code>.</li>
 </ul></div>
 </div>

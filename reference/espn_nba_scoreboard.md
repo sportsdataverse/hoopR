@@ -76,11 +76,12 @@ Other ESPN NBA Functions:
 ## Examples
 
 ``` r
+
 # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
 # \donttest{
 try(espn_nba_scoreboard(season = 20230423))
 #> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-26 14:51:10 UTC
+#> ℹ Data updated: 2026-05-16 19:41:06 UTC
 #> # A tibble: 4 × 37
 #>   matchup          matchup_short season season_type season_slug game_id game_uid
 #>   <chr>            <chr>          <int>       <int> <chr>         <int> <chr>   

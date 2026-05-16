@@ -87,35 +87,17 @@
 
 
 <p><strong>Table of Contents</strong> <em>generated with <a href="https://github.com/thlorenz/doctoc" class="external-link">DocToc</a></em></p>
-<ul><li>
-<a href="#contributing-to-hoopr">Contributing to hoopR</a>
-<ul><li><a href="#development-setup">Development Setup</a></li>
-<li>
-<a href="#workflow">Workflow</a>
-<ul><li><a href="#making-changes">Making Changes</a></li>
-<li><a href="#adding-a-new-nba-stats-api-endpoint">Adding a New NBA Stats API Endpoint</a></li>
-</ul></li>
-<li>
-<a href="#naming-conventions">Naming Conventions</a>
-<ul><li><a href="#function-names">Function Names</a></li>
-<li><a href="#general-naming-rules">General Naming Rules</a></li>
-<li><a href="#v2-vs-v3-api-patterns">V2 vs V3 API Patterns</a></li>
-<li><a href="#data-processing-pipeline">Data Processing Pipeline</a></li>
-<li><a href="#roxygen-documentation">Roxygen Documentation</a></li>
-<li><a href="#code-style">Code Style</a></li>
-</ul></li>
+<ul><li><a href="#contributing-to-hoopr">Contributing to hoopR</a></li>
+<li><a href="#development-setup">Development Setup</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#naming-conventions">Naming Conventions</a></li>
+<li><a href="#documentation-maintenance">Documentation Maintenance</a></li>
 <li><a href="#commit-messages">Commit Messages</a></li>
 <li><a href="#pull-requests">Pull Requests</a></li>
-<li>
-<a href="#testing">Testing</a>
-<ul><li><a href="#environment-variables">Environment Variables</a></li>
-<li><a href="#test-pattern">Test Pattern</a></li>
-<li><a href="#rate-limiting">Rate Limiting</a></li>
-</ul></li>
-<li><a href="#ci--github-actions">CI / GitHub Actions</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#ci-github-actions">CI / GitHub Actions</a></li>
 <li><a href="#reporting-issues">Reporting Issues</a></li>
 <li><a href="#license">License</a></li>
-</ul></li>
 </ul><!-- END doctoc generated TOC please keep comment here to allow auto update --><div id="contributing-to-hoopr" class="section level1">
 
 <p>Thank you for your interest in contributing to hoopR! This guide will help you get started.</p>
@@ -165,35 +147,35 @@
 <h2 id="naming-conventions">Naming Conventions<a class="anchor" aria-label="anchor" href="#naming-conventions"></a></h2>
 <div class="section level3">
 <h3 id="function-names">Function Names<a class="anchor" aria-label="anchor" href="#function-names"></a></h3>
-<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr class="header"><th>Data Source</th>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Data Source</th>
 <th>Prefix</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td>NBA Stats API</td>
+</tr></thead><tbody><tr><td>NBA Stats API</td>
 <td><code>nba_</code></td>
 <td>
 <code><a href="reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
 </td>
-</tr><tr class="even"><td>ESPN API</td>
+</tr><tr><td>ESPN API</td>
 <td>
 <code>espn_nba_</code> / <code>espn_mbb_</code>
 </td>
 <td>
 <code><a href="reference/espn_nba_pbp.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
 </td>
-</tr><tr class="odd"><td>KenPom</td>
+</tr><tr><td>KenPom</td>
 <td><code>kp_</code></td>
 <td>
 <code><a href="reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings()</a></code>, <code><a href="reference/kp_box.html">kp_box()</a></code>
 </td>
-</tr><tr class="even"><td>NBA G-League</td>
+</tr><tr><td>NBA G-League</td>
 <td><code>nbagl_</code></td>
 <td>
 <code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code>, <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code>
 </td>
-</tr><tr class="odd"><td>NCAA</td>
+</tr><tr><td>NCAA</td>
 <td><code>ncaa_mbb_</code></td>
 <td><code><a href="reference/ncaa_mbb_teams.html">ncaa_mbb_teams()</a></code></td>
-</tr><tr class="even"><td>Data loaders</td>
+</tr><tr><td>Data loaders</td>
 <td>
 <code>load_nba_</code> / <code>load_mbb_</code>
 </td>
@@ -264,6 +246,41 @@
 </ul></div>
 </div>
 <div class="section level2">
+<h2 id="documentation-maintenance">Documentation Maintenance<a class="anchor" aria-label="anchor" href="#documentation-maintenance"></a></h2>
+<p>Two regeneration steps are part of the commit workflow whenever the relevant sources change. Both are mechanical — never edit the generated regions by hand.</p>
+<div class="section level3">
+<h3 id="markdown-tocs-doctoc">Markdown TOCs (doctoc)<a class="anchor" aria-label="anchor" href="#markdown-tocs-doctoc"></a></h3>
+<p><code>NEWS.md</code>, <code>CLAUDE.md</code>, <code>CONTRIBUTING.md</code>, <code>.github/copilot-instructions.md</code>, and <code>.github/PULL_REQUEST_TEMPLATE.md</code> carry a doctoc-generated table of contents inside the standard marker comments. After editing any of those files, regenerate the TOC before committing:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">Rscript</span> tools/run_doctoc.R <span class="at">--maxlevel</span> 2 <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  NEWS.md CLAUDE.md CONTRIBUTING.md <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md</span></code></pre></div>
+<p><code>cran-comments.md</code> is intentionally excluded — it is a short release-notes file submitted to CRAN and does not need a TOC.</p>
+<p><code>tools/run_doctoc.R</code> is a no-deps R replacement for the npm <code>doctoc</code> CLI — it produces output indistinguishable from the upstream tool, is idempotent (a no-op if no headings changed), and runs without Node.js. Use <code>--maxlevel 2</code> so the TOC only lists <code>#</code> and <code>##</code> headings; level-3 sub-entries crowd the nav.</p>
+</div>
+<div class="section level3">
+<h3 id="readmemd-rmarkdown">README.md (rmarkdown)<a class="anchor" aria-label="anchor" href="#readmemd-rmarkdown"></a></h3>
+<p><code>README.md</code> is rendered from <code>README.Rmd</code>. The Rmd carries <code>output: github_document: { toc: true, toc_depth: 2 }</code>, so the README has its own auto-generated TOC. After editing <code>README.Rmd</code>, re-render before committing:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">build_readme</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Commit <code>README.Rmd</code> and the regenerated <code>README.md</code> together. Never hand-edit <code>README.md</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="description-usethis">DESCRIPTION (usethis)<a class="anchor" aria-label="anchor" href="#description-usethis"></a></h3>
+<p>After editing <code>DESCRIPTION</code> (adding/removing packages, bumping versions, updating <code>Authors@R</code>, etc.), normalize formatting before committing:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external-link">use_tidy_description</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This re-orders fields, alphabetizes <code>Imports</code>/<code>Suggests</code>, and reflows long lines so subsequent diffs stay minimal. Run it even for one-line edits.</p>
+</div>
+<div class="section level3">
+<h3 id="release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml">Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml<a class="anchor" aria-label="anchor" href="#release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml"></a></h3>
+<p>Three files describe the same release at different audiences. Whenever you add a <code>NEWS.md</code> bullet, <strong>think through all three before committing</strong>:</p>
+<ul><li><p><strong><code>NEWS.md</code></strong> — authoritative changelog for downstream users; rendered into the pkgdown changelog. <strong>All new bullets go under the most recent unreleased version heading</strong> (currently <code># **hoopR 3.0.0**</code>). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (<code>### Bug Fixes</code>, <code>### Deprecations</code>, <code>### Stability and Test Robustness</code>, etc.) instead of starting a new one when the change is incremental. Once <code>3.0.0</code> ships to CRAN, the development version gets its own heading and the rule rolls forward.</p></li>
+<li><p><strong><code>cran-comments.md</code></strong> — what gets submitted to CRAN. Every behavioral or user-visible change you add to <code>NEWS.md</code> should also be reflected in <code>cran-comments.md</code> before submission. The two files are not duplicates: <code>NEWS.md</code> is the long-form changelog, <code>cran-comments.md</code> is the short-form release summary. If a <code>NEWS.md</code> bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from <code>cran-comments.md</code>.</p></li>
+<li><p><strong><code>_pkgdown.yml</code></strong> — the pkgdown reference index. New exported functions need to land in the right <code>reference:</code> section. The existing hoopR config uses <code>starts_with("nba_")</code> / <code>starts_with("espn_")</code> / <code>starts_with("kp_")</code> / <code>starts_with("ncaa_")</code> selectors so new functions matching those prefixes are picked up automatically; explicitly-listed functions need a manual entry. Functions deprecated via <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code> + <code>@keywords internal</code> are excluded from the rendered index by default — preview with <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code> when in doubt.</p></li>
+</ul><p>When the change touches the API surface (new export, deprecation, removal), include a one-line note in your commit message confirming you’ve checked all three files.</p>
+</div>
+</div>
+<div class="section level2">
 <h2 id="commit-messages">Commit Messages<a class="anchor" aria-label="anchor" href="#commit-messages"></a></h2>
 <p>Use <a href="https://www.conventionalcommits.org/" class="external-link">Conventional Commits</a>:</p>
 <pre><code>feat: add nba_playbyplayv3() endpoint wrapper
@@ -287,7 +304,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 <div class="section level3">
 <h3 id="environment-variables">Environment Variables<a class="anchor" aria-label="anchor" href="#environment-variables"></a></h3>
 <p>Tests for different API sources are gated behind environment variables. Set them before running tests:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Enable specific test suites</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>NBA_STATS_TESTS <span class="op">=</span> <span class="st">"1"</span><span class="op">)</span>     <span class="co"># NBA Stats API tests</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>ESPN_TESTS <span class="op">=</span> <span class="st">"1"</span><span class="op">)</span>          <span class="co"># ESPN API tests</span></span>
@@ -301,25 +318,25 @@ ci: update GitHub Actions workflow versions</code></pre>
 <span></span>
 <span><span class="co"># Run a single test file</span></span>
 <span><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_file.html" class="external-link">test_file</a></span><span class="op">(</span><span class="st">"tests/testthat/test-nba_playbyplayv3.R"</span><span class="op">)</span></span></code></pre></div>
-<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr class="header"><th>Variable</th>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Variable</th>
 <th>Description</th>
 <th>Default</th>
-</tr></thead><tbody><tr class="odd"><td><code>NBA_STATS_TESTS</code></td>
+</tr></thead><tbody><tr><td><code>NBA_STATS_TESTS</code></td>
 <td>Enable NBA Stats API tests (set to <code>"1"</code>)</td>
 <td>Disabled</td>
-</tr><tr class="even"><td><code>ESPN_TESTS</code></td>
+</tr><tr><td><code>ESPN_TESTS</code></td>
 <td>Enable ESPN API tests (set to <code>"1"</code>)</td>
 <td>Disabled</td>
-</tr><tr class="odd"><td><code>NBAGL_STATS_TESTS</code></td>
+</tr><tr><td><code>NBAGL_STATS_TESTS</code></td>
 <td>Enable NBA G-League tests (set to <code>"1"</code>)</td>
 <td>Disabled</td>
-</tr><tr class="even"><td><code>NCAA_MBB_TESTS</code></td>
+</tr><tr><td><code>NCAA_MBB_TESTS</code></td>
 <td>Enable NCAA MBB tests (set to <code>"1"</code>)</td>
 <td>Disabled</td>
-</tr><tr class="odd"><td><code>KP_USER</code></td>
+</tr><tr><td><code>KP_USER</code></td>
 <td>KenPom account email</td>
 <td>Not set</td>
-</tr><tr class="even"><td><code>KP_PW</code></td>
+</tr><tr><td><code>KP_PW</code></td>
 <td>KenPom account password</td>
 <td>Not set</td>
 </tr></tbody></table><p><strong>Note</strong>: All API tests are skipped on CRAN (<code>skip_on_cran()</code>) and CI (<code>skip_on_ci()</code>) by default. They require network access and valid API responses.</p>
@@ -327,7 +344,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 <div class="section level3">
 <h3 id="test-pattern">Test Pattern<a class="anchor" aria-label="anchor" href="#test-pattern"></a></h3>
 <p>When writing tests for NBA Stats API endpoints, follow this pattern:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"NBA Endpoint Name"</span>, <span class="op">{</span></span>
 <span>  <span class="fu">skip_on_cran</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu">skip_on_ci</span><span class="op">(</span><span class="op">)</span></span>
@@ -350,16 +367,16 @@ ci: update GitHub Actions workflow versions</code></pre>
 <div class="section level2">
 <h2 id="ci--github-actions">CI / GitHub Actions<a class="anchor" aria-label="anchor" href="#ci--github-actions"></a></h2>
 <p>The repository uses GitHub Actions for R CMD check and pkgdown site deployment. The following secrets should be configured at the repository or organization level:</p>
-<table class="table"><thead><tr class="header"><th>Secret</th>
+<table class="table"><thead><tr><th>Secret</th>
 <th>Used By</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>GITHUB_TOKEN</code></td>
+</tr></thead><tbody><tr><td><code>GITHUB_TOKEN</code></td>
 <td>All workflows</td>
 <td>Auto-provided by GitHub</td>
-</tr><tr class="even"><td><code>KP_USER</code></td>
+</tr><tr><td><code>KP_USER</code></td>
 <td>R-CMD-check</td>
 <td>KenPom email (for KP tests, if enabled)</td>
-</tr><tr class="odd"><td><code>KP_PW</code></td>
+</tr><tr><td><code>KP_PW</code></td>
 <td>R-CMD-check</td>
 <td>KenPom password (for KP tests, if enabled)</td>
 </tr></tbody></table><p><strong>Note</strong>: NBA Stats API, ESPN, and G-League tests are currently skipped on CI via <code>skip_on_ci()</code>. If you want to enable them in CI, you would need to add the corresponding environment variables as secrets and remove the <code>skip_on_ci()</code> guard.</p>

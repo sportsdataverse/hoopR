@@ -1,19 +1,17 @@
 # hoopR Copilot Instructions
 
+**Table of Contents** *generated with
+[DocToc](https://github.com/thlorenz/doctoc)*
+
 - [hoopR Copilot Instructions](#hoopr-copilot-instructions)
-  - [Project Context](#project-context)
-  - [Repository Workflow](#repository-workflow)
-  - [Code Style](#code-style)
-  - [HTTP Layer](#http-layer)
-  - [Messaging Layer](#messaging-layer)
-  - [Function Naming](#function-naming)
-  - [Roxygen Documentation](#roxygen-documentation)
-  - [Testing](#testing)
-    - [Environment Variables](#environment-variables)
-    - [CI Secrets](#ci-secrets)
-  - [Conventional Commits](#conventional-commits)
-  - [V3 API Notes](#v3-api-notes)
-  - [Common Pitfalls](#common-pitfalls)
+- [Project Context](#project-context)
+- [Repository Workflow](#repository-workflow)
+- [Code Style](#code-style)
+- [HTTP Layer](#http-layer)
+- [Messaging Layer](#messaging-layer)
+- [Function Naming](#function-naming)
+- [Roxygen Documentation](#roxygen-documentation)
+- [Testing](#testing)
 
 ## Project Context
 
@@ -72,8 +70,27 @@ no longer a dependency.
   [`.kp_get_page()`](https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.md),
   [`.kp_request()`](https://hoopR.sportsdataverse.org/reference/dot-kp_request.md).
 - `nba_endpoint()` builds URLs via
-  `glue::glue('https://stats.nba.com/stats/{endpoint}')` – does NOT
-  validate against its internal endpoint list.
+  `paste0("https://stats.nba.com/stats/", endpoint)` – does NOT validate
+  against its internal endpoint list.
+
+### Proxy support
+
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+resolves a proxy in this order: explicit `proxy =` arg →
+`getOption("hoopR.proxy")` → libcurl env vars (`http_proxy` /
+`https_proxy` / `no_proxy`).
+
+Proxy value accepts a URL string `"http://host:port"` or a named list
+`list(url=, port=, username=, password=, auth=)` spread into
+[`httr2::req_proxy()`](https://httr2.r-lib.org/reference/req_proxy.html).
+
+Per-call override (`nba_foo(proxy = ...)`) only threads through NBA
+Stats wrappers (which forward `...` to `request_with_proxy`). ESPN /
+KenPom / NBA G-League wrappers call
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+directly without `...`, so use `options(hoopR.proxy = ...)` once at
+session top — that’s the recommended pattern for any session that runs
+through a proxy.
 
 ## Messaging Layer
 
@@ -95,14 +112,14 @@ documentation references).
 
 ## Function Naming
 
-| Data Source   | Prefix                    | Example                                                                                                                                                                                              |
-|---------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| NBA Stats API | `nba_`                    | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
-| ESPN API      | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)                                 |
-| KenPom        | `kp_`                     | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md)                                     |
-| NBA G-League  | `nbagl_`                  | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)                           |
-| NCAA          | `ncaa_mbb_`               | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md)                                                                                                                  |
-| Data loaders  | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md)                           |
+| Data Source | Prefix | Example |
+|----|----|----|
+| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
+| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
+| KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
+| NBA G-League | `nbagl_` | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md) |
+| NCAA | `ncaa_mbb_` | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md) |
+| Data loaders | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md) |
 
 ## Roxygen Documentation
 
@@ -128,22 +145,64 @@ Every exported function needs:
 
 - Use `skip_on_cran()`, `skip_on_ci()`, and `skip_nba_stats_test()`
   guards.
+
 - Use source-specific guards when applicable: `skip_espn_test()`,
   `skip_nbagl_stats_test()`, `skip_ncaa_mbb_test()`,
   `skip_ncaa_wbb_test()`, and `skip_kenpom_test()`.
-- Validate columns with
-  `expect_in(sort(expected_cols), sort(colnames(x)))` (subset check, not
-  exact match).
-- For dynamic columns, use
-  `expect_true(all(core_cols %in% colnames(x)))`.
-- For intermittent endpoints, add explicit skip-on-empty guards before
-  indexing `x[[1]]` or asserting columns.
+
+- **Column assertions must always use the subset direction** — expected
+  ⊆ actual: `expect_in(sort(expected_cols), sort(colnames(x)))`. NBA
+  Stats and ESPN APIs add columns without removing old ones, so strict
+  `expect_equal(sort(colnames(x)), sort(cols))` will flag on any new
+  column. The subset direction is the only pattern that survives
+  upstream drift. Equivalently,
+  `expect_in(sort(colnames(x)), sort(expected))` is also wrong — same
+  direction problem.
+
+- For dynamic columns, `expect_true(all(core_cols %in% colnames(x)))` is
+  equivalent to the subset-direction `expect_in()`.
+
+- **Always add a skip-if-empty guard immediately after the API call**,
+  before any assertion that touches `x[[1]]`:
+
+  ``` r
+
+  x <- nba_func(...)
+  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) ||
+      nrow(x[[1]]) == 0) {
+    skip("No rows returned from endpoint at test time")
+  }
+  ```
+
+  This handles transient 500s, HTTP/2 stream errors, and empty responses
+  without polluting the failure report.
+
+- For tests that assert against multiple result sets (`x[[1]]..x[[N]]`)
+  where the API sometimes returns fewer elements, wrap each assertion in
+  a per-index null/empty-column helper:
+
+  ``` r
+
+  check_cols <- function(i, cols) {
+    if (length(x) < i || is.null(x[[i]]) || !is.data.frame(x[[i]]) ||
+        ncol(x[[i]]) == 0) return(invisible(NULL))
+    expect_in(sort(cols), sort(colnames(x[[i]])))
+    expect_s3_class(x[[i]], "data.frame")
+  }
+  ```
+
+  See wehoop’s `test-wnba_teamvsplayer.R` for a reference
+  implementation.
+
 - For deprecated wrappers, prefer explicit test skips with a replacement
   note rather than brittle live assertions.
+
 - Add `Sys.sleep(3)` at the end of NBA Stats API tests for rate limiting
   (~590 req/10 min).
+
 - Test game ID: `"0022200021"` or `"0022201086"` for known completed
   games.
+
 - Handle empty API responses gracefully in tests (V2 endpoints may
   return empty for old games).
 
@@ -193,6 +252,60 @@ Types: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `style`,
 Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers
 referencing AI tools.
 
+## Documentation Maintenance
+
+Two regeneration steps are part of the commit workflow whenever the
+relevant sources change. Both are mechanical — never edit the generated
+regions by hand.
+
+- **Markdown TOCs.** `NEWS.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
+  `.github/copilot-instructions.md`, and
+  `.github/PULL_REQUEST_TEMPLATE.md` carry a doctoc-generated TOC inside
+  marker comments. (`cran-comments.md` is intentionally excluded — it is
+  a short CRAN-submission file.) After editing any of them, run:
+
+  ``` sh
+  Rscript tools/run_doctoc.R --maxlevel 2 \
+    NEWS.md CLAUDE.md CONTRIBUTING.md \
+    .github/copilot-instructions.md .github/PULL_REQUEST_TEMPLATE.md
+  ```
+
+  `tools/run_doctoc.R` is a no-deps R replacement for the npm `doctoc`
+  CLI; it is idempotent and runs without Node.js. Use `--maxlevel 2`
+  (level-3 sub-entries crowd the nav).
+
+- **README.md.** Rendered from `README.Rmd` (with
+  `output: github_document: { toc: true, toc_depth: 2 }`). After editing
+  the Rmd, run `devtools::build_readme()` and commit `README.Rmd` +
+  `README.md` together. Never hand-edit `README.md`.
+
+- **DESCRIPTION.** After editing `DESCRIPTION` (deps, versions,
+  `Authors@R`, etc.), run
+  [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html)
+  to normalize field order, alphabetize `Imports`/`Suggests`, and reflow
+  long lines. Run it even for one-line edits.
+
+- **Release notes triad — `NEWS.md` / `cran-comments.md` /
+  `_pkgdown.yml`.** Whenever you add a `NEWS.md` bullet, check the other
+  two:
+
+  - `NEWS.md` — all new bullets go under the most recent **unreleased**
+    version heading (currently `# **hoopR 3.0.0**`). Do NOT create a new
+    version section ahead of release; extend the existing subsections
+    (`### Bug Fixes`, `### Deprecations`,
+    `### Stability and Test Robustness`, …). After the release ships the
+    rule rolls forward to the next dev version.
+  - `cran-comments.md` — every user-visible / behavioral change in
+    `NEWS.md` should be reflected in `cran-comments.md` before
+    submission. Internal-only changes (refactors, test infra, dev
+    tooling) can be omitted.
+  - `_pkgdown.yml` — new exports go in the right `reference:` section.
+    `starts_with()` selectors auto-pick up `nba_*` / `espn_*` / `kp_*` /
+    `ncaa_*` prefixes; explicitly-listed functions need a manual entry.
+    [`lifecycle::deprecate_stop()`](https://lifecycle.r-lib.org/reference/deprecate_soft.html) +
+    `@keywords internal` excludes a function from the rendered index by
+    default.
+
 ## V3 API Notes
 
 - V3 endpoints return nested JSON – use
@@ -241,9 +354,31 @@ referencing AI tools.
 
 ## Common Pitfalls
 
-- Always initialize `df_list <- list()` (or `data <- data.frame()` /
-  `data <- list()`) before `tryCatch` blocks.
-- ESPN API columns change over time – use subset validation in tests.
+- **Return-value initialization is mandatory**: every wrapper that
+  `return(X)` where `X` is assigned only inside `tryCatch(expr = {...})`
+  must initialize `X` *before* the `tryCatch`. Otherwise, when the API
+  errors, `return(X)` throws `object 'X' not found` instead of the
+  intended empty fallback. Applies to `df_list`, `plays_df`, `pbp`,
+  `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`,
+  `conferences`, `resp`, `data`, etc. — any return variable. Initialize
+  to [`list()`](https://rdrr.io/r/base/list.html) for named-list
+  returns, `NULL` for single-object returns,
+  [`data.frame()`](https://rdrr.io/r/base/data.frame.html) for tibble
+  returns.
+- When dropping a known-transient column inside a function, use
+  `dplyr::select(-dplyr::any_of("colname"))` instead of
+  `dplyr::select(-"colname")`. The bare form errors the moment upstream
+  drops the column.
+- When renaming columns after
+  [`janitor::clean_names()`](https://sfirke.github.io/janitor/reference/clean_names.html),
+  use `dplyr::rename(dplyr::any_of(c(new = "old")))` so the function
+  survives upstream rename/drops without breaking. See
+  [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md)
+  and
+  [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
+  for examples.
+- ESPN API columns change over time — **column assertions in tests must
+  use the subset direction** (`expect_in(expected, actual)`).
 - V3-style leader endpoints return mixed types – coerce to
   [`as.character()`](https://rdrr.io/r/base/character.html) with
   `%||% NA_character_`.
@@ -258,5 +393,12 @@ referencing AI tools.
 - KenPom HTML structure changes periodically – CSS selectors for tables
   (`table#player-table`), referee links (`div.refline`), and navigation
   elements are fragile and may need updating.
+- **Two-block roxygen pattern + `@noRd` trap:** when an internal helper
+  uses the `@name` + `NULL` topic block above the function-block,
+  putting `@noRd` only on the function block leaves the topic block to
+  generate an orphan `man/dot-*.Rd` file. pkgdown’s
+  `build_reference_index()` will then fail with “topics missing from
+  index”. Fix: put `@keywords internal` on the topic block as well as
+  `@noRd` on the function block.
 - Never edit `NAMESPACE` or `man/` files by hand; regenerate with
   `devtools::document()`.

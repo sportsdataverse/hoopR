@@ -120,21 +120,21 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-03-25 11:43:11 UTC
-#> # A tibble: 525,988 × 64
+#> ℹ Data updated: 2026-05-16 11:45:22 UTC
+#> # A tibble: 633,818 × 64
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
-#>  1                1   4.02e 9               4     615 Jumpball  Maxi…          0
-#>  2                2   4.02e 9               7     130 Floating… Maxi…          2
-#>  3                3   4.02e 9               9      95 Layup Sh… Mous…          2
-#>  4                4   4.02e10              11     126 Layup Dr… Maxi…          4
-#>  5                5   4.02e10              13     118 Alley Oo… Mous…          4
-#>  6                6   4.02e10              15      44 Shooting… Bran…          4
-#>  7                7   4.02e10              17      98 Free Thr… Maxi…          5
-#>  8                8   4.02e10              18      99 Free Thr… Maxi…          6
-#>  9                9   4.02e10              21     137 Turnarou… Mile…          6
-#> 10               10   4.02e10              22     156 Offensiv… Mous…          6
-#> # ℹ 525,978 more rows
+#>  1                1   4.02e 9               4     615 "Jumpbal… "Jal…          0
+#>  2                2   4.02e 9               7      42 "Offensi… "Don…          0
+#>  3                3   4.02e 9               9      84 "Offensi… "Don…          0
+#>  4                4   4.02e10              10      92 "Jump Sh… "Tob…          0
+#>  5                5   4.02e10              11     155 "Defensi… "Cav…          0
+#>  6                6   4.02e10              13     144 "Driving… "Jam…          0
+#>  7                7   4.02e10              15     132 "Step Ba… "Cad…          0
+#>  8                8   4.02e10              16     155 "Defensi… "Jam…          0
+#>  9                9   4.02e10              17      62 "Bad Pas… "Jam…          0
+#> 10               10   4.02e10              19     131 "Pullup … "Dan…          0
+#> # ℹ 633,808 more rows
 #> # ℹ 57 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,

@@ -124,8 +124,60 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_kpoy</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-26 14:51:19.630488: Invalid arguments or no KenPom player of the year data for 2026 available!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in kp_kpoy(year = 2026) : object 'kenpom' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $KPoYRatings</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    rk            player kpoy_rating          team hgt wgt exp        home_town</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   1    Cameron Boozer       2.951          Duke 6-9 250  Fr        Miami, FL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   2  Joshua Jefferson       1.758      Iowa St. 6-9 240  Sr    Las Vegas, NV</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   3   Yaxel Lendeborg       1.690      Michigan 6-9 240  Sr   Pennsauken, NJ</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   4 Kingston Flemings       1.685       Houston 6-4 190  Fr  San Antonio, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   5     Keaton Wagler       1.642      Illinois 6-6 185  Fr      Shawnee, KS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   6       AJ Dybantsa       1.596           BYU 6-9 212  Fr     Brockton, MA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   7      Jeremy Fears       1.563  Michigan St. 6-2 190  So       Joliet, IL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   8      Zuby Ejiofor       1.556    St. John's 6-9 245  Sr      Garland, TX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   9      Braden Smith       1.503        Purdue 6-0 170  Sr    Westfield, IN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 10      Tyler Tanner       1.502    Vanderbilt 6-0 173  So    Brentwood, TN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    year       group</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2026 kPoY Rating</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $GameMVPs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    rk            player game_mv_ps               team  hgt wgt exp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   1    Cameron Boozer         25               Duke  6-9 250  Fr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   2      Zuby Ejiofor         18         St. John's  6-9 245  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   2 Kingston Flemings         18            Houston  6-4 190  Fr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   4   Nick Martinelli         16       Northwestern  6-7 225  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   4      Tyler Tanner         16         Vanderbilt  6-0 173  So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   4      Ebuka Okorie         16           Stanford  6-2 185  Fr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   7    Bennett Stirtz         15               Iowa  6-4 190  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   8        Graham Ike         14            Gonzaga  6-9 250  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   8     Camren Hunter         14   Central Arkansas  6-3 205  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  8     Keon Thompson         14  Stephen F. Austin  6-1 200  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  8       Tarris Reed         14        Connecticut 6-11 265  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  8    Bruce Thornton         14           Ohio St.  6-2 215  Sr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  8        Gavin Doty         14              Siena  6-5 190  So</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            home_town year            group</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          Miami, FL 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2        Garland, TX 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    San Antonio, TX 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       Glenview, IL 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5      Brentwood, TN 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         Nashua, NH 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7        Liberty, MO 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         Aurora, CO 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         Bryant, AR 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  Merrillville, IN 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11     St. Louis, MO 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12      Fairburn, GA 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        Fulton, NY 2026 Game MVP Leaders</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

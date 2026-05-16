@@ -1332,7 +1332,7 @@ Internal functions used by hoopR
 - [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
   :
 
-  **Retry http request with proxy**
+  **Retry http request with optional proxy**
 
 - [`helper_espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.md)
   :

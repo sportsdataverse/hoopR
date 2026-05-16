@@ -31,6 +31,34 @@ CRAN release: 2026-03-24
   and
   [`.kp_request()`](https://hoopR.sportsdataverse.org/reference/dot-kp_request.md)
   helpers.
+- **Proxy support restored.** When the package migrated from `httr` to
+  `httr2` the legacy
+  [`httr::use_proxy()`](https://httr.r-lib.org/reference/use_proxy.html)
+  plumbing was dropped and
+  [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+  quietly stopped honoring proxies (its `...` was preserved purely for
+  source compatibility). Both
+  [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+  and the lower-level
+  [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+  now accept a `proxy =` argument:
+  - `proxy = NULL` (default) — libcurl reads `http_proxy` /
+    `https_proxy` / `no_proxy` env vars automatically.
+  - `proxy = "http://host:port"` — string form, forwarded to
+    `httr2::req_proxy(url = ...)`.
+  - `proxy = list(url=, port=, username=, password=, auth=)` — named
+    list spread into
+    [`httr2::req_proxy()`](https://httr2.r-lib.org/reference/req_proxy.html)
+    for authenticated proxies. Resolution order in
+    [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md):
+    explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env
+    vars. The `...` thread works for NBA Stats wrappers (which forward
+    into
+    [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md));
+    ESPN / KenPom / NBA G-League wrappers call
+    [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+    directly without `...`, so use `options(hoopR.proxy = ...)` at the
+    top of the session to cover those without per-function plumbing.
 
 #### **Messaging Migration (usethis → cli)**
 
