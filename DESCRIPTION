@@ -2,7 +2,7 @@ Package: hoopR
 Title: Access Men's Basketball Play by Play Data
 Version: 3.0.0
 Authors@R: c(
-    person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre"),
+    person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7194-9067")),
     person("Jason", "Lee", , "Jason@aisportsfirm.com", role = "ctb"),
     person("Billy", "Fryer", , "billyfryer@att.net", role = "ctb"),

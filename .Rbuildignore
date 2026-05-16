@@ -30,3 +30,4 @@ mbb_pbp_db
 ^\\.claude$
 ^\\.vscode$
 ^tools$
+^\.positai$
