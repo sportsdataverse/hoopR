@@ -78,22 +78,48 @@ nba_schedule <- function(
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  version <- "scheduleleaguev2"
-  full_url <- nba_endpoint(version)
-
-  params <- list(
-    LeagueID = league_id,
-    Season = season
+  # The stats.nba.com/stats/scheduleleaguev2 endpoint was retired upstream in
+  # March 2026 (returns Connection Reset across multiple client environments;
+  # see issue #184 and #187). The same payload — identical
+  # leagueSchedule.gameDates[].games[] schema — is served unauthenticated from
+  # the public CDN, but only for the current season. The CDN host honors the
+  # NBA/G-League distinction via the host prefix (`cdn.nba.com` vs the WNBA
+  # mirror at `cdn.wnba.com`), and the G-League schedule is exposed at the
+  # `_2`-suffixed variant on the NBA CDN.
+  cdn_host <- if (identical(as.character(league_id), "20")) {
+    # G-League — the same NBA CDN serves its schedule via a variant suffix
+    "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_2.json"
+  } else {
+    "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+  }
+  cdn_headers <- c(
+    `User-Agent` = paste0(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ",
+      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"),
+    `Accept` = "application/json, text/plain, */*",
+    `Accept-Language` = "en-US,en;q=0.9",
+    `Origin` = "https://www.nba.com",
+    `Referer` = "https://www.nba.com/"
   )
 
   games <- NULL
 
   tryCatch(
     expr = {
-      resp <- request_with_proxy(url = full_url, params = params, ...)
+      resp <- .retry_request(cdn_host, headers = cdn_headers) %>%
+        .resp_text() %>%
+        jsonlite::fromJSON()
 
-      league_sched <- resp %>%
-        purrr::pluck("leagueSchedule")
+      league_sched <- resp %>% purrr::pluck("leagueSchedule")
+      cdn_season   <- league_sched$seasonYear
+
+      if (!is.null(cdn_season) &&
+          !identical(as.character(season), as.character(cdn_season))) {
+        message(glue::glue(
+          "NBA CDN schedule is for season {cdn_season}, not {season}. ",
+          "For historical seasons use `load_nba_schedule(seasons = ...)`."))
+      }
+
       games <- league_sched %>%
         purrr::pluck("gameDates") %>%
         tidyr::unnest("games") %>%
@@ -112,7 +138,7 @@ nba_schedule <- function(
             purrr::pluck("awayTeam") %>%
             dplyr::rename_with(~ paste0("away_team_", .x))
         ) %>%
-        select(-"homeTeam", -"awayTeam") %>%
+        dplyr::select(-dplyr::any_of(c("homeTeam", "awayTeam"))) %>%
         janitor::clean_names()
       colnames(games) <- gsub("team_team", "team", colnames(games))
       games$game_id <- unlist(purrr::map(games$game_id, function(x) {
