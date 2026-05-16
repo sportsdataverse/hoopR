@@ -13,3 +13,4 @@ md*
 docs
 /.vscode
 /.claude
+.positai
