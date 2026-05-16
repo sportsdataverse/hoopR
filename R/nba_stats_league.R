@@ -81,16 +81,23 @@ nba_leaguegamelog <- function(
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
 
+  # Param order matters here. As of 2026, the NBA Stats API rejects
+  # the alphabetical ordering (Counter first) with a Cloudflare HTML error
+  # page; the LeagueID-first ordering matches what the nba.com client sends
+  # and parses successfully. Verified parallel to the WNBA endpoint of the
+  # same name (see sportsdataverse/wehoop#54) — same param values,
+  # alphabetical-first returns HTML, LeagueID-first returns a populated
+  # `LeagueGameLog` result set.
   params <- list(
-    Counter = counter,
-    DateFrom = date_from,
-    DateTo = date_to,
-    Direction = direction,
-    LeagueID = league_id,
+    LeagueID     = league_id,
+    Season       = season,
+    SeasonType   = season_type,
     PlayerOrTeam = player_or_team,
-    Season = season,
-    SeasonType = season_type,
-    Sorter = sorter
+    Counter      = counter,
+    Direction    = direction,
+    Sorter       = sorter,
+    DateFrom     = date_from,
+    DateTo       = date_to
   )
 
   df_list <- list()

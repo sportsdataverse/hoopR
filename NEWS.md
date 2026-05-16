@@ -1,6 +1,5 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [**hoopR 3.0.0**](#hoopr-300)
 - [**hoopR 2.1.0**](#hoopr-210)
@@ -34,6 +33,7 @@
 - [**hoopR 0.0.0.9**](#hoopr-0009)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 # **hoopR 3.0.0**
 
@@ -120,6 +120,8 @@
 
 ### **Bug Fixes**
 
+- `nba_schedule()` — migrated off the retired `stats.nba.com/stats/scheduleleaguev2` endpoint (returns `Connection was reset` across multiple client environments; issues #184 and #187) to the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. The CDN serves the same `leagueSchedule.gameDates[].games[]` payload as the dead stats endpoint, requires no authentication or special headers, and stays current with the live NBA season. G-League schedules now come from the `_2`-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function now emits a `message()` directing users at `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL` before the `tryCatch` so an upstream HTTP error surfaces the `cli`/`message` alert instead of `object 'games' not found` (issue #184). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for the current 2025-26 season.
+- `nba_leaguegamelog()` — reordered the outgoing query-string parameter ordering to put `LeagueID` first. As of 2026 the NBA Stats API rejects the alphabetical ordering (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a Cloudflare HTML error page; `LeagueID`-first ordering matches what the nba.com client sends and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the WNBA equivalent in `wehoop`.
 - Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
 - Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
 - Fixed `helper-skip.R` test guard functions to use proper string comparison (`!= "1"`) instead of numeric comparison (`== 0`).

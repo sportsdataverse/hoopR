@@ -43,6 +43,8 @@ This is a major release (v3.0.0) with the following changes:
 - `nbagl_live_boxscore()` function added.
 
 ### Bug Fixes
+- Migrated `nba_schedule()` off the retired `stats.nba.com/stats/scheduleleaguev2` endpoint to the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json` (same `leagueSchedule.gameDates[].games[]` payload schema; no authentication required). G-League schedules now come from the `_2`-suffixed CDN variant. Historical seasons (CDN only serves the current season) emit a `message()` directing users at `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL` before the `tryCatch` so an upstream HTTP error surfaces the warning instead of `object 'games' not found`. Verified end-to-end against the current 2025-26 NBA season.
+- Reordered the outgoing query-string parameter order in `nba_leaguegamelog()` to put `LeagueID` first. As of 2026 the NBA Stats API rejects the alphabetical ordering with a Cloudflare HTML error page but accepts `LeagueID`-first; the wrapper had been sending the alphabetical order.
 - Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API wrapper functions, preventing crashes on API errors.
 - Fixed `nba_data_pbp()` `plays_df` not initialized before `tryCatch`.
 - Fixed `nba_iststandings()` nested games column flattening.
