@@ -55,7 +55,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_teams())
 #> ── ESPN NBA Teams Information from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-17 15:42:40 UTC
+#> ℹ Data updated: 2026-05-17 16:09:39 UTC
 #> # A tibble: 30 × 25
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
