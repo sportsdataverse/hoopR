@@ -41,10 +41,91 @@
 
 Development release on top of the CRAN-shipped 3.0.0 (commit
 [b76100b3](https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b)).
-Most entries below are bug fixes for endpoint behavior that drifted
-after CRAN submission, plus the package-wide `@return` documentation
-upgrade and a proxy-support restoration that addresses a regression
-introduced by the 3.0.0 `httr` → `httr2` migration.
+Headline change is a **58-wrapper ESPN endpoint expansion** that brings
+hoopR's ESPN coverage to parity with wehoop — athlete coverage, team
+detail, event detail, league catalog, news, calendar, injuries, plus
+draft / freeagents / transactions for the NBA. Also includes bug fixes
+for endpoint behavior that drifted after CRAN submission, the
+package-wide `@return` documentation upgrade, and a proxy-support
+restoration that addresses a regression introduced by the 3.0.0
+`httr` → `httr2` migration.
+
+### **New exported functions**
+
+58 new ESPN wrappers added across 8 domains (29 per league × 2 leagues
++ 4 NBA-only). All built on shared internal helpers in
+`R/espn_basketball_*_helpers.R` so each MBB / NBA pair stays DRY — one
+bugfix in the helper propagates to both public wrappers. Same
+internal-helpers-plus-thin-shims pattern wehoop uses for its
+WBB / WNBA pair.
+
+#### *Athlete coverage (×8 per league)*
+
+| Function | Endpoint family | Description |
+|---|---|---|
+| `espn_mbb_athlete_info()` / `espn_nba_athlete_info()` | site-v2 | Athlete bio / team / position / status / college / draft info. |
+| `espn_mbb_athlete_overview()` / `espn_nba_athlete_overview()` | web-common-v3 | Season overview + last-5-games + news + rotowire notes. |
+| `espn_mbb_athlete_stats()` / `espn_nba_athlete_stats()` | web-common-v3 | Per-category stats as a named list (averages / totals). |
+| `espn_mbb_athlete_gamelog()` / `espn_nba_athlete_gamelog()` | web-common-v3 | Game-by-game log. |
+| `espn_mbb_athlete_splits()` / `espn_nba_athlete_splits()` | web-common-v3 | Long-format home / away / opponent splits. |
+| `espn_mbb_athlete_eventlog()` / `espn_nba_athlete_eventlog()` | core-v2 | Per-event log. `statistics.$ref` URLs returned as `statistics_ref` character column (not auto-resolved). |
+| `espn_mbb_athlete_awards()` / `espn_nba_athlete_awards()` | core-v2 | Awards (sparse / often empty); empty payload returns a canonical-shape empty tibble. |
+| `espn_mbb_athlete_statisticslog()` / `espn_nba_athlete_statisticslog()` | core-v2 | Per-season statistics log. |
+
+#### *Team detail (×5 per league)*
+
+| Function | Description |
+|---|---|
+| `espn_mbb_team()` / `espn_nba_team()` | Single-team info as a named list (`Info`, `Record`, `NextEvent`, `StandingSummary`, `Coaches`). |
+| `espn_mbb_team_roster()` / `espn_nba_team_roster()` | Roster (one row per athlete with position, height, weight, headshot). |
+| `espn_mbb_team_schedule()` / `espn_nba_team_schedule()` | Schedule (one row per event with opponent, venue, broadcast, result). |
+| `espn_mbb_team_leaders()` / `espn_nba_team_leaders()` | Statistical leaders in long format per category-rank-athlete. |
+| `espn_mbb_team_news()` / `espn_nba_team_news()` | Team-scoped news feed. |
+
+#### *Event detail (×4 per league)*
+
+| Function | Description |
+|---|---|
+| `espn_mbb_event_odds()` / `espn_nba_event_odds()` | Game-level odds (one row per provider). |
+| `espn_mbb_event_probabilities()` / `espn_nba_event_probabilities()` | Paginated play-level win probabilities (page loop capped at 50 pages; respects `limit`). |
+| `espn_mbb_event_officials()` / `espn_nba_event_officials()` | Per-game officials. |
+| `espn_mbb_event_broadcasts()` / `espn_nba_event_broadcasts()` | Broadcast outlets. |
+
+#### *League catalog (×6 per league)*
+
+| Function | Description |
+|---|---|
+| `espn_mbb_leaders()` / `espn_nba_leaders()` | League leaders (web-common-v3 `statistics/byathlete`). |
+| `espn_mbb_venues()` / `espn_nba_venues()` | Venue catalog. |
+| `espn_mbb_coaches()` / `espn_nba_coaches()` | Coach roster. |
+| `espn_mbb_athletes_index()` / `espn_nba_athletes_index()` | Paginated athlete index with progress messages. |
+| `espn_mbb_seasons()` / `espn_nba_seasons()` | Season list. |
+| `espn_mbb_season_info()` / `espn_nba_season_info()` | Single-season info. |
+
+#### *News + calendar (×2 per league)*
+
+| Function | Description |
+|---|---|
+| `espn_mbb_news()` / `espn_nba_news()` | League-level news feed (site-v2 `/news`). |
+| `espn_mbb_calendar()` / `espn_nba_calendar()` | Scoreboard calendar blocks (site-v2 `/scoreboard?dates={season}`). |
+
+#### *Injuries (×2 per league)*
+
+| Function | Description |
+|---|---|
+| `espn_mbb_injuries()` / `espn_nba_injuries()` | League-wide injury feed (site-v2 `/injuries`). |
+| `espn_mbb_team_injuries()` / `espn_nba_team_injuries()` | Team-scoped injury feed (site-v2 `/teams/{id}/injuries`). |
+
+MBB injury data is typically sparse on ESPN; both variants return an empty tibble (rather than erroring) when no injuries are reported.
+
+#### *NBA-only ESPN endpoints*
+
+| Function | Description |
+|---|---|
+| `espn_nba_draft()` | Paginates core-v2 `/seasons/{year}/draft` (up to 20 pages); flat tibble of picks. |
+| `espn_nba_freeagents()` | Wraps core-v2 `/seasons/{year}/freeagents`; returns an empty tibble outside the off-season free-agent window. |
+| `espn_nba_transactions()` | Wraps site-v2 `/transactions?season={year}&limit={limit}` with null-safe `to_team_id` for release transactions. |
+| `espn_nba_conferences()` | NBA-side analog of `espn_mbb_conferences()`, against the NBA scoreboard-conferences endpoint. |
 
 ### **Behavior changes to existing functions**
 
