@@ -83,7 +83,7 @@ Every `@return` markdown table across the 39 R source files is upgraded from two
 | `mine_api_descriptions.R` | Driver that probes the ESPN endpoints which self-document their stat columns. |
 | `audit_column_descriptions.R` | Coverage / leverage diagnostic. |
 | `markdown_man_table_helper.R` | Programmatic helpers (`load_column_descriptions()`, `make_return_table_md()`, `roxygenize_return()`, `augment_return_tables_in_file()`, `augment_all_r_files()`, `mine_espn_api_descriptions(url)`). |
-| `espn_endpoints_catalog.md` | Copy of the [sejaldua/espn-api](https://github.com/sejaldua/espn-api) endpoint catalog used to scope the miner. |
+| `espn_endpoints_catalog.md` | Basketball-scoped ESPN endpoint reference used to scope the miner. |
 
 The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing `|col_name|types|` tables in each `@return` block are the parse input).
 
