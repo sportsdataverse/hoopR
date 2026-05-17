@@ -1,6 +1,8 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [**hoopR 3.1.0**](#hoopr-310)
 - [**hoopR 3.0.0**](#hoopr-300)
 - [**hoopR 2.1.0**](#hoopr-210)
 - [**hoopR 2.0.0**](#hoopr-200)
@@ -34,6 +36,101 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
+# **hoopR 3.1.0**
+
+Development release on top of the CRAN-shipped 3.0.0 (commit
+[b76100b3](https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b)).
+Most entries below are bug fixes for endpoint behavior that drifted
+after CRAN submission, plus the package-wide `@return` documentation
+upgrade and a proxy-support restoration that addresses a regression
+introduced by the 3.0.0 `httr` → `httr2` migration.
+
+### **Behavior changes to existing functions**
+
+#### *Bug fixes*
+
+| Function | Fix |
+|---|---|
+| `nba_schedule()` | Migrated off the retired `stats.nba.com/stats/scheduleleaguev2` endpoint (returns `Connection was reset` across multiple client environments; issues #184 and #187) to the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. Same `leagueSchedule.gameDates[].games[]` payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the `_2`-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a `message()` directing users at `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL` before `tryCatch` (issue #184). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26. |
+| `nba_leaguegamelog()` | Reordered query-string parameter ordering to put `LeagueID` first. As of 2026 the NBA Stats API rejects the alphabetical ordering (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a Cloudflare HTML error page; `LeagueID`-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the WNBA equivalent in `wehoop`. |
+| `ncaa_mbb_NET_rankings()` | Hardened against NCAA.com column drift. The function now uses `dplyr::rename(dplyr::any_of(...))` so renamed / added columns (e.g. new `Quad 1..4` headers) no longer break the documented schema; existing consumers keep working and new columns ride along untouched. |
+| ESPN wrappers | Moved `.retry_request()` and `check_status()` *inside* `tryCatch` so transient HTTP errors surface as `cli_alert_danger()` + empty fallback rather than escaping the function. Affects every `espn_nba_*` / `espn_mbb_*` wrapper. |
+
+### **Documentation improvements**
+
+#### *@return column descriptions on every exported function*
+
+Every `@return` markdown table across the 39 R source files is upgraded from two columns (`col_name | types`) to three columns (`col_name | types | description`). **6,039 total table rows** touched; every result set on every function now ships a per-column description in `?<function>` help, the pkgdown reference, and the rendered man pages.
+
+**Coverage** — frequency-weighted, what `?fn` readers actually see — **58.4% of the 6,039 @return table rows now carry a hand-quality description** (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator's snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic NBA Stats endpoints.
+
+**Description sources** (precedence order, first match wins):
+
+1. `tools/docs/column_descriptions_curated.csv` — 619 hand-authored entries covering high-traffic columns and basketball / ESPN domain conventions.
+2. `tools/docs/column_descriptions_api.csv` — 188 ESPN-authored descriptions mined live from 14 endpoints per league across both `nba` and `mens-college-basketball`, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).
+3. Mined `\item{...}{...}` lines from existing `\describe{}` blocks.
+4. Heuristic patterns driven by column-name suffixes (`*_id`, `*_pct`, `*_made`, `*_attempted`, `*_per_36`, etc.) with basketball-friendly noun substitution.
+
+**New tooling under `tools/docs/`** (`.Rbuildignore`'d via the existing `^tools$` rule):
+
+| File | Purpose |
+|---|---|
+| `build_column_descriptions.R` | One-shot dictionary builder. |
+| `column_descriptions_curated.csv` | Hand-edit surface; overrides API / mined / heuristic outputs. |
+| `column_descriptions_api.csv` | ESPN-API-mined descriptions, regenerated by `mine_api_descriptions.R`. |
+| `column_descriptions.csv` | Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic). |
+| `mine_api_descriptions.R` | Driver that probes the ESPN endpoints which self-document their stat columns. |
+| `audit_column_descriptions.R` | Coverage / leverage diagnostic. |
+| `markdown_man_table_helper.R` | Programmatic helpers (`load_column_descriptions()`, `make_return_table_md()`, `roxygenize_return()`, `augment_return_tables_in_file()`, `augment_all_r_files()`, `mine_espn_api_descriptions(url)`). |
+| `espn_endpoints_catalog.md` | Copy of the [sejaldua/espn-api](https://github.com/sejaldua/espn-api) endpoint catalog used to scope the miner. |
+
+The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing `|col_name|types|` tables in each `@return` block are the parse input).
+
+### **Internals**
+
+#### *HTTP layer — proxy support restored*
+
+When the package migrated from `httr` to `httr2` in 3.0.0, the legacy `httr::use_proxy()` plumbing was dropped and `request_with_proxy()` quietly stopped honoring proxies (its `...` was preserved purely for source compatibility). Both `request_with_proxy()` and the lower-level `.retry_request()` now accept a `proxy =` argument:
+
+- `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy` / `no_proxy` env vars automatically.
+- `proxy = "http://host:port"` — string form, forwarded to `httr2::req_proxy(url = ...)`.
+- `proxy = list(url=, port=, username=, password=, auth=)` — named list spread into `httr2::req_proxy()` for authenticated proxies.
+
+Resolution order in `.retry_request()`: explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env vars. The `...` thread works for NBA Stats wrappers (which forward into `request_with_proxy()`); ESPN / KenPom / NBA G-League wrappers call `.retry_request()` directly without `...`, so use `options(hoopR.proxy = ...)` at the top of the session to cover those without per-function plumbing.
+
+#### *Error-handling consolidation*
+
+| Helper | Role |
+|---|---|
+| `.report_api_error(e, hint, args)` | Standardized `tryCatch` error handler — emits a `cli_alert_danger()` with hint text plus the captured arg list, then returns an empty fallback. |
+| `.report_api_warning(w, args)` | Companion warning handler. |
+| `.interp_braces()` | Internal helper for safely interpolating `{var}` syntax in cli alerts when the variable might contain braces of its own. |
+| `.capture_args()` | Helper used at the top of arg-less wrappers (i.e. those whose only formal is `...`) so the error/warning reporters still see the call args. Equivalent to `mget(setdiff(names(formals()), "..."))` for wrappers with formals. |
+
+Every `tryCatch(expr = ...)` block in ESPN, NBA Stats, and KenPom wrappers now uses these helpers instead of hand-rolled `cli::cli_alert_danger("{Sys.time()}: ...")` strings. Behavior is the same; the message includes the captured args, which makes failed-call debugging much faster.
+
+#### *Dependency cleanup*
+
+- Removed `glue` from `Imports`; demoted to `Suggests` (retained only for downstream package-level references).
+- Replaced `glue::glue(...)` call-sites with `sprintf()` / `paste0()` / base R in URL builders, `pad_id()`, `pad_time()`, and `cli` alert strings.
+- Replaced `glue::glue_sql()` with parameterized `DBI::dbExecute()` / `DBI::dbGetQuery()` calls in `load_*` family functions.
+
+#### *Tooling*
+
+- Ported wehoop's `tools/` patch scripts (`patch_df_list_init.R`, `patch_return_var_init.R`, `flip_expect_equal_cols.R`, `inject_skip_guard.R`, `inject_skip_helpers.R`, `sweep_error_handlers.R`, `find_parse_errors.R`) for future audit / sweep work.
+- Added `tools/run_doctoc.R` — a no-deps R replacement for the npm `doctoc` CLI, used to regenerate the NEWS.md / CONTRIBUTING.md TOCs. Run with `Rscript tools/run_doctoc.R --maxlevel 2 NEWS.md CONTRIBUTING.md`.
+
+#### *Test infrastructure*
+
+- Live API test env vars enabled by default in the R CMD check workflow (previously had to be set per-job).
+- Additional test-suite hardening sweeps applied via the ported `tools/` scripts: return-value init guards on edge-case wrappers, subset-direction column assertions, skip-on-empty guards where wrappers can legitimately return empty.
+
+### **Release / CRAN preparation**
+
+- Added `cph` (copyright holder) role to `Saiem Gilani` in `Authors@R` (CRAN strict requirement caught between releases).
+- DESCRIPTION normalized via `usethis::use_tidy_description()` — field order, alphabetized Imports/Suggests, reflowed long lines.
+- `.gitignore` anchored from bare `docs` to `/docs` so only the repo-root pkgdown output is ignored (the bare pattern was also matching `tools/docs/`).
 
 # **hoopR 3.0.0**
 
@@ -91,8 +188,6 @@ Removed `stringr::str_match` import from NAMESPACE — V3 clock parsing now uses
 
 | Function | Fix |
 |---|---|
-| `nba_schedule()` | Migrated off the retired `stats.nba.com/stats/scheduleleaguev2` endpoint (returns `Connection was reset` across multiple client environments; issues #184 and #187) to the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. Same `leagueSchedule.gameDates[].games[]` payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the `_2`-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a `message()` directing users at `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL` before `tryCatch` (issue #184). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26. |
-| `nba_leaguegamelog()` | Reordered query-string parameter ordering to put `LeagueID` first. As of 2026 the NBA Stats API rejects the alphabetical ordering (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a Cloudflare HTML error page; `LeagueID`-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the WNBA equivalent in `wehoop`. |
 | `nba_iststandings()` | Nested games column now properly flattened. |
 | `nba_dunkscoreleaders()` | HTTP 400 error caused by empty-string parameters now resolved. |
 | `nbagl_pbp()` | Avoids on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path. |
@@ -135,36 +230,6 @@ Calling any of these now errors with a structured `lifecycleDeprecatedError` tha
 | `nba_scoreboard()` | `nba_scoreboardv3()` | Unstable/empty responses |
 | `nba_scoreboardv2()` | `nba_scoreboardv3()` | Unstable/partial responses |
 
-### **Documentation improvements**
-
-#### *@return column descriptions on every exported function*
-
-Every `@return` markdown table across the 39 R source files is upgraded from two columns (`col_name | types`) to three columns (`col_name | types | description`). **6,039 total table rows** touched; every result set on every function now ships a per-column description in `?<function>` help, the pkgdown reference, and the rendered man pages.
-
-**Coverage** — frequency-weighted, what `?fn` readers actually see — **58.4% of the 6,039 @return table rows now carry a hand-quality description** (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator's snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic NBA Stats endpoints.
-
-**Description sources** (precedence order, first match wins):
-
-1. `tools/docs/column_descriptions_curated.csv` — 619 hand-authored entries covering high-traffic columns and basketball / ESPN domain conventions.
-2. `tools/docs/column_descriptions_api.csv` — 188 ESPN-authored descriptions mined live from 14 endpoints per league across both `nba` and `mens-college-basketball`, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).
-3. Mined `\item{...}{...}` lines from existing `\describe{}` blocks.
-4. Heuristic patterns driven by column-name suffixes (`*_id`, `*_pct`, `*_made`, `*_attempted`, `*_per_36`, etc.) with basketball-friendly noun substitution.
-
-**New tooling under `tools/docs/`** (`.Rbuildignore`'d via the existing `^tools$` rule):
-
-| File | Purpose |
-|---|---|
-| `build_column_descriptions.R` | One-shot dictionary builder. |
-| `column_descriptions_curated.csv` | Hand-edit surface; overrides API / mined / heuristic outputs. |
-| `column_descriptions_api.csv` | ESPN-API-mined descriptions, regenerated by `mine_api_descriptions.R`. |
-| `column_descriptions.csv` | Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic). |
-| `mine_api_descriptions.R` | Driver that probes the ESPN endpoints which self-document their stat columns. |
-| `audit_column_descriptions.R` | Coverage / leverage diagnostic. |
-| `markdown_man_table_helper.R` | Programmatic helpers (`load_column_descriptions()`, `make_return_table_md()`, `roxygenize_return()`, `augment_return_tables_in_file()`, `augment_all_r_files()`, `mine_espn_api_descriptions(url)`). |
-| `espn_endpoints_catalog.md` | Copy of the [sejaldua/espn-api](https://github.com/sejaldua/espn-api) endpoint catalog used to scope the miner. |
-
-The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing `|col_name|types|` tables in each `@return` block are the parse input).
-
 ### **Internals**
 
 #### *HTTP backend migration (httr → httr2)*
@@ -176,13 +241,7 @@ The sweep is idempotent and offline (no API calls needed for the augmentation it
 - `check_status()` now uses `httr2::resp_status()` instead of `httr::status_code()`.
 - KenPom (`kp_*`) functions now use `httr2` cookie-jar authentication via `login()`, `.kp_get_page()`, and `.kp_request()` helpers.
 
-**Proxy support restored.** When the package migrated from `httr` to `httr2` the legacy `httr::use_proxy()` plumbing was dropped and `request_with_proxy()` quietly stopped honoring proxies (its `...` was preserved purely for source compatibility). Both `request_with_proxy()` and the lower-level `.retry_request()` now accept a `proxy =` argument:
-
-- `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy` / `no_proxy` env vars automatically.
-- `proxy = "http://host:port"` — string form, forwarded to `httr2::req_proxy(url = ...)`.
-- `proxy = list(url=, port=, username=, password=, auth=)` — named list spread into `httr2::req_proxy()` for authenticated proxies.
-
-Resolution order in `.retry_request()`: explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env vars. The `...` thread works for NBA Stats wrappers (which forward into `request_with_proxy()`); ESPN / KenPom / NBA G-League wrappers call `.retry_request()` directly without `...`, so use `options(hoopR.proxy = ...)` at the top of the session to cover those without per-function plumbing.
+*Note: proxy plumbing on `request_with_proxy()` was quietly dropped during this migration. The restoration shipped in `3.1.0` — see above.*
 
 #### *Messaging migration (usethis → cli)*
 
