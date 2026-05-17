@@ -88,7 +88,199 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2><p class="text-muted">CRAN release: 2026-03-24</p>
 <div class="section level4">
-<h4 id="http-backend-migration-3-0-0"><strong>HTTP Backend Migration</strong><a class="anchor" aria-label="anchor" href="#http-backend-migration-3-0-0"></a></h4>
+<h4 id="new-exported-functions-3-0-0"><strong>New exported functions</strong><a class="anchor" aria-label="anchor" href="#new-exported-functions-3-0-0"></a></h4>
+<div class="section level5">
+<h5 id="nba-play-by-play-v3-3-0-0"><em>NBA Play-by-Play V3</em><a class="anchor" aria-label="anchor" href="#nba-play-by-play-v3-3-0-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function / change</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code></td>
+<td>Dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.</td>
+</tr><tr><td>
+<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> default flip</td>
+<td>Now defaults to <code>version = "v3"</code> (was <code>"v2"</code>). Pass <code>version = "v2"</code> for the previous behavior.</td>
+</tr><tr><td>
+<code><a href="../reference/nba_pbps.html">nba_pbps()</a></code> default flip</td>
+<td>Same default flip applies.</td>
+</tr><tr><td>
+<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> <code>p</code> parameter</td>
+<td>Now optional (default <code>NULL</code>) — previously required even when not using progress tracking.</td>
+</tr></tbody></table><p>Internal V3→V2 compatibility pipeline backs <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> so callers keep V2-compatible columns while gaining V3-only columns (<code>x_legacy</code>, <code>y_legacy</code>, <code>shot_distance</code>, <code>shot_result</code>, <code>is_field_goal</code>, <code>points_total</code>, <code>shot_value</code>):</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Helper (internal)</th>
+<th>Role</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code></td>
+<td>Converts V3 play-by-play data to V2-compatible column format with mapped event types and player resolution.</td>
+</tr><tr><td><code><a href="../reference/dot-build_player_roster.html">.build_player_roster()</a></code></td>
+<td>Retrieves player roster from <code><a href="../reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code> for name-to-ID resolution during V3-to-V2 conversion.</td>
+</tr><tr><td><code><a href="../reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code></td>
+<td>Rewritten — uses <code><a href="../reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping for robust on-court determination (replaces the previous substitution-parsing approach).</td>
+</tr></tbody></table><p>Removed <code><a href="https://stringr.tidyverse.org/reference/str_match.html" class="external-link">stringr::str_match</a></code> import from NAMESPACE — V3 clock parsing now uses base R regex functions.</p>
+</div>
+<div class="section level5">
+<h5 id="nba-boxscore-summary-v3-3-0-0"><em>NBA Boxscore Summary V3</em><a class="anchor" aria-label="anchor" href="#nba-boxscore-summary-v3-3-0-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_boxscoresummaryv3.html">nba_boxscoresummaryv3()</a></code></td>
+<td>Returns a named list of 9 data frames: <code>GameSummary</code>, <code>GameInfo</code>, <code>ArenaInfo</code>, <code>Officials</code>, <code>LineScore</code>, <code>InactivePlayers</code>, <code>LastFiveMeetings</code>, <code>OtherStats</code>, <code>AvailableVideo</code>.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="new-nba-stats-api-endpoint-wrappers-3-0-0"><em>New NBA Stats API endpoint wrappers</em><a class="anchor" aria-label="anchor" href="#new-nba-stats-api-endpoint-wrappers-3-0-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_commonteamyears.html">nba_commonteamyears()</a></code></td>
+<td>Team IDs with their active year ranges.</td>
+</tr><tr><td><code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code></td>
+<td>Dunk tracking data with biomechanics, scores, and style metrics.</td>
+</tr><tr><td><code><a href="../reference/nba_gravityleaders.html">nba_gravityleaders()</a></code></td>
+<td>Gravity scores — how much defensive attention each player draws.</td>
+</tr><tr><td><code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code></td>
+<td>In-Season Tournament (NBA Cup) standings.</td>
+</tr><tr><td><code><a href="../reference/nba_scheduleleaguev2int.html">nba_scheduleleaguev2int()</a></code></td>
+<td>International schedule data with broadcaster information.</td>
+</tr><tr><td><code><a href="../reference/nba_teamandplayersvsplayers.html">nba_teamandplayersvsplayers()</a></code></td>
+<td>Team and player lineup comparison stats (5 datasets).</td>
+</tr><tr><td><code><a href="../reference/nba_videoeventsasset.html">nba_videoeventsasset()</a></code></td>
+<td>Video event asset data for a given game event.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="espn--g-league-functions-3-0-0"><em>ESPN &amp; G-League functions</em><a class="anchor" aria-label="anchor" href="#espn--g-league-functions-3-0-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code></td>
+<td>Current NBA team roster from ESPN.</td>
+</tr><tr><td><code><a href="../reference/espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code></td>
+<td>Current MBB team roster from ESPN.</td>
+</tr><tr><td><code><a href="../reference/nbagl_live_pbp.html">nbagl_live_pbp()</a></code></td>
+<td>Live G-League play-by-play.</td>
+</tr><tr><td><code><a href="../reference/nbagl_live_boxscore.html">nbagl_live_boxscore()</a></code></td>
+<td>Live G-League box score.</td>
+</tr></tbody></table></div>
+</div>
+<div class="section level4">
+<h4 id="behavior-changes-to-existing-functions-3-0-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-0-0"></a></h4>
+<div class="section level5">
+<h5 id="bug-fixes-3-0-0"><em>Bug fixes</em><a class="anchor" aria-label="anchor" href="#bug-fixes-3-0-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Fix</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_schedule.html">nba_schedule()</a></code></td>
+<td>Migrated off the retired <code>stats.nba.com/stats/scheduleleaguev2</code> endpoint (returns <code>Connection was reset</code> across multiple client environments; issues <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a> and <a href="https://github.com/sportsdataverse/hoopR/issues/187" class="external-link">#187</a>) to the public CDN at <code>cdn.nba.com/static/json/staticData/scheduleLeagueV2.json</code>. Same <code>leagueSchedule.gameDates[].games[]</code> payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the <code>_2</code>-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a <code><a href="https://rdrr.io/r/base/message.html" class="external-link">message()</a></code> directing users at <code>load_nba_schedule(seasons = ...)</code>. Also initializes <code>games &lt;- NULL</code> before <code>tryCatch</code> (issue <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a>). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26.</td>
+</tr><tr><td><code><a href="../reference/nba_leaguegamelog.html">nba_leaguegamelog()</a></code></td>
+<td>Reordered query-string parameter ordering to put <code>LeagueID</code> first. As of 2026 the NBA Stats API rejects the alphabetical ordering (<code>Counter, DateFrom, DateTo, Direction, LeagueID, ...</code>) with a Cloudflare HTML error page; <code>LeagueID</code>-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with <code>SEASON_ID=22025</code>. Parallel fix to the WNBA equivalent in <code>wehoop</code>.</td>
+</tr><tr><td><code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code></td>
+<td>Nested games column now properly flattened.</td>
+</tr><tr><td><code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code></td>
+<td>HTTP 400 error caused by empty-string parameters now resolved.</td>
+</tr><tr><td><code><a href="../reference/nbagl_pbp.html">nbagl_pbp()</a></code></td>
+<td>Avoids on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.</td>
+</tr><tr><td><code><a href="../reference/kp_box.html">kp_box()</a></code></td>
+<td>Referee link extraction updated — CSS selectors now match current KenPom HTML structure (<code>div.refline</code> with href-based filtering).</td>
+</tr><tr><td><code><a href="../reference/kp_team_history.html">kp_team_history()</a></code></td>
+<td>CSS selector updated to <code>table#player-table</code>; team name assignment now uses the display name instead of the URL slug.</td>
+</tr><tr><td>
+<code><a href="../reference/kp_kpoy.html">kp_kpoy()</a></code> example</td>
+<td>Year bumped from 2021 to 2026 for current-season relevance.</td>
+</tr></tbody></table><p><strong>Return-value initialization sweep.</strong> Fixed <code>df_list</code> not initialized before <code>tryCatch</code> in <strong>147 NBA Stats API wrapper functions</strong>, preventing crashes on API errors. Same pattern applied to: * <code><a href="../reference/nba_data_pbp.html">nba_data_pbp()</a></code> (<code>plays_df</code> init). * <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> and <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> (<code>data</code> init). * NBAGL wrappers (return-object init across error paths).</p>
+<p><strong>Other fixes:</strong> * <code>helper-skip.R</code> test guard functions now use string comparison (<code>!= "1"</code>) instead of numeric comparison (<code>== 0</code>). * V3-style data.frame parsing fixed for leader/standings endpoints. * <code>%||%</code> import added for R &lt; 4.4.0 compatibility. * <code>teams_links</code> dataset updated with 2026 season team data.</p>
+</div>
+</div>
+<div class="section level4">
+<h4 id="deprecations-3-0-0"><strong>Deprecations</strong><a class="anchor" aria-label="anchor" href="#deprecations-3-0-0"></a></h4>
+<p>Calling any of these now errors with a structured <code>lifecycleDeprecatedError</code> that names a replacement. All deprecations were prompted by unstable / partial / empty endpoint responses observed in production.</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Deprecated function</th>
+<th>Replacement</th>
+<th>Reason</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_boxscorefourfactorsv2.html">nba_boxscorefourfactorsv2()</a></code></td>
+<td><code><a href="../reference/nba_boxscorefourfactorsv3.html">nba_boxscorefourfactorsv3()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_boxscoremiscv2.html">nba_boxscoremiscv2()</a></code></td>
+<td><code><a href="../reference/nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_boxscorescoringv2.html">nba_boxscorescoringv2()</a></code></td>
+<td><code><a href="../reference/nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_boxscoreusagev2.html">nba_boxscoreusagev2()</a></code></td>
+<td><code><a href="../reference/nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_boxscoreplayertrackv2.html">nba_boxscoreplayertrackv2()</a></code></td>
+<td><code><a href="../reference/nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_boxscorehustlev2.html">nba_boxscorehustlev2()</a></code></td>
+<td><code><a href="../reference/nba_hustlestatsboxscore.html">nba_hustlestatsboxscore()</a></code></td>
+<td>Unstable/partial V2 responses</td>
+</tr><tr><td><code><a href="../reference/nba_homepageleaders.html">nba_homepageleaders()</a></code></td>
+<td><code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_homepagev2.html">nba_homepagev2()</a></code></td>
+<td><code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_leaderstiles.html">nba_leaderstiles()</a></code></td>
+<td><code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_teamgamestreakfinder.html">nba_teamgamestreakfinder()</a></code></td>
+<td><code><a href="../reference/nba_teamgamelogs.html">nba_teamgamelogs()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_teamhistoricalleaders.html">nba_teamhistoricalleaders()</a></code></td>
+<td><code><a href="../reference/nba_franchiseleaders.html">nba_franchiseleaders()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_videodetails.html">nba_videodetails()</a></code></td>
+<td><code><a href="../reference/nba_videodetailsasset.html">nba_videodetailsasset()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_winprobabilitypbp.html">nba_winprobabilitypbp()</a></code></td>
+<td><code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_playercareerbycollege.html">nba_playercareerbycollege()</a></code></td>
+<td>
+<code><a href="../reference/nba_playercareerbycollegerollup.html">nba_playercareerbycollegerollup()</a></code> / <code><a href="../reference/nba_leaguedashplayerbiostats.html">nba_leaguedashplayerbiostats()</a></code>
+</td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_playernextngames.html">nba_playernextngames()</a></code></td>
+<td><code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_scoreboard.html">nba_scoreboard()</a></code></td>
+<td><code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code></td>
+<td>Unstable/empty responses</td>
+</tr><tr><td><code><a href="../reference/nba_scoreboardv2.html">nba_scoreboardv2()</a></code></td>
+<td><code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code></td>
+<td>Unstable/partial responses</td>
+</tr></tbody></table></div>
+<div class="section level4">
+<h4 id="documentation-improvements-3-0-0"><strong>Documentation improvements</strong><a class="anchor" aria-label="anchor" href="#documentation-improvements-3-0-0"></a></h4>
+<div class="section level5">
+<h5 id="return-column-descriptions-on-every-exported-function-3-0-0"><em>@return column descriptions on every exported function</em><a class="anchor" aria-label="anchor" href="#return-column-descriptions-on-every-exported-function-3-0-0"></a></h5>
+<p>Every <code>@return</code> markdown table across the 39 R source files is upgraded from two columns (<code>col_name | types</code>) to three columns (<code>col_name | types | description</code>). <strong>6,039 total table rows</strong> touched; every result set on every function now ships a per-column description in <code>?&lt;function&gt;</code> help, the pkgdown reference, and the rendered man pages.</p>
+<p><strong>Coverage</strong> — frequency-weighted, what <code>?fn</code> readers actually see — <strong>58.4% of the 6,039 <a href="https://github.com/return" class="external-link">@return</a> table rows now carry a hand-quality description</strong> (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator’s snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic NBA Stats endpoints.</p>
+<p><strong>Description sources</strong> (precedence order, first match wins):</p>
+<ol style="list-style-type: decimal"><li>
+<code>tools/docs/column_descriptions_curated.csv</code> — 619 hand-authored entries covering high-traffic columns and basketball / ESPN domain conventions.</li>
+<li>
+<code>tools/docs/column_descriptions_api.csv</code> — 188 ESPN-authored descriptions mined live from 14 endpoints per league across both <code>nba</code> and <code>mens-college-basketball</code>, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).</li>
+<li>Mined <code>\item{...}{...}</code> lines from existing <code>\describe{}</code> blocks.</li>
+<li>Heuristic patterns driven by column-name suffixes (<code>*_id</code>, <code>*_pct</code>, <code>*_made</code>, <code>*_attempted</code>, <code>*_per_36</code>, etc.) with basketball-friendly noun substitution.</li>
+</ol><p><strong>New tooling under <code>tools/docs/</code></strong> (<code>.Rbuildignore</code>’d via the existing <code>^tools$</code> rule):</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>File</th>
+<th>Purpose</th>
+</tr></thead><tbody><tr><td><code>build_column_descriptions.R</code></td>
+<td>One-shot dictionary builder.</td>
+</tr><tr><td><code>column_descriptions_curated.csv</code></td>
+<td>Hand-edit surface; overrides API / mined / heuristic outputs.</td>
+</tr><tr><td><code>column_descriptions_api.csv</code></td>
+<td>ESPN-API-mined descriptions, regenerated by <code>mine_api_descriptions.R</code>.</td>
+</tr><tr><td><code>column_descriptions.csv</code></td>
+<td>Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic).</td>
+</tr><tr><td><code>mine_api_descriptions.R</code></td>
+<td>Driver that probes the ESPN endpoints which self-document their stat columns.</td>
+</tr><tr><td><code>audit_column_descriptions.R</code></td>
+<td>Coverage / leverage diagnostic.</td>
+</tr><tr><td><code>markdown_man_table_helper.R</code></td>
+<td>Programmatic helpers (<code>load_column_descriptions()</code>, <code>make_return_table_md()</code>, <code>roxygenize_return()</code>, <code>augment_return_tables_in_file()</code>, <code>augment_all_r_files()</code>, <code>mine_espn_api_descriptions(url)</code>).</td>
+</tr><tr><td><code>espn_endpoints_catalog.md</code></td>
+<td>Copy of the <a href="https://github.com/sejaldua/espn-api" class="external-link">sejaldua/espn-api</a> endpoint catalog used to scope the miner.</td>
+</tr></tbody></table><p>The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing <code>|col_name|types|</code> tables in each <code>@return</code> block are the parse input).</p>
+</div>
+</div>
+<div class="section level4">
+<h4 id="internals-3-0-0"><strong>Internals</strong><a class="anchor" aria-label="anchor" href="#internals-3-0-0"></a></h4>
+<div class="section level5">
+<h5 id="http-backend-migration-httr--httr2-3-0-0"><em>HTTP backend migration (httr → httr2)</em><a class="anchor" aria-label="anchor" href="#http-backend-migration-httr--httr2-3-0-0"></a></h5>
 <ul><li>
 <strong>Breaking</strong>: Replaced <code>httr</code> with <code>httr2</code> as the HTTP backend for all API requests across the package.</li>
 <li>Removed <code>httr</code> from package dependencies (<code>Imports</code>).</li>
@@ -97,184 +289,72 @@
 <li>All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (<code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="../reference/dot-resp_text.html">.resp_text()</a></code>) backed by <code>httr2</code>.</li>
 <li>
 <code><a href="../reference/check_status.html">check_status()</a></code> now uses <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code> instead of <code><a href="https://httr.r-lib.org/reference/status_code.html" class="external-link">httr::status_code()</a></code>.</li>
-<li>KenPom (<code>kp_*</code>) functions now use <code>httr2</code> cookie jar authentication via <code><a href="../reference/kp_user_pw.html">login()</a></code>, <code><a href="../reference/dot-kp_get_page.html">.kp_get_page()</a></code>, and <code><a href="../reference/dot-kp_request.html">.kp_request()</a></code> helpers.</li>
-<li>
-<strong>Proxy support restored.</strong> When the package migrated from <code>httr</code> to <code>httr2</code> the legacy <code><a href="https://httr.r-lib.org/reference/use_proxy.html" class="external-link">httr::use_proxy()</a></code> plumbing was dropped and <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> quietly stopped honoring proxies (its <code>...</code> was preserved purely for source compatibility). Both <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> and the lower-level <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> now accept a <code>proxy =</code> argument:
+<li>KenPom (<code>kp_*</code>) functions now use <code>httr2</code> cookie-jar authentication via <code><a href="../reference/kp_user_pw.html">login()</a></code>, <code><a href="../reference/dot-kp_get_page.html">.kp_get_page()</a></code>, and <code><a href="../reference/dot-kp_request.html">.kp_request()</a></code> helpers.</li>
+</ul><p><strong>Proxy support restored.</strong> When the package migrated from <code>httr</code> to <code>httr2</code> the legacy <code><a href="https://httr.r-lib.org/reference/use_proxy.html" class="external-link">httr::use_proxy()</a></code> plumbing was dropped and <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> quietly stopped honoring proxies (its <code>...</code> was preserved purely for source compatibility). Both <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> and the lower-level <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> now accept a <code>proxy =</code> argument:</p>
 <ul><li>
 <code>proxy = NULL</code> (default) — libcurl reads <code>http_proxy</code> / <code>https_proxy</code> / <code>no_proxy</code> env vars automatically.</li>
 <li>
 <code>proxy = "http://host:port"</code> — string form, forwarded to <code>httr2::req_proxy(url = ...)</code>.</li>
 <li>
-<code>proxy = list(url=, port=, username=, password=, auth=)</code> — named list spread into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code> for authenticated proxies. Resolution order in <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>: explicit <code>proxy =</code> arg → <code>getOption("hoopR.proxy")</code> → libcurl env vars. The <code>...</code> thread works for NBA Stats wrappers (which forward into <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code>); ESPN / KenPom / NBA G-League wrappers call <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so use <code>options(hoopR.proxy = ...)</code> at the top of the session to cover those without per-function plumbing.</li>
-</ul></li>
-</ul></div>
-<div class="section level4">
-<h4 id="messaging-migration-usethis--cli-3-0-0"><strong>Messaging Migration (usethis → cli)</strong><a class="anchor" aria-label="anchor" href="#messaging-migration-usethis--cli-3-0-0"></a></h4>
+<code>proxy = list(url=, port=, username=, password=, auth=)</code> — named list spread into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code> for authenticated proxies.</li>
+</ul><p>Resolution order in <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>: explicit <code>proxy =</code> arg → <code>getOption("hoopR.proxy")</code> → libcurl env vars. The <code>...</code> thread works for NBA Stats wrappers (which forward into <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code>); ESPN / KenPom / NBA G-League wrappers call <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so use <code>options(hoopR.proxy = ...)</code> at the top of the session to cover those without per-function plumbing.</p>
+</div>
+<div class="section level5">
+<h5 id="messaging-migration-usethis--cli-3-0-0"><em>Messaging migration (usethis → cli)</em><a class="anchor" aria-label="anchor" href="#messaging-migration-usethis--cli-3-0-0"></a></h5>
 <ul><li>Replaced all <code>usethis::ui_*()</code> messaging calls in database builder and loader functions with <code>cli</code> equivalents.</li>
-<li>
-<code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_stop()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_abort()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_oops()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_todo()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_ul.html" class="external-link">cli::cli_ul()</a></code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_info()</a></code> → <code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_info()</a></code>.</li>
-<li>Inline markup converted: <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_value()</a></code> → <code>{.val}</code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_path()</a></code> → <code>{.file}</code>, <code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_code()</a></code> → <code>{.code}</code>.</li>
-<li>Moved <code>usethis</code> from <code>Imports</code> to <code>Suggests</code> (retained for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</li>
+</ul><table class="table"><thead><tr><th>Old call</th>
+<th>New call</th>
+</tr></thead><tbody><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_stop()</a></code></td>
+<td><code><a href="https://cli.r-lib.org/reference/cli_abort.html" class="external-link">cli::cli_abort()</a></code></td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_oops()</a></code></td>
+<td><code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_danger()</a></code></td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_todo()</a></code></td>
+<td><code><a href="https://cli.r-lib.org/reference/cli_ul.html" class="external-link">cli::cli_ul()</a></code></td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_info()</a></code></td>
+<td><code><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli::cli_alert_info()</a></code></td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_value()</a></code></td>
+<td>
+<code>{.val}</code> inline markup</td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_path()</a></code></td>
+<td>
+<code>{.file}</code> inline markup</td>
+</tr><tr><td><code><a href="https://usethis.r-lib.org/reference/ui-legacy-functions.html" class="external-link">usethis::ui_code()</a></code></td>
+<td>
+<code>{.code}</code> inline markup</td>
+</tr></tbody></table><ul><li>Moved <code>usethis</code> from <code>Imports</code> to <code>Suggests</code> (retained for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> documentation references).</li>
 </ul></div>
-<div class="section level4">
-<h4 id="social-branding-twitter--x-3-0-0"><strong>Social Branding (Twitter → X)</strong><a class="anchor" aria-label="anchor" href="#social-branding-twitter--x-3-0-0"></a></h4>
-<ul><li>Updated all social media links and badges from Twitter to X across README, pkgdown site, and vignettes.</li>
-<li>Shields.io badge <code>logo=twitter</code> → <code>logo=x</code>; profile URLs <code>twitter.com</code> → <code>x.com</code>.</li>
-<li>pkgdown navbar icon updated from <code>fa-twitter</code> to <code>fa-x-twitter</code>.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="stability-and-test-robustness-3-0-0"><strong>Stability and Test Robustness</strong><a class="anchor" aria-label="anchor" href="#stability-and-test-robustness-3-0-0"></a></h4>
+<div class="section level5">
+<h5 id="stability-and-test-robustness-3-0-0"><em>Stability and test robustness</em><a class="anchor" aria-label="anchor" href="#stability-and-test-robustness-3-0-0"></a></h5>
 <ul><li>Hardened API-facing tests against live schema drift and intermittent empty payloads.</li>
 <li>Added explicit skip-on-empty guards for lineup and NCAA teams tests to avoid false negatives when upstream endpoints return no rows.</li>
 <li>Updated expected columns for currently active payloads in key NBA endpoints (including <code><a href="../reference/nba_playercareerstats.html">nba_playercareerstats()</a></code>, <code><a href="../reference/nba_playerdashptshotdefend.html">nba_playerdashptshotdefend()</a></code>, and <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code>).</li>
 <li>Improved <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code> assertions to validate core columns while tolerating empty optional result sets.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="ci-and-check-improvements-3-0-0"><strong>CI and Check Improvements</strong><a class="anchor" aria-label="anchor" href="#ci-and-check-improvements-3-0-0"></a></h4>
-<ul><li>Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.</li>
-<li>Clarified optional environment variable usage in CI for live API test toggles.</li>
-<li>Updated package build ignores to exclude local development folders from source checks.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="nba-play-by-play-v3-3-0-0"><strong>NBA Play-by-Play V3</strong><a class="anchor" aria-label="anchor" href="#nba-play-by-play-v3-3-0-0"></a></h4>
-<ul><li>
-<code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> function added — dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint.</li>
-<li>
-<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> and <code><a href="../reference/nba_pbps.html">nba_pbps()</a></code> now default to <code>version = "v3"</code> (previously <code>"v2"</code>). Pass <code>version = "v2"</code> to use the previous behavior.</li>
-<li>
-<code><a href="../reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> internal helper added — converts V3 play-by-play data to V2-compatible column format with mapped event types, player resolution, and retained V3 shot coordinate columns (<code>x_legacy</code>, <code>y_legacy</code>, <code>shot_distance</code>, <code>shot_result</code>, <code>is_field_goal</code>, <code>points_total</code>, <code>shot_value</code>).</li>
-<li>
-<code><a href="../reference/dot-build_player_roster.html">.build_player_roster()</a></code> internal helper added — retrieves player roster from <code><a href="../reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code> for name-to-ID resolution during V3-to-V2 conversion.</li>
-<li>
-<code><a href="../reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> internal helper rewritten — now uses <code><a href="../reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping for robust on-court player determination (replaces previous substitution-parsing approach).</li>
-<li>
-<code><a href="../reference/nba_pbp.html">nba_pbp()</a></code> <code>p</code> parameter is now optional (default: <code>NULL</code>) — previously required even when not using progress tracking.</li>
-<li>Removed <code><a href="https://stringr.tidyverse.org/reference/str_match.html" class="external-link">stringr::str_match</a></code> import from NAMESPACE — V3 clock parsing now uses base R regex functions.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="nba-boxscore-summary-v3-3-0-0"><strong>NBA Boxscore Summary V3</strong><a class="anchor" aria-label="anchor" href="#nba-boxscore-summary-v3-3-0-0"></a></h4>
-<ul><li>
-<code><a href="../reference/nba_boxscoresummaryv3.html">nba_boxscoresummaryv3()</a></code> function added — returns a named list of 9 data frames: GameSummary, GameInfo, ArenaInfo, Officials, LineScore, InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="new-nba-stats-api-endpoint-wrappers-3-0-0"><strong>New NBA Stats API Endpoint Wrappers</strong><a class="anchor" aria-label="anchor" href="#new-nba-stats-api-endpoint-wrappers-3-0-0"></a></h4>
-<ul><li>
-<code><a href="../reference/nba_commonteamyears.html">nba_commonteamyears()</a></code> function added — returns team IDs with their active year ranges.</li>
-<li>
-<code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code> function added — returns dunk tracking data with biomechanics, scores, and style metrics.</li>
-<li>
-<code><a href="../reference/nba_gravityleaders.html">nba_gravityleaders()</a></code> function added — returns gravity scores measuring how much defensive attention each player draws.</li>
-<li>
-<code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code> function added — returns In-Season Tournament (NBA Cup) standings.</li>
-<li>
-<code><a href="../reference/nba_scheduleleaguev2int.html">nba_scheduleleaguev2int()</a></code> function added — returns international schedule data with broadcaster information.</li>
-<li>
-<code><a href="../reference/nba_teamandplayersvsplayers.html">nba_teamandplayersvsplayers()</a></code> function added — returns team and player lineup comparison stats (5 datasets).</li>
-<li>
-<code><a href="../reference/nba_videoeventsasset.html">nba_videoeventsasset()</a></code> function added — returns video event asset data for a given game event.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="espn--g-league-functions-3-0-0"><strong>ESPN &amp; G-League Functions</strong><a class="anchor" aria-label="anchor" href="#espn--g-league-functions-3-0-0"></a></h4>
-<ul><li>
-<code><a href="../reference/espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code> function added — returns current team roster from ESPN.</li>
-<li>
-<code><a href="../reference/espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code> function added — returns current MBB team roster from ESPN.</li>
-<li>
-<code><a href="../reference/nbagl_live_pbp.html">nbagl_live_pbp()</a></code> function added — returns live G-League play-by-play data.</li>
-<li>
-<code><a href="../reference/nbagl_live_boxscore.html">nbagl_live_boxscore()</a></code> function added — returns live G-League box score data.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="other-improvements-3-0-0"><strong>Other Improvements</strong><a class="anchor" aria-label="anchor" href="#other-improvements-3-0-0"></a></h4>
-<ul><li>Internal <code>nba_endpoint()</code> registry updated with all V3 boxscore endpoints and <code>boxscoresummaryv3</code>.</li>
-<li>Removed deprecated <code>qs</code> dependency.</li>
-<li>Updated GitHub Actions to v4.</li>
-<li>Cleaned up <code>.Rbuildignore</code> duplicates.</li>
-<li>Added comprehensive <code>CONTRIBUTING.md</code> with naming conventions and test environment documentation.</li>
-<li>Moved <code>furrr</code> and <code>future</code> dependencies to Suggests with version requirements for users who want to use parallel features, but not required for core functionality.</li>
-<li>Add <code>lifecycle</code> dependency and deprecation warnings for unstable functions/endpoints to guide users to maintained alternatives.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="bug-fixes-3-0-0"><strong>Bug Fixes</strong><a class="anchor" aria-label="anchor" href="#bug-fixes-3-0-0"></a></h4>
-<ul><li>
-<code><a href="../reference/nba_schedule.html">nba_schedule()</a></code> — migrated off the retired <code>stats.nba.com/stats/scheduleleaguev2</code> endpoint (returns <code>Connection was reset</code> across multiple client environments; issues <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a> and <a href="https://github.com/sportsdataverse/hoopR/issues/187" class="external-link">#187</a>) to the public CDN at <code>cdn.nba.com/static/json/staticData/scheduleLeagueV2.json</code>. The CDN serves the same <code>leagueSchedule.gameDates[].games[]</code> payload as the dead stats endpoint, requires no authentication or special headers, and stays current with the live NBA season. G-League schedules now come from the <code>_2</code>-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function now emits a <code><a href="https://rdrr.io/r/base/message.html" class="external-link">message()</a></code> directing users at <code>load_nba_schedule(seasons = ...)</code>. Also initializes <code>games &lt;- NULL</code> before the <code>tryCatch</code> so an upstream HTTP error surfaces the <code>cli</code>/<code>message</code> alert instead of <code>object 'games' not found</code> (issue <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a>). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for the current 2025-26 season.</li>
-<li>
-<code><a href="../reference/nba_leaguegamelog.html">nba_leaguegamelog()</a></code> — reordered the outgoing query-string parameter ordering to put <code>LeagueID</code> first. As of 2026 the NBA Stats API rejects the alphabetical ordering (<code>Counter, DateFrom, DateTo, Direction, LeagueID, ...</code>) with a Cloudflare HTML error page; <code>LeagueID</code>-first ordering matches what the nba.com client sends and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with <code>SEASON_ID=22025</code>. Parallel fix to the WNBA equivalent in <code>wehoop</code>.</li>
-<li>Fixed <code>df_list</code> not initialized before <code>tryCatch</code> in 147 NBA Stats API wrapper functions, preventing crashes on API errors.</li>
-<li>Fixed <code><a href="../reference/nba_data_pbp.html">nba_data_pbp()</a></code> <code>plays_df</code> not initialized before <code>tryCatch</code>.</li>
-<li>Fixed <code>helper-skip.R</code> test guard functions to use proper string comparison (<code>!= "1"</code>) instead of numeric comparison (<code>== 0</code>).</li>
-<li>Fixed <code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code> HTTP 400 error caused by empty string parameters.</li>
-<li>Fixed V3-style data.frame parsing for leader/standings endpoints.</li>
-<li>Fixed <code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code> nested games column flattening.</li>
-<li>Fixed <code>%||%</code> import for R &lt; 4.4.0 compatibility.</li>
-<li>Fixed <code>data</code> not initialized before <code>tryCatch</code> in <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> and <code><a href="../reference/nba_pbp.html">nba_pbp()</a></code>, preventing crashes on API errors.</li>
-<li>Fixed <code><a href="../reference/nbagl_pbp.html">nbagl_pbp()</a></code> to avoid on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path.</li>
-<li>Fixed NBAGL wrapper defaults for error paths where return objects were not initialized before <code>tryCatch</code>.</li>
-<li>Fixed <code><a href="../reference/kp_box.html">kp_box()</a></code> referee link extraction by updating CSS selectors to match current KenPom HTML structure (<code>div.refline</code> with href-based filtering).</li>
-<li>Fixed <code><a href="../reference/kp_team_history.html">kp_team_history()</a></code> CSS selector (<code>table#player-table</code>) and team name assignment to use the display name instead of the URL slug.</li>
-<li>Updated <code><a href="../reference/kp_kpoy.html">kp_kpoy()</a></code> example year from 2021 to 2026 for current season relevance.</li>
-<li>Updated <code>teams_links</code> dataset with 2026 season team data.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="deprecations-3-0-0"><strong>Deprecations</strong><a class="anchor" aria-label="anchor" href="#deprecations-3-0-0"></a></h4>
-<ul><li>Deprecated <code><a href="../reference/nba_boxscorefourfactorsv2.html">nba_boxscorefourfactorsv2()</a></code> in favor of <code><a href="../reference/nba_boxscorefourfactorsv3.html">nba_boxscorefourfactorsv3()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_boxscoremiscv2.html">nba_boxscoremiscv2()</a></code> in favor of <code><a href="../reference/nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_boxscorescoringv2.html">nba_boxscorescoringv2()</a></code> in favor of <code><a href="../reference/nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_boxscoreusagev2.html">nba_boxscoreusagev2()</a></code> in favor of <code><a href="../reference/nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_boxscoreplayertrackv2.html">nba_boxscoreplayertrackv2()</a></code> in favor of <code><a href="../reference/nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_boxscorehustlev2.html">nba_boxscorehustlev2()</a></code> in favor of <code><a href="../reference/nba_hustlestatsboxscore.html">nba_hustlestatsboxscore()</a></code> due to unstable/partial V2 API responses.</li>
-<li>Deprecated <code><a href="../reference/nba_homepageleaders.html">nba_homepageleaders()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_homepagev2.html">nba_homepagev2()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_leaderstiles.html">nba_leaderstiles()</a></code> in favor of <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_teamgamestreakfinder.html">nba_teamgamestreakfinder()</a></code> in favor of <code><a href="../reference/nba_teamgamelogs.html">nba_teamgamelogs()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_teamhistoricalleaders.html">nba_teamhistoricalleaders()</a></code> in favor of <code><a href="../reference/nba_franchiseleaders.html">nba_franchiseleaders()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_videodetails.html">nba_videodetails()</a></code> in favor of <code><a href="../reference/nba_videodetailsasset.html">nba_videodetailsasset()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_winprobabilitypbp.html">nba_winprobabilitypbp()</a></code> in favor of <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_playercareerbycollege.html">nba_playercareerbycollege()</a></code> in favor of <code><a href="../reference/nba_playercareerbycollegerollup.html">nba_playercareerbycollegerollup()</a></code>/<code><a href="../reference/nba_leaguedashplayerbiostats.html">nba_leaguedashplayerbiostats()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_playernextngames.html">nba_playernextngames()</a></code> in favor of <code><a href="../reference/nba_playerprofilev2.html">nba_playerprofilev2()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_scoreboard.html">nba_scoreboard()</a></code> in favor of <code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code> due to unstable/empty endpoint responses.</li>
-<li>Deprecated <code><a href="../reference/nba_scoreboardv2.html">nba_scoreboardv2()</a></code> in favor of <code><a href="../reference/nba_scoreboardv3.html">nba_scoreboardv3()</a></code> due to unstable/partial endpoint responses.</li>
-</ul></div>
-<div class="section level4">
-<h4 id="test-improvements-3-0-0"><strong>Test Improvements</strong><a class="anchor" aria-label="anchor" href="#test-improvements-3-0-0"></a></h4>
-<ul><li>Converted 400+ <code>expect_equal(colnames())</code> assertions to <code>expect_in()</code> for subset validation, preventing test failures when APIs add new columns.</li>
+<li>Converted 400+ <code>expect_equal(colnames())</code> assertions to <code>expect_in()</code> for subset validation, preventing test failures when APIs add new columns.</li>
 <li>Added tests for all new endpoints with column validation and rate limiting.</li>
 <li>Added <code>skip_ncaa_mbb_test()</code> and <code>skip_ncaa_wbb_test()</code> helpers.</li>
 <li>Updated ESPN test expectations for current API responses.</li>
 <li>Updated NBAGL tests to validate NBA Stats-backed return shapes (<code><a href="../reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="../reference/nbagl_standings.html">nbagl_standings()</a></code> named-list returns, and current schedule/PBP core columns).</li>
 </ul></div>
-<div class="section level4">
-<h4 id="return-documentation-descriptions-added-to-every-roxygen-table-3-0-0"><strong>@return documentation: descriptions added to every roxygen table</strong><a class="anchor" aria-label="anchor" href="#return-documentation-descriptions-added-to-every-roxygen-table-3-0-0"></a></h4>
-<ul><li>Every <code>@return</code> markdown table across the 39 R source files is upgraded from two columns (<code>col_name | types</code>) to three columns (<code>col_name | types | description</code>). 6,039 total table rows touched; every result set on every function now ships a per-column description in <code>?&lt;function&gt;</code> help, the pkgdown reference, and the rendered man pages.</li>
-<li>Description content comes from four sources in precedence order:
-<ol style="list-style-type: decimal"><li>
-<code>tools/docs/column_descriptions_curated.csv</code> — 619 hand-authored entries covering high-traffic columns and basketball / ESPN conventions;</li>
-<li>
-<code>tools/docs/column_descriptions_api.csv</code> — 188 ESPN-authored descriptions mined live from endpoints that self-document their columns. The miner probes 14 endpoints per league across both NBA and <code>mens-college-basketball</code>, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).</li>
-<li>mined <code>\item{...}{...}</code> lines from existing <code>\describe{}</code> blocks;</li>
-<li>heuristic patterns driven by column-name suffixes (<code>*_id</code>, <code>*_pct</code>, <code>*_made</code>, <code>*_attempted</code>, <code>*_per_36</code>, etc.) with basketball-friendly noun substitution.</li>
-</ol></li>
-<li>Frequency-weighted coverage: <strong>58.4% of the 6,039 <a href="https://github.com/return" class="external-link">@return</a> table rows now carry a hand-quality description</strong> (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator’s snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic endpoints.</li>
-<li>New tooling under <code>tools/docs/</code> (<code>.Rbuildignore</code>’d via the existing <code>^tools$</code> rule):
-<ul><li>
-<code>build_column_descriptions.R</code> — one-shot builder.</li>
-<li>
-<code>column_descriptions_curated.csv</code> — hand-edit surface.</li>
-<li>
-<code>column_descriptions_api.csv</code> — ESPN-API-mined, regenerated by <code>tools/docs/mine_api_descriptions.R</code>.</li>
-<li>
-<code>column_descriptions.csv</code> — generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic).</li>
-<li>
-<code>mine_api_descriptions.R</code> — driver that probes the ESPN endpoints which self-document their stat columns. Run with <code>Rscript tools/docs/mine_api_descriptions.R</code>.</li>
-<li>
-<code>audit_column_descriptions.R</code> — coverage / leverage diagnostic.</li>
-<li>
-<code>markdown_man_table_helper.R</code> — programmatic helpers (<code>load_column_descriptions()</code>, <code>make_return_table_md()</code>, <code>roxygenize_return()</code>, <code>augment_return_tables_in_file()</code>, <code>augment_all_r_files()</code>, <code>mine_espn_api_descriptions(url)</code>).</li>
-<li>
-<code>espn_endpoints_catalog.md</code> — copy of the <a href="https://github.com/sejaldua/espn-api" class="external-link">sejaldua/espn-api</a> endpoint catalog used to scope the miner.</li>
-</ul></li>
-<li>The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing <code>|col_name|types|</code> tables in each <code>@return</code> block are the parse input).</li>
+<div class="section level5">
+<h5 id="ci-build-and-dependency-improvements-3-0-0"><em>CI, build, and dependency improvements</em><a class="anchor" aria-label="anchor" href="#ci-build-and-dependency-improvements-3-0-0"></a></h5>
+<ul><li>Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.</li>
+<li>Clarified optional environment variable usage in CI for live API test toggles.</li>
+<li>Updated package build ignores to exclude local development folders from source checks.</li>
+<li>Updated GitHub Actions to v4.</li>
+<li>Cleaned up <code>.Rbuildignore</code> duplicates.</li>
+<li>Removed deprecated <code>qs</code> dependency.</li>
+<li>Moved <code>furrr</code> and <code>future</code> dependencies to Suggests with version requirements for users who want parallel features but aren’t required for core functionality.</li>
+<li>Added <code>lifecycle</code> dependency for the deprecation pattern used in this release.</li>
+<li>Internal <code>nba_endpoint()</code> registry updated with all V3 boxscore endpoints and <code>boxscoresummaryv3</code>.</li>
+<li>Added comprehensive <code>CONTRIBUTING.md</code> with naming conventions and test environment documentation.</li>
 </ul></div>
+<div class="section level5">
+<h5 id="social-branding-twitter--x-3-0-0"><em>Social branding (Twitter → X)</em><a class="anchor" aria-label="anchor" href="#social-branding-twitter--x-3-0-0"></a></h5>
+<ul><li>Updated all social media links and badges from Twitter to X across README, pkgdown site, and vignettes.</li>
+<li>Shields.io badge <code>logo=twitter</code> → <code>logo=x</code>; profile URLs <code>twitter.com</code> → <code>x.com</code>.</li>
+<li>pkgdown navbar icon updated from <code>fa-twitter</code> to <code>fa-x-twitter</code>.</li>
+</ul></div>
+</div>
 </div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2.1.0" id="hoopr-210"><strong>hoopR 2.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-210"></a></h2><p class="text-muted">CRAN release: 2023-11-25</p>

@@ -4,7 +4,179 @@
 
 CRAN release: 2026-03-24
 
-#### **HTTP Backend Migration**
+#### **New exported functions**
+
+##### *NBA Play-by-Play V3*
+
+| Function / change | Description |
+|----|----|
+| [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md) | Dedicated wrapper for the NBA Stats PlayByPlayV3 endpoint. |
+| [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md) default flip | Now defaults to `version = "v3"` (was `"v2"`). Pass `version = "v2"` for the previous behavior. |
+| [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md) default flip | Same default flip applies. |
+| [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md) `p` parameter | Now optional (default `NULL`) — previously required even when not using progress tracking. |
+
+Internal V3→V2 compatibility pipeline backs
+[`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md) so
+callers keep V2-compatible columns while gaining V3-only columns
+(`x_legacy`, `y_legacy`, `shot_distance`, `shot_result`,
+`is_field_goal`, `points_total`, `shot_value`):
+
+| Helper (internal) | Role |
+|----|----|
+| [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md) | Converts V3 play-by-play data to V2-compatible column format with mapped event types and player resolution. |
+| [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md) | Retrieves player roster from [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) for name-to-ID resolution during V3-to-V2 conversion. |
+| [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md) | Rewritten — uses [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md) stint data with interval mapping for robust on-court determination (replaces the previous substitution-parsing approach). |
+
+Removed
+[`stringr::str_match`](https://stringr.tidyverse.org/reference/str_match.html)
+import from NAMESPACE — V3 clock parsing now uses base R regex
+functions.
+
+##### *NBA Boxscore Summary V3*
+
+| Function | Description |
+|----|----|
+| [`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md) | Returns a named list of 9 data frames: `GameSummary`, `GameInfo`, `ArenaInfo`, `Officials`, `LineScore`, `InactivePlayers`, `LastFiveMeetings`, `OtherStats`, `AvailableVideo`. |
+
+##### *New NBA Stats API endpoint wrappers*
+
+| Function | Description |
+|----|----|
+| [`nba_commonteamyears()`](https://hoopR.sportsdataverse.org/reference/nba_commonteamyears.md) | Team IDs with their active year ranges. |
+| [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md) | Dunk tracking data with biomechanics, scores, and style metrics. |
+| [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md) | Gravity scores — how much defensive attention each player draws. |
+| [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md) | In-Season Tournament (NBA Cup) standings. |
+| [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md) | International schedule data with broadcaster information. |
+| [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md) | Team and player lineup comparison stats (5 datasets). |
+| [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md) | Video event asset data for a given game event. |
+
+##### *ESPN & G-League functions*
+
+| Function | Description |
+|----|----|
+| [`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md) | Current NBA team roster from ESPN. |
+| [`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md) | Current MBB team roster from ESPN. |
+| [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md) | Live G-League play-by-play. |
+| [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md) | Live G-League box score. |
+
+#### **Behavior changes to existing functions**
+
+##### *Bug fixes*
+
+| Function | Fix |
+|----|----|
+| [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md) | Migrated off the retired `stats.nba.com/stats/scheduleleaguev2` endpoint (returns `Connection was reset` across multiple client environments; issues [\#184](https://github.com/sportsdataverse/hoopR/issues/184) and [\#187](https://github.com/sportsdataverse/hoopR/issues/187)) to the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. Same `leagueSchedule.gameDates[].games[]` payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the `_2`-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a [`message()`](https://rdrr.io/r/base/message.html) directing users at `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL` before `tryCatch` (issue [\#184](https://github.com/sportsdataverse/hoopR/issues/184)). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26. |
+| [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.md) | Reordered query-string parameter ordering to put `LeagueID` first. As of 2026 the NBA Stats API rejects the alphabetical ordering (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a Cloudflare HTML error page; `LeagueID`-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the WNBA equivalent in `wehoop`. |
+| [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md) | Nested games column now properly flattened. |
+| [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md) | HTTP 400 error caused by empty-string parameters now resolved. |
+| [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md) | Avoids on-court enrichment dependency failures for G-League game IDs by using the stable core play-by-play path. |
+| [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) | Referee link extraction updated — CSS selectors now match current KenPom HTML structure (`div.refline` with href-based filtering). |
+| [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md) | CSS selector updated to `table#player-table`; team name assignment now uses the display name instead of the URL slug. |
+| [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md) example | Year bumped from 2021 to 2026 for current-season relevance. |
+
+**Return-value initialization sweep.** Fixed `df_list` not initialized
+before `tryCatch` in **147 NBA Stats API wrapper functions**, preventing
+crashes on API errors. Same pattern applied to: \*
+[`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
+(`plays_df` init). \*
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+and
+[`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+(`data` init). \* NBAGL wrappers (return-object init across error
+paths).
+
+**Other fixes:** \* `helper-skip.R` test guard functions now use string
+comparison (`!= "1"`) instead of numeric comparison (`== 0`). \*
+V3-style data.frame parsing fixed for leader/standings endpoints. \*
+`%||%` import added for R \< 4.4.0 compatibility. \* `teams_links`
+dataset updated with 2026 season team data.
+
+#### **Deprecations**
+
+Calling any of these now errors with a structured
+`lifecycleDeprecatedError` that names a replacement. All deprecations
+were prompted by unstable / partial / empty endpoint responses observed
+in production.
+
+| Deprecated function | Replacement | Reason |
+|----|----|----|
+| [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md) | [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md) | [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md) | [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md) | [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md) | [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md) | [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md) | Unstable/partial V2 responses |
+| [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
+| [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
+| [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
+| [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md) | [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md) | Unstable/empty responses |
+| [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md) | [`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md) | Unstable/empty responses |
+| [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md) | [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md) | Unstable/empty responses |
+| [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md) | [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md) | Unstable/empty responses |
+| [`nba_playercareerbycollege()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.md) | [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md) / [`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md) | Unstable/empty responses |
+| [`nba_playernextngames()`](https://hoopR.sportsdataverse.org/reference/nba_playernextngames.md) | [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md) | Unstable/empty responses |
+| [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md) | [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md) | Unstable/empty responses |
+| [`nba_scoreboardv2()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.md) | [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md) | Unstable/partial responses |
+
+#### **Documentation improvements**
+
+##### *@return column descriptions on every exported function*
+
+Every `@return` markdown table across the 39 R source files is upgraded
+from two columns (`col_name | types`) to three columns
+(`col_name | types | description`). **6,039 total table rows** touched;
+every result set on every function now ships a per-column description in
+`?<function>` help, the pkgdown reference, and the rendered man pages.
+
+**Coverage** — frequency-weighted, what `?fn` readers actually see —
+**58.4% of the 6,039 [@return](https://github.com/return) table rows now
+carry a hand-quality description** (curated + ESPN-API + mined). The
+remaining 41.6% are heuristic-fallback rows; the heuristic generator’s
+snake_case expansion + suffix rules cover most of those acceptably, and
+the long tail is dominated by single-occurrence columns from low-traffic
+NBA Stats endpoints.
+
+**Description sources** (precedence order, first match wins):
+
+1.  `tools/docs/column_descriptions_curated.csv` — 619 hand-authored
+    entries covering high-traffic columns and basketball / ESPN domain
+    conventions.
+2.  `tools/docs/column_descriptions_api.csv` — 188 ESPN-authored
+    descriptions mined live from 14 endpoints per league across both
+    `nba` and `mens-college-basketball`, covering 9 endpoint families:
+    core-v2 athlete statistics (per-season, post-season, career),
+    core-v2 team statistics, core-v2 statisticslog, core-v2 leaders,
+    web-v3 athlete stats / splits / gamelog / overview, and web-v3
+    statistics/byathlete leaderboards. Three response shapes are
+    recognized: nested categories with stats objects, parallel arrays
+    under categories, and top-level parallel-array shapes (splits /
+    gamelog).
+3.  Mined `\item{...}{...}` lines from existing `\describe{}` blocks.
+4.  Heuristic patterns driven by column-name suffixes (`*_id`, `*_pct`,
+    `*_made`, `*_attempted`, `*_per_36`, etc.) with basketball-friendly
+    noun substitution.
+
+**New tooling under `tools/docs/`** (`.Rbuildignore`’d via the existing
+`^tools$` rule):
+
+| File | Purpose |
+|----|----|
+| `build_column_descriptions.R` | One-shot dictionary builder. |
+| `column_descriptions_curated.csv` | Hand-edit surface; overrides API / mined / heuristic outputs. |
+| `column_descriptions_api.csv` | ESPN-API-mined descriptions, regenerated by `mine_api_descriptions.R`. |
+| `column_descriptions.csv` | Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic). |
+| `mine_api_descriptions.R` | Driver that probes the ESPN endpoints which self-document their stat columns. |
+| `audit_column_descriptions.R` | Coverage / leverage diagnostic. |
+| `markdown_man_table_helper.R` | Programmatic helpers (`load_column_descriptions()`, `make_return_table_md()`, `roxygenize_return()`, `augment_return_tables_in_file()`, `augment_all_r_files()`, `mine_espn_api_descriptions(url)`). |
+| `espn_endpoints_catalog.md` | Copy of the [sejaldua/espn-api](https://github.com/sejaldua/espn-api) endpoint catalog used to scope the miner. |
+
+The sweep is idempotent and offline (no API calls needed for the
+augmentation itself; existing `|col_name|types|` tables in each
+`@return` block are the parse input).
+
+#### **Internals**
+
+##### *HTTP backend migration (httr → httr2)*
 
 - **Breaking**: Replaced `httr` with `httr2` as the HTTP backend for all
   API requests across the package.
@@ -24,77 +196,65 @@ CRAN release: 2026-03-24
   [`httr2::resp_status()`](https://httr2.r-lib.org/reference/resp_status.html)
   instead of
   [`httr::status_code()`](https://httr.r-lib.org/reference/status_code.html).
-- KenPom (`kp_*`) functions now use `httr2` cookie jar authentication
+- KenPom (`kp_*`) functions now use `httr2` cookie-jar authentication
   via
   [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md),
   [`.kp_get_page()`](https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.md),
   and
   [`.kp_request()`](https://hoopR.sportsdataverse.org/reference/dot-kp_request.md)
   helpers.
-- **Proxy support restored.** When the package migrated from `httr` to
-  `httr2` the legacy
-  [`httr::use_proxy()`](https://httr.r-lib.org/reference/use_proxy.html)
-  plumbing was dropped and
-  [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
-  quietly stopped honoring proxies (its `...` was preserved purely for
-  source compatibility). Both
-  [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
-  and the lower-level
-  [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
-  now accept a `proxy =` argument:
-  - `proxy = NULL` (default) — libcurl reads `http_proxy` /
-    `https_proxy` / `no_proxy` env vars automatically.
-  - `proxy = "http://host:port"` — string form, forwarded to
-    `httr2::req_proxy(url = ...)`.
-  - `proxy = list(url=, port=, username=, password=, auth=)` — named
-    list spread into
-    [`httr2::req_proxy()`](https://httr2.r-lib.org/reference/req_proxy.html)
-    for authenticated proxies. Resolution order in
-    [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md):
-    explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env
-    vars. The `...` thread works for NBA Stats wrappers (which forward
-    into
-    [`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md));
-    ESPN / KenPom / NBA G-League wrappers call
-    [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
-    directly without `...`, so use `options(hoopR.proxy = ...)` at the
-    top of the session to cover those without per-function plumbing.
 
-#### **Messaging Migration (usethis → cli)**
+**Proxy support restored.** When the package migrated from `httr` to
+`httr2` the legacy
+[`httr::use_proxy()`](https://httr.r-lib.org/reference/use_proxy.html)
+plumbing was dropped and
+[`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+quietly stopped honoring proxies (its `...` was preserved purely for
+source compatibility). Both
+[`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md)
+and the lower-level
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+now accept a `proxy =` argument:
+
+- `proxy = NULL` (default) — libcurl reads `http_proxy` / `https_proxy`
+  / `no_proxy` env vars automatically.
+- `proxy = "http://host:port"` — string form, forwarded to
+  `httr2::req_proxy(url = ...)`.
+- `proxy = list(url=, port=, username=, password=, auth=)` — named list
+  spread into
+  [`httr2::req_proxy()`](https://httr2.r-lib.org/reference/req_proxy.html)
+  for authenticated proxies.
+
+Resolution order in
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md):
+explicit `proxy =` arg → `getOption("hoopR.proxy")` → libcurl env vars.
+The `...` thread works for NBA Stats wrappers (which forward into
+[`request_with_proxy()`](https://hoopR.sportsdataverse.org/reference/request_with_proxy.md));
+ESPN / KenPom / NBA G-League wrappers call
+[`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
+directly without `...`, so use `options(hoopR.proxy = ...)` at the top
+of the session to cover those without per-function plumbing.
+
+##### *Messaging migration (usethis → cli)*
 
 - Replaced all `usethis::ui_*()` messaging calls in database builder and
   loader functions with `cli` equivalents.
-- [`usethis::ui_stop()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  →
-  [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html),
-  [`usethis::ui_oops()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  →
-  [`cli::cli_alert_danger()`](https://cli.r-lib.org/reference/cli_alert.html),
-  [`usethis::ui_todo()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  → [`cli::cli_ul()`](https://cli.r-lib.org/reference/cli_ul.html),
-  [`usethis::ui_info()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  →
-  [`cli::cli_alert_info()`](https://cli.r-lib.org/reference/cli_alert.html).
-- Inline markup converted:
-  [`usethis::ui_value()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  → `{.val}`,
-  [`usethis::ui_path()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  → `{.file}`,
-  [`usethis::ui_code()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html)
-  → `{.code}`.
+
+| Old call | New call |
+|----|----|
+| [`usethis::ui_stop()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html) |
+| [`usethis::ui_oops()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | [`cli::cli_alert_danger()`](https://cli.r-lib.org/reference/cli_alert.html) |
+| [`usethis::ui_todo()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | [`cli::cli_ul()`](https://cli.r-lib.org/reference/cli_ul.html) |
+| [`usethis::ui_info()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | [`cli::cli_alert_info()`](https://cli.r-lib.org/reference/cli_alert.html) |
+| [`usethis::ui_value()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | `{.val}` inline markup |
+| [`usethis::ui_path()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | `{.file}` inline markup |
+| [`usethis::ui_code()`](https://usethis.r-lib.org/reference/ui-legacy-functions.html) | `{.code}` inline markup |
+
 - Moved `usethis` from `Imports` to `Suggests` (retained for
   [`usethis::edit_r_environ()`](https://usethis.r-lib.org/reference/edit.html)
   documentation references).
 
-#### **Social Branding (Twitter → X)**
-
-- Updated all social media links and badges from Twitter to X across
-  README, pkgdown site, and vignettes.
-- Shields.io badge `logo=twitter` → `logo=x`; profile URLs `twitter.com`
-  → `x.com`.
-- pkgdown navbar icon updated from `fa-twitter` to `fa-x-twitter`.
-
-#### **Stability and Test Robustness**
+##### *Stability and test robustness*
 
 - Hardened API-facing tests against live schema drift and intermittent
   empty payloads.
@@ -110,263 +270,6 @@ CRAN release: 2026-03-24
   [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
   assertions to validate core columns while tolerating empty optional
   result sets.
-
-#### **CI and Check Improvements**
-
-- Added workflow-level concurrency and explicit permissions to GitHub
-  Actions workflows.
-- Clarified optional environment variable usage in CI for live API test
-  toggles.
-- Updated package build ignores to exclude local development folders
-  from source checks.
-
-#### **NBA Play-by-Play V3**
-
-- [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
-  function added — dedicated wrapper for the NBA Stats PlayByPlayV3
-  endpoint.
-- [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
-  and
-  [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md)
-  now default to `version = "v3"` (previously `"v2"`). Pass
-  `version = "v2"` to use the previous behavior.
-- [`.v3_to_v2_format()`](https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.md)
-  internal helper added — converts V3 play-by-play data to V2-compatible
-  column format with mapped event types, player resolution, and retained
-  V3 shot coordinate columns (`x_legacy`, `y_legacy`, `shot_distance`,
-  `shot_result`, `is_field_goal`, `points_total`, `shot_value`).
-- [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
-  internal helper added — retrieves player roster from
-  [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
-  for name-to-ID resolution during V3-to-V2 conversion.
-- [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
-  internal helper rewritten — now uses
-  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
-  stint data with interval mapping for robust on-court player
-  determination (replaces previous substitution-parsing approach).
-- [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
-  `p` parameter is now optional (default: `NULL`) — previously required
-  even when not using progress tracking.
-- Removed
-  [`stringr::str_match`](https://stringr.tidyverse.org/reference/str_match.html)
-  import from NAMESPACE — V3 clock parsing now uses base R regex
-  functions.
-
-#### **NBA Boxscore Summary V3**
-
-- [`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md)
-  function added — returns a named list of 9 data frames: GameSummary,
-  GameInfo, ArenaInfo, Officials, LineScore, InactivePlayers,
-  LastFiveMeetings, OtherStats, AvailableVideo.
-
-#### **New NBA Stats API Endpoint Wrappers**
-
-- [`nba_commonteamyears()`](https://hoopR.sportsdataverse.org/reference/nba_commonteamyears.md)
-  function added — returns team IDs with their active year ranges.
-- [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md)
-  function added — returns dunk tracking data with biomechanics, scores,
-  and style metrics.
-- [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md)
-  function added — returns gravity scores measuring how much defensive
-  attention each player draws.
-- [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
-  function added — returns In-Season Tournament (NBA Cup) standings.
-- [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md)
-  function added — returns international schedule data with broadcaster
-  information.
-- [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md)
-  function added — returns team and player lineup comparison stats (5
-  datasets).
-- [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md)
-  function added — returns video event asset data for a given game
-  event.
-
-#### **ESPN & G-League Functions**
-
-- [`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md)
-  function added — returns current team roster from ESPN.
-- [`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md)
-  function added — returns current MBB team roster from ESPN.
-- [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md)
-  function added — returns live G-League play-by-play data.
-- [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md)
-  function added — returns live G-League box score data.
-
-#### **Other Improvements**
-
-- Internal `nba_endpoint()` registry updated with all V3 boxscore
-  endpoints and `boxscoresummaryv3`.
-- Removed deprecated `qs` dependency.
-- Updated GitHub Actions to v4.
-- Cleaned up `.Rbuildignore` duplicates.
-- Added comprehensive `CONTRIBUTING.md` with naming conventions and test
-  environment documentation.
-- Moved `furrr` and `future` dependencies to Suggests with version
-  requirements for users who want to use parallel features, but not
-  required for core functionality.
-- Add `lifecycle` dependency and deprecation warnings for unstable
-  functions/endpoints to guide users to maintained alternatives.
-
-#### **Bug Fixes**
-
-- [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
-  — migrated off the retired `stats.nba.com/stats/scheduleleaguev2`
-  endpoint (returns `Connection was reset` across multiple client
-  environments; issues
-  [\#184](https://github.com/sportsdataverse/hoopR/issues/184) and
-  [\#187](https://github.com/sportsdataverse/hoopR/issues/187)) to the
-  public CDN at
-  `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`. The CDN
-  serves the same `leagueSchedule.gameDates[].games[]` payload as the
-  dead stats endpoint, requires no authentication or special headers,
-  and stays current with the live NBA season. G-League schedules now
-  come from the `_2`-suffixed variant on the same CDN. For historical
-  seasons (CDN only serves the current season) the function now emits a
-  [`message()`](https://rdrr.io/r/base/message.html) directing users at
-  `load_nba_schedule(seasons = ...)`. Also initializes `games <- NULL`
-  before the `tryCatch` so an upstream HTTP error surfaces the
-  `cli`/`message` alert instead of `object 'games' not found` (issue
-  [\#184](https://github.com/sportsdataverse/hoopR/issues/184)).
-  Verified 2026-05-16: returns 1,398 NBA games × 52 cols for the current
-  2025-26 season.
-- [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_leaguegamelog.md)
-  — reordered the outgoing query-string parameter ordering to put
-  `LeagueID` first. As of 2026 the NBA Stats API rejects the
-  alphabetical ordering
-  (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a
-  Cloudflare HTML error page; `LeagueID`-first ordering matches what the
-  nba.com client sends and parses successfully. Verified 2026-05-16:
-  returns 2,460 NBA rows with `SEASON_ID=22025`. Parallel fix to the
-  WNBA equivalent in `wehoop`.
-- Fixed `df_list` not initialized before `tryCatch` in 147 NBA Stats API
-  wrapper functions, preventing crashes on API errors.
-- Fixed
-  [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
-  `plays_df` not initialized before `tryCatch`.
-- Fixed `helper-skip.R` test guard functions to use proper string
-  comparison (`!= "1"`) instead of numeric comparison (`== 0`).
-- Fixed
-  [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md)
-  HTTP 400 error caused by empty string parameters.
-- Fixed V3-style data.frame parsing for leader/standings endpoints.
-- Fixed
-  [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
-  nested games column flattening.
-- Fixed `%||%` import for R \< 4.4.0 compatibility.
-- Fixed `data` not initialized before `tryCatch` in
-  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
-  and
-  [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md),
-  preventing crashes on API errors.
-- Fixed
-  [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
-  to avoid on-court enrichment dependency failures for G-League game IDs
-  by using the stable core play-by-play path.
-- Fixed NBAGL wrapper defaults for error paths where return objects were
-  not initialized before `tryCatch`.
-- Fixed
-  [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md)
-  referee link extraction by updating CSS selectors to match current
-  KenPom HTML structure (`div.refline` with href-based filtering).
-- Fixed
-  [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)
-  CSS selector (`table#player-table`) and team name assignment to use
-  the display name instead of the URL slug.
-- Updated
-  [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md)
-  example year from 2021 to 2026 for current season relevance.
-- Updated `teams_links` dataset with 2026 season team data.
-
-#### **Deprecations**
-
-- Deprecated
-  [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md)
-  in favor of
-  [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md)
-  in favor of
-  [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md)
-  in favor of
-  [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md)
-  in favor of
-  [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md)
-  in favor of
-  [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md)
-  in favor of
-  [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md)
-  due to unstable/partial V2 API responses.
-- Deprecated
-  [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md)
-  in favor of
-  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md)
-  in favor of
-  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md)
-  in favor of
-  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md)
-  in favor of
-  [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md)
-  in favor of
-  [`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
-  in favor of
-  [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
-  in favor of
-  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_playercareerbycollege()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.md)
-  in favor of
-  [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md)/[`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerbiostats.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_playernextngames()`](https://hoopR.sportsdataverse.org/reference/nba_playernextngames.md)
-  in favor of
-  [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md)
-  in favor of
-  [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
-  due to unstable/empty endpoint responses.
-- Deprecated
-  [`nba_scoreboardv2()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.md)
-  in favor of
-  [`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
-  due to unstable/partial endpoint responses.
-
-#### **Test Improvements**
-
 - Converted 400+ `expect_equal(colnames())` assertions to `expect_in()`
   for subset validation, preventing test failures when APIs add new
   columns.
@@ -380,63 +283,34 @@ CRAN release: 2026-03-24
   [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
   named-list returns, and current schedule/PBP core columns).
 
-#### **@return documentation: descriptions added to every roxygen table**
+##### *CI, build, and dependency improvements*
 
-- Every `@return` markdown table across the 39 R source files is
-  upgraded from two columns (`col_name | types`) to three columns
-  (`col_name | types | description`). 6,039 total table rows touched;
-  every result set on every function now ships a per-column description
-  in `?<function>` help, the pkgdown reference, and the rendered man
-  pages.
-- Description content comes from four sources in precedence order:
-  1.  `tools/docs/column_descriptions_curated.csv` — 619 hand-authored
-      entries covering high-traffic columns and basketball / ESPN
-      conventions;
-  2.  `tools/docs/column_descriptions_api.csv` — 188 ESPN-authored
-      descriptions mined live from endpoints that self-document their
-      columns. The miner probes 14 endpoints per league across both NBA
-      and `mens-college-basketball`, covering 9 endpoint families:
-      core-v2 athlete statistics (per-season, post-season, career),
-      core-v2 team statistics, core-v2 statisticslog, core-v2 leaders,
-      web-v3 athlete stats / splits / gamelog / overview, and web-v3
-      statistics/byathlete leaderboards. Three response shapes are
-      recognized: nested categories with stats objects, parallel arrays
-      under categories, and top-level parallel-array shapes (splits /
-      gamelog).
-  3.  mined `\item{...}{...}` lines from existing `\describe{}` blocks;
-  4.  heuristic patterns driven by column-name suffixes (`*_id`,
-      `*_pct`, `*_made`, `*_attempted`, `*_per_36`, etc.) with
-      basketball-friendly noun substitution.
-- Frequency-weighted coverage: **58.4% of the 6,039
-  [@return](https://github.com/return) table rows now carry a
-  hand-quality description** (curated + ESPN-API + mined). The remaining
-  41.6% are heuristic-fallback rows; the heuristic generator’s
-  snake_case expansion + suffix rules cover most of those acceptably,
-  and the long tail is dominated by single-occurrence columns from
-  low-traffic endpoints.
-- New tooling under `tools/docs/` (`.Rbuildignore`’d via the existing
-  `^tools$` rule):
-  - `build_column_descriptions.R` — one-shot builder.
-  - `column_descriptions_curated.csv` — hand-edit surface.
-  - `column_descriptions_api.csv` — ESPN-API-mined, regenerated by
-    `tools/docs/mine_api_descriptions.R`.
-  - `column_descriptions.csv` — generated dictionary (1,956 rows; 619
-    curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164
-    heuristic).
-  - `mine_api_descriptions.R` — driver that probes the ESPN endpoints
-    which self-document their stat columns. Run with
-    `Rscript tools/docs/mine_api_descriptions.R`.
-  - `audit_column_descriptions.R` — coverage / leverage diagnostic.
-  - `markdown_man_table_helper.R` — programmatic helpers
-    (`load_column_descriptions()`, `make_return_table_md()`,
-    `roxygenize_return()`, `augment_return_tables_in_file()`,
-    `augment_all_r_files()`, `mine_espn_api_descriptions(url)`).
-  - `espn_endpoints_catalog.md` — copy of the
-    [sejaldua/espn-api](https://github.com/sejaldua/espn-api) endpoint
-    catalog used to scope the miner.
-- The sweep is idempotent and offline (no API calls needed for the
-  augmentation itself; existing `|col_name|types|` tables in each
-  `@return` block are the parse input).
+- Added workflow-level concurrency and explicit permissions to GitHub
+  Actions workflows.
+- Clarified optional environment variable usage in CI for live API test
+  toggles.
+- Updated package build ignores to exclude local development folders
+  from source checks.
+- Updated GitHub Actions to v4.
+- Cleaned up `.Rbuildignore` duplicates.
+- Removed deprecated `qs` dependency.
+- Moved `furrr` and `future` dependencies to Suggests with version
+  requirements for users who want parallel features but aren’t required
+  for core functionality.
+- Added `lifecycle` dependency for the deprecation pattern used in this
+  release.
+- Internal `nba_endpoint()` registry updated with all V3 boxscore
+  endpoints and `boxscoresummaryv3`.
+- Added comprehensive `CONTRIBUTING.md` with naming conventions and test
+  environment documentation.
+
+##### *Social branding (Twitter → X)*
+
+- Updated all social media links and badges from Twitter to X across
+  README, pkgdown site, and vignettes.
+- Shields.io badge `logo=twitter` → `logo=x`; profile URLs `twitter.com`
+  → `x.com`.
+- pkgdown navbar icon updated from `fa-twitter` to `fa-x-twitter`.
 
 ## **hoopR 2.1.0**
 

@@ -155,7 +155,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_stats(team_id = 52, year = 2020))
 #> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 14:13:57 UTC
+#> ℹ Data updated: 2026-05-17 15:19:53 UTC
 #> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    

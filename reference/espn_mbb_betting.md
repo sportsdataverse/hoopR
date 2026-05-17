@@ -107,7 +107,7 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
 try(espn_mbb_betting(game_id = 401256760))
-#> ✖ 2026-05-17 14:13:46.766565: Invalid arguments or no betting data available!
+#> ✖ 2026-05-17 15:19:42.71872: Invalid arguments or no betting data available!
 #> ✖ Args: game_id = 401256760
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `links` doesn't exist.
 #> $pickcenter
