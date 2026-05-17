@@ -1,0 +1,122 @@
+# **Get ESPN MBB Calendar**
+
+**Get ESPN MBB Calendar**
+
+**Get ESPN Women's College Basketball Calendar**
+
+## Usage
+
+``` r
+espn_mbb_calendar(season = most_recent_mbb_season())
+```
+
+## Arguments
+
+- season:
+
+  integer or character. Four-digit season year (e.g. `2025`). Defaults
+  to
+  [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md).
+
+## Value
+
+Returns a tibble of calendar entries.
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | character | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| season_type_label | character |  |
+| season_start_date | character | Date in YYYY-MM-DD format. |
+| season_end_date | character | Date in YYYY-MM-DD format. |
+| label | character |  |
+| alternate_label | character |  |
+| detail | character |  |
+| value | character | Numeric or string value field. |
+| start_date | character | Start date (YYYY-MM-DD). |
+| end_date | character | End date (YYYY-MM-DD). |
+
+## Details
+
+Retrieve the ESPN women's college basketball schedule calendar for a
+given season. The underlying scoreboard response contains a
+`leagues[[1]]$calendar` block with season-type entries (pre-season,
+regular, post). Uses `getOption("hoopR.proxy")` or
+`http_proxy`/`https_proxy` environment variables for proxy configuration
+(per-call proxy override is not supported for ESPN wrappers).
+
+## See also
+
+Other ESPN MBB Functions:
+[`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
+[`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
+[`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
+[`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
+[`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md),
+[`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md),
+[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
+[`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
+[`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
+[`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md),
+[`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md),
+[`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
+[`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
+[`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+[`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.md),
+[`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md),
+[`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md),
+[`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md),
+[`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.md),
+[`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.md),
+[`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md),
+[`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
+[`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md),
+[`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md),
+[`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
+[`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md),
+[`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
+[`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md),
+[`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_leaders.md),
+[`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md),
+[`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster.md),
+[`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md),
+[`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
+[`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
+[`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md),
+[`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_mbb_calendar(season = 2025)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Calendar from ESPN.com ────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 16:23:51 UTC
+#> # A tibble: 131 × 12
+#>    season season_type season_type_label season_start_date season_end_date  
+#>    <chr>  <chr>       <chr>             <chr>             <chr>            
+#>  1 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  2 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  3 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  4 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  5 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  6 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  7 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  8 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#>  9 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 10 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> # ℹ 121 more rows
+#> # ℹ 7 more variables: calendar_type <chr>, label <chr>, alternate_label <chr>,
+#> #   detail <chr>, value <chr>, start_date <chr>, end_date <chr>
+# }
+```

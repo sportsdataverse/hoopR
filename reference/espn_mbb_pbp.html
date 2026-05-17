@@ -110,19 +110,46 @@
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ESPN MBB Functions:
+<code><a href="espn_mbb_athlete_awards.html">espn_mbb_athlete_awards()</a></code>,
+<code><a href="espn_mbb_athlete_eventlog.html">espn_mbb_athlete_eventlog()</a></code>,
+<code><a href="espn_mbb_athlete_gamelog.html">espn_mbb_athlete_gamelog()</a></code>,
+<code><a href="espn_mbb_athlete_info.html">espn_mbb_athlete_info()</a></code>,
+<code><a href="espn_mbb_athlete_overview.html">espn_mbb_athlete_overview()</a></code>,
+<code><a href="espn_mbb_athlete_splits.html">espn_mbb_athlete_splits()</a></code>,
+<code><a href="espn_mbb_athlete_statisticslog.html">espn_mbb_athlete_statisticslog()</a></code>,
+<code><a href="espn_mbb_athlete_stats.html">espn_mbb_athlete_stats()</a></code>,
+<code><a href="espn_mbb_athletes_index.html">espn_mbb_athletes_index()</a></code>,
 <code><a href="espn_mbb_betting.html">espn_mbb_betting()</a></code>,
+<code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
+<code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
 <code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code>,
+<code><a href="espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code>,
+<code><a href="espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code>,
+<code><a href="espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code>,
+<code><a href="espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code>,
 <code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code>,
 <code><a href="espn_mbb_game_rosters.html">espn_mbb_game_rosters()</a></code>,
+<code><a href="espn_mbb_injuries.html">espn_mbb_injuries()</a></code>,
+<code><a href="espn_mbb_leaders.html">espn_mbb_leaders()</a></code>,
+<code><a href="espn_mbb_news.html">espn_mbb_news()</a></code>,
 <code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code>,
 <code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
 <code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code>,
 <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
+<code><a href="espn_mbb_season_info.html">espn_mbb_season_info()</a></code>,
+<code><a href="espn_mbb_seasons.html">espn_mbb_seasons()</a></code>,
 <code><a href="espn_mbb_standings.html">espn_mbb_standings()</a></code>,
+<code><a href="espn_mbb_team.html">espn_mbb_team()</a></code>,
 <code><a href="espn_mbb_team_box.html">espn_mbb_team_box()</a></code>,
 <code><a href="espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code>,
+<code><a href="espn_mbb_team_injuries.html">espn_mbb_team_injuries()</a></code>,
+<code><a href="espn_mbb_team_leaders.html">espn_mbb_team_leaders()</a></code>,
+<code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
+<code><a href="espn_mbb_team_roster.html">espn_mbb_team_roster()</a></code>,
+<code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
 <code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
 <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
+<code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
 <code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p></div>
     </div>
     <div class="section level2">
@@ -135,7 +162,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_pbp</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">401479672</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:09:22 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:23:59 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 360 × 53</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    id       sequence_number text  away_score home_score scoring_play score_value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

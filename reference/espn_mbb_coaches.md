@@ -1,0 +1,113 @@
+# **Get ESPN Women's College Basketball Coaches**
+
+**Get ESPN Women's College Basketball Coaches**
+
+**Get ESPN Women's College Basketball Coaches**
+
+## Usage
+
+``` r
+espn_mbb_coaches(season = most_recent_mbb_season(), ...)
+```
+
+## Arguments
+
+- season:
+
+  Season year (numeric, e.g. 2025). Defaults to the most recent MBB
+  season.
+
+- ...:
+
+  Additional arguments; currently unused but retained for forward
+  compatibility. Proxy configuration should use
+  `options(hoopR.proxy = ...)` – see
+  [`?hoopR`](https://hoopR.sportsdataverse.org/reference/hoopR-package.md)
+  for details.
+
+## Value
+
+A single `hoopR_data` tibble with one row per coach.
+
+|            |           |                                   |
+|------------|-----------|-----------------------------------|
+| col_name   | types     | description                       |
+| coach_id   | character |                                   |
+| first_name | character | Player's first name.              |
+| last_name  | character | Player's last name.               |
+| full_name  | character | Player's full name.               |
+| experience | integer   | Years of professional experience. |
+| team_id    | character | Unique team identifier.           |
+
+## See also
+
+Other ESPN MBB Functions:
+[`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
+[`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
+[`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
+[`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
+[`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md),
+[`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md),
+[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
+[`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
+[`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
+[`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md),
+[`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md),
+[`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
+[`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
+[`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+[`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.md),
+[`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md),
+[`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md),
+[`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md),
+[`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.md),
+[`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.md),
+[`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md),
+[`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
+[`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md),
+[`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md),
+[`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
+[`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md),
+[`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
+[`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md),
+[`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_leaders.md),
+[`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md),
+[`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster.md),
+[`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md),
+[`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
+[`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
+[`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md),
+[`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_mbb_coaches(season = 2025)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Coaches from ESPN.com ─────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 16:23:51 UTC
+#> # A tibble: 366 × 6
+#>    coach_id first_name last_name full_name experience team_id
+#>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  
+#>  1 NA       NA         NA        NA                NA NA     
+#>  2 NA       NA         NA        NA                NA NA     
+#>  3 NA       NA         NA        NA                NA NA     
+#>  4 NA       NA         NA        NA                NA NA     
+#>  5 NA       NA         NA        NA                NA NA     
+#>  6 NA       NA         NA        NA                NA NA     
+#>  7 NA       NA         NA        NA                NA NA     
+#>  8 NA       NA         NA        NA                NA NA     
+#>  9 NA       NA         NA        NA                NA NA     
+#> 10 NA       NA         NA        NA                NA NA     
+#> # ℹ 356 more rows
+# }
+```

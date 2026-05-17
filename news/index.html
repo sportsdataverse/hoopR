@@ -87,7 +87,172 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.1.0" id="hoopr-310"><strong>hoopR 3.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-310"></a></h2>
-<p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Most entries below are bug fixes for endpoint behavior that drifted after CRAN submission, plus the package-wide <code>@return</code> documentation upgrade and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
+<p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Headline change is a <strong>58-wrapper ESPN endpoint expansion</strong> that brings hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team detail, event detail, league catalog, news, calendar, injuries, plus draft / freeagents / transactions for the NBA. Also includes bug fixes for endpoint behavior that drifted after CRAN submission, the package-wide <code>@return</code> documentation upgrade, and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
+<div class="section level4">
+<h4 id="new-exported-functions-3-1-0"><strong>New exported functions</strong><a class="anchor" aria-label="anchor" href="#new-exported-functions-3-1-0"></a></h4>
+<p>58 new ESPN wrappers added across 8 domains (29 per league × 2 leagues + 4 NBA-only). All built on shared internal helpers in <code>R/espn_basketball_*_helpers.R</code> so each MBB / NBA pair stays DRY — one bugfix in the helper propagates to both public wrappers. Same internal-helpers-plus-thin-shims pattern wehoop uses for its WBB / WNBA pair.</p>
+<div class="section level5">
+<h5 id="athlete-coverage-per-league-3-1-0"><em>Athlete coverage (×8 per league)</em><a class="anchor" aria-label="anchor" href="#athlete-coverage-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Function</th>
+<th>Endpoint family</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_athlete_info.html">espn_mbb_athlete_info()</a></code> / <code><a href="../reference/espn_nba_athlete_info.html">espn_nba_athlete_info()</a></code>
+</td>
+<td>site-v2</td>
+<td>Athlete bio / team / position / status / college / draft info.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_overview.html">espn_mbb_athlete_overview()</a></code> / <code><a href="../reference/espn_nba_athlete_overview.html">espn_nba_athlete_overview()</a></code>
+</td>
+<td>web-common-v3</td>
+<td>Season overview + last-5-games + news + rotowire notes.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_stats.html">espn_mbb_athlete_stats()</a></code> / <code><a href="../reference/espn_nba_athlete_stats.html">espn_nba_athlete_stats()</a></code>
+</td>
+<td>web-common-v3</td>
+<td>Per-category stats as a named list (averages / totals).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_gamelog.html">espn_mbb_athlete_gamelog()</a></code> / <code><a href="../reference/espn_nba_athlete_gamelog.html">espn_nba_athlete_gamelog()</a></code>
+</td>
+<td>web-common-v3</td>
+<td>Game-by-game log.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_splits.html">espn_mbb_athlete_splits()</a></code> / <code><a href="../reference/espn_nba_athlete_splits.html">espn_nba_athlete_splits()</a></code>
+</td>
+<td>web-common-v3</td>
+<td>Long-format home / away / opponent splits.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_eventlog.html">espn_mbb_athlete_eventlog()</a></code> / <code><a href="../reference/espn_nba_athlete_eventlog.html">espn_nba_athlete_eventlog()</a></code>
+</td>
+<td>core-v2</td>
+<td>Per-event log. <code>statistics.$ref</code> URLs returned as <code>statistics_ref</code> character column (not auto-resolved).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_awards.html">espn_mbb_athlete_awards()</a></code> / <code><a href="../reference/espn_nba_athlete_awards.html">espn_nba_athlete_awards()</a></code>
+</td>
+<td>core-v2</td>
+<td>Awards (sparse / often empty); empty payload returns a canonical-shape empty tibble.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athlete_statisticslog.html">espn_mbb_athlete_statisticslog()</a></code> / <code><a href="../reference/espn_nba_athlete_statisticslog.html">espn_nba_athlete_statisticslog()</a></code>
+</td>
+<td>core-v2</td>
+<td>Per-season statistics log.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="team-detail-per-league-3-1-0"><em>Team detail (×5 per league)</em><a class="anchor" aria-label="anchor" href="#team-detail-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_team.html">espn_mbb_team()</a></code> / <code><a href="../reference/espn_nba_team.html">espn_nba_team()</a></code>
+</td>
+<td>Single-team info as a named list (<code>Info</code>, <code>Record</code>, <code>NextEvent</code>, <code>StandingSummary</code>, <code>Coaches</code>).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_team_roster.html">espn_mbb_team_roster()</a></code> / <code><a href="../reference/espn_nba_team_roster.html">espn_nba_team_roster()</a></code>
+</td>
+<td>Roster (one row per athlete with position, height, weight, headshot).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code> / <code><a href="../reference/espn_nba_team_schedule.html">espn_nba_team_schedule()</a></code>
+</td>
+<td>Schedule (one row per event with opponent, venue, broadcast, result).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_team_leaders.html">espn_mbb_team_leaders()</a></code> / <code><a href="../reference/espn_nba_team_leaders.html">espn_nba_team_leaders()</a></code>
+</td>
+<td>Statistical leaders in long format per category-rank-athlete.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_team_news.html">espn_mbb_team_news()</a></code> / <code><a href="../reference/espn_nba_team_news.html">espn_nba_team_news()</a></code>
+</td>
+<td>Team-scoped news feed.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="event-detail-per-league-3-1-0"><em>Event detail (×4 per league)</em><a class="anchor" aria-label="anchor" href="#event-detail-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code> / <code><a href="../reference/espn_nba_event_odds.html">espn_nba_event_odds()</a></code>
+</td>
+<td>Game-level odds (one row per provider).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code> / <code><a href="../reference/espn_nba_event_probabilities.html">espn_nba_event_probabilities()</a></code>
+</td>
+<td>Paginated play-level win probabilities (page loop capped at 50 pages; respects <code>limit</code>).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code> / <code><a href="../reference/espn_nba_event_officials.html">espn_nba_event_officials()</a></code>
+</td>
+<td>Per-game officials.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code> / <code><a href="../reference/espn_nba_event_broadcasts.html">espn_nba_event_broadcasts()</a></code>
+</td>
+<td>Broadcast outlets.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="league-catalog-per-league-3-1-0"><em>League catalog (×6 per league)</em><a class="anchor" aria-label="anchor" href="#league-catalog-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_leaders.html">espn_mbb_leaders()</a></code> / <code><a href="../reference/espn_nba_leaders.html">espn_nba_leaders()</a></code>
+</td>
+<td>League leaders (web-common-v3 <code>statistics/byathlete</code>).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_venues.html">espn_mbb_venues()</a></code> / <code><a href="../reference/espn_nba_venues.html">espn_nba_venues()</a></code>
+</td>
+<td>Venue catalog.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_coaches.html">espn_mbb_coaches()</a></code> / <code><a href="../reference/espn_nba_coaches.html">espn_nba_coaches()</a></code>
+</td>
+<td>Coach roster.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_athletes_index.html">espn_mbb_athletes_index()</a></code> / <code><a href="../reference/espn_nba_athletes_index.html">espn_nba_athletes_index()</a></code>
+</td>
+<td>Paginated athlete index with progress messages.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_seasons.html">espn_mbb_seasons()</a></code> / <code><a href="../reference/espn_nba_seasons.html">espn_nba_seasons()</a></code>
+</td>
+<td>Season list.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_season_info.html">espn_mbb_season_info()</a></code> / <code><a href="../reference/espn_nba_season_info.html">espn_nba_season_info()</a></code>
+</td>
+<td>Single-season info.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="news--calendar-per-league-3-1-0"><em>News + calendar (×2 per league)</em><a class="anchor" aria-label="anchor" href="#news--calendar-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_news.html">espn_mbb_news()</a></code> / <code><a href="../reference/espn_nba_news.html">espn_nba_news()</a></code>
+</td>
+<td>League-level news feed (site-v2 <code>/news</code>).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar()</a></code> / <code><a href="../reference/espn_nba_calendar.html">espn_nba_calendar()</a></code>
+</td>
+<td>Scoreboard calendar blocks (site-v2 <code>/scoreboard?dates={season}</code>).</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="injuries-per-league-3-1-0"><em>Injuries (×2 per league)</em><a class="anchor" aria-label="anchor" href="#injuries-per-league-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_mbb_injuries.html">espn_mbb_injuries()</a></code> / <code><a href="../reference/espn_nba_injuries.html">espn_nba_injuries()</a></code>
+</td>
+<td>League-wide injury feed (site-v2 <code>/injuries</code>).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_mbb_team_injuries.html">espn_mbb_team_injuries()</a></code> / <code><a href="../reference/espn_nba_team_injuries.html">espn_nba_team_injuries()</a></code>
+</td>
+<td>Team-scoped injury feed (site-v2 <code>/teams/{id}/injuries</code>).</td>
+</tr></tbody></table><p>MBB injury data is typically sparse on ESPN; both variants return an empty tibble (rather than erroring) when no injuries are reported.</p>
+</div>
+<div class="section level5">
+<h5 id="nba-only-espn-endpoints-3-1-0"><em>NBA-only ESPN endpoints</em><a class="anchor" aria-label="anchor" href="#nba-only-espn-endpoints-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/espn_nba_draft.html">espn_nba_draft()</a></code></td>
+<td>Paginates core-v2 <code>/seasons/{year}/draft</code> (up to 20 pages); flat tibble of picks.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_freeagents.html">espn_nba_freeagents()</a></code></td>
+<td>Wraps core-v2 <code>/seasons/{year}/freeagents</code>; returns an empty tibble outside the off-season free-agent window.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_transactions.html">espn_nba_transactions()</a></code></td>
+<td>Wraps site-v2 <code>/transactions?season={year}&amp;limit={limit}</code> with null-safe <code>to_team_id</code> for release transactions.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_conferences.html">espn_nba_conferences()</a></code></td>
+<td>NBA-side analog of <code><a href="../reference/espn_mbb_conferences.html">espn_mbb_conferences()</a></code>, against the NBA scoreboard-conferences endpoint.</td>
+</tr></tbody></table></div>
+</div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>
 <div class="section level5">

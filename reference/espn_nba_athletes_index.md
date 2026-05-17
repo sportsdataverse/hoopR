@@ -1,0 +1,133 @@
+# **Get ESPN NBA Athletes Index**
+
+**Get ESPN NBA Athletes Index**
+
+**Get ESPN NBA Athletes Index**
+
+## Usage
+
+``` r
+espn_nba_athletes_index(
+  season = most_recent_nba_season(),
+  active = TRUE,
+  limit = 5000L,
+  ...
+)
+```
+
+## Arguments
+
+- season:
+
+  Season year (numeric, e.g. 2025). Defaults to the most recent NBA
+  season.
+
+- active:
+
+  logical. When `TRUE` (default) only active athletes are returned. Set
+  to `FALSE` for the full historical roster.
+
+- limit:
+
+  integer. Maximum number of rows to return. Default 5000. Pass a small
+  value (e.g. `limit = 50`) in tests to keep execution fast.
+
+- ...:
+
+  Additional arguments; currently unused but retained for forward
+  compatibility. Proxy configuration should use
+  `options(hoopR.proxy = ...)` – see
+  [`?hoopR`](https://hoopR.sportsdataverse.org/reference/hoopR-package.md)
+  for details.
+
+## Value
+
+A single `hoopR_data` tibble with one row per athlete.
+
+|            |           |                                         |
+|------------|-----------|-----------------------------------------|
+| col_name   | types     | description                             |
+| athlete_id | character | Unique athlete identifier (ESPN).       |
+| full_name  | character | Player's full name.                     |
+| jersey     | character | Jersey number worn by the player.       |
+| position   | character | Listed roster position (G, F, C, etc.). |
+| team_id    | character | Unique team identifier.                 |
+| headshot   | character | Headshot image URL.                     |
+| status     | character | Status label.                           |
+| link       | character |                                         |
+
+## See also
+
+Other ESPN NBA Functions:
+[`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
+[`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
+[`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
+[`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md),
+[`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
+[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
+[`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
+[`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
+[`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
+[`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
+[`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
+[`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
+[`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
+[`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md),
+[`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_injuries.md),
+[`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_leaders.md),
+[`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md),
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md),
+[`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md),
+[`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
+[`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
+[`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
+[`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
+[`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md),
+[`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md),
+[`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md),
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md),
+[`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md),
+[`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
+[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md),
+[`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md),
+[`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_nba_athletes_index(season = 2025, limit = 50)
+#> Fetching page 1 of 1 for nba athletes (season=2025)...
+#> ── ESPN NBA Athletes Index from ESPN.com ──────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 16:24:13 UTC
+#> # A tibble: 50 × 9
+#>    athlete_id full_name jersey position team_id headshot status link     ref_url
+#>    <chr>      <chr>     <chr>  <chr>    <chr>   <chr>    <chr>  <chr>    <chr>  
+#>  1 4432932    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  2 4431679    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  3 2991235    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  4 4066261    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  5 4397018    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  6 4684682    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  7 4397072    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  8 4593125    NA        NA     NA       NA      NA       NA     http://… http:/…
+#>  9 4433268    NA        NA     NA       NA      NA       NA     http://… http:/…
+#> 10 4278039    NA        NA     NA       NA      NA       NA     http://… http:/…
+#> # ℹ 40 more rows
+# }
+```

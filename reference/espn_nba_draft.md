@@ -1,0 +1,134 @@
+# **Get ESPN NBA Draft Picks**
+
+**Get ESPN NBA Draft Picks**
+
+**Get ESPN NBA Draft Picks**
+
+## Usage
+
+``` r
+espn_nba_draft(season = most_recent_nba_season(), ...)
+```
+
+## Arguments
+
+- season:
+
+  Season year (numeric, e.g. 2025). Defaults to the most recent NBA
+  season.
+
+- ...:
+
+  Additional arguments; currently unused but retained for forward
+  compatibility. Proxy configuration should use
+  `options(hoopR.proxy = ...)`.
+
+## Value
+
+A `hoopR_data` tibble with one row per draft pick:
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| round | integer | Tournament / playoff round. |
+| pick | integer |  |
+| overall | integer | Overall. |
+| traded | logical |  |
+| trade_note | character |  |
+| status | character | Status label. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_ref | character |  |
+| team_id | character | Unique team identifier. |
+| team_ref | character |  |
+
+Athlete and team details (name, position, college, abbreviation) are not
+inlined in the draft response; resolve them via
+[`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md)
+or
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md)
+using the returned IDs.
+
+## Details
+
+Calls the ESPN core-v2 endpoint
+`https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{year}/draft/rounds`,
+which returns each round of the draft with its picks inlined as
+`picks: [...]`. For historical seasons with no ESPN draft data the
+function returns an empty tibble rather than erroring.
+
+## See also
+
+Other ESPN NBA Functions:
+[`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
+[`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
+[`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
+[`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md),
+[`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
+[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
+[`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
+[`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
+[`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
+[`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
+[`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
+[`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
+[`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
+[`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
+[`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md),
+[`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_injuries.md),
+[`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_leaders.md),
+[`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md),
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md),
+[`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md),
+[`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
+[`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
+[`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
+[`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
+[`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md),
+[`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md),
+[`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md),
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md),
+[`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md),
+[`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
+[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md),
+[`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md),
+[`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_nba_draft(season = 2024)
+#> ── ESPN NBA Draft Picks from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 16:24:16 UTC
+#> # A tibble: 58 × 11
+#>    season round  pick overall traded trade_note status    athlete_id athlete_ref
+#>     <int> <int> <int>   <int> <lgl>  <chr>      <chr>     <chr>      <chr>      
+#>  1   2024     1     1       1 FALSE  NA         SELECTIO… 108206     http://spo…
+#>  2   2024     1     2       2 FALSE  NA         SELECTIO… 108204     http://spo…
+#>  3   2024     1     3       3 FALSE  From BKN   SELECTIO… 108231     http://spo…
+#>  4   2024     1     4       4 FALSE  NA         SELECTIO… 108107     http://spo…
+#>  5   2024     1     5       5 FALSE  NA         SELECTIO… 108202     http://spo…
+#>  6   2024     1     6       6 FALSE  NA         SELECTIO… 108207     http://spo…
+#>  7   2024     1     7       7 FALSE  NA         SELECTIO… 108106     http://spo…
+#>  8   2024     1     8       8 TRUE   From TOR   SELECTIO… 108142     http://spo…
+#>  9   2024     1     9       9 FALSE  NA         SELECTIO… 108147     http://spo…
+#> 10   2024     1    10      10 FALSE  NA         SELECTIO… 108119     http://spo…
+#> # ℹ 48 more rows
+#> # ℹ 2 more variables: team_id <chr>, team_ref <chr>
+# }
+```

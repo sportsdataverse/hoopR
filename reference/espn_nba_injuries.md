@@ -1,0 +1,124 @@
+# **Get ESPN NBA Injuries**
+
+**Get ESPN NBA Injuries**
+
+**Get ESPN NBA Injuries**
+
+## Usage
+
+``` r
+espn_nba_injuries(season = most_recent_nba_season(), ...)
+```
+
+## Arguments
+
+- season:
+
+  Numeric or character season year (e.g. `2025`). The ESPN injury
+  endpoint does not filter by season server-side; the value is attached
+  as a constant column on the returned tibble for downstream joins.
+  Defaults to
+  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md).
+
+- ...:
+
+  Currently unused; reserved for future argument threading.
+
+## Value
+
+Returns a tibble of league-wide NBA injury records. Returns an empty
+tibble (zero rows) when no injuries are reported.
+
+**Injuries**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | character | Unique team identifier. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_name | character | Athlete display name (ESPN). |
+| position | character | Listed roster position (G, F, C, etc.). |
+| status | character | Status label. |
+| date | character | Date in YYYY-MM-DD format. |
+| type | character | Record type / category. |
+| side | character | Side label (e.g. 'home', 'away', or 'overUnder'). |
+| returns_at | character |  |
+| short_comment | character |  |
+| long_comment | character | Long-form play / event comment. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+
+## See also
+
+Other ESPN NBA Functions:
+[`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
+[`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
+[`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
+[`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md),
+[`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
+[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
+[`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
+[`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
+[`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
+[`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
+[`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
+[`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
+[`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
+[`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
+[`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md),
+[`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_leaders.md),
+[`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md),
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md),
+[`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md),
+[`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
+[`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
+[`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
+[`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
+[`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md),
+[`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md),
+[`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md),
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md),
+[`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md),
+[`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
+[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md),
+[`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md),
+[`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_nba_injuries()
+#> ── ESPN NBA Injury Information from ESPN.com ──────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 16:24:21 UTC
+#> # A tibble: 29 × 12
+#>    team_id athlete_id athlete_name position status date  type  side  returns_at
+#>    <chr>   <chr>      <chr>        <chr>    <chr>  <chr> <chr> <chr> <chr>     
+#>  1 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  2 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  3 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  4 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  5 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  6 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  7 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  8 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#>  9 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#> 10 NA      NA         NA           NA       NA     NA    NA    NA    NA        
+#> # ℹ 19 more rows
+#> # ℹ 3 more variables: short_comment <chr>, long_comment <chr>, season <int>
+# }
+```
