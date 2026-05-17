@@ -1,0 +1,1957 @@
+col_name,description,source,needs_review
+3_point_field_goal_percentage,3-Point Field Goal Percentage.,espn_api,FALSE
+3_point_field_goals_made_attempted,3-Point Field Goals Made-Attempted.,espn_api,FALSE
+3_point_field_goals_made_attempted_per_game,3-Point Field Goals Made-Attempted Per Game.,espn_api,FALSE
+a,A.,heuristic,TRUE
+a_pct,A percentage (0-1 decimal).,heuristic,TRUE
+a_pct_rk,A pct rk.,heuristic,TRUE
+a_rate,A rate.,heuristic,TRUE
+a_rate_rk,A rate rk.,heuristic,TRUE
+abbrev,Short abbreviation.,curated,FALSE
+abbreviation,Short abbreviation.,curated,FALSE
+action_id,Unique action identifier within a game (V3 PBP).,curated,FALSE
+action_number,Sequential action number within a game (V3 PBP).,curated,FALSE
+action_type,"Action type label (e.g. 'Made Shot', 'Substitution').",curated,FALSE
+active,TRUE if the row represents an active record (player / team / season).,curated,FALSE
+adj2fp,Adj2fp.,heuristic,TRUE
+adj2fp_rk,Adj2fp rk.,heuristic,TRUE
+adj_d,Adj d.,heuristic,TRUE
+adj_d_rk,Adj d rk.,heuristic,TRUE
+adj_de,Adj de.,heuristic,TRUE
+adj_de_rk,Adj de rk.,heuristic,TRUE
+adj_em,Adj em.,heuristic,TRUE
+adj_em_rk,Adj em rk.,heuristic,TRUE
+adj_o,Adj o.,heuristic,TRUE
+adj_o_rk,Adj o rk.,heuristic,TRUE
+adj_oe,Adj oe.,heuristic,TRUE
+adj_oe_rk,Adj oe rk.,heuristic,TRUE
+adj_t,Adj t.,heuristic,TRUE
+adj_t_chg,Adj t chg.,heuristic,TRUE
+adj_t_rk,Adj t rk.,heuristic,TRUE
+age,Player age (in years).,curated,FALSE
+alley_oop,Alley oop.,heuristic,TRUE
+alternate,Alternate.,heuristic,TRUE
+alternate_color,Alternate color (hex without leading '#').,curated,FALSE
+apg,Assists per game.,curated,FALSE
+api_url,API endpoint URL.,curated,FALSE
+app_url,URL for app.,heuristic,TRUE
+area,Area.,heuristic,TRUE
+area_detail,Area detail.,heuristic,TRUE
+arena,Arena.,heuristic,TRUE
+arena_city,Arena city.,heuristic,TRUE
+arena_country,Arena country.,heuristic,TRUE
+arena_id,Unique identifier for arena.,heuristic,TRUE
+arena_name,Arena name.,heuristic,TRUE
+arena_state,Arena state.,heuristic,TRUE
+arena_timezone,Arena timezone.,heuristic,TRUE
+assignment,Assignment.,heuristic,TRUE
+assist_percentage,Assist percentage (0-1).,curated,FALSE
+assist_person_id,Unique identifier for assist person.,heuristic,TRUE
+assist_player_name_initial,Assist player name initial.,heuristic,TRUE
+assist_ratio,Assist ratio (assists per 100 possessions used).,curated,FALSE
+assist_to_turnover,Assist-to-turnover ratio.,curated,FALSE
+assist_to_turnover_ratio,Assist To Turnover Ratio.,espn_api,FALSE
+assist_total,Assist total.,heuristic,TRUE
+assister_name,Assister name (for made shots).,curated,FALSE
+assists,Total assists.,curated,FALSE
+assists_per_game,Assists Per Game.,espn_api,FALSE
+assists_turnover_ratio,Assists turnover ratio.,heuristic,TRUE
+ast,Assists.,curated,FALSE
+ast_pct,Assist percentage (0-1).,curated,FALSE
+ast_ratio,Assist ratio (assists per 100 possessions used).,curated,FALSE
+ast_to,Assist-to-turnover ratio.,curated,FALSE
+ast_to_ratio,Assist-to-turnover ratio.,curated,FALSE
+athlete_display_name,Athlete display name (full).,curated,FALSE
+athlete_first_name,Athlete first name.,curated,FALSE
+athlete_full_name,Athlete full name.,curated,FALSE
+athlete_guid,ESPN athlete GUID.,curated,FALSE
+athlete_headshot_href,Athlete headshot image URL.,curated,FALSE
+athlete_id,Unique athlete identifier (ESPN).,curated,FALSE
+athlete_id_1,Primary athlete identifier (e.g. shooter).,curated,FALSE
+athlete_id_2,Secondary athlete identifier (e.g. assister / fouler).,curated,FALSE
+athlete_id_3,Athlete id 3.,heuristic,TRUE
+athlete_jersey,Athlete jersey number.,curated,FALSE
+athlete_last_name,Athlete last name.,curated,FALSE
+athlete_links,JSON array of athlete-related links (serialized).,curated,FALSE
+athlete_name,Athlete display name (ESPN).,curated,FALSE
+athlete_position_abbreviation,Athlete position abbreviation (G / F / C).,curated,FALSE
+athlete_position_name,"Athlete position ('Guard', 'Forward', 'Center').",curated,FALSE
+athlete_short_name,Athlete short display name.,curated,FALSE
+athlete_type,Athlete type / class.,curated,FALSE
+athlete_uid,ESPN athlete UID (universal identifier).,curated,FALSE
+attendance,Reported attendance.,curated,FALSE
+average_3_point_field_goals_attempted,Average 3-Point Field Goals Attempted.,espn_api,FALSE
+average_3_point_field_goals_made,Average 3-Point Field Goals Made.,espn_api,FALSE
+average_field_goals_attempted,Average Field Goals Attempted.,espn_api,FALSE
+average_field_goals_made,Average Field Goals Made.,espn_api,FALSE
+average_free_throws_attempted,Average Free Throws Attempted.,espn_api,FALSE
+average_free_throws_made,Average Free Throws Made.,espn_api,FALSE
+avg_assists,The average assists per game.,espn_api,FALSE
+avg_blocks,The average blocks per game.,espn_api,FALSE
+avg_defensive_rebounds,The average defensive rebounds per game.,espn_api,FALSE
+avg_field_goals_made_avg_field_goals_attempted,avgFieldGoalsMade-avgFieldGoalsAttempted.,espn_api,FALSE
+avg_fouls,The average fouls committed per game.,espn_api,FALSE
+avg_hgt,Avg hgt.,heuristic,TRUE
+avg_hgt_rk,Avg hgt rk.,heuristic,TRUE
+avg_minutes,The average number of minutes per game.,espn_api,FALSE
+avg_offensive_rebounds,The average offensive rebounds per game.,espn_api,FALSE
+avg_points,The average number of points scored per game.,espn_api,FALSE
+avg_poss_length_def,Avg poss length def.,heuristic,TRUE
+avg_poss_length_def_rk,Avg poss length def rk.,heuristic,TRUE
+avg_poss_length_off,Avg poss length off.,heuristic,TRUE
+avg_poss_length_off_rk,Avg poss length off rk.,heuristic,TRUE
+avg_rebounds,The average rebounds per game.,espn_api,FALSE
+avg_steals,The average steals per game.,espn_api,FALSE
+avg_three_point_field_goals_made_avg_three_point_field_goals_attempted,avgThreePointFieldGoalsMade-avgThreePointFieldGoalsAttempted.,espn_api,FALSE
+avg_turnovers,The average turnovers committed per game.,espn_api,FALSE
+avggravityscore,Avggravityscore.,heuristic,TRUE
+avgoffballinteriorgravityscore,Avgoffballinteriorgravityscore.,heuristic,TRUE
+avgoffballperimetergravityscore,Avgoffballperimetergravityscore.,heuristic,TRUE
+avgonballinteriorgravityscore,Avgonballinteriorgravityscore.,heuristic,TRUE
+avgonballperimetergravityscore,Avgonballperimetergravityscore.,heuristic,TRUE
+avgpointsagainst,Avgpointsagainst.,heuristic,TRUE
+avgpointsfor,Avgpointsfor.,heuristic,TRUE
+away_abbreviation,Away team's abbreviation.,heuristic,TRUE
+away_alternate_color,Color code (hex) for away alternate.,heuristic,TRUE
+away_color,Color code (hex) for away.,heuristic,TRUE
+away_conference_id,Unique identifier for away conference.,heuristic,TRUE
+away_display_name,Away display name.,heuristic,TRUE
+away_id,Unique identifier for away.,heuristic,TRUE
+away_in_bonus,Away team's in bonus.,heuristic,TRUE
+away_is_active,Away team's is active.,heuristic,TRUE
+away_leaders_assists,Away team's leaders assists.,heuristic,TRUE
+away_leaders_jersey_num,Away team's leaders jersey num.,heuristic,TRUE
+away_leaders_name,Away leaders name.,heuristic,TRUE
+away_leaders_person_id,Unique identifier for away leaders person.,heuristic,TRUE
+away_leaders_player_slug,Away team's leaders player slug.,heuristic,TRUE
+away_leaders_points,Away team's leaders points.,heuristic,TRUE
+away_leaders_position,Away team's leaders position.,heuristic,TRUE
+away_leaders_rebounds,Away team's leaders rebounds.,heuristic,TRUE
+away_leaders_team_tricode,Away team's leaders team tricode.,heuristic,TRUE
+away_location,Away team's location.,heuristic,TRUE
+away_logo,Away team logo URL.,curated,FALSE
+away_losses,Away team's losses.,heuristic,TRUE
+away_name,Away name.,heuristic,TRUE
+away_periods,Away team's periods.,heuristic,TRUE
+away_player1,Away team's player1.,heuristic,TRUE
+away_player2,Away team's player2.,heuristic,TRUE
+away_player3,Away team's player3.,heuristic,TRUE
+away_player4,Away team's player4.,heuristic,TRUE
+away_player5,Away team's player5.,heuristic,TRUE
+away_record,Away win-loss record.,curated,FALSE
+away_score,Away team score at the time of the play.,curated,FALSE
+away_score_at_event,Away score after this play / event.,curated,FALSE
+away_seed,Away team's seed.,heuristic,TRUE
+away_short_display_name,Away short display name.,heuristic,TRUE
+away_team_abb,Away team's team abb.,heuristic,TRUE
+away_team_abbrev,Away team three-letter abbreviation.,curated,FALSE
+away_team_alternate_color,Away team alternate color (hex).,curated,FALSE
+away_team_chance_loss,Away team's team chance loss.,heuristic,TRUE
+away_team_city,Away team city / location.,curated,FALSE
+away_team_color,Away team primary color (hex).,curated,FALSE
+away_team_full,Full away team name and label.,curated,FALSE
+away_team_full_name,Full away team name (e.g. 'Las Vegas Aces').,curated,FALSE
+away_team_game_projection,Away team's team game projection.,heuristic,TRUE
+away_team_id,Unique identifier for the away team.,curated,FALSE
+away_team_in_bonus,Away team's team in bonus.,heuristic,TRUE
+away_team_location,Away team's team location.,heuristic,TRUE
+away_team_logo,Away team logo URL.,curated,FALSE
+away_team_logo_dark,Away team logo URL for dark backgrounds.,curated,FALSE
+away_team_losses,Away team's team losses.,heuristic,TRUE
+away_team_mascot,Away team mascot.,curated,FALSE
+away_team_name,Away team name.,curated,FALSE
+away_team_name_alt,Alternate away team name.,curated,FALSE
+away_team_odds_average_score,Away team's team odds average score.,heuristic,TRUE
+away_team_odds_favorite,Away team's team odds favorite.,heuristic,TRUE
+away_team_odds_money_line,Away team's team odds money line.,heuristic,TRUE
+away_team_odds_money_line_odds,Away team's team odds money line odds.,heuristic,TRUE
+away_team_odds_spread_odds,Away team's team odds spread odds.,heuristic,TRUE
+away_team_odds_spread_record_losses,Away team's team odds spread record losses.,heuristic,TRUE
+away_team_odds_spread_record_pushes,Away team's team odds spread record pushes.,heuristic,TRUE
+away_team_odds_spread_record_summary,Away team's team odds spread record summary.,heuristic,TRUE
+away_team_odds_spread_record_wins,Away team's team odds spread record wins.,heuristic,TRUE
+away_team_odds_spread_return,Away team's team odds spread return.,heuristic,TRUE
+away_team_odds_team_id,Unique identifier for away team odds team.,heuristic,TRUE
+away_team_odds_underdog,Away team's team odds underdog.,heuristic,TRUE
+away_team_odds_win_percentage,Away team odds win percentage (0-1 decimal).,heuristic,TRUE
+away_team_record,Away team's win-loss record.,curated,FALSE
+away_team_score,Away team's score.,curated,FALSE
+away_team_seed,Away team's team seed.,heuristic,TRUE
+away_team_slug,Away team's team slug.,heuristic,TRUE
+away_team_time,Time / clock value.,heuristic,TRUE
+away_team_timeouts_remaining,Away team's team timeouts remaining.,heuristic,TRUE
+away_team_tricode,Away team three-letter code.,curated,FALSE
+away_team_uid,ESPN UID of the away team.,curated,FALSE
+away_team_winner,TRUE if the away team won this game.,curated,FALSE
+away_team_wins,Away team's team wins.,heuristic,TRUE
+away_timeouts_remaining,Away team's timeouts remaining.,heuristic,TRUE
+away_uid,Away team's uid.,heuristic,TRUE
+away_venue_id,Unique identifier for away venue.,heuristic,TRUE
+away_win,Away team's win.,heuristic,TRUE
+away_win_percentage,Away win percentage (0-1 decimal).,heuristic,TRUE
+away_winner,Away team's winner.,heuristic,TRUE
+away_wins,Away team's wins.,heuristic,TRUE
+ball_distance_traveled,Ball distance traveled.,heuristic,TRUE
+ball_reach_back,Ball reach back.,heuristic,TRUE
+ball_speed_through_rim,Ball speed through rim.,heuristic,TRUE
+bench,Bench.,heuristic,TRUE
+bench_pct,Bench percentage (0-1 decimal).,heuristic,TRUE
+bench_pct_rk,Bench pct rk.,heuristic,TRUE
+bench_points,Points scored by the bench.,curated,FALSE
+bench_rk,Bench rk.,heuristic,TRUE
+best_rk,Best rk.,heuristic,TRUE
+best_team,Best team.,heuristic,TRUE
+best_yr,Best yr.,heuristic,TRUE
+bids,Bids.,heuristic,TRUE
+biggest_lead,Biggest lead.,heuristic,TRUE
+biggest_lead_score,Biggest lead score.,heuristic,TRUE
+biggest_run,Largest scoring run.,curated,FALSE
+biggest_scoring_run,Biggest scoring run.,heuristic,TRUE
+biggest_scoring_run_score,Biggest scoring run score.,heuristic,TRUE
+birth_date,Date of birth (YYYY-MM-DD).,curated,FALSE
+birth_place,Place of birth.,curated,FALSE
+birth_place_city,Birth place city.,heuristic,TRUE
+birth_place_country,Birth place country.,heuristic,TRUE
+birth_place_state,Birth place state.,heuristic,TRUE
+birthplace,Birthplace string.,curated,FALSE
+blk,Blocks.,curated,FALSE
+blk_pct,Blocks percentage (0-1 decimal).,heuristic,TRUE
+blk_pct_rk,Blk pct rk.,heuristic,TRUE
+blk_rk,Blk rk.,heuristic,TRUE
+blk_to_ratio,Block-to-turnover ratio.,curated,FALSE
+block_person_id,Unique identifier for block person.,heuristic,TRUE
+block_player_name,Block player name.,heuristic,TRUE
+blocker_name,Blocker name (for blocked shots).,curated,FALSE
+blocks,Total blocks.,curated,FALSE
+blocks_against,Shots blocked by opponents while attempting.,curated,FALSE
+blocks_per_game,Blocks Per Game.,espn_api,FALSE
+blocks_received,Shots blocked by opponents while attempting.,curated,FALSE
+blowouts,Blowouts.,heuristic,TRUE
+blowouts_rk,Blowouts rk.,heuristic,TRUE
+box_out_player_rebounds,Box-outs that led to a player rebound.,curated,FALSE
+box_out_player_team_rebounds,Box-outs that led to either a player or team rebound.,curated,FALSE
+box_outs,Box-outs executed.,curated,FALSE
+bpg,Blocks per game.,curated,FALSE
+branch_link,Branch link.,heuristic,TRUE
+broadcast,Broadcast information string.,curated,FALSE
+broadcast_lang,Broadcast language code.,curated,FALSE
+broadcast_market,"Broadcast market label (e.g. 'national', 'home').",curated,FALSE
+broadcast_name,Broadcast name.,heuristic,TRUE
+broadcast_type,Broadcast media type (TV / radio / streaming).,curated,FALSE
+broadcaster,Broadcaster name or label.,curated,FALSE
+broadcaster_abbreviation,Broadcaster abbreviation.,heuristic,TRUE
+broadcaster_display,Broadcaster display.,heuristic,TRUE
+broadcaster_id,Unique identifier for broadcaster.,heuristic,TRUE
+broadcasts,JSON array of broadcast records.,curated,FALSE
+byline,News article byline / author.,curated,FALSE
+c_hgt,C hgt.,heuristic,TRUE
+c_hgt_rk,C hgt rk.,heuristic,TRUE
+c_min_pct,C min percentage (0-1 decimal).,heuristic,TRUE
+c_number,C number.,heuristic,TRUE
+c_pct,C percentage (0-1 decimal).,heuristic,TRUE
+c_pct_d1_avg,C pct d1 avg.,heuristic,TRUE
+c_pct_rk,C pct rk.,heuristic,TRUE
+c_player_first_name,C player first name.,heuristic,TRUE
+c_player_last_name,C player last name.,heuristic,TRUE
+c_wgt,C wgt.,heuristic,TRUE
+c_yr,C yr.,heuristic,TRUE
+caption,Image / video caption.,curated,FALSE
+caption_text,Caption text.,curated,FALSE
+career_length,Career length in seasons.,curated,FALSE
+catch_distance,Catch distance.,heuristic,TRUE
+catching_hand,Catching hand.,heuristic,TRUE
+category,Category label.,curated,FALSE
+ch,Ch.,heuristic,TRUE
+charges_drawn,Charges drawn.,curated,FALSE
+chg,Chg.,heuristic,TRUE
+citizenship,Citizenship.,heuristic,TRUE
+city,City.,curated,FALSE
+clinch_indicator,"Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated).",curated,FALSE
+clinched_ist_group,Clinched ist group.,heuristic,TRUE
+clinched_ist_knockout,Clinched ist knockout.,heuristic,TRUE
+clinched_ist_wildcard,Clinched ist wildcard.,heuristic,TRUE
+clincher,Clincher.,heuristic,TRUE
+clock,Game clock value.,curated,FALSE
+clock_display_value,Game clock display string (e.g. '8:32').,curated,FALSE
+clock_minutes,Clock minutes split out for convenience.,curated,FALSE
+clock_seconds,Clock seconds split out for convenience.,curated,FALSE
+close,Close.,heuristic,TRUE
+close_rk,Close rk.,heuristic,TRUE
+coach,Coach.,heuristic,TRUE
+college,College or school attended.,curated,FALSE
+color,Primary color (hex without leading '#').,curated,FALSE
+comeback,Comeback.,heuristic,TRUE
+comment,"Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive').",curated,FALSE
+comparisons,Comparisons.,heuristic,TRUE
+conf,character.,describe:data.R,FALSE
+conf.link,character.,describe:data.R,FALSE
+conf.link.ref,character.,describe:data.R,FALSE
+conf_sos,Conf sos.,heuristic,TRUE
+conf_sos_rk,Conf sos rk.,heuristic,TRUE
+conference,Conference.,heuristic,TRUE
+conference_competition,Conference competition.,heuristic,TRUE
+conference_game,Conference game.,heuristic,TRUE
+conference_id,Conference identifier.,curated,FALSE
+conference_logo,Logo image URL for conference.,heuristic,TRUE
+conference_name,Full conference name.,curated,FALSE
+conference_record,Conference win-loss record.,curated,FALSE
+conference_short_name,Conference short name (e.g. 'ACC').,curated,FALSE
+conference_uid,ESPN universal conference identifier.,curated,FALSE
+conference_url,URL for conference.,heuristic,TRUE
+content_id,Unique content identifier.,curated,FALSE
+content_type,Content type label (article / video / image).,curated,FALSE
+contested_field_goal_percentage,Contested field goal percentage (0-1).,curated,FALSE
+contested_field_goals_attempted,Contested field goal attempts.,curated,FALSE
+contested_field_goals_made,Contested field goals made.,curated,FALSE
+contested_shots,Defensively contested shots.,curated,FALSE
+contested_shots2pt,Contested shots2pt.,heuristic,TRUE
+contested_shots3pt,Contested shots3pt.,heuristic,TRUE
+contested_shots_2pt,Contested two-point shots.,curated,FALSE
+contested_shots_3pt,Contested three-point shots.,curated,FALSE
+continuity,Continuity.,heuristic,TRUE
+continuity_rk,Continuity rk.,heuristic,TRUE
+contract_active,Contract active.,heuristic,TRUE
+contract_active_1,Contract active 1.,heuristic,TRUE
+contract_active_2,Contract active 2.,heuristic,TRUE
+contract_base_year_compensation_active,Contract base year compensation active.,heuristic,TRUE
+contract_base_year_compensation_expiration,Contract base year compensation expiration.,heuristic,TRUE
+contract_bird_status,Contract bird status.,heuristic,TRUE
+contract_incoming_trade_value,Contract incoming trade value.,heuristic,TRUE
+contract_minimum_salary_exception,Contract minimum salary exception.,heuristic,TRUE
+contract_option_type,Contract option type.,heuristic,TRUE
+contract_outgoing_trade_value,Contract outgoing trade value.,heuristic,TRUE
+contract_salary,Contract salary.,heuristic,TRUE
+contract_salary_remaining,Contract salary remaining.,heuristic,TRUE
+contract_trade_kicker_active,Contract trade kicker active.,heuristic,TRUE
+contract_trade_kicker_percentage,Contract trade kicker percentage (0-1 decimal).,heuristic,TRUE
+contract_trade_kicker_trade_value,Contract trade kicker trade value.,heuristic,TRUE
+contract_trade_kicker_value,Contract trade kicker value.,heuristic,TRUE
+contract_trade_restriction,Contract trade restriction.,heuristic,TRUE
+contract_unsigned_foreign_pick,Contract unsigned foreign pick.,heuristic,TRUE
+contract_x_ref,Contract x ref.,heuristic,TRUE
+contract_x_ref_1,Contract x ref 1.,heuristic,TRUE
+contract_x_ref_2,Contract x ref 2.,heuristic,TRUE
+contract_years_remaining,Contract years remaining.,heuristic,TRUE
+coordinate_x,X coordinate on the court (half-court layout).,curated,FALSE
+coordinate_x_raw,X coordinate as returned by the API before any adjustment.,curated,FALSE
+coordinate_y,Y coordinate on the court (half-court layout).,curated,FALSE
+coordinate_y_raw,Y coordinate as returned by the API before any adjustment.,curated,FALSE
+correlations_r_x_100,Correlations r x 100.,heuristic,TRUE
+count,Count of count.,heuristic,TRUE
+country,Country (full name or code).,curated,FALSE
+country_code,ISO country code (2-letter).,curated,FALSE
+country_id,Country identifier.,curated,FALSE
+current,Current.,heuristic,TRUE
+d,D.,heuristic,TRUE
+data,Data.,heuristic,TRUE
+date,Date in YYYY-MM-DD format.,curated,FALSE
+date_of_birth,Date of birth (YYYY-MM-DD).,curated,FALSE
+date_published,Publication date (YYYY-MM-DD).,curated,FALSE
+day,Day number within the month.,curated,FALSE
+day_date,Date in YYYY-MM-DD format.,heuristic,TRUE
+de,De.,heuristic,TRUE
+de_rk,De rk.,heuristic,TRUE
+debut_date,Date of professional debut (YYYY-MM-DD).,curated,FALSE
+debut_year,Year of professional debut.,curated,FALSE
+deep_link,Deep link URL into wnba.com / espn.com.,curated,FALSE
+def_a_pct,Def a percentage (0-1 decimal).,heuristic,TRUE
+def_a_pct_rk,Def a pct rk.,heuristic,TRUE
+def_apl,Def apl.,heuristic,TRUE
+def_apl_rk,Def apl rk.,heuristic,TRUE
+def_blk_pct,Def blocks percentage (0-1 decimal).,heuristic,TRUE
+def_blk_pct_rk,Def blk pct rk.,heuristic,TRUE
+def_e_fg_pct,Def e field goals percentage (0-1 decimal).,heuristic,TRUE
+def_e_fg_pct_rk,Def e fg pct rk.,heuristic,TRUE
+def_eff,Def eff.,heuristic,TRUE
+def_eff_rk,Def eff rk.,heuristic,TRUE
+def_fg_2_pct,Def field goals 2 percentage (0-1 decimal).,heuristic,TRUE
+def_fg_2_pct_rk,Def fg 2 pct rk.,heuristic,TRUE
+def_fg_3_pct,Def field goals 3 percentage (0-1 decimal).,heuristic,TRUE
+def_fg_3_pct_rk,Def fg 3 pct rk.,heuristic,TRUE
+def_fg_3a_pct,Def field goals 3a percentage (0-1 decimal).,heuristic,TRUE
+def_fg_3a_pct_rk,Def fg 3a pct rk.,heuristic,TRUE
+def_fga_2,Def fga 2.,heuristic,TRUE
+def_fga_3,Def fga 3.,heuristic,TRUE
+def_fgm_2,Def fgm 2.,heuristic,TRUE
+def_fgm_3,Def fgm 3.,heuristic,TRUE
+def_ft_pct,Def free throws percentage (0-1 decimal).,heuristic,TRUE
+def_ft_pct_rk,Def ft pct rk.,heuristic,TRUE
+def_ft_rate,Def ft rate.,heuristic,TRUE
+def_ft_rate_rk,Def ft rate rk.,heuristic,TRUE
+def_ftr,Def ftr.,heuristic,TRUE
+def_non_stl_pct,Def non steals percentage (0-1 decimal).,heuristic,TRUE
+def_non_stl_pct_rk,Def non stl pct rk.,heuristic,TRUE
+def_or_pct,Def or percentage (0-1 decimal).,heuristic,TRUE
+def_or_pct_rk,Def or pct rk.,heuristic,TRUE
+def_rating,Defensive rating (points allowed per 100 possessions).,curated,FALSE
+def_stl_pct,Def steals percentage (0-1 decimal).,heuristic,TRUE
+def_stl_pct_rk,Def stl pct rk.,heuristic,TRUE
+def_to_pct,Def to percentage (0-1 decimal).,heuristic,TRUE
+def_to_pct_rk,Def to pct rk.,heuristic,TRUE
+default,Default value for the parameter or field.,curated,FALSE
+defended_at_rim_field_goal_percentage,Field goal percentage allowed at the rim (0-1).,curated,FALSE
+defended_at_rim_field_goals_attempted,Field goal attempts allowed when defending at the rim.,curated,FALSE
+defended_at_rim_field_goals_made,Field goals made allowed when defending at the rim.,curated,FALSE
+defensive_average,Average defensive value (context-dependent).,curated,FALSE
+defensive_avg48blocks,The average number of blocks per 48 minutes.,espn_api,FALSE
+defensive_avg48defensive_rebounds,The average number of defensive rebounds per 48 minutes.,espn_api,FALSE
+defensive_avg48steals,The average number of steals per 48 minutes.,espn_api,FALSE
+defensive_avg_blocks,The average blocks per game.,espn_api,FALSE
+defensive_avg_defensive_rebounds,The average defensive rebounds per game.,espn_api,FALSE
+defensive_avg_steals,The average steals per game.,espn_api,FALSE
+defensive_blocks,"Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player.",espn_api,FALSE
+defensive_box_outs,Defensive box outs.,heuristic,TRUE
+defensive_contest_level,Defensive contest level.,heuristic,TRUE
+defensive_contest_subscore,Defensive contest subscore.,heuristic,TRUE
+defensive_def_rebound_rate,The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)].,espn_api,FALSE
+defensive_defensive_rebounds,The number of times when the defense obtains the possession of the ball after a missed shot by the offense.,espn_api,FALSE
+defensive_drpm,Defensive Real Plus-Minus.,espn_api,FALSE
+defensive_rating,Defensive rating (points allowed per 100 possessions).,curated,FALSE
+defensive_rebound_percentage,Defensive rebound percentage (0-1).,curated,FALSE
+defensive_rebounds,Defensive rebounds.,curated,FALSE
+defensive_rebounds_per_game,Defensive Rebounds Per Game.,espn_api,FALSE
+defensive_steals,The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player.,espn_api,FALSE
+defensive_turnover_points,The amount of points resulting from the possession following a turnover.,espn_api,FALSE
+deflections,Defensive deflections.,curated,FALSE
+description,Long-form description text.,curated,FALSE
+description_long,Long-form description text.,curated,FALSE
+description_short,Short description text.,curated,FALSE
+descriptor,Descriptor.,heuristic,TRUE
+details,Details.,heuristic,TRUE
+did_not_play,TRUE if the player did not appear in the game.,curated,FALSE
+diff,Diff.,heuristic,TRUE
+differential,Differential.,heuristic,TRUE
+disabled,TRUE if the record is disabled / inactive.,curated,FALSE
+display_clock,Game clock display string (e.g. '8:32').,curated,FALSE
+display_date,Date display string.,curated,FALSE
+display_height,Player height in display format (e.g. '6-2').,curated,FALSE
+display_name,Display name.,curated,FALSE
+display_value,Human-readable display value.,curated,FALSE
+display_weight,Player weight in display format (e.g. '180 lbs').,curated,FALSE
+displayrank,Display rank for the row.,curated,FALSE
+disqualifications,Total disqualifications.,curated,FALSE
+distance,Distance value (in feet for shot data; otherwise context-dependent).,curated,FALSE
+division,Team division.,curated,FALSE
+division_record,Division win-loss record.,curated,FALSE
+divisionwinpercent,Divisionwinpercent.,heuristic,TRUE
+dominance,Dominance.,heuristic,TRUE
+dominance_rk,Dominance rk.,heuristic,TRUE
+dominance_season_rk,Dominance season rk.,heuristic,TRUE
+double_double,TRUE if the player recorded a double-double in this game.,curated,FALSE
+dr,Dr.,heuristic,TRUE
+dr_pct,Dr percentage (0-1 decimal).,heuristic,TRUE
+dr_pct_rk,Dr pct rk.,heuristic,TRUE
+draft_display_text,Draft display text.,heuristic,TRUE
+draft_overall,Overall pick number.,curated,FALSE
+draft_pick,Pick number within the round.,curated,FALSE
+draft_round,Round of the draft selection.,curated,FALSE
+draft_selection,Draft selection.,heuristic,TRUE
+draft_x_ref,Draft x ref.,heuristic,TRUE
+draft_x_ref_1,Draft x ref 1.,heuristic,TRUE
+draft_year,Draft year (4-digit).,curated,FALSE
+draws,Total draws.,curated,FALSE
+dreb,Defensive rebounds.,curated,FALSE
+dreb_pct,Defensive rebound percentage (0-1).,curated,FALSE
+dreb_rate,Defensive rebound rate (0-1).,curated,FALSE
+dsc,Dsc.,heuristic,TRUE
+dunk360,Dunk360.,heuristic,TRUE
+dunk_score,Dunk score.,heuristic,TRUE
+dunking_hand,Dunking hand.,heuristic,TRUE
+dur,Dur.,heuristic,TRUE
+duration,Duration.,heuristic,TRUE
+e_fg,E fg.,heuristic,TRUE
+e_fg_pct,E field goals percentage (0-1 decimal).,heuristic,TRUE
+e_fg_pct_rk,E fg pct rk.,heuristic,TRUE
+edited,Edited.,heuristic,TRUE
+eff,Eff.,heuristic,TRUE
+eff_hgt,Eff hgt.,heuristic,TRUE
+eff_hgt_rk,Eff hgt rk.,heuristic,TRUE
+eff_rk,Eff rk.,heuristic,TRUE
+effective_field_goal_percentage,Effective field goal percentage (0-1).,curated,FALSE
+efficiency,Efficiency.,heuristic,TRUE
+efg_pct,Effective field goal percentage (0-1).,curated,FALSE
+ei,Ei.,heuristic,TRUE
+ejected,TRUE if the player was ejected from the game.,curated,FALSE
+ejections,Total ejections.,curated,FALSE
+elev,Elev.,heuristic,TRUE
+elev_rk,Elev rk.,heuristic,TRUE
+em_chg,Em chg.,heuristic,TRUE
+enabled,TRUE if the feature / field is enabled.,curated,FALSE
+end,End.,heuristic,TRUE
+end_date,End date (YYYY-MM-DD).,curated,FALSE
+end_game_seconds_remaining,Seconds remaining in the game at the end of the play.,curated,FALSE
+end_half_seconds_remaining,Seconds remaining in the half at the end of the play.,curated,FALSE
+end_quarter_seconds_remaining,Seconds remaining in the period at the end of the play.,curated,FALSE
+espn_team_id,Unique identifier for espn team.,heuristic,TRUE
+estimated_defensive_rating,Estimated defensive rating (points allowed per 100 possessions estimate).,curated,FALSE
+estimated_net_rating,Estimated net rating (off rating - def rating).,curated,FALSE
+estimated_offensive_rating,Estimated offensive rating (points per 100 possessions estimate).,curated,FALSE
+estimated_pace,Estimated possessions per 48 minutes.,curated,FALSE
+estimated_team_turnover_percentage,Estimated team turnover percentage (0-1).,curated,FALSE
+estimated_usage_percentage,Estimated usage percentage (0-1).,curated,FALSE
+event,Event.,heuristic,TRUE
+event_action_type,Numeric event-action-type code (V2 PBP).,curated,FALSE
+event_guid,ESPN GUID for the event.,curated,FALSE
+event_id,Unique event / game identifier (ESPN).,curated,FALSE
+event_num,Sequential event number within the game (V2 PBP).,curated,FALSE
+event_ref,Reference link to the originating event.,curated,FALSE
+event_status_completed,TRUE if the event has completed.,curated,FALSE
+event_status_state,"Event status state ('pre', 'in', 'post').",curated,FALSE
+event_status_type,Event status type code.,curated,FALSE
+event_type,Event / play type code (V2 PBP).,curated,FALSE
+event_uid,ESPN UID for the event.,curated,FALSE
+excitement,Excitement.,heuristic,TRUE
+excitement_rk,Excitement rk.,heuristic,TRUE
+excitement_season_rk,Excitement season rk.,heuristic,TRUE
+exp,Exp.,heuristic,TRUE
+experience,Years of professional experience.,curated,FALSE
+experience_abbreviation,Experience abbreviation.,heuristic,TRUE
+experience_display_value,Experience display value.,heuristic,TRUE
+experience_rk,Experience rk.,heuristic,TRUE
+experience_years,Experience years.,heuristic,TRUE
+f4,F4.,heuristic,TRUE
+f_cper40,F cper40.,heuristic,TRUE
+f_cper40_rk,F cper40 rk.,heuristic,TRUE
+f_dper40,F dper40.,heuristic,TRUE
+f_dper40_rk,F dper40 rk.,heuristic,TRUE
+family_name,Player's family / last name.,curated,FALSE
+fast_break_points,Fast-break points scored.,curated,FALSE
+fast_break_points_attempted,Number of fast break points attempted.,heuristic,TRUE
+fast_break_points_made,Number of fast break points made.,heuristic,TRUE
+fast_break_points_percentage,Fast break points percentage (0-1 decimal).,heuristic,TRUE
+fast_break_pts,Fast-break points scored.,curated,FALSE
+favchg,Favchg.,heuristic,TRUE
+fg,Field goals made.,curated,FALSE
+fg3_pct,Three-point field goal percentage (0-1).,curated,FALSE
+fg3a,Three-point field goal attempts.,curated,FALSE
+fg3m,Three-point field goals made.,curated,FALSE
+fg_2_pct,Field goals 2 percentage (0-1 decimal).,heuristic,TRUE
+fg_2_pct_rk,Fg 2 pct rk.,heuristic,TRUE
+fg_3_pct,Field goals 3 percentage (0-1 decimal).,heuristic,TRUE
+fg_3_pct_rk,Fg 3 pct rk.,heuristic,TRUE
+fg_3a_pct,Field goals 3a percentage (0-1 decimal).,heuristic,TRUE
+fg_3a_pct_rk,Fg 3a pct rk.,heuristic,TRUE
+fg_pct,Field goal percentage (0-1).,curated,FALSE
+fga,Field goal attempts.,curated,FALSE
+fga_2,Fga 2.,heuristic,TRUE
+fga_3,Fga 3.,heuristic,TRUE
+fgm,Field goals made.,curated,FALSE
+fgm_2,Fgm 2.,heuristic,TRUE
+fgm_3,Fgm 3.,heuristic,TRUE
+field_goal_pct,Field goal percentage (0-1).,curated,FALSE
+field_goal_percentage,Field Goal Percentage.,espn_api,FALSE
+field_goals_attempted,Field goal attempts (2-pt + 3-pt).,curated,FALSE
+field_goals_effective_adjusted,Field goals effective adjusted.,heuristic,TRUE
+field_goals_made,Field goals made (2-pt + 3-pt).,curated,FALSE
+field_goals_made_attempted,Field Goals Made-Attempted.,espn_api,FALSE
+field_goals_made_attempted_per_game,Field Goals Made-Attempted Per Game.,espn_api,FALSE
+field_goals_made_field_goals_attempted,Field Goals Made-Attempted.,espn_api,FALSE
+field_goals_percentage,Field goal percentage (0-1 decimal).,curated,FALSE
+final_adj_d,Final adj d.,heuristic,TRUE
+final_adj_d_rk,Final adj d rk.,heuristic,TRUE
+final_adj_em,Final adj em.,heuristic,TRUE
+final_adj_o,Final adj o.,heuristic,TRUE
+final_adj_o_rk,Final adj o rk.,heuristic,TRUE
+final_adj_t,Final adj t.,heuristic,TRUE
+final_adj_t_rk,Final adj t rk.,heuristic,TRUE
+final_rk,Final rk.,heuristic,TRUE
+first_name,Player's first name.,curated,FALSE
+first_occurrence_type,First occurrence type.,heuristic,TRUE
+first_occurrence_value,First occurrence value.,heuristic,TRUE
+first_place_votes,First place votes.,heuristic,TRUE
+firstname,Firstname.,heuristic,TRUE
+flagrant_fouls,Total flagrant fouls.,curated,FALSE
+format_regulation_periods,Format regulation periods.,heuristic,TRUE
+foul2partic_pct,Foul2partic percentage (0-1 decimal).,heuristic,TRUE
+foul2partic_pct_rk,Foul2partic pct rk.,heuristic,TRUE
+foul_drawn_person_id,Unique identifier for foul drawn person.,heuristic,TRUE
+foul_drawn_player_name,Foul drawn player name.,heuristic,TRUE
+foul_personal_total,Foul personal total.,heuristic,TRUE
+foul_technical_total,Foul technical total.,heuristic,TRUE
+fouled_name,Fouled-player name.,curated,FALSE
+fouler_name,Fouler name.,curated,FALSE
+fouls,Personal fouls.,curated,FALSE
+fouls_drawn,Personal fouls drawn (by opponent's actions).,curated,FALSE
+fouls_offensive,Offensive fouls.,curated,FALSE
+fouls_per_game,Fouls Per Game.,espn_api,FALSE
+fouls_personal,Personal fouls.,curated,FALSE
+fouls_team,Fouls team.,heuristic,TRUE
+fouls_team_technical,Fouls team technical.,heuristic,TRUE
+fouls_technical,Technical fouls.,curated,FALSE
+fppg,Fantasy points per game.,curated,FALSE
+frames,Frames.,heuristic,TRUE
+free_throw_assists,Free throw assists (passes that led to a fouled shot attempt).,curated,FALSE
+free_throw_attempt_rate,Free throw attempt rate (FTA / FGA).,curated,FALSE
+free_throw_pct,Free throw percentage (0-1).,curated,FALSE
+free_throw_percentage,Free Throw Percentage.,espn_api,FALSE
+free_throws_attempted,Free throw attempts.,curated,FALSE
+free_throws_made,Free throws made.,curated,FALSE
+free_throws_made_attempted,Free Throws Made-Attempted.,espn_api,FALSE
+free_throws_made_attempted_per_game,Free Throws Made-Attempted Per Game.,espn_api,FALSE
+free_throws_made_free_throws_attempted,Free Throws Made-Attempted.,espn_api,FALSE
+free_throws_percentage,Free throw percentage (0-1 decimal).,curated,FALSE
+ft_pct,Free throw percentage (0-1).,curated,FALSE
+ft_pct_rk,Ft pct rk.,heuristic,TRUE
+ft_rate,Ft rate.,heuristic,TRUE
+ft_rate_rk,Ft rate rk.,heuristic,TRUE
+fta,Free throw attempts.,curated,FALSE
+fta_rate,Free throw attempt rate (FTA / FGA).,curated,FALSE
+ftm,Free throws made.,curated,FALSE
+ftm_rate,Free throw make rate (FTM / FGA).,curated,FALSE
+full_date,Date in YYYY-MM-DD format.,heuristic,TRUE
+full_name,Player's full name.,curated,FALSE
+g,Games played.,curated,FALSE
+game,Game.,heuristic,TRUE
+game_away_leaders_assists,Game away leaders assists.,heuristic,TRUE
+game_away_leaders_jersey_num,Game away leaders jersey num.,heuristic,TRUE
+game_away_leaders_name,Game away leaders name.,heuristic,TRUE
+game_away_leaders_person_id,Unique identifier for game away leaders person.,heuristic,TRUE
+game_away_leaders_player_slug,Game away leaders player slug.,heuristic,TRUE
+game_away_leaders_points,Game away leaders points.,heuristic,TRUE
+game_away_leaders_position,Game away leaders position.,heuristic,TRUE
+game_away_leaders_rebounds,Game away leaders rebounds.,heuristic,TRUE
+game_away_leaders_team_tricode,Game away leaders team tricode.,heuristic,TRUE
+game_clock,Game clock.,heuristic,TRUE
+game_clock_time,Time / clock value.,heuristic,TRUE
+game_code,ESPN game code (numeric identifier).,curated,FALSE
+game_date,Game date (YYYY-MM-DD).,curated,FALSE
+game_date_est,Game date est.,heuristic,TRUE
+game_date_time,Game start date/time (ISO 8601).,curated,FALSE
+game_date_time_est,Game date time est.,heuristic,TRUE
+game_date_time_utc,Game date time utc.,heuristic,TRUE
+game_date_utc,Game date utc.,heuristic,TRUE
+game_duration,Game duration.,heuristic,TRUE
+game_et,Game et.,heuristic,TRUE
+game_half,Half of the game (1 or 2).,curated,FALSE
+game_home_leaders_assists,Game home leaders assists.,heuristic,TRUE
+game_home_leaders_jersey_num,Game home leaders jersey num.,heuristic,TRUE
+game_home_leaders_name,Game home leaders name.,heuristic,TRUE
+game_home_leaders_person_id,Unique identifier for game home leaders person.,heuristic,TRUE
+game_home_leaders_player_slug,Game home leaders player slug.,heuristic,TRUE
+game_home_leaders_points,Game home leaders points.,heuristic,TRUE
+game_home_leaders_position,Game home leaders position.,heuristic,TRUE
+game_home_leaders_rebounds,Game home leaders rebounds.,heuristic,TRUE
+game_home_leaders_team_tricode,Game home leaders team tricode.,heuristic,TRUE
+game_id,Unique game identifier.,curated,FALSE
+game_mv_ps,Game mv ps.,heuristic,TRUE
+game_number,Game number.,heuristic,TRUE
+game_play_id,Unique play identifier within the game.,curated,FALSE
+game_play_number,Sequential play number within the game.,curated,FALSE
+game_sequence,Game sequence.,heuristic,TRUE
+game_spread,Game spread (signed; positive = home favored).,curated,FALSE
+game_spread_available,TRUE if a point spread was available.,curated,FALSE
+game_status,Game status label.,curated,FALSE
+game_status_id,Numeric game status identifier.,curated,FALSE
+game_status_text,"Game status display text (e.g. 'Final', '4:32 - 4th').",curated,FALSE
+game_subtype,Game subtype.,heuristic,TRUE
+game_time,Game start time.,curated,FALSE
+game_time_away,Game time away.,heuristic,TRUE
+game_time_est,Game time est.,heuristic,TRUE
+game_time_home,Game time home.,heuristic,TRUE
+game_time_local,Game time local.,heuristic,TRUE
+game_time_utc,Game start time in UTC (ISO 8601 timestamp).,curated,FALSE
+game_type,Game type.,heuristic,TRUE
+game_uid,Game uid.,heuristic,TRUE
+games_back,Games back from the conference / division leader.,curated,FALSE
+games_lost,Games lost.,curated,FALSE
+games_played,Games played.,curated,FALSE
+games_started,Games started.,curated,FALSE
+games_won,Games won.,curated,FALSE
+gamesbehind,Gamesbehind.,heuristic,TRUE
+gamesplayed,Gamesplayed.,heuristic,TRUE
+gc,Gc.,heuristic,TRUE
+gender,Athlete sex / gender ('male' / 'female').,curated,FALSE
+general_assist_turnover_ratio,The average number of assists a player or team records per turnover.,espn_api,FALSE
+general_average,Average general value (context-dependent).,curated,FALSE
+general_avg48disqualifications,The average number of disqualifications per 48 minutes.,espn_api,FALSE
+general_avg48ejections,The average number of ejections per 48 minutes.,espn_api,FALSE
+general_avg48flagrant_fouls,The average number of flagrant fouls committed per 48 minutes.,espn_api,FALSE
+general_avg48fouls,The average number of fouls committed per 48 minutes.,espn_api,FALSE
+general_avg48rebounds,The average number of rebounds per 48 minutes.,espn_api,FALSE
+general_avg48technical_fouls,The average number of technical fouls committed per 48 minutes.,espn_api,FALSE
+general_avg_disqualifications,The average number of disqualifications per game.,espn_api,FALSE
+general_avg_ejections,The average ejections per game.,espn_api,FALSE
+general_avg_flagrant_fouls,The average number of flagrant fouls per game.,espn_api,FALSE
+general_avg_fouls,The average fouls committed per game.,espn_api,FALSE
+general_avg_minutes,The average number of minutes per game.,espn_api,FALSE
+general_avg_rebounds,The average rebounds per game.,espn_api,FALSE
+general_avg_team_rebounds,The average number of rebounds for a team per game.,espn_api,FALSE
+general_avg_technical_fouls,The average number of technical fouls per game.,espn_api,FALSE
+general_block_foul_ratio,The average number of blocks a player or record per foul committed.,espn_api,FALSE
+general_disqualifications,The number of times a player reached the foul limit.,espn_api,FALSE
+general_double_double,"The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots.",espn_api,FALSE
+general_ejections,The number of times a player or coach is removed from the game as a result of a serious offense.,espn_api,FALSE
+general_fantasy_rating,The Fantasy Rating of a player.,espn_api,FALSE
+general_flagrant_fouls,The number of fouls that the officials thought were unnecessary or excessive.,espn_api,FALSE
+general_fouls,The number of times a player had illegal contact with the opponent.,espn_api,FALSE
+general_game_day_of_year,"The day of the season on which this game falls; if it's the 15th day of the regular season in Nov, the game day of year is 15 (ie, game day of year != day of year).",espn_api,FALSE
+general_games_played,Games Played.,espn_api,FALSE
+general_games_started,The number of games started by an athlete.,espn_api,FALSE
+general_minutes,The total number of minutes played.,espn_api,FALSE
+general_nba_rating,General nba rating.,heuristic,TRUE
+general_nbarating,"Custom formula to rate the performance of a player based on points, assists, steals, blocks, turnovers, rebounds, three pointers, and free throws.",espn_api,FALSE
+general_per,A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season.,espn_api,FALSE
+general_plus_minus,A player's estimated on-court impact on team performance measured in point differential per 100 possessions.,espn_api,FALSE
+general_r40,Rebounds Per 40 Minutes.,espn_api,FALSE
+general_rebound_rate,The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by [Player Minutes x (Team Rebounds + Opponent Rebounds)].,espn_api,FALSE
+general_rebounds,The total number of rebounds (offensive and defensive).,espn_api,FALSE
+general_rpm,Real Plus-Minus.,espn_api,FALSE
+general_steal_foul_ratio,The average number of steals a player or team records per foul committed.,espn_api,FALSE
+general_steal_turnover_ratio,The number of steals per turnover.,espn_api,FALSE
+general_team_assist_turnover_ratio,The number of assists per turnover for a team.,espn_api,FALSE
+general_team_rebounds,The total number of rebounds for a team.,espn_api,FALSE
+general_technical_fouls,The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations).,espn_api,FALSE
+general_total_rebounds,The total number of rebounds for a team or player.,espn_api,FALSE
+general_total_technical_fouls,The total number of technical fouls for a team or player.,espn_api,FALSE
+general_triple_double,"The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots.",espn_api,FALSE
+general_vorp,Value Over Replacement Player.,espn_api,FALSE
+general_warp,Wins Above Replacement Player.,espn_api,FALSE
+geo_broadcasts,Geo broadcasts.,heuristic,TRUE
+gi,Gi.,heuristic,TRUE
+gms,Gms.,heuristic,TRUE
+gp,Games played.,curated,FALSE
+gravityscore,Gravityscore.,heuristic,TRUE
+group,Group identifier (e.g. conference 'group_id').,curated,FALSE
+group_id,Group identifier (e.g. conference group_id).,curated,FALSE
+group_name,Group name.,curated,FALSE
+group_rank,League/season rank for group.,heuristic,TRUE
+groups_id,Unique identifier for groups.,heuristic,TRUE
+groups_is_conference,Groups is conference.,heuristic,TRUE
+groups_name,Groups name.,heuristic,TRUE
+groups_short_name,Groups short name.,heuristic,TRUE
+gs,Games started.,curated,FALSE
+guid,GUID string.,curated,FALSE
+ha,Ha.,heuristic,TRUE
+half,Half of the game (1 or 2).,curated,FALSE
+hand,Player handedness ('Right' / 'Left').,curated,FALSE
+hand_abbreviation,Hand abbreviation.,heuristic,TRUE
+hand_display_value,Hand display value.,heuristic,TRUE
+hand_type,Hand type.,heuristic,TRUE
+hang_time,Time / clock value.,heuristic,TRUE
+hca,Hca.,heuristic,TRUE
+hca_rk,Hca rk.,heuristic,TRUE
+heading,Section heading or label.,curated,FALSE
+headline,News headline.,curated,FALSE
+headshot,Headshot image URL.,curated,FALSE
+headshot_alt,Alternative-text label for the headshot.,curated,FALSE
+headshot_href,Headshot image URL.,curated,FALSE
+height,Player height (string e.g. '6-2' or inches).,curated,FALSE
+height_in,Player height in inches.,curated,FALSE
+height_meters,Player height in meters.,curated,FALSE
+help_blocks,Help blocks.,heuristic,TRUE
+help_field_goals_attempted,Number of help field goals attempted.,heuristic,TRUE
+help_field_goals_made,Number of help field goals made.,heuristic,TRUE
+help_field_goals_percentage,Help field goals percentage (0-1 decimal).,heuristic,TRUE
+hgt,Hgt.,heuristic,TRUE
+hid,Hid.,heuristic,TRUE
+hidden,TRUE if the row should be hidden from public display.,curated,FALSE
+historical_status,Historical status.,heuristic,TRUE
+home,Home.,heuristic,TRUE
+home_abbreviation,Home team's abbreviation.,heuristic,TRUE
+home_alternate_color,Color code (hex) for home alternate.,heuristic,TRUE
+home_avgpointsagainst,Home team's avgpointsagainst.,heuristic,TRUE
+home_avgpointsfor,Home team's avgpointsfor.,heuristic,TRUE
+home_away,Game venue label ('home' or 'away').,curated,FALSE
+home_color,Color code (hex) for home.,heuristic,TRUE
+home_conference_id,Unique identifier for home conference.,heuristic,TRUE
+home_description,Home team's description.,heuristic,TRUE
+home_display_name,Home display name.,heuristic,TRUE
+home_favorite,TRUE if the home team is the betting favorite.,curated,FALSE
+home_gamesbehind,Home team's gamesbehind.,heuristic,TRUE
+home_id,Unique identifier for home.,heuristic,TRUE
+home_in_bonus,Home team's in bonus.,heuristic,TRUE
+home_is_active,Home team's is active.,heuristic,TRUE
+home_leaders_assists,Home team's leaders assists.,heuristic,TRUE
+home_leaders_jersey_num,Home team's leaders jersey num.,heuristic,TRUE
+home_leaders_name,Home leaders name.,heuristic,TRUE
+home_leaders_person_id,Unique identifier for home leaders person.,heuristic,TRUE
+home_leaders_player_slug,Home team's leaders player slug.,heuristic,TRUE
+home_leaders_points,Home team's leaders points.,heuristic,TRUE
+home_leaders_position,Home team's leaders position.,heuristic,TRUE
+home_leaders_rebounds,Home team's leaders rebounds.,heuristic,TRUE
+home_leaders_team_tricode,Home team's leaders team tricode.,heuristic,TRUE
+home_leaguewinpercent,Home team's leaguewinpercent.,heuristic,TRUE
+home_location,Home team's location.,heuristic,TRUE
+home_logo,Home team logo URL.,curated,FALSE
+home_losses,Home team's losses.,heuristic,TRUE
+home_name,Home name.,heuristic,TRUE
+home_periods,Home team's periods.,heuristic,TRUE
+home_player1,Home team's player1.,heuristic,TRUE
+home_player2,Home team's player2.,heuristic,TRUE
+home_player3,Home team's player3.,heuristic,TRUE
+home_player4,Home team's player4.,heuristic,TRUE
+home_player5,Home team's player5.,heuristic,TRUE
+home_playoffseed,Home team's playoffseed.,heuristic,TRUE
+home_pointsagainst,Home team's pointsagainst.,heuristic,TRUE
+home_pointsfor,Home team's pointsfor.,heuristic,TRUE
+home_record,Home win-loss record.,curated,FALSE
+home_rk,Home team's rk.,heuristic,TRUE
+home_score,Home team score at the time of the play.,curated,FALSE
+home_score_at_event,Home score after this play / event.,curated,FALSE
+home_scoring,Home team's scoring.,heuristic,TRUE
+home_seed,Home team's seed.,heuristic,TRUE
+home_short_display_name,Home short display name.,heuristic,TRUE
+home_streak,Home team's streak.,heuristic,TRUE
+home_team,Home team's team.,heuristic,TRUE
+home_team_abb,Home team's team abb.,heuristic,TRUE
+home_team_abbrev,Home team three-letter abbreviation.,curated,FALSE
+home_team_alternate_color,Home team alternate color (hex).,curated,FALSE
+home_team_city,Home team city / location.,curated,FALSE
+home_team_color,Home team primary color (hex).,curated,FALSE
+home_team_full,Full home team name and label.,curated,FALSE
+home_team_full_name,Full home team name (e.g. 'Las Vegas Aces').,curated,FALSE
+home_team_id,Unique identifier for the home team.,curated,FALSE
+home_team_in_bonus,Home team's team in bonus.,heuristic,TRUE
+home_team_location,Home team's team location.,heuristic,TRUE
+home_team_logo,Home team logo URL.,curated,FALSE
+home_team_logo_dark,Home team logo URL for dark backgrounds.,curated,FALSE
+home_team_losses,Home team's team losses.,heuristic,TRUE
+home_team_mascot,Home team mascot.,curated,FALSE
+home_team_name,Home team name.,curated,FALSE
+home_team_name_alt,Alternate home team name.,curated,FALSE
+home_team_odds_average_score,Home team's team odds average score.,heuristic,TRUE
+home_team_odds_favorite,Home team's team odds favorite.,heuristic,TRUE
+home_team_odds_money_line,Home team's team odds money line.,heuristic,TRUE
+home_team_odds_money_line_odds,Home team's team odds money line odds.,heuristic,TRUE
+home_team_odds_spread_odds,Home team's team odds spread odds.,heuristic,TRUE
+home_team_odds_spread_record_losses,Home team's team odds spread record losses.,heuristic,TRUE
+home_team_odds_spread_record_pushes,Home team's team odds spread record pushes.,heuristic,TRUE
+home_team_odds_spread_record_summary,Home team's team odds spread record summary.,heuristic,TRUE
+home_team_odds_spread_record_wins,Home team's team odds spread record wins.,heuristic,TRUE
+home_team_odds_spread_return,Home team's team odds spread return.,heuristic,TRUE
+home_team_odds_team_id,Unique identifier for home team odds team.,heuristic,TRUE
+home_team_odds_underdog,Home team's team odds underdog.,heuristic,TRUE
+home_team_odds_win_percentage,Home team odds win percentage (0-1 decimal).,heuristic,TRUE
+home_team_record,Home team's win-loss record.,curated,FALSE
+home_team_score,Home team's score.,curated,FALSE
+home_team_seed,Home team's team seed.,heuristic,TRUE
+home_team_slug,Home team's team slug.,heuristic,TRUE
+home_team_spread,Home team's point spread.,curated,FALSE
+home_team_time,Time / clock value.,heuristic,TRUE
+home_team_timeouts_remaining,Home team's team timeouts remaining.,heuristic,TRUE
+home_team_tricode,Home team three-letter code.,curated,FALSE
+home_team_uid,ESPN UID of the home team.,curated,FALSE
+home_team_winner,TRUE if the home team won this game.,curated,FALSE
+home_team_wins,Home team's team wins.,heuristic,TRUE
+home_timeouts_remaining,Home team's timeouts remaining.,heuristic,TRUE
+home_town,Home team's town.,heuristic,TRUE
+home_uid,Home team's uid.,heuristic,TRUE
+home_venue_id,Unique identifier for home venue.,heuristic,TRUE
+home_w_l,Home team's wins losses.,heuristic,TRUE
+home_w_l_pct,Home wins losses percentage (0-1 decimal).,heuristic,TRUE
+home_w_l_rk,Home team's wins losses rk.,heuristic,TRUE
+home_win,Home team's win.,heuristic,TRUE
+home_win_pct,Home win percentage (0-1 decimal).,heuristic,TRUE
+home_win_percentage,Home win percentage (0-1 decimal).,heuristic,TRUE
+home_winner,Home team's winner.,heuristic,TRUE
+home_winpercent,Home team's winpercent.,heuristic,TRUE
+home_wins,Home team's wins.,heuristic,TRUE
+hometown,Player hometown.,curated,FALSE
+hpa,Hpa.,heuristic,TRUE
+hpb,Hpb.,heuristic,TRUE
+href,Link / page URL.,curated,FALSE
+ht,Ht.,heuristic,TRUE
+hustle_status,Hustle status.,heuristic,TRUE
+icon,Icon image URL.,curated,FALSE
+icon_text,Icon descriptive text.,curated,FALSE
+icon_url,Icon image URL.,curated,FALSE
+id,Id.,heuristic,TRUE
+if_necessary,If necessary.,heuristic,TRUE
+images,JSON array of image objects (serialized).,curated,FALSE
+international,TRUE if the player has international experience.,curated,FALSE
+is_active,Is active.,heuristic,TRUE
+is_all_star,Is all star.,heuristic,TRUE
+is_draft_live,Is draft live.,heuristic,TRUE
+is_field_goal,1 if the action was a field goal; 0 otherwise.,curated,FALSE
+is_target_score_last_period,Is target score last period.,heuristic,TRUE
+ist_group,Ist group.,heuristic,TRUE
+ist_group_gb,Ist group gb.,heuristic,TRUE
+ist_group_rank,League/season rank for ist group.,heuristic,TRUE
+ist_knockout_rank,League/season rank for ist knockout.,heuristic,TRUE
+ist_wildcard_gb,Ist wildcard gb.,heuristic,TRUE
+ist_wildcard_rank,League/season rank for ist wildcard.,heuristic,TRUE
+jersey,Jersey number worn by the player.,curated,FALSE
+jersey_num,Jersey number worn by the player.,curated,FALSE
+jump_ball_lost_person_id,Unique identifier for jump ball lost person.,heuristic,TRUE
+jump_ball_lost_player_name,Jump ball lost player name.,heuristic,TRUE
+jump_ball_recoverd_person_id,Unique identifier for jump ball recoverd person.,heuristic,TRUE
+jump_ball_recovered_name,Jump ball recovered name.,heuristic,TRUE
+jump_ball_won_person_id,Unique identifier for jump ball won person.,heuristic,TRUE
+jump_ball_won_player_name,Jump ball won player name.,heuristic,TRUE
+jump_subscore,Jump subscore.,heuristic,TRUE
+jumping_foot,Jumping foot.,heuristic,TRUE
+keywords,Comma-separated keywords / tags.,curated,FALSE
+kp_median,Kp median.,heuristic,TRUE
+kpoy_rating,Kpoy rating.,heuristic,TRUE
+l,Losses.,curated,FALSE
+l_conference,L conference.,heuristic,TRUE
+l_conference_proj,L conference proj.,heuristic,TRUE
+l_proj,L proj.,heuristic,TRUE
+lag_game_half,Half lag (the previous-play's half).,curated,FALSE
+lag_qtr,Quarter lag (the previous-play's quarter).,curated,FALSE
+largest_lead,Largest lead during the game.,curated,FALSE
+last_10_record,Win-loss record in the last 10 games.,curated,FALSE
+last_5,Win-loss record over the last 5 games.,curated,FALSE
+last_game,Last game date or score string.,curated,FALSE
+last_game_1,Last game 1.,heuristic,TRUE
+last_modified,Last-modified timestamp (ISO 8601).,curated,FALSE
+last_name,Player's last name.,curated,FALSE
+last_updated,Last updated.,heuristic,TRUE
+lastname,Lastname.,heuristic,TRUE
+lasttengames,Lasttengames.,heuristic,TRUE
+lateral_catch_distance,Lateral catch distance.,heuristic,TRUE
+ldur,Ldur.,heuristic,TRUE
+lead_changes,Lead changes.,heuristic,TRUE
+lead_changes_rk,Lead changes rk.,heuristic,TRUE
+lead_changes_season_rk,Lead changes season rk.,heuristic,TRUE
+lead_game_half,Half lead (the next-play's half).,curated,FALSE
+lead_qtr,Quarter lead (the next-play's quarter).,curated,FALSE
+league,League.,heuristic,TRUE
+league_id,League identifier ('10' = WNBA).,curated,FALSE
+leaguestandings,Leaguestandings.,heuristic,TRUE
+leaguewinpercent,Leaguewinpercent.,heuristic,TRUE
+linescore_period_1,Score in period 1.,curated,FALSE
+linescore_period_2,Score in period 2.,curated,FALSE
+linescore_period_3,Score in period 3.,curated,FALSE
+linescore_period_4,Score in period 4.,curated,FALSE
+linescore_period_5,Score in period 5 (OT).,curated,FALSE
+link_app,App / deep link URL.,curated,FALSE
+link_mobile,Mobile link / URL.,curated,FALSE
+link_web,Web link / URL.,curated,FALSE
+linked,TRUE if the record is linked to a related entity.,curated,FALSE
+live_draft_current_pick_number,Live draft current pick number.,heuristic,TRUE
+loc_x,X coordinate on the court (units of inches; 0 = basket center).,curated,FALSE
+loc_y,Y coordinate on the court (units of inches; baseline at 0).,curated,FALSE
+location,Location.,heuristic,TRUE
+logo,Team or league logo URL.,curated,FALSE
+logo_dark,Logo dark.,heuristic,TRUE
+logo_dark_href,Logo URL for dark backgrounds.,curated,FALSE
+logo_href,Team or league logo URL.,curated,FALSE
+logos,Logos.,heuristic,TRUE
+logos_href_2,Logos href 2.,heuristic,TRUE
+logos_href_3,Logos href 3.,heuristic,TRUE
+logos_href_4,Logos href 4.,heuristic,TRUE
+long_comment,Long-form play / event comment.,curated,FALSE
+loose_balls_recovered,Loose balls recovered.,curated,FALSE
+loose_balls_recovered_defensive,Loose balls recovered on defense.,curated,FALSE
+loose_balls_recovered_offensive,Loose balls recovered on offense.,curated,FALSE
+loose_balls_recovered_total,Loose balls recovered total.,heuristic,TRUE
+loss_rk,Loss rk.,heuristic,TRUE
+loss_score,Loss score.,heuristic,TRUE
+loss_team,Loss team.,heuristic,TRUE
+losses,Total losses.,curated,FALSE
+lth,Lth.,heuristic,TRUE
+ltp,Ltp.,heuristic,TRUE
+ltt,Ltt.,heuristic,TRUE
+ltw,Ltw.,heuristic,TRUE
+luck,Luck.,heuristic,TRUE
+luck_rk,Luck rk.,heuristic,TRUE
+lurl,Lurl.,heuristic,TRUE
+m,M.,heuristic,TRUE
+mascot,Team mascot.,curated,FALSE
+matchup,Matchup.,heuristic,TRUE
+matchup_assists,Matchup assists.,heuristic,TRUE
+matchup_blocks,Matchup blocks.,heuristic,TRUE
+matchup_field_goal_percentage,Matchup field goal percentage (0-1 decimal).,heuristic,TRUE
+matchup_field_goals_attempted,Number of matchup field goals attempted.,heuristic,TRUE
+matchup_field_goals_made,Number of matchup field goals made.,heuristic,TRUE
+matchup_field_goals_percentage,Matchup field goals percentage (0-1 decimal).,heuristic,TRUE
+matchup_free_throws_attempted,Number of matchup free throws attempted.,heuristic,TRUE
+matchup_free_throws_made,Number of matchup free throws made.,heuristic,TRUE
+matchup_minutes,Matchup minutes.,heuristic,TRUE
+matchup_minutes_sort,Matchup minutes sort.,heuristic,TRUE
+matchup_potential_assists,Matchup potential assists.,heuristic,TRUE
+matchup_short,Matchup short.,heuristic,TRUE
+matchup_three_pointer_percentage,Matchup three pointer percentage (0-1 decimal).,heuristic,TRUE
+matchup_three_pointers_attempted,Number of matchup three pointers attempted.,heuristic,TRUE
+matchup_three_pointers_made,Number of matchup three pointers made.,heuristic,TRUE
+matchup_three_pointers_percentage,Matchup three pointers percentage (0-1 decimal).,heuristic,TRUE
+matchup_turnovers,Matchup turnovers.,heuristic,TRUE
+matchups_family_name,Matchups family name.,heuristic,TRUE
+matchups_first_name,Matchups first name.,heuristic,TRUE
+matchups_jersey_num,Matchups jersey num.,heuristic,TRUE
+matchups_name_i,Matchups name i.,heuristic,TRUE
+matchups_person_id,Unique identifier for matchups person.,heuristic,TRUE
+matchups_player_slug,Matchups player slug.,heuristic,TRUE
+max_ball_height,Max ball height.,heuristic,TRUE
+mdur,Mdur.,heuristic,TRUE
+media_id,Media identifier (video / image).,curated,FALSE
+mid_display_name,Medium-length display name.,curated,FALSE
+min,Minutes played.,curated,FALSE
+min_pct,Min percentage (0-1 decimal).,heuristic,TRUE
+min_pct_rk,Min pct rk.,heuristic,TRUE
+min_wp,Min wp.,heuristic,TRUE
+minimum_wp_rk,Minimum wp rk.,heuristic,TRUE
+minimum_wp_season_rk,Minimum wp season rk.,heuristic,TRUE
+mins,Minutes played.,curated,FALSE
+minus,Minus.,heuristic,TRUE
+minute_game,Minute game.,heuristic,TRUE
+minute_remaining_quarter,Minute remaining quarter.,heuristic,TRUE
+minutes,"Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2).",curated,FALSE
+minutes_calculated,Minutes calculated from game-clock differences.,curated,FALSE
+minutes_per_game,Minutes Per Game.,espn_api,FALSE
+minutes_played,Minutes played.,heuristic,TRUE
+mobile_url,Mobile site URL.,curated,FALSE
+month,Month number.,curated,FALSE
+month_name,Full month name.,curated,FALSE
+month_num,Month num.,heuristic,TRUE
+mpg,Minutes per game.,curated,FALSE
+mth,Mth.,heuristic,TRUE
+mtp,Mtp.,heuristic,TRUE
+mtt,Mtt.,heuristic,TRUE
+mtw,Mtw.,heuristic,TRUE
+murl,Murl.,heuristic,TRUE
+mvp,Mvp.,heuristic,TRUE
+name,Display name.,curated,FALSE
+name_i,Initialed name (e.g. 'A. Wilson').,curated,FALSE
+national_rank,League/season rank for national.,heuristic,TRUE
+nationality,Nationality.,curated,FALSE
+nba_logo_svg,Nba logo svg.,heuristic,TRUE
+ncaa_seed,Ncaa seed.,heuristic,TRUE
+ncsos_adj_em,Ncsos adj em.,heuristic,TRUE
+ncsos_adj_em_rk,Ncsos adj em rk.,heuristic,TRUE
+net_rating,Net rating (off rating - def rating).,curated,FALSE
+network,Broadcasting network.,curated,FALSE
+neutral_description,Neutral description.,heuristic,TRUE
+neutral_site,Neutral site.,heuristic,TRUE
+next_game,Next game date or opponent.,curated,FALSE
+nickname,Team or athlete nickname.,curated,FALSE
+non_stl_pct,Non steals percentage (0-1 decimal).,heuristic,TRUE
+not_playing_description,Not playing description.,heuristic,TRUE
+not_playing_reason,Not playing reason.,heuristic,TRUE
+note,Free-form note attached to the record.,curated,FALSE
+notes,Free-form notes attached to the record.,curated,FALSE
+notes_headline,Notes headline.,heuristic,TRUE
+notes_type,Notes type.,heuristic,TRUE
+nst,Nst.,heuristic,TRUE
+nst_rk,Nst rk.,heuristic,TRUE
+number,Number.,heuristic,TRUE
+o_rtg,O rtg.,heuristic,TRUE
+o_rtg_rk,O rtg rk.,heuristic,TRUE
+occurrence_display_value,Occurrence display value.,heuristic,TRUE
+occurrence_last,Occurrence last.,heuristic,TRUE
+occurrence_number,Occurrence number.,heuristic,TRUE
+occurrence_type,Occurrence type.,heuristic,TRUE
+occurrence_value,Occurrence value.,heuristic,TRUE
+oe,Oe.,heuristic,TRUE
+oe_rk,Oe rk.,heuristic,TRUE
+off_a_pct,Off a percentage (0-1 decimal).,heuristic,TRUE
+off_a_pct_rk,Off a pct rk.,heuristic,TRUE
+off_apl,Off apl.,heuristic,TRUE
+off_apl_rk,Off apl rk.,heuristic,TRUE
+off_blk_pct,Off blocks percentage (0-1 decimal).,heuristic,TRUE
+off_blk_pct_rk,Off blk pct rk.,heuristic,TRUE
+off_e_fg_pct,Off e field goals percentage (0-1 decimal).,heuristic,TRUE
+off_e_fg_pct_rk,Off e fg pct rk.,heuristic,TRUE
+off_eff,Off eff.,heuristic,TRUE
+off_eff_rk,Off eff rk.,heuristic,TRUE
+off_fg_2_pct,Off field goals 2 percentage (0-1 decimal).,heuristic,TRUE
+off_fg_2_pct_rk,Off fg 2 pct rk.,heuristic,TRUE
+off_fg_3_pct,Off field goals 3 percentage (0-1 decimal).,heuristic,TRUE
+off_fg_3_pct_rk,Off fg 3 pct rk.,heuristic,TRUE
+off_fg_3a_pct,Off field goals 3a percentage (0-1 decimal).,heuristic,TRUE
+off_fg_3a_pct_rk,Off fg 3a pct rk.,heuristic,TRUE
+off_fga_2,Off fga 2.,heuristic,TRUE
+off_fga_3,Off fga 3.,heuristic,TRUE
+off_fgm_2,Off fgm 2.,heuristic,TRUE
+off_fgm_3,Off fgm 3.,heuristic,TRUE
+off_ft_pct,Off free throws percentage (0-1 decimal).,heuristic,TRUE
+off_ft_pct_rk,Off ft pct rk.,heuristic,TRUE
+off_ft_rate,Off ft rate.,heuristic,TRUE
+off_ft_rate_rk,Off ft rate rk.,heuristic,TRUE
+off_ftr,Off ftr.,heuristic,TRUE
+off_non_stl_pct,Off non steals percentage (0-1 decimal).,heuristic,TRUE
+off_non_stl_pct_rk,Off non stl pct rk.,heuristic,TRUE
+off_or_pct,Off or percentage (0-1 decimal).,heuristic,TRUE
+off_or_pct_rk,Off or pct rk.,heuristic,TRUE
+off_rating,Offensive rating (points produced per 100 possessions).,curated,FALSE
+off_stl_pct,Off steals percentage (0-1 decimal).,heuristic,TRUE
+off_stl_pct_rk,Off stl pct rk.,heuristic,TRUE
+off_to_pct,Off to percentage (0-1 decimal).,heuristic,TRUE
+off_to_pct_rk,Off to pct rk.,heuristic,TRUE
+offballinteriorframes,Offballinteriorframes.,heuristic,TRUE
+offballinteriorgravityscore,Offballinteriorgravityscore.,heuristic,TRUE
+offballperimeterframes,Offballperimeterframes.,heuristic,TRUE
+offballperimetergravityscore,Offballperimetergravityscore.,heuristic,TRUE
+offense_team_id,Unique identifier for offense team.,heuristic,TRUE
+offensive_a40,Assists Per 40 Minutes.,espn_api,FALSE
+offensive_assist_ratio,The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].,espn_api,FALSE
+offensive_assists,"The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was ""assisting"" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist.",espn_api,FALSE
+offensive_average,Average offensive value (context-dependent).,curated,FALSE
+offensive_avg48assists,The average number of assists per 48 minutes.,espn_api,FALSE
+offensive_avg48field_goals_attempted,The average number of fieldgoals attempted per 48 minutes.,espn_api,FALSE
+offensive_avg48field_goals_made,The average number of fieldgoals made per 48 minutes.,espn_api,FALSE
+offensive_avg48free_throws_attempted,The average number of free throws attempted per 48 minutes.,espn_api,FALSE
+offensive_avg48free_throws_made,The average number of Free Throws made per 48 minutes.,espn_api,FALSE
+offensive_avg48offensive_rebounds,The average number of offenseive rebounds per 48 minutes.,espn_api,FALSE
+offensive_avg48points,The average number of points scored per 48 minutes.,espn_api,FALSE
+offensive_avg48three_point_field_goals_attempted,The average number of 3-pointers attempted per 48 minutes.,espn_api,FALSE
+offensive_avg48three_point_field_goals_made,The average per number of 3-Pointers made per 48 minutes.,espn_api,FALSE
+offensive_avg48turnovers,The average number of turnovers per 48 minutes.,espn_api,FALSE
+offensive_avg_assists,The average assists per game.,espn_api,FALSE
+offensive_avg_estimated_possessions,The average number of estimated possessions per game for a team or player.,espn_api,FALSE
+offensive_avg_field_goals_attempted,The average field goals attempted per game.,espn_api,FALSE
+offensive_avg_field_goals_made,The average field goals made per game.,espn_api,FALSE
+offensive_avg_free_throws_attempted,The average free throw shots attempted per game.,espn_api,FALSE
+offensive_avg_free_throws_made,The average free throw shots made per game.,espn_api,FALSE
+offensive_avg_offensive_rebounds,The average offensive rebounds per game.,espn_api,FALSE
+offensive_avg_points,The average number of points scored per game.,espn_api,FALSE
+offensive_avg_team_turnovers,The average number of turnovers for a team per game.,espn_api,FALSE
+offensive_avg_three_point_field_goals_attempted,The average three point field goals attempted per game.,espn_api,FALSE
+offensive_avg_three_point_field_goals_made,The average three point field goals made per game.,espn_api,FALSE
+offensive_avg_total_turnovers,The average number of total turnovers for a team per game.,espn_api,FALSE
+offensive_avg_turnovers,The average turnovers committed per game.,espn_api,FALSE
+offensive_avg_two_point_field_goals_attempted,The number of 2-point field goals attempted per game for a team or player.,espn_api,FALSE
+offensive_avg_two_point_field_goals_made,The number of 2-point field goals made per game for a team or player.,espn_api,FALSE
+offensive_box_outs,Offensive box outs.,heuristic,TRUE
+offensive_brick_index,How many points a player costs his team with his shooting compared with the league average on a per-40-minute basis. ((52.8 - TS%) x (FGA + (FTA x 0.44))) / (Min/40) .,espn_api,FALSE
+offensive_effective_fg_pct,Offensive effective field goals percentage (0-1 decimal).,heuristic,TRUE
+offensive_effective_fgpct,Metric that gives 3pt field goals more worth than 2pt field goals: (FGM + (0.5 x 3PTM)) / FGA.,espn_api,FALSE
+offensive_estimated_possessions,An estimation of the number of possessions for a team or player.,espn_api,FALSE
+offensive_fast_break_points,The number of points scored on fast breaks.,espn_api,FALSE
+offensive_field_goal_pct,The ratio of field goals made to field goals attempted: FGM / FGA.,espn_api,FALSE
+offensive_field_goals,Field Goal makes and attempts.,espn_api,FALSE
+offensive_field_goals_attempted,The number of times a 2pt field goal was attempted.,espn_api,FALSE
+offensive_field_goals_made,The number of times a 2pt field goal was made.,espn_api,FALSE
+offensive_free_throw_pct,The ratio of free throws made to free throws attempted: FTM / FTA.,espn_api,FALSE
+offensive_free_throws,Free Throw makes and attempts.,espn_api,FALSE
+offensive_free_throws_attempted,The number of times a free throw was attempted.,espn_api,FALSE
+offensive_free_throws_made,The number of times a free throw was made.,espn_api,FALSE
+offensive_off_rebound_rate,The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)].,espn_api,FALSE
+offensive_offensive_rebound_pct,The percentage of the number of times they obtain the possession of the ball after a missed shot.,espn_api,FALSE
+offensive_offensive_rebounds,The number of times when the offense obtains the possession of the ball after a missed shot.,espn_api,FALSE
+offensive_orpm,Offensive Real Plus-Minus.,espn_api,FALSE
+offensive_p40,Points Per 40 Minutes.,espn_api,FALSE
+offensive_pace_factor,The number of possessions a team uses per game.,espn_api,FALSE
+offensive_points,The number of points scored.,espn_api,FALSE
+offensive_points_in_paint,"The amount of points scored in the area known as ""the Paint""(the rectangle between the foul line and the baseline).",espn_api,FALSE
+offensive_points_per_estimated_possessions,The number of points per estimated possession for a team or player.,espn_api,FALSE
+offensive_possessions,The total number of possessions for a team or player.,espn_api,FALSE
+offensive_rating,Offensive rating (points per 100 possessions).,curated,FALSE
+offensive_rebound_percentage,Offensive rebound percentage (0-1).,curated,FALSE
+offensive_rebounds,Offensive rebounds.,curated,FALSE
+offensive_rebounds_per_game,Offensive Rebounds Per Game.,espn_api,FALSE
+offensive_scoring_efficiency,The efficiency with which a team or player scores the basketball.,espn_api,FALSE
+offensive_second_chance_points,Points that a team gains after they have attempted at least one shot during the same possession and missed.,espn_api,FALSE
+offensive_shooting_efficiency,The efficiency with which a team or player shoots the basketball.,espn_api,FALSE
+offensive_team_turnovers,The number of turnovers for the team.,espn_api,FALSE
+offensive_three_point_field_goal_pct,The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.,espn_api,FALSE
+offensive_three_point_field_goals_attempted,The number of times a 3pt field goal was attempted.,espn_api,FALSE
+offensive_three_point_field_goals_made,The number of times a 3pt field goal was made.,espn_api,FALSE
+offensive_three_point_pct,The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.,espn_api,FALSE
+offensive_total_turnovers,The number of turnovers plus team turnovers for the team.,espn_api,FALSE
+offensive_true_shooting_pct,What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by [(FGA + (FTA x 0.44)].,espn_api,FALSE
+offensive_turnover_ratio,The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].,espn_api,FALSE
+offensive_turnovers,The number of times a player loses possession to the other team.,espn_api,FALSE
+offensive_two_point_field_goal_pct,The percentage of 2-points fields goals made by a team or player.,espn_api,FALSE
+offensive_two_point_field_goals_attempted,The number of 2-point field goals attempted for a team or player.,espn_api,FALSE
+offensive_two_point_field_goals_made,The number of 2-point field goals made for a team or player.,espn_api,FALSE
+offensive_usage_rate,the number of possessions a player uses per 40 minutes. Usage Rate = {[FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO] x 40 x League Pace} divided by (Minutes x Team Pace).,espn_api,FALSE
+official_id,Unique official / referee identifier.,curated,FALSE
+official_name,Official name.,heuristic,TRUE
+onballinteriorframes,Onballinteriorframes.,heuristic,TRUE
+onballinteriorgravityscore,Onballinteriorgravityscore.,heuristic,TRUE
+onballperimeterframes,Onballperimeterframes.,heuristic,TRUE
+onballperimetergravityscore,Onballperimetergravityscore.,heuristic,TRUE
+oncourt,Oncourt.,heuristic,TRUE
+opp_effective_field_goal_percentage,Opponent effective field goal percentage (0-1 decimal).,heuristic,TRUE
+opp_free_throw_attempt_rate,Opponent free throw attempt rate.,heuristic,TRUE
+opp_offensive_rebound_percentage,Opponent offensive rebound percentage (0-1 decimal).,heuristic,TRUE
+opp_points,Opponent's points scored.,curated,FALSE
+opp_points_fast_break,Opponent points fast break.,heuristic,TRUE
+opp_points_off_turnovers,Opponent points off turnovers.,heuristic,TRUE
+opp_points_paint,Opponent points paint.,heuristic,TRUE
+opp_points_second_chance,Opponent points second chance.,heuristic,TRUE
+opp_pts,Opponent points.,heuristic,TRUE
+opp_score,Opponent's score.,curated,FALSE
+opp_team_turnover_percentage,Opponent team turnover percentage (0-1 decimal).,heuristic,TRUE
+opponent,Opponent.,heuristic,TRUE
+opponent_abbrev,Abbreviation for opponent.,heuristic,TRUE
+opponent_id,Unique identifier for opponent.,heuristic,TRUE
+opponent_mascot,Opponent mascot.,heuristic,TRUE
+opponent_name,Opponent name.,heuristic,TRUE
+opponent_rk,Opponent rk.,heuristic,TRUE
+opponent_score,Opponent score.,heuristic,TRUE
+opponent_team_abbreviation,Opponent team abbreviation.,curated,FALSE
+opponent_team_alternate_color,Opponent team alternate color (hex).,curated,FALSE
+opponent_team_color,Opponent team primary color (hex).,curated,FALSE
+opponent_team_display_name,Opponent team full display name.,curated,FALSE
+opponent_team_id,Unique identifier for the opponent team.,curated,FALSE
+opponent_team_location,Opponent team city / location.,curated,FALSE
+opponent_team_logo,Opponent team logo URL.,curated,FALSE
+opponent_team_logo_dark,Opponent team logo URL for dark backgrounds.,curated,FALSE
+opponent_team_name,Opponent team display name.,curated,FALSE
+opponent_team_score,Opponent team's score.,curated,FALSE
+opponent_team_short_display_name,Opponent team short display name.,curated,FALSE
+opponent_team_slug,Opponent team slug.,heuristic,TRUE
+opponent_team_uid,Opponent team uid.,heuristic,TRUE
+opponent_tier,Opponent tier.,heuristic,TRUE
+opt1,Opt1.,heuristic,TRUE
+opt2,Opt2.,heuristic,TRUE
+or,Or.,heuristic,TRUE
+or_pct,Or percentage (0-1 decimal).,heuristic,TRUE
+or_pct_rk,Or pct rk.,heuristic,TRUE
+order,Display order within the result set.,curated,FALSE
+oreb,Offensive rebounds.,curated,FALSE
+oreb_pct,Offensive rebound percentage (0-1).,curated,FALSE
+oreb_rate,Offensive rebound rate (0-1).,curated,FALSE
+ot,Ot.,heuristic,TRUE
+over_under,Over under.,heuristic,TRUE
+overall,Overall.,heuristic,TRUE
+overall_record,Overall win-loss record.,curated,FALSE
+overall_strength_of_record,Strength of record metric.,curated,FALSE
+p,P.,heuristic,TRUE
+pace,Possessions per 48 minutes.,curated,FALSE
+pace_per40,Pace per40.,heuristic,TRUE
+parent_group_id,Unique identifier for parent group.,heuristic,TRUE
+partial_possessions,Partial possessions.,heuristic,TRUE
+participant_team_id,V2 PBP participant team ID.,curated,FALSE
+participants,Participants.,heuristic,TRUE
+participants_0_athlete_id,V2 PBP participant 0 (primary) athlete ID.,curated,FALSE
+participants_1_athlete_id,V2 PBP participant 1 (secondary) athlete ID.,curated,FALSE
+participants_2_athlete_id,V2 PBP participant 2 (tertiary) athlete ID.,curated,FALSE
+pass_length,Pass length.,heuristic,TRUE
+pass_release_point,Pass release point.,heuristic,TRUE
+passer_first_name,Passer first name.,heuristic,TRUE
+passer_id,Unique identifier for passer.,heuristic,TRUE
+passer_last_name,Passer last name.,heuristic,TRUE
+passer_name,Passer name.,heuristic,TRUE
+passes,Passes.,heuristic,TRUE
+pb_odds_odds,Pb odds odds.,heuristic,TRUE
+pb_odds_suspended,Pb odds suspended.,heuristic,TRUE
+pb_odds_team,Pb odds team.,heuristic,TRUE
+pct,Pct.,heuristic,TRUE
+per_mode,"Per-mode aggregation ('Totals', 'PerGame', 'Per40', 'Per100Possessions', etc.).",curated,FALSE
+percent_ps,Percent ps.,heuristic,TRUE
+percentage,Percentage value (0-1 decimal).,curated,FALSE
+percentage_assisted2pt,Percentage assisted2pt.,heuristic,TRUE
+percentage_assisted3pt,Percentage assisted3pt.,heuristic,TRUE
+percentage_assisted_fgm,Percentage assisted fgm.,heuristic,TRUE
+percentage_assists,Percentage assists.,heuristic,TRUE
+percentage_blocks,Percentage blocks.,heuristic,TRUE
+percentage_blocks_allowed,Percentage blocks allowed.,heuristic,TRUE
+percentage_defender_total_time,Time / clock value.,heuristic,TRUE
+percentage_field_goals_attempted,Number of percentage field goals attempted.,heuristic,TRUE
+percentage_field_goals_attempted2pt,Percentage field goals attempted2pt.,heuristic,TRUE
+percentage_field_goals_attempted3pt,Percentage field goals attempted3pt.,heuristic,TRUE
+percentage_field_goals_made,Number of percentage field goals made.,heuristic,TRUE
+percentage_free_throws_attempted,Number of percentage free throws attempted.,heuristic,TRUE
+percentage_free_throws_made,Number of percentage free throws made.,heuristic,TRUE
+percentage_offensive_total_time,Time / clock value.,heuristic,TRUE
+percentage_personal_fouls,Percentage personal fouls.,heuristic,TRUE
+percentage_personal_fouls_drawn,Percentage personal fouls drawn.,heuristic,TRUE
+percentage_points,Percentage points.,heuristic,TRUE
+percentage_points2pt,Percentage points2pt.,heuristic,TRUE
+percentage_points3pt,Percentage points3pt.,heuristic,TRUE
+percentage_points_fast_break,Percentage points fast break.,heuristic,TRUE
+percentage_points_free_throw,Percentage points free throw.,heuristic,TRUE
+percentage_points_midrange2pt,Percentage points midrange2pt.,heuristic,TRUE
+percentage_points_off_turnovers,Percentage points off turnovers.,heuristic,TRUE
+percentage_points_paint,Percentage points paint.,heuristic,TRUE
+percentage_rebounds_defensive,Percentage rebounds defensive.,heuristic,TRUE
+percentage_rebounds_offensive,Percentage rebounds offensive.,heuristic,TRUE
+percentage_rebounds_total,Percentage rebounds total.,heuristic,TRUE
+percentage_steals,Percentage steals.,heuristic,TRUE
+percentage_three_pointers_attempted,Number of percentage three pointers attempted.,heuristic,TRUE
+percentage_three_pointers_made,Number of percentage three pointers made.,heuristic,TRUE
+percentage_total_time_both_on,Percentage total time both on.,heuristic,TRUE
+percentage_turnovers,Percentage turnovers.,heuristic,TRUE
+percentage_unassisted2pt,Percentage unassisted2pt.,heuristic,TRUE
+percentage_unassisted3pt,Percentage unassisted3pt.,heuristic,TRUE
+percentage_unassisted_fgm,Percentage unassisted fgm.,heuristic,TRUE
+period,Period of the game (1-4 quarters; 5+ for OT).,curated,FALSE
+period1_score,Period1 score.,heuristic,TRUE
+period2_score,Period2 score.,heuristic,TRUE
+period3_score,Period3 score.,heuristic,TRUE
+period4_score,Period4 score.,heuristic,TRUE
+period_display_value,"Period display label (e.g. '1st Quarter', 'OT').",curated,FALSE
+period_number,Numeric period (1-4 for quarters; 5+ for OT).,curated,FALSE
+period_seconds_remaining,Seconds remaining in the period.,curated,FALSE
+period_type,Period type.,heuristic,TRUE
+permalink,Permalink.,heuristic,TRUE
+permode,"Per-mode aggregation ('Totals', 'PerGame', 'Per40', 'Per100Possessions', etc.).",curated,FALSE
+person1type,Person1type.,heuristic,TRUE
+person2type,Person2type.,heuristic,TRUE
+person3type,Person3type.,heuristic,TRUE
+person_id,Unique player identifier (V3 endpoints).,curated,FALSE
+person_ids_filter,Person ids filter.,heuristic,TRUE
+pf,Personal fouls.,curated,FALSE
+pf_hgt,Pf hgt.,heuristic,TRUE
+pf_hgt_rk,Pf hgt rk.,heuristic,TRUE
+pf_min_pct,Personal fouls min percentage (0-1 decimal).,heuristic,TRUE
+pf_number,Pf number.,heuristic,TRUE
+pf_pct,Personal fouls percentage (0-1 decimal).,heuristic,TRUE
+pf_pct_d1_avg,Pf pct d1 avg.,heuristic,TRUE
+pf_pct_rk,Pf pct rk.,heuristic,TRUE
+pf_player_first_name,Personal fouls player first name.,heuristic,TRUE
+pf_player_last_name,Personal fouls player last name.,heuristic,TRUE
+pf_rk,Pf rk.,heuristic,TRUE
+pf_wgt,Pf wgt.,heuristic,TRUE
+pf_yr,Pf yr.,heuristic,TRUE
+pg_hgt,Pg hgt.,heuristic,TRUE
+pg_hgt_rk,Pg hgt rk.,heuristic,TRUE
+pg_min_pct,Pg min percentage (0-1 decimal).,heuristic,TRUE
+pg_number,Pg number.,heuristic,TRUE
+pg_pct,Pg percentage (0-1 decimal).,heuristic,TRUE
+pg_pct_d1_avg,Pg pct d1 avg.,heuristic,TRUE
+pg_pct_rk,Pg pct rk.,heuristic,TRUE
+pg_player_first_name,Pg player first name.,heuristic,TRUE
+pg_player_last_name,Pg player last name.,heuristic,TRUE
+pg_wgt,Pg wgt.,heuristic,TRUE
+pg_yr,Pg yr.,heuristic,TRUE
+pick_details,Pick details.,heuristic,TRUE
+pick_number,Pick number.,heuristic,TRUE
+picked_first_round,Picked first round.,heuristic,TRUE
+picked_second_round,Picked second round.,heuristic,TRUE
+pie,Player Impact Estimate (0-1).,curated,FALSE
+play_id,Unique play identifier within a game.,curated,FALSE
+play_type,Play type code.,curated,FALSE
+played,Played.,heuristic,TRUE
+player,Player.,heuristic,TRUE
+player1_id,V2 PBP primary player ID (e.g. shooter / fouler).,curated,FALSE
+player1_name,V2 PBP primary player name.,curated,FALSE
+player1_team_abbreviation,Player1 team abbreviation.,heuristic,TRUE
+player1_team_city,Player1 team city.,heuristic,TRUE
+player1_team_id,Team ID of player1.,curated,FALSE
+player1_team_nickname,Player1 team nickname.,heuristic,TRUE
+player2_id,V2 PBP secondary player ID (e.g. assister / fouled-by).,curated,FALSE
+player2_name,V2 PBP secondary player name.,curated,FALSE
+player2_team_abbreviation,Player2 team abbreviation.,heuristic,TRUE
+player2_team_city,Player2 team city.,heuristic,TRUE
+player2_team_id,Team ID of player2.,curated,FALSE
+player2_team_nickname,Player2 team nickname.,heuristic,TRUE
+player3_id,V2 PBP tertiary player ID (e.g. blocker).,curated,FALSE
+player3_name,V2 PBP tertiary player name.,curated,FALSE
+player3_team_abbreviation,Player3 team abbreviation.,heuristic,TRUE
+player3_team_city,Player3 team city.,heuristic,TRUE
+player3_team_id,Team ID of player3.,curated,FALSE
+player3_team_nickname,Player3 team nickname.,heuristic,TRUE
+player_box,Player box.,heuristic,TRUE
+player_efficiency_rating,Player Efficiency Rating.,espn_api,FALSE
+player_id,Unique player identifier.,curated,FALSE
+player_lateral_speed,Player lateral speed.,heuristic,TRUE
+player_name,Player name.,heuristic,TRUE
+player_name_i,Player name i.,heuristic,TRUE
+player_points,Player points.,heuristic,TRUE
+player_rotation,Player rotation.,heuristic,TRUE
+player_slug,URL-safe player identifier.,curated,FALSE
+player_vertical,Player vertical.,heuristic,TRUE
+playerid,Playerid.,heuristic,TRUE
+playoff_seed,Playoff seed.,curated,FALSE
+playoffseed,Playoffseed.,heuristic,TRUE
+plus,Plus.,heuristic,TRUE
+plus_minus,Plus/minus point differential while on court.,curated,FALSE
+plus_minus_points,Plus/minus point differential while on court.,curated,FALSE
+po_round_desc,Po round desc.,heuristic,TRUE
+points,Points scored.,curated,FALSE
+points_against,Points allowed.,curated,FALSE
+points_fast_break,Fast-break points scored.,curated,FALSE
+points_from_turnovers,Points from turnovers.,heuristic,TRUE
+points_in_paint,Points scored in the paint.,curated,FALSE
+points_in_the_paint,Points in the paint.,heuristic,TRUE
+points_in_the_paint_attempted,Number of points in the paint attempted.,heuristic,TRUE
+points_in_the_paint_made,Number of points in the paint made.,heuristic,TRUE
+points_in_the_paint_percentage,Points in the paint percentage (0-1 decimal).,heuristic,TRUE
+points_off_turnovers,Points scored off opponent turnovers.,curated,FALSE
+points_paint,Points scored in the paint.,curated,FALSE
+points_per_game,Points Per Game.,espn_api,FALSE
+points_second_chance,Second-chance points scored.,curated,FALSE
+points_total,Running total of points scored.,curated,FALSE
+pointsagainst,Pointsagainst.,heuristic,TRUE
+pointsfor,Pointsfor.,heuristic,TRUE
+position,"Listed roster position (G, F, C, etc.).",curated,FALSE
+position_abbreviation,Position abbreviation ('G' / 'F' / 'C').,curated,FALSE
+position_display_name,Position display name.,heuristic,TRUE
+position_id,Unique position identifier.,curated,FALSE
+position_leaf,Position leaf.,heuristic,TRUE
+position_name,"Listed roster position ('Guard', 'Forward', 'Center').",curated,FALSE
+poss,Poss.,heuristic,TRUE
+poss_pct,Poss percentage (0-1 decimal).,heuristic,TRUE
+poss_pct_rk,Poss pct rk.,heuristic,TRUE
+possession_number,Possession number.,heuristic,TRUE
+possession_team,Possession team.,heuristic,TRUE
+possessions,Possessions used.,curated,FALSE
+possible_attempted_charge,Possible attempted charge.,heuristic,TRUE
+postponed_status,Postponed status.,heuristic,TRUE
+postseason,Postseason.,heuristic,TRUE
+power_subscore,Power subscore.,heuristic,TRUE
+ppg,Points per game.,curated,FALSE
+pre_wp,Pre wp.,heuristic,TRUE
+prediction,Prediction.,heuristic,TRUE
+previous,Previous.,heuristic,TRUE
+priority,Priority value (used for sort order).,curated,FALSE
+prospect_app_url,URL for prospect app.,heuristic,TRUE
+prospect_birthday,Prospect birthday.,heuristic,TRUE
+prospect_country,Prospect country.,heuristic,TRUE
+prospect_display_name,Prospect display name.,heuristic,TRUE
+prospect_first_name,Prospect first name.,heuristic,TRUE
+prospect_height_feet_and_inches,Prospect height feet and inches.,heuristic,TRUE
+prospect_height_inches_only,Prospect height inches only.,heuristic,TRUE
+prospect_id,Unique identifier for prospect.,heuristic,TRUE
+prospect_last_name,Prospect last name.,heuristic,TRUE
+prospect_permalink,Prospect permalink.,heuristic,TRUE
+prospect_position,Prospect position.,heuristic,TRUE
+prospect_school,Prospect school.,heuristic,TRUE
+prospect_season,Prospect season.,heuristic,TRUE
+prospect_status,Prospect status.,heuristic,TRUE
+prospect_trade_details,Prospect trade details.,heuristic,TRUE
+prospect_type,Prospect type.,heuristic,TRUE
+prospect_weight_lbs,Prospect weight lbs.,heuristic,TRUE
+provider_id,Unique identifier for provider.,heuristic,TRUE
+provider_name,Provider name.,heuristic,TRUE
+provider_priority,Provider priority.,heuristic,TRUE
+pt_available,Pt available.,heuristic,TRUE
+pt_xyz_available,Pt xyz available.,heuristic,TRUE
+pta,Pta.,heuristic,TRUE
+pts,Points scored.,curated,FALSE
+pts_bench,Points scored by the bench.,curated,FALSE
+pts_off_tov,Points scored off opponent turnovers.,curated,FALSE
+pts_paint,Points scored in the paint.,curated,FALSE
+pts_rk,Pts rk.,heuristic,TRUE
+published,Publication timestamp (ISO 8601).,curated,FALSE
+q1,Q1.,heuristic,TRUE
+q2,Q2.,heuristic,TRUE
+q3,Q3.,heuristic,TRUE
+q4,Q4.,heuristic,TRUE
+qtr,Quarter (1-4) or OT period (5+).,curated,FALSE
+qualifiers,Qualifiers.,heuristic,TRUE
+r1,R1.,heuristic,TRUE
+rank,Rank.,heuristic,TRUE
+ranking,Ranking position.,curated,FALSE
+rating,Rating.,espn_api,FALSE
+raw_d,Raw d.,heuristic,TRUE
+raw_d_rk,Raw d rk.,heuristic,TRUE
+raw_o,Raw o.,heuristic,TRUE
+raw_o_rk,Raw o rk.,heuristic,TRUE
+raw_t,Raw t.,heuristic,TRUE
+raw_t_rk,Raw t rk.,heuristic,TRUE
+reason,Reason.,heuristic,TRUE
+reb,Total rebounds.,curated,FALSE
+reb_pct,Total rebound percentage (0-1).,curated,FALSE
+rebound_chances_defensive,Rebound chances defensive.,heuristic,TRUE
+rebound_chances_offensive,Rebound chances offensive.,heuristic,TRUE
+rebound_chances_total,Rebound chances total.,heuristic,TRUE
+rebound_defensive_total,Rebound defensive total.,heuristic,TRUE
+rebound_offensive_total,Rebound offensive total.,heuristic,TRUE
+rebound_percentage,Total rebound percentage (0-1).,curated,FALSE
+rebound_total,Rebound total.,heuristic,TRUE
+rebounder_name,Rebounder name.,curated,FALSE
+rebounds,Total rebounds.,curated,FALSE
+rebounds_defensive,Defensive rebounds.,curated,FALSE
+rebounds_offensive,Offensive rebounds.,curated,FALSE
+rebounds_per_game,Rebounds Per Game.,espn_api,FALSE
+rebounds_personal,Rebounds personal.,heuristic,TRUE
+rebounds_team,Rebounds team.,heuristic,TRUE
+rebounds_team_defensive,Rebounds team defensive.,heuristic,TRUE
+rebounds_team_offensive,Rebounds team offensive.,heuristic,TRUE
+rebounds_total,Total rebounds.,curated,FALSE
+recency_order,Recency order.,heuristic,TRUE
+recent,Recent.,heuristic,TRUE
+record,Record string (e.g. '12-4').,curated,FALSE
+record_away,Away win-loss record.,curated,FALSE
+record_conference,Conference win-loss record.,curated,FALSE
+record_division,Division win-loss record.,curated,FALSE
+record_home,Home win-loss record.,curated,FALSE
+record_overall,Overall win-loss record.,curated,FALSE
+record_summary,Win-loss record summary string.,curated,FALSE
+records,Records.,heuristic,TRUE
+ref_rank,League/season rank for ref.,heuristic,TRUE
+ref_rating,Ref rating.,heuristic,TRUE
+referee_name,Referee name.,heuristic,TRUE
+reg_season_champ,Reg season champ.,heuristic,TRUE
+region,Region label.,curated,FALSE
+region_id,Unique identifier for region.,heuristic,TRUE
+regulation_periods,Regulation periods.,heuristic,TRUE
+result,Result.,heuristic,TRUE
+reverse_dunk,Reverse dunk.,heuristic,TRUE
+rk,Rk.,heuristic,TRUE
+rk_chg,Rk chg.,heuristic,TRUE
+road,Road.,heuristic,TRUE
+road_avgpointsagainst,Road avgpointsagainst.,heuristic,TRUE
+road_avgpointsfor,Road avgpointsfor.,heuristic,TRUE
+road_gamesbehind,Road gamesbehind.,heuristic,TRUE
+road_leaguewinpercent,Road leaguewinpercent.,heuristic,TRUE
+road_losses,Road losses.,heuristic,TRUE
+road_playoffseed,Road playoffseed.,heuristic,TRUE
+road_pointsagainst,Road pointsagainst.,heuristic,TRUE
+road_pointsfor,Road pointsfor.,heuristic,TRUE
+road_rk,Road rk.,heuristic,TRUE
+road_streak,Road streak.,heuristic,TRUE
+road_team,Road team.,heuristic,TRUE
+road_winpercent,Road winpercent.,heuristic,TRUE
+road_wins,Road wins.,heuristic,TRUE
+role,Role.,heuristic,TRUE
+roster_href,URL for roster.,heuristic,TRUE
+round,Tournament / playoff round.,curated,FALSE
+round_name,Round display name.,curated,FALSE
+round_number,Numeric round.,curated,FALSE
+rpg,Rebounds per game.,curated,FALSE
+rtg,Rtg.,heuristic,TRUE
+s,S.,heuristic,TRUE
+s16,S16.,heuristic,TRUE
+scc,Scc.,heuristic,TRUE
+school,Player's school / college (when distinct from 'college').,curated,FALSE
+school_name,Player's school / college name.,curated,FALSE
+score,Final score.,curated,FALSE
+score_away,Score away.,heuristic,TRUE
+score_home,Score home.,heuristic,TRUE
+score_margin,Score margin.,heuristic,TRUE
+score_team_id,Team ID credited with the scoring play.,curated,FALSE
+score_value,Point value of the play (2 / 3 / 1).,curated,FALSE
+scoring_efficiency,Scoring Efficiency.,espn_api,FALSE
+scoring_play,TRUE if the play resulted in points scored.,curated,FALSE
+screen_assist_points,Points generated from screen assists.,curated,FALSE
+screen_assists,Screen assists (resulting in a basket).,curated,FALSE
+sdr,Sdr.,heuristic,TRUE
+sdur,Sdur.,heuristic,TRUE
+season,Season identifier (4-digit year or 'YYYY-YY' string).,curated,FALSE
+season_display_name,Season display label.,curated,FALSE
+season_end_date,Date in YYYY-MM-DD format.,heuristic,TRUE
+season_futures_ref,Season futures ref.,heuristic,TRUE
+season_id,Unique season identifier.,curated,FALSE
+season_segment,Season segment filter ('Pre All-Star' / 'Post All-Star').,curated,FALSE
+season_short_display_name,Season short display label.,curated,FALSE
+season_slug,Season slug.,heuristic,TRUE
+season_start_date,Date in YYYY-MM-DD format.,heuristic,TRUE
+season_type,"Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats).",curated,FALSE
+season_type_abbreviation,Season type abbreviation.,heuristic,TRUE
+season_type_description,Season type description.,heuristic,TRUE
+season_type_id,Unique identifier for season type.,heuristic,TRUE
+season_type_name,Season type name.,heuristic,TRUE
+season_type_type,Season type type.,heuristic,TRUE
+season_year,Season year string ('YYYY-YY' format).,curated,FALSE
+seasons_played,Number of seasons played.,curated,FALSE
+seasontype,"Season type ('Regular Season', 'Playoffs', 'Pre Season', 'All Star').",curated,FALSE
+seasontype_id,"Numeric season-type identifier (2 = regular, 3 = playoffs).",curated,FALSE
+seasontype_name,Season-type display name.,curated,FALSE
+second_chance_points,Second-chance points scored.,curated,FALSE
+second_chance_points_attempted,Number of second chance points attempted.,heuristic,TRUE
+second_chance_points_made,Number of second chance points made.,heuristic,TRUE
+second_chance_points_percentage,Second chance points percentage (0-1 decimal).,heuristic,TRUE
+second_chance_pts,Second-chance points scored.,curated,FALSE
+secondary_assists,Secondary assists.,heuristic,TRUE
+secondary_team_abbreviation,Secondary team abbreviation.,curated,FALSE
+secondary_team_color,Secondary team primary color.,curated,FALSE
+secondary_team_id,Secondary team identifier.,curated,FALSE
+secondary_team_logo,Secondary team logo URL.,curated,FALSE
+secondary_team_name,Secondary team name.,curated,FALSE
+secondary_team_record,Secondary team's record string.,curated,FALSE
+seconds_remaining,Seconds remaining in the period.,curated,FALSE
+seconds_remaining_quarter,Seconds remaining quarter.,heuristic,TRUE
+seed,Tournament seed.,curated,FALSE
+seed_display,Playoff seed display string.,curated,FALSE
+self_oop,Self oop.,heuristic,TRUE
+sellout,Sellout.,heuristic,TRUE
+sequence_number,Sequence number representing a shot-possession (V3 PBP).,curated,FALSE
+series_conference,Series conference.,heuristic,TRUE
+series_game_number,Series game number.,heuristic,TRUE
+series_text,Series text.,heuristic,TRUE
+sex,Athlete sex / gender ('male' / 'female').,curated,FALSE
+sf_hgt,Sf hgt.,heuristic,TRUE
+sf_hgt_rk,Sf hgt rk.,heuristic,TRUE
+sf_min_pct,Sf min percentage (0-1 decimal).,heuristic,TRUE
+sf_number,Sf number.,heuristic,TRUE
+sf_pct,Sf percentage (0-1 decimal).,heuristic,TRUE
+sf_pct_d1_avg,Sf pct d1 avg.,heuristic,TRUE
+sf_pct_rk,Sf pct rk.,heuristic,TRUE
+sf_player_first_name,Sf player first name.,heuristic,TRUE
+sf_player_last_name,Sf player last name.,heuristic,TRUE
+sf_wgt,Sf wgt.,heuristic,TRUE
+sf_yr,Sf yr.,heuristic,TRUE
+sg_hgt,Sg hgt.,heuristic,TRUE
+sg_hgt_rk,Sg hgt rk.,heuristic,TRUE
+sg_min_pct,Sg min percentage (0-1 decimal).,heuristic,TRUE
+sg_number,Sg number.,heuristic,TRUE
+sg_pct,Sg percentage (0-1 decimal).,heuristic,TRUE
+sg_pct_d1_avg,Sg pct d1 avg.,heuristic,TRUE
+sg_pct_rk,Sg pct rk.,heuristic,TRUE
+sg_player_first_name,Sg player first name.,heuristic,TRUE
+sg_player_last_name,Sg player last name.,heuristic,TRUE
+sg_wgt,Sg wgt.,heuristic,TRUE
+sg_yr,Sg yr.,heuristic,TRUE
+shooter_first_name,Shooter first name.,heuristic,TRUE
+shooter_id,Unique identifier for shooter.,heuristic,TRUE
+shooter_last_name,Shooter last name.,heuristic,TRUE
+shooter_name,Shooter name (for shot events).,curated,FALSE
+shooting_efficiency,Shooting Efficiency.,espn_api,FALSE
+shooting_fouls,Shooting fouls.,heuristic,TRUE
+shooting_play,TRUE if the play was a shooting attempt.,curated,FALSE
+short_abbreviation,Short abbreviation.,curated,FALSE
+short_caption,Short caption.,curated,FALSE
+short_description,Short description text.,curated,FALSE
+short_display_name,Short display name.,curated,FALSE
+short_headline,Short news headline.,curated,FALSE
+short_link,Short URL link.,curated,FALSE
+short_name,Short display name.,curated,FALSE
+short_text,Short text label.,curated,FALSE
+shot_action_number,Shot action number.,heuristic,TRUE
+shot_attempted,1 if a shot was attempted on this event.,curated,FALSE
+shot_attempted_flag,1 if a shot was attempted on this event.,curated,FALSE
+shot_chart_x,"X coordinate on the shot chart (feet from basket; 0 = center).""",curated,FALSE
+shot_chart_y,Y coordinate on the shot chart (feet; basket at 0).,curated,FALSE
+shot_distance,"Shot distance from the basket, in feet.",curated,FALSE
+shot_length,Shot length.,heuristic,TRUE
+shot_made,1 if the shot was made.,curated,FALSE
+shot_made_flag,1 if the shot was made; 0 if missed.,curated,FALSE
+shot_release_point,Shot release point.,heuristic,TRUE
+shot_result,Shot result ('Made' / 'Missed').,curated,FALSE
+shot_type,"Shot type label (e.g. 'Jump Shot', 'Layup').",curated,FALSE
+shot_value,Point value of the shot (2 or 3).,curated,FALSE
+shot_zone_area,"Shot zone area ('Left Side', 'Right Side', 'Center').",curated,FALSE
+shot_zone_basic,"Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3').",curated,FALSE
+shot_zone_range,"Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.).",curated,FALSE
+shots_pct,Shots percentage (0-1 decimal).,heuristic,TRUE
+shots_pct_rk,Shots pct rk.,heuristic,TRUE
+side,"Side label (e.g. 'home', 'away', or 'overUnder').",curated,FALSE
+slug,URL-safe identifier.,curated,FALSE
+sort_value,Sort key for ordering rows.,curated,FALSE
+sos_adj_em,Sos adj em.,heuristic,TRUE
+sos_adj_em_rk,Sos adj em rk.,heuristic,TRUE
+sos_opp_d,Sos opp d.,heuristic,TRUE
+sos_opp_d_rk,Sos opp d rk.,heuristic,TRUE
+sos_opp_o,Sos opp o.,heuristic,TRUE
+sos_opp_o_rk,Sos opp o rk.,heuristic,TRUE
+speed,Speed.,heuristic,TRUE
+spg,Steals per game.,curated,FALSE
+spread,Spread.,heuristic,TRUE
+srt,Srt.,heuristic,TRUE
+start,Start.,heuristic,TRUE
+start_date,Start date (YYYY-MM-DD).,curated,FALSE
+start_game_seconds_remaining,Seconds remaining in the game at the start of the play.,curated,FALSE
+start_half_seconds_remaining,Seconds remaining in the half at the start of the play.,curated,FALSE
+start_quarter_seconds_remaining,Seconds remaining in the period at the start of the play.,curated,FALSE
+starter,TRUE if the player was in the starting lineup; FALSE otherwise.,curated,FALSE
+stat,Stat.,heuristic,TRUE
+state,State / region.,curated,FALSE
+status,Status label.,curated,FALSE
+status_abbreviation,Status abbreviation.,heuristic,TRUE
+status_clock,Status clock.,heuristic,TRUE
+status_display_clock,Status display clock.,heuristic,TRUE
+status_id,Status identifier.,curated,FALSE
+status_name,Status label.,curated,FALSE
+status_period,Status period.,heuristic,TRUE
+status_type,Status type.,heuristic,TRUE
+status_type_alt_detail,Status type alt detail.,heuristic,TRUE
+status_type_completed,Status type completed.,heuristic,TRUE
+status_type_description,Status type description.,heuristic,TRUE
+status_type_detail,Status type detail.,heuristic,TRUE
+status_type_id,Unique identifier for status type.,heuristic,TRUE
+status_type_name,Status type name.,heuristic,TRUE
+status_type_short_detail,Status type short detail.,heuristic,TRUE
+status_type_state,Status type state.,heuristic,TRUE
+steal_person_id,Unique identifier for steal person.,heuristic,TRUE
+steal_player_name,Steal player name.,heuristic,TRUE
+steal_to_turnover_ratio,Steal To Turnover Ratio.,espn_api,FALSE
+steals,Total steals.,curated,FALSE
+steals_per_game,Steals Per Game.,espn_api,FALSE
+sth,Sth.,heuristic,TRUE
+stl,Steals.,curated,FALSE
+stl_pct,Steals percentage (0-1 decimal).,heuristic,TRUE
+stl_pct_rk,Stl pct rk.,heuristic,TRUE
+stl_to_ratio,Steal-to-turnover ratio.,curated,FALSE
+stp,Stp.,heuristic,TRUE
+streak,Current streak (e.g. 'W3' for three-game win streak).,curated,FALSE
+streak_length,Current streak length in games.,curated,FALSE
+streak_type,Current streak type ('win' or 'loss').,curated,FALSE
+stt,Stt.,heuristic,TRUE
+stw,Stw.,heuristic,TRUE
+style_subscore,Style subscore.,heuristic,TRUE
+sub_heading,Section sub-heading.,curated,FALSE
+sub_in_player_id,Player ID coming in (substitution).,curated,FALSE
+sub_label,Secondary label.,curated,FALSE
+sub_out_player_id,Player ID going out (substitution).,curated,FALSE
+sub_text,Secondary text label.,curated,FALSE
+sub_type,Action sub-type label.,curated,FALSE
+substitute_in_name,Player coming in (substitution).,curated,FALSE
+substitute_out_name,Player going out (substitution).,curated,FALSE
+surl,Surl.,heuristic,TRUE
+switches_on,Switches on.,heuristic,TRUE
+t,T.,heuristic,TRUE
+takeoff_distance,Takeoff distance.,heuristic,TRUE
+team,Team-side label or team identifier.,curated,FALSE
+team.link,character.,describe:data.R,FALSE
+team.link.ref,character.,describe:data.R,FALSE
+team1,Team1.,heuristic,TRUE
+team1_rk,Team1 rk.,heuristic,TRUE
+team1score,Team1score.,heuristic,TRUE
+team2,Team2.,heuristic,TRUE
+team2_rk,Team2 rk.,heuristic,TRUE
+team2score,Team2score.,heuristic,TRUE
+team_abbr,Team abbr.,heuristic,TRUE
+team_abbreviation,Short team abbreviation (e.g. 'LAS').,curated,FALSE
+team_alternate_color,Team alternate color (hex without leading '#').,curated,FALSE
+team_app_url,URL for team app.,heuristic,TRUE
+team_away_leaders_assists,Team away leaders assists.,heuristic,TRUE
+team_away_leaders_jersey_num,Team away leaders jersey num.,heuristic,TRUE
+team_away_leaders_name,Team away leaders name.,heuristic,TRUE
+team_away_leaders_person_id,Unique identifier for team away leaders person.,heuristic,TRUE
+team_away_leaders_player_slug,Team away leaders player slug.,heuristic,TRUE
+team_away_leaders_points,Team away leaders points.,heuristic,TRUE
+team_away_leaders_position,Team away leaders position.,heuristic,TRUE
+team_away_leaders_rebounds,Team away leaders rebounds.,heuristic,TRUE
+team_away_leaders_team_tricode,Team away leaders team tricode.,heuristic,TRUE
+team_box,Team box.,heuristic,TRUE
+team_city,Team city or region (e.g. 'Las Vegas').,curated,FALSE
+team_color,Team primary color (hex without leading '#').,curated,FALSE
+team_color_alt,Team alternate color (hex).,curated,FALSE
+team_display_name,Full team display name.,curated,FALSE
+team_finish,Team finish.,heuristic,TRUE
+team_full_name,Full team name (e.g. 'Las Vegas Aces').,curated,FALSE
+team_guid,ESPN team GUID.,curated,FALSE
+team_home_away,Team home away.,heuristic,TRUE
+team_home_leaders_assists,Team home leaders assists.,heuristic,TRUE
+team_home_leaders_jersey_num,Team home leaders jersey num.,heuristic,TRUE
+team_home_leaders_name,Team home leaders name.,heuristic,TRUE
+team_home_leaders_person_id,Unique identifier for team home leaders person.,heuristic,TRUE
+team_home_leaders_player_slug,Team home leaders player slug.,heuristic,TRUE
+team_home_leaders_points,Team home leaders points.,heuristic,TRUE
+team_home_leaders_position,Team home leaders position.,heuristic,TRUE
+team_home_leaders_rebounds,Team home leaders rebounds.,heuristic,TRUE
+team_home_leaders_team_tricode,Team home leaders team tricode.,heuristic,TRUE
+team_id,Unique team identifier.,curated,FALSE
+team_in_bonus,Team in bonus.,heuristic,TRUE
+team_is_active,TRUE if the team is currently active.,curated,FALSE
+team_is_all_star,TRUE if the row represents an All-Star team.,curated,FALSE
+team_leading,Team leading.,heuristic,TRUE
+team_links,JSON array of team-related links.,curated,FALSE
+team_location,Team city or location string.,curated,FALSE
+team_logo,Team logo image URL.,curated,FALSE
+team_logo_dark,Team logo URL for dark backgrounds.,curated,FALSE
+team_logo_href,Team logo URL.,curated,FALSE
+team_losses,Team losses.,heuristic,TRUE
+team_name,Full team display name (e.g. 'Las Vegas Aces').,curated,FALSE
+team_name_full,Team name full.,heuristic,TRUE
+team_nickname,Team nickname.,heuristic,TRUE
+team_permalink,Team permalink.,heuristic,TRUE
+team_picked_first_round,Team picked first round.,heuristic,TRUE
+team_picked_second_round,Team picked second round.,heuristic,TRUE
+team_points,Team points.,heuristic,TRUE
+team_rebounds,Team rebounds (rebounds credited to the team rather than a player).,curated,FALSE
+team_record,Team record string (e.g. '8-3' or '8-3 Overall').,curated,FALSE
+team_rk,Team rk.,heuristic,TRUE
+team_score,Team's score / final score.,curated,FALSE
+team_sdr,ESPN team SDR identifier.,curated,FALSE
+team_season,Team season.,heuristic,TRUE
+team_season_leaders_flag,Team season leaders flag.,heuristic,TRUE
+team_short_display_name,Short team display name (e.g. 'Aces').,curated,FALSE
+team_short_name,Short team display name.,curated,FALSE
+team_slug,URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces').,curated,FALSE
+team_team_abbr,Team team abbr.,heuristic,TRUE
+team_team_id,Unique identifier for team team.,heuristic,TRUE
+team_team_name,Team team name.,heuristic,TRUE
+team_team_record_playoffs_finish,Team team record playoffs finish.,heuristic,TRUE
+team_team_record_season,Team team record season.,heuristic,TRUE
+team_team_record_season_finish,Team team record season finish.,heuristic,TRUE
+team_team_record_wins_and_losses,Team team record wins and losses.,heuristic,TRUE
+team_timeouts_remaining,Team timeouts remaining.,heuristic,TRUE
+team_trade_details,Team trade details.,heuristic,TRUE
+team_tricode,Three-letter team code (e.g. 'LAS' / 'NYL').,curated,FALSE
+team_turnover_percentage,Team turnover percentage (0-1).,curated,FALSE
+team_turnovers,Team turnovers (turnovers credited to the team rather than a player).,curated,FALSE
+team_type,Team type.,heuristic,TRUE
+team_uid,ESPN universal team identifier (UID format 's:40~l:...~t:...').,curated,FALSE
+team_url,URL for team.,heuristic,TRUE
+team_winner,TRUE if the team won this game.,curated,FALSE
+team_wins,Team wins.,heuristic,TRUE
+teamabbreviation,Teamabbreviation.,heuristic,TRUE
+teamcity,Teamcity.,heuristic,TRUE
+teamid,Teamid.,heuristic,TRUE
+teamname,Teamname.,heuristic,TRUE
+technical_fouls,Total technical fouls.,curated,FALSE
+tempo,Tempo.,heuristic,TRUE
+tempo_rk,Tempo rk.,heuristic,TRUE
+tension,Tension.,heuristic,TRUE
+tension_rk,Tension rk.,heuristic,TRUE
+tension_season_rk,Tension season rk.,heuristic,TRUE
+text,Text description of the play / record.,curated,FALSE
+text_type,Type of the text field.,curated,FALSE
+three_point_field_goal_pct,Three-point field goal percentage (0-1).,curated,FALSE
+three_point_field_goals_attempted,Three-point field goal attempts.,curated,FALSE
+three_point_field_goals_made,Three-point field goals made.,curated,FALSE
+three_point_field_goals_made_three_point_field_goals_attempted,3-Point Field Goals Made-Attempted.,espn_api,FALSE
+three_point_field_goals_percentage,Three-point field goal percentage (0-1).,curated,FALSE
+three_point_pct,3-Point Field Goal Percentage.,espn_api,FALSE
+three_pointers_attempted,Three-point field goal attempts.,curated,FALSE
+three_pointers_made,Three-point field goals made.,curated,FALSE
+three_pointers_percentage,Three-point field goal percentage (0-1 decimal).,curated,FALSE
+thrill_score,Thrill score.,heuristic,TRUE
+through_the_legs,Through the legs.,heuristic,TRUE
+tie_percentage,Tie percentage (0-1 decimal).,heuristic,TRUE
+tiers_of_joy,Tiers of joy.,heuristic,TRUE
+time,Time / clock value.,heuristic,TRUE
+time_actual,Time actual.,heuristic,TRUE
+time_et,Time et.,heuristic,TRUE
+time_leading,Time leading.,heuristic,TRUE
+time_left,Time left.,heuristic,TRUE
+time_quarter,Time quarter.,heuristic,TRUE
+time_remaining,Time remaining.,heuristic,TRUE
+time_valid,Time valid.,heuristic,TRUE
+times_tied,Times tied.,heuristic,TRUE
+timestamp,ISO 8601 UTC timestamp.,curated,FALSE
+tip_in,Tip in.,heuristic,TRUE
+title,Title or label for the record.,curated,FALSE
+to,To.,heuristic,TRUE
+to_pct,To percentage (0-1 decimal).,heuristic,TRUE
+to_pct_rk,To pct rk.,heuristic,TRUE
+to_rate,To rate.,heuristic,TRUE
+to_rate_rk,To rate rk.,heuristic,TRUE
+top10,Top10.,heuristic,TRUE
+top25,Top25.,heuristic,TRUE
+top50,Top50.,heuristic,TRUE
+total,Total.,heuristic,TRUE
+total_actions,Total number of actions recorded for the player / team.,curated,FALSE
+total_ball_acceleration,Total ball acceleration.,heuristic,TRUE
+total_rebound_percentage,Total rebound percentage (0-1).,curated,FALSE
+total_rebounds,Total rebounds.,curated,FALSE
+total_technical_fouls,Total technical fouls (player + team).,curated,FALSE
+total_turnovers,Total turnovers (player + team).,curated,FALSE
+touches,Touches.,heuristic,TRUE
+tournament_id,Unique identifier for tournament.,heuristic,TRUE
+tourney_champ,Tourney champ.,heuristic,TRUE
+tov,Turnovers.,curated,FALSE
+tov_pct,Turnover percentage (0-1).,curated,FALSE
+trade_details,Trade details.,heuristic,TRUE
+trend,Trend.,heuristic,TRUE
+triple_double,TRUE if the player recorded a triple-double in this game.,curated,FALSE
+true_shooting_attempts,Number of true shooting attempted.,heuristic,TRUE
+true_shooting_percentage,True shooting percentage (0-1).,curated,FALSE
+ts_pct,True shooting percentage (0-1).,curated,FALSE
+ts_pct_rk,Ts pct rk.,heuristic,TRUE
+turnover_percentage,Turnover percentage (0-1).,curated,FALSE
+turnover_points,Turnover points.,heuristic,TRUE
+turnover_ratio,Turnover ratio (turnovers per 100 possessions used).,curated,FALSE
+turnover_total,Turnover total.,heuristic,TRUE
+turnovers,Total turnovers.,curated,FALSE
+turnovers_per_game,Turnovers Per Game.,espn_api,FALSE
+turnovers_team,Turnovers team.,heuristic,TRUE
+turnovers_total,Turnovers total.,heuristic,TRUE
+two_foul_particpation_pct,Two foul particpation percentage (0-1 decimal).,heuristic,TRUE
+two_foul_particpation_pct_rk,Two foul particpation pct rk.,heuristic,TRUE
+two_foul_time_on,Two foul time on.,heuristic,TRUE
+two_foul_time_on_rk,Two foul time on rk.,heuristic,TRUE
+two_foul_total_time,Time / clock value.,heuristic,TRUE
+two_foul_total_time_rk,Two foul total time rk.,heuristic,TRUE
+two_point_field_goal_pct,Two-point field goal percentage (0-1).,curated,FALSE
+two_point_field_goals_attempted,Two-point field goal attempts.,curated,FALSE
+two_point_field_goals_made,Two-point field goals made.,curated,FALSE
+two_point_field_goals_percentage,Two-point field goal percentage (0-1).,curated,FALSE
+two_pointers_attempted,Number of two pointers attempted.,heuristic,TRUE
+two_pointers_made,Number of two pointers made.,heuristic,TRUE
+two_pointers_percentage,Two pointers percentage (0-1 decimal).,heuristic,TRUE
+type,Record type / category.,curated,FALSE
+type_abbreviation,Type abbreviation.,heuristic,TRUE
+type_id,Type identifier (numeric).,curated,FALSE
+type_text,Display text for the type field.,curated,FALSE
+uid,ESPN UID string (universal identifier).,curated,FALSE
+uncontested_field_goals_attempted,Number of uncontested field goals attempted.,heuristic,TRUE
+uncontested_field_goals_made,Number of uncontested field goals made.,heuristic,TRUE
+uncontested_field_goals_percentage,Uncontested field goals percentage (0-1 decimal).,heuristic,TRUE
+url,Resource URL.,curated,FALSE
+url_path,URL path (relative to host).,curated,FALSE
+usage_percentage,Usage percentage (0-1).,curated,FALSE
+usg_pct,Usage percentage (0-1).,curated,FALSE
+uuid,Uuid.,heuristic,TRUE
+va,Va.,heuristic,TRUE
+valid,Valid.,heuristic,TRUE
+value,Numeric or string value field.,curated,FALSE
+venue,Venue name.,curated,FALSE
+venue_address_city,Venue address city.,curated,FALSE
+venue_address_state,Venue address state / region.,curated,FALSE
+venue_capacity,Venue seating capacity.,curated,FALSE
+venue_city,Venue city.,curated,FALSE
+venue_full_name,Venue full name.,heuristic,TRUE
+venue_id,Unique venue identifier.,curated,FALSE
+venue_indoor,TRUE if the venue is indoors.,curated,FALSE
+venue_name,Venue name.,curated,FALSE
+venue_state,Venue state / region.,curated,FALSE
+venue_zipcode,Venue zip / postal code.,curated,FALSE
+verified,TRUE if the record is verified.,curated,FALSE
+vid,Vid.,heuristic,TRUE
+video_available,Video available.,heuristic,TRUE
+video_available_flag,Video available flag.,heuristic,TRUE
+visitor,Visitor.,heuristic,TRUE
+visitor_description,Visitor description.,heuristic,TRUE
+visitor_score,Visitor score.,heuristic,TRUE
+visitor_scoring,Visitor scoring.,heuristic,TRUE
+vpa,Vpa.,heuristic,TRUE
+vpb,Vpb.,heuristic,TRUE
+vs_above_500_record,Win-loss record vs teams above .500.,curated,FALSE
+vs_below_500_record,Win-loss record vs teams at or below .500.,curated,FALSE
+vsaprankedteams,Vsaprankedteams.,heuristic,TRUE
+vsaprankedteams_avgpointsagainst,Vsaprankedteams avgpointsagainst.,heuristic,TRUE
+vsaprankedteams_avgpointsfor,Vsaprankedteams avgpointsfor.,heuristic,TRUE
+vsaprankedteams_gamesbehind,Vsaprankedteams gamesbehind.,heuristic,TRUE
+vsaprankedteams_leaguewinpercent,Vsaprankedteams leaguewinpercent.,heuristic,TRUE
+vsaprankedteams_losses,Vsaprankedteams losses.,heuristic,TRUE
+vsaprankedteams_playoffseed,Vsaprankedteams playoffseed.,heuristic,TRUE
+vsaprankedteams_pointsagainst,Vsaprankedteams pointsagainst.,heuristic,TRUE
+vsaprankedteams_pointsfor,Vsaprankedteams pointsfor.,heuristic,TRUE
+vsaprankedteams_streak,Vsaprankedteams streak.,heuristic,TRUE
+vsaprankedteams_winpercent,Vsaprankedteams winpercent.,heuristic,TRUE
+vsaprankedteams_wins,Vsaprankedteams wins.,heuristic,TRUE
+vsconf,Vsconf.,heuristic,TRUE
+vsconf_avgpointsagainst,Vsconf avgpointsagainst.,heuristic,TRUE
+vsconf_avgpointsfor,Vsconf avgpointsfor.,heuristic,TRUE
+vsconf_gamesbehind,Vsconf gamesbehind.,heuristic,TRUE
+vsconf_leaguewinpercent,Vsconf leaguewinpercent.,heuristic,TRUE
+vsconf_losses,Vsconf losses.,heuristic,TRUE
+vsconf_playoffseed,Vsconf playoffseed.,heuristic,TRUE
+vsconf_pointsagainst,Vsconf pointsagainst.,heuristic,TRUE
+vsconf_pointsfor,Vsconf pointsfor.,heuristic,TRUE
+vsconf_streak,Vsconf streak.,heuristic,TRUE
+vsconf_winpercent,Vsconf winpercent.,heuristic,TRUE
+vsconf_wins,Vsconf wins.,heuristic,TRUE
+vsdiv,Vsdiv.,heuristic,TRUE
+vsusarankedteams,Vsusarankedteams.,heuristic,TRUE
+vsusarankedteams_avgpointsagainst,Vsusarankedteams avgpointsagainst.,heuristic,TRUE
+vsusarankedteams_avgpointsfor,Vsusarankedteams avgpointsfor.,heuristic,TRUE
+vsusarankedteams_gamesbehind,Vsusarankedteams gamesbehind.,heuristic,TRUE
+vsusarankedteams_leaguewinpercent,Vsusarankedteams leaguewinpercent.,heuristic,TRUE
+vsusarankedteams_losses,Vsusarankedteams losses.,heuristic,TRUE
+vsusarankedteams_playoffseed,Vsusarankedteams playoffseed.,heuristic,TRUE
+vsusarankedteams_pointsagainst,Vsusarankedteams pointsagainst.,heuristic,TRUE
+vsusarankedteams_pointsfor,Vsusarankedteams pointsfor.,heuristic,TRUE
+vsusarankedteams_streak,Vsusarankedteams streak.,heuristic,TRUE
+vsusarankedteams_winpercent,Vsusarankedteams winpercent.,heuristic,TRUE
+vsusarankedteams_wins,Vsusarankedteams wins.,heuristic,TRUE
+vtt,Vtt.,heuristic,TRUE
+w,Wins.,curated,FALSE
+w_conference,W conference.,heuristic,TRUE
+w_conference_proj,W conference proj.,heuristic,TRUE
+w_l,W l.,heuristic,TRUE
+w_proj,W proj.,heuristic,TRUE
+wallclock,Wallclock.,heuristic,TRUE
+wc_time_string,Wc time string.,heuristic,TRUE
+weather_condition,Weather condition description.,curated,FALSE
+weather_temperature,Weather temperature.,curated,FALSE
+weather_type,Weather type label.,curated,FALSE
+week,Week number within the season.,curated,FALSE
+week_name,Week name.,heuristic,TRUE
+week_number,Week number.,heuristic,TRUE
+weight,Player weight in pounds.,curated,FALSE
+weight_kg,Player weight in kilograms.,curated,FALSE
+weight_lb,Player weight in pounds.,curated,FALSE
+wgt,Wgt.,heuristic,TRUE
+wh_status,Wh status.,heuristic,TRUE
+win_rk,Win rk.,heuristic,TRUE
+win_score,Win score.,heuristic,TRUE
+win_team,Win team.,heuristic,TRUE
+winner,Winner.,heuristic,TRUE
+winpercent,Winpercent.,heuristic,TRUE
+wins,Total wins.,curated,FALSE
+wl,Wl.,heuristic,TRUE
+wl_conf,Wl conf.,heuristic,TRUE
+worst_rk,Worst rk.,heuristic,TRUE
+worst_yr,Worst yr.,heuristic,TRUE
+wp,Wp.,heuristic,TRUE
+wp_note,Wp note.,heuristic,TRUE
+wt,Wt.,heuristic,TRUE
+x,X.,heuristic,TRUE
+x_legacy,V2-format X coordinate (preserved for V3-to-V2 compatibility).,curated,FALSE
+y,Y.,heuristic,TRUE
+y_legacy,V2-format Y coordinate (preserved for V3-to-V2 compatibility).,curated,FALSE
+year,4-digit year.,curated,FALSE
+year_max,Latest 4-digit year.,curated,FALSE
+year_min,Earliest 4-digit year.,curated,FALSE
+years,Years.,heuristic,TRUE
+yr,Yr.,heuristic,TRUE

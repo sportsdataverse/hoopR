@@ -1,0 +1,635 @@
+col_name,description
+team_name,Full team display name (e.g. 'Las Vegas Aces').
+team_slug,URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces').
+team_city,Team city or region (e.g. 'Las Vegas').
+team_tricode,Three-letter team code (e.g. 'LAS' / 'NYL').
+team_abbreviation,Short team abbreviation (e.g. 'LAS').
+team_display_name,Full team display name.
+team_short_display_name,"Short team display name (e.g. 'Aces')."
+team_location,Team city or location string.
+team_color,Team primary color (hex without leading '#').
+team_alternate_color,Team alternate color (hex without leading '#').
+team_logo,Team logo image URL.
+team_score,Team's score / final score.
+team_uid,ESPN universal team identifier (UID format 's:40~l:...~t:...').
+team_id,Unique team identifier.
+team_record,Team record string (e.g. '8-3' or '8-3 Overall').
+team_winner,TRUE if the team won this game.
+first_name,Player's first name.
+last_name,Player's last name.
+family_name,Player's family / last name.
+full_name,Player's full name.
+display_name,Display name.
+short_name,Short display name.
+name,Display name.
+name_i,"Initialed name (e.g. 'A. Wilson')."
+position,"Listed roster position (G, F, C, etc.)."
+jersey_num,Jersey number worn by the player.
+jersey,Jersey number worn by the player.
+player_slug,URL-safe player identifier.
+person_id,Unique player identifier (V3 endpoints).
+player_id,Unique player identifier.
+athlete_id,Unique athlete identifier (ESPN).
+athlete_name,Athlete display name (ESPN).
+height,Player height (string e.g. '6-2' or inches).
+weight,Player weight in pounds.
+birth_date,Date of birth (YYYY-MM-DD).
+birth_place,Place of birth.
+country,Country (full name or code).
+nationality,Nationality.
+college,College or school attended.
+draft_year,Draft year (4-digit).
+draft_round,Round of the draft selection.
+draft_pick,Pick number within the round.
+draft_overall,Overall pick number.
+minutes,"Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2)."
+points,Points scored.
+assists,Total assists.
+blocks,Total blocks.
+steals,Total steals.
+turnovers,Total turnovers.
+rebounds,Total rebounds.
+rebounds_total,Total rebounds.
+rebounds_offensive,Offensive rebounds.
+rebounds_defensive,Defensive rebounds.
+fouls_personal,Personal fouls.
+fouls_technical,Technical fouls.
+field_goals_made,Field goals made (2-pt + 3-pt).
+field_goals_attempted,Field goal attempts (2-pt + 3-pt).
+field_goals_percentage,Field goal percentage (0-1 decimal).
+three_pointers_made,Three-point field goals made.
+three_pointers_attempted,Three-point field goal attempts.
+three_pointers_percentage,Three-point field goal percentage (0-1 decimal).
+free_throws_made,Free throws made.
+free_throws_attempted,Free throw attempts.
+free_throws_percentage,Free throw percentage (0-1 decimal).
+plus_minus_points,Plus/minus point differential while on court.
+comment,"Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive')."
+starter,TRUE if the player was in the starting lineup; FALSE otherwise.
+title,Title or label for the record.
+type,Record type / category.
+status,Status label.
+abbreviation,Short abbreviation.
+deep_link,Deep link URL into wnba.com / espn.com.
+permode,"Per-mode aggregation ('Totals', 'PerGame', 'Per40', 'Per100Possessions', etc.)."
+per_mode,"Per-mode aggregation ('Totals', 'PerGame', 'Per40', 'Per100Possessions', etc.)."
+seasontype,"Season type ('Regular Season', 'Playoffs', 'Pre Season', 'All Star')."
+season_type,"Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats)."
+season,Season identifier (4-digit year or 'YYYY-YY' string).
+season_year,Season year string ('YYYY-YY' format).
+season_id,Unique season identifier.
+season_segment,"Season segment filter ('Pre All-Star' / 'Post All-Star')."
+game_id,Unique game identifier.
+game_date,Game date (YYYY-MM-DD).
+game_date_time,Game start date/time (ISO 8601).
+game_time,Game start time.
+date,Date in YYYY-MM-DD format.
+timestamp,ISO 8601 UTC timestamp.
+league_id,League identifier ('10' = WNBA).
+conference_id,Conference identifier.
+conference_name,Full conference name.
+conference_short_name,Conference short name (e.g. 'ACC').
+conference_uid,ESPN universal conference identifier.
+division,Team division.
+venue_id,Unique venue identifier.
+venue_name,Venue name.
+venue_city,Venue city.
+venue_state,Venue state / region.
+ranking,Ranking position.
+record,Record string (e.g. '12-4').
+href,Link / page URL.
+url,Resource URL.
+period,Period of the game (1-4 quarters; 5+ for OT).
+period_display_value,"Period display label (e.g. '1st Quarter', 'OT')."
+period_number,Numeric period (1-4 for quarters; 5+ for OT).
+clock,Game clock value.
+clock_display_value,"Game clock display string (e.g. '8:32')."
+home_score,Home team score at the time of the play.
+away_score,Away team score at the time of the play.
+home_team_id,Unique identifier for the home team.
+away_team_id,Unique identifier for the away team.
+gp,Games played.
+g,Games played.
+w,Wins.
+l,Losses.
+gs,Games started.
+min,Minutes played.
+fg,Field goals made.
+fga,Field goal attempts.
+fgm,Field goals made.
+fg_pct,Field goal percentage (0-1).
+fg3m,Three-point field goals made.
+fg3a,Three-point field goal attempts.
+fg3_pct,Three-point field goal percentage (0-1).
+ftm,Free throws made.
+fta,Free throw attempts.
+ft_pct,Free throw percentage (0-1).
+oreb,Offensive rebounds.
+dreb,Defensive rebounds.
+reb,Total rebounds.
+ast,Assists.
+stl,Steals.
+blk,Blocks.
+tov,Turnovers.
+pf,Personal fouls.
+pts,Points scored.
+plus_minus,Plus/minus point differential while on court.
+ts_pct,True shooting percentage (0-1).
+efg_pct,Effective field goal percentage (0-1).
+off_rating,"Offensive rating (points produced per 100 possessions)."
+def_rating,"Defensive rating (points allowed per 100 possessions)."
+net_rating,"Net rating (off rating - def rating)."
+pace,"Possessions per 48 minutes."
+ast_pct,Assist percentage (0-1).
+ast_to,Assist-to-turnover ratio.
+ast_ratio,"Assist ratio (assists per 100 possessions used)."
+oreb_pct,Offensive rebound percentage (0-1).
+dreb_pct,Defensive rebound percentage (0-1).
+reb_pct,Total rebound percentage (0-1).
+tov_pct,Turnover percentage (0-1).
+usg_pct,Usage percentage (0-1).
+pie,Player Impact Estimate (0-1).
+home_away,"Game venue label ('home' or 'away')."
+order,"Display order within the result set."
+event_id,Unique event / game identifier (ESPN).
+event_num,"Sequential event number within the game (V2 PBP)."
+event_type,"Event / play type code (V2 PBP)."
+play_id,Unique play identifier within a game.
+play_type,Play type code.
+action_id,"Unique action identifier within a game (V3 PBP)."
+action_number,"Sequential action number within a game (V3 PBP)."
+action_type,"Action type label (e.g. 'Made Shot', 'Substitution')."
+sub_type,Action sub-type label.
+official_id,Unique official / referee identifier.
+position_id,Unique position identifier.
+position_name,"Listed roster position ('Guard', 'Forward', 'Center')."
+position_abbreviation,"Position abbreviation ('G' / 'F' / 'C')."
+slug,URL-safe identifier.
+short_display_name,Short display name.
+mid_display_name,Medium-length display name.
+nickname,Team or athlete nickname.
+mascot,Team mascot.
+headline,News headline.
+description,Long-form description text.
+text,Text description of the play / record.
+text_type,Type of the text field.
+type,Record type / category.
+category,Category label.
+status_name,Status label.
+status_id,Status identifier.
+year,4-digit year.
+year_min,Earliest 4-digit year.
+year_max,Latest 4-digit year.
+side,"Side label (e.g. 'home', 'away', or 'overUnder')."
+team,Team-side label or team identifier.
+team_is_active,TRUE if the team is currently active.
+team_is_all_star,TRUE if the row represents an All-Star team.
+team_guid,ESPN team GUID.
+team_sdr,ESPN team SDR identifier.
+team_full_name,Full team name (e.g. 'Las Vegas Aces').
+team_logo_dark,Team logo URL for dark backgrounds.
+team_logo_href,Team logo URL.
+score,Final score.
+round,Tournament / playoff round.
+round_number,Numeric round.
+round_name,Round display name.
+seed,Tournament seed.
+wins,Total wins.
+losses,Total losses.
+draws,Total draws.
+gp,Games played.
+gs,Games started.
+mins,Minutes played.
+fast_break_points,Fast-break points scored.
+points_fast_break,Fast-break points scored.
+fast_break_pts,Fast-break points scored.
+second_chance_points,Second-chance points scored.
+points_second_chance,Second-chance points scored.
+second_chance_pts,Second-chance points scored.
+points_in_paint,Points scored in the paint.
+points_paint,Points scored in the paint.
+pts_paint,Points scored in the paint.
+points_off_turnovers,Points scored off opponent turnovers.
+pts_off_tov,Points scored off opponent turnovers.
+bench_points,Points scored by the bench.
+pts_bench,Points scored by the bench.
+largest_lead,Largest lead during the game.
+biggest_run,Largest scoring run.
+estimated_offensive_rating,"Estimated offensive rating (points per 100 possessions estimate)."
+estimated_defensive_rating,"Estimated defensive rating (points allowed per 100 possessions estimate)."
+estimated_net_rating,"Estimated net rating (off rating - def rating)."
+offensive_rating,"Offensive rating (points per 100 possessions)."
+defensive_rating,"Defensive rating (points allowed per 100 possessions)."
+net_rating,"Net rating (offensive - defensive)."
+estimated_pace,Estimated possessions per 48 minutes.
+estimated_usage_percentage,Estimated usage percentage (0-1).
+estimated_team_turnover_percentage,Estimated team turnover percentage (0-1).
+team_turnover_percentage,Team turnover percentage (0-1).
+turnover_ratio,"Turnover ratio (turnovers per 100 possessions used)."
+assist_to_turnover,Assist-to-turnover ratio.
+assist_ratio,"Assist ratio (assists per 100 possessions used)."
+assist_percentage,Assist percentage (0-1).
+true_shooting_percentage,True shooting percentage (0-1).
+effective_field_goal_percentage,Effective field goal percentage (0-1).
+usage_percentage,Usage percentage (0-1).
+offensive_rebound_percentage,Offensive rebound percentage (0-1).
+defensive_rebound_percentage,Defensive rebound percentage (0-1).
+total_rebound_percentage,Total rebound percentage (0-1).
+rebound_percentage,Total rebound percentage (0-1).
+turnover_percentage,Turnover percentage (0-1).
+possessions,Possessions used.
+defensive_rebounds,Defensive rebounds.
+offensive_rebounds,Offensive rebounds.
+total_rebounds,Total rebounds.
+fouls,Personal fouls.
+fouls_drawn,Personal fouls drawn (by opponent's actions).
+fouls_technical,Technical fouls.
+fouls_offensive,Offensive fouls.
+charges_drawn,Charges drawn.
+blocks_against,Shots blocked by opponents while attempting.
+blocks_received,Shots blocked by opponents while attempting.
+contested_shots,Defensively contested shots.
+contested_shots_2pt,Contested two-point shots.
+contested_shots_3pt,Contested three-point shots.
+deflections,Defensive deflections.
+loose_balls_recovered,Loose balls recovered.
+loose_balls_recovered_offensive,Loose balls recovered on offense.
+loose_balls_recovered_defensive,Loose balls recovered on defense.
+screen_assists,Screen assists (resulting in a basket).
+screen_assist_points,Points generated from screen assists.
+box_outs,Box-outs executed.
+box_out_player_rebounds,Box-outs that led to a player rebound.
+box_out_player_team_rebounds,Box-outs that led to either a player or team rebound.
+three_point_field_goals_made,Three-point field goals made.
+three_point_field_goals_attempted,Three-point field goal attempts.
+three_point_field_goals_percentage,Three-point field goal percentage (0-1).
+two_point_field_goals_made,Two-point field goals made.
+two_point_field_goals_attempted,Two-point field goal attempts.
+two_point_field_goals_percentage,Two-point field goal percentage (0-1).
+shot_distance,"Shot distance from the basket, in feet."
+shot_value,"Point value of the shot (2 or 3)."
+shot_result,"Shot result ('Made' / 'Missed')."
+shot_type,"Shot type label (e.g. 'Jump Shot', 'Layup')."
+shot_made_flag,1 if the shot was made; 0 if missed.
+shot_attempted_flag,1 if a shot was attempted on this event.
+shot_zone_basic,"Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3')."
+shot_zone_area,"Shot zone area ('Left Side', 'Right Side', 'Center')."
+shot_zone_range,"Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.)."
+shot_chart_x,X coordinate on the shot chart (feet from basket; 0 = center)."
+shot_chart_y,Y coordinate on the shot chart (feet; basket at 0).
+loc_x,X coordinate on the court (units of inches; 0 = basket center).
+loc_y,Y coordinate on the court (units of inches; baseline at 0).
+coordinate_x,X coordinate on the court (half-court layout).
+coordinate_y,Y coordinate on the court (half-court layout).
+coordinate_x_raw,X coordinate as returned by the API before any adjustment.
+coordinate_y_raw,Y coordinate as returned by the API before any adjustment.
+x_legacy,V2-format X coordinate (preserved for V3-to-V2 compatibility).
+y_legacy,V2-format Y coordinate (preserved for V3-to-V2 compatibility).
+is_field_goal,1 if the action was a field goal; 0 otherwise.
+points_total,Running total of points scored.
+home_score,Home team score at the time of the play.
+away_score,Away team score at the time of the play.
+home_team_score,Home team's score.
+away_team_score,Away team's score.
+home_team_color,Home team primary color (hex).
+home_team_alternate_color,Home team alternate color (hex).
+home_team_logo,Home team logo URL.
+home_team_logo_dark,Home team logo URL for dark backgrounds.
+home_team_full_name,"Full home team name (e.g. 'Las Vegas Aces')."
+home_team_tricode,Home team three-letter code.
+home_team_city,Home team city / location.
+home_team_record,Home team's win-loss record.
+home_team_winner,TRUE if the home team won this game.
+away_team_color,Away team primary color (hex).
+away_team_alternate_color,Away team alternate color (hex).
+away_team_logo,Away team logo URL.
+away_team_logo_dark,Away team logo URL for dark backgrounds.
+away_team_full_name,"Full away team name (e.g. 'Las Vegas Aces')."
+away_team_tricode,Away team three-letter code.
+away_team_city,Away team city / location.
+away_team_record,Away team's win-loss record.
+away_team_winner,TRUE if the away team won this game.
+opponent_team_id,Unique identifier for the opponent team.
+opponent_team_name,Opponent team display name.
+opponent_team_abbreviation,Opponent team abbreviation.
+opponent_team_display_name,Opponent team full display name.
+opponent_team_short_display_name,Opponent team short display name.
+opponent_team_location,Opponent team city / location.
+opponent_team_color,Opponent team primary color (hex).
+opponent_team_alternate_color,Opponent team alternate color (hex).
+opponent_team_logo,Opponent team logo URL.
+opponent_team_logo_dark,Opponent team logo URL for dark backgrounds.
+opponent_team_score,Opponent team's score.
+athlete_id,Unique athlete identifier (ESPN).
+athlete_id_1,"Primary athlete identifier (e.g. shooter)."
+athlete_id_2,Secondary athlete identifier (e.g. assister / fouler).
+athlete_uid,ESPN athlete UID (universal identifier).
+athlete_guid,ESPN athlete GUID.
+athlete_name,Athlete display name.
+athlete_display_name,Athlete display name (full).
+athlete_short_name,Athlete short display name.
+athlete_full_name,Athlete full name.
+athlete_first_name,Athlete first name.
+athlete_last_name,Athlete last name.
+athlete_jersey,Athlete jersey number.
+athlete_position_name,"Athlete position ('Guard', 'Forward', 'Center')."
+athlete_position_abbreviation,Athlete position abbreviation (G / F / C).
+athlete_headshot_href,Athlete headshot image URL.
+athlete_type,Athlete type / class.
+athlete_links,JSON array of athlete-related links (serialized).
+player1_id,V2 PBP primary player ID (e.g. shooter / fouler).
+player2_id,V2 PBP secondary player ID (e.g. assister / fouled-by).
+player3_id,V2 PBP tertiary player ID (e.g. blocker).
+player1_name,V2 PBP primary player name.
+player2_name,V2 PBP secondary player name.
+player3_name,V2 PBP tertiary player name.
+player1_team_id,Team ID of player1.
+player2_team_id,Team ID of player2.
+player3_team_id,Team ID of player3.
+did_not_play,TRUE if the player did not appear in the game.
+active,TRUE if the row represents an active record (player / team / season).
+ejected,TRUE if the player was ejected from the game.
+age,Player age (in years).
+date_of_birth,Date of birth (YYYY-MM-DD).
+birthplace,Birthplace string.
+status,Status label (e.g. for a player or game).
+game_status_text,"Game status display text (e.g. 'Final', '4:32 - 4th')."
+game_status_id,Numeric game status identifier.
+attendance,Reported attendance.
+broadcaster,Broadcaster name or label.
+network,Broadcasting network.
+headshot,Headshot image URL.
+headshot_href,Headshot image URL.
+headshot_alt,Alternative-text label for the headshot.
+logo,Team or league logo URL.
+logo_href,Team or league logo URL.
+logo_dark_href,Logo URL for dark backgrounds.
+color,Primary color (hex without leading '#').
+alternate_color,Alternate color (hex without leading '#').
+home_logo,Home team logo URL.
+away_logo,Away team logo URL.
+link_web,Web link / URL.
+link_mobile,Mobile link / URL.
+link_app,App / deep link URL.
+published,Publication timestamp (ISO 8601).
+last_modified,Last-modified timestamp (ISO 8601).
+date_published,Publication date (YYYY-MM-DD).
+description_long,Long-form description text.
+description_short,Short description text.
+caption,Image / video caption.
+images,JSON array of image objects (serialized).
+keywords,Comma-separated keywords / tags.
+short_text,Short text label.
+start_date,Start date (YYYY-MM-DD).
+end_date,End date (YYYY-MM-DD).
+display_date,Date display string.
+day,Day number within the month.
+month,Month number.
+month_name,Full month name.
+week,Week number within the season.
+seasontype_id,Numeric season-type identifier (2 = regular, 3 = playoffs).
+seasontype_name,Season-type display name.
+value,Numeric or string value field.
+display_value,Human-readable display value.
+abbreviation,Short abbreviation.
+short_abbreviation,Short abbreviation.
+sort_value,Sort key for ordering rows.
+ranking,Numeric ranking.
+record,Win-loss record string.
+record_summary,Win-loss record summary string.
+record_division,Division win-loss record.
+record_conference,Conference win-loss record.
+record_home,Home win-loss record.
+record_away,Away win-loss record.
+record_overall,Overall win-loss record.
+percentage,Percentage value (0-1 decimal).
+ppg,Points per game.
+rpg,Rebounds per game.
+apg,Assists per game.
+spg,Steals per game.
+bpg,Blocks per game.
+mpg,Minutes per game.
+fppg,Fantasy points per game.
+games_played,Games played.
+games_started,Games started.
+games_won,Games won.
+games_lost,Games lost.
+streak,Current streak (e.g. 'W3' for three-game win streak).
+clock_minutes,Clock minutes split out for convenience.
+clock_seconds,Clock seconds split out for convenience.
+period_seconds_remaining,Seconds remaining in the period.
+seconds_remaining,Seconds remaining in the period.
+team_short_name,Short team display name.
+team_color_alt,Team alternate color (hex).
+team_links,JSON array of team-related links.
+venue,Venue name.
+venue_capacity,Venue seating capacity.
+venue_indoor,TRUE if the venue is indoors.
+venue_address_city,Venue address city.
+venue_address_state,Venue address state / region.
+venue_zipcode,Venue zip / postal code.
+weather_type,Weather type label.
+weather_temperature,Weather temperature.
+weather_condition,Weather condition description.
+broadcast,Broadcast information string.
+broadcasts,JSON array of broadcast records.
+home_team_uid,ESPN UID of the home team.
+away_team_uid,ESPN UID of the away team.
+score_value,Point value of the play (2 / 3 / 1).
+short_link,Short URL link.
+short_headline,Short news headline.
+short_caption,Short caption.
+caption_text,Caption text.
+abbrev,Short abbreviation.
+event_uid,ESPN UID for the event.
+event_guid,ESPN GUID for the event.
+season_short_display_name,Season short display label.
+season_display_name,Season display label.
+season_year,Season year string ('YYYY-YY' format).
+display_clock,"Game clock display string (e.g. '8:32')."
+linescore_period_1,Score in period 1.
+linescore_period_2,Score in period 2.
+linescore_period_3,Score in period 3.
+linescore_period_4,Score in period 4.
+linescore_period_5,Score in period 5 (OT).
+byline,News article byline / author.
+linked,TRUE if the record is linked to a related entity.
+long_comment,Long-form play / event comment.
+distance,Distance value (in feet for shot data; otherwise context-dependent).
+experience,Years of professional experience.
+display_height,Player height in display format (e.g. '6-2').
+display_weight,Player weight in display format (e.g. '180 lbs').
+game_code,ESPN game code (numeric identifier).
+game_status,Game status label.
+game_time_utc,Game start time in UTC (ISO 8601 timestamp).
+minutes_calculated,Minutes calculated from game-clock differences.
+total_actions,Total number of actions recorded for the player / team.
+disqualifications,Total disqualifications.
+double_double,TRUE if the player recorded a double-double in this game.
+triple_double,TRUE if the player recorded a triple-double in this game.
+ejections,Total ejections.
+flagrant_fouls,Total flagrant fouls.
+technical_fouls,Total technical fouls.
+total_technical_fouls,Total technical fouls (player + team).
+team_rebounds,Team rebounds (rebounds credited to the team rather than a player).
+team_turnovers,Team turnovers (turnovers credited to the team rather than a player).
+total_turnovers,Total turnovers (player + team).
+games_back,Games back from the conference / division leader.
+playoff_seed,Playoff seed.
+clinch_indicator,"Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated)."
+streak_type,"Current streak type ('win' or 'loss')."
+streak_length,Current streak length in games.
+seed_display,Playoff seed display string.
+overall_record,Overall win-loss record.
+conference_record,Conference win-loss record.
+division_record,Division win-loss record.
+home_record,Home win-loss record.
+away_record,Away win-loss record.
+last_10_record,Win-loss record in the last 10 games.
+vs_above_500_record,Win-loss record vs teams above .500.
+vs_below_500_record,Win-loss record vs teams at or below .500.
+free_throw_attempt_rate,"Free throw attempt rate (FTA / FGA)."
+contested_field_goals_made,Contested field goals made.
+contested_field_goals_attempted,Contested field goal attempts.
+contested_field_goal_percentage,Contested field goal percentage (0-1).
+defended_at_rim_field_goals_made,Field goals made allowed when defending at the rim.
+defended_at_rim_field_goals_attempted,Field goal attempts allowed when defending at the rim.
+defended_at_rim_field_goal_percentage,Field goal percentage allowed at the rim (0-1).
+free_throw_assists,Free throw assists (passes that led to a fouled shot attempt).
+event_action_type,Numeric event-action-type code (V2 PBP).
+event_ref,Reference link to the originating event.
+field_goal_pct,Field goal percentage (0-1).
+free_throw_pct,Free throw percentage (0-1).
+three_point_field_goal_pct,Three-point field goal percentage (0-1).
+two_point_field_goal_pct,Two-point field goal percentage (0-1).
+defensive_average,Average defensive value (context-dependent).
+offensive_average,Average offensive value (context-dependent).
+general_average,Average general value (context-dependent).
+heading,Section heading or label.
+sub_heading,Section sub-heading.
+sub_text,Secondary text label.
+sub_label,Secondary label.
+note,Free-form note attached to the record.
+notes,Free-form notes attached to the record.
+content_type,Content type label (article / video / image).
+content_id,Unique content identifier.
+event_status_type,Event status type code.
+event_status_state,"Event status state ('pre', 'in', 'post')."
+event_status_completed,TRUE if the event has completed.
+broadcast_market,Broadcast market label (e.g. 'national', 'home').
+broadcast_type,Broadcast media type (TV / radio / streaming).
+broadcast_lang,Broadcast language code.
+home_team_full,Full home team name and label.
+away_team_full,Full away team name and label.
+last_game,Last game date or score string.
+next_game,Next game date or opponent.
+last_5,Win-loss record over the last 5 games.
+overall_strength_of_record,Strength of record metric.
+points_against,Points allowed.
+opp_score,Opponent's score.
+opp_points,Opponent's points scored.
+hometown,Player hometown.
+school,Player's school / college (when distinct from 'college').
+height_in,Player height in inches.
+weight_lb,Player weight in pounds.
+school_name,Player's school / college name.
+guid,GUID string.
+uid,ESPN UID string (universal identifier).
+type_text,Display text for the type field.
+type_id,Type identifier (numeric).
+priority,Priority value (used for sort order).
+hidden,TRUE if the row should be hidden from public display.
+disabled,TRUE if the record is disabled / inactive.
+verified,TRUE if the record is verified.
+default,Default value for the parameter or field.
+enabled,TRUE if the feature / field is enabled.
+short_caption,Short caption text.
+short_description,Short description text.
+url_path,URL path (relative to host).
+api_url,API endpoint URL.
+mobile_url,Mobile site URL.
+icon,Icon image URL.
+icon_url,Icon image URL.
+icon_text,Icon descriptive text.
+hand,"Player handedness ('Right' / 'Left')."
+height_meters,Player height in meters.
+weight_kg,Player weight in kilograms.
+debut_date,Date of professional debut (YYYY-MM-DD).
+debut_year,Year of professional debut.
+seasons_played,Number of seasons played.
+career_length,Career length in seasons.
+international,TRUE if the player has international experience.
+displayrank,Display rank for the row.
+group,"Group identifier (e.g. conference 'group_id')."
+group_id,Group identifier (e.g. conference group_id).
+group_name,Group name.
+sex,"Athlete sex / gender ('male' / 'female')."
+gender,"Athlete sex / gender ('male' / 'female')."
+state,State / region.
+city,City.
+country_code,ISO country code (2-letter).
+country_id,Country identifier.
+region,Region label.
+home_score_at_event,Home score after this play / event.
+away_score_at_event,Away score after this play / event.
+shooter_name,Shooter name (for shot events).
+assister_name,Assister name (for made shots).
+blocker_name,Blocker name (for blocked shots).
+rebounder_name,Rebounder name.
+fouler_name,Fouler name.
+fouled_name,Fouled-player name.
+substitute_in_name,Player coming in (substitution).
+substitute_out_name,Player going out (substitution).
+sub_in_player_id,Player ID coming in (substitution).
+sub_out_player_id,Player ID going out (substitution).
+secondary_team_id,Secondary team identifier.
+secondary_team_name,Secondary team name.
+secondary_team_abbreviation,Secondary team abbreviation.
+secondary_team_logo,Secondary team logo URL.
+secondary_team_color,Secondary team primary color.
+secondary_team_record,Secondary team's record string.
+ftm_rate,"Free throw make rate (FTM / FGA)."
+fta_rate,"Free throw attempt rate (FTA / FGA)."
+oreb_rate,Offensive rebound rate (0-1).
+dreb_rate,Defensive rebound rate (0-1).
+ast_to_ratio,Assist-to-turnover ratio.
+stl_to_ratio,Steal-to-turnover ratio.
+blk_to_ratio,Block-to-turnover ratio.
+participants_0_athlete_id,V2 PBP participant 0 (primary) athlete ID.
+participants_1_athlete_id,V2 PBP participant 1 (secondary) athlete ID.
+participants_2_athlete_id,V2 PBP participant 2 (tertiary) athlete ID.
+participant_team_id,V2 PBP participant team ID.
+score_team_id,Team ID credited with the scoring play.
+shot_attempted,1 if a shot was attempted on this event.
+shot_made,1 if the shot was made.
+end_quarter_seconds_remaining,Seconds remaining in the period at the end of the play.
+start_quarter_seconds_remaining,Seconds remaining in the period at the start of the play.
+end_half_seconds_remaining,Seconds remaining in the half at the end of the play.
+start_half_seconds_remaining,Seconds remaining in the half at the start of the play.
+end_game_seconds_remaining,Seconds remaining in the game at the end of the play.
+start_game_seconds_remaining,Seconds remaining in the game at the start of the play.
+game_play_number,Sequential play number within the game.
+qtr,Quarter (1-4) or OT period (5+).
+half,Half of the game (1 or 2).
+game_half,Half of the game (1 or 2).
+lag_qtr,Quarter lag (the previous-play's quarter).
+lead_qtr,Quarter lead (the next-play's quarter).
+lag_game_half,Half lag (the previous-play's half).
+lead_game_half,Half lead (the next-play's half).
+sequence_number,"Sequence number representing a shot-possession (V3 PBP)."
+shooting_play,TRUE if the play was a shooting attempt.
+scoring_play,TRUE if the play resulted in points scored.
+game_play_id,Unique play identifier within the game.
+media_id,Media identifier (video / image).
+home_team_spread,Home team's point spread.
+game_spread,Game spread (signed; positive = home favored).
+game_spread_available,TRUE if a point spread was available.
+home_favorite,TRUE if the home team is the betting favorite.
+home_team_name_alt,Alternate home team name.
+away_team_name_alt,Alternate away team name.
+home_team_mascot,Home team mascot.
+away_team_mascot,Away team mascot.
+home_team_abbrev,Home team three-letter abbreviation.
+away_team_abbrev,Away team three-letter abbreviation.
+home_team_name,Home team name.
+away_team_name,Away team name.

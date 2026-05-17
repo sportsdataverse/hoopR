@@ -1,0 +1,189 @@
+col_name,description
+3_point_field_goal_percentage,3-Point Field Goal Percentage.
+3_point_field_goals_made_attempted,3-Point Field Goals Made-Attempted.
+3_point_field_goals_made_attempted_per_game,3-Point Field Goals Made-Attempted Per Game.
+assist_to_turnover_ratio,Assist To Turnover Ratio.
+assists,Assists.
+assists_per_game,Assists Per Game.
+average_3_point_field_goals_attempted,Average 3-Point Field Goals Attempted.
+average_3_point_field_goals_made,Average 3-Point Field Goals Made.
+average_field_goals_attempted,Average Field Goals Attempted.
+average_field_goals_made,Average Field Goals Made.
+average_free_throws_attempted,Average Free Throws Attempted.
+average_free_throws_made,Average Free Throws Made.
+avg_assists,The average assists per game.
+avg_blocks,The average blocks per game.
+avg_defensive_rebounds,The average defensive rebounds per game.
+avg_field_goals_made_avg_field_goals_attempted,avgFieldGoalsMade-avgFieldGoalsAttempted.
+avg_fouls,The average fouls committed per game.
+avg_minutes,The average number of minutes per game.
+avg_offensive_rebounds,The average offensive rebounds per game.
+avg_points,The average number of points scored per game.
+avg_rebounds,The average rebounds per game.
+avg_steals,The average steals per game.
+avg_three_point_field_goals_made_avg_three_point_field_goals_attempted,avgThreePointFieldGoalsMade-avgThreePointFieldGoalsAttempted.
+avg_turnovers,The average turnovers committed per game.
+blocks,Blocks.
+blocks_per_game,Blocks Per Game.
+defensive_avg48blocks,The average number of blocks per 48 minutes.
+defensive_avg48defensive_rebounds,The average number of defensive rebounds per 48 minutes.
+defensive_avg48steals,The average number of steals per 48 minutes.
+defensive_avg_blocks,The average blocks per game.
+defensive_avg_defensive_rebounds,The average defensive rebounds per game.
+defensive_avg_steals,The average steals per game.
+defensive_blocks,"Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player."
+defensive_def_rebound_rate,The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)].
+defensive_defensive_rebounds,The number of times when the defense obtains the possession of the ball after a missed shot by the offense.
+defensive_drpm,Defensive Real Plus-Minus.
+defensive_rebounds_per_game,Defensive Rebounds Per Game.
+defensive_steals,The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player.
+defensive_turnover_points,The amount of points resulting from the possession following a turnover.
+disqualifications,Disqualifications.
+double_double,Double Double.
+ejections,Ejections.
+field_goal_pct,The ratio of field goals made to field goals attempted: FGM / FGA.
+field_goal_percentage,Field Goal Percentage.
+field_goals_made_attempted,Field Goals Made-Attempted.
+field_goals_made_attempted_per_game,Field Goals Made-Attempted Per Game.
+field_goals_made_field_goals_attempted,Field Goals Made-Attempted.
+flagrant_fouls,Flagrant Fouls.
+fouls,Fouls.
+fouls_per_game,Fouls Per Game.
+free_throw_pct,The ratio of free throws made to free throws attempted: FTM / FTA.
+free_throw_percentage,Free Throw Percentage.
+free_throws_made_attempted,Free Throws Made-Attempted.
+free_throws_made_attempted_per_game,Free Throws Made-Attempted Per Game.
+free_throws_made_free_throws_attempted,Free Throws Made-Attempted.
+games_played,Games Played.
+games_started,Games Started.
+general_assist_turnover_ratio,The average number of assists a player or team records per turnover.
+general_avg48disqualifications,The average number of disqualifications per 48 minutes.
+general_avg48ejections,The average number of ejections per 48 minutes.
+general_avg48flagrant_fouls,The average number of flagrant fouls committed per 48 minutes.
+general_avg48fouls,The average number of fouls committed per 48 minutes.
+general_avg48rebounds,The average number of rebounds per 48 minutes.
+general_avg48technical_fouls,The average number of technical fouls committed per 48 minutes.
+general_avg_disqualifications,The average number of disqualifications per game.
+general_avg_ejections,The average ejections per game.
+general_avg_flagrant_fouls,The average number of flagrant fouls per game.
+general_avg_fouls,The average fouls committed per game.
+general_avg_minutes,The average number of minutes per game.
+general_avg_rebounds,The average rebounds per game.
+general_avg_team_rebounds,The average number of rebounds for a team per game.
+general_avg_technical_fouls,The average number of technical fouls per game.
+general_block_foul_ratio,The average number of blocks a player or record per foul committed.
+general_disqualifications,The number of times a player reached the foul limit.
+general_double_double,"The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots."
+general_ejections,The number of times a player or coach is removed from the game as a result of a serious offense.
+general_fantasy_rating,The Fantasy Rating of a player.
+general_flagrant_fouls,The number of fouls that the officials thought were unnecessary or excessive.
+general_fouls,The number of times a player had illegal contact with the opponent.
+general_game_day_of_year,"The day of the season on which this game falls; if it's the 15th day of the regular season in Nov, the game day of year is 15 (ie, game day of year != day of year)."
+general_games_played,Games Played.
+general_games_started,The number of games started by an athlete.
+general_minutes,The total number of minutes played.
+general_nbarating,"Custom formula to rate the performance of a player based on points, assists, steals, blocks, turnovers, rebounds, three pointers, and free throws."
+general_per,A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season.
+general_plus_minus,A player's estimated on-court impact on team performance measured in point differential per 100 possessions.
+general_r40,Rebounds Per 40 Minutes.
+general_rebound_rate,The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by [Player Minutes x (Team Rebounds + Opponent Rebounds)].
+general_rebounds,The total number of rebounds (offensive and defensive).
+general_rpm,Real Plus-Minus.
+general_steal_foul_ratio,The average number of steals a player or team records per foul committed.
+general_steal_turnover_ratio,The number of steals per turnover.
+general_team_assist_turnover_ratio,The number of assists per turnover for a team.
+general_team_rebounds,The total number of rebounds for a team.
+general_technical_fouls,The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations).
+general_total_rebounds,The total number of rebounds for a team or player.
+general_total_technical_fouls,The total number of technical fouls for a team or player.
+general_triple_double,"The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots."
+general_vorp,Value Over Replacement Player.
+general_warp,Wins Above Replacement Player.
+minutes,Minutes.
+minutes_per_game,Minutes Per Game.
+offensive_a40,Assists Per 40 Minutes.
+offensive_assist_ratio,The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].
+offensive_assists,"The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was ""assisting"" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist."
+offensive_avg48assists,The average number of assists per 48 minutes.
+offensive_avg48field_goals_attempted,The average number of fieldgoals attempted per 48 minutes.
+offensive_avg48field_goals_made,The average number of fieldgoals made per 48 minutes.
+offensive_avg48free_throws_attempted,The average number of free throws attempted per 48 minutes.
+offensive_avg48free_throws_made,The average number of Free Throws made per 48 minutes.
+offensive_avg48offensive_rebounds,The average number of offenseive rebounds per 48 minutes.
+offensive_avg48points,The average number of points scored per 48 minutes.
+offensive_avg48three_point_field_goals_attempted,The average number of 3-pointers attempted per 48 minutes.
+offensive_avg48three_point_field_goals_made,The average per number of 3-Pointers made per 48 minutes.
+offensive_avg48turnovers,The average number of turnovers per 48 minutes.
+offensive_avg_assists,The average assists per game.
+offensive_avg_estimated_possessions,The average number of estimated possessions per game for a team or player.
+offensive_avg_field_goals_attempted,The average field goals attempted per game.
+offensive_avg_field_goals_made,The average field goals made per game.
+offensive_avg_free_throws_attempted,The average free throw shots attempted per game.
+offensive_avg_free_throws_made,The average free throw shots made per game.
+offensive_avg_offensive_rebounds,The average offensive rebounds per game.
+offensive_avg_points,The average number of points scored per game.
+offensive_avg_team_turnovers,The average number of turnovers for a team per game.
+offensive_avg_three_point_field_goals_attempted,The average three point field goals attempted per game.
+offensive_avg_three_point_field_goals_made,The average three point field goals made per game.
+offensive_avg_total_turnovers,The average number of total turnovers for a team per game.
+offensive_avg_turnovers,The average turnovers committed per game.
+offensive_avg_two_point_field_goals_attempted,The number of 2-point field goals attempted per game for a team or player.
+offensive_avg_two_point_field_goals_made,The number of 2-point field goals made per game for a team or player.
+offensive_brick_index,How many points a player costs his team with his shooting compared with the league average on a per-40-minute basis. ((52.8 - TS%) x (FGA + (FTA x 0.44))) / (Min/40) .
+offensive_effective_fgpct,Metric that gives 3pt field goals more worth than 2pt field goals: (FGM + (0.5 x 3PTM)) / FGA.
+offensive_estimated_possessions,An estimation of the number of possessions for a team or player.
+offensive_fast_break_points,The number of points scored on fast breaks.
+offensive_field_goal_pct,The ratio of field goals made to field goals attempted: FGM / FGA.
+offensive_field_goals,Field Goal makes and attempts.
+offensive_field_goals_attempted,The number of times a 2pt field goal was attempted.
+offensive_field_goals_made,The number of times a 2pt field goal was made.
+offensive_free_throw_pct,The ratio of free throws made to free throws attempted: FTM / FTA.
+offensive_free_throws,Free Throw makes and attempts.
+offensive_free_throws_attempted,The number of times a free throw was attempted.
+offensive_free_throws_made,The number of times a free throw was made.
+offensive_off_rebound_rate,The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by [Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)].
+offensive_offensive_rebound_pct,The percentage of the number of times they obtain the possession of the ball after a missed shot.
+offensive_offensive_rebounds,The number of times when the offense obtains the possession of the ball after a missed shot.
+offensive_orpm,Offensive Real Plus-Minus.
+offensive_p40,Points Per 40 Minutes.
+offensive_pace_factor,The number of possessions a team uses per game.
+offensive_points,The number of points scored.
+offensive_points_in_paint,"The amount of points scored in the area known as ""the Paint""(the rectangle between the foul line and the baseline)."
+offensive_points_per_estimated_possessions,The number of points per estimated possession for a team or player.
+offensive_possessions,The total number of possessions for a team or player.
+offensive_rebounds_per_game,Offensive Rebounds Per Game.
+offensive_scoring_efficiency,The efficiency with which a team or player scores the basketball.
+offensive_second_chance_points,Points that a team gains after they have attempted at least one shot during the same possession and missed.
+offensive_shooting_efficiency,The efficiency with which a team or player shoots the basketball.
+offensive_team_turnovers,The number of turnovers for the team.
+offensive_three_point_field_goal_pct,The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.
+offensive_three_point_field_goals_attempted,The number of times a 3pt field goal was attempted.
+offensive_three_point_field_goals_made,The number of times a 3pt field goal was made.
+offensive_three_point_pct,The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.
+offensive_total_turnovers,The number of turnovers plus team turnovers for the team.
+offensive_true_shooting_pct,What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by [(FGA + (FTA x 0.44)].
+offensive_turnover_ratio,The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by [(FGA + (FTA x 0.44) + Assists + Turnovers].
+offensive_turnovers,The number of times a player loses possession to the other team.
+offensive_two_point_field_goal_pct,The percentage of 2-points fields goals made by a team or player.
+offensive_two_point_field_goals_attempted,The number of 2-point field goals attempted for a team or player.
+offensive_two_point_field_goals_made,The number of 2-point field goals made for a team or player.
+offensive_usage_rate,the number of possessions a player uses per 40 minutes. Usage Rate = {[FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO] x 40 x League Pace} divided by (Minutes x Team Pace).
+player_efficiency_rating,Player Efficiency Rating.
+points,Points.
+points_per_game,Points Per Game.
+rating,Rating.
+rebounds,Rebounds.
+rebounds_per_game,Rebounds Per Game.
+scoring_efficiency,Scoring Efficiency.
+shooting_efficiency,Shooting Efficiency.
+steal_to_turnover_ratio,Steal To Turnover Ratio.
+steals,Steals.
+steals_per_game,Steals Per Game.
+technical_fouls,Technical Fouls.
+three_point_field_goal_pct,The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.
+three_point_field_goals_made_three_point_field_goals_attempted,3-Point Field Goals Made-Attempted.
+three_point_pct,3-Point Field Goal Percentage.
+total_rebounds,Rebounds.
+triple_double,Triple Double.
+turnovers,Turnovers.
+turnovers_per_game,Turnovers Per Game.
