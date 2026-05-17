@@ -120,8 +120,8 @@ Saiem Gilani
 ``` r
 # \donttest{
 try(espn_mbb_game_rosters(game_id = 401256760))
-#> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:46 UTC
+#> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:24 UTC
 #> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    

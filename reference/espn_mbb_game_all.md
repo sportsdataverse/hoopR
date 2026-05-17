@@ -224,8 +224,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_game_all(game_id = 401479672))
 #> $Plays
-#> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:44 UTC
+#> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:22 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -248,8 +248,8 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> #   play_id <chr>, athlete_id_1 <int>, athlete_id_2 <int>, …
 #> 
 #> $Team
-#> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:44 UTC
+#> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:23 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -264,8 +264,8 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> #   field_goals_made <int>, field_goals_attempted <int>, …
 #> 
 #> $Player
-#> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:44 UTC
+#> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:23 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

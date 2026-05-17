@@ -28,5 +28,5 @@ Retrieved from https://doi.org/10.32614/CRAN.package.hoopR
       doi = {10.32614/CRAN.package.hoopR},
       journal = {CRAN: Contributed Packages},
       publisher = {The R Foundation},
-      note = {R package version 3.0.0},
+      note = {R package version 3.1.0},
     }

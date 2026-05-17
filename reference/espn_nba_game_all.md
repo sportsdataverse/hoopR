@@ -228,8 +228,8 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_game_all(game_id = 401283399))
 #> $Plays
-#> ── ESPN NBA Play-by-Play Information from ESPN.com ────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:57 UTC
+#> ── ESPN NBA Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:33 UTC
 #> # A tibble: 472 × 54
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -252,8 +252,8 @@ try(espn_nba_game_all(game_id = 401283399))
 #> #   play_id <chr>, athlete_id_1 <int>, athlete_id_2 <int>, …
 #> 
 #> $Team
-#> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:57 UTC
+#> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:33 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -268,8 +268,8 @@ try(espn_nba_game_all(game_id = 401283399))
 #> #   field_goals_made <int>, field_goals_attempted <int>, …
 #> 
 #> $Player
-#> ── ESPN NBA Player Box Information from ESPN.com ──────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:57 UTC
+#> ── ESPN NBA Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:33 UTC
 #> # A tibble: 24 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

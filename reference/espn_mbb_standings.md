@@ -119,8 +119,8 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
 try(espn_mbb_standings(2021))
-#> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-17 15:19:51 UTC
+#> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-17 15:42:29 UTC
 #> # A tibble: 348 × 86
 #>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
 #>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>

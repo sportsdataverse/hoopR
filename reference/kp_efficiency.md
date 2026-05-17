@@ -63,7 +63,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_efficiency(min_year = 2020, max_year = 2021))
-#> ✖ 2026-05-17 15:20:54.6199: Invalid arguments or no efficiency data for 2020 - 2021 available!
+#> ✖ 2026-05-17 15:43:27.291956: Invalid arguments or no efficiency data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf AdjT AdjT.Rk RawT RawT.Rk AvgPossLengthOff

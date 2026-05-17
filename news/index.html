@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,6 +86,112 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="3.1.0" id="hoopr-310"><strong>hoopR 3.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-310"></a></h2>
+<p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Most entries below are bug fixes for endpoint behavior that drifted after CRAN submission, plus the package-wide <code>@return</code> documentation upgrade and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
+<div class="section level4">
+<h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>
+<div class="section level5">
+<h5 id="bug-fixes-3-1-0"><em>Bug fixes</em><a class="anchor" aria-label="anchor" href="#bug-fixes-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Fix</th>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_schedule.html">nba_schedule()</a></code></td>
+<td>Migrated off the retired <code>stats.nba.com/stats/scheduleleaguev2</code> endpoint (returns <code>Connection was reset</code> across multiple client environments; issues <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a> and <a href="https://github.com/sportsdataverse/hoopR/issues/187" class="external-link">#187</a>) to the public CDN at <code>cdn.nba.com/static/json/staticData/scheduleLeagueV2.json</code>. Same <code>leagueSchedule.gameDates[].games[]</code> payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the <code>_2</code>-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a <code><a href="https://rdrr.io/r/base/message.html" class="external-link">message()</a></code> directing users at <code>load_nba_schedule(seasons = ...)</code>. Also initializes <code>games &lt;- NULL</code> before <code>tryCatch</code> (issue <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a>). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26.</td>
+</tr><tr><td><code><a href="../reference/nba_leaguegamelog.html">nba_leaguegamelog()</a></code></td>
+<td>Reordered query-string parameter ordering to put <code>LeagueID</code> first. As of 2026 the NBA Stats API rejects the alphabetical ordering (<code>Counter, DateFrom, DateTo, Direction, LeagueID, ...</code>) with a Cloudflare HTML error page; <code>LeagueID</code>-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with <code>SEASON_ID=22025</code>. Parallel fix to the WNBA equivalent in <code>wehoop</code>.</td>
+</tr><tr><td><code><a href="../reference/ncaa_mbb_NET_rankings.html">ncaa_mbb_NET_rankings()</a></code></td>
+<td>Hardened against NCAA.com column drift. The function now uses <code>dplyr::rename(dplyr::any_of(...))</code> so renamed / added columns (e.g. new <code>Quad 1..4</code> headers) no longer break the documented schema; existing consumers keep working and new columns ride along untouched.</td>
+</tr><tr><td>ESPN wrappers</td>
+<td>Moved <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> and <code><a href="../reference/check_status.html">check_status()</a></code> <em>inside</em> <code>tryCatch</code> so transient HTTP errors surface as <code>cli_alert_danger()</code> + empty fallback rather than escaping the function. Affects every <code>espn_nba_*</code> / <code>espn_mbb_*</code> wrapper.</td>
+</tr></tbody></table></div>
+</div>
+<div class="section level4">
+<h4 id="documentation-improvements-3-1-0"><strong>Documentation improvements</strong><a class="anchor" aria-label="anchor" href="#documentation-improvements-3-1-0"></a></h4>
+<div class="section level5">
+<h5 id="return-column-descriptions-on-every-exported-function-3-1-0"><em>@return column descriptions on every exported function</em><a class="anchor" aria-label="anchor" href="#return-column-descriptions-on-every-exported-function-3-1-0"></a></h5>
+<p>Every <code>@return</code> markdown table across the 39 R source files is upgraded from two columns (<code>col_name | types</code>) to three columns (<code>col_name | types | description</code>). <strong>6,039 total table rows</strong> touched; every result set on every function now ships a per-column description in <code>?&lt;function&gt;</code> help, the pkgdown reference, and the rendered man pages.</p>
+<p><strong>Coverage</strong> — frequency-weighted, what <code>?fn</code> readers actually see — <strong>58.4% of the 6,039 <a href="https://github.com/return" class="external-link">@return</a> table rows now carry a hand-quality description</strong> (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator’s snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic NBA Stats endpoints.</p>
+<p><strong>Description sources</strong> (precedence order, first match wins):</p>
+<ol style="list-style-type: decimal"><li>
+<code>tools/docs/column_descriptions_curated.csv</code> — 619 hand-authored entries covering high-traffic columns and basketball / ESPN domain conventions.</li>
+<li>
+<code>tools/docs/column_descriptions_api.csv</code> — 188 ESPN-authored descriptions mined live from 14 endpoints per league across both <code>nba</code> and <code>mens-college-basketball</code>, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).</li>
+<li>Mined <code>\item{...}{...}</code> lines from existing <code>\describe{}</code> blocks.</li>
+<li>Heuristic patterns driven by column-name suffixes (<code>*_id</code>, <code>*_pct</code>, <code>*_made</code>, <code>*_attempted</code>, <code>*_per_36</code>, etc.) with basketball-friendly noun substitution.</li>
+</ol><p><strong>New tooling under <code>tools/docs/</code></strong> (<code>.Rbuildignore</code>’d via the existing <code>^tools$</code> rule):</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>File</th>
+<th>Purpose</th>
+</tr></thead><tbody><tr><td><code>build_column_descriptions.R</code></td>
+<td>One-shot dictionary builder.</td>
+</tr><tr><td><code>column_descriptions_curated.csv</code></td>
+<td>Hand-edit surface; overrides API / mined / heuristic outputs.</td>
+</tr><tr><td><code>column_descriptions_api.csv</code></td>
+<td>ESPN-API-mined descriptions, regenerated by <code>mine_api_descriptions.R</code>.</td>
+</tr><tr><td><code>column_descriptions.csv</code></td>
+<td>Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic).</td>
+</tr><tr><td><code>mine_api_descriptions.R</code></td>
+<td>Driver that probes the ESPN endpoints which self-document their stat columns.</td>
+</tr><tr><td><code>audit_column_descriptions.R</code></td>
+<td>Coverage / leverage diagnostic.</td>
+</tr><tr><td><code>markdown_man_table_helper.R</code></td>
+<td>Programmatic helpers (<code>load_column_descriptions()</code>, <code>make_return_table_md()</code>, <code>roxygenize_return()</code>, <code>augment_return_tables_in_file()</code>, <code>augment_all_r_files()</code>, <code>mine_espn_api_descriptions(url)</code>).</td>
+</tr><tr><td><code>espn_endpoints_catalog.md</code></td>
+<td>Copy of the <a href="https://github.com/sejaldua/espn-api" class="external-link">sejaldua/espn-api</a> endpoint catalog used to scope the miner.</td>
+</tr></tbody></table><p>The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing <code>|col_name|types|</code> tables in each <code>@return</code> block are the parse input).</p>
+</div>
+</div>
+<div class="section level4">
+<h4 id="internals-3-1-0"><strong>Internals</strong><a class="anchor" aria-label="anchor" href="#internals-3-1-0"></a></h4>
+<div class="section level5">
+<h5 id="http-layer--proxy-support-restored-3-1-0"><em>HTTP layer — proxy support restored</em><a class="anchor" aria-label="anchor" href="#http-layer--proxy-support-restored-3-1-0"></a></h5>
+<p>When the package migrated from <code>httr</code> to <code>httr2</code> in 3.0.0, the legacy <code><a href="https://httr.r-lib.org/reference/use_proxy.html" class="external-link">httr::use_proxy()</a></code> plumbing was dropped and <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> quietly stopped honoring proxies (its <code>...</code> was preserved purely for source compatibility). Both <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> and the lower-level <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> now accept a <code>proxy =</code> argument:</p>
+<ul><li>
+<code>proxy = NULL</code> (default) — libcurl reads <code>http_proxy</code> / <code>https_proxy</code> / <code>no_proxy</code> env vars automatically.</li>
+<li>
+<code>proxy = "http://host:port"</code> — string form, forwarded to <code>httr2::req_proxy(url = ...)</code>.</li>
+<li>
+<code>proxy = list(url=, port=, username=, password=, auth=)</code> — named list spread into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code> for authenticated proxies.</li>
+</ul><p>Resolution order in <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>: explicit <code>proxy =</code> arg → <code>getOption("hoopR.proxy")</code> → libcurl env vars. The <code>...</code> thread works for NBA Stats wrappers (which forward into <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code>); ESPN / KenPom / NBA G-League wrappers call <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so use <code>options(hoopR.proxy = ...)</code> at the top of the session to cover those without per-function plumbing.</p>
+</div>
+<div class="section level5">
+<h5 id="error-handling-consolidation-3-1-0"><em>Error-handling consolidation</em><a class="anchor" aria-label="anchor" href="#error-handling-consolidation-3-1-0"></a></h5>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Helper</th>
+<th>Role</th>
+</tr></thead><tbody><tr><td><code>.report_api_error(e, hint, args)</code></td>
+<td>Standardized <code>tryCatch</code> error handler — emits a <code>cli_alert_danger()</code> with hint text plus the captured arg list, then returns an empty fallback.</td>
+</tr><tr><td><code>.report_api_warning(w, args)</code></td>
+<td>Companion warning handler.</td>
+</tr><tr><td><code><a href="../reference/dot-interp_braces.html">.interp_braces()</a></code></td>
+<td>Internal helper for safely interpolating <code>{var}</code> syntax in cli alerts when the variable might contain braces of its own.</td>
+</tr><tr><td><code><a href="../reference/dot-capture_args.html">.capture_args()</a></code></td>
+<td>Helper used at the top of arg-less wrappers (i.e. those whose only formal is <code>...</code>) so the error/warning reporters still see the call args. Equivalent to <code>mget(setdiff(names(formals()), "..."))</code> for wrappers with formals.</td>
+</tr></tbody></table><p>Every <code>tryCatch(expr = ...)</code> block in ESPN, NBA Stats, and KenPom wrappers now uses these helpers instead of hand-rolled <code>cli::cli_alert_danger("{Sys.time()}: ...")</code> strings. Behavior is the same; the message includes the captured args, which makes failed-call debugging much faster.</p>
+</div>
+<div class="section level5">
+<h5 id="dependency-cleanup-3-1-0"><em>Dependency cleanup</em><a class="anchor" aria-label="anchor" href="#dependency-cleanup-3-1-0"></a></h5>
+<ul><li>Removed <code>glue</code> from <code>Imports</code>; demoted to <code>Suggests</code> (retained only for downstream package-level references).</li>
+<li>Replaced <code>glue::glue(...)</code> call-sites with <code><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf()</a></code> / <code><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0()</a></code> / base R in URL builders, <code>pad_id()</code>, <code>pad_time()</code>, and <code>cli</code> alert strings.</li>
+<li>Replaced <code><a href="https://glue.tidyverse.org/reference/glue_sql.html" class="external-link">glue::glue_sql()</a></code> with parameterized <code><a href="https://dbi.r-dbi.org/reference/dbExecute.html" class="external-link">DBI::dbExecute()</a></code> / <code><a href="https://dbi.r-dbi.org/reference/dbGetQuery.html" class="external-link">DBI::dbGetQuery()</a></code> calls in <code>load_*</code> family functions.</li>
+</ul></div>
+<div class="section level5">
+<h5 id="tooling-3-1-0"><em>Tooling</em><a class="anchor" aria-label="anchor" href="#tooling-3-1-0"></a></h5>
+<ul><li>Ported wehoop’s <code>tools/</code> patch scripts (<code>patch_df_list_init.R</code>, <code>patch_return_var_init.R</code>, <code>flip_expect_equal_cols.R</code>, <code>inject_skip_guard.R</code>, <code>inject_skip_helpers.R</code>, <code>sweep_error_handlers.R</code>, <code>find_parse_errors.R</code>) for future audit / sweep work.</li>
+<li>Added <code>tools/run_doctoc.R</code> — a no-deps R replacement for the npm <code>doctoc</code> CLI, used to regenerate the NEWS.md / CONTRIBUTING.md TOCs. Run with <code>Rscript tools/run_doctoc.R --maxlevel 2 NEWS.md CONTRIBUTING.md</code>.</li>
+</ul></div>
+<div class="section level5">
+<h5 id="test-infrastructure-3-1-0"><em>Test infrastructure</em><a class="anchor" aria-label="anchor" href="#test-infrastructure-3-1-0"></a></h5>
+<ul><li>Live API test env vars enabled by default in the R CMD check workflow (previously had to be set per-job).</li>
+<li>Additional test-suite hardening sweeps applied via the ported <code>tools/</code> scripts: return-value init guards on edge-case wrappers, subset-direction column assertions, skip-on-empty guards where wrappers can legitimately return empty.</li>
+</ul></div>
+</div>
+<div class="section level4">
+<h4 id="release--cran-preparation-3-1-0"><strong>Release / CRAN preparation</strong><a class="anchor" aria-label="anchor" href="#release--cran-preparation-3-1-0"></a></h4>
+<ul><li>Added <code>cph</code> (copyright holder) role to <code>Saiem Gilani</code> in <code>Authors@R</code> (CRAN strict requirement caught between releases).</li>
+<li>DESCRIPTION normalized via <code><a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external-link">usethis::use_tidy_description()</a></code> — field order, alphabetized Imports/Suggests, reflowed long lines.</li>
+<li>
+<code>.gitignore</code> anchored from bare <code>docs</code> to <code>/docs</code> so only the repo-root pkgdown output is ignored (the bare pattern was also matching <code>tools/docs/</code>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="3.0.0" id="hoopr-300"><strong>hoopR 3.0.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-300"></a></h2><p class="text-muted">CRAN release: 2026-03-24</p>
 <div class="section level4">
 <h4 id="new-exported-functions-3-0-0"><strong>New exported functions</strong><a class="anchor" aria-label="anchor" href="#new-exported-functions-3-0-0"></a></h4>
@@ -161,11 +267,7 @@
 <h5 id="bug-fixes-3-0-0"><em>Bug fixes</em><a class="anchor" aria-label="anchor" href="#bug-fixes-3-0-0"></a></h5>
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Fix</th>
-</tr></thead><tbody><tr><td><code><a href="../reference/nba_schedule.html">nba_schedule()</a></code></td>
-<td>Migrated off the retired <code>stats.nba.com/stats/scheduleleaguev2</code> endpoint (returns <code>Connection was reset</code> across multiple client environments; issues <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a> and <a href="https://github.com/sportsdataverse/hoopR/issues/187" class="external-link">#187</a>) to the public CDN at <code>cdn.nba.com/static/json/staticData/scheduleLeagueV2.json</code>. Same <code>leagueSchedule.gameDates[].games[]</code> payload, no authentication or special headers, stays current with the live season. G-League schedules now come from the <code>_2</code>-suffixed variant on the same CDN. For historical seasons (CDN only serves the current season) the function emits a <code><a href="https://rdrr.io/r/base/message.html" class="external-link">message()</a></code> directing users at <code>load_nba_schedule(seasons = ...)</code>. Also initializes <code>games &lt;- NULL</code> before <code>tryCatch</code> (issue <a href="https://github.com/sportsdataverse/hoopR/issues/184" class="external-link">#184</a>). Verified 2026-05-16: returns 1,398 NBA games × 52 cols for 2025-26.</td>
-</tr><tr><td><code><a href="../reference/nba_leaguegamelog.html">nba_leaguegamelog()</a></code></td>
-<td>Reordered query-string parameter ordering to put <code>LeagueID</code> first. As of 2026 the NBA Stats API rejects the alphabetical ordering (<code>Counter, DateFrom, DateTo, Direction, LeagueID, ...</code>) with a Cloudflare HTML error page; <code>LeagueID</code>-first matches the nba.com client and parses successfully. Verified 2026-05-16: returns 2,460 NBA rows with <code>SEASON_ID=22025</code>. Parallel fix to the WNBA equivalent in <code>wehoop</code>.</td>
-</tr><tr><td><code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code></td>
+</tr></thead><tbody><tr><td><code><a href="../reference/nba_iststandings.html">nba_iststandings()</a></code></td>
 <td>Nested games column now properly flattened.</td>
 </tr><tr><td><code><a href="../reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code></td>
 <td>HTTP 400 error caused by empty-string parameters now resolved.</td>
@@ -243,61 +345,44 @@
 <td>Unstable/partial responses</td>
 </tr></tbody></table></div>
 <div class="section level4">
-<h4 id="documentation-improvements-3-0-0"><strong>Documentation improvements</strong><a class="anchor" aria-label="anchor" href="#documentation-improvements-3-0-0"></a></h4>
-<div class="section level5">
-<h5 id="return-column-descriptions-on-every-exported-function-3-0-0"><em>@return column descriptions on every exported function</em><a class="anchor" aria-label="anchor" href="#return-column-descriptions-on-every-exported-function-3-0-0"></a></h5>
-<p>Every <code>@return</code> markdown table across the 39 R source files is upgraded from two columns (<code>col_name | types</code>) to three columns (<code>col_name | types | description</code>). <strong>6,039 total table rows</strong> touched; every result set on every function now ships a per-column description in <code>?&lt;function&gt;</code> help, the pkgdown reference, and the rendered man pages.</p>
-<p><strong>Coverage</strong> — frequency-weighted, what <code>?fn</code> readers actually see — <strong>58.4% of the 6,039 <a href="https://github.com/return" class="external-link">@return</a> table rows now carry a hand-quality description</strong> (curated + ESPN-API + mined). The remaining 41.6% are heuristic-fallback rows; the heuristic generator’s snake_case expansion + suffix rules cover most of those acceptably, and the long tail is dominated by single-occurrence columns from low-traffic NBA Stats endpoints.</p>
-<p><strong>Description sources</strong> (precedence order, first match wins):</p>
-<ol style="list-style-type: decimal"><li>
-<code>tools/docs/column_descriptions_curated.csv</code> — 619 hand-authored entries covering high-traffic columns and basketball / ESPN domain conventions.</li>
-<li>
-<code>tools/docs/column_descriptions_api.csv</code> — 188 ESPN-authored descriptions mined live from 14 endpoints per league across both <code>nba</code> and <code>mens-college-basketball</code>, covering 9 endpoint families: core-v2 athlete statistics (per-season, post-season, career), core-v2 team statistics, core-v2 statisticslog, core-v2 leaders, web-v3 athlete stats / splits / gamelog / overview, and web-v3 statistics/byathlete leaderboards. Three response shapes are recognized: nested categories with stats objects, parallel arrays under categories, and top-level parallel-array shapes (splits / gamelog).</li>
-<li>Mined <code>\item{...}{...}</code> lines from existing <code>\describe{}</code> blocks.</li>
-<li>Heuristic patterns driven by column-name suffixes (<code>*_id</code>, <code>*_pct</code>, <code>*_made</code>, <code>*_attempted</code>, <code>*_per_36</code>, etc.) with basketball-friendly noun substitution.</li>
-</ol><p><strong>New tooling under <code>tools/docs/</code></strong> (<code>.Rbuildignore</code>’d via the existing <code>^tools$</code> rule):</p>
-<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>File</th>
-<th>Purpose</th>
-</tr></thead><tbody><tr><td><code>build_column_descriptions.R</code></td>
-<td>One-shot dictionary builder.</td>
-</tr><tr><td><code>column_descriptions_curated.csv</code></td>
-<td>Hand-edit surface; overrides API / mined / heuristic outputs.</td>
-</tr><tr><td><code>column_descriptions_api.csv</code></td>
-<td>ESPN-API-mined descriptions, regenerated by <code>mine_api_descriptions.R</code>.</td>
-</tr><tr><td><code>column_descriptions.csv</code></td>
-<td>Generated dictionary (1,956 rows; 619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164 heuristic).</td>
-</tr><tr><td><code>mine_api_descriptions.R</code></td>
-<td>Driver that probes the ESPN endpoints which self-document their stat columns.</td>
-</tr><tr><td><code>audit_column_descriptions.R</code></td>
-<td>Coverage / leverage diagnostic.</td>
-</tr><tr><td><code>markdown_man_table_helper.R</code></td>
-<td>Programmatic helpers (<code>load_column_descriptions()</code>, <code>make_return_table_md()</code>, <code>roxygenize_return()</code>, <code>augment_return_tables_in_file()</code>, <code>augment_all_r_files()</code>, <code>mine_espn_api_descriptions(url)</code>).</td>
-</tr><tr><td><code>espn_endpoints_catalog.md</code></td>
-<td>Copy of the <a href="https://github.com/sejaldua/espn-api" class="external-link">sejaldua/espn-api</a> endpoint catalog used to scope the miner.</td>
-</tr></tbody></table><p>The sweep is idempotent and offline (no API calls needed for the augmentation itself; existing <code>|col_name|types|</code> tables in each <code>@return</code> block are the parse input).</p>
-</div>
-</div>
-<div class="section level4">
 <h4 id="internals-3-0-0"><strong>Internals</strong><a class="anchor" aria-label="anchor" href="#internals-3-0-0"></a></h4>
 <div class="section level5">
 <h5 id="http-backend-migration-httr--httr2-3-0-0"><em>HTTP backend migration (httr → httr2)</em><a class="anchor" aria-label="anchor" href="#http-backend-migration-httr--httr2-3-0-0"></a></h5>
-<ul><li>
-<strong>Breaking</strong>: Replaced <code>httr</code> with <code>httr2</code> as the HTTP backend for all API requests across the package.</li>
-<li>Removed <code>httr</code> from package dependencies (<code>Imports</code>).</li>
-<li>
-<code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> now uses <code>httr2</code> request/retry pipeline instead of <code><a href="https://rvest.tidyverse.org/reference/session.html" class="external-link">rvest::session()</a></code> with <code>httr</code> config arguments, resolving segfaults on systems with libcurl &gt;= 8.x / curl R package &gt;= 7.0.0.</li>
-<li>All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (<code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="../reference/dot-resp_text.html">.resp_text()</a></code>) backed by <code>httr2</code>.</li>
-<li>
-<code><a href="../reference/check_status.html">check_status()</a></code> now uses <code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code> instead of <code><a href="https://httr.r-lib.org/reference/status_code.html" class="external-link">httr::status_code()</a></code>.</li>
-<li>KenPom (<code>kp_*</code>) functions now use <code>httr2</code> cookie-jar authentication via <code><a href="../reference/kp_user_pw.html">login()</a></code>, <code><a href="../reference/dot-kp_get_page.html">.kp_get_page()</a></code>, and <code><a href="../reference/dot-kp_request.html">.kp_request()</a></code> helpers.</li>
-</ul><p><strong>Proxy support restored.</strong> When the package migrated from <code>httr</code> to <code>httr2</code> the legacy <code><a href="https://httr.r-lib.org/reference/use_proxy.html" class="external-link">httr::use_proxy()</a></code> plumbing was dropped and <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> quietly stopped honoring proxies (its <code>...</code> was preserved purely for source compatibility). Both <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> and the lower-level <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> now accept a <code>proxy =</code> argument:</p>
-<ul><li>
-<code>proxy = NULL</code> (default) — libcurl reads <code>http_proxy</code> / <code>https_proxy</code> / <code>no_proxy</code> env vars automatically.</li>
-<li>
-<code>proxy = "http://host:port"</code> — string form, forwarded to <code>httr2::req_proxy(url = ...)</code>.</li>
-<li>
-<code>proxy = list(url=, port=, username=, password=, auth=)</code> — named list spread into <code><a href="https://httr2.r-lib.org/reference/req_proxy.html" class="external-link">httr2::req_proxy()</a></code> for authenticated proxies.</li>
-</ul><p>Resolution order in <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>: explicit <code>proxy =</code> arg → <code>getOption("hoopR.proxy")</code> → libcurl env vars. The <code>...</code> thread works for NBA Stats wrappers (which forward into <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code>); ESPN / KenPom / NBA G-League wrappers call <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> directly without <code>...</code>, so use <code>options(hoopR.proxy = ...)</code> at the top of the session to cover those without per-function plumbing.</p>
+<p><strong>Breaking change</strong>: <code>httr</code> is replaced with <code>httr2</code> as the HTTP backend for every API call across the package, and <code>httr</code> is removed from <code>Imports</code>. Migration map:</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Aspect</th>
+<th>Before (2.1.0 and earlier)</th>
+<th>After (3.0.0)</th>
+</tr></thead><tbody><tr><td>HTTP client backend</td>
+<td><code>httr</code></td>
+<td><code>httr2</code></td>
+</tr><tr><td>
+<code>httr</code> package availability</td>
+<td>Auto-imported with <code>hoopR</code>
+</td>
+<td>Removed from <code>Imports</code> — <code><a href="https://httr.r-lib.org/" class="external-link">library(httr)</a></code> yourself if your downstream code still needs it</td>
+</tr><tr><td>
+<code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> body</td>
+<td>
+<code><a href="https://rvest.tidyverse.org/reference/session.html" class="external-link">rvest::session()</a></code> + <code><a href="https://httr.r-lib.org/reference/config.html" class="external-link">httr::config()</a></code> arguments</td>
+<td>
+<code><a href="https://httr2.r-lib.org/reference/request.html" class="external-link">httr2::request()</a></code> + retry pipeline</td>
+</tr><tr><td>All ESPN / NBA Stats / NBA G-League / NCAA / KenPom HTTP calls</td>
+<td>Mixed direct backend calls</td>
+<td>Routed through shared internal helpers (<code><a href="../reference/dot-retry_request.html">.retry_request()</a></code>, <code><a href="../reference/dot-resp_text.html">.resp_text()</a></code>) backed by <code>httr2</code>
+</td>
+</tr><tr><td>
+<code><a href="../reference/check_status.html">check_status()</a></code> internal</td>
+<td><code><a href="https://httr.r-lib.org/reference/status_code.html" class="external-link">httr::status_code()</a></code></td>
+<td><code><a href="https://httr2.r-lib.org/reference/resp_status.html" class="external-link">httr2::resp_status()</a></code></td>
+</tr><tr><td>KenPom session authentication</td>
+<td>
+<code><a href="https://rvest.tidyverse.org/reference/session.html" class="external-link">rvest::session()</a></code> with <code>httr</code> cookies</td>
+<td>
+<code>httr2</code> cookie-jar via <code><a href="../reference/kp_user_pw.html">login()</a></code> / <code><a href="../reference/dot-kp_get_page.html">.kp_get_page()</a></code> / <code><a href="../reference/dot-kp_request.html">.kp_request()</a></code> helpers</td>
+</tr><tr><td>libcurl &gt;= 8.x / curl R &gt;= 7.0.0 segfaults</td>
+<td>Triggered</td>
+<td>Resolved (<code>httr2</code> does not have the affected code path)</td>
+</tr></tbody></table><p><em>Note: proxy plumbing on <code><a href="../reference/request_with_proxy.html">request_with_proxy()</a></code> was quietly dropped during this migration. The restoration shipped in <code>3.1.0</code> — see above.</em></p>
 </div>
 <div class="section level5">
 <h5 id="messaging-migration-usethis--cli-3-0-0"><em>Messaging migration (usethis → cli)</em><a class="anchor" aria-label="anchor" href="#messaging-migration-usethis--cli-3-0-0"></a></h5>
@@ -336,15 +421,48 @@
 <li>Updated NBAGL tests to validate NBA Stats-backed return shapes (<code><a href="../reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="../reference/nbagl_standings.html">nbagl_standings()</a></code> named-list returns, and current schedule/PBP core columns).</li>
 </ul></div>
 <div class="section level5">
-<h5 id="ci-build-and-dependency-improvements-3-0-0"><em>CI, build, and dependency improvements</em><a class="anchor" aria-label="anchor" href="#ci-build-and-dependency-improvements-3-0-0"></a></h5>
+<h5 id="dependency-changes-3-0-0"><em>Dependency changes</em><a class="anchor" aria-label="anchor" href="#dependency-changes-3-0-0"></a></h5>
+<p>Dependency status before / after the release. Users with strict dependency pinning or downstream packages that re-export hoopR functionality should review this table.</p>
+<table class="table"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><thead><tr><th>Dependency</th>
+<th>Before (2.1.0)</th>
+<th>After (3.0.0)</th>
+<th>Why</th>
+</tr></thead><tbody><tr><td><code>httr</code></td>
+<td><code>Imports</code></td>
+<td>Removed</td>
+<td>Replaced by <code>httr2</code> (see HTTP migration above)</td>
+</tr><tr><td><code>httr2</code></td>
+<td>—</td>
+<td><code>Imports</code></td>
+<td>New HTTP backend</td>
+</tr><tr><td><code>usethis</code></td>
+<td><code>Imports</code></td>
+<td><code>Suggests</code></td>
+<td>Messaging migration to <code>cli</code>; retained only for <code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code> doc references</td>
+</tr><tr><td><code>furrr</code></td>
+<td><code>Imports</code></td>
+<td><code>Suggests</code></td>
+<td>Optional parallel features only; not required for core functionality</td>
+</tr><tr><td><code>future</code></td>
+<td><code>Imports</code></td>
+<td><code>Suggests</code></td>
+<td>Same as <code>furrr</code> — optional parallel features</td>
+</tr><tr><td><code>lifecycle</code></td>
+<td>—</td>
+<td><code>Imports</code></td>
+<td>Required for the new <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code> deprecation pattern</td>
+</tr><tr><td><code>qs</code></td>
+<td><code>Imports</code></td>
+<td>Removed</td>
+<td>No longer used by any code path</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="ci-build-and-contribution-improvements-3-0-0"><em>CI, build, and contribution improvements</em><a class="anchor" aria-label="anchor" href="#ci-build-and-contribution-improvements-3-0-0"></a></h5>
 <ul><li>Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.</li>
 <li>Clarified optional environment variable usage in CI for live API test toggles.</li>
 <li>Updated package build ignores to exclude local development folders from source checks.</li>
 <li>Updated GitHub Actions to v4.</li>
 <li>Cleaned up <code>.Rbuildignore</code> duplicates.</li>
-<li>Removed deprecated <code>qs</code> dependency.</li>
-<li>Moved <code>furrr</code> and <code>future</code> dependencies to Suggests with version requirements for users who want parallel features but aren’t required for core functionality.</li>
-<li>Added <code>lifecycle</code> dependency for the deprecation pattern used in this release.</li>
 <li>Internal <code>nba_endpoint()</code> registry updated with all V3 boxscore endpoints and <code>boxscoresummaryv3</code>.</li>
 <li>Added comprehensive <code>CONTRIBUTING.md</code> with naming conventions and test environment documentation.</li>
 </ul></div>
