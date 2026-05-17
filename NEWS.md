@@ -234,12 +234,17 @@ Calling any of these now errors with a structured `lifecycleDeprecatedError` tha
 
 #### *HTTP backend migration (httr → httr2)*
 
-- **Breaking**: Replaced `httr` with `httr2` as the HTTP backend for all API requests across the package.
-- Removed `httr` from package dependencies (`Imports`).
-- `request_with_proxy()` now uses `httr2` request/retry pipeline instead of `rvest::session()` with `httr` config arguments, resolving segfaults on systems with libcurl >= 8.x / curl R package >= 7.0.0.
-- All ESPN, NBA Stats, NBA G-League, NCAA, and KenPom HTTP calls now use shared internal helpers (`.retry_request()`, `.resp_text()`) backed by `httr2`.
-- `check_status()` now uses `httr2::resp_status()` instead of `httr::status_code()`.
-- KenPom (`kp_*`) functions now use `httr2` cookie-jar authentication via `login()`, `.kp_get_page()`, and `.kp_request()` helpers.
+**Breaking change**: `httr` is replaced with `httr2` as the HTTP backend for every API call across the package, and `httr` is removed from `Imports`. Migration map:
+
+| Aspect | Before (2.1.0 and earlier) | After (3.0.0) |
+|---|---|---|
+| HTTP client backend | `httr` | `httr2` |
+| `httr` package availability | Auto-imported with `hoopR` | Removed from `Imports` — `library(httr)` yourself if your downstream code still needs it |
+| `request_with_proxy()` body | `rvest::session()` + `httr::config()` arguments | `httr2::request()` + retry pipeline |
+| All ESPN / NBA Stats / NBA G-League / NCAA / KenPom HTTP calls | Mixed direct backend calls | Routed through shared internal helpers (`.retry_request()`, `.resp_text()`) backed by `httr2` |
+| `check_status()` internal | `httr::status_code()` | `httr2::resp_status()` |
+| KenPom session authentication | `rvest::session()` with `httr` cookies | `httr2` cookie-jar via `login()` / `.kp_get_page()` / `.kp_request()` helpers |
+| libcurl >= 8.x / curl R >= 7.0.0 segfaults | Triggered | Resolved (`httr2` does not have the affected code path) |
 
 *Note: proxy plumbing on `request_with_proxy()` was quietly dropped during this migration. The restoration shipped in `3.1.0` — see above.*
 
@@ -271,16 +276,27 @@ Calling any of these now errors with a structured `lifecycleDeprecatedError` tha
 - Updated ESPN test expectations for current API responses.
 - Updated NBAGL tests to validate NBA Stats-backed return shapes (`nbagl_players()` and `nbagl_standings()` named-list returns, and current schedule/PBP core columns).
 
-#### *CI, build, and dependency improvements*
+#### *Dependency changes*
+
+Dependency status before / after the release. Users with strict dependency pinning or downstream packages that re-export hoopR functionality should review this table.
+
+| Dependency | Before (2.1.0) | After (3.0.0) | Why |
+|---|---|---|---|
+| `httr` | `Imports` | Removed | Replaced by `httr2` (see HTTP migration above) |
+| `httr2` | — | `Imports` | New HTTP backend |
+| `usethis` | `Imports` | `Suggests` | Messaging migration to `cli`; retained only for `usethis::edit_r_environ()` doc references |
+| `furrr` | `Imports` | `Suggests` | Optional parallel features only; not required for core functionality |
+| `future` | `Imports` | `Suggests` | Same as `furrr` — optional parallel features |
+| `lifecycle` | — | `Imports` | Required for the new `lifecycle::deprecate_stop()` deprecation pattern |
+| `qs` | `Imports` | Removed | No longer used by any code path |
+
+#### *CI, build, and contribution improvements*
 
 - Added workflow-level concurrency and explicit permissions to GitHub Actions workflows.
 - Clarified optional environment variable usage in CI for live API test toggles.
 - Updated package build ignores to exclude local development folders from source checks.
 - Updated GitHub Actions to v4.
 - Cleaned up `.Rbuildignore` duplicates.
-- Removed deprecated `qs` dependency.
-- Moved `furrr` and `future` dependencies to Suggests with version requirements for users who want parallel features but aren't required for core functionality.
-- Added `lifecycle` dependency for the deprecation pattern used in this release.
 - Internal `nba_endpoint()` registry updated with all V3 boxscore endpoints and `boxscoresummaryv3`.
 - Added comprehensive `CONTRIBUTING.md` with naming conventions and test environment documentation.
 
