@@ -159,33 +159,33 @@ Returns a named list of data frames: LeagueLineupViz
 
 **LeagueLineupViz**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GROUP_ID          | character |
-| GROUP_NAME        | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| MIN               | character |
-| OFF_RATING        | character |
-| DEF_RATING        | character |
-| NET_RATING        | character |
-| PACE              | character |
-| TS_PCT            | character |
-| FTA_RATE          | character |
-| TM_AST_PCT        | character |
-| PCT_FGA_2PT       | character |
-| PCT_FGA_3PT       | character |
-| PCT_PTS_2PT_MR    | character |
-| PCT_PTS_FB        | character |
-| PCT_PTS_FT        | character |
-| PCT_PTS_PAINT     | character |
-| PCT_AST_FGM       | character |
-| PCT_UAST_FGM      | character |
-| OPP_FG3_PCT       | character |
-| OPP_EFG_PCT       | character |
-| OPP_FTA_RATE      | character |
-| OPP_TOV_PCT       | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_ID | character | Group identifier (e.g. conference group_id). |
+| GROUP_NAME | character | Group name. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| MIN | character | Minutes played. |
+| OFF_RATING | character | Offensive rating (points produced per 100 possessions). |
+| DEF_RATING | character | Defensive rating (points allowed per 100 possessions). |
+| NET_RATING | character | Net rating (off rating - def rating). |
+| PACE | character | Possessions per 48 minutes. |
+| TS_PCT | character | True shooting percentage (0-1). |
+| FTA_RATE | character | Free throw attempt rate (FTA / FGA). |
+| TM_AST_PCT | character |  |
+| PCT_FGA_2PT | character |  |
+| PCT_FGA_3PT | character |  |
+| PCT_PTS_2PT_MR | character |  |
+| PCT_PTS_FB | character |  |
+| PCT_PTS_FT | character |  |
+| PCT_PTS_PAINT | character |  |
+| PCT_AST_FGM | character |  |
+| PCT_UAST_FGM | character |  |
+| OPP_FG3_PCT | character |  |
+| OPP_EFG_PCT | character |  |
+| OPP_FTA_RATE | character |  |
+| OPP_TOV_PCT | character |  |
 
 ## Details
 

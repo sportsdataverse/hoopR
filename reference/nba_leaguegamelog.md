@@ -69,38 +69,38 @@ Return a named list of data frames: LeagueGameLog
 
 **LeagueGameLog**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| SEASON_ID         | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| GAME_ID           | character |
-| GAME_DATE         | character |
-| MATCHUP           | character |
-| WL                | character |
-| MIN               | character |
-| FGM               | character |
-| FGA               | character |
-| FG_PCT            | character |
-| FG3M              | character |
-| FG3A              | character |
-| FG3_PCT           | character |
-| FTM               | character |
-| FTA               | character |
-| FT_PCT            | character |
-| OREB              | character |
-| DREB              | character |
-| REB               | character |
-| AST               | character |
-| STL               | character |
-| BLK               | character |
-| TOV               | character |
-| PF                | character |
-| PTS               | character |
-| PLUS_MINUS        | character |
-| VIDEO_AVAILABLE   | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| SEASON_ID | character | Unique season identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| GAME_ID | character | Unique game identifier. |
+| GAME_DATE | character | Game date (YYYY-MM-DD). |
+| MATCHUP | character | Matchup. |
+| WL | character | Wl. |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| TOV | character | Turnovers. |
+| PF | character | Personal fouls. |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| VIDEO_AVAILABLE | character | Video available. |
 
 ## Details
 

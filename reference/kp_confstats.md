@@ -18,44 +18,44 @@ kp_confstats(year = most_recent_mbb_season())
 
 A data frame with the following columns:
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| conf         | character |
-| eff          | numeric   |
-| eff_rk       | numeric   |
-| tempo        | numeric   |
-| tempo_rk     | numeric   |
-| e_fg_pct     | numeric   |
-| e_fg_pct_rk  | numeric   |
-| to_pct       | numeric   |
-| to_pct_rk    | numeric   |
-| or_pct       | numeric   |
-| or_pct_rk    | numeric   |
-| ft_rate      | numeric   |
-| ft_rate_rk   | numeric   |
-| blk_pct      | numeric   |
-| blk_pct_rk   | numeric   |
-| stl_pct      | numeric   |
-| stl_pct_rk   | numeric   |
-| fg_2_pct     | numeric   |
-| fg_2_pct_rk  | numeric   |
-| fg_3_pct     | numeric   |
-| fg_3_pct_rk  | numeric   |
-| ft_pct       | numeric   |
-| ft_pct_rk    | numeric   |
-| fg_3a_pct    | numeric   |
-| fg_3a_pct_rk | numeric   |
-| a_pct        | numeric   |
-| a_pct_rk     | numeric   |
-| home_w_l     | character |
-| home_w_l_pct | numeric   |
-| home_w_l_rk  | numeric   |
-| close        | numeric   |
-| close_rk     | numeric   |
-| blowouts     | numeric   |
-| blowouts_rk  | numeric   |
-| year         | numeric   |
+|              |           |                                            |
+|--------------|-----------|--------------------------------------------|
+| col_name     | types     | description                                |
+| conf         | character | character.                                 |
+| eff          | numeric   | Eff.                                       |
+| eff_rk       | numeric   | Eff rk.                                    |
+| tempo        | numeric   | Tempo.                                     |
+| tempo_rk     | numeric   | Tempo rk.                                  |
+| e_fg_pct     | numeric   | E field goals percentage (0-1 decimal).    |
+| e_fg_pct_rk  | numeric   | E fg pct rk.                               |
+| to_pct       | numeric   | To percentage (0-1 decimal).               |
+| to_pct_rk    | numeric   | To pct rk.                                 |
+| or_pct       | numeric   | Or percentage (0-1 decimal).               |
+| or_pct_rk    | numeric   | Or pct rk.                                 |
+| ft_rate      | numeric   | Ft rate.                                   |
+| ft_rate_rk   | numeric   | Ft rate rk.                                |
+| blk_pct      | numeric   | Blocks percentage (0-1 decimal).           |
+| blk_pct_rk   | numeric   | Blk pct rk.                                |
+| stl_pct      | numeric   | Steals percentage (0-1 decimal).           |
+| stl_pct_rk   | numeric   | Stl pct rk.                                |
+| fg_2_pct     | numeric   | Field goals 2 percentage (0-1 decimal).    |
+| fg_2_pct_rk  | numeric   | Fg 2 pct rk.                               |
+| fg_3_pct     | numeric   | Field goals 3 percentage (0-1 decimal).    |
+| fg_3_pct_rk  | numeric   | Fg 3 pct rk.                               |
+| ft_pct       | numeric   | Free throw percentage (0-1).               |
+| ft_pct_rk    | numeric   | Ft pct rk.                                 |
+| fg_3a_pct    | numeric   | Field goals 3a percentage (0-1 decimal).   |
+| fg_3a_pct_rk | numeric   | Fg 3a pct rk.                              |
+| a_pct        | numeric   | A percentage (0-1 decimal).                |
+| a_pct_rk     | numeric   | A pct rk.                                  |
+| home_w_l     | character | Home team's wins losses.                   |
+| home_w_l_pct | numeric   | Home wins losses percentage (0-1 decimal). |
+| home_w_l_rk  | numeric   | Home team's wins losses rk.                |
+| close        | numeric   | Close.                                     |
+| close_rk     | numeric   | Close rk.                                  |
+| blowouts     | numeric   | Blowouts.                                  |
+| blowouts_rk  | numeric   | Blowouts rk.                               |
+| year         | numeric   | 4-digit year.                              |
 
 ## See also
 

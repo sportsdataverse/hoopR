@@ -39,14 +39,14 @@ Return a named list of data frames: PlayoffSeries
 
 **PlayoffSeries**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GAME_ID         | character |
-| HOME_TEAM_ID    | character |
-| VISITOR_TEAM_ID | character |
-| SERIES_ID       | character |
-| GAME_NUM        | character |
+|                 |           |                                      |
+|-----------------|-----------|--------------------------------------|
+| col_name        | types     | description                          |
+| GAME_ID         | character | Unique game identifier.              |
+| HOME_TEAM_ID    | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID | character |                                      |
+| SERIES_ID       | character |                                      |
+| GAME_NUM        | character |                                      |
 
 ## Details
 

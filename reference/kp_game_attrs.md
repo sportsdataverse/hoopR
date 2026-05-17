@@ -24,16 +24,16 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 
 Returns a tibble with game attributes
 
-|            |           |
-|------------|-----------|
-| col_name   | types     |
-| rk         | integer   |
-| data       | character |
-| game       | character |
-| location   | character |
-| conf       | character |
-| excitement | numeric   |
-| year       | numeric   |
+|            |           |               |
+|------------|-----------|---------------|
+| col_name   | types     | description   |
+| rk         | integer   | Rk.           |
+| data       | character | Data.         |
+| game       | character | Game.         |
+| location   | character | Location.     |
+| conf       | character | character.    |
+| excitement | numeric   | Excitement.   |
+| year       | numeric   | 4-digit year. |
 
 ## See also
 

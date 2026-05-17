@@ -65,91 +65,91 @@ HomePageStat7, HomePageStat8
 
 **HomePageStat1**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| PTS               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PTS | character | Points scored. |
 
 **HomePageStat2**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| REB               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| REB | character | Total rebounds. |
 
 **HomePageStat3**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| AST               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| AST | character | Assists. |
 
 **HomePageStat4**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| STL               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| STL | character | Steals. |
 
 **HomePageStat5**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| FG_PCT            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| FG_PCT | character | Field goal percentage (0-1). |
 
 **HomePageStat6**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| FT_PCT            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| FT_PCT | character | Free throw percentage (0-1). |
 
 **HomePageStat7**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| FG3_PCT           | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 **HomePageStat8**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| BLK               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| BLK | character | Blocks. |
 
 ## Details
 

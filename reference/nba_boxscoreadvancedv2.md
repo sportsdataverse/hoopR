@@ -54,76 +54,76 @@ Returns a named list of data frames: PlayerStats, TeamStats
 
 PlayerStats
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| NICKNAME          | character |
-| START_POSITION    | character |
-| COMMENT           | character |
-| MIN               | character |
-| E_OFF_RATING      | character |
-| OFF_RATING        | character |
-| E_DEF_RATING      | character |
-| DEF_RATING        | character |
-| E_NET_RATING      | character |
-| NET_RATING        | character |
-| AST_PCT           | character |
-| AST_TOV           | character |
-| AST_RATIO         | character |
-| OREB_PCT          | character |
-| DREB_PCT          | character |
-| REB_PCT           | character |
-| TM_TOV_PCT        | character |
-| EFG_PCT           | character |
-| TS_PCT            | character |
-| USG_PCT           | character |
-| E_USG_PCT         | character |
-| E_PACE            | character |
-| PACE              | character |
-| PACE_PER40        | character |
-| POSS              | character |
-| PIE               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| NICKNAME | character | Team or athlete nickname. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| E_OFF_RATING | character |  |
+| OFF_RATING | character | Offensive rating (points produced per 100 possessions). |
+| E_DEF_RATING | character |  |
+| DEF_RATING | character | Defensive rating (points allowed per 100 possessions). |
+| E_NET_RATING | character |  |
+| NET_RATING | character | Net rating (off rating - def rating). |
+| AST_PCT | character | Assist percentage (0-1). |
+| AST_TOV | character |  |
+| AST_RATIO | character | Assist ratio (assists per 100 possessions used). |
+| OREB_PCT | character | Offensive rebound percentage (0-1). |
+| DREB_PCT | character | Defensive rebound percentage (0-1). |
+| REB_PCT | character | Total rebound percentage (0-1). |
+| TM_TOV_PCT | character |  |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| TS_PCT | character | True shooting percentage (0-1). |
+| USG_PCT | character | Usage percentage (0-1). |
+| E_USG_PCT | character |  |
+| E_PACE | character |  |
+| PACE | character | Possessions per 48 minutes. |
+| PACE_PER40 | character | Pace per40. |
+| POSS | character | Poss. |
+| PIE | character | Player Impact Estimate (0-1). |
 
 TeamStats
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| MIN               | character |
-| E_OFF_RATING      | character |
-| OFF_RATING        | character |
-| E_DEF_RATING      | character |
-| DEF_RATING        | character |
-| E_NET_RATING      | character |
-| NET_RATING        | character |
-| AST_PCT           | character |
-| AST_TOV           | character |
-| AST_RATIO         | character |
-| OREB_PCT          | character |
-| DREB_PCT          | character |
-| REB_PCT           | character |
-| E_TM_TOV_PCT      | character |
-| TM_TOV_PCT        | character |
-| EFG_PCT           | character |
-| TS_PCT            | character |
-| USG_PCT           | character |
-| E_USG_PCT         | character |
-| E_PACE            | character |
-| PACE              | character |
-| PACE_PER40        | character |
-| POSS              | character |
-| PIE               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| E_OFF_RATING | character |  |
+| OFF_RATING | character | Offensive rating (points produced per 100 possessions). |
+| E_DEF_RATING | character |  |
+| DEF_RATING | character | Defensive rating (points allowed per 100 possessions). |
+| E_NET_RATING | character |  |
+| NET_RATING | character | Net rating (off rating - def rating). |
+| AST_PCT | character | Assist percentage (0-1). |
+| AST_TOV | character |  |
+| AST_RATIO | character | Assist ratio (assists per 100 possessions used). |
+| OREB_PCT | character | Offensive rebound percentage (0-1). |
+| DREB_PCT | character | Defensive rebound percentage (0-1). |
+| REB_PCT | character | Total rebound percentage (0-1). |
+| E_TM_TOV_PCT | character |  |
+| TM_TOV_PCT | character |  |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| TS_PCT | character | True shooting percentage (0-1). |
+| USG_PCT | character | Usage percentage (0-1). |
+| E_USG_PCT | character |  |
+| E_PACE | character |  |
+| PACE | character | Possessions per 48 minutes. |
+| PACE_PER40 | character | Pace per40. |
+| POSS | character | Poss. |
+| PIE | character | Player Impact Estimate (0-1). |
 
 ## Details
 

@@ -34,39 +34,39 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 
 **AwayTeam**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| GAME_ID       | character |
-| TEAM_ID       | character |
-| TEAM_CITY     | character |
-| TEAM_NAME     | character |
-| PERSON_ID     | character |
-| PLAYER_FIRST  | character |
-| PLAYER_LAST   | character |
-| IN_TIME_REAL  | character |
-| OUT_TIME_REAL | character |
-| PLAYER_PTS    | character |
-| PT_DIFF       | character |
-| USG_PCT       | character |
+|               |           |                                                 |
+|---------------|-----------|-------------------------------------------------|
+| col_name      | types     | description                                     |
+| GAME_ID       | character | Unique game identifier.                         |
+| TEAM_ID       | character | Unique team identifier.                         |
+| TEAM_CITY     | character | Team city or region (e.g. 'Las Vegas').         |
+| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PERSON_ID     | character | Unique player identifier (V3 endpoints).        |
+| PLAYER_FIRST  | character |                                                 |
+| PLAYER_LAST   | character |                                                 |
+| IN_TIME_REAL  | character |                                                 |
+| OUT_TIME_REAL | character |                                                 |
+| PLAYER_PTS    | character |                                                 |
+| PT_DIFF       | character |                                                 |
+| USG_PCT       | character | Usage percentage (0-1).                         |
 
 **HomeTeam**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| GAME_ID       | character |
-| TEAM_ID       | character |
-| TEAM_CITY     | character |
-| TEAM_NAME     | character |
-| PERSON_ID     | character |
-| PLAYER_FIRST  | character |
-| PLAYER_LAST   | character |
-| IN_TIME_REAL  | character |
-| OUT_TIME_REAL | character |
-| PLAYER_PTS    | character |
-| PT_DIFF       | character |
-| USG_PCT       | character |
+|               |           |                                                 |
+|---------------|-----------|-------------------------------------------------|
+| col_name      | types     | description                                     |
+| GAME_ID       | character | Unique game identifier.                         |
+| TEAM_ID       | character | Unique team identifier.                         |
+| TEAM_CITY     | character | Team city or region (e.g. 'Las Vegas').         |
+| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PERSON_ID     | character | Unique player identifier (V3 endpoints).        |
+| PLAYER_FIRST  | character |                                                 |
+| PLAYER_LAST   | character |                                                 |
+| IN_TIME_REAL  | character |                                                 |
+| OUT_TIME_REAL | character |                                                 |
+| PLAYER_PTS    | character |                                                 |
+| PT_DIFF       | character |                                                 |
+| USG_PCT       | character | Usage percentage (0-1).                         |
 
 ## Details
 

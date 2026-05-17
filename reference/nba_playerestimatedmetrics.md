@@ -40,41 +40,41 @@ Return a named list of data frames: PlayerEstimatedMetrics
 
 **PlayerEstimatedMetrics**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| GP                | character |
-| W                 | character |
-| L                 | character |
-| W_PCT             | character |
-| MIN               | character |
-| E_OFF_RATING      | character |
-| E_DEF_RATING      | character |
-| E_NET_RATING      | character |
-| E_AST_RATIO       | character |
-| E_OREB_PCT        | character |
-| E_DREB_PCT        | character |
-| E_REB_PCT         | character |
-| E_TOV_PCT         | character |
-| E_USG_PCT         | character |
-| E_PACE            | character |
-| GP_RANK           | character |
-| W_RANK            | character |
-| L_RANK            | character |
-| W_PCT_RANK        | character |
-| MIN_RANK          | character |
-| E_OFF_RATING_RANK | character |
-| E_DEF_RATING_RANK | character |
-| E_NET_RATING_RANK | character |
-| E_AST_RATIO_RANK  | character |
-| E_OREB_PCT_RANK   | character |
-| E_DREB_PCT_RANK   | character |
-| E_REB_PCT_RANK    | character |
-| E_TOV_PCT_RANK    | character |
-| E_USG_PCT_RANK    | character |
-| E_PACE_RANK       | character |
+|                   |           |                           |
+|-------------------|-----------|---------------------------|
+| col_name          | types     | description               |
+| PLAYER_ID         | character | Unique player identifier. |
+| PLAYER_NAME       | character | Player name.              |
+| GP                | character | Games played.             |
+| W                 | character | Wins.                     |
+| L                 | character | Losses.                   |
+| W_PCT             | character |                           |
+| MIN               | character | Minutes played.           |
+| E_OFF_RATING      | character |                           |
+| E_DEF_RATING      | character |                           |
+| E_NET_RATING      | character |                           |
+| E_AST_RATIO       | character |                           |
+| E_OREB_PCT        | character |                           |
+| E_DREB_PCT        | character |                           |
+| E_REB_PCT         | character |                           |
+| E_TOV_PCT         | character |                           |
+| E_USG_PCT         | character |                           |
+| E_PACE            | character |                           |
+| GP_RANK           | character |                           |
+| W_RANK            | character |                           |
+| L_RANK            | character |                           |
+| W_PCT_RANK        | character |                           |
+| MIN_RANK          | character |                           |
+| E_OFF_RATING_RANK | character |                           |
+| E_DEF_RATING_RANK | character |                           |
+| E_NET_RATING_RANK | character |                           |
+| E_AST_RATIO_RANK  | character |                           |
+| E_OREB_PCT_RANK   | character |                           |
+| E_DREB_PCT_RANK   | character |                           |
+| E_REB_PCT_RANK    | character |                           |
+| E_TOV_PCT_RANK    | character |                           |
+| E_USG_PCT_RANK    | character |                           |
+| E_PACE_RANK       | character |                           |
 
 ## Details
 

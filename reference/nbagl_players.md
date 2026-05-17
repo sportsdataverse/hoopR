@@ -98,28 +98,28 @@ Returns a named list of data frames: PlayerIndex
 
 **PlayerIndex**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PERSON_ID         | character |
-| PLAYER_LAST_NAME  | character |
-| PLAYER_FIRST_NAME | character |
-| PLAYER_SLUG       | character |
-| TEAM_ID           | character |
-| TEAM_SLUG         | character |
-| TEAM_CITY         | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| JERSEY_NUMBER     | character |
-| POSITION          | character |
-| HEIGHT            | character |
-| WEIGHT            | character |
-| COLLEGE           | character |
-| COUNTRY           | character |
-| DRAFT_YEAR        | character |
-| DRAFT_ROUND       | character |
-| DRAFT_NUMBER      | character |
-| ROSTER_STATUS     | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| PLAYER_LAST_NAME | character |  |
+| PLAYER_FIRST_NAME | character |  |
+| PLAYER_SLUG | character | URL-safe player identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_SLUG | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| JERSEY_NUMBER | character |  |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| HEIGHT | character | Player height (string e.g. '6-2' or inches). |
+| WEIGHT | character | Player weight in pounds. |
+| COLLEGE | character | College or school attended. |
+| COUNTRY | character | Country (full name or code). |
+| DRAFT_YEAR | character | Draft year (4-digit). |
+| DRAFT_ROUND | character | Round of the draft selection. |
+| DRAFT_NUMBER | character |  |
+| ROSTER_STATUS | character |  |
 
 ## Details
 

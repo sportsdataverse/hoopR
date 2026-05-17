@@ -45,43 +45,43 @@ Return a named list of data frames: TeamStats
 
 **TeamStats**
 
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| TEAM_ID               | character |
-| TEAM_CITY             | character |
-| TEAM_NAME             | character |
-| YEAR                  | character |
-| GP                    | character |
-| WINS                  | character |
-| LOSSES                | character |
-| WIN_PCT               | character |
-| CONF_RANK             | character |
-| DIV_RANK              | character |
-| PO_WINS               | character |
-| PO_LOSSES             | character |
-| CONF_COUNT            | character |
-| DIV_COUNT             | character |
-| NBA_FINALS_APPEARANCE | character |
-| FGM                   | character |
-| FGA                   | character |
-| FG_PCT                | character |
-| FG3M                  | character |
-| FG3A                  | character |
-| FG3_PCT               | character |
-| FTM                   | character |
-| FTA                   | character |
-| FT_PCT                | character |
-| OREB                  | character |
-| DREB                  | character |
-| REB                   | character |
-| AST                   | character |
-| PF                    | character |
-| STL                   | character |
-| TOV                   | character |
-| BLK                   | character |
-| PTS                   | character |
-| PTS_RANK              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| YEAR | character | 4-digit year. |
+| GP | character | Games played. |
+| WINS | character | Total wins. |
+| LOSSES | character | Total losses. |
+| WIN_PCT | character |  |
+| CONF_RANK | character |  |
+| DIV_RANK | character |  |
+| PO_WINS | character |  |
+| PO_LOSSES | character |  |
+| CONF_COUNT | character |  |
+| DIV_COUNT | character |  |
+| NBA_FINALS_APPEARANCE | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| PF | character | Personal fouls. |
+| STL | character | Steals. |
+| TOV | character | Turnovers. |
+| BLK | character | Blocks. |
+| PTS | character | Points scored. |
+| PTS_RANK | character |  |
 
 ## Details
 

@@ -22,23 +22,23 @@ kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 
 Returns a tibble of foul participation stats
 
-|                              |           |
-|------------------------------|-----------|
-| col_name                     | types     |
-| team                         | character |
-| conf                         | character |
-| two_foul_particpation_pct    | numeric   |
-| two_foul_particpation_pct_rk | numeric   |
-| adj2fp                       | numeric   |
-| adj2fp_rk                    | numeric   |
-| two_foul_total_time          | character |
-| two_foul_total_time_rk       | character |
-| two_foul_time_on             | character |
-| two_foul_time_on_rk          | character |
-| bench_pct                    | numeric   |
-| bench_pct_rk                 | numeric   |
-| ncaa_seed                    | numeric   |
-| year                         | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team | character | Team-side label or team identifier. |
+| conf | character | character. |
+| two_foul_particpation_pct | numeric | Two foul particpation percentage (0-1 decimal). |
+| two_foul_particpation_pct_rk | numeric | Two foul particpation pct rk. |
+| adj2fp | numeric | Adj2fp. |
+| adj2fp_rk | numeric | Adj2fp rk. |
+| two_foul_total_time | character | Time / clock value. |
+| two_foul_total_time_rk | character | Two foul total time rk. |
+| two_foul_time_on | character | Two foul time on. |
+| two_foul_time_on_rk | character | Two foul time on rk. |
+| bench_pct | numeric | Bench percentage (0-1 decimal). |
+| bench_pct_rk | numeric | Bench pct rk. |
+| ncaa_seed | numeric | Ncaa seed. |
+| year | integer | 4-digit year. |
 
 ## See also
 
@@ -57,7 +57,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
-#> ✖ 2026-05-16 20:09:54.10835: Invalid arguments or no foul trouble data for 2020 - 2026 available!
+#> ✖ 2026-05-17 14:15:17.86811: Invalid arguments or no foul trouble data for 2020 - 2026 available!
 #> ✖ Args: min_year = 2020, max_year = 2026
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf TwoFoulParticpation.Pct

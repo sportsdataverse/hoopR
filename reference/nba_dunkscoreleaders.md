@@ -55,64 +55,64 @@ Returns a named list of data frames: DunkScoreLeaders
 
 **DunkScoreLeaders**
 
-|                            |           |
-|----------------------------|-----------|
-| col_name                   | types     |
-| game_id                    | character |
-| game_date                  | character |
-| matchup                    | character |
-| period                     | character |
-| game_clock_time            | character |
-| event_num                  | character |
-| player_id                  | character |
-| player_name                | character |
-| first_name                 | character |
-| last_name                  | character |
-| team_id                    | character |
-| team_name                  | character |
-| team_city                  | character |
-| team_abbreviation          | character |
-| dunk_score                 | character |
-| jump_subscore              | character |
-| power_subscore             | character |
-| style_subscore             | character |
-| defensive_contest_subscore | character |
-| max_ball_height            | character |
-| ball_speed_through_rim     | character |
-| player_vertical            | character |
-| hang_time                  | character |
-| takeoff_distance           | character |
-| reverse_dunk               | character |
-| dunk360                    | character |
-| through_the_legs           | character |
-| alley_oop                  | character |
-| tip_in                     | character |
-| self_oop                   | character |
-| player_rotation            | character |
-| player_lateral_speed       | character |
-| ball_distance_traveled     | character |
-| ball_reach_back            | character |
-| total_ball_acceleration    | character |
-| dunking_hand               | character |
-| jumping_foot               | character |
-| pass_length                | character |
-| catching_hand              | character |
-| catch_distance             | character |
-| lateral_catch_distance     | character |
-| passer_id                  | character |
-| passer_name                | character |
-| passer_first_name          | character |
-| passer_last_name           | character |
-| pass_release_point         | character |
-| shooter_id                 | character |
-| shooter_name               | character |
-| shooter_first_name         | character |
-| shooter_last_name          | character |
-| shot_release_point         | character |
-| shot_length                | character |
-| defensive_contest_level    | character |
-| possible_attempted_charge  | character |
-| video_available            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| game_date | character | Game date (YYYY-MM-DD). |
+| matchup | character | Matchup. |
+| period | character | Period of the game (1-4 quarters; 5+ for OT). |
+| game_clock_time | character | Time / clock value. |
+| event_num | character | Sequential event number within the game (V2 PBP). |
+| player_id | character | Unique player identifier. |
+| player_name | character | Player name. |
+| first_name | character | Player's first name. |
+| last_name | character | Player's last name. |
+| team_id | character | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| dunk_score | character | Dunk score. |
+| jump_subscore | character | Jump subscore. |
+| power_subscore | character | Power subscore. |
+| style_subscore | character | Style subscore. |
+| defensive_contest_subscore | character | Defensive contest subscore. |
+| max_ball_height | character | Max ball height. |
+| ball_speed_through_rim | character | Ball speed through rim. |
+| player_vertical | character | Player vertical. |
+| hang_time | character | Time / clock value. |
+| takeoff_distance | character | Takeoff distance. |
+| reverse_dunk | character | Reverse dunk. |
+| dunk360 | character | Dunk360. |
+| through_the_legs | character | Through the legs. |
+| alley_oop | character | Alley oop. |
+| tip_in | character | Tip in. |
+| self_oop | character | Self oop. |
+| player_rotation | character | Player rotation. |
+| player_lateral_speed | character | Player lateral speed. |
+| ball_distance_traveled | character | Ball distance traveled. |
+| ball_reach_back | character | Ball reach back. |
+| total_ball_acceleration | character | Total ball acceleration. |
+| dunking_hand | character | Dunking hand. |
+| jumping_foot | character | Jumping foot. |
+| pass_length | character | Pass length. |
+| catching_hand | character | Catching hand. |
+| catch_distance | character | Catch distance. |
+| lateral_catch_distance | character | Lateral catch distance. |
+| passer_id | character | Unique identifier for passer. |
+| passer_name | character | Passer name. |
+| passer_first_name | character | Passer first name. |
+| passer_last_name | character | Passer last name. |
+| pass_release_point | character | Pass release point. |
+| shooter_id | character | Unique identifier for shooter. |
+| shooter_name | character | Shooter name (for shot events). |
+| shooter_first_name | character | Shooter first name. |
+| shooter_last_name | character | Shooter last name. |
+| shot_release_point | character | Shot release point. |
+| shot_length | character | Shot length. |
+| defensive_contest_level | character | Defensive contest level. |
+| possible_attempted_charge | character | Possible attempted charge. |
+| video_available | character | Video available. |
 
 ## Details
 

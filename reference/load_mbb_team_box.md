@@ -39,49 +39,49 @@ load_mbb_team_box(
 
 Returns a tibble
 
-|                                                                |           |
-|----------------------------------------------------------------|-----------|
-| col_name                                                       | types     |
-| team_id                                                        | character |
-| team_uid                                                       | character |
-| team_slug                                                      | character |
-| team_location                                                  | character |
-| team_name                                                      | character |
-| team_abbreviation                                              | character |
-| team_display_name                                              | character |
-| team_short_display_name                                        | character |
-| team_color                                                     | character |
-| team_alternate_color                                           | character |
-| team_logo                                                      | character |
-| field_goals_made_field_goals_attempted                         | character |
-| field_goal_pct                                                 | character |
-| three_point_field_goals_made_three_point_field_goals_attempted | character |
-| three_point_field_goal_pct                                     | character |
-| free_throws_made_free_throws_attempted                         | character |
-| free_throw_pct                                                 | character |
-| total_rebounds                                                 | character |
-| offensive_rebounds                                             | character |
-| defensive_rebounds                                             | character |
-| assists                                                        | character |
-| steals                                                         | character |
-| blocks                                                         | character |
-| turnovers                                                      | character |
-| team_turnovers                                                 | character |
-| total_turnovers                                                | character |
-| technical_fouls                                                | character |
-| total_technical_fouls                                          | character |
-| flagrant_fouls                                                 | character |
-| fouls                                                          | character |
-| largest_lead                                                   | character |
-| home_away                                                      | character |
-| opponent_id                                                    | integer   |
-| opponent_name                                                  | character |
-| opponent_mascot                                                | character |
-| opponent_abbrev                                                | character |
-| game_id                                                        | integer   |
-| season                                                         | integer   |
-| season_type                                                    | integer   |
-| game_date                                                      | Date      |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | character | Unique team identifier. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_display_name | character | Full team display name. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| team_logo | character | Team logo image URL. |
+| field_goals_made_field_goals_attempted | character | Field Goals Made-Attempted. |
+| field_goal_pct | character | Field goal percentage (0-1). |
+| three_point_field_goals_made_three_point_field_goals_attempted | character | 3-Point Field Goals Made-Attempted. |
+| three_point_field_goal_pct | character | Three-point field goal percentage (0-1). |
+| free_throws_made_free_throws_attempted | character | Free Throws Made-Attempted. |
+| free_throw_pct | character | Free throw percentage (0-1). |
+| total_rebounds | character | Total rebounds. |
+| offensive_rebounds | character | Offensive rebounds. |
+| defensive_rebounds | character | Defensive rebounds. |
+| assists | character | Total assists. |
+| steals | character | Total steals. |
+| blocks | character | Total blocks. |
+| turnovers | character | Total turnovers. |
+| team_turnovers | character | Team turnovers (turnovers credited to the team rather than a player). |
+| total_turnovers | character | Total turnovers (player + team). |
+| technical_fouls | character | Total technical fouls. |
+| total_technical_fouls | character | Total technical fouls (player + team). |
+| flagrant_fouls | character | Total flagrant fouls. |
+| fouls | character | Personal fouls. |
+| largest_lead | character | Largest lead during the game. |
+| home_away | character | Game venue label ('home' or 'away'). |
+| opponent_id | integer | Unique identifier for opponent. |
+| opponent_name | character | Opponent name. |
+| opponent_mascot | character | Opponent mascot. |
+| opponent_abbrev | character | Abbreviation for opponent. |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| game_date | Date | Game date (YYYY-MM-DD). |
 
 ## See also
 

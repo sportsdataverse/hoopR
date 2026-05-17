@@ -119,29 +119,29 @@ Returns a named list of data frames: FantasyWidgetResult
 
 **FantasyWidgetResult**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| PLAYER_POSITION   | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| GP                | character |
-| MIN               | character |
-| FAN_DUEL_PTS      | character |
-| NBA_FANTASY_PTS   | character |
-| PTS               | character |
-| REB               | character |
-| AST               | character |
-| BLK               | character |
-| STL               | character |
-| TOV               | character |
-| FG3M              | character |
-| FGA               | character |
-| FG_PCT            | character |
-| FTA               | character |
-| FT_PCT            | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| PLAYER_POSITION   | character |                                       |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| GP                | character | Games played.                         |
+| MIN               | character | Minutes played.                       |
+| FAN_DUEL_PTS      | character |                                       |
+| NBA_FANTASY_PTS   | character |                                       |
+| PTS               | character | Points scored.                        |
+| REB               | character | Total rebounds.                       |
+| AST               | character | Assists.                              |
+| BLK               | character | Blocks.                               |
+| STL               | character | Steals.                               |
+| TOV               | character | Turnovers.                            |
+| FG3M              | character | Three-point field goals made.         |
+| FGA               | character | Field goal attempts.                  |
+| FG_PCT            | character | Field goal percentage (0-1).          |
+| FTA               | character | Free throw attempts.                  |
+| FT_PCT            | character | Free throw percentage (0-1).          |
 
 ## Details
 

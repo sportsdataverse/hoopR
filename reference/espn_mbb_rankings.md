@@ -12,46 +12,46 @@ espn_mbb_rankings()
 
 Returns a tibble
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| id                       | integer   |
-| name                     | character |
-| short_name               | character |
-| type                     | character |
-| headline                 | character |
-| short_headline           | character |
-| current                  | integer   |
-| previous                 | integer   |
-| points                   | numeric   |
-| first_place_votes        | integer   |
-| trend                    | character |
-| date                     | character |
-| last_updated             | character |
-| record_summary           | character |
-| team_id                  | integer   |
-| team_uid                 | character |
-| team_location            | character |
-| team_name                | character |
-| team_nickname            | character |
-| team_abbreviation        | character |
-| team_color               | character |
-| team_logo                | character |
-| occurrence_number        | integer   |
-| occurrence_type          | character |
-| occurrence_last          | logical   |
-| occurrence_value         | character |
-| occurrence_display_value | character |
-| season_year              | integer   |
-| season_start_date        | character |
-| season_end_date          | character |
-| season_display_name      | character |
-| season_type_type         | integer   |
-| season_type_name         | character |
-| season_type_abbreviation | character |
-| season_futures_ref       | character |
-| first_occurrence_type    | character |
-| first_occurrence_value   | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| id | integer | Id. |
+| name | character | Display name. |
+| short_name | character | Short display name. |
+| type | character | Record type / category. |
+| headline | character | News headline. |
+| short_headline | character | Short news headline. |
+| current | integer | Current. |
+| previous | integer | Previous. |
+| points | numeric | Points scored. |
+| first_place_votes | integer | First place votes. |
+| trend | character | Trend. |
+| date | character | Date in YYYY-MM-DD format. |
+| last_updated | character | Last updated. |
+| record_summary | character | Win-loss record summary string. |
+| team_id | integer | Unique team identifier. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_nickname | character | Team nickname. |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_logo | character | Team logo image URL. |
+| occurrence_number | integer | Occurrence number. |
+| occurrence_type | character | Occurrence type. |
+| occurrence_last | logical | Occurrence last. |
+| occurrence_value | character | Occurrence value. |
+| occurrence_display_value | character | Occurrence display value. |
+| season_year | integer | Season year string ('YYYY-YY' format). |
+| season_start_date | character | Date in YYYY-MM-DD format. |
+| season_end_date | character | Date in YYYY-MM-DD format. |
+| season_display_name | character | Season display label. |
+| season_type_type | integer | Season type type. |
+| season_type_name | character | Season type name. |
+| season_type_abbreviation | character | Season type abbreviation. |
+| season_futures_ref | character | Season futures ref. |
+| first_occurrence_type | character | First occurrence type. |
+| first_occurrence_value | character | First occurrence value. |
 
 ## See also
 
@@ -82,7 +82,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_rankings())
 #> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:38 UTC
+#> ℹ Data updated: 2026-05-17 14:13:53 UTC
 #> # A tibble: 81 × 39
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>

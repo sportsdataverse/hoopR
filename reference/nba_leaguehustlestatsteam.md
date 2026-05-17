@@ -154,29 +154,29 @@ Returns a named list of data frames: HustleStatsTeam
 
 **HustleStatsTeam**
 
-|                               |           |
-|-------------------------------|-----------|
-| col_name                      | types     |
-| TEAM_ID                       | character |
-| TEAM_NAME                     | character |
-| MIN                           | character |
-| CONTESTED_SHOTS               | character |
-| CONTESTED_SHOTS_2PT           | character |
-| CONTESTED_SHOTS_3PT           | character |
-| DEFLECTIONS                   | character |
-| CHARGES_DRAWN                 | character |
-| SCREEN_ASSISTS                | character |
-| SCREEN_AST_PTS                | character |
-| OFF_LOOSE_BALLS_RECOVERED     | character |
-| DEF_LOOSE_BALLS_RECOVERED     | character |
-| LOOSE_BALLS_RECOVERED         | character |
-| PCT_LOOSE_BALLS_RECOVERED_OFF | character |
-| PCT_LOOSE_BALLS_RECOVERED_DEF | character |
-| OFF_BOXOUTS                   | character |
-| DEF_BOXOUTS                   | character |
-| BOX_OUTS                      | character |
-| PCT_BOX_OUTS_OFF              | character |
-| PCT_BOX_OUTS_DEF              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| MIN | character | Minutes played. |
+| CONTESTED_SHOTS | character | Defensively contested shots. |
+| CONTESTED_SHOTS_2PT | character | Contested two-point shots. |
+| CONTESTED_SHOTS_3PT | character | Contested three-point shots. |
+| DEFLECTIONS | character | Defensive deflections. |
+| CHARGES_DRAWN | character | Charges drawn. |
+| SCREEN_ASSISTS | character | Screen assists (resulting in a basket). |
+| SCREEN_AST_PTS | character |  |
+| OFF_LOOSE_BALLS_RECOVERED | character |  |
+| DEF_LOOSE_BALLS_RECOVERED | character |  |
+| LOOSE_BALLS_RECOVERED | character | Loose balls recovered. |
+| PCT_LOOSE_BALLS_RECOVERED_OFF | character |  |
+| PCT_LOOSE_BALLS_RECOVERED_DEF | character |  |
+| OFF_BOXOUTS | character |  |
+| DEF_BOXOUTS | character |  |
+| BOX_OUTS | character | Box-outs executed. |
+| PCT_BOX_OUTS_OFF | character |  |
+| PCT_BOX_OUTS_DEF | character |  |
 
 ## Details
 

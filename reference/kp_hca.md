@@ -12,23 +12,23 @@ kp_hca()
 
 A data frame with the following columns:
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| team     | character |
-| conf     | character |
-| hca      | numeric   |
-| hca_rk   | numeric   |
-| pf       | numeric   |
-| pf_rk    | numeric   |
-| pts      | numeric   |
-| pts_rk   | numeric   |
-| nst      | numeric   |
-| nst_rk   | numeric   |
-| blk      | numeric   |
-| blk_rk   | numeric   |
-| elev     | numeric   |
-| elev_rk  | numeric   |
+|          |           |                                     |
+|----------|-----------|-------------------------------------|
+| col_name | types     | description                         |
+| team     | character | Team-side label or team identifier. |
+| conf     | character | character.                          |
+| hca      | numeric   | Hca.                                |
+| hca_rk   | numeric   | Hca rk.                             |
+| pf       | numeric   | Personal fouls.                     |
+| pf_rk    | numeric   | Pf rk.                              |
+| pts      | numeric   | Points scored.                      |
+| pts_rk   | numeric   | Pts rk.                             |
+| nst      | numeric   | Nst.                                |
+| nst_rk   | numeric   | Nst rk.                             |
+| blk      | numeric   | Blocks.                             |
+| blk_rk   | numeric   | Blk rk.                             |
+| elev     | numeric   | Elev.                               |
+| elev_rk  | numeric   | Elev rk.                            |
 
 ## See also
 

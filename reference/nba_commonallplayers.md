@@ -39,25 +39,25 @@ Return a named list of data frames: CommonAllPlayers
 
 **CommonAllPlayers**
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| PERSON_ID                 | character |
-| DISPLAY_LAST_COMMA_FIRST  | character |
-| DISPLAY_FIRST_LAST        | character |
-| ROSTERSTATUS              | character |
-| FROM_YEAR                 | character |
-| TO_YEAR                   | character |
-| PLAYERCODE                | character |
-| PLAYER_SLUG               | character |
-| TEAM_ID                   | character |
-| TEAM_CITY                 | character |
-| TEAM_NAME                 | character |
-| TEAM_ABBREVIATION         | character |
-| TEAM_CODE                 | character |
-| TEAM_SLUG                 | character |
-| GAMES_PLAYED_FLAG         | character |
-| OTHERLEAGUE_EXPERIENCE_CH | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| DISPLAY_LAST_COMMA_FIRST | character |  |
+| DISPLAY_FIRST_LAST | character |  |
+| ROSTERSTATUS | character |  |
+| FROM_YEAR | character |  |
+| TO_YEAR | character |  |
+| PLAYERCODE | character |  |
+| PLAYER_SLUG | character | URL-safe player identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CODE | character |  |
+| TEAM_SLUG | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| GAMES_PLAYED_FLAG | character |  |
+| OTHERLEAGUE_EXPERIENCE_CH | character |  |
 
 ## Details
 

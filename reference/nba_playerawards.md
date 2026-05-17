@@ -26,23 +26,23 @@ Return a named list of data frames: PlayerAwards
 
 **PlayerAwards**
 
-|                     |           |
-|---------------------|-----------|
-| col_name            | types     |
-| PERSON_ID           | character |
-| FIRST_NAME          | character |
-| LAST_NAME           | character |
-| TEAM                | character |
-| DESCRIPTION         | character |
-| ALL_NBA_TEAM_NUMBER | character |
-| SEASON              | character |
-| MONTH               | character |
-| WEEK                | character |
-| CONFERENCE          | character |
-| TYPE                | character |
-| SUBTYPE1            | character |
-| SUBTYPE2            | character |
-| SUBTYPE3            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| TEAM | character | Team-side label or team identifier. |
+| DESCRIPTION | character | Long-form description text. |
+| ALL_NBA_TEAM_NUMBER | character |  |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| MONTH | character | Month number. |
+| WEEK | character | Week number within the season. |
+| CONFERENCE | character | Conference. |
+| TYPE | character | Record type / category. |
+| SUBTYPE1 | character |  |
+| SUBTYPE2 | character |  |
+| SUBTYPE3 | character |  |
 
 ## Details
 

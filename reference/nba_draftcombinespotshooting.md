@@ -34,60 +34,60 @@ Returns a named list of data frames: Results
 
 **Results**
 
-|                              |           |
-|------------------------------|-----------|
-| col_name                     | types     |
-| TEMP_PLAYER_ID               | character |
-| PLAYER_ID                    | character |
-| FIRST_NAME                   | character |
-| LAST_NAME                    | character |
-| PLAYER_NAME                  | character |
-| POSITION                     | character |
-| FIFTEEN_CORNER_LEFT_MADE     | character |
-| FIFTEEN_CORNER_LEFT_ATTEMPT  | character |
-| FIFTEEN_CORNER_LEFT_PCT      | character |
-| FIFTEEN_BREAK_LEFT_MADE      | character |
-| FIFTEEN_BREAK_LEFT_ATTEMPT   | character |
-| FIFTEEN_BREAK_LEFT_PCT       | character |
-| FIFTEEN_TOP_KEY_MADE         | character |
-| FIFTEEN_TOP_KEY_ATTEMPT      | character |
-| FIFTEEN_TOP_KEY_PCT          | character |
-| FIFTEEN_BREAK_RIGHT_MADE     | character |
-| FIFTEEN_BREAK_RIGHT_ATTEMPT  | character |
-| FIFTEEN_BREAK_RIGHT_PCT      | character |
-| FIFTEEN_CORNER_RIGHT_MADE    | character |
-| FIFTEEN_CORNER_RIGHT_ATTEMPT | character |
-| FIFTEEN_CORNER_RIGHT_PCT     | character |
-| COLLEGE_CORNER_LEFT_MADE     | character |
-| COLLEGE_CORNER_LEFT_ATTEMPT  | character |
-| COLLEGE_CORNER_LEFT_PCT      | character |
-| COLLEGE_BREAK_LEFT_MADE      | character |
-| COLLEGE_BREAK_LEFT_ATTEMPT   | character |
-| COLLEGE_BREAK_LEFT_PCT       | character |
-| COLLEGE_TOP_KEY_MADE         | character |
-| COLLEGE_TOP_KEY_ATTEMPT      | character |
-| COLLEGE_TOP_KEY_PCT          | character |
-| COLLEGE_BREAK_RIGHT_MADE     | character |
-| COLLEGE_BREAK_RIGHT_ATTEMPT  | character |
-| COLLEGE_BREAK_RIGHT_PCT      | character |
-| COLLEGE_CORNER_RIGHT_MADE    | character |
-| COLLEGE_CORNER_RIGHT_ATTEMPT | character |
-| COLLEGE_CORNER_RIGHT_PCT     | character |
-| NBA_CORNER_LEFT_MADE         | character |
-| NBA_CORNER_LEFT_ATTEMPT      | character |
-| NBA_CORNER_LEFT_PCT          | character |
-| NBA_BREAK_LEFT_MADE          | character |
-| NBA_BREAK_LEFT_ATTEMPT       | character |
-| NBA_BREAK_LEFT_PCT           | character |
-| NBA_TOP_KEY_MADE             | character |
-| NBA_TOP_KEY_ATTEMPT          | character |
-| NBA_TOP_KEY_PCT              | character |
-| NBA_BREAK_RIGHT_MADE         | character |
-| NBA_BREAK_RIGHT_ATTEMPT      | character |
-| NBA_BREAK_RIGHT_PCT          | character |
-| NBA_CORNER_RIGHT_MADE        | character |
-| NBA_CORNER_RIGHT_ATTEMPT     | character |
-| NBA_CORNER_RIGHT_PCT         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEMP_PLAYER_ID | character |  |
+| PLAYER_ID | character | Unique player identifier. |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| PLAYER_NAME | character | Player name. |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| FIFTEEN_CORNER_LEFT_MADE | character |  |
+| FIFTEEN_CORNER_LEFT_ATTEMPT | character |  |
+| FIFTEEN_CORNER_LEFT_PCT | character |  |
+| FIFTEEN_BREAK_LEFT_MADE | character |  |
+| FIFTEEN_BREAK_LEFT_ATTEMPT | character |  |
+| FIFTEEN_BREAK_LEFT_PCT | character |  |
+| FIFTEEN_TOP_KEY_MADE | character |  |
+| FIFTEEN_TOP_KEY_ATTEMPT | character |  |
+| FIFTEEN_TOP_KEY_PCT | character |  |
+| FIFTEEN_BREAK_RIGHT_MADE | character |  |
+| FIFTEEN_BREAK_RIGHT_ATTEMPT | character |  |
+| FIFTEEN_BREAK_RIGHT_PCT | character |  |
+| FIFTEEN_CORNER_RIGHT_MADE | character |  |
+| FIFTEEN_CORNER_RIGHT_ATTEMPT | character |  |
+| FIFTEEN_CORNER_RIGHT_PCT | character |  |
+| COLLEGE_CORNER_LEFT_MADE | character |  |
+| COLLEGE_CORNER_LEFT_ATTEMPT | character |  |
+| COLLEGE_CORNER_LEFT_PCT | character |  |
+| COLLEGE_BREAK_LEFT_MADE | character |  |
+| COLLEGE_BREAK_LEFT_ATTEMPT | character |  |
+| COLLEGE_BREAK_LEFT_PCT | character |  |
+| COLLEGE_TOP_KEY_MADE | character |  |
+| COLLEGE_TOP_KEY_ATTEMPT | character |  |
+| COLLEGE_TOP_KEY_PCT | character |  |
+| COLLEGE_BREAK_RIGHT_MADE | character |  |
+| COLLEGE_BREAK_RIGHT_ATTEMPT | character |  |
+| COLLEGE_BREAK_RIGHT_PCT | character |  |
+| COLLEGE_CORNER_RIGHT_MADE | character |  |
+| COLLEGE_CORNER_RIGHT_ATTEMPT | character |  |
+| COLLEGE_CORNER_RIGHT_PCT | character |  |
+| NBA_CORNER_LEFT_MADE | character |  |
+| NBA_CORNER_LEFT_ATTEMPT | character |  |
+| NBA_CORNER_LEFT_PCT | character |  |
+| NBA_BREAK_LEFT_MADE | character |  |
+| NBA_BREAK_LEFT_ATTEMPT | character |  |
+| NBA_BREAK_LEFT_PCT | character |  |
+| NBA_TOP_KEY_MADE | character |  |
+| NBA_TOP_KEY_ATTEMPT | character |  |
+| NBA_TOP_KEY_PCT | character |  |
+| NBA_BREAK_RIGHT_MADE | character |  |
+| NBA_BREAK_RIGHT_ATTEMPT | character |  |
+| NBA_BREAK_RIGHT_PCT | character |  |
+| NBA_CORNER_RIGHT_MADE | character |  |
+| NBA_CORNER_RIGHT_ATTEMPT | character |  |
+| NBA_CORNER_RIGHT_PCT | character |  |
 
 ## Details
 

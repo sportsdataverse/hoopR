@@ -18,15 +18,15 @@ kp_arenas(year = most_recent_mbb_season())
 
 A data frame with the following columns:
 
-|           |           |
-|-----------|-----------|
-| col_name  | types     |
-| rk        | numeric   |
-| team      | character |
-| conf      | character |
-| arena     | character |
-| alternate | character |
-| year      | numeric   |
+|           |           |                                     |
+|-----------|-----------|-------------------------------------|
+| col_name  | types     | description                         |
+| rk        | numeric   | Rk.                                 |
+| team      | character | Team-side label or team identifier. |
+| conf      | character | character.                          |
+| arena     | character | Arena.                              |
+| alternate | character | Alternate.                          |
+| year      | numeric   | 4-digit year.                       |
 
 ## See also
 

@@ -26,42 +26,42 @@ Return a named list of data frames: FanDuelPlayer
 
 **FanDuelPlayer**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| JERSEY_NUM        | character |
-| PLAYER_POSITION   | character |
-| LOCATION          | character |
-| FAN_DUEL_PTS      | character |
-| NBA_FANTASY_PTS   | character |
-| USG_PCT           | character |
-| MIN               | character |
-| FGM               | character |
-| FGA               | character |
-| FG_PCT            | character |
-| FG3M              | character |
-| FG3A              | character |
-| FG3_PCT           | character |
-| FTM               | character |
-| FTA               | character |
-| FT_PCT            | character |
-| OREB              | character |
-| DREB              | character |
-| REB               | character |
-| AST               | character |
-| TOV               | character |
-| STL               | character |
-| BLK               | character |
-| BLKA              | character |
-| PF                | character |
-| PFD               | character |
-| PTS               | character |
-| PLUS_MINUS        | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| JERSEY_NUM | character | Jersey number worn by the player. |
+| PLAYER_POSITION | character |  |
+| LOCATION | character | Location. |
+| FAN_DUEL_PTS | character |  |
+| NBA_FANTASY_PTS | character |  |
+| USG_PCT | character | Usage percentage (0-1). |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
 
 ## Details
 

@@ -114,19 +114,19 @@ Return a named list of data frames: DefendingShots
 
 **DefendingShots**
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| CLOSE_DEF_playerId | character |
-| GP                 | character |
-| G                  | character |
-| DEFENSE_CATEGORY   | character |
-| FREQ               | character |
-| D_FGM              | character |
-| D_FGA              | character |
-| D_FG_PCT           | character |
-| NORMAL_FG_PCT      | character |
-| PCT_PLUSMINUS      | character |
+|                    |           |               |
+|--------------------|-----------|---------------|
+| col_name           | types     | description   |
+| CLOSE_DEF_playerId | character |               |
+| GP                 | character | Games played. |
+| G                  | character | Games played. |
+| DEFENSE_CATEGORY   | character |               |
+| FREQ               | character |               |
+| D_FGM              | character |               |
+| D_FGA              | character |               |
+| D_FG_PCT           | character |               |
+| NORMAL_FG_PCT      | character |               |
+| PCT_PLUSMINUS      | character |               |
 
 ## Details
 

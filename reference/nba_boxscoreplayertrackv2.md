@@ -29,69 +29,69 @@ Returns a named list of data frames: PlayerStats, TeamStats
 
 **PlayerStats**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| START_POSITION    | character |
-| COMMENT           | character |
-| MIN               | character |
-| SPD               | character |
-| DIST              | character |
-| ORBC              | character |
-| DRBC              | character |
-| RBC               | character |
-| TCHS              | character |
-| SAST              | character |
-| FTAST             | character |
-| PASS              | character |
-| AST               | character |
-| CFGM              | character |
-| CFGA              | character |
-| CFG_PCT           | character |
-| UFGM              | character |
-| UFGA              | character |
-| UFG_PCT           | character |
-| FG_PCT            | character |
-| DFGM              | character |
-| DFGA              | character |
-| DFG_PCT           | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| SPD | character |  |
+| DIST | character |  |
+| ORBC | character |  |
+| DRBC | character |  |
+| RBC | character |  |
+| TCHS | character |  |
+| SAST | character |  |
+| FTAST | character |  |
+| PASS | character |  |
+| AST | character | Assists. |
+| CFGM | character |  |
+| CFGA | character |  |
+| CFG_PCT | character |  |
+| UFGM | character |  |
+| UFGA | character |  |
+| UFG_PCT | character |  |
+| FG_PCT | character | Field goal percentage (0-1). |
+| DFGM | character |  |
+| DFGA | character |  |
+| DFG_PCT | character |  |
 
 **TeamStats**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| MIN               | character |
-| DIST              | character |
-| ORBC              | character |
-| DRBC              | character |
-| RBC               | character |
-| TCHS              | character |
-| SAST              | character |
-| FTAST             | character |
-| PASS              | character |
-| AST               | character |
-| CFGM              | character |
-| CFGA              | character |
-| CFG_PCT           | character |
-| UFGM              | character |
-| UFGA              | character |
-| UFG_PCT           | character |
-| FG_PCT            | character |
-| DFGM              | character |
-| DFGA              | character |
-| DFG_PCT           | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| DIST | character |  |
+| ORBC | character |  |
+| DRBC | character |  |
+| RBC | character |  |
+| TCHS | character |  |
+| SAST | character |  |
+| FTAST | character |  |
+| PASS | character |  |
+| AST | character | Assists. |
+| CFGM | character |  |
+| CFGA | character |  |
+| CFG_PCT | character |  |
+| UFGM | character |  |
+| UFGA | character |  |
+| UFG_PCT | character |  |
+| FG_PCT | character | Field goal percentage (0-1). |
+| DFGM | character |  |
+| DFGA | character |  |
+| DFG_PCT | character |  |
 
 ## Details
 

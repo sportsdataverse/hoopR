@@ -42,26 +42,26 @@ Return a named list of data frames: CareerLeadersByTeam
 
 **CareerLeadersByTeam**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| TEAM_ID       | character |
-| PTS           | character |
-| PTS_PERSON_ID | character |
-| PTS_PLAYER    | character |
-| AST           | character |
-| AST_PERSON_ID | character |
-| AST_PLAYER    | character |
-| REB           | character |
-| REB_PERSON_ID | character |
-| REB_PLAYER    | character |
-| BLK           | character |
-| BLK_PERSON_ID | character |
-| BLK_PLAYER    | character |
-| STL           | character |
-| STL_PERSON_ID | character |
-| STL_PLAYER    | character |
-| SEASON_YEAR   | character |
+|               |           |                                        |
+|---------------|-----------|----------------------------------------|
+| col_name      | types     | description                            |
+| TEAM_ID       | character | Unique team identifier.                |
+| PTS           | character | Points scored.                         |
+| PTS_PERSON_ID | character |                                        |
+| PTS_PLAYER    | character |                                        |
+| AST           | character | Assists.                               |
+| AST_PERSON_ID | character |                                        |
+| AST_PLAYER    | character |                                        |
+| REB           | character | Total rebounds.                        |
+| REB_PERSON_ID | character |                                        |
+| REB_PLAYER    | character |                                        |
+| BLK           | character | Blocks.                                |
+| BLK_PERSON_ID | character |                                        |
+| BLK_PLAYER    | character |                                        |
+| STL           | character | Steals.                                |
+| STL_PERSON_ID | character |                                        |
+| STL_PLAYER    | character |                                        |
+| SEASON_YEAR   | character | Season year string ('YYYY-YY' format). |
 
 ## Details
 

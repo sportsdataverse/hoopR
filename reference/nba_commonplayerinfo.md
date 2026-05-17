@@ -31,62 +31,62 @@ PlayerHeadlineStats, AvailableSeasons
 
 **CommonPlayerInfo**
 
-|                                  |           |
-|----------------------------------|-----------|
-| col_name                         | types     |
-| PERSON_ID                        | character |
-| FIRST_NAME                       | character |
-| LAST_NAME                        | character |
-| DISPLAY_FIRST_LAST               | character |
-| DISPLAY_LAST_COMMA_FIRST         | character |
-| DISPLAY_FI_LAST                  | character |
-| PLAYER_SLUG                      | character |
-| BIRTHDATE                        | character |
-| SCHOOL                           | character |
-| COUNTRY                          | character |
-| LAST_AFFILIATION                 | character |
-| HEIGHT                           | character |
-| WEIGHT                           | character |
-| SEASON_EXP                       | character |
-| JERSEY                           | character |
-| POSITION                         | character |
-| ROSTERSTATUS                     | character |
-| GAMES_PLAYED_CURRENT_SEASON_FLAG | character |
-| TEAM_ID                          | character |
-| TEAM_NAME                        | character |
-| TEAM_ABBREVIATION                | character |
-| TEAM_CODE                        | character |
-| TEAM_CITY                        | character |
-| PLAYERCODE                       | character |
-| FROM_YEAR                        | character |
-| TO_YEAR                          | character |
-| DLEAGUE_FLAG                     | character |
-| NBA_FLAG                         | character |
-| GAMES_PLAYED_FLAG                | character |
-| DRAFT_YEAR                       | character |
-| DRAFT_ROUND                      | character |
-| DRAFT_NUMBER                     | character |
-| GREATEST_75_FLAG                 | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| DISPLAY_FIRST_LAST | character |  |
+| DISPLAY_LAST_COMMA_FIRST | character |  |
+| DISPLAY_FI_LAST | character |  |
+| PLAYER_SLUG | character | URL-safe player identifier. |
+| BIRTHDATE | character |  |
+| SCHOOL | character | Player's school / college (when distinct from 'college'). |
+| COUNTRY | character | Country (full name or code). |
+| LAST_AFFILIATION | character |  |
+| HEIGHT | character | Player height (string e.g. '6-2' or inches). |
+| WEIGHT | character | Player weight in pounds. |
+| SEASON_EXP | character |  |
+| JERSEY | character | Jersey number worn by the player. |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| ROSTERSTATUS | character |  |
+| GAMES_PLAYED_CURRENT_SEASON_FLAG | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CODE | character |  |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYERCODE | character |  |
+| FROM_YEAR | character |  |
+| TO_YEAR | character |  |
+| DLEAGUE_FLAG | character |  |
+| NBA_FLAG | character |  |
+| GAMES_PLAYED_FLAG | character |  |
+| DRAFT_YEAR | character | Draft year (4-digit). |
+| DRAFT_ROUND | character | Round of the draft selection. |
+| DRAFT_NUMBER | character |  |
+| GREATEST_75_FLAG | character |  |
 
 **PlayerHeadlineStats**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| PLAYER_ID   | character |
-| PLAYER_NAME | character |
-| TimeFrame   | character |
-| PTS         | character |
-| AST         | character |
-| REB         | character |
-| PIE         | character |
+|             |           |                               |
+|-------------|-----------|-------------------------------|
+| col_name    | types     | description                   |
+| PLAYER_ID   | character | Unique player identifier.     |
+| PLAYER_NAME | character | Player name.                  |
+| TimeFrame   | character |                               |
+| PTS         | character | Points scored.                |
+| AST         | character | Assists.                      |
+| REB         | character | Total rebounds.               |
+| PIE         | character | Player Impact Estimate (0-1). |
 
 **AvailableSeasons**
 
-|           |           |
-|-----------|-----------|
-| col_name  | types     |
-| SEASON_ID | character |
+|           |           |                           |
+|-----------|-----------|---------------------------|
+| col_name  | types     | description               |
+| SEASON_ID | character | Unique season identifier. |
 
 ## Details
 

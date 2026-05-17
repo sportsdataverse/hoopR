@@ -65,46 +65,46 @@ LeagueMax
 
 **HomePageLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| PTS               | character |
-| FG_PCT            | character |
-| FG3_PCT           | character |
-| FT_PCT            | character |
-| EFG_PCT           | character |
-| TS_PCT            | character |
-| PTS_PER48         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| PTS | character | Points scored. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FT_PCT | character | Free throw percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| TS_PCT | character | True shooting percentage (0-1). |
+| PTS_PER48 | character |  |
 
 **LeagueAverage**
 
-|           |         |
-|-----------|---------|
-| col_name  | types   |
-| PTS       | numeric |
-| FG_PCT    | numeric |
-| FG3_PCT   | numeric |
-| FT_PCT    | numeric |
-| EFG_PCT   | numeric |
-| TS_PCT    | numeric |
-| PTS_PER48 | numeric |
+|           |         |                                          |
+|-----------|---------|------------------------------------------|
+| col_name  | types   | description                              |
+| PTS       | numeric | Points scored.                           |
+| FG_PCT    | numeric | Field goal percentage (0-1).             |
+| FG3_PCT   | numeric | Three-point field goal percentage (0-1). |
+| FT_PCT    | numeric | Free throw percentage (0-1).             |
+| EFG_PCT   | numeric | Effective field goal percentage (0-1).   |
+| TS_PCT    | numeric | True shooting percentage (0-1).          |
+| PTS_PER48 | numeric |                                          |
 
 **LeagueMax**
 
-|           |         |
-|-----------|---------|
-| col_name  | types   |
-| PTS       | numeric |
-| FG_PCT    | numeric |
-| FG3_PCT   | numeric |
-| FT_PCT    | numeric |
-| EFG_PCT   | numeric |
-| TS_PCT    | numeric |
-| PTS_PER48 | numeric |
+|           |         |                                          |
+|-----------|---------|------------------------------------------|
+| col_name  | types   | description                              |
+| PTS       | numeric | Points scored.                           |
+| FG_PCT    | numeric | Field goal percentage (0-1).             |
+| FG3_PCT   | numeric | Three-point field goal percentage (0-1). |
+| FT_PCT    | numeric | Free throw percentage (0-1).             |
+| EFG_PCT   | numeric | Effective field goal percentage (0-1).   |
+| TS_PCT    | numeric | True shooting percentage (0-1).          |
+| PTS_PER48 | numeric |                                          |
 
 ## Details
 

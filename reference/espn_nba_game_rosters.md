@@ -18,99 +18,99 @@ espn_nba_game_rosters(game_id)
 
 A game rosters data frame
 
-|                                            |           |
-|--------------------------------------------|-----------|
-| col_name                                   | types     |
-| athlete_id                                 | integer   |
-| athlete_uid                                | character |
-| athlete_guid                               | character |
-| athlete_type                               | character |
-| sdr                                        | integer   |
-| first_name                                 | character |
-| last_name                                  | character |
-| full_name                                  | character |
-| athlete_display_name                       | character |
-| short_name                                 | character |
-| weight                                     | integer   |
-| display_weight                             | character |
-| height                                     | integer   |
-| display_height                             | character |
-| age                                        | integer   |
-| date_of_birth                              | character |
-| debut_year                                 | integer   |
-| birth_place_city                           | character |
-| birth_place_state                          | character |
-| birth_place_country                        | character |
-| slug                                       | character |
-| headshot_href                              | character |
-| headshot_alt                               | character |
-| jersey                                     | character |
-| position_id                                | integer   |
-| position_name                              | character |
-| position_display_name                      | character |
-| position_abbreviation                      | character |
-| position_leaf                              | logical   |
-| linked                                     | logical   |
-| years                                      | integer   |
-| active                                     | logical   |
-| contract_bird_status                       | integer   |
-| contract_active                            | logical   |
-| contract_active_1                          | logical   |
-| contract_incoming_trade_value              | integer   |
-| contract_outgoing_trade_value              | integer   |
-| contract_minimum_salary_exception          | logical   |
-| contract_option_type                       | integer   |
-| contract_salary                            | integer   |
-| contract_salary_remaining                  | integer   |
-| contract_years_remaining                   | integer   |
-| contract_trade_kicker_active               | logical   |
-| contract_trade_kicker_percentage           | integer   |
-| contract_trade_kicker_value                | integer   |
-| contract_trade_kicker_trade_value          | integer   |
-| contract_trade_restriction                 | logical   |
-| contract_unsigned_foreign_pick             | logical   |
-| contract_active_2                          | logical   |
-| draft_display_text                         | character |
-| draft_round                                | integer   |
-| draft_year                                 | integer   |
-| draft_selection                            | integer   |
-| status_id                                  | integer   |
-| status_name                                | character |
-| status_type                                | character |
-| status_abbreviation                        | character |
-| starter                                    | logical   |
-| valid                                      | logical   |
-| did_not_play                               | logical   |
-| display_name                               | character |
-| reason                                     | character |
-| ejected                                    | logical   |
-| team_id                                    | integer   |
-| team_guid                                  | character |
-| team_uid                                   | character |
-| team_slug                                  | character |
-| team_location                              | character |
-| team_name                                  | character |
-| team_abbreviation                          | character |
-| team_display_name                          | character |
-| team_short_display_name                    | character |
-| team_color                                 | character |
-| team_alternate_color                       | character |
-| team_is_active                             | logical   |
-| team_is_all_star                           | logical   |
-| logo_href                                  | character |
-| logo_dark_href                             | character |
-| logos_href_2                               | character |
-| logos_href_3                               | character |
-| game_id                                    | integer   |
-| order                                      | integer   |
-| home_away                                  | character |
-| winner                                     | logical   |
-| citizenship                                | character |
-| contract_base_year_compensation_active     | logical   |
-| contract_base_year_compensation_expiration | character |
-| hand_type                                  | character |
-| hand_abbreviation                          | character |
-| hand_display_value                         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| athlete_id | integer | Unique athlete identifier (ESPN). |
+| athlete_uid | character | ESPN athlete UID (universal identifier). |
+| athlete_guid | character | ESPN athlete GUID. |
+| athlete_type | character | Athlete type / class. |
+| sdr | integer | Sdr. |
+| first_name | character | Player's first name. |
+| last_name | character | Player's last name. |
+| full_name | character | Player's full name. |
+| athlete_display_name | character | Athlete display name (full). |
+| short_name | character | Short display name. |
+| weight | integer | Player weight in pounds. |
+| display_weight | character | Player weight in display format (e.g. '180 lbs'). |
+| height | integer | Player height (string e.g. '6-2' or inches). |
+| display_height | character | Player height in display format (e.g. '6-2'). |
+| age | integer | Player age (in years). |
+| date_of_birth | character | Date of birth (YYYY-MM-DD). |
+| debut_year | integer | Year of professional debut. |
+| birth_place_city | character | Birth place city. |
+| birth_place_state | character | Birth place state. |
+| birth_place_country | character | Birth place country. |
+| slug | character | URL-safe identifier. |
+| headshot_href | character | Headshot image URL. |
+| headshot_alt | character | Alternative-text label for the headshot. |
+| jersey | character | Jersey number worn by the player. |
+| position_id | integer | Unique position identifier. |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| position_display_name | character | Position display name. |
+| position_abbreviation | character | Position abbreviation ('G' / 'F' / 'C'). |
+| position_leaf | logical | Position leaf. |
+| linked | logical | TRUE if the record is linked to a related entity. |
+| years | integer | Years. |
+| active | logical | TRUE if the row represents an active record (player / team / season). |
+| contract_bird_status | integer | Contract bird status. |
+| contract_active | logical | Contract active. |
+| contract_active_1 | logical | Contract active 1. |
+| contract_incoming_trade_value | integer | Contract incoming trade value. |
+| contract_outgoing_trade_value | integer | Contract outgoing trade value. |
+| contract_minimum_salary_exception | logical | Contract minimum salary exception. |
+| contract_option_type | integer | Contract option type. |
+| contract_salary | integer | Contract salary. |
+| contract_salary_remaining | integer | Contract salary remaining. |
+| contract_years_remaining | integer | Contract years remaining. |
+| contract_trade_kicker_active | logical | Contract trade kicker active. |
+| contract_trade_kicker_percentage | integer | Contract trade kicker percentage (0-1 decimal). |
+| contract_trade_kicker_value | integer | Contract trade kicker value. |
+| contract_trade_kicker_trade_value | integer | Contract trade kicker trade value. |
+| contract_trade_restriction | logical | Contract trade restriction. |
+| contract_unsigned_foreign_pick | logical | Contract unsigned foreign pick. |
+| contract_active_2 | logical | Contract active 2. |
+| draft_display_text | character | Draft display text. |
+| draft_round | integer | Round of the draft selection. |
+| draft_year | integer | Draft year (4-digit). |
+| draft_selection | integer | Draft selection. |
+| status_id | integer | Status identifier. |
+| status_name | character | Status label. |
+| status_type | character | Status type. |
+| status_abbreviation | character | Status abbreviation. |
+| starter | logical | TRUE if the player was in the starting lineup; FALSE otherwise. |
+| valid | logical | Valid. |
+| did_not_play | logical | TRUE if the player did not appear in the game. |
+| display_name | character | Display name. |
+| reason | character | Reason. |
+| ejected | logical | TRUE if the player was ejected from the game. |
+| team_id | integer | Unique team identifier. |
+| team_guid | character | ESPN team GUID. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_display_name | character | Full team display name. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| team_is_active | logical | TRUE if the team is currently active. |
+| team_is_all_star | logical | TRUE if the row represents an All-Star team. |
+| logo_href | character | Team or league logo URL. |
+| logo_dark_href | character | Logo URL for dark backgrounds. |
+| logos_href_2 | character | Logos href 2. |
+| logos_href_3 | character | Logos href 3. |
+| game_id | integer | Unique game identifier. |
+| order | integer | Display order within the result set. |
+| home_away | character | Game venue label ('home' or 'away'). |
+| winner | logical | Winner. |
+| citizenship | character | Citizenship. |
+| contract_base_year_compensation_active | logical | Contract base year compensation active. |
+| contract_base_year_compensation_expiration | character | Contract base year compensation expiration. |
+| hand_type | character | Hand type. |
+| hand_abbreviation | character | Hand abbreviation. |
+| hand_display_value | character | Hand display value. |
 
 ## See also
 
@@ -138,7 +138,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_game_rosters(game_id = 401283399))
 #> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:46 UTC
+#> ℹ Data updated: 2026-05-17 14:14:03 UTC
 #> # A tibble: 24 × 175
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    

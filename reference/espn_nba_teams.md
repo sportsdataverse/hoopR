@@ -12,22 +12,22 @@ espn_nba_teams()
 
 A teams data frame
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| team_id         | integer   |
-| abbreviation    | character |
-| display_name    | character |
-| short_name      | character |
-| mascot          | character |
-| nickname        | character |
-| team            | character |
-| color           | character |
-| alternate_color | character |
-| logo            | character |
-| logo_dark       | character |
-| logos_href_3    | character |
-| logos_href_4    | character |
+|                 |           |                                            |
+|-----------------|-----------|--------------------------------------------|
+| col_name        | types     | description                                |
+| team_id         | integer   | Unique team identifier.                    |
+| abbreviation    | character | Short abbreviation.                        |
+| display_name    | character | Display name.                              |
+| short_name      | character | Short display name.                        |
+| mascot          | character | Team mascot.                               |
+| nickname        | character | Team or athlete nickname.                  |
+| team            | character | Team-side label or team identifier.        |
+| color           | character | Primary color (hex without leading '#').   |
+| alternate_color | character | Alternate color (hex without leading '#'). |
+| logo            | character | Team or league logo URL.                   |
+| logo_dark       | character | Logo dark.                                 |
+| logos_href_3    | character | Logos href 3.                              |
+| logos_href_4    | character | Logos href 4.                              |
 
 ## See also
 
@@ -55,7 +55,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_teams())
 #> ── ESPN NBA Teams Information from ESPN.com ───────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:50 UTC
+#> ℹ Data updated: 2026-05-17 14:14:09 UTC
 #> # A tibble: 30 × 25
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    

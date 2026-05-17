@@ -22,20 +22,20 @@ kp_referee(referee, year)
 
 A data frame with the following columns:
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| game_number  | integer   |
-| date         | character |
-| time_et      | character |
-| game         | character |
-| location     | character |
-| venue        | character |
-| conference   | character |
-| thrill_score | numeric   |
-| referee_name | character |
-| ref_rank     | numeric   |
-| year         | numeric   |
+|              |           |                             |
+|--------------|-----------|-----------------------------|
+| col_name     | types     | description                 |
+| game_number  | integer   | Game number.                |
+| date         | character | Date in YYYY-MM-DD format.  |
+| time_et      | character | Time et.                    |
+| game         | character | Game.                       |
+| location     | character | Location.                   |
+| venue        | character | Venue name.                 |
+| conference   | character | Conference.                 |
+| thrill_score | numeric   | Thrill score.               |
+| referee_name | character | Referee name.               |
+| ref_rank     | numeric   | League/season rank for ref. |
+| year         | numeric   | 4-digit year.               |
 
 ## See also
 

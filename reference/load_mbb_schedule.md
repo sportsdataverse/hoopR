@@ -39,83 +39,83 @@ load_mbb_schedule(
 
 Returns a tibble
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| id                        | integer   |
-| uid                       | character |
-| date                      | character |
-| attendance                | integer   |
-| time_valid                | logical   |
-| neutral_site              | logical   |
-| conference_competition    | logical   |
-| recent                    | logical   |
-| start_date                | character |
-| notes_type                | character |
-| notes_headline            | character |
-| type_id                   | character |
-| type_abbreviation         | character |
-| venue_id                  | character |
-| venue_full_name           | character |
-| venue_address_city        | character |
-| venue_address_state       | character |
-| venue_capacity            | integer   |
-| venue_indoor              | logical   |
-| status_clock              | numeric   |
-| status_display_clock      | character |
-| status_period             | integer   |
-| status_type_id            | character |
-| status_type_name          | character |
-| status_type_state         | character |
-| status_type_completed     | logical   |
-| status_type_description   | character |
-| status_type_detail        | character |
-| status_type_short_detail  | character |
-| format_regulation_periods | integer   |
-| home_id                   | character |
-| home_uid                  | character |
-| home_location             | character |
-| home_name                 | character |
-| home_abbreviation         | character |
-| home_display_name         | character |
-| home_short_display_name   | character |
-| home_color                | character |
-| home_alternate_color      | character |
-| home_is_active            | logical   |
-| home_venue_id             | character |
-| home_logo                 | character |
-| home_conference_id        | character |
-| home_score                | character |
-| home_winner               | logical   |
-| away_id                   | character |
-| away_uid                  | character |
-| away_location             | character |
-| away_name                 | character |
-| away_abbreviation         | character |
-| away_display_name         | character |
-| away_short_display_name   | character |
-| away_color                | character |
-| away_alternate_color      | character |
-| away_is_active            | logical   |
-| away_venue_id             | character |
-| away_logo                 | character |
-| away_conference_id        | character |
-| away_score                | character |
-| away_winner               | logical   |
-| game_id                   | integer   |
-| season                    | integer   |
-| season_type               | integer   |
-| status_type_alt_detail    | character |
-| groups_id                 | character |
-| groups_name               | character |
-| groups_short_name         | character |
-| groups_is_conference      | logical   |
-| tournament_id             | numeric   |
-| game_date_time            | POSIXct   |
-| game_date                 | Date      |
-| PBP                       | logical   |
-| team_box                  | logical   |
-| player_box                | logical   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| id | integer | Id. |
+| uid | character | ESPN UID string (universal identifier). |
+| date | character | Date in YYYY-MM-DD format. |
+| attendance | integer | Reported attendance. |
+| time_valid | logical | Time valid. |
+| neutral_site | logical | Neutral site. |
+| conference_competition | logical | Conference competition. |
+| recent | logical | Recent. |
+| start_date | character | Start date (YYYY-MM-DD). |
+| notes_type | character | Notes type. |
+| notes_headline | character | Notes headline. |
+| type_id | character | Type identifier (numeric). |
+| type_abbreviation | character | Type abbreviation. |
+| venue_id | character | Unique venue identifier. |
+| venue_full_name | character | Venue full name. |
+| venue_address_city | character | Venue address city. |
+| venue_address_state | character | Venue address state / region. |
+| venue_capacity | integer | Venue seating capacity. |
+| venue_indoor | logical | TRUE if the venue is indoors. |
+| status_clock | numeric | Status clock. |
+| status_display_clock | character | Status display clock. |
+| status_period | integer | Status period. |
+| status_type_id | character | Unique identifier for status type. |
+| status_type_name | character | Status type name. |
+| status_type_state | character | Status type state. |
+| status_type_completed | logical | Status type completed. |
+| status_type_description | character | Status type description. |
+| status_type_detail | character | Status type detail. |
+| status_type_short_detail | character | Status type short detail. |
+| format_regulation_periods | integer | Format regulation periods. |
+| home_id | character | Unique identifier for home. |
+| home_uid | character | Home team's uid. |
+| home_location | character | Home team's location. |
+| home_name | character | Home name. |
+| home_abbreviation | character | Home team's abbreviation. |
+| home_display_name | character | Home display name. |
+| home_short_display_name | character | Home short display name. |
+| home_color | character | Color code (hex) for home. |
+| home_alternate_color | character | Color code (hex) for home alternate. |
+| home_is_active | logical | Home team's is active. |
+| home_venue_id | character | Unique identifier for home venue. |
+| home_logo | character | Home team logo URL. |
+| home_conference_id | character | Unique identifier for home conference. |
+| home_score | character | Home team score at the time of the play. |
+| home_winner | logical | Home team's winner. |
+| away_id | character | Unique identifier for away. |
+| away_uid | character | Away team's uid. |
+| away_location | character | Away team's location. |
+| away_name | character | Away name. |
+| away_abbreviation | character | Away team's abbreviation. |
+| away_display_name | character | Away display name. |
+| away_short_display_name | character | Away short display name. |
+| away_color | character | Color code (hex) for away. |
+| away_alternate_color | character | Color code (hex) for away alternate. |
+| away_is_active | logical | Away team's is active. |
+| away_venue_id | character | Unique identifier for away venue. |
+| away_logo | character | Away team logo URL. |
+| away_conference_id | character | Unique identifier for away conference. |
+| away_score | character | Away team score at the time of the play. |
+| away_winner | logical | Away team's winner. |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| status_type_alt_detail | character | Status type alt detail. |
+| groups_id | character | Unique identifier for groups. |
+| groups_name | character | Groups name. |
+| groups_short_name | character | Groups short name. |
+| groups_is_conference | logical | Groups is conference. |
+| tournament_id | numeric | Unique identifier for tournament. |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| PBP | logical |  |
+| team_box | logical | Team box. |
+| player_box | logical | Player box. |
 
 ## See also
 

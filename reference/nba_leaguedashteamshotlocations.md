@@ -174,35 +174,35 @@ Returns a named list of data frames: ShotLocations
 
 **ShotLocations**
 
-|                            |           |
-|----------------------------|-----------|
-| col_name                   | types     |
-| TEAM_ID                    | character |
-| TEAM_NAME                  | character |
-| Restricted_Area_FGM        | character |
-| Restricted_Area_FGA        | character |
-| Restricted_Area_FG_PCT     | character |
-| In_The_Paint_Non_RA_FGM    | character |
-| In_The_Paint_Non_RA_FGA    | character |
-| In_The_Paint_Non_RA_FG_PCT | character |
-| Mid_Range_FGM              | character |
-| Mid_Range_FGA              | character |
-| Mid_Range_FG_PCT           | character |
-| Left_Corner_3_FGM          | character |
-| Left_Corner_3_FGA          | character |
-| Left_Corner_3_FG_PCT       | character |
-| Right_Corner_3_FGM         | character |
-| Right_Corner_3_FGA         | character |
-| Right_Corner_3_FG_PCT      | character |
-| Above_the_Break_3_FGM      | character |
-| Above_the_Break_3_FGA      | character |
-| Above_the_Break_3_FG_PCT   | character |
-| Backcourt_FGM              | character |
-| Backcourt_FGA              | character |
-| Backcourt_FG_PCT           | character |
-| Corner_3_FGM               | character |
-| Corner_3_FGA               | character |
-| Corner_3_FG_PCT            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| Restricted_Area_FGM | character |  |
+| Restricted_Area_FGA | character |  |
+| Restricted_Area_FG_PCT | character |  |
+| In_The_Paint_Non_RA_FGM | character |  |
+| In_The_Paint_Non_RA_FGA | character |  |
+| In_The_Paint_Non_RA_FG_PCT | character |  |
+| Mid_Range_FGM | character |  |
+| Mid_Range_FGA | character |  |
+| Mid_Range_FG_PCT | character |  |
+| Left_Corner_3_FGM | character |  |
+| Left_Corner_3_FGA | character |  |
+| Left_Corner_3_FG_PCT | character |  |
+| Right_Corner_3_FGM | character |  |
+| Right_Corner_3_FGA | character |  |
+| Right_Corner_3_FG_PCT | character |  |
+| Above_the_Break_3_FGM | character |  |
+| Above_the_Break_3_FGA | character |  |
+| Above_the_Break_3_FG_PCT | character |  |
+| Backcourt_FGM | character |  |
+| Backcourt_FGA | character |  |
+| Backcourt_FG_PCT | character |  |
+| Corner_3_FGM | character |  |
+| Corner_3_FGA | character |  |
+| Corner_3_FG_PCT | character |  |
 
 ## Details
 

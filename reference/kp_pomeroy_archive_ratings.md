@@ -18,31 +18,31 @@ kp_pomeroy_archive_ratings(date)
 
 A data frame with 22 columns:
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| adj_em_rk      | numeric   |
-| team           | character |
-| conf           | character |
-| adj_em         | numeric   |
-| adj_o          | numeric   |
-| adj_o_rk       | numeric   |
-| adj_d          | numeric   |
-| adj_d_rk       | numeric   |
-| adj_t          | numeric   |
-| adj_t_rk       | numeric   |
-| final_rk       | numeric   |
-| final_adj_em   | numeric   |
-| final_adj_o    | numeric   |
-| final_adj_o_rk | numeric   |
-| final_adj_d    | numeric   |
-| final_adj_d_rk | numeric   |
-| final_adj_t    | numeric   |
-| final_adj_t_rk | numeric   |
-| rk_chg         | numeric   |
-| em_chg         | numeric   |
-| adj_t_chg      | numeric   |
-| ncaa_seed      | numeric   |
+|                |           |                                     |
+|----------------|-----------|-------------------------------------|
+| col_name       | types     | description                         |
+| adj_em_rk      | numeric   | Adj em rk.                          |
+| team           | character | Team-side label or team identifier. |
+| conf           | character | character.                          |
+| adj_em         | numeric   | Adj em.                             |
+| adj_o          | numeric   | Adj o.                              |
+| adj_o_rk       | numeric   | Adj o rk.                           |
+| adj_d          | numeric   | Adj d.                              |
+| adj_d_rk       | numeric   | Adj d rk.                           |
+| adj_t          | numeric   | Adj t.                              |
+| adj_t_rk       | numeric   | Adj t rk.                           |
+| final_rk       | numeric   | Final rk.                           |
+| final_adj_em   | numeric   | Final adj em.                       |
+| final_adj_o    | numeric   | Final adj o.                        |
+| final_adj_o_rk | numeric   | Final adj o rk.                     |
+| final_adj_d    | numeric   | Final adj d.                        |
+| final_adj_d_rk | numeric   | Final adj d rk.                     |
+| final_adj_t    | numeric   | Final adj t.                        |
+| final_adj_t_rk | numeric   | Final adj t rk.                     |
+| rk_chg         | numeric   | Rk chg.                             |
+| em_chg         | numeric   | Em chg.                             |
+| adj_t_chg      | numeric   | Adj t chg.                          |
+| ncaa_seed      | numeric   | Ncaa seed.                          |
 
 ## See also
 

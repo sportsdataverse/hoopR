@@ -111,147 +111,147 @@ ShotClockShooting, TouchTimeShooting
 
 **GeneralShooting**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| TEAM_ID        | character |
-| TEAM_NAME      | character |
-| SORT_ORDER     | character |
-| G              | character |
-| SHOT_TYPE      | character |
-| FGA_FREQUENCY  | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
-| EFG_PCT        | character |
-| FG2A_FREQUENCY | character |
-| FG2M           | character |
-| FG2A           | character |
-| FG2_PCT        | character |
-| FG3A_FREQUENCY | character |
-| FG3M           | character |
-| FG3A           | character |
-| FG3_PCT        | character |
+|                |           |                                                 |
+|----------------|-----------|-------------------------------------------------|
+| col_name       | types     | description                                     |
+| TEAM_ID        | character | Unique team identifier.                         |
+| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER     | character |                                                 |
+| G              | character | Games played.                                   |
+| SHOT_TYPE      | character | Shot type label (e.g. 'Jump Shot', 'Layup').    |
+| FGA_FREQUENCY  | character |                                                 |
+| FGM            | character | Field goals made.                               |
+| FGA            | character | Field goal attempts.                            |
+| FG_PCT         | character | Field goal percentage (0-1).                    |
+| EFG_PCT        | character | Effective field goal percentage (0-1).          |
+| FG2A_FREQUENCY | character |                                                 |
+| FG2M           | character |                                                 |
+| FG2A           | character |                                                 |
+| FG2_PCT        | character |                                                 |
+| FG3A_FREQUENCY | character |                                                 |
+| FG3M           | character | Three-point field goals made.                   |
+| FG3A           | character | Three-point field goal attempts.                |
+| FG3_PCT        | character | Three-point field goal percentage (0-1).        |
 
 **ShotClockShooting**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| TEAM_ID          | character |
-| TEAM_NAME        | character |
-| SORT_ORDER       | character |
-| G                | character |
-| SHOT_CLOCK_RANGE | character |
-| FGA_FREQUENCY    | character |
-| FGM              | character |
-| FGA              | character |
-| FG_PCT           | character |
-| EFG_PCT          | character |
-| FG2A_FREQUENCY   | character |
-| FG2M             | character |
-| FG2A             | character |
-| FG2_PCT          | character |
-| FG3A_FREQUENCY   | character |
-| FG3M             | character |
-| FG3A             | character |
-| FG3_PCT          | character |
+|                  |           |                                                 |
+|------------------|-----------|-------------------------------------------------|
+| col_name         | types     | description                                     |
+| TEAM_ID          | character | Unique team identifier.                         |
+| TEAM_NAME        | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER       | character |                                                 |
+| G                | character | Games played.                                   |
+| SHOT_CLOCK_RANGE | character |                                                 |
+| FGA_FREQUENCY    | character |                                                 |
+| FGM              | character | Field goals made.                               |
+| FGA              | character | Field goal attempts.                            |
+| FG_PCT           | character | Field goal percentage (0-1).                    |
+| EFG_PCT          | character | Effective field goal percentage (0-1).          |
+| FG2A_FREQUENCY   | character |                                                 |
+| FG2M             | character |                                                 |
+| FG2A             | character |                                                 |
+| FG2_PCT          | character |                                                 |
+| FG3A_FREQUENCY   | character |                                                 |
+| FG3M             | character | Three-point field goals made.                   |
+| FG3A             | character | Three-point field goal attempts.                |
+| FG3_PCT          | character | Three-point field goal percentage (0-1).        |
 
 **DribbleShooting**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| TEAM_ID        | character |
-| TEAM_NAME      | character |
-| SORT_ORDER     | character |
-| G              | character |
-| DRIBBLE_RANGE  | character |
-| FGA_FREQUENCY  | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
-| EFG_PCT        | character |
-| FG2A_FREQUENCY | character |
-| FG2M           | character |
-| FG2A           | character |
-| FG2_PCT        | character |
-| FG3A_FREQUENCY | character |
-| FG3M           | character |
-| FG3A           | character |
-| FG3_PCT        | character |
+|                |           |                                                 |
+|----------------|-----------|-------------------------------------------------|
+| col_name       | types     | description                                     |
+| TEAM_ID        | character | Unique team identifier.                         |
+| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER     | character |                                                 |
+| G              | character | Games played.                                   |
+| DRIBBLE_RANGE  | character |                                                 |
+| FGA_FREQUENCY  | character |                                                 |
+| FGM            | character | Field goals made.                               |
+| FGA            | character | Field goal attempts.                            |
+| FG_PCT         | character | Field goal percentage (0-1).                    |
+| EFG_PCT        | character | Effective field goal percentage (0-1).          |
+| FG2A_FREQUENCY | character |                                                 |
+| FG2M           | character |                                                 |
+| FG2A           | character |                                                 |
+| FG2_PCT        | character |                                                 |
+| FG3A_FREQUENCY | character |                                                 |
+| FG3M           | character | Three-point field goals made.                   |
+| FG3A           | character | Three-point field goal attempts.                |
+| FG3_PCT        | character | Three-point field goal percentage (0-1).        |
 
 **ClosestDefenderShooting**
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| TEAM_ID              | character |
-| TEAM_NAME            | character |
-| SORT_ORDER           | character |
-| G                    | character |
-| CLOSE_DEF_DIST_RANGE | character |
-| FGA_FREQUENCY        | character |
-| FGM                  | character |
-| FGA                  | character |
-| FG_PCT               | character |
-| EFG_PCT              | character |
-| FG2A_FREQUENCY       | character |
-| FG2M                 | character |
-| FG2A                 | character |
-| FG2_PCT              | character |
-| FG3A_FREQUENCY       | character |
-| FG3M                 | character |
-| FG3A                 | character |
-| FG3_PCT              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER | character |  |
+| G | character | Games played. |
+| CLOSE_DEF_DIST_RANGE | character |  |
+| FGA_FREQUENCY | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FG2A_FREQUENCY | character |  |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3A_FREQUENCY | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 **ClosestDefender10ftPlusShooting**
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| TEAM_ID              | character |
-| TEAM_NAME            | character |
-| SORT_ORDER           | character |
-| G                    | character |
-| CLOSE_DEF_DIST_RANGE | character |
-| FGA_FREQUENCY        | character |
-| FGM                  | character |
-| FGA                  | character |
-| FG_PCT               | character |
-| EFG_PCT              | character |
-| FG2A_FREQUENCY       | character |
-| FG2M                 | character |
-| FG2A                 | character |
-| FG2_PCT              | character |
-| FG3A_FREQUENCY       | character |
-| FG3M                 | character |
-| FG3A                 | character |
-| FG3_PCT              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER | character |  |
+| G | character | Games played. |
+| CLOSE_DEF_DIST_RANGE | character |  |
+| FGA_FREQUENCY | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FG2A_FREQUENCY | character |  |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3A_FREQUENCY | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 **TouchTimeShooting**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| TEAM_ID          | character |
-| TEAM_NAME        | character |
-| SORT_ORDER       | character |
-| G                | character |
-| TOUCH_TIME_RANGE | character |
-| FGA_FREQUENCY    | character |
-| FGM              | character |
-| FGA              | character |
-| FG_PCT           | character |
-| EFG_PCT          | character |
-| FG2A_FREQUENCY   | character |
-| FG2M             | character |
-| FG2A             | character |
-| FG2_PCT          | character |
-| FG3A_FREQUENCY   | character |
-| FG3M             | character |
-| FG3A             | character |
-| FG3_PCT          | character |
+|                  |           |                                                 |
+|------------------|-----------|-------------------------------------------------|
+| col_name         | types     | description                                     |
+| TEAM_ID          | character | Unique team identifier.                         |
+| TEAM_NAME        | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER       | character |                                                 |
+| G                | character | Games played.                                   |
+| TOUCH_TIME_RANGE | character |                                                 |
+| FGA_FREQUENCY    | character |                                                 |
+| FGM              | character | Field goals made.                               |
+| FGA              | character | Field goal attempts.                            |
+| FG_PCT           | character | Field goal percentage (0-1).                    |
+| EFG_PCT          | character | Effective field goal percentage (0-1).          |
+| FG2A_FREQUENCY   | character |                                                 |
+| FG2M             | character |                                                 |
+| FG2A             | character |                                                 |
+| FG2_PCT          | character |                                                 |
+| FG3A_FREQUENCY   | character |                                                 |
+| FG3M             | character | Three-point field goals made.                   |
+| FG3A             | character | Three-point field goal attempts.                |
+| FG3_PCT          | character | Three-point field goal percentage (0-1).        |
 
 ## Details
 

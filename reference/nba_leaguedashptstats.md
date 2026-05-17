@@ -179,34 +179,34 @@ Returns a named list of data frames: LeagueDashPtStats
 
 **LeagueDashPtStats**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| GP                | character |
-| W                 | character |
-| L                 | character |
-| MIN               | character |
-| DRIVES            | character |
-| DRIVE_FGM         | character |
-| DRIVE_FGA         | character |
-| DRIVE_FG_PCT      | character |
-| DRIVE_FTM         | character |
-| DRIVE_FTA         | character |
-| DRIVE_FT_PCT      | character |
-| DRIVE_PTS         | character |
-| DRIVE_PTS_PCT     | character |
-| DRIVE_PASSES      | character |
-| DRIVE_PASSES_PCT  | character |
-| DRIVE_AST         | character |
-| DRIVE_AST_PCT     | character |
-| DRIVE_TOV         | character |
-| DRIVE_TOV_PCT     | character |
-| DRIVE_PF          | character |
-| DRIVE_PF_PCT      | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| GP                | character | Games played.                         |
+| W                 | character | Wins.                                 |
+| L                 | character | Losses.                               |
+| MIN               | character | Minutes played.                       |
+| DRIVES            | character |                                       |
+| DRIVE_FGM         | character |                                       |
+| DRIVE_FGA         | character |                                       |
+| DRIVE_FG_PCT      | character |                                       |
+| DRIVE_FTM         | character |                                       |
+| DRIVE_FTA         | character |                                       |
+| DRIVE_FT_PCT      | character |                                       |
+| DRIVE_PTS         | character |                                       |
+| DRIVE_PTS_PCT     | character |                                       |
+| DRIVE_PASSES      | character |                                       |
+| DRIVE_PASSES_PCT  | character |                                       |
+| DRIVE_AST         | character |                                       |
+| DRIVE_AST_PCT     | character |                                       |
+| DRIVE_TOV         | character |                                       |
+| DRIVE_TOV_PCT     | character |                                       |
+| DRIVE_PF          | character |                                       |
+| DRIVE_PF_PCT      | character |                                       |
 
 ## Details
 

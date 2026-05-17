@@ -36,40 +36,40 @@ Returns a named list of data frames: PlayByPlay, AvailableVideo
 
 **PlayByPlay**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| game_id         | character |
-| action_number   | integer   |
-| clock           | character |
-| period          | integer   |
-| team_id         | integer   |
-| team_tricode    | character |
-| person_id       | integer   |
-| player_name     | character |
-| player_name_i   | character |
-| x_legacy        | integer   |
-| y_legacy        | integer   |
-| shot_distance   | numeric   |
-| shot_result     | character |
-| is_field_goal   | integer   |
-| score_home      | character |
-| score_away      | character |
-| points_total    | integer   |
-| location        | character |
-| description     | character |
-| action_type     | character |
-| sub_type        | character |
-| video_available | integer   |
-| shot_value      | integer   |
-| action_id       | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| action_number | integer | Sequential action number within a game (V3 PBP). |
+| clock | character | Game clock value. |
+| period | integer | Period of the game (1-4 quarters; 5+ for OT). |
+| team_id | integer | Unique team identifier. |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| player_name | character | Player name. |
+| player_name_i | character | Player name i. |
+| x_legacy | integer | V2-format X coordinate (preserved for V3-to-V2 compatibility). |
+| y_legacy | integer | V2-format Y coordinate (preserved for V3-to-V2 compatibility). |
+| shot_distance | numeric | Shot distance from the basket, in feet. |
+| shot_result | character | Shot result ('Made' / 'Missed'). |
+| is_field_goal | integer | 1 if the action was a field goal; 0 otherwise. |
+| score_home | character | Score home. |
+| score_away | character | Score away. |
+| points_total | integer | Running total of points scored. |
+| location | character | Location. |
+| description | character | Long-form description text. |
+| action_type | character | Action type label (e.g. 'Made Shot', 'Substitution'). |
+| sub_type | character | Action sub-type label. |
+| video_available | integer | Video available. |
+| shot_value | integer | Point value of the shot (2 or 3). |
+| action_id | integer | Unique action identifier within a game (V3 PBP). |
 
 **AvailableVideo**
 
-|                 |         |
-|-----------------|---------|
-| col_name        | types   |
-| video_available | integer |
+|                 |         |                  |
+|-----------------|---------|------------------|
+| col_name        | types   | description      |
+| video_available | integer | Video available. |
 
 ## Details
 

@@ -36,57 +36,57 @@ BroadcasterList
 
 **SeasonGames**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| game_date         | character |
-| game_id           | character |
-| game_code         | character |
-| game_status       | character |
-| game_status_text  | character |
-| game_sequence     | character |
-| home_team_id      | character |
-| home_team_name    | character |
-| home_team_city    | character |
-| home_team_tricode | character |
-| home_team_slug    | character |
-| home_team_wins    | character |
-| home_team_losses  | character |
-| home_team_score   | character |
-| away_team_id      | character |
-| away_team_name    | character |
-| away_team_city    | character |
-| away_team_tricode | character |
-| away_team_slug    | character |
-| away_team_wins    | character |
-| away_team_losses  | character |
-| away_team_score   | character |
-| season            | character |
-| league_id         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_date | character | Game date (YYYY-MM-DD). |
+| game_id | character | Unique game identifier. |
+| game_code | character | ESPN game code (numeric identifier). |
+| game_status | character | Game status label. |
+| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| game_sequence | character | Game sequence. |
+| home_team_id | character | Unique identifier for the home team. |
+| home_team_name | character | Home team name. |
+| home_team_city | character | Home team city / location. |
+| home_team_tricode | character | Home team three-letter code. |
+| home_team_slug | character | Home team's team slug. |
+| home_team_wins | character | Home team's team wins. |
+| home_team_losses | character | Home team's team losses. |
+| home_team_score | character | Home team's score. |
+| away_team_id | character | Unique identifier for the away team. |
+| away_team_name | character | Away team name. |
+| away_team_city | character | Away team city / location. |
+| away_team_tricode | character | Away team three-letter code. |
+| away_team_slug | character | Away team's team slug. |
+| away_team_wins | character | Away team's team wins. |
+| away_team_losses | character | Away team's team losses. |
+| away_team_score | character | Away team's score. |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| league_id | character | League identifier ('10' = WNBA). |
 
 **SeasonWeeks**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| league_id   | character |
-| season_year | character |
-| week_number | character |
-| week_name   | character |
-| start_date  | character |
-| end_date    | character |
+|             |           |                                        |
+|-------------|-----------|----------------------------------------|
+| col_name    | types     | description                            |
+| league_id   | character | League identifier ('10' = WNBA).       |
+| season_year | character | Season year string ('YYYY-YY' format). |
+| week_number | character | Week number.                           |
+| week_name   | character | Week name.                             |
+| start_date  | character | Start date (YYYY-MM-DD).               |
+| end_date    | character | End date (YYYY-MM-DD).                 |
 
 **BroadcasterList**
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| league_id                | character |
-| season_year              | character |
-| broadcaster_abbreviation | character |
-| broadcaster_display      | character |
-| broadcaster_id           | character |
-| region_id                | character |
+|                          |           |                                        |
+|--------------------------|-----------|----------------------------------------|
+| col_name                 | types     | description                            |
+| league_id                | character | League identifier ('10' = WNBA).       |
+| season_year              | character | Season year string ('YYYY-YY' format). |
+| broadcaster_abbreviation | character | Broadcaster abbreviation.              |
+| broadcaster_display      | character | Broadcaster display.                   |
+| broadcaster_id           | character | Unique identifier for broadcaster.     |
+| region_id                | character | Unique identifier for region.          |
 
 ## Details
 

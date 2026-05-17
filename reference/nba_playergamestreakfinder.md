@@ -469,18 +469,18 @@ Return a named list of data frames: PlayerGameStreakFinderResults
 
 **PlayerGameStreakFinderResults**
 
-|                        |           |
-|------------------------|-----------|
-| col_name               | types     |
-| PLAYER_NAME_LAST_FIRST | character |
-| PLAYER_ID              | character |
-| GAMESTREAK             | character |
-| STARTDATE              | character |
-| ENDDATE                | character |
-| ACTIVESTREAK           | character |
-| NUMSEASONS             | character |
-| LASTSEASON             | character |
-| FIRSTSEASON            | character |
+|                        |           |                           |
+|------------------------|-----------|---------------------------|
+| col_name               | types     | description               |
+| PLAYER_NAME_LAST_FIRST | character |                           |
+| PLAYER_ID              | character | Unique player identifier. |
+| GAMESTREAK             | character |                           |
+| STARTDATE              | character |                           |
+| ENDDATE                | character |                           |
+| ACTIVESTREAK           | character |                           |
+| NUMSEASONS             | character |                           |
+| LASTSEASON             | character |                           |
+| FIRSTSEASON            | character |                           |
 
 ## Details
 

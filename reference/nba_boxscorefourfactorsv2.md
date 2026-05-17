@@ -58,47 +58,47 @@ sqlTeamFourFactors
 
 **sqlPlayersFourFactors**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| NICKNAME          | character |
-| START_POSITION    | character |
-| COMMENT           | character |
-| MIN               | character |
-| EFG_PCT           | character |
-| FTA_RATE          | character |
-| TM_TOV_PCT        | character |
-| OREB_PCT          | character |
-| OPP_EFG_PCT       | character |
-| OPP_FTA_RATE      | character |
-| OPP_TOV_PCT       | character |
-| OPP_OREB_PCT      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| NICKNAME | character | Team or athlete nickname. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FTA_RATE | character | Free throw attempt rate (FTA / FGA). |
+| TM_TOV_PCT | character |  |
+| OREB_PCT | character | Offensive rebound percentage (0-1). |
+| OPP_EFG_PCT | character |  |
+| OPP_FTA_RATE | character |  |
+| OPP_TOV_PCT | character |  |
+| OPP_OREB_PCT | character |  |
 
 **sqlTeamsFourFactors**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| MIN               | character |
-| EFG_PCT           | character |
-| FTA_RATE          | character |
-| TM_TOV_PCT        | character |
-| OREB_PCT          | character |
-| OPP_EFG_PCT       | character |
-| OPP_FTA_RATE      | character |
-| OPP_TOV_PCT       | character |
-| OPP_OREB_PCT      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FTA_RATE | character | Free throw attempt rate (FTA / FGA). |
+| TM_TOV_PCT | character |  |
+| OREB_PCT | character | Offensive rebound percentage (0-1). |
+| OPP_EFG_PCT | character |  |
+| OPP_FTA_RATE | character |  |
+| OPP_TOV_PCT | character |  |
+| OPP_OREB_PCT | character |  |
 
 ## Details
 

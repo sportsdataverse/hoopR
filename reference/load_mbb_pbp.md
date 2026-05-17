@@ -39,64 +39,64 @@ load_mbb_pbp(
 
 Returns a tibble
 
-|                                 |           |
-|---------------------------------|-----------|
-| col_name                        | types     |
-| id                              | numeric   |
-| sequence_number                 | character |
-| type_id                         | character |
-| type_text                       | character |
-| text                            | character |
-| away_score                      | integer   |
-| home_score                      | integer   |
-| period_number                   | integer   |
-| period_display_value            | character |
-| clock_display_value             | character |
-| scoring_play                    | logical   |
-| score_value                     | integer   |
-| team_id                         | character |
-| participants_0_athlete_id       | character |
-| wallclock                       | character |
-| shooting_play                   | logical   |
-| participants_1_athlete_id       | character |
-| season                          | integer   |
-| season_type                     | integer   |
-| away_team_id                    | integer   |
-| away_team_name                  | character |
-| away_team_mascot                | character |
-| away_team_abbrev                | character |
-| away_team_name_alt              | character |
-| home_team_id                    | integer   |
-| home_team_name                  | character |
-| home_team_mascot                | character |
-| home_team_abbrev                | character |
-| home_team_name_alt              | character |
-| home_team_spread                | numeric   |
-| game_spread                     | numeric   |
-| home_favorite                   | logical   |
-| game_spread_available           | logical   |
-| game_id                         | integer   |
-| qtr                             | integer   |
-| time                            | character |
-| clock_minutes                   | character |
-| clock_seconds                   | character |
-| half                            | character |
-| game_half                       | character |
-| lag_qtr                         | numeric   |
-| lead_qtr                        | numeric   |
-| lag_game_half                   | character |
-| lead_game_half                  | character |
-| start_quarter_seconds_remaining | integer   |
-| start_half_seconds_remaining    | integer   |
-| start_game_seconds_remaining    | integer   |
-| game_play_number                | integer   |
-| end_quarter_seconds_remaining   | numeric   |
-| end_half_seconds_remaining      | numeric   |
-| end_game_seconds_remaining      | numeric   |
-| period                          | integer   |
-| coordinate_x                    | integer   |
-| coordinate_y                    | integer   |
-| media_id                        | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| id | numeric | Id. |
+| sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
+| type_id | character | Type identifier (numeric). |
+| type_text | character | Display text for the type field. |
+| text | character | Text description of the play / record. |
+| away_score | integer | Away team score at the time of the play. |
+| home_score | integer | Home team score at the time of the play. |
+| period_number | integer | Numeric period (1-4 for quarters; 5+ for OT). |
+| period_display_value | character | Period display label (e.g. '1st Quarter', 'OT'). |
+| clock_display_value | character | Game clock display string (e.g. '8:32'). |
+| scoring_play | logical | TRUE if the play resulted in points scored. |
+| score_value | integer | Point value of the play (2 / 3 / 1). |
+| team_id | character | Unique team identifier. |
+| participants_0_athlete_id | character | V2 PBP participant 0 (primary) athlete ID. |
+| wallclock | character | Wallclock. |
+| shooting_play | logical | TRUE if the play was a shooting attempt. |
+| participants_1_athlete_id | character | V2 PBP participant 1 (secondary) athlete ID. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| away_team_id | integer | Unique identifier for the away team. |
+| away_team_name | character | Away team name. |
+| away_team_mascot | character | Away team mascot. |
+| away_team_abbrev | character | Away team three-letter abbreviation. |
+| away_team_name_alt | character | Alternate away team name. |
+| home_team_id | integer | Unique identifier for the home team. |
+| home_team_name | character | Home team name. |
+| home_team_mascot | character | Home team mascot. |
+| home_team_abbrev | character | Home team three-letter abbreviation. |
+| home_team_name_alt | character | Alternate home team name. |
+| home_team_spread | numeric | Home team's point spread. |
+| game_spread | numeric | Game spread (signed; positive = home favored). |
+| home_favorite | logical | TRUE if the home team is the betting favorite. |
+| game_spread_available | logical | TRUE if a point spread was available. |
+| game_id | integer | Unique game identifier. |
+| qtr | integer | Quarter (1-4) or OT period (5+). |
+| time | character | Time / clock value. |
+| clock_minutes | character | Clock minutes split out for convenience. |
+| clock_seconds | character | Clock seconds split out for convenience. |
+| half | character | Half of the game (1 or 2). |
+| game_half | character | Half of the game (1 or 2). |
+| lag_qtr | numeric | Quarter lag (the previous-play's quarter). |
+| lead_qtr | numeric | Quarter lead (the next-play's quarter). |
+| lag_game_half | character | Half lag (the previous-play's half). |
+| lead_game_half | character | Half lead (the next-play's half). |
+| start_quarter_seconds_remaining | integer | Seconds remaining in the period at the start of the play. |
+| start_half_seconds_remaining | integer | Seconds remaining in the half at the start of the play. |
+| start_game_seconds_remaining | integer | Seconds remaining in the game at the start of the play. |
+| game_play_number | integer | Sequential play number within the game. |
+| end_quarter_seconds_remaining | numeric | Seconds remaining in the period at the end of the play. |
+| end_half_seconds_remaining | numeric | Seconds remaining in the half at the end of the play. |
+| end_game_seconds_remaining | numeric | Seconds remaining in the game at the end of the play. |
+| period | integer | Period of the game (1-4 quarters; 5+ for OT). |
+| coordinate_x | integer | X coordinate on the court (half-court layout). |
+| coordinate_y | integer | Y coordinate on the court (half-court layout). |
+| media_id | character | Media identifier (video / image). |
 
 ## See also
 

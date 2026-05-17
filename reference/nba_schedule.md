@@ -33,56 +33,56 @@ nba_schedule(
 
 Returns a tibble with the following columns:
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| game_date          | character |
-| game_id            | character |
-| game_code          | character |
-| game_status        | integer   |
-| game_status_text   | character |
-| game_sequence      | integer   |
-| game_date_est      | character |
-| game_time_est      | character |
-| game_date_time_est | character |
-| game_date_utc      | character |
-| game_time_utc      | character |
-| game_date_time_utc | character |
-| away_team_time     | character |
-| home_team_time     | character |
-| day                | character |
-| month_num          | integer   |
-| week_number        | integer   |
-| week_name          | character |
-| if_necessary       | character |
-| series_game_number | character |
-| series_text        | character |
-| arena_name         | character |
-| arena_state        | character |
-| arena_city         | character |
-| postponed_status   | character |
-| branch_link        | character |
-| game_subtype       | character |
-| home_team_id       | integer   |
-| home_team_name     | character |
-| home_team_city     | character |
-| home_team_tricode  | character |
-| home_team_slug     | character |
-| home_team_wins     | integer   |
-| home_team_losses   | integer   |
-| home_team_score    | integer   |
-| home_team_seed     | integer   |
-| away_team_id       | integer   |
-| away_team_name     | character |
-| away_team_city     | character |
-| away_team_tricode  | character |
-| away_team_slug     | character |
-| away_team_wins     | integer   |
-| away_team_losses   | integer   |
-| away_team_score    | integer   |
-| away_team_seed     | integer   |
-| season             | character |
-| league_id          | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_date | character | Game date (YYYY-MM-DD). |
+| game_id | character | Unique game identifier. |
+| game_code | character | ESPN game code (numeric identifier). |
+| game_status | integer | Game status label. |
+| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| game_sequence | integer | Game sequence. |
+| game_date_est | character | Game date est. |
+| game_time_est | character | Game time est. |
+| game_date_time_est | character | Game date time est. |
+| game_date_utc | character | Game date utc. |
+| game_time_utc | character | Game start time in UTC (ISO 8601 timestamp). |
+| game_date_time_utc | character | Game date time utc. |
+| away_team_time | character | Time / clock value. |
+| home_team_time | character | Time / clock value. |
+| day | character | Day number within the month. |
+| month_num | integer | Month num. |
+| week_number | integer | Week number. |
+| week_name | character | Week name. |
+| if_necessary | character | If necessary. |
+| series_game_number | character | Series game number. |
+| series_text | character | Series text. |
+| arena_name | character | Arena name. |
+| arena_state | character | Arena state. |
+| arena_city | character | Arena city. |
+| postponed_status | character | Postponed status. |
+| branch_link | character | Branch link. |
+| game_subtype | character | Game subtype. |
+| home_team_id | integer | Unique identifier for the home team. |
+| home_team_name | character | Home team name. |
+| home_team_city | character | Home team city / location. |
+| home_team_tricode | character | Home team three-letter code. |
+| home_team_slug | character | Home team's team slug. |
+| home_team_wins | integer | Home team's team wins. |
+| home_team_losses | integer | Home team's team losses. |
+| home_team_score | integer | Home team's score. |
+| home_team_seed | integer | Home team's team seed. |
+| away_team_id | integer | Unique identifier for the away team. |
+| away_team_name | character | Away team name. |
+| away_team_city | character | Away team city / location. |
+| away_team_tricode | character | Away team three-letter code. |
+| away_team_slug | character | Away team's team slug. |
+| away_team_wins | integer | Away team's team wins. |
+| away_team_losses | integer | Away team's team losses. |
+| away_team_score | integer | Away team's score. |
+| away_team_seed | integer | Away team's team seed. |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| league_id | character | League identifier ('10' = WNBA). |
 
 ## Details
 

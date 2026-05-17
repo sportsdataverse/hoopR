@@ -27,14 +27,14 @@ Returns a named list of data frames: TeamYears
 
 **TeamYears**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| LEAGUE_ID    | character |
-| TEAM_ID      | character |
-| MIN_YEAR     | character |
-| MAX_YEAR     | character |
-| ABBREVIATION | character |
+|              |           |                                  |
+|--------------|-----------|----------------------------------|
+| col_name     | types     | description                      |
+| LEAGUE_ID    | character | League identifier ('10' = WNBA). |
+| TEAM_ID      | character | Unique team identifier.          |
+| MIN_YEAR     | character |                                  |
+| MAX_YEAR     | character |                                  |
+| ABBREVIATION | character | Short abbreviation.              |
 
 ## Details
 

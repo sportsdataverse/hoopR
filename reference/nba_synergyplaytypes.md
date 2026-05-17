@@ -61,33 +61,33 @@ Return a named list of data frames: SynergyPlayType
 
 **SynergyPlayType**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| SEASON_ID         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| PLAY_TYPE         | character |
-| TYPE_GROUPING     | character |
-| PERCENTILE        | character |
-| GP                | character |
-| POSS_PCT          | character |
-| PPP               | character |
-| FG_PCT            | character |
-| FT_POSS_PCT       | character |
-| TOV_POSS_PCT      | character |
-| SF_POSS_PCT       | character |
-| PLUSONE_POSS_PCT  | character |
-| SCORE_POSS_PCT    | character |
-| EFG_PCT           | character |
-| POSS              | character |
-| PTS               | character |
-| FGM               | character |
-| FGA               | character |
-| FGMX              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| SEASON_ID | character | Unique season identifier. |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PLAY_TYPE | character | Play type code. |
+| TYPE_GROUPING | character |  |
+| PERCENTILE | character |  |
+| GP | character | Games played. |
+| POSS_PCT | character | Poss percentage (0-1 decimal). |
+| PPP | character |  |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FT_POSS_PCT | character |  |
+| TOV_POSS_PCT | character |  |
+| SF_POSS_PCT | character |  |
+| PLUSONE_POSS_PCT | character |  |
+| SCORE_POSS_PCT | character |  |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| POSS | character | Poss. |
+| PTS | character | Points scored. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FGMX | character |  |
 
 ## Details
 

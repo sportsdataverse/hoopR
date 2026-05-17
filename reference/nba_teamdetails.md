@@ -28,87 +28,87 @@ TeamRetired, TeamSocialSites
 
 **TeamBackground**
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| TEAM_ID            | character |
-| ABBREVIATION       | character |
-| NICKNAME           | character |
-| YEARFOUNDED        | character |
-| CITY               | character |
-| ARENA              | character |
-| ARENACAPACITY      | character |
-| OWNER              | character |
-| GENERALMANAGER     | character |
-| HEADCOACH          | character |
-| DLEAGUEAFFILIATION | character |
+|                    |           |                           |
+|--------------------|-----------|---------------------------|
+| col_name           | types     | description               |
+| TEAM_ID            | character | Unique team identifier.   |
+| ABBREVIATION       | character | Short abbreviation.       |
+| NICKNAME           | character | Team or athlete nickname. |
+| YEARFOUNDED        | character |                           |
+| CITY               | character | City.                     |
+| ARENA              | character | Arena.                    |
+| ARENACAPACITY      | character |                           |
+| OWNER              | character |                           |
+| GENERALMANAGER     | character |                           |
+| HEADCOACH          | character |                           |
+| DLEAGUEAFFILIATION | character |                           |
 
 **TeamHistory**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| TEAM_ID        | character |
-| CITY           | character |
-| NICKNAME       | character |
-| YEARFOUNDED    | character |
-| YEARACTIVETILL | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| TEAM_ID        | character | Unique team identifier.   |
+| CITY           | character | City.                     |
+| NICKNAME       | character | Team or athlete nickname. |
+| YEARFOUNDED    | character |                           |
+| YEARACTIVETILL | character |                           |
 
 **TeamSocialSites**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| ACCOUNTTYPE  | character |
-| WEBSITE_LINK | character |
+|              |           |             |
+|--------------|-----------|-------------|
+| col_name     | types     | description |
+| ACCOUNTTYPE  | character |             |
+| WEBSITE_LINK | character |             |
 
 **TeamAwardsChampionships**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| YEARAWARDED  | character |
-| OPPOSITETEAM | character |
+|              |           |             |
+|--------------|-----------|-------------|
+| col_name     | types     | description |
+| YEARAWARDED  | character |             |
+| OPPOSITETEAM | character |             |
 
 **TeamAwardsConf**
 
-|              |         |
-|--------------|---------|
-| col_name     | types   |
-| YEARAWARDED  | integer |
-| OPPOSITETEAM | integer |
+|              |         |             |
+|--------------|---------|-------------|
+| col_name     | types   | description |
+| YEARAWARDED  | integer |             |
+| OPPOSITETEAM | integer |             |
 
 **TeamAwardsDiv**
 
-|              |         |
-|--------------|---------|
-| col_name     | types   |
-| YEARAWARDED  | integer |
-| OPPOSITETEAM | integer |
+|              |         |             |
+|--------------|---------|-------------|
+| col_name     | types   | description |
+| YEARAWARDED  | integer |             |
+| OPPOSITETEAM | integer |             |
 
 **TeamHof**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| PLAYERID        | character |
-| PLAYER          | character |
-| POSITION        | character |
-| JERSEY          | character |
-| SEASONSWITHTEAM | character |
-| YEAR            | character |
+|                 |           |                                         |
+|-----------------|-----------|-----------------------------------------|
+| col_name        | types     | description                             |
+| PLAYERID        | character | Playerid.                               |
+| PLAYER          | character | Player.                                 |
+| POSITION        | character | Listed roster position (G, F, C, etc.). |
+| JERSEY          | character | Jersey number worn by the player.       |
+| SEASONSWITHTEAM | character |                                         |
+| YEAR            | character | 4-digit year.                           |
 
 **TeamRetired**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| PLAYERID        | character |
-| PLAYER          | character |
-| POSITION        | character |
-| JERSEY          | character |
-| SEASONSWITHTEAM | character |
-| YEAR            | character |
+|                 |           |                                         |
+|-----------------|-----------|-----------------------------------------|
+| col_name        | types     | description                             |
+| PLAYERID        | character | Playerid.                               |
+| PLAYER          | character | Player.                                 |
+| POSITION        | character | Listed roster position (G, F, C, etc.). |
+| JERSEY          | character | Jersey number worn by the player.       |
+| SEASONSWITHTEAM | character |                                         |
+| YEAR            | character | 4-digit year.                           |
 
 ## Details
 

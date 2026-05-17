@@ -184,32 +184,32 @@ Returns a named list of data frames: LeagueDashPlayerBioStats
 
 **LeagueDashPlayerBioStats**
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| PLAYER_ID            | character |
-| PLAYER_NAME          | character |
-| TEAM_ID              | character |
-| TEAM_ABBREVIATION    | character |
-| AGE                  | character |
-| PLAYER_HEIGHT        | character |
-| PLAYER_HEIGHT_INCHES | character |
-| PLAYER_WEIGHT        | character |
-| COLLEGE              | character |
-| COUNTRY              | character |
-| DRAFT_YEAR           | character |
-| DRAFT_ROUND          | character |
-| DRAFT_NUMBER         | character |
-| GP                   | character |
-| PTS                  | character |
-| REB                  | character |
-| AST                  | character |
-| NET_RATING           | character |
-| OREB_PCT             | character |
-| DREB_PCT             | character |
-| USG_PCT              | character |
-| TS_PCT               | character |
-| AST_PCT              | character |
+|                      |           |                                       |
+|----------------------|-----------|---------------------------------------|
+| col_name             | types     | description                           |
+| PLAYER_ID            | character | Unique player identifier.             |
+| PLAYER_NAME          | character | Player name.                          |
+| TEAM_ID              | character | Unique team identifier.               |
+| TEAM_ABBREVIATION    | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE                  | character | Player age (in years).                |
+| PLAYER_HEIGHT        | character |                                       |
+| PLAYER_HEIGHT_INCHES | character |                                       |
+| PLAYER_WEIGHT        | character |                                       |
+| COLLEGE              | character | College or school attended.           |
+| COUNTRY              | character | Country (full name or code).          |
+| DRAFT_YEAR           | character | Draft year (4-digit).                 |
+| DRAFT_ROUND          | character | Round of the draft selection.         |
+| DRAFT_NUMBER         | character |                                       |
+| GP                   | character | Games played.                         |
+| PTS                  | character | Points scored.                        |
+| REB                  | character | Total rebounds.                       |
+| AST                  | character | Assists.                              |
+| NET_RATING           | character | Net rating (off rating - def rating). |
+| OREB_PCT             | character | Offensive rebound percentage (0-1).   |
+| DREB_PCT             | character | Defensive rebound percentage (0-1).   |
+| USG_PCT              | character | Usage percentage (0-1).               |
+| TS_PCT               | character | True shooting percentage (0-1).       |
+| AST_PCT              | character | Assist percentage (0-1).              |
 
 ## Details
 

@@ -57,55 +57,55 @@ Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 
 **sqlPlayersMisc**
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| GAME_ID            | character |
-| TEAM_ID            | character |
-| TEAM_ABBREVIATION  | character |
-| TEAM_CITY          | character |
-| PLAYER_ID          | character |
-| PLAYER_NAME        | character |
-| NICKNAME           | character |
-| START_POSITION     | character |
-| COMMENT            | character |
-| MIN                | character |
-| PTS_OFF_TOV        | character |
-| PTS_2ND_CHANCE     | character |
-| PTS_FB             | character |
-| PTS_PAINT          | character |
-| OPP_PTS_OFF_TOV    | character |
-| OPP_PTS_2ND_CHANCE | character |
-| OPP_PTS_FB         | character |
-| OPP_PTS_PAINT      | character |
-| BLK                | character |
-| BLKA               | character |
-| PF                 | character |
-| PFD                | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| NICKNAME | character | Team or athlete nickname. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| PTS_OFF_TOV | character | Points scored off opponent turnovers. |
+| PTS_2ND_CHANCE | character |  |
+| PTS_FB | character |  |
+| PTS_PAINT | character | Points scored in the paint. |
+| OPP_PTS_OFF_TOV | character |  |
+| OPP_PTS_2ND_CHANCE | character |  |
+| OPP_PTS_FB | character |  |
+| OPP_PTS_PAINT | character |  |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
 
 **sqlTeamsMisc**
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| GAME_ID            | character |
-| TEAM_ID            | character |
-| TEAM_NAME          | character |
-| TEAM_ABBREVIATION  | character |
-| TEAM_CITY          | character |
-| MIN                | character |
-| PTS_OFF_TOV        | character |
-| PTS_2ND_CHANCE     | character |
-| PTS_FB             | character |
-| PTS_PAINT          | character |
-| OPP_PTS_OFF_TOV    | character |
-| OPP_PTS_2ND_CHANCE | character |
-| OPP_PTS_FB         | character |
-| OPP_PTS_PAINT      | character |
-| BLK                | character |
-| BLKA               | character |
-| PF                 | character |
-| PFD                | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| PTS_OFF_TOV | character | Points scored off opponent turnovers. |
+| PTS_2ND_CHANCE | character |  |
+| PTS_FB | character |  |
+| PTS_PAINT | character | Points scored in the paint. |
+| OPP_PTS_OFF_TOV | character |  |
+| OPP_PTS_2ND_CHANCE | character |  |
+| OPP_PTS_FB | character |  |
+| OPP_PTS_PAINT | character |  |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
 
 ## Details
 

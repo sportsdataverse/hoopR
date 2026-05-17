@@ -40,36 +40,36 @@ Returns a named list of data frames: GravityLeaders
 
 **GravityLeaders**
 
-|                                 |           |
-|---------------------------------|-----------|
-| col_name                        | types     |
-| playerid                        | character |
-| firstname                       | character |
-| lastname                        | character |
-| teamid                          | character |
-| teamabbreviation                | character |
-| teamname                        | character |
-| teamcity                        | character |
-| frames                          | character |
-| gravityscore                    | character |
-| avggravityscore                 | character |
-| onballperimeterframes           | character |
-| onballperimetergravityscore     | character |
-| avgonballperimetergravityscore  | character |
-| offballperimeterframes          | character |
-| offballperimetergravityscore    | character |
-| avgoffballperimetergravityscore | character |
-| onballinteriorframes            | character |
-| onballinteriorgravityscore      | character |
-| avgonballinteriorgravityscore   | character |
-| offballinteriorframes           | character |
-| offballinteriorgravityscore     | character |
-| avgoffballinteriorgravityscore  | character |
-| gamesplayed                     | character |
-| minutes                         | character |
-| pts                             | character |
-| reb                             | character |
-| ast                             | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| playerid | character | Playerid. |
+| firstname | character | Firstname. |
+| lastname | character | Lastname. |
+| teamid | character | Teamid. |
+| teamabbreviation | character | Teamabbreviation. |
+| teamname | character | Teamname. |
+| teamcity | character | Teamcity. |
+| frames | character | Frames. |
+| gravityscore | character | Gravityscore. |
+| avggravityscore | character | Avggravityscore. |
+| onballperimeterframes | character | Onballperimeterframes. |
+| onballperimetergravityscore | character | Onballperimetergravityscore. |
+| avgonballperimetergravityscore | character | Avgonballperimetergravityscore. |
+| offballperimeterframes | character | Offballperimeterframes. |
+| offballperimetergravityscore | character | Offballperimetergravityscore. |
+| avgoffballperimetergravityscore | character | Avgoffballperimetergravityscore. |
+| onballinteriorframes | character | Onballinteriorframes. |
+| onballinteriorgravityscore | character | Onballinteriorgravityscore. |
+| avgonballinteriorgravityscore | character | Avgonballinteriorgravityscore. |
+| offballinteriorframes | character | Offballinteriorframes. |
+| offballinteriorgravityscore | character | Offballinteriorgravityscore. |
+| avgoffballinteriorgravityscore | character | Avgoffballinteriorgravityscore. |
+| gamesplayed | character | Gamesplayed. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| pts | character | Points scored. |
+| reb | character | Total rebounds. |
+| ast | character | Assists. |
 
 ## Details
 

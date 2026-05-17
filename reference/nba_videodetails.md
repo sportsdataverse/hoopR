@@ -177,44 +177,44 @@ Return a list of tibbles: videoUrls, playlist
 
 **videoUrls**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| uuid     | character |
-| dur      | logical   |
-| stt      | logical   |
-| stp      | logical   |
-| sth      | logical   |
-| stw      | logical   |
-| mtt      | logical   |
-| mtp      | logical   |
-| mth      | logical   |
-| mtw      | logical   |
-| ltt      | logical   |
-| ltp      | logical   |
-| lth      | logical   |
-| ltw      | logical   |
+|          |           |             |
+|----------|-----------|-------------|
+| col_name | types     | description |
+| uuid     | character | Uuid.       |
+| dur      | logical   | Dur.        |
+| stt      | logical   | Stt.        |
+| stp      | logical   | Stp.        |
+| sth      | logical   | Sth.        |
+| stw      | logical   | Stw.        |
+| mtt      | logical   | Mtt.        |
+| mtp      | logical   | Mtp.        |
+| mth      | logical   | Mth.        |
+| mtw      | logical   | Mtw.        |
+| ltt      | logical   | Ltt.        |
+| ltp      | logical   | Ltp.        |
+| lth      | logical   | Lth.        |
+| ltw      | logical   | Ltw.        |
 
 **playlist**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| gi       | character |
-| ei       | integer   |
-| y        | integer   |
-| m        | character |
-| d        | character |
-| gc       | character |
-| p        | integer   |
-| dsc      | character |
-| ha       | character |
-| va       | character |
-| hpb      | integer   |
-| hpa      | integer   |
-| vpb      | integer   |
-| vpa      | integer   |
-| pta      | integer   |
+|          |           |             |
+|----------|-----------|-------------|
+| col_name | types     | description |
+| gi       | character | Gi.         |
+| ei       | integer   | Ei.         |
+| y        | integer   | Y.          |
+| m        | character | M.          |
+| d        | character | D.          |
+| gc       | character | Gc.         |
+| p        | integer   | P.          |
+| dsc      | character | Dsc.        |
+| ha       | character | Ha.         |
+| va       | character | Va.         |
+| hpb      | integer   | Hpb.        |
+| hpa      | integer   | Hpa.        |
+| vpb      | integer   | Vpb.        |
+| vpa      | integer   | Vpa.        |
+| pta      | integer   | Pta.        |
 
 ## Details
 

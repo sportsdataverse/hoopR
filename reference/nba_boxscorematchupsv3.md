@@ -55,111 +55,111 @@ away_team_player_matchups
 
 **home_team_player_matchups**
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| game_id                           | character |
-| away_team_id                      | integer   |
-| home_team_id                      | integer   |
-| team_id                           | integer   |
-| team_name                         | character |
-| team_city                         | character |
-| team_tricode                      | character |
-| team_slug                         | character |
-| person_id                         | integer   |
-| first_name                        | character |
-| family_name                       | character |
-| name_i                            | character |
-| player_slug                       | character |
-| position                          | character |
-| comment                           | character |
-| jersey_num                        | character |
-| matchups_person_id                | integer   |
-| matchups_first_name               | character |
-| matchups_family_name              | character |
-| matchups_name_i                   | character |
-| matchups_player_slug              | character |
-| matchups_jersey_num               | character |
-| matchup_minutes                   | character |
-| matchup_minutes_sort              | numeric   |
-| partial_possessions               | numeric   |
-| percentage_defender_total_time    | numeric   |
-| percentage_offensive_total_time   | numeric   |
-| percentage_total_time_both_on     | numeric   |
-| switches_on                       | integer   |
-| player_points                     | integer   |
-| team_points                       | integer   |
-| matchup_assists                   | integer   |
-| matchup_potential_assists         | integer   |
-| matchup_turnovers                 | integer   |
-| matchup_blocks                    | integer   |
-| matchup_field_goals_made          | integer   |
-| matchup_field_goals_attempted     | integer   |
-| matchup_field_goals_percentage    | numeric   |
-| matchup_three_pointers_made       | integer   |
-| matchup_three_pointers_attempted  | integer   |
-| matchup_three_pointers_percentage | numeric   |
-| help_blocks                       | integer   |
-| help_field_goals_made             | integer   |
-| help_field_goals_attempted        | integer   |
-| help_field_goals_percentage       | numeric   |
-| matchup_free_throws_made          | integer   |
-| matchup_free_throws_attempted     | integer   |
-| shooting_fouls                    | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| matchups_person_id | integer | Unique identifier for matchups person. |
+| matchups_first_name | character | Matchups first name. |
+| matchups_family_name | character | Matchups family name. |
+| matchups_name_i | character | Matchups name i. |
+| matchups_player_slug | character | Matchups player slug. |
+| matchups_jersey_num | character | Matchups jersey num. |
+| matchup_minutes | character | Matchup minutes. |
+| matchup_minutes_sort | numeric | Matchup minutes sort. |
+| partial_possessions | numeric | Partial possessions. |
+| percentage_defender_total_time | numeric | Time / clock value. |
+| percentage_offensive_total_time | numeric | Time / clock value. |
+| percentage_total_time_both_on | numeric | Percentage total time both on. |
+| switches_on | integer | Switches on. |
+| player_points | integer | Player points. |
+| team_points | integer | Team points. |
+| matchup_assists | integer | Matchup assists. |
+| matchup_potential_assists | integer | Matchup potential assists. |
+| matchup_turnovers | integer | Matchup turnovers. |
+| matchup_blocks | integer | Matchup blocks. |
+| matchup_field_goals_made | integer | Number of matchup field goals made. |
+| matchup_field_goals_attempted | integer | Number of matchup field goals attempted. |
+| matchup_field_goals_percentage | numeric | Matchup field goals percentage (0-1 decimal). |
+| matchup_three_pointers_made | integer | Number of matchup three pointers made. |
+| matchup_three_pointers_attempted | integer | Number of matchup three pointers attempted. |
+| matchup_three_pointers_percentage | numeric | Matchup three pointers percentage (0-1 decimal). |
+| help_blocks | integer | Help blocks. |
+| help_field_goals_made | integer | Number of help field goals made. |
+| help_field_goals_attempted | integer | Number of help field goals attempted. |
+| help_field_goals_percentage | numeric | Help field goals percentage (0-1 decimal). |
+| matchup_free_throws_made | integer | Number of matchup free throws made. |
+| matchup_free_throws_attempted | integer | Number of matchup free throws attempted. |
+| shooting_fouls | integer | Shooting fouls. |
 
 **away_team_player_matchups**
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| game_id                           | character |
-| away_team_id                      | integer   |
-| home_team_id                      | integer   |
-| team_id                           | integer   |
-| team_name                         | character |
-| team_city                         | character |
-| team_tricode                      | character |
-| team_slug                         | character |
-| person_id                         | integer   |
-| first_name                        | character |
-| family_name                       | character |
-| name_i                            | character |
-| player_slug                       | character |
-| position                          | character |
-| comment                           | character |
-| jersey_num                        | character |
-| matchups_person_id                | integer   |
-| matchups_first_name               | character |
-| matchups_family_name              | character |
-| matchups_name_i                   | character |
-| matchups_player_slug              | character |
-| matchups_jersey_num               | character |
-| matchup_minutes                   | character |
-| matchup_minutes_sort              | numeric   |
-| partial_possessions               | numeric   |
-| percentage_defender_total_time    | numeric   |
-| percentage_offensive_total_time   | numeric   |
-| percentage_total_time_both_on     | numeric   |
-| switches_on                       | integer   |
-| player_points                     | integer   |
-| team_points                       | integer   |
-| matchup_assists                   | integer   |
-| matchup_potential_assists         | integer   |
-| matchup_turnovers                 | integer   |
-| matchup_blocks                    | integer   |
-| matchup_field_goals_made          | integer   |
-| matchup_field_goals_attempted     | integer   |
-| matchup_field_goals_percentage    | numeric   |
-| matchup_three_pointers_made       | integer   |
-| matchup_three_pointers_attempted  | integer   |
-| matchup_three_pointers_percentage | numeric   |
-| help_blocks                       | integer   |
-| help_field_goals_made             | integer   |
-| help_field_goals_attempted        | integer   |
-| help_field_goals_percentage       | numeric   |
-| matchup_free_throws_made          | integer   |
-| matchup_free_throws_attempted     | integer   |
-| shooting_fouls                    | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| matchups_person_id | integer | Unique identifier for matchups person. |
+| matchups_first_name | character | Matchups first name. |
+| matchups_family_name | character | Matchups family name. |
+| matchups_name_i | character | Matchups name i. |
+| matchups_player_slug | character | Matchups player slug. |
+| matchups_jersey_num | character | Matchups jersey num. |
+| matchup_minutes | character | Matchup minutes. |
+| matchup_minutes_sort | numeric | Matchup minutes sort. |
+| partial_possessions | numeric | Partial possessions. |
+| percentage_defender_total_time | numeric | Time / clock value. |
+| percentage_offensive_total_time | numeric | Time / clock value. |
+| percentage_total_time_both_on | numeric | Percentage total time both on. |
+| switches_on | integer | Switches on. |
+| player_points | integer | Player points. |
+| team_points | integer | Team points. |
+| matchup_assists | integer | Matchup assists. |
+| matchup_potential_assists | integer | Matchup potential assists. |
+| matchup_turnovers | integer | Matchup turnovers. |
+| matchup_blocks | integer | Matchup blocks. |
+| matchup_field_goals_made | integer | Number of matchup field goals made. |
+| matchup_field_goals_attempted | integer | Number of matchup field goals attempted. |
+| matchup_field_goals_percentage | numeric | Matchup field goals percentage (0-1 decimal). |
+| matchup_three_pointers_made | integer | Number of matchup three pointers made. |
+| matchup_three_pointers_attempted | integer | Number of matchup three pointers attempted. |
+| matchup_three_pointers_percentage | numeric | Matchup three pointers percentage (0-1 decimal). |
+| help_blocks | integer | Help blocks. |
+| help_field_goals_made | integer | Number of help field goals made. |
+| help_field_goals_attempted | integer | Number of help field goals attempted. |
+| help_field_goals_percentage | numeric | Help field goals percentage (0-1 decimal). |
+| matchup_free_throws_made | integer | Number of matchup free throws made. |
+| matchup_free_throws_attempted | integer | Number of matchup free throws attempted. |
+| shooting_fouls | integer | Shooting fouls. |
 
 ## Details
 

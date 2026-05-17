@@ -44,56 +44,56 @@ Returns a named list of data frames: FranchiseLeaderswRank
 
 **FranchiseLeaderswRank**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| LEAGUE_ID        | character |
-| TEAM_ID          | character |
-| TEAM             | character |
-| PERSON_ID        | character |
-| PLAYER           | character |
-| SEASON_TYPE      | character |
-| ACTIVE_WITH_TEAM | character |
-| GP               | character |
-| MINUTES          | character |
-| FGM              | character |
-| FGA              | character |
-| FG_PCT           | character |
-| FG3M             | character |
-| FG3A             | character |
-| FG3_PCT          | character |
-| FTM              | character |
-| FTA              | character |
-| FT_PCT           | character |
-| OREB             | character |
-| DREB             | character |
-| REB              | character |
-| AST              | character |
-| PF               | character |
-| STL              | character |
-| TOV              | character |
-| BLK              | character |
-| PTS              | character |
-| F_RANK_GP        | character |
-| F_RANK_MINUTES   | character |
-| F_RANK_FGM       | character |
-| F_RANK_FGA       | character |
-| F_RANK_FG_PCT    | character |
-| F_RANK_FG3M      | character |
-| F_RANK_FG3A      | character |
-| F_RANK_FG3_PCT   | character |
-| F_RANK_FTM       | character |
-| F_RANK_FTA       | character |
-| F_RANK_FT_PCT    | character |
-| F_RANK_OREB      | character |
-| F_RANK_DREB      | character |
-| F_RANK_REB       | character |
-| F_RANK_AST       | character |
-| F_RANK_PF        | character |
-| F_RANK_STL       | character |
-| F_RANK_TOV       | character |
-| F_RANK_BLK       | character |
-| F_RANK_PTS       | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| LEAGUE_ID | character | League identifier ('10' = WNBA). |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM | character | Team-side label or team identifier. |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| PLAYER | character | Player. |
+| SEASON_TYPE | character | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| ACTIVE_WITH_TEAM | character |  |
+| GP | character | Games played. |
+| MINUTES | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| PF | character | Personal fouls. |
+| STL | character | Steals. |
+| TOV | character | Turnovers. |
+| BLK | character | Blocks. |
+| PTS | character | Points scored. |
+| F_RANK_GP | character |  |
+| F_RANK_MINUTES | character |  |
+| F_RANK_FGM | character |  |
+| F_RANK_FGA | character |  |
+| F_RANK_FG_PCT | character |  |
+| F_RANK_FG3M | character |  |
+| F_RANK_FG3A | character |  |
+| F_RANK_FG3_PCT | character |  |
+| F_RANK_FTM | character |  |
+| F_RANK_FTA | character |  |
+| F_RANK_FT_PCT | character |  |
+| F_RANK_OREB | character |  |
+| F_RANK_DREB | character |  |
+| F_RANK_REB | character |  |
+| F_RANK_AST | character |  |
+| F_RANK_PF | character |  |
+| F_RANK_STL | character |  |
+| F_RANK_TOV | character |  |
+| F_RANK_BLK | character |  |
+| F_RANK_PTS | character |  |
 
 ## Details
 

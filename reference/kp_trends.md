@@ -12,28 +12,28 @@ kp_trends()
 
 A data frame with the following columns:
 
-|              |         |
-|--------------|---------|
-| col_name     | types   |
-| season       | numeric |
-| efficiency   | numeric |
-| tempo        | numeric |
-| e_fg_pct     | numeric |
-| to_pct       | numeric |
-| or_pct       | numeric |
-| ft_rate      | numeric |
-| fg_2_pct     | numeric |
-| fg_3_pct     | numeric |
-| fg_3a_pct    | numeric |
-| ft_pct       | numeric |
-| a_pct        | numeric |
-| blk_pct      | numeric |
-| stl_pct      | numeric |
-| non_stl_pct  | numeric |
-| avg_hgt      | numeric |
-| continuity   | numeric |
-| home_win_pct | numeric |
-| ppg          | numeric |
+|              |         |                                                       |
+|--------------|---------|-------------------------------------------------------|
+| col_name     | types   | description                                           |
+| season       | numeric | Season identifier (4-digit year or 'YYYY-YY' string). |
+| efficiency   | numeric | Efficiency.                                           |
+| tempo        | numeric | Tempo.                                                |
+| e_fg_pct     | numeric | E field goals percentage (0-1 decimal).               |
+| to_pct       | numeric | To percentage (0-1 decimal).                          |
+| or_pct       | numeric | Or percentage (0-1 decimal).                          |
+| ft_rate      | numeric | Ft rate.                                              |
+| fg_2_pct     | numeric | Field goals 2 percentage (0-1 decimal).               |
+| fg_3_pct     | numeric | Field goals 3 percentage (0-1 decimal).               |
+| fg_3a_pct    | numeric | Field goals 3a percentage (0-1 decimal).              |
+| ft_pct       | numeric | Free throw percentage (0-1).                          |
+| a_pct        | numeric | A percentage (0-1 decimal).                           |
+| blk_pct      | numeric | Blocks percentage (0-1 decimal).                      |
+| stl_pct      | numeric | Steals percentage (0-1 decimal).                      |
+| non_stl_pct  | numeric | Non steals percentage (0-1 decimal).                  |
+| avg_hgt      | numeric | Avg hgt.                                              |
+| continuity   | numeric | Continuity.                                           |
+| home_win_pct | numeric | Home win percentage (0-1 decimal).                    |
+| ppg          | numeric | Points per game.                                      |
 
 ## See also
 

@@ -32,123 +32,123 @@ WestConfRemainingGames, WestConfStandings
 
 **EastConfPlayoffPicture**
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| CONFERENCE                        | character |
-| HIGH_SEED_RANK                    | character |
-| HIGH_SEED_TEAM                    | character |
-| HIGH_SEED_TEAM_ID                 | character |
-| LOW_SEED_RANK                     | character |
-| LOW_SEED_TEAM                     | character |
-| LOW_SEED_TEAM_ID                  | character |
-| HIGH_SEED_SERIES_W                | character |
-| HIGH_SEED_SERIES_L                | character |
-| HIGH_SEED_SERIES_REMAINING_G      | character |
-| HIGH_SEED_SERIES_REMAINING_HOME_G | character |
-| HIGH_SEED_SERIES_REMAINING_AWAY_G | character |
+|                                   |           |             |
+|-----------------------------------|-----------|-------------|
+| col_name                          | types     | description |
+| CONFERENCE                        | character | Conference. |
+| HIGH_SEED_RANK                    | character |             |
+| HIGH_SEED_TEAM                    | character |             |
+| HIGH_SEED_TEAM_ID                 | character |             |
+| LOW_SEED_RANK                     | character |             |
+| LOW_SEED_TEAM                     | character |             |
+| LOW_SEED_TEAM_ID                  | character |             |
+| HIGH_SEED_SERIES_W                | character |             |
+| HIGH_SEED_SERIES_L                | character |             |
+| HIGH_SEED_SERIES_REMAINING_G      | character |             |
+| HIGH_SEED_SERIES_REMAINING_HOME_G | character |             |
+| HIGH_SEED_SERIES_REMAINING_AWAY_G | character |             |
 
 **WestConfPlayoffPicture**
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| CONFERENCE                        | character |
-| HIGH_SEED_RANK                    | character |
-| HIGH_SEED_TEAM                    | character |
-| HIGH_SEED_TEAM_ID                 | character |
-| LOW_SEED_RANK                     | character |
-| LOW_SEED_TEAM                     | character |
-| LOW_SEED_TEAM_ID                  | character |
-| HIGH_SEED_SERIES_W                | character |
-| HIGH_SEED_SERIES_L                | character |
-| HIGH_SEED_SERIES_REMAINING_G      | character |
-| HIGH_SEED_SERIES_REMAINING_HOME_G | character |
-| HIGH_SEED_SERIES_REMAINING_AWAY_G | character |
+|                                   |           |             |
+|-----------------------------------|-----------|-------------|
+| col_name                          | types     | description |
+| CONFERENCE                        | character | Conference. |
+| HIGH_SEED_RANK                    | character |             |
+| HIGH_SEED_TEAM                    | character |             |
+| HIGH_SEED_TEAM_ID                 | character |             |
+| LOW_SEED_RANK                     | character |             |
+| LOW_SEED_TEAM                     | character |             |
+| LOW_SEED_TEAM_ID                  | character |             |
+| HIGH_SEED_SERIES_W                | character |             |
+| HIGH_SEED_SERIES_L                | character |             |
+| HIGH_SEED_SERIES_REMAINING_G      | character |             |
+| HIGH_SEED_SERIES_REMAINING_HOME_G | character |             |
+| HIGH_SEED_SERIES_REMAINING_AWAY_G | character |             |
 
 **EastConfStandings**
 
-|                     |           |
-|---------------------|-----------|
-| col_name            | types     |
-| CONFERENCE          | character |
-| RANK                | character |
-| TEAM                | character |
-| TEAM_SLUG           | character |
-| TEAM_ID             | character |
-| WINS                | character |
-| LOSSES              | character |
-| PCT                 | character |
-| DIV                 | character |
-| CONF                | character |
-| HOME                | character |
-| AWAY                | character |
-| GB                  | character |
-| GR_OVER_500         | character |
-| GR_OVER_500_HOME    | character |
-| GR_OVER_500_AWAY    | character |
-| GR_UNDER_500        | character |
-| GR_UNDER_500_HOME   | character |
-| GR_UNDER_500_AWAY   | character |
-| RANKING_CRITERIA    | character |
-| CLINCHED_PLAYOFFS   | character |
-| CLINCHED_CONFERENCE | character |
-| CLINCHED_DIVISION   | character |
-| ELIMINATED_PLAYOFFS | character |
-| SOSA_REMAINING      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| CONFERENCE | character | Conference. |
+| RANK | character | Rank. |
+| TEAM | character | Team-side label or team identifier. |
+| TEAM_SLUG | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| TEAM_ID | character | Unique team identifier. |
+| WINS | character | Total wins. |
+| LOSSES | character | Total losses. |
+| PCT | character | Pct. |
+| DIV | character |  |
+| CONF | character | character. |
+| HOME | character | Home. |
+| AWAY | character |  |
+| GB | character |  |
+| GR_OVER_500 | character |  |
+| GR_OVER_500_HOME | character |  |
+| GR_OVER_500_AWAY | character |  |
+| GR_UNDER_500 | character |  |
+| GR_UNDER_500_HOME | character |  |
+| GR_UNDER_500_AWAY | character |  |
+| RANKING_CRITERIA | character |  |
+| CLINCHED_PLAYOFFS | character |  |
+| CLINCHED_CONFERENCE | character |  |
+| CLINCHED_DIVISION | character |  |
+| ELIMINATED_PLAYOFFS | character |  |
+| SOSA_REMAINING | character |  |
 
 **WestConfStandings**
 
-|                     |           |
-|---------------------|-----------|
-| col_name            | types     |
-| CONFERENCE          | character |
-| RANK                | character |
-| TEAM                | character |
-| TEAM_SLUG           | character |
-| TEAM_ID             | character |
-| WINS                | character |
-| LOSSES              | character |
-| PCT                 | character |
-| DIV                 | character |
-| CONF                | character |
-| HOME                | character |
-| AWAY                | character |
-| GB                  | character |
-| GR_OVER_500         | character |
-| GR_OVER_500_HOME    | character |
-| GR_OVER_500_AWAY    | character |
-| GR_UNDER_500        | character |
-| GR_UNDER_500_HOME   | character |
-| GR_UNDER_500_AWAY   | character |
-| RANKING_CRITERIA    | character |
-| CLINCHED_PLAYOFFS   | character |
-| CLINCHED_CONFERENCE | character |
-| CLINCHED_DIVISION   | character |
-| ELIMINATED_PLAYOFFS | character |
-| SOSA_REMAINING      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| CONFERENCE | character | Conference. |
+| RANK | character | Rank. |
+| TEAM | character | Team-side label or team identifier. |
+| TEAM_SLUG | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| TEAM_ID | character | Unique team identifier. |
+| WINS | character | Total wins. |
+| LOSSES | character | Total losses. |
+| PCT | character | Pct. |
+| DIV | character |  |
+| CONF | character | character. |
+| HOME | character | Home. |
+| AWAY | character |  |
+| GB | character |  |
+| GR_OVER_500 | character |  |
+| GR_OVER_500_HOME | character |  |
+| GR_OVER_500_AWAY | character |  |
+| GR_UNDER_500 | character |  |
+| GR_UNDER_500_HOME | character |  |
+| GR_UNDER_500_AWAY | character |  |
+| RANKING_CRITERIA | character |  |
+| CLINCHED_PLAYOFFS | character |  |
+| CLINCHED_CONFERENCE | character |  |
+| CLINCHED_DIVISION | character |  |
+| ELIMINATED_PLAYOFFS | character |  |
+| SOSA_REMAINING | character |  |
 
 **EastConfRemainingGames**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| TEAM             | character |
-| TEAM_ID          | character |
-| REMAINING_G      | character |
-| REMAINING_HOME_G | character |
-| REMAINING_AWAY_G | character |
+|                  |           |                                     |
+|------------------|-----------|-------------------------------------|
+| col_name         | types     | description                         |
+| TEAM             | character | Team-side label or team identifier. |
+| TEAM_ID          | character | Unique team identifier.             |
+| REMAINING_G      | character |                                     |
+| REMAINING_HOME_G | character |                                     |
+| REMAINING_AWAY_G | character |                                     |
 
 **WestConfRemainingGames**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| TEAM             | character |
-| TEAM_ID          | character |
-| REMAINING_G      | character |
-| REMAINING_HOME_G | character |
-| REMAINING_AWAY_G | character |
+|                  |           |                                     |
+|------------------|-----------|-------------------------------------|
+| col_name         | types     | description                         |
+| TEAM             | character | Team-side label or team identifier. |
+| TEAM_ID          | character | Unique team identifier.             |
+| REMAINING_G      | character |                                     |
+| REMAINING_HOME_G | character |                                     |
+| REMAINING_AWAY_G | character |                                     |
 
 ## Details
 

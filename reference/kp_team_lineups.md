@@ -22,42 +22,42 @@ kp_team_lineups(team, year = 2021)
 
 A data frame with the following columns:
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| year                 | numeric   |
-| team                 | character |
-| min_pct              | numeric   |
-| pg_number            | numeric   |
-| pg_player_first_name | character |
-| pg_player_last_name  | character |
-| pg_hgt               | character |
-| pg_wgt               | numeric   |
-| pg_yr                | character |
-| sg_number            | numeric   |
-| sg_player_first_name | character |
-| sg_player_last_name  | character |
-| sg_hgt               | character |
-| sg_wgt               | numeric   |
-| sg_yr                | character |
-| sf_number            | numeric   |
-| sf_player_first_name | character |
-| sf_player_last_name  | character |
-| sf_hgt               | character |
-| sf_wgt               | numeric   |
-| sf_yr                | character |
-| pf_number            | numeric   |
-| pf_player_first_name | character |
-| pf_player_last_name  | character |
-| pf_hgt               | character |
-| pf_wgt               | numeric   |
-| pf_yr                | character |
-| c_number             | numeric   |
-| c_player_first_name  | character |
-| c_player_last_name   | character |
-| c_hgt                | character |
-| c_wgt                | numeric   |
-| c_yr                 | character |
+|                      |           |                                     |
+|----------------------|-----------|-------------------------------------|
+| col_name             | types     | description                         |
+| year                 | numeric   | 4-digit year.                       |
+| team                 | character | Team-side label or team identifier. |
+| min_pct              | numeric   | Min percentage (0-1 decimal).       |
+| pg_number            | numeric   | Pg number.                          |
+| pg_player_first_name | character | Pg player first name.               |
+| pg_player_last_name  | character | Pg player last name.                |
+| pg_hgt               | character | Pg hgt.                             |
+| pg_wgt               | numeric   | Pg wgt.                             |
+| pg_yr                | character | Pg yr.                              |
+| sg_number            | numeric   | Sg number.                          |
+| sg_player_first_name | character | Sg player first name.               |
+| sg_player_last_name  | character | Sg player last name.                |
+| sg_hgt               | character | Sg hgt.                             |
+| sg_wgt               | numeric   | Sg wgt.                             |
+| sg_yr                | character | Sg yr.                              |
+| sf_number            | numeric   | Sf number.                          |
+| sf_player_first_name | character | Sf player first name.               |
+| sf_player_last_name  | character | Sf player last name.                |
+| sf_hgt               | character | Sf hgt.                             |
+| sf_wgt               | numeric   | Sf wgt.                             |
+| sf_yr                | character | Sf yr.                              |
+| pf_number            | numeric   | Pf number.                          |
+| pf_player_first_name | character | Personal fouls player first name.   |
+| pf_player_last_name  | character | Personal fouls player last name.    |
+| pf_hgt               | character | Pf hgt.                             |
+| pf_wgt               | numeric   | Pf wgt.                             |
+| pf_yr                | character | Pf yr.                              |
+| c_number             | numeric   | C number.                           |
+| c_player_first_name  | character | C player first name.                |
+| c_player_last_name   | character | C player last name.                 |
+| c_hgt                | character | C hgt.                              |
+| c_wgt                | numeric   | C wgt.                              |
+| c_yr                 | character | C yr.                               |
 
 ## See also
 

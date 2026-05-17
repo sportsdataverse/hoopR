@@ -179,23 +179,23 @@ Returns a named list of data frames: LeagueDashPTDefend
 
 **LeagueDashPTDefend**
 
-|                               |           |
-|-------------------------------|-----------|
-| col_name                      | types     |
-| CLOSE_DEF_PERSON_ID           | character |
-| PLAYER_NAME                   | character |
-| PLAYER_LAST_TEAM_ID           | character |
-| PLAYER_LAST_TEAM_ABBREVIATION | character |
-| PLAYER_POSITION               | character |
-| AGE                           | character |
-| GP                            | character |
-| G                             | character |
-| FREQ                          | character |
-| D_FGM                         | character |
-| D_FGA                         | character |
-| D_FG_PCT                      | character |
-| NORMAL_FG_PCT                 | character |
-| PCT_PLUSMINUS                 | character |
+|                               |           |                        |
+|-------------------------------|-----------|------------------------|
+| col_name                      | types     | description            |
+| CLOSE_DEF_PERSON_ID           | character |                        |
+| PLAYER_NAME                   | character | Player name.           |
+| PLAYER_LAST_TEAM_ID           | character |                        |
+| PLAYER_LAST_TEAM_ABBREVIATION | character |                        |
+| PLAYER_POSITION               | character |                        |
+| AGE                           | character | Player age (in years). |
+| GP                            | character | Games played.          |
+| G                             | character | Games played.          |
+| FREQ                          | character |                        |
+| D_FGM                         | character |                        |
+| D_FGA                         | character |                        |
+| D_FG_PCT                      | character |                        |
+| NORMAL_FG_PCT                 | character |                        |
+| PCT_PLUSMINUS                 | character |                        |
 
 ## Details
 

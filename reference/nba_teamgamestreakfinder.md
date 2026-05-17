@@ -968,19 +968,19 @@ TeamGameStreakFinderParametersResults
 
 **TeamGameStreakFinderParametersResults**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| TEAM_NAME    | character |
-| TEAM_ID      | character |
-| GAMESTREAK   | character |
-| STARTDATE    | character |
-| ENDDATE      | character |
-| ACTIVESTREAK | character |
-| NUMSEASONS   | character |
-| LASTSEASON   | character |
-| FIRSTSEASON  | character |
-| ABBREVIATION | character |
+|              |           |                                                 |
+|--------------|-----------|-------------------------------------------------|
+| col_name     | types     | description                                     |
+| TEAM_NAME    | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ID      | character | Unique team identifier.                         |
+| GAMESTREAK   | character |                                                 |
+| STARTDATE    | character |                                                 |
+| ENDDATE      | character |                                                 |
+| ACTIVESTREAK | character |                                                 |
+| NUMSEASONS   | character |                                                 |
+| LASTSEASON   | character |                                                 |
+| FIRSTSEASON  | character |                                                 |
+| ABBREVIATION | character | Short abbreviation.                             |
 
 ## Details
 

@@ -219,29 +219,29 @@ Returns a named list of data frames: LeagueDashPTShots
 
 **LeagueDashPTShots**
 
-|                               |           |
-|-------------------------------|-----------|
-| col_name                      | types     |
-| PLAYER_ID                     | character |
-| PLAYER_NAME                   | character |
-| PLAYER_LAST_TEAM_ID           | character |
-| PLAYER_LAST_TEAM_ABBREVIATION | character |
-| AGE                           | character |
-| GP                            | character |
-| G                             | character |
-| FGA_FREQUENCY                 | character |
-| FGM                           | character |
-| FGA                           | character |
-| FG_PCT                        | character |
-| EFG_PCT                       | character |
-| FG2A_FREQUENCY                | character |
-| FG2M                          | character |
-| FG2A                          | character |
-| FG2_PCT                       | character |
-| FG3A_FREQUENCY                | character |
-| FG3M                          | character |
-| FG3A                          | character |
-| FG3_PCT                       | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| PLAYER_LAST_TEAM_ID | character |  |
+| PLAYER_LAST_TEAM_ABBREVIATION | character |  |
+| AGE | character | Player age (in years). |
+| GP | character | Games played. |
+| G | character | Games played. |
+| FGA_FREQUENCY | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FG2A_FREQUENCY | character |  |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3A_FREQUENCY | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 ## Details
 

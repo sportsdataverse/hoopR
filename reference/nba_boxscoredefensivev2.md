@@ -56,105 +56,105 @@ away_team_totals_defensive
 
 **home_team_player_defensive**
 
-|                                  |           |
-|----------------------------------|-----------|
-| col_name                         | types     |
-| game_id                          | character |
-| away_team_id                     | integer   |
-| home_team_id                     | integer   |
-| team_id                          | integer   |
-| team_name                        | character |
-| team_city                        | character |
-| team_tricode                     | character |
-| team_slug                        | character |
-| person_id                        | integer   |
-| first_name                       | character |
-| family_name                      | character |
-| name_i                           | character |
-| player_slug                      | character |
-| position                         | character |
-| comment                          | character |
-| jersey_num                       | character |
-| matchup_minutes                  | character |
-| partial_possessions              | numeric   |
-| switches_on                      | integer   |
-| player_points                    | integer   |
-| defensive_rebounds               | integer   |
-| matchup_assists                  | integer   |
-| matchup_turnovers                | integer   |
-| steals                           | integer   |
-| blocks                           | integer   |
-| matchup_field_goals_made         | integer   |
-| matchup_field_goals_attempted    | integer   |
-| matchup_field_goal_percentage    | numeric   |
-| matchup_three_pointers_made      | integer   |
-| matchup_three_pointers_attempted | integer   |
-| matchup_three_pointer_percentage | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| matchup_minutes | character | Matchup minutes. |
+| partial_possessions | numeric | Partial possessions. |
+| switches_on | integer | Switches on. |
+| player_points | integer | Player points. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| matchup_assists | integer | Matchup assists. |
+| matchup_turnovers | integer | Matchup turnovers. |
+| steals | integer | Total steals. |
+| blocks | integer | Total blocks. |
+| matchup_field_goals_made | integer | Number of matchup field goals made. |
+| matchup_field_goals_attempted | integer | Number of matchup field goals attempted. |
+| matchup_field_goal_percentage | numeric | Matchup field goal percentage (0-1 decimal). |
+| matchup_three_pointers_made | integer | Number of matchup three pointers made. |
+| matchup_three_pointers_attempted | integer | Number of matchup three pointers attempted. |
+| matchup_three_pointer_percentage | numeric | Matchup three pointer percentage (0-1 decimal). |
 
 **away_team_player_defensive**
 
-|                                  |           |
-|----------------------------------|-----------|
-| col_name                         | types     |
-| game_id                          | character |
-| away_team_id                     | integer   |
-| home_team_id                     | integer   |
-| team_id                          | integer   |
-| team_name                        | character |
-| team_city                        | character |
-| team_tricode                     | character |
-| team_slug                        | character |
-| person_id                        | integer   |
-| first_name                       | character |
-| family_name                      | character |
-| name_i                           | character |
-| player_slug                      | character |
-| position                         | character |
-| comment                          | character |
-| jersey_num                       | character |
-| matchup_minutes                  | character |
-| partial_possessions              | numeric   |
-| switches_on                      | integer   |
-| player_points                    | integer   |
-| defensive_rebounds               | integer   |
-| matchup_assists                  | integer   |
-| matchup_turnovers                | integer   |
-| steals                           | integer   |
-| blocks                           | integer   |
-| matchup_field_goals_made         | integer   |
-| matchup_field_goals_attempted    | integer   |
-| matchup_field_goal_percentage    | numeric   |
-| matchup_three_pointers_made      | integer   |
-| matchup_three_pointers_attempted | integer   |
-| matchup_three_pointer_percentage | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| matchup_minutes | character | Matchup minutes. |
+| partial_possessions | numeric | Partial possessions. |
+| switches_on | integer | Switches on. |
+| player_points | integer | Player points. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| matchup_assists | integer | Matchup assists. |
+| matchup_turnovers | integer | Matchup turnovers. |
+| steals | integer | Total steals. |
+| blocks | integer | Total blocks. |
+| matchup_field_goals_made | integer | Number of matchup field goals made. |
+| matchup_field_goals_attempted | integer | Number of matchup field goals attempted. |
+| matchup_field_goal_percentage | numeric | Matchup field goal percentage (0-1 decimal). |
+| matchup_three_pointers_made | integer | Number of matchup three pointers made. |
+| matchup_three_pointers_attempted | integer | Number of matchup three pointers attempted. |
+| matchup_three_pointer_percentage | numeric | Matchup three pointer percentage (0-1 decimal). |
 
 **home_team_totals_defensive**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| game_id      | character |
-| away_team_id | integer   |
-| home_team_id | integer   |
-| team_id      | integer   |
-| team_name    | character |
-| team_city    | character |
-| team_tricode | character |
-| team_slug    | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
 
 **away_team_totals_defensive**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| game_id      | character |
-| away_team_id | integer   |
-| home_team_id | integer   |
-| team_id      | integer   |
-| team_name    | character |
-| team_city    | character |
-| team_tricode | character |
-| team_slug    | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
 
 ## Details
 

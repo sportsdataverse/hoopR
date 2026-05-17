@@ -111,117 +111,117 @@ ShotTypeRebounding
 
 **OverallRebounding**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| TEAM_ID       | character |
-| TEAM_NAME     | character |
-| G             | character |
-| OVERALL       | character |
-| REB_FREQUENCY | character |
-| OREB          | character |
-| DREB          | character |
-| REB           | character |
-| C_OREB        | character |
-| C_DREB        | character |
-| C_REB         | character |
-| C_REB_PCT     | character |
-| UC_OREB       | character |
-| UC_DREB       | character |
-| UC_REB        | character |
-| UC_REB_PCT    | character |
+|               |           |                                                 |
+|---------------|-----------|-------------------------------------------------|
+| col_name      | types     | description                                     |
+| TEAM_ID       | character | Unique team identifier.                         |
+| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| G             | character | Games played.                                   |
+| OVERALL       | character | Overall.                                        |
+| REB_FREQUENCY | character |                                                 |
+| OREB          | character | Offensive rebounds.                             |
+| DREB          | character | Defensive rebounds.                             |
+| REB           | character | Total rebounds.                                 |
+| C_OREB        | character |                                                 |
+| C_DREB        | character |                                                 |
+| C_REB         | character |                                                 |
+| C_REB_PCT     | character |                                                 |
+| UC_OREB       | character |                                                 |
+| UC_DREB       | character |                                                 |
+| UC_REB        | character |                                                 |
+| UC_REB_PCT    | character |                                                 |
 
 **ShotTypeRebounding**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| TEAM_ID         | character |
-| TEAM_NAME       | character |
-| SORT_ORDER      | character |
-| G               | character |
-| SHOT_TYPE_RANGE | character |
-| REB_FREQUENCY   | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| C_OREB          | character |
-| C_DREB          | character |
-| C_REB           | character |
-| C_REB_PCT       | character |
-| UC_OREB         | character |
-| UC_DREB         | character |
-| UC_REB          | character |
-| UC_REB_PCT      | character |
+|                 |           |                                                 |
+|-----------------|-----------|-------------------------------------------------|
+| col_name        | types     | description                                     |
+| TEAM_ID         | character | Unique team identifier.                         |
+| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER      | character |                                                 |
+| G               | character | Games played.                                   |
+| SHOT_TYPE_RANGE | character |                                                 |
+| REB_FREQUENCY   | character |                                                 |
+| OREB            | character | Offensive rebounds.                             |
+| DREB            | character | Defensive rebounds.                             |
+| REB             | character | Total rebounds.                                 |
+| C_OREB          | character |                                                 |
+| C_DREB          | character |                                                 |
+| C_REB           | character |                                                 |
+| C_REB_PCT       | character |                                                 |
+| UC_OREB         | character |                                                 |
+| UC_DREB         | character |                                                 |
+| UC_REB          | character |                                                 |
+| UC_REB_PCT      | character |                                                 |
 
 **NumContestedRebounding**
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| TEAM_ID                  | character |
-| TEAM_NAME                | character |
-| SORT_ORDER               | character |
-| G                        | character |
-| REB_NUM_CONTESTING_RANGE | character |
-| REB_FREQUENCY            | character |
-| OREB                     | character |
-| DREB                     | character |
-| REB                      | character |
-| C_OREB                   | character |
-| C_DREB                   | character |
-| C_REB                    | character |
-| C_REB_PCT                | character |
-| UC_OREB                  | character |
-| UC_DREB                  | character |
-| UC_REB                   | character |
-| UC_REB_PCT               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER | character |  |
+| G | character | Games played. |
+| REB_NUM_CONTESTING_RANGE | character |  |
+| REB_FREQUENCY | character |  |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| C_OREB | character |  |
+| C_DREB | character |  |
+| C_REB | character |  |
+| C_REB_PCT | character |  |
+| UC_OREB | character |  |
+| UC_DREB | character |  |
+| UC_REB | character |  |
+| UC_REB_PCT | character |  |
 
 **ShotDistanceRebounding**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| TEAM_ID         | character |
-| TEAM_NAME       | character |
-| SORT_ORDER      | character |
-| G               | character |
-| SHOT_DIST_RANGE | character |
-| REB_FREQUENCY   | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| C_OREB          | character |
-| C_DREB          | character |
-| C_REB           | character |
-| C_REB_PCT       | character |
-| UC_OREB         | character |
-| UC_DREB         | character |
-| UC_REB          | character |
-| UC_REB_PCT      | character |
+|                 |           |                                                 |
+|-----------------|-----------|-------------------------------------------------|
+| col_name        | types     | description                                     |
+| TEAM_ID         | character | Unique team identifier.                         |
+| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER      | character |                                                 |
+| G               | character | Games played.                                   |
+| SHOT_DIST_RANGE | character |                                                 |
+| REB_FREQUENCY   | character |                                                 |
+| OREB            | character | Offensive rebounds.                             |
+| DREB            | character | Defensive rebounds.                             |
+| REB             | character | Total rebounds.                                 |
+| C_OREB          | character |                                                 |
+| C_DREB          | character |                                                 |
+| C_REB           | character |                                                 |
+| C_REB_PCT       | character |                                                 |
+| UC_OREB         | character |                                                 |
+| UC_DREB         | character |                                                 |
+| UC_REB          | character |                                                 |
+| UC_REB_PCT      | character |                                                 |
 
 **RebDistanceRebounding**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| TEAM_ID        | character |
-| TEAM_NAME      | character |
-| SORT_ORDER     | character |
-| G              | character |
-| REB_DIST_RANGE | character |
-| REB_FREQUENCY  | character |
-| OREB           | character |
-| DREB           | character |
-| REB            | character |
-| C_OREB         | character |
-| C_DREB         | character |
-| C_REB          | character |
-| C_REB_PCT      | character |
-| UC_OREB        | character |
-| UC_DREB        | character |
-| UC_REB         | character |
-| UC_REB_PCT     | character |
+|                |           |                                                 |
+|----------------|-----------|-------------------------------------------------|
+| col_name       | types     | description                                     |
+| TEAM_ID        | character | Unique team identifier.                         |
+| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SORT_ORDER     | character |                                                 |
+| G              | character | Games played.                                   |
+| REB_DIST_RANGE | character |                                                 |
+| REB_FREQUENCY  | character |                                                 |
+| OREB           | character | Offensive rebounds.                             |
+| DREB           | character | Defensive rebounds.                             |
+| REB            | character | Total rebounds.                                 |
+| C_OREB         | character |                                                 |
+| C_DREB         | character |                                                 |
+| C_REB          | character |                                                 |
+| C_REB_PCT      | character |                                                 |
+| UC_OREB        | character |                                                 |
+| UC_DREB        | character |                                                 |
+| UC_REB         | character |                                                 |
+| UC_REB_PCT     | character |                                                 |
 
 ## Details
 

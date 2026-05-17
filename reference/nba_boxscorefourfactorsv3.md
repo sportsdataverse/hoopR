@@ -56,111 +56,111 @@ away_team_totals_four_factors
 
 **home_team_player_four_factors**
 
-|                                     |           |
-|-------------------------------------|-----------|
-| col_name                            | types     |
-| game_id                             | character |
-| away_team_id                        | integer   |
-| home_team_id                        | integer   |
-| team_id                             | integer   |
-| team_name                           | character |
-| team_city                           | character |
-| team_tricode                        | character |
-| team_slug                           | character |
-| person_id                           | integer   |
-| first_name                          | character |
-| family_name                         | character |
-| name_i                              | character |
-| player_slug                         | character |
-| position                            | character |
-| comment                             | character |
-| jersey_num                          | character |
-| minutes                             | character |
-| effective_field_goal_percentage     | numeric   |
-| free_throw_attempt_rate             | numeric   |
-| team_turnover_percentage            | numeric   |
-| offensive_rebound_percentage        | numeric   |
-| opp_effective_field_goal_percentage | numeric   |
-| opp_free_throw_attempt_rate         | numeric   |
-| opp_team_turnover_percentage        | numeric   |
-| opp_offensive_rebound_percentage    | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| free_throw_attempt_rate | numeric | Free throw attempt rate (FTA / FGA). |
+| team_turnover_percentage | numeric | Team turnover percentage (0-1). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| opp_effective_field_goal_percentage | numeric | Opponent effective field goal percentage (0-1 decimal). |
+| opp_free_throw_attempt_rate | numeric | Opponent free throw attempt rate. |
+| opp_team_turnover_percentage | numeric | Opponent team turnover percentage (0-1 decimal). |
+| opp_offensive_rebound_percentage | numeric | Opponent offensive rebound percentage (0-1 decimal). |
 
 **away_team_player_four_factors**
 
-|                                     |           |
-|-------------------------------------|-----------|
-| col_name                            | types     |
-| game_id                             | character |
-| away_team_id                        | integer   |
-| home_team_id                        | integer   |
-| team_id                             | integer   |
-| team_name                           | character |
-| team_city                           | character |
-| team_tricode                        | character |
-| team_slug                           | character |
-| person_id                           | integer   |
-| first_name                          | character |
-| family_name                         | character |
-| name_i                              | character |
-| player_slug                         | character |
-| position                            | character |
-| comment                             | character |
-| jersey_num                          | character |
-| minutes                             | character |
-| effective_field_goal_percentage     | numeric   |
-| free_throw_attempt_rate             | numeric   |
-| team_turnover_percentage            | numeric   |
-| offensive_rebound_percentage        | numeric   |
-| opp_effective_field_goal_percentage | numeric   |
-| opp_free_throw_attempt_rate         | numeric   |
-| opp_team_turnover_percentage        | numeric   |
-| opp_offensive_rebound_percentage    | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| free_throw_attempt_rate | numeric | Free throw attempt rate (FTA / FGA). |
+| team_turnover_percentage | numeric | Team turnover percentage (0-1). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| opp_effective_field_goal_percentage | numeric | Opponent effective field goal percentage (0-1 decimal). |
+| opp_free_throw_attempt_rate | numeric | Opponent free throw attempt rate. |
+| opp_team_turnover_percentage | numeric | Opponent team turnover percentage (0-1 decimal). |
+| opp_offensive_rebound_percentage | numeric | Opponent offensive rebound percentage (0-1 decimal). |
 
 **home_team_totals_four_factors**
 
-|                                     |           |
-|-------------------------------------|-----------|
-| col_name                            | types     |
-| game_id                             | character |
-| away_team_id                        | integer   |
-| home_team_id                        | integer   |
-| team_id                             | integer   |
-| team_name                           | character |
-| team_city                           | character |
-| team_tricode                        | character |
-| team_slug                           | character |
-| minutes                             | character |
-| effective_field_goal_percentage     | numeric   |
-| free_throw_attempt_rate             | numeric   |
-| team_turnover_percentage            | numeric   |
-| offensive_rebound_percentage        | numeric   |
-| opp_effective_field_goal_percentage | numeric   |
-| opp_free_throw_attempt_rate         | numeric   |
-| opp_team_turnover_percentage        | numeric   |
-| opp_offensive_rebound_percentage    | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| free_throw_attempt_rate | numeric | Free throw attempt rate (FTA / FGA). |
+| team_turnover_percentage | numeric | Team turnover percentage (0-1). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| opp_effective_field_goal_percentage | numeric | Opponent effective field goal percentage (0-1 decimal). |
+| opp_free_throw_attempt_rate | numeric | Opponent free throw attempt rate. |
+| opp_team_turnover_percentage | numeric | Opponent team turnover percentage (0-1 decimal). |
+| opp_offensive_rebound_percentage | numeric | Opponent offensive rebound percentage (0-1 decimal). |
 
 **away_team_totals_four_factors**
 
-|                                     |           |
-|-------------------------------------|-----------|
-| col_name                            | types     |
-| game_id                             | character |
-| away_team_id                        | integer   |
-| home_team_id                        | integer   |
-| team_id                             | integer   |
-| team_name                           | character |
-| team_city                           | character |
-| team_tricode                        | character |
-| team_slug                           | character |
-| minutes                             | character |
-| effective_field_goal_percentage     | numeric   |
-| free_throw_attempt_rate             | numeric   |
-| team_turnover_percentage            | numeric   |
-| offensive_rebound_percentage        | numeric   |
-| opp_effective_field_goal_percentage | numeric   |
-| opp_free_throw_attempt_rate         | numeric   |
-| opp_team_turnover_percentage        | numeric   |
-| opp_offensive_rebound_percentage    | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| free_throw_attempt_rate | numeric | Free throw attempt rate (FTA / FGA). |
+| team_turnover_percentage | numeric | Team turnover percentage (0-1). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| opp_effective_field_goal_percentage | numeric | Opponent effective field goal percentage (0-1 decimal). |
+| opp_free_throw_attempt_rate | numeric | Opponent free throw attempt rate. |
+| opp_team_turnover_percentage | numeric | Opponent team turnover percentage (0-1 decimal). |
+| opp_offensive_rebound_percentage | numeric | Opponent offensive rebound percentage (0-1 decimal). |
 
 ## Details
 

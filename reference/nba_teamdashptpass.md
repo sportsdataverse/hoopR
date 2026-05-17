@@ -99,51 +99,51 @@ Return a named list of data frames: PassesMade, PassesReceived
 
 **PassesMade**
 
-|                         |           |
-|-------------------------|-----------|
-| col_name                | types     |
-| TEAM_ID                 | character |
-| TEAM_NAME               | character |
-| PASS_TYPE               | character |
-| G                       | character |
-| PASS_FROM               | character |
-| PASS_TEAMMATE_PLAYER_ID | character |
-| FREQUENCY               | character |
-| PASS                    | character |
-| AST                     | character |
-| FGM                     | character |
-| FGA                     | character |
-| FG_PCT                  | character |
-| FG2M                    | character |
-| FG2A                    | character |
-| FG2_PCT                 | character |
-| FG3M                    | character |
-| FG3A                    | character |
-| FG3_PCT                 | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PASS_TYPE | character |  |
+| G | character | Games played. |
+| PASS_FROM | character |  |
+| PASS_TEAMMATE_PLAYER_ID | character |  |
+| FREQUENCY | character |  |
+| PASS | character |  |
+| AST | character | Assists. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 **PassesReceived**
 
-|                         |           |
-|-------------------------|-----------|
-| col_name                | types     |
-| TEAM_ID                 | character |
-| TEAM_NAME               | character |
-| PASS_TYPE               | character |
-| G                       | character |
-| PASS_TO                 | character |
-| PASS_TEAMMATE_PLAYER_ID | character |
-| FREQUENCY               | character |
-| PASS                    | character |
-| AST                     | character |
-| FGM                     | character |
-| FGA                     | character |
-| FG_PCT                  | character |
-| FG2M                    | character |
-| FG2A                    | character |
-| FG2_PCT                 | character |
-| FG3M                    | character |
-| FG3A                    | character |
-| FG3_PCT                 | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PASS_TYPE | character |  |
+| G | character | Games played. |
+| PASS_TO | character |  |
+| PASS_TEAMMATE_PLAYER_ID | character |  |
+| FREQUENCY | character |  |
+| PASS | character |  |
+| AST | character | Assists. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
 ## Details
 

@@ -20,35 +20,35 @@ Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 
 **KPoYRatings**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| rk          | integer   |
-| player      | character |
-| kpoy_rating | numeric   |
-| team        | character |
-| hgt         | character |
-| wgt         | numeric   |
-| exp         | character |
-| home_town   | character |
-| year        | numeric   |
-| group       | character |
+|             |           |                                                |
+|-------------|-----------|------------------------------------------------|
+| col_name    | types     | description                                    |
+| rk          | integer   | Rk.                                            |
+| player      | character | Player.                                        |
+| kpoy_rating | numeric   | Kpoy rating.                                   |
+| team        | character | Team-side label or team identifier.            |
+| hgt         | character | Hgt.                                           |
+| wgt         | numeric   | Wgt.                                           |
+| exp         | character | Exp.                                           |
+| home_town   | character | Home team's town.                              |
+| year        | numeric   | 4-digit year.                                  |
+| group       | character | Group identifier (e.g. conference 'group_id'). |
 
 **GameMVPs**
 
-|            |           |
-|------------|-----------|
-| col_name   | types     |
-| rk         | numeric   |
-| player     | character |
-| game_mv_ps | numeric   |
-| team       | character |
-| hgt        | character |
-| wgt        | numeric   |
-| exp        | character |
-| home_town  | character |
-| year       | numeric   |
-| group      | character |
+|            |           |                                                |
+|------------|-----------|------------------------------------------------|
+| col_name   | types     | description                                    |
+| rk         | numeric   | Rk.                                            |
+| player     | character | Player.                                        |
+| game_mv_ps | numeric   | Game mv ps.                                    |
+| team       | character | Team-side label or team identifier.            |
+| hgt        | character | Hgt.                                           |
+| wgt        | numeric   | Wgt.                                           |
+| exp        | character | Exp.                                           |
+| home_town  | character | Home team's town.                              |
+| year       | numeric   | 4-digit year.                                  |
+| group      | character | Group identifier (e.g. conference 'group_id'). |
 
 ## See also
 

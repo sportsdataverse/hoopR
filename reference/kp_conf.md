@@ -35,116 +35,116 @@ A list of named data frames:
 
 **Standings**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| team        | character |
-| overall     | character |
-| conf        | character |
-| adj_em      | numeric   |
-| adj_em_rk   | numeric   |
-| adj_o       | numeric   |
-| adj_o_rk    | numeric   |
-| adj_d       | numeric   |
-| adj_d_rk    | numeric   |
-| adj_t       | numeric   |
-| adj_t_rk    | numeric   |
-| conf_sos    | numeric   |
-| conf_sos_rk | numeric   |
-| next_game   | character |
-| year        | numeric   |
+|             |           |                                     |
+|-------------|-----------|-------------------------------------|
+| col_name    | types     | description                         |
+| team        | character | Team-side label or team identifier. |
+| overall     | character | Overall.                            |
+| conf        | character | character.                          |
+| adj_em      | numeric   | Adj em.                             |
+| adj_em_rk   | numeric   | Adj em rk.                          |
+| adj_o       | numeric   | Adj o.                              |
+| adj_o_rk    | numeric   | Adj o rk.                           |
+| adj_d       | numeric   | Adj d.                              |
+| adj_d_rk    | numeric   | Adj d rk.                           |
+| adj_t       | numeric   | Adj t.                              |
+| adj_t_rk    | numeric   | Adj t rk.                           |
+| conf_sos    | numeric   | Conf sos.                           |
+| conf_sos_rk | numeric   | Conf sos rk.                        |
+| next_game   | character | Next game date or opponent.         |
+| year        | numeric   | 4-digit year.                       |
 
 **ConferencePlayOffense**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| team        | character |
-| oe          | numeric   |
-| oe_rk       | numeric   |
-| e_fg_pct    | numeric   |
-| e_fg_pct_rk | numeric   |
-| to_pct      | numeric   |
-| to_pct_rk   | numeric   |
-| or_pct      | numeric   |
-| or_pct_rk   | numeric   |
-| ft_rate     | numeric   |
-| ft_rate_rk  | numeric   |
-| fg_2_pct    | numeric   |
-| fg_2_pct_rk | numeric   |
-| fg_3_pct    | numeric   |
-| fg_3_pct_rk | numeric   |
-| ft_pct      | numeric   |
-| ft_pct_rk   | numeric   |
-| tempo       | numeric   |
-| tempo_rk    | numeric   |
-| year        | numeric   |
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| team        | character | Team-side label or team identifier.     |
+| oe          | numeric   | Oe.                                     |
+| oe_rk       | numeric   | Oe rk.                                  |
+| e_fg_pct    | numeric   | E field goals percentage (0-1 decimal). |
+| e_fg_pct_rk | numeric   | E fg pct rk.                            |
+| to_pct      | numeric   | To percentage (0-1 decimal).            |
+| to_pct_rk   | numeric   | To pct rk.                              |
+| or_pct      | numeric   | Or percentage (0-1 decimal).            |
+| or_pct_rk   | numeric   | Or pct rk.                              |
+| ft_rate     | numeric   | Ft rate.                                |
+| ft_rate_rk  | numeric   | Ft rate rk.                             |
+| fg_2_pct    | numeric   | Field goals 2 percentage (0-1 decimal). |
+| fg_2_pct_rk | numeric   | Fg 2 pct rk.                            |
+| fg_3_pct    | numeric   | Field goals 3 percentage (0-1 decimal). |
+| fg_3_pct_rk | numeric   | Fg 3 pct rk.                            |
+| ft_pct      | numeric   | Free throw percentage (0-1).            |
+| ft_pct_rk   | numeric   | Ft pct rk.                              |
+| tempo       | numeric   | Tempo.                                  |
+| tempo_rk    | numeric   | Tempo rk.                               |
+| year        | numeric   | 4-digit year.                           |
 
 **ConferencePlayDefense**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| team        | character |
-| de          | numeric   |
-| de_rk       | numeric   |
-| e_fg_pct    | numeric   |
-| e_fg_pct_rk | numeric   |
-| to_pct      | numeric   |
-| to_pct_rk   | numeric   |
-| or_pct      | numeric   |
-| or_pct_rk   | numeric   |
-| ft_rate     | numeric   |
-| ft_rate_rk  | numeric   |
-| fg_2_pct    | numeric   |
-| fg_2_pct_rk | numeric   |
-| fg_3_pct    | numeric   |
-| fg_3_pct_rk | numeric   |
-| blk_pct     | numeric   |
-| blk_pct_rk  | numeric   |
-| stl_pct     | numeric   |
-| stl_pct_rk  | numeric   |
-| year        | numeric   |
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| team        | character | Team-side label or team identifier.     |
+| de          | numeric   | De.                                     |
+| de_rk       | numeric   | De rk.                                  |
+| e_fg_pct    | numeric   | E field goals percentage (0-1 decimal). |
+| e_fg_pct_rk | numeric   | E fg pct rk.                            |
+| to_pct      | numeric   | To percentage (0-1 decimal).            |
+| to_pct_rk   | numeric   | To pct rk.                              |
+| or_pct      | numeric   | Or percentage (0-1 decimal).            |
+| or_pct_rk   | numeric   | Or pct rk.                              |
+| ft_rate     | numeric   | Ft rate.                                |
+| ft_rate_rk  | numeric   | Ft rate rk.                             |
+| fg_2_pct    | numeric   | Field goals 2 percentage (0-1 decimal). |
+| fg_2_pct_rk | numeric   | Fg 2 pct rk.                            |
+| fg_3_pct    | numeric   | Field goals 3 percentage (0-1 decimal). |
+| fg_3_pct_rk | numeric   | Fg 3 pct rk.                            |
+| blk_pct     | numeric   | Blocks percentage (0-1 decimal).        |
+| blk_pct_rk  | numeric   | Blk pct rk.                             |
+| stl_pct     | numeric   | Steals percentage (0-1 decimal).        |
+| stl_pct_rk  | numeric   | Stl pct rk.                             |
+| year        | numeric   | 4-digit year.                           |
 
 **AllKenPom**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| rk       | integer   |
-| player   | character |
-| year     | numeric   |
+|          |           |               |
+|----------|-----------|---------------|
+| col_name | types     | description   |
+| rk       | integer   | Rk.           |
+| player   | character | Player.       |
+| year     | numeric   | 4-digit year. |
 
 **ConferenceAggregateStats**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| stat     | character |
-| value    | numeric   |
-| rk       | numeric   |
-| year     | numeric   |
+|          |           |                                |
+|----------|-----------|--------------------------------|
+| col_name | types     | description                    |
+| stat     | character | Stat.                          |
+| value    | numeric   | Numeric or string value field. |
+| rk       | numeric   | Rk.                            |
+| year     | numeric   | 4-digit year.                  |
 
 **WinningTrends**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| stat     | character |
-| count    | character |
-| value    | numeric   |
-| rk       | numeric   |
-| year     | numeric   |
+|          |           |                                |
+|----------|-----------|--------------------------------|
+| col_name | types     | description                    |
+| stat     | character | Stat.                          |
+| count    | character | Count of count.                |
+| value    | numeric   | Numeric or string value field. |
+| rk       | numeric   | Rk.                            |
+| year     | numeric   | 4-digit year.                  |
 
 **ConferenceComparison**
 
-|            |           |
-|------------|-----------|
-| col_name   | types     |
-| rk         | numeric   |
-| conference | character |
-| rating     | numeric   |
-| year       | numeric   |
+|            |           |               |
+|------------|-----------|---------------|
+| col_name   | types     | description   |
+| rk         | numeric   | Rk.           |
+| conference | character | Conference.   |
+| rating     | numeric   | Rating.       |
+| year       | numeric   | 4-digit year. |
 
 ## See also
 

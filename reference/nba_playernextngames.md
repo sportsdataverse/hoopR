@@ -50,22 +50,22 @@ Return a named list of data frames: NextNGames
 
 **NextNGames**
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| GAME_ID                   | character |
-| GAME_DATE                 | character |
-| HOME_TEAM_ID              | character |
-| VISITOR_TEAM_ID           | character |
-| HOME_TEAM_NAME            | character |
-| VISITOR_TEAM_NAME         | character |
-| HOME_TEAM_ABBREVIATION    | character |
-| VISITOR_TEAM_ABBREVIATION | character |
-| HOME_TEAM_NICKNAME        | character |
-| VISITOR_TEAM_NICKNAME     | character |
-| GAME_TIME                 | character |
-| HOME_WL                   | character |
-| VISITOR_WL                | character |
+|                           |           |                                      |
+|---------------------------|-----------|--------------------------------------|
+| col_name                  | types     | description                          |
+| GAME_ID                   | character | Unique game identifier.              |
+| GAME_DATE                 | character | Game date (YYYY-MM-DD).              |
+| HOME_TEAM_ID              | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID           | character |                                      |
+| HOME_TEAM_NAME            | character | Home team name.                      |
+| VISITOR_TEAM_NAME         | character |                                      |
+| HOME_TEAM_ABBREVIATION    | character |                                      |
+| VISITOR_TEAM_ABBREVIATION | character |                                      |
+| HOME_TEAM_NICKNAME        | character |                                      |
+| VISITOR_TEAM_NICKNAME     | character |                                      |
+| GAME_TIME                 | character | Game start time.                     |
+| HOME_WL                   | character |                                      |
+| VISITOR_WL                | character |                                      |
 
 ## Details
 

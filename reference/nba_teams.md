@@ -20,33 +20,33 @@ nba_teams(...)
 
 Return a data frame with the following columns:
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| league_id         | character |
-| season_id         | character |
-| team_id           | character |
-| team_city         | character |
-| team_name         | character |
-| team_slug         | character |
-| conference        | character |
-| division          | character |
-| team_abbreviation | character |
-| team_name_full    | character |
-| season            | character |
-| espn_team_id      | integer   |
-| abbreviation      | character |
-| display_name      | character |
-| mascot            | character |
-| nickname          | character |
-| team              | character |
-| color             | character |
-| alternate_color   | character |
-| logo              | character |
-| logo_dark         | character |
-| logos_href_3      | character |
-| logos_href_4      | character |
-| nba_logo_svg      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| league_id | character | League identifier ('10' = WNBA). |
+| season_id | character | Unique season identifier. |
+| team_id | character | Unique team identifier. |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| conference | character | Conference. |
+| division | character | Team division. |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_name_full | character | Team name full. |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| espn_team_id | integer | Unique identifier for espn team. |
+| abbreviation | character | Short abbreviation. |
+| display_name | character | Display name. |
+| mascot | character | Team mascot. |
+| nickname | character | Team or athlete nickname. |
+| team | character | Team-side label or team identifier. |
+| color | character | Primary color (hex without leading '#'). |
+| alternate_color | character | Alternate color (hex without leading '#'). |
+| logo | character | Team or league logo URL. |
+| logo_dark | character | Logo dark. |
+| logos_href_3 | character | Logos href 3. |
+| logos_href_4 | character | Logos href 4. |
+| nba_logo_svg | character | Nba logo svg. |
 
 ## Details
 

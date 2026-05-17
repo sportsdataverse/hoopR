@@ -156,81 +156,81 @@ PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
 
 **PlayerContestedShotsLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| AGE               | character |
-| RANK              | character |
-| CONTESTED_SHOTS   | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE               | character | Player age (in years).                |
+| RANK              | character | Rank.                                 |
+| CONTESTED_SHOTS   | character | Defensively contested shots.          |
 
 **PlayerChargesDrawnLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| AGE               | character |
-| RANK              | character |
-| CHARGES_DRAWN     | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE               | character | Player age (in years).                |
+| RANK              | character | Rank.                                 |
+| CHARGES_DRAWN     | character | Charges drawn.                        |
 
 **PlayerDeflectionsLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| AGE               | character |
-| RANK              | character |
-| DEFLECTIONS       | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE               | character | Player age (in years).                |
+| RANK              | character | Rank.                                 |
+| DEFLECTIONS       | character | Defensive deflections.                |
 
 **PlayerLooseBallLeaders**
 
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| PLAYER_ID             | character |
-| PLAYER_NAME           | character |
-| TEAM_ID               | character |
-| TEAM_ABBREVIATION     | character |
-| AGE                   | character |
-| RANK                  | character |
-| LOOSE_BALLS_RECOVERED | character |
+|                       |           |                                       |
+|-----------------------|-----------|---------------------------------------|
+| col_name              | types     | description                           |
+| PLAYER_ID             | character | Unique player identifier.             |
+| PLAYER_NAME           | character | Player name.                          |
+| TEAM_ID               | character | Unique team identifier.               |
+| TEAM_ABBREVIATION     | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE                   | character | Player age (in years).                |
+| RANK                  | character | Rank.                                 |
+| LOOSE_BALLS_RECOVERED | character | Loose balls recovered.                |
 
 **PlayerScreenAssistLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| AGE               | character |
-| RANK              | character |
-| SCREEN_ASSISTS    | character |
+|                   |           |                                         |
+|-------------------|-----------|-----------------------------------------|
+| col_name          | types     | description                             |
+| PLAYER_ID         | character | Unique player identifier.               |
+| PLAYER_NAME       | character | Player name.                            |
+| TEAM_ID           | character | Unique team identifier.                 |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').   |
+| AGE               | character | Player age (in years).                  |
+| RANK              | character | Rank.                                   |
+| SCREEN_ASSISTS    | character | Screen assists (resulting in a basket). |
 
 **Table5**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| AGE               | character |
-| RANK              | character |
-| BOX_OUTS          | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE               | character | Player age (in years).                |
+| RANK              | character | Rank.                                 |
+| BOX_OUTS          | character | Box-outs executed.                    |
 
 ## Details
 

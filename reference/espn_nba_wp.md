@@ -18,30 +18,30 @@ espn_nba_wp(game_id)
 
 `espn_nba_wp()` - A data frame with 21 variables:
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| game_id              | numeric   |
-| play_id              | character |
-| home_win_percentage  | numeric   |
-| away_win_percentage  | numeric   |
-| tie_percentage       | numeric   |
-| sequence_number      | character |
-| text                 | character |
-| away_score           | integer   |
-| home_score           | integer   |
-| scoring_play         | logical   |
-| score_value          | integer   |
-| participants         | list      |
-| shooting_play        | logical   |
-| type_id              | character |
-| type_text            | character |
-| period_number        | integer   |
-| period_display_value | character |
-| clock_display_value  | character |
-| team_id              | character |
-| coordinate_x         | integer   |
-| coordinate_y         | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | numeric | Unique game identifier. |
+| play_id | character | Unique play identifier within a game. |
+| home_win_percentage | numeric | Home win percentage (0-1 decimal). |
+| away_win_percentage | numeric | Away win percentage (0-1 decimal). |
+| tie_percentage | numeric | Tie percentage (0-1 decimal). |
+| sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
+| text | character | Text description of the play / record. |
+| away_score | integer | Away team score at the time of the play. |
+| home_score | integer | Home team score at the time of the play. |
+| scoring_play | logical | TRUE if the play resulted in points scored. |
+| score_value | integer | Point value of the play (2 / 3 / 1). |
+| participants | list | Participants. |
+| shooting_play | logical | TRUE if the play was a shooting attempt. |
+| type_id | character | Type identifier (numeric). |
+| type_text | character | Display text for the type field. |
+| period_number | integer | Numeric period (1-4 for quarters; 5+ for OT). |
+| period_display_value | character | Period display label (e.g. '1st Quarter', 'OT'). |
+| clock_display_value | character | Game clock display string (e.g. '8:32'). |
+| team_id | character | Unique team identifier. |
+| coordinate_x | integer | X coordinate on the court (half-court layout). |
+| coordinate_y | integer | Y coordinate on the court (half-court layout). |
 
 ## See also
 
@@ -65,7 +65,7 @@ Other ESPN NBA Functions:
 # \donttest{
 espn_nba_wp(game_id = 401283399)
 #> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:51 UTC
+#> ℹ Data updated: 2026-05-17 14:14:10 UTC
 #> # A tibble: 472 × 24
 #>      game_id play_id     home_win_percentage away_win_percentage tie_percentage
 #>        <dbl> <chr>                     <dbl>               <dbl>          <dbl>

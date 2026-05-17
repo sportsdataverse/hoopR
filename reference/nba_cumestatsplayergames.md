@@ -69,11 +69,11 @@ Returns a named list of data frames: CumeStatsPlayerGames
 
 **CumeStatsPlayerGames**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| MATCHUP  | character |
-| GAME_ID  | character |
+|          |           |                         |
+|----------|-----------|-------------------------|
+| col_name | types     | description             |
+| MATCHUP  | character | Matchup.                |
+| GAME_ID  | character | Unique game identifier. |
 
 ## Details
 

@@ -22,33 +22,33 @@ kp_height(min_year, max_year = most_recent_mbb_season())
 
 Returns a tibble of heights
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| team          | character |
-| conf          | character |
-| avg_hgt       | numeric   |
-| avg_hgt_rk    | numeric   |
-| eff_hgt       | numeric   |
-| eff_hgt_rk    | numeric   |
-| c_hgt         | numeric   |
-| c_hgt_rk      | numeric   |
-| pf_hgt        | numeric   |
-| pf_hgt_rk     | numeric   |
-| sf_hgt        | numeric   |
-| sf_hgt_rk     | numeric   |
-| sg_hgt        | numeric   |
-| sg_hgt_rk     | numeric   |
-| pg_hgt        | numeric   |
-| pg_hgt_rk     | numeric   |
-| experience    | numeric   |
-| experience_rk | numeric   |
-| bench         | numeric   |
-| bench_rk      | numeric   |
-| continuity    | numeric   |
-| continuity_rk | numeric   |
-| ncaa_seed     | numeric   |
-| year          | integer   |
+|               |           |                                     |
+|---------------|-----------|-------------------------------------|
+| col_name      | types     | description                         |
+| team          | character | Team-side label or team identifier. |
+| conf          | character | character.                          |
+| avg_hgt       | numeric   | Avg hgt.                            |
+| avg_hgt_rk    | numeric   | Avg hgt rk.                         |
+| eff_hgt       | numeric   | Eff hgt.                            |
+| eff_hgt_rk    | numeric   | Eff hgt rk.                         |
+| c_hgt         | numeric   | C hgt.                              |
+| c_hgt_rk      | numeric   | C hgt rk.                           |
+| pf_hgt        | numeric   | Pf hgt.                             |
+| pf_hgt_rk     | numeric   | Pf hgt rk.                          |
+| sf_hgt        | numeric   | Sf hgt.                             |
+| sf_hgt_rk     | numeric   | Sf hgt rk.                          |
+| sg_hgt        | numeric   | Sg hgt.                             |
+| sg_hgt_rk     | numeric   | Sg hgt rk.                          |
+| pg_hgt        | numeric   | Pg hgt.                             |
+| pg_hgt_rk     | numeric   | Pg hgt rk.                          |
+| experience    | numeric   | Years of professional experience.   |
+| experience_rk | numeric   | Experience rk.                      |
+| bench         | numeric   | Bench.                              |
+| bench_rk      | numeric   | Bench rk.                           |
+| continuity    | numeric   | Continuity.                         |
+| continuity_rk | numeric   | Continuity rk.                      |
+| ncaa_seed     | numeric   | Ncaa seed.                          |
+| year          | integer   | 4-digit year.                       |
 
 ## See also
 
@@ -67,7 +67,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_height(min_year = 2020, max_year = 2021))
-#> ✖ 2026-05-16 20:10:33.728062: Invalid arguments or no height data for 2020 - 2021 available!
+#> ✖ 2026-05-17 14:15:59.27084: Invalid arguments or no height data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf Avg.Hgt Avg.Hgt.Rk Eff.Hgt Eff.Hgt.Rk C.Hgt

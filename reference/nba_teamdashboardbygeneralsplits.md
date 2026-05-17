@@ -141,369 +141,369 @@ PrePostAllStarTeamDashboard, WinsLossesTeamDashboard
 
 **OverallTeamDashboard**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GROUP_SET       | character |
-| GROUP_VALUE     | character |
-| SEASON_YEAR     | character |
-| GP              | character |
-| W               | character |
-| L               | character |
-| W_PCT           | character |
-| MIN             | character |
-| FGM             | character |
-| FGA             | character |
-| FG_PCT          | character |
-| FG3M            | character |
-| FG3A            | character |
-| FG3_PCT         | character |
-| FTM             | character |
-| FTA             | character |
-| FT_PCT          | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| AST             | character |
-| TOV             | character |
-| STL             | character |
-| BLK             | character |
-| BLKA            | character |
-| PF              | character |
-| PFD             | character |
-| PTS             | character |
-| PLUS_MINUS      | character |
-| GP_RANK         | character |
-| W_RANK          | character |
-| L_RANK          | character |
-| W_PCT_RANK      | character |
-| MIN_RANK        | character |
-| FGM_RANK        | character |
-| FGA_RANK        | character |
-| FG_PCT_RANK     | character |
-| FG3M_RANK       | character |
-| FG3A_RANK       | character |
-| FG3_PCT_RANK    | character |
-| FTM_RANK        | character |
-| FTA_RANK        | character |
-| FT_PCT_RANK     | character |
-| OREB_RANK       | character |
-| DREB_RANK       | character |
-| REB_RANK        | character |
-| AST_RANK        | character |
-| TOV_RANK        | character |
-| STL_RANK        | character |
-| BLK_RANK        | character |
-| BLKA_RANK       | character |
-| PF_RANK         | character |
-| PFD_RANK        | character |
-| PTS_RANK        | character |
-| PLUS_MINUS_RANK | character |
+|                 |           |                                               |
+|-----------------|-----------|-----------------------------------------------|
+| col_name        | types     | description                                   |
+| GROUP_SET       | character |                                               |
+| GROUP_VALUE     | character |                                               |
+| SEASON_YEAR     | character | Season year string ('YYYY-YY' format).        |
+| GP              | character | Games played.                                 |
+| W               | character | Wins.                                         |
+| L               | character | Losses.                                       |
+| W_PCT           | character |                                               |
+| MIN             | character | Minutes played.                               |
+| FGM             | character | Field goals made.                             |
+| FGA             | character | Field goal attempts.                          |
+| FG_PCT          | character | Field goal percentage (0-1).                  |
+| FG3M            | character | Three-point field goals made.                 |
+| FG3A            | character | Three-point field goal attempts.              |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).      |
+| FTM             | character | Free throws made.                             |
+| FTA             | character | Free throw attempts.                          |
+| FT_PCT          | character | Free throw percentage (0-1).                  |
+| OREB            | character | Offensive rebounds.                           |
+| DREB            | character | Defensive rebounds.                           |
+| REB             | character | Total rebounds.                               |
+| AST             | character | Assists.                                      |
+| TOV             | character | Turnovers.                                    |
+| STL             | character | Steals.                                       |
+| BLK             | character | Blocks.                                       |
+| BLKA            | character |                                               |
+| PF              | character | Personal fouls.                               |
+| PFD             | character |                                               |
+| PTS             | character | Points scored.                                |
+| PLUS_MINUS      | character | Plus/minus point differential while on court. |
+| GP_RANK         | character |                                               |
+| W_RANK          | character |                                               |
+| L_RANK          | character |                                               |
+| W_PCT_RANK      | character |                                               |
+| MIN_RANK        | character |                                               |
+| FGM_RANK        | character |                                               |
+| FGA_RANK        | character |                                               |
+| FG_PCT_RANK     | character |                                               |
+| FG3M_RANK       | character |                                               |
+| FG3A_RANK       | character |                                               |
+| FG3_PCT_RANK    | character |                                               |
+| FTM_RANK        | character |                                               |
+| FTA_RANK        | character |                                               |
+| FT_PCT_RANK     | character |                                               |
+| OREB_RANK       | character |                                               |
+| DREB_RANK       | character |                                               |
+| REB_RANK        | character |                                               |
+| AST_RANK        | character |                                               |
+| TOV_RANK        | character |                                               |
+| STL_RANK        | character |                                               |
+| BLK_RANK        | character |                                               |
+| BLKA_RANK       | character |                                               |
+| PF_RANK         | character |                                               |
+| PFD_RANK        | character |                                               |
+| PTS_RANK        | character |                                               |
+| PLUS_MINUS_RANK | character |                                               |
 
 **LocationTeamDashboard**
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| GROUP_SET          | character |
-| GROUP_VALUE        | character |
-| TEAM_GAME_LOCATION | character |
-| GP                 | character |
-| W                  | character |
-| L                  | character |
-| W_PCT              | character |
-| MIN                | character |
-| FGM                | character |
-| FGA                | character |
-| FG_PCT             | character |
-| FG3M               | character |
-| FG3A               | character |
-| FG3_PCT            | character |
-| FTM                | character |
-| FTA                | character |
-| FT_PCT             | character |
-| OREB               | character |
-| DREB               | character |
-| REB                | character |
-| AST                | character |
-| TOV                | character |
-| STL                | character |
-| BLK                | character |
-| BLKA               | character |
-| PF                 | character |
-| PFD                | character |
-| PTS                | character |
-| PLUS_MINUS         | character |
-| GP_RANK            | character |
-| W_RANK             | character |
-| L_RANK             | character |
-| W_PCT_RANK         | character |
-| MIN_RANK           | character |
-| FGM_RANK           | character |
-| FGA_RANK           | character |
-| FG_PCT_RANK        | character |
-| FG3M_RANK          | character |
-| FG3A_RANK          | character |
-| FG3_PCT_RANK       | character |
-| FTM_RANK           | character |
-| FTA_RANK           | character |
-| FT_PCT_RANK        | character |
-| OREB_RANK          | character |
-| DREB_RANK          | character |
-| REB_RANK           | character |
-| AST_RANK           | character |
-| TOV_RANK           | character |
-| STL_RANK           | character |
-| BLK_RANK           | character |
-| BLKA_RANK          | character |
-| PF_RANK            | character |
-| PFD_RANK           | character |
-| PTS_RANK           | character |
-| PLUS_MINUS_RANK    | character |
+|                    |           |                                               |
+|--------------------|-----------|-----------------------------------------------|
+| col_name           | types     | description                                   |
+| GROUP_SET          | character |                                               |
+| GROUP_VALUE        | character |                                               |
+| TEAM_GAME_LOCATION | character |                                               |
+| GP                 | character | Games played.                                 |
+| W                  | character | Wins.                                         |
+| L                  | character | Losses.                                       |
+| W_PCT              | character |                                               |
+| MIN                | character | Minutes played.                               |
+| FGM                | character | Field goals made.                             |
+| FGA                | character | Field goal attempts.                          |
+| FG_PCT             | character | Field goal percentage (0-1).                  |
+| FG3M               | character | Three-point field goals made.                 |
+| FG3A               | character | Three-point field goal attempts.              |
+| FG3_PCT            | character | Three-point field goal percentage (0-1).      |
+| FTM                | character | Free throws made.                             |
+| FTA                | character | Free throw attempts.                          |
+| FT_PCT             | character | Free throw percentage (0-1).                  |
+| OREB               | character | Offensive rebounds.                           |
+| DREB               | character | Defensive rebounds.                           |
+| REB                | character | Total rebounds.                               |
+| AST                | character | Assists.                                      |
+| TOV                | character | Turnovers.                                    |
+| STL                | character | Steals.                                       |
+| BLK                | character | Blocks.                                       |
+| BLKA               | character |                                               |
+| PF                 | character | Personal fouls.                               |
+| PFD                | character |                                               |
+| PTS                | character | Points scored.                                |
+| PLUS_MINUS         | character | Plus/minus point differential while on court. |
+| GP_RANK            | character |                                               |
+| W_RANK             | character |                                               |
+| L_RANK             | character |                                               |
+| W_PCT_RANK         | character |                                               |
+| MIN_RANK           | character |                                               |
+| FGM_RANK           | character |                                               |
+| FGA_RANK           | character |                                               |
+| FG_PCT_RANK        | character |                                               |
+| FG3M_RANK          | character |                                               |
+| FG3A_RANK          | character |                                               |
+| FG3_PCT_RANK       | character |                                               |
+| FTM_RANK           | character |                                               |
+| FTA_RANK           | character |                                               |
+| FT_PCT_RANK        | character |                                               |
+| OREB_RANK          | character |                                               |
+| DREB_RANK          | character |                                               |
+| REB_RANK           | character |                                               |
+| AST_RANK           | character |                                               |
+| TOV_RANK           | character |                                               |
+| STL_RANK           | character |                                               |
+| BLK_RANK           | character |                                               |
+| BLKA_RANK          | character |                                               |
+| PF_RANK            | character |                                               |
+| PFD_RANK           | character |                                               |
+| PTS_RANK           | character |                                               |
+| PLUS_MINUS_RANK    | character |                                               |
 
 **WinsLossesTeamDashboard**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GROUP_SET       | character |
-| GROUP_VALUE     | character |
-| GAME_RESULT     | character |
-| GP              | character |
-| W               | character |
-| L               | character |
-| W_PCT           | character |
-| MIN             | character |
-| FGM             | character |
-| FGA             | character |
-| FG_PCT          | character |
-| FG3M            | character |
-| FG3A            | character |
-| FG3_PCT         | character |
-| FTM             | character |
-| FTA             | character |
-| FT_PCT          | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| AST             | character |
-| TOV             | character |
-| STL             | character |
-| BLK             | character |
-| BLKA            | character |
-| PF              | character |
-| PFD             | character |
-| PTS             | character |
-| PLUS_MINUS      | character |
-| GP_RANK         | character |
-| W_RANK          | character |
-| L_RANK          | character |
-| W_PCT_RANK      | character |
-| MIN_RANK        | character |
-| FGM_RANK        | character |
-| FGA_RANK        | character |
-| FG_PCT_RANK     | character |
-| FG3M_RANK       | character |
-| FG3A_RANK       | character |
-| FG3_PCT_RANK    | character |
-| FTM_RANK        | character |
-| FTA_RANK        | character |
-| FT_PCT_RANK     | character |
-| OREB_RANK       | character |
-| DREB_RANK       | character |
-| REB_RANK        | character |
-| AST_RANK        | character |
-| TOV_RANK        | character |
-| STL_RANK        | character |
-| BLK_RANK        | character |
-| BLKA_RANK       | character |
-| PF_RANK         | character |
-| PFD_RANK        | character |
-| PTS_RANK        | character |
-| PLUS_MINUS_RANK | character |
+|                 |           |                                               |
+|-----------------|-----------|-----------------------------------------------|
+| col_name        | types     | description                                   |
+| GROUP_SET       | character |                                               |
+| GROUP_VALUE     | character |                                               |
+| GAME_RESULT     | character |                                               |
+| GP              | character | Games played.                                 |
+| W               | character | Wins.                                         |
+| L               | character | Losses.                                       |
+| W_PCT           | character |                                               |
+| MIN             | character | Minutes played.                               |
+| FGM             | character | Field goals made.                             |
+| FGA             | character | Field goal attempts.                          |
+| FG_PCT          | character | Field goal percentage (0-1).                  |
+| FG3M            | character | Three-point field goals made.                 |
+| FG3A            | character | Three-point field goal attempts.              |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).      |
+| FTM             | character | Free throws made.                             |
+| FTA             | character | Free throw attempts.                          |
+| FT_PCT          | character | Free throw percentage (0-1).                  |
+| OREB            | character | Offensive rebounds.                           |
+| DREB            | character | Defensive rebounds.                           |
+| REB             | character | Total rebounds.                               |
+| AST             | character | Assists.                                      |
+| TOV             | character | Turnovers.                                    |
+| STL             | character | Steals.                                       |
+| BLK             | character | Blocks.                                       |
+| BLKA            | character |                                               |
+| PF              | character | Personal fouls.                               |
+| PFD             | character |                                               |
+| PTS             | character | Points scored.                                |
+| PLUS_MINUS      | character | Plus/minus point differential while on court. |
+| GP_RANK         | character |                                               |
+| W_RANK          | character |                                               |
+| L_RANK          | character |                                               |
+| W_PCT_RANK      | character |                                               |
+| MIN_RANK        | character |                                               |
+| FGM_RANK        | character |                                               |
+| FGA_RANK        | character |                                               |
+| FG_PCT_RANK     | character |                                               |
+| FG3M_RANK       | character |                                               |
+| FG3A_RANK       | character |                                               |
+| FG3_PCT_RANK    | character |                                               |
+| FTM_RANK        | character |                                               |
+| FTA_RANK        | character |                                               |
+| FT_PCT_RANK     | character |                                               |
+| OREB_RANK       | character |                                               |
+| DREB_RANK       | character |                                               |
+| REB_RANK        | character |                                               |
+| AST_RANK        | character |                                               |
+| TOV_RANK        | character |                                               |
+| STL_RANK        | character |                                               |
+| BLK_RANK        | character |                                               |
+| BLKA_RANK       | character |                                               |
+| PF_RANK         | character |                                               |
+| PFD_RANK        | character |                                               |
+| PTS_RANK        | character |                                               |
+| PLUS_MINUS_RANK | character |                                               |
 
 **MonthTeamDashboard**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GROUP_SET         | character |
-| GROUP_VALUE       | character |
-| SEASON_MONTH_NAME | character |
-| GP                | character |
-| W                 | character |
-| L                 | character |
-| W_PCT             | character |
-| MIN               | character |
-| FGM               | character |
-| FGA               | character |
-| FG_PCT            | character |
-| FG3M              | character |
-| FG3A              | character |
-| FG3_PCT           | character |
-| FTM               | character |
-| FTA               | character |
-| FT_PCT            | character |
-| OREB              | character |
-| DREB              | character |
-| REB               | character |
-| AST               | character |
-| TOV               | character |
-| STL               | character |
-| BLK               | character |
-| BLKA              | character |
-| PF                | character |
-| PFD               | character |
-| PTS               | character |
-| PLUS_MINUS        | character |
-| GP_RANK           | character |
-| W_RANK            | character |
-| L_RANK            | character |
-| W_PCT_RANK        | character |
-| MIN_RANK          | character |
-| FGM_RANK          | character |
-| FGA_RANK          | character |
-| FG_PCT_RANK       | character |
-| FG3M_RANK         | character |
-| FG3A_RANK         | character |
-| FG3_PCT_RANK      | character |
-| FTM_RANK          | character |
-| FTA_RANK          | character |
-| FT_PCT_RANK       | character |
-| OREB_RANK         | character |
-| DREB_RANK         | character |
-| REB_RANK          | character |
-| AST_RANK          | character |
-| TOV_RANK          | character |
-| STL_RANK          | character |
-| BLK_RANK          | character |
-| BLKA_RANK         | character |
-| PF_RANK           | character |
-| PFD_RANK          | character |
-| PTS_RANK          | character |
-| PLUS_MINUS_RANK   | character |
+|                   |           |                                               |
+|-------------------|-----------|-----------------------------------------------|
+| col_name          | types     | description                                   |
+| GROUP_SET         | character |                                               |
+| GROUP_VALUE       | character |                                               |
+| SEASON_MONTH_NAME | character |                                               |
+| GP                | character | Games played.                                 |
+| W                 | character | Wins.                                         |
+| L                 | character | Losses.                                       |
+| W_PCT             | character |                                               |
+| MIN               | character | Minutes played.                               |
+| FGM               | character | Field goals made.                             |
+| FGA               | character | Field goal attempts.                          |
+| FG_PCT            | character | Field goal percentage (0-1).                  |
+| FG3M              | character | Three-point field goals made.                 |
+| FG3A              | character | Three-point field goal attempts.              |
+| FG3_PCT           | character | Three-point field goal percentage (0-1).      |
+| FTM               | character | Free throws made.                             |
+| FTA               | character | Free throw attempts.                          |
+| FT_PCT            | character | Free throw percentage (0-1).                  |
+| OREB              | character | Offensive rebounds.                           |
+| DREB              | character | Defensive rebounds.                           |
+| REB               | character | Total rebounds.                               |
+| AST               | character | Assists.                                      |
+| TOV               | character | Turnovers.                                    |
+| STL               | character | Steals.                                       |
+| BLK               | character | Blocks.                                       |
+| BLKA              | character |                                               |
+| PF                | character | Personal fouls.                               |
+| PFD               | character |                                               |
+| PTS               | character | Points scored.                                |
+| PLUS_MINUS        | character | Plus/minus point differential while on court. |
+| GP_RANK           | character |                                               |
+| W_RANK            | character |                                               |
+| L_RANK            | character |                                               |
+| W_PCT_RANK        | character |                                               |
+| MIN_RANK          | character |                                               |
+| FGM_RANK          | character |                                               |
+| FGA_RANK          | character |                                               |
+| FG_PCT_RANK       | character |                                               |
+| FG3M_RANK         | character |                                               |
+| FG3A_RANK         | character |                                               |
+| FG3_PCT_RANK      | character |                                               |
+| FTM_RANK          | character |                                               |
+| FTA_RANK          | character |                                               |
+| FT_PCT_RANK       | character |                                               |
+| OREB_RANK         | character |                                               |
+| DREB_RANK         | character |                                               |
+| REB_RANK          | character |                                               |
+| AST_RANK          | character |                                               |
+| TOV_RANK          | character |                                               |
+| STL_RANK          | character |                                               |
+| BLK_RANK          | character |                                               |
+| BLKA_RANK         | character |                                               |
+| PF_RANK           | character |                                               |
+| PFD_RANK          | character |                                               |
+| PTS_RANK          | character |                                               |
+| PLUS_MINUS_RANK   | character |                                               |
 
 **PrePostAllStarTeamDashboard**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GROUP_SET       | character |
-| GROUP_VALUE     | character |
-| SEASON_SEGMENT  | character |
-| GP              | character |
-| W               | character |
-| L               | character |
-| W_PCT           | character |
-| MIN             | character |
-| FGM             | character |
-| FGA             | character |
-| FG_PCT          | character |
-| FG3M            | character |
-| FG3A            | character |
-| FG3_PCT         | character |
-| FTM             | character |
-| FTA             | character |
-| FT_PCT          | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| AST             | character |
-| TOV             | character |
-| STL             | character |
-| BLK             | character |
-| BLKA            | character |
-| PF              | character |
-| PFD             | character |
-| PTS             | character |
-| PLUS_MINUS      | character |
-| GP_RANK         | character |
-| W_RANK          | character |
-| L_RANK          | character |
-| W_PCT_RANK      | character |
-| MIN_RANK        | character |
-| FGM_RANK        | character |
-| FGA_RANK        | character |
-| FG_PCT_RANK     | character |
-| FG3M_RANK       | character |
-| FG3A_RANK       | character |
-| FG3_PCT_RANK    | character |
-| FTM_RANK        | character |
-| FTA_RANK        | character |
-| FT_PCT_RANK     | character |
-| OREB_RANK       | character |
-| DREB_RANK       | character |
-| REB_RANK        | character |
-| AST_RANK        | character |
-| TOV_RANK        | character |
-| STL_RANK        | character |
-| BLK_RANK        | character |
-| BLKA_RANK       | character |
-| PF_RANK         | character |
-| PFD_RANK        | character |
-| PTS_RANK        | character |
-| PLUS_MINUS_RANK | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| GROUP_VALUE | character |  |
+| SEASON_SEGMENT | character | Season segment filter ('Pre All-Star' / 'Post All-Star'). |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 **DaysRestTeamDashboard**
 
-|                      |           |
-|----------------------|-----------|
-| col_name             | types     |
-| GROUP_SET            | character |
-| GROUP_VALUE          | character |
-| TEAM_DAYS_REST_RANGE | character |
-| GP                   | character |
-| W                    | character |
-| L                    | character |
-| W_PCT                | character |
-| MIN                  | character |
-| FGM                  | character |
-| FGA                  | character |
-| FG_PCT               | character |
-| FG3M                 | character |
-| FG3A                 | character |
-| FG3_PCT              | character |
-| FTM                  | character |
-| FTA                  | character |
-| FT_PCT               | character |
-| OREB                 | character |
-| DREB                 | character |
-| REB                  | character |
-| AST                  | character |
-| TOV                  | character |
-| STL                  | character |
-| BLK                  | character |
-| BLKA                 | character |
-| PF                   | character |
-| PFD                  | character |
-| PTS                  | character |
-| PLUS_MINUS           | character |
-| GP_RANK              | character |
-| W_RANK               | character |
-| L_RANK               | character |
-| W_PCT_RANK           | character |
-| MIN_RANK             | character |
-| FGM_RANK             | character |
-| FGA_RANK             | character |
-| FG_PCT_RANK          | character |
-| FG3M_RANK            | character |
-| FG3A_RANK            | character |
-| FG3_PCT_RANK         | character |
-| FTM_RANK             | character |
-| FTA_RANK             | character |
-| FT_PCT_RANK          | character |
-| OREB_RANK            | character |
-| DREB_RANK            | character |
-| REB_RANK             | character |
-| AST_RANK             | character |
-| TOV_RANK             | character |
-| STL_RANK             | character |
-| BLK_RANK             | character |
-| BLKA_RANK            | character |
-| PF_RANK              | character |
-| PFD_RANK             | character |
-| PTS_RANK             | character |
-| PLUS_MINUS_RANK      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| GROUP_VALUE | character |  |
+| TEAM_DAYS_REST_RANGE | character |  |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 ## Details
 

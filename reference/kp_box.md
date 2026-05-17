@@ -25,89 +25,89 @@ linescore, officials
 
 **away_team**
 
-|            |           |
-|------------|-----------|
-| col_name   | types     |
-| hgt        | character |
-| wgt        | numeric   |
-| yr         | character |
-| number     | numeric   |
-| player     | character |
-| min        | numeric   |
-| o_rtg      | numeric   |
-| percent_ps | numeric   |
-| pts        | numeric   |
-| fgm_2      | numeric   |
-| fga_2      | numeric   |
-| fgm_3      | numeric   |
-| fga_3      | numeric   |
-| ftm        | numeric   |
-| fta        | numeric   |
-| or         | numeric   |
-| dr         | numeric   |
-| a          | numeric   |
-| to         | numeric   |
-| blk        | numeric   |
-| stl        | numeric   |
-| pf         | numeric   |
-| team       | character |
-| wp_note    | character |
-| game_id    | numeric   |
-| year       | numeric   |
+|            |           |                                     |
+|------------|-----------|-------------------------------------|
+| col_name   | types     | description                         |
+| hgt        | character | Hgt.                                |
+| wgt        | numeric   | Wgt.                                |
+| yr         | character | Yr.                                 |
+| number     | numeric   | Number.                             |
+| player     | character | Player.                             |
+| min        | numeric   | Minutes played.                     |
+| o_rtg      | numeric   | O rtg.                              |
+| percent_ps | numeric   | Percent ps.                         |
+| pts        | numeric   | Points scored.                      |
+| fgm_2      | numeric   | Fgm 2.                              |
+| fga_2      | numeric   | Fga 2.                              |
+| fgm_3      | numeric   | Fgm 3.                              |
+| fga_3      | numeric   | Fga 3.                              |
+| ftm        | numeric   | Free throws made.                   |
+| fta        | numeric   | Free throw attempts.                |
+| or         | numeric   | Or.                                 |
+| dr         | numeric   | Dr.                                 |
+| a          | numeric   | A.                                  |
+| to         | numeric   | To.                                 |
+| blk        | numeric   | Blocks.                             |
+| stl        | numeric   | Steals.                             |
+| pf         | numeric   | Personal fouls.                     |
+| team       | character | Team-side label or team identifier. |
+| wp_note    | character | Wp note.                            |
+| game_id    | numeric   | Unique game identifier.             |
+| year       | numeric   | 4-digit year.                       |
 
 **home_team**
 
-|            |           |
-|------------|-----------|
-| col_name   | types     |
-| hgt        | character |
-| wgt        | numeric   |
-| yr         | character |
-| number     | numeric   |
-| player     | character |
-| min        | numeric   |
-| o_rtg      | numeric   |
-| percent_ps | numeric   |
-| pts        | numeric   |
-| fgm_2      | numeric   |
-| fga_2      | numeric   |
-| fgm_3      | numeric   |
-| fga_3      | numeric   |
-| ftm        | numeric   |
-| fta        | numeric   |
-| or         | numeric   |
-| dr         | numeric   |
-| a          | numeric   |
-| to         | numeric   |
-| blk        | numeric   |
-| stl        | numeric   |
-| pf         | numeric   |
-| team       | character |
-| wp_note    | character |
-| game_id    | numeric   |
-| year       | numeric   |
+|            |           |                                     |
+|------------|-----------|-------------------------------------|
+| col_name   | types     | description                         |
+| hgt        | character | Hgt.                                |
+| wgt        | numeric   | Wgt.                                |
+| yr         | character | Yr.                                 |
+| number     | numeric   | Number.                             |
+| player     | character | Player.                             |
+| min        | numeric   | Minutes played.                     |
+| o_rtg      | numeric   | O rtg.                              |
+| percent_ps | numeric   | Percent ps.                         |
+| pts        | numeric   | Points scored.                      |
+| fgm_2      | numeric   | Fgm 2.                              |
+| fga_2      | numeric   | Fga 2.                              |
+| fgm_3      | numeric   | Fgm 3.                              |
+| fga_3      | numeric   | Fga 3.                              |
+| ftm        | numeric   | Free throws made.                   |
+| fta        | numeric   | Free throw attempts.                |
+| or         | numeric   | Or.                                 |
+| dr         | numeric   | Dr.                                 |
+| a          | numeric   | A.                                  |
+| to         | numeric   | To.                                 |
+| blk        | numeric   | Blocks.                             |
+| stl        | numeric   | Steals.                             |
+| pf         | numeric   | Personal fouls.                     |
+| team       | character | Team-side label or team identifier. |
+| wp_note    | character | Wp note.                            |
+| game_id    | numeric   | Unique game identifier.             |
+| year       | numeric   | 4-digit year.                       |
 
 **linescore**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| team     | character |
-| q1       | integer   |
-| q2       | integer   |
-| q3       | integer   |
-| q4       | integer   |
-| t        | integer   |
+|          |           |                                     |
+|----------|-----------|-------------------------------------|
+| col_name | types     | description                         |
+| team     | character | Team-side label or team identifier. |
+| q1       | integer   | Q1.                                 |
+| q2       | integer   | Q2.                                 |
+| q3       | integer   | Q3.                                 |
+| q4       | integer   | Q4.                                 |
+| t        | integer   | T.                                  |
 
 **officials**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| official_id   | character |
-| official_name | character |
-| game_id       | numeric   |
-| year          | numeric   |
+|               |           |                                       |
+|---------------|-----------|---------------------------------------|
+| col_name      | types     | description                           |
+| official_id   | character | Unique official / referee identifier. |
+| official_name | character | Official name.                        |
+| game_id       | numeric   | Unique game identifier.               |
+| year          | numeric   | 4-digit year.                         |
 
 ## See also
 

@@ -18,29 +18,29 @@ espn_nba_standings(year)
 
 A standings data frame
 
-|                    |           |
-|--------------------|-----------|
-| col_name           | types     |
-| team_id            | integer   |
-| team               | character |
-| avgpointsagainst   | numeric   |
-| avgpointsfor       | numeric   |
-| clincher           | numeric   |
-| differential       | numeric   |
-| divisionwinpercent | numeric   |
-| gamesbehind        | numeric   |
-| leaguewinpercent   | numeric   |
-| losses             | numeric   |
-| playoffseed        | numeric   |
-| streak             | numeric   |
-| winpercent         | numeric   |
-| wins               | numeric   |
-| leaguestandings    | character |
-| home               | character |
-| road               | character |
-| vsdiv              | character |
-| vsconf             | character |
-| lasttengames       | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | integer | Unique team identifier. |
+| team | character | Team-side label or team identifier. |
+| avgpointsagainst | numeric | Avgpointsagainst. |
+| avgpointsfor | numeric | Avgpointsfor. |
+| clincher | numeric | Clincher. |
+| differential | numeric | Differential. |
+| divisionwinpercent | numeric | Divisionwinpercent. |
+| gamesbehind | numeric | Gamesbehind. |
+| leaguewinpercent | numeric | Leaguewinpercent. |
+| losses | numeric | Total losses. |
+| playoffseed | numeric | Playoffseed. |
+| streak | numeric | Current streak (e.g. 'W3' for three-game win streak). |
+| winpercent | numeric | Winpercent. |
+| wins | numeric | Total wins. |
+| leaguestandings | character | Leaguestandings. |
+| home | character | Home. |
+| road | character | Road. |
+| vsdiv | character | Vsdiv. |
+| vsconf | character | Vsconf. |
+| lasttengames | character | Lasttengames. |
 
 ## See also
 
@@ -64,7 +64,7 @@ Other ESPN NBA Functions:
 # \donttest{
 try(espn_nba_standings(year = 2021))
 #> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:48 UTC
+#> ℹ Data updated: 2026-05-17 14:14:07 UTC
 #> # A tibble: 30 × 25
 #>    team_id team              avgpointsagainst avgpointsfor clincher differential
 #>  *   <int> <chr>                        <dbl>        <dbl>    <dbl>        <dbl>

@@ -45,123 +45,123 @@ Return a named list of data frames: East, Midwest, South, West
 
 **East**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| REGION   | character |
-| SEED     | character |
-| COLLEGE  | character |
-| PLAYERS  | character |
-| GP       | character |
-| MIN      | character |
-| FGM      | character |
-| FGA      | character |
-| FG_PCT   | character |
-| FG3M     | character |
-| FG3A     | character |
-| FG3_PCT  | character |
-| FTM      | character |
-| FTA      | character |
-| FT_PCT   | character |
-| OREB     | character |
-| DREB     | character |
-| REB      | character |
-| AST      | character |
-| STL      | character |
-| BLK      | character |
-| TOV      | character |
-| PF       | character |
-| PTS      | character |
+|          |           |                                          |
+|----------|-----------|------------------------------------------|
+| col_name | types     | description                              |
+| REGION   | character | Region label.                            |
+| SEED     | character | Tournament seed.                         |
+| COLLEGE  | character | College or school attended.              |
+| PLAYERS  | character |                                          |
+| GP       | character | Games played.                            |
+| MIN      | character | Minutes played.                          |
+| FGM      | character | Field goals made.                        |
+| FGA      | character | Field goal attempts.                     |
+| FG_PCT   | character | Field goal percentage (0-1).             |
+| FG3M     | character | Three-point field goals made.            |
+| FG3A     | character | Three-point field goal attempts.         |
+| FG3_PCT  | character | Three-point field goal percentage (0-1). |
+| FTM      | character | Free throws made.                        |
+| FTA      | character | Free throw attempts.                     |
+| FT_PCT   | character | Free throw percentage (0-1).             |
+| OREB     | character | Offensive rebounds.                      |
+| DREB     | character | Defensive rebounds.                      |
+| REB      | character | Total rebounds.                          |
+| AST      | character | Assists.                                 |
+| STL      | character | Steals.                                  |
+| BLK      | character | Blocks.                                  |
+| TOV      | character | Turnovers.                               |
+| PF       | character | Personal fouls.                          |
+| PTS      | character | Points scored.                           |
 
 **South**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| REGION   | character |
-| SEED     | character |
-| COLLEGE  | character |
-| PLAYERS  | character |
-| GP       | character |
-| MIN      | character |
-| FGM      | character |
-| FGA      | character |
-| FG_PCT   | character |
-| FG3M     | character |
-| FG3A     | character |
-| FG3_PCT  | character |
-| FTM      | character |
-| FTA      | character |
-| FT_PCT   | character |
-| OREB     | character |
-| DREB     | character |
-| REB      | character |
-| AST      | character |
-| STL      | character |
-| BLK      | character |
-| TOV      | character |
-| PF       | character |
-| PTS      | character |
+|          |           |                                          |
+|----------|-----------|------------------------------------------|
+| col_name | types     | description                              |
+| REGION   | character | Region label.                            |
+| SEED     | character | Tournament seed.                         |
+| COLLEGE  | character | College or school attended.              |
+| PLAYERS  | character |                                          |
+| GP       | character | Games played.                            |
+| MIN      | character | Minutes played.                          |
+| FGM      | character | Field goals made.                        |
+| FGA      | character | Field goal attempts.                     |
+| FG_PCT   | character | Field goal percentage (0-1).             |
+| FG3M     | character | Three-point field goals made.            |
+| FG3A     | character | Three-point field goal attempts.         |
+| FG3_PCT  | character | Three-point field goal percentage (0-1). |
+| FTM      | character | Free throws made.                        |
+| FTA      | character | Free throw attempts.                     |
+| FT_PCT   | character | Free throw percentage (0-1).             |
+| OREB     | character | Offensive rebounds.                      |
+| DREB     | character | Defensive rebounds.                      |
+| REB      | character | Total rebounds.                          |
+| AST      | character | Assists.                                 |
+| STL      | character | Steals.                                  |
+| BLK      | character | Blocks.                                  |
+| TOV      | character | Turnovers.                               |
+| PF       | character | Personal fouls.                          |
+| PTS      | character | Points scored.                           |
 
 **Midwest**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| REGION   | character |
-| SEED     | character |
-| COLLEGE  | character |
-| PLAYERS  | character |
-| GP       | character |
-| MIN      | character |
-| FGM      | character |
-| FGA      | character |
-| FG_PCT   | character |
-| FG3M     | character |
-| FG3A     | character |
-| FG3_PCT  | character |
-| FTM      | character |
-| FTA      | character |
-| FT_PCT   | character |
-| OREB     | character |
-| DREB     | character |
-| REB      | character |
-| AST      | character |
-| STL      | character |
-| BLK      | character |
-| TOV      | character |
-| PF       | character |
-| PTS      | character |
+|          |           |                                          |
+|----------|-----------|------------------------------------------|
+| col_name | types     | description                              |
+| REGION   | character | Region label.                            |
+| SEED     | character | Tournament seed.                         |
+| COLLEGE  | character | College or school attended.              |
+| PLAYERS  | character |                                          |
+| GP       | character | Games played.                            |
+| MIN      | character | Minutes played.                          |
+| FGM      | character | Field goals made.                        |
+| FGA      | character | Field goal attempts.                     |
+| FG_PCT   | character | Field goal percentage (0-1).             |
+| FG3M     | character | Three-point field goals made.            |
+| FG3A     | character | Three-point field goal attempts.         |
+| FG3_PCT  | character | Three-point field goal percentage (0-1). |
+| FTM      | character | Free throws made.                        |
+| FTA      | character | Free throw attempts.                     |
+| FT_PCT   | character | Free throw percentage (0-1).             |
+| OREB     | character | Offensive rebounds.                      |
+| DREB     | character | Defensive rebounds.                      |
+| REB      | character | Total rebounds.                          |
+| AST      | character | Assists.                                 |
+| STL      | character | Steals.                                  |
+| BLK      | character | Blocks.                                  |
+| TOV      | character | Turnovers.                               |
+| PF       | character | Personal fouls.                          |
+| PTS      | character | Points scored.                           |
 
 **West**
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| REGION   | character |
-| SEED     | character |
-| COLLEGE  | character |
-| PLAYERS  | character |
-| GP       | character |
-| MIN      | character |
-| FGM      | character |
-| FGA      | character |
-| FG_PCT   | character |
-| FG3M     | character |
-| FG3A     | character |
-| FG3_PCT  | character |
-| FTM      | character |
-| FTA      | character |
-| FT_PCT   | character |
-| OREB     | character |
-| DREB     | character |
-| REB      | character |
-| AST      | character |
-| STL      | character |
-| BLK      | character |
-| TOV      | character |
-| PF       | character |
-| PTS      | character |
+|          |           |                                          |
+|----------|-----------|------------------------------------------|
+| col_name | types     | description                              |
+| REGION   | character | Region label.                            |
+| SEED     | character | Tournament seed.                         |
+| COLLEGE  | character | College or school attended.              |
+| PLAYERS  | character |                                          |
+| GP       | character | Games played.                            |
+| MIN      | character | Minutes played.                          |
+| FGM      | character | Field goals made.                        |
+| FGA      | character | Field goal attempts.                     |
+| FG_PCT   | character | Field goal percentage (0-1).             |
+| FG3M     | character | Three-point field goals made.            |
+| FG3A     | character | Three-point field goal attempts.         |
+| FG3_PCT  | character | Three-point field goal percentage (0-1). |
+| FTM      | character | Free throws made.                        |
+| FTA      | character | Free throw attempts.                     |
+| FT_PCT   | character | Free throw percentage (0-1).             |
+| OREB     | character | Offensive rebounds.                      |
+| DREB     | character | Defensive rebounds.                      |
+| REB      | character | Total rebounds.                          |
+| AST      | character | Assists.                                 |
+| STL      | character | Steals.                                  |
+| BLK      | character | Blocks.                                  |
+| TOV      | character | Turnovers.                               |
+| PF       | character | Personal fouls.                          |
+| PTS      | character | Points scored.                           |
 
 ## Details
 

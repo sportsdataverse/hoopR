@@ -18,44 +18,44 @@ espn_nba_scoreboard(season)
 
 Returns a tibble with scoreboard data
 
-|                     |           |
-|---------------------|-----------|
-| col_name            | types     |
-| matchup             | character |
-| matchup_short       | character |
-| season              | integer   |
-| season_type         | integer   |
-| season_slug         | character |
-| game_id             | integer   |
-| game_uid            | character |
-| game_date           | Date      |
-| attendance          | integer   |
-| notes               | logical   |
-| status_name         | character |
-| broadcasts          | logical   |
-| start_date          | character |
-| geo_broadcasts      | logical   |
-| game_date_time      | POSIXct   |
-| home_team_name      | character |
-| home_team_logo      | character |
-| home_team_abb       | character |
-| home_team_id        | integer   |
-| home_team_location  | character |
-| home_team_full_name | character |
-| home_team_color     | character |
-| home_score          | integer   |
-| home_win            | integer   |
-| home_record         | character |
-| away_team_name      | character |
-| away_team_logo      | character |
-| away_team_abb       | character |
-| away_team_id        | integer   |
-| away_team_location  | character |
-| away_team_full_name | character |
-| away_team_color     | character |
-| away_score          | integer   |
-| away_win            | integer   |
-| away_record         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| matchup | character | Matchup. |
+| matchup_short | character | Matchup short. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| season_slug | character | Season slug. |
+| game_id | integer | Unique game identifier. |
+| game_uid | character | Game uid. |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| attendance | integer | Reported attendance. |
+| notes | logical | Free-form notes attached to the record. |
+| status_name | character | Status label. |
+| broadcasts | logical | JSON array of broadcast records. |
+| start_date | character | Start date (YYYY-MM-DD). |
+| geo_broadcasts | logical | Geo broadcasts. |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| home_team_name | character | Home team name. |
+| home_team_logo | character | Home team logo URL. |
+| home_team_abb | character | Home team's team abb. |
+| home_team_id | integer | Unique identifier for the home team. |
+| home_team_location | character | Home team's team location. |
+| home_team_full_name | character | Full home team name (e.g. 'Las Vegas Aces'). |
+| home_team_color | character | Home team primary color (hex). |
+| home_score | integer | Home team score at the time of the play. |
+| home_win | integer | Home team's win. |
+| home_record | character | Home win-loss record. |
+| away_team_name | character | Away team name. |
+| away_team_logo | character | Away team logo URL. |
+| away_team_abb | character | Away team's team abb. |
+| away_team_id | integer | Unique identifier for the away team. |
+| away_team_location | character | Away team's team location. |
+| away_team_full_name | character | Full away team name (e.g. 'Las Vegas Aces'). |
+| away_team_color | character | Away team primary color (hex). |
+| away_score | integer | Away team score at the time of the play. |
+| away_win | integer | Away team's win. |
+| away_record | character | Away win-loss record. |
 
 ## See also
 
@@ -81,7 +81,7 @@ Other ESPN NBA Functions:
 # \donttest{
 try(espn_nba_scoreboard(season = 20230423))
 #> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:48 UTC
+#> ℹ Data updated: 2026-05-17 14:14:06 UTC
 #> # A tibble: 4 × 37
 #>   matchup          matchup_short season season_type season_slug game_id game_uid
 #>   <chr>            <chr>          <int>       <int> <chr>         <int> <chr>   

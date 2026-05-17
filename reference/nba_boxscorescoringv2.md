@@ -57,61 +57,61 @@ Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 
 **sqlPlayersScoring**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| NICKNAME          | character |
-| START_POSITION    | character |
-| COMMENT           | character |
-| MIN               | character |
-| PCT_FGA_2PT       | character |
-| PCT_FGA_3PT       | character |
-| PCT_PTS_2PT       | character |
-| PCT_PTS_2PT_MR    | character |
-| PCT_PTS_3PT       | character |
-| PCT_PTS_FB        | character |
-| PCT_PTS_FT        | character |
-| PCT_PTS_OFF_TOV   | character |
-| PCT_PTS_PAINT     | character |
-| PCT_AST_2PM       | character |
-| PCT_UAST_2PM      | character |
-| PCT_AST_3PM       | character |
-| PCT_UAST_3PM      | character |
-| PCT_AST_FGM       | character |
-| PCT_UAST_FGM      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| NICKNAME | character | Team or athlete nickname. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| PCT_FGA_2PT | character |  |
+| PCT_FGA_3PT | character |  |
+| PCT_PTS_2PT | character |  |
+| PCT_PTS_2PT_MR | character |  |
+| PCT_PTS_3PT | character |  |
+| PCT_PTS_FB | character |  |
+| PCT_PTS_FT | character |  |
+| PCT_PTS_OFF_TOV | character |  |
+| PCT_PTS_PAINT | character |  |
+| PCT_AST_2PM | character |  |
+| PCT_UAST_2PM | character |  |
+| PCT_AST_3PM | character |  |
+| PCT_UAST_3PM | character |  |
+| PCT_AST_FGM | character |  |
+| PCT_UAST_FGM | character |  |
 
 **sqlTeamsScoring**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| MIN               | character |
-| PCT_FGA_2PT       | character |
-| PCT_FGA_3PT       | character |
-| PCT_PTS_2PT       | character |
-| PCT_PTS_2PT_MR    | character |
-| PCT_PTS_3PT       | character |
-| PCT_PTS_FB        | character |
-| PCT_PTS_FT        | character |
-| PCT_PTS_OFF_TOV   | character |
-| PCT_PTS_PAINT     | character |
-| PCT_AST_2PM       | character |
-| PCT_UAST_2PM      | character |
-| PCT_AST_3PM       | character |
-| PCT_UAST_3PM      | character |
-| PCT_AST_FGM       | character |
-| PCT_UAST_FGM      | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| PCT_FGA_2PT | character |  |
+| PCT_FGA_3PT | character |  |
+| PCT_PTS_2PT | character |  |
+| PCT_PTS_2PT_MR | character |  |
+| PCT_PTS_3PT | character |  |
+| PCT_PTS_FB | character |  |
+| PCT_PTS_FT | character |  |
+| PCT_PTS_OFF_TOV | character |  |
+| PCT_PTS_PAINT | character |  |
+| PCT_AST_2PM | character |  |
+| PCT_UAST_2PM | character |  |
+| PCT_AST_3PM | character |  |
+| PCT_UAST_3PM | character |  |
+| PCT_AST_FGM | character |  |
+| PCT_UAST_FGM | character |  |
 
 ## Details
 

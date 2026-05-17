@@ -57,67 +57,67 @@ Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 
 **sqlPlayersUsage**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| NICKNAME          | character |
-| START_POSITION    | character |
-| COMMENT           | character |
-| MIN               | character |
-| USG_PCT           | character |
-| PCT_FGM           | character |
-| PCT_FGA           | character |
-| PCT_FG3M          | character |
-| PCT_FG3A          | character |
-| PCT_FTM           | character |
-| PCT_FTA           | character |
-| PCT_OREB          | character |
-| PCT_DREB          | character |
-| PCT_REB           | character |
-| PCT_AST           | character |
-| PCT_TOV           | character |
-| PCT_STL           | character |
-| PCT_BLK           | character |
-| PCT_BLKA          | character |
-| PCT_PF            | character |
-| PCT_PFD           | character |
-| PCT_PTS           | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| NICKNAME | character | Team or athlete nickname. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MIN | character | Minutes played. |
+| USG_PCT | character | Usage percentage (0-1). |
+| PCT_FGM | character |  |
+| PCT_FGA | character |  |
+| PCT_FG3M | character |  |
+| PCT_FG3A | character |  |
+| PCT_FTM | character |  |
+| PCT_FTA | character |  |
+| PCT_OREB | character |  |
+| PCT_DREB | character |  |
+| PCT_REB | character |  |
+| PCT_AST | character |  |
+| PCT_TOV | character |  |
+| PCT_STL | character |  |
+| PCT_BLK | character |  |
+| PCT_BLKA | character |  |
+| PCT_PF | character |  |
+| PCT_PFD | character |  |
+| PCT_PTS | character |  |
 
 **sqlTeamsUsage**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_CITY         | character |
-| MIN               | character |
-| USG_PCT           | character |
-| PCT_FGM           | character |
-| PCT_FGA           | character |
-| PCT_FG3M          | character |
-| PCT_FG3A          | character |
-| PCT_FTM           | character |
-| PCT_FTA           | character |
-| PCT_OREB          | character |
-| PCT_DREB          | character |
-| PCT_REB           | character |
-| PCT_AST           | character |
-| PCT_TOV           | character |
-| PCT_STL           | character |
-| PCT_BLK           | character |
-| PCT_BLKA          | character |
-| PCT_PF            | character |
-| PCT_PFD           | character |
-| PCT_PTS           | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MIN | character | Minutes played. |
+| USG_PCT | character | Usage percentage (0-1). |
+| PCT_FGM | character |  |
+| PCT_FGA | character |  |
+| PCT_FG3M | character |  |
+| PCT_FG3A | character |  |
+| PCT_FTM | character |  |
+| PCT_FTA | character |  |
+| PCT_OREB | character |  |
+| PCT_DREB | character |  |
+| PCT_REB | character |  |
+| PCT_AST | character |  |
+| PCT_TOV | character |  |
+| PCT_STL | character |  |
+| PCT_BLK | character |  |
+| PCT_BLKA | character |  |
+| PCT_PF | character |  |
+| PCT_PFD | character |  |
+| PCT_PTS | character |  |
 
 ## Details
 

@@ -64,47 +64,47 @@ LeadersTiles, LowSeasonHigh,
 
 **LeadersTiles**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| PTS               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PTS | character | Points scored. |
 
 **AllTimeSeasonHigh**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| SEASON_YEAR       | character |
-| PTS               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SEASON_YEAR | character | Season year string ('YYYY-YY' format). |
+| PTS | character | Points scored. |
 
 **LastSeasonHigh**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| PTS               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PTS | character | Points scored. |
 
 **LowSeasonHigh**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| SEASON_YEAR       | character |
-| PTS               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| SEASON_YEAR | character | Season year string ('YYYY-YY' format). |
+| PTS | character | Points scored. |
 
 ## Details
 

@@ -27,70 +27,70 @@ TeamStats
 
 **HustleStatsAvailable**
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| GAME_ID       | character |
-| HUSTLE_STATUS | character |
+|               |           |                         |
+|---------------|-----------|-------------------------|
+| col_name      | types     | description             |
+| GAME_ID       | character | Unique game identifier. |
+| HUSTLE_STATUS | character | Hustle status.          |
 
 **PlayerStats**
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| GAME_ID                   | character |
-| TEAM_ID                   | character |
-| TEAM_ABBREVIATION         | character |
-| TEAM_CITY                 | character |
-| PLAYER_ID                 | character |
-| PLAYER_NAME               | character |
-| START_POSITION            | character |
-| COMMENT                   | character |
-| MINUTES                   | character |
-| PTS                       | character |
-| CONTESTED_SHOTS           | character |
-| CONTESTED_SHOTS_2PT       | character |
-| CONTESTED_SHOTS_3PT       | character |
-| DEFLECTIONS               | character |
-| CHARGES_DRAWN             | character |
-| SCREEN_ASSISTS            | character |
-| SCREEN_AST_PTS            | character |
-| OFF_LOOSE_BALLS_RECOVERED | character |
-| DEF_LOOSE_BALLS_RECOVERED | character |
-| LOOSE_BALLS_RECOVERED     | character |
-| OFF_BOXOUTS               | character |
-| DEF_BOXOUTS               | character |
-| BOX_OUT_PLAYER_TEAM_REBS  | character |
-| BOX_OUT_PLAYER_REBS       | character |
-| BOX_OUTS                  | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| PLAYER_ID | character | Unique player identifier. |
+| PLAYER_NAME | character | Player name. |
+| START_POSITION | character |  |
+| COMMENT | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| MINUTES | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| PTS | character | Points scored. |
+| CONTESTED_SHOTS | character | Defensively contested shots. |
+| CONTESTED_SHOTS_2PT | character | Contested two-point shots. |
+| CONTESTED_SHOTS_3PT | character | Contested three-point shots. |
+| DEFLECTIONS | character | Defensive deflections. |
+| CHARGES_DRAWN | character | Charges drawn. |
+| SCREEN_ASSISTS | character | Screen assists (resulting in a basket). |
+| SCREEN_AST_PTS | character |  |
+| OFF_LOOSE_BALLS_RECOVERED | character |  |
+| DEF_LOOSE_BALLS_RECOVERED | character |  |
+| LOOSE_BALLS_RECOVERED | character | Loose balls recovered. |
+| OFF_BOXOUTS | character |  |
+| DEF_BOXOUTS | character |  |
+| BOX_OUT_PLAYER_TEAM_REBS | character |  |
+| BOX_OUT_PLAYER_REBS | character |  |
+| BOX_OUTS | character | Box-outs executed. |
 
 **TeamStats**
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| GAME_ID                   | character |
-| TEAM_ID                   | character |
-| TEAM_NAME                 | character |
-| TEAM_ABBREVIATION         | character |
-| TEAM_CITY                 | character |
-| MINUTES                   | character |
-| PTS                       | character |
-| CONTESTED_SHOTS           | character |
-| CONTESTED_SHOTS_2PT       | character |
-| CONTESTED_SHOTS_3PT       | character |
-| DEFLECTIONS               | character |
-| CHARGES_DRAWN             | character |
-| SCREEN_ASSISTS            | character |
-| SCREEN_AST_PTS            | character |
-| OFF_LOOSE_BALLS_RECOVERED | character |
-| DEF_LOOSE_BALLS_RECOVERED | character |
-| LOOSE_BALLS_RECOVERED     | character |
-| OFF_BOXOUTS               | character |
-| DEF_BOXOUTS               | character |
-| BOX_OUT_PLAYER_TEAM_REBS  | character |
-| BOX_OUT_PLAYER_REBS       | character |
-| BOX_OUTS                  | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| MINUTES | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| PTS | character | Points scored. |
+| CONTESTED_SHOTS | character | Defensively contested shots. |
+| CONTESTED_SHOTS_2PT | character | Contested two-point shots. |
+| CONTESTED_SHOTS_3PT | character | Contested three-point shots. |
+| DEFLECTIONS | character | Defensive deflections. |
+| CHARGES_DRAWN | character | Charges drawn. |
+| SCREEN_ASSISTS | character | Screen assists (resulting in a basket). |
+| SCREEN_AST_PTS | character |  |
+| OFF_LOOSE_BALLS_RECOVERED | character |  |
+| DEF_LOOSE_BALLS_RECOVERED | character |  |
+| LOOSE_BALLS_RECOVERED | character | Loose balls recovered. |
+| OFF_BOXOUTS | character |  |
+| DEF_BOXOUTS | character |  |
+| BOX_OUT_PLAYER_TEAM_REBS | character |  |
+| BOX_OUT_PLAYER_REBS | character |  |
+| BOX_OUTS | character | Box-outs executed. |
 
 ## Details
 

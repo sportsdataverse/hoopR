@@ -50,14 +50,14 @@ Returns a named list of data frames: AssistLeaders
 
 **AssistLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| RANK              | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| TEAM_NAME         | character |
-| AST               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| AST | character | Assists. |
 
 ## Details
 

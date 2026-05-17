@@ -56,17 +56,17 @@ kp_playerstats(
 
 Returns a tibble of player stats
 
-|          |           |
-|----------|-----------|
-| col_name | types     |
-| rk       | character |
-| player   | character |
-| team     | character |
-| e_fg     | character |
-| hgt      | character |
-| wgt      | character |
-| yr       | character |
-| year     | numeric   |
+|          |           |                                     |
+|----------|-----------|-------------------------------------|
+| col_name | types     | description                         |
+| rk       | character | Rk.                                 |
+| player   | character | Player.                             |
+| team     | character | Team-side label or team identifier. |
+| e_fg     | character | E fg.                               |
+| hgt      | character | Hgt.                                |
+| wgt      | character | Wgt.                                |
+| yr       | character | Yr.                                 |
+| year     | numeric   | 4-digit year.                       |
 
 ## See also
 

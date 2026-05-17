@@ -34,27 +34,27 @@ Returns a named list of data frames: Results
 
 **Results**
 
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| TEMP_PLAYER_ID        | character |
-| PLAYER_ID             | character |
-| FIRST_NAME            | character |
-| LAST_NAME             | character |
-| PLAYER_NAME           | character |
-| POSITION              | character |
-| HEIGHT_WO_SHOES       | character |
-| HEIGHT_WO_SHOES_FT_IN | character |
-| HEIGHT_W_SHOES        | character |
-| HEIGHT_W_SHOES_FT_IN  | character |
-| WEIGHT                | character |
-| WINGSPAN              | character |
-| WINGSPAN_FT_IN        | character |
-| STANDING_REACH        | character |
-| STANDING_REACH_FT_IN  | character |
-| BODY_FAT_PCT          | character |
-| HAND_LENGTH           | character |
-| HAND_WIDTH            | character |
+|                       |           |                                         |
+|-----------------------|-----------|-----------------------------------------|
+| col_name              | types     | description                             |
+| TEMP_PLAYER_ID        | character |                                         |
+| PLAYER_ID             | character | Unique player identifier.               |
+| FIRST_NAME            | character | Player's first name.                    |
+| LAST_NAME             | character | Player's last name.                     |
+| PLAYER_NAME           | character | Player name.                            |
+| POSITION              | character | Listed roster position (G, F, C, etc.). |
+| HEIGHT_WO_SHOES       | character |                                         |
+| HEIGHT_WO_SHOES_FT_IN | character |                                         |
+| HEIGHT_W_SHOES        | character |                                         |
+| HEIGHT_W_SHOES_FT_IN  | character |                                         |
+| WEIGHT                | character | Player weight in pounds.                |
+| WINGSPAN              | character |                                         |
+| WINGSPAN_FT_IN        | character |                                         |
+| STANDING_REACH        | character |                                         |
+| STANDING_REACH_FT_IN  | character |                                         |
+| BODY_FAT_PCT          | character |                                         |
+| HAND_LENGTH           | character |                                         |
+| HAND_WIDTH            | character |                                         |
 
 ## Details
 

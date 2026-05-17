@@ -18,80 +18,80 @@ espn_mbb_game_rosters(game_id)
 
 A game rosters data frame
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| athlete_id               | integer   |
-| athlete_uid              | character |
-| athlete_guid             | character |
-| athlete_type             | character |
-| sdr                      | integer   |
-| first_name               | character |
-| last_name                | character |
-| full_name                | character |
-| athlete_display_name     | character |
-| short_name               | character |
-| weight                   | integer   |
-| display_weight           | character |
-| height                   | integer   |
-| display_height           | character |
-| age                      | integer   |
-| date_of_birth            | character |
-| birth_place_city         | character |
-| birth_place_state        | character |
-| birth_place_country      | character |
-| slug                     | character |
-| headshot_href            | character |
-| headshot_alt             | character |
-| jersey                   | character |
-| hand_type                | character |
-| hand_abbreviation        | character |
-| hand_display_value       | character |
-| position_id              | integer   |
-| position_name            | character |
-| position_display_name    | character |
-| position_abbreviation    | character |
-| position_leaf            | logical   |
-| linked                   | logical   |
-| experience_years         | integer   |
-| experience_display_value | character |
-| experience_abbreviation  | character |
-| active                   | logical   |
-| draft_display_text       | character |
-| draft_round              | integer   |
-| draft_year               | integer   |
-| draft_selection          | integer   |
-| status_id                | integer   |
-| status_name              | character |
-| status_type              | character |
-| status_abbreviation      | character |
-| starter                  | logical   |
-| valid                    | logical   |
-| did_not_play             | logical   |
-| display_name             | character |
-| ejected                  | logical   |
-| team_id                  | integer   |
-| team_guid                | character |
-| team_uid                 | character |
-| team_sdr                 | integer   |
-| team_slug                | character |
-| team_location            | character |
-| team_name                | character |
-| team_nickname            | character |
-| team_abbreviation        | character |
-| team_display_name        | character |
-| team_short_display_name  | character |
-| team_color               | character |
-| team_alternate_color     | character |
-| is_active                | logical   |
-| is_all_star              | logical   |
-| logo_href                | character |
-| logo_dark_href           | character |
-| game_id                  | integer   |
-| order                    | integer   |
-| home_away                | character |
-| winner                   | logical   |
-| roster_href              | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| athlete_id | integer | Unique athlete identifier (ESPN). |
+| athlete_uid | character | ESPN athlete UID (universal identifier). |
+| athlete_guid | character | ESPN athlete GUID. |
+| athlete_type | character | Athlete type / class. |
+| sdr | integer | Sdr. |
+| first_name | character | Player's first name. |
+| last_name | character | Player's last name. |
+| full_name | character | Player's full name. |
+| athlete_display_name | character | Athlete display name (full). |
+| short_name | character | Short display name. |
+| weight | integer | Player weight in pounds. |
+| display_weight | character | Player weight in display format (e.g. '180 lbs'). |
+| height | integer | Player height (string e.g. '6-2' or inches). |
+| display_height | character | Player height in display format (e.g. '6-2'). |
+| age | integer | Player age (in years). |
+| date_of_birth | character | Date of birth (YYYY-MM-DD). |
+| birth_place_city | character | Birth place city. |
+| birth_place_state | character | Birth place state. |
+| birth_place_country | character | Birth place country. |
+| slug | character | URL-safe identifier. |
+| headshot_href | character | Headshot image URL. |
+| headshot_alt | character | Alternative-text label for the headshot. |
+| jersey | character | Jersey number worn by the player. |
+| hand_type | character | Hand type. |
+| hand_abbreviation | character | Hand abbreviation. |
+| hand_display_value | character | Hand display value. |
+| position_id | integer | Unique position identifier. |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| position_display_name | character | Position display name. |
+| position_abbreviation | character | Position abbreviation ('G' / 'F' / 'C'). |
+| position_leaf | logical | Position leaf. |
+| linked | logical | TRUE if the record is linked to a related entity. |
+| experience_years | integer | Experience years. |
+| experience_display_value | character | Experience display value. |
+| experience_abbreviation | character | Experience abbreviation. |
+| active | logical | TRUE if the row represents an active record (player / team / season). |
+| draft_display_text | character | Draft display text. |
+| draft_round | integer | Round of the draft selection. |
+| draft_year | integer | Draft year (4-digit). |
+| draft_selection | integer | Draft selection. |
+| status_id | integer | Status identifier. |
+| status_name | character | Status label. |
+| status_type | character | Status type. |
+| status_abbreviation | character | Status abbreviation. |
+| starter | logical | TRUE if the player was in the starting lineup; FALSE otherwise. |
+| valid | logical | Valid. |
+| did_not_play | logical | TRUE if the player did not appear in the game. |
+| display_name | character | Display name. |
+| ejected | logical | TRUE if the player was ejected from the game. |
+| team_id | integer | Unique team identifier. |
+| team_guid | character | ESPN team GUID. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_sdr | integer | ESPN team SDR identifier. |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_nickname | character | Team nickname. |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_display_name | character | Full team display name. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| is_active | logical | Is active. |
+| is_all_star | logical | Is all star. |
+| logo_href | character | Team or league logo URL. |
+| logo_dark_href | character | Logo URL for dark backgrounds. |
+| game_id | integer | Unique game identifier. |
+| order | integer | Display order within the result set. |
+| home_away | character | Game venue label ('home' or 'away'). |
+| winner | logical | Winner. |
+| roster_href | character | URL for roster. |
 
 ## See also
 
@@ -121,7 +121,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_game_rosters(game_id = 401256760))
 #> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:36 UTC
+#> ℹ Data updated: 2026-05-17 14:13:50 UTC
 #> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    

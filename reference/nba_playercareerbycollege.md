@@ -50,32 +50,32 @@ Return a named list of data frames: PlayerCareerByCollege
 
 **PlayerCareerByCollege**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| PLAYER_ID   | character |
-| PLAYER_NAME | character |
-| COLLEGE     | character |
-| GP          | character |
-| MIN         | character |
-| FGM         | character |
-| FGA         | character |
-| FG_PCT      | character |
-| FG3M        | character |
-| FG3A        | character |
-| FG3_PCT     | character |
-| FTM         | character |
-| FTA         | character |
-| FT_PCT      | character |
-| OREB        | character |
-| DREB        | character |
-| REB         | character |
-| AST         | character |
-| TOV         | character |
-| STL         | character |
-| BLK         | character |
-| PF          | character |
-| PTS         | character |
+|             |           |                                          |
+|-------------|-----------|------------------------------------------|
+| col_name    | types     | description                              |
+| PLAYER_ID   | character | Unique player identifier.                |
+| PLAYER_NAME | character | Player name.                             |
+| COLLEGE     | character | College or school attended.              |
+| GP          | character | Games played.                            |
+| MIN         | character | Minutes played.                          |
+| FGM         | character | Field goals made.                        |
+| FGA         | character | Field goal attempts.                     |
+| FG_PCT      | character | Field goal percentage (0-1).             |
+| FG3M        | character | Three-point field goals made.            |
+| FG3A        | character | Three-point field goal attempts.         |
+| FG3_PCT     | character | Three-point field goal percentage (0-1). |
+| FTM         | character | Free throws made.                        |
+| FTA         | character | Free throw attempts.                     |
+| FT_PCT      | character | Free throw percentage (0-1).             |
+| OREB        | character | Offensive rebounds.                      |
+| DREB        | character | Defensive rebounds.                      |
+| REB         | character | Total rebounds.                          |
+| AST         | character | Assists.                                 |
+| TOV         | character | Turnovers.                               |
+| STL         | character | Steals.                                  |
+| BLK         | character | Blocks.                                  |
+| PF          | character | Personal fouls.                          |
+| PTS         | character | Points scored.                           |
 
 ## Details
 

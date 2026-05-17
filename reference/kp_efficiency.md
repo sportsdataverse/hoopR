@@ -22,29 +22,29 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 
 Returns a tibble of efficiency and tempo ratings
 
-|                        |           |
-|------------------------|-----------|
-| col_name               | types     |
-| team                   | character |
-| conf                   | character |
-| adj_t                  | numeric   |
-| adj_t_rk               | numeric   |
-| raw_t                  | numeric   |
-| raw_t_rk               | numeric   |
-| avg_poss_length_off    | numeric   |
-| avg_poss_length_off_rk | numeric   |
-| avg_poss_length_def    | numeric   |
-| avg_poss_length_def_rk | numeric   |
-| adj_o                  | numeric   |
-| adj_o_rk               | numeric   |
-| raw_o                  | numeric   |
-| raw_o_rk               | numeric   |
-| adj_d                  | numeric   |
-| adj_d_rk               | numeric   |
-| raw_d                  | numeric   |
-| raw_d_rk               | numeric   |
-| ncaa_seed              | numeric   |
-| year                   | numeric   |
+|                        |           |                                     |
+|------------------------|-----------|-------------------------------------|
+| col_name               | types     | description                         |
+| team                   | character | Team-side label or team identifier. |
+| conf                   | character | character.                          |
+| adj_t                  | numeric   | Adj t.                              |
+| adj_t_rk               | numeric   | Adj t rk.                           |
+| raw_t                  | numeric   | Raw t.                              |
+| raw_t_rk               | numeric   | Raw t rk.                           |
+| avg_poss_length_off    | numeric   | Avg poss length off.                |
+| avg_poss_length_off_rk | numeric   | Avg poss length off rk.             |
+| avg_poss_length_def    | numeric   | Avg poss length def.                |
+| avg_poss_length_def_rk | numeric   | Avg poss length def rk.             |
+| adj_o                  | numeric   | Adj o.                              |
+| adj_o_rk               | numeric   | Adj o rk.                           |
+| raw_o                  | numeric   | Raw o.                              |
+| raw_o_rk               | numeric   | Raw o rk.                           |
+| adj_d                  | numeric   | Adj d.                              |
+| adj_d_rk               | numeric   | Adj d rk.                           |
+| raw_d                  | numeric   | Raw d.                              |
+| raw_d_rk               | numeric   | Raw d rk.                           |
+| ncaa_seed              | numeric   | Ncaa seed.                          |
+| year                   | numeric   | 4-digit year.                       |
 
 ## See also
 
@@ -63,7 +63,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_efficiency(min_year = 2020, max_year = 2021))
-#> ✖ 2026-05-16 20:09:37.558026: Invalid arguments or no efficiency data for 2020 - 2021 available!
+#> ✖ 2026-05-17 14:14:59.973133: Invalid arguments or no efficiency data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf AdjT AdjT.Rk RawT RawT.Rk AvgPossLengthOff

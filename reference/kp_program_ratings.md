@@ -12,26 +12,26 @@ kp_program_ratings()
 
 A data frame with 17 columns:
 
-|           |           |
-|-----------|-----------|
-| col_name  | types     |
-| rk        | numeric   |
-| team      | character |
-| conf      | character |
-| rtg       | numeric   |
-| best_rk   | numeric   |
-| best_yr   | numeric   |
-| worst_rk  | numeric   |
-| worst_yr  | numeric   |
-| kp_median | numeric   |
-| top10     | numeric   |
-| top25     | numeric   |
-| top50     | numeric   |
-| ch        | numeric   |
-| f4        | numeric   |
-| s16       | numeric   |
-| r1        | numeric   |
-| chg       | numeric   |
+|           |           |                                     |
+|-----------|-----------|-------------------------------------|
+| col_name  | types     | description                         |
+| rk        | numeric   | Rk.                                 |
+| team      | character | Team-side label or team identifier. |
+| conf      | character | character.                          |
+| rtg       | numeric   | Rtg.                                |
+| best_rk   | numeric   | Best rk.                            |
+| best_yr   | numeric   | Best yr.                            |
+| worst_rk  | numeric   | Worst rk.                           |
+| worst_yr  | numeric   | Worst yr.                           |
+| kp_median | numeric   | Kp median.                          |
+| top10     | numeric   | Top10.                              |
+| top25     | numeric   | Top25.                              |
+| top50     | numeric   | Top50.                              |
+| ch        | numeric   | Ch.                                 |
+| f4        | numeric   | F4.                                 |
+| s16       | numeric   | S16.                                |
+| r1        | numeric   | R1.                                 |
+| chg       | numeric   | Chg.                                |
 
 ## See also
 

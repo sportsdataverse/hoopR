@@ -34,39 +34,39 @@ Returns a named list of data frames: Results
 
 **Results**
 
-|                                      |           |
-|--------------------------------------|-----------|
-| col_name                             | types     |
-| TEMP_PLAYER_ID                       | character |
-| PLAYER_ID                            | character |
-| FIRST_NAME                           | character |
-| LAST_NAME                            | character |
-| PLAYER_NAME                          | character |
-| POSITION                             | character |
-| OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE     | character |
-| OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT  | character |
-| OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT      | character |
-| OFF_DRIB_FIFTEEN_TOP_KEY_MADE        | character |
-| OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT     | character |
-| OFF_DRIB_FIFTEEN_TOP_KEY_PCT         | character |
-| OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE    | character |
-| OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT | character |
-| OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT     | character |
-| OFF_DRIB_COLLEGE_BREAK_LEFT_MADE     | character |
-| OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT  | character |
-| OFF_DRIB_COLLEGE_BREAK_LEFT_PCT      | character |
-| OFF_DRIB_COLLEGE_TOP_KEY_MADE        | character |
-| OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT     | character |
-| OFF_DRIB_COLLEGE_TOP_KEY_PCT         | character |
-| OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE    | character |
-| OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT | character |
-| OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT     | character |
-| ON_MOVE_FIFTEEN_MADE                 | character |
-| ON_MOVE_FIFTEEN_ATTEMPT              | character |
-| ON_MOVE_FIFTEEN_PCT                  | character |
-| ON_MOVE_COLLEGE_MADE                 | character |
-| ON_MOVE_COLLEGE_ATTEMPT              | character |
-| ON_MOVE_COLLEGE_PCT                  | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEMP_PLAYER_ID | character |  |
+| PLAYER_ID | character | Unique player identifier. |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| PLAYER_NAME | character | Player name. |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE | character |  |
+| OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT | character |  |
+| OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT | character |  |
+| OFF_DRIB_FIFTEEN_TOP_KEY_MADE | character |  |
+| OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT | character |  |
+| OFF_DRIB_FIFTEEN_TOP_KEY_PCT | character |  |
+| OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE | character |  |
+| OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT | character |  |
+| OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT | character |  |
+| OFF_DRIB_COLLEGE_BREAK_LEFT_MADE | character |  |
+| OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT | character |  |
+| OFF_DRIB_COLLEGE_BREAK_LEFT_PCT | character |  |
+| OFF_DRIB_COLLEGE_TOP_KEY_MADE | character |  |
+| OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT | character |  |
+| OFF_DRIB_COLLEGE_TOP_KEY_PCT | character |  |
+| OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE | character |  |
+| OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT | character |  |
+| OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT | character |  |
+| ON_MOVE_FIFTEEN_MADE | character |  |
+| ON_MOVE_FIFTEEN_ATTEMPT | character |  |
+| ON_MOVE_FIFTEEN_PCT | character |  |
+| ON_MOVE_COLLEGE_MADE | character |  |
+| ON_MOVE_COLLEGE_ATTEMPT | character |  |
+| ON_MOVE_COLLEGE_PCT | character |  |
 
 ## Details
 

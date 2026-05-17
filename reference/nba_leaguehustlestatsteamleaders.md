@@ -156,80 +156,80 @@ TeamDeflectionsLeaders, TeamLooseBallLeaders, TeamScreenAssistLeaders
 
 **TeamContestedShotsLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| CONTESTED_SHOTS   | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| CONTESTED_SHOTS | character | Defensively contested shots. |
 
 **TeamChargesDrawnLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| CHARGES_DRAWN     | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| CHARGES_DRAWN | character | Charges drawn. |
 
 **TeamDeflectionsLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| DEFLECTIONS       | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| DEFLECTIONS | character | Defensive deflections. |
 
 **TeamLooseBallLeaders**
 
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| TEAM_ID               | character |
-| TEAM_NAME             | character |
-| TEAM_ABBREVIATION     | character |
-| RANK                  | character |
-| LOOSE_BALLS_RECOVERED | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| LOOSE_BALLS_RECOVERED | character | Loose balls recovered. |
 
 **TeamScreenAssistLeaders**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| SCREEN_ASSISTS    | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| SCREEN_ASSISTS | character | Screen assists (resulting in a basket). |
 
 **Table5**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| BOX_OUTS          | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| BOX_OUTS | character | Box-outs executed. |
 
 **Table6**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| RANK              | character |
-| BOX_OUTS          | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| RANK | character | Rank. |
+| BOX_OUTS | character | Box-outs executed. |
 
 ## Details
 

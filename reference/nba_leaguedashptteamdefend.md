@@ -129,20 +129,20 @@ Returns a named list of data frames: LeagueDashPtTeamDefend
 
 **LeagueDashPtTeamDefend**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| TEAM_NAME         | character |
-| TEAM_ABBREVIATION | character |
-| GP                | character |
-| G                 | character |
-| FREQ              | character |
-| D_FGM             | character |
-| D_FGA             | character |
-| D_FG_PCT          | character |
-| NORMAL_FG_PCT     | character |
-| PCT_PLUSMINUS     | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| GP | character | Games played. |
+| G | character | Games played. |
+| FREQ | character |  |
+| D_FGM | character |  |
+| D_FGA | character |  |
+| D_FG_PCT | character |  |
+| NORMAL_FG_PCT | character |  |
+| PCT_PLUSMINUS | character |  |
 
 ## Details
 

@@ -31,34 +31,34 @@ nbagl_schedule(
 
 Returns a data frame of the G League Season Schedule
 
-|                         |           |
-|-------------------------|-----------|
-| col_name                | types     |
-| game_date               | date      |
-| game_id                 | character |
-| game_code               | character |
-| game_status             | integer   |
-| game_status_text        | character |
-| game_sequence           | integer   |
-| game_date_est           | character |
-| game_time_est           | character |
-| game_date_utc           | character |
-| game_time_utc           | character |
-| arena_name              | character |
-| arena_state             | character |
-| arena_city              | character |
-| home_team_id            | character |
-| home_team_name          | character |
-| home_team_tricode       | character |
-| home_team_score         | character |
-| away_team_id            | character |
-| away_team_name          | character |
-| away_team_tricode       | character |
-| away_team_score         | character |
-| season                  | character |
-| league_id               | character |
-| season_type_id          | character |
-| season_type_description | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_date | date | Game date (YYYY-MM-DD). |
+| game_id | character | Unique game identifier. |
+| game_code | character | ESPN game code (numeric identifier). |
+| game_status | integer | Game status label. |
+| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| game_sequence | integer | Game sequence. |
+| game_date_est | character | Game date est. |
+| game_time_est | character | Game time est. |
+| game_date_utc | character | Game date utc. |
+| game_time_utc | character | Game start time in UTC (ISO 8601 timestamp). |
+| arena_name | character | Arena name. |
+| arena_state | character | Arena state. |
+| arena_city | character | Arena city. |
+| home_team_id | character | Unique identifier for the home team. |
+| home_team_name | character | Home team name. |
+| home_team_tricode | character | Home team three-letter code. |
+| home_team_score | character | Home team's score. |
+| away_team_id | character | Unique identifier for the away team. |
+| away_team_name | character | Away team name. |
+| away_team_tricode | character | Away team three-letter code. |
+| away_team_score | character | Away team's score. |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| league_id | character | League identifier ('10' = WNBA). |
+| season_type_id | character | Unique identifier for season type. |
+| season_type_description | character | Season type description. |
 
 ## Details
 

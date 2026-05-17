@@ -62,23 +62,23 @@ Returns a named list of data frames: DraftHistory
 
 **DraftHistory**
 
-|                     |           |
-|---------------------|-----------|
-| col_name            | types     |
-| PERSON_ID           | character |
-| PLAYER_NAME         | character |
-| SEASON              | character |
-| ROUND_NUMBER        | character |
-| ROUND_PICK          | character |
-| OVERALL_PICK        | character |
-| DRAFT_TYPE          | character |
-| TEAM_ID             | character |
-| TEAM_CITY           | character |
-| TEAM_NAME           | character |
-| TEAM_ABBREVIATION   | character |
-| ORGANIZATION        | character |
-| ORGANIZATION_TYPE   | character |
-| PLAYER_PROFILE_FLAG | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| PLAYER_NAME | character | Player name. |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| ROUND_NUMBER | character | Numeric round. |
+| ROUND_PICK | character |  |
+| OVERALL_PICK | character |  |
+| DRAFT_TYPE | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_CITY | character | Team city or region (e.g. 'Las Vegas'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| ORGANIZATION | character |  |
+| ORGANIZATION_TYPE | character |  |
+| PLAYER_PROFILE_FLAG | character |  |
 
 ## Details
 

@@ -64,31 +64,31 @@ Returns a named list of data frames: MatchupsRollup
 
 **MatchupsRollup**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| SEASON_ID       | character |
-| POSITION        | character |
-| PERCENT_OF_TIME | character |
-| DEF_PLAYER_ID   | character |
-| DEF_PLAYER_NAME | character |
-| GP              | character |
-| MATCHUP_MIN     | character |
-| PARTIAL_POSS    | character |
-| PLAYER_PTS      | character |
-| TEAM_PTS        | character |
-| MATCHUP_AST     | character |
-| MATCHUP_TOV     | character |
-| MATCHUP_BLK     | character |
-| MATCHUP_FGM     | character |
-| MATCHUP_FGA     | character |
-| MATCHUP_FG_PCT  | character |
-| MATCHUP_FG3M    | character |
-| MATCHUP_FG3A    | character |
-| MATCHUP_FG3_PCT | character |
-| MATCHUP_FTM     | character |
-| MATCHUP_FTA     | character |
-| SFL             | character |
+|                 |           |                                         |
+|-----------------|-----------|-----------------------------------------|
+| col_name        | types     | description                             |
+| SEASON_ID       | character | Unique season identifier.               |
+| POSITION        | character | Listed roster position (G, F, C, etc.). |
+| PERCENT_OF_TIME | character |                                         |
+| DEF_PLAYER_ID   | character |                                         |
+| DEF_PLAYER_NAME | character |                                         |
+| GP              | character | Games played.                           |
+| MATCHUP_MIN     | character |                                         |
+| PARTIAL_POSS    | character |                                         |
+| PLAYER_PTS      | character |                                         |
+| TEAM_PTS        | character |                                         |
+| MATCHUP_AST     | character |                                         |
+| MATCHUP_TOV     | character |                                         |
+| MATCHUP_BLK     | character |                                         |
+| MATCHUP_FGM     | character |                                         |
+| MATCHUP_FGA     | character |                                         |
+| MATCHUP_FG_PCT  | character |                                         |
+| MATCHUP_FG3M    | character |                                         |
+| MATCHUP_FG3A    | character |                                         |
+| MATCHUP_FG3_PCT | character |                                         |
+| MATCHUP_FTM     | character |                                         |
+| MATCHUP_FTA     | character |                                         |
+| SFL             | character |                                         |
 
 ## Details
 

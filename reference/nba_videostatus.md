@@ -30,23 +30,23 @@ Return a list of tibbles: VideoStatus
 
 **VideoStatus**
 
-|                           |           |
-|---------------------------|-----------|
-| col_name                  | types     |
-| GAME_ID                   | character |
-| GAME_DATE                 | character |
-| VISITOR_TEAM_ID           | character |
-| VISITOR_TEAM_CITY         | character |
-| VISITOR_TEAM_NAME         | character |
-| VISITOR_TEAM_ABBREVIATION | character |
-| HOME_TEAM_ID              | character |
-| HOME_TEAM_CITY            | character |
-| HOME_TEAM_NAME            | character |
-| HOME_TEAM_ABBREVIATION    | character |
-| GAME_STATUS               | character |
-| GAME_STATUS_TEXT          | character |
-| IS_AVAILABLE              | character |
-| PT_XYZ_AVAILABLE          | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| GAME_DATE | character | Game date (YYYY-MM-DD). |
+| VISITOR_TEAM_ID | character |  |
+| VISITOR_TEAM_CITY | character |  |
+| VISITOR_TEAM_NAME | character |  |
+| VISITOR_TEAM_ABBREVIATION | character |  |
+| HOME_TEAM_ID | character | Unique identifier for the home team. |
+| HOME_TEAM_CITY | character | Home team city / location. |
+| HOME_TEAM_NAME | character | Home team name. |
+| HOME_TEAM_ABBREVIATION | character |  |
+| GAME_STATUS | character | Game status label. |
+| GAME_STATUS_TEXT | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| IS_AVAILABLE | character |  |
+| PT_XYZ_AVAILABLE | character | Pt xyz available. |
 
 ## Details
 

@@ -39,41 +39,41 @@ Return a named list of data frames: Coaches, CommonTeamRoster
 
 **CommonTeamRoster**
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| TeamID       | character |
-| SEASON       | character |
-| LeagueID     | character |
-| PLAYER       | character |
-| NICKNAME     | character |
-| PLAYER_SLUG  | character |
-| NUM          | character |
-| POSITION     | character |
-| HEIGHT       | character |
-| WEIGHT       | character |
-| BIRTH_DATE   | character |
-| AGE          | character |
-| EXP          | character |
-| SCHOOL       | character |
-| PLAYER_ID    | character |
-| HOW_ACQUIRED | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TeamID | character | Teamid. |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| LeagueID | character |  |
+| PLAYER | character | Player. |
+| NICKNAME | character | Team or athlete nickname. |
+| PLAYER_SLUG | character | URL-safe player identifier. |
+| NUM | character |  |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| HEIGHT | character | Player height (string e.g. '6-2' or inches). |
+| WEIGHT | character | Player weight in pounds. |
+| BIRTH_DATE | character | Date of birth (YYYY-MM-DD). |
+| AGE | character | Player age (in years). |
+| EXP | character | Exp. |
+| SCHOOL | character | Player's school / college (when distinct from 'college'). |
+| PLAYER_ID | character | Unique player identifier. |
+| HOW_ACQUIRED | character |  |
 
 **Coaches**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| TEAM_ID           | character |
-| SEASON            | character |
-| COACH_ID          | character |
-| FIRST_NAME        | character |
-| LAST_NAME         | character |
-| COACH_NAME        | character |
-| IS_ASSISTANT      | character |
-| COACH_TYPE        | character |
-| SORT_SEQUENCE     | character |
-| SUB_SORT_SEQUENCE | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| COACH_ID | character |  |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| COACH_NAME | character |  |
+| IS_ASSISTANT | character |  |
+| COACH_TYPE | character |  |
+| SORT_SEQUENCE | character |  |
+| SUB_SORT_SEQUENCE | character |  |
 
 ## Details
 

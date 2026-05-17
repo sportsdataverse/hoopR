@@ -24,29 +24,29 @@ nba_data_pbp(game_id = "0021900001", ...)
 
 Returns a tibble
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| game_id           | character |
-| league            | character |
-| period            | integer   |
-| event_num         | integer   |
-| clock             | character |
-| description       | character |
-| locX              | integer   |
-| locY              | integer   |
-| opt1              | integer   |
-| opt2              | integer   |
-| event_action_type | integer   |
-| event_type        | integer   |
-| team_id           | integer   |
-| offense_team_id   | integer   |
-| player1_id        | integer   |
-| player2_id        | integer   |
-| player3_id        | integer   |
-| home_score        | integer   |
-| away_score        | integer   |
-| order             | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| league | character | League. |
+| period | integer | Period of the game (1-4 quarters; 5+ for OT). |
+| event_num | integer | Sequential event number within the game (V2 PBP). |
+| clock | character | Game clock value. |
+| description | character | Long-form description text. |
+| locX | integer |  |
+| locY | integer |  |
+| opt1 | integer | Opt1. |
+| opt2 | integer | Opt2. |
+| event_action_type | integer | Numeric event-action-type code (V2 PBP). |
+| event_type | integer | Event / play type code (V2 PBP). |
+| team_id | integer | Unique team identifier. |
+| offense_team_id | integer | Unique identifier for offense team. |
+| player1_id | integer | V2 PBP primary player ID (e.g. shooter / fouler). |
+| player2_id | integer | V2 PBP secondary player ID (e.g. assister / fouled-by). |
+| player3_id | integer | V2 PBP tertiary player ID (e.g. blocker). |
+| home_score | integer | Home team score at the time of the play. |
+| away_score | integer | Away team score at the time of the play. |
+| order | integer | Display order within the result set. |
 
 Event Message Types (event_type):
 

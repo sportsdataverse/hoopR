@@ -34,21 +34,21 @@ Returns a named list of data frames: Results
 
 **Results**
 
-|                            |           |
-|----------------------------|-----------|
-| col_name                   | types     |
-| TEMP_PLAYER_ID             | character |
-| PLAYER_ID                  | character |
-| FIRST_NAME                 | character |
-| LAST_NAME                  | character |
-| PLAYER_NAME                | character |
-| POSITION                   | character |
-| STANDING_VERTICAL_LEAP     | character |
-| MAX_VERTICAL_LEAP          | character |
-| LANE_AGILITY_TIME          | character |
-| MODIFIED_LANE_AGILITY_TIME | character |
-| THREE_QUARTER_SPRINT       | character |
-| BENCH_PRESS                | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEMP_PLAYER_ID | character |  |
+| PLAYER_ID | character | Unique player identifier. |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| PLAYER_NAME | character | Player name. |
+| POSITION | character | Listed roster position (G, F, C, etc.). |
+| STANDING_VERTICAL_LEAP | character |  |
+| MAX_VERTICAL_LEAP | character |  |
+| LANE_AGILITY_TIME | character |  |
+| MODIFIED_LANE_AGILITY_TIME | character |  |
+| THREE_QUARTER_SPRINT | character |  |
+| BENCH_PRESS | character |  |
 
 ## Details
 

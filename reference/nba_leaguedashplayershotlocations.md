@@ -209,39 +209,39 @@ Returns a named list of data frames: ShotLocations
 
 **ShotLocations**
 
-|                            |           |
-|----------------------------|-----------|
-| col_name                   | types     |
-| PLAYER_ID                  | character |
-| PLAYER_NAME                | character |
-| TEAM_ID                    | character |
-| TEAM_ABBREVIATION          | character |
-| AGE                        | character |
-| NICKNAME                   | character |
-| Restricted_Area_FGM        | character |
-| Restricted_Area_FGA        | character |
-| Restricted_Area_FG_PCT     | character |
-| In_The_Paint_Non_RA_FGM    | character |
-| In_The_Paint_Non_RA_FGA    | character |
-| In_The_Paint_Non_RA_FG_PCT | character |
-| Mid_Range_FGM              | character |
-| Mid_Range_FGA              | character |
-| Mid_Range_FG_PCT           | character |
-| Left_Corner_3_FGM          | character |
-| Left_Corner_3_FGA          | character |
-| Left_Corner_3_FG_PCT       | character |
-| Right_Corner_3_FGM         | character |
-| Right_Corner_3_FGA         | character |
-| Right_Corner_3_FG_PCT      | character |
-| Above_the_Break_3_FGM      | character |
-| Above_the_Break_3_FGA      | character |
-| Above_the_Break_3_FG_PCT   | character |
-| Backcourt_FGM              | character |
-| Backcourt_FGA              | character |
-| Backcourt_FG_PCT           | character |
-| Corner_3_FGM               | character |
-| Corner_3_FGA               | character |
-| Corner_3_FG_PCT            | character |
+|                            |           |                                       |
+|----------------------------|-----------|---------------------------------------|
+| col_name                   | types     | description                           |
+| PLAYER_ID                  | character | Unique player identifier.             |
+| PLAYER_NAME                | character | Player name.                          |
+| TEAM_ID                    | character | Unique team identifier.               |
+| TEAM_ABBREVIATION          | character | Short team abbreviation (e.g. 'LAS'). |
+| AGE                        | character | Player age (in years).                |
+| NICKNAME                   | character | Team or athlete nickname.             |
+| Restricted_Area_FGM        | character |                                       |
+| Restricted_Area_FGA        | character |                                       |
+| Restricted_Area_FG_PCT     | character |                                       |
+| In_The_Paint_Non_RA_FGM    | character |                                       |
+| In_The_Paint_Non_RA_FGA    | character |                                       |
+| In_The_Paint_Non_RA_FG_PCT | character |                                       |
+| Mid_Range_FGM              | character |                                       |
+| Mid_Range_FGA              | character |                                       |
+| Mid_Range_FG_PCT           | character |                                       |
+| Left_Corner_3_FGM          | character |                                       |
+| Left_Corner_3_FGA          | character |                                       |
+| Left_Corner_3_FG_PCT       | character |                                       |
+| Right_Corner_3_FGM         | character |                                       |
+| Right_Corner_3_FGA         | character |                                       |
+| Right_Corner_3_FG_PCT      | character |                                       |
+| Above_the_Break_3_FGM      | character |                                       |
+| Above_the_Break_3_FGA      | character |                                       |
+| Above_the_Break_3_FG_PCT   | character |                                       |
+| Backcourt_FGM              | character |                                       |
+| Backcourt_FGA              | character |                                       |
+| Backcourt_FG_PCT           | character |                                       |
+| Corner_3_FGM               | character |                                       |
+| Corner_3_FGA               | character |                                       |
+| Corner_3_FG_PCT            | character |                                       |
 
 ## Details
 

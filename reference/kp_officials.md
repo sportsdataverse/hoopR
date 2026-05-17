@@ -18,16 +18,16 @@ kp_officials(year = most_recent_mbb_season())
 
 A data frame with the following columns:
 
-|               |           |
-|---------------|-----------|
-| col_name      | types     |
-| rk            | integer   |
-| official_name | character |
-| ref_rating    | numeric   |
-| gms           | numeric   |
-| last_game     | character |
-| last_game_1   | character |
-| year          | numeric   |
+|               |           |                                 |
+|---------------|-----------|---------------------------------|
+| col_name      | types     | description                     |
+| rk            | integer   | Rk.                             |
+| official_name | character | Official name.                  |
+| ref_rating    | numeric   | Ref rating.                     |
+| gms           | numeric   | Gms.                            |
+| last_game     | character | Last game date or score string. |
+| last_game_1   | character | Last game 1.                    |
+| year          | numeric   | 4-digit year.                   |
 
 ## See also
 

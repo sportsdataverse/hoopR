@@ -33,38 +33,38 @@ Return a named list of data frames: WinProbPBP, GameInfo
 
 **WinProbPBP**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| GAME_ID           | character |
-| EVENT_NUM         | character |
-| HOME_PCT          | character |
-| VISITOR_PCT       | character |
-| HOME_PTS          | character |
-| VISITOR_PTS       | character |
-| HOME_SCORE_MARGIN | character |
-| PERIOD            | character |
-| SECONDS_REMAINING | character |
-| HOME_POSS_IND     | character |
-| HOME_G            | character |
-| DESCRIPTION       | character |
-| LOCATION          | character |
-| PCTIMESTRING      | character |
-| ISVISIBLE         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_ID | character | Unique game identifier. |
+| EVENT_NUM | character | Sequential event number within the game (V2 PBP). |
+| HOME_PCT | character |  |
+| VISITOR_PCT | character |  |
+| HOME_PTS | character |  |
+| VISITOR_PTS | character |  |
+| HOME_SCORE_MARGIN | character |  |
+| PERIOD | character | Period of the game (1-4 quarters; 5+ for OT). |
+| SECONDS_REMAINING | character | Seconds remaining in the period. |
+| HOME_POSS_IND | character |  |
+| HOME_G | character |  |
+| DESCRIPTION | character | Long-form description text. |
+| LOCATION | character | Location. |
+| PCTIMESTRING | character |  |
+| ISVISIBLE | character |  |
 
 **GameInfo**
 
-|                  |           |
-|------------------|-----------|
-| col_name         | types     |
-| GAME_ID          | character |
-| GAME_DATE        | character |
-| HOME_TEAM_ID     | character |
-| HOME_TEAM_ABR    | character |
-| HOME_TEAM_PTS    | character |
-| VISITOR_TEAM_ID  | character |
-| VISITOR_TEAM_ABR | character |
-| VISITOR_TEAM_PTS | character |
+|                  |           |                                      |
+|------------------|-----------|--------------------------------------|
+| col_name         | types     | description                          |
+| GAME_ID          | character | Unique game identifier.              |
+| GAME_DATE        | character | Game date (YYYY-MM-DD).              |
+| HOME_TEAM_ID     | character | Unique identifier for the home team. |
+| HOME_TEAM_ABR    | character |                                      |
+| HOME_TEAM_PTS    | character |                                      |
+| VISITOR_TEAM_ID  | character |                                      |
+| VISITOR_TEAM_ABR | character |                                      |
+| VISITOR_TEAM_PTS | character |                                      |
 
 ## Details
 

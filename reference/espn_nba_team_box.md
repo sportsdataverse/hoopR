@@ -20,66 +20,66 @@ A team boxscore data frame
 
 **Team**
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| game_id                           | integer   |
-| season                            | integer   |
-| season_type                       | integer   |
-| game_date                         | Date      |
-| game_date_time                    | POSIXct   |
-| team_id                           | integer   |
-| team_uid                          | character |
-| team_slug                         | character |
-| team_location                     | character |
-| team_name                         | character |
-| team_abbreviation                 | character |
-| team_display_name                 | character |
-| team_short_display_name           | character |
-| team_color                        | character |
-| team_alternate_color              | character |
-| team_logo                         | character |
-| team_home_away                    | character |
-| team_score                        | integer   |
-| team_winner                       | logical   |
-| assists                           | integer   |
-| blocks                            | integer   |
-| defensive_rebounds                | integer   |
-| fast_break_points                 | character |
-| field_goal_pct                    | numeric   |
-| field_goals_made                  | integer   |
-| field_goals_attempted             | integer   |
-| flagrant_fouls                    | integer   |
-| fouls                             | integer   |
-| free_throw_pct                    | numeric   |
-| free_throws_made                  | integer   |
-| free_throws_attempted             | integer   |
-| largest_lead                      | character |
-| offensive_rebounds                | integer   |
-| points_in_paint                   | character |
-| steals                            | integer   |
-| team_turnovers                    | integer   |
-| technical_fouls                   | integer   |
-| three_point_field_goal_pct        | numeric   |
-| three_point_field_goals_made      | integer   |
-| three_point_field_goals_attempted | integer   |
-| total_rebounds                    | integer   |
-| total_technical_fouls             | integer   |
-| total_turnovers                   | integer   |
-| turnover_points                   | character |
-| turnovers                         | integer   |
-| opponent_team_id                  | integer   |
-| opponent_team_uid                 | character |
-| opponent_team_slug                | character |
-| opponent_team_location            | character |
-| opponent_team_name                | character |
-| opponent_team_abbreviation        | character |
-| opponent_team_display_name        | character |
-| opponent_team_short_display_name  | character |
-| opponent_team_color               | character |
-| opponent_team_alternate_color     | character |
-| opponent_team_logo                | character |
-| opponent_team_score               | integer   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| team_id | integer | Unique team identifier. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_display_name | character | Full team display name. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| team_logo | character | Team logo image URL. |
+| team_home_away | character | Team home away. |
+| team_score | integer | Team's score / final score. |
+| team_winner | logical | TRUE if the team won this game. |
+| assists | integer | Total assists. |
+| blocks | integer | Total blocks. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| fast_break_points | character | Fast-break points scored. |
+| field_goal_pct | numeric | Field goal percentage (0-1). |
+| field_goals_made | integer | Field goals made (2-pt + 3-pt). |
+| field_goals_attempted | integer | Field goal attempts (2-pt + 3-pt). |
+| flagrant_fouls | integer | Total flagrant fouls. |
+| fouls | integer | Personal fouls. |
+| free_throw_pct | numeric | Free throw percentage (0-1). |
+| free_throws_made | integer | Free throws made. |
+| free_throws_attempted | integer | Free throw attempts. |
+| largest_lead | character | Largest lead during the game. |
+| offensive_rebounds | integer | Offensive rebounds. |
+| points_in_paint | character | Points scored in the paint. |
+| steals | integer | Total steals. |
+| team_turnovers | integer | Team turnovers (turnovers credited to the team rather than a player). |
+| technical_fouls | integer | Total technical fouls. |
+| three_point_field_goal_pct | numeric | Three-point field goal percentage (0-1). |
+| three_point_field_goals_made | integer | Three-point field goals made. |
+| three_point_field_goals_attempted | integer | Three-point field goal attempts. |
+| total_rebounds | integer | Total rebounds. |
+| total_technical_fouls | integer | Total technical fouls (player + team). |
+| total_turnovers | integer | Total turnovers (player + team). |
+| turnover_points | character | Turnover points. |
+| turnovers | integer | Total turnovers. |
+| opponent_team_id | integer | Unique identifier for the opponent team. |
+| opponent_team_uid | character | Opponent team uid. |
+| opponent_team_slug | character | Opponent team slug. |
+| opponent_team_location | character | Opponent team city / location. |
+| opponent_team_name | character | Opponent team display name. |
+| opponent_team_abbreviation | character | Opponent team abbreviation. |
+| opponent_team_display_name | character | Opponent team full display name. |
+| opponent_team_short_display_name | character | Opponent team short display name. |
+| opponent_team_color | character | Opponent team primary color (hex). |
+| opponent_team_alternate_color | character | Opponent team alternate color (hex). |
+| opponent_team_logo | character | Opponent team logo URL. |
+| opponent_team_score | integer | Opponent team's score. |
 
 ## See also
 
@@ -107,7 +107,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_team_box(game_id = 401071880))
 #> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:49 UTC
+#> ℹ Data updated: 2026-05-17 14:14:07 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     

@@ -40,33 +40,33 @@ Returns a named list of data frames: Standings
 
 **Standings**
 
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| league_id             | character |
-| season_year           | character |
-| team_id               | character |
-| team_city             | character |
-| team_name             | character |
-| team_abbreviation     | character |
-| team_slug             | character |
-| conference            | character |
-| ist_group             | character |
-| clinch_indicator      | character |
-| clinched_ist_knockout | character |
-| clinched_ist_group    | character |
-| clinched_ist_wildcard | character |
-| ist_wildcard_rank     | character |
-| ist_group_rank        | character |
-| ist_knockout_rank     | character |
-| wins                  | character |
-| losses                | character |
-| pct                   | character |
-| ist_group_gb          | character |
-| ist_wildcard_gb       | character |
-| diff                  | character |
-| pts                   | character |
-| opp_pts               | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| league_id | character | League identifier ('10' = WNBA). |
+| season_year | character | Season year string ('YYYY-YY' format). |
+| team_id | character | Unique team identifier. |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| conference | character | Conference. |
+| ist_group | character | Ist group. |
+| clinch_indicator | character | Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated). |
+| clinched_ist_knockout | character | Clinched ist knockout. |
+| clinched_ist_group | character | Clinched ist group. |
+| clinched_ist_wildcard | character | Clinched ist wildcard. |
+| ist_wildcard_rank | character | League/season rank for ist wildcard. |
+| ist_group_rank | character | League/season rank for ist group. |
+| ist_knockout_rank | character | League/season rank for ist knockout. |
+| wins | character | Total wins. |
+| losses | character | Total losses. |
+| pct | character | Pct. |
+| ist_group_gb | character | Ist group gb. |
+| ist_wildcard_gb | character | Ist wildcard gb. |
+| diff | character | Diff. |
+| pts | character | Points scored. |
+| opp_pts | character | Opponent points. |
 
 ## Details
 

@@ -18,29 +18,29 @@ kp_fanmatch(date)
 
 A data frame with the following columns:
 
-|              |           |
-|--------------|-----------|
-| col_name     | types     |
-| prediction   | character |
-| time_et      | character |
-| location     | character |
-| thrill_score | numeric   |
-| comeback     | numeric   |
-| excitement   | numeric   |
-| road_rk      | numeric   |
-| road_team    | character |
-| home_rk      | numeric   |
-| home_team    | character |
-| win_rk       | numeric   |
-| win_team     | character |
-| win_score    | numeric   |
-| loss_rk      | numeric   |
-| loss_team    | character |
-| loss_score   | numeric   |
-| poss         | numeric   |
-| mvp          | character |
-| event        | character |
-| date         | character |
+|              |           |                            |
+|--------------|-----------|----------------------------|
+| col_name     | types     | description                |
+| prediction   | character | Prediction.                |
+| time_et      | character | Time et.                   |
+| location     | character | Location.                  |
+| thrill_score | numeric   | Thrill score.              |
+| comeback     | numeric   | Comeback.                  |
+| excitement   | numeric   | Excitement.                |
+| road_rk      | numeric   | Road rk.                   |
+| road_team    | character | Road team.                 |
+| home_rk      | numeric   | Home team's rk.            |
+| home_team    | character | Home team's team.          |
+| win_rk       | numeric   | Win rk.                    |
+| win_team     | character | Win team.                  |
+| win_score    | numeric   | Win score.                 |
+| loss_rk      | numeric   | Loss rk.                   |
+| loss_team    | character | Loss team.                 |
+| loss_score   | numeric   | Loss score.                |
+| poss         | numeric   | Poss.                      |
+| mvp          | character | Mvp.                       |
+| event        | character | Event.                     |
+| date         | character | Date in YYYY-MM-DD format. |
 
 ## See also
 

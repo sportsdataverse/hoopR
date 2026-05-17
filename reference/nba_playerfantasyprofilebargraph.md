@@ -45,45 +45,45 @@ Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
 
 **SeasonAvg**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| FAN_DUEL_PTS      | character |
-| NBA_FANTASY_PTS   | character |
-| PTS               | character |
-| REB               | character |
-| AST               | character |
-| FG3M              | character |
-| FT_PCT            | character |
-| STL               | character |
-| BLK               | character |
-| TOV               | character |
-| FG_PCT            | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| FAN_DUEL_PTS      | character |                                       |
+| NBA_FANTASY_PTS   | character |                                       |
+| PTS               | character | Points scored.                        |
+| REB               | character | Total rebounds.                       |
+| AST               | character | Assists.                              |
+| FG3M              | character | Three-point field goals made.         |
+| FT_PCT            | character | Free throw percentage (0-1).          |
+| STL               | character | Steals.                               |
+| BLK               | character | Blocks.                               |
+| TOV               | character | Turnovers.                            |
+| FG_PCT            | character | Field goal percentage (0-1).          |
 
 **LastFiveGamesAvg**
 
-|                   |           |
-|-------------------|-----------|
-| col_name          | types     |
-| PLAYER_ID         | character |
-| PLAYER_NAME       | character |
-| TEAM_ID           | character |
-| TEAM_ABBREVIATION | character |
-| FAN_DUEL_PTS      | character |
-| NBA_FANTASY_PTS   | character |
-| PTS               | character |
-| REB               | character |
-| AST               | character |
-| FG3M              | character |
-| FT_PCT            | character |
-| STL               | character |
-| BLK               | character |
-| TOV               | character |
-| FG_PCT            | character |
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| PLAYER_NAME       | character | Player name.                          |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| FAN_DUEL_PTS      | character |                                       |
+| NBA_FANTASY_PTS   | character |                                       |
+| PTS               | character | Points scored.                        |
+| REB               | character | Total rebounds.                       |
+| AST               | character | Assists.                              |
+| FG3M              | character | Three-point field goals made.         |
+| FT_PCT            | character | Free throw percentage (0-1).          |
+| STL               | character | Steals.                               |
+| BLK               | character | Blocks.                               |
+| TOV               | character | Turnovers.                            |
+| FG_PCT            | character | Field goal percentage (0-1).          |
 
 ## Details
 

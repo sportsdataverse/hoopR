@@ -18,83 +18,83 @@ espn_mbb_standings(year = most_recent_mbb_season())
 
 A standings data frame
 
-|                                   |           |
-|-----------------------------------|-----------|
-| col_name                          | types     |
-| team_id                           | integer   |
-| team                              | character |
-| avgpointsagainst                  | numeric   |
-| avgpointsfor                      | numeric   |
-| gamesbehind                       | numeric   |
-| leaguewinpercent                  | numeric   |
-| losses                            | numeric   |
-| playoffseed                       | numeric   |
-| pointsagainst                     | numeric   |
-| pointsfor                         | numeric   |
-| streak                            | numeric   |
-| winpercent                        | numeric   |
-| wins                              | numeric   |
-| total                             | character |
-| home_avgpointsagainst             | numeric   |
-| home_avgpointsfor                 | numeric   |
-| home_gamesbehind                  | numeric   |
-| home_leaguewinpercent             | numeric   |
-| home_losses                       | numeric   |
-| home_playoffseed                  | numeric   |
-| home_pointsagainst                | numeric   |
-| home_pointsfor                    | numeric   |
-| home_streak                       | numeric   |
-| home_winpercent                   | numeric   |
-| home_wins                         | numeric   |
-| home                              | character |
-| road_avgpointsagainst             | numeric   |
-| road_avgpointsfor                 | numeric   |
-| road_gamesbehind                  | numeric   |
-| road_leaguewinpercent             | numeric   |
-| road_losses                       | numeric   |
-| road_playoffseed                  | numeric   |
-| road_pointsagainst                | numeric   |
-| road_pointsfor                    | numeric   |
-| road_streak                       | numeric   |
-| road_winpercent                   | numeric   |
-| road_wins                         | numeric   |
-| road                              | character |
-| vsaprankedteams_avgpointsagainst  | numeric   |
-| vsaprankedteams_avgpointsfor      | numeric   |
-| vsaprankedteams_gamesbehind       | numeric   |
-| vsaprankedteams_leaguewinpercent  | numeric   |
-| vsaprankedteams_losses            | numeric   |
-| vsaprankedteams_playoffseed       | numeric   |
-| vsaprankedteams_pointsagainst     | numeric   |
-| vsaprankedteams_pointsfor         | numeric   |
-| vsaprankedteams_streak            | numeric   |
-| vsaprankedteams_winpercent        | numeric   |
-| vsaprankedteams_wins              | numeric   |
-| vsaprankedteams                   | character |
-| vsusarankedteams_avgpointsagainst | numeric   |
-| vsusarankedteams_avgpointsfor     | numeric   |
-| vsusarankedteams_gamesbehind      | numeric   |
-| vsusarankedteams_leaguewinpercent | numeric   |
-| vsusarankedteams_losses           | numeric   |
-| vsusarankedteams_playoffseed      | numeric   |
-| vsusarankedteams_pointsagainst    | numeric   |
-| vsusarankedteams_pointsfor        | numeric   |
-| vsusarankedteams_streak           | numeric   |
-| vsusarankedteams_winpercent       | numeric   |
-| vsusarankedteams_wins             | numeric   |
-| vsusarankedteams                  | character |
-| vsconf_avgpointsagainst           | numeric   |
-| vsconf_avgpointsfor               | numeric   |
-| vsconf_gamesbehind                | numeric   |
-| vsconf_leaguewinpercent           | numeric   |
-| vsconf_losses                     | numeric   |
-| vsconf_playoffseed                | numeric   |
-| vsconf_pointsagainst              | numeric   |
-| vsconf_pointsfor                  | numeric   |
-| vsconf_streak                     | numeric   |
-| vsconf_winpercent                 | numeric   |
-| vsconf_wins                       | numeric   |
-| vsconf                            | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | integer | Unique team identifier. |
+| team | character | Team-side label or team identifier. |
+| avgpointsagainst | numeric | Avgpointsagainst. |
+| avgpointsfor | numeric | Avgpointsfor. |
+| gamesbehind | numeric | Gamesbehind. |
+| leaguewinpercent | numeric | Leaguewinpercent. |
+| losses | numeric | Total losses. |
+| playoffseed | numeric | Playoffseed. |
+| pointsagainst | numeric | Pointsagainst. |
+| pointsfor | numeric | Pointsfor. |
+| streak | numeric | Current streak (e.g. 'W3' for three-game win streak). |
+| winpercent | numeric | Winpercent. |
+| wins | numeric | Total wins. |
+| total | character | Total. |
+| home_avgpointsagainst | numeric | Home team's avgpointsagainst. |
+| home_avgpointsfor | numeric | Home team's avgpointsfor. |
+| home_gamesbehind | numeric | Home team's gamesbehind. |
+| home_leaguewinpercent | numeric | Home team's leaguewinpercent. |
+| home_losses | numeric | Home team's losses. |
+| home_playoffseed | numeric | Home team's playoffseed. |
+| home_pointsagainst | numeric | Home team's pointsagainst. |
+| home_pointsfor | numeric | Home team's pointsfor. |
+| home_streak | numeric | Home team's streak. |
+| home_winpercent | numeric | Home team's winpercent. |
+| home_wins | numeric | Home team's wins. |
+| home | character | Home. |
+| road_avgpointsagainst | numeric | Road avgpointsagainst. |
+| road_avgpointsfor | numeric | Road avgpointsfor. |
+| road_gamesbehind | numeric | Road gamesbehind. |
+| road_leaguewinpercent | numeric | Road leaguewinpercent. |
+| road_losses | numeric | Road losses. |
+| road_playoffseed | numeric | Road playoffseed. |
+| road_pointsagainst | numeric | Road pointsagainst. |
+| road_pointsfor | numeric | Road pointsfor. |
+| road_streak | numeric | Road streak. |
+| road_winpercent | numeric | Road winpercent. |
+| road_wins | numeric | Road wins. |
+| road | character | Road. |
+| vsaprankedteams_avgpointsagainst | numeric | Vsaprankedteams avgpointsagainst. |
+| vsaprankedteams_avgpointsfor | numeric | Vsaprankedteams avgpointsfor. |
+| vsaprankedteams_gamesbehind | numeric | Vsaprankedteams gamesbehind. |
+| vsaprankedteams_leaguewinpercent | numeric | Vsaprankedteams leaguewinpercent. |
+| vsaprankedteams_losses | numeric | Vsaprankedteams losses. |
+| vsaprankedteams_playoffseed | numeric | Vsaprankedteams playoffseed. |
+| vsaprankedteams_pointsagainst | numeric | Vsaprankedteams pointsagainst. |
+| vsaprankedteams_pointsfor | numeric | Vsaprankedteams pointsfor. |
+| vsaprankedteams_streak | numeric | Vsaprankedteams streak. |
+| vsaprankedteams_winpercent | numeric | Vsaprankedteams winpercent. |
+| vsaprankedteams_wins | numeric | Vsaprankedteams wins. |
+| vsaprankedteams | character | Vsaprankedteams. |
+| vsusarankedteams_avgpointsagainst | numeric | Vsusarankedteams avgpointsagainst. |
+| vsusarankedteams_avgpointsfor | numeric | Vsusarankedteams avgpointsfor. |
+| vsusarankedteams_gamesbehind | numeric | Vsusarankedteams gamesbehind. |
+| vsusarankedteams_leaguewinpercent | numeric | Vsusarankedteams leaguewinpercent. |
+| vsusarankedteams_losses | numeric | Vsusarankedteams losses. |
+| vsusarankedteams_playoffseed | numeric | Vsusarankedteams playoffseed. |
+| vsusarankedteams_pointsagainst | numeric | Vsusarankedteams pointsagainst. |
+| vsusarankedteams_pointsfor | numeric | Vsusarankedteams pointsfor. |
+| vsusarankedteams_streak | numeric | Vsusarankedteams streak. |
+| vsusarankedteams_winpercent | numeric | Vsusarankedteams winpercent. |
+| vsusarankedteams_wins | numeric | Vsusarankedteams wins. |
+| vsusarankedteams | character | Vsusarankedteams. |
+| vsconf_avgpointsagainst | numeric | Vsconf avgpointsagainst. |
+| vsconf_avgpointsfor | numeric | Vsconf avgpointsfor. |
+| vsconf_gamesbehind | numeric | Vsconf gamesbehind. |
+| vsconf_leaguewinpercent | numeric | Vsconf leaguewinpercent. |
+| vsconf_losses | numeric | Vsconf losses. |
+| vsconf_playoffseed | numeric | Vsconf playoffseed. |
+| vsconf_pointsagainst | numeric | Vsconf pointsagainst. |
+| vsconf_pointsfor | numeric | Vsconf pointsfor. |
+| vsconf_streak | numeric | Vsconf streak. |
+| vsconf_winpercent | numeric | Vsconf winpercent. |
+| vsconf_wins | numeric | Vsconf wins. |
+| vsconf | character | Vsconf. |
 
 ## See also
 
@@ -120,7 +120,7 @@ Other ESPN MBB Functions:
 # \donttest{
 try(espn_mbb_standings(2021))
 #> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.0.0 ──
-#> ℹ Data updated: 2026-05-16 20:08:40 UTC
+#> ℹ Data updated: 2026-05-17 14:13:55 UTC
 #> # A tibble: 348 × 86
 #>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
 #>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>

@@ -49,212 +49,212 @@ TOVLeaders
 
 **GPLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| GP             | character |
-| GP_RANK        | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| GP             | character | Games played.             |
+| GP_RANK        | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **PTSLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| PTS            | character |
-| PTS_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| PTS            | character | Points scored.            |
+| PTS_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **ASTLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| AST            | character |
-| AST_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| AST            | character | Assists.                  |
+| AST_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **STLLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| STL            | character |
-| STL_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| STL            | character | Steals.                   |
+| STL_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **OREBLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| OREB           | character |
-| OREB_RANK      | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| OREB           | character | Offensive rebounds.       |
+| OREB_RANK      | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **DREBLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| DREB           | character |
-| DREB_RANK      | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| DREB           | character | Defensive rebounds.       |
+| DREB_RANK      | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **REBLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| REB            | character |
-| REB_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| REB            | character | Total rebounds.           |
+| REB_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **BLKLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| BLK            | character |
-| BLK_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| BLK            | character | Blocks.                   |
+| BLK_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FGMLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FGM            | character |
-| FGM_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| FGM            | character | Field goals made.         |
+| FGM_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FGALeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FGA            | character |
-| FGA_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| FGA            | character | Field goal attempts.      |
+| FGA_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FG_PCTLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FG_PCT         | character |
-| FG_PCT_RANK    | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| FG_PCT         | character | Field goal percentage (0-1). |
+| FG_PCT_RANK    | character |                              |
+| IS_ACTIVE_FLAG | character |                              |
 
 **TOVLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| TOV            | character |
-| TOV_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| TOV            | character | Turnovers.                |
+| TOV_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FG3MLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FG3M           | character |
-| FG3M_RANK      | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                               |
+|----------------|-----------|-------------------------------|
+| col_name       | types     | description                   |
+| PLAYER_ID      | character | Unique player identifier.     |
+| PLAYER_NAME    | character | Player name.                  |
+| FG3M           | character | Three-point field goals made. |
+| FG3M_RANK      | character |                               |
+| IS_ACTIVE_FLAG | character |                               |
 
 **FG3ALeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FG3A           | character |
-| FG3A_RANK      | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                                  |
+|----------------|-----------|----------------------------------|
+| col_name       | types     | description                      |
+| PLAYER_ID      | character | Unique player identifier.        |
+| PLAYER_NAME    | character | Player name.                     |
+| FG3A           | character | Three-point field goal attempts. |
+| FG3A_RANK      | character |                                  |
+| IS_ACTIVE_FLAG | character |                                  |
 
 **FG3_PCTLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FG3_PCT        | character |
-| FG3_PCT_RANK   | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                                          |
+|----------------|-----------|------------------------------------------|
+| col_name       | types     | description                              |
+| PLAYER_ID      | character | Unique player identifier.                |
+| PLAYER_NAME    | character | Player name.                             |
+| FG3_PCT        | character | Three-point field goal percentage (0-1). |
+| FG3_PCT_RANK   | character |                                          |
+| IS_ACTIVE_FLAG | character |                                          |
 
 **PFLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| PF             | character |
-| PF_RANK        | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| PF             | character | Personal fouls.           |
+| PF_RANK        | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FTMLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FTM            | character |
-| FTM_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| FTM            | character | Free throws made.         |
+| FTM_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FTALeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FTA            | character |
-| FTA_RANK       | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                           |
+|----------------|-----------|---------------------------|
+| col_name       | types     | description               |
+| PLAYER_ID      | character | Unique player identifier. |
+| PLAYER_NAME    | character | Player name.              |
+| FTA            | character | Free throw attempts.      |
+| FTA_RANK       | character |                           |
+| IS_ACTIVE_FLAG | character |                           |
 
 **FT_PCTLeaders**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| FT_PCT         | character |
-| FT_PCT_RANK    | character |
-| IS_ACTIVE_FLAG | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| FT_PCT         | character | Free throw percentage (0-1). |
+| FT_PCT_RANK    | character |                              |
+| IS_ACTIVE_FLAG | character |                              |
 
 ## Details
 

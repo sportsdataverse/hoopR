@@ -56,169 +56,169 @@ away_team_totals_advanced
 
 **home_team_player_advanced**
 
-|                                 |           |
-|---------------------------------|-----------|
-| col_name                        | types     |
-| game_id                         | character |
-| away_team_id                    | integer   |
-| home_team_id                    | integer   |
-| team_id                         | integer   |
-| team_name                       | character |
-| team_city                       | character |
-| team_tricode                    | character |
-| team_slug                       | character |
-| person_id                       | integer   |
-| first_name                      | character |
-| family_name                     | character |
-| name_i                          | character |
-| player_slug                     | character |
-| position                        | character |
-| comment                         | character |
-| jersey_num                      | character |
-| minutes                         | character |
-| estimated_offensive_rating      | numeric   |
-| offensive_rating                | numeric   |
-| estimated_defensive_rating      | numeric   |
-| defensive_rating                | numeric   |
-| estimated_net_rating            | numeric   |
-| net_rating                      | numeric   |
-| assist_percentage               | numeric   |
-| assist_to_turnover              | numeric   |
-| assist_ratio                    | numeric   |
-| offensive_rebound_percentage    | numeric   |
-| defensive_rebound_percentage    | numeric   |
-| rebound_percentage              | numeric   |
-| turnover_ratio                  | numeric   |
-| effective_field_goal_percentage | numeric   |
-| true_shooting_percentage        | numeric   |
-| usage_percentage                | numeric   |
-| estimated_usage_percentage      | numeric   |
-| estimated_pace                  | numeric   |
-| pace                            | numeric   |
-| pace_per40                      | numeric   |
-| possessions                     | numeric   |
-| pie                             | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| estimated_offensive_rating | numeric | Estimated offensive rating (points per 100 possessions estimate). |
+| offensive_rating | numeric | Offensive rating (points per 100 possessions). |
+| estimated_defensive_rating | numeric | Estimated defensive rating (points allowed per 100 possessions estimate). |
+| defensive_rating | numeric | Defensive rating (points allowed per 100 possessions). |
+| estimated_net_rating | numeric | Estimated net rating (off rating - def rating). |
+| net_rating | numeric | Net rating (off rating - def rating). |
+| assist_percentage | numeric | Assist percentage (0-1). |
+| assist_to_turnover | numeric | Assist-to-turnover ratio. |
+| assist_ratio | numeric | Assist ratio (assists per 100 possessions used). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| defensive_rebound_percentage | numeric | Defensive rebound percentage (0-1). |
+| rebound_percentage | numeric | Total rebound percentage (0-1). |
+| turnover_ratio | numeric | Turnover ratio (turnovers per 100 possessions used). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| true_shooting_percentage | numeric | True shooting percentage (0-1). |
+| usage_percentage | numeric | Usage percentage (0-1). |
+| estimated_usage_percentage | numeric | Estimated usage percentage (0-1). |
+| estimated_pace | numeric | Estimated possessions per 48 minutes. |
+| pace | numeric | Possessions per 48 minutes. |
+| pace_per40 | numeric | Pace per40. |
+| possessions | numeric | Possessions used. |
+| pie | numeric | Player Impact Estimate (0-1). |
 
 **away_team_player_advanced**
 
-|                                 |           |
-|---------------------------------|-----------|
-| col_name                        | types     |
-| game_id                         | character |
-| away_team_id                    | integer   |
-| home_team_id                    | integer   |
-| team_id                         | integer   |
-| team_name                       | character |
-| team_city                       | character |
-| team_tricode                    | character |
-| team_slug                       | character |
-| person_id                       | integer   |
-| first_name                      | character |
-| family_name                     | character |
-| name_i                          | character |
-| player_slug                     | character |
-| position                        | character |
-| comment                         | character |
-| jersey_num                      | character |
-| minutes                         | character |
-| estimated_offensive_rating      | numeric   |
-| offensive_rating                | numeric   |
-| estimated_defensive_rating      | numeric   |
-| defensive_rating                | numeric   |
-| estimated_net_rating            | numeric   |
-| net_rating                      | numeric   |
-| assist_percentage               | numeric   |
-| assist_to_turnover              | numeric   |
-| assist_ratio                    | numeric   |
-| offensive_rebound_percentage    | numeric   |
-| defensive_rebound_percentage    | numeric   |
-| rebound_percentage              | numeric   |
-| turnover_ratio                  | numeric   |
-| effective_field_goal_percentage | numeric   |
-| true_shooting_percentage        | numeric   |
-| usage_percentage                | numeric   |
-| estimated_usage_percentage      | numeric   |
-| estimated_pace                  | numeric   |
-| pace                            | numeric   |
-| pace_per40                      | numeric   |
-| possessions                     | numeric   |
-| pie                             | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| estimated_offensive_rating | numeric | Estimated offensive rating (points per 100 possessions estimate). |
+| offensive_rating | numeric | Offensive rating (points per 100 possessions). |
+| estimated_defensive_rating | numeric | Estimated defensive rating (points allowed per 100 possessions estimate). |
+| defensive_rating | numeric | Defensive rating (points allowed per 100 possessions). |
+| estimated_net_rating | numeric | Estimated net rating (off rating - def rating). |
+| net_rating | numeric | Net rating (off rating - def rating). |
+| assist_percentage | numeric | Assist percentage (0-1). |
+| assist_to_turnover | numeric | Assist-to-turnover ratio. |
+| assist_ratio | numeric | Assist ratio (assists per 100 possessions used). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| defensive_rebound_percentage | numeric | Defensive rebound percentage (0-1). |
+| rebound_percentage | numeric | Total rebound percentage (0-1). |
+| turnover_ratio | numeric | Turnover ratio (turnovers per 100 possessions used). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| true_shooting_percentage | numeric | True shooting percentage (0-1). |
+| usage_percentage | numeric | Usage percentage (0-1). |
+| estimated_usage_percentage | numeric | Estimated usage percentage (0-1). |
+| estimated_pace | numeric | Estimated possessions per 48 minutes. |
+| pace | numeric | Possessions per 48 minutes. |
+| pace_per40 | numeric | Pace per40. |
+| possessions | numeric | Possessions used. |
+| pie | numeric | Player Impact Estimate (0-1). |
 
 **home_team_totals_advanced**
 
-|                                    |           |
-|------------------------------------|-----------|
-| col_name                           | types     |
-| game_id                            | character |
-| away_team_id                       | integer   |
-| home_team_id                       | integer   |
-| team_id                            | integer   |
-| team_name                          | character |
-| team_city                          | character |
-| team_tricode                       | character |
-| team_slug                          | character |
-| minutes                            | character |
-| estimated_offensive_rating         | numeric   |
-| offensive_rating                   | numeric   |
-| estimated_defensive_rating         | numeric   |
-| defensive_rating                   | numeric   |
-| estimated_net_rating               | numeric   |
-| net_rating                         | numeric   |
-| assist_percentage                  | numeric   |
-| assist_to_turnover                 | numeric   |
-| assist_ratio                       | numeric   |
-| offensive_rebound_percentage       | numeric   |
-| defensive_rebound_percentage       | numeric   |
-| rebound_percentage                 | numeric   |
-| estimated_team_turnover_percentage | numeric   |
-| turnover_ratio                     | numeric   |
-| effective_field_goal_percentage    | numeric   |
-| true_shooting_percentage           | numeric   |
-| usage_percentage                   | numeric   |
-| estimated_usage_percentage         | numeric   |
-| estimated_pace                     | numeric   |
-| pace                               | numeric   |
-| pace_per40                         | numeric   |
-| possessions                        | numeric   |
-| pie                                | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| estimated_offensive_rating | numeric | Estimated offensive rating (points per 100 possessions estimate). |
+| offensive_rating | numeric | Offensive rating (points per 100 possessions). |
+| estimated_defensive_rating | numeric | Estimated defensive rating (points allowed per 100 possessions estimate). |
+| defensive_rating | numeric | Defensive rating (points allowed per 100 possessions). |
+| estimated_net_rating | numeric | Estimated net rating (off rating - def rating). |
+| net_rating | numeric | Net rating (off rating - def rating). |
+| assist_percentage | numeric | Assist percentage (0-1). |
+| assist_to_turnover | numeric | Assist-to-turnover ratio. |
+| assist_ratio | numeric | Assist ratio (assists per 100 possessions used). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| defensive_rebound_percentage | numeric | Defensive rebound percentage (0-1). |
+| rebound_percentage | numeric | Total rebound percentage (0-1). |
+| estimated_team_turnover_percentage | numeric | Estimated team turnover percentage (0-1). |
+| turnover_ratio | numeric | Turnover ratio (turnovers per 100 possessions used). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| true_shooting_percentage | numeric | True shooting percentage (0-1). |
+| usage_percentage | numeric | Usage percentage (0-1). |
+| estimated_usage_percentage | numeric | Estimated usage percentage (0-1). |
+| estimated_pace | numeric | Estimated possessions per 48 minutes. |
+| pace | numeric | Possessions per 48 minutes. |
+| pace_per40 | numeric | Pace per40. |
+| possessions | numeric | Possessions used. |
+| pie | numeric | Player Impact Estimate (0-1). |
 
 **away_team_totals_advanced**
 
-|                                    |           |
-|------------------------------------|-----------|
-| col_name                           | types     |
-| game_id                            | character |
-| away_team_id                       | integer   |
-| home_team_id                       | integer   |
-| team_id                            | integer   |
-| team_name                          | character |
-| team_city                          | character |
-| team_tricode                       | character |
-| team_slug                          | character |
-| minutes                            | character |
-| estimated_offensive_rating         | numeric   |
-| offensive_rating                   | numeric   |
-| estimated_defensive_rating         | numeric   |
-| defensive_rating                   | numeric   |
-| estimated_net_rating               | numeric   |
-| net_rating                         | numeric   |
-| assist_percentage                  | numeric   |
-| assist_to_turnover                 | numeric   |
-| assist_ratio                       | numeric   |
-| offensive_rebound_percentage       | numeric   |
-| defensive_rebound_percentage       | numeric   |
-| rebound_percentage                 | numeric   |
-| estimated_team_turnover_percentage | numeric   |
-| turnover_ratio                     | numeric   |
-| effective_field_goal_percentage    | numeric   |
-| true_shooting_percentage           | numeric   |
-| usage_percentage                   | numeric   |
-| estimated_usage_percentage         | numeric   |
-| estimated_pace                     | numeric   |
-| pace                               | numeric   |
-| pace_per40                         | numeric   |
-| possessions                        | numeric   |
-| pie                                | numeric   |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| estimated_offensive_rating | numeric | Estimated offensive rating (points per 100 possessions estimate). |
+| offensive_rating | numeric | Offensive rating (points per 100 possessions). |
+| estimated_defensive_rating | numeric | Estimated defensive rating (points allowed per 100 possessions estimate). |
+| defensive_rating | numeric | Defensive rating (points allowed per 100 possessions). |
+| estimated_net_rating | numeric | Estimated net rating (off rating - def rating). |
+| net_rating | numeric | Net rating (off rating - def rating). |
+| assist_percentage | numeric | Assist percentage (0-1). |
+| assist_to_turnover | numeric | Assist-to-turnover ratio. |
+| assist_ratio | numeric | Assist ratio (assists per 100 possessions used). |
+| offensive_rebound_percentage | numeric | Offensive rebound percentage (0-1). |
+| defensive_rebound_percentage | numeric | Defensive rebound percentage (0-1). |
+| rebound_percentage | numeric | Total rebound percentage (0-1). |
+| estimated_team_turnover_percentage | numeric | Estimated team turnover percentage (0-1). |
+| turnover_ratio | numeric | Turnover ratio (turnovers per 100 possessions used). |
+| effective_field_goal_percentage | numeric | Effective field goal percentage (0-1). |
+| true_shooting_percentage | numeric | True shooting percentage (0-1). |
+| usage_percentage | numeric | Usage percentage (0-1). |
+| estimated_usage_percentage | numeric | Estimated usage percentage (0-1). |
+| estimated_pace | numeric | Estimated possessions per 48 minutes. |
+| pace | numeric | Possessions per 48 minutes. |
+| pace_per40 | numeric | Pace per40. |
+| possessions | numeric | Possessions used. |
+| pie | numeric | Player Impact Estimate (0-1). |
 
 ## Details
 

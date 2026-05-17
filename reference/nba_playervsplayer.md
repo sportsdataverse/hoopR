@@ -138,201 +138,201 @@ VsPlayerInfo
 
 **Overall**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GROUP_SET       | character |
-| GROUP_VALUE     | character |
-| PLAYER_ID       | character |
-| PLAYER_NAME     | character |
-| GP              | character |
-| W               | character |
-| L               | character |
-| W_PCT           | character |
-| MIN             | character |
-| FGM             | character |
-| FGA             | character |
-| FG_PCT          | character |
-| FG3M            | character |
-| FG3A            | character |
-| FG3_PCT         | character |
-| FTM             | character |
-| FTA             | character |
-| FT_PCT          | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| AST             | character |
-| TOV             | character |
-| STL             | character |
-| BLK             | character |
-| BLKA            | character |
-| PF              | character |
-| PFD             | character |
-| PTS             | character |
-| PLUS_MINUS      | character |
-| NBA_FANTASY_PTS | character |
+|                 |           |                                               |
+|-----------------|-----------|-----------------------------------------------|
+| col_name        | types     | description                                   |
+| GROUP_SET       | character |                                               |
+| GROUP_VALUE     | character |                                               |
+| PLAYER_ID       | character | Unique player identifier.                     |
+| PLAYER_NAME     | character | Player name.                                  |
+| GP              | character | Games played.                                 |
+| W               | character | Wins.                                         |
+| L               | character | Losses.                                       |
+| W_PCT           | character |                                               |
+| MIN             | character | Minutes played.                               |
+| FGM             | character | Field goals made.                             |
+| FGA             | character | Field goal attempts.                          |
+| FG_PCT          | character | Field goal percentage (0-1).                  |
+| FG3M            | character | Three-point field goals made.                 |
+| FG3A            | character | Three-point field goal attempts.              |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).      |
+| FTM             | character | Free throws made.                             |
+| FTA             | character | Free throw attempts.                          |
+| FT_PCT          | character | Free throw percentage (0-1).                  |
+| OREB            | character | Offensive rebounds.                           |
+| DREB            | character | Defensive rebounds.                           |
+| REB             | character | Total rebounds.                               |
+| AST             | character | Assists.                                      |
+| TOV             | character | Turnovers.                                    |
+| STL             | character | Steals.                                       |
+| BLK             | character | Blocks.                                       |
+| BLKA            | character |                                               |
+| PF              | character | Personal fouls.                               |
+| PFD             | character |                                               |
+| PTS             | character | Points scored.                                |
+| PLUS_MINUS      | character | Plus/minus point differential while on court. |
+| NBA_FANTASY_PTS | character |                                               |
 
 **OnOffCourt**
 
-|                 |           |
-|-----------------|-----------|
-| col_name        | types     |
-| GROUP_SET       | character |
-| PLAYER_ID       | character |
-| PLAYER_NAME     | character |
-| VS_PLAYER_ID    | character |
-| VS_PLAYER_NAME  | character |
-| COURT_STATUS    | character |
-| GP              | character |
-| W               | character |
-| L               | character |
-| W_PCT           | character |
-| MIN             | character |
-| FGM             | character |
-| FGA             | character |
-| FG_PCT          | character |
-| FG3M            | character |
-| FG3A            | character |
-| FG3_PCT         | character |
-| FTM             | character |
-| FTA             | character |
-| FT_PCT          | character |
-| OREB            | character |
-| DREB            | character |
-| REB             | character |
-| AST             | character |
-| TOV             | character |
-| STL             | character |
-| BLK             | character |
-| BLKA            | character |
-| PF              | character |
-| PFD             | character |
-| PTS             | character |
-| PLUS_MINUS      | character |
-| NBA_FANTASY_PTS | character |
+|                 |           |                                               |
+|-----------------|-----------|-----------------------------------------------|
+| col_name        | types     | description                                   |
+| GROUP_SET       | character |                                               |
+| PLAYER_ID       | character | Unique player identifier.                     |
+| PLAYER_NAME     | character | Player name.                                  |
+| VS_PLAYER_ID    | character |                                               |
+| VS_PLAYER_NAME  | character |                                               |
+| COURT_STATUS    | character |                                               |
+| GP              | character | Games played.                                 |
+| W               | character | Wins.                                         |
+| L               | character | Losses.                                       |
+| W_PCT           | character |                                               |
+| MIN             | character | Minutes played.                               |
+| FGM             | character | Field goals made.                             |
+| FGA             | character | Field goal attempts.                          |
+| FG_PCT          | character | Field goal percentage (0-1).                  |
+| FG3M            | character | Three-point field goals made.                 |
+| FG3A            | character | Three-point field goal attempts.              |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).      |
+| FTM             | character | Free throws made.                             |
+| FTA             | character | Free throw attempts.                          |
+| FT_PCT          | character | Free throw percentage (0-1).                  |
+| OREB            | character | Offensive rebounds.                           |
+| DREB            | character | Defensive rebounds.                           |
+| REB             | character | Total rebounds.                               |
+| AST             | character | Assists.                                      |
+| TOV             | character | Turnovers.                                    |
+| STL             | character | Steals.                                       |
+| BLK             | character | Blocks.                                       |
+| BLKA            | character |                                               |
+| PF              | character | Personal fouls.                               |
+| PFD             | character |                                               |
+| PTS             | character | Points scored.                                |
+| PLUS_MINUS      | character | Plus/minus point differential while on court. |
+| NBA_FANTASY_PTS | character |                                               |
 
 **ShotDistanceOverall**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| GROUP_SET   | character |
-| GROUP_VALUE | character |
-| PLAYER_ID   | character |
-| PLAYER_NAME | character |
-| FGM         | character |
-| FGA         | character |
-| FG_PCT      | character |
+|             |           |                              |
+|-------------|-----------|------------------------------|
+| col_name    | types     | description                  |
+| GROUP_SET   | character |                              |
+| GROUP_VALUE | character |                              |
+| PLAYER_ID   | character | Unique player identifier.    |
+| PLAYER_NAME | character | Player name.                 |
+| FGM         | character | Field goals made.            |
+| FGA         | character | Field goal attempts.         |
+| FG_PCT      | character | Field goal percentage (0-1). |
 
 **ShotDistanceOnCourt**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| GROUP_SET      | character |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| VS_PLAYER_ID   | character |
-| VS_PLAYER_NAME | character |
-| COURT_STATUS   | character |
-| GROUP_VALUE    | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| GROUP_SET      | character |                              |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| VS_PLAYER_ID   | character |                              |
+| VS_PLAYER_NAME | character |                              |
+| COURT_STATUS   | character |                              |
+| GROUP_VALUE    | character |                              |
+| FGM            | character | Field goals made.            |
+| FGA            | character | Field goal attempts.         |
+| FG_PCT         | character | Field goal percentage (0-1). |
 
 **ShotDistanceOffCourt**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| GROUP_SET      | character |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| VS_PLAYER_ID   | character |
-| VS_PLAYER_NAME | character |
-| COURT_STATUS   | character |
-| GROUP_VALUE    | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| GROUP_SET      | character |                              |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| VS_PLAYER_ID   | character |                              |
+| VS_PLAYER_NAME | character |                              |
+| COURT_STATUS   | character |                              |
+| GROUP_VALUE    | character |                              |
+| FGM            | character | Field goals made.            |
+| FGA            | character | Field goal attempts.         |
+| FG_PCT         | character | Field goal percentage (0-1). |
 
 **ShotAreaOverall**
 
-|             |           |
-|-------------|-----------|
-| col_name    | types     |
-| GROUP_SET   | character |
-| GROUP_VALUE | character |
-| PLAYER_ID   | character |
-| PLAYER_NAME | character |
-| FGM         | character |
-| FGA         | character |
-| FG_PCT      | character |
+|             |           |                              |
+|-------------|-----------|------------------------------|
+| col_name    | types     | description                  |
+| GROUP_SET   | character |                              |
+| GROUP_VALUE | character |                              |
+| PLAYER_ID   | character | Unique player identifier.    |
+| PLAYER_NAME | character | Player name.                 |
+| FGM         | character | Field goals made.            |
+| FGA         | character | Field goal attempts.         |
+| FG_PCT      | character | Field goal percentage (0-1). |
 
 **ShotAreaOnCourt**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| GROUP_SET      | character |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| VS_PLAYER_ID   | character |
-| VS_PLAYER_NAME | character |
-| COURT_STATUS   | character |
-| GROUP_VALUE    | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| GROUP_SET      | character |                              |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| VS_PLAYER_ID   | character |                              |
+| VS_PLAYER_NAME | character |                              |
+| COURT_STATUS   | character |                              |
+| GROUP_VALUE    | character |                              |
+| FGM            | character | Field goals made.            |
+| FGA            | character | Field goal attempts.         |
+| FG_PCT         | character | Field goal percentage (0-1). |
 
 **ShotAreaOffCourt**
 
-|                |           |
-|----------------|-----------|
-| col_name       | types     |
-| GROUP_SET      | character |
-| PLAYER_ID      | character |
-| PLAYER_NAME    | character |
-| VS_PLAYER_ID   | character |
-| VS_PLAYER_NAME | character |
-| COURT_STATUS   | character |
-| GROUP_VALUE    | character |
-| FGM            | character |
-| FGA            | character |
-| FG_PCT         | character |
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| GROUP_SET      | character |                              |
+| PLAYER_ID      | character | Unique player identifier.    |
+| PLAYER_NAME    | character | Player name.                 |
+| VS_PLAYER_ID   | character |                              |
+| VS_PLAYER_NAME | character |                              |
+| COURT_STATUS   | character |                              |
+| GROUP_VALUE    | character |                              |
+| FGM            | character | Field goals made.            |
+| FGA            | character | Field goal attempts.         |
+| FG_PCT         | character | Field goal percentage (0-1). |
 
 **PlayerInfo**
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| PERSON_ID                | character |
-| FIRST_NAME               | character |
-| LAST_NAME                | character |
-| DISPLAY_FIRST_LAST       | character |
-| DISPLAY_LAST_COMMA_FIRST | character |
-| DISPLAY_FI_LAST          | character |
-| BIRTHDATE                | character |
-| SCHOOL                   | character |
-| COUNTRY                  | character |
-| LAST_AFFILIATION         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| DISPLAY_FIRST_LAST | character |  |
+| DISPLAY_LAST_COMMA_FIRST | character |  |
+| DISPLAY_FI_LAST | character |  |
+| BIRTHDATE | character |  |
+| SCHOOL | character | Player's school / college (when distinct from 'college'). |
+| COUNTRY | character | Country (full name or code). |
+| LAST_AFFILIATION | character |  |
 
 **VsPlayerInfo**
 
-|                          |           |
-|--------------------------|-----------|
-| col_name                 | types     |
-| PERSON_ID                | character |
-| FIRST_NAME               | character |
-| LAST_NAME                | character |
-| DISPLAY_FIRST_LAST       | character |
-| DISPLAY_LAST_COMMA_FIRST | character |
-| DISPLAY_FI_LAST          | character |
-| BIRTHDATE                | character |
-| SCHOOL                   | character |
-| COUNTRY                  | character |
-| LAST_AFFILIATION         | character |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| PERSON_ID | character | Unique player identifier (V3 endpoints). |
+| FIRST_NAME | character | Player's first name. |
+| LAST_NAME | character | Player's last name. |
+| DISPLAY_FIRST_LAST | character |  |
+| DISPLAY_LAST_COMMA_FIRST | character |  |
+| DISPLAY_FI_LAST | character |  |
+| BIRTHDATE | character |  |
+| SCHOOL | character | Player's school / college (when distinct from 'college'). |
+| COUNTRY | character | Country (full name or code). |
+| LAST_AFFILIATION | character |  |
 
 ## Details
 
