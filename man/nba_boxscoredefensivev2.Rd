@@ -33,101 +33,101 @@ nba_boxscoredefensivev2(
 Returns a named list of data frames: home_team_player_defensive, away_team_player_defensive,
 home_team_totals_defensive, away_team_totals_defensive
 
-\strong{home_team_player_defensive}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   matchup_minutes \tab character \cr
-   partial_possessions \tab numeric \cr
-   switches_on \tab integer \cr
-   player_points \tab integer \cr
-   defensive_rebounds \tab integer \cr
-   matchup_assists \tab integer \cr
-   matchup_turnovers \tab integer \cr
-   steals \tab integer \cr
-   blocks \tab integer \cr
-   matchup_field_goals_made \tab integer \cr
-   matchup_field_goals_attempted \tab integer \cr
-   matchup_field_goal_percentage \tab numeric \cr
-   matchup_three_pointers_made \tab integer \cr
-   matchup_three_pointers_attempted \tab integer \cr
-   matchup_three_pointer_percentage \tab numeric \cr
+\strong{home_team_player_defensive}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   matchup_minutes \tab character \tab Matchup minutes. \cr
+   partial_possessions \tab numeric \tab Partial possessions. \cr
+   switches_on \tab integer \tab Switches on. \cr
+   player_points \tab integer \tab Player points. \cr
+   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
+   matchup_assists \tab integer \tab Matchup assists. \cr
+   matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+   steals \tab integer \tab Total steals. \cr
+   blocks \tab integer \tab Total blocks. \cr
+   matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+   matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+   matchup_field_goal_percentage \tab numeric \tab Matchup field goal percentage (0-1 decimal). \cr
+   matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+   matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+   matchup_three_pointer_percentage \tab numeric \tab Matchup three pointer percentage (0-1 decimal). \cr
 }
 
 
-\strong{away_team_player_defensive}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   matchup_minutes \tab character \cr
-   partial_possessions \tab numeric \cr
-   switches_on \tab integer \cr
-   player_points \tab integer \cr
-   defensive_rebounds \tab integer \cr
-   matchup_assists \tab integer \cr
-   matchup_turnovers \tab integer \cr
-   steals \tab integer \cr
-   blocks \tab integer \cr
-   matchup_field_goals_made \tab integer \cr
-   matchup_field_goals_attempted \tab integer \cr
-   matchup_field_goal_percentage \tab numeric \cr
-   matchup_three_pointers_made \tab integer \cr
-   matchup_three_pointers_attempted \tab integer \cr
-   matchup_three_pointer_percentage \tab numeric \cr
+\strong{away_team_player_defensive}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   matchup_minutes \tab character \tab Matchup minutes. \cr
+   partial_possessions \tab numeric \tab Partial possessions. \cr
+   switches_on \tab integer \tab Switches on. \cr
+   player_points \tab integer \tab Player points. \cr
+   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
+   matchup_assists \tab integer \tab Matchup assists. \cr
+   matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+   steals \tab integer \tab Total steals. \cr
+   blocks \tab integer \tab Total blocks. \cr
+   matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+   matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+   matchup_field_goal_percentage \tab numeric \tab Matchup field goal percentage (0-1 decimal). \cr
+   matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+   matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+   matchup_three_pointer_percentage \tab numeric \tab Matchup three pointer percentage (0-1 decimal). \cr
 }
 
 
-\strong{home_team_totals_defensive}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
+\strong{home_team_totals_defensive}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
 }
 
 
-\strong{away_team_totals_defensive}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
+\strong{away_team_totals_defensive}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
 }
 }
 \description{

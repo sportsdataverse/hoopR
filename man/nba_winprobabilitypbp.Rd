@@ -16,36 +16,36 @@ nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second", ...)
 \value{
 Return a named list of data frames: WinProbPBP, GameInfo
 
-\strong{WinProbPBP}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   EVENT_NUM \tab character \cr
-   HOME_PCT \tab character \cr
-   VISITOR_PCT \tab character \cr
-   HOME_PTS \tab character \cr
-   VISITOR_PTS \tab character \cr
-   HOME_SCORE_MARGIN \tab character \cr
-   PERIOD \tab character \cr
-   SECONDS_REMAINING \tab character \cr
-   HOME_POSS_IND \tab character \cr
-   HOME_G \tab character \cr
-   DESCRIPTION \tab character \cr
-   LOCATION \tab character \cr
-   PCTIMESTRING \tab character \cr
-   ISVISIBLE \tab character \cr
+\strong{WinProbPBP}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   EVENT_NUM \tab character \tab Sequential event number within the game (V2 PBP). \cr
+   HOME_PCT \tab character \tab  \cr
+   VISITOR_PCT \tab character \tab  \cr
+   HOME_PTS \tab character \tab  \cr
+   VISITOR_PTS \tab character \tab  \cr
+   HOME_SCORE_MARGIN \tab character \tab  \cr
+   PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
+   HOME_POSS_IND \tab character \tab  \cr
+   HOME_G \tab character \tab  \cr
+   DESCRIPTION \tab character \tab Long-form description text. \cr
+   LOCATION \tab character \tab Location. \cr
+   PCTIMESTRING \tab character \tab  \cr
+   ISVISIBLE \tab character \tab  \cr
 }
 
 
-\strong{GameInfo}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   GAME_DATE \tab character \cr
-   HOME_TEAM_ID \tab character \cr
-   HOME_TEAM_ABR \tab character \cr
-   HOME_TEAM_PTS \tab character \cr
-   VISITOR_TEAM_ID \tab character \cr
-   VISITOR_TEAM_ABR \tab character \cr
-   VISITOR_TEAM_PTS \tab character \cr
+\strong{GameInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   HOME_TEAM_ABR \tab character \tab  \cr
+   HOME_TEAM_PTS \tab character \tab  \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   VISITOR_TEAM_ABR \tab character \tab  \cr
+   VISITOR_TEAM_PTS \tab character \tab  \cr
 }
 }
 \description{

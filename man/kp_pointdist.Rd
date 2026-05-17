@@ -12,24 +12,24 @@ kp_pointdist(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of team points distributions\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   off_ft_pct \tab numeric \cr
-   off_ft_pct_rk \tab numeric \cr
-   off_fg_2_pct \tab numeric \cr
-   off_fg_2_pct_rk \tab numeric \cr
-   off_fg_3_pct \tab numeric \cr
-   off_fg_3_pct_rk \tab numeric \cr
-   def_ft_pct \tab numeric \cr
-   def_ft_pct_rk \tab numeric \cr
-   def_fg_2_pct \tab numeric \cr
-   def_fg_2_pct_rk \tab numeric \cr
-   def_fg_3_pct \tab numeric \cr
-   def_fg_3_pct_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
-   year \tab numeric \cr
+Returns a tibble of team points distributions\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   off_ft_pct \tab numeric \tab Off free throws percentage (0-1 decimal). \cr
+   off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+   off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+   off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+   off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+   off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+   def_ft_pct \tab numeric \tab Def free throws percentage (0-1 decimal). \cr
+   def_ft_pct_rk \tab numeric \tab Def ft pct rk. \cr
+   def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+   def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+   def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+   def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

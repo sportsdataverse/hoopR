@@ -18,37 +18,37 @@ nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS", ...)
 \value{
 Returns a named list of data frames: AwayTeam, HomeTeam
 
-\strong{AwayTeam}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_CITY \tab character \cr
-   TEAM_NAME \tab character \cr
-   PERSON_ID \tab character \cr
-   PLAYER_FIRST \tab character \cr
-   PLAYER_LAST \tab character \cr
-   IN_TIME_REAL \tab character \cr
-   OUT_TIME_REAL \tab character \cr
-   PLAYER_PTS \tab character \cr
-   PT_DIFF \tab character \cr
-   USG_PCT \tab character \cr
+\strong{AwayTeam}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   PLAYER_FIRST \tab character \tab  \cr
+   PLAYER_LAST \tab character \tab  \cr
+   IN_TIME_REAL \tab character \tab  \cr
+   OUT_TIME_REAL \tab character \tab  \cr
+   PLAYER_PTS \tab character \tab  \cr
+   PT_DIFF \tab character \tab  \cr
+   USG_PCT \tab character \tab Usage percentage (0-1). \cr
 }
 
 
-\strong{HomeTeam}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_CITY \tab character \cr
-   TEAM_NAME \tab character \cr
-   PERSON_ID \tab character \cr
-   PLAYER_FIRST \tab character \cr
-   PLAYER_LAST \tab character \cr
-   IN_TIME_REAL \tab character \cr
-   OUT_TIME_REAL \tab character \cr
-   PLAYER_PTS \tab character \cr
-   PT_DIFF \tab character \cr
-   USG_PCT \tab character \cr
+\strong{HomeTeam}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   PLAYER_FIRST \tab character \tab  \cr
+   PLAYER_LAST \tab character \tab  \cr
+   IN_TIME_REAL \tab character \tab  \cr
+   OUT_TIME_REAL \tab character \tab  \cr
+   PLAYER_PTS \tab character \tab  \cr
+   PT_DIFF \tab character \tab  \cr
+   USG_PCT \tab character \tab Usage percentage (0-1). \cr
 }
 }
 \description{

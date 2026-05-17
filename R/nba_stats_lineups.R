@@ -30,28 +30,28 @@ NULL
 #'    **FantasyWidgetResult**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |PLAYER_POSITION   |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |GP                |character |
-#'    |MIN               |character |
-#'    |FAN_DUEL_PTS      |character |
-#'    |NBA_FANTASY_PTS   |character |
-#'    |PTS               |character |
-#'    |REB               |character |
-#'    |AST               |character |
-#'    |BLK               |character |
-#'    |STL               |character |
-#'    |TOV               |character |
-#'    |FG3M              |character |
-#'    |FGA               |character |
-#'    |FG_PCT            |character |
-#'    |FTA               |character |
-#'    |FT_PCT            |character |
+#'    |col_name          |types     |description                           |
+#'    |:-----------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.             |
+#'    |PLAYER_NAME       |character |Player name.                          |
+#'    |PLAYER_POSITION   |character |                                      |
+#'    |TEAM_ID           |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |GP                |character |Games played.                         |
+#'    |MIN               |character |Minutes played.                       |
+#'    |FAN_DUEL_PTS      |character |                                      |
+#'    |NBA_FANTASY_PTS   |character |                                      |
+#'    |PTS               |character |Points scored.                        |
+#'    |REB               |character |Total rebounds.                       |
+#'    |AST               |character |Assists.                              |
+#'    |BLK               |character |Blocks.                               |
+#'    |STL               |character |Steals.                               |
+#'    |TOV               |character |Turnovers.                            |
+#'    |FG3M              |character |Three-point field goals made.         |
+#'    |FGA               |character |Field goal attempts.                  |
+#'    |FG_PCT            |character |Field goal percentage (0-1).          |
+#'    |FTA               |character |Free throw attempts.                  |
+#'    |FT_PCT            |character |Free throw percentage (0-1).          |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -175,65 +175,65 @@ NULL
 #'  **Lineups**
 #'
 #'
-#'  |col_name          |types     |
-#'  |:-----------------|:---------|
-#'  |GROUP_SET         |character |
-#'  |GROUP_ID          |character |
-#'  |GROUP_NAME        |character |
-#'  |TEAM_ID           |character |
-#'  |TEAM_ABBREVIATION |character |
-#'  |GP                |character |
-#'  |W                 |character |
-#'  |L                 |character |
-#'  |W_PCT             |character |
-#'  |MIN               |character |
-#'  |FGM               |character |
-#'  |FGA               |character |
-#'  |FG_PCT            |character |
-#'  |FG3M              |character |
-#'  |FG3A              |character |
-#'  |FG3_PCT           |character |
-#'  |FTM               |character |
-#'  |FTA               |character |
-#'  |FT_PCT            |character |
-#'  |OREB              |character |
-#'  |DREB              |character |
-#'  |REB               |character |
-#'  |AST               |character |
-#'  |TOV               |character |
-#'  |STL               |character |
-#'  |BLK               |character |
-#'  |BLKA              |character |
-#'  |PF                |character |
-#'  |PFD               |character |
-#'  |PTS               |character |
-#'  |PLUS_MINUS        |character |
-#'  |GP_RANK           |character |
-#'  |W_RANK            |character |
-#'  |L_RANK            |character |
-#'  |W_PCT_RANK        |character |
-#'  |MIN_RANK          |character |
-#'  |FGM_RANK          |character |
-#'  |FGA_RANK          |character |
-#'  |FG_PCT_RANK       |character |
-#'  |FG3M_RANK         |character |
-#'  |FG3A_RANK         |character |
-#'  |FG3_PCT_RANK      |character |
-#'  |FTM_RANK          |character |
-#'  |FTA_RANK          |character |
-#'  |FT_PCT_RANK       |character |
-#'  |OREB_RANK         |character |
-#'  |DREB_RANK         |character |
-#'  |REB_RANK          |character |
-#'  |AST_RANK          |character |
-#'  |TOV_RANK          |character |
-#'  |STL_RANK          |character |
-#'  |BLK_RANK          |character |
-#'  |BLKA_RANK         |character |
-#'  |PF_RANK           |character |
-#'  |PFD_RANK          |character |
-#'  |PTS_RANK          |character |
-#'  |PLUS_MINUS_RANK   |character |
+#'  |col_name          |types     |description                                   |
+#'  |:-----------------|:---------|:---------------------------------------------|
+#'  |GROUP_SET         |character |                                              |
+#'  |GROUP_ID          |character |Group identifier (e.g. conference group_id).  |
+#'  |GROUP_NAME        |character |Group name.                                   |
+#'  |TEAM_ID           |character |Unique team identifier.                       |
+#'  |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').         |
+#'  |GP                |character |Games played.                                 |
+#'  |W                 |character |Wins.                                         |
+#'  |L                 |character |Losses.                                       |
+#'  |W_PCT             |character |                                              |
+#'  |MIN               |character |Minutes played.                               |
+#'  |FGM               |character |Field goals made.                             |
+#'  |FGA               |character |Field goal attempts.                          |
+#'  |FG_PCT            |character |Field goal percentage (0-1).                  |
+#'  |FG3M              |character |Three-point field goals made.                 |
+#'  |FG3A              |character |Three-point field goal attempts.              |
+#'  |FG3_PCT           |character |Three-point field goal percentage (0-1).      |
+#'  |FTM               |character |Free throws made.                             |
+#'  |FTA               |character |Free throw attempts.                          |
+#'  |FT_PCT            |character |Free throw percentage (0-1).                  |
+#'  |OREB              |character |Offensive rebounds.                           |
+#'  |DREB              |character |Defensive rebounds.                           |
+#'  |REB               |character |Total rebounds.                               |
+#'  |AST               |character |Assists.                                      |
+#'  |TOV               |character |Turnovers.                                    |
+#'  |STL               |character |Steals.                                       |
+#'  |BLK               |character |Blocks.                                       |
+#'  |BLKA              |character |                                              |
+#'  |PF                |character |Personal fouls.                               |
+#'  |PFD               |character |                                              |
+#'  |PTS               |character |Points scored.                                |
+#'  |PLUS_MINUS        |character |Plus/minus point differential while on court. |
+#'  |GP_RANK           |character |                                              |
+#'  |W_RANK            |character |                                              |
+#'  |L_RANK            |character |                                              |
+#'  |W_PCT_RANK        |character |                                              |
+#'  |MIN_RANK          |character |                                              |
+#'  |FGM_RANK          |character |                                              |
+#'  |FGA_RANK          |character |                                              |
+#'  |FG_PCT_RANK       |character |                                              |
+#'  |FG3M_RANK         |character |                                              |
+#'  |FG3A_RANK         |character |                                              |
+#'  |FG3_PCT_RANK      |character |                                              |
+#'  |FTM_RANK          |character |                                              |
+#'  |FTA_RANK          |character |                                              |
+#'  |FT_PCT_RANK       |character |                                              |
+#'  |OREB_RANK         |character |                                              |
+#'  |DREB_RANK         |character |                                              |
+#'  |REB_RANK          |character |                                              |
+#'  |AST_RANK          |character |                                              |
+#'  |TOV_RANK          |character |                                              |
+#'  |STL_RANK          |character |                                              |
+#'  |BLK_RANK          |character |                                              |
+#'  |BLKA_RANK         |character |                                              |
+#'  |PF_RANK           |character |                                              |
+#'  |PFD_RANK          |character |                                              |
+#'  |PTS_RANK          |character |                                              |
+#'  |PLUS_MINUS_RANK   |character |                                              |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -374,32 +374,32 @@ NULL
 #'    **LeagueLineupViz**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |GROUP_ID          |character |
-#'    |GROUP_NAME        |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |MIN               |character |
-#'    |OFF_RATING        |character |
-#'    |DEF_RATING        |character |
-#'    |NET_RATING        |character |
-#'    |PACE              |character |
-#'    |TS_PCT            |character |
-#'    |FTA_RATE          |character |
-#'    |TM_AST_PCT        |character |
-#'    |PCT_FGA_2PT       |character |
-#'    |PCT_FGA_3PT       |character |
-#'    |PCT_PTS_2PT_MR    |character |
-#'    |PCT_PTS_FB        |character |
-#'    |PCT_PTS_FT        |character |
-#'    |PCT_PTS_PAINT     |character |
-#'    |PCT_AST_FGM       |character |
-#'    |PCT_UAST_FGM      |character |
-#'    |OPP_FG3_PCT       |character |
-#'    |OPP_EFG_PCT       |character |
-#'    |OPP_FTA_RATE      |character |
-#'    |OPP_TOV_PCT       |character |
+#'    |col_name          |types     |description                                             |
+#'    |:-----------------|:---------|:-------------------------------------------------------|
+#'    |GROUP_ID          |character |Group identifier (e.g. conference group_id).            |
+#'    |GROUP_NAME        |character |Group name.                                             |
+#'    |TEAM_ID           |character |Unique team identifier.                                 |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                   |
+#'    |MIN               |character |Minutes played.                                         |
+#'    |OFF_RATING        |character |Offensive rating (points produced per 100 possessions). |
+#'    |DEF_RATING        |character |Defensive rating (points allowed per 100 possessions).  |
+#'    |NET_RATING        |character |Net rating (off rating - def rating).                   |
+#'    |PACE              |character |Possessions per 48 minutes.                             |
+#'    |TS_PCT            |character |True shooting percentage (0-1).                         |
+#'    |FTA_RATE          |character |Free throw attempt rate (FTA / FGA).                    |
+#'    |TM_AST_PCT        |character |                                                        |
+#'    |PCT_FGA_2PT       |character |                                                        |
+#'    |PCT_FGA_3PT       |character |                                                        |
+#'    |PCT_PTS_2PT_MR    |character |                                                        |
+#'    |PCT_PTS_FB        |character |                                                        |
+#'    |PCT_PTS_FT        |character |                                                        |
+#'    |PCT_PTS_PAINT     |character |                                                        |
+#'    |PCT_AST_FGM       |character |                                                        |
+#'    |PCT_UAST_FGM      |character |                                                        |
+#'    |OPP_FG3_PCT       |character |                                                        |
+#'    |OPP_EFG_PCT       |character |                                                        |
+#'    |OPP_FTA_RATE      |character |                                                        |
+#'    |OPP_TOV_PCT       |character |                                                        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -538,67 +538,67 @@ NULL
 #'    **PlayersOnCourtLeaguePlayerDetails**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |GROUP_SET         |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |VS_PLAYER_ID      |character |
-#'    |VS_PLAYER_NAME    |character |
-#'    |COURT_STATUS      |character |
-#'    |GP                |character |
-#'    |W                 |character |
-#'    |L                 |character |
-#'    |W_PCT             |character |
-#'    |MIN               |character |
-#'    |FGM               |character |
-#'    |FGA               |character |
-#'    |FG_PCT            |character |
-#'    |FG3M              |character |
-#'    |FG3A              |character |
-#'    |FG3_PCT           |character |
-#'    |FTM               |character |
-#'    |FTA               |character |
-#'    |FT_PCT            |character |
-#'    |OREB              |character |
-#'    |DREB              |character |
-#'    |REB               |character |
-#'    |AST               |character |
-#'    |TOV               |character |
-#'    |STL               |character |
-#'    |BLK               |character |
-#'    |BLKA              |character |
-#'    |PF                |character |
-#'    |PFD               |character |
-#'    |PTS               |character |
-#'    |PLUS_MINUS        |character |
-#'    |GP_RANK           |character |
-#'    |W_RANK            |character |
-#'    |L_RANK            |character |
-#'    |W_PCT_RANK        |character |
-#'    |MIN_RANK          |character |
-#'    |FGM_RANK          |character |
-#'    |FGA_RANK          |character |
-#'    |FG_PCT_RANK       |character |
-#'    |FG3M_RANK         |character |
-#'    |FG3A_RANK         |character |
-#'    |FG3_PCT_RANK      |character |
-#'    |FTM_RANK          |character |
-#'    |FTA_RANK          |character |
-#'    |FT_PCT_RANK       |character |
-#'    |OREB_RANK         |character |
-#'    |DREB_RANK         |character |
-#'    |REB_RANK          |character |
-#'    |AST_RANK          |character |
-#'    |TOV_RANK          |character |
-#'    |STL_RANK          |character |
-#'    |BLK_RANK          |character |
-#'    |BLKA_RANK         |character |
-#'    |PF_RANK           |character |
-#'    |PFD_RANK          |character |
-#'    |PTS_RANK          |character |
-#'    |PLUS_MINUS_RANK   |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |GROUP_SET         |character |                                                |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |VS_PLAYER_ID      |character |                                                |
+#'    |VS_PLAYER_NAME    |character |                                                |
+#'    |COURT_STATUS      |character |                                                |
+#'    |GP                |character |Games played.                                   |
+#'    |W                 |character |Wins.                                           |
+#'    |L                 |character |Losses.                                         |
+#'    |W_PCT             |character |                                                |
+#'    |MIN               |character |Minutes played.                                 |
+#'    |FGM               |character |Field goals made.                               |
+#'    |FGA               |character |Field goal attempts.                            |
+#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
+#'    |FG3M              |character |Three-point field goals made.                   |
+#'    |FG3A              |character |Three-point field goal attempts.                |
+#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
+#'    |FTM               |character |Free throws made.                               |
+#'    |FTA               |character |Free throw attempts.                            |
+#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
+#'    |OREB              |character |Offensive rebounds.                             |
+#'    |DREB              |character |Defensive rebounds.                             |
+#'    |REB               |character |Total rebounds.                                 |
+#'    |AST               |character |Assists.                                        |
+#'    |TOV               |character |Turnovers.                                      |
+#'    |STL               |character |Steals.                                         |
+#'    |BLK               |character |Blocks.                                         |
+#'    |BLKA              |character |                                                |
+#'    |PF                |character |Personal fouls.                                 |
+#'    |PFD               |character |                                                |
+#'    |PTS               |character |Points scored.                                  |
+#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.   |
+#'    |GP_RANK           |character |                                                |
+#'    |W_RANK            |character |                                                |
+#'    |L_RANK            |character |                                                |
+#'    |W_PCT_RANK        |character |                                                |
+#'    |MIN_RANK          |character |                                                |
+#'    |FGM_RANK          |character |                                                |
+#'    |FGA_RANK          |character |                                                |
+#'    |FG_PCT_RANK       |character |                                                |
+#'    |FG3M_RANK         |character |                                                |
+#'    |FG3A_RANK         |character |                                                |
+#'    |FG3_PCT_RANK      |character |                                                |
+#'    |FTM_RANK          |character |                                                |
+#'    |FTA_RANK          |character |                                                |
+#'    |FT_PCT_RANK       |character |                                                |
+#'    |OREB_RANK         |character |                                                |
+#'    |DREB_RANK         |character |                                                |
+#'    |REB_RANK          |character |                                                |
+#'    |AST_RANK          |character |                                                |
+#'    |TOV_RANK          |character |                                                |
+#'    |STL_RANK          |character |                                                |
+#'    |BLK_RANK          |character |                                                |
+#'    |BLKA_RANK         |character |                                                |
+#'    |PF_RANK           |character |                                                |
+#'    |PFD_RANK          |character |                                                |
+#'    |PTS_RANK          |character |                                                |
+#'    |PLUS_MINUS_RANK   |character |                                                |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -711,35 +711,35 @@ NULL
 #'    **SeasonMatchups**
 #'
 #'
-#'    |col_name         |types     |
-#'    |:----------------|:---------|
-#'    |SEASON_ID        |character |
-#'    |OFF_PLAYER_ID    |character |
-#'    |OFF_PLAYER_NAME  |character |
-#'    |DEF_PLAYER_ID    |character |
-#'    |DEF_PLAYER_NAME  |character |
-#'    |GP               |character |
-#'    |MATCHUP_MIN      |character |
-#'    |PARTIAL_POSS     |character |
-#'    |PLAYER_PTS       |character |
-#'    |TEAM_PTS         |character |
-#'    |MATCHUP_AST      |character |
-#'    |MATCHUP_TOV      |character |
-#'    |MATCHUP_BLK      |character |
-#'    |MATCHUP_FGM      |character |
-#'    |MATCHUP_FGA      |character |
-#'    |MATCHUP_FG_PCT   |character |
-#'    |MATCHUP_FG3M     |character |
-#'    |MATCHUP_FG3A     |character |
-#'    |MATCHUP_FG3_PCT  |character |
-#'    |HELP_BLK         |character |
-#'    |HELP_FGM         |character |
-#'    |HELP_FGA         |character |
-#'    |HELP_FG_PERC     |character |
-#'    |MATCHUP_FTM      |character |
-#'    |MATCHUP_FTA      |character |
-#'    |SFL              |character |
-#'    |MATCHUP_TIME_SEC |character |
+#'    |col_name         |types     |description               |
+#'    |:----------------|:---------|:-------------------------|
+#'    |SEASON_ID        |character |Unique season identifier. |
+#'    |OFF_PLAYER_ID    |character |                          |
+#'    |OFF_PLAYER_NAME  |character |                          |
+#'    |DEF_PLAYER_ID    |character |                          |
+#'    |DEF_PLAYER_NAME  |character |                          |
+#'    |GP               |character |Games played.             |
+#'    |MATCHUP_MIN      |character |                          |
+#'    |PARTIAL_POSS     |character |                          |
+#'    |PLAYER_PTS       |character |                          |
+#'    |TEAM_PTS         |character |                          |
+#'    |MATCHUP_AST      |character |                          |
+#'    |MATCHUP_TOV      |character |                          |
+#'    |MATCHUP_BLK      |character |                          |
+#'    |MATCHUP_FGM      |character |                          |
+#'    |MATCHUP_FGA      |character |                          |
+#'    |MATCHUP_FG_PCT   |character |                          |
+#'    |MATCHUP_FG3M     |character |                          |
+#'    |MATCHUP_FG3A     |character |                          |
+#'    |MATCHUP_FG3_PCT  |character |                          |
+#'    |HELP_BLK         |character |                          |
+#'    |HELP_FGM         |character |                          |
+#'    |HELP_FGA         |character |                          |
+#'    |HELP_FG_PERC     |character |                          |
+#'    |MATCHUP_FTM      |character |                          |
+#'    |MATCHUP_FTA      |character |                          |
+#'    |SFL              |character |                          |
+#'    |MATCHUP_TIME_SEC |character |                          |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -826,30 +826,30 @@ NULL
 #'    **MatchupsRollup**
 #'
 #'
-#'    |col_name        |types     |
-#'    |:---------------|:---------|
-#'    |SEASON_ID       |character |
-#'    |POSITION        |character |
-#'    |PERCENT_OF_TIME |character |
-#'    |DEF_PLAYER_ID   |character |
-#'    |DEF_PLAYER_NAME |character |
-#'    |GP              |character |
-#'    |MATCHUP_MIN     |character |
-#'    |PARTIAL_POSS    |character |
-#'    |PLAYER_PTS      |character |
-#'    |TEAM_PTS        |character |
-#'    |MATCHUP_AST     |character |
-#'    |MATCHUP_TOV     |character |
-#'    |MATCHUP_BLK     |character |
-#'    |MATCHUP_FGM     |character |
-#'    |MATCHUP_FGA     |character |
-#'    |MATCHUP_FG_PCT  |character |
-#'    |MATCHUP_FG3M    |character |
-#'    |MATCHUP_FG3A    |character |
-#'    |MATCHUP_FG3_PCT |character |
-#'    |MATCHUP_FTM     |character |
-#'    |MATCHUP_FTA     |character |
-#'    |SFL             |character |
+#'    |col_name        |types     |description                             |
+#'    |:---------------|:---------|:---------------------------------------|
+#'    |SEASON_ID       |character |Unique season identifier.               |
+#'    |POSITION        |character |Listed roster position (G, F, C, etc.). |
+#'    |PERCENT_OF_TIME |character |                                        |
+#'    |DEF_PLAYER_ID   |character |                                        |
+#'    |DEF_PLAYER_NAME |character |                                        |
+#'    |GP              |character |Games played.                           |
+#'    |MATCHUP_MIN     |character |                                        |
+#'    |PARTIAL_POSS    |character |                                        |
+#'    |PLAYER_PTS      |character |                                        |
+#'    |TEAM_PTS        |character |                                        |
+#'    |MATCHUP_AST     |character |                                        |
+#'    |MATCHUP_TOV     |character |                                        |
+#'    |MATCHUP_BLK     |character |                                        |
+#'    |MATCHUP_FGM     |character |                                        |
+#'    |MATCHUP_FGA     |character |                                        |
+#'    |MATCHUP_FG_PCT  |character |                                        |
+#'    |MATCHUP_FG3M    |character |                                        |
+#'    |MATCHUP_FG3A    |character |                                        |
+#'    |MATCHUP_FG3_PCT |character |                                        |
+#'    |MATCHUP_FTM     |character |                                        |
+#'    |MATCHUP_FTA     |character |                                        |
+#'    |SFL             |character |                                        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

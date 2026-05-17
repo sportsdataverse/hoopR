@@ -10,14 +10,14 @@ kp_arenas(year = most_recent_mbb_season())
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab numeric \cr
-   team \tab character \cr
-   conf \tab character \cr
-   arena \tab character \cr
-   alternate \tab character \cr
-   year \tab numeric \cr
+A data frame with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab numeric \tab Rk. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   arena \tab character \tab Arena. \cr
+   alternate \tab character \tab Alternate. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

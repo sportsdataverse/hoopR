@@ -20,20 +20,20 @@ nba_draftcombinedrillresults(
 \value{
 Returns a named list of data frames: Results
 
-\strong{Results}\tabular{ll}{
-   col_name \tab types \cr
-   TEMP_PLAYER_ID \tab character \cr
-   PLAYER_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   PLAYER_NAME \tab character \cr
-   POSITION \tab character \cr
-   STANDING_VERTICAL_LEAP \tab character \cr
-   MAX_VERTICAL_LEAP \tab character \cr
-   LANE_AGILITY_TIME \tab character \cr
-   MODIFIED_LANE_AGILITY_TIME \tab character \cr
-   THREE_QUARTER_SPRINT \tab character \cr
-   BENCH_PRESS \tab character \cr
+\strong{Results}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEMP_PLAYER_ID \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   STANDING_VERTICAL_LEAP \tab character \tab  \cr
+   MAX_VERTICAL_LEAP \tab character \tab  \cr
+   LANE_AGILITY_TIME \tab character \tab  \cr
+   MODIFIED_LANE_AGILITY_TIME \tab character \tab  \cr
+   THREE_QUARTER_SPRINT \tab character \tab  \cr
+   BENCH_PRESS \tab character \tab  \cr
 }
 }
 \description{

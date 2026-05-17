@@ -7,21 +7,21 @@
 espn_nba_teams()
 }
 \value{
-A teams data frame\tabular{ll}{
-   col_name \tab types \cr
-   team_id \tab integer \cr
-   abbreviation \tab character \cr
-   display_name \tab character \cr
-   short_name \tab character \cr
-   mascot \tab character \cr
-   nickname \tab character \cr
-   team \tab character \cr
-   color \tab character \cr
-   alternate_color \tab character \cr
-   logo \tab character \cr
-   logo_dark \tab character \cr
-   logos_href_3 \tab character \cr
-   logos_href_4 \tab character \cr
+A teams data frame\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   abbreviation \tab character \tab Short abbreviation. \cr
+   display_name \tab character \tab Display name. \cr
+   short_name \tab character \tab Short display name. \cr
+   mascot \tab character \tab Team mascot. \cr
+   nickname \tab character \tab Team or athlete nickname. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   color \tab character \tab Primary color (hex without leading '#'). \cr
+   alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+   logo \tab character \tab Team or league logo URL. \cr
+   logo_dark \tab character \tab Logo dark. \cr
+   logos_href_3 \tab character \tab Logos href 3. \cr
+   logos_href_4 \tab character \tab Logos href 4. \cr
 }
 }
 \description{

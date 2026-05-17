@@ -32,97 +32,97 @@ nba_boxscoretraditionalv2(
 \value{
 A list of data frames: PlayerStats, TeamStats, TeamStarterBenchStats
 
-\strong{PlayerStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   NICKNAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TO \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
+\strong{PlayerStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TO \tab character \tab To. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }
 
 
-\strong{TeamStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TO \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
+\strong{TeamStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TO \tab character \tab To. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }
 
 
-\strong{TeamStarterBenchStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   STARTERS_BENCH \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TO \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
+\strong{TeamStarterBenchStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   STARTERS_BENCH \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TO \tab character \tab To. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 }
 \description{

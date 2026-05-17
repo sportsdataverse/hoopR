@@ -22,68 +22,68 @@ the season data into a database (used by \code{update_nba_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble\tabular{ll}{
-   col_name \tab types \cr
-   id \tab numeric \cr
-   sequence_number \tab character \cr
-   type_id \tab integer \cr
-   type_text \tab character \cr
-   text \tab character \cr
-   away_score \tab integer \cr
-   home_score \tab integer \cr
-   period_number \tab integer \cr
-   period_display_value \tab character \cr
-   clock_display_value \tab character \cr
-   scoring_play \tab logical \cr
-   score_value \tab integer \cr
-   team_id \tab integer \cr
-   athlete_id_1 \tab integer \cr
-   athlete_id_2 \tab integer \cr
-   athlete_id_3 \tab integer \cr
-   wallclock \tab character \cr
-   shooting_play \tab logical \cr
-   coordinate_x_raw \tab numeric \cr
-   coordinate_y_raw \tab numeric \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   away_team_id \tab integer \cr
-   away_team_name \tab character \cr
-   away_team_mascot \tab character \cr
-   away_team_abbrev \tab character \cr
-   away_team_name_alt \tab character \cr
-   home_team_id \tab integer \cr
-   home_team_name \tab character \cr
-   home_team_mascot \tab character \cr
-   home_team_abbrev \tab character \cr
-   home_team_name_alt \tab character \cr
-   home_team_spread \tab numeric \cr
-   game_spread \tab numeric \cr
-   home_favorite \tab logical \cr
-   game_spread_available \tab logical \cr
-   game_id \tab integer \cr
-   qtr \tab integer \cr
-   time \tab character \cr
-   clock_minutes \tab integer \cr
-   clock_seconds \tab numeric \cr
-   half \tab character \cr
-   game_half \tab character \cr
-   lead_qtr \tab integer \cr
-   lead_game_half \tab character \cr
-   start_quarter_seconds_remaining \tab integer \cr
-   start_half_seconds_remaining \tab integer \cr
-   start_game_seconds_remaining \tab integer \cr
-   game_play_number \tab integer \cr
-   end_quarter_seconds_remaining \tab integer \cr
-   end_half_seconds_remaining \tab integer \cr
-   end_game_seconds_remaining \tab integer \cr
-   period \tab integer \cr
-   lag_qtr \tab integer \cr
-   lag_game_half \tab character \cr
-   coordinate_x \tab numeric \cr
-   coordinate_y \tab numeric \cr
-   game_date \tab Date \cr
-   game_date_time \tab POSIXct \cr
-   type_abbreviation \tab character \cr
+Returns a tibble\tabular{lll}{
+   col_name \tab types \tab description \cr
+   id \tab numeric \tab Id. \cr
+   sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+   type_id \tab integer \tab Type identifier (numeric). \cr
+   type_text \tab character \tab Display text for the type field. \cr
+   text \tab character \tab Text description of the play / record. \cr
+   away_score \tab integer \tab Away team score at the time of the play. \cr
+   home_score \tab integer \tab Home team score at the time of the play. \cr
+   period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+   period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+   clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+   scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+   score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   athlete_id_1 \tab integer \tab Primary athlete identifier (e.g. shooter). \cr
+   athlete_id_2 \tab integer \tab Secondary athlete identifier (e.g. assister / fouler). \cr
+   athlete_id_3 \tab integer \tab Athlete id 3. \cr
+   wallclock \tab character \tab Wallclock. \cr
+   shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+   coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
+   coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_mascot \tab character \tab Away team mascot. \cr
+   away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
+   away_team_name_alt \tab character \tab Alternate away team name. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_mascot \tab character \tab Home team mascot. \cr
+   home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
+   home_team_name_alt \tab character \tab Alternate home team name. \cr
+   home_team_spread \tab numeric \tab Home team's point spread. \cr
+   game_spread \tab numeric \tab Game spread (signed; positive = home favored). \cr
+   home_favorite \tab logical \tab TRUE if the home team is the betting favorite. \cr
+   game_spread_available \tab logical \tab TRUE if a point spread was available. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   qtr \tab integer \tab Quarter (1-4) or OT period (5+). \cr
+   time \tab character \tab Time / clock value. \cr
+   clock_minutes \tab integer \tab Clock minutes split out for convenience. \cr
+   clock_seconds \tab numeric \tab Clock seconds split out for convenience. \cr
+   half \tab character \tab Half of the game (1 or 2). \cr
+   game_half \tab character \tab Half of the game (1 or 2). \cr
+   lead_qtr \tab integer \tab Quarter lead (the next-play's quarter). \cr
+   lead_game_half \tab character \tab Half lead (the next-play's half). \cr
+   start_quarter_seconds_remaining \tab integer \tab Seconds remaining in the period at the start of the play. \cr
+   start_half_seconds_remaining \tab integer \tab Seconds remaining in the half at the start of the play. \cr
+   start_game_seconds_remaining \tab integer \tab Seconds remaining in the game at the start of the play. \cr
+   game_play_number \tab integer \tab Sequential play number within the game. \cr
+   end_quarter_seconds_remaining \tab integer \tab Seconds remaining in the period at the end of the play. \cr
+   end_half_seconds_remaining \tab integer \tab Seconds remaining in the half at the end of the play. \cr
+   end_game_seconds_remaining \tab integer \tab Seconds remaining in the game at the end of the play. \cr
+   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   lag_qtr \tab integer \tab Quarter lag (the previous-play's quarter). \cr
+   lag_game_half \tab character \tab Half lag (the previous-play's half). \cr
+   coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
+   coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   type_abbreviation \tab character \tab Type abbreviation. \cr
 }
 }
 \description{

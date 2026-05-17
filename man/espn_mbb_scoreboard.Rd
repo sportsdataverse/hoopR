@@ -10,42 +10,42 @@ espn_mbb_scoreboard(season)
 \item{season}{Either numeric or character}
 }
 \value{
-Returns a tibble\tabular{ll}{
-   col_name \tab types \cr
-   matchup \tab character \cr
-   matchup_short \tab character \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   season_slug \tab character \cr
-   game_id \tab integer \cr
-   game_uid \tab character \cr
-   game_date \tab Date \cr
-   attendance \tab integer \cr
-   status_name \tab character \cr
-   broadcast_market \tab character \cr
-   broadcast_name \tab character \cr
-   start_date \tab character \cr
-   game_date_time \tab POSIXct \cr
-   home_team_name \tab character \cr
-   home_team_logo \tab character \cr
-   home_team_abb \tab character \cr
-   home_team_id \tab integer \cr
-   home_team_location \tab character \cr
-   home_team_full_name \tab character \cr
-   home_team_color \tab character \cr
-   home_score \tab integer \cr
-   home_win \tab integer \cr
-   home_record \tab character \cr
-   away_team_name \tab character \cr
-   away_team_logo \tab character \cr
-   away_team_abb \tab character \cr
-   away_team_id \tab integer \cr
-   away_team_location \tab character \cr
-   away_team_full_name \tab character \cr
-   away_team_color \tab character \cr
-   away_score \tab integer \cr
-   away_win \tab integer \cr
-   away_record \tab character \cr
+Returns a tibble\tabular{lll}{
+   col_name \tab types \tab description \cr
+   matchup \tab character \tab Matchup. \cr
+   matchup_short \tab character \tab Matchup short. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   season_slug \tab character \tab Season slug. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   game_uid \tab character \tab Game uid. \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   attendance \tab integer \tab Reported attendance. \cr
+   status_name \tab character \tab Status label. \cr
+   broadcast_market \tab character \tab Broadcast market label (e.g. 'national', 'home'). \cr
+   broadcast_name \tab character \tab Broadcast name. \cr
+   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_logo \tab character \tab Home team logo URL. \cr
+   home_team_abb \tab character \tab Home team's team abb. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_location \tab character \tab Home team's team location. \cr
+   home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
+   home_team_color \tab character \tab Home team primary color (hex). \cr
+   home_score \tab integer \tab Home team score at the time of the play. \cr
+   home_win \tab integer \tab Home team's win. \cr
+   home_record \tab character \tab Home win-loss record. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_logo \tab character \tab Away team logo URL. \cr
+   away_team_abb \tab character \tab Away team's team abb. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_location \tab character \tab Away team's team location. \cr
+   away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
+   away_team_color \tab character \tab Away team primary color (hex). \cr
+   away_score \tab integer \tab Away team score at the time of the play. \cr
+   away_win \tab integer \tab Away team's win. \cr
+   away_record \tab character \tab Away win-loss record. \cr
 }
 }
 \description{

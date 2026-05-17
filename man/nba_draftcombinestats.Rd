@@ -20,55 +20,55 @@ nba_draftcombinestats(
 \value{
 Returns a named list of data frames: DraftCombineStats
 
-\strong{DraftCombineStats}\tabular{ll}{
-   col_name \tab types \cr
-   SEASON \tab character \cr
-   PLAYER_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   PLAYER_NAME \tab character \cr
-   POSITION \tab character \cr
-   HEIGHT_WO_SHOES \tab character \cr
-   HEIGHT_WO_SHOES_FT_IN \tab character \cr
-   HEIGHT_W_SHOES \tab character \cr
-   HEIGHT_W_SHOES_FT_IN \tab character \cr
-   WEIGHT \tab character \cr
-   WINGSPAN \tab character \cr
-   WINGSPAN_FT_IN \tab character \cr
-   STANDING_REACH \tab character \cr
-   STANDING_REACH_FT_IN \tab character \cr
-   BODY_FAT_PCT \tab character \cr
-   HAND_LENGTH \tab character \cr
-   HAND_WIDTH \tab character \cr
-   STANDING_VERTICAL_LEAP \tab character \cr
-   MAX_VERTICAL_LEAP \tab character \cr
-   LANE_AGILITY_TIME \tab character \cr
-   MODIFIED_LANE_AGILITY_TIME \tab character \cr
-   THREE_QUARTER_SPRINT \tab character \cr
-   BENCH_PRESS \tab character \cr
-   SPOT_FIFTEEN_CORNER_LEFT \tab character \cr
-   SPOT_FIFTEEN_BREAK_LEFT \tab character \cr
-   SPOT_FIFTEEN_TOP_KEY \tab character \cr
-   SPOT_FIFTEEN_BREAK_RIGHT \tab character \cr
-   SPOT_FIFTEEN_CORNER_RIGHT \tab character \cr
-   SPOT_COLLEGE_CORNER_LEFT \tab character \cr
-   SPOT_COLLEGE_BREAK_LEFT \tab character \cr
-   SPOT_COLLEGE_TOP_KEY \tab character \cr
-   SPOT_COLLEGE_BREAK_RIGHT \tab character \cr
-   SPOT_COLLEGE_CORNER_RIGHT \tab character \cr
-   SPOT_NBA_CORNER_LEFT \tab character \cr
-   SPOT_NBA_BREAK_LEFT \tab character \cr
-   SPOT_NBA_TOP_KEY \tab character \cr
-   SPOT_NBA_BREAK_RIGHT \tab character \cr
-   SPOT_NBA_CORNER_RIGHT \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_LEFT \tab character \cr
-   OFF_DRIB_FIFTEEN_TOP_KEY \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_RIGHT \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_LEFT \tab character \cr
-   OFF_DRIB_COLLEGE_TOP_KEY \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_RIGHT \tab character \cr
-   ON_MOVE_FIFTEEN \tab character \cr
-   ON_MOVE_COLLEGE \tab character \cr
+\strong{DraftCombineStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   HEIGHT_WO_SHOES \tab character \tab  \cr
+   HEIGHT_WO_SHOES_FT_IN \tab character \tab  \cr
+   HEIGHT_W_SHOES \tab character \tab  \cr
+   HEIGHT_W_SHOES_FT_IN \tab character \tab  \cr
+   WEIGHT \tab character \tab Player weight in pounds. \cr
+   WINGSPAN \tab character \tab  \cr
+   WINGSPAN_FT_IN \tab character \tab  \cr
+   STANDING_REACH \tab character \tab  \cr
+   STANDING_REACH_FT_IN \tab character \tab  \cr
+   BODY_FAT_PCT \tab character \tab  \cr
+   HAND_LENGTH \tab character \tab  \cr
+   HAND_WIDTH \tab character \tab  \cr
+   STANDING_VERTICAL_LEAP \tab character \tab  \cr
+   MAX_VERTICAL_LEAP \tab character \tab  \cr
+   LANE_AGILITY_TIME \tab character \tab  \cr
+   MODIFIED_LANE_AGILITY_TIME \tab character \tab  \cr
+   THREE_QUARTER_SPRINT \tab character \tab  \cr
+   BENCH_PRESS \tab character \tab  \cr
+   SPOT_FIFTEEN_CORNER_LEFT \tab character \tab  \cr
+   SPOT_FIFTEEN_BREAK_LEFT \tab character \tab  \cr
+   SPOT_FIFTEEN_TOP_KEY \tab character \tab  \cr
+   SPOT_FIFTEEN_BREAK_RIGHT \tab character \tab  \cr
+   SPOT_FIFTEEN_CORNER_RIGHT \tab character \tab  \cr
+   SPOT_COLLEGE_CORNER_LEFT \tab character \tab  \cr
+   SPOT_COLLEGE_BREAK_LEFT \tab character \tab  \cr
+   SPOT_COLLEGE_TOP_KEY \tab character \tab  \cr
+   SPOT_COLLEGE_BREAK_RIGHT \tab character \tab  \cr
+   SPOT_COLLEGE_CORNER_RIGHT \tab character \tab  \cr
+   SPOT_NBA_CORNER_LEFT \tab character \tab  \cr
+   SPOT_NBA_BREAK_LEFT \tab character \tab  \cr
+   SPOT_NBA_TOP_KEY \tab character \tab  \cr
+   SPOT_NBA_BREAK_RIGHT \tab character \tab  \cr
+   SPOT_NBA_CORNER_RIGHT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_LEFT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_TOP_KEY \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_RIGHT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_LEFT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_TOP_KEY \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_RIGHT \tab character \tab  \cr
+   ON_MOVE_FIFTEEN \tab character \tab  \cr
+   ON_MOVE_COLLEGE \tab character \tab  \cr
 }
 }
 \description{

@@ -34,107 +34,107 @@ Returns a named list of data frames:  home_team_player_four_factors,
 away_team_player_four_factors, home_team_totals_four_factors,
 away_team_totals_four_factors
 
-\strong{home_team_player_four_factors}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   effective_field_goal_percentage \tab numeric \cr
-   free_throw_attempt_rate \tab numeric \cr
-   team_turnover_percentage \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   opp_effective_field_goal_percentage \tab numeric \cr
-   opp_free_throw_attempt_rate \tab numeric \cr
-   opp_team_turnover_percentage \tab numeric \cr
-   opp_offensive_rebound_percentage \tab numeric \cr
+\strong{home_team_player_four_factors}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+   team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+   opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }
 
 
-\strong{away_team_player_four_factors}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   effective_field_goal_percentage \tab numeric \cr
-   free_throw_attempt_rate \tab numeric \cr
-   team_turnover_percentage \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   opp_effective_field_goal_percentage \tab numeric \cr
-   opp_free_throw_attempt_rate \tab numeric \cr
-   opp_team_turnover_percentage \tab numeric \cr
-   opp_offensive_rebound_percentage \tab numeric \cr
+\strong{away_team_player_four_factors}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+   team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+   opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }
 
 
-\strong{home_team_totals_four_factors}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   effective_field_goal_percentage \tab numeric \cr
-   free_throw_attempt_rate \tab numeric \cr
-   team_turnover_percentage \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   opp_effective_field_goal_percentage \tab numeric \cr
-   opp_free_throw_attempt_rate \tab numeric \cr
-   opp_team_turnover_percentage \tab numeric \cr
-   opp_offensive_rebound_percentage \tab numeric \cr
+\strong{home_team_totals_four_factors}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+   team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+   opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }
 
 
-\strong{away_team_totals_four_factors}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   effective_field_goal_percentage \tab numeric \cr
-   free_throw_attempt_rate \tab numeric \cr
-   team_turnover_percentage \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   opp_effective_field_goal_percentage \tab numeric \cr
-   opp_free_throw_attempt_rate \tab numeric \cr
-   opp_team_turnover_percentage \tab numeric \cr
-   opp_offensive_rebound_percentage \tab numeric \cr
+\strong{away_team_totals_four_factors}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+   team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+   opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }
 }
 \description{

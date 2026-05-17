@@ -12,32 +12,32 @@ kp_height(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of heights\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   avg_hgt \tab numeric \cr
-   avg_hgt_rk \tab numeric \cr
-   eff_hgt \tab numeric \cr
-   eff_hgt_rk \tab numeric \cr
-   c_hgt \tab numeric \cr
-   c_hgt_rk \tab numeric \cr
-   pf_hgt \tab numeric \cr
-   pf_hgt_rk \tab numeric \cr
-   sf_hgt \tab numeric \cr
-   sf_hgt_rk \tab numeric \cr
-   sg_hgt \tab numeric \cr
-   sg_hgt_rk \tab numeric \cr
-   pg_hgt \tab numeric \cr
-   pg_hgt_rk \tab numeric \cr
-   experience \tab numeric \cr
-   experience_rk \tab numeric \cr
-   bench \tab numeric \cr
-   bench_rk \tab numeric \cr
-   continuity \tab numeric \cr
-   continuity_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
-   year \tab integer \cr
+Returns a tibble of heights\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   avg_hgt \tab numeric \tab Avg hgt. \cr
+   avg_hgt_rk \tab numeric \tab Avg hgt rk. \cr
+   eff_hgt \tab numeric \tab Eff hgt. \cr
+   eff_hgt_rk \tab numeric \tab Eff hgt rk. \cr
+   c_hgt \tab numeric \tab C hgt. \cr
+   c_hgt_rk \tab numeric \tab C hgt rk. \cr
+   pf_hgt \tab numeric \tab Pf hgt. \cr
+   pf_hgt_rk \tab numeric \tab Pf hgt rk. \cr
+   sf_hgt \tab numeric \tab Sf hgt. \cr
+   sf_hgt_rk \tab numeric \tab Sf hgt rk. \cr
+   sg_hgt \tab numeric \tab Sg hgt. \cr
+   sg_hgt_rk \tab numeric \tab Sg hgt rk. \cr
+   pg_hgt \tab numeric \tab Pg hgt. \cr
+   pg_hgt_rk \tab numeric \tab Pg hgt rk. \cr
+   experience \tab numeric \tab Years of professional experience. \cr
+   experience_rk \tab numeric \tab Experience rk. \cr
+   bench \tab numeric \tab Bench. \cr
+   bench_rk \tab numeric \tab Bench rk. \cr
+   continuity \tab numeric \tab Continuity. \cr
+   continuity_rk \tab numeric \tab Continuity rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   year \tab integer \tab 4-digit year. \cr
 }
 }
 \description{

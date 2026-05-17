@@ -35,43 +35,43 @@ nba_leaderstiles(
 \value{
 Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
 
-\strong{LeadersTiles}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   PTS \tab character \cr
+\strong{LeadersTiles}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{AllTimeSeasonHigh}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   SEASON_YEAR \tab character \cr
-   PTS \tab character \cr
+\strong{AllTimeSeasonHigh}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{LastSeasonHigh}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   PTS \tab character \cr
+\strong{LastSeasonHigh}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{LowSeasonHigh}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   SEASON_YEAR \tab character \cr
-   PTS \tab character \cr
+\strong{LowSeasonHigh}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+   PTS \tab character \tab Points scored. \cr
 }
 }
 \description{

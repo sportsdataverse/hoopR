@@ -36,32 +36,32 @@ nba_synergyplaytypes(
 \value{
 Return a named list of data frames: SynergyPlayType
 
-\strong{SynergyPlayType}\tabular{ll}{
-   col_name \tab types \cr
-   SEASON_ID \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   PLAY_TYPE \tab character \cr
-   TYPE_GROUPING \tab character \cr
-   PERCENTILE \tab character \cr
-   GP \tab character \cr
-   POSS_PCT \tab character \cr
-   PPP \tab character \cr
-   FG_PCT \tab character \cr
-   FT_POSS_PCT \tab character \cr
-   TOV_POSS_PCT \tab character \cr
-   SF_POSS_PCT \tab character \cr
-   PLUSONE_POSS_PCT \tab character \cr
-   SCORE_POSS_PCT \tab character \cr
-   EFG_PCT \tab character \cr
-   POSS \tab character \cr
-   PTS \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FGMX \tab character \cr
+\strong{SynergyPlayType}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   SEASON_ID \tab character \tab Unique season identifier. \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PLAY_TYPE \tab character \tab Play type code. \cr
+   TYPE_GROUPING \tab character \tab  \cr
+   PERCENTILE \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   POSS_PCT \tab character \tab Poss percentage (0-1 decimal). \cr
+   PPP \tab character \tab  \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FT_POSS_PCT \tab character \tab  \cr
+   TOV_POSS_PCT \tab character \tab  \cr
+   SF_POSS_PCT \tab character \tab  \cr
+   PLUSONE_POSS_PCT \tab character \tab  \cr
+   SCORE_POSS_PCT \tab character \tab  \cr
+   EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+   POSS \tab character \tab Poss. \cr
+   PTS \tab character \tab Points scored. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FGMX \tab character \tab  \cr
 }
 }
 \description{

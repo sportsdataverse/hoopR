@@ -15,85 +15,85 @@ kp_box(game_id, year)
 Returns a tibble of game box scores with names: away_team, home_team,
 linescore, officials
 
-\strong{away_team}\tabular{ll}{
-   col_name \tab types \cr
-   hgt \tab character \cr
-   wgt \tab numeric \cr
-   yr \tab character \cr
-   number \tab numeric \cr
-   player \tab character \cr
-   min \tab numeric \cr
-   o_rtg \tab numeric \cr
-   percent_ps \tab numeric \cr
-   pts \tab numeric \cr
-   fgm_2 \tab numeric \cr
-   fga_2 \tab numeric \cr
-   fgm_3 \tab numeric \cr
-   fga_3 \tab numeric \cr
-   ftm \tab numeric \cr
-   fta \tab numeric \cr
-   or \tab numeric \cr
-   dr \tab numeric \cr
-   a \tab numeric \cr
-   to \tab numeric \cr
-   blk \tab numeric \cr
-   stl \tab numeric \cr
-   pf \tab numeric \cr
-   team \tab character \cr
-   wp_note \tab character \cr
-   game_id \tab numeric \cr
-   year \tab numeric \cr
+\strong{away_team}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   hgt \tab character \tab Hgt. \cr
+   wgt \tab numeric \tab Wgt. \cr
+   yr \tab character \tab Yr. \cr
+   number \tab numeric \tab Number. \cr
+   player \tab character \tab Player. \cr
+   min \tab numeric \tab Minutes played. \cr
+   o_rtg \tab numeric \tab O rtg. \cr
+   percent_ps \tab numeric \tab Percent ps. \cr
+   pts \tab numeric \tab Points scored. \cr
+   fgm_2 \tab numeric \tab Fgm 2. \cr
+   fga_2 \tab numeric \tab Fga 2. \cr
+   fgm_3 \tab numeric \tab Fgm 3. \cr
+   fga_3 \tab numeric \tab Fga 3. \cr
+   ftm \tab numeric \tab Free throws made. \cr
+   fta \tab numeric \tab Free throw attempts. \cr
+   or \tab numeric \tab Or. \cr
+   dr \tab numeric \tab Dr. \cr
+   a \tab numeric \tab A. \cr
+   to \tab numeric \tab To. \cr
+   blk \tab numeric \tab Blocks. \cr
+   stl \tab numeric \tab Steals. \cr
+   pf \tab numeric \tab Personal fouls. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   wp_note \tab character \tab Wp note. \cr
+   game_id \tab numeric \tab Unique game identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 
 
-\strong{home_team}\tabular{ll}{
-   col_name \tab types \cr
-   hgt \tab character \cr
-   wgt \tab numeric \cr
-   yr \tab character \cr
-   number \tab numeric \cr
-   player \tab character \cr
-   min \tab numeric \cr
-   o_rtg \tab numeric \cr
-   percent_ps \tab numeric \cr
-   pts \tab numeric \cr
-   fgm_2 \tab numeric \cr
-   fga_2 \tab numeric \cr
-   fgm_3 \tab numeric \cr
-   fga_3 \tab numeric \cr
-   ftm \tab numeric \cr
-   fta \tab numeric \cr
-   or \tab numeric \cr
-   dr \tab numeric \cr
-   a \tab numeric \cr
-   to \tab numeric \cr
-   blk \tab numeric \cr
-   stl \tab numeric \cr
-   pf \tab numeric \cr
-   team \tab character \cr
-   wp_note \tab character \cr
-   game_id \tab numeric \cr
-   year \tab numeric \cr
+\strong{home_team}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   hgt \tab character \tab Hgt. \cr
+   wgt \tab numeric \tab Wgt. \cr
+   yr \tab character \tab Yr. \cr
+   number \tab numeric \tab Number. \cr
+   player \tab character \tab Player. \cr
+   min \tab numeric \tab Minutes played. \cr
+   o_rtg \tab numeric \tab O rtg. \cr
+   percent_ps \tab numeric \tab Percent ps. \cr
+   pts \tab numeric \tab Points scored. \cr
+   fgm_2 \tab numeric \tab Fgm 2. \cr
+   fga_2 \tab numeric \tab Fga 2. \cr
+   fgm_3 \tab numeric \tab Fgm 3. \cr
+   fga_3 \tab numeric \tab Fga 3. \cr
+   ftm \tab numeric \tab Free throws made. \cr
+   fta \tab numeric \tab Free throw attempts. \cr
+   or \tab numeric \tab Or. \cr
+   dr \tab numeric \tab Dr. \cr
+   a \tab numeric \tab A. \cr
+   to \tab numeric \tab To. \cr
+   blk \tab numeric \tab Blocks. \cr
+   stl \tab numeric \tab Steals. \cr
+   pf \tab numeric \tab Personal fouls. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   wp_note \tab character \tab Wp note. \cr
+   game_id \tab numeric \tab Unique game identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 
 
-\strong{linescore}\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   q1 \tab integer \cr
-   q2 \tab integer \cr
-   q3 \tab integer \cr
-   q4 \tab integer \cr
-   t \tab integer \cr
+\strong{linescore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   q1 \tab integer \tab Q1. \cr
+   q2 \tab integer \tab Q2. \cr
+   q3 \tab integer \tab Q3. \cr
+   q4 \tab integer \tab Q4. \cr
+   t \tab integer \tab T. \cr
 }
 
 
-\strong{officials}\tabular{ll}{
-   col_name \tab types \cr
-   official_id \tab character \cr
-   official_name \tab character \cr
-   game_id \tab numeric \cr
-   year \tab numeric \cr
+\strong{officials}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   official_id \tab character \tab Unique official / referee identifier. \cr
+   official_name \tab character \tab Official name. \cr
+   game_id \tab numeric \tab Unique game identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

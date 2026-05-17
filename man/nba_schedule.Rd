@@ -18,55 +18,55 @@ nba_schedule(
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a tibble with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   game_date \tab character \cr
-   game_id \tab character \cr
-   game_code \tab character \cr
-   game_status \tab integer \cr
-   game_status_text \tab character \cr
-   game_sequence \tab integer \cr
-   game_date_est \tab character \cr
-   game_time_est \tab character \cr
-   game_date_time_est \tab character \cr
-   game_date_utc \tab character \cr
-   game_time_utc \tab character \cr
-   game_date_time_utc \tab character \cr
-   away_team_time \tab character \cr
-   home_team_time \tab character \cr
-   day \tab character \cr
-   month_num \tab integer \cr
-   week_number \tab integer \cr
-   week_name \tab character \cr
-   if_necessary \tab character \cr
-   series_game_number \tab character \cr
-   series_text \tab character \cr
-   arena_name \tab character \cr
-   arena_state \tab character \cr
-   arena_city \tab character \cr
-   postponed_status \tab character \cr
-   branch_link \tab character \cr
-   game_subtype \tab character \cr
-   home_team_id \tab integer \cr
-   home_team_name \tab character \cr
-   home_team_city \tab character \cr
-   home_team_tricode \tab character \cr
-   home_team_slug \tab character \cr
-   home_team_wins \tab integer \cr
-   home_team_losses \tab integer \cr
-   home_team_score \tab integer \cr
-   home_team_seed \tab integer \cr
-   away_team_id \tab integer \cr
-   away_team_name \tab character \cr
-   away_team_city \tab character \cr
-   away_team_tricode \tab character \cr
-   away_team_slug \tab character \cr
-   away_team_wins \tab integer \cr
-   away_team_losses \tab integer \cr
-   away_team_score \tab integer \cr
-   away_team_seed \tab integer \cr
-   season \tab character \cr
-   league_id \tab character \cr
+Returns a tibble with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_code \tab character \tab ESPN game code (numeric identifier). \cr
+   game_status \tab integer \tab Game status label. \cr
+   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   game_sequence \tab integer \tab Game sequence. \cr
+   game_date_est \tab character \tab Game date est. \cr
+   game_time_est \tab character \tab Game time est. \cr
+   game_date_time_est \tab character \tab Game date time est. \cr
+   game_date_utc \tab character \tab Game date utc. \cr
+   game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+   game_date_time_utc \tab character \tab Game date time utc. \cr
+   away_team_time \tab character \tab Time / clock value. \cr
+   home_team_time \tab character \tab Time / clock value. \cr
+   day \tab character \tab Day number within the month. \cr
+   month_num \tab integer \tab Month num. \cr
+   week_number \tab integer \tab Week number. \cr
+   week_name \tab character \tab Week name. \cr
+   if_necessary \tab character \tab If necessary. \cr
+   series_game_number \tab character \tab Series game number. \cr
+   series_text \tab character \tab Series text. \cr
+   arena_name \tab character \tab Arena name. \cr
+   arena_state \tab character \tab Arena state. \cr
+   arena_city \tab character \tab Arena city. \cr
+   postponed_status \tab character \tab Postponed status. \cr
+   branch_link \tab character \tab Branch link. \cr
+   game_subtype \tab character \tab Game subtype. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_city \tab character \tab Home team city / location. \cr
+   home_team_tricode \tab character \tab Home team three-letter code. \cr
+   home_team_slug \tab character \tab Home team's team slug. \cr
+   home_team_wins \tab integer \tab Home team's team wins. \cr
+   home_team_losses \tab integer \tab Home team's team losses. \cr
+   home_team_score \tab integer \tab Home team's score. \cr
+   home_team_seed \tab integer \tab Home team's team seed. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_city \tab character \tab Away team city / location. \cr
+   away_team_tricode \tab character \tab Away team three-letter code. \cr
+   away_team_slug \tab character \tab Away team's team slug. \cr
+   away_team_wins \tab integer \tab Away team's team wins. \cr
+   away_team_losses \tab integer \tab Away team's team losses. \cr
+   away_team_score \tab integer \tab Away team's score. \cr
+   away_team_seed \tab integer \tab Away team's team seed. \cr
+   season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   league_id \tab character \tab League identifier ('10' = WNBA). \cr
 }
 }
 \description{

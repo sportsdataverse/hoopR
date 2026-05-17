@@ -14,16 +14,16 @@ ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-A data frame with the following variables\tabular{ll}{
-   col_name \tab types \cr
-   team_id \tab character \cr
-   team_name \tab character \cr
-   team_url \tab character \cr
-   conference_id \tab character \cr
-   conference \tab character \cr
-   division \tab numeric \cr
-   year \tab numeric \cr
-   season_id \tab character \cr
+A data frame with the following variables\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_id \tab character \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_url \tab character \tab URL for team. \cr
+   conference_id \tab character \tab Conference identifier. \cr
+   conference \tab character \tab Conference. \cr
+   division \tab numeric \tab Team division. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   season_id \tab character \tab Unique season identifier. \cr
 }
 }
 \description{

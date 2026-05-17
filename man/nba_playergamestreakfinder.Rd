@@ -281,17 +281,17 @@ nba_playergamestreakfinder(
 \value{
 Return a named list of data frames: PlayerGameStreakFinderResults
 
-\strong{PlayerGameStreakFinderResults}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_NAME_LAST_FIRST \tab character \cr
-   PLAYER_ID \tab character \cr
-   GAMESTREAK \tab character \cr
-   STARTDATE \tab character \cr
-   ENDDATE \tab character \cr
-   ACTIVESTREAK \tab character \cr
-   NUMSEASONS \tab character \cr
-   LASTSEASON \tab character \cr
-   FIRSTSEASON \tab character \cr
+\strong{PlayerGameStreakFinderResults}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_NAME_LAST_FIRST \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   GAMESTREAK \tab character \tab  \cr
+   STARTDATE \tab character \tab  \cr
+   ENDDATE \tab character \tab  \cr
+   ACTIVESTREAK \tab character \tab  \cr
+   NUMSEASONS \tab character \tab  \cr
+   LASTSEASON \tab character \tab  \cr
+   FIRSTSEASON \tab character \tab  \cr
 }
 }
 \description{

@@ -14,88 +14,88 @@ nba_scoreboardv3(league_id = "00", game_date = "2023-03-26", ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a tibble with the following scoreboard data:\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   game_code \tab character \cr
-   game_status \tab integer \cr
-   game_status_text \tab character \cr
-   game_date \tab character \cr
-   game_time_utc \tab character \cr
-   game_et \tab character \cr
-   home_team_id \tab integer \cr
-   home_team_name \tab character \cr
-   home_team_city \tab character \cr
-   home_team_tricode \tab character \cr
-   home_team_slug \tab character \cr
-   away_team_id \tab integer \cr
-   away_team_name \tab character \cr
-   away_team_city \tab character \cr
-   away_team_tricode \tab character \cr
-   away_team_slug \tab character \cr
-   period \tab integer \cr
-   game_clock \tab character \cr
-   regulation_periods \tab integer \cr
-   series_game_number \tab character \cr
-   series_text \tab character \cr
-   if_necessary \tab logical \cr
-   series_conference \tab character \cr
-   po_round_desc \tab character \cr
-   game_subtype \tab character \cr
-   game_home_leaders_person_id \tab integer \cr
-   game_home_leaders_name \tab character \cr
-   game_home_leaders_player_slug \tab character \cr
-   game_home_leaders_jersey_num \tab character \cr
-   game_home_leaders_position \tab character \cr
-   game_home_leaders_team_tricode \tab character \cr
-   game_home_leaders_points \tab integer \cr
-   game_home_leaders_rebounds \tab integer \cr
-   game_home_leaders_assists \tab integer \cr
-   game_away_leaders_person_id \tab integer \cr
-   game_away_leaders_name \tab character \cr
-   game_away_leaders_player_slug \tab character \cr
-   game_away_leaders_jersey_num \tab character \cr
-   game_away_leaders_position \tab character \cr
-   game_away_leaders_team_tricode \tab character \cr
-   game_away_leaders_points \tab integer \cr
-   game_away_leaders_rebounds \tab integer \cr
-   game_away_leaders_assists \tab integer \cr
-   team_home_leaders_person_id \tab integer \cr
-   team_home_leaders_name \tab character \cr
-   team_home_leaders_player_slug \tab character \cr
-   team_home_leaders_jersey_num \tab character \cr
-   team_home_leaders_position \tab character \cr
-   team_home_leaders_team_tricode \tab character \cr
-   team_home_leaders_points \tab numeric \cr
-   team_home_leaders_rebounds \tab numeric \cr
-   team_home_leaders_assists \tab numeric \cr
-   team_away_leaders_person_id \tab integer \cr
-   team_away_leaders_name \tab character \cr
-   team_away_leaders_player_slug \tab character \cr
-   team_away_leaders_jersey_num \tab character \cr
-   team_away_leaders_position \tab character \cr
-   team_away_leaders_team_tricode \tab character \cr
-   team_away_leaders_points \tab numeric \cr
-   team_away_leaders_rebounds \tab numeric \cr
-   team_away_leaders_assists \tab numeric \cr
-   team_season_leaders_flag \tab integer \cr
-   home_wins \tab integer \cr
-   home_losses \tab integer \cr
-   home_score \tab integer \cr
-   home_seed \tab integer \cr
-   home_in_bonus \tab logical \cr
-   home_timeouts_remaining \tab integer \cr
-   home_periods \tab list \cr
-   away_wins \tab integer \cr
-   away_losses \tab integer \cr
-   away_score \tab integer \cr
-   away_seed \tab integer \cr
-   away_in_bonus \tab logical \cr
-   away_timeouts_remaining \tab integer \cr
-   away_periods \tab list \cr
-   league_id \tab character \cr
-   league \tab character \cr
-   broadcasters \tab data.frame \cr
+Return a tibble with the following scoreboard data:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_code \tab character \tab ESPN game code (numeric identifier). \cr
+   game_status \tab integer \tab Game status label. \cr
+   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+   game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+   game_et \tab character \tab Game et. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_city \tab character \tab Home team city / location. \cr
+   home_team_tricode \tab character \tab Home team three-letter code. \cr
+   home_team_slug \tab character \tab Home team's team slug. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_city \tab character \tab Away team city / location. \cr
+   away_team_tricode \tab character \tab Away team three-letter code. \cr
+   away_team_slug \tab character \tab Away team's team slug. \cr
+   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   game_clock \tab character \tab Game clock. \cr
+   regulation_periods \tab integer \tab Regulation periods. \cr
+   series_game_number \tab character \tab Series game number. \cr
+   series_text \tab character \tab Series text. \cr
+   if_necessary \tab logical \tab If necessary. \cr
+   series_conference \tab character \tab Series conference. \cr
+   po_round_desc \tab character \tab Po round desc. \cr
+   game_subtype \tab character \tab Game subtype. \cr
+   game_home_leaders_person_id \tab integer \tab Unique identifier for game home leaders person. \cr
+   game_home_leaders_name \tab character \tab Game home leaders name. \cr
+   game_home_leaders_player_slug \tab character \tab Game home leaders player slug. \cr
+   game_home_leaders_jersey_num \tab character \tab Game home leaders jersey num. \cr
+   game_home_leaders_position \tab character \tab Game home leaders position. \cr
+   game_home_leaders_team_tricode \tab character \tab Game home leaders team tricode. \cr
+   game_home_leaders_points \tab integer \tab Game home leaders points. \cr
+   game_home_leaders_rebounds \tab integer \tab Game home leaders rebounds. \cr
+   game_home_leaders_assists \tab integer \tab Game home leaders assists. \cr
+   game_away_leaders_person_id \tab integer \tab Unique identifier for game away leaders person. \cr
+   game_away_leaders_name \tab character \tab Game away leaders name. \cr
+   game_away_leaders_player_slug \tab character \tab Game away leaders player slug. \cr
+   game_away_leaders_jersey_num \tab character \tab Game away leaders jersey num. \cr
+   game_away_leaders_position \tab character \tab Game away leaders position. \cr
+   game_away_leaders_team_tricode \tab character \tab Game away leaders team tricode. \cr
+   game_away_leaders_points \tab integer \tab Game away leaders points. \cr
+   game_away_leaders_rebounds \tab integer \tab Game away leaders rebounds. \cr
+   game_away_leaders_assists \tab integer \tab Game away leaders assists. \cr
+   team_home_leaders_person_id \tab integer \tab Unique identifier for team home leaders person. \cr
+   team_home_leaders_name \tab character \tab Team home leaders name. \cr
+   team_home_leaders_player_slug \tab character \tab Team home leaders player slug. \cr
+   team_home_leaders_jersey_num \tab character \tab Team home leaders jersey num. \cr
+   team_home_leaders_position \tab character \tab Team home leaders position. \cr
+   team_home_leaders_team_tricode \tab character \tab Team home leaders team tricode. \cr
+   team_home_leaders_points \tab numeric \tab Team home leaders points. \cr
+   team_home_leaders_rebounds \tab numeric \tab Team home leaders rebounds. \cr
+   team_home_leaders_assists \tab numeric \tab Team home leaders assists. \cr
+   team_away_leaders_person_id \tab integer \tab Unique identifier for team away leaders person. \cr
+   team_away_leaders_name \tab character \tab Team away leaders name. \cr
+   team_away_leaders_player_slug \tab character \tab Team away leaders player slug. \cr
+   team_away_leaders_jersey_num \tab character \tab Team away leaders jersey num. \cr
+   team_away_leaders_position \tab character \tab Team away leaders position. \cr
+   team_away_leaders_team_tricode \tab character \tab Team away leaders team tricode. \cr
+   team_away_leaders_points \tab numeric \tab Team away leaders points. \cr
+   team_away_leaders_rebounds \tab numeric \tab Team away leaders rebounds. \cr
+   team_away_leaders_assists \tab numeric \tab Team away leaders assists. \cr
+   team_season_leaders_flag \tab integer \tab Team season leaders flag. \cr
+   home_wins \tab integer \tab Home team's wins. \cr
+   home_losses \tab integer \tab Home team's losses. \cr
+   home_score \tab integer \tab Home team score at the time of the play. \cr
+   home_seed \tab integer \tab Home team's seed. \cr
+   home_in_bonus \tab logical \tab Home team's in bonus. \cr
+   home_timeouts_remaining \tab integer \tab Home team's timeouts remaining. \cr
+   home_periods \tab list \tab Home team's periods. \cr
+   away_wins \tab integer \tab Away team's wins. \cr
+   away_losses \tab integer \tab Away team's losses. \cr
+   away_score \tab integer \tab Away team score at the time of the play. \cr
+   away_seed \tab integer \tab Away team's seed. \cr
+   away_in_bonus \tab logical \tab Away team's in bonus. \cr
+   away_timeouts_remaining \tab integer \tab Away team's timeouts remaining. \cr
+   away_periods \tab list \tab Away team's periods. \cr
+   league_id \tab character \tab League identifier ('10' = WNBA). \cr
+   league \tab character \tab League. \cr
+   broadcasters \tab data.frame \tab  \cr
 }
 }
 \description{

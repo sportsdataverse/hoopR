@@ -33,135 +33,135 @@ nba_boxscorescoringv3(
 Returns a named list of data frames: home_team_player_scoring, away_team_player_scoring,
 home_team_totals_scoring, away_team_totals_scoring
 
-\strong{home_team_player_scoring}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   percentage_field_goals_attempted2pt \tab numeric \cr
-   percentage_field_goals_attempted3pt \tab numeric \cr
-   percentage_points2pt \tab numeric \cr
-   percentage_points_midrange2pt \tab numeric \cr
-   percentage_points3pt \tab numeric \cr
-   percentage_points_fast_break \tab numeric \cr
-   percentage_points_free_throw \tab numeric \cr
-   percentage_points_off_turnovers \tab numeric \cr
-   percentage_points_paint \tab numeric \cr
-   percentage_assisted2pt \tab numeric \cr
-   percentage_unassisted2pt \tab numeric \cr
-   percentage_assisted3pt \tab numeric \cr
-   percentage_unassisted3pt \tab numeric \cr
-   percentage_assisted_fgm \tab numeric \cr
-   percentage_unassisted_fgm \tab numeric \cr
+\strong{home_team_player_scoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+   percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+   percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+   percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+   percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+   percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+   percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+   percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+   percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+   percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+   percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+   percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+   percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }
 
 
-\strong{away_team_player_scoring}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   percentage_field_goals_attempted2pt \tab numeric \cr
-   percentage_field_goals_attempted3pt \tab numeric \cr
-   percentage_points2pt \tab numeric \cr
-   percentage_points_midrange2pt \tab numeric \cr
-   percentage_points3pt \tab numeric \cr
-   percentage_points_fast_break \tab numeric \cr
-   percentage_points_free_throw \tab numeric \cr
-   percentage_points_off_turnovers \tab numeric \cr
-   percentage_points_paint \tab numeric \cr
-   percentage_assisted2pt \tab numeric \cr
-   percentage_unassisted2pt \tab numeric \cr
-   percentage_assisted3pt \tab numeric \cr
-   percentage_unassisted3pt \tab numeric \cr
-   percentage_assisted_fgm \tab numeric \cr
-   percentage_unassisted_fgm \tab numeric \cr
+\strong{away_team_player_scoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+   percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+   percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+   percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+   percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+   percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+   percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+   percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+   percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+   percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+   percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+   percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+   percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }
 
 
-\strong{home_team_totals_scoring}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   percentage_field_goals_attempted2pt \tab numeric \cr
-   percentage_field_goals_attempted3pt \tab numeric \cr
-   percentage_points2pt \tab numeric \cr
-   percentage_points_midrange2pt \tab numeric \cr
-   percentage_points3pt \tab numeric \cr
-   percentage_points_fast_break \tab numeric \cr
-   percentage_points_free_throw \tab numeric \cr
-   percentage_points_off_turnovers \tab numeric \cr
-   percentage_points_paint \tab numeric \cr
-   percentage_assisted2pt \tab numeric \cr
-   percentage_unassisted2pt \tab numeric \cr
-   percentage_assisted3pt \tab numeric \cr
-   percentage_unassisted3pt \tab numeric \cr
-   percentage_assisted_fgm \tab numeric \cr
-   percentage_unassisted_fgm \tab numeric \cr
+\strong{home_team_totals_scoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+   percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+   percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+   percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+   percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+   percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+   percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+   percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+   percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+   percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+   percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+   percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+   percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }
 
 
-\strong{away_team_totals_scoring}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   percentage_field_goals_attempted2pt \tab numeric \cr
-   percentage_field_goals_attempted3pt \tab numeric \cr
-   percentage_points2pt \tab numeric \cr
-   percentage_points_midrange2pt \tab numeric \cr
-   percentage_points3pt \tab numeric \cr
-   percentage_points_fast_break \tab numeric \cr
-   percentage_points_free_throw \tab numeric \cr
-   percentage_points_off_turnovers \tab numeric \cr
-   percentage_points_paint \tab numeric \cr
-   percentage_assisted2pt \tab numeric \cr
-   percentage_unassisted2pt \tab numeric \cr
-   percentage_assisted3pt \tab numeric \cr
-   percentage_unassisted3pt \tab numeric \cr
-   percentage_assisted_fgm \tab numeric \cr
-   percentage_unassisted_fgm \tab numeric \cr
+\strong{away_team_totals_scoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+   percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+   percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+   percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+   percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+   percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+   percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+   percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+   percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+   percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+   percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+   percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+   percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }
 }
 \description{

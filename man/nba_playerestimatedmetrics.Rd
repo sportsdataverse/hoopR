@@ -23,40 +23,40 @@ nba_playerestimatedmetrics(
 \value{
 Return a named list of data frames: PlayerEstimatedMetrics
 
-\strong{PlayerEstimatedMetrics}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   W_PCT \tab character \cr
-   MIN \tab character \cr
-   E_OFF_RATING \tab character \cr
-   E_DEF_RATING \tab character \cr
-   E_NET_RATING \tab character \cr
-   E_AST_RATIO \tab character \cr
-   E_OREB_PCT \tab character \cr
-   E_DREB_PCT \tab character \cr
-   E_REB_PCT \tab character \cr
-   E_TOV_PCT \tab character \cr
-   E_USG_PCT \tab character \cr
-   E_PACE \tab character \cr
-   GP_RANK \tab character \cr
-   W_RANK \tab character \cr
-   L_RANK \tab character \cr
-   W_PCT_RANK \tab character \cr
-   MIN_RANK \tab character \cr
-   E_OFF_RATING_RANK \tab character \cr
-   E_DEF_RATING_RANK \tab character \cr
-   E_NET_RATING_RANK \tab character \cr
-   E_AST_RATIO_RANK \tab character \cr
-   E_OREB_PCT_RANK \tab character \cr
-   E_DREB_PCT_RANK \tab character \cr
-   E_REB_PCT_RANK \tab character \cr
-   E_TOV_PCT_RANK \tab character \cr
-   E_USG_PCT_RANK \tab character \cr
-   E_PACE_RANK \tab character \cr
+\strong{PlayerEstimatedMetrics}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   W_PCT \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   E_OFF_RATING \tab character \tab  \cr
+   E_DEF_RATING \tab character \tab  \cr
+   E_NET_RATING \tab character \tab  \cr
+   E_AST_RATIO \tab character \tab  \cr
+   E_OREB_PCT \tab character \tab  \cr
+   E_DREB_PCT \tab character \tab  \cr
+   E_REB_PCT \tab character \tab  \cr
+   E_TOV_PCT \tab character \tab  \cr
+   E_USG_PCT \tab character \tab  \cr
+   E_PACE \tab character \tab  \cr
+   GP_RANK \tab character \tab  \cr
+   W_RANK \tab character \tab  \cr
+   L_RANK \tab character \tab  \cr
+   W_PCT_RANK \tab character \tab  \cr
+   MIN_RANK \tab character \tab  \cr
+   E_OFF_RATING_RANK \tab character \tab  \cr
+   E_DEF_RATING_RANK \tab character \tab  \cr
+   E_NET_RATING_RANK \tab character \tab  \cr
+   E_AST_RATIO_RANK \tab character \tab  \cr
+   E_OREB_PCT_RANK \tab character \tab  \cr
+   E_DREB_PCT_RANK \tab character \tab  \cr
+   E_REB_PCT_RANK \tab character \tab  \cr
+   E_TOV_PCT_RANK \tab character \tab  \cr
+   E_USG_PCT_RANK \tab character \tab  \cr
+   E_PACE_RANK \tab character \tab  \cr
 }
 }
 \description{

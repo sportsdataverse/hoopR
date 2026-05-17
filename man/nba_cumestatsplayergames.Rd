@@ -41,10 +41,10 @@ nba_cumestatsplayergames(
 \value{
 Returns a named list of data frames: CumeStatsPlayerGames
 
-\strong{CumeStatsPlayerGames}\tabular{ll}{
-   col_name \tab types \cr
-   MATCHUP \tab character \cr
-   GAME_ID \tab character \cr
+\strong{CumeStatsPlayerGames}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   MATCHUP \tab character \tab Matchup. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
 }
 }
 \description{

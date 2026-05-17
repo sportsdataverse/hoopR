@@ -8,88 +8,88 @@
 #'    **away_team**
 #'
 #'
-#'    |col_name   |types     |
-#'    |:----------|:---------|
-#'    |hgt        |character |
-#'    |wgt        |numeric   |
-#'    |yr         |character |
-#'    |number     |numeric   |
-#'    |player     |character |
-#'    |min        |numeric   |
-#'    |o_rtg      |numeric   |
-#'    |percent_ps |numeric   |
-#'    |pts        |numeric   |
-#'    |fgm_2      |numeric   |
-#'    |fga_2      |numeric   |
-#'    |fgm_3      |numeric   |
-#'    |fga_3      |numeric   |
-#'    |ftm        |numeric   |
-#'    |fta        |numeric   |
-#'    |or         |numeric   |
-#'    |dr         |numeric   |
-#'    |a          |numeric   |
-#'    |to         |numeric   |
-#'    |blk        |numeric   |
-#'    |stl        |numeric   |
-#'    |pf         |numeric   |
-#'    |team       |character |
-#'    |wp_note    |character |
-#'    |game_id    |numeric   |
-#'    |year       |numeric   |
+#'    |col_name   |types     |description                         |
+#'    |:----------|:---------|:-----------------------------------|
+#'    |hgt        |character |Hgt.                                |
+#'    |wgt        |numeric   |Wgt.                                |
+#'    |yr         |character |Yr.                                 |
+#'    |number     |numeric   |Number.                             |
+#'    |player     |character |Player.                             |
+#'    |min        |numeric   |Minutes played.                     |
+#'    |o_rtg      |numeric   |O rtg.                              |
+#'    |percent_ps |numeric   |Percent ps.                         |
+#'    |pts        |numeric   |Points scored.                      |
+#'    |fgm_2      |numeric   |Fgm 2.                              |
+#'    |fga_2      |numeric   |Fga 2.                              |
+#'    |fgm_3      |numeric   |Fgm 3.                              |
+#'    |fga_3      |numeric   |Fga 3.                              |
+#'    |ftm        |numeric   |Free throws made.                   |
+#'    |fta        |numeric   |Free throw attempts.                |
+#'    |or         |numeric   |Or.                                 |
+#'    |dr         |numeric   |Dr.                                 |
+#'    |a          |numeric   |A.                                  |
+#'    |to         |numeric   |To.                                 |
+#'    |blk        |numeric   |Blocks.                             |
+#'    |stl        |numeric   |Steals.                             |
+#'    |pf         |numeric   |Personal fouls.                     |
+#'    |team       |character |Team-side label or team identifier. |
+#'    |wp_note    |character |Wp note.                            |
+#'    |game_id    |numeric   |Unique game identifier.             |
+#'    |year       |numeric   |4-digit year.                       |
 #'
 #'    **home_team**
 #'
 #'
-#'    |col_name   |types     |
-#'    |:----------|:---------|
-#'    |hgt        |character |
-#'    |wgt        |numeric   |
-#'    |yr         |character |
-#'    |number     |numeric   |
-#'    |player     |character |
-#'    |min        |numeric   |
-#'    |o_rtg      |numeric   |
-#'    |percent_ps |numeric   |
-#'    |pts        |numeric   |
-#'    |fgm_2      |numeric   |
-#'    |fga_2      |numeric   |
-#'    |fgm_3      |numeric   |
-#'    |fga_3      |numeric   |
-#'    |ftm        |numeric   |
-#'    |fta        |numeric   |
-#'    |or         |numeric   |
-#'    |dr         |numeric   |
-#'    |a          |numeric   |
-#'    |to         |numeric   |
-#'    |blk        |numeric   |
-#'    |stl        |numeric   |
-#'    |pf         |numeric   |
-#'    |team       |character |
-#'    |wp_note    |character |
-#'    |game_id    |numeric   |
-#'    |year       |numeric   |
+#'    |col_name   |types     |description                         |
+#'    |:----------|:---------|:-----------------------------------|
+#'    |hgt        |character |Hgt.                                |
+#'    |wgt        |numeric   |Wgt.                                |
+#'    |yr         |character |Yr.                                 |
+#'    |number     |numeric   |Number.                             |
+#'    |player     |character |Player.                             |
+#'    |min        |numeric   |Minutes played.                     |
+#'    |o_rtg      |numeric   |O rtg.                              |
+#'    |percent_ps |numeric   |Percent ps.                         |
+#'    |pts        |numeric   |Points scored.                      |
+#'    |fgm_2      |numeric   |Fgm 2.                              |
+#'    |fga_2      |numeric   |Fga 2.                              |
+#'    |fgm_3      |numeric   |Fgm 3.                              |
+#'    |fga_3      |numeric   |Fga 3.                              |
+#'    |ftm        |numeric   |Free throws made.                   |
+#'    |fta        |numeric   |Free throw attempts.                |
+#'    |or         |numeric   |Or.                                 |
+#'    |dr         |numeric   |Dr.                                 |
+#'    |a          |numeric   |A.                                  |
+#'    |to         |numeric   |To.                                 |
+#'    |blk        |numeric   |Blocks.                             |
+#'    |stl        |numeric   |Steals.                             |
+#'    |pf         |numeric   |Personal fouls.                     |
+#'    |team       |character |Team-side label or team identifier. |
+#'    |wp_note    |character |Wp note.                            |
+#'    |game_id    |numeric   |Unique game identifier.             |
+#'    |year       |numeric   |4-digit year.                       |
 #'
 #'    **linescore**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |team     |character |
-#'    |q1       |integer   |
-#'    |q2       |integer   |
-#'    |q3       |integer   |
-#'    |q4       |integer   |
-#'    |t        |integer   |
+#'    |col_name |types     |description                         |
+#'    |:--------|:---------|:-----------------------------------|
+#'    |team     |character |Team-side label or team identifier. |
+#'    |q1       |integer   |Q1.                                 |
+#'    |q2       |integer   |Q2.                                 |
+#'    |q3       |integer   |Q3.                                 |
+#'    |q4       |integer   |Q4.                                 |
+#'    |t        |integer   |T.                                  |
 #'
 #'    **officials**
 #'
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |official_id   |character |
-#'    |official_name |character |
-#'    |game_id       |numeric   |
-#'    |year          |numeric   |
+#'    |col_name      |types     |description                           |
+#'    |:-------------|:---------|:-------------------------------------|
+#'    |official_id   |character |Unique official / referee identifier. |
+#'    |official_name |character |Official name.                        |
+#'    |game_id       |numeric   |Unique game identifier.               |
+#'    |year          |numeric   |4-digit year.                         |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
@@ -281,63 +281,63 @@ kp_box <- function(game_id, year) {
 #'    **winprob_dataset**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |period            |integer   |
-#'    |wp                |numeric   |
-#'    |time_left         |numeric   |
-#'    |visitor_score     |integer   |
-#'    |home_score        |integer   |
-#'    |visitor_scoring   |integer   |
-#'    |home_scoring      |integer   |
-#'    |possession_team   |character |
-#'    |possession_number |character |
-#'    |game_id           |numeric   |
-#'    |year              |numeric   |
+#'    |col_name          |types     |description                                   |
+#'    |:-----------------|:---------|:---------------------------------------------|
+#'    |period            |integer   |Period of the game (1-4 quarters; 5+ for OT). |
+#'    |wp                |numeric   |Wp.                                           |
+#'    |time_left         |numeric   |Time left.                                    |
+#'    |visitor_score     |integer   |Visitor score.                                |
+#'    |home_score        |integer   |Home team score at the time of the play.      |
+#'    |visitor_scoring   |integer   |Visitor scoring.                              |
+#'    |home_scoring      |integer   |Home team's scoring.                          |
+#'    |possession_team   |character |Possession team.                              |
+#'    |possession_number |character |Possession number.                            |
+#'    |game_id           |numeric   |Unique game identifier.                       |
+#'    |year              |numeric   |4-digit year.                                 |
 #'
 #'    **game_data**
 #'
 #'
-#'    |col_name               |types     |
-#'    |:----------------------|:---------|
-#'    |game_id                |character |
-#'    |year                   |integer   |
-#'    |full_date              |character |
-#'    |date                   |character |
-#'    |game_time              |character |
-#'    |venue                  |character |
-#'    |city                   |character |
-#'    |team1                  |character |
-#'    |team1score             |integer   |
-#'    |team1_rk               |character |
-#'    |team2                  |character |
-#'    |team2score             |integer   |
-#'    |team2_rk               |character |
-#'    |dominance_season_rk    |character |
-#'    |tension_season_rk      |character |
-#'    |excitement_season_rk   |character |
-#'    |lead_changes_season_rk |character |
-#'    |minimum_wp_season_rk   |character |
-#'    |dominance_rk           |character |
-#'    |tension_rk             |character |
-#'    |excitement_rk          |character |
-#'    |lead_changes_rk        |character |
-#'    |minimum_wp_rk          |character |
-#'    |dominance              |character |
-#'    |tension                |character |
-#'    |excitement             |character |
-#'    |favchg                 |character |
-#'    |min_wp                 |character |
+#'    |col_name               |types     |description                |
+#'    |:----------------------|:---------|:--------------------------|
+#'    |game_id                |character |Unique game identifier.    |
+#'    |year                   |integer   |4-digit year.              |
+#'    |full_date              |character |Date in YYYY-MM-DD format. |
+#'    |date                   |character |Date in YYYY-MM-DD format. |
+#'    |game_time              |character |Game start time.           |
+#'    |venue                  |character |Venue name.                |
+#'    |city                   |character |City.                      |
+#'    |team1                  |character |Team1.                     |
+#'    |team1score             |integer   |Team1score.                |
+#'    |team1_rk               |character |Team1 rk.                  |
+#'    |team2                  |character |Team2.                     |
+#'    |team2score             |integer   |Team2score.                |
+#'    |team2_rk               |character |Team2 rk.                  |
+#'    |dominance_season_rk    |character |Dominance season rk.       |
+#'    |tension_season_rk      |character |Tension season rk.         |
+#'    |excitement_season_rk   |character |Excitement season rk.      |
+#'    |lead_changes_season_rk |character |Lead changes season rk.    |
+#'    |minimum_wp_season_rk   |character |Minimum wp season rk.      |
+#'    |dominance_rk           |character |Dominance rk.              |
+#'    |tension_rk             |character |Tension rk.                |
+#'    |excitement_rk          |character |Excitement rk.             |
+#'    |lead_changes_rk        |character |Lead changes rk.           |
+#'    |minimum_wp_rk          |character |Minimum wp rk.             |
+#'    |dominance              |character |Dominance.                 |
+#'    |tension                |character |Tension.                   |
+#'    |excitement             |character |Excitement.                |
+#'    |favchg                 |character |Favchg.                    |
+#'    |min_wp                 |character |Min wp.                    |
 #'
 #'    **runs**
 #'
 #'
-#'    |col_name |types   |
-#'    |:--------|:-------|
-#'    |start    |numeric |
-#'    |end      |numeric |
-#'    |visitor  |integer |
-#'    |home     |integer |
+#'    |col_name |types   |description |
+#'    |:--------|:-------|:-----------|
+#'    |start    |numeric |Start.      |
+#'    |end      |numeric |End.        |
+#'    |visitor  |integer |Visitor.    |
+#'    |home     |integer |Home.       |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename

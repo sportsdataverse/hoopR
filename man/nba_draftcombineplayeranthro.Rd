@@ -20,26 +20,26 @@ nba_draftcombineplayeranthro(
 \value{
 Returns a named list of data frames: Results
 
-\strong{Results}\tabular{ll}{
-   col_name \tab types \cr
-   TEMP_PLAYER_ID \tab character \cr
-   PLAYER_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   PLAYER_NAME \tab character \cr
-   POSITION \tab character \cr
-   HEIGHT_WO_SHOES \tab character \cr
-   HEIGHT_WO_SHOES_FT_IN \tab character \cr
-   HEIGHT_W_SHOES \tab character \cr
-   HEIGHT_W_SHOES_FT_IN \tab character \cr
-   WEIGHT \tab character \cr
-   WINGSPAN \tab character \cr
-   WINGSPAN_FT_IN \tab character \cr
-   STANDING_REACH \tab character \cr
-   STANDING_REACH_FT_IN \tab character \cr
-   BODY_FAT_PCT \tab character \cr
-   HAND_LENGTH \tab character \cr
-   HAND_WIDTH \tab character \cr
+\strong{Results}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEMP_PLAYER_ID \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   HEIGHT_WO_SHOES \tab character \tab  \cr
+   HEIGHT_WO_SHOES_FT_IN \tab character \tab  \cr
+   HEIGHT_W_SHOES \tab character \tab  \cr
+   HEIGHT_W_SHOES_FT_IN \tab character \tab  \cr
+   WEIGHT \tab character \tab Player weight in pounds. \cr
+   WINGSPAN \tab character \tab  \cr
+   WINGSPAN_FT_IN \tab character \tab  \cr
+   STANDING_REACH \tab character \tab  \cr
+   STANDING_REACH_FT_IN \tab character \tab  \cr
+   BODY_FAT_PCT \tab character \tab  \cr
+   HAND_LENGTH \tab character \tab  \cr
+   HAND_WIDTH \tab character \tab  \cr
 }
 }
 \description{

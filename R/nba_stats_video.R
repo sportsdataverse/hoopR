@@ -41,44 +41,44 @@ NULL
 #'    **videoUrls**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |uuid     |character |
-#'    |sdur     |integer   |
-#'    |surl     |character |
-#'    |sth      |character |
-#'    |mdur     |integer   |
-#'    |murl     |character |
-#'    |mth      |character |
-#'    |ldur     |integer   |
-#'    |lurl     |character |
-#'    |lth      |character |
-#'    |vtt      |character |
-#'    |scc      |character |
-#'    |srt      |character |
+#'    |col_name |types     |description |
+#'    |:--------|:---------|:-----------|
+#'    |uuid     |character |Uuid.       |
+#'    |sdur     |integer   |Sdur.       |
+#'    |surl     |character |Surl.       |
+#'    |sth      |character |Sth.        |
+#'    |mdur     |integer   |Mdur.       |
+#'    |murl     |character |Murl.       |
+#'    |mth      |character |Mth.        |
+#'    |ldur     |integer   |Ldur.       |
+#'    |lurl     |character |Lurl.       |
+#'    |lth      |character |Lth.        |
+#'    |vtt      |character |Vtt.        |
+#'    |scc      |character |Scc.        |
+#'    |srt      |character |Srt.        |
 #'
 #'    **playlist**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |gi       |character |
-#'    |ei       |integer   |
-#'    |y        |integer   |
-#'    |m        |character |
-#'    |d        |character |
-#'    |gc       |character |
-#'    |p        |integer   |
-#'    |dsc      |character |
-#'    |ha       |character |
-#'    |hid      |integer   |
-#'    |va       |character |
-#'    |vid      |integer   |
-#'    |hpb      |integer   |
-#'    |hpa      |integer   |
-#'    |vpb      |integer   |
-#'    |vpa      |integer   |
-#'    |pta      |integer   |
+#'    |col_name |types     |description |
+#'    |:--------|:---------|:-----------|
+#'    |gi       |character |Gi.         |
+#'    |ei       |integer   |Ei.         |
+#'    |y        |integer   |Y.          |
+#'    |m        |character |M.          |
+#'    |d        |character |D.          |
+#'    |gc       |character |Gc.         |
+#'    |p        |integer   |P.          |
+#'    |dsc      |character |Dsc.        |
+#'    |ha       |character |Ha.         |
+#'    |hid      |integer   |Hid.        |
+#'    |va       |character |Va.         |
+#'    |vid      |integer   |Vid.        |
+#'    |hpb      |integer   |Hpb.        |
+#'    |hpa      |integer   |Hpa.        |
+#'    |vpb      |integer   |Vpb.        |
+#'    |vpa      |integer   |Vpa.        |
+#'    |pta      |integer   |Pta.        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -240,43 +240,43 @@ NULL
 #'    **videoUrls**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |uuid     |character |
-#'    |dur      |logical   |
-#'    |stt      |logical   |
-#'    |stp      |logical   |
-#'    |sth      |logical   |
-#'    |stw      |logical   |
-#'    |mtt      |logical   |
-#'    |mtp      |logical   |
-#'    |mth      |logical   |
-#'    |mtw      |logical   |
-#'    |ltt      |logical   |
-#'    |ltp      |logical   |
-#'    |lth      |logical   |
-#'    |ltw      |logical   |
+#'    |col_name |types     |description |
+#'    |:--------|:---------|:-----------|
+#'    |uuid     |character |Uuid.       |
+#'    |dur      |logical   |Dur.        |
+#'    |stt      |logical   |Stt.        |
+#'    |stp      |logical   |Stp.        |
+#'    |sth      |logical   |Sth.        |
+#'    |stw      |logical   |Stw.        |
+#'    |mtt      |logical   |Mtt.        |
+#'    |mtp      |logical   |Mtp.        |
+#'    |mth      |logical   |Mth.        |
+#'    |mtw      |logical   |Mtw.        |
+#'    |ltt      |logical   |Ltt.        |
+#'    |ltp      |logical   |Ltp.        |
+#'    |lth      |logical   |Lth.        |
+#'    |ltw      |logical   |Ltw.        |
 #'
 #'    **playlist**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |gi       |character |
-#'    |ei       |integer   |
-#'    |y        |integer   |
-#'    |m        |character |
-#'    |d        |character |
-#'    |gc       |character |
-#'    |p        |integer   |
-#'    |dsc      |character |
-#'    |ha       |character |
-#'    |va       |character |
-#'    |hpb      |integer   |
-#'    |hpa      |integer   |
-#'    |vpb      |integer   |
-#'    |vpa      |integer   |
-#'    |pta      |integer   |
+#'    |col_name |types     |description |
+#'    |:--------|:---------|:-----------|
+#'    |gi       |character |Gi.         |
+#'    |ei       |integer   |Ei.         |
+#'    |y        |integer   |Y.          |
+#'    |m        |character |M.          |
+#'    |d        |character |D.          |
+#'    |gc       |character |Gc.         |
+#'    |p        |integer   |P.          |
+#'    |dsc      |character |Dsc.        |
+#'    |ha       |character |Ha.         |
+#'    |va       |character |Va.         |
+#'    |hpb      |integer   |Hpb.        |
+#'    |hpa      |integer   |Hpa.        |
+#'    |vpb      |integer   |Vpb.        |
+#'    |vpa      |integer   |Vpa.        |
+#'    |pta      |integer   |Pta.        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -476,22 +476,22 @@ NULL
 #'    **VideoStatus**
 #'
 #'
-#'    |col_name                  |types     |
-#'    |:-------------------------|:---------|
-#'    |GAME_ID                   |character |
-#'    |GAME_DATE                 |character |
-#'    |VISITOR_TEAM_ID           |character |
-#'    |VISITOR_TEAM_CITY         |character |
-#'    |VISITOR_TEAM_NAME         |character |
-#'    |VISITOR_TEAM_ABBREVIATION |character |
-#'    |HOME_TEAM_ID              |character |
-#'    |HOME_TEAM_CITY            |character |
-#'    |HOME_TEAM_NAME            |character |
-#'    |HOME_TEAM_ABBREVIATION    |character |
-#'    |GAME_STATUS               |character |
-#'    |GAME_STATUS_TEXT          |character |
-#'    |IS_AVAILABLE              |character |
-#'    |PT_XYZ_AVAILABLE          |character |
+#'    |col_name                  |types     |description                                            |
+#'    |:-------------------------|:---------|:------------------------------------------------------|
+#'    |GAME_ID                   |character |Unique game identifier.                                |
+#'    |GAME_DATE                 |character |Game date (YYYY-MM-DD).                                |
+#'    |VISITOR_TEAM_ID           |character |                                                       |
+#'    |VISITOR_TEAM_CITY         |character |                                                       |
+#'    |VISITOR_TEAM_NAME         |character |                                                       |
+#'    |VISITOR_TEAM_ABBREVIATION |character |                                                       |
+#'    |HOME_TEAM_ID              |character |Unique identifier for the home team.                   |
+#'    |HOME_TEAM_CITY            |character |Home team city / location.                             |
+#'    |HOME_TEAM_NAME            |character |Home team name.                                        |
+#'    |HOME_TEAM_ABBREVIATION    |character |                                                       |
+#'    |GAME_STATUS               |character |Game status label.                                     |
+#'    |GAME_STATUS_TEXT          |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'    |IS_AVAILABLE              |character |                                                       |
+#'    |PT_XYZ_AVAILABLE          |character |Pt xyz available.                                      |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

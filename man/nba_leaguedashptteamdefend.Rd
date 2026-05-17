@@ -77,19 +77,19 @@ nba_leaguedashptteamdefend(
 \value{
 Returns a named list of data frames: LeagueDashPtTeamDefend
 
-\strong{LeagueDashPtTeamDefend}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   GP \tab character \cr
-   G \tab character \cr
-   FREQ \tab character \cr
-   D_FGM \tab character \cr
-   D_FGA \tab character \cr
-   D_FG_PCT \tab character \cr
-   NORMAL_FG_PCT \tab character \cr
-   PCT_PLUSMINUS \tab character \cr
+\strong{LeagueDashPtTeamDefend}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   GP \tab character \tab Games played. \cr
+   G \tab character \tab Games played. \cr
+   FREQ \tab character \tab  \cr
+   D_FGM \tab character \tab  \cr
+   D_FGA \tab character \tab  \cr
+   D_FG_PCT \tab character \tab  \cr
+   NORMAL_FG_PCT \tab character \tab  \cr
+   PCT_PLUSMINUS \tab character \tab  \cr
 }
 }
 \description{

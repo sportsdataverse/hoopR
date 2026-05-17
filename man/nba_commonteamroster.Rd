@@ -23,39 +23,39 @@ nba_commonteamroster(
 \value{
 Return a named list of data frames: Coaches, CommonTeamRoster
 
-\strong{CommonTeamRoster}\tabular{ll}{
-   col_name \tab types \cr
-   TeamID \tab character \cr
-   SEASON \tab character \cr
-   LeagueID \tab character \cr
-   PLAYER \tab character \cr
-   NICKNAME \tab character \cr
-   PLAYER_SLUG \tab character \cr
-   NUM \tab character \cr
-   POSITION \tab character \cr
-   HEIGHT \tab character \cr
-   WEIGHT \tab character \cr
-   BIRTH_DATE \tab character \cr
-   AGE \tab character \cr
-   EXP \tab character \cr
-   SCHOOL \tab character \cr
-   PLAYER_ID \tab character \cr
-   HOW_ACQUIRED \tab character \cr
+\strong{CommonTeamRoster}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TeamID \tab character \tab Teamid. \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   LeagueID \tab character \tab  \cr
+   PLAYER \tab character \tab Player. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
+   NUM \tab character \tab  \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+   WEIGHT \tab character \tab Player weight in pounds. \cr
+   BIRTH_DATE \tab character \tab Date of birth (YYYY-MM-DD). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   EXP \tab character \tab Exp. \cr
+   SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   HOW_ACQUIRED \tab character \tab  \cr
 }
 
 
-\strong{Coaches}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   SEASON \tab character \cr
-   COACH_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   COACH_NAME \tab character \cr
-   IS_ASSISTANT \tab character \cr
-   COACH_TYPE \tab character \cr
-   SORT_SEQUENCE \tab character \cr
-   SUB_SORT_SEQUENCE \tab character \cr
+\strong{Coaches}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   COACH_ID \tab character \tab  \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   COACH_NAME \tab character \tab  \cr
+   IS_ASSISTANT \tab character \tab  \cr
+   COACH_TYPE \tab character \tab  \cr
+   SORT_SEQUENCE \tab character \tab  \cr
+   SUB_SORT_SEQUENCE \tab character \tab  \cr
 }
 }
 \description{

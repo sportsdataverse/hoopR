@@ -12,34 +12,34 @@ kp_fourfactors(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of four factors ratings\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   adj_t \tab numeric \cr
-   adj_t_rk \tab numeric \cr
-   adj_o \tab numeric \cr
-   adj_o_rk \tab numeric \cr
-   off_e_fg_pct \tab numeric \cr
-   off_e_fg_pct_rk \tab numeric \cr
-   off_to_pct \tab numeric \cr
-   off_to_pct_rk \tab numeric \cr
-   off_or_pct \tab numeric \cr
-   off_or_pct_rk \tab numeric \cr
-   off_ft_rate \tab numeric \cr
-   off_ft_rate_rk \tab numeric \cr
-   adj_d \tab numeric \cr
-   adj_d_rk \tab numeric \cr
-   def_e_fg_pct \tab numeric \cr
-   def_e_fg_pct_rk \tab numeric \cr
-   def_to_pct \tab numeric \cr
-   def_to_pct_rk \tab numeric \cr
-   def_or_pct \tab numeric \cr
-   def_or_pct_rk \tab numeric \cr
-   def_ft_rate \tab numeric \cr
-   def_ft_rate_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
-   year \tab numeric \cr
+Returns a tibble of four factors ratings\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   adj_t \tab numeric \tab Adj t. \cr
+   adj_t_rk \tab numeric \tab Adj t rk. \cr
+   adj_o \tab numeric \tab Adj o. \cr
+   adj_o_rk \tab numeric \tab Adj o rk. \cr
+   off_e_fg_pct \tab numeric \tab Off e field goals percentage (0-1 decimal). \cr
+   off_e_fg_pct_rk \tab numeric \tab Off e fg pct rk. \cr
+   off_to_pct \tab numeric \tab Off to percentage (0-1 decimal). \cr
+   off_to_pct_rk \tab numeric \tab Off to pct rk. \cr
+   off_or_pct \tab numeric \tab Off or percentage (0-1 decimal). \cr
+   off_or_pct_rk \tab numeric \tab Off or pct rk. \cr
+   off_ft_rate \tab numeric \tab Off ft rate. \cr
+   off_ft_rate_rk \tab numeric \tab Off ft rate rk. \cr
+   adj_d \tab numeric \tab Adj d. \cr
+   adj_d_rk \tab numeric \tab Adj d rk. \cr
+   def_e_fg_pct \tab numeric \tab Def e field goals percentage (0-1 decimal). \cr
+   def_e_fg_pct_rk \tab numeric \tab Def e fg pct rk. \cr
+   def_to_pct \tab numeric \tab Def to percentage (0-1 decimal). \cr
+   def_to_pct_rk \tab numeric \tab Def to pct rk. \cr
+   def_or_pct \tab numeric \tab Def or percentage (0-1 decimal). \cr
+   def_or_pct_rk \tab numeric \tab Def or pct rk. \cr
+   def_ft_rate \tab numeric \tab Def ft rate. \cr
+   def_ft_rate_rk \tab numeric \tab Def ft rate rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

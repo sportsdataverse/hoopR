@@ -92,36 +92,36 @@ nba_leaguehustlestatsplayer(
 \value{
 Returns a named list of data frames: HustleStatsPlayer
 
-\strong{HustleStatsPlayer}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   AGE \tab character \cr
-   G \tab character \cr
-   MIN \tab character \cr
-   CONTESTED_SHOTS \tab character \cr
-   CONTESTED_SHOTS_2PT \tab character \cr
-   CONTESTED_SHOTS_3PT \tab character \cr
-   DEFLECTIONS \tab character \cr
-   CHARGES_DRAWN \tab character \cr
-   SCREEN_ASSISTS \tab character \cr
-   SCREEN_AST_PTS \tab character \cr
-   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
-   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
-   LOOSE_BALLS_RECOVERED \tab character \cr
-   PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \cr
-   PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \cr
-   OFF_BOXOUTS \tab character \cr
-   DEF_BOXOUTS \tab character \cr
-   BOX_OUT_PLAYER_TEAM_REBS \tab character \cr
-   BOX_OUT_PLAYER_REBS \tab character \cr
-   BOX_OUTS \tab character \cr
-   PCT_BOX_OUTS_OFF \tab character \cr
-   PCT_BOX_OUTS_DEF \tab character \cr
-   PCT_BOX_OUTS_TEAM_REB \tab character \cr
-   PCT_BOX_OUTS_REB \tab character \cr
+\strong{HustleStatsPlayer}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   G \tab character \tab Games played. \cr
+   MIN \tab character \tab Minutes played. \cr
+   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+   CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+   CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+   SCREEN_AST_PTS \tab character \tab  \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+   PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
+   PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
+   OFF_BOXOUTS \tab character \tab  \cr
+   DEF_BOXOUTS \tab character \tab  \cr
+   BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
+   PCT_BOX_OUTS_OFF \tab character \tab  \cr
+   PCT_BOX_OUTS_DEF \tab character \tab  \cr
+   PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
+   PCT_BOX_OUTS_REB \tab character \tab  \cr
 }
 }
 \description{

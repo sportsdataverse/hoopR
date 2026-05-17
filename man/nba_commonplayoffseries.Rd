@@ -23,13 +23,13 @@ nba_commonplayoffseries(
 \value{
 Return a named list of data frames: PlayoffSeries
 
-\strong{PlayoffSeries}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   HOME_TEAM_ID \tab character \cr
-   VISITOR_TEAM_ID \tab character \cr
-   SERIES_ID \tab character \cr
-   GAME_NUM \tab character \cr
+\strong{PlayoffSeries}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   SERIES_ID \tab character \tab  \cr
+   GAME_NUM \tab character \tab  \cr
 }
 }
 \description{

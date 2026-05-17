@@ -14,61 +14,61 @@ kp_winprob(game_id, year)
 \value{
 Returns a named list of tibbles: winprob_dataset, game_data, runs
 
-\strong{winprob_dataset}\tabular{ll}{
-   col_name \tab types \cr
-   period \tab integer \cr
-   wp \tab numeric \cr
-   time_left \tab numeric \cr
-   visitor_score \tab integer \cr
-   home_score \tab integer \cr
-   visitor_scoring \tab integer \cr
-   home_scoring \tab integer \cr
-   possession_team \tab character \cr
-   possession_number \tab character \cr
-   game_id \tab numeric \cr
-   year \tab numeric \cr
+\strong{winprob_dataset}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   wp \tab numeric \tab Wp. \cr
+   time_left \tab numeric \tab Time left. \cr
+   visitor_score \tab integer \tab Visitor score. \cr
+   home_score \tab integer \tab Home team score at the time of the play. \cr
+   visitor_scoring \tab integer \tab Visitor scoring. \cr
+   home_scoring \tab integer \tab Home team's scoring. \cr
+   possession_team \tab character \tab Possession team. \cr
+   possession_number \tab character \tab Possession number. \cr
+   game_id \tab numeric \tab Unique game identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 
 
-\strong{game_data}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   year \tab integer \cr
-   full_date \tab character \cr
-   date \tab character \cr
-   game_time \tab character \cr
-   venue \tab character \cr
-   city \tab character \cr
-   team1 \tab character \cr
-   team1score \tab integer \cr
-   team1_rk \tab character \cr
-   team2 \tab character \cr
-   team2score \tab integer \cr
-   team2_rk \tab character \cr
-   dominance_season_rk \tab character \cr
-   tension_season_rk \tab character \cr
-   excitement_season_rk \tab character \cr
-   lead_changes_season_rk \tab character \cr
-   minimum_wp_season_rk \tab character \cr
-   dominance_rk \tab character \cr
-   tension_rk \tab character \cr
-   excitement_rk \tab character \cr
-   lead_changes_rk \tab character \cr
-   minimum_wp_rk \tab character \cr
-   dominance \tab character \cr
-   tension \tab character \cr
-   excitement \tab character \cr
-   favchg \tab character \cr
-   min_wp \tab character \cr
+\strong{game_data}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   year \tab integer \tab 4-digit year. \cr
+   full_date \tab character \tab Date in YYYY-MM-DD format. \cr
+   date \tab character \tab Date in YYYY-MM-DD format. \cr
+   game_time \tab character \tab Game start time. \cr
+   venue \tab character \tab Venue name. \cr
+   city \tab character \tab City. \cr
+   team1 \tab character \tab Team1. \cr
+   team1score \tab integer \tab Team1score. \cr
+   team1_rk \tab character \tab Team1 rk. \cr
+   team2 \tab character \tab Team2. \cr
+   team2score \tab integer \tab Team2score. \cr
+   team2_rk \tab character \tab Team2 rk. \cr
+   dominance_season_rk \tab character \tab Dominance season rk. \cr
+   tension_season_rk \tab character \tab Tension season rk. \cr
+   excitement_season_rk \tab character \tab Excitement season rk. \cr
+   lead_changes_season_rk \tab character \tab Lead changes season rk. \cr
+   minimum_wp_season_rk \tab character \tab Minimum wp season rk. \cr
+   dominance_rk \tab character \tab Dominance rk. \cr
+   tension_rk \tab character \tab Tension rk. \cr
+   excitement_rk \tab character \tab Excitement rk. \cr
+   lead_changes_rk \tab character \tab Lead changes rk. \cr
+   minimum_wp_rk \tab character \tab Minimum wp rk. \cr
+   dominance \tab character \tab Dominance. \cr
+   tension \tab character \tab Tension. \cr
+   excitement \tab character \tab Excitement. \cr
+   favchg \tab character \tab Favchg. \cr
+   min_wp \tab character \tab Min wp. \cr
 }
 
 
-\strong{runs}\tabular{ll}{
-   col_name \tab types \cr
-   start \tab numeric \cr
-   end \tab numeric \cr
-   visitor \tab integer \cr
-   home \tab integer \cr
+\strong{runs}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   start \tab numeric \tab Start. \cr
+   end \tab numeric \tab End. \cr
+   visitor \tab integer \tab Visitor. \cr
+   home \tab integer \tab Home. \cr
 }
 }
 \description{

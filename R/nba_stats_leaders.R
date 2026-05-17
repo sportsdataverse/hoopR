@@ -18,211 +18,211 @@ NULL
 #'    **GPLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |GP             |character |
-#'    |GP_RANK        |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |GP             |character |Games played.             |
+#'    |GP_RANK        |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **PTSLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |PTS            |character |
-#'    |PTS_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |PTS            |character |Points scored.            |
+#'    |PTS_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **ASTLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |AST            |character |
-#'    |AST_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |AST            |character |Assists.                  |
+#'    |AST_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **STLLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |STL            |character |
-#'    |STL_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |STL            |character |Steals.                   |
+#'    |STL_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **OREBLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |OREB           |character |
-#'    |OREB_RANK      |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |OREB           |character |Offensive rebounds.       |
+#'    |OREB_RANK      |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **DREBLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |DREB           |character |
-#'    |DREB_RANK      |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |DREB           |character |Defensive rebounds.       |
+#'    |DREB_RANK      |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **REBLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |REB            |character |
-#'    |REB_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |REB            |character |Total rebounds.           |
+#'    |REB_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **BLKLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |BLK            |character |
-#'    |BLK_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |BLK            |character |Blocks.                   |
+#'    |BLK_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FGMLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FGM            |character |
-#'    |FGM_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |FGM            |character |Field goals made.         |
+#'    |FGM_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FGALeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FGA            |character |
-#'    |FGA_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |FGA            |character |Field goal attempts.      |
+#'    |FGA_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FG_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FG_PCT         |character |
-#'    |FG_PCT_RANK    |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description                  |
+#'    |:--------------|:---------|:----------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier.    |
+#'    |PLAYER_NAME    |character |Player name.                 |
+#'    |FG_PCT         |character |Field goal percentage (0-1). |
+#'    |FG_PCT_RANK    |character |                             |
+#'    |IS_ACTIVE_FLAG |character |                             |
 #'
 #'    **TOVLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |TOV            |character |
-#'    |TOV_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |TOV            |character |Turnovers.                |
+#'    |TOV_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FG3MLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FG3M           |character |
-#'    |FG3M_RANK      |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description                   |
+#'    |:--------------|:---------|:-----------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier.     |
+#'    |PLAYER_NAME    |character |Player name.                  |
+#'    |FG3M           |character |Three-point field goals made. |
+#'    |FG3M_RANK      |character |                              |
+#'    |IS_ACTIVE_FLAG |character |                              |
 #'
 #'    **FG3ALeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FG3A           |character |
-#'    |FG3A_RANK      |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description                      |
+#'    |:--------------|:---------|:--------------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier.        |
+#'    |PLAYER_NAME    |character |Player name.                     |
+#'    |FG3A           |character |Three-point field goal attempts. |
+#'    |FG3A_RANK      |character |                                 |
+#'    |IS_ACTIVE_FLAG |character |                                 |
 #'
 #'    **FG3_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FG3_PCT        |character |
-#'    |FG3_PCT_RANK   |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description                              |
+#'    |:--------------|:---------|:----------------------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier.                |
+#'    |PLAYER_NAME    |character |Player name.                             |
+#'    |FG3_PCT        |character |Three-point field goal percentage (0-1). |
+#'    |FG3_PCT_RANK   |character |                                         |
+#'    |IS_ACTIVE_FLAG |character |                                         |
 #'
 #'    **PFLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |PF             |character |
-#'    |PF_RANK        |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |PF             |character |Personal fouls.           |
+#'    |PF_RANK        |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FTMLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FTM            |character |
-#'    |FTM_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |FTM            |character |Free throws made.         |
+#'    |FTM_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FTALeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FTA            |character |
-#'    |FTA_RANK       |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description               |
+#'    |:--------------|:---------|:-------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier. |
+#'    |PLAYER_NAME    |character |Player name.              |
+#'    |FTA            |character |Free throw attempts.      |
+#'    |FTA_RANK       |character |                          |
+#'    |IS_ACTIVE_FLAG |character |                          |
 #'
 #'    **FT_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |PLAYER_ID      |character |
-#'    |PLAYER_NAME    |character |
-#'    |FT_PCT         |character |
-#'    |FT_PCT_RANK    |character |
-#'    |IS_ACTIVE_FLAG |character |
+#'    |col_name       |types     |description                  |
+#'    |:--------------|:---------|:----------------------------|
+#'    |PLAYER_ID      |character |Unique player identifier.    |
+#'    |PLAYER_NAME    |character |Player name.                 |
+#'    |FT_PCT         |character |Free throw percentage (0-1). |
+#'    |FT_PCT_RANK    |character |                             |
+#'    |IS_ACTIVE_FLAG |character |                             |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -297,13 +297,13 @@ NULL
 #'    **AssistLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |AST               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |AST               |character |Assists.                                        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -450,45 +450,45 @@ NULL
 #'    **HomePageLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |PTS               |character |
-#'    |FG_PCT            |character |
-#'    |FG3_PCT           |character |
-#'    |FT_PCT            |character |
-#'    |EFG_PCT           |character |
-#'    |TS_PCT            |character |
-#'    |PTS_PER48         |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |PTS               |character |Points scored.                                  |
+#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
+#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
+#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
+#'    |EFG_PCT           |character |Effective field goal percentage (0-1).          |
+#'    |TS_PCT            |character |True shooting percentage (0-1).                 |
+#'    |PTS_PER48         |character |                                                |
 #'
 #'    **LeagueAverage**
 #'
 #'
-#'    |col_name  |types   |
-#'    |:---------|:-------|
-#'    |PTS       |numeric |
-#'    |FG_PCT    |numeric |
-#'    |FG3_PCT   |numeric |
-#'    |FT_PCT    |numeric |
-#'    |EFG_PCT   |numeric |
-#'    |TS_PCT    |numeric |
-#'    |PTS_PER48 |numeric |
+#'    |col_name  |types   |description                              |
+#'    |:---------|:-------|:----------------------------------------|
+#'    |PTS       |numeric |Points scored.                           |
+#'    |FG_PCT    |numeric |Field goal percentage (0-1).             |
+#'    |FG3_PCT   |numeric |Three-point field goal percentage (0-1). |
+#'    |FT_PCT    |numeric |Free throw percentage (0-1).             |
+#'    |EFG_PCT   |numeric |Effective field goal percentage (0-1).   |
+#'    |TS_PCT    |numeric |True shooting percentage (0-1).          |
+#'    |PTS_PER48 |numeric |                                         |
 #'
 #'    **LeagueMax**
 #'
 #'
-#'    |col_name  |types   |
-#'    |:---------|:-------|
-#'    |PTS       |numeric |
-#'    |FG_PCT    |numeric |
-#'    |FG3_PCT   |numeric |
-#'    |FT_PCT    |numeric |
-#'    |EFG_PCT   |numeric |
-#'    |TS_PCT    |numeric |
-#'    |PTS_PER48 |numeric |
+#'    |col_name  |types   |description                              |
+#'    |:---------|:-------|:----------------------------------------|
+#'    |PTS       |numeric |Points scored.                           |
+#'    |FG_PCT    |numeric |Field goal percentage (0-1).             |
+#'    |FG3_PCT   |numeric |Three-point field goal percentage (0-1). |
+#'    |FT_PCT    |numeric |Free throw percentage (0-1).             |
+#'    |EFG_PCT   |numeric |Effective field goal percentage (0-1).   |
+#'    |TS_PCT    |numeric |True shooting percentage (0-1).          |
+#'    |PTS_PER48 |numeric |                                         |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -586,90 +586,90 @@ NULL
 #'    **HomePageStat1**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |PTS               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |PTS               |character |Points scored.                                  |
 #'
 #'    **HomePageStat2**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |REB               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |REB               |character |Total rebounds.                                 |
 #'
 #'    **HomePageStat3**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |AST               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |AST               |character |Assists.                                        |
 #'
 #'    **HomePageStat4**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |STL               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |STL               |character |Steals.                                         |
 #'
 #'    **HomePageStat5**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |FG_PCT            |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
 #'
 #'    **HomePageStat6**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |FT_PCT            |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
 #'
 #'    **HomePageStat7**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |FG3_PCT           |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
 #'
 #'    **HomePageStat8**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |BLK               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |BLK               |character |Blocks.                                         |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -767,46 +767,46 @@ NULL
 #'    **LeadersTiles**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |PTS               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |PTS               |character |Points scored.                                  |
 #'
 #'    **AllTimeSeasonHigh**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |SEASON_YEAR       |character |
-#'    |PTS               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |SEASON_YEAR       |character |Season year string ('YYYY-YY' format).          |
+#'    |PTS               |character |Points scored.                                  |
 #'
 #'    **LastSeasonHigh**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |RANK              |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |PTS               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |RANK              |character |Rank.                                           |
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |PTS               |character |Points scored.                                  |
 #'
 #'    **LowSeasonHigh**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_NAME         |character |
-#'    |SEASON_YEAR       |character |
-#'    |PTS               |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |SEASON_YEAR       |character |Season year string ('YYYY-YY' format).          |
+#'    |PTS               |character |Points scored.                                  |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -976,36 +976,36 @@ NULL
 #'    **LeagueLeaders**
 #'
 #'
-#'    |col_name  |types     |
-#'    |:---------|:---------|
-#'    |PLAYER_ID |character |
-#'    |RANK      |character |
-#'    |PLAYER    |character |
-#'    |TEAM_ID   |character |
-#'    |TEAM      |character |
-#'    |GP        |character |
-#'    |MIN       |character |
-#'    |FGM       |character |
-#'    |FGA       |character |
-#'    |FG_PCT    |character |
-#'    |FG3M      |character |
-#'    |FG3A      |character |
-#'    |FG3_PCT   |character |
-#'    |FTM       |character |
-#'    |FTA       |character |
-#'    |FT_PCT    |character |
-#'    |OREB      |character |
-#'    |DREB      |character |
-#'    |REB       |character |
-#'    |AST       |character |
-#'    |STL       |character |
-#'    |BLK       |character |
-#'    |TOV       |character |
-#'    |PF        |character |
-#'    |PTS       |character |
-#'    |EFF       |character |
-#'    |AST_TOV   |character |
-#'    |STL_TOV   |character |
+#'    |col_name  |types     |description                              |
+#'    |:---------|:---------|:----------------------------------------|
+#'    |PLAYER_ID |character |Unique player identifier.                |
+#'    |RANK      |character |Rank.                                    |
+#'    |PLAYER    |character |Player.                                  |
+#'    |TEAM_ID   |character |Unique team identifier.                  |
+#'    |TEAM      |character |Team-side label or team identifier.      |
+#'    |GP        |character |Games played.                            |
+#'    |MIN       |character |Minutes played.                          |
+#'    |FGM       |character |Field goals made.                        |
+#'    |FGA       |character |Field goal attempts.                     |
+#'    |FG_PCT    |character |Field goal percentage (0-1).             |
+#'    |FG3M      |character |Three-point field goals made.            |
+#'    |FG3A      |character |Three-point field goal attempts.         |
+#'    |FG3_PCT   |character |Three-point field goal percentage (0-1). |
+#'    |FTM       |character |Free throws made.                        |
+#'    |FTA       |character |Free throw attempts.                     |
+#'    |FT_PCT    |character |Free throw percentage (0-1).             |
+#'    |OREB      |character |Offensive rebounds.                      |
+#'    |DREB      |character |Defensive rebounds.                      |
+#'    |REB       |character |Total rebounds.                          |
+#'    |AST       |character |Assists.                                 |
+#'    |STL       |character |Steals.                                  |
+#'    |BLK       |character |Blocks.                                  |
+#'    |TOV       |character |Turnovers.                               |
+#'    |PF        |character |Personal fouls.                          |
+#'    |PTS       |character |Points scored.                           |
+#'    |EFF       |character |Eff.                                     |
+#'    |AST_TOV   |character |                                         |
+#'    |STL_TOV   |character |                                         |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1098,63 +1098,63 @@ NULL
 #'    **DunkScoreLeaders**
 #'
 #'
-#'    |col_name                       |types     |
-#'    |:------------------------------|:---------|
-#'    |game_id                        |character |
-#'    |game_date                      |character |
-#'    |matchup                        |character |
-#'    |period                         |character |
-#'    |game_clock_time                |character |
-#'    |event_num                      |character |
-#'    |player_id                      |character |
-#'    |player_name                    |character |
-#'    |first_name                     |character |
-#'    |last_name                      |character |
-#'    |team_id                        |character |
-#'    |team_name                      |character |
-#'    |team_city                      |character |
-#'    |team_abbreviation              |character |
-#'    |dunk_score                     |character |
-#'    |jump_subscore                  |character |
-#'    |power_subscore                 |character |
-#'    |style_subscore                 |character |
-#'    |defensive_contest_subscore     |character |
-#'    |max_ball_height                |character |
-#'    |ball_speed_through_rim         |character |
-#'    |player_vertical                |character |
-#'    |hang_time                      |character |
-#'    |takeoff_distance               |character |
-#'    |reverse_dunk                   |character |
-#'    |dunk360                        |character |
-#'    |through_the_legs               |character |
-#'    |alley_oop                      |character |
-#'    |tip_in                         |character |
-#'    |self_oop                       |character |
-#'    |player_rotation                |character |
-#'    |player_lateral_speed           |character |
-#'    |ball_distance_traveled         |character |
-#'    |ball_reach_back                |character |
-#'    |total_ball_acceleration        |character |
-#'    |dunking_hand                   |character |
-#'    |jumping_foot                   |character |
-#'    |pass_length                    |character |
-#'    |catching_hand                  |character |
-#'    |catch_distance                 |character |
-#'    |lateral_catch_distance         |character |
-#'    |passer_id                      |character |
-#'    |passer_name                    |character |
-#'    |passer_first_name              |character |
-#'    |passer_last_name               |character |
-#'    |pass_release_point             |character |
-#'    |shooter_id                     |character |
-#'    |shooter_name                   |character |
-#'    |shooter_first_name             |character |
-#'    |shooter_last_name              |character |
-#'    |shot_release_point             |character |
-#'    |shot_length                    |character |
-#'    |defensive_contest_level        |character |
-#'    |possible_attempted_charge      |character |
-#'    |video_available                |character |
+#'    |col_name                   |types     |description                                       |
+#'    |:--------------------------|:---------|:-------------------------------------------------|
+#'    |game_id                    |character |Unique game identifier.                           |
+#'    |game_date                  |character |Game date (YYYY-MM-DD).                           |
+#'    |matchup                    |character |Matchup.                                          |
+#'    |period                     |character |Period of the game (1-4 quarters; 5+ for OT).     |
+#'    |game_clock_time            |character |Time / clock value.                               |
+#'    |event_num                  |character |Sequential event number within the game (V2 PBP). |
+#'    |player_id                  |character |Unique player identifier.                         |
+#'    |player_name                |character |Player name.                                      |
+#'    |first_name                 |character |Player's first name.                              |
+#'    |last_name                  |character |Player's last name.                               |
+#'    |team_id                    |character |Unique team identifier.                           |
+#'    |team_name                  |character |Full team display name (e.g. 'Las Vegas Aces').   |
+#'    |team_city                  |character |Team city or region (e.g. 'Las Vegas').           |
+#'    |team_abbreviation          |character |Short team abbreviation (e.g. 'LAS').             |
+#'    |dunk_score                 |character |Dunk score.                                       |
+#'    |jump_subscore              |character |Jump subscore.                                    |
+#'    |power_subscore             |character |Power subscore.                                   |
+#'    |style_subscore             |character |Style subscore.                                   |
+#'    |defensive_contest_subscore |character |Defensive contest subscore.                       |
+#'    |max_ball_height            |character |Max ball height.                                  |
+#'    |ball_speed_through_rim     |character |Ball speed through rim.                           |
+#'    |player_vertical            |character |Player vertical.                                  |
+#'    |hang_time                  |character |Time / clock value.                               |
+#'    |takeoff_distance           |character |Takeoff distance.                                 |
+#'    |reverse_dunk               |character |Reverse dunk.                                     |
+#'    |dunk360                    |character |Dunk360.                                          |
+#'    |through_the_legs           |character |Through the legs.                                 |
+#'    |alley_oop                  |character |Alley oop.                                        |
+#'    |tip_in                     |character |Tip in.                                           |
+#'    |self_oop                   |character |Self oop.                                         |
+#'    |player_rotation            |character |Player rotation.                                  |
+#'    |player_lateral_speed       |character |Player lateral speed.                             |
+#'    |ball_distance_traveled     |character |Ball distance traveled.                           |
+#'    |ball_reach_back            |character |Ball reach back.                                  |
+#'    |total_ball_acceleration    |character |Total ball acceleration.                          |
+#'    |dunking_hand               |character |Dunking hand.                                     |
+#'    |jumping_foot               |character |Jumping foot.                                     |
+#'    |pass_length                |character |Pass length.                                      |
+#'    |catching_hand              |character |Catching hand.                                    |
+#'    |catch_distance             |character |Catch distance.                                   |
+#'    |lateral_catch_distance     |character |Lateral catch distance.                           |
+#'    |passer_id                  |character |Unique identifier for passer.                     |
+#'    |passer_name                |character |Passer name.                                      |
+#'    |passer_first_name          |character |Passer first name.                                |
+#'    |passer_last_name           |character |Passer last name.                                 |
+#'    |pass_release_point         |character |Pass release point.                               |
+#'    |shooter_id                 |character |Unique identifier for shooter.                    |
+#'    |shooter_name               |character |Shooter name (for shot events).                   |
+#'    |shooter_first_name         |character |Shooter first name.                               |
+#'    |shooter_last_name          |character |Shooter last name.                                |
+#'    |shot_release_point         |character |Shot release point.                               |
+#'    |shot_length                |character |Shot length.                                      |
+#'    |defensive_contest_level    |character |Defensive contest level.                          |
+#'    |possible_attempted_charge  |character |Possible attempted charge.                        |
+#'    |video_available            |character |Video available.                                  |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1241,35 +1241,35 @@ NULL
 #'    **GravityLeaders**
 #'
 #'
-#'    |col_name                            |types     |
-#'    |:-----------------------------------|:---------|
-#'    |playerid                            |character |
-#'    |firstname                           |character |
-#'    |lastname                            |character |
-#'    |teamid                              |character |
-#'    |teamabbreviation                    |character |
-#'    |teamname                            |character |
-#'    |teamcity                            |character |
-#'    |frames                              |character |
-#'    |gravityscore                        |character |
-#'    |avggravityscore                     |character |
-#'    |onballperimeterframes               |character |
-#'    |onballperimetergravityscore         |character |
-#'    |avgonballperimetergravityscore      |character |
-#'    |offballperimeterframes              |character |
-#'    |offballperimetergravityscore        |character |
-#'    |avgoffballperimetergravityscore     |character |
-#'    |onballinteriorframes               |character |
-#'    |onballinteriorgravityscore          |character |
-#'    |avgonballinteriorgravityscore       |character |
-#'    |offballinteriorframes              |character |
-#'    |offballinteriorgravityscore         |character |
-#'    |avgoffballinteriorgravityscore      |character |
-#'    |gamesplayed                         |character |
-#'    |minutes                             |character |
-#'    |pts                                 |character |
-#'    |reb                                 |character |
-#'    |ast                                 |character |
+#'    |col_name                        |types     |description                                                                      |
+#'    |:-------------------------------|:---------|:--------------------------------------------------------------------------------|
+#'    |playerid                        |character |Playerid.                                                                        |
+#'    |firstname                       |character |Firstname.                                                                       |
+#'    |lastname                        |character |Lastname.                                                                        |
+#'    |teamid                          |character |Teamid.                                                                          |
+#'    |teamabbreviation                |character |Teamabbreviation.                                                                |
+#'    |teamname                        |character |Teamname.                                                                        |
+#'    |teamcity                        |character |Teamcity.                                                                        |
+#'    |frames                          |character |Frames.                                                                          |
+#'    |gravityscore                    |character |Gravityscore.                                                                    |
+#'    |avggravityscore                 |character |Avggravityscore.                                                                 |
+#'    |onballperimeterframes           |character |Onballperimeterframes.                                                           |
+#'    |onballperimetergravityscore     |character |Onballperimetergravityscore.                                                     |
+#'    |avgonballperimetergravityscore  |character |Avgonballperimetergravityscore.                                                  |
+#'    |offballperimeterframes          |character |Offballperimeterframes.                                                          |
+#'    |offballperimetergravityscore    |character |Offballperimetergravityscore.                                                    |
+#'    |avgoffballperimetergravityscore |character |Avgoffballperimetergravityscore.                                                 |
+#'    |onballinteriorframes            |character |Onballinteriorframes.                                                            |
+#'    |onballinteriorgravityscore      |character |Onballinteriorgravityscore.                                                      |
+#'    |avgonballinteriorgravityscore   |character |Avgonballinteriorgravityscore.                                                   |
+#'    |offballinteriorframes           |character |Offballinteriorframes.                                                           |
+#'    |offballinteriorgravityscore     |character |Offballinteriorgravityscore.                                                     |
+#'    |avgoffballinteriorgravityscore  |character |Avgoffballinteriorgravityscore.                                                  |
+#'    |gamesplayed                     |character |Gamesplayed.                                                                     |
+#'    |minutes                         |character |Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+#'    |pts                             |character |Points scored.                                                                   |
+#'    |reb                             |character |Total rebounds.                                                                  |
+#'    |ast                             |character |Assists.                                                                         |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

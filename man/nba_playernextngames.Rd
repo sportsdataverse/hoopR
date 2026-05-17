@@ -29,21 +29,21 @@ nba_playernextngames(
 \value{
 Return a named list of data frames: NextNGames
 
-\strong{NextNGames}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   GAME_DATE \tab character \cr
-   HOME_TEAM_ID \tab character \cr
-   VISITOR_TEAM_ID \tab character \cr
-   HOME_TEAM_NAME \tab character \cr
-   VISITOR_TEAM_NAME \tab character \cr
-   HOME_TEAM_ABBREVIATION \tab character \cr
-   VISITOR_TEAM_ABBREVIATION \tab character \cr
-   HOME_TEAM_NICKNAME \tab character \cr
-   VISITOR_TEAM_NICKNAME \tab character \cr
-   GAME_TIME \tab character \cr
-   HOME_WL \tab character \cr
-   VISITOR_WL \tab character \cr
+\strong{NextNGames}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   HOME_TEAM_NAME \tab character \tab Home team name. \cr
+   VISITOR_TEAM_NAME \tab character \tab  \cr
+   HOME_TEAM_ABBREVIATION \tab character \tab  \cr
+   VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
+   HOME_TEAM_NICKNAME \tab character \tab  \cr
+   VISITOR_TEAM_NICKNAME \tab character \tab  \cr
+   GAME_TIME \tab character \tab Game start time. \cr
+   HOME_WL \tab character \tab  \cr
+   VISITOR_WL \tab character \tab  \cr
 }
 }
 \description{

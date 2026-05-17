@@ -3,27 +3,27 @@
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name     |types   |
-#'    |:------------|:-------|
-#'    |season       |numeric |
-#'    |efficiency   |numeric |
-#'    |tempo        |numeric |
-#'    |e_fg_pct     |numeric |
-#'    |to_pct       |numeric |
-#'    |or_pct       |numeric |
-#'    |ft_rate      |numeric |
-#'    |fg_2_pct     |numeric |
-#'    |fg_3_pct     |numeric |
-#'    |fg_3a_pct    |numeric |
-#'    |ft_pct       |numeric |
-#'    |a_pct        |numeric |
-#'    |blk_pct      |numeric |
-#'    |stl_pct      |numeric |
-#'    |non_stl_pct  |numeric |
-#'    |avg_hgt      |numeric |
-#'    |continuity   |numeric |
-#'    |home_win_pct |numeric |
-#'    |ppg          |numeric |
+#'    |col_name     |types   |description                                           |
+#'    |:------------|:-------|:-----------------------------------------------------|
+#'    |season       |numeric |Season identifier (4-digit year or 'YYYY-YY' string). |
+#'    |efficiency   |numeric |Efficiency.                                           |
+#'    |tempo        |numeric |Tempo.                                                |
+#'    |e_fg_pct     |numeric |E field goals percentage (0-1 decimal).               |
+#'    |to_pct       |numeric |To percentage (0-1 decimal).                          |
+#'    |or_pct       |numeric |Or percentage (0-1 decimal).                          |
+#'    |ft_rate      |numeric |Ft rate.                                              |
+#'    |fg_2_pct     |numeric |Field goals 2 percentage (0-1 decimal).               |
+#'    |fg_3_pct     |numeric |Field goals 3 percentage (0-1 decimal).               |
+#'    |fg_3a_pct    |numeric |Field goals 3a percentage (0-1 decimal).              |
+#'    |ft_pct       |numeric |Free throw percentage (0-1).                          |
+#'    |a_pct        |numeric |A percentage (0-1 decimal).                           |
+#'    |blk_pct      |numeric |Blocks percentage (0-1 decimal).                      |
+#'    |stl_pct      |numeric |Steals percentage (0-1 decimal).                      |
+#'    |non_stl_pct  |numeric |Non steals percentage (0-1 decimal).                  |
+#'    |avg_hgt      |numeric |Avg hgt.                                              |
+#'    |continuity   |numeric |Continuity.                                           |
+#'    |home_win_pct |numeric |Home win percentage (0-1 decimal).                    |
+#'    |ppg          |numeric |Points per game.                                      |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
@@ -96,15 +96,15 @@ kp_trends <- function() {
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |rk            |integer   |
-#'    |official_name |character |
-#'    |ref_rating    |numeric   |
-#'    |gms           |numeric   |
-#'    |last_game     |character |
-#'    |last_game_1   |character |
-#'    |year          |numeric   |
+#'    |col_name      |types     |description                     |
+#'    |:-------------|:---------|:-------------------------------|
+#'    |rk            |integer   |Rk.                             |
+#'    |official_name |character |Official name.                  |
+#'    |ref_rating    |numeric   |Ref rating.                     |
+#'    |gms           |numeric   |Gms.                            |
+#'    |last_game     |character |Last game date or score string. |
+#'    |last_game_1   |character |Last game 1.                    |
+#'    |year          |numeric   |4-digit year.                   |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
@@ -184,19 +184,19 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |game_number  |integer   |
-#'    |date         |character |
-#'    |time_et      |character |
-#'    |game         |character |
-#'    |location     |character |
-#'    |venue        |character |
-#'    |conference   |character |
-#'    |thrill_score |numeric   |
-#'    |referee_name |character |
-#'    |ref_rank     |numeric   |
-#'    |year         |numeric   |
+#'    |col_name     |types     |description                 |
+#'    |:------------|:---------|:---------------------------|
+#'    |game_number  |integer   |Game number.                |
+#'    |date         |character |Date in YYYY-MM-DD format.  |
+#'    |time_et      |character |Time et.                    |
+#'    |game         |character |Game.                       |
+#'    |location     |character |Location.                   |
+#'    |venue        |character |Venue name.                 |
+#'    |conference   |character |Conference.                 |
+#'    |thrill_score |numeric   |Thrill score.               |
+#'    |referee_name |character |Referee name.               |
+#'    |ref_rank     |numeric   |League/season rank for ref. |
+#'    |year         |numeric   |4-digit year.               |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
@@ -277,22 +277,22 @@ kp_referee <- function(referee, year) {
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |team     |character |
-#'    |conf     |character |
-#'    |hca      |numeric   |
-#'    |hca_rk   |numeric   |
-#'    |pf       |numeric   |
-#'    |pf_rk    |numeric   |
-#'    |pts      |numeric   |
-#'    |pts_rk   |numeric   |
-#'    |nst      |numeric   |
-#'    |nst_rk   |numeric   |
-#'    |blk      |numeric   |
-#'    |blk_rk   |numeric   |
-#'    |elev     |numeric   |
-#'    |elev_rk  |numeric   |
+#'    |col_name |types     |description                         |
+#'    |:--------|:---------|:-----------------------------------|
+#'    |team     |character |Team-side label or team identifier. |
+#'    |conf     |character |character.                          |
+#'    |hca      |numeric   |Hca.                                |
+#'    |hca_rk   |numeric   |Hca rk.                             |
+#'    |pf       |numeric   |Personal fouls.                     |
+#'    |pf_rk    |numeric   |Pf rk.                              |
+#'    |pts      |numeric   |Points scored.                      |
+#'    |pts_rk   |numeric   |Pts rk.                             |
+#'    |nst      |numeric   |Nst.                                |
+#'    |nst_rk   |numeric   |Nst rk.                             |
+#'    |blk      |numeric   |Blocks.                             |
+#'    |blk_rk   |numeric   |Blk rk.                             |
+#'    |elev     |numeric   |Elev.                               |
+#'    |elev_rk  |numeric   |Elev rk.                            |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
@@ -364,14 +364,14 @@ kp_hca <- function() {
 #' @param year Year of data to pull
 #' @return A data frame with the following columns:
 #'
-#'    |col_name  |types     |
-#'    |:---------|:---------|
-#'    |rk        |numeric   |
-#'    |team      |character |
-#'    |conf      |character |
-#'    |arena     |character |
-#'    |alternate |character |
-#'    |year      |numeric   |
+#'    |col_name  |types     |description                         |
+#'    |:---------|:---------|:-----------------------------------|
+#'    |rk        |numeric   |Rk.                                 |
+#'    |team      |character |Team-side label or team identifier. |
+#'    |conf      |character |character.                          |
+#'    |arena     |character |Arena.                              |
+#'    |alternate |character |Alternate.                          |
+#'    |year      |numeric   |4-digit year.                       |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
@@ -446,15 +446,15 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 #'
 #' @return Returns a tibble with game attributes
 #'
-#'    |col_name   |types     |
-#'    |:----------|:---------|
-#'    |rk         |integer   |
-#'    |data       |character |
-#'    |game       |character |
-#'    |location   |character |
-#'    |conf       |character |
-#'    |excitement |numeric   |
-#'    |year       |numeric   |
+#'    |col_name   |types     |description   |
+#'    |:----------|:---------|:-------------|
+#'    |rk         |integer   |Rk.           |
+#'    |data       |character |Data.         |
+#'    |game       |character |Game.         |
+#'    |location   |character |Location.     |
+#'    |conf       |character |character.    |
+#'    |excitement |numeric   |Excitement.   |
+#'    |year       |numeric   |4-digit year. |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate
@@ -532,28 +532,28 @@ kp_game_attrs <- function(
 #'
 #' @return A data frame with the following columns:
 #'
-#'  |col_name     |types     |
-#'  |:------------|:---------|
-#'  |prediction   |character |
-#'  |time_et      |character |
-#'  |location     |character |
-#'  |thrill_score |numeric   |
-#'  |comeback     |numeric   |
-#'  |excitement   |numeric   |
-#'  |road_rk      |numeric   |
-#'  |road_team    |character |
-#'  |home_rk      |numeric   |
-#'  |home_team    |character |
-#'  |win_rk       |numeric   |
-#'  |win_team     |character |
-#'  |win_score    |numeric   |
-#'  |loss_rk      |numeric   |
-#'  |loss_team    |character |
-#'  |loss_score   |numeric   |
-#'  |poss         |numeric   |
-#'  |mvp          |character |
-#'  |event        |character |
-#'  |date         |character |
+#'  |col_name     |types     |description                |
+#'  |:------------|:---------|:--------------------------|
+#'  |prediction   |character |Prediction.                |
+#'  |time_et      |character |Time et.                   |
+#'  |location     |character |Location.                  |
+#'  |thrill_score |numeric   |Thrill score.              |
+#'  |comeback     |numeric   |Comeback.                  |
+#'  |excitement   |numeric   |Excitement.                |
+#'  |road_rk      |numeric   |Road rk.                   |
+#'  |road_team    |character |Road team.                 |
+#'  |home_rk      |numeric   |Home team's rk.            |
+#'  |home_team    |character |Home team's team.          |
+#'  |win_rk       |numeric   |Win rk.                    |
+#'  |win_team     |character |Win team.                  |
+#'  |win_score    |numeric   |Win score.                 |
+#'  |loss_rk      |numeric   |Loss rk.                   |
+#'  |loss_team    |character |Loss team.                 |
+#'  |loss_score   |numeric   |Loss score.                |
+#'  |poss         |numeric   |Poss.                      |
+#'  |mvp          |character |Mvp.                       |
+#'  |event        |character |Event.                     |
+#'  |date         |character |Date in YYYY-MM-DD format. |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate

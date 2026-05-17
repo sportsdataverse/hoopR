@@ -104,43 +104,43 @@ nba_videodetailsasset(
 \value{
 Return a list of tibbles: videoUrls, playlist
 
-\strong{videoUrls}\tabular{ll}{
-   col_name \tab types \cr
-   uuid \tab character \cr
-   sdur \tab integer \cr
-   surl \tab character \cr
-   sth \tab character \cr
-   mdur \tab integer \cr
-   murl \tab character \cr
-   mth \tab character \cr
-   ldur \tab integer \cr
-   lurl \tab character \cr
-   lth \tab character \cr
-   vtt \tab character \cr
-   scc \tab character \cr
-   srt \tab character \cr
+\strong{videoUrls}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   uuid \tab character \tab Uuid. \cr
+   sdur \tab integer \tab Sdur. \cr
+   surl \tab character \tab Surl. \cr
+   sth \tab character \tab Sth. \cr
+   mdur \tab integer \tab Mdur. \cr
+   murl \tab character \tab Murl. \cr
+   mth \tab character \tab Mth. \cr
+   ldur \tab integer \tab Ldur. \cr
+   lurl \tab character \tab Lurl. \cr
+   lth \tab character \tab Lth. \cr
+   vtt \tab character \tab Vtt. \cr
+   scc \tab character \tab Scc. \cr
+   srt \tab character \tab Srt. \cr
 }
 
 
-\strong{playlist}\tabular{ll}{
-   col_name \tab types \cr
-   gi \tab character \cr
-   ei \tab integer \cr
-   y \tab integer \cr
-   m \tab character \cr
-   d \tab character \cr
-   gc \tab character \cr
-   p \tab integer \cr
-   dsc \tab character \cr
-   ha \tab character \cr
-   hid \tab integer \cr
-   va \tab character \cr
-   vid \tab integer \cr
-   hpb \tab integer \cr
-   hpa \tab integer \cr
-   vpb \tab integer \cr
-   vpa \tab integer \cr
-   pta \tab integer \cr
+\strong{playlist}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   gi \tab character \tab Gi. \cr
+   ei \tab integer \tab Ei. \cr
+   y \tab integer \tab Y. \cr
+   m \tab character \tab M. \cr
+   d \tab character \tab D. \cr
+   gc \tab character \tab Gc. \cr
+   p \tab integer \tab P. \cr
+   dsc \tab character \tab Dsc. \cr
+   ha \tab character \tab Ha. \cr
+   hid \tab integer \tab Hid. \cr
+   va \tab character \tab Va. \cr
+   vid \tab integer \tab Vid. \cr
+   hpb \tab integer \tab Hpb. \cr
+   hpa \tab integer \tab Hpa. \cr
+   vpb \tab integer \tab Vpb. \cr
+   vpa \tab integer \tab Vpa. \cr
+   pta \tab integer \tab Pta. \cr
 }
 }
 \description{

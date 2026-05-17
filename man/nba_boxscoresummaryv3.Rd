@@ -16,151 +16,151 @@ Returns a named list of data frames:
 GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
 InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
 
-\strong{GameSummary}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   game_code \tab character \cr
-   game_status \tab integer \cr
-   game_status_text \tab character \cr
-   period \tab integer \cr
-   game_clock \tab character \cr
-   game_time_utc \tab character \cr
-   game_et \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   duration \tab integer \cr
-   attendance \tab integer \cr
-   sellout \tab character \cr
+\strong{GameSummary}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_code \tab character \tab ESPN game code (numeric identifier). \cr
+   game_status \tab integer \tab Game status label. \cr
+   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   game_clock \tab character \tab Game clock. \cr
+   game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+   game_et \tab character \tab Game et. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   duration \tab integer \tab Duration. \cr
+   attendance \tab integer \tab Reported attendance. \cr
+   sellout \tab character \tab Sellout. \cr
 }
 
 
-\strong{GameInfo}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   game_date \tab character \cr
-   attendance \tab integer \cr
-   game_duration \tab integer \cr
+\strong{GameInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+   attendance \tab integer \tab Reported attendance. \cr
+   game_duration \tab integer \tab Game duration. \cr
 }
 
 
-\strong{ArenaInfo}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   arena_id \tab integer \cr
-   arena_name \tab character \cr
-   arena_city \tab character \cr
-   arena_state \tab character \cr
-   arena_country \tab character \cr
-   arena_timezone \tab character \cr
+\strong{ArenaInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   arena_id \tab integer \tab Unique identifier for arena. \cr
+   arena_name \tab character \tab Arena name. \cr
+   arena_city \tab character \tab Arena city. \cr
+   arena_state \tab character \tab Arena state. \cr
+   arena_country \tab character \tab Arena country. \cr
+   arena_timezone \tab character \tab Arena timezone. \cr
 }
 
 
-\strong{Officials}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   person_id \tab integer \cr
-   name \tab character \cr
-   name_i \tab character \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   jersey_num \tab character \cr
+\strong{Officials}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   name \tab character \tab Display name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
 }
 
 
-\strong{LineScore}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   team_id \tab integer \cr
-   team_city \tab character \cr
-   team_name \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   team_wins \tab integer \cr
-   team_losses \tab integer \cr
-   period1_score \tab integer \cr
-   period2_score \tab integer \cr
-   period3_score \tab integer \cr
-   period4_score \tab integer \cr
-   score \tab integer \cr
+\strong{LineScore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_wins \tab integer \tab Team wins. \cr
+   team_losses \tab integer \tab Team losses. \cr
+   period1_score \tab integer \tab Period1 score. \cr
+   period2_score \tab integer \tab Period2 score. \cr
+   period3_score \tab integer \tab Period3 score. \cr
+   period4_score \tab integer \tab Period4 score. \cr
+   score \tab integer \tab Final score. \cr
 }
 
 
-\strong{InactivePlayers}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   team_id \tab integer \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   jersey_num \tab character \cr
+\strong{InactivePlayers}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
 }
 
 
-\strong{LastFiveMeetings}\tabular{ll}{
-   col_name \tab types \cr
-   recency_order \tab integer \cr
-   game_id \tab character \cr
-   game_time_utc \tab character \cr
-   game_et \tab character \cr
-   game_status \tab integer \cr
-   game_status_text \tab character \cr
-   away_team_id \tab integer \cr
-   away_team_city \tab character \cr
-   away_team_name \tab character \cr
-   away_team_tricode \tab character \cr
-   away_team_score \tab integer \cr
-   away_team_wins \tab integer \cr
-   away_team_losses \tab integer \cr
-   home_team_id \tab integer \cr
-   home_team_city \tab character \cr
-   home_team_name \tab character \cr
-   home_team_tricode \tab character \cr
-   home_team_score \tab integer \cr
-   home_team_wins \tab integer \cr
-   home_team_losses \tab integer \cr
+\strong{LastFiveMeetings}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   recency_order \tab integer \tab Recency order. \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+   game_et \tab character \tab Game et. \cr
+   game_status \tab integer \tab Game status label. \cr
+   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_city \tab character \tab Away team city / location. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_tricode \tab character \tab Away team three-letter code. \cr
+   away_team_score \tab integer \tab Away team's score. \cr
+   away_team_wins \tab integer \tab Away team's team wins. \cr
+   away_team_losses \tab integer \tab Away team's team losses. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_city \tab character \tab Home team city / location. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_tricode \tab character \tab Home team three-letter code. \cr
+   home_team_score \tab integer \tab Home team's score. \cr
+   home_team_wins \tab integer \tab Home team's team wins. \cr
+   home_team_losses \tab integer \tab Home team's team losses. \cr
 }
 
 
-\strong{OtherStats}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   team_id \tab integer \cr
-   team_city \tab character \cr
-   team_name \tab character \cr
-   team_tricode \tab character \cr
-   points \tab integer \cr
-   rebounds_total \tab integer \cr
-   assists \tab integer \cr
-   steals \tab integer \cr
-   blocks \tab integer \cr
-   turnovers \tab integer \cr
-   field_goals_percentage \tab numeric \cr
-   three_pointers_percentage \tab numeric \cr
-   free_throws_percentage \tab numeric \cr
-   points_in_the_paint \tab integer \cr
-   points_second_chance \tab integer \cr
-   points_fast_break \tab integer \cr
-   biggest_lead \tab integer \cr
-   lead_changes \tab integer \cr
-   times_tied \tab integer \cr
-   biggest_scoring_run \tab integer \cr
-   turnovers_team \tab integer \cr
-   turnovers_total \tab integer \cr
-   rebounds_team \tab integer \cr
-   points_from_turnovers \tab integer \cr
-   bench_points \tab integer \cr
+\strong{OtherStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   points \tab integer \tab Points scored. \cr
+   rebounds_total \tab integer \tab Total rebounds. \cr
+   assists \tab integer \tab Total assists. \cr
+   steals \tab integer \tab Total steals. \cr
+   blocks \tab integer \tab Total blocks. \cr
+   turnovers \tab integer \tab Total turnovers. \cr
+   field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+   three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+   free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+   points_in_the_paint \tab integer \tab Points in the paint. \cr
+   points_second_chance \tab integer \tab Second-chance points scored. \cr
+   points_fast_break \tab integer \tab Fast-break points scored. \cr
+   biggest_lead \tab integer \tab Biggest lead. \cr
+   lead_changes \tab integer \tab Lead changes. \cr
+   times_tied \tab integer \tab Times tied. \cr
+   biggest_scoring_run \tab integer \tab Biggest scoring run. \cr
+   turnovers_team \tab integer \tab Turnovers team. \cr
+   turnovers_total \tab integer \tab Turnovers total. \cr
+   rebounds_team \tab integer \tab Rebounds team. \cr
+   points_from_turnovers \tab integer \tab Points from turnovers. \cr
+   bench_points \tab integer \tab Points scored by the bench. \cr
 }
 
 
-\strong{AvailableVideo}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   video_available_flag \tab integer \cr
-   pt_available \tab integer \cr
-   pt_xyz_available \tab integer \cr
-   wh_status \tab integer \cr
-   hustle_status \tab integer \cr
-   historical_status \tab integer \cr
+\strong{AvailableVideo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   video_available_flag \tab integer \tab Video available flag. \cr
+   pt_available \tab integer \tab Pt available. \cr
+   pt_xyz_available \tab integer \tab Pt xyz available. \cr
+   wh_status \tab integer \tab Wh status. \cr
+   hustle_status \tab integer \tab Hustle status. \cr
+   historical_status \tab integer \tab Historical status. \cr
 }
 }
 \description{

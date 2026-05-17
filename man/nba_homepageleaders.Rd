@@ -35,43 +35,43 @@ nba_homepageleaders(
 \value{
 Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
 
-\strong{HomePageLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   PTS \tab character \cr
-   FG_PCT \tab character \cr
-   FG3_PCT \tab character \cr
-   FT_PCT \tab character \cr
-   EFG_PCT \tab character \cr
-   TS_PCT \tab character \cr
-   PTS_PER48 \tab character \cr
+\strong{HomePageLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   PTS \tab character \tab Points scored. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+   TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+   PTS_PER48 \tab character \tab  \cr
 }
 
 
-\strong{LeagueAverage}\tabular{ll}{
-   col_name \tab types \cr
-   PTS \tab numeric \cr
-   FG_PCT \tab numeric \cr
-   FG3_PCT \tab numeric \cr
-   FT_PCT \tab numeric \cr
-   EFG_PCT \tab numeric \cr
-   TS_PCT \tab numeric \cr
-   PTS_PER48 \tab numeric \cr
+\strong{LeagueAverage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PTS \tab numeric \tab Points scored. \cr
+   FG_PCT \tab numeric \tab Field goal percentage (0-1). \cr
+   FG3_PCT \tab numeric \tab Three-point field goal percentage (0-1). \cr
+   FT_PCT \tab numeric \tab Free throw percentage (0-1). \cr
+   EFG_PCT \tab numeric \tab Effective field goal percentage (0-1). \cr
+   TS_PCT \tab numeric \tab True shooting percentage (0-1). \cr
+   PTS_PER48 \tab numeric \tab  \cr
 }
 
 
-\strong{LeagueMax}\tabular{ll}{
-   col_name \tab types \cr
-   PTS \tab numeric \cr
-   FG_PCT \tab numeric \cr
-   FG3_PCT \tab numeric \cr
-   FT_PCT \tab numeric \cr
-   EFG_PCT \tab numeric \cr
-   TS_PCT \tab numeric \cr
-   PTS_PER48 \tab numeric \cr
+\strong{LeagueMax}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PTS \tab numeric \tab Points scored. \cr
+   FG_PCT \tab numeric \tab Field goal percentage (0-1). \cr
+   FG3_PCT \tab numeric \tab Three-point field goal percentage (0-1). \cr
+   FT_PCT \tab numeric \tab Free throw percentage (0-1). \cr
+   EFG_PCT \tab numeric \tab Effective field goal percentage (0-1). \cr
+   TS_PCT \tab numeric \tab True shooting percentage (0-1). \cr
+   PTS_PER48 \tab numeric \tab  \cr
 }
 }
 \description{

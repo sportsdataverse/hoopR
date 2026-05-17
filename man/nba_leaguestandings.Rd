@@ -26,89 +26,89 @@ nba_leaguestandings(
 \value{
 Return a named list of data frames: Standings
 
-\strong{Standings}\tabular{ll}{
-   col_name \tab types \cr
-   LeagueID \tab character \cr
-   SeasonID \tab character \cr
-   TeamID \tab character \cr
-   TeamCity \tab character \cr
-   TeamName \tab character \cr
-   Conference \tab character \cr
-   ConferenceRecord \tab character \cr
-   PlayoffRank \tab character \cr
-   ClinchIndicator \tab character \cr
-   Division \tab character \cr
-   DivisionRecord \tab character \cr
-   DivisionRank \tab character \cr
-   WINS \tab character \cr
-   LOSSES \tab character \cr
-   WinPCT \tab character \cr
-   LeagueRank \tab character \cr
-   Record \tab character \cr
-   HOME \tab character \cr
-   ROAD \tab character \cr
-   L10 \tab character \cr
-   Last10Home \tab character \cr
-   Last10Road \tab character \cr
-   OT \tab character \cr
-   ThreePTSOrLess \tab character \cr
-   TenPTSOrMore \tab character \cr
-   LongHomeStreak \tab character \cr
-   strLongHomeStreak \tab character \cr
-   LongRoadStreak \tab character \cr
-   strLongRoadStreak \tab character \cr
-   LongWinStreak \tab character \cr
-   LongLossStreak \tab character \cr
-   CurrentHomeStreak \tab character \cr
-   strCurrentHomeStreak \tab character \cr
-   CurrentRoadStreak \tab character \cr
-   strCurrentRoadStreak \tab character \cr
-   CurrentStreak \tab character \cr
-   strCurrentStreak \tab character \cr
-   ConferenceGamesBack \tab character \cr
-   DivisionGamesBack \tab character \cr
-   ClinchedConferenceTitle \tab character \cr
-   ClinchedDivisionTitle \tab character \cr
-   ClinchedPlayoffBirth \tab character \cr
-   EliminatedConference \tab character \cr
-   EliminatedDivision \tab character \cr
-   AheadAtHalf \tab character \cr
-   BehindAtHalf \tab character \cr
-   TiedAtHalf \tab character \cr
-   AheadAtThird \tab character \cr
-   BehindAtThird \tab character \cr
-   TiedAtThird \tab character \cr
-   Score100PTS \tab character \cr
-   OppScore100PTS \tab character \cr
-   OppOver500 \tab character \cr
-   LeadInFGPCT \tab character \cr
-   LeadInReb \tab character \cr
-   FewerTurnovers \tab character \cr
-   PointsPG \tab character \cr
-   OppPointsPG \tab character \cr
-   DiffPointsPG \tab character \cr
-   vsEast \tab character \cr
-   vsAtlantic \tab character \cr
-   vsCentral \tab character \cr
-   vsSoutheast \tab character \cr
-   vsWest \tab character \cr
-   vsNorthwest \tab character \cr
-   vsPacific \tab character \cr
-   vsSouthwest \tab character \cr
-   Jan \tab character \cr
-   Feb \tab character \cr
-   Mar \tab character \cr
-   Apr \tab character \cr
-   May \tab character \cr
-   Jun \tab character \cr
-   Jul \tab character \cr
-   Aug \tab character \cr
-   Sep \tab character \cr
-   Oct \tab character \cr
-   Nov \tab character \cr
-   Dec \tab character \cr
-   PreAS \tab character \cr
-   PostAS \tab character \cr
+\strong{Standings}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LeagueID \tab character \tab  \cr
+   SeasonID \tab character \tab  \cr
+   TeamID \tab character \tab Teamid. \cr
+   TeamCity \tab character \tab Teamcity. \cr
+   TeamName \tab character \tab Teamname. \cr
+   Conference \tab character \tab Conference. \cr
+   ConferenceRecord \tab character \tab  \cr
+   PlayoffRank \tab character \tab  \cr
+   ClinchIndicator \tab character \tab  \cr
+   Division \tab character \tab Team division. \cr
+   DivisionRecord \tab character \tab  \cr
+   DivisionRank \tab character \tab  \cr
+   WINS \tab character \tab Total wins. \cr
+   LOSSES \tab character \tab Total losses. \cr
+   WinPCT \tab character \tab  \cr
+   LeagueRank \tab character \tab  \cr
+   Record \tab character \tab Record string (e.g. '12-4'). \cr
+   HOME \tab character \tab Home. \cr
+   ROAD \tab character \tab Road. \cr
+   L10 \tab character \tab  \cr
+   Last10Home \tab character \tab  \cr
+   Last10Road \tab character \tab  \cr
+   OT \tab character \tab Ot. \cr
+   ThreePTSOrLess \tab character \tab  \cr
+   TenPTSOrMore \tab character \tab  \cr
+   LongHomeStreak \tab character \tab  \cr
+   strLongHomeStreak \tab character \tab  \cr
+   LongRoadStreak \tab character \tab  \cr
+   strLongRoadStreak \tab character \tab  \cr
+   LongWinStreak \tab character \tab  \cr
+   LongLossStreak \tab character \tab  \cr
+   CurrentHomeStreak \tab character \tab  \cr
+   strCurrentHomeStreak \tab character \tab  \cr
+   CurrentRoadStreak \tab character \tab  \cr
+   strCurrentRoadStreak \tab character \tab  \cr
+   CurrentStreak \tab character \tab  \cr
+   strCurrentStreak \tab character \tab  \cr
+   ConferenceGamesBack \tab character \tab  \cr
+   DivisionGamesBack \tab character \tab  \cr
+   ClinchedConferenceTitle \tab character \tab  \cr
+   ClinchedDivisionTitle \tab character \tab  \cr
+   ClinchedPlayoffBirth \tab character \tab  \cr
+   EliminatedConference \tab character \tab  \cr
+   EliminatedDivision \tab character \tab  \cr
+   AheadAtHalf \tab character \tab  \cr
+   BehindAtHalf \tab character \tab  \cr
+   TiedAtHalf \tab character \tab  \cr
+   AheadAtThird \tab character \tab  \cr
+   BehindAtThird \tab character \tab  \cr
+   TiedAtThird \tab character \tab  \cr
+   Score100PTS \tab character \tab  \cr
+   OppScore100PTS \tab character \tab  \cr
+   OppOver500 \tab character \tab  \cr
+   LeadInFGPCT \tab character \tab  \cr
+   LeadInReb \tab character \tab  \cr
+   FewerTurnovers \tab character \tab  \cr
+   PointsPG \tab character \tab  \cr
+   OppPointsPG \tab character \tab  \cr
+   DiffPointsPG \tab character \tab  \cr
+   vsEast \tab character \tab  \cr
+   vsAtlantic \tab character \tab  \cr
+   vsCentral \tab character \tab  \cr
+   vsSoutheast \tab character \tab  \cr
+   vsWest \tab character \tab  \cr
+   vsNorthwest \tab character \tab  \cr
+   vsPacific \tab character \tab  \cr
+   vsSouthwest \tab character \tab  \cr
+   Jan \tab character \tab  \cr
+   Feb \tab character \tab  \cr
+   Mar \tab character \tab  \cr
+   Apr \tab character \tab  \cr
+   May \tab character \tab  \cr
+   Jun \tab character \tab  \cr
+   Jul \tab character \tab  \cr
+   Aug \tab character \tab  \cr
+   Sep \tab character \tab  \cr
+   Oct \tab character \tab  \cr
+   Nov \tab character \tab  \cr
+   Dec \tab character \tab  \cr
+   PreAS \tab character \tab  \cr
+   PostAS \tab character \tab  \cr
 }
 }
 \description{

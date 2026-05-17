@@ -10,28 +10,28 @@ espn_mbb_teams(year = most_recent_mbb_season())
 \item{year}{Either numeric or character (YYYY)}
 }
 \value{
-A teams data frame\tabular{ll}{
-   col_name \tab types \cr
-   team_id \tab integer \cr
-   abbreviation \tab character \cr
-   display_name \tab character \cr
-   short_name \tab character \cr
-   mascot \tab character \cr
-   nickname \tab character \cr
-   team \tab character \cr
-   color \tab character \cr
-   alternate_color \tab character \cr
-   logo \tab character \cr
-   logo_dark \tab character \cr
-   href \tab character \cr
-   conference_url \tab character \cr
-   group_id \tab integer \cr
-   conference_short_name \tab character \cr
-   conference_uid \tab character \cr
-   conference_name \tab character \cr
-   conference_logo \tab character \cr
-   parent_group_id \tab integer \cr
-   conference_id \tab integer \cr
+A teams data frame\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   abbreviation \tab character \tab Short abbreviation. \cr
+   display_name \tab character \tab Display name. \cr
+   short_name \tab character \tab Short display name. \cr
+   mascot \tab character \tab Team mascot. \cr
+   nickname \tab character \tab Team or athlete nickname. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   color \tab character \tab Primary color (hex without leading '#'). \cr
+   alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+   logo \tab character \tab Team or league logo URL. \cr
+   logo_dark \tab character \tab Logo dark. \cr
+   href \tab character \tab Link / page URL. \cr
+   conference_url \tab character \tab URL for conference. \cr
+   group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
+   conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
+   conference_uid \tab character \tab ESPN universal conference identifier. \cr
+   conference_name \tab character \tab Full conference name. \cr
+   conference_logo \tab character \tab Logo image URL for conference. \cr
+   parent_group_id \tab integer \tab Unique identifier for parent group. \cr
+   conference_id \tab integer \tab Conference identifier. \cr
 }
 }
 \description{

@@ -22,82 +22,82 @@ the season data into a database (used by \code{update_mbb_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble\tabular{ll}{
-   col_name \tab types \cr
-   id \tab integer \cr
-   uid \tab character \cr
-   date \tab character \cr
-   attendance \tab integer \cr
-   time_valid \tab logical \cr
-   neutral_site \tab logical \cr
-   conference_competition \tab logical \cr
-   recent \tab logical \cr
-   start_date \tab character \cr
-   notes_type \tab character \cr
-   notes_headline \tab character \cr
-   type_id \tab character \cr
-   type_abbreviation \tab character \cr
-   venue_id \tab character \cr
-   venue_full_name \tab character \cr
-   venue_address_city \tab character \cr
-   venue_address_state \tab character \cr
-   venue_capacity \tab integer \cr
-   venue_indoor \tab logical \cr
-   status_clock \tab numeric \cr
-   status_display_clock \tab character \cr
-   status_period \tab integer \cr
-   status_type_id \tab character \cr
-   status_type_name \tab character \cr
-   status_type_state \tab character \cr
-   status_type_completed \tab logical \cr
-   status_type_description \tab character \cr
-   status_type_detail \tab character \cr
-   status_type_short_detail \tab character \cr
-   format_regulation_periods \tab integer \cr
-   home_id \tab character \cr
-   home_uid \tab character \cr
-   home_location \tab character \cr
-   home_name \tab character \cr
-   home_abbreviation \tab character \cr
-   home_display_name \tab character \cr
-   home_short_display_name \tab character \cr
-   home_color \tab character \cr
-   home_alternate_color \tab character \cr
-   home_is_active \tab logical \cr
-   home_venue_id \tab character \cr
-   home_logo \tab character \cr
-   home_conference_id \tab character \cr
-   home_score \tab character \cr
-   home_winner \tab logical \cr
-   away_id \tab character \cr
-   away_uid \tab character \cr
-   away_location \tab character \cr
-   away_name \tab character \cr
-   away_abbreviation \tab character \cr
-   away_display_name \tab character \cr
-   away_short_display_name \tab character \cr
-   away_color \tab character \cr
-   away_alternate_color \tab character \cr
-   away_is_active \tab logical \cr
-   away_venue_id \tab character \cr
-   away_logo \tab character \cr
-   away_conference_id \tab character \cr
-   away_score \tab character \cr
-   away_winner \tab logical \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   status_type_alt_detail \tab character \cr
-   groups_id \tab character \cr
-   groups_name \tab character \cr
-   groups_short_name \tab character \cr
-   groups_is_conference \tab logical \cr
-   tournament_id \tab numeric \cr
-   game_date_time \tab POSIXct \cr
-   game_date \tab Date \cr
-   PBP \tab logical \cr
-   team_box \tab logical \cr
-   player_box \tab logical \cr
+Returns a tibble\tabular{lll}{
+   col_name \tab types \tab description \cr
+   id \tab integer \tab Id. \cr
+   uid \tab character \tab ESPN UID string (universal identifier). \cr
+   date \tab character \tab Date in YYYY-MM-DD format. \cr
+   attendance \tab integer \tab Reported attendance. \cr
+   time_valid \tab logical \tab Time valid. \cr
+   neutral_site \tab logical \tab Neutral site. \cr
+   conference_competition \tab logical \tab Conference competition. \cr
+   recent \tab logical \tab Recent. \cr
+   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+   notes_type \tab character \tab Notes type. \cr
+   notes_headline \tab character \tab Notes headline. \cr
+   type_id \tab character \tab Type identifier (numeric). \cr
+   type_abbreviation \tab character \tab Type abbreviation. \cr
+   venue_id \tab character \tab Unique venue identifier. \cr
+   venue_full_name \tab character \tab Venue full name. \cr
+   venue_address_city \tab character \tab Venue address city. \cr
+   venue_address_state \tab character \tab Venue address state / region. \cr
+   venue_capacity \tab integer \tab Venue seating capacity. \cr
+   venue_indoor \tab logical \tab TRUE if the venue is indoors. \cr
+   status_clock \tab numeric \tab Status clock. \cr
+   status_display_clock \tab character \tab Status display clock. \cr
+   status_period \tab integer \tab Status period. \cr
+   status_type_id \tab character \tab Unique identifier for status type. \cr
+   status_type_name \tab character \tab Status type name. \cr
+   status_type_state \tab character \tab Status type state. \cr
+   status_type_completed \tab logical \tab Status type completed. \cr
+   status_type_description \tab character \tab Status type description. \cr
+   status_type_detail \tab character \tab Status type detail. \cr
+   status_type_short_detail \tab character \tab Status type short detail. \cr
+   format_regulation_periods \tab integer \tab Format regulation periods. \cr
+   home_id \tab character \tab Unique identifier for home. \cr
+   home_uid \tab character \tab Home team's uid. \cr
+   home_location \tab character \tab Home team's location. \cr
+   home_name \tab character \tab Home name. \cr
+   home_abbreviation \tab character \tab Home team's abbreviation. \cr
+   home_display_name \tab character \tab Home display name. \cr
+   home_short_display_name \tab character \tab Home short display name. \cr
+   home_color \tab character \tab Color code (hex) for home. \cr
+   home_alternate_color \tab character \tab Color code (hex) for home alternate. \cr
+   home_is_active \tab logical \tab Home team's is active. \cr
+   home_venue_id \tab character \tab Unique identifier for home venue. \cr
+   home_logo \tab character \tab Home team logo URL. \cr
+   home_conference_id \tab character \tab Unique identifier for home conference. \cr
+   home_score \tab character \tab Home team score at the time of the play. \cr
+   home_winner \tab logical \tab Home team's winner. \cr
+   away_id \tab character \tab Unique identifier for away. \cr
+   away_uid \tab character \tab Away team's uid. \cr
+   away_location \tab character \tab Away team's location. \cr
+   away_name \tab character \tab Away name. \cr
+   away_abbreviation \tab character \tab Away team's abbreviation. \cr
+   away_display_name \tab character \tab Away display name. \cr
+   away_short_display_name \tab character \tab Away short display name. \cr
+   away_color \tab character \tab Color code (hex) for away. \cr
+   away_alternate_color \tab character \tab Color code (hex) for away alternate. \cr
+   away_is_active \tab logical \tab Away team's is active. \cr
+   away_venue_id \tab character \tab Unique identifier for away venue. \cr
+   away_logo \tab character \tab Away team logo URL. \cr
+   away_conference_id \tab character \tab Unique identifier for away conference. \cr
+   away_score \tab character \tab Away team score at the time of the play. \cr
+   away_winner \tab logical \tab Away team's winner. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   status_type_alt_detail \tab character \tab Status type alt detail. \cr
+   groups_id \tab character \tab Unique identifier for groups. \cr
+   groups_name \tab character \tab Groups name. \cr
+   groups_short_name \tab character \tab Groups short name. \cr
+   groups_is_conference \tab logical \tab Groups is conference. \cr
+   tournament_id \tab numeric \tab Unique identifier for tournament. \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   PBP \tab logical \tab  \cr
+   team_box \tab logical \tab Team box. \cr
+   player_box \tab logical \tab Player box. \cr
 }
 }
 \description{

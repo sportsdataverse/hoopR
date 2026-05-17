@@ -17,59 +17,59 @@ nba_commonplayerinfo(league_id = "00", player_id = "2544", ...)
 Return a named list of data frames: CommonPlayerInfo, PlayerHeadlineStats,
 AvailableSeasons
 
-\strong{CommonPlayerInfo}\tabular{ll}{
-   col_name \tab types \cr
-   PERSON_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   DISPLAY_FIRST_LAST \tab character \cr
-   DISPLAY_LAST_COMMA_FIRST \tab character \cr
-   DISPLAY_FI_LAST \tab character \cr
-   PLAYER_SLUG \tab character \cr
-   BIRTHDATE \tab character \cr
-   SCHOOL \tab character \cr
-   COUNTRY \tab character \cr
-   LAST_AFFILIATION \tab character \cr
-   HEIGHT \tab character \cr
-   WEIGHT \tab character \cr
-   SEASON_EXP \tab character \cr
-   JERSEY \tab character \cr
-   POSITION \tab character \cr
-   ROSTERSTATUS \tab character \cr
-   GAMES_PLAYED_CURRENT_SEASON_FLAG \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CODE \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYERCODE \tab character \cr
-   FROM_YEAR \tab character \cr
-   TO_YEAR \tab character \cr
-   DLEAGUE_FLAG \tab character \cr
-   NBA_FLAG \tab character \cr
-   GAMES_PLAYED_FLAG \tab character \cr
-   DRAFT_YEAR \tab character \cr
-   DRAFT_ROUND \tab character \cr
-   DRAFT_NUMBER \tab character \cr
-   GREATEST_75_FLAG \tab character \cr
+\strong{CommonPlayerInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   DISPLAY_FIRST_LAST \tab character \tab  \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
+   DISPLAY_FI_LAST \tab character \tab  \cr
+   PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
+   BIRTHDATE \tab character \tab  \cr
+   SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
+   COUNTRY \tab character \tab Country (full name or code). \cr
+   LAST_AFFILIATION \tab character \tab  \cr
+   HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+   WEIGHT \tab character \tab Player weight in pounds. \cr
+   SEASON_EXP \tab character \tab  \cr
+   JERSEY \tab character \tab Jersey number worn by the player. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   ROSTERSTATUS \tab character \tab  \cr
+   GAMES_PLAYED_CURRENT_SEASON_FLAG \tab character \tab  \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CODE \tab character \tab  \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYERCODE \tab character \tab  \cr
+   FROM_YEAR \tab character \tab  \cr
+   TO_YEAR \tab character \tab  \cr
+   DLEAGUE_FLAG \tab character \tab  \cr
+   NBA_FLAG \tab character \tab  \cr
+   GAMES_PLAYED_FLAG \tab character \tab  \cr
+   DRAFT_YEAR \tab character \tab Draft year (4-digit). \cr
+   DRAFT_ROUND \tab character \tab Round of the draft selection. \cr
+   DRAFT_NUMBER \tab character \tab  \cr
+   GREATEST_75_FLAG \tab character \tab  \cr
 }
 
 
-\strong{PlayerHeadlineStats}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TimeFrame \tab character \cr
-   PTS \tab character \cr
-   AST \tab character \cr
-   REB \tab character \cr
-   PIE \tab character \cr
+\strong{PlayerHeadlineStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TimeFrame \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   AST \tab character \tab Assists. \cr
+   REB \tab character \tab Total rebounds. \cr
+   PIE \tab character \tab Player Impact Estimate (0-1). \cr
 }
 
 
-\strong{AvailableSeasons}\tabular{ll}{
-   col_name \tab types \cr
-   SEASON_ID \tab character \cr
+\strong{AvailableSeasons}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   SEASON_ID \tab character \tab Unique season identifier. \cr
 }
 }
 \description{

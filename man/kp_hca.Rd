@@ -7,22 +7,22 @@
 kp_hca()
 }
 \value{
-A data frame with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   hca \tab numeric \cr
-   hca_rk \tab numeric \cr
-   pf \tab numeric \cr
-   pf_rk \tab numeric \cr
-   pts \tab numeric \cr
-   pts_rk \tab numeric \cr
-   nst \tab numeric \cr
-   nst_rk \tab numeric \cr
-   blk \tab numeric \cr
-   blk_rk \tab numeric \cr
-   elev \tab numeric \cr
-   elev_rk \tab numeric \cr
+A data frame with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   hca \tab numeric \tab Hca. \cr
+   hca_rk \tab numeric \tab Hca rk. \cr
+   pf \tab numeric \tab Personal fouls. \cr
+   pf_rk \tab numeric \tab Pf rk. \cr
+   pts \tab numeric \tab Points scored. \cr
+   pts_rk \tab numeric \tab Pts rk. \cr
+   nst \tab numeric \tab Nst. \cr
+   nst_rk \tab numeric \tab Nst rk. \cr
+   blk \tab numeric \tab Blocks. \cr
+   blk_rk \tab numeric \tab Blk rk. \cr
+   elev \tab numeric \tab Elev. \cr
+   elev_rk \tab numeric \tab Elev rk. \cr
 }
 }
 \description{

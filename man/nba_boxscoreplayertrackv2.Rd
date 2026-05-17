@@ -14,67 +14,67 @@ nba_boxscoreplayertrackv2(game_id, ...)
 \value{
 Returns a named list of data frames: PlayerStats, TeamStats
 
-\strong{PlayerStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MIN \tab character \cr
-   SPD \tab character \cr
-   DIST \tab character \cr
-   ORBC \tab character \cr
-   DRBC \tab character \cr
-   RBC \tab character \cr
-   TCHS \tab character \cr
-   SAST \tab character \cr
-   FTAST \tab character \cr
-   PASS \tab character \cr
-   AST \tab character \cr
-   CFGM \tab character \cr
-   CFGA \tab character \cr
-   CFG_PCT \tab character \cr
-   UFGM \tab character \cr
-   UFGA \tab character \cr
-   UFG_PCT \tab character \cr
-   FG_PCT \tab character \cr
-   DFGM \tab character \cr
-   DFGA \tab character \cr
-   DFG_PCT \tab character \cr
+\strong{PlayerStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   SPD \tab character \tab  \cr
+   DIST \tab character \tab  \cr
+   ORBC \tab character \tab  \cr
+   DRBC \tab character \tab  \cr
+   RBC \tab character \tab  \cr
+   TCHS \tab character \tab  \cr
+   SAST \tab character \tab  \cr
+   FTAST \tab character \tab  \cr
+   PASS \tab character \tab  \cr
+   AST \tab character \tab Assists. \cr
+   CFGM \tab character \tab  \cr
+   CFGA \tab character \tab  \cr
+   CFG_PCT \tab character \tab  \cr
+   UFGM \tab character \tab  \cr
+   UFGA \tab character \tab  \cr
+   UFG_PCT \tab character \tab  \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   DFGM \tab character \tab  \cr
+   DFGA \tab character \tab  \cr
+   DFG_PCT \tab character \tab  \cr
 }
 
 
-\strong{TeamStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MIN \tab character \cr
-   DIST \tab character \cr
-   ORBC \tab character \cr
-   DRBC \tab character \cr
-   RBC \tab character \cr
-   TCHS \tab character \cr
-   SAST \tab character \cr
-   FTAST \tab character \cr
-   PASS \tab character \cr
-   AST \tab character \cr
-   CFGM \tab character \cr
-   CFGA \tab character \cr
-   CFG_PCT \tab character \cr
-   UFGM \tab character \cr
-   UFGA \tab character \cr
-   UFG_PCT \tab character \cr
-   FG_PCT \tab character \cr
-   DFGM \tab character \cr
-   DFGA \tab character \cr
-   DFG_PCT \tab character \cr
+\strong{TeamStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   DIST \tab character \tab  \cr
+   ORBC \tab character \tab  \cr
+   DRBC \tab character \tab  \cr
+   RBC \tab character \tab  \cr
+   TCHS \tab character \tab  \cr
+   SAST \tab character \tab  \cr
+   FTAST \tab character \tab  \cr
+   PASS \tab character \tab  \cr
+   AST \tab character \tab Assists. \cr
+   CFGM \tab character \tab  \cr
+   CFGA \tab character \tab  \cr
+   CFG_PCT \tab character \tab  \cr
+   UFGM \tab character \tab  \cr
+   UFGA \tab character \tab  \cr
+   UFG_PCT \tab character \tab  \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   DFGM \tab character \tab  \cr
+   DFGA \tab character \tab  \cr
+   DFG_PCT \tab character \tab  \cr
 }
 }
 \description{

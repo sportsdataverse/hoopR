@@ -10,43 +10,43 @@ kp_confstats(year = most_recent_mbb_season())
 \item{year}{Year (YYYY)}
 }
 \value{
-A data frame with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   conf \tab character \cr
-   eff \tab numeric \cr
-   eff_rk \tab numeric \cr
-   tempo \tab numeric \cr
-   tempo_rk \tab numeric \cr
-   e_fg_pct \tab numeric \cr
-   e_fg_pct_rk \tab numeric \cr
-   to_pct \tab numeric \cr
-   to_pct_rk \tab numeric \cr
-   or_pct \tab numeric \cr
-   or_pct_rk \tab numeric \cr
-   ft_rate \tab numeric \cr
-   ft_rate_rk \tab numeric \cr
-   blk_pct \tab numeric \cr
-   blk_pct_rk \tab numeric \cr
-   stl_pct \tab numeric \cr
-   stl_pct_rk \tab numeric \cr
-   fg_2_pct \tab numeric \cr
-   fg_2_pct_rk \tab numeric \cr
-   fg_3_pct \tab numeric \cr
-   fg_3_pct_rk \tab numeric \cr
-   ft_pct \tab numeric \cr
-   ft_pct_rk \tab numeric \cr
-   fg_3a_pct \tab numeric \cr
-   fg_3a_pct_rk \tab numeric \cr
-   a_pct \tab numeric \cr
-   a_pct_rk \tab numeric \cr
-   home_w_l \tab character \cr
-   home_w_l_pct \tab numeric \cr
-   home_w_l_rk \tab numeric \cr
-   close \tab numeric \cr
-   close_rk \tab numeric \cr
-   blowouts \tab numeric \cr
-   blowouts_rk \tab numeric \cr
-   year \tab numeric \cr
+A data frame with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   conf \tab character \tab character. \cr
+   eff \tab numeric \tab Eff. \cr
+   eff_rk \tab numeric \tab Eff rk. \cr
+   tempo \tab numeric \tab Tempo. \cr
+   tempo_rk \tab numeric \tab Tempo rk. \cr
+   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+   e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
+   to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+   to_pct_rk \tab numeric \tab To pct rk. \cr
+   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+   or_pct_rk \tab numeric \tab Or pct rk. \cr
+   ft_rate \tab numeric \tab Ft rate. \cr
+   ft_rate_rk \tab numeric \tab Ft rate rk. \cr
+   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+   blk_pct_rk \tab numeric \tab Blk pct rk. \cr
+   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+   stl_pct_rk \tab numeric \tab Stl pct rk. \cr
+   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+   fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
+   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+   fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
+   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+   ft_pct_rk \tab numeric \tab Ft pct rk. \cr
+   fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
+   fg_3a_pct_rk \tab numeric \tab Fg 3a pct rk. \cr
+   a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
+   a_pct_rk \tab numeric \tab A pct rk. \cr
+   home_w_l \tab character \tab Home team's wins losses. \cr
+   home_w_l_pct \tab numeric \tab Home wins losses percentage (0-1 decimal). \cr
+   home_w_l_rk \tab numeric \tab Home team's wins losses rk. \cr
+   close \tab numeric \tab Close. \cr
+   close_rk \tab numeric \tab Close rk. \cr
+   blowouts \tab numeric \tab Blowouts. \cr
+   blowouts_rk \tab numeric \tab Blowouts rk. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

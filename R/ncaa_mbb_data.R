@@ -56,16 +56,16 @@ ncaa_mbb_NET_rankings <- function() {
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return A data frame with the following variables
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |team_id       |character |
-#'    |team_name     |character |
-#'    |team_url      |character |
-#'    |conference_id |character |
-#'    |conference    |character |
-#'    |division      |numeric   |
-#'    |year          |numeric   |
-#'    |season_id     |character |
+#'    |col_name      |types     |description                                     |
+#'    |:-------------|:---------|:-----------------------------------------------|
+#'    |team_id       |character |Unique team identifier.                         |
+#'    |team_name     |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |team_url      |character |URL for team.                                   |
+#'    |conference_id |character |Conference identifier.                          |
+#'    |conference    |character |Conference.                                     |
+#'    |division      |numeric   |Team division.                                  |
+#'    |year          |numeric   |4-digit year.                                   |
+#'    |season_id     |character |Unique season identifier.                       |
 #'
 #' @import dplyr
 #' @import rvest

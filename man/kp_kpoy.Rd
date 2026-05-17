@@ -12,33 +12,33 @@ kp_kpoy(year = most_recent_mbb_season())
 \value{
 Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 
-\strong{KPoYRatings}\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab integer \cr
-   player \tab character \cr
-   kpoy_rating \tab numeric \cr
-   team \tab character \cr
-   hgt \tab character \cr
-   wgt \tab numeric \cr
-   exp \tab character \cr
-   home_town \tab character \cr
-   year \tab numeric \cr
-   group \tab character \cr
+\strong{KPoYRatings}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab integer \tab Rk. \cr
+   player \tab character \tab Player. \cr
+   kpoy_rating \tab numeric \tab Kpoy rating. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   hgt \tab character \tab Hgt. \cr
+   wgt \tab numeric \tab Wgt. \cr
+   exp \tab character \tab Exp. \cr
+   home_town \tab character \tab Home team's town. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
 }
 
 
-\strong{GameMVPs}\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab numeric \cr
-   player \tab character \cr
-   game_mv_ps \tab numeric \cr
-   team \tab character \cr
-   hgt \tab character \cr
-   wgt \tab numeric \cr
-   exp \tab character \cr
-   home_town \tab character \cr
-   year \tab numeric \cr
-   group \tab character \cr
+\strong{GameMVPs}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab numeric \tab Rk. \cr
+   player \tab character \tab Player. \cr
+   game_mv_ps \tab numeric \tab Game mv ps. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   hgt \tab character \tab Hgt. \cr
+   wgt \tab numeric \tab Wgt. \cr
+   exp \tab character \tab Exp. \cr
+   home_town \tab character \tab Home team's town. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
 }
 }
 \description{

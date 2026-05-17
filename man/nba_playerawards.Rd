@@ -14,22 +14,22 @@ nba_playerawards(player_id, ...)
 \value{
 Return a named list of data frames: PlayerAwards
 
-\strong{PlayerAwards}\tabular{ll}{
-   col_name \tab types \cr
-   PERSON_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   TEAM \tab character \cr
-   DESCRIPTION \tab character \cr
-   ALL_NBA_TEAM_NUMBER \tab character \cr
-   SEASON \tab character \cr
-   MONTH \tab character \cr
-   WEEK \tab character \cr
-   CONFERENCE \tab character \cr
-   TYPE \tab character \cr
-   SUBTYPE1 \tab character \cr
-   SUBTYPE2 \tab character \cr
-   SUBTYPE3 \tab character \cr
+\strong{PlayerAwards}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   TEAM \tab character \tab Team-side label or team identifier. \cr
+   DESCRIPTION \tab character \tab Long-form description text. \cr
+   ALL_NBA_TEAM_NUMBER \tab character \tab  \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   MONTH \tab character \tab Month number. \cr
+   WEEK \tab character \tab Week number within the season. \cr
+   CONFERENCE \tab character \tab Conference. \cr
+   TYPE \tab character \tab Record type / category. \cr
+   SUBTYPE1 \tab character \tab  \cr
+   SUBTYPE2 \tab character \tab  \cr
+   SUBTYPE3 \tab character \tab  \cr
 }
 }
 \description{

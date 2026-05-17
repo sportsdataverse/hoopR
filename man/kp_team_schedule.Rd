@@ -12,33 +12,33 @@ kp_team_schedule(team, year = 2022)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team schedules\tabular{ll}{
-   col_name \tab types \cr
-   team_rk \tab numeric \cr
-   team \tab character \cr
-   opponent_rk \tab numeric \cr
-   opponent \tab character \cr
-   result \tab character \cr
-   poss \tab numeric \cr
-   ot \tab numeric \cr
-   pre_wp \tab numeric \cr
-   location \tab character \cr
-   w \tab numeric \cr
-   l \tab numeric \cr
-   w_conference \tab numeric \cr
-   l_conference \tab numeric \cr
-   conference_game \tab logical \cr
-   postseason \tab character \cr
-   year \tab numeric \cr
-   day_date \tab character \cr
-   game_date \tab numeric \cr
-   w_proj \tab numeric \cr
-   l_proj \tab numeric \cr
-   w_conference_proj \tab numeric \cr
-   l_conference_proj \tab numeric \cr
-   date \tab character \cr
-   game_id \tab numeric \cr
-   tiers_of_joy \tab character \cr
+Returns a tibble of team schedules\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_rk \tab numeric \tab Team rk. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   opponent_rk \tab numeric \tab Opponent rk. \cr
+   opponent \tab character \tab Opponent. \cr
+   result \tab character \tab Result. \cr
+   poss \tab numeric \tab Poss. \cr
+   ot \tab numeric \tab Ot. \cr
+   pre_wp \tab numeric \tab Pre wp. \cr
+   location \tab character \tab Location. \cr
+   w \tab numeric \tab Wins. \cr
+   l \tab numeric \tab Losses. \cr
+   w_conference \tab numeric \tab W conference. \cr
+   l_conference \tab numeric \tab L conference. \cr
+   conference_game \tab logical \tab Conference game. \cr
+   postseason \tab character \tab Postseason. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   day_date \tab character \tab Date in YYYY-MM-DD format. \cr
+   game_date \tab numeric \tab Game date (YYYY-MM-DD). \cr
+   w_proj \tab numeric \tab W proj. \cr
+   l_proj \tab numeric \tab L proj. \cr
+   w_conference_proj \tab numeric \tab W conference proj. \cr
+   l_conference_proj \tab numeric \tab L conference proj. \cr
+   date \tab character \tab Date in YYYY-MM-DD format. \cr
+   game_id \tab numeric \tab Unique game identifier. \cr
+   tiers_of_joy \tab character \tab Tiers of joy. \cr
 }
 }
 \description{

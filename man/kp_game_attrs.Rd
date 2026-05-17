@@ -14,15 +14,15 @@ kp_game_attrs(year = most_recent_mbb_season(), attr = "Excitement")
 'Upsets','Busts','Comeback','Window'}
 }
 \value{
-Returns a tibble with game attributes\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab integer \cr
-   data \tab character \cr
-   game \tab character \cr
-   location \tab character \cr
-   conf \tab character \cr
-   excitement \tab numeric \cr
-   year \tab numeric \cr
+Returns a tibble with game attributes\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab integer \tab Rk. \cr
+   data \tab character \tab Data. \cr
+   game \tab character \tab Game. \cr
+   location \tab character \tab Location. \cr
+   conf \tab character \tab character. \cr
+   excitement \tab numeric \tab Excitement. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

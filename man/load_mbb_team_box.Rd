@@ -22,48 +22,48 @@ the season data into a database (used by \code{update_mbb_db()}).}
 \item{tablename}{The name of the play by play data table within the database}
 }
 \value{
-Returns a tibble\tabular{ll}{
-   col_name \tab types \cr
-   team_id \tab character \cr
-   team_uid \tab character \cr
-   team_slug \tab character \cr
-   team_location \tab character \cr
-   team_name \tab character \cr
-   team_abbreviation \tab character \cr
-   team_display_name \tab character \cr
-   team_short_display_name \tab character \cr
-   team_color \tab character \cr
-   team_alternate_color \tab character \cr
-   team_logo \tab character \cr
-   field_goals_made_field_goals_attempted \tab character \cr
-   field_goal_pct \tab character \cr
-   three_point_field_goals_made_three_point_field_goals_attempted \tab character \cr
-   three_point_field_goal_pct \tab character \cr
-   free_throws_made_free_throws_attempted \tab character \cr
-   free_throw_pct \tab character \cr
-   total_rebounds \tab character \cr
-   offensive_rebounds \tab character \cr
-   defensive_rebounds \tab character \cr
-   assists \tab character \cr
-   steals \tab character \cr
-   blocks \tab character \cr
-   turnovers \tab character \cr
-   team_turnovers \tab character \cr
-   total_turnovers \tab character \cr
-   technical_fouls \tab character \cr
-   total_technical_fouls \tab character \cr
-   flagrant_fouls \tab character \cr
-   fouls \tab character \cr
-   largest_lead \tab character \cr
-   home_away \tab character \cr
-   opponent_id \tab integer \cr
-   opponent_name \tab character \cr
-   opponent_mascot \tab character \cr
-   opponent_abbrev \tab character \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   game_date \tab Date \cr
+Returns a tibble\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_id \tab character \tab Unique team identifier. \cr
+   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_location \tab character \tab Team city or location string. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   team_display_name \tab character \tab Full team display name. \cr
+   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+   team_logo \tab character \tab Team logo image URL. \cr
+   field_goals_made_field_goals_attempted \tab character \tab Field Goals Made-Attempted. \cr
+   field_goal_pct \tab character \tab Field goal percentage (0-1). \cr
+   three_point_field_goals_made_three_point_field_goals_attempted \tab character \tab 3-Point Field Goals Made-Attempted. \cr
+   three_point_field_goal_pct \tab character \tab Three-point field goal percentage (0-1). \cr
+   free_throws_made_free_throws_attempted \tab character \tab Free Throws Made-Attempted. \cr
+   free_throw_pct \tab character \tab Free throw percentage (0-1). \cr
+   total_rebounds \tab character \tab Total rebounds. \cr
+   offensive_rebounds \tab character \tab Offensive rebounds. \cr
+   defensive_rebounds \tab character \tab Defensive rebounds. \cr
+   assists \tab character \tab Total assists. \cr
+   steals \tab character \tab Total steals. \cr
+   blocks \tab character \tab Total blocks. \cr
+   turnovers \tab character \tab Total turnovers. \cr
+   team_turnovers \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+   total_turnovers \tab character \tab Total turnovers (player + team). \cr
+   technical_fouls \tab character \tab Total technical fouls. \cr
+   total_technical_fouls \tab character \tab Total technical fouls (player + team). \cr
+   flagrant_fouls \tab character \tab Total flagrant fouls. \cr
+   fouls \tab character \tab Personal fouls. \cr
+   largest_lead \tab character \tab Largest lead during the game. \cr
+   home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+   opponent_id \tab integer \tab Unique identifier for opponent. \cr
+   opponent_name \tab character \tab Opponent name. \cr
+   opponent_mascot \tab character \tab Opponent mascot. \cr
+   opponent_abbrev \tab character \tab Abbreviation for opponent. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
 }
 }
 \description{

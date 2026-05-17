@@ -68,18 +68,18 @@ nba_playerdashptshotdefend(
 \value{
 Return a named list of data frames: DefendingShots
 
-\strong{DefendingShots}\tabular{ll}{
-   col_name \tab types \cr
-   CLOSE_DEF_playerId \tab character \cr
-   GP \tab character \cr
-   G \tab character \cr
-   DEFENSE_CATEGORY \tab character \cr
-   FREQ \tab character \cr
-   D_FGM \tab character \cr
-   D_FGA \tab character \cr
-   D_FG_PCT \tab character \cr
-   NORMAL_FG_PCT \tab character \cr
-   PCT_PLUSMINUS \tab character \cr
+\strong{DefendingShots}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   CLOSE_DEF_playerId \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   G \tab character \tab Games played. \cr
+   DEFENSE_CATEGORY \tab character \tab  \cr
+   FREQ \tab character \tab  \cr
+   D_FGM \tab character \tab  \cr
+   D_FGA \tab character \tab  \cr
+   D_FG_PCT \tab character \tab  \cr
+   NORMAL_FG_PCT \tab character \tab  \cr
+   PCT_PLUSMINUS \tab character \tab  \cr
 }
 }
 \description{

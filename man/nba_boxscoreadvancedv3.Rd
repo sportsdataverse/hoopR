@@ -33,165 +33,165 @@ nba_boxscoreadvancedv3(
 Returns a named list of data frames: home_team_player_advanced, away_team_player_advanced,
 home_team_totals_advanced, away_team_totals_advanced
 
-\strong{home_team_player_advanced}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   estimated_offensive_rating \tab numeric \cr
-   offensive_rating \tab numeric \cr
-   estimated_defensive_rating \tab numeric \cr
-   defensive_rating \tab numeric \cr
-   estimated_net_rating \tab numeric \cr
-   net_rating \tab numeric \cr
-   assist_percentage \tab numeric \cr
-   assist_to_turnover \tab numeric \cr
-   assist_ratio \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   defensive_rebound_percentage \tab numeric \cr
-   rebound_percentage \tab numeric \cr
-   turnover_ratio \tab numeric \cr
-   effective_field_goal_percentage \tab numeric \cr
-   true_shooting_percentage \tab numeric \cr
-   usage_percentage \tab numeric \cr
-   estimated_usage_percentage \tab numeric \cr
-   estimated_pace \tab numeric \cr
-   pace \tab numeric \cr
-   pace_per40 \tab numeric \cr
-   possessions \tab numeric \cr
-   pie \tab numeric \cr
+\strong{home_team_player_advanced}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+   offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+   estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+   defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+   estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+   net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+   assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+   assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+   assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+   rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+   turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+   estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+   pace \tab numeric \tab Possessions per 48 minutes. \cr
+   pace_per40 \tab numeric \tab Pace per40. \cr
+   possessions \tab numeric \tab Possessions used. \cr
+   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }
 
 
-\strong{away_team_player_advanced}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   estimated_offensive_rating \tab numeric \cr
-   offensive_rating \tab numeric \cr
-   estimated_defensive_rating \tab numeric \cr
-   defensive_rating \tab numeric \cr
-   estimated_net_rating \tab numeric \cr
-   net_rating \tab numeric \cr
-   assist_percentage \tab numeric \cr
-   assist_to_turnover \tab numeric \cr
-   assist_ratio \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   defensive_rebound_percentage \tab numeric \cr
-   rebound_percentage \tab numeric \cr
-   turnover_ratio \tab numeric \cr
-   effective_field_goal_percentage \tab numeric \cr
-   true_shooting_percentage \tab numeric \cr
-   usage_percentage \tab numeric \cr
-   estimated_usage_percentage \tab numeric \cr
-   estimated_pace \tab numeric \cr
-   pace \tab numeric \cr
-   pace_per40 \tab numeric \cr
-   possessions \tab numeric \cr
-   pie \tab numeric \cr
+\strong{away_team_player_advanced}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+   offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+   estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+   defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+   estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+   net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+   assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+   assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+   assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+   rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+   turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+   estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+   pace \tab numeric \tab Possessions per 48 minutes. \cr
+   pace_per40 \tab numeric \tab Pace per40. \cr
+   possessions \tab numeric \tab Possessions used. \cr
+   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }
 
 
-\strong{home_team_totals_advanced}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   estimated_offensive_rating \tab numeric \cr
-   offensive_rating \tab numeric \cr
-   estimated_defensive_rating \tab numeric \cr
-   defensive_rating \tab numeric \cr
-   estimated_net_rating \tab numeric \cr
-   net_rating \tab numeric \cr
-   assist_percentage \tab numeric \cr
-   assist_to_turnover \tab numeric \cr
-   assist_ratio \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   defensive_rebound_percentage \tab numeric \cr
-   rebound_percentage \tab numeric \cr
-   estimated_team_turnover_percentage \tab numeric \cr
-   turnover_ratio \tab numeric \cr
-   effective_field_goal_percentage \tab numeric \cr
-   true_shooting_percentage \tab numeric \cr
-   usage_percentage \tab numeric \cr
-   estimated_usage_percentage \tab numeric \cr
-   estimated_pace \tab numeric \cr
-   pace \tab numeric \cr
-   pace_per40 \tab numeric \cr
-   possessions \tab numeric \cr
-   pie \tab numeric \cr
+\strong{home_team_totals_advanced}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+   offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+   estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+   defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+   estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+   net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+   assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+   assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+   assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+   rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+   estimated_team_turnover_percentage \tab numeric \tab Estimated team turnover percentage (0-1). \cr
+   turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+   estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+   pace \tab numeric \tab Possessions per 48 minutes. \cr
+   pace_per40 \tab numeric \tab Pace per40. \cr
+   possessions \tab numeric \tab Possessions used. \cr
+   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }
 
 
-\strong{away_team_totals_advanced}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   estimated_offensive_rating \tab numeric \cr
-   offensive_rating \tab numeric \cr
-   estimated_defensive_rating \tab numeric \cr
-   defensive_rating \tab numeric \cr
-   estimated_net_rating \tab numeric \cr
-   net_rating \tab numeric \cr
-   assist_percentage \tab numeric \cr
-   assist_to_turnover \tab numeric \cr
-   assist_ratio \tab numeric \cr
-   offensive_rebound_percentage \tab numeric \cr
-   defensive_rebound_percentage \tab numeric \cr
-   rebound_percentage \tab numeric \cr
-   estimated_team_turnover_percentage \tab numeric \cr
-   turnover_ratio \tab numeric \cr
-   effective_field_goal_percentage \tab numeric \cr
-   true_shooting_percentage \tab numeric \cr
-   usage_percentage \tab numeric \cr
-   estimated_usage_percentage \tab numeric \cr
-   estimated_pace \tab numeric \cr
-   pace \tab numeric \cr
-   pace_per40 \tab numeric \cr
-   possessions \tab numeric \cr
-   pie \tab numeric \cr
+\strong{away_team_totals_advanced}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+   offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+   estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+   defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+   estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+   net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+   assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+   assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+   assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+   offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+   defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+   rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+   estimated_team_turnover_percentage \tab numeric \tab Estimated team turnover percentage (0-1). \cr
+   turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+   effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+   true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+   estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+   pace \tab numeric \tab Possessions per 48 minutes. \cr
+   pace_per40 \tab numeric \tab Pace per40. \cr
+   possessions \tab numeric \tab Possessions used. \cr
+   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }
 }
 \description{

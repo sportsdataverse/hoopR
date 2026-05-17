@@ -14,82 +14,82 @@ kp_gameplan(team, year = 2021)
 \value{
 Returns a named list of tibbles: gameplan, correlations, position_distributions
 
-\strong{gameplan}\tabular{ll}{
-   col_name \tab types \cr
-   date \tab Date \cr
-   opponent_rk \tab numeric \cr
-   opponent \tab character \cr
-   result \tab character \cr
-   location \tab character \cr
-   pace \tab numeric \cr
-   off_eff \tab numeric \cr
-   off_eff_rk \tab numeric \cr
-   off_e_fg_pct \tab numeric \cr
-   off_to_pct \tab numeric \cr
-   off_or_pct \tab numeric \cr
-   off_ftr \tab numeric \cr
-   off_fgm_2 \tab numeric \cr
-   off_fga_2 \tab numeric \cr
-   off_fg_2_pct \tab numeric \cr
-   off_fgm_3 \tab numeric \cr
-   off_fga_3 \tab numeric \cr
-   off_fg_3_pct \tab numeric \cr
-   off_fg_3a_pct \tab numeric \cr
-   def_eff \tab numeric \cr
-   def_eff_rk \tab numeric \cr
-   def_e_fg_pct \tab numeric \cr
-   def_to_pct \tab numeric \cr
-   def_or_pct \tab numeric \cr
-   def_ftr \tab numeric \cr
-   def_fgm_2 \tab numeric \cr
-   def_fga_2 \tab numeric \cr
-   def_fg_2_pct \tab numeric \cr
-   def_fgm_3 \tab numeric \cr
-   def_fga_3 \tab numeric \cr
-   def_fg_3_pct \tab numeric \cr
-   def_fg_3a_pct \tab numeric \cr
-   wl \tab character \cr
-   team_score \tab numeric \cr
-   opponent_score \tab numeric \cr
-   day_date \tab character \cr
-   game_date \tab numeric \cr
+\strong{gameplan}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   date \tab Date \tab Date in YYYY-MM-DD format. \cr
+   opponent_rk \tab numeric \tab Opponent rk. \cr
+   opponent \tab character \tab Opponent. \cr
+   result \tab character \tab Result. \cr
+   location \tab character \tab Location. \cr
+   pace \tab numeric \tab Possessions per 48 minutes. \cr
+   off_eff \tab numeric \tab Off eff. \cr
+   off_eff_rk \tab numeric \tab Off eff rk. \cr
+   off_e_fg_pct \tab numeric \tab Off e field goals percentage (0-1 decimal). \cr
+   off_to_pct \tab numeric \tab Off to percentage (0-1 decimal). \cr
+   off_or_pct \tab numeric \tab Off or percentage (0-1 decimal). \cr
+   off_ftr \tab numeric \tab Off ftr. \cr
+   off_fgm_2 \tab numeric \tab Off fgm 2. \cr
+   off_fga_2 \tab numeric \tab Off fga 2. \cr
+   off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+   off_fgm_3 \tab numeric \tab Off fgm 3. \cr
+   off_fga_3 \tab numeric \tab Off fga 3. \cr
+   off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+   off_fg_3a_pct \tab numeric \tab Off field goals 3a percentage (0-1 decimal). \cr
+   def_eff \tab numeric \tab Def eff. \cr
+   def_eff_rk \tab numeric \tab Def eff rk. \cr
+   def_e_fg_pct \tab numeric \tab Def e field goals percentage (0-1 decimal). \cr
+   def_to_pct \tab numeric \tab Def to percentage (0-1 decimal). \cr
+   def_or_pct \tab numeric \tab Def or percentage (0-1 decimal). \cr
+   def_ftr \tab numeric \tab Def ftr. \cr
+   def_fgm_2 \tab numeric \tab Def fgm 2. \cr
+   def_fga_2 \tab numeric \tab Def fga 2. \cr
+   def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+   def_fgm_3 \tab numeric \tab Def fgm 3. \cr
+   def_fga_3 \tab numeric \tab Def fga 3. \cr
+   def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+   def_fg_3a_pct \tab numeric \tab Def field goals 3a percentage (0-1 decimal). \cr
+   wl \tab character \tab Wl. \cr
+   team_score \tab numeric \tab Team's score / final score. \cr
+   opponent_score \tab numeric \tab Opponent score. \cr
+   day_date \tab character \tab Date in YYYY-MM-DD format. \cr
+   game_date \tab numeric \tab Game date (YYYY-MM-DD). \cr
 }
 
 
-\strong{correlations}\tabular{ll}{
-   col_name \tab types \cr
-   correlations_r_x_100 \tab character \cr
-   pace \tab character \cr
-   off_e_fg_pct \tab character \cr
-   off_to_pct \tab character \cr
-   off_or_pct \tab character \cr
-   off_ftr \tab character \cr
-   def_e_fg_pct \tab character \cr
-   def_to_pct \tab character \cr
-   def_or_pct \tab character \cr
-   def_ftr \tab character \cr
+\strong{correlations}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   correlations_r_x_100 \tab character \tab Correlations r x 100. \cr
+   pace \tab character \tab Possessions per 48 minutes. \cr
+   off_e_fg_pct \tab character \tab Off e field goals percentage (0-1 decimal). \cr
+   off_to_pct \tab character \tab Off to percentage (0-1 decimal). \cr
+   off_or_pct \tab character \tab Off or percentage (0-1 decimal). \cr
+   off_ftr \tab character \tab Off ftr. \cr
+   def_e_fg_pct \tab character \tab Def e field goals percentage (0-1 decimal). \cr
+   def_to_pct \tab character \tab Def to percentage (0-1 decimal). \cr
+   def_or_pct \tab character \tab Def or percentage (0-1 decimal). \cr
+   def_ftr \tab character \tab Def ftr. \cr
 }
 
 
-\strong{position_distributions}\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   category \tab character \cr
-   c_pct \tab numeric \cr
-   pf_pct \tab numeric \cr
-   sf_pct \tab numeric \cr
-   sg_pct \tab numeric \cr
-   pg_pct \tab numeric \cr
-   c_pct_rk \tab numeric \cr
-   pf_pct_rk \tab numeric \cr
-   sf_pct_rk \tab numeric \cr
-   sg_pct_rk \tab numeric \cr
-   pg_pct_rk \tab numeric \cr
-   c_pct_d1_avg \tab numeric \cr
-   pf_pct_d1_avg \tab numeric \cr
-   sf_pct_d1_avg \tab numeric \cr
-   sg_pct_d1_avg \tab numeric \cr
-   pg_pct_d1_avg \tab numeric \cr
+\strong{position_distributions}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   category \tab character \tab Category label. \cr
+   c_pct \tab numeric \tab C percentage (0-1 decimal). \cr
+   pf_pct \tab numeric \tab Personal fouls percentage (0-1 decimal). \cr
+   sf_pct \tab numeric \tab Sf percentage (0-1 decimal). \cr
+   sg_pct \tab numeric \tab Sg percentage (0-1 decimal). \cr
+   pg_pct \tab numeric \tab Pg percentage (0-1 decimal). \cr
+   c_pct_rk \tab numeric \tab C pct rk. \cr
+   pf_pct_rk \tab numeric \tab Pf pct rk. \cr
+   sf_pct_rk \tab numeric \tab Sf pct rk. \cr
+   sg_pct_rk \tab numeric \tab Sg pct rk. \cr
+   pg_pct_rk \tab numeric \tab Pg pct rk. \cr
+   c_pct_d1_avg \tab numeric \tab C pct d1 avg. \cr
+   pf_pct_d1_avg \tab numeric \tab Pf pct d1 avg. \cr
+   sf_pct_d1_avg \tab numeric \tab Sf pct d1 avg. \cr
+   sg_pct_d1_avg \tab numeric \tab Sg pct d1 avg. \cr
+   pg_pct_d1_avg \tab numeric \tab Pg pct d1 avg. \cr
 }
 }
 \description{

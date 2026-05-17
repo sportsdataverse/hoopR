@@ -12,65 +12,65 @@ espn_mbb_betting(game_id)
 \value{
 Returns a named list of data frames: pickcenter, againstTheSpread, predictor
 
-\strong{pickcenter}\tabular{ll}{
-   col_name \tab types \cr
-   details \tab character \cr
-   over_under \tab numeric \cr
-   spread \tab numeric \cr
-   provider_id \tab integer \cr
-   provider_name \tab character \cr
-   provider_priority \tab integer \cr
-   away_team_odds_favorite \tab logical \cr
-   away_team_odds_underdog \tab logical \cr
-   away_team_odds_money_line \tab integer \cr
-   away_team_odds_spread_odds \tab numeric \cr
-   away_team_odds_team_id \tab integer \cr
-   away_team_odds_win_percentage \tab numeric \cr
-   away_team_odds_average_score \tab numeric \cr
-   away_team_odds_money_line_odds \tab numeric \cr
-   away_team_odds_spread_return \tab numeric \cr
-   away_team_odds_spread_record_wins \tab integer \cr
-   away_team_odds_spread_record_losses \tab integer \cr
-   away_team_odds_spread_record_pushes \tab integer \cr
-   away_team_odds_spread_record_summary \tab character \cr
-   home_team_odds_favorite \tab logical \cr
-   home_team_odds_underdog \tab logical \cr
-   home_team_odds_money_line \tab integer \cr
-   home_team_odds_spread_odds \tab numeric \cr
-   home_team_odds_team_id \tab integer \cr
-   home_team_odds_win_percentage \tab numeric \cr
-   home_team_odds_average_score \tab numeric \cr
-   home_team_odds_money_line_odds \tab numeric \cr
-   home_team_odds_spread_return \tab numeric \cr
-   home_team_odds_spread_record_wins \tab integer \cr
-   home_team_odds_spread_record_losses \tab integer \cr
-   home_team_odds_spread_record_pushes \tab integer \cr
-   home_team_odds_spread_record_summary \tab character \cr
-   game_id \tab integer \cr
+\strong{pickcenter}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   details \tab character \tab Details. \cr
+   over_under \tab numeric \tab Over under. \cr
+   spread \tab numeric \tab Spread. \cr
+   provider_id \tab integer \tab Unique identifier for provider. \cr
+   provider_name \tab character \tab Provider name. \cr
+   provider_priority \tab integer \tab Provider priority. \cr
+   away_team_odds_favorite \tab logical \tab Away team's team odds favorite. \cr
+   away_team_odds_underdog \tab logical \tab Away team's team odds underdog. \cr
+   away_team_odds_money_line \tab integer \tab Away team's team odds money line. \cr
+   away_team_odds_spread_odds \tab numeric \tab Away team's team odds spread odds. \cr
+   away_team_odds_team_id \tab integer \tab Unique identifier for away team odds team. \cr
+   away_team_odds_win_percentage \tab numeric \tab Away team odds win percentage (0-1 decimal). \cr
+   away_team_odds_average_score \tab numeric \tab Away team's team odds average score. \cr
+   away_team_odds_money_line_odds \tab numeric \tab Away team's team odds money line odds. \cr
+   away_team_odds_spread_return \tab numeric \tab Away team's team odds spread return. \cr
+   away_team_odds_spread_record_wins \tab integer \tab Away team's team odds spread record wins. \cr
+   away_team_odds_spread_record_losses \tab integer \tab Away team's team odds spread record losses. \cr
+   away_team_odds_spread_record_pushes \tab integer \tab Away team's team odds spread record pushes. \cr
+   away_team_odds_spread_record_summary \tab character \tab Away team's team odds spread record summary. \cr
+   home_team_odds_favorite \tab logical \tab Home team's team odds favorite. \cr
+   home_team_odds_underdog \tab logical \tab Home team's team odds underdog. \cr
+   home_team_odds_money_line \tab integer \tab Home team's team odds money line. \cr
+   home_team_odds_spread_odds \tab numeric \tab Home team's team odds spread odds. \cr
+   home_team_odds_team_id \tab integer \tab Unique identifier for home team odds team. \cr
+   home_team_odds_win_percentage \tab numeric \tab Home team odds win percentage (0-1 decimal). \cr
+   home_team_odds_average_score \tab numeric \tab Home team's team odds average score. \cr
+   home_team_odds_money_line_odds \tab numeric \tab Home team's team odds money line odds. \cr
+   home_team_odds_spread_return \tab numeric \tab Home team's team odds spread return. \cr
+   home_team_odds_spread_record_wins \tab integer \tab Home team's team odds spread record wins. \cr
+   home_team_odds_spread_record_losses \tab integer \tab Home team's team odds spread record losses. \cr
+   home_team_odds_spread_record_pushes \tab integer \tab Home team's team odds spread record pushes. \cr
+   home_team_odds_spread_record_summary \tab character \tab Home team's team odds spread record summary. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
 }
 
 
-\strong{againstTheSpread}\tabular{ll}{
-   col_name \tab types \cr
-   id \tab integer \cr
-   uid \tab character \cr
-   display_name \tab character \cr
-   abbreviation \tab character \cr
-   logo \tab character \cr
-   logos \tab list \cr
-   records \tab list \cr
-   game_id \tab integer \cr
-   team_id \tab integer \cr
+\strong{againstTheSpread}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   id \tab integer \tab Id. \cr
+   uid \tab character \tab ESPN UID string (universal identifier). \cr
+   display_name \tab character \tab Display name. \cr
+   abbreviation \tab character \tab Short abbreviation. \cr
+   logo \tab character \tab Team or league logo URL. \cr
+   logos \tab list \tab Logos. \cr
+   records \tab list \tab Records. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
 }
 
 
-\strong{predictor}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab integer \cr
-   home_team_id \tab integer \cr
-   away_team_id \tab integer \cr
-   away_team_game_projection \tab numeric \cr
-   away_team_chance_loss \tab numeric \cr
+\strong{predictor}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_game_projection \tab numeric \tab Away team's team game projection. \cr
+   away_team_chance_loss \tab numeric \tab Away team's team chance loss. \cr
 }
 }
 \description{

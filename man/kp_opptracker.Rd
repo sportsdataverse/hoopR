@@ -12,57 +12,57 @@ kp_opptracker(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-Returns a tibble of team opponent tracker data\tabular{ll}{
-   col_name \tab types \cr
-   date \tab Date \cr
-   game_date \tab numeric \cr
-   day_date \tab character \cr
-   wl \tab character \cr
-   team \tab character \cr
-   team_score \tab numeric \cr
-   opponent \tab character \cr
-   opponent_score \tab numeric \cr
-   result \tab character \cr
-   adj_oe \tab numeric \cr
-   adj_oe_rk \tab integer \cr
-   off_e_fg_pct \tab numeric \cr
-   off_e_fg_pct_rk \tab integer \cr
-   off_to_pct \tab numeric \cr
-   off_to_pct_rk \tab integer \cr
-   off_or_pct \tab numeric \cr
-   off_or_pct_rk \tab integer \cr
-   off_ft_rate \tab numeric \cr
-   off_ft_rate_rk \tab integer \cr
-   off_fg_2_pct \tab numeric \cr
-   off_fg_2_pct_rk \tab integer \cr
-   off_fg_3_pct \tab numeric \cr
-   off_fg_3_pct_rk \tab integer \cr
-   off_blk_pct \tab numeric \cr
-   off_blk_pct_rk \tab integer \cr
-   off_fg_3a_pct \tab numeric \cr
-   off_fg_3a_pct_rk \tab integer \cr
-   off_apl \tab numeric \cr
-   off_apl_rk \tab integer \cr
-   adj_de \tab numeric \cr
-   adj_de_rk \tab integer \cr
-   def_e_fg_pct \tab numeric \cr
-   def_e_fg_pct_rk \tab integer \cr
-   def_to_pct \tab numeric \cr
-   def_to_pct_rk \tab integer \cr
-   def_or_pct \tab numeric \cr
-   def_or_pct_rk \tab integer \cr
-   def_ft_rate \tab numeric \cr
-   def_ft_rate_rk \tab integer \cr
-   def_fg_2_pct \tab numeric \cr
-   def_fg_2_pct_rk \tab integer \cr
-   def_fg_3_pct \tab numeric \cr
-   def_fg_3_pct_rk \tab integer \cr
-   def_blk_pct \tab numeric \cr
-   def_blk_pct_rk \tab integer \cr
-   def_fg_3a_pct \tab numeric \cr
-   def_fg_3a_pct_rk \tab integer \cr
-   def_apl \tab numeric \cr
-   def_apl_rk \tab integer \cr
+Returns a tibble of team opponent tracker data\tabular{lll}{
+   col_name \tab types \tab description \cr
+   date \tab Date \tab Date in YYYY-MM-DD format. \cr
+   game_date \tab numeric \tab Game date (YYYY-MM-DD). \cr
+   day_date \tab character \tab Date in YYYY-MM-DD format. \cr
+   wl \tab character \tab Wl. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   team_score \tab numeric \tab Team's score / final score. \cr
+   opponent \tab character \tab Opponent. \cr
+   opponent_score \tab numeric \tab Opponent score. \cr
+   result \tab character \tab Result. \cr
+   adj_oe \tab numeric \tab Adj oe. \cr
+   adj_oe_rk \tab integer \tab Adj oe rk. \cr
+   off_e_fg_pct \tab numeric \tab Off e field goals percentage (0-1 decimal). \cr
+   off_e_fg_pct_rk \tab integer \tab Off e fg pct rk. \cr
+   off_to_pct \tab numeric \tab Off to percentage (0-1 decimal). \cr
+   off_to_pct_rk \tab integer \tab Off to pct rk. \cr
+   off_or_pct \tab numeric \tab Off or percentage (0-1 decimal). \cr
+   off_or_pct_rk \tab integer \tab Off or pct rk. \cr
+   off_ft_rate \tab numeric \tab Off ft rate. \cr
+   off_ft_rate_rk \tab integer \tab Off ft rate rk. \cr
+   off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+   off_fg_2_pct_rk \tab integer \tab Off fg 2 pct rk. \cr
+   off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+   off_fg_3_pct_rk \tab integer \tab Off fg 3 pct rk. \cr
+   off_blk_pct \tab numeric \tab Off blocks percentage (0-1 decimal). \cr
+   off_blk_pct_rk \tab integer \tab Off blk pct rk. \cr
+   off_fg_3a_pct \tab numeric \tab Off field goals 3a percentage (0-1 decimal). \cr
+   off_fg_3a_pct_rk \tab integer \tab Off fg 3a pct rk. \cr
+   off_apl \tab numeric \tab Off apl. \cr
+   off_apl_rk \tab integer \tab Off apl rk. \cr
+   adj_de \tab numeric \tab Adj de. \cr
+   adj_de_rk \tab integer \tab Adj de rk. \cr
+   def_e_fg_pct \tab numeric \tab Def e field goals percentage (0-1 decimal). \cr
+   def_e_fg_pct_rk \tab integer \tab Def e fg pct rk. \cr
+   def_to_pct \tab numeric \tab Def to percentage (0-1 decimal). \cr
+   def_to_pct_rk \tab integer \tab Def to pct rk. \cr
+   def_or_pct \tab numeric \tab Def or percentage (0-1 decimal). \cr
+   def_or_pct_rk \tab integer \tab Def or pct rk. \cr
+   def_ft_rate \tab numeric \tab Def ft rate. \cr
+   def_ft_rate_rk \tab integer \tab Def ft rate rk. \cr
+   def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+   def_fg_2_pct_rk \tab integer \tab Def fg 2 pct rk. \cr
+   def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+   def_fg_3_pct_rk \tab integer \tab Def fg 3 pct rk. \cr
+   def_blk_pct \tab numeric \tab Def blocks percentage (0-1 decimal). \cr
+   def_blk_pct_rk \tab integer \tab Def blk pct rk. \cr
+   def_fg_3a_pct \tab numeric \tab Def field goals 3a percentage (0-1 decimal). \cr
+   def_fg_3a_pct_rk \tab integer \tab Def fg 3a pct rk. \cr
+   def_apl \tab numeric \tab Def apl. \cr
+   def_apl_rk \tab integer \tab Def apl rk. \cr
 }
 }
 \description{

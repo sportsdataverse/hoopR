@@ -32,109 +32,109 @@ nba_boxscorematchupsv3(
 \value{
 Returns a named list of data frames: home_team_player_matchups, away_team_player_matchups
 
-\strong{home_team_player_matchups}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   matchups_person_id \tab integer \cr
-   matchups_first_name \tab character \cr
-   matchups_family_name \tab character \cr
-   matchups_name_i \tab character \cr
-   matchups_player_slug \tab character \cr
-   matchups_jersey_num \tab character \cr
-   matchup_minutes \tab character \cr
-   matchup_minutes_sort \tab numeric \cr
-   partial_possessions \tab numeric \cr
-   percentage_defender_total_time \tab numeric \cr
-   percentage_offensive_total_time \tab numeric \cr
-   percentage_total_time_both_on \tab numeric \cr
-   switches_on \tab integer \cr
-   player_points \tab integer \cr
-   team_points \tab integer \cr
-   matchup_assists \tab integer \cr
-   matchup_potential_assists \tab integer \cr
-   matchup_turnovers \tab integer \cr
-   matchup_blocks \tab integer \cr
-   matchup_field_goals_made \tab integer \cr
-   matchup_field_goals_attempted \tab integer \cr
-   matchup_field_goals_percentage \tab numeric \cr
-   matchup_three_pointers_made \tab integer \cr
-   matchup_three_pointers_attempted \tab integer \cr
-   matchup_three_pointers_percentage \tab numeric \cr
-   help_blocks \tab integer \cr
-   help_field_goals_made \tab integer \cr
-   help_field_goals_attempted \tab integer \cr
-   help_field_goals_percentage \tab numeric \cr
-   matchup_free_throws_made \tab integer \cr
-   matchup_free_throws_attempted \tab integer \cr
-   shooting_fouls \tab integer \cr
+\strong{home_team_player_matchups}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   matchups_person_id \tab integer \tab Unique identifier for matchups person. \cr
+   matchups_first_name \tab character \tab Matchups first name. \cr
+   matchups_family_name \tab character \tab Matchups family name. \cr
+   matchups_name_i \tab character \tab Matchups name i. \cr
+   matchups_player_slug \tab character \tab Matchups player slug. \cr
+   matchups_jersey_num \tab character \tab Matchups jersey num. \cr
+   matchup_minutes \tab character \tab Matchup minutes. \cr
+   matchup_minutes_sort \tab numeric \tab Matchup minutes sort. \cr
+   partial_possessions \tab numeric \tab Partial possessions. \cr
+   percentage_defender_total_time \tab numeric \tab Time / clock value. \cr
+   percentage_offensive_total_time \tab numeric \tab Time / clock value. \cr
+   percentage_total_time_both_on \tab numeric \tab Percentage total time both on. \cr
+   switches_on \tab integer \tab Switches on. \cr
+   player_points \tab integer \tab Player points. \cr
+   team_points \tab integer \tab Team points. \cr
+   matchup_assists \tab integer \tab Matchup assists. \cr
+   matchup_potential_assists \tab integer \tab Matchup potential assists. \cr
+   matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+   matchup_blocks \tab integer \tab Matchup blocks. \cr
+   matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+   matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+   matchup_field_goals_percentage \tab numeric \tab Matchup field goals percentage (0-1 decimal). \cr
+   matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+   matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+   matchup_three_pointers_percentage \tab numeric \tab Matchup three pointers percentage (0-1 decimal). \cr
+   help_blocks \tab integer \tab Help blocks. \cr
+   help_field_goals_made \tab integer \tab Number of help field goals made. \cr
+   help_field_goals_attempted \tab integer \tab Number of help field goals attempted. \cr
+   help_field_goals_percentage \tab numeric \tab Help field goals percentage (0-1 decimal). \cr
+   matchup_free_throws_made \tab integer \tab Number of matchup free throws made. \cr
+   matchup_free_throws_attempted \tab integer \tab Number of matchup free throws attempted. \cr
+   shooting_fouls \tab integer \tab Shooting fouls. \cr
 }
 
 
-\strong{away_team_player_matchups}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   matchups_person_id \tab integer \cr
-   matchups_first_name \tab character \cr
-   matchups_family_name \tab character \cr
-   matchups_name_i \tab character \cr
-   matchups_player_slug \tab character \cr
-   matchups_jersey_num \tab character \cr
-   matchup_minutes \tab character \cr
-   matchup_minutes_sort \tab numeric \cr
-   partial_possessions \tab numeric \cr
-   percentage_defender_total_time \tab numeric \cr
-   percentage_offensive_total_time \tab numeric \cr
-   percentage_total_time_both_on \tab numeric \cr
-   switches_on \tab integer \cr
-   player_points \tab integer \cr
-   team_points \tab integer \cr
-   matchup_assists \tab integer \cr
-   matchup_potential_assists \tab integer \cr
-   matchup_turnovers \tab integer \cr
-   matchup_blocks \tab integer \cr
-   matchup_field_goals_made \tab integer \cr
-   matchup_field_goals_attempted \tab integer \cr
-   matchup_field_goals_percentage \tab numeric \cr
-   matchup_three_pointers_made \tab integer \cr
-   matchup_three_pointers_attempted \tab integer \cr
-   matchup_three_pointers_percentage \tab numeric \cr
-   help_blocks \tab integer \cr
-   help_field_goals_made \tab integer \cr
-   help_field_goals_attempted \tab integer \cr
-   help_field_goals_percentage \tab numeric \cr
-   matchup_free_throws_made \tab integer \cr
-   matchup_free_throws_attempted \tab integer \cr
-   shooting_fouls \tab integer \cr
+\strong{away_team_player_matchups}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   matchups_person_id \tab integer \tab Unique identifier for matchups person. \cr
+   matchups_first_name \tab character \tab Matchups first name. \cr
+   matchups_family_name \tab character \tab Matchups family name. \cr
+   matchups_name_i \tab character \tab Matchups name i. \cr
+   matchups_player_slug \tab character \tab Matchups player slug. \cr
+   matchups_jersey_num \tab character \tab Matchups jersey num. \cr
+   matchup_minutes \tab character \tab Matchup minutes. \cr
+   matchup_minutes_sort \tab numeric \tab Matchup minutes sort. \cr
+   partial_possessions \tab numeric \tab Partial possessions. \cr
+   percentage_defender_total_time \tab numeric \tab Time / clock value. \cr
+   percentage_offensive_total_time \tab numeric \tab Time / clock value. \cr
+   percentage_total_time_both_on \tab numeric \tab Percentage total time both on. \cr
+   switches_on \tab integer \tab Switches on. \cr
+   player_points \tab integer \tab Player points. \cr
+   team_points \tab integer \tab Team points. \cr
+   matchup_assists \tab integer \tab Matchup assists. \cr
+   matchup_potential_assists \tab integer \tab Matchup potential assists. \cr
+   matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+   matchup_blocks \tab integer \tab Matchup blocks. \cr
+   matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+   matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+   matchup_field_goals_percentage \tab numeric \tab Matchup field goals percentage (0-1 decimal). \cr
+   matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+   matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+   matchup_three_pointers_percentage \tab numeric \tab Matchup three pointers percentage (0-1 decimal). \cr
+   help_blocks \tab integer \tab Help blocks. \cr
+   help_field_goals_made \tab integer \tab Number of help field goals made. \cr
+   help_field_goals_attempted \tab integer \tab Number of help field goals attempted. \cr
+   help_field_goals_percentage \tab numeric \tab Help field goals percentage (0-1 decimal). \cr
+   matchup_free_throws_made \tab integer \tab Number of matchup free throws made. \cr
+   matchup_free_throws_attempted \tab integer \tab Number of matchup free throws attempted. \cr
+   shooting_fouls \tab integer \tab Shooting fouls. \cr
 }
 }
 \description{

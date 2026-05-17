@@ -12,22 +12,22 @@ kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of foul participation stats\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   two_foul_particpation_pct \tab numeric \cr
-   two_foul_particpation_pct_rk \tab numeric \cr
-   adj2fp \tab numeric \cr
-   adj2fp_rk \tab numeric \cr
-   two_foul_total_time \tab character \cr
-   two_foul_total_time_rk \tab character \cr
-   two_foul_time_on \tab character \cr
-   two_foul_time_on_rk \tab character \cr
-   bench_pct \tab numeric \cr
-   bench_pct_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
-   year \tab integer \cr
+Returns a tibble of foul participation stats\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   two_foul_particpation_pct \tab numeric \tab Two foul particpation percentage (0-1 decimal). \cr
+   two_foul_particpation_pct_rk \tab numeric \tab Two foul particpation pct rk. \cr
+   adj2fp \tab numeric \tab Adj2fp. \cr
+   adj2fp_rk \tab numeric \tab Adj2fp rk. \cr
+   two_foul_total_time \tab character \tab Time / clock value. \cr
+   two_foul_total_time_rk \tab character \tab Two foul total time rk. \cr
+   two_foul_time_on \tab character \tab Two foul time on. \cr
+   two_foul_time_on_rk \tab character \tab Two foul time on rk. \cr
+   bench_pct \tab numeric \tab Bench percentage (0-1 decimal). \cr
+   bench_pct_rk \tab numeric \tab Bench pct rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   year \tab integer \tab 4-digit year. \cr
 }
 }
 \description{

@@ -107,22 +107,22 @@ nba_leaguedashptdefend(
 \value{
 Returns a named list of data frames: LeagueDashPTDefend
 
-\strong{LeagueDashPTDefend}\tabular{ll}{
-   col_name \tab types \cr
-   CLOSE_DEF_PERSON_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   PLAYER_LAST_TEAM_ID \tab character \cr
-   PLAYER_LAST_TEAM_ABBREVIATION \tab character \cr
-   PLAYER_POSITION \tab character \cr
-   AGE \tab character \cr
-   GP \tab character \cr
-   G \tab character \cr
-   FREQ \tab character \cr
-   D_FGM \tab character \cr
-   D_FGA \tab character \cr
-   D_FG_PCT \tab character \cr
-   NORMAL_FG_PCT \tab character \cr
-   PCT_PLUSMINUS \tab character \cr
+\strong{LeagueDashPTDefend}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   CLOSE_DEF_PERSON_ID \tab character \tab  \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   PLAYER_LAST_TEAM_ID \tab character \tab  \cr
+   PLAYER_LAST_TEAM_ABBREVIATION \tab character \tab  \cr
+   PLAYER_POSITION \tab character \tab  \cr
+   AGE \tab character \tab Player age (in years). \cr
+   GP \tab character \tab Games played. \cr
+   G \tab character \tab Games played. \cr
+   FREQ \tab character \tab  \cr
+   D_FGM \tab character \tab  \cr
+   D_FGA \tab character \tab  \cr
+   D_FG_PCT \tab character \tab  \cr
+   NORMAL_FG_PCT \tab character \tab  \cr
+   PCT_PLUSMINUS \tab character \tab  \cr
 }
 }
 \description{

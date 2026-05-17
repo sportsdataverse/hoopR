@@ -12,31 +12,31 @@ kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of ratings\tabular{ll}{
-   col_name \tab types \cr
-   year \tab integer \cr
-   rk \tab numeric \cr
-   team \tab character \cr
-   conf \tab character \cr
-   w_l \tab character \cr
-   adj_em \tab numeric \cr
-   adj_o \tab numeric \cr
-   adj_o_rk \tab numeric \cr
-   adj_d \tab numeric \cr
-   adj_d_rk \tab numeric \cr
-   adj_t \tab numeric \cr
-   adj_t_rk \tab numeric \cr
-   luck \tab numeric \cr
-   luck_rk \tab numeric \cr
-   sos_adj_em \tab numeric \cr
-   sos_adj_em_rk \tab numeric \cr
-   sos_opp_o \tab numeric \cr
-   sos_opp_o_rk \tab numeric \cr
-   sos_opp_d \tab numeric \cr
-   sos_opp_d_rk \tab numeric \cr
-   ncsos_adj_em \tab numeric \cr
-   ncsos_adj_em_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
+Returns a tibble of ratings\tabular{lll}{
+   col_name \tab types \tab description \cr
+   year \tab integer \tab 4-digit year. \cr
+   rk \tab numeric \tab Rk. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   w_l \tab character \tab W l. \cr
+   adj_em \tab numeric \tab Adj em. \cr
+   adj_o \tab numeric \tab Adj o. \cr
+   adj_o_rk \tab numeric \tab Adj o rk. \cr
+   adj_d \tab numeric \tab Adj d. \cr
+   adj_d_rk \tab numeric \tab Adj d rk. \cr
+   adj_t \tab numeric \tab Adj t. \cr
+   adj_t_rk \tab numeric \tab Adj t rk. \cr
+   luck \tab numeric \tab Luck. \cr
+   luck_rk \tab numeric \tab Luck rk. \cr
+   sos_adj_em \tab numeric \tab Sos adj em. \cr
+   sos_adj_em_rk \tab numeric \tab Sos adj em rk. \cr
+   sos_opp_o \tab numeric \tab Sos opp o. \cr
+   sos_opp_o_rk \tab numeric \tab Sos opp o rk. \cr
+   sos_opp_d \tab numeric \tab Sos opp d. \cr
+   sos_opp_d_rk \tab numeric \tab Sos opp d rk. \cr
+   ncsos_adj_em \tab numeric \tab Ncsos adj em. \cr
+   ncsos_adj_em_rk \tab numeric \tab Ncsos adj em rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
 }
 }
 \description{

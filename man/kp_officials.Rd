@@ -10,15 +10,15 @@ kp_officials(year = most_recent_mbb_season())
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab integer \cr
-   official_name \tab character \cr
-   ref_rating \tab numeric \cr
-   gms \tab numeric \cr
-   last_game \tab character \cr
-   last_game_1 \tab character \cr
-   year \tab numeric \cr
+A data frame with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab integer \tab Rk. \cr
+   official_name \tab character \tab Official name. \cr
+   ref_rating \tab numeric \tab Ref rating. \cr
+   gms \tab numeric \tab Gms. \cr
+   last_game \tab character \tab Last game date or score string. \cr
+   last_game_1 \tab character \tab Last game 1. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

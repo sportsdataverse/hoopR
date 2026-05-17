@@ -82,191 +82,191 @@ Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOff
 ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
 ShotDistanceOverall, VsPlayerInfo
 
-\strong{Overall}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   GROUP_VALUE \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   W_PCT \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
-   NBA_FANTASY_PTS \tab character \cr
+\strong{Overall}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   W_PCT \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+   NBA_FANTASY_PTS \tab character \tab  \cr
 }
 
 
-\strong{OnOffCourt}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   VS_PLAYER_ID \tab character \cr
-   VS_PLAYER_NAME \tab character \cr
-   COURT_STATUS \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   W_PCT \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
-   NBA_FANTASY_PTS \tab character \cr
+\strong{OnOffCourt}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   VS_PLAYER_ID \tab character \tab  \cr
+   VS_PLAYER_NAME \tab character \tab  \cr
+   COURT_STATUS \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   W_PCT \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+   NBA_FANTASY_PTS \tab character \tab  \cr
 }
 
 
-\strong{ShotDistanceOverall}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   GROUP_VALUE \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotDistanceOverall}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{ShotDistanceOnCourt}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   VS_PLAYER_ID \tab character \cr
-   VS_PLAYER_NAME \tab character \cr
-   COURT_STATUS \tab character \cr
-   GROUP_VALUE \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotDistanceOnCourt}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   VS_PLAYER_ID \tab character \tab  \cr
+   VS_PLAYER_NAME \tab character \tab  \cr
+   COURT_STATUS \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{ShotDistanceOffCourt}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   VS_PLAYER_ID \tab character \cr
-   VS_PLAYER_NAME \tab character \cr
-   COURT_STATUS \tab character \cr
-   GROUP_VALUE \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotDistanceOffCourt}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   VS_PLAYER_ID \tab character \tab  \cr
+   VS_PLAYER_NAME \tab character \tab  \cr
+   COURT_STATUS \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{ShotAreaOverall}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   GROUP_VALUE \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotAreaOverall}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{ShotAreaOnCourt}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   VS_PLAYER_ID \tab character \cr
-   VS_PLAYER_NAME \tab character \cr
-   COURT_STATUS \tab character \cr
-   GROUP_VALUE \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotAreaOnCourt}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   VS_PLAYER_ID \tab character \tab  \cr
+   VS_PLAYER_NAME \tab character \tab  \cr
+   COURT_STATUS \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{ShotAreaOffCourt}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   VS_PLAYER_ID \tab character \cr
-   VS_PLAYER_NAME \tab character \cr
-   COURT_STATUS \tab character \cr
-   GROUP_VALUE \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
+\strong{ShotAreaOffCourt}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   VS_PLAYER_ID \tab character \tab  \cr
+   VS_PLAYER_NAME \tab character \tab  \cr
+   COURT_STATUS \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{PlayerInfo}\tabular{ll}{
-   col_name \tab types \cr
-   PERSON_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   DISPLAY_FIRST_LAST \tab character \cr
-   DISPLAY_LAST_COMMA_FIRST \tab character \cr
-   DISPLAY_FI_LAST \tab character \cr
-   BIRTHDATE \tab character \cr
-   SCHOOL \tab character \cr
-   COUNTRY \tab character \cr
-   LAST_AFFILIATION \tab character \cr
+\strong{PlayerInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   DISPLAY_FIRST_LAST \tab character \tab  \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
+   DISPLAY_FI_LAST \tab character \tab  \cr
+   BIRTHDATE \tab character \tab  \cr
+   SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
+   COUNTRY \tab character \tab Country (full name or code). \cr
+   LAST_AFFILIATION \tab character \tab  \cr
 }
 
 
-\strong{VsPlayerInfo}\tabular{ll}{
-   col_name \tab types \cr
-   PERSON_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   DISPLAY_FIRST_LAST \tab character \cr
-   DISPLAY_LAST_COMMA_FIRST \tab character \cr
-   DISPLAY_FI_LAST \tab character \cr
-   BIRTHDATE \tab character \cr
-   SCHOOL \tab character \cr
-   COUNTRY \tab character \cr
-   LAST_AFFILIATION \tab character \cr
+\strong{VsPlayerInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   DISPLAY_FIRST_LAST \tab character \tab  \cr
+   DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
+   DISPLAY_FI_LAST \tab character \tab  \cr
+   BIRTHDATE \tab character \tab  \cr
+   SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
+   COUNTRY \tab character \tab Country (full name or code). \cr
+   LAST_AFFILIATION \tab character \tab  \cr
 }
 }
 \description{

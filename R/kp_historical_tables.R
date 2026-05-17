@@ -4,65 +4,65 @@
 #' @param team Team filter to select.
 #' @return A data frame with the following columns:
 #'
-#'    |col_name           |types     |
-#'    |:------------------|:---------|
-#'    |year               |numeric   |
-#'    |team_rk            |numeric   |
-#'    |team               |character |
-#'    |coach              |character |
-#'    |conf               |character |
-#'    |adj_t              |numeric   |
-#'    |adj_o              |numeric   |
-#'    |adj_d              |numeric   |
-#'    |off_e_fg_pct       |numeric   |
-#'    |off_to_pct         |numeric   |
-#'    |off_or_pct         |numeric   |
-#'    |off_ft_rate        |numeric   |
-#'    |off_fg_2_pct       |numeric   |
-#'    |off_fg_3_pct       |numeric   |
-#'    |off_ft_pct         |numeric   |
-#'    |off_fg_3a_pct      |numeric   |
-#'    |off_a_pct          |numeric   |
-#'    |off_apl            |numeric   |
-#'    |def_e_fg_pct       |numeric   |
-#'    |def_to_pct         |numeric   |
-#'    |def_or_pct         |numeric   |
-#'    |def_ft_rate        |numeric   |
-#'    |def_fg_2_pct       |numeric   |
-#'    |def_fg_3_pct       |numeric   |
-#'    |def_blk_pct        |numeric   |
-#'    |def_fg_3a_pct      |numeric   |
-#'    |def_a_pct          |numeric   |
-#'    |def_apl            |numeric   |
-#'    |foul2partic_pct    |numeric   |
-#'    |wl                 |character |
-#'    |wl_conf            |character |
-#'    |adj_t_rk           |numeric   |
-#'    |adj_o_rk           |numeric   |
-#'    |adj_d_rk           |numeric   |
-#'    |off_e_fg_pct_rk    |numeric   |
-#'    |off_to_pct_rk      |numeric   |
-#'    |off_or_pct_rk      |numeric   |
-#'    |off_ft_rate_rk     |numeric   |
-#'    |off_fg_2_pct_rk    |numeric   |
-#'    |off_fg_3_pct_rk    |numeric   |
-#'    |off_ft_pct_rk      |numeric   |
-#'    |off_fg_3a_pct_rk   |numeric   |
-#'    |off_a_pct_rk       |numeric   |
-#'    |off_apl_rk         |numeric   |
-#'    |def_e_fg_pct_rk    |numeric   |
-#'    |def_to_pct_rk      |numeric   |
-#'    |def_or_pct_rk      |numeric   |
-#'    |def_ft_rate_rk     |numeric   |
-#'    |def_fg_2_pct_rk    |numeric   |
-#'    |def_fg_3_pct_rk    |numeric   |
-#'    |def_blk_pct_rk     |numeric   |
-#'    |def_fg_3a_pct_rk   |numeric   |
-#'    |def_a_pct_rk       |numeric   |
-#'    |def_apl_rk         |numeric   |
-#'    |foul2partic_pct_rk |numeric   |
-#'    |team_finish        |character |
-#'    |ncaa_seed          |numeric   |
+#'    |col_name           |types     |description                                  |
+#'    |:------------------|:---------|:--------------------------------------------|
+#'    |year               |numeric   |4-digit year.                                |
+#'    |team_rk            |numeric   |Team rk.                                     |
+#'    |team               |character |Team-side label or team identifier.          |
+#'    |coach              |character |Coach.                                       |
+#'    |conf               |character |character.                                   |
+#'    |adj_t              |numeric   |Adj t.                                       |
+#'    |adj_o              |numeric   |Adj o.                                       |
+#'    |adj_d              |numeric   |Adj d.                                       |
+#'    |off_e_fg_pct       |numeric   |Off e field goals percentage (0-1 decimal).  |
+#'    |off_to_pct         |numeric   |Off to percentage (0-1 decimal).             |
+#'    |off_or_pct         |numeric   |Off or percentage (0-1 decimal).             |
+#'    |off_ft_rate        |numeric   |Off ft rate.                                 |
+#'    |off_fg_2_pct       |numeric   |Off field goals 2 percentage (0-1 decimal).  |
+#'    |off_fg_3_pct       |numeric   |Off field goals 3 percentage (0-1 decimal).  |
+#'    |off_ft_pct         |numeric   |Off free throws percentage (0-1 decimal).    |
+#'    |off_fg_3a_pct      |numeric   |Off field goals 3a percentage (0-1 decimal). |
+#'    |off_a_pct          |numeric   |Off a percentage (0-1 decimal).              |
+#'    |off_apl            |numeric   |Off apl.                                     |
+#'    |def_e_fg_pct       |numeric   |Def e field goals percentage (0-1 decimal).  |
+#'    |def_to_pct         |numeric   |Def to percentage (0-1 decimal).             |
+#'    |def_or_pct         |numeric   |Def or percentage (0-1 decimal).             |
+#'    |def_ft_rate        |numeric   |Def ft rate.                                 |
+#'    |def_fg_2_pct       |numeric   |Def field goals 2 percentage (0-1 decimal).  |
+#'    |def_fg_3_pct       |numeric   |Def field goals 3 percentage (0-1 decimal).  |
+#'    |def_blk_pct        |numeric   |Def blocks percentage (0-1 decimal).         |
+#'    |def_fg_3a_pct      |numeric   |Def field goals 3a percentage (0-1 decimal). |
+#'    |def_a_pct          |numeric   |Def a percentage (0-1 decimal).              |
+#'    |def_apl            |numeric   |Def apl.                                     |
+#'    |foul2partic_pct    |numeric   |Foul2partic percentage (0-1 decimal).        |
+#'    |wl                 |character |Wl.                                          |
+#'    |wl_conf            |character |Wl conf.                                     |
+#'    |adj_t_rk           |numeric   |Adj t rk.                                    |
+#'    |adj_o_rk           |numeric   |Adj o rk.                                    |
+#'    |adj_d_rk           |numeric   |Adj d rk.                                    |
+#'    |off_e_fg_pct_rk    |numeric   |Off e fg pct rk.                             |
+#'    |off_to_pct_rk      |numeric   |Off to pct rk.                               |
+#'    |off_or_pct_rk      |numeric   |Off or pct rk.                               |
+#'    |off_ft_rate_rk     |numeric   |Off ft rate rk.                              |
+#'    |off_fg_2_pct_rk    |numeric   |Off fg 2 pct rk.                             |
+#'    |off_fg_3_pct_rk    |numeric   |Off fg 3 pct rk.                             |
+#'    |off_ft_pct_rk      |numeric   |Off ft pct rk.                               |
+#'    |off_fg_3a_pct_rk   |numeric   |Off fg 3a pct rk.                            |
+#'    |off_a_pct_rk       |numeric   |Off a pct rk.                                |
+#'    |off_apl_rk         |numeric   |Off apl rk.                                  |
+#'    |def_e_fg_pct_rk    |numeric   |Def e fg pct rk.                             |
+#'    |def_to_pct_rk      |numeric   |Def to pct rk.                               |
+#'    |def_or_pct_rk      |numeric   |Def or pct rk.                               |
+#'    |def_ft_rate_rk     |numeric   |Def ft rate rk.                              |
+#'    |def_fg_2_pct_rk    |numeric   |Def fg 2 pct rk.                             |
+#'    |def_fg_3_pct_rk    |numeric   |Def fg 3 pct rk.                             |
+#'    |def_blk_pct_rk     |numeric   |Def blk pct rk.                              |
+#'    |def_fg_3a_pct_rk   |numeric   |Def fg 3a pct rk.                            |
+#'    |def_a_pct_rk       |numeric   |Def a pct rk.                                |
+#'    |def_apl_rk         |numeric   |Def apl rk.                                  |
+#'    |foul2partic_pct_rk |numeric   |Foul2partic pct rk.                          |
+#'    |team_finish        |character |Team finish.                                 |
+#'    |ncaa_seed          |numeric   |Ncaa seed.                                   |
 #'
 #' @keywords Team History
 #' @importFrom cli cli_abort
@@ -309,65 +309,65 @@ kp_team_history <- function(team){
 #'
 #' @return A data frame with 30 columns:
 #'
-#'    |col_name           |types     |
-#'    |:------------------|:---------|
-#'    |year               |numeric   |
-#'    |team_rk            |numeric   |
-#'    |team               |character |
-#'    |coach              |character |
-#'    |conf               |character |
-#'    |adj_t              |character |
-#'    |adj_o              |character |
-#'    |adj_d              |character |
-#'    |off_e_fg_pct       |character |
-#'    |off_to_pct         |character |
-#'    |off_or_pct         |character |
-#'    |off_ft_rate        |character |
-#'    |off_fg_2_pct       |character |
-#'    |off_fg_3_pct       |character |
-#'    |off_ft_pct         |character |
-#'    |off_fg_3a_pct      |character |
-#'    |off_a_pct          |character |
-#'    |off_apl            |character |
-#'    |def_e_fg_pct       |character |
-#'    |def_to_pct         |character |
-#'    |def_or_pct         |character |
-#'    |def_ft_rate        |character |
-#'    |def_fg_2_pct       |character |
-#'    |def_fg_3_pct       |character |
-#'    |def_blk_pct        |character |
-#'    |def_fg_3a_pct      |character |
-#'    |def_a_pct          |character |
-#'    |def_apl            |character |
-#'    |foul2partic_pct    |character |
-#'    |wl                 |character |
-#'    |wl_conf            |character |
-#'    |adj_t_rk           |numeric   |
-#'    |adj_o_rk           |numeric   |
-#'    |adj_d_rk           |numeric   |
-#'    |off_e_fg_pct_rk    |numeric   |
-#'    |off_to_pct_rk      |numeric   |
-#'    |off_or_pct_rk      |numeric   |
-#'    |off_ft_rate_rk     |numeric   |
-#'    |off_fg_2_pct_rk    |numeric   |
-#'    |off_fg_3_pct_rk    |numeric   |
-#'    |off_ft_pct_rk      |numeric   |
-#'    |off_fg_3a_pct_rk   |numeric   |
-#'    |off_a_pct_rk       |numeric   |
-#'    |off_apl_rk         |numeric   |
-#'    |def_e_fg_pct_rk    |numeric   |
-#'    |def_to_pct_rk      |numeric   |
-#'    |def_or_pct_rk      |numeric   |
-#'    |def_ft_rate_rk     |numeric   |
-#'    |def_fg_2_pct_rk    |numeric   |
-#'    |def_fg_3_pct_rk    |numeric   |
-#'    |def_blk_pct_rk     |numeric   |
-#'    |def_fg_3a_pct_rk   |numeric   |
-#'    |def_a_pct_rk       |numeric   |
-#'    |def_apl_rk         |numeric   |
-#'    |foul2partic_pct_rk |numeric   |
-#'    |team_finish        |character |
-#'    |ncaa_seed          |numeric   |
+#'    |col_name           |types     |description                                  |
+#'    |:------------------|:---------|:--------------------------------------------|
+#'    |year               |numeric   |4-digit year.                                |
+#'    |team_rk            |numeric   |Team rk.                                     |
+#'    |team               |character |Team-side label or team identifier.          |
+#'    |coach              |character |Coach.                                       |
+#'    |conf               |character |character.                                   |
+#'    |adj_t              |character |Adj t.                                       |
+#'    |adj_o              |character |Adj o.                                       |
+#'    |adj_d              |character |Adj d.                                       |
+#'    |off_e_fg_pct       |character |Off e field goals percentage (0-1 decimal).  |
+#'    |off_to_pct         |character |Off to percentage (0-1 decimal).             |
+#'    |off_or_pct         |character |Off or percentage (0-1 decimal).             |
+#'    |off_ft_rate        |character |Off ft rate.                                 |
+#'    |off_fg_2_pct       |character |Off field goals 2 percentage (0-1 decimal).  |
+#'    |off_fg_3_pct       |character |Off field goals 3 percentage (0-1 decimal).  |
+#'    |off_ft_pct         |character |Off free throws percentage (0-1 decimal).    |
+#'    |off_fg_3a_pct      |character |Off field goals 3a percentage (0-1 decimal). |
+#'    |off_a_pct          |character |Off a percentage (0-1 decimal).              |
+#'    |off_apl            |character |Off apl.                                     |
+#'    |def_e_fg_pct       |character |Def e field goals percentage (0-1 decimal).  |
+#'    |def_to_pct         |character |Def to percentage (0-1 decimal).             |
+#'    |def_or_pct         |character |Def or percentage (0-1 decimal).             |
+#'    |def_ft_rate        |character |Def ft rate.                                 |
+#'    |def_fg_2_pct       |character |Def field goals 2 percentage (0-1 decimal).  |
+#'    |def_fg_3_pct       |character |Def field goals 3 percentage (0-1 decimal).  |
+#'    |def_blk_pct        |character |Def blocks percentage (0-1 decimal).         |
+#'    |def_fg_3a_pct      |character |Def field goals 3a percentage (0-1 decimal). |
+#'    |def_a_pct          |character |Def a percentage (0-1 decimal).              |
+#'    |def_apl            |character |Def apl.                                     |
+#'    |foul2partic_pct    |character |Foul2partic percentage (0-1 decimal).        |
+#'    |wl                 |character |Wl.                                          |
+#'    |wl_conf            |character |Wl conf.                                     |
+#'    |adj_t_rk           |numeric   |Adj t rk.                                    |
+#'    |adj_o_rk           |numeric   |Adj o rk.                                    |
+#'    |adj_d_rk           |numeric   |Adj d rk.                                    |
+#'    |off_e_fg_pct_rk    |numeric   |Off e fg pct rk.                             |
+#'    |off_to_pct_rk      |numeric   |Off to pct rk.                               |
+#'    |off_or_pct_rk      |numeric   |Off or pct rk.                               |
+#'    |off_ft_rate_rk     |numeric   |Off ft rate rk.                              |
+#'    |off_fg_2_pct_rk    |numeric   |Off fg 2 pct rk.                             |
+#'    |off_fg_3_pct_rk    |numeric   |Off fg 3 pct rk.                             |
+#'    |off_ft_pct_rk      |numeric   |Off ft pct rk.                               |
+#'    |off_fg_3a_pct_rk   |numeric   |Off fg 3a pct rk.                            |
+#'    |off_a_pct_rk       |numeric   |Off a pct rk.                                |
+#'    |off_apl_rk         |numeric   |Off apl rk.                                  |
+#'    |def_e_fg_pct_rk    |numeric   |Def e fg pct rk.                             |
+#'    |def_to_pct_rk      |numeric   |Def to pct rk.                               |
+#'    |def_or_pct_rk      |numeric   |Def or pct rk.                               |
+#'    |def_ft_rate_rk     |numeric   |Def ft rate rk.                              |
+#'    |def_fg_2_pct_rk    |numeric   |Def fg 2 pct rk.                             |
+#'    |def_fg_3_pct_rk    |numeric   |Def fg 3 pct rk.                             |
+#'    |def_blk_pct_rk     |numeric   |Def blk pct rk.                              |
+#'    |def_fg_3a_pct_rk   |numeric   |Def fg 3a pct rk.                            |
+#'    |def_a_pct_rk       |numeric   |Def a pct rk.                                |
+#'    |def_apl_rk         |numeric   |Def apl rk.                                  |
+#'    |foul2partic_pct_rk |numeric   |Foul2partic pct rk.                          |
+#'    |team_finish        |character |Team finish.                                 |
+#'    |ncaa_seed          |numeric   |Ncaa seed.                                   |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select mutate_at
@@ -596,25 +596,25 @@ kp_coach_history <- function(coach){
 #'
 #' @return A data frame with 17 columns:
 #'
-#'    |col_name  |types     |
-#'    |:---------|:---------|
-#'    |rk        |numeric   |
-#'    |team      |character |
-#'    |conf      |character |
-#'    |rtg       |numeric   |
-#'    |best_rk   |numeric   |
-#'    |best_yr   |numeric   |
-#'    |worst_rk  |numeric   |
-#'    |worst_yr  |numeric   |
-#'    |kp_median |numeric   |
-#'    |top10     |numeric   |
-#'    |top25     |numeric   |
-#'    |top50     |numeric   |
-#'    |ch        |numeric   |
-#'    |f4        |numeric   |
-#'    |s16       |numeric   |
-#'    |r1        |numeric   |
-#'    |chg       |numeric   |
+#'    |col_name  |types     |description                         |
+#'    |:---------|:---------|:-----------------------------------|
+#'    |rk        |numeric   |Rk.                                 |
+#'    |team      |character |Team-side label or team identifier. |
+#'    |conf      |character |character.                          |
+#'    |rtg       |numeric   |Rtg.                                |
+#'    |best_rk   |numeric   |Best rk.                            |
+#'    |best_yr   |numeric   |Best yr.                            |
+#'    |worst_rk  |numeric   |Worst rk.                           |
+#'    |worst_yr  |numeric   |Worst yr.                           |
+#'    |kp_median |numeric   |Kp median.                          |
+#'    |top10     |numeric   |Top10.                              |
+#'    |top25     |numeric   |Top25.                              |
+#'    |top50     |numeric   |Top50.                              |
+#'    |ch        |numeric   |Ch.                                 |
+#'    |f4        |numeric   |F4.                                 |
+#'    |s16       |numeric   |S16.                                |
+#'    |r1        |numeric   |R1.                                 |
+#'    |chg       |numeric   |Chg.                                |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter
@@ -689,30 +689,30 @@ kp_program_ratings <- function(){
 #'
 #' @return A data frame with 22 columns:
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |adj_em_rk      |numeric   |
-#'    |team           |character |
-#'    |conf           |character |
-#'    |adj_em         |numeric   |
-#'    |adj_o          |numeric   |
-#'    |adj_o_rk       |numeric   |
-#'    |adj_d          |numeric   |
-#'    |adj_d_rk       |numeric   |
-#'    |adj_t          |numeric   |
-#'    |adj_t_rk       |numeric   |
-#'    |final_rk       |numeric   |
-#'    |final_adj_em   |numeric   |
-#'    |final_adj_o    |numeric   |
-#'    |final_adj_o_rk |numeric   |
-#'    |final_adj_d    |numeric   |
-#'    |final_adj_d_rk |numeric   |
-#'    |final_adj_t    |numeric   |
-#'    |final_adj_t_rk |numeric   |
-#'    |rk_chg         |numeric   |
-#'    |em_chg         |numeric   |
-#'    |adj_t_chg      |numeric   |
-#'    |ncaa_seed      |numeric   |
+#'    |col_name       |types     |description                         |
+#'    |:--------------|:---------|:-----------------------------------|
+#'    |adj_em_rk      |numeric   |Adj em rk.                          |
+#'    |team           |character |Team-side label or team identifier. |
+#'    |conf           |character |character.                          |
+#'    |adj_em         |numeric   |Adj em.                             |
+#'    |adj_o          |numeric   |Adj o.                              |
+#'    |adj_o_rk       |numeric   |Adj o rk.                           |
+#'    |adj_d          |numeric   |Adj d.                              |
+#'    |adj_d_rk       |numeric   |Adj d rk.                           |
+#'    |adj_t          |numeric   |Adj t.                              |
+#'    |adj_t_rk       |numeric   |Adj t rk.                           |
+#'    |final_rk       |numeric   |Final rk.                           |
+#'    |final_adj_em   |numeric   |Final adj em.                       |
+#'    |final_adj_o    |numeric   |Final adj o.                        |
+#'    |final_adj_o_rk |numeric   |Final adj o rk.                     |
+#'    |final_adj_d    |numeric   |Final adj d.                        |
+#'    |final_adj_d_rk |numeric   |Final adj d rk.                     |
+#'    |final_adj_t    |numeric   |Final adj t.                        |
+#'    |final_adj_t_rk |numeric   |Final adj t rk.                     |
+#'    |rk_chg         |numeric   |Rk chg.                             |
+#'    |em_chg         |numeric   |Em chg.                             |
+#'    |adj_t_chg      |numeric   |Adj t chg.                          |
+#'    |ncaa_seed      |numeric   |Ncaa seed.                          |
 #'
 #' @importFrom dplyr filter mutate
 #' @importFrom stringr str_remove str_remove str_trim
@@ -802,115 +802,115 @@ kp_pomeroy_archive_ratings <- function(date){
 #'    **Standings**
 #'
 #'
-#'    |col_name    |types     |
-#'    |:-----------|:---------|
-#'    |team        |character |
-#'    |overall     |character |
-#'    |conf        |character |
-#'    |adj_em      |numeric   |
-#'    |adj_em_rk   |numeric   |
-#'    |adj_o       |numeric   |
-#'    |adj_o_rk    |numeric   |
-#'    |adj_d       |numeric   |
-#'    |adj_d_rk    |numeric   |
-#'    |adj_t       |numeric   |
-#'    |adj_t_rk    |numeric   |
-#'    |conf_sos    |numeric   |
-#'    |conf_sos_rk |numeric   |
-#'    |next_game   |character |
-#'    |year        |numeric   |
+#'    |col_name    |types     |description                         |
+#'    |:-----------|:---------|:-----------------------------------|
+#'    |team        |character |Team-side label or team identifier. |
+#'    |overall     |character |Overall.                            |
+#'    |conf        |character |character.                          |
+#'    |adj_em      |numeric   |Adj em.                             |
+#'    |adj_em_rk   |numeric   |Adj em rk.                          |
+#'    |adj_o       |numeric   |Adj o.                              |
+#'    |adj_o_rk    |numeric   |Adj o rk.                           |
+#'    |adj_d       |numeric   |Adj d.                              |
+#'    |adj_d_rk    |numeric   |Adj d rk.                           |
+#'    |adj_t       |numeric   |Adj t.                              |
+#'    |adj_t_rk    |numeric   |Adj t rk.                           |
+#'    |conf_sos    |numeric   |Conf sos.                           |
+#'    |conf_sos_rk |numeric   |Conf sos rk.                        |
+#'    |next_game   |character |Next game date or opponent.         |
+#'    |year        |numeric   |4-digit year.                       |
 #'
 #'    **ConferencePlayOffense**
 #'
 #'
-#'    |col_name    |types     |
-#'    |:-----------|:---------|
-#'    |team        |character |
-#'    |oe          |numeric   |
-#'    |oe_rk       |numeric   |
-#'    |e_fg_pct    |numeric   |
-#'    |e_fg_pct_rk |numeric   |
-#'    |to_pct      |numeric   |
-#'    |to_pct_rk   |numeric   |
-#'    |or_pct      |numeric   |
-#'    |or_pct_rk   |numeric   |
-#'    |ft_rate     |numeric   |
-#'    |ft_rate_rk  |numeric   |
-#'    |fg_2_pct    |numeric   |
-#'    |fg_2_pct_rk |numeric   |
-#'    |fg_3_pct    |numeric   |
-#'    |fg_3_pct_rk |numeric   |
-#'    |ft_pct      |numeric   |
-#'    |ft_pct_rk   |numeric   |
-#'    |tempo       |numeric   |
-#'    |tempo_rk    |numeric   |
-#'    |year        |numeric   |
+#'    |col_name    |types     |description                             |
+#'    |:-----------|:---------|:---------------------------------------|
+#'    |team        |character |Team-side label or team identifier.     |
+#'    |oe          |numeric   |Oe.                                     |
+#'    |oe_rk       |numeric   |Oe rk.                                  |
+#'    |e_fg_pct    |numeric   |E field goals percentage (0-1 decimal). |
+#'    |e_fg_pct_rk |numeric   |E fg pct rk.                            |
+#'    |to_pct      |numeric   |To percentage (0-1 decimal).            |
+#'    |to_pct_rk   |numeric   |To pct rk.                              |
+#'    |or_pct      |numeric   |Or percentage (0-1 decimal).            |
+#'    |or_pct_rk   |numeric   |Or pct rk.                              |
+#'    |ft_rate     |numeric   |Ft rate.                                |
+#'    |ft_rate_rk  |numeric   |Ft rate rk.                             |
+#'    |fg_2_pct    |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fg_2_pct_rk |numeric   |Fg 2 pct rk.                            |
+#'    |fg_3_pct    |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |fg_3_pct_rk |numeric   |Fg 3 pct rk.                            |
+#'    |ft_pct      |numeric   |Free throw percentage (0-1).            |
+#'    |ft_pct_rk   |numeric   |Ft pct rk.                              |
+#'    |tempo       |numeric   |Tempo.                                  |
+#'    |tempo_rk    |numeric   |Tempo rk.                               |
+#'    |year        |numeric   |4-digit year.                           |
 #'
 #'    **ConferencePlayDefense**
 #'
 #'
-#'    |col_name    |types     |
-#'    |:-----------|:---------|
-#'    |team        |character |
-#'    |de          |numeric   |
-#'    |de_rk       |numeric   |
-#'    |e_fg_pct    |numeric   |
-#'    |e_fg_pct_rk |numeric   |
-#'    |to_pct      |numeric   |
-#'    |to_pct_rk   |numeric   |
-#'    |or_pct      |numeric   |
-#'    |or_pct_rk   |numeric   |
-#'    |ft_rate     |numeric   |
-#'    |ft_rate_rk  |numeric   |
-#'    |fg_2_pct    |numeric   |
-#'    |fg_2_pct_rk |numeric   |
-#'    |fg_3_pct    |numeric   |
-#'    |fg_3_pct_rk |numeric   |
-#'    |blk_pct     |numeric   |
-#'    |blk_pct_rk  |numeric   |
-#'    |stl_pct     |numeric   |
-#'    |stl_pct_rk  |numeric   |
-#'    |year        |numeric   |
+#'    |col_name    |types     |description                             |
+#'    |:-----------|:---------|:---------------------------------------|
+#'    |team        |character |Team-side label or team identifier.     |
+#'    |de          |numeric   |De.                                     |
+#'    |de_rk       |numeric   |De rk.                                  |
+#'    |e_fg_pct    |numeric   |E field goals percentage (0-1 decimal). |
+#'    |e_fg_pct_rk |numeric   |E fg pct rk.                            |
+#'    |to_pct      |numeric   |To percentage (0-1 decimal).            |
+#'    |to_pct_rk   |numeric   |To pct rk.                              |
+#'    |or_pct      |numeric   |Or percentage (0-1 decimal).            |
+#'    |or_pct_rk   |numeric   |Or pct rk.                              |
+#'    |ft_rate     |numeric   |Ft rate.                                |
+#'    |ft_rate_rk  |numeric   |Ft rate rk.                             |
+#'    |fg_2_pct    |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fg_2_pct_rk |numeric   |Fg 2 pct rk.                            |
+#'    |fg_3_pct    |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |fg_3_pct_rk |numeric   |Fg 3 pct rk.                            |
+#'    |blk_pct     |numeric   |Blocks percentage (0-1 decimal).        |
+#'    |blk_pct_rk  |numeric   |Blk pct rk.                             |
+#'    |stl_pct     |numeric   |Steals percentage (0-1 decimal).        |
+#'    |stl_pct_rk  |numeric   |Stl pct rk.                             |
+#'    |year        |numeric   |4-digit year.                           |
 #'
 #'    **AllKenPom**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |rk       |integer   |
-#'    |player   |character |
-#'    |year     |numeric   |
+#'    |col_name |types     |description   |
+#'    |:--------|:---------|:-------------|
+#'    |rk       |integer   |Rk.           |
+#'    |player   |character |Player.       |
+#'    |year     |numeric   |4-digit year. |
 #'
 #'    **ConferenceAggregateStats**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |stat     |character |
-#'    |value    |numeric   |
-#'    |rk       |numeric   |
-#'    |year     |numeric   |
+#'    |col_name |types     |description                    |
+#'    |:--------|:---------|:------------------------------|
+#'    |stat     |character |Stat.                          |
+#'    |value    |numeric   |Numeric or string value field. |
+#'    |rk       |numeric   |Rk.                            |
+#'    |year     |numeric   |4-digit year.                  |
 #'
 #'    **WinningTrends**
 #'
 #'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |stat     |character |
-#'    |count    |character |
-#'    |value    |numeric   |
-#'    |rk       |numeric   |
-#'    |year     |numeric   |
+#'    |col_name |types     |description                    |
+#'    |:--------|:---------|:------------------------------|
+#'    |stat     |character |Stat.                          |
+#'    |count    |character |Count of count.                |
+#'    |value    |numeric   |Numeric or string value field. |
+#'    |rk       |numeric   |Rk.                            |
+#'    |year     |numeric   |4-digit year.                  |
 #'
 #'    **ConferenceComparison**
 #'
 #'
-#'    |col_name   |types     |
-#'    |:----------|:---------|
-#'    |rk         |numeric   |
-#'    |conference |character |
-#'    |rating     |numeric   |
-#'    |year       |numeric   |
+#'    |col_name   |types     |description   |
+#'    |:----------|:---------|:-------------|
+#'    |rk         |numeric   |Rk.           |
+#'    |conference |character |Conference.   |
+#'    |rating     |numeric   |Rating.       |
+#'    |year       |numeric   |4-digit year. |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
@@ -1071,43 +1071,43 @@ kp_conf <- function(year, conf){
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |conf         |character |
-#'    |eff          |numeric   |
-#'    |eff_rk       |numeric   |
-#'    |tempo        |numeric   |
-#'    |tempo_rk     |numeric   |
-#'    |e_fg_pct     |numeric   |
-#'    |e_fg_pct_rk  |numeric   |
-#'    |to_pct       |numeric   |
-#'    |to_pct_rk    |numeric   |
-#'    |or_pct       |numeric   |
-#'    |or_pct_rk    |numeric   |
-#'    |ft_rate      |numeric   |
-#'    |ft_rate_rk   |numeric   |
-#'    |blk_pct      |numeric   |
-#'    |blk_pct_rk   |numeric   |
-#'    |stl_pct      |numeric   |
-#'    |stl_pct_rk   |numeric   |
-#'    |fg_2_pct     |numeric   |
-#'    |fg_2_pct_rk  |numeric   |
-#'    |fg_3_pct     |numeric   |
-#'    |fg_3_pct_rk  |numeric   |
-#'    |ft_pct       |numeric   |
-#'    |ft_pct_rk    |numeric   |
-#'    |fg_3a_pct    |numeric   |
-#'    |fg_3a_pct_rk |numeric   |
-#'    |a_pct        |numeric   |
-#'    |a_pct_rk     |numeric   |
-#'    |home_w_l     |character |
-#'    |home_w_l_pct |numeric   |
-#'    |home_w_l_rk  |numeric   |
-#'    |close        |numeric   |
-#'    |close_rk     |numeric   |
-#'    |blowouts     |numeric   |
-#'    |blowouts_rk  |numeric   |
-#'    |year         |numeric   |
+#'    |col_name     |types     |description                                |
+#'    |:------------|:---------|:------------------------------------------|
+#'    |conf         |character |character.                                 |
+#'    |eff          |numeric   |Eff.                                       |
+#'    |eff_rk       |numeric   |Eff rk.                                    |
+#'    |tempo        |numeric   |Tempo.                                     |
+#'    |tempo_rk     |numeric   |Tempo rk.                                  |
+#'    |e_fg_pct     |numeric   |E field goals percentage (0-1 decimal).    |
+#'    |e_fg_pct_rk  |numeric   |E fg pct rk.                               |
+#'    |to_pct       |numeric   |To percentage (0-1 decimal).               |
+#'    |to_pct_rk    |numeric   |To pct rk.                                 |
+#'    |or_pct       |numeric   |Or percentage (0-1 decimal).               |
+#'    |or_pct_rk    |numeric   |Or pct rk.                                 |
+#'    |ft_rate      |numeric   |Ft rate.                                   |
+#'    |ft_rate_rk   |numeric   |Ft rate rk.                                |
+#'    |blk_pct      |numeric   |Blocks percentage (0-1 decimal).           |
+#'    |blk_pct_rk   |numeric   |Blk pct rk.                                |
+#'    |stl_pct      |numeric   |Steals percentage (0-1 decimal).           |
+#'    |stl_pct_rk   |numeric   |Stl pct rk.                                |
+#'    |fg_2_pct     |numeric   |Field goals 2 percentage (0-1 decimal).    |
+#'    |fg_2_pct_rk  |numeric   |Fg 2 pct rk.                               |
+#'    |fg_3_pct     |numeric   |Field goals 3 percentage (0-1 decimal).    |
+#'    |fg_3_pct_rk  |numeric   |Fg 3 pct rk.                               |
+#'    |ft_pct       |numeric   |Free throw percentage (0-1).               |
+#'    |ft_pct_rk    |numeric   |Ft pct rk.                                 |
+#'    |fg_3a_pct    |numeric   |Field goals 3a percentage (0-1 decimal).   |
+#'    |fg_3a_pct_rk |numeric   |Fg 3a pct rk.                              |
+#'    |a_pct        |numeric   |A percentage (0-1 decimal).                |
+#'    |a_pct_rk     |numeric   |A pct rk.                                  |
+#'    |home_w_l     |character |Home team's wins losses.                   |
+#'    |home_w_l_pct |numeric   |Home wins losses percentage (0-1 decimal). |
+#'    |home_w_l_rk  |numeric   |Home team's wins losses rk.                |
+#'    |close        |numeric   |Close.                                     |
+#'    |close_rk     |numeric   |Close rk.                                  |
+#'    |blowouts     |numeric   |Blowouts.                                  |
+#'    |blowouts_rk  |numeric   |Blowouts rk.                               |
+#'    |year         |numeric   |4-digit year.                              |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter mutate_at
@@ -1202,31 +1202,31 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name         |types     |
-#'    |:----------------|:---------|
-#'    |year             |integer   |
-#'    |rank             |character |
-#'    |tempo            |numeric   |
-#'    |efficiency       |numeric   |
-#'    |e_fg_pct         |numeric   |
-#'    |to_pct           |numeric   |
-#'    |or_pct           |numeric   |
-#'    |ft_rate          |numeric   |
-#'    |fg_2_pct         |numeric   |
-#'    |fg_3_pct         |numeric   |
-#'    |ft_pct           |numeric   |
-#'    |fg_3a_pct        |numeric   |
-#'    |a_pct            |numeric   |
-#'    |blk_pct          |numeric   |
-#'    |stl_pct          |numeric   |
-#'    |home_record      |character |
-#'    |bids             |character |
-#'    |s16              |character |
-#'    |f4               |character |
-#'    |ch               |character |
-#'    |reg_season_champ |character |
-#'    |tourney_champ    |character |
-#'    |best_team        |character |
+#'    |col_name         |types     |description                              |
+#'    |:----------------|:---------|:----------------------------------------|
+#'    |year             |integer   |4-digit year.                            |
+#'    |rank             |character |Rank.                                    |
+#'    |tempo            |numeric   |Tempo.                                   |
+#'    |efficiency       |numeric   |Efficiency.                              |
+#'    |e_fg_pct         |numeric   |E field goals percentage (0-1 decimal).  |
+#'    |to_pct           |numeric   |To percentage (0-1 decimal).             |
+#'    |or_pct           |numeric   |Or percentage (0-1 decimal).             |
+#'    |ft_rate          |numeric   |Ft rate.                                 |
+#'    |fg_2_pct         |numeric   |Field goals 2 percentage (0-1 decimal).  |
+#'    |fg_3_pct         |numeric   |Field goals 3 percentage (0-1 decimal).  |
+#'    |ft_pct           |numeric   |Free throw percentage (0-1).             |
+#'    |fg_3a_pct        |numeric   |Field goals 3a percentage (0-1 decimal). |
+#'    |a_pct            |numeric   |A percentage (0-1 decimal).              |
+#'    |blk_pct          |numeric   |Blocks percentage (0-1 decimal).         |
+#'    |stl_pct          |numeric   |Steals percentage (0-1 decimal).         |
+#'    |home_record      |character |Home win-loss record.                    |
+#'    |bids             |character |Bids.                                    |
+#'    |s16              |character |S16.                                     |
+#'    |f4               |character |F4.                                      |
+#'    |ch               |character |Ch.                                      |
+#'    |reg_season_champ |character |Reg season champ.                        |
+#'    |tourney_champ    |character |Tourney champ.                           |
+#'    |best_team        |character |Best team.                               |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate_at

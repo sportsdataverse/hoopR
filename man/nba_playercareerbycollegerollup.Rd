@@ -26,119 +26,119 @@ nba_playercareerbycollegerollup(
 \value{
 Return a named list of data frames: East, Midwest, South, West
 
-\strong{East}\tabular{ll}{
-   col_name \tab types \cr
-   REGION \tab character \cr
-   SEED \tab character \cr
-   COLLEGE \tab character \cr
-   PLAYERS \tab character \cr
-   GP \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TOV \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
+\strong{East}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   REGION \tab character \tab Region label. \cr
+   SEED \tab character \tab Tournament seed. \cr
+   COLLEGE \tab character \tab College or school attended. \cr
+   PLAYERS \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TOV \tab character \tab Turnovers. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{South}\tabular{ll}{
-   col_name \tab types \cr
-   REGION \tab character \cr
-   SEED \tab character \cr
-   COLLEGE \tab character \cr
-   PLAYERS \tab character \cr
-   GP \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TOV \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
+\strong{South}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   REGION \tab character \tab Region label. \cr
+   SEED \tab character \tab Tournament seed. \cr
+   COLLEGE \tab character \tab College or school attended. \cr
+   PLAYERS \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TOV \tab character \tab Turnovers. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{Midwest}\tabular{ll}{
-   col_name \tab types \cr
-   REGION \tab character \cr
-   SEED \tab character \cr
-   COLLEGE \tab character \cr
-   PLAYERS \tab character \cr
-   GP \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TOV \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
+\strong{Midwest}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   REGION \tab character \tab Region label. \cr
+   SEED \tab character \tab Tournament seed. \cr
+   COLLEGE \tab character \tab College or school attended. \cr
+   PLAYERS \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TOV \tab character \tab Turnovers. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{West}\tabular{ll}{
-   col_name \tab types \cr
-   REGION \tab character \cr
-   SEED \tab character \cr
-   COLLEGE \tab character \cr
-   PLAYERS \tab character \cr
-   GP \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   TOV \tab character \cr
-   PF \tab character \cr
-   PTS \tab character \cr
+\strong{West}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   REGION \tab character \tab Region label. \cr
+   SEED \tab character \tab Tournament seed. \cr
+   COLLEGE \tab character \tab College or school attended. \cr
+   PLAYERS \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   TOV \tab character \tab Turnovers. \cr
+   PF \tab character \tab Personal fouls. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 }
 \description{

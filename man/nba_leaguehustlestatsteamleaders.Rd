@@ -92,73 +92,73 @@ nba_leaguehustlestatsteamleaders(
 \value{
 Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
 
-\strong{TeamContestedShotsLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   CONTESTED_SHOTS \tab character \cr
+\strong{TeamContestedShotsLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
 }
 
 
-\strong{TeamChargesDrawnLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   CHARGES_DRAWN \tab character \cr
+\strong{TeamChargesDrawnLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
 }
 
 
-\strong{TeamDeflectionsLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   DEFLECTIONS \tab character \cr
+\strong{TeamDeflectionsLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
 }
 
 
-\strong{TeamLooseBallLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   LOOSE_BALLS_RECOVERED \tab character \cr
+\strong{TeamLooseBallLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
 }
 
 
-\strong{TeamScreenAssistLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   SCREEN_ASSISTS \tab character \cr
+\strong{TeamScreenAssistLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
 }
 
 
-\strong{Table5}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   BOX_OUTS \tab character \cr
+\strong{Table5}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }
 
 
-\strong{Table6}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   RANK \tab character \cr
-   BOX_OUTS \tab character \cr
+\strong{Table6}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }
 }
 \description{

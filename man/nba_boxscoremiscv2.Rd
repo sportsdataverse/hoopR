@@ -32,53 +32,53 @@ nba_boxscoremiscv2(
 \value{
 Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 
-\strong{sqlPlayersMisc}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   NICKNAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MIN \tab character \cr
-   PTS_OFF_TOV \tab character \cr
-   PTS_2ND_CHANCE \tab character \cr
-   PTS_FB \tab character \cr
-   PTS_PAINT \tab character \cr
-   OPP_PTS_OFF_TOV \tab character \cr
-   OPP_PTS_2ND_CHANCE \tab character \cr
-   OPP_PTS_FB \tab character \cr
-   OPP_PTS_PAINT \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
+\strong{sqlPlayersMisc}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   PTS_OFF_TOV \tab character \tab Points scored off opponent turnovers. \cr
+   PTS_2ND_CHANCE \tab character \tab  \cr
+   PTS_FB \tab character \tab  \cr
+   PTS_PAINT \tab character \tab Points scored in the paint. \cr
+   OPP_PTS_OFF_TOV \tab character \tab  \cr
+   OPP_PTS_2ND_CHANCE \tab character \tab  \cr
+   OPP_PTS_FB \tab character \tab  \cr
+   OPP_PTS_PAINT \tab character \tab  \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
 }
 
 
-\strong{sqlTeamsMisc}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MIN \tab character \cr
-   PTS_OFF_TOV \tab character \cr
-   PTS_2ND_CHANCE \tab character \cr
-   PTS_FB \tab character \cr
-   PTS_PAINT \tab character \cr
-   OPP_PTS_OFF_TOV \tab character \cr
-   OPP_PTS_2ND_CHANCE \tab character \cr
-   OPP_PTS_FB \tab character \cr
-   OPP_PTS_PAINT \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
+\strong{sqlTeamsMisc}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   PTS_OFF_TOV \tab character \tab Points scored off opponent turnovers. \cr
+   PTS_2ND_CHANCE \tab character \tab  \cr
+   PTS_FB \tab character \tab  \cr
+   PTS_PAINT \tab character \tab Points scored in the paint. \cr
+   OPP_PTS_OFF_TOV \tab character \tab  \cr
+   OPP_PTS_2ND_CHANCE \tab character \tab  \cr
+   OPP_PTS_FB \tab character \tab  \cr
+   OPP_PTS_PAINT \tab character \tab  \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
 }
 }
 \description{

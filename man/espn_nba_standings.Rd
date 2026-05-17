@@ -10,28 +10,28 @@ espn_nba_standings(year)
 \item{year}{Either numeric or character (YYYY)}
 }
 \value{
-A standings data frame\tabular{ll}{
-   col_name \tab types \cr
-   team_id \tab integer \cr
-   team \tab character \cr
-   avgpointsagainst \tab numeric \cr
-   avgpointsfor \tab numeric \cr
-   clincher \tab numeric \cr
-   differential \tab numeric \cr
-   divisionwinpercent \tab numeric \cr
-   gamesbehind \tab numeric \cr
-   leaguewinpercent \tab numeric \cr
-   losses \tab numeric \cr
-   playoffseed \tab numeric \cr
-   streak \tab numeric \cr
-   winpercent \tab numeric \cr
-   wins \tab numeric \cr
-   leaguestandings \tab character \cr
-   home \tab character \cr
-   road \tab character \cr
-   vsdiv \tab character \cr
-   vsconf \tab character \cr
-   lasttengames \tab character \cr
+A standings data frame\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
+   avgpointsfor \tab numeric \tab Avgpointsfor. \cr
+   clincher \tab numeric \tab Clincher. \cr
+   differential \tab numeric \tab Differential. \cr
+   divisionwinpercent \tab numeric \tab Divisionwinpercent. \cr
+   gamesbehind \tab numeric \tab Gamesbehind. \cr
+   leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
+   losses \tab numeric \tab Total losses. \cr
+   playoffseed \tab numeric \tab Playoffseed. \cr
+   streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
+   winpercent \tab numeric \tab Winpercent. \cr
+   wins \tab numeric \tab Total wins. \cr
+   leaguestandings \tab character \tab Leaguestandings. \cr
+   home \tab character \tab Home. \cr
+   road \tab character \tab Road. \cr
+   vsdiv \tab character \tab Vsdiv. \cr
+   vsconf \tab character \tab Vsconf. \cr
+   lasttengames \tab character \tab Lasttengames. \cr
 }
 }
 \description{

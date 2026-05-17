@@ -92,26 +92,26 @@ nba_leaguedashteamptshot(
 \value{
 Returns a named list of data frames: LeagueDashPTShots
 
-\strong{LeagueDashPTShots}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   GP \tab character \cr
-   G \tab character \cr
-   FGA_FREQUENCY \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   EFG_PCT \tab character \cr
-   FG2A_FREQUENCY \tab character \cr
-   FG2M \tab character \cr
-   FG2A \tab character \cr
-   FG2_PCT \tab character \cr
-   FG3A_FREQUENCY \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
+\strong{LeagueDashPTShots}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   GP \tab character \tab Games played. \cr
+   G \tab character \tab Games played. \cr
+   FGA_FREQUENCY \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+   FG2A_FREQUENCY \tab character \tab  \cr
+   FG2M \tab character \tab  \cr
+   FG2A \tab character \tab  \cr
+   FG2_PCT \tab character \tab  \cr
+   FG3A_FREQUENCY \tab character \tab  \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }
 }
 \description{

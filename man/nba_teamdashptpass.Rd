@@ -59,49 +59,49 @@ nba_teamdashptpass(
 \value{
 Return a named list of data frames: PassesMade, PassesReceived
 
-\strong{PassesMade}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   PASS_TYPE \tab character \cr
-   G \tab character \cr
-   PASS_FROM \tab character \cr
-   PASS_TEAMMATE_PLAYER_ID \tab character \cr
-   FREQUENCY \tab character \cr
-   PASS \tab character \cr
-   AST \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG2M \tab character \cr
-   FG2A \tab character \cr
-   FG2_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
+\strong{PassesMade}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PASS_TYPE \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   PASS_FROM \tab character \tab  \cr
+   PASS_TEAMMATE_PLAYER_ID \tab character \tab  \cr
+   FREQUENCY \tab character \tab  \cr
+   PASS \tab character \tab  \cr
+   AST \tab character \tab Assists. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG2M \tab character \tab  \cr
+   FG2A \tab character \tab  \cr
+   FG2_PCT \tab character \tab  \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }
 
 
-\strong{PassesReceived}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   PASS_TYPE \tab character \cr
-   G \tab character \cr
-   PASS_TO \tab character \cr
-   PASS_TEAMMATE_PLAYER_ID \tab character \cr
-   FREQUENCY \tab character \cr
-   PASS \tab character \cr
-   AST \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG2M \tab character \cr
-   FG2A \tab character \cr
-   FG2_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
+\strong{PassesReceived}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PASS_TYPE \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   PASS_TO \tab character \tab  \cr
+   PASS_TEAMMATE_PLAYER_ID \tab character \tab  \cr
+   FREQUENCY \tab character \tab  \cr
+   PASS \tab character \tab  \cr
+   AST \tab character \tab Assists. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG2M \tab character \tab  \cr
+   FG2A \tab character \tab  \cr
+   FG2_PCT \tab character \tab  \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }
 }
 \description{

@@ -14,67 +14,67 @@ nba_hustlestatsboxscore(game_id, ...)
 \value{
 Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
 
-\strong{HustleStatsAvailable}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   HUSTLE_STATUS \tab character \cr
+\strong{HustleStatsAvailable}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   HUSTLE_STATUS \tab character \tab Hustle status. \cr
 }
 
 
-\strong{PlayerStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MINUTES \tab character \cr
-   PTS \tab character \cr
-   CONTESTED_SHOTS \tab character \cr
-   CONTESTED_SHOTS_2PT \tab character \cr
-   CONTESTED_SHOTS_3PT \tab character \cr
-   DEFLECTIONS \tab character \cr
-   CHARGES_DRAWN \tab character \cr
-   SCREEN_ASSISTS \tab character \cr
-   SCREEN_AST_PTS \tab character \cr
-   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
-   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
-   LOOSE_BALLS_RECOVERED \tab character \cr
-   OFF_BOXOUTS \tab character \cr
-   DEF_BOXOUTS \tab character \cr
-   BOX_OUT_PLAYER_TEAM_REBS \tab character \cr
-   BOX_OUT_PLAYER_REBS \tab character \cr
-   BOX_OUTS \tab character \cr
+\strong{PlayerStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   PTS \tab character \tab Points scored. \cr
+   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+   CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+   CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+   SCREEN_AST_PTS \tab character \tab  \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+   OFF_BOXOUTS \tab character \tab  \cr
+   DEF_BOXOUTS \tab character \tab  \cr
+   BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }
 
 
-\strong{TeamStats}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MINUTES \tab character \cr
-   PTS \tab character \cr
-   CONTESTED_SHOTS \tab character \cr
-   CONTESTED_SHOTS_2PT \tab character \cr
-   CONTESTED_SHOTS_3PT \tab character \cr
-   DEFLECTIONS \tab character \cr
-   CHARGES_DRAWN \tab character \cr
-   SCREEN_ASSISTS \tab character \cr
-   SCREEN_AST_PTS \tab character \cr
-   OFF_LOOSE_BALLS_RECOVERED \tab character \cr
-   DEF_LOOSE_BALLS_RECOVERED \tab character \cr
-   LOOSE_BALLS_RECOVERED \tab character \cr
-   OFF_BOXOUTS \tab character \cr
-   DEF_BOXOUTS \tab character \cr
-   BOX_OUT_PLAYER_TEAM_REBS \tab character \cr
-   BOX_OUT_PLAYER_REBS \tab character \cr
-   BOX_OUTS \tab character \cr
+\strong{TeamStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   PTS \tab character \tab Points scored. \cr
+   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+   CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+   CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+   SCREEN_AST_PTS \tab character \tab  \cr
+   OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+   OFF_BOXOUTS \tab character \tab  \cr
+   DEF_BOXOUTS \tab character \tab  \cr
+   BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }
 }
 \description{

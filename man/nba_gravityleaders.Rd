@@ -23,35 +23,35 @@ nba_gravityleaders(
 \value{
 Returns a named list of data frames: GravityLeaders
 
-\strong{GravityLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   playerid \tab character \cr
-   firstname \tab character \cr
-   lastname \tab character \cr
-   teamid \tab character \cr
-   teamabbreviation \tab character \cr
-   teamname \tab character \cr
-   teamcity \tab character \cr
-   frames \tab character \cr
-   gravityscore \tab character \cr
-   avggravityscore \tab character \cr
-   onballperimeterframes \tab character \cr
-   onballperimetergravityscore \tab character \cr
-   avgonballperimetergravityscore \tab character \cr
-   offballperimeterframes \tab character \cr
-   offballperimetergravityscore \tab character \cr
-   avgoffballperimetergravityscore \tab character \cr
-   onballinteriorframes \tab character \cr
-   onballinteriorgravityscore \tab character \cr
-   avgonballinteriorgravityscore \tab character \cr
-   offballinteriorframes \tab character \cr
-   offballinteriorgravityscore \tab character \cr
-   avgoffballinteriorgravityscore \tab character \cr
-   gamesplayed \tab character \cr
-   minutes \tab character \cr
-   pts \tab character \cr
-   reb \tab character \cr
-   ast \tab character \cr
+\strong{GravityLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   playerid \tab character \tab Playerid. \cr
+   firstname \tab character \tab Firstname. \cr
+   lastname \tab character \tab Lastname. \cr
+   teamid \tab character \tab Teamid. \cr
+   teamabbreviation \tab character \tab Teamabbreviation. \cr
+   teamname \tab character \tab Teamname. \cr
+   teamcity \tab character \tab Teamcity. \cr
+   frames \tab character \tab Frames. \cr
+   gravityscore \tab character \tab Gravityscore. \cr
+   avggravityscore \tab character \tab Avggravityscore. \cr
+   onballperimeterframes \tab character \tab Onballperimeterframes. \cr
+   onballperimetergravityscore \tab character \tab Onballperimetergravityscore. \cr
+   avgonballperimetergravityscore \tab character \tab Avgonballperimetergravityscore. \cr
+   offballperimeterframes \tab character \tab Offballperimeterframes. \cr
+   offballperimetergravityscore \tab character \tab Offballperimetergravityscore. \cr
+   avgoffballperimetergravityscore \tab character \tab Avgoffballperimetergravityscore. \cr
+   onballinteriorframes \tab character \tab Onballinteriorframes. \cr
+   onballinteriorgravityscore \tab character \tab Onballinteriorgravityscore. \cr
+   avgonballinteriorgravityscore \tab character \tab Avgonballinteriorgravityscore. \cr
+   offballinteriorframes \tab character \tab Offballinteriorframes. \cr
+   offballinteriorgravityscore \tab character \tab Offballinteriorgravityscore. \cr
+   avgoffballinteriorgravityscore \tab character \tab Avgoffballinteriorgravityscore. \cr
+   gamesplayed \tab character \tab Gamesplayed. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   pts \tab character \tab Points scored. \cr
+   reb \tab character \tab Total rebounds. \cr
+   ast \tab character \tab Assists. \cr
 }
 }
 \description{

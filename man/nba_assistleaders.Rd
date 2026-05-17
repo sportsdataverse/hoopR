@@ -29,13 +29,13 @@ nba_assistleaders(
 \value{
 Returns a named list of data frames: AssistLeaders
 
-\strong{AssistLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   AST \tab character \cr
+\strong{AssistLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   AST \tab character \tab Assists. \cr
 }
 }
 \description{

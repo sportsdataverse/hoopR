@@ -18,38 +18,38 @@ nba_playbyplayv3(game_id, start_period = 0, end_period = 0, ...)
 \value{
 Returns a named list of data frames: PlayByPlay, AvailableVideo
 
-\strong{PlayByPlay}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   action_number \tab integer \cr
-   clock \tab character \cr
-   period \tab integer \cr
-   team_id \tab integer \cr
-   team_tricode \tab character \cr
-   person_id \tab integer \cr
-   player_name \tab character \cr
-   player_name_i \tab character \cr
-   x_legacy \tab integer \cr
-   y_legacy \tab integer \cr
-   shot_distance \tab numeric \cr
-   shot_result \tab character \cr
-   is_field_goal \tab integer \cr
-   score_home \tab character \cr
-   score_away \tab character \cr
-   points_total \tab integer \cr
-   location \tab character \cr
-   description \tab character \cr
-   action_type \tab character \cr
-   sub_type \tab character \cr
-   video_available \tab integer \cr
-   shot_value \tab integer \cr
-   action_id \tab integer \cr
+\strong{PlayByPlay}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
+   clock \tab character \tab Game clock value. \cr
+   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   player_name \tab character \tab Player name. \cr
+   player_name_i \tab character \tab Player name i. \cr
+   x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+   y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+   shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+   shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+   is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+   score_home \tab character \tab Score home. \cr
+   score_away \tab character \tab Score away. \cr
+   points_total \tab integer \tab Running total of points scored. \cr
+   location \tab character \tab Location. \cr
+   description \tab character \tab Long-form description text. \cr
+   action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+   sub_type \tab character \tab Action sub-type label. \cr
+   video_available \tab integer \tab Video available. \cr
+   shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
+   action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
 }
 
 
-\strong{AvailableVideo}\tabular{ll}{
-   col_name \tab types \cr
-   video_available \tab integer \cr
+\strong{AvailableVideo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   video_available \tab integer \tab Video available. \cr
 }
 }
 \description{

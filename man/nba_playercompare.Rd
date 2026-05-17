@@ -86,61 +86,61 @@ nba_playercompare(
 \value{
 Return a named list of data frames: Individual, OverallCompare
 
-\strong{OverallCompare}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   DESCRIPTION \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
+\strong{OverallCompare}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   DESCRIPTION \tab character \tab Long-form description text. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }
 
 
-\strong{Individual}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   DESCRIPTION \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
+\strong{Individual}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   DESCRIPTION \tab character \tab Long-form description text. \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }
 }
 \description{

@@ -6,33 +6,33 @@
 #'
 #' @return Returns a tibble of team schedules
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |team_rk           |numeric   |
-#'    |team              |character |
-#'    |opponent_rk       |numeric   |
-#'    |opponent          |character |
-#'    |result            |character |
-#'    |poss              |numeric   |
-#'    |ot                |numeric   |
-#'    |pre_wp            |numeric   |
-#'    |location          |character |
-#'    |w                 |numeric   |
-#'    |l                 |numeric   |
-#'    |w_conference      |numeric   |
-#'    |l_conference      |numeric   |
-#'    |conference_game   |logical   |
-#'    |postseason        |character |
-#'    |year              |numeric   |
-#'    |day_date          |character |
-#'    |game_date         |numeric   |
-#'    |w_proj            |numeric   |
-#'    |l_proj            |numeric   |
-#'    |w_conference_proj |numeric   |
-#'    |l_conference_proj |numeric   |
-#'    |date              |character |
-#'    |game_id           |numeric   |
-#'    |tiers_of_joy      |character |
+#'    |col_name          |types     |description                         |
+#'    |:-----------------|:---------|:-----------------------------------|
+#'    |team_rk           |numeric   |Team rk.                            |
+#'    |team              |character |Team-side label or team identifier. |
+#'    |opponent_rk       |numeric   |Opponent rk.                        |
+#'    |opponent          |character |Opponent.                           |
+#'    |result            |character |Result.                             |
+#'    |poss              |numeric   |Poss.                               |
+#'    |ot                |numeric   |Ot.                                 |
+#'    |pre_wp            |numeric   |Pre wp.                             |
+#'    |location          |character |Location.                           |
+#'    |w                 |numeric   |Wins.                               |
+#'    |l                 |numeric   |Losses.                             |
+#'    |w_conference      |numeric   |W conference.                       |
+#'    |l_conference      |numeric   |L conference.                       |
+#'    |conference_game   |logical   |Conference game.                    |
+#'    |postseason        |character |Postseason.                         |
+#'    |year              |numeric   |4-digit year.                       |
+#'    |day_date          |character |Date in YYYY-MM-DD format.          |
+#'    |game_date         |numeric   |Game date (YYYY-MM-DD).             |
+#'    |w_proj            |numeric   |W proj.                             |
+#'    |l_proj            |numeric   |L proj.                             |
+#'    |w_conference_proj |numeric   |W conference proj.                  |
+#'    |l_conference_proj |numeric   |L conference proj.                  |
+#'    |date              |character |Date in YYYY-MM-DD format.          |
+#'    |game_id           |numeric   |Unique game identifier.             |
+#'    |tiers_of_joy      |character |Tiers of joy.                       |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate select
@@ -405,84 +405,84 @@ kp_team_schedule <- function(team, year = 2022){
 #'    **gameplan**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |date           |Date      |
-#'    |opponent_rk    |numeric   |
-#'    |opponent       |character |
-#'    |result         |character |
-#'    |location       |character |
-#'    |pace           |numeric   |
-#'    |off_eff        |numeric   |
-#'    |off_eff_rk     |numeric   |
-#'    |off_e_fg_pct   |numeric   |
-#'    |off_to_pct     |numeric   |
-#'    |off_or_pct     |numeric   |
-#'    |off_ftr        |numeric   |
-#'    |off_fgm_2      |numeric   |
-#'    |off_fga_2      |numeric   |
-#'    |off_fg_2_pct   |numeric   |
-#'    |off_fgm_3      |numeric   |
-#'    |off_fga_3      |numeric   |
-#'    |off_fg_3_pct   |numeric   |
-#'    |off_fg_3a_pct  |numeric   |
-#'    |def_eff        |numeric   |
-#'    |def_eff_rk     |numeric   |
-#'    |def_e_fg_pct   |numeric   |
-#'    |def_to_pct     |numeric   |
-#'    |def_or_pct     |numeric   |
-#'    |def_ftr        |numeric   |
-#'    |def_fgm_2      |numeric   |
-#'    |def_fga_2      |numeric   |
-#'    |def_fg_2_pct   |numeric   |
-#'    |def_fgm_3      |numeric   |
-#'    |def_fga_3      |numeric   |
-#'    |def_fg_3_pct   |numeric   |
-#'    |def_fg_3a_pct  |numeric   |
-#'    |wl             |character |
-#'    |team_score     |numeric   |
-#'    |opponent_score |numeric   |
-#'    |day_date       |character |
-#'    |game_date      |numeric   |
+#'    |col_name       |types     |description                                  |
+#'    |:--------------|:---------|:--------------------------------------------|
+#'    |date           |Date      |Date in YYYY-MM-DD format.                   |
+#'    |opponent_rk    |numeric   |Opponent rk.                                 |
+#'    |opponent       |character |Opponent.                                    |
+#'    |result         |character |Result.                                      |
+#'    |location       |character |Location.                                    |
+#'    |pace           |numeric   |Possessions per 48 minutes.                  |
+#'    |off_eff        |numeric   |Off eff.                                     |
+#'    |off_eff_rk     |numeric   |Off eff rk.                                  |
+#'    |off_e_fg_pct   |numeric   |Off e field goals percentage (0-1 decimal).  |
+#'    |off_to_pct     |numeric   |Off to percentage (0-1 decimal).             |
+#'    |off_or_pct     |numeric   |Off or percentage (0-1 decimal).             |
+#'    |off_ftr        |numeric   |Off ftr.                                     |
+#'    |off_fgm_2      |numeric   |Off fgm 2.                                   |
+#'    |off_fga_2      |numeric   |Off fga 2.                                   |
+#'    |off_fg_2_pct   |numeric   |Off field goals 2 percentage (0-1 decimal).  |
+#'    |off_fgm_3      |numeric   |Off fgm 3.                                   |
+#'    |off_fga_3      |numeric   |Off fga 3.                                   |
+#'    |off_fg_3_pct   |numeric   |Off field goals 3 percentage (0-1 decimal).  |
+#'    |off_fg_3a_pct  |numeric   |Off field goals 3a percentage (0-1 decimal). |
+#'    |def_eff        |numeric   |Def eff.                                     |
+#'    |def_eff_rk     |numeric   |Def eff rk.                                  |
+#'    |def_e_fg_pct   |numeric   |Def e field goals percentage (0-1 decimal).  |
+#'    |def_to_pct     |numeric   |Def to percentage (0-1 decimal).             |
+#'    |def_or_pct     |numeric   |Def or percentage (0-1 decimal).             |
+#'    |def_ftr        |numeric   |Def ftr.                                     |
+#'    |def_fgm_2      |numeric   |Def fgm 2.                                   |
+#'    |def_fga_2      |numeric   |Def fga 2.                                   |
+#'    |def_fg_2_pct   |numeric   |Def field goals 2 percentage (0-1 decimal).  |
+#'    |def_fgm_3      |numeric   |Def fgm 3.                                   |
+#'    |def_fga_3      |numeric   |Def fga 3.                                   |
+#'    |def_fg_3_pct   |numeric   |Def field goals 3 percentage (0-1 decimal).  |
+#'    |def_fg_3a_pct  |numeric   |Def field goals 3a percentage (0-1 decimal). |
+#'    |wl             |character |Wl.                                          |
+#'    |team_score     |numeric   |Team's score / final score.                  |
+#'    |opponent_score |numeric   |Opponent score.                              |
+#'    |day_date       |character |Date in YYYY-MM-DD format.                   |
+#'    |game_date      |numeric   |Game date (YYYY-MM-DD).                      |
 #'
 #'    **correlations**
 #'
 #'
-#'    |col_name             |types     |
-#'    |:--------------------|:---------|
-#'    |correlations_r_x_100 |character |
-#'    |pace                 |character |
-#'    |off_e_fg_pct         |character |
-#'    |off_to_pct           |character |
-#'    |off_or_pct           |character |
-#'    |off_ftr              |character |
-#'    |def_e_fg_pct         |character |
-#'    |def_to_pct           |character |
-#'    |def_or_pct           |character |
-#'    |def_ftr              |character |
+#'    |col_name             |types     |description                                 |
+#'    |:--------------------|:---------|:-------------------------------------------|
+#'    |correlations_r_x_100 |character |Correlations r x 100.                       |
+#'    |pace                 |character |Possessions per 48 minutes.                 |
+#'    |off_e_fg_pct         |character |Off e field goals percentage (0-1 decimal). |
+#'    |off_to_pct           |character |Off to percentage (0-1 decimal).            |
+#'    |off_or_pct           |character |Off or percentage (0-1 decimal).            |
+#'    |off_ftr              |character |Off ftr.                                    |
+#'    |def_e_fg_pct         |character |Def e field goals percentage (0-1 decimal). |
+#'    |def_to_pct           |character |Def to percentage (0-1 decimal).            |
+#'    |def_or_pct           |character |Def or percentage (0-1 decimal).            |
+#'    |def_ftr              |character |Def ftr.                                    |
 #'
 #'    **position_distributions**
 #'
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |team          |character |
-#'    |category      |character |
-#'    |c_pct         |numeric   |
-#'    |pf_pct        |numeric   |
-#'    |sf_pct        |numeric   |
-#'    |sg_pct        |numeric   |
-#'    |pg_pct        |numeric   |
-#'    |c_pct_rk      |numeric   |
-#'    |pf_pct_rk     |numeric   |
-#'    |sf_pct_rk     |numeric   |
-#'    |sg_pct_rk     |numeric   |
-#'    |pg_pct_rk     |numeric   |
-#'    |c_pct_d1_avg  |numeric   |
-#'    |pf_pct_d1_avg |numeric   |
-#'    |sf_pct_d1_avg |numeric   |
-#'    |sg_pct_d1_avg |numeric   |
-#'    |pg_pct_d1_avg |numeric   |
+#'    |col_name      |types     |description                              |
+#'    |:-------------|:---------|:----------------------------------------|
+#'    |team          |character |Team-side label or team identifier.      |
+#'    |category      |character |Category label.                          |
+#'    |c_pct         |numeric   |C percentage (0-1 decimal).              |
+#'    |pf_pct        |numeric   |Personal fouls percentage (0-1 decimal). |
+#'    |sf_pct        |numeric   |Sf percentage (0-1 decimal).             |
+#'    |sg_pct        |numeric   |Sg percentage (0-1 decimal).             |
+#'    |pg_pct        |numeric   |Pg percentage (0-1 decimal).             |
+#'    |c_pct_rk      |numeric   |C pct rk.                                |
+#'    |pf_pct_rk     |numeric   |Pf pct rk.                               |
+#'    |sf_pct_rk     |numeric   |Sf pct rk.                               |
+#'    |sg_pct_rk     |numeric   |Sg pct rk.                               |
+#'    |pg_pct_rk     |numeric   |Pg pct rk.                               |
+#'    |c_pct_d1_avg  |numeric   |C pct d1 avg.                            |
+#'    |pf_pct_d1_avg |numeric   |Pf pct d1 avg.                           |
+#'    |sf_pct_d1_avg |numeric   |Sf pct d1 avg.                           |
+#'    |sg_pct_d1_avg |numeric   |Sg pct d1 avg.                           |
+#'    |pg_pct_d1_avg |numeric   |Pg pct d1 avg.                           |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter select rename mutate case_when mutate_at bind_rows
@@ -704,57 +704,57 @@ kp_gameplan <- function(team, year=2021){
 #' @param year Year of data to pull
 #' @return Returns a tibble of team opponent tracker data
 #'
-#'    |col_name         |types     |
-#'    |:----------------|:---------|
-#'    |date             |Date      |
-#'    |game_date        |numeric   |
-#'    |day_date         |character |
-#'    |wl               |character |
-#'    |team             |character |
-#'    |team_score       |numeric   |
-#'    |opponent         |character |
-#'    |opponent_score   |numeric   |
-#'    |result           |character |
-#'    |adj_oe           |numeric   |
-#'    |adj_oe_rk        |integer   |
-#'    |off_e_fg_pct     |numeric   |
-#'    |off_e_fg_pct_rk  |integer   |
-#'    |off_to_pct       |numeric   |
-#'    |off_to_pct_rk    |integer   |
-#'    |off_or_pct       |numeric   |
-#'    |off_or_pct_rk    |integer   |
-#'    |off_ft_rate      |numeric   |
-#'    |off_ft_rate_rk   |integer   |
-#'    |off_fg_2_pct     |numeric   |
-#'    |off_fg_2_pct_rk  |integer   |
-#'    |off_fg_3_pct     |numeric   |
-#'    |off_fg_3_pct_rk  |integer   |
-#'    |off_blk_pct      |numeric   |
-#'    |off_blk_pct_rk   |integer   |
-#'    |off_fg_3a_pct    |numeric   |
-#'    |off_fg_3a_pct_rk |integer   |
-#'    |off_apl          |numeric   |
-#'    |off_apl_rk       |integer   |
-#'    |adj_de           |numeric   |
-#'    |adj_de_rk        |integer   |
-#'    |def_e_fg_pct     |numeric   |
-#'    |def_e_fg_pct_rk  |integer   |
-#'    |def_to_pct       |numeric   |
-#'    |def_to_pct_rk    |integer   |
-#'    |def_or_pct       |numeric   |
-#'    |def_or_pct_rk    |integer   |
-#'    |def_ft_rate      |numeric   |
-#'    |def_ft_rate_rk   |integer   |
-#'    |def_fg_2_pct     |numeric   |
-#'    |def_fg_2_pct_rk  |integer   |
-#'    |def_fg_3_pct     |numeric   |
-#'    |def_fg_3_pct_rk  |integer   |
-#'    |def_blk_pct      |numeric   |
-#'    |def_blk_pct_rk   |integer   |
-#'    |def_fg_3a_pct    |numeric   |
-#'    |def_fg_3a_pct_rk |integer   |
-#'    |def_apl          |numeric   |
-#'    |def_apl_rk       |integer   |
+#'    |col_name         |types     |description                                  |
+#'    |:----------------|:---------|:--------------------------------------------|
+#'    |date             |Date      |Date in YYYY-MM-DD format.                   |
+#'    |game_date        |numeric   |Game date (YYYY-MM-DD).                      |
+#'    |day_date         |character |Date in YYYY-MM-DD format.                   |
+#'    |wl               |character |Wl.                                          |
+#'    |team             |character |Team-side label or team identifier.          |
+#'    |team_score       |numeric   |Team's score / final score.                  |
+#'    |opponent         |character |Opponent.                                    |
+#'    |opponent_score   |numeric   |Opponent score.                              |
+#'    |result           |character |Result.                                      |
+#'    |adj_oe           |numeric   |Adj oe.                                      |
+#'    |adj_oe_rk        |integer   |Adj oe rk.                                   |
+#'    |off_e_fg_pct     |numeric   |Off e field goals percentage (0-1 decimal).  |
+#'    |off_e_fg_pct_rk  |integer   |Off e fg pct rk.                             |
+#'    |off_to_pct       |numeric   |Off to percentage (0-1 decimal).             |
+#'    |off_to_pct_rk    |integer   |Off to pct rk.                               |
+#'    |off_or_pct       |numeric   |Off or percentage (0-1 decimal).             |
+#'    |off_or_pct_rk    |integer   |Off or pct rk.                               |
+#'    |off_ft_rate      |numeric   |Off ft rate.                                 |
+#'    |off_ft_rate_rk   |integer   |Off ft rate rk.                              |
+#'    |off_fg_2_pct     |numeric   |Off field goals 2 percentage (0-1 decimal).  |
+#'    |off_fg_2_pct_rk  |integer   |Off fg 2 pct rk.                             |
+#'    |off_fg_3_pct     |numeric   |Off field goals 3 percentage (0-1 decimal).  |
+#'    |off_fg_3_pct_rk  |integer   |Off fg 3 pct rk.                             |
+#'    |off_blk_pct      |numeric   |Off blocks percentage (0-1 decimal).         |
+#'    |off_blk_pct_rk   |integer   |Off blk pct rk.                              |
+#'    |off_fg_3a_pct    |numeric   |Off field goals 3a percentage (0-1 decimal). |
+#'    |off_fg_3a_pct_rk |integer   |Off fg 3a pct rk.                            |
+#'    |off_apl          |numeric   |Off apl.                                     |
+#'    |off_apl_rk       |integer   |Off apl rk.                                  |
+#'    |adj_de           |numeric   |Adj de.                                      |
+#'    |adj_de_rk        |integer   |Adj de rk.                                   |
+#'    |def_e_fg_pct     |numeric   |Def e field goals percentage (0-1 decimal).  |
+#'    |def_e_fg_pct_rk  |integer   |Def e fg pct rk.                             |
+#'    |def_to_pct       |numeric   |Def to percentage (0-1 decimal).             |
+#'    |def_to_pct_rk    |integer   |Def to pct rk.                               |
+#'    |def_or_pct       |numeric   |Def or percentage (0-1 decimal).             |
+#'    |def_or_pct_rk    |integer   |Def or pct rk.                               |
+#'    |def_ft_rate      |numeric   |Def ft rate.                                 |
+#'    |def_ft_rate_rk   |integer   |Def ft rate rk.                              |
+#'    |def_fg_2_pct     |numeric   |Def field goals 2 percentage (0-1 decimal).  |
+#'    |def_fg_2_pct_rk  |integer   |Def fg 2 pct rk.                             |
+#'    |def_fg_3_pct     |numeric   |Def field goals 3 percentage (0-1 decimal).  |
+#'    |def_fg_3_pct_rk  |integer   |Def fg 3 pct rk.                             |
+#'    |def_blk_pct      |numeric   |Def blocks percentage (0-1 decimal).         |
+#'    |def_blk_pct_rk   |integer   |Def blk pct rk.                              |
+#'    |def_fg_3a_pct    |numeric   |Def field goals 3a percentage (0-1 decimal). |
+#'    |def_fg_3a_pct_rk |integer   |Def fg 3a pct rk.                            |
+#'    |def_apl          |numeric   |Def apl.                                     |
+#'    |def_apl_rk       |integer   |Def apl rk.                                  |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter
@@ -933,62 +933,62 @@ kp_opptracker <- function(team, year = 2021){
 #' @param year Year of data to pull
 #' @return Returns a tibble of team player data
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |role          |character |
-#'    |number        |numeric   |
-#'    |player        |character |
-#'    |ht            |character |
-#'    |wt            |numeric   |
-#'    |yr            |character |
-#'    |g             |numeric   |
-#'    |s             |numeric   |
-#'    |min_pct       |numeric   |
-#'    |o_rtg         |numeric   |
-#'    |poss_pct      |numeric   |
-#'    |shots_pct     |numeric   |
-#'    |e_fg_pct      |numeric   |
-#'    |ts_pct        |numeric   |
-#'    |or_pct        |numeric   |
-#'    |dr_pct        |numeric   |
-#'    |a_rate        |numeric   |
-#'    |to_rate       |numeric   |
-#'    |blk_pct       |numeric   |
-#'    |stl_pct       |numeric   |
-#'    |f_cper40      |numeric   |
-#'    |f_dper40      |numeric   |
-#'    |ft_rate       |numeric   |
-#'    |ftm           |numeric   |
-#'    |fta           |numeric   |
-#'    |ft_pct        |numeric   |
-#'    |fgm_2         |numeric   |
-#'    |fga_2         |numeric   |
-#'    |fg_2_pct      |numeric   |
-#'    |fgm_3         |numeric   |
-#'    |fga_3         |numeric   |
-#'    |fg_3_pct      |numeric   |
-#'    |min_pct_rk    |numeric   |
-#'    |o_rtg_rk      |numeric   |
-#'    |poss_pct_rk   |numeric   |
-#'    |shots_pct_rk  |numeric   |
-#'    |e_fg_pct_rk   |numeric   |
-#'    |ts_pct_rk     |numeric   |
-#'    |or_pct_rk     |numeric   |
-#'    |dr_pct_rk     |numeric   |
-#'    |a_rate_rk     |numeric   |
-#'    |to_rate_rk    |numeric   |
-#'    |blk_pct_rk    |numeric   |
-#'    |stl_pct_rk    |numeric   |
-#'    |f_cper40_rk   |numeric   |
-#'    |f_dper40_rk   |numeric   |
-#'    |ft_rate_rk    |numeric   |
-#'    |ft_pct_rk     |numeric   |
-#'    |fg_2_pct_rk   |numeric   |
-#'    |fg_3_pct_rk   |numeric   |
-#'    |national_rank |character |
-#'    |team          |character |
-#'    |year          |numeric   |
-#'    |player_id     |numeric   |
+#'    |col_name      |types     |description                             |
+#'    |:-------------|:---------|:---------------------------------------|
+#'    |role          |character |Role.                                   |
+#'    |number        |numeric   |Number.                                 |
+#'    |player        |character |Player.                                 |
+#'    |ht            |character |Ht.                                     |
+#'    |wt            |numeric   |Wt.                                     |
+#'    |yr            |character |Yr.                                     |
+#'    |g             |numeric   |Games played.                           |
+#'    |s             |numeric   |S.                                      |
+#'    |min_pct       |numeric   |Min percentage (0-1 decimal).           |
+#'    |o_rtg         |numeric   |O rtg.                                  |
+#'    |poss_pct      |numeric   |Poss percentage (0-1 decimal).          |
+#'    |shots_pct     |numeric   |Shots percentage (0-1 decimal).         |
+#'    |e_fg_pct      |numeric   |E field goals percentage (0-1 decimal). |
+#'    |ts_pct        |numeric   |True shooting percentage (0-1).         |
+#'    |or_pct        |numeric   |Or percentage (0-1 decimal).            |
+#'    |dr_pct        |numeric   |Dr percentage (0-1 decimal).            |
+#'    |a_rate        |numeric   |A rate.                                 |
+#'    |to_rate       |numeric   |To rate.                                |
+#'    |blk_pct       |numeric   |Blocks percentage (0-1 decimal).        |
+#'    |stl_pct       |numeric   |Steals percentage (0-1 decimal).        |
+#'    |f_cper40      |numeric   |F cper40.                               |
+#'    |f_dper40      |numeric   |F dper40.                               |
+#'    |ft_rate       |numeric   |Ft rate.                                |
+#'    |ftm           |numeric   |Free throws made.                       |
+#'    |fta           |numeric   |Free throw attempts.                    |
+#'    |ft_pct        |numeric   |Free throw percentage (0-1).            |
+#'    |fgm_2         |numeric   |Fgm 2.                                  |
+#'    |fga_2         |numeric   |Fga 2.                                  |
+#'    |fg_2_pct      |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fgm_3         |numeric   |Fgm 3.                                  |
+#'    |fga_3         |numeric   |Fga 3.                                  |
+#'    |fg_3_pct      |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |min_pct_rk    |numeric   |Min pct rk.                             |
+#'    |o_rtg_rk      |numeric   |O rtg rk.                               |
+#'    |poss_pct_rk   |numeric   |Poss pct rk.                            |
+#'    |shots_pct_rk  |numeric   |Shots pct rk.                           |
+#'    |e_fg_pct_rk   |numeric   |E fg pct rk.                            |
+#'    |ts_pct_rk     |numeric   |Ts pct rk.                              |
+#'    |or_pct_rk     |numeric   |Or pct rk.                              |
+#'    |dr_pct_rk     |numeric   |Dr pct rk.                              |
+#'    |a_rate_rk     |numeric   |A rate rk.                              |
+#'    |to_rate_rk    |numeric   |To rate rk.                             |
+#'    |blk_pct_rk    |numeric   |Blk pct rk.                             |
+#'    |stl_pct_rk    |numeric   |Stl pct rk.                             |
+#'    |f_cper40_rk   |numeric   |F cper40 rk.                            |
+#'    |f_dper40_rk   |numeric   |F dper40 rk.                            |
+#'    |ft_rate_rk    |numeric   |Ft rate rk.                             |
+#'    |ft_pct_rk     |numeric   |Ft pct rk.                              |
+#'    |fg_2_pct_rk   |numeric   |Fg 2 pct rk.                            |
+#'    |fg_3_pct_rk   |numeric   |Fg 3 pct rk.                            |
+#'    |national_rank |character |League/season rank for national.        |
+#'    |team          |character |Team-side label or team identifier.     |
+#'    |year          |numeric   |4-digit year.                           |
+#'    |player_id     |numeric   |Unique player identifier.               |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
@@ -1236,86 +1236,86 @@ kp_team_players <- function(team, year = 2021){
 #'    **player_stats**
 #'
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |year          |numeric   |
-#'    |team_rk       |numeric   |
-#'    |team          |character |
-#'    |number        |numeric   |
-#'    |name          |character |
-#'    |position      |character |
-#'    |hgt           |character |
-#'    |wgt           |numeric   |
-#'    |yr            |character |
-#'    |g             |numeric   |
-#'    |min_pct       |numeric   |
-#'    |o_rtg         |numeric   |
-#'    |poss_pct      |numeric   |
-#'    |shots_pct     |numeric   |
-#'    |e_fg_pct      |numeric   |
-#'    |ts_pct        |numeric   |
-#'    |or_pct        |numeric   |
-#'    |dr_pct        |numeric   |
-#'    |a_rate        |numeric   |
-#'    |to_rate       |numeric   |
-#'    |blk_pct       |numeric   |
-#'    |stl_pct       |numeric   |
-#'    |f_cper40      |numeric   |
-#'    |f_dper40      |numeric   |
-#'    |ft_rate       |numeric   |
-#'    |ftm           |numeric   |
-#'    |fta           |numeric   |
-#'    |ft_pct        |numeric   |
-#'    |fgm_2         |numeric   |
-#'    |fga_2         |numeric   |
-#'    |fg_2_pct      |numeric   |
-#'    |fgm_3         |numeric   |
-#'    |fga_3         |numeric   |
-#'    |fg_3_pct      |numeric   |
-#'    |group_rank    |character |
-#'    |team_finish   |character |
-#'    |ncaa_seed     |numeric   |
-#'    |hometown      |character |
-#'    |date_of_birth |character |
-#'    |age           |character |
-#'    |comparisons   |character |
+#'    |col_name      |types     |description                             |
+#'    |:-------------|:---------|:---------------------------------------|
+#'    |year          |numeric   |4-digit year.                           |
+#'    |team_rk       |numeric   |Team rk.                                |
+#'    |team          |character |Team-side label or team identifier.     |
+#'    |number        |numeric   |Number.                                 |
+#'    |name          |character |Display name.                           |
+#'    |position      |character |Listed roster position (G, F, C, etc.). |
+#'    |hgt           |character |Hgt.                                    |
+#'    |wgt           |numeric   |Wgt.                                    |
+#'    |yr            |character |Yr.                                     |
+#'    |g             |numeric   |Games played.                           |
+#'    |min_pct       |numeric   |Min percentage (0-1 decimal).           |
+#'    |o_rtg         |numeric   |O rtg.                                  |
+#'    |poss_pct      |numeric   |Poss percentage (0-1 decimal).          |
+#'    |shots_pct     |numeric   |Shots percentage (0-1 decimal).         |
+#'    |e_fg_pct      |numeric   |E field goals percentage (0-1 decimal). |
+#'    |ts_pct        |numeric   |True shooting percentage (0-1).         |
+#'    |or_pct        |numeric   |Or percentage (0-1 decimal).            |
+#'    |dr_pct        |numeric   |Dr percentage (0-1 decimal).            |
+#'    |a_rate        |numeric   |A rate.                                 |
+#'    |to_rate       |numeric   |To rate.                                |
+#'    |blk_pct       |numeric   |Blocks percentage (0-1 decimal).        |
+#'    |stl_pct       |numeric   |Steals percentage (0-1 decimal).        |
+#'    |f_cper40      |numeric   |F cper40.                               |
+#'    |f_dper40      |numeric   |F dper40.                               |
+#'    |ft_rate       |numeric   |Ft rate.                                |
+#'    |ftm           |numeric   |Free throws made.                       |
+#'    |fta           |numeric   |Free throw attempts.                    |
+#'    |ft_pct        |numeric   |Free throw percentage (0-1).            |
+#'    |fgm_2         |numeric   |Fgm 2.                                  |
+#'    |fga_2         |numeric   |Fga 2.                                  |
+#'    |fg_2_pct      |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fgm_3         |numeric   |Fgm 3.                                  |
+#'    |fga_3         |numeric   |Fga 3.                                  |
+#'    |fg_3_pct      |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |group_rank    |character |League/season rank for group.           |
+#'    |team_finish   |character |Team finish.                            |
+#'    |ncaa_seed     |numeric   |Ncaa seed.                              |
+#'    |hometown      |character |Player hometown.                        |
+#'    |date_of_birth |character |Date of birth (YYYY-MM-DD).             |
+#'    |age           |character |Player age (in years).                  |
+#'    |comparisons   |character |Comparisons.                            |
 #'
 #'    **gamelog**
 #'
 #'
-#'    |col_name       |types     |
-#'    |:--------------|:---------|
-#'    |year           |numeric   |
-#'    |team           |character |
-#'    |name           |character |
-#'    |position       |character |
-#'    |opponent_tier  |logical   |
-#'    |date           |character |
-#'    |opponent_rk    |numeric   |
-#'    |opponent       |character |
-#'    |result         |character |
-#'    |ot             |character |
-#'    |location       |character |
-#'    |game_type      |character |
-#'    |mvp            |character |
-#'    |start          |character |
-#'    |minutes_played |numeric   |
-#'    |o_rtg          |numeric   |
-#'    |poss_pct       |numeric   |
-#'    |pts            |numeric   |
-#'    |fgm_2          |numeric   |
-#'    |fga_2          |numeric   |
-#'    |fgm_3          |numeric   |
-#'    |fga_3          |numeric   |
-#'    |ftm            |numeric   |
-#'    |fta            |numeric   |
-#'    |or             |numeric   |
-#'    |dr             |numeric   |
-#'    |a              |numeric   |
-#'    |to             |numeric   |
-#'    |blk            |numeric   |
-#'    |stl            |numeric   |
-#'    |pf             |numeric   |
+#'    |col_name       |types     |description                             |
+#'    |:--------------|:---------|:---------------------------------------|
+#'    |year           |numeric   |4-digit year.                           |
+#'    |team           |character |Team-side label or team identifier.     |
+#'    |name           |character |Display name.                           |
+#'    |position       |character |Listed roster position (G, F, C, etc.). |
+#'    |opponent_tier  |logical   |Opponent tier.                          |
+#'    |date           |character |Date in YYYY-MM-DD format.              |
+#'    |opponent_rk    |numeric   |Opponent rk.                            |
+#'    |opponent       |character |Opponent.                               |
+#'    |result         |character |Result.                                 |
+#'    |ot             |character |Ot.                                     |
+#'    |location       |character |Location.                               |
+#'    |game_type      |character |Game type.                              |
+#'    |mvp            |character |Mvp.                                    |
+#'    |start          |character |Start.                                  |
+#'    |minutes_played |numeric   |Minutes played.                         |
+#'    |o_rtg          |numeric   |O rtg.                                  |
+#'    |poss_pct       |numeric   |Poss percentage (0-1 decimal).          |
+#'    |pts            |numeric   |Points scored.                          |
+#'    |fgm_2          |numeric   |Fgm 2.                                  |
+#'    |fga_2          |numeric   |Fga 2.                                  |
+#'    |fgm_3          |numeric   |Fgm 3.                                  |
+#'    |fga_3          |numeric   |Fga 3.                                  |
+#'    |ftm            |numeric   |Free throws made.                       |
+#'    |fta            |numeric   |Free throw attempts.                    |
+#'    |or             |numeric   |Or.                                     |
+#'    |dr             |numeric   |Dr.                                     |
+#'    |a              |numeric   |A.                                      |
+#'    |to             |numeric   |To.                                     |
+#'    |blk            |numeric   |Blocks.                                 |
+#'    |stl            |numeric   |Steals.                                 |
+#'    |pf             |numeric   |Personal fouls.                         |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
@@ -1655,122 +1655,122 @@ kp_minutes_matrix <- function(team, year = 2021){
 #'    **all_games**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |role         |character |
-#'    |number       |numeric   |
-#'    |player       |character |
-#'    |ht           |character |
-#'    |wt           |numeric   |
-#'    |yr           |character |
-#'    |g            |numeric   |
-#'    |min_pct      |numeric   |
-#'    |o_rtg        |numeric   |
-#'    |poss_pct     |numeric   |
-#'    |shots_pct    |numeric   |
-#'    |e_fg_pct     |numeric   |
-#'    |ts_pct       |numeric   |
-#'    |or_pct       |numeric   |
-#'    |dr_pct       |numeric   |
-#'    |a_rate       |numeric   |
-#'    |to_rate      |numeric   |
-#'    |blk_pct      |numeric   |
-#'    |stl_pct      |numeric   |
-#'    |f_cper40     |numeric   |
-#'    |f_dper40     |numeric   |
-#'    |ft_rate      |numeric   |
-#'    |ftm          |numeric   |
-#'    |fta          |numeric   |
-#'    |ft_pct       |numeric   |
-#'    |fgm_2        |numeric   |
-#'    |fga_2        |numeric   |
-#'    |fg_2_pct     |numeric   |
-#'    |fgm_3        |numeric   |
-#'    |fga_3        |numeric   |
-#'    |fg_3_pct     |numeric   |
-#'    |category     |character |
-#'    |min_pct_rk   |numeric   |
-#'    |o_rtg_rk     |numeric   |
-#'    |poss_pct_rk  |numeric   |
-#'    |shots_pct_rk |numeric   |
-#'    |e_fg_pct_rk  |numeric   |
-#'    |ts_pct_rk    |numeric   |
-#'    |or_pct_rk    |numeric   |
-#'    |dr_pct_rk    |numeric   |
-#'    |a_rate_rk    |numeric   |
-#'    |to_rate_rk   |numeric   |
-#'    |blk_pct_rk   |numeric   |
-#'    |stl_pct_rk   |numeric   |
-#'    |f_cper40_rk  |numeric   |
-#'    |f_dper40_rk  |numeric   |
-#'    |ft_rate_rk   |numeric   |
-#'    |ft_pct_rk    |numeric   |
-#'    |fg_2_pct_rk  |numeric   |
-#'    |fg_3_pct_rk  |numeric   |
-#'    |group_rank   |character |
-#'    |team         |character |
-#'    |year         |numeric   |
-#'    |player_id    |numeric   |
+#'    |col_name     |types     |description                             |
+#'    |:------------|:---------|:---------------------------------------|
+#'    |role         |character |Role.                                   |
+#'    |number       |numeric   |Number.                                 |
+#'    |player       |character |Player.                                 |
+#'    |ht           |character |Ht.                                     |
+#'    |wt           |numeric   |Wt.                                     |
+#'    |yr           |character |Yr.                                     |
+#'    |g            |numeric   |Games played.                           |
+#'    |min_pct      |numeric   |Min percentage (0-1 decimal).           |
+#'    |o_rtg        |numeric   |O rtg.                                  |
+#'    |poss_pct     |numeric   |Poss percentage (0-1 decimal).          |
+#'    |shots_pct    |numeric   |Shots percentage (0-1 decimal).         |
+#'    |e_fg_pct     |numeric   |E field goals percentage (0-1 decimal). |
+#'    |ts_pct       |numeric   |True shooting percentage (0-1).         |
+#'    |or_pct       |numeric   |Or percentage (0-1 decimal).            |
+#'    |dr_pct       |numeric   |Dr percentage (0-1 decimal).            |
+#'    |a_rate       |numeric   |A rate.                                 |
+#'    |to_rate      |numeric   |To rate.                                |
+#'    |blk_pct      |numeric   |Blocks percentage (0-1 decimal).        |
+#'    |stl_pct      |numeric   |Steals percentage (0-1 decimal).        |
+#'    |f_cper40     |numeric   |F cper40.                               |
+#'    |f_dper40     |numeric   |F dper40.                               |
+#'    |ft_rate      |numeric   |Ft rate.                                |
+#'    |ftm          |numeric   |Free throws made.                       |
+#'    |fta          |numeric   |Free throw attempts.                    |
+#'    |ft_pct       |numeric   |Free throw percentage (0-1).            |
+#'    |fgm_2        |numeric   |Fgm 2.                                  |
+#'    |fga_2        |numeric   |Fga 2.                                  |
+#'    |fg_2_pct     |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fgm_3        |numeric   |Fgm 3.                                  |
+#'    |fga_3        |numeric   |Fga 3.                                  |
+#'    |fg_3_pct     |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |category     |character |Category label.                         |
+#'    |min_pct_rk   |numeric   |Min pct rk.                             |
+#'    |o_rtg_rk     |numeric   |O rtg rk.                               |
+#'    |poss_pct_rk  |numeric   |Poss pct rk.                            |
+#'    |shots_pct_rk |numeric   |Shots pct rk.                           |
+#'    |e_fg_pct_rk  |numeric   |E fg pct rk.                            |
+#'    |ts_pct_rk    |numeric   |Ts pct rk.                              |
+#'    |or_pct_rk    |numeric   |Or pct rk.                              |
+#'    |dr_pct_rk    |numeric   |Dr pct rk.                              |
+#'    |a_rate_rk    |numeric   |A rate rk.                              |
+#'    |to_rate_rk   |numeric   |To rate rk.                             |
+#'    |blk_pct_rk   |numeric   |Blk pct rk.                             |
+#'    |stl_pct_rk   |numeric   |Stl pct rk.                             |
+#'    |f_cper40_rk  |numeric   |F cper40 rk.                            |
+#'    |f_dper40_rk  |numeric   |F dper40 rk.                            |
+#'    |ft_rate_rk   |numeric   |Ft rate rk.                             |
+#'    |ft_pct_rk    |numeric   |Ft pct rk.                              |
+#'    |fg_2_pct_rk  |numeric   |Fg 2 pct rk.                            |
+#'    |fg_3_pct_rk  |numeric   |Fg 3 pct rk.                            |
+#'    |group_rank   |character |League/season rank for group.           |
+#'    |team         |character |Team-side label or team identifier.     |
+#'    |year         |numeric   |4-digit year.                           |
+#'    |player_id    |numeric   |Unique player identifier.               |
 #'
 #'    **conference_games**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |role         |character |
-#'    |number       |numeric   |
-#'    |player       |character |
-#'    |ht           |character |
-#'    |wt           |numeric   |
-#'    |yr           |character |
-#'    |g            |numeric   |
-#'    |min_pct      |numeric   |
-#'    |o_rtg        |numeric   |
-#'    |poss_pct     |numeric   |
-#'    |shots_pct    |numeric   |
-#'    |e_fg_pct     |numeric   |
-#'    |ts_pct       |numeric   |
-#'    |or_pct       |numeric   |
-#'    |dr_pct       |numeric   |
-#'    |a_rate       |numeric   |
-#'    |to_rate      |numeric   |
-#'    |blk_pct      |numeric   |
-#'    |stl_pct      |numeric   |
-#'    |f_cper40     |numeric   |
-#'    |f_dper40     |numeric   |
-#'    |ft_rate      |numeric   |
-#'    |ftm          |numeric   |
-#'    |fta          |numeric   |
-#'    |ft_pct       |numeric   |
-#'    |fgm_2        |numeric   |
-#'    |fga_2        |numeric   |
-#'    |fg_2_pct     |numeric   |
-#'    |fgm_3        |numeric   |
-#'    |fga_3        |numeric   |
-#'    |fg_3_pct     |numeric   |
-#'    |category     |character |
-#'    |min_pct_rk   |numeric   |
-#'    |o_rtg_rk     |numeric   |
-#'    |poss_pct_rk  |numeric   |
-#'    |shots_pct_rk |numeric   |
-#'    |e_fg_pct_rk  |numeric   |
-#'    |ts_pct_rk    |numeric   |
-#'    |or_pct_rk    |numeric   |
-#'    |dr_pct_rk    |numeric   |
-#'    |a_rate_rk    |numeric   |
-#'    |to_rate_rk   |numeric   |
-#'    |blk_pct_rk   |numeric   |
-#'    |stl_pct_rk   |numeric   |
-#'    |f_cper40_rk  |numeric   |
-#'    |f_dper40_rk  |numeric   |
-#'    |ft_rate_rk   |numeric   |
-#'    |ft_pct_rk    |numeric   |
-#'    |fg_2_pct_rk  |numeric   |
-#'    |fg_3_pct_rk  |numeric   |
-#'    |group_rank   |character |
-#'    |team         |character |
-#'    |year         |numeric   |
-#'    |player_id    |numeric   |
+#'    |col_name     |types     |description                             |
+#'    |:------------|:---------|:---------------------------------------|
+#'    |role         |character |Role.                                   |
+#'    |number       |numeric   |Number.                                 |
+#'    |player       |character |Player.                                 |
+#'    |ht           |character |Ht.                                     |
+#'    |wt           |numeric   |Wt.                                     |
+#'    |yr           |character |Yr.                                     |
+#'    |g            |numeric   |Games played.                           |
+#'    |min_pct      |numeric   |Min percentage (0-1 decimal).           |
+#'    |o_rtg        |numeric   |O rtg.                                  |
+#'    |poss_pct     |numeric   |Poss percentage (0-1 decimal).          |
+#'    |shots_pct    |numeric   |Shots percentage (0-1 decimal).         |
+#'    |e_fg_pct     |numeric   |E field goals percentage (0-1 decimal). |
+#'    |ts_pct       |numeric   |True shooting percentage (0-1).         |
+#'    |or_pct       |numeric   |Or percentage (0-1 decimal).            |
+#'    |dr_pct       |numeric   |Dr percentage (0-1 decimal).            |
+#'    |a_rate       |numeric   |A rate.                                 |
+#'    |to_rate      |numeric   |To rate.                                |
+#'    |blk_pct      |numeric   |Blocks percentage (0-1 decimal).        |
+#'    |stl_pct      |numeric   |Steals percentage (0-1 decimal).        |
+#'    |f_cper40     |numeric   |F cper40.                               |
+#'    |f_dper40     |numeric   |F dper40.                               |
+#'    |ft_rate      |numeric   |Ft rate.                                |
+#'    |ftm          |numeric   |Free throws made.                       |
+#'    |fta          |numeric   |Free throw attempts.                    |
+#'    |ft_pct       |numeric   |Free throw percentage (0-1).            |
+#'    |fgm_2        |numeric   |Fgm 2.                                  |
+#'    |fga_2        |numeric   |Fga 2.                                  |
+#'    |fg_2_pct     |numeric   |Field goals 2 percentage (0-1 decimal). |
+#'    |fgm_3        |numeric   |Fgm 3.                                  |
+#'    |fga_3        |numeric   |Fga 3.                                  |
+#'    |fg_3_pct     |numeric   |Field goals 3 percentage (0-1 decimal). |
+#'    |category     |character |Category label.                         |
+#'    |min_pct_rk   |numeric   |Min pct rk.                             |
+#'    |o_rtg_rk     |numeric   |O rtg rk.                               |
+#'    |poss_pct_rk  |numeric   |Poss pct rk.                            |
+#'    |shots_pct_rk |numeric   |Shots pct rk.                           |
+#'    |e_fg_pct_rk  |numeric   |E fg pct rk.                            |
+#'    |ts_pct_rk    |numeric   |Ts pct rk.                              |
+#'    |or_pct_rk    |numeric   |Or pct rk.                              |
+#'    |dr_pct_rk    |numeric   |Dr pct rk.                              |
+#'    |a_rate_rk    |numeric   |A rate rk.                              |
+#'    |to_rate_rk   |numeric   |To rate rk.                             |
+#'    |blk_pct_rk   |numeric   |Blk pct rk.                             |
+#'    |stl_pct_rk   |numeric   |Stl pct rk.                             |
+#'    |f_cper40_rk  |numeric   |F cper40 rk.                            |
+#'    |f_dper40_rk  |numeric   |F dper40 rk.                            |
+#'    |ft_rate_rk   |numeric   |Ft rate rk.                             |
+#'    |ft_pct_rk    |numeric   |Ft pct rk.                              |
+#'    |fg_2_pct_rk  |numeric   |Fg 2 pct rk.                            |
+#'    |fg_3_pct_rk  |numeric   |Fg 3 pct rk.                            |
+#'    |group_rank   |character |League/season rank for group.           |
+#'    |team         |character |Team-side label or team identifier.     |
+#'    |year         |numeric   |4-digit year.                           |
+#'    |player_id    |numeric   |Unique player identifier.               |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter case_when mutate_at bind_cols bind_rows
@@ -2000,45 +2000,45 @@ kp_team_player_stats <- function(team, year = 2021){
 #' @param year Year of data to pull
 #' @return A data frame with the following columns:
 #'
-#'    |col_name             |types     |
-#'    |:--------------------|:---------|
-#'    |pg_number            |numeric   |
-#'    |pg_player_first_name |character |
-#'    |pg_player_last_name  |character |
-#'    |pg_hgt               |character |
-#'    |pg_wgt               |numeric   |
-#'    |pg_yr                |character |
-#'    |pg_min_pct           |numeric   |
-#'    |sg_number            |numeric   |
-#'    |sg_player_first_name |character |
-#'    |sg_player_last_name  |character |
-#'    |sg_hgt               |character |
-#'    |sg_wgt               |numeric   |
-#'    |sg_yr                |character |
-#'    |sg_min_pct           |numeric   |
-#'    |sf_number            |numeric   |
-#'    |sf_player_first_name |character |
-#'    |sf_player_last_name  |character |
-#'    |sf_hgt               |character |
-#'    |sf_wgt               |numeric   |
-#'    |sf_yr                |character |
-#'    |sf_min_pct           |numeric   |
-#'    |pf_number            |numeric   |
-#'    |pf_player_first_name |character |
-#'    |pf_player_last_name  |character |
-#'    |pf_hgt               |character |
-#'    |pf_wgt               |numeric   |
-#'    |pf_yr                |character |
-#'    |pf_min_pct           |numeric   |
-#'    |c_number             |numeric   |
-#'    |c_player_first_name  |character |
-#'    |c_player_last_name   |character |
-#'    |c_hgt                |character |
-#'    |c_wgt                |numeric   |
-#'    |c_yr                 |character |
-#'    |c_min_pct            |numeric   |
-#'    |team                 |character |
-#'    |year                 |numeric   |
+#'    |col_name             |types     |description                                  |
+#'    |:--------------------|:---------|:--------------------------------------------|
+#'    |pg_number            |numeric   |Pg number.                                   |
+#'    |pg_player_first_name |character |Pg player first name.                        |
+#'    |pg_player_last_name  |character |Pg player last name.                         |
+#'    |pg_hgt               |character |Pg hgt.                                      |
+#'    |pg_wgt               |numeric   |Pg wgt.                                      |
+#'    |pg_yr                |character |Pg yr.                                       |
+#'    |pg_min_pct           |numeric   |Pg min percentage (0-1 decimal).             |
+#'    |sg_number            |numeric   |Sg number.                                   |
+#'    |sg_player_first_name |character |Sg player first name.                        |
+#'    |sg_player_last_name  |character |Sg player last name.                         |
+#'    |sg_hgt               |character |Sg hgt.                                      |
+#'    |sg_wgt               |numeric   |Sg wgt.                                      |
+#'    |sg_yr                |character |Sg yr.                                       |
+#'    |sg_min_pct           |numeric   |Sg min percentage (0-1 decimal).             |
+#'    |sf_number            |numeric   |Sf number.                                   |
+#'    |sf_player_first_name |character |Sf player first name.                        |
+#'    |sf_player_last_name  |character |Sf player last name.                         |
+#'    |sf_hgt               |character |Sf hgt.                                      |
+#'    |sf_wgt               |numeric   |Sf wgt.                                      |
+#'    |sf_yr                |character |Sf yr.                                       |
+#'    |sf_min_pct           |numeric   |Sf min percentage (0-1 decimal).             |
+#'    |pf_number            |numeric   |Pf number.                                   |
+#'    |pf_player_first_name |character |Personal fouls player first name.            |
+#'    |pf_player_last_name  |character |Personal fouls player last name.             |
+#'    |pf_hgt               |character |Pf hgt.                                      |
+#'    |pf_wgt               |numeric   |Pf wgt.                                      |
+#'    |pf_yr                |character |Pf yr.                                       |
+#'    |pf_min_pct           |numeric   |Personal fouls min percentage (0-1 decimal). |
+#'    |c_number             |numeric   |C number.                                    |
+#'    |c_player_first_name  |character |C player first name.                         |
+#'    |c_player_last_name   |character |C player last name.                          |
+#'    |c_hgt                |character |C hgt.                                       |
+#'    |c_wgt                |numeric   |C wgt.                                       |
+#'    |c_yr                 |character |C yr.                                        |
+#'    |c_min_pct            |numeric   |C min percentage (0-1 decimal).              |
+#'    |team                 |character |Team-side label or team identifier.          |
+#'    |year                 |numeric   |4-digit year.                                |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter  bind_cols bind_rows
@@ -2225,41 +2225,41 @@ kp_team_depth_chart <- function(team, year= 2021){
 #' @param year Year of data to pull
 #' @return A data frame with the following columns:
 #'
-#'    |col_name             |types     |
-#'    |:--------------------|:---------|
-#'    |year                 |numeric   |
-#'    |team                 |character |
-#'    |min_pct              |numeric   |
-#'    |pg_number            |numeric   |
-#'    |pg_player_first_name |character |
-#'    |pg_player_last_name  |character |
-#'    |pg_hgt               |character |
-#'    |pg_wgt               |numeric   |
-#'    |pg_yr                |character |
-#'    |sg_number            |numeric   |
-#'    |sg_player_first_name |character |
-#'    |sg_player_last_name  |character |
-#'    |sg_hgt               |character |
-#'    |sg_wgt               |numeric   |
-#'    |sg_yr                |character |
-#'    |sf_number            |numeric   |
-#'    |sf_player_first_name |character |
-#'    |sf_player_last_name  |character |
-#'    |sf_hgt               |character |
-#'    |sf_wgt               |numeric   |
-#'    |sf_yr                |character |
-#'    |pf_number            |numeric   |
-#'    |pf_player_first_name |character |
-#'    |pf_player_last_name  |character |
-#'    |pf_hgt               |character |
-#'    |pf_wgt               |numeric   |
-#'    |pf_yr                |character |
-#'    |c_number             |numeric   |
-#'    |c_player_first_name  |character |
-#'    |c_player_last_name   |character |
-#'    |c_hgt                |character |
-#'    |c_wgt                |numeric   |
-#'    |c_yr                 |character |
+#'    |col_name             |types     |description                         |
+#'    |:--------------------|:---------|:-----------------------------------|
+#'    |year                 |numeric   |4-digit year.                       |
+#'    |team                 |character |Team-side label or team identifier. |
+#'    |min_pct              |numeric   |Min percentage (0-1 decimal).       |
+#'    |pg_number            |numeric   |Pg number.                          |
+#'    |pg_player_first_name |character |Pg player first name.               |
+#'    |pg_player_last_name  |character |Pg player last name.                |
+#'    |pg_hgt               |character |Pg hgt.                             |
+#'    |pg_wgt               |numeric   |Pg wgt.                             |
+#'    |pg_yr                |character |Pg yr.                              |
+#'    |sg_number            |numeric   |Sg number.                          |
+#'    |sg_player_first_name |character |Sg player first name.               |
+#'    |sg_player_last_name  |character |Sg player last name.                |
+#'    |sg_hgt               |character |Sg hgt.                             |
+#'    |sg_wgt               |numeric   |Sg wgt.                             |
+#'    |sg_yr                |character |Sg yr.                              |
+#'    |sf_number            |numeric   |Sf number.                          |
+#'    |sf_player_first_name |character |Sf player first name.               |
+#'    |sf_player_last_name  |character |Sf player last name.                |
+#'    |sf_hgt               |character |Sf hgt.                             |
+#'    |sf_wgt               |numeric   |Sf wgt.                             |
+#'    |sf_yr                |character |Sf yr.                              |
+#'    |pf_number            |numeric   |Pf number.                          |
+#'    |pf_player_first_name |character |Personal fouls player first name.   |
+#'    |pf_player_last_name  |character |Personal fouls player last name.    |
+#'    |pf_hgt               |character |Pf hgt.                             |
+#'    |pf_wgt               |numeric   |Pf wgt.                             |
+#'    |pf_yr                |character |Pf yr.                              |
+#'    |c_number             |numeric   |C number.                           |
+#'    |c_player_first_name  |character |C player first name.                |
+#'    |c_player_last_name   |character |C player last name.                 |
+#'    |c_hgt                |character |C hgt.                              |
+#'    |c_wgt                |numeric   |C wgt.                              |
+#'    |c_yr                 |character |C yr.                               |
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter

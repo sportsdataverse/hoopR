@@ -107,33 +107,33 @@ nba_leaguedashptstats(
 \value{
 Returns a named list of data frames: LeagueDashPtStats
 
-\strong{LeagueDashPtStats}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   MIN \tab character \cr
-   DRIVES \tab character \cr
-   DRIVE_FGM \tab character \cr
-   DRIVE_FGA \tab character \cr
-   DRIVE_FG_PCT \tab character \cr
-   DRIVE_FTM \tab character \cr
-   DRIVE_FTA \tab character \cr
-   DRIVE_FT_PCT \tab character \cr
-   DRIVE_PTS \tab character \cr
-   DRIVE_PTS_PCT \tab character \cr
-   DRIVE_PASSES \tab character \cr
-   DRIVE_PASSES_PCT \tab character \cr
-   DRIVE_AST \tab character \cr
-   DRIVE_AST_PCT \tab character \cr
-   DRIVE_TOV \tab character \cr
-   DRIVE_TOV_PCT \tab character \cr
-   DRIVE_PF \tab character \cr
-   DRIVE_PF_PCT \tab character \cr
+\strong{LeagueDashPtStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   MIN \tab character \tab Minutes played. \cr
+   DRIVES \tab character \tab  \cr
+   DRIVE_FGM \tab character \tab  \cr
+   DRIVE_FGA \tab character \tab  \cr
+   DRIVE_FG_PCT \tab character \tab  \cr
+   DRIVE_FTM \tab character \tab  \cr
+   DRIVE_FTA \tab character \tab  \cr
+   DRIVE_FT_PCT \tab character \tab  \cr
+   DRIVE_PTS \tab character \tab  \cr
+   DRIVE_PTS_PCT \tab character \tab  \cr
+   DRIVE_PASSES \tab character \tab  \cr
+   DRIVE_PASSES_PCT \tab character \tab  \cr
+   DRIVE_AST \tab character \tab  \cr
+   DRIVE_AST_PCT \tab character \tab  \cr
+   DRIVE_TOV \tab character \tab  \cr
+   DRIVE_TOV_PCT \tab character \tab  \cr
+   DRIVE_PF \tab character \tab  \cr
+   DRIVE_PF_PCT \tab character \tab  \cr
 }
 }
 \description{

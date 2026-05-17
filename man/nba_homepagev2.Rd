@@ -36,83 +36,83 @@ nba_homepagev2(
 Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
 HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 
-\strong{HomePageStat1}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   PTS \tab character \cr
+\strong{HomePageStat1}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{HomePageStat2}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   REB \tab character \cr
+\strong{HomePageStat2}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   REB \tab character \tab Total rebounds. \cr
 }
 
 
-\strong{HomePageStat3}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   AST \tab character \cr
+\strong{HomePageStat3}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   AST \tab character \tab Assists. \cr
 }
 
 
-\strong{HomePageStat4}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   STL \tab character \cr
+\strong{HomePageStat4}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   STL \tab character \tab Steals. \cr
 }
 
 
-\strong{HomePageStat5}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   FG_PCT \tab character \cr
+\strong{HomePageStat5}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 
 
-\strong{HomePageStat6}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   FT_PCT \tab character \cr
+\strong{HomePageStat6}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
 }
 
 
-\strong{HomePageStat7}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   FG3_PCT \tab character \cr
+\strong{HomePageStat7}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }
 
 
-\strong{HomePageStat8}\tabular{ll}{
-   col_name \tab types \cr
-   RANK \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_NAME \tab character \cr
-   BLK \tab character \cr
+\strong{HomePageStat8}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   BLK \tab character \tab Blocks. \cr
 }
 }
 \description{

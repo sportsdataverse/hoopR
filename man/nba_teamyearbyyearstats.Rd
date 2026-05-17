@@ -26,42 +26,42 @@ nba_teamyearbyyearstats(
 \value{
 Return a named list of data frames: TeamStats
 
-\strong{TeamStats}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_CITY \tab character \cr
-   TEAM_NAME \tab character \cr
-   YEAR \tab character \cr
-   GP \tab character \cr
-   WINS \tab character \cr
-   LOSSES \tab character \cr
-   WIN_PCT \tab character \cr
-   CONF_RANK \tab character \cr
-   DIV_RANK \tab character \cr
-   PO_WINS \tab character \cr
-   PO_LOSSES \tab character \cr
-   CONF_COUNT \tab character \cr
-   DIV_COUNT \tab character \cr
-   NBA_FINALS_APPEARANCE \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   PF \tab character \cr
-   STL \tab character \cr
-   TOV \tab character \cr
-   BLK \tab character \cr
-   PTS \tab character \cr
-   PTS_RANK \tab character \cr
+\strong{TeamStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   YEAR \tab character \tab 4-digit year. \cr
+   GP \tab character \tab Games played. \cr
+   WINS \tab character \tab Total wins. \cr
+   LOSSES \tab character \tab Total losses. \cr
+   WIN_PCT \tab character \tab  \cr
+   CONF_RANK \tab character \tab  \cr
+   DIV_RANK \tab character \tab  \cr
+   PO_WINS \tab character \tab  \cr
+   PO_LOSSES \tab character \tab  \cr
+   CONF_COUNT \tab character \tab  \cr
+   DIV_COUNT \tab character \tab  \cr
+   NBA_FINALS_APPEARANCE \tab character \tab  \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   PF \tab character \tab Personal fouls. \cr
+   STL \tab character \tab Steals. \cr
+   TOV \tab character \tab Turnovers. \cr
+   BLK \tab character \tab Blocks. \cr
+   PTS \tab character \tab Points scored. \cr
+   PTS_RANK \tab character \tab  \cr
 }
 }
 \description{

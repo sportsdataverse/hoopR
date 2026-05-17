@@ -12,184 +12,184 @@ espn_nba_game_all(game_id)
 \value{
 A named list of data frames: Plays, Team, Player
 
-\strong{Plays}\tabular{ll}{
-   col_name \tab types \cr
-   id \tab character \cr
-   sequence_number \tab character \cr
-   text \tab character \cr
-   away_score \tab integer \cr
-   home_score \tab integer \cr
-   scoring_play \tab logical \cr
-   score_value \tab integer \cr
-   wallclock \tab character \cr
-   shooting_play \tab logical \cr
-   type_id \tab integer \cr
-   type_text \tab character \cr
-   period_number \tab integer \cr
-   period_display_value \tab character \cr
-   clock_display_value \tab character \cr
-   team_id \tab integer \cr
-   coordinate_x_raw \tab numeric \cr
-   coordinate_y_raw \tab numeric \cr
-   coordinate_x \tab numeric \cr
-   coordinate_y \tab numeric \cr
-   play_id \tab character \cr
-   athlete_id_1 \tab integer \cr
-   athlete_id_2 \tab integer \cr
-   athlete_id_3 \tab integer \cr
-   home_team_id \tab integer \cr
-   home_team_mascot \tab character \cr
-   home_team_name \tab character \cr
-   home_team_abbrev \tab character \cr
-   home_team_logo \tab character \cr
-   home_team_logo_dark \tab character \cr
-   home_team_full_name \tab character \cr
-   home_team_color \tab character \cr
-   home_team_alternate_color \tab character \cr
-   home_team_score \tab integer \cr
-   home_team_winner \tab logical \cr
-   home_team_record \tab character \cr
-   away_team_id \tab integer \cr
-   away_team_mascot \tab character \cr
-   away_team_name \tab character \cr
-   away_team_abbrev \tab character \cr
-   away_team_logo \tab character \cr
-   away_team_logo_dark \tab character \cr
-   away_team_full_name \tab character \cr
-   away_team_color \tab character \cr
-   away_team_alternate_color \tab character \cr
-   away_team_score \tab integer \cr
-   away_team_winner \tab logical \cr
-   away_team_record \tab character \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   game_date \tab Date \cr
-   game_date_time \tab POSIXct \cr
+\strong{Plays}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   id \tab character \tab Id. \cr
+   sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+   text \tab character \tab Text description of the play / record. \cr
+   away_score \tab integer \tab Away team score at the time of the play. \cr
+   home_score \tab integer \tab Home team score at the time of the play. \cr
+   scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+   score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+   wallclock \tab character \tab Wallclock. \cr
+   shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+   type_id \tab integer \tab Type identifier (numeric). \cr
+   type_text \tab character \tab Display text for the type field. \cr
+   period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+   period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+   clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
+   coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
+   coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
+   coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
+   play_id \tab character \tab Unique play identifier within a game. \cr
+   athlete_id_1 \tab integer \tab Primary athlete identifier (e.g. shooter). \cr
+   athlete_id_2 \tab integer \tab Secondary athlete identifier (e.g. assister / fouler). \cr
+   athlete_id_3 \tab integer \tab Athlete id 3. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   home_team_mascot \tab character \tab Home team mascot. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
+   home_team_logo \tab character \tab Home team logo URL. \cr
+   home_team_logo_dark \tab character \tab Home team logo URL for dark backgrounds. \cr
+   home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
+   home_team_color \tab character \tab Home team primary color (hex). \cr
+   home_team_alternate_color \tab character \tab Home team alternate color (hex). \cr
+   home_team_score \tab integer \tab Home team's score. \cr
+   home_team_winner \tab logical \tab TRUE if the home team won this game. \cr
+   home_team_record \tab character \tab Home team's win-loss record. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   away_team_mascot \tab character \tab Away team mascot. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
+   away_team_logo \tab character \tab Away team logo URL. \cr
+   away_team_logo_dark \tab character \tab Away team logo URL for dark backgrounds. \cr
+   away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
+   away_team_color \tab character \tab Away team primary color (hex). \cr
+   away_team_alternate_color \tab character \tab Away team alternate color (hex). \cr
+   away_team_score \tab integer \tab Away team's score. \cr
+   away_team_winner \tab logical \tab TRUE if the away team won this game. \cr
+   away_team_record \tab character \tab Away team's win-loss record. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
 }
 
 
-\strong{Team}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   game_date \tab Date \cr
-   game_date_time \tab POSIXct \cr
-   team_id \tab integer \cr
-   team_uid \tab character \cr
-   team_slug \tab character \cr
-   team_location \tab character \cr
-   team_name \tab character \cr
-   team_abbreviation \tab character \cr
-   team_display_name \tab character \cr
-   team_short_display_name \tab character \cr
-   team_color \tab character \cr
-   team_alternate_color \tab character \cr
-   team_logo \tab character \cr
-   team_home_away \tab character \cr
-   team_score \tab integer \cr
-   team_winner \tab logical \cr
-   assists \tab integer \cr
-   blocks \tab integer \cr
-   defensive_rebounds \tab integer \cr
-   fast_break_points \tab character \cr
-   field_goal_pct \tab numeric \cr
-   field_goals_made \tab integer \cr
-   field_goals_attempted \tab integer \cr
-   flagrant_fouls \tab integer \cr
-   fouls \tab integer \cr
-   free_throw_pct \tab numeric \cr
-   free_throws_made \tab integer \cr
-   free_throws_attempted \tab integer \cr
-   largest_lead \tab character \cr
-   offensive_rebounds \tab integer \cr
-   points_in_paint \tab character \cr
-   steals \tab integer \cr
-   team_turnovers \tab integer \cr
-   technical_fouls \tab integer \cr
-   three_point_field_goal_pct \tab numeric \cr
-   three_point_field_goals_made \tab integer \cr
-   three_point_field_goals_attempted \tab integer \cr
-   total_rebounds \tab integer \cr
-   total_technical_fouls \tab integer \cr
-   total_turnovers \tab integer \cr
-   turnover_points \tab character \cr
-   turnovers \tab integer \cr
-   opponent_team_id \tab integer \cr
-   opponent_team_uid \tab character \cr
-   opponent_team_slug \tab character \cr
-   opponent_team_location \tab character \cr
-   opponent_team_name \tab character \cr
-   opponent_team_abbreviation \tab character \cr
-   opponent_team_display_name \tab character \cr
-   opponent_team_short_display_name \tab character \cr
-   opponent_team_color \tab character \cr
-   opponent_team_alternate_color \tab character \cr
-   opponent_team_logo \tab character \cr
-   opponent_team_score \tab integer \cr
+\strong{Team}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_location \tab character \tab Team city or location string. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   team_display_name \tab character \tab Full team display name. \cr
+   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+   team_logo \tab character \tab Team logo image URL. \cr
+   team_home_away \tab character \tab Team home away. \cr
+   team_score \tab integer \tab Team's score / final score. \cr
+   team_winner \tab logical \tab TRUE if the team won this game. \cr
+   assists \tab integer \tab Total assists. \cr
+   blocks \tab integer \tab Total blocks. \cr
+   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
+   fast_break_points \tab character \tab Fast-break points scored. \cr
+   field_goal_pct \tab numeric \tab Field goal percentage (0-1). \cr
+   field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+   field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+   flagrant_fouls \tab integer \tab Total flagrant fouls. \cr
+   fouls \tab integer \tab Personal fouls. \cr
+   free_throw_pct \tab numeric \tab Free throw percentage (0-1). \cr
+   free_throws_made \tab integer \tab Free throws made. \cr
+   free_throws_attempted \tab integer \tab Free throw attempts. \cr
+   largest_lead \tab character \tab Largest lead during the game. \cr
+   offensive_rebounds \tab integer \tab Offensive rebounds. \cr
+   points_in_paint \tab character \tab Points scored in the paint. \cr
+   steals \tab integer \tab Total steals. \cr
+   team_turnovers \tab integer \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+   technical_fouls \tab integer \tab Total technical fouls. \cr
+   three_point_field_goal_pct \tab numeric \tab Three-point field goal percentage (0-1). \cr
+   three_point_field_goals_made \tab integer \tab Three-point field goals made. \cr
+   three_point_field_goals_attempted \tab integer \tab Three-point field goal attempts. \cr
+   total_rebounds \tab integer \tab Total rebounds. \cr
+   total_technical_fouls \tab integer \tab Total technical fouls (player + team). \cr
+   total_turnovers \tab integer \tab Total turnovers (player + team). \cr
+   turnover_points \tab character \tab Turnover points. \cr
+   turnovers \tab integer \tab Total turnovers. \cr
+   opponent_team_id \tab integer \tab Unique identifier for the opponent team. \cr
+   opponent_team_uid \tab character \tab Opponent team uid. \cr
+   opponent_team_slug \tab character \tab Opponent team slug. \cr
+   opponent_team_location \tab character \tab Opponent team city / location. \cr
+   opponent_team_name \tab character \tab Opponent team display name. \cr
+   opponent_team_abbreviation \tab character \tab Opponent team abbreviation. \cr
+   opponent_team_display_name \tab character \tab Opponent team full display name. \cr
+   opponent_team_short_display_name \tab character \tab Opponent team short display name. \cr
+   opponent_team_color \tab character \tab Opponent team primary color (hex). \cr
+   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
+   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
+   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }
 
 
-\strong{Player}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab integer \cr
-   season \tab integer \cr
-   season_type \tab integer \cr
-   game_date \tab Date \cr
-   game_date_time \tab POSIXct \cr
-   athlete_id \tab integer \cr
-   athlete_display_name \tab character \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_location \tab character \cr
-   team_short_display_name \tab character \cr
-   minutes \tab numeric \cr
-   field_goals_made \tab integer \cr
-   field_goals_attempted \tab integer \cr
-   three_point_field_goals_made \tab integer \cr
-   three_point_field_goals_attempted \tab integer \cr
-   free_throws_made \tab integer \cr
-   free_throws_attempted \tab integer \cr
-   offensive_rebounds \tab integer \cr
-   defensive_rebounds \tab integer \cr
-   rebounds \tab integer \cr
-   assists \tab integer \cr
-   steals \tab integer \cr
-   blocks \tab integer \cr
-   turnovers \tab integer \cr
-   fouls \tab integer \cr
-   plus_minus \tab character \cr
-   points \tab integer \cr
-   starter \tab logical \cr
-   ejected \tab logical \cr
-   did_not_play \tab logical \cr
-   reason \tab character \cr
-   active \tab logical \cr
-   athlete_jersey \tab character \cr
-   athlete_short_name \tab character \cr
-   athlete_headshot_href \tab character \cr
-   athlete_position_name \tab character \cr
-   athlete_position_abbreviation \tab character \cr
-   team_display_name \tab character \cr
-   team_uid \tab character \cr
-   team_slug \tab character \cr
-   team_logo \tab character \cr
-   team_abbreviation \tab character \cr
-   team_color \tab character \cr
-   team_alternate_color \tab character \cr
-   home_away \tab character \cr
-   team_winner \tab logical \cr
-   team_score \tab integer \cr
-   opponent_team_id \tab integer \cr
-   opponent_team_name \tab character \cr
-   opponent_team_location \tab character \cr
-   opponent_team_display_name \tab character \cr
-   opponent_team_abbreviation \tab character \cr
-   opponent_team_logo \tab character \cr
-   opponent_team_color \tab character \cr
-   opponent_team_alternate_color \tab character \cr
-   opponent_team_score \tab integer \cr
+\strong{Player}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
+   athlete_display_name \tab character \tab Athlete display name (full). \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_location \tab character \tab Team city or location string. \cr
+   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+   minutes \tab numeric \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+   field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+   three_point_field_goals_made \tab integer \tab Three-point field goals made. \cr
+   three_point_field_goals_attempted \tab integer \tab Three-point field goal attempts. \cr
+   free_throws_made \tab integer \tab Free throws made. \cr
+   free_throws_attempted \tab integer \tab Free throw attempts. \cr
+   offensive_rebounds \tab integer \tab Offensive rebounds. \cr
+   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
+   rebounds \tab integer \tab Total rebounds. \cr
+   assists \tab integer \tab Total assists. \cr
+   steals \tab integer \tab Total steals. \cr
+   blocks \tab integer \tab Total blocks. \cr
+   turnovers \tab integer \tab Total turnovers. \cr
+   fouls \tab integer \tab Personal fouls. \cr
+   plus_minus \tab character \tab Plus/minus point differential while on court. \cr
+   points \tab integer \tab Points scored. \cr
+   starter \tab logical \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
+   ejected \tab logical \tab TRUE if the player was ejected from the game. \cr
+   did_not_play \tab logical \tab TRUE if the player did not appear in the game. \cr
+   reason \tab character \tab Reason. \cr
+   active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
+   athlete_jersey \tab character \tab Athlete jersey number. \cr
+   athlete_short_name \tab character \tab Athlete short display name. \cr
+   athlete_headshot_href \tab character \tab Athlete headshot image URL. \cr
+   athlete_position_name \tab character \tab Athlete position ('Guard', 'Forward', 'Center'). \cr
+   athlete_position_abbreviation \tab character \tab Athlete position abbreviation (G / F / C). \cr
+   team_display_name \tab character \tab Full team display name. \cr
+   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_logo \tab character \tab Team logo image URL. \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+   home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+   team_winner \tab logical \tab TRUE if the team won this game. \cr
+   team_score \tab integer \tab Team's score / final score. \cr
+   opponent_team_id \tab integer \tab Unique identifier for the opponent team. \cr
+   opponent_team_name \tab character \tab Opponent team display name. \cr
+   opponent_team_location \tab character \tab Opponent team city / location. \cr
+   opponent_team_display_name \tab character \tab Opponent team full display name. \cr
+   opponent_team_abbreviation \tab character \tab Opponent team abbreviation. \cr
+   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
+   opponent_team_color \tab character \tab Opponent team primary color (hex). \cr
+   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
+   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }
 }
 \description{

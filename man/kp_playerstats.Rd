@@ -32,16 +32,16 @@ Only available if specific conference is defined. Only available for season afte
 \item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
 \value{
-Returns a tibble of player stats\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab character \cr
-   player \tab character \cr
-   team \tab character \cr
-   e_fg \tab character \cr
-   hgt \tab character \cr
-   wgt \tab character \cr
-   yr \tab character \cr
-   year \tab numeric \cr
+Returns a tibble of player stats\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab character \tab Rk. \cr
+   player \tab character \tab Player. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   e_fg \tab character \tab E fg. \cr
+   hgt \tab character \tab Hgt. \cr
+   wgt \tab character \tab Wgt. \cr
+   yr \tab character \tab Yr. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

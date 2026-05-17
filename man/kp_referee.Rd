@@ -12,19 +12,19 @@ kp_referee(referee, year)
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with the following columns:\tabular{ll}{
-   col_name \tab types \cr
-   game_number \tab integer \cr
-   date \tab character \cr
-   time_et \tab character \cr
-   game \tab character \cr
-   location \tab character \cr
-   venue \tab character \cr
-   conference \tab character \cr
-   thrill_score \tab numeric \cr
-   referee_name \tab character \cr
-   ref_rank \tab numeric \cr
-   year \tab numeric \cr
+A data frame with the following columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_number \tab integer \tab Game number. \cr
+   date \tab character \tab Date in YYYY-MM-DD format. \cr
+   time_et \tab character \tab Time et. \cr
+   game \tab character \tab Game. \cr
+   location \tab character \tab Location. \cr
+   venue \tab character \tab Venue name. \cr
+   conference \tab character \tab Conference. \cr
+   thrill_score \tab numeric \tab Thrill score. \cr
+   referee_name \tab character \tab Referee name. \cr
+   ref_rank \tab numeric \tab League/season rank for ref. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

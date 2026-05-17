@@ -14,32 +14,32 @@ NULL
 #'
 #'    **Standings**
 #'
-#'    |col_name             |types     |
-#'    |:--------------------|:---------|
-#'    |LeagueID             |character |
-#'    |SeasonID             |character |
-#'    |TeamID               |character |
-#'    |TeamCity             |character |
-#'    |TeamName             |character |
-#'    |TeamSlug             |character |
-#'    |Conference           |character |
-#'    |ConferenceRecord     |character |
-#'    |PlayoffRank          |character |
-#'    |Division             |character |
-#'    |WINS                 |character |
-#'    |LOSSES               |character |
-#'    |WinPCT               |character |
-#'    |LeagueRank           |character |
-#'    |Record               |character |
-#'    |HOME                 |character |
-#'    |ROAD                 |character |
-#'    |CurrentStreak        |character |
-#'    |strCurrentStreak     |character |
-#'    |ConferenceGamesBack  |character |
-#'    |DivisionGamesBack    |character |
-#'    |LeagueGamesBack      |character |
-#'    |ClinchedPostSeason   |character |
-#'    |NEUTRAL              |character |
+#'    |col_name            |types     |description                  |
+#'    |:-------------------|:---------|:----------------------------|
+#'    |LeagueID            |character |                             |
+#'    |SeasonID            |character |                             |
+#'    |TeamID              |character |Teamid.                      |
+#'    |TeamCity            |character |Teamcity.                    |
+#'    |TeamName            |character |Teamname.                    |
+#'    |TeamSlug            |character |                             |
+#'    |Conference          |character |Conference.                  |
+#'    |ConferenceRecord    |character |                             |
+#'    |PlayoffRank         |character |                             |
+#'    |Division            |character |Team division.               |
+#'    |WINS                |character |Total wins.                  |
+#'    |LOSSES              |character |Total losses.                |
+#'    |WinPCT              |character |                             |
+#'    |LeagueRank          |character |                             |
+#'    |Record              |character |Record string (e.g. '12-4'). |
+#'    |HOME                |character |Home.                        |
+#'    |ROAD                |character |Road.                        |
+#'    |CurrentStreak       |character |                             |
+#'    |strCurrentStreak    |character |                             |
+#'    |ConferenceGamesBack |character |                             |
+#'    |DivisionGamesBack   |character |                             |
+#'    |LeagueGamesBack     |character |                             |
+#'    |ClinchedPostSeason  |character |                             |
+#'    |NEUTRAL             |character |                             |
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange

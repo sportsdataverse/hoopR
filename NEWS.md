@@ -165,6 +165,63 @@
 - Updated ESPN test expectations for current API responses.
 - Updated NBAGL tests to validate NBA Stats-backed return shapes (`nbagl_players()` and `nbagl_standings()` named-list returns, and current schedule/PBP core columns).
 
+### **@return documentation: descriptions added to every roxygen table**
+
+* Every `@return` markdown table across the 39 R source files is
+  upgraded from two columns (`col_name | types`) to three columns
+  (`col_name | types | description`). 6,039 total table rows touched;
+  every result set on every function now ships a per-column
+  description in `?<function>` help, the pkgdown reference, and the
+  rendered man pages.
+* Description content comes from four sources in precedence order:
+  (1) `tools/docs/column_descriptions_curated.csv` — 619 hand-authored
+  entries covering high-traffic columns and basketball / ESPN
+  conventions;
+  (2) `tools/docs/column_descriptions_api.csv` — 188 ESPN-authored
+  descriptions mined live from endpoints that self-document their
+  columns. The miner probes 14 endpoints per league across both
+  NBA and `mens-college-basketball`, covering 9 endpoint families:
+  core-v2 athlete statistics (per-season, post-season, career),
+  core-v2 team statistics, core-v2 statisticslog, core-v2 leaders,
+  web-v3 athlete stats / splits / gamelog / overview, and web-v3
+  statistics/byathlete leaderboards. Three response shapes are
+  recognized: nested categories with stats objects, parallel arrays
+  under categories, and top-level parallel-array shapes (splits /
+  gamelog).
+  (3) mined `\item{...}{...}` lines from existing `\describe{}` blocks;
+  (4) heuristic patterns driven by column-name suffixes (`*_id`,
+  `*_pct`, `*_made`, `*_attempted`, `*_per_36`, etc.) with
+  basketball-friendly noun substitution.
+* Frequency-weighted coverage: **58.4% of the 6,039 @return table
+  rows now carry a hand-quality description** (curated + ESPN-API +
+  mined). The remaining 41.6% are heuristic-fallback rows; the
+  heuristic generator's snake_case expansion + suffix rules cover
+  most of those acceptably, and the long tail is dominated by
+  single-occurrence columns from low-traffic endpoints.
+* New tooling under `tools/docs/` (`.Rbuildignore`'d via the existing
+  `^tools$` rule):
+    - `build_column_descriptions.R` — one-shot builder.
+    - `column_descriptions_curated.csv` — hand-edit surface.
+    - `column_descriptions_api.csv` — ESPN-API-mined, regenerated
+      by `tools/docs/mine_api_descriptions.R`.
+    - `column_descriptions.csv` — generated dictionary (1,956 rows;
+      619 curated, 168 ESPN-API, 5 mined, 0 parameter-overlap, 1,164
+      heuristic).
+    - `mine_api_descriptions.R` — driver that probes the ESPN
+      endpoints which self-document their stat columns. Run with
+      `Rscript tools/docs/mine_api_descriptions.R`.
+    - `audit_column_descriptions.R` — coverage / leverage diagnostic.
+    - `markdown_man_table_helper.R` — programmatic helpers
+      (`load_column_descriptions()`, `make_return_table_md()`,
+      `roxygenize_return()`, `augment_return_tables_in_file()`,
+      `augment_all_r_files()`, `mine_espn_api_descriptions(url)`).
+    - `espn_endpoints_catalog.md` — copy of the
+      [sejaldua/espn-api](https://github.com/sejaldua/espn-api)
+      endpoint catalog used to scope the miner.
+* The sweep is idempotent and offline (no API calls needed for the
+  augmentation itself; existing `|col_name|types|` tables in each
+  `@return` block are the parse input).
+
 # **hoopR 2.1.0**
 * ```load_nba_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL
 * ```load_mbb_*()``` functions now use `sportsdataverse-data` releases url instead of `hoopR-data` repository URL

@@ -14,121 +14,121 @@ kp_team_player_stats(team, year = 2021)
 \value{
 Returns a list of named data frames: all_games, conference_games
 
-\strong{all_games}\tabular{ll}{
-   col_name \tab types \cr
-   role \tab character \cr
-   number \tab numeric \cr
-   player \tab character \cr
-   ht \tab character \cr
-   wt \tab numeric \cr
-   yr \tab character \cr
-   g \tab numeric \cr
-   min_pct \tab numeric \cr
-   o_rtg \tab numeric \cr
-   poss_pct \tab numeric \cr
-   shots_pct \tab numeric \cr
-   e_fg_pct \tab numeric \cr
-   ts_pct \tab numeric \cr
-   or_pct \tab numeric \cr
-   dr_pct \tab numeric \cr
-   a_rate \tab numeric \cr
-   to_rate \tab numeric \cr
-   blk_pct \tab numeric \cr
-   stl_pct \tab numeric \cr
-   f_cper40 \tab numeric \cr
-   f_dper40 \tab numeric \cr
-   ft_rate \tab numeric \cr
-   ftm \tab numeric \cr
-   fta \tab numeric \cr
-   ft_pct \tab numeric \cr
-   fgm_2 \tab numeric \cr
-   fga_2 \tab numeric \cr
-   fg_2_pct \tab numeric \cr
-   fgm_3 \tab numeric \cr
-   fga_3 \tab numeric \cr
-   fg_3_pct \tab numeric \cr
-   category \tab character \cr
-   min_pct_rk \tab numeric \cr
-   o_rtg_rk \tab numeric \cr
-   poss_pct_rk \tab numeric \cr
-   shots_pct_rk \tab numeric \cr
-   e_fg_pct_rk \tab numeric \cr
-   ts_pct_rk \tab numeric \cr
-   or_pct_rk \tab numeric \cr
-   dr_pct_rk \tab numeric \cr
-   a_rate_rk \tab numeric \cr
-   to_rate_rk \tab numeric \cr
-   blk_pct_rk \tab numeric \cr
-   stl_pct_rk \tab numeric \cr
-   f_cper40_rk \tab numeric \cr
-   f_dper40_rk \tab numeric \cr
-   ft_rate_rk \tab numeric \cr
-   ft_pct_rk \tab numeric \cr
-   fg_2_pct_rk \tab numeric \cr
-   fg_3_pct_rk \tab numeric \cr
-   group_rank \tab character \cr
-   team \tab character \cr
-   year \tab numeric \cr
-   player_id \tab numeric \cr
+\strong{all_games}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   role \tab character \tab Role. \cr
+   number \tab numeric \tab Number. \cr
+   player \tab character \tab Player. \cr
+   ht \tab character \tab Ht. \cr
+   wt \tab numeric \tab Wt. \cr
+   yr \tab character \tab Yr. \cr
+   g \tab numeric \tab Games played. \cr
+   min_pct \tab numeric \tab Min percentage (0-1 decimal). \cr
+   o_rtg \tab numeric \tab O rtg. \cr
+   poss_pct \tab numeric \tab Poss percentage (0-1 decimal). \cr
+   shots_pct \tab numeric \tab Shots percentage (0-1 decimal). \cr
+   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+   ts_pct \tab numeric \tab True shooting percentage (0-1). \cr
+   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+   dr_pct \tab numeric \tab Dr percentage (0-1 decimal). \cr
+   a_rate \tab numeric \tab A rate. \cr
+   to_rate \tab numeric \tab To rate. \cr
+   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+   f_cper40 \tab numeric \tab F cper40. \cr
+   f_dper40 \tab numeric \tab F dper40. \cr
+   ft_rate \tab numeric \tab Ft rate. \cr
+   ftm \tab numeric \tab Free throws made. \cr
+   fta \tab numeric \tab Free throw attempts. \cr
+   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+   fgm_2 \tab numeric \tab Fgm 2. \cr
+   fga_2 \tab numeric \tab Fga 2. \cr
+   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+   fgm_3 \tab numeric \tab Fgm 3. \cr
+   fga_3 \tab numeric \tab Fga 3. \cr
+   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+   category \tab character \tab Category label. \cr
+   min_pct_rk \tab numeric \tab Min pct rk. \cr
+   o_rtg_rk \tab numeric \tab O rtg rk. \cr
+   poss_pct_rk \tab numeric \tab Poss pct rk. \cr
+   shots_pct_rk \tab numeric \tab Shots pct rk. \cr
+   e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
+   ts_pct_rk \tab numeric \tab Ts pct rk. \cr
+   or_pct_rk \tab numeric \tab Or pct rk. \cr
+   dr_pct_rk \tab numeric \tab Dr pct rk. \cr
+   a_rate_rk \tab numeric \tab A rate rk. \cr
+   to_rate_rk \tab numeric \tab To rate rk. \cr
+   blk_pct_rk \tab numeric \tab Blk pct rk. \cr
+   stl_pct_rk \tab numeric \tab Stl pct rk. \cr
+   f_cper40_rk \tab numeric \tab F cper40 rk. \cr
+   f_dper40_rk \tab numeric \tab F dper40 rk. \cr
+   ft_rate_rk \tab numeric \tab Ft rate rk. \cr
+   ft_pct_rk \tab numeric \tab Ft pct rk. \cr
+   fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
+   fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
+   group_rank \tab character \tab League/season rank for group. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   player_id \tab numeric \tab Unique player identifier. \cr
 }
 
 
-\strong{conference_games}\tabular{ll}{
-   col_name \tab types \cr
-   role \tab character \cr
-   number \tab numeric \cr
-   player \tab character \cr
-   ht \tab character \cr
-   wt \tab numeric \cr
-   yr \tab character \cr
-   g \tab numeric \cr
-   min_pct \tab numeric \cr
-   o_rtg \tab numeric \cr
-   poss_pct \tab numeric \cr
-   shots_pct \tab numeric \cr
-   e_fg_pct \tab numeric \cr
-   ts_pct \tab numeric \cr
-   or_pct \tab numeric \cr
-   dr_pct \tab numeric \cr
-   a_rate \tab numeric \cr
-   to_rate \tab numeric \cr
-   blk_pct \tab numeric \cr
-   stl_pct \tab numeric \cr
-   f_cper40 \tab numeric \cr
-   f_dper40 \tab numeric \cr
-   ft_rate \tab numeric \cr
-   ftm \tab numeric \cr
-   fta \tab numeric \cr
-   ft_pct \tab numeric \cr
-   fgm_2 \tab numeric \cr
-   fga_2 \tab numeric \cr
-   fg_2_pct \tab numeric \cr
-   fgm_3 \tab numeric \cr
-   fga_3 \tab numeric \cr
-   fg_3_pct \tab numeric \cr
-   category \tab character \cr
-   min_pct_rk \tab numeric \cr
-   o_rtg_rk \tab numeric \cr
-   poss_pct_rk \tab numeric \cr
-   shots_pct_rk \tab numeric \cr
-   e_fg_pct_rk \tab numeric \cr
-   ts_pct_rk \tab numeric \cr
-   or_pct_rk \tab numeric \cr
-   dr_pct_rk \tab numeric \cr
-   a_rate_rk \tab numeric \cr
-   to_rate_rk \tab numeric \cr
-   blk_pct_rk \tab numeric \cr
-   stl_pct_rk \tab numeric \cr
-   f_cper40_rk \tab numeric \cr
-   f_dper40_rk \tab numeric \cr
-   ft_rate_rk \tab numeric \cr
-   ft_pct_rk \tab numeric \cr
-   fg_2_pct_rk \tab numeric \cr
-   fg_3_pct_rk \tab numeric \cr
-   group_rank \tab character \cr
-   team \tab character \cr
-   year \tab numeric \cr
-   player_id \tab numeric \cr
+\strong{conference_games}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   role \tab character \tab Role. \cr
+   number \tab numeric \tab Number. \cr
+   player \tab character \tab Player. \cr
+   ht \tab character \tab Ht. \cr
+   wt \tab numeric \tab Wt. \cr
+   yr \tab character \tab Yr. \cr
+   g \tab numeric \tab Games played. \cr
+   min_pct \tab numeric \tab Min percentage (0-1 decimal). \cr
+   o_rtg \tab numeric \tab O rtg. \cr
+   poss_pct \tab numeric \tab Poss percentage (0-1 decimal). \cr
+   shots_pct \tab numeric \tab Shots percentage (0-1 decimal). \cr
+   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+   ts_pct \tab numeric \tab True shooting percentage (0-1). \cr
+   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+   dr_pct \tab numeric \tab Dr percentage (0-1 decimal). \cr
+   a_rate \tab numeric \tab A rate. \cr
+   to_rate \tab numeric \tab To rate. \cr
+   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+   f_cper40 \tab numeric \tab F cper40. \cr
+   f_dper40 \tab numeric \tab F dper40. \cr
+   ft_rate \tab numeric \tab Ft rate. \cr
+   ftm \tab numeric \tab Free throws made. \cr
+   fta \tab numeric \tab Free throw attempts. \cr
+   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+   fgm_2 \tab numeric \tab Fgm 2. \cr
+   fga_2 \tab numeric \tab Fga 2. \cr
+   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+   fgm_3 \tab numeric \tab Fgm 3. \cr
+   fga_3 \tab numeric \tab Fga 3. \cr
+   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+   category \tab character \tab Category label. \cr
+   min_pct_rk \tab numeric \tab Min pct rk. \cr
+   o_rtg_rk \tab numeric \tab O rtg rk. \cr
+   poss_pct_rk \tab numeric \tab Poss pct rk. \cr
+   shots_pct_rk \tab numeric \tab Shots pct rk. \cr
+   e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
+   ts_pct_rk \tab numeric \tab Ts pct rk. \cr
+   or_pct_rk \tab numeric \tab Or pct rk. \cr
+   dr_pct_rk \tab numeric \tab Dr pct rk. \cr
+   a_rate_rk \tab numeric \tab A rate rk. \cr
+   to_rate_rk \tab numeric \tab To rate rk. \cr
+   blk_pct_rk \tab numeric \tab Blk pct rk. \cr
+   stl_pct_rk \tab numeric \tab Stl pct rk. \cr
+   f_cper40_rk \tab numeric \tab F cper40 rk. \cr
+   f_dper40_rk \tab numeric \tab F dper40 rk. \cr
+   ft_rate_rk \tab numeric \tab Ft rate rk. \cr
+   ft_pct_rk \tab numeric \tab Ft pct rk. \cr
+   fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
+   fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
+   group_rank \tab character \tab League/season rank for group. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   year \tab numeric \tab 4-digit year. \cr
+   player_id \tab numeric \tab Unique player identifier. \cr
 }
 }
 \description{

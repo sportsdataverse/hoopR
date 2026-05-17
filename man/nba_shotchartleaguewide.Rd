@@ -20,15 +20,15 @@ nba_shotchartleaguewide(
 \value{
 Return a named list of data frames: League_Wide
 
-\strong{League_Wide}\tabular{ll}{
-   col_name \tab types \cr
-   GRID_TYPE \tab character \cr
-   SHOT_ZONE_BASIC \tab character \cr
-   SHOT_ZONE_AREA \tab character \cr
-   SHOT_ZONE_RANGE \tab character \cr
-   FGA \tab character \cr
-   FGM \tab character \cr
-   FG_PCT \tab character \cr
+\strong{League_Wide}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GRID_TYPE \tab character \tab  \cr
+   SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
+   SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
+   SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 }
 \description{

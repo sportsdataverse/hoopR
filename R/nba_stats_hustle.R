@@ -37,36 +37,36 @@ NULL
 #'    **HustleStatsPlayer**
 #'
 #'
-#'    |col_name                      |types     |
-#'    |:-----------------------------|:---------|
-#'    |PLAYER_ID                     |character |
-#'    |PLAYER_NAME                   |character |
-#'    |TEAM_ID                       |character |
-#'    |TEAM_ABBREVIATION             |character |
-#'    |AGE                           |character |
-#'    |G                             |character |
-#'    |MIN                           |character |
-#'    |CONTESTED_SHOTS               |character |
-#'    |CONTESTED_SHOTS_2PT           |character |
-#'    |CONTESTED_SHOTS_3PT           |character |
-#'    |DEFLECTIONS                   |character |
-#'    |CHARGES_DRAWN                 |character |
-#'    |SCREEN_ASSISTS                |character |
-#'    |SCREEN_AST_PTS                |character |
-#'    |OFF_LOOSE_BALLS_RECOVERED     |character |
-#'    |DEF_LOOSE_BALLS_RECOVERED     |character |
-#'    |LOOSE_BALLS_RECOVERED         |character |
-#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |
-#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |
-#'    |OFF_BOXOUTS                   |character |
-#'    |DEF_BOXOUTS                   |character |
-#'    |BOX_OUT_PLAYER_TEAM_REBS      |character |
-#'    |BOX_OUT_PLAYER_REBS           |character |
-#'    |BOX_OUTS                      |character |
-#'    |PCT_BOX_OUTS_OFF              |character |
-#'    |PCT_BOX_OUTS_DEF              |character |
-#'    |PCT_BOX_OUTS_TEAM_REB         |character |
-#'    |PCT_BOX_OUTS_REB              |character |
+#'    |col_name                      |types     |description                             |
+#'    |:-----------------------------|:---------|:---------------------------------------|
+#'    |PLAYER_ID                     |character |Unique player identifier.               |
+#'    |PLAYER_NAME                   |character |Player name.                            |
+#'    |TEAM_ID                       |character |Unique team identifier.                 |
+#'    |TEAM_ABBREVIATION             |character |Short team abbreviation (e.g. 'LAS').   |
+#'    |AGE                           |character |Player age (in years).                  |
+#'    |G                             |character |Games played.                           |
+#'    |MIN                           |character |Minutes played.                         |
+#'    |CONTESTED_SHOTS               |character |Defensively contested shots.            |
+#'    |CONTESTED_SHOTS_2PT           |character |Contested two-point shots.              |
+#'    |CONTESTED_SHOTS_3PT           |character |Contested three-point shots.            |
+#'    |DEFLECTIONS                   |character |Defensive deflections.                  |
+#'    |CHARGES_DRAWN                 |character |Charges drawn.                          |
+#'    |SCREEN_ASSISTS                |character |Screen assists (resulting in a basket). |
+#'    |SCREEN_AST_PTS                |character |                                        |
+#'    |OFF_LOOSE_BALLS_RECOVERED     |character |                                        |
+#'    |DEF_LOOSE_BALLS_RECOVERED     |character |                                        |
+#'    |LOOSE_BALLS_RECOVERED         |character |Loose balls recovered.                  |
+#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |                                        |
+#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |                                        |
+#'    |OFF_BOXOUTS                   |character |                                        |
+#'    |DEF_BOXOUTS                   |character |                                        |
+#'    |BOX_OUT_PLAYER_TEAM_REBS      |character |                                        |
+#'    |BOX_OUT_PLAYER_REBS           |character |                                        |
+#'    |BOX_OUTS                      |character |Box-outs executed.                      |
+#'    |PCT_BOX_OUTS_OFF              |character |                                        |
+#'    |PCT_BOX_OUTS_DEF              |character |                                        |
+#'    |PCT_BOX_OUTS_TEAM_REB         |character |                                        |
+#'    |PCT_BOX_OUTS_REB              |character |                                        |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -208,80 +208,80 @@ NULL
 #'    **PlayerContestedShotsLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |AGE               |character |
-#'    |RANK              |character |
-#'    |CONTESTED_SHOTS   |character |
+#'    |col_name          |types     |description                           |
+#'    |:-----------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.             |
+#'    |PLAYER_NAME       |character |Player name.                          |
+#'    |TEAM_ID           |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |AGE               |character |Player age (in years).                |
+#'    |RANK              |character |Rank.                                 |
+#'    |CONTESTED_SHOTS   |character |Defensively contested shots.          |
 #'
 #'    **PlayerChargesDrawnLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |AGE               |character |
-#'    |RANK              |character |
-#'    |CHARGES_DRAWN     |character |
+#'    |col_name          |types     |description                           |
+#'    |:-----------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.             |
+#'    |PLAYER_NAME       |character |Player name.                          |
+#'    |TEAM_ID           |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |AGE               |character |Player age (in years).                |
+#'    |RANK              |character |Rank.                                 |
+#'    |CHARGES_DRAWN     |character |Charges drawn.                        |
 #'
 #'    **PlayerDeflectionsLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |AGE               |character |
-#'    |RANK              |character |
-#'    |DEFLECTIONS       |character |
+#'    |col_name          |types     |description                           |
+#'    |:-----------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.             |
+#'    |PLAYER_NAME       |character |Player name.                          |
+#'    |TEAM_ID           |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |AGE               |character |Player age (in years).                |
+#'    |RANK              |character |Rank.                                 |
+#'    |DEFLECTIONS       |character |Defensive deflections.                |
 #'
 #'    **PlayerLooseBallLeaders**
 #'
 #'
-#'    |col_name              |types     |
-#'    |:---------------------|:---------|
-#'    |PLAYER_ID             |character |
-#'    |PLAYER_NAME           |character |
-#'    |TEAM_ID               |character |
-#'    |TEAM_ABBREVIATION     |character |
-#'    |AGE                   |character |
-#'    |RANK                  |character |
-#'    |LOOSE_BALLS_RECOVERED |character |
+#'    |col_name              |types     |description                           |
+#'    |:---------------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID             |character |Unique player identifier.             |
+#'    |PLAYER_NAME           |character |Player name.                          |
+#'    |TEAM_ID               |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION     |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |AGE                   |character |Player age (in years).                |
+#'    |RANK                  |character |Rank.                                 |
+#'    |LOOSE_BALLS_RECOVERED |character |Loose balls recovered.                |
 #'
 #'    **PlayerScreenAssistLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |AGE               |character |
-#'    |RANK              |character |
-#'    |SCREEN_ASSISTS    |character |
+#'    |col_name          |types     |description                             |
+#'    |:-----------------|:---------|:---------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.               |
+#'    |PLAYER_NAME       |character |Player name.                            |
+#'    |TEAM_ID           |character |Unique team identifier.                 |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').   |
+#'    |AGE               |character |Player age (in years).                  |
+#'    |RANK              |character |Rank.                                   |
+#'    |SCREEN_ASSISTS    |character |Screen assists (resulting in a basket). |
 #'
 #'    **Table5**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |PLAYER_ID         |character |
-#'    |PLAYER_NAME       |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |AGE               |character |
-#'    |RANK              |character |
-#'    |BOX_OUTS          |character |
+#'    |col_name          |types     |description                           |
+#'    |:-----------------|:---------|:-------------------------------------|
+#'    |PLAYER_ID         |character |Unique player identifier.             |
+#'    |PLAYER_NAME       |character |Player name.                          |
+#'    |TEAM_ID           |character |Unique team identifier.               |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
+#'    |AGE               |character |Player age (in years).                |
+#'    |RANK              |character |Rank.                                 |
+#'    |BOX_OUTS          |character |Box-outs executed.                    |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -418,28 +418,28 @@ NULL
 #'    **HustleStatsTeam**
 #'
 #'
-#'    |col_name                      |types     |
-#'    |:-----------------------------|:---------|
-#'    |TEAM_ID                       |character |
-#'    |TEAM_NAME                     |character |
-#'    |MIN                           |character |
-#'    |CONTESTED_SHOTS               |character |
-#'    |CONTESTED_SHOTS_2PT           |character |
-#'    |CONTESTED_SHOTS_3PT           |character |
-#'    |DEFLECTIONS                   |character |
-#'    |CHARGES_DRAWN                 |character |
-#'    |SCREEN_ASSISTS                |character |
-#'    |SCREEN_AST_PTS                |character |
-#'    |OFF_LOOSE_BALLS_RECOVERED     |character |
-#'    |DEF_LOOSE_BALLS_RECOVERED     |character |
-#'    |LOOSE_BALLS_RECOVERED         |character |
-#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |
-#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |
-#'    |OFF_BOXOUTS                   |character |
-#'    |DEF_BOXOUTS                   |character |
-#'    |BOX_OUTS                      |character |
-#'    |PCT_BOX_OUTS_OFF              |character |
-#'    |PCT_BOX_OUTS_DEF              |character |
+#'    |col_name                      |types     |description                                     |
+#'    |:-----------------------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID                       |character |Unique team identifier.                         |
+#'    |TEAM_NAME                     |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |MIN                           |character |Minutes played.                                 |
+#'    |CONTESTED_SHOTS               |character |Defensively contested shots.                    |
+#'    |CONTESTED_SHOTS_2PT           |character |Contested two-point shots.                      |
+#'    |CONTESTED_SHOTS_3PT           |character |Contested three-point shots.                    |
+#'    |DEFLECTIONS                   |character |Defensive deflections.                          |
+#'    |CHARGES_DRAWN                 |character |Charges drawn.                                  |
+#'    |SCREEN_ASSISTS                |character |Screen assists (resulting in a basket).         |
+#'    |SCREEN_AST_PTS                |character |                                                |
+#'    |OFF_LOOSE_BALLS_RECOVERED     |character |                                                |
+#'    |DEF_LOOSE_BALLS_RECOVERED     |character |                                                |
+#'    |LOOSE_BALLS_RECOVERED         |character |Loose balls recovered.                          |
+#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |                                                |
+#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |                                                |
+#'    |OFF_BOXOUTS                   |character |                                                |
+#'    |DEF_BOXOUTS                   |character |                                                |
+#'    |BOX_OUTS                      |character |Box-outs executed.                              |
+#'    |PCT_BOX_OUTS_OFF              |character |                                                |
+#'    |PCT_BOX_OUTS_DEF              |character |                                                |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -576,79 +576,79 @@ NULL
 #'    **TeamContestedShotsLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |CONTESTED_SHOTS   |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |CONTESTED_SHOTS   |character |Defensively contested shots.                    |
 #'
 #'    **TeamChargesDrawnLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |CHARGES_DRAWN     |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |CHARGES_DRAWN     |character |Charges drawn.                                  |
 #'
 #'    **TeamDeflectionsLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |DEFLECTIONS       |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |DEFLECTIONS       |character |Defensive deflections.                          |
 #'
 #'    **TeamLooseBallLeaders**
 #'
 #'
-#'    |col_name              |types     |
-#'    |:---------------------|:---------|
-#'    |TEAM_ID               |character |
-#'    |TEAM_NAME             |character |
-#'    |TEAM_ABBREVIATION     |character |
-#'    |RANK                  |character |
-#'    |LOOSE_BALLS_RECOVERED |character |
+#'    |col_name              |types     |description                                     |
+#'    |:---------------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID               |character |Unique team identifier.                         |
+#'    |TEAM_NAME             |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION     |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK                  |character |Rank.                                           |
+#'    |LOOSE_BALLS_RECOVERED |character |Loose balls recovered.                          |
 #'
 #'    **TeamScreenAssistLeaders**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |SCREEN_ASSISTS    |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |SCREEN_ASSISTS    |character |Screen assists (resulting in a basket).         |
 #'
 #'    **Table5**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |BOX_OUTS          |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |BOX_OUTS          |character |Box-outs executed.                              |
 #'
 #'    **Table6**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |TEAM_NAME         |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |RANK              |character |
-#'    |BOX_OUTS          |character |
+#'    |col_name          |types     |description                                     |
+#'    |:-----------------|:---------|:-----------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                         |
+#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'    |RANK              |character |Rank.                                           |
+#'    |BOX_OUTS          |character |Box-outs executed.                              |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

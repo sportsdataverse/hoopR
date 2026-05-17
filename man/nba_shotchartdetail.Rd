@@ -77,44 +77,44 @@ nba_shotchartdetail(
 \value{
 Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 
-\strong{Shot_Chart_Detail}\tabular{ll}{
-   col_name \tab types \cr
-   GRID_TYPE \tab character \cr
-   GAME_ID \tab character \cr
-   GAME_EVENT_ID \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   PERIOD \tab character \cr
-   MINUTES_REMAINING \tab character \cr
-   SECONDS_REMAINING \tab character \cr
-   EVENT_TYPE \tab character \cr
-   ACTION_TYPE \tab character \cr
-   SHOT_TYPE \tab character \cr
-   SHOT_ZONE_BASIC \tab character \cr
-   SHOT_ZONE_AREA \tab character \cr
-   SHOT_ZONE_RANGE \tab character \cr
-   SHOT_DISTANCE \tab character \cr
-   LOC_X \tab character \cr
-   LOC_Y \tab character \cr
-   SHOT_ATTEMPTED_FLAG \tab character \cr
-   SHOT_MADE_FLAG \tab character \cr
-   GAME_DATE \tab character \cr
-   HTM \tab character \cr
-   VTM \tab character \cr
+\strong{Shot_Chart_Detail}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GRID_TYPE \tab character \tab  \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_EVENT_ID \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   MINUTES_REMAINING \tab character \tab  \cr
+   SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
+   EVENT_TYPE \tab character \tab Event / play type code (V2 PBP). \cr
+   ACTION_TYPE \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+   SHOT_TYPE \tab character \tab Shot type label (e.g. 'Jump Shot', 'Layup'). \cr
+   SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
+   SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
+   SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
+   SHOT_DISTANCE \tab character \tab Shot distance from the basket, in feet. \cr
+   LOC_X \tab character \tab X coordinate on the court (units of inches; 0 = basket center). \cr
+   LOC_Y \tab character \tab Y coordinate on the court (units of inches; baseline at 0). \cr
+   SHOT_ATTEMPTED_FLAG \tab character \tab 1 if a shot was attempted on this event. \cr
+   SHOT_MADE_FLAG \tab character \tab 1 if the shot was made; 0 if missed. \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   HTM \tab character \tab  \cr
+   VTM \tab character \tab  \cr
 }
 
 
-\strong{LeagueAverages}\tabular{ll}{
-   col_name \tab types \cr
-   GRID_TYPE \tab character \cr
-   SHOT_ZONE_BASIC \tab character \cr
-   SHOT_ZONE_AREA \tab character \cr
-   SHOT_ZONE_RANGE \tab character \cr
-   FGA \tab character \cr
-   FGM \tab character \cr
-   FG_PCT \tab character \cr
+\strong{LeagueAverages}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GRID_TYPE \tab character \tab  \cr
+   SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
+   SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
+   SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }
 }
 \description{

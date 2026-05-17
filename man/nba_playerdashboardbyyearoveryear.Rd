@@ -83,143 +83,143 @@ nba_playerdashboardbyyearoveryear(
 \value{
 Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboard
 
-\strong{OverallPlayerDashboard}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   GROUP_VALUE \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   MAX_GAME_DATE \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   W_PCT \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
-   NBA_FANTASY_PTS \tab character \cr
-   DD2 \tab character \cr
-   TD3 \tab character \cr
-   WNBA_FANTASY_PTS \tab character \cr
-   GP_RANK \tab character \cr
-   W_RANK \tab character \cr
-   L_RANK \tab character \cr
-   W_PCT_RANK \tab character \cr
-   MIN_RANK \tab character \cr
-   FGM_RANK \tab character \cr
-   FGA_RANK \tab character \cr
-   FG_PCT_RANK \tab character \cr
-   FG3M_RANK \tab character \cr
-   FG3A_RANK \tab character \cr
-   FG3_PCT_RANK \tab character \cr
-   FTM_RANK \tab character \cr
-   FTA_RANK \tab character \cr
-   FT_PCT_RANK \tab character \cr
-   OREB_RANK \tab character \cr
-   DREB_RANK \tab character \cr
-   REB_RANK \tab character \cr
-   AST_RANK \tab character \cr
-   TOV_RANK \tab character \cr
-   STL_RANK \tab character \cr
-   BLK_RANK \tab character \cr
-   BLKA_RANK \tab character \cr
-   PF_RANK \tab character \cr
-   PFD_RANK \tab character \cr
-   PTS_RANK \tab character \cr
-   PLUS_MINUS_RANK \tab character \cr
-   NBA_FANTASY_PTS_RANK \tab character \cr
-   DD2_RANK \tab character \cr
-   TD3_RANK \tab character \cr
-   WNBA_FANTASY_PTS_RANK \tab character \cr
+\strong{OverallPlayerDashboard}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   MAX_GAME_DATE \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   W_PCT \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+   NBA_FANTASY_PTS \tab character \tab  \cr
+   DD2 \tab character \tab  \cr
+   TD3 \tab character \tab  \cr
+   WNBA_FANTASY_PTS \tab character \tab  \cr
+   GP_RANK \tab character \tab  \cr
+   W_RANK \tab character \tab  \cr
+   L_RANK \tab character \tab  \cr
+   W_PCT_RANK \tab character \tab  \cr
+   MIN_RANK \tab character \tab  \cr
+   FGM_RANK \tab character \tab  \cr
+   FGA_RANK \tab character \tab  \cr
+   FG_PCT_RANK \tab character \tab  \cr
+   FG3M_RANK \tab character \tab  \cr
+   FG3A_RANK \tab character \tab  \cr
+   FG3_PCT_RANK \tab character \tab  \cr
+   FTM_RANK \tab character \tab  \cr
+   FTA_RANK \tab character \tab  \cr
+   FT_PCT_RANK \tab character \tab  \cr
+   OREB_RANK \tab character \tab  \cr
+   DREB_RANK \tab character \tab  \cr
+   REB_RANK \tab character \tab  \cr
+   AST_RANK \tab character \tab  \cr
+   TOV_RANK \tab character \tab  \cr
+   STL_RANK \tab character \tab  \cr
+   BLK_RANK \tab character \tab  \cr
+   BLKA_RANK \tab character \tab  \cr
+   PF_RANK \tab character \tab  \cr
+   PFD_RANK \tab character \tab  \cr
+   PTS_RANK \tab character \tab  \cr
+   PLUS_MINUS_RANK \tab character \tab  \cr
+   NBA_FANTASY_PTS_RANK \tab character \tab  \cr
+   DD2_RANK \tab character \tab  \cr
+   TD3_RANK \tab character \tab  \cr
+   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }
 
 
-\strong{ByYearPlayerDashboard}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_SET \tab character \cr
-   GROUP_VALUE \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   MAX_GAME_DATE \tab character \cr
-   GP \tab character \cr
-   W \tab character \cr
-   L \tab character \cr
-   W_PCT \tab character \cr
-   MIN \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   TOV \tab character \cr
-   STL \tab character \cr
-   BLK \tab character \cr
-   BLKA \tab character \cr
-   PF \tab character \cr
-   PFD \tab character \cr
-   PTS \tab character \cr
-   PLUS_MINUS \tab character \cr
-   NBA_FANTASY_PTS \tab character \cr
-   DD2 \tab character \cr
-   TD3 \tab character \cr
-   WNBA_FANTASY_PTS \tab character \cr
-   GP_RANK \tab character \cr
-   W_RANK \tab character \cr
-   L_RANK \tab character \cr
-   W_PCT_RANK \tab character \cr
-   MIN_RANK \tab character \cr
-   FGM_RANK \tab character \cr
-   FGA_RANK \tab character \cr
-   FG_PCT_RANK \tab character \cr
-   FG3M_RANK \tab character \cr
-   FG3A_RANK \tab character \cr
-   FG3_PCT_RANK \tab character \cr
-   FTM_RANK \tab character \cr
-   FTA_RANK \tab character \cr
-   FT_PCT_RANK \tab character \cr
-   OREB_RANK \tab character \cr
-   DREB_RANK \tab character \cr
-   REB_RANK \tab character \cr
-   AST_RANK \tab character \cr
-   TOV_RANK \tab character \cr
-   STL_RANK \tab character \cr
-   BLK_RANK \tab character \cr
-   BLKA_RANK \tab character \cr
-   PF_RANK \tab character \cr
-   PFD_RANK \tab character \cr
-   PTS_RANK \tab character \cr
-   PLUS_MINUS_RANK \tab character \cr
-   NBA_FANTASY_PTS_RANK \tab character \cr
-   DD2_RANK \tab character \cr
-   TD3_RANK \tab character \cr
-   WNBA_FANTASY_PTS_RANK \tab character \cr
+\strong{ByYearPlayerDashboard}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_SET \tab character \tab  \cr
+   GROUP_VALUE \tab character \tab  \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   MAX_GAME_DATE \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   W \tab character \tab Wins. \cr
+   L \tab character \tab Losses. \cr
+   W_PCT \tab character \tab  \cr
+   MIN \tab character \tab Minutes played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   TOV \tab character \tab Turnovers. \cr
+   STL \tab character \tab Steals. \cr
+   BLK \tab character \tab Blocks. \cr
+   BLKA \tab character \tab  \cr
+   PF \tab character \tab Personal fouls. \cr
+   PFD \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+   NBA_FANTASY_PTS \tab character \tab  \cr
+   DD2 \tab character \tab  \cr
+   TD3 \tab character \tab  \cr
+   WNBA_FANTASY_PTS \tab character \tab  \cr
+   GP_RANK \tab character \tab  \cr
+   W_RANK \tab character \tab  \cr
+   L_RANK \tab character \tab  \cr
+   W_PCT_RANK \tab character \tab  \cr
+   MIN_RANK \tab character \tab  \cr
+   FGM_RANK \tab character \tab  \cr
+   FGA_RANK \tab character \tab  \cr
+   FG_PCT_RANK \tab character \tab  \cr
+   FG3M_RANK \tab character \tab  \cr
+   FG3A_RANK \tab character \tab  \cr
+   FG3_PCT_RANK \tab character \tab  \cr
+   FTM_RANK \tab character \tab  \cr
+   FTA_RANK \tab character \tab  \cr
+   FT_PCT_RANK \tab character \tab  \cr
+   OREB_RANK \tab character \tab  \cr
+   DREB_RANK \tab character \tab  \cr
+   REB_RANK \tab character \tab  \cr
+   AST_RANK \tab character \tab  \cr
+   TOV_RANK \tab character \tab  \cr
+   STL_RANK \tab character \tab  \cr
+   BLK_RANK \tab character \tab  \cr
+   BLKA_RANK \tab character \tab  \cr
+   PF_RANK \tab character \tab  \cr
+   PFD_RANK \tab character \tab  \cr
+   PTS_RANK \tab character \tab  \cr
+   PLUS_MINUS_RANK \tab character \tab  \cr
+   NBA_FANTASY_PTS_RANK \tab character \tab  \cr
+   DD2_RANK \tab character \tab  \cr
+   TD3_RANK \tab character \tab  \cr
+   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }
 }
 \description{

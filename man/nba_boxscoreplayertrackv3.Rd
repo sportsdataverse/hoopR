@@ -33,153 +33,153 @@ nba_boxscoreplayertrackv3(
 Returns a named list of data frames: home_team_player_player_track, away_team_player_player_track,
 home_team_totals_player_track, away_team_totals_player_track
 
-\strong{home_team_player_player_track}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   speed \tab numeric \cr
-   distance \tab numeric \cr
-   rebound_chances_offensive \tab integer \cr
-   rebound_chances_defensive \tab integer \cr
-   rebound_chances_total \tab integer \cr
-   touches \tab integer \cr
-   secondary_assists \tab integer \cr
-   free_throw_assists \tab integer \cr
-   passes \tab integer \cr
-   assists \tab integer \cr
-   contested_field_goals_made \tab integer \cr
-   contested_field_goals_attempted \tab integer \cr
-   contested_field_goal_percentage \tab numeric \cr
-   uncontested_field_goals_made \tab integer \cr
-   uncontested_field_goals_attempted \tab integer \cr
-   uncontested_field_goals_percentage \tab numeric \cr
-   field_goal_percentage \tab numeric \cr
-   defended_at_rim_field_goals_made \tab integer \cr
-   defended_at_rim_field_goals_attempted \tab integer \cr
-   defended_at_rim_field_goal_percentage \tab numeric \cr
+\strong{home_team_player_player_track}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   speed \tab numeric \tab Speed. \cr
+   distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+   rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+   rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+   rebound_chances_total \tab integer \tab Rebound chances total. \cr
+   touches \tab integer \tab Touches. \cr
+   secondary_assists \tab integer \tab Secondary assists. \cr
+   free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+   passes \tab integer \tab Passes. \cr
+   assists \tab integer \tab Total assists. \cr
+   contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+   contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+   contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+   uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+   uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+   uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+   field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+   defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }
 
 
-\strong{away_team_player_player_track}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   speed \tab numeric \cr
-   distance \tab numeric \cr
-   rebound_chances_offensive \tab integer \cr
-   rebound_chances_defensive \tab integer \cr
-   rebound_chances_total \tab integer \cr
-   touches \tab integer \cr
-   secondary_assists \tab integer \cr
-   free_throw_assists \tab integer \cr
-   passes \tab integer \cr
-   assists \tab integer \cr
-   contested_field_goals_made \tab integer \cr
-   contested_field_goals_attempted \tab integer \cr
-   contested_field_goal_percentage \tab numeric \cr
-   uncontested_field_goals_made \tab integer \cr
-   uncontested_field_goals_attempted \tab integer \cr
-   uncontested_field_goals_percentage \tab numeric \cr
-   field_goal_percentage \tab numeric \cr
-   defended_at_rim_field_goals_made \tab integer \cr
-   defended_at_rim_field_goals_attempted \tab integer \cr
-   defended_at_rim_field_goal_percentage \tab numeric \cr
+\strong{away_team_player_player_track}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   speed \tab numeric \tab Speed. \cr
+   distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+   rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+   rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+   rebound_chances_total \tab integer \tab Rebound chances total. \cr
+   touches \tab integer \tab Touches. \cr
+   secondary_assists \tab integer \tab Secondary assists. \cr
+   free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+   passes \tab integer \tab Passes. \cr
+   assists \tab integer \tab Total assists. \cr
+   contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+   contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+   contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+   uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+   uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+   uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+   field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+   defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }
 
 
-\strong{home_team_totals_player_track}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   distance \tab numeric \cr
-   rebound_chances_offensive \tab integer \cr
-   rebound_chances_defensive \tab integer \cr
-   rebound_chances_total \tab integer \cr
-   touches \tab integer \cr
-   secondary_assists \tab integer \cr
-   free_throw_assists \tab integer \cr
-   passes \tab integer \cr
-   assists \tab integer \cr
-   contested_field_goals_made \tab integer \cr
-   contested_field_goals_attempted \tab integer \cr
-   contested_field_goal_percentage \tab numeric \cr
-   uncontested_field_goals_made \tab integer \cr
-   uncontested_field_goals_attempted \tab integer \cr
-   uncontested_field_goals_percentage \tab numeric \cr
-   field_goal_percentage \tab numeric \cr
-   defended_at_rim_field_goals_made \tab integer \cr
-   defended_at_rim_field_goals_attempted \tab integer \cr
-   defended_at_rim_field_goal_percentage \tab numeric \cr
+\strong{home_team_totals_player_track}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+   rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+   rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+   rebound_chances_total \tab integer \tab Rebound chances total. \cr
+   touches \tab integer \tab Touches. \cr
+   secondary_assists \tab integer \tab Secondary assists. \cr
+   free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+   passes \tab integer \tab Passes. \cr
+   assists \tab integer \tab Total assists. \cr
+   contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+   contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+   contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+   uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+   uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+   uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+   field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+   defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }
 
 
-\strong{away_team_totals_player_track}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   distance \tab numeric \cr
-   rebound_chances_offensive \tab integer \cr
-   rebound_chances_defensive \tab integer \cr
-   rebound_chances_total \tab integer \cr
-   touches \tab integer \cr
-   secondary_assists \tab integer \cr
-   free_throw_assists \tab integer \cr
-   passes \tab integer \cr
-   assists \tab integer \cr
-   contested_field_goals_made \tab integer \cr
-   contested_field_goals_attempted \tab integer \cr
-   contested_field_goal_percentage \tab numeric \cr
-   uncontested_field_goals_made \tab integer \cr
-   uncontested_field_goals_attempted \tab integer \cr
-   uncontested_field_goals_percentage \tab numeric \cr
-   field_goal_percentage \tab numeric \cr
-   defended_at_rim_field_goals_made \tab integer \cr
-   defended_at_rim_field_goals_attempted \tab integer \cr
-   defended_at_rim_field_goal_percentage \tab numeric \cr
+\strong{away_team_totals_player_track}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+   rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+   rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+   rebound_chances_total \tab integer \tab Rebound chances total. \cr
+   touches \tab integer \tab Touches. \cr
+   secondary_assists \tab integer \tab Secondary assists. \cr
+   free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+   passes \tab integer \tab Passes. \cr
+   assists \tab integer \tab Total assists. \cr
+   contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+   contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+   contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+   uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+   uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+   uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+   field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+   defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }
 }
 \description{

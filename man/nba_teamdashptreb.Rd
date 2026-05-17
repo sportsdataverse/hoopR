@@ -66,112 +66,112 @@ nba_teamdashptreb(
 Return a named list of data frames: NumContestedRebounding, OverallRebounding,
 RebDistanceRebounding, ShotDistanceRebounding, ShotTypeRebounding
 
-\strong{OverallRebounding}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   G \tab character \cr
-   OVERALL \tab character \cr
-   REB_FREQUENCY \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   C_OREB \tab character \cr
-   C_DREB \tab character \cr
-   C_REB \tab character \cr
-   C_REB_PCT \tab character \cr
-   UC_OREB \tab character \cr
-   UC_DREB \tab character \cr
-   UC_REB \tab character \cr
-   UC_REB_PCT \tab character \cr
+\strong{OverallRebounding}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   G \tab character \tab Games played. \cr
+   OVERALL \tab character \tab Overall. \cr
+   REB_FREQUENCY \tab character \tab  \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   C_OREB \tab character \tab  \cr
+   C_DREB \tab character \tab  \cr
+   C_REB \tab character \tab  \cr
+   C_REB_PCT \tab character \tab  \cr
+   UC_OREB \tab character \tab  \cr
+   UC_DREB \tab character \tab  \cr
+   UC_REB \tab character \tab  \cr
+   UC_REB_PCT \tab character \tab  \cr
 }
 
 
-\strong{ShotTypeRebounding}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   SORT_ORDER \tab character \cr
-   G \tab character \cr
-   SHOT_TYPE_RANGE \tab character \cr
-   REB_FREQUENCY \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   C_OREB \tab character \cr
-   C_DREB \tab character \cr
-   C_REB \tab character \cr
-   C_REB_PCT \tab character \cr
-   UC_OREB \tab character \cr
-   UC_DREB \tab character \cr
-   UC_REB \tab character \cr
-   UC_REB_PCT \tab character \cr
+\strong{ShotTypeRebounding}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SORT_ORDER \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   SHOT_TYPE_RANGE \tab character \tab  \cr
+   REB_FREQUENCY \tab character \tab  \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   C_OREB \tab character \tab  \cr
+   C_DREB \tab character \tab  \cr
+   C_REB \tab character \tab  \cr
+   C_REB_PCT \tab character \tab  \cr
+   UC_OREB \tab character \tab  \cr
+   UC_DREB \tab character \tab  \cr
+   UC_REB \tab character \tab  \cr
+   UC_REB_PCT \tab character \tab  \cr
 }
 
 
-\strong{NumContestedRebounding}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   SORT_ORDER \tab character \cr
-   G \tab character \cr
-   REB_NUM_CONTESTING_RANGE \tab character \cr
-   REB_FREQUENCY \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   C_OREB \tab character \cr
-   C_DREB \tab character \cr
-   C_REB \tab character \cr
-   C_REB_PCT \tab character \cr
-   UC_OREB \tab character \cr
-   UC_DREB \tab character \cr
-   UC_REB \tab character \cr
-   UC_REB_PCT \tab character \cr
+\strong{NumContestedRebounding}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SORT_ORDER \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   REB_NUM_CONTESTING_RANGE \tab character \tab  \cr
+   REB_FREQUENCY \tab character \tab  \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   C_OREB \tab character \tab  \cr
+   C_DREB \tab character \tab  \cr
+   C_REB \tab character \tab  \cr
+   C_REB_PCT \tab character \tab  \cr
+   UC_OREB \tab character \tab  \cr
+   UC_DREB \tab character \tab  \cr
+   UC_REB \tab character \tab  \cr
+   UC_REB_PCT \tab character \tab  \cr
 }
 
 
-\strong{ShotDistanceRebounding}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   SORT_ORDER \tab character \cr
-   G \tab character \cr
-   SHOT_DIST_RANGE \tab character \cr
-   REB_FREQUENCY \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   C_OREB \tab character \cr
-   C_DREB \tab character \cr
-   C_REB \tab character \cr
-   C_REB_PCT \tab character \cr
-   UC_OREB \tab character \cr
-   UC_DREB \tab character \cr
-   UC_REB \tab character \cr
-   UC_REB_PCT \tab character \cr
+\strong{ShotDistanceRebounding}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SORT_ORDER \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   SHOT_DIST_RANGE \tab character \tab  \cr
+   REB_FREQUENCY \tab character \tab  \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   C_OREB \tab character \tab  \cr
+   C_DREB \tab character \tab  \cr
+   C_REB \tab character \tab  \cr
+   C_REB_PCT \tab character \tab  \cr
+   UC_OREB \tab character \tab  \cr
+   UC_DREB \tab character \tab  \cr
+   UC_REB \tab character \tab  \cr
+   UC_REB_PCT \tab character \tab  \cr
 }
 
 
-\strong{RebDistanceRebounding}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   SORT_ORDER \tab character \cr
-   G \tab character \cr
-   REB_DIST_RANGE \tab character \cr
-   REB_FREQUENCY \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   C_OREB \tab character \cr
-   C_DREB \tab character \cr
-   C_REB \tab character \cr
-   C_REB_PCT \tab character \cr
-   UC_OREB \tab character \cr
-   UC_DREB \tab character \cr
-   UC_REB \tab character \cr
-   UC_REB_PCT \tab character \cr
+\strong{RebDistanceRebounding}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SORT_ORDER \tab character \tab  \cr
+   G \tab character \tab Games played. \cr
+   REB_DIST_RANGE \tab character \tab  \cr
+   REB_FREQUENCY \tab character \tab  \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   C_OREB \tab character \tab  \cr
+   C_DREB \tab character \tab  \cr
+   C_REB \tab character \tab  \cr
+   C_REB_PCT \tab character \tab  \cr
+   UC_OREB \tab character \tab  \cr
+   UC_DREB \tab character \tab  \cr
+   UC_REB \tab character \tab  \cr
+   UC_REB_PCT \tab character \tab  \cr
 }
 }
 \description{

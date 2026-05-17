@@ -16,79 +16,79 @@ Return a named list of data frames: TeamAwardsChampionships,
 TeamAwardsConf, TeamAwardsDiv, TeamBackground,
 TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 
-\strong{TeamBackground}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   ABBREVIATION \tab character \cr
-   NICKNAME \tab character \cr
-   YEARFOUNDED \tab character \cr
-   CITY \tab character \cr
-   ARENA \tab character \cr
-   ARENACAPACITY \tab character \cr
-   OWNER \tab character \cr
-   GENERALMANAGER \tab character \cr
-   HEADCOACH \tab character \cr
-   DLEAGUEAFFILIATION \tab character \cr
+\strong{TeamBackground}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   ABBREVIATION \tab character \tab Short abbreviation. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   YEARFOUNDED \tab character \tab  \cr
+   CITY \tab character \tab City. \cr
+   ARENA \tab character \tab Arena. \cr
+   ARENACAPACITY \tab character \tab  \cr
+   OWNER \tab character \tab  \cr
+   GENERALMANAGER \tab character \tab  \cr
+   HEADCOACH \tab character \tab  \cr
+   DLEAGUEAFFILIATION \tab character \tab  \cr
 }
 
 
-\strong{TeamHistory}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_ID \tab character \cr
-   CITY \tab character \cr
-   NICKNAME \tab character \cr
-   YEARFOUNDED \tab character \cr
-   YEARACTIVETILL \tab character \cr
+\strong{TeamHistory}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   CITY \tab character \tab City. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   YEARFOUNDED \tab character \tab  \cr
+   YEARACTIVETILL \tab character \tab  \cr
 }
 
 
-\strong{TeamSocialSites}\tabular{ll}{
-   col_name \tab types \cr
-   ACCOUNTTYPE \tab character \cr
-   WEBSITE_LINK \tab character \cr
+\strong{TeamSocialSites}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   ACCOUNTTYPE \tab character \tab  \cr
+   WEBSITE_LINK \tab character \tab  \cr
 }
 
 
-\strong{TeamAwardsChampionships}\tabular{ll}{
-   col_name \tab types \cr
-   YEARAWARDED \tab character \cr
-   OPPOSITETEAM \tab character \cr
+\strong{TeamAwardsChampionships}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   YEARAWARDED \tab character \tab  \cr
+   OPPOSITETEAM \tab character \tab  \cr
 }
 
 
-\strong{TeamAwardsConf}\tabular{ll}{
-   col_name \tab types \cr
-   YEARAWARDED \tab integer \cr
-   OPPOSITETEAM \tab integer \cr
+\strong{TeamAwardsConf}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   YEARAWARDED \tab integer \tab  \cr
+   OPPOSITETEAM \tab integer \tab  \cr
 }
 
 
-\strong{TeamAwardsDiv}\tabular{ll}{
-   col_name \tab types \cr
-   YEARAWARDED \tab integer \cr
-   OPPOSITETEAM \tab integer \cr
+\strong{TeamAwardsDiv}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   YEARAWARDED \tab integer \tab  \cr
+   OPPOSITETEAM \tab integer \tab  \cr
 }
 
 
-\strong{TeamHof}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYERID \tab character \cr
-   PLAYER \tab character \cr
-   POSITION \tab character \cr
-   JERSEY \tab character \cr
-   SEASONSWITHTEAM \tab character \cr
-   YEAR \tab character \cr
+\strong{TeamHof}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYERID \tab character \tab Playerid. \cr
+   PLAYER \tab character \tab Player. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   JERSEY \tab character \tab Jersey number worn by the player. \cr
+   SEASONSWITHTEAM \tab character \tab  \cr
+   YEAR \tab character \tab 4-digit year. \cr
 }
 
 
-\strong{TeamRetired}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYERID \tab character \cr
-   PLAYER \tab character \cr
-   POSITION \tab character \cr
-   JERSEY \tab character \cr
-   SEASONSWITHTEAM \tab character \cr
-   YEAR \tab character \cr
+\strong{TeamRetired}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYERID \tab character \tab Playerid. \cr
+   PLAYER \tab character \tab Player. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   JERSEY \tab character \tab Jersey number worn by the player. \cr
+   SEASONSWITHTEAM \tab character \tab  \cr
+   YEAR \tab character \tab 4-digit year. \cr
 }
 }
 \description{

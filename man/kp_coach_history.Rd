@@ -10,65 +10,65 @@ kp_coach_history(coach)
 \item{coach}{Coach filter to select.}
 }
 \value{
-A data frame with 30 columns:\tabular{ll}{
-   col_name \tab types \cr
-   year \tab numeric \cr
-   team_rk \tab numeric \cr
-   team \tab character \cr
-   coach \tab character \cr
-   conf \tab character \cr
-   adj_t \tab character \cr
-   adj_o \tab character \cr
-   adj_d \tab character \cr
-   off_e_fg_pct \tab character \cr
-   off_to_pct \tab character \cr
-   off_or_pct \tab character \cr
-   off_ft_rate \tab character \cr
-   off_fg_2_pct \tab character \cr
-   off_fg_3_pct \tab character \cr
-   off_ft_pct \tab character \cr
-   off_fg_3a_pct \tab character \cr
-   off_a_pct \tab character \cr
-   off_apl \tab character \cr
-   def_e_fg_pct \tab character \cr
-   def_to_pct \tab character \cr
-   def_or_pct \tab character \cr
-   def_ft_rate \tab character \cr
-   def_fg_2_pct \tab character \cr
-   def_fg_3_pct \tab character \cr
-   def_blk_pct \tab character \cr
-   def_fg_3a_pct \tab character \cr
-   def_a_pct \tab character \cr
-   def_apl \tab character \cr
-   foul2partic_pct \tab character \cr
-   wl \tab character \cr
-   wl_conf \tab character \cr
-   adj_t_rk \tab numeric \cr
-   adj_o_rk \tab numeric \cr
-   adj_d_rk \tab numeric \cr
-   off_e_fg_pct_rk \tab numeric \cr
-   off_to_pct_rk \tab numeric \cr
-   off_or_pct_rk \tab numeric \cr
-   off_ft_rate_rk \tab numeric \cr
-   off_fg_2_pct_rk \tab numeric \cr
-   off_fg_3_pct_rk \tab numeric \cr
-   off_ft_pct_rk \tab numeric \cr
-   off_fg_3a_pct_rk \tab numeric \cr
-   off_a_pct_rk \tab numeric \cr
-   off_apl_rk \tab numeric \cr
-   def_e_fg_pct_rk \tab numeric \cr
-   def_to_pct_rk \tab numeric \cr
-   def_or_pct_rk \tab numeric \cr
-   def_ft_rate_rk \tab numeric \cr
-   def_fg_2_pct_rk \tab numeric \cr
-   def_fg_3_pct_rk \tab numeric \cr
-   def_blk_pct_rk \tab numeric \cr
-   def_fg_3a_pct_rk \tab numeric \cr
-   def_a_pct_rk \tab numeric \cr
-   def_apl_rk \tab numeric \cr
-   foul2partic_pct_rk \tab numeric \cr
-   team_finish \tab character \cr
-   ncaa_seed \tab numeric \cr
+A data frame with 30 columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   year \tab numeric \tab 4-digit year. \cr
+   team_rk \tab numeric \tab Team rk. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   coach \tab character \tab Coach. \cr
+   conf \tab character \tab character. \cr
+   adj_t \tab character \tab Adj t. \cr
+   adj_o \tab character \tab Adj o. \cr
+   adj_d \tab character \tab Adj d. \cr
+   off_e_fg_pct \tab character \tab Off e field goals percentage (0-1 decimal). \cr
+   off_to_pct \tab character \tab Off to percentage (0-1 decimal). \cr
+   off_or_pct \tab character \tab Off or percentage (0-1 decimal). \cr
+   off_ft_rate \tab character \tab Off ft rate. \cr
+   off_fg_2_pct \tab character \tab Off field goals 2 percentage (0-1 decimal). \cr
+   off_fg_3_pct \tab character \tab Off field goals 3 percentage (0-1 decimal). \cr
+   off_ft_pct \tab character \tab Off free throws percentage (0-1 decimal). \cr
+   off_fg_3a_pct \tab character \tab Off field goals 3a percentage (0-1 decimal). \cr
+   off_a_pct \tab character \tab Off a percentage (0-1 decimal). \cr
+   off_apl \tab character \tab Off apl. \cr
+   def_e_fg_pct \tab character \tab Def e field goals percentage (0-1 decimal). \cr
+   def_to_pct \tab character \tab Def to percentage (0-1 decimal). \cr
+   def_or_pct \tab character \tab Def or percentage (0-1 decimal). \cr
+   def_ft_rate \tab character \tab Def ft rate. \cr
+   def_fg_2_pct \tab character \tab Def field goals 2 percentage (0-1 decimal). \cr
+   def_fg_3_pct \tab character \tab Def field goals 3 percentage (0-1 decimal). \cr
+   def_blk_pct \tab character \tab Def blocks percentage (0-1 decimal). \cr
+   def_fg_3a_pct \tab character \tab Def field goals 3a percentage (0-1 decimal). \cr
+   def_a_pct \tab character \tab Def a percentage (0-1 decimal). \cr
+   def_apl \tab character \tab Def apl. \cr
+   foul2partic_pct \tab character \tab Foul2partic percentage (0-1 decimal). \cr
+   wl \tab character \tab Wl. \cr
+   wl_conf \tab character \tab Wl conf. \cr
+   adj_t_rk \tab numeric \tab Adj t rk. \cr
+   adj_o_rk \tab numeric \tab Adj o rk. \cr
+   adj_d_rk \tab numeric \tab Adj d rk. \cr
+   off_e_fg_pct_rk \tab numeric \tab Off e fg pct rk. \cr
+   off_to_pct_rk \tab numeric \tab Off to pct rk. \cr
+   off_or_pct_rk \tab numeric \tab Off or pct rk. \cr
+   off_ft_rate_rk \tab numeric \tab Off ft rate rk. \cr
+   off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+   off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+   off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+   off_fg_3a_pct_rk \tab numeric \tab Off fg 3a pct rk. \cr
+   off_a_pct_rk \tab numeric \tab Off a pct rk. \cr
+   off_apl_rk \tab numeric \tab Off apl rk. \cr
+   def_e_fg_pct_rk \tab numeric \tab Def e fg pct rk. \cr
+   def_to_pct_rk \tab numeric \tab Def to pct rk. \cr
+   def_or_pct_rk \tab numeric \tab Def or pct rk. \cr
+   def_ft_rate_rk \tab numeric \tab Def ft rate rk. \cr
+   def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+   def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+   def_blk_pct_rk \tab numeric \tab Def blk pct rk. \cr
+   def_fg_3a_pct_rk \tab numeric \tab Def fg 3a pct rk. \cr
+   def_a_pct_rk \tab numeric \tab Def a pct rk. \cr
+   def_apl_rk \tab numeric \tab Def apl rk. \cr
+   foul2partic_pct_rk \tab numeric \tab Foul2partic pct rk. \cr
+   team_finish \tab character \tab Team finish. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
 }
 }
 \description{

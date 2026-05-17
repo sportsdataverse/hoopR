@@ -32,65 +32,65 @@ nba_boxscoreusagev2(
 \value{
 Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 
-\strong{sqlPlayersUsage}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   NICKNAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MIN \tab character \cr
-   USG_PCT \tab character \cr
-   PCT_FGM \tab character \cr
-   PCT_FGA \tab character \cr
-   PCT_FG3M \tab character \cr
-   PCT_FG3A \tab character \cr
-   PCT_FTM \tab character \cr
-   PCT_FTA \tab character \cr
-   PCT_OREB \tab character \cr
-   PCT_DREB \tab character \cr
-   PCT_REB \tab character \cr
-   PCT_AST \tab character \cr
-   PCT_TOV \tab character \cr
-   PCT_STL \tab character \cr
-   PCT_BLK \tab character \cr
-   PCT_BLKA \tab character \cr
-   PCT_PF \tab character \cr
-   PCT_PFD \tab character \cr
-   PCT_PTS \tab character \cr
+\strong{sqlPlayersUsage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   USG_PCT \tab character \tab Usage percentage (0-1). \cr
+   PCT_FGM \tab character \tab  \cr
+   PCT_FGA \tab character \tab  \cr
+   PCT_FG3M \tab character \tab  \cr
+   PCT_FG3A \tab character \tab  \cr
+   PCT_FTM \tab character \tab  \cr
+   PCT_FTA \tab character \tab  \cr
+   PCT_OREB \tab character \tab  \cr
+   PCT_DREB \tab character \tab  \cr
+   PCT_REB \tab character \tab  \cr
+   PCT_AST \tab character \tab  \cr
+   PCT_TOV \tab character \tab  \cr
+   PCT_STL \tab character \tab  \cr
+   PCT_BLK \tab character \tab  \cr
+   PCT_BLKA \tab character \tab  \cr
+   PCT_PF \tab character \tab  \cr
+   PCT_PFD \tab character \tab  \cr
+   PCT_PTS \tab character \tab  \cr
 }
 
 
-\strong{sqlTeamsUsage}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MIN \tab character \cr
-   USG_PCT \tab character \cr
-   PCT_FGM \tab character \cr
-   PCT_FGA \tab character \cr
-   PCT_FG3M \tab character \cr
-   PCT_FG3A \tab character \cr
-   PCT_FTM \tab character \cr
-   PCT_FTA \tab character \cr
-   PCT_OREB \tab character \cr
-   PCT_DREB \tab character \cr
-   PCT_REB \tab character \cr
-   PCT_AST \tab character \cr
-   PCT_TOV \tab character \cr
-   PCT_STL \tab character \cr
-   PCT_BLK \tab character \cr
-   PCT_BLKA \tab character \cr
-   PCT_PF \tab character \cr
-   PCT_PFD \tab character \cr
-   PCT_PTS \tab character \cr
+\strong{sqlTeamsUsage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   USG_PCT \tab character \tab Usage percentage (0-1). \cr
+   PCT_FGM \tab character \tab  \cr
+   PCT_FGA \tab character \tab  \cr
+   PCT_FG3M \tab character \tab  \cr
+   PCT_FG3A \tab character \tab  \cr
+   PCT_FTM \tab character \tab  \cr
+   PCT_FTA \tab character \tab  \cr
+   PCT_OREB \tab character \tab  \cr
+   PCT_DREB \tab character \tab  \cr
+   PCT_REB \tab character \tab  \cr
+   PCT_AST \tab character \tab  \cr
+   PCT_TOV \tab character \tab  \cr
+   PCT_STL \tab character \tab  \cr
+   PCT_BLK \tab character \tab  \cr
+   PCT_BLKA \tab character \tab  \cr
+   PCT_PF \tab character \tab  \cr
+   PCT_PFD \tab character \tab  \cr
+   PCT_PTS \tab character \tab  \cr
 }
 }
 \description{

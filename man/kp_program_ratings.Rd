@@ -7,25 +7,25 @@
 kp_program_ratings()
 }
 \value{
-A data frame with 17 columns:\tabular{ll}{
-   col_name \tab types \cr
-   rk \tab numeric \cr
-   team \tab character \cr
-   conf \tab character \cr
-   rtg \tab numeric \cr
-   best_rk \tab numeric \cr
-   best_yr \tab numeric \cr
-   worst_rk \tab numeric \cr
-   worst_yr \tab numeric \cr
-   kp_median \tab numeric \cr
-   top10 \tab numeric \cr
-   top25 \tab numeric \cr
-   top50 \tab numeric \cr
-   ch \tab numeric \cr
-   f4 \tab numeric \cr
-   s16 \tab numeric \cr
-   r1 \tab numeric \cr
-   chg \tab numeric \cr
+A data frame with 17 columns:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   rk \tab numeric \tab Rk. \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   rtg \tab numeric \tab Rtg. \cr
+   best_rk \tab numeric \tab Best rk. \cr
+   best_yr \tab numeric \tab Best yr. \cr
+   worst_rk \tab numeric \tab Worst rk. \cr
+   worst_yr \tab numeric \tab Worst yr. \cr
+   kp_median \tab numeric \tab Kp median. \cr
+   top10 \tab numeric \tab Top10. \cr
+   top25 \tab numeric \tab Top25. \cr
+   top50 \tab numeric \tab Top50. \cr
+   ch \tab numeric \tab Ch. \cr
+   f4 \tab numeric \tab F4. \cr
+   s16 \tab numeric \tab S16. \cr
+   r1 \tab numeric \tab R1. \cr
+   chg \tab numeric \tab Chg. \cr
 }
 }
 \description{

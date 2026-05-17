@@ -14,13 +14,13 @@ nba_commonteamyears(league_id = "00", ...)
 \value{
 Returns a named list of data frames: TeamYears
 
-\strong{TeamYears}\tabular{ll}{
-   col_name \tab types \cr
-   LEAGUE_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   MIN_YEAR \tab character \cr
-   MAX_YEAR \tab character \cr
-   ABBREVIATION \tab character \cr
+\strong{TeamYears}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   MIN_YEAR \tab character \tab  \cr
+   MAX_YEAR \tab character \tab  \cr
+   ABBREVIATION \tab character \tab Short abbreviation. \cr
 }
 }
 \description{

@@ -32,63 +32,63 @@ nba_dunkscoreleaders(
 \value{
 Returns a named list of data frames: DunkScoreLeaders
 
-\strong{DunkScoreLeaders}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   game_date \tab character \cr
-   matchup \tab character \cr
-   period \tab character \cr
-   game_clock_time \tab character \cr
-   event_num \tab character \cr
-   player_id \tab character \cr
-   player_name \tab character \cr
-   first_name \tab character \cr
-   last_name \tab character \cr
-   team_id \tab character \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_abbreviation \tab character \cr
-   dunk_score \tab character \cr
-   jump_subscore \tab character \cr
-   power_subscore \tab character \cr
-   style_subscore \tab character \cr
-   defensive_contest_subscore \tab character \cr
-   max_ball_height \tab character \cr
-   ball_speed_through_rim \tab character \cr
-   player_vertical \tab character \cr
-   hang_time \tab character \cr
-   takeoff_distance \tab character \cr
-   reverse_dunk \tab character \cr
-   dunk360 \tab character \cr
-   through_the_legs \tab character \cr
-   alley_oop \tab character \cr
-   tip_in \tab character \cr
-   self_oop \tab character \cr
-   player_rotation \tab character \cr
-   player_lateral_speed \tab character \cr
-   ball_distance_traveled \tab character \cr
-   ball_reach_back \tab character \cr
-   total_ball_acceleration \tab character \cr
-   dunking_hand \tab character \cr
-   jumping_foot \tab character \cr
-   pass_length \tab character \cr
-   catching_hand \tab character \cr
-   catch_distance \tab character \cr
-   lateral_catch_distance \tab character \cr
-   passer_id \tab character \cr
-   passer_name \tab character \cr
-   passer_first_name \tab character \cr
-   passer_last_name \tab character \cr
-   pass_release_point \tab character \cr
-   shooter_id \tab character \cr
-   shooter_name \tab character \cr
-   shooter_first_name \tab character \cr
-   shooter_last_name \tab character \cr
-   shot_release_point \tab character \cr
-   shot_length \tab character \cr
-   defensive_contest_level \tab character \cr
-   possible_attempted_charge \tab character \cr
-   video_available \tab character \cr
+\strong{DunkScoreLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+   matchup \tab character \tab Matchup. \cr
+   period \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   game_clock_time \tab character \tab Time / clock value. \cr
+   event_num \tab character \tab Sequential event number within the game (V2 PBP). \cr
+   player_id \tab character \tab Unique player identifier. \cr
+   player_name \tab character \tab Player name. \cr
+   first_name \tab character \tab Player's first name. \cr
+   last_name \tab character \tab Player's last name. \cr
+   team_id \tab character \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   dunk_score \tab character \tab Dunk score. \cr
+   jump_subscore \tab character \tab Jump subscore. \cr
+   power_subscore \tab character \tab Power subscore. \cr
+   style_subscore \tab character \tab Style subscore. \cr
+   defensive_contest_subscore \tab character \tab Defensive contest subscore. \cr
+   max_ball_height \tab character \tab Max ball height. \cr
+   ball_speed_through_rim \tab character \tab Ball speed through rim. \cr
+   player_vertical \tab character \tab Player vertical. \cr
+   hang_time \tab character \tab Time / clock value. \cr
+   takeoff_distance \tab character \tab Takeoff distance. \cr
+   reverse_dunk \tab character \tab Reverse dunk. \cr
+   dunk360 \tab character \tab Dunk360. \cr
+   through_the_legs \tab character \tab Through the legs. \cr
+   alley_oop \tab character \tab Alley oop. \cr
+   tip_in \tab character \tab Tip in. \cr
+   self_oop \tab character \tab Self oop. \cr
+   player_rotation \tab character \tab Player rotation. \cr
+   player_lateral_speed \tab character \tab Player lateral speed. \cr
+   ball_distance_traveled \tab character \tab Ball distance traveled. \cr
+   ball_reach_back \tab character \tab Ball reach back. \cr
+   total_ball_acceleration \tab character \tab Total ball acceleration. \cr
+   dunking_hand \tab character \tab Dunking hand. \cr
+   jumping_foot \tab character \tab Jumping foot. \cr
+   pass_length \tab character \tab Pass length. \cr
+   catching_hand \tab character \tab Catching hand. \cr
+   catch_distance \tab character \tab Catch distance. \cr
+   lateral_catch_distance \tab character \tab Lateral catch distance. \cr
+   passer_id \tab character \tab Unique identifier for passer. \cr
+   passer_name \tab character \tab Passer name. \cr
+   passer_first_name \tab character \tab Passer first name. \cr
+   passer_last_name \tab character \tab Passer last name. \cr
+   pass_release_point \tab character \tab Pass release point. \cr
+   shooter_id \tab character \tab Unique identifier for shooter. \cr
+   shooter_name \tab character \tab Shooter name (for shot events). \cr
+   shooter_first_name \tab character \tab Shooter first name. \cr
+   shooter_last_name \tab character \tab Shooter last name. \cr
+   shot_release_point \tab character \tab Shot release point. \cr
+   shot_length \tab character \tab Shot length. \cr
+   defensive_contest_level \tab character \tab Defensive contest level. \cr
+   possible_attempted_charge \tab character \tab Possible attempted charge. \cr
+   video_available \tab character \tab Video available. \cr
 }
 }
 \description{

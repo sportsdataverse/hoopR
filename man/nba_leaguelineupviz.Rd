@@ -95,32 +95,32 @@ nba_leaguelineupviz(
 \value{
 Returns a named list of data frames: LeagueLineupViz
 
-\strong{LeagueLineupViz}\tabular{ll}{
-   col_name \tab types \cr
-   GROUP_ID \tab character \cr
-   GROUP_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   MIN \tab character \cr
-   OFF_RATING \tab character \cr
-   DEF_RATING \tab character \cr
-   NET_RATING \tab character \cr
-   PACE \tab character \cr
-   TS_PCT \tab character \cr
-   FTA_RATE \tab character \cr
-   TM_AST_PCT \tab character \cr
-   PCT_FGA_2PT \tab character \cr
-   PCT_FGA_3PT \tab character \cr
-   PCT_PTS_2PT_MR \tab character \cr
-   PCT_PTS_FB \tab character \cr
-   PCT_PTS_FT \tab character \cr
-   PCT_PTS_PAINT \tab character \cr
-   PCT_AST_FGM \tab character \cr
-   PCT_UAST_FGM \tab character \cr
-   OPP_FG3_PCT \tab character \cr
-   OPP_EFG_PCT \tab character \cr
-   OPP_FTA_RATE \tab character \cr
-   OPP_TOV_PCT \tab character \cr
+\strong{LeagueLineupViz}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
+   GROUP_NAME \tab character \tab Group name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
+   DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
+   NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
+   PACE \tab character \tab Possessions per 48 minutes. \cr
+   TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+   FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
+   TM_AST_PCT \tab character \tab  \cr
+   PCT_FGA_2PT \tab character \tab  \cr
+   PCT_FGA_3PT \tab character \tab  \cr
+   PCT_PTS_2PT_MR \tab character \tab  \cr
+   PCT_PTS_FB \tab character \tab  \cr
+   PCT_PTS_FT \tab character \tab  \cr
+   PCT_PTS_PAINT \tab character \tab  \cr
+   PCT_AST_FGM \tab character \tab  \cr
+   PCT_UAST_FGM \tab character \tab  \cr
+   OPP_FG3_PCT \tab character \tab  \cr
+   OPP_EFG_PCT \tab character \tab  \cr
+   OPP_FTA_RATE \tab character \tab  \cr
+   OPP_TOV_PCT \tab character \tab  \cr
 }
 }
 \description{

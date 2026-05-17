@@ -15,141 +15,141 @@ nba_boxscoresummaryv2(game_id, ...)
 Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary,
 InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
 
-\strong{GameSummary}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_DATE_EST \tab character \cr
-   GAME_SEQUENCE \tab character \cr
-   GAME_ID \tab character \cr
-   GAME_STATUS_ID \tab character \cr
-   GAME_STATUS_TEXT \tab character \cr
-   GAMECODE \tab character \cr
-   HOME_TEAM_ID \tab character \cr
-   VISITOR_TEAM_ID \tab character \cr
-   SEASON \tab character \cr
-   LIVE_PERIOD \tab character \cr
-   LIVE_PC_TIME \tab character \cr
-   NATL_TV_BROADCASTER_ABBREVIATION \tab character \cr
-   LIVE_PERIOD_TIME_BCAST \tab character \cr
-   WH_STATUS \tab character \cr
+\strong{GameSummary}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_STATUS_ID \tab character \tab Numeric game status identifier. \cr
+   GAME_STATUS_TEXT \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   GAMECODE \tab character \tab  \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   LIVE_PERIOD \tab character \tab  \cr
+   LIVE_PC_TIME \tab character \tab  \cr
+   NATL_TV_BROADCASTER_ABBREVIATION \tab character \tab  \cr
+   LIVE_PERIOD_TIME_BCAST \tab character \tab  \cr
+   WH_STATUS \tab character \tab Wh status. \cr
 }
 
 
-\strong{OtherStats}\tabular{ll}{
-   col_name \tab types \cr
-   LEAGUE_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PTS_PAINT \tab character \cr
-   PTS_2ND_CHANCE \tab character \cr
-   PTS_FB \tab character \cr
-   LARGEST_LEAD \tab character \cr
-   LEAD_CHANGES \tab character \cr
-   TIMES_TIED \tab character \cr
-   TEAM_TURNOVERS \tab character \cr
-   TOTAL_TURNOVERS \tab character \cr
-   TEAM_REBOUNDS \tab character \cr
-   PTS_OFF_TO \tab character \cr
+\strong{OtherStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PTS_PAINT \tab character \tab Points scored in the paint. \cr
+   PTS_2ND_CHANCE \tab character \tab  \cr
+   PTS_FB \tab character \tab  \cr
+   LARGEST_LEAD \tab character \tab Largest lead during the game. \cr
+   LEAD_CHANGES \tab character \tab Lead changes. \cr
+   TIMES_TIED \tab character \tab Times tied. \cr
+   TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+   TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+   TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+   PTS_OFF_TO \tab character \tab  \cr
 }
 
 
-\strong{Officials}\tabular{ll}{
-   col_name \tab types \cr
-   OFFICIAL_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   JERSEY_NUM \tab character \cr
+\strong{Officials}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   OFFICIAL_ID \tab character \tab Unique official / referee identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
 }
 
 
-\strong{InactivePlayers}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   JERSEY_NUM \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_CITY \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
+\strong{InactivePlayers}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
 }
 
 
-\strong{GameInfo}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_DATE \tab character \cr
-   ATTENDANCE \tab character \cr
-   GAME_TIME \tab character \cr
+\strong{GameInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   ATTENDANCE \tab character \tab Reported attendance. \cr
+   GAME_TIME \tab character \tab Game start time. \cr
 }
 
 
-\strong{LineScore}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_DATE_EST \tab character \cr
-   GAME_SEQUENCE \tab character \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY_NAME \tab character \cr
-   TEAM_NICKNAME \tab character \cr
-   TEAM_WINS_LOSSES \tab character \cr
-   PTS_QTR1 \tab character \cr
-   PTS_QTR2 \tab character \cr
-   PTS_QTR3 \tab character \cr
-   PTS_QTR4 \tab character \cr
-   PTS_OT1 \tab character \cr
-   PTS_OT2 \tab character \cr
-   PTS_OT3 \tab character \cr
-   PTS_OT4 \tab character \cr
-   PTS_OT5 \tab character \cr
-   PTS_OT6 \tab character \cr
-   PTS_OT7 \tab character \cr
-   PTS_OT8 \tab character \cr
-   PTS_OT9 \tab character \cr
-   PTS_OT10 \tab character \cr
-   PTS \tab character \cr
+\strong{LineScore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY_NAME \tab character \tab  \cr
+   TEAM_NICKNAME \tab character \tab Team nickname. \cr
+   TEAM_WINS_LOSSES \tab character \tab  \cr
+   PTS_QTR1 \tab character \tab  \cr
+   PTS_QTR2 \tab character \tab  \cr
+   PTS_QTR3 \tab character \tab  \cr
+   PTS_QTR4 \tab character \tab  \cr
+   PTS_OT1 \tab character \tab  \cr
+   PTS_OT2 \tab character \tab  \cr
+   PTS_OT3 \tab character \tab  \cr
+   PTS_OT4 \tab character \tab  \cr
+   PTS_OT5 \tab character \tab  \cr
+   PTS_OT6 \tab character \tab  \cr
+   PTS_OT7 \tab character \tab  \cr
+   PTS_OT8 \tab character \tab  \cr
+   PTS_OT9 \tab character \tab  \cr
+   PTS_OT10 \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
 }
 
 
-\strong{LastMeeting}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   LAST_GAME_ID \tab character \cr
-   LAST_GAME_DATE_EST \tab character \cr
-   LAST_GAME_HOME_TEAM_ID \tab character \cr
-   LAST_GAME_HOME_TEAM_CITY \tab character \cr
-   LAST_GAME_HOME_TEAM_NAME \tab character \cr
-   LAST_GAME_HOME_TEAM_ABBREVIATION \tab character \cr
-   LAST_GAME_HOME_TEAM_POINTS \tab character \cr
-   LAST_GAME_VISITOR_TEAM_ID \tab character \cr
-   LAST_GAME_VISITOR_TEAM_CITY \tab character \cr
-   LAST_GAME_VISITOR_TEAM_NAME \tab character \cr
-   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \cr
-   LAST_GAME_VISITOR_TEAM_POINTS \tab character \cr
+\strong{LastMeeting}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   LAST_GAME_ID \tab character \tab  \cr
+   LAST_GAME_DATE_EST \tab character \tab  \cr
+   LAST_GAME_HOME_TEAM_ID \tab character \tab  \cr
+   LAST_GAME_HOME_TEAM_CITY \tab character \tab  \cr
+   LAST_GAME_HOME_TEAM_NAME \tab character \tab  \cr
+   LAST_GAME_HOME_TEAM_ABBREVIATION \tab character \tab  \cr
+   LAST_GAME_HOME_TEAM_POINTS \tab character \tab  \cr
+   LAST_GAME_VISITOR_TEAM_ID \tab character \tab  \cr
+   LAST_GAME_VISITOR_TEAM_CITY \tab character \tab  \cr
+   LAST_GAME_VISITOR_TEAM_NAME \tab character \tab  \cr
+   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \tab  \cr
+   LAST_GAME_VISITOR_TEAM_POINTS \tab character \tab  \cr
 }
 
 
-\strong{SeasonSeries}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   HOME_TEAM_ID \tab character \cr
-   VISITOR_TEAM_ID \tab character \cr
-   GAME_DATE_EST \tab character \cr
-   HOME_TEAM_WINS \tab character \cr
-   HOME_TEAM_LOSSES \tab character \cr
-   SERIES_LEADER \tab character \cr
+\strong{SeasonSeries}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   HOME_TEAM_WINS \tab character \tab Home team's team wins. \cr
+   HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
+   SERIES_LEADER \tab character \tab  \cr
 }
 
 
-\strong{AvailableVideo}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   VIDEO_AVAILABLE_FLAG \tab character \cr
-   PT_AVAILABLE \tab character \cr
-   PT_XYZ_AVAILABLE \tab character \cr
-   WH_STATUS \tab character \cr
-   HUSTLE_STATUS \tab character \cr
-   HISTORICAL_STATUS \tab character \cr
+\strong{AvailableVideo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   VIDEO_AVAILABLE_FLAG \tab character \tab Video available flag. \cr
+   PT_AVAILABLE \tab character \tab Pt available. \cr
+   PT_XYZ_AVAILABLE \tab character \tab Pt xyz available. \cr
+   WH_STATUS \tab character \tab Wh status. \cr
+   HUSTLE_STATUS \tab character \tab Hustle status. \cr
+   HISTORICAL_STATUS \tab character \tab Historical status. \cr
 }
 }
 \description{

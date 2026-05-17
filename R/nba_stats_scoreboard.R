@@ -13,55 +13,55 @@ NULL
 #' @import rvest
 #' @return Returns a tibble with the following columns:
 #'
-#'    |col_name           |types     |
-#'    |:------------------|:---------|
-#'    |game_date          |character |
-#'    |game_id            |character |
-#'    |game_code          |character |
-#'    |game_status        |integer   |
-#'    |game_status_text   |character |
-#'    |game_sequence      |integer   |
-#'    |game_date_est      |character |
-#'    |game_time_est      |character |
-#'    |game_date_time_est |character |
-#'    |game_date_utc      |character |
-#'    |game_time_utc      |character |
-#'    |game_date_time_utc |character |
-#'    |away_team_time     |character |
-#'    |home_team_time     |character |
-#'    |day                |character |
-#'    |month_num          |integer   |
-#'    |week_number        |integer   |
-#'    |week_name          |character |
-#'    |if_necessary       |character |
-#'    |series_game_number |character |
-#'    |series_text        |character |
-#'    |arena_name         |character |
-#'    |arena_state        |character |
-#'    |arena_city         |character |
-#'    |postponed_status   |character |
-#'    |branch_link        |character |
-#'    |game_subtype       |character |
-#'    |home_team_id       |integer   |
-#'    |home_team_name     |character |
-#'    |home_team_city     |character |
-#'    |home_team_tricode  |character |
-#'    |home_team_slug     |character |
-#'    |home_team_wins     |integer   |
-#'    |home_team_losses   |integer   |
-#'    |home_team_score    |integer   |
-#'    |home_team_seed     |integer   |
-#'    |away_team_id       |integer   |
-#'    |away_team_name     |character |
-#'    |away_team_city     |character |
-#'    |away_team_tricode  |character |
-#'    |away_team_slug     |character |
-#'    |away_team_wins     |integer   |
-#'    |away_team_losses   |integer   |
-#'    |away_team_score    |integer   |
-#'    |away_team_seed     |integer   |
-#'    |season             |character |
-#'    |league_id          |character |
+#'    |col_name           |types     |description                                            |
+#'    |:------------------|:---------|:------------------------------------------------------|
+#'    |game_date          |character |Game date (YYYY-MM-DD).                                |
+#'    |game_id            |character |Unique game identifier.                                |
+#'    |game_code          |character |ESPN game code (numeric identifier).                   |
+#'    |game_status        |integer   |Game status label.                                     |
+#'    |game_status_text   |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'    |game_sequence      |integer   |Game sequence.                                         |
+#'    |game_date_est      |character |Game date est.                                         |
+#'    |game_time_est      |character |Game time est.                                         |
+#'    |game_date_time_est |character |Game date time est.                                    |
+#'    |game_date_utc      |character |Game date utc.                                         |
+#'    |game_time_utc      |character |Game start time in UTC (ISO 8601 timestamp).           |
+#'    |game_date_time_utc |character |Game date time utc.                                    |
+#'    |away_team_time     |character |Time / clock value.                                    |
+#'    |home_team_time     |character |Time / clock value.                                    |
+#'    |day                |character |Day number within the month.                           |
+#'    |month_num          |integer   |Month num.                                             |
+#'    |week_number        |integer   |Week number.                                           |
+#'    |week_name          |character |Week name.                                             |
+#'    |if_necessary       |character |If necessary.                                          |
+#'    |series_game_number |character |Series game number.                                    |
+#'    |series_text        |character |Series text.                                           |
+#'    |arena_name         |character |Arena name.                                            |
+#'    |arena_state        |character |Arena state.                                           |
+#'    |arena_city         |character |Arena city.                                            |
+#'    |postponed_status   |character |Postponed status.                                      |
+#'    |branch_link        |character |Branch link.                                           |
+#'    |game_subtype       |character |Game subtype.                                          |
+#'    |home_team_id       |integer   |Unique identifier for the home team.                   |
+#'    |home_team_name     |character |Home team name.                                        |
+#'    |home_team_city     |character |Home team city / location.                             |
+#'    |home_team_tricode  |character |Home team three-letter code.                           |
+#'    |home_team_slug     |character |Home team's team slug.                                 |
+#'    |home_team_wins     |integer   |Home team's team wins.                                 |
+#'    |home_team_losses   |integer   |Home team's team losses.                               |
+#'    |home_team_score    |integer   |Home team's score.                                     |
+#'    |home_team_seed     |integer   |Home team's team seed.                                 |
+#'    |away_team_id       |integer   |Unique identifier for the away team.                   |
+#'    |away_team_name     |character |Away team name.                                        |
+#'    |away_team_city     |character |Away team city / location.                             |
+#'    |away_team_tricode  |character |Away team three-letter code.                           |
+#'    |away_team_slug     |character |Away team's team slug.                                 |
+#'    |away_team_wins     |integer   |Away team's team wins.                                 |
+#'    |away_team_losses   |integer   |Away team's team losses.                               |
+#'    |away_team_score    |integer   |Away team's score.                                     |
+#'    |away_team_seed     |integer   |Away team's team seed.                                 |
+#'    |season             |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
+#'    |league_id          |character |League identifier ('10' = WNBA).                       |
 #'
 #' @export
 #' @family NBA Schedule Functions
@@ -191,132 +191,132 @@ NULL
 #'    **GameHeader**
 #'
 #'
-#'    |col_name                         |types     |
-#'    |:--------------------------------|:---------|
-#'    |GAME_DATE_EST                    |character |
-#'    |GAME_SEQUENCE                    |character |
-#'    |GAME_ID                          |character |
-#'    |GAME_STATUS_ID                   |character |
-#'    |GAME_STATUS_TEXT                 |character |
-#'    |GAMECODE                         |character |
-#'    |HOME_TEAM_ID                     |character |
-#'    |VISITOR_TEAM_ID                  |character |
-#'    |SEASON                           |character |
-#'    |LIVE_PERIOD                      |character |
-#'    |LIVE_PC_TIME                     |character |
-#'    |NATL_TV_BROADCASTER_ABBREVIATION |character |
-#'    |LIVE_PERIOD_TIME_BCAST           |character |
-#'    |WH_STATUS                        |character |
+#'    |col_name                         |types     |description                                            |
+#'    |:--------------------------------|:---------|:------------------------------------------------------|
+#'    |GAME_DATE_EST                    |character |Game date est.                                         |
+#'    |GAME_SEQUENCE                    |character |Game sequence.                                         |
+#'    |GAME_ID                          |character |Unique game identifier.                                |
+#'    |GAME_STATUS_ID                   |character |Numeric game status identifier.                        |
+#'    |GAME_STATUS_TEXT                 |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'    |GAMECODE                         |character |                                                       |
+#'    |HOME_TEAM_ID                     |character |Unique identifier for the home team.                   |
+#'    |VISITOR_TEAM_ID                  |character |                                                       |
+#'    |SEASON                           |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
+#'    |LIVE_PERIOD                      |character |                                                       |
+#'    |LIVE_PC_TIME                     |character |                                                       |
+#'    |NATL_TV_BROADCASTER_ABBREVIATION |character |                                                       |
+#'    |LIVE_PERIOD_TIME_BCAST           |character |                                                       |
+#'    |WH_STATUS                        |character |Wh status.                                             |
 #'
 #'    **LineScore**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |GAME_DATE_EST     |character |
-#'    |GAME_SEQUENCE     |character |
-#'    |GAME_ID           |character |
-#'    |TEAM_ID           |character |
-#'    |TEAM_ABBREVIATION |character |
-#'    |TEAM_CITY_NAME    |character |
-#'    |TEAM_WINS_LOSSES  |character |
-#'    |PTS_QTR1          |character |
-#'    |PTS_QTR2          |character |
-#'    |PTS_QTR3          |character |
-#'    |PTS_QTR4          |character |
-#'    |PTS_OT1           |character |
-#'    |PTS_OT2           |character |
-#'    |PTS_OT3           |character |
-#'    |PTS_OT4           |character |
-#'    |PTS_OT5           |character |
-#'    |PTS_OT6           |character |
-#'    |PTS_OT7           |character |
-#'    |PTS_OT8           |character |
-#'    |PTS_OT9           |character |
-#'    |PTS_OT10          |character |
-#'    |PTS               |character |
-#'    |FG_PCT            |character |
-#'    |FT_PCT            |character |
-#'    |FG3_PCT           |character |
-#'    |AST               |character |
-#'    |REB               |character |
-#'    |TOV               |character |
+#'    |col_name          |types     |description                              |
+#'    |:-----------------|:---------|:----------------------------------------|
+#'    |GAME_DATE_EST     |character |Game date est.                           |
+#'    |GAME_SEQUENCE     |character |Game sequence.                           |
+#'    |GAME_ID           |character |Unique game identifier.                  |
+#'    |TEAM_ID           |character |Unique team identifier.                  |
+#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').    |
+#'    |TEAM_CITY_NAME    |character |                                         |
+#'    |TEAM_WINS_LOSSES  |character |                                         |
+#'    |PTS_QTR1          |character |                                         |
+#'    |PTS_QTR2          |character |                                         |
+#'    |PTS_QTR3          |character |                                         |
+#'    |PTS_QTR4          |character |                                         |
+#'    |PTS_OT1           |character |                                         |
+#'    |PTS_OT2           |character |                                         |
+#'    |PTS_OT3           |character |                                         |
+#'    |PTS_OT4           |character |                                         |
+#'    |PTS_OT5           |character |                                         |
+#'    |PTS_OT6           |character |                                         |
+#'    |PTS_OT7           |character |                                         |
+#'    |PTS_OT8           |character |                                         |
+#'    |PTS_OT9           |character |                                         |
+#'    |PTS_OT10          |character |                                         |
+#'    |PTS               |character |Points scored.                           |
+#'    |FG_PCT            |character |Field goal percentage (0-1).             |
+#'    |FT_PCT            |character |Free throw percentage (0-1).             |
+#'    |FG3_PCT           |character |Three-point field goal percentage (0-1). |
+#'    |AST               |character |Assists.                                 |
+#'    |REB               |character |Total rebounds.                          |
+#'    |TOV               |character |Turnovers.                               |
 #'
 #'    **SeriesStandings**
 #'
 #'
-#'    |col_name         |types     |
-#'    |:----------------|:---------|
-#'    |GAME_ID          |character |
-#'    |HOME_TEAM_ID     |character |
-#'    |VISITOR_TEAM_ID  |character |
-#'    |GAME_DATE_EST    |character |
-#'    |HOME_TEAM_WINS   |character |
-#'    |HOME_TEAM_LOSSES |character |
-#'    |SERIES_LEADER    |character |
+#'    |col_name         |types     |description                          |
+#'    |:----------------|:---------|:------------------------------------|
+#'    |GAME_ID          |character |Unique game identifier.              |
+#'    |HOME_TEAM_ID     |character |Unique identifier for the home team. |
+#'    |VISITOR_TEAM_ID  |character |                                     |
+#'    |GAME_DATE_EST    |character |Game date est.                       |
+#'    |HOME_TEAM_WINS   |character |Home team's team wins.               |
+#'    |HOME_TEAM_LOSSES |character |Home team's team losses.             |
+#'    |SERIES_LEADER    |character |                                     |
 #'
 #'    **LastMeeting**
 #'
 #'
-#'    |col_name                         |types     |
-#'    |:--------------------------------|:---------|
-#'    |GAME_ID                          |character |
-#'    |LAST_GAME_ID                     |character |
-#'    |LAST_GAME_DATE_EST               |character |
-#'    |LAST_GAME_HOME_TEAM_ID           |character |
-#'    |LAST_GAME_HOME_TEAM_CITY         |character |
-#'    |LAST_GAME_HOME_TEAM_NAME         |character |
-#'    |LAST_GAME_HOME_TEAM_ABBREVIATION |character |
-#'    |LAST_GAME_HOME_TEAM_POINTS       |character |
-#'    |LAST_GAME_VISITOR_TEAM_ID        |character |
-#'    |LAST_GAME_VISITOR_TEAM_CITY      |character |
-#'    |LAST_GAME_VISITOR_TEAM_NAME      |character |
-#'    |LAST_GAME_VISITOR_TEAM_CITY1     |character |
-#'    |LAST_GAME_VISITOR_TEAM_POINTS    |character |
+#'    |col_name                         |types     |description             |
+#'    |:--------------------------------|:---------|:-----------------------|
+#'    |GAME_ID                          |character |Unique game identifier. |
+#'    |LAST_GAME_ID                     |character |                        |
+#'    |LAST_GAME_DATE_EST               |character |                        |
+#'    |LAST_GAME_HOME_TEAM_ID           |character |                        |
+#'    |LAST_GAME_HOME_TEAM_CITY         |character |                        |
+#'    |LAST_GAME_HOME_TEAM_NAME         |character |                        |
+#'    |LAST_GAME_HOME_TEAM_ABBREVIATION |character |                        |
+#'    |LAST_GAME_HOME_TEAM_POINTS       |character |                        |
+#'    |LAST_GAME_VISITOR_TEAM_ID        |character |                        |
+#'    |LAST_GAME_VISITOR_TEAM_CITY      |character |                        |
+#'    |LAST_GAME_VISITOR_TEAM_NAME      |character |                        |
+#'    |LAST_GAME_VISITOR_TEAM_CITY1     |character |                        |
+#'    |LAST_GAME_VISITOR_TEAM_POINTS    |character |                        |
 #'
 #'    **EastConfStandingsByDay**
 #'
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |TEAM_ID       |character |
-#'    |LEAGUE_ID     |character |
-#'    |SEASON_ID     |character |
-#'    |STANDINGSDATE |character |
-#'    |CONFERENCE    |character |
-#'    |TEAM          |character |
-#'    |G             |character |
-#'    |W             |character |
-#'    |L             |character |
-#'    |W_PCT         |character |
-#'    |HOME_RECORD   |character |
-#'    |ROAD_RECORD   |character |
+#'    |col_name      |types     |description                         |
+#'    |:-------------|:---------|:-----------------------------------|
+#'    |TEAM_ID       |character |Unique team identifier.             |
+#'    |LEAGUE_ID     |character |League identifier ('10' = WNBA).    |
+#'    |SEASON_ID     |character |Unique season identifier.           |
+#'    |STANDINGSDATE |character |                                    |
+#'    |CONFERENCE    |character |Conference.                         |
+#'    |TEAM          |character |Team-side label or team identifier. |
+#'    |G             |character |Games played.                       |
+#'    |W             |character |Wins.                               |
+#'    |L             |character |Losses.                             |
+#'    |W_PCT         |character |                                    |
+#'    |HOME_RECORD   |character |Home win-loss record.               |
+#'    |ROAD_RECORD   |character |                                    |
 #'
 #'    **WestConfStandingsByDay**
 #'
 #'
-#'    |col_name      |types     |
-#'    |:-------------|:---------|
-#'    |TEAM_ID       |character |
-#'    |LEAGUE_ID     |character |
-#'    |SEASON_ID     |character |
-#'    |STANDINGSDATE |character |
-#'    |CONFERENCE    |character |
-#'    |TEAM          |character |
-#'    |G             |character |
-#'    |W             |character |
-#'    |L             |character |
-#'    |W_PCT         |character |
-#'    |HOME_RECORD   |character |
-#'    |ROAD_RECORD   |character |
+#'    |col_name      |types     |description                         |
+#'    |:-------------|:---------|:-----------------------------------|
+#'    |TEAM_ID       |character |Unique team identifier.             |
+#'    |LEAGUE_ID     |character |League identifier ('10' = WNBA).    |
+#'    |SEASON_ID     |character |Unique season identifier.           |
+#'    |STANDINGSDATE |character |                                    |
+#'    |CONFERENCE    |character |Conference.                         |
+#'    |TEAM          |character |Team-side label or team identifier. |
+#'    |G             |character |Games played.                       |
+#'    |W             |character |Wins.                               |
+#'    |L             |character |Losses.                             |
+#'    |W_PCT         |character |                                    |
+#'    |HOME_RECORD   |character |Home win-loss record.               |
+#'    |ROAD_RECORD   |character |                                    |
 #'
 #'    **Available**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |GAME_ID      |character |
-#'    |PT_AVAILABLE |character |
+#'    |col_name     |types     |description             |
+#'    |:------------|:---------|:-----------------------|
+#'    |GAME_ID      |character |Unique game identifier. |
+#'    |PT_AVAILABLE |character |Pt available.           |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -393,157 +393,157 @@ NULL
 #'   **GameHeader**
 #'
 #'
-#'   |col_name                         |types     |
-#'   |:--------------------------------|:---------|
-#'   |GAME_DATE_EST                    |character |
-#'   |GAME_SEQUENCE                    |character |
-#'   |GAME_ID                          |character |
-#'   |GAME_STATUS_ID                   |character |
-#'   |GAME_STATUS_TEXT                 |character |
-#'   |GAMECODE                         |character |
-#'   |HOME_TEAM_ID                     |character |
-#'   |VISITOR_TEAM_ID                  |character |
-#'   |SEASON                           |character |
-#'   |LIVE_PERIOD                      |character |
-#'   |LIVE_PC_TIME                     |character |
-#'   |NATL_TV_BROADCASTER_ABBREVIATION |character |
-#'   |HOME_TV_BROADCASTER_ABBREVIATION |character |
-#'   |AWAY_TV_BROADCASTER_ABBREVIATION |character |
-#'   |LIVE_PERIOD_TIME_BCAST           |character |
-#'   |ARENA_NAME                       |character |
-#'   |WH_STATUS                        |character |
-#'   |WNBA_COMMISSIONER_FLAG           |character |
+#'   |col_name                         |types     |description                                            |
+#'   |:--------------------------------|:---------|:------------------------------------------------------|
+#'   |GAME_DATE_EST                    |character |Game date est.                                         |
+#'   |GAME_SEQUENCE                    |character |Game sequence.                                         |
+#'   |GAME_ID                          |character |Unique game identifier.                                |
+#'   |GAME_STATUS_ID                   |character |Numeric game status identifier.                        |
+#'   |GAME_STATUS_TEXT                 |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'   |GAMECODE                         |character |                                                       |
+#'   |HOME_TEAM_ID                     |character |Unique identifier for the home team.                   |
+#'   |VISITOR_TEAM_ID                  |character |                                                       |
+#'   |SEASON                           |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
+#'   |LIVE_PERIOD                      |character |                                                       |
+#'   |LIVE_PC_TIME                     |character |                                                       |
+#'   |NATL_TV_BROADCASTER_ABBREVIATION |character |                                                       |
+#'   |HOME_TV_BROADCASTER_ABBREVIATION |character |                                                       |
+#'   |AWAY_TV_BROADCASTER_ABBREVIATION |character |                                                       |
+#'   |LIVE_PERIOD_TIME_BCAST           |character |                                                       |
+#'   |ARENA_NAME                       |character |Arena name.                                            |
+#'   |WH_STATUS                        |character |Wh status.                                             |
+#'   |WNBA_COMMISSIONER_FLAG           |character |                                                       |
 #'
 #'   **LineScore**
 #'
 #'
-#'   |col_name          |types     |
-#'   |:-----------------|:---------|
-#'   |GAME_DATE_EST     |character |
-#'   |GAME_SEQUENCE     |character |
-#'   |GAME_ID           |character |
-#'   |TEAM_ID           |character |
-#'   |TEAM_ABBREVIATION |character |
-#'   |TEAM_CITY_NAME    |character |
-#'   |TEAM_NAME         |character |
-#'   |TEAM_WINS_LOSSES  |character |
-#'   |PTS_QTR1          |character |
-#'   |PTS_QTR2          |character |
-#'   |PTS_QTR3          |character |
-#'   |PTS_QTR4          |character |
-#'   |PTS_OT1           |character |
-#'   |PTS_OT2           |character |
-#'   |PTS_OT3           |character |
-#'   |PTS_OT4           |character |
-#'   |PTS_OT5           |character |
-#'   |PTS_OT6           |character |
-#'   |PTS_OT7           |character |
-#'   |PTS_OT8           |character |
-#'   |PTS_OT9           |character |
-#'   |PTS_OT10          |character |
-#'   |PTS               |character |
-#'   |FG_PCT            |character |
-#'   |FT_PCT            |character |
-#'   |FG3_PCT           |character |
-#'   |AST               |character |
-#'   |REB               |character |
-#'   |TOV               |character |
+#'   |col_name          |types     |description                                     |
+#'   |:-----------------|:---------|:-----------------------------------------------|
+#'   |GAME_DATE_EST     |character |Game date est.                                  |
+#'   |GAME_SEQUENCE     |character |Game sequence.                                  |
+#'   |GAME_ID           |character |Unique game identifier.                         |
+#'   |TEAM_ID           |character |Unique team identifier.                         |
+#'   |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
+#'   |TEAM_CITY_NAME    |character |                                                |
+#'   |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
+#'   |TEAM_WINS_LOSSES  |character |                                                |
+#'   |PTS_QTR1          |character |                                                |
+#'   |PTS_QTR2          |character |                                                |
+#'   |PTS_QTR3          |character |                                                |
+#'   |PTS_QTR4          |character |                                                |
+#'   |PTS_OT1           |character |                                                |
+#'   |PTS_OT2           |character |                                                |
+#'   |PTS_OT3           |character |                                                |
+#'   |PTS_OT4           |character |                                                |
+#'   |PTS_OT5           |character |                                                |
+#'   |PTS_OT6           |character |                                                |
+#'   |PTS_OT7           |character |                                                |
+#'   |PTS_OT8           |character |                                                |
+#'   |PTS_OT9           |character |                                                |
+#'   |PTS_OT10          |character |                                                |
+#'   |PTS               |character |Points scored.                                  |
+#'   |FG_PCT            |character |Field goal percentage (0-1).                    |
+#'   |FT_PCT            |character |Free throw percentage (0-1).                    |
+#'   |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
+#'   |AST               |character |Assists.                                        |
+#'   |REB               |character |Total rebounds.                                 |
+#'   |TOV               |character |Turnovers.                                      |
 #'
 #'   **SeriesStandings**
 #'
 #'
-#'   |col_name         |types     |
-#'   |:----------------|:---------|
-#'   |GAME_ID          |character |
-#'   |HOME_TEAM_ID     |character |
-#'   |VISITOR_TEAM_ID  |character |
-#'   |GAME_DATE_EST    |character |
-#'   |HOME_TEAM_WINS   |character |
-#'   |HOME_TEAM_LOSSES |character |
-#'   |SERIES_LEADER    |character |
+#'   |col_name         |types     |description                          |
+#'   |:----------------|:---------|:------------------------------------|
+#'   |GAME_ID          |character |Unique game identifier.              |
+#'   |HOME_TEAM_ID     |character |Unique identifier for the home team. |
+#'   |VISITOR_TEAM_ID  |character |                                     |
+#'   |GAME_DATE_EST    |character |Game date est.                       |
+#'   |HOME_TEAM_WINS   |character |Home team's team wins.               |
+#'   |HOME_TEAM_LOSSES |character |Home team's team losses.             |
+#'   |SERIES_LEADER    |character |                                     |
 #'
 #'   **LastMeeting**
 #'
 #'
-#'   |col_name                         |types     |
-#'   |:--------------------------------|:---------|
-#'   |GAME_ID                          |character |
-#'   |LAST_GAME_ID                     |character |
-#'   |LAST_GAME_DATE_EST               |character |
-#'   |LAST_GAME_HOME_TEAM_ID           |character |
-#'   |LAST_GAME_HOME_TEAM_CITY         |character |
-#'   |LAST_GAME_HOME_TEAM_NAME         |character |
-#'   |LAST_GAME_HOME_TEAM_ABBREVIATION |character |
-#'   |LAST_GAME_HOME_TEAM_POINTS       |character |
-#'   |LAST_GAME_VISITOR_TEAM_ID        |character |
-#'   |LAST_GAME_VISITOR_TEAM_CITY      |character |
-#'   |LAST_GAME_VISITOR_TEAM_NAME      |character |
-#'   |LAST_GAME_VISITOR_TEAM_CITY1     |character |
-#'   |LAST_GAME_VISITOR_TEAM_POINTS    |character |
+#'   |col_name                         |types     |description             |
+#'   |:--------------------------------|:---------|:-----------------------|
+#'   |GAME_ID                          |character |Unique game identifier. |
+#'   |LAST_GAME_ID                     |character |                        |
+#'   |LAST_GAME_DATE_EST               |character |                        |
+#'   |LAST_GAME_HOME_TEAM_ID           |character |                        |
+#'   |LAST_GAME_HOME_TEAM_CITY         |character |                        |
+#'   |LAST_GAME_HOME_TEAM_NAME         |character |                        |
+#'   |LAST_GAME_HOME_TEAM_ABBREVIATION |character |                        |
+#'   |LAST_GAME_HOME_TEAM_POINTS       |character |                        |
+#'   |LAST_GAME_VISITOR_TEAM_ID        |character |                        |
+#'   |LAST_GAME_VISITOR_TEAM_CITY      |character |                        |
+#'   |LAST_GAME_VISITOR_TEAM_NAME      |character |                        |
+#'   |LAST_GAME_VISITOR_TEAM_CITY1     |character |                        |
+#'   |LAST_GAME_VISITOR_TEAM_POINTS    |character |                        |
 #'
 #'   **EastConfStandingsByDay**
 #'
 #'
-#'   |col_name      |types     |
-#'   |:-------------|:---------|
-#'   |TEAM_ID       |character |
-#'   |LEAGUE_ID     |character |
-#'   |SEASON_ID     |character |
-#'   |STANDINGSDATE |character |
-#'   |CONFERENCE    |character |
-#'   |TEAM          |character |
-#'   |G             |character |
-#'   |W             |character |
-#'   |L             |character |
-#'   |W_PCT         |character |
-#'   |HOME_RECORD   |character |
-#'   |ROAD_RECORD   |character |
+#'   |col_name      |types     |description                         |
+#'   |:-------------|:---------|:-----------------------------------|
+#'   |TEAM_ID       |character |Unique team identifier.             |
+#'   |LEAGUE_ID     |character |League identifier ('10' = WNBA).    |
+#'   |SEASON_ID     |character |Unique season identifier.           |
+#'   |STANDINGSDATE |character |                                    |
+#'   |CONFERENCE    |character |Conference.                         |
+#'   |TEAM          |character |Team-side label or team identifier. |
+#'   |G             |character |Games played.                       |
+#'   |W             |character |Wins.                               |
+#'   |L             |character |Losses.                             |
+#'   |W_PCT         |character |                                    |
+#'   |HOME_RECORD   |character |Home win-loss record.               |
+#'   |ROAD_RECORD   |character |                                    |
 #'
 #'   **WestConfStandingsByDay**
 #'
 #'
-#'   |col_name      |types     |
-#'   |:-------------|:---------|
-#'   |TEAM_ID       |character |
-#'   |LEAGUE_ID     |character |
-#'   |SEASON_ID     |character |
-#'   |STANDINGSDATE |character |
-#'   |CONFERENCE    |character |
-#'   |TEAM          |character |
-#'   |G             |character |
-#'   |W             |character |
-#'   |L             |character |
-#'   |W_PCT         |character |
-#'   |HOME_RECORD   |character |
-#'   |ROAD_RECORD   |character |
+#'   |col_name      |types     |description                         |
+#'   |:-------------|:---------|:-----------------------------------|
+#'   |TEAM_ID       |character |Unique team identifier.             |
+#'   |LEAGUE_ID     |character |League identifier ('10' = WNBA).    |
+#'   |SEASON_ID     |character |Unique season identifier.           |
+#'   |STANDINGSDATE |character |                                    |
+#'   |CONFERENCE    |character |Conference.                         |
+#'   |TEAM          |character |Team-side label or team identifier. |
+#'   |G             |character |Games played.                       |
+#'   |W             |character |Wins.                               |
+#'   |L             |character |Losses.                             |
+#'   |W_PCT         |character |                                    |
+#'   |HOME_RECORD   |character |Home win-loss record.               |
+#'   |ROAD_RECORD   |character |                                    |
 #'
 #'   **Available**
 #'
 #'
-#'   |col_name     |types     |
-#'   |:------------|:---------|
-#'   |GAME_ID      |character |
-#'   |PT_AVAILABLE |character |
+#'   |col_name     |types     |description             |
+#'   |:------------|:---------|:-----------------------|
+#'   |GAME_ID      |character |Unique game identifier. |
+#'   |PT_AVAILABLE |character |Pt available.           |
 #'
 #'   **TeamLeaders**
 #'
 #'
-#'   |col_name          |types     |
-#'   |:-----------------|:---------|
-#'   |GAME_ID           |character |
-#'   |TEAM_ID           |character |
-#'   |TEAM_CITY         |character |
-#'   |TEAM_NICKNAME     |character |
-#'   |TEAM_ABBREVIATION |character |
-#'   |PTS_PLAYER_ID     |character |
-#'   |PTS_PLAYER_NAME   |character |
-#'   |PTS               |character |
-#'   |REB_PLAYER_ID     |character |
-#'   |REB_PLAYER_NAME   |character |
-#'   |REB               |character |
-#'   |AST_PLAYER_ID     |character |
-#'   |AST_PLAYER_NAME   |character |
-#'   |AST               |character |
+#'   |col_name          |types     |description                             |
+#'   |:-----------------|:---------|:---------------------------------------|
+#'   |GAME_ID           |character |Unique game identifier.                 |
+#'   |TEAM_ID           |character |Unique team identifier.                 |
+#'   |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas'). |
+#'   |TEAM_NICKNAME     |character |Team nickname.                          |
+#'   |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').   |
+#'   |PTS_PLAYER_ID     |character |                                        |
+#'   |PTS_PLAYER_NAME   |character |                                        |
+#'   |PTS               |character |Points scored.                          |
+#'   |REB_PLAYER_ID     |character |                                        |
+#'   |REB_PLAYER_NAME   |character |                                        |
+#'   |REB               |character |Total rebounds.                         |
+#'   |AST_PLAYER_ID     |character |                                        |
+#'   |AST_PLAYER_NAME   |character |                                        |
+#'   |AST               |character |Assists.                                |
 #'
 #'   **TicketLinks**
 #'
@@ -612,88 +612,88 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a tibble with the following scoreboard data:
 #'
-#'    |col_name                       |types      |
-#'    |:------------------------------|:----------|
-#'    |game_id                        |character  |
-#'    |game_code                      |character  |
-#'    |game_status                    |integer    |
-#'    |game_status_text               |character  |
-#'    |game_date                      |character  |
-#'    |game_time_utc                  |character  |
-#'    |game_et                        |character  |
-#'    |home_team_id                   |integer    |
-#'    |home_team_name                 |character  |
-#'    |home_team_city                 |character  |
-#'    |home_team_tricode              |character  |
-#'    |home_team_slug                 |character  |
-#'    |away_team_id                   |integer    |
-#'    |away_team_name                 |character  |
-#'    |away_team_city                 |character  |
-#'    |away_team_tricode              |character  |
-#'    |away_team_slug                 |character  |
-#'    |period                         |integer    |
-#'    |game_clock                     |character  |
-#'    |regulation_periods             |integer    |
-#'    |series_game_number             |character  |
-#'    |series_text                    |character  |
-#'    |if_necessary                   |logical    |
-#'    |series_conference              |character  |
-#'    |po_round_desc                  |character  |
-#'    |game_subtype                   |character  |
-#'    |game_home_leaders_person_id    |integer    |
-#'    |game_home_leaders_name         |character  |
-#'    |game_home_leaders_player_slug  |character  |
-#'    |game_home_leaders_jersey_num   |character  |
-#'    |game_home_leaders_position     |character  |
-#'    |game_home_leaders_team_tricode |character  |
-#'    |game_home_leaders_points       |integer    |
-#'    |game_home_leaders_rebounds     |integer    |
-#'    |game_home_leaders_assists      |integer    |
-#'    |game_away_leaders_person_id    |integer    |
-#'    |game_away_leaders_name         |character  |
-#'    |game_away_leaders_player_slug  |character  |
-#'    |game_away_leaders_jersey_num   |character  |
-#'    |game_away_leaders_position     |character  |
-#'    |game_away_leaders_team_tricode |character  |
-#'    |game_away_leaders_points       |integer    |
-#'    |game_away_leaders_rebounds     |integer    |
-#'    |game_away_leaders_assists      |integer    |
-#'    |team_home_leaders_person_id    |integer    |
-#'    |team_home_leaders_name         |character  |
-#'    |team_home_leaders_player_slug  |character  |
-#'    |team_home_leaders_jersey_num   |character  |
-#'    |team_home_leaders_position     |character  |
-#'    |team_home_leaders_team_tricode |character  |
-#'    |team_home_leaders_points       |numeric    |
-#'    |team_home_leaders_rebounds     |numeric    |
-#'    |team_home_leaders_assists      |numeric    |
-#'    |team_away_leaders_person_id    |integer    |
-#'    |team_away_leaders_name         |character  |
-#'    |team_away_leaders_player_slug  |character  |
-#'    |team_away_leaders_jersey_num   |character  |
-#'    |team_away_leaders_position     |character  |
-#'    |team_away_leaders_team_tricode |character  |
-#'    |team_away_leaders_points       |numeric    |
-#'    |team_away_leaders_rebounds     |numeric    |
-#'    |team_away_leaders_assists      |numeric    |
-#'    |team_season_leaders_flag       |integer    |
-#'    |home_wins                      |integer    |
-#'    |home_losses                    |integer    |
-#'    |home_score                     |integer    |
-#'    |home_seed                      |integer    |
-#'    |home_in_bonus                  |logical    |
-#'    |home_timeouts_remaining        |integer    |
-#'    |home_periods                   |list       |
-#'    |away_wins                      |integer    |
-#'    |away_losses                    |integer    |
-#'    |away_score                     |integer    |
-#'    |away_seed                      |integer    |
-#'    |away_in_bonus                  |logical    |
-#'    |away_timeouts_remaining        |integer    |
-#'    |away_periods                   |list       |
-#'    |league_id                      |character  |
-#'    |league                         |character  |
-#'    |broadcasters                   |data.frame |
+#'    |col_name                       |types      |description                                            |
+#'    |:------------------------------|:----------|:------------------------------------------------------|
+#'    |game_id                        |character  |Unique game identifier.                                |
+#'    |game_code                      |character  |ESPN game code (numeric identifier).                   |
+#'    |game_status                    |integer    |Game status label.                                     |
+#'    |game_status_text               |character  |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'    |game_date                      |character  |Game date (YYYY-MM-DD).                                |
+#'    |game_time_utc                  |character  |Game start time in UTC (ISO 8601 timestamp).           |
+#'    |game_et                        |character  |Game et.                                               |
+#'    |home_team_id                   |integer    |Unique identifier for the home team.                   |
+#'    |home_team_name                 |character  |Home team name.                                        |
+#'    |home_team_city                 |character  |Home team city / location.                             |
+#'    |home_team_tricode              |character  |Home team three-letter code.                           |
+#'    |home_team_slug                 |character  |Home team's team slug.                                 |
+#'    |away_team_id                   |integer    |Unique identifier for the away team.                   |
+#'    |away_team_name                 |character  |Away team name.                                        |
+#'    |away_team_city                 |character  |Away team city / location.                             |
+#'    |away_team_tricode              |character  |Away team three-letter code.                           |
+#'    |away_team_slug                 |character  |Away team's team slug.                                 |
+#'    |period                         |integer    |Period of the game (1-4 quarters; 5+ for OT).          |
+#'    |game_clock                     |character  |Game clock.                                            |
+#'    |regulation_periods             |integer    |Regulation periods.                                    |
+#'    |series_game_number             |character  |Series game number.                                    |
+#'    |series_text                    |character  |Series text.                                           |
+#'    |if_necessary                   |logical    |If necessary.                                          |
+#'    |series_conference              |character  |Series conference.                                     |
+#'    |po_round_desc                  |character  |Po round desc.                                         |
+#'    |game_subtype                   |character  |Game subtype.                                          |
+#'    |game_home_leaders_person_id    |integer    |Unique identifier for game home leaders person.        |
+#'    |game_home_leaders_name         |character  |Game home leaders name.                                |
+#'    |game_home_leaders_player_slug  |character  |Game home leaders player slug.                         |
+#'    |game_home_leaders_jersey_num   |character  |Game home leaders jersey num.                          |
+#'    |game_home_leaders_position     |character  |Game home leaders position.                            |
+#'    |game_home_leaders_team_tricode |character  |Game home leaders team tricode.                        |
+#'    |game_home_leaders_points       |integer    |Game home leaders points.                              |
+#'    |game_home_leaders_rebounds     |integer    |Game home leaders rebounds.                            |
+#'    |game_home_leaders_assists      |integer    |Game home leaders assists.                             |
+#'    |game_away_leaders_person_id    |integer    |Unique identifier for game away leaders person.        |
+#'    |game_away_leaders_name         |character  |Game away leaders name.                                |
+#'    |game_away_leaders_player_slug  |character  |Game away leaders player slug.                         |
+#'    |game_away_leaders_jersey_num   |character  |Game away leaders jersey num.                          |
+#'    |game_away_leaders_position     |character  |Game away leaders position.                            |
+#'    |game_away_leaders_team_tricode |character  |Game away leaders team tricode.                        |
+#'    |game_away_leaders_points       |integer    |Game away leaders points.                              |
+#'    |game_away_leaders_rebounds     |integer    |Game away leaders rebounds.                            |
+#'    |game_away_leaders_assists      |integer    |Game away leaders assists.                             |
+#'    |team_home_leaders_person_id    |integer    |Unique identifier for team home leaders person.        |
+#'    |team_home_leaders_name         |character  |Team home leaders name.                                |
+#'    |team_home_leaders_player_slug  |character  |Team home leaders player slug.                         |
+#'    |team_home_leaders_jersey_num   |character  |Team home leaders jersey num.                          |
+#'    |team_home_leaders_position     |character  |Team home leaders position.                            |
+#'    |team_home_leaders_team_tricode |character  |Team home leaders team tricode.                        |
+#'    |team_home_leaders_points       |numeric    |Team home leaders points.                              |
+#'    |team_home_leaders_rebounds     |numeric    |Team home leaders rebounds.                            |
+#'    |team_home_leaders_assists      |numeric    |Team home leaders assists.                             |
+#'    |team_away_leaders_person_id    |integer    |Unique identifier for team away leaders person.        |
+#'    |team_away_leaders_name         |character  |Team away leaders name.                                |
+#'    |team_away_leaders_player_slug  |character  |Team away leaders player slug.                         |
+#'    |team_away_leaders_jersey_num   |character  |Team away leaders jersey num.                          |
+#'    |team_away_leaders_position     |character  |Team away leaders position.                            |
+#'    |team_away_leaders_team_tricode |character  |Team away leaders team tricode.                        |
+#'    |team_away_leaders_points       |numeric    |Team away leaders points.                              |
+#'    |team_away_leaders_rebounds     |numeric    |Team away leaders rebounds.                            |
+#'    |team_away_leaders_assists      |numeric    |Team away leaders assists.                             |
+#'    |team_season_leaders_flag       |integer    |Team season leaders flag.                              |
+#'    |home_wins                      |integer    |Home team's wins.                                      |
+#'    |home_losses                    |integer    |Home team's losses.                                    |
+#'    |home_score                     |integer    |Home team score at the time of the play.               |
+#'    |home_seed                      |integer    |Home team's seed.                                      |
+#'    |home_in_bonus                  |logical    |Home team's in bonus.                                  |
+#'    |home_timeouts_remaining        |integer    |Home team's timeouts remaining.                        |
+#'    |home_periods                   |list       |Home team's periods.                                   |
+#'    |away_wins                      |integer    |Away team's wins.                                      |
+#'    |away_losses                    |integer    |Away team's losses.                                    |
+#'    |away_score                     |integer    |Away team score at the time of the play.               |
+#'    |away_seed                      |integer    |Away team's seed.                                      |
+#'    |away_in_bonus                  |logical    |Away team's in bonus.                                  |
+#'    |away_timeouts_remaining        |integer    |Away team's timeouts remaining.                        |
+#'    |away_periods                   |list       |Away team's periods.                                   |
+#'    |league_id                      |character  |League identifier ('10' = WNBA).                       |
+#'    |league                         |character  |League.                                                |
+#'    |broadcasters                   |data.frame |                                                       |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -796,66 +796,66 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a data frame with the following columns:
 #'
-#'   |col_name                  |types     |
-#'   |:-------------------------|:---------|
-#'   |game_id                   |character |
-#'   |game_code                 |character |
-#'   |game_status               |integer   |
-#'   |game_status_text          |character |
-#'   |period                    |integer   |
-#'   |game_clock                |character |
-#'   |game_time_utc             |character |
-#'   |game_et                   |character |
-#'   |regulation_periods        |integer   |
-#'   |if_necessary              |logical   |
-#'   |series_game_number        |character |
-#'   |series_text               |character |
-#'   |series_conference         |character |
-#'   |po_round_desc             |character |
-#'   |game_subtype              |character |
-#'   |home_team_id              |integer   |
-#'   |home_team_name            |character |
-#'   |home_team_city            |character |
-#'   |home_team_tricode         |character |
-#'   |home_wins                 |integer   |
-#'   |home_losses               |integer   |
-#'   |home_score                |integer   |
-#'   |home_seed                 |logical   |
-#'   |home_in_bonus             |character |
-#'   |home_timeouts_remaining   |integer   |
-#'   |home_periods              |list      |
-#'   |away_team_id              |integer   |
-#'   |away_team_name            |character |
-#'   |away_team_city            |character |
-#'   |away_team_tricode         |character |
-#'   |away_wins                 |integer   |
-#'   |away_losses               |integer   |
-#'   |away_score                |integer   |
-#'   |away_seed                 |logical   |
-#'   |away_in_bonus             |character |
-#'   |away_timeouts_remaining   |integer   |
-#'   |away_periods              |list      |
-#'   |home_leaders_person_id    |integer   |
-#'   |home_leaders_name         |character |
-#'   |home_leaders_jersey_num   |character |
-#'   |home_leaders_position     |character |
-#'   |home_leaders_team_tricode |character |
-#'   |home_leaders_player_slug  |character |
-#'   |home_leaders_points       |integer   |
-#'   |home_leaders_rebounds     |integer   |
-#'   |home_leaders_assists      |integer   |
-#'   |away_leaders_person_id    |integer   |
-#'   |away_leaders_name         |character |
-#'   |away_leaders_jersey_num   |character |
-#'   |away_leaders_position     |character |
-#'   |away_leaders_team_tricode |character |
-#'   |away_leaders_player_slug  |character |
-#'   |away_leaders_points       |integer   |
-#'   |away_leaders_rebounds     |integer   |
-#'   |away_leaders_assists      |integer   |
-#'   |pb_odds_team              |logical   |
-#'   |pb_odds_odds              |numeric   |
-#'   |pb_odds_suspended         |integer   |
+#'   |col_name                  |types     |description                                            |
+#'   |:-------------------------|:---------|:------------------------------------------------------|
+#'   |game_id                   |character |Unique game identifier.                                |
+#'   |game_code                 |character |ESPN game code (numeric identifier).                   |
+#'   |game_status               |integer   |Game status label.                                     |
+#'   |game_status_text          |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'   |period                    |integer   |Period of the game (1-4 quarters; 5+ for OT).          |
+#'   |game_clock                |character |Game clock.                                            |
+#'   |game_time_utc             |character |Game start time in UTC (ISO 8601 timestamp).           |
+#'   |game_et                   |character |Game et.                                               |
+#'   |regulation_periods        |integer   |Regulation periods.                                    |
+#'   |if_necessary              |logical   |If necessary.                                          |
+#'   |series_game_number        |character |Series game number.                                    |
+#'   |series_text               |character |Series text.                                           |
+#'   |series_conference         |character |Series conference.                                     |
+#'   |po_round_desc             |character |Po round desc.                                         |
+#'   |game_subtype              |character |Game subtype.                                          |
+#'   |home_team_id              |integer   |Unique identifier for the home team.                   |
+#'   |home_team_name            |character |Home team name.                                        |
+#'   |home_team_city            |character |Home team city / location.                             |
+#'   |home_team_tricode         |character |Home team three-letter code.                           |
+#'   |home_wins                 |integer   |Home team's wins.                                      |
+#'   |home_losses               |integer   |Home team's losses.                                    |
+#'   |home_score                |integer   |Home team score at the time of the play.               |
+#'   |home_seed                 |logical   |Home team's seed.                                      |
+#'   |home_in_bonus             |character |Home team's in bonus.                                  |
+#'   |home_timeouts_remaining   |integer   |Home team's timeouts remaining.                        |
+#'   |home_periods              |list      |Home team's periods.                                   |
+#'   |away_team_id              |integer   |Unique identifier for the away team.                   |
+#'   |away_team_name            |character |Away team name.                                        |
+#'   |away_team_city            |character |Away team city / location.                             |
+#'   |away_team_tricode         |character |Away team three-letter code.                           |
+#'   |away_wins                 |integer   |Away team's wins.                                      |
+#'   |away_losses               |integer   |Away team's losses.                                    |
+#'   |away_score                |integer   |Away team score at the time of the play.               |
+#'   |away_seed                 |logical   |Away team's seed.                                      |
+#'   |away_in_bonus             |character |Away team's in bonus.                                  |
+#'   |away_timeouts_remaining   |integer   |Away team's timeouts remaining.                        |
+#'   |away_periods              |list      |Away team's periods.                                   |
+#'   |home_leaders_person_id    |integer   |Unique identifier for home leaders person.             |
+#'   |home_leaders_name         |character |Home leaders name.                                     |
+#'   |home_leaders_jersey_num   |character |Home team's leaders jersey num.                        |
+#'   |home_leaders_position     |character |Home team's leaders position.                          |
+#'   |home_leaders_team_tricode |character |Home team's leaders team tricode.                      |
+#'   |home_leaders_player_slug  |character |Home team's leaders player slug.                       |
+#'   |home_leaders_points       |integer   |Home team's leaders points.                            |
+#'   |home_leaders_rebounds     |integer   |Home team's leaders rebounds.                          |
+#'   |home_leaders_assists      |integer   |Home team's leaders assists.                           |
+#'   |away_leaders_person_id    |integer   |Unique identifier for away leaders person.             |
+#'   |away_leaders_name         |character |Away leaders name.                                     |
+#'   |away_leaders_jersey_num   |character |Away team's leaders jersey num.                        |
+#'   |away_leaders_position     |character |Away team's leaders position.                          |
+#'   |away_leaders_team_tricode |character |Away team's leaders team tricode.                      |
+#'   |away_leaders_player_slug  |character |Away team's leaders player slug.                       |
+#'   |away_leaders_points       |integer   |Away team's leaders points.                            |
+#'   |away_leaders_rebounds     |integer   |Away team's leaders rebounds.                          |
+#'   |away_leaders_assists      |integer   |Away team's leaders assists.                           |
+#'   |pb_odds_team              |logical   |Pb odds team.                                          |
+#'   |pb_odds_odds              |numeric   |Pb odds odds.                                          |
+#'   |pb_odds_suspended         |integer   |Pb odds suspended.                                     |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -939,37 +939,37 @@ NULL
 #'    **WinProbPBP**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |GAME_ID           |character |
-#'    |EVENT_NUM         |character |
-#'    |HOME_PCT          |character |
-#'    |VISITOR_PCT       |character |
-#'    |HOME_PTS          |character |
-#'    |VISITOR_PTS       |character |
-#'    |HOME_SCORE_MARGIN |character |
-#'    |PERIOD            |character |
-#'    |SECONDS_REMAINING |character |
-#'    |HOME_POSS_IND     |character |
-#'    |HOME_G            |character |
-#'    |DESCRIPTION       |character |
-#'    |LOCATION          |character |
-#'    |PCTIMESTRING      |character |
-#'    |ISVISIBLE         |character |
+#'    |col_name          |types     |description                                       |
+#'    |:-----------------|:---------|:-------------------------------------------------|
+#'    |GAME_ID           |character |Unique game identifier.                           |
+#'    |EVENT_NUM         |character |Sequential event number within the game (V2 PBP). |
+#'    |HOME_PCT          |character |                                                  |
+#'    |VISITOR_PCT       |character |                                                  |
+#'    |HOME_PTS          |character |                                                  |
+#'    |VISITOR_PTS       |character |                                                  |
+#'    |HOME_SCORE_MARGIN |character |                                                  |
+#'    |PERIOD            |character |Period of the game (1-4 quarters; 5+ for OT).     |
+#'    |SECONDS_REMAINING |character |Seconds remaining in the period.                  |
+#'    |HOME_POSS_IND     |character |                                                  |
+#'    |HOME_G            |character |                                                  |
+#'    |DESCRIPTION       |character |Long-form description text.                       |
+#'    |LOCATION          |character |Location.                                         |
+#'    |PCTIMESTRING      |character |                                                  |
+#'    |ISVISIBLE         |character |                                                  |
 #'
 #'    **GameInfo**
 #'
 #'
-#'    |col_name         |types     |
-#'    |:----------------|:---------|
-#'    |GAME_ID          |character |
-#'    |GAME_DATE        |character |
-#'    |HOME_TEAM_ID     |character |
-#'    |HOME_TEAM_ABR    |character |
-#'    |HOME_TEAM_PTS    |character |
-#'    |VISITOR_TEAM_ID  |character |
-#'    |VISITOR_TEAM_ABR |character |
-#'    |VISITOR_TEAM_PTS |character |
+#'    |col_name         |types     |description                          |
+#'    |:----------------|:---------|:------------------------------------|
+#'    |GAME_ID          |character |Unique game identifier.              |
+#'    |GAME_DATE        |character |Game date (YYYY-MM-DD).              |
+#'    |HOME_TEAM_ID     |character |Unique identifier for the home team. |
+#'    |HOME_TEAM_ABR    |character |                                     |
+#'    |HOME_TEAM_PTS    |character |                                     |
+#'    |VISITOR_TEAM_ID  |character |                                     |
+#'    |VISITOR_TEAM_ABR |character |                                     |
+#'    |VISITOR_TEAM_PTS |character |                                     |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1040,56 +1040,56 @@ NULL
 #'    **SeasonGames**
 #'
 #'
-#'    |col_name                   |types     |
-#'    |:--------------------------|:---------|
-#'    |game_date                  |character |
-#'    |game_id                    |character |
-#'    |game_code                  |character |
-#'    |game_status                |character |
-#'    |game_status_text           |character |
-#'    |game_sequence              |character |
-#'    |home_team_id               |character |
-#'    |home_team_name             |character |
-#'    |home_team_city             |character |
-#'    |home_team_tricode          |character |
-#'    |home_team_slug             |character |
-#'    |home_team_wins             |character |
-#'    |home_team_losses           |character |
-#'    |home_team_score            |character |
-#'    |away_team_id               |character |
-#'    |away_team_name             |character |
-#'    |away_team_city             |character |
-#'    |away_team_tricode          |character |
-#'    |away_team_slug             |character |
-#'    |away_team_wins             |character |
-#'    |away_team_losses           |character |
-#'    |away_team_score            |character |
-#'    |season                     |character |
-#'    |league_id                  |character |
+#'    |col_name          |types     |description                                            |
+#'    |:-----------------|:---------|:------------------------------------------------------|
+#'    |game_date         |character |Game date (YYYY-MM-DD).                                |
+#'    |game_id           |character |Unique game identifier.                                |
+#'    |game_code         |character |ESPN game code (numeric identifier).                   |
+#'    |game_status       |character |Game status label.                                     |
+#'    |game_status_text  |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
+#'    |game_sequence     |character |Game sequence.                                         |
+#'    |home_team_id      |character |Unique identifier for the home team.                   |
+#'    |home_team_name    |character |Home team name.                                        |
+#'    |home_team_city    |character |Home team city / location.                             |
+#'    |home_team_tricode |character |Home team three-letter code.                           |
+#'    |home_team_slug    |character |Home team's team slug.                                 |
+#'    |home_team_wins    |character |Home team's team wins.                                 |
+#'    |home_team_losses  |character |Home team's team losses.                               |
+#'    |home_team_score   |character |Home team's score.                                     |
+#'    |away_team_id      |character |Unique identifier for the away team.                   |
+#'    |away_team_name    |character |Away team name.                                        |
+#'    |away_team_city    |character |Away team city / location.                             |
+#'    |away_team_tricode |character |Away team three-letter code.                           |
+#'    |away_team_slug    |character |Away team's team slug.                                 |
+#'    |away_team_wins    |character |Away team's team wins.                                 |
+#'    |away_team_losses  |character |Away team's team losses.                               |
+#'    |away_team_score   |character |Away team's score.                                     |
+#'    |season            |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
+#'    |league_id         |character |League identifier ('10' = WNBA).                       |
 #'
 #'    **SeasonWeeks**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |league_id    |character |
-#'    |season_year  |character |
-#'    |week_number  |character |
-#'    |week_name    |character |
-#'    |start_date   |character |
-#'    |end_date     |character |
+#'    |col_name    |types     |description                            |
+#'    |:-----------|:---------|:--------------------------------------|
+#'    |league_id   |character |League identifier ('10' = WNBA).       |
+#'    |season_year |character |Season year string ('YYYY-YY' format). |
+#'    |week_number |character |Week number.                           |
+#'    |week_name   |character |Week name.                             |
+#'    |start_date  |character |Start date (YYYY-MM-DD).               |
+#'    |end_date    |character |End date (YYYY-MM-DD).                 |
 #'
 #'    **BroadcasterList**
 #'
 #'
-#'    |col_name                  |types     |
-#'    |:-------------------------|:---------|
-#'    |league_id                 |character |
-#'    |season_year               |character |
-#'    |broadcaster_abbreviation  |character |
-#'    |broadcaster_display       |character |
-#'    |broadcaster_id            |character |
-#'    |region_id                 |character |
+#'    |col_name                 |types     |description                            |
+#'    |:------------------------|:---------|:--------------------------------------|
+#'    |league_id                |character |League identifier ('10' = WNBA).       |
+#'    |season_year              |character |Season year string ('YYYY-YY' format). |
+#'    |broadcaster_abbreviation |character |Broadcaster abbreviation.              |
+#'    |broadcaster_display      |character |Broadcaster display.                   |
+#'    |broadcaster_id           |character |Unique identifier for broadcaster.     |
+#'    |region_id                |character |Unique identifier for region.          |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

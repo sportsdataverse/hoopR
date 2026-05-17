@@ -38,35 +38,35 @@ nba_leagueseasonmatchups(
 \value{
 Returns a named list of data frames: SeasonMatchups
 
-\strong{SeasonMatchups}\tabular{ll}{
-   col_name \tab types \cr
-   SEASON_ID \tab character \cr
-   OFF_PLAYER_ID \tab character \cr
-   OFF_PLAYER_NAME \tab character \cr
-   DEF_PLAYER_ID \tab character \cr
-   DEF_PLAYER_NAME \tab character \cr
-   GP \tab character \cr
-   MATCHUP_MIN \tab character \cr
-   PARTIAL_POSS \tab character \cr
-   PLAYER_PTS \tab character \cr
-   TEAM_PTS \tab character \cr
-   MATCHUP_AST \tab character \cr
-   MATCHUP_TOV \tab character \cr
-   MATCHUP_BLK \tab character \cr
-   MATCHUP_FGM \tab character \cr
-   MATCHUP_FGA \tab character \cr
-   MATCHUP_FG_PCT \tab character \cr
-   MATCHUP_FG3M \tab character \cr
-   MATCHUP_FG3A \tab character \cr
-   MATCHUP_FG3_PCT \tab character \cr
-   HELP_BLK \tab character \cr
-   HELP_FGM \tab character \cr
-   HELP_FGA \tab character \cr
-   HELP_FG_PERC \tab character \cr
-   MATCHUP_FTM \tab character \cr
-   MATCHUP_FTA \tab character \cr
-   SFL \tab character \cr
-   MATCHUP_TIME_SEC \tab character \cr
+\strong{SeasonMatchups}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   SEASON_ID \tab character \tab Unique season identifier. \cr
+   OFF_PLAYER_ID \tab character \tab  \cr
+   OFF_PLAYER_NAME \tab character \tab  \cr
+   DEF_PLAYER_ID \tab character \tab  \cr
+   DEF_PLAYER_NAME \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   MATCHUP_MIN \tab character \tab  \cr
+   PARTIAL_POSS \tab character \tab  \cr
+   PLAYER_PTS \tab character \tab  \cr
+   TEAM_PTS \tab character \tab  \cr
+   MATCHUP_AST \tab character \tab  \cr
+   MATCHUP_TOV \tab character \tab  \cr
+   MATCHUP_BLK \tab character \tab  \cr
+   MATCHUP_FGM \tab character \tab  \cr
+   MATCHUP_FGA \tab character \tab  \cr
+   MATCHUP_FG_PCT \tab character \tab  \cr
+   MATCHUP_FG3M \tab character \tab  \cr
+   MATCHUP_FG3A \tab character \tab  \cr
+   MATCHUP_FG3_PCT \tab character \tab  \cr
+   HELP_BLK \tab character \tab  \cr
+   HELP_FGM \tab character \tab  \cr
+   HELP_FGA \tab character \tab  \cr
+   HELP_FG_PERC \tab character \tab  \cr
+   MATCHUP_FTM \tab character \tab  \cr
+   MATCHUP_FTA \tab character \tab  \cr
+   SFL \tab character \tab  \cr
+   MATCHUP_TIME_SEC \tab character \tab  \cr
 }
 }
 \description{

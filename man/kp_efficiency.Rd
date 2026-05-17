@@ -12,28 +12,28 @@ kp_efficiency(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of efficiency and tempo ratings\tabular{ll}{
-   col_name \tab types \cr
-   team \tab character \cr
-   conf \tab character \cr
-   adj_t \tab numeric \cr
-   adj_t_rk \tab numeric \cr
-   raw_t \tab numeric \cr
-   raw_t_rk \tab numeric \cr
-   avg_poss_length_off \tab numeric \cr
-   avg_poss_length_off_rk \tab numeric \cr
-   avg_poss_length_def \tab numeric \cr
-   avg_poss_length_def_rk \tab numeric \cr
-   adj_o \tab numeric \cr
-   adj_o_rk \tab numeric \cr
-   raw_o \tab numeric \cr
-   raw_o_rk \tab numeric \cr
-   adj_d \tab numeric \cr
-   adj_d_rk \tab numeric \cr
-   raw_d \tab numeric \cr
-   raw_d_rk \tab numeric \cr
-   ncaa_seed \tab numeric \cr
-   year \tab numeric \cr
+Returns a tibble of efficiency and tempo ratings\tabular{lll}{
+   col_name \tab types \tab description \cr
+   team \tab character \tab Team-side label or team identifier. \cr
+   conf \tab character \tab character. \cr
+   adj_t \tab numeric \tab Adj t. \cr
+   adj_t_rk \tab numeric \tab Adj t rk. \cr
+   raw_t \tab numeric \tab Raw t. \cr
+   raw_t_rk \tab numeric \tab Raw t rk. \cr
+   avg_poss_length_off \tab numeric \tab Avg poss length off. \cr
+   avg_poss_length_off_rk \tab numeric \tab Avg poss length off rk. \cr
+   avg_poss_length_def \tab numeric \tab Avg poss length def. \cr
+   avg_poss_length_def_rk \tab numeric \tab Avg poss length def rk. \cr
+   adj_o \tab numeric \tab Adj o. \cr
+   adj_o_rk \tab numeric \tab Adj o rk. \cr
+   raw_o \tab numeric \tab Raw o. \cr
+   raw_o_rk \tab numeric \tab Raw o rk. \cr
+   adj_d \tab numeric \tab Adj d. \cr
+   adj_d_rk \tab numeric \tab Adj d rk. \cr
+   raw_d \tab numeric \tab Raw d. \cr
+   raw_d_rk \tab numeric \tab Raw d rk. \cr
+   ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   year \tab numeric \tab 4-digit year. \cr
 }
 }
 \description{

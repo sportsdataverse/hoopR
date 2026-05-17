@@ -16,195 +16,195 @@ espn_nba_player_stats(athlete_id, year, season_type = "regular", total = FALSE)
 \item{total}{(boolean, default: FALSE): Totals}
 }
 \value{
-Returns a tibble with the player stats data\tabular{ll}{
-   col_name \tab types \cr
-   athlete_id \tab integer \cr
-   athlete_uid \tab character \cr
-   athlete_guid \tab character \cr
-   athlete_type \tab character \cr
-   sdr \tab integer \cr
-   first_name \tab character \cr
-   last_name \tab character \cr
-   full_name \tab character \cr
-   display_name \tab character \cr
-   short_name \tab character \cr
-   weight \tab numeric \cr
-   display_weight \tab character \cr
-   height \tab numeric \cr
-   display_height \tab character \cr
-   age \tab integer \cr
-   date_of_birth \tab character \cr
-   slug \tab character \cr
-   headshot_href \tab character \cr
-   headshot_alt \tab character \cr
-   jersey \tab character \cr
-   position_id \tab integer \cr
-   position_name \tab character \cr
-   position_display_name \tab character \cr
-   position_abbreviation \tab character \cr
-   position_leaf \tab logical \cr
-   linked \tab logical \cr
-   years \tab integer \cr
-   active \tab logical \cr
-   contract_x_ref \tab character \cr
-   contract_bird_status \tab integer \cr
-   contract_active \tab logical \cr
-   contract_active_1 \tab logical \cr
-   contract_incoming_trade_value \tab integer \cr
-   contract_outgoing_trade_value \tab integer \cr
-   contract_minimum_salary_exception \tab logical \cr
-   contract_option_type \tab integer \cr
-   contract_salary \tab integer \cr
-   contract_salary_remaining \tab integer \cr
-   contract_years_remaining \tab integer \cr
-   contract_x_ref_1 \tab character \cr
-   contract_x_ref_2 \tab character \cr
-   contract_trade_kicker_active \tab logical \cr
-   contract_trade_kicker_percentage \tab numeric \cr
-   contract_trade_kicker_value \tab integer \cr
-   contract_trade_kicker_trade_value \tab integer \cr
-   contract_trade_restriction \tab logical \cr
-   contract_unsigned_foreign_pick \tab logical \cr
-   contract_active_2 \tab logical \cr
-   draft_display_text \tab character \cr
-   draft_round \tab integer \cr
-   draft_year \tab integer \cr
-   draft_selection \tab integer \cr
-   draft_x_ref \tab character \cr
-   draft_x_ref_1 \tab character \cr
-   status_id \tab integer \cr
-   status_name \tab character \cr
-   status_type \tab character \cr
-   status_abbreviation \tab character \cr
-   defensive_blocks \tab numeric \cr
-   defensive_defensive_rebounds \tab numeric \cr
-   defensive_steals \tab numeric \cr
-   defensive_def_rebound_rate \tab numeric \cr
-   defensive_avg_defensive_rebounds \tab numeric \cr
-   defensive_avg_blocks \tab numeric \cr
-   defensive_avg_steals \tab numeric \cr
-   defensive_avg48defensive_rebounds \tab numeric \cr
-   defensive_avg48blocks \tab numeric \cr
-   defensive_avg48steals \tab numeric \cr
-   defensive_drpm \tab numeric \cr
-   general_disqualifications \tab numeric \cr
-   general_flagrant_fouls \tab numeric \cr
-   general_fouls \tab numeric \cr
-   general_per \tab numeric \cr
-   general_rebound_rate \tab numeric \cr
-   general_ejections \tab numeric \cr
-   general_technical_fouls \tab numeric \cr
-   general_rebounds \tab numeric \cr
-   general_vorp \tab numeric \cr
-   general_warp \tab numeric \cr
-   general_rpm \tab numeric \cr
-   general_minutes \tab numeric \cr
-   general_avg_minutes \tab numeric \cr
-   general_nba_rating \tab numeric \cr
-   general_plus_minus \tab numeric \cr
-   general_avg_rebounds \tab numeric \cr
-   general_avg_fouls \tab numeric \cr
-   general_avg_flagrant_fouls \tab numeric \cr
-   general_avg_technical_fouls \tab numeric \cr
-   general_avg_ejections \tab numeric \cr
-   general_avg_disqualifications \tab numeric \cr
-   general_assist_turnover_ratio \tab numeric \cr
-   general_steal_foul_ratio \tab numeric \cr
-   general_block_foul_ratio \tab numeric \cr
-   general_avg_team_rebounds \tab numeric \cr
-   general_total_rebounds \tab numeric \cr
-   general_total_technical_fouls \tab numeric \cr
-   general_team_assist_turnover_ratio \tab numeric \cr
-   general_steal_turnover_ratio \tab numeric \cr
-   general_avg48rebounds \tab numeric \cr
-   general_avg48fouls \tab numeric \cr
-   general_avg48flagrant_fouls \tab numeric \cr
-   general_avg48technical_fouls \tab numeric \cr
-   general_avg48ejections \tab numeric \cr
-   general_avg48disqualifications \tab numeric \cr
-   general_r40 \tab numeric \cr
-   general_games_played \tab numeric \cr
-   general_games_started \tab numeric \cr
-   general_double_double \tab numeric \cr
-   general_triple_double \tab numeric \cr
-   offensive_assists \tab numeric \cr
-   offensive_effective_fg_pct \tab numeric \cr
-   offensive_field_goals \tab numeric \cr
-   offensive_field_goals_attempted \tab numeric \cr
-   offensive_field_goals_made \tab numeric \cr
-   offensive_field_goal_pct \tab numeric \cr
-   offensive_free_throws \tab numeric \cr
-   offensive_free_throw_pct \tab numeric \cr
-   offensive_free_throws_attempted \tab numeric \cr
-   offensive_free_throws_made \tab numeric \cr
-   offensive_offensive_rebounds \tab numeric \cr
-   offensive_points \tab numeric \cr
-   offensive_turnovers \tab numeric \cr
-   offensive_three_point_pct \tab numeric \cr
-   offensive_three_point_field_goals_attempted \tab numeric \cr
-   offensive_three_point_field_goals_made \tab numeric \cr
-   offensive_true_shooting_pct \tab numeric \cr
-   offensive_total_turnovers \tab numeric \cr
-   offensive_assist_ratio \tab numeric \cr
-   offensive_points_in_paint \tab numeric \cr
-   offensive_off_rebound_rate \tab numeric \cr
-   offensive_turnover_ratio \tab numeric \cr
-   offensive_brick_index \tab numeric \cr
-   offensive_usage_rate \tab numeric \cr
-   offensive_avg_field_goals_made \tab numeric \cr
-   offensive_avg_field_goals_attempted \tab numeric \cr
-   offensive_avg_three_point_field_goals_made \tab numeric \cr
-   offensive_avg_three_point_field_goals_attempted \tab numeric \cr
-   offensive_avg_free_throws_made \tab numeric \cr
-   offensive_avg_free_throws_attempted \tab numeric \cr
-   offensive_avg_points \tab numeric \cr
-   offensive_avg_offensive_rebounds \tab numeric \cr
-   offensive_avg_assists \tab numeric \cr
-   offensive_avg_turnovers \tab numeric \cr
-   offensive_offensive_rebound_pct \tab numeric \cr
-   offensive_estimated_possessions \tab numeric \cr
-   offensive_avg_estimated_possessions \tab numeric \cr
-   offensive_points_per_estimated_possessions \tab numeric \cr
-   offensive_avg_team_turnovers \tab numeric \cr
-   offensive_avg_total_turnovers \tab numeric \cr
-   offensive_three_point_field_goal_pct \tab numeric \cr
-   offensive_two_point_field_goals_made \tab numeric \cr
-   offensive_two_point_field_goals_attempted \tab numeric \cr
-   offensive_avg_two_point_field_goals_made \tab numeric \cr
-   offensive_avg_two_point_field_goals_attempted \tab numeric \cr
-   offensive_two_point_field_goal_pct \tab numeric \cr
-   offensive_shooting_efficiency \tab numeric \cr
-   offensive_scoring_efficiency \tab numeric \cr
-   offensive_avg48field_goals_made \tab numeric \cr
-   offensive_avg48field_goals_attempted \tab numeric \cr
-   offensive_avg48three_point_field_goals_made \tab numeric \cr
-   offensive_avg48three_point_field_goals_attempted \tab numeric \cr
-   offensive_avg48free_throws_made \tab numeric \cr
-   offensive_avg48free_throws_attempted \tab numeric \cr
-   offensive_avg48points \tab numeric \cr
-   offensive_avg48offensive_rebounds \tab numeric \cr
-   offensive_avg48assists \tab numeric \cr
-   offensive_avg48turnovers \tab numeric \cr
-   offensive_p40 \tab numeric \cr
-   offensive_a40 \tab numeric \cr
-   offensive_orpm \tab numeric \cr
-   team_id \tab integer \cr
-   team_guid \tab character \cr
-   team_uid \tab character \cr
-   team_slug \tab character \cr
-   team_location \tab character \cr
-   team_name \tab character \cr
-   team_abbreviation \tab character \cr
-   team_display_name \tab character \cr
-   team_short_display_name \tab character \cr
-   team_color \tab character \cr
-   team_alternate_color \tab character \cr
-   team_is_active \tab logical \cr
-   team_is_all_star \tab logical \cr
-   logo_href \tab character \cr
-   logo_dark_href \tab character \cr
-   logos_href_2 \tab character \cr
-   logos_href_3 \tab character \cr
+Returns a tibble with the player stats data\tabular{lll}{
+   col_name \tab types \tab description \cr
+   athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
+   athlete_uid \tab character \tab ESPN athlete UID (universal identifier). \cr
+   athlete_guid \tab character \tab ESPN athlete GUID. \cr
+   athlete_type \tab character \tab Athlete type / class. \cr
+   sdr \tab integer \tab Sdr. \cr
+   first_name \tab character \tab Player's first name. \cr
+   last_name \tab character \tab Player's last name. \cr
+   full_name \tab character \tab Player's full name. \cr
+   display_name \tab character \tab Display name. \cr
+   short_name \tab character \tab Short display name. \cr
+   weight \tab numeric \tab Player weight in pounds. \cr
+   display_weight \tab character \tab Player weight in display format (e.g. '180 lbs'). \cr
+   height \tab numeric \tab Player height (string e.g. '6-2' or inches). \cr
+   display_height \tab character \tab Player height in display format (e.g. '6-2'). \cr
+   age \tab integer \tab Player age (in years). \cr
+   date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+   slug \tab character \tab URL-safe identifier. \cr
+   headshot_href \tab character \tab Headshot image URL. \cr
+   headshot_alt \tab character \tab Alternative-text label for the headshot. \cr
+   jersey \tab character \tab Jersey number worn by the player. \cr
+   position_id \tab integer \tab Unique position identifier. \cr
+   position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+   position_display_name \tab character \tab Position display name. \cr
+   position_abbreviation \tab character \tab Position abbreviation ('G' / 'F' / 'C'). \cr
+   position_leaf \tab logical \tab Position leaf. \cr
+   linked \tab logical \tab TRUE if the record is linked to a related entity. \cr
+   years \tab integer \tab Years. \cr
+   active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
+   contract_x_ref \tab character \tab Contract x ref. \cr
+   contract_bird_status \tab integer \tab Contract bird status. \cr
+   contract_active \tab logical \tab Contract active. \cr
+   contract_active_1 \tab logical \tab Contract active 1. \cr
+   contract_incoming_trade_value \tab integer \tab Contract incoming trade value. \cr
+   contract_outgoing_trade_value \tab integer \tab Contract outgoing trade value. \cr
+   contract_minimum_salary_exception \tab logical \tab Contract minimum salary exception. \cr
+   contract_option_type \tab integer \tab Contract option type. \cr
+   contract_salary \tab integer \tab Contract salary. \cr
+   contract_salary_remaining \tab integer \tab Contract salary remaining. \cr
+   contract_years_remaining \tab integer \tab Contract years remaining. \cr
+   contract_x_ref_1 \tab character \tab Contract x ref 1. \cr
+   contract_x_ref_2 \tab character \tab Contract x ref 2. \cr
+   contract_trade_kicker_active \tab logical \tab Contract trade kicker active. \cr
+   contract_trade_kicker_percentage \tab numeric \tab Contract trade kicker percentage (0-1 decimal). \cr
+   contract_trade_kicker_value \tab integer \tab Contract trade kicker value. \cr
+   contract_trade_kicker_trade_value \tab integer \tab Contract trade kicker trade value. \cr
+   contract_trade_restriction \tab logical \tab Contract trade restriction. \cr
+   contract_unsigned_foreign_pick \tab logical \tab Contract unsigned foreign pick. \cr
+   contract_active_2 \tab logical \tab Contract active 2. \cr
+   draft_display_text \tab character \tab Draft display text. \cr
+   draft_round \tab integer \tab Round of the draft selection. \cr
+   draft_year \tab integer \tab Draft year (4-digit). \cr
+   draft_selection \tab integer \tab Draft selection. \cr
+   draft_x_ref \tab character \tab Draft x ref. \cr
+   draft_x_ref_1 \tab character \tab Draft x ref 1. \cr
+   status_id \tab integer \tab Status identifier. \cr
+   status_name \tab character \tab Status label. \cr
+   status_type \tab character \tab Status type. \cr
+   status_abbreviation \tab character \tab Status abbreviation. \cr
+   defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
+   defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
+   defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
+   defensive_def_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)}. \cr
+   defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
+   defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
+   defensive_avg_steals \tab numeric \tab The average steals per game. \cr
+   defensive_avg48defensive_rebounds \tab numeric \tab The average number of defensive rebounds per 48 minutes. \cr
+   defensive_avg48blocks \tab numeric \tab The average number of blocks per 48 minutes. \cr
+   defensive_avg48steals \tab numeric \tab The average number of steals per 48 minutes. \cr
+   defensive_drpm \tab numeric \tab Defensive Real Plus-Minus. \cr
+   general_disqualifications \tab numeric \tab The number of times a player reached the foul limit. \cr
+   general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
+   general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
+   general_per \tab numeric \tab A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season. \cr
+   general_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Rebounds + Opponent Rebounds)}. \cr
+   general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
+   general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
+   general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
+   general_vorp \tab numeric \tab Value Over Replacement Player. \cr
+   general_warp \tab numeric \tab Wins Above Replacement Player. \cr
+   general_rpm \tab numeric \tab Real Plus-Minus. \cr
+   general_minutes \tab numeric \tab The total number of minutes played. \cr
+   general_avg_minutes \tab numeric \tab The average number of minutes per game. \cr
+   general_nba_rating \tab numeric \tab General nba rating. \cr
+   general_plus_minus \tab numeric \tab A player's estimated on-court impact on team performance measured in point differential per 100 possessions. \cr
+   general_avg_rebounds \tab numeric \tab The average rebounds per game. \cr
+   general_avg_fouls \tab numeric \tab The average fouls committed per game. \cr
+   general_avg_flagrant_fouls \tab numeric \tab The average number of flagrant fouls per game. \cr
+   general_avg_technical_fouls \tab numeric \tab The average number of technical fouls per game. \cr
+   general_avg_ejections \tab numeric \tab The average ejections per game. \cr
+   general_avg_disqualifications \tab numeric \tab The average number of disqualifications per game. \cr
+   general_assist_turnover_ratio \tab numeric \tab The average number of assists a player or team records per turnover. \cr
+   general_steal_foul_ratio \tab numeric \tab The average number of steals a player or team records per foul committed. \cr
+   general_block_foul_ratio \tab numeric \tab The average number of blocks a player or record per foul committed. \cr
+   general_avg_team_rebounds \tab numeric \tab The average number of rebounds for a team per game. \cr
+   general_total_rebounds \tab numeric \tab The total number of rebounds for a team or player. \cr
+   general_total_technical_fouls \tab numeric \tab The total number of technical fouls for a team or player. \cr
+   general_team_assist_turnover_ratio \tab numeric \tab The number of assists per turnover for a team. \cr
+   general_steal_turnover_ratio \tab numeric \tab The number of steals per turnover. \cr
+   general_avg48rebounds \tab numeric \tab The average number of rebounds per 48 minutes. \cr
+   general_avg48fouls \tab numeric \tab The average number of fouls committed per 48 minutes. \cr
+   general_avg48flagrant_fouls \tab numeric \tab The average number of flagrant fouls committed per 48 minutes. \cr
+   general_avg48technical_fouls \tab numeric \tab The average number of technical fouls committed per 48 minutes. \cr
+   general_avg48ejections \tab numeric \tab The average number of ejections per 48 minutes. \cr
+   general_avg48disqualifications \tab numeric \tab The average number of disqualifications per 48 minutes. \cr
+   general_r40 \tab numeric \tab Rebounds Per 40 Minutes. \cr
+   general_games_played \tab numeric \tab Games Played. \cr
+   general_games_started \tab numeric \tab The number of games started by an athlete. \cr
+   general_double_double \tab numeric \tab The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
+   general_triple_double \tab numeric \tab The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
+   offensive_assists \tab numeric \tab The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was "assisting" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist. \cr
+   offensive_effective_fg_pct \tab numeric \tab Offensive effective field goals percentage (0-1 decimal). \cr
+   offensive_field_goals \tab numeric \tab Field Goal makes and attempts. \cr
+   offensive_field_goals_attempted \tab numeric \tab The number of times a 2pt field goal was attempted. \cr
+   offensive_field_goals_made \tab numeric \tab The number of times a 2pt field goal was made. \cr
+   offensive_field_goal_pct \tab numeric \tab The ratio of field goals made to field goals attempted: FGM / FGA. \cr
+   offensive_free_throws \tab numeric \tab Free Throw makes and attempts. \cr
+   offensive_free_throw_pct \tab numeric \tab The ratio of free throws made to free throws attempted: FTM / FTA. \cr
+   offensive_free_throws_attempted \tab numeric \tab The number of times a free throw was attempted. \cr
+   offensive_free_throws_made \tab numeric \tab The number of times a free throw was made. \cr
+   offensive_offensive_rebounds \tab numeric \tab The number of times when the offense obtains the possession of the ball after a missed shot. \cr
+   offensive_points \tab numeric \tab The number of points scored. \cr
+   offensive_turnovers \tab numeric \tab The number of times a player loses possession to the other team. \cr
+   offensive_three_point_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
+   offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
+   offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
+   offensive_true_shooting_pct \tab numeric \tab What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by \link{(FGA + (FTA x 0.44)}. \cr
+   offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
+   offensive_assist_ratio \tab numeric \tab The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by \link{(FGA + (FTA x 0.44) + Assists + Turnovers}. \cr
+   offensive_points_in_paint \tab numeric \tab The amount of points scored in the area known as "the Paint"(the rectangle between the foul line and the baseline). \cr
+   offensive_off_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)}. \cr
+   offensive_turnover_ratio \tab numeric \tab The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by \link{(FGA + (FTA x 0.44) + Assists + Turnovers}. \cr
+   offensive_brick_index \tab numeric \tab How many points a player costs his team with his shooting compared with the league average on a per-40-minute basis. ((52.8 - TS\%) x (FGA + (FTA x 0.44))) / (Min/40) . \cr
+   offensive_usage_rate \tab numeric \tab the number of possessions a player uses per 40 minutes. Usage Rate = {\link{FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO} x 40 x League Pace} divided by (Minutes x Team Pace). \cr
+   offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
+   offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
+   offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr
+   offensive_avg_three_point_field_goals_attempted \tab numeric \tab The average three point field goals attempted per game. \cr
+   offensive_avg_free_throws_made \tab numeric \tab The average free throw shots made per game. \cr
+   offensive_avg_free_throws_attempted \tab numeric \tab The average free throw shots attempted per game. \cr
+   offensive_avg_points \tab numeric \tab The average number of points scored per game. \cr
+   offensive_avg_offensive_rebounds \tab numeric \tab The average offensive rebounds per game. \cr
+   offensive_avg_assists \tab numeric \tab The average assists per game. \cr
+   offensive_avg_turnovers \tab numeric \tab The average turnovers committed per game. \cr
+   offensive_offensive_rebound_pct \tab numeric \tab The percentage of the number of times they obtain the possession of the ball after a missed shot. \cr
+   offensive_estimated_possessions \tab numeric \tab An estimation of the number of possessions for a team or player. \cr
+   offensive_avg_estimated_possessions \tab numeric \tab The average number of estimated possessions per game for a team or player. \cr
+   offensive_points_per_estimated_possessions \tab numeric \tab The number of points per estimated possession for a team or player. \cr
+   offensive_avg_team_turnovers \tab numeric \tab The average number of turnovers for a team per game. \cr
+   offensive_avg_total_turnovers \tab numeric \tab The average number of total turnovers for a team per game. \cr
+   offensive_three_point_field_goal_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
+   offensive_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made for a team or player. \cr
+   offensive_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted for a team or player. \cr
+   offensive_avg_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made per game for a team or player. \cr
+   offensive_avg_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted per game for a team or player. \cr
+   offensive_two_point_field_goal_pct \tab numeric \tab The percentage of 2-points fields goals made by a team or player. \cr
+   offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
+   offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
+   offensive_avg48field_goals_made \tab numeric \tab The average number of fieldgoals made per 48 minutes. \cr
+   offensive_avg48field_goals_attempted \tab numeric \tab The average number of fieldgoals attempted per 48 minutes. \cr
+   offensive_avg48three_point_field_goals_made \tab numeric \tab The average per number of 3-Pointers made per 48 minutes. \cr
+   offensive_avg48three_point_field_goals_attempted \tab numeric \tab The average number of 3-pointers attempted per 48 minutes. \cr
+   offensive_avg48free_throws_made \tab numeric \tab The average number of Free Throws made per 48 minutes. \cr
+   offensive_avg48free_throws_attempted \tab numeric \tab The average number of free throws attempted per 48 minutes. \cr
+   offensive_avg48points \tab numeric \tab The average number of points scored per 48 minutes. \cr
+   offensive_avg48offensive_rebounds \tab numeric \tab The average number of offenseive rebounds per 48 minutes. \cr
+   offensive_avg48assists \tab numeric \tab The average number of assists per 48 minutes. \cr
+   offensive_avg48turnovers \tab numeric \tab The average number of turnovers per 48 minutes. \cr
+   offensive_p40 \tab numeric \tab Points Per 40 Minutes. \cr
+   offensive_a40 \tab numeric \tab Assists Per 40 Minutes. \cr
+   offensive_orpm \tab numeric \tab Offensive Real Plus-Minus. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_guid \tab character \tab ESPN team GUID. \cr
+   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_location \tab character \tab Team city or location string. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   team_display_name \tab character \tab Full team display name. \cr
+   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+   team_is_active \tab logical \tab TRUE if the team is currently active. \cr
+   team_is_all_star \tab logical \tab TRUE if the row represents an All-Star team. \cr
+   logo_href \tab character \tab Team or league logo URL. \cr
+   logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
+   logos_href_2 \tab character \tab Logos href 2. \cr
+   logos_href_3 \tab character \tab Logos href 3. \cr
 }
 }
 \description{

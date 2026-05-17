@@ -26,32 +26,32 @@ nbagl_standings(
 \value{
 Returns a named list of data frames: Standings
 
-\strong{Standings}\tabular{ll}{
-   col_name \tab types \cr
-   LeagueID \tab character \cr
-   SeasonID \tab character \cr
-   TeamID \tab character \cr
-   TeamCity \tab character \cr
-   TeamName \tab character \cr
-   TeamSlug \tab character \cr
-   Conference \tab character \cr
-   ConferenceRecord \tab character \cr
-   PlayoffRank \tab character \cr
-   Division \tab character \cr
-   WINS \tab character \cr
-   LOSSES \tab character \cr
-   WinPCT \tab character \cr
-   LeagueRank \tab character \cr
-   Record \tab character \cr
-   HOME \tab character \cr
-   ROAD \tab character \cr
-   CurrentStreak \tab character \cr
-   strCurrentStreak \tab character \cr
-   ConferenceGamesBack \tab character \cr
-   DivisionGamesBack \tab character \cr
-   LeagueGamesBack \tab character \cr
-   ClinchedPostSeason \tab character \cr
-   NEUTRAL \tab character \cr
+\strong{Standings}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LeagueID \tab character \tab  \cr
+   SeasonID \tab character \tab  \cr
+   TeamID \tab character \tab Teamid. \cr
+   TeamCity \tab character \tab Teamcity. \cr
+   TeamName \tab character \tab Teamname. \cr
+   TeamSlug \tab character \tab  \cr
+   Conference \tab character \tab Conference. \cr
+   ConferenceRecord \tab character \tab  \cr
+   PlayoffRank \tab character \tab  \cr
+   Division \tab character \tab Team division. \cr
+   WINS \tab character \tab Total wins. \cr
+   LOSSES \tab character \tab Total losses. \cr
+   WinPCT \tab character \tab  \cr
+   LeagueRank \tab character \tab  \cr
+   Record \tab character \tab Record string (e.g. '12-4'). \cr
+   HOME \tab character \tab Home. \cr
+   ROAD \tab character \tab Road. \cr
+   CurrentStreak \tab character \tab  \cr
+   strCurrentStreak \tab character \tab  \cr
+   ConferenceGamesBack \tab character \tab  \cr
+   DivisionGamesBack \tab character \tab  \cr
+   LeagueGamesBack \tab character \tab  \cr
+   ClinchedPostSeason \tab character \tab  \cr
+   NEUTRAL \tab character \tab  \cr
 }
 }
 \description{

@@ -14,24 +14,24 @@ NULL
 #'    **CommonAllPlayers**
 #'
 #'
-#'    |col_name                  |types     |
-#'    |:-------------------------|:---------|
-#'    |PERSON_ID                 |character |
-#'    |DISPLAY_LAST_COMMA_FIRST  |character |
-#'    |DISPLAY_FIRST_LAST        |character |
-#'    |ROSTERSTATUS              |character |
-#'    |FROM_YEAR                 |character |
-#'    |TO_YEAR                   |character |
-#'    |PLAYERCODE                |character |
-#'    |PLAYER_SLUG               |character |
-#'    |TEAM_ID                   |character |
-#'    |TEAM_CITY                 |character |
-#'    |TEAM_NAME                 |character |
-#'    |TEAM_ABBREVIATION         |character |
-#'    |TEAM_CODE                 |character |
-#'    |TEAM_SLUG                 |character |
-#'    |GAMES_PLAYED_FLAG         |character |
-#'    |OTHERLEAGUE_EXPERIENCE_CH |character |
+#'    |col_name                  |types     |description                                               |
+#'    |:-------------------------|:---------|:---------------------------------------------------------|
+#'    |PERSON_ID                 |character |Unique player identifier (V3 endpoints).                  |
+#'    |DISPLAY_LAST_COMMA_FIRST  |character |                                                          |
+#'    |DISPLAY_FIRST_LAST        |character |                                                          |
+#'    |ROSTERSTATUS              |character |                                                          |
+#'    |FROM_YEAR                 |character |                                                          |
+#'    |TO_YEAR                   |character |                                                          |
+#'    |PLAYERCODE                |character |                                                          |
+#'    |PLAYER_SLUG               |character |URL-safe player identifier.                               |
+#'    |TEAM_ID                   |character |Unique team identifier.                                   |
+#'    |TEAM_CITY                 |character |Team city or region (e.g. 'Las Vegas').                   |
+#'    |TEAM_NAME                 |character |Full team display name (e.g. 'Las Vegas Aces').           |
+#'    |TEAM_ABBREVIATION         |character |Short team abbreviation (e.g. 'LAS').                     |
+#'    |TEAM_CODE                 |character |                                                          |
+#'    |TEAM_SLUG                 |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+#'    |GAMES_PLAYED_FLAG         |character |                                                          |
+#'    |OTHERLEAGUE_EXPERIENCE_CH |character |                                                          |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -99,61 +99,61 @@ NULL
 #'    **CommonPlayerInfo**
 #'
 #'
-#'    |col_name                         |types     |
-#'    |:--------------------------------|:---------|
-#'    |PERSON_ID                        |character |
-#'    |FIRST_NAME                       |character |
-#'    |LAST_NAME                        |character |
-#'    |DISPLAY_FIRST_LAST               |character |
-#'    |DISPLAY_LAST_COMMA_FIRST         |character |
-#'    |DISPLAY_FI_LAST                  |character |
-#'    |PLAYER_SLUG                      |character |
-#'    |BIRTHDATE                        |character |
-#'    |SCHOOL                           |character |
-#'    |COUNTRY                          |character |
-#'    |LAST_AFFILIATION                 |character |
-#'    |HEIGHT                           |character |
-#'    |WEIGHT                           |character |
-#'    |SEASON_EXP                       |character |
-#'    |JERSEY                           |character |
-#'    |POSITION                         |character |
-#'    |ROSTERSTATUS                     |character |
-#'    |GAMES_PLAYED_CURRENT_SEASON_FLAG |character |
-#'    |TEAM_ID                          |character |
-#'    |TEAM_NAME                        |character |
-#'    |TEAM_ABBREVIATION                |character |
-#'    |TEAM_CODE                        |character |
-#'    |TEAM_CITY                        |character |
-#'    |PLAYERCODE                       |character |
-#'    |FROM_YEAR                        |character |
-#'    |TO_YEAR                          |character |
-#'    |DLEAGUE_FLAG                     |character |
-#'    |NBA_FLAG                         |character |
-#'    |GAMES_PLAYED_FLAG                |character |
-#'    |DRAFT_YEAR                       |character |
-#'    |DRAFT_ROUND                      |character |
-#'    |DRAFT_NUMBER                     |character |
-#'    |GREATEST_75_FLAG                 |character |
+#'    |col_name                         |types     |description                                               |
+#'    |:--------------------------------|:---------|:---------------------------------------------------------|
+#'    |PERSON_ID                        |character |Unique player identifier (V3 endpoints).                  |
+#'    |FIRST_NAME                       |character |Player's first name.                                      |
+#'    |LAST_NAME                        |character |Player's last name.                                       |
+#'    |DISPLAY_FIRST_LAST               |character |                                                          |
+#'    |DISPLAY_LAST_COMMA_FIRST         |character |                                                          |
+#'    |DISPLAY_FI_LAST                  |character |                                                          |
+#'    |PLAYER_SLUG                      |character |URL-safe player identifier.                               |
+#'    |BIRTHDATE                        |character |                                                          |
+#'    |SCHOOL                           |character |Player's school / college (when distinct from 'college'). |
+#'    |COUNTRY                          |character |Country (full name or code).                              |
+#'    |LAST_AFFILIATION                 |character |                                                          |
+#'    |HEIGHT                           |character |Player height (string e.g. '6-2' or inches).              |
+#'    |WEIGHT                           |character |Player weight in pounds.                                  |
+#'    |SEASON_EXP                       |character |                                                          |
+#'    |JERSEY                           |character |Jersey number worn by the player.                         |
+#'    |POSITION                         |character |Listed roster position (G, F, C, etc.).                   |
+#'    |ROSTERSTATUS                     |character |                                                          |
+#'    |GAMES_PLAYED_CURRENT_SEASON_FLAG |character |                                                          |
+#'    |TEAM_ID                          |character |Unique team identifier.                                   |
+#'    |TEAM_NAME                        |character |Full team display name (e.g. 'Las Vegas Aces').           |
+#'    |TEAM_ABBREVIATION                |character |Short team abbreviation (e.g. 'LAS').                     |
+#'    |TEAM_CODE                        |character |                                                          |
+#'    |TEAM_CITY                        |character |Team city or region (e.g. 'Las Vegas').                   |
+#'    |PLAYERCODE                       |character |                                                          |
+#'    |FROM_YEAR                        |character |                                                          |
+#'    |TO_YEAR                          |character |                                                          |
+#'    |DLEAGUE_FLAG                     |character |                                                          |
+#'    |NBA_FLAG                         |character |                                                          |
+#'    |GAMES_PLAYED_FLAG                |character |                                                          |
+#'    |DRAFT_YEAR                       |character |Draft year (4-digit).                                     |
+#'    |DRAFT_ROUND                      |character |Round of the draft selection.                             |
+#'    |DRAFT_NUMBER                     |character |                                                          |
+#'    |GREATEST_75_FLAG                 |character |                                                          |
 #'
 #'    **PlayerHeadlineStats**
 #'
 #'
-#'    |col_name    |types     |
-#'    |:-----------|:---------|
-#'    |PLAYER_ID   |character |
-#'    |PLAYER_NAME |character |
-#'    |TimeFrame   |character |
-#'    |PTS         |character |
-#'    |AST         |character |
-#'    |REB         |character |
-#'    |PIE         |character |
+#'    |col_name    |types     |description                   |
+#'    |:-----------|:---------|:-----------------------------|
+#'    |PLAYER_ID   |character |Unique player identifier.     |
+#'    |PLAYER_NAME |character |Player name.                  |
+#'    |TimeFrame   |character |                              |
+#'    |PTS         |character |Points scored.                |
+#'    |AST         |character |Assists.                      |
+#'    |REB         |character |Total rebounds.               |
+#'    |PIE         |character |Player Impact Estimate (0-1). |
 #'
 #'    **AvailableSeasons**
 #'
 #'
-#'    |col_name  |types     |
-#'    |:---------|:---------|
-#'    |SEASON_ID |character |
+#'    |col_name  |types     |description               |
+#'    |:---------|:---------|:-------------------------|
+#'    |SEASON_ID |character |Unique season identifier. |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -220,13 +220,13 @@ NULL
 #'    **PlayoffSeries**
 #'
 #'
-#'    |col_name        |types     |
-#'    |:---------------|:---------|
-#'    |GAME_ID         |character |
-#'    |HOME_TEAM_ID    |character |
-#'    |VISITOR_TEAM_ID |character |
-#'    |SERIES_ID       |character |
-#'    |GAME_NUM        |character |
+#'    |col_name        |types     |description                          |
+#'    |:---------------|:---------|:------------------------------------|
+#'    |GAME_ID         |character |Unique game identifier.              |
+#'    |HOME_TEAM_ID    |character |Unique identifier for the home team. |
+#'    |VISITOR_TEAM_ID |character |                                     |
+#'    |SERIES_ID       |character |                                     |
+#'    |GAME_NUM        |character |                                     |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -292,40 +292,40 @@ NULL
 #'    **CommonTeamRoster**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |TeamID       |character |
-#'    |SEASON       |character |
-#'    |LeagueID     |character |
-#'    |PLAYER       |character |
-#'    |NICKNAME     |character |
-#'    |PLAYER_SLUG  |character |
-#'    |NUM          |character |
-#'    |POSITION     |character |
-#'    |HEIGHT       |character |
-#'    |WEIGHT       |character |
-#'    |BIRTH_DATE   |character |
-#'    |AGE          |character |
-#'    |EXP          |character |
-#'    |SCHOOL       |character |
-#'    |PLAYER_ID    |character |
-#'    |HOW_ACQUIRED |character |
+#'    |col_name     |types     |description                                               |
+#'    |:------------|:---------|:---------------------------------------------------------|
+#'    |TeamID       |character |Teamid.                                                   |
+#'    |SEASON       |character |Season identifier (4-digit year or 'YYYY-YY' string).     |
+#'    |LeagueID     |character |                                                          |
+#'    |PLAYER       |character |Player.                                                   |
+#'    |NICKNAME     |character |Team or athlete nickname.                                 |
+#'    |PLAYER_SLUG  |character |URL-safe player identifier.                               |
+#'    |NUM          |character |                                                          |
+#'    |POSITION     |character |Listed roster position (G, F, C, etc.).                   |
+#'    |HEIGHT       |character |Player height (string e.g. '6-2' or inches).              |
+#'    |WEIGHT       |character |Player weight in pounds.                                  |
+#'    |BIRTH_DATE   |character |Date of birth (YYYY-MM-DD).                               |
+#'    |AGE          |character |Player age (in years).                                    |
+#'    |EXP          |character |Exp.                                                      |
+#'    |SCHOOL       |character |Player's school / college (when distinct from 'college'). |
+#'    |PLAYER_ID    |character |Unique player identifier.                                 |
+#'    |HOW_ACQUIRED |character |                                                          |
 #'
 #'    **Coaches**
 #'
 #'
-#'    |col_name          |types     |
-#'    |:-----------------|:---------|
-#'    |TEAM_ID           |character |
-#'    |SEASON            |character |
-#'    |COACH_ID          |character |
-#'    |FIRST_NAME        |character |
-#'    |LAST_NAME         |character |
-#'    |COACH_NAME        |character |
-#'    |IS_ASSISTANT      |character |
-#'    |COACH_TYPE        |character |
-#'    |SORT_SEQUENCE     |character |
-#'    |SUB_SORT_SEQUENCE |character |
+#'    |col_name          |types     |description                                           |
+#'    |:-----------------|:---------|:-----------------------------------------------------|
+#'    |TEAM_ID           |character |Unique team identifier.                               |
+#'    |SEASON            |character |Season identifier (4-digit year or 'YYYY-YY' string). |
+#'    |COACH_ID          |character |                                                      |
+#'    |FIRST_NAME        |character |Player's first name.                                  |
+#'    |LAST_NAME         |character |Player's last name.                                   |
+#'    |COACH_NAME        |character |                                                      |
+#'    |IS_ASSISTANT      |character |                                                      |
+#'    |COACH_TYPE        |character |                                                      |
+#'    |SORT_SEQUENCE     |character |                                                      |
+#'    |SUB_SORT_SEQUENCE |character |                                                      |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -392,13 +392,13 @@ NULL
 #'    **TeamYears**
 #'
 #'
-#'    |col_name     |types     |
-#'    |:------------|:---------|
-#'    |LEAGUE_ID    |character |
-#'    |TEAM_ID      |character |
-#'    |MIN_YEAR     |character |
-#'    |MAX_YEAR     |character |
-#'    |ABBREVIATION |character |
+#'    |col_name     |types     |description                      |
+#'    |:------------|:---------|:--------------------------------|
+#'    |LEAGUE_ID    |character |League identifier ('10' = WNBA). |
+#'    |TEAM_ID      |character |Unique team identifier.          |
+#'    |MIN_YEAR     |character |                                 |
+#'    |MAX_YEAR     |character |                                 |
+#'    |ABBREVIATION |character |Short abbreviation.              |
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

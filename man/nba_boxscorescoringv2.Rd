@@ -32,59 +32,59 @@ nba_boxscorescoringv2(
 \value{
 Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 
-\strong{sqlPlayersScoring}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   NICKNAME \tab character \cr
-   START_POSITION \tab character \cr
-   COMMENT \tab character \cr
-   MIN \tab character \cr
-   PCT_FGA_2PT \tab character \cr
-   PCT_FGA_3PT \tab character \cr
-   PCT_PTS_2PT \tab character \cr
-   PCT_PTS_2PT_MR \tab character \cr
-   PCT_PTS_3PT \tab character \cr
-   PCT_PTS_FB \tab character \cr
-   PCT_PTS_FT \tab character \cr
-   PCT_PTS_OFF_TOV \tab character \cr
-   PCT_PTS_PAINT \tab character \cr
-   PCT_AST_2PM \tab character \cr
-   PCT_UAST_2PM \tab character \cr
-   PCT_AST_3PM \tab character \cr
-   PCT_UAST_3PM \tab character \cr
-   PCT_AST_FGM \tab character \cr
-   PCT_UAST_FGM \tab character \cr
+\strong{sqlPlayersScoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   START_POSITION \tab character \tab  \cr
+   COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   PCT_FGA_2PT \tab character \tab  \cr
+   PCT_FGA_3PT \tab character \tab  \cr
+   PCT_PTS_2PT \tab character \tab  \cr
+   PCT_PTS_2PT_MR \tab character \tab  \cr
+   PCT_PTS_3PT \tab character \tab  \cr
+   PCT_PTS_FB \tab character \tab  \cr
+   PCT_PTS_FT \tab character \tab  \cr
+   PCT_PTS_OFF_TOV \tab character \tab  \cr
+   PCT_PTS_PAINT \tab character \tab  \cr
+   PCT_AST_2PM \tab character \tab  \cr
+   PCT_UAST_2PM \tab character \tab  \cr
+   PCT_AST_3PM \tab character \tab  \cr
+   PCT_UAST_3PM \tab character \tab  \cr
+   PCT_AST_FGM \tab character \tab  \cr
+   PCT_UAST_FGM \tab character \tab  \cr
 }
 
 
-\strong{sqlTeamsScoring}\tabular{ll}{
-   col_name \tab types \cr
-   GAME_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   TEAM_CITY \tab character \cr
-   MIN \tab character \cr
-   PCT_FGA_2PT \tab character \cr
-   PCT_FGA_3PT \tab character \cr
-   PCT_PTS_2PT \tab character \cr
-   PCT_PTS_2PT_MR \tab character \cr
-   PCT_PTS_3PT \tab character \cr
-   PCT_PTS_FB \tab character \cr
-   PCT_PTS_FT \tab character \cr
-   PCT_PTS_OFF_TOV \tab character \cr
-   PCT_PTS_PAINT \tab character \cr
-   PCT_AST_2PM \tab character \cr
-   PCT_UAST_2PM \tab character \cr
-   PCT_AST_3PM \tab character \cr
-   PCT_UAST_3PM \tab character \cr
-   PCT_AST_FGM \tab character \cr
-   PCT_UAST_FGM \tab character \cr
+\strong{sqlTeamsScoring}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   MIN \tab character \tab Minutes played. \cr
+   PCT_FGA_2PT \tab character \tab  \cr
+   PCT_FGA_3PT \tab character \tab  \cr
+   PCT_PTS_2PT \tab character \tab  \cr
+   PCT_PTS_2PT_MR \tab character \tab  \cr
+   PCT_PTS_3PT \tab character \tab  \cr
+   PCT_PTS_FB \tab character \tab  \cr
+   PCT_PTS_FT \tab character \tab  \cr
+   PCT_PTS_OFF_TOV \tab character \tab  \cr
+   PCT_PTS_PAINT \tab character \tab  \cr
+   PCT_AST_2PM \tab character \tab  \cr
+   PCT_UAST_2PM \tab character \tab  \cr
+   PCT_AST_3PM \tab character \tab  \cr
+   PCT_UAST_3PM \tab character \tab  \cr
+   PCT_AST_FGM \tab character \tab  \cr
+   PCT_UAST_FGM \tab character \tab  \cr
 }
 }
 \description{

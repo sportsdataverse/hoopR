@@ -10,79 +10,79 @@ espn_mbb_game_rosters(game_id)
 \item{game_id}{Game ID}
 }
 \value{
-A game rosters data frame\tabular{ll}{
-   col_name \tab types \cr
-   athlete_id \tab integer \cr
-   athlete_uid \tab character \cr
-   athlete_guid \tab character \cr
-   athlete_type \tab character \cr
-   sdr \tab integer \cr
-   first_name \tab character \cr
-   last_name \tab character \cr
-   full_name \tab character \cr
-   athlete_display_name \tab character \cr
-   short_name \tab character \cr
-   weight \tab integer \cr
-   display_weight \tab character \cr
-   height \tab integer \cr
-   display_height \tab character \cr
-   age \tab integer \cr
-   date_of_birth \tab character \cr
-   birth_place_city \tab character \cr
-   birth_place_state \tab character \cr
-   birth_place_country \tab character \cr
-   slug \tab character \cr
-   headshot_href \tab character \cr
-   headshot_alt \tab character \cr
-   jersey \tab character \cr
-   hand_type \tab character \cr
-   hand_abbreviation \tab character \cr
-   hand_display_value \tab character \cr
-   position_id \tab integer \cr
-   position_name \tab character \cr
-   position_display_name \tab character \cr
-   position_abbreviation \tab character \cr
-   position_leaf \tab logical \cr
-   linked \tab logical \cr
-   experience_years \tab integer \cr
-   experience_display_value \tab character \cr
-   experience_abbreviation \tab character \cr
-   active \tab logical \cr
-   draft_display_text \tab character \cr
-   draft_round \tab integer \cr
-   draft_year \tab integer \cr
-   draft_selection \tab integer \cr
-   status_id \tab integer \cr
-   status_name \tab character \cr
-   status_type \tab character \cr
-   status_abbreviation \tab character \cr
-   starter \tab logical \cr
-   valid \tab logical \cr
-   did_not_play \tab logical \cr
-   display_name \tab character \cr
-   ejected \tab logical \cr
-   team_id \tab integer \cr
-   team_guid \tab character \cr
-   team_uid \tab character \cr
-   team_sdr \tab integer \cr
-   team_slug \tab character \cr
-   team_location \tab character \cr
-   team_name \tab character \cr
-   team_nickname \tab character \cr
-   team_abbreviation \tab character \cr
-   team_display_name \tab character \cr
-   team_short_display_name \tab character \cr
-   team_color \tab character \cr
-   team_alternate_color \tab character \cr
-   is_active \tab logical \cr
-   is_all_star \tab logical \cr
-   logo_href \tab character \cr
-   logo_dark_href \tab character \cr
-   game_id \tab integer \cr
-   order \tab integer \cr
-   home_away \tab character \cr
-   winner \tab logical \cr
-   roster_href \tab character \cr
+A game rosters data frame\tabular{lll}{
+   col_name \tab types \tab description \cr
+   athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
+   athlete_uid \tab character \tab ESPN athlete UID (universal identifier). \cr
+   athlete_guid \tab character \tab ESPN athlete GUID. \cr
+   athlete_type \tab character \tab Athlete type / class. \cr
+   sdr \tab integer \tab Sdr. \cr
+   first_name \tab character \tab Player's first name. \cr
+   last_name \tab character \tab Player's last name. \cr
+   full_name \tab character \tab Player's full name. \cr
+   athlete_display_name \tab character \tab Athlete display name (full). \cr
+   short_name \tab character \tab Short display name. \cr
+   weight \tab integer \tab Player weight in pounds. \cr
+   display_weight \tab character \tab Player weight in display format (e.g. '180 lbs'). \cr
+   height \tab integer \tab Player height (string e.g. '6-2' or inches). \cr
+   display_height \tab character \tab Player height in display format (e.g. '6-2'). \cr
+   age \tab integer \tab Player age (in years). \cr
+   date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+   birth_place_city \tab character \tab Birth place city. \cr
+   birth_place_state \tab character \tab Birth place state. \cr
+   birth_place_country \tab character \tab Birth place country. \cr
+   slug \tab character \tab URL-safe identifier. \cr
+   headshot_href \tab character \tab Headshot image URL. \cr
+   headshot_alt \tab character \tab Alternative-text label for the headshot. \cr
+   jersey \tab character \tab Jersey number worn by the player. \cr
+   hand_type \tab character \tab Hand type. \cr
+   hand_abbreviation \tab character \tab Hand abbreviation. \cr
+   hand_display_value \tab character \tab Hand display value. \cr
+   position_id \tab integer \tab Unique position identifier. \cr
+   position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+   position_display_name \tab character \tab Position display name. \cr
+   position_abbreviation \tab character \tab Position abbreviation ('G' / 'F' / 'C'). \cr
+   position_leaf \tab logical \tab Position leaf. \cr
+   linked \tab logical \tab TRUE if the record is linked to a related entity. \cr
+   experience_years \tab integer \tab Experience years. \cr
+   experience_display_value \tab character \tab Experience display value. \cr
+   experience_abbreviation \tab character \tab Experience abbreviation. \cr
+   active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
+   draft_display_text \tab character \tab Draft display text. \cr
+   draft_round \tab integer \tab Round of the draft selection. \cr
+   draft_year \tab integer \tab Draft year (4-digit). \cr
+   draft_selection \tab integer \tab Draft selection. \cr
+   status_id \tab integer \tab Status identifier. \cr
+   status_name \tab character \tab Status label. \cr
+   status_type \tab character \tab Status type. \cr
+   status_abbreviation \tab character \tab Status abbreviation. \cr
+   starter \tab logical \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
+   valid \tab logical \tab Valid. \cr
+   did_not_play \tab logical \tab TRUE if the player did not appear in the game. \cr
+   display_name \tab character \tab Display name. \cr
+   ejected \tab logical \tab TRUE if the player was ejected from the game. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_guid \tab character \tab ESPN team GUID. \cr
+   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+   team_sdr \tab integer \tab ESPN team SDR identifier. \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   team_location \tab character \tab Team city or location string. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_nickname \tab character \tab Team nickname. \cr
+   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   team_display_name \tab character \tab Full team display name. \cr
+   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+   is_active \tab logical \tab Is active. \cr
+   is_all_star \tab logical \tab Is all star. \cr
+   logo_href \tab character \tab Team or league logo URL. \cr
+   logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
+   game_id \tab integer \tab Unique game identifier. \cr
+   order \tab integer \tab Display order within the result set. \cr
+   home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+   winner \tab logical \tab Winner. \cr
+   roster_href \tab character \tab URL for roster. \cr
 }
 }
 \description{

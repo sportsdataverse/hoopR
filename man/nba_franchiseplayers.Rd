@@ -26,34 +26,34 @@ nba_franchiseplayers(
 \value{
 Returns a named list of data frames: FranchisePlayers
 
-\strong{FranchisePlayers}\tabular{ll}{
-   col_name \tab types \cr
-   LEAGUE_ID \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM \tab character \cr
-   PERSON_ID \tab character \cr
-   PLAYER \tab character \cr
-   SEASON_TYPE \tab character \cr
-   ACTIVE_WITH_TEAM \tab character \cr
-   GP \tab character \cr
-   FGM \tab character \cr
-   FGA \tab character \cr
-   FG_PCT \tab character \cr
-   FG3M \tab character \cr
-   FG3A \tab character \cr
-   FG3_PCT \tab character \cr
-   FTM \tab character \cr
-   FTA \tab character \cr
-   FT_PCT \tab character \cr
-   OREB \tab character \cr
-   DREB \tab character \cr
-   REB \tab character \cr
-   AST \tab character \cr
-   PF \tab character \cr
-   STL \tab character \cr
-   TOV \tab character \cr
-   BLK \tab character \cr
-   PTS \tab character \cr
+\strong{FranchisePlayers}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM \tab character \tab Team-side label or team identifier. \cr
+   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+   PLAYER \tab character \tab Player. \cr
+   SEASON_TYPE \tab character \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+   ACTIVE_WITH_TEAM \tab character \tab  \cr
+   GP \tab character \tab Games played. \cr
+   FGM \tab character \tab Field goals made. \cr
+   FGA \tab character \tab Field goal attempts. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FG3M \tab character \tab Three-point field goals made. \cr
+   FG3A \tab character \tab Three-point field goal attempts. \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   FTM \tab character \tab Free throws made. \cr
+   FTA \tab character \tab Free throw attempts. \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   OREB \tab character \tab Offensive rebounds. \cr
+   DREB \tab character \tab Defensive rebounds. \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST \tab character \tab Assists. \cr
+   PF \tab character \tab Personal fouls. \cr
+   STL \tab character \tab Steals. \cr
+   TOV \tab character \tab Turnovers. \cr
+   BLK \tab character \tab Blocks. \cr
+   PTS \tab character \tab Points scored. \cr
 }
 }
 \description{

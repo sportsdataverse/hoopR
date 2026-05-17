@@ -20,38 +20,38 @@ nba_draftcombinenonstationaryshooting(
 \value{
 Returns a named list of data frames: Results
 
-\strong{Results}\tabular{ll}{
-   col_name \tab types \cr
-   TEMP_PLAYER_ID \tab character \cr
-   PLAYER_ID \tab character \cr
-   FIRST_NAME \tab character \cr
-   LAST_NAME \tab character \cr
-   PLAYER_NAME \tab character \cr
-   POSITION \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT \tab character \cr
-   OFF_DRIB_FIFTEEN_TOP_KEY_MADE \tab character \cr
-   OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT \tab character \cr
-   OFF_DRIB_FIFTEEN_TOP_KEY_PCT \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT \tab character \cr
-   OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_LEFT_MADE \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_LEFT_PCT \tab character \cr
-   OFF_DRIB_COLLEGE_TOP_KEY_MADE \tab character \cr
-   OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT \tab character \cr
-   OFF_DRIB_COLLEGE_TOP_KEY_PCT \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT \tab character \cr
-   OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT \tab character \cr
-   ON_MOVE_FIFTEEN_MADE \tab character \cr
-   ON_MOVE_FIFTEEN_ATTEMPT \tab character \cr
-   ON_MOVE_FIFTEEN_PCT \tab character \cr
-   ON_MOVE_COLLEGE_MADE \tab character \cr
-   ON_MOVE_COLLEGE_ATTEMPT \tab character \cr
-   ON_MOVE_COLLEGE_PCT \tab character \cr
+\strong{Results}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEMP_PLAYER_ID \tab character \tab  \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_TOP_KEY_MADE \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_TOP_KEY_PCT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_LEFT_MADE \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_LEFT_PCT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_TOP_KEY_MADE \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_TOP_KEY_PCT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+   OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT \tab character \tab  \cr
+   ON_MOVE_FIFTEEN_MADE \tab character \tab  \cr
+   ON_MOVE_FIFTEEN_ATTEMPT \tab character \tab  \cr
+   ON_MOVE_FIFTEEN_PCT \tab character \tab  \cr
+   ON_MOVE_COLLEGE_MADE \tab character \tab  \cr
+   ON_MOVE_COLLEGE_ATTEMPT \tab character \tab  \cr
+   ON_MOVE_COLLEGE_PCT \tab character \tab  \cr
 }
 }
 \description{

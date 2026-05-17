@@ -578,18 +578,18 @@ nba_teamgamestreakfinder(
 \value{
 Return a named list of data frames: TeamGameStreakFinderParametersResults
 
-\strong{TeamGameStreakFinderParametersResults}\tabular{ll}{
-   col_name \tab types \cr
-   TEAM_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   GAMESTREAK \tab character \cr
-   STARTDATE \tab character \cr
-   ENDDATE \tab character \cr
-   ACTIVESTREAK \tab character \cr
-   NUMSEASONS \tab character \cr
-   LASTSEASON \tab character \cr
-   FIRSTSEASON \tab character \cr
-   ABBREVIATION \tab character \cr
+\strong{TeamGameStreakFinderParametersResults}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   GAMESTREAK \tab character \tab  \cr
+   STARTDATE \tab character \tab  \cr
+   ENDDATE \tab character \tab  \cr
+   ACTIVESTREAK \tab character \tab  \cr
+   NUMSEASONS \tab character \tab  \cr
+   LASTSEASON \tab character \tab  \cr
+   FIRSTSEASON \tab character \tab  \cr
+   ABBREVIATION \tab character \tab Short abbreviation. \cr
 }
 }
 \description{

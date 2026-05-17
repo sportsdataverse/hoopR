@@ -20,54 +20,54 @@ nba_scheduleleaguev2int(
 \value{
 Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 
-\strong{SeasonGames}\tabular{ll}{
-   col_name \tab types \cr
-   game_date \tab character \cr
-   game_id \tab character \cr
-   game_code \tab character \cr
-   game_status \tab character \cr
-   game_status_text \tab character \cr
-   game_sequence \tab character \cr
-   home_team_id \tab character \cr
-   home_team_name \tab character \cr
-   home_team_city \tab character \cr
-   home_team_tricode \tab character \cr
-   home_team_slug \tab character \cr
-   home_team_wins \tab character \cr
-   home_team_losses \tab character \cr
-   home_team_score \tab character \cr
-   away_team_id \tab character \cr
-   away_team_name \tab character \cr
-   away_team_city \tab character \cr
-   away_team_tricode \tab character \cr
-   away_team_slug \tab character \cr
-   away_team_wins \tab character \cr
-   away_team_losses \tab character \cr
-   away_team_score \tab character \cr
-   season \tab character \cr
-   league_id \tab character \cr
+\strong{SeasonGames}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   game_code \tab character \tab ESPN game code (numeric identifier). \cr
+   game_status \tab character \tab Game status label. \cr
+   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   game_sequence \tab character \tab Game sequence. \cr
+   home_team_id \tab character \tab Unique identifier for the home team. \cr
+   home_team_name \tab character \tab Home team name. \cr
+   home_team_city \tab character \tab Home team city / location. \cr
+   home_team_tricode \tab character \tab Home team three-letter code. \cr
+   home_team_slug \tab character \tab Home team's team slug. \cr
+   home_team_wins \tab character \tab Home team's team wins. \cr
+   home_team_losses \tab character \tab Home team's team losses. \cr
+   home_team_score \tab character \tab Home team's score. \cr
+   away_team_id \tab character \tab Unique identifier for the away team. \cr
+   away_team_name \tab character \tab Away team name. \cr
+   away_team_city \tab character \tab Away team city / location. \cr
+   away_team_tricode \tab character \tab Away team three-letter code. \cr
+   away_team_slug \tab character \tab Away team's team slug. \cr
+   away_team_wins \tab character \tab Away team's team wins. \cr
+   away_team_losses \tab character \tab Away team's team losses. \cr
+   away_team_score \tab character \tab Away team's score. \cr
+   season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   league_id \tab character \tab League identifier ('10' = WNBA). \cr
 }
 
 
-\strong{SeasonWeeks}\tabular{ll}{
-   col_name \tab types \cr
-   league_id \tab character \cr
-   season_year \tab character \cr
-   week_number \tab character \cr
-   week_name \tab character \cr
-   start_date \tab character \cr
-   end_date \tab character \cr
+\strong{SeasonWeeks}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   league_id \tab character \tab League identifier ('10' = WNBA). \cr
+   season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+   week_number \tab character \tab Week number. \cr
+   week_name \tab character \tab Week name. \cr
+   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+   end_date \tab character \tab End date (YYYY-MM-DD). \cr
 }
 
 
-\strong{BroadcasterList}\tabular{ll}{
-   col_name \tab types \cr
-   league_id \tab character \cr
-   season_year \tab character \cr
-   broadcaster_abbreviation \tab character \cr
-   broadcaster_display \tab character \cr
-   broadcaster_id \tab character \cr
-   region_id \tab character \cr
+\strong{BroadcasterList}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   league_id \tab character \tab League identifier ('10' = WNBA). \cr
+   season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+   broadcaster_abbreviation \tab character \tab Broadcaster abbreviation. \cr
+   broadcaster_display \tab character \tab Broadcaster display. \cr
+   broadcaster_id \tab character \tab Unique identifier for broadcaster. \cr
+   region_id \tab character \tab Unique identifier for region. \cr
 }
 }
 \description{

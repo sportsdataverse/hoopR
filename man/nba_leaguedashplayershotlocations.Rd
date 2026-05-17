@@ -125,38 +125,38 @@ nba_leaguedashplayershotlocations(
 \value{
 Returns a named list of data frames: ShotLocations
 
-\strong{ShotLocations}\tabular{ll}{
-   col_name \tab types \cr
-   PLAYER_ID \tab character \cr
-   PLAYER_NAME \tab character \cr
-   TEAM_ID \tab character \cr
-   TEAM_ABBREVIATION \tab character \cr
-   AGE \tab character \cr
-   NICKNAME \tab character \cr
-   Restricted_Area_FGM \tab character \cr
-   Restricted_Area_FGA \tab character \cr
-   Restricted_Area_FG_PCT \tab character \cr
-   In_The_Paint_Non_RA_FGM \tab character \cr
-   In_The_Paint_Non_RA_FGA \tab character \cr
-   In_The_Paint_Non_RA_FG_PCT \tab character \cr
-   Mid_Range_FGM \tab character \cr
-   Mid_Range_FGA \tab character \cr
-   Mid_Range_FG_PCT \tab character \cr
-   Left_Corner_3_FGM \tab character \cr
-   Left_Corner_3_FGA \tab character \cr
-   Left_Corner_3_FG_PCT \tab character \cr
-   Right_Corner_3_FGM \tab character \cr
-   Right_Corner_3_FGA \tab character \cr
-   Right_Corner_3_FG_PCT \tab character \cr
-   Above_the_Break_3_FGM \tab character \cr
-   Above_the_Break_3_FGA \tab character \cr
-   Above_the_Break_3_FG_PCT \tab character \cr
-   Backcourt_FGM \tab character \cr
-   Backcourt_FGA \tab character \cr
-   Backcourt_FG_PCT \tab character \cr
-   Corner_3_FGM \tab character \cr
-   Corner_3_FGA \tab character \cr
-   Corner_3_FG_PCT \tab character \cr
+\strong{ShotLocations}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   NICKNAME \tab character \tab Team or athlete nickname. \cr
+   Restricted_Area_FGM \tab character \tab  \cr
+   Restricted_Area_FGA \tab character \tab  \cr
+   Restricted_Area_FG_PCT \tab character \tab  \cr
+   In_The_Paint_Non_RA_FGM \tab character \tab  \cr
+   In_The_Paint_Non_RA_FGA \tab character \tab  \cr
+   In_The_Paint_Non_RA_FG_PCT \tab character \tab  \cr
+   Mid_Range_FGM \tab character \tab  \cr
+   Mid_Range_FGA \tab character \tab  \cr
+   Mid_Range_FG_PCT \tab character \tab  \cr
+   Left_Corner_3_FGM \tab character \tab  \cr
+   Left_Corner_3_FGA \tab character \tab  \cr
+   Left_Corner_3_FG_PCT \tab character \tab  \cr
+   Right_Corner_3_FGM \tab character \tab  \cr
+   Right_Corner_3_FGA \tab character \tab  \cr
+   Right_Corner_3_FG_PCT \tab character \tab  \cr
+   Above_the_Break_3_FGM \tab character \tab  \cr
+   Above_the_Break_3_FGA \tab character \tab  \cr
+   Above_the_Break_3_FG_PCT \tab character \tab  \cr
+   Backcourt_FGM \tab character \tab  \cr
+   Backcourt_FGA \tab character \tab  \cr
+   Backcourt_FG_PCT \tab character \tab  \cr
+   Corner_3_FGM \tab character \tab  \cr
+   Corner_3_FGA \tab character \tab  \cr
+   Corner_3_FG_PCT \tab character \tab  \cr
 }
 }
 \description{

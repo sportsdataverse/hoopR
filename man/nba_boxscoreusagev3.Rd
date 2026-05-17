@@ -33,147 +33,147 @@ nba_boxscoreusagev3(
 Returns a named list of data frames:  home_team_player_usage, away_team_player_usage,
 home_team_totals_usage, away_team_totals_usage
 
-\strong{home_team_player_usage}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   usage_percentage \tab numeric \cr
-   percentage_field_goals_made \tab numeric \cr
-   percentage_field_goals_attempted \tab numeric \cr
-   percentage_three_pointers_made \tab numeric \cr
-   percentage_three_pointers_attempted \tab numeric \cr
-   percentage_free_throws_made \tab numeric \cr
-   percentage_free_throws_attempted \tab numeric \cr
-   percentage_rebounds_offensive \tab numeric \cr
-   percentage_rebounds_defensive \tab numeric \cr
-   percentage_rebounds_total \tab numeric \cr
-   percentage_assists \tab numeric \cr
-   percentage_turnovers \tab numeric \cr
-   percentage_steals \tab numeric \cr
-   percentage_blocks \tab numeric \cr
-   percentage_blocks_allowed \tab numeric \cr
-   percentage_personal_fouls \tab numeric \cr
-   percentage_personal_fouls_drawn \tab numeric \cr
-   percentage_points \tab numeric \cr
+\strong{home_team_player_usage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+   percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+   percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+   percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+   percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+   percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+   percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+   percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+   percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+   percentage_assists \tab numeric \tab Percentage assists. \cr
+   percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+   percentage_steals \tab numeric \tab Percentage steals. \cr
+   percentage_blocks \tab numeric \tab Percentage blocks. \cr
+   percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+   percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+   percentage_points \tab numeric \tab Percentage points. \cr
 }
 
 
-\strong{away_team_player_usage}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   person_id \tab integer \cr
-   first_name \tab character \cr
-   family_name \tab character \cr
-   name_i \tab character \cr
-   player_slug \tab character \cr
-   position \tab character \cr
-   comment \tab character \cr
-   jersey_num \tab character \cr
-   minutes \tab character \cr
-   usage_percentage \tab numeric \cr
-   percentage_field_goals_made \tab numeric \cr
-   percentage_field_goals_attempted \tab numeric \cr
-   percentage_three_pointers_made \tab numeric \cr
-   percentage_three_pointers_attempted \tab numeric \cr
-   percentage_free_throws_made \tab numeric \cr
-   percentage_free_throws_attempted \tab numeric \cr
-   percentage_rebounds_offensive \tab numeric \cr
-   percentage_rebounds_defensive \tab numeric \cr
-   percentage_rebounds_total \tab numeric \cr
-   percentage_assists \tab numeric \cr
-   percentage_turnovers \tab numeric \cr
-   percentage_steals \tab numeric \cr
-   percentage_blocks \tab numeric \cr
-   percentage_blocks_allowed \tab numeric \cr
-   percentage_personal_fouls \tab numeric \cr
-   percentage_personal_fouls_drawn \tab numeric \cr
-   percentage_points \tab numeric \cr
+\strong{away_team_player_usage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+   first_name \tab character \tab Player's first name. \cr
+   family_name \tab character \tab Player's family / last name. \cr
+   name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+   player_slug \tab character \tab URL-safe player identifier. \cr
+   position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+   comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+   jersey_num \tab character \tab Jersey number worn by the player. \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+   percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+   percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+   percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+   percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+   percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+   percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+   percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+   percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+   percentage_assists \tab numeric \tab Percentage assists. \cr
+   percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+   percentage_steals \tab numeric \tab Percentage steals. \cr
+   percentage_blocks \tab numeric \tab Percentage blocks. \cr
+   percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+   percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+   percentage_points \tab numeric \tab Percentage points. \cr
 }
 
 
-\strong{home_team_totals_usage}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   usage_percentage \tab numeric \cr
-   percentage_field_goals_made \tab numeric \cr
-   percentage_field_goals_attempted \tab numeric \cr
-   percentage_three_pointers_made \tab numeric \cr
-   percentage_three_pointers_attempted \tab numeric \cr
-   percentage_free_throws_made \tab numeric \cr
-   percentage_free_throws_attempted \tab numeric \cr
-   percentage_rebounds_offensive \tab numeric \cr
-   percentage_rebounds_defensive \tab numeric \cr
-   percentage_rebounds_total \tab numeric \cr
-   percentage_assists \tab numeric \cr
-   percentage_turnovers \tab numeric \cr
-   percentage_steals \tab numeric \cr
-   percentage_blocks \tab numeric \cr
-   percentage_blocks_allowed \tab numeric \cr
-   percentage_personal_fouls \tab numeric \cr
-   percentage_personal_fouls_drawn \tab numeric \cr
-   percentage_points \tab numeric \cr
+\strong{home_team_totals_usage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+   percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+   percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+   percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+   percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+   percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+   percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+   percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+   percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+   percentage_assists \tab numeric \tab Percentage assists. \cr
+   percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+   percentage_steals \tab numeric \tab Percentage steals. \cr
+   percentage_blocks \tab numeric \tab Percentage blocks. \cr
+   percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+   percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+   percentage_points \tab numeric \tab Percentage points. \cr
 }
 
 
-\strong{away_team_totals_usage}\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   away_team_id \tab integer \cr
-   home_team_id \tab integer \cr
-   team_id \tab integer \cr
-   team_name \tab character \cr
-   team_city \tab character \cr
-   team_tricode \tab character \cr
-   team_slug \tab character \cr
-   minutes \tab character \cr
-   usage_percentage \tab numeric \cr
-   percentage_field_goals_made \tab numeric \cr
-   percentage_field_goals_attempted \tab numeric \cr
-   percentage_three_pointers_made \tab numeric \cr
-   percentage_three_pointers_attempted \tab numeric \cr
-   percentage_free_throws_made \tab numeric \cr
-   percentage_free_throws_attempted \tab numeric \cr
-   percentage_rebounds_offensive \tab numeric \cr
-   percentage_rebounds_defensive \tab numeric \cr
-   percentage_rebounds_total \tab numeric \cr
-   percentage_assists \tab numeric \cr
-   percentage_turnovers \tab numeric \cr
-   percentage_steals \tab numeric \cr
-   percentage_blocks \tab numeric \cr
-   percentage_blocks_allowed \tab numeric \cr
-   percentage_personal_fouls \tab numeric \cr
-   percentage_personal_fouls_drawn \tab numeric \cr
-   percentage_points \tab numeric \cr
+\strong{away_team_totals_usage}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab Unique game identifier. \cr
+   away_team_id \tab integer \tab Unique identifier for the away team. \cr
+   home_team_id \tab integer \tab Unique identifier for the home team. \cr
+   team_id \tab integer \tab Unique team identifier. \cr
+   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+   usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+   percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+   percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+   percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+   percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+   percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+   percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+   percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+   percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+   percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+   percentage_assists \tab numeric \tab Percentage assists. \cr
+   percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+   percentage_steals \tab numeric \tab Percentage steals. \cr
+   percentage_blocks \tab numeric \tab Percentage blocks. \cr
+   percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+   percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+   percentage_points \tab numeric \tab Percentage points. \cr
 }
 }
 \description{
