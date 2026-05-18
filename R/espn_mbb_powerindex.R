@@ -13,7 +13,7 @@ NULL
 #' Auto-paginates through all teams.
 #'
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
-#' @param season_type Integer (1=preseason, 2=regular [default], 3=postseason).
+#' @param season_type Integer (1=preseason, 2=regular (default), 3=postseason).
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (team x stat).
 #'

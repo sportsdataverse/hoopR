@@ -79,7 +79,7 @@ Returns a tibble with the player stats data\tabular{lll}{
    defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
    defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
    defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
-   defensive_def_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)}. \cr
+   defensive_def_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by (Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)). \cr
    defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
    defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
    defensive_avg_steals \tab numeric \tab The average steals per game. \cr
@@ -91,7 +91,7 @@ Returns a tibble with the player stats data\tabular{lll}{
    general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
    general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
    general_per \tab numeric \tab A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season. \cr
-   general_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Rebounds + Opponent Rebounds)}. \cr
+   general_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by (Player Minutes x (Team Rebounds + Opponent Rebounds)). \cr
    general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
    general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
    general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
@@ -143,14 +143,14 @@ Returns a tibble with the player stats data\tabular{lll}{
    offensive_three_point_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
    offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
    offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
-   offensive_true_shooting_pct \tab numeric \tab What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by \link{(FGA + (FTA x 0.44)}. \cr
+   offensive_true_shooting_pct \tab numeric \tab What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by ((FGA + (FTA x 0.44)). \cr
    offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
-   offensive_assist_ratio \tab numeric \tab The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by \link{(FGA + (FTA x 0.44) + Assists + Turnovers}. \cr
+   offensive_assist_ratio \tab numeric \tab The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by ((FGA + (FTA x 0.44) + Assists + Turnovers). \cr
    offensive_points_in_paint \tab numeric \tab The amount of points scored in the area known as "the Paint"(the rectangle between the foul line and the baseline). \cr
-   offensive_off_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by \link{Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)}. \cr
-   offensive_turnover_ratio \tab numeric \tab The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by \link{(FGA + (FTA x 0.44) + Assists + Turnovers}. \cr
+   offensive_off_rebound_rate \tab numeric \tab The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by (Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)). \cr
+   offensive_turnover_ratio \tab numeric \tab The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by ((FGA + (FTA x 0.44) + Assists + Turnovers). \cr
    offensive_brick_index \tab numeric \tab How many points a player costs his team with his shooting compared with the league average on a per-40-minute basis. ((52.8 - TS\%) x (FGA + (FTA x 0.44))) / (Min/40) . \cr
-   offensive_usage_rate \tab numeric \tab the number of possessions a player uses per 40 minutes. Usage Rate = {\link{FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO} x 40 x League Pace} divided by (Minutes x Team Pace). \cr
+   offensive_usage_rate \tab numeric \tab the number of possessions a player uses per 40 minutes. Usage Rate = ((FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO) x 40 x League Pace) divided by (Minutes x Team Pace). \cr
    offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
    offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
    offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr

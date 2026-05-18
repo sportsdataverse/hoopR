@@ -14,7 +14,7 @@ NULL
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/powerindex`.
 #'
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
-#' @param season_type Integer (1=preseason, 2=regular [default], 3=postseason).
+#' @param season_type Integer (1=preseason, 2=regular (default), 3=postseason).
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (team x stat).
 #'
