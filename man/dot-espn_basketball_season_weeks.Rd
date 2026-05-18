@@ -4,9 +4,10 @@
 \alias{.espn_basketball_season_weeks}
 \title{Internal: ESPN basketball season-weeks index}
 \usage{
-.espn_basketball_season_weeks(league, season, season_type = 2L, ...)
+.espn_basketball_season_weeks(league, season, season_type = c(2L, 3L), ...)
 }
 \description{
-Internal: ESPN basketball season-weeks index
+\code{season_type} accepts a scalar or vector; default \code{c(2L, 3L)} fetches
+regular season + postseason weeks and binds them.
 }
 \keyword{internal}

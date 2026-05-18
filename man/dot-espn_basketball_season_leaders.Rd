@@ -4,10 +4,11 @@
 \alias{.espn_basketball_season_leaders}
 \title{Internal: ESPN basketball season-type leaders (long format)}
 \usage{
-.espn_basketball_season_leaders(league, season, season_type = 2L, ...)
+.espn_basketball_season_leaders(league, season, season_type = c(2L, 3L), ...)
 }
 \description{
-Returns one row per (category x leader). Sample: 14 categories x 25 leaders
-= ~350 rows for a single (season x season_type) combination.
+Returns one row per (season_type x category x leader). Sample with
+the default \code{season_type = c(2L, 3L)}: 14 categories x 25 leaders
+x 2 season types = ~700 rows.
 }
 \keyword{internal}

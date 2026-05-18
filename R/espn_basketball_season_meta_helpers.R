@@ -115,61 +115,74 @@
 
 #' Internal: ESPN basketball season-type leaders (long format)
 #'
-#' Returns one row per (category x leader). Sample: 14 categories x 25 leaders
-#' = ~350 rows for a single (season x season_type) combination.
+#' Returns one row per (season_type x category x leader). Sample with
+#' the default `season_type = c(2L, 3L)`: 14 categories x 25 leaders
+#' x 2 season types = ~700 rows.
 #'
 #' @keywords internal
 .espn_basketball_season_leaders <- function(league, season,
-                                             season_type = 2L, ...) {
+                                             season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, season_type = season_type)
+
+  fetch_one <- function(st) {
+    url <- paste0(
+      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+      league, "/seasons/", season, "/types/", st,
+      "/leaders?lang=en&region=us"
+    )
+    res <- tryCatch(.retry_request(url), error = function(e) NULL)
+    if (is.null(res) || httr2::resp_status(res) != 200L) return(list())
+    raw <- res %>% .resp_text() %>%
+      jsonlite::fromJSON(simplifyVector = FALSE)
+    categories <- raw[["categories"]] %||% list()
+    rows <- list()
+    for (cat in categories) {
+      cat_name <- cat[["name"]] %||% NA_character_
+      cat_display <- cat[["displayName"]] %||% NA_character_
+      cat_short   <- cat[["shortDisplayName"]] %||% NA_character_
+      cat_abbrev  <- cat[["abbreviation"]] %||% NA_character_
+      leaders <- cat[["leaders"]] %||% list()
+      for (i in seq_along(leaders)) {
+        l <- leaders[[i]]
+        a <- l[["athlete"]]
+        t <- l[["team"]]
+        aref <- if (is.list(a)) a[["$ref"]] %||% NA_character_ else NA_character_
+        tref <- if (is.list(t)) t[["$ref"]] %||% NA_character_ else NA_character_
+        aid <- if (!is.na(aref)) sub(".*/athletes/([0-9]+).*", "\\1", aref) else NA_character_
+        tid <- if (!is.na(tref)) sub(".*/teams/([0-9]+).*", "\\1", tref) else NA_character_
+        rows[[length(rows) + 1L]] <- list(
+          league             = league,
+          season             = as.integer(season),
+          season_type        = as.integer(st),
+          category_name      = cat_name,
+          category_display   = cat_display,
+          category_short     = cat_short,
+          category_abbrev    = cat_abbrev,
+          rank               = i,
+          athlete_id         = aid,
+          team_id            = tid,
+          display_value      = as.character(l[["displayValue"]] %||% NA),
+          value              = suppressWarnings(as.numeric(l[["value"]] %||% NA)),
+          rel                = paste(unlist(l[["rel"]] %||% list()), collapse = ","),
+          athlete_ref        = aref,
+          team_ref           = tref
+        )
+      }
+    }
+    rows
+  }
+
   result <- NULL
-  url <- paste0(
-    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
-    league, "/seasons/", season, "/types/", season_type,
-    "/leaders?lang=en&region=us"
-  )
   tryCatch(
     expr = {
-      res <- .retry_request(url); check_status(res)
-      raw <- res %>% .resp_text() %>%
-        jsonlite::fromJSON(simplifyVector = FALSE)
-      categories <- raw[["categories"]] %||% list()
-      rows <- list()
-      for (cat in categories) {
-        cat_name <- cat[["name"]] %||% NA_character_
-        cat_display <- cat[["displayName"]] %||% NA_character_
-        cat_short   <- cat[["shortDisplayName"]] %||% NA_character_
-        cat_abbrev  <- cat[["abbreviation"]] %||% NA_character_
-        leaders <- cat[["leaders"]] %||% list()
-        for (i in seq_along(leaders)) {
-          l <- leaders[[i]]
-          a <- l[["athlete"]]
-          t <- l[["team"]]
-          aref <- if (is.list(a)) a[["$ref"]] %||% NA_character_ else NA_character_
-          tref <- if (is.list(t)) t[["$ref"]] %||% NA_character_ else NA_character_
-          aid <- if (!is.na(aref)) sub(".*/athletes/([0-9]+).*", "\\1", aref) else NA_character_
-          tid <- if (!is.na(tref)) sub(".*/teams/([0-9]+).*", "\\1", tref) else NA_character_
-          rows[[length(rows) + 1L]] <- list(
-            league             = league,
-            season             = as.integer(season),
-            season_type        = as.integer(season_type),
-            category_name      = cat_name,
-            category_display   = cat_display,
-            category_short     = cat_short,
-            category_abbrev    = cat_abbrev,
-            rank               = i,
-            athlete_id         = aid,
-            team_id            = tid,
-            display_value      = as.character(l[["displayValue"]] %||% NA),
-            value              = suppressWarnings(as.numeric(l[["value"]] %||% NA)),
-            rel                = paste(unlist(l[["rel"]] %||% list()), collapse = ","),
-            athlete_ref        = aref,
-            team_ref           = tref
-          )
-        }
+      all_rows <- list()
+      for (st in season_type) {
+        rs <- fetch_one(as.integer(st))
+        if (length(rs) > 0L) all_rows <- c(all_rows, rs)
+        if (length(season_type) > 1L) Sys.sleep(0.3)
       }
-      if (length(rows) == 0L) {
+      if (length(all_rows) == 0L) {
         result <- data.frame(
           league = character(0), season = integer(0),
           season_type = integer(0), category_name = character(0),
@@ -186,7 +199,7 @@
             Sys.time()
           )
       } else {
-        result <- do.call(rbind, lapply(rows, as.data.frame,
+        result <- do.call(rbind, lapply(all_rows, as.data.frame,
                                           stringsAsFactors = FALSE)) %>%
           dplyr::as_tibble() %>%
           make_hoopR_data(

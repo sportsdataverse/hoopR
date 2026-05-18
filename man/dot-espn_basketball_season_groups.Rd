@@ -4,9 +4,10 @@
 \alias{.espn_basketball_season_groups}
 \title{Internal: ESPN basketball season-groups index}
 \usage{
-.espn_basketball_season_groups(league, season, season_type = 2L, ...)
+.espn_basketball_season_groups(league, season, season_type = c(2L, 3L), ...)
 }
 \description{
-Internal: ESPN basketball season-groups index
+\code{season_type} accepts a scalar or vector; default \code{c(2L, 3L)} fetches
+regular season + postseason groups and binds them.
 }
 \keyword{internal}

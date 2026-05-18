@@ -4,7 +4,11 @@
 \alias{espn_mbb_powerindex}
 \title{\strong{Get ESPN MBB Season Power Index (Long Format)}}
 \usage{
-espn_mbb_powerindex(season = most_recent_mbb_season(), season_type = 2L, ...)
+espn_mbb_powerindex(
+  season = most_recent_mbb_season(),
+  season_type = c(2L, 3L),
+  ...
+)
 }
 \arguments{
 \item{season}{Season year (numeric). Defaults to the most recent MBB season.}

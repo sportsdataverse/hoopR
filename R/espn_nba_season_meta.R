@@ -143,7 +143,7 @@ espn_nba_season_type <- function(season_type = 2L,
 #'   espn_nba_season_leaders(season = 2025)
 #' }
 espn_nba_season_leaders <- function(season = most_recent_nba_season(),
-                                     season_type = 2L, ...) {
+                                     season_type = c(2L, 3L), ...) {
   .espn_basketball_season_leaders(league = "nba", season = season,
                                     season_type = season_type, ...)
 }

@@ -6,7 +6,7 @@
 \usage{
 espn_mbb_season_leaders(
   season = most_recent_mbb_season(),
-  season_type = 2L,
+  season_type = c(2L, 3L),
   ...
 )
 }

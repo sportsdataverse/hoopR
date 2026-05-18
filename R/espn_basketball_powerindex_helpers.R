@@ -10,15 +10,18 @@
 #'
 #' Fetches `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/seasons/{season}/powerindex`,
 #' iterating through pages until all teams' BPI-and-related metrics are
-#' collected. Returns a long tibble: one row per (team x stat).
+#' collected. The endpoint returns all season types in a single paginated
+#' response; filtering happens client-side. `season_type` accepts a scalar
+#' or vector — default `c(2L, 3L)` keeps regular season + postseason rows.
 #'
 #' @keywords internal
 .espn_basketball_powerindex <- function(league, season,
-                                         season_type = 2L,
+                                         season_type = c(2L, 3L),
                                          page_limit = 100L, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, season_type = season_type)
 
+  st_set <- as.integer(season_type)
   result <- NULL
   rows <- list()
 
@@ -44,9 +47,9 @@
         items <- raw[["items"]] %||% list()
 
         for (it in items) {
-          if (!is.null(season_type) &&
-              !is.null(it[["seasonType"]]) &&
-              as.integer(it[["seasonType"]]) != as.integer(season_type)) next
+          item_st <- as.integer(it[["seasonType"]] %||% NA)
+          if (length(st_set) > 0L && !is.na(item_st) &&
+              !(item_st %in% st_set)) next
           tref <- if (is.list(it[["team"]]))
             it[["team"]][["$ref"]] %||% NA_character_ else NA_character_
           tid <- if (!is.na(tref))

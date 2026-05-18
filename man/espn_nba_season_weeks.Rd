@@ -4,7 +4,11 @@
 \alias{espn_nba_season_weeks}
 \title{\strong{Get ESPN NBA Season Weeks Index}}
 \usage{
-espn_nba_season_weeks(season = most_recent_nba_season(), season_type = 2L, ...)
+espn_nba_season_weeks(
+  season = most_recent_nba_season(),
+  season_type = c(2L, 3L),
+  ...
+)
 }
 \arguments{
 \item{season}{Season year. Defaults to most recent NBA season.}

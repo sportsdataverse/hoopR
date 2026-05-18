@@ -8,31 +8,59 @@
 #' Internal: ESPN basketball per-season-type team record
 #'
 #' Fetches `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/seasons/{season}/types/{season_type}/teams/{team_id}/record`
-#' and returns a tibble with one row per record type (overall, home, away,
-#' vs conference, etc).
+#' and returns a tibble with one row per (season_type x record_type).
+#' `season_type` accepts a scalar or vector; default `c(2L, 3L)` fetches
+#' regular season + postseason and binds.
 #'
 #' @keywords internal
 .espn_basketball_team_record <- function(league, team_id, season,
-                                          season_type = 2L, ...) {
+                                          season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season,
                 season_type = season_type)
 
-  result <- NULL
-  url <- paste0(
-    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
-    league, "/seasons/", season, "/types/", season_type,
-    "/teams/", team_id, "/record?lang=en&region=us"
-  )
+  fetch_one <- function(st) {
+    url <- paste0(
+      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+      league, "/seasons/", season, "/types/", st,
+      "/teams/", team_id, "/record?lang=en&region=us"
+    )
+    res <- tryCatch(.retry_request(url), error = function(e) NULL)
+    if (is.null(res)) return(list())
+    if (httr2::resp_status(res) != 200L) return(list())
+    raw <- res %>% .resp_text() %>%
+      jsonlite::fromJSON(simplifyVector = FALSE)
+    items <- raw[["items"]] %||% list()
+    lapply(items, function(it) {
+      list(
+        league             = league,
+        team_id            = as.character(team_id),
+        season             = as.integer(season),
+        season_type        = as.integer(st),
+        record_id          = as.character(it[["id"]] %||% NA),
+        name               = it[["name"]] %||% NA_character_,
+        abbreviation       = it[["abbreviation"]] %||% NA_character_,
+        display_name       = it[["displayName"]] %||% NA_character_,
+        short_display_name = it[["shortDisplayName"]] %||% NA_character_,
+        description        = it[["description"]] %||% NA_character_,
+        type               = it[["type"]] %||% NA_character_,
+        summary            = it[["summary"]] %||% NA_character_,
+        display_value      = it[["displayValue"]] %||% NA_character_,
+        value              = as.numeric(it[["value"]] %||% NA)
+      )
+    })
+  }
 
+  result <- NULL
   tryCatch(
     expr = {
-      res <- .retry_request(url)
-      check_status(res)
-      raw <- res %>% .resp_text() %>%
-        jsonlite::fromJSON(simplifyVector = FALSE)
-      items <- raw[["items"]] %||% list()
-      if (length(items) == 0L) {
+      all_rows <- list()
+      for (st in season_type) {
+        rs <- fetch_one(as.integer(st))
+        if (length(rs) > 0L) all_rows <- c(all_rows, rs)
+        if (length(season_type) > 1L) Sys.sleep(0.3)
+      }
+      if (length(all_rows) == 0L) {
         result <- data.frame(
           league = character(0), team_id = character(0),
           season = integer(0), season_type = integer(0),
@@ -48,25 +76,7 @@
             Sys.time()
           )
       } else {
-        rows <- lapply(items, function(it) {
-          list(
-            league             = league,
-            team_id            = as.character(team_id),
-            season             = as.integer(season),
-            season_type        = as.integer(season_type),
-            record_id          = as.character(it[["id"]] %||% NA),
-            name               = it[["name"]] %||% NA_character_,
-            abbreviation       = it[["abbreviation"]] %||% NA_character_,
-            display_name       = it[["displayName"]] %||% NA_character_,
-            short_display_name = it[["shortDisplayName"]] %||% NA_character_,
-            description        = it[["description"]] %||% NA_character_,
-            type               = it[["type"]] %||% NA_character_,
-            summary            = it[["summary"]] %||% NA_character_,
-            display_value      = it[["displayValue"]] %||% NA_character_,
-            value              = as.numeric(it[["value"]] %||% NA)
-          )
-        })
-        result <- do.call(rbind, lapply(rows, as.data.frame,
+        result <- do.call(rbind, lapply(all_rows, as.data.frame,
                                           stringsAsFactors = FALSE)) %>%
           dplyr::as_tibble() %>%
           make_hoopR_data(

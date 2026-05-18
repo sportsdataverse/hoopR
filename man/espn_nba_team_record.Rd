@@ -7,7 +7,7 @@
 espn_nba_team_record(
   team_id,
   season = most_recent_nba_season(),
-  season_type = 2L,
+  season_type = c(2L, 3L),
   ...
 )
 }

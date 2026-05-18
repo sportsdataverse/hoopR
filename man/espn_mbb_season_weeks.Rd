@@ -4,7 +4,11 @@
 \alias{espn_mbb_season_weeks}
 \title{\strong{Get ESPN MBB Season Weeks Index}}
 \usage{
-espn_mbb_season_weeks(season = most_recent_mbb_season(), season_type = 2L, ...)
+espn_mbb_season_weeks(
+  season = most_recent_mbb_season(),
+  season_type = c(2L, 3L),
+  ...
+)
 }
 \arguments{
 \item{season}{Season year. Defaults to most recent MBB season.}

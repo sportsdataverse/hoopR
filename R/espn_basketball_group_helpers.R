@@ -6,40 +6,69 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball season-groups index
+#'
+#' `season_type` accepts a scalar or vector; default `c(2L, 3L)` fetches
+#' regular season + postseason groups and binds them.
+#'
 #' @keywords internal
 .espn_basketball_season_groups <- function(league, season,
-                                            season_type = 2L, ...) {
+                                            season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, season_type = season_type)
+
+  fetch_one <- function(st) {
+    url <- paste0(
+      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+      league, "/seasons/", season, "/types/", st,
+      "/groups?limit=200&lang=en&region=us"
+    )
+    res <- tryCatch(.retry_request(url), error = function(e) NULL)
+    if (is.null(res) || httr2::resp_status(res) != 200L) return(NULL)
+    raw <- res %>% .resp_text() %>%
+      jsonlite::fromJSON(simplifyVector = FALSE)
+    items <- raw[["items"]] %||% list()
+    refs <- if (length(items) == 0L) character(0) else
+      vapply(items, function(x) x[["$ref"]] %||% NA_character_,
+             character(1))
+    ids <- if (length(refs) == 0L) character(0) else
+      sub(".*/groups/([0-9]+).*", "\\1", refs)
+    data.frame(
+      league      = rep(league, length(refs)),
+      season      = rep(as.integer(season), length(refs)),
+      season_type = rep(as.integer(st), length(refs)),
+      group_id    = ids,
+      ref         = refs,
+      stringsAsFactors = FALSE
+    )
+  }
+
   result <- NULL
-  url <- paste0(
-    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
-    league, "/seasons/", season, "/types/", season_type,
-    "/groups?limit=200&lang=en&region=us"
-  )
   tryCatch(
     expr = {
-      res <- .retry_request(url); check_status(res)
-      raw <- res %>% .resp_text() %>%
-        jsonlite::fromJSON(simplifyVector = FALSE)
-      items <- raw[["items"]] %||% list()
-      refs <- if (length(items) == 0L) character(0) else
-        vapply(items, function(x) x[["$ref"]] %||% NA_character_,
-               character(1))
-      ids <- if (length(refs) == 0L) character(0) else
-        sub(".*/groups/([0-9]+).*", "\\1", refs)
-      result <- data.frame(
-        league      = rep(league, length(refs)),
-        season      = rep(as.integer(season), length(refs)),
-        season_type = rep(as.integer(season_type), length(refs)),
-        group_id    = ids,
-        ref         = refs,
-        stringsAsFactors = FALSE
-      ) %>% dplyr::as_tibble() %>%
-        make_hoopR_data(
-          paste0("ESPN ", toupper(league), " Season Groups Index"),
-          Sys.time()
-        )
+      parts <- list()
+      for (st in season_type) {
+        df <- fetch_one(as.integer(st))
+        if (!is.null(df) && nrow(df) > 0L) parts[[length(parts) + 1L]] <- df
+        if (length(season_type) > 1L) Sys.sleep(0.3)
+      }
+      if (length(parts) == 0L) {
+        result <- data.frame(
+          league = character(0), season = integer(0),
+          season_type = integer(0), group_id = character(0),
+          ref = character(0), stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Season Groups Index"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, parts) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Season Groups Index"),
+            Sys.time()
+          )
+      }
     },
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} season groups for season={season}, season_type={season_type}",

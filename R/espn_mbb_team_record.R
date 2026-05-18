@@ -28,7 +28,7 @@ NULL
 #' }
 espn_mbb_team_record <- function(team_id,
                                   season = most_recent_mbb_season(),
-                                  season_type = 2L, ...) {
+                                  season_type = c(2L, 3L), ...) {
   .espn_basketball_team_record(league = "mens-college-basketball",
                                  team_id = team_id, season = season,
                                  season_type = season_type, ...)
