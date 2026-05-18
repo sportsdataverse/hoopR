@@ -39,12 +39,14 @@ A tibble with one row per broadcast outlet for the game.\tabular{lll}{
 \seealso{
 Other ESPN NBA Functions: 
 \code{\link{espn_nba_athlete_awards}()},
+\code{\link{espn_nba_athlete_career_stats}()},
 \code{\link{espn_nba_athlete_contract}()},
 \code{\link{espn_nba_athlete_contracts}()},
 \code{\link{espn_nba_athlete_eventlog}()},
 \code{\link{espn_nba_athlete_gamelog}()},
 \code{\link{espn_nba_athlete_info}()},
 \code{\link{espn_nba_athlete_overview}()},
+\code{\link{espn_nba_athlete_seasons}()},
 \code{\link{espn_nba_athlete_splits}()},
 \code{\link{espn_nba_athlete_statisticslog}()},
 \code{\link{espn_nba_athlete_stats}()},
@@ -57,6 +59,7 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_coaches}()},
 \code{\link{espn_nba_conferences}()},
 \code{\link{espn_nba_draft}()},
+\code{\link{espn_nba_draft_pick}()},
 \code{\link{espn_nba_event_odds}()},
 \code{\link{espn_nba_event_officials}()},
 \code{\link{espn_nba_event_probabilities}()},

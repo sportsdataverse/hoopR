@@ -193,6 +193,16 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_team_season_roster()` / `espn_mbb_team_season_roster()` | Per-season roster (core-v2 `seasons/{y}/teams/{id}/athletes`). Distinct from the existing site-v2 `espn_*_team_roster()`: era-correct, available back to the league's earliest season. |
 | `espn_nba_coach_season()` / `espn_mbb_coach_season()` | Single-coach metadata for one (coach × season). Includes name, birth info, and `$ref`s to person / college / team. Sparse coverage — many combinations 404. |
 
+#### *Tier 2A core-v2 expansion — athlete career + draft pick*
+
+5 new wrappers across 3 resource families covering career-level athlete endpoints and the single-draft-pick lookup. Backed by `R/espn_basketball_athlete_career_helpers.R` and `R/espn_basketball_draft_helpers.R`.
+
+| Function | Description |
+|---|---|
+| `espn_nba_athlete_seasons()` / `espn_mbb_athlete_seasons()` | List of seasons an athlete appeared in. |
+| `espn_nba_athlete_career_stats()` / `espn_mbb_athlete_career_stats()` | Long-format career stats. Default `stat_type = 0L` fetches the standard "All Splits" / regular-season view; pass a vector like `c(0L, 1L, 2L)` to bind multiple types (postseason / career aggregate) via a `stat_type_id` column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0. |
+| `espn_nba_draft_pick()` | Single NBA draft-pick detail (defaults to most-recent NBA season, round 1, pick 1). MBB has no draft endpoint, so this wrapper is NBA-only on the hoopR side. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*
