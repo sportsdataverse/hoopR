@@ -171,6 +171,17 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_week_rankings()` / `espn_mbb_week_rankings()` | Index of ranking sources for one week (NBA returns zero; MBB returns AP + Coaches). |
 | `espn_nba_week_ranking()` / `espn_mbb_week_ranking()` | The ranked teams (typically 25 rows) for one (season-type × week × source). Includes current / previous rank, points, first-place votes, trend, record summary, team `$ref`. |
 
+#### *Tier 2A core-v2 expansion — groups (conferences and divisions)*
+
+8 new wrappers across 4 resource families covering the per-season group hierarchy (conferences, divisions, and member teams). Backed by a shared `R/espn_basketball_group_helpers.R`. WNBA + WBB siblings ship in wehoop's matching release.
+
+| Function | Description |
+|---|---|
+| `espn_nba_season_groups()` / `espn_mbb_season_groups()` | Index of group IDs (conferences / divisions) for one (season × season-type). |
+| `espn_nba_season_group()` / `espn_mbb_season_group()` | Single-group metadata (name, abbreviation, midsize / short name, `is_conference` flag) plus `$ref` URLs to parent, children, member teams, and standings. |
+| `espn_nba_season_group_children()` / `espn_mbb_season_group_children()` | Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group). |
+| `espn_nba_season_group_teams()` / `espn_mbb_season_group_teams()` | Index of team IDs that belong to the group for that (season × season-type). |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*
