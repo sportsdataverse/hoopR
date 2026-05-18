@@ -80,6 +80,8 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_season_rankings}()},
 \code{\link{espn_nba_season_type}()},
 \code{\link{espn_nba_season_types}()},
+\code{\link{espn_nba_season_week}()},
+\code{\link{espn_nba_season_weeks}()},
 \code{\link{espn_nba_seasons}()},
 \code{\link{espn_nba_standings}()},
 \code{\link{espn_nba_team}()},
@@ -98,6 +100,8 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_tournament_seasons}()},
 \code{\link{espn_nba_tournaments}()},
 \code{\link{espn_nba_transactions}()},
+\code{\link{espn_nba_week_ranking}()},
+\code{\link{espn_nba_week_rankings}()},
 \code{\link{espn_nba_wp}()}
 }
 \author{

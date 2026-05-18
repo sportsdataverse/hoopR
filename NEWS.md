@@ -160,6 +160,17 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_season_rankings()` / `espn_mbb_season_rankings()` | Index of season-level rankings recorded for a season (NBA / WNBA return zero; MBB / WBB return AP Top 25 + Coaches Poll). |
 | `espn_nba_season_ranking()` / `espn_mbb_season_ranking()` | Per-week snapshot index for one ranking source — each row resolves to a per-week ranked-teams endpoint. |
 
+#### *Tier 2A core-v2 expansion — weeks + per-week rankings*
+
+8 new wrappers across 4 resource families covering the week structure of a season. Backed by a shared `R/espn_basketball_week_helpers.R`. WNBA + WBB siblings ship in wehoop's matching release.
+
+| Function | Description |
+|---|---|
+| `espn_nba_season_weeks()` / `espn_mbb_season_weeks()` | Index of weeks within one (season × season-type). Typical: ~20 weeks for regular season. NBA / WNBA also have weeks; rankings only populate for MBB / WBB. |
+| `espn_nba_season_week()` / `espn_mbb_season_week()` | Single-week metadata (number, start / end dates, text label, `$ref` to the per-week rankings endpoint). |
+| `espn_nba_week_rankings()` / `espn_mbb_week_rankings()` | Index of ranking sources for one week (NBA returns zero; MBB returns AP + Coaches). |
+| `espn_nba_week_ranking()` / `espn_mbb_week_ranking()` | The ranked teams (typically 25 rows) for one (season-type × week × source). Includes current / previous rank, points, first-place votes, trend, record summary, team `$ref`. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*

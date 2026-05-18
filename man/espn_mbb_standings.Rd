@@ -138,6 +138,8 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_season_rankings}()},
 \code{\link{espn_mbb_season_type}()},
 \code{\link{espn_mbb_season_types}()},
+\code{\link{espn_mbb_season_week}()},
+\code{\link{espn_mbb_season_weeks}()},
 \code{\link{espn_mbb_seasons}()},
 \code{\link{espn_mbb_team}()},
 \code{\link{espn_mbb_team_box}()},
@@ -155,6 +157,8 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_tournament_seasons}()},
 \code{\link{espn_mbb_tournaments}()},
 \code{\link{espn_mbb_venues}()},
+\code{\link{espn_mbb_week_ranking}()},
+\code{\link{espn_mbb_week_rankings}()},
 \code{\link{espn_mbb_wp}()}
 }
 \concept{ESPN MBB Functions}
