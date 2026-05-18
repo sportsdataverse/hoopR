@@ -117,6 +117,22 @@ matching release.
 | [`espn_nba_coach()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach.md) / [`espn_mbb_coach()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach.md) | Single-coach biography, current team / college refs, and counts of career-record + per-season coaching entries. |
 | [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md) / [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md) | Per-season Basketball Power Index and related metrics, long format (one row per team × stat). |
 
+##### *Tier 2A core-v2 expansion — season metadata*
+
+10 new wrappers across 5 resource families covering season-level
+metadata: season types, the per-(season × season-type) leaderboards, and
+(mostly college-only) season rankings. Backed by a shared
+`R/espn_basketball_season_meta_helpers.R`. WNBA + WBB siblings ship in
+wehoop’s matching release.
+
+| Function | Description |
+|----|----|
+| [`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md) / [`espn_mbb_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_types.md) | Index of season-type IDs that exist for one season (1 = preseason, 2 = regular, 3 = postseason, 4 = off-season). |
+| [`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md) / [`espn_mbb_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type.md) | Single season-type detail (start / end dates, has-groups / has-standings / has-legs flags, `$ref` URLs to deeper resources). |
+| [`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md) / [`espn_mbb_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders.md) | Per-(season × season-type) leaderboards in long format (one row per category × rank). 14–15 categories × 25 leaders ≈ 350 rows. |
+| [`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md) / [`espn_mbb_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md) | Index of season-level rankings recorded for a season (NBA / WNBA return zero; MBB / WBB return AP Top 25 + Coaches Poll). |
+| [`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md) / [`espn_mbb_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md) | Per-week snapshot index for one ranking source — each row resolves to a per-week ranked-teams endpoint. |
+
 #### **Behavior changes to existing functions**
 
 ##### *Bug fixes*

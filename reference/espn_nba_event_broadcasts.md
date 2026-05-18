@@ -78,6 +78,11 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md),
 [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md),
+[`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md),
+[`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md),
+[`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md),
+[`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md),
 [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
@@ -108,7 +113,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_broadcasts(event_id = "401736171")
-#> ✖ 2026-05-18 16:28:48.623236: Failed to retrieve ESPN nba event broadcasts for event_id=401736171
+#> ✖ 2026-05-18 17:10:06.311997: Failed to retrieve ESPN nba event broadcasts for event_id=401736171
 #> ✖ Args: league = "nba", event_id = "401736171"
 #> ✖ Error: The API returned an error
 #> NULL

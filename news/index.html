@@ -310,6 +310,32 @@
 </td>
 <td>Per-season Basketball Power Index and related metrics, long format (one row per team × stat).</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiera-core-v2-expansion--season-metadata-3-1-0"><em>Tier 2A core-v2 expansion — season metadata</em><a class="anchor" aria-label="anchor" href="#tiera-core-v2-expansion--season-metadata-3-1-0"></a></h5>
+<p>10 new wrappers across 5 resource families covering season-level metadata: season types, the per-(season × season-type) leaderboards, and (mostly college-only) season rankings. Backed by a shared <code>R/espn_basketball_season_meta_helpers.R</code>. WNBA + WBB siblings ship in wehoop’s matching release.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_season_types.html">espn_nba_season_types()</a></code> / <code><a href="../reference/espn_mbb_season_types.html">espn_mbb_season_types()</a></code>
+</td>
+<td>Index of season-type IDs that exist for one season (1 = preseason, 2 = regular, 3 = postseason, 4 = off-season).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_type.html">espn_nba_season_type()</a></code> / <code><a href="../reference/espn_mbb_season_type.html">espn_mbb_season_type()</a></code>
+</td>
+<td>Single season-type detail (start / end dates, has-groups / has-standings / has-legs flags, <code>$ref</code> URLs to deeper resources).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_leaders.html">espn_nba_season_leaders()</a></code> / <code><a href="../reference/espn_mbb_season_leaders.html">espn_mbb_season_leaders()</a></code>
+</td>
+<td>Per-(season × season-type) leaderboards in long format (one row per category × rank). 14–15 categories × 25 leaders ≈ 350 rows.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_rankings.html">espn_nba_season_rankings()</a></code> / <code><a href="../reference/espn_mbb_season_rankings.html">espn_mbb_season_rankings()</a></code>
+</td>
+<td>Index of season-level rankings recorded for a season (NBA / WNBA return zero; MBB / WBB return AP Top 25 + Coaches Poll).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_ranking.html">espn_nba_season_ranking()</a></code> / <code><a href="../reference/espn_mbb_season_ranking.html">espn_mbb_season_ranking()</a></code>
+</td>
+<td>Per-week snapshot index for one ranking source — each row resolves to a per-week ranked-teams endpoint.</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>

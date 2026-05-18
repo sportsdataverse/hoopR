@@ -155,6 +155,11 @@ Get ESPN NBA News"><meta property="og:image" content="https://raw.githubusercont
 <code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard()</a></code>,
 <code><a href="espn_nba_season_awards.html">espn_nba_season_awards()</a></code>,
 <code><a href="espn_nba_season_info.html">espn_nba_season_info()</a></code>,
+<code><a href="espn_nba_season_leaders.html">espn_nba_season_leaders()</a></code>,
+<code><a href="espn_nba_season_ranking.html">espn_nba_season_ranking()</a></code>,
+<code><a href="espn_nba_season_rankings.html">espn_nba_season_rankings()</a></code>,
+<code><a href="espn_nba_season_type.html">espn_nba_season_type()</a></code>,
+<code><a href="espn_nba_season_types.html">espn_nba_season_types()</a></code>,
 <code><a href="espn_nba_seasons.html">espn_nba_seasons()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
 <code><a href="espn_nba_team.html">espn_nba_team()</a></code>,
@@ -186,15 +191,15 @@ Get ESPN NBA News"><meta property="og:image" content="https://raw.githubusercont
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_news</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA News from ESPN.com ────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 16:28:54 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 17:10:12 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id type  headline description published premium byline link_web league_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.88<span style="color: #949494;">e</span>7 Media How Per… <span style="color: #949494;">"</span>Stephen A… 2026-05-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.88<span style="color: #949494;">e</span>7 Media Why Ste… <span style="color: #949494;">"</span>Stephen A… 2026-05-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  4.88<span style="color: #949494;">e</span>7 Story 2026 NB… <span style="color: #949494;">"</span>NBA exper… 2026-05-… FALSE   NBA i… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.84<span style="color: #949494;">e</span>7 Story NBA coa… <span style="color: #949494;">"</span>Orlando a… 2026-05-… FALSE   Tim B… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.88<span style="color: #949494;">e</span>7 Head… Sources… <span style="color: #949494;">"</span>The Pelic… 2026-05-… FALSE   Shams… https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.55<span style="color: #949494;">e</span>7 Story NBA cha… <span style="color: #949494;">"</span>The two f… 2026-05-… FALSE   Doug … https:/… 22000    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.53<span style="color: #949494;">e</span>7 Story Which N… <span style="color: #949494;">"</span>The Bosto… 2026-05-… FALSE   ESPN   https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  4.88<span style="color: #949494;">e</span>7 Media How Per… <span style="color: #949494;">"</span>Stephen A… 2026-05-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.88<span style="color: #949494;">e</span>7 Media Why Ste… <span style="color: #949494;">"</span>Stephen A… 2026-05-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.88<span style="color: #949494;">e</span>7 Story 2026 NB… <span style="color: #949494;">"</span>NBA exper… 2026-05-… FALSE   NBA i… https:/… 46       </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

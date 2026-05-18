@@ -92,6 +92,11 @@ Other ESPN NBA Functions:
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md),
+[`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md),
+[`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md),
+[`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md),
+[`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md),
+[`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md),
 [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
@@ -124,7 +129,7 @@ Saiem Gilani
   espn_nba_season_info(season = 2025)
 #> $Info
 #> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name     
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>         
@@ -132,7 +137,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN NBA Season Types from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -140,22 +145,22 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Coaches
 #> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:59 UTC
+#> ℹ Data updated: 2026-05-18 17:10:17 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

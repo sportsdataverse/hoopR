@@ -395,6 +395,31 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Season Info**
 
+- [`espn_mbb_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders.md)
+  :
+
+  **Get ESPN MBB Season Leaders (Long Format)**
+
+- [`espn_mbb_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md)
+  :
+
+  **Get ESPN MBB Season Ranking Detail**
+
+- [`espn_mbb_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md)
+  :
+
+  **Get ESPN MBB Season Rankings Index**
+
+- [`espn_mbb_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type.md)
+  :
+
+  **Get ESPN MBB Season-Type Detail**
+
+- [`espn_mbb_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_types.md)
+  :
+
+  **Get ESPN MBB Season Types Index**
+
 - [`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md)
   :
 
@@ -683,6 +708,31 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Season Info**
+
+- [`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md)
+  :
+
+  **Get ESPN NBA Season Leaders (Long Format)**
+
+- [`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md)
+  :
+
+  **Get ESPN NBA Season Ranking Detail**
+
+- [`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md)
+  :
+
+  **Get ESPN NBA Season Rankings Index**
+
+- [`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md)
+  :
+
+  **Get ESPN NBA Season-Type Detail**
+
+- [`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md)
+  :
+
+  **Get ESPN NBA Season Types Index**
 
 - [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md)
   :

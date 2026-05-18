@@ -79,6 +79,11 @@ Other ESPN NBA Functions:
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
 [`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md),
 [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md),
+[`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md),
+[`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md),
+[`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md),
+[`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md),
 [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
 [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
@@ -110,14 +115,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 16:28:54 UTC
+#> ℹ Data updated: 2026-05-18 17:10:12 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.88e7 Media How Per… "Stephen A… 2026-05-… FALSE   NA     https:/… 46       
-#> 2  4.88e7 Media Why Ste… "Stephen A… 2026-05-… FALSE   NA     https:/… 46       
-#> 3  4.88e7 Story 2026 NB… "NBA exper… 2026-05-… FALSE   NBA i… https:/… 46       
-#> 4  4.84e7 Story NBA coa… "Orlando a… 2026-05-… FALSE   Tim B… https:/… 46       
-#> 5  4.88e7 Head… Sources… "The Pelic… 2026-05-… FALSE   Shams… https:/… 46       
+#> 1  4.55e7 Story NBA cha… "The two f… 2026-05-… FALSE   Doug … https:/… 22000    
+#> 2  4.53e7 Story Which N… "The Bosto… 2026-05-… FALSE   ESPN   https:/… 46       
+#> 3  4.88e7 Media How Per… "Stephen A… 2026-05-… FALSE   NA     https:/… 46       
+#> 4  4.88e7 Media Why Ste… "Stephen A… 2026-05-… FALSE   NA     https:/… 46       
+#> 5  4.88e7 Story 2026 NB… "NBA exper… 2026-05-… FALSE   NBA i… https:/… 46       
 # }
 ```
