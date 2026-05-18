@@ -133,14 +133,19 @@ ESPN.</p>
 <code><a href="espn_mbb_athlete_splits.html">espn_mbb_athlete_splits()</a></code>,
 <code><a href="espn_mbb_athlete_statisticslog.html">espn_mbb_athlete_statisticslog()</a></code>,
 <code><a href="espn_mbb_athletes_index.html">espn_mbb_athletes_index()</a></code>,
+<code><a href="espn_mbb_award.html">espn_mbb_award()</a></code>,
 <code><a href="espn_mbb_betting.html">espn_mbb_betting()</a></code>,
 <code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
+<code><a href="espn_mbb_coach.html">espn_mbb_coach()</a></code>,
 <code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
 <code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code>,
 <code><a href="espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code>,
 <code><a href="espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code>,
 <code><a href="espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code>,
 <code><a href="espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code>,
+<code><a href="espn_mbb_franchise.html">espn_mbb_franchise()</a></code>,
+<code><a href="espn_mbb_franchises.html">espn_mbb_franchises()</a></code>,
+<code><a href="espn_mbb_futures.html">espn_mbb_futures()</a></code>,
 <code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code>,
 <code><a href="espn_mbb_game_rosters.html">espn_mbb_game_rosters()</a></code>,
 <code><a href="espn_mbb_injuries.html">espn_mbb_injuries()</a></code>,
@@ -149,8 +154,10 @@ ESPN.</p>
 <code><a href="espn_mbb_pbp.html">espn_mbb_pbp()</a></code>,
 <code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code>,
 <code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
+<code><a href="espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>,
 <code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code>,
 <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
+<code><a href="espn_mbb_season_awards.html">espn_mbb_season_awards()</a></code>,
 <code><a href="espn_mbb_season_info.html">espn_mbb_season_info()</a></code>,
 <code><a href="espn_mbb_seasons.html">espn_mbb_seasons()</a></code>,
 <code><a href="espn_mbb_standings.html">espn_mbb_standings()</a></code>,
@@ -160,10 +167,15 @@ ESPN.</p>
 <code><a href="espn_mbb_team_injuries.html">espn_mbb_team_injuries()</a></code>,
 <code><a href="espn_mbb_team_leaders.html">espn_mbb_team_leaders()</a></code>,
 <code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
+<code><a href="espn_mbb_team_record.html">espn_mbb_team_record()</a></code>,
 <code><a href="espn_mbb_team_roster.html">espn_mbb_team_roster()</a></code>,
 <code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
+<code><a href="espn_mbb_team_season_profile.html">espn_mbb_team_season_profile()</a></code>,
 <code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
 <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
+<code><a href="espn_mbb_tournament.html">espn_mbb_tournament()</a></code>,
+<code><a href="espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>,
+<code><a href="espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>,
 <code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
 <code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p></div>
     </div>
@@ -176,7 +188,7 @@ ESPN.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_athlete_stats</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="st">"4433985"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-17 16:23:47.492275: Failed to retrieve ESPN mens-college-basketball athlete stats for athlete_id=4433985, season=2025</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-18 16:28:17.020433: Failed to retrieve ESPN mens-college-basketball athlete stats for athlete_id=4433985, season=2025</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>

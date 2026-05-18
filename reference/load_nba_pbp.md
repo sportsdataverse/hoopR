@@ -120,21 +120,21 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-17 11:45:25 UTC
-#> # A tibble: 633,818 × 64
+#> ℹ Data updated: 2026-05-18 11:43:56 UTC
+#> # A tibble: 634,351 × 64
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
-#>  1                1   4.02e 9               4     615 "Jumpbal… "Jal…          0
-#>  2                2   4.02e 9               7      42 "Offensi… "Don…          0
-#>  3                3   4.02e 9               9      84 "Offensi… "Don…          0
-#>  4                4   4.02e10              10      92 "Jump Sh… "Tob…          0
-#>  5                5   4.02e10              11     155 "Defensi… "Cav…          0
-#>  6                6   4.02e10              13     144 "Driving… "Jam…          0
-#>  7                7   4.02e10              15     132 "Step Ba… "Cad…          0
-#>  8                8   4.02e10              16     155 "Defensi… "Jam…          0
-#>  9                9   4.02e10              17      62 "Bad Pas… "Jam…          0
-#> 10               10   4.02e10              19     131 "Pullup … "Dan…          0
-#> # ℹ 633,808 more rows
+#>  1                1   4.02e 9               4     615 Jumpball  Jarr…          0
+#>  2                2   4.02e 9               7     118 Alley Oo… Evan…          2
+#>  3                3   4.02e 9               9      92 Jump Shot Dani…          2
+#>  4                4   4.02e10              11      92 Jump Shot Evan…          2
+#>  5                5   4.02e10              12     155 Defensiv… Cade…          2
+#>  6                6   4.02e10              13     110 Driving … Tobi…          2
+#>  7                7   4.02e10              15     155 Defensiv… Max …          2
+#>  8                8   4.02e10              16      96 Dunk Shot Jarr…          4
+#>  9                9   4.02e10              18     144 Driving … Dani…          4
+#> 10               10   4.02e10              19     155 Defensiv… Evan…          4
+#> # ℹ 634,341 more rows
 #> # ℹ 57 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,

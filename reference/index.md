@@ -113,6 +113,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Athletes Index**
 
+- [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md)
+  :
+
+  **Get ESPN MBB Season Award Detail**
+
 - [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md)
   :
 
@@ -122,6 +127,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN MBB Calendar**
+
+- [`espn_mbb_coach()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach.md)
+  :
+
+  **Get ESPN MBB Single-Coach Detail**
 
 - [`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md)
   :
@@ -152,6 +162,21 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN Women's College Basketball Event Win Probabilities**
+
+- [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md)
+  :
+
+  **Get ESPN MBB Franchise Detail**
+
+- [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md)
+  :
+
+  **Get ESPN MBB Franchises Index**
+
+- [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md)
+  :
+
+  **Get ESPN MBB Season Futures (Long Format)**
 
 - [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
   :
@@ -193,6 +218,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN men's college basketball player stats data**
 
+- [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md)
+  :
+
+  **Get ESPN MBB Season Power Index (Long Format)**
+
 - [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md)
   :
 
@@ -203,6 +233,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN men's college basketball schedule for a specific year**
+
+- [`espn_mbb_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_awards.md)
+  :
+
+  **Get ESPN MBB Season Awards Index**
 
 - [`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md)
   :
@@ -249,6 +284,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN MBB Team News**
 
+- [`espn_mbb_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record.md)
+  :
+
+  **Get ESPN MBB Team Record (Per Season Type)**
+
 - [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster.md)
   :
 
@@ -259,6 +299,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Team Schedule**
 
+- [`espn_mbb_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_profile.md)
+  :
+
+  **Get ESPN MBB Team-in-Season Profile**
+
 - [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md)
   :
 
@@ -268,6 +313,21 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN men's college basketball team names and IDs**
+
+- [`espn_mbb_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament.md)
+  :
+
+  **Get ESPN MBB Tournament Detail**
+
+- [`espn_mbb_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_seasons.md)
+  :
+
+  **Get ESPN MBB Tournament Seasons List**
+
+- [`espn_mbb_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournaments.md)
+  :
+
+  **Get ESPN MBB Tournaments Index**
 
 - [`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md)
   :
@@ -287,6 +347,16 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Athlete Awards**
+
+- [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md)
+  :
+
+  **Get ESPN NBA Athlete Contract (Single Season)**
+
+- [`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md)
+  :
+
+  **Get ESPN NBA Athlete Contracts Index**
 
 - [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md)
   :
@@ -328,6 +398,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Athletes Index**
 
+- [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md)
+  :
+
+  **Get ESPN NBA Season Award Detail**
+
 - [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md)
   :
 
@@ -337,6 +412,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Calendar**
+
+- [`espn_nba_coach()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach.md)
+  :
+
+  **Get ESPN NBA Single-Coach Detail**
 
 - [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md)
   :
@@ -373,10 +453,25 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Event Win Probabilities**
 
+- [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md)
+  :
+
+  **Get ESPN NBA Franchise Detail**
+
+- [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md)
+  :
+
+  **Get ESPN NBA Franchises Index**
+
 - [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md)
   :
 
   **Get ESPN NBA Free Agents**
+
+- [`espn_nba_futures()`](https://hoopR.sportsdataverse.org/reference/espn_nba_futures.md)
+  :
+
+  **Get ESPN NBA Season Futures (Long Format)**
 
 - [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
   :
@@ -418,10 +513,20 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA player stats data**
 
+- [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md)
+  :
+
+  **Get ESPN NBA Season Power Index (Long Format)**
+
 - [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md)
   :
 
   **Get ESPN NBA schedule for a specific year**
+
+- [`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md)
+  :
+
+  **Get ESPN NBA Season Awards Index**
 
 - [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md)
   :
@@ -468,6 +573,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Team News**
 
+- [`espn_nba_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_record.md)
+  :
+
+  **Get ESPN NBA Team Record (Per Season Type)**
+
 - [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md)
   :
 
@@ -478,6 +588,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Team Schedule**
 
+- [`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_profile.md)
+  :
+
+  **Get ESPN NBA Team-in-Season Profile**
+
 - [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md)
   :
 
@@ -487,6 +602,21 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA team names and IDs**
+
+- [`espn_nba_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament.md)
+  :
+
+  **Get ESPN NBA Tournament Detail**
+
+- [`espn_nba_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament_seasons.md)
+  :
+
+  **Get ESPN NBA Tournament Seasons List**
+
+- [`espn_nba_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournaments.md)
+  :
+
+  **Get ESPN NBA Tournaments Index**
 
 - [`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md)
   :

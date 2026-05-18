@@ -252,6 +252,64 @@
 </tr><tr><td><code><a href="../reference/espn_nba_conferences.html">espn_nba_conferences()</a></code></td>
 <td>NBA-side analog of <code><a href="../reference/espn_mbb_conferences.html">espn_mbb_conferences()</a></code>, against the NBA scoreboard-conferences endpoint.</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tier-core-v2-expansion-crawler-driven-3-1-0"><em>Tier 1 core-v2 expansion (crawler-driven)</em><a class="anchor" aria-label="anchor" href="#tier-core-v2-expansion-crawler-driven-3-1-0"></a></h5>
+<p>22 new wrappers across 9 resource families, surfaced by an internal <code>$ref</code>-following crawler that mapped the reachable basketball API surface (21,962 fetches, 1,570 unique templates across all 4 basketball leagues). Each wrapper is a thin shim over a shared <code>.espn_basketball_*()</code> helper. WNBA + WBB siblings ship in wehoop’s matching release.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_team_season_profile.html">espn_nba_team_season_profile()</a></code> / <code><a href="../reference/espn_mbb_team_season_profile.html">espn_mbb_team_season_profile()</a></code>
+</td>
+<td>Era-correct team identity in a specific season plus <code>$ref</code> URLs for deeper resources (record, statistics, leaders, coaches, etc.). Historical depth back to <strong>1947</strong> (NBA) / <strong>1939</strong> (MBB).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_franchise.html">espn_nba_franchise()</a></code> / <code><a href="../reference/espn_mbb_franchise.html">espn_mbb_franchise()</a></code>
+</td>
+<td>Franchise-level metadata. IDs are stable across relocations and rebrands.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_franchises.html">espn_nba_franchises()</a></code> / <code><a href="../reference/espn_mbb_franchises.html">espn_mbb_franchises()</a></code>
+</td>
+<td>Index of franchise IDs in the league.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_athlete_contracts.html">espn_nba_athlete_contracts()</a></code></td>
+<td>Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty).</td>
+</tr><tr><td><code><a href="../reference/espn_nba_athlete_contract.html">espn_nba_athlete_contract()</a></code></td>
+<td>Salary, cap-rule flags, Bird status, and trade protections for one (athlete × season).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_awards.html">espn_nba_season_awards()</a></code> / <code><a href="../reference/espn_mbb_season_awards.html">espn_mbb_season_awards()</a></code>
+</td>
+<td>Index of award IDs given out in a season.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_award.html">espn_nba_award()</a></code> / <code><a href="../reference/espn_mbb_award.html">espn_mbb_award()</a></code>
+</td>
+<td>Award detail with winners (one row per winner; multi-recipient awards like All-NBA return 5 rows).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_futures.html">espn_nba_futures()</a></code> / <code><a href="../reference/espn_mbb_futures.html">espn_mbb_futures()</a></code>
+</td>
+<td>Per-season futures betting board in long format (one row per market × team × sportsbook).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_tournaments.html">espn_nba_tournaments()</a></code> / <code><a href="../reference/espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>
+</td>
+<td>Index of league-tracked tournaments.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_tournament.html">espn_nba_tournament()</a></code> / <code><a href="../reference/espn_mbb_tournament.html">espn_mbb_tournament()</a></code>
+</td>
+<td>Single tournament metadata + seasons-list <code>$ref</code>.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_tournament_seasons.html">espn_nba_tournament_seasons()</a></code> / <code><a href="../reference/espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>
+</td>
+<td>Seasons in which a given tournament was held.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_team_record.html">espn_nba_team_record()</a></code> / <code><a href="../reference/espn_mbb_team_record.html">espn_mbb_team_record()</a></code>
+</td>
+<td>Long-format record breakdown for one team in one season-type (Overall / Home / Road / vs Conference / etc.).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_coach.html">espn_nba_coach()</a></code> / <code><a href="../reference/espn_mbb_coach.html">espn_mbb_coach()</a></code>
+</td>
+<td>Single-coach biography, current team / college refs, and counts of career-record + per-season coaching entries.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_powerindex.html">espn_nba_powerindex()</a></code> / <code><a href="../reference/espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>
+</td>
+<td>Per-season Basketball Power Index and related metrics, long format (one row per team × stat).</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>

@@ -126,6 +126,8 @@ forward compatibility. Proxy configuration should use
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ESPN NBA Functions:
 <code><a href="espn_nba_athlete_awards.html">espn_nba_athlete_awards()</a></code>,
+<code><a href="espn_nba_athlete_contract.html">espn_nba_athlete_contract()</a></code>,
+<code><a href="espn_nba_athlete_contracts.html">espn_nba_athlete_contracts()</a></code>,
 <code><a href="espn_nba_athlete_eventlog.html">espn_nba_athlete_eventlog()</a></code>,
 <code><a href="espn_nba_athlete_gamelog.html">espn_nba_athlete_gamelog()</a></code>,
 <code><a href="espn_nba_athlete_info.html">espn_nba_athlete_info()</a></code>,
@@ -134,8 +136,10 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_nba_athlete_statisticslog.html">espn_nba_athlete_statisticslog()</a></code>,
 <code><a href="espn_nba_athlete_stats.html">espn_nba_athlete_stats()</a></code>,
 <code><a href="espn_nba_athletes_index.html">espn_nba_athletes_index()</a></code>,
+<code><a href="espn_nba_award.html">espn_nba_award()</a></code>,
 <code><a href="espn_nba_betting.html">espn_nba_betting()</a></code>,
 <code><a href="espn_nba_calendar.html">espn_nba_calendar()</a></code>,
+<code><a href="espn_nba_coach.html">espn_nba_coach()</a></code>,
 <code><a href="espn_nba_coaches.html">espn_nba_coaches()</a></code>,
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
@@ -143,7 +147,10 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_nba_event_odds.html">espn_nba_event_odds()</a></code>,
 <code><a href="espn_nba_event_officials.html">espn_nba_event_officials()</a></code>,
 <code><a href="espn_nba_event_probabilities.html">espn_nba_event_probabilities()</a></code>,
+<code><a href="espn_nba_franchise.html">espn_nba_franchise()</a></code>,
+<code><a href="espn_nba_franchises.html">espn_nba_franchises()</a></code>,
 <code><a href="espn_nba_freeagents.html">espn_nba_freeagents()</a></code>,
+<code><a href="espn_nba_futures.html">espn_nba_futures()</a></code>,
 <code><a href="espn_nba_game_all.html">espn_nba_game_all()</a></code>,
 <code><a href="espn_nba_game_rosters.html">espn_nba_game_rosters()</a></code>,
 <code><a href="espn_nba_injuries.html">espn_nba_injuries()</a></code>,
@@ -152,7 +159,9 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_nba_pbp.html">espn_nba_pbp()</a></code>,
 <code><a href="espn_nba_player_box.html">espn_nba_player_box()</a></code>,
 <code><a href="espn_nba_player_stats.html">espn_nba_player_stats()</a></code>,
+<code><a href="espn_nba_powerindex.html">espn_nba_powerindex()</a></code>,
 <code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard()</a></code>,
+<code><a href="espn_nba_season_awards.html">espn_nba_season_awards()</a></code>,
 <code><a href="espn_nba_season_info.html">espn_nba_season_info()</a></code>,
 <code><a href="espn_nba_seasons.html">espn_nba_seasons()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
@@ -161,10 +170,15 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_nba_team_injuries.html">espn_nba_team_injuries()</a></code>,
 <code><a href="espn_nba_team_leaders.html">espn_nba_team_leaders()</a></code>,
 <code><a href="espn_nba_team_news.html">espn_nba_team_news()</a></code>,
+<code><a href="espn_nba_team_record.html">espn_nba_team_record()</a></code>,
 <code><a href="espn_nba_team_roster.html">espn_nba_team_roster()</a></code>,
 <code><a href="espn_nba_team_schedule.html">espn_nba_team_schedule()</a></code>,
+<code><a href="espn_nba_team_season_profile.html">espn_nba_team_season_profile()</a></code>,
 <code><a href="espn_nba_team_stats.html">espn_nba_team_stats()</a></code>,
 <code><a href="espn_nba_teams.html">espn_nba_teams()</a></code>,
+<code><a href="espn_nba_tournament.html">espn_nba_tournament()</a></code>,
+<code><a href="espn_nba_tournament_seasons.html">espn_nba_tournament_seasons()</a></code>,
+<code><a href="espn_nba_tournaments.html">espn_nba_tournaments()</a></code>,
 <code><a href="espn_nba_transactions.html">espn_nba_transactions()</a></code>,
 <code><a href="espn_nba_venues.html">espn_nba_venues()</a></code>,
 <code><a href="espn_nba_wp.html">espn_nba_wp()</a></code></p></div>
@@ -180,7 +194,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span>  <span class="fu">espn_nba_team</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"17"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Info</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:24:26 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 16:29:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    uid    slug  abbreviation display_name short_display_name name  location</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
@@ -190,7 +204,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Record</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:24:26 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 16:29:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   description    type  summary stats        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       </span>
@@ -200,7 +214,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $NextEvent</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:24:26 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 16:29:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id        date              name                             short_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
@@ -208,7 +222,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $StandingSummary</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-17 16:24:26 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 16:29:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   standing_summary        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   </span>

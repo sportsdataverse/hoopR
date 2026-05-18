@@ -94,7 +94,7 @@ Returns a tibble with the player stats data
 | defensive_blocks | numeric | Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. |
 | defensive_defensive_rebounds | numeric | The number of times when the defense obtains the possession of the ball after a missed shot by the offense. |
 | defensive_steals | numeric | The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. |
-| defensive_def_rebound_rate | numeric | The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds). |
+| defensive_def_rebound_rate | numeric | The percentage of missed shots that a team rebounds defensively. Rebound Rate = (Defensive Rebounds x Team Minutes) divided by (Player Minutes x (Team Defensive Rebounds + Opponent Defensive Rebounds)). |
 | defensive_avg_defensive_rebounds | numeric | The average defensive rebounds per game. |
 | defensive_avg_blocks | numeric | The average blocks per game. |
 | defensive_avg_steals | numeric | The average steals per game. |
@@ -106,7 +106,7 @@ Returns a tibble with the player stats data
 | general_flagrant_fouls | numeric | The number of fouls that the officials thought were unnecessary or excessive. |
 | general_fouls | numeric | The number of times a player had illegal contact with the opponent. |
 | general_per | numeric | A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season. |
-| general_rebound_rate | numeric | The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by Player Minutes x (Team Rebounds + Opponent Rebounds). |
+| general_rebound_rate | numeric | The percentage of missed shots that a team rebounds. Rebound Rate = (Rebounds x Team Minutes) divided by (Player Minutes x (Team Rebounds + Opponent Rebounds)). |
 | general_ejections | numeric | The number of times a player or coach is removed from the game as a result of a serious offense. |
 | general_technical_fouls | numeric | The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). |
 | general_rebounds | numeric | The total number of rebounds (offensive and defensive). |
@@ -158,14 +158,14 @@ Returns a tibble with the player stats data
 | offensive_three_point_pct | numeric | The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. |
 | offensive_three_point_field_goals_attempted | numeric | The number of times a 3pt field goal was attempted. |
 | offensive_three_point_field_goals_made | numeric | The number of times a 3pt field goal was made. |
-| offensive_true_shooting_pct | numeric | What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by (FGA + (FTA x 0.44). |
+| offensive_true_shooting_pct | numeric | What a team's shooting percentage would be if we accounted for free throws and 3-pointers. True Shooting Percentage = (Total points x 50) divided by ((FGA + (FTA x 0.44)). |
 | offensive_total_turnovers | numeric | The number of turnovers plus team turnovers for the team. |
-| offensive_assist_ratio | numeric | The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by (FGA + (FTA x 0.44) + Assists + Turnovers. |
+| offensive_assist_ratio | numeric | The percentage of a team's possessions that ends in an assist. Assist Ratio = (Assists x 100) divided by ((FGA + (FTA x 0.44) + Assists + Turnovers). |
 | offensive_points_in_paint | numeric | The amount of points scored in the area known as "the Paint"(the rectangle between the foul line and the baseline). |
-| offensive_off_rebound_rate | numeric | The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds). |
-| offensive_turnover_ratio | numeric | The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by (FGA + (FTA x 0.44) + Assists + Turnovers. |
+| offensive_off_rebound_rate | numeric | The percentage of missed shots that a team rebounds offensively. Offensive Rebound Rate = (Offensive Rebounds x Team Minutes) divided by (Player Minutes x (Team Offensive Rebounds + Opponent Defensive Rebounds)). |
+| offensive_turnover_ratio | numeric | The percentage of a team's possessions that end in a turnover. Turnover Ratio = (Turnover x 100) divided by ((FGA + (FTA x 0.44) + Assists + Turnovers). |
 | offensive_brick_index | numeric | How many points a player costs his team with his shooting compared with the league average on a per-40-minute basis. ((52.8 - TS%) x (FGA + (FTA x 0.44))) / (Min/40) . |
-| offensive_usage_rate | numeric | the number of possessions a player uses per 40 minutes. Usage Rate = FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO x 40 x League Pace divided by (Minutes x Team Pace). |
+| offensive_usage_rate | numeric | the number of possessions a player uses per 40 minutes. Usage Rate = ((FGA + (FT Att. x 0.44) + (Ast x 0.33) + TO) x 40 x League Pace) divided by (Minutes x Team Pace). |
 | offensive_avg_field_goals_made | numeric | The average field goals made per game. |
 | offensive_avg_field_goals_attempted | numeric | The average field goals attempted per game. |
 | offensive_avg_three_point_field_goals_made | numeric | The average three point field goals made per game. |
@@ -225,6 +225,8 @@ Returns a tibble with the player stats data
 
 Other ESPN NBA Functions:
 [`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md),
+[`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md),
 [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
 [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
 [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
@@ -233,8 +235,10 @@ Other ESPN NBA Functions:
 [`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
 [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
+[`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
 [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
+[`espn_nba_coach()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach.md),
 [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
 [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
 [`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
@@ -242,7 +246,10 @@ Other ESPN NBA Functions:
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
+[`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_futures()`](https://hoopR.sportsdataverse.org/reference/espn_nba_futures.md),
 [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
 [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md),
 [`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_injuries.md),
@@ -250,7 +257,9 @@ Other ESPN NBA Functions:
 [`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md),
 [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md),
 [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md),
+[`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
 [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
+[`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md),
 [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
 [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
 [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
@@ -260,10 +269,15 @@ Other ESPN NBA Functions:
 [`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md),
 [`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md),
 [`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md),
+[`espn_nba_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_record.md),
 [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md),
 [`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md),
+[`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_profile.md),
 [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
+[`espn_nba_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament.md),
+[`espn_nba_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament_seasons.md),
+[`espn_nba_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournaments.md),
 [`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md),
 [`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md),
 [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
@@ -278,7 +292,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
 #> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-17 16:24:24 UTC
+#> ℹ Data updated: 2026-05-18 16:28:56 UTC
 #> # A tibble: 1 × 271
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
