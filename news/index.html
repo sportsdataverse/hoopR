@@ -400,6 +400,22 @@
 </td>
 <td>Single-coach metadata for one (coach × season). Includes name, birth info, and <code>$ref</code>s to person / college / team. Sparse coverage — many combinations 404.</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiera-core-v2-expansion--athlete-career--draft-pick-3-1-0"><em>Tier 2A core-v2 expansion — athlete career + draft pick</em><a class="anchor" aria-label="anchor" href="#tiera-core-v2-expansion--athlete-career--draft-pick-3-1-0"></a></h5>
+<p>5 new wrappers across 3 resource families covering career-level athlete endpoints and the single-draft-pick lookup. Backed by <code>R/espn_basketball_athlete_career_helpers.R</code> and <code>R/espn_basketball_draft_helpers.R</code>.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_athlete_seasons.html">espn_nba_athlete_seasons()</a></code> / <code><a href="../reference/espn_mbb_athlete_seasons.html">espn_mbb_athlete_seasons()</a></code>
+</td>
+<td>List of seasons an athlete appeared in.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_athlete_career_stats.html">espn_nba_athlete_career_stats()</a></code> / <code><a href="../reference/espn_mbb_athlete_career_stats.html">espn_mbb_athlete_career_stats()</a></code>
+</td>
+<td>Long-format career stats. Default <code>stat_type = 0L</code> fetches the standard “All Splits” / regular-season view; pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types (postseason / career aggregate) via a <code>stat_type_id</code> column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code></td>
+<td>Single NBA draft-pick detail (defaults to most-recent NBA season, round 1, pick 1). MBB has no draft endpoint, so this wrapper is NBA-only on the hoopR side.</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>

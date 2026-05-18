@@ -9,7 +9,7 @@ and season-type. Each row is one record category.
 espn_mbb_team_record(
   team_id,
   season = most_recent_mbb_season(),
-  season_type = 2L,
+  season_type = c(2L, 3L),
   ...
 )
 ```
@@ -42,10 +42,12 @@ for the full column schema.
 
 Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
+[`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
+[`espn_mbb_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_seasons.md),
 [`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md),
 [`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md),
 [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
@@ -121,16 +123,22 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_record(team_id = 150, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:13:23 UTC
-#> # A tibble: 6 × 14
-#>   league    team_id season season_type record_id name  abbreviation display_name
-#>   <chr>     <chr>    <int>       <int> <chr>     <chr> <chr>        <chr>       
-#> 1 mens-col… 150       2025           2 0         over… Season       Team Season…
-#> 2 mens-col… 150       2025           2 2         Home  Home         Home        
-#> 3 mens-col… 150       2025           2 3         Road  AWAY         Away        
-#> 4 mens-col… 150       2025           2 4         vs A… VS AP        NA          
-#> 5 mens-col… 150       2025           2 6         vs U… VS USA       NA          
-#> 6 mens-col… 150       2025           2 9         vs. … VS CONF      CONF        
+#> ℹ Data updated: 2026-05-18 22:40:28 UTC
+#> # A tibble: 12 × 14
+#>    league   team_id season season_type record_id name  abbreviation display_name
+#>    <chr>    <chr>    <int>       <int> <chr>     <chr> <chr>        <chr>       
+#>  1 mens-co… 150       2025           2 0         over… Season       Team Season…
+#>  2 mens-co… 150       2025           2 2         Home  Home         Home        
+#>  3 mens-co… 150       2025           2 3         Road  AWAY         Away        
+#>  4 mens-co… 150       2025           2 4         vs A… VS AP        NA          
+#>  5 mens-co… 150       2025           2 6         vs U… VS USA       NA          
+#>  6 mens-co… 150       2025           2 9         vs. … VS CONF      CONF        
+#>  7 mens-co… 150       2025           3 0         over… Season       Team Season…
+#>  8 mens-co… 150       2025           3 2         Home  Home         Home        
+#>  9 mens-co… 150       2025           3 3         Road  AWAY         Away        
+#> 10 mens-co… 150       2025           3 4         vs A… VS AP        NA          
+#> 11 mens-co… 150       2025           3 6         vs U… VS USA       NA          
+#> 12 mens-co… 150       2025           3 9         vs. … VS CONF      CONF        
 #> # ℹ 6 more variables: short_display_name <chr>, description <chr>, type <chr>,
 #> #   summary <chr>, display_value <chr>, value <dbl>
 # }

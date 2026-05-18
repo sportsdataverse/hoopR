@@ -143,12 +143,14 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ESPN NBA Functions:
 <code><a href="espn_nba_athlete_awards.html">espn_nba_athlete_awards()</a></code>,
+<code><a href="espn_nba_athlete_career_stats.html">espn_nba_athlete_career_stats()</a></code>,
 <code><a href="espn_nba_athlete_contract.html">espn_nba_athlete_contract()</a></code>,
 <code><a href="espn_nba_athlete_contracts.html">espn_nba_athlete_contracts()</a></code>,
 <code><a href="espn_nba_athlete_eventlog.html">espn_nba_athlete_eventlog()</a></code>,
 <code><a href="espn_nba_athlete_gamelog.html">espn_nba_athlete_gamelog()</a></code>,
 <code><a href="espn_nba_athlete_info.html">espn_nba_athlete_info()</a></code>,
 <code><a href="espn_nba_athlete_overview.html">espn_nba_athlete_overview()</a></code>,
+<code><a href="espn_nba_athlete_seasons.html">espn_nba_athlete_seasons()</a></code>,
 <code><a href="espn_nba_athlete_splits.html">espn_nba_athlete_splits()</a></code>,
 <code><a href="espn_nba_athlete_statisticslog.html">espn_nba_athlete_statisticslog()</a></code>,
 <code><a href="espn_nba_athlete_stats.html">espn_nba_athlete_stats()</a></code>,
@@ -161,6 +163,7 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
 <code><a href="espn_nba_coaches.html">espn_nba_coaches()</a></code>,
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
+<code><a href="espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code>,
 <code><a href="espn_nba_event_broadcasts.html">espn_nba_event_broadcasts()</a></code>,
 <code><a href="espn_nba_event_odds.html">espn_nba_event_odds()</a></code>,
 <code><a href="espn_nba_event_officials.html">espn_nba_event_officials()</a></code>,
@@ -227,7 +230,7 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_team_odds_records</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">1</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Odds-Records ─────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 22:13:58 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 22:41:04 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 60 × 13</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league team_id season season_type category_type    category_abbrev</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>

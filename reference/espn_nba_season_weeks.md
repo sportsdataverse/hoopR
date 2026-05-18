@@ -7,7 +7,11 @@ rankings are populated only for college (MBB / WBB).
 ## Usage
 
 ``` r
-espn_nba_season_weeks(season = most_recent_nba_season(), season_type = 2L, ...)
+espn_nba_season_weeks(
+  season = most_recent_nba_season(),
+  season_type = c(2L, 3L),
+  ...
+)
 ```
 
 ## Arguments
@@ -41,12 +45,14 @@ A tibble with one row per week.
 
 Other ESPN NBA Functions:
 [`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_career_stats.md),
 [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md),
 [`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md),
 [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
 [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
 [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
 [`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
+[`espn_nba_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_seasons.md),
 [`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md),
 [`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
 [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
@@ -59,6 +65,7 @@ Other ESPN NBA Functions:
 [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
 [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
 [`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md),
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
@@ -125,8 +132,8 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_weeks(season = 2025)
 #> ── ESPN NBA Season Weeks Index ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:13:53 UTC
-#> # A tibble: 25 × 5
+#> ℹ Data updated: 2026-05-18 22:41:01 UTC
+#> # A tibble: 35 × 5
 #>    league season season_type  week ref                                          
 #>    <chr>   <int>       <int> <int> <chr>                                        
 #>  1 nba      2025           2     1 http://sports.core.api.espn.com/v2/sports/ba…
@@ -139,6 +146,6 @@ Saiem Gilani
 #>  8 nba      2025           2     8 http://sports.core.api.espn.com/v2/sports/ba…
 #>  9 nba      2025           2     9 http://sports.core.api.espn.com/v2/sports/ba…
 #> 10 nba      2025           2    10 http://sports.core.api.espn.com/v2/sports/ba…
-#> # ℹ 15 more rows
+#> # ℹ 25 more rows
 # }
 ```

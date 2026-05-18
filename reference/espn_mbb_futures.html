@@ -123,10 +123,12 @@ cover the NCAA tournament champion and conference winners. Backed by
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ESPN MBB Functions:
 <code><a href="espn_mbb_athlete_awards.html">espn_mbb_athlete_awards()</a></code>,
+<code><a href="espn_mbb_athlete_career_stats.html">espn_mbb_athlete_career_stats()</a></code>,
 <code><a href="espn_mbb_athlete_eventlog.html">espn_mbb_athlete_eventlog()</a></code>,
 <code><a href="espn_mbb_athlete_gamelog.html">espn_mbb_athlete_gamelog()</a></code>,
 <code><a href="espn_mbb_athlete_info.html">espn_mbb_athlete_info()</a></code>,
 <code><a href="espn_mbb_athlete_overview.html">espn_mbb_athlete_overview()</a></code>,
+<code><a href="espn_mbb_athlete_seasons.html">espn_mbb_athlete_seasons()</a></code>,
 <code><a href="espn_mbb_athlete_splits.html">espn_mbb_athlete_splits()</a></code>,
 <code><a href="espn_mbb_athlete_statisticslog.html">espn_mbb_athlete_statisticslog()</a></code>,
 <code><a href="espn_mbb_athlete_stats.html">espn_mbb_athlete_stats()</a></code>,
@@ -202,8 +204,8 @@ cover the NCAA tournament champion and conference winners. Backed by
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_futures</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Futures ────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 22:13:04 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,619 × 11</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 22:40:06 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,794 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season league    market_id market_name market_type market_display provider_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>025 mens-col…      <span style="text-decoration: underline;">6</span>099 NCAA(B) - … <span style="color: #BB0000;">NA</span>          NCAA(B) - Wes… 58         </span>
@@ -216,7 +218,7 @@ cover the NCAA tournament champion and conference winners. Backed by
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>025 mens-col…      <span style="text-decoration: underline;">6</span>099 NCAA(B) - … <span style="color: #BB0000;">NA</span>          NCAA(B) - Wes… 58         </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>025 mens-col…      <span style="text-decoration: underline;">6</span>099 NCAA(B) - … <span style="color: #BB0000;">NA</span>          NCAA(B) - Wes… 58         </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>025 mens-col…      <span style="text-decoration: underline;">6</span>099 NCAA(B) - … <span style="color: #BB0000;">NA</span>          NCAA(B) - Wes… 58         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,609 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,784 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: provider_name &lt;chr&gt;, team_id &lt;chr&gt;, odds_value &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_ref &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

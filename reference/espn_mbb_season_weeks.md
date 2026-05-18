@@ -7,7 +7,11 @@ rankings are populated only for college (MBB / WBB).
 ## Usage
 
 ``` r
-espn_mbb_season_weeks(season = most_recent_mbb_season(), season_type = 2L, ...)
+espn_mbb_season_weeks(
+  season = most_recent_mbb_season(),
+  season_type = c(2L, 3L),
+  ...
+)
 ```
 
 ## Arguments
@@ -41,10 +45,12 @@ A tibble with one row per week.
 
 Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
+[`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
+[`espn_mbb_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_seasons.md),
 [`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md),
 [`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md),
 [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
@@ -120,8 +126,8 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_weeks(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Weeks Index ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:13:19 UTC
-#> # A tibble: 20 × 5
+#> ℹ Data updated: 2026-05-18 22:40:22 UTC
+#> # A tibble: 24 × 5
 #>    league                  season season_type  week ref                         
 #>    <chr>                    <int>       <int> <int> <chr>                       
 #>  1 mens-college-basketball   2025           2     1 http://sports.core.api.espn…
@@ -134,15 +140,6 @@ Saiem Gilani
 #>  8 mens-college-basketball   2025           2     8 http://sports.core.api.espn…
 #>  9 mens-college-basketball   2025           2     9 http://sports.core.api.espn…
 #> 10 mens-college-basketball   2025           2    10 http://sports.core.api.espn…
-#> 11 mens-college-basketball   2025           2    11 http://sports.core.api.espn…
-#> 12 mens-college-basketball   2025           2    12 http://sports.core.api.espn…
-#> 13 mens-college-basketball   2025           2    13 http://sports.core.api.espn…
-#> 14 mens-college-basketball   2025           2    14 http://sports.core.api.espn…
-#> 15 mens-college-basketball   2025           2    15 http://sports.core.api.espn…
-#> 16 mens-college-basketball   2025           2    16 http://sports.core.api.espn…
-#> 17 mens-college-basketball   2025           2    17 http://sports.core.api.espn…
-#> 18 mens-college-basketball   2025           2    18 http://sports.core.api.espn…
-#> 19 mens-college-basketball   2025           2    19 http://sports.core.api.espn…
-#> 20 mens-college-basketball   2025           2    20 http://sports.core.api.espn…
+#> # ℹ 14 more rows
 # }
 ```

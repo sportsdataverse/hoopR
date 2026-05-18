@@ -73,6 +73,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Athlete Awards**
 
+- [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md)
+  :
+
+  **Get ESPN MBB Athlete Career Stats (Long Format)**
+
 - [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md)
   :
 
@@ -92,6 +97,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN Women's College Basketball Athlete Overview**
+
+- [`espn_mbb_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_seasons.md)
+  :
+
+  **Get ESPN MBB Athlete Career Seasons**
 
 - [`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md)
   :
@@ -428,6 +438,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Athlete Awards**
 
+- [`espn_nba_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_career_stats.md)
+  :
+
+  **Get ESPN NBA Athlete Career Stats (Long Format)**
+
 - [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md)
   :
 
@@ -457,6 +472,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Athlete Overview**
+
+- [`espn_nba_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_seasons.md)
+  :
+
+  **Get ESPN NBA Athlete Career Seasons**
 
 - [`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md)
   :
@@ -517,6 +537,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Draft Picks**
+
+- [`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md)
+  :
+
+  **Get ESPN NBA Draft Pick Detail**
 
 - [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md)
   :
