@@ -182,6 +182,17 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_season_group_children()` / `espn_mbb_season_group_children()` | Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group). |
 | `espn_nba_season_group_teams()` / `espn_mbb_season_group_teams()` | Index of team IDs that belong to the group for that (season × season-type). |
 
+#### *Tier 2A core-v2 expansion — team deep + coach-in-season*
+
+7 new wrappers across 4 resource families covering deeper per-team and per-coach core-v2 endpoints. Backed by a shared `R/espn_basketball_team_deep_helpers.R`. WNBA + WBB siblings (where applicable) ship in wehoop's matching release.
+
+| Function | Description |
+|---|---|
+| `espn_nba_team_odds_records()` / `espn_mbb_team_odds_records()` | Long-format odds-records breakdown (Money Line / ATS / O/U × Overall / Home / Road × W/L/Push). Sparse — many (team × season-type) combinations return empty. Default `season_type = 0` (all-types aggregate, where ESPN actually populates). |
+| `espn_nba_team_depthchart()` | NBA-only long-format depth chart (one row per position × rank × athlete). |
+| `espn_nba_team_season_roster()` / `espn_mbb_team_season_roster()` | Per-season roster (core-v2 `seasons/{y}/teams/{id}/athletes`). Distinct from the existing site-v2 `espn_*_team_roster()`: era-correct, available back to the league's earliest season. |
+| `espn_nba_coach_season()` / `espn_mbb_coach_season()` | Single-coach metadata for one (coach × season). Includes name, birth info, and `$ref`s to person / college / team. Sparse coverage — many combinations 404. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*
