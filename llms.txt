@@ -284,6 +284,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN MBB Single-Coach Detail**
 
+- [`espn_mbb_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season.md)
+  :
+
+  **Get ESPN MBB Coach-in-Season Detail**
+
 - [`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md)
   :
 
@@ -390,6 +395,26 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN MBB Season Awards Index**
 
+- [`espn_mbb_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md)
+  :
+
+  **Get ESPN MBB Season Group Detail**
+
+- [`espn_mbb_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_children.md)
+  :
+
+  **Get ESPN MBB Season Group Children Index**
+
+- [`espn_mbb_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_teams.md)
+  :
+
+  **Get ESPN MBB Season Group Teams Index**
+
+- [`espn_mbb_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups.md)
+  :
+
+  **Get ESPN MBB Season Groups Index**
+
 - [`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md)
   :
 
@@ -419,6 +444,16 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN MBB Season Types Index**
+
+- [`espn_mbb_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week.md)
+  :
+
+  **Get ESPN MBB Season-Week Detail**
+
+- [`espn_mbb_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks.md)
+  :
+
+  **Get ESPN MBB Season Weeks Index**
 
 - [`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md)
   :
@@ -460,6 +495,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN MBB Team News**
 
+- [`espn_mbb_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records.md)
+  :
+
+  **Get ESPN MBB Team Odds-Records (Long Format)**
+
 - [`espn_mbb_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record.md)
   :
 
@@ -479,6 +519,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN MBB Team-in-Season Profile**
+
+- [`espn_mbb_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster.md)
+  :
+
+  **Get ESPN MBB Team Roster (Per-Season, core-v2)**
 
 - [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md)
   :
@@ -509,6 +554,16 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
   :
 
   **Get ESPN Women's College Basketball Venues**
+
+- [`espn_mbb_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md)
+  :
+
+  **Get ESPN MBB Per-Week Ranking Detail**
+
+- [`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md)
+  :
+
+  **Get ESPN MBB Per-Week Rankings Index**
 
 - [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
   :
@@ -593,6 +648,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Single-Coach Detail**
+
+- [`espn_nba_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach_season.md)
+  :
+
+  **Get ESPN NBA Coach-in-Season Detail**
 
 - [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md)
   :
@@ -704,6 +764,26 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Season Awards Index**
 
+- [`espn_nba_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md)
+  :
+
+  **Get ESPN NBA Season Group Detail**
+
+- [`espn_nba_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_children.md)
+  :
+
+  **Get ESPN NBA Season Group Children Index**
+
+- [`espn_nba_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_teams.md)
+  :
+
+  **Get ESPN NBA Season Group Teams Index**
+
+- [`espn_nba_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_groups.md)
+  :
+
+  **Get ESPN NBA Season Groups Index**
+
 - [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md)
   :
 
@@ -734,6 +814,16 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Season Types Index**
 
+- [`espn_nba_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_week.md)
+  :
+
+  **Get ESPN NBA Season-Week Detail**
+
+- [`espn_nba_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_weeks.md)
+  :
+
+  **Get ESPN NBA Season Weeks Index**
+
 - [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md)
   :
 
@@ -759,6 +849,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA current team roster**
 
+- [`espn_nba_team_depthchart()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_depthchart.md)
+  :
+
+  **Get ESPN NBA Team Depth Chart (Long Format)**
+
 - [`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md)
   :
 
@@ -773,6 +868,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Team News**
+
+- [`espn_nba_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_odds_records.md)
+  :
+
+  **Get ESPN NBA Team Odds-Records (Long Format)**
 
 - [`espn_nba_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_record.md)
   :
@@ -793,6 +893,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Team-in-Season Profile**
+
+- [`espn_nba_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_roster.md)
+  :
+
+  **Get ESPN NBA Team Roster (Per-Season, core-v2)**
 
 - [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md)
   :
@@ -828,6 +933,16 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA Venues**
+
+- [`espn_nba_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_ranking.md)
+  :
+
+  **Get ESPN NBA Per-Week Ranking Detail**
+
+- [`espn_nba_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_rankings.md)
+  :
+
+  **Get ESPN NBA Per-Week Rankings Index**
 
 - [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
   :

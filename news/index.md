@@ -133,6 +133,47 @@ wehoop’s matching release.
 | [`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md) / [`espn_mbb_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md) | Index of season-level rankings recorded for a season (NBA / WNBA return zero; MBB / WBB return AP Top 25 + Coaches Poll). |
 | [`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md) / [`espn_mbb_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md) | Per-week snapshot index for one ranking source — each row resolves to a per-week ranked-teams endpoint. |
 
+##### *Tier 2A core-v2 expansion — weeks + per-week rankings*
+
+8 new wrappers across 4 resource families covering the week structure of
+a season. Backed by a shared `R/espn_basketball_week_helpers.R`. WNBA +
+WBB siblings ship in wehoop’s matching release.
+
+| Function | Description |
+|----|----|
+| [`espn_nba_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_weeks.md) / [`espn_mbb_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks.md) | Index of weeks within one (season × season-type). Typical: ~20 weeks for regular season. NBA / WNBA also have weeks; rankings only populate for MBB / WBB. |
+| [`espn_nba_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_week.md) / [`espn_mbb_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week.md) | Single-week metadata (number, start / end dates, text label, `$ref` to the per-week rankings endpoint). |
+| [`espn_nba_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_rankings.md) / [`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md) | Index of ranking sources for one week (NBA returns zero; MBB returns AP + Coaches). |
+| [`espn_nba_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_ranking.md) / [`espn_mbb_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md) | The ranked teams (typically 25 rows) for one (season-type × week × source). Includes current / previous rank, points, first-place votes, trend, record summary, team `$ref`. |
+
+##### *Tier 2A core-v2 expansion — groups (conferences and divisions)*
+
+8 new wrappers across 4 resource families covering the per-season group
+hierarchy (conferences, divisions, and member teams). Backed by a shared
+`R/espn_basketball_group_helpers.R`. WNBA + WBB siblings ship in
+wehoop’s matching release.
+
+| Function | Description |
+|----|----|
+| [`espn_nba_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_groups.md) / [`espn_mbb_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups.md) | Index of group IDs (conferences / divisions) for one (season × season-type). |
+| [`espn_nba_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md) / [`espn_mbb_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md) | Single-group metadata (name, abbreviation, midsize / short name, `is_conference` flag) plus `$ref` URLs to parent, children, member teams, and standings. |
+| [`espn_nba_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_children.md) / [`espn_mbb_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_children.md) | Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group). |
+| [`espn_nba_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_teams.md) / [`espn_mbb_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_teams.md) | Index of team IDs that belong to the group for that (season × season-type). |
+
+##### *Tier 2A core-v2 expansion — team deep + coach-in-season*
+
+7 new wrappers across 4 resource families covering deeper per-team and
+per-coach core-v2 endpoints. Backed by a shared
+`R/espn_basketball_team_deep_helpers.R`. WNBA + WBB siblings (where
+applicable) ship in wehoop’s matching release.
+
+| Function | Description |
+|----|----|
+| [`espn_nba_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_odds_records.md) / [`espn_mbb_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records.md) | Long-format odds-records breakdown (Money Line / ATS / O/U × Overall / Home / Road × W/L/Push). Sparse — many (team × season-type) combinations return empty. Default `season_type = 0` (all-types aggregate, where ESPN actually populates). |
+| [`espn_nba_team_depthchart()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_depthchart.md) | NBA-only long-format depth chart (one row per position × rank × athlete). |
+| [`espn_nba_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_roster.md) / [`espn_mbb_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster.md) | Per-season roster (core-v2 `seasons/{y}/teams/{id}/athletes`). Distinct from the existing site-v2 `espn_*_team_roster()`: era-correct, available back to the league’s earliest season. |
+| [`espn_nba_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach_season.md) / [`espn_mbb_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season.md) | Single-coach metadata for one (coach × season). Includes name, birth info, and `$ref`s to person / college / team. Sparse coverage — many combinations 404. |
+
 #### **Behavior changes to existing functions**
 
 ##### *Bug fixes*

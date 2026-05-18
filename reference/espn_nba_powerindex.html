@@ -141,6 +141,7 @@ Auto-paginates through all teams. Backed by
 <code><a href="espn_nba_betting.html">espn_nba_betting()</a></code>,
 <code><a href="espn_nba_calendar.html">espn_nba_calendar()</a></code>,
 <code><a href="espn_nba_coach.html">espn_nba_coach()</a></code>,
+<code><a href="espn_nba_coach_season.html">espn_nba_coach_season()</a></code>,
 <code><a href="espn_nba_coaches.html">espn_nba_coaches()</a></code>,
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
@@ -162,24 +163,33 @@ Auto-paginates through all teams. Backed by
 <code><a href="espn_nba_player_stats.html">espn_nba_player_stats()</a></code>,
 <code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard()</a></code>,
 <code><a href="espn_nba_season_awards.html">espn_nba_season_awards()</a></code>,
+<code><a href="espn_nba_season_group.html">espn_nba_season_group()</a></code>,
+<code><a href="espn_nba_season_group_children.html">espn_nba_season_group_children()</a></code>,
+<code><a href="espn_nba_season_group_teams.html">espn_nba_season_group_teams()</a></code>,
+<code><a href="espn_nba_season_groups.html">espn_nba_season_groups()</a></code>,
 <code><a href="espn_nba_season_info.html">espn_nba_season_info()</a></code>,
 <code><a href="espn_nba_season_leaders.html">espn_nba_season_leaders()</a></code>,
 <code><a href="espn_nba_season_ranking.html">espn_nba_season_ranking()</a></code>,
 <code><a href="espn_nba_season_rankings.html">espn_nba_season_rankings()</a></code>,
 <code><a href="espn_nba_season_type.html">espn_nba_season_type()</a></code>,
 <code><a href="espn_nba_season_types.html">espn_nba_season_types()</a></code>,
+<code><a href="espn_nba_season_week.html">espn_nba_season_week()</a></code>,
+<code><a href="espn_nba_season_weeks.html">espn_nba_season_weeks()</a></code>,
 <code><a href="espn_nba_seasons.html">espn_nba_seasons()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
 <code><a href="espn_nba_team.html">espn_nba_team()</a></code>,
 <code><a href="espn_nba_team_box.html">espn_nba_team_box()</a></code>,
 <code><a href="espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code>,
+<code><a href="espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code>,
 <code><a href="espn_nba_team_injuries.html">espn_nba_team_injuries()</a></code>,
 <code><a href="espn_nba_team_leaders.html">espn_nba_team_leaders()</a></code>,
 <code><a href="espn_nba_team_news.html">espn_nba_team_news()</a></code>,
+<code><a href="espn_nba_team_odds_records.html">espn_nba_team_odds_records()</a></code>,
 <code><a href="espn_nba_team_record.html">espn_nba_team_record()</a></code>,
 <code><a href="espn_nba_team_roster.html">espn_nba_team_roster()</a></code>,
 <code><a href="espn_nba_team_schedule.html">espn_nba_team_schedule()</a></code>,
 <code><a href="espn_nba_team_season_profile.html">espn_nba_team_season_profile()</a></code>,
+<code><a href="espn_nba_team_season_roster.html">espn_nba_team_season_roster()</a></code>,
 <code><a href="espn_nba_team_stats.html">espn_nba_team_stats()</a></code>,
 <code><a href="espn_nba_teams.html">espn_nba_teams()</a></code>,
 <code><a href="espn_nba_tournament.html">espn_nba_tournament()</a></code>,
@@ -187,6 +197,8 @@ Auto-paginates through all teams. Backed by
 <code><a href="espn_nba_tournaments.html">espn_nba_tournaments()</a></code>,
 <code><a href="espn_nba_transactions.html">espn_nba_transactions()</a></code>,
 <code><a href="espn_nba_venues.html">espn_nba_venues()</a></code>,
+<code><a href="espn_nba_week_ranking.html">espn_nba_week_ranking()</a></code>,
+<code><a href="espn_nba_week_rankings.html">espn_nba_week_rankings()</a></code>,
 <code><a href="espn_nba_wp.html">espn_nba_wp()</a></code></p></div>
     </div>
     <div class="section level2">
@@ -199,7 +211,7 @@ Auto-paginates through all teams. Backed by
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_powerindex</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Power Index ────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 17:10:16 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-18 22:13:48 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,130 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league season season_type team_id stat_name     abbreviation display_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>

@@ -1,0 +1,157 @@
+# **Get ESPN NBA Team Roster (Per-Season, core-v2)**
+
+Returns the per-season team roster as a tibble of athlete IDs from
+`seasons/{y}/teams/{id}/athletes`. Distinct from
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md)
+which targets a site-v2 endpoint optimized for the current season; this
+core-v2 variant is era-correct and available back to ESPN's earliest
+season for each league.
+
+## Usage
+
+``` r
+espn_nba_team_season_roster(team_id, season = most_recent_nba_season(), ...)
+```
+
+## Arguments
+
+- team_id:
+
+  ESPN team identifier.
+
+- season:
+
+  Season year. Defaults to most recent NBA season.
+
+- ...:
+
+  Additional arguments; currently unused.
+
+## Value
+
+A tibble with one row per athlete on the season roster.
+
+|            |           |                                         |
+|------------|-----------|-----------------------------------------|
+| col_name   | types     | description                             |
+| league     | character | League slug.                            |
+| team_id    | character | ESPN team id.                           |
+| season     | integer   | Season year.                            |
+| athlete_id | character | ESPN athlete id.                        |
+| ref        | character | `$ref` URL to athlete-in-season detail. |
+
+## Details
+
+**Get ESPN NBA Team Roster (Per-Season, core-v2)**
+
+## See also
+
+Other ESPN NBA Functions:
+[`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md),
+[`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md),
+[`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md),
+[`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
+[`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
+[`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
+[`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md),
+[`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md),
+[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
+[`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
+[`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
+[`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
+[`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
+[`espn_nba_coach()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach.md),
+[`espn_nba_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach_season.md),
+[`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
+[`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
+[`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
+[`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
+[`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
+[`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_futures()`](https://hoopR.sportsdataverse.org/reference/espn_nba_futures.md),
+[`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
+[`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md),
+[`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_injuries.md),
+[`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_leaders.md),
+[`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md),
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md),
+[`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md),
+[`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
+[`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md),
+[`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md),
+[`espn_nba_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md),
+[`espn_nba_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_children.md),
+[`espn_nba_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_teams.md),
+[`espn_nba_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_groups.md),
+[`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md),
+[`espn_nba_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_leaders.md),
+[`espn_nba_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_ranking.md),
+[`espn_nba_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_rankings.md),
+[`espn_nba_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_type.md),
+[`espn_nba_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_types.md),
+[`espn_nba_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_week.md),
+[`espn_nba_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_weeks.md),
+[`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md),
+[`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md),
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md),
+[`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md),
+[`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_current_roster.md),
+[`espn_nba_team_depthchart()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_depthchart.md),
+[`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md),
+[`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md),
+[`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md),
+[`espn_nba_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_odds_records.md),
+[`espn_nba_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_record.md),
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md),
+[`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md),
+[`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_profile.md),
+[`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md),
+[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md),
+[`espn_nba_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament.md),
+[`espn_nba_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament_seasons.md),
+[`espn_nba_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournaments.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md),
+[`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md),
+[`espn_nba_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_ranking.md),
+[`espn_nba_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_week_rankings.md),
+[`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md)
+
+## Author
+
+Saiem Gilani
+
+## Examples
+
+``` r
+# \donttest{
+  espn_nba_team_season_roster(team_id = 13, season = 2025)
+#> ── ESPN NBA Team Season Roster ────────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-18 22:14:00 UTC
+#> # A tibble: 17 × 5
+#>    league team_id season athlete_id ref                                         
+#>    <chr>  <chr>    <int> <chr>      <chr>                                       
+#>  1 nba    13        2025 4278129    http://sports.core.api.espn.com/v2/sports/b…
+#>  2 nba    13        2025 3945274    http://sports.core.api.espn.com/v2/sports/b…
+#>  3 nba    13        2025 4066648    http://sports.core.api.espn.com/v2/sports/b…
+#>  4 nba    13        2025 4397077    http://sports.core.api.espn.com/v2/sports/b…
+#>  5 nba    13        2025 4683774    http://sports.core.api.espn.com/v2/sports/b…
+#>  6 nba    13        2025 1966       http://sports.core.api.espn.com/v2/sports/b…
+#>  7 nba    13        2025 3913174    http://sports.core.api.espn.com/v2/sports/b…
+#>  8 nba    13        2025 2960236    http://sports.core.api.espn.com/v2/sports/b…
+#>  9 nba    13        2025 4897943    http://sports.core.api.espn.com/v2/sports/b…
+#> 10 nba    13        2025 4592691    http://sports.core.api.espn.com/v2/sports/b…
+#> 11 nba    13        2025 4702972    http://sports.core.api.espn.com/v2/sports/b…
+#> 12 nba    13        2025 4066457    http://sports.core.api.espn.com/v2/sports/b…
+#> 13 nba    13        2025 2990992    http://sports.core.api.espn.com/v2/sports/b…
+#> 14 nba    13        2025 4683686    http://sports.core.api.espn.com/v2/sports/b…
+#> 15 nba    13        2025 5060631    http://sports.core.api.espn.com/v2/sports/b…
+#> 16 nba    13        2025 4431695    http://sports.core.api.espn.com/v2/sports/b…
+#> 17 nba    13        2025 4278077    http://sports.core.api.espn.com/v2/sports/b…
+# }
+```

@@ -336,6 +336,70 @@
 </td>
 <td>Per-week snapshot index for one ranking source — each row resolves to a per-week ranked-teams endpoint.</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiera-core-v2-expansion--weeks--per-week-rankings-3-1-0"><em>Tier 2A core-v2 expansion — weeks + per-week rankings</em><a class="anchor" aria-label="anchor" href="#tiera-core-v2-expansion--weeks--per-week-rankings-3-1-0"></a></h5>
+<p>8 new wrappers across 4 resource families covering the week structure of a season. Backed by a shared <code>R/espn_basketball_week_helpers.R</code>. WNBA + WBB siblings ship in wehoop’s matching release.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_season_weeks.html">espn_nba_season_weeks()</a></code> / <code><a href="../reference/espn_mbb_season_weeks.html">espn_mbb_season_weeks()</a></code>
+</td>
+<td>Index of weeks within one (season × season-type). Typical: ~20 weeks for regular season. NBA / WNBA also have weeks; rankings only populate for MBB / WBB.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_week.html">espn_nba_season_week()</a></code> / <code><a href="../reference/espn_mbb_season_week.html">espn_mbb_season_week()</a></code>
+</td>
+<td>Single-week metadata (number, start / end dates, text label, <code>$ref</code> to the per-week rankings endpoint).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_week_rankings.html">espn_nba_week_rankings()</a></code> / <code><a href="../reference/espn_mbb_week_rankings.html">espn_mbb_week_rankings()</a></code>
+</td>
+<td>Index of ranking sources for one week (NBA returns zero; MBB returns AP + Coaches).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_week_ranking.html">espn_nba_week_ranking()</a></code> / <code><a href="../reference/espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>
+</td>
+<td>The ranked teams (typically 25 rows) for one (season-type × week × source). Includes current / previous rank, points, first-place votes, trend, record summary, team <code>$ref</code>.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiera-core-v2-expansion--groups-conferences-and-divisions-3-1-0"><em>Tier 2A core-v2 expansion — groups (conferences and divisions)</em><a class="anchor" aria-label="anchor" href="#tiera-core-v2-expansion--groups-conferences-and-divisions-3-1-0"></a></h5>
+<p>8 new wrappers across 4 resource families covering the per-season group hierarchy (conferences, divisions, and member teams). Backed by a shared <code>R/espn_basketball_group_helpers.R</code>. WNBA + WBB siblings ship in wehoop’s matching release.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_season_groups.html">espn_nba_season_groups()</a></code> / <code><a href="../reference/espn_mbb_season_groups.html">espn_mbb_season_groups()</a></code>
+</td>
+<td>Index of group IDs (conferences / divisions) for one (season × season-type).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_group.html">espn_nba_season_group()</a></code> / <code><a href="../reference/espn_mbb_season_group.html">espn_mbb_season_group()</a></code>
+</td>
+<td>Single-group metadata (name, abbreviation, midsize / short name, <code>is_conference</code> flag) plus <code>$ref</code> URLs to parent, children, member teams, and standings.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_group_children.html">espn_nba_season_group_children()</a></code> / <code><a href="../reference/espn_mbb_season_group_children.html">espn_mbb_season_group_children()</a></code>
+</td>
+<td>Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_season_group_teams.html">espn_nba_season_group_teams()</a></code> / <code><a href="../reference/espn_mbb_season_group_teams.html">espn_mbb_season_group_teams()</a></code>
+</td>
+<td>Index of team IDs that belong to the group for that (season × season-type).</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiera-core-v2-expansion--team-deep--coach-in-season-3-1-0"><em>Tier 2A core-v2 expansion — team deep + coach-in-season</em><a class="anchor" aria-label="anchor" href="#tiera-core-v2-expansion--team-deep--coach-in-season-3-1-0"></a></h5>
+<p>7 new wrappers across 4 resource families covering deeper per-team and per-coach core-v2 endpoints. Backed by a shared <code>R/espn_basketball_team_deep_helpers.R</code>. WNBA + WBB siblings (where applicable) ship in wehoop’s matching release.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_team_odds_records.html">espn_nba_team_odds_records()</a></code> / <code><a href="../reference/espn_mbb_team_odds_records.html">espn_mbb_team_odds_records()</a></code>
+</td>
+<td>Long-format odds-records breakdown (Money Line / ATS / O/U × Overall / Home / Road × W/L/Push). Sparse — many (team × season-type) combinations return empty. Default <code>season_type = 0</code> (all-types aggregate, where ESPN actually populates).</td>
+</tr><tr><td><code><a href="../reference/espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code></td>
+<td>NBA-only long-format depth chart (one row per position × rank × athlete).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_team_season_roster.html">espn_nba_team_season_roster()</a></code> / <code><a href="../reference/espn_mbb_team_season_roster.html">espn_mbb_team_season_roster()</a></code>
+</td>
+<td>Per-season roster (core-v2 <code>seasons/{y}/teams/{id}/athletes</code>). Distinct from the existing site-v2 <code>espn_*_team_roster()</code>: era-correct, available back to the league’s earliest season.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_coach_season.html">espn_nba_coach_season()</a></code> / <code><a href="../reference/espn_mbb_coach_season.html">espn_mbb_coach_season()</a></code>
+</td>
+<td>Single-coach metadata for one (coach × season). Includes name, birth info, and <code>$ref</code>s to person / college / team. Sparse coverage — many combinations 404.</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>
