@@ -255,3 +255,75 @@ espn_mbb_team_leaders <- function(team_id,
     ...
   )
 }
+
+# ---------------------------------------------------------------------------
+# espn_mbb_team_season_profile
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Team-in-Season Profile**
+#' @name espn_mbb_team_season_profile
+NULL
+#' @title
+#' **Get ESPN MBB Team-in-Season Profile**
+#' @rdname espn_mbb_team_season_profile
+#' @author Saiem Gilani
+#' @description
+#' Era-correct team identity for a men's college basketball program in a
+#' specific season, plus the available `$ref` URLs for deeper resources
+#' (record, statistics, leaders, athletes/roster, coaches, college, etc.).
+#' Backed by the core-v2 endpoint
+#' `sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/{season}/teams/{team_id}`.
+#'
+#' Historical depth goes back to **1939** at ESPN. Older seasons return
+#' fewer `$ref` keys; missing refs become `NA`.
+#'
+#' @param team_id ESPN team identifier (character or numeric).
+#' @param season Season year (numeric). Defaults to the most recent MBB season.
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble with team identity scalars and `_ref` URL
+#'   columns. Selected columns:
+#'
+#'    |col_name              |types     |description                                       |
+#'    |:---------------------|:---------|:-------------------------------------------------|
+#'    |id                    |character |ESPN team identifier.                             |
+#'    |guid                  |character |Stable cross-league team GUID.                    |
+#'    |uid                   |character |ESPN UID string.                                  |
+#'    |slug                  |character |URL-safe identifier.                              |
+#'    |location              |character |School/program location (e.g. "Duke").            |
+#'    |name                  |character |Team name (e.g. "Blue Devils").                   |
+#'    |nickname              |character |Common nickname (often same as location).         |
+#'    |abbreviation          |character |Short abbreviation (e.g. "DUKE").                 |
+#'    |display_name          |character |Full display name.                                |
+#'    |short_display_name    |character |Short display name.                               |
+#'    |color                 |character |Primary color (hex, no leading '#').              |
+#'    |alternate_color       |character |Alternate color (hex, no leading '#').            |
+#'    |is_active             |logical   |Whether the team was active in this season.       |
+#'    |season                |integer   |Season year.                                      |
+#'    |logo                  |character |Primary logo URL.                                 |
+#'    |logo_dark             |character |Dark-mode logo URL.                               |
+#'    |record_ref            |character |`$ref` to team record resource.                   |
+#'    |statistics_ref        |character |`$ref` to team statistics resource.               |
+#'    |athletes_ref          |character |`$ref` to team roster resource (college-only).    |
+#'    |college_ref           |character |`$ref` to college (institution) resource.         |
+#'    |coaches_ref           |character |`$ref` to team coaches resource.                  |
+#'    |franchise_ref         |character |`$ref` to franchise resource.                     |
+#'
+#' @importFrom jsonlite fromJSON
+#' @importFrom dplyr as_tibble
+#' @importFrom janitor clean_names
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_team_season_profile(team_id = "150", season = 2025)
+#' }
+espn_mbb_team_season_profile <- function(team_id,
+                                          season = most_recent_mbb_season(),
+                                          ...) {
+  .espn_basketball_team_season_profile(
+    league  = "mens-college-basketball",
+    team_id = team_id,
+    season  = season,
+    ...
+  )
+}

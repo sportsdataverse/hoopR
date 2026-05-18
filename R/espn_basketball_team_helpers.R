@@ -648,3 +648,101 @@
   )
   return(result)
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_team_season_profile
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball team-in-season profile
+#'
+#' Fetches the core-v2 per-season team profile
+#' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/seasons/{season}/teams/{team_id}`
+#' and returns a single-row tibble of the team's era-correct identity scalars
+#' plus the available `$ref` URLs for deeper resources (record, statistics,
+#' leaders, coaches, etc.). Older seasons return fewer `$ref` keys; missing
+#' refs become `NA_character_`.
+#'
+#' @param league character. `"nba"` or `"mens-college-basketball"`.
+#' @param team_id character or numeric. ESPN team identifier.
+#' @param season numeric. Season year (e.g. 2025).
+#' @param ... Unused; absorbed for forward compatibility.
+#' @return A single-row `hoopR_data` tibble, or `NULL` on error.
+#' @keywords internal
+.espn_basketball_team_season_profile <- function(league, team_id, season, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, team_id = team_id, season = season)
+
+  result <- NULL
+
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/seasons/", season, "/teams/", team_id,
+    "?lang=en&region=us"
+  )
+
+  ref_keys <- c(
+    "record", "venue", "groups", "ranks", "statistics", "leaders",
+    "injuries", "notes", "againstTheSpreadRecords", "awards",
+    "franchise", "depthCharts", "events", "transactions", "coaches",
+    "athletes", "oddsRecords", "college"
+  )
+
+  tryCatch(
+    expr = {
+      res <- .retry_request(url)
+      check_status(res)
+      raw <- res %>%
+        .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+
+      scalar_keys <- c(
+        "id", "guid", "uid", "slug", "location", "name", "nickname",
+        "abbreviation", "displayName", "shortDisplayName",
+        "color", "alternateColor", "isActive", "isAllStar"
+      )
+      row <- list()
+      for (k in scalar_keys) {
+        v <- raw[[k]]
+        row[[k]] <- if (is.null(v)) NA else v
+      }
+      row[["season"]] <- as.integer(season)
+
+      # logos: first two hrefs (light + dark, if present)
+      logos <- raw[["logos"]]
+      logo_hrefs <- if (is.list(logos)) {
+        vapply(logos, function(x) x[["href"]] %||% NA_character_,
+               character(1))
+      } else character(0)
+      row[["logo"]]      <- if (length(logo_hrefs) >= 1L) logo_hrefs[1L] else NA_character_
+      row[["logo_dark"]] <- if (length(logo_hrefs) >= 2L) logo_hrefs[2L] else NA_character_
+
+      # $ref children — preserve URL for downstream wrappers
+      for (k in ref_keys) {
+        v <- raw[[k]]
+        url_v <- if (is.list(v)) v[["$ref"]] %||% NA_character_ else NA_character_
+        row[[paste0(k, "_ref")]] <- url_v
+      }
+
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        janitor::clean_names() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league),
+                 " Team Season Profile from ESPN.com"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(
+      e,
+      hint = "Failed to retrieve ESPN {league} team-season profile for team_id={team_id}, season={season}",
+      args = .args
+    ),
+    warning = function(w) .report_api_warning(
+      w,
+      hint = "Warning retrieving ESPN {league} team-season profile for team_id={team_id}",
+      args = .args
+    ),
+    finally = {}
+  )
+  return(result)
+}

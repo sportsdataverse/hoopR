@@ -127,6 +127,27 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_transactions()` | Wraps site-v2 `/transactions?season={year}&limit={limit}` with null-safe `to_team_id` for release transactions. |
 | `espn_nba_conferences()` | NBA-side analog of `espn_mbb_conferences()`, against the NBA scoreboard-conferences endpoint. |
 
+#### *Tier 1 core-v2 expansion (crawler-driven)*
+
+22 new wrappers across 9 resource families, surfaced by an internal `$ref`-following crawler that mapped the reachable basketball API surface (21,962 fetches, 1,570 unique templates across all 4 basketball leagues). Each wrapper is a thin shim over a shared `.espn_basketball_*()` helper. WNBA + WBB siblings ship in wehoop's matching release.
+
+| Function | Description |
+|---|---|
+| `espn_nba_team_season_profile()` / `espn_mbb_team_season_profile()` | Era-correct team identity in a specific season plus `$ref` URLs for deeper resources (record, statistics, leaders, coaches, etc.). Historical depth back to **1947** (NBA) / **1939** (MBB). |
+| `espn_nba_franchise()` / `espn_mbb_franchise()` | Franchise-level metadata. IDs are stable across relocations and rebrands. |
+| `espn_nba_franchises()` / `espn_mbb_franchises()` | Index of franchise IDs in the league. |
+| `espn_nba_athlete_contracts()` | Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty). |
+| `espn_nba_athlete_contract()` | Salary, cap-rule flags, Bird status, and trade protections for one (athlete × season). |
+| `espn_nba_season_awards()` / `espn_mbb_season_awards()` | Index of award IDs given out in a season. |
+| `espn_nba_award()` / `espn_mbb_award()` | Award detail with winners (one row per winner; multi-recipient awards like All-NBA return 5 rows). |
+| `espn_nba_futures()` / `espn_mbb_futures()` | Per-season futures betting board in long format (one row per market × team × sportsbook). |
+| `espn_nba_tournaments()` / `espn_mbb_tournaments()` | Index of league-tracked tournaments. |
+| `espn_nba_tournament()` / `espn_mbb_tournament()` | Single tournament metadata + seasons-list `$ref`. |
+| `espn_nba_tournament_seasons()` / `espn_mbb_tournament_seasons()` | Seasons in which a given tournament was held. |
+| `espn_nba_team_record()` / `espn_mbb_team_record()` | Long-format record breakdown for one team in one season-type (Overall / Home / Road / vs Conference / etc.). |
+| `espn_nba_coach()` / `espn_mbb_coach()` | Single-coach biography, current team / college refs, and counts of career-record + per-season coaching entries. |
+| `espn_nba_powerindex()` / `espn_mbb_powerindex()` | Per-season Basketball Power Index and related metrics, long format (one row per team × stat). |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*

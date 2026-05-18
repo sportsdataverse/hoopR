@@ -255,3 +255,75 @@ espn_nba_team_leaders <- function(team_id,
     ...
   )
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_team_season_profile
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Team-in-Season Profile**
+#' @name espn_nba_team_season_profile
+NULL
+#' @title
+#' **Get ESPN NBA Team-in-Season Profile**
+#' @rdname espn_nba_team_season_profile
+#' @author Saiem Gilani
+#' @description
+#' Era-correct team identity for an NBA franchise in a specific season,
+#' plus the available `$ref` URLs for deeper resources (record, statistics,
+#' leaders, coaches, etc.). Backed by the core-v2 endpoint
+#' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/teams/{team_id}`.
+#'
+#' Historical depth goes back to **1947** (NBA founding). Older seasons
+#' return fewer `$ref` keys; missing refs become `NA`.
+#'
+#' @param team_id ESPN team identifier (character or numeric).
+#' @param season Season year (numeric). Defaults to the most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble with team identity scalars and `_ref` URL
+#'   columns. Selected columns:
+#'
+#'    |col_name              |types     |description                                        |
+#'    |:---------------------|:---------|:--------------------------------------------------|
+#'    |id                    |character |ESPN team identifier.                              |
+#'    |guid                  |character |Stable cross-league team GUID.                     |
+#'    |uid                   |character |ESPN UID string.                                   |
+#'    |slug                  |character |URL-safe identifier.                               |
+#'    |location              |character |Team city/region (e.g. "Los Angeles").             |
+#'    |name                  |character |Team name (e.g. "Lakers").                         |
+#'    |abbreviation          |character |Short abbreviation (e.g. "LAL").                   |
+#'    |display_name          |character |Full display name.                                 |
+#'    |short_display_name    |character |Short display name.                                |
+#'    |color                 |character |Primary color (hex, no leading '#').               |
+#'    |alternate_color       |character |Alternate color (hex, no leading '#').             |
+#'    |is_active             |logical   |Whether the team was active in this season.        |
+#'    |season                |integer   |Season year.                                       |
+#'    |logo                  |character |Primary logo URL.                                  |
+#'    |logo_dark             |character |Dark-mode logo URL.                                |
+#'    |record_ref            |character |`$ref` to team record resource (if present).       |
+#'    |statistics_ref        |character |`$ref` to team statistics resource (if present).   |
+#'    |leaders_ref           |character |`$ref` to team leaders resource (if present).      |
+#'    |coaches_ref           |character |`$ref` to team coaches resource (if present).      |
+#'    |depth_charts_ref      |character |`$ref` to depth chart resource (NBA-only).         |
+#'    |events_ref            |character |`$ref` to team events resource (if present).       |
+#'    |transactions_ref      |character |`$ref` to team transactions resource (if present). |
+#'    |franchise_ref         |character |`$ref` to franchise resource.                      |
+#'
+#' @importFrom jsonlite fromJSON
+#' @importFrom dplyr as_tibble
+#' @importFrom janitor clean_names
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_team_season_profile(team_id = "13", season = 2025)
+#' }
+espn_nba_team_season_profile <- function(team_id,
+                                          season = most_recent_nba_season(),
+                                          ...) {
+  .espn_basketball_team_season_profile(
+    league  = "nba",
+    team_id = team_id,
+    season  = season,
+    ...
+  )
+}

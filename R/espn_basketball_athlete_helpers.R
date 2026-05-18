@@ -1153,3 +1153,169 @@
   )
   return(result)
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_athlete_contracts (NBA-only data)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball athlete contracts index
+#'
+#' Fetches the paginated contract-year index for one athlete:
+#' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/athletes/{athlete_id}/contracts`.
+#' ESPN currently populates contract data only for NBA athletes.
+#'
+#' @param league character.
+#' @param athlete_id character or numeric. ESPN athlete identifier.
+#' @param ... Unused.
+#' @return A `hoopR_data` tibble with one row per contract year, or `NULL` on error.
+#' @keywords internal
+.espn_basketball_athlete_contracts <- function(league, athlete_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, athlete_id = athlete_id)
+
+  result <- NULL
+
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/athletes/", athlete_id, "/contracts?lang=en&region=us"
+  )
+
+  tryCatch(
+    expr = {
+      res <- .retry_request(url)
+      check_status(res)
+      raw <- res %>%
+        .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+
+      items <- raw[["items"]] %||% list()
+      refs <- if (length(items) == 0L) character(0) else
+        vapply(items, function(x) x[["$ref"]] %||% NA_character_,
+               character(1))
+      seasons <- if (length(refs) == 0L) character(0) else
+        sub(".*/contracts/([0-9]+).*", "\\1", refs)
+      result <- data.frame(
+        athlete_id = rep(as.character(athlete_id), length(refs)),
+        season     = suppressWarnings(as.integer(seasons)),
+        ref        = refs,
+        league     = rep(league, length(refs)),
+        stringsAsFactors = FALSE
+      ) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league),
+                 " Athlete Contracts Index"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(
+      e,
+      hint = "Failed to retrieve ESPN {league} athlete contracts for athlete_id={athlete_id}",
+      args = .args
+    ),
+    warning = function(w) .report_api_warning(
+      w,
+      hint = "Warning retrieving ESPN {league} athlete contracts for athlete_id={athlete_id}",
+      args = .args
+    ),
+    finally = {}
+  )
+  return(result)
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_athlete_contract (NBA-only data)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball single-year athlete contract
+#'
+#' Fetches one season's contract for one athlete:
+#' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/athletes/{athlete_id}/contracts/{season}`.
+#' Returns a single-row tibble with salary + cap-rule flags + trade
+#' protections + the `$ref` URLs for the season and team.
+#'
+#' @param league character.
+#' @param athlete_id character or numeric. ESPN athlete identifier.
+#' @param season numeric. Season year (e.g. 2025).
+#' @param ... Unused.
+#' @return A single-row `hoopR_data` tibble, or `NULL` on error.
+#' @keywords internal
+.espn_basketball_athlete_contract <- function(league, athlete_id, season, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, athlete_id = athlete_id, season = season)
+
+  result <- NULL
+
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/athletes/", athlete_id, "/contracts/", season,
+    "?lang=en&region=us"
+  )
+
+  tryCatch(
+    expr = {
+      res <- .retry_request(url)
+      check_status(res)
+      raw <- res %>%
+        .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+
+      row <- list(
+        athlete_id               = as.character(athlete_id),
+        season                   = as.integer(season),
+        bird_status              = raw[["birdStatus"]] %||% NA_integer_,
+        salary                   = raw[["salary"]] %||% NA_real_,
+        salary_remaining         = raw[["salaryRemaining"]] %||% NA_real_,
+        years_remaining          = raw[["yearsRemaining"]] %||% NA_integer_,
+        incoming_trade_value     = raw[["incomingTradeValue"]] %||% NA_real_,
+        outgoing_trade_value     = raw[["outgoingTradeValue"]] %||% NA_real_,
+        option_type              = raw[["optionType"]] %||% NA_integer_,
+        minimum_salary_exception = raw[["minimumSalaryException"]] %||% NA,
+        trade_restriction        = raw[["tradeRestriction"]] %||% NA,
+        unsigned_foreign_pick    = raw[["unsignedForeignPick"]] %||% NA,
+        active                   = raw[["active"]] %||% NA
+      )
+
+      byc <- raw[["baseYearCompensation"]]
+      row[["base_year_compensation_active"]] <-
+        if (is.list(byc)) byc[["active"]] %||% NA else NA
+      ppp <- raw[["poisonPillProvision"]]
+      row[["poison_pill_provision_active"]] <-
+        if (is.list(ppp)) ppp[["active"]] %||% NA else NA
+
+      tk <- raw[["tradeKicker"]]
+      row[["trade_kicker_active"]]      <- if (is.list(tk)) tk[["active"]] %||% NA else NA
+      row[["trade_kicker_percentage"]]  <- if (is.list(tk)) tk[["percentage"]] %||% NA_real_ else NA_real_
+      row[["trade_kicker_value"]]       <- if (is.list(tk)) tk[["value"]] %||% NA_real_ else NA_real_
+      row[["trade_kicker_trade_value"]] <- if (is.list(tk)) tk[["tradeValue"]] %||% NA_real_ else NA_real_
+
+      sref <- raw[["season"]]
+      tref <- raw[["team"]]
+      row[["season_ref"]] <- if (is.list(sref)) sref[["$ref"]] %||% NA_character_ else NA_character_
+      row[["team_ref"]]   <- if (is.list(tref)) tref[["$ref"]] %||% NA_character_ else NA_character_
+      row[["team_id"]] <- if (!is.na(row[["team_ref"]]))
+        sub(".*/teams/([0-9]+).*", "\\1", row[["team_ref"]]) else NA_character_
+      row[["league"]] <- league
+
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league),
+                 " Athlete Contract from ESPN.com"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(
+      e,
+      hint = "Failed to retrieve ESPN {league} athlete contract for athlete_id={athlete_id}, season={season}",
+      args = .args
+    ),
+    warning = function(w) .report_api_warning(
+      w,
+      hint = "Warning retrieving ESPN {league} athlete contract for athlete_id={athlete_id}",
+      args = .args
+    ),
+    finally = {}
+  )
+  return(result)
+}
