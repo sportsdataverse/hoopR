@@ -133,7 +133,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_probabilities(event_id = "401736171", limit = 50)
-#> ✖ 2026-05-18 23:58:56.894209: Failed to retrieve ESPN nba event probabilities for event_id=401736171
+#> ✖ 2026-05-19 00:23:56.952803: Failed to retrieve ESPN nba event probabilities for event_id=401736171
 #> ✖ Args: league = "nba", event_id = "401736171", limit = 50
 #> ✖ Error: The API returned an error
 #> NULL

@@ -112,21 +112,9 @@ nba_playerdashptshotdefend(
 
 Return a named list of data frames: DefendingShots
 
-**DefendingShots**
-
-|                    |           |               |
-|--------------------|-----------|---------------|
-| col_name           | types     | description   |
-| CLOSE_DEF_playerId | character |               |
-| GP                 | character | Games played. |
-| G                  | character | Games played. |
-| DEFENSE_CATEGORY   | character |               |
-| FREQ               | character |               |
-| D_FGM              | character |               |
-| D_FGA              | character |               |
-| D_FG_PCT           | character |               |
-| NORMAL_FG_PCT      | character |               |
-| PCT_PLUSMINUS      | character |               |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_playerdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -151,14 +139,7 @@ Other NBA Player Functions:
 [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md),
 [`nba_playercareerstats()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.md),
 [`nba_playercompare()`](https://hoopR.sportsdataverse.org/reference/nba_playercompare.md),
-[`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.md),
-[`nba_playerdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.md),
-[`nba_playerdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.md),
-[`nba_playerdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.md),
-[`nba_playerdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.md),
-[`nba_playerdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.md),
-[`nba_playerdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.md),
-[`nba_playerdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.md),
+[`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
 [`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),

@@ -139,7 +139,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_coach_season(coach_id = 6385, season = 2025)
-#> ✖ 2026-05-18 23:58:54.591326: Failed to retrieve ESPN nba coach-in-season detail for coach_id=6385, season=2025
+#> ✖ 2026-05-19 00:23:54.342898: Failed to retrieve ESPN nba coach-in-season detail for coach_id=6385, season=2025
 #> ✖ Args: league = "nba", coach_id = 6385, season = 2025
 #> ✖ Error: The API returned an error
 #> NULL

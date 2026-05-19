@@ -122,7 +122,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_athlete_stats(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-18 23:58:51.880828: Failed to retrieve ESPN nba athlete stats for athlete_id=3149391, season=2024
+#> ✖ 2026-05-19 00:23:51.230528: Failed to retrieve ESPN nba athlete stats for athlete_id=3149391, season=2024
 #> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
 #> ✖ Error: The API returned an error
 #> list()

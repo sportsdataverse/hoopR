@@ -109,149 +109,9 @@ Return a named list of data frames: ClosestDefender10ftPlusShooting,
 ClosestDefenderShooting, DribbleShooting, GeneralShooting,
 ShotClockShooting, TouchTimeShooting
 
-**GeneralShooting**
-
-|                |           |                                                 |
-|----------------|-----------|-------------------------------------------------|
-| col_name       | types     | description                                     |
-| TEAM_ID        | character | Unique team identifier.                         |
-| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER     | character |                                                 |
-| G              | character | Games played.                                   |
-| SHOT_TYPE      | character | Shot type label (e.g. 'Jump Shot', 'Layup').    |
-| FGA_FREQUENCY  | character |                                                 |
-| FGM            | character | Field goals made.                               |
-| FGA            | character | Field goal attempts.                            |
-| FG_PCT         | character | Field goal percentage (0-1).                    |
-| EFG_PCT        | character | Effective field goal percentage (0-1).          |
-| FG2A_FREQUENCY | character |                                                 |
-| FG2M           | character |                                                 |
-| FG2A           | character |                                                 |
-| FG2_PCT        | character |                                                 |
-| FG3A_FREQUENCY | character |                                                 |
-| FG3M           | character | Three-point field goals made.                   |
-| FG3A           | character | Three-point field goal attempts.                |
-| FG3_PCT        | character | Three-point field goal percentage (0-1).        |
-
-**ShotClockShooting**
-
-|                  |           |                                                 |
-|------------------|-----------|-------------------------------------------------|
-| col_name         | types     | description                                     |
-| TEAM_ID          | character | Unique team identifier.                         |
-| TEAM_NAME        | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER       | character |                                                 |
-| G                | character | Games played.                                   |
-| SHOT_CLOCK_RANGE | character |                                                 |
-| FGA_FREQUENCY    | character |                                                 |
-| FGM              | character | Field goals made.                               |
-| FGA              | character | Field goal attempts.                            |
-| FG_PCT           | character | Field goal percentage (0-1).                    |
-| EFG_PCT          | character | Effective field goal percentage (0-1).          |
-| FG2A_FREQUENCY   | character |                                                 |
-| FG2M             | character |                                                 |
-| FG2A             | character |                                                 |
-| FG2_PCT          | character |                                                 |
-| FG3A_FREQUENCY   | character |                                                 |
-| FG3M             | character | Three-point field goals made.                   |
-| FG3A             | character | Three-point field goal attempts.                |
-| FG3_PCT          | character | Three-point field goal percentage (0-1).        |
-
-**DribbleShooting**
-
-|                |           |                                                 |
-|----------------|-----------|-------------------------------------------------|
-| col_name       | types     | description                                     |
-| TEAM_ID        | character | Unique team identifier.                         |
-| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER     | character |                                                 |
-| G              | character | Games played.                                   |
-| DRIBBLE_RANGE  | character |                                                 |
-| FGA_FREQUENCY  | character |                                                 |
-| FGM            | character | Field goals made.                               |
-| FGA            | character | Field goal attempts.                            |
-| FG_PCT         | character | Field goal percentage (0-1).                    |
-| EFG_PCT        | character | Effective field goal percentage (0-1).          |
-| FG2A_FREQUENCY | character |                                                 |
-| FG2M           | character |                                                 |
-| FG2A           | character |                                                 |
-| FG2_PCT        | character |                                                 |
-| FG3A_FREQUENCY | character |                                                 |
-| FG3M           | character | Three-point field goals made.                   |
-| FG3A           | character | Three-point field goal attempts.                |
-| FG3_PCT        | character | Three-point field goal percentage (0-1).        |
-
-**ClosestDefenderShooting**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER | character |  |
-| G | character | Games played. |
-| CLOSE_DEF_DIST_RANGE | character |  |
-| FGA_FREQUENCY | character |  |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| EFG_PCT | character | Effective field goal percentage (0-1). |
-| FG2A_FREQUENCY | character |  |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3A_FREQUENCY | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
-
-**ClosestDefender10ftPlusShooting**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER | character |  |
-| G | character | Games played. |
-| CLOSE_DEF_DIST_RANGE | character |  |
-| FGA_FREQUENCY | character |  |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| EFG_PCT | character | Effective field goal percentage (0-1). |
-| FG2A_FREQUENCY | character |  |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3A_FREQUENCY | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
-
-**TouchTimeShooting**
-
-|                  |           |                                                 |
-|------------------|-----------|-------------------------------------------------|
-| col_name         | types     | description                                     |
-| TEAM_ID          | character | Unique team identifier.                         |
-| TEAM_NAME        | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER       | character |                                                 |
-| G                | character | Games played.                                   |
-| TOUCH_TIME_RANGE | character |                                                 |
-| FGA_FREQUENCY    | character |                                                 |
-| FGM              | character | Field goals made.                               |
-| FGA              | character | Field goal attempts.                            |
-| FG_PCT           | character | Field goal percentage (0-1).                    |
-| EFG_PCT          | character | Effective field goal percentage (0-1).          |
-| FG2A_FREQUENCY   | character |                                                 |
-| FG2M             | character |                                                 |
-| FG2A             | character |                                                 |
-| FG2_PCT          | character |                                                 |
-| FG3A_FREQUENCY   | character |                                                 |
-| FG3M             | character | Three-point field goals made.                   |
-| FG3A             | character | Three-point field goal attempts.                |
-| FG3_PCT          | character | Three-point field goal percentage (0-1).        |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -265,14 +125,7 @@ Shooting](https://www.nba.com/stats/team/1610612749/shots-dash)
 Other NBA Team Functions:
 [`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md),
 [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md),
-[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md),
-[`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md),
-[`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md),
-[`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md),
-[`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md),
-[`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md),
-[`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md),
-[`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md),
 [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),

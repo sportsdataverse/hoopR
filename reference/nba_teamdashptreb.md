@@ -109,119 +109,9 @@ Return a named list of data frames: NumContestedRebounding,
 OverallRebounding, RebDistanceRebounding, ShotDistanceRebounding,
 ShotTypeRebounding
 
-**OverallRebounding**
-
-|               |           |                                                 |
-|---------------|-----------|-------------------------------------------------|
-| col_name      | types     | description                                     |
-| TEAM_ID       | character | Unique team identifier.                         |
-| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| G             | character | Games played.                                   |
-| OVERALL       | character | Overall.                                        |
-| REB_FREQUENCY | character |                                                 |
-| OREB          | character | Offensive rebounds.                             |
-| DREB          | character | Defensive rebounds.                             |
-| REB           | character | Total rebounds.                                 |
-| C_OREB        | character |                                                 |
-| C_DREB        | character |                                                 |
-| C_REB         | character |                                                 |
-| C_REB_PCT     | character |                                                 |
-| UC_OREB       | character |                                                 |
-| UC_DREB       | character |                                                 |
-| UC_REB        | character |                                                 |
-| UC_REB_PCT    | character |                                                 |
-
-**ShotTypeRebounding**
-
-|                 |           |                                                 |
-|-----------------|-----------|-------------------------------------------------|
-| col_name        | types     | description                                     |
-| TEAM_ID         | character | Unique team identifier.                         |
-| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER      | character |                                                 |
-| G               | character | Games played.                                   |
-| SHOT_TYPE_RANGE | character |                                                 |
-| REB_FREQUENCY   | character |                                                 |
-| OREB            | character | Offensive rebounds.                             |
-| DREB            | character | Defensive rebounds.                             |
-| REB             | character | Total rebounds.                                 |
-| C_OREB          | character |                                                 |
-| C_DREB          | character |                                                 |
-| C_REB           | character |                                                 |
-| C_REB_PCT       | character |                                                 |
-| UC_OREB         | character |                                                 |
-| UC_DREB         | character |                                                 |
-| UC_REB          | character |                                                 |
-| UC_REB_PCT      | character |                                                 |
-
-**NumContestedRebounding**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER | character |  |
-| G | character | Games played. |
-| REB_NUM_CONTESTING_RANGE | character |  |
-| REB_FREQUENCY | character |  |
-| OREB | character | Offensive rebounds. |
-| DREB | character | Defensive rebounds. |
-| REB | character | Total rebounds. |
-| C_OREB | character |  |
-| C_DREB | character |  |
-| C_REB | character |  |
-| C_REB_PCT | character |  |
-| UC_OREB | character |  |
-| UC_DREB | character |  |
-| UC_REB | character |  |
-| UC_REB_PCT | character |  |
-
-**ShotDistanceRebounding**
-
-|                 |           |                                                 |
-|-----------------|-----------|-------------------------------------------------|
-| col_name        | types     | description                                     |
-| TEAM_ID         | character | Unique team identifier.                         |
-| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER      | character |                                                 |
-| G               | character | Games played.                                   |
-| SHOT_DIST_RANGE | character |                                                 |
-| REB_FREQUENCY   | character |                                                 |
-| OREB            | character | Offensive rebounds.                             |
-| DREB            | character | Defensive rebounds.                             |
-| REB             | character | Total rebounds.                                 |
-| C_OREB          | character |                                                 |
-| C_DREB          | character |                                                 |
-| C_REB           | character |                                                 |
-| C_REB_PCT       | character |                                                 |
-| UC_OREB         | character |                                                 |
-| UC_DREB         | character |                                                 |
-| UC_REB          | character |                                                 |
-| UC_REB_PCT      | character |                                                 |
-
-**RebDistanceRebounding**
-
-|                |           |                                                 |
-|----------------|-----------|-------------------------------------------------|
-| col_name       | types     | description                                     |
-| TEAM_ID        | character | Unique team identifier.                         |
-| TEAM_NAME      | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| SORT_ORDER     | character |                                                 |
-| G              | character | Games played.                                   |
-| REB_DIST_RANGE | character |                                                 |
-| REB_FREQUENCY  | character |                                                 |
-| OREB           | character | Offensive rebounds.                             |
-| DREB           | character | Defensive rebounds.                             |
-| REB            | character | Total rebounds.                                 |
-| C_OREB         | character |                                                 |
-| C_DREB         | character |                                                 |
-| C_REB          | character |                                                 |
-| C_REB_PCT      | character |                                                 |
-| UC_OREB        | character |                                                 |
-| UC_DREB        | character |                                                 |
-| UC_REB         | character |                                                 |
-| UC_REB_PCT     | character |                                                 |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -235,14 +125,7 @@ Rebounds](https://www.nba.com/stats/team/1610612749/rebounds-dash)
 Other NBA Team Functions:
 [`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md),
 [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md),
-[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md),
-[`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md),
-[`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md),
-[`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md),
-[`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md),
-[`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md),
-[`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md),
-[`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md),
 [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.md),

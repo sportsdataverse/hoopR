@@ -147,129 +147,9 @@ nba_teamdashlineups(
 
 Return a named list of data frames: Lineups, Overall
 
-**Overall**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| GROUP_SET | character |  |
-| GROUP_VALUE | character |  |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| GP | character | Games played. |
-| W | character | Wins. |
-| L | character | Losses. |
-| W_PCT | character |  |
-| MIN | character | Minutes played. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
-| FTM | character | Free throws made. |
-| FTA | character | Free throw attempts. |
-| FT_PCT | character | Free throw percentage (0-1). |
-| OREB | character | Offensive rebounds. |
-| DREB | character | Defensive rebounds. |
-| REB | character | Total rebounds. |
-| AST | character | Assists. |
-| TOV | character | Turnovers. |
-| STL | character | Steals. |
-| BLK | character | Blocks. |
-| BLKA | character |  |
-| PF | character | Personal fouls. |
-| PFD | character |  |
-| PTS | character | Points scored. |
-| PLUS_MINUS | character | Plus/minus point differential while on court. |
-| GP_RANK | character |  |
-| W_RANK | character |  |
-| L_RANK | character |  |
-| W_PCT_RANK | character |  |
-| MIN_RANK | character |  |
-| FGM_RANK | character |  |
-| FGA_RANK | character |  |
-| FG_PCT_RANK | character |  |
-| FG3M_RANK | character |  |
-| FG3A_RANK | character |  |
-| FG3_PCT_RANK | character |  |
-| FTM_RANK | character |  |
-| FTA_RANK | character |  |
-| FT_PCT_RANK | character |  |
-| OREB_RANK | character |  |
-| DREB_RANK | character |  |
-| REB_RANK | character |  |
-| AST_RANK | character |  |
-| TOV_RANK | character |  |
-| STL_RANK | character |  |
-| BLK_RANK | character |  |
-| BLKA_RANK | character |  |
-| PF_RANK | character |  |
-| PFD_RANK | character |  |
-| PTS_RANK | character |  |
-| PLUS_MINUS_RANK | character |  |
-
-**Lineups**
-
-|                 |           |                                               |
-|-----------------|-----------|-----------------------------------------------|
-| col_name        | types     | description                                   |
-| GROUP_SET       | character |                                               |
-| GROUP_ID        | character | Group identifier (e.g. conference group_id).  |
-| GROUP_NAME      | character | Group name.                                   |
-| GP              | character | Games played.                                 |
-| W               | character | Wins.                                         |
-| L               | character | Losses.                                       |
-| W_PCT           | character |                                               |
-| MIN             | character | Minutes played.                               |
-| FGM             | character | Field goals made.                             |
-| FGA             | character | Field goal attempts.                          |
-| FG_PCT          | character | Field goal percentage (0-1).                  |
-| FG3M            | character | Three-point field goals made.                 |
-| FG3A            | character | Three-point field goal attempts.              |
-| FG3_PCT         | character | Three-point field goal percentage (0-1).      |
-| FTM             | character | Free throws made.                             |
-| FTA             | character | Free throw attempts.                          |
-| FT_PCT          | character | Free throw percentage (0-1).                  |
-| OREB            | character | Offensive rebounds.                           |
-| DREB            | character | Defensive rebounds.                           |
-| REB             | character | Total rebounds.                               |
-| AST             | character | Assists.                                      |
-| TOV             | character | Turnovers.                                    |
-| STL             | character | Steals.                                       |
-| BLK             | character | Blocks.                                       |
-| BLKA            | character |                                               |
-| PF              | character | Personal fouls.                               |
-| PFD             | character |                                               |
-| PTS             | character | Points scored.                                |
-| PLUS_MINUS      | character | Plus/minus point differential while on court. |
-| GP_RANK         | character |                                               |
-| W_RANK          | character |                                               |
-| L_RANK          | character |                                               |
-| W_PCT_RANK      | character |                                               |
-| MIN_RANK        | character |                                               |
-| FGM_RANK        | character |                                               |
-| FGA_RANK        | character |                                               |
-| FG_PCT_RANK     | character |                                               |
-| FG3M_RANK       | character |                                               |
-| FG3A_RANK       | character |                                               |
-| FG3_PCT_RANK    | character |                                               |
-| FTM_RANK        | character |                                               |
-| FTA_RANK        | character |                                               |
-| FT_PCT_RANK     | character |                                               |
-| OREB_RANK       | character |                                               |
-| DREB_RANK       | character |                                               |
-| REB_RANK        | character |                                               |
-| AST_RANK        | character |                                               |
-| TOV_RANK        | character |                                               |
-| STL_RANK        | character |                                               |
-| BLK_RANK        | character |                                               |
-| BLKA_RANK       | character |                                               |
-| PF_RANK         | character |                                               |
-| PFD_RANK        | character |                                               |
-| PTS_RANK        | character |                                               |
-| PLUS_MINUS_RANK | character |                                               |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -283,14 +163,7 @@ Dashboard](https://www.nba.com/stats/team/1610612749/lineups-traditional)
 Other NBA Team Functions:
 [`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md),
 [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md),
-[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md),
-[`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md),
-[`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md),
-[`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md),
-[`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md),
-[`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md),
-[`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md),
-[`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),
 [`nba_teamdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.md),

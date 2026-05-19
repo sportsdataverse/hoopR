@@ -102,59 +102,9 @@ nba_playerdashptpass(
 
 Return a named list of data frames: PassesMade, PassesReceived
 
-**PassesMade**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| PLAYER_ID | character | Unique player identifier. |
-| PLAYER_NAME_LAST_FIRST | character |  |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| PASS_TYPE | character |  |
-| G | character | Games played. |
-| PASS_TO | character |  |
-| PASS_TEAMMATE_PLAYER_ID | character |  |
-| FREQUENCY | character |  |
-| PASS | character |  |
-| AST | character | Assists. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
-
-**PassesReceived**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| PLAYER_ID | character | Unique player identifier. |
-| PLAYER_NAME_LAST_FIRST | character |  |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| PASS_TYPE | character |  |
-| G | character | Games played. |
-| PASS_FROM | character |  |
-| PASS_TEAMMATE_PLAYER_ID | character |  |
-| FREQUENCY | character |  |
-| PASS | character |  |
-| AST | character | Assists. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_playerdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -179,14 +129,7 @@ Other NBA Player Functions:
 [`nba_playercareerbycollegerollup()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.md),
 [`nba_playercareerstats()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.md),
 [`nba_playercompare()`](https://hoopR.sportsdataverse.org/reference/nba_playercompare.md),
-[`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.md),
-[`nba_playerdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.md),
-[`nba_playerdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.md),
-[`nba_playerdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.md),
-[`nba_playerdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.md),
-[`nba_playerdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.md),
-[`nba_playerdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.md),
-[`nba_playerdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.md),
+[`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
 [`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
 [`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),

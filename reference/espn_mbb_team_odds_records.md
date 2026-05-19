@@ -142,7 +142,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_odds_records(team_id = 1, season = 2026)
-#> ✖ 2026-05-18 23:58:40.707172: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=1, season=2026
+#> ✖ 2026-05-19 00:23:38.111997: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=1, season=2026
 #> ✖ Args: league = "mens-college-basketball", team_id = 1, season = 2026, season_type = 0L
 #> ✖ Error: The API returned an error
 #> NULL

@@ -97,53 +97,9 @@ nba_teamdashptpass(
 
 Return a named list of data frames: PassesMade, PassesReceived
 
-**PassesMade**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| PASS_TYPE | character |  |
-| G | character | Games played. |
-| PASS_FROM | character |  |
-| PASS_TEAMMATE_PLAYER_ID | character |  |
-| FREQUENCY | character |  |
-| PASS | character |  |
-| AST | character | Assists. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
-
-**PassesReceived**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| PASS_TYPE | character |  |
-| G | character | Games played. |
-| PASS_TO | character |  |
-| PASS_TEAMMATE_PLAYER_ID | character |  |
-| FREQUENCY | character |  |
-| PASS | character |  |
-| AST | character | Assists. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
 
 ## Details
 
@@ -157,14 +113,7 @@ Passing](https://www.nba.com/stats/team/1610612749/passes-dash)
 Other NBA Team Functions:
 [`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md),
 [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md),
-[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md),
-[`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md),
-[`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md),
-[`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md),
-[`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md),
-[`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md),
-[`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md),
-[`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md),
 [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),
 [`nba_teamdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.md),

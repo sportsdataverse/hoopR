@@ -59,35 +59,9 @@ nba_synergyplaytypes(
 
 Return a named list of data frames: SynergyPlayType
 
-**SynergyPlayType**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| SEASON_ID | character | Unique season identifier. |
-| PLAYER_ID | character | Unique player identifier. |
-| PLAYER_NAME | character | Player name. |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| PLAY_TYPE | character | Play type code. |
-| TYPE_GROUPING | character |  |
-| PERCENTILE | character |  |
-| GP | character | Games played. |
-| POSS_PCT | character | Poss percentage (0-1 decimal). |
-| PPP | character |  |
-| FG_PCT | character | Field goal percentage (0-1). |
-| FT_POSS_PCT | character |  |
-| TOV_POSS_PCT | character |  |
-| SF_POSS_PCT | character |  |
-| PLUSONE_POSS_PCT | character |  |
-| SCORE_POSS_PCT | character |  |
-| EFG_PCT | character | Effective field goal percentage (0-1). |
-| POSS | character | Poss. |
-| PTS | character | Points scored. |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FGMX | character |  |
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_playerdashboard_columns.md` for full column tables.
 
 ## Details
 

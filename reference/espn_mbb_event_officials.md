@@ -120,7 +120,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_event_officials(event_id = "401735229")
-#> ✖ 2026-05-18 23:58:17.818818: Failed to retrieve ESPN mens-college-basketball event officials for event_id=401735229
+#> ✖ 2026-05-19 00:23:13.400644: Failed to retrieve ESPN mens-college-basketball event officials for event_id=401735229
 #> ✖ Args: league = "mens-college-basketball", event_id = "401735229"
 #> ✖ Error: The API returned an error
 #> NULL

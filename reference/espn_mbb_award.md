@@ -123,7 +123,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_award(award_id = 33, season = 2024)
-#> ✖ 2026-05-18 23:58:12.289425: Failed to retrieve ESPN mens-college-basketball award 33 for season=2024
+#> ✖ 2026-05-19 00:23:07.729846: Failed to retrieve ESPN mens-college-basketball award 33 for season=2024
 #> ✖ Args: league = "mens-college-basketball", season = 2024, award_id = 33
 #> ✖ Error: The API returned an error
 #> NULL

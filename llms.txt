@@ -1457,45 +1457,17 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Player Compare**
 
-- [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyclutch.md)
+- [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
+  [`nba_playerdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
   :
 
   **Get NBA Stats API Player Dashboard by Clutch Splits**
-
-- [`nba_playerdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygamesplits.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by Game Splits**
-
-- [`nba_playerdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbygeneralsplits.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by General Splits**
-
-- [`nba_playerdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbylastngames.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by Last N Games**
-
-- [`nba_playerdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyopponent.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by Opponent**
-
-- [`nba_playerdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyshootingsplits.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by Shooting Splits**
-
-- [`nba_playerdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyteamperformance.md)
-  :
-
-  **Get NBA Stats API Player Dashboard by Team Performance**
-
-- [`nba_playerdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboardbyyearoveryear.md)
-  :
-
-  **Get NBA Stats API Player Dashboard Year over Year**
 
 - [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md)
   :
@@ -1627,45 +1599,17 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Team and Players vs Players**
 
-- [`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyclutch.md)
+- [`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
+  [`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
   :
 
   **Get NBA Stats API Team Dashboard by Clutch Splits**
-
-- [`nba_teamdashboardbygamesplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygamesplits.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by Game Splits**
-
-- [`nba_teamdashboardbygeneralsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbygeneralsplits.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by General Splits**
-
-- [`nba_teamdashboardbylastngames()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbylastngames.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by Last N Games**
-
-- [`nba_teamdashboardbyopponent()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyopponent.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by Opponent**
-
-- [`nba_teamdashboardbyshootingsplits()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyshootingsplits.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by Shooting Splits**
-
-- [`nba_teamdashboardbyteamperformance()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyteamperformance.md)
-  :
-
-  **Get NBA Stats API Team Dashboard by Team Performance**
-
-- [`nba_teamdashboardbyyearoveryear()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboardbyyearoveryear.md)
-  :
-
-  **Get NBA Stats API Team Dashboard Year over Year**
 
 - [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md)
   :

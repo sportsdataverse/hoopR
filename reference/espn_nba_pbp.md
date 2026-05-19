@@ -167,7 +167,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_pbp(game_id = 401071880))
 #> ── ESPN NBA Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 23:59:03 UTC
+#> ℹ Data updated: 2026-05-19 00:24:04 UTC
 #> # A tibble: 475 × 54
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>

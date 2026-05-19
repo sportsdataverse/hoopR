@@ -171,7 +171,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_athlete_info(athlete_id = "4433985")
-#> ✖ 2026-05-18 23:58:10.304133: Failed to retrieve ESPN mens-college-basketball athlete info for athlete_id=4433985
+#> ✖ 2026-05-19 00:23:05.723062: Failed to retrieve ESPN mens-college-basketball athlete info for athlete_id=4433985
 #> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985"
 #> ✖ Error: The API returned an error
 #> list()
