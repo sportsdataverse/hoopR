@@ -237,6 +237,15 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_event_competitor_statistics()` / `espn_mbb_event_competitor_statistics()` | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
 | `espn_nba_event_competitor_records()` / `espn_mbb_event_competitor_records()` | Team records as of the event: overall / home / away / conference / division breakdowns. |
 
+#### *Tier 2D core-v2 expansion — position dictionary*
+
+2 new resource families for the league-specific position dictionary (4 new public functions). Position ids are **not** shared across the basketball family — id `1` resolves to `Point Guard` in NBA and `Center` in MBB. These wrappers make the dictionary explicit so users can disambiguate position `$ref` URLs in athlete records.
+
+| Function | Description |
+|---|---|
+| `espn_nba_positions()` / `espn_mbb_positions()` | League position dictionary index. One row per position with id + canonical `$ref`. |
+| `espn_nba_position()` / `espn_mbb_position()` | Single-position detail: id, name, displayName, abbreviation, leaf flag, parent `$ref`. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*

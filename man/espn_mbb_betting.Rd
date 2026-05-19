@@ -125,6 +125,8 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_pbp}()},
 \code{\link{espn_mbb_player_box}()},
 \code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_position}()},
+\code{\link{espn_mbb_positions}()},
 \code{\link{espn_mbb_powerindex}()},
 \code{\link{espn_mbb_rankings}()},
 \code{\link{espn_mbb_scoreboard}()},

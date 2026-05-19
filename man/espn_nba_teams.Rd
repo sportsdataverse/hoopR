@@ -86,6 +86,8 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_pbp}()},
 \code{\link{espn_nba_player_box}()},
 \code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_position}()},
+\code{\link{espn_nba_positions}()},
 \code{\link{espn_nba_powerindex}()},
 \code{\link{espn_nba_scoreboard}()},
 \code{\link{espn_nba_season_awards}()},
