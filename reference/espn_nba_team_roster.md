@@ -138,7 +138,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "17", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:41:06 UTC
+#> ℹ Data updated: 2026-05-18 23:59:20 UTC
 #> # A tibble: 19 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>

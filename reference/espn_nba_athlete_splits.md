@@ -120,7 +120,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_athlete_splits(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-18 22:40:37.39557: Failed to retrieve ESPN nba athlete splits for athlete_id=3149391, season=2024
+#> ✖ 2026-05-18 23:58:51.361475: Failed to retrieve ESPN nba athlete splits for athlete_id=3149391, season=2024
 #> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
 #> ✖ Error: The API returned an error
 #> NULL

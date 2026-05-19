@@ -127,7 +127,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_event_probabilities(event_id = "401735229", limit = 50)
-#> ✖ 2026-05-18 22:40:04.410228: Failed to retrieve ESPN mens-college-basketball event probabilities for event_id=401735229
+#> ✖ 2026-05-18 23:58:18.114615: Failed to retrieve ESPN mens-college-basketball event probabilities for event_id=401735229
 #> ✖ Args: league = "mens-college-basketball", event_id = "401735229", limit = 50
 #> ✖ Error: The API returned an error
 #> NULL

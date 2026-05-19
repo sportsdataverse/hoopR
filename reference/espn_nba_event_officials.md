@@ -126,7 +126,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_officials(event_id = "401736171")
-#> ✖ 2026-05-18 22:40:42.724385: Failed to retrieve ESPN nba event officials for event_id=401736171
+#> ✖ 2026-05-18 23:58:56.6243: Failed to retrieve ESPN nba event officials for event_id=401736171
 #> ✖ Args: league = "nba", event_id = "401736171"
 #> ✖ Error: The API returned an error
 #> NULL

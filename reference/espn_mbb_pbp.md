@@ -160,7 +160,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_pbp(game_id = 401479672))
 #> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:40:12 UTC
+#> ℹ Data updated: 2026-05-18 23:58:25 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>

@@ -143,7 +143,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_week_rankings(week = 5, season = 2025)
 #> ── ESPN NBA Week Rankings Index ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:41:11 UTC
+#> ℹ Data updated: 2026-05-18 23:59:24 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>, week <int>,
 #> #   ranking_id <chr>, ref <chr>

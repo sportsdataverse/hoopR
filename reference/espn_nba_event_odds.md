@@ -134,7 +134,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_odds(event_id = "401736171")
-#> ✖ 2026-05-18 22:40:42.456466: Failed to retrieve ESPN nba event odds for event_id=401736171
+#> ✖ 2026-05-18 23:58:56.364037: Failed to retrieve ESPN nba event odds for event_id=401736171
 #> ✖ Args: league = "nba", event_id = "401736171"
 #> ✖ Error: The API returned an error
 #> NULL

@@ -122,7 +122,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_venues()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Venues from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-18 22:40:33 UTC
+#> ℹ Data updated: 2026-05-18 23:58:47 UTC
 #> # A tibble: 988 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>
