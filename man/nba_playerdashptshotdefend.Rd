@@ -68,19 +68,9 @@ nba_playerdashptshotdefend(
 \value{
 Return a named list of data frames: DefendingShots
 
-\strong{DefendingShots}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CLOSE_DEF_playerId \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   G \tab character \tab Games played. \cr
-   DEFENSE_CATEGORY \tab character \tab  \cr
-   FREQ \tab character \tab  \cr
-   D_FGM \tab character \tab  \cr
-   D_FGA \tab character \tab  \cr
-   D_FG_PCT \tab character \tab  \cr
-   NORMAL_FG_PCT \tab character \tab  \cr
-   PCT_PLUSMINUS \tab character \tab  \cr
-}
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Defense}
