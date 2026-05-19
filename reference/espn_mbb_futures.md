@@ -65,7 +65,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
@@ -126,8 +130,8 @@ Saiem Gilani
 # \donttest{
   espn_mbb_futures(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Futures ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:20:49 UTC
-#> # A tibble: 1,794 × 11
+#> ℹ Data updated: 2026-05-19 01:33:06 UTC
+#> # A tibble: 1,619 × 11
 #>    season league    market_id market_name market_type market_display provider_id
 #>     <int> <chr>         <int> <chr>       <chr>       <chr>          <chr>      
 #>  1   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
@@ -140,7 +144,7 @@ Saiem Gilani
 #>  8   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
 #>  9   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
 #> 10   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
-#> # ℹ 1,784 more rows
+#> # ℹ 1,609 more rows
 #> # ℹ 4 more variables: provider_name <chr>, team_id <chr>, odds_value <chr>,
 #> #   team_ref <chr>
 # }

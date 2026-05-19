@@ -61,7 +61,11 @@ Other ESPN NBA Functions:
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -124,7 +128,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_athlete_splits(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 01:21:22.299071: Failed to retrieve ESPN nba athlete splits for athlete_id=3149391, season=2024
+#> ✖ 2026-05-19 01:33:42.423165: Failed to retrieve ESPN nba athlete splits for athlete_id=3149391, season=2024
 #> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
 #> ✖ Error: The API returned an error
 #> NULL

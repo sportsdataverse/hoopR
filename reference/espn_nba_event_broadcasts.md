@@ -69,7 +69,11 @@ Other ESPN NBA Functions:
 [`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -132,7 +136,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_broadcasts(event_id = "401736171")
-#> ✖ 2026-05-19 01:21:28.359829: Failed to retrieve ESPN nba event broadcasts for event_id=401736171
+#> ✖ 2026-05-19 01:33:48.593501: Failed to retrieve ESPN nba event broadcasts for event_id=401736171
 #> ✖ Args: league = "nba", event_id = "401736171"
 #> ✖ Error: The API returned an error
 #> NULL

@@ -152,7 +152,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -213,7 +217,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_stats(team_id = 52, year = 2020))
 #> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:14 UTC
+#> ℹ Data updated: 2026-05-19 01:33:33 UTC
 #> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    

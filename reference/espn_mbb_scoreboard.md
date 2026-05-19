@@ -81,7 +81,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -139,17 +143,17 @@ Other ESPN MBB Functions:
 # Get schedule from date 2022-11-17
 # \donttest{
 try(espn_mbb_scoreboard(season = "20221117"))
-#> ✖ 2026-05-19 01:20:59.471197: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-05-19 01:33:17.456855: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "56", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-05-19 01:20:59.585331: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-05-19 01:33:17.663614: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "55", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-05-19 01:21:00.022718: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-05-19 01:33:18.327951: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "100", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
 #> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:20:59 UTC
+#> ℹ Data updated: 2026-05-19 01:33:17 UTC
 #> # A tibble: 50 × 36
 #>    matchup         matchup_short season season_type season_slug game_id game_uid
 #>    <chr>           <chr>          <int>       <int> <chr>         <int> <chr>   

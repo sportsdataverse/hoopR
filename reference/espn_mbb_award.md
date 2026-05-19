@@ -63,7 +63,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -124,7 +128,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_award(award_id = 33, season = 2024)
-#> ✖ 2026-05-19 01:20:40.900242: Failed to retrieve ESPN mens-college-basketball award 33 for season=2024
+#> ✖ 2026-05-19 01:32:57.081737: Failed to retrieve ESPN mens-college-basketball award 33 for season=2024
 #> ✖ Args: league = "mens-college-basketball", season = 2024, award_id = 33
 #> ✖ Error: The API returned an error
 #> NULL

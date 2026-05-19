@@ -77,7 +77,11 @@ Other ESPN NBA Functions:
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -140,7 +144,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_depthchart(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Depth Chart ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:51 UTC
+#> ℹ Data updated: 2026-05-19 01:34:14 UTC
 #> # A tibble: 30 × 10
 #>    league team_id season depthchart_id depthchart_name position  rank athlete_id
 #>    <chr>  <chr>    <int> <chr>         <chr>           <chr>    <int> <chr>     

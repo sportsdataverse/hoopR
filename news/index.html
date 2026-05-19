@@ -432,6 +432,28 @@
 </tr><tr><td><code><a href="../reference/espn_nba_draft_status.html">espn_nba_draft_status()</a></code></td>
 <td>Single-row snapshot of one draft year’s current state.</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tierb-core-v2-expansion--event-meta-endpoints-3-1-0"><em>Tier 2B core-v2 expansion — event meta endpoints</em><a class="anchor" aria-label="anchor" href="#tierb-core-v2-expansion--event-meta-endpoints-3-1-0"></a></h5>
+<p>8 new wrappers across 4 resource families. Each wraps <code>events/{eid}/competitions/{cid}/...</code> and is added to both NBA and MBB shim files (16 new public functions across both leagues per package = 8 each).</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_event_situation.html">espn_nba_event_situation()</a></code> / <code><a href="../reference/espn_mbb_event_situation.html">espn_mbb_event_situation()</a></code>
+</td>
+<td>Live game situation: timeouts, fouls, fouls-to-give, bonus state, last-play <code>$ref</code>. Single-row tibble.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_predictor.html">espn_nba_event_predictor()</a></code> / <code><a href="../reference/espn_mbb_event_predictor.html">espn_mbb_event_predictor()</a></code>
+</td>
+<td>Pre-game predictor statistics in long format (one row per team × stat). Stats include matchup quality, predicted score, win pct, team-predicted MoV. Returns empty for events without predictor data.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_powerindex.html">espn_nba_event_powerindex()</a></code> / <code><a href="../reference/espn_mbb_event_powerindex.html">espn_mbb_event_powerindex()</a></code>
+</td>
+<td>Per-event power-index <code>$ref</code> index. Coverage is sparse — most events return zero items.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_propbets.html">espn_nba_event_propbets()</a></code> / <code><a href="../reference/espn_mbb_event_propbets.html">espn_mbb_event_propbets()</a></code>
+</td>
+<td>Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates.</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>

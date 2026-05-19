@@ -120,7 +120,11 @@ Other ESPN NBA Functions:
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -184,7 +188,7 @@ Saiem Gilani
   espn_nba_team(team_id = "17", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:50 UTC
+#> ℹ Data updated: 2026-05-19 01:34:12 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -194,7 +198,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:50 UTC
+#> ℹ Data updated: 2026-05-19 01:34:12 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -204,7 +208,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:50 UTC
+#> ℹ Data updated: 2026-05-19 01:34:12 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                             short_name
 #>   <chr>     <chr>             <chr>                            <chr>     
@@ -212,7 +216,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:50 UTC
+#> ℹ Data updated: 2026-05-19 01:34:12 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary        
 #>   <chr>                   

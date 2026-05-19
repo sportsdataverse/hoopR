@@ -93,7 +93,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -154,7 +158,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_athlete_overview(athlete_id = "4433985", season = 2025)
-#> ✖ 2026-05-19 01:20:38.90513: Failed to retrieve ESPN mens-college-basketball athlete overview for athlete_id=4433985, season=2025
+#> ✖ 2026-05-19 01:32:55.235662: Failed to retrieve ESPN mens-college-basketball athlete overview for athlete_id=4433985, season=2025
 #> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025
 #> ✖ Error: The API returned an error
 #> list()

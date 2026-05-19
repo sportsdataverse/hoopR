@@ -55,7 +55,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -117,7 +121,7 @@ Saiem Gilani
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_mbb_athlete_seasons(athlete_id = 1966)
-#> ✖ 2026-05-19 01:20:39.203297: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=1966
+#> ✖ 2026-05-19 01:32:55.543547: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=1966
 #> ✖ Args: league = "mens-college-basketball", athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> NULL

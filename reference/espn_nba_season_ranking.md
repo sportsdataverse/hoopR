@@ -79,7 +79,11 @@ Other ESPN NBA Functions:
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -141,7 +145,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_season_ranking(ranking_id = 1, season = 2025)
-#> ✖ 2026-05-19 01:21:46.652012: Failed to retrieve ESPN nba ranking 1 for season=2025
+#> ✖ 2026-05-19 01:34:09.033463: Failed to retrieve ESPN nba ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> NULL

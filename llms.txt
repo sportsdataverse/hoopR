@@ -329,10 +329,30 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Event Officials**
 
+- [`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md)
+  :
+
+  **Get ESPN MBB Event Power Index Index**
+
+- [`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md)
+  :
+
+  **Get ESPN MBB Event Predictor (Pre-game)**
+
 - [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md)
   :
 
   **Get ESPN Women's College Basketball Event Win Probabilities**
+
+- [`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md)
+  :
+
+  **Get ESPN MBB Event Prop Bets (Long Format)**
+
+- [`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md)
+  :
+
+  **Get ESPN MBB Event Situation (Live)**
 
 - [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md)
   :
@@ -734,10 +754,30 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Event Officials**
 
+- [`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md)
+  :
+
+  **Get ESPN NBA Event Power Index Index**
+
+- [`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md)
+  :
+
+  **Get ESPN NBA Event Predictor (Pre-game)**
+
 - [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md)
   :
 
   **Get ESPN NBA Event Win Probabilities**
+
+- [`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md)
+  :
+
+  **Get ESPN NBA Event Prop Bets (Long Format)**
+
+- [`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md)
+  :
+
+  **Get ESPN NBA Event Situation (Live)**
 
 - [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md)
   :

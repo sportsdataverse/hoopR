@@ -194,7 +194,11 @@ Other ESPN NBA Functions:
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
+[`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md),
+[`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md),
 [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md),
+[`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md),
+[`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md),
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md),
 [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md),
 [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
@@ -257,7 +261,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_team_stats(team_id = 18, year = 2020))
 #> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:56 UTC
+#> ℹ Data updated: 2026-05-19 01:34:19 UTC
 #> # A tibble: 1 × 213
 #>   team_id team_guid team_uid team_slug team_location team_name team_abbreviation
 #>     <int> <chr>     <chr>    <chr>     <chr>         <chr>     <chr>            

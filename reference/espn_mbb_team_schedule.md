@@ -88,7 +88,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -149,7 +153,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_schedule(team_id = "2509", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Schedule from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:12 UTC
+#> ℹ Data updated: 2026-05-19 01:33:31 UTC
 #> # A tibble: 33 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      

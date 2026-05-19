@@ -69,7 +69,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md),
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -130,7 +134,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_event_odds(event_id = "401735229")
-#> ✖ 2026-05-19 01:20:46.268437: Failed to retrieve ESPN mens-college-basketball event odds for event_id=401735229
+#> ✖ 2026-05-19 01:33:02.69461: Failed to retrieve ESPN mens-college-basketball event odds for event_id=401735229
 #> ✖ Args: league = "mens-college-basketball", event_id = "401735229"
 #> ✖ Error: The API returned an error
 #> NULL

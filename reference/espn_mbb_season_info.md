@@ -77,7 +77,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
@@ -139,7 +143,7 @@ Saiem Gilani
   espn_mbb_season_info(season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Info from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name 
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>     
@@ -147,7 +151,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Types from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -155,7 +159,7 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Athletes from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -163,17 +167,17 @@ Saiem Gilani
 #> 
 #> $Coaches
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Coaches from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Teams from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:21:02 UTC
+#> ℹ Data updated: 2026-05-19 01:33:21 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

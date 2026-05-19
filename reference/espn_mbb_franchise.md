@@ -68,7 +68,11 @@ Other ESPN MBB Functions:
 [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md),
 [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md),
 [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md),
+[`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md),
+[`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md),
 [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md),
+[`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md),
+[`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md),
 [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
 [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
 [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
@@ -129,7 +133,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchise(franchise_id = 150)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchise from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 01:20:47 UTC
+#> ℹ Data updated: 2026-05-19 01:33:04 UTC
 #> # A tibble: 1 × 16
 #>   id    uid             slug   location name  nickname abbreviation display_name
 #>   <chr> <chr>           <chr>  <chr>    <chr> <chr>    <chr>        <chr>       
