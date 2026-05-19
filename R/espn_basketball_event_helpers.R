@@ -908,3 +908,355 @@
   )
   result
 }
+
+# ===========================================================================
+# Competitor sub-resource helpers
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_competitor_linescores
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball competitor linescores (per-quarter)
+#' @noRd
+.espn_basketball_event_competitor_linescores <- function(league, event_id,
+                                                          team_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, team_id = team_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/competitors/", team_id, "/linescores?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      items <- raw[["items"]] %||% list()
+      rows <- list()
+      for (it in items) {
+        rows[[length(rows) + 1L]] <- list(
+          league        = league,
+          event_id      = as.character(event_id),
+          team_id       = as.character(team_id),
+          period        = as.integer(it[["period"]] %||% NA),
+          value         = suppressWarnings(as.numeric(it[["value"]] %||% NA)),
+          display_value = as.character(it[["displayValue"]] %||% NA),
+          source        = as.character(it[["source"]] %||% NA)
+        )
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          team_id = character(0), period = integer(0),
+          value = numeric(0), display_value = character(0),
+          source = character(0), stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Linescores"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Linescores"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} competitor linescores for event_id={event_id}, team_id={team_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} competitor linescores",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_competitor_leaders
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball competitor leaders (per-game top performers)
+#' @noRd
+.espn_basketball_event_competitor_leaders <- function(league, event_id,
+                                                       team_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, team_id = team_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/competitors/", team_id, "/leaders?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      cats <- raw[["categories"]] %||% list()
+      rows <- list()
+      for (cat in cats) {
+        cat_name <- cat[["name"]] %||% NA_character_
+        cat_disp <- cat[["displayName"]] %||% NA_character_
+        cat_abbr <- cat[["abbreviation"]] %||% NA_character_
+        leaders <- cat[["leaders"]] %||% list()
+        for (i in seq_along(leaders)) {
+          l <- leaders[[i]]
+          a <- l[["athlete"]]
+          aref <- if (is.list(a)) a[["$ref"]] %||% NA_character_ else NA_character_
+          aid <- if (!is.na(aref)) sub(".*/athletes/([0-9]+).*", "\\1", aref) else NA_character_
+          rows[[length(rows) + 1L]] <- list(
+            league           = league,
+            event_id         = as.character(event_id),
+            team_id          = as.character(team_id),
+            category_name    = cat_name,
+            category_display = cat_disp,
+            category_abbrev  = cat_abbr,
+            rank             = i,
+            athlete_id       = aid,
+            display_value    = as.character(l[["displayValue"]] %||% NA),
+            value            = suppressWarnings(as.numeric(l[["value"]] %||% NA)),
+            athlete_ref      = aref
+          )
+        }
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          team_id = character(0), category_name = character(0),
+          category_display = character(0), category_abbrev = character(0),
+          rank = integer(0), athlete_id = character(0),
+          display_value = character(0), value = numeric(0),
+          athlete_ref = character(0), stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Leaders"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Leaders"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} competitor leaders for event_id={event_id}, team_id={team_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} competitor leaders",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_competitor_roster (paginated $refs)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball competitor game-day roster index
+#' @noRd
+.espn_basketball_event_competitor_roster <- function(league, event_id,
+                                                      team_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, team_id = team_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/competitors/", team_id, "/roster?limit=100&lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      items <- raw[["items"]] %||% list()
+      refs <- if (length(items) == 0L) character(0) else
+        vapply(items, function(x) x[["$ref"]] %||% NA_character_,
+               character(1))
+      aids <- if (length(refs) == 0L) character(0) else
+        sub(".*/roster/([0-9]+).*", "\\1", refs)
+      result <- data.frame(
+        league     = rep(league, length(refs)),
+        event_id   = rep(as.character(event_id), length(refs)),
+        team_id    = rep(as.character(team_id), length(refs)),
+        athlete_id = aids,
+        ref        = refs,
+        stringsAsFactors = FALSE
+      ) %>% dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Competitor Roster"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} competitor roster for event_id={event_id}, team_id={team_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} competitor roster",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_competitor_statistics (long-format team box)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball competitor team statistics (long format)
+#' @noRd
+.espn_basketball_event_competitor_statistics <- function(league, event_id,
+                                                          team_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, team_id = team_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/competitors/", team_id, "/statistics?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      splits <- raw[["splits"]]
+      cats <- if (is.list(splits)) splits[["categories"]] %||% list() else list()
+      rows <- list()
+      for (cat in cats) {
+        cat_name <- cat[["name"]] %||% NA_character_
+        cat_disp <- cat[["displayName"]] %||% NA_character_
+        stats <- cat[["stats"]] %||% list()
+        for (s in stats) {
+          rows[[length(rows) + 1L]] <- list(
+            league           = league,
+            event_id         = as.character(event_id),
+            team_id          = as.character(team_id),
+            category_name    = cat_name,
+            category_display = cat_disp,
+            stat_name        = s[["name"]] %||% NA_character_,
+            stat_abbrev      = s[["abbreviation"]] %||% NA_character_,
+            stat_display     = s[["displayName"]] %||% NA_character_,
+            value            = suppressWarnings(as.numeric(s[["value"]] %||% NA)),
+            display_value    = as.character(s[["displayValue"]] %||% NA)
+          )
+        }
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          team_id = character(0), category_name = character(0),
+          category_display = character(0), stat_name = character(0),
+          stat_abbrev = character(0), stat_display = character(0),
+          value = numeric(0), display_value = character(0),
+          stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Statistics"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Statistics"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} competitor statistics for event_id={event_id}, team_id={team_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} competitor statistics",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_competitor_records (per-game record types)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball competitor records (at-game record breakdown)
+#' @noRd
+.espn_basketball_event_competitor_records <- function(league, event_id,
+                                                       team_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, team_id = team_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/competitors/", team_id, "/records?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      items <- raw[["items"]] %||% list()
+      rows <- list()
+      for (it in items) {
+        rows[[length(rows) + 1L]] <- list(
+          league             = league,
+          event_id           = as.character(event_id),
+          team_id            = as.character(team_id),
+          record_id          = as.character(it[["id"]] %||% NA),
+          name               = it[["name"]] %||% NA_character_,
+          abbreviation       = it[["abbreviation"]] %||% NA_character_,
+          display_name       = it[["displayName"]] %||% NA_character_,
+          short_display_name = it[["shortDisplayName"]] %||% NA_character_,
+          type               = it[["type"]] %||% NA_character_,
+          summary            = it[["summary"]] %||% NA_character_,
+          value              = suppressWarnings(as.numeric(it[["value"]] %||% NA))
+        )
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          team_id = character(0), record_id = character(0),
+          name = character(0), abbreviation = character(0),
+          display_name = character(0), short_display_name = character(0),
+          type = character(0), summary = character(0),
+          value = numeric(0), stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Records"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Competitor Records"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} competitor records for event_id={event_id}, team_id={team_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} competitor records",
+      args = .args),
+    finally = {}
+  )
+  result
+}

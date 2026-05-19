@@ -225,6 +225,18 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_event_powerindex()` / `espn_mbb_event_powerindex()` | Per-event power-index `$ref` index. Coverage is sparse — most events return zero items. |
 | `espn_nba_event_propbets()` / `espn_mbb_event_propbets()` | Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates. |
 
+#### *Tier 2B core-v2 expansion — event competitor sub-resources*
+
+5 new resource families under `events/{eid}/competitions/{cid}/competitors/{team_id}/`, each shimmed for NBA and MBB (10 new public functions per package). Pair the team_id with the event_id from `espn_*_schedule()` (or any `boxscore.teams[].id`).
+
+| Function | Description |
+|---|---|
+| `espn_nba_event_competitor_linescores()` / `espn_mbb_event_competitor_linescores()` | Per-quarter scoring for one team in one event. One row per period (regulation + overtime). |
+| `espn_nba_event_competitor_leaders()` / `espn_mbb_event_competitor_leaders()` | Top performers per team in long format: one row per (category × athlete rank). Categories typically include points, rebounds, assists, and rating. |
+| `espn_nba_event_competitor_roster()` / `espn_mbb_event_competitor_roster()` | Game-day roster index for one team. Returns athlete ids + core-v2 `$ref` URLs for deferred dereferencing. |
+| `espn_nba_event_competitor_statistics()` / `espn_mbb_event_competitor_statistics()` | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
+| `espn_nba_event_competitor_records()` / `espn_mbb_event_competitor_records()` | Team records as of the event: overall / home / away / conference / division breakdowns. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*

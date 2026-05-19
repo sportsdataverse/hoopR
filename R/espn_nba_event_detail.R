@@ -307,3 +307,165 @@ espn_nba_event_propbets <- function(event_id, provider_id, ...) {
   .espn_basketball_event_propbets(league = "nba", event_id = event_id,
                                     provider_id = provider_id, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_event_competitor_linescores
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
+#' @name espn_nba_event_competitor_linescores
+NULL
+#' @title
+#' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
+#' @rdname espn_nba_event_competitor_linescores
+#' @author Saiem Gilani
+#' @description
+#' Returns the per-quarter scoring breakdown for one team in one NBA
+#' event. One row per period (regulation quarters + any overtime
+#' periods).
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier (the competitor whose linescore
+#'   to fetch).
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per period.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_event_competitor_linescores(event_id = 401812680, team_id = 29)
+#' }
+espn_nba_event_competitor_linescores <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_linescores(league = "nba",
+                                                  event_id = event_id,
+                                                  team_id = team_id, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_event_competitor_leaders
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
+#' @name espn_nba_event_competitor_leaders
+NULL
+#' @title
+#' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
+#' @rdname espn_nba_event_competitor_leaders
+#' @author Saiem Gilani
+#' @description
+#' Returns the per-team statistical leaders for one NBA event in long
+#' format: one row per (category x athlete rank). Categories typically
+#' include points, rebounds, assists, and rating.
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier.
+#' @param ... Additional arguments; currently unused.
+#' @return A long tibble with one row per (category x rank).
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_event_competitor_leaders(event_id = 401812680, team_id = 29)
+#' }
+espn_nba_event_competitor_leaders <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_leaders(league = "nba",
+                                              event_id = event_id,
+                                              team_id = team_id, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_event_competitor_roster
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Event Competitor Roster (Game-Day)**
+#' @name espn_nba_event_competitor_roster
+NULL
+#' @title
+#' **Get ESPN NBA Event Competitor Roster (Game-Day)**
+#' @rdname espn_nba_event_competitor_roster
+#' @author Saiem Gilani
+#' @description
+#' Returns the game-day roster index for one team in one NBA event.
+#' Each row carries the athlete id and the core-v2 `$ref` URL — use
+#' the ref to dereference athlete-game splits or biographical data.
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per active athlete.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_event_competitor_roster(event_id = 401812680, team_id = 29)
+#' }
+espn_nba_event_competitor_roster <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_roster(league = "nba",
+                                             event_id = event_id,
+                                             team_id = team_id, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_event_competitor_statistics
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
+#' @name espn_nba_event_competitor_statistics
+NULL
+#' @title
+#' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
+#' @rdname espn_nba_event_competitor_statistics
+#' @author Saiem Gilani
+#' @description
+#' Returns full team-game statistics for one team in one NBA event in
+#' long format: one row per (category x stat). Covers offensive,
+#' defensive, and general categories with both raw values and display
+#' strings.
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier.
+#' @param ... Additional arguments; currently unused.
+#' @return A long tibble with one row per (category x stat).
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_event_competitor_statistics(event_id = 401812680, team_id = 29)
+#' }
+espn_nba_event_competitor_statistics <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_statistics(league = "nba",
+                                                 event_id = event_id,
+                                                 team_id = team_id, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_event_competitor_records
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
+#' @name espn_nba_event_competitor_records
+NULL
+#' @title
+#' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
+#' @rdname espn_nba_event_competitor_records
+#' @author Saiem Gilani
+#' @description
+#' Returns team records as of the given NBA event: overall, home,
+#' away, conference, and division breakdowns where available. One row
+#' per record type.
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per record type.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_event_competitor_records(event_id = 401812680, team_id = 29)
+#' }
+espn_nba_event_competitor_records <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_records(league = "nba",
+                                              event_id = event_id,
+                                              team_id = team_id, ...)
+}
