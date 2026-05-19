@@ -155,3 +155,119 @@ espn_nba_draft_pick <- function(season = most_recent_nba_season(),
   .espn_basketball_draft_pick(league = "nba", season = season,
                                 round = round, pick = pick, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_athlete_eventlog_v2 (core-v2 per-season event log)
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Athlete Per-Season Event Log (core-v2)**
+#' @name espn_nba_athlete_eventlog_v2
+NULL
+#' @title
+#' **Get ESPN NBA Athlete Per-Season Event Log (core-v2)**
+#' @rdname espn_nba_athlete_eventlog_v2
+#' @author Saiem Gilani
+#' @description
+#' Returns one row per (event x team) for an NBA athlete's appearances
+#' in a given season. Distinct from [espn_nba_athlete_eventlog()] which
+#' wraps the web-common-v3 gamelog endpoint returning stats per game;
+#' this core-v2 variant returns refs + `played` flag and is era-correct.
+#'
+#' @param athlete_id ESPN athlete identifier.
+#' @param season Season year. Defaults to most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per event appearance. See package source
+#'   for column schema.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_athlete_eventlog_v2(athlete_id = 1966, season = 2025)
+#' }
+espn_nba_athlete_eventlog_v2 <- function(athlete_id,
+                                          season = most_recent_nba_season(),
+                                          ...) {
+  .espn_basketball_athlete_eventlog_v2(league = "nba",
+                                      athlete_id = athlete_id,
+                                      season = season, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_draft_rounds
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Draft Rounds Summary**
+#' @name espn_nba_draft_rounds
+#' @title
+#' **Get ESPN NBA Draft Rounds Summary**
+#' @rdname espn_nba_draft_rounds
+#' @author Saiem Gilani
+#' @description
+#' Returns one row per round of the NBA draft (typically 2 rounds:
+#' 1st with 30 picks, 2nd with ~28 picks).
+#'
+#' @param season Season year. Defaults to most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per round.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_draft_rounds(season = 2024)
+#' }
+espn_nba_draft_rounds <- function(season = most_recent_nba_season(), ...) {
+  .espn_basketball_draft_rounds(league = "nba", season = season, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_draft_athletes
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Draft Athletes Index**
+#' @name espn_nba_draft_athletes
+#' @title
+#' **Get ESPN NBA Draft Athletes Index**
+#' @rdname espn_nba_draft_athletes
+#' @author Saiem Gilani
+#' @description
+#' Returns one row per drafted athlete in a given NBA draft year.
+#'
+#' @param season Season year. Defaults to most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble of athlete IDs + `$ref` URLs.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_draft_athletes(season = 2024)
+#' }
+espn_nba_draft_athletes <- function(season = most_recent_nba_season(), ...) {
+  .espn_basketball_draft_athletes(league = "nba", season = season, ...)
+}
+
+# ---------------------------------------------------------------------------
+# espn_nba_draft_status
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Draft Status**
+#' @name espn_nba_draft_status
+#' @title
+#' **Get ESPN NBA Draft Status**
+#' @rdname espn_nba_draft_status
+#' @author Saiem Gilani
+#' @description
+#' Returns the current status of one NBA draft year (round, state,
+#' description). Live during the draft; static afterward.
+#'
+#' @param season Season year. Defaults to most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_draft_status(season = 2024)
+#' }
+espn_nba_draft_status <- function(season = most_recent_nba_season(), ...) {
+  .espn_basketball_draft_status(league = "nba", season = season, ...)
+}

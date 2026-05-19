@@ -174,3 +174,85 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_athlete_eventlog_v2 (per-season per-game event log)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball per-season athlete event log
+#'
+#' Fetches `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/seasons/{season}/athletes/{athlete_id}/eventlog`
+#' and returns one row per (event x team) appearance. Distinct from the
+#' web-common-v3 `athlete_eventlog` wrapper: that one returns gamelog
+#' rows with stats; this core-v2 endpoint returns event refs and the
+#' `played` flag (whether the athlete was active for that game).
+#'
+#' @noRd
+.espn_basketball_athlete_eventlog_v2 <- function(league, athlete_id, season, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, athlete_id = athlete_id, season = season)
+
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/seasons/", season, "/athletes/", athlete_id,
+    "/eventlog?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      events <- raw[["events"]]
+      items <- if (is.list(events)) events[["items"]] %||% list() else list()
+      rows <- list()
+      for (it in items) {
+        eref <- if (is.list(it[["event"]]))
+          it[["event"]][["$ref"]] %||% NA_character_ else NA_character_
+        cref <- if (is.list(it[["competition"]]))
+          it[["competition"]][["$ref"]] %||% NA_character_ else NA_character_
+        eid <- if (!is.na(eref))
+          sub(".*/events/([0-9]+).*", "\\1", eref) else NA_character_
+        rows[[length(rows) + 1L]] <- list(
+          league          = league,
+          athlete_id      = as.character(athlete_id),
+          season          = as.integer(season),
+          event_id        = eid,
+          team_id         = as.character(it[["teamId"]] %||% NA),
+          played          = isTRUE(it[["played"]]),
+          event_ref       = eref,
+          competition_ref = cref
+        )
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), athlete_id = character(0),
+          season = integer(0), event_id = character(0),
+          team_id = character(0), played = logical(0),
+          event_ref = character(0), competition_ref = character(0),
+          stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Athlete Event Log"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Athlete Event Log"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} athlete event log for athlete_id={athlete_id}, season={season}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} athlete event log",
+      args = .args),
+    finally = {}
+  )
+  result
+}

@@ -107,3 +107,37 @@ espn_mbb_athlete_career_stats <- function(athlete_id,
                                           stat_type = stat_type, ...)
 }
 
+
+# ---------------------------------------------------------------------------
+# espn_mbb_athlete_eventlog_v2 (core-v2 per-season event log)
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Athlete Per-Season Event Log (core-v2)**
+#' @name espn_mbb_athlete_eventlog_v2
+NULL
+#' @title
+#' **Get ESPN MBB Athlete Per-Season Event Log (core-v2)**
+#' @rdname espn_mbb_athlete_eventlog_v2
+#' @author Saiem Gilani
+#' @description
+#' Returns one row per (event x team) for an MBB athlete's appearances
+#' in a given season. Distinct from [espn_mbb_athlete_eventlog()] which
+#' wraps the web-common-v3 endpoint; this core-v2 variant is era-correct.
+#'
+#' @param athlete_id ESPN athlete identifier.
+#' @param season Season year. Defaults to most recent MBB season.
+#' @param ... Additional arguments; currently unused.
+#' @return A tibble with one row per event appearance.
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_athlete_eventlog_v2(athlete_id = 4683735, season = 2025)
+#' }
+espn_mbb_athlete_eventlog_v2 <- function(athlete_id,
+                                          season = most_recent_mbb_season(),
+                                          ...) {
+  .espn_basketball_athlete_eventlog_v2(league = "mens-college-basketball",
+                                      athlete_id = athlete_id,
+                                      season = season, ...)
+}

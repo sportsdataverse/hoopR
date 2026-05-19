@@ -203,6 +203,17 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_athlete_career_stats()` / `espn_mbb_athlete_career_stats()` | Long-format career stats. Default `stat_type = 0L` fetches the standard "All Splits" / regular-season view; pass a vector like `c(0L, 1L, 2L)` to bind multiple types (postseason / career aggregate) via a `stat_type_id` column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0. |
 | `espn_nba_draft_pick()` | Single NBA draft-pick detail (defaults to most-recent NBA season, round 1, pick 1). MBB has no draft endpoint, so this wrapper is NBA-only on the hoopR side. |
 
+#### *Tier 2B core-v2 expansion — athlete event log + draft completion*
+
+5 new wrappers across 2 resource families. Extends the athlete and draft endpoint coverage with the remaining per-season core-v2 endpoints.
+
+| Function | Description |
+|---|---|
+| `espn_nba_athlete_eventlog_v2()` / `espn_mbb_athlete_eventlog_v2()` | Per-season event log from core-v2 (`seasons/{y}/athletes/{id}/eventlog`). One row per (event × team) appearance with `played` flag + event/competition `$ref`s. Distinct from the existing `espn_*_athlete_eventlog()` which hits the web-common-v3 gamelog endpoint with stats per game. |
+| `espn_nba_draft_rounds()` | Round-level summary for one NBA draft year (one row per round with pick count + completion status). |
+| `espn_nba_draft_athletes()` | Index of every athlete in a given NBA draft year (~102 entries: 60 picks + undrafted invitees). |
+| `espn_nba_draft_status()` | Single-row snapshot of one draft year's current state. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*
