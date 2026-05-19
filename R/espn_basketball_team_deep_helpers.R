@@ -16,7 +16,7 @@
 #' (team x season-type) combinations return 404, so the wrapper returns
 #' an empty tibble in that case.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_odds_records <- function(league, team_id,
                                                 season,
                                                 season_type = 0L, ...) {
@@ -106,7 +106,7 @@
 #' Schema: `items[1].positions[5].athletes[N]` where each position is
 #' PG / SG / SF / PF / C, and each `athletes[i]` has `{athlete $ref, rank}`.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_depthchart <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
@@ -197,7 +197,7 @@
 #' authoritative per-season athlete list as `$ref` URLs. Useful for
 #' era-correct rosters across all 4 leagues.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_season_roster <- function(league, team_id,
                                                  season, ...) {
   .espn_bball_validate_league(league)
@@ -253,7 +253,7 @@
 #' `$ref`s to college, person, team, and records. ESPN's coverage is
 #' sparse: many `(coach_id x season)` combinations return 404.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_coach_season <- function(league, coach_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, coach_id = coach_id, season = season)

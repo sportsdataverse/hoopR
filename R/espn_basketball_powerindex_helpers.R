@@ -14,7 +14,7 @@
 #' response; filtering happens client-side. `season_type` accepts a scalar
 #' or vector — default `c(2L, 3L)` keeps regular season + postseason rows.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_powerindex <- function(league, season,
                                          season_type = c(2L, 3L),
                                          page_limit = 100L, ...) {

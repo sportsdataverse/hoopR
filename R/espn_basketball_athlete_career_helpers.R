@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball athlete-seasons index
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_seasons <- function(league, athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
@@ -68,7 +68,7 @@
 #' Stat type codes: 0 = regular season (default endpoint), 1 = postseason,
 #' 2 = career aggregate.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_career_stats <- function(league, athlete_id,
                                                    stat_type = 0L,
                                                    ...) {

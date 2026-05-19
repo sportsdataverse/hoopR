@@ -11,7 +11,7 @@
 #' @param season integer or character. Four-digit season year (e.g. `2025`).
 #' @param ... Currently unused; reserved for future pass-through arguments.
 #' @return A `hoopR_data` tibble of calendar entries, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_calendar <- function(league, season, ...) {
   if (!league %in% c("nba", "mens-college-basketball")) {
     stop(

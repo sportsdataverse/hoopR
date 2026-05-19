@@ -21,7 +21,7 @@
 #' @param athlete_id character or numeric. ESPN athlete identifier.
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return Named list of data frames.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_info <- function(league, athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
@@ -201,7 +201,7 @@
 #' @param season numeric. Season year.
 #' @param ... Unused.
 #' @return Named list of data frames.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_overview <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -348,7 +348,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return Named list of data frames, one per stats category.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_stats <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -498,7 +498,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_gamelog <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -646,7 +646,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_splits <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -775,7 +775,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_eventlog <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -934,7 +934,7 @@
 #' @param ... Unused.
 #' @return A tibble with columns `season`, `award_id`, `name`, `description`,
 #'   `date`, `type`.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_awards <- function(league, athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
@@ -1055,7 +1055,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_statisticslog <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
@@ -1168,7 +1168,7 @@
 #' @param athlete_id character or numeric. ESPN athlete identifier.
 #' @param ... Unused.
 #' @return A `hoopR_data` tibble with one row per contract year, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_contracts <- function(league, athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
@@ -1239,7 +1239,7 @@
 #' @param season numeric. Season year (e.g. 2025).
 #' @param ... Unused.
 #' @return A single-row `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athlete_contract <- function(league, athlete_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)

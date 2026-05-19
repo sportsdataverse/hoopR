@@ -11,7 +11,7 @@
 #' and returns a single-row tibble with name, biography, current team /
 #' college refs, and a count of career-record and coach-season entries.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_coach <- function(league, coach_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, coach_id = coach_id)

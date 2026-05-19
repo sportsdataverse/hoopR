@@ -22,7 +22,7 @@
 #'   `returns_at`, `short_comment`, `long_comment`. Returns an empty tibble
 #'   when ESPN's `injuries` array is empty (common for MBB).
 #'
-#' @keywords internal
+#' @noRd
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows mutate
 #' @importFrom janitor clean_names
@@ -124,7 +124,7 @@
 #'   include `team_id`, `athlete_id`, `athlete_name`, `position`, `status`,
 #'   `date`, `type`, `side`, `returns_at`, `short_comment`, `long_comment`.
 #'
-#' @keywords internal
+#' @noRd
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows
 #' @importFrom janitor clean_names

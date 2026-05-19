@@ -10,7 +10,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball season-types index
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_types <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
@@ -58,7 +58,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball single season-type detail
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_type <- function(league, season, season_type, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, season_type = season_type)
@@ -119,7 +119,7 @@
 #' the default `season_type = c(2L, 3L)`: 14 categories x 25 leaders
 #' x 2 season types = ~700 rows.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_leaders <- function(league, season,
                                              season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
@@ -224,7 +224,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball season-rankings index
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_rankings <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
@@ -277,7 +277,7 @@
 #' 25). Each row's `ref` URL resolves to the actual ranked teams for that
 #' week via `.espn_basketball_week_ranking()` (forthcoming).
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_ranking <- function(league, season, ranking_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, ranking_id = ranking_id)

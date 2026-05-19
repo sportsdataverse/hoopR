@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball single draft pick detail
-#' @keywords internal
+#' @noRd
 .espn_basketball_draft_pick <- function(league, season, round, pick, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, round = round, pick = pick)

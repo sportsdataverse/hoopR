@@ -18,7 +18,7 @@
 #' @param season numeric. Season year.
 #' @param ... Unused.
 #' @return A `hoopR_data` tibble with one row per award, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_awards <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
@@ -89,7 +89,7 @@
 #' @param award_id character or numeric.
 #' @param ... Unused.
 #' @return A `hoopR_data` tibble with one row per winner, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_award <- function(league, season, award_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, award_id = award_id)

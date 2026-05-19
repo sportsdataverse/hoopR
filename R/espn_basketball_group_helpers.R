@@ -10,7 +10,7 @@
 #' `season_type` accepts a scalar or vector; default `c(2L, 3L)` fetches
 #' regular season + postseason groups and binds them.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_groups <- function(league, season,
                                             season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
@@ -86,7 +86,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball single group detail
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_group <- function(league, season,
                                            season_type = 2L,
                                            group_id, ...) {
@@ -148,7 +148,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball group children index
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_group_children <- function(league, season,
                                                     season_type = 2L,
                                                     group_id, ...) {
@@ -202,7 +202,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball group teams index
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_group_teams <- function(league, season,
                                                  season_type = 2L,
                                                  group_id, ...) {

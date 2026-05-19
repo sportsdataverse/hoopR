@@ -11,7 +11,7 @@
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/tournaments`.
 #' Returns a tibble of tournament IDs (each refs a separate detail).
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_tournaments <- function(league, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league)
@@ -68,7 +68,7 @@
 #' Fetches one tournament's metadata + its seasons-list `$ref`:
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/tournaments/{tournament_id}`.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_tournament <- function(league, tournament_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, tournament_id = tournament_id)
@@ -128,7 +128,7 @@
 #' Each item is a `$ref` to a per-season tournament resource. Year is
 #' parsed from the URL.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_tournament_seasons <- function(league, tournament_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, tournament_id = tournament_id)

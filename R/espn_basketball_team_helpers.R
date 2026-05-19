@@ -31,7 +31,7 @@
 #' @param season numeric. Season year.
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return Named list of data frames.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
@@ -176,7 +176,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_roster <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
@@ -330,7 +330,7 @@
 #' @param season_type integer. 1 = preseason, 2 = regular, 3 = postseason.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_schedule <- function(league, team_id, season, season_type, ...) {
   .espn_bball_validate_league(league)
   .args <- list(
@@ -550,7 +550,7 @@
 #' @param season numeric.
 #' @param ... Unused.
 #' @return A tibble.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_leaders <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
@@ -667,7 +667,7 @@
 #' @param season numeric. Season year (e.g. 2025).
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return A single-row `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_season_profile <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)

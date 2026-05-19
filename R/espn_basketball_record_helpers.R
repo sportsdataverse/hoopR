@@ -12,7 +12,7 @@
 #' `season_type` accepts a scalar or vector; default `c(2L, 3L)` fetches
 #' regular season + postseason and binds.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_record <- function(league, team_id, season,
                                           season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)

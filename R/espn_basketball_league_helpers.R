@@ -31,7 +31,7 @@
 #' @param season_type integer. 1 = preseason, 2 = regular (default), 3 = postseason.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return A `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_leaders <- function(league, season, season_type = 2, ...) {
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league, season = season, season_type = season_type)
@@ -212,7 +212,7 @@
 #' @param league character. `"nba"` or `"mens-college-basketball"`.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return A `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_venues <- function(league, ...) {
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league)
@@ -331,7 +331,7 @@
 #' @param season numeric. Season year.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return A `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_coaches <- function(league, season, ...) {
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league, season = season)
@@ -437,7 +437,7 @@
 #' @param limit integer. Maximum number of rows to return.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return A `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_athletes_index <- function(league, season, active = TRUE,
                                              limit = 25000L, ...) {
   .espn_bball_validate_league_cat(league)
@@ -618,7 +618,7 @@
 #' @param league character. `"nba"` or `"mens-college-basketball"`.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return A `hoopR_data` tibble, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_seasons <- function(league, ...) {
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league)
@@ -704,7 +704,7 @@
 #' @param season numeric. Season year.
 #' @param ... Unused; reserved for forward compatibility.
 #' @return Named list of tibbles/data frames, or an empty list on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_info <- function(league, season, ...) {
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league, season = season)

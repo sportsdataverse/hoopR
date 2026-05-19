@@ -9,7 +9,7 @@
 #' @param limit integer. Maximum number of articles to return (default `50`).
 #' @param ... Currently unused; reserved for future pass-through arguments.
 #' @return A `hoopR_data` tibble of articles, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_news <- function(league, limit = 50, ...) {
   if (!league %in% c("nba", "mens-college-basketball")) {
     stop(
@@ -125,7 +125,7 @@
 #' @param limit integer. Maximum number of articles to return (default `25`).
 #' @param ... Currently unused; reserved for future pass-through arguments.
 #' @return A `hoopR_data` tibble of articles, or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_team_news <- function(league, team_id, limit = 25, ...) {
   if (!league %in% c("nba", "mens-college-basketball")) {
     stop(

@@ -23,7 +23,7 @@
 #' @param event_id character or numeric. ESPN event/game identifier.
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return A `hoopR_data` tibble or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_event_odds <- function(league, event_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id)
@@ -168,7 +168,7 @@
 #' @param limit integer. Maximum rows to return (default `200`).
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return A `hoopR_data` tibble or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_event_probabilities <- function(league, event_id, limit = 200, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, limit = limit)
@@ -350,7 +350,7 @@
 #' @param event_id character or numeric. ESPN event/game identifier.
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return A `hoopR_data` tibble or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_event_officials <- function(league, event_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id)
@@ -482,7 +482,7 @@
 #' @param event_id character or numeric. ESPN event/game identifier.
 #' @param ... Unused; absorbed for forward compatibility.
 #' @return A `hoopR_data` tibble or `NULL` on error.
-#' @keywords internal
+#' @noRd
 .espn_basketball_event_broadcasts <- function(league, event_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id)

@@ -10,7 +10,7 @@
 #' `season_type` accepts a scalar or vector; default `c(2L, 3L)` fetches
 #' regular season + postseason weeks and binds them.
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_weeks <- function(league, season,
                                            season_type = c(2L, 3L), ...) {
   .espn_bball_validate_league(league)
@@ -88,7 +88,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball single-week metadata
-#' @keywords internal
+#' @noRd
 .espn_basketball_season_week <- function(league, season,
                                           season_type = 2L,
                                           week, ...) {
@@ -139,7 +139,7 @@
 # ---------------------------------------------------------------------------
 
 #' Internal: ESPN basketball per-week rankings index
-#' @keywords internal
+#' @noRd
 .espn_basketball_week_rankings <- function(league, season,
                                             season_type = 2L,
                                             week, ...) {
@@ -197,7 +197,7 @@
 #' Returns the long-format ranked teams for one (season x season-type x
 #' week x ranking-source). Typically 25 rows (AP Top 25 / Coaches Poll).
 #'
-#' @keywords internal
+#' @noRd
 .espn_basketball_week_ranking <- function(league, season,
                                            season_type = 2L,
                                            week, ranking_id, ...) {
