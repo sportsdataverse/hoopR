@@ -116,3 +116,36 @@ espn_mbb_tournament_seasons <- function(tournament_id, ...) {
   .espn_basketball_tournament_seasons(league = "mens-college-basketball",
                                        tournament_id = tournament_id, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_mbb_tournament_season
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Tournament Season Detail**
+#' @name espn_mbb_tournament_season
+NULL
+#' @title
+#' **Get ESPN MBB Tournament Season Detail**
+#' @rdname espn_mbb_tournament_season
+#' @author Saiem Gilani
+#' @description
+#' Returns single-row detail for one (tournament, season) pair: id,
+#' display name, number of rounds, and `$ref`s to the season + bracketology
+#' resources. Use [espn_mbb_tournament_seasons()] to enumerate valid
+#' (tournament_id, season) pairs.
+#'
+#' @param tournament_id ESPN tournament identifier.
+#' @param season Season year (numeric).
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_tournament_season(tournament_id = 1, season = 2024)
+#' }
+espn_mbb_tournament_season <- function(tournament_id, season, ...) {
+  .espn_basketball_tournament_season(league = "mens-college-basketball",
+                                       tournament_id = tournament_id,
+                                       season = season, ...)
+}

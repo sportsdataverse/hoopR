@@ -116,3 +116,36 @@ espn_nba_tournament_seasons <- function(tournament_id, ...) {
   .espn_basketball_tournament_seasons(league = "nba",
                                        tournament_id = tournament_id, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_tournament_season
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Tournament Season Detail**
+#' @name espn_nba_tournament_season
+NULL
+#' @title
+#' **Get ESPN NBA Tournament Season Detail**
+#' @rdname espn_nba_tournament_season
+#' @author Saiem Gilani
+#' @description
+#' Returns single-row detail for one (tournament, season) pair: id,
+#' display name, number of rounds, and `$ref`s to the season + bracketology
+#' resources. Use [espn_nba_tournament_seasons()] to enumerate valid
+#' (tournament_id, season) pairs.
+#'
+#' @param tournament_id ESPN tournament identifier.
+#' @param season Season year (numeric).
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_tournament_season(tournament_id = 1, season = 2024)
+#' }
+espn_nba_tournament_season <- function(tournament_id, season, ...) {
+  .espn_basketball_tournament_season(league = "nba",
+                                       tournament_id = tournament_id,
+                                       season = season, ...)
+}

@@ -650,3 +650,36 @@ espn_mbb_event_competitor_score <- function(event_id, team_id, ...) {
                                             event_id = event_id,
                                             team_id = team_id, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_mbb_event_official_detail
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Event Official Detail (Single Official)**
+#' @name espn_mbb_event_official_detail
+NULL
+#' @title
+#' **Get ESPN MBB Event Official Detail (Single Official)**
+#' @rdname espn_mbb_event_official_detail
+#' @author Saiem Gilani
+#' @description
+#' Returns a single-row tibble for one referee assigned to one MBB event,
+#' with their name, position (Referee / Crew Chief / Umpire), and crew
+#' order. Pair with [espn_mbb_event_officials()] to enumerate the crew.
+#'
+#' @param event_id ESPN event identifier.
+#' @param order Crew order index (1 = first official). Pair with the `order` column from event_officials().
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_event_official_detail(event_id = 401283399, order = 1)
+#' }
+espn_mbb_event_official_detail <- function(event_id, order, ...) {
+  .espn_basketball_event_official_detail(league = "mens-college-basketball",
+                                           event_id = event_id,
+                                           order = order, ...)
+}
+

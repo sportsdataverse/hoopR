@@ -237,6 +237,18 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_event_competitor_statistics()` / `espn_mbb_event_competitor_statistics()` | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
 | `espn_nba_event_competitor_records()` / `espn_mbb_event_competitor_records()` | Team records as of the event: overall / home / away / conference / division breakdowns. |
 
+#### *Tier 2F core-v2 expansion — typed-detail companions*
+
+5 new resource families completing index/detail pairs for existing wrappers. NBA-only or 3-league coverage where the underlying ESPN endpoint isn't symmetric:
+
+| Function | Description |
+|---|---|
+| `espn_nba_event_official_detail()` / `espn_mbb_event_official_detail()` | Per-official details (name, position, order) for one event. **Note**: the URL segment is the *crew order* (1-indexed) not the ESPN stable official_id — the wrapper takes `order =` to match `event_officials()$order`. |
+| `espn_nba_team_record_detail()` / `espn_mbb_team_record_detail()` | Per-record stat array in long format. Use `team_record()` to enumerate `record_id` values (overall / home / away / conference / per-opponent). Returns 21 rows × 15 cols for one NBA record. |
+| `espn_nba_coach_record()` / `espn_mbb_coach_record()` / `espn_wbb_coach_record()` | Coach career record by type in long format. Types: 0 = Total, 1 = Pre Season, 2 = Regular Season, 3 = Post Season. |
+| `espn_nba_tournament_season()` / `espn_mbb_tournament_season()` | Single tournament-year detail (id, displayName, numberOfRounds, bracketology `$ref`). |
+| `espn_nba_draft_athlete_detail()` | Rich single-row drafted-player record: height/weight, position, pick (overall/round/team), athlete `$ref`. |
+
 #### *Tier 2E.2 core-v2 expansion — team-season stats + quick lookups*
 
 3 new resource families across NBA + MBB (5 new exports — season_draft is NBA-only). Surfaces the full team-season stat sheet (with league rank per stat), a quick-lookup wrapper for a single team's final score in one event, and the draft-year top-level metadata.

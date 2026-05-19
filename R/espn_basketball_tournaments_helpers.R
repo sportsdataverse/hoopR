@@ -182,3 +182,57 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_tournament_season
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball single tournament-season detail
+#' @noRd
+.espn_basketball_tournament_season <- function(league, tournament_id,
+                                                 season, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, tournament_id = tournament_id,
+                season = season)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/tournaments/", tournament_id,
+    "/seasons/", season, "?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      season_ref <- if (is.list(raw[["season"]]))
+        as.character(raw[["season"]][["$ref"]] %||% NA) else NA_character_
+      bracket_ref <- if (is.list(raw[["bracketology"]]))
+        as.character(raw[["bracketology"]][["$ref"]] %||% NA) else NA_character_
+      row <- list(
+        league             = league,
+        tournament_id      = as.character(raw[["id"]] %||% tournament_id),
+        season             = as.integer(season),
+        display_name       = as.character(raw[["displayName"]] %||% NA_character_),
+        short_display_name = as.character(raw[["shortDisplayName"]] %||% NA_character_),
+        number_of_rounds   = suppressWarnings(as.integer(raw[["numberOfRounds"]] %||% NA)),
+        season_ref         = season_ref,
+        bracketology_ref   = bracket_ref
+      )
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Tournament Season Detail"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} tournament season detail for tournament_id={tournament_id}, season={season}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} tournament season detail",
+      args = .args),
+    finally = {}
+  )
+  result
+}

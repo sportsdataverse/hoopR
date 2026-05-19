@@ -1800,3 +1800,58 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_official_detail
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball single official detail for one event
+#' @noRd
+.espn_basketball_event_official_detail <- function(league, event_id,
+                                                     order, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id, order = order)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/officials/", as.integer(order), "?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      pos <- raw[["position"]]
+      pos_name <- if (is.list(pos)) as.character(pos[["displayName"]] %||% pos[["name"]] %||% NA) else
+        if (is.character(pos)) pos else NA_character_
+      pos_id <- if (is.list(pos)) as.character(pos[["id"]] %||% NA) else NA_character_
+      row <- list(
+        league        = league,
+        event_id      = as.character(event_id),
+        official_id   = as.character(raw[["id"]] %||% NA_character_),
+        first_name    = as.character(raw[["firstName"]] %||% NA_character_),
+        last_name     = as.character(raw[["lastName"]] %||% NA_character_),
+        full_name     = as.character(raw[["fullName"]] %||% NA_character_),
+        display_name  = as.character(raw[["displayName"]] %||% NA_character_),
+        position_id   = pos_id,
+        position_name = pos_name,
+        order         = suppressWarnings(as.integer(raw[["order"]] %||% NA))
+      )
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Event Official Detail"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} event official detail for event_id={event_id}, order={order}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} event official detail",
+      args = .args),
+    finally = {}
+  )
+  result
+}

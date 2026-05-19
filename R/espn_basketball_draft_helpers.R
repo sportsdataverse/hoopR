@@ -237,3 +237,80 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_draft_athlete_detail
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball single drafted athlete record
+#' @noRd
+.espn_basketball_draft_athlete_detail <- function(league, season,
+                                                    athlete_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, season = season, athlete_id = athlete_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/seasons/", season,
+    "/draft/athletes/", athlete_id, "?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      pos <- raw[["position"]]
+      pos_name <- if (is.list(pos)) as.character(pos[["displayName"]] %||% pos[["name"]] %||% NA) else NA_character_
+      pos_abbrev <- if (is.list(pos)) as.character(pos[["abbreviation"]] %||% NA) else NA_character_
+
+      ath <- raw[["athlete"]]
+      ath_ref <- if (is.list(ath)) as.character(ath[["$ref"]] %||% NA) else NA_character_
+      ath_real_id <- if (!is.na(ath_ref))
+        sub(".*/athletes/([0-9]+).*", "\\1", ath_ref) else NA_character_
+
+      pk <- raw[["pick"]]
+      pick_overall <- if (is.list(pk)) suppressWarnings(as.integer(pk[["overall"]] %||% NA)) else NA_integer_
+      pick_round   <- if (is.list(pk)) suppressWarnings(as.integer(pk[["round"]] %||% NA)) else NA_integer_
+      pick_team_ref <- if (is.list(pk) && is.list(pk[["team"]]))
+        as.character(pk[["team"]][["$ref"]] %||% NA) else NA_character_
+      pick_team_id <- if (!is.na(pick_team_ref))
+        sub(".*/teams/([0-9]+).*", "\\1", pick_team_ref) else NA_character_
+
+      row <- list(
+        league             = league,
+        season             = as.integer(season),
+        draftee_id         = as.character(raw[["id"]] %||% athlete_id),
+        athlete_id         = ath_real_id,
+        first_name         = as.character(raw[["firstName"]] %||% NA_character_),
+        last_name          = as.character(raw[["lastName"]] %||% NA_character_),
+        full_name          = as.character(raw[["fullName"]] %||% NA_character_),
+        display_name       = as.character(raw[["displayName"]] %||% NA_character_),
+        height             = suppressWarnings(as.numeric(raw[["height"]] %||% NA)),
+        display_height     = as.character(raw[["displayHeight"]] %||% NA_character_),
+        weight             = suppressWarnings(as.numeric(raw[["weight"]] %||% NA)),
+        display_weight     = as.character(raw[["displayWeight"]] %||% NA_character_),
+        position_name      = pos_name,
+        position_abbrev    = pos_abbrev,
+        pick_overall       = pick_overall,
+        pick_round         = pick_round,
+        pick_team_id       = pick_team_id,
+        athlete_ref        = ath_ref,
+        headshot           = as.character(raw[["headshot"]] %||% NA_character_)
+      )
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Draft Athlete Detail"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} draft athlete detail for season={season}, athlete_id={athlete_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} draft athlete detail",
+      args = .args),
+    finally = {}
+  )
+  result
+}

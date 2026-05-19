@@ -154,3 +154,41 @@ espn_mbb_coach_season <- function(coach_id,
   .espn_basketball_coach_season(league = "mens-college-basketball", coach_id = coach_id,
                                   season = season, ...)
 }
+# ---------------------------------------------------------------------------
+# espn_mbb_team_record_detail
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Team Record Detail (Long Format)**
+#' @name espn_mbb_team_record_detail
+NULL
+#' @title
+#' **Get ESPN MBB Team Record Detail (Long Format)**
+#' @rdname espn_mbb_team_record_detail
+#' @author Saiem Gilani
+#' @description
+#' Returns one team's record detail in long format: one row per stat in
+#' the record's `stats[]` array. Use [espn_mbb_team_record()] to enumerate
+#' available `record_id` values per team-season (overall / home / away /
+#' conference + per-opponent breakdowns).
+#'
+#' @param team_id ESPN team identifier.
+#' @param season Season year (numeric).
+#' @param record_id Record identifier (from [espn_mbb_team_record()] index).
+#' @param season_type Integer season type: 1 = preseason, 2 = regular (default),
+#'   3 = postseason.
+#' @param ... Additional arguments; currently unused.
+#' @return A long tibble.
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_team_record_detail(team_id = 13, season = 2024, record_id = 0)
+#' }
+espn_mbb_team_record_detail <- function(team_id, season, record_id,
+                                          season_type = 2L, ...) {
+  .espn_basketball_team_record_detail(league = "mens-college-basketball",
+                                        team_id = team_id,
+                                        season = season,
+                                        record_id = record_id,
+                                        season_type = season_type, ...)
+}
