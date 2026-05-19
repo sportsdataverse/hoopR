@@ -612,3 +612,299 @@
   )
   return(result)
 }
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_situation (live game state)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball live game situation
+#' @noRd
+.espn_basketball_event_situation <- function(league, event_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/situation?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      ht <- raw[["homeTimeouts"]]
+      at <- raw[["awayTimeouts"]]
+      hf <- raw[["homeFouls"]]
+      af <- raw[["awayFouls"]]
+      get_n <- function(x, k) {
+        if (is.list(x)) as.integer(x[[k]] %||% NA) else NA_integer_
+      }
+      get_c <- function(x, k) {
+        if (is.list(x)) as.character(x[[k]] %||% NA) else NA_character_
+      }
+      lp_ref <- if (is.list(raw[["lastPlay"]]))
+        raw[["lastPlay"]][["$ref"]] %||% NA_character_ else NA_character_
+      row <- list(
+        league                       = league,
+        event_id                     = as.character(event_id),
+        home_timeouts_current        = get_n(ht, "timeoutsCurrent"),
+        home_timeouts_remaining      = get_n(ht, "timeoutsRemainingCurrent"),
+        away_timeouts_current        = get_n(at, "timeoutsCurrent"),
+        away_timeouts_remaining      = get_n(at, "timeoutsRemainingCurrent"),
+        home_team_fouls              = get_n(hf, "teamFouls"),
+        home_team_fouls_current      = get_n(hf, "teamFoulsCurrent"),
+        home_fouls_to_give           = get_n(hf, "foulsToGive"),
+        home_bonus_state             = get_c(hf, "bonusState"),
+        away_team_fouls              = get_n(af, "teamFouls"),
+        away_team_fouls_current      = get_n(af, "teamFoulsCurrent"),
+        away_fouls_to_give           = get_n(af, "foulsToGive"),
+        away_bonus_state             = get_c(af, "bonusState"),
+        last_play_ref                = lp_ref
+      )
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Event Situation"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} event situation for event_id={event_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} event situation",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_predictor (pre-game predictor; long-format)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball event predictor (long format)
+#' @noRd
+.espn_basketball_event_predictor <- function(league, event_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/predictor?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      name <- raw[["name"]] %||% NA_character_
+      short_name <- raw[["shortName"]] %||% NA_character_
+      last_modified <- raw[["lastModified"]] %||% NA_character_
+      rows <- list()
+      for (side in c("homeTeam", "awayTeam")) {
+        side_obj <- raw[[side]]
+        if (!is.list(side_obj)) next
+        team_ref <- if (is.list(side_obj[["team"]]))
+          side_obj[["team"]][["$ref"]] %||% NA_character_ else NA_character_
+        team_id <- if (!is.na(team_ref))
+          sub(".*/teams/([0-9]+).*", "\\1", team_ref) else NA_character_
+        for (s in (side_obj[["statistics"]] %||% list())) {
+          rows[[length(rows) + 1L]] <- list(
+            league         = league,
+            event_id       = as.character(event_id),
+            name           = name,
+            short_name     = short_name,
+            last_modified  = last_modified,
+            side           = if (side == "homeTeam") "home" else "away",
+            team_id        = team_id,
+            stat_name      = s[["name"]] %||% NA_character_,
+            stat_display   = s[["displayName"]] %||% NA_character_,
+            description    = s[["description"]] %||% NA_character_,
+            value          = suppressWarnings(as.numeric(s[["value"]] %||% NA)),
+            display_value  = as.character(s[["displayValue"]] %||% NA),
+            team_ref       = team_ref
+          )
+        }
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          name = character(0), short_name = character(0),
+          last_modified = character(0), side = character(0),
+          team_id = character(0), stat_name = character(0),
+          stat_display = character(0), description = character(0),
+          value = numeric(0), display_value = character(0),
+          team_ref = character(0),
+          stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Event Predictor"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Event Predictor"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} event predictor for event_id={event_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} event predictor",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_powerindex (paginated $refs to team-game BPI)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball event powerindex index
+#' @noRd
+.espn_basketball_event_powerindex <- function(league, event_id, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/events/", event_id, "/competitions/", event_id,
+    "/powerindex?limit=200&lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      items <- raw[["items"]] %||% list()
+      refs <- if (length(items) == 0L) character(0) else
+        vapply(items, function(x) x[["$ref"]] %||% NA_character_,
+               character(1))
+      tids <- if (length(refs) == 0L) character(0) else
+        sub(".*/powerindex/([0-9]+).*", "\\1", refs)
+      result <- data.frame(
+        league   = rep(league, length(refs)),
+        event_id = rep(as.character(event_id), length(refs)),
+        team_id  = tids,
+        ref      = refs,
+        stringsAsFactors = FALSE
+      ) %>% dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Event Power Index"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} event powerindex for event_id={event_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} event powerindex",
+      args = .args),
+    finally = {}
+  )
+  result
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_event_propbets (long-format prop bets)
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball event prop bets (long format)
+#' @noRd
+.espn_basketball_event_propbets <- function(league, event_id, provider_id,
+                                             page_limit = 100L, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, event_id = event_id,
+                provider_id = provider_id)
+  result <- NULL
+  rows <- list()
+  page <- 1L
+  page_count <- NA_integer_
+  tryCatch(
+    expr = {
+      repeat {
+        url <- paste0(
+          "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+          league, "/events/", event_id, "/competitions/", event_id,
+          "/odds/", provider_id, "/propBets?limit=", page_limit,
+          "&page=", page, "&lang=en&region=us"
+        )
+        res <- tryCatch(.retry_request(url), error = function(e) NULL)
+        if (is.null(res) || httr2::resp_status(res) != 200L) break
+        raw <- res %>% .resp_text() %>%
+          jsonlite::fromJSON(simplifyVector = FALSE)
+        if (is.na(page_count)) {
+          page_count <- as.integer(raw[["pageCount"]] %||% 1L)
+        }
+        items <- raw[["items"]] %||% list()
+        for (it in items) {
+          aref <- if (is.list(it[["athlete"]]))
+            it[["athlete"]][["$ref"]] %||% NA_character_ else NA_character_
+          aid <- if (!is.na(aref))
+            sub(".*/athletes/([0-9]+).*", "\\1", aref) else NA_character_
+          tp <- it[["type"]]
+          odds <- it[["odds"]]
+          cur <- it[["current"]]
+          rows[[length(rows) + 1L]] <- list(
+            league          = league,
+            event_id        = as.character(event_id),
+            provider_id     = as.character(provider_id),
+            athlete_id      = aid,
+            prop_type_id    = if (is.list(tp)) as.character(tp[["id"]] %||% NA) else NA_character_,
+            prop_type_name  = if (is.list(tp)) tp[["name"]] %||% NA_character_ else NA_character_,
+            american        = if (is.list(odds)) as.character(odds[["american"]] %||% NA) else NA_character_,
+            decimal         = if (is.list(odds)) suppressWarnings(as.numeric(odds[["decimal"]] %||% NA)) else NA_real_,
+            fraction        = if (is.list(odds)) as.character(odds[["fraction"]] %||% NA) else NA_character_,
+            total           = if (is.list(odds)) suppressWarnings(as.numeric(odds[["total"]] %||% NA)) else NA_real_,
+            current_target  = if (is.list(cur)) suppressWarnings(as.numeric(cur[["target"]] %||% NA)) else NA_real_,
+            last_updated    = it[["lastUpdated"]] %||% NA_character_,
+            athlete_ref     = aref
+          )
+        }
+        if (page >= page_count) break
+        page <- page + 1L
+        Sys.sleep(0.4)
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), event_id = character(0),
+          provider_id = character(0), athlete_id = character(0),
+          prop_type_id = character(0), prop_type_name = character(0),
+          american = character(0), decimal = numeric(0),
+          fraction = character(0), total = numeric(0),
+          current_target = numeric(0), last_updated = character(0),
+          athlete_ref = character(0),
+          stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Event Prop Bets"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Event Prop Bets"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} event prop bets for event_id={event_id}, provider_id={provider_id}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} event prop bets",
+      args = .args),
+    finally = {}
+  )
+  result
+}

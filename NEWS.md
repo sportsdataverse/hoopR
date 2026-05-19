@@ -214,6 +214,17 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_draft_athletes()` | Index of every athlete in a given NBA draft year (~102 entries: 60 picks + undrafted invitees). |
 | `espn_nba_draft_status()` | Single-row snapshot of one draft year's current state. |
 
+#### *Tier 2B core-v2 expansion — event meta endpoints*
+
+8 new wrappers across 4 resource families. Each wraps `events/{eid}/competitions/{cid}/...` and is added to both NBA and MBB shim files (16 new public functions across both leagues per package = 8 each).
+
+| Function | Description |
+|---|---|
+| `espn_nba_event_situation()` / `espn_mbb_event_situation()` | Live game situation: timeouts, fouls, fouls-to-give, bonus state, last-play `$ref`. Single-row tibble. |
+| `espn_nba_event_predictor()` / `espn_mbb_event_predictor()` | Pre-game predictor statistics in long format (one row per team × stat). Stats include matchup quality, predicted score, win pct, team-predicted MoV. Returns empty for events without predictor data. |
+| `espn_nba_event_powerindex()` / `espn_mbb_event_powerindex()` | Per-event power-index `$ref` index. Coverage is sparse — most events return zero items. |
+| `espn_nba_event_propbets()` / `espn_mbb_event_propbets()` | Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates. |
+
 ### **Behavior changes to existing functions**
 
 #### *Bug fixes*
