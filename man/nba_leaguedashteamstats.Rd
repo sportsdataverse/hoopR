@@ -197,13 +197,6 @@ Other NBA League Functions:
 Other NBA Team Functions: 
 \code{\link{nba_teamandplayersvsplayers}()},
 \code{\link{nba_teamdashboardbyclutch}()},
-\code{\link{nba_teamdashboardbygamesplits}()},
-\code{\link{nba_teamdashboardbygeneralsplits}()},
-\code{\link{nba_teamdashboardbylastngames}()},
-\code{\link{nba_teamdashboardbyopponent}()},
-\code{\link{nba_teamdashboardbyshootingsplits}()},
-\code{\link{nba_teamdashboardbyteamperformance}()},
-\code{\link{nba_teamdashboardbyyearoveryear}()},
 \code{\link{nba_teamdashlineups}()},
 \code{\link{nba_teamdashptpass}()},
 \code{\link{nba_teamdashptreb}()},

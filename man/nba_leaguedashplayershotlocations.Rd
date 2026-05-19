@@ -211,13 +211,6 @@ Other NBA Player Functions:
 \code{\link{nba_playercareerstats}()},
 \code{\link{nba_playercompare}()},
 \code{\link{nba_playerdashboardbyclutch}()},
-\code{\link{nba_playerdashboardbygamesplits}()},
-\code{\link{nba_playerdashboardbygeneralsplits}()},
-\code{\link{nba_playerdashboardbylastngames}()},
-\code{\link{nba_playerdashboardbyopponent}()},
-\code{\link{nba_playerdashboardbyshootingsplits}()},
-\code{\link{nba_playerdashboardbyteamperformance}()},
-\code{\link{nba_playerdashboardbyyearoveryear}()},
 \code{\link{nba_playerdashptpass}()},
 \code{\link{nba_playerdashptreb}()},
 \code{\link{nba_playerdashptshotdefend}()},
@@ -237,11 +230,11 @@ Other NBA Player Functions:
 Other NBA Shooting Functions: 
 \code{\link{nba_leaguedashteamptshot}()},
 \code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_playerdashboardbyclutch}()},
 \code{\link{nba_shotchartdetail}()},
 \code{\link{nba_shotchartleaguewide}()},
 \code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashboardbyshootingsplits}()}
+\code{\link{nba_teamdashboardbyclutch}()}
 }
 \author{
 Saiem Gilani

@@ -1,11 +1,9 @@
 ## Player Dashboard parameters are the same
 
 #' **Get NBA Stats API Player Dashboard by Clutch Splits**
-#' @name nba_playerdashboardbyclutch
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Clutch Splits**
-#' @rdname nba_playerdashboardbyclutch
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -881,11 +879,9 @@ nba_playerdashboardbyclutch <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Game Splits**
-#' @name nba_playerdashboardbygamesplits
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Game Splits**
-#' @rdname nba_playerdashboardbygamesplits
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1350,11 +1346,9 @@ nba_playerdashboardbygamesplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by General Splits**
-#' @name nba_playerdashboardbygeneralsplits
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by General Splits**
-#' @rdname nba_playerdashboardbygeneralsplits
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1955,11 +1949,9 @@ nba_playerdashboardbygeneralsplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Last N Games**
-#' @name nba_playerdashboardbylastngames
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Last N Games**
-#' @rdname nba_playerdashboardbylastngames
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -2492,11 +2484,9 @@ nba_playerdashboardbylastngames <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Opponent**
-#' @name nba_playerdashboardbyopponent
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Opponent**
-#' @rdname nba_playerdashboardbyopponent
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -2891,11 +2881,9 @@ nba_playerdashboardbyopponent <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Shooting Splits**
-#' @name nba_playerdashboardbyshootingsplits
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Shooting Splits**
-#' @rdname nba_playerdashboardbyshootingsplits
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -3295,11 +3283,9 @@ nba_playerdashboardbyshootingsplits <- function(
 
 
 #' **Get NBA Stats API Player Dashboard by Team Performance**
-#' @name nba_playerdashboardbyteamperformance
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard by Team Performance**
-#' @rdname nba_playerdashboardbyteamperformance
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -3701,11 +3687,9 @@ nba_playerdashboardbyteamperformance <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Year over Year**
-#' @name nba_playerdashboardbyyearoveryear
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Year over Year**
-#' @rdname nba_playerdashboardbyyearoveryear
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to

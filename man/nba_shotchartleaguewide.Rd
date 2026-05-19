@@ -45,10 +45,10 @@ Other NBA Shooting Functions:
 \code{\link{nba_leaguedashplayershotlocations}()},
 \code{\link{nba_leaguedashteamptshot}()},
 \code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_playerdashboardbyshootingsplits}()},
+\code{\link{nba_playerdashboardbyclutch}()},
 \code{\link{nba_shotchartdetail}()},
 \code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashboardbyshootingsplits}()}
+\code{\link{nba_teamdashboardbyclutch}()}
 
 Other NBA League Functions: 
 \code{\link{nba_iststandings}()},
