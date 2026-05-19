@@ -49,7 +49,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_odds_records(team_id = 1, season = 2026)
+#'   espn_mbb_team_odds_records(team_id = 150, season = 2026)
 #' }
 espn_mbb_team_odds_records <- function(team_id,
                                         season = most_recent_mbb_season(),
@@ -95,7 +95,7 @@ espn_mbb_team_odds_records <- function(team_id,
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_season_roster(team_id = 13, season = 2025)
+#'   espn_mbb_team_season_roster(team_id = 150, season = 2025)
 #' }
 espn_mbb_team_season_roster <- function(team_id,
                                          season = most_recent_mbb_season(),
@@ -146,7 +146,7 @@ espn_mbb_team_season_roster <- function(team_id,
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_coach_season(coach_id = 6385, season = 2025)
+#'   espn_mbb_coach_season(coach_id = 32116, season = 2025)
 #' }
 espn_mbb_coach_season <- function(coach_id,
                                    season = most_recent_mbb_season(),
@@ -182,7 +182,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_record_detail(team_id = 13, season = 2024, record_id = 0)
+#'   espn_mbb_team_record_detail(team_id = 150, season = 2024, record_id = 0)
 #' }
 espn_mbb_team_record_detail <- function(team_id, season, record_id,
                                           season_type = 2L, ...) {

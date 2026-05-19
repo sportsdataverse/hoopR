@@ -37,7 +37,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_coach(coach_id = 2562)
+#'   espn_nba_coach(coach_id = 52120)
 #' }
 espn_nba_coach <- function(coach_id, ...) {
   .espn_basketball_coach(league = "nba", coach_id = coach_id, ...)

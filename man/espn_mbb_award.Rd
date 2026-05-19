@@ -32,7 +32,7 @@ Returns the name, description, and winners of one MBB season award.
 }
 \examples{
 \donttest{
-  espn_mbb_award(award_id = 33, season = 2024)
+  espn_mbb_award(award_id = 344, season = 2024)
 }
 }
 \seealso{

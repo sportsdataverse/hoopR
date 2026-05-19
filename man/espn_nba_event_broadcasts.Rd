@@ -33,7 +33,7 @@ A tibble with one row per broadcast outlet for the game.\tabular{lll}{
 }
 \examples{
 \donttest{
-  espn_nba_event_broadcasts(event_id = "401736171")
+  espn_nba_event_broadcasts(event_id = "401283399")
 }
 }
 \seealso{

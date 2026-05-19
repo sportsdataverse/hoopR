@@ -75,7 +75,7 @@ A named list of data frames: \code{Info}, \code{Record}, \code{NextEvent},
 }
 \examples{
 \donttest{
-  espn_nba_team(team_id = "17", season = 2025)
+  espn_nba_team(team_id = "13", season = 2025)
 }
 }
 \seealso{

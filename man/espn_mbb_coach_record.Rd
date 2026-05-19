@@ -25,7 +25,7 @@ Season. Use \code{\link[=espn_mbb_coaches]{espn_mbb_coaches()}} to discover coac
 }
 \examples{
 \donttest{
-  espn_mbb_coach_record(coach_id = 52120, record_type = 2)
+  espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 }
 }
 \seealso{

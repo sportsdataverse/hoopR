@@ -24,7 +24,7 @@ stat labels returned by ESPN and will vary by season and player.
 }
 \examples{
 \donttest{
-  espn_nba_athlete_gamelog(athlete_id = "3149391", season = 2024)
+  espn_nba_athlete_gamelog(athlete_id = "1966", season = 2024)
 }
 }
 \seealso{

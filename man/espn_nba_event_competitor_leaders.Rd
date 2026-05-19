@@ -23,7 +23,7 @@ include points, rebounds, assists, and rating.
 }
 \examples{
 \donttest{
-  espn_nba_event_competitor_leaders(event_id = 401812680, team_id = 29)
+  espn_nba_event_competitor_leaders(event_id = 401283399, team_id = 29)
 }
 }
 \seealso{

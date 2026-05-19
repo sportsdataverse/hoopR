@@ -29,7 +29,7 @@ auto-paginates.
 }
 \examples{
 \donttest{
-  espn_nba_event_propbets(event_id = 401812680, provider_id = 58)
+  espn_nba_event_propbets(event_id = 401283399, provider_id = 58)
 }
 }
 \seealso{

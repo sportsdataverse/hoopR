@@ -23,7 +23,7 @@ order. Pair with \code{\link[=espn_mbb_event_officials]{espn_mbb_event_officials
 }
 \examples{
 \donttest{
-  espn_mbb_event_official_detail(event_id = 401283399, order = 1)
+  espn_mbb_event_official_detail(event_id = 401256760, order = 1)
 }
 }
 \seealso{

@@ -86,7 +86,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team_injuries(team_id = "17")
+#'   espn_nba_team_injuries(team_id = "13")
 #' }
 espn_nba_team_injuries <- function(team_id, ...) {
   .espn_basketball_team_injuries(

@@ -1186,7 +1186,7 @@ espn_nba_teams <- function() {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#' try(espn_nba_team_current_roster(team_id = 18))
+#' try(espn_nba_team_current_roster(team_id = 13))
 #' }
 espn_nba_team_current_roster <- function(team_id) {
   .args <- mget(setdiff(names(formals()), "..."))
@@ -2263,7 +2263,7 @@ espn_nba_betting <- function(game_id) {
 #'
 #' @examples
 #' \donttest{
-#' try(espn_nba_team_stats(team_id = 18, year = 2020))
+#' try(espn_nba_team_stats(team_id = 13, year = 2020))
 #' }
 espn_nba_team_stats <- function(
     team_id,
@@ -2643,7 +2643,7 @@ espn_nba_team_stats <- function(
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#' try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
+#' try(espn_nba_player_stats(athlete_id = 1966, year = 2022))
 #' }
 espn_nba_player_stats <- function(
     athlete_id,

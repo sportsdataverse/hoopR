@@ -327,7 +327,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_draft_athlete_detail(season = 2024, athlete_id = 108206)
+#'   espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)
 #' }
 espn_nba_draft_athlete_detail <- function(season = most_recent_nba_season(),
                                             athlete_id, ...) {

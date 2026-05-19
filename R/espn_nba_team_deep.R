@@ -49,7 +49,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team_odds_records(team_id = 1, season = 2026)
+#'   espn_nba_team_odds_records(team_id = 13, season = 2026)
 #' }
 espn_nba_team_odds_records <- function(team_id,
                                         season = most_recent_nba_season(),
@@ -193,7 +193,7 @@ espn_nba_team_season_roster <- function(team_id,
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_coach_season(coach_id = 6385, season = 2025)
+#'   espn_nba_coach_season(coach_id = 52120, season = 2025)
 #' }
 espn_nba_coach_season <- function(coach_id,
                                    season = most_recent_nba_season(),

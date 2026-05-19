@@ -20,7 +20,7 @@ record entries + per-season coaching entries for one MBB head coach.
 }
 \examples{
 \donttest{
-  espn_mbb_coach(coach_id = 269)
+  espn_mbb_coach(coach_id = 32116)
 }
 }
 \seealso{

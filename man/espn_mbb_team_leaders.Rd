@@ -33,7 +33,7 @@ A single long-format tibble (one row per category-rank-athlete).\tabular{lll}{
 }
 \examples{
 \donttest{
-  espn_mbb_team_leaders(team_id = "2509", season = 2025)
+  espn_mbb_team_leaders(team_id = "150", season = 2025)
 }
 }
 \seealso{

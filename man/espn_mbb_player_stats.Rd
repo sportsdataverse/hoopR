@@ -159,7 +159,7 @@ Returns a tibble with the player stats data\tabular{lll}{
 }
 \examples{
 \donttest{
-try(espn_mbb_player_stats(athlete_id = 4433134, year = 2021))
+try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 }
 }
 \seealso{

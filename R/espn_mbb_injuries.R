@@ -86,7 +86,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_injuries(team_id = "2509")
+#'   espn_mbb_team_injuries(team_id = "150")
 #' }
 espn_mbb_team_injuries <- function(team_id, ...) {
   .espn_basketball_team_injuries(

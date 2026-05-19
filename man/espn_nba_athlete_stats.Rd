@@ -27,7 +27,7 @@ ESPN.
 }
 \examples{
 \donttest{
-  espn_nba_athlete_stats(athlete_id = "3149391", season = 2024)
+  espn_nba_athlete_stats(athlete_id = "1966", season = 2024)
 }
 }
 \seealso{

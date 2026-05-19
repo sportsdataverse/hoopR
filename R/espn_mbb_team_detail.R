@@ -78,7 +78,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team(team_id = "2509", season = 2025)
+#'   espn_mbb_team(team_id = "150", season = 2025)
 #' }
 espn_mbb_team <- function(team_id,
                            season = most_recent_mbb_season(),
@@ -132,7 +132,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_roster(team_id = "2509", season = 2025)
+#'   espn_mbb_team_roster(team_id = "150", season = 2025)
 #' }
 espn_mbb_team_roster <- function(team_id,
                                   season = most_recent_mbb_season(),
@@ -194,7 +194,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_schedule(team_id = "2509", season = 2025)
+#'   espn_mbb_team_schedule(team_id = "150", season = 2025)
 #' }
 espn_mbb_team_schedule <- function(team_id,
                                     season      = most_recent_mbb_season(),
@@ -243,7 +243,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_leaders(team_id = "2509", season = 2025)
+#'   espn_mbb_team_leaders(team_id = "150", season = 2025)
 #' }
 espn_mbb_team_leaders <- function(team_id,
                                    season = most_recent_mbb_season(),
@@ -356,7 +356,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_season_statistics(team_id = 13, season = 2024)
+#'   espn_mbb_team_season_statistics(team_id = 150, season = 2024)
 #' }
 espn_mbb_team_season_statistics <- function(team_id,
                                               season      = most_recent_mbb_season(),

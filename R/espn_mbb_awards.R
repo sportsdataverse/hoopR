@@ -79,7 +79,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_award(award_id = 33, season = 2024)
+#'   espn_mbb_award(award_id = 344, season = 2024)
 #' }
 espn_mbb_award <- function(award_id,
                             season = most_recent_mbb_season(),

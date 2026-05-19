@@ -40,7 +40,7 @@ A single tibble with one row per athlete.\tabular{lll}{
 }
 \examples{
 \donttest{
-  espn_nba_team_roster(team_id = "17", season = 2025)
+  espn_nba_team_roster(team_id = "13", season = 2025)
 }
 }
 \seealso{

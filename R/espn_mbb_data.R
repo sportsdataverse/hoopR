@@ -1290,7 +1290,7 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#' try(espn_mbb_team_current_roster(team_id = 52))
+#' try(espn_mbb_team_current_roster(team_id = 150))
 #' }
 espn_mbb_team_current_roster <- function(team_id) {
   .args <- mget(setdiff(names(formals()), "..."))
@@ -2430,7 +2430,7 @@ espn_mbb_betting <- function(game_id) {
 #'
 #' @examples
 #' \donttest{
-#' try(espn_mbb_team_stats(team_id = 52, year = 2020))
+#' try(espn_mbb_team_stats(team_id = 150, year = 2020))
 #' }
 espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = FALSE) {
   .args <- mget(setdiff(names(formals()), "..."))
@@ -2739,7 +2739,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#' try(espn_mbb_player_stats(athlete_id = 4433134, year = 2021))
+#' try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 #' }
 espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", total = FALSE) {
   .args <- mget(setdiff(names(formals()), "..."))

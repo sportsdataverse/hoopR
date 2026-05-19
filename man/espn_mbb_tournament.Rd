@@ -27,7 +27,7 @@ the NCAA Tournament and NIT (resolve via \code{\link[=espn_mbb_tournaments]{espn
 }
 \examples{
 \donttest{
-  espn_mbb_tournament(tournament_id = 22)
+  espn_mbb_tournament(tournament_id = 3)
 }
 }
 \seealso{

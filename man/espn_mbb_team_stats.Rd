@@ -118,7 +118,7 @@ Returns a tibble with the team stats data\tabular{lll}{
 }
 \examples{
 \donttest{
-try(espn_mbb_team_stats(team_id = 52, year = 2020))
+try(espn_mbb_team_stats(team_id = 150, year = 2020))
 }
 }
 \seealso{

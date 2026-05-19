@@ -54,7 +54,7 @@ A single tibble with one row per event.\tabular{lll}{
 }
 \examples{
 \donttest{
-  espn_mbb_team_schedule(team_id = "2509", season = 2025)
+  espn_mbb_team_schedule(team_id = "150", season = 2025)
 }
 }
 \seealso{

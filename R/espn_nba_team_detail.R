@@ -78,7 +78,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team(team_id = "17", season = 2025)
+#'   espn_nba_team(team_id = "13", season = 2025)
 #' }
 espn_nba_team <- function(team_id,
                             season = most_recent_nba_season(),
@@ -132,7 +132,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team_roster(team_id = "17", season = 2025)
+#'   espn_nba_team_roster(team_id = "13", season = 2025)
 #' }
 espn_nba_team_roster <- function(team_id,
                                    season = most_recent_nba_season(),
@@ -194,7 +194,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team_schedule(team_id = "17", season = 2025)
+#'   espn_nba_team_schedule(team_id = "13", season = 2025)
 #' }
 espn_nba_team_schedule <- function(team_id,
                                      season      = most_recent_nba_season(),
@@ -243,7 +243,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_team_leaders(team_id = "17", season = 2025)
+#'   espn_nba_team_leaders(team_id = "13", season = 2025)
 #' }
 espn_nba_team_leaders <- function(team_id,
                                     season = most_recent_nba_season(),

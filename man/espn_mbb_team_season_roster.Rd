@@ -35,7 +35,7 @@ season for each league.
 }
 \examples{
 \donttest{
-  espn_mbb_team_season_roster(team_id = 13, season = 2025)
+  espn_mbb_team_season_roster(team_id = 150, season = 2025)
 }
 }
 \seealso{

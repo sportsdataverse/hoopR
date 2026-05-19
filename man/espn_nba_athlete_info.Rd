@@ -75,7 +75,7 @@ A named list of data frames: \code{Bio}, \code{Team}, \code{Position},
 }
 \examples{
 \donttest{
-  espn_nba_athlete_info(athlete_id = "3149391")
+  espn_nba_athlete_info(athlete_id = "1966")
 }
 }
 \seealso{

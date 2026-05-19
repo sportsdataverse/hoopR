@@ -29,7 +29,7 @@ conference + per-opponent breakdowns).
 }
 \examples{
 \donttest{
-  espn_mbb_team_record_detail(team_id = 13, season = 2024, record_id = 0)
+  espn_mbb_team_record_detail(team_id = 150, season = 2024, record_id = 0)
 }
 }
 \seealso{

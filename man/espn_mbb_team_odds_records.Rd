@@ -49,7 +49,7 @@ case the wrapper returns an empty tibble.
 }
 \examples{
 \donttest{
-  espn_mbb_team_odds_records(team_id = 1, season = 2026)
+  espn_mbb_team_odds_records(team_id = 150, season = 2026)
 }
 }
 \seealso{

@@ -27,7 +27,7 @@ bounding follow-up calls to per-season endpoints.
 \examples{
 \donttest{
   # LeBron James (1966): 23 career seasons
-  espn_mbb_athlete_seasons(athlete_id = 1966)
+  espn_mbb_athlete_seasons(athlete_id = 4593919)
 }
 }
 \seealso{

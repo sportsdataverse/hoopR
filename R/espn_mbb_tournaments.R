@@ -72,7 +72,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_tournament(tournament_id = 22)
+#'   espn_mbb_tournament(tournament_id = 3)
 #' }
 espn_mbb_tournament <- function(tournament_id, ...) {
   .espn_basketball_tournament(league = "mens-college-basketball",
@@ -110,7 +110,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_tournament_seasons(tournament_id = 22)
+#'   espn_mbb_tournament_seasons(tournament_id = 3)
 #' }
 espn_mbb_tournament_seasons <- function(tournament_id, ...) {
   .espn_basketball_tournament_seasons(league = "mens-college-basketball",
@@ -142,7 +142,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_tournament_season(tournament_id = 1, season = 2024)
+#'   espn_mbb_tournament_season(tournament_id = 3, season = 2024)
 #' }
 espn_mbb_tournament_season <- function(tournament_id, season, ...) {
   .espn_basketball_tournament_season(league = "mens-college-basketball",

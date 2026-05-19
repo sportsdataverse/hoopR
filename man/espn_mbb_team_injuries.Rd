@@ -39,7 +39,7 @@ injuries.
 }
 \examples{
 \donttest{
-  espn_mbb_team_injuries(team_id = "2509")
+  espn_mbb_team_injuries(team_id = "150")
 }
 }
 \seealso{

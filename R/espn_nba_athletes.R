@@ -80,7 +80,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_info(athlete_id = "3149391")
+#'   espn_nba_athlete_info(athlete_id = "1966")
 #' }
 espn_nba_athlete_info <- function(athlete_id, ...) {
   .espn_basketball_athlete_info(
@@ -149,7 +149,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_overview(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_overview(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_overview <- function(athlete_id,
                                        season = most_recent_nba_season(),
@@ -189,7 +189,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_stats(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_stats(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_stats <- function(athlete_id,
                                     season = most_recent_nba_season(),
@@ -226,7 +226,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_gamelog(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_gamelog(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_gamelog <- function(athlete_id,
                                       season = most_recent_nba_season(),
@@ -264,7 +264,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_splits(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_splits(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_splits <- function(athlete_id,
                                      season = most_recent_nba_season(),
@@ -310,7 +310,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_eventlog(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_eventlog(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_eventlog <- function(athlete_id,
                                        season = most_recent_nba_season(),
@@ -356,7 +356,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_awards(athlete_id = "3149391")
+#'   espn_nba_athlete_awards(athlete_id = "1966")
 #' }
 espn_nba_athlete_awards <- function(athlete_id, ...) {
   .espn_basketball_athlete_awards(
@@ -396,7 +396,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_statisticslog(athlete_id = "3149391", season = 2024)
+#'   espn_nba_athlete_statisticslog(athlete_id = "1966", season = 2024)
 #' }
 espn_nba_athlete_statisticslog <- function(athlete_id,
                                             season = most_recent_nba_season(),

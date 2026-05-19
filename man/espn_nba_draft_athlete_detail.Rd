@@ -28,7 +28,7 @@ and a \verb{$ref} to the athlete's core-v2 profile. Use
 }
 \examples{
 \donttest{
-  espn_nba_draft_athlete_detail(season = 2024, athlete_id = 108206)
+  espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)
 }
 }
 \seealso{

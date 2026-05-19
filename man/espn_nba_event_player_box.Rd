@@ -31,7 +31,7 @@ athlete-in-event instead of the full team. \code{stat_type} defaults to 0
 \examples{
 \donttest{
   espn_nba_event_player_box(event_id = 401283399, team_id = 29,
-                               athlete_id = 4066392)
+                               athlete_id = 1966)
 }
 }
 \seealso{

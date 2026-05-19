@@ -21,7 +21,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_coach(coach_id = 269)
+#'   espn_mbb_coach(coach_id = 32116)
 #' }
 espn_mbb_coach <- function(coach_id, ...) {
   .espn_basketball_coach(league = "mens-college-basketball",
@@ -54,7 +54,7 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_coach_record(coach_id = 52120, record_type = 2)
+#'   espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #' }
 espn_mbb_coach_record <- function(coach_id, record_type = 0L, ...) {
   .espn_basketball_coach_record(league = "mens-college-basketball",

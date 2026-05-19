@@ -42,7 +42,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_odds(event_id = "401736171")
+#'   espn_nba_event_odds(event_id = "401283399")
 #' }
 espn_nba_event_odds <- function(event_id, ...) {
   .espn_basketball_event_odds(
@@ -89,7 +89,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_probabilities(event_id = "401736171", limit = 50)
+#'   espn_nba_event_probabilities(event_id = "401283399", limit = 50)
 #' }
 espn_nba_event_probabilities <- function(event_id, limit = 200, ...) {
   .espn_basketball_event_probabilities(
@@ -133,7 +133,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_officials(event_id = "401736171")
+#'   espn_nba_event_officials(event_id = "401283399")
 #' }
 espn_nba_event_officials <- function(event_id, ...) {
   .espn_basketball_event_officials(
@@ -178,7 +178,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_broadcasts(event_id = "401736171")
+#'   espn_nba_event_broadcasts(event_id = "401283399")
 #' }
 espn_nba_event_broadcasts <- function(event_id, ...) {
   .espn_basketball_event_broadcasts(
@@ -212,7 +212,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_situation(event_id = 401812680)
+#'   espn_nba_event_situation(event_id = 401283399)
 #' }
 espn_nba_event_situation <- function(event_id, ...) {
   .espn_basketball_event_situation(league = "nba", event_id = event_id, ...)
@@ -242,7 +242,7 @@ espn_nba_event_situation <- function(event_id, ...) {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_predictor(event_id = 401812680)
+#'   espn_nba_event_predictor(event_id = 401283399)
 #' }
 espn_nba_event_predictor <- function(event_id, ...) {
   .espn_basketball_event_predictor(league = "nba", event_id = event_id, ...)
@@ -269,7 +269,7 @@ espn_nba_event_predictor <- function(event_id, ...) {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_powerindex(event_id = 401812680)
+#'   espn_nba_event_powerindex(event_id = 401283399)
 #' }
 espn_nba_event_powerindex <- function(event_id, ...) {
   .espn_basketball_event_powerindex(league = "nba", event_id = event_id, ...)
@@ -301,7 +301,7 @@ espn_nba_event_powerindex <- function(event_id, ...) {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_propbets(event_id = 401812680, provider_id = 58)
+#'   espn_nba_event_propbets(event_id = 401283399, provider_id = 58)
 #' }
 espn_nba_event_propbets <- function(event_id, provider_id, ...) {
   .espn_basketball_event_propbets(league = "nba", event_id = event_id,
@@ -333,7 +333,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_linescores(event_id = 401812680, team_id = 29)
+#'   espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
 #' }
 espn_nba_event_competitor_linescores <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_linescores(league = "nba",
@@ -365,7 +365,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_leaders(event_id = 401812680, team_id = 29)
+#'   espn_nba_event_competitor_leaders(event_id = 401283399, team_id = 29)
 #' }
 espn_nba_event_competitor_leaders <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_leaders(league = "nba",
@@ -397,7 +397,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_roster(event_id = 401812680, team_id = 29)
+#'   espn_nba_event_competitor_roster(event_id = 401283399, team_id = 29)
 #' }
 espn_nba_event_competitor_roster <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_roster(league = "nba",
@@ -430,7 +430,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_statistics(event_id = 401812680, team_id = 29)
+#'   espn_nba_event_competitor_statistics(event_id = 401283399, team_id = 29)
 #' }
 espn_nba_event_competitor_statistics <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_statistics(league = "nba",
@@ -462,7 +462,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_records(event_id = 401812680, team_id = 29)
+#'   espn_nba_event_competitor_records(event_id = 401283399, team_id = 29)
 #' }
 espn_nba_event_competitor_records <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_records(league = "nba",
@@ -500,7 +500,7 @@ NULL
 #' @examples
 #' \donttest{
 #'   espn_nba_event_player_box(event_id = 401283399, team_id = 29,
-#'                                athlete_id = 4066392)
+#'                                athlete_id = 1966)
 #' }
 espn_nba_event_player_box <- function(event_id, team_id, athlete_id,
                                         stat_type = 0L, ...) {
@@ -539,8 +539,8 @@ NULL
 #' @examples
 #' \donttest{
 #'   espn_nba_event_competitor_roster_entry(event_id = 401283399,
-#'                                             team_id = 29,
-#'                                             athlete_id = 4066392)
+#'                                             team_id = 13,
+#'                                             athlete_id = 1966)
 #' }
 espn_nba_event_competitor_roster_entry <- function(event_id, team_id,
                                                      athlete_id, ...) {
@@ -576,7 +576,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_play(event_id = 401283399, play_id = 4012833997)
+#'   espn_nba_event_play(event_id = 401283399, play_id = 4012833994)
 #' }
 espn_nba_event_play <- function(event_id, play_id, ...) {
   .espn_basketball_event_play(league = "nba",
@@ -609,7 +609,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_play_personnel(event_id = 401283399, play_id = 4012833997)
+#'   espn_nba_event_play_personnel(event_id = 401283399, play_id = 4012833994)
 #' }
 espn_nba_event_play_personnel <- function(event_id, play_id, ...) {
   .espn_basketball_event_play_personnel(league = "nba",

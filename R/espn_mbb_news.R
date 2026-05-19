@@ -77,7 +77,7 @@ NULL
 #' supported for ESPN wrappers).
 #' @examples
 #' \donttest{
-#'   espn_mbb_team_news(team_id = "2509", limit = 5)
+#'   espn_mbb_team_news(team_id = "150", limit = 5)
 #' }
 espn_mbb_team_news <- function(team_id, limit = 25) {
   .args <- mget(setdiff(names(formals()), "..."))
