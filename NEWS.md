@@ -237,6 +237,16 @@ MBB injury data is typically sparse on ESPN; both variants return an empty tibbl
 | `espn_nba_event_competitor_statistics()` / `espn_mbb_event_competitor_statistics()` | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
 | `espn_nba_event_competitor_records()` / `espn_mbb_event_competitor_records()` | Team records as of the event: overall / home / away / conference / division breakdowns. |
 
+#### *Tier 2E.2 core-v2 expansion — team-season stats + quick lookups*
+
+3 new resource families across NBA + MBB (5 new exports — season_draft is NBA-only). Surfaces the full team-season stat sheet (with league rank per stat), a quick-lookup wrapper for a single team's final score in one event, and the draft-year top-level metadata.
+
+| Function | Description |
+|---|---|
+| `espn_nba_team_season_statistics()` / `espn_mbb_team_season_statistics()` | **Full team-season-type stat sheet in long format** (one row per category × stat). Each row carries `rank` + `rank_display_value` for league ranking per stat. Smoke-tested: 109 rows × 13 cols for one NBA team. |
+| `espn_nba_event_competitor_score()` / `espn_mbb_event_competitor_score()` | Single-row final score for one team in one event: `value`, `display_value`, `winner` flag, source metadata. |
+| `espn_nba_season_draft()` | Draft-year top-level metadata: `year`, `number_of_rounds`, `display_name`, plus sub-refs to athletes/rounds/status. |
+
 #### *Tier 2E.1 core-v2 expansion — event-scoped player + play deep dives*
 
 4 new resource families covering per-game player stats, starter/DNP metadata, single-play detail, and on-court personnel (8 new public functions per package).

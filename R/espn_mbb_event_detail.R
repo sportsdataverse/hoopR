@@ -617,3 +617,36 @@ espn_mbb_event_play_personnel <- function(event_id, play_id, ...) {
                                           event_id = event_id,
                                           play_id = play_id, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_mbb_event_competitor_score
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN MBB Event Competitor Score (Single Row)**
+#' @name espn_mbb_event_competitor_score
+NULL
+#' @title
+#' **Get ESPN MBB Event Competitor Score (Single Row)**
+#' @rdname espn_mbb_event_competitor_score
+#' @author Saiem Gilani
+#' @description
+#' Returns a one-row tibble with one team's final score for one MBB event:
+#' numeric `value`, display string, `winner` flag, and source metadata.
+#' Quick-lookup wrapper — use [espn_mbb_event_competitor_linescores()] for
+#' per-period detail.
+#'
+#' @param event_id ESPN event identifier.
+#' @param team_id ESPN team identifier.
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN MBB Functions
+#' @examples
+#' \donttest{
+#'   espn_mbb_event_competitor_score(event_id = 401283399, team_id = 29)
+#' }
+espn_mbb_event_competitor_score <- function(event_id, team_id, ...) {
+  .espn_basketball_event_competitor_score(league = "mens-college-basketball",
+                                            event_id = event_id,
+                                            team_id = team_id, ...)
+}

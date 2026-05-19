@@ -271,3 +271,33 @@ espn_nba_draft_athletes <- function(season = most_recent_nba_season(), ...) {
 espn_nba_draft_status <- function(season = most_recent_nba_season(), ...) {
   .espn_basketball_draft_status(league = "nba", season = season, ...)
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_season_draft
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Season Draft (Top-Level Metadata)**
+#' @name espn_nba_season_draft
+NULL
+#' @title
+#' **Get ESPN NBA Season Draft (Top-Level Metadata)**
+#' @rdname espn_nba_season_draft
+#' @author Saiem Gilani
+#' @description
+#' Returns a single-row tibble with top-level draft-year metadata: year,
+#' number of rounds, display name, plus `$ref`s for the deeper sub-resources
+#' (status, athletes, rounds) already wrapped by [espn_nba_draft_status()],
+#' [espn_nba_draft_athletes()], and [espn_nba_draft_rounds()].
+#'
+#' @param season Season year (numeric). Defaults to the most recent NBA season.
+#' @param ... Additional arguments; currently unused.
+#' @return A single-row tibble.
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_season_draft(season = 2024)
+#' }
+espn_nba_season_draft <- function(season = most_recent_nba_season(), ...) {
+  .espn_basketball_season_draft(league = "nba", season = season, ...)
+}

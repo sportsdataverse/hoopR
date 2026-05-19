@@ -327,3 +327,43 @@ espn_nba_team_season_profile <- function(team_id,
     ...
   )
 }
+
+# ---------------------------------------------------------------------------
+# espn_nba_team_season_statistics
+# ---------------------------------------------------------------------------
+
+#' **Get ESPN NBA Team Season Statistics (Long Format with Rank)**
+#' @name espn_nba_team_season_statistics
+NULL
+#' @title
+#' **Get ESPN NBA Team Season Statistics (Long Format with Rank)**
+#' @rdname espn_nba_team_season_statistics
+#' @author Saiem Gilani
+#' @description
+#' Returns the full team-season-type statistics sheet for one NBA team in
+#' long format: one row per (category x stat). Each row carries the team's
+#' league rank for that stat where ESPN provides it (`rank` +
+#' `rank_display_value`). Complements [espn_nba_team_record()] (W-L only)
+#' with the full stat package.
+#'
+#' @param team_id ESPN team identifier.
+#' @param season Season year (numeric). Defaults to the most recent NBA season.
+#' @param season_type Integer season type: 1 = preseason, 2 = regular
+#'   (default), 3 = postseason.
+#' @param ... Additional arguments; currently unused.
+#' @return A long tibble with one row per (category x stat).
+#' @export
+#' @family ESPN NBA Functions
+#' @examples
+#' \donttest{
+#'   espn_nba_team_season_statistics(team_id = 13, season = 2024)
+#' }
+espn_nba_team_season_statistics <- function(team_id,
+                                              season      = most_recent_nba_season(),
+                                              season_type = 2L,
+                                              ...) {
+  .espn_basketball_team_season_statistics(league = "nba",
+                                            team_id = team_id,
+                                            season = season,
+                                            season_type = season_type, ...)
+}
