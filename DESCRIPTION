@@ -20,7 +20,7 @@ Description: A utility to quickly obtain clean and tidy men's basketball
     analyze the data for themselves.
 License: MIT + file LICENSE
 URL: https://github.com/sportsdataverse/hoopR,
-    http://hoopr.sportsdataverse.org/
+    https://hoopR.sportsdataverse.org/
 BugReports: https://github.com/sportsdataverse/hoopR/issues
 Depends:
     R (>= 4.1.0)
