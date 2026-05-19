@@ -104,8 +104,42 @@ themes that emerged after the 3.0.0 CRAN submission:
   (CRAN strict requirement).
 - `DESCRIPTION` normalized via `usethis::use_tidy_description()` — field
   order, alphabetized `Imports` / `Suggests`, reflowed long lines.
+- `DESCRIPTION` URL normalized to `https://hoopR.sportsdataverse.org/`
+  (matches `_pkgdown.yml` canonical form; replaces a stale lowercase /
+  http variant). `pkgdown::check_pkgdown()` now passes clean.
 - `.gitignore` anchored from bare `docs` to `/docs` so only the repo-root
   pkgdown output is ignored.
+
+### ESPN core-v2 deep expansion
+
+* Adds a broad set of ESPN core-v2 basketball wrappers to bring the
+  `espn_nba_*` + `espn_mbb_*` surface to **199 exports**. Coverage
+  added under tier batches (full breakdown in `NEWS.md`):
+    * **Tier 1 / 2A** — athlete career, franchise, futures, tournament,
+      season-meta (types/leaders/rankings/weeks/groups), team deep
+      (record / season_profile / season_roster / odds_records /
+      depthchart), coach-in-season, powerindex, draft completion.
+    * **Tier 2B.1 / 2B.2 / 2B.3** — `athlete_eventlog_v2`, draft
+      rounds/athletes/status, event meta (situation, predictor,
+      powerindex, propbets), event competitor sub-resources
+      (linescores, leaders, roster, statistics, records).
+    * **Tier 2D** — league position dictionary (`positions`, `position`).
+    * **Tier 2E.1** — per-game player box score (`event_player_box`),
+      roster entry with starter / DNP / ejection flags, single-play
+      detail, on-court personnel.
+    * **Tier 2E.2** — full team-season stat sheet (`team_season_statistics`
+      with `rank` + `rank_display_value` per stat), event competitor
+      score, draft year top-level metadata.
+    * **Tier 2F** — typed-detail companions: `event_official_detail`
+      (URL segment is crew `order`, not the ESPN stable `official_id`),
+      `team_record_detail`, `coach_record`, `tournament_season`,
+      `draft_athlete_detail`.
+* Shared helpers live in `R/espn_basketball_*_helpers.R` to keep NBA
+  and MBB implementations DRY. All new wrappers ship with skip-gated
+  tests (`skip_on_cran()` + `skip_on_ci()` + `skip_espn_test()`);
+  102 new test files added. `R CMD check --run-donttest` ran every
+  new `\donttest{}` example against live ESPN core-v2 (~6.5 min wall
+  time) and they all passed.
 
 
 ## R CMD check results
