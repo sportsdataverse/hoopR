@@ -130,12 +130,24 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_mbb_betting.html">espn_mbb_betting()</a></code>,
 <code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
 <code><a href="espn_mbb_coach.html">espn_mbb_coach()</a></code>,
+<code><a href="espn_mbb_coach_record.html">espn_mbb_coach_record()</a></code>,
 <code><a href="espn_mbb_coach_season.html">espn_mbb_coach_season()</a></code>,
 <code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
 <code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code>,
 <code><a href="espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code>,
+<code><a href="espn_mbb_event_competitor_leaders.html">espn_mbb_event_competitor_leaders()</a></code>,
+<code><a href="espn_mbb_event_competitor_linescores.html">espn_mbb_event_competitor_linescores()</a></code>,
+<code><a href="espn_mbb_event_competitor_records.html">espn_mbb_event_competitor_records()</a></code>,
+<code><a href="espn_mbb_event_competitor_roster.html">espn_mbb_event_competitor_roster()</a></code>,
+<code><a href="espn_mbb_event_competitor_roster_entry.html">espn_mbb_event_competitor_roster_entry()</a></code>,
+<code><a href="espn_mbb_event_competitor_score.html">espn_mbb_event_competitor_score()</a></code>,
+<code><a href="espn_mbb_event_competitor_statistics.html">espn_mbb_event_competitor_statistics()</a></code>,
 <code><a href="espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code>,
+<code><a href="espn_mbb_event_official_detail.html">espn_mbb_event_official_detail()</a></code>,
 <code><a href="espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code>,
+<code><a href="espn_mbb_event_play.html">espn_mbb_event_play()</a></code>,
+<code><a href="espn_mbb_event_play_personnel.html">espn_mbb_event_play_personnel()</a></code>,
+<code><a href="espn_mbb_event_player_box.html">espn_mbb_event_player_box()</a></code>,
 <code><a href="espn_mbb_event_powerindex.html">espn_mbb_event_powerindex()</a></code>,
 <code><a href="espn_mbb_event_predictor.html">espn_mbb_event_predictor()</a></code>,
 <code><a href="espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code>,
@@ -152,6 +164,8 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_mbb_pbp.html">espn_mbb_pbp()</a></code>,
 <code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code>,
 <code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
+<code><a href="espn_mbb_position.html">espn_mbb_position()</a></code>,
+<code><a href="espn_mbb_positions.html">espn_mbb_positions()</a></code>,
 <code><a href="espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>,
 <code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code>,
 <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
@@ -178,13 +192,16 @@ forward compatibility. Proxy configuration should use
 <code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
 <code><a href="espn_mbb_team_odds_records.html">espn_mbb_team_odds_records()</a></code>,
 <code><a href="espn_mbb_team_record.html">espn_mbb_team_record()</a></code>,
+<code><a href="espn_mbb_team_record_detail.html">espn_mbb_team_record_detail()</a></code>,
 <code><a href="espn_mbb_team_roster.html">espn_mbb_team_roster()</a></code>,
 <code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
 <code><a href="espn_mbb_team_season_profile.html">espn_mbb_team_season_profile()</a></code>,
 <code><a href="espn_mbb_team_season_roster.html">espn_mbb_team_season_roster()</a></code>,
+<code><a href="espn_mbb_team_season_statistics.html">espn_mbb_team_season_statistics()</a></code>,
 <code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
 <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
 <code><a href="espn_mbb_tournament.html">espn_mbb_tournament()</a></code>,
+<code><a href="espn_mbb_tournament_season.html">espn_mbb_tournament_season()</a></code>,
 <code><a href="espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>,
 <code><a href="espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>,
 <code><a href="espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>,
@@ -201,7 +218,7 @@ forward compatibility. Proxy configuration should use
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_venues</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Venues from ESPN.com ──────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:33:37 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 17:30:02 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 988 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    venue_id name  full_name address_city address_state capacity indoor grass</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>

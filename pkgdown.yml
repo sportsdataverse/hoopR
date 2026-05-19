@@ -2,9 +2,10 @@ pandoc: 3.8.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
+  espn-endpoints: espn-endpoints.html
   getting-started-hoopR: getting-started-hoopR.html
   kenpom-example-functions: kenpom-example-functions.html
-last_built: 2026-05-19T01:32Z
+last_built: 2026-05-19T17:29Z
 urls:
   reference: https://hoopR.sportsdataverse.org/reference
   article: https://hoopR.sportsdataverse.org/articles

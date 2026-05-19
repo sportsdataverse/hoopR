@@ -454,6 +454,110 @@
 </td>
 <td>Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates.</td>
 </tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tierb-core-v2-expansion--event-competitor-sub-resources-3-1-0"><em>Tier 2B core-v2 expansion — event competitor sub-resources</em><a class="anchor" aria-label="anchor" href="#tierb-core-v2-expansion--event-competitor-sub-resources-3-1-0"></a></h5>
+<p>5 new resource families under <code>events/{eid}/competitions/{cid}/competitors/{team_id}/</code>, each shimmed for NBA and MBB (10 new public functions per package). Pair the team_id with the event_id from <code>espn_*_schedule()</code> (or any <code>boxscore.teams[].id</code>).</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_linescores.html">espn_nba_event_competitor_linescores()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_linescores.html">espn_mbb_event_competitor_linescores()</a></code>
+</td>
+<td>Per-quarter scoring for one team in one event. One row per period (regulation + overtime).</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_leaders.html">espn_nba_event_competitor_leaders()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_leaders.html">espn_mbb_event_competitor_leaders()</a></code>
+</td>
+<td>Top performers per team in long format: one row per (category × athlete rank). Categories typically include points, rebounds, assists, and rating.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_roster.html">espn_nba_event_competitor_roster()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_roster.html">espn_mbb_event_competitor_roster()</a></code>
+</td>
+<td>Game-day roster index for one team. Returns athlete ids + core-v2 <code>$ref</code> URLs for deferred dereferencing.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_statistics.html">espn_nba_event_competitor_statistics()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_statistics.html">espn_mbb_event_competitor_statistics()</a></code>
+</td>
+<td>Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_records.html">espn_nba_event_competitor_records()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_records.html">espn_mbb_event_competitor_records()</a></code>
+</td>
+<td>Team records as of the event: overall / home / away / conference / division breakdowns.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tierf-core-v2-expansion--typed-detail-companions-3-1-0"><em>Tier 2F core-v2 expansion — typed-detail companions</em><a class="anchor" aria-label="anchor" href="#tierf-core-v2-expansion--typed-detail-companions-3-1-0"></a></h5>
+<p>5 new resource families completing index/detail pairs for existing wrappers. NBA-only or 3-league coverage where the underlying ESPN endpoint isn’t symmetric:</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_event_official_detail.html">espn_nba_event_official_detail()</a></code> / <code><a href="../reference/espn_mbb_event_official_detail.html">espn_mbb_event_official_detail()</a></code>
+</td>
+<td>Per-official details (name, position, order) for one event. <strong>Note</strong>: the URL segment is the <em>crew order</em> (1-indexed) not the ESPN stable official_id — the wrapper takes <code>order =</code> to match <code>event_officials()$order</code>.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_team_record_detail.html">espn_nba_team_record_detail()</a></code> / <code><a href="../reference/espn_mbb_team_record_detail.html">espn_mbb_team_record_detail()</a></code>
+</td>
+<td>Per-record stat array in long format. Use <code>team_record()</code> to enumerate <code>record_id</code> values (overall / home / away / conference / per-opponent). Returns 21 rows × 15 cols for one NBA record.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_coach_record.html">espn_nba_coach_record()</a></code> / <code><a href="../reference/espn_mbb_coach_record.html">espn_mbb_coach_record()</a></code> / <code>espn_wbb_coach_record()</code>
+</td>
+<td>Coach career record by type in long format. Types: 0 = Total, 1 = Pre Season, 2 = Regular Season, 3 = Post Season.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_tournament_season.html">espn_nba_tournament_season()</a></code> / <code><a href="../reference/espn_mbb_tournament_season.html">espn_mbb_tournament_season()</a></code>
+</td>
+<td>Single tournament-year detail (id, displayName, numberOfRounds, bracketology <code>$ref</code>).</td>
+</tr><tr><td><code><a href="../reference/espn_nba_draft_athlete_detail.html">espn_nba_draft_athlete_detail()</a></code></td>
+<td>Rich single-row drafted-player record: height/weight, position, pick (overall/round/team), athlete <code>$ref</code>.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiere2-core-v2-expansion--team-season-stats--quick-lookups-3-1-0"><em>Tier 2E.2 core-v2 expansion — team-season stats + quick lookups</em><a class="anchor" aria-label="anchor" href="#tiere2-core-v2-expansion--team-season-stats--quick-lookups-3-1-0"></a></h5>
+<p>3 new resource families across NBA + MBB (5 new exports — season_draft is NBA-only). Surfaces the full team-season stat sheet (with league rank per stat), a quick-lookup wrapper for a single team’s final score in one event, and the draft-year top-level metadata.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_team_season_statistics.html">espn_nba_team_season_statistics()</a></code> / <code><a href="../reference/espn_mbb_team_season_statistics.html">espn_mbb_team_season_statistics()</a></code>
+</td>
+<td>
+<strong>Full team-season-type stat sheet in long format</strong> (one row per category × stat). Each row carries <code>rank</code> + <code>rank_display_value</code> for league ranking per stat. Smoke-tested: 109 rows × 13 cols for one NBA team.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_score.html">espn_nba_event_competitor_score()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_score.html">espn_mbb_event_competitor_score()</a></code>
+</td>
+<td>Single-row final score for one team in one event: <code>value</code>, <code>display_value</code>, <code>winner</code> flag, source metadata.</td>
+</tr><tr><td><code><a href="../reference/espn_nba_season_draft.html">espn_nba_season_draft()</a></code></td>
+<td>Draft-year top-level metadata: <code>year</code>, <code>number_of_rounds</code>, <code>display_name</code>, plus sub-refs to athletes/rounds/status.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tiere1-core-v2-expansion--event-scoped-player--play-deep-dives-3-1-0"><em>Tier 2E.1 core-v2 expansion — event-scoped player + play deep dives</em><a class="anchor" aria-label="anchor" href="#tiere1-core-v2-expansion--event-scoped-player--play-deep-dives-3-1-0"></a></h5>
+<p>4 new resource families covering per-game player stats, starter/DNP metadata, single-play detail, and on-court personnel (8 new public functions per package).</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_event_player_box.html">espn_nba_event_player_box()</a></code> / <code><a href="../reference/espn_mbb_event_player_box.html">espn_mbb_event_player_box()</a></code>
+</td>
+<td>
+<strong>Per-game box score for one athlete</strong> in long format (one row per category × stat). Same shape as <code>event_competitor_statistics()</code> but scoped to a single athlete-in-event. Smoke-tested: 99 rows × 12 cols for one NBA athlete.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_competitor_roster_entry.html">espn_nba_event_competitor_roster_entry()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_roster_entry.html">espn_mbb_event_competitor_roster_entry()</a></code>
+</td>
+<td>Per-athlete game-day roster row: <code>starter</code> flag, <code>did_not_play</code> + <code>reason</code>, <code>ejected</code>, <code>period</code> of entry, <code>for_player_id</code> if a substitution.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_play.html">espn_nba_event_play()</a></code> / <code><a href="../reference/espn_mbb_event_play.html">espn_mbb_event_play()</a></code>
+</td>
+<td>Rich single-play detail: sequence, period, clock, type, text, scoring/shooting flags, score, team <code>$ref</code>, shot coordinates.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_event_play_personnel.html">espn_nba_event_play_personnel()</a></code> / <code><a href="../reference/espn_mbb_event_play_personnel.html">espn_mbb_event_play_personnel()</a></code>
+</td>
+<td>Players on court at a specific play in long format. Coverage is sparse — many plays return zero rows; wrapper returns a typed empty tibble.</td>
+</tr></tbody></table></div>
+<div class="section level5">
+<h5 id="tierd-core-v2-expansion--position-dictionary-3-1-0"><em>Tier 2D core-v2 expansion — position dictionary</em><a class="anchor" aria-label="anchor" href="#tierd-core-v2-expansion--position-dictionary-3-1-0"></a></h5>
+<p>2 new resource families for the league-specific position dictionary (4 new public functions). Position ids are <strong>not</strong> shared across the basketball family — id <code>1</code> resolves to <code>Point Guard</code> in NBA and <code>Center</code> in MBB. These wrappers make the dictionary explicit so users can disambiguate position <code>$ref</code> URLs in athlete records.</p>
+<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td>
+<code><a href="../reference/espn_nba_positions.html">espn_nba_positions()</a></code> / <code><a href="../reference/espn_mbb_positions.html">espn_mbb_positions()</a></code>
+</td>
+<td>League position dictionary index. One row per position with id + canonical <code>$ref</code>.</td>
+</tr><tr><td>
+<code><a href="../reference/espn_nba_position.html">espn_nba_position()</a></code> / <code><a href="../reference/espn_mbb_position.html">espn_mbb_position()</a></code>
+</td>
+<td>Single-position detail: id, name, displayName, abbreviation, leaf flag, parent <code>$ref</code>.</td>
+</tr></tbody></table></div>
 </div>
 <div class="section level4">
 <h4 id="behavior-changes-to-existing-functions-3-1-0"><strong>Behavior changes to existing functions</strong><a class="anchor" aria-label="anchor" href="#behavior-changes-to-existing-functions-3-1-0"></a></h4>

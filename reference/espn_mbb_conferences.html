@@ -117,11 +117,23 @@
 <code><a href="espn_mbb_betting.html">espn_mbb_betting()</a></code>,
 <code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
 <code><a href="espn_mbb_coach.html">espn_mbb_coach()</a></code>,
+<code><a href="espn_mbb_coach_record.html">espn_mbb_coach_record()</a></code>,
 <code><a href="espn_mbb_coach_season.html">espn_mbb_coach_season()</a></code>,
 <code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
 <code><a href="espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code>,
+<code><a href="espn_mbb_event_competitor_leaders.html">espn_mbb_event_competitor_leaders()</a></code>,
+<code><a href="espn_mbb_event_competitor_linescores.html">espn_mbb_event_competitor_linescores()</a></code>,
+<code><a href="espn_mbb_event_competitor_records.html">espn_mbb_event_competitor_records()</a></code>,
+<code><a href="espn_mbb_event_competitor_roster.html">espn_mbb_event_competitor_roster()</a></code>,
+<code><a href="espn_mbb_event_competitor_roster_entry.html">espn_mbb_event_competitor_roster_entry()</a></code>,
+<code><a href="espn_mbb_event_competitor_score.html">espn_mbb_event_competitor_score()</a></code>,
+<code><a href="espn_mbb_event_competitor_statistics.html">espn_mbb_event_competitor_statistics()</a></code>,
 <code><a href="espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code>,
+<code><a href="espn_mbb_event_official_detail.html">espn_mbb_event_official_detail()</a></code>,
 <code><a href="espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code>,
+<code><a href="espn_mbb_event_play.html">espn_mbb_event_play()</a></code>,
+<code><a href="espn_mbb_event_play_personnel.html">espn_mbb_event_play_personnel()</a></code>,
+<code><a href="espn_mbb_event_player_box.html">espn_mbb_event_player_box()</a></code>,
 <code><a href="espn_mbb_event_powerindex.html">espn_mbb_event_powerindex()</a></code>,
 <code><a href="espn_mbb_event_predictor.html">espn_mbb_event_predictor()</a></code>,
 <code><a href="espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code>,
@@ -138,6 +150,8 @@
 <code><a href="espn_mbb_pbp.html">espn_mbb_pbp()</a></code>,
 <code><a href="espn_mbb_player_box.html">espn_mbb_player_box()</a></code>,
 <code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
+<code><a href="espn_mbb_position.html">espn_mbb_position()</a></code>,
+<code><a href="espn_mbb_positions.html">espn_mbb_positions()</a></code>,
 <code><a href="espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>,
 <code><a href="espn_mbb_rankings.html">espn_mbb_rankings()</a></code>,
 <code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
@@ -164,13 +178,16 @@
 <code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
 <code><a href="espn_mbb_team_odds_records.html">espn_mbb_team_odds_records()</a></code>,
 <code><a href="espn_mbb_team_record.html">espn_mbb_team_record()</a></code>,
+<code><a href="espn_mbb_team_record_detail.html">espn_mbb_team_record_detail()</a></code>,
 <code><a href="espn_mbb_team_roster.html">espn_mbb_team_roster()</a></code>,
 <code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
 <code><a href="espn_mbb_team_season_profile.html">espn_mbb_team_season_profile()</a></code>,
 <code><a href="espn_mbb_team_season_roster.html">espn_mbb_team_season_roster()</a></code>,
+<code><a href="espn_mbb_team_season_statistics.html">espn_mbb_team_season_statistics()</a></code>,
 <code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
 <code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
 <code><a href="espn_mbb_tournament.html">espn_mbb_tournament()</a></code>,
+<code><a href="espn_mbb_tournament_season.html">espn_mbb_tournament_season()</a></code>,
 <code><a href="espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>,
 <code><a href="espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>,
 <code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
@@ -188,21 +205,21 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_conferences</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Conferences Information from ESPN.com ─────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:33:02 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 31 × 7</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 17:29:28 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    conference_uid group_id conference_name conference_short_name conference_logo</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> s:40~l:41~g:3         3 Atlantic 10 Co… A-10                  https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> s:40~l:41~g:2         2 Atlantic Coast… ACC                   https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> s:40~l:41~g:1         1 America East C… Am. East              https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> s:40~l:41~g:62       62 American Confe… American              <span style="color: #BB0000;">NA</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> s:40~l:41~g:46       46 ASUN Conference ASUN                  <span style="color: #BB0000;">NA</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> s:40~l:41~g:46       46 Atlantic Sun C… Atlantic Sun          https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> s:40~l:41~g:8         8 Big 12 Confere… Big 12                https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> s:40~l:41~g:4         4 Big East Confe… Big East              https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> s:40~l:41~g:5         5 Big Sky Confer… Big Sky               https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> s:40~l:41~g:6         6 Big South Conf… Big South             https://a.espn…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> s:40~l:41~g:7         7 Big Ten Confer… Big Ten               https://a.espn…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: parent_group_id &lt;int&gt;, conference_id &lt;int&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
