@@ -77,6 +77,7 @@ Other ESPN NBA Functions:
 [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md),
 [`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md),
 [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog_v2.md),
 [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
 [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
 [`espn_nba_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_seasons.md),
@@ -92,7 +93,10 @@ Other ESPN NBA Functions:
 [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
 [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
 [`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.md),
 [`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md),
+[`espn_nba_draft_rounds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md),
+[`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md),
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
@@ -159,7 +163,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_athlete_overview(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 00:23:50.056996: Failed to retrieve ESPN nba athlete overview for athlete_id=3149391, season=2024
+#> ✖ 2026-05-19 01:21:21.687058: Failed to retrieve ESPN nba athlete overview for athlete_id=3149391, season=2024
 #> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
 #> ✖ Error: The API returned an error
 #> list()

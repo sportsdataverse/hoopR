@@ -37,6 +37,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -116,7 +117,7 @@ Saiem Gilani
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_mbb_athlete_seasons(athlete_id = 1966)
-#> ✖ 2026-05-19 00:23:06.30559: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=1966
+#> ✖ 2026-05-19 01:20:39.203297: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=1966
 #> ✖ Args: league = "mens-college-basketball", athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> NULL

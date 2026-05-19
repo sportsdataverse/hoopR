@@ -39,6 +39,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -118,7 +119,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournament(tournament_id = 22)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Detail ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:44 UTC
+#> ℹ Data updated: 2026-05-19 01:21:16 UTC
 #> # A tibble: 1 × 4
 #>   tournament_id display_name                 seasons_ref                  league
 #>   <chr>         <chr>                        <chr>                        <chr> 

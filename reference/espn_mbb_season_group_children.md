@@ -56,6 +56,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -135,7 +136,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group_children(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Children Index ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:27 UTC
+#> ℹ Data updated: 2026-05-19 01:21:01 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>,
 #> #   parent_group_id <chr>, child_group_id <chr>, ref <chr>

@@ -64,6 +64,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -142,7 +143,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_odds_records(team_id = 1, season = 2026)
-#> ✖ 2026-05-19 00:23:38.111997: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=1, season=2026
+#> ✖ 2026-05-19 01:21:10.960644: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=1, season=2026
 #> ✖ Args: league = "mens-college-basketball", team_id = 1, season = 2026, season_type = 0L
 #> ✖ Error: The API returned an error
 #> NULL

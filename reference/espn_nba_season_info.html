@@ -128,6 +128,7 @@ auto-resolved – use targeted endpoint functions for details.</p>
 <code><a href="espn_nba_athlete_contract.html">espn_nba_athlete_contract()</a></code>,
 <code><a href="espn_nba_athlete_contracts.html">espn_nba_athlete_contracts()</a></code>,
 <code><a href="espn_nba_athlete_eventlog.html">espn_nba_athlete_eventlog()</a></code>,
+<code><a href="espn_nba_athlete_eventlog_v2.html">espn_nba_athlete_eventlog_v2()</a></code>,
 <code><a href="espn_nba_athlete_gamelog.html">espn_nba_athlete_gamelog()</a></code>,
 <code><a href="espn_nba_athlete_info.html">espn_nba_athlete_info()</a></code>,
 <code><a href="espn_nba_athlete_overview.html">espn_nba_athlete_overview()</a></code>,
@@ -144,7 +145,10 @@ auto-resolved – use targeted endpoint functions for details.</p>
 <code><a href="espn_nba_coaches.html">espn_nba_coaches()</a></code>,
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
+<code><a href="espn_nba_draft_athletes.html">espn_nba_draft_athletes()</a></code>,
 <code><a href="espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code>,
+<code><a href="espn_nba_draft_rounds.html">espn_nba_draft_rounds()</a></code>,
+<code><a href="espn_nba_draft_status.html">espn_nba_draft_status()</a></code>,
 <code><a href="espn_nba_event_broadcasts.html">espn_nba_event_broadcasts()</a></code>,
 <code><a href="espn_nba_event_odds.html">espn_nba_event_odds()</a></code>,
 <code><a href="espn_nba_event_officials.html">espn_nba_event_officials()</a></code>,
@@ -212,7 +216,7 @@ auto-resolved – use targeted endpoint functions for details.</p>
 <span class="r-in"><span>  <span class="fu">espn_nba_season_info</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Info</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    year start_date        end_date          display_name type_id type_name     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
@@ -220,7 +224,7 @@ auto-resolved – use targeted endpoint functions for details.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Types</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Types from ESPN.com ────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   count ref                                                                     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                   </span>
@@ -228,22 +232,22 @@ auto-resolved – use targeted endpoint functions for details.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Athletes</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Coaches</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Teams</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Awards</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 00:24:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 01:21:44 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   count ref                                                                     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                   </span>

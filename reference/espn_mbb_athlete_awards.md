@@ -40,6 +40,7 @@ data, in which case an empty tibble with canonical columns is returned.
 Other ESPN MBB Functions:
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -120,7 +121,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_athlete_awards(athlete_id = "4433985")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Awards from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:03 UTC
+#> ℹ Data updated: 2026-05-19 01:20:36 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: season <chr>, award_id <chr>, name <chr>, description <chr>,
 #> #   date <chr>, type <chr>

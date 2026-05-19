@@ -93,6 +93,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
 [`espn_mbb_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_seasons.md),
@@ -171,7 +172,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_athlete_info(athlete_id = "4433985")
-#> ✖ 2026-05-19 00:23:05.723062: Failed to retrieve ESPN mens-college-basketball athlete info for athlete_id=4433985
+#> ✖ 2026-05-19 01:20:38.592871: Failed to retrieve ESPN mens-college-basketball athlete info for athlete_id=4433985
 #> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985"
 #> ✖ Error: The API returned an error
 #> list()

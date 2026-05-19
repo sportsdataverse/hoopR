@@ -234,6 +234,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN Women's College Basketball Athlete Eventlog**
 
+- [`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md)
+  :
+
+  **Get ESPN MBB Athlete Per-Season Event Log (core-v2)**
+
 - [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md)
   :
 
@@ -609,6 +614,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Athlete Eventlog**
 
+- [`espn_nba_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog_v2.md)
+  :
+
+  **Get ESPN NBA Athlete Per-Season Event Log (core-v2)**
+
 - [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md)
   :
 
@@ -689,10 +699,25 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get ESPN NBA Draft Picks**
 
+- [`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.md)
+  :
+
+  **Get ESPN NBA Draft Athletes Index**
+
 - [`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md)
   :
 
   **Get ESPN NBA Draft Pick Detail**
+
+- [`espn_nba_draft_rounds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md)
+  :
+
+  **Get ESPN NBA Draft Rounds Summary**
+
+- [`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md)
+  :
+
+  **Get ESPN NBA Draft Status**
 
 - [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md)
   :

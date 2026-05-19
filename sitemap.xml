@@ -32,6 +32,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.html</loc></url>
@@ -106,6 +107,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog_v2.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.html</loc></url>
@@ -122,7 +124,10 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_draft.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.html</loc></url>

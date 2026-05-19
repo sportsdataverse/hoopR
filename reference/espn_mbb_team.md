@@ -94,6 +94,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -174,7 +175,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "2509", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:35 UTC
+#> ℹ Data updated: 2026-05-19 01:21:08 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -184,7 +185,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:35 UTC
+#> ℹ Data updated: 2026-05-19 01:21:08 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -194,7 +195,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:35 UTC
+#> ℹ Data updated: 2026-05-19 01:21:08 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                    short_name
 #>   <chr>     <chr>             <chr>                                   <chr>     
@@ -202,7 +203,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-05-19 00:23:35 UTC
+#> ℹ Data updated: 2026-05-19 01:21:08 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           

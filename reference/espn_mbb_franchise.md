@@ -49,6 +49,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -128,7 +129,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchise(franchise_id = 150)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchise from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:13 UTC
+#> ℹ Data updated: 2026-05-19 01:20:47 UTC
 #> # A tibble: 1 × 16
 #>   id    uid             slug   location name  nickname abbreviation display_name
 #>   <chr> <chr>           <chr>  <chr>    <chr> <chr>    <chr>        <chr>       

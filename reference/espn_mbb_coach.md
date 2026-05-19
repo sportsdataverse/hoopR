@@ -31,6 +31,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -109,7 +110,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_coach(coach_id = 269)
-#> ✖ 2026-05-19 00:23:11.329089: Failed to retrieve ESPN mens-college-basketball coach 269
+#> ✖ 2026-05-19 01:20:44.548457: Failed to retrieve ESPN mens-college-basketball coach 269
 #> ✖ Args: league = "mens-college-basketball", coach_id = 269
 #> ✖ Error: The API returned an error
 #> NULL

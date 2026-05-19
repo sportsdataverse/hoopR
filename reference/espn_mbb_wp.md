@@ -62,6 +62,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md),
 [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md),
 [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md),
+[`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md),
 [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md),
 [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md),
 [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md),
@@ -137,7 +138,7 @@ Other ESPN MBB Functions:
 # \donttest{
 espn_mbb_wp(game_id = 401256760)
 #> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:23:47 UTC
+#> ℹ Data updated: 2026-05-19 01:21:18 UTC
 #> # A tibble: 352 × 9
 #>    game_id   play_id      period time_left period_seconds_left game_seconds_left
 #>  * <chr>     <chr>         <dbl> <chr>                   <dbl>             <dbl>

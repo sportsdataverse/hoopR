@@ -53,6 +53,7 @@ Other ESPN NBA Functions:
 [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md),
 [`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md),
 [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md),
+[`espn_nba_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog_v2.md),
 [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md),
 [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md),
 [`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md),
@@ -69,7 +70,10 @@ Other ESPN NBA Functions:
 [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md),
 [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md),
 [`espn_nba_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.md),
 [`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md),
+[`espn_nba_draft_rounds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md),
+[`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md),
 [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md),
 [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md),
 [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md),
@@ -136,7 +140,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_depthchart(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Depth Chart ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 00:24:19 UTC
+#> ℹ Data updated: 2026-05-19 01:21:51 UTC
 #> # A tibble: 30 × 10
 #>    league team_id season depthchart_id depthchart_name position  rank athlete_id
 #>    <chr>  <chr>    <int> <chr>         <chr>           <chr>    <int> <chr>     
