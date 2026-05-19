@@ -130,10 +130,19 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_situation(event_id = 401812680)
-#> ✖ 2026-05-19 17:29:34.214771: Failed to retrieve ESPN mens-college-basketball event situation for event_id=401812680
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_situation(event_id = 401256760)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Situation ───────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:47 UTC
+#> # A tibble: 1 × 15
+#>   league                  event_id  home_timeouts_current home_timeouts_remain…¹
+#>   <chr>                   <chr>                     <int>                  <int>
+#> 1 mens-college-basketball 401256760                     0                      0
+#> # ℹ abbreviated name: ¹​home_timeouts_remaining
+#> # ℹ 11 more variables: away_timeouts_current <int>,
+#> #   away_timeouts_remaining <int>, home_team_fouls <int>,
+#> #   home_team_fouls_current <int>, home_fouls_to_give <int>,
+#> #   home_bonus_state <chr>, away_team_fouls <int>,
+#> #   away_team_fouls_current <int>, away_fouls_to_give <int>,
+#> #   away_bonus_state <chr>, last_play_ref <chr>
 # }
 ```

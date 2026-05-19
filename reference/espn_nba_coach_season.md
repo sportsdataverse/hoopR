@@ -165,10 +165,14 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_coach_season(coach_id = 6385, season = 2025)
-#> ✖ 2026-05-19 17:30:11.055829: Failed to retrieve ESPN nba coach-in-season detail for coach_id=6385, season=2025
-#> ✖ Args: league = "nba", coach_id = 6385, season = 2025
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_coach_season(coach_id = 52120, season = 2025)
+#> ── ESPN NBA Coach-in-Season Detail ────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:33 UTC
+#> # A tibble: 1 × 13
+#>   league season coach_id uid       first_name last_name date_of_birth birth_city
+#>   <chr>   <int> <chr>    <chr>     <chr>      <chr>     <chr>         <chr>     
+#> 1 nba      2025 52120    s:40~l:4… Quin       Snyder    NA            NA        
+#> # ℹ 5 more variables: birth_state <chr>, n_records <int>, person_ref <chr>,
+#> #   college_ref <chr>, team_ref <chr>
 # }
 ```

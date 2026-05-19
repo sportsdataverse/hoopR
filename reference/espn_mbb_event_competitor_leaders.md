@@ -133,10 +133,24 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_competitor_leaders(event_id = 401812680, team_id = 150)
-#> ✖ 2026-05-19 17:29:29.399662: Failed to retrieve ESPN mens-college-basketball competitor leaders for event_id=401812680, team_id=150
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680, team_id = 150
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_competitor_leaders(event_id = 401256760, team_id = 52)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Leaders ────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:41 UTC
+#> # A tibble: 46 × 11
+#>    league  event_id team_id category_name category_display category_abbrev  rank
+#>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>           <int>
+#>  1 mens-c… 4012567… 52      points        Points           Pts                 1
+#>  2 mens-c… 4012567… 52      points        Points           Pts                 2
+#>  3 mens-c… 4012567… 52      points        Points           Pts                 3
+#>  4 mens-c… 4012567… 52      points        Points           Pts                 4
+#>  5 mens-c… 4012567… 52      points        Points           Pts                 5
+#>  6 mens-c… 4012567… 52      points        Points           Pts                 6
+#>  7 mens-c… 4012567… 52      points        Points           Pts                 7
+#>  8 mens-c… 4012567… 52      points        Points           Pts                 8
+#>  9 mens-c… 4012567… 52      points        Points           Pts                 9
+#> 10 mens-c… 4012567… 52      points        Points           Pts                10
+#> # ℹ 36 more rows
+#> # ℹ 4 more variables: athlete_id <chr>, display_value <chr>, value <dbl>,
+#> #   athlete_ref <chr>
 # }
 ```

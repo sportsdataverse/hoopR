@@ -132,10 +132,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_powerindex(event_id = 401812680)
-#> ✖ 2026-05-19 17:29:33.066281: Failed to retrieve ESPN mens-college-basketball event powerindex for event_id=401812680
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_powerindex(event_id = 401256760)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Power Index ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:46 UTC
+#> # A tibble: 2 × 4
+#>   league                  event_id  team_id ref                                 
+#>   <chr>                   <chr>     <chr>   <chr>                               
+#> 1 mens-college-basketball 401256760 52      http://sports.core.api.espn.com/v2/…
+#> 2 mens-college-basketball 401256760 57      http://sports.core.api.espn.com/v2/…
 # }
 ```

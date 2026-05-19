@@ -123,33 +123,28 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-try(espn_mbb_team_current_roster(team_id = 52))
+try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:55 UTC
-#> # A tibble: 15 × 59
-#>    team_id team_uid       team_slug        team_location team_name team_nickname
-#>      <int> <chr>          <chr>            <chr>         <chr>     <chr>        
-#>  1      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  2      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  3      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  4      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  5      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  6      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  7      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  8      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#>  9      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 10      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 11      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 12      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 13      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 14      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> 15      52 s:40~l:41~t:52 florida-state-s… Florida State Seminoles Florida St   
-#> # ℹ 53 more variables: team_abbreviation <chr>, team_display_name <chr>,
+#> ℹ Data updated: 2026-05-19 19:26:12 UTC
+#> # A tibble: 25 × 66
+#>    team_id team_uid        team_slug       team_location team_name team_nickname
+#>      <int> <chr>           <chr>           <chr>         <chr>     <chr>        
+#>  1     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  2     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  3     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  4     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  5     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  6     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  7     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  8     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#>  9     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> 10     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> # ℹ 15 more rows
+#> # ℹ 60 more variables: team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_name <chr>, team_color <chr>, team_alternate_color <chr>,
-#> #   team_is_active <lgl>, standingSummary <chr>, logo <chr>, logo_dark <chr>,
-#> #   group_id <int>, parent_group_id <int>, group_is_conference <lgl>,
-#> #   conference_id <int>, athlete_id <int>, athlete_uid <chr>,
-#> #   athlete_guid <chr>, athlete_type <chr>, athlete_first_name <chr>,
-#> #   athlete_last_name <chr>, athlete_full_name <chr>, …
+#> #   team_is_active <lgl>, standingSummary <chr>, rank <int>, logo <chr>,
+#> #   logo_dark <chr>, group_id <int>, parent_group_id <int>,
+#> #   group_is_conference <lgl>, conference_id <int>, athlete_id <int>,
+#> #   athlete_uid <chr>, athlete_guid <chr>, athlete_type <chr>, …
 # }
 ```

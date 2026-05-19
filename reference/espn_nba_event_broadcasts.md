@@ -154,10 +154,12 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_broadcasts(event_id = "401736171")
-#> ✖ 2026-05-19 17:30:13.775224: Failed to retrieve ESPN nba event broadcasts for event_id=401736171
-#> ✖ Args: league = "nba", event_id = "401736171"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_event_broadcasts(event_id = "401283399")
+#> ── ESPN NBA Event Broadcasts (event_id=401283399) from ESPN.com ────────────────
+#> ℹ Data updated: 2026-05-19 19:26:36 UTC
+#> # A tibble: 0 × 10
+#> # ℹ 10 variables: event_id <chr>, broadcast_id <chr>, type_id <chr>,
+#> #   type_short_name <chr>, type_long_name <chr>, market_id <chr>,
+#> #   market_type <chr>, names <chr>, lang <chr>, region <chr>
 # }
 ```

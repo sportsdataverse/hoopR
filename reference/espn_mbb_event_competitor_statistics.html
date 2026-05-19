@@ -229,11 +229,24 @@ strings.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">espn_mbb_event_competitor_statistics</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401812680</span>, team_id <span class="op">=</span> <span class="fl">150</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-19 17:29:31.083505: Failed to retrieve ESPN mens-college-basketball competitor statistics for event_id=401812680, team_id=150</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", event_id = 401812680, team_id = 150</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-in"><span>  <span class="fu">espn_mbb_event_competitor_statistics</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401256760</span>, team_id <span class="op">=</span> <span class="fl">52</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Statistics ─────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:43 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 71 × 10</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    league  event_id team_id category_name category_display stat_name stat_abbrev</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> mens-c… 4012567… 52      defensive     Defensive        blocks    BLK        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> mens-c… 4012567… 52      defensive     Defensive        defensiv… DR         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> mens-c… 4012567… 52      defensive     Defensive        steals    STL        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> mens-c… 4012567… 52      defensive     Defensive        turnover… PTS OFF TO </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> mens-c… 4012567… 52      defensive     Defensive        avgDefen… DR         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> mens-c… 4012567… 52      defensive     Defensive        avgBlocks BLK        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> mens-c… 4012567… 52      defensive     Defensive        avgSteals STL        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> mens-c… 4012567… 52      general       General          largestL… LL         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> mens-c… 4012567… 52      general       General          disquali… DQ         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> mens-c… 4012567… 52      general       General          flagrant… FLAG       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 61 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: stat_display &lt;chr&gt;, value &lt;dbl&gt;, display_value &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

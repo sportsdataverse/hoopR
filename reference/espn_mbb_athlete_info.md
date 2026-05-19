@@ -192,10 +192,51 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_athlete_info(athlete_id = "4433985")
-#> ✖ 2026-05-19 17:29:22.00203: Failed to retrieve ESPN mens-college-basketball athlete info for athlete_id=4433985
-#> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985"
-#> ✖ Error: The API returned an error
-#> list()
+  espn_mbb_athlete_info(athlete_id = "4593919")
+#> $Bio
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Bio from ESPN.com ─────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 1 × 18
+#>   id      uid       guid  first_name last_name full_name display_name short_name
+#>   <chr>   <chr>     <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
+#> 1 4593919 s:40~l:4… 5ec0… Nicolas    Elame     Nicolas … Nicolas Ela… N. Elame  
+#> # ℹ 10 more variables: weight <dbl>, display_weight <chr>, height <dbl>,
+#> #   display_height <chr>, jersey <chr>, active <lgl>, headshot_href <chr>,
+#> #   birth_city <chr>, birth_state <chr>, birth_country <chr>
+#> 
+#> $Team
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Team from ESPN.com ────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 1 × 1
+#>   x_ref                                                                         
+#>   <chr>                                                                         
+#> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-bas…
+#> 
+#> $Position
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Position from ESPN.com ── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 1 × 5
+#>   id    name  display_name abbreviation leaf 
+#>   <chr> <chr> <chr>        <chr>        <lgl>
+#> 1 3     Guard Guard        G            FALSE
+#> 
+#> $Status
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Status from ESPN.com ──── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 1 × 4
+#>   id    name     type     abbreviation
+#>   <chr> <chr>    <chr>    <chr>       
+#> 1 2     Inactive inactive Inactive    
+#> 
+#> $College
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete College from ESPN.com ─── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Draft
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Draft from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:32 UTC
+#> # A tibble: 0 × 0
+#> 
 # }
 ```

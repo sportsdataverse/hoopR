@@ -232,13 +232,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-try(espn_mbb_team_stats(team_id = 52, year = 2020))
+try(espn_mbb_team_stats(team_id = 150, year = 2020))
 #> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:59 UTC
+#> ℹ Data updated: 2026-05-19 19:26:18 UTC
 #> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    
-#> 1      52 7215a749-b7bf-207… s:40~l:…     5993 florida-… Florida State Seminoles
+#> 1     150 c4430c6c-5998-47d… s:40~l:…     5847 duke-blu… Duke          Blue Dev…
 #> # ℹ 161 more variables: team_nickname <chr>, team_abbreviation <chr>,
 #> #   team_display_name <chr>, team_short_display_name <chr>, team_color <chr>,
 #> #   team_alternate_color <chr>, is_active <lgl>, is_all_star <lgl>,

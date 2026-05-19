@@ -144,10 +144,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_award(award_id = 33, season = 2024)
-#> ✖ 2026-05-19 17:29:23.945587: Failed to retrieve ESPN mens-college-basketball award 33 for season=2024
-#> ✖ Args: league = "mens-college-basketball", season = 2024, award_id = 33
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_award(award_id = 344, season = 2024)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Award Detail from ESPN.com ──────────────
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 1 × 9
+#>   league        season award_id name  description athlete_id team_id athlete_ref
+#>   <chr>          <int> <chr>    <chr> <chr>       <chr>      <chr>   <chr>      
+#> 1 mens-college…   2024 344      Karl… Best power… 4397237    21      http://spo…
+#> # ℹ 1 more variable: team_ref <chr>
 # }
 ```

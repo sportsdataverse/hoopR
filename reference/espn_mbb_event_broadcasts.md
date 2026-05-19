@@ -143,10 +143,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_broadcasts(event_id = "401735229")
-#> ✖ 2026-05-19 17:29:29.110223: Failed to retrieve ESPN mens-college-basketball event broadcasts for event_id=401735229
-#> ✖ Args: league = "mens-college-basketball", event_id = "401735229"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_broadcasts(event_id = "401256760")
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Broadcasts (event_id=401256760) from ESPN.
+#> ℹ Data updated: 2026-05-19 19:25:41 UTC
+#> # A tibble: 1 × 10
+#>   event_id  broadcast_id type_id type_short_name type_long_name market_id
+#>   <chr>     <chr>        <chr>   <chr>           <chr>          <chr>    
+#> 1 401256760 NA           1       TV              Television     1        
+#> # ℹ 4 more variables: market_type <chr>, names <chr>, lang <chr>, region <chr>
 # }
 ```

@@ -229,11 +229,15 @@ person). ESPN's coverage of this endpoint is sparse; many
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">espn_mbb_coach_season</span><span class="op">(</span>coach_id <span class="op">=</span> <span class="fl">6385</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-19 17:29:28.107337: Failed to retrieve ESPN mens-college-basketball coach-in-season detail for coach_id=6385, season=2025</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", coach_id = 6385, season = 2025</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-in"><span>  <span class="fu">espn_mbb_coach_season</span><span class="op">(</span>coach_id <span class="op">=</span> <span class="fl">32116</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Coach-in-Season Detail ────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:40 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   league     season coach_id uid   first_name last_name date_of_birth birth_city</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> mens-coll…   <span style="text-decoration: underline;">2</span>025 32116    s:40… Steven     Pearl     1987-09-14T0… Knoxville </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: birth_state &lt;chr&gt;, n_records &lt;int&gt;, person_ref &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   college_ref &lt;chr&gt;, team_ref &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

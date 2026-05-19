@@ -157,24 +157,10 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_event_player_box(event_id = 401283399, team_id = 29,
-                               athlete_id = 4066392)
-#> ── ESPN NBA Event Player Box ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:17 UTC
-#> # A tibble: 99 × 12
-#>    league event_id  team_id athlete_id stat_type category_name category_display
-#>    <chr>  <chr>     <chr>   <chr>          <int> <chr>         <chr>           
-#>  1 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  2 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  3 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  4 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  5 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  6 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  7 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  8 nba    401283399 29      4066392            0 defensive     Defensive       
-#>  9 nba    401283399 29      4066392            0 defensive     Defensive       
-#> 10 nba    401283399 29      4066392            0 general       General         
-#> # ℹ 89 more rows
-#> # ℹ 5 more variables: stat_name <chr>, stat_abbrev <chr>, stat_display <chr>,
-#> #   value <dbl>, display_value <chr>
+                               athlete_id = 1966)
+#> ✖ 2026-05-19 19:26:40.62795: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
+#> ✖ Args: league = "nba", event_id = 401283399, team_id = 29, athlete_id = 1966, stat_type = 0L
+#> ✖ Error: The API returned an error
+#> NULL
 # }
 ```

@@ -136,10 +136,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_official_detail(event_id = 401283399, order = 1)
-#> ✖ 2026-05-19 17:29:31.65612: Failed to retrieve ESPN mens-college-basketball event official detail for event_id=401283399, order=1
-#> ✖ Args: league = "mens-college-basketball", event_id = 401283399, order = 1
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_official_detail(event_id = 401256760, order = 1)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Official Detail ─────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:44 UTC
+#> # A tibble: 1 × 10
+#>   league        event_id official_id first_name last_name full_name display_name
+#>   <chr>         <chr>    <chr>       <chr>      <chr>     <chr>     <chr>       
+#> 1 mens-college… 4012567… 70901       Doug       Shows     Doug Sho… Doug Shows  
+#> # ℹ 3 more variables: position_id <chr>, position_name <chr>, order <int>
 # }
 ```

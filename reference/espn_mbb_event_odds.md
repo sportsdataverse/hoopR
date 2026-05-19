@@ -150,10 +150,23 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_odds(event_id = "401735229")
-#> ✖ 2026-05-19 17:29:31.366849: Failed to retrieve ESPN mens-college-basketball event odds for event_id=401735229
-#> ✖ Args: league = "mens-college-basketball", event_id = "401735229"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_odds(event_id = "401256760")
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Odds (event_id=401256760) from ESPN.com ──
+#> ℹ Data updated: 2026-05-19 19:25:44 UTC
+#> # A tibble: 9 × 12
+#>   event_id  provider_id provider_name  details over_under spread home_money_line
+#>   <chr>     <chr>       <chr>          <chr>        <dbl>  <dbl>           <int>
+#> 1 401256760 38          Caesars (New … FSU -1…       136.   -1.5              NA
+#> 2 401256760 45          Caesars Sport… FSU -1…       134.   -1.5              NA
+#> 3 401256760 43          Caesars Sport… FSU -1…       136.   -1.5              NA
+#> 4 401256760 36          Unibet         FSU -1…       136.   -1.5              NA
+#> 5 401256760 25          Westgate       FSU -1…       135    -1.5              NA
+#> 6 401256760 1001        accuscore      FSU -1…       135    -1.5              NA
+#> 7 401256760 1004        consensus      FSU -1…       136.   -1.5              NA
+#> 8 401256760 1003        numberfire     FSU -1…       134.   -1.5              NA
+#> 9 401256760 1002        teamrankings   FSU -1        134.   -1                NA
+#> # ℹ 5 more variables: away_money_line <int>, home_team_odds_open <dbl>,
+#> #   home_team_odds_close <dbl>, away_team_odds_open <dbl>,
+#> #   away_team_odds_close <dbl>
 # }
 ```

@@ -152,10 +152,15 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_officials(event_id = "401736171")
-#> ✖ 2026-05-19 17:30:16.849306: Failed to retrieve ESPN nba event officials for event_id=401736171
-#> ✖ Args: league = "nba", event_id = "401736171"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_event_officials(event_id = "401283399")
+#> ── ESPN NBA Event Officials (event_id=401283399) from ESPN.com ── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:39 UTC
+#> # A tibble: 3 × 8
+#>   event_id  official_id full_name   display_name position_id position_name
+#>   <chr>     <chr>       <chr>       <chr>        <chr>       <chr>        
+#> 1 401283399 6856        Eric Lewis  Eric Lewis   40          Referee      
+#> 2 401283399 2612372     Jacyn Goble Jacyn Goble  40          Referee      
+#> 3 401283399 4394825     Evan Scott  Evan Scott   40          Referee      
+#> # ℹ 2 more variables: position_type <chr>, order <int>
 # }
 ```

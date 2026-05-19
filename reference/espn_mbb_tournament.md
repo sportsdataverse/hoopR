@@ -138,12 +138,12 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_tournament(tournament_id = 22)
+  espn_mbb_tournament(tournament_id = 3)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Detail ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:01 UTC
+#> ℹ Data updated: 2026-05-19 19:26:21 UTC
 #> # A tibble: 1 × 4
-#>   tournament_id display_name                 seasons_ref                  league
-#>   <chr>         <chr>                        <chr>                        <chr> 
-#> 1 22            NCAA Mens Final 4 Tournament http://sports.core.api.espn… mens-…
+#>   tournament_id display_name                   seasons_ref                league
+#>   <chr>         <chr>                          <chr>                      <chr> 
+#> 1 3             Atlantic Coast Conf Tournament http://sports.core.api.es… mens-…
 # }
 ```

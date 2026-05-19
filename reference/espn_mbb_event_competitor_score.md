@@ -135,10 +135,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_competitor_score(event_id = 401283399, team_id = 29)
-#> ✖ 2026-05-19 17:29:30.795992: Failed to retrieve ESPN mens-college-basketball competitor score for event_id=401283399, team_id=29
-#> ✖ Args: league = "mens-college-basketball", event_id = 401283399, team_id = 29
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_competitor_score(event_id = 401256760, team_id = 52)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Competitor Score ────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:43 UTC
+#> # A tibble: 1 × 8
+#>   league                  event_id  team_id value display_value winner source_id
+#>   <chr>                   <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    
+#> 1 mens-college-basketball 401256760 52         83 83            TRUE   1        
+#> # ℹ 1 more variable: source_description <chr>
 # }
 ```

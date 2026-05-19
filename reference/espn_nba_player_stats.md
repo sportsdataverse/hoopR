@@ -337,19 +337,19 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-try(espn_nba_player_stats(athlete_id = 4433134, year = 2022))
+try(espn_nba_player_stats(athlete_id = 1966, year = 2022))
 #> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:27 UTC
-#> # A tibble: 1 × 271
+#> ℹ Data updated: 2026-05-19 19:26:51 UTC
+#> # A tibble: 1 × 272
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
-#> 1    4433134 s:40~l:46~a:… dd0bb1da-07… basketball   4.43e6 Scottie    Barnes   
-#> # ℹ 264 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
+#> 1       1966 s:40~l:46~a:… 1f6592b3-ff… basketball   2.13e6 LeBron     James    
+#> # ℹ 265 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
 #> #   weight <dbl>, display_weight <chr>, height <dbl>, display_height <chr>,
-#> #   age <int>, date_of_birth <chr>, slug <chr>, headshot_href <chr>,
-#> #   headshot_alt <chr>, jersey <chr>, position_id <int>, position_name <chr>,
-#> #   position_display_name <chr>, position_abbreviation <chr>,
-#> #   position_leaf <lgl>, linked <lgl>, years <int>, active <lgl>,
-#> #   contract_x_ref <chr>, contract_bird_status <int>, contract_active <lgl>, …
+#> #   age <int>, date_of_birth <chr>, debut_year <int>, slug <chr>,
+#> #   headshot_href <chr>, headshot_alt <chr>, jersey <chr>, position_id <int>,
+#> #   position_name <chr>, position_display_name <chr>,
+#> #   position_abbreviation <chr>, position_leaf <lgl>, linked <lgl>,
+#> #   years <int>, active <lgl>, contract_x_ref <chr>, …
 # }
 ```

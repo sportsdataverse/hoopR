@@ -159,10 +159,24 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_probabilities(event_id = "401736171", limit = 50)
-#> ✖ 2026-05-19 17:30:18.657938: Failed to retrieve ESPN nba event probabilities for event_id=401736171
-#> ✖ Args: league = "nba", event_id = "401736171", limit = 50
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_event_probabilities(event_id = "401283399", limit = 50)
+#> ── ESPN NBA Event Probabilities (event_id=401283399) from ESPN.com ─────────────
+#> ℹ Data updated: 2026-05-19 19:26:41 UTC
+#> # A tibble: 50 × 10
+#>    event_id  sequence_number play_id period clock home_win_percentage
+#>    <chr>     <chr>           <chr>    <int> <chr>               <dbl>
+#>  1 401283399 4               NA          NA NA                  0.615
+#>  2 401283399 7               NA          NA NA                  0.6  
+#>  3 401283399 8               NA          NA NA                  0.595
+#>  4 401283399 9               NA          NA NA                  0.594
+#>  5 401283399 11              NA          NA NA                  0.61 
+#>  6 401283399 12              NA          NA NA                  0.615
+#>  7 401283399 13              NA          NA NA                  0.599
+#>  8 401283399 14              NA          NA NA                  0.593
+#>  9 401283399 15              NA          NA NA                  0.54 
+#> 10 401283399 16              NA          NA NA                  0.577
+#> # ℹ 40 more rows
+#> # ℹ 4 more variables: away_win_percentage <dbl>, tie_percentage <dbl>,
+#> #   secs_to_end_of_period <dbl>, secs_to_end_of_game <dbl>
 # }
 ```

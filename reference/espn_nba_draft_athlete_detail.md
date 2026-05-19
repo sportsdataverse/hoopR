@@ -150,16 +150,10 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_draft_athlete_detail(season = 2024, athlete_id = 108206)
-#> ── ESPN NBA Draft Athlete Detail ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:12 UTC
-#> # A tibble: 1 × 19
-#>   league season draftee_id athlete_id first_name last_name full_name         
-#>   <chr>   <int> <chr>      <chr>      <chr>      <chr>     <chr>             
-#> 1 nba      2024 108206     5211175    Zaccharie  Risacher  Zaccharie Risacher
-#> # ℹ 12 more variables: display_name <chr>, height <dbl>, display_height <chr>,
-#> #   weight <dbl>, display_weight <chr>, position_name <chr>,
-#> #   position_abbrev <chr>, pick_overall <int>, pick_round <int>,
-#> #   pick_team_id <chr>, athlete_ref <chr>, headshot <chr>
+  espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)
+#> ✖ 2026-05-19 19:26:34.614578: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966
+#> ✖ Args: league = "nba", season = 2024, athlete_id = 1966
+#> ✖ Error: The API returned an error
+#> NULL
 # }
 ```

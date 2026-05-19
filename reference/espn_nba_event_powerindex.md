@@ -143,10 +143,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_powerindex(event_id = 401812680)
+  espn_nba_event_powerindex(event_id = 401283399)
 #> ── ESPN NBA Event Power Index ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:18 UTC
-#> # A tibble: 0 × 4
-#> # ℹ 4 variables: league <chr>, event_id <chr>, team_id <chr>, ref <chr>
+#> ℹ Data updated: 2026-05-19 19:26:40 UTC
+#> # A tibble: 2 × 4
+#>   league event_id  team_id ref                                                  
+#>   <chr>  <chr>     <chr>   <chr>                                                
+#> 1 nba    401283399 25      http://sports.core.api.espn.com/v2/sports/basketball…
+#> 2 nba    401283399 29      http://sports.core.api.espn.com/v2/sports/basketball…
 # }
 ```

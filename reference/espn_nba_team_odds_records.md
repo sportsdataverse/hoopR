@@ -174,22 +174,22 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_team_odds_records(team_id = 1, season = 2026)
+  espn_nba_team_odds_records(team_id = 13, season = 2026)
 #> ── ESPN NBA Team Odds-Records ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:42 UTC
+#> ℹ Data updated: 2026-05-19 19:27:08 UTC
 #> # A tibble: 60 × 13
 #>    league team_id season season_type category_type    category_abbrev
 #>    <chr>  <chr>    <int>       <int> <chr>            <chr>          
-#>  1 nba    1         2026           0 moneyLineOverall ML             
-#>  2 nba    1         2026           0 moneyLineOverall ML             
-#>  3 nba    1         2026           0 moneyLineOverall ML             
-#>  4 nba    1         2026           0 moneyLineOverall ML             
-#>  5 nba    1         2026           0 moneyLineOverall ML             
-#>  6 nba    1         2026           0 moneyLineOverall ML             
-#>  7 nba    1         2026           0 moneyLineHome    ML HOME        
-#>  8 nba    1         2026           0 moneyLineHome    ML HOME        
-#>  9 nba    1         2026           0 moneyLineHome    ML HOME        
-#> 10 nba    1         2026           0 moneyLineHome    ML HOME        
+#>  1 nba    13        2026           0 moneyLineOverall ML             
+#>  2 nba    13        2026           0 moneyLineOverall ML             
+#>  3 nba    13        2026           0 moneyLineOverall ML             
+#>  4 nba    13        2026           0 moneyLineOverall ML             
+#>  5 nba    13        2026           0 moneyLineOverall ML             
+#>  6 nba    13        2026           0 moneyLineOverall ML             
+#>  7 nba    13        2026           0 moneyLineHome    ML HOME        
+#>  8 nba    13        2026           0 moneyLineHome    ML HOME        
+#>  9 nba    13        2026           0 moneyLineHome    ML HOME        
+#> 10 nba    13        2026           0 moneyLineHome    ML HOME        
 #> # ℹ 50 more rows
 #> # ℹ 7 more variables: category_short <chr>, category_display <chr>,
 #> #   stat_type <chr>, stat_abbrev <chr>, stat_display <chr>, value <dbl>,

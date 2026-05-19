@@ -135,10 +135,12 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_athlete_splits(athlete_id = "4433985", season = 2025)
-#> ✖ 2026-05-19 17:29:22.83663: Failed to retrieve ESPN mens-college-basketball athlete splits for athlete_id=4433985, season=2025
-#> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_athlete_splits(athlete_id = "4593919", season = 2025)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Splits from ESPN.com ──── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:33 UTC
+#> # A tibble: 1 × 2
+#>   name  display_name
+#>   <chr> <chr>       
+#> 1 split split       
 # }
 ```

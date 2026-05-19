@@ -133,10 +133,11 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_competitor_roster(event_id = 401812680, team_id = 150)
-#> ✖ 2026-05-19 17:29:30.239508: Failed to retrieve ESPN mens-college-basketball competitor roster for event_id=401812680, team_id=150
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680, team_id = 150
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_competitor_roster(event_id = 401256760, team_id = 52)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Roster ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:42 UTC
+#> # A tibble: 0 × 5
+#> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
+#> #   ref <chr>
 # }
 ```

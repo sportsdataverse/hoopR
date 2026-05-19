@@ -273,19 +273,19 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-try(espn_mbb_player_stats(athlete_id = 4433134, year = 2021))
+try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 #> ── ESPN MBB Player Season Stats from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:42 UTC
-#> # A tibble: 1 × 214
+#> ℹ Data updated: 2026-05-19 19:25:58 UTC
+#> # A tibble: 1 × 207
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
-#> 1    4433134 s:40~l:41~a:… dd0bb1da-07… basketball   4.43e6 Scottie    Barnes   
-#> # ℹ 207 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
+#> 1    4593919 s:40~l:41~a:… 5ec05866-f9… basketball   4.59e6 Nicolas    Elame    
+#> # ℹ 200 more variables: full_name <chr>, display_name <chr>, short_name <chr>,
 #> #   weight <dbl>, display_weight <chr>, height <dbl>, display_height <chr>,
-#> #   age <int>, date_of_birth <chr>, birth_place_city <chr>,
-#> #   birth_place_state <chr>, birth_place_country <chr>,
+#> #   birth_place_city <chr>, birth_place_country <chr>,
 #> #   birth_country_alternate_id <chr>, birth_country_abbreviation <chr>,
 #> #   slug <chr>, headshot_href <chr>, headshot_alt <chr>, jersey <chr>,
-#> #   flag_href <chr>, flag_alt <chr>, flag_x_country_flag <chr>, …
+#> #   flag_href <chr>, flag_alt <chr>, flag_x_country_flag <chr>,
+#> #   position_id <int>, position_name <chr>, position_display_name <chr>, …
 # }
 ```

@@ -141,10 +141,15 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_officials(event_id = "401735229")
-#> ✖ 2026-05-19 17:29:31.930143: Failed to retrieve ESPN mens-college-basketball event officials for event_id=401735229
-#> ✖ Args: league = "mens-college-basketball", event_id = "401735229"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_officials(event_id = "401256760")
+#> ── ESPN MENS-COLLEGE-BASKETBALL Event Officials (event_id=401256760) from ESPN.c
+#> ℹ Data updated: 2026-05-19 19:25:45 UTC
+#> # A tibble: 3 × 8
+#>   event_id  official_id full_name     display_name  position_id position_name
+#>   <chr>     <chr>       <chr>         <chr>         <chr>       <chr>        
+#> 1 401256760 70901       Doug Shows    Doug Shows    40          Referee      
+#> 2 401256760 69487       Lee Cassell   Lee Cassell   40          Referee      
+#> 3 401256760 2615317     Ted Valentine Ted Valentine 40          Referee      
+#> # ℹ 2 more variables: position_type <chr>, order <int>
 # }
 ```

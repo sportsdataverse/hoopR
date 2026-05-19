@@ -148,10 +148,90 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_stats(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 17:30:07.973405: Failed to retrieve ESPN nba athlete stats for athlete_id=3149391, season=2024
-#> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
-#> ✖ Error: The API returned an error
-#> list()
+  espn_nba_athlete_stats(athlete_id = "1966", season = 2024)
+#> $`Regular Season Averages`
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 23 × 5
+#>    team_id team_slug           season$year $displayName stats      position
+#>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
+#>  1 5       cleveland-cavaliers        2004 2003-04      <chr [18]> F       
+#>  2 5       cleveland-cavaliers        2005 2004-05      <chr [18]> F       
+#>  3 5       cleveland-cavaliers        2006 2005-06      <chr [18]> F       
+#>  4 5       cleveland-cavaliers        2007 2006-07      <chr [18]> F       
+#>  5 5       cleveland-cavaliers        2008 2007-08      <chr [18]> F       
+#>  6 5       cleveland-cavaliers        2009 2008-09      <chr [18]> F       
+#>  7 5       cleveland-cavaliers        2010 2009-10      <chr [18]> F       
+#>  8 14      miami-heat                 2011 2010-11      <chr [18]> F       
+#>  9 14      miami-heat                 2012 2011-12      <chr [18]> F       
+#> 10 14      miami-heat                 2013 2012-13      <chr [18]> F       
+#> # ℹ 13 more rows
+#> 
+#> $`Regular Season Totals`
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 23 × 5
+#>    team_id team_slug           season$year $displayName stats      position
+#>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
+#>  1 5       cleveland-cavaliers        2004 2003-04      <chr [15]> F       
+#>  2 5       cleveland-cavaliers        2005 2004-05      <chr [15]> F       
+#>  3 5       cleveland-cavaliers        2006 2005-06      <chr [15]> F       
+#>  4 5       cleveland-cavaliers        2007 2006-07      <chr [15]> F       
+#>  5 5       cleveland-cavaliers        2008 2007-08      <chr [15]> F       
+#>  6 5       cleveland-cavaliers        2009 2008-09      <chr [15]> F       
+#>  7 5       cleveland-cavaliers        2010 2009-10      <chr [15]> F       
+#>  8 14      miami-heat                 2011 2010-11      <chr [15]> F       
+#>  9 14      miami-heat                 2012 2011-12      <chr [15]> F       
+#> 10 14      miami-heat                 2013 2012-13      <chr [15]> F       
+#> # ℹ 13 more rows
+#> 
+#> $`Regular Season Misc Totals`
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 23 × 5
+#>    team_id team_slug           season$year $displayName stats      position
+#>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
+#>  1 5       cleveland-cavaliers        2004 2003-04      <chr [10]> F       
+#>  2 5       cleveland-cavaliers        2005 2004-05      <chr [10]> F       
+#>  3 5       cleveland-cavaliers        2006 2005-06      <chr [10]> F       
+#>  4 5       cleveland-cavaliers        2007 2006-07      <chr [10]> F       
+#>  5 5       cleveland-cavaliers        2008 2007-08      <chr [10]> F       
+#>  6 5       cleveland-cavaliers        2009 2008-09      <chr [10]> F       
+#>  7 5       cleveland-cavaliers        2010 2009-10      <chr [10]> F       
+#>  8 14      miami-heat                 2011 2010-11      <chr [10]> F       
+#>  9 14      miami-heat                 2012 2011-12      <chr [10]> F       
+#> 10 14      miami-heat                 2013 2012-13      <chr [10]> F       
+#> # ℹ 13 more rows
+#> 
+#> $General
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Offensive
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Defensive
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Rebounding
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Shooting
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Misc
+#> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 0 × 0
+#> 
 # }
 ```

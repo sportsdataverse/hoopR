@@ -160,10 +160,30 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_odds(event_id = "401736171")
-#> ✖ 2026-05-19 17:30:16.275653: Failed to retrieve ESPN nba event odds for event_id=401736171
-#> ✖ Args: league = "nba", event_id = "401736171"
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_event_odds(event_id = "401283399")
+#> ── ESPN NBA Event Odds (event_id=401283399) from ESPN.com ─────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:38 UTC
+#> # A tibble: 16 × 12
+#>    event_id  provider_id provider_name details over_under spread home_money_line
+#>    <chr>     <chr>       <chr>         <chr>        <dbl>  <dbl>           <int>
+#>  1 401283399 50          BetfairSport… MEM -7…       227    -7.5              NA
+#>  2 401283399 38          Caesars       MEM -7        227    -7                NA
+#>  3 401283399 44          Caesars (New… MEM -10        NA   -10                NA
+#>  4 401283399 31          Caesars Spor… MEM -7        227    -7                NA
+#>  5 401283399 45          Caesars Spor… MEM -7        227    -7                NA
+#>  6 401283399 46          Caesars Spor… NA            236.   NA                NA
+#>  7 401283399 43          Caesars Spor… MEM -7        227    -7                NA
+#>  8 401283399 47          MGM           MEM -6…       228.   -6.5              NA
+#>  9 401283399 48          PointsBet     MEM -7        226.   -7                NA
+#> 10 401283399 41          SugarHouse    MEM -7…       226.   -7.5              NA
+#> 11 401283399 36          Unibet        MEM -7…       226.   -7.5              NA
+#> 12 401283399 25          Westgate      MEM -7        227    -7                NA
+#> 13 401283399 1001        accuscore     MEM -7        227    -7                NA
+#> 14 401283399 1004        consensus     MEM -7        227    -7                NA
+#> 15 401283399 1003        numberfire    MEM -7        228    -7                NA
+#> 16 401283399 1002        teamrankings  MEM -7        228    -7                NA
+#> # ℹ 5 more variables: away_money_line <int>, home_team_odds_open <dbl>,
+#> #   home_team_odds_close <dbl>, away_team_odds_open <dbl>,
+#> #   away_team_odds_close <dbl>
 # }
 ```

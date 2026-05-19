@@ -160,6 +160,6 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_team_injuries(team_id = "17")
+  espn_nba_team_injuries(team_id = "13")
 # }
 ```

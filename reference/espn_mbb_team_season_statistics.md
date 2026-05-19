@@ -146,22 +146,22 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_season_statistics(team_id = 13, season = 2024)
+  espn_mbb_team_season_statistics(team_id = 150, season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Statistics ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:59 UTC
+#> ℹ Data updated: 2026-05-19 19:26:17 UTC
 #> # A tibble: 77 × 13
 #>    league    season season_type team_id category_name category_display stat_name
 #>    <chr>      <int>       <int> <chr>   <chr>         <chr>            <chr>    
-#>  1 mens-col…   2024           2 13      defensive     Defensive        blocks   
-#>  2 mens-col…   2024           2 13      defensive     Defensive        defensiv…
-#>  3 mens-col…   2024           2 13      defensive     Defensive        steals   
-#>  4 mens-col…   2024           2 13      defensive     Defensive        turnover…
-#>  5 mens-col…   2024           2 13      defensive     Defensive        avgDefen…
-#>  6 mens-col…   2024           2 13      defensive     Defensive        avgBlocks
-#>  7 mens-col…   2024           2 13      defensive     Defensive        avgSteals
-#>  8 mens-col…   2024           2 13      general       General          disquali…
-#>  9 mens-col…   2024           2 13      general       General          flagrant…
-#> 10 mens-col…   2024           2 13      general       General          fouls    
+#>  1 mens-col…   2024           2 150     defensive     Defensive        blocks   
+#>  2 mens-col…   2024           2 150     defensive     Defensive        defensiv…
+#>  3 mens-col…   2024           2 150     defensive     Defensive        steals   
+#>  4 mens-col…   2024           2 150     defensive     Defensive        turnover…
+#>  5 mens-col…   2024           2 150     defensive     Defensive        avgDefen…
+#>  6 mens-col…   2024           2 150     defensive     Defensive        avgBlocks
+#>  7 mens-col…   2024           2 150     defensive     Defensive        avgSteals
+#>  8 mens-col…   2024           2 150     general       General          disquali…
+#>  9 mens-col…   2024           2 150     general       General          flagrant…
+#> 10 mens-col…   2024           2 150     general       General          fouls    
 #> # ℹ 67 more rows
 #> # ℹ 6 more variables: stat_abbrev <chr>, stat_display <chr>, value <dbl>,
 #> #   display_value <chr>, rank <int>, rank_display_value <chr>

@@ -166,31 +166,31 @@ Saiem Gilani
 ``` r
 # \donttest{
   # LeBron James — regular + postseason combined
-  espn_mbb_athlete_career_stats(athlete_id = 1966)
+  espn_mbb_athlete_career_stats(athlete_id = 4593919)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:20 UTC
+#> ℹ Data updated: 2026-05-19 19:25:29 UTC
 #> # A tibble: 87 × 17
 #>    league   athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
-#>  1 mens-co… 1966       0            0        Season     season     defensive    
-#>  2 mens-co… 1966       0            0        Season     season     defensive    
-#>  3 mens-co… 1966       0            0        Season     season     defensive    
-#>  4 mens-co… 1966       0            0        Season     season     defensive    
-#>  5 mens-co… 1966       0            0        Season     season     defensive    
-#>  6 mens-co… 1966       0            0        Season     season     defensive    
-#>  7 mens-co… 1966       0            0        Season     season     defensive    
-#>  8 mens-co… 1966       0            0        Season     season     defensive    
-#>  9 mens-co… 1966       0            0        Season     season     general      
-#> 10 mens-co… 1966       0            0        Season     season     general      
+#>  1 mens-co… 4593919    0            0        Season     season     defensive    
+#>  2 mens-co… 4593919    0            0        Season     season     defensive    
+#>  3 mens-co… 4593919    0            0        Season     season     defensive    
+#>  4 mens-co… 4593919    0            0        Season     season     defensive    
+#>  5 mens-co… 4593919    0            0        Season     season     defensive    
+#>  6 mens-co… 4593919    0            0        Season     season     defensive    
+#>  7 mens-co… 4593919    0            0        Season     season     defensive    
+#>  8 mens-co… 4593919    0            0        Season     season     defensive    
+#>  9 mens-co… 4593919    0            0        Season     season     general      
+#> 10 mens-co… 4593919    0            0        Season     season     general      
 #> # ℹ 77 more rows
 #> # ℹ 10 more variables: category_display <chr>, category_short <chr>,
 #> #   category_abbrev <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, stat_short <chr>, description <chr>, value <dbl>,
 #> #   display_value <chr>
   # Just career aggregate
-  espn_mbb_athlete_career_stats(athlete_id = 1966, stat_type = 2L)
+  espn_mbb_athlete_career_stats(athlete_id = 4593919, stat_type = 2L)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:20 UTC
+#> ℹ Data updated: 2026-05-19 19:25:29 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,

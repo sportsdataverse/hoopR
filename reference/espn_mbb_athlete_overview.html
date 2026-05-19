@@ -224,11 +224,50 @@ Get ESPN Women's College Basketball Athlete Overview"><meta property="og:image" 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">espn_mbb_athlete_overview</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="st">"4433985"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-19 17:29:22.292998: Failed to retrieve ESPN mens-college-basketball athlete overview for athlete_id=4433985, season=2025</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-in"><span>  <span class="fu">espn_mbb_athlete_overview</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="st">"4593919"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Statistics</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Statistics from ESPN.com ──────</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $NextGame</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview NextGame from ESPN.com ────────</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id    date  name  short_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Last5Games</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Last5Games from ESPN.com ──────</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Headlines</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Headlines from ESPN.com ───────</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    headline                                   description published byline type </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Morez Johnson Jr., ex-Michigan star, to k… <span style="color: #949494;">"</span>Michigan … 2026-05-… Jeff … Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Transfers, recruits and roster moves for … <span style="color: #949494;">"</span>We're tra… 2026-05-… Jeff … Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> NAACP urging athletes, fans to boycott ov… <span style="color: #949494;">"</span>The NAACP… 2026-05-… <span style="color: #BB0000;">NA</span>     Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Sources: Luis, '25 Big East POY, commits … <span style="color: #949494;">"</span>Former St… 2026-05-… Jeff … Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> NBA draft withdrawal decisions that could… <span style="color: #949494;">"</span>How the s… 2026-05-… Jeff … Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2026 NBA draft: Latest mock drafts and te… <span style="color: #949494;">"</span>Here are … 2026-05-… ESPN … Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2026 NBA mock draft: Projecting all 60 pi… <span style="color: #949494;">"</span>Jeremy Wo… 2026-05-… Jerem… Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Is big-budget spending sustainable in col… <span style="color: #949494;">"</span>At the Bi… 2026-05-… Pete … Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Ex-Abilene Christian player banned for al… <span style="color: #949494;">"</span>A former … 2026-05-… <span style="color: #BB0000;">NA</span>     Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Underwood agrees to new deal after Illino… <span style="color: #949494;">"</span>Illinois … 2026-05-… <span style="color: #BB0000;">NA</span>     Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Purdue men's basketball lands top-10 7-fo… <span style="color: #949494;">"</span>Top-10 ju… 2026-05-… Jeff … Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 2026 NBA draft combine: Top prospects, hi… <span style="color: #949494;">"</span>ESPN's NB… 2026-05-… Jeff … Story</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Okorie, Veesaar, Evans say they will rema… <span style="color: #949494;">"</span>Stanford'… 2026-05-… Jeff … Head…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $FantasyOutlook</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview FantasyOutlook from ESPN.com ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

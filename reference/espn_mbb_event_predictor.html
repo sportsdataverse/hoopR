@@ -232,11 +232,30 @@ strength metrics. Returns empty for events without predictor data
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">espn_mbb_event_predictor</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401812680</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-19 17:29:33.344763: Failed to retrieve ESPN mens-college-basketball event predictor for event_id=401812680</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", event_id = 401812680</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-in"><span>  <span class="fu">espn_mbb_event_predictor</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401256760</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Event Predictor ───────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 19:25:46 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    league        event_id name  short_name last_modified side  team_id stat_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      matchupq…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      rawgames…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      teampred…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      teampred…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      opponent…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      gameProj…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      teamChan…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… home  52      teamChan…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      matchupq…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      rawgames…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      teampred…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      teampred…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      opponent…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      gameProj…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      teamChan…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> mens-college… 4012567… Flor… FLA @ FSU  2020-12-12T1… away  57      teamChan…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: stat_display &lt;chr&gt;, description &lt;chr&gt;, value &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   display_value &lt;chr&gt;, team_ref &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

@@ -146,32 +146,32 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_record_detail(team_id = 13, season = 2024, record_id = 0)
+  espn_mbb_team_record_detail(team_id = 150, season = 2024, record_id = 0)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record Detail ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:57 UTC
+#> ℹ Data updated: 2026-05-19 19:26:15 UTC
 #> # A tibble: 20 × 15
 #>    league         team_id season season_type record_id record_name record_abbrev
 #>    <chr>          <chr>    <int>       <int> <chr>     <chr>       <chr>        
-#>  1 mens-college-… 13        2024           2 0         overall     Season       
-#>  2 mens-college-… 13        2024           2 0         overall     Season       
-#>  3 mens-college-… 13        2024           2 0         overall     Season       
-#>  4 mens-college-… 13        2024           2 0         overall     Season       
-#>  5 mens-college-… 13        2024           2 0         overall     Season       
-#>  6 mens-college-… 13        2024           2 0         overall     Season       
-#>  7 mens-college-… 13        2024           2 0         overall     Season       
-#>  8 mens-college-… 13        2024           2 0         overall     Season       
-#>  9 mens-college-… 13        2024           2 0         overall     Season       
-#> 10 mens-college-… 13        2024           2 0         overall     Season       
-#> 11 mens-college-… 13        2024           2 0         overall     Season       
-#> 12 mens-college-… 13        2024           2 0         overall     Season       
-#> 13 mens-college-… 13        2024           2 0         overall     Season       
-#> 14 mens-college-… 13        2024           2 0         overall     Season       
-#> 15 mens-college-… 13        2024           2 0         overall     Season       
-#> 16 mens-college-… 13        2024           2 0         overall     Season       
-#> 17 mens-college-… 13        2024           2 0         overall     Season       
-#> 18 mens-college-… 13        2024           2 0         overall     Season       
-#> 19 mens-college-… 13        2024           2 0         overall     Season       
-#> 20 mens-college-… 13        2024           2 0         overall     Season       
+#>  1 mens-college-… 150       2024           2 0         overall     Season       
+#>  2 mens-college-… 150       2024           2 0         overall     Season       
+#>  3 mens-college-… 150       2024           2 0         overall     Season       
+#>  4 mens-college-… 150       2024           2 0         overall     Season       
+#>  5 mens-college-… 150       2024           2 0         overall     Season       
+#>  6 mens-college-… 150       2024           2 0         overall     Season       
+#>  7 mens-college-… 150       2024           2 0         overall     Season       
+#>  8 mens-college-… 150       2024           2 0         overall     Season       
+#>  9 mens-college-… 150       2024           2 0         overall     Season       
+#> 10 mens-college-… 150       2024           2 0         overall     Season       
+#> 11 mens-college-… 150       2024           2 0         overall     Season       
+#> 12 mens-college-… 150       2024           2 0         overall     Season       
+#> 13 mens-college-… 150       2024           2 0         overall     Season       
+#> 14 mens-college-… 150       2024           2 0         overall     Season       
+#> 15 mens-college-… 150       2024           2 0         overall     Season       
+#> 16 mens-college-… 150       2024           2 0         overall     Season       
+#> 17 mens-college-… 150       2024           2 0         overall     Season       
+#> 18 mens-college-… 150       2024           2 0         overall     Season       
+#> 19 mens-college-… 150       2024           2 0         overall     Season       
+#> 20 mens-college-… 150       2024           2 0         overall     Season       
 #> # ℹ 8 more variables: record_display <chr>, record_type <chr>,
 #> #   record_summary <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>

@@ -145,10 +145,28 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_gamelog(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 17:30:06.308608: Failed to retrieve ESPN nba athlete gamelog for athlete_id=3149391, season=2024
-#> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_athlete_gamelog(athlete_id = "1966", season = 2024)
+#> ── ESPN NBA Athlete Gamelog from ESPN.com ─────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 82 × 24
+#>    id        at_vs game_date     score home_team_id away_team_id home_team_score
+#>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          
+#>  1 401655085 @     2024-04-30T0… 108-… 7            13           108            
+#>  2 401655084 vs    2024-04-28T0… 119-… 13           7            119            
+#>  3 401655083 vs    2024-04-26T0… 112-… 13           7            105            
+#>  4 401655082 @     2024-04-23T0… 101-… 7            13           101            
+#>  5 401654758 @     2024-04-21T0… 114-… 7            13           114            
+#>  6 401654655 @     2024-04-16T2… 110-… 3            13           106            
+#>  7 401585823 @     2024-04-14T1… 124-… 3            13           108            
+#>  8 401585805 @     2024-04-13T0… 123-… 29           13           120            
+#>  9 401585783 vs    2024-04-10T0… 134-… 13           9            120            
+#> 10 401585755 vs    2024-04-06T1… 116-… 13           5            116            
+#> # ℹ 72 more rows
+#> # ℹ 17 more variables: away_team_score <chr>, game_result <chr>,
+#> #   league_name <chr>, league_abbreviation <chr>, league_short_name <chr>,
+#> #   event_note <chr>, team_id <chr>, team_uid <chr>, team_abbreviation <chr>,
+#> #   team_logo <chr>, team_is_all_star <chr>, opponent_id <chr>,
+#> #   opponent_uid <chr>, opponent_display_name <chr>,
+#> #   opponent_abbreviation <chr>, opponent_logo <chr>, event_id <chr>
 # }
 ```

@@ -144,22 +144,22 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_competitor_statistics(event_id = 401812680, team_id = 29)
+  espn_nba_event_competitor_statistics(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Statistics ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:15 UTC
+#> ℹ Data updated: 2026-05-19 19:26:38 UTC
 #> # A tibble: 98 × 10
 #>    league event_id  team_id category_name category_display stat_name stat_abbrev
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      
-#>  1 nba    401812680 29      defensive     Defensive        blocks    BLK        
-#>  2 nba    401812680 29      defensive     Defensive        defensiv… DR         
-#>  3 nba    401812680 29      defensive     Defensive        steals    STL        
-#>  4 nba    401812680 29      defensive     Defensive        turnover… Points Con…
-#>  5 nba    401812680 29      defensive     Defensive        avgDefen… DR         
-#>  6 nba    401812680 29      defensive     Defensive        avgBlocks BLK        
-#>  7 nba    401812680 29      defensive     Defensive        avgSteals STL        
-#>  8 nba    401812680 29      defensive     Defensive        avg48Def… DR         
-#>  9 nba    401812680 29      defensive     Defensive        avg48Blo… BLK        
-#> 10 nba    401812680 29      defensive     Defensive        avg48Ste… STL        
+#>  1 nba    401283399 29      defensive     Defensive        blocks    BLK        
+#>  2 nba    401283399 29      defensive     Defensive        defensiv… DR         
+#>  3 nba    401283399 29      defensive     Defensive        steals    STL        
+#>  4 nba    401283399 29      defensive     Defensive        turnover… Points Con…
+#>  5 nba    401283399 29      defensive     Defensive        avgDefen… DR         
+#>  6 nba    401283399 29      defensive     Defensive        avgBlocks BLK        
+#>  7 nba    401283399 29      defensive     Defensive        avgSteals STL        
+#>  8 nba    401283399 29      defensive     Defensive        avg48Def… DR         
+#>  9 nba    401283399 29      defensive     Defensive        avg48Blo… BLK        
+#> 10 nba    401283399 29      defensive     Defensive        avg48Ste… STL        
 #> # ℹ 88 more rows
 #> # ℹ 3 more variables: stat_display <chr>, value <dbl>, display_value <chr>
 # }

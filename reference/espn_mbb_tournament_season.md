@@ -135,13 +135,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_tournament_season(tournament_id = 1, season = 2024)
+  espn_mbb_tournament_season(tournament_id = 3, season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Season Detail ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:02 UTC
+#> ℹ Data updated: 2026-05-19 19:26:21 UTC
 #> # A tibble: 1 × 8
 #>   league   tournament_id season display_name short_display_name number_of_rounds
 #>   <chr>    <chr>          <int> <chr>        <chr>                         <int>
-#> 1 mens-co… 1               2024 America Eas… America East                      0
+#> 1 mens-co… 3               2024 ACC Tournam… ACC                               0
 #> # ℹ 2 more variables: season_ref <chr>, bracketology_ref <chr>
 # }
 ```

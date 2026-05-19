@@ -152,28 +152,26 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_roster(team_id = "2509", season = 2025)
+  espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:57 UTC
-#> # A tibble: 16 × 15
+#> ℹ Data updated: 2026-05-19 19:26:15 UTC
+#> # A tibble: 14 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5102618    Jack Ben… 14     G               Guard         "6' 6… 215 l… NA   
-#>  2 5061582    Raleigh … 34     F               Forward       "6' 1… 245 l… NA   
-#>  3 5174973    Oscar Cl… 45     C               Center        "6' 1… 255 l… NA   
-#>  4 5175591    C.J. Cox  0      G               Guard         "6' 3… 195 l… NA   
-#>  5 5239503    Aaron Fi… 6      G               Guard         "6' 2… 190 l… NA   
-#>  6 5101658    Gicarri … 24     G               Guard         "6' 3… 210 l… NA   
-#>  7 5144147    Daniel J… 12     C               Center        "7' 4… 250 l… NA   
-#>  8 4897438    Trey Kau… 4      F               Forward       "6' 9… 240 l… NA   
-#>  9 5105856    Sam King  7      F               Forward       "6' 9… 230 l… NA   
-#> 10 5105853    Fletcher… 2      G               Guard         "6' 5… 180 l… NA   
-#> 11 5239504    Jack Lusk 9      G               Guard         "6' 4… 195 l… NA   
-#> 12 5312035    Omer May… 17     G               Guard         "6' 4… 215 l… NA   
-#> 13 4702975    Liam Mur… 5      F               Forward       "6' 8… 225 l… NA   
-#> 14 5174804    Jace Rayl 32     G               Guard         "5' 1… 175 l… NA   
-#> 15 5105854    Braden S… 3      G               Guard         "6' 0… 170 l… NA   
-#> 16 5144111    Antione … 1      G               Guard         "6' 3… 195 l… NA   
+#>  1 5041935    Cameron … 12     F               Forward       "6' 9… 250 l… NA   
+#>  2 5041937    Cayden B… 2      G               Guard         "6' 4… 205 l… NA   
+#>  3 5105337    Maliq Br… 6      F               Forward       "6' 9… 225 l… NA   
+#>  4 5341547    Brock Da… 50     G               Guard         "6' 4… 195 l… NA   
+#>  5 5061585    Isaiah E… 3      G               Guard         "6' 6… 180 l… NA   
+#>  6 4711256    Caleb Fo… 1      G               Guard         "6' 5… 205 l… NA   
+#>  7 4873107    Darren H… 8      G               Guard         "6' 5… 195 l… NA   
+#>  8 5144124    Nikolas … 14     G               Guard         "6' 8… 215 l… NA   
+#>  9 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
+#> 10 5287474    Dame Sarr 7      G               Guard         "6' 8… 190 l… NA   
+#> 11 4888720    Jack Sco… 20     G               Guard         "6' 6… 220 l… NA   
+#> 12 4432321    Cameron … 13     G               Guard         "6' 6… 205 l… NA   
+#> 13 5107141    Ifeanyi … 15     C               Center        "6' 1… 240 l… NA   
+#> 14 5144150    Sebastia… 5      G               Guard         "6' 8… 220 l… NA   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }

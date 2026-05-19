@@ -204,42 +204,42 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_team(team_id = "17", season = 2025)
+  espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:39 UTC
+#> ℹ Data updated: 2026-05-19 19:27:05 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
-#> 1 17    s:40~… broo… BKN          Brooklyn Ne… Nets               Nets  Brooklyn
+#> 1 13    s:40~… los-… LAL          Los Angeles… Lakers             Lake… Los Ang…
 #> # ℹ 4 more variables: color <chr>, alternate_color <chr>, logo <chr>,
 #> #   logo_dark <chr>
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:39 UTC
+#> ℹ Data updated: 2026-05-19 19:27:05 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
-#> 1 Overall Record total 20-62   <df [21 × 2]>
-#> 2 Home Record    home  12-29   <df [5 × 2]> 
-#> 3 Away Record    road  8-33    <df [5 × 2]> 
+#> 1 Overall Record total 53-29   <df [21 × 2]>
+#> 2 Home Record    home  28-13   <df [5 × 2]> 
+#> 3 Away Record    road  25-16   <df [5 × 2]> 
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:39 UTC
+#> ℹ Data updated: 2026-05-19 19:27:05 UTC
 #> # A tibble: 1 × 4
-#>   id        date              name                             short_name
-#>   <chr>     <chr>             <chr>                            <chr>     
-#> 1 401811047 2026-04-12T22:00Z Brooklyn Nets at Toronto Raptors BKN @ TOR 
+#>   id        date              name                                    short_name
+#>   <chr>     <chr>             <chr>                                   <chr>     
+#> 1 401871329 2026-05-12T02:30Z Oklahoma City Thunder at Los Angeles L… OKC @ LAL 
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:39 UTC
+#> ℹ Data updated: 2026-05-19 19:27:05 UTC
 #> # A tibble: 1 × 1
-#>   standing_summary        
-#>   <chr>                   
-#> 1 5th in Atlantic Division
+#>   standing_summary       
+#>   <chr>                  
+#> 1 1st in Pacific Division
 #> 
 #> $Coaches
 #> data frame with 0 columns and 0 rows

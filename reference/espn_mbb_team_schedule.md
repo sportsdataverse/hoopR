@@ -168,23 +168,23 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_schedule(team_id = "2509", season = 2025)
+  espn_mbb_team_schedule(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Schedule from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:58 UTC
-#> # A tibble: 33 × 21
+#> ℹ Data updated: 2026-05-19 19:26:16 UTC
+#> # A tibble: 34 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
-#>  1 401707976   2025          NA     1 2024-11-04T2… Texa… AMCC @ PUR NA         
-#>  2 401707977   2025          NA     1 2024-11-09T0… Nort… NKU @ PUR  NA         
-#>  3 401707978   2025          NA     2 2024-11-12T0… Yale… YALE @ PUR NA         
-#>  4 401707979   2025          NA     2 2024-11-16T0… Alab… ALA @ PUR  NA         
-#>  5 401707980   2025          NA     3 2024-11-20T0… Purd… PUR @ MARQ NA         
-#>  6 401707981   2025          NA     3 2024-11-23T1… Mars… MRSH @ PUR NA         
-#>  7 401716065   2025          NA     4 2024-11-28T2… NC S… NCSU VS P… NA         
-#>  8 401731040   2025          NA     4 2024-11-29T2… Ole … MISS VS P… NA         
-#>  9 401721310   2025          NA     5 2024-12-05T2… Purd… PUR @ PSU  NA         
-#> 10 401721316   2025          NA     5 2024-12-08T1… Mary… MD @ PUR   NA         
-#> # ℹ 23 more rows
+#>  1 401706881   2025          NA     1 2024-11-05T0… Main… ME @ DUKE  NA         
+#>  2 401706882   2025          NA     1 2024-11-08T2… Army… ARMY @ DU… NA         
+#>  3 401706883   2025          NA     2 2024-11-13T0… Duke… DUKE VS UK NA         
+#>  4 401706884   2025          NA     2 2024-11-16T1… Woff… WOF @ DUKE NA         
+#>  5 401706885   2025          NA     3 2024-11-23T0… Duke… DUKE @ AR… NA         
+#>  6 401706886   2025          NA     4 2024-11-27T0… Kans… KU VS DUKE NA         
+#>  7 401706887   2025          NA     4 2024-11-30T0… Seat… SEA @ DUKE NA         
+#>  8 401706888   2025          NA     5 2024-12-05T0… Aubu… AUB @ DUKE NA         
+#>  9 401724775   2025          NA     5 2024-12-08T2… Duke… DUKE @ LOU NA         
+#> 10 401706889   2025          NA     6 2024-12-11T0… Inca… UIW @ DUKE NA         
+#> # ℹ 24 more rows
 #> # ℹ 13 more variables: opponent_abbrev <chr>, home_away <chr>,
 #> #   neutral_site <lgl>, conference_competition <lgl>, venue_id <chr>,
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,

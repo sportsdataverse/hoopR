@@ -163,10 +163,25 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_odds_records(team_id = 1, season = 2026)
-#> ✖ 2026-05-19 17:29:56.269147: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=1, season=2026
-#> ✖ Args: league = "mens-college-basketball", team_id = 1, season = 2026, season_type = 0L
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_team_odds_records(team_id = 150, season = 2026)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:14 UTC
+#> # A tibble: 60 × 13
+#>    league               team_id season season_type category_type category_abbrev
+#>    <chr>                <chr>    <int>       <int> <chr>         <chr>          
+#>  1 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  2 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  3 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  4 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  5 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  6 mens-college-basket… 150       2026           0 moneyLineOve… ML             
+#>  7 mens-college-basket… 150       2026           0 moneyLineHome ML HOME        
+#>  8 mens-college-basket… 150       2026           0 moneyLineHome ML HOME        
+#>  9 mens-college-basket… 150       2026           0 moneyLineHome ML HOME        
+#> 10 mens-college-basket… 150       2026           0 moneyLineHome ML HOME        
+#> # ℹ 50 more rows
+#> # ℹ 7 more variables: category_short <chr>, category_display <chr>,
+#> #   stat_type <chr>, stat_abbrev <chr>, stat_display <chr>, value <dbl>,
+#> #   display_value <chr>
 # }
 ```

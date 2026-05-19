@@ -139,10 +139,18 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_coach_record(coach_id = 52120, record_type = 2)
-#> ✖ 2026-05-19 17:29:27.79856: Failed to retrieve ESPN mens-college-basketball coach record for coach_id=52120, record_type=2
-#> ✖ Args: league = "mens-college-basketball", coach_id = 52120, record_type = 2
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_coach_record(coach_id = 32116, record_type = 2)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Coach Record ──────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:39 UTC
+#> # A tibble: 5 × 12
+#>   league          coach_id record_type_id record_name record_type record_summary
+#>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
+#> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 # }
 ```

@@ -146,10 +146,12 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_athlete_statisticslog(athlete_id = "4433985", season = 2025)
-#> ✖ 2026-05-19 17:29:23.107431: Failed to retrieve ESPN mens-college-basketball athlete statisticslog for athlete_id=4433985, season=2025
-#> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_athlete_statisticslog(athlete_id = "4593919", season = 2025)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Statisticslog from ESPN.com ────────────
+#> ℹ Data updated: 2026-05-19 19:25:33 UTC
+#> # A tibble: 1 × 2
+#>   season$`$ref`                                                       statistics
+#>   <chr>                                                               <list>    
+#> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-… <df>      
 # }
 ```

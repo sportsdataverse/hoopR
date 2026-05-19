@@ -144,17 +144,17 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_competitor_records(event_id = 401812680, team_id = 29)
+  espn_nba_event_competitor_records(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Records ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:14 UTC
+#> ℹ Data updated: 2026-05-19 19:26:37 UTC
 #> # A tibble: 5 × 11
 #>   league event_id  team_id record_id name      abbreviation display_name       
 #>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
-#> 1 nba    401812680 29      900       overall   Game         Record Year To Date
-#> 2 nba    401812680 29      33        Home      NA           Home               
-#> 3 nba    401812680 29      34        Road      NA           Road               
-#> 4 nba    401812680 29      60        vs. Div.  NA           DIV                
-#> 5 nba    401812680 29      61        vs. Conf. NA           CONF               
+#> 1 nba    401283399 29      900       overall   Game         Record Year To Date
+#> 2 nba    401283399 29      33        Home      NA           Home               
+#> 3 nba    401283399 29      34        Road      NA           Road               
+#> 4 nba    401283399 29      60        vs. Div.  NA           DIV                
+#> 5 nba    401283399 29      61        vs. Conf. NA           CONF               
 #> # ℹ 4 more variables: short_display_name <chr>, type <chr>, summary <chr>,
 #> #   value <dbl>
 # }

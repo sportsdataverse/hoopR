@@ -157,13 +157,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_coach(coach_id = 2562)
+  espn_nba_coach(coach_id = 52120)
 #> ── ESPN NBA Coach Detail ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:10 UTC
+#> ℹ Data updated: 2026-05-19 19:26:32 UTC
 #> # A tibble: 1 × 12
 #>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
 #>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      
-#> 1 2562     s:40~l:46~… Marlon     Garnett   1975-07-03T0… Los Angel… CA         
+#> 1 52120    s:40~l:46~… Quin       Snyder    NA            NA         NA         
 #> # ℹ 5 more variables: n_career_records <int>, n_coach_seasons <int>,
 #> #   college_ref <chr>, team_ref <chr>, league <chr>
 # }

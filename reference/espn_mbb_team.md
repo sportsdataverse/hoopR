@@ -193,42 +193,42 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team(team_id = "2509", season = 2025)
+  espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:54 UTC
+#> ℹ Data updated: 2026-05-19 19:26:11 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
-#> 1 2509  s:40~… purd… PUR          Purdue Boil… Purdue             Boil… Purdue  
+#> 1 150   s:40~… duke… DUKE         Duke Blue D… Duke               Blue… Duke    
 #> # ℹ 5 more variables: location <chr>, color <chr>, alternate_color <chr>,
 #> #   logo <chr>, logo_dark <chr>
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:54 UTC
+#> ℹ Data updated: 2026-05-19 19:26:11 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
-#> 1 Overall Record total 30-9    <df [20 × 2]>
-#> 2 Home Record    home  12-5    <df [20 × 2]>
-#> 3 Away Record    road  8-3     <df [20 × 2]>
+#> 1 Overall Record total 35-3    <df [20 × 2]>
+#> 2 Home Record    home  15-0    <df [20 × 2]>
+#> 3 Away Record    road  10-1    <df [20 × 2]>
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:29:54 UTC
+#> ℹ Data updated: 2026-05-19 19:26:11 UTC
 #> # A tibble: 1 × 4
-#>   id        date              name                                    short_name
-#>   <chr>     <chr>             <chr>                                   <chr>     
-#> 1 401856575 2026-03-29T00:59Z Purdue Boilermakers at Arizona Wildcats PUR VS AR…
+#>   id        date              name                              short_name  
+#>   <chr>     <chr>             <chr>                             <chr>       
+#> 1 401856577 2026-03-29T21:05Z UConn Huskies at Duke Blue Devils CONN VS DUKE
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-05-19 17:29:54 UTC
+#> ℹ Data updated: 2026-05-19 19:26:11 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
-#> 1 6th in Big Ten  
+#> 1 1st in ACC      
 #> 
 #> $Coaches
 #> data frame with 0 columns and 0 rows

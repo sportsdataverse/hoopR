@@ -144,23 +144,23 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_competitor_leaders(event_id = 401812680, team_id = 29)
+  espn_nba_event_competitor_leaders(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Leaders ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:14 UTC
-#> # A tibble: 61 × 11
+#> ℹ Data updated: 2026-05-19 19:26:36 UTC
+#> # A tibble: 48 × 11
 #>    league event_id  team_id category_name category_display category_abbrev  rank
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>
-#>  1 nba    401812680 29      points        Points           Pts                 1
-#>  2 nba    401812680 29      points        Points           Pts                 2
-#>  3 nba    401812680 29      points        Points           Pts                 3
-#>  4 nba    401812680 29      points        Points           Pts                 4
-#>  5 nba    401812680 29      points        Points           Pts                 5
-#>  6 nba    401812680 29      points        Points           Pts                 6
-#>  7 nba    401812680 29      points        Points           Pts                 7
-#>  8 nba    401812680 29      points        Points           Pts                 8
-#>  9 nba    401812680 29      points        Points           Pts                 9
-#> 10 nba    401812680 29      points        Points           Pts                10
-#> # ℹ 51 more rows
+#>  1 nba    401283399 29      points        Points           Pts                 1
+#>  2 nba    401283399 29      points        Points           Pts                 2
+#>  3 nba    401283399 29      points        Points           Pts                 3
+#>  4 nba    401283399 29      points        Points           Pts                 4
+#>  5 nba    401283399 29      points        Points           Pts                 5
+#>  6 nba    401283399 29      points        Points           Pts                 6
+#>  7 nba    401283399 29      points        Points           Pts                 7
+#>  8 nba    401283399 29      points        Points           Pts                 8
+#>  9 nba    401283399 29      points        Points           Pts                 9
+#> 10 nba    401283399 29      assists       Assists          Ast                 1
+#> # ℹ 38 more rows
 #> # ℹ 4 more variables: athlete_id <chr>, display_value <chr>, value <dbl>,
 #> #   athlete_ref <chr>
 # }

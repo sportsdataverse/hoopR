@@ -130,10 +130,14 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_coach(coach_id = 269)
-#> ✖ 2026-05-19 17:29:27.522356: Failed to retrieve ESPN mens-college-basketball coach 269
-#> ✖ Args: league = "mens-college-basketball", coach_id = 269
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_coach(coach_id = 32116)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Coach Detail ──────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:39 UTC
+#> # A tibble: 1 × 12
+#>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
+#>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      
+#> 1 32116    s:40~l:41~… Steven     Pearl     1987-09-14T0… Knoxville  TN         
+#> # ℹ 5 more variables: n_career_records <int>, n_coach_seasons <int>,
+#> #   college_ref <chr>, team_ref <chr>, league <chr>
 # }
 ```

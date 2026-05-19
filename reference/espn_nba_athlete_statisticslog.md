@@ -157,10 +157,12 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_statisticslog(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 17:30:07.699415: Failed to retrieve ESPN nba athlete statisticslog for athlete_id=3149391, season=2024
-#> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_athlete_statisticslog(athlete_id = "1966", season = 2024)
+#> ── ESPN NBA Athlete Statisticslog from ESPN.com ───────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:29 UTC
+#> # A tibble: 1 × 2
+#>   season$`$ref`                                                       statistics
+#>   <chr>                                                               <list>    
+#> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/s… <df>      
 # }
 ```

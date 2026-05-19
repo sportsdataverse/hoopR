@@ -145,7 +145,7 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_team_leaders(team_id = "2509", season = 2025)
+  espn_mbb_team_leaders(team_id = "150", season = 2025)
 #> # A tibble: 0 × 0
 # }
 ```

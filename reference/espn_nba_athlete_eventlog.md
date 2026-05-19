@@ -155,7 +155,22 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_eventlog(athlete_id = "3149391", season = 2024)
-#> # A tibble: 0 × 0
+  espn_nba_athlete_eventlog(athlete_id = "1966", season = 2024)
+#> ── ESPN NBA Athlete Eventlog from ESPN.com ────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:26 UTC
+#> # A tibble: 25 × 6
+#>    event_ref              competition_ref team_ref statistics_ref team_id played
+#>    <chr>                  <chr>           <chr>    <chr>          <chr>   <lgl> 
+#>  1 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  2 http://sports.core.ap… http://sports.… NA       NA             13      FALSE 
+#>  3 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  4 http://sports.core.ap… http://sports.… NA       NA             13      FALSE 
+#>  5 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  6 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  7 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  8 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#>  9 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#> 10 http://sports.core.ap… http://sports.… NA       http://sports… 13      TRUE  
+#> # ℹ 15 more rows
 # }
 ```

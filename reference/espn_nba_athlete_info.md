@@ -203,10 +203,55 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_info(athlete_id = "3149391")
-#> ✖ 2026-05-19 17:30:06.575297: Failed to retrieve ESPN nba athlete info for athlete_id=3149391
-#> ✖ Args: league = "nba", athlete_id = "3149391"
-#> ✖ Error: The API returned an error
-#> list()
+  espn_nba_athlete_info(athlete_id = "1966")
+#> $Bio
+#> ── ESPN NBA Athlete Bio from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 1 × 21
+#>   id    uid         guid  first_name last_name full_name display_name short_name
+#>   <chr> <chr>       <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
+#> 1 1966  s:40~l:46~… 1f65… LeBron     James     LeBron J… LeBron James L. James  
+#> # ℹ 13 more variables: weight <dbl>, display_weight <chr>, height <dbl>,
+#> #   display_height <chr>, age <int>, date_of_birth <chr>, debut_year <int>,
+#> #   jersey <chr>, active <lgl>, headshot_href <chr>, birth_city <chr>,
+#> #   birth_state <chr>, birth_country <chr>
+#> 
+#> $Team
+#> ── ESPN NBA Athlete Team from ESPN.com ────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 1 × 1
+#>   x_ref                                                                         
+#>   <chr>                                                                         
+#> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2026…
+#> 
+#> $Position
+#> ── ESPN NBA Athlete Position from ESPN.com ────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 1 × 5
+#>   id    name    display_name abbreviation leaf 
+#>   <chr> <chr>   <chr>        <chr>        <lgl>
+#> 1 7     Forward Forward      F            FALSE
+#> 
+#> $Status
+#> ── ESPN NBA Athlete Status from ESPN.com ──────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 1 × 4
+#>   id    name   type   abbreviation
+#>   <chr> <chr>  <chr>  <chr>       
+#> 1 1     Active active Active      
+#> 
+#> $College
+#> ── ESPN NBA Athlete College from ESPN.com ─────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Draft
+#> ── ESPN NBA Athlete Draft from ESPN.com ───────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> # A tibble: 1 × 4
+#>   year  round selection display_text               
+#>   <chr> <chr> <chr>     <chr>                      
+#> 1 2003  1     1         Year: 2003 Round: 1 Pick: 1
+#> 
 # }
 ```

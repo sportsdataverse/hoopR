@@ -160,16 +160,16 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_team_news(team_id = "17", limit = 5)
-#> ── ESPN NBA Team News (team_id=17) from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:41 UTC
+  espn_nba_team_news(team_id = "13", limit = 5)
+#> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:27:08 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
 #> 1  4.88e7 Story 2026 NB… Jeremy Woo… 2026-05-… FALSE   Jerem… https:/… 3380     
-#> 2  4.84e7 Story NBA off… For all bu… 2026-05-… FALSE   Bobby… https:/… 46       
-#> 3  4.43e7 Story Which N… Some NBA t… 2026-05-… FALSE   Keith… https:/… 46       
-#> 4  4.88e7 Story 2026 NB… ESPN's NBA… 2026-05-… FALSE   Jeff … https:/… 46       
-#> 5  4.88e7 Head… Jason C… Jason Coll… 2026-05-… FALSE   Ramon… https:/… 46       
+#> 2  4.88e7 Head… Ex-NBA … Retired th… 2026-05-… FALSE   NA     https:/… 46       
+#> 3  4.53e7 Story Which N… The Boston… 2026-05-… FALSE   ESPN   https:/… 46       
+#> 4  4.87e7 Story 2026 NB… Here's wha… 2026-05-… FALSE   NBA i… https:/… 46       
+#> 5  4.84e7 Story NBA off… For all bu… 2026-05-… FALSE   Bobby… https:/… 46       
 # }
 ```

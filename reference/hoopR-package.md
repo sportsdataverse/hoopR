@@ -15,7 +15,7 @@ Useful links:
 
 - <https://github.com/sportsdataverse/hoopR>
 
-- <http://hoopr.sportsdataverse.org/>
+- <https://hoopR.sportsdataverse.org/>
 
 - Report bugs at <https://github.com/sportsdataverse/hoopR/issues>
 

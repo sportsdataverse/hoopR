@@ -145,9 +145,9 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_play_personnel(event_id = 401283399, play_id = 4012833997)
+  espn_nba_event_play_personnel(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Personnel ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:17 UTC
+#> ℹ Data updated: 2026-05-19 19:26:40 UTC
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: league <chr>, event_id <chr>, play_id <chr>, team_id <chr>,
 #> #   athlete_id <chr>, athlete_ref <chr>, competitor_ref <chr>

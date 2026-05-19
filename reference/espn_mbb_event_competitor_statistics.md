@@ -133,10 +133,23 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_competitor_statistics(event_id = 401812680, team_id = 150)
-#> ✖ 2026-05-19 17:29:31.083505: Failed to retrieve ESPN mens-college-basketball competitor statistics for event_id=401812680, team_id=150
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680, team_id = 150
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_competitor_statistics(event_id = 401256760, team_id = 52)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Statistics ─────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:43 UTC
+#> # A tibble: 71 × 10
+#>    league  event_id team_id category_name category_display stat_name stat_abbrev
+#>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>     <chr>      
+#>  1 mens-c… 4012567… 52      defensive     Defensive        blocks    BLK        
+#>  2 mens-c… 4012567… 52      defensive     Defensive        defensiv… DR         
+#>  3 mens-c… 4012567… 52      defensive     Defensive        steals    STL        
+#>  4 mens-c… 4012567… 52      defensive     Defensive        turnover… PTS OFF TO 
+#>  5 mens-c… 4012567… 52      defensive     Defensive        avgDefen… DR         
+#>  6 mens-c… 4012567… 52      defensive     Defensive        avgBlocks BLK        
+#>  7 mens-c… 4012567… 52      defensive     Defensive        avgSteals STL        
+#>  8 mens-c… 4012567… 52      general       General          largestL… LL         
+#>  9 mens-c… 4012567… 52      general       General          disquali… DQ         
+#> 10 mens-c… 4012567… 52      general       General          flagrant… FLAG       
+#> # ℹ 61 more rows
+#> # ℹ 3 more variables: stat_display <chr>, value <dbl>, display_value <chr>
 # }
 ```

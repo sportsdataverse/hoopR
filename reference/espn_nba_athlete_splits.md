@@ -146,10 +146,17 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_athlete_splits(athlete_id = "3149391", season = 2024)
-#> ✖ 2026-05-19 17:30:07.425152: Failed to retrieve ESPN nba athlete splits for athlete_id=3149391, season=2024
-#> ✖ Args: league = "nba", athlete_id = "3149391", season = 2024
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_athlete_splits(athlete_id = "1966", season = 2024)
+#> ── ESPN NBA Athlete Splits from ESPN.com ──────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> # A tibble: 6 × 3
+#>   name       display_name splits       
+#>   <chr>      <chr>        <list>       
+#> 1 split      split        <df [6 × 3]> 
+#> 2 byMonth    Month        <df [9 × 3]> 
+#> 3 byResult   Result       <df [2 × 3]> 
+#> 4 byPosition Position     <df [1 × 3]> 
+#> 5 byDay      Day          <df [7 × 3]> 
+#> 6 byOpponent Opponent     <df [28 × 3]>
 # }
 ```

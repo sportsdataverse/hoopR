@@ -244,17 +244,11 @@ and a <code>$ref</code> to the athlete's core-v2 profile. Use
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu">espn_nba_draft_athlete_detail</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, athlete_id <span class="op">=</span> <span class="fl">108206</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Draft Athlete Detail ──────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-05-19 17:30:12 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 19</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   league season draftee_id athlete_id first_name last_name full_name         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024 108206     5211175    Zaccharie  Risacher  Zaccharie Risacher</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: display_name &lt;chr&gt;, height &lt;dbl&gt;, display_height &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   weight &lt;dbl&gt;, display_weight &lt;chr&gt;, position_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   position_abbrev &lt;chr&gt;, pick_overall &lt;int&gt;, pick_round &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pick_team_id &lt;chr&gt;, athlete_ref &lt;chr&gt;, headshot &lt;chr&gt;</span></span>
+<span class="r-in"><span>  <span class="fu">espn_nba_draft_athlete_detail</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, athlete_id <span class="op">=</span> <span class="fl">1966</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-05-19 19:26:34.614578: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "nba", season = 2024, athlete_id = 1966</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

@@ -145,10 +145,10 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_player_box(event_id = 401283399, team_id = 29,
-                               athlete_id = 4066392)
-#> ✖ 2026-05-19 17:29:32.78503: Failed to retrieve ESPN mens-college-basketball event player box for event_id=401283399, team_id=29, athlete_id=4066392
-#> ✖ Args: league = "mens-college-basketball", event_id = 401283399, team_id = 29, athlete_id = 4066392, stat_type = 0L
+  espn_mbb_event_player_box(event_id = 401256760, team_id = 52,
+                               athlete_id = 4593919)
+#> ✖ 2026-05-19 19:25:46.069731: Failed to retrieve ESPN mens-college-basketball event player box for event_id=401256760, team_id=52, athlete_id=4593919
+#> ✖ Args: league = "mens-college-basketball", event_id = 401256760, team_id = 52, athlete_id = 4593919, stat_type = 0L
 #> ✖ Error: The API returned an error
 #> NULL
 # }

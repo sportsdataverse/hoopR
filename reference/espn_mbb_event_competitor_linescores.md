@@ -132,10 +132,15 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_event_competitor_linescores(event_id = 401812680, team_id = 150)
-#> ✖ 2026-05-19 17:29:29.681621: Failed to retrieve ESPN mens-college-basketball competitor linescores for event_id=401812680, team_id=150
-#> ✖ Args: league = "mens-college-basketball", event_id = 401812680, team_id = 150
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_mbb_event_competitor_linescores(event_id = 401256760, team_id = 52)
+#> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Linescores ─────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:42 UTC
+#> # A tibble: 4 × 7
+#>   league                  event_id  team_id period value display_value source   
+#>   <chr>                   <chr>     <chr>    <int> <dbl> <chr>         <chr>    
+#> 1 mens-college-basketball 401256760 52           1    45 45            1        
+#> 2 mens-college-basketball 401256760 52           1    45 45            Basic/Ma…
+#> 3 mens-college-basketball 401256760 52           2    38 38            1        
+#> 4 mens-college-basketball 401256760 52           2    38 38            Basic/Ma…
 # }
 ```

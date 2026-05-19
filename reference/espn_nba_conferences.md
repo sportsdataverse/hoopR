@@ -142,7 +142,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_conferences())
-#> ✖ 2026-05-19 17:30:11.6648: Invalid arguments or no conferences info available!
+#> ✖ 2026-05-19 19:26:33.921684: Invalid arguments or no conferences info available!
 #> ✖ Error: The API returned an error
 #> NULL
 # }

@@ -143,19 +143,19 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_competitor_linescores(event_id = 401812680, team_id = 29)
+  espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Linescores ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:14 UTC
+#> ℹ Data updated: 2026-05-19 19:26:36 UTC
 #> # A tibble: 8 × 7
 #>   league event_id  team_id period value display_value source      
 #>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
-#> 1 nba    401812680 29           1    42 42            1           
-#> 2 nba    401812680 29           1    42 42            Basic/Manual
-#> 3 nba    401812680 29           2    22 22            1           
-#> 4 nba    401812680 29           2    22 22            Basic/Manual
-#> 5 nba    401812680 29           3    24 24            1           
-#> 6 nba    401812680 29           3    24 24            Basic/Manual
-#> 7 nba    401812680 29           4    24 24            1           
-#> 8 nba    401812680 29           4    24 24            Basic/Manual
+#> 1 nba    401283399 29           1    30 30            1           
+#> 2 nba    401283399 29           1    30 30            Basic/Manual
+#> 3 nba    401283399 29           2    27 27            1           
+#> 4 nba    401283399 29           2    27 27            Basic/Manual
+#> 5 nba    401283399 29           3    29 29            1           
+#> 6 nba    401283399 29           3    29 29            Basic/Manual
+#> 7 nba    401283399 29           4    36 36            1           
+#> 8 nba    401283399 29           4    36 36            Basic/Manual
 # }
 ```

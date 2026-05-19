@@ -146,10 +146,19 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_predictor(event_id = 401812680)
-#> ✖ 2026-05-19 17:30:18.37965: Failed to retrieve ESPN nba event predictor for event_id=401812680
-#> ✖ Args: league = "nba", event_id = 401812680
-#> ✖ Error: The API returned an error
-#> NULL
+  espn_nba_event_predictor(event_id = 401283399)
+#> ── ESPN NBA Event Predictor ───────────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:26:41 UTC
+#> # A tibble: 6 × 13
+#>   league event_id  name         short_name last_modified side  team_id stat_name
+#>   <chr>  <chr>     <chr>        <chr>      <chr>         <chr> <chr>   <chr>    
+#> 1 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      gameProj…
+#> 2 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      matchupQ…
+#> 3 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamChan…
+#> 4 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamPred…
+#> 5 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamExpe…
+#> 6 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      oppExpec…
+#> # ℹ 5 more variables: stat_display <chr>, description <chr>, value <dbl>,
+#> #   display_value <chr>, team_ref <chr>
 # }
 ```

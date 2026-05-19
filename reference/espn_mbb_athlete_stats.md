@@ -137,10 +137,66 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_athlete_stats(athlete_id = "4433985", season = 2025)
-#> ✖ 2026-05-19 17:29:23.373643: Failed to retrieve ESPN mens-college-basketball athlete stats for athlete_id=4433985, season=2025
-#> ✖ Args: league = "mens-college-basketball", athlete_id = "4433985", season = 2025
-#> ✖ Error: The API returned an error
-#> list()
+  espn_mbb_athlete_stats(athlete_id = "4593919", season = 2025)
+#> $`Season Averages`
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 3 × 5
+#>   team_id team_slug              season$year $displayName stats      position
+#>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
+#> 1 250     ut-arlington-mavericks        2020 2019-20      <chr [18]> G       
+#> 2 250     ut-arlington-mavericks        2021 2020-21      <chr [18]> G       
+#> 3 250     ut-arlington-mavericks        2022 2021-22      <chr [18]> G       
+#> 
+#> $`Season Totals`
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 3 × 5
+#>   team_id team_slug              season$year $displayName stats      position
+#>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
+#> 1 250     ut-arlington-mavericks        2020 2019-20      <chr [15]> G       
+#> 2 250     ut-arlington-mavericks        2021 2020-21      <chr [15]> G       
+#> 3 250     ut-arlington-mavericks        2022 2021-22      <chr [15]> G       
+#> 
+#> $`Season Misc Totals`
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 3 × 5
+#>   team_id team_slug              season$year $displayName stats      position
+#>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
+#> 1 250     ut-arlington-mavericks        2020 2019-20      <chr [11]> G       
+#> 2 250     ut-arlington-mavericks        2021 2020-21      <chr [11]> G       
+#> 3 250     ut-arlington-mavericks        2022 2021-22      <chr [11]> G       
+#> 
+#> $General
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Offensive
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Defensive
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Rebounding
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Shooting
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
+#> $Misc
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-19 19:25:34 UTC
+#> # A tibble: 0 × 0
+#> 
 # }
 ```

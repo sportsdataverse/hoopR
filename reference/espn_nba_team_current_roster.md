@@ -134,30 +134,29 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-try(espn_nba_team_current_roster(team_id = 18))
+try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:40 UTC
-#> # A tibble: 18 × 104
+#> ℹ Data updated: 2026-05-19 19:27:06 UTC
+#> # A tibble: 17 × 104
 #>    team_id team_uid       team_slug    team_location team_name team_abbreviation
 #>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            
-#>  1      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  2      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  3      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  4      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  5      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  6      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  7      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  8      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#>  9      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 10      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 11      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 12      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 13      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 14      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 15      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 16      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 17      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
-#> 18      18 s:40~l:46~t:18 new-york-kn… New York      Knicks    NY               
+#>  1      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  2      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  3      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  4      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  5      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  6      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  7      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  8      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#>  9      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 10      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 11      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 12      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 13      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 14      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 15      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 16      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 17      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #> # ℹ 98 more variables: team_display_name <chr>, team_short_name <chr>,
 #> #   team_color <chr>, team_alternate_color <chr>, team_is_active <lgl>,
 #> #   franchise..ref <chr>, franchise.id <chr>, franchise.uid <chr>,

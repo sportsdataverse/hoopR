@@ -179,23 +179,23 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_team_schedule(team_id = "17", season = 2025)
+  espn_nba_team_schedule(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Schedule from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:44 UTC
-#> # A tibble: 82 × 21
+#> ℹ Data updated: 2026-05-19 19:27:10 UTC
+#> # A tibble: 84 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
-#>  1 401704630   2025          NA    NA 2024-10-23T2… Broo… BKN @ ATL  NA         
-#>  2 401704643   2025          NA    NA 2024-10-25T2… Broo… BKN @ ORL  NA         
-#>  3 401704664   2025          NA    NA 2024-10-27T2… Milw… MIL @ BKN  NA         
-#>  4 401704679   2025          NA    NA 2024-10-29T2… Denv… DEN @ BKN  NA         
-#>  5 401704690   2025          NA    NA 2024-10-31T0… Broo… BKN @ MEM  NA         
-#>  6 401704702   2025          NA    NA 2024-11-01T2… Chic… CHI @ BKN  NA         
-#>  7 401704717   2025          NA    NA 2024-11-03T2… Detr… DET @ BKN  NA         
-#>  8 401704724   2025          NA    NA 2024-11-05T0… Memp… MEM @ BKN  NA         
-#>  9 401704753   2025          NA    NA 2024-11-09T0… Broo… BKN @ BOS  NA         
-#> 10 401704765   2025          NA    NA 2024-11-10T0… Broo… BKN @ CLE  NA         
-#> # ℹ 72 more rows
+#>  1 401704628   2025          NA    NA 2024-10-23T0… Minn… MIN @ LAL  NA         
+#>  2 401704651   2025          NA    NA 2024-10-26T0… Phoe… PHX @ LAL  NA         
+#>  3 401704662   2025          NA    NA 2024-10-27T0… Sacr… SAC @ LAL  NA         
+#>  4 401704677   2025          NA    NA 2024-10-29T0… Los … LAL @ PHX  NA         
+#>  5 401704684   2025          NA    NA 2024-10-30T2… Los … LAL @ CLE  NA         
+#>  6 401704703   2025          NA    NA 2024-11-01T2… Los … LAL @ TOR  NA         
+#>  7 401704722   2025          NA    NA 2024-11-05T0… Los … LAL @ DET  NA         
+#>  8 401704740   2025          NA    NA 2024-11-07T0… Los … LAL @ MEM  NA         
+#>  9 401704761   2025          NA    NA 2024-11-09T0… Phil… PHI @ LAL  NA         
+#> 10 401704777   2025          NA    NA 2024-11-11T0… Toro… TOR @ LAL  NA         
+#> # ℹ 74 more rows
 #> # ℹ 13 more variables: opponent_abbrev <chr>, home_away <chr>,
 #> #   neutral_site <lgl>, conference_competition <lgl>, venue_id <chr>,
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,

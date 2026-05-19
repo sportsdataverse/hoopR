@@ -147,13 +147,13 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_nba_event_play(event_id = 401283399, play_id = 4012833997)
+  espn_nba_event_play(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Detail ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 17:30:17 UTC
+#> ℹ Data updated: 2026-05-19 19:26:39 UTC
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     
-#> 1 nba    401283399 4012833997 7               137     Turnarou… Jona… J. Valanc…
+#> 1 nba    401283399 4012833994 4               615     Jumpball  Isai… NA        
 #> # ℹ 11 more variables: period <int>, clock <chr>, scoring_play <lgl>,
 #> #   score_value <dbl>, away_score <int>, home_score <int>, shooting_play <lgl>,
 #> #   coordinate_x <dbl>, coordinate_y <dbl>, team_ref <chr>, wallclock <chr>
