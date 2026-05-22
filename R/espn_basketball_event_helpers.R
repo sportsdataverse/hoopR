@@ -1749,8 +1749,8 @@
 #' Wraps `seasons/{y}/draft`. Single-row tibble with year, numberOfRounds,
 #' displayName, shortDisplayName, plus `$ref`s for the deeper sub-resources
 #' (athletes, rounds, positions, status) that are already wrapped by
-#' [.espn_basketball_draft_athletes()], [.espn_basketball_draft_rounds()],
-#' and [.espn_basketball_draft_status()].
+#' `.espn_basketball_draft_athletes()`, `.espn_basketball_draft_rounds()`,
+#' and `.espn_basketball_draft_status()`.
 #'
 #' @noRd
 .espn_basketball_season_draft <- function(league, season, ...) {
