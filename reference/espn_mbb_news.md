@@ -147,14 +147,14 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:25:56 UTC
+#> ℹ Data updated: 2026-05-22 06:34:24 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.88e7 Head… Morez J… "Michigan … 2026-05-… FALSE   Jeff … https:/… 46       
-#> 2  4.87e7 Story Transfe… "We're tra… 2026-05-… FALSE   Jeff … https:/… 41       
-#> 3  4.88e7 Head… NAACP u… "The NAACP… 2026-05-… FALSE   NA     https:/… 23       
-#> 4  4.88e7 Head… Sources… "Former St… 2026-05-… FALSE   Jeff … https:/… 41       
-#> 5  4.88e7 Story NBA dra… "How the s… 2026-05-… FALSE   Jeff … https:/… 41       
+#> 1  4.88e7 Head… CEO of … Bryan Seel… 2026-05-… FALSE   NA     https:/… 23       
+#> 2  4.88e7 Head… Top-10 … Top-10 hig… 2026-05-… FALSE   Jeff … https:/… 41       
+#> 3  4.88e7 Media Kam Mer… Kam Mercer… 2026-05-… FALSE   NA     https:/… 41       
+#> 4  4.88e7 Head… Rueben … Florida ce… 2026-05-… FALSE   NA     https:/… 41       
+#> 5  4.88e7 Head… Georgia… The Univer… 2026-05-… FALSE   David… https:/… 41       
 # }
 ```

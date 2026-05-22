@@ -2360,3 +2360,19 @@ Internal functions used by hoopR
 
   Some examples to get started with using `hoopR` and KenPom’s men’s
   college basketball website.
+
+- [Men's College Basketball
+  Cookbook](https://hoopR.sportsdataverse.org/articles/mbb-cookbook.md):
+
+  A storytelling tour of men’s college basketball analysis with `hoopR`
+  – recipes from a single game to a full bracket, plus KenPom
+  efficiency, and a running commentary on how to read the package’s
+  function names.
+
+- [NBA
+  Cookbook](https://hoopR.sportsdataverse.org/articles/nba-cookbook.md):
+
+  A storytelling tour of NBA analysis with `hoopR` – recipes that move
+  from a single box score to a full season, with an eye on how the
+  package’s function names are built so you can guess the next one
+  before you look it up.

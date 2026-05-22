@@ -146,7 +146,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_event_competitor_leaders(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Leaders ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:36 UTC
+#> ℹ Data updated: 2026-05-22 06:34:56 UTC
 #> # A tibble: 48 × 11
 #>    league event_id  team_id category_name category_display category_abbrev  rank
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>

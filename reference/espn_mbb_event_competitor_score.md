@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_event_competitor_score(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Competitor Score ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:25:43 UTC
+#> ℹ Data updated: 2026-05-22 06:34:14 UTC
 #> # A tibble: 1 × 8
 #>   league                  event_id  team_id value display_value winner source_id
 #>   <chr>                   <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    

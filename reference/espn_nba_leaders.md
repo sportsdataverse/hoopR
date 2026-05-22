@@ -167,7 +167,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_leaders(season = 2024, season_type = 2)
 #> ── ESPN NBA Leaders from ESPN.com ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:48 UTC
+#> ℹ Data updated: 2026-05-22 06:35:06 UTC
 #> # A tibble: 400 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  

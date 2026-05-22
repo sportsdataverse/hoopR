@@ -188,12 +188,12 @@ Saiem Gilani
   espn_nba_athlete_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> ℹ Data updated: 2026-05-22 06:34:49 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> ℹ Data updated: 2026-05-22 06:34:49 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -201,32 +201,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> ℹ Data updated: 2026-05-22 06:34:49 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> ℹ Data updated: 2026-05-22 06:34:49 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 Stephen A: The Lakers still need LeBron    "Stephen A… 2026-05-… NA     Media
-#>  2 Drake seemingly calls out LeBron James on… "The tensi… 2026-05-… Kalan… Story
-#>  3 NBA offseason intel: Predictions for summ… "Tim Bonte… 2026-05-… Tim B… Story
-#>  4 Stephen A.: Lakers should have elevated l… "Stephen A… 2026-05-… NA     Media
-#>  5 Has LeBron played his last game with the … "Stephen A… 2026-05-… NA     Media
-#>  6 What LeBron needs to return to L.A. -- an… "When Jame… 2026-05-… Dave … Story
-#>  7 Rob Pelinka, JJ Redick want Austin Reaves… "Lakers pr… 2026-05-… Dave … Head…
-#>  8 Chris Paul to McAfee: We'll all be seeing… "Chris Pau… 2026-05-… NA     Media
-#>  9 Stephen A.: Lakers need to be aligned wit… "Stephen A… 2026-05-… NA     Media
-#> 10 Perk: LeBron, KD and Steph will not win a… "Kendrick … 2026-05-… NA     Media
-#> 11 LeBron James to 'recalibrate,' weigh NBA … "LeBron Ja… 2026-05-… Dave … Head…
-#> 12 LeBron: 'I don't know what the future hol… "LeBron: '… 2026-05-… NA     Media
-#> 13 LeBron scores 24 in Lakers' final game of… "LeBron sc… 2026-05-… NA     Media
+#>  1 LeBron James: Lakers were 'out-talented' … "LeBron Ja… 2026-05-… Dave … Head…
+#>  2 The Cavaliers rebuilt after LeBron left, … "The clock… 2026-05-… Dave … Story
+#>  3 James, Haliburton to do live podcast at F… "LeBron Ja… 2026-05-… NA     Head…
+#>  4 Stephen A: The Lakers still need LeBron    "Stephen A… 2026-05-… NA     Media
+#>  5 Drake seemingly calls out LeBron James on… "The tensi… 2026-05-… Kalan… Story
+#>  6 NBA offseason intel: Predictions for summ… "Tim Bonte… 2026-05-… Tim B… Story
+#>  7 Stephen A.: Lakers should have elevated l… "Stephen A… 2026-05-… NA     Media
+#>  8 Has LeBron played his last game with the … "Stephen A… 2026-05-… NA     Media
+#>  9 What LeBron needs to return to L.A. -- an… "When Jame… 2026-05-… Dave … Story
+#> 10 Rob Pelinka, JJ Redick want Austin Reaves… "Lakers pr… 2026-05-… Dave … Head…
+#> 11 Chris Paul to McAfee: We'll all be seeing… "Chris Pau… 2026-05-… NA     Media
+#> 12 Stephen A.: Lakers need to be aligned wit… "Stephen A… 2026-05-… NA     Media
+#> 13 Perk: LeBron, KD and Steph will not win a… "Kendrick … 2026-05-… NA     Media
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:28 UTC
+#> ℹ Data updated: 2026-05-22 06:34:49 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  

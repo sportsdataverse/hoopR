@@ -147,7 +147,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_athlete_gamelog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Gamelog from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-19 19:26:27 UTC
+#> ℹ Data updated: 2026-05-22 06:34:48 UTC
 #> # A tibble: 82 × 24
 #>    id        at_vs game_date     score home_team_id away_team_id home_team_score
 #>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          

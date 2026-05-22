@@ -1,0 +1,323 @@
+# Men's College Basketball Cookbook
+
+## Before we cook
+
+Men’s college basketball is a sprawl – 360-odd Division I teams, a month
+of March that decides everything, and a stats culture built as much on
+tempo-free efficiency as on raw box scores. `hoopR` covers all of it,
+and the trick to not drowning is the same as in the NBA cookbook:
+**learn the grammar of the function names and you can guess your way to
+almost anything.**
+
+If you’ve read the NBA cookbook, you already know most of the grammar.
+This one adds one new prefix – `kp_` for KenPom – and swaps the league
+token from `nba` to `mbb`. That’s nearly the whole diff.
+
+### The grammar, refreshed for college
+
+A `hoopR` college function answers three questions in order:
+
+1.  **Where’s the data from?** – the prefix.
+    - `espn_` – ESPN’s APIs. The broad, stable backbone.
+    - `kp_` – KenPom (kenpom.com). Tempo-free efficiency, the lingua
+      franca of college analytics. **Requires a KenPom subscription.**
+    - `load_` – pre-built bulk season files.
+2.  **Which league?** – for ESPN it’s spelled out: `espn_mbb_`. The
+    `mbb` token is “men’s basketball.” (KenPom is men’s-college-only, so
+    `kp_` functions don’t need a league token – the prefix already
+    implies it.)
+3.  **What do you want?** – the rest of the name, general to specific.
+
+So “a team’s schedule from ESPN” is `espn_` + `mbb_` + `team_schedule`
+-\>
+[`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md).
+“KenPom’s efficiency ratings” is `kp_` + `efficiency` -\>
+[`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_efficiency.md).
+You will be right far more often than you’ll be wrong, and being wrong
+just means opening the reference index.
+
+``` r
+
+library(hoopR)
+library(dplyr)
+```
+
+## Recipe 1: A blue-blood program’s season
+
+**The story.** It’s November and you want to set the table for Duke’s
+season – schedule, roster, and where they sit.
+
+Type `espn_mbb_team` and the grammar lays out the menu for you:
+
+``` r
+
+team_id <- 150            # Duke
+season  <- most_recent_mbb_season()
+
+espn_mbb_team(team_id = team_id)                              # identity + record
+espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
+espn_mbb_team_roster(team_id = team_id, season = season)      # the players
+espn_mbb_team_season_statistics(team_id = team_id, season = season)
+```
+
+The
+[`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md)
+helper is worth a margin note. Every league in `hoopR` has a
+`most_recent_<league>_season()` companion, and the new `espn_mbb_*`
+functions use it as their default `season` argument. So most of the time
+you can simply *omit* `season` and get the current year – the function
+already knows what “now” means.
+
+## Recipe 2: The freshman phenom
+
+**The story.** Every college season has a one-and-done freshman everyone
+argues about. You want that player’s numbers.
+
+College players turn over fast – this year’s phenom is next year’s pro –
+so the reliable move is to pull the current roster first and lift an
+`athlete_id` straight off it, then walk the `athlete_` family:
+
+``` r
+
+roster     <- espn_mbb_team_roster(team_id = 150, season = most_recent_mbb_season())
+athlete_id <- roster$athlete_id[1]   # whoever is first on the roster
+
+espn_mbb_athlete_info(athlete_id = athlete_id)            # bio
+espn_mbb_athlete_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
+espn_mbb_athlete_career_stats(athlete_id = athlete_id)    # career rollup, long format
+```
+
+That “pull the index, lift an ID, drill down” move is the single most
+useful habit in the whole package. `athlete_gamelog` in particular only
+has data for players *currently* on a roster – last year’s star has
+moved on – so feeding it an ID you just lifted off `team_roster` is how
+you guarantee it returns something.
+
+Margin note: `athlete_info`, `athlete_gamelog`, `athlete_career_stats`
+all share the `athlete_` stem. When a stem repeats across many
+functions, that stem is a *namespace* – a promise that everything under
+it is about the same subject. Browsing by stem (`espn_mbb_athlete` +
+Tab) is often faster than searching.
+
+## Recipe 3: Tempo-free, the KenPom way
+
+**The story.** Box scores lie a little in college – a team that plays
+fast will pile up points without being good. You want *efficiency*:
+points per possession, not per game. That’s KenPom’s whole reason to
+exist.
+
+This is where the new prefix earns its keep. Everything KenPom is `kp_`.
+
+``` r
+
+# KenPom needs a subscription. Log in once per session.
+kp_user_email <- "you@example.com"
+kp_password   <- Sys.getenv("KP_PASSWORD")
+
+# The famous Pomeroy ratings -- adjusted efficiency for every team.
+kp_pomeroy_ratings(min_year = 2024, max_year = 2025)
+
+# The four factors: shooting, turnovers, rebounding, free throws.
+kp_fourfactors(min_year = 2025, max_year = 2025)
+
+# Raw adjusted-efficiency table.
+kp_efficiency(min_year = 2025, max_year = 2025)
+```
+
+The grammar lesson here is about *prefixes as capabilities*. The moment
+you see `kp_`, three things are implied without another word: the data
+is men’s-college-only, it is tempo-free, and it needs authentication. A
+prefix is a compressed paragraph. Learn what each prefix promises and
+half the documentation becomes redundant.
+
+KenPom’s own family is deep – and, of course, regular:
+
+``` r
+
+kp_team_schedule(team = "Duke", year = 2025)
+kp_teamstats(min_year = 2025, max_year = 2025)
+kp_playerstats(metric = "eFG", year = 2025)
+kp_kpoy(year = 2025)         # KenPom Player of the Year race
+kp_fanmatch(date = "2025-02-01")   # every game on a date, win probs attached
+```
+
+## Recipe 4: Game flow without the bracket pressure
+
+**The story.** A January road game went to overtime. You want the play-
+by-play and a sense of the swing.
+
+Same three zoom levels as the NBA cookbook – the grammar is
+league-agnostic:
+
+``` r
+
+game_id <- 401256760
+
+espn_mbb_game_all(game_id = game_id)      # everything, as a named list
+espn_mbb_team_box(game_id = game_id)      # team box
+espn_mbb_player_box(game_id = game_id)    # player box
+espn_mbb_pbp(game_id = game_id)           # play-by-play
+
+# ESPN's win-probability-per-play for the same game.
+espn_mbb_event_probabilities(event_id = game_id)
+```
+
+If you read the NBA cookbook, you’ve now seen `espn_*_game_all`,
+`espn_*_team_box`, `espn_*_player_box`, `espn_*_pbp` in two leagues with
+*only the league token changing*. That’s the payoff of a regular
+grammar: a recipe you learned for the NBA transfers to college by
+editing one word.
+
+## Recipe 5: Per-player, per-game box scores
+
+**The story.** You want a single player’s line from a single game, tidy
+and long – not the whole `player_box`.
+
+``` r
+
+# event + team + athlete -- three IDs, because you're naming one cell
+# of one game. (More identifiers = finer grain. Always.)
+espn_mbb_event_player_box(
+  event_id   = 401256760,
+  team_id    = 52,
+  athlete_id = 4277850
+)
+```
+
+## Recipe 6: The conference race
+
+**The story.** It’s February and your league is a three-team knife
+fight. You want the standings and the structure underneath them.
+
+College conferences are a *hierarchy* – divisions, conferences, the
+whole D-I grouping – and ESPN models that hierarchy with the
+`season_group` family.
+
+``` r
+
+season <- most_recent_mbb_season()
+
+# A grammar gotcha worth flagging: espn_mbb_standings() takes `year`,
+# not `season`. Most functions say `season`, a few older ones say
+# `year` -- when an argument name surprises you, ?function is the
+# two-second fix.
+espn_mbb_standings(year = season)
+
+# The group tree: groups -> one group -> its teams.
+espn_mbb_season_groups(season = season, season_type = 2)
+espn_mbb_season_group(group_id = 50, season = season, season_type = 2)
+espn_mbb_season_group_teams(group_id = 50, season = season, season_type = 2)
+```
+
+Margin note: `season_groups` (plural) is the index; `season_group`
+(singular) is one item. That singular/plural pair shows up all over the
+package – `franchises`/`franchise`, `tournaments`/`tournament`,
+`positions`/`position`. Plural = “give me the list,” singular = “give me
+this one.” It’s the most reliable two-word rule in the whole grammar.
+
+## Recipe 7: March
+
+**The story.** It’s the only story in college basketball. You want the
+tournament.
+
+``` r
+
+season <- most_recent_mbb_season()
+
+espn_mbb_tournaments()                                  # which tournaments exist
+espn_mbb_tournament(tournament_id = 3)                  # one tournament
+espn_mbb_tournament_seasons(tournament_id = 3)          # its yearly editions
+espn_mbb_tournament_season(tournament_id = 3, season = season)
+```
+
+Same singular/plural rule as Recipe 6, same general-to-specific march
+from `tournaments` down to one `tournament_season`. By now you should be
+able to *predict* this family before you read it – which is the entire
+point of the cookbook.
+
+## Recipe 8: A whole season, in bulk
+
+**The story.** You’re done with single games. You want every college
+game of a season to model on.
+
+``` r
+
+# load / mbb / pbp -- one call, one season.
+pbp <- load_mbb_pbp(seasons = 2024)
+
+load_mbb_player_box(seasons = 2024)
+load_mbb_team_box(seasons = 2024)
+load_mbb_schedule(seasons = 2024)
+```
+
+And straight into a database, with the same
+`(seasons, dbConnection, tablename)` plumbing every `load_` function
+shares:
+
+``` r
+
+library(DBI)
+con <- dbConnect(RSQLite::SQLite(), "mbb.sqlite")
+load_mbb_pbp(seasons = 2020:2024, dbConnection = con, tablename = "mbb_pbp")
+dbDisconnect(con)
+```
+
+## Working through a proxy
+
+Campus networks love a proxy. `hoopR` handles them in three layers –
+reach for the least invasive one that works.
+
+**Layer 1 – set it once for the session.** Covers everything: ESPN,
+KenPom, loaders.
+
+``` r
+
+options(hoopR.proxy = "http://proxy.university.edu:8080")
+
+# Authenticated proxy? Pass a list instead of a string.
+options(hoopR.proxy = list(
+  url      = "http://proxy.university.edu",
+  port     = 8080,
+  username = "netid",
+  password = Sys.getenv("PROXY_PASS")
+))
+
+# Then just work -- every call inherits it.
+espn_mbb_team_roster(team_id = 150, season = most_recent_mbb_season())
+kp_pomeroy_ratings(min_year = 2025, max_year = 2025)
+```
+
+**Layer 2 – environment variables.** For shared scripts and CI, where
+the proxy belongs to the machine and not the analysis, set the standard
+variables and let libcurl pick them up:
+
+``` r
+
+Sys.setenv(
+  http_proxy  = "http://proxy.university.edu:8080",
+  https_proxy = "http://proxy.university.edu:8080",
+  no_proxy    = "localhost,127.0.0.1"
+)
+```
+
+A grammar-flavored note on what *doesn’t* take a per-call `proxy =`
+argument: the `espn_*`, `kp_*`, and `load_*` functions all call the HTTP
+layer directly, so they read the proxy from the session option or the
+environment – not from an argument. (In the NBA cookbook, the `nba_*`
+Stats API functions *do* accept per-call `proxy =`, because they thread
+`...` through. College basketball has no equivalent NBA-Stats-style
+surface, so for `mbb` you’ll use Layer 1 or Layer 2 every time.) The
+prefix, once again, tells you the capability before you go looking.
+
+## Where to go next
+
+The college game has more teams, a deeper conference hierarchy, and the
+`kp_` prefix – but the grammar is identical to the NBA’s. You decided
+where the data lived, you named the league, you named the thing from
+general to specific, and you let the singular/plural rule and the shared
+stems carry you the rest of the way.
+
+The women’s game runs on `wehoop`, a sibling package with the exact same
+grammar. `espn_mbb_team_roster` has a mirror image in
+`espn_wbb_team_roster`; everything you just learned crosses straight
+over. That’s the WBB cookbook.
