@@ -1,0 +1,386 @@
+---
+title: "NBA Cookbook"
+description: "A storytelling tour of NBA analysis with <code>hoopR</code> -- recipes that move from a single box score to a full season, with an eye on how the package's function names are built so you can guess the next one before you look it up."
+author: "Saiem Gilani <br><a href='https://x.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
+opengraph:
+  image:
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE, comment = "#>", collapse = TRUE)
+```
+
+## Before we cook
+
+Every recipe in this cookbook is a small story: a question you might
+actually ask about the NBA, and the shortest honest path from that
+question to a data frame you can work with. None of the code blocks run
+when this page is built -- they all reach out to live APIs -- but every
+one of them works when you paste it into an R session.
+
+Here's the one idea worth internalizing before anything else: **`hoopR`
+function names are not arbitrary. They're a grammar.** Once you can read
+the grammar, you can *guess* the function you need instead of hunting
+for it. That guessing skill is the real subject of this cookbook; the
+basketball is just the excuse.
+
+### The grammar of a `hoopR` function name
+
+Almost every function answers three questions in order:
+
+1. **Where does the data come from?** -- the prefix.
+   - `espn_` -- ESPN's APIs. Broadest coverage, most stable.
+   - `nba_` -- the official NBA Stats API (stats.nba.com). Deepest box
+     scores, tracking data, lineup data.
+   - `kp_` -- KenPom (men's college only -- you won't use it here, but
+     you'll meet it in the MBB cookbook).
+   - `load_` -- pre-built bulk data. A whole season in one call.
+   - `nbagl_` -- the NBA G League.
+2. **Which league / which slice?** -- for ESPN functions the league is
+   baked in: `espn_nba_`. For the NBA Stats API the `nba_` prefix *is*
+   the league.
+3. **What thing do you want?** -- the rest of the name, read left to
+   right from general to specific: `team_season_roster`,
+   `athlete_career_stats`, `event_competitor_linescores`.
+
+So if you want "a team's roster for a given season, from ESPN," you can
+assemble the name in your head before you ever open the docs:
+`espn_` + `nba_` + `team` + `_roster` -> `espn_nba_team_roster()`. If
+you want "the league leaders from NBA.com," it's `nba_` + `leagueleaders`
+-> `nba_leagueleaders()`. The package has hundreds of functions; you do
+not need to memorize them. You need to memorize the grammar.
+
+We'll point at the grammar in the margins of each recipe, like a cooking
+show host muttering "and notice we salt the water *first*."
+
+```{r}
+library(hoopR)
+library(dplyr)
+```
+
+## Recipe 1: One game, three levels of detail
+
+**The story.** A friend texts you about last night's game and you want
+to actually look at it -- not a headline, the game itself.
+
+ESPN gives you a game at three zoom levels, and the function names tell
+you which zoom you're asking for. Start wide, then push in.
+
+```{r}
+game_id <- 401283399
+
+# Widest: the whole game summary as a named list of tibbles.
+# Read the name: espn / nba / "game" / "all" -- give me all of it.
+full_game <- espn_nba_game_all(game_id = game_id)
+names(full_game)
+
+# Medium: the box score. "team_box" and "player_box" are siblings --
+# same noun (box), different grain (team vs. player).
+team_box   <- espn_nba_team_box(game_id = game_id)
+player_box <- espn_nba_player_box(game_id = game_id)
+
+# Tightest: the play-by-play. Every possession, one row each.
+pbp <- espn_nba_pbp(game_id = game_id)
+```
+
+The lesson hiding in the margin: `team_box` and `player_box` differ by
+exactly one word, and that word is the *grain* of the table. Whenever
+you see two functions whose names differ by a single noun, that noun is
+almost always telling you "one row per ___."
+
+## Recipe 2: A superstar's whole career on one screen
+
+**The story.** You want to see LeBron James's career arc -- not this
+season, the whole thing -- and you want it tidy enough to plot.
+
+The word you're reaching for is **career**. ESPN's core-v2 API has a
+dedicated career rollup, and the function is named exactly what it is.
+
+```{r}
+# espn / nba / athlete / career / stats. The name is the sentence.
+lebron <- espn_nba_athlete_career_stats(athlete_id = 1966)
+
+# It comes back long -- one row per (stat_type x category x stat) --
+# which is exactly the shape you want for a faceted ggplot.
+lebron |>
+  filter(category_name == "offensive", stat_name == "avgPoints") |>
+  select(stat_type_id, value)
+```
+
+Margin note: `athlete_career_stats()` defaults to fetching *both*
+regular season and postseason and stacking them, keyed by a
+`stat_type_id` column. A lot of the newer `espn_nba_*` functions do
+this -- when a function could sensibly return "regular + playoffs," it
+usually returns both and lets you filter. If you only want one, pass
+`season_type`.
+
+Want the season-by-season index instead of the career rollup? The
+grammar predicts it: swap `career_stats` for `seasons`.
+
+```{r}
+espn_nba_athlete_seasons(athlete_id = 1966)
+```
+
+## Recipe 3: Game flow and the comeback
+
+**The story.** The game in Recipe 1 had a wild fourth quarter. You want
+to *see* the momentum swing -- a win-probability line.
+
+Two ways in, and the function names tell you which engine you're using.
+
+```{r}
+# Route A -- ESPN's per-play win probability.
+wp <- espn_nba_event_probabilities(event_id = 401283399)
+
+# Route B -- the NBA Stats API's own win-probability model.
+# Note the prefix flips to `nba_` -- different data source, so the
+# name's first token changes. Same idea, different kitchen.
+wp_nba <- nba_winprobabilitypbp(game_id = "0022300001")
+```
+
+This is the grammar doing real work. `espn_nba_event_probabilities()`
+and `nba_winprobabilitypbp()` answer nearly the same question, and you
+can tell at a glance that the first is ESPN's take and the second is
+NBA.com's, *because the prefix is the data source*. When two functions
+look like near-synonyms, check the prefix -- that's the tiebreaker.
+
+## Recipe 4: How did each player do in one game, one at a time?
+
+**The story.** You want one player's stat line from one game, broken
+out into a tidy long table -- not the whole `player_box`, just them.
+
+This is one of the newer core-v2 endpoints, and its name is a little
+sentence: a player's *box* score for one *event*.
+
+```{r}
+# espn / nba / event / player_box. "event" = one game; "player_box" =
+# one athlete's line. You need the (event, team, athlete) trio because
+# that's exactly what uniquely identifies "this player in this game."
+kyle_anderson <- espn_nba_event_player_box(
+  event_id   = 401283399,
+  team_id    = 29,
+  athlete_id = 2993874
+)
+```
+
+Margin note on *why three IDs*: a function's arguments are a hint about
+its grain. One ID (`game_id`) gets you a whole game. Three IDs
+(`event` + `team` + `athlete`) get you one cell of it. If a function
+asks for more identifiers, it's because it returns something more
+specific -- the arguments and the grain move together.
+
+While you're in event-detail land, the siblings all follow the pattern
+`espn_nba_event_*`:
+
+```{r}
+espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
+espn_nba_event_officials(event_id = 401283399)
+espn_nba_event_play(event_id = 401283399, play_id = 4012833994)
+```
+
+## Recipe 5: A team's season at a glance
+
+**The story.** You're previewing a team and want the essentials --
+record, schedule, roster, and how they actually stack up statistically.
+
+Everything you need starts with `espn_nba_team`. Type that much and let
+autocomplete show you the menu; the grammar guarantees the menu is
+sensibly named.
+
+```{r}
+team_id <- 13   # Los Angeles Lakers
+season  <- most_recent_nba_season()
+
+# The "season profile" is a hub -- it hands you $refs to everything
+# else about this team-season.
+profile <- espn_nba_team_season_profile(team_id = team_id, season = season)
+
+espn_nba_team_schedule(team_id = team_id, season = season)
+espn_nba_team_roster(team_id = team_id, season = season)
+
+# The full team-season stat sheet, with the team's league RANK baked
+# into every row -- "team_season_statistics" is the long-format sheet,
+# "team_record" is just the W-L.
+espn_nba_team_season_statistics(team_id = team_id, season = season)
+espn_nba_team_record(team_id = team_id, season = season)
+```
+
+Notice the family resemblance: `team_season_profile`,
+`team_season_roster`, `team_season_statistics`. The shared middle
+(`team_season`) is the subject; the last word is the lens. Find one
+member of a family and you've found the whole family.
+
+## Recipe 6: The MVP leaderboard race
+
+**The story.** It's March and you want the scoring, rebounding, and
+assist leaders -- the raw material of every MVP argument.
+
+```{r}
+# NBA.com's leaders. Prefix `nba_` -> this is the official Stats API.
+nba_leagueleaders(season = "2024-25", stat_category = "PTS")
+
+# ESPN's version of the same idea. Same question, different kitchen --
+# and the prefix tells you which kitchen before you read another word.
+espn_nba_leaders(season = most_recent_nba_season())
+```
+
+If you ever forget whether leaders live under `nba_` or `espn_nba_`:
+they live under *both*, because both APIs publish them. That's normal.
+The package mirrors the data sources honestly rather than papering one
+over the other -- so you choose based on which columns you want, not on
+which name you happened to remember.
+
+## Recipe 7: Tracking a draft class
+
+**The story.** You want to follow a draft class -- who went where, and
+in what order.
+
+The draft has a little family of its own, and the names sort from
+general to specific exactly as the grammar promises:
+
+```{r}
+season <- 2024
+
+espn_nba_season_draft(season = season)        # the draft, top level
+espn_nba_draft_rounds(season = season)        # broken out by round
+espn_nba_draft_athletes(season = season)      # every drafted player
+espn_nba_draft_athlete_detail(season = season, athlete_id = 108206)
+espn_nba_draft_pick(season = season, round = 1, pick = 1)
+```
+
+Read that list top to bottom: `season_draft` -> `draft_rounds` ->
+`draft_athletes` -> `draft_athlete_detail` -> `draft_pick`. Each step
+adds a word and narrows the grain. That's the grammar's "general to
+specific, left to right" rule made visible. When you find yourself
+wanting something *between* two of these, the name you want is usually
+*also* between them alphabetically and conceptually.
+
+## Recipe 8: A whole season at once, the fast way
+
+**The story.** You don't want one game. You want *every* game --
+a full season of play-by-play to model on.
+
+Calling `espn_nba_pbp()` in a loop over a thousand `game_id`s would
+work, and it would also be slow and rude to ESPN's servers. The `load_`
+prefix exists precisely for this: pre-built, pre-cleaned season files.
+
+```{r}
+# load / nba / pbp. One call, one season, ~600k rows.
+pbp_2024 <- load_nba_pbp(seasons = 2024)
+
+# The whole family loads the same way.
+load_nba_player_box(seasons = 2024)
+load_nba_team_box(seasons = 2024)
+load_nba_schedule(seasons = 2024)
+```
+
+The grammar lesson: the `load_` prefix changes the *performance
+contract*, not the subject. `load_nba_pbp()` and `espn_nba_pbp()` both
+hand you play-by-play; the first hands you a whole season fast, the
+second hands you one game live. Reach for `load_` when you're doing
+research across many games, and for `espn_` when you want one specific,
+fresh game.
+
+## Recipe 9: Pour it straight into a database
+
+**The story.** A season of play-by-play is big. You'd rather not hold
+it all in memory -- you want it in a database you can query.
+
+Every `load_` function takes the same optional plumbing arguments, and
+once you've seen them once you've seen them everywhere:
+
+```{r}
+library(DBI)
+con <- dbConnect(RSQLite::SQLite(), "nba.sqlite")
+
+# `dbConnection` + `tablename` -> write straight to disk while loading.
+load_nba_pbp(
+  seasons      = 2020:2024,
+  dbConnection = con,
+  tablename    = "nba_pbp"
+)
+
+dbDisconnect(con)
+```
+
+Margin note: consistency *is* a feature. Because every `load_` function
+shares the `(seasons, ..., dbConnection, tablename)` signature, learning
+one teaches you all of them. When a package keeps signatures parallel
+like this, lean on it -- guess the arguments the same way you guess the
+names.
+
+## Working through a proxy
+
+If you're on a corporate or campus network, your traffic may need to go
+through a proxy. `hoopR` understands proxies in three layers, and you
+should reach for the *least* invasive one that works.
+
+**Layer 1 -- set it once for the whole session.** This is what you want
+99% of the time. It covers every function in the package -- ESPN,
+NBA Stats, KenPom, loaders, all of it.
+
+```{r}
+# Plain proxy.
+options(hoopR.proxy = "http://proxy.company.com:8080")
+
+# Authenticated proxy -- pass a list and it's spread into the request.
+options(hoopR.proxy = list(
+  url      = "http://proxy.company.com",
+  port     = 8080,
+  username = "saiem",
+  password = Sys.getenv("PROXY_PASS")
+))
+
+# From here on, nothing changes -- just call functions normally.
+espn_nba_team_roster(team_id = 13, season = most_recent_nba_season())
+nba_leagueleaders(season = "2024-25")
+```
+
+**Layer 2 -- one call, one proxy.** Every NBA Stats API function
+(`nba_*`) threads `...` down to the HTTP layer, so you can override the
+proxy for a single call:
+
+```{r}
+nba_leaguestandings(
+  season = "2024-25",
+  proxy  = "http://other-proxy.company.com:3128"
+)
+```
+
+A grammar-flavored caveat: per-call `proxy =` works for the `nba_*`
+Stats API functions because they pass `...` through. The `espn_*`,
+`kp_*`, and `load_*` functions don't take a per-call proxy -- for those,
+use the session option in Layer 1. The prefix tells you the capability:
+`nba_` functions are the ones wired for per-call overrides.
+
+**Layer 3 -- let the environment decide.** If you'd rather not put a
+proxy in your R code at all, `hoopR` will honor the standard
+environment variables:
+
+```{r}
+Sys.setenv(
+  http_proxy  = "http://proxy.company.com:8080",
+  https_proxy = "http://proxy.company.com:8080",
+  no_proxy    = "localhost,127.0.0.1"
+)
+```
+
+These are read by libcurl automatically whenever you *haven't* set an
+explicit proxy. It's the right layer for shared scripts and CI, where
+the proxy is a property of the machine, not the analysis.
+
+## Where to go next
+
+You now have the grammar. Every recipe above was really the same trick:
+decide where the data lives (the prefix), name the league, then name
+the thing from general to specific. The NBA surface in `hoopR` is large,
+but it is *regular* -- and regular things are guessable.
+
+When you want the men's college game, the same grammar carries over
+almost unchanged -- swap `nba` for `mbb`, meet a new prefix (`kp_` for
+KenPom), and keep cooking. That's the MBB cookbook.
