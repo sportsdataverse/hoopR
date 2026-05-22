@@ -165,7 +165,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_injuries()
 #> ── ESPN NBA Injury Information from ESPN.com ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 07:12:28 UTC
+#> ℹ Data updated: 2026-05-22 07:31:12 UTC
 #> # A tibble: 26 × 12
 #>    team_id athlete_id athlete_name position status date  type  side  returns_at
 #>    <chr>   <chr>      <chr>        <chr>    <chr>  <chr> <chr> <chr> <chr>     

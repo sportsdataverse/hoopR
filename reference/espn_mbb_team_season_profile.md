@@ -167,7 +167,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-05-22 07:12:00 UTC
+#> ℹ Data updated: 2026-05-22 07:30:45 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
