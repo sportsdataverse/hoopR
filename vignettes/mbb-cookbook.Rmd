@@ -81,16 +81,24 @@ the current year -- the function already knows what "now" means.
 **The story.** Every college season has a one-and-done freshman everyone
 argues about. You want that player's numbers.
 
-College players turn over fast, so you'll usually start from the team
-roster (Recipe 1) to grab an `athlete_id`, then walk the athlete family:
+College players turn over fast -- this year's phenom is next year's
+pro -- so the reliable move is to pull the current roster first and
+lift an `athlete_id` straight off it, then walk the `athlete_` family:
 
 ```{r}
-athlete_id <- 4593919   # a recent Duke freshman
+roster     <- espn_mbb_team_roster(team_id = 150, season = most_recent_mbb_season())
+athlete_id <- roster$athlete_id[1]   # whoever is first on the roster
 
 espn_mbb_athlete_info(athlete_id = athlete_id)            # bio
 espn_mbb_athlete_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
 espn_mbb_athlete_career_stats(athlete_id = athlete_id)    # career rollup, long format
 ```
+
+That "pull the index, lift an ID, drill down" move is the single most
+useful habit in the whole package. `athlete_gamelog` in particular only
+has data for players *currently* on a roster -- last year's star has
+moved on -- so feeding it an ID you just lifted off `team_roster` is
+how you guarantee it returns something.
 
 Margin note: `athlete_info`, `athlete_gamelog`, `athlete_career_stats`
 all share the `athlete_` stem. When a stem repeats across many
@@ -191,7 +199,11 @@ whole D-I grouping -- and ESPN models that hierarchy with the
 ```{r}
 season <- most_recent_mbb_season()
 
-espn_mbb_standings(season = season)
+# A grammar gotcha worth flagging: espn_mbb_standings() takes `year`,
+# not `season`. Most functions say `season`, a few older ones say
+# `year` -- when an argument name surprises you, ?function is the
+# two-second fix.
+espn_mbb_standings(year = season)
 
 # The group tree: groups -> one group -> its teams.
 espn_mbb_season_groups(season = season, season_type = 2)

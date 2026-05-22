@@ -129,25 +129,31 @@ espn_nba_athlete_seasons(athlete_id = 1966)
 ## Recipe 3: Game flow and the comeback
 
 **The story.** The game in Recipe 1 had a wild fourth quarter. You want
-to *see* the momentum swing -- a win-probability line.
-
-Two ways in, and the function names tell you which engine you're using.
+to *see* the momentum swing.
 
 ```{r}
-# Route A -- ESPN's per-play win probability.
+# Route A -- ESPN's per-play win probability, ready to plot as-is.
 wp <- espn_nba_event_probabilities(event_id = 401283399)
 
-# Route B -- the NBA Stats API's own win-probability model.
-# Note the prefix flips to `nba_` -- different data source, so the
-# name's first token changes. Same idea, different kitchen.
-wp_nba <- nba_winprobabilitypbp(game_id = "0022300001")
+# Route B -- if you'd rather compute momentum yourself, the NBA Stats
+# API's V3 play-by-play is the rawest material. The prefix flips to
+# `nba_` -- different data source, different first token -- and it
+# keys off stats.nba.com game ids, which look nothing like ESPN's, so
+# lift a real one off the schedule first.
+sched  <- nba_schedule()
+pbp_v3 <- nba_playbyplayv3(game_id = sched$game_id[1])
 ```
 
-This is the grammar doing real work. `espn_nba_event_probabilities()`
-and `nba_winprobabilitypbp()` answer nearly the same question, and you
-can tell at a glance that the first is ESPN's take and the second is
-NBA.com's, *because the prefix is the data source*. When two functions
-look like near-synonyms, check the prefix -- that's the tiebreaker.
+This is the grammar doing real work. `espn_nba_pbp()` and
+`nba_playbyplayv3()` answer almost the same question -- give me the
+plays -- and you can tell at a glance that the first is ESPN's take and
+the second is NBA.com's, *because the prefix is the data source*. When
+two functions look like near-synonyms, check the prefix; that's the
+tiebreaker. (A small caveat the grammar can't tell you: the NBA Stats
+API churns faster than ESPN's. If a `nba_*` function ever tells you it
+is deprecated, it will name its replacement in the same breath -- here,
+the older `nba_winprobabilitypbp()` now points you at
+`nba_playbyplayv3()`. Read the message; it is doing you a favor.)
 
 ## Recipe 4: How did each player do in one game, one at a time?
 
