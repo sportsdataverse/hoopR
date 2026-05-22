@@ -141,9 +141,12 @@
 </h2>
 <p>Every recipe in this cookbook is a small story: a question you might
 actually ask about the NBA, and the shortest honest path from that
-question to a data frame you can work with. None of the code blocks run
-when this page is built – they all reach out to live APIs – but every
-one of them works when you paste it into an R session.</p>
+question to a data frame you can work with. Most of the code blocks run
+live when this page is built, so the tables you see are real data
+freshly pulled from ESPN and NBA.com. A handful – bulk season downloads,
+the database recipe, and the proxy examples – are shown but not run,
+since they either take too long or would reconfigure your session; those
+are flagged where they appear.</p>
 <p>Here’s the one idea worth internalizing before anything else:
 <strong><code>hoopR</code> function names are not arbitrary. They’re a
 grammar.</strong> Once you can read the grammar, you can <em>guess</em>
@@ -215,6 +218,7 @@ tell you which zoom you’re asking for. Start wide, then push in.</p>
 <span><span class="co"># Read the name: espn / nba / "game" / "all" -- give me all of it.</span></span>
 <span><span class="va">full_game</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_game_all.html">espn_nba_game_all</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">full_game</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Plays"  "Team"   "Player"</span></span>
 <span></span>
 <span><span class="co"># Medium: the box score. "team_box" and "player_box" are siblings --</span></span>
 <span><span class="co"># same noun (box), different grain (team vs. player).</span></span>
@@ -246,7 +250,11 @@ exactly what it is.</p>
 <span><span class="co"># which is exactly the shape you want for a faceted ggplot.</span></span>
 <span><span class="va">lebron</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">category_name</span> <span class="op">==</span> <span class="st">"offensive"</span>, <span class="va">stat_name</span> <span class="op">==</span> <span class="st">"avgPoints"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">stat_type_id</span>, <span class="va">value</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">stat_type_id</span>, <span class="va">value</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 2</span></span></span>
+<span><span class="co">#&gt;   stat_type_id value</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 0             26.8</span></span></code></pre></div>
 <p>Margin note: <code>athlete_career_stats()</code> defaults to fetching
 <em>both</em> regular season and postseason and stacking them, keyed by
 a <code>stat_type_id</code> column. A lot of the newer
@@ -257,7 +265,21 @@ you filter. If you only want one, pass <code>season_type</code>.</p>
 grammar predicts it: swap <code>career_stats</code> for
 <code>seasons</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/espn_nba_athlete_seasons.html">espn_nba_athlete_seasons</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">1966</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/espn_nba_athlete_seasons.html">espn_nba_athlete_seasons</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">1966</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 23 × 4</span></span></span>
+<span><span class="co">#&gt;    league athlete_id season ref                                                 </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                               </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> nba    1966         <span style="text-decoration: underline;">2</span>026 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> nba    1966         <span style="text-decoration: underline;">2</span>025 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> nba    1966         <span style="text-decoration: underline;">2</span>024 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> nba    1966         <span style="text-decoration: underline;">2</span>023 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> nba    1966         <span style="text-decoration: underline;">2</span>022 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> nba    1966         <span style="text-decoration: underline;">2</span>021 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> nba    1966         <span style="text-decoration: underline;">2</span>020 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> nba    1966         <span style="text-decoration: underline;">2</span>019 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> nba    1966         <span style="text-decoration: underline;">2</span>018 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba    1966         <span style="text-decoration: underline;">2</span>017 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 13 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="recipe-3-game-flow-and-the-comeback">Recipe 3: Game flow and the comeback<a class="anchor" aria-label="anchor" href="#recipe-3-game-flow-and-the-comeback"></a>
@@ -315,8 +337,33 @@ arguments and the grain move together.</p>
 pattern <code>espn_nba_event_*</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/espn_nba_event_competitor_linescores.html">espn_nba_event_competitor_linescores</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span>, team_id <span class="op">=</span> <span class="fl">29</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 8 × 7</span></span></span>
+<span><span class="co">#&gt;   league event_id  team_id period value display_value source      </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba    401283399 29           1    30 30            1           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> nba    401283399 29           1    30 30            Basic/Manual</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> nba    401283399 29           2    27 27            1           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> nba    401283399 29           2    27 27            Basic/Manual</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> nba    401283399 29           3    29 29            1           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> nba    401283399 29           3    29 29            Basic/Manual</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> nba    401283399 29           4    36 36            1           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> nba    401283399 29           4    36 36            Basic/Manual</span></span>
 <span><span class="fu"><a href="../reference/espn_nba_event_officials.html">espn_nba_event_officials</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_event_play.html">espn_nba_event_play</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span>, play_id <span class="op">=</span> <span class="fl">4012833994</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 8</span></span></span>
+<span><span class="co">#&gt;   event_id  official_id full_name   display_name position_id position_name</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 401283399 6856        Eric Lewis  Eric Lewis   40          Referee      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 401283399 2612372     Jacyn Goble Jacyn Goble  40          Referee      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 401283399 4394825     Evan Scott  Evan Scott   40          Referee      </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more variables: position_type &lt;chr&gt;, order &lt;int&gt;</span></span></span>
+<span><span class="fu"><a href="../reference/espn_nba_event_play.html">espn_nba_event_play</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span>, play_id <span class="op">=</span> <span class="fl">4012833994</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 19</span></span></span>
+<span><span class="co">#&gt;   league event_id  play_id    sequence_number type_id type_text text  short_text</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba    401283399 4012833994 4               615     Jumpball  Isai… <span style="color: #BB0000;">NA</span>        </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more variables: period &lt;int&gt;, clock &lt;chr&gt;, scoring_play &lt;lgl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   score_value &lt;dbl&gt;, away_score &lt;int&gt;, home_score &lt;int&gt;, shooting_play &lt;lgl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   coordinate_x &lt;dbl&gt;, coordinate_y &lt;dbl&gt;, team_ref &lt;chr&gt;, wallclock &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="recipe-5-a-teams-season-at-a-glance">Recipe 5: A team’s season at a glance<a class="anchor" aria-label="anchor" href="#recipe-5-a-teams-season-at-a-glance"></a>
@@ -336,13 +383,86 @@ menu is sensibly named.</p>
 <span><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_team_season_profile.html">espn_nba_team_season_profile</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/espn_nba_team_schedule.html">espn_nba_team_schedule</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 82 × 21</span></span></span>
+<span><span class="co">#&gt;    event_id  season season_type  week date          name  short_name opponent_id</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 401809244   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-10-22T0… Gold… GS @ LAL   <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 401809951   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-10-25T0… Minn… MIN @ LAL  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 401809968   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-10-27T0… Los … LAL @ SAC  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 401809977   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-10-28T0… Port… POR @ LAL  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 401809991   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-10-30T0… Los … LAL @ MIN  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 401809506   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-11-01T0… Los … LAL @ MEM  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 401810010   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-11-03T0… Miam… MIA @ LAL  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 401810018   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-11-04T0… Los … LAL @ POR  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 401810034   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-11-06T0… San … SA @ LAL   <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 401810040   <span style="text-decoration: underline;">2</span>026          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> 2025-11-09T0… Los … LAL @ ATL  <span style="color: #BB0000;">NA</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 72 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 13 more variables: opponent_abbrev &lt;chr&gt;, home_away &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   neutral_site &lt;lgl&gt;, conference_competition &lt;lgl&gt;, venue_id &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   venue_name &lt;chr&gt;, venue_city &lt;chr&gt;, venue_state &lt;chr&gt;, broadcast &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   result &lt;chr&gt;, team_score &lt;chr&gt;, opponent_score &lt;chr&gt;, winner &lt;lgl&gt;</span></span></span>
 <span><span class="fu"><a href="../reference/espn_nba_team_roster.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 17 × 15</span></span></span>
+<span><span class="co">#&gt;    athlete_id full_name jersey position_abbrev position_name height weight age  </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 4278129    Deandre … 5      C               Center        <span style="color: #949494;">"</span>7' 0… 252 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 3945274    Luka Don… 77     G               Guard         <span style="color: #949494;">"</span>6' 8… 230 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 4066648    Rui Hach… 28     F               Forward       <span style="color: #949494;">"</span>6' 8… 230 l… 28   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 4397077    Jaxson H… 11     C               Center        <span style="color: #949494;">"</span>7' 0… 220 l… 25   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 4683774    Bronny J… 9      G               Guard         <span style="color: #949494;">"</span>6' 2… 210 l… 21   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 1966       LeBron J… 23     F               Forward       <span style="color: #949494;">"</span>6' 9… 250 l… 41   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 3913174    Luke Ken… 10     G               Guard         <span style="color: #949494;">"</span>6' 5… 206 l… 29   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2960236    Maxi Kle… 14     F               Forward       <span style="color: #949494;">"</span>6' 1… 240 l… 34   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 4897943    Dalton K… 4      F               Forward       <span style="color: #949494;">"</span>6' 6… 215 l… 25   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 4592691    Jake LaR… 12     F               Forward       <span style="color: #949494;">"</span>6' 7… 235 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 4702972    Chris Ma… 30     G               Guard         <span style="color: #949494;">"</span>6' 4… 209 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 4066457    Austin R… 15     G               Guard         <span style="color: #949494;">"</span>6' 5… 197 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 2990992    Marcus S… 36     G               Guard         <span style="color: #949494;">"</span>6' 3… 220 l… 32   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 4683686    Nick Smi… 20     G               Guard         <span style="color: #949494;">"</span>6' 2… 185 l… 22   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 5060631    Adou Thi… 1      F               Forward       <span style="color: #949494;">"</span>6' 8… 220 l… 22   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 4431695    Drew Tim… 17     F               Forward       <span style="color: #949494;">"</span>6' 1… 235 l… 25   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 4278077    Jarred V… 2      F               Forward       <span style="color: #949494;">"</span>6' 8… 214 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 7 more variables: birth_date &lt;chr&gt;, birth_place &lt;chr&gt;, headshot &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   link_web &lt;chr&gt;, status &lt;chr&gt;, team_id &lt;chr&gt;, season &lt;int&gt;</span></span></span>
 <span></span>
 <span><span class="co"># The full team-season stat sheet, with the team's league RANK baked</span></span>
 <span><span class="co"># into every row -- "team_season_statistics" is the long-format sheet,</span></span>
 <span><span class="co"># "team_record" is just the W-L.</span></span>
 <span><span class="fu"><a href="../reference/espn_nba_team_season_statistics.html">espn_nba_team_season_statistics</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_team_record.html">espn_nba_team_record</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 109 × 13</span></span></span>
+<span><span class="co">#&gt;    league season season_type team_id category_name category_display stat_name   </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        blocks      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        defensiveRe…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        steals      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        turnoverPoi…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        defReboundR…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        avgDefensiv…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        avgBlocks   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        avgSteals   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        avg48Defens…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba      <span style="text-decoration: underline;">2</span>026           2 13      defensive     Defensive        avg48Blocks </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 99 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: stat_abbrev &lt;chr&gt;, stat_display &lt;chr&gt;, value &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   display_value &lt;chr&gt;, rank &lt;int&gt;, rank_display_value &lt;chr&gt;</span></span></span>
+<span><span class="fu"><a href="../reference/espn_nba_team_record.html">espn_nba_team_record</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 12 × 14</span></span></span>
+<span><span class="co">#&gt;    league team_id season season_type record_id name    abbreviation display_name</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 0         overall Total        Overall     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 33        Home    <span style="color: #BB0000;">NA</span>           Home        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 34        Road    <span style="color: #BB0000;">NA</span>           Road        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 60        vs. Di… <span style="color: #BB0000;">NA</span>           DIV         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 61        vs. Co… <span style="color: #BB0000;">NA</span>           CONF        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> nba    13        <span style="text-decoration: underline;">2</span>026           2 901       Last T… L10          Last Ten Ga…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 0         overall Total        Overall     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 33        Home    <span style="color: #BB0000;">NA</span>           Home        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 34        Road    <span style="color: #BB0000;">NA</span>           Road        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 60        vs. Di… <span style="color: #BB0000;">NA</span>           DIV         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 61        vs. Co… <span style="color: #BB0000;">NA</span>           CONF        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> nba    13        <span style="text-decoration: underline;">2</span>026           3 901       Last T… L10          Last Ten Ga…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: short_display_name &lt;chr&gt;, description &lt;chr&gt;, type &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   summary &lt;chr&gt;, display_value &lt;chr&gt;, value &lt;dbl&gt;</span></span></span></code></pre></div>
 <p>Notice the family resemblance: <code>team_season_profile</code>,
 <code>team_season_roster</code>, <code>team_season_statistics</code>.
 The shared middle (<code>team_season</code>) is the subject; the last
@@ -358,10 +478,45 @@ argument.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># NBA.com's leaders. Prefix `nba_` -&gt; this is the official Stats API.</span></span>
 <span><span class="fu"><a href="../reference/nba_leagueleaders.html">nba_leagueleaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="st">"2024-25"</span>, stat_category <span class="op">=</span> <span class="st">"PTS"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $LeagueLeaders</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 569 × 28</span></span></span>
+<span><span class="co">#&gt;    PLAYER_ID RANK  PLAYER     TEAM_ID TEAM  GP    MIN   FGM   FGA   FG_PCT FG3M </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 1628983   1     Shai Gilg… 161061… OKC   76    2598  860   1656  0.519  163  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 1630162   2     Anthony E… 161061… MIN   79    2871  721   1612  0.447  320  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 203999    3     Nikola Jo… 161061… DEN   70    2571  786   1364  0.576  138  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 203507    4     Giannis A… 161061… MIL   67    2289  793   1319  0.601  14   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 1628369   5     Jayson Ta… 161061… BOS   72    2624  662   1465  0.452  250  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 1626164   6     Devin Boo… 161061… PHX   75    2795  654   1420  0.461  183  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 1629027   7     Trae Young 161061… ATL   76    2739  566   1376  0.411  218  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 1629639   8     Tyler Her… 161061… MIA   77    2725  651   1378  0.472  251  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 1630595   9     Cade Cunn… 161061… DET   70    2452  684   1457  0.469  149  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 201935    10    James Har… 161061… LAC   79    2789  531   1295  0.41   235  </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 559 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 more variables: FG3A &lt;chr&gt;, FG3_PCT &lt;chr&gt;, FTM &lt;chr&gt;, FTA &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   FT_PCT &lt;chr&gt;, OREB &lt;chr&gt;, DREB &lt;chr&gt;, REB &lt;chr&gt;, AST &lt;chr&gt;, STL &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   BLK &lt;chr&gt;, TOV &lt;chr&gt;, PF &lt;chr&gt;, PTS &lt;chr&gt;, EFF &lt;chr&gt;, AST_TOV &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   STL_TOV &lt;chr&gt;</span></span></span>
 <span></span>
 <span><span class="co"># ESPN's version of the same idea. Same question, different kitchen --</span></span>
 <span><span class="co"># and the prefix tells you which kitchen before you read another word.</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_leaders.html">espn_nba_leaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/espn_nba_leaders.html">espn_nba_leaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 400 × 11</span></span></span>
+<span><span class="co">#&gt;    season season_type category      abbreviation athlete_id athlete_name team_id</span></span>
+<span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3945274    <span style="color: #BB0000;">NA</span>           13     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          4278073    <span style="color: #BB0000;">NA</span>           25     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          4594268    <span style="color: #BB0000;">NA</span>           16     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3917376    <span style="color: #BB0000;">NA</span>           2      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          4431678    <span style="color: #BB0000;">NA</span>           20     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          6450       <span style="color: #BB0000;">NA</span>           12     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3908809    <span style="color: #BB0000;">NA</span>           5      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3112335    <span style="color: #BB0000;">NA</span>           7      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3032977    <span style="color: #BB0000;">NA</span>           15     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>026           2 pointsPerGame PTS          3059318    <span style="color: #BB0000;">NA</span>           20     </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 390 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 4 more variables: team_abbrev &lt;chr&gt;, value &lt;dbl&gt;, rank &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   display_value &lt;chr&gt;</span></span></span></code></pre></div>
 <p>If you ever forget whether leaders live under <code>nba_</code> or
 <code>espn_nba_</code>: they live under <em>both</em>, because both APIs
 publish them. That’s normal. The package mirrors the data sources
@@ -380,10 +535,47 @@ general to specific exactly as the grammar promises:</p>
 <code class="sourceCode R"><span><span class="va">season</span> <span class="op">&lt;-</span> <span class="fl">2024</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/espn_nba_season_draft.html">espn_nba_season_draft</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>        <span class="co"># the draft, top level</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 10</span></span></span>
+<span><span class="co">#&gt;   league season  year uid       number_of_rounds display_name short_display_name</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024  <span style="text-decoration: underline;">2</span>024 s:40~l:4…                2 2024 Nation… 2024 NBA Draft    </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 3 more variables: status_ref &lt;chr&gt;, athletes_ref &lt;chr&gt;, rounds_ref &lt;chr&gt;</span></span></span>
 <span><span class="fu"><a href="../reference/espn_nba_draft_rounds.html">espn_nba_draft_rounds</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>        <span class="co"># broken out by round</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 7</span></span></span>
+<span><span class="co">#&gt;   league season round display_name short_display_name n_picks status   </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024     1 1st Round    1st                     30 COMPLETED</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> nba      <span style="text-decoration: underline;">2</span>024     2 2nd Round    2nd                     28 COMPLETED</span></span>
 <span><span class="fu"><a href="../reference/espn_nba_draft_athletes.html">espn_nba_draft_athletes</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>      <span class="co"># every drafted player</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 102 × 4</span></span></span>
+<span><span class="co">#&gt;    league season athlete_id ref                                                 </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                               </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> nba      <span style="text-decoration: underline;">2</span>024 108206     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> nba      <span style="text-decoration: underline;">2</span>024 108204     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> nba      <span style="text-decoration: underline;">2</span>024 108106     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> nba      <span style="text-decoration: underline;">2</span>024 108231     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> nba      <span style="text-decoration: underline;">2</span>024 108203     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> nba      <span style="text-decoration: underline;">2</span>024 108107     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> nba      <span style="text-decoration: underline;">2</span>024 108228     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> nba      <span style="text-decoration: underline;">2</span>024 108142     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> nba      <span style="text-decoration: underline;">2</span>024 108207     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba      <span style="text-decoration: underline;">2</span>024 108210     http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 92 more rows</span></span></span>
 <span><span class="fu"><a href="../reference/espn_nba_draft_athlete_detail.html">espn_nba_draft_athlete_detail</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span>, athlete_id <span class="op">=</span> <span class="fl">108206</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_draft_pick.html">espn_nba_draft_pick</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span>, round <span class="op">=</span> <span class="fl">1</span>, pick <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 19</span></span></span>
+<span><span class="co">#&gt;   league season draftee_id athlete_id first_name last_name full_name         </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024 108206     5211175    Zaccharie  Risacher  Zaccharie Risacher</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 12 more variables: display_name &lt;chr&gt;, height &lt;dbl&gt;, display_height &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   weight &lt;dbl&gt;, display_weight &lt;chr&gt;, position_name &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   position_abbrev &lt;chr&gt;, pick_overall &lt;int&gt;, pick_round &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   pick_team_id &lt;chr&gt;, athlete_ref &lt;chr&gt;, headshot &lt;chr&gt;</span></span></span>
+<span><span class="fu"><a href="../reference/espn_nba_draft_pick.html">espn_nba_draft_pick</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span>, round <span class="op">=</span> <span class="fl">1</span>, pick <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 12</span></span></span>
+<span><span class="co">#&gt;   league season round  pick overall traded trade_note status  athlete_id team_id</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024     1     1       1 FALSE  <span style="color: #BB0000;">NA</span>         SELECT… 108206     1      </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more variables: athlete_ref &lt;chr&gt;, team_ref &lt;chr&gt;</span></span></span></code></pre></div>
 <p>Read that list top to bottom: <code>season_draft</code> -&gt;
 <code>draft_rounds</code> -&gt; <code>draft_athletes</code> -&gt;
 <code>draft_athlete_detail</code> -&gt; <code>draft_pick</code>. Each
@@ -477,7 +669,8 @@ layer, so you can override the proxy for a single call:</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/nba_leaguestandings.html">nba_leaguestandings</a></span><span class="op">(</span></span>
 <span>  season <span class="op">=</span> <span class="st">"2024-25"</span>,</span>
 <span>  proxy  <span class="op">=</span> <span class="st">"http://other-proxy.company.com:3128"</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; list()</span></span></code></pre></div>
 <p>A grammar-flavored caveat: per-call <code>proxy =</code> works for
 the <code>nba_*</code> Stats API functions because they pass
 <code>...</code> through. The <code>espn_*</code>, <code>kp_*</code>,

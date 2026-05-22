@@ -151,7 +151,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournament(tournament_id = 1)
 #> ── ESPN NBA Tournament Detail ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 06:35:27 UTC
+#> ℹ Data updated: 2026-05-22 06:55:26 UTC
 #> # A tibble: 1 × 4
 #>   tournament_id display_name seasons_ref                                  league
 #>   <chr>         <chr>        <chr>                                        <chr> 

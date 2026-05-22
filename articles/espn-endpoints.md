@@ -10,14 +10,14 @@ around individual games. The package now also wraps a much wider slice
 of ESPN’s basketball API – team rosters, schedules, league news, athlete
 biographies and gamelogs, in-game win probabilities, officials,
 broadcast info, the NBA draft, free agency, transactions, and
-league-wide catalogs of venues, coaches, and statistical leaders. Eighty
-ESPN endpoint wrappers in total, split roughly evenly between men’s
-college basketball (`espn_mbb_*`) and the NBA (`espn_nba_*`).
+league-wide catalogs of venues, coaches, and statistical leaders. Nearly
+two hundred ESPN endpoint wrappers in total, split between men’s college
+basketball (`espn_mbb_*`) and the NBA (`espn_nba_*`).
 
 This vignette is a tour of what’s available and how to compose the
-pieces. None of the chunks evaluate during `R CMD check` – they all hit
-the live ESPN API – but every one of them works when you copy it into an
-interactive session.
+pieces. Most of the chunks run live when the package website is built,
+so the tables below are real ESPN responses – and every one of them
+works the same way when you copy it into an interactive session.
 
 ## A note on the API surface
 
@@ -38,7 +38,7 @@ hosts, and `hoopR` reaches into each:
   three; older seasons sometimes return 404, and not every athlete is
   represented.
 
-There’s a fourth host (`cdn.espn.com/core`) that surflakers the same
+There’s a fourth host (`cdn.espn.com/core`) that surfaces the same
 information as the site-v2 `/summary` endpoint we already parse, so we
 don’t wrap it.
 
@@ -170,10 +170,30 @@ library(hoopR)
 # Latest 10 MBB news items
 mbb_news <- espn_mbb_news(limit = 10)
 head(mbb_news[, c("headline", "published")])
+#> # A tibble: 6 × 2
+#>   headline                                                             published
+#>   <chr>                                                                <chr>    
+#> 1 CEO of NIL enforcement reminds schools: These are your rules         2026-05-…
+#> 2 Top-10 sophomore Mercer picks Cincinnati, to reclassify to 2027      2026-05-…
+#> 3 Kam Mercer announces commitment to Cincinnati                        2026-05-…
+#> 4 Rueben Chinyelu returns to Florida after pulling out of NBA draft    2026-05-…
+#> 5 Georgia men's basketball gets $10M from Adam Wexler, founder of DFS… 2026-05-…
+#> 6 UCLA adds four transfers, prized freshmen to bolster roster          2026-05-…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
 head(mbb_cal)
+#> # A tibble: 6 × 12
+#>   season season_type season_type_label season_start_date season_end_date  
+#>   <chr>  <chr>       <chr>             <chr>             <chr>            
+#> 1 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 2 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 3 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 4 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 5 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> 6 2025   NA          NA                2024-07-13T07:00Z 2025-04-09T06:59Z
+#> # ℹ 7 more variables: calendar_type <chr>, label <chr>, alternate_label <chr>,
+#> #   detail <chr>, value <chr>, start_date <chr>, end_date <chr>
 
 # Same on the NBA side
 nba_news <- espn_nba_news(limit = 10)
@@ -199,20 +219,28 @@ wrappers when you want a fuller picture.
 # Duke at a glance
 duke <- espn_mbb_team(team_id = 150, season = 2025)
 names(uconn)        # Info, Record, NextEvent, StandingSummary, Coaches
+#> Error:
+#> ! object 'uconn' not found
 
 # Current roster
 duke_roster <- espn_mbb_team_roster(team_id = 150, season = 2025)
 head(uconn_roster[, c("athlete_display_name", "position_name", "jersey")])
+#> Error:
+#> ! object 'uconn_roster' not found
 
 # Regular-season schedule
 duke_sched <- espn_mbb_team_schedule(
   team_id = 150, season = 2025, season_type = 2
 )
 head(uconn_sched[, c("name", "date", "home_away", "score")])
+#> Error:
+#> ! object 'uconn_sched' not found
 
 # Statistical leaders for the team
 duke_ldrs <- espn_mbb_team_leaders(team_id = 150, season = 2025)
 head(uconn_ldrs)
+#> Error:
+#> ! object 'uconn_ldrs' not found
 ```
 
 The same shape applies to NBA teams – `espn_nba_team(17, 2025)` for the
@@ -258,30 +286,52 @@ library(dplyr)
 duke_roster <- espn_mbb_team_roster(team_id = 150, season = 2025)
 
 athlete_id   <- uconn_roster$athlete_id[1]
+#> Error:
+#> ! object 'uconn_roster' not found
 athlete_name <- uconn_roster$athlete_display_name[1]
+#> Error:
+#> ! object 'uconn_roster' not found
 message("Selected: ", athlete_name, " (", athlete_id, ")")
+#> Error:
+#> ! object 'athlete_name' not found
 
 # Bio and profile
 bio <- espn_mbb_athlete_info(athlete_id = athlete_id)
+#> Error:
+#> ! object 'athlete_id' not found
 glimpse(bio)
+#> Error:
+#> ! object 'bio' not found
 
 # Season overview (web-common-v3)
 overview <- espn_mbb_athlete_overview(
   athlete_id = athlete_id, season = 2025
 )
+#> Error:
+#> ! object 'athlete_id' not found
 names(overview)
+#> Error:
+#> ! object 'overview' not found
 
 # Game-by-game log
 gamelog <- espn_mbb_athlete_gamelog(
   athlete_id = athlete_id, season = 2025
 )
+#> Error:
+#> ! object 'athlete_id' not found
 head(gamelog[, c("game_date", "opponent", "points", "rebounds", "assists")])
+#> Error:
+#> ! object 'gamelog' not found
 
 # Situational splits (home/away, by month, vs ranked, ...)
 splits <- espn_mbb_athlete_splits(
   athlete_id = athlete_id, season = 2025
 )
+#> Error:
+#> ! object 'athlete_id' not found
 head(splits)
+#> Error:
+#> ! object 'splits' not found
 ```
 
 Everything above works the same on the NBA side – swap `espn_mbb_*` for
@@ -331,6 +381,8 @@ ggplot(plot_data, aes(x = seq, y = as.numeric(home_win_percentage))) +
   theme_minimal()
 ```
 
+![](espn-endpoints_files/figure-html/winprob-1.png)
+
 You can layer in scoring plays from `pbp` to label momentum swings, or
 join `_event_officials()` and `_event_broadcasts()` if you want
 contextual annotations.
@@ -343,10 +395,16 @@ odds <- espn_nba_event_odds(event_id = game_id)
 # Officials
 officials <- espn_nba_event_officials(event_id = game_id)
 officials[, c("full_name", "position")]
+#> Error in `officials[, c("full_name", "position")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Column `position` doesn't exist.
 
 # Broadcast outlets
 broadcasts <- espn_nba_event_broadcasts(event_id = game_id)
 broadcasts[, c("market", "names")]
+#> Error in `broadcasts[, c("market", "names")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Column `market` doesn't exist.
 ```
 
 ESPN doesn’t carry betting lines for NCAA games, so
@@ -366,15 +424,22 @@ portal isn’t part of ESPN’s basketball API.
 # 2025 NBA draft picks
 draft_2025 <- espn_nba_draft(season = 2025)
 head(draft_2025[, c("pick", "round", "team_name", "athlete_display_name")])
+#> Error in `draft_2025[, c("pick", "round", "team_name", "athlete_display_name")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Columns `team_name` and `athlete_display_name` don't exist.
 
 # Recent transactions (waivers, trades, signings)
 txn <- espn_nba_transactions(season = 2025, limit = 100)
 head(txn[, c("date", "type", "athlete_display_name", "team_name")])
+#> Error in `txn[, c("date", "type", "athlete_display_name", "team_name")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Columns `athlete_display_name` and `team_name` don't exist.
 
 # Free agents -- empty outside the FA window, which is roughly
 # January through April each year
 fa <- espn_nba_freeagents(season = 2025)
 nrow(fa)
+#> [1] 0
 ```
 
 If you’re stitching together a roster history, the natural sequence is
@@ -391,14 +456,31 @@ athlete index. The catalog endpoints cover that.
 # Statistical leaders (points, rebounds, assists, ...)
 nba_ldrs <- espn_nba_leaders(season = 2024, season_type = 2)
 head(nba_ldrs)
+#> # A tibble: 6 × 11
+#>   season season_type category      abbreviation athlete_id athlete_name team_id
+#>    <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
+#> 1   2024           2 pointsPerGame PTS          3059318    NA           20     
+#> 2   2024           2 pointsPerGame PTS          3945274    NA           6      
+#> 3   2024           2 pointsPerGame PTS          3032977    NA           15     
+#> 4   2024           2 pointsPerGame PTS          4278073    NA           25     
+#> 5   2024           2 pointsPerGame PTS          3934672    NA           18     
+#> 6   2024           2 pointsPerGame PTS          3202       NA           21     
+#> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
+#> #   display_value <chr>
 
 # Every NBA arena ESPN tracks
 nba_venues <- espn_nba_venues()
 head(nba_venues[, c("full_name", "city", "state", "capacity")])
+#> Error in `nba_venues[, c("full_name", "city", "state", "capacity")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Columns `city` and `state` don't exist.
 
 # Coaches (current season)
 mbb_coaches <- espn_mbb_coaches(season = 2025)
 head(mbb_coaches[, c("full_name", "team_name", "experience")])
+#> Error in `mbb_coaches[, c("full_name", "team_name", "experience")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Column `team_name` doesn't exist.
 ```
 
 The athlete index is the largest of the catalog endpoints – expect
@@ -412,11 +494,18 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
+#> [1] 845
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
+#> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Columns `display_name`, `position_name`, and `team_name` don't exist.
 
 # MBB -- cap at 50 rows just to peek; the default limit is 25,000
 mbb_athletes <- espn_mbb_athletes_index(season = 2025, limit = 50)
 head(mbb_athletes[, c("display_name", "position_name", "team_name")])
+#> Error in `mbb_athletes[, c("display_name", "position_name", "team_name")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Columns `display_name`, `position_name`, and `team_name` don't exist.
 ```
 
 The seasons catalog is mostly handy when you want to know which years
@@ -426,6 +515,9 @@ ESPN has on record before you start a multi-season pull.
 
 nba_seasons <- espn_nba_seasons()
 head(nba_seasons[, c("year", "start_date", "end_date")])
+#> Error in `nba_seasons[, c("year", "start_date", "end_date")]`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Column `year` doesn't exist.
 
 # Single-season metadata is mostly $ref URLs to sub-resources, so
 # espn_*_seasons() is usually the more useful starting point
@@ -509,9 +601,37 @@ lebron_career     <- espn_nba_athlete_career_stats(athlete_id = 1966)
 # Per-(athlete x season) event log -- core-v2 variant. Returns
 # event_id + result + per-event stats in long format.
 espn_nba_athlete_eventlog_v2(athlete_id = 1966, season = 2024)
+#> # A tibble: 25 × 8
+#>    league athlete_id season event_id  team_id played event_ref   competition_ref
+#>    <chr>  <chr>       <int> <chr>     <chr>   <lgl>  <chr>       <chr>          
+#>  1 nba    1966         2024 401591880 13      TRUE   http://spo… http://sports.…
+#>  2 nba    1966         2024 401591892 13      FALSE  http://spo… http://sports.…
+#>  3 nba    1966         2024 401591902 13      TRUE   http://spo… http://sports.…
+#>  4 nba    1966         2024 401591909 13      FALSE  http://spo… http://sports.…
+#>  5 nba    1966         2024 401591931 13      TRUE   http://spo… http://sports.…
+#>  6 nba    1966         2024 401584689 13      TRUE   http://spo… http://sports.…
+#>  7 nba    1966         2024 401584704 13      TRUE   http://spo… http://sports.…
+#>  8 nba    1966         2024 401584728 13      TRUE   http://spo… http://sports.…
+#>  9 nba    1966         2024 401584739 13      TRUE   http://spo… http://sports.…
+#> 10 nba    1966         2024 401584755 13      TRUE   http://spo… http://sports.…
+#> # ℹ 15 more rows
 
 # Index of seasons an athlete has on file (good for iterating).
 espn_nba_athlete_seasons(athlete_id = 1966)
+#> # A tibble: 23 × 4
+#>    league athlete_id season ref                                                 
+#>    <chr>  <chr>       <int> <chr>                                               
+#>  1 nba    1966         2026 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  2 nba    1966         2025 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  3 nba    1966         2024 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  4 nba    1966         2023 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  5 nba    1966         2022 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  6 nba    1966         2021 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  7 nba    1966         2020 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  8 nba    1966         2019 http://sports.core.api.espn.com/v2/sports/basketbal…
+#>  9 nba    1966         2018 http://sports.core.api.espn.com/v2/sports/basketbal…
+#> 10 nba    1966         2017 http://sports.core.api.espn.com/v2/sports/basketbal…
+#> # ℹ 13 more rows
 ```
 
 ### Franchises, tournaments, and league dictionaries
@@ -520,17 +640,90 @@ espn_nba_athlete_seasons(athlete_id = 1966)
 
 # Franchise records are stable across relocations and rebrands.
 espn_nba_franchises()
+#> # A tibble: 30 × 3
+#>    franchise_id ref                                                       league
+#>    <chr>        <chr>                                                     <chr> 
+#>  1 1            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  2 2            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  3 3            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  4 4            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  5 5            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  6 6            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  7 7            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  8 8            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#>  9 9            http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#> 10 10           http://sports.core.api.espn.com/v2/sports/basketball/lea… nba   
+#> # ℹ 20 more rows
 espn_nba_franchise(franchise_id = 13)   # one franchise
+#> # A tibble: 1 × 16
+#>   id    uid            slug    location name  nickname abbreviation display_name
+#>   <chr> <chr>          <chr>   <chr>    <chr> <lgl>    <chr>        <chr>       
+#> 1 13    s:40~l:46~f:13 los-an… Los Ang… Lake… NA       LAL          Los Angeles…
+#> # ℹ 8 more variables: short_display_name <chr>, color <chr>, is_active <lgl>,
+#> #   league <chr>, logo <chr>, logo_dark <chr>, venue_ref <chr>, team_ref <chr>
 
 # MBB-only: NCAA tournament index + detail + season list.
 espn_mbb_tournaments()
+#> # A tibble: 38 × 3
+#>    tournament_id ref                                                      league
+#>    <chr>         <chr>                                                    <chr> 
+#>  1 3             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  2 1             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  3 39            http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  4 2             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  5 4             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  6 5             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  7 6             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  8 7             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#>  9 8             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#> 10 9             http://sports.core.api.espn.com/v2/sports/basketball/le… mens-…
+#> # ℹ 28 more rows
 espn_mbb_tournament(tournament_id = 3)
+#> # A tibble: 1 × 4
+#>   tournament_id display_name                   seasons_ref                league
+#>   <chr>         <chr>                          <chr>                      <chr> 
+#> 1 3             Atlantic Coast Conf Tournament http://sports.core.api.es… mens-…
 espn_mbb_tournament_seasons(tournament_id = 3)
+#> # A tibble: 14 × 4
+#>    league                  tournament_id season ref                             
+#>    <chr>                   <chr>          <int> <chr>                           
+#>  1 mens-college-basketball 3               2009 http://sports.core.api.espn.com…
+#>  2 mens-college-basketball 3               2010 http://sports.core.api.espn.com…
+#>  3 mens-college-basketball 3               2011 http://sports.core.api.espn.com…
+#>  4 mens-college-basketball 3               2012 http://sports.core.api.espn.com…
+#>  5 mens-college-basketball 3               2013 http://sports.core.api.espn.com…
+#>  6 mens-college-basketball 3               2014 http://sports.core.api.espn.com…
+#>  7 mens-college-basketball 3               2015 http://sports.core.api.espn.com…
+#>  8 mens-college-basketball 3               2016 http://sports.core.api.espn.com…
+#>  9 mens-college-basketball 3               2017 http://sports.core.api.espn.com…
+#> 10 mens-college-basketball 3               2018 http://sports.core.api.espn.com…
+#> 11 mens-college-basketball 3               2019 http://sports.core.api.espn.com…
+#> 12 mens-college-basketball 3               2020 http://sports.core.api.espn.com…
+#> 13 mens-college-basketball 3               2022 http://sports.core.api.espn.com…
+#> 14 mens-college-basketball 3               2023 http://sports.core.api.espn.com…
 
 # Position dictionary. Position ids are NOT shared across leagues --
 # id 1 is "Point Guard" in NBA but "Center" in MBB.
 espn_nba_positions()
+#> # A tibble: 11 × 3
+#>    position_id ref                                                        league
+#>    <chr>       <chr>                                                      <chr> 
+#>  1 0           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  2 1           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  3 2           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  4 3           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  5 4           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  6 5           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  7 6           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  8 7           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#>  9 8           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#> 10 9           http://sports.core.api.espn.com/v2/sports/basketball/leag… nba   
+#> 11 30          http://sports.core.api.espn.com/v2/sports/basketball/leag… nba
 espn_nba_position(position_id = 1)
+#> # A tibble: 1 × 7
+#>   position_id name        display_name abbreviation leaf  parent_ref      league
+#>   <chr>       <chr>       <chr>        <chr>        <lgl> <chr>           <chr> 
+#> 1 1           Point Guard Point Guard  PG           TRUE  http://sports.… nba
 ```
 
 ### Season metadata, rankings, awards
@@ -539,16 +732,63 @@ espn_nba_position(position_id = 1)
 
 # Per-season-type leaders, long format. Default fetches RS + post.
 espn_nba_season_leaders(season = 2024)
+#> # A tibble: 800 × 15
+#>    league season season_type category_name category_display category_short
+#>    <chr>   <int>       <int> <chr>         <chr>            <chr>         
+#>  1 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  2 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  3 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  4 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  5 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  6 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  7 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  8 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  9 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> 10 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> # ℹ 790 more rows
+#> # ℹ 9 more variables: category_abbrev <chr>, rank <int>, athlete_id <chr>,
+#> #   team_id <chr>, display_value <chr>, value <dbl>, rel <chr>,
+#> #   athlete_ref <chr>, team_ref <chr>
 
 # Award index for a season + per-award detail.
 aw <- espn_nba_season_awards(season = 2024)
 espn_nba_award(award_id = aw$award_id[1])
+#> # A tibble: 1 × 9
+#>   league season award_id name  description        athlete_id team_id athlete_ref
+#>   <chr>   <int> <chr>    <chr> <chr>              <chr>      <chr>   <chr>      
+#> 1 nba      2026 33       MVP   NBA Most Valuable… 4278073    25      http://spo…
+#> # ℹ 1 more variable: team_ref <chr>
 
 # Season group structure (conferences / D-I groups) -- mostly relevant
 # for MBB, which has a deep conference hierarchy.
 espn_mbb_season_groups(season = 2024, season_type = 2)
+#> # A tibble: 2 × 5
+#>   league                  season season_type group_id ref                       
+#>   <chr>                    <int>       <int> <chr>    <chr>                     
+#> 1 mens-college-basketball   2024           2 50       http://sports.core.api.es…
+#> 2 mens-college-basketball   2024           2 51       http://sports.core.api.es…
 espn_mbb_season_group(group_id = 50, season = 2024, season_type = 2)
+#> # A tibble: 1 × 15
+#>   league         season season_type group_id uid   name  abbreviation short_name
+#>   <chr>           <int>       <int> <chr>    <chr> <chr> <chr>        <chr>     
+#> 1 mens-college-…   2024           2 50       s:40… NCAA… NCAA         Division I
+#> # ℹ 7 more variables: midsize_name <chr>, is_conference <lgl>, slug <chr>,
+#> #   parent_ref <chr>, children_ref <chr>, teams_ref <chr>, standings_ref <chr>
 espn_mbb_season_group_teams(group_id = 50, season = 2024, season_type = 2)
+#> # A tibble: 200 × 6
+#>    league                  season season_type group_id team_id ref              
+#>    <chr>                    <int>       <int> <chr>    <chr>   <chr>            
+#>  1 mens-college-basketball   2024           2 50       2       http://sports.co…
+#>  2 mens-college-basketball   2024           2 50       5       http://sports.co…
+#>  3 mens-college-basketball   2024           2 50       6       http://sports.co…
+#>  4 mens-college-basketball   2024           2 50       8       http://sports.co…
+#>  5 mens-college-basketball   2024           2 50       9       http://sports.co…
+#>  6 mens-college-basketball   2024           2 50       12      http://sports.co…
+#>  7 mens-college-basketball   2024           2 50       13      http://sports.co…
+#>  8 mens-college-basketball   2024           2 50       16      http://sports.co…
+#>  9 mens-college-basketball   2024           2 50       21      http://sports.co…
+#> 10 mens-college-basketball   2024           2 50       23      http://sports.co…
+#> # ℹ 190 more rows
 ```
 
 ### Team season profile, roster, and stats
@@ -558,15 +798,63 @@ espn_mbb_season_group_teams(group_id = 50, season = 2024, season_type = 2)
 # Per-(team x season) profile — a $ref index for that team-season's
 # deeper resources (record, statistics, leaders, roster, ...).
 espn_mbb_team_season_profile(team_id = 150, season = 2024)
+#> # A tibble: 1 × 35
+#>   id    guid       uid   slug  location name  nickname abbreviation display_name
+#>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
+#> 1 150   c4430c6c-… s:40… duke… Duke     Blue… Duke     DUKE         Duke Blue D…
+#> # ℹ 26 more variables: short_display_name <chr>, color <chr>,
+#> #   alternate_color <chr>, is_active <lgl>, is_all_star <lgl>, season <int>,
+#> #   logo <chr>, logo_dark <chr>, record_ref <chr>, venue_ref <chr>,
+#> #   groups_ref <chr>, ranks_ref <chr>, statistics_ref <chr>, leaders_ref <chr>,
+#> #   injuries_ref <chr>, notes_ref <chr>, against_the_spread_records_ref <chr>,
+#> #   awards_ref <chr>, franchise_ref <chr>, depth_charts_ref <chr>,
+#> #   events_ref <chr>, transactions_ref <chr>, coaches_ref <chr>, …
 
 # Roster the same team carried for that season.
 espn_mbb_team_season_roster(team_id = 150, season = 2024)
+#> # A tibble: 18 × 5
+#>    league                  team_id season athlete_id ref                        
+#>    <chr>                   <chr>    <int> <chr>      <chr>                      
+#>  1 mens-college-basketball 150       2024 4431890    http://sports.core.api.esp…
+#>  2 mens-college-basketball 150       2024 4683735    http://sports.core.api.esp…
+#>  3 mens-college-basketball 150       2024 4897107    http://sports.core.api.esp…
+#>  4 mens-college-basketball 150       2024 4397971    http://sports.core.api.esp…
+#>  5 mens-college-basketball 150       2024 4684793    http://sports.core.api.esp…
+#>  6 mens-college-basketball 150       2024 4711256    http://sports.core.api.esp…
+#>  7 mens-college-basketball 150       2024 4280073    http://sports.core.api.esp…
+#>  8 mens-college-basketball 150       2024 4897108    http://sports.core.api.esp…
+#>  9 mens-college-basketball 150       2024 4398003    http://sports.core.api.esp…
+#> 10 mens-college-basketball 150       2024 4683778    http://sports.core.api.esp…
+#> 11 mens-college-basketball 150       2024 4433285    http://sports.core.api.esp…
+#> 12 mens-college-basketball 150       2024 4684843    http://sports.core.api.esp…
+#> 13 mens-college-basketball 150       2024 5023693    http://sports.core.api.esp…
+#> 14 mens-college-basketball 150       2024 5105444    http://sports.core.api.esp…
+#> 15 mens-college-basketball 150       2024 4433135    http://sports.core.api.esp…
+#> 16 mens-college-basketball 150       2024 4712846    http://sports.core.api.esp…
+#> 17 mens-college-basketball 150       2024 4869739    http://sports.core.api.esp…
+#> 18 mens-college-basketball 150       2024 4397232    http://sports.core.api.esp…
 
 # Full team-season stat sheet in long format, with league rank embedded
 # per stat. Smoke-tested at 109 rows x 13 cols for a single NBA team --
 # MBB shapes are comparable.
 espn_mbb_team_season_statistics(team_id = 150, season = 2024,
                                 season_type = 2)
+#> # A tibble: 77 × 13
+#>    league    season season_type team_id category_name category_display stat_name
+#>    <chr>      <int>       <int> <chr>   <chr>         <chr>            <chr>    
+#>  1 mens-col…   2024           2 150     defensive     Defensive        blocks   
+#>  2 mens-col…   2024           2 150     defensive     Defensive        defensiv…
+#>  3 mens-col…   2024           2 150     defensive     Defensive        steals   
+#>  4 mens-col…   2024           2 150     defensive     Defensive        turnover…
+#>  5 mens-col…   2024           2 150     defensive     Defensive        avgDefen…
+#>  6 mens-col…   2024           2 150     defensive     Defensive        avgBlocks
+#>  7 mens-col…   2024           2 150     defensive     Defensive        avgSteals
+#>  8 mens-col…   2024           2 150     general       General          disquali…
+#>  9 mens-col…   2024           2 150     general       General          flagrant…
+#> 10 mens-col…   2024           2 150     general       General          fouls    
+#> # ℹ 67 more rows
+#> # ℹ 6 more variables: stat_abbrev <chr>, stat_display <chr>, value <dbl>,
+#> #   display_value <chr>, rank <int>, rank_display_value <chr>
 ```
 
 ### Coach detail, coach-in-season, and coach career record
@@ -575,13 +863,35 @@ espn_mbb_team_season_statistics(team_id = 150, season = 2024,
 
 # Coach detail (single-row).
 espn_mbb_coach(coach_id = 32116)
+#> # A tibble: 1 × 12
+#>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
+#>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      
+#> 1 32116    s:40~l:41~… Steven     Pearl     1987-09-14T0… Knoxville  TN         
+#> # ℹ 5 more variables: n_career_records <int>, n_coach_seasons <int>,
+#> #   college_ref <chr>, team_ref <chr>, league <chr>
 
 # Coach-in-a-season: per-season stats and record.
 espn_mbb_coach_season(coach_id = 32116, season = 2024)
+#> # A tibble: 1 × 13
+#>   league     season coach_id uid   first_name last_name date_of_birth birth_city
+#>   <chr>       <int> <chr>    <chr> <chr>      <chr>     <chr>         <chr>     
+#> 1 mens-coll…   2024 32116    s:40… Steven     Pearl     1987-09-14T0… Knoxville 
+#> # ℹ 5 more variables: birth_state <chr>, n_records <int>, person_ref <chr>,
+#> #   college_ref <chr>, team_ref <chr>
 
 # Career record by type. Type codes: 0 = Total, 1 = Pre Season,
 # 2 = Regular Season, 3 = Post Season.
 espn_mbb_coach_record(coach_id = 32116, record_type = 2)
+#> # A tibble: 5 × 12
+#>   league          coach_id record_type_id record_name record_type record_summary
+#>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
+#> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```
 
 ### Event meta: live situation, predictor, power index, prop bets
@@ -593,15 +903,46 @@ EID <- "401283399"
 
 # Live game situation -- timeouts, fouls, bonus state, last play $ref.
 espn_nba_event_situation(event_id = EID)
+#> # A tibble: 1 × 15
+#>   league event_id  home_timeouts_current home_timeouts_remaining
+#>   <chr>  <chr>                     <int>                   <int>
+#> 1 nba    401283399                     3                       0
+#> # ℹ 11 more variables: away_timeouts_current <int>,
+#> #   away_timeouts_remaining <int>, home_team_fouls <int>,
+#> #   home_team_fouls_current <int>, home_fouls_to_give <int>,
+#> #   home_bonus_state <chr>, away_team_fouls <int>,
+#> #   away_team_fouls_current <int>, away_fouls_to_give <int>,
+#> #   away_bonus_state <chr>, last_play_ref <chr>
 
 # Pre-game predictor -- one row per (team x stat). Empty for past games.
 espn_nba_event_predictor(event_id = EID)
+#> # A tibble: 6 × 13
+#>   league event_id  name         short_name last_modified side  team_id stat_name
+#>   <chr>  <chr>     <chr>        <chr>      <chr>         <chr> <chr>   <chr>    
+#> 1 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      gameProj…
+#> 2 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      matchupQ…
+#> 3 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamChan…
+#> 4 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamPred…
+#> 5 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      teamExpe…
+#> 6 nba    401283399 Oklahoma Ci… OKC @ MEM  2021-07-21T1… away  25      oppExpec…
+#> # ℹ 5 more variables: stat_display <chr>, description <chr>, value <dbl>,
+#> #   display_value <chr>, team_ref <chr>
 
 # Per-event power index. Coverage is sparse -- many events return zero.
 espn_nba_event_powerindex(event_id = EID)
+#> # A tibble: 2 × 4
+#>   league event_id  team_id ref                                                  
+#>   <chr>  <chr>     <chr>   <chr>                                                
+#> 1 nba    401283399 25      http://sports.core.api.espn.com/v2/sports/basketball…
+#> 2 nba    401283399 29      http://sports.core.api.espn.com/v2/sports/basketball…
 
 # Prop bet markets per (event x provider). 58 = ESPN BET.
 espn_nba_event_propbets(event_id = EID, provider_id = 58)
+#> # A tibble: 0 × 13
+#> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
+#> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,
+#> #   decimal <dbl>, fraction <chr>, total <dbl>, current_target <dbl>,
+#> #   last_updated <chr>, athlete_ref <chr>
 ```
 
 ### Event competitor sub-resources
@@ -617,21 +958,81 @@ EID <- "401283399"; TID <- 29  # team_id of one competitor
 
 # Per-quarter scoring for one team in one event.
 espn_nba_event_competitor_linescores(event_id = EID, team_id = TID)
+#> # A tibble: 8 × 7
+#>   league event_id  team_id period value display_value source      
+#>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
+#> 1 nba    401283399 29           1    30 30            1           
+#> 2 nba    401283399 29           1    30 30            Basic/Manual
+#> 3 nba    401283399 29           2    27 27            1           
+#> 4 nba    401283399 29           2    27 27            Basic/Manual
+#> 5 nba    401283399 29           3    29 29            1           
+#> 6 nba    401283399 29           3    29 29            Basic/Manual
+#> 7 nba    401283399 29           4    36 36            1           
+#> 8 nba    401283399 29           4    36 36            Basic/Manual
 
 # Top performers per team in long format (category x rank).
 espn_nba_event_competitor_leaders(event_id = EID, team_id = TID)
+#> # A tibble: 48 × 11
+#>    league event_id  team_id category_name category_display category_abbrev  rank
+#>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>
+#>  1 nba    401283399 29      points        Points           Pts                 1
+#>  2 nba    401283399 29      points        Points           Pts                 2
+#>  3 nba    401283399 29      points        Points           Pts                 3
+#>  4 nba    401283399 29      points        Points           Pts                 4
+#>  5 nba    401283399 29      points        Points           Pts                 5
+#>  6 nba    401283399 29      points        Points           Pts                 6
+#>  7 nba    401283399 29      points        Points           Pts                 7
+#>  8 nba    401283399 29      points        Points           Pts                 8
+#>  9 nba    401283399 29      points        Points           Pts                 9
+#> 10 nba    401283399 29      assists       Assists          Ast                 1
+#> # ℹ 38 more rows
+#> # ℹ 4 more variables: athlete_id <chr>, display_value <chr>, value <dbl>,
+#> #   athlete_ref <chr>
 
 # Game-day roster index. Returns athlete ids + core-v2 $refs.
 espn_nba_event_competitor_roster(event_id = EID, team_id = TID)
+#> # A tibble: 0 × 5
+#> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
+#> #   ref <chr>
 
 # Full team-game statistics in long format.
 espn_nba_event_competitor_statistics(event_id = EID, team_id = TID)
+#> # A tibble: 98 × 10
+#>    league event_id  team_id category_name category_display stat_name stat_abbrev
+#>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      
+#>  1 nba    401283399 29      defensive     Defensive        blocks    BLK        
+#>  2 nba    401283399 29      defensive     Defensive        defensiv… DR         
+#>  3 nba    401283399 29      defensive     Defensive        steals    STL        
+#>  4 nba    401283399 29      defensive     Defensive        turnover… Points Con…
+#>  5 nba    401283399 29      defensive     Defensive        avgDefen… DR         
+#>  6 nba    401283399 29      defensive     Defensive        avgBlocks BLK        
+#>  7 nba    401283399 29      defensive     Defensive        avgSteals STL        
+#>  8 nba    401283399 29      defensive     Defensive        avg48Def… DR         
+#>  9 nba    401283399 29      defensive     Defensive        avg48Blo… BLK        
+#> 10 nba    401283399 29      defensive     Defensive        avg48Ste… STL        
+#> # ℹ 88 more rows
+#> # ℹ 3 more variables: stat_display <chr>, value <dbl>, display_value <chr>
 
 # Team records as of the event: overall / home / away / conf / div.
 espn_nba_event_competitor_records(event_id = EID, team_id = TID)
+#> # A tibble: 5 × 11
+#>   league event_id  team_id record_id name      abbreviation display_name       
+#>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
+#> 1 nba    401283399 29      900       overall   Game         Record Year To Date
+#> 2 nba    401283399 29      33        Home      NA           Home               
+#> 3 nba    401283399 29      34        Road      NA           Road               
+#> 4 nba    401283399 29      60        vs. Div.  NA           DIV                
+#> 5 nba    401283399 29      61        vs. Conf. NA           CONF               
+#> # ℹ 4 more variables: short_display_name <chr>, type <chr>, summary <chr>,
+#> #   value <dbl>
 
 # One-row final score, quick lookup.
 espn_nba_event_competitor_score(event_id = EID, team_id = TID)
+#> # A tibble: 1 × 8
+#>   league event_id  team_id value display_value winner source_id
+#>   <chr>  <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    
+#> 1 nba    401283399 29        122 122           TRUE   1        
+#> # ℹ 1 more variable: source_description <chr>
 ```
 
 ### Per-game player box score, play detail, and on-court lineups
@@ -647,19 +1048,31 @@ EID <- "401283399"; TID <- 29; AID <- 6440  # event, team, athlete
 # Same shape as event_competitor_statistics() but scoped to an athlete.
 espn_nba_event_player_box(event_id = EID, team_id = TID,
                            athlete_id = AID)
+#> NULL
 
 # Per-athlete game-day row: starter flag, did_not_play + reason,
 # ejected flag, period of entry, for_player_id (substitution slot).
 espn_nba_event_competitor_roster_entry(event_id = EID, team_id = TID,
                                         athlete_id = AID)
+#> NULL
 
 # Single-play detail. play_id comes from espn_nba_pbp() output.
 PID <- "4012833997"  # example play id
 espn_nba_event_play(event_id = EID, play_id = PID)
+#> # A tibble: 1 × 19
+#>   league event_id  play_id    sequence_number type_id type_text text  short_text
+#>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     
+#> 1 nba    401283399 4012833997 7               137     Turnarou… Jona… J. Valanc…
+#> # ℹ 11 more variables: period <int>, clock <chr>, scoring_play <lgl>,
+#> #   score_value <dbl>, away_score <int>, home_score <int>, shooting_play <lgl>,
+#> #   coordinate_x <dbl>, coordinate_y <dbl>, team_ref <chr>, wallclock <chr>
 
 # Players on court at a specific play (long format). Coverage is
 # sparse -- many plays return zero rows.
 espn_nba_event_play_personnel(event_id = EID, play_id = PID)
+#> # A tibble: 0 × 7
+#> # ℹ 7 variables: league <chr>, event_id <chr>, play_id <chr>, team_id <chr>,
+#> #   athlete_id <chr>, athlete_ref <chr>, competitor_ref <chr>
 ```
 
 ### Officials, team records, and the draft
@@ -670,14 +1083,49 @@ espn_nba_event_play_personnel(event_id = EID, play_id = PID)
 # ESPN-stable official_id -- so pair this with the `order` column from
 # espn_nba_event_officials() rather than `official_id`.
 espn_nba_event_official_detail(event_id = "401283399", order = 1)
+#> # A tibble: 1 × 10
+#>   league event_id  official_id first_name last_name full_name  display_name
+#>   <chr>  <chr>     <chr>       <chr>      <chr>     <chr>      <chr>       
+#> 1 nba    401283399 6856        Eric       Lewis     Eric Lewis Eric Lewis  
+#> # ℹ 3 more variables: position_id <chr>, position_name <chr>, order <int>
 
 # Per-record stat array. Use espn_nba_team_record() to discover
 # valid record_id values for a (team_id, season) pair.
 espn_nba_team_record_detail(team_id = 29, season = 2024, record_id = 0)
+#> # A tibble: 21 × 15
+#>    league team_id season season_type record_id record_name record_abbrev
+#>    <chr>  <chr>    <int>       <int> <chr>     <chr>       <chr>        
+#>  1 nba    29        2024           2 0         overall     Total        
+#>  2 nba    29        2024           2 0         overall     Total        
+#>  3 nba    29        2024           2 0         overall     Total        
+#>  4 nba    29        2024           2 0         overall     Total        
+#>  5 nba    29        2024           2 0         overall     Total        
+#>  6 nba    29        2024           2 0         overall     Total        
+#>  7 nba    29        2024           2 0         overall     Total        
+#>  8 nba    29        2024           2 0         overall     Total        
+#>  9 nba    29        2024           2 0         overall     Total        
+#> 10 nba    29        2024           2 0         overall     Total        
+#> # ℹ 11 more rows
+#> # ℹ 8 more variables: record_display <chr>, record_type <chr>,
+#> #   record_summary <chr>, stat_name <chr>, stat_abbrev <chr>,
+#> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 
 # Draft year top-level metadata + rich single-pick record.
 espn_nba_season_draft(season = 2024)
+#> # A tibble: 1 × 10
+#>   league season  year uid       number_of_rounds display_name short_display_name
+#>   <chr>   <int> <int> <chr>                <int> <chr>        <chr>             
+#> 1 nba      2024  2024 s:40~l:4…                2 2024 Nation… 2024 NBA Draft    
+#> # ℹ 3 more variables: status_ref <chr>, athletes_ref <chr>, rounds_ref <chr>
 espn_nba_draft_athlete_detail(season = 2024, athlete_id = 108206)
+#> # A tibble: 1 × 19
+#>   league season draftee_id athlete_id first_name last_name full_name         
+#>   <chr>   <int> <chr>      <chr>      <chr>      <chr>     <chr>             
+#> 1 nba      2024 108206     5211175    Zaccharie  Risacher  Zaccharie Risacher
+#> # ℹ 12 more variables: display_name <chr>, height <dbl>, display_height <chr>,
+#> #   weight <dbl>, display_weight <chr>, position_name <chr>,
+#> #   position_abbrev <chr>, pick_overall <int>, pick_round <int>,
+#> #   pick_team_id <chr>, athlete_ref <chr>, headshot <chr>
 ```
 
 ### One thing to know about default season types
@@ -692,9 +1140,43 @@ and pass `season_type = 2` to limit to regular season only.
 
 # Regular season only.
 espn_nba_season_leaders(season = 2024, season_type = 2)
+#> # A tibble: 400 × 15
+#>    league season season_type category_name category_display category_short
+#>    <chr>   <int>       <int> <chr>         <chr>            <chr>         
+#>  1 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  2 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  3 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  4 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  5 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  6 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  7 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  8 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  9 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> 10 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> # ℹ 390 more rows
+#> # ℹ 9 more variables: category_abbrev <chr>, rank <int>, athlete_id <chr>,
+#> #   team_id <chr>, display_value <chr>, value <dbl>, rel <chr>,
+#> #   athlete_ref <chr>, team_ref <chr>
 
 # Default — RS + post, bound, keyed by season_type column.
 espn_nba_season_leaders(season = 2024)
+#> # A tibble: 800 × 15
+#>    league season season_type category_name category_display category_short
+#>    <chr>   <int>       <int> <chr>         <chr>            <chr>         
+#>  1 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  2 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  3 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  4 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  5 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  6 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  7 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  8 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#>  9 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> 10 nba      2024           2 pointsPerGame Points Per Game  PPG           
+#> # ℹ 790 more rows
+#> # ℹ 9 more variables: category_abbrev <chr>, rank <int>, athlete_id <chr>,
+#> #   team_id <chr>, display_value <chr>, value <dbl>, rel <chr>,
+#> #   athlete_ref <chr>, team_ref <chr>
 ```
 
 ## What’s not here

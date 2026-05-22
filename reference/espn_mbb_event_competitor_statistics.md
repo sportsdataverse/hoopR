@@ -135,7 +135,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_event_competitor_statistics(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Statistics ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 06:34:14 UTC
+#> ℹ Data updated: 2026-05-22 06:54:10 UTC
 #> # A tibble: 71 × 10
 #>    league  event_id team_id category_name category_display stat_name stat_abbrev
 #>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>     <chr>      
