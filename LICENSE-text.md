@@ -1,4 +1,4 @@
 # License
 
-    YEAR: 2020
+    YEAR: 2020-2026
     COPYRIGHT HOLDER: hoopR authors

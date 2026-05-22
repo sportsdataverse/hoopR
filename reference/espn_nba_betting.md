@@ -197,7 +197,7 @@ Other ESPN NBA Functions:
 ``` r
 # \donttest{
 try(espn_nba_betting(game_id = 401283399))
-#> ✖ 2026-05-22 06:54:48.669167: Invalid arguments or no betting data available!
+#> ✖ 2026-05-22 07:12:12.088145: Invalid arguments or no betting data available!
 #> ✖ Args: game_id = 401283399
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `links` doesn't exist.
 #> $pickcenter

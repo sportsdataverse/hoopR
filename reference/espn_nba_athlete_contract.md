@@ -175,7 +175,7 @@ Saiem Gilani
   # LeBron James 2025 contract
   espn_nba_athlete_contract(athlete_id = 1966, season = 2025)
 #> ── ESPN NBA Athlete Contract from ESPN.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 06:54:44 UTC
+#> ℹ Data updated: 2026-05-22 07:12:07 UTC
 #> # A tibble: 1 × 23
 #>   athlete_id season bird_status   salary salary_remaining years_remaining
 #>   <chr>       <int>       <int>    <int>            <int>           <int>
