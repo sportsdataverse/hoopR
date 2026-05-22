@@ -307,3 +307,93 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_team_season_statistics
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball team-season statistics (long format with rank)
+#'
+#' Wraps `seasons/{y}/types/{t}/teams/{tid}/statistics`. One row per
+#' (category x stat) for the team's season-type aggregate stats. Each
+#' row also carries the team's league-rank for that stat where ESPN
+#' provides it.
+#'
+#' @noRd
+.espn_basketball_team_season_statistics <- function(league, team_id, season,
+                                                      season_type = 2L, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, team_id = team_id, season = season,
+                season_type = season_type)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/seasons/", season,
+    "/types/", as.integer(season_type),
+    "/teams/", team_id, "/statistics?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      splits <- raw[["splits"]]
+      cats <- if (is.list(splits)) splits[["categories"]] %||% list() else list()
+      rows <- list()
+      for (cat in cats) {
+        cat_name <- cat[["name"]] %||% NA_character_
+        cat_disp <- cat[["displayName"]] %||% NA_character_
+        stats <- cat[["stats"]] %||% list()
+        for (s in stats) {
+          rows[[length(rows) + 1L]] <- list(
+            league             = league,
+            season             = as.integer(season),
+            season_type        = as.integer(season_type),
+            team_id            = as.character(team_id),
+            category_name      = cat_name,
+            category_display   = cat_disp,
+            stat_name          = s[["name"]] %||% NA_character_,
+            stat_abbrev        = s[["abbreviation"]] %||% NA_character_,
+            stat_display       = s[["displayName"]] %||% NA_character_,
+            value              = suppressWarnings(as.numeric(s[["value"]] %||% NA)),
+            display_value      = as.character(s[["displayValue"]] %||% NA_character_),
+            rank               = suppressWarnings(as.integer(s[["rank"]] %||% NA)),
+            rank_display_value = as.character(s[["rankDisplayValue"]] %||% NA_character_)
+          )
+        }
+      }
+      if (length(rows) == 0L) {
+        result <- data.frame(
+          league = character(0), season = integer(0),
+          season_type = integer(0), team_id = character(0),
+          category_name = character(0), category_display = character(0),
+          stat_name = character(0), stat_abbrev = character(0),
+          stat_display = character(0), value = numeric(0),
+          display_value = character(0), rank = integer(0),
+          rank_display_value = character(0),
+          stringsAsFactors = FALSE
+        ) %>% dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Team Season Statistics"),
+            Sys.time()
+          )
+      } else {
+        result <- do.call(rbind, lapply(rows, as.data.frame,
+                                          stringsAsFactors = FALSE)) %>%
+          dplyr::as_tibble() %>%
+          make_hoopR_data(
+            paste0("ESPN ", toupper(league), " Team Season Statistics"),
+            Sys.time()
+          )
+      }
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} team season statistics for team_id={team_id}, season={season}, season_type={season_type}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} team season statistics",
+      args = .args),
+    finally = {}
+  )
+  result
+}

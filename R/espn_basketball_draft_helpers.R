@@ -314,3 +314,64 @@
   )
   result
 }
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_season_draft
+# ---------------------------------------------------------------------------
+
+#' Internal: ESPN basketball draft year top-level metadata
+#'
+#' Wraps `seasons/{y}/draft`. Single-row tibble with year, numberOfRounds,
+#' displayName, shortDisplayName, plus `$ref`s for the deeper sub-resources
+#' (athletes, rounds, positions, status) that are already wrapped by
+#' `.espn_basketball_draft_athletes()`, `.espn_basketball_draft_rounds()`,
+#' and `.espn_basketball_draft_status()`.
+#'
+#' @noRd
+.espn_basketball_season_draft <- function(league, season, ...) {
+  .espn_bball_validate_league(league)
+  .args <- list(league = league, season = season)
+  result <- NULL
+  url <- paste0(
+    "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
+    league, "/seasons/", season, "/draft?lang=en&region=us"
+  )
+  tryCatch(
+    expr = {
+      res <- .retry_request(url); check_status(res)
+      raw <- res %>% .resp_text() %>%
+        jsonlite::fromJSON(simplifyVector = FALSE)
+      sub_ref <- function(k) {
+        v <- raw[[k]]
+        if (is.list(v)) as.character(v[["$ref"]] %||% NA_character_) else
+          if (is.character(v)) v else NA_character_
+      }
+      row <- list(
+        league             = league,
+        season             = as.integer(season),
+        year               = suppressWarnings(as.integer(raw[["year"]] %||% NA)),
+        uid                = as.character(raw[["uid"]] %||% NA_character_),
+        number_of_rounds   = suppressWarnings(as.integer(raw[["numberOfRounds"]] %||% NA)),
+        display_name       = as.character(raw[["displayName"]] %||% NA_character_),
+        short_display_name = as.character(raw[["shortDisplayName"]] %||% NA_character_),
+        status_ref         = sub_ref("status"),
+        athletes_ref       = sub_ref("athletes"),
+        rounds_ref         = sub_ref("rounds")
+      )
+      result <- data.frame(row, stringsAsFactors = FALSE) %>%
+        dplyr::as_tibble() %>%
+        make_hoopR_data(
+          paste0("ESPN ", toupper(league), " Season Draft (top-level)"),
+          Sys.time()
+        )
+    },
+    error   = function(e) .report_api_error(e,
+      hint = "Failed to retrieve ESPN {league} season draft top-level for season={season}",
+      args = .args),
+    warning = function(w) .report_api_warning(w,
+      hint = "Warning retrieving ESPN {league} season draft top-level",
+      args = .args),
+    finally = {}
+  )
+  result
+}
