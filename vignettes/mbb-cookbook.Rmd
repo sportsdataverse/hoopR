@@ -12,7 +12,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE, comment = "#>", collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, comment = "#>", collapse = TRUE,
+                      warning = FALSE, message = FALSE, error = TRUE)
 ```
 
 ## Before we cook
@@ -115,7 +116,7 @@ exist.
 
 This is where the new prefix earns its keep. Everything KenPom is `kp_`.
 
-```{r}
+```{r eval = FALSE}
 # KenPom needs a subscription. Log in once per session.
 kp_user_email <- "you@example.com"
 kp_password   <- Sys.getenv("KP_PASSWORD")
@@ -138,7 +139,7 @@ half the documentation becomes redundant.
 
 KenPom's own family is deep -- and, of course, regular:
 
-```{r}
+```{r eval = FALSE}
 kp_team_schedule(team = "Duke", year = 2025)
 kp_teamstats(min_year = 2025, max_year = 2025)
 kp_playerstats(metric = "eFG", year = 2025)
@@ -241,7 +242,7 @@ point of the cookbook.
 **The story.** You're done with single games. You want every college
 game of a season to model on.
 
-```{r}
+```{r eval = FALSE}
 # load / mbb / pbp -- one call, one season.
 pbp <- load_mbb_pbp(seasons = 2024)
 
@@ -253,7 +254,7 @@ load_mbb_schedule(seasons = 2024)
 And straight into a database, with the same `(seasons, dbConnection,
 tablename)` plumbing every `load_` function shares:
 
-```{r}
+```{r eval = FALSE}
 library(DBI)
 con <- dbConnect(RSQLite::SQLite(), "mbb.sqlite")
 load_mbb_pbp(seasons = 2020:2024, dbConnection = con, tablename = "mbb_pbp")
@@ -268,7 +269,7 @@ reach for the least invasive one that works.
 **Layer 1 -- set it once for the session.** Covers everything: ESPN,
 KenPom, loaders.
 
-```{r}
+```{r eval = FALSE}
 options(hoopR.proxy = "http://proxy.university.edu:8080")
 
 # Authenticated proxy? Pass a list instead of a string.
@@ -288,7 +289,7 @@ kp_pomeroy_ratings(min_year = 2025, max_year = 2025)
 the proxy belongs to the machine and not the analysis, set the standard
 variables and let libcurl pick them up:
 
-```{r}
+```{r eval = FALSE}
 Sys.setenv(
   http_proxy  = "http://proxy.university.edu:8080",
   https_proxy = "http://proxy.university.edu:8080",

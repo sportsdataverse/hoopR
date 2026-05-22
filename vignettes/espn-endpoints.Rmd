@@ -12,7 +12,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE, comment = "#>", collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, comment = "#>", collapse = TRUE,
+                      warning = FALSE, message = FALSE, error = TRUE)
 ```
 
 ## What this vignette covers
@@ -24,14 +25,14 @@ package now also wraps a much wider slice of ESPN's basketball API --
 team rosters, schedules, league news, athlete biographies and gamelogs,
 in-game win probabilities, officials, broadcast info, the NBA draft,
 free agency, transactions, and league-wide catalogs of venues, coaches,
-and statistical leaders. Eighty ESPN endpoint wrappers in total, split
-roughly evenly between men's college basketball (`espn_mbb_*`) and the
+and statistical leaders. Nearly two hundred ESPN endpoint wrappers in
+total, split between men's college basketball (`espn_mbb_*`) and the
 NBA (`espn_nba_*`).
 
 This vignette is a tour of what's available and how to compose the
-pieces. None of the chunks evaluate during `R CMD check` -- they all hit
-the live ESPN API -- but every one of them works when you copy it into
-an interactive session.
+pieces. Most of the chunks run live when the package website is built,
+so the tables below are real ESPN responses -- and every one of them
+works the same way when you copy it into an interactive session.
 
 ## A note on the API surface
 
@@ -52,7 +53,7 @@ hosts, and `hoopR` reaches into each:
   three; older seasons sometimes return 404, and not every athlete is
   represented.
 
-There's a fourth host (`cdn.espn.com/core`) that surflakers the same
+There's a fourth host (`cdn.espn.com/core`) that surfaces the same
 information as the site-v2 `/summary` endpoint we already parse, so we
 don't wrap it.
 

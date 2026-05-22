@@ -12,16 +12,20 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE, comment = "#>", collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, comment = "#>", collapse = TRUE,
+                      warning = FALSE, message = FALSE, error = TRUE)
 ```
 
 ## Before we cook
 
 Every recipe in this cookbook is a small story: a question you might
 actually ask about the NBA, and the shortest honest path from that
-question to a data frame you can work with. None of the code blocks run
-when this page is built -- they all reach out to live APIs -- but every
-one of them works when you paste it into an R session.
+question to a data frame you can work with. Most of the code blocks run
+live when this page is built, so the tables you see are real data
+freshly pulled from ESPN and NBA.com. A handful -- bulk season
+downloads, the database recipe, and the proxy examples -- are shown but
+not run, since they either take too long or would reconfigure your
+session; those are flagged where they appear.
 
 Here's the one idea worth internalizing before anything else: **`hoopR`
 function names are not arbitrary. They're a grammar.** Once you can read
@@ -275,7 +279,7 @@ Calling `espn_nba_pbp()` in a loop over a thousand `game_id`s would
 work, and it would also be slow and rude to ESPN's servers. The `load_`
 prefix exists precisely for this: pre-built, pre-cleaned season files.
 
-```{r}
+```{r eval = FALSE}
 # load / nba / pbp. One call, one season, ~600k rows.
 pbp_2024 <- load_nba_pbp(seasons = 2024)
 
@@ -300,7 +304,7 @@ it all in memory -- you want it in a database you can query.
 Every `load_` function takes the same optional plumbing arguments, and
 once you've seen them once you've seen them everywhere:
 
-```{r}
+```{r eval = FALSE}
 library(DBI)
 con <- dbConnect(RSQLite::SQLite(), "nba.sqlite")
 
@@ -330,7 +334,7 @@ should reach for the *least* invasive one that works.
 99% of the time. It covers every function in the package -- ESPN,
 NBA Stats, KenPom, loaders, all of it.
 
-```{r}
+```{r eval = FALSE}
 # Plain proxy.
 options(hoopR.proxy = "http://proxy.company.com:8080")
 
@@ -368,7 +372,7 @@ use the session option in Layer 1. The prefix tells you the capability:
 proxy in your R code at all, `hoopR` will honor the standard
 environment variables:
 
-```{r}
+```{r eval = FALSE}
 Sys.setenv(
   http_proxy  = "http://proxy.company.com:8080",
   https_proxy = "http://proxy.company.com:8080",
