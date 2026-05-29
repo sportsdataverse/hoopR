@@ -158,7 +158,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_event_player_box(event_id = 401283399, team_id = 29,
                                athlete_id = 1966)
-#> ✖ 2026-05-29 18:26:49.201779: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
+#> ✖ 2026-05-29 18:47:17.897312: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 29, athlete_id = 1966, stat_type = 0L
 #> ✖ Error: The API returned an error
 #> NULL
