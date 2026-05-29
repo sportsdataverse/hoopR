@@ -89,11 +89,11 @@ Return a data frame with the following columns:
 ## See also
 
 Other NBA Schedule Functions:
-[`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
 [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md),
-[`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md),
+[`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
 [`nba_scoreboardv2()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.md),
-[`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
+[`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md),
+[`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md)
 
 Other NBA Live Functions:
 [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),

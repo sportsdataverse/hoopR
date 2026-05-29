@@ -59,8 +59,8 @@ A data frame with the following columns:
 
 Other KenPom Historical Functions:
 [`kp_coach_history()`](https://hoopR.sportsdataverse.org/reference/kp_coach_history.md),
-[`kp_conf()`](https://hoopR.sportsdataverse.org/reference/kp_conf.md),
 [`kp_confstats()`](https://hoopR.sportsdataverse.org/reference/kp_confstats.md),
+[`kp_conf()`](https://hoopR.sportsdataverse.org/reference/kp_conf.md),
 [`kp_pomeroy_archive_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_archive_ratings.md),
 [`kp_program_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_program_ratings.md),
 [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)

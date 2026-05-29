@@ -89,8 +89,8 @@ Returns a named list of data frames: CumeStatsTeamGames
 ## See also
 
 Other NBA Cume Functions:
-[`nba_cumestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.md),
 [`nba_cumestatsplayergames()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayergames.md),
+[`nba_cumestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsplayer.md),
 [`nba_cumestatsteam()`](https://hoopR.sportsdataverse.org/reference/nba_cumestatsteam.md)
 
 ## Author

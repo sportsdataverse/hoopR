@@ -32,6 +32,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-resp_text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-retry_request.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_basketball.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.html</loc></url>
@@ -238,7 +239,9 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_player_box.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/helper_espn_nba_team_box.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/hoopR-package.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/hoopR_loaders.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/kp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_arenas.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_box.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_coach_history.html</loc></url>
@@ -404,6 +407,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.html</loc></url>

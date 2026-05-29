@@ -2,6 +2,17 @@
 
 ## hoopR Data
 
+### Loaders Family Overview
+
+hoopR loader family overview (NBA + MBB release loaders)
+
+- [`hoopR_loaders`](https://hoopR.sportsdataverse.org/reference/hoopR_loaders.md)
+  [`load_nba`](https://hoopR.sportsdataverse.org/reference/hoopR_loaders.md)
+  [`load_mbb`](https://hoopR.sportsdataverse.org/reference/hoopR_loaders.md)
+  :
+
+  **hoopR Data Loaders Overview**
+
 ### NBA Data Functions
 
 Functions exported by hoopR to access the hoopR-data repository’s NBA
@@ -63,6 +74,17 @@ College Basketball Data
   **Update or create a hoopR MBB play-by-play database**
 
 ## ESPN Data
+
+### ESPN Family Overview
+
+ESPN basketball endpoint family overview (NBA + MBB)
+
+- [`espn_basketball`](https://hoopR.sportsdataverse.org/reference/espn_basketball.md)
+  [`espn_nba`](https://hoopR.sportsdataverse.org/reference/espn_basketball.md)
+  [`espn_mbb`](https://hoopR.sportsdataverse.org/reference/espn_basketball.md)
+  :
+
+  **ESPN Basketball Endpoint Overview (NBA + MBB)**
 
 ### Men’s College Basketball Data Functions
 
@@ -1072,6 +1094,16 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
 ## NBA Data
 
+### NBA Stats Family Overview
+
+NBA Stats API endpoint family overview
+
+- [`nba_stats`](https://hoopR.sportsdataverse.org/reference/nba_stats.md)
+  [`hoopR_nba_stats`](https://hoopR.sportsdataverse.org/reference/nba_stats.md)
+  :
+
+  **NBA Stats API Endpoint Overview**
+
 ### NBA Stats API
 
 Functions exported by hoopR to access the NBA Stats API
@@ -1685,6 +1717,12 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Shot Chart for Lineups**
 
+- [`nba_stats`](https://hoopR.sportsdataverse.org/reference/nba_stats.md)
+  [`hoopR_nba_stats`](https://hoopR.sportsdataverse.org/reference/nba_stats.md)
+  :
+
+  **NBA Stats API Endpoint Overview**
+
 - [`nba_synergyplaytypes()`](https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.md)
   :
 
@@ -1879,6 +1917,16 @@ Functions exported by hoopR to access NCAA Men’s College Basketball Data
   **Scrape NCAA Men's Baskebtall Teams (Division I, II, and III)**
 
 ## KenPom Data
+
+### KenPom Family Overview
+
+KenPom scraper overview
+
+- [`kp`](https://hoopR.sportsdataverse.org/reference/kp.md)
+  [`kenpom`](https://hoopR.sportsdataverse.org/reference/kp.md)
+  [`hoopR_kenpom`](https://hoopR.sportsdataverse.org/reference/kp.md) :
+
+  **KenPom Scraper Overview**
 
 ### KenPom Data Functions
 

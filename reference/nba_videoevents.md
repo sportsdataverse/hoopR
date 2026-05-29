@@ -35,8 +35,8 @@ Return a list of tibbles: videoUrls, playlist
 ## See also
 
 Other NBA Video Functions:
-[`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
 [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md),
+[`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
 [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videoeventsasset.md),
 [`nba_videostatus()`](https://hoopR.sportsdataverse.org/reference/nba_videostatus.md)
 

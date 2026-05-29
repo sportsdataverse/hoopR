@@ -57,7 +57,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
-#> ✖ 2026-05-29 17:37:37.2488: Invalid arguments or no foul trouble data for 2020 - 2026 available!
+#> ✖ 2026-05-29 17:51:42.217421: Invalid arguments or no foul trouble data for 2020 - 2026 available!
 #> ✖ Args: min_year = 2020, max_year = 2026
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf TwoFoulParticpation.Pct

@@ -36,8 +36,8 @@ by response)
 ## See also
 
 Other NBA Video Functions:
-[`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
 [`nba_videodetailsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.md),
+[`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
 [`nba_videoevents()`](https://hoopR.sportsdataverse.org/reference/nba_videoevents.md),
 [`nba_videostatus()`](https://hoopR.sportsdataverse.org/reference/nba_videostatus.md)
 
