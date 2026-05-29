@@ -82,9 +82,9 @@ Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 \seealso{
 Other NBA Schedule Functions: 
 \code{\link{nba_schedule}()},
-\code{\link{nba_scoreboard}()},
 \code{\link{nba_scoreboardv2}()},
 \code{\link{nba_scoreboardv3}()},
+\code{\link{nba_scoreboard}()},
 \code{\link{nba_todays_scoreboard}()}
 }
 \author{

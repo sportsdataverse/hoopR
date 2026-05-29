@@ -83,11 +83,11 @@ Return a data frame with the following columns:\tabular{lll}{
 }
 \seealso{
 Other NBA Schedule Functions: 
-\code{\link{nba_schedule}()},
 \code{\link{nba_scheduleleaguev2int}()},
-\code{\link{nba_scoreboard}()},
+\code{\link{nba_schedule}()},
 \code{\link{nba_scoreboardv2}()},
-\code{\link{nba_scoreboardv3}()}
+\code{\link{nba_scoreboardv3}()},
+\code{\link{nba_scoreboard}()}
 
 Other NBA Live Functions: 
 \code{\link{nba_live_boxscore}()},

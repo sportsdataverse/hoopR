@@ -155,8 +155,8 @@ Return a list of tibbles: videoUrls, playlist
 \seealso{
 Other NBA Video Functions: 
 \code{\link{nba_videodetails}()},
-\code{\link{nba_videoevents}()},
 \code{\link{nba_videoeventsasset}()},
+\code{\link{nba_videoevents}()},
 \code{\link{nba_videostatus}()}
 }
 \author{

@@ -6,15 +6,15 @@
 \title{\strong{Men's College Basketball KenPom Teams Dictionary}
 Team link KenPom reference lookup for the package}
 \format{
-A data frame with 357 rows and 6 variables:\
-\describe{
-\item{\code{Team}}{character.}
-\item{\code{Team.link}}{character.}
-\item{\code{team.link.ref}}{character.}
-\item{\code{Year}}{double.}
-\item{\code{Conf}}{character.}
-\item{\code{Conf.link}}{character.}
-\item{\code{conf.link.ref}}{character.}
+A data frame with 357 rows and 6 variables:\\tabular{ll}{
+   col_name \tab description \cr
+   \code{Team} \tab character. \cr
+   \code{Team.link} \tab character. \cr
+   \code{team.link.ref} \tab character. \cr
+   \code{Year} \tab double. \cr
+   \code{Conf} \tab character. \cr
+   \code{Conf.link} \tab character. \cr
+   \code{conf.link.ref} \tab character. \cr
 }
 }
 \usage{

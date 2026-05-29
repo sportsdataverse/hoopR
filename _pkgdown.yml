@@ -81,12 +81,19 @@ navbar:
       icon: "fas fa-book-reader"
       text: " Articles"
       menu:
-        - text: Vignettes
+        - text: All Vignettes
           href: articles/index.html
+        - text: --------------------------------
         - text: "Getting Started with hoopR"
           href: articles/getting-started-hoopR.html
+        - text: "ESPN Endpoints"
+          href: articles/espn-endpoints.html
         - text: "KenPom Example Functions"
           href: articles/kenpom-example-functions.html
+        - text: "MBB Cookbook"
+          href: articles/mbb-cookbook.html
+        - text: "NBA Cookbook"
+          href: articles/nba-cookbook.html
     news:
       icon: "fas fa-newspaper"
       text: " News"
@@ -179,6 +186,10 @@ navbar:
       href: https://github.com/sportsdataverse/hoopR/
 reference:
   - title: hoopR Data
+  - subtitle: Loaders Family Overview
+    desc: hoopR loader family overview (NBA + MBB release loaders)
+    contents:
+      - '`hoopR_loaders`'
   - subtitle: NBA Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's NBA Data
     contents:
@@ -196,6 +207,10 @@ reference:
       - '`load_mbb_schedule`'
       - '`update_mbb_db`'
   - title: ESPN Data
+  - subtitle: ESPN Family Overview
+    desc: ESPN basketball endpoint family overview (NBA + MBB)
+    contents:
+      - '`espn_basketball`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access ESPN Men's College Basketball Data
     contents:
@@ -205,6 +220,10 @@ reference:
     contents:
       - starts_with("espn_nba_")
   - title: NBA Data
+  - subtitle: NBA Stats Family Overview
+    desc: NBA Stats API endpoint family overview
+    contents:
+      - '`nba_stats`'
   - subtitle: NBA Stats API
     desc: Functions exported by hoopR to access the NBA Stats API
     contents:
@@ -219,6 +238,10 @@ reference:
     contents:
       - starts_with("ncaa_")
   - title: KenPom Data
+  - subtitle: KenPom Family Overview
+    desc: KenPom scraper overview
+    contents:
+      - '`kp`'
   - subtitle: KenPom Data Functions
     desc: Functions exported by hoopR
     contents:
