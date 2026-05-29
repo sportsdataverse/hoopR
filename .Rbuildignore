@@ -1,6 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^\.gitignore$
+^\.gitattributes$
+^\.git$
 ^\.travis\.yml$
 ^data-raw$
 ^docs$
@@ -22,6 +25,7 @@
 ^man/figures$
 ^hoopR_.*$
 CLAUDE\.md$
+^CLAUDE\.md$
 ^\.lintr$
 nba_pbp_db
 mbb_pbp_db
@@ -31,3 +35,9 @@ mbb_pbp_db
 ^\\.vscode$
 ^tools$
 ^\.positai$
+^\.Rhistory$
+^\.Rdata$
+^\.httr-oauth$
+^\.DS_Store$
+^Meta$
+^doc$
