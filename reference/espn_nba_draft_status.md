@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_status(season = 2024)
 #> ── ESPN NBA Draft Status ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 19:22:41 UTC
+#> ℹ Data updated: 2026-05-29 23:26:13 UTC
 #> # A tibble: 1 × 7
 #>   league season round type_id type_name type_state description
 #>   <chr>   <int> <int> <chr>   <chr>     <chr>      <chr>      

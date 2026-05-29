@@ -151,7 +151,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_seasons()
 #> ── ESPN NBA Seasons from ESPN.com ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 19:23:08 UTC
+#> ℹ Data updated: 2026-05-29 23:26:40 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>

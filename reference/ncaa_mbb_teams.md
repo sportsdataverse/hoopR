@@ -27,17 +27,18 @@ ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1, ...)
 
 A data frame with the following variables
 
-|               |           |                                                 |
-|---------------|-----------|-------------------------------------------------|
-| col_name      | types     | description                                     |
-| team_id       | character | Unique team identifier.                         |
-| team_name     | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| team_url      | character | URL for team.                                   |
-| conference_id | character | Conference identifier.                          |
-| conference    | character | Conference.                                     |
-| division      | numeric   | Team division.                                  |
-| year          | numeric   | 4-digit year.                                   |
-| season_id     | character | Unique season identifier.                       |
+|                |           |                                                   |
+|----------------|-----------|---------------------------------------------------|
+| col_name       | types     | description                                       |
+| team_id        | character | Franchise team id (legacy `/team/{id}/...` urls). |
+| team_name      | character | Full team display name (e.g. 'Las Vegas Aces').   |
+| team_url       | character | URL for team.                                     |
+| conference_id  | character | Conference identifier.                            |
+| conference     | character | Conference.                                       |
+| division       | numeric   | Team division.                                    |
+| year           | numeric   | 4-digit year.                                     |
+| season_id      | character | Season id (legacy urls).                          |
+| season_team_id | character | Season-team id (modern `/teams/{id}` urls).       |
 
 ## Details
 

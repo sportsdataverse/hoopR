@@ -154,7 +154,7 @@ Saiem Gilani
   espn_nba_event_competitor_roster_entry(event_id = 401283399,
                                             team_id = 13,
                                             athlete_id = 1966)
-#> ✖ 2026-05-29 19:22:43.600453: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
+#> ✖ 2026-05-29 23:26:15.302465: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 13, athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> NULL

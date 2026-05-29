@@ -577,6 +577,8 @@
 <td>Hardened against NCAA.com column drift. The function now uses <code>dplyr::rename(dplyr::any_of(...))</code> so renamed / added columns (e.g. new <code>Quad 1..4</code> headers) no longer break the documented schema; existing consumers keep working and new columns ride along untouched.</td>
 </tr><tr><td>ESPN wrappers</td>
 <td>Moved <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> and <code><a href="../reference/check_status.html">check_status()</a></code> <em>inside</em> <code>tryCatch</code> so transient HTTP errors surface as <code>cli_alert_danger()</code> + empty fallback rather than escaping the function. Affects every <code>espn_nba_*</code> / <code>espn_mbb_*</code> wrapper.</td>
+</tr><tr><td><code><a href="../reference/ncaa_mbb_teams.html">ncaa_mbb_teams()</a></code></td>
+<td>No longer returns <code>NA</code> ids. <code>stats.ncaa.org</code> migrated team links from the legacy <code>/team/{team_id}/{season_id}</code> pair to a single modern <code>/teams/{season_team_id}</code> resource, so the previous <code>str_extract("(\\d+)/(\\d+)")</code> matched nothing. The function now extracts ids from whichever url shape is present (legacy rows populate <code>team_id</code>/<code>season_id</code>; modern rows populate the new <code>season_team_id</code> column), so the id columns are never all-<code>NA</code> when the site flips formats.</td>
 </tr></tbody></table></div>
 </div>
 <div class="section level4">

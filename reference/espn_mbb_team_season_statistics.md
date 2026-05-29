@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_statistics(team_id = 150, season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Statistics ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 19:22:26 UTC
+#> ℹ Data updated: 2026-05-29 23:25:57 UTC
 #> # A tibble: 77 × 13
 #>    league    season season_type team_id category_name category_display stat_name
 #>    <chr>      <int>       <int> <chr>   <chr>         <chr>            <chr>    
