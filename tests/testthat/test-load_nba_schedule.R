@@ -79,7 +79,6 @@ test_that("hoopR Loader NBA Schedule", {
     "game_date_time",
     "game_date",
     "PBP",
-    "team_box",
     "player_box"
   )
 
