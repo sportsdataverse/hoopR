@@ -4,17 +4,19 @@
 #' @param game_id (*Integer* required): Game ID filter for querying a single game
 #'
 #' @return [espn_mbb_wp()] - A data frame with 9 variables:
-#' \describe{
-#'   \item{`game_id`: character.}{Referencing game ID (should be same as `game_id` from other functions).}
-#'   \item{`play_id`: character.}{Referencing play ID.}
-#'   \item{`period`: integer.}{Clock (time) left in the game.}
-#'   \item{`time_left`: character.}{Clock (time) left in the game.}
-#'   \item{`period_seconds_left`: integer.}{Seconds left in the period.}
-#'   \item{`game_seconds_left`: integer.}{Seconds left in the game.}
-#'   \item{`home_win_percentage`: double.}{The probability of the home team winning the game.}
-#'   \item{`away_win_percentage`: double.}{The probability of the away team winning the game (calculated as 1 - `home_win_percentage` - `tie_percentage`).}
-#'   \item{`tie_percentage`: double.}{The probability of the game ending the final period in a tie.}
-#' }
+#'
+#' | col_name | type | description |
+#' |---|---|---|
+#' | `game_id` | character | Referencing game ID (should be same as `game_id` from other functions). |
+#' | `play_id` | character | Referencing play ID. |
+#' | `period` | integer | Clock (time) left in the game. |
+#' | `time_left` | character | Clock (time) left in the game. |
+#' | `period_seconds_left` | integer | Seconds left in the period. |
+#' | `game_seconds_left` | integer | Seconds left in the game. |
+#' | `home_win_percentage` | double | The probability of the home team winning the game. |
+#' | `away_win_percentage` | double | The probability of the away team winning the game (calculated as 1 - `home_win_percentage` - `tie_percentage`). |
+#' | `tie_percentage` | double | The probability of the game ending the final period in a tie. |
+#'
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr2 request req_headers req_timeout req_retry req_perform resp_body_string

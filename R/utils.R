@@ -60,7 +60,7 @@ login <- function(user_email = Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_P
 }
 
 #' Fetch a KenPom page as parsed HTML using an authenticated cookie jar
-#' @param jar Path to the httr2 cookie jar file (returned by \code{login()})
+#' @param jar Path to the httr2 cookie jar file (returned by `login()`)
 #' @param url The KenPom URL to fetch
 #' @return A parsed HTML document (xml_document)
 #' @keywords internal
