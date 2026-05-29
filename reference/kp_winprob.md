@@ -93,7 +93,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
-#> ✖ 2026-05-29 14:48:05.992643: Invalid arguments or no win probability data for 1238 available!
+#> ✖ 2026-05-29 17:40:21.32769: Invalid arguments or no win probability data for 1238 available!
 #> ✖ Args: game_id = 1238, year = 2020
 #> ✖ Error: ℹ In index: 1. Caused by error in `if (...) NULL`: ! missing value where TRUE/FALSE needed
 #> Error in kp_winprob(game_id = 1238, year = 2020) : 

@@ -206,7 +206,7 @@ Saiem Gilani
   espn_nba_athlete_info(athlete_id = "1966")
 #> $Bio
 #> ── ESPN NBA Athlete Bio from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 1 × 21
 #>   id    uid         guid  first_name last_name full_name display_name short_name
 #>   <chr> <chr>       <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
@@ -218,7 +218,7 @@ Saiem Gilani
 #> 
 #> $Team
 #> ── ESPN NBA Athlete Team from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 1 × 1
 #>   x_ref                                                                         
 #>   <chr>                                                                         
@@ -226,7 +226,7 @@ Saiem Gilani
 #> 
 #> $Position
 #> ── ESPN NBA Athlete Position from ESPN.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 1 × 5
 #>   id    name    display_name abbreviation leaf 
 #>   <chr> <chr>   <chr>        <chr>        <lgl>
@@ -234,7 +234,7 @@ Saiem Gilani
 #> 
 #> $Status
 #> ── ESPN NBA Athlete Status from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 1 × 4
 #>   id    name   type   abbreviation
 #>   <chr> <chr>  <chr>  <chr>       
@@ -242,12 +242,12 @@ Saiem Gilani
 #> 
 #> $College
 #> ── ESPN NBA Athlete College from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Draft
 #> ── ESPN NBA Athlete Draft from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:43:03 UTC
+#> ℹ Data updated: 2026-05-29 17:35:48 UTC
 #> # A tibble: 1 × 4
 #>   year  round selection display_text               
 #>   <chr> <chr> <chr>     <chr>                      

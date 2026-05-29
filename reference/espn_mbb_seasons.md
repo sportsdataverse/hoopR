@@ -140,7 +140,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_seasons()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Seasons from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 14:42:45 UTC
+#> ℹ Data updated: 2026-05-29 17:35:33 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>
