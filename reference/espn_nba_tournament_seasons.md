@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournament_seasons(tournament_id = 1)
 #> ── ESPN NBA Tournament Seasons ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 17:50:35 UTC
+#> ℹ Data updated: 2026-05-29 18:27:17 UTC
 #> # A tibble: 3 × 4
 #>   league tournament_id season ref                                               
 #>   <chr>  <chr>          <int> <chr>                                             

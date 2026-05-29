@@ -156,7 +156,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_event_broadcasts(event_id = "401283399")
 #> ── ESPN NBA Event Broadcasts (event_id=401283399) from ESPN.com ────────────────
-#> ℹ Data updated: 2026-05-29 17:50:01 UTC
+#> ℹ Data updated: 2026-05-29 18:26:45 UTC
 #> # A tibble: 0 × 10
 #> # ℹ 10 variables: event_id <chr>, broadcast_id <chr>, type_id <chr>,
 #> #   type_short_name <chr>, type_long_name <chr>, market_id <chr>,

@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_athlete_splits(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Splits from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 17:49:07 UTC
+#> ℹ Data updated: 2026-05-29 18:25:55 UTC
 #> # A tibble: 1 × 2
 #>   name  display_name
 #>   <chr> <chr>       

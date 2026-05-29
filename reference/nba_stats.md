@@ -51,7 +51,7 @@ See
 | [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md) | V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) |
 | [`nba_pbps()`](https://hoopR.sportsdataverse.org/reference/nba_pbps.md) | Multi-game PBP loader |
 | [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md) | V3-only PBP |
-| `nba_pbp_v2()` | V2-only PBP (legacy) |
+| `nba_pbp_v2` | V2-only PBP (legacy) |
 | [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md) | Data.nba.com PBP scraper |
 | [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_pbp.md) | Live PBP (CDN feed) |
 | [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md) | Live boxscore (CDN feed) |

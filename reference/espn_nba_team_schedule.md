@@ -181,7 +181,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_schedule(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Schedule from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 17:50:32 UTC
+#> ℹ Data updated: 2026-05-29 18:27:14 UTC
 #> # A tibble: 84 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      

@@ -74,4 +74,4 @@ for the auth flow.
 [`kp_foul_trouble()`](https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.md),
 [`kp_opptracker()`](https://hoopR.sportsdataverse.org/reference/kp_opptracker.md),
 [`kp_game_attrs()`](https://hoopR.sportsdataverse.org/reference/kp_game_attrs.md),
-[`kp_user_pw()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md).
+`kp_user_pw`.

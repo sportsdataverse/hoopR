@@ -280,7 +280,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_team_stats(team_id = 13, year = 2020))
 #> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 17:50:34 UTC
+#> ℹ Data updated: 2026-05-29 18:27:16 UTC
 #> # A tibble: 1 × 213
 #>   team_id team_guid team_uid team_slug team_location team_name team_abbreviation
 #>     <int> <chr>     <chr>    <chr>     <chr>         <chr>     <chr>            
