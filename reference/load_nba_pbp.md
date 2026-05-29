@@ -120,21 +120,21 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-21 11:45:17 UTC
-#> # A tibble: 635,967 × 64
+#> ℹ Data updated: 2026-05-29 11:51:08 UTC
+#> # A tibble: 639,462 × 64
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
-#>  1                1   4.02e 9               4     615 Jumpball  Vict…          0
-#>  2                2   4.02e 9               7      92 Jump Shot Devi…          0
-#>  3                3   4.02e 9               8     155 Defensiv… Isai…          0
-#>  4                4   4.02e 9               9     131 Pullup J… Lugu…          0
-#>  5                5   4.02e10              11      45 Personal… Isai…          0
-#>  6                6   4.02e10              13      92 Jump Shot Devi…          0
-#>  7                7   4.02e10              14     155 Defensiv… Jale…          0
-#>  8                8   4.02e10              15      44 Shooting… Dyla…          0
-#>  9                9   4.02e10              17      98 Free Thr… Lugu…          0
-#> 10               10   4.02e10              18     156 Offensiv… Thun…          0
-#> # ℹ 635,957 more rows
+#>  1                1   4.02e 9               4     615 Jumpball  Chet…          0
+#>  2                2   4.02e 9               7      92 Jump Shot Juli…          0
+#>  3                3   4.02e 9               9     130 Floating… Isai…          2
+#>  4                4   4.02e10              11      92 Jump Shot Vict…          2
+#>  5                5   4.02e10              13     128 Driving … Vict…          2
+#>  6                6   4.02e10              14     156 Offensiv… Isai…          2
+#>  7                7   4.02e10              19      92 Jump Shot Chet…          2
+#>  8                8   4.02e10              20     155 Defensiv… Spur…          2
+#>  9                9   4.02e10              15      92 Jump Shot Vict…          2
+#> 10               10   4.02e10              17      16 Full Tim… Thun…          2
+#> # ℹ 639,452 more rows
 #> # ℹ 57 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,

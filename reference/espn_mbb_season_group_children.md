@@ -157,7 +157,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group_children(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Children Index ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 07:30:32 UTC
+#> ℹ Data updated: 2026-05-29 14:42:39 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>,
 #> #   parent_group_id <chr>, child_group_id <chr>, ref <chr>

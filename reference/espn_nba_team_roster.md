@@ -165,14 +165,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 07:31:33 UTC
+#> ℹ Data updated: 2026-05-29 14:43:47 UTC
 #> # A tibble: 17 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
 #>  1 4278129    Deandre … 5      C               Center        "7' 0… 252 l… 27   
 #>  2 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
 #>  3 4066648    Rui Hach… 28     F               Forward       "6' 8… 230 l… 28   
-#>  4 4397077    Jaxson H… 11     C               Center        "7' 0… 220 l… 25   
+#>  4 4397077    Jaxson H… 11     C               Center        "7' 0… 220 l… 26   
 #>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 21   
 #>  6 1966       LeBron J… 23     F               Forward       "6' 9… 250 l… 41   
 #>  7 3913174    Luke Ken… 10     G               Guard         "6' 5… 206 l… 29   
@@ -180,7 +180,7 @@ Saiem Gilani
 #>  9 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
 #> 10 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
 #> 11 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
-#> 12 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 27   
+#> 12 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
 #> 13 2990992    Marcus S… 36     G               Guard         "6' 3… 220 l… 32   
 #> 14 4683686    Nick Smi… 20     G               Guard         "6' 2… 185 l… 22   
 #> 15 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   

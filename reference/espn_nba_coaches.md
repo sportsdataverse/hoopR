@@ -157,7 +157,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coaches(season = 2025)
 #> ── ESPN NBA Coaches from ESPN.com ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-22 07:30:58 UTC
+#> ℹ Data updated: 2026-05-29 14:43:09 UTC
 #> # A tibble: 26 × 6
 #>    coach_id first_name last_name full_name experience team_id
 #>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  

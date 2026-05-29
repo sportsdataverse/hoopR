@@ -127,8 +127,8 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA Schedule from hoopR data repository ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-21 11:49:49 UTC
-#> # A tibble: 1,335 × 77
+#> ℹ Data updated: 2026-05-29 11:57:16 UTC
+#> # A tibble: 1,332 × 76
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
 #>  1  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
@@ -139,10 +139,10 @@ load_nba_schedule(seasons = most_recent_nba_season())
 #>  6  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
 #>  7  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
 #>  8  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
-#>  9  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
-#> 10  4.02e8 s:40… 2026…          0 TRUE       FALSE        FALSE                 
-#> # ℹ 1,325 more rows
-#> # ℹ 70 more variables: play_by_play_available <lgl>, recent <lgl>,
+#>  9  4.02e8 s:40… 2026…      19066 TRUE       FALSE        FALSE                 
+#> 10  4.02e8 s:40… 2026…      18203 TRUE       FALSE        FALSE                 
+#> # ℹ 1,322 more rows
+#> # ℹ 69 more variables: play_by_play_available <lgl>, recent <lgl>,
 #> #   start_date <chr>, broadcast <chr>, highlights <chr>, notes_type <chr>,
 #> #   notes_headline <chr>, broadcast_market <chr>, broadcast_name <chr>,
 #> #   type_id <int>, type_abbreviation <chr>, venue_id <int>,
