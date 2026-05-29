@@ -6,7 +6,7 @@
 \title{\strong{Men's College Basketball KenPom Teams Dictionary}
 Team link KenPom reference lookup for the package}
 \format{
-A data frame with 357 rows and 6 variables:\\tabular{ll}{
+A data frame with 357 rows and 6 variables:\tabular{ll}{
    col_name \tab description \cr
    \code{Team} \tab character. \cr
    \code{Team.link} \tab character. \cr
