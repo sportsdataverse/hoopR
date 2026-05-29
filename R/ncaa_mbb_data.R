@@ -57,15 +57,16 @@ ncaa_mbb_NET_rankings <- function() {
 #' @return A data frame with the following variables
 #'
 #'    |col_name      |types     |description                                     |
-#'    |:-------------|:---------|:-----------------------------------------------|
-#'    |team_id       |character |Unique team identifier.                         |
-#'    |team_name     |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |team_url      |character |URL for team.                                   |
-#'    |conference_id |character |Conference identifier.                          |
-#'    |conference    |character |Conference.                                     |
-#'    |division      |numeric   |Team division.                                  |
-#'    |year          |numeric   |4-digit year.                                   |
-#'    |season_id     |character |Unique season identifier.                       |
+#'    |:--------------|:---------|:----------------------------------------------|
+#'    |team_id        |character |Franchise team id (legacy `/team/{id}/...` urls).|
+#'    |team_name      |character |Full team display name (e.g. 'Las Vegas Aces').  |
+#'    |team_url       |character |URL for team.                                    |
+#'    |conference_id  |character |Conference identifier.                           |
+#'    |conference     |character |Conference.                                      |
+#'    |division       |numeric   |Team division.                                   |
+#'    |year           |numeric   |4-digit year.                                    |
+#'    |season_id      |character |Season id (legacy urls).                         |
+#'    |season_team_id |character |Season-team id (modern `/teams/{id}` urls).      |
 #'
 #' @import dplyr
 #' @import rvest
@@ -172,11 +173,19 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
 
       conferences_team_df <- rbindlist_with_attrs(conferences_team_df)
 
-      conferences_team_df$team_id <- conferences_team_df$team_url %>%
-        stringr::str_extract("(\\d+)\\/(\\d+)", group = 1)
-
-      conferences_team_df$season_id <- conferences_team_df$team_url %>%
-        stringr::str_extract("(\\d+)\\/(\\d+)", group = 2)
+      # stats.ncaa.org serves two team-url shapes; extract ids from whichever
+      # is present so the columns never come back all-NA when the site flips:
+      #   legacy:  /team/{team_id}/{season_id}   (franchise id + season id)
+      #   modern:  /teams/{season_team_id}       (single season-team id)
+      # The patterns are distinguishable ("team/" vs "teams/"), so legacy rows
+      # populate team_id/season_id and modern rows populate season_team_id.
+      team_url <- conferences_team_df$team_url
+      conferences_team_df$team_id <-
+        stringr::str_extract(team_url, "team/(\\d+)/(\\d+)", group = 1)
+      conferences_team_df$season_id <-
+        stringr::str_extract(team_url, "team/(\\d+)/(\\d+)", group = 2)
+      conferences_team_df$season_team_id <-
+        stringr::str_extract(team_url, "teams/(\\d+)", group = 1)
 
       df <- as.data.frame(conferences_team_df)
 
@@ -189,7 +198,8 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
           "conference",
           "division",
           "year",
-          "season_id"
+          "season_id",
+          "season_team_id"
         ) %>%
         make_hoopR_data("NCAA Basketball Teams data from stats.ncaa.org", Sys.time())
     },

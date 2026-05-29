@@ -16,14 +16,15 @@ ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1, ...)
 \value{
 A data frame with the following variables\tabular{lll}{
    col_name \tab types \tab description \cr
-   team_id \tab character \tab Unique team identifier. \cr
+   team_id \tab character \tab Franchise team id (legacy \code{/team/\{id\}/...} urls). \cr
    team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
    team_url \tab character \tab URL for team. \cr
    conference_id \tab character \tab Conference identifier. \cr
    conference \tab character \tab Conference. \cr
    division \tab numeric \tab Team division. \cr
    year \tab numeric \tab 4-digit year. \cr
-   season_id \tab character \tab Unique season identifier. \cr
+   season_id \tab character \tab Season id (legacy urls). \cr
+   season_team_id \tab character \tab Season-team id (modern \code{/teams/\{id\}} urls). \cr
 }
 }
 \description{
