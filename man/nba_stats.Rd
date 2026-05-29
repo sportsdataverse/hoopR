@@ -39,7 +39,7 @@ Nested JSON responses parsed via \code{purrr::pluck()}. See
    \code{\link[=nba_pbp]{nba_pbp()}} \tab V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) \cr
    \code{\link[=nba_pbps]{nba_pbps()}} \tab Multi-game PBP loader \cr
    \code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}} \tab V3-only PBP \cr
-   \code{\link[=nba_pbp_v2]{nba_pbp_v2()}} \tab V2-only PBP (legacy) \cr
+   \code{nba_pbp_v2} \tab V2-only PBP (legacy) \cr
    \code{\link[=nba_data_pbp]{nba_data_pbp()}} \tab Data.nba.com PBP scraper \cr
    \code{\link[=nba_live_pbp]{nba_live_pbp()}} \tab Live PBP (CDN feed) \cr
    \code{\link[=nba_live_boxscore]{nba_live_boxscore()}} \tab Live boxscore (CDN feed) \cr

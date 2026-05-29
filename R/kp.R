@@ -65,7 +65,7 @@
 #'
 #' [kp_trends()], [kp_winprob()], [kp_minutes_matrix()],
 #' [kp_foul_trouble()], [kp_opptracker()], [kp_game_attrs()],
-#' [kp_user_pw()].
+#' `kp_user_pw`.
 #'
 #' @keywords KenPom
 #' @family KenPom

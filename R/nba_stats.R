@@ -37,7 +37,7 @@
 #' | [nba_pbp()]                | V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) |
 #' | [nba_pbps()]               | Multi-game PBP loader |
 #' | [nba_playbyplayv3()]       | V3-only PBP |
-#' | [nba_pbp_v2()]             | V2-only PBP (legacy) |
+#' | `nba_pbp_v2`             | V2-only PBP (legacy) |
 #' | [nba_data_pbp()]           | Data.nba.com PBP scraper |
 #' | [nba_live_pbp()]           | Live PBP (CDN feed) |
 #' | [nba_live_boxscore()]      | Live boxscore (CDN feed) |

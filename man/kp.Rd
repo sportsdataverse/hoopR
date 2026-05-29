@@ -72,7 +72,7 @@ args). See \code{?login} for the auth flow.
 
 \code{\link[=kp_trends]{kp_trends()}}, \code{\link[=kp_winprob]{kp_winprob()}}, \code{\link[=kp_minutes_matrix]{kp_minutes_matrix()}},
 \code{\link[=kp_foul_trouble]{kp_foul_trouble()}}, \code{\link[=kp_opptracker]{kp_opptracker()}}, \code{\link[=kp_game_attrs]{kp_game_attrs()}},
-\code{\link[=kp_user_pw]{kp_user_pw()}}.
+\code{kp_user_pw}.
 }
 }
 \concept{KenPom}
