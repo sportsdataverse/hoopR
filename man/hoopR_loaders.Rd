@@ -10,7 +10,7 @@ Loaders for full seasons of pre-scraped data from the
 \verb{sportsdataverse/hoopR-\{nba,mbb\}-data} releases on
 \code{sportsdataverse-data}. Each helper validates the requested
 seasons, builds the per-asset URLs, downloads in parallel (with
-optional \link{progressr} progress + optional \code{DBI} insertion), and
+optional \link[progressr:progressr]{progressr::progressr} progress + optional \code{DBI} insertion), and
 tags the result with the \code{hoopR_data} S3 class.
 }
 \details{

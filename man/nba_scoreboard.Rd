@@ -150,8 +150,8 @@ Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba
 }
 \seealso{
 Other NBA Schedule Functions: 
-\code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_schedule}()},
+\code{\link{nba_scheduleleaguev2int}()},
 \code{\link{nba_scoreboardv2}()},
 \code{\link{nba_scoreboardv3}()},
 \code{\link{nba_todays_scoreboard}()}

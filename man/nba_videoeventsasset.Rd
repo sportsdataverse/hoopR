@@ -27,8 +27,8 @@ Returns a named list containing video event asset data (structure varies by resp
 }
 \seealso{
 Other NBA Video Functions: 
-\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videodetails}()},
+\code{\link{nba_videodetailsasset}()},
 \code{\link{nba_videoevents}()},
 \code{\link{nba_videostatus}()}
 }

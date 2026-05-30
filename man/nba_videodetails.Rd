@@ -156,8 +156,8 @@ Use \code{nba_videodetailsasset()} instead.
 \seealso{
 Other NBA Video Functions: 
 \code{\link{nba_videodetailsasset}()},
-\code{\link{nba_videoeventsasset}()},
 \code{\link{nba_videoevents}()},
+\code{\link{nba_videoeventsasset}()},
 \code{\link{nba_videostatus}()}
 }
 \author{

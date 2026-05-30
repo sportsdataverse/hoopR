@@ -175,8 +175,8 @@ Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, Te
 \seealso{
 Other NBA Hustle Functions: 
 \code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_leaguehustlestatsplayerleaders}()},
 \code{\link{nba_leaguehustlestatsplayer}()},
+\code{\link{nba_leaguehustlestatsplayerleaders}()},
 \code{\link{nba_leaguehustlestatsteam}()}
 }
 \author{
