@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_athlete_statisticslog(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Statisticslog from ESPN.com ────────────
-#> ℹ Data updated: 2026-05-30 17:54:24 UTC
+#> ℹ Data updated: 2026-05-30 18:38:33 UTC
 #> # A tibble: 1 × 2
 #>   season$`$ref`                                                       statistics
 #>   <chr>                                                               <list>    
