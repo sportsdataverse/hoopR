@@ -197,14 +197,31 @@ Other ESPN NBA Functions:
 ``` r
 # \donttest{
 try(espn_nba_betting(game_id = 401283399))
-#> ✖ 2026-05-30 19:06:06.249359: Invalid arguments or no betting data available!
-#> ✖ Args: game_id = 401283399
-#> ✖ Error: Can't select columns that don't exist. ✖ Column `links` doesn't exist.
 #> $pickcenter
-#> data frame with 0 columns and 0 rows
+#> ── ESPN NBA Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-30 20:13:40 UTC
+#> # A tibble: 3 × 66
+#>   details over_under spread over_odds under_odds provider_id provider_name
+#> * <chr>        <int>  <int>     <dbl>      <dbl>       <int> <chr>        
+#> 1 MEM -7         227     -7    -110       -110          1004 consensus    
+#> 2 MEM -7         228     -7      30.9       67.4        1003 numberfire   
+#> 3 MEM -7         228     -7    -110       -110          1002 teamrankings 
+#> # ℹ 59 more variables: provider_priority <int>,
+#> #   away_team_odds_win_percentage <dbl>, away_team_odds_favorite <lgl>,
+#> #   away_team_odds_underdog <lgl>, away_team_odds_money_line <int>,
+#> #   away_team_odds_spread_odds <dbl>, away_team_odds_team_id <int>,
+#> #   away_team_odds_average_score <dbl>, away_team_odds_money_line_odds <dbl>,
+#> #   away_team_odds_spread_return <dbl>,
+#> #   away_team_odds_current_point_spread_alternate_display_value <chr>, …
 #> 
 #> $againstTheSpread
-#> data frame with 0 columns and 0 rows
+#> ── ESPN NBA Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-30 20:13:40 UTC
+#> # A tibble: 2 × 9
+#>      id uid        display_name abbreviation logo  logos records game_id team_id
+#> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>
+#> 1    25 s:40~l:46… Oklahoma Ci… OKC          http… <df>  <list>   4.01e8      25
+#> 2    29 s:40~l:46… Memphis Gri… MEM          http… <df>  <list>   4.01e8      29
 #> 
 #> $predictor
 #> data frame with 0 columns and 0 rows

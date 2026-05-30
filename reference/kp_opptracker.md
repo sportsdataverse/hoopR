@@ -92,7 +92,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
-#> ✖ 2026-05-30 19:08:54.817243: 2026-05-30 19:08:54.816864 - Florida St. - 2021 Team opponent tracker data is missing
+#> ✖ 2026-05-30 20:16:38.578357: 2026-05-30 20:16:38.577928 - Florida St. - 2021 Team opponent tracker data is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: subscript out of bounds
 #> NULL

@@ -186,14 +186,31 @@ Other ESPN MBB Functions:
 ``` r
 # \donttest{
 try(espn_mbb_betting(game_id = 401256760))
-#> ✖ 2026-05-30 19:05:21.493273: Invalid arguments or no betting data available!
-#> ✖ Args: game_id = 401256760
-#> ✖ Error: Can't select columns that don't exist. ✖ Column `links` doesn't exist.
 #> $pickcenter
-#> data frame with 0 columns and 0 rows
+#> ── ESPN MBB Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-30 20:12:47 UTC
+#> # A tibble: 3 × 66
+#>   details  over_under spread over_odds under_odds provider_id provider_name
+#> * <chr>         <dbl>  <dbl>     <dbl>      <dbl>       <int> <chr>        
+#> 1 FSU -1.5       136.   -1.5    -112       -108          1004 consensus    
+#> 2 FSU -1.5       134.   -1.5      62.6       37.4        1003 numberfire   
+#> 3 FSU -1         134.   -1      -115       -105          1002 teamrankings 
+#> # ℹ 59 more variables: provider_priority <int>,
+#> #   away_team_odds_win_percentage <dbl>, away_team_odds_favorite <lgl>,
+#> #   away_team_odds_underdog <lgl>, away_team_odds_money_line <int>,
+#> #   away_team_odds_spread_odds <dbl>, away_team_odds_team_id <int>,
+#> #   away_team_odds_average_score <dbl>, away_team_odds_money_line_odds <dbl>,
+#> #   away_team_odds_spread_return <dbl>,
+#> #   away_team_odds_current_point_spread_alternate_display_value <chr>, …
 #> 
 #> $againstTheSpread
-#> data frame with 0 columns and 0 rows
+#> ── ESPN MBB Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-05-30 20:12:47 UTC
+#> # A tibble: 2 × 9
+#>      id uid        display_name abbreviation logo  logos records game_id team_id
+#> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>
+#> 1    57 s:40~l:41… Florida Gat… FLA          http… <df>  <list>   4.01e8      57
+#> 2    52 s:40~l:41… Florida Sta… FSU          http… <df>  <list>   4.01e8      52
 #> 
 #> $predictor
 #> data frame with 0 columns and 0 rows
