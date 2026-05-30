@@ -4,10 +4,11 @@ test_that("NBA Live PBP", {
   skip_nba_stats_test()
 
 
-  x <- nba_live_pbp(game_id = "0022201086")
+  # The live CDN play-by-play feed only retains recent games (older
+  # game_ids 404 / return empty), so this id needs periodic refreshing.
+  x <- nba_live_pbp(game_id = "0042500316")
 
-  # The live CDN PBP endpoint only serves recent/current games; an older
-  # game_id returns no rows. Skip rather than assert against an empty frame.
+  # Skip rather than fail if the chosen game has aged out of the live feed.
   if (is.null(x) || !is.data.frame(x) || nrow(x) == 0 || ncol(x) == 0) {
     skip("No rows returned from nba_live_pbp at test time")
   }

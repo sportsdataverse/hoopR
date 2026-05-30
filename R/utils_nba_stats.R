@@ -110,6 +110,22 @@ nba_live_endpoint <- function(endpoint) {
   return(base_url)
 }
 
+# Browser-like headers required by the NBA CDN (cdn.nba.com). Without them
+# the CDN returns an "Access Denied" HTML page instead of JSON. Shared by
+# the live-data wrappers (nba_live_pbp, nba_live_boxscore, nba_todays_scoreboard)
+# and the schedule wrapper.
+.nba_cdn_headers <- function() {
+  c(
+    `User-Agent` = paste0(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ",
+      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"),
+    `Accept` = "application/json, text/plain, */*",
+    `Accept-Language` = "en-US,en;q=0.9",
+    `Origin` = "https://www.nba.com",
+    `Referer` = "https://www.nba.com/"
+  )
+}
+
 nba_endpoint <- function(endpoint) {
   all_endpoints <- c(
     "alltimeleadersgrids",
