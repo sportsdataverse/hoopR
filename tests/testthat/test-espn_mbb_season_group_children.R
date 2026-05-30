@@ -10,8 +10,11 @@ test_that("ESPN - MBB Season Group Children", {
   }
 
   required_cols <- c(
-    "group_id",
-    "league"
+    "league",
+    "season",
+    "season_type",
+    "parent_group_id",
+    "child_group_id"
   )
   expect_in(sort(required_cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")

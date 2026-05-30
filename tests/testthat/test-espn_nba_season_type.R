@@ -10,9 +10,10 @@ test_that("ESPN - NBA Season Type Detail", {
   }
 
   required_cols <- c(
+    "league",
     "season",
-    "type_id",
-    "league"
+    "season_type",
+    "name"
   )
   expect_in(sort(required_cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")

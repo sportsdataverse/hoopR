@@ -11,7 +11,7 @@ test_that("ESPN - NBA Athlete Contract Detail", {
 
   required_cols <- c(
     "athlete_id",
-    "year",
+    "season",
     "league"
   )
   expect_in(sort(required_cols), sort(colnames(x)))

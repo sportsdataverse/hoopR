@@ -10,9 +10,10 @@ test_that("ESPN - MBB Season Week Detail", {
   }
 
   required_cols <- c(
+    "league",
     "season",
-    "number",
-    "league"
+    "season_type",
+    "week"
   )
   expect_in(sort(required_cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
