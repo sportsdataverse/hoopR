@@ -165,7 +165,7 @@ Saiem Gilani
   espn_mbb_athletes_index(season = 2025, limit = 50)
 #> Fetching page 1 of 1 for mens-college-basketball athletes (season=2025)...
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athletes Index from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 23:25:17 UTC
+#> ℹ Data updated: 2026-05-30 10:37:46 UTC
 #> # A tibble: 50 × 9
 #>    athlete_id full_name jersey position team_id headshot status link     ref_url
 #>    <chr>      <chr>     <chr>  <chr>    <chr>   <chr>    <chr>  <chr>    <chr>  

@@ -128,7 +128,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_positions()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Positions Index ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 23:25:39 UTC
+#> ℹ Data updated: 2026-05-30 10:38:06 UTC
 #> # A tibble: 14 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 

@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 23:26:26 UTC
+#> ℹ Data updated: 2026-05-30 10:38:46 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.89e7 Story 2026 NB… Spurs-Thun… 2026-05-… FALSE   NBA I… https:/… 46       
-#> 2  4.89e7 Head… Thunder… Thunder wi… 2026-05-… FALSE   Antho… https:/… 46       
-#> 3  4.89e7 Head… 76ers t… Cavaliers … 2026-05-… FALSE   Shams… https:/… 46       
-#> 4  4.89e7 Media Shams C… Shams Char… 2026-05-… FALSE   NA     https:/… 46       
-#> 5  4.55e7 Story NBA cha… Game 7 is … 2026-05-… FALSE   Doug … https:/… 22000    
+#> 1  4.89e7 Prev… Thunder… San Antoni… 2026-05-… FALSE   NA     http://… 46       
+#> 2  4.89e7 Story 2026 NB… Spurs-Thun… 2026-05-… FALSE   NBA I… https:/… 46       
+#> 3  4.84e7 Story 2026 NB… Here's wha… 2026-05-… FALSE   ESPN   https:/… 46       
+#> 4  4.89e7 Head… Thunder… Thunder wi… 2026-05-… FALSE   Antho… https:/… 46       
+#> 5  4.89e7 Head… 76ers t… Cleveland … 2026-05-… FALSE   Shams… https:/… 46       
 # }
 ```

@@ -142,7 +142,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_types(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Types Index ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-29 23:25:47 UTC
+#> ℹ Data updated: 2026-05-30 10:38:13 UTC
 #> # A tibble: 4 × 4
 #>   league                  season season_type ref                                
 #>   <chr>                    <int>       <int> <chr>                              
