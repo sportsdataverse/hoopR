@@ -146,7 +146,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_event_competitor_statistics(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Statistics ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 20:13:47 UTC
+#> ℹ Data updated: 2026-05-30 20:44:51 UTC
 #> # A tibble: 98 × 10
 #>    league event_id  team_id category_name category_display stat_name stat_abbrev
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      

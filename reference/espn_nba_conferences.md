@@ -142,10 +142,10 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(espn_nba_conferences())
-#> ✖ 2026-05-30 20:13:42.887008: Invalid arguments or no conferences info available!
+#> ✖ 2026-05-30 20:44:47.110774: Invalid arguments or no conferences info available!
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Conferences Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 20:13:42 UTC
+#> ℹ Data updated: 2026-05-30 20:44:47 UTC
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: group_id <chr>, conference_short_name <chr>,
 #> #   conference_uid <chr>, conference_name <chr>, conference_logo <chr>,
