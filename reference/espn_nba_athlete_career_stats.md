@@ -179,7 +179,7 @@ Saiem Gilani
   # LeBron James — regular + postseason combined
   espn_nba_athlete_career_stats(athlete_id = 1966)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 12:02:29 UTC
+#> ℹ Data updated: 2026-05-30 12:28:25 UTC
 #> # A tibble: 114 × 17
 #>    league athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>  <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -201,7 +201,7 @@ Saiem Gilani
   # Just career aggregate
   espn_nba_athlete_career_stats(athlete_id = 1966, stat_type = 2L)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 12:02:29 UTC
+#> ℹ Data updated: 2026-05-30 12:28:25 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,
