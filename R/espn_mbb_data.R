@@ -2260,13 +2260,13 @@ espn_mbb_betting <- function(game_id) {
               TRUE
           ) %>%
           janitor::clean_names() %>%
-          dplyr::select(-"links") %>%
+          dplyr::select(-dplyr::any_of("links")) %>%
           dplyr::mutate(game_id = as.integer(game_id)) %>%
-          dplyr::mutate_at(c(
+          dplyr::mutate(dplyr::across(dplyr::any_of(c(
             "provider_id",
             "away_team_odds_team_id",
             "home_team_odds_team_id"
-          ), as.integer) %>%
+          )), as.integer)) %>%
           make_hoopR_data("ESPN MBB Pickcenter Information from ESPN.com", Sys.time())
       }
       if ("againstTheSpread" %in% names(raw_summary)) {
@@ -2274,7 +2274,7 @@ espn_mbb_betting <- function(game_id) {
           jsonlite::fromJSON(jsonlite::toJSON(raw_summary$againstTheSpread)) %>%
           janitor::clean_names()
         teams <- againstTheSpread$team %>%
-          dplyr::select(-"links") %>%
+          dplyr::select(-dplyr::any_of("links")) %>%
           janitor::clean_names()
         records <- againstTheSpread$records
 

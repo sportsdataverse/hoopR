@@ -2044,16 +2044,13 @@ espn_nba_betting <- function(game_id) {
           flatten = TRUE
         ) %>%
           janitor::clean_names() %>%
-          dplyr::select(-"links") %>%
+          dplyr::select(-dplyr::any_of("links")) %>%
           dplyr::mutate(game_id = as.integer(game_id)) %>%
-          dplyr::mutate_at(
-            c(
-              "provider_id",
-              "away_team_odds_team_id",
-              "home_team_odds_team_id"
-            ),
-            as.integer
-          ) %>%
+          dplyr::mutate(dplyr::across(dplyr::any_of(c(
+            "provider_id",
+            "away_team_odds_team_id",
+            "home_team_odds_team_id"
+          )), as.integer)) %>%
           make_hoopR_data(
             "ESPN NBA Pickcenter Information from ESPN.com",
             Sys.time()
@@ -2065,7 +2062,7 @@ espn_nba_betting <- function(game_id) {
         )) %>%
           janitor::clean_names()
         teams <- againstTheSpread$team %>%
-          dplyr::select(-"links") %>%
+          dplyr::select(-dplyr::any_of("links")) %>%
           janitor::clean_names()
         records <- againstTheSpread$records
 
