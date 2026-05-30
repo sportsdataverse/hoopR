@@ -2444,7 +2444,9 @@ nba_teamandplayersvsplayers <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  season_type <- gsub(" ", "+", season_type)
+  # Pass SeasonType verbatim ("Regular Season"); the HTTP layer URL-encodes
+  # the space. Manually substituting "+" double-encodes to %2B, which the
+  # NBA Stats API rejects with {"SeasonType":"Invalid parameters"}.
   version <- "teamandplayersvsplayers"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
