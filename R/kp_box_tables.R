@@ -378,7 +378,23 @@ kp_winprob <- function(game_id, year) {
         rvest::html_elements("script")) %>%
         rvest::html_text2()
 
-      r <- stringr::str_extract(stringr::str_remove(q[2], "var dataset="), "(.+?)(?=; var runs=)")
+      # KenPom relocated the win-probability payload from the 2nd <script>
+      # under #content-header to the 1st. Locate it by content (the script
+      # that declares `var dataset=`) rather than a hard-coded position, and
+      # fall back to scanning every <script> on the page if the header
+      # scoping ever changes again.
+      wp_script <- q[which(grepl("var dataset=", q))[1]]
+      if (length(wp_script) == 0 || is.na(wp_script)) {
+        all_scripts <- page %>%
+          rvest::html_elements("script") %>%
+          rvest::html_text2()
+        wp_script <- all_scripts[which(grepl("var dataset=", all_scripts))[1]]
+      }
+      if (length(wp_script) == 0 || is.na(wp_script)) {
+        cli::cli_abort("No win probability data found for game {game_id} ({year}).")
+      }
+
+      r <- stringr::str_extract(stringr::str_remove(wp_script, "var dataset="), "(.+?)(?=; var runs=)")
       r <- gsub("'", '"', r)
       wp_dataset <- purrr::map_dfr(c(r), jsonlite::fromJSON)
 
@@ -397,7 +413,7 @@ kp_winprob <- function(game_id, year) {
           "PossessionNumber" = "pn"
         ) %>%
         janitor::clean_names()
-      run_str <- stringr::str_extract(stringr::str_remove(q[2], "(.+)var runs="), "(.+?)(?=; var data=)")
+      run_str <- stringr::str_extract(stringr::str_remove(wp_script, "(.+)var runs="), "(.+?)(?=; var data=)")
       run_str <- gsub("'", '"', run_str)
       runs <- purrr::map_dfr(c(run_str), jsonlite::fromJSON)
       runs <- runs %>%
@@ -408,11 +424,11 @@ kp_winprob <- function(game_id, year) {
           "end" = "End"
         )
       #---- game_data --------
-      game_data_str <- stringr::str_remove(stringr::str_remove(q[2], "(.+)var data="), "makeWP\\(data\\);")
-      vn <- data.frame(vn = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "venue:\'(.+)\', city:"), pattern = ", city:"), pattern = "venue:"))))
-      cty <- data.frame(cty = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "city:\'(.+)\', gameTime:"), pattern = ", gameTime:"), pattern = "city:"))))
-      gmtm <- data.frame(gmtm = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "gameTime:\'(.+)\', dominance:"), pattern = ", dominance:"), pattern = "gameTime:"))))
-      dateofgame <- data.frame(dateofgame = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(q[2], pattern = "dateOfGame:\'(.+)\', ymd:"), pattern = ", ymd:"), pattern = "dateOfGame:"))))
+      game_data_str <- stringr::str_remove(stringr::str_remove(wp_script, "(.+)var data="), "makeWP\\(data\\);")
+      vn <- data.frame(vn = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(wp_script, pattern = "venue:\'(.+)\', city:"), pattern = ", city:"), pattern = "venue:"))))
+      cty <- data.frame(cty = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(wp_script, pattern = "city:\'(.+)\', gameTime:"), pattern = ", gameTime:"), pattern = "city:"))))
+      gmtm <- data.frame(gmtm = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(wp_script, pattern = "gameTime:\'(.+)\', dominance:"), pattern = ", dominance:"), pattern = "gameTime:"))))
+      dateofgame <- data.frame(dateofgame = t(gsub(pattern = "'", "", stringr::str_remove(stringr::str_remove(stringr::str_extract_all(wp_script, pattern = "dateOfGame:\'(.+)\', ymd:"), pattern = ", ymd:"), pattern = "dateOfGame:"))))
       game_data_str <- stringr::str_remove(game_data_str, pattern = "venue:\'(.+)\',(?= city:)")
       game_data_str <- stringr::str_remove(game_data_str, pattern = "city:\'(.+)\',(?= gameTime:)")
       game_data_str <- stringr::str_remove(game_data_str, pattern = "gameTime:\'(.+)\',(?= dominance:)")
