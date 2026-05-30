@@ -23,7 +23,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season,
                 season_type = season_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Odds-Records"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -110,7 +110,7 @@
 .espn_basketball_team_depthchart <- function(league, team_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Depth Chart"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/teams/", team_id,
@@ -202,7 +202,7 @@
                                                  season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Season Roster"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/teams/", team_id,
@@ -257,7 +257,7 @@
 .espn_basketball_coach_season <- function(league, coach_id, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, coach_id = coach_id, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Coach-in-Season Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/coaches/", coach_id,
@@ -325,7 +325,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season,
                 season_type = season_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Season Statistics"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,

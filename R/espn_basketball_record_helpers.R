@@ -118,7 +118,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season,
                 record_id = record_id, season_type = season_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Record Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,

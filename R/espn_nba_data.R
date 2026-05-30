@@ -788,7 +788,7 @@ espn_nba_game_rosters <- function(game_id) {
   .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  athlete_roster_df <- NULL
+  athlete_roster_df <- .empty_hoopR_data("ESPN NBA Game Roster Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1083,7 +1083,7 @@ espn_nba_teams <- function() {
   on.exit(options(old))
   teams_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000"
 
-  teams <- NULL
+  teams <- .empty_hoopR_data("ESPN NBA Teams Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1193,7 +1193,7 @@ espn_nba_team_current_roster <- function(team_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  team_roster_full <- NULL
+  team_roster_full <- .empty_hoopR_data("ESPN NBA Team Current Roster Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1829,7 +1829,7 @@ espn_nba_standings <- function(year) {
     year
   )
 
-  standings <- NULL
+  standings <- .empty_hoopR_data("ESPN NBA Standings Information from ESPN.com")
 
   tryCatch(
     expr = {

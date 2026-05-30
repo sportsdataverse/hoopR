@@ -23,7 +23,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Odds (event_id=", event_id, ") from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -156,7 +156,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id,
                 provider_id = provider_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Prop Bets"))
   rows <- list()
   page <- 1L
   page_count <- NA_integer_

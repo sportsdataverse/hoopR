@@ -23,7 +23,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Awards Index"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -94,7 +94,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, award_id = award_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Award Detail from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

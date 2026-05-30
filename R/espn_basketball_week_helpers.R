@@ -95,7 +95,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season,
                 season_type = season_type, week = week)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Week Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -146,7 +146,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season,
                 season_type = season_type, week = week)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Week Rankings Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -205,7 +205,7 @@
   .args <- list(league = league, season = season,
                 season_type = season_type, week = week,
                 ranking_id = ranking_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Week Ranking Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,

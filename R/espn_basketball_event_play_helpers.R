@@ -17,7 +17,7 @@
 .espn_basketball_event_play <- function(league, event_id, play_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, play_id = play_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Play Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -97,7 +97,7 @@
                                                     ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, play_id = play_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Play Personnel"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,

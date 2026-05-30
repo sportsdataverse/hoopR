@@ -16,7 +16,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Tournaments Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/tournaments?limit=200&lang=en&region=us"
@@ -73,7 +73,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, tournament_id = tournament_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Tournament Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/tournaments/", tournament_id, "?lang=en&region=us"
@@ -133,7 +133,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, tournament_id = tournament_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Tournament Seasons"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/tournaments/", tournament_id, "/seasons?limit=200&lang=en&region=us"
@@ -194,7 +194,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, tournament_id = tournament_id,
                 season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Tournament Season Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/tournaments/", tournament_id,

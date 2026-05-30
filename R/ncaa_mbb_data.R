@@ -14,7 +14,7 @@ ncaa_mbb_NET_rankings <- function() {
   .args <- mget(setdiff(names(formals()), "..."))
   NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
 
-  x <- NULL
+  x <- .empty_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com")
 
   tryCatch(
     expr = {

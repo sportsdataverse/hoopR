@@ -503,7 +503,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Gamelog from ESPN.com"))
 
   url <- paste0(
     "https://site.web.api.espn.com/apis/common/v3/sports/basketball/",
@@ -651,7 +651,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Splits from ESPN.com"))
 
   url <- paste0(
     "https://site.web.api.espn.com/apis/common/v3/sports/basketball/",
@@ -780,7 +780,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Eventlog from ESPN.com"))
 
   # Eventlog is scoped under /seasons/{year}/athletes/{id}/eventlog;
   # the flat /athletes/{id}/eventlog?season= form 404s.
@@ -1060,7 +1060,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Statisticslog from ESPN.com"))
 
   # ESPN's core-v2 statisticslog endpoint does NOT accept ?season=YYYY
   # (returns 404). It returns the full chronological log; the season arg
@@ -1173,7 +1173,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Contracts Index"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -1244,7 +1244,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Contract from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

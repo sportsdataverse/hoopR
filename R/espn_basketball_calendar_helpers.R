@@ -32,7 +32,7 @@
     as.integer(season)
   )
 
-  calendar <- NULL
+  calendar <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Calendar from ESPN.com"))
 
   tryCatch(
     expr = {

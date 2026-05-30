@@ -21,7 +21,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Positions Index"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -86,7 +86,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, position_id = position_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Position from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

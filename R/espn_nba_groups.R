@@ -37,7 +37,14 @@ espn_nba_conferences <- function() {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  conferences <- NULL
+  conferences <- .empty_hoopR_data(
+    "ESPN NBA Conferences Information from ESPN.com",
+    cols = c(
+      "group_id", "conference_short_name", "conference_uid",
+      "conference_name", "conference_logo", "parent_group_id",
+      "conference_id"
+    )
+  )
 
   tryCatch(
     expr = {

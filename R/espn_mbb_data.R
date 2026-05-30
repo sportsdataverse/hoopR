@@ -775,7 +775,7 @@ espn_mbb_game_rosters <- function(game_id) {
   .args <- mget(setdiff(names(formals()), "..."))
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  athlete_roster_df <- NULL
+  athlete_roster_df <- .empty_hoopR_data("ESPN MBB Game Roster Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1034,7 +1034,14 @@ espn_mbb_conferences <- function() {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  conferences <- NULL
+  conferences <- .empty_hoopR_data(
+    "ESPN MBB Conferences Information from ESPN.com",
+    cols = c(
+      "group_id", "conference_short_name", "conference_uid",
+      "conference_name", "conference_logo", "parent_group_id",
+      "conference_id"
+    )
+  )
 
   tryCatch(
     expr = {
@@ -1125,7 +1132,7 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  teams <- NULL
+  teams <- .empty_hoopR_data("ESPN MBB Teams Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1297,7 +1304,7 @@ espn_mbb_team_current_roster <- function(team_id) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  team_roster_full <- NULL
+  team_roster_full <- .empty_hoopR_data("ESPN MBB Team Current Roster Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1798,7 +1805,7 @@ espn_mbb_rankings <- function() {
     "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings?groups=50"
 
 
-  ranks <- NULL
+  ranks <- .empty_hoopR_data("ESPN MBB Rankings Information from ESPN.com")
 
   tryCatch(
     expr = {
@@ -1977,7 +1984,7 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
     "season=", year
   )
 
-  standings <- NULL
+  standings <- .empty_hoopR_data("ESPN MBB Standings Information from ESPN.com")
 
   tryCatch(
     expr = {

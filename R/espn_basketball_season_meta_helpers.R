@@ -14,7 +14,7 @@
 .espn_basketball_season_types <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Types Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types?lang=en&region=us"
@@ -62,7 +62,7 @@
 .espn_basketball_season_type <- function(league, season, season_type, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, season_type = season_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Type Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -228,7 +228,7 @@
 .espn_basketball_season_rankings <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Rankings Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/rankings?lang=en&region=us"
@@ -281,7 +281,7 @@
 .espn_basketball_season_ranking <- function(league, season, ranking_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, ranking_id = ranking_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Ranking Snapshots Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/rankings/", ranking_id,

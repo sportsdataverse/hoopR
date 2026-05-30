@@ -31,7 +31,7 @@
 
   .args <- list(league = league, season = season)
 
-  injuries_df <- NULL
+  injuries_df <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Injury Information from ESPN.com"))
 
   tryCatch(
     expr = {
@@ -133,7 +133,7 @@
 
   .args <- list(league = league, team_id = team_id)
 
-  injuries_df <- NULL
+  injuries_df <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Injury Information from ESPN.com"))
 
   tryCatch(
     expr = {

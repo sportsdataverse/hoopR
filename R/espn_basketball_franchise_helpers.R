@@ -25,7 +25,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, franchise_id = franchise_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Franchise from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -110,7 +110,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Franchises Index"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

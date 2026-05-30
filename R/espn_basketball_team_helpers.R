@@ -181,7 +181,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Roster from ESPN.com"))
 
   url <- paste0(
     "https://site.api.espn.com/apis/site/v2/sports/basketball/",
@@ -338,7 +338,7 @@
     season = season, season_type = season_type
   )
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Schedule from ESPN.com"))
 
   url <- paste0(
     "https://site.api.espn.com/apis/site/v2/sports/basketball/",
@@ -555,7 +555,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Leaders from ESPN.com"))
 
   url <- paste0(
     "https://site.api.espn.com/apis/site/v2/sports/basketball/",
@@ -672,7 +672,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Season Profile from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

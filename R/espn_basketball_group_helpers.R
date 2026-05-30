@@ -93,7 +93,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season,
                 season_type = season_type, group_id = group_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Group Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -155,7 +155,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season,
                 season_type = season_type, group_id = group_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Group Children Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,
@@ -209,7 +209,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season,
                 season_type = season_type, group_id = group_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Group Teams Index"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types/", season_type,

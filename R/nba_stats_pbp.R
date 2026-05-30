@@ -1559,7 +1559,7 @@ nba_live_pbp <- function(
     ".json"
   )
 
-  data <- NULL
+  data <- .empty_hoopR_data("NBA Game Play-by-Play Information from NBA.com")
 
   tryCatch(
     expr = {

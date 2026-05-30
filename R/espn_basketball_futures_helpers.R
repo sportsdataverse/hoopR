@@ -24,7 +24,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Futures"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",

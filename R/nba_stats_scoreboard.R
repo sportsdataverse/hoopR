@@ -717,7 +717,7 @@ nba_scoreboardv3 <- function(
     GameDate = game_date
   )
 
-  games <- NULL
+  games <- .empty_hoopR_data("NBA Scoreboard V3 Information from NBA.com")
 
   tryCatch(
     expr = {
@@ -873,7 +873,7 @@ nba_todays_scoreboard <- function(
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  games <- NULL
+  games <- .empty_hoopR_data("NBA Today's Scoreboard Information from NBA.com")
 
   tryCatch(
     expr = {

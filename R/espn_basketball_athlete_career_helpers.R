@@ -12,7 +12,7 @@
 .espn_basketball_athlete_seasons <- function(league, athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Seasons"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/athletes/", athlete_id,
@@ -75,7 +75,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id,
                 stat_type = stat_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Career Stats"))
 
   fetch_one <- function(type_id) {
     type_segment <- if (is.null(type_id) || is.na(type_id)) "" else
@@ -192,7 +192,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, athlete_id = athlete_id, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athlete Event Log"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/athletes/", athlete_id,

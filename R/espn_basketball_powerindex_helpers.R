@@ -22,7 +22,7 @@
   .args <- list(league = league, season = season, season_type = season_type)
 
   st_set <- as.integer(season_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Power Index"))
   rows <- list()
 
   page <- 1L

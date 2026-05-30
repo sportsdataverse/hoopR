@@ -13,7 +13,7 @@
                                                           team_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Competitor Linescores"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -79,7 +79,7 @@
                                                        team_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Competitor Leaders"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -161,7 +161,7 @@
                                                       team_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Competitor Roster"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -212,7 +212,7 @@
                                                           team_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Competitor Statistics"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -289,7 +289,7 @@
                                                        team_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Competitor Records"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -368,7 +368,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id,
                 athlete_id = athlete_id, stat_type = stat_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Player Box"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -457,7 +457,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id,
                 athlete_id = athlete_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Competitor Roster Entry"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,
@@ -526,7 +526,7 @@
                                                       ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, event_id = event_id, team_id = team_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Event Competitor Score"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/events/", event_id, "/competitions/", event_id,

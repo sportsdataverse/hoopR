@@ -16,7 +16,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, coach_id = coach_id)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Coach Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/coaches/", coach_id, "?lang=en&region=us"
@@ -92,7 +92,7 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, coach_id = coach_id,
                 record_type = record_type)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Coach Record"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/coaches/", coach_id,

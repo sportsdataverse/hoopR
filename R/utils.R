@@ -599,6 +599,36 @@ NULL
 
 
 
+# Build a class-carrying empty hoopR_data tibble for return-variable
+# initialization (see CLAUDE.md "Return-Value Initialization").
+#
+# Tibble-returning ESPN/league wrappers must initialize their return
+# variable BEFORE the tryCatch so that a connection error / HTTP 500 in
+# the error handler yields a typed empty tibble rather than NULL. NULL
+# returns break downstream dplyr::bind_rows() chains and the canonical
+# skip-if-empty test guard.
+#
+# `cols` (optional) gives a stable, documented schema a character-typed
+# zero-row shell so the empty return carries the same column names as the
+# success path (used for fixed-schema endpoints like conferences). When
+# omitted, a 0x0 classed tibble is returned -- correct for the dynamic
+# schemas most ESPN endpoints produce, matching the in-body empty-items
+# branches those helpers already use.
+.empty_hoopR_data <- function(type = "ESPN data from ESPN.com", cols = NULL) {
+  df <- if (is.null(cols) || length(cols) == 0L) {
+    data.frame()
+  } else {
+    stats::setNames(
+      as.data.frame(
+        replicate(length(cols), character(0), simplify = FALSE),
+        stringsAsFactors = FALSE
+      ),
+      cols
+    )
+  }
+  make_hoopR_data(dplyr::as_tibble(df), type, Sys.time())
+}
+
 # Functions for custom class
 # turn a data.frame into a tibble/hoopR_data
 make_hoopR_data <- function(df, type, timestamp) {

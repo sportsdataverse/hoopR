@@ -10,7 +10,7 @@
 .espn_basketball_draft_pick <- function(league, season, round, pick, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, round = round, pick = pick)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Draft Pick Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/draft/rounds/", round,
@@ -78,7 +78,7 @@
 .espn_basketball_draft_rounds <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Draft Rounds"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,
@@ -150,7 +150,7 @@
 .espn_basketball_draft_athletes <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Draft Athletes"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,
@@ -199,7 +199,7 @@
 .espn_basketball_draft_status <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Draft Status"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,
@@ -248,7 +248,7 @@
                                                     athlete_id, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season, athlete_id = athlete_id)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Draft Athlete Detail"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season,
@@ -331,7 +331,7 @@
 .espn_basketball_season_draft <- function(league, season, ...) {
   .espn_bball_validate_league(league)
   .args <- list(league = league, season = season)
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Season Draft (top-level)"))
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/draft?lang=en&region=us"

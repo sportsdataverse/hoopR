@@ -36,7 +36,7 @@
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league, season = season, season_type = season_type)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Leaders from ESPN.com"))
 
   # core-v2 leaders endpoint. The web-common-v3 statistics/byathlete URL the
   # gist documents does not exist for NBA / MBB basketball -- it 404s. The
@@ -217,7 +217,7 @@
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Venues from ESPN.com"))
 
   base_url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -336,7 +336,7 @@
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league, season = season)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Coaches from ESPN.com"))
 
   base_url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
@@ -445,7 +445,7 @@
     league = league, season = season, active = active, limit = limit
   )
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Athletes Index from ESPN.com"))
 
   # The `active` query parameter is NOT supported for basketball leagues
   # (ESPN responds 400 "'active' query param not supported for sport/league").
@@ -623,7 +623,7 @@
   .espn_bball_validate_league_cat(league)
   .args <- list(league = league)
 
-  result <- NULL
+  result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Seasons from ESPN.com"))
 
   url <- paste0(
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
