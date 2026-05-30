@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_event_broadcasts(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Broadcasts (event_id=401256760) from ESPN.
-#> ℹ Data updated: 2026-05-30 11:37:41 UTC
+#> ℹ Data updated: 2026-05-30 12:01:49 UTC
 #> # A tibble: 1 × 10
 #>   event_id  broadcast_id type_id type_short_name type_long_name market_id
 #>   <chr>     <chr>        <chr>   <chr>           <chr>          <chr>    
