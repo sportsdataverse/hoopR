@@ -230,7 +230,7 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_game_rosters(game_id = 401283399))
 #> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 14:57:05 UTC
+#> ℹ Data updated: 2026-05-30 17:06:41 UTC
 #> # A tibble: 24 × 175
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    

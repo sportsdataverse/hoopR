@@ -146,7 +146,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_award(award_id = 344, season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Award Detail from ESPN.com ──────────────
-#> ℹ Data updated: 2026-05-30 14:55:54 UTC
+#> ℹ Data updated: 2026-05-30 17:05:31 UTC
 #> # A tibble: 1 × 9
 #>   league        season award_id name  description athlete_id team_id athlete_ref
 #>   <chr>          <int> <chr>    <chr> <chr>       <chr>      <chr>   <chr>      

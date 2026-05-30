@@ -13,6 +13,34 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0 `httr` →
 `httr2` migration.
 
+#### **New data loaders**
+
+13 new `load_*()` loaders bring NBA and MBB dataset coverage toward
+parity with the wehoop `load_wnba_*()` / `load_wbb_*()` families,
+reading the corresponding `espn_nba_*` /
+`espn_mens_college_basketball_*` release tags on `sportsdataverse-data`:
+
+- **NBA (7):**
+  [`load_nba_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_standings.md),
+  [`load_nba_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_draft.md),
+  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_stats.md),
+  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_stats.md),
+  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_rosters.md),
+  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_game_rosters.md),
+  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_officials.md).
+- **MBB (6):**
+  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_rosters.md),
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_stats.md),
+  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_stats.md),
+  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_standings.md),
+  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_game_rosters.md),
+  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_officials.md).
+
+Player/team season-stats loaders return long-format frames (averages /
+totals / miscellaneous categories). Draft is NBA-only. All accept a
+`seasons` vector (min 2002, draft min 2003) and the same `dbConnection`
+/ `tablename` dots used by the `update_*_db()` helpers.
+
 #### **New exported functions**
 
 58 new ESPN wrappers added across 8 domains (29 per league × 2 leagues +

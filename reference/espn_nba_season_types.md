@@ -153,7 +153,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_types(season = 2025)
 #> ── ESPN NBA Season Types Index ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 14:57:20 UTC
+#> ℹ Data updated: 2026-05-30 17:06:55 UTC
 #> # A tibble: 5 × 4
 #>   league season season_type ref                                                 
 #>   <chr>   <int>       <int> <chr>                                               

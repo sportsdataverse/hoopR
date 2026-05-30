@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_franchises()
 #> ── ESPN NBA Franchises Index ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 14:57:00 UTC
+#> ℹ Data updated: 2026-05-30 17:06:36 UTC
 #> # A tibble: 30 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 
