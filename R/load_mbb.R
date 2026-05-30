@@ -741,3 +741,261 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
   )
   return(need_scrape)
 }
+
+#' @name load_mbb_rosters
+NULL
+#' @title
+#' **Load cleaned MBB team rosters from the data repo**
+#' @rdname load_mbb_rosters
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball team rosters from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB team rosters.
+#' @export
+load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_rosters/rosters_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
+
+#' @name load_mbb_player_stats
+NULL
+#' @title
+#' **Load cleaned MBB player season stats (long format) from the data repo**
+#' @rdname load_mbb_player_stats
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball player season stats (long format) from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB player season stats (long format).
+#' @export
+load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_season_stats/player_season_stats_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
+
+#' @name load_mbb_team_stats
+NULL
+#' @title
+#' **Load cleaned MBB team season stats (long format) from the data repo**
+#' @rdname load_mbb_team_stats
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball team season stats (long format) from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB team season stats (long format).
+#' @export
+load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_season_stats/team_season_stats_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
+
+#' @name load_mbb_standings
+NULL
+#' @title
+#' **Load cleaned MBB standings from the data repo**
+#' @rdname load_mbb_standings
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball standings from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB standings.
+#' @export
+load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_standings/standings_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
+
+#' @name load_mbb_game_rosters
+NULL
+#' @title
+#' **Load cleaned MBB per-game rosters from the data repo**
+#' @rdname load_mbb_game_rosters
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball per-game rosters from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB per-game rosters.
+#' @export
+load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_game_rosters/game_rosters_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
+
+#' @name load_mbb_officials
+NULL
+#' @title
+#' **Load cleaned MBB per-game officials from the data repo**
+#' @rdname load_mbb_officials
+#' @description helper that loads multiple seasons of ESPN men's college
+#' basketball per-game officials from the sportsdataverse-data release repo, either into
+#' memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_mbb_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the data table within the database.
+#' @return Returns a tibble of MBB per-game officials.
+#' @export
+load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_mbb_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_officials/officials_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
