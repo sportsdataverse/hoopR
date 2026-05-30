@@ -4,8 +4,9 @@ Loaders for full seasons of pre-scraped data from the
 `sportsdataverse/hoopR-{nba,mbb}-data` releases on
 `sportsdataverse-data`. Each helper validates the requested seasons,
 builds the per-asset URLs, downloads in parallel (with optional
-progressr progress + optional `DBI` insertion), and tags the result with
-the `hoopR_data` S3 class.
+[progressr::progressr](https://progressr.futureverse.org/reference/progressr.html)
+progress + optional `DBI` insertion), and tags the result with the
+`hoopR_data` S3 class.
 
 ## Details
 

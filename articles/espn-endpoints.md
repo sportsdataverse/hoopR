@@ -1048,13 +1048,13 @@ EID <- "401283399"; TID <- 29; AID <- 6440  # event, team, athlete
 # Same shape as event_competitor_statistics() but scoped to an athlete.
 espn_nba_event_player_box(event_id = EID, team_id = TID,
                            athlete_id = AID)
-#> NULL
+#> # A tibble: 0 × 0
 
 # Per-athlete game-day row: starter flag, did_not_play + reason,
 # ejected flag, period of entry, for_player_id (substitution slot).
 espn_nba_event_competitor_roster_entry(event_id = EID, team_id = TID,
                                         athlete_id = AID)
-#> NULL
+#> # A tibble: 0 × 0
 
 # Single-play detail. play_id comes from espn_nba_pbp() output.
 PID <- "4012833997"  # example play id

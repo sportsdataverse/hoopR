@@ -82,9 +82,9 @@ A data frame with 30 columns:
 ## See also
 
 Other KenPom Historical Functions:
+[`kp_conf()`](https://hoopR.sportsdataverse.org/reference/kp_conf.md),
 [`kp_confhistory()`](https://hoopR.sportsdataverse.org/reference/kp_confhistory.md),
 [`kp_confstats()`](https://hoopR.sportsdataverse.org/reference/kp_confstats.md),
-[`kp_conf()`](https://hoopR.sportsdataverse.org/reference/kp_conf.md),
 [`kp_pomeroy_archive_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_archive_ratings.md),
 [`kp_program_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_program_ratings.md),
 [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)
