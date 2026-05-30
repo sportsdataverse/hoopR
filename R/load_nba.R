@@ -781,3 +781,47 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
   class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   out
 }
+
+#' @name load_nba_draft
+NULL
+#' @title
+#' **Load cleaned NBA draft results from the data repo**
+#' @rdname load_nba_draft
+#' @description helper that loads multiple seasons of ESPN NBA draft results
+#' (overall pick, round, drafted player, and team) from the sportsdataverse-data
+#' release repo, either into memory or into a database via forwarded arguments in
+#' the dots.
+#' @param seasons A vector of 4-digit years associated with given NBA draft years. (Min: 2003)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_nba_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the draft data table within the database.
+#' @return Returns a tibble of NBA draft picks.
+#' @export
+load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
+                           dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2003:most_recent_nba_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2003,
+    seasons <= most_recent_nba_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_draft/draft_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
