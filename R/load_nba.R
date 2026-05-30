@@ -646,3 +646,48 @@ get_missing_nba_games <- function(completed_games, dbConnection, tablename) {
   cli::cli_alert_info("{my_time()} | You have {length(db_ids)} games and are missing {length(need_scrape)}.")
   return(need_scrape)
 }
+
+
+#' **Load hoopR NBA standings**
+#' @name load_nba_standings
+NULL
+#' @title
+#' **Load cleaned NBA standings from the data repo**
+#' @rdname load_nba_standings
+#' @description helper that loads multiple seasons of ESPN NBA standings from the
+#' sportsdataverse-data release repo (tidy long format: one row per team-per-stat),
+#' either into memory or into a database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_nba_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the standings data table within the database.
+#' @return Returns a tibble of per-season NBA standings.
+#' @export
+load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
+                               dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_standings/standings_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
