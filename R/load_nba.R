@@ -736,3 +736,48 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
   class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   out
 }
+
+
+#' **Load hoopR NBA officials**
+#' @name load_nba_officials
+NULL
+#' @title
+#' **Load cleaned NBA per-game officials from the data repo**
+#' @rdname load_nba_officials
+#' @description helper that loads multiple seasons of ESPN NBA per-game officials
+#' from the sportsdataverse-data release repo, either into memory or into a
+#' database via forwarded arguments in the dots.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_nba_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the officials data table within the database.
+#' @return Returns a tibble of per-game NBA officials.
+#' @export
+load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
+                               dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_officials/officials_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  out
+}
