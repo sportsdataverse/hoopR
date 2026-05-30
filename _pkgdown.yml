@@ -197,6 +197,13 @@ reference:
       - '`load_nba_team_box`'
       - '`load_nba_player_box`'
       - '`load_nba_schedule`'
+      - '`load_nba_standings`'
+      - '`load_nba_draft`'
+      - '`load_nba_rosters`'
+      - '`load_nba_player_stats`'
+      - '`load_nba_team_stats`'
+      - '`load_nba_game_rosters`'
+      - '`load_nba_officials`'
       - '`update_nba_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -205,6 +212,12 @@ reference:
       - '`load_mbb_team_box`'
       - '`load_mbb_player_box`'
       - '`load_mbb_schedule`'
+      - '`load_mbb_standings`'
+      - '`load_mbb_rosters`'
+      - '`load_mbb_player_stats`'
+      - '`load_mbb_team_stats`'
+      - '`load_mbb_game_rosters`'
+      - '`load_mbb_officials`'
       - '`update_mbb_db`'
   - title: ESPN Data
   - subtitle: ESPN Family Overview

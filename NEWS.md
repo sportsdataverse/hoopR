@@ -50,6 +50,25 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
 
+### **New data loaders**
+
+13 new `load_*()` loaders bring NBA and MBB dataset coverage toward
+parity with the wehoop `load_wnba_*()` / `load_wbb_*()` families, reading
+the corresponding `espn_nba_*` / `espn_mens_college_basketball_*` release
+tags on `sportsdataverse-data`:
+
+- **NBA (7):** `load_nba_standings()`, `load_nba_draft()`,
+  `load_nba_player_stats()`, `load_nba_team_stats()`, `load_nba_rosters()`,
+  `load_nba_game_rosters()`, `load_nba_officials()`.
+- **MBB (6):** `load_mbb_rosters()`, `load_mbb_player_stats()`,
+  `load_mbb_team_stats()`, `load_mbb_standings()`,
+  `load_mbb_game_rosters()`, `load_mbb_officials()`.
+
+Player/team season-stats loaders return long-format frames
+(averages / totals / miscellaneous categories). Draft is NBA-only.
+All accept a `seasons` vector (min 2002, draft min 2003) and the same
+`dbConnection` / `tablename` dots used by the `update_*_db()` helpers.
+
 ### **New exported functions**
 
 58 new ESPN wrappers added across 8 domains (29 per league × 2 leagues
