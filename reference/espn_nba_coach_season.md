@@ -167,7 +167,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach_season(coach_id = 52120, season = 2025)
 #> ── ESPN NBA Coach-in-Season Detail ────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 10:38:33 UTC
+#> ℹ Data updated: 2026-05-30 11:38:28 UTC
 #> # A tibble: 1 × 13
 #>   league season coach_id uid       first_name last_name date_of_birth birth_city
 #>   <chr>   <int> <chr>    <chr>     <chr>      <chr>     <chr>         <chr>     

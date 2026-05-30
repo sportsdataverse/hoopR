@@ -134,7 +134,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_event_powerindex(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Power Index ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 10:37:56 UTC
+#> ℹ Data updated: 2026-05-30 11:37:45 UTC
 #> # A tibble: 2 × 4
 #>   league                  event_id  team_id ref                                 
 #>   <chr>                   <chr>     <chr>   <chr>                               

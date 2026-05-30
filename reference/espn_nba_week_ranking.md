@@ -185,7 +185,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_week_ranking(ranking_id = 1, week = 5, season = 2025)
-#> ✖ 2026-05-30 10:39:08.931106: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
+#> ✖ 2026-05-30 11:39:07.326743: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> NULL

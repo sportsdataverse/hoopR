@@ -146,7 +146,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_event_competitor_records(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Records ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-05-30 10:38:37 UTC
+#> ℹ Data updated: 2026-05-30 11:38:32 UTC
 #> # A tibble: 5 × 11
 #>   league event_id  team_id record_id name      abbreviation display_name       
 #>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
