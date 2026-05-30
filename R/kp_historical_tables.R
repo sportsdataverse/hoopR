@@ -628,7 +628,7 @@ kp_coach_history <- function(coach){
 #' }
 
 kp_program_ratings <- function(){
-  .args <- mget(setdiff(names(formals()), "..."))
+  .args <- .capture_args()
 
   kenpom <- NULL
 
