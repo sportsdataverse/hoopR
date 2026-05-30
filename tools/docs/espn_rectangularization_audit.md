@@ -33,6 +33,23 @@ This is the SDV-family-wide standard shared with wehoop and cfbfastR.
 
 **Bottom line:** hoopR is the lowest-compliance of the three packages — mainly because two consolidation candidates (`espn_*_betting()` and `espn_*_athlete_overview()`) currently return multi-component lists where one wide tibble would serve users better. The `game_all` pattern repeats the wehoop story (keep as list, document).
 
+> **Implementation outcome (2026-05-30).** On inspection the two "collapse
+> candidates" turned out **not** to be collapsible. `espn_*_betting()` has three
+> genuinely incompatible grains — `pickcenter` (one row per game×sportsbook),
+> `againstTheSpread` (one row per game×team), `predictor` (one row per game) —
+> with no shared sub-game key; a single wide join would cross-join
+> providers×teams and broadcast the predictor, which is worse than the list. So
+> betting stays a named list, exactly like `game_all` (each component is already
+> wide and carries `game_id`). `athlete_overview` is similarly multi-grain
+> (Statistics/NextGame/Last5Games/Headlines/FantasyOutlook) → keep as list. The
+> inspection did surface a **real bug**, now fixed (`fdccec94`): betting's
+> `dplyr::select(-"links")` errored whenever ESPN drops the `links` column
+> (purged-odds games), so it was switched to `-any_of("links")` + `across()`.
+> A follow-up (`2727f276`) flipped a backwards column assertion in
+> `test-espn_mbb_betting.R` that the fix had exposed. Net: no collapses; one bug
+> fixed. (The earlier `7c9d4eb1` typed-empty NULL-init work and the KP/NBA-CDN
+> fixes are tracked separately in the empty-return appendix below.)
+
 ---
 
 ## Tier A — Already compliant
