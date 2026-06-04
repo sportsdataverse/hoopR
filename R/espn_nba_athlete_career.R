@@ -2,15 +2,15 @@
 # Public NBA shims for athlete career-level core-v2 endpoints.
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_seasons
+# espn_nba_player_seasons
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Career Seasons**
-#' @name espn_nba_athlete_seasons
+#' @name espn_nba_player_seasons
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Career Seasons**
-#' @rdname espn_nba_athlete_seasons
+#' @rdname espn_nba_player_seasons
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of seasons an NBA athlete appeared in. Useful for
@@ -34,22 +34,22 @@ NULL
 #' @examples
 #' \donttest{
 #'   # LeBron James (1966): 23 career seasons
-#'   espn_nba_athlete_seasons(athlete_id = 1966)
+#'   espn_nba_player_seasons(athlete_id = 1966)
 #' }
-espn_nba_athlete_seasons <- function(athlete_id, ...) {
+espn_nba_player_seasons <- function(athlete_id, ...) {
   .espn_basketball_athlete_seasons(league = "nba",
                                      athlete_id = athlete_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_career_stats
+# espn_nba_player_career_stats
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Career Stats (Long Format)**
-#' @name espn_nba_athlete_career_stats
+#' @name espn_nba_player_career_stats
 #' @title
 #' **Get ESPN NBA Athlete Career Stats (Long Format)**
-#' @rdname espn_nba_athlete_career_stats
+#' @rdname espn_nba_player_career_stats
 #' @author Saiem Gilani
 #' @description
 #' Returns career stats for an NBA athlete in long format. Default
@@ -95,11 +95,11 @@ espn_nba_athlete_seasons <- function(athlete_id, ...) {
 #' @examples
 #' \donttest{
 #'   # LeBron James — regular + postseason combined
-#'   espn_nba_athlete_career_stats(athlete_id = 1966)
+#'   espn_nba_player_career_stats(athlete_id = 1966)
 #'   # Just career aggregate
-#'   espn_nba_athlete_career_stats(athlete_id = 1966, stat_type = 2L)
+#'   espn_nba_player_career_stats(athlete_id = 1966, stat_type = 2L)
 #' }
-espn_nba_athlete_career_stats <- function(athlete_id,
+espn_nba_player_career_stats <- function(athlete_id,
                                            stat_type = 0L,
                                            ...) {
   .espn_basketball_athlete_career_stats(league = "nba",
@@ -157,19 +157,19 @@ espn_nba_draft_pick <- function(season = most_recent_nba_season(),
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_eventlog_v2 (core-v2 per-season event log)
+# espn_nba_player_eventlog_v2 (core-v2 per-season event log)
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Per-Season Event Log (core-v2)**
-#' @name espn_nba_athlete_eventlog_v2
+#' @name espn_nba_player_eventlog_v2
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Per-Season Event Log (core-v2)**
-#' @rdname espn_nba_athlete_eventlog_v2
+#' @rdname espn_nba_player_eventlog_v2
 #' @author Saiem Gilani
 #' @description
 #' Returns one row per (event x team) for an NBA athlete's appearances
-#' in a given season. Distinct from [espn_nba_athlete_eventlog()] which
+#' in a given season. Distinct from [espn_nba_player_eventlog()] which
 #' wraps the web-common-v3 gamelog endpoint returning stats per game;
 #' this core-v2 variant returns refs + `played` flag and is era-correct.
 #'
@@ -182,9 +182,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_eventlog_v2(athlete_id = 1966, season = 2025)
+#'   espn_nba_player_eventlog_v2(athlete_id = 1966, season = 2025)
 #' }
-espn_nba_athlete_eventlog_v2 <- function(athlete_id,
+espn_nba_player_eventlog_v2 <- function(athlete_id,
                                           season = most_recent_nba_season(),
                                           ...) {
   .espn_basketball_athlete_eventlog_v2(league = "nba",

@@ -90,9 +90,9 @@ lift an `athlete_id` straight off it, then walk the `athlete_` family:
 roster     <- espn_mbb_team_roster(team_id = 150, season = most_recent_mbb_season())
 athlete_id <- roster$athlete_id[1]   # whoever is first on the roster
 
-espn_mbb_athlete_info(athlete_id = athlete_id)            # bio
-espn_mbb_athlete_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
-espn_mbb_athlete_career_stats(athlete_id = athlete_id)    # career rollup, long format
+espn_mbb_player_info(athlete_id = athlete_id)            # bio
+espn_mbb_player_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
+espn_mbb_player_career_stats(athlete_id = athlete_id)    # career rollup, long format
 ```
 
 That "pull the index, lift an ID, drill down" move is the single most
@@ -164,7 +164,7 @@ espn_mbb_player_box(game_id = game_id)    # player box
 espn_mbb_pbp(game_id = game_id)           # play-by-play
 
 # ESPN's win-probability-per-play for the same game.
-espn_mbb_event_probabilities(event_id = game_id)
+espn_mbb_game_probabilities(event_id = game_id)
 ```
 
 If you read the NBA cookbook, you've now seen `espn_*_game_all`,
@@ -181,7 +181,7 @@ and long -- not the whole `player_box`.
 ```{r}
 # event + team + athlete -- three IDs, because you're naming one cell
 # of one game. (More identifiers = finer grain. Always.)
-espn_mbb_event_player_box(
+espn_mbb_game_player_box(
   event_id   = 401256760,
   team_id    = 52,
   athlete_id = 4277850

@@ -4,15 +4,15 @@
 # espn_basketball_event_helpers.R.
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_odds
+# espn_nba_game_odds
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Odds**
-#' @name espn_nba_event_odds
+#' @name espn_nba_game_odds
 NULL
 #' @title
 #' **Get ESPN NBA Event Odds**
-#' @rdname espn_nba_event_odds
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param ... Additional arguments; currently unused but retained for
@@ -42,9 +42,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_odds(event_id = "401283399")
+#'   espn_nba_game_odds(event_id = "401283399")
 #' }
-espn_nba_event_odds <- function(event_id, ...) {
+espn_nba_game_odds <- function(event_id, ...) {
   .espn_basketball_event_odds(
     league   = "nba",
     event_id = event_id,
@@ -53,15 +53,15 @@ espn_nba_event_odds <- function(event_id, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_probabilities
+# espn_nba_game_probabilities
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Win Probabilities**
-#' @name espn_nba_event_probabilities
+#' @name espn_nba_game_probabilities
 NULL
 #' @title
 #' **Get ESPN NBA Event Win Probabilities**
-#' @rdname espn_nba_event_probabilities
+#' @rdname espn_nba_game_probabilities
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param limit integer. Maximum number of probability rows to return.
@@ -89,9 +89,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_probabilities(event_id = "401283399", limit = 50)
+#'   espn_nba_game_probabilities(event_id = "401283399", limit = 50)
 #' }
-espn_nba_event_probabilities <- function(event_id, limit = 200, ...) {
+espn_nba_game_probabilities <- function(event_id, limit = 200, ...) {
   .espn_basketball_event_probabilities(
     league   = "nba",
     event_id = event_id,
@@ -101,15 +101,15 @@ espn_nba_event_probabilities <- function(event_id, limit = 200, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_officials
+# espn_nba_game_officials
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Officials**
-#' @name espn_nba_event_officials
+#' @name espn_nba_game_officials
 NULL
 #' @title
 #' **Get ESPN NBA Event Officials**
-#' @rdname espn_nba_event_officials
+#' @rdname espn_nba_game_officials
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
@@ -133,9 +133,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_officials(event_id = "401283399")
+#'   espn_nba_game_officials(event_id = "401283399")
 #' }
-espn_nba_event_officials <- function(event_id, ...) {
+espn_nba_game_officials <- function(event_id, ...) {
   .espn_basketball_event_officials(
     league   = "nba",
     event_id = event_id,
@@ -144,15 +144,15 @@ espn_nba_event_officials <- function(event_id, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_broadcasts
+# espn_nba_game_broadcasts
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Broadcasts**
-#' @name espn_nba_event_broadcasts
+#' @name espn_nba_game_broadcasts
 NULL
 #' @title
 #' **Get ESPN NBA Event Broadcasts**
-#' @rdname espn_nba_event_broadcasts
+#' @rdname espn_nba_game_broadcasts
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
@@ -178,9 +178,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_broadcasts(event_id = "401283399")
+#'   espn_nba_game_broadcasts(event_id = "401283399")
 #' }
-espn_nba_event_broadcasts <- function(event_id, ...) {
+espn_nba_game_broadcasts <- function(event_id, ...) {
   .espn_basketball_event_broadcasts(
     league   = "nba",
     event_id = event_id,
@@ -189,15 +189,15 @@ espn_nba_event_broadcasts <- function(event_id, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_situation
+# espn_nba_game_situation
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Situation (Live)**
-#' @name espn_nba_event_situation
+#' @name espn_nba_game_situation
 NULL
 #' @title
 #' **Get ESPN NBA Event Situation (Live)**
-#' @rdname espn_nba_event_situation
+#' @rdname espn_nba_game_situation
 #' @author Saiem Gilani
 #' @description
 #' Returns the live game situation for one NBA event: timeouts remaining,
@@ -212,21 +212,21 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_situation(event_id = 401283399)
+#'   espn_nba_game_situation(event_id = 401283399)
 #' }
-espn_nba_event_situation <- function(event_id, ...) {
+espn_nba_game_situation <- function(event_id, ...) {
   .espn_basketball_event_situation(league = "nba", event_id = event_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_predictor
+# espn_nba_game_predictor
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Predictor (Pre-game)**
-#' @name espn_nba_event_predictor
+#' @name espn_nba_game_predictor
 #' @title
 #' **Get ESPN NBA Event Predictor (Pre-game)**
-#' @rdname espn_nba_event_predictor
+#' @rdname espn_nba_game_predictor
 #' @author Saiem Gilani
 #' @description
 #' Returns pre-game predictor statistics for one NBA event in long
@@ -242,21 +242,21 @@ espn_nba_event_situation <- function(event_id, ...) {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_predictor(event_id = 401283399)
+#'   espn_nba_game_predictor(event_id = 401283399)
 #' }
-espn_nba_event_predictor <- function(event_id, ...) {
+espn_nba_game_predictor <- function(event_id, ...) {
   .espn_basketball_event_predictor(league = "nba", event_id = event_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_powerindex
+# espn_nba_game_powerindex
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Power Index Index**
-#' @name espn_nba_event_powerindex
+#' @name espn_nba_game_powerindex
 #' @title
 #' **Get ESPN NBA Event Power Index Index**
-#' @rdname espn_nba_event_powerindex
+#' @rdname espn_nba_game_powerindex
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team power-index `$ref` URLs for one NBA event.
@@ -269,21 +269,21 @@ espn_nba_event_predictor <- function(event_id, ...) {
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_powerindex(event_id = 401283399)
+#'   espn_nba_game_powerindex(event_id = 401283399)
 #' }
-espn_nba_event_powerindex <- function(event_id, ...) {
+espn_nba_game_powerindex <- function(event_id, ...) {
   .espn_basketball_event_powerindex(league = "nba", event_id = event_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_propbets
+# espn_nba_game_propbets
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Prop Bets (Long Format)**
-#' @name espn_nba_event_propbets
+#' @name espn_nba_game_propbets
 #' @title
 #' **Get ESPN NBA Event Prop Bets (Long Format)**
-#' @rdname espn_nba_event_propbets
+#' @rdname espn_nba_game_propbets
 #' @author Saiem Gilani
 #' @description
 #' Returns prop-bet markets for one NBA event + provider in long format:
@@ -294,30 +294,30 @@ espn_nba_event_powerindex <- function(event_id, ...) {
 #'
 #' @param event_id ESPN event identifier.
 #' @param provider_id Sportsbook provider id (e.g. 58 = ESPN BET,
-#'   100 = Caesars). Look up via [espn_nba_event_odds()].
+#'   100 = Caesars). Look up via [espn_nba_game_odds()].
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (athlete × prop type).
 #' @export
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_propbets(event_id = 401283399, provider_id = 58)
+#'   espn_nba_game_propbets(event_id = 401283399, provider_id = 58)
 #' }
-espn_nba_event_propbets <- function(event_id, provider_id, ...) {
+espn_nba_game_propbets <- function(event_id, provider_id, ...) {
   .espn_basketball_event_propbets(league = "nba", event_id = event_id,
                                     provider_id = provider_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_linescores
+# espn_nba_game_team_linescores
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
-#' @name espn_nba_event_competitor_linescores
+#' @name espn_nba_game_team_linescores
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
-#' @rdname espn_nba_event_competitor_linescores
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-quarter scoring breakdown for one team in one NBA
@@ -333,24 +333,24 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_linescores(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_linescores <- function(event_id, team_id, ...) {
+espn_nba_game_team_linescores <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_linescores(league = "nba",
                                                   event_id = event_id,
                                                   team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_leaders
+# espn_nba_game_team_leaders
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
-#' @name espn_nba_event_competitor_leaders
+#' @name espn_nba_game_team_leaders
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
-#' @rdname espn_nba_event_competitor_leaders
+#' @rdname espn_nba_game_team_leaders
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team statistical leaders for one NBA event in long
@@ -365,24 +365,24 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_leaders(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_leaders(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_leaders <- function(event_id, team_id, ...) {
+espn_nba_game_team_leaders <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_leaders(league = "nba",
                                               event_id = event_id,
                                               team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_roster
+# espn_nba_game_team_roster
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Roster (Game-Day)**
-#' @name espn_nba_event_competitor_roster
+#' @name espn_nba_game_team_roster
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Roster (Game-Day)**
-#' @rdname espn_nba_event_competitor_roster
+#' @rdname espn_nba_game_team_roster
 #' @author Saiem Gilani
 #' @description
 #' Returns the game-day roster index for one team in one NBA event.
@@ -397,24 +397,24 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_roster(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_roster(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_roster <- function(event_id, team_id, ...) {
+espn_nba_game_team_roster <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_roster(league = "nba",
                                              event_id = event_id,
                                              team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_statistics
+# espn_nba_game_team_statistics
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
-#' @name espn_nba_event_competitor_statistics
+#' @name espn_nba_game_team_statistics
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
-#' @rdname espn_nba_event_competitor_statistics
+#' @rdname espn_nba_game_team_statistics
 #' @author Saiem Gilani
 #' @description
 #' Returns full team-game statistics for one team in one NBA event in
@@ -430,24 +430,24 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_statistics(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_statistics(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_statistics <- function(event_id, team_id, ...) {
+espn_nba_game_team_statistics <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_statistics(league = "nba",
                                                  event_id = event_id,
                                                  team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_records
+# espn_nba_game_team_records
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
-#' @name espn_nba_event_competitor_records
+#' @name espn_nba_game_team_records
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
-#' @rdname espn_nba_event_competitor_records
+#' @rdname espn_nba_game_team_records
 #' @author Saiem Gilani
 #' @description
 #' Returns team records as of the given NBA event: overall, home,
@@ -462,29 +462,29 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_records(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_records(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_records <- function(event_id, team_id, ...) {
+espn_nba_game_team_records <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_records(league = "nba",
                                               event_id = event_id,
                                               team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_player_box
+# espn_nba_game_player_box
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Player Box Score (Long Format)**
-#' @name espn_nba_event_player_box
+#' @name espn_nba_game_player_box
 NULL
 #' @title
 #' **Get ESPN NBA Event Player Box Score (Long Format)**
-#' @rdname espn_nba_event_player_box
+#' @rdname espn_nba_game_player_box
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format per-game box score for a single athlete in one
 #' NBA event. One row per (category x stat). Same shape as
-#' [espn_nba_event_competitor_statistics()] but scoped to a single
+#' [espn_nba_game_team_statistics()] but scoped to a single
 #' athlete-in-event instead of the full team. `stat_type` defaults to 0
 #' (regular-season aggregate as ESPN tags it for finished events).
 #'
@@ -499,10 +499,10 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_player_box(event_id = 401283399, team_id = 29,
+#'   espn_nba_game_player_box(event_id = 401283399, team_id = 29,
 #'                                athlete_id = 1966)
 #' }
-espn_nba_event_player_box <- function(event_id, team_id, athlete_id,
+espn_nba_game_player_box <- function(event_id, team_id, athlete_id,
                                         stat_type = 0L, ...) {
   .espn_basketball_event_player_box(league = "nba",
                                        event_id = event_id,
@@ -512,22 +512,22 @@ espn_nba_event_player_box <- function(event_id, team_id, athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_roster_entry
+# espn_nba_game_team_roster_entry
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Roster Entry (Per-Athlete Game-Day Row)**
-#' @name espn_nba_event_competitor_roster_entry
+#' @name espn_nba_game_team_roster_entry
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Roster Entry (Per-Athlete Game-Day Row)**
-#' @rdname espn_nba_event_competitor_roster_entry
+#' @rdname espn_nba_game_team_roster_entry
 #' @author Saiem Gilani
 #' @description
 #' Returns a single-row tibble describing one athlete's game-day roster
 #' entry for one NBA event. Carries the **starter** flag, **didNotPlay**
 #' flag with reason, ejection flag, and the substitution slot if the
 #' athlete came in for another player. Pair with
-#' [espn_nba_event_competitor_roster()] to enumerate the roster.
+#' [espn_nba_game_team_roster()] to enumerate the roster.
 #'
 #' @param event_id ESPN event identifier.
 #' @param team_id ESPN team identifier.
@@ -538,11 +538,11 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_roster_entry(event_id = 401283399,
+#'   espn_nba_game_team_roster_entry(event_id = 401283399,
 #'                                             team_id = 13,
 #'                                             athlete_id = 1966)
 #' }
-espn_nba_event_competitor_roster_entry <- function(event_id, team_id,
+espn_nba_game_team_roster_entry <- function(event_id, team_id,
                                                      athlete_id, ...) {
   .espn_basketball_event_competitor_roster_entry(league = "nba",
                                                    event_id = event_id,
@@ -551,15 +551,15 @@ espn_nba_event_competitor_roster_entry <- function(event_id, team_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_play
+# espn_nba_game_play
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Play Detail (Single Play)**
-#' @name espn_nba_event_play
+#' @name espn_nba_game_play
 NULL
 #' @title
 #' **Get ESPN NBA Event Play Detail (Single Play)**
-#' @rdname espn_nba_event_play
+#' @rdname espn_nba_game_play
 #' @author Saiem Gilani
 #' @description
 #' Returns the rich detail block for a single NBA play: sequence, period,
@@ -576,24 +576,24 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_play(event_id = 401283399, play_id = 4012833994)
+#'   espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #' }
-espn_nba_event_play <- function(event_id, play_id, ...) {
+espn_nba_game_play <- function(event_id, play_id, ...) {
   .espn_basketball_event_play(league = "nba",
                                 event_id = event_id,
                                 play_id = play_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_play_personnel
+# espn_nba_game_play_personnel
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Play Personnel (On-Court Lineup at Play)**
-#' @name espn_nba_event_play_personnel
+#' @name espn_nba_game_play_personnel
 NULL
 #' @title
 #' **Get ESPN NBA Event Play Personnel (On-Court Lineup at Play)**
-#' @rdname espn_nba_event_play_personnel
+#' @rdname espn_nba_game_play_personnel
 #' @author Saiem Gilani
 #' @description
 #' Returns the players on court at a specific NBA play in long format
@@ -609,29 +609,29 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_play_personnel(event_id = 401283399, play_id = 4012833994)
+#'   espn_nba_game_play_personnel(event_id = 401283399, play_id = 4012833994)
 #' }
-espn_nba_event_play_personnel <- function(event_id, play_id, ...) {
+espn_nba_game_play_personnel <- function(event_id, play_id, ...) {
   .espn_basketball_event_play_personnel(league = "nba",
                                           event_id = event_id,
                                           play_id = play_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_competitor_score
+# espn_nba_game_team_score
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Score (Single Row)**
-#' @name espn_nba_event_competitor_score
+#' @name espn_nba_game_team_score
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Score (Single Row)**
-#' @rdname espn_nba_event_competitor_score
+#' @rdname espn_nba_game_team_score
 #' @author Saiem Gilani
 #' @description
 #' Returns a one-row tibble with one team's final score for one NBA event:
 #' numeric `value`, display string, `winner` flag, and source metadata.
-#' Quick-lookup wrapper — use [espn_nba_event_competitor_linescores()] for
+#' Quick-lookup wrapper — use [espn_nba_game_team_linescores()] for
 #' per-period detail.
 #'
 #' @param event_id ESPN event identifier.
@@ -642,29 +642,29 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_competitor_score(event_id = 401283399, team_id = 29)
+#'   espn_nba_game_team_score(event_id = 401283399, team_id = 29)
 #' }
-espn_nba_event_competitor_score <- function(event_id, team_id, ...) {
+espn_nba_game_team_score <- function(event_id, team_id, ...) {
   .espn_basketball_event_competitor_score(league = "nba",
                                             event_id = event_id,
                                             team_id = team_id, ...)
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_event_official_detail
+# espn_nba_game_official_detail
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Official Detail (Single Official)**
-#' @name espn_nba_event_official_detail
+#' @name espn_nba_game_official_detail
 NULL
 #' @title
 #' **Get ESPN NBA Event Official Detail (Single Official)**
-#' @rdname espn_nba_event_official_detail
+#' @rdname espn_nba_game_official_detail
 #' @author Saiem Gilani
 #' @description
 #' Returns a single-row tibble for one referee assigned to one NBA event,
 #' with their name, position (Referee / Crew Chief / Umpire), and crew
-#' order. Pair with [espn_nba_event_officials()] to enumerate the crew.
+#' order. Pair with [espn_nba_game_officials()] to enumerate the crew.
 #'
 #' @param event_id ESPN event identifier.
 #' @param order Crew order index (1 = first official). Pair with the `order` column from event_officials().
@@ -674,9 +674,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_event_official_detail(event_id = 401283399, order = 1)
+#'   espn_nba_game_official_detail(event_id = 401283399, order = 1)
 #' }
-espn_nba_event_official_detail <- function(event_id, order, ...) {
+espn_nba_game_official_detail <- function(event_id, order, ...) {
   .espn_basketball_event_official_detail(league = "nba",
                                            event_id = event_id,
                                            order = order, ...)

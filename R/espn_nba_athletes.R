@@ -4,15 +4,15 @@
 # espn_basketball_athlete_helpers.R.
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_info
+# espn_nba_player_info
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Info**
-#' @name espn_nba_athlete_info
+#' @name espn_nba_player_info
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Info**
-#' @rdname espn_nba_athlete_info
+#' @rdname espn_nba_player_info
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused but retained for
@@ -80,9 +80,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_info(athlete_id = "1966")
+#'   espn_nba_player_info(athlete_id = "1966")
 #' }
-espn_nba_athlete_info <- function(athlete_id, ...) {
+espn_nba_player_info <- function(athlete_id, ...) {
   .espn_basketball_athlete_info(
     league     = "nba",
     athlete_id = athlete_id,
@@ -91,15 +91,15 @@ espn_nba_athlete_info <- function(athlete_id, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_overview
+# espn_nba_player_overview
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Overview**
-#' @name espn_nba_athlete_overview
+#' @name espn_nba_player_overview
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Overview**
-#' @rdname espn_nba_athlete_overview
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -149,9 +149,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_overview(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_overview <- function(athlete_id,
+espn_nba_player_overview <- function(athlete_id,
                                        season = most_recent_nba_season(),
                                        ...) {
   .espn_basketball_athlete_overview(
@@ -203,15 +203,15 @@ espn_nba_athlete_stats <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_gamelog
+# espn_nba_player_gamelog
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Gamelog**
-#' @name espn_nba_athlete_gamelog
+#' @name espn_nba_player_gamelog
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Gamelog**
-#' @rdname espn_nba_athlete_gamelog
+#' @rdname espn_nba_player_gamelog
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -226,9 +226,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_gamelog(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_gamelog(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_gamelog <- function(athlete_id,
+espn_nba_player_gamelog <- function(athlete_id,
                                       season = most_recent_nba_season(),
                                       ...) {
   .espn_basketball_athlete_gamelog(
@@ -240,15 +240,15 @@ espn_nba_athlete_gamelog <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_splits
+# espn_nba_player_splits
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Splits**
-#' @name espn_nba_athlete_splits
+#' @name espn_nba_player_splits
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Splits**
-#' @rdname espn_nba_athlete_splits
+#' @rdname espn_nba_player_splits
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -264,9 +264,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_splits(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_splits(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_splits <- function(athlete_id,
+espn_nba_player_splits <- function(athlete_id,
                                      season = most_recent_nba_season(),
                                      ...) {
   .espn_basketball_athlete_splits(
@@ -278,15 +278,15 @@ espn_nba_athlete_splits <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_eventlog
+# espn_nba_player_eventlog
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Eventlog**
-#' @name espn_nba_athlete_eventlog
+#' @name espn_nba_player_eventlog
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Eventlog**
-#' @rdname espn_nba_athlete_eventlog
+#' @rdname espn_nba_player_eventlog
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -310,9 +310,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_eventlog(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_eventlog(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_eventlog <- function(athlete_id,
+espn_nba_player_eventlog <- function(athlete_id,
                                        season = most_recent_nba_season(),
                                        ...) {
   .espn_basketball_athlete_eventlog(
@@ -324,15 +324,15 @@ espn_nba_athlete_eventlog <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_awards
+# espn_nba_player_awards
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Awards**
-#' @name espn_nba_athlete_awards
+#' @name espn_nba_player_awards
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Awards**
-#' @rdname espn_nba_athlete_awards
+#' @rdname espn_nba_player_awards
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
@@ -356,9 +356,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_awards(athlete_id = "1966")
+#'   espn_nba_player_awards(athlete_id = "1966")
 #' }
-espn_nba_athlete_awards <- function(athlete_id, ...) {
+espn_nba_player_awards <- function(athlete_id, ...) {
   .espn_basketball_athlete_awards(
     league     = "nba",
     athlete_id = athlete_id,
@@ -367,15 +367,15 @@ espn_nba_athlete_awards <- function(athlete_id, ...) {
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_statisticslog
+# espn_nba_player_statisticslog
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Statisticslog**
-#' @name espn_nba_athlete_statisticslog
+#' @name espn_nba_player_statisticslog
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Statisticslog**
-#' @rdname espn_nba_athlete_statisticslog
+#' @rdname espn_nba_player_statisticslog
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -396,9 +396,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_statisticslog(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_statisticslog(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_statisticslog <- function(athlete_id,
+espn_nba_player_statisticslog <- function(athlete_id,
                                             season = most_recent_nba_season(),
                                             ...) {
   .espn_basketball_athlete_statisticslog(

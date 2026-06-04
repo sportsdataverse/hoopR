@@ -37,7 +37,7 @@ NULL
 #'    |team_ref    |character |                                                      |
 #'
 #'    Athlete and team details (name, position, college, abbreviation) are not
-#'    inlined in the draft response; resolve them via `espn_nba_athlete_info()`
+#'    inlined in the draft response; resolve them via `espn_nba_player_info()`
 #'    or `espn_nba_team()` using the returned IDs.
 #'
 #' @importFrom jsonlite fromJSON

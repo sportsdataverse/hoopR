@@ -50,6 +50,15 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
 
+### **ESPN endpoint naming convention (game_*/player_*)**
+
+The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used
+by cfbfastR (and mirrored in wehoop): `event_competitor* → game_team*`,
+`event_competition → game`, `event_* → game_*`, and `athlete_* → player_*` (60
+functions). These wrappers are new in this dev cycle and were never on CRAN, so
+the rename is applied directly (no deprecation shims). `*_athlete_stats` is kept
+(it would collide with the existing `*_player_stats`).
+
 ### **New data loaders**
 
 13 new `load_*()` loaders bring NBA and MBB dataset coverage toward
