@@ -54,7 +54,6 @@ case the wrapper returns an empty tibble.
 }
 \seealso{
 Other ESPN NBA Functions: 
-\code{\link{espn_nba_athlete_stats}()},
 \code{\link{espn_nba_athletes_index}()},
 \code{\link{espn_nba_award}()},
 \code{\link{espn_nba_betting}()},
@@ -113,6 +112,7 @@ Other ESPN NBA Functions:
 \code{\link{espn_nba_player_splits}()},
 \code{\link{espn_nba_player_statisticslog}()},
 \code{\link{espn_nba_player_stats}()},
+\code{\link{espn_nba_player_stats_v3}()},
 \code{\link{espn_nba_position}()},
 \code{\link{espn_nba_positions}()},
 \code{\link{espn_nba_powerindex}()},

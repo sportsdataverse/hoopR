@@ -163,15 +163,15 @@ espn_mbb_player_overview <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_mbb_athlete_stats
+# espn_mbb_player_stats_v3
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN Women's College Basketball Athlete Stats**
-#' @name espn_mbb_athlete_stats
+#' @name espn_mbb_player_stats_v3
 NULL
 #' @title
 #' **Get ESPN Women's College Basketball Athlete Stats**
-#' @rdname espn_mbb_athlete_stats
+#' @rdname espn_mbb_player_stats_v3
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
@@ -189,9 +189,9 @@ NULL
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   espn_mbb_athlete_stats(athlete_id = "4593919", season = 2025)
+#'   espn_mbb_player_stats_v3(athlete_id = "4593919", season = 2025)
 #' }
-espn_mbb_athlete_stats <- function(athlete_id,
+espn_mbb_player_stats_v3 <- function(athlete_id,
                                    season = most_recent_mbb_season(),
                                    ...) {
   .espn_basketball_athlete_stats(

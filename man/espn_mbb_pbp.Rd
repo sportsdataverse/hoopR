@@ -78,7 +78,6 @@ try(espn_mbb_pbp(game_id = 401479672))
 }
 \seealso{
 Other ESPN MBB Functions: 
-\code{\link{espn_mbb_athlete_stats}()},
 \code{\link{espn_mbb_athletes_index}()},
 \code{\link{espn_mbb_award}()},
 \code{\link{espn_mbb_betting}()},
@@ -127,6 +126,7 @@ Other ESPN MBB Functions:
 \code{\link{espn_mbb_player_splits}()},
 \code{\link{espn_mbb_player_statisticslog}()},
 \code{\link{espn_mbb_player_stats}()},
+\code{\link{espn_mbb_player_stats_v3}()},
 \code{\link{espn_mbb_position}()},
 \code{\link{espn_mbb_positions}()},
 \code{\link{espn_mbb_powerindex}()},

@@ -163,15 +163,15 @@ espn_nba_player_overview <- function(athlete_id,
 }
 
 # ---------------------------------------------------------------------------
-# espn_nba_athlete_stats
+# espn_nba_player_stats_v3
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Stats**
-#' @name espn_nba_athlete_stats
+#' @name espn_nba_player_stats_v3
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Stats**
-#' @rdname espn_nba_athlete_stats
+#' @rdname espn_nba_player_stats_v3
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -189,9 +189,9 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   espn_nba_athlete_stats(athlete_id = "1966", season = 2024)
+#'   espn_nba_player_stats_v3(athlete_id = "1966", season = 2024)
 #' }
-espn_nba_athlete_stats <- function(athlete_id,
+espn_nba_player_stats_v3 <- function(athlete_id,
                                     season = most_recent_nba_season(),
                                     ...) {
   .espn_basketball_athlete_stats(
