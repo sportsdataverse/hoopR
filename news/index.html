@@ -94,7 +94,7 @@
 <p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Headline change is a <strong>58-wrapper ESPN endpoint expansion</strong> that brings hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team detail, event detail, league catalog, news, calendar, injuries, plus draft / freeagents / transactions for the NBA. Also includes bug fixes for endpoint behavior that drifted after CRAN submission, the package-wide <code>@return</code> documentation upgrade, and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
 <div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
-<p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). <code>*_athlete_stats</code> is kept (it would collide with the existing <code>*_player_stats</code>).</p>
+<p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). The web-common-v3 <code>/athletes/{id}/stats</code> wrapper becomes <code>*_player_stats_v3</code> (kept alongside the core-v2 <code>*_player_stats</code>, a different endpoint).</p>
 </div>
 <div class="section level4">
 <h4 id="new-data-loaders-3-1-0"><strong>New data loaders</strong><a class="anchor" aria-label="anchor" href="#new-data-loaders-3-1-0"></a></h4>
@@ -124,7 +124,7 @@
 <td>web-common-v3</td>
 <td>Season overview + last-5-games + news + rotowire notes.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_stats.html">espn_mbb_athlete_stats()</a></code> / <code><a href="../reference/espn_nba_athlete_stats.html">espn_nba_athlete_stats()</a></code>
+<code>espn_mbb_athlete_stats()</code> / <code>espn_nba_athlete_stats()</code>
 </td>
 <td>web-common-v3</td>
 <td>Per-category stats as a named list (averages / totals).</td>

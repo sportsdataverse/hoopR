@@ -37,7 +37,6 @@ A long tibble.
 ## See also
 
 Other ESPN MBB Functions:
-[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
 [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
 [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
 [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
@@ -86,6 +85,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_splits.md),
 [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_statisticslog.md),
 [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats_v3.md),
 [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
 [`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
 [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
@@ -141,15 +141,15 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach Record ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:56:15 UTC
+#> ℹ Data updated: 2026-06-04 12:19:42 UTC
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 # }

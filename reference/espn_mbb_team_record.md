@@ -41,7 +41,6 @@ for the full column schema.
 ## See also
 
 Other ESPN MBB Functions:
-[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
 [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
 [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
 [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
@@ -91,6 +90,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_splits.md),
 [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_statisticslog.md),
 [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats_v3.md),
 [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
 [`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
 [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_record(team_id = 150, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:56:52 UTC
+#> ℹ Data updated: 2026-06-04 12:20:20 UTC
 #> # A tibble: 12 × 14
 #>    league   team_id season season_type record_id name  abbreviation display_name
 #>    <chr>    <chr>    <int>       <int> <chr>     <chr> <chr>        <chr>       

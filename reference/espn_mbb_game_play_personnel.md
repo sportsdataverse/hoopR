@@ -32,7 +32,6 @@ A long tibble with one row per on-court athlete.
 ## See also
 
 Other ESPN MBB Functions:
-[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
 [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
 [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
 [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
@@ -81,6 +80,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_splits.md),
 [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_statisticslog.md),
 [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats_v3.md),
 [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
 [`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
 [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
@@ -135,11 +135,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
-#> ✖ 2026-06-04 11:56:24.711158: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
+#> ✖ 2026-06-04 12:19:50.559795: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, play_id = 401256760101805888
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Personnel ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:56:24 UTC
+#> ℹ Data updated: 2026-06-04 12:19:50 UTC
 #> # A tibble: 0 × 0
 # }
 ```

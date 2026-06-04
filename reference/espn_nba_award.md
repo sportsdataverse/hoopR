@@ -44,7 +44,6 @@ A tibble with one row per winner.
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
 [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
@@ -102,6 +101,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -160,7 +160,7 @@ Saiem Gilani
   # MVP award id = 33
   espn_nba_award(award_id = 33, season = 2024)
 #> ── ESPN NBA Season Award Detail from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:01 UTC
+#> ℹ Data updated: 2026-06-04 12:20:29 UTC
 #> # A tibble: 1 × 9
 #>   league season award_id name  description        athlete_id team_id athlete_ref
 #>   <chr>   <int> <chr>    <chr> <chr>              <chr>      <chr>   <chr>      

@@ -96,7 +96,6 @@ A game rosters data frame
 ## See also
 
 Other ESPN MBB Functions:
-[`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md),
 [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
 [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
 [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md),
@@ -145,6 +144,7 @@ Other ESPN MBB Functions:
 [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_splits.md),
 [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_statisticslog.md),
 [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats_v3.md),
 [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
 [`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
 [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
@@ -200,7 +200,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_game_rosters(game_id = 401256760))
 #> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:56:28 UTC
+#> ℹ Data updated: 2026-06-04 12:19:55 UTC
 #> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    

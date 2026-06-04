@@ -20,8 +20,9 @@ taxonomy used by cfbfastR (and mirrored in wehoop):
 `event_competitor* → game_team*`, `event_competition → game`,
 `event_* → game_*`, and `athlete_* → player_*` (60 functions). These
 wrappers are new in this dev cycle and were never on CRAN, so the rename
-is applied directly (no deprecation shims). `*_athlete_stats` is kept
-(it would collide with the existing `*_player_stats`).
+is applied directly (no deprecation shims). The web-common-v3
+`/athletes/{id}/stats` wrapper becomes `*_player_stats_v3` (kept
+alongside the core-v2 `*_player_stats`, a different endpoint).
 
 #### **New data loaders**
 
@@ -66,7 +67,7 @@ pair.
 |----|----|----|
 | `espn_mbb_athlete_info()` / `espn_nba_athlete_info()` | site-v2 | Athlete bio / team / position / status / college / draft info. |
 | `espn_mbb_athlete_overview()` / `espn_nba_athlete_overview()` | web-common-v3 | Season overview + last-5-games + news + rotowire notes. |
-| [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md) / [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md) | web-common-v3 | Per-category stats as a named list (averages / totals). |
+| `espn_mbb_athlete_stats()` / `espn_nba_athlete_stats()` | web-common-v3 | Per-category stats as a named list (averages / totals). |
 | `espn_mbb_athlete_gamelog()` / `espn_nba_athlete_gamelog()` | web-common-v3 | Game-by-game log. |
 | `espn_mbb_athlete_splits()` / `espn_nba_athlete_splits()` | web-common-v3 | Long-format home / away / opponent splits. |
 | `espn_mbb_athlete_eventlog()` / `espn_nba_athlete_eventlog()` | core-v2 | Per-event log. `statistics.$ref` URLs returned as `statistics_ref` character column (not auto-resolved). |

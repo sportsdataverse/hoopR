@@ -55,7 +55,6 @@ A tibble with one row per ranking source.
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -114,6 +113,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -170,7 +170,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_week_rankings(week = 5, season = 2025)
 #> ── ESPN NBA Week Rankings Index ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:47 UTC
+#> ℹ Data updated: 2026-06-04 12:21:18 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>, week <int>,
 #> #   ranking_id <chr>, ref <chr>

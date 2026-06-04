@@ -30,7 +30,6 @@ A tibble with one row per team-game power-index entry.
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -88,6 +87,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_powerindex(event_id = 401283399)
 #> ── ESPN NBA Event Power Index ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:12 UTC
+#> ℹ Data updated: 2026-06-04 12:20:40 UTC
 #> # A tibble: 2 × 4
 #>   league event_id  team_id ref                                                  
 #>   <chr>  <chr>     <chr>   <chr>                                                

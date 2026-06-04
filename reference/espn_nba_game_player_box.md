@@ -43,7 +43,6 @@ A long tibble with one row per (category x stat).
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -101,6 +100,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -158,11 +158,11 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_player_box(event_id = 401283399, team_id = 29,
                                athlete_id = 1966)
-#> ✖ 2026-06-04 11:57:11.99195: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
+#> ✖ 2026-06-04 12:20:40.439712: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 29, athlete_id = 1966, stat_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Event Player Box ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:11 UTC
+#> ℹ Data updated: 2026-06-04 12:20:40 UTC
 #> # A tibble: 0 × 0
 # }
 ```

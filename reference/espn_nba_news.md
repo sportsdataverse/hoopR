@@ -42,7 +42,6 @@ Retrieve ESPN NBA news. Uses `getOption("hoopR.proxy")` or
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -100,6 +99,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:18 UTC
+#> ℹ Data updated: 2026-06-04 12:20:47 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Story The '90… "Patrick E… 2026-06-… FALSE   Ohm Y… https:/… 46       
-#> 2  4.90e7 Head… Wembany… "Victor We… 2026-06-… FALSE   Micha… https:/… 46       
-#> 3  4.84e7 Story 2026 NB… "The 2026 … 2026-06-… FALSE   ESPN … https:/… 46       
-#> 4  4.90e7 Prev… Knicks … "New York … 2026-06-… FALSE   NA     http://… 46       
-#> 5  4.90e7 Head… Fan run… "A fan ran… 2026-06-… FALSE   Ben G… https:/… 46       
+#> 1  4.90e7 Story 2026 NB… "Let's bre… 2026-06-… FALSE   Zach … https:/… 46       
+#> 2  4.90e7 Story The '90… "Patrick E… 2026-06-… FALSE   Ohm Y… https:/… 46       
+#> 3  4.90e7 Head… Wembany… "Victor We… 2026-06-… FALSE   Micha… https:/… 46       
+#> 4  4.84e7 Story 2026 NB… "The 2026 … 2026-06-… FALSE   ESPN … https:/… 46       
+#> 5  4.90e7 Prev… Knicks … "New York … 2026-06-… FALSE   NA     http://… 46       
 # }
 ```

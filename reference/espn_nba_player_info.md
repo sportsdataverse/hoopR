@@ -90,7 +90,6 @@ A named list of data frames: `Bio`, `Team`, `Position`, `Status`,
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -148,6 +147,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -206,7 +206,7 @@ Saiem Gilani
   espn_nba_player_info(athlete_id = "1966")
 #> $Bio
 #> ── ESPN NBA Athlete Bio from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 1 × 21
 #>   id    uid         guid  first_name last_name full_name display_name short_name
 #>   <chr> <chr>       <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
@@ -218,7 +218,7 @@ Saiem Gilani
 #> 
 #> $Team
 #> ── ESPN NBA Athlete Team from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 1 × 1
 #>   x_ref                                                                         
 #>   <chr>                                                                         
@@ -226,7 +226,7 @@ Saiem Gilani
 #> 
 #> $Position
 #> ── ESPN NBA Athlete Position from ESPN.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 1 × 5
 #>   id    name    display_name abbreviation leaf 
 #>   <chr> <chr>   <chr>        <chr>        <lgl>
@@ -234,7 +234,7 @@ Saiem Gilani
 #> 
 #> $Status
 #> ── ESPN NBA Athlete Status from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 1 × 4
 #>   id    name   type   abbreviation
 #>   <chr> <chr>  <chr>  <chr>       
@@ -242,12 +242,12 @@ Saiem Gilani
 #> 
 #> $College
 #> ── ESPN NBA Athlete College from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Draft
 #> ── ESPN NBA Athlete Draft from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:22 UTC
+#> ℹ Data updated: 2026-06-04 12:20:52 UTC
 #> # A tibble: 1 × 4
 #>   year  round selection display_text               
 #>   <chr> <chr> <chr>     <chr>                      

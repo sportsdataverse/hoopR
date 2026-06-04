@@ -55,7 +55,6 @@ functions for details.
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md),
@@ -114,6 +113,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -171,7 +171,7 @@ Saiem Gilani
   espn_nba_season_info(season = 2025)
 #> $Info
 #> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name     
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>         
@@ -179,7 +179,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN NBA Season Types from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -187,22 +187,22 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Coaches
 #> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:31 UTC
+#> ℹ Data updated: 2026-06-04 12:21:02 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

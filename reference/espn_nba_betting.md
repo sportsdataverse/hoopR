@@ -87,7 +87,6 @@ predictor
 ## See also
 
 Other ESPN NBA Functions:
-[`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md),
 [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md),
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md),
 [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md),
@@ -145,6 +144,7 @@ Other ESPN NBA Functions:
 [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md),
 [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md),
 [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md),
+[`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md),
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md),
 [`espn_nba_positions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_positions.md),
 [`espn_nba_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_powerindex.md),
@@ -199,7 +199,7 @@ Other ESPN NBA Functions:
 try(espn_nba_betting(game_id = 401283399))
 #> $pickcenter
 #> ── ESPN NBA Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:01 UTC
+#> ℹ Data updated: 2026-06-04 12:20:30 UTC
 #> # A tibble: 3 × 66
 #>   details over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>        <int>  <int>     <dbl>      <dbl>       <int> <chr>        
@@ -216,7 +216,7 @@ try(espn_nba_betting(game_id = 401283399))
 #> 
 #> $againstTheSpread
 #> ── ESPN NBA Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 11:57:01 UTC
+#> ℹ Data updated: 2026-06-04 12:20:30 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>

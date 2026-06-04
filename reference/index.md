@@ -157,11 +157,6 @@ ESPN basketball endpoint family overview (NBA + MBB)
 
 Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
-- [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md)
-  :
-
-  **Get ESPN Women's College Basketball Athlete Stats**
-
 - [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md)
   :
 
@@ -408,6 +403,11 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 
   **Get ESPN men's college basketball player stats data**
 
+- [`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats_v3.md)
+  :
+
+  **Get ESPN Women's College Basketball Athlete Stats**
+
 - [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md)
   :
 
@@ -632,11 +632,6 @@ Functions exported by hoopR to access ESPN Men’s College Basketball Data
 ### NBA Data Functions
 
 Functions exported by hoopR to access ESPN’s NBA Data
-
-- [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md)
-  :
-
-  **Get ESPN NBA Athlete Stats**
 
 - [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md)
   :
@@ -928,6 +923,11 @@ Functions exported by hoopR to access ESPN’s NBA Data
   :
 
   **Get ESPN NBA player stats data**
+
+- [`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats_v3.md)
+  :
+
+  **Get ESPN NBA Athlete Stats**
 
 - [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_nba_position.md)
   :
