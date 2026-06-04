@@ -93,6 +93,10 @@
 <h2 class="pkg-version" data-toc-text="3.1.0" id="hoopr-310"><strong>hoopR 3.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-310"></a></h2>
 <p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Headline change is a <strong>58-wrapper ESPN endpoint expansion</strong> that brings hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team detail, event detail, league catalog, news, calendar, injuries, plus draft / freeagents / transactions for the NBA. Also includes bug fixes for endpoint behavior that drifted after CRAN submission, the package-wide <code>@return</code> documentation upgrade, and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
 <div class="section level4">
+<h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
+<p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). <code>*_athlete_stats</code> is kept (it would collide with the existing <code>*_player_stats</code>).</p>
+</div>
+<div class="section level4">
 <h4 id="new-data-loaders-3-1-0"><strong>New data loaders</strong><a class="anchor" aria-label="anchor" href="#new-data-loaders-3-1-0"></a></h4>
 <p>13 new <code>load_*()</code> loaders bring NBA and MBB dataset coverage toward parity with the wehoop <code>load_wnba_*()</code> / <code>load_wbb_*()</code> families, reading the corresponding <code>espn_nba_*</code> / <code>espn_mens_college_basketball_*</code> release tags on <code>sportsdataverse-data</code>:</p>
 <ul><li>
@@ -110,12 +114,12 @@
 <th>Endpoint family</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_mbb_athlete_info.html">espn_mbb_athlete_info()</a></code> / <code><a href="../reference/espn_nba_athlete_info.html">espn_nba_athlete_info()</a></code>
+<code>espn_mbb_athlete_info()</code> / <code>espn_nba_athlete_info()</code>
 </td>
 <td>site-v2</td>
 <td>Athlete bio / team / position / status / college / draft info.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_overview.html">espn_mbb_athlete_overview()</a></code> / <code><a href="../reference/espn_nba_athlete_overview.html">espn_nba_athlete_overview()</a></code>
+<code>espn_mbb_athlete_overview()</code> / <code>espn_nba_athlete_overview()</code>
 </td>
 <td>web-common-v3</td>
 <td>Season overview + last-5-games + news + rotowire notes.</td>
@@ -125,27 +129,27 @@
 <td>web-common-v3</td>
 <td>Per-category stats as a named list (averages / totals).</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_gamelog.html">espn_mbb_athlete_gamelog()</a></code> / <code><a href="../reference/espn_nba_athlete_gamelog.html">espn_nba_athlete_gamelog()</a></code>
+<code>espn_mbb_athlete_gamelog()</code> / <code>espn_nba_athlete_gamelog()</code>
 </td>
 <td>web-common-v3</td>
 <td>Game-by-game log.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_splits.html">espn_mbb_athlete_splits()</a></code> / <code><a href="../reference/espn_nba_athlete_splits.html">espn_nba_athlete_splits()</a></code>
+<code>espn_mbb_athlete_splits()</code> / <code>espn_nba_athlete_splits()</code>
 </td>
 <td>web-common-v3</td>
 <td>Long-format home / away / opponent splits.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_eventlog.html">espn_mbb_athlete_eventlog()</a></code> / <code><a href="../reference/espn_nba_athlete_eventlog.html">espn_nba_athlete_eventlog()</a></code>
+<code>espn_mbb_athlete_eventlog()</code> / <code>espn_nba_athlete_eventlog()</code>
 </td>
 <td>core-v2</td>
 <td>Per-event log. <code>statistics.$ref</code> URLs returned as <code>statistics_ref</code> character column (not auto-resolved).</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_awards.html">espn_mbb_athlete_awards()</a></code> / <code><a href="../reference/espn_nba_athlete_awards.html">espn_nba_athlete_awards()</a></code>
+<code>espn_mbb_athlete_awards()</code> / <code>espn_nba_athlete_awards()</code>
 </td>
 <td>core-v2</td>
 <td>Awards (sparse / often empty); empty payload returns a canonical-shape empty tibble.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_athlete_statisticslog.html">espn_mbb_athlete_statisticslog()</a></code> / <code><a href="../reference/espn_nba_athlete_statisticslog.html">espn_nba_athlete_statisticslog()</a></code>
+<code>espn_mbb_athlete_statisticslog()</code> / <code>espn_nba_athlete_statisticslog()</code>
 </td>
 <td>core-v2</td>
 <td>Per-season statistics log.</td>
@@ -180,19 +184,19 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_mbb_event_odds.html">espn_mbb_event_odds()</a></code> / <code><a href="../reference/espn_nba_event_odds.html">espn_nba_event_odds()</a></code>
+<code>espn_mbb_event_odds()</code> / <code>espn_nba_event_odds()</code>
 </td>
 <td>Game-level odds (one row per provider).</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_event_probabilities.html">espn_mbb_event_probabilities()</a></code> / <code><a href="../reference/espn_nba_event_probabilities.html">espn_nba_event_probabilities()</a></code>
+<code>espn_mbb_event_probabilities()</code> / <code>espn_nba_event_probabilities()</code>
 </td>
 <td>Paginated play-level win probabilities (page loop capped at 50 pages; respects <code>limit</code>).</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_event_officials.html">espn_mbb_event_officials()</a></code> / <code><a href="../reference/espn_nba_event_officials.html">espn_nba_event_officials()</a></code>
+<code>espn_mbb_event_officials()</code> / <code>espn_nba_event_officials()</code>
 </td>
 <td>Per-game officials.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_mbb_event_broadcasts.html">espn_mbb_event_broadcasts()</a></code> / <code><a href="../reference/espn_nba_event_broadcasts.html">espn_nba_event_broadcasts()</a></code>
+<code>espn_mbb_event_broadcasts()</code> / <code>espn_nba_event_broadcasts()</code>
 </td>
 <td>Broadcast outlets.</td>
 </tr></tbody></table></div>
@@ -282,9 +286,9 @@
 <code><a href="../reference/espn_nba_franchises.html">espn_nba_franchises()</a></code> / <code><a href="../reference/espn_mbb_franchises.html">espn_mbb_franchises()</a></code>
 </td>
 <td>Index of franchise IDs in the league.</td>
-</tr><tr><td><code><a href="../reference/espn_nba_athlete_contracts.html">espn_nba_athlete_contracts()</a></code></td>
+</tr><tr><td><code>espn_nba_athlete_contracts()</code></td>
 <td>Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty).</td>
-</tr><tr><td><code><a href="../reference/espn_nba_athlete_contract.html">espn_nba_athlete_contract()</a></code></td>
+</tr><tr><td><code>espn_nba_athlete_contract()</code></td>
 <td>Salary, cap-rule flags, Bird status, and trade protections for one (athlete × season).</td>
 </tr><tr><td>
 <code><a href="../reference/espn_nba_season_awards.html">espn_nba_season_awards()</a></code> / <code><a href="../reference/espn_mbb_season_awards.html">espn_mbb_season_awards()</a></code>
@@ -419,11 +423,11 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_athlete_seasons.html">espn_nba_athlete_seasons()</a></code> / <code><a href="../reference/espn_mbb_athlete_seasons.html">espn_mbb_athlete_seasons()</a></code>
+<code>espn_nba_athlete_seasons()</code> / <code>espn_mbb_athlete_seasons()</code>
 </td>
 <td>List of seasons an athlete appeared in.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_athlete_career_stats.html">espn_nba_athlete_career_stats()</a></code> / <code><a href="../reference/espn_mbb_athlete_career_stats.html">espn_mbb_athlete_career_stats()</a></code>
+<code>espn_nba_athlete_career_stats()</code> / <code>espn_mbb_athlete_career_stats()</code>
 </td>
 <td>Long-format career stats. Default <code>stat_type = 0L</code> fetches the standard “All Splits” / regular-season view; pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types (postseason / career aggregate) via a <code>stat_type_id</code> column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0.</td>
 </tr><tr><td><code><a href="../reference/espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code></td>
@@ -435,7 +439,7 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_athlete_eventlog_v2.html">espn_nba_athlete_eventlog_v2()</a></code> / <code><a href="../reference/espn_mbb_athlete_eventlog_v2.html">espn_mbb_athlete_eventlog_v2()</a></code>
+<code>espn_nba_athlete_eventlog_v2()</code> / <code>espn_mbb_athlete_eventlog_v2()</code>
 </td>
 <td>Per-season event log from core-v2 (<code>seasons/{y}/athletes/{id}/eventlog</code>). One row per (event × team) appearance with <code>played</code> flag + event/competition <code>$ref</code>s. Distinct from the existing <code>espn_*_athlete_eventlog()</code> which hits the web-common-v3 gamelog endpoint with stats per game.</td>
 </tr><tr><td><code><a href="../reference/espn_nba_draft_rounds.html">espn_nba_draft_rounds()</a></code></td>
@@ -451,19 +455,19 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_event_situation.html">espn_nba_event_situation()</a></code> / <code><a href="../reference/espn_mbb_event_situation.html">espn_mbb_event_situation()</a></code>
+<code>espn_nba_event_situation()</code> / <code>espn_mbb_event_situation()</code>
 </td>
 <td>Live game situation: timeouts, fouls, fouls-to-give, bonus state, last-play <code>$ref</code>. Single-row tibble.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_predictor.html">espn_nba_event_predictor()</a></code> / <code><a href="../reference/espn_mbb_event_predictor.html">espn_mbb_event_predictor()</a></code>
+<code>espn_nba_event_predictor()</code> / <code>espn_mbb_event_predictor()</code>
 </td>
 <td>Pre-game predictor statistics in long format (one row per team × stat). Stats include matchup quality, predicted score, win pct, team-predicted MoV. Returns empty for events without predictor data.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_powerindex.html">espn_nba_event_powerindex()</a></code> / <code><a href="../reference/espn_mbb_event_powerindex.html">espn_mbb_event_powerindex()</a></code>
+<code>espn_nba_event_powerindex()</code> / <code>espn_mbb_event_powerindex()</code>
 </td>
 <td>Per-event power-index <code>$ref</code> index. Coverage is sparse — most events return zero items.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_propbets.html">espn_nba_event_propbets()</a></code> / <code><a href="../reference/espn_mbb_event_propbets.html">espn_mbb_event_propbets()</a></code>
+<code>espn_nba_event_propbets()</code> / <code>espn_mbb_event_propbets()</code>
 </td>
 <td>Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates.</td>
 </tr></tbody></table></div>
@@ -473,23 +477,23 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_linescores.html">espn_nba_event_competitor_linescores()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_linescores.html">espn_mbb_event_competitor_linescores()</a></code>
+<code>espn_nba_event_competitor_linescores()</code> / <code>espn_mbb_event_competitor_linescores()</code>
 </td>
 <td>Per-quarter scoring for one team in one event. One row per period (regulation + overtime).</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_leaders.html">espn_nba_event_competitor_leaders()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_leaders.html">espn_mbb_event_competitor_leaders()</a></code>
+<code>espn_nba_event_competitor_leaders()</code> / <code>espn_mbb_event_competitor_leaders()</code>
 </td>
 <td>Top performers per team in long format: one row per (category × athlete rank). Categories typically include points, rebounds, assists, and rating.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_roster.html">espn_nba_event_competitor_roster()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_roster.html">espn_mbb_event_competitor_roster()</a></code>
+<code>espn_nba_event_competitor_roster()</code> / <code>espn_mbb_event_competitor_roster()</code>
 </td>
 <td>Game-day roster index for one team. Returns athlete ids + core-v2 <code>$ref</code> URLs for deferred dereferencing.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_statistics.html">espn_nba_event_competitor_statistics()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_statistics.html">espn_mbb_event_competitor_statistics()</a></code>
+<code>espn_nba_event_competitor_statistics()</code> / <code>espn_mbb_event_competitor_statistics()</code>
 </td>
 <td>Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_records.html">espn_nba_event_competitor_records()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_records.html">espn_mbb_event_competitor_records()</a></code>
+<code>espn_nba_event_competitor_records()</code> / <code>espn_mbb_event_competitor_records()</code>
 </td>
 <td>Team records as of the event: overall / home / away / conference / division breakdowns.</td>
 </tr></tbody></table></div>
@@ -499,7 +503,7 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_event_official_detail.html">espn_nba_event_official_detail()</a></code> / <code><a href="../reference/espn_mbb_event_official_detail.html">espn_mbb_event_official_detail()</a></code>
+<code>espn_nba_event_official_detail()</code> / <code>espn_mbb_event_official_detail()</code>
 </td>
 <td>Per-official details (name, position, order) for one event. <strong>Note</strong>: the URL segment is the <em>crew order</em> (1-indexed) not the ESPN stable official_id — the wrapper takes <code>order =</code> to match <code>event_officials()$order</code>.</td>
 </tr><tr><td>
@@ -528,7 +532,7 @@
 <td>
 <strong>Full team-season-type stat sheet in long format</strong> (one row per category × stat). Each row carries <code>rank</code> + <code>rank_display_value</code> for league ranking per stat. Smoke-tested: 109 rows × 13 cols for one NBA team.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_score.html">espn_nba_event_competitor_score()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_score.html">espn_mbb_event_competitor_score()</a></code>
+<code>espn_nba_event_competitor_score()</code> / <code>espn_mbb_event_competitor_score()</code>
 </td>
 <td>Single-row final score for one team in one event: <code>value</code>, <code>display_value</code>, <code>winner</code> flag, source metadata.</td>
 </tr><tr><td><code><a href="../reference/espn_nba_season_draft.html">espn_nba_season_draft()</a></code></td>
@@ -540,20 +544,20 @@
 <table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td>
-<code><a href="../reference/espn_nba_event_player_box.html">espn_nba_event_player_box()</a></code> / <code><a href="../reference/espn_mbb_event_player_box.html">espn_mbb_event_player_box()</a></code>
+<code>espn_nba_event_player_box()</code> / <code>espn_mbb_event_player_box()</code>
 </td>
 <td>
 <strong>Per-game box score for one athlete</strong> in long format (one row per category × stat). Same shape as <code>event_competitor_statistics()</code> but scoped to a single athlete-in-event. Smoke-tested: 99 rows × 12 cols for one NBA athlete.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_competitor_roster_entry.html">espn_nba_event_competitor_roster_entry()</a></code> / <code><a href="../reference/espn_mbb_event_competitor_roster_entry.html">espn_mbb_event_competitor_roster_entry()</a></code>
+<code>espn_nba_event_competitor_roster_entry()</code> / <code>espn_mbb_event_competitor_roster_entry()</code>
 </td>
 <td>Per-athlete game-day roster row: <code>starter</code> flag, <code>did_not_play</code> + <code>reason</code>, <code>ejected</code>, <code>period</code> of entry, <code>for_player_id</code> if a substitution.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_play.html">espn_nba_event_play()</a></code> / <code><a href="../reference/espn_mbb_event_play.html">espn_mbb_event_play()</a></code>
+<code>espn_nba_event_play()</code> / <code>espn_mbb_event_play()</code>
 </td>
 <td>Rich single-play detail: sequence, period, clock, type, text, scoring/shooting flags, score, team <code>$ref</code>, shot coordinates.</td>
 </tr><tr><td>
-<code><a href="../reference/espn_nba_event_play_personnel.html">espn_nba_event_play_personnel()</a></code> / <code><a href="../reference/espn_mbb_event_play_personnel.html">espn_mbb_event_play_personnel()</a></code>
+<code>espn_nba_event_play_personnel()</code> / <code>espn_mbb_event_play_personnel()</code>
 </td>
 <td>Players on court at a specific play in long format. Coverage is sparse — many plays return zero rows; wrapper returns a typed empty tibble.</td>
 </tr></tbody></table></div>

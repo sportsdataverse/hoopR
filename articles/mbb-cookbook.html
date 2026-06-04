@@ -314,7 +314,7 @@ an <code>athlete_id</code> straight off it, then walk the
 <code class="sourceCode R"><span><span class="va">roster</span>     <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_team_roster.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">athlete_id</span> <span class="op">&lt;-</span> <span class="va">roster</span><span class="op">$</span><span class="va">athlete_id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>   <span class="co"># whoever is first on the roster</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_athlete_info.html">espn_mbb_athlete_info</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>            <span class="co"># bio</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_player_info.html">espn_mbb_player_info</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>            <span class="co"># bio</span></span>
 <span><span class="co">#&gt; $Bio</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 18</span></span></span>
 <span><span class="co">#&gt;   id      uid       guid  first_name last_name full_name display_name short_name</span></span>
@@ -347,7 +347,7 @@ an <code>athlete_id</code> straight off it, then walk the
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $Draft</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_athlete_gamelog.html">espn_mbb_athlete_gamelog</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_player_gamelog.html">espn_mbb_player_gamelog</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 38 × 26</span></span></span>
 <span><span class="co">#&gt;    id        at_vs game_date     score home_team_id away_team_id home_team_score</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span></span>
@@ -368,7 +368,7 @@ an <code>athlete_id</code> straight off it, then walk the
 <span><span class="co">#&gt; <span style="color: #949494;">#   team_logo &lt;chr&gt;, team_is_all_star &lt;chr&gt;, opponent_id &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   opponent_uid &lt;chr&gt;, opponent_display_name &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   opponent_abbreviation &lt;chr&gt;, opponent_logo &lt;chr&gt;, opponent_rank &lt;chr&gt;, …</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_athlete_career_stats.html">espn_mbb_athlete_career_stats</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>    <span class="co"># career rollup, long format</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_player_career_stats.html">espn_mbb_player_career_stats</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>    <span class="co"># career rollup, long format</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 17</span></span></span>
 <span><span class="co">#&gt;    league   athlete_id stat_type_id split_id split_name split_type category_name</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
@@ -559,7 +559,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   home_team_abbrev &lt;chr&gt;, home_team_logo &lt;chr&gt;, home_team_logo_dark &lt;chr&gt;, …</span></span></span>
 <span></span>
 <span><span class="co"># ESPN's win-probability-per-play for the same game.</span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_event_probabilities.html">espn_mbb_event_probabilities</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_game_probabilities.html">espn_mbb_game_probabilities</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 200 × 10</span></span></span>
 <span><span class="co">#&gt;    event_id  sequence_number play_id period clock home_win_percentage</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
@@ -591,7 +591,7 @@ single game, tidy and long – not the whole <code>player_box</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># event + team + athlete -- three IDs, because you're naming one cell</span></span>
 <span><span class="co"># of one game. (More identifiers = finer grain. Always.)</span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_event_player_box.html">espn_mbb_event_player_box</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_game_player_box.html">espn_mbb_game_player_box</a></span><span class="op">(</span></span>
 <span>  event_id   <span class="op">=</span> <span class="fl">401256760</span>,</span>
 <span>  team_id    <span class="op">=</span> <span class="fl">52</span>,</span>
 <span>  athlete_id <span class="op">=</span> <span class="fl">4277850</span></span>

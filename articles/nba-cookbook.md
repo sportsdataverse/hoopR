@@ -98,7 +98,7 @@ dedicated career rollup, and the function is named exactly what it is.
 ``` r
 
 # espn / nba / athlete / career / stats. The name is the sentence.
-lebron <- espn_nba_athlete_career_stats(athlete_id = 1966)
+lebron <- espn_nba_player_career_stats(athlete_id = 1966)
 
 # It comes back long -- one row per (stat_type x category x stat) --
 # which is exactly the shape you want for a faceted ggplot.
@@ -123,7 +123,7 @@ grammar predicts it: swap `career_stats` for `seasons`.
 
 ``` r
 
-espn_nba_athlete_seasons(athlete_id = 1966)
+espn_nba_player_seasons(athlete_id = 1966)
 #> # A tibble: 23 × 4
 #>    league athlete_id season ref                                                 
 #>    <chr>  <chr>       <int> <chr>                                               
@@ -148,7 +148,7 @@ to *see* the momentum swing.
 ``` r
 
 # Route A -- ESPN's per-play win probability, ready to plot as-is.
-wp <- espn_nba_event_probabilities(event_id = 401283399)
+wp <- espn_nba_game_probabilities(event_id = 401283399)
 
 # Route B -- if you'd rather compute momentum yourself, the NBA Stats
 # API's V3 play-by-play is the rawest material. The prefix flips to
@@ -188,7 +188,7 @@ sentence: a player’s *box* score for one *event*.
 # espn / nba / event / player_box. "event" = one game; "player_box" =
 # one athlete's line. You need the (event, team, athlete) trio because
 # that's exactly what uniquely identifies "this player in this game."
-kyle_anderson <- espn_nba_event_player_box(
+kyle_anderson <- espn_nba_game_player_box(
   event_id   = 401283399,
   team_id    = 29,
   athlete_id = 2993874
@@ -206,7 +206,7 @@ While you’re in event-detail land, the siblings all follow the pattern
 
 ``` r
 
-espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
+espn_nba_game_team_linescores(event_id = 401283399, team_id = 29)
 #> # A tibble: 8 × 7
 #>   league event_id  team_id period value display_value source      
 #>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
@@ -218,7 +218,7 @@ espn_nba_event_competitor_linescores(event_id = 401283399, team_id = 29)
 #> 6 nba    401283399 29           3    29 29            Basic/Manual
 #> 7 nba    401283399 29           4    36 36            1           
 #> 8 nba    401283399 29           4    36 36            Basic/Manual
-espn_nba_event_officials(event_id = 401283399)
+espn_nba_game_officials(event_id = 401283399)
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name   display_name position_id position_name
 #>   <chr>     <chr>       <chr>       <chr>        <chr>       <chr>        
@@ -226,7 +226,7 @@ espn_nba_event_officials(event_id = 401283399)
 #> 2 401283399 2612372     Jacyn Goble Jacyn Goble  40          Referee      
 #> 3 401283399 4394825     Evan Scott  Evan Scott   40          Referee      
 #> # ℹ 2 more variables: position_type <chr>, order <int>
-espn_nba_event_play(event_id = 401283399, play_id = 4012833994)
+espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     

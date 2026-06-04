@@ -13,6 +13,16 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0 `httr` →
 `httr2` migration.
 
+#### **ESPN endpoint naming convention (game\_*/player\_*)**
+
+The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse
+taxonomy used by cfbfastR (and mirrored in wehoop):
+`event_competitor* → game_team*`, `event_competition → game`,
+`event_* → game_*`, and `athlete_* → player_*` (60 functions). These
+wrappers are new in this dev cycle and were never on CRAN, so the rename
+is applied directly (no deprecation shims). `*_athlete_stats` is kept
+(it would collide with the existing `*_player_stats`).
+
 #### **New data loaders**
 
 13 new `load_*()` loaders bring NBA and MBB dataset coverage toward
@@ -54,14 +64,14 @@ pair.
 
 | Function | Endpoint family | Description |
 |----|----|----|
-| [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md) / [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md) | site-v2 | Athlete bio / team / position / status / college / draft info. |
-| [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md) / [`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md) | web-common-v3 | Season overview + last-5-games + news + rotowire notes. |
+| `espn_mbb_athlete_info()` / `espn_nba_athlete_info()` | site-v2 | Athlete bio / team / position / status / college / draft info. |
+| `espn_mbb_athlete_overview()` / `espn_nba_athlete_overview()` | web-common-v3 | Season overview + last-5-games + news + rotowire notes. |
 | [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md) / [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md) | web-common-v3 | Per-category stats as a named list (averages / totals). |
-| [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md) / [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md) | web-common-v3 | Game-by-game log. |
-| [`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md) / [`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md) | web-common-v3 | Long-format home / away / opponent splits. |
-| [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md) / [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md) | core-v2 | Per-event log. `statistics.$ref` URLs returned as `statistics_ref` character column (not auto-resolved). |
-| [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md) / [`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md) | core-v2 | Awards (sparse / often empty); empty payload returns a canonical-shape empty tibble. |
-| [`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md) / [`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md) | core-v2 | Per-season statistics log. |
+| `espn_mbb_athlete_gamelog()` / `espn_nba_athlete_gamelog()` | web-common-v3 | Game-by-game log. |
+| `espn_mbb_athlete_splits()` / `espn_nba_athlete_splits()` | web-common-v3 | Long-format home / away / opponent splits. |
+| `espn_mbb_athlete_eventlog()` / `espn_nba_athlete_eventlog()` | core-v2 | Per-event log. `statistics.$ref` URLs returned as `statistics_ref` character column (not auto-resolved). |
+| `espn_mbb_athlete_awards()` / `espn_nba_athlete_awards()` | core-v2 | Awards (sparse / often empty); empty payload returns a canonical-shape empty tibble. |
+| `espn_mbb_athlete_statisticslog()` / `espn_nba_athlete_statisticslog()` | core-v2 | Per-season statistics log. |
 
 ##### *Team detail (×5 per league)*
 
@@ -77,10 +87,10 @@ pair.
 
 | Function | Description |
 |----|----|
-| [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md) / [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md) | Game-level odds (one row per provider). |
-| [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md) / [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md) | Paginated play-level win probabilities (page loop capped at 50 pages; respects `limit`). |
-| [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md) / [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md) | Per-game officials. |
-| [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md) / [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md) | Broadcast outlets. |
+| `espn_mbb_event_odds()` / `espn_nba_event_odds()` | Game-level odds (one row per provider). |
+| `espn_mbb_event_probabilities()` / `espn_nba_event_probabilities()` | Paginated play-level win probabilities (page loop capped at 50 pages; respects `limit`). |
+| `espn_mbb_event_officials()` / `espn_nba_event_officials()` | Per-game officials. |
+| `espn_mbb_event_broadcasts()` / `espn_nba_event_broadcasts()` | Broadcast outlets. |
 
 ##### *League catalog (×6 per league)*
 
@@ -133,8 +143,8 @@ matching release.
 | [`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_profile.md) / [`espn_mbb_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_profile.md) | Era-correct team identity in a specific season plus `$ref` URLs for deeper resources (record, statistics, leaders, coaches, etc.). Historical depth back to **1947** (NBA) / **1939** (MBB). |
 | [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md) / [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md) | Franchise-level metadata. IDs are stable across relocations and rebrands. |
 | [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md) / [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md) | Index of franchise IDs in the league. |
-| [`espn_nba_athlete_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contracts.md) | Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty). |
-| [`espn_nba_athlete_contract()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_contract.md) | Salary, cap-rule flags, Bird status, and trade protections for one (athlete × season). |
+| `espn_nba_athlete_contracts()` | Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty). |
+| `espn_nba_athlete_contract()` | Salary, cap-rule flags, Bird status, and trade protections for one (athlete × season). |
 | [`espn_nba_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_awards.md) / [`espn_mbb_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_awards.md) | Index of award IDs given out in a season. |
 | [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_nba_award.md) / [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md) | Award detail with winners (one row per winner; multi-recipient awards like All-NBA return 5 rows). |
 | [`espn_nba_futures()`](https://hoopR.sportsdataverse.org/reference/espn_nba_futures.md) / [`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md) | Per-season futures betting board in long format (one row per market × team × sportsbook). |
@@ -211,8 +221,8 @@ endpoints and the single-draft-pick lookup. Backed by
 
 | Function | Description |
 |----|----|
-| [`espn_nba_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_seasons.md) / [`espn_mbb_athlete_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_seasons.md) | List of seasons an athlete appeared in. |
-| [`espn_nba_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_career_stats.md) / [`espn_mbb_athlete_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_career_stats.md) | Long-format career stats. Default `stat_type = 0L` fetches the standard “All Splits” / regular-season view; pass a vector like `c(0L, 1L, 2L)` to bind multiple types (postseason / career aggregate) via a `stat_type_id` column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0. |
+| `espn_nba_athlete_seasons()` / `espn_mbb_athlete_seasons()` | List of seasons an athlete appeared in. |
+| `espn_nba_athlete_career_stats()` / `espn_mbb_athlete_career_stats()` | Long-format career stats. Default `stat_type = 0L` fetches the standard “All Splits” / regular-season view; pass a vector like `c(0L, 1L, 2L)` to bind multiple types (postseason / career aggregate) via a `stat_type_id` column. Coverage of types 1 and 2 is sparse — many athletes only populate type 0. |
 | [`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_pick.md) | Single NBA draft-pick detail (defaults to most-recent NBA season, round 1, pick 1). MBB has no draft endpoint, so this wrapper is NBA-only on the hoopR side. |
 
 ##### *Tier 2B core-v2 expansion — athlete event log + draft completion*
@@ -222,7 +232,7 @@ endpoint coverage with the remaining per-season core-v2 endpoints.
 
 | Function | Description |
 |----|----|
-| [`espn_nba_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog_v2.md) / [`espn_mbb_athlete_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog_v2.md) | Per-season event log from core-v2 (`seasons/{y}/athletes/{id}/eventlog`). One row per (event × team) appearance with `played` flag + event/competition `$ref`s. Distinct from the existing `espn_*_athlete_eventlog()` which hits the web-common-v3 gamelog endpoint with stats per game. |
+| `espn_nba_athlete_eventlog_v2()` / `espn_mbb_athlete_eventlog_v2()` | Per-season event log from core-v2 (`seasons/{y}/athletes/{id}/eventlog`). One row per (event × team) appearance with `played` flag + event/competition `$ref`s. Distinct from the existing `espn_*_athlete_eventlog()` which hits the web-common-v3 gamelog endpoint with stats per game. |
 | [`espn_nba_draft_rounds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md) | Round-level summary for one NBA draft year (one row per round with pick count + completion status). |
 | [`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.md) | Index of every athlete in a given NBA draft year (~102 entries: 60 picks + undrafted invitees). |
 | [`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md) | Single-row snapshot of one draft year’s current state. |
@@ -236,10 +246,10 @@ each).
 
 | Function | Description |
 |----|----|
-| [`espn_nba_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_situation.md) / [`espn_mbb_event_situation()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_situation.md) | Live game situation: timeouts, fouls, fouls-to-give, bonus state, last-play `$ref`. Single-row tibble. |
-| [`espn_nba_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_predictor.md) / [`espn_mbb_event_predictor()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_predictor.md) | Pre-game predictor statistics in long format (one row per team × stat). Stats include matchup quality, predicted score, win pct, team-predicted MoV. Returns empty for events without predictor data. |
-| [`espn_nba_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_powerindex.md) / [`espn_mbb_event_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_powerindex.md) | Per-event power-index `$ref` index. Coverage is sparse — most events return zero items. |
-| [`espn_nba_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_propbets.md) / [`espn_mbb_event_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_propbets.md) | Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates. |
+| `espn_nba_event_situation()` / `espn_mbb_event_situation()` | Live game situation: timeouts, fouls, fouls-to-give, bonus state, last-play `$ref`. Single-row tibble. |
+| `espn_nba_event_predictor()` / `espn_mbb_event_predictor()` | Pre-game predictor statistics in long format (one row per team × stat). Stats include matchup quality, predicted score, win pct, team-predicted MoV. Returns empty for events without predictor data. |
+| `espn_nba_event_powerindex()` / `espn_mbb_event_powerindex()` | Per-event power-index `$ref` index. Coverage is sparse — most events return zero items. |
+| `espn_nba_event_propbets()` / `espn_mbb_event_propbets()` | Per-(event × provider) prop-bet markets in long format. One row per (athlete × prop type) with american / decimal / fraction odds + current target line. Auto-paginates. |
 
 ##### *Tier 2B core-v2 expansion — event competitor sub-resources*
 
@@ -251,11 +261,11 @@ with the event_id from `espn_*_schedule()` (or any
 
 | Function | Description |
 |----|----|
-| [`espn_nba_event_competitor_linescores()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_linescores.md) / [`espn_mbb_event_competitor_linescores()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_linescores.md) | Per-quarter scoring for one team in one event. One row per period (regulation + overtime). |
-| [`espn_nba_event_competitor_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_leaders.md) / [`espn_mbb_event_competitor_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_leaders.md) | Top performers per team in long format: one row per (category × athlete rank). Categories typically include points, rebounds, assists, and rating. |
-| [`espn_nba_event_competitor_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_roster.md) / [`espn_mbb_event_competitor_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_roster.md) | Game-day roster index for one team. Returns athlete ids + core-v2 `$ref` URLs for deferred dereferencing. |
-| [`espn_nba_event_competitor_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_statistics.md) / [`espn_mbb_event_competitor_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_statistics.md) | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
-| [`espn_nba_event_competitor_records()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_records.md) / [`espn_mbb_event_competitor_records()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_records.md) | Team records as of the event: overall / home / away / conference / division breakdowns. |
+| `espn_nba_event_competitor_linescores()` / `espn_mbb_event_competitor_linescores()` | Per-quarter scoring for one team in one event. One row per period (regulation + overtime). |
+| `espn_nba_event_competitor_leaders()` / `espn_mbb_event_competitor_leaders()` | Top performers per team in long format: one row per (category × athlete rank). Categories typically include points, rebounds, assists, and rating. |
+| `espn_nba_event_competitor_roster()` / `espn_mbb_event_competitor_roster()` | Game-day roster index for one team. Returns athlete ids + core-v2 `$ref` URLs for deferred dereferencing. |
+| `espn_nba_event_competitor_statistics()` / `espn_mbb_event_competitor_statistics()` | Full team-game statistics in long format (one row per category × stat) with both numeric values and display strings. |
+| `espn_nba_event_competitor_records()` / `espn_mbb_event_competitor_records()` | Team records as of the event: overall / home / away / conference / division breakdowns. |
 
 ##### *Tier 2F core-v2 expansion — typed-detail companions*
 
@@ -265,7 +275,7 @@ endpoint isn’t symmetric:
 
 | Function | Description |
 |----|----|
-| [`espn_nba_event_official_detail()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_official_detail.md) / [`espn_mbb_event_official_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_official_detail.md) | Per-official details (name, position, order) for one event. **Note**: the URL segment is the *crew order* (1-indexed) not the ESPN stable official_id — the wrapper takes `order =` to match `event_officials()$order`. |
+| `espn_nba_event_official_detail()` / `espn_mbb_event_official_detail()` | Per-official details (name, position, order) for one event. **Note**: the URL segment is the *crew order* (1-indexed) not the ESPN stable official_id — the wrapper takes `order =` to match `event_officials()$order`. |
 | [`espn_nba_team_record_detail()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_record_detail.md) / [`espn_mbb_team_record_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record_detail.md) | Per-record stat array in long format. Use `team_record()` to enumerate `record_id` values (overall / home / away / conference / per-opponent). Returns 21 rows × 15 cols for one NBA record. |
 | [`espn_nba_coach_record()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coach_record.md) / [`espn_mbb_coach_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_record.md) / `espn_wbb_coach_record()` | Coach career record by type in long format. Types: 0 = Total, 1 = Pre Season, 2 = Regular Season, 3 = Post Season. |
 | [`espn_nba_tournament_season()`](https://hoopR.sportsdataverse.org/reference/espn_nba_tournament_season.md) / [`espn_mbb_tournament_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_season.md) | Single tournament-year detail (id, displayName, numberOfRounds, bracketology `$ref`). |
@@ -281,7 +291,7 @@ event, and the draft-year top-level metadata.
 | Function | Description |
 |----|----|
 | [`espn_nba_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_statistics.md) / [`espn_mbb_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_statistics.md) | **Full team-season-type stat sheet in long format** (one row per category × stat). Each row carries `rank` + `rank_display_value` for league ranking per stat. Smoke-tested: 109 rows × 13 cols for one NBA team. |
-| [`espn_nba_event_competitor_score()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_score.md) / [`espn_mbb_event_competitor_score()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_score.md) | Single-row final score for one team in one event: `value`, `display_value`, `winner` flag, source metadata. |
+| `espn_nba_event_competitor_score()` / `espn_mbb_event_competitor_score()` | Single-row final score for one team in one event: `value`, `display_value`, `winner` flag, source metadata. |
 | [`espn_nba_season_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_draft.md) | Draft-year top-level metadata: `year`, `number_of_rounds`, `display_name`, plus sub-refs to athletes/rounds/status. |
 
 ##### *Tier 2E.1 core-v2 expansion — event-scoped player + play deep dives*
@@ -292,10 +302,10 @@ functions per package).
 
 | Function | Description |
 |----|----|
-| [`espn_nba_event_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_player_box.md) / [`espn_mbb_event_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_player_box.md) | **Per-game box score for one athlete** in long format (one row per category × stat). Same shape as `event_competitor_statistics()` but scoped to a single athlete-in-event. Smoke-tested: 99 rows × 12 cols for one NBA athlete. |
-| [`espn_nba_event_competitor_roster_entry()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_competitor_roster_entry.md) / [`espn_mbb_event_competitor_roster_entry()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_competitor_roster_entry.md) | Per-athlete game-day roster row: `starter` flag, `did_not_play` + `reason`, `ejected`, `period` of entry, `for_player_id` if a substitution. |
-| [`espn_nba_event_play()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_play.md) / [`espn_mbb_event_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_play.md) | Rich single-play detail: sequence, period, clock, type, text, scoring/shooting flags, score, team `$ref`, shot coordinates. |
-| [`espn_nba_event_play_personnel()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_play_personnel.md) / [`espn_mbb_event_play_personnel()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_play_personnel.md) | Players on court at a specific play in long format. Coverage is sparse — many plays return zero rows; wrapper returns a typed empty tibble. |
+| `espn_nba_event_player_box()` / `espn_mbb_event_player_box()` | **Per-game box score for one athlete** in long format (one row per category × stat). Same shape as `event_competitor_statistics()` but scoped to a single athlete-in-event. Smoke-tested: 99 rows × 12 cols for one NBA athlete. |
+| `espn_nba_event_competitor_roster_entry()` / `espn_mbb_event_competitor_roster_entry()` | Per-athlete game-day roster row: `starter` flag, `did_not_play` + `reason`, `ejected`, `period` of entry, `for_player_id` if a substitution. |
+| `espn_nba_event_play()` / `espn_mbb_event_play()` | Rich single-play detail: sequence, period, clock, type, text, scoring/shooting flags, score, team `$ref`, shot coordinates. |
+| `espn_nba_event_play_personnel()` / `espn_mbb_event_play_personnel()` | Players on court at a specific play in long format. Coverage is sparse — many plays return zero rows; wrapper returns a typed empty tibble. |
 
 ##### *Tier 2D core-v2 expansion — position dictionary*
 

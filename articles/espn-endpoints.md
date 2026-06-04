@@ -103,14 +103,14 @@ they’re the same thing).
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_info.md) / [`espn_nba_athlete_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_info.md) | Bio and profile |
-| [`espn_mbb_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_overview.md) / [`espn_nba_athlete_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_overview.md) | Season overview (web-common-v3) |
+| [`espn_mbb_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md) / [`espn_nba_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_info.md) | Bio and profile |
+| [`espn_mbb_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Season overview (web-common-v3) |
 | [`espn_mbb_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_stats.md) / [`espn_nba_athlete_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_stats.md) | Season stats by category |
-| [`espn_mbb_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_gamelog.md) / [`espn_nba_athlete_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_gamelog.md) | Game-by-game log |
-| [`espn_mbb_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_splits.md) / [`espn_nba_athlete_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_splits.md) | Situational splits |
-| [`espn_mbb_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_eventlog.md) / [`espn_nba_athlete_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_eventlog.md) | Event log (`$ref` links) |
-| [`espn_mbb_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_awards.md) / [`espn_nba_athlete_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_awards.md) | Awards history |
-| [`espn_mbb_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athlete_statisticslog.md) / [`espn_nba_athlete_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athlete_statisticslog.md) | Stats log (core-v2) |
+| [`espn_mbb_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_gamelog.md) / [`espn_nba_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_gamelog.md) | Game-by-game log |
+| [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_splits.md) / [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_splits.md) | Situational splits |
+| [`espn_mbb_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_eventlog.md) / [`espn_nba_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_eventlog.md) | Event log (`$ref` links) |
+| [`espn_mbb_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md) / [`espn_nba_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_awards.md) | Awards history |
+| [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_statisticslog.md) / [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_statisticslog.md) | Stats log (core-v2) |
 | [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) / [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md) | Cross-athlete season stats |
 
 ### Per-event enrichment
@@ -119,10 +119,10 @@ These take an `event_id` and complement the play-by-play.
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md) / [`espn_nba_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_odds.md) | Opening / closing lines (NBA only – empty for MBB) |
-| [`espn_mbb_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_probabilities.md) / [`espn_nba_event_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_probabilities.md) | Win probability per play |
-| [`espn_mbb_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_officials.md) / [`espn_nba_event_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_officials.md) | Officials |
-| [`espn_mbb_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_broadcasts.md) / [`espn_nba_event_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_event_broadcasts.md) | Broadcast outlets |
+| [`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_odds.md) | Opening / closing lines (NBA only – empty for MBB) |
+| [`espn_mbb_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md) / [`espn_nba_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_probabilities.md) | Win probability per play |
+| [`espn_mbb_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_officials.md) / [`espn_nba_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_officials.md) | Officials |
+| [`espn_mbb_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_broadcasts.md) / [`espn_nba_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_broadcasts.md) | Broadcast outlets |
 
 ### League-wide catalogs
 
@@ -171,14 +171,14 @@ library(hoopR)
 mbb_news <- espn_mbb_news(limit = 10)
 head(mbb_news[, c("headline", "published")])
 #> # A tibble: 6 × 2
-#>   headline                                                             published
-#>   <chr>                                                                <chr>    
-#> 1 Big 12 first power conference to have full CSC participation         2026-05-…
-#> 2 2026 NBA draft big board rankings: Top 100 prospects                 2026-05-…
-#> 3 College teams that won -- or lost -- at the NBA draft withdrawal de… 2026-05-…
-#> 4 Arizona star Koa Peat to remain in NBA draft                         2026-05-…
-#> 5 Vanderbilt PG Tyler Tanner withdraws from NBA draft                  2026-05-…
-#> 6 Milan Momcilovic withdraws from NBA draft, set for college return    2026-05-…
+#>   headline                                                          published   
+#>   <chr>                                                             <chr>       
+#> 1 Nick Saban asks Congress to 'bring order' via college sports bill 2026-06-03T…
+#> 2 Girls' basketball recruiting: The 2027, 2028, 2029 race for No. 1 2026-06-03T…
+#> 3 SEC, Big Ten withhold support for landmark college sports bill    2026-06-03T…
+#> 4 Alabama's Holloway enters program to dismiss felony charges       2026-06-03T…
+#> 5 Men's NCAA basketball 2026-27 Way-Too-Early Top 25 rankings       2026-06-02T…
+#> 6 Best of Jordan Clarkson in the NBA Playoffs                       2026-06-02T…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
@@ -296,7 +296,7 @@ message("Selected: ", athlete_name, " (", athlete_id, ")")
 #> ! object 'athlete_name' not found
 
 # Bio and profile
-bio <- espn_mbb_athlete_info(athlete_id = athlete_id)
+bio <- espn_mbb_player_info(athlete_id = athlete_id)
 #> Error:
 #> ! object 'athlete_id' not found
 glimpse(bio)
@@ -304,7 +304,7 @@ glimpse(bio)
 #> ! object 'bio' not found
 
 # Season overview (web-common-v3)
-overview <- espn_mbb_athlete_overview(
+overview <- espn_mbb_player_overview(
   athlete_id = athlete_id, season = 2025
 )
 #> Error:
@@ -314,7 +314,7 @@ names(overview)
 #> ! object 'overview' not found
 
 # Game-by-game log
-gamelog <- espn_mbb_athlete_gamelog(
+gamelog <- espn_mbb_player_gamelog(
   athlete_id = athlete_id, season = 2025
 )
 #> Error:
@@ -324,7 +324,7 @@ head(gamelog[, c("game_date", "opponent", "points", "rebounds", "assists")])
 #> ! object 'gamelog' not found
 
 # Situational splits (home/away, by month, vs ranked, ...)
-splits <- espn_mbb_athlete_splits(
+splits <- espn_mbb_player_splits(
   athlete_id = athlete_id, season = 2025
 )
 #> Error:
@@ -364,7 +364,7 @@ library(ggplot2)
 game_id <- "401283399"
 
 pbp   <- espn_nba_pbp(game_id = game_id)
-probs <- espn_nba_event_probabilities(event_id = game_id, limit = 200)
+probs <- espn_nba_game_probabilities(event_id = game_id, limit = 200)
 
 plot_data <- probs %>%
   mutate(seq = as.integer(sequence_number)) %>%
@@ -390,17 +390,17 @@ contextual annotations.
 ``` r
 
 # Pre-game odds (populated when ESPN carries lines)
-odds <- espn_nba_event_odds(event_id = game_id)
+odds <- espn_nba_game_odds(event_id = game_id)
 
 # Officials
-officials <- espn_nba_event_officials(event_id = game_id)
+officials <- espn_nba_game_officials(event_id = game_id)
 officials[, c("full_name", "position")]
 #> Error in `officials[, c("full_name", "position")]`:
 #> ! Can't subset columns that don't exist.
 #> ✖ Column `position` doesn't exist.
 
 # Broadcast outlets
-broadcasts <- espn_nba_event_broadcasts(event_id = game_id)
+broadcasts <- espn_nba_game_broadcasts(event_id = game_id)
 broadcasts[, c("market", "names")]
 #> Error in `broadcasts[, c("market", "names")]`:
 #> ! Can't subset columns that don't exist.
@@ -408,7 +408,7 @@ broadcasts[, c("market", "names")]
 ```
 
 ESPN doesn’t carry betting lines for NCAA games, so
-[`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md)
+[`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md)
 always returns an empty tibble. The function exists for API symmetry;
 it’s not a bug. Win probabilities, officials, and broadcasts are all
 populated for both leagues.
@@ -595,12 +595,12 @@ library(hoopR)
 # Career stats — long format, one row per (stat_type x category x stat).
 # Default `stat_type = c(0L, 1L)` fetches regular season + postseason and
 # binds them so a single call gives you the player's full career sheet.
-flagg_career <- espn_mbb_athlete_career_stats(athlete_id = 4432809)
-lebron_career     <- espn_nba_athlete_career_stats(athlete_id = 1966)
+flagg_career <- espn_mbb_player_career_stats(athlete_id = 4432809)
+lebron_career     <- espn_nba_player_career_stats(athlete_id = 1966)
 
 # Per-(athlete x season) event log -- core-v2 variant. Returns
 # event_id + result + per-event stats in long format.
-espn_nba_athlete_eventlog_v2(athlete_id = 1966, season = 2024)
+espn_nba_player_eventlog_v2(athlete_id = 1966, season = 2024)
 #> # A tibble: 25 × 8
 #>    league athlete_id season event_id  team_id played event_ref   competition_ref
 #>    <chr>  <chr>       <int> <chr>     <chr>   <lgl>  <chr>       <chr>          
@@ -617,7 +617,7 @@ espn_nba_athlete_eventlog_v2(athlete_id = 1966, season = 2024)
 #> # ℹ 15 more rows
 
 # Index of seasons an athlete has on file (good for iterating).
-espn_nba_athlete_seasons(athlete_id = 1966)
+espn_nba_player_seasons(athlete_id = 1966)
 #> # A tibble: 23 × 4
 #>    league athlete_id season ref                                                 
 #>    <chr>  <chr>       <int> <chr>                                               
@@ -902,7 +902,7 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 EID <- "401283399"
 
 # Live game situation -- timeouts, fouls, bonus state, last play $ref.
-espn_nba_event_situation(event_id = EID)
+espn_nba_game_situation(event_id = EID)
 #> # A tibble: 1 × 15
 #>   league event_id  home_timeouts_current home_timeouts_remaining
 #>   <chr>  <chr>                     <int>                   <int>
@@ -915,7 +915,7 @@ espn_nba_event_situation(event_id = EID)
 #> #   away_bonus_state <chr>, last_play_ref <chr>
 
 # Pre-game predictor -- one row per (team x stat). Empty for past games.
-espn_nba_event_predictor(event_id = EID)
+espn_nba_game_predictor(event_id = EID)
 #> # A tibble: 6 × 13
 #>   league event_id  name         short_name last_modified side  team_id stat_name
 #>   <chr>  <chr>     <chr>        <chr>      <chr>         <chr> <chr>   <chr>    
@@ -929,7 +929,7 @@ espn_nba_event_predictor(event_id = EID)
 #> #   display_value <chr>, team_ref <chr>
 
 # Per-event power index. Coverage is sparse -- many events return zero.
-espn_nba_event_powerindex(event_id = EID)
+espn_nba_game_powerindex(event_id = EID)
 #> # A tibble: 2 × 4
 #>   league event_id  team_id ref                                                  
 #>   <chr>  <chr>     <chr>   <chr>                                                
@@ -937,7 +937,7 @@ espn_nba_event_powerindex(event_id = EID)
 #> 2 nba    401283399 29      http://sports.core.api.espn.com/v2/sports/basketball…
 
 # Prop bet markets per (event x provider). 58 = ESPN BET.
-espn_nba_event_propbets(event_id = EID, provider_id = 58)
+espn_nba_game_propbets(event_id = EID, provider_id = 58)
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,
@@ -957,7 +957,7 @@ for NBA + MBB. Pair `team_id` with `event_id` from
 EID <- "401283399"; TID <- 29  # team_id of one competitor
 
 # Per-quarter scoring for one team in one event.
-espn_nba_event_competitor_linescores(event_id = EID, team_id = TID)
+espn_nba_game_team_linescores(event_id = EID, team_id = TID)
 #> # A tibble: 8 × 7
 #>   league event_id  team_id period value display_value source      
 #>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
@@ -971,7 +971,7 @@ espn_nba_event_competitor_linescores(event_id = EID, team_id = TID)
 #> 8 nba    401283399 29           4    36 36            Basic/Manual
 
 # Top performers per team in long format (category x rank).
-espn_nba_event_competitor_leaders(event_id = EID, team_id = TID)
+espn_nba_game_team_leaders(event_id = EID, team_id = TID)
 #> # A tibble: 48 × 11
 #>    league event_id  team_id category_name category_display category_abbrev  rank
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>
@@ -990,13 +990,13 @@ espn_nba_event_competitor_leaders(event_id = EID, team_id = TID)
 #> #   athlete_ref <chr>
 
 # Game-day roster index. Returns athlete ids + core-v2 $refs.
-espn_nba_event_competitor_roster(event_id = EID, team_id = TID)
+espn_nba_game_team_roster(event_id = EID, team_id = TID)
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
 #> #   ref <chr>
 
 # Full team-game statistics in long format.
-espn_nba_event_competitor_statistics(event_id = EID, team_id = TID)
+espn_nba_game_team_statistics(event_id = EID, team_id = TID)
 #> # A tibble: 98 × 10
 #>    league event_id  team_id category_name category_display stat_name stat_abbrev
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      
@@ -1014,7 +1014,7 @@ espn_nba_event_competitor_statistics(event_id = EID, team_id = TID)
 #> # ℹ 3 more variables: stat_display <chr>, value <dbl>, display_value <chr>
 
 # Team records as of the event: overall / home / away / conf / div.
-espn_nba_event_competitor_records(event_id = EID, team_id = TID)
+espn_nba_game_team_records(event_id = EID, team_id = TID)
 #> # A tibble: 5 × 11
 #>   league event_id  team_id record_id name      abbreviation display_name       
 #>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
@@ -1027,7 +1027,7 @@ espn_nba_event_competitor_records(event_id = EID, team_id = TID)
 #> #   value <dbl>
 
 # One-row final score, quick lookup.
-espn_nba_event_competitor_score(event_id = EID, team_id = TID)
+espn_nba_game_team_score(event_id = EID, team_id = TID)
 #> # A tibble: 1 × 8
 #>   league event_id  team_id value display_value winner source_id
 #>   <chr>  <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    
@@ -1046,19 +1046,19 @@ EID <- "401283399"; TID <- 29; AID <- 6440  # event, team, athlete
 
 # Per-game box score for one athlete -- one row per (category x stat).
 # Same shape as event_competitor_statistics() but scoped to an athlete.
-espn_nba_event_player_box(event_id = EID, team_id = TID,
+espn_nba_game_player_box(event_id = EID, team_id = TID,
                            athlete_id = AID)
 #> # A tibble: 0 × 0
 
 # Per-athlete game-day row: starter flag, did_not_play + reason,
 # ejected flag, period of entry, for_player_id (substitution slot).
-espn_nba_event_competitor_roster_entry(event_id = EID, team_id = TID,
+espn_nba_game_team_roster_entry(event_id = EID, team_id = TID,
                                         athlete_id = AID)
 #> # A tibble: 0 × 0
 
 # Single-play detail. play_id comes from espn_nba_pbp() output.
 PID <- "4012833997"  # example play id
-espn_nba_event_play(event_id = EID, play_id = PID)
+espn_nba_game_play(event_id = EID, play_id = PID)
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     
@@ -1069,7 +1069,7 @@ espn_nba_event_play(event_id = EID, play_id = PID)
 
 # Players on court at a specific play (long format). Coverage is
 # sparse -- many plays return zero rows.
-espn_nba_event_play_personnel(event_id = EID, play_id = PID)
+espn_nba_game_play_personnel(event_id = EID, play_id = PID)
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: league <chr>, event_id <chr>, play_id <chr>, team_id <chr>,
 #> #   athlete_id <chr>, athlete_ref <chr>, competitor_ref <chr>
@@ -1081,8 +1081,8 @@ espn_nba_event_play_personnel(event_id = EID, play_id = PID)
 
 # Single official detail. The URL segment is the CREW ORDER, not the
 # ESPN-stable official_id -- so pair this with the `order` column from
-# espn_nba_event_officials() rather than `official_id`.
-espn_nba_event_official_detail(event_id = "401283399", order = 1)
+# espn_nba_game_officials() rather than `official_id`.
+espn_nba_game_official_detail(event_id = "401283399", order = 1)
 #> # A tibble: 1 × 10
 #>   league event_id  official_id first_name last_name full_name  display_name
 #>   <chr>  <chr>     <chr>       <chr>      <chr>     <chr>      <chr>       
@@ -1197,7 +1197,7 @@ And a handful of endpoints we do wrap that have known data quirks:
   and
   [`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md)**
   – ESPN rarely populates injury data for college basketball.
-- **[`espn_mbb_event_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_event_odds.md)**
+- **[`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md)**
   – always empty; ESPN doesn’t carry NCAA lines.
 - **[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md)**
   – empty outside the FA window.

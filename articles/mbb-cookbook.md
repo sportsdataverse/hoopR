@@ -165,7 +165,7 @@ so the reliable move is to pull the current roster first and lift an
 roster     <- espn_mbb_team_roster(team_id = 150, season = most_recent_mbb_season())
 athlete_id <- roster$athlete_id[1]   # whoever is first on the roster
 
-espn_mbb_athlete_info(athlete_id = athlete_id)            # bio
+espn_mbb_player_info(athlete_id = athlete_id)            # bio
 #> $Bio
 #> # A tibble: 1 × 18
 #>   id      uid       guid  first_name last_name full_name display_name short_name
@@ -198,7 +198,7 @@ espn_mbb_athlete_info(athlete_id = athlete_id)            # bio
 #> 
 #> $Draft
 #> # A tibble: 0 × 0
-espn_mbb_athlete_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
+espn_mbb_player_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
 #> # A tibble: 38 × 26
 #>    id        at_vs game_date     score home_team_id away_team_id home_team_score
 #>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          
@@ -219,7 +219,7 @@ espn_mbb_athlete_gamelog(athlete_id = athlete_id, season = most_recent_mbb_seaso
 #> #   team_logo <chr>, team_is_all_star <chr>, opponent_id <chr>,
 #> #   opponent_uid <chr>, opponent_display_name <chr>,
 #> #   opponent_abbreviation <chr>, opponent_logo <chr>, opponent_rank <chr>, …
-espn_mbb_athlete_career_stats(athlete_id = athlete_id)    # career rollup, long format
+espn_mbb_player_career_stats(athlete_id = athlete_id)    # career rollup, long format
 #> # A tibble: 87 × 17
 #>    league   athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -421,7 +421,7 @@ espn_mbb_pbp(game_id = game_id)           # play-by-play
 #> #   home_team_abbrev <chr>, home_team_logo <chr>, home_team_logo_dark <chr>, …
 
 # ESPN's win-probability-per-play for the same game.
-espn_mbb_event_probabilities(event_id = game_id)
+espn_mbb_game_probabilities(event_id = game_id)
 #> # A tibble: 200 × 10
 #>    event_id  sequence_number play_id period clock home_win_percentage
 #>    <chr>     <chr>           <chr>    <int> <chr>               <dbl>
@@ -455,7 +455,7 @@ and long – not the whole `player_box`.
 
 # event + team + athlete -- three IDs, because you're naming one cell
 # of one game. (More identifiers = finer grain. Always.)
-espn_mbb_event_player_box(
+espn_mbb_game_player_box(
   event_id   = 401256760,
   team_id    = 52,
   athlete_id = 4277850

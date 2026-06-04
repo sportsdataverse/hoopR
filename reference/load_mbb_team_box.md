@@ -100,7 +100,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB Team Boxscores from hoopR data repository ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-04-30 11:41:44 UTC
+#> ℹ Data updated: 2026-06-03 04:11:37 UTC
 #> # A tibble: 12,598 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
