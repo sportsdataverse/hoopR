@@ -132,6 +132,19 @@
 </ul><p>The API requires a free Bearer-token key stored in the <code>CBBD_API_KEY</code> environment variable; see <code><a href="../reference/register_cbbd.html">?register_cbbd</a></code>. Helpers <code><a href="../reference/register_cbbd.html">cbbd_key()</a></code>, <code><a href="../reference/register_cbbd.html">has_cbbd_key()</a></code> and <code><a href="../reference/register_cbbd.html">check_cbbd_key()</a></code> mirror the <code>cfbfastR</code> key pattern. Every wrapper returns a <code>hoopR_data</code> tibble with a 3-column <code>@return</code> table, routes through hoopR’s shared <code>httr2</code> request layer (retries / timeouts / proxy), and reports errors via the standard <code>cli</code> reporters.</p>
 </div>
 <div class="section level4">
+<h4 id="bart-torvik--t-rank-torvik_-3-1-0"><strong>Bart Torvik / T-Rank (<code>torvik_*</code>)</strong><a class="anchor" aria-label="anchor" href="#bart-torvik--t-rank-torvik_-3-1-0"></a></h4>
+<p>New <code>torvik_*()</code> function family pulling publicly available men’s college basketball data directly from <a href="https://barttorvik.com" class="external-link">barttorvik.com</a> — no account or API key required (analogous to how <code>kp_*</code> scrapes KenPom). These wrap the auth-free, self-describing data files (the interactive <code>.php</code> pages behind barttorvik’s JavaScript browser check are intentionally avoided):</p>
+<ul><li>
+<strong><code><a href="../reference/torvik_ratings.html">torvik_ratings()</a></code></strong> — year-end / current T-Rank team ratings: adjusted offensive/defensive efficiency, <code>barthag</code>, projected record, SOS, wins above bubble, adjusted tempo (<code>{year}_team_results.csv</code>).</li>
+<li>
+<strong><code><a href="../reference/torvik_team_factors.html">torvik_team_factors()</a></code></strong> — team four factors and shooting splits: eFG%, TOV%, OREB%/DREB%, FT rate, 2P/3P/FT splits and assist rates, each with its national rank (<code>{year}_fffinal.csv</code>).</li>
+<li>
+<strong><code><a href="../reference/torvik_game_schedule.html">torvik_game_schedule()</a></code></strong> — full game-by-game schedule and results with pre-game predictions and post-game quality metrics (<code>{year}_super_sked.json</code>).</li>
+<li>
+<strong><code><a href="../reference/torvik_ncaa_results.html">torvik_ncaa_results()</a></code></strong> — historical NCAA tournament performance by team, coach, conference or seed, including PASE / PAKE and round-by-round counts (<code>cgi-bin/ncaat.cgi</code>).</li>
+</ul><p>Requests route through hoopR’s shared <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> layer with a browser User-Agent; every wrapper returns a <code>hoopR_data</code> tibble with a 3-column <code>@return</code> table and reports errors via the standard <code>cli</code> reporters. (Note: the <code>cbbdata</code>/<code>api.cbbdata.com</code> service that previously brokered Torvik data is defunct, so these wrap barttorvik.com directly.)</p>
+</div>
+<div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
 <p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). The web-common-v3 <code>/athletes/{id}/stats</code> wrapper becomes <code>*_player_stats_v3</code> (kept alongside the core-v2 <code>*_player_stats</code>, a different endpoint).</p>
 </div>

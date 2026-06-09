@@ -2540,6 +2540,32 @@ Functions exported by hoopR to access the CollegeBasketballData API
 
   **College Basketball Data API Key Registration**
 
+## Bart Torvik (T-Rank)
+
+### Torvik Data Functions
+
+Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
+
+- [`torvik_game_schedule()`](https://hoopR.sportsdataverse.org/reference/torvik_game_schedule.md)
+  :
+
+  **Bart Torvik Season Schedule & Results**
+
+- [`torvik_ncaa_results()`](https://hoopR.sportsdataverse.org/reference/torvik_ncaa_results.md)
+  :
+
+  **Bart Torvik NCAA Tournament Results**
+
+- [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md)
+  :
+
+  **Bart Torvik T-Rank Ratings**
+
+- [`torvik_team_factors()`](https://hoopR.sportsdataverse.org/reference/torvik_team_factors.md)
+  :
+
+  **Bart Torvik Team Four Factors**
+
 ## Helper Functions and Data
 
 ### Included data

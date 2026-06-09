@@ -71,6 +71,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-report_api_warning.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-resp_text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-retry_request.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-torvik_text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_basketball.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.html</loc></url>
@@ -502,6 +503,10 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/rejoin_schedules.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/request_with_proxy.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/teams_links.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/torvik_game_schedule.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/torvik_ncaa_results.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/torvik_ratings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/torvik_team_factors.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/update_mbb_db.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/update_nba_db.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/year_to_season.html</loc></url>

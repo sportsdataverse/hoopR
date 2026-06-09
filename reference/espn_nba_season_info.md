@@ -171,7 +171,7 @@ Saiem Gilani
   espn_nba_season_info(season = 2025)
 #> $Info
 #> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name     
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>         
@@ -179,7 +179,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN NBA Season Types from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -187,22 +187,22 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Coaches
 #> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:16:10 UTC
+#> ℹ Data updated: 2026-06-09 11:48:53 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

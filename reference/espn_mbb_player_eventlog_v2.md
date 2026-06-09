@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_eventlog_v2(athlete_id = 4683735, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Event Log ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:15:15 UTC
+#> ℹ Data updated: 2026-06-09 11:47:54 UTC
 #> # A tibble: 0 × 8
 #> # ℹ 8 variables: league <chr>, athlete_id <chr>, season <int>, event_id <chr>,
 #> #   team_id <chr>, played <lgl>, event_ref <chr>, competition_ref <chr>

@@ -28,7 +28,7 @@ Other CBD Lines Functions:
 ``` r
 # \donttest{
   try(cbbd_lines_providers())
-#> ✖ 2026-06-09 11:14:43.815017: Invalid arguments or no line providers available!
+#> ✖ 2026-06-09 11:47:22.568018: Invalid arguments or no line providers available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

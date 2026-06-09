@@ -150,7 +150,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchise(franchise_id = 150)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchise from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:15:01 UTC
+#> ℹ Data updated: 2026-06-09 11:47:40 UTC
 #> # A tibble: 1 × 16
 #>   id    uid             slug   location name  nickname abbreviation display_name
 #>   <chr> <chr>           <chr>  <chr>    <chr> <chr>    <chr>        <chr>       

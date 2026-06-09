@@ -151,11 +151,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)
-#> ✖ 2026-06-09 11:15:43.596681: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966
+#> ✖ 2026-06-09 11:48:25.751608: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966
 #> ✖ Args: league = "nba", season = 2024, athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Draft Athlete Detail ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:15:43 UTC
+#> ℹ Data updated: 2026-06-09 11:48:25 UTC
 #> # A tibble: 0 × 0
 # }
 ```
