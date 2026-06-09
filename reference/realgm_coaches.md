@@ -51,7 +51,7 @@ Other RealGM Functions:
 ``` r
 # \donttest{
   try(realgm_coaches())
-#> ✖ 2026-06-09 19:16:30.634333: No RealGM staff data available!
+#> ✖ 2026-06-09 20:08:03.539732: No RealGM staff data available!
 #> ✖ Error: Chrome debugging port not open after 10 seconds.
 #> data frame with 0 columns and 0 rows
 # }

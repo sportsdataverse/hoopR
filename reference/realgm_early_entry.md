@@ -47,7 +47,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_early_entry())
 #> ── NBA draft early entrants from basketball.realgm.com ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:10 UTC
+#> ℹ Data updated: 2026-06-09 20:08:15 UTC
 #> # A tibble: 79 × 11
 #>    player          pos   ht       wt birth_date college class draft_status   yos
 #>    <chr>           <chr> <chr> <dbl> <chr>      <chr>   <chr> <chr>        <dbl>

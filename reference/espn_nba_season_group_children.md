@@ -168,7 +168,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_group_children(group_id = 5, season = 2025)
 #> ── ESPN NBA Season Group Children Index ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:08:37 UTC
+#> ℹ Data updated: 2026-06-09 20:00:03 UTC
 #> # A tibble: 3 × 6
 #>   league season season_type parent_group_id child_group_id ref                  
 #>   <chr>   <int>       <int> <chr>           <chr>          <chr>                

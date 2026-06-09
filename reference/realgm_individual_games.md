@@ -43,7 +43,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_individual_games())
 #> ── NBA best individual games from basketball.realgm.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:18 UTC
+#> ℹ Data updated: 2026-06-09 20:08:24 UTC
 #> # A tibble: 100 × 20
 #>    number player     date  team  min     pts   fgm   fga  x3pm  x3pa   ftm   fta
 #>     <dbl> <chr>      <chr> <chr> <chr> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>

@@ -73,7 +73,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_ncaa_results(min_year = 2010, max_year = 2024, type = "conf"))
 #> ── Bart Torvik NCAA tournament results from barttorvik.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:56 UTC
+#> ℹ Data updated: 2026-06-09 20:09:04 UTC
 #> # A tibble: 33 × 20
 #>    rk    conf  pake  pase  wins  loss  w_percent r64   r32   s16   e8    f4   
 #>    <chr> <chr> <chr> <chr> <chr> <chr> <chr>     <chr> <chr> <chr> <chr> <chr>

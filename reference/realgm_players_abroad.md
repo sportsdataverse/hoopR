@@ -61,7 +61,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_players_abroad())
 #> ── NBA players abroad from basketball.realgm.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:30 UTC
+#> ℹ Data updated: 2026-06-09 20:08:35 UTC
 #> # A tibble: 43 × 11
 #>    player      pos   ht       wt nba_status team_s    gp   mpg   ppg   rpg   apg
 #>    <chr>       <chr> <chr> <dbl> <chr>      <chr>  <dbl> <dbl> <dbl> <dbl> <dbl>

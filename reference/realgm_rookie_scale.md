@@ -48,7 +48,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_rookie_scale())
 #> ── NBA rookie scale from basketball.realgm.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:32 UTC
+#> ℹ Data updated: 2026-06-09 20:08:37 UTC
 #> # A tibble: 30 × 6
 #>     pick x1st_year_salary x2nd_year_salary x3rd_year_option_salary
 #>    <dbl> <chr>            <chr>            <chr>                  

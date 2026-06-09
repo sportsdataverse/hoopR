@@ -49,7 +49,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_teams())
 #> ── NBA teams index from basketball.realgm.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:42 UTC
+#> ℹ Data updated: 2026-06-09 20:08:47 UTC
 #> # A tibble: 30 × 3
 #>    team                division conference
 #>    <chr>               <chr>    <chr>     

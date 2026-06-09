@@ -44,7 +44,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_individual_seasons())
 #> ── NBA best individual seasons from basketball.realgm.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:22 UTC
+#> ℹ Data updated: 2026-06-09 20:08:27 UTC
 #> # A tibble: 100 × 24
 #>    number player     season team     gp   min   pts   fgm   fga fg_percent x3pm 
 #>     <dbl> <chr>       <dbl> <chr> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl> <chr>

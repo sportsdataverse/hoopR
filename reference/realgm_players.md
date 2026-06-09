@@ -63,7 +63,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_players())
 #> ── NBA player index from basketball.realgm.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:27 UTC
+#> ℹ Data updated: 2026-06-09 20:08:32 UTC
 #> # A tibble: 530 × 11
 #>    number player       pos   ht       wt   age current_team   yos pre_draft_team
 #>     <dbl> <chr>        <chr> <chr> <dbl> <dbl> <chr>        <dbl> <chr>         

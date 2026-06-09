@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_score(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Event Competitor Score ────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:08:23 UTC
+#> ℹ Data updated: 2026-06-09 19:59:48 UTC
 #> # A tibble: 1 × 8
 #>   league event_id  team_id value display_value winner source_id
 #>   <chr>  <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    

@@ -44,7 +44,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_draft_prospects())
 #> ── NBA draft prospect stats from basketball.realgm.com ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:17:08 UTC
+#> ℹ Data updated: 2026-06-09 20:08:12 UTC
 #> # A tibble: 115 × 20
 #>    player team     gp   mpg   ppg   fgm   fga fg_percent  x3pm  x3pa x3p_percent
 #>    <chr>  <chr> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl> <dbl> <dbl>       <dbl>
