@@ -153,12 +153,18 @@ New wrappers for third-party NBA salary and mock-draft sites (also part of the
 
 - **`spotrac_team_cap()`** — team salary-cap allocations, cap space, active
   players and average age from [Spotrac](https://www.spotrac.com).
-- **`hoopshype_salaries()`** — top player salaries (current + projected future
-  seasons) from [HoopsHype](https://hoopshype.com). HoopsHype is a Next.js app
-  that renders only its ~20 top earners into static HTML; the full ≈670-contract
-  league list is served by a client-side cursor-paginated GraphQL API and is not
-  statically scrapable, so this returns the highest-salary rows. Use
-  `espn_nba_player_contracts()` for the full league.
+- **`hoopshype_salaries()`** — the **full league's** player salaries (one row
+  per player-season, current + future contract years) from
+  [HoopsHype](https://hoopshype.com). HoopsHype is now a Next.js app whose
+  single salaries page paginates client-side, but each team page embeds that
+  team's complete roster in its `__NEXT_DATA__` payload — so this iterates the 30
+  team pages and stitches them together (~600 players), reviving the
+  team-by-team approach `a legacy NBA R package` used before HoopsHype's redesign.
+
+The same `a legacy NBA R package`-method audit found two sources that are now **dead** and
+cannot be revived: **RealGM** still returns HTTP 403 on `/info/` agent pages
+(not just `/nba/`), and **Basketball Insiders'** old salary-widget backend
+(`hw-files.com`) is offline. Both are documented in the source-reference notes.
 - **`nbadraft_mock_draft()`** — the current consensus mock draft (both rounds)
   from [NBADraft.net](https://www.nbadraft.net).
 

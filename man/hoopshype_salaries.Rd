@@ -7,33 +7,35 @@
 hoopshype_salaries()
 }
 \value{
-A \code{hoopR_data} tibble with one row per player. The first numeric
-column is the current-season salary; subsequent \verb{x\{year\}_\{year\}} columns are
-future-season salaries as listed by HoopsHype:\tabular{lll}{
+A \code{hoopR_data} tibble with one row per player-season:\tabular{lll}{
    col_name \tab types \tab description \cr
-   rank \tab integer \tab Salary rank. \cr
+   player_id \tab character \tab HoopsHype player id. \cr
    player \tab character \tab Player name. \cr
-   salary \tab numeric \tab Current-season salary (USD). \cr
+   first_name \tab character \tab Player first name. \cr
+   last_name \tab character \tab Player last name. \cr
+   team_id \tab character \tab HoopsHype team id. \cr
+   team \tab character \tab Team name. \cr
+   season \tab integer \tab Contract season (4-digit ending year). \cr
+   salary \tab numeric \tab Salary for the season (USD). \cr
+   cap_allocation \tab numeric \tab Cap allocation for the season (USD). \cr
+   team_option \tab logical \tab Whether the season is a team option. \cr
+   player_option \tab logical \tab Whether the season is a player option. \cr
+   two_way \tab logical \tab Whether it is a two-way contract. \cr
+   qualifying_offer \tab logical \tab Whether it is a qualifying offer. \cr
 }
-
-
-Future-season salary columns (e.g. \code{x2025_26}, \code{x2026_27}) are returned as
-numeric when present.
 }
 \description{
 \strong{Get NBA player salaries from \href{https://hoopshype.com}{HoopsHype}.}
 
-Returns the player salary table from HoopsHype's salaries page (current season
-plus the projected future-season salaries HoopsHype lists). No API key is
-required. Dollar figures are returned as numeric.
+Returns the full league's player salaries, one row per player per contract
+season (current plus future seasons HoopsHype lists). No API key is required;
+dollar figures are returned as numeric.
 
-\strong{Note:} HoopsHype is a Next.js app that renders only its ~20 top-paid
-players into static HTML; the full league list (≈670 contracts) is served by a
-cursor-paginated GraphQL API that runs client-side and is not reachable
-without executing the page's JavaScript. This function therefore returns
-HoopsHype's highest-salary rows. For the full league use
-\code{espn_nba_player_contracts()} (ESPN); for team-level cap totals use
-\code{\link[=spotrac_team_cap]{spotrac_team_cap()}}.
+HoopsHype is a Next.js app whose single salaries page paginates client-side,
+but each team's salary page (\verb{/salaries/\{team\}/}) embeds that team's complete
+roster in its \verb{__NEXT_DATA__} payload. This function iterates the 30 team
+pages and stitches them together (≈30 requests per call), reviving the
+team-by-team approach used by \code{a legacy NBA R package}.
 }
 \examples{
 \donttest{

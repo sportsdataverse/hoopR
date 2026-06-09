@@ -33,9 +33,10 @@ test_that("HoopsHype - Salaries", {
   x <- hoopshype_salaries()
   if (!is.data.frame(x) || nrow(x) == 0) skip("No HoopsHype salaries returned at test time")
 
-  cols <- c("rank", "player", "salary")
+  cols <- c("player_id", "player", "team", "season", "salary")
   expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
+  expect_gt(length(unique(x$player_id)), 100)  # full league, not just top earners
 
   Sys.sleep(2)
 })

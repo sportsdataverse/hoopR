@@ -25,3 +25,22 @@
 .parse_currency <- function(x) {
   suppressWarnings(as.numeric(gsub("[^0-9.\\-]", "", as.character(x))))
 }
+
+#' Internal: extract and parse the Next.js `__NEXT_DATA__` JSON from a page
+#'
+#' Sites built on Next.js (e.g. HoopsHype) embed their hydrated data in a
+#' `<script id="__NEXT_DATA__">` JSON blob. This returns that parsed list.
+#'
+#' @param doc An `xml_document` from [.ext_html()].
+#' @return The parsed `__NEXT_DATA__` as a list, or `NULL` if absent.
+#' @keywords internal
+#' @importFrom rvest html_element html_text
+#' @importFrom jsonlite fromJSON
+.next_data <- function(doc) {
+  node <- rvest::html_element(doc, "script#__NEXT_DATA__")
+  if (inherits(node, "xml_missing")) return(NULL)
+  jsonlite::fromJSON(rvest::html_text(node), simplifyVector = FALSE)
+}
+
+# null-coalesce-to-NA for flattening nested JSON
+.na <- function(x) if (is.null(x) || length(x) == 0) NA else x[[1]]
