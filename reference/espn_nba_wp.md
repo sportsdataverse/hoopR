@@ -157,7 +157,7 @@ Other ESPN NBA Functions:
 # \donttest{
 espn_nba_wp(game_id = 401283399)
 #> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:48:45 UTC
+#> ℹ Data updated: 2026-06-09 16:53:36 UTC
 #> # A tibble: 472 × 24
 #>      game_id play_id     home_win_percentage away_win_percentage tie_percentage
 #>        <dbl> <chr>                     <dbl>               <dbl>          <dbl>

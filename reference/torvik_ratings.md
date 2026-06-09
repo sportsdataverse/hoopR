@@ -71,14 +71,26 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_ratings(year = 2024))
 #> ── Bart Torvik T-Rank ratings from barttorvik.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:53:59 UTC
-#> # A tibble: 5 × 2
-#>   html                                       year
-#>   <chr>                                     <int>
-#> 1 <head><title>403 Forbidden</title></head>  2024
-#> 2 <body>                                     2024
-#> 3 <center><h1>403 Forbidden</h1></center>    2024
-#> 4 </body>                                    2024
-#> 5 </html>                                    2024
+#> ℹ Data updated: 2026-06-09 16:59:11 UTC
+#> # A tibble: 362 × 46
+#>     rank team     conf  record adjoe oe_rank adjde de_rank barthag rank_2 proj_w
+#>    <int> <chr>    <chr> <chr>  <dbl>   <int> <dbl>   <int>   <dbl>  <int>  <dbl>
+#>  1     1 Connect… BE    37-3    128.       1  91.3       4   0.980      1     37
+#>  2     2 Houston  B12   32-5    120.      15  86.5       1   0.977      2     32
+#>  3     3 Purdue   B10   34-5    126.       3  94.5      15   0.965      3     34
+#>  4     4 Auburn   SEC   27-8    121.      10  93.1       7   0.953      4     27
+#>  5     5 Iowa St. B12   29-8    114.      53  87.7       2   0.952      5     29
+#>  6     6 Arizona  P12   27-9    121.      12  93.3       8   0.950      6     27
+#>  7     7 Tenness… SEC   27-9    116.      31  90.4       3   0.945      7     27
+#>  8     8 Duke     ACC   27-9    121.       9  95.5      20   0.940      8     27
+#>  9     9 North C… ACC   29-8    119.      18  94.3      14   0.937      9     29
+#> 10    10 Creight… BE    25-10   122.       8  97.1      32   0.931     10     25
+#> # ℹ 352 more rows
+#> # ℹ 35 more variables: proj_l <dbl>, pro_con_w <dbl>, pro_con_l <dbl>,
+#> #   con_rec <chr>, sos <dbl>, ncsos <dbl>, consos <dbl>, proj_sos <dbl>,
+#> #   proj_noncon_sos <dbl>, proj_con_sos <dbl>, elite_sos <dbl>,
+#> #   elite_noncon_sos <dbl>, opp_oe <dbl>, opp_de <dbl>, opp_proj_oe <dbl>,
+#> #   opp_proj_de <dbl>, con_adj_oe <dbl>, con_adj_de <dbl>, qual_o <dbl>,
+#> #   qual_d <dbl>, qual_barthag <dbl>, qual_games <dbl>, fun <dbl>, …
 # }
 ```

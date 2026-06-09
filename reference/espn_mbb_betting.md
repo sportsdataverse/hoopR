@@ -188,7 +188,7 @@ Other ESPN MBB Functions:
 try(espn_mbb_betting(game_id = 401256760))
 #> $pickcenter
 #> ── ESPN MBB Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:47:08 UTC
+#> ℹ Data updated: 2026-06-09 16:52:01 UTC
 #> # A tibble: 3 × 66
 #>   details  over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>         <dbl>  <dbl>     <dbl>      <dbl>       <int> <chr>        
@@ -205,7 +205,7 @@ try(espn_mbb_betting(game_id = 401256760))
 #> 
 #> $againstTheSpread
 #> ── ESPN MBB Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:47:08 UTC
+#> ℹ Data updated: 2026-06-09 16:52:01 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>

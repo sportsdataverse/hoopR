@@ -141,7 +141,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach Record ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:47:11 UTC
+#> ℹ Data updated: 2026-06-09 16:52:05 UTC
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         

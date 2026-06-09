@@ -2,19 +2,16 @@
 
 **Get NBA player salaries from [HoopsHype](https://hoopshype.com).**
 
-Returns the player salary table from HoopsHype's salaries page (current
-season plus the projected future-season salaries HoopsHype lists). No
-API key is required. Dollar figures are returned as numeric.
+Returns the full league's player salaries, one row per player per
+contract season (current plus future seasons HoopsHype lists). No API
+key is required; dollar figures are returned as numeric.
 
-**Note:** HoopsHype is a Next.js app that renders only its ~20 top-paid
-players into static HTML; the full league list (≈670 contracts) is
-served by a cursor-paginated GraphQL API that runs client-side and is
-not reachable without executing the page's JavaScript. This function
-therefore returns HoopsHype's highest-salary rows. For the full league
-use
-[`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md)
-(ESPN); for team-level cap totals use
-[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md).
+HoopsHype is a Next.js app whose single salaries page paginates
+client-side, but each team's salary page (`/salaries/{team}/`) embeds
+that team's complete roster in its `__NEXT_DATA__` payload. This
+function iterates the 30 team pages and stitches them together (≈30
+requests per call), reviving the team-by-team approach used by
+`nbastatR`.
 
 ## Usage
 
@@ -24,19 +21,24 @@ hoopshype_salaries()
 
 ## Value
 
-A `hoopR_data` tibble with one row per player. The first numeric column
-is the current-season salary; subsequent `x{year}_{year}` columns are
-future-season salaries as listed by HoopsHype:
+A `hoopR_data` tibble with one row per player-season:
 
-|          |           |                              |
-|----------|-----------|------------------------------|
-| col_name | types     | description                  |
-| rank     | integer   | Salary rank.                 |
-| player   | character | Player name.                 |
-| salary   | numeric   | Current-season salary (USD). |
-
-Future-season salary columns (e.g. `x2025_26`, `x2026_27`) are returned
-as numeric when present.
+|                  |           |                                        |
+|------------------|-----------|----------------------------------------|
+| col_name         | types     | description                            |
+| player_id        | character | HoopsHype player id.                   |
+| player           | character | Player name.                           |
+| first_name       | character | Player first name.                     |
+| last_name        | character | Player last name.                      |
+| team_id          | character | HoopsHype team id.                     |
+| team             | character | Team name.                             |
+| season           | integer   | Contract season (4-digit ending year). |
+| salary           | numeric   | Salary for the season (USD).           |
+| cap_allocation   | numeric   | Cap allocation for the season (USD).   |
+| team_option      | logical   | Whether the season is a team option.   |
+| player_option    | logical   | Whether the season is a player option. |
+| two_way          | logical   | Whether it is a two-way contract.      |
+| qualifying_offer | logical   | Whether it is a qualifying offer.      |
 
 ## See also
 
@@ -50,29 +52,22 @@ Other Salary & Draft Functions:
 # \donttest{
   try(hoopshype_salaries())
 #> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:48:47 UTC
-#> # A tibble: 20 × 6
-#>    rank  player             salary x2026_27 x2027_28 x2028_29
-#>    <chr> <chr>               <dbl>    <dbl>    <dbl>    <dbl>
-#>  1 1     Stephen Curry    59606817 62587158       NA       NA
-#>  2 T2    Nikola Jokic     55224526 59033114 62841702       NA
-#>  3 T2    Joel Embiid      55224526 59539018 64302139 69065261
-#>  4 4     Kevin Durant     54708608 43902439 46097561       NA
-#>  5 T5    Anthony Davis    54126450 58456566 62786682       NA
-#>  6 T5    Jimmy Butler     54126450 56832773       NA       NA
-#>  7 T5    Jayson Tatum     54126450 58456566 62786682 67116798
-#>  8 T5    G. Antetokounmpo 54126450 58456566 62786682       NA
-#>  9 T9    K. Towns         53142264 57078728 61015192       NA
-#> 10 T9    Jaylen Brown     53142264 57078728 61015192 64951656
-#> 11 T9    Devin Booker     53142264 57078728 61015192 69877500
-#> 12 12    LeBron James     52627153       NA       NA       NA
-#> 13 13    Paul George      51666090 54126380 56586670       NA
-#> 14 14    Kawhi Leonard    50000000 50300000       NA       NA
-#> 15 15    Zach LaVine      47499660 48967380       NA       NA
-#> 16 T16   Trae Young       46394100 48967380       NA       NA
-#> 17 T16   Lauri Markkanen  46394100 46113154 49824681 53536209
-#> 18 T16   Donovan Mitchell 46394100 50105628 53817156       NA
-#> 19 T16   Cade Cunningham  46394100 50105628 53817156 57528684
-#> 20 T16   Evan Mobley      46394100 50105628 53817156 57528684
+#> ℹ Data updated: 2026-06-09 16:53:53 UTC
+#> # A tibble: 2,110 × 13
+#>    player_id player        first_name last_name team_id team       season salary
+#>    <chr>     <chr>         <chr>      <chr>     <chr>   <chr>       <int>  <int>
+#>  1 522878    CJ McCollum   CJ         McCollum  1       Atlanta H…   2025 3.07e7
+#>  2 1230356   Jalen Johnson NA         NA        NA      NA           2029 3   e7
+#>  3 1230356   Jalen Johnson NA         NA        NA      NA           2026 3   e7
+#>  4 1230356   Jalen Johnson NA         NA        NA      NA           2028 3   e7
+#>  5 1230356   Jalen Johnson NA         NA        NA      NA           2025 3   e7
+#>  6 1230356   Jalen Johnson NA         NA        NA      NA           2027 3   e7
+#>  7 1230356   Jalen Johnson NA         NA        NA      NA           2024 4.51e6
+#>  8 1230356   Jalen Johnson NA         NA        NA      NA           2023 2.93e6
+#>  9 1230356   Jalen Johnson NA         NA        NA      NA           2022 2.79e6
+#> 10 1230356   Jalen Johnson NA         NA        NA      NA           2021 2.66e6
+#> # ℹ 2,100 more rows
+#> # ℹ 5 more variables: cap_allocation <int>, team_option <lgl>,
+#> #   player_option <lgl>, two_way <lgl>, qualifying_offer <lgl>
 # }
 ```

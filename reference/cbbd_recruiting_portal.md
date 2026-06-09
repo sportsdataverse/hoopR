@@ -71,7 +71,7 @@ Other CBD Recruiting Functions:
 ``` r
 # \donttest{
   try(cbbd_recruiting_portal(year = 2024))
-#> ✖ 2026-06-09 13:46:57.501933: Invalid arguments or no transfer portal data available!
+#> ✖ 2026-06-09 16:51:50.772907: Invalid arguments or no transfer portal data available!
 #> ✖ Args: year = 2024, source_team = NULL, destination_team = NULL, source_conference = NULL, destination_conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

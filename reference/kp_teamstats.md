@@ -83,7 +83,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_teamstats(min_year = 2019, max_year = 2021))
-#> ✖ 2026-06-09 13:52:29.050956: Invalid arguments or no team stats data for 2019 - 2021 available!
+#> ✖ 2026-06-09 16:57:34.948324: Invalid arguments or no team stats data for 2019 - 2021 available!
 #> ✖ Args: min_year = 2019, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #> NULL
