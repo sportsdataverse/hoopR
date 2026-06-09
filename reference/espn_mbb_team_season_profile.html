@@ -39,6 +39,7 @@ fewer $ref keys; missing refs become NA."><meta property="og:image" content="htt
     <li><a class="dropdown-item" href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a></li>
     <li><a class="dropdown-item" href="../articles/espn-endpoints.html">ESPN Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/kenpom-example-functions.html">KenPom Example Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
   </ul></li>
@@ -244,7 +245,7 @@ columns. Selected columns:</p><table class="table table"><tr><td>col_name</td><t
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_team_season_profile</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"150"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 09:58:34 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 11:15:34 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 35</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    guid       uid   slug  location name  nickname abbreviation display_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>

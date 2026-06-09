@@ -46,7 +46,7 @@ Other CBD Games Functions:
 ``` r
 # \donttest{
   try(cbbd_scoreboard(conference = "ACC"))
-#> ✖ 2026-06-09 09:57:45.180456: Invalid arguments or no scoreboard data available!
+#> ✖ 2026-06-09 11:14:47.368207: Invalid arguments or no scoreboard data available!
 #> ✖ Args: conference = "ACC"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

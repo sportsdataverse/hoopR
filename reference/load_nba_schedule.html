@@ -29,6 +29,7 @@ or writes it into a db using some forwarded arguments in the dots"><meta propert
     <li><a class="dropdown-item" href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a></li>
     <li><a class="dropdown-item" href="../articles/espn-endpoints.html">ESPN Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/kenpom-example-functions.html">KenPom Example Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
   </ul></li>
@@ -148,7 +149,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_schedule</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Schedule from hoopR data repository ───────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-08 12:07:54 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 10:44:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,332 × 77</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         id uid   date  attendance time_valid neutral_site conference_competition</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                 </span>

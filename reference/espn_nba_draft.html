@@ -29,6 +29,7 @@ Get ESPN NBA Draft Picks"><meta property="og:image" content="https://raw.githubu
     <li><a class="dropdown-item" href="../articles/getting-started-hoopR.html">Getting Started with hoopR</a></li>
     <li><a class="dropdown-item" href="../articles/espn-endpoints.html">ESPN Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/kenpom-example-functions.html">KenPom Example Functions</a></li>
+    <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
   </ul></li>
@@ -249,7 +250,7 @@ tibble rather than erroring.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_draft</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Draft Picks from ESPN.com ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 09:58:44 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 11:15:43 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 58 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season round  pick overall traded trade_note status    athlete_id athlete_ref</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>

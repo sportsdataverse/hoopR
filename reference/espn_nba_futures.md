@@ -158,7 +158,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_futures(season = 2025)
 #> ── ESPN NBA Season Futures ────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 09:58:47 UTC
+#> ℹ Data updated: 2026-06-09 11:15:46 UTC
 #> # A tibble: 586 × 11
 #>    season league market_id market_name  market_type market_display   provider_id
 #>     <int> <chr>      <int> <chr>        <chr>       <chr>            <chr>      

@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_weeks(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Weeks Index ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 09:58:28 UTC
+#> ℹ Data updated: 2026-06-09 11:15:28 UTC
 #> # A tibble: 24 × 5
 #>    league                  season season_type  week ref                         
 #>    <chr>                    <int>       <int> <int> <chr>                       

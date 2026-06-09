@@ -37,7 +37,7 @@ Other CBD Substitutions Functions:
 ``` r
 # \donttest{
   try(cbbd_substitutions_team(season = 2024, team = "Duke"))
-#> ✖ 2026-06-09 09:57:46.989582: Invalid arguments or no substitution data available for Duke!
+#> ✖ 2026-06-09 11:14:49.200263: Invalid arguments or no substitution data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

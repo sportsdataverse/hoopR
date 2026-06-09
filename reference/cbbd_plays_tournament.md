@@ -49,7 +49,7 @@ Other CBD Plays Functions:
 ``` r
 # \donttest{
   try(cbbd_plays_tournament(tournament = "NCAA", season = 2024))
-#> ✖ 2026-06-09 09:57:43.339204: Invalid arguments or no play data available for NCAA!
+#> ✖ 2026-06-09 11:14:45.578389: Invalid arguments or no play data available for NCAA!
 #> ✖ Args: tournament = "NCAA", season = 2024, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

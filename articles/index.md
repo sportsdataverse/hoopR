@@ -2,6 +2,13 @@
 
 ### All vignettes
 
+- [CollegeBasketballData (CBD)
+  Endpoints](https://hoopR.sportsdataverse.org/articles/cbbd-college-basketball-data.md):
+
+  A tour of the `cbbd_*` functions, which wrap the CollegeBasketballData
+  API (api.collegebasketballdata.com) for men’s college basketball
+  games, plays, stats, ratings, recruiting and more.
+
 - [ESPN basketball endpoints -- NBA &
   MBB](https://hoopR.sportsdataverse.org/articles/espn-endpoints.md):
 

@@ -117,7 +117,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA Team Boxscores from hoopR data repository ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-08 12:05:34 UTC
+#> ℹ Data updated: 2026-06-09 10:42:15 UTC
 #> # A tibble: 2,646 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    

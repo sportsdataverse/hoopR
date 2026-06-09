@@ -120,7 +120,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-08 12:03:04 UTC
+#> ℹ Data updated: 2026-06-09 10:40:20 UTC
 #> # A tibble: 640,950 × 64
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
