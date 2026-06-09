@@ -259,6 +259,14 @@ reference:
       - '`nba_team_dict`'
       - '`nba_player_headshot_url`'
       - '`nba_team_logo_url`'
+  - subtitle: NBA Result-Set Helpers
+    desc: >
+      Reduce the named list of result sets an `nba_*()` wrapper returns to a
+      single tibble -- row-bind (B), join/widen (C) or nest (D).
+    contents:
+      - '`nba_bind_sets`'
+      - '`nba_join_sets`'
+      - '`nba_nest_sets`'
   - subtitle: NBA Stats API
     desc: Functions exported by hoopR to access the NBA Stats API
     contents:

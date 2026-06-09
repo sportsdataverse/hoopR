@@ -272,6 +272,27 @@ return `NA` (not `Inf`/`NaN`) on a zero denominator and are league-agnostic
 - **`nba_player_headshot_url()`** / **`nba_team_logo_url()`** — vectorized
   builders for the official NBA CDN headshot and logo URLs.
 
+### **NBA result-set helpers (`nba_bind_sets()` / `nba_join_sets()` / `nba_nest_sets()`)**
+
+hoopR's NBA Stats wrappers return the endpoint's `resultSets` verbatim as a
+*named list of tibbles* (structure-faithful, lossless). These three pure helpers
+reduce that list to a single tibble on demand — making explicit, and composable,
+the three reductions `a legacy NBA R package` hard-coded inside each function:
+
+- **`nba_bind_sets(tag_column = )`** — row-bind the sets into one long tibble,
+  tagging each row with its origin (tactic **B**); columns absent from a set fill
+  with `NA`. For sets that share a schema, or to stack with a tag.
+- **`nba_join_sets(join_key = )`** — successively left-join the sets into one
+  wide tibble on a shared key (tactic **C**). For different facets of one entity
+  (e.g. `PlayerStats` + `TeamStats` on `GAME_ID`).
+- **`nba_nest_sets(keep_cols = , nest_col = )`** — keep the key column(s) wide
+  and nest every other column into a list-column, preserving the set origin
+  (tactic **D**). For heterogeneous sets that can't be bound or joined (e.g. a
+  player profile's season totals / career totals / awards).
+
+All three take a named list of tibbles (an `nba_*()` return) and always return a
+tibble. The default hoopR return (the list itself) is the "keep them all" option.
+
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used

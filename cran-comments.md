@@ -234,6 +234,11 @@ themes that emerged after the 3.0.0 CRAN submission:
 * Adds NBA dictionary / media helpers: `nba_player_dict()`, `nba_team_dict()`
   (tidy player / team dictionaries) and the pure URL builders
   `nba_player_headshot_url()` / `nba_team_logo_url()`.
+* Adds three pure result-set reshape helpers — `nba_bind_sets()` (row-bind +
+  origin tag), `nba_join_sets()` (join/widen on a key) and `nba_nest_sets()`
+  (nest into a list-column) — that reduce the named list of result sets an
+  `nba_*()` wrapper returns to a single tibble. Deterministic, unit-tested (run
+  on CRAN).
 
 
 ## R CMD check results
