@@ -45,6 +45,7 @@ No API key is required. Basketball-Reference rate-limits aggressive scraping
 Other Basketball-Reference Functions: 
 \code{\link{bref_awards}()},
 \code{\link{bref_draft}()},
+\code{\link{bref_player_game_log}()},
 \code{\link{bref_players_stats}()},
 \code{\link{bref_standings}()},
 \code{\link{bref_teams_stats}()}

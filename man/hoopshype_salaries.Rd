@@ -27,10 +27,13 @@ Returns the player salary table from HoopsHype's salaries page (current season
 plus the projected future-season salaries HoopsHype lists). No API key is
 required. Dollar figures are returned as numeric.
 
-\strong{Note:} HoopsHype renders only its top-paid players into static HTML and
-loads the remainder client-side, so this returns HoopsHype's highest-salary
-rows rather than the full league. For league-wide salary context see
-\code{\link[=spotrac_team_cap]{spotrac_team_cap()}} (team-level) or \code{espn_nba_player_contracts()}.
+\strong{Note:} HoopsHype is a Next.js app that renders only its ~20 top-paid
+players into static HTML; the full league list (≈670 contracts) is served by a
+cursor-paginated GraphQL API that runs client-side and is not reachable
+without executing the page's JavaScript. This function therefore returns
+HoopsHype's highest-salary rows. For the full league use
+\code{espn_nba_player_contracts()} (ESPN); for team-level cap totals use
+\code{\link[=spotrac_team_cap]{spotrac_team_cap()}}.
 }
 \examples{
 \donttest{

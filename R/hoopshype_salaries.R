@@ -7,10 +7,13 @@
 #' plus the projected future-season salaries HoopsHype lists). No API key is
 #' required. Dollar figures are returned as numeric.
 #'
-#' **Note:** HoopsHype renders only its top-paid players into static HTML and
-#' loads the remainder client-side, so this returns HoopsHype's highest-salary
-#' rows rather than the full league. For league-wide salary context see
-#' [spotrac_team_cap()] (team-level) or `espn_nba_player_contracts()`.
+#' **Note:** HoopsHype is a Next.js app that renders only its ~20 top-paid
+#' players into static HTML; the full league list (≈670 contracts) is served by a
+#' cursor-paginated GraphQL API that runs client-side and is not reachable
+#' without executing the page's JavaScript. This function therefore returns
+#' HoopsHype's highest-salary rows. For the full league use
+#' `espn_nba_player_contracts()` (ESPN); for team-level cap totals use
+#' [spotrac_team_cap()].
 #' @return A `hoopR_data` tibble with one row per player. The first numeric
 #'   column is the current-season salary; subsequent `x{year}_{year}` columns are
 #'   future-season salaries as listed by HoopsHype:

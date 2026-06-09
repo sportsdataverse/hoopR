@@ -46,8 +46,11 @@ aggressive scraping (~20 requests/minute) -- space repeated calls with
 }
 \seealso{
 Other Basketball-Reference Functions: 
+\code{\link{bref_awards}()},
+\code{\link{bref_player_game_log}()},
 \code{\link{bref_players_stats}()},
 \code{\link{bref_standings}()},
+\code{\link{bref_team_roster}()},
 \code{\link{bref_teams_stats}()}
 }
 \concept{Basketball-Reference Functions}

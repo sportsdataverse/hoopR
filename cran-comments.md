@@ -185,13 +185,14 @@ themes that emerged after the 3.0.0 CRAN submission:
 
 ### Basketball-Reference (`bref_*`) wrappers
 
-* Adds a `bref_*()` function family (6 wrappers) scraping publicly available NBA
+* Adds a `bref_*()` function family (7 wrappers) scraping publicly available NBA
   data from basketball-reference.com — the largest source gap versus `a legacy NBA R package`
   (hoopR previously had no Basketball-Reference coverage). `bref_players_stats()`
   (player season stats: per-game/totals/advanced/per-36/per-100),
   `bref_teams_stats()` (team season stats), `bref_standings()` (conference
   standings + SRS), `bref_draft()` (draft results with career stats),
-  `bref_awards()` (end-of-season award voting), and `bref_team_roster()`. Two
+  `bref_awards()` (end-of-season award voting), `bref_team_roster()`, and
+  `bref_player_game_log()` (a player's game-by-game log). Two
   Sports-Reference quirks are handled centrally (comment-hidden tables are
   un-commented; columns are read from `data-stat` attributes to defeat the
   multi-row over-headers). Routes through hoopR's shared `.retry_request()` with

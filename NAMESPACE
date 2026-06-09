@@ -3,6 +3,7 @@
 S3method(print,hoopR_data)
 export(bref_awards)
 export(bref_draft)
+export(bref_player_game_log)
 export(bref_players_stats)
 export(bref_standings)
 export(bref_team_roster)

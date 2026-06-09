@@ -28,3 +28,19 @@ test_that("BREF - Team Roster", {
 
   Sys.sleep(5)
 })
+
+test_that("BREF - Player Game Log", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_bref_test()
+
+  x <- bref_player_game_log(player_id = "jokicni01", season = 2024)
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No game log returned at test time")
+
+  cols <- c("date", "team", "opp", "result", "pts", "trb", "ast",
+            "player_id", "season")
+  expect_in(sort(cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(5)
+})

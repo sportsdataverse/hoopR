@@ -135,6 +135,8 @@ account or API key required):
 - **`bref_awards()`** — end-of-season award voting (MVP, ROY, DPOY, SMOY, MIP,
   Clutch POY, COY) in one tidy tibble.
 - **`bref_team_roster()`** — a team's season roster.
+- **`bref_player_game_log()`** — a player's game-by-game log for a season (by
+  Basketball-Reference player-id slug, e.g. `jokicni01`).
 
 Two Sports-Reference quirks are handled centrally: secondary tables hidden in
 HTML comments are un-commented, and columns are read from each cell's
@@ -152,8 +154,11 @@ New wrappers for third-party NBA salary and mock-draft sites (also part of the
 - **`spotrac_team_cap()`** — team salary-cap allocations, cap space, active
   players and average age from [Spotrac](https://www.spotrac.com).
 - **`hoopshype_salaries()`** — top player salaries (current + projected future
-  seasons) from [HoopsHype](https://hoopshype.com). HoopsHype paginates the full
-  list client-side, so this returns its highest-salary rows.
+  seasons) from [HoopsHype](https://hoopshype.com). HoopsHype is a Next.js app
+  that renders only its ~20 top earners into static HTML; the full ≈670-contract
+  league list is served by a client-side cursor-paginated GraphQL API and is not
+  statically scrapable, so this returns the highest-salary rows. Use
+  `espn_nba_player_contracts()` for the full league.
 - **`nbadraft_mock_draft()`** — the current consensus mock draft (both rounds)
   from [NBADraft.net](https://www.nbadraft.net).
 
