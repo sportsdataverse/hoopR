@@ -244,6 +244,11 @@ themes that emerged after the 3.0.0 CRAN submission:
   `nba_tidy_franchise_history()` (bind), `nba_tidy_boxscore()` (join player + team
   context) and `nba_tidy_player_profile()` (nest). `\donttest{}` examples;
   network-gated tests.
+* Adds an `srcbb_*()` family scraping men's college basketball from
+  sports-reference.com/cbb (the college arm of Sports Reference):
+  `srcbb_school_stats()` (season school stats) and `srcbb_rankings()` (AP poll).
+  Reuses the existing `bref_*` `data-stat` parser; no new dependencies.
+  `\donttest{}` examples, network-gated tests.
 
 
 ## R CMD check results

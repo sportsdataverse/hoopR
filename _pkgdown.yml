@@ -325,6 +325,11 @@ reference:
     desc: Functions exported by hoopR to scrape basketball-reference.com
     contents:
       - starts_with("bref_")
+  - title: Sports-Reference College Basketball
+  - subtitle: Sports-Reference (cbb) Functions
+    desc: Functions exported by hoopR to scrape men's college basketball data from sports-reference.com/cbb
+    contents:
+      - starts_with("srcbb_")
   - title: Salary & Mock Draft Sources
   - subtitle: Salary & Draft Functions
     desc: Functions exported by hoopR to scrape Spotrac, HoopsHype, and NBADraft.net
