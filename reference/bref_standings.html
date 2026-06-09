@@ -124,8 +124,11 @@ No API key is required. Basketball-Reference rate-limits aggressive scraping
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketball-Reference Functions:
+<code><a href="bref_awards.html">bref_awards()</a></code>,
 <code><a href="bref_draft.html">bref_draft()</a></code>,
+<code><a href="bref_player_game_log.html">bref_player_game_log()</a></code>,
 <code><a href="bref_players_stats.html">bref_players_stats()</a></code>,
+<code><a href="bref_team_roster.html">bref_team_roster()</a></code>,
 <code><a href="bref_teams_stats.html">bref_teams_stats()</a></code></p></div>
     </div>
 
@@ -134,7 +137,7 @@ No API key is required. Basketball-Reference rate-limits aggressive scraping
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bref_standings</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Standings from basketball-reference.com ────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 13:27:44 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 13:46:49 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    team             wins losses win_loss_pct gb    pts_per_g opp_pts_per_g   srs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>

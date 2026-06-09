@@ -3,17 +3,23 @@
 Returns the player salary table from HoopsHype's salaries page (current season
 plus the projected future-season salaries HoopsHype lists). No API key is
 required. Dollar figures are returned as numeric.
-Note: HoopsHype renders only its top-paid players into static HTML and
-loads the remainder client-side, so this returns HoopsHype's highest-salary
-rows rather than the full league. For league-wide salary context see
-spotrac_team_cap() (team-level) or espn_nba_player_contracts()."><meta property="og:description" content="Get NBA player salaries from HoopsHype.
+Note: HoopsHype is a Next.js app that renders only its ~20 top-paid
+players into static HTML; the full league list (≈670 contracts) is served by a
+cursor-paginated GraphQL API that runs client-side and is not reachable
+without executing the page's JavaScript. This function therefore returns
+HoopsHype's highest-salary rows. For the full league use
+espn_nba_player_contracts() (ESPN); for team-level cap totals use
+spotrac_team_cap()."><meta property="og:description" content="Get NBA player salaries from HoopsHype.
 Returns the player salary table from HoopsHype's salaries page (current season
 plus the projected future-season salaries HoopsHype lists). No API key is
 required. Dollar figures are returned as numeric.
-Note: HoopsHype renders only its top-paid players into static HTML and
-loads the remainder client-side, so this returns HoopsHype's highest-salary
-rows rather than the full league. For league-wide salary context see
-spotrac_team_cap() (team-level) or espn_nba_player_contracts()."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
+Note: HoopsHype is a Next.js app that renders only its ~20 top-paid
+players into static HTML; the full league list (≈670 contracts) is served by a
+cursor-paginated GraphQL API that runs client-side and is not reachable
+without executing the page's JavaScript. This function therefore returns
+HoopsHype's highest-salary rows. For the full league use
+espn_nba_player_contracts() (ESPN); for team-level cap totals use
+spotrac_team_cap()."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -110,10 +116,13 @@ spotrac_team_cap() (team-level) or espn_nba_player_contracts()."><meta property=
 <p>Returns the player salary table from HoopsHype's salaries page (current season
 plus the projected future-season salaries HoopsHype lists). No API key is
 required. Dollar figures are returned as numeric.</p>
-<p><strong>Note:</strong> HoopsHype renders only its top-paid players into static HTML and
-loads the remainder client-side, so this returns HoopsHype's highest-salary
-rows rather than the full league. For league-wide salary context see
-<code><a href="spotrac_team_cap.html">spotrac_team_cap()</a></code> (team-level) or <code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code>.</p>
+<p><strong>Note:</strong> HoopsHype is a Next.js app that renders only its ~20 top-paid
+players into static HTML; the full league list (≈670 contracts) is served by a
+cursor-paginated GraphQL API that runs client-side and is not reachable
+without executing the page's JavaScript. This function therefore returns
+HoopsHype's highest-salary rows. For the full league use
+<code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code> (ESPN); for team-level cap totals use
+<code><a href="spotrac_team_cap.html">spotrac_team_cap()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -140,7 +149,7 @@ numeric when present.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">hoopshype_salaries</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Player salaries from hoopshype.com ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 13:29:43 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 13:48:47 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    rank  player             salary x2026_27 x2027_28 x2028_29</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>

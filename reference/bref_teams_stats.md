@@ -47,9 +47,12 @@ common identifying columns shown – names are Basketball-Reference
 ## See also
 
 Other Basketball-Reference Functions:
+[`bref_awards()`](https://hoopR.sportsdataverse.org/reference/bref_awards.md),
 [`bref_draft()`](https://hoopR.sportsdataverse.org/reference/bref_draft.md),
+[`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md),
 [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md),
-[`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md)
+[`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md),
+[`bref_team_roster()`](https://hoopR.sportsdataverse.org/reference/bref_team_roster.md)
 
 ## Examples
 
@@ -57,7 +60,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_teams_stats(season = 2024, table = "per_game"))
 #> ── Team season stats from basketball-reference.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:27:45 UTC
+#> ℹ Data updated: 2026-06-09 13:46:51 UTC
 #> # A tibble: 30 × 26
 #>    ranker team        g    mp    fg   fga fg_pct   fg3  fg3a fg3_pct   fg2  fg2a
 #>     <dbl> <chr>   <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>

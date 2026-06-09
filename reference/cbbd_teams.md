@@ -56,7 +56,7 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams(conference = "ACC"))
-#> ✖ 2026-06-09 13:27:54.450747: Invalid arguments or no teams data available!
+#> ✖ 2026-06-09 13:47:00.2915: Invalid arguments or no teams data available!
 #> ✖ Args: conference = "ACC", season = 2026
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

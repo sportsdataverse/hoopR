@@ -6,13 +6,15 @@ Returns the player salary table from HoopsHype's salaries page (current
 season plus the projected future-season salaries HoopsHype lists). No
 API key is required. Dollar figures are returned as numeric.
 
-**Note:** HoopsHype renders only its top-paid players into static HTML
-and loads the remainder client-side, so this returns HoopsHype's
-highest-salary rows rather than the full league. For league-wide salary
-context see
-[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)
-(team-level) or
-[`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md).
+**Note:** HoopsHype is a Next.js app that renders only its ~20 top-paid
+players into static HTML; the full league list (≈670 contracts) is
+served by a cursor-paginated GraphQL API that runs client-side and is
+not reachable without executing the page's JavaScript. This function
+therefore returns HoopsHype's highest-salary rows. For the full league
+use
+[`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md)
+(ESPN); for team-level cap totals use
+[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md).
 
 ## Usage
 
@@ -48,7 +50,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(hoopshype_salaries())
 #> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:29:43 UTC
+#> ℹ Data updated: 2026-06-09 13:48:47 UTC
 #> # A tibble: 20 × 6
 #>    rank  player             salary x2026_27 x2027_28 x2028_29
 #>    <chr> <chr>               <dbl>    <dbl>    <dbl>    <dbl>

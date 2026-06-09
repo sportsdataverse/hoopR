@@ -149,6 +149,9 @@ cover at all (no account or API key required):
   COY) in one tidy tibble.
 - **[`bref_team_roster()`](https://hoopR.sportsdataverse.org/reference/bref_team_roster.md)**
   — a team’s season roster.
+- **[`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md)**
+  — a player’s game-by-game log for a season (by Basketball-Reference
+  player-id slug, e.g. `jokicni01`).
 
 Two Sports-Reference quirks are handled centrally: secondary tables
 hidden in HTML comments are un-commented, and columns are read from each
@@ -171,8 +174,13 @@ of the `nbastatR` parity gap), all public HTML, no key required:
   age from [Spotrac](https://www.spotrac.com).
 - **[`hoopshype_salaries()`](https://hoopR.sportsdataverse.org/reference/hoopshype_salaries.md)**
   — top player salaries (current + projected future seasons) from
-  [HoopsHype](https://hoopshype.com). HoopsHype paginates the full list
-  client-side, so this returns its highest-salary rows.
+  [HoopsHype](https://hoopshype.com). HoopsHype is a Next.js app that
+  renders only its ~20 top earners into static HTML; the full
+  ≈670-contract league list is served by a client-side cursor-paginated
+  GraphQL API and is not statically scrapable, so this returns the
+  highest-salary rows. Use
+  [`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md)
+  for the full league.
 - **[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**
   — the current consensus mock draft (both rounds) from
   [NBADraft.net](https://www.nbadraft.net).

@@ -2441,6 +2441,11 @@ Functions exported by hoopR to scrape basketball-reference.com
 
   **Basketball-Reference Draft**
 
+- [`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md)
+  :
+
+  **Basketball-Reference Player Game Log**
+
 - [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md)
   :
 
