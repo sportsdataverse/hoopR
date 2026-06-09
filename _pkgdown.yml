@@ -229,6 +229,36 @@ reference:
     desc: NBA Stats API endpoint family overview
     contents:
       - '`nba_stats`'
+  - subtitle: Basketball Analytics Utilities
+    desc: >
+      Pure, vectorized efficiency / rating / four-factor calculators and
+      box-score scaling / enrichment helpers (no network calls; league-agnostic).
+    contents:
+      - '`nba_true_shooting_pct`'
+      - '`nba_effective_fg_pct`'
+      - '`nba_ft_rate`'
+      - '`nba_game_score`'
+      - '`nba_assist_to_turnover`'
+      - '`nba_possessions`'
+      - '`nba_pace`'
+      - '`nba_offensive_rating`'
+      - '`nba_defensive_rating`'
+      - '`nba_net_rating`'
+      - '`nba_usage_rate`'
+      - '`nba_assist_pct`'
+      - '`nba_turnover_pct`'
+      - '`nba_oreb_pct`'
+      - '`nba_four_factors`'
+      - '`nba_per_minutes`'
+      - '`nba_per_possessions`'
+      - '`nba_add_advanced_metrics`'
+  - subtitle: NBA Dictionaries & Media
+    desc: Player / team dictionaries and CDN headshot / logo URL helpers.
+    contents:
+      - '`nba_player_dict`'
+      - '`nba_team_dict`'
+      - '`nba_player_headshot_url`'
+      - '`nba_team_logo_url`'
   - subtitle: NBA Stats API
     desc: Functions exported by hoopR to access the NBA Stats API
     contents:
@@ -265,6 +295,14 @@ reference:
     desc: Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
     contents:
       - starts_with("torvik_")
+  - title: Injury Reports
+  - subtitle: NBA Injury Functions
+    desc: >
+      Current NBA injury reports. RotoWire is the live replacement for the
+      defunct RotoWorld feed; Basketball-Reference offers a second source.
+    contents:
+      - '`rotowire_injuries`'
+      - '`bref_injuries`'
   - title: Basketball-Reference
   - subtitle: Basketball-Reference Functions
     desc: Functions exported by hoopR to scrape basketball-reference.com

@@ -56,6 +56,8 @@ space repeated calls with \code{Sys.sleep()}.
 Other Basketball-Reference Functions: 
 \code{\link{bref_awards}()},
 \code{\link{bref_draft}()},
+\code{\link{bref_injuries}()},
+\code{\link{bref_player_bios}()},
 \code{\link{bref_player_game_log}()},
 \code{\link{bref_standings}()},
 \code{\link{bref_team_roster}()},

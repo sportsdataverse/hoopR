@@ -217,6 +217,23 @@ themes that emerged after the 3.0.0 CRAN submission:
   error cleanly with an install hint; all `\donttest{}` examples are
   `try()`-wrapped and tests are gated behind `REALGM_TESTS=1`, so neither CRAN's
   check machines nor users without Chrome ever attempt a browser launch.
+* Adds two Basketball-Reference wrappers: `bref_player_bios()` (player index /
+  bios per starting letter, doubling as a player dictionary) and
+  `bref_injuries()` (injury report). `\donttest{}` examples; `BREF_TESTS=1` gate.
+* Adds `rotowire_injuries()` — the live RotoWire NBA injury report (read from its
+  JSON table endpoint). Replaces the defunct RotoWorld feed the old `a legacy NBA R package`
+  used. Public JSON, no key; `\donttest{}` example, network-gated test.
+* Adds a set of pure, vectorized basketball analytics utilities (no network):
+  `nba_true_shooting_pct()`, `nba_effective_fg_pct()`, `nba_ft_rate()`,
+  `nba_game_score()`, `nba_possessions()`, `nba_pace()`,
+  `nba_offensive_rating()`/`nba_defensive_rating()`/`nba_net_rating()`,
+  `nba_usage_rate()`, `nba_assist_pct()`, `nba_assist_to_turnover()`,
+  `nba_turnover_pct()`, `nba_oreb_pct()`, `nba_four_factors()`, plus the scaling
+  helpers `nba_per_minutes()`, `nba_per_possessions()` and
+  `nba_add_advanced_metrics()`. Fully unit-tested (deterministic, run on CRAN).
+* Adds NBA dictionary / media helpers: `nba_player_dict()`, `nba_team_dict()`
+  (tidy player / team dictionaries) and the pure URL builders
+  `nba_player_headshot_url()` / `nba_team_logo_url()`.
 
 
 ## R CMD check results

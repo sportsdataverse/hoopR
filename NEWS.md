@@ -137,6 +137,11 @@ account or API key required):
 - **`bref_team_roster()`** — a team's season roster.
 - **`bref_player_game_log()`** — a player's game-by-game log for a season (by
   Basketball-Reference player-id slug, e.g. `jokicni01`).
+- **`bref_player_bios()`** — the player index for a starting letter (career span,
+  position, height/weight, birth date, college) plus each player's
+  Basketball-Reference id slug — a ready-made player **dictionary**, closing the
+  last `a legacy NBA R package` Basketball-Reference gap (`bref_bios()`).
+- **`bref_injuries()`** — the current Basketball-Reference NBA injury report.
 
 Two Sports-Reference quirks are handled centrally: secondary tables hidden in
 HTML comments are un-commented, and columns are read from each cell's
@@ -226,6 +231,46 @@ wrapper drives headless Chrome through the optional
 challenge natively in ~2 seconds). `chromote` + Google Chrome are therefore a
 **Suggests-level** requirement for the `realgm_*` family only; every other hoopR
 source still works with the standard HTTP stack.
+
+### **NBA injury reports (`rotowire_injuries()` / `bref_injuries()`)**
+
+The classic `a legacy NBA R package::nba_injuries()` scraped `rotoworld.com`, which NBC has
+since shut down (it now 301-redirects to `nbcsports.com/fantasy`; the injuries
+tool is gone). Two live replacements:
+
+- **`rotowire_injuries()`** — the current NBA injury report from
+  [RotoWire](https://www.rotowire.com) (a separate, live company). RotoWire
+  renders the grid client-side from a JSON table endpoint, so this reads that
+  JSON directly (player, team, position, injury, status, RotoWire player URL).
+  The projected return date is subscriber-only and comes back as `NA`.
+- **`bref_injuries()`** — a second source, the Basketball-Reference injury report
+  (see above).
+
+### **Basketball analytics utilities (`nba_*`, no network)**
+
+A set of pure, vectorized basketball-math helpers — the kind of efficiency /
+rating / four-factor calculators `a legacy NBA R package` shipped as `calculate_*()`. All
+return `NA` (not `Inf`/`NaN`) on a zero denominator and are league-agnostic
+(NBA / WNBA / college box scores):
+
+- Shooting: `nba_true_shooting_pct()`, `nba_effective_fg_pct()`, `nba_ft_rate()`.
+- Rating / pace: `nba_possessions()`, `nba_pace()`, `nba_offensive_rating()`,
+  `nba_defensive_rating()`, `nba_net_rating()`.
+- Player rate stats: `nba_game_score()` (Hollinger), `nba_usage_rate()`,
+  `nba_assist_pct()`, `nba_assist_to_turnover()`, `nba_turnover_pct()`,
+  `nba_oreb_pct()`, and `nba_four_factors()` (a tidy four-factors tibble).
+- Scaling / enrichment: `nba_per_minutes()` (per-36 by default),
+  `nba_per_possessions()` (per-100), and `nba_add_advanced_metrics()`, which
+  detects the standard box-score columns present in a data frame and appends the
+  advanced metrics it can compute.
+
+### **NBA player / team dictionaries & media (`nba_*`)**
+
+- **`nba_player_dict()`** / **`nba_team_dict()`** — tidy player and team
+  dictionaries (ids, names, teams, conference/division) for joining ids to
+  names and fetching media, with headshot / logo URLs attached.
+- **`nba_player_headshot_url()`** / **`nba_team_logo_url()`** — vectorized
+  builders for the official NBA CDN headshot and logo URLs.
 
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
