@@ -259,6 +259,15 @@ reference:
     desc: Functions exported by hoopR
     contents:
       - starts_with("kp_")
+  - title: CollegeBasketballData (CBD)
+  - subtitle: CBD API Key Registration
+    desc: Registering your CollegeBasketballData API key
+    contents:
+      - '`register_cbbd`'
+  - subtitle: CBD Data Functions
+    desc: Functions exported by hoopR to access the CollegeBasketballData API
+    contents:
+      - starts_with("cbbd_")
   - title: Helper Functions and Data
   - subtitle: Included data
     desc: Data included within the package

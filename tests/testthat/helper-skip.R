@@ -45,3 +45,11 @@ skip_ncaa_wbb_test <- function(){
     invisible()
   }
 }
+
+skip_cbbd_test <- function(){
+  if(Sys.getenv("CBBD_API_KEY") == ''){
+    skip("User can't run CollegeBasketballData tests (CBBD_API_KEY not set)")
+  } else {
+    invisible()
+  }
+}

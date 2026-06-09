@@ -50,6 +50,40 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
 
+### **CollegeBasketballData API (`cbbd_*`)**
+
+New `cbbd_*()` function family wrapping the
+[CollegeBasketballData API](https://api.collegebasketballdata.com) (the men's
+college basketball sibling of CollegeFootballData, which `cfbfastR` wraps with
+`cfbd_*`). 38 endpoint wrappers cover the full v1 surface across 13 categories:
+
+- **Games**: `cbbd_games()`, `cbbd_games_media()`, `cbbd_games_teams()`,
+  `cbbd_games_players()`, `cbbd_scoreboard()`
+- **Plays**: `cbbd_plays_game()`, `cbbd_plays_player()`, `cbbd_plays_team()`,
+  `cbbd_plays_date()`, `cbbd_plays_tournament()`, `cbbd_play_types()`
+- **Substitutions**: `cbbd_substitutions_game()`, `cbbd_substitutions_player()`,
+  `cbbd_substitutions_team()`
+- **Stats**: `cbbd_stats_team_season()`, `cbbd_stats_team_leaderboard()`,
+  `cbbd_stats_team_shooting_season()`, `cbbd_stats_player_season()`,
+  `cbbd_stats_player_shooting_season()`
+- **Lineups**: `cbbd_lineups_team()`, `cbbd_lineups_game()`
+- **Ratings**: `cbbd_ratings_srs()`, `cbbd_ratings_adjusted()`,
+  `cbbd_ratings_elo()`
+- **Rankings**: `cbbd_rankings()`
+- **Lines**: `cbbd_lines()`, `cbbd_lines_providers()`
+- **Recruiting**: `cbbd_recruiting_players()`, `cbbd_recruiting_teams()`,
+  `cbbd_recruiting_portal()`
+- **Draft**: `cbbd_draft_teams()`, `cbbd_draft_positions()`, `cbbd_draft_picks()`
+- **Teams / Venues / Conferences**: `cbbd_teams()`, `cbbd_teams_roster()`,
+  `cbbd_venues()`, `cbbd_conferences()`, `cbbd_conferences_history()`
+
+The API requires a free Bearer-token key stored in the `CBBD_API_KEY`
+environment variable; see `?register_cbbd`. Helpers `cbbd_key()`,
+`has_cbbd_key()` and `check_cbbd_key()` mirror the `cfbfastR` key pattern. Every
+wrapper returns a `hoopR_data` tibble with a 3-column `@return` table, routes
+through hoopR's shared `httr2` request layer (retries / timeouts / proxy), and
+reports errors via the standard `cli` reporters.
+
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used
