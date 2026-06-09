@@ -132,6 +132,9 @@ account or API key required):
   playoff flag.
 - **`bref_draft()`** — draft results paired with each pick's career totals and
   advanced metrics.
+- **`bref_awards()`** — end-of-season award voting (MVP, ROY, DPOY, SMOY, MIP,
+  Clutch POY, COY) in one tidy tibble.
+- **`bref_team_roster()`** — a team's season roster.
 
 Two Sports-Reference quirks are handled centrally: secondary tables hidden in
 HTML comments are un-commented, and columns are read from each cell's
@@ -140,6 +143,25 @@ names). Routes through hoopR's shared `.retry_request()` with a browser
 User-Agent. **Basketball-Reference rate-limits aggressive scraping (~20
 requests/minute)** — space repeated calls with `Sys.sleep()`. Tests are gated
 behind `BREF_TESTS=1`. No new dependencies (`rvest` already in `Imports`).
+
+### **Salary & mock-draft sources (Spotrac / HoopsHype / NBADraft.net)**
+
+New wrappers for third-party NBA salary and mock-draft sites (also part of the
+`a legacy NBA R package` parity gap), all public HTML, no key required:
+
+- **`spotrac_team_cap()`** — team salary-cap allocations, cap space, active
+  players and average age from [Spotrac](https://www.spotrac.com).
+- **`hoopshype_salaries()`** — top player salaries (current + projected future
+  seasons) from [HoopsHype](https://hoopshype.com). HoopsHype paginates the full
+  list client-side, so this returns its highest-salary rows.
+- **`nbadraft_mock_draft()`** — the current consensus mock draft (both rounds)
+  from [NBADraft.net](https://www.nbadraft.net).
+
+Two sources from the same family were evaluated but **not** wrapped:
+**RealGM** hard-blocks programmatic clients (HTTP 403 even with full browser
+headers), and **Basketball Insiders** only exposes a team-cap summary redundant
+with `spotrac_team_cap()`. For league-wide player salaries,
+`espn_nba_player_contracts()` remains the most complete source.
 
 ### **ESPN endpoint naming convention (game_*/player_*)**
 

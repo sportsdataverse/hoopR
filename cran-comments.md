@@ -185,12 +185,13 @@ themes that emerged after the 3.0.0 CRAN submission:
 
 ### Basketball-Reference (`bref_*`) wrappers
 
-* Adds a `bref_*()` function family (4 wrappers) scraping publicly available NBA
+* Adds a `bref_*()` function family (6 wrappers) scraping publicly available NBA
   data from basketball-reference.com — the largest source gap versus `a legacy NBA R package`
   (hoopR previously had no Basketball-Reference coverage). `bref_players_stats()`
   (player season stats: per-game/totals/advanced/per-36/per-100),
   `bref_teams_stats()` (team season stats), `bref_standings()` (conference
-  standings + SRS), and `bref_draft()` (draft results with career stats). Two
+  standings + SRS), `bref_draft()` (draft results with career stats),
+  `bref_awards()` (end-of-season award voting), and `bref_team_roster()`. Two
   Sports-Reference quirks are handled centrally (comment-hidden tables are
   un-commented; columns are read from `data-stat` attributes to defeat the
   multi-row over-headers). Routes through hoopR's shared `.retry_request()` with
@@ -198,6 +199,12 @@ themes that emerged after the 3.0.0 CRAN submission:
   tables. No new dependencies (`rvest`/`xml2` already available). Examples are
   `\donttest{}`; tests are gated behind `BREF_TESTS=1` because the site
   rate-limits (~20 requests/minute).
+* Adds salary / mock-draft scrapers for three third-party sites (also part of
+  the `a legacy NBA R package` gap): `spotrac_team_cap()` (Spotrac team cap), `hoopshype_salaries()`
+  (HoopsHype player salaries), and `nbadraft_mock_draft()` (NBADraft.net mock
+  draft). All public HTML, no key required, `\donttest{}` examples, network-gated
+  tests. RealGM (HTTP 403) and Basketball Insiders (redundant team-cap only) were
+  evaluated and intentionally not wrapped.
 
 
 ## R CMD check results

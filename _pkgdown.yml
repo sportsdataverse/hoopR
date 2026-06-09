@@ -280,6 +280,13 @@ reference:
     desc: Functions exported by hoopR to scrape basketball-reference.com
     contents:
       - starts_with("bref_")
+  - title: Salary & Mock Draft Sources
+  - subtitle: Salary & Draft Functions
+    desc: Functions exported by hoopR to scrape Spotrac, HoopsHype, and NBADraft.net
+    contents:
+      - starts_with("spotrac_")
+      - starts_with("hoopshype_")
+      - starts_with("nbadraft_")
   - title: Helper Functions and Data
   - subtitle: Included data
     desc: Data included within the package
