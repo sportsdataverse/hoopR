@@ -82,7 +82,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_player_stats(year = 2024))
 #> ── Bart Torvik player season stats from barttorvik.com ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:29:11 UTC
+#> ℹ Data updated: 2026-06-09 21:50:31 UTC
 #> # A tibble: 6 × 1
 #>   v1                                       
 #>   <chr>                                    

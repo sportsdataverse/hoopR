@@ -248,6 +248,16 @@
 </ul><p>All three take a named list of tibbles (an <code>nba_*()</code> return) and always return a tibble. The default hoopR return (the list itself) is the “keep them all” option.</p>
 </div>
 <div class="section level4">
+<h4 id="nba-combined-dataset-wrappers-nba_tidy_-3-1-0"><strong>NBA combined-dataset wrappers (<code>nba_tidy_*()</code>)</strong><a class="anchor" aria-label="anchor" href="#nba-combined-dataset-wrappers-nba_tidy_-3-1-0"></a></h4>
+<p>The per-dataset equivalent of the result-set helpers: each fetches a specific multi-result-set endpoint and applies its canonical reduction in one call (what <code>nbastatR</code> hard-coded inside each task function), so you get the munged tibble directly. All are resilient to the empty / partial sets stats.nba.com occasionally returns.</p>
+<ul><li>
+<strong><code><a href="../reference/nba_tidy_franchise_history.html">nba_tidy_franchise_history()</a></code></strong> — [nba_franchisehistory()]’s active + defunct sets row-bound into one franchise timeline, tagged <code>active</code> / <code>defunct</code> (tactic <strong>B</strong>).</li>
+<li>
+<strong><code>nba_tidy_boxscore(game_id)</code></strong> — a traditional player box score with each player’s team totals joined on by <code>GAME_ID</code> + <code>TEAM_ID</code> (team columns suffixed <code>_team</code>) (tactic <strong>C</strong>).</li>
+<li>
+<strong><code>nba_tidy_player_profile(player_id)</code></strong> — [nba_playerprofilev2()]’s many <code>PLAYER_ID</code>-keyed tables (season/career totals, highs, rankings) nested into a <code>.data</code> list-column, one row per table (tactic <strong>D</strong>).</li>
+</ul></div>
+<div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
 <p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). The web-common-v3 <code>/athletes/{id}/stats</code> wrapper becomes <code>*_player_stats_v3</code> (kept alongside the core-v2 <code>*_player_stats</code>, a different endpoint).</p>
 </div>

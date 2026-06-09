@@ -1301,6 +1301,27 @@ single tibble – row-bind (B), join/widen (C) or nest (D).
   [`nba_nest_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
   : Reduce NBA Stats API result sets
 
+### NBA Combined Datasets
+
+Dataset-specific wrappers that fetch a multi-result-set endpoint and
+apply its canonical reduction in one call (the per-dataset equivalent of
+the generic result-set helpers).
+
+- [`nba_tidy_franchise_history()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_franchise_history.md)
+  :
+
+  **NBA Franchise History (active + defunct)**
+
+- [`nba_tidy_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_boxscore.md)
+  :
+
+  **NBA Player Box Score with Team Context**
+
+- [`nba_tidy_player_profile()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_player_profile.md)
+  :
+
+  **NBA Player Profile (nested by table)**
+
 ### NBA Stats API
 
 Functions exported by hoopR to access the NBA Stats API
@@ -2126,6 +2147,21 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Team Year by Year Stats**
+
+- [`nba_tidy_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_boxscore.md)
+  :
+
+  **NBA Player Box Score with Team Context**
+
+- [`nba_tidy_franchise_history()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_franchise_history.md)
+  :
+
+  **NBA Franchise History (active + defunct)**
+
+- [`nba_tidy_player_profile()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_player_profile.md)
+  :
+
+  **NBA Player Profile (nested by table)**
 
 - [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.md)
   :
