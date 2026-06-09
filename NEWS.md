@@ -116,6 +116,31 @@ User-Agent; every wrapper returns a `hoopR_data` tibble with a 3-column
 `cbbdata`/`api.cbbdata.com` service that previously brokered Torvik data is
 defunct, so these wrap barttorvik.com directly.)
 
+### **Basketball-Reference (`bref_*`)**
+
+New `bref_*()` function family scraping publicly available NBA data from
+[Basketball-Reference](https://www.basketball-reference.com) — the largest
+source gap versus `a legacy NBA R package`, which hoopR previously did not cover at all (no
+account or API key required):
+
+- **`bref_players_stats()`** — league-wide player season stats; pick the table
+  with `table = "per_game"` / `"totals"` / `"advanced"` / `"per_minute"` /
+  `"per_poss"`.
+- **`bref_teams_stats()`** — team season stats (`per_game`, `totals`,
+  `per_poss`, `advanced`, `opponent`).
+- **`bref_standings()`** — end-of-season conference standings with SRS and a
+  playoff flag.
+- **`bref_draft()`** — draft results paired with each pick's career totals and
+  advanced metrics.
+
+Two Sports-Reference quirks are handled centrally: secondary tables hidden in
+HTML comments are un-commented, and columns are read from each cell's
+`data-stat` attribute (so the multi-row "over-headers" don't mangle column
+names). Routes through hoopR's shared `.retry_request()` with a browser
+User-Agent. **Basketball-Reference rate-limits aggressive scraping (~20
+requests/minute)** — space repeated calls with `Sys.sleep()`. Tests are gated
+behind `BREF_TESTS=1`. No new dependencies (`rvest` already in `Imports`).
+
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used

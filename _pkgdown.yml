@@ -275,6 +275,11 @@ reference:
     desc: Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
     contents:
       - starts_with("torvik_")
+  - title: Basketball-Reference
+  - subtitle: Basketball-Reference Functions
+    desc: Functions exported by hoopR to scrape basketball-reference.com
+    contents:
+      - starts_with("bref_")
   - title: Helper Functions and Data
   - subtitle: Included data
     desc: Data included within the package

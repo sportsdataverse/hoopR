@@ -183,6 +183,22 @@ themes that emerged after the 3.0.0 CRAN submission:
   `rvest`, `purrr` already in `Imports`). Ships with `\donttest{}` examples and
   network-gated tests (`skip_on_cran()` + `skip_on_ci()`).
 
+### Basketball-Reference (`bref_*`) wrappers
+
+* Adds a `bref_*()` function family (4 wrappers) scraping publicly available NBA
+  data from basketball-reference.com — the largest source gap versus `a legacy NBA R package`
+  (hoopR previously had no Basketball-Reference coverage). `bref_players_stats()`
+  (player season stats: per-game/totals/advanced/per-36/per-100),
+  `bref_teams_stats()` (team season stats), `bref_standings()` (conference
+  standings + SRS), and `bref_draft()` (draft results with career stats). Two
+  Sports-Reference quirks are handled centrally (comment-hidden tables are
+  un-commented; columns are read from `data-stat` attributes to defeat the
+  multi-row over-headers). Routes through hoopR's shared `.retry_request()` with
+  a browser User-Agent; returns `hoopR_data` tibbles with 3-column `@return`
+  tables. No new dependencies (`rvest`/`xml2` already available). Examples are
+  `\donttest{}`; tests are gated behind `BREF_TESTS=1` because the site
+  rate-limits (~20 requests/minute).
+
 
 ## R CMD check results
 

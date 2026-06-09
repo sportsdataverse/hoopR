@@ -53,3 +53,11 @@ skip_cbbd_test <- function(){
     invisible()
   }
 }
+
+skip_bref_test <- function(){
+  if(Sys.getenv("BREF_TESTS") != "1"){
+    skip("User can't run Basketball-Reference tests (BREF_TESTS not set; site is rate-limited)")
+  } else {
+    invisible()
+  }
+}

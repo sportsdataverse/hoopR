@@ -56,6 +56,8 @@ to present.
 \seealso{
 Other Torvik Functions: 
 \code{\link{torvik_game_schedule}()},
+\code{\link{torvik_game_stats}()},
+\code{\link{torvik_player_stats}()},
 \code{\link{torvik_ratings}()},
 \code{\link{torvik_team_factors}()}
 }
