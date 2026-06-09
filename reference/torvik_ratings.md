@@ -71,7 +71,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_ratings(year = 2024))
 #> ── Bart Torvik T-Rank ratings from barttorvik.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:44:49 UTC
+#> ℹ Data updated: 2026-06-09 21:29:11 UTC
 #> # A tibble: 5 × 2
 #>   html                                       year
 #>   <chr>                                     <int>

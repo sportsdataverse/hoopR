@@ -29,7 +29,7 @@ Other CBD Draft Functions:
 ``` r
 # \donttest{
   try(cbbd_draft_positions())
-#> ✖ 2026-06-09 20:35:25.16326: Invalid arguments or no draft positions available!
+#> ✖ 2026-06-09 21:19:31.431525: Invalid arguments or no draft positions available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

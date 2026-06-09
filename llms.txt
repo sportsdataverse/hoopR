@@ -1442,6 +1442,16 @@ Player / team dictionaries and CDN headshot / logo URL helpers.
 
   **NBA Team Logo URL**
 
+### NBA Result-Set Helpers
+
+Reduce the named list of result sets an `nba_*()` wrapper returns to a
+single tibble – row-bind (B), join/widen (C) or nest (D).
+
+- [`nba_bind_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  [`nba_join_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  [`nba_nest_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  : Reduce NBA Stats API result sets
+
 ### NBA Stats API
 
 Functions exported by hoopR to access the NBA Stats API
@@ -1475,6 +1485,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Assist Tracker**
+
+- [`nba_bind_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  [`nba_join_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  [`nba_nest_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  : Reduce NBA Stats API result sets
 
 - [`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.md)
   :

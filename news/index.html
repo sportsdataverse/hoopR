@@ -237,6 +237,17 @@
 <strong><code><a href="../reference/nba_player_headshot_url.html">nba_player_headshot_url()</a></code></strong> / <strong><code><a href="../reference/nba_team_logo_url.html">nba_team_logo_url()</a></code></strong> — vectorized builders for the official NBA CDN headshot and logo URLs.</li>
 </ul></div>
 <div class="section level4">
+<h4 id="nba-result-set-helpers-nba_bind_sets--nba_join_sets--nba_nest_sets-3-1-0"><strong>NBA result-set helpers (<code>nba_bind_sets()</code> / <code>nba_join_sets()</code> / <code>nba_nest_sets()</code>)</strong><a class="anchor" aria-label="anchor" href="#nba-result-set-helpers-nba_bind_sets--nba_join_sets--nba_nest_sets-3-1-0"></a></h4>
+<p>hoopR’s NBA Stats wrappers return the endpoint’s <code>resultSets</code> verbatim as a <em>named list of tibbles</em> (structure-faithful, lossless). These three pure helpers reduce that list to a single tibble on demand — making explicit, and composable, the three reductions <code>nbastatR</code> hard-coded inside each function:</p>
+<ul><li>
+<strong><code>nba_bind_sets(tag_column = )</code></strong> — row-bind the sets into one long tibble, tagging each row with its origin (tactic <strong>B</strong>); columns absent from a set fill with <code>NA</code>. For sets that share a schema, or to stack with a tag.</li>
+<li>
+<strong><code>nba_join_sets(join_key = )</code></strong> — successively left-join the sets into one wide tibble on a shared key (tactic <strong>C</strong>). For different facets of one entity (e.g. <code>PlayerStats</code> + <code>TeamStats</code> on <code>GAME_ID</code>).</li>
+<li>
+<strong><code>nba_nest_sets(keep_cols = , nest_col = )</code></strong> — keep the key column(s) wide and nest every other column into a list-column, preserving the set origin (tactic <strong>D</strong>). For heterogeneous sets that can’t be bound or joined (e.g. a player profile’s season totals / career totals / awards).</li>
+</ul><p>All three take a named list of tibbles (an <code>nba_*()</code> return) and always return a tibble. The default hoopR return (the list itself) is the “keep them all” option.</p>
+</div>
+<div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
 <p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). The web-common-v3 <code>/athletes/{id}/stats</code> wrapper becomes <code>*_player_stats_v3</code> (kept alongside the core-v2 <code>*_player_stats</code>, a different endpoint).</p>
 </div>
