@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 16:53:05 UTC
+#> ℹ Data updated: 2026-06-09 17:41:05 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Media Why Tim… "Why Tim L… 2026-06-… FALSE   NA     https:/… 46       
-#> 2  4.90e7 Media Does Sa… "Does Sam … 2026-06-… FALSE   NA     https:/… 46       
-#> 3  4.72e7 Story 'The Ho… "Here are … 2026-06-… FALSE   ESPN … https:/… 46       
-#> 4  4.90e7 Media Stephen… "Stephen A… 2026-06-… FALSE   NA     https:/… 46       
-#> 5  4.90e7 Media Why Ste… "Why Steph… 2026-06-… FALSE   NA     https:/… 46       
+#> 1  4.90e7 Media Windy t… "Windy to … 2026-06-… FALSE   NA     https:/… 46       
+#> 2  4.90e7 Media Why Tim… "Why Tim L… 2026-06-… FALSE   NA     https:/… 46       
+#> 3  4.90e7 Media Does Sa… "Does Sam … 2026-06-… FALSE   NA     https:/… 46       
+#> 4  4.72e7 Story 'The Ho… "Here are … 2026-06-… FALSE   ESPN … https:/… 46       
+#> 5  4.90e7 Media Stephen… "Stephen A… 2026-06-… FALSE   NA     https:/… 46       
 # }
 ```

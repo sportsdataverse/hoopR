@@ -53,7 +53,7 @@ Other CBD Ratings Functions:
 ``` r
 # \donttest{
   try(cbbd_ratings_srs(season = 2024))
-#> ✖ 2026-06-09 16:51:50.257975: Invalid arguments or no SRS ratings available!
+#> ✖ 2026-06-09 17:39:50.115054: Invalid arguments or no SRS ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

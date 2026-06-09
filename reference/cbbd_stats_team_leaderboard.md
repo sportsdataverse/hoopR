@@ -56,7 +56,7 @@ Other CBD Stats Functions:
 ``` r
 # \donttest{
   try(cbbd_stats_team_leaderboard(season = 2024))
-#> ✖ 2026-06-09 16:51:52.018031: Invalid arguments or no team stats leaderboard available!
+#> ✖ 2026-06-09 17:39:51.776638: Invalid arguments or no team stats leaderboard available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

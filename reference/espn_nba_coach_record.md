@@ -152,7 +152,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach_record(coach_id = 52120, record_type = 2)
 #> ── ESPN NBA Coach Record ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 16:52:50 UTC
+#> ℹ Data updated: 2026-06-09 17:40:51 UTC
 #> # A tibble: 5 × 12
 #>   league coach_id record_type_id record_name    record_type    record_summary
 #>   <chr>  <chr>             <int> <chr>          <chr>          <chr>         

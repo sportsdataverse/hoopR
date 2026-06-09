@@ -172,6 +172,7 @@ of the `nbastatR` parity gap), all public HTML, no key required:
 - **[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)**
   — team salary-cap allocations, cap space, active players and average
   age from [Spotrac](https://www.spotrac.com).
+
 - **[`hoopshype_salaries()`](https://hoopR.sportsdataverse.org/reference/hoopshype_salaries.md)**
   — the **full league’s** player salaries (one row per player-season,
   current + future contract years) from
@@ -182,23 +183,40 @@ of the `nbastatR` parity gap), all public HTML, no key required:
   players), reviving the team-by-team approach `nbastatR` used before
   HoopsHype’s redesign.
 
-The same `nbastatR`-method audit found two sources that are now **dead**
-and cannot be revived: **RealGM** still returns HTTP 403 on `/info/`
-agent pages (not just `/nba/`), and **Basketball Insiders’** old
-salary-widget backend (`hw-files.com`) is offline. Both are documented
-in the source-reference notes. -
-**[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**
-— the current consensus mock draft (both rounds) from
-[NBADraft.net](https://www.nbadraft.net).
+- **[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**
+  — the current consensus mock draft (both rounds) from
+  [NBADraft.net](https://www.nbadraft.net).
 
-Two sources from the same family were evaluated but **not** wrapped:
-**RealGM** hard-blocks programmatic clients (HTTP 403 even with full
-browser headers), and **Basketball Insiders** only exposes a team-cap
-summary redundant with
+**Basketball Insiders** was evaluated but **not** wrapped: its old
+salary-widget backend (`hw-files.com`) is offline, and the surviving
+page only exposes a team-cap summary redundant with
 [`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md).
 For league-wide player salaries,
 [`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md)
 remains the most complete source.
+
+#### **RealGM (`realgm_*`) — Cloudflare-challenge bypass via headless Chrome**
+
+[RealGM](https://basketball.realgm.com) sits behind a Cloudflare
+JavaScript challenge (`cf-mitigated: challenge`) that returns **HTTP
+403** to every libcurl-based client (`httr2`, `httr`, `rvest`)
+regardless of headers — Cloudflare fingerprints the TLS handshake (JA3)
+*and* demands a JavaScript proof-of-work to mint the `cf_clearance`
+cookie. The `nbastatR`-method audit first recorded RealGM as **dead** on
+that basis. It is **not** dead — it is reachable with a real browser
+engine:
+
+- **[`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)**
+  — RealGM’s active NBA player index (one row per player: position,
+  listed height/weight, age, current team, years of service, pre-draft
+  team / international club, draft status and nationality — the
+  pre-draft / international detail RealGM is known for).
+
+These wrappers drive headless Chrome through the optional
+[`chromote`](https://rstudio.github.io/chromote/) package (Chrome solves
+the challenge natively in ~2 seconds). `chromote` + Google Chrome are
+therefore a **Suggests-level** requirement for the `realgm_*` family
+only; every other hoopR source still works with the standard HTTP stack.
 
 #### **ESPN endpoint naming convention (game\_*/player\_*)**
 

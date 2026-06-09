@@ -2488,6 +2488,19 @@ NBADraft.net
 
   **NBADraft.net Mock Draft**
 
+## RealGM
+
+### RealGM Functions
+
+Functions exported by hoopR to access basketball.realgm.com. RealGM sits
+behind a Cloudflare browser challenge, so these require the optional
+chromote package and Google Chrome.
+
+- [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)
+  :
+
+  **RealGM NBA Player Index**
+
 ## Helper Functions and Data
 
 ### Included data
