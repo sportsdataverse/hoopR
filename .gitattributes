@@ -1,2 +1,26 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Auto detect text files and normalize line endings to LF in the repo and the
+# working tree on every platform (prevents Windows CRLF churn / warnings).
+* text=auto eol=lf
+
+# Explicit LF for source and text files
+*.R         text eol=lf
+*.Rmd       text eol=lf
+*.Rd        text eol=lf
+*.md        text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.Rproj     text eol=lf
+DESCRIPTION text eol=lf
+NAMESPACE   text eol=lf
+LICENSE     text eol=lf
+
+# Binary assets (never normalize)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.rds  binary
+*.rda  binary
+*.RData binary
+*.qs   binary
