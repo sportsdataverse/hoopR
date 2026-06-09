@@ -60,7 +60,7 @@ Other KenPom Historical Functions:
 #> 9     9                  Texas  SEC  29.82       3    2006      117     1998
 #> 10   10            Connecticut   BE  29.64       1    2024      179     2018
 #> 11   11              Villanova   BE  28.52       1    2018       91     1998
-#> 12   12                Gonzaga  WCC  26.52       1    2022      149     1997
+#> 12   12                Gonzaga  P12  26.52       1    2022      149     1997
 #> 13   13              Tennessee  SEC  26.52       5    2025      158     1997
 #> 14   14                 Baylor  B12  26.39       2    2021      236     2005
 #> 15   15               Ohio St.  B10  26.24       1    2011      154     1998
@@ -114,7 +114,7 @@ Other KenPom Historical Functions:
 #> 63   63                Georgia  SEC  14.89      16    2003      219     2022
 #> 64   64                   Utah  B12  14.75       7    1998      302     2012
 #> 65   65         South Carolina  SEC  14.66      19    2006      221     2023
-#> 66   66          San Diego St.  MWC  14.39       6    2020      275     1999
+#> 66   66          San Diego St.  P12  14.39       6    2020      275     1999
 #> 67   67           Georgia Tech  ACC  14.38       8    2004      174     2012
 #> 68   68            Wake Forest  ACC  14.28       5    1997      259     2011
 #> 69   69              Minnesota  B10  14.25       3    1997      216     2023
@@ -132,26 +132,26 @@ Other KenPom Historical Functions:
 #> 81   81                    VCU  A10  10.58      18    2013      218     1998
 #> 82   82                 Dayton  A10  10.14       4    2020      172     2018
 #> 83   83                    SMU  ACC  10.12      11    2017      283     2008
-#> 84   84               Utah St.  MWC  10.11      21    2005      141     1999
+#> 84   84               Utah St.  P12  10.11      21    2005      141     1999
 #> 85   85            Wichita St. Amer   9.59       6    2014      189     2001
 #> 86   86                 Nevada  MWC   9.04      20    2004      270     2015
 #> 87   87             New Mexico  MWC   9.00      20    2012      294     2021
 #> 88   88                    UCF  B12   8.34      34    2019      300     1997
-#> 89   89              Boise St.  MWC   7.83      37    2023      214     2005
+#> 89   89              Boise St.  P12   7.83      37    2023      214     2005
 #> 90   90         Boston College  ACC   7.29      12    2001      261     2012
 #> 91   91                 Temple Amer   7.16       4    2000      181     2024
-#> 92   92           Colorado St.  MWC   7.06      22    2013      265     2008
+#> 92   92           Colorado St.  P12   7.06      22    2013      265     2008
 #> 93   93                 DePaul   BE   6.38      30    2000      304     2024
-#> 94   94         Washington St.  WCC   5.96      10    2008      216     2002
+#> 94   94         Washington St.  P12   5.96      10    2008      216     2002
 #> 95   95               Davidson  A10   5.89      11    2008      232     2001
 #> 96   96                    UAB Amer   5.75      46    2004      196     2017
 #> 97   97            Saint Louis  A10   5.51      14    2012      289     2015
 #> 98   98         Saint Joseph's  A10   5.21       3    2004      260     2020
 #> 99   99          Northern Iowa  MVC   4.57      18    2015      228     2001
 #> 100 100               Richmond  A10   4.53      38    2004      278     2007
-#> 101 101             Oregon St.  WCC   4.20      43    2021      264     2017
+#> 101 101             Oregon St.  P12   4.20      43    2021      264     2017
 #> 102 102           Rhode Island  A10   4.19      20    1997      255     2023
-#> 103 103             Fresno St.  MWC   4.11      30    2001      259     2025
+#> 103 103             Fresno St.  P12   4.11      30    2001      259     2025
 #> 104 104          San Francisco  WCC   4.07      23    2022      254     2008
 #> 105 105         New Mexico St. CUSA   3.92      53    2019      290     2024
 #> 106 106                  Tulsa Amer   3.76       7    2000      316     2023
@@ -169,7 +169,7 @@ Other KenPom Historical Functions:
 #> 118 118            Santa Clara  WCC   1.97      59    2025      277     2018
 #> 119 119                Bradley  MVC   1.77      25    2006      323     2016
 #> 120 120              Charlotte Amer   1.74      26    1998      308     2018
-#> 121 121         Louisiana Tech CUSA   1.57      37    2014      328     2008
+#> 121 121         Louisiana Tech   SB   1.57      37    2014      328     2008
 #> 122 122                  Akron  MAC   1.39      45    2007      255     2018
 #> 123 123            North Texas Amer   1.37      31    2023      320     2017
 #> 124 124           Illinois St.  MVC   1.37      42    1997      289     2023
@@ -179,7 +179,7 @@ Other KenPom Historical Functions:
 #> 128 128               Kent St.  MAC   0.96      14    2002      211     2018
 #> 129 129            Indiana St.  MVC   0.84      38    2024      266     2003
 #> 130 130             Valparaiso  MVC   0.62      42    2016      300     2024
-#> 131 131                   UTEP CUSA   0.46      41    2004      299     2019
+#> 131 131                   UTEP  MWC   0.46      41    2004      299     2019
 #> 132 132       Middle Tennessee CUSA   0.42      43    2017      306     2021
 #> 133 133           Old Dominion   SB   0.39      37    2010      287     2024
 #> 134 134              UC Irvine   BW   0.39      68    2025      303     1997
@@ -201,7 +201,7 @@ Other KenPom Historical Functions:
 #> 150 150                   Iona MAAC  -1.34      45    1998      323     2007
 #> 151 151               Marshall   SB  -1.35      78    2012      261     2015
 #> 152 152                Harvard  Ivy  -1.51      32    2014      307     2004
-#> 153 153                 Hawaii   BW  -1.51      51    2002      269     2017
+#> 153 153                 Hawaii  MWC  -1.51      51    2002      269     2017
 #> 154 154     East Tennessee St.   SC  -1.58      56    2020      319     2013
 #> 155 155                Hofstra  CAA  -1.62      63    2006      303     2013
 #> 156 156                Buffalo  MAC  -1.65      22    2019      348     2024
@@ -225,9 +225,9 @@ Other KenPom Historical Functions:
 #> 174 174            Chattanooga   SC  -2.77      67    2022      310     2013
 #> 175 175          East Carolina Amer  -3.02     109    1997      307     2018
 #> 176 176                 Drexel  CAA  -3.08      45    2012      257     2008
-#> 177 177            Utah Valley  WAC  -3.11      64    2023      326     2010
+#> 177 177            Utah Valley   BW  -3.11      64    2023      326     2010
 #> 178 178      Stephen F. Austin Slnd  -3.18      41    2016      311     2019
-#> 179 179           UT Arlington  WAC  -3.19      75    2017      274     1997
+#> 179 179           UT Arlington  UAC  -3.19      75    2017      274     1997
 #> 180 180               Miami OH  MAC  -3.19      29    1999      279     2017
 #> 181 181         Long Beach St.   BW  -3.30      36    2012      308     2025
 #> 182 182          South Alabama   SB  -3.35      49    1998      297     2015
@@ -247,7 +247,7 @@ Other KenPom Historical Functions:
 #> 196 196                Seattle  WCC  -4.27     107    2024      294     2016
 #> 197 197               Ball St.  MAC  -4.27      55    2002      296     2014
 #> 198 198           Arkansas St.   SB  -4.35      84    2025      295     2015
-#> 199 199            Cal Baptist  WAC  -4.40     155    2023      229     2021
+#> 199 199            Cal Baptist   BW  -4.40     155    2023      229     2021
 #> 200 200        Appalachian St.   SB  -4.50      76    2007      331     2014
 #> 201 201          Cleveland St. Horz  -4.54      66    2009      313     2020
 #> 202 202          Detroit Mercy Horz  -4.57      29    1998      351     2024
@@ -257,16 +257,16 @@ Other KenPom Historical Functions:
 #> 206 206                Cornell  Ivy  -4.91      46    2010      340     2014
 #> 207 207      Northern Kentucky Horz  -4.98      90    2018      311     2014
 #> 208 208                   Troy   SB  -5.01      88    2004      305     2021
-#> 209 209           Tarleton St.  WAC  -5.06     129    2024      288     2025
+#> 209 209           Tarleton St.  UAC  -5.06     129    2024      288     2025
 #> 210 210                   UTSA Amer  -5.07     149    2019      338     2016
 #> 211 211              Green Bay Horz  -5.10      71    2015      361     2023
 #> 212 212                Samford   SC  -5.15      81    2024      321     2020
 #> 213 213                 Mercer   SC  -5.40      87    2014      318     2006
 #> 214 214       Jacksonville St. CUSA  -5.41     108    2025      326     2008
-#> 215 215              Texas St.   SB  -5.55      93    2020      321     2006
+#> 215 215              Texas St.  P12  -5.55      93    2020      321     2006
 #> 216 216                  Siena MAAC  -5.66      59    2010      357     2024
 #> 217 217      Cal St. Fullerton   BW  -5.71      88    2008      351     2025
-#> 218 218      Abilene Christian  WAC  -5.73      84    2021      348     2014
+#> 218 218      Abilene Christian  UAC  -5.73      84    2021      348     2014
 #> 219 219             St. Thomas  Sum  -5.79     130    2025      305     2022
 #> 220 220               Bucknell   PL  -5.83      58    2013      336     2022
 #> 221 221                   CSUN   BW  -5.98      85    2001      332     2022
@@ -280,18 +280,18 @@ Other KenPom Historical Functions:
 #> 229 229       Central Michigan  MAC  -6.73      70    2003      334     2023
 #> 230 230         William & Mary  CAA  -6.76      87    2016      338     2022
 #> 231 231       Coastal Carolina   SB  -6.78     117    2011      329     2025
-#> 232 232               UC Davis   BW  -6.79     101    2015      328     2012
+#> 232 232               UC Davis  MWC  -6.79     101    2015      328     2012
 #> 233 233     Florida Gulf Coast ASun  -6.87     105    2013      310     2020
 #> 234 234                  Rider MAAC  -6.91     120    1998      316     2021
 #> 235 235            Stony Brook  CAA  -6.92      60    2013      333     2025
 #> 236 236           UC Riverside   BW  -6.93     106    2021      322     2019
-#> 237 237          Southern Utah  WAC  -6.95      97    2001      351     2014
+#> 237 237          Southern Utah BSky  -6.95      97    2001      351     2014
 #> 238 238    Cal St. Bakersfield   BW  -6.97      90    2017      320     2008
 #> 239 239            Montana St. BSky  -7.01     113    2023      320     2015
 #> 240 240                  Brown  Ivy  -7.02     134    2008      310     2012
-#> 241 241            Austin Peay ASun  -7.07     103    2004      324     2023
+#> 241 241            Austin Peay  UAC  -7.07     103    2004      324     2023
 #> 242 242      Purdue Fort Wayne Horz  -7.20     135    2016      292     2005
-#> 243 243                 Denver  Sum  -7.22      47    2013      338     2021
+#> 243 243                 Denver  WCC  -7.22      47    2013      338     2021
 #> 244 244           Portland St. BSky  -7.30     112    2008      304     2013
 #> 245 245              Fairfield MAAC  -7.31     104    2011      334     2025
 #> 246 246              Manhattan MAAC  -7.34      48    2004      337     2024
@@ -301,7 +301,7 @@ Other KenPom Historical Functions:
 #> 250 250                Colgate   PL  -7.51      89    2021      324     2012
 #> 251 251               Monmouth  CAA  -7.53      81    2017      348     2023
 #> 252 252                Radford BSth  -7.54     122    2019      331     2011
-#> 253 253       Eastern Kentucky ASun  -7.55     110    2013      299     1999
+#> 253 253       Eastern Kentucky  UAC  -7.55     110    2013      299     1999
 #> 254 254           Morehead St.  OVC  -7.61      89    2011      328     2025
 #> 255 255          Robert Morris Horz  -7.63     123    2012      327     2022
 #> 256 256                Niagara MAAC  -7.65      75    2009      322     2025
@@ -310,15 +310,15 @@ Other KenPom Historical Functions:
 #> 259 259       Western Carolina   SC  -7.91     110    2024      338     2025
 #> 260 260               Cal Poly   BW  -7.91     152    2013      339     2024
 #> 261 261             High Point BSth  -7.93      82    2025      341     2020
-#> 262 262            Little Rock  OVC  -7.94      56    2016      328     2022
-#> 263 263      Northern Illinois  MAC  -8.14     120    2006      343     2025
+#> 262 262            Little Rock  UAC  -7.94      56    2016      328     2022
+#> 263 263      Northern Illinois Horz  -8.14     120    2006      343     2025
 #> 264 264               Columbia  Ivy  -8.16     113    2016      351     2022
 #> 265 265                 Queens ASun  -8.26     203    2023      269     2024
 #> 266 266 Texas A&M Corpus Chris Slnd  -8.32      91    2007      344     2021
 #> 267 267                 Albany   AE  -8.33     121    2016      346     2023
 #> 268 268       Northern Arizona BSky  -8.37      71    1998      343     2016
 #> 269 269               Canisius MAAC  -8.41      89    1997      359     2025
-#> 270 270              Utah Tech  WAC  -8.86     146    2023      328     2021
+#> 270 270              Utah Tech BSky  -8.86     146    2023      328     2021
 #> 271 271                McNeese Slnd  -9.03      60    2025      340     2021
 #> 272 272                  Idaho BSky  -9.06     126    2018      350     2021
 #> 273 273             Quinnipiac MAAC  -9.06     149    2014      312     2001
@@ -335,7 +335,7 @@ Other KenPom Historical Functions:
 #> 284 284                Hampton  CAA  -9.89     116    2002      351     2023
 #> 285 285                 Marist MAAC  -9.93     108    2006      336     2010
 #> 286 286       Mount St. Mary's MAAC  -9.93     145    2009      325     2002
-#> 287 287          North Alabama ASun -10.07     113    2025      315     2022
+#> 287 287          North Alabama  UAC -10.07     113    2025      315     2022
 #> 288 288                  Lamar Slnd -10.08     108    2012      358     2023
 #> 289 289           UMass Lowell   AE -10.16     134    2023      322     2014
 #> 290 290             Holy Cross   PL -10.21      66    2005      349     2024
@@ -345,7 +345,7 @@ Other KenPom Historical Functions:
 #> 294 294                    VMI   SC -10.57     153    2021      354     2023
 #> 295 295                 Bryant   AE -10.58     149    2025      346     2016
 #> 296 296               Campbell  CAA -10.65     163    2010      327     2014
-#> 297 297         Tennessee Tech  OVC -10.65      72    2002      332     2024
+#> 297 297         Tennessee Tech   SC -10.65      72    2002      332     2024
 #> 298 298       Northwestern St. Slnd -10.68      93    2006      345     2018
 #> 299 299                   Navy   PL -10.68     127    2000      329     2012
 #> 300 300              Idaho St. BSky -10.81     158    2007      339     2022
@@ -361,7 +361,7 @@ Other KenPom Historical Functions:
 #> 310 310    Charleston Southern BSth -11.40     160    2019      347     2022
 #> 311 311              Lafayette   PL -11.58     140    2000      330     2017
 #> 312 312                 Wagner  NEC -11.83     102    2012      346     2025
-#> 313 313         Sacramento St. BSky -11.84     156    2006      348     2025
+#> 313 313         Sacramento St.   BW -11.84     156    2006      348     2025
 #> 314 314     Southeast Missouri  OVC -11.86      84    2000      352     2024
 #> 315 315 North Carolina Central MEAC -11.95      92    2014      343     2009
 #> 316 316               Longwood BSth -11.98     145    2022      347     2017
@@ -387,32 +387,31 @@ Other KenPom Historical Functions:
 #> 336 336    Fairleigh Dickinson  NEC -14.73      96    1998      345     2022
 #> 337 337                   SIUE  OVC -15.08     217    2025      342     2011
 #> 338 338            Jackson St. SWAC -15.19     217    1999      337     2018
-#> 339 339          Saint Francis  NEC -15.54     176    2020      354     2024
-#> 340 340       Central Arkansas ASun -15.56     213    2018      349     2025
-#> 341 341         East Texas A&M Slnd -15.57     307    2023      333     2024
-#> 342 342     South Carolina St. MEAC -15.64     149    1998      353     2021
-#> 343 343         Incarnate Word Slnd -16.09     224    2025      353     2022
-#> 344 344       Southern Indiana  OVC -16.21     285    2023      335     2025
-#> 345 345             Coppin St. MEAC -16.45     128    1997      361     2025
-#> 346 346                 Howard MEAC -16.59     218    2023      350     2020
-#> 347 347            Alabama St. SWAC -16.65     200    2009      354     2021
-#> 348 348      Houston Christian Slnd -16.70     221    2017      355     2024
-#> 349 349           Delaware St. MEAC -17.09     200    2007      356     2023
-#> 350 350       Prairie View A&M SWAC -17.27     209    2019      357     2025
-#> 351 351        Bethune Cookman SWAC -17.61     230    2000      349     2023
-#> 352 352           West Georgia ASun -17.81     350    2025      350     2025
-#> 353 353             Alcorn St. SWAC -18.00     155    1999      349     2019
-#> 354 354               Le Moyne  NEC -18.53     302    2024      354     2025
-#> 355 355          Grambling St. SWAC -18.67     182    2023      351     2015
-#> 356 356            Florida A&M SWAC -18.76     254    2007      359     2023
-#> 357 357             Lindenwood  OVC -19.25     327    2025      356     2024
-#> 358 358            Chicago St.  NEC -19.34     203    2007      362     2025
-#> 359 359             Mercyhurst  NEC -19.68     342    2025      342     2025
-#> 360 360            Alabama A&M SWAC -19.70     247    2000      360     2025
-#> 361 361              Stonehill  NEC -19.97     323    2025      359     2024
-#> 362 362 Maryland Eastern Shore MEAC -20.25     207    2015      358     2025
-#> 363 363    Arkansas Pine Bluff SWAC -20.90     231    2010      363     2025
-#> 364 364 Mississippi Valley St. SWAC -21.03     168    2004      364     2025
+#> 339 340       Central Arkansas  UAC -15.56     213    2018      349     2025
+#> 340 341         East Texas A&M Slnd -15.57     307    2023      333     2024
+#> 341 342     South Carolina St. MEAC -15.64     149    1998      353     2021
+#> 342 343         Incarnate Word Slnd -16.09     224    2025      353     2022
+#> 343 344       Southern Indiana  OVC -16.21     285    2023      335     2025
+#> 344 345             Coppin St. MEAC -16.45     128    1997      361     2025
+#> 345 346                 Howard MEAC -16.59     218    2023      350     2020
+#> 346 347            Alabama St. SWAC -16.65     200    2009      354     2021
+#> 347 348      Houston Christian Slnd -16.70     221    2017      355     2024
+#> 348 349           Delaware St. MEAC -17.09     200    2007      356     2023
+#> 349 350       Prairie View A&M SWAC -17.27     209    2019      357     2025
+#> 350 351        Bethune Cookman SWAC -17.61     230    2000      349     2023
+#> 351 352           West Georgia  UAC -17.81     350    2025      350     2025
+#> 352 353             Alcorn St. SWAC -18.00     155    1999      349     2019
+#> 353 354               Le Moyne  NEC -18.53     302    2024      354     2025
+#> 354 355          Grambling St. SWAC -18.67     182    2023      351     2015
+#> 355 356            Florida A&M SWAC -18.76     254    2007      359     2023
+#> 356 357             Lindenwood  OVC -19.25     327    2025      356     2024
+#> 357 358            Chicago St.  NEC -19.34     203    2007      362     2025
+#> 358 359             Mercyhurst  NEC -19.68     342    2025      342     2025
+#> 359 360            Alabama A&M SWAC -19.70     247    2000      360     2025
+#> 360 361              Stonehill  NEC -19.97     323    2025      359     2024
+#> 361 362 Maryland Eastern Shore MEAC -20.25     207    2015      358     2025
+#> 362 363    Arkansas Pine Bluff SWAC -20.90     231    2010      363     2025
+#> 363 364 Mississippi Valley St. SWAC -21.03     168    2004      364     2025
 #>     kp_median top10 top25 top50 ch f4 s16 r1 chg
 #> 1           5    24    28    29  3  7  20 27   0
 #> 2          10    16    23    27  2  6  16 25   0
@@ -752,31 +751,30 @@ Other KenPom Historical Functions:
 #> 336       280     0     0     0  0  0   0  4  -1
 #> 337       307     0     0     0  0  0   0  1   5
 #> 338       281     0     0     0  0  0   0  3  -1
-#> 339       299     0     0     0  0  0   0  0   2
-#> 340       319     0     0     0  0  0   0  0  -2
-#> 341       326     0     0     0  0  0   0  0   4
-#> 342       286     0     0     0  0  0   0  3   2
-#> 343       341     0     0     0  0  0   0  0   9
-#> 344       328     0     0     0  0  0   0  0  -4
-#> 345       298     0     0     0  0  0   0  1  -2
-#> 346       315     0     0     0  0  0   0  1   0
-#> 347       294     0     0     0  0  0   0  3   1
-#> 348       326     0     0     0  0  0   0  0   5
-#> 349       298     0     0     0  0  0   0  1   0
-#> 350       313     0     0     0  0  0   0  1  -3
-#> 351       306     0     0     0  0  0   0  0  -1
-#> 352       350     0     0     0  0  0   0  0  NA
-#> 353       323     0     0     0  0  0   0  1  -2
-#> 354       328     0     0     0  0  0   0  0 -15
-#> 355       309     0     0     0  0  0   0  1  -1
-#> 356       314     0     0     0  0  0   0  2  -1
-#> 357       343     0     0     0  0  0   0  0   4
-#> 358       308     0     0     0  0  0   0  0  -2
-#> 359       342     0     0     0  0  0   0  0  NA
-#> 360       323     0     0     0  0  0   0  0  -3
-#> 361       331     0     0     0  0  0   0  0   1
-#> 362       325     0     0     0  0  0   0  0  -4
-#> 363       323     0     0     0  0  0   0  1  -3
-#> 364       325     0     0     0  0  0   0  1  -5
+#> 339       319     0     0     0  0  0   0  0  -2
+#> 340       326     0     0     0  0  0   0  0   4
+#> 341       286     0     0     0  0  0   0  3   2
+#> 342       341     0     0     0  0  0   0  0   9
+#> 343       328     0     0     0  0  0   0  0  -4
+#> 344       298     0     0     0  0  0   0  1  -2
+#> 345       315     0     0     0  0  0   0  1   0
+#> 346       294     0     0     0  0  0   0  3   1
+#> 347       326     0     0     0  0  0   0  0   5
+#> 348       298     0     0     0  0  0   0  1   0
+#> 349       313     0     0     0  0  0   0  1  -3
+#> 350       306     0     0     0  0  0   0  0  -1
+#> 351       350     0     0     0  0  0   0  0  NA
+#> 352       323     0     0     0  0  0   0  1  -2
+#> 353       328     0     0     0  0  0   0  0 -15
+#> 354       309     0     0     0  0  0   0  1  -1
+#> 355       314     0     0     0  0  0   0  2  -1
+#> 356       343     0     0     0  0  0   0  0   4
+#> 357       308     0     0     0  0  0   0  0  -2
+#> 358       342     0     0     0  0  0   0  0  NA
+#> 359       323     0     0     0  0  0   0  0  -3
+#> 360       331     0     0     0  0  0   0  0   1
+#> 361       325     0     0     0  0  0   0  0  -4
+#> 362       323     0     0     0  0  0   0  1  -3
+#> 363       325     0     0     0  0  0   0  1  -5
 # }
 ```

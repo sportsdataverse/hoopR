@@ -171,14 +171,14 @@ library(hoopR)
 mbb_news <- espn_mbb_news(limit = 10)
 head(mbb_news[, c("headline", "published")])
 #> # A tibble: 6 × 2
-#>   headline                                                          published   
-#>   <chr>                                                             <chr>       
-#> 1 Nick Saban asks Congress to 'bring order' via college sports bill 2026-06-03T…
-#> 2 Girls' basketball recruiting: The 2027, 2028, 2029 race for No. 1 2026-06-03T…
-#> 3 SEC, Big Ten withhold support for landmark college sports bill    2026-06-03T…
-#> 4 Alabama's Holloway enters program to dismiss felony charges       2026-06-03T…
-#> 5 Men's NCAA basketball 2026-27 Way-Too-Early Top 25 rankings       2026-06-02T…
-#> 6 Best of Jordan Clarkson in the NBA Playoffs                       2026-06-02T…
+#>   headline                                                             published
+#>   <chr>                                                                <chr>    
+#> 1 2026 NBA draft: Latest mock drafts and team predictions              2026-06-…
+#> 2 Stacey King, 3-time NBA champion with Bulls, dies at 59              2026-06-…
+#> 3 SEC's Sankey: Idea of super league 'not consistent with the truth'   2026-06-…
+#> 4 NCAA panel tweaks D-I eligibility plan, could vote on it in late Ju… 2026-06-…
+#> 5 Ex-Alabama State players were paid to fix 2024 game, NCAA says       2026-06-…
+#> 6 'Nova Knicks' looking to join exclusive list of NCAA, NBA title-win… 2026-06-…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
@@ -885,11 +885,11 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```

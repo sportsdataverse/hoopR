@@ -139,7 +139,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_positions()
 #> ── ESPN NBA Positions Index ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-04 12:20:56 UTC
+#> ℹ Data updated: 2026-06-09 07:54:03 UTC
 #> # A tibble: 11 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 
