@@ -40,25 +40,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_individual_games())
-#> ── NBA best individual games from basketball.realgm.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:24 UTC
-#> # A tibble: 100 × 20
-#>    number player     date  team  min     pts   fgm   fga  x3pm  x3pa   ftm   fta
-#>     <dbl> <chr>      <chr> <chr> <chr> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1      1 Bam Adeba… Mar … MIA   41:54    83    20    43     7    22    36    43
-#>  2      2 Luka Donc… Mar … LAL   37:36    60    18    30     9    17    15    19
-#>  3      3 Nikola Jo… Dec … DEN   42:36    56    15    21     4     6    22    23
-#>  4      4 Anthony E… Jan … MIN   40:06    55    19    33     9    16     8    10
-#>  5      5 Kawhi Leo… Dec … LAC   38:38    55    17    26     5    10    16    17
-#>  6      6 James Har… Nov … LAC   35:13    55    17    26    10    16    11    14
-#>  7      7 Nikola Jo… Nov … DEN   33:34    55    18    23     5     6    14    16
-#>  8      8 Shai Gilg… Oct … OKC   45:21    55    15    31     2     7    23    26
-#>  9      9 Tyrese Ma… Nov … PHL   46:38    54    18    30     6    15    12    14
-#> 10     10 Jamal Mur… Mar … DEN   41:16    53    19    28     9    14     6     6
-#> # ℹ 90 more rows
-#> # ℹ 8 more variables: orb <dbl>, drb <dbl>, reb <dbl>, ast <dbl>, stl <dbl>,
-#> #   blk <dbl>, tov <dbl>, pf <dbl>
-# }
+} # }
 ```

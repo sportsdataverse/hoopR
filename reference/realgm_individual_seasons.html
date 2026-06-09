@@ -129,28 +129,9 @@ Requires a headless browser (see realgm_players())."><meta property="og:image" c
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">realgm_individual_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA best individual seasons from basketball.realgm.com ─────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 20:08:27 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 100 × 24</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    number player     season team     gp   min   pts   fgm   fga fg_percent x3pm </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>      1 Wilt Cham…   <span style="text-decoration: underline;">1</span>962 PHI      80  48.5  50.4  20    39.5      0.506 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      2 Wilt Cham…   <span style="text-decoration: underline;">1</span>963 GOS      80  47.6  44.8  18.3  34.6      0.528 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      3 Wilt Cham…   <span style="text-decoration: underline;">1</span>961 PHI      79  47.8  38.4  15.8  31.1      0.509 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      4 Elgin Bay…   <span style="text-decoration: underline;">1</span>962 LAL      48  44.4  38.3  14.2  33.1      0.428 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>      5 Wilt Cham…   <span style="text-decoration: underline;">1</span>960 PHI      72  46.4  37.6  14.8  32.1      0.461 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      6 Michael J…   <span style="text-decoration: underline;">1</span>987 CHI      82  40    37.1  13.4  27.8      0.482 0.1  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      7 Wilt Cham…   <span style="text-decoration: underline;">1</span>964 GOS      80  46.1  36.9  15.1  28.7      0.524 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      8 James Har…   <span style="text-decoration: underline;">2</span>019 HOU      78  36.8  36.1  10.8  24.5      0.442 4.8  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      9 Rick Barry   <span style="text-decoration: underline;">1</span>967 GOS      78  40.7  35.6  13    28.7      0.451 -    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     10 Kobe Brya…   <span style="text-decoration: underline;">2</span>006 LAL      80  41    35.4  12.2  27.2      0.45  2.3  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 90 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13 more variables: x3pa &lt;chr&gt;, x3p_percent &lt;chr&gt;, ftm &lt;dbl&gt;, fta &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ft_percent &lt;dbl&gt;, orb &lt;chr&gt;, drb &lt;chr&gt;, reb &lt;dbl&gt;, ast &lt;dbl&gt;, stl &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   blk &lt;chr&gt;, tov &lt;chr&gt;, pf &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

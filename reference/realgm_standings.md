@@ -62,25 +62,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_standings())
-#> ── NBA standings from basketball.realgm.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:42 UTC
-#> # A tibble: 30 × 18
-#>    number team           w     l   pct    gb l10   strk    ppg  oppg  diff home 
-#>     <dbl> <chr>      <dbl> <dbl> <dbl> <dbl> <chr> <chr> <dbl> <dbl> <dbl> <chr>
-#>  1      1 Detroit P…    60    22 0.732     0 8-2   W 3    118.  110.   8.2 32-9 
-#>  2      2 Boston Ce…    56    26 0.683     4 8-2   W 2    115.  107.   7.7 30-11
-#>  3      3 New York …    53    29 0.646     7 6-4   L 1    116.  110.   6.4 30-10
-#>  4      4 Cleveland…    52    30 0.634     8 7-3   W 1    120.  115.   4.1 27-14
-#>  5      5 Atlanta H…    46    36 0.561    14 6-4   L 1    118.  116    2.5 24-17
-#>  6      6 Toronto R…    46    36 0.561    14 6-4   W 1    115.  112.   2.8 24-17
-#>  7      7 Philadelp…    45    37 0.549    15 6-4   W 2    116.  116.  -0.2 23-18
-#>  8      8 Orlando M…    45    37 0.549    15 7-3   L 1    116.  115.   0.6 26-16
-#>  9      9 Charlotte…    44    38 0.537    16 6-4   W 1    116   111.   4.8 21-20
-#> 10     10 Miami Heat    43    39 0.524    17 5-5   W 2    121.  118.   2.4 26-15
-#> # ℹ 20 more rows
-#> # ℹ 6 more variables: away <chr>, div <chr>, conf <chr>, rem <dbl>, rowp <dbl>,
-#> #   conference <chr>
-# }
+} # }
 ```

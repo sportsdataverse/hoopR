@@ -44,24 +44,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_early_entry())
-#> ── NBA draft early entrants from basketball.realgm.com ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:15 UTC
-#> # A tibble: 79 × 11
-#>    player          pos   ht       wt birth_date college class draft_status   yos
-#>    <chr>           <chr> <chr> <dbl> <chr>      <chr>   <chr> <chr>        <dbl>
-#>  1 Matthew Able    SG    6-5     190 Jul 12, 2… NC Sta… Fr    N/A              0
-#>  2 Amari Allen     PF    6-8     180 Jan 26, 2… Alabama Fr    N/A              0
-#>  3 Alijah Arenas   SF    6-6     195 Mar 16, 2… USC     Fr    N/A              0
-#>  4 Flory Bidunga   PF    6-10    235 May 20, 2… Louisv… So    N/A              0
-#>  5 Finley Bizjack  SG    6-4     190 N/A        West V… Jr    N/A              0
-#>  6 John Blackwell  SG    6-4     203 Dec 25, 2… Wiscon… Jr    N/A              0
-#>  7 Shane Blakeney  SG    6-5     200 N/A        Drexel  Jr    N/A              0
-#>  8 Anton Bonke     C     7-2     270 Aug 4, 20… Michig… Jr    N/A              0
-#>  9 Rowan Brumbaugh SG    6-4     190 Mar 7, 20… Tulane  Jr    N/A              0
-#> 10 Elliot Cadeau   PG    6-1     180 Sep 4, 20… Michig… Jr    N/A              0
-#> # ℹ 69 more rows
-#> # ℹ 2 more variables: nationality <chr>, pre_draft_team <chr>
-# }
+} # }
 ```

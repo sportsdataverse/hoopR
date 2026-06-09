@@ -59,7 +59,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_pointdist(min_year = 2020, max_year = 2021))
-#> ✖ 2026-06-09 20:03:14.992339: Invalid arguments or no point distribution data for 2020 - 2021 available!
+#> ✖ 2026-06-09 20:40:05.95688: Invalid arguments or no point distribution data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf Off.FT.Pct Off.FT.Pct.Rk Off.FG_2.Pct

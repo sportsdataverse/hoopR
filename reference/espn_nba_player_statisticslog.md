@@ -159,7 +159,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_statisticslog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Statisticslog from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:59:56 UTC
+#> ℹ Data updated: 2026-06-09 20:36:58 UTC
 #> # A tibble: 1 × 2
 #>   season$`$ref`                                                       statistics
 #>   <chr>                                                               <list>    

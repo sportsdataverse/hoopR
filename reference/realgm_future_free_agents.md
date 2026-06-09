@@ -60,24 +60,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_future_free_agents())
-#> ── Future NBA free agents from basketball.realgm.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:18 UTC
-#> # A tibble: 784 × 13
-#>    player     pos   team  season   age   yos veteran_fa_status    gp   pts   reb
-#>    <chr>      <chr> <chr> <chr>  <dbl> <dbl> <chr>             <dbl> <dbl> <dbl>
-#>  1 Precious … SF    SAC   2026-…    26     6 Non-Bird             73 10.1   6.74
-#>  2 Steven Ad… C     HOU   2028-…    34    15 Bird                 32  5.84  8.62
-#>  3 Bam Adeba… C     MIA   2028-…    30    11 Bird                 73 20.1  10.0 
-#>  4 Bam Adeba… C     MIA   2029-…    31    12 Bird                 73 20.1  10.0 
-#>  5 Ochai Agb… SF    BRK   2026-…    26     4 Bird                 62  5.06  2.27
-#>  6 Santi Ald… C     MEM   2028-…    27     7 Bird                 43 14     6.67
-#>  7 Santi Ald… C     MEM   2027-…    26     6 Bird                 43 14     6.67
-#>  8 Trey Alex… SG    NOP   2026-…    23     2 Non-Bird              9  5.22  1.22
-#>  9 Nickeil A… SG    ATL   2028-…    29     9 Bird                 78 20.8   3.44
-#> 10 Nickeil A… SG    ATL   2029-…    30    10 Bird                 78 20.8   3.44
-#> # ℹ 774 more rows
-#> # ℹ 3 more variables: ast <dbl>, per <dbl>, agent <chr>
-# }
+} # }
 ```

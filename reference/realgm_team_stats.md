@@ -63,26 +63,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_team_stats(season = 2025, stat_type = "Averages"))
-#> ── NBA team stats from basketball.realgm.com ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:45 UTC
-#> # A tibble: 30 × 25
-#>    number team     gp   mpg   ppg   fgm   fga fg_percent  x3pm  x3pa x3p_percent
-#>     <dbl> <chr> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl> <dbl> <dbl>       <dbl>
-#>  1      1 Clev…    82  48.2  122.  44.5  90.8      0.491  15.9  41.5       0.383
-#>  2      2 Memp…    82  48    122.  44.8  93.3      0.479  13.9  37.9       0.367
-#>  3      3 Denv…    82  48.4  121.  45.4  89.8      0.506  12    31.9       0.376
-#>  4      4 Okla…    82  48    120.  44.6  92.7      0.482  14.5  38.8       0.374
-#>  5      5 Atla…    82  48.2  118.  43.4  91.8      0.472  13.5  37.7       0.358
-#>  6      6 Chic…    82  48.2  118.  43.2  92        0.47   15.4  42         0.367
-#>  7      7 Indi…    82  48.4  117.  43.6  89.3      0.488  13.2  35.8       0.368
-#>  8      8 Bost…    82  48.3  116.  41.6  90        0.462  17.8  48.2       0.368
-#>  9      9 New …    82  48.5  116.  43.3  89.2      0.486  12.6  34.1       0.369
-#> 10     10 Sacr…    82  48.5  116.  43    90.1      0.478  12.6  35.2       0.357
-#> # ℹ 20 more rows
-#> # ℹ 14 more variables: ftm <dbl>, fta <dbl>, ft_percent <dbl>, orb <dbl>,
-#> #   drb <dbl>, rpg <dbl>, apg <dbl>, spg <dbl>, bpg <dbl>, tov <dbl>, pf <dbl>,
-#> #   season <dbl>, stat_type <chr>, season_type <chr>
-# }
+} # }
 ```

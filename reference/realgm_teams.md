@@ -46,23 +46,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_teams())
-#> ── NBA teams index from basketball.realgm.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:47 UTC
-#> # A tibble: 30 × 3
-#>    team                division conference
-#>    <chr>               <chr>    <chr>     
-#>  1 Boston Celtics      Atlantic Eastern   
-#>  2 Brooklyn Nets       Atlantic Eastern   
-#>  3 New York Knicks     Atlantic Eastern   
-#>  4 Philadelphia Sixers Atlantic Eastern   
-#>  5 Toronto Raptors     Atlantic Eastern   
-#>  6 Chicago Bulls       Central  Eastern   
-#>  7 Cleveland Cavaliers Central  Eastern   
-#>  8 Detroit Pistons     Central  Eastern   
-#>  9 Indiana Pacers      Central  Eastern   
-#> 10 Milwaukee Bucks     Central  Eastern   
-#> # ℹ 20 more rows
-# }
+} # }
 ```

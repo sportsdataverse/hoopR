@@ -207,7 +207,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:00:10 UTC
+#> ℹ Data updated: 2026-06-09 20:37:12 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -217,7 +217,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:00:10 UTC
+#> ℹ Data updated: 2026-06-09 20:37:12 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -227,7 +227,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:00:10 UTC
+#> ℹ Data updated: 2026-06-09 20:37:12 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                    short_name
 #>   <chr>     <chr>             <chr>                                   <chr>     
@@ -235,7 +235,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:00:10 UTC
+#> ℹ Data updated: 2026-06-09 20:37:12 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  

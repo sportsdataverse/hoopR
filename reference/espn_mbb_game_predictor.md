@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_predictor(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Predictor ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 19:58:56 UTC
+#> ℹ Data updated: 2026-06-09 20:35:54 UTC
 #> # A tibble: 16 × 13
 #>    league        event_id name  short_name last_modified side  team_id stat_name
 #>    <chr>         <chr>    <chr> <chr>      <chr>         <chr> <chr>   <chr>    

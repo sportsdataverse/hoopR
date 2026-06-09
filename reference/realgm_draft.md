@@ -68,25 +68,7 @@ Other RealGM Functions:
 ## Examples
 
 ``` r
-# \donttest{
+if (FALSE) { # \dontrun{
   try(realgm_draft(year = 2020))
-#> ── NBA past draft from basketball.realgm.com ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 20:08:10 UTC
-#> # A tibble: 139 × 14
-#>     pick player  team  draft_trades pos   ht       wt   age   yos pre_draft_team
-#>    <dbl> <chr>   <chr> <chr>        <chr> <chr> <dbl> <dbl> <dbl> <chr>         
-#>  1     1 Anthon… MIN   ""           SF    6-4     225    19     5 Georgia       
-#>  2     2 James … GOS   ""           C     6-11    240    19     5 Memphis       
-#>  3     3 LaMelo… CHA   ""           G     6-7     180    19     5 Illawarra (Au…
-#>  4     4 Patric… CHI   ""           G     6-6     235    19     5 Florida State 
-#>  5     5 Isaac … CLE   ""           SG    6-4     225    19     5 Auburn        
-#>  6     6 Onyeka… ATL   ""           PF    6-10    240    19     5 USC           
-#>  7     7 Killia… DET   ""           G     6-4     195    19     5 Ratiopharm Ul…
-#>  8     8 Obi To… NYK   ""           F     6-9     220    22     5 Dayton        
-#>  9     9 Deni A… WAS   ""           SG    6-8     228    19     5 Maccabi Tel A…
-#> 10    10 Jalen … PHX   ""           C     6-8     244    20     5 Maryland      
-#> # ℹ 129 more rows
-#> # ℹ 4 more variables: class <chr>, nationality <chr>, round <dbl>,
-#> #   draft_year <dbl>
-# }
+} # }
 ```
