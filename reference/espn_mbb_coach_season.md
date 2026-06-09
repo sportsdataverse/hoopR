@@ -156,7 +156,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_season(coach_id = 32116, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach-in-Season Detail ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 13:06:00 UTC
+#> ℹ Data updated: 2026-06-09 13:28:07 UTC
 #> # A tibble: 1 × 13
 #>   league     season coach_id uid   first_name last_name date_of_birth birth_city
 #>   <chr>       <int> <chr>    <chr> <chr>      <chr>     <chr>         <chr>     

@@ -2431,6 +2431,11 @@ Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
 
 Functions exported by hoopR to scrape basketball-reference.com
 
+- [`bref_awards()`](https://hoopR.sportsdataverse.org/reference/bref_awards.md)
+  :
+
+  **Basketball-Reference Awards Voting**
+
 - [`bref_draft()`](https://hoopR.sportsdataverse.org/reference/bref_draft.md)
   :
 
@@ -2446,10 +2451,37 @@ Functions exported by hoopR to scrape basketball-reference.com
 
   **Basketball-Reference Standings**
 
+- [`bref_team_roster()`](https://hoopR.sportsdataverse.org/reference/bref_team_roster.md)
+  :
+
+  **Basketball-Reference Team Roster**
+
 - [`bref_teams_stats()`](https://hoopR.sportsdataverse.org/reference/bref_teams_stats.md)
   :
 
   **Basketball-Reference Team Season Stats**
+
+## Salary & Mock Draft Sources
+
+### Salary & Draft Functions
+
+Functions exported by hoopR to scrape Spotrac, HoopsHype, and
+NBADraft.net
+
+- [`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)
+  :
+
+  **Spotrac NBA Team Salary Cap**
+
+- [`hoopshype_salaries()`](https://hoopR.sportsdataverse.org/reference/hoopshype_salaries.md)
+  :
+
+  **HoopsHype Player Salaries**
+
+- [`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)
+  :
+
+  **NBADraft.net Mock Draft**
 
 ## Helper Functions and Data
 

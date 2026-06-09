@@ -159,7 +159,22 @@
 <strong><code><a href="../reference/bref_standings.html">bref_standings()</a></code></strong> — end-of-season conference standings with SRS and a playoff flag.</li>
 <li>
 <strong><code><a href="../reference/bref_draft.html">bref_draft()</a></code></strong> — draft results paired with each pick’s career totals and advanced metrics.</li>
+<li>
+<strong><code><a href="../reference/bref_awards.html">bref_awards()</a></code></strong> — end-of-season award voting (MVP, ROY, DPOY, SMOY, MIP, Clutch POY, COY) in one tidy tibble.</li>
+<li>
+<strong><code><a href="../reference/bref_team_roster.html">bref_team_roster()</a></code></strong> — a team’s season roster.</li>
 </ul><p>Two Sports-Reference quirks are handled centrally: secondary tables hidden in HTML comments are un-commented, and columns are read from each cell’s <code>data-stat</code> attribute (so the multi-row “over-headers” don’t mangle column names). Routes through hoopR’s shared <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> with a browser User-Agent. <strong>Basketball-Reference rate-limits aggressive scraping (~20 requests/minute)</strong> — space repeated calls with <code><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep()</a></code>. Tests are gated behind <code>BREF_TESTS=1</code>. No new dependencies (<code>rvest</code> already in <code>Imports</code>).</p>
+</div>
+<div class="section level4">
+<h4 id="salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"><strong>Salary &amp; mock-draft sources (Spotrac / HoopsHype / NBADraft.net)</strong><a class="anchor" aria-label="anchor" href="#salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"></a></h4>
+<p>New wrappers for third-party NBA salary and mock-draft sites (also part of the <code>nbastatR</code> parity gap), all public HTML, no key required:</p>
+<ul><li>
+<strong><code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code></strong> — team salary-cap allocations, cap space, active players and average age from <a href="https://www.spotrac.com" class="external-link">Spotrac</a>.</li>
+<li>
+<strong><code><a href="../reference/hoopshype_salaries.html">hoopshype_salaries()</a></code></strong> — top player salaries (current + projected future seasons) from <a href="https://hoopshype.com" class="external-link">HoopsHype</a>. HoopsHype paginates the full list client-side, so this returns its highest-salary rows.</li>
+<li>
+<strong><code><a href="../reference/nbadraft_mock_draft.html">nbadraft_mock_draft()</a></code></strong> — the current consensus mock draft (both rounds) from <a href="https://www.nbadraft.net" class="external-link">NBADraft.net</a>.</li>
+</ul><p>Two sources from the same family were evaluated but <strong>not</strong> wrapped: <strong>RealGM</strong> hard-blocks programmatic clients (HTTP 403 even with full browser headers), and <strong>Basketball Insiders</strong> only exposes a team-cap summary redundant with <code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code>. For league-wide player salaries, <code><a href="../reference/espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code> remains the most complete source.</p>
 </div>
 <div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
