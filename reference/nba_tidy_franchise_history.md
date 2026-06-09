@@ -36,10 +36,10 @@ Other NBA Combined Datasets:
 ``` r
 # \donttest{
   try(nba_tidy_franchise_history())
-#> ✖ 2026-06-09 22:13:01.862249: Invalid arguments or no franchise history data available for {team_id}!
+#> ✖ 2026-06-09 22:59:29.582305: Invalid arguments or no franchise history data available for {team_id}!
 #> ✖ Args: league_id = "00"
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-06-09 22:13:01.874312: No NBA franchise history available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-06-09 22:59:29.594258: No NBA franchise history available!
 #> ✖ Error: No franchise history returned
 #> data frame with 0 columns and 0 rows
 # }

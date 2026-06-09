@@ -140,7 +140,7 @@ Saiem Gilani
   espn_mbb_player_stats_v3(athlete_id = "4593919", season = 2025)
 #> $`Season Averages`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -150,7 +150,7 @@ Saiem Gilani
 #> 
 #> $`Season Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -160,7 +160,7 @@ Saiem Gilani
 #> 
 #> $`Season Misc Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -170,32 +170,32 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:23 UTC
+#> ℹ Data updated: 2026-06-09 22:49:00 UTC
 #> # A tibble: 0 × 0
 #> 
 # }

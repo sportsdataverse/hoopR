@@ -89,6 +89,15 @@
 <h2 class="pkg-version" data-toc-text="3.1.0" id="hoopr-310"><strong>hoopR 3.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-310"></a></h2>
 <p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Headline change is a <strong>58-wrapper ESPN endpoint expansion</strong> that brings hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team detail, event detail, league catalog, news, calendar, injuries, plus draft / freeagents / transactions for the NBA. Also includes bug fixes for endpoint behavior that drifted after CRAN submission, the package-wide <code>@return</code> documentation upgrade, and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
 <div class="section level4">
+<h4 id="sports-reference-mens-college-basketball-srcbb_-3-1-0"><strong>Sports-Reference men’s college basketball (<code>srcbb_*</code>)</strong><a class="anchor" aria-label="anchor" href="#sports-reference-mens-college-basketball-srcbb_-3-1-0"></a></h4>
+<p>New <code>srcbb_*()</code> family scraping men’s college basketball from <a href="https://www.sports-reference.com/cbb/" class="external-link">Sports-Reference</a> — a deep historical source hoopR did not previously cover (complementing KenPom, Bart Torvik and CollegeBasketballData). It is the college arm of Sports Reference, so it reuses hoopR’s <code>bref_*</code> parser (comment-hidden tables; <code>data-stat</code>-keyed columns) and needs no account or API key:</p>
+<ul><li>
+<strong><code>srcbb_school_stats(season, table)</code></strong> — season school (team) statistics; <code>table = "basic"</code> / <code>"advanced"</code> / <code>"opponent"</code>.</li>
+<li>
+<strong><code>srcbb_rankings(season)</code></strong> — the season’s AP poll, week by week.</li>
+</ul><p>Both echo the requested <code>season</code> (and <code><a href="../reference/srcbb_school_stats.html">srcbb_school_stats()</a></code> the <code>table</code>) as columns. Sports-Reference rate-limits aggressive scraping (~20 requests/minute); examples are <code>\donttest{}</code> and tests are network-gated.</p>
+</div>
+<div class="section level4">
 <h4 id="collegebasketballdata-api-cbbd_-3-1-0"><strong>CollegeBasketballData API (<code>cbbd_*</code>)</strong><a class="anchor" aria-label="anchor" href="#collegebasketballdata-api-cbbd_-3-1-0"></a></h4>
 <p>New <code>cbbd_*()</code> function family wrapping the <a href="https://api.collegebasketballdata.com" class="external-link">CollegeBasketballData API</a> (the men’s college basketball sibling of CollegeFootballData, which <code>cfbfastR</code> wraps with <code>cfbd_*</code>). 38 endpoint wrappers cover the full v1 surface across 13 categories:</p>
 <ul><li>

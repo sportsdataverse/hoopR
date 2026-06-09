@@ -49,7 +49,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(spotrac_team_cap(season = 2024))
 #> ── Team salary cap from spotrac.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:14:12 UTC
+#> ℹ Data updated: 2026-06-09 23:00:40 UTC
 #> # A tibble: 32 × 11
 #>     rank team  record players_active avg_age_team total_cap_allocations
 #>    <int> <chr> <chr>           <dbl> <chr>                        <dbl>

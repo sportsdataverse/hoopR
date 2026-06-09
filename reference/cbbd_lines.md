@@ -70,7 +70,7 @@ Other CBD Lines Functions:
 ``` r
 # \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
-#> ✖ 2026-06-09 22:01:42.560791: Invalid arguments or no betting lines available!
+#> ✖ 2026-06-09 22:48:21.114423: Invalid arguments or no betting lines available!
 #> ✖ Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

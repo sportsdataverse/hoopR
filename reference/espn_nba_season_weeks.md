@@ -159,7 +159,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_weeks(season = 2025)
 #> ── ESPN NBA Season Weeks Index ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:03:25 UTC
+#> ℹ Data updated: 2026-06-09 22:50:01 UTC
 #> # A tibble: 35 × 5
 #>    league season season_type  week ref                                          
 #>    <chr>   <int>       <int> <int> <chr>                                        

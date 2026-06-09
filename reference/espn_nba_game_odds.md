@@ -162,7 +162,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_odds(event_id = "401283399")
 #> ── ESPN NBA Event Odds (event_id=401283399) from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:02:57 UTC
+#> ℹ Data updated: 2026-06-09 22:49:34 UTC
 #> # A tibble: 16 × 12
 #>    event_id  provider_id provider_name details over_under spread home_money_line
 #>    <chr>     <chr>       <chr>         <chr>        <dbl>  <dbl>           <int>

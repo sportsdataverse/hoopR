@@ -59,7 +59,7 @@ Other CBD Plays Functions:
 ``` r
 # \donttest{
   try(cbbd_plays_game(game_id = 5881))
-#> ✖ 2026-06-09 22:01:44.166552: Invalid arguments or no play data available for 5881!
+#> ✖ 2026-06-09 22:48:22.730924: Invalid arguments or no play data available for 5881!
 #> ✖ Args: game_id = 5881, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
