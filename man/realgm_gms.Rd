@@ -17,7 +17,7 @@ A \code{hoopR_data} tibble with one row per general manager (\code{staff},
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_gms())
 }
 }

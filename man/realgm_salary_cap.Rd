@@ -31,7 +31,7 @@ the formatted strings RealGM publishes (e.g. \code{"$140,588,000"}).
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_salary_cap())
 }
 }

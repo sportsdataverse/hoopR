@@ -18,7 +18,7 @@ A \code{hoopR_data} tibble with one row per prospect (\code{player}, \code{team}
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_draft_prospects())
 }
 }

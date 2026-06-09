@@ -23,7 +23,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_transactions())
 #' }
 realgm_transactions <- function() {

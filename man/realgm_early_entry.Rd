@@ -21,7 +21,7 @@ entrants and withdrawals) into one tibble.
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_early_entry())
 }
 }

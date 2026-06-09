@@ -15,7 +15,7 @@
 A \code{hoopR_data} tibble.
 }
 \description{
-Coerces numeric-looking columns (via \code{\link[=.bref_type_convert]{.bref_type_convert()}}), converts to a
+Coerces numeric-looking columns (via \code{.bref_type_convert()}), converts to a
 tibble, and attaches the \code{hoopR_data} class + metadata.
 }
 \keyword{internal}

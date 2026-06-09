@@ -32,7 +32,7 @@ international rosters -- a view no first-party NBA/ESPN endpoint provides.
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_players_abroad())
 }
 }

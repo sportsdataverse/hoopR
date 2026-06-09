@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble (one row per team) carrying the requested
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_team_stats(season = 2025, stat_type = "Averages"))
 }
 }

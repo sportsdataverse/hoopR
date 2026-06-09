@@ -47,7 +47,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_player_stats(season = 2025, stat_type = "Averages"))
 #' }
 realgm_player_stats <- function(season = most_recent_nba_season(),
@@ -102,7 +102,7 @@ realgm_player_stats <- function(season = most_recent_nba_season(),
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_team_stats(season = 2025, stat_type = "Averages"))
 #' }
 realgm_team_stats <- function(season = most_recent_nba_season(),
@@ -151,7 +151,7 @@ realgm_team_stats <- function(season = most_recent_nba_season(),
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_individual_seasons())
 #' }
 realgm_individual_seasons <- function() {
@@ -194,7 +194,7 @@ realgm_individual_seasons <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_individual_games())
 #' }
 realgm_individual_games <- function() {
@@ -238,7 +238,7 @@ realgm_individual_games <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_draft_prospects())
 #' }
 realgm_draft_prospects <- function() {

@@ -37,7 +37,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_draft(year = 2020))
 #' }
 realgm_draft <- function(year = most_recent_nba_season() - 1L) {
@@ -99,7 +99,7 @@ realgm_draft <- function(year = most_recent_nba_season() - 1L) {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_early_entry())
 #' }
 realgm_early_entry <- function() {

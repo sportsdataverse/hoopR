@@ -45,7 +45,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_coaches())
 #' }
 realgm_coaches <- function() {
@@ -70,7 +70,7 @@ realgm_coaches <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_gms())
 #' }
 realgm_gms <- function() {

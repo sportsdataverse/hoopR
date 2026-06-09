@@ -105,7 +105,7 @@
 
 #' Internal: finalize a RealGM table as a `hoopR_data` tibble
 #'
-#' Coerces numeric-looking columns (via [.bref_type_convert()]), converts to a
+#' Coerces numeric-looking columns (via `.bref_type_convert()`), converts to a
 #' tibble, and attaches the `hoopR_data` class + metadata.
 #'
 #' @param df A parsed RealGM `data.frame`.

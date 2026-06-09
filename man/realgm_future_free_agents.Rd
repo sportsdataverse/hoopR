@@ -35,7 +35,7 @@ player's Bird/veteran free-agent status, recent production and -- distinctively
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_future_free_agents())
 }
 }

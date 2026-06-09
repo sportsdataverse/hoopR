@@ -30,7 +30,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_salary_cap())
 #' }
 realgm_salary_cap <- function() {
@@ -78,7 +78,7 @@ realgm_salary_cap <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_rookie_scale())
 #' }
 realgm_rookie_scale <- function() {

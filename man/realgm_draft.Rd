@@ -40,7 +40,7 @@ club, age, years of service and nationality.
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_draft(year = 2020))
 }
 }

@@ -46,7 +46,7 @@ and miscellaneous splits not all available from first-party feeds.
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_player_stats(season = 2025, stat_type = "Averages"))
 }
 }

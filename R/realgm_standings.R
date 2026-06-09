@@ -35,7 +35,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_standings())
 #' }
 realgm_standings <- function() {
@@ -94,7 +94,7 @@ realgm_standings <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_teams())
 #' }
 realgm_teams <- function() {

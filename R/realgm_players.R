@@ -35,7 +35,7 @@
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_players())
 #' }
 realgm_players <- function() {
@@ -94,7 +94,7 @@ realgm_players <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_players_abroad())
 #' }
 realgm_players_abroad <- function() {
@@ -157,7 +157,7 @@ realgm_players_abroad <- function() {
 #' @family RealGM Functions
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   try(realgm_future_free_agents())
 #' }
 realgm_future_free_agents <- function() {

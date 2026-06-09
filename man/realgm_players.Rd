@@ -36,7 +36,7 @@ optional \pkg{chromote} package (install it and Google Chrome). A plain HTTP
 client receives an HTTP 403 challenge page.
 }
 \examples{
-\donttest{
+\dontrun{
   try(realgm_players())
 }
 }
