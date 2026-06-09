@@ -58,22 +58,18 @@ client receives an HTTP 403 challenge page."><meta property="og:image" content="
     <li><a class="dropdown-item" href="https://hoopR.sportsdataverse.org/">hoopR</a></li>
     <li><a class="external-link dropdown-item" href="https://wehoop.sportsdataverse.org/">wehoop</a></li>
     <li><a class="external-link dropdown-item" href="https://fastRhockey.sportsdataverse.org/">fastRhockey</a></li>
-    <li><a class="external-link dropdown-item" href="https://hockeyr.netlify.app/">hockeyR</a></li>
     <li><a class="external-link dropdown-item" href="https://abhiamishra.github.io/ggshakeR/">ggshakeR</a></li>
     <li><a class="external-link dropdown-item" href="https://BillPetti.github.io/baseballr/">baseballr</a></li>
-    <li><a class="external-link dropdown-item" href="https://jaseziv.github.io/worldfootballR/">worldfootballR</a></li>
     <li><a class="external-link dropdown-item" href="https://usfootballR.sportsdataverse.org/">usfootballR</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/Dato-Futbol/soccerAnimate/">soccerAnimate</a></li>
     <li><a class="external-link dropdown-item" href="https://jaseziv.github.io/chessR/">chessR</a></li>
     <li><a class="external-link dropdown-item" href="https://oddsapiR.sportsdataverse.org/">oddsapiR</a></li>
     <li><a class="external-link dropdown-item" href="https://sportyR.sportsdataverse.org/">sportyR</a></li>
-    <li><a class="external-link dropdown-item" href="https://torvik.dev/">toRvik</a></li>
     <li><a class="external-link dropdown-item" href="https://cfbplotR.sportsdataverse.org/">cfbplotR</a></li>
     <li><a class="external-link dropdown-item" href="https://camdenk.github.io/mlbplotR/">mlbplotR</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/softballR/">softballR</a></li>
     <li><a class="external-link dropdown-item" href="https://cfb4th.sportsdataverse.org/">cfb4th</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nwslR/nwslR/">nwslR</a></li>
-    <li><a class="external-link dropdown-item" href="https://jacklich10.github.io/gamezoneR/">gamezoneR</a></li>
     <li><a class="external-link dropdown-item" href="https://recruitr.sportsdataverse.org/">recruitR</a></li>
     <li><a class="external-link dropdown-item" href="https://puntalytics.github.io/puntr/">puntr</a></li>
     <li><hr class="dropdown-divider"></li>
@@ -81,7 +77,6 @@ client receives an HTTP 403 challenge page."><meta property="og:image" content="
     <li><a class="external-link dropdown-item" href="https://py.sportsdataverse.org/">sportsdataverse-py</a></li>
     <li><a class="external-link dropdown-item" href="https://sportypy.sportsdataverse.org/">sportypy</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nwslR/nwslpy/">nwslpy</a></li>
-    <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/recruitR-py/">recruitR-py</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nathanblumenfeld/collegebaseball/">collegebaseball</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Node.js Packages</h6></li>
@@ -127,13 +122,33 @@ client receives an HTTP 403 challenge page.</p>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble with one row per active player:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>number</td><td>integer</td><td>Row number.</td></tr><tr><td>player</td><td>character</td><td>Player name.</td></tr><tr><td>pos</td><td>character</td><td>Position.</td></tr><tr><td>ht</td><td>character</td><td>Listed height.</td></tr><tr><td>wt</td><td>integer</td><td>Listed weight (lbs).</td></tr><tr><td>age</td><td>numeric</td><td>Age.</td></tr><tr><td>current_team</td><td>character</td><td>Current NBA team.</td></tr><tr><td>yos</td><td>integer</td><td>Years of service.</td></tr><tr><td>pre_draft_team</td><td>character</td><td>Pre-draft team / school.</td></tr><tr><td>draft_status</td><td>character</td><td>Draft pick / undrafted status.</td></tr><tr><td>nationality</td><td>character</td><td>Player nationality.</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other RealGM Functions:
+<code><a href="realgm_coaches.html">realgm_coaches()</a></code>,
+<code><a href="realgm_draft.html">realgm_draft()</a></code>,
+<code><a href="realgm_draft_prospects.html">realgm_draft_prospects()</a></code>,
+<code><a href="realgm_early_entry.html">realgm_early_entry()</a></code>,
+<code><a href="realgm_future_free_agents.html">realgm_future_free_agents()</a></code>,
+<code><a href="realgm_gms.html">realgm_gms()</a></code>,
+<code><a href="realgm_individual_games.html">realgm_individual_games()</a></code>,
+<code><a href="realgm_individual_seasons.html">realgm_individual_seasons()</a></code>,
+<code><a href="realgm_player_stats.html">realgm_player_stats()</a></code>,
+<code><a href="realgm_players_abroad.html">realgm_players_abroad()</a></code>,
+<code><a href="realgm_rookie_scale.html">realgm_rookie_scale()</a></code>,
+<code><a href="realgm_salary_cap.html">realgm_salary_cap()</a></code>,
+<code><a href="realgm_standings.html">realgm_standings()</a></code>,
+<code><a href="realgm_team_stats.html">realgm_team_stats()</a></code>,
+<code><a href="realgm_teams.html">realgm_teams()</a></code>,
+<code><a href="realgm_transactions.html">realgm_transactions()</a></code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">realgm_players</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player index from basketball.realgm.com ────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 17:46:59 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 18:21:07 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 530 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    number player       pos   ht       wt   age current_team   yos pre_draft_team</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>

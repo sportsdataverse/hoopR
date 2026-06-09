@@ -141,7 +141,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_awards(season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards Index ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 17:40:29 UTC
+#> ℹ Data updated: 2026-06-09 18:14:19 UTC
 #> # A tibble: 11 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 

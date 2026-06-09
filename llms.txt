@@ -2647,10 +2647,90 @@ Functions exported by hoopR to access basketball.realgm.com. RealGM sits
 behind a Cloudflare browser challenge, so these require the optional
 chromote package and Google Chrome.
 
+- [`realgm_coaches()`](https://hoopR.sportsdataverse.org/reference/realgm_coaches.md)
+  :
+
+  **RealGM NBA Head Coaches**
+
+- [`realgm_draft()`](https://hoopR.sportsdataverse.org/reference/realgm_draft.md)
+  :
+
+  **RealGM NBA Draft Results**
+
+- [`realgm_draft_prospects()`](https://hoopR.sportsdataverse.org/reference/realgm_draft_prospects.md)
+  :
+
+  **RealGM NBA Draft Prospect Stats**
+
+- [`realgm_early_entry()`](https://hoopR.sportsdataverse.org/reference/realgm_early_entry.md)
+  :
+
+  **RealGM NBA Draft Early Entrants**
+
+- [`realgm_future_free_agents()`](https://hoopR.sportsdataverse.org/reference/realgm_future_free_agents.md)
+  :
+
+  **RealGM Future NBA Free Agents**
+
+- [`realgm_gms()`](https://hoopR.sportsdataverse.org/reference/realgm_gms.md)
+  :
+
+  **RealGM NBA General Managers**
+
+- [`realgm_individual_games()`](https://hoopR.sportsdataverse.org/reference/realgm_individual_games.md)
+  :
+
+  **RealGM NBA Best Individual Games**
+
+- [`realgm_individual_seasons()`](https://hoopR.sportsdataverse.org/reference/realgm_individual_seasons.md)
+  :
+
+  **RealGM NBA Best Individual Seasons**
+
+- [`realgm_player_stats()`](https://hoopR.sportsdataverse.org/reference/realgm_player_stats.md)
+  :
+
+  **RealGM NBA Player Stats**
+
 - [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)
   :
 
   **RealGM NBA Player Index**
+
+- [`realgm_players_abroad()`](https://hoopR.sportsdataverse.org/reference/realgm_players_abroad.md)
+  :
+
+  **RealGM NBA Players Abroad**
+
+- [`realgm_rookie_scale()`](https://hoopR.sportsdataverse.org/reference/realgm_rookie_scale.md)
+  :
+
+  **RealGM NBA Rookie Scale**
+
+- [`realgm_salary_cap()`](https://hoopR.sportsdataverse.org/reference/realgm_salary_cap.md)
+  :
+
+  **RealGM NBA Salary Cap History**
+
+- [`realgm_standings()`](https://hoopR.sportsdataverse.org/reference/realgm_standings.md)
+  :
+
+  **RealGM NBA Standings**
+
+- [`realgm_team_stats()`](https://hoopR.sportsdataverse.org/reference/realgm_team_stats.md)
+  :
+
+  **RealGM NBA Team Stats**
+
+- [`realgm_teams()`](https://hoopR.sportsdataverse.org/reference/realgm_teams.md)
+  :
+
+  **RealGM NBA Teams Index**
+
+- [`realgm_transactions()`](https://hoopR.sportsdataverse.org/reference/realgm_transactions.md)
+  :
+
+  **RealGM NBA Transactions Log**
 
 ## Helper Functions and Data
 
