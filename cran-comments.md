@@ -166,15 +166,17 @@ themes that emerged after the 3.0.0 CRAN submission:
 
 ### Bart Torvik / T-Rank (`torvik_*`) wrappers
 
-* Adds a `torvik_*()` function family (4 wrappers) pulling publicly available
+* Adds a `torvik_*()` function family (6 wrappers) pulling publicly available
   men's college basketball data directly from barttorvik.com — no account or
   API key required (analogous to the existing `kp_*` KenPom scrapers):
   `torvik_ratings()` (T-Rank team ratings), `torvik_team_factors()` (four
   factors + shooting splits), `torvik_game_schedule()` (game-by-game schedule
-  and results), and `torvik_ncaa_results()` (historical NCAA tournament
-  performance). These wrap barttorvik's auth-free, self-describing data files
-  (`{year}_team_results.csv`, `{year}_fffinal.csv`, `{year}_super_sked.json`)
-  and the tournament-results CGI endpoint.
+  and results), `torvik_ncaa_results()` (historical NCAA tournament
+  performance), `torvik_player_stats()` (player advanced season stats), and
+  `torvik_game_stats()` (per-team-game stats). These wrap barttorvik's auth-free
+  data files (`{year}_team_results.csv`, `{year}_fffinal.csv`,
+  `{year}_super_sked.json`, `getadvstats.php`, `getgamestats.php`) and the
+  tournament-results CGI endpoint.
 * Routes through hoopR's shared `.retry_request()` httr2 layer with a browser
   User-Agent; returns `hoopR_data` tibbles with 3-column `@return` tables. No
   new package dependencies (`data.table`, `jsonlite`, `janitor`, `dplyr`,
