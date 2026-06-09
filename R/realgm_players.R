@@ -45,24 +45,138 @@ realgm_players <- function() {
 
   tryCatch(
     expr = {
-      html <- .realgm_html("/nba/players")
-      tbs <- rvest::html_elements(rvest::read_html(html), "table")
-      # pick the table whose header includes a Player column
-      cand <- NULL
-      for (t in tbs) {
-        tt <- janitor::clean_names(rvest::html_table(t))
-        if ("player" %in% colnames(tt) && nrow(tt) > 0) { cand <- tt; break }
-      }
+      cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/players")), must_have = "player")
       if (is.null(cand)) stop("RealGM player table not found", call. = FALSE)
-      df <- .bref_type_convert(as.data.frame(cand))
-      df <- dplyr::as_tibble(df)
-      df <- make_hoopR_data(df, "NBA player index from basketball.realgm.com", Sys.time())
+      df <- .realgm_finish(cand, "NBA player index from basketball.realgm.com")
     },
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no RealGM player data available!", args = .args)
     },
     warning = function(w) {
       .report_api_warning(w, hint = "Warning fetching RealGM players", args = .args)
+    },
+    finally = {
+    }
+  )
+  return(df)
+}
+
+#' @title
+#' **RealGM NBA Players Abroad**
+#' @description
+#' **Get the list of NBA-affiliated players currently playing overseas from
+#' [RealGM](https://basketball.realgm.com).**
+#'
+#' RealGM tracks NBA draft picks, two-way and free-agent players who are on
+#' international rosters -- a view no first-party NBA/ESPN endpoint provides.
+#'
+#' **Requires a headless browser** (see [realgm_players()]).
+#' @return A `hoopR_data` tibble with one row per player:
+#'
+#'    |col_name   |types     |description                                     |
+#'    |:----------|:---------|:-----------------------------------------------|
+#'    |player     |character |Player name.                                    |
+#'    |pos        |character |Position.                                       |
+#'    |ht         |character |Listed height.                                  |
+#'    |wt         |integer   |Listed weight (lbs).                            |
+#'    |nba_status |character |NBA contract / rights status.                   |
+#'    |team_s     |character |Current overseas team(s) and NBA affiliation.   |
+#'    |gp         |integer   |Games played.                                   |
+#'    |mpg        |numeric   |Minutes per game.                               |
+#'    |ppg        |numeric   |Points per game.                                |
+#'    |rpg        |numeric   |Rebounds per game.                              |
+#'    |apg        |numeric   |Assists per game.                               |
+#'
+#' @keywords RealGM
+#' @importFrom rvest read_html html_elements html_table
+#' @importFrom janitor clean_names
+#' @importFrom dplyr as_tibble
+#' @family RealGM Functions
+#' @export
+#' @examples
+#' \donttest{
+#'   try(realgm_players_abroad())
+#' }
+realgm_players_abroad <- function() {
+  .args <- .capture_args()
+
+  df <- data.frame()
+
+  tryCatch(
+    expr = {
+      cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/players-abroad")),
+                           must_have = c("player", "nba_status"))
+      if (is.null(cand)) stop("RealGM players-abroad table not found", call. = FALSE)
+      df <- .realgm_finish(cand, "NBA players abroad from basketball.realgm.com")
+    },
+    error = function(e) {
+      .report_api_error(e, hint = "No RealGM players-abroad data available!", args = .args)
+    },
+    warning = function(w) {
+      .report_api_warning(w, hint = "Warning fetching RealGM players abroad", args = .args)
+    },
+    finally = {
+    }
+  )
+  return(df)
+}
+
+#' @title
+#' **RealGM Future NBA Free Agents**
+#' @description
+#' **Get RealGM's projected future NBA free-agent class from
+#' [RealGM](https://basketball.realgm.com).**
+#'
+#' One row per upcoming free agent, including the free-agency season, the
+#' player's Bird/veteran free-agent status, recent production and -- distinctively
+#' -- the player's listed agent.
+#'
+#' **Requires a headless browser** (see [realgm_players()]).
+#' @return A `hoopR_data` tibble with one row per future free agent:
+#'
+#'    |col_name           |types     |description                              |
+#'    |:------------------|:---------|:----------------------------------------|
+#'    |player             |character |Player name.                             |
+#'    |pos                |character |Position.                                |
+#'    |team               |character |Current team abbreviation.               |
+#'    |season             |character |Free-agency season (e.g. `2026-2027`).   |
+#'    |age                |integer   |Age.                                     |
+#'    |yos                |integer   |Years of service.                        |
+#'    |veteran_fa_status  |character |Bird / Non-Bird / veteran FA status.     |
+#'    |gp                 |integer   |Games played.                            |
+#'    |pts                |numeric   |Points per game.                         |
+#'    |reb                |numeric   |Rebounds per game.                       |
+#'    |ast                |numeric   |Assists per game.                        |
+#'    |per                |numeric   |Player Efficiency Rating.                |
+#'    |agent              |character |Listed player agent.                     |
+#'
+#' @keywords RealGM
+#' @importFrom rvest read_html html_elements html_table
+#' @importFrom janitor clean_names
+#' @importFrom dplyr as_tibble
+#' @family RealGM Functions
+#' @export
+#' @examples
+#' \donttest{
+#'   try(realgm_future_free_agents())
+#' }
+realgm_future_free_agents <- function() {
+  .args <- .capture_args()
+
+  df <- data.frame()
+
+  tryCatch(
+    expr = {
+      cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/future_free_agents")),
+                           must_have = c("player", "agent"))
+      if (is.null(cand)) stop("RealGM future-free-agents table not found", call. = FALSE)
+      df <- .realgm_finish(cand, "Future NBA free agents from basketball.realgm.com")
+    },
+    error = function(e) {
+      .report_api_error(e, hint = "No RealGM future-free-agent data available!", args = .args)
+    },
+    warning = function(w) {
+      .report_api_warning(w, hint = "Warning fetching RealGM future free agents", args = .args)
     },
     finally = {
     }

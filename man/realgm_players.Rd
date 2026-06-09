@@ -40,5 +40,24 @@ client receives an HTTP 403 challenge page.
   try(realgm_players())
 }
 }
+\seealso{
+Other RealGM Functions: 
+\code{\link{realgm_coaches}()},
+\code{\link{realgm_draft}()},
+\code{\link{realgm_draft_prospects}()},
+\code{\link{realgm_early_entry}()},
+\code{\link{realgm_future_free_agents}()},
+\code{\link{realgm_gms}()},
+\code{\link{realgm_individual_games}()},
+\code{\link{realgm_individual_seasons}()},
+\code{\link{realgm_player_stats}()},
+\code{\link{realgm_players_abroad}()},
+\code{\link{realgm_rookie_scale}()},
+\code{\link{realgm_salary_cap}()},
+\code{\link{realgm_standings}()},
+\code{\link{realgm_team_stats}()},
+\code{\link{realgm_teams}()},
+\code{\link{realgm_transactions}()}
+}
 \concept{RealGM Functions}
 \keyword{RealGM}

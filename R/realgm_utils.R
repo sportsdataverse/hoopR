@@ -55,3 +55,64 @@
 
   b$Runtime$evaluate("document.documentElement.outerHTML")$result$value
 }
+
+#' Internal: fetch a RealGM page and parse it into an `xml_document`
+#'
+#' @param path Page path beginning with `/`.
+#' @param wait Maximum seconds to wait for the Cloudflare challenge to clear.
+#' @return An `xml_document` (from `rvest::read_html()`).
+#' @keywords internal
+.realgm_doc <- function(path, wait = 25) {
+  rvest::read_html(.realgm_html(path, wait = wait))
+}
+
+#' Internal: extract every parseable HTML table from a RealGM document
+#'
+#' RealGM pages usually carry a small nav / filter / legend table ahead of the
+#' real data table. This returns all tables that parse and clear `min_rows`,
+#' `janitor::clean_names()`-ed, so a caller can pick or combine them.
+#'
+#' @param doc An `xml_document` from [.realgm_doc()].
+#' @param min_rows Minimum row count for a table to be kept (drops nav/legend).
+#' @return A list of cleaned `data.frame`s.
+#' @keywords internal
+.realgm_tables <- function(doc, min_rows = 1) {
+  tbs <- rvest::html_elements(doc, "table")
+  out <- lapply(tbs, function(t) {
+    tryCatch(janitor::clean_names(rvest::html_table(t)), error = function(e) NULL)
+  })
+  out <- out[!vapply(out, is.null, logical(1))]
+  Filter(function(t) nrow(t) >= min_rows, out)
+}
+
+#' Internal: pick the best data table from a list of RealGM tables
+#'
+#' Chooses the table containing all `must_have` columns (when supplied) with the
+#' most rows; otherwise the table with the most rows.
+#'
+#' @param tables A list of `data.frame`s, e.g. from [.realgm_tables()].
+#' @param must_have Optional character vector of required column names.
+#' @return A single `data.frame`, or `NULL` if `tables` is empty.
+#' @keywords internal
+.realgm_pick <- function(tables, must_have = NULL) {
+  if (!length(tables)) return(NULL)
+  if (!is.null(must_have)) {
+    ok <- Filter(function(t) all(must_have %in% colnames(t)), tables)
+    if (length(ok)) tables <- ok
+  }
+  tables[[which.max(vapply(tables, nrow, integer(1)))]]
+}
+
+#' Internal: finalize a RealGM table as a `hoopR_data` tibble
+#'
+#' Coerces numeric-looking columns (via [.bref_type_convert()]), converts to a
+#' tibble, and attaches the `hoopR_data` class + metadata.
+#'
+#' @param df A parsed RealGM `data.frame`.
+#' @param description Provenance string stored on the result.
+#' @return A `hoopR_data` tibble.
+#' @keywords internal
+.realgm_finish <- function(df, description) {
+  df <- .bref_type_convert(as.data.frame(df))
+  make_hoopR_data(dplyr::as_tibble(df), description, Sys.time())
+}

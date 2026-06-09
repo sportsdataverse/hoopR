@@ -177,14 +177,51 @@ libcurl-based client (`httr2`, `httr`, `rvest`) regardless of headers —
 Cloudflare fingerprints the TLS handshake (JA3) *and* demands a JavaScript
 proof-of-work to mint the `cf_clearance` cookie. The `a legacy NBA R package`-method audit
 first recorded RealGM as **dead** on that basis. It is **not** dead — it is
-reachable with a real browser engine:
+reachable with a real browser engine, and 17 `realgm_*()` wrappers now cover the
+NBA endpoint surface:
 
-- **`realgm_players()`** — RealGM's active NBA player index (one row per player:
-  position, listed height/weight, age, current team, years of service, pre-draft
-  team / international club, draft status and nationality — the pre-draft /
-  international detail RealGM is known for).
+*Players & personnel*
 
-These wrappers drive headless Chrome through the optional
+- **`realgm_players()`** — active NBA player index (position, ht/wt, age, current
+  team, years of service, pre-draft team / international club, nationality).
+- **`realgm_players_abroad()`** — NBA-affiliated players on international rosters,
+  with NBA-rights status (a view no first-party feed provides).
+- **`realgm_future_free_agents()`** — projected free-agent classes with Bird /
+  veteran status, production, and the player's listed **agent**.
+- **`realgm_coaches()`** / **`realgm_gms()`** — current head coaches / general
+  managers with tenure and nationality.
+
+*Standings, teams & stats*
+
+- **`realgm_standings()`** — both conferences with record, streak, splits.
+- **`realgm_teams()`** — team index with division and conference.
+- **`realgm_player_stats(season, stat_type, season_type)`** — qualified-player
+  leaderboards (Averages / Totals / Per-X / Advanced / Misc, across Regular
+  Season / Playoffs / Preseason / Summer League).
+- **`realgm_team_stats(season, stat_type, season_type)`** — team statistics.
+- **`realgm_individual_seasons()`** / **`realgm_individual_games()`** — all-time
+  best individual season / single-game leaderboards.
+
+*Draft & salary*
+
+- **`realgm_draft(year)`** — past-draft results (rounds 1–2 + undrafted), with
+  pre-draft team and nationality.
+- **`realgm_draft_prospects()`** — current draft-prospect statistics.
+- **`realgm_early_entry()`** — early-entrant / withdrawal list.
+- **`realgm_salary_cap()`** — salary-cap history & projections (cap, tax, aprons,
+  exceptions).
+- **`realgm_rookie_scale()`** — rookie-scale contract amounts by pick.
+
+*Transactions*
+
+- **`realgm_transactions()`** — the league transactions log (RealGM publishes it
+  as a dated narrative, not a table, so this parses the page DOM into one row per
+  transaction with a real `Date`).
+
+Self-describing returns carry their query parameters back as columns
+(`realgm_player_stats()`/`realgm_team_stats()` echo `season`/`stat_type`/
+`season_type`; `realgm_draft()` echoes `draft_year` and a `round` label). Every
+wrapper drives headless Chrome through the optional
 [`chromote`](https://rstudio.github.io/chromote/) package (Chrome solves the
 challenge natively in ~2 seconds). `chromote` + Google Chrome are therefore a
 **Suggests-level** requirement for the `realgm_*` family only; every other hoopR
