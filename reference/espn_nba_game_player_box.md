@@ -158,11 +158,11 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_player_box(event_id = 401283399, team_id = 29,
                                athlete_id = 1966)
-#> ✖ 2026-06-09 07:53:47.370954: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
+#> ✖ 2026-06-09 09:58:50.978255: Failed to retrieve ESPN nba event player box for event_id=401283399, team_id=29, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 29, athlete_id = 1966, stat_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Event Player Box ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:53:47 UTC
+#> ℹ Data updated: 2026-06-09 09:58:50 UTC
 #> # A tibble: 0 × 0
 # }
 ```

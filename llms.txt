@@ -2326,6 +2326,220 @@ Functions exported by hoopR
 
   **Get KenPom Win Probability**
 
+## CollegeBasketballData (CBD)
+
+### CBD API Key Registration
+
+Registering your CollegeBasketballData API key
+
+- [`cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  [`has_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  [`check_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  :
+
+  **College Basketball Data API Key Registration**
+
+### CBD Data Functions
+
+Functions exported by hoopR to access the CollegeBasketballData API
+
+- [`cbbd_conferences()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences.md)
+  :
+
+  **CBD Conferences**
+
+- [`cbbd_conferences_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences_history.md)
+  :
+
+  **CBD Conference Membership History**
+
+- [`cbbd_draft_picks()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_picks.md)
+  :
+
+  **CBD Draft Picks**
+
+- [`cbbd_draft_positions()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_positions.md)
+  :
+
+  **CBD Draft Positions**
+
+- [`cbbd_draft_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_teams.md)
+  :
+
+  **CBD Draft Teams**
+
+- [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md)
+  :
+
+  **CBD Games**
+
+- [`cbbd_games_media()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md)
+  :
+
+  **CBD Game Media**
+
+- [`cbbd_games_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_players.md)
+  :
+
+  **CBD Player Box Scores**
+
+- [`cbbd_games_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_teams.md)
+  :
+
+  **CBD Team Box Scores**
+
+- [`cbbd_lines()`](https://hoopR.sportsdataverse.org/reference/cbbd_lines.md)
+  :
+
+  **CBD Betting Lines**
+
+- [`cbbd_lines_providers()`](https://hoopR.sportsdataverse.org/reference/cbbd_lines_providers.md)
+  :
+
+  **CBD Line Providers**
+
+- [`cbbd_lineups_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_game.md)
+  :
+
+  **CBD Game Lineups**
+
+- [`cbbd_lineups_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_team.md)
+  :
+
+  **CBD Team Lineups**
+
+- [`cbbd_play_types()`](https://hoopR.sportsdataverse.org/reference/cbbd_play_types.md)
+  :
+
+  **CBD Play Types**
+
+- [`cbbd_plays_date()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_date.md)
+  :
+
+  **CBD Plays by Date**
+
+- [`cbbd_plays_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_game.md)
+  :
+
+  **CBD Plays by Game**
+
+- [`cbbd_plays_player()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_player.md)
+  :
+
+  **CBD Plays by Player**
+
+- [`cbbd_plays_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_team.md)
+  :
+
+  **CBD Plays by Team**
+
+- [`cbbd_plays_tournament()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_tournament.md)
+  :
+
+  **CBD Plays by Tournament**
+
+- [`cbbd_rankings()`](https://hoopR.sportsdataverse.org/reference/cbbd_rankings.md)
+  :
+
+  **CBD Rankings**
+
+- [`cbbd_ratings_adjusted()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_adjusted.md)
+  :
+
+  **CBD Adjusted Efficiency Ratings**
+
+- [`cbbd_ratings_elo()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_elo.md)
+  :
+
+  **CBD Elo Ratings**
+
+- [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md)
+  :
+
+  **CBD SRS Ratings**
+
+- [`cbbd_recruiting_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_players.md)
+  :
+
+  **CBD Recruiting Players**
+
+- [`cbbd_recruiting_portal()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_portal.md)
+  :
+
+  **CBD Transfer Portal**
+
+- [`cbbd_recruiting_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_teams.md)
+  :
+
+  **CBD Recruiting Team Rankings**
+
+- [`cbbd_scoreboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_scoreboard.md)
+  :
+
+  **CBD Scoreboard**
+
+- [`cbbd_stats_player_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_season.md)
+  :
+
+  **CBD Player Season Stats**
+
+- [`cbbd_stats_player_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_shooting_season.md)
+  :
+
+  **CBD Player Shooting Stats**
+
+- [`cbbd_stats_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_leaderboard.md)
+  :
+
+  **CBD Team Stats Leaderboard**
+
+- [`cbbd_stats_team_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md)
+  :
+
+  **CBD Team Season Stats**
+
+- [`cbbd_stats_team_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_shooting_season.md)
+  :
+
+  **CBD Team Shooting Stats**
+
+- [`cbbd_substitutions_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_game.md)
+  :
+
+  **CBD Substitutions by Game**
+
+- [`cbbd_substitutions_player()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_player.md)
+  :
+
+  **CBD Substitutions by Player**
+
+- [`cbbd_substitutions_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_team.md)
+  :
+
+  **CBD Substitutions by Team**
+
+- [`cbbd_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams.md)
+  :
+
+  **CBD Teams**
+
+- [`cbbd_teams_roster()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_roster.md)
+  :
+
+  **CBD Team Roster**
+
+- [`cbbd_venues()`](https://hoopR.sportsdataverse.org/reference/cbbd_venues.md)
+  :
+
+  **CBD Venues**
+
+- [`cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  [`has_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  [`check_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+  :
+
+  **College Basketball Data API Key Registration**
+
 ## Helper Functions and Data
 
 ### Included data

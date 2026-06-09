@@ -196,7 +196,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:53:22 UTC
+#> ℹ Data updated: 2026-06-09 09:58:29 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -206,7 +206,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:53:22 UTC
+#> ℹ Data updated: 2026-06-09 09:58:29 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -216,7 +216,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:53:23 UTC
+#> ℹ Data updated: 2026-06-09 09:58:29 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                              short_name  
 #>   <chr>     <chr>             <chr>                             <chr>       
@@ -224,7 +224,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-06-09 07:53:23 UTC
+#> ℹ Data updated: 2026-06-09 09:58:29 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           

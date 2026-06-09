@@ -153,7 +153,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_awards(athlete_id = "1966")
 #> ── ESPN NBA Athlete Awards from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:53:56 UTC
+#> ℹ Data updated: 2026-06-09 09:58:59 UTC
 #> # A tibble: 25 × 7
 #>    season award_id name  description date  type  ref_url                        
 #>    <chr>  <chr>    <chr> <chr>       <chr> <chr> <chr>                          

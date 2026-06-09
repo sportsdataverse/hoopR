@@ -13,6 +13,77 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0 `httr` →
 `httr2` migration.
 
+#### **CollegeBasketballData API (`cbbd_*`)**
+
+New `cbbd_*()` function family wrapping the [CollegeBasketballData
+API](https://api.collegebasketballdata.com) (the men’s college
+basketball sibling of CollegeFootballData, which `cfbfastR` wraps with
+`cfbd_*`). 38 endpoint wrappers cover the full v1 surface across 13
+categories:
+
+- **Games**:
+  [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md),
+  [`cbbd_games_media()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
+  [`cbbd_games_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_teams.md),
+  [`cbbd_games_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_players.md),
+  [`cbbd_scoreboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_scoreboard.md)
+- **Plays**:
+  [`cbbd_plays_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_game.md),
+  [`cbbd_plays_player()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_player.md),
+  [`cbbd_plays_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_team.md),
+  [`cbbd_plays_date()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_date.md),
+  [`cbbd_plays_tournament()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_tournament.md),
+  [`cbbd_play_types()`](https://hoopR.sportsdataverse.org/reference/cbbd_play_types.md)
+- **Substitutions**:
+  [`cbbd_substitutions_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_game.md),
+  [`cbbd_substitutions_player()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_player.md),
+  [`cbbd_substitutions_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_substitutions_team.md)
+- **Stats**:
+  [`cbbd_stats_team_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md),
+  [`cbbd_stats_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_leaderboard.md),
+  [`cbbd_stats_team_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_shooting_season.md),
+  [`cbbd_stats_player_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_season.md),
+  [`cbbd_stats_player_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_shooting_season.md)
+- **Lineups**:
+  [`cbbd_lineups_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_team.md),
+  [`cbbd_lineups_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_game.md)
+- **Ratings**:
+  [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md),
+  [`cbbd_ratings_adjusted()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_adjusted.md),
+  [`cbbd_ratings_elo()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_elo.md)
+- **Rankings**:
+  [`cbbd_rankings()`](https://hoopR.sportsdataverse.org/reference/cbbd_rankings.md)
+- **Lines**:
+  [`cbbd_lines()`](https://hoopR.sportsdataverse.org/reference/cbbd_lines.md),
+  [`cbbd_lines_providers()`](https://hoopR.sportsdataverse.org/reference/cbbd_lines_providers.md)
+- **Recruiting**:
+  [`cbbd_recruiting_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_players.md),
+  [`cbbd_recruiting_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_teams.md),
+  [`cbbd_recruiting_portal()`](https://hoopR.sportsdataverse.org/reference/cbbd_recruiting_portal.md)
+- **Draft**:
+  [`cbbd_draft_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_teams.md),
+  [`cbbd_draft_positions()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_positions.md),
+  [`cbbd_draft_picks()`](https://hoopR.sportsdataverse.org/reference/cbbd_draft_picks.md)
+- **Teams / Venues / Conferences**:
+  [`cbbd_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams.md),
+  [`cbbd_teams_roster()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_roster.md),
+  [`cbbd_venues()`](https://hoopR.sportsdataverse.org/reference/cbbd_venues.md),
+  [`cbbd_conferences()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences.md),
+  [`cbbd_conferences_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences_history.md)
+
+The API requires a free Bearer-token key stored in the `CBBD_API_KEY`
+environment variable; see
+[`?register_cbbd`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md).
+Helpers
+[`cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md),
+[`has_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+and
+[`check_cbbd_key()`](https://hoopR.sportsdataverse.org/reference/register_cbbd.md)
+mirror the `cfbfastR` key pattern. Every wrapper returns a `hoopR_data`
+tibble with a 3-column `@return` table, routes through hoopR’s shared
+`httr2` request layer (retries / timeouts / proxy), and reports errors
+via the standard `cli` reporters.
+
 #### **ESPN endpoint naming convention (game\_*/player\_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse

@@ -93,6 +93,44 @@
 <h2 class="pkg-version" data-toc-text="3.1.0" id="hoopr-310"><strong>hoopR 3.1.0</strong><a class="anchor" aria-label="anchor" href="#hoopr-310"></a></h2>
 <p>Development release on top of the CRAN-shipped 3.0.0 (commit <a href="https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b" class="external-link">b76100b3</a>). Headline change is a <strong>58-wrapper ESPN endpoint expansion</strong> that brings hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team detail, event detail, league catalog, news, calendar, injuries, plus draft / freeagents / transactions for the NBA. Also includes bug fixes for endpoint behavior that drifted after CRAN submission, the package-wide <code>@return</code> documentation upgrade, and a proxy-support restoration that addresses a regression introduced by the 3.0.0 <code>httr</code> → <code>httr2</code> migration.</p>
 <div class="section level4">
+<h4 id="collegebasketballdata-api-cbbd_-3-1-0"><strong>CollegeBasketballData API (<code>cbbd_*</code>)</strong><a class="anchor" aria-label="anchor" href="#collegebasketballdata-api-cbbd_-3-1-0"></a></h4>
+<p>New <code>cbbd_*()</code> function family wrapping the <a href="https://api.collegebasketballdata.com" class="external-link">CollegeBasketballData API</a> (the men’s college basketball sibling of CollegeFootballData, which <code>cfbfastR</code> wraps with <code>cfbd_*</code>). 38 endpoint wrappers cover the full v1 surface across 13 categories:</p>
+<ul><li>
+<strong>Games</strong>: <code><a href="../reference/cbbd_games.html">cbbd_games()</a></code>, <code><a href="../reference/cbbd_games_media.html">cbbd_games_media()</a></code>, <code><a href="../reference/cbbd_games_teams.html">cbbd_games_teams()</a></code>, <code><a href="../reference/cbbd_games_players.html">cbbd_games_players()</a></code>, <code><a href="../reference/cbbd_scoreboard.html">cbbd_scoreboard()</a></code>
+</li>
+<li>
+<strong>Plays</strong>: <code><a href="../reference/cbbd_plays_game.html">cbbd_plays_game()</a></code>, <code><a href="../reference/cbbd_plays_player.html">cbbd_plays_player()</a></code>, <code><a href="../reference/cbbd_plays_team.html">cbbd_plays_team()</a></code>, <code><a href="../reference/cbbd_plays_date.html">cbbd_plays_date()</a></code>, <code><a href="../reference/cbbd_plays_tournament.html">cbbd_plays_tournament()</a></code>, <code><a href="../reference/cbbd_play_types.html">cbbd_play_types()</a></code>
+</li>
+<li>
+<strong>Substitutions</strong>: <code><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_game()</a></code>, <code><a href="../reference/cbbd_substitutions_player.html">cbbd_substitutions_player()</a></code>, <code><a href="../reference/cbbd_substitutions_team.html">cbbd_substitutions_team()</a></code>
+</li>
+<li>
+<strong>Stats</strong>: <code><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_season()</a></code>, <code><a href="../reference/cbbd_stats_team_leaderboard.html">cbbd_stats_team_leaderboard()</a></code>, <code><a href="../reference/cbbd_stats_team_shooting_season.html">cbbd_stats_team_shooting_season()</a></code>, <code><a href="../reference/cbbd_stats_player_season.html">cbbd_stats_player_season()</a></code>, <code><a href="../reference/cbbd_stats_player_shooting_season.html">cbbd_stats_player_shooting_season()</a></code>
+</li>
+<li>
+<strong>Lineups</strong>: <code><a href="../reference/cbbd_lineups_team.html">cbbd_lineups_team()</a></code>, <code><a href="../reference/cbbd_lineups_game.html">cbbd_lineups_game()</a></code>
+</li>
+<li>
+<strong>Ratings</strong>: <code><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>, <code><a href="../reference/cbbd_ratings_adjusted.html">cbbd_ratings_adjusted()</a></code>, <code><a href="../reference/cbbd_ratings_elo.html">cbbd_ratings_elo()</a></code>
+</li>
+<li>
+<strong>Rankings</strong>: <code><a href="../reference/cbbd_rankings.html">cbbd_rankings()</a></code>
+</li>
+<li>
+<strong>Lines</strong>: <code><a href="../reference/cbbd_lines.html">cbbd_lines()</a></code>, <code><a href="../reference/cbbd_lines_providers.html">cbbd_lines_providers()</a></code>
+</li>
+<li>
+<strong>Recruiting</strong>: <code><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_players()</a></code>, <code><a href="../reference/cbbd_recruiting_teams.html">cbbd_recruiting_teams()</a></code>, <code><a href="../reference/cbbd_recruiting_portal.html">cbbd_recruiting_portal()</a></code>
+</li>
+<li>
+<strong>Draft</strong>: <code><a href="../reference/cbbd_draft_teams.html">cbbd_draft_teams()</a></code>, <code><a href="../reference/cbbd_draft_positions.html">cbbd_draft_positions()</a></code>, <code><a href="../reference/cbbd_draft_picks.html">cbbd_draft_picks()</a></code>
+</li>
+<li>
+<strong>Teams / Venues / Conferences</strong>: <code><a href="../reference/cbbd_teams.html">cbbd_teams()</a></code>, <code><a href="../reference/cbbd_teams_roster.html">cbbd_teams_roster()</a></code>, <code><a href="../reference/cbbd_venues.html">cbbd_venues()</a></code>, <code><a href="../reference/cbbd_conferences.html">cbbd_conferences()</a></code>, <code><a href="../reference/cbbd_conferences_history.html">cbbd_conferences_history()</a></code>
+</li>
+</ul><p>The API requires a free Bearer-token key stored in the <code>CBBD_API_KEY</code> environment variable; see <code><a href="../reference/register_cbbd.html">?register_cbbd</a></code>. Helpers <code><a href="../reference/register_cbbd.html">cbbd_key()</a></code>, <code><a href="../reference/register_cbbd.html">has_cbbd_key()</a></code> and <code><a href="../reference/register_cbbd.html">check_cbbd_key()</a></code> mirror the <code>cfbfastR</code> key pattern. Every wrapper returns a <code>hoopR_data</code> tibble with a 3-column <code>@return</code> table, routes through hoopR’s shared <code>httr2</code> request layer (retries / timeouts / proxy), and reports errors via the standard <code>cli</code> reporters.</p>
+</div>
+<div class="section level4">
 <h4 id="espn-endpoint-naming-convention-game_player_-3-1-0"><strong>ESPN endpoint naming convention (game_<em>/player_</em>)</strong><a class="anchor" aria-label="anchor" href="#espn-endpoint-naming-convention-game_player_-3-1-0"></a></h4>
 <p>The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used by cfbfastR (and mirrored in wehoop): <code>event_competitor* → game_team*</code>, <code>event_competition → game</code>, <code>event_* → game_*</code>, and <code>athlete_* → player_*</code> (60 functions). These wrappers are new in this dev cycle and were never on CRAN, so the rename is applied directly (no deprecation shims). The web-common-v3 <code>/athletes/{id}/stats</code> wrapper becomes <code>*_player_stats_v3</code> (kept alongside the core-v2 <code>*_player_stats</code>, a different endpoint).</p>
 </div>

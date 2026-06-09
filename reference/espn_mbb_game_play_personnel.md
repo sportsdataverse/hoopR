@@ -135,11 +135,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
-#> ✖ 2026-06-09 07:52:54.756464: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
+#> ✖ 2026-06-09 09:58:05.214812: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, play_id = 401256760101805888
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Personnel ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 07:52:54 UTC
+#> ℹ Data updated: 2026-06-09 09:58:05 UTC
 #> # A tibble: 0 × 0
 # }
 ```
