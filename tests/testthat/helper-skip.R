@@ -61,3 +61,13 @@ skip_bref_test <- function(){
     invisible()
   }
 }
+
+skip_realgm_test <- function(){
+  if(Sys.getenv("REALGM_TESTS") != "1"){
+    skip("User can't run RealGM tests (REALGM_TESTS not set; needs chromote + Google Chrome)")
+  } else if(!requireNamespace("chromote", quietly = TRUE)){
+    skip("User can't run RealGM tests (chromote not installed)")
+  } else {
+    invisible()
+  }
+}

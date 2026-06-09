@@ -287,6 +287,14 @@ reference:
       - starts_with("spotrac_")
       - starts_with("hoopshype_")
       - starts_with("nbadraft_")
+  - title: RealGM
+  - subtitle: RealGM Functions
+    desc: >
+      Functions exported by hoopR to access basketball.realgm.com. RealGM sits
+      behind a Cloudflare browser challenge, so these require the optional
+      chromote package and Google Chrome.
+    contents:
+      - starts_with("realgm_")
   - title: Helper Functions and Data
   - subtitle: Included data
     desc: Data included within the package

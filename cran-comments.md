@@ -204,8 +204,16 @@ themes that emerged after the 3.0.0 CRAN submission:
   the `a legacy NBA R package` gap): `spotrac_team_cap()` (Spotrac team cap), `hoopshype_salaries()`
   (HoopsHype player salaries), and `nbadraft_mock_draft()` (NBADraft.net mock
   draft). All public HTML, no key required, `\donttest{}` examples, network-gated
-  tests. RealGM (HTTP 403) and Basketball Insiders (redundant team-cap only) were
-  evaluated and intentionally not wrapped.
+  tests. Basketball Insiders (redundant team-cap only) was evaluated and
+  intentionally not wrapped.
+* Adds RealGM (`realgm_*`) wrappers: `realgm_players()` (NBA player index).
+  basketball.realgm.com sits behind a Cloudflare JavaScript challenge that
+  returns HTTP 403 to every libcurl-based client, so these functions read the
+  page through headless Chrome via the optional `chromote` package (added to
+  Suggests). When `chromote`/Chrome are absent the function errors cleanly with
+  an install hint; the `\donttest{}` example is `try()`-wrapped and tests are
+  gated behind `REALGM_TESTS=1`, so neither CRAN's check machines nor users
+  without Chrome ever attempt a browser launch.
 
 
 ## R CMD check results
