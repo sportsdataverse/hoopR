@@ -170,7 +170,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_schedule(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Schedule from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:48:15 UTC
+#> ℹ Data updated: 2026-06-09 12:14:49 UTC
 #> # A tibble: 34 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      

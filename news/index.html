@@ -142,6 +142,10 @@
 <strong><code><a href="../reference/torvik_game_schedule.html">torvik_game_schedule()</a></code></strong> — full game-by-game schedule and results with pre-game predictions and post-game quality metrics (<code>{year}_super_sked.json</code>).</li>
 <li>
 <strong><code><a href="../reference/torvik_ncaa_results.html">torvik_ncaa_results()</a></code></strong> — historical NCAA tournament performance by team, coach, conference or seed, including PASE / PAKE and round-by-round counts (<code>cgi-bin/ncaat.cgi</code>).</li>
+<li>
+<strong><code><a href="../reference/torvik_player_stats.html">torvik_player_stats()</a></code></strong> — every player’s advanced season stat line: offensive rating, usage, shooting splits, rebounding/assist/turnover rates, box plus/minus and per-game box averages (<code>getadvstats.php</code>).</li>
+<li>
+<strong><code><a href="../reference/torvik_game_stats.html">torvik_game_stats()</a></code></strong> — per-team-game stats: adjusted and raw offensive/defensive efficiency, four factors on both ends, tempo, result and pre-game win probability (<code>getgamestats.php</code>).</li>
 </ul><p>Requests route through hoopR’s shared <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> layer with a browser User-Agent; every wrapper returns a <code>hoopR_data</code> tibble with a 3-column <code>@return</code> table and reports errors via the standard <code>cli</code> reporters. (Note: the <code>cbbdata</code>/<code>api.cbbdata.com</code> service that previously brokered Torvik data is defunct, so these wrap barttorvik.com directly.)</p>
 </div>
 <div class="section level4">

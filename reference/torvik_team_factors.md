@@ -65,14 +65,26 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_team_factors(year = 2024))
 #> ── Bart Torvik team four factors from barttorvik.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:54:23 UTC
-#> # A tibble: 5 × 2
-#>   html                                       year
-#>   <chr>                                     <int>
-#> 1 <head><title>403 Forbidden</title></head>  2024
-#> 2 <body>                                     2024
-#> 3 <center><h1>403 Forbidden</h1></center>    2024
-#> 4 </body>                                    2024
-#> 5 </html>                                    2024
+#> ℹ Data updated: 2026-06-09 12:21:33 UTC
+#> # A tibble: 362 × 42
+#>    team_name e_fg_percent    rk e_fg_percent_def  rk_2   ftr  rk_3 ftr_def  rk_4
+#>    <chr>            <dbl> <int>            <dbl> <int> <dbl> <int>   <dbl> <int>
+#>  1 North Da…         50.2   204             52.4   281  32.2   190    29.6   108
+#>  2 Appalach…         52.7    71             45.4     6  31.6   216    20.7     2
+#>  3 San Fran…         55      22             49.5   113  23.5   356    37.9   298
+#>  4 Bradley           55.1    18             47.6    40  27.5   319    35.1   253
+#>  5 Eastern …         50.6   180             49.8   138  32     197    29.5   102
+#>  6 Long Bea…         48.5   265             51.1   214  37.8    57    32.3   170
+#>  7 Utah St.          54      43             49.8   134  39      35    30.6   126
+#>  8 Gonzaga           57       6             47.3    32  30.7   240    25.2    19
+#>  9 Valparai…         46.2   331             54.5   348  23.3   357    30.7   131
+#> 10 Pepperdi…         50.8   164             54.7   352  32.6   183    33.9   218
+#> # ℹ 352 more rows
+#> # ℹ 33 more variables: or_percent <dbl>, rk_5 <int>, dr_percent <dbl>,
+#> #   rk_6 <int>, to_percent <dbl>, rk_7 <int>, to_percent_def <dbl>, rk_8 <int>,
+#> #   x3p_percent <dbl>, rk_9 <int>, x3p_d_percent <dbl>, rk_10 <int>,
+#> #   x2p_percent <dbl>, rk_11 <int>, x2p_percent_d <dbl>, rk_12 <int>,
+#> #   ft_percent <dbl>, rk_13 <int>, ft_percent_d <dbl>, rk_14 <int>,
+#> #   x3p_rate <dbl>, rk_15 <int>, x3p_rate_d <dbl>, rk_16 <int>, arate <dbl>, …
 # }
 ```

@@ -55,7 +55,7 @@ Other CBD Ratings Functions:
 ``` r
 # \donttest{
   try(cbbd_ratings_adjusted(season = 2024))
-#> ✖ 2026-06-09 11:47:25.106782: Invalid arguments or no adjusted ratings available!
+#> ✖ 2026-06-09 12:13:57.132799: Invalid arguments or no adjusted ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

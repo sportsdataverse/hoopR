@@ -2551,10 +2551,20 @@ Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
 
   **Bart Torvik Season Schedule & Results**
 
+- [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md)
+  :
+
+  **Bart Torvik Game Stats**
+
 - [`torvik_ncaa_results()`](https://hoopR.sportsdataverse.org/reference/torvik_ncaa_results.md)
   :
 
   **Bart Torvik NCAA Tournament Results**
+
+- [`torvik_player_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_player_stats.md)
+  :
+
+  **Bart Torvik Player Season Stats**
 
 - [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md)
   :

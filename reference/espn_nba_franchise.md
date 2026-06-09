@@ -162,7 +162,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_franchise(franchise_id = 13)
 #> ── ESPN NBA Franchise from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:48:27 UTC
+#> ℹ Data updated: 2026-06-09 12:15:02 UTC
 #> # A tibble: 1 × 16
 #>   id    uid            slug    location name  nickname abbreviation display_name
 #>   <chr> <chr>          <chr>   <chr>    <chr> <lgl>    <chr>        <chr>       

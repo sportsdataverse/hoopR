@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchises()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchises Index ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 11:47:40 UTC
+#> ℹ Data updated: 2026-06-09 12:14:14 UTC
 #> # A tibble: 200 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 

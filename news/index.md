@@ -108,6 +108,14 @@ behind barttorvik’s JavaScript browser check are intentionally avoided):
   — historical NCAA tournament performance by team, coach, conference or
   seed, including PASE / PAKE and round-by-round counts
   (`cgi-bin/ncaat.cgi`).
+- **[`torvik_player_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_player_stats.md)**
+  — every player’s advanced season stat line: offensive rating, usage,
+  shooting splits, rebounding/assist/turnover rates, box plus/minus and
+  per-game box averages (`getadvstats.php`).
+- **[`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md)**
+  — per-team-game stats: adjusted and raw offensive/defensive
+  efficiency, four factors on both ends, tempo, result and pre-game win
+  probability (`getgamestats.php`).
 
 Requests route through hoopR’s shared
 [`.retry_request()`](https://hoopR.sportsdataverse.org/reference/dot-retry_request.md)
