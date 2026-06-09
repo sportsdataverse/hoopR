@@ -63,7 +63,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_future_free_agents())
 #> ── Future NBA free agents from basketball.realgm.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:20:53 UTC
+#> ℹ Data updated: 2026-06-09 19:17:12 UTC
 #> # A tibble: 784 × 13
 #>    player     pos   team  season   age   yos veteran_fa_status    gp   pts   reb
 #>    <chr>      <chr> <chr> <chr>  <dbl> <dbl> <chr>             <dbl> <dbl> <dbl>

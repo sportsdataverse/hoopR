@@ -144,7 +144,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_athletes(season = 2024)
 #> ── ESPN NBA Draft Athletes ────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:14:41 UTC
+#> ℹ Data updated: 2026-06-09 19:08:11 UTC
 #> # A tibble: 102 × 4
 #>    league season athlete_id ref                                                 
 #>    <chr>   <int> <chr>      <chr>                                               

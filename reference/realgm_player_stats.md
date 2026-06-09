@@ -83,7 +83,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_player_stats(season = 2025, stat_type = "Averages"))
 #> ── NBA player stats from basketball.realgm.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:21:04 UTC
+#> ℹ Data updated: 2026-06-09 19:17:24 UTC
 #> # A tibble: 100 × 26
 #>    number player      team     gp   mpg   ppg   fgm   fga fg_percent  x3pm  x3pa
 #>     <dbl> <chr>       <chr> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl> <dbl> <dbl>

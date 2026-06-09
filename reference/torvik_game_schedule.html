@@ -139,10 +139,28 @@ required. Data is available from 2008 to present.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">torvik_game_schedule</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-06-09 18:21:29.572895: Invalid arguments or no schedule available for 2024!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: year = 2024</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: lexical error: invalid char in json text.                                        &lt;html&gt;  &lt;head&gt;&lt;title&gt;403 Forbid                      (right here) ------^ </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Bart Torvik season schedule from barttorvik.com ────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 19:17:52 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,243 × 56</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    muid    date  conmatch matchup prediction   ttq  conf venue team1  t1oe  t1de</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Arkans… 11/6… SWAC at… 329 Ar… Missouri … 24.4      0     0 Arka… 100.   120.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Portla… 11/6… BSky at… 245 Po… Air Force… 38.7      0     0 Port…  97.5  106.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> The Ci… 11/6… SC at A… 278 Th… N.C. Stat… 32.5      0     0 The …  99.9  112.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Centra… 11/6… MAC at … 269 Ce… Oklahoma … 33.0      0     0 Cent…  94.6  105.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> BrownC… 11/6… Ivy at … 180 Br… Colgate -… 46.6      0     0 Brown 103.   107.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> North … 11/6… D2 at SC 0 Nort… Furman (1… -<span style="color: #BB0000;">1.99</span>    99     0 Nort…  77.0  126.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Bradle… 11/6… MVC at … 60 Bra… Bradley -… 71.4      0     0 Brad… 110.   100.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Nichol… 11/6… Slnd at… 236 Ni… Tulane -1… 39.4      0     0 Nich… 102.   111.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> FIUUCF… 11/6… CUSA at… 291 FI… UCF -21.5… 33.6      0     0 FIU    98.9  112.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Housto… 11/6… Slnd at… 355 Ho… BYU -41.9… 28.9      0     0 Hous…  95.5  122.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6,233 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 45 more variables: t1py &lt;dbl&gt;, t1wp &lt;int&gt;, t1propt &lt;dbl&gt;, team2 &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   t2oe &lt;dbl&gt;, t2de &lt;dbl&gt;, t2py &lt;dbl&gt;, t2wp &lt;int&gt;, t2propt &lt;dbl&gt;, tpro &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   t1qual &lt;chr&gt;, t2qual &lt;chr&gt;, gp &lt;int&gt;, result &lt;chr&gt;, tempo &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   possessions &lt;dbl&gt;, t1pts &lt;int&gt;, t2pts &lt;int&gt;, winner &lt;chr&gt;, loser &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   t1adjt &lt;dbl&gt;, t2adjt &lt;dbl&gt;, t1adjo &lt;dbl&gt;, t1adjd &lt;dbl&gt;, t2adjo &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   t2adjd &lt;dbl&gt;, gamevalue &lt;dbl&gt;, mismatch &lt;dbl&gt;, blowout &lt;dbl&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

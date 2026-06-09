@@ -152,6 +152,13 @@ cover at all (no account or API key required):
 - **[`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md)**
   — a player’s game-by-game log for a season (by Basketball-Reference
   player-id slug, e.g. `jokicni01`).
+- **[`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md)**
+  — the player index for a starting letter (career span, position,
+  height/weight, birth date, college) plus each player’s
+  Basketball-Reference id slug — a ready-made player **dictionary**,
+  closing the last `nbastatR` Basketball-Reference gap (`bref_bios()`).
+- **[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)**
+  — the current Basketball-Reference NBA injury report.
 
 Two Sports-Reference quirks are handled centrally: secondary tables
 hidden in HTML comments are un-commented, and columns are read from each
@@ -268,6 +275,73 @@ Chrome through the optional
 the challenge natively in ~2 seconds). `chromote` + Google Chrome are
 therefore a **Suggests-level** requirement for the `realgm_*` family
 only; every other hoopR source still works with the standard HTTP stack.
+
+#### **NBA injury reports (`rotowire_injuries()` / `bref_injuries()`)**
+
+The classic `nbastatR::nba_injuries()` scraped `rotoworld.com`, which
+NBC has since shut down (it now 301-redirects to
+`nbcsports.com/fantasy`; the injuries tool is gone). Two live
+replacements:
+
+- **[`rotowire_injuries()`](https://hoopR.sportsdataverse.org/reference/rotowire_injuries.md)**
+  — the current NBA injury report from
+  [RotoWire](https://www.rotowire.com) (a separate, live company).
+  RotoWire renders the grid client-side from a JSON table endpoint, so
+  this reads that JSON directly (player, team, position, injury, status,
+  RotoWire player URL). The projected return date is subscriber-only and
+  comes back as `NA`.
+- **[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)**
+  — a second source, the Basketball-Reference injury report (see above).
+
+#### **Basketball analytics utilities (`nba_*`, no network)**
+
+A set of pure, vectorized basketball-math helpers — the kind of
+efficiency / rating / four-factor calculators `nbastatR` shipped as
+`calculate_*()`. All return `NA` (not `Inf`/`NaN`) on a zero denominator
+and are league-agnostic (NBA / WNBA / college box scores):
+
+- Shooting:
+  [`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md),
+  [`nba_effective_fg_pct()`](https://hoopR.sportsdataverse.org/reference/nba_effective_fg_pct.md),
+  [`nba_ft_rate()`](https://hoopR.sportsdataverse.org/reference/nba_ft_rate.md).
+- Rating / pace:
+  [`nba_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_possessions.md),
+  [`nba_pace()`](https://hoopR.sportsdataverse.org/reference/nba_pace.md),
+  [`nba_offensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.md),
+  [`nba_defensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_defensive_rating.md),
+  [`nba_net_rating()`](https://hoopR.sportsdataverse.org/reference/nba_net_rating.md).
+- Player rate stats:
+  [`nba_game_score()`](https://hoopR.sportsdataverse.org/reference/nba_game_score.md)
+  (Hollinger),
+  [`nba_usage_rate()`](https://hoopR.sportsdataverse.org/reference/nba_usage_rate.md),
+  [`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md),
+  [`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md),
+  [`nba_turnover_pct()`](https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.md),
+  [`nba_oreb_pct()`](https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.md),
+  and
+  [`nba_four_factors()`](https://hoopR.sportsdataverse.org/reference/nba_four_factors.md)
+  (a tidy four-factors tibble).
+- Scaling / enrichment:
+  [`nba_per_minutes()`](https://hoopR.sportsdataverse.org/reference/nba_per_minutes.md)
+  (per-36 by default),
+  [`nba_per_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_per_possessions.md)
+  (per-100), and
+  [`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md),
+  which detects the standard box-score columns present in a data frame
+  and appends the advanced metrics it can compute.
+
+#### **NBA player / team dictionaries & media (`nba_*`)**
+
+- **[`nba_player_dict()`](https://hoopR.sportsdataverse.org/reference/nba_player_dict.md)**
+  /
+  **[`nba_team_dict()`](https://hoopR.sportsdataverse.org/reference/nba_team_dict.md)**
+  — tidy player and team dictionaries (ids, names, teams,
+  conference/division) for joining ids to names and fetching media, with
+  headshot / logo URLs attached.
+- **[`nba_player_headshot_url()`](https://hoopR.sportsdataverse.org/reference/nba_player_headshot_url.md)**
+  /
+  **[`nba_team_logo_url()`](https://hoopR.sportsdataverse.org/reference/nba_team_logo_url.md)**
+  — vectorized builders for the official NBA CDN headshot and logo URLs.
 
 #### **ESPN endpoint naming convention (game\_*/player\_*)**
 

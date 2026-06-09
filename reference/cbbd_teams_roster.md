@@ -46,7 +46,7 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams_roster(season = 2024, team = "Duke"))
-#> ✖ 2026-06-09 18:13:43.955591: Invalid arguments or no roster data available!
+#> ✖ 2026-06-09 19:07:07.760298: Invalid arguments or no roster data available!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

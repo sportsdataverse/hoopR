@@ -46,6 +46,8 @@ A `hoopR_data` tibble with one row per award candidate:
 
 Other Basketball-Reference Functions:
 [`bref_draft()`](https://hoopR.sportsdataverse.org/reference/bref_draft.md),
+[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md),
+[`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md),
 [`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md),
 [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md),
 [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md),
@@ -58,7 +60,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_awards(season = 2024))
 #> ── Award voting from basketball-reference.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:13:18 UTC
+#> ℹ Data updated: 2026-06-09 19:06:43 UTC
 #> # A tibble: 80 × 10
 #>    rank  player    age team  votes_first points_won points_max award_share award
 #>    <chr> <chr>   <dbl> <chr>       <dbl>      <dbl>      <dbl>       <dbl> <chr>

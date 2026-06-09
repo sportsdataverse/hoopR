@@ -53,7 +53,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_transactions())
 #> ── NBA transactions log from basketball.realgm.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:21:27 UTC
+#> ℹ Data updated: 2026-06-09 19:17:47 UTC
 #> # A tibble: 2,798 × 2
 #>    date       transaction                                                       
 #>    <date>     <chr>                                                             

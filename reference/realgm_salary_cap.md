@@ -59,7 +59,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_salary_cap())
 #> ── NBA salary cap history from basketball.realgm.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:21:14 UTC
+#> ℹ Data updated: 2026-06-09 19:17:35 UTC
 #> # A tibble: 52 × 9
 #>    season    salary_cap  luxury_tax x1st_apron x2nd_apron bae   non_taxpayer_mle
 #>    <chr>     <chr>       <chr>      <chr>      <chr>      <chr> <chr>           

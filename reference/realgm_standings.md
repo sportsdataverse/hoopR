@@ -65,7 +65,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_standings())
 #> ── NBA standings from basketball.realgm.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:21:18 UTC
+#> ℹ Data updated: 2026-06-09 19:17:37 UTC
 #> # A tibble: 30 × 18
 #>    number team           w     l   pct    gb l10   strk    ppg  oppg  diff home 
 #>     <dbl> <chr>      <dbl> <dbl> <dbl> <dbl> <chr> <chr> <dbl> <dbl> <dbl> <chr>

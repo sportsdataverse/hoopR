@@ -60,6 +60,8 @@ categories scaled accordingly.
 Other Basketball-Reference Functions:
 [`bref_awards()`](https://hoopR.sportsdataverse.org/reference/bref_awards.md),
 [`bref_draft()`](https://hoopR.sportsdataverse.org/reference/bref_draft.md),
+[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md),
+[`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md),
 [`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md),
 [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md),
 [`bref_team_roster()`](https://hoopR.sportsdataverse.org/reference/bref_team_roster.md),
@@ -71,7 +73,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_players_stats(season = 2024, table = "per_game"))
 #> ── Player season stats from basketball-reference.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:13:33 UTC
+#> ℹ Data updated: 2026-06-09 19:06:57 UTC
 #> # A tibble: 736 × 32
 #>    ranker player         age team  pos       g    gs mp_per_g fg_per_g fga_per_g
 #>     <dbl> <chr>        <dbl> <chr> <chr> <dbl> <dbl>    <dbl>    <dbl>     <dbl>

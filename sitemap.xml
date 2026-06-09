@@ -19,6 +19,8 @@
 <url><loc>https://hoopR.sportsdataverse.org/news/index.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/bref_awards.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/bref_draft.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_injuries.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_player_bios.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/bref_player_game_log.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/bref_players_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/bref_standings.html</loc></url>
@@ -359,7 +361,10 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_assist_pct.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_assistleaders.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_assisttracker.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.html</loc></url>
@@ -395,6 +400,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_cumestatsteamgames.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_data_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_defensehub.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_defensive_rating.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftboard.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinedrillresults.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinenonstationaryshooting.html</loc></url>
@@ -403,11 +409,15 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_drafthistory.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_effective_fg_pct.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_four_factors.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseleaderswrank.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_franchiseplayers.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_ft_rate.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_game_score.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_gamerotation.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_glalumboxscoresimilarityscore.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.html</loc></url>
@@ -446,9 +456,17 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_live_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_matchupsrollup.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_net_rating.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_pace.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_pbps.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_per_minutes.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_per_possessions.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_player_dict.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_player_headshot_url.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerawards.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollege.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playercareerbycollegerollup.html</loc></url>
@@ -471,6 +489,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playoffpicture.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_possessions.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboard.html</loc></url>
@@ -481,6 +500,8 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_team_dict.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_team_logo_url.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.html</loc></url>
@@ -501,6 +522,9 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_usage_rate.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_videodetails.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_videodetailsasset.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_videoevents.html</loc></url>
@@ -538,6 +562,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/register_cbbd.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/rejoin_schedules.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/request_with_proxy.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/rotowire_injuries.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/teams_links.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/torvik_game_schedule.html</loc></url>

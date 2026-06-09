@@ -43,7 +43,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_gms())
 #> ── NBA general managers from basketball.realgm.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:20:55 UTC
+#> ℹ Data updated: 2026-06-09 19:17:15 UTC
 #> # A tibble: 22 × 6
 #>    staff           team        start_season years_in_role birth_date nationality
 #>    <chr>           <chr>       <chr>                <dbl> <chr>      <chr>      

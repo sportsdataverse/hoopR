@@ -1171,14 +1171,149 @@ NBA Stats API endpoint family overview
 
   **NBA Stats API Endpoint Overview**
 
+### Basketball Analytics Utilities
+
+Pure, vectorized efficiency / rating / four-factor calculators and
+box-score scaling / enrichment helpers (no network calls;
+league-agnostic).
+
+- [`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md)
+  :
+
+  **True Shooting Percentage**
+
+- [`nba_effective_fg_pct()`](https://hoopR.sportsdataverse.org/reference/nba_effective_fg_pct.md)
+  :
+
+  **Effective Field Goal Percentage**
+
+- [`nba_ft_rate()`](https://hoopR.sportsdataverse.org/reference/nba_ft_rate.md)
+  :
+
+  **Free Throw Rate**
+
+- [`nba_game_score()`](https://hoopR.sportsdataverse.org/reference/nba_game_score.md)
+  :
+
+  **Game Score**
+
+- [`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md)
+  :
+
+  **Assist-to-Turnover Ratio**
+
+- [`nba_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_possessions.md)
+  :
+
+  **Estimated Possessions**
+
+- [`nba_pace()`](https://hoopR.sportsdataverse.org/reference/nba_pace.md)
+  :
+
+  **Pace (possessions per 48 minutes)**
+
+- [`nba_offensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.md)
+  :
+
+  **Offensive Rating (points per 100 possessions)**
+
+- [`nba_defensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_defensive_rating.md)
+  :
+
+  **Defensive Rating (points allowed per 100 possessions)**
+
+- [`nba_net_rating()`](https://hoopR.sportsdataverse.org/reference/nba_net_rating.md)
+  :
+
+  **Net Rating**
+
+- [`nba_usage_rate()`](https://hoopR.sportsdataverse.org/reference/nba_usage_rate.md)
+  :
+
+  **Usage Rate**
+
+- [`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md)
+  :
+
+  **Assist Percentage**
+
+- [`nba_turnover_pct()`](https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.md)
+  :
+
+  **Turnover Percentage**
+
+- [`nba_oreb_pct()`](https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.md)
+  :
+
+  **Offensive Rebound Percentage**
+
+- [`nba_four_factors()`](https://hoopR.sportsdataverse.org/reference/nba_four_factors.md)
+  :
+
+  **Four Factors**
+
+- [`nba_per_minutes()`](https://hoopR.sportsdataverse.org/reference/nba_per_minutes.md)
+  :
+
+  **Scale Box-Score Counting Stats Per N Minutes**
+
+- [`nba_per_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_per_possessions.md)
+  :
+
+  **Scale Box-Score Counting Stats Per N Possessions**
+
+- [`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md)
+  :
+
+  **Append Advanced Metrics to a Box Score**
+
+### NBA Dictionaries & Media
+
+Player / team dictionaries and CDN headshot / logo URL helpers.
+
+- [`nba_player_dict()`](https://hoopR.sportsdataverse.org/reference/nba_player_dict.md)
+  :
+
+  **NBA Player Dictionary**
+
+- [`nba_team_dict()`](https://hoopR.sportsdataverse.org/reference/nba_team_dict.md)
+  :
+
+  **NBA Team Dictionary**
+
+- [`nba_player_headshot_url()`](https://hoopR.sportsdataverse.org/reference/nba_player_headshot_url.md)
+  :
+
+  **NBA Player Headshot URL**
+
+- [`nba_team_logo_url()`](https://hoopR.sportsdataverse.org/reference/nba_team_logo_url.md)
+  :
+
+  **NBA Team Logo URL**
+
 ### NBA Stats API
 
 Functions exported by hoopR to access the NBA Stats API
+
+- [`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md)
+  :
+
+  **Append Advanced Metrics to a Box Score**
 
 - [`nba_alltimeleadersgrids()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md)
   :
 
   **Get NBA Stats API All-time Leaders Grid**
+
+- [`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md)
+  :
+
+  **Assist Percentage**
+
+- [`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md)
+  :
+
+  **Assist-to-Turnover Ratio**
 
 - [`nba_assistleaders()`](https://hoopR.sportsdataverse.org/reference/nba_assistleaders.md)
   :
@@ -1355,6 +1490,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Defense Hub**
 
+- [`nba_defensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_defensive_rating.md)
+  :
+
+  **Defensive Rating (points allowed per 100 possessions)**
+
 - [`nba_draftboard()`](https://hoopR.sportsdataverse.org/reference/nba_draftboard.md)
   :
 
@@ -1396,10 +1536,20 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Dunk Score Leaders**
 
+- [`nba_effective_fg_pct()`](https://hoopR.sportsdataverse.org/reference/nba_effective_fg_pct.md)
+  :
+
+  **Effective Field Goal Percentage**
+
 - [`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md)
   :
 
   **Get NBA Stats API Fantasy Widget**
+
+- [`nba_four_factors()`](https://hoopR.sportsdataverse.org/reference/nba_four_factors.md)
+  :
+
+  **Four Factors**
 
 - [`nba_franchisehistory()`](https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.md)
   :
@@ -1420,6 +1570,16 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Franchise Players**
+
+- [`nba_ft_rate()`](https://hoopR.sportsdataverse.org/reference/nba_ft_rate.md)
+  :
+
+  **Free Throw Rate**
+
+- [`nba_game_score()`](https://hoopR.sportsdataverse.org/reference/nba_game_score.md)
+  :
+
+  **Game Score**
 
 - [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
   :
@@ -1612,6 +1772,26 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Matchups Rollup**
 
+- [`nba_net_rating()`](https://hoopR.sportsdataverse.org/reference/nba_net_rating.md)
+  :
+
+  **Net Rating**
+
+- [`nba_offensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.md)
+  :
+
+  **Offensive Rating (points per 100 possessions)**
+
+- [`nba_oreb_pct()`](https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.md)
+  :
+
+  **Offensive Rebound Percentage**
+
+- [`nba_pace()`](https://hoopR.sportsdataverse.org/reference/nba_pace.md)
+  :
+
+  **Pace (possessions per 48 minutes)**
+
 - [`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
   :
 
@@ -1622,10 +1802,30 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API play-by-play (Multiple Games)**
 
+- [`nba_per_minutes()`](https://hoopR.sportsdataverse.org/reference/nba_per_minutes.md)
+  :
+
+  **Scale Box-Score Counting Stats Per N Minutes**
+
+- [`nba_per_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_per_possessions.md)
+  :
+
+  **Scale Box-Score Counting Stats Per N Possessions**
+
 - [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
   :
 
   **Get NBA Stats API Play-by-Play V3**
+
+- [`nba_player_dict()`](https://hoopR.sportsdataverse.org/reference/nba_player_dict.md)
+  :
+
+  **NBA Player Dictionary**
+
+- [`nba_player_headshot_url()`](https://hoopR.sportsdataverse.org/reference/nba_player_headshot_url.md)
+  :
+
+  **NBA Player Headshot URL**
 
 - [`nba_playerawards()`](https://hoopR.sportsdataverse.org/reference/nba_playerawards.md)
   :
@@ -1744,6 +1944,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Playoff Picture**
 
+- [`nba_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_possessions.md)
+  :
+
+  **Estimated Possessions**
+
 - [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
   :
 
@@ -1794,6 +1999,16 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Synergy Play Type Stats**
+
+- [`nba_team_dict()`](https://hoopR.sportsdataverse.org/reference/nba_team_dict.md)
+  :
+
+  **NBA Team Dictionary**
+
+- [`nba_team_logo_url()`](https://hoopR.sportsdataverse.org/reference/nba_team_logo_url.md)
+  :
+
+  **NBA Team Logo URL**
 
 - [`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md)
   :
@@ -1901,6 +2116,21 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Today's Scoreboard**
+
+- [`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md)
+  :
+
+  **True Shooting Percentage**
+
+- [`nba_turnover_pct()`](https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.md)
+  :
+
+  **Turnover Percentage**
+
+- [`nba_usage_rate()`](https://hoopR.sportsdataverse.org/reference/nba_usage_rate.md)
+  :
+
+  **Usage Rate**
 
 - [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
   **\[deprecated\]** :
@@ -2425,6 +2655,23 @@ Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
 
   **Bart Torvik Team Four Factors**
 
+## Injury Reports
+
+### NBA Injury Functions
+
+Current NBA injury reports. RotoWire is the live replacement for the
+defunct RotoWorld feed; Basketball-Reference offers a second source.
+
+- [`rotowire_injuries()`](https://hoopR.sportsdataverse.org/reference/rotowire_injuries.md)
+  :
+
+  **RotoWire NBA Injury Report**
+
+- [`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)
+  :
+
+  **Basketball-Reference NBA Injury Report**
+
 ## Basketball-Reference
 
 ### Basketball-Reference Functions
@@ -2440,6 +2687,16 @@ Functions exported by hoopR to scrape basketball-reference.com
   :
 
   **Basketball-Reference Draft**
+
+- [`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)
+  :
+
+  **Basketball-Reference NBA Injury Report**
+
+- [`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md)
+  :
+
+  **Basketball-Reference Player Bios / Index**
 
 - [`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md)
   :

@@ -66,7 +66,7 @@ Other RealGM Functions:
 # \donttest{
   try(realgm_team_stats(season = 2025, stat_type = "Averages"))
 #> ── NBA team stats from basketball.realgm.com ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:21:20 UTC
+#> ℹ Data updated: 2026-06-09 19:17:40 UTC
 #> # A tibble: 30 × 25
 #>    number team     gp   mpg   ppg   fgm   fga fg_percent  x3pm  x3pa x3p_percent
 #>     <dbl> <chr> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl> <dbl> <dbl>       <dbl>

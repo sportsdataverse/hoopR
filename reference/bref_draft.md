@@ -48,6 +48,8 @@ A `hoopR_data` tibble with one row per draft pick (career columns shown
 
 Other Basketball-Reference Functions:
 [`bref_awards()`](https://hoopR.sportsdataverse.org/reference/bref_awards.md),
+[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md),
+[`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md),
 [`bref_player_game_log()`](https://hoopR.sportsdataverse.org/reference/bref_player_game_log.md),
 [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md),
 [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md),
@@ -60,7 +62,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_draft(season = 2024))
 #> ── Draft results from basketball-reference.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 18:13:19 UTC
+#> ℹ Data updated: 2026-06-09 19:06:44 UTC
 #> # A tibble: 60 × 23
 #>    ranker pick_overall team  player college_name seasons     g    mp   pts   trb
 #>     <dbl>        <dbl> <chr> <chr>  <chr>          <dbl> <dbl> <dbl> <dbl> <dbl>
