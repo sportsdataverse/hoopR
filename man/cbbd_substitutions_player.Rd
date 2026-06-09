@@ -21,7 +21,7 @@ A \code{hoopR_data} tibble with one row per substitution (same columns as
 }
 \examples{
 \donttest{
-  try(cbbd_substitutions_player(player_id = 4433137, season = 2024))
+  try(cbbd_substitutions_player(player_id = 160, season = 2024))
 }
 }
 \seealso{

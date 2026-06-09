@@ -29,7 +29,7 @@
 #' @export
 #' @examples
 #' \donttest{
-#'   try(cbbd_substitutions_game(game_id = 401581758))
+#'   try(cbbd_substitutions_game(game_id = 5881))
 #' }
 cbbd_substitutions_game <- function(game_id) {
   .args <- .capture_args()
@@ -71,7 +71,7 @@ cbbd_substitutions_game <- function(game_id) {
 #' @export
 #' @examples
 #' \donttest{
-#'   try(cbbd_substitutions_player(player_id = 4433137, season = 2024))
+#'   try(cbbd_substitutions_player(player_id = 160, season = 2024))
 #' }
 cbbd_substitutions_player <- function(player_id, season = most_recent_mbb_season()) {
   .args <- .capture_args()

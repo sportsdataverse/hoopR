@@ -39,7 +39,7 @@ is flattened to \verb{shot_info_*}, \code{participants}/\code{on_floor} are list
 }
 \examples{
 \donttest{
-  try(cbbd_plays_game(game_id = 401581758))
+  try(cbbd_plays_game(game_id = 5881))
 }
 }
 \seealso{

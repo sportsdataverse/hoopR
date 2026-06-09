@@ -141,6 +141,29 @@ themes that emerged after the 3.0.0 CRAN submission:
   new `\donttest{}` example against live ESPN core-v2 (~6.5 min wall
   time) and they all passed.
 
+### CollegeBasketballData (CBD) API wrappers
+
+* Adds a new `cbbd_*()` function family (38 endpoint wrappers) covering the
+  full v1 surface of the CollegeBasketballData API
+  (`api.collegebasketballdata.com`) — the men's college basketball sibling of
+  CollegeFootballData, which `cfbfastR` wraps with `cfbd_*`. Categories: games
+  (incl. media, team/player box scores, scoreboard), play-by-play,
+  substitutions, team/player season + shooting stats, lineups, SRS / adjusted /
+  Elo ratings, poll rankings, betting lines, recruiting (players / teams /
+  portal), NBA draft, teams / roster, venues and conferences.
+* Bearer-token auth via the `CBBD_API_KEY` environment variable
+  (`register_cbbd` / `cbbd_key()` / `has_cbbd_key()` / `check_cbbd_key()`,
+  mirroring the `cfbfastR` key pattern). Requests route through hoopR's shared
+  `httr2` `.retry_request()` layer; every wrapper returns a `hoopR_data` tibble,
+  documents a 3-column `@return` table, and reports errors via the standard
+  `.report_api_error()` / `.report_api_warning()` `cli` helpers. No new package
+  dependencies are introduced (`httr2`, `jsonlite`, `janitor`, `dplyr` already
+  in `Imports`).
+* All 38 wrappers ship with `CBBD_API_KEY`-gated, subset-direction tests
+  (`skip_on_cran()` + `skip_on_ci()` + `skip_cbbd_test()`) and `\donttest{}`
+  examples verified against the live API. A new vignette,
+  "CollegeBasketballData (CBD) Endpoints", documents the family.
+
 
 ## R CMD check results
 

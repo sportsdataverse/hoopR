@@ -28,7 +28,7 @@ A \code{hoopR_data} tibble with one row per play (same columns as
 }
 \examples{
 \donttest{
-  try(cbbd_plays_player(player_id = 4433137, season = 2024))
+  try(cbbd_plays_player(player_id = 160, season = 2024))
 }
 }
 \seealso{

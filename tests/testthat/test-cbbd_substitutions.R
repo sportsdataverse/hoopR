@@ -32,3 +32,20 @@ test_that("CBD - Substitutions by Game", {
 
   Sys.sleep(1)
 })
+
+test_that("CBD - Substitutions by Player", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  players <- cbbd_stats_player_season(season = 2024, team = "Duke")
+  if (!is.data.frame(players) || nrow(players) == 0) skip("No players to seed player_id")
+
+  x <- cbbd_substitutions_player(player_id = players$athlete_id[1], season = 2024)
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No substitutions returned at test time")
+
+  expect_in(sort(cbbd_sub_cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(1)
+})

@@ -34,6 +34,51 @@ test_that("CBD - Plays by Game", {
   Sys.sleep(1)
 })
 
+test_that("CBD - Plays by Player", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  players <- cbbd_stats_player_season(season = 2024, team = "Duke")
+  if (!is.data.frame(players) || nrow(players) == 0) skip("No players to seed player_id")
+
+  x <- cbbd_plays_player(player_id = players$athlete_id[1], season = 2024)
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No plays returned at test time")
+
+  expect_in(sort(cbbd_play_cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(1)
+})
+
+test_that("CBD - Plays by Date", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  x <- cbbd_plays_date(date = "2024-02-01T00:00:00.000Z")
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No plays returned at test time")
+
+  expect_in(sort(cbbd_play_cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(1)
+})
+
+test_that("CBD - Plays by Tournament", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  x <- cbbd_plays_tournament(tournament = "NCAA", season = 2024)
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No plays returned at test time")
+
+  expect_in(sort(cbbd_play_cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(1)
+})
+
 test_that("CBD - Play Types", {
   skip_on_cran()
   skip_on_ci()

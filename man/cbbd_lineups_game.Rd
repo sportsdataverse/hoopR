@@ -19,7 +19,7 @@ A \code{hoopR_data} tibble with one row per lineup (same columns as
 }
 \examples{
 \donttest{
-  try(cbbd_lineups_game(game_id = 401581758))
+  try(cbbd_lineups_game(game_id = 5881))
 }
 }
 \seealso{

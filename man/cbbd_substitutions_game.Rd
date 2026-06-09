@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble with one row per substitution. \code{sub_in} and
 }
 \examples{
 \donttest{
-  try(cbbd_substitutions_game(game_id = 401581758))
+  try(cbbd_substitutions_game(game_id = 5881))
 }
 }
 \seealso{

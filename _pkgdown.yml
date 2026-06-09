@@ -90,6 +90,8 @@ navbar:
           href: articles/espn-endpoints.html
         - text: "KenPom Example Functions"
           href: articles/kenpom-example-functions.html
+        - text: "CollegeBasketballData (CBD) Endpoints"
+          href: articles/cbbd-college-basketball-data.html
         - text: "MBB Cookbook"
           href: articles/mbb-cookbook.html
         - text: "NBA Cookbook"

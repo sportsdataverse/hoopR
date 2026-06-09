@@ -75,7 +75,7 @@ cbbd_lineups_team <- function(season = most_recent_mbb_season(), team,
 #' @export
 #' @examples
 #' \donttest{
-#'   try(cbbd_lineups_game(game_id = 401581758))
+#'   try(cbbd_lineups_game(game_id = 5881))
 #' }
 cbbd_lineups_game <- function(game_id) {
   .args <- .capture_args()
