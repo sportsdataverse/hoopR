@@ -22,11 +22,11 @@ A \code{hoopR_data} tibble with one row per injured player:\tabular{lll}{
 One row per injured player with team, the date the status was last updated and
 the injury note (status + description). No API key is required.
 
-\strong{Note on RotoWorld:} the classic \code{a legacy NBA R package::nba_injuries()} scraped
-\code{rotoworld.com}, which NBC shut down (it now redirects to
-\code{nbcsports.com/fantasy} and the injuries tool is gone). This function uses
-Basketball-Reference's live injury report instead, which is maintained and
-carries the same player / team / status / note fields.
+\strong{Note on RotoWorld:} RotoWorld was a long-standing NBA injuries source, but
+NBC shut it down (it now redirects to \code{nbcsports.com/fantasy} and the injuries
+tool is gone). This function uses Basketball-Reference's live injury report
+instead, which is maintained and carries the same player / team / status /
+note fields.
 }
 \examples{
 \donttest{

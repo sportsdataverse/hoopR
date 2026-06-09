@@ -4,7 +4,7 @@
 #' into a single tibble. hoopR's `nba_*()` wrappers return the endpoint's
 #' `resultSets` verbatim as a named list of tibbles (lossless, no munging); these
 #' reduce that list on demand, making explicit -- and composable -- the three
-#' reductions `a legacy NBA R package` hard-coded inside each function.
+#' reductions older scrapers tended to hard-code inside each task function.
 #'
 #' @details
 #' `nba_bind_sets()` row-binds the sets into one long tibble, tagging each row

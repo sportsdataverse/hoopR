@@ -2,8 +2,8 @@
 # RotoWire NBA injuries (JSON table endpoint)
 # ---------------------------------------------------------------------------
 #
-# The classic a legacy NBA R package::nba_injuries() scraped rotoworld.com, which NBC shut
-# down. RotoWire (rotowire.com -- a separate, live company) is the modern
+# RotoWorld (rotoworld.com) was a long-standing NBA injuries source, but NBC
+# shut it down. RotoWire (rotowire.com -- a separate, live company) is the modern
 # equivalent. Its injury page renders client-side from a JSON endpoint
 # (`/basketball/tables/injury-report.php`), so we read that JSON directly rather
 # than scraping the rendered grid. Player / team / injury / status are openly
@@ -23,9 +23,8 @@
 #' the player's RotoWire page. The projected return date is RotoWire
 #' subscriber-only content and is returned as `NA` for non-subscribers.
 #'
-#' This is the live replacement for the defunct RotoWorld injuries feed that the
-#' classic `a legacy NBA R package::nba_injuries()` used. See also [bref_injuries()] for the
-#' Basketball-Reference injury report.
+#' This is the live replacement for the defunct RotoWorld injuries feed. See also
+#' [bref_injuries()] for the Basketball-Reference injury report.
 #' @return A `hoopR_data` tibble with one row per injured player:
 #'
 #'    |col_name    |types     |description                                      |

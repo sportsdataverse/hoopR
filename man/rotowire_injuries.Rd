@@ -30,9 +30,8 @@ designation (Out / Doubtful / Questionable / GTD / Day-To-Day) and a link to
 the player's RotoWire page. The projected return date is RotoWire
 subscriber-only content and is returned as \code{NA} for non-subscribers.
 
-This is the live replacement for the defunct RotoWorld injuries feed that the
-classic \code{a legacy NBA R package::nba_injuries()} used. See also \code{\link[=bref_injuries]{bref_injuries()}} for the
-Basketball-Reference injury report.
+This is the live replacement for the defunct RotoWorld injuries feed. See also
+\code{\link[=bref_injuries]{bref_injuries()}} for the Basketball-Reference injury report.
 }
 \examples{
 \donttest{

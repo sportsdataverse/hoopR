@@ -119,9 +119,8 @@ defunct, so these wrap barttorvik.com directly.)
 ### **Basketball-Reference (`bref_*`)**
 
 New `bref_*()` function family scraping publicly available NBA data from
-[Basketball-Reference](https://www.basketball-reference.com) — the largest
-source gap versus `a legacy NBA R package`, which hoopR previously did not cover at all (no
-account or API key required):
+[Basketball-Reference](https://www.basketball-reference.com) — a source hoopR
+previously did not cover at all (no account or API key required):
 
 - **`bref_players_stats()`** — league-wide player season stats; pick the table
   with `table = "per_game"` / `"totals"` / `"advanced"` / `"per_minute"` /
@@ -139,8 +138,7 @@ account or API key required):
   Basketball-Reference player-id slug, e.g. `jokicni01`).
 - **`bref_player_bios()`** — the player index for a starting letter (career span,
   position, height/weight, birth date, college) plus each player's
-  Basketball-Reference id slug — a ready-made player **dictionary**, closing the
-  last `a legacy NBA R package` Basketball-Reference gap (`bref_bios()`).
+  Basketball-Reference id slug — a ready-made player **dictionary**.
 - **`bref_injuries()`** — the current Basketball-Reference NBA injury report.
 
 Two Sports-Reference quirks are handled centrally: secondary tables hidden in
@@ -153,8 +151,8 @@ behind `BREF_TESTS=1`. No new dependencies (`rvest` already in `Imports`).
 
 ### **Salary & mock-draft sources (Spotrac / HoopsHype / NBADraft.net)**
 
-New wrappers for third-party NBA salary and mock-draft sites (also part of the
-`a legacy NBA R package` parity gap), all public HTML, no key required:
+New wrappers for third-party NBA salary and mock-draft sites, all public HTML,
+no key required:
 
 - **`spotrac_team_cap()`** — team salary-cap allocations, cap space, active
   players and average age from [Spotrac](https://www.spotrac.com).
@@ -163,8 +161,8 @@ New wrappers for third-party NBA salary and mock-draft sites (also part of the
   [HoopsHype](https://hoopshype.com). HoopsHype is now a Next.js app whose
   single salaries page paginates client-side, but each team page embeds that
   team's complete roster in its `__NEXT_DATA__` payload — so this iterates the 30
-  team pages and stitches them together (~600 players), reviving the
-  team-by-team approach `a legacy NBA R package` used before HoopsHype's redesign.
+  team pages and stitches them together (~600 players) via a team-by-team
+  approach.
 
 - **`nbadraft_mock_draft()`** — the current consensus mock draft (both rounds)
   from [NBADraft.net](https://www.nbadraft.net).
@@ -180,10 +178,10 @@ salaries, `espn_nba_player_contracts()` remains the most complete source.
 challenge (`cf-mitigated: challenge`) that returns **HTTP 403** to every
 libcurl-based client (`httr2`, `httr`, `rvest`) regardless of headers —
 Cloudflare fingerprints the TLS handshake (JA3) *and* demands a JavaScript
-proof-of-work to mint the `cf_clearance` cookie. The `a legacy NBA R package`-method audit
-first recorded RealGM as **dead** on that basis. It is **not** dead — it is
-reachable with a real browser engine, and 17 `realgm_*()` wrappers now cover the
-NBA endpoint surface:
+proof-of-work to mint the `cf_clearance` cookie. An earlier source audit
+recorded RealGM as **dead** on that basis. It is **not** dead — it is reachable
+with a real browser engine, and 17 `realgm_*()` wrappers now cover the NBA
+endpoint surface:
 
 *Players & personnel*
 
@@ -234,8 +232,8 @@ source still works with the standard HTTP stack.
 
 ### **NBA injury reports (`rotowire_injuries()` / `bref_injuries()`)**
 
-The classic `a legacy NBA R package::nba_injuries()` scraped `rotoworld.com`, which NBC has
-since shut down (it now 301-redirects to `nbcsports.com/fantasy`; the injuries
+RotoWorld (`rotoworld.com`) was a long-standing NBA injuries source, but NBC has
+since shut it down (it now 301-redirects to `nbcsports.com/fantasy`; the injuries
 tool is gone). Two live replacements:
 
 - **`rotowire_injuries()`** — the current NBA injury report from
@@ -248,10 +246,9 @@ tool is gone). Two live replacements:
 
 ### **Basketball analytics utilities (`nba_*`, no network)**
 
-A set of pure, vectorized basketball-math helpers — the kind of efficiency /
-rating / four-factor calculators `a legacy NBA R package` shipped as `calculate_*()`. All
-return `NA` (not `Inf`/`NaN`) on a zero denominator and are league-agnostic
-(NBA / WNBA / college box scores):
+A set of pure, vectorized basketball-math helpers — standard efficiency /
+rating / four-factor calculators. All return `NA` (not `Inf`/`NaN`) on a zero
+denominator and are league-agnostic (NBA / WNBA / college box scores):
 
 - Shooting: `nba_true_shooting_pct()`, `nba_effective_fg_pct()`, `nba_ft_rate()`.
 - Rating / pace: `nba_possessions()`, `nba_pace()`, `nba_offensive_rating()`,
@@ -277,7 +274,7 @@ return `NA` (not `Inf`/`NaN`) on a zero denominator and are league-agnostic
 hoopR's NBA Stats wrappers return the endpoint's `resultSets` verbatim as a
 *named list of tibbles* (structure-faithful, lossless). These three pure helpers
 reduce that list to a single tibble on demand — making explicit, and composable,
-the three reductions `a legacy NBA R package` hard-coded inside each function:
+the three common result-set reductions:
 
 - **`nba_bind_sets(tag_column = )`** — row-bind the sets into one long tibble,
   tagging each row with its origin (tactic **B**); columns absent from a set fill
@@ -296,10 +293,9 @@ tibble. The default hoopR return (the list itself) is the "keep them all" option
 ### **NBA combined-dataset wrappers (`nba_tidy_*()`)**
 
 The per-dataset equivalent of the result-set helpers: each fetches a specific
-multi-result-set endpoint and applies its canonical reduction in one call (what
-`a legacy NBA R package` hard-coded inside each task function), so you get the munged tibble
-directly. All are resilient to the empty / partial sets stats.nba.com
-occasionally returns.
+multi-result-set endpoint and applies its canonical reduction in one call, so you
+get the munged tibble directly. All are resilient to the empty / partial sets
+stats.nba.com occasionally returns.
 
 - **`nba_tidy_franchise_history()`** — [nba_franchisehistory()]'s active +
   defunct sets row-bound into one franchise timeline, tagged `active` / `defunct`

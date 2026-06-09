@@ -186,8 +186,8 @@ themes that emerged after the 3.0.0 CRAN submission:
 ### Basketball-Reference (`bref_*`) wrappers
 
 * Adds a `bref_*()` function family (7 wrappers) scraping publicly available NBA
-  data from basketball-reference.com — the largest source gap versus `a legacy NBA R package`
-  (hoopR previously had no Basketball-Reference coverage). `bref_players_stats()`
+  data from basketball-reference.com (hoopR previously had no Basketball-Reference
+  coverage). `bref_players_stats()`
   (player season stats: per-game/totals/advanced/per-36/per-100),
   `bref_teams_stats()` (team season stats), `bref_standings()` (conference
   standings + SRS), `bref_draft()` (draft results with career stats),
@@ -200,8 +200,8 @@ themes that emerged after the 3.0.0 CRAN submission:
   tables. No new dependencies (`rvest`/`xml2` already available). Examples are
   `\donttest{}`; tests are gated behind `BREF_TESTS=1` because the site
   rate-limits (~20 requests/minute).
-* Adds salary / mock-draft scrapers for three third-party sites (also part of
-  the `a legacy NBA R package` gap): `spotrac_team_cap()` (Spotrac team cap), `hoopshype_salaries()`
+* Adds salary / mock-draft scrapers for three third-party sites:
+  `spotrac_team_cap()` (Spotrac team cap), `hoopshype_salaries()`
   (HoopsHype player salaries), and `nbadraft_mock_draft()` (NBADraft.net mock
   draft). All public HTML, no key required, `\donttest{}` examples, network-gated
   tests. Basketball Insiders (redundant team-cap only) was evaluated and
@@ -221,8 +221,8 @@ themes that emerged after the 3.0.0 CRAN submission:
   bios per starting letter, doubling as a player dictionary) and
   `bref_injuries()` (injury report). `\donttest{}` examples; `BREF_TESTS=1` gate.
 * Adds `rotowire_injuries()` — the live RotoWire NBA injury report (read from its
-  JSON table endpoint). Replaces the defunct RotoWorld feed the old `a legacy NBA R package`
-  used. Public JSON, no key; `\donttest{}` example, network-gated test.
+  JSON table endpoint). Replaces the defunct RotoWorld feed. Public JSON, no key;
+  `\donttest{}` example, network-gated test.
 * Adds a set of pure, vectorized basketball analytics utilities (no network):
   `nba_true_shooting_pct()`, `nba_effective_fg_pct()`, `nba_ft_rate()`,
   `nba_game_score()`, `nba_possessions()`, `nba_pace()`,

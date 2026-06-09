@@ -2,7 +2,7 @@
 # Dataset-specific result-set reducers ("per-function munging")
 # ---------------------------------------------------------------------------
 #
-# a legacy NBA R package hard-coded a canonical reduction inside each task function. These
+# Some scrapers hard-code a canonical reduction inside each task function. These
 # wrappers do the equivalent for hoopR: they fetch a multi-resultSet `nba_*()`
 # endpoint and apply the right reduction (delegating to nba_bind_sets() /
 # nba_join_sets() / nba_nest_sets()), so you get the munged single tibble in one

@@ -10,8 +10,8 @@
 #' HoopsHype is a Next.js app whose single salaries page paginates client-side,
 #' but each team's salary page (`/salaries/{team}/`) embeds that team's complete
 #' roster in its `__NEXT_DATA__` payload. This function iterates the 30 team
-#' pages and stitches them together (≈30 requests per call), reviving the
-#' team-by-team approach used by `a legacy NBA R package`.
+#' pages and stitches them together (≈30 requests per call) using a team-by-team
+#' approach.
 #' @return A `hoopR_data` tibble with one row per player-season:
 #'
 #'    |col_name         |types     |description                                   |

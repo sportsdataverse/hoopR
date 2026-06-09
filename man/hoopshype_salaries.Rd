@@ -34,8 +34,8 @@ dollar figures are returned as numeric.
 HoopsHype is a Next.js app whose single salaries page paginates client-side,
 but each team's salary page (\verb{/salaries/\{team\}/}) embeds that team's complete
 roster in its \verb{__NEXT_DATA__} payload. This function iterates the 30 team
-pages and stitches them together (≈30 requests per call), reviving the
-team-by-team approach used by \code{a legacy NBA R package}.
+pages and stitches them together (≈30 requests per call) using a team-by-team
+approach.
 }
 \examples{
 \donttest{
