@@ -135,7 +135,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_leaders(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Leaders ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 12:14:23 UTC
+#> ℹ Data updated: 2026-06-09 13:06:14 UTC
 #> # A tibble: 46 × 11
 #>    league  event_id team_id category_name category_display category_abbrev  rank
 #>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>           <int>

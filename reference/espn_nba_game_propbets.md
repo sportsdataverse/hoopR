@@ -154,7 +154,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_propbets(event_id = 401283399, provider_id = 58)
 #> ── ESPN NBA Event Prop Bets ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 12:15:09 UTC
+#> ℹ Data updated: 2026-06-09 13:07:02 UTC
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,

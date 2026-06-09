@@ -2576,6 +2576,32 @@ Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
 
   **Bart Torvik Team Four Factors**
 
+## Basketball-Reference
+
+### Basketball-Reference Functions
+
+Functions exported by hoopR to scrape basketball-reference.com
+
+- [`bref_draft()`](https://hoopR.sportsdataverse.org/reference/bref_draft.md)
+  :
+
+  **Basketball-Reference Draft**
+
+- [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md)
+  :
+
+  **Basketball-Reference Player Season Stats**
+
+- [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md)
+  :
+
+  **Basketball-Reference Standings**
+
+- [`bref_teams_stats()`](https://hoopR.sportsdataverse.org/reference/bref_teams_stats.md)
+  :
+
+  **Basketball-Reference Team Season Stats**
+
 ## Helper Functions and Data
 
 ### Included data

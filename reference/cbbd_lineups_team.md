@@ -64,7 +64,7 @@ Other CBD Lineups Functions:
 ``` r
 # \donttest{
   try(cbbd_lineups_team(season = 2024, team = "Duke"))
-#> ✖ 2026-06-09 12:13:55.240414: Invalid arguments or no lineup data available for Duke!
+#> ✖ 2026-06-09 13:05:42.379847: Invalid arguments or no lineup data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke", start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

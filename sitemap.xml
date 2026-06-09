@@ -17,6 +17,10 @@
 <url><loc>https://hoopR.sportsdataverse.org/copilot-instructions.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/index.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/news/index.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_draft.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_players_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_standings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/bref_teams_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/cbbd_conferences.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/cbbd_conferences_history.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/cbbd_draft_picks.html</loc></url>
@@ -58,6 +62,8 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/check_status.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/csv_from_url.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-bref_table.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-bref_text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-capture_args.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-cbbd_get.html</loc></url>

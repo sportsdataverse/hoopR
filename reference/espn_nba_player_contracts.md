@@ -153,7 +153,7 @@ Saiem Gilani
   # LeBron James — athlete id 1966
   espn_nba_player_contracts(athlete_id = 1966)
 #> ── ESPN NBA Athlete Contracts Index ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 12:15:18 UTC
+#> ℹ Data updated: 2026-06-09 13:07:11 UTC
 #> # A tibble: 20 × 4
 #>    athlete_id season ref                                                  league
 #>    <chr>       <int> <chr>                                                <chr> 
