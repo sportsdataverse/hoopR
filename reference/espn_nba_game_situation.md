@@ -143,7 +143,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_situation(event_id = 401283399)
 #> ── ESPN NBA Event Situation ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:41 UTC
+#> ℹ Data updated: 2026-06-09 22:03:02 UTC
 #> # A tibble: 1 × 15
 #>   league event_id  home_timeouts_current home_timeouts_remaining
 #>   <chr>  <chr>                     <int>                   <int>

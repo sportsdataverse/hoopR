@@ -4,8 +4,8 @@ Convenience helpers to munge hoopR's structure-faithful named-list
 result sets into a single tibble. hoopR's `nba_*()` wrappers return the
 endpoint's `resultSets` verbatim as a named list of tibbles (lossless,
 no munging); these reduce that list on demand, making explicit – and
-composable – the three reductions `nbastatR` hard-coded inside each
-function.
+composable – the three reductions older scrapers tended to hard-code
+inside each task function.
 
 ## Usage
 

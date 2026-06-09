@@ -44,7 +44,7 @@ Other CBD Plays Functions:
 ``` r
 # \donttest{
   try(cbbd_plays_date(date = "2024-02-01T00:00:00.000Z"))
-#> ✖ 2026-06-09 21:38:38.848594: Invalid arguments or no play data available for 2024-02-01T00:00:00.000Z!
+#> ✖ 2026-06-09 22:01:43.933823: Invalid arguments or no play data available for 2024-02-01T00:00:00.000Z!
 #> ✖ Args: date = "2024-02-01T00:00:00.000Z", shooting_plays_only = FALSE, utc_offset = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

@@ -3,19 +3,19 @@
 Basketball-Reference.
 One row per injured player with team, the date the status was last updated and
 the injury note (status + description). No API key is required.
-Note on RotoWorld: the classic nbastatR::nba_injuries() scraped
-rotoworld.com, which NBC shut down (it now redirects to
-nbcsports.com/fantasy and the injuries tool is gone). This function uses
-Basketball-Reference's live injury report instead, which is maintained and
-carries the same player / team / status / note fields."><meta property="og:description" content="Get the current NBA injury report from
+Note on RotoWorld: RotoWorld was a long-standing NBA injuries source, but
+NBC shut it down (it now redirects to nbcsports.com/fantasy and the injuries
+tool is gone). This function uses Basketball-Reference's live injury report
+instead, which is maintained and carries the same player / team / status /
+note fields."><meta property="og:description" content="Get the current NBA injury report from
 Basketball-Reference.
 One row per injured player with team, the date the status was last updated and
 the injury note (status + description). No API key is required.
-Note on RotoWorld: the classic nbastatR::nba_injuries() scraped
-rotoworld.com, which NBC shut down (it now redirects to
-nbcsports.com/fantasy and the injuries tool is gone). This function uses
-Basketball-Reference's live injury report instead, which is maintained and
-carries the same player / team / status / note fields."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
+Note on RotoWorld: RotoWorld was a long-standing NBA injuries source, but
+NBC shut it down (it now redirects to nbcsports.com/fantasy and the injuries
+tool is gone). This function uses Basketball-Reference's live injury report
+instead, which is maintained and carries the same player / team / status /
+note fields."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -107,11 +107,11 @@ carries the same player / team / status / note fields."><meta property="og:image
 <a href="https://www.basketball-reference.com" class="external-link">Basketball-Reference</a>.</strong></p>
 <p>One row per injured player with team, the date the status was last updated and
 the injury note (status + description). No API key is required.</p>
-<p><strong>Note on RotoWorld:</strong> the classic <code>nbastatR::nba_injuries()</code> scraped
-<code>rotoworld.com</code>, which NBC shut down (it now redirects to
-<code>nbcsports.com/fantasy</code> and the injuries tool is gone). This function uses
-Basketball-Reference's live injury report instead, which is maintained and
-carries the same player / team / status / note fields.</p>
+<p><strong>Note on RotoWorld:</strong> RotoWorld was a long-standing NBA injuries source, but
+NBC shut it down (it now redirects to <code>nbcsports.com/fantasy</code> and the injuries
+tool is gone). This function uses Basketball-Reference's live injury report
+instead, which is maintained and carries the same player / team / status /
+note fields.</p>
     </div>
 
     <div class="section level2">
@@ -140,7 +140,7 @@ carries the same player / team / status / note fields.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bref_injuries</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA injury report from basketball-reference.com ────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 21:38:22 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-09 22:01:24 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 41 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    player             team_name         date_update       note                  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 </span>

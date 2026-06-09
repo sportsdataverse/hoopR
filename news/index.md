@@ -128,9 +128,8 @@ barttorvik.com directly.)
 #### **Basketball-Reference (`bref_*`)**
 
 New `bref_*()` function family scraping publicly available NBA data from
-[Basketball-Reference](https://www.basketball-reference.com) — the
-largest source gap versus `nbastatR`, which hoopR previously did not
-cover at all (no account or API key required):
+[Basketball-Reference](https://www.basketball-reference.com) — a source
+hoopR previously did not cover at all (no account or API key required):
 
 - **[`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md)**
   — league-wide player season stats; pick the table with
@@ -155,8 +154,7 @@ cover at all (no account or API key required):
 - **[`bref_player_bios()`](https://hoopR.sportsdataverse.org/reference/bref_player_bios.md)**
   — the player index for a starting letter (career span, position,
   height/weight, birth date, college) plus each player’s
-  Basketball-Reference id slug — a ready-made player **dictionary**,
-  closing the last `nbastatR` Basketball-Reference gap (`bref_bios()`).
+  Basketball-Reference id slug — a ready-made player **dictionary**.
 - **[`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)**
   — the current Basketball-Reference NBA injury report.
 
@@ -173,8 +171,8 @@ behind `BREF_TESTS=1`. No new dependencies (`rvest` already in
 
 #### **Salary & mock-draft sources (Spotrac / HoopsHype / NBADraft.net)**
 
-New wrappers for third-party NBA salary and mock-draft sites (also part
-of the `nbastatR` parity gap), all public HTML, no key required:
+New wrappers for third-party NBA salary and mock-draft sites, all public
+HTML, no key required:
 
 - **[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)**
   — team salary-cap allocations, cap space, active players and average
@@ -187,8 +185,7 @@ of the `nbastatR` parity gap), all public HTML, no key required:
   whose single salaries page paginates client-side, but each team page
   embeds that team’s complete roster in its `__NEXT_DATA__` payload — so
   this iterates the 30 team pages and stitches them together (~600
-  players), reviving the team-by-team approach `nbastatR` used before
-  HoopsHype’s redesign.
+  players) via a team-by-team approach.
 
 - **[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**
   — the current consensus mock draft (both rounds) from
@@ -209,9 +206,9 @@ JavaScript challenge (`cf-mitigated: challenge`) that returns **HTTP
 403** to every libcurl-based client (`httr2`, `httr`, `rvest`)
 regardless of headers — Cloudflare fingerprints the TLS handshake (JA3)
 *and* demands a JavaScript proof-of-work to mint the `cf_clearance`
-cookie. The `nbastatR`-method audit first recorded RealGM as **dead** on
-that basis. It is **not** dead — it is reachable with a real browser
-engine, and 17 `realgm_*()` wrappers now cover the NBA endpoint surface:
+cookie. An earlier source audit recorded RealGM as **dead** on that
+basis. It is **not** dead — it is reachable with a real browser engine,
+and 17 `realgm_*()` wrappers now cover the NBA endpoint surface:
 
 *Players & personnel*
 
@@ -278,8 +275,8 @@ only; every other hoopR source still works with the standard HTTP stack.
 
 #### **NBA injury reports (`rotowire_injuries()` / `bref_injuries()`)**
 
-The classic `nbastatR::nba_injuries()` scraped `rotoworld.com`, which
-NBC has since shut down (it now 301-redirects to
+RotoWorld (`rotoworld.com`) was a long-standing NBA injuries source, but
+NBC has since shut it down (it now 301-redirects to
 `nbcsports.com/fantasy`; the injuries tool is gone). Two live
 replacements:
 
@@ -295,10 +292,10 @@ replacements:
 
 #### **Basketball analytics utilities (`nba_*`, no network)**
 
-A set of pure, vectorized basketball-math helpers — the kind of
-efficiency / rating / four-factor calculators `nbastatR` shipped as
-`calculate_*()`. All return `NA` (not `Inf`/`NaN`) on a zero denominator
-and are league-agnostic (NBA / WNBA / college box scores):
+A set of pure, vectorized basketball-math helpers — standard efficiency
+/ rating / four-factor calculators. All return `NA` (not `Inf`/`NaN`) on
+a zero denominator and are league-agnostic (NBA / WNBA / college box
+scores):
 
 - Shooting:
   [`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md),
@@ -348,8 +345,7 @@ and are league-agnostic (NBA / WNBA / college box scores):
 hoopR’s NBA Stats wrappers return the endpoint’s `resultSets` verbatim
 as a *named list of tibbles* (structure-faithful, lossless). These three
 pure helpers reduce that list to a single tibble on demand — making
-explicit, and composable, the three reductions `nbastatR` hard-coded
-inside each function:
+explicit, and composable, the three common result-set reductions:
 
 - **`nba_bind_sets(tag_column = )`** — row-bind the sets into one long
   tibble, tagging each row with its origin (tactic **B**); columns
@@ -372,9 +368,8 @@ them all” option.
 
 The per-dataset equivalent of the result-set helpers: each fetches a
 specific multi-result-set endpoint and applies its canonical reduction
-in one call (what `nbastatR` hard-coded inside each task function), so
-you get the munged tibble directly. All are resilient to the empty /
-partial sets stats.nba.com occasionally returns.
+in one call, so you get the munged tibble directly. All are resilient to
+the empty / partial sets stats.nba.com occasionally returns.
 
 - **[`nba_tidy_franchise_history()`](https://hoopR.sportsdataverse.org/reference/nba_tidy_franchise_history.md)**
   — \[nba_franchisehistory()\]’s active + defunct sets row-bound into

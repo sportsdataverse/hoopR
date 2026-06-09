@@ -173,7 +173,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_leaders(season = 2025)
 #> ── ESPN NBA Season-Type Leaders ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:57 UTC
+#> ℹ Data updated: 2026-06-09 22:03:23 UTC
 #> # A tibble: 800 × 15
 #>    league season season_type category_name category_display category_short
 #>    <chr>   <int>       <int> <chr>         <chr>            <chr>         

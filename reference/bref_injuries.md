@@ -7,8 +7,8 @@ One row per injured player with team, the date the status was last
 updated and the injury note (status + description). No API key is
 required.
 
-**Note on RotoWorld:** the classic `nbastatR::nba_injuries()` scraped
-`rotoworld.com`, which NBC shut down (it now redirects to
+**Note on RotoWorld:** RotoWorld was a long-standing NBA injuries
+source, but NBC shut it down (it now redirects to
 `nbcsports.com/fantasy` and the injuries tool is gone). This function
 uses Basketball-Reference's live injury report instead, which is
 maintained and carries the same player / team / status / note fields.
@@ -49,7 +49,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_injuries())
 #> ── NBA injury report from basketball-reference.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:38:22 UTC
+#> ℹ Data updated: 2026-06-09 22:01:24 UTC
 #> # A tibble: 41 × 4
 #>    player             team_name         date_update       note                  
 #>    <chr>              <chr>             <chr>             <chr>                 

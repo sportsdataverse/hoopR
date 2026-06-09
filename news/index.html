@@ -145,7 +145,7 @@
 </div>
 <div class="section level4">
 <h4 id="basketball-reference-bref_-3-1-0"><strong>Basketball-Reference (<code>bref_*</code>)</strong><a class="anchor" aria-label="anchor" href="#basketball-reference-bref_-3-1-0"></a></h4>
-<p>New <code>bref_*()</code> function family scraping publicly available NBA data from <a href="https://www.basketball-reference.com" class="external-link">Basketball-Reference</a> — the largest source gap versus <code>nbastatR</code>, which hoopR previously did not cover at all (no account or API key required):</p>
+<p>New <code>bref_*()</code> function family scraping publicly available NBA data from <a href="https://www.basketball-reference.com" class="external-link">Basketball-Reference</a> — a source hoopR previously did not cover at all (no account or API key required):</p>
 <ul><li>
 <strong><code><a href="../reference/bref_players_stats.html">bref_players_stats()</a></code></strong> — league-wide player season stats; pick the table with <code>table = "per_game"</code> / <code>"totals"</code> / <code>"advanced"</code> / <code>"per_minute"</code> / <code>"per_poss"</code>.</li>
 <li>
@@ -161,22 +161,22 @@
 <li>
 <strong><code><a href="../reference/bref_player_game_log.html">bref_player_game_log()</a></code></strong> — a player’s game-by-game log for a season (by Basketball-Reference player-id slug, e.g. <code>jokicni01</code>).</li>
 <li>
-<strong><code><a href="../reference/bref_player_bios.html">bref_player_bios()</a></code></strong> — the player index for a starting letter (career span, position, height/weight, birth date, college) plus each player’s Basketball-Reference id slug — a ready-made player <strong>dictionary</strong>, closing the last <code>nbastatR</code> Basketball-Reference gap (<code>bref_bios()</code>).</li>
+<strong><code><a href="../reference/bref_player_bios.html">bref_player_bios()</a></code></strong> — the player index for a starting letter (career span, position, height/weight, birth date, college) plus each player’s Basketball-Reference id slug — a ready-made player <strong>dictionary</strong>.</li>
 <li>
 <strong><code><a href="../reference/bref_injuries.html">bref_injuries()</a></code></strong> — the current Basketball-Reference NBA injury report.</li>
 </ul><p>Two Sports-Reference quirks are handled centrally: secondary tables hidden in HTML comments are un-commented, and columns are read from each cell’s <code>data-stat</code> attribute (so the multi-row “over-headers” don’t mangle column names). Routes through hoopR’s shared <code><a href="../reference/dot-retry_request.html">.retry_request()</a></code> with a browser User-Agent. <strong>Basketball-Reference rate-limits aggressive scraping (~20 requests/minute)</strong> — space repeated calls with <code><a href="https://rdrr.io/r/base/Sys.sleep.html" class="external-link">Sys.sleep()</a></code>. Tests are gated behind <code>BREF_TESTS=1</code>. No new dependencies (<code>rvest</code> already in <code>Imports</code>).</p>
 </div>
 <div class="section level4">
 <h4 id="salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"><strong>Salary &amp; mock-draft sources (Spotrac / HoopsHype / NBADraft.net)</strong><a class="anchor" aria-label="anchor" href="#salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"></a></h4>
-<p>New wrappers for third-party NBA salary and mock-draft sites (also part of the <code>nbastatR</code> parity gap), all public HTML, no key required:</p>
+<p>New wrappers for third-party NBA salary and mock-draft sites, all public HTML, no key required:</p>
 <ul><li><p><strong><code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code></strong> — team salary-cap allocations, cap space, active players and average age from <a href="https://www.spotrac.com" class="external-link">Spotrac</a>.</p></li>
-<li><p><strong><code><a href="../reference/hoopshype_salaries.html">hoopshype_salaries()</a></code></strong> — the <strong>full league’s</strong> player salaries (one row per player-season, current + future contract years) from <a href="https://hoopshype.com" class="external-link">HoopsHype</a>. HoopsHype is now a Next.js app whose single salaries page paginates client-side, but each team page embeds that team’s complete roster in its <code>__NEXT_DATA__</code> payload — so this iterates the 30 team pages and stitches them together (~600 players), reviving the team-by-team approach <code>nbastatR</code> used before HoopsHype’s redesign.</p></li>
+<li><p><strong><code><a href="../reference/hoopshype_salaries.html">hoopshype_salaries()</a></code></strong> — the <strong>full league’s</strong> player salaries (one row per player-season, current + future contract years) from <a href="https://hoopshype.com" class="external-link">HoopsHype</a>. HoopsHype is now a Next.js app whose single salaries page paginates client-side, but each team page embeds that team’s complete roster in its <code>__NEXT_DATA__</code> payload — so this iterates the 30 team pages and stitches them together (~600 players) via a team-by-team approach.</p></li>
 <li><p><strong><code><a href="../reference/nbadraft_mock_draft.html">nbadraft_mock_draft()</a></code></strong> — the current consensus mock draft (both rounds) from <a href="https://www.nbadraft.net" class="external-link">NBADraft.net</a>.</p></li>
 </ul><p><strong>Basketball Insiders</strong> was evaluated but <strong>not</strong> wrapped: its old salary-widget backend (<code>hw-files.com</code>) is offline, and the surviving page only exposes a team-cap summary redundant with <code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code>. For league-wide player salaries, <code><a href="../reference/espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code> remains the most complete source.</p>
 </div>
 <div class="section level4">
 <h4 id="realgm-realgm_--cloudflare-challenge-bypass-via-headless-chrome-3-1-0"><strong>RealGM (<code>realgm_*</code>) — Cloudflare-challenge bypass via headless Chrome</strong><a class="anchor" aria-label="anchor" href="#realgm-realgm_--cloudflare-challenge-bypass-via-headless-chrome-3-1-0"></a></h4>
-<p><a href="https://basketball.realgm.com" class="external-link">RealGM</a> sits behind a Cloudflare JavaScript challenge (<code>cf-mitigated: challenge</code>) that returns <strong>HTTP 403</strong> to every libcurl-based client (<code>httr2</code>, <code>httr</code>, <code>rvest</code>) regardless of headers — Cloudflare fingerprints the TLS handshake (JA3) <em>and</em> demands a JavaScript proof-of-work to mint the <code>cf_clearance</code> cookie. The <code>nbastatR</code>-method audit first recorded RealGM as <strong>dead</strong> on that basis. It is <strong>not</strong> dead — it is reachable with a real browser engine, and 17 <code>realgm_*()</code> wrappers now cover the NBA endpoint surface:</p>
+<p><a href="https://basketball.realgm.com" class="external-link">RealGM</a> sits behind a Cloudflare JavaScript challenge (<code>cf-mitigated: challenge</code>) that returns <strong>HTTP 403</strong> to every libcurl-based client (<code>httr2</code>, <code>httr</code>, <code>rvest</code>) regardless of headers — Cloudflare fingerprints the TLS handshake (JA3) <em>and</em> demands a JavaScript proof-of-work to mint the <code>cf_clearance</code> cookie. An earlier source audit recorded RealGM as <strong>dead</strong> on that basis. It is <strong>not</strong> dead — it is reachable with a real browser engine, and 17 <code>realgm_*()</code> wrappers now cover the NBA endpoint surface:</p>
 <p><em>Players &amp; personnel</em></p>
 <ul><li>
 <strong><code><a href="../reference/realgm_players.html">realgm_players()</a></code></strong> — active NBA player index (position, ht/wt, age, current team, years of service, pre-draft team / international club, nationality).</li>
@@ -215,7 +215,7 @@
 </div>
 <div class="section level4">
 <h4 id="nba-injury-reports-rotowire_injuries--bref_injuries-3-1-0"><strong>NBA injury reports (<code>rotowire_injuries()</code> / <code>bref_injuries()</code>)</strong><a class="anchor" aria-label="anchor" href="#nba-injury-reports-rotowire_injuries--bref_injuries-3-1-0"></a></h4>
-<p>The classic <code>nbastatR::nba_injuries()</code> scraped <code>rotoworld.com</code>, which NBC has since shut down (it now 301-redirects to <code>nbcsports.com/fantasy</code>; the injuries tool is gone). Two live replacements:</p>
+<p>RotoWorld (<code>rotoworld.com</code>) was a long-standing NBA injuries source, but NBC has since shut it down (it now 301-redirects to <code>nbcsports.com/fantasy</code>; the injuries tool is gone). Two live replacements:</p>
 <ul><li>
 <strong><code><a href="../reference/rotowire_injuries.html">rotowire_injuries()</a></code></strong> — the current NBA injury report from <a href="https://www.rotowire.com" class="external-link">RotoWire</a> (a separate, live company). RotoWire renders the grid client-side from a JSON table endpoint, so this reads that JSON directly (player, team, position, injury, status, RotoWire player URL). The projected return date is subscriber-only and comes back as <code>NA</code>.</li>
 <li>
@@ -223,7 +223,7 @@
 </ul></div>
 <div class="section level4">
 <h4 id="basketball-analytics-utilities-nba_-no-network-3-1-0"><strong>Basketball analytics utilities (<code>nba_*</code>, no network)</strong><a class="anchor" aria-label="anchor" href="#basketball-analytics-utilities-nba_-no-network-3-1-0"></a></h4>
-<p>A set of pure, vectorized basketball-math helpers — the kind of efficiency / rating / four-factor calculators <code>nbastatR</code> shipped as <code>calculate_*()</code>. All return <code>NA</code> (not <code>Inf</code>/<code>NaN</code>) on a zero denominator and are league-agnostic (NBA / WNBA / college box scores):</p>
+<p>A set of pure, vectorized basketball-math helpers — standard efficiency / rating / four-factor calculators. All return <code>NA</code> (not <code>Inf</code>/<code>NaN</code>) on a zero denominator and are league-agnostic (NBA / WNBA / college box scores):</p>
 <ul><li>Shooting: <code><a href="../reference/nba_true_shooting_pct.html">nba_true_shooting_pct()</a></code>, <code><a href="../reference/nba_effective_fg_pct.html">nba_effective_fg_pct()</a></code>, <code><a href="../reference/nba_ft_rate.html">nba_ft_rate()</a></code>.</li>
 <li>Rating / pace: <code><a href="../reference/nba_possessions.html">nba_possessions()</a></code>, <code><a href="../reference/nba_pace.html">nba_pace()</a></code>, <code><a href="../reference/nba_offensive_rating.html">nba_offensive_rating()</a></code>, <code><a href="../reference/nba_defensive_rating.html">nba_defensive_rating()</a></code>, <code><a href="../reference/nba_net_rating.html">nba_net_rating()</a></code>.</li>
 <li>Player rate stats: <code><a href="../reference/nba_game_score.html">nba_game_score()</a></code> (Hollinger), <code><a href="../reference/nba_usage_rate.html">nba_usage_rate()</a></code>, <code><a href="../reference/nba_assist_pct.html">nba_assist_pct()</a></code>, <code><a href="../reference/nba_assist_to_turnover.html">nba_assist_to_turnover()</a></code>, <code><a href="../reference/nba_turnover_pct.html">nba_turnover_pct()</a></code>, <code><a href="../reference/nba_oreb_pct.html">nba_oreb_pct()</a></code>, and <code><a href="../reference/nba_four_factors.html">nba_four_factors()</a></code> (a tidy four-factors tibble).</li>
@@ -238,7 +238,7 @@
 </ul></div>
 <div class="section level4">
 <h4 id="nba-result-set-helpers-nba_bind_sets--nba_join_sets--nba_nest_sets-3-1-0"><strong>NBA result-set helpers (<code>nba_bind_sets()</code> / <code>nba_join_sets()</code> / <code>nba_nest_sets()</code>)</strong><a class="anchor" aria-label="anchor" href="#nba-result-set-helpers-nba_bind_sets--nba_join_sets--nba_nest_sets-3-1-0"></a></h4>
-<p>hoopR’s NBA Stats wrappers return the endpoint’s <code>resultSets</code> verbatim as a <em>named list of tibbles</em> (structure-faithful, lossless). These three pure helpers reduce that list to a single tibble on demand — making explicit, and composable, the three reductions <code>nbastatR</code> hard-coded inside each function:</p>
+<p>hoopR’s NBA Stats wrappers return the endpoint’s <code>resultSets</code> verbatim as a <em>named list of tibbles</em> (structure-faithful, lossless). These three pure helpers reduce that list to a single tibble on demand — making explicit, and composable, the three common result-set reductions:</p>
 <ul><li>
 <strong><code>nba_bind_sets(tag_column = )</code></strong> — row-bind the sets into one long tibble, tagging each row with its origin (tactic <strong>B</strong>); columns absent from a set fill with <code>NA</code>. For sets that share a schema, or to stack with a tag.</li>
 <li>
@@ -249,7 +249,7 @@
 </div>
 <div class="section level4">
 <h4 id="nba-combined-dataset-wrappers-nba_tidy_-3-1-0"><strong>NBA combined-dataset wrappers (<code>nba_tidy_*()</code>)</strong><a class="anchor" aria-label="anchor" href="#nba-combined-dataset-wrappers-nba_tidy_-3-1-0"></a></h4>
-<p>The per-dataset equivalent of the result-set helpers: each fetches a specific multi-result-set endpoint and applies its canonical reduction in one call (what <code>nbastatR</code> hard-coded inside each task function), so you get the munged tibble directly. All are resilient to the empty / partial sets stats.nba.com occasionally returns.</p>
+<p>The per-dataset equivalent of the result-set helpers: each fetches a specific multi-result-set endpoint and applies its canonical reduction in one call, so you get the munged tibble directly. All are resilient to the empty / partial sets stats.nba.com occasionally returns.</p>
 <ul><li>
 <strong><code><a href="../reference/nba_tidy_franchise_history.html">nba_tidy_franchise_history()</a></code></strong> — [nba_franchisehistory()]’s active + defunct sets row-bound into one franchise timeline, tagged <code>active</code> / <code>defunct</code> (tactic <strong>B</strong>).</li>
 <li>

@@ -151,7 +151,7 @@ Saiem Gilani
   espn_nba_player_stats_v3(athlete_id = "1966", season = 2024)
 #> $`Regular Season Averages`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -169,7 +169,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -187,7 +187,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Misc Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:50 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -205,32 +205,32 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:39:49 UTC
+#> ℹ Data updated: 2026-06-09 22:03:14 UTC
 #> # A tibble: 0 × 0
 #> 
 # }

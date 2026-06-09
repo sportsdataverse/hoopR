@@ -67,7 +67,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_height(min_year = 2020, max_year = 2021))
-#> ✖ 2026-06-09 21:42:05.079578: Invalid arguments or no height data for 2020 - 2021 available!
+#> ✖ 2026-06-09 22:05:36.242318: Invalid arguments or no height data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: subscript out of bounds
 #>                       Team Conf Avg.Hgt Avg.Hgt.Rk Eff.Hgt Eff.Hgt.Rk C.Hgt

@@ -9,8 +9,8 @@ link to the player's RotoWire page. The projected return date is
 RotoWire subscriber-only content and is returned as `NA` for
 non-subscribers.
 
-This is the live replacement for the defunct RotoWorld injuries feed
-that the classic `nbastatR::nba_injuries()` used. See also
+This is the live replacement for the defunct RotoWorld injuries feed.
+See also
 [`bref_injuries()`](https://hoopR.sportsdataverse.org/reference/bref_injuries.md)
 for the Basketball-Reference injury report.
 
@@ -44,7 +44,7 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 21:50:30 UTC
+#> ℹ Data updated: 2026-06-09 22:14:12 UTC
 #> # A tibble: 126 × 10
 #>    player_id player            first_name last_name team  position injury status
 #>    <chr>     <chr>             <chr>      <chr>     <chr> <chr>    <chr>  <chr> 
