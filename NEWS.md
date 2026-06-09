@@ -84,6 +84,32 @@ wrapper returns a `hoopR_data` tibble with a 3-column `@return` table, routes
 through hoopR's shared `httr2` request layer (retries / timeouts / proxy), and
 reports errors via the standard `cli` reporters.
 
+### **Bart Torvik / T-Rank (`torvik_*`)**
+
+New `torvik_*()` function family pulling publicly available men's college
+basketball data directly from [barttorvik.com](https://barttorvik.com) — no
+account or API key required (analogous to how `kp_*` scrapes KenPom). These wrap
+the auth-free, self-describing data files (the interactive `.php` pages behind
+barttorvik's JavaScript browser check are intentionally avoided):
+
+- **`torvik_ratings()`** — year-end / current T-Rank team ratings: adjusted
+  offensive/defensive efficiency, `barthag`, projected record, SOS, wins above
+  bubble, adjusted tempo (`{year}_team_results.csv`).
+- **`torvik_team_factors()`** — team four factors and shooting splits: eFG%,
+  TOV%, OREB%/DREB%, FT rate, 2P/3P/FT splits and assist rates, each with its
+  national rank (`{year}_fffinal.csv`).
+- **`torvik_game_schedule()`** — full game-by-game schedule and results with
+  pre-game predictions and post-game quality metrics (`{year}_super_sked.json`).
+- **`torvik_ncaa_results()`** — historical NCAA tournament performance by team,
+  coach, conference or seed, including PASE / PAKE and round-by-round counts
+  (`cgi-bin/ncaat.cgi`).
+
+Requests route through hoopR's shared `.retry_request()` layer with a browser
+User-Agent; every wrapper returns a `hoopR_data` tibble with a 3-column
+`@return` table and reports errors via the standard `cli` reporters. (Note: the
+`cbbdata`/`api.cbbdata.com` service that previously brokered Torvik data is
+defunct, so these wrap barttorvik.com directly.)
+
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used

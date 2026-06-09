@@ -270,6 +270,11 @@ reference:
     desc: Functions exported by hoopR to access the CollegeBasketballData API
     contents:
       - starts_with("cbbd_")
+  - title: Bart Torvik (T-Rank)
+  - subtitle: Torvik Data Functions
+    desc: Functions exported by hoopR to access Bart Torvik (barttorvik.com) data
+    contents:
+      - starts_with("torvik_")
   - title: Helper Functions and Data
   - subtitle: Included data
     desc: Data included within the package
