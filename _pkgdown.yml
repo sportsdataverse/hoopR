@@ -267,6 +267,15 @@ reference:
       - '`nba_bind_sets`'
       - '`nba_join_sets`'
       - '`nba_nest_sets`'
+  - subtitle: NBA Combined Datasets
+    desc: >
+      Dataset-specific wrappers that fetch a multi-result-set endpoint and apply
+      its canonical reduction in one call (the per-dataset equivalent of the
+      generic result-set helpers).
+    contents:
+      - '`nba_tidy_franchise_history`'
+      - '`nba_tidy_boxscore`'
+      - '`nba_tidy_player_profile`'
   - subtitle: NBA Stats API
     desc: Functions exported by hoopR to access the NBA Stats API
     contents:

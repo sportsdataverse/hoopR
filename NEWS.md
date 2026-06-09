@@ -293,6 +293,24 @@ the three reductions `a legacy NBA R package` hard-coded inside each function:
 All three take a named list of tibbles (an `nba_*()` return) and always return a
 tibble. The default hoopR return (the list itself) is the "keep them all" option.
 
+### **NBA combined-dataset wrappers (`nba_tidy_*()`)**
+
+The per-dataset equivalent of the result-set helpers: each fetches a specific
+multi-result-set endpoint and applies its canonical reduction in one call (what
+`a legacy NBA R package` hard-coded inside each task function), so you get the munged tibble
+directly. All are resilient to the empty / partial sets stats.nba.com
+occasionally returns.
+
+- **`nba_tidy_franchise_history()`** — [nba_franchisehistory()]'s active +
+  defunct sets row-bound into one franchise timeline, tagged `active` / `defunct`
+  (tactic **B**).
+- **`nba_tidy_boxscore(game_id)`** — a traditional player box score with each
+  player's team totals joined on by `GAME_ID` + `TEAM_ID` (team columns suffixed
+  `_team`) (tactic **C**).
+- **`nba_tidy_player_profile(player_id)`** — [nba_playerprofilev2()]'s many
+  `PLAYER_ID`-keyed tables (season/career totals, highs, rankings) nested into a
+  `.data` list-column, one row per table (tactic **D**).
+
 ### **ESPN endpoint naming convention (game_*/player_*)**
 
 The 3.1.0 ESPN wrappers are renamed to the shared sportsdataverse taxonomy used

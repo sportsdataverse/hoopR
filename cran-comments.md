@@ -239,6 +239,11 @@ themes that emerged after the 3.0.0 CRAN submission:
   (nest into a list-column) — that reduce the named list of result sets an
   `nba_*()` wrapper returns to a single tibble. Deterministic, unit-tested (run
   on CRAN).
+* Adds three dataset-specific `nba_tidy_*()` wrappers that fetch a multi-result-set
+  endpoint and apply its canonical reduction in one call:
+  `nba_tidy_franchise_history()` (bind), `nba_tidy_boxscore()` (join player + team
+  context) and `nba_tidy_player_profile()` (nest). `\donttest{}` examples;
+  network-gated tests.
 
 
 ## R CMD check results
