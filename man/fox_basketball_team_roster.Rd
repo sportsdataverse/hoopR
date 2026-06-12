@@ -4,7 +4,7 @@
 \alias{fox_basketball_team_roster}
 \alias{fox_nba_team_roster}
 \alias{fox_mbb_team_roster}
-\title{\strong{Get Fox Sports basketball team roster}}
+\title{\strong{Get Fox Sports Basketball Team Roster}}
 \usage{
 fox_nba_team_roster(team_id)
 
@@ -18,8 +18,26 @@ A \code{hoopR_data} tibble, one row per player: \code{team_id}, \code{position_g
 \code{player}, position/age/etc. columns, \code{athlete_id}.
 }
 \description{
-\strong{Get Fox Sports basketball team roster}
+\strong{Get Fox Sports Basketball Team Roster}
+
+\strong{Get Fox Sports Basketball Team Roster}
 }
 \examples{
-\donttest{ try(fox_nba_team_roster("1")) }
+\donttest{
+  try(fox_nba_team_roster("1"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

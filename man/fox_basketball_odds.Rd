@@ -4,7 +4,7 @@
 \alias{fox_basketball_odds}
 \alias{fox_nba_odds}
 \alias{fox_mbb_odds}
-\title{\strong{Get Fox Sports basketball game odds}}
+\title{\strong{Get Fox Sports Basketball Game Odds}}
 \usage{
 fox_nba_odds(game_id)
 
@@ -18,8 +18,26 @@ A \code{hoopR_data} tibble, one row per team: \code{game_id}, \code{team}, plus 
 six-pack odds columns (spread / to-win / total). Empty when no market.
 }
 \description{
-\strong{Get Fox Sports basketball game odds}
+\strong{Get Fox Sports Basketball Game Odds}
+
+\strong{Get Fox Sports Basketball Game Odds}
 }
 \examples{
-\donttest{ try(fox_nba_odds("106422")) }
+\donttest{
+  try(fox_nba_odds("106422"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

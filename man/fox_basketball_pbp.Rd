@@ -4,7 +4,7 @@
 \alias{fox_basketball_pbp}
 \alias{fox_nba_pbp}
 \alias{fox_mbb_pbp}
-\title{\strong{Get Fox Sports basketball play-by-play}}
+\title{\strong{Get Fox Sports Basketball Play-by-Play}}
 \usage{
 fox_nba_pbp(game_id)
 
@@ -19,9 +19,29 @@ A \code{hoopR_data} tibble, one row per play: \code{game_id}, \code{period},
 \code{right_score_change}, \code{play_text}.
 }
 \description{
-\strong{Get Fox Sports basketball play-by-play}
+\strong{Get Fox Sports Basketball Play-by-Play}
+
+\strong{Get Fox Sports Basketball Play-by-Play}
 }
 \examples{
-\donttest{ try(fox_nba_pbp("106422")) }
-\donttest{ try(fox_mbb_pbp("262052")) }
+\donttest{
+  try(fox_nba_pbp("106422"))
 }
+\donttest{
+  try(fox_mbb_pbp("262052"))
+}
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

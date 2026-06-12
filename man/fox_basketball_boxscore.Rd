@@ -4,7 +4,7 @@
 \alias{fox_basketball_boxscore}
 \alias{fox_nba_boxscore}
 \alias{fox_mbb_boxscore}
-\title{\strong{Get Fox Sports basketball boxscore}}
+\title{\strong{Get Fox Sports Basketball Boxscore}}
 \usage{
 fox_nba_boxscore(game_id)
 
@@ -18,8 +18,26 @@ A \code{hoopR_data} tibble (long), one row per (player, stat): \code{game_id},
 \code{team}, \code{stat_group}, \code{player}, \code{athlete_id}, \code{stat}, \code{value}.
 }
 \description{
-\strong{Get Fox Sports basketball boxscore}
+\strong{Get Fox Sports Basketball Boxscore}
+
+\strong{Get Fox Sports Basketball Boxscore}
 }
 \examples{
-\donttest{ try(fox_nba_boxscore("106422")) }
+\donttest{
+  try(fox_nba_boxscore("106422"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

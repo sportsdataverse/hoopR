@@ -6,23 +6,37 @@
 # NBA uses the `nba` slug; men's college basketball uses the `cbk` slug.
 # Reverse-engineering notes + an OpenAPI spec live in the sdv-internal-refs repo.
 
-.FOX_BB_KEY <- "jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq"
+# Fox Bifrost public web apikey. Resolved from option -> env var -> literal so
+# the key can be overridden without a code change while preserving the legacy
+# default. The literal is the public key the foxsports.com site itself ships.
+.fox_bb_key <- function() {
+  getOption(
+    "hoopR.fox_data_key",
+    default = Sys.getenv(
+      "HOOPR_FOX_DATA_KEY",
+      unset = "jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq"
+    )
+  )
+}
 .fox_or <- function(a, b) if (is.null(a) || length(a) == 0) b else a
 
 #' @keywords internal
-#' @importFrom httr2 request req_url_query req_headers req_retry req_perform resp_body_string
 #' @importFrom jsonlite fromJSON
 .fox_bb_get <- function(path, query = list()) {
-  query[["apikey"]] <- .fox_or(query[["apikey"]], getOption("hoopR.fox_key", .FOX_BB_KEY))
+  query[["apikey"]] <- .fox_or(query[["apikey"]], .fox_bb_key())
   query[["api-version"]] <- .fox_or(query[["api-version"]], "1.1")
-  res <- httr2::request(paste0("https://api.foxsports.com/bifrost/v1/", path)) |>
-    httr2::req_url_query(!!!query) |>
-    httr2::req_headers(Origin = "https://www.foxsports.com",
-                       Referer = "https://www.foxsports.com/") |>
-    httr2::req_retry(max_tries = 3, backoff = ~ 2) |>
-    httr2::req_perform()
+  # Route through hoopR's shared GET helper so the Fox calls inherit the
+  # package-standard timeout, retry, proxy resolution (explicit arg ->
+  # getOption("hoopR.proxy") -> http(s)_proxy env vars) and status handling.
+  res <- .retry_request(
+    url     = paste0("https://api.foxsports.com/bifrost/v1/", path),
+    params  = query,
+    headers = c(Origin  = "https://www.foxsports.com",
+                Referer = "https://www.foxsports.com/")
+  )
+  check_status(res)
   res |>
-    httr2::resp_body_string(encoding = "UTF-8") |>
+    .resp_text() |>
     jsonlite::fromJSON(simplifyDataFrame = FALSE, simplifyVector = FALSE, simplifyMatrix = FALSE)
 }
 
@@ -184,7 +198,8 @@
 #' @importFrom dplyr as_tibble bind_rows
 .fox_bb_resource <- function(sport, resource, game_id = NULL, team_id = NULL,
                              category = "scoring", who = "player", page = 0) {
-  out <- data.frame()
+  type <- paste0("Fox Sports ", toupper(sport), " ", resource)
+  out <- .empty_hoopR_data(type)
   tryCatch(
     expr = {
       raw <- switch(
@@ -205,110 +220,220 @@
       out <- df |>
         dplyr::as_tibble() |>
         janitor::clean_names() |>
-        make_hoopR_data(paste0("Fox Sports ", toupper(sport), " ", resource), Sys.time())
+        make_hoopR_data(type, Sys.time())
     },
     error = function(e) {
-      message(glue::glue("{Sys.time()}: invalid arguments or no Fox {sport} {resource} data available!"))
+      cli::cli_alert_danger(
+        "{Sys.time()}: no Fox {toupper(sport)} {resource} data available!")
+      cli::cli_alert_danger("Error: {conditionMessage(e)}")
     }
   )
   out
 }
 
 # ---- public wrappers (nba + mbb share each resource via @rdname) -----------
-#' **Get Fox Sports basketball play-by-play**
+
+# ---------------------------------------------------------------------------
+# fox_basketball_pbp
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Play-by-Play**
 #' @name fox_basketball_pbp
+NULL
+#' @title
+#' **Get Fox Sports Basketball Play-by-Play**
+#' @rdname fox_basketball_pbp
+#' @author Saiem Gilani
 #' @param game_id Fox Bifrost event id (e.g. `"106422"`).
 #' @return A `hoopR_data` tibble, one row per play: `game_id`, `period`,
 #'   `left_team`, `right_team`, `play_id`, `clock`, `team`, `left_score_change`,
 #'   `right_score_change`, `play_text`.
 #' @export
-#' @examples \donttest{ try(fox_nba_pbp("106422")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_pbp("106422"))
+#' }
 fox_nba_pbp <- function(game_id) .fox_bb_resource("nba", "pbp", game_id = game_id)
 #' @rdname fox_basketball_pbp
 #' @export
-#' @examples \donttest{ try(fox_mbb_pbp("262052")) }
+#' @examples
+#' \donttest{
+#'   try(fox_mbb_pbp("262052"))
+#' }
 fox_mbb_pbp <- function(game_id) .fox_bb_resource("cbk", "pbp", game_id = game_id)
 
-#' **Get Fox Sports basketball boxscore**
+# ---------------------------------------------------------------------------
+# fox_basketball_boxscore
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Boxscore**
 #' @name fox_basketball_boxscore
+NULL
+#' @title
+#' **Get Fox Sports Basketball Boxscore**
+#' @rdname fox_basketball_boxscore
+#' @author Saiem Gilani
 #' @param game_id Fox Bifrost event id.
 #' @return A `hoopR_data` tibble (long), one row per (player, stat): `game_id`,
 #'   `team`, `stat_group`, `player`, `athlete_id`, `stat`, `value`.
 #' @export
-#' @examples \donttest{ try(fox_nba_boxscore("106422")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_boxscore("106422"))
+#' }
 fox_nba_boxscore <- function(game_id) .fox_bb_resource("nba", "boxscore", game_id = game_id)
 #' @rdname fox_basketball_boxscore
 #' @export
 fox_mbb_boxscore <- function(game_id) .fox_bb_resource("cbk", "boxscore", game_id = game_id)
 
-#' **Get Fox Sports basketball game odds**
+# ---------------------------------------------------------------------------
+# fox_basketball_odds
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Game Odds**
 #' @name fox_basketball_odds
+NULL
+#' @title
+#' **Get Fox Sports Basketball Game Odds**
+#' @rdname fox_basketball_odds
+#' @author Saiem Gilani
 #' @param game_id Fox Bifrost event id.
 #' @return A `hoopR_data` tibble, one row per team: `game_id`, `team`, plus the
 #'   six-pack odds columns (spread / to-win / total). Empty when no market.
 #' @export
-#' @examples \donttest{ try(fox_nba_odds("106422")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_odds("106422"))
+#' }
 fox_nba_odds <- function(game_id) .fox_bb_resource("nba", "odds", game_id = game_id)
 #' @rdname fox_basketball_odds
 #' @export
 fox_mbb_odds <- function(game_id) .fox_bb_resource("cbk", "odds", game_id = game_id)
 
-#' **Get Fox Sports basketball team roster**
+# ---------------------------------------------------------------------------
+# fox_basketball_team_roster
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Team Roster**
 #' @name fox_basketball_team_roster
+NULL
+#' @title
+#' **Get Fox Sports Basketball Team Roster**
+#' @rdname fox_basketball_team_roster
+#' @author Saiem Gilani
 #' @param team_id Fox Bifrost team id (e.g. `"1"`). Discover via the league team directory.
 #' @return A `hoopR_data` tibble, one row per player: `team_id`, `position_group`,
 #'   `player`, position/age/etc. columns, `athlete_id`.
 #' @export
-#' @examples \donttest{ try(fox_nba_team_roster("1")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_team_roster("1"))
+#' }
 fox_nba_team_roster <- function(team_id) .fox_bb_resource("nba", "roster", team_id = team_id)
 #' @rdname fox_basketball_team_roster
 #' @export
 fox_mbb_team_roster <- function(team_id) .fox_bb_resource("cbk", "roster", team_id = team_id)
 
-#' **Get Fox Sports basketball team stat leaders**
+# ---------------------------------------------------------------------------
+# fox_basketball_team_stats
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Team Stat Leaders**
 #' @name fox_basketball_team_stats
+NULL
+#' @title
+#' **Get Fox Sports Basketball Team Stat Leaders**
+#' @rdname fox_basketball_team_stats
+#' @author Saiem Gilani
 #' @param team_id Fox Bifrost team id.
 #' @return A `hoopR_data` tibble: `team_id`, `category`, `stat`,
 #'   `stat_abbreviation`, `player`, `value`.
 #' @export
-#' @examples \donttest{ try(fox_nba_team_stats("1")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_team_stats("1"))
+#' }
 fox_nba_team_stats <- function(team_id) .fox_bb_resource("nba", "team_stats", team_id = team_id)
 #' @rdname fox_basketball_team_stats
 #' @export
 fox_mbb_team_stats <- function(team_id) .fox_bb_resource("cbk", "team_stats", team_id = team_id)
 
-#' **Get Fox Sports basketball team game log**
+# ---------------------------------------------------------------------------
+# fox_basketball_team_gamelog
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Team Game Log**
 #' @name fox_basketball_team_gamelog
+NULL
+#' @title
+#' **Get Fox Sports Basketball Team Game Log**
+#' @rdname fox_basketball_team_gamelog
+#' @author Saiem Gilani
 #' @param team_id Fox Bifrost team id.
 #' @return A `hoopR_data` tibble (long): `team_id`, `season_type`, `category`,
 #'   `game_id`, `game_date`, `opponent`, `stat`, `value`.
 #' @export
-#' @examples \donttest{ try(fox_nba_team_gamelog("1")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_team_gamelog("1"))
+#' }
 fox_nba_team_gamelog <- function(team_id) .fox_bb_resource("nba", "gamelog", team_id = team_id)
 #' @rdname fox_basketball_team_gamelog
 #' @export
 fox_mbb_team_gamelog <- function(team_id) .fox_bb_resource("cbk", "gamelog", team_id = team_id)
 
-#' **Get Fox Sports basketball standings**
+# ---------------------------------------------------------------------------
+# fox_basketball_standings
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Standings**
 #' @name fox_basketball_standings
+NULL
+#' @title
+#' **Get Fox Sports Basketball Standings**
+#' @rdname fox_basketball_standings
+#' @author Saiem Gilani
 #' @param team_id Fox Bifrost team id (standings of that team's conference/division).
 #' @return A `hoopR_data` tibble of standings rows (`team_id`, `section`, the
 #'   standings columns, `entity_id`).
 #' @export
-#' @examples \donttest{ try(fox_nba_standings("1")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_standings("1"))
+#' }
 fox_nba_standings <- function(team_id) .fox_bb_resource("nba", "standings", team_id = team_id)
 #' @rdname fox_basketball_standings
 #' @export
 fox_mbb_standings <- function(team_id) .fox_bb_resource("cbk", "standings", team_id = team_id)
 
-#' **Get Fox Sports basketball statistical leaders**
+# ---------------------------------------------------------------------------
+# fox_basketball_league_leaders
+# ---------------------------------------------------------------------------
+
+#' **Get Fox Sports Basketball Statistical Leaders**
 #' @name fox_basketball_league_leaders
+NULL
+#' @title
+#' **Get Fox Sports Basketball Statistical Leaders**
+#' @rdname fox_basketball_league_leaders
+#' @author Saiem Gilani
 #' @param category Stat category (default `"scoring"`).
 #' @param who `"player"` or `"team"` (default `"player"`).
 #' @param page 0-based page index (default `0`).
 #' @return A `hoopR_data` tibble of leaderboard rows (`entity_id` + stat columns).
 #' @export
-#' @examples \donttest{ try(fox_nba_league_leaders("scoring")) }
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_nba_league_leaders("scoring"))
+#' }
 fox_nba_league_leaders <- function(category = "scoring", who = "player", page = 0) {
   .fox_bb_resource("nba", "league_leaders", category = category, who = who, page = page)
 }

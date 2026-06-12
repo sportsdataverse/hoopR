@@ -4,7 +4,7 @@
 \alias{fox_basketball_standings}
 \alias{fox_nba_standings}
 \alias{fox_mbb_standings}
-\title{\strong{Get Fox Sports basketball standings}}
+\title{\strong{Get Fox Sports Basketball Standings}}
 \usage{
 fox_nba_standings(team_id)
 
@@ -18,8 +18,26 @@ A \code{hoopR_data} tibble of standings rows (\code{team_id}, \code{section}, th
 standings columns, \code{entity_id}).
 }
 \description{
-\strong{Get Fox Sports basketball standings}
+\strong{Get Fox Sports Basketball Standings}
+
+\strong{Get Fox Sports Basketball Standings}
 }
 \examples{
-\donttest{ try(fox_nba_standings("1")) }
+\donttest{
+  try(fox_nba_standings("1"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

@@ -4,7 +4,7 @@
 \alias{fox_basketball_league_leaders}
 \alias{fox_nba_league_leaders}
 \alias{fox_mbb_league_leaders}
-\title{\strong{Get Fox Sports basketball statistical leaders}}
+\title{\strong{Get Fox Sports Basketball Statistical Leaders}}
 \usage{
 fox_nba_league_leaders(category = "scoring", who = "player", page = 0)
 
@@ -21,8 +21,26 @@ fox_mbb_league_leaders(category = "scoring", who = "player", page = 0)
 A \code{hoopR_data} tibble of leaderboard rows (\code{entity_id} + stat columns).
 }
 \description{
-\strong{Get Fox Sports basketball statistical leaders}
+\strong{Get Fox Sports Basketball Statistical Leaders}
+
+\strong{Get Fox Sports Basketball Statistical Leaders}
 }
 \examples{
-\donttest{ try(fox_nba_league_leaders("scoring")) }
+\donttest{
+  try(fox_nba_league_leaders("scoring"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}},
+\code{\link{fox_basketball_team_stats}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}

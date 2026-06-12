@@ -4,7 +4,7 @@
 \alias{fox_basketball_team_stats}
 \alias{fox_nba_team_stats}
 \alias{fox_mbb_team_stats}
-\title{\strong{Get Fox Sports basketball team stat leaders}}
+\title{\strong{Get Fox Sports Basketball Team Stat Leaders}}
 \usage{
 fox_nba_team_stats(team_id)
 
@@ -18,8 +18,26 @@ A \code{hoopR_data} tibble: \code{team_id}, \code{category}, \code{stat},
 \code{stat_abbreviation}, \code{player}, \code{value}.
 }
 \description{
-\strong{Get Fox Sports basketball team stat leaders}
+\strong{Get Fox Sports Basketball Team Stat Leaders}
+
+\strong{Get Fox Sports Basketball Team Stat Leaders}
 }
 \examples{
-\donttest{ try(fox_nba_team_stats("1")) }
+\donttest{
+  try(fox_nba_team_stats("1"))
 }
+}
+\seealso{
+Other Fox Basketball Functions: 
+\code{\link{fox_basketball_boxscore}},
+\code{\link{fox_basketball_league_leaders}},
+\code{\link{fox_basketball_odds}},
+\code{\link{fox_basketball_pbp}},
+\code{\link{fox_basketball_standings}},
+\code{\link{fox_basketball_team_gamelog}},
+\code{\link{fox_basketball_team_roster}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Fox Basketball Functions}
