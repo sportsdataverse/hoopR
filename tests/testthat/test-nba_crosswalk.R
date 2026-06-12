@@ -46,3 +46,25 @@ test_that(".bb_assemble_schedule_crosswalk_nba full-outer joins on ET date + tea
   expect_equal(out$match_method, "both")
   expect_false(any(c("espn_home_team_id", "espn_away_team_id") %in% names(out)))
 })
+
+test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team blocks", {
+  espn <- data.frame(
+    espn_team_id = c(13L, 13L), team_abbreviation = c("LAL", "LAL"),
+    espn_athlete_id = c("a1", "a2"),
+    espn_full_name = c("LeBron James", "Anthony Davis"),
+    espn_jersey = c("23", "3"), espn_position = c("SF", "PF"),
+    espn_birth_date = c("1984-12-30", "1993-03-11"), stringsAsFactors = FALSE)
+  stats <- data.frame(
+    espn_team_id = c(13L, 13L), nba_player_id = c("p1", "p2"),
+    nba_player_name = c("LeBron James", "Anthony Davis"),
+    nba_jersey_num = c("23", "3"), nba_position = c("F", "F-C"),
+    nba_birth_date = c("1984-12-30", "1993-03-11"), stringsAsFactors = FALSE)
+  fox <- data.frame(
+    espn_team_id = integer(), fox_athlete_id = character(),
+    fox_player = character(), fox_jersey = character(),
+    fox_position_group = character(), stringsAsFactors = FALSE)
+  out <- .bb_assemble_player_crosswalk_nba(espn, stats, fox, season = 2025, min_confidence = 0.92)
+  expect_equal(nrow(out), 2)
+  expect_equal(out$nba_player_id[out$espn_athlete_id == "a1"], "p1")
+  expect_true(all(c("fox_athlete_id", "yahoo_player_id") %in% names(out)))
+})

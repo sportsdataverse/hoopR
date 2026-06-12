@@ -26,6 +26,7 @@ historical coverage comes from cached release artifacts.
 }
 \seealso{
 Other NBA Crosswalk Functions: 
+\code{\link{nba_player_crosswalk}()},
 \code{\link{nba_team_crosswalk}()}
 }
 \author{
