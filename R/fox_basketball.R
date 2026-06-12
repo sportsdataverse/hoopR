@@ -449,7 +449,6 @@ NULL
 #' @title
 #' **Get Fox Sports Basketball Team Directory**
 #' @rdname fox_basketball_teams
-#' @author Saiem Gilani
 #' @param team_id Fox Bifrost seed team id used to fetch league standings
 #'   (default `"1"`); the standings response enumerates every team in the seed's
 #'   league sections.

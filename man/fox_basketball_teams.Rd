@@ -39,7 +39,4 @@ Other Fox Basketball Functions:
 \code{\link{fox_basketball_team_roster}},
 \code{\link{fox_basketball_team_stats}}
 }
-\author{
-Saiem Gilani
-}
 \concept{Fox Basketball Functions}

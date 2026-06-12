@@ -34,7 +34,4 @@ Other NBA Crosswalk Functions:
 \code{\link{nba_player_crosswalk}()},
 \code{\link{nba_schedule_crosswalk}()}
 }
-\author{
-Saiem Gilani
-}
 \concept{NBA Crosswalk Functions}
