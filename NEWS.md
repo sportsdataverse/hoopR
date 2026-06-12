@@ -50,6 +50,18 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
 
+### **Fox Sports basketball wrappers (`fox_nba_*` / `fox_mbb_*`)**
+
+Read-only Fox Sports "Bifrost" basketball wrappers over
+`api.foxsports.com/bifrost/v1/{nba,cbk}/*`, complementing the `espn_nba_*` /
+`espn_mbb_*` families. Eight wrappers per league flatten Fox's layout-oriented
+JSON (sections → tables → rows → cells) into tidy `hoopR_data` tibbles:
+`fox_<lg>_pbp` (period-based play-by-play), `_boxscore`, `_odds`,
+`_team_roster`, `_team_stats`, `_team_gamelog`, `_standings`,
+`_league_leaders`. A shared internal layer backs both leagues. Verified live;
+reverse-engineering notes + an OpenAPI 3.1 spec live in the `sdv-internal-refs`
+repo. Parallels the cfbfastR / sportsdataverse-py `fox_*` families.
+
 ### **Sports-Reference men's college basketball (`srcbb_*`)**
 
 New `srcbb_*()` family scraping men's college basketball from

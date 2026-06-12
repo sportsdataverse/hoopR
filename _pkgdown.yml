@@ -224,6 +224,10 @@ reference:
     desc: Functions exported by hoopR to access ESPN's NBA Data
     contents:
       - starts_with("espn_nba_")
+  - subtitle: Fox Sports Basketball Data Functions
+    desc: Read-only Fox Sports (Bifrost) NBA + MBB wrappers (play-by-play, boxscore, odds, roster, stats, game log, standings, leaders)
+    contents:
+      - starts_with("fox_")
   - title: NBA Data
   - subtitle: NBA Stats Family Overview
     desc: NBA Stats API endpoint family overview
