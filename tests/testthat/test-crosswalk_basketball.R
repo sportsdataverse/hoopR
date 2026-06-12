@@ -1,3 +1,9 @@
+test_that(".bb_normalize_college_team gives a consistent contracting key", {
+  expect_equal(.bb_normalize_college_team("Missouri State"), .bb_normalize_college_team("Missouri St."))
+  expect_equal(.bb_normalize_college_team("Texas A&M"), "texas a and m")
+  expect_equal(.bb_normalize_college_team("Saint Mary's"), .bb_normalize_college_team("St. Mary's"))
+})
+
 test_that(".bb_normalize_name strips accents, suffixes, and punctuation", {
   expect_equal(.bb_normalize_name("LeBron James"), "lebron james")
   expect_equal(.bb_normalize_name("De'Aaron Fox"), "deaaron fox")

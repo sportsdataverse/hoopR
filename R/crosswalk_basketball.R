@@ -32,6 +32,27 @@
   x
 }
 
+#' Normalize a college team name for cross-source matching (contracting form)
+#'
+#' Collapses "state"/"saint"/"st." to a single "st" token and "&" to "and" so
+#' that terse Torvik/KenPom names ("Missouri St.") and ESPN's spelled-out names
+#' ("Missouri State") resolve to the same key. The canonical form is lossy but
+#' CONSISTENT across sources, which is what matters for matching.
+#' @keywords internal
+#' @importFrom stringi stri_trans_general
+#' @importFrom stringr str_replace_all str_squish
+.bb_normalize_college_team <- function(x) {
+  x <- stringi::stri_trans_general(as.character(x), "Latin-ASCII")
+  x <- tolower(x)
+  x <- stringr::str_replace_all(x, "&", " and ")
+  x <- stringr::str_replace_all(x, "[^a-z0-9 ]", " ")
+  x <- stringr::str_replace_all(x, "\\b(state|saint)\\b", "st")
+  x <- stringr::str_replace_all(x, "\\buniversity\\b", " ")
+  x <- stringr::str_squish(x)
+  x[is.na(x)] <- ""
+  x
+}
+
 #' Reduce a timestamp (UTC datetime, ISO string, or Date) to the local ET date
 #' @keywords internal
 #' @importFrom lubridate as_datetime with_tz date
