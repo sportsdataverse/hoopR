@@ -50,6 +50,17 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
 
+### **NBA cross-source crosswalks (`nba_*_crosswalk` + `load_nba_*_crosswalk`)**
+
+New convenience functions that link team / schedule / player identities across
+ESPN, the NBA Stats API, and Fox Sports on a shared `espn_team_id` key:
+`nba_team_crosswalk()`, `nba_schedule_crosswalk()` (joins on the local
+Eastern-Time game date), and `nba_player_crosswalk()` (ESPN-anchored
+deterministic fuzzy matching), each paired with a `load_nba_*_crosswalk()`
+cached loader. Adds `fox_nba_teams()` / `fox_mbb_teams()` deriving the Fox team
+directory from the standings endpoint. A shared internal `.bb_*` matching engine
+(`R/crosswalk_basketball.R`) backs the builders.
+
 ### **Fox Sports basketball wrappers (`fox_nba_*` / `fox_mbb_*`)**
 
 Read-only Fox Sports "Bifrost" basketball wrappers over
