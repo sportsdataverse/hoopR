@@ -71,7 +71,4 @@ Other MBB Crosswalk Functions:
 \code{\link{mbb_player_crosswalk}()},
 \code{\link{mbb_schedule_crosswalk}()}
 }
-\author{
-Saiem Gilani
-}
 \concept{MBB Crosswalk Functions}

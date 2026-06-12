@@ -34,7 +34,4 @@ Other MBB Crosswalk Functions:
 \code{\link{mbb_schedule_crosswalk}()},
 \code{\link{mbb_team_crosswalk}()}
 }
-\author{
-Saiem Gilani
-}
 \concept{MBB Crosswalk Functions}

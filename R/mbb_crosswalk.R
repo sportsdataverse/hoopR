@@ -280,7 +280,6 @@ NULL
 #' @title
 #' **Get the MBB cross-source team crosswalk**
 #' @rdname mbb_team_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-team-per-season crosswalk linking ESPN,
 #' Fox Sports (Bifrost), Bart Torvik (barttorvik.com), and KenPom
@@ -480,7 +479,6 @@ NULL
 #' @title
 #' **Get the MBB cross-source schedule crosswalk**
 #' @rdname mbb_schedule_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-game crosswalk linking ESPN and Bart Torvik
 #' (barttorvik.com) game identifiers for an MBB season. Fox Sports and Yahoo
@@ -823,7 +821,6 @@ NULL
 #' @title
 #' **Get the MBB cross-source player crosswalk**
 #' @rdname mbb_player_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-player-per-team crosswalk linking ESPN and Fox
 #' Sports (Bifrost) MBB player identities for a season. ESPN is the anchor

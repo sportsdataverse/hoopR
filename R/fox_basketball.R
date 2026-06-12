@@ -451,7 +451,6 @@ NULL
 #' @title
 #' **Get Fox Sports Basketball Team Directory**
 #' @rdname fox_basketball_teams
-#' @author Saiem Gilani
 #' @param team_id Fox Bifrost seed team id used to fetch league standings
 #'   (default `"1"`); the standings response enumerates every team in the seed's
 #'   league sections.
@@ -469,7 +468,6 @@ fox_mbb_teams <- function(team_id = "1") .fox_bb_resource("cbk", "teams", team_i
 
 #' @title
 #' **Get the full Fox Sports men's college basketball team directory**
-#' @author Saiem Gilani
 #' @description
 #' **Enumerate every MBB team in the Fox Sports (Bifrost) directory.** A single
 #' `fox_mbb_teams()` call only returns the seed team's conference, so this walks

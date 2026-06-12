@@ -59,7 +59,6 @@ NULL
 #' @title
 #' **Get the NBA cross-source team crosswalk**
 #' @rdname nba_team_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-team crosswalk linking ESPN, NBA Stats, and Fox team
 #' identities, keyed on `espn_team_id`. `nba_teams()` already supplies the
@@ -150,7 +149,6 @@ NULL
 #' @title
 #' **Get the NBA cross-source schedule crosswalk**
 #' @rdname nba_schedule_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-game crosswalk linking ESPN and NBA Stats game ids
 #' (NA Fox/Yahoo placeholders). Dates from both sources are reduced to the local
@@ -307,7 +305,6 @@ NULL
 #' @title
 #' **Get the NBA cross-source player crosswalk**
 #' @rdname nba_player_crosswalk
-#' @author Saiem Gilani
 #' @description
 #' Build a wide, one-row-per-player-per-team crosswalk linking ESPN, NBA Stats,
 #' and Fox player identities. Matching is deterministic: normalized exact name

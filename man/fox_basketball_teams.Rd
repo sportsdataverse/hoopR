@@ -40,7 +40,4 @@ Other Fox Basketball Functions:
 \code{\link{fox_basketball_team_stats}},
 \code{\link{fox_mbb_teams_all}()}
 }
-\author{
-Saiem Gilani
-}
 \concept{Fox Basketball Functions}
