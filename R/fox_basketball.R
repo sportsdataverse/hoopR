@@ -189,7 +189,10 @@
       }
     }
   }
-  if (!length(rows)) return(data.frame())
+  if (!length(rows)) {
+    return(data.frame(fox_team_id = character(), fox_team_name = character(),
+                      fox_section = character(), stringsAsFactors = FALSE))
+  }
   out <- dplyr::bind_rows(rows)
   out[!duplicated(out$fox_team_id), , drop = FALSE]
 }

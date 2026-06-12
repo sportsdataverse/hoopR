@@ -211,6 +211,16 @@ reference:
       - '`load_mbb_game_rosters`'
       - '`load_mbb_officials`'
       - '`update_mbb_db`'
+  - title: Cross-Source Crosswalks
+  - subtitle: NBA Crosswalk Functions
+    desc: Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats, and Fox identities (keyed on espn_team_id), plus cached loaders
+    contents:
+      - '`nba_team_crosswalk`'
+      - '`nba_schedule_crosswalk`'
+      - '`nba_player_crosswalk`'
+      - '`load_nba_team_crosswalk`'
+      - '`load_nba_schedule_crosswalk`'
+      - '`load_nba_player_crosswalk`'
   - title: ESPN Data
   - subtitle: ESPN Family Overview
     desc: ESPN basketball endpoint family overview (NBA + MBB)

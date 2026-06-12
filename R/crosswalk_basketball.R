@@ -57,6 +57,15 @@
   has_jersey <- ".jersey" %in% names(left) && ".jersey" %in% names(right)
   has_dob    <- ".dob"    %in% names(left) && ".dob"    %in% names(right)
 
+  # Guard: return a properly-typed empty frame when left has no rows.
+  if (!nrow(left)) {
+    return(data.frame(
+      .block = character(), left_id = character(), right_id = character(),
+      match_method = character(), match_confidence = numeric(),
+      stringsAsFactors = FALSE
+    ))
+  }
+
   unmatched_row <- function(b, id, conf = NA_real_) {
     data.frame(.block = b, left_id = id, right_id = NA_character_,
                match_method = "unmatched", match_confidence = conf,
@@ -72,6 +81,11 @@
     pending <- integer(0)
 
     for (i in seq_len(nrow(l))) {
+      # Skip blank name keys — they must not match anything (exact or fuzzy).
+      if (!nzchar(l$.name_key[i])) {
+        rows[[i]] <- unmatched_row(b, l$.id[i])
+        next
+      }
       hit <- if (nrow(r)) which(!r_used & r$.name_key == l$.name_key[i]) else integer(0)
       if (length(hit) >= 1) {
         j <- hit[1]; r_used[j] <- TRUE
