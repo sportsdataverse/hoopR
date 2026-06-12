@@ -28,6 +28,9 @@ placeholders. NOTE: ESPN/Stats team endpoints are current-season snapshots, so
 }
 \seealso{
 Other NBA Crosswalk Functions: 
+\code{\link{load_nba_player_crosswalk}()},
+\code{\link{load_nba_schedule_crosswalk}()},
+\code{\link{load_nba_team_crosswalk}()},
 \code{\link{nba_player_crosswalk}()},
 \code{\link{nba_schedule_crosswalk}()}
 }
