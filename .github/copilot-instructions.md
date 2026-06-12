@@ -191,6 +191,39 @@ Two regeneration steps are part of the commit workflow whenever the relevant sou
 - V3-style schedule endpoint (scheduleleaguev2int) follows the same nested structure as `nba_schedule()`.
 - NBAGL wrappers can follow NBA Stats-backed payloads. In particular, `nbagl_players()` and `nbagl_standings()` may return named lists of data frames (e.g., `PlayerIndex`, `Standings`) rather than a single flat data frame.
 
+## Cross-Source Crosswalk Surface
+
+hoopR 3.1.0 adds cross-source crosswalk builders backed by a shared engine in
+`R/crosswalk_basketball.R`. All crosswalks are keyed on `espn_team_id`.
+
+**NBA:** `nba_team_crosswalk()` / `nba_schedule_crosswalk()` /
+`nba_player_crosswalk()` link ESPN, NBA Stats CDN, and Fox. The NBA Stats CDN
+serves the current season only; use `load_nba_*_crosswalk()` for history.
+
+**MBB:** `mbb_team_crosswalk()` / `mbb_schedule_crosswalk()` /
+`mbb_player_crosswalk()` link ESPN, KenPom (`hoopR::teams_links`, no auth),
+Bart Torvik, and Fox. `fox_mbb_teams_all()` enumerates the full MBB Fox Bifrost
+directory via conference-seed walking.
+
+**Cached loaders:** `load_nba_*_crosswalk(seasons)` /
+`load_mbb_*_crosswalk(seasons)` pull versioned `.rds` snapshots from the
+`sportsdataverse-data` release artifacts.
+
+**`.bb_*` engine conventions:**
+
+- Matching is deterministic: exact normalized name within a team block, then
+  Jaro-Winkler fuzzy (`min_confidence = 0.92`) with jersey/DOB tiebreakers.
+- `.bb_normalize_college_team()` is a contracting normalizer that expands "St."
+  → "State" / "St " → "Saint " so Torvik/KenPom terse names align with ESPN.
+- Dates are reduced to local ET game date via `.bb_to_eastern()` before joining
+  the schedule crosswalk key.
+- MBB alias tables (`.mbb_bart_alias`, `.mbb_kp_alias`, `.mbb_fox_display_alias`
+  in `mbb_crosswalk.R`) bridge source-specific name divergences before
+  normalization.
+- When adding a new source, add its curated alias table in the builder file and
+  wrap the fetch in `tryCatch(..., error = function(e) NULL)` with an
+  empty-typed fallback frame so ESPN always anchors even on partial failures.
+
 ## Common Pitfalls
 
 - **Return-value initialization is mandatory**: every wrapper that `return(X)` where `X` is assigned only inside `tryCatch(expr = {...})` must initialize `X` *before* the `tryCatch`. Otherwise, when the API errors, `return(X)` throws `object 'X' not found` instead of the intended empty fallback. Applies to `df_list`, `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. — any return variable. Initialize to `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.

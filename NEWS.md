@@ -61,6 +61,22 @@ cached loader. Adds `fox_nba_teams()` / `fox_mbb_teams()` deriving the Fox team
 directory from the standings endpoint. A shared internal `.bb_*` matching engine
 (`R/crosswalk_basketball.R`) backs the builders.
 
+### **MBB cross-source crosswalks (`mbb_*_crosswalk` + `load_mbb_*_crosswalk`)**
+
+New convenience functions that link team / schedule / player identities across
+ESPN, KenPom (`teams_links` bundled data — no auth required), Bart Torvik
+(`barttorvik.com`), and Fox Sports on a shared `espn_team_id` key:
+`mbb_team_crosswalk()`, `mbb_schedule_crosswalk()` (joins on ET game date via
+Torvik's game schedule), and `mbb_player_crosswalk()` (ESPN-anchored
+deterministic fuzzy matching vs. Fox), each paired with a
+`load_mbb_*_crosswalk()` cached loader. Torvik and KenPom team names are
+bridged to ESPN via curated alias tables (`.mbb_bart_alias`, `.mbb_kp_alias`)
+and a `.bb_normalize_college_team()` contracting normalizer (expands
+State/Saint abbreviations). Fox names are bridged via `.mbb_fox_display_alias`.
+Adds `fox_mbb_teams_all()` to enumerate the full MBB Fox Bifrost team
+directory (conference-seed walking). Backed by the shared `.bb_*` engine in
+`R/crosswalk_basketball.R`.
+
 ### **Fox Sports basketball wrappers (`fox_nba_*` / `fox_mbb_*`)**
 
 Read-only Fox Sports "Bifrost" basketball wrappers over
