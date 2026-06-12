@@ -347,10 +347,17 @@ mbb_team_crosswalk <- function(season = most_recent_mbb_season(),
       bart_raw <- tryCatch(torvik_ratings(year = season),
                            error = function(e) NULL)
       # KenPom: use bundled teams_links; fall back to most-recent year
-      kp_all  <- hoopR::teams_links
-      kp_yrs  <- sort(unique(kp_all[["Year"]]))
-      kp_yr   <- if (season %in% kp_yrs) season else max(kp_yrs)
-      kp_raw  <- kp_all[kp_all[["Year"]] == kp_yr, ]
+      kp_raw <- tryCatch({
+        kp_all  <- hoopR::teams_links
+        kp_yrs  <- sort(unique(kp_all[["Year"]]))
+        kp_yr   <- if (season %in% kp_yrs) season else max(kp_yrs)
+        kp_all[kp_all[["Year"]] == kp_yr, ]
+      }, error = function(e) NULL)
+      if (is.null(kp_raw) || !nrow(kp_raw)) {
+        kp_raw <- data.frame(
+          Team = character(), Conf = character(), stringsAsFactors = FALSE
+        )
+      }
 
       fox_raw <- if (!is.null(fox)) fox else {
         tryCatch(fox_mbb_teams_all(), error = function(e) NULL)
@@ -533,17 +540,29 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
       team_xwalk <- mbb_team_crosswalk(season = season)
 
       # --- Torvik side -------------------------------------------------------
-      bart_raw  <- torvik_game_schedule(year = season)
-      bart_games <- dplyr::transmute(
-        bart_raw,
-        muid      = as.character(.data$muid),
-        game_date = as.Date(as.character(.data$date), format = "%m/%d/%y"),
-        team1     = as.character(.data$team1),
-        team2     = as.character(.data$team2),
-        winner    = as.character(.data$winner)
-      )
-      # Drop rows with unparseable dates
-      bart_games <- bart_games[!is.na(bart_games$game_date), , drop = FALSE]
+      bart_raw <- tryCatch(torvik_game_schedule(year = season),
+                           error = function(e) NULL)
+      if (is.null(bart_raw) || !nrow(bart_raw)) {
+        bart_games <- data.frame(
+          muid      = character(),
+          game_date = as.Date(character()),
+          team1     = character(),
+          team2     = character(),
+          winner    = character(),
+          stringsAsFactors = FALSE
+        )
+      } else {
+        bart_games <- dplyr::transmute(
+          bart_raw,
+          muid      = as.character(.data$muid),
+          game_date = as.Date(as.character(.data$date), format = "%m/%d/%y"),
+          team1     = as.character(.data$team1),
+          team2     = as.character(.data$team2),
+          winner    = as.character(.data$winner)
+        )
+        # Drop rows with unparseable dates
+        bart_games <- bart_games[!is.na(bart_games$game_date), , drop = FALSE]
+      }
 
       # --- ESPN side ---------------------------------------------------------
       # Derive unique ET dates from Torvik and call the MBB scoreboard once
@@ -564,6 +583,18 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
         )
       })
       espn_games <- dplyr::bind_rows(espn_list)
+      # Guard: if every scoreboard call returned NULL, build a properly-typed
+      # empty frame so the assembler's transmute() does not error on missing
+      # columns.
+      if (!nrow(espn_games)) {
+        espn_games <- data.frame(
+          espn_game_id      = character(),
+          game_date         = as.Date(character()),
+          home_espn_team_id = integer(),
+          away_espn_team_id = integer(),
+          stringsAsFactors  = FALSE
+        )
+      }
 
       out <- .bb_assemble_schedule_crosswalk_mbb(
         espn_games  = espn_games,

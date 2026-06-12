@@ -112,6 +112,7 @@ NULL
 #' @title
 #' **Load cached MBB team crosswalk from the data repo**
 #' @rdname load_mbb_team_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season MBB team crosswalk that maps ESPN
 #' team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 #' and canonical abbreviations. The files are versioned `.rds` snapshots stored
@@ -138,6 +139,7 @@ NULL
 #' @title
 #' **Load cached MBB schedule crosswalk from the data repo**
 #' @rdname load_mbb_schedule_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season MBB schedule crosswalk that links
 #' ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `mbb_crosswalk` release of the
@@ -164,6 +166,7 @@ NULL
 #' @title
 #' **Load cached MBB player crosswalk from the data repo**
 #' @rdname load_mbb_player_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season MBB player crosswalk that maps ESPN
 #' athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
 #' versioned `.rds` snapshots stored in the `mbb_crosswalk` release of the
