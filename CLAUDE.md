@@ -14,6 +14,7 @@
 - [NAMESPACE](#namespace)
 - [Documentation Maintenance](#documentation-maintenance)
 - [Commit Convention](#commit-convention)
+- [Cross-Source Crosswalk Surface](#cross-source-crosswalk-surface)
 - [Common Pitfalls](#common-pitfalls)
 
 ## Package Overview
@@ -638,6 +639,70 @@ unrelated work into separate commits for reviewability.
 **Important**: Never include AI agents or assistants (e.g., Claude,
 Copilot) as co-authors on commits. Omit all `Co-Authored-By` trailers
 referencing AI tools.
+
+## Cross-Source Crosswalk Surface
+
+hoopR 3.1.0 ships two families of cross-source crosswalk builders backed
+by a shared internal engine in `R/crosswalk_basketball.R`.
+
+**Exported builders and loaders** (all keyed on `espn_team_id`):
+
+- [`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+  /
+  [`nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.md)
+  /
+  [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+  — link ESPN, NBA Stats CDN (`nba_schedule` / `nba_teams`), and Fox
+  Sports identities. Note: the NBA Stats CDN serves the **current season
+  only**; use `load_nba_*_crosswalk()` for historical coverage.
+- [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
+  /
+  [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
+  /
+  [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+  — link ESPN, KenPom
+  ([`hoopR::teams_links`](https://hoopR.sportsdataverse.org/reference/teams_links.md)
+  bundled data — no auth), Bart Torvik (`barttorvik.com`), and Fox
+  Sports identities.
+- `load_nba_*_crosswalk(seasons)` / `load_mbb_*_crosswalk(seasons)` —
+  cached loaders that pull versioned `.rds` snapshots from the
+  `sportsdataverse-data` release artifacts.
+- [`fox_nba_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+  /
+  [`fox_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+  /
+  [`fox_mbb_teams_all()`](https://hoopR.sportsdataverse.org/reference/fox_mbb_teams_all.md)
+  — Fox Bifrost team-directory enumerators.
+  [`fox_mbb_teams_all()`](https://hoopR.sportsdataverse.org/reference/fox_mbb_teams_all.md)
+  walks unseen conference seeds (up to `max_calls` standings calls) to
+  collect the full MBB league.
+
+**Internal `.bb_*` engine** (`R/crosswalk_basketball.R`):
+
+- `.bb_normalize_team(x)` — lowercase + strip punctuation; used for
+  NBA/Fox team-name keys.
+- `.bb_normalize_college_team(x)` — extends
+  [`.bb_normalize_team()`](https://hoopR.sportsdataverse.org/reference/dot-bb_normalize_team.md)
+  with a contracting normalizer that expands common abbreviations (“St.”
+  → “State”, “St” → “Saint”, etc.) so Torvik/KenPom terse names align
+  with ESPN.
+- `.bb_normalize_name(x)` — player-name normalizer (lowercase, strip
+  punctuation/suffixes) used for within-block player matching.
+- `.bb_fuzzy_match(l, r, min_confidence)` — deterministic Jaro-Winkler
+  fuzzy match within team blocks: exact name first, then JW with
+  jersey/DOB tiebreakers, then unmatched. Returns `left_id` / `right_id`
+  / `match_method` / `match_confidence`.
+- `.bb_to_eastern(x)` — reduces a UTC datetime to the local ET game date
+  (used to align ESPN and Stats CDN dates for the schedule join key).
+
+**MBB alias tables** (in `R/mbb_crosswalk.R`):
+
+- `.mbb_bart_alias` — maps common Torvik terse team names to ESPN
+  location names (e.g. `"Connecticut" → "UConn"`).
+- `.mbb_kp_alias` — same shape, includes KenPom-specific divergences
+  (e.g. `"CSUN" → "Cal State Northridge"`).
+- `.mbb_fox_display_alias` — maps Fox normalized display names to ESPN
+  normalized display names where the strings diverge.
 
 ## Common Pitfalls
 

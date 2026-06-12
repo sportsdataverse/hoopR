@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_linescores(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Linescores ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 03:15:13 UTC
+#> ℹ Data updated: 2026-06-12 14:39:59 UTC
 #> # A tibble: 8 × 7
 #>   league event_id  team_id period value display_value source      
 #>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       

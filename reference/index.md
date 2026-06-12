@@ -140,6 +140,79 @@ College Basketball Data
 
   **Update or create a hoopR MBB play-by-play database**
 
+## Cross-Source Crosswalks
+
+### NBA Crosswalk Functions
+
+Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats,
+and Fox identities (keyed on espn_team_id), plus cached loaders
+
+- [`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+  :
+
+  **Get the NBA cross-source team crosswalk**
+
+- [`nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.md)
+  :
+
+  **Get the NBA cross-source schedule crosswalk**
+
+- [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+  :
+
+  **Get the NBA cross-source player crosswalk**
+
+- [`load_nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  :
+
+  **Load hoopR NBA team crosswalk**
+
+- [`load_nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_schedule_crosswalk.md)
+  :
+
+  **Load hoopR NBA schedule crosswalk**
+
+- [`load_nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_crosswalk.md)
+  :
+
+  **Load hoopR NBA player crosswalk**
+
+### MBB Crosswalk Functions
+
+Cross-source team/schedule/player crosswalks linking ESPN, KenPom
+(teams_links), Torvik, and Fox identities (keyed on espn_team_id), plus
+cached loaders
+
+- [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
+  :
+
+  **Get the MBB cross-source team crosswalk**
+
+- [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
+  :
+
+  **Get the MBB cross-source schedule crosswalk**
+
+- [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+  :
+
+  **Get the MBB cross-source player crosswalk**
+
+- [`load_mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_crosswalk.md)
+  :
+
+  **Load hoopR MBB team crosswalk**
+
+- [`load_mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_schedule_crosswalk.md)
+  :
+
+  **Load hoopR MBB schedule crosswalk**
+
+- [`load_mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_crosswalk.md)
+  :
+
+  **Load hoopR MBB player crosswalk**
+
 ## ESPN Data
 
 ### ESPN Family Overview
@@ -1212,6 +1285,17 @@ boxscore, odds, roster, stats, game log, standings, leaders)
 
   **Get Fox Sports Basketball Team Stat Leaders**
 
+- [`fox_nba_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+  [`fox_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+  :
+
+  **Get Fox Sports Basketball Team Directory**
+
+- [`fox_mbb_teams_all()`](https://hoopR.sportsdataverse.org/reference/fox_mbb_teams_all.md)
+  :
+
+  **Get the full Fox Sports men's college basketball team directory**
+
 ## NBA Data
 
 ### NBA Stats Family Overview
@@ -1906,6 +1990,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Play-by-Play V3**
 
+- [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+  :
+
+  **Get the NBA cross-source player crosswalk**
+
 - [`nba_player_dict()`](https://hoopR.sportsdataverse.org/reference/nba_player_dict.md)
   :
 
@@ -2043,6 +2132,11 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Season Schedule**
 
+- [`nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.md)
+  :
+
+  **Get the NBA cross-source schedule crosswalk**
+
 - [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.md)
   :
 
@@ -2088,6 +2182,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Synergy Play Type Stats**
+
+- [`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+  :
+
+  **Get the NBA cross-source team crosswalk**
 
 - [`nba_team_dict()`](https://hoopR.sportsdataverse.org/reference/nba_team_dict.md)
   :

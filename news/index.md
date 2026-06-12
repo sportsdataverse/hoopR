@@ -13,6 +13,46 @@ package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0 `httr` →
 `httr2` migration.
 
+#### **NBA cross-source crosswalks (`nba_*_crosswalk` + `load_nba_*_crosswalk`)**
+
+New convenience functions that link team / schedule / player identities
+across ESPN, the NBA Stats API, and Fox Sports on a shared
+`espn_team_id` key:
+[`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md),
+[`nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.md)
+(joins on the local Eastern-Time game date), and
+[`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+(ESPN-anchored deterministic fuzzy matching), each paired with a
+`load_nba_*_crosswalk()` cached loader. Adds
+[`fox_nba_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+/
+[`fox_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_teams.md)
+deriving the Fox team directory from the standings endpoint. A shared
+internal `.bb_*` matching engine (`R/crosswalk_basketball.R`) backs the
+builders.
+
+#### **MBB cross-source crosswalks (`mbb_*_crosswalk` + `load_mbb_*_crosswalk`)**
+
+New convenience functions that link team / schedule / player identities
+across ESPN, KenPom (`teams_links` bundled data — no auth required),
+Bart Torvik (`barttorvik.com`), and Fox Sports on a shared
+`espn_team_id` key:
+[`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md),
+[`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
+(joins on ET game date via Torvik’s game schedule), and
+[`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+(ESPN-anchored deterministic fuzzy matching vs. Fox), each paired with a
+`load_mbb_*_crosswalk()` cached loader. Torvik and KenPom team names are
+bridged to ESPN via curated alias tables (`.mbb_bart_alias`,
+`.mbb_kp_alias`) and a
+[`.bb_normalize_college_team()`](https://hoopR.sportsdataverse.org/reference/dot-bb_normalize_college_team.md)
+contracting normalizer (expands State/Saint abbreviations). Fox names
+are bridged via `.mbb_fox_display_alias`. Adds
+[`fox_mbb_teams_all()`](https://hoopR.sportsdataverse.org/reference/fox_mbb_teams_all.md)
+to enumerate the full MBB Fox Bifrost team directory (conference-seed
+walking). Backed by the shared `.bb_*` engine in
+`R/crosswalk_basketball.R`.
+
 #### **Fox Sports basketball wrappers (`fox_nba_*` / `fox_mbb_*`)**
 
 Read-only Fox Sports “Bifrost” basketball wrappers over

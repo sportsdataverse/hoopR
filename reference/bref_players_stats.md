@@ -73,7 +73,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_players_stats(season = 2024, table = "per_game"))
 #> ── Player season stats from basketball-reference.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 03:13:43 UTC
+#> ℹ Data updated: 2026-06-12 14:38:37 UTC
 #> # A tibble: 736 × 32
 #>    ranker player         age team  pos       g    gs mp_per_g fg_per_g fga_per_g
 #>     <dbl> <chr>        <dbl> <chr> <chr> <dbl> <dbl>    <dbl>    <dbl>     <dbl>

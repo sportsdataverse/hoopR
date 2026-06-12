@@ -162,14 +162,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 03:15:40 UTC
+#> ℹ Data updated: 2026-06-12 14:40:24 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Story NBA off… "With LeBr… 2026-06-… FALSE   Tim B… https:/… 46       
-#> 2  4.03e7 Story What ar… "From the … 2026-06-… FALSE   Keith… https:/… 46       
-#> 3  4.90e7 Media Carmelo… "Carmelo: … 2026-06-… FALSE   NA     https:/… 46       
-#> 4  4.90e7 Media How Ste… "How Steph… 2026-06-… FALSE   NA     https:/… 46       
-#> 5  4.90e7 Head… LeBron … "LeBron Ja… 2026-06-… FALSE   NA     https:/… 46       
+#> 1  4.90e7 Story NBA Fin… Tim Bontem… 2026-06-… FALSE   Tim B… https:/… 46       
+#> 2  4.90e7 Story NBA off… With LeBro… 2026-06-… FALSE   Tim B… https:/… 46       
+#> 3  4.03e7 Story What ar… From the 1… 2026-06-… FALSE   Keith… https:/… 46       
+#> 4  4.90e7 Media Carmelo… Carmelo: I… 2026-06-… FALSE   NA     https:/… 46       
+#> 5  4.90e7 Media How Ste… How Stephe… 2026-06-… FALSE   NA     https:/… 46       
 # }
 ```

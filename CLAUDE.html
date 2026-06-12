@@ -97,6 +97,7 @@
 <li><a href="#namespace">NAMESPACE</a></li>
 <li><a href="#documentation-maintenance">Documentation Maintenance</a></li>
 <li><a href="#commit-convention">Commit Convention</a></li>
+<li><a href="#cross-source-crosswalk-surface">Cross-Source Crosswalk Surface</a></li>
 <li><a href="#common-pitfalls">Common Pitfalls</a></li>
 </ul><!-- END doctoc generated TOC please keep comment here to allow auto update --><div id="claudemd--hoopr-development-guide" class="section level1">
 
@@ -498,6 +499,37 @@ ci: update GitHub Actions workflow versions</code></pre>
 <p>Prefer scoped commit subjects when useful (for example <code>docs(instructions): ...</code> or <code>refactor(loaders): ...</code>). Use <code>type!:</code> or a <code>BREAKING CHANGE:</code> footer when introducing a breaking change. Split unrelated work into separate commits for reviewability.</p>
 <p><strong>Important</strong>: Never include AI agents or assistants (e.g., Claude, Copilot) as co-authors on commits. Omit all <code>Co-Authored-By</code> trailers referencing AI tools.</p>
 </div>
+<div class="section level2">
+<h2 id="cross-source-crosswalk-surface">Cross-Source Crosswalk Surface<a class="anchor" aria-label="anchor" href="#cross-source-crosswalk-surface"></a></h2>
+<p>hoopR 3.1.0 ships two families of cross-source crosswalk builders backed by a shared internal engine in <code>R/crosswalk_basketball.R</code>.</p>
+<p><strong>Exported builders and loaders</strong> (all keyed on <code>espn_team_id</code>):</p>
+<ul><li>
+<code><a href="reference/nba_team_crosswalk.html">nba_team_crosswalk()</a></code> / <code><a href="reference/nba_schedule_crosswalk.html">nba_schedule_crosswalk()</a></code> / <code><a href="reference/nba_player_crosswalk.html">nba_player_crosswalk()</a></code> — link ESPN, NBA Stats CDN (<code>nba_schedule</code> / <code>nba_teams</code>), and Fox Sports identities. Note: the NBA Stats CDN serves the <strong>current season only</strong>; use <code>load_nba_*_crosswalk()</code> for historical coverage.</li>
+<li>
+<code><a href="reference/mbb_team_crosswalk.html">mbb_team_crosswalk()</a></code> / <code><a href="reference/mbb_schedule_crosswalk.html">mbb_schedule_crosswalk()</a></code> / <code><a href="reference/mbb_player_crosswalk.html">mbb_player_crosswalk()</a></code> — link ESPN, KenPom (<code><a href="reference/teams_links.html">hoopR::teams_links</a></code> bundled data — no auth), Bart Torvik (<code>barttorvik.com</code>), and Fox Sports identities.</li>
+<li>
+<code>load_nba_*_crosswalk(seasons)</code> / <code>load_mbb_*_crosswalk(seasons)</code> — cached loaders that pull versioned <code>.rds</code> snapshots from the <code>sportsdataverse-data</code> release artifacts.</li>
+<li>
+<code><a href="reference/fox_basketball_teams.html">fox_nba_teams()</a></code> / <code><a href="reference/fox_basketball_teams.html">fox_mbb_teams()</a></code> / <code><a href="reference/fox_mbb_teams_all.html">fox_mbb_teams_all()</a></code> — Fox Bifrost team-directory enumerators. <code><a href="reference/fox_mbb_teams_all.html">fox_mbb_teams_all()</a></code> walks unseen conference seeds (up to <code>max_calls</code> standings calls) to collect the full MBB league.</li>
+</ul><p><strong>Internal <code>.bb_*</code> engine</strong> (<code>R/crosswalk_basketball.R</code>):</p>
+<ul><li>
+<code>.bb_normalize_team(x)</code> — lowercase + strip punctuation; used for NBA/Fox team-name keys.</li>
+<li>
+<code>.bb_normalize_college_team(x)</code> — extends <code><a href="reference/dot-bb_normalize_team.html">.bb_normalize_team()</a></code> with a contracting normalizer that expands common abbreviations (“St.” → “State”, “St” → “Saint”, etc.) so Torvik/KenPom terse names align with ESPN.</li>
+<li>
+<code>.bb_normalize_name(x)</code> — player-name normalizer (lowercase, strip punctuation/suffixes) used for within-block player matching.</li>
+<li>
+<code>.bb_fuzzy_match(l, r, min_confidence)</code> — deterministic Jaro-Winkler fuzzy match within team blocks: exact name first, then JW with jersey/DOB tiebreakers, then unmatched. Returns <code>left_id</code> / <code>right_id</code> / <code>match_method</code> / <code>match_confidence</code>.</li>
+<li>
+<code>.bb_to_eastern(x)</code> — reduces a UTC datetime to the local ET game date (used to align ESPN and Stats CDN dates for the schedule join key).</li>
+</ul><p><strong>MBB alias tables</strong> (in <code>R/mbb_crosswalk.R</code>):</p>
+<ul><li>
+<code>.mbb_bart_alias</code> — maps common Torvik terse team names to ESPN location names (e.g. <code>"Connecticut" → "UConn"</code>).</li>
+<li>
+<code>.mbb_kp_alias</code> — same shape, includes KenPom-specific divergences (e.g. <code>"CSUN" → "Cal State Northridge"</code>).</li>
+<li>
+<code>.mbb_fox_display_alias</code> — maps Fox normalized display names to ESPN normalized display names where the strings diverge.</li>
+</ul></div>
 <div class="section level2">
 <h2 id="common-pitfalls">Common Pitfalls<a class="anchor" aria-label="anchor" href="#common-pitfalls"></a></h2>
 <ul><li>

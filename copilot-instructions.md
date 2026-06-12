@@ -352,6 +352,57 @@ regions by hand.
   may return named lists of data frames (e.g., `PlayerIndex`,
   `Standings`) rather than a single flat data frame.
 
+## Cross-Source Crosswalk Surface
+
+hoopR 3.1.0 adds cross-source crosswalk builders backed by a shared
+engine in `R/crosswalk_basketball.R`. All crosswalks are keyed on
+`espn_team_id`.
+
+**NBA:**
+[`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+/
+[`nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.md)
+/
+[`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+link ESPN, NBA Stats CDN, and Fox. The NBA Stats CDN serves the current
+season only; use `load_nba_*_crosswalk()` for history.
+
+**MBB:**
+[`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
+/
+[`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
+/
+[`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+link ESPN, KenPom
+([`hoopR::teams_links`](https://hoopR.sportsdataverse.org/reference/teams_links.md),
+no auth), Bart Torvik, and Fox.
+[`fox_mbb_teams_all()`](https://hoopR.sportsdataverse.org/reference/fox_mbb_teams_all.md)
+enumerates the full MBB Fox Bifrost directory via conference-seed
+walking.
+
+**Cached loaders:** `load_nba_*_crosswalk(seasons)` /
+`load_mbb_*_crosswalk(seasons)` pull versioned `.rds` snapshots from the
+`sportsdataverse-data` release artifacts.
+
+**`.bb_*` engine conventions:**
+
+- Matching is deterministic: exact normalized name within a team block,
+  then Jaro-Winkler fuzzy (`min_confidence = 0.92`) with jersey/DOB
+  tiebreakers.
+- [`.bb_normalize_college_team()`](https://hoopR.sportsdataverse.org/reference/dot-bb_normalize_college_team.md)
+  is a contracting normalizer that expands “St.” → “State” / “St” →
+  “Saint” so Torvik/KenPom terse names align with ESPN.
+- Dates are reduced to local ET game date via
+  [`.bb_to_eastern()`](https://hoopR.sportsdataverse.org/reference/dot-bb_to_eastern.md)
+  before joining the schedule crosswalk key.
+- MBB alias tables (`.mbb_bart_alias`, `.mbb_kp_alias`,
+  `.mbb_fox_display_alias` in `mbb_crosswalk.R`) bridge source-specific
+  name divergences before normalization.
+- When adding a new source, add its curated alias table in the builder
+  file and wrap the fetch in `tryCatch(..., error = function(e) NULL)`
+  with an empty-typed fallback frame so ESPN always anchors even on
+  partial failures.
+
 ## Common Pitfalls
 
 - **Return-value initialization is mandatory**: every wrapper that
