@@ -134,7 +134,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_linescores(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Linescores ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 14:39:13 UTC
+#> ℹ Data updated: 2026-06-12 23:27:43 UTC
 #> # A tibble: 4 × 7
 #>   league                  event_id  team_id period value display_value source   
 #>   <chr>                   <chr>     <chr>    <int> <dbl> <chr>         <chr>    

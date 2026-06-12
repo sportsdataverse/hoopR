@@ -178,7 +178,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 14:40:27 UTC
+#> ℹ Data updated: 2026-06-12 23:28:42 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

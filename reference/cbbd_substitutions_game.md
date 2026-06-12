@@ -47,7 +47,7 @@ Other CBD Substitutions Functions:
 ``` r
 # \donttest{
   try(cbbd_substitutions_game(game_id = 5881))
-#> ✖ 2026-06-12 14:38:47.925914: Invalid arguments or no substitution data available for 5881!
+#> ✖ 2026-06-12 23:27:23.557745: Invalid arguments or no substitution data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

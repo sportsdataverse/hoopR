@@ -176,7 +176,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_odds_records(team_id = 13, season = 2026)
 #> ── ESPN NBA Team Odds-Records ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 14:40:24 UTC
+#> ℹ Data updated: 2026-06-12 23:28:40 UTC
 #> # A tibble: 60 × 13
 #>    league team_id season season_type category_type    category_abbrev
 #>    <chr>  <chr>    <int>       <int> <chr>            <chr>          

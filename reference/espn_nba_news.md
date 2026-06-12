@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 14:40:02 UTC
+#> ℹ Data updated: 2026-06-12 23:28:22 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Media Magic t… Magic to S… 2026-06-… FALSE   NA     https:/… 46       
-#> 2  4.90e7 Head… Big3 le… The Big3 b… 2026-06-… FALSE   NA     https:/… 46       
-#> 3  4.90e7 Media Magic J… Magic John… 2026-06-… FALSE   NA     https:/… 46       
-#> 4  4.84e7 Story 2026 NB… We're trac… 2026-06-… FALSE   ESPN   https:/… 46       
-#> 5  4.90e7 Story The New… Lifelong K… 2026-06-… FALSE   Antho… https:/… 46       
+#> 1  4.90e7 Head… Mitch J… Spurs coac… 2026-06-… FALSE   Micha… https:/… 46       
+#> 2  4.55e7 Story NBA cha… The Knicks… 2026-06-… FALSE   Doug … https:/… 22000    
+#> 3  4.90e7 Media Stephen… Stephen A.… 2026-06-… FALSE   NA     https:/… 46       
+#> 4  4.90e7 Media Magic t… Magic to S… 2026-06-… FALSE   NA     https:/… 46       
+#> 5  4.90e7 Head… Big3 le… The Big3 b… 2026-06-… FALSE   NA     https:/… 46       
 # }
 ```
