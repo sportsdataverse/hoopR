@@ -1,6 +1,7 @@
 url: https://hoopR.sportsdataverse.org/
 template:
   bootstrap: 5
+  light-switch: true
   bootswatch: flatly
   ganalytics: G-FN028W4QW6
   includes:
@@ -59,7 +60,7 @@ home:
 navbar:
   structure:
     left: [home, reference, articles, news, network, data]
-    right: [x, github]
+    right: [search, x, github, lightswitch]
   icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.ico
   title: "hoopR"
   components:
@@ -69,6 +70,7 @@ navbar:
         A collection of data and a R package designed for men's basketball!
 
       icon: fa-home
+      aria-label: Home
       href: index.html
     reference:
       icon: "fas fa-code"
@@ -172,9 +174,11 @@ navbar:
           href: https://github.com/sportsdataverse/hoopR-data
     x:
       icon: "fab fa-x-twitter fa-lg"
+      aria-label: X (Twitter)
       href: https://x.com/saiemgilani
     github:
       icon: "fab fa-github fa-lg"
+      aria-label: GitHub
       href: https://github.com/sportsdataverse/hoopR/
 reference:
   - title: hoopR Data

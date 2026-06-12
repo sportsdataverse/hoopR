@@ -266,3 +266,23 @@ input[type="search"] {
 
 /* Version badge legible on the dark navbar (BS5 .text-muted otherwise wins). */
 small.nav-text.text-muted { color: #EAEBEC !important; }
+
+/* -- Dark-mode legibility (dark only; light theme, fonts, glow, navbar untouched) -- */
+[data-bs-theme="dark"] body {
+  color: #EAEBEC;
+}
+[data-bs-theme="dark"] :is(#main, aside) h1,
+[data-bs-theme="dark"] :is(#main, aside) h2,
+[data-bs-theme="dark"] :is(#main, aside) h3,
+[data-bs-theme="dark"] :is(#main, aside) h4,
+[data-bs-theme="dark"] :is(#main, aside) h5,
+[data-bs-theme="dark"] :is(#main, aside) h6,
+[data-bs-theme="dark"] :is(#main, aside) .h1,
+[data-bs-theme="dark"] :is(#main, aside) .h2,
+[data-bs-theme="dark"] :is(#main, aside) .h3,
+[data-bs-theme="dark"] :is(#main, aside) .h4 {
+  color: #EAEBEC;
+}
+[data-bs-theme="dark"] :is(#main, aside) a {
+  color: #A7C6E6;
+}
