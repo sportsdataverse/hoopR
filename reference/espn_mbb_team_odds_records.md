@@ -165,7 +165,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_odds_records(team_id = 150, season = 2026)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:15 UTC
+#> ℹ Data updated: 2026-06-12 02:23:29 UTC
 #> # A tibble: 60 × 13
 #>    league               team_id season season_type category_type category_abbrev
 #>    <chr>                <chr>    <int>       <int> <chr>         <chr>          

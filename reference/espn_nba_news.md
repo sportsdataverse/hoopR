@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:42 UTC
+#> ℹ Data updated: 2026-06-12 02:23:56 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Head… Mike Br… "The Knick… 2026-06-… FALSE   Vince… https:/… 46       
-#> 2  4.90e7 Media Wemby c… "Wemby con… 2026-06-… FALSE   NA     https:/… 46       
-#> 3  4.90e7 Head… 'Rowdy'… "An NBA Fi… 2026-06-… FALSE   NA     https:/… 46       
-#> 4  4.55e7 Story NBA cha… "San Anton… 2026-06-… FALSE   Doug … https:/… 22000    
-#> 5  4.90e7 Media Windy t… "Windy to … 2026-06-… FALSE   NA     https:/… 46       
+#> 1  4.90e7 Head… Defenda… The first … 2026-06-… FALSE   Micha… https:/… 46       
+#> 2  4.90e7 Media Mike Gr… Mike Green… 2026-06-… FALSE   NA     https:/… 46       
+#> 3  4.90e7 Story At NBPA… In the tra… 2026-06-… FALSE   Jason… https:/… 41       
+#> 4  4.90e7 Head… Knicks … A brutal n… 2026-06-… FALSE   NA     https:/… 46       
+#> 5  4.55e7 Story NBA cha… The Knicks… 2026-06-… FALSE   Doug … https:/… 22000    
 # }
 ```

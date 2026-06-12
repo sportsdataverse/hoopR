@@ -36,7 +36,7 @@ Other Sports-Reference College Basketball Functions:
 # \donttest{
   try(srcbb_rankings(season = 2024))
 #> ── Men's college basketball AP poll from sports-reference.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 23:00:40 UTC
+#> ℹ Data updated: 2026-06-12 02:35:21 UTC
 #> # A tibble: 52 × 24
 #>    school     conf  week1 week2 week3 week4 week5 week6 week7 week8 week9 week10
 #>    <chr>      <chr> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl>

@@ -147,11 +147,11 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_player_box(event_id = 401256760, team_id = 52,
                                athlete_id = 4593919)
-#> ✖ 2026-06-09 22:48:47.122697: Failed to retrieve ESPN mens-college-basketball event player box for event_id=401256760, team_id=52, athlete_id=4593919
+#> ✖ 2026-06-12 02:23:00.429653: Failed to retrieve ESPN mens-college-basketball event player box for event_id=401256760, team_id=52, athlete_id=4593919
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, team_id = 52, athlete_id = 4593919, stat_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Player Box ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:47 UTC
+#> ℹ Data updated: 2026-06-12 02:23:00 UTC
 #> # A tibble: 0 × 0
 # }
 ```

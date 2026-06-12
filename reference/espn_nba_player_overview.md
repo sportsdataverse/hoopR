@@ -188,12 +188,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:47 UTC
+#> ℹ Data updated: 2026-06-12 02:24:01 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:47 UTC
+#> ℹ Data updated: 2026-06-12 02:24:01 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -201,32 +201,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:47 UTC
+#> ℹ Data updated: 2026-06-12 02:24:01 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:47 UTC
+#> ℹ Data updated: 2026-06-12 02:24:01 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 Nelly Korda gives LeBron a '10 out of 10'… "Nelly Kor… 2026-06-… NA     Media
-#>  2 Windy to McAfee: I think the best place f… "Windy to … 2026-06-… NA     Media
-#>  3 LeBron fired up after sinking tough chip … "LeBron fi… 2026-06-… NA     Media
-#>  4 Midround at U.S. Women's Open, Nelly Kord… "Not every… 2026-06-… Paolo… Story
-#>  5 Odell Beckham Jr. is the latest star to r… "Odell Bec… 2026-06-… ESPN … Story
-#>  6 Mad Dog: 'I’d be shocked if LeBron goes b… "Chris “Ma… 2026-05-… NA     Media
-#>  7 Ronaldo, Canelo, Messi top Forbes' list o… "Boxing su… 2026-05-… Andre… Head…
-#>  8 Stephen A.: LeBron's claim of Lakers bein… "Stephen A… 2026-05-… NA     Media
-#>  9 Brian Windhorst: Lakers need to approach … "Brian Win… 2026-05-… NA     Media
-#> 10 LeBron James: Lakers were 'out-talented' … "LeBron Ja… 2026-05-… Dave … Head…
-#> 11 The Cavaliers rebuilt after LeBron left, … "The clock… 2026-05-… Dave … Story
-#> 12 James, Haliburton to do live podcast at F… "LeBron Ja… 2026-05-… NA     Head…
-#> 13 Stephen A: The Lakers still need LeBron    "Stephen A… 2026-05-… NA     Media
+#>  1 NBA offseason 2026: 10 teams that will de… "With LeBr… 2026-06-… Tim B… Story
+#>  2 Carmelo: I don't know if LeBron knows wha… "Carmelo: … 2026-06-… NA     Media
+#>  3 How Stephen A. feels about LeBron's GOAT … "How Steph… 2026-06-… NA     Media
+#>  4 LeBron James on GOAT debate: 'I'm not tak… "LeBron Ja… 2026-06-… NA     Head…
+#>  5 Nelly Korda gives LeBron a '10 out of 10'… "Nelly Kor… 2026-06-… NA     Media
+#>  6 Windy to McAfee: I think the best place f… "Windy to … 2026-06-… NA     Media
+#>  7 LeBron fired up after sinking tough chip … "LeBron fi… 2026-06-… NA     Media
+#>  8 Midround at U.S. Women's Open, Nelly Kord… "Not every… 2026-06-… Paolo… Story
+#>  9 Odell Beckham Jr. is the latest star to r… "Odell Bec… 2026-06-… ESPN … Story
+#> 10 Mad Dog: 'I’d be shocked if LeBron goes b… "Chris “Ma… 2026-05-… NA     Media
+#> 11 Ronaldo, Canelo, Messi top Forbes' list o… "Boxing su… 2026-05-… Andre… Head…
+#> 12 Stephen A.: LeBron's claim of Lakers bein… "Stephen A… 2026-05-… NA     Media
+#> 13 Brian Windhorst: Lakers need to approach … "Brian Win… 2026-05-… NA     Media
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:47 UTC
+#> ℹ Data updated: 2026-06-12 02:24:01 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  

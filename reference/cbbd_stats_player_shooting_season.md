@@ -74,7 +74,7 @@ Other CBD Stats Functions:
 ``` r
 # \donttest{
   try(cbbd_stats_player_shooting_season(season = 2024, team = "Duke"))
-#> ✖ 2026-06-09 22:48:25.646863: Invalid arguments or no player shooting stats available!
+#> ✖ 2026-06-12 02:22:36.069267: Invalid arguments or no player shooting stats available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

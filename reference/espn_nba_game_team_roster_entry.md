@@ -154,11 +154,11 @@ Saiem Gilani
   espn_nba_game_team_roster_entry(event_id = 401283399,
                                             team_id = 13,
                                             athlete_id = 1966)
-#> ✖ 2026-06-09 22:49:40.858259: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
+#> ✖ 2026-06-12 02:23:54.456813: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 13, athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Event Competitor Roster Entry ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:49:40 UTC
+#> ℹ Data updated: 2026-06-12 02:23:54 UTC
 #> # A tibble: 0 × 0
 # }
 ```

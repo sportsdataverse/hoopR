@@ -195,7 +195,7 @@ Saiem Gilani
   espn_mbb_player_info(athlete_id = "4593919")
 #> $Bio
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Bio from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 1 × 18
 #>   id      uid       guid  first_name last_name full_name display_name short_name
 #>   <chr>   <chr>     <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
@@ -206,7 +206,7 @@ Saiem Gilani
 #> 
 #> $Team
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Team from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 1 × 1
 #>   x_ref                                                                         
 #>   <chr>                                                                         
@@ -214,7 +214,7 @@ Saiem Gilani
 #> 
 #> $Position
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Position from ESPN.com ── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 1 × 5
 #>   id    name  display_name abbreviation leaf 
 #>   <chr> <chr> <chr>        <chr>        <lgl>
@@ -222,7 +222,7 @@ Saiem Gilani
 #> 
 #> $Status
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Status from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 1 × 4
 #>   id    name     type     abbreviation
 #>   <chr> <chr>    <chr>    <chr>       
@@ -230,12 +230,12 @@ Saiem Gilani
 #> 
 #> $College
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete College from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Draft
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Draft from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-09 22:48:58 UTC
+#> ℹ Data updated: 2026-06-12 02:23:11 UTC
 #> # A tibble: 0 × 0
 #> 
 # }

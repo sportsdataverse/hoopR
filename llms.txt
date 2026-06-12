@@ -1310,6 +1310,59 @@ Functions exported by hoopR to access ESPN’s NBA Data
 
   **Get NBA win probability chart data from ESPN**
 
+### Fox Sports Basketball Data Functions
+
+Read-only Fox Sports (Bifrost) NBA + MBB wrappers (play-by-play,
+boxscore, odds, roster, stats, game log, standings, leaders)
+
+- [`fox_nba_boxscore()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_boxscore.md)
+  [`fox_mbb_boxscore()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_boxscore.md)
+  :
+
+  **Get Fox Sports Basketball Boxscore**
+
+- [`fox_nba_league_leaders()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_league_leaders.md)
+  [`fox_mbb_league_leaders()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_league_leaders.md)
+  :
+
+  **Get Fox Sports Basketball Statistical Leaders**
+
+- [`fox_nba_odds()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_odds.md)
+  [`fox_mbb_odds()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_odds.md)
+  :
+
+  **Get Fox Sports Basketball Game Odds**
+
+- [`fox_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_pbp.md)
+  [`fox_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_pbp.md)
+  :
+
+  **Get Fox Sports Basketball Play-by-Play**
+
+- [`fox_nba_standings()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_standings.md)
+  [`fox_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_standings.md)
+  :
+
+  **Get Fox Sports Basketball Standings**
+
+- [`fox_nba_team_gamelog()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_gamelog.md)
+  [`fox_mbb_team_gamelog()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_gamelog.md)
+  :
+
+  **Get Fox Sports Basketball Team Game Log**
+
+- [`fox_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_roster.md)
+  [`fox_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_roster.md)
+  :
+
+  **Get Fox Sports Basketball Team Roster**
+
+- [`fox_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_stats.md)
+  [`fox_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_team_stats.md)
+  :
+
+  **Get Fox Sports Basketball Team Stat Leaders**
+
 ## NBA Data
 
 ### NBA Stats Family Overview

@@ -45,7 +45,7 @@ Other Sports-Reference College Basketball Functions:
 # \donttest{
   try(srcbb_school_stats(season = 2024, table = "basic"))
 #> ── Men's college basketball school stats from sports-reference.com ─────────────
-#> ℹ Data updated: 2026-06-09 23:00:44 UTC
+#> ℹ Data updated: 2026-06-12 02:35:25 UTC
 #> # A tibble: 362 × 35
 #>    ranker school              g  wins losses win_loss_pct    srs   sos wins_conf
 #>     <dbl> <chr>           <dbl> <dbl>  <dbl>        <dbl>  <dbl> <dbl>     <dbl>

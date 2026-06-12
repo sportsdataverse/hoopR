@@ -150,7 +150,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_probabilities(event_id = "401256760", limit = 50)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Probabilities (event_id=401256760) from ES
-#> ℹ Data updated: 2026-06-09 22:48:48 UTC
+#> ℹ Data updated: 2026-06-12 02:23:01 UTC
 #> # A tibble: 50 × 10
 #>    event_id  sequence_number play_id period clock home_win_percentage
 #>    <chr>     <chr>           <chr>    <int> <chr>               <dbl>
