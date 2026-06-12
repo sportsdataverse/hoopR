@@ -175,7 +175,9 @@
 .fox_bb_teams <- function(raw) {
   rows <- list()
   for (s in .fox_or(raw[["standingsSections"]], list())) {
-    section <- .fox_or(s[["title"]], NA_character_)
+    section <- .fox_or(
+      tryCatch(s[["metadata"]][["parameters"]][[3]], error = function(e) NULL),
+      .fox_or(s[["pageTitle"]], .fox_or(s[["title"]], NA_character_)))
     for (tbl in .fox_or(s[["standings"]], list())) {
       for (r in .fox_or(tbl[["rows"]], list())) {
         cells <- .fox_cells(r[["columns"]])
@@ -461,6 +463,43 @@ fox_nba_teams <- function(team_id = "1") .fox_bb_resource("nba", "teams", team_i
 #' @rdname fox_basketball_teams
 #' @export
 fox_mbb_teams <- function(team_id = "1") .fox_bb_resource("cbk", "teams", team_id = team_id)
+
+#' @title
+#' **Get the full Fox Sports men's college basketball team directory**
+#' @description
+#' **Enumerate every MBB team in the Fox Sports (Bifrost) directory.** A single
+#' `fox_mbb_teams()` call only returns the seed team's conference, so this walks
+#' unseen team ids (one seed per conference) and unions the results.
+#' @param max_id Highest Fox team id to probe as a seed (default `500`).
+#' @param max_calls Safety cap on the number of standings calls (default `60`).
+#' @return A `hoopR_data` tibble, one row per team: `fox_team_id`,
+#'   `fox_team_name`, `fox_section`.
+#' @importFrom dplyr bind_rows
+#' @export
+#' @family Fox Basketball Functions
+#' @examples
+#' \donttest{
+#'   try(fox_mbb_teams_all())
+#' }
+fox_mbb_teams_all <- function(max_id = 500, max_calls = 60) {
+  seen <- character(0)
+  parts <- list()
+  calls <- 0L
+  for (cand in seq_len(max_id)) {
+    if (calls >= max_calls) break
+    if (as.character(cand) %in% seen) next
+    df <- tryCatch(fox_mbb_teams(team_id = as.character(cand)), error = function(e) NULL)
+    calls <- calls + 1L
+    if (is.null(df) || !nrow(df)) next
+    parts[[length(parts) + 1L]] <- df
+    seen <- union(seen, as.character(df$fox_team_id))
+  }
+  out <- if (length(parts)) dplyr::bind_rows(parts) else data.frame(
+    fox_team_id = character(), fox_team_name = character(), fox_section = character(),
+    stringsAsFactors = FALSE)
+  out <- out[!duplicated(out$fox_team_id), , drop = FALSE]
+  make_hoopR_data(out, "Fox Sports MBB full team directory", Sys.time())
+}
 
 # ---------------------------------------------------------------------------
 # fox_basketball_league_leaders
