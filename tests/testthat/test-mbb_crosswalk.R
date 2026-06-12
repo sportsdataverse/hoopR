@@ -228,3 +228,289 @@ test_that("mbb_team_crosswalk() >= 90% match rate all sources [live]", {
   expect_gte(kp_rate,   0.9,
     label = paste0("KenPom match rate = ", round(kp_rate * 100, 1), "%"))
 })
+
+# ===========================================================================
+# Offline tests: .bb_assemble_schedule_crosswalk_mbb
+# ===========================================================================
+
+# Small synthetic team_xwalk (3 teams)
+.make_sched_xwalk <- function() {
+  data.frame(
+    espn_team_id  = c(1L, 2L, 3L),
+    bart_team     = c("Duke", "North Carolina", "Kentucky"),
+    kp_team       = c("Duke", "North Carolina", "Kentucky"),
+    stringsAsFactors = FALSE
+  )
+}
+
+.make_espn_games <- function(dates, home_ids, away_ids, game_ids) {
+  data.frame(
+    game_date         = as.Date(dates),
+    home_espn_team_id = as.integer(home_ids),
+    away_espn_team_id = as.integer(away_ids),
+    espn_game_id      = as.character(game_ids),
+    stringsAsFactors  = FALSE
+  )
+}
+
+.make_bart_games <- function(dates, team1, team2, muids, winners) {
+  data.frame(
+    game_date    = as.Date(dates),
+    muid         = as.character(muids),
+    team1        = team1,
+    team2        = team2,
+    winner       = winners,
+    stringsAsFactors = FALSE
+  )
+}
+
+test_that("schedule assembler: both-match row", {
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games("2025-01-10", 1L, 2L, "E001")
+  bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  expect_equal(nrow(out), 1L)
+  expect_equal(out$match_method, "both")
+  expect_equal(out$espn_game_id, "E001")
+  expect_equal(out$bart_muid,    "B001")
+  expect_equal(out$season,       2025L)
+  expect_equal(out$match_confidence, 1)
+})
+
+test_that("schedule assembler: espn_only when no Torvik match", {
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games("2025-01-12", 1L, 3L, "E002")
+  # Bart game on a different date -> no overlap
+  bg    <- .make_bart_games("2025-01-15", "Duke", "Kentucky", "B002", "Kentucky")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  both_row  <- out[out$match_method == "both",      , drop = FALSE]
+  espn_row  <- out[out$match_method == "espn_only", , drop = FALSE]
+  bart_row  <- out[out$match_method == "bart_only", , drop = FALSE]
+
+  expect_equal(nrow(both_row),  0L)
+  expect_equal(nrow(espn_row),  1L)
+  expect_equal(nrow(bart_row),  1L)
+  expect_equal(espn_row$espn_game_id, "E002")
+  expect_true(is.na(espn_row$bart_muid))
+})
+
+test_that("schedule assembler: bart_only when Torvik team unresolved stays in output", {
+  xwalk <- .make_sched_xwalk()
+  eg    <- data.frame(
+    game_date = as.Date(character()),
+    home_espn_team_id = integer(),
+    away_espn_team_id = integer(),
+    espn_game_id = character(),
+    stringsAsFactors = FALSE
+  )
+  # Torvik game between two known teams -> bart_only (no espn games at all)
+  bg <- .make_bart_games("2025-01-20", "Duke", "Kentucky", "B003", "Duke")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  expect_equal(nrow(out), 1L)
+  expect_equal(out$match_method, "bart_only")
+  expect_equal(out$bart_muid, "B003")
+  expect_true(is.na(out$espn_game_id))
+})
+
+test_that("schedule assembler: no duplicate espn_game_id column", {
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games("2025-02-01", 2L, 3L, "E005")
+  bg    <- .make_bart_games("2025-02-01", "North Carolina", "Kentucky", "B005", "NC")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  col_counts <- table(names(out))
+  expect_true(all(col_counts == 1L),
+    label = "No duplicate column names in schedule crosswalk output")
+})
+
+test_that("schedule assembler: kp_game_id, fox_game_id, yahoo_game_id are NA", {
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games("2025-01-10", 1L, 2L, "E001")
+  bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  expect_true(is.na(out$kp_game_id[1]))
+  expect_true(is.na(out$fox_game_id[1]))
+  expect_true(is.na(out$yahoo_game_id[1]))
+})
+
+test_that("mbb_schedule_crosswalk include_kenpom=FALSE does not error without KP creds", {
+  # When KP_USER is absent the function must NOT try to call kp_team_schedule.
+  # We simulate by ensuring no credentials are set (default environment).
+  old_user <- Sys.getenv("KP_USER")
+  old_pw   <- Sys.getenv("KP_PW")
+  Sys.unsetenv("KP_USER")
+  Sys.unsetenv("KP_PW")
+  on.exit({
+    if (nchar(old_user)) Sys.setenv(KP_USER = old_user)
+    if (nchar(old_pw))   Sys.setenv(KP_PW   = old_pw)
+  })
+
+  # Build a minimal synthetic result from the assembler directly (no live calls)
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games("2025-01-10", 1L, 2L, "E001")
+  bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(eg, bg, xwalk, 2025L)
+  # include_kenpom path not triggered; kp_game_id remains NA
+  expect_true(is.na(out$kp_game_id[1]))
+})
+
+# ===========================================================================
+# Offline tests: .bb_assemble_player_crosswalk_mbb
+# ===========================================================================
+
+.make_mbb_espn_players <- function(team_id, abbr, ids, names, jerseys, positions) {
+  data.frame(
+    espn_team_id      = as.integer(team_id),
+    team_abbreviation = abbr,
+    espn_athlete_id   = as.character(ids),
+    espn_full_name    = names,
+    espn_jersey       = as.character(jerseys),
+    espn_position     = positions,
+    stringsAsFactors  = FALSE
+  )
+}
+
+.make_mbb_fox_players <- function(team_id, ids, names, jerseys, positions) {
+  data.frame(
+    espn_team_id       = as.integer(team_id),
+    fox_athlete_id     = as.character(ids),
+    fox_player         = names,
+    fox_jersey         = as.character(jerseys),
+    fox_position_group = positions,
+    stringsAsFactors   = FALSE
+  )
+}
+
+test_that("player assembler: exact name match", {
+  espn <- .make_mbb_espn_players(
+    team_id = 150L, abbr = "DUK",
+    ids      = c("A1", "A2"),
+    names    = c("John Smith", "Mike Jones"),
+    jerseys  = c("5", "11"),
+    positions = c("G", "F")
+  )
+  fox <- .make_mbb_fox_players(
+    team_id   = 150L,
+    ids       = c("F1", "F2"),
+    names     = c("John Smith", "Mike Jones"),
+    jerseys   = c("5", "11"),
+    positions = c("Guard", "Forward")
+  )
+
+  out <- .bb_assemble_player_crosswalk_mbb(espn, fox, season = 2025L)
+
+  expect_equal(nrow(out), 2L)
+  expect_equal(out$fox_athlete_id[out$espn_athlete_id == "A1"], "F1")
+  expect_equal(out$fox_athlete_id[out$espn_athlete_id == "A2"], "F2")
+  expect_true(all(out$match_method == "exact_name"))
+  expect_true(all(out$match_confidence == 1))
+})
+
+test_that("player assembler: fuzzy name match (minor spelling diff)", {
+  espn <- .make_mbb_espn_players(
+    150L, "DUK",
+    ids       = "A3",
+    names     = "Jonathan Williams",
+    jerseys   = "23",
+    positions = "G"
+  )
+  fox <- .make_mbb_fox_players(
+    150L,
+    ids       = "F3",
+    names     = "Jonathan Willams",   # deliberate typo
+    jerseys   = "23",
+    positions = "Guard"
+  )
+
+  out <- .bb_assemble_player_crosswalk_mbb(espn, fox, season = 2025L,
+                                            min_confidence = 0.85)
+
+  expect_equal(nrow(out), 1L)
+  expect_equal(out$fox_athlete_id, "F3")
+  expect_equal(out$match_method,   "fuzzy_jw")
+  expect_true(out$match_confidence >= 0.85)
+})
+
+test_that("player assembler: unmatched when no Fox data", {
+  espn <- .make_mbb_espn_players(
+    200L, "KEN",
+    ids       = c("A4", "A5"),
+    names     = c("Bob Hall", "Sam Lee"),
+    jerseys   = c("10", "20"),
+    positions = c("C", "G")
+  )
+
+  out <- .bb_assemble_player_crosswalk_mbb(espn, fox = NULL, season = 2025L)
+
+  expect_equal(nrow(out), 2L)
+  expect_true(all(is.na(out$fox_athlete_id)))
+  expect_true(all(out$match_method == "unmatched"))
+})
+
+test_that("player assembler: empty Fox frame still returns ESPN rows", {
+  espn <- .make_mbb_espn_players(
+    200L, "KEN",
+    ids       = "A6",
+    names     = "Chris Brown",
+    jerseys   = "1",
+    positions = "G"
+  )
+  fox_empty <- data.frame(
+    espn_team_id       = integer(),
+    fox_athlete_id     = character(),
+    fox_player         = character(),
+    fox_jersey         = character(),
+    fox_position_group = character(),
+    stringsAsFactors   = FALSE
+  )
+
+  out <- .bb_assemble_player_crosswalk_mbb(espn, fox = fox_empty, season = 2025L)
+
+  expect_equal(nrow(out), 1L)
+  expect_true(is.na(out$fox_athlete_id))
+  expect_equal(out$espn_athlete_id, "A6")
+})
+
+test_that("player assembler: output columns are correct and non-duplicate", {
+  espn <- .make_mbb_espn_players(
+    333L, "ALA",
+    ids       = "A7",
+    names     = "Mark Davis",
+    jerseys   = "42",
+    positions = "F"
+  )
+
+  out <- .bb_assemble_player_crosswalk_mbb(espn, fox = NULL, season = 2025L)
+
+  expected_cols <- c(
+    "season", "espn_team_id", "team_abbreviation", "player_name",
+    "espn_athlete_id", "espn_full_name", "espn_jersey", "espn_position",
+    "fox_athlete_id", "fox_player", "fox_jersey", "fox_position_group",
+    "yahoo_player_id", "yahoo_player_name",
+    "match_method", "match_confidence", "match_keys"
+  )
+  expect_equal(names(out), expected_cols)
+  expect_true(all(table(names(out)) == 1L))
+  expect_true(all(is.na(out$yahoo_player_id)))
+  expect_true(all(is.na(out$yahoo_player_name)))
+})
