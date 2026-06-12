@@ -26,3 +26,23 @@ test_that(".bb_assemble_team_crosswalk_nba joins ESPN/Stats/Fox on espn_team_id"
   expect_equal(out$fox_team_id[out$espn_team_id == 17L], "18")
   expect_true(all(is.na(out$yahoo_team_id)))
 })
+
+test_that(".bb_assemble_schedule_crosswalk_nba full-outer joins on ET date + teams", {
+  team_xwalk <- data.frame(
+    espn_team_id = c(13L, 17L), nba_team_id = c("1610612747", "1610612738"),
+    stringsAsFactors = FALSE)
+  espn_games <- data.frame(
+    espn_game_id = "401", game_date = as.Date("2024-12-25"),
+    espn_home_team_id = 13L, espn_away_team_id = 17L, stringsAsFactors = FALSE)
+  stats_games <- data.frame(
+    nba_game_id = "0022400400", nba_game_code = "20241225/BOSLAL",
+    game_date = as.Date("2024-12-25"),
+    nba_home_team_id = "1610612747", nba_away_team_id = "1610612738",
+    season_type = "Regular Season", stringsAsFactors = FALSE)
+  out <- .bb_assemble_schedule_crosswalk_nba(espn_games, stats_games, team_xwalk, season = 2025)
+  expect_equal(nrow(out), 1)
+  expect_equal(out$espn_game_id, "401")
+  expect_equal(out$nba_game_id, "0022400400")
+  expect_equal(out$match_method, "both")
+  expect_false(any(c("espn_home_team_id", "espn_away_team_id") %in% names(out)))
+})
