@@ -36,7 +36,8 @@ Other Fox Basketball Functions:
 \code{\link{fox_basketball_standings}},
 \code{\link{fox_basketball_team_gamelog}},
 \code{\link{fox_basketball_team_roster}},
-\code{\link{fox_basketball_teams}}
+\code{\link{fox_basketball_teams}},
+\code{\link{fox_mbb_teams_all}()}
 }
 \author{
 Saiem Gilani

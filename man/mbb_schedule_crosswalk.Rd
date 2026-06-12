@@ -62,6 +62,9 @@ when partial KenPom data is unavailable.
 }
 \seealso{
 Other MBB Crosswalk Functions: 
+\code{\link{load_mbb_player_crosswalk}()},
+\code{\link{load_mbb_schedule_crosswalk}()},
+\code{\link{load_mbb_team_crosswalk}()},
 \code{\link{mbb_player_crosswalk}()},
 \code{\link{mbb_team_crosswalk}()}
 }
