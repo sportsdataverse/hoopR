@@ -23,7 +23,7 @@
 #' `tidyr::unnest()`.
 #'
 #' All three accept a named list of tibbles -- an `nba_*()` return, or the output
-#' of [nba_stats_map_result_sets()] -- and return a single tibble.
+#' of `nba_stats_map_result_sets()` -- and return a single tibble.
 #'
 #' @param result_sets A named list of tibbles (an `nba_*()` return).
 #' @param tag_column Name of the origin column `nba_bind_sets()` adds (holds the

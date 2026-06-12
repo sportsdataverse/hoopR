@@ -53,7 +53,7 @@ profile's season totals + career totals + awards). Recover a set with
 \code{tidyr::unnest()}.
 
 All three accept a named list of tibbles -- an \verb{nba_*()} return, or the output
-of \code{\link[=nba_stats_map_result_sets]{nba_stats_map_result_sets()}} -- and return a single tibble.
+of \code{nba_stats_map_result_sets()} -- and return a single tibble.
 }
 \examples{
 sets <- list(
