@@ -21,9 +21,25 @@
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
-  out <- lapply(urls, progressively(loader, p))
-  out <- rbindlist_with_attrs(out)
-  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  chunks <- lapply(urls, progressively(loader, p))
+  meta_idx <- tail(which(vapply(
+    chunks,
+    function(x) {
+      !is.null(attr(x, "hoopR_type")) || !is.null(attr(x, "hoopR_timestamp"))
+    },
+    logical(1)
+  )), 1)
+
+  out <- rbindlist_with_attrs(chunks)
+  if (length(meta_idx) == 1L) {
+    out <- make_hoopR_data(
+      out,
+      type = attr(chunks[[meta_idx]], "hoopR_type"),
+      timestamp = attr(chunks[[meta_idx]], "hoopR_timestamp")
+    )
+  } else {
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  }
   out
 }
 
