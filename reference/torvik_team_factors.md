@@ -67,7 +67,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_team_factors(year = 2024))
 #> ── Bart Torvik team four factors from barttorvik.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:35:35 UTC
+#> ℹ Data updated: 2026-06-12 03:26:36 UTC
 #> # A tibble: 362 × 42
 #>    team_name e_fg_percent    rk e_fg_percent_def  rk_2   ftr  rk_3 ftr_def  rk_4
 #>    <chr>            <dbl> <int>            <dbl> <int> <dbl> <int>   <dbl> <int>

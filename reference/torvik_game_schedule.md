@@ -77,7 +77,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_game_schedule(year = 2024))
 #> ── Bart Torvik season schedule from barttorvik.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:35:29 UTC
+#> ℹ Data updated: 2026-06-12 03:26:31 UTC
 #> # A tibble: 6,243 × 56
 #>    muid    date  conmatch matchup prediction   ttq  conf venue team1  t1oe  t1de
 #>    <chr>   <chr> <chr>    <chr>   <chr>      <dbl> <int> <int> <chr> <dbl> <dbl>

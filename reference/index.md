@@ -2827,23 +2827,6 @@ Functions exported by hoopR to scrape basketball-reference.com
 
   **Basketball-Reference Team Season Stats**
 
-## Sports-Reference College Basketball
-
-### Sports-Reference (cbb) Functions
-
-Functions exported by hoopR to scrape men’s college basketball data from
-sports-reference.com/cbb
-
-- [`srcbb_rankings()`](https://hoopR.sportsdataverse.org/reference/srcbb_rankings.md)
-  :
-
-  **Sports-Reference Men's College Basketball AP Poll**
-
-- [`srcbb_school_stats()`](https://hoopR.sportsdataverse.org/reference/srcbb_school_stats.md)
-  :
-
-  **Sports-Reference Men's College Basketball School Stats**
-
 ## Salary & Mock Draft Sources
 
 ### Salary & Draft Functions

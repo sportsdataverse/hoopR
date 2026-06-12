@@ -26,25 +26,6 @@ leagues. Verified live; reverse-engineering notes + an OpenAPI 3.1 spec
 live in the `sdv-internal-refs` repo. Parallels the cfbfastR /
 sportsdataverse-py `fox_*` families.
 
-#### **Sports-Reference men’s college basketball (`srcbb_*`)**
-
-New `srcbb_*()` family scraping men’s college basketball from
-[Sports-Reference](https://www.sports-reference.com/cbb/) — a deep
-historical source hoopR did not previously cover (complementing KenPom,
-Bart Torvik and CollegeBasketballData). It is the college arm of Sports
-Reference, so it reuses hoopR’s `bref_*` parser (comment-hidden tables;
-`data-stat`-keyed columns) and needs no account or API key:
-
-- **`srcbb_school_stats(season, table)`** — season school (team)
-  statistics; `table = "basic"` / `"advanced"` / `"opponent"`.
-- **`srcbb_rankings(season)`** — the season’s AP poll, week by week.
-
-Both echo the requested `season` (and
-[`srcbb_school_stats()`](https://hoopR.sportsdataverse.org/reference/srcbb_school_stats.md)
-the `table`) as columns. Sports-Reference rate-limits aggressive
-scraping (~20 requests/minute); examples are `\donttest{}` and tests are
-network-gated.
-
 #### **CollegeBasketballData API (`cbbd_*`)**
 
 New `cbbd_*()` function family wrapping the [CollegeBasketballData

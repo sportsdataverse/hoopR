@@ -44,7 +44,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_stats("1"))
 #> ── Fox Sports NBA team_stats ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:24:31 UTC
+#> ℹ Data updated: 2026-06-12 03:15:53 UTC
 #> # A tibble: 16 × 6
 #>    team_id category     stat       stat_abbreviation player        value
 #>    <chr>   <chr>        <chr>      <chr>             <chr>         <chr>

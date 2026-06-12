@@ -74,7 +74,7 @@ Other Torvik Functions:
 # \donttest{
   try(torvik_game_stats(year = 2024))
 #> ── Bart Torvik game stats from barttorvik.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:35:32 UTC
+#> ℹ Data updated: 2026-06-12 03:26:34 UTC
 #> # A tibble: 11,452 × 31
 #>    date   type team  conf  opp   venue result adj_oe adj_de    oe off_efg off_to
 #>    <chr> <int> <chr> <chr> <chr> <chr> <chr>   <dbl>  <dbl> <dbl>   <dbl>  <dbl>

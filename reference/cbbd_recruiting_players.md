@@ -64,7 +64,7 @@ Other CBD Recruiting Functions:
 ``` r
 # \donttest{
   try(cbbd_recruiting_players(year = 2024))
-#> ✖ 2026-06-12 02:22:34.906812: Invalid arguments or no recruiting players available!
+#> ✖ 2026-06-12 03:13:51.112357: Invalid arguments or no recruiting players available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

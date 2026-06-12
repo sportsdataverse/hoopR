@@ -168,7 +168,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_group_teams(group_id = 5, season = 2025)
 #> ── ESPN NBA Season Group Teams Index ──────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:24:09 UTC
+#> ℹ Data updated: 2026-06-12 03:15:30 UTC
 #> # A tibble: 15 × 6
 #>    league season season_type group_id team_id ref                               
 #>    <chr>   <int>       <int> <chr>    <chr>   <chr>                             

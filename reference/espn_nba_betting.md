@@ -199,7 +199,7 @@ Other ESPN NBA Functions:
 try(espn_nba_betting(game_id = 401283399))
 #> $pickcenter
 #> ── ESPN NBA Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:23:38 UTC
+#> ℹ Data updated: 2026-06-12 03:14:57 UTC
 #> # A tibble: 3 × 66
 #>   details over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>        <int>  <int>     <dbl>      <dbl>       <int> <chr>        
@@ -216,7 +216,7 @@ try(espn_nba_betting(game_id = 401283399))
 #> 
 #> $againstTheSpread
 #> ── ESPN NBA Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:23:38 UTC
+#> ℹ Data updated: 2026-06-12 03:14:57 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>

@@ -177,12 +177,12 @@ Saiem Gilani
   espn_mbb_player_overview(athlete_id = "4593919", season = 2025)
 #> $Statistics
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Statistics from ESPN.com ──────
-#> ℹ Data updated: 2026-06-12 02:23:11 UTC
+#> ℹ Data updated: 2026-06-12 03:14:28 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview NextGame from ESPN.com ────────
-#> ℹ Data updated: 2026-06-12 02:23:11 UTC
+#> ℹ Data updated: 2026-06-12 03:14:28 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -190,16 +190,16 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Last5Games from ESPN.com ──────
-#> ℹ Data updated: 2026-06-12 02:23:11 UTC
+#> ℹ Data updated: 2026-06-12 03:14:28 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Headlines from ESPN.com ───────
-#> ℹ Data updated: 2026-06-12 02:23:11 UTC
+#> ℹ Data updated: 2026-06-12 03:14:28 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 LSU officially signs Kansas State transfe… "LSU offic… 2026-06-… NA     Head…
+#>  1 LSU officially signs Kansas State transfe… "LSU annou… 2026-06-… NA     Head…
 #>  2 At NBPA Top 100 Camp, top boys high schoo… "In the tr… 2026-06-… Jason… Story
 #>  3 Darius Acuff Jr. wants to be the next Jal… "The proje… 2026-06-… Myron… Story
 #>  4 Thompson, No. 27 recruit for class of 202… "Davion Th… 2026-06-… Jeff … Head…
@@ -215,7 +215,7 @@ Saiem Gilani
 #> 
 #> $FantasyOutlook
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview FantasyOutlook from ESPN.com ──
-#> ℹ Data updated: 2026-06-12 02:23:11 UTC
+#> ℹ Data updated: 2026-06-12 03:14:28 UTC
 #> # A tibble: 0 × 0
 #> 
 # }

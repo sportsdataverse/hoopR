@@ -45,7 +45,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_pbp("106422"))
 #> ── Fox Sports NBA pbp ─────────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:24:29 UTC
+#> ℹ Data updated: 2026-06-12 03:15:51 UTC
 #> # A tibble: 448 × 10
 #>    game_id period     left_team right_team play_id clock team  left_score_change
 #>    <chr>   <chr>      <chr>     <chr>      <chr>   <chr> <chr> <chr>            
@@ -65,7 +65,7 @@ Saiem Gilani
 # \donttest{
   try(fox_mbb_pbp("262052"))
 #> ── Fox Sports CBK pbp ─────────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:24:29 UTC
+#> ℹ Data updated: 2026-06-12 03:15:52 UTC
 #> # A tibble: 333 × 10
 #>    game_id period   left_team right_team play_id clock team    left_score_change
 #>    <chr>   <chr>    <chr>     <chr>      <chr>   <chr> <chr>   <chr>            

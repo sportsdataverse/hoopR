@@ -160,17 +160,17 @@ Other ESPN MBB Functions:
 # Get schedule from date 2022-11-17
 # \donttest{
 try(espn_mbb_scoreboard(season = "20221117"))
-#> ✖ 2026-06-12 02:23:16.556737: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-06-12 03:14:34.231283: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "56", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-06-12 02:23:16.616948: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-06-12 03:14:34.391334: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "55", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-06-12 02:23:16.888648: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-06-12 03:14:34.880339: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "100", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
 #> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 02:23:16 UTC
+#> ℹ Data updated: 2026-06-12 03:14:34 UTC
 #> # A tibble: 50 × 36
 #>    matchup         matchup_short season season_type season_slug game_id game_uid
 #>    <chr>           <chr>          <int>       <int> <chr>         <int> <chr>   
