@@ -88,6 +88,14 @@
       }
       hit <- if (nrow(r)) which(!r_used & r$.name_key == l$.name_key[i]) else integer(0)
       if (length(hit) >= 1) {
+        if (length(hit) > 1 && has_jersey && !is.na(l$.jersey[i])) {
+          jt <- hit[!is.na(r$.jersey[hit]) & r$.jersey[hit] == l$.jersey[i]]
+          if (length(jt)) hit <- jt
+        }
+        if (length(hit) > 1 && has_dob && !is.na(l$.dob[i])) {
+          dt <- hit[!is.na(r$.dob[hit]) & r$.dob[hit] == l$.dob[i]]
+          if (length(dt)) hit <- dt
+        }
         j <- hit[1]; r_used[j] <- TRUE
         rows[[i]] <- data.frame(.block = b, left_id = l$.id[i], right_id = r$.id[j],
                                 match_method = "exact_name", match_confidence = 1,

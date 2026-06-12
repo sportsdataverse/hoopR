@@ -68,7 +68,7 @@ test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team bloc
   )
   expect_equal(nrow(out), 2)
   expect_equal(out$nba_player_id[out$espn_athlete_id == "a1"], "p1")
-  expect_true(all(c("fox_athlete_id", "yahoo_player_id") %in% names(out)))
+  expect_in(sort(c("fox_athlete_id", "yahoo_player_id")), sort(colnames(out)))
 })
 
 # ---------------------------------------------------------------------------

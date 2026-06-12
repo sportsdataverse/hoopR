@@ -21,9 +21,25 @@
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
-  out <- lapply(urls, progressively(loader, p))
-  out <- rbindlist_with_attrs(out)
-  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  chunks <- lapply(urls, progressively(loader, p))
+  meta_idx <- tail(which(vapply(
+    chunks,
+    function(x) {
+      !is.null(attr(x, "hoopR_type")) || !is.null(attr(x, "hoopR_timestamp"))
+    },
+    logical(1)
+  )), 1)
+
+  out <- rbindlist_with_attrs(chunks)
+  if (length(meta_idx) == 1L) {
+    out <- make_hoopR_data(
+      out,
+      type = attr(chunks[[meta_idx]], "hoopR_type"),
+      timestamp = attr(chunks[[meta_idx]], "hoopR_timestamp")
+    )
+  } else {
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  }
   out
 }
 
@@ -34,6 +50,7 @@ NULL
 #' @title
 #' **Load cached NBA team crosswalk from the data repo**
 #' @rdname load_nba_team_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season NBA team crosswalk that maps ESPN
 #' team identifiers to NBA.com identifiers and canonical abbreviations. The
 #' files are versioned `.rds` snapshots stored in the `nba_crosswalk` release
@@ -60,6 +77,7 @@ NULL
 #' @title
 #' **Load cached NBA schedule crosswalk from the data repo**
 #' @rdname load_nba_schedule_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season NBA schedule crosswalk that links
 #' ESPN game identifiers to NBA.com game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
@@ -86,6 +104,7 @@ NULL
 #' @title
 #' **Load cached NBA player crosswalk from the data repo**
 #' @rdname load_nba_player_crosswalk
+#' @author Saiem Gilani
 #' @description Loads a pre-built per-season NBA player crosswalk that maps ESPN
 #' athlete identifiers to NBA.com player identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
