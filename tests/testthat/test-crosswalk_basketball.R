@@ -17,7 +17,9 @@ test_that(".bb_normalize_name strips accents, suffixes, and punctuation", {
 test_that(".bb_normalize_team normalizes city+name strings", {
   expect_equal(.bb_normalize_team("Los Angeles Lakers"), "los angeles lakers")
   expect_equal(.bb_normalize_team("The Thunder"), "thunder")
-  expect_equal(.bb_normalize_team("Golden State  Warriors"), "golden state warriors")
+  expect_equal(
+    .bb_normalize_team("Golden State  Warriors"), "golden state warriors"
+  )
 })
 
 test_that(".bb_to_eastern returns the correct local ET game date", {
@@ -27,11 +29,48 @@ test_that(".bb_to_eastern returns the correct local ET game date", {
   expect_true(is.na(.bb_to_eastern(NA_character_)))
 })
 
+test_that(".bb_fuzzy_match returns typed empty frame when left has zero rows", {
+  left  <- data.frame(.block    = character(),
+                      .id       = character(),
+                      .name_key = character(),
+                      stringsAsFactors = FALSE)
+  right <- data.frame(.block    = character(),
+                      .id       = character(),
+                      .name_key = character(),
+                      stringsAsFactors = FALSE)
+  m <- .bb_fuzzy_match(left, right)
+  expect_s3_class(m, "data.frame")
+  expect_equal(nrow(m), 0)
+  expect_true(all(c(".block", "left_id", "right_id",
+                    "match_method", "match_confidence") %in% names(m)))
+})
+
+test_that(".bb_fuzzy_match does not match empty name keys", {
+  left <- data.frame(
+    .block    = c("A", "A"),
+    .id       = c("L1", "L2"),
+    .name_key = c("", ""),
+    stringsAsFactors = FALSE
+  )
+  right <- data.frame(
+    .block    = c("A", "A"),
+    .id       = c("R1", "R2"),
+    .name_key = c("", ""),
+    stringsAsFactors = FALSE
+  )
+  m <- .bb_fuzzy_match(left, right, min_confidence = 0.92)
+  expect_equal(nrow(m), 2)
+  expect_true(all(is.na(m$right_id)))
+  expect_true(all(m$match_method == "unmatched"))
+})
+
 test_that(".bb_fuzzy_match does exact, fuzzy, tiebreak, and unmatched", {
   left <- data.frame(
     .block = c("A", "A", "A", "B"),
     .id = c("L1", "L2", "L3", "L4"),
-    .name_key = c("lebron james", "anthony davis", "deaaron fox", "stephen curry"),
+    .name_key = c(
+      "lebron james", "anthony davis", "deaaron fox", "stephen curry"
+    ),
     .jersey = c("23", "3", "5", "30"), stringsAsFactors = FALSE)
   right <- data.frame(
     .block = c("A", "A", "A"),

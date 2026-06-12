@@ -1,6 +1,6 @@
 test_that("load_nba_team_crosswalk() loads a cached snapshot", {
   skip_on_cran()
-  skip_espn_test()
+  if (Sys.getenv("HOOPR_LOAD_TESTS") != "1") skip("load_* crosswalk tests require published release artifacts")
 
   out <- load_nba_team_crosswalk(seasons = most_recent_nba_season())
   expect_s3_class(out, "hoopR_data")
@@ -9,7 +9,7 @@ test_that("load_nba_team_crosswalk() loads a cached snapshot", {
 
 test_that("load_nba_schedule_crosswalk() loads a cached snapshot", {
   skip_on_cran()
-  skip_espn_test()
+  if (Sys.getenv("HOOPR_LOAD_TESTS") != "1") skip("load_* crosswalk tests require published release artifacts")
 
   out <- load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
   expect_s3_class(out, "hoopR_data")
@@ -18,7 +18,7 @@ test_that("load_nba_schedule_crosswalk() loads a cached snapshot", {
 
 test_that("load_nba_player_crosswalk() loads a cached snapshot", {
   skip_on_cran()
-  skip_espn_test()
+  if (Sys.getenv("HOOPR_LOAD_TESTS") != "1") skip("load_* crosswalk tests require published release artifacts")
 
   out <- load_nba_player_crosswalk(seasons = most_recent_nba_season())
   expect_s3_class(out, "hoopR_data")

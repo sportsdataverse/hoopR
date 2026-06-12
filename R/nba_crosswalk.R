@@ -79,17 +79,26 @@ NULL
 #' }
 nba_team_crosswalk <- function(season = most_recent_nba_season()) {
   espn <- espn_nba_teams()
-  nt <- nba_teams()
-  stats <- dplyr::transmute(
-    nt,
-    espn_team_id = as.integer(.data$espn_team_id),
-    nba_team_id = .data$team_id,
-    nba_team_abbreviation = .data$team_abbreviation,
-    nba_team_name = .data$team_name_full,
-    nba_team_city = .data$team_city,
-    nba_team_slug = .data$team_slug,
-    nba_conference = .data$conference,
-    nba_division = .data$division)
+  nt <- tryCatch(nba_teams(), error = function(e) NULL)
+  if (is.null(nt) || !nrow(nt)) {
+    stats <- data.frame(
+      espn_team_id = integer(), nba_team_id = character(),
+      nba_team_abbreviation = character(), nba_team_name = character(),
+      nba_team_city = character(), nba_team_slug = character(),
+      nba_conference = character(), nba_division = character(),
+      stringsAsFactors = FALSE)
+  } else {
+    stats <- dplyr::transmute(
+      nt,
+      espn_team_id = as.integer(.data$espn_team_id),
+      nba_team_id = .data$team_id,
+      nba_team_abbreviation = .data$team_abbreviation,
+      nba_team_name = .data$team_name_full,
+      nba_team_city = .data$team_city,
+      nba_team_slug = .data$team_slug,
+      nba_conference = .data$conference,
+      nba_division = .data$division)
+  }
   fox <- tryCatch(fox_nba_teams(), error = function(e) NULL)
   .bb_assemble_team_crosswalk_nba(espn, stats, fox, season) |>
     make_hoopR_data("NBA team crosswalk (ESPN / NBA Stats / Fox)", Sys.time())
@@ -160,20 +169,29 @@ NULL
 nba_schedule_crosswalk <- function(season = most_recent_nba_season()) {
   team_xwalk <- nba_team_crosswalk(season = season)
 
-  stats <- nba_schedule(season = year_to_season(season - 1))
-  st <- if ("season_type_description" %in% names(stats)) {
-    stats$season_type_description
-  } else if ("week_name" %in% names(stats)) {
-    stats$week_name
+  stats <- tryCatch(nba_schedule(season = year_to_season(season - 1)),
+                   error = function(e) NULL)
+  if (is.null(stats) || !nrow(stats)) {
+    stats_games <- data.frame(
+      nba_game_id = character(), nba_game_code = character(),
+      game_date = as.Date(character()),
+      nba_home_team_id = character(), nba_away_team_id = character(),
+      season_type = character(), stringsAsFactors = FALSE)
   } else {
-    NA_character_
+    st <- if ("season_type_description" %in% names(stats)) {
+      stats$season_type_description
+    } else if ("week_name" %in% names(stats)) {
+      stats$week_name
+    } else {
+      NA_character_
+    }
+    stats_games <- dplyr::transmute(
+      stats,
+      nba_game_id = .data$game_id, nba_game_code = .data$game_code,
+      game_date = .bb_to_eastern(.data$game_date_time_utc),
+      nba_home_team_id = .data$home_team_id, nba_away_team_id = .data$away_team_id,
+      season_type = st)
   }
-  stats_games <- dplyr::transmute(
-    stats,
-    nba_game_id = .data$game_id, nba_game_code = .data$game_code,
-    game_date = .bb_to_eastern(.data$game_date_time_utc),
-    nba_home_team_id = .data$home_team_id, nba_away_team_id = .data$away_team_id,
-    season_type = st)
 
   dates <- sort(unique(stats_games$game_date))
   espn_list <- lapply(dates, function(d) {
@@ -186,6 +204,17 @@ nba_schedule_crosswalk <- function(season = most_recent_nba_season()) {
       espn_home_team_id = .data$home_team_id, espn_away_team_id = .data$away_team_id)
   })
   espn_games <- dplyr::bind_rows(espn_list)
+  # Guard: if every scoreboard call returned NULL, build a properly-typed empty
+  # frame so the assembler's transmute() does not error on missing columns.
+  if (!nrow(espn_games)) {
+    espn_games <- data.frame(
+      espn_game_id      = character(),
+      game_date         = as.Date(character()),
+      espn_home_team_id = integer(),
+      espn_away_team_id = integer(),
+      stringsAsFactors  = FALSE
+    )
+  }
 
   .bb_assemble_schedule_crosswalk_nba(espn_games, stats_games, team_xwalk, season) |>
     make_hoopR_data("NBA schedule crosswalk (ESPN / NBA Stats)", Sys.time())

@@ -63,8 +63,48 @@ test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team bloc
     espn_team_id = integer(), fox_athlete_id = character(),
     fox_player = character(), fox_jersey = character(),
     fox_position_group = character(), stringsAsFactors = FALSE)
-  out <- .bb_assemble_player_crosswalk_nba(espn, stats, fox, season = 2025, min_confidence = 0.92)
+  out <- .bb_assemble_player_crosswalk_nba(
+    espn, stats, fox, season = 2025, min_confidence = 0.92
+  )
   expect_equal(nrow(out), 2)
   expect_equal(out$nba_player_id[out$espn_athlete_id == "a1"], "p1")
   expect_true(all(c("fox_athlete_id", "yahoo_player_id") %in% names(out)))
+})
+
+# ---------------------------------------------------------------------------
+# Live tests — require ESPN_TESTS=1; always skipped on CRAN and CI.
+# ---------------------------------------------------------------------------
+
+test_that("nba_team_crosswalk() returns a live hoopR_data tibble", {
+  skip_on_cran()
+  skip_on_ci()
+  if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  out <- nba_team_crosswalk()
+  skip_if(nrow(out) == 0, "nba_team_crosswalk() returned 0 rows at test time")
+  expect_s3_class(out, "hoopR_data")
+  expect_true("espn_team_id" %in% names(out))
+  expect_gte(nrow(out), 28L)
+})
+
+test_that("nba_schedule_crosswalk() returns a live hoopR_data tibble", {
+  skip_on_cran()
+  skip_on_ci()
+  if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  out <- nba_schedule_crosswalk()
+  skip_if(nrow(out) == 0, "nba_schedule_crosswalk() returned 0 rows at test time")
+  expect_s3_class(out, "hoopR_data")
+  expect_true("espn_game_id" %in% names(out))
+})
+
+test_that("nba_player_crosswalk() returns a live hoopR_data tibble", {
+  skip_on_cran()
+  skip_on_ci()
+  if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  out <- nba_player_crosswalk()
+  skip_if(
+    nrow(out) == 0,
+    "nba_player_crosswalk() returned 0 rows at test time"
+  )
+  expect_s3_class(out, "hoopR_data")
+  expect_true("espn_athlete_id" %in% names(out))
 })
