@@ -159,7 +159,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_record_detail(team_id = 13, season = 2024, record_id = 0)
 #> ── ESPN NBA Team Record Detail ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 03:24:23 UTC
+#> ℹ Data updated: 2026-06-13 04:20:21 UTC
 #> # A tibble: 21 × 15
 #>    league team_id season season_type record_id record_name record_abbrev
 #>    <chr>  <chr>    <int>       <int> <chr>     <chr>       <chr>        
