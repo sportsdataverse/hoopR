@@ -82,7 +82,7 @@ Other CBD Games Functions:
 ``` r
 # \donttest{
   try(cbbd_games_media(season = 2024, team = "Duke"))
-#> ✖ 2026-06-13 05:49:02.037332: Invalid arguments or no game media available!
+#> ✖ 2026-06-13 07:17:43.108212: Invalid arguments or no game media available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
