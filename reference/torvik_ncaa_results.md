@@ -72,7 +72,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_ncaa_results(min_year = 2010, max_year = 2024, type = "conf"))
-#> ✖ 2026-06-13 02:43:52.635242: Invalid arguments or no NCAA tournament results available!
+#> ✖ 2026-06-13 03:14:12.384084: Invalid arguments or no NCAA tournament results available!
 #> ✖ Args: min_year = 2010, max_year = 2024, type = "conf"
 #> ✖ Error: `clean_names()` requires that either names or dimnames be non-null.
 #> data frame with 0 columns and 0 rows

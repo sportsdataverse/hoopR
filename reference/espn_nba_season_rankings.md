@@ -157,7 +157,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_rankings(season = 2025)
 #> ── ESPN NBA Season Rankings Index ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:42 UTC
+#> ℹ Data updated: 2026-06-13 03:06:26 UTC
 #> # A tibble: 0 × 4
 #> # ℹ 4 variables: league <chr>, season <int>, ranking_id <chr>, ref <chr>
 # }

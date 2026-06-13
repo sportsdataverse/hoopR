@@ -152,7 +152,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_awards(season = 2024)
 #> ── ESPN NBA Season Awards Index ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:38 UTC
+#> ℹ Data updated: 2026-06-13 03:06:22 UTC
 #> # A tibble: 20 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 

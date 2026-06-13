@@ -146,7 +146,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_roster(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Roster ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:26 UTC
+#> ℹ Data updated: 2026-06-13 03:06:11 UTC
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
 #> #   ref <chr>

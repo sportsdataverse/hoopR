@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_rounds(season = 2024)
 #> ── ESPN NBA Draft Rounds ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:17 UTC
+#> ℹ Data updated: 2026-06-13 03:06:04 UTC
 #> # A tibble: 2 × 7
 #>   league season round display_name short_display_name n_picks status   
 #>   <chr>   <int> <int> <chr>        <chr>                <int> <chr>    

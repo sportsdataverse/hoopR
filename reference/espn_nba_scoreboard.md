@@ -173,7 +173,7 @@ Other ESPN NBA Functions:
 # \donttest{
 try(espn_nba_scoreboard(season = 20230423))
 #> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:38 UTC
+#> ℹ Data updated: 2026-06-13 03:06:22 UTC
 #> # A tibble: 4 × 37
 #>   matchup          matchup_short season season_type season_slug game_id game_uid
 #>   <chr>            <chr>          <int>       <int> <chr>         <int> <chr>   

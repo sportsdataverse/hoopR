@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournament_seasons(tournament_id = 3)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Seasons ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:23:10 UTC
+#> ℹ Data updated: 2026-06-13 03:05:58 UTC
 #> # A tibble: 14 × 4
 #>    league                  tournament_id season ref                             
 #>    <chr>                   <chr>          <int> <chr>                           

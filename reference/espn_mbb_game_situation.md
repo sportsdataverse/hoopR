@@ -132,7 +132,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_situation(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Situation ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 02:22:43 UTC
+#> ℹ Data updated: 2026-06-13 03:05:34 UTC
 #> # A tibble: 1 × 15
 #>   league                  event_id  home_timeouts_current home_timeouts_remain…¹
 #>   <chr>                   <chr>                     <int>                  <int>
