@@ -284,6 +284,22 @@ test_that("schedule assembler: both-match row", {
   expect_equal(out$match_confidence, 1)
 })
 
+test_that("schedule assembler dedupes ESPN games repeated across scoreboard groups", {
+  # Regression: a per-date ESPN scoreboard pull can return the same game once
+  # per group; the assembler must collapse duplicates to a single joined row.
+  xwalk <- .make_sched_xwalk()
+  eg    <- .make_espn_games(rep("2025-01-10", 4), rep(1L, 4), rep(2L, 4), rep("E001", 4))
+  bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
+
+  out <- .bb_assemble_schedule_crosswalk_mbb(
+    espn_games = eg, bart_games = bg, team_xwalk = xwalk, season = 2025L
+  )
+
+  expect_equal(nrow(out), 1L)
+  expect_equal(out$match_method, "both")
+  expect_equal(out$espn_game_id, "E001")
+})
+
 test_that("schedule assembler: espn_only when no Torvik match", {
   xwalk <- .make_sched_xwalk()
   eg    <- .make_espn_games("2025-01-12", 1L, 3L, "E002")
