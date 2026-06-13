@@ -432,6 +432,9 @@ mbb_team_crosswalk <- function(season = most_recent_mbb_season(),
     espn_game_id      = as.character(.data$espn_game_id),
     .pair_key         = .pair_key(.data$home_espn_team_id, .data$away_espn_team_id)
   )
+  # Defensive: collapse any ESPN games duplicated across scoreboard groups to
+  # one row per game before the join (mirrors wehoop's WBB schedule assembler).
+  espn2 <- espn2[!duplicated(espn2$espn_game_id), , drop = FALSE]
 
   # Torvik side — only keep games where both teams resolved to ESPN ids
   bart2 <- data.frame(
@@ -448,6 +451,7 @@ mbb_team_crosswalk <- function(season = most_recent_mbb_season(),
   bart2$.pair_key <- .pair_key(bart2$.t1_id, bart2$.t2_id)
   bart2$.t1_id <- NULL
   bart2$.t2_id <- NULL
+  bart2 <- bart2[!duplicated(bart2$bart_muid), , drop = FALSE]
 
   key <- c("game_date", ".pair_key")
   out <- dplyr::full_join(espn2, bart2, by = key) |>
