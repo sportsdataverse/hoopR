@@ -38,9 +38,26 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2026.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2026.rds>
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
-#> # A tibble: 0 × 0
+#> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-06-13 05:03:58 UTC
+#> # A tibble: 5,656 × 17
+#>    season espn_team_id team_abbreviation player_name      espn_athlete_id
+#>     <int>        <int> <chr>             <chr>            <chr>          
+#>  1   2026         2000 ACU               christian alston 5241312        
+#>  2   2026         2000 ACU               isaiah carrillo  5314819        
+#>  3   2026         2000 ACU               isaac dye        5314820        
+#>  4   2026         2000 ACU               mashy hill       5177705        
+#>  5   2026         2000 ACU               cade hornecker   5107885        
+#>  6   2026         2000 ACU               bradyn hubbard   5241314        
+#>  7   2026         2000 ACU               tylan lewis      5314817        
+#>  8   2026         2000 ACU               cbo newton       5177575        
+#>  9   2026         2000 ACU               yaniel rivera    5177702        
+#> 10   2026         2000 ACU               joseph scott     5314818        
+#> # ℹ 5,646 more rows
+#> # ℹ 12 more variables: espn_full_name <chr>, espn_jersey <chr>,
+#> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
+#> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,
+#> #   yahoo_player_name <chr>, match_method <chr>, match_confidence <dbl>,
+#> #   match_keys <chr>
 # }
 ```

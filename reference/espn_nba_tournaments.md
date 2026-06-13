@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournaments()
 #> ── ESPN NBA Tournaments Index ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 04:20:25 UTC
+#> ℹ Data updated: 2026-06-13 05:50:47 UTC
 #> # A tibble: 2 × 3
 #>   tournament_id ref                                                       league
 #>   <chr>         <chr>                                                     <chr> 

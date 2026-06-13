@@ -41,27 +41,14 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_team_crosswalk())
-#> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 04:29:37 UTC
-#> # A tibble: 30 × 21
-#>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
-#>     <int>        <int> <chr>             <chr>                 <chr>          
-#>  1   2026            1 ATL               Atlanta Hawks         Hawks          
-#>  2   2026            2 BOS               Boston Celtics        Celtics        
-#>  3   2026           17 BKN               Brooklyn Nets         Nets           
-#>  4   2026           30 CHA               Charlotte Hornets     Hornets        
-#>  5   2026            4 CHI               Chicago Bulls         Bulls          
-#>  6   2026            5 CLE               Cleveland Cavaliers   Cavaliers      
-#>  7   2026            6 DAL               Dallas Mavericks      Mavericks      
-#>  8   2026            7 DEN               Denver Nuggets        Nuggets        
-#>  9   2026            8 DET               Detroit Pistons       Pistons        
-#> 10   2026            9 GS                Golden State Warriors Warriors       
-#> # ℹ 20 more rows
-#> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
-#> #   nba_team_id <chr>, nba_team_abbreviation <chr>, nba_team_name <chr>,
-#> #   nba_team_city <chr>, nba_team_slug <chr>, nba_conference <chr>,
-#> #   nba_division <chr>, fox_team_id <chr>, fox_team_name <chr>,
-#> #   yahoo_team_id <chr>, yahoo_team_abbreviation <chr>, yahoo_team_name <chr>,
-#> #   match_method <chr>, match_confidence <dbl>
+#> ✖ 2026-06-13 06:05:56.326448: Invalid arguments or no league standings v3 data available for 2025-26!
+#> ✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-06-13 06:06:56.364198: Invalid arguments or no league game log data for 2025-26 available!
+#> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-06-13 06:06:56.375788: Invalid arguments or no team details data available!
+#> ✖ Error: argument is of length zero
+#> Error in !nrow(nt) : invalid argument type
 # }
 ```

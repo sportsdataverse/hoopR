@@ -145,7 +145,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_rankings(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 04:19:35 UTC
+#> ℹ Data updated: 2026-06-13 05:49:45 UTC
 #> # A tibble: 2 × 4
 #>   league                  season ranking_id ref                                 
 #>   <chr>                    <int> <chr>      <chr>                               

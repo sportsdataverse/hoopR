@@ -32,7 +32,7 @@ Other CBD Plays Functions:
 ``` r
 # \donttest{
   try(cbbd_play_types())
-#> ✖ 2026-06-13 04:18:56.618919: Invalid arguments or no play types available!
+#> ✖ 2026-06-13 05:49:03.191966: Invalid arguments or no play types available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

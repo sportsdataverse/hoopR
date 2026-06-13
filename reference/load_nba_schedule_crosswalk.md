@@ -39,9 +39,25 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_crosswalk/nba_schedule_crosswalk_2026.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_crosswalk/nba_schedule_crosswalk_2026.rds>
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
-#> # A tibble: 0 × 0
+#> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-06-13 04:51:46 UTC
+#> # A tibble: 1,416 × 16
+#>    season season_type game_date  home_espn_team_id away_espn_team_id
+#>     <int> <chr>       <date>                 <int>             <int>
+#>  1   2026 Pre-Season  2025-10-02                18                20
+#>  2   2026 NA          2025-10-03                 3            111124
+#>  3   2026 Pre-Season  2025-10-03                13                21
+#>  4   2026 Pre-Season  2025-10-04                20                18
+#>  5   2026 NA          2025-10-04                17            131570
+#>  6   2026 Pre-Season  2025-10-04                14                19
+#>  7   2026 Pre-Season  2025-10-04                 7                16
+#>  8   2026 NA          2025-10-04                 3            126120
+#>  9   2026 Pre-Season  2025-10-05                30                25
+#> 10   2026 Pre-Season  2025-10-05                 9                13
+#> # ℹ 1,406 more rows
+#> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
+#> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
+#> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
+#> #   yahoo_game_id <chr>, match_method <chr>, match_confidence <dbl>
 # }
 ```

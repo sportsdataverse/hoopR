@@ -39,9 +39,27 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2026.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2026.rds>
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
-#> # A tibble: 0 × 0
+#> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-06-13 04:49:37 UTC
+#> # A tibble: 362 × 21
+#>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
+#>     <int>        <int> <chr>             <chr>                   <chr>          
+#>  1   2026         2000 ACU               Abilene Christian Wild… Abilene Chrstn 
+#>  2   2026         2005 AF                Air Force Falcons       Air Force      
+#>  3   2026         2006 AKR               Akron Zips              Akron          
+#>  4   2026         2010 AAMU              Alabama A&M Bulldogs    Alabama A&M    
+#>  5   2026          333 ALA               Alabama Crimson Tide    Alabama        
+#>  6   2026         2011 ALST              Alabama State Hornets   Alabama St     
+#>  7   2026         2016 ALCN              Alcorn State Braves     Alcorn St      
+#>  8   2026           44 AMER              American University Ea… American       
+#>  9   2026         2026 APP               App State Mountaineers  App State      
+#> 10   2026            9 ASU               Arizona State Sun Devi… Arizona St     
+#> # ℹ 352 more rows
+#> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
+#> #   espn_conference <chr>, fox_team_id <chr>, fox_team_name <chr>,
+#> #   fox_section <chr>, bart_team <chr>, bart_conf <chr>, kp_team <chr>,
+#> #   kp_conf <chr>, yahoo_team_id <chr>, yahoo_team_name <chr>,
+#> #   fox_match_confidence <dbl>, bart_match_confidence <dbl>,
+#> #   kp_match_confidence <dbl>, match_method <chr>
 # }
 ```

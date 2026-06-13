@@ -152,7 +152,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_odds(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Odds (event_id=401256760) from ESPN.com ──
-#> ℹ Data updated: 2026-06-13 04:19:17 UTC
+#> ℹ Data updated: 2026-06-13 05:49:25 UTC
 #> # A tibble: 9 × 12
 #>   event_id  provider_id provider_name  details over_under spread home_money_line
 #>   <chr>     <chr>       <chr>          <chr>        <dbl>  <dbl>           <int>

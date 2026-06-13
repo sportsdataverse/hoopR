@@ -150,7 +150,7 @@ Saiem Gilani
   # LeBron James (1966): 23 career seasons
   espn_nba_player_seasons(athlete_id = 1966)
 #> ── ESPN NBA Athlete Seasons ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 04:20:06 UTC
+#> ℹ Data updated: 2026-06-13 05:50:26 UTC
 #> # A tibble: 23 × 4
 #>    league athlete_id season ref                                                 
 #>    <chr>  <chr>       <int> <chr>                                               
