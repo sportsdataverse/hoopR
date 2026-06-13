@@ -149,7 +149,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Detail ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 03:06:08 UTC
+#> ℹ Data updated: 2026-06-13 03:23:53 UTC
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     

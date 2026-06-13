@@ -51,22 +51,12 @@ Other NBA Dictionary Functions:
 ``` r
 # \donttest{
   try(nba_team_dict())
-#> ── NBA team dictionary from stats.nba.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 03:13:57 UTC
-#> # A tibble: 30 × 8
-#>    team_id   team_abbreviation team_city team_name team_full conference division
-#>    <chr>     <chr>             <chr>     <chr>     <chr>     <chr>      <chr>   
-#>  1 16106127… BOS               Boston    Celtics   Boston C… Eastern    Atlantic
-#>  2 16106127… BKN               Brooklyn  Nets      Brooklyn… Eastern    Atlantic
-#>  3 16106127… NYK               New York  Knicks    New York… Eastern    Atlantic
-#>  4 16106127… PHI               Philadel… 76ers     Philadel… Eastern    Atlantic
-#>  5 16106127… TOR               Toronto   Raptors   Toronto … Eastern    Atlantic
-#>  6 16106127… CHI               Chicago   Bulls     Chicago … Eastern    Central 
-#>  7 16106127… CLE               Cleveland Cavaliers Clevelan… Eastern    Central 
-#>  8 16106127… DET               Detroit   Pistons   Detroit … Eastern    Central 
-#>  9 16106127… IND               Indiana   Pacers    Indiana … Eastern    Central 
-#> 10 16106127… MIL               Milwaukee Bucks     Milwauke… Eastern    Central 
-#> # ℹ 20 more rows
-#> # ℹ 1 more variable: logo_url <chr>
+#> ✖ 2026-06-13 03:42:30.293877: Invalid arguments or no player index data for 2025-26 available!
+#> ✖ Args: college = "", country = "", draft_pick = "", draft_round = "", draft_year = "", height = "", historical = 0, league_id = "00", season = "2025-26", season_type = "Regular Season", team_id = "0", weight = ""
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+#> ✖ 2026-06-13 03:42:30.305788: No NBA team dictionary available!
+#> ✖ Args: season = "2025-26"
+#> ✖ Error: No player index returned
+#> data frame with 0 columns and 0 rows
 # }
 ```

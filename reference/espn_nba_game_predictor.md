@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_predictor(event_id = 401283399)
 #> ── ESPN NBA Event Predictor ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 03:06:08 UTC
+#> ℹ Data updated: 2026-06-13 03:23:54 UTC
 #> # A tibble: 6 × 13
 #>   league event_id  name         short_name last_modified side  team_id stat_name
 #>   <chr>  <chr>     <chr>        <chr>      <chr>         <chr> <chr>   <chr>    
