@@ -106,64 +106,64 @@ navbar:
       icon: "fas fa-project-diagram"
       text: " SDV"
       menu:
-        - text: SportsDataverse
-          href: https://sportsdataverse.org/
-        - text: '--------------------------------'
-        - text: "R Packages"
-        - text: sportsdataverse-R
-          href: https://r.sportsdataverse.org/
-        - text: cfbfastR
-          href: https://cfbfastR.sportsdataverse.org/
-        - text: hoopR
-          href: https://hoopR.sportsdataverse.org/
-        - text: wehoop
-          href: https://wehoop.sportsdataverse.org/
-        - text: fastRhockey
-          href: https://fastRhockey.sportsdataverse.org/
-        - text: ggshakeR
-          href: https://abhiamishra.github.io/ggshakeR/
-        - text: baseballr
-          href: https://BillPetti.github.io/baseballr/
-        - text: usfootballR
-          href: https://usfootballR.sportsdataverse.org/
-        - text: soccerAnimate
-          href: https://github.com/Dato-Futbol/soccerAnimate/
-        - text: chessR
-          href: https://jaseziv.github.io/chessR/
-        - text: oddsapiR
-          href: https://oddsapiR.sportsdataverse.org/
-        - text: sportyR
-          href: https://sportyR.sportsdataverse.org/
-        - text: cfbplotR
-          href: https://cfbplotR.sportsdataverse.org/
-        - text: mlbplotR
-          href: https://camdenk.github.io/mlbplotR/
-        - text: softballR
-          href: https://github.com/sportsdataverse/softballR/
-        - text: cfb4th
-          href: https://cfb4th.sportsdataverse.org/
-        - text: nwslR
-          href: https://github.com/nwslR/nwslR/
-        - text: recruitR
-          href: https://recruitR.sportsdataverse.org/
-        - text: puntr
-          href: https://puntalytics.github.io/puntr/
-        - text: '--------------------------------'
-        - text: "Python Packages"
-        - text: sportsdataverse-py
-          href: https://py.sportsdataverse.org/
-        - text: sportypy
-          href: https://sportypy.sportsdataverse.org/
-        - text: nwslpy
-          href: https://github.com/nwslR/nwslpy/
-        - text: collegebaseball
-          href: https://github.com/nathanblumenfeld/collegebaseball/
-        - text: '--------------------------------'
-        - text: "Node.js Packages"
-        - text: sportsdataverse.js
-          href: https://js.sportsdataverse.org/
-        - text: nfl-nerd
-          href: https://github.com/nntrn/nfl-nerd/
+      - text: SportsDataverse
+        href: https://sportsdataverse.org/
+      - text: --------------------------------
+      - text: "R Packages"
+      - text: sportsdataverse-R
+        href: https://r.sportsdataverse.org/
+      - text: cfbfastR
+        href: https://cfbfastR.sportsdataverse.org/
+      - text: hoopR
+        href: https://hoopR.sportsdataverse.org/
+      - text: wehoop
+        href: https://wehoop.sportsdataverse.org/
+      - text: fastRhockey
+        href: https://fastRhockey.sportsdataverse.org/
+      - text: ggshakeR
+        href: https://abhiamishra.github.io/ggshakeR/
+      - text: baseballr
+        href: https://BillPetti.github.io/baseballr/
+      - text: usfootballR
+        href: https://usfootballR.sportsdataverse.org/
+      - text: soccerAnimate
+        href: https://github.com/Dato-Futbol/soccerAnimate/
+      - text: chessR
+        href: https://jaseziv.github.io/chessR/
+      - text: oddsapiR
+        href: https://oddsapiR.sportsdataverse.org/
+      - text: sportyR
+        href: https://sportyR.sportsdataverse.org/
+      - text: cfbplotR
+        href: https://cfbplotR.sportsdataverse.org/
+      - text: mlbplotR
+        href: https://camdenk.github.io/mlbplotR/
+      - text: softballR
+        href: https://github.com/sportsdataverse/softballR/
+      - text: cfb4th
+        href: https://cfb4th.sportsdataverse.org/
+      - text: nwslR
+        href: https://github.com/nwslR/nwslR/
+      - text: recruitR
+        href: https://recruitR.sportsdataverse.org/
+      - text: puntr
+        href: https://puntalytics.github.io/puntr/
+      - text: --------------------------------
+      - text: "Python Packages"
+      - text: sportsdataverse-py
+        href: https://py.sportsdataverse.org/
+      - text: sportypy
+        href: https://sportypy.sportsdataverse.org/
+      - text: nwslpy
+        href: https://github.com/nwslR/nwslpy/
+      - text: collegebaseball
+        href: https://github.com/nathanblumenfeld/collegebaseball/
+      - text: --------------------------------
+      - text: "Node.js Packages"
+      - text: sportsdataverse.js
+        href: https://js.sportsdataverse.org/
+      - text: nfl-nerd
+        href: https://github.com/nntrn/nfl-nerd/
     data:
       icon: "fas fa-database"
       text: " Data"
