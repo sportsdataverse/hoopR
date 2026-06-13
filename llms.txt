@@ -1,8 +1,8 @@
 # 
 
 - [](#section)
-- [hoopR](#hoopr-)
-  [![](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
+- [hoopR](#hoopr-) [![hoopR
+  logo](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
   - [Installation](#installation)
   - [Quick Start](#quick-start)
   - [**Documentation**](#documentation)

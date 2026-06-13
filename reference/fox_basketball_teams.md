@@ -44,7 +44,7 @@ Other Fox Basketball Functions:
 # \donttest{
   try(fox_nba_teams())
 #> ── Fox Sports NBA teams ───────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-12 23:28:50 UTC
+#> ℹ Data updated: 2026-06-13 02:23:58 UTC
 #> # A tibble: 30 × 3
 #>    fox_team_id fox_team_name       fox_section   
 #>    <chr>       <chr>               <chr>         
