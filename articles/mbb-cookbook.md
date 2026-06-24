@@ -105,23 +105,22 @@ espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,
 #> #   result <chr>, team_score <chr>, opponent_score <chr>, winner <lgl>
 espn_mbb_team_roster(team_id = team_id, season = season)      # the players
-#> # A tibble: 14 × 15
+#> # A tibble: 13 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5041935    Cameron … 12     F               Forward       "6' 9… 250 l… NA   
-#>  2 5041937    Cayden B… 2      G               Guard         "6' 4… 205 l… NA   
-#>  3 5105337    Maliq Br… 6      F               Forward       "6' 9… 225 l… NA   
-#>  4 5341547    Brock Da… 50     G               Guard         "6' 4… 195 l… NA   
-#>  5 5061585    Isaiah E… 3      G               Guard         "6' 6… 180 l… NA   
-#>  6 4711256    Caleb Fo… 1      G               Guard         "6' 5… 205 l… NA   
-#>  7 4873107    Darren H… 8      G               Guard         "6' 5… 195 l… NA   
-#>  8 5144124    Nikolas … 14     G               Guard         "6' 8… 215 l… NA   
-#>  9 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
-#> 10 5287474    Dame Sarr 7      G               Guard         "6' 8… 190 l… NA   
-#> 11 4888720    Jack Sco… 20     G               Guard         "6' 6… 220 l… NA   
-#> 12 4432321    Cameron … 13     G               Guard         "6' 6… 205 l… NA   
-#> 13 5107141    Ifeanyi … 15     C               Center        "6' 1… 240 l… NA   
-#> 14 5144150    Sebastia… 5      G               Guard         "6' 8… 220 l… NA   
+#>  1 5041937    Cayden B… 2      G               Guard         "6' 4… 205 l… NA   
+#>  2 5105337    Maliq Br… 6      F               Forward       "6' 8… 217 l… 22   
+#>  3 5341547    Brock Da… 50     G               Guard         "6' 4… 195 l… NA   
+#>  4 5061585    Isaiah E… 3      G               Guard         "6' 6… 186 l… 20   
+#>  5 4711256    Caleb Fo… 1      G               Guard         "6' 5… 205 l… NA   
+#>  6 4873107    Darren H… 8      G               Guard         "6' 5… 195 l… NA   
+#>  7 5144124    Nikolas … 14     G               Guard         "6' 8… 215 l… NA   
+#>  8 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
+#>  9 5287474    Dame Sarr 7      G               Guard         "6' 8… 190 l… NA   
+#> 10 4888720    Jack Sco… 20     G               Guard         "6' 6… 220 l… NA   
+#> 11 4432321    Cameron … 13     G               Guard         "6' 6… 205 l… NA   
+#> 12 5107141    Ifeanyi … 15     C               Center        "6' 1… 240 l… NA   
+#> 13 5144150    Sebastia… 5      G               Guard         "6' 8… 220 l… NA   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 espn_mbb_team_season_statistics(team_id = team_id, season = season)
@@ -170,7 +169,7 @@ espn_mbb_player_info(athlete_id = athlete_id)            # bio
 #> # A tibble: 1 × 18
 #>   id      uid       guid  first_name last_name full_name display_name short_name
 #>   <chr>   <chr>     <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
-#> 1 5041935 s:40~l:4… da73… Cameron    Boozer    Cameron … Cameron Boo… C. Boozer 
+#> 1 5041937 s:40~l:4… 609b… Cayden     Boozer    Cayden B… Cayden Booz… C. Boozer 
 #> # ℹ 10 more variables: weight <dbl>, display_weight <chr>, height <dbl>,
 #> #   display_height <chr>, jersey <chr>, active <lgl>, headshot_href <chr>,
 #> #   birth_city <chr>, birth_state <chr>, birth_country <chr>
@@ -183,9 +182,9 @@ espn_mbb_player_info(athlete_id = athlete_id)            # bio
 #> 
 #> $Position
 #> # A tibble: 1 × 5
-#>   id    name    display_name abbreviation leaf 
-#>   <chr> <chr>   <chr>        <chr>        <lgl>
-#> 1 2     Forward Forward      F            FALSE
+#>   id    name  display_name abbreviation leaf 
+#>   <chr> <chr> <chr>        <chr>        <lgl>
+#> 1 3     Guard Guard        G            FALSE
 #> 
 #> $Status
 #> # A tibble: 1 × 4
@@ -223,16 +222,16 @@ espn_mbb_player_career_stats(athlete_id = athlete_id)    # career rollup, long f
 #> # A tibble: 87 × 17
 #>    league   athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
-#>  1 mens-co… 5041935    0            0        Season     season     defensive    
-#>  2 mens-co… 5041935    0            0        Season     season     defensive    
-#>  3 mens-co… 5041935    0            0        Season     season     defensive    
-#>  4 mens-co… 5041935    0            0        Season     season     defensive    
-#>  5 mens-co… 5041935    0            0        Season     season     defensive    
-#>  6 mens-co… 5041935    0            0        Season     season     defensive    
-#>  7 mens-co… 5041935    0            0        Season     season     defensive    
-#>  8 mens-co… 5041935    0            0        Season     season     defensive    
-#>  9 mens-co… 5041935    0            0        Season     season     general      
-#> 10 mens-co… 5041935    0            0        Season     season     general      
+#>  1 mens-co… 5041937    0            0        Season     season     defensive    
+#>  2 mens-co… 5041937    0            0        Season     season     defensive    
+#>  3 mens-co… 5041937    0            0        Season     season     defensive    
+#>  4 mens-co… 5041937    0            0        Season     season     defensive    
+#>  5 mens-co… 5041937    0            0        Season     season     defensive    
+#>  6 mens-co… 5041937    0            0        Season     season     defensive    
+#>  7 mens-co… 5041937    0            0        Season     season     defensive    
+#>  8 mens-co… 5041937    0            0        Season     season     defensive    
+#>  9 mens-co… 5041937    0            0        Season     season     general      
+#> 10 mens-co… 5041937    0            0        Season     season     general      
 #> # ℹ 77 more rows
 #> # ℹ 10 more variables: category_display <chr>, category_short <chr>,
 #> #   category_abbrev <chr>, stat_name <chr>, stat_abbrev <chr>,

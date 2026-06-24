@@ -122,733 +122,735 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_program_ratings</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      rk                   team conf    rtg best_rk best_yr worst_rk worst_yr</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     1                   Duke  ACC  43.51       1    2025       36     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     2               Kentucky  SEC  40.83       1    2015       78     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     3                 Kansas  B12  39.84       1    2020       27     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     4         North Carolina  ACC  35.49       1    2009      137     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     5                Arizona  B12  33.56       2    2014       94     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6                Florida  SEC  32.01       1    2006      106     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     7           Michigan St.  B10  31.79       1    2000       64     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     8                   UCLA  B10  30.21       3    2023      144     2004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     9                  Texas  SEC  29.82       3    2006      117     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   10            Connecticut   BE  29.64       1    2024      179     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   11              Villanova   BE  28.52       1    2018       91     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   12                Gonzaga  P12  26.52       1    2022      149     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   13              Tennessee  SEC  26.52       5    2025      158     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   14                 Baylor  B12  26.39       2    2021      236     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   15               Ohio St.  B10  26.24       1    2011      154     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   16             Louisville  ACC  25.77       1    2014      290     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   17                Indiana  B10  25.21       3    2013      209     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   18                Alabama  SEC  25.20       4    2023      100     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19   19               Maryland  B10  25.04       3    2002      134     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20   20               Michigan  B10  24.92       3    2021      146     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21   21               Illinois  B10  24.35       2    2005      125     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22   22              Wisconsin  B10  24.03       2    2015       94     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23   23                 Purdue  B10  23.68       3    2024      155     2006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24   24               Syracuse  ACC  23.68       3    2010      118     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25   25                 Oregon  B10  23.39       9    2002      159     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26   26               Oklahoma  SEC  22.69       5    2002      144     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27   27             Cincinnati  B12  21.69       2    2002      141     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28   28               Virginia  ACC  21.21       1    2019      106     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29   29                 Auburn  SEC  21.19       4    2025      234     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30   30               Arkansas  SEC  20.78      18    2022      134     2003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31   31          West Virginia  B12  20.76       5    2010      192     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32   32                    USC  B10  20.69       6    2021      220     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33   33           Oklahoma St.  B12  20.62       4    2004      117     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34   34                Memphis Amer  20.16       2    2008      161     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35   35                Houston  B12  20.09       2    2025      229     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36   36              Marquette   BE  20.09      10    2023      111     1999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37   37                    LSU  SEC  20.07      11    2006      232     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38   38               Iowa St.  B12  19.67       8    2024      171     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39   39                 Xavier   BE  19.24      12    1998       81     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40   40             Texas Tech  B12  19.05       5    2019      239     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41   41            Florida St.  ACC  18.97      14    2019      205     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42   42             Washington  B10  18.91      14    2005      181     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43   43              Creighton   BE  18.89      11    2024      116     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44   44             Georgetown   BE  18.88       4    2007      219     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45   45        Mississippi St.  SEC  18.57      14    2004      256     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46   46             N.C. State  ACC  18.38       9    2004      128     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47   47               Miami FL  ACC  18.13      13    2013      193     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48   48              Texas A&amp;M  SEC  17.92       7    2007      213     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49   49             Kansas St.  B12  17.73       6    2010      161     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50   50                   Iowa  B10  17.65       7    2021      174     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51   51                    BYU  B12  17.57      10    2010      280     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52   52             Pittsburgh  ACC  16.73       3    2009      227     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53   53               Missouri  SEC  16.69       6    2009      192     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54   54               Stanford  ACC  16.66       2    2001      112     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55   55             Notre Dame  ACC  16.17       9    2015      166     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56   56            Arizona St.  B12  15.88      15    2009      230     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57   57             St. John's   BE  15.78       7    1999      211     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58   58             Providence   BE  15.71      24    2004      162     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59   59            Mississippi  SEC  15.31      17    1998      147     2006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60   60                 Butler   BE  15.02      12    2010      145     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61   61             Vanderbilt  SEC  15.01      16    2012      183     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62   62                Clemson  ACC  15.00      11    1997      164     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63   63                Georgia  SEC  14.89      16    2003      219     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64   64                   Utah  B12  14.75       7    1998      302     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65   65         South Carolina  SEC  14.66      19    2006      221     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66   66          San Diego St.  P12  14.39       6    2020      275     1999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67   67           Georgia Tech  ACC  14.38       8    2004      174     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68   68            Wake Forest  ACC  14.28       5    1997      259     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69   69              Minnesota  B10  14.25       3    1997      216     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70   70               Colorado  B12  14.08       8    2021      216     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71   71             Seton Hall   BE  12.98      20    2020      204     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72   72               Penn St.  B10  12.75      19    2018      227     2004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73   73                    TCU  B12  12.39      18    1998      265     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74   74          Virginia Tech  ACC  11.95      13    2019      234     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75   75                   UNLV  MWC  11.52      29    2011      248     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76   76           Saint Mary's  WCC  11.50      13    2023      315     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77   77                Rutgers  B10  11.47      28    2020      279     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78   78               Nebraska  B10  11.39      30    2024      162     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79   79             California  ACC  11.14      14    2010      270     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80   80           Northwestern  B10  10.91      38    2023      257     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81   81                    VCU  A10  10.58      18    2013      218     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82   82                 Dayton  A10  10.14       4    2020      172     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83   83                    SMU  ACC  10.12      11    2017      283     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84   84               Utah St.  P12  10.11      21    2005      141     1999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85   85            Wichita St. Amer   9.59       6    2014      189     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86   86                 Nevada  MWC   9.04      20    2004      270     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87   87             New Mexico  MWC   9.00      20    2012      294     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88   88                    UCF  B12   8.34      34    2019      300     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89   89              Boise St.  P12   7.83      37    2023      214     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90   90         Boston College  ACC   7.29      12    2001      261     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91   91                 Temple Amer   7.16       4    2000      181     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92   92           Colorado St.  P12   7.06      22    2013      265     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93   93                 DePaul   BE   6.38      30    2000      304     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94   94         Washington St.  P12   5.96      10    2008      216     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95   95               Davidson  A10   5.89      11    2008      232     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96   96                    UAB Amer   5.75      46    2004      196     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97   97            Saint Louis  A10   5.51      14    2012      289     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98   98         Saint Joseph's  A10   5.21       3    2004      260     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99   99          Northern Iowa  MVC   4.57      18    2015      228     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100 100               Richmond  A10   4.53      38    2004      278     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101 101             Oregon St.  P12   4.20      43    2021      264     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102 102           Rhode Island  A10   4.19      20    1997      255     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103 103             Fresno St.  P12   4.11      30    2001      259     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104 104          San Francisco  WCC   4.07      23    2022      254     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105 105         New Mexico St. CUSA   3.92      53    2019      290     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106 106                  Tulsa Amer   3.76       7    2000      316     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107 107       Western Kentucky CUSA   3.73      43    2008      232     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108 108        St. Bonaventure  A10   3.48      32    2021      321     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109 109             Murray St.  MVC   3.46      35    2012      229     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110 110                Belmont  MVC   3.37      23    2011      284     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111 111           George Mason  A10   3.15      22    2006      220     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112 112                Wyoming  MWC   2.98      65    2022      317     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113 113         Loyola Chicago  A10   2.89      10    2021      288     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114 114      George Washington  A10   2.32      38    2005      293     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115 115           Missouri St. CUSA   2.28      21    1999      255     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116 116      Southern Illinois  MVC   2.24      16    2007      223     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117 117                  Drake  MVC   2.21      17    2008      287     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118 118            Santa Clara  WCC   1.97      59    2025      277     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     1                   Duke  ACC  44.95       1    2025       36     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     2               Kentucky  SEC  40.82       1    2015       78     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     3                 Kansas  B12  40.04       1    2020       27     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     4         North Carolina  ACC  36.11       1    2009      137     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     5                Arizona  B12  35.12       2    2026       94     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     6                Florida  SEC  32.42       1    2006      106     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     7           Michigan St.  B10  32.34       1    2000       64     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     8            Connecticut   BE  31.34       1    2024      179     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     9                  Texas  SEC  30.64       3    2006      117     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   10                   UCLA  B10  30.29       3    2023      144     2004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   11                Gonzaga  P12  28.22       1    2022      149     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12   12              Villanova   BE  28.16       1    2018       91     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13   13               Michigan  B10  27.45       1    2026      146     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   14              Tennessee  SEC  27.22       5    2025      158     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15   15             Louisville  ACC  27.06       1    2014      290     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16   16               Ohio St.  B10  26.90       1    2011      154     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17   17                 Baylor  B12  26.58       2    2021      236     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18   18                Alabama  SEC  26.30       4    2023      100     2009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19   19               Illinois  B10  26.07       2    2005      125     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20   20                Indiana  B10  25.43       3    2013      209     2009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21   21               Maryland  B10  25.23       3    2002      134     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22   22                 Purdue  B10  24.75       3    2024      155     2006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23   23              Wisconsin  B10  24.14       2    2015       94     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24   24               Syracuse  ACC  23.76       3    2010      118     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25   25                 Oregon  B10  23.41       9    2002      159     2009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26   26               Oklahoma  SEC  23.00       5    2002      144     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27   27               Arkansas  SEC  22.20      18    2026      134     2003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28   28               Virginia  ACC  21.80       1    2019      106     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29   29                 Auburn  SEC  21.49       4    2025      234     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30   30             Cincinnati  B12  21.47       2    2002      141     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31   31                Houston  B12  21.39       2    2025      229     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32   32                    USC  B10  20.94       6    2021      220     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33   33           Oklahoma St.  B12  20.77       4    2004      117     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34   34               Iowa St.  B12  20.64       7    2026      171     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35   35          West Virginia  B12  20.37       5    2010      192     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36   36                    LSU  SEC  20.29      11    2006      232     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37   37              Marquette   BE  19.91      10    2023      111     1999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38   38            Florida St.  ACC  19.55      14    2019      205     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39   39               Miami FL  ACC  19.46      13    2013      193     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40   40             Texas Tech  B12  19.44       5    2019      239     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41   41             Washington  B10  19.05      14    2005      181     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42   42                Memphis Amer  18.92       2    2008      161     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43   43                 Xavier   BE  18.92      12    1998       94     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44   44             N.C. State  ACC  18.84       9    2004      128     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45   45              Texas A&amp;M  SEC  18.81       7    2007      213     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46   46             Georgetown   BE  18.73       4    2007      219     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47   47              Creighton   BE  18.69      11    2024      116     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48   48        Mississippi St.  SEC  18.63      14    2004      256     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49   49                    BYU  B12  18.52      10    2010      280     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50   50                   Iowa  B10  18.30       7    2021      174     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51   51               Missouri  SEC  17.53       6    2009      192     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52   52               Stanford  ACC  17.30       2    2001      112     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53   53             Pittsburgh  ACC  17.15       3    2009      227     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54   54             Kansas St.  B12  17.14       6    2010      161     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55   55             St. John's   BE  16.59       7    1999      211     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56   56             Notre Dame  ACC  16.49       9    2015      166     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57   57            Arizona St.  B12  16.36      15    2009      230     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58   58             Vanderbilt  SEC  16.13      11    2026      183     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59   59             Providence   BE  16.03      24    2004      162     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60   60                Georgia  SEC  15.64      16    2003      219     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61   61            Mississippi  SEC  15.55      17    1998      147     2006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62   62                Clemson  ACC  15.51      11    1997      164     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63   63         South Carolina  SEC  14.87      19    2006      221     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64   64          San Diego St.  P12  14.86       6    2020      275     1999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65   65            Wake Forest  ACC  14.71       5    1997      259     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66   66                 Butler   BE  14.62      12    2010      145     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67   67           Georgia Tech  ACC  14.47       8    2004      174     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68   68                   Utah  B12  14.33       7    1998      302     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69   69              Minnesota  B10  14.21       3    1997      216     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70   70               Colorado  B12  13.94       8    2021      216     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71   71             Seton Hall   BE  12.93      20    2020      204     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72   72          Virginia Tech  ACC  12.91      13    2019      234     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73   73               Nebraska  B10  12.57      16    2026      162     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74   74               Penn St.  B10  12.54      19    2018      227     2004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75   75                    TCU  B12  12.51      18    1998      265     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76   76                Rutgers  B10  11.51      28    2020      279     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77   77             California  ACC  11.37      14    2010      270     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78   78           Northwestern  B10  11.25      38    2023      257     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79   79                    VCU  A10  11.11      18    2013      218     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80   80               Utah St.  P12  11.11      21    2005      141     1999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81   81                    SMU  ACC  10.98      11    2017      283     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82   82           Saint Mary's  WCC  10.79      13    2023      315     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83   83                 Dayton  A10  10.17       4    2020      172     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84   84                   UNLV  MWC   9.63      29    2011      248     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85   85            Wichita St. Amer   9.13       6    2014      189     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86   86                    UCF  B12   8.77      34    2019      300     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87   87              Boise St.  P12   8.48      37    2023      214     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88   88           Colorado St.  P12   7.59      22    2013      265     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89   89             New Mexico  MWC   7.49      20    2012      294     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90   90         Boston College  ACC   7.45      12    2001      261     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91   91                 Nevada  MWC   7.36      20    2004      270     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92   92         Washington St.  P12   7.35      10    2008      216     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93   93                 Temple Amer   6.49       4    2000      181     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94   94                 DePaul   BE   6.37      30    2000      304     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95   95            Saint Louis  A10   6.00      14    2012      289     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96   96               Davidson  A10   5.76      11    2008      232     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97   97             Oregon St.  P12   5.59      43    2021      264     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98   98                    UAB Amer   5.23      46    2004      196     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99   99         Saint Joseph's  A10   5.14       3    2004      260     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100 100          Northern Iowa  MVC   4.81      18    2015      228     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101 101             Fresno St.  P12   4.59      30    2001      259     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102 102               Richmond  A10   4.35      38    2004      278     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103 103           Rhode Island  A10   4.09      20    1997      255     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104 104                  Tulsa Amer   3.74       7    2000      316     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105 105                Belmont  MVC   3.65      23    2011      284     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106 106             Murray St.  MVC   3.39      35    2012      229     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107 107        St. Bonaventure  A10   3.39      32    2021      321     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108 108         New Mexico St. CUSA   3.24      53    2019      290     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109 109           George Mason  A10   3.24      22    2006      220     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110 110       Western Kentucky CUSA   3.11      43    2008      232     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111 111           Grand Canyon  MWC   2.91      52    2024      265     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112 112          San Francisco  WCC   2.83      23    2022      254     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113 113      George Washington  A10   2.66      38    2005      293     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114 114         Loyola Chicago  A10   2.51      10    2021      288     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115 115      Southern Illinois  MVC   2.26      16    2007      223     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116 116                  Akron  MAC   2.17      45    2007      255     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117 117                  Drake  MVC   2.02      17    2008      287     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118 118            Santa Clara  WCC   1.97      38    2026      277     2018</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 119 119                Bradley  MVC   1.77      25    2006      323     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120 120              Charlotte Amer   1.74      26    1998      308     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121 121         Louisiana Tech   SB   1.57      37    2014      328     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122 122                  Akron  MAC   1.39      45    2007      255     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123 123            North Texas Amer   1.37      31    2023      320     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124 124           Illinois St.  MVC   1.37      42    1997      289     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125 125              Princeton  Ivy   1.30      15    1998      312     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126 126           Grand Canyon  MWC   1.27      52    2024      265     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127 127          South Florida Amer   1.07      48    2012      292     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128 128               Kent St.  MAC   0.96      14    2002      211     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129 129            Indiana St.  MVC   0.84      38    2024      266     2003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130 130             Valparaiso  MVC   0.62      42    2016      300     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131 131                   UTEP  MWC   0.46      41    2004      299     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132 132       Middle Tennessee CUSA   0.42      43    2017      306     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133 133           Old Dominion   SB   0.39      37    2010      287     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134 134              UC Irvine   BW   0.39      68    2025      303     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135 135               La Salle  A10   0.13      50    2013      267     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136 136               Duquesne  A10   0.08      55    2011      301     2006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137 137          Massachusetts  MAC   0.07      28    1998      236     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138 138                   Yale  Ivy  -0.05      47    2016      302     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139 139                Pacific  WCC  -0.11      40    2005      358     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140 140                Vermont   AE  -0.28      43    2005      253     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141 141              San Diego  WCC  -0.44      72    2000      297     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142 142              Air Force  MWC  -0.47      20    2007      332     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143 143             Pepperdine  WCC  -0.51      34    2000      303     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144 144             Charleston  CAA  -0.52      58    1999      279     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145 145                   Ohio  MAC  -0.63      51    1999      257     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146 146       UC Santa Barbara   BW  -0.63      58    2021      331     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147 147       South Dakota St.  Sum  -0.69      61    2012      319     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148 148                 Toledo  MAC  -1.06      61    2019      332     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149 149                 Tulane Amer  -1.18      68    1997      285     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150 150                   Iona MAAC  -1.34      45    1998      323     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151 151               Marshall   SB  -1.35      78    2012      261     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152 152                Harvard  Ivy  -1.51      32    2014      307     2004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153 153                 Hawaii  MWC  -1.51      51    2002      269     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154 154     East Tennessee St.   SC  -1.58      56    2020      319     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155 155                Hofstra  CAA  -1.62      63    2006      303     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156 156                Buffalo  MAC  -1.65      22    2019      348     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157 157              Louisiana   SB  -1.66      65    2003      313     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158 158       Loyola Marymount  WCC  -1.88      94    2021      332     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159 159       Florida Atlantic Amer  -1.96      17    2023      317     2000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160 160                   Penn  Ivy  -2.05      48    2003      308     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161 161        Sam Houston St. CUSA  -2.08      73    2023      287     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162 162       North Dakota St.  Sum  -2.08      61    2014      279     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163 163           Oral Roberts  Sum  -2.22      66    1997      330     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164 164                Wofford   SC  -2.29      18    2019      292     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165 165             Evansville  MVC  -2.33      72    2016      352     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166 166            Georgia St.   SB  -2.40      66    2014      281     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167 167                Liberty CUSA  -2.43      48    2023      333     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168 168             Wright St. Horz  -2.46      65    2010      243     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169 169           UC San Diego   BW  -2.63      39    2025      276     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170 170                Montana BSky  -2.65      72    2018      248     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171 171          Southern Miss   SB  -2.67      45    2001      341     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172 172         UNC Wilmington  CAA  -2.67      37    2003      312     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173 173                 Furman   SC  -2.72      59    2019      342     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174 174            Chattanooga   SC  -2.77      67    2022      310     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175 175          East Carolina Amer  -3.02     109    1997      307     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176 176                 Drexel  CAA  -3.08      45    2012      257     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177 177            Utah Valley   BW  -3.11      64    2023      326     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178 178      Stephen F. Austin Slnd  -3.18      41    2016      311     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179 179           UT Arlington  UAC  -3.19      75    2017      274     1997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180 180               Miami OH  MAC  -3.19      29    1999      279     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181 181         Long Beach St.   BW  -3.30      36    2012      308     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182 182          South Alabama   SB  -3.35      49    1998      297     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183 183               Winthrop BSth  -3.41      51    2007      306     1998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184 184                   Rice Amer  -3.42      71    2004      325     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185 185       Illinois Chicago  MVC  -3.46      42    1998      335     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186 186         UNC Greensboro   SC  -3.48      82    2018      324     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187 187               Portland  WCC  -3.51      79    2010      326     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188 188                Oakland Horz  -3.55      56    2011      272     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189 189              Weber St. BSky  -3.60      71    2013      300     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190 190              Milwaukee Horz  -3.76      36    2005      335     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191 191               Delaware CUSA  -3.79     103    1999      295     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192 192           Northeastern  CAA  -4.03      71    2010      310     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193 193          James Madison   SB  -4.05      63    2024      312     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 194 194                Fordham  A10  -4.07     127    2006      321     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 195 195           San Jose St.  MWC  -4.22      97    2023      347     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196 196                Seattle  WCC  -4.27     107    2024      294     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197 197               Ball St.  MAC  -4.27      55    2002      296     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198 198           Arkansas St.   SB  -4.35      84    2025      295     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199 199            Cal Baptist   BW  -4.40     155    2023      229     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200 200        Appalachian St.   SB  -4.50      76    2007      331     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 201 201          Cleveland St. Horz  -4.54      66    2009      313     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202 202          Detroit Mercy Horz  -4.57      29    1998      351     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203 203          Bowling Green  MAC  -4.57      60    2002      289     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204 204       Western Michigan  MAC  -4.62      31    2004      329     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205 205     Eastern Washington BSky  -4.73     105    2021      299     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206 206                Cornell  Ivy  -4.91      46    2010      340     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207 207      Northern Kentucky Horz  -4.98      90    2018      311     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208 208                   Troy   SB  -5.01      88    2004      305     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209 209           Tarleton St.  UAC  -5.06     129    2024      288     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210 210                   UTSA Amer  -5.07     149    2019      338     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211 211              Green Bay Horz  -5.10      71    2015      361     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212 212                Samford   SC  -5.15      81    2024      321     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213 213                 Mercer   SC  -5.40      87    2014      318     2006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214 214       Jacksonville St. CUSA  -5.41     108    2025      326     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215 215              Texas St.  P12  -5.55      93    2020      321     2006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216 216                  Siena MAAC  -5.66      59    2010      357     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217 217      Cal St. Fullerton   BW  -5.71      88    2008      351     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218 218      Abilene Christian  UAC  -5.73      84    2021      348     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219 219             St. Thomas  Sum  -5.79     130    2025      305     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220 220               Bucknell   PL  -5.83      58    2013      336     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221 221                   CSUN   BW  -5.98      85    2001      332     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222 222                 Towson  CAA  -6.02      75    2022      339     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223 223               Lipscomb ASun  -6.19      45    2019      310     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224 224       Georgia Southern   SB  -6.22     103    2019      328     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225 225                    FIU CUSA  -6.27     111    1998      311     2004</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226 226      Northern Colorado BSky  -6.34      75    2020      314     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227 227       Eastern Michigan  MAC  -6.37      65    1998      326     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228 228          UNC Asheville BSth  -6.60     110    2017      347     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229 229       Central Michigan  MAC  -6.73      70    2003      334     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230 230         William &amp; Mary  CAA  -6.76      87    2016      338     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 231 231       Coastal Carolina   SB  -6.78     117    2011      329     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 232 232               UC Davis  MWC  -6.79     101    2015      328     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 233 233     Florida Gulf Coast ASun  -6.87     105    2013      310     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 234 234                  Rider MAAC  -6.91     120    1998      316     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 235 235            Stony Brook  CAA  -6.92      60    2013      333     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 236 236           UC Riverside   BW  -6.93     106    2021      322     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 237 237          Southern Utah BSky  -6.95      97    2001      351     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 238 238    Cal St. Bakersfield   BW  -6.97      90    2017      320     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 239 239            Montana St. BSky  -7.01     113    2023      320     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 240 240                  Brown  Ivy  -7.02     134    2008      310     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 241 241            Austin Peay  UAC  -7.07     103    2004      324     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 242 242      Purdue Fort Wayne Horz  -7.20     135    2016      292     2005</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 243 243                 Denver  WCC  -7.22      47    2013      338     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244 244           Portland St. BSky  -7.30     112    2008      304     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 245 245              Fairfield MAAC  -7.31     104    2011      334     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 246 246              Manhattan MAAC  -7.34      48    2004      337     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 247 247           South Dakota  Sum  -7.35      81    2018      322     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 248 248           Gardner Webb BSth  -7.43     163    2019      331     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 249 249      Boston University   PL  -7.47      92    2005      304     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 250 250                Colgate   PL  -7.51      89    2021      324     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 251 251               Monmouth  CAA  -7.53      81    2017      348     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 252 252                Radford BSth  -7.54     122    2019      331     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 253 253       Eastern Kentucky  UAC  -7.55     110    2013      299     1999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 254 254           Morehead St.  OVC  -7.61      89    2011      328     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 255 255          Robert Morris Horz  -7.63     123    2012      327     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 256 256                Niagara MAAC  -7.65      75    2009      322     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 257 257         Youngstown St. Horz  -7.80     131    2023      322     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 258 258          Saint Peter's MAAC  -7.89      95    2017      316     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 259 259       Western Carolina   SC  -7.91     110    2024      338     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 260 260               Cal Poly   BW  -7.91     152    2013      339     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 261 261             High Point BSth  -7.93      82    2025      341     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 262 262            Little Rock  UAC  -7.94      56    2016      328     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 263 263      Northern Illinois Horz  -8.14     120    2006      343     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264 264               Columbia  Ivy  -8.16     113    2016      351     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 265 265                 Queens ASun  -8.26     203    2023      269     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 266 266 Texas A&amp;M Corpus Chris Slnd  -8.32      91    2007      344     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 267 267                 Albany   AE  -8.33     121    2016      346     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 268 268       Northern Arizona BSky  -8.37      71    1998      343     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 269 269               Canisius MAAC  -8.41      89    1997      359     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 270 270              Utah Tech BSky  -8.86     146    2023      328     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 271 271                McNeese Slnd  -9.03      60    2025      340     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 272 272                  Idaho BSky  -9.06     126    2018      350     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 273 273             Quinnipiac MAAC  -9.06     149    2014      312     2001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 274 274            Kansas City  Sum  -9.10     147    2004      318     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 275 275       Louisiana Monroe   SB  -9.11     133    2016      344     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276 276         Nebraska Omaha  Sum  -9.28     148    2016      344     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 277 277               American   PL  -9.37     112    2009      331     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 278 278                IU Indy Horz  -9.39      66    2008      360     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 279 279                   Elon  CAA  -9.49     136    2017      337     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 280 280                 Lehigh   PL  -9.64      79    2012      334     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 281 281              Dartmouth  Ivy  -9.80     116    1997      341     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 282 282           Jacksonville ASun  -9.82     122    2009      340     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 283 283          North Florida ASun  -9.87     143    2015      337     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 284 284                Hampton  CAA  -9.89     116    2002      351     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 285 285                 Marist MAAC  -9.93     108    2006      336     2010</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 286 286       Mount St. Mary's MAAC  -9.93     145    2009      325     2002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 287 287          North Alabama  UAC -10.07     113    2025      315     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 288 288                  Lamar Slnd -10.08     108    2012      358     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 289 289           UMass Lowell   AE -10.16     134    2023      322     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290 290             Holy Cross   PL -10.21      66    2005      349     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 291 291           Kennesaw St. CUSA -10.41     123    2023      352     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 292 292           North Dakota  Sum -10.48     168    2017      348     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 293 293              Merrimack MAAC -10.48     184    2025      309     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 294 294                    VMI   SC -10.57     153    2021      354     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 295 295                 Bryant   AE -10.58     149    2025      346     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 296 296               Campbell  CAA -10.65     163    2010      327     2014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 297 297         Tennessee Tech   SC -10.65      72    2002      332     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 298 298       Northwestern St. Slnd -10.68      93    2006      345     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 299 299                   Navy   PL -10.68     127    2000      329     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 300 300              Idaho St. BSky -10.81     158    2007      339     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 301 301             Bellarmine ASun -10.93     167    2021      347     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 302 302                   UMBC   AE -11.07     127    2008      343     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 303 303               Nicholls Slnd -11.13     167    2025      331     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 304 304          Tennessee St.  OVC -11.18     160    2017      334     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 305 305            USC Upstate BSth -11.20     136    2012      340     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 306 306 Southeastern Louisiana Slnd -11.26     134    2005      336     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 307 307              Loyola MD   PL -11.29     124    2013      350     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 308 308            New Orleans Slnd -11.34      90    1997      345     2013</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 309 309            Norfolk St. MEAC -11.37     176    2022      322     2007</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 310 310    Charleston Southern BSth -11.40     160    2019      347     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 311 311              Lafayette   PL -11.58     140    2000      330     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 312 312                 Wagner  NEC -11.83     102    2012      346     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 313 313         Sacramento St.   BW -11.84     156    2006      348     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 314 314     Southeast Missouri  OVC -11.86      84    2000      352     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 315 315 North Carolina Central MEAC -11.95      92    2014      343     2009</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 316 316               Longwood BSth -11.98     145    2022      347     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 317 317            The Citadel   SC -12.14     151    2002      355     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 318 318           Sacred Heart MAAC -12.33     185    2007      326     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 319 319                Stetson ASun -12.37     172    2023      352     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 320 320          New Hampshire   AE -12.47     182    2017      356     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 321 321         Texas Southern SWAC -12.62     155    2013      335     2008</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 322 322                  Maine   AE -12.70     153    1999      354     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 323 323       Eastern Illinois  OVC -12.88     112    2001      357     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 324 324       Western Illinois  OVC -12.97     147    1997      345     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 325 325       Tennessee Martin  OVC -12.98     117    2009      347     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 326 326   UT Rio Grande Valley Slnd -13.03     167    2002      348     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 327 327                    LIU  NEC -13.48      93    1997      363     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 328 328                   Army   PL -13.67     158    2013      344     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 329 329             Binghamton   AE -13.75     177    2009      344     2012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 330 330           Presbyterian BSth -13.77     179    2019      350     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 331 331    Central Connecticut  NEC -14.35     135    2000      351     2016</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 332 332             Morgan St. MEAC -14.62     150    2009      334     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 333 333                   NJIT   AE -14.62     173    2015      353     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 334 334     North Carolina A&amp;T  CAA -14.63     227    2013      349     2017</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 335 335               Southern SWAC -14.63     162    2013      345     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 336 336    Fairleigh Dickinson  NEC -14.73      96    1998      345     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 337 337                   SIUE  OVC -15.08     217    2025      342     2011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 338 338            Jackson St. SWAC -15.19     217    1999      337     2018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 339 340       Central Arkansas  UAC -15.56     213    2018      349     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 340 341         East Texas A&amp;M Slnd -15.57     307    2023      333     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 341 342     South Carolina St. MEAC -15.64     149    1998      353     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 342 343         Incarnate Word Slnd -16.09     224    2025      353     2022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 343 344       Southern Indiana  OVC -16.21     285    2023      335     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 344 345             Coppin St. MEAC -16.45     128    1997      361     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 345 346                 Howard MEAC -16.59     218    2023      350     2020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 346 347            Alabama St. SWAC -16.65     200    2009      354     2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 347 348      Houston Christian Slnd -16.70     221    2017      355     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 348 349           Delaware St. MEAC -17.09     200    2007      356     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 349 350       Prairie View A&amp;M SWAC -17.27     209    2019      357     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 350 351        Bethune Cookman SWAC -17.61     230    2000      349     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 351 352           West Georgia  UAC -17.81     350    2025      350     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 352 353             Alcorn St. SWAC -18.00     155    1999      349     2019</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 353 354               Le Moyne  NEC -18.53     302    2024      354     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 354 355          Grambling St. SWAC -18.67     182    2023      351     2015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 355 356            Florida A&amp;M SWAC -18.76     254    2007      359     2023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 356 357             Lindenwood  OVC -19.25     327    2025      356     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 357 358            Chicago St.  NEC -19.34     203    2007      362     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 358 359             Mercyhurst  NEC -19.68     342    2025      342     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 359 360            Alabama A&amp;M SWAC -19.70     247    2000      360     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 360 361              Stonehill  NEC -19.97     323    2025      359     2024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 361 362 Maryland Eastern Shore MEAC -20.25     207    2015      358     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 362 363    Arkansas Pine Bluff SWAC -20.90     231    2010      363     2025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 363 364 Mississippi Valley St. SWAC -21.03     168    2004      364     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120 120          South Florida Amer   1.60      47    2026      292     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121 121           Missouri St. CUSA   1.59      21    1999      255     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122 122           Illinois St.  MVC   1.57      42    1997      289     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123 123                Wyoming  MWC   1.45      65    2022      317     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124 124               Kent St.  MAC   1.26      14    2002      211     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125 125              Charlotte Amer   1.26      26    1998      308     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126 126            North Texas Amer   1.06      31    2023      320     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127 127              Princeton  Ivy   0.81      15    1998      312     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128 128                   UTEP  MWC   0.80      41    2004      299     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129 129              UC Irvine   BW   0.76      68    2025      303     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130 130            Indiana St.  MVC   0.69      38    2024      266     2003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131 131             Valparaiso  MVC   0.59      42    2016      300     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132 132                 Hawaii  MWC   0.35      51    2002      269     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133 133          Massachusetts  MAC   0.31      28    1998      236     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134 134               Duquesne  A10   0.21      55    2011      301     2006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135 135                   Yale  Ivy   0.13      47    2016      302     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136 136               La Salle  A10  -0.06      50    2013      267     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137 137         Louisiana Tech   SB  -0.11      37    2014      328     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138 138       Middle Tennessee CUSA  -0.11      43    2017      306     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139 139           Old Dominion   SB  -0.31      37    2010      287     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140 140             Charleston  CAA  -0.42      58    1999      279     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141 141                   Ohio  MAC  -0.45      51    1999      257     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142 142       UC Santa Barbara   BW  -0.57      58    2021      331     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143 143                 Toledo  MAC  -0.60      61    2019      332     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144 144                Hofstra  CAA  -1.00      63    2006      303     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145 145                Pacific  WCC  -1.04      40    2005      358     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146 146       South Dakota St.  Sum  -1.19      61    2012      319     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147 147                Buffalo  MAC  -1.33      22    2019      348     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148 148                Harvard  Ivy  -1.61      32    2014      307     2004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149 149              Texas St.  P12  -1.61      93    2020      321     2006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150 150                 Tulane Amer  -1.62      68    1997      285     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151 151                Vermont   AE  -1.64      43    2005      253     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152 152              San Diego  WCC  -1.74      72    2000      297     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153 153               Marshall   SB  -1.89      78    2012      261     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154 154             Pepperdine  WCC  -1.91      34    2000      303     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155 155       North Dakota St.  Sum  -2.01      61    2014      279     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156 156       Florida Atlantic Amer  -2.03      17    2023      317     2000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157 157                   Penn  Ivy  -2.05      48    2003      308     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158 158           UC San Diego   BW  -2.07      39    2025      276     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159 159      Stephen F. Austin Slnd  -2.16      41    2016      311     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160 160               Miami OH  MAC  -2.22      29    1999      279     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161 161        Sam Houston St. CUSA  -2.23      73    2023      287     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162 162         UNC Wilmington  CAA  -2.23      37    2003      312     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163 163                   Iona MAAC  -2.25      45    1998      323     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164 164                Montana BSky  -2.35      72    2018      248     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165 165             Wright St. Horz  -2.37      65    2010      243     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166 166              Louisiana   SB  -2.43      65    2003      315     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167 167                Liberty CUSA  -2.55      48    2023      333     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168 168             Evansville  MVC  -2.60      72    2016      352     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169 169              Air Force  MWC  -2.68      20    2007      345     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170 170     East Tennessee St.   SC  -2.72      56    2020      319     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171 171           Oral Roberts  Sum  -2.78      66    1997      330     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172 172       Illinois Chicago  MVC  -2.98      42    1998      335     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173 173                 Drexel  CAA  -2.99      45    2012      257     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174 174            Utah Valley   BW  -3.07      64    2023      326     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175 175       Loyola Marymount  WCC  -3.13      94    2021      332     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176 176            Georgia St.   SB  -3.14      66    2014      309     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177 177          Southern Miss   SB  -3.16      45    2001      341     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178 178                Seattle  WCC  -3.24     107    2024      294     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179 179              Weber St. BSky  -3.27      71    2013      300     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180 180         Long Beach St.   BW  -3.40      36    2012      308     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181 181          East Carolina Amer  -3.49     109    1997      307     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182 182                Oakland Horz  -3.57      56    2011      272     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183 183                Wofford   SC  -3.63      18    2019      292     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184 184               Winthrop BSth  -3.63      51    2007      306     1998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185 185                 Furman   SC  -3.75      59    2019      342     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186 186            Cal Baptist   BW  -3.77     105    2026      229     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187 187          South Alabama   SB  -3.80      49    1998      297     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188 188                   Rice Amer  -3.80      71    2004      325     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189 189                Fordham  A10  -3.80     127    2006      321     2009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190 190          Bowling Green  MAC  -3.97      60    2002      289     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191 191              Milwaukee Horz  -4.00      36    2005      335     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192 192           Northeastern  CAA  -4.06      71    2010      310     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193 193               Ball St.  MAC  -4.10      55    2002      296     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194 194            Chattanooga   SC  -4.20      67    2022      310     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195 195     Eastern Washington BSky  -4.23     105    2021      299     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196 196       Western Michigan  MAC  -4.38      31    2004      329     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197 197               Delaware CUSA  -4.45     103    1999      295     2007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198 198          James Madison   SB  -4.50      63    2024      312     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199 199           Arkansas St.   SB  -4.57      84    2025      295     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200 200               Portland  WCC  -4.60      79    2010      326     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201 201          Detroit Mercy Horz  -4.65      29    1998      351     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202 202             St. Thomas  Sum  -4.82     115    2026      305     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203 203                Cornell  Ivy  -4.84      46    2010      340     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204 204               UC Davis  MWC  -4.85     101    2015      328     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205 205        Appalachian St.   SB  -4.86      76    2007      331     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206 206         UNC Greensboro   SC  -4.89      82    2018      324     2009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207 207          Cleveland St. Horz  -4.91      66    2009      319     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208 208      Northern Kentucky Horz  -4.93      90    2018      311     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209 209           UT Arlington  UAC  -5.08      75    2017      274     1997</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210 210                   Troy   SB  -5.10      88    2004      305     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211 211              Green Bay Horz  -5.14      71    2015      361     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212 212                 Denver  WCC  -5.15      47    2013      338     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213 213      Cal St. Fullerton   BW  -5.44      88    2008      351     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 214                 Towson  CAA  -5.56      75    2022      339     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215 215      Northern Colorado BSky  -5.62      75    2020      314     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216 216                   CSUN   BW  -5.72      85    2001      332     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217 217       Jacksonville St. CUSA  -5.73     108    2025      326     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218 218                   UTSA Amer  -5.74     149    2019      338     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219 219           San Jose St.  MWC  -5.82      97    2023      347     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220 220       Eastern Michigan  MAC  -5.94      65    1998      326     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221 221                  Siena MAAC  -6.10      59    2010      357     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222 222               Lipscomb ASun  -6.17      45    2019      310     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223 223            Montana St. BSky  -6.21     113    2023      320     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224 224         William &amp; Mary  CAA  -6.21      87    2016      338     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225 225                Samford   SC  -6.23      81    2024      321     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226 226               Bucknell   PL  -6.35      58    2013      336     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227 227       Central Michigan  MAC  -6.38      70    2003      334     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228 228                 Mercer   SC  -6.42      87    2014      318     2006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229 229                    FIU CUSA  -6.47     111    1998      311     2004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230 230           Portland St. BSky  -6.55     112    2008      304     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231 231       Georgia Southern   SB  -6.62     103    2019      328     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232 232            Stony Brook  CAA  -6.67      60    2013      333     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233 233            Austin Peay  UAC  -6.78     103    2004      324     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234 234            Little Rock  UAC  -6.90      56    2016      328     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235 235           UC Riverside   BW  -6.93     106    2021      322     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236 236          UNC Asheville BSth  -6.94     110    2017      347     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237 237                McNeese Slnd  -6.95      60    2025      340     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238 238     Florida Gulf Coast ASun  -7.00     105    2013      310     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239 239               Monmouth  CAA  -7.04      81    2017      348     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240 240           Tarleton St.  UAC  -7.14     129    2024      288     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241 241       Coastal Carolina   SB  -7.18     117    2011      329     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242 242                 Queens ASun  -7.21     186    2026      269     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243 243             High Point BSth  -7.26      82    2025      341     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244 244                  Brown  Ivy  -7.28     134    2008      310     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245 245          Robert Morris Horz  -7.29     123    2012      327     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246 246    Cal St. Bakersfield   BW  -7.30      90    2017      327     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247 247      Purdue Fort Wayne Horz  -7.32     135    2016      292     2005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248 248 Texas A&amp;M Corpus Chris Slnd  -7.36      91    2007      344     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249 249       Eastern Kentucky  UAC  -7.65     110    2013      299     1999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250 250               Cal Poly   BW  -7.67     152    2013      339     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 251 251      Boston University   PL  -7.72      92    2005      304     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 252 252         Youngstown St. Horz  -7.72     131    2023      322     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253 253                Colgate   PL  -7.73      89    2021      324     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 254 254           South Dakota  Sum  -7.74      81    2018      322     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 255 255      Abilene Christian  UAC  -7.81      84    2021      348     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 256 256                Radford BSth  -7.86     122    2019      331     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257 257           Morehead St.  OVC  -7.91      89    2011      328     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258 258               Columbia  Ivy  -7.98     113    2016      351     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259 259              Fairfield MAAC  -7.99     104    2011      334     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260 260                  Rider MAAC  -8.02     120    1998      357     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261 261                  Idaho BSky  -8.10     126    2018      350     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262 262          Southern Utah BSky  -8.16      97    2001      351     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263 263       Northern Arizona BSky  -8.16      71    1998      343     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264 264              Manhattan MAAC  -8.25      48    2004      337     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265 265           Gardner Webb BSth  -8.32     163    2019      361     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266 266          Saint Peter's MAAC  -8.53      95    2017      316     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267 267                Niagara MAAC  -8.60      75    2009      337     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268 268      Northern Illinois Horz  -8.74     120    2006      343     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269 269       Western Carolina   SC  -8.91     110    2024      338     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270 270                   Elon  CAA  -9.10     136    2017      337     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271 271              Utah Tech BSky  -9.12     146    2023      328     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272 272         Tennessee Tech   SC  -9.27      72    2002      332     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273 273                  Lamar Slnd  -9.28     108    2012      358     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 274 274               Canisius MAAC  -9.33      89    1997      359     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 275 275         Nebraska Omaha  Sum  -9.41     148    2016      344     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 276 276               American   PL  -9.47     112    2009      331     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277 277             Quinnipiac MAAC  -9.52     149    2014      312     2001</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 278 278                IU Indy Horz  -9.54      66    2008      360     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 279 279                 Albany   AE  -9.62     121    2016      346     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 280 280                Hampton  CAA  -9.63     116    2002      351     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281 281            Kansas City  Sum  -9.68     147    2004      358     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 282 282       Louisiana Monroe   SB  -9.81     133    2016      352     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 283 283                 Lehigh   PL  -9.81      79    2012      334     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 284 284              Dartmouth  Ivy  -9.85     116    1997      341     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285 285           Kennesaw St. CUSA  -9.92     123    2023      352     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 286 286           Jacksonville ASun  -9.92     122    2009      340     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 287 287               Campbell  CAA  -9.98     163    2010      327     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 288 288       Northwestern St. Slnd  -9.99      93    2006      345     2018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289 289              Merrimack MAAC -10.18     177    2026      309     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 290 290          North Florida ASun -10.22     143    2015      337     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 291 291            New Orleans Slnd -10.24      90    1997      345     2013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 292 292              Idaho St. BSky -10.25     158    2007      339     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293 293                 Marist MAAC -10.26     108    2006      336     2010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 294 294               Nicholls Slnd -10.26     167    2025      331     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 295 295                   Navy   PL -10.29     127    2000      329     2012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 296 296         Sacramento St.   BW -10.53     156    2006      348     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297 297       Mount St. Mary's MAAC -10.55     145    2009      325     2002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 298 298 Southeastern Louisiana Slnd -10.56     134    2005      336     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 299 299             Holy Cross   PL -10.57      66    2005      349     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 300 300           North Dakota  Sum -10.62     168    2017      348     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301 301          Tennessee St.  OVC -10.87     160    2017      334     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 302 302          North Alabama  UAC -10.96     113    2025      343     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 303 303             Bellarmine ASun -10.96     167    2021      347     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 304 304   UT Rio Grande Valley Slnd -11.41     117    2026      348     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305 305    Charleston Southern BSth -11.43     160    2019      347     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 306 306            USC Upstate BSth -11.52     136    2012      340     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 307 307           UMass Lowell   AE -11.55     134    2023      322     2014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 308 308              Loyola MD   PL -11.56     124    2013      350     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309 309                   UMBC   AE -11.62     127    2008      343     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 310 310                 Wagner  NEC -11.72     102    2012      346     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 311 311     Southeast Missouri  OVC -11.78      84    2000      352     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 312 312              Lafayette   PL -11.86     140    2000      330     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313 313               Longwood BSth -12.05     145    2022      347     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 314 314                    VMI   SC -12.06     153    2021      360     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 315 315                 Bryant   AE -12.18     149    2025      355     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 316 316                Stetson ASun -12.38     172    2023      352     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317 317            Norfolk St. MEAC -12.49     176    2022      325     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 318 318         Texas Southern SWAC -12.76     155    2013      335     2008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 319 319       Tennessee Martin  OVC -12.76     117    2009      347     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 320 320                    LIU  NEC -12.83      93    1997      363     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 321 321           Sacred Heart MAAC -12.89     185    2007      326     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 322 322       Eastern Illinois  OVC -13.08     112    2001      357     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 323 323 North Carolina Central MEAC -13.35      92    2014      351     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 324 324            The Citadel   SC -13.44     151    2002      355     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 325 325       Western Illinois  OVC -13.50     147    1997      364     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 326 326           Presbyterian BSth -13.70     179    2019      350     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 327 327          New Hampshire   AE -13.72     182    2017      356     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 328 328                  Maine   AE -13.94     153    1999      354     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 329 329                   Army   PL -13.94     158    2013      344     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 330 330         East Texas A&amp;M Slnd -13.97     288    2026      333     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 331 331    Central Connecticut  NEC -14.11     135    2000      351     2016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 332 332     North Carolina A&amp;T  CAA -14.12     227    2013      349     2017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 333 334       Central Arkansas  UAC -14.38     151    2026      349     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 334 335               Southern SWAC -14.52     162    2013      345     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 335 336    Fairleigh Dickinson  NEC -14.65      96    1998      345     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 336 337         Incarnate Word Slnd -14.78     224    2025      353     2022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 337 338                   SIUE  OVC -14.79     217    2025      342     2011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 338 339             Binghamton   AE -15.14     177    2009      359     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 339 340           West Georgia  UAC -15.33     306    2026      350     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 340 341            Jackson St. SWAC -15.37     217    1999      340     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 341 342      Houston Christian Slnd -15.59     221    2017      355     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 342 343                   NJIT   AE -15.69     173    2015      353     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 343 344             Morgan St. MEAC -15.76     150    2009      353     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 344 345            Alabama St. SWAC -16.62     200    2009      354     2021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 345 346             Mercyhurst  NEC -16.65     285    2026      342     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 346 347                 Howard MEAC -16.69     196    2026      350     2020</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 347 348     South Carolina St. MEAC -16.79     149    1998      356     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 348 349       Southern Indiana  OVC -16.89     285    2023      341     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 349 350       Prairie View A&amp;M SWAC -16.91     209    2019      357     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 350 351               Le Moyne  NEC -17.06     299    2026      354     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 351 352        Bethune Cookman SWAC -17.12     230    2000      349     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 352 353             Lindenwood  OVC -17.26     267    2026      356     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 353 354             Coppin St. MEAC -17.68     128    1997      363     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 354 355              New Haven  NEC -17.71     328    2026      328     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 355 356             Alcorn St. SWAC -18.09     155    1999      349     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 356 357           Delaware St. MEAC -18.27     200    2007      362     2026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 357 358          Grambling St. SWAC -18.36     182    2023      351     2015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 358 359            Florida A&amp;M SWAC -18.53     254    2007      359     2023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 359 360            Chicago St.  NEC -19.08     203    2007      362     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 360 361            Alabama A&amp;M SWAC -19.37     247    2000      360     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 361 362              Stonehill  NEC -19.38     323    2025      359     2024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 362 363    Arkansas Pine Bluff SWAC -20.51     231    2010      363     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 363 364 Maryland Eastern Shore MEAC -21.09     207    2015      358     2025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 364 365 Mississippi Valley St. SWAC -21.30     168    2004      365     2026</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     kp_median top10 top25 top50 ch f4 s16 r1 chg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           5    24    28    29  3  7  20 27   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          10    16    23    27  2  6  16 25   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           8    19    27    29  2  6  15 28   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4          10    15    20    25  3  9  15 24   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5          18     8    22    26  1  2  15 24   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6          22    10    16    25  3  5  10 20   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7          15    14    20    28  1  8  16 26  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8          33     4    12    18  0  4  14 20   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9          26     6    14    25  0  1   7 23   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10         22     8    15    20  6  7  11 19  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11         28     7    14    19  2  4   8 18  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12         21    12    20    28  0  2  14 26   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13         31     6    10    17  0  0   9 18   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14         34     4    10    17  1  1   5 13   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15         25     7    15    23  0  3   6 17  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16         23     9    16    22  1  3   8 18  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17         41     3     9    20  0  1   4 16  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18         57     3     6    11  0  1   5 12   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19         26     4    14    22  1  2   7 18  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20         44     4    11    18  0  2   8 13   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21         25     7    15    20  0  1   5 18   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22         17     8    20    26  0  3  10 25   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23         25     7    15    23  0  1  11 21   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24         40     4    10    20  1  3  11 18  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25         42     2     6    16  0  1   7 14   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26         39     4     8    20  0  2   6 19   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27         32     4    11    22  0  0   2 18   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28         51     5     8    14  1  1   3 12  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29         82     3     6    10  0  2   4  9  13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30         44     0     5    16  0  0   4 14   8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31         33     4    13    17  0  1   8 14  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32         55     1     3    11  0  0   3 11   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33         39     3     7    16  0  1   3 15  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34         49     4     7    15  0  1   4 13  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35         94     5     8     8  0  2   6  8  11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36         36     1     8    17  0  1   5 17  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37         70     0     6    10  0  1   3  9   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38         48     2     9    15  0  0   6 15   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39         32     0    12    19  0  0   8 19  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40         63     3     6    13  0  1   5 11   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41         39     0     5    16  0  0   4  9  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42         68     0     4     8  0  0   4  9  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43         39     0     6    17  0  0   3 17  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44         57     2     7    12  0  1   3 11  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45         54     0     3    13  0  0   0  9   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46         50     1     3    15  0  1   4 12  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47         55     0     4    14  0  1   5 11  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48         64     1     5    13  0  0   3 11   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49         60     1     4    10  0  0   3 10  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50         41     1    10    16  0  0   1 11   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51         49     1     7    16  0  0   2 13   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52         59     4    11    14  0  0   5 14  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53         55     2     5    12  0  0   2 14   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54         52     5     8    14  0  1   5 12  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55         41     1     6    16  0  0   3 13  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56         72     0     1     6  0  0   0  5   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57         74     1     3     7  0  0   1  7   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58         69     0     2    10  0  0   2  9  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59         73     0     4    10  0  0   2  9  11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60         42     0     8    15  0  2   5 15  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61         58     0     3    13  0  0   2  9   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62         45     0     9    15  0  0   3 10   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63         78     0     2     7  0  0   0  7   8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64         48     4     5    15  0  1   4 11  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65         70     0     3     7  0  1   1  5   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66         52     2     6    13  0  1   4 13  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67         86     1     3     8  0  1   1  6  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68         72     3     6    11  0  0   1  8  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69         58     1     2    12  0  1   1  8  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70         72     1     2     5  0  0   0  8  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71         60     0     1     6  0  0   1  8  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72         82     0     1     8  0  0   1  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73        103     0     3     7  0  0   0  5   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74         83     0     2     8  0  0   1  6  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75         81     0     0     7  0  0   1  8   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76         56     0     6    14  0  0   1 12   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77        105     0     0     4  0  0   0  1   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78         83     0     0     5  0  0   0  3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79         67     0     3    10  0  0   1  9  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80         90     0     0     6  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81         63     0     2     9  0  1   1 14   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82         64     1     1    10  0  0   1  9  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83        112     0     2     5  0  0   0  2   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84         69     0     3    11  0  0   0 14   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85         66     2     7    11  0  1   3  8  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86        101     0     2     6  0  0   2  8   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87         87     0     3    12  0  0   0 10   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88        129     0     0     1  0  0   0  3   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89         96     0     0     6  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90        105     0     3     7  0  0   1  8   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91         69     1     6    10  0  0   2 12  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92        100     0     1     4  0  0   0  6   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93        135     0     0     2  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94        115     1     1     5  0  0   1  3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95        119     0     1     4  0  0   1 10  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96         99     0     0     2  0  0   1  7   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97         98     0     2     3  0  0   0  6   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98         97     1     3     8  0  0   2  7   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99        102     0     1     5  0  0   1  7   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100        97     0     0     4  0  0   1  5  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101       121     0     0     1  0  0   1  2   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102       116     0     1     4  0  0   1  5   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103       109     0     0     1  0  0   0  3  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104       144     0     1     1  0  0   0  2   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105       100     0     0     0  0  0   0 11   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106        94     1     2     5  0  0   1  6  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107       127     0     0     3  0  0   1  8  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108       112     0     0     1  0  0   0  4   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109       131     0     0     2  0  0   0 11   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110       122     0     2     4  0  0   0  8   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111       131     0     2     2  0  1   1  5   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112       125     0     0     0  0  0   0  2   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113       166     1     1     3  0  1   2  3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114       122     0     0     5  0  0   0  6   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115        95     0     1     3  0  0   1  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116       131     0     1     5  0  0   2  6   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117       155     0     1     1  0  0   0  5   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118       145     0     0     0  0  0   0  0   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119       120     0     1     1  0  0   1  2   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120       129     0     0     7  0  0   0  7  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121       127     0     0     1  0  0   0  0   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122       108     0     0     1  0  0   0  6   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123       175     0     0     1  0  0   0  3   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124       132     0     0     3  0  0   0  2   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125       120     0     1     2  0  0   1  7  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126       116     0     0     0  0  0   0  4   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127       136     0     0     1  0  0   0  1  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128       115     0     1     2  0  0   1  6   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 129       138     0     0     1  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 130       148     0     0     2  0  0   1  8   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 131       133     0     0     2  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 132       159     0     0     4  0  0   0  2   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133       118     0     0     2  0  0   0  6  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 134       139     0     0     0  0  0   0  2   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 135       160     0     0     1  0  0   1  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 136       156     0     0     0  0  0   0  1   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 137       127     0     0     3  0  0   0  3 -26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 138       175     0     0     1  0  0   0  5   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 139       149     0     0     3  0  0   0  5  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 140       133     0     0     1  0  0   0 10  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 141       159     0     0     0  0  0   0  2  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 142       214     0     1     4  0  0   0  2  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 143       188     0     0     1  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 144       123     0     0     0  0  0   0  6   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 145       127     0     0     0  0  0   1  4  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 146       148     0     0     0  0  0   0  5   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147       128     0     0     0  0  0   0  7   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 148       118     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 149       174     0     0     0  0  0   0  0   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 150       140     0     0     1  0  0   0 11  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 151       157     0     0     0  0  0   0  1   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 152       218     0     0     2  0  0   0  4   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 153       163     0     0     0  0  0   0  3   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 154       165     0     0     0  0  0   0  5   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 155       135     0     0     0  0  0   0  2   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 156       148     0     1     1  0  0   0  4  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 157       153     0     0     0  0  0   0  5  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 158       203     0     0     0  0  0   0  0   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 159       233     0     1     2  0  1   1  3   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 160       155     0     0     1  0  0   0  8  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 161       180     0     0     0  0  0   0  2   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 162       152     0     0     0  0  0   0  4   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 163       141     0     0     0  0  0   1  5  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 164       197     0     1     1  0  0   0  6   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 165       180     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 166       186     0     0     0  0  0   0  5  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 167       231     0     0     1  0  0   0  4  17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 168       158     0     0     0  0  0   0  3   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 169       231     0     0     1  0  0   0  1  63</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 170       164     0     0     0  0  0   0 10   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 171       144     0     0     1  0  0   0  1  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 172       156     0     0     2  0  0   0  7   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 173       199     0     0     0  0  0   0  1  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 174       166     0     0     0  0  0   1  5  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 175       189     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 176       158     0     0     1  0  0   0  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177       204     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 178       157     0     0     1  0  0   0  5  10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 179       205     0     0     0  0  0   0  1  -9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 180       146     0     0     1  0  0   1  3  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 181       168     0     0     1  0  0   0  3  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 182       193     0     0     1  0  0   0  4   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 183       176     0     0     0  0  0   0  9   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 184       199     0     0     0  0  0   0  0  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 185       194     0     0     1  0  0   0  3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 186       220     0     0     0  0  0   0  3  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 187       212     0     0     0  0  0   0  0  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 188       175     0     0     0  0  0   0  4   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 189       169     0     0     0  0  0   0  5  -9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 190       168     0     0     1  0  0   1  4   8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 191       196     0     0     0  0  0   0  4  25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 192       189     0     0     0  0  0   0  2   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 193       207     0     0     0  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 194       208     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 195       249     0     0     0  0  0   0  0   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 196       213     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 197       171     0     0     0  0  0   0  1  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 198       194     0     0     0  0  0   0  1   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 199       197     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200       206     0     0     0  0  0   0  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 201       195     0     0     0  0  0   0  2   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 202       161     0     0     2  0  0   0  3  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 203       184     0     0     0  0  0   0  0  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 204       166     0     0     2  0  0   0  3  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 205       197     0     0     0  0  0   0  3  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 206       227     0     0     1  0  0   1  3   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 207       198     0     0     0  0  0   0  3   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 208       202     0     0     0  0  0   0  3   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 209       212     0     0     0  0  0   0  0 -27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 210       221     0     0     0  0  0   0  3  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 211       175     0     0     0  0  0   0  1  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 212       221     0     0     0  0  0   0  3  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 213       209     0     0     0  0  0   0  1  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 214       245     0     0     0  0  0   0  2   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 215       219     0     0     0  0  0   0  1  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 216       174     0     0     0  0  0   0  5  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 217       210     0     0     0  0  0   0  3  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 218       214     0     0     0  0  0   0  2  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 219       175     0     0     0  0  0   0  0  31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 220       200     0     0     0  0  0   0  6  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 221       223     0     0     0  0  0   0  2   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 222       244     0     0     0  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 223       204     0     0     1  0  0   0  2  15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 224       229     0     0     0  0  0   0  0  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 225       234     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 226       227     0     0     0  0  0   0  1   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 227       210     0     0     0  0  0   0  1  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 228       237     0     0     0  0  0   0  5   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229       229     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 230       219     0     0     0  0  0   0  0   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 231       235     0     0     0  0  0   0  2 -10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 232       226     0     0     0  0  0   0  1   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 233       199     0     0     0  0  0   1  3   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 234       206     0     0     0  0  0   0  0 -11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 235       234     0     0     0  0  0   0  1  -9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 236       253     0     0     0  0  0   0  0  16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 237       248     0     0     0  0  0   0  1 -12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 238       244     0     0     0  0  0   0  1   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 239       222     0     0     0  0  0   0  2   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 240       238     0     0     0  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 241       195     0     0     0  0  0   0  3  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 242       236     0     0     0  0  0   0  0  16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 243       222     0     0     1  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244       239     0     0     0  0  0   0  2   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 245       206     0     0     0  0  0   0  1 -18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 246       213     0     0     1  0  0   0  3 -10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 247       234     0     0     0  0  0   0  0   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 248       225     0     0     0  0  0   0  1   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 249       194     0     0     0  0  0   0  3  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 250       237     0     0     0  0  0   0  5  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 251       242     0     0     0  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 252       222     0     0     0  0  0   0  3  11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 253       238     0     0     0  0  0   0  3   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 254       221     0     0     0  0  0   0  4  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 255       240     0     0     0  0  0   0  4  12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 256       195     0     0     0  0  0   0  2 -17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 257       234     0     0     0  0  0   0  0   7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 258       222     0     0     0  0  0   1  3  -9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 259       241     0     0     0  0  0   0  0 -12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 260       232     0     0     0  0  0   0  1   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 261       248     0     0     0  0  0   0  1  11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 262       215     0     0     0  0  0   0  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 263       230     0     0     0  0  0   0  0  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264       262     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 265       212     0     0     0  0  0   0  0   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 266       227     0     0     0  0  0   0  2  13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 267       243     0     0     0  0  0   0  5  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 268       220     0     0     0  0  0   0  2  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 269       237     0     0     0  0  0   0  0 -14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 270       281     0     0     0  0  0   0  0 -10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 271       267     0     0     0  0  0   0  3  30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 272       231     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 273       237     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 274       249     0     0     0  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 275       263     0     0     0  0  0   0  0  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276       258     0     0     0  0  0   0  1  12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 277       207     0     0     0  0  0   0  3  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 278       204     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 279       255     0     0     0  0  0   0  0   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 280       249     0     0     0  0  0   0  2  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 281       289     0     0     0  0  0   0  0   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 282       260     0     0     0  0  0   0  0   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 283       259     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 284       251     0     0     0  0  0   0  5   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 285       251     0     0     0  0  0   0  0  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 286       243     0     0     0  0  0   0  4  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 287       273     0     0     0  0  0   0  0  25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 288       226     0     0     0  0  0   0  1  15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 289       266     0     0     0  0  0   0  0  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290       236     0     0     0  0  0   0  5  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 291       310     0     0     0  0  0   0  1  13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 292       264     0     0     0  0  0   0  1   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 293       257     0     0     0  0  0   0  0   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 294       283     0     0     0  0  0   0  0  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 295       236     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 296       283     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 297       238     0     0     0  0  0   0  0  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 298       253     0     0     0  0  0   0  3  15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 299       266     0     0     0  0  0   0  2  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 300       263     0     0     0  0  0   0  0  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 301       262     0     0     0  0  0   0  0 -28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 302       266     0     0     0  0  0   0  2 -10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 303       263     0     0     0  0  0   0  1  16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 304       252     0     0     0  0  0   0  0  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 305       283     0     0     0  0  0   0  0  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 306       274     0     0     0  0  0   0  1  14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 307       270     0     0     0  0  0   0  1  -8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 308       262     0     0     0  0  0   0  0   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 309       263     0     0     0  0  0   0  4   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 310       298     0     0     0  0  0   0  1  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 311       247     0     0     0  0  0   0  3  -9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 312       241     0     0     0  0  0   0  2  -5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 313       285     0     0     0  0  0   0  0  -7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 314       251     0     0     0  0  0   0  1   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 315       293     0     0     0  0  0   0  1  -6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 316       316     0     0     0  0  0   0  2   6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 317       304     0     0     0  0  0   0  0 -12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 318       287     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 319       281     0     0     0  0  0   0  1  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 320       276     0     0     0  0  0   0  0 -10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 321       267     0     0     0  0  0   0  5  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 322       271     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 323       268     0     0     0  0  0   0  1   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 324       274     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 325       281     0     0     0  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 326       282     0     0     0  0  0   0  0   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 327       271     0     0     0  0  0   0  3   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 328       282     0     0     0  0  0   0  0   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 329       304     0     0     0  0  0   0  1  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 330       326     0     0     0  0  0   0  0   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 331       257     0     0     0  0  0   0  3   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 332       297     0     0     0  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 333       307     0     0     0  0  0   0  0  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 334       300     0     0     0  0  0   0  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 335       288     0     0     0  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 336       280     0     0     0  0  0   0  4  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 337       307     0     0     0  0  0   0  1   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 338       281     0     0     0  0  0   0  3  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 339       319     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 340       326     0     0     0  0  0   0  0   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 341       286     0     0     0  0  0   0  3   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 342       341     0     0     0  0  0   0  0   9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 343       328     0     0     0  0  0   0  0  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 344       298     0     0     0  0  0   0  1  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 345       315     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 346       294     0     0     0  0  0   0  3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 347       326     0     0     0  0  0   0  0   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 348       298     0     0     0  0  0   0  1   0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 349       313     0     0     0  0  0   0  1  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 350       306     0     0     0  0  0   0  0  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 351       350     0     0     0  0  0   0  0  NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 352       323     0     0     0  0  0   0  1  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 353       328     0     0     0  0  0   0  0 -15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 354       309     0     0     0  0  0   0  1  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 355       314     0     0     0  0  0   0  2  -1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 356       343     0     0     0  0  0   0  0   4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 357       308     0     0     0  0  0   0  0  -2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 358       342     0     0     0  0  0   0  0  NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 359       323     0     0     0  0  0   0  0  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 360       331     0     0     0  0  0   0  0   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 361       325     0     0     0  0  0   0  0  -4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 362       323     0     0     0  0  0   0  1  -3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 363       325     0     0     0  0  0   0  1  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           5    25    29    30  3  7  21 28   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          10    16    23    28  2  6  16 26   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           8    19    28    30  2  6  15 29   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4          10    15    20    26  3  9  15 25   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          16     9    23    27  1  3  16 25   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          21    11    17    26  3  5  10 21   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7          12    15    21    29  1  8  17 27   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8          22     9    16    21  6  8  12 20   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9          26     6    14    26  0  1   8 24   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10         32     4    12    19  0  4  14 21  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11         18    12    21    29  0  2  14 27   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12         29     7    14    20  2  4   8 19  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13         37     5    12    19  1  3   9 14   7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14         30     6    11    18  0  0  10 19  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15         21     9    17    23  1  3   8 19   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16         25     7    16    24  0  3   6 18  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17         34     4    10    18  1  1   5 13  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18         56     3     7    12  0  1   6 13   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19         23     8    16    21  0  2   6 19   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20         42     3     9    21  0  1   4 16  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21         29     4    14    22  1  2   7 18  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22         24     8    16    24  0  1  12 22   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23         17     8    21    27  0  3  10 26  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24         40     4    10    20  1  3  11 18   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25         43     2     6    16  0  1   7 14   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26         39     4     8    21  0  2   6 19   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27         44     0     6    17  0  0   5 15   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28         49     5     9    15  1  1   3 13   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29         75     3     6    11  0  2   4  9   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30         34     4    11    23  0  0   2 18  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31         91     6     9     9  0  2   7  9   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32         56     1     3    11  0  0   3 11   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33         42     3     7    16  0  1   3 15   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34         45     3    10    16  0  0   7 16   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35         34     4    13    17  0  1   8 14  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36         68     0     6    10  0  1   3  9   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37         36     1     8    17  0  1   5 17  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38         43     0     5    16  0  0   4  9   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39         51     0     4    15  0  1   5 12   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40         58     3     7    14  0  1   5 12   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41         67     0     4     8  0  0   4  9   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42         51     4     7    15  0  1   4 13  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43         32     0    12    19  0  0   8 19  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44         50     1     3    16  0  1   4 12   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45         59     1     5    14  0  0   3 12   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46         59     2     7    12  0  1   3 11  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47         39     0     6    17  0  0   3 17  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48         60     0     3    13  0  0   0  9  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49         49     1     8    17  0  0   2 14   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50         39     1    11    17  0  0   2 12   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51         54     2     5    12  0  0   2 15   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52         54     5     8    14  0  1   5 12   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53         61     4    11    14  0  0   5 14  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54         60     1     4    10  0  0   3 10  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55         72     1     4     8  0  0   2  8   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56         41     1     6    16  0  0   3 13  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57         71     0     1     6  0  0   0  5  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58         57     0     4    14  0  0   2 10   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59         68     0     2    10  0  0   2  9  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60         77     0     2     8  0  0   0  8   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61         68     0     4    10  0  0   2  9  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62         45     0     9    16  0  0   3 11   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63         70     0     3     7  0  1   1  5   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64         51     2     6    14  0  1   4 13   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65         72     3     6    11  0  0   1  8   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66         51     0     8    15  0  2   5 15  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67         92     1     3     8  0  1   1  6   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68         52     4     5    15  0  1   4 11  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69         60     1     2    12  0  1   1  8   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70         71     1     2     5  0  0   0  8   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71         60     0     1     6  0  0   1  8   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72         81     0     2     8  0  0   1  6   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73         82     0     1     6  0  0   1  4   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74         84     0     1     8  0  0   1  3  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75        100     0     3     8  0  0   0  6  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76        105     0     0     4  0  0   0  1   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77         67     0     3    10  0  0   1  9   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78         88     0     0     6  0  0   0  3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79         61     0     2    10  0  1   1 15   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80         65     0     3    12  0  0   0 15   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81        110     0     2     6  0  0   0  2   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82         49     0     6    15  0  0   1 13  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83         65     1     1    10  0  0   1  9  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84         83     0     0     7  0  0   1  8  -9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85         67     2     7    11  0  1   3  8   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86        123     0     0     1  0  0   0  4   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87         95     0     0     6  0  0   0  3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88         99     0     1     4  0  0   0  6   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89         83     0     3    13  0  0   0 10  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90        106     0     3     7  0  0   1  8   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91         96     0     2     6  0  0   2  8  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92        117     1     1     5  0  0   1  3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93         71     1     6    10  0  0   2 12  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94        128     0     0     2  0  0   0  2  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95         97     0     2     4  0  0   0  7   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96        116     0     1     4  0  0   1 10  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97        121     0     0     1  0  0   1  2   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98        100     0     0     2  0  0   1  7  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99         98     1     3     8  0  0   2  7  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100        98     0     1     5  0  0   1  8  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101       112     0     0     1  0  0   0  3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102        98     0     0     4  0  0   1  5  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103       118     0     1     4  0  0   1  5  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104        92     1     2     5  0  0   1  6   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105       121     0     2     4  0  0   0  8   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106       131     0     0     2  0  0   0 11   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107       115     0     0     1  0  0   0  4   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108       105     0     0     0  0  0   0 11  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109       127     0     2     2  0  1   1  5   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110       131     0     0     3  0  0   1  8  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111       111     0     0     0  0  0   0  4  15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112       139     0     1     1  0  0   0  2  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113       116     0     0     5  0  0   0  6   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114       168     1     1     3  0  1   2  3  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115       128     0     1     5  0  0   2  6   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116       106     0     0     1  0  0   0  7   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117       157     0     1     1  0  0   0  5   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118       141     0     0     1  0  0   0  1   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119       122     0     1     1  0  0   1  2   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120       134     0     0     2  0  0   0  2   7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121       104     0     1     3  0  0   1  1  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122       126     0     0     3  0  0   0  2   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123       121     0     0     0  0  0   0  2 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124       116     0     1     2  0  0   1  7   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125       134     0     0     7  0  0   0  7  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126       174     0     0     1  0  0   0  3  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127       126     0     1     2  0  0   1  7  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128       134     0     0     2  0  0   0  3   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129       136     0     0     0  0  0   0  2   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130       139     0     0     1  0  0   0  3  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131       149     0     0     2  0  0   1  8  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132       150     0     0     0  0  0   0  4  21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133       132     0     0     3  0  0   0  3   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134       154     0     0     0  0  0   0  1   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135       166     0     0     1  0  0   0  5   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136       161     0     0     1  0  0   1  1  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137       128     0     0     1  0  0   0  0 -16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138       161     0     0     4  0  0   0  2  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139       119     0     0     2  0  0   0  6  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140       124     0     0     0  0  0   0  6   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141       130     0     0     0  0  0   1  4   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142       146     0     0     0  0  0   0  5   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143       120     0     0     0  0  0   0  0   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144       133     0     0     0  0  0   0  3  11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145       148     0     0     3  0  0   0  5  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146       137     0     0     0  0  0   0  7   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147       153     0     1     1  0  0   0  4   9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148       201     0     0     2  0  0   0  4   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149       223     0     0     0  0  0   0  1  66</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150       179     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151       134     0     0     1  0  0   0 10 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152       160     0     0     0  0  0   0  2 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153       160     0     0     0  0  0   0  1  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154       196     0     0     1  0  0   0  2 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155       152     0     0     0  0  0   0  5   7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156       229     0     1     2  0  1   1  3   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157       155     0     0     1  0  0   0  9   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158       180     0     0     1  0  0   0  1  11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159       156     0     0     1  0  0   0  5  19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160       144     0     0     1  0  0   1  4  20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161       179     0     0     0  0  0   0  2   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162       156     0     0     2  0  0   0  7  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163       144     0     0     1  0  0   0 11 -13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164       168     0     0     0  0  0   0 10   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165       152     0     0     0  0  0   0  4   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166       154     0     0     0  0  0   0  5  -9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167       225     0     0     1  0  0   0  4   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168       181     0     0     0  0  0   0  1  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169       215     0     1     4  0  0   0  2 -27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170       164     0     0     0  0  0   0  5 -16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171       142     0     0     0  0  0   1  5  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172       188     0     0     1  0  0   0  3  13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173       159     0     0     1  0  0   0  1   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174       201     0     0     0  0  0   0  0   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175       200     0     0     0  0  0   0  0 -17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176       186     0     0     0  0  0   0  5 -10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177       154     0     0     1  0  0   0  1  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178       213     0     0     0  0  0   0  0  18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179       169     0     0     0  0  0   0  5  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180       172     0     0     1  0  0   0  3   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181       189     0     0     0  0  0   0  0  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182       174     0     0     0  0  0   0  4   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183       198     0     1     1  0  0   0  6 -19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184       172     0     0     0  0  0   0  9  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185       196     0     0     0  0  0   0  2 -12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186       193     0     0     0  0  0   0  1  13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187       193     0     0     1  0  0   0  4  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188       201     0     0     0  0  0   0  0  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189       205     0     0     0  0  0   0  0   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190       179     0     0     0  0  0   0  0  13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191       182     0     0     1  0  0   1  4  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192       191     0     0     0  0  0   0  2   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193       172     0     0     0  0  0   0  1   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194       175     0     0     0  0  0   1  5 -20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195       191     0     0     0  0  0   0  3  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196       168     0     0     2  0  0   0  3   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197       201     0     0     0  0  0   0  4  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198       211     0     0     0  0  0   0  2  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199       191     0     0     0  0  0   0  1  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200       212     0     0     0  0  0   0  0 -13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201       167     0     0     2  0  0   0  3   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202       148     0     0     0  0  0   0  0  17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203       224     0     0     1  0  0   1  3   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204       225     0     0     0  0  0   0  1  28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205       200     0     0     0  0  0   0  1  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206       221     0     0     0  0  0   0  3 -20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207       196     0     0     0  0  0   0  2  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208       192     0     0     0  0  0   0  3  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209       201     0     0     0  0  0   0  1 -30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210       201     0     0     0  0  0   0  4  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211       175     0     0     0  0  0   0  1   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212       227     0     0     1  0  0   0  0  31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213       210     0     0     0  0  0   0  3   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214       242     0     0     0  0  0   0  0   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215       224     0     0     0  0  0   0  1  11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216       223     0     0     0  0  0   0  2   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217       242     0     0     0  0  0   0  2  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218       223     0     0     0  0  0   0  3  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219       248     0     0     0  0  0   0  0 -24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220       213     0     0     0  0  0   0  1   7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221       177     0     0     0  0  0   0  6  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222       200     0     0     1  0  0   0  2   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223       222     0     0     0  0  0   0  2  16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224       216     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225       221     0     0     0  0  0   0  3 -13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226       203     0     0     0  0  0   0  6  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227       233     0     0     0  0  0   0  1   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228       207     0     0     0  0  0   0  1 -15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229       232     0     0     0  0  0   0  0  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230       226     0     0     0  0  0   0  2  14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231       230     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232       233     0     0     0  0  0   0  1   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233       192     0     0     0  0  0   0  3   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234       217     0     0     0  0  0   0  1  28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235       257     0     0     0  0  0   0  0   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236       239     0     0     0  0  0   0  5  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237       252     0     0     0  0  0   0  4  34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238       208     0     0     0  0  0   1  3  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239       236     0     0     0  0  0   0  3  12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240       216     0     0     0  0  0   0  0 -31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241       238     0     0     0  0  0   0  2 -10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242       207     0     0     0  0  0   0  1  23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243       245     0     0     0  0  0   0  2  18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244       238     0     0     0  0  0   0  0  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245       239     0     0     0  0  0   0  4  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246       245     0     0     0  0  0   0  1  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247       237     0     0     0  0  0   0  0  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248       221     0     0     0  0  0   0  2  18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249       238     0     0     0  0  0   0  3   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250       228     0     0     0  0  0   0  1  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 251       195     0     0     0  0  0   0  3  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 252       233     0     0     0  0  0   0  0   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253       242     0     0     0  0  0   0  5  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 254       240     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 255       221     0     0     0  0  0   0  2 -37</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 256       224     0     0     0  0  0   0  3  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257       223     0     0     0  0  0   0  4  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 258       262     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 259       206     0     0     0  0  0   0  1 -14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 260       207     0     0     0  0  0   0  0 -26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261       227     0     0     0  0  0   0  1  11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 262       250     0     0     0  0  0   0  1 -25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 263       220     0     0     0  0  0   0  2   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 264       214     0     0     1  0  0   0  3 -18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265       232     0     0     0  0  0   0  1 -17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 266       222     0     0     0  0  0   1  3  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 267       200     0     0     0  0  0   0  2 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 268       230     0     0     0  0  0   0  0  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269       241     0     0     0  0  0   0  0 -10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 270       253     0     0     0  0  0   0  0   9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 271       279     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 272       242     0     0     0  0  0   0  0  25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273       231     0     0     0  0  0   0  1  15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 274       237     0     0     0  0  0   0  0  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 275       260     0     0     0  0  0   0  1   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 276       208     0     0     0  0  0   0  3   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277       236     0     0     0  0  0   0  0  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 278       205     0     0     0  0  0   0  1   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 279       244     0     0     0  0  0   0  5 -12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 280       256     0     0     0  0  0   0  5   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281       249     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 282       265     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 283       249     0     0     0  0  0   0  2  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 284       286     0     0     0  0  0   0  0  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285       309     0     0     0  0  0   0  2   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 286       261     0     0     0  0  0   0  0  -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 287       280     0     0     0  0  0   0  0   9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 288       256     0     0     0  0  0   0  3  10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289       227     0     0     0  0  0   0  0   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 290       263     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 291       246     0     0     0  0  0   0  0  17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 292       262     0     0     0  0  0   0  0   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293       244     0     0     0  0  0   0  0  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 294       260     0     0     0  0  0   0  1   9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 295       260     0     0     0  0  0   0  2   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 296       282     0     0     0  0  0   0  0  17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297       244     0     0     0  0  0   0  4 -11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 298       275     0     0     0  0  0   0  1   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 299       237     0     0     0  0  0   0  5  -9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 300       265     0     0     0  0  0   0  1  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301       246     0     0     0  0  0   0  1   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 302       278     0     0     0  0  0   0  0 -15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 303       270     0     0     0  0  0   0  0  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 304       282     0     0     0  0  0   0  0  22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305       295     0     0     0  0  0   0  1   5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 306       284     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 307       275     0     0     0  0  0   0  0 -18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 308       270     0     0     0  0  0   0  1  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309       264     0     0     0  0  0   0  2  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 310       244     0     0     0  0  0   0  2   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 311       247     0     0     0  0  0   0  1   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 312       254     0     0     0  0  0   0  3  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313       314     0     0     0  0  0   0  2   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 314       285     0     0     0  0  0   0  0 -20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 315       258     0     0     0  0  0   0  1 -20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 316       282     0     0     0  0  0   0  1   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317       269     0     0     0  0  0   0  4  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 318       267     0     0     0  0  0   0  5   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 319       277     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 320       270     0     0     0  0  0   0  4   7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 321       293     0     0     0  0  0   0  0  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 322       270     0     0     0  0  0   0  1   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 323       302     0     0     0  0  0   0  1  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 324       304     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 325       278     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 326       326     0     0     0  0  0   0  0   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 327       276     0     0     0  0  0   0  0  -7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 328       274     0     0     0  0  0   0  0  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 329       285     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 330       316     0     0     0  0  0   0  0  11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 331       259     0     0     0  0  0   0  3   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 332       300     0     0     0  0  0   0  1   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 333       318     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 334       286     0     0     0  0  0   0  2   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 335       281     0     0     0  0  0   0  4   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 336       340     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 337       307     0     0     0  0  0   0  1  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 338       311     0     0     0  0  0   0  1 -10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 339       328     0     0     0  0  0   0  0  12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 340       286     0     0     0  0  0   0  3  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 341       323     0     0     0  0  0   0  0   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 342       308     0     0     0  0  0   0  0 -10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 343       298     0     0     0  0  0   0  2 -12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 344       296     0     0     0  0  0   0  3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 345       313     0     0     0  0  0   0  0  13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 346       314     0     0     0  0  0   0  2  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 347       293     0     0     0  0  0   0  3  -6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 348       331     0     0     0  0  0   0  0  -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 349       311     0     0     0  0  0   0  2   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 350       302     0     0     0  0  0   0  0   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 351       304     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 352       335     0     0     0  0  0   0  0   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 353       299     0     0     0  0  0   0  1  -9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 354       328     0     0     0  0  0   0  0  NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 355       323     0     0     0  0  0   0  1  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 356       299     0     0     0  0  0   0  1  -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 357       309     0     0     0  0  0   0  1  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 358       312     0     0     0  0  0   0  2  -3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 359       310     0     0     0  0  0   0  0  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 360       320     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 361       332     0     0     0  0  0   0  0  -1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 362       322     0     0     0  0  0   0  1   0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 363       326     0     0     0  0  0   0  0  -2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 364       326     0     0     0  0  0   0  1  -1</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

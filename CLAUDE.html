@@ -111,14 +111,15 @@
 
 <div class="section level2">
 <h2 id="package-overview">Package Overview<a class="anchor" aria-label="anchor" href="#package-overview"></a></h2>
-<p>hoopR is an R package providing clean, tidy men’s basketball play-by-play and box score data. It wraps the NBA Stats API, ESPN API, and KenPom, exporting 270+ functions across three primary data source families: <code>nba_*()</code>, <code>espn_*()</code>, and <code>kp_*()</code>.</p>
+<p>hoopR is an R package providing clean, tidy men’s basketball (NBA + Men’s College Basketball) play-by-play and box score data. It wraps the NBA Stats API (<code>stats.nba.com</code>), the ESPN API, and KenPom, exporting ~576 functions. Primary source families: <code>nba_*()</code> (NBA Stats API), <code>espn_nba_*()</code> / <code>espn_mbb_*()</code> (ESPN), <code>kp_*()</code> (KenPom), <code>cbbd_*()</code> (CollegeBasketballData), <code>bref_*()</code> (Basketball Reference), <code>torvik_*()</code> (Bart Torvik), <code>nbagl_*()</code> (NBA G-League), <code>ncaa_mbb_*()</code> (NCAA), plus <code>load_nba_*()</code> / <code>load_mbb_*()</code> bulk loaders that pull pre-built data from the sibling <code>hoopR-data</code> / <code>sportsdataverse-data</code> release repos.</p>
+<p>Sibling repos in the family: <code>hoopR-data</code> (NBA + MBB build/aggregate/publish), <code>hoopR-mbb-raw</code> / <code>hoopR-mbb-data</code>, <code>hoopR-nba-raw</code> / <code>hoopR-nba-data</code>, and <code>hoopR-nba-stats-raw</code> / <code>hoopR-nba-stats-data</code>.</p>
 <p>When this guide differs from current repository docs, treat <code>CONTRIBUTING.md</code> and current test helper implementations as authoritative.</p>
 <ul><li>
-<strong>Version</strong>: 3.0.0 (dev)</li>
+<strong>Version</strong>: 3.1.0</li>
 <li>
 <strong>R Requirement</strong>: &gt;= 4.1.0</li>
 <li>
-<strong>License</strong>: MIT</li>
+<strong>License</strong>: MIT (CRAN + r-universe; pkgdown site at <a href="https://hoopR.sportsdataverse.org" class="uri">https://hoopR.sportsdataverse.org</a>)</li>
 <li>
 <strong>Branch</strong>: <code>devel</code> for active development, <code>main</code> for releases</li>
 </ul></div>
@@ -488,7 +489,7 @@
 <div class="section level3">
 <h3 id="release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml">Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml<a class="anchor" aria-label="anchor" href="#release-notes-triad-newsmd--cran-commentsmd--_pkgdownyml"></a></h3>
 <p>Three files describe the same release at different audiences. Whenever you add a <code>NEWS.md</code> bullet, <strong>think through all three before committing</strong>:</p>
-<ul><li><p><strong><code>NEWS.md</code></strong> — authoritative changelog for downstream users; rendered into the pkgdown changelog. <strong>All new bullets go under the most recent unreleased version heading</strong> (currently <code># **hoopR 3.0.0**</code>). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (<code>### Bug Fixes</code>, <code>### Deprecations</code>, <code>### Stability and Test Robustness</code>, etc.) instead of starting a new one when the change is incremental. Once <code>3.0.0</code> ships to CRAN, the development version gets its own heading and the rule rolls forward.</p></li>
+<ul><li><p><strong><code>NEWS.md</code></strong> — authoritative changelog for downstream users; rendered into the pkgdown changelog. <strong>All new bullets go under the most recent unreleased version heading</strong> (currently <code># **hoopR 3.1.0**</code>). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (<code>### Bug Fixes</code>, <code>### Deprecations</code>, <code>### Stability and Test Robustness</code>, etc.) instead of starting a new one when the change is incremental. Once <code>3.1.0</code> ships to CRAN, the development version gets its own heading and the rule rolls forward.</p></li>
 <li><p><strong><code>cran-comments.md</code></strong> — what gets submitted to CRAN. Every behavioral or user-visible change you add to <code>NEWS.md</code> should also be reflected in <code>cran-comments.md</code> before submission. The two files are not duplicates: <code>NEWS.md</code> is the long-form changelog, <code>cran-comments.md</code> is the short-form release summary. If a <code>NEWS.md</code> bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from <code>cran-comments.md</code>.</p></li>
 <li><p><strong><code>_pkgdown.yml</code></strong> — the pkgdown reference index. New exported functions need to land in the right <code>reference:</code> section. The existing hoopR config uses <code>starts_with("nba_")</code> / <code>starts_with("espn_")</code> / <code>starts_with("kp_")</code> / <code>starts_with("ncaa_")</code> selectors so new functions matching those prefixes are picked up automatically; explicitly-listed functions need a manual entry. Functions deprecated via <code><a href="https://lifecycle.r-lib.org/reference/deprecate_soft.html" class="external-link">lifecycle::deprecate_stop()</a></code> + <code>@keywords internal</code> are excluded from the rendered index by default — preview with <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code> when in doubt.</p></li>
 </ul><p>When the change touches the API surface (new export, deprecation, removal), include a one-line note in your commit message confirming you’ve checked all three files.</p>

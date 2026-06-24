@@ -33,7 +33,7 @@ Other CBD Draft Functions:
 ``` r
 # \donttest{
   try(cbbd_draft_teams())
-#> ✖ 2026-06-13 07:17:42.75624: Invalid arguments or no draft teams available!
+#> ✖ 2026-06-24 02:48:30.329484: Invalid arguments or no draft teams available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

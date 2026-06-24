@@ -167,7 +167,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_powerindex(season = 2025)
 #> ── ESPN NBA Season Power Index ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:19:09 UTC
+#> ℹ Data updated: 2026-06-24 02:49:45 UTC
 #> # A tibble: 4,260 × 12
 #>    league season season_type team_id stat_name     abbreviation display_name
 #>    <chr>   <int>       <int> <chr>   <chr>         <chr>        <chr>       

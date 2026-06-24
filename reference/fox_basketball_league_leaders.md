@@ -53,20 +53,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_league_leaders("scoring"))
 #> ── Fox Sports NBA league_leaders ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:19:28 UTC
+#> ℹ Data updated: 2026-06-24 02:50:03 UTC
 #> # A tibble: 75 × 6
 #>    players v2            gp    entity_id min   mpg  
 #>    <chr>   <chr>         <chr> <chr>     <chr> <chr>
-#>  1 1       L. Kornet     22    2431      NA    NA   
-#>  2 2       K. Johnson    22    3282      NA    NA   
-#>  3 3       D. Vassell    22    3441      NA    NA   
-#>  4 4       J. Champagnie 22    3767      NA    NA   
-#>  5 5       S. Castle     22    3993      NA    NA   
-#>  6 6       D. Harper     22    4159      NA    NA   
-#>  7 7       V. Wembanyama 21    3850      NA    NA   
-#>  8 8       C. Bryant     21    4158      NA    NA   
-#>  9 9       H. Barnes     20    1769      NA    NA   
-#> 10 10      D. Fox        20    2350      NA    NA   
+#>  1 1       K. Dunn       82    2211      NA    NA   
+#>  2 2       M. Bridges    82    2498      NA    NA   
+#>  3 3       D. DiVincenzo 82    2503      NA    NA   
+#>  4 4       B. Brown      82    2526      NA    NA   
+#>  5 5       K. Johnson    82    3282      NA    NA   
+#>  6 6       J. Green      82    3328      NA    NA   
+#>  7 7       D. Bane       82    3415      NA    NA   
+#>  8 8       J. Huff       82    3613      NA    NA   
+#>  9 9       J. LaRavia    82    3733      NA    NA   
+#> 10 10      J. Champagnie 82    3767      NA    NA   
 #> # ℹ 65 more rows
 # }
 ```

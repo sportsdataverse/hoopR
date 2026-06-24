@@ -130,8 +130,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_conferences())
 #> ── ESPN MBB Conferences Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:18:01 UTC
-#> # A tibble: 32 × 7
+#> ℹ Data updated: 2026-06-24 02:48:47 UTC
+#> # A tibble: 31 × 7
 #>    conference_uid group_id conference_name conference_short_name conference_logo
 #>    <chr>             <int> <chr>           <chr>                 <chr>          
 #>  1 s:40~l:41~g:3         3 Atlantic 10 Co… A-10                  https://a.espn…
@@ -144,7 +144,7 @@ try(espn_mbb_conferences())
 #>  8 s:40~l:41~g:5         5 Big Sky Confer… Big Sky               https://a.espn…
 #>  9 s:40~l:41~g:6         6 Big South Conf… Big South             https://a.espn…
 #> 10 s:40~l:41~g:7         7 Big Ten Confer… Big Ten               https://a.espn…
-#> # ℹ 22 more rows
+#> # ℹ 21 more rows
 #> # ℹ 2 more variables: parent_group_id <int>, conference_id <int>
 # }
 ```

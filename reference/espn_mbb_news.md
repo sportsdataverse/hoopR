@@ -147,14 +147,14 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:18:13 UTC
+#> ℹ Data updated: 2026-06-24 02:48:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Head… LSU off… LSU announ… 2026-06-… FALSE   NA     https:/… 41       
-#> 2  4.90e7 Story At NBPA… In the tra… 2026-06-… FALSE   Jason… https:/… 41       
-#> 3  4.90e7 Story Darius … The projec… 2026-06-… FALSE   Myron… https:/… 46       
-#> 4  4.90e7 Head… Thompso… Davion Tho… 2026-06-… FALSE   Jeff … https:/… 41       
-#> 5  4.90e7 Head… Letter:… The timing… 2026-06-… FALSE   NA     https:/… 41       
+#> 1  4.92e7 Media Arkansa… Acuff Jr. … 2026-06-… FALSE   NA     https:/… 41       
+#> 2  4.92e7 Media Alabama… Philon Jr.… 2026-06-… FALSE   NA     https:/… 41       
+#> 3  4.92e7 Media Kentuck… Quaintance… 2026-06-… FALSE   NA     https:/… 41       
+#> 4  4.92e7 Media Dailyn … Swain tell… 2026-06-… FALSE   NA     https:/… 41       
+#> 5  4.90e7 Story 2026 NB… We have an… 2026-06-… FALSE   Jerem… https:/… 3380     
 # }
 ```

@@ -46,25 +46,25 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_stats("1"))
 #> ── Fox Sports NBA team_stats ──────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:19:30 UTC
+#> ℹ Data updated: 2026-06-24 02:50:06 UTC
 #> # A tibble: 16 × 6
 #>    team_id category     stat       stat_abbreviation player        value
 #>    <chr>   <chr>        <chr>      <chr>             <chr>         <chr>
-#>  1 1       PLAYER STATS SCORING    PPG               Jaylen Brown  25.7 
-#>  2 1       PLAYER STATS REBOUNDING RPG               Jayson Tatum  10.7 
-#>  3 1       PLAYER STATS SHOOTING   FG%               Jayson Tatum  47.5 
-#>  4 1       PLAYER STATS ASSISTS    APG               Jayson Tatum  6.8  
-#>  5 1       PLAYER STATS DEFENSE    STL               Jayson Tatum  7    
-#>  6 1       PLAYER STATS DEFENSE    BLK               Derrick White 10   
-#>  7 1       PLAYER STATS MISC       DBL DBL           Jayson Tatum  5    
-#>  8 1       PLAYER STATS ADVANCED   MPG               Jayson Tatum  36.3 
-#>  9 1       TEAM STATS   SCORING    PPG               NA            106.6
-#> 10 1       TEAM STATS   REBOUNDING RPG               NA            46.9 
-#> 11 1       TEAM STATS   SHOOTING   FG%               NA            43.4 
-#> 12 1       TEAM STATS   ASSISTS    APG               NA            23.7 
-#> 13 1       TEAM STATS   DEFENSE    STL               NA            38   
-#> 14 1       TEAM STATS   DEFENSE    BLK               NA            33   
-#> 15 1       TEAM STATS   MISC       DBL DBL           NA            6    
+#>  1 1       PLAYER STATS SCORING    PPG               Jaylen Brown  28.7 
+#>  2 1       PLAYER STATS REBOUNDING RPG               Neemias Queta 8.4  
+#>  3 1       PLAYER STATS SHOOTING   FG%               Neemias Queta 65.3 
+#>  4 1       PLAYER STATS ASSISTS    APG               Derrick White 5.4  
+#>  5 1       PLAYER STATS DEFENSE    STL               Derrick White 88   
+#>  6 1       PLAYER STATS DEFENSE    BLK               Neemias Queta 100  
+#>  7 1       PLAYER STATS MISC       DBL DBL           Neemias Queta 17   
+#>  8 1       PLAYER STATS ADVANCED   MPG               Jaylen Brown  34.4 
+#>  9 1       TEAM STATS   SCORING    PPG               NA            114.9
+#> 10 1       TEAM STATS   REBOUNDING RPG               NA            46.4 
+#> 11 1       TEAM STATS   SHOOTING   FG%               NA            46.7 
+#> 12 1       TEAM STATS   ASSISTS    APG               NA            24.6 
+#> 13 1       TEAM STATS   DEFENSE    STL               NA            585  
+#> 14 1       TEAM STATS   DEFENSE    BLK               NA            410  
+#> 15 1       TEAM STATS   MISC       DBL DBL           NA            62   
 #> 16 1       TEAM STATS   ADVANCED   NET RTG           NA            -    
 # }
 ```

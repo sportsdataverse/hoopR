@@ -40,10 +40,10 @@ Other NBA Combined Datasets:
 ``` r
 # \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
-#> ✖ 2026-06-13 07:37:07.20679: Invalid arguments or no traditional boxscore v2 data for 0022300061 available!
+#> ✖ 2026-06-24 03:06:42.299342: Invalid arguments or no traditional boxscore v2 data for 0022300061 available!
 #> ✖ Args: game_id = "0022300061", start_period = 0, end_period = 14, start_range = 0, end_range = 0, range_type = 0
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-06-13 07:37:07.218881: No NBA box score for 0022300061!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-06-24 03:06:42.311266: No NBA box score for 0022300061!
 #> ✖ Args: game_id = "0022300061"
 #> ✖ Error: No player box score returned
 #> data frame with 0 columns and 0 rows

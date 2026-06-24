@@ -58,7 +58,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_standings(season = 2024))
 #> ── Standings from basketball-reference.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 07:17:40 UTC
+#> ℹ Data updated: 2026-06-24 02:48:28 UTC
 #> # A tibble: 30 × 11
 #>    team             wins losses win_loss_pct gb    pts_per_g opp_pts_per_g   srs
 #>    <chr>           <dbl>  <dbl>        <dbl> <chr>     <dbl>         <dbl> <dbl>
