@@ -261,9 +261,13 @@ test_that("possession engine is never-raise on empty PBP", {
 # ---------------------------------------------------------------------------
 
 test_that("nba_possession_lineups() returns a valid stint matrix (live)", {
+  skip_on_cran()
+  skip_on_ci()
   skip_nba_stats_test()
   poss <- nba_possession_lineups(game_id = "0022200001")
+  skip_if(nrow(poss) == 0, "nba_possession_lineups returned empty frame (live API unavailable)")
   expect_true(nrow(poss) > 0)
   expect_true(all(c("offense_team_id", "points", "off_player_1", "def_player_5") %in% colnames(poss)))
   expect_true(all(poss$points >= 0))
+  Sys.sleep(3)
 })
