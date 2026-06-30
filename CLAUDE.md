@@ -21,13 +21,15 @@
 
 ## Package Overview
 
-hoopR is an R package providing clean, tidy men's basketball play-by-play and box score data. It wraps the NBA Stats API, ESPN API, and KenPom, exporting 270+ functions across three primary data source families: `nba_*()`, `espn_*()`, and `kp_*()`.
+hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting ~576 functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` / `load_mbb_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
+
+Sibling repos in the family: `hoopR-data` (NBA + MBB build/aggregate/publish), `hoopR-mbb-raw` / `hoopR-mbb-data`, `hoopR-nba-raw` / `hoopR-nba-data`, and `hoopR-nba-stats-raw` / `hoopR-nba-stats-data`.
 
 When this guide differs from current repository docs, treat `CONTRIBUTING.md` and current test helper implementations as authoritative.
 
-- **Version**: 3.0.0 (dev)
+- **Version**: 3.1.0
 - **R Requirement**: >= 4.1.0
-- **License**: MIT
+- **License**: MIT (CRAN + r-universe; pkgdown site at https://hoopR.sportsdataverse.org)
 - **Branch**: `devel` for active development, `main` for releases
 
 ## Branching & PR Workflow
@@ -418,7 +420,7 @@ This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines
 
 Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
 
-- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.0.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.0.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.1.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
 
